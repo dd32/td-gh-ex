@@ -6,12 +6,12 @@ function spasalon_banner_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'banner_settings', array(
 		'priority'       => 132,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Banner Settings', 'spasalon'),
+		'title'      => __('Banner settings', 'spasalon'),
 	) );
 	
-		/* category template page */
+		/* category */
 		$wp_customize->add_section( 'banner_cat_section' , array(
-			'title'      => __('Category Banner Settings', 'spasalon'),
+			'title'      => __('Category', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -21,7 +21,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_category]' , array(
-			'label'          => __( 'Category Banner Title 1', 'spasalon' ),
+			'label'          => __( 'Title', 'spasalon' ),
 			'section'        => 'banner_cat_section',
 			'type'           => 'text',
 			) );
@@ -32,7 +32,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_category]' , array(
-			'label'          => __( 'Category Banner Title 2', 'spasalon' ),
+			'label'          => __( 'Subtitle', 'spasalon' ),
 			'section'        => 'banner_cat_section',
 			'type'           => 'text',
 			) );
@@ -43,14 +43,14 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_category]' , array(
-			'label'          => __( 'Category Banner Description', 'spasalon' ),
+			'label'          => __('Description', 'spasalon' ),
 			'section'        => 'banner_cat_section',
 			'type'           => 'textarea',
 			) );
 			
 		/* archive template page */
 		$wp_customize->add_section( 'banner_archive_section' , array(
-			'title'      => __('Archive Banner Settings', 'spasalon'),
+			'title'      => __('Archive', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -60,7 +60,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_author]' , array(
-			'label'          => __( 'Archive Banner Title 1', 'spasalon' ),
+			'label'          => __( 'Title', 'spasalon' ),
 			'section'        => 'banner_archive_section',
 			'type'           => 'text',
 			) );
@@ -71,7 +71,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_author]' , array(
-			'label'          => __( 'Archive Banner Title 2', 'spasalon' ),
+			'label'          => __( 'Subtitle', 'spasalon' ),
 			'section'        => 'banner_archive_section',
 			'type'           => 'text',
 			) );
@@ -82,14 +82,14 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_author]' , array(
-			'label'          => __( 'Archive Banner Description', 'spasalon' ),
+			'label'          => __('Description', 'spasalon' ),
 			'section'        => 'banner_archive_section',
 			'type'           => 'textarea',
 			) );
 			
 		/* Tag template page */
 		$wp_customize->add_section( 'banner_tag_section' , array(
-			'title'      => __('Tag Banner Settings', 'spasalon'),
+			'title'      => __('Tag', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -99,7 +99,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_tag]' , array(
-			'label'          => __( 'Tag Banner Title 1', 'spasalon' ),
+			'label'          => __( 'Title', 'spasalon' ),
 			'section'        => 'banner_tag_section',
 			'type'           => 'text',
 			) );
@@ -110,7 +110,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_tag]' , array(
-			'label'          => __( 'Tag Banner Title 2', 'spasalon' ),
+			'label'          => __('Subtitle', 'spasalon' ),
 			'section'        => 'banner_tag_section',
 			'type'           => 'text',
 			) );
@@ -121,14 +121,14 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_tag]' , array(
-			'label'          => __( 'Tag Banner Description', 'spasalon' ),
+			'label'          => __('Description', 'spasalon' ),
 			'section'        => 'banner_tag_section',
 			'type'           => 'textarea',
 			) );
 			
 		/* Search template page */
 		$wp_customize->add_section( 'banner_search_section' , array(
-			'title'      => __('Search Banner Settings', 'spasalon'),
+			'title'      => __('Search', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -138,7 +138,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_search]' , array(
-			'label'          => __( 'Search Banner Title 1', 'spasalon' ),
+			'label'          => __('Title', 'spasalon' ),
 			'section'        => 'banner_search_section',
 			'type'           => 'text',
 			) );
@@ -149,7 +149,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_search]' , array(
-			'label'          => __( 'Search Banner Title 2', 'spasalon' ),
+			'label'          => __( 'Subtitle', 'spasalon' ),
 			'section'        => 'banner_search_section',
 			'type'           => 'text',
 			) );
@@ -160,14 +160,14 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_search]' , array(
-			'label'          => __( 'Search Banner Description', 'spasalon' ),
+			'label'          => __('Description', 'spasalon' ),
 			'section'        => 'banner_search_section',
 			'type'           => 'textarea',
 			) );
 			
 		/* 404 template page */
 		$wp_customize->add_section( 'banner_404_section' , array(
-			'title'      => __('404 Banner Settings', 'spasalon'),
+			'title'      => __('404', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -177,7 +177,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_404]' , array(
-			'label'          => __( '404 Banner Title 1', 'spasalon' ),
+			'label'          => __('Title', 'spasalon' ),
 			'section'        => 'banner_404_section',
 			'type'           => 'text',
 			) );
@@ -188,7 +188,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_404]' , array(
-			'label'          => __( '404 Banner Title 2', 'spasalon' ),
+			'label'          => __( 'Subtitle', 'spasalon' ),
 			'section'        => 'banner_404_section',
 			'type'           => 'text',
 			) );
@@ -199,14 +199,14 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_404]' , array(
-			'label'          => __( '404 Banner Description', 'spasalon' ),
+			'label'          => __( 'Description', 'spasalon' ),
 			'section'        => 'banner_404_section',
 			'type'           => 'textarea',
 			) );
 			
 		/* woo template page */
 		$wp_customize->add_section( 'banner_woo_section' , array(
-			'title'      => __('Woocommerce Page Banner Settings', 'spasalon'),
+			'title'      => __('Woocommerce', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		
@@ -216,7 +216,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_one_woo]' , array(
-			'label'          => __( 'Woocommerce Banner Title 1', 'spasalon' ),
+			'label'          => __( 'Title', 'spasalon' ),
 			'section'        => 'banner_woo_section',
 			'type'           => 'text',
 			) );
@@ -227,7 +227,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_title_two_woo]' , array(
-			'label'          => __( 'Woocommerce Banner Title 2', 'spasalon' ),
+			'label'          => __( 'Subtitle', 'spasalon' ),
 			'section'        => 'banner_woo_section',
 			'type'           => 'text',
 			) );
@@ -238,7 +238,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_woo]' , array(
-			'label'          => __( 'Woocommerce Banner Description', 'spasalon' ),
+			'label'          => __( 'Description', 'spasalon' ),
 			'section'        => 'banner_woo_section',
 			'type'           => 'textarea',
 			) );

@@ -21,7 +21,7 @@ class wbr_feature_page_widget extends WP_Widget{
 			
 			__('Spasalon : Page Widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'Feature Page Item Widget ', 'spasalon'), ) // Args
+			array( 'description' => __( 'Feature Page Item Widget', 'spasalon'), ) // Args
 			
 		);
 	}
@@ -122,7 +122,7 @@ class wbr_feature_page_widget extends WP_Widget{
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e( 'Select Pages:','spasalon' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e( 'Select Pages','spasalon' ); ?></label> 
 			
 			<select class="widefat" id="<?php echo $this->get_field_id( 'selected_page' ); ?>" name="<?php echo $this->get_field_name( 'selected_page' ); ?>">
 				
@@ -162,7 +162,7 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 		<input class="checkbox" type="checkbox" <?php if($instance['hide_image']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'hide_image' ); ?>" name="<?php echo $this->get_field_name( 'hide_image' ); ?>" /> 
 		
-		<label for="<?php echo $this->get_field_id( 'hide_image' ); ?>"><?php _e( 'Hide Featured Image','spasalon' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'hide_image' ); ?>"><?php _e( 'Hide featured image','spasalon' ); ?></label>
 		
 		</p>
 		

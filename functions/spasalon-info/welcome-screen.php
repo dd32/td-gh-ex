@@ -53,8 +53,8 @@ class spasalon_screen {
 	public function spasalon_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing health Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'spasalon' ), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spasalon-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with health Lite', 'spasalon' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Spasalon! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'spasalon' ), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spasalon-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Spasalon', 'spasalon' ); ?></a></p>
 			</div>
 		<?php
 	}

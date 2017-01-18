@@ -103,6 +103,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7.7
+1.Update Strings.
 @Version 1.7.6
 1.Update Theme Description.
 2.Update Font-awesome library 4.7.0

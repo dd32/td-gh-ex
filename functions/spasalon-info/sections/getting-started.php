@@ -50,14 +50,14 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6"> 
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
 
-					<a href="<?php echo esc_url(__('http://webriti.com/demo/wp/lite/spasalon/','spasalon')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
+					<a href="<?php echo esc_url('http://webriti.com/demo/wp/lite/spasalon/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
 					<p class="info-text"><?php echo __('Lite Demo','spasalon'); ?></p></a>
 					
 					
-					<a href="<?php echo esc_url(__('http://webriti.com/demo/wp/preview/?prev=spasalon/','spasalon')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<a href="<?php echo esc_url('http://webriti.com/demo/wp/preview/?prev=spasalon/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
 					<p class="info-text"><?php echo __('View Pro','spasalon'); ?></p></a>
 					
-					<a href="<?php echo esc_url(__('http://webriti.com/support/categories/spasalon','spasalon')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo esc_url('http://webriti.com/support/categories/spasalon'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Premium Theme Support','spasalon'); ?></p></a>
 					
 				</div>
@@ -66,10 +66,10 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6">	
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url(__('https://wordpress.org/support/theme/spasalon/reviews/#new-post','spasalon')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
+					<a href="<?php echo esc_url('https://wordpress.org/support/theme/spasalon/reviews/#new-post'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
 					<p class="info-text"><?php echo __('Rate This Theme','spasalon'); ?></p></a>
 					
-					<a href="<?php echo esc_url(__('https://wordpress.org/support/theme/spasalon','spasalon')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo esc_url('https://wordpress.org/support/theme/spasalon'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Support','spasalon'); ?></p></a>
 				</div>
 			</div>

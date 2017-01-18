@@ -21,7 +21,7 @@ spasalon_page_banner_strip(); // banner strip
 					
 					<h1 class="error_404"><?php _e('4','spasalon'); ?><i class="fa fa-frown-o"></i><?php _e('4','spasalon'); ?> </h1>
 					
-					<p><?php _e ('Page doesnt exist or some other error occured. Go to our','spasalon'); ?> <a href="<?php echo esc_html(site_url());?>"><?php _e('home page','spasalon'); ?></a></p>	
+					<p><?php _e ('We are sorry, but the page you are looking for does not exist.','spasalon'); ?> <a href="<?php echo esc_html(site_url());?>"><?php _e('Go Back','spasalon'); ?></a></p>	
 					
 				</div>
 			</div>

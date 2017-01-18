@@ -81,14 +81,14 @@ endif;
 	
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'spasalon' ); ?></h1>
+			<h1 class="assistive-text"><?php _e('Comment navigation','spasalon'); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'spasalon' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'spasalon' ) ); ?></div>
 		</nav>
 		<?php }  
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'spasalon' ); ?></p>
+	<p class="no-comments"><?php _e('Comments are closed.', 'spasalon' ); ?></p>
 	<?php endif; ?>				
 </div>
 <!--/End of Comments-->

@@ -23,7 +23,7 @@ spasalon_page_banner_strip(); // banner strip
 						<header class="page-header">
 						
 							<h1 class="page-title">
-								<?php printf( __( 'Search Results for: %s', 'spasalon' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+								<?php printf( __( 'Search results for %s', 'spasalon' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 							</h1>
 							
 						</header><!-- .page-header -->

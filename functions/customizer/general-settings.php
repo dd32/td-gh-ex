@@ -7,12 +7,12 @@ function spasalon_general_settings_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'general_settings', array(
 		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('General Settings', 'spasalon'),
+		'title'      => __('General settings', 'spasalon'),
 	) );
 	
 	/* Banner section */
 		$wp_customize->add_section( 'banner_section' , array(
-			'title'      => __('Banner Settings', 'spasalon'),
+			'title'      => __('Banner setting', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -23,7 +23,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[spa_bannerstrip_enable]' , array(
-			'label'          => __( 'Enable Spa Banner strip in all pages', 'spasalon' ),
+			'label'          => __('Banner strip', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'radio',
 			'choices'        => array(
@@ -37,6 +37,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us]' , array(
+			'label' => __('Call us on','spasalon'),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
@@ -47,7 +48,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us_text]' , array(
-			'label'          => __( 'Call us Text', 'spasalon' ),
+			'label'          => __( 'Call us text', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
@@ -72,7 +73,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			
 		/* footer copyright section */
 		$wp_customize->add_section( 'copyright_section' , array(
-			'title'      => __('Footer Copyright', 'spasalon'),
+			'title'      => __('Footer copyright settings', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -83,7 +84,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option',
 			) );
 			$wp_customize->add_control('spa_theme_options[footer_tagline]' , array(
-			'label'          => __( 'Copyright Text', 'spasalon' ),
+			'label'          => __('Copyright text', 'spasalon' ),
 			'section'        => 'copyright_section',
 			'type'           => 'textarea'
 			) );

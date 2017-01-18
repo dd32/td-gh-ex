@@ -116,7 +116,7 @@
 					<ul class="feature">
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner Image, Service, Static Product, Latest News, 4 Column Footer Widgetizeds area','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Business Template, Full Width Template','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('7','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '7'; ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page Widget [Service, Product], Spasalon: Latest News Widget','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support For Featured Image','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Not Customizable','spasalon'); ?> </li>
@@ -148,7 +148,7 @@
 					<ul class="feature">
 						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited Products], Latest News, Additional Section and 4 Column Footer Widgetizeds area','spasalon'); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px"><?php _e('Homepage, Homepage 2, About us, Blog Left Sidebar, Blog Right Sidebar, Blog Full Width, Page Full Width, Product Page and Contact Page.','spasalon'); ?></li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('8','spasalon'); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '8'; ?></li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page / Service Widget, Spasalon: Product Category Widget, Spasalon: Recent Products Widget, Spasalon: Team Widget, Spasalon: Latest News Widget, Spasalon: Latest Post and Spasalon: Contact Widget','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for thousands of Font-Awesome Icon , Featured Images and Read More Button / Link','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Customizable' ,'spasalon'); ?> </li>

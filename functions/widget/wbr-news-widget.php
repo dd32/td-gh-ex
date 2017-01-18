@@ -23,7 +23,7 @@ class wbr_news_widget extends WP_Widget{
 			
 			__('Spasalon : Latest News Widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'Latest News Widget ', 'spasalon'), ) // Args
+			array( 'description' => __( 'To display your recent post', 'spasalon'), ) // Args
 			
 		);
 	}
@@ -143,7 +143,7 @@ class wbr_news_widget extends WP_Widget{
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'news_cat' ); ?>"><?php _e( 'Select Posts Category:','spasalon' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'news_cat' ); ?>"><?php _e( 'Select posts category','spasalon' ); ?></label> 
 			<select class="widefat" id="<?php echo $this->get_field_id( 'news_cat' ); ?>" name="<?php echo $this->get_field_name( 'news_cat' ); ?>">
 				<option value>--Select--</option>
 				<?php
@@ -176,7 +176,7 @@ class wbr_news_widget extends WP_Widget{
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'news_column' ); ?>"><?php _e( 'Select Column:','spasalon' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'news_column' ); ?>"><?php _e( 'Select column layout','spasalon' ); ?></label> 
 			<select class="widefat" id="<?php echo $this->get_field_id( 'news_column' ); ?>" name="<?php echo $this->get_field_name( 'news_column' ); ?>">
 				<option value> -- Select Column -- </option>
 				<?php

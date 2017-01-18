@@ -57,12 +57,12 @@ class wdl_post_widget extends WP_Widget {
 		?>
 		
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:','spasalon' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title','spasalon' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		
 		<p>
-		<label for="<?php echo $this->get_field_id( 'post_show' ); ?>"><?php _e( 'No. of post show:','spasalon' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'post_show' ); ?>"><?php _e('No posts to show','spasalon' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'post_show' ); ?>" name="<?php echo $this->get_field_name( 'post_show' ); ?>" type="text" value="<?php echo esc_attr( $instance['post_show'] ); ?>" />
 		</p>
 		

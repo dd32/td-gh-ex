@@ -8,9 +8,9 @@ function spasalon_widgets_init(){
 	$news_layout = 12 / $current_options['news_layout'];
 	
 	register_sidebar( array(
-	'name' => __( 'Primary Sidebar', 'spasalon' ),
+	'name' => __( 'Sidebar widget area', 'spasalon' ),
 	'id' => 'sidebar-primary',
-	'description' => __( 'The primary widget area', 'spasalon' ),
+	'description' => __('Sidebar widget area','spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
@@ -18,7 +18,7 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Service Content', 'spasalon' ),
+	'name' => __( 'Service content widget area', 'spasalon' ),
 	'id' => 'sidebar-service',
 	'description' => __( 'Service content widget area', 'spasalon' ),
 	'before_widget' => '<div id="%1$s" class="col-md-'.$service_layout.' col-sm-6 col-xs-12 widget %2$s">',
@@ -28,7 +28,7 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Project Content', 'spasalon' ),
+	'name' => __( 'Project content widget area', 'spasalon' ),
 	'id' => 'sidebar-project',
 	'description' => __( 'Project content widget area', 'spasalon' ),
 	'before_widget' => '<div id="%1$s" class="widget item-product  %2$s">',
@@ -38,7 +38,7 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'News sidebar', 'spasalon' ),
+	'name' => __( 'News section widget area', 'spasalon' ),
 	'id' => 'sidebar-news',
 	'description' => __( 'News section widget area', 'spasalon' ),
 	'before_widget' => '<div id="%1$s" class="col-md-'.$news_layout.' widget %2$s">',
@@ -48,9 +48,9 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Footer Sidebar 1', 'spasalon' ),
+	'name' => __( 'Footer sidebar one', 'spasalon' ),
 	'id' => 'footer-sidebar1',
-	'description' => __( 'Footer widget area', 'spasalon' ),
+	'description' => __( 'Footer sidebar one', 'spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
@@ -58,9 +58,9 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Footer Sidebar 2', 'spasalon' ),
+	'name' => __( 'Footer sidebar two', 'spasalon' ),
 	'id' => 'footer-sidebar2',
-	'description' => __( 'Footer widget area', 'spasalon' ),
+	'description' => __( 'Footer sidebar two', 'spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
@@ -68,9 +68,9 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Footer Sidebar 3', 'spasalon' ),
+	'name' => __( 'Footer sidebar three', 'spasalon' ),
 	'id' => 'footer-sidebar3',
-	'description' => __( 'Footer widget area', 'spasalon' ),
+	'description' => __( 'Footer sidebar three', 'spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
@@ -78,9 +78,9 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Footer Sidebar 4', 'spasalon' ),
+	'name' => __( 'Footer sidebar four', 'spasalon' ),
 	'id' => 'footer-sidebar4',
-	'description' => __( 'Footer widget area', 'spasalon' ),
+	'description' => __( 'Footer sidebar four', 'spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
@@ -88,7 +88,7 @@ function spasalon_widgets_init(){
 	) );
 	
 	register_sidebar( array(
-	'name' => __( 'Woocommerce Sidebar', 'spasalon' ),
+	'name' => __( 'Woocommerce sidebar widget area', 'spasalon' ),
 	'id' => 'woocommerce-1',
 	'description' => __( 'Woocommerce sidebar widget area', 'spasalon' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
