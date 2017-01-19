@@ -24,9 +24,11 @@ class advance_front_Posts extends WP_Widget {
 	/* ---------------------------- */
 
 	function __construct() {
-		parent::__construct( 'advance_front_posts', __( 'Advance Posts Widget', 'advance' ), array(
+		if(is_customize_preview()){$widgetname = __( 'Advance Posts Widget', 'advance' ); }else{ $widgetname = __( 'Advance Posts Widget', 'advance' ); }
+		parent::__construct( 'advance_front_posts', $widgetname, array(
 			'classname'   => 'advance_front_posts postsblck',
-			'description' => __( 'This Widget lets you display WordPress Posts, Pages and Woocommerce Products.', 'advance' ),
+			'description' => __( 'This Widget lets you display WordPress Posts', 'advance' ),
+			'customize_selective_refresh' => true,
 		) );
 		
 	}

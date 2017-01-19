@@ -36,20 +36,20 @@ if ( ! class_exists( 'Kirki_Sections_Hover_Section' ) ) {
 			?>
 			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }}">
 				<h3 class="accordion-section-title" tabindex="0">
-					{{ data.title }}
-					<span class="screen-reader-text"><?php esc_html_e( 'Press return or enter to open this section', 'advance' ); ?></span>
+					{{{ data.title }}}
+					<span class="screen-reader-text"><?php esc_html_e( 'Press return or enter to open this section', 'kirki' ); ?></span>
 				</h3>
 				<ul class="accordion-section-content">
 					<li class="customize-section-description-container">
 						<div class="customize-section-title">
 							<button class="customize-section-back" tabindex="-1">
-								<span class="screen-reader-text"><?php esc_html_e( 'Back', 'advance' ); ?></span>
+								<span class="screen-reader-text"><?php esc_html_e( 'Back', 'kirki' ); ?></span>
 							</button>
 							<h3>
 								<span class="customize-action">
 									{{{ data.customizeAction }}}
 								</span>
-								{{ data.title }}
+								{{{ data.title }}}
 							</h3>
 						</div>
 						<# if ( data.description ) { #>

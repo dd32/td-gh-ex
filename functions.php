@@ -83,16 +83,22 @@ add_theme_support('automatic-feed-links');
 	 *
 	 *  @since advance
 	 */
-	add_theme_support( 'custom-logo', array(
-		'flex-height' => true,
-		'flex-width' => true,
-		
-	) );
-	add_theme_support( 'custom-logo', array(
-   'header-text' => array( 'site-title', 'site-description' ),
-) );
-	
 
+
+    $defaults = array(
+        'height'      => 60,
+        'width'       => 200,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+
+
+
+	
+// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 /*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -369,9 +375,11 @@ function advance_widgets_init(){
 	register_sidebar(array(
 	'name'          => __('Frontpage widget area ', 'advance'),
 	'id'            => 'sidebar_frontpage',
-	'description'   => __('With advance Free you can only add 3 widgets to this Area. Upgrade to PRO to add unlimited Widgets.', 'advance'),
-	'before_widget' => '',
-	'after_widget'  => '',
+	'description'   => __('With advance Free you can only add 4 widgets to this Area. Upgrade to PRO to add unlimited Widgets.', 'advance'),
+	'before_widget' => '<div id="%1$s" class="widget %2$s" data-widget-id="%1$s"><div class="widget_wrap">',
+	'after_widget'  => '</div></div>',
+	'before_title'  => '<h3 class="widgettitle">',
+	'after_title'   => '</h3>'
 		));
 		
 		

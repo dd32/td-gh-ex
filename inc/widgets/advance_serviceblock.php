@@ -8,13 +8,18 @@
 
 class advance_serviceblock extends WP_Widget {
 	
-	public function __construct() {
+public function __construct() {
+		if(is_customize_preview()){$widgetname = __( 'advance - Service Block', 'advance' ); }else{ $widgetname = __( 'advance - Service Block', 'advance' ); }
 		parent::__construct(
-			'ctUp-ads-servicewidget',
-			__( 'advance - Service Block', 'advance' )
-		);
+			'ctUp-ads-servicewidget',$widgetname,
+			 array(
+			'classname'   => 'ctUp-ads-servicewidgets',
+			'description' => __( 'Service Block Section widget', 'advance' ),
+			'customize_selective_refresh' => true,
+		) );
+			
+		
 	}
-
     function widget($args, $instance) {
 
         extract($args);

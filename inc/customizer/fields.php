@@ -123,7 +123,7 @@ Kirki::add_field( 'advance', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element' => '#site-title .site-title',
+			'element' => '#site-title .site-title,#site-title  h1 a',
 		),
 	),
 ) );

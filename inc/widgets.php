@@ -7,6 +7,7 @@ require(get_template_directory() . '/inc/widgets/front-posts.php');
 require(get_template_directory() . '/inc/widgets/advance_welcome.php');
 require(get_template_directory() . '/inc/widgets/ourclient.php');
 
+
 if ( is_admin() ) {
 add_action('admin_enqueue_scripts', 'advance_widget_scripts');
 

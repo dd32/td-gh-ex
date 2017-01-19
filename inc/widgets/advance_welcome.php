@@ -9,11 +9,18 @@
 class advance_welcome_widgets extends WP_Widget {
 	
 	public function __construct() {
+		if(is_customize_preview()){$widgetname = __( 'Advance -Welcome Widget', 'advance' ); }else{ $widgetname = __( 'Advance -Welcome Widget', 'advance' ); }
 		parent::__construct(
-			'ctUp-ads-welcomewidgets',
-			__( 'Advance -Welcome Widget ', 'advance' )
-		);
+			'ctUp-ads-welcomewidgets',$widgetname,
+			 array(
+			'classname'   => 'ctUp-ads-welcomewidgets',
+			'description' => __( 'Welcome Text Section widget', 'advance' ),
+			'customize_selective_refresh' => true,
+		) );
+			
+		
 	}
+
 
     function widget($args, $instance) {
 

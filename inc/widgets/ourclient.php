@@ -7,12 +7,15 @@
 
 
 class advance_ourclient extends WP_Widget {
-	
-	public function __construct() {
+		public function __construct() {
+		if(is_customize_preview()){$widgetname = __( 'Advance - Our Client/Team', 'advance' ); }else{ $widgetname = __( 'Advance - Our Client/Team', 'advance' ); }
 		parent::__construct(
-			'ctUp-ads-advanceclietwidget',
-			__( 'Advance - Our Client/Team', 'advance' )
-		);
+			'ctUp-ads-advanceclietwidget',$widgetname,
+			 array(
+			'classname'   => 'ctUp-ads-advanceclietwidget',
+			'description' => __( 'Our Client/Team Section widget', 'advance' ),
+			'customize_selective_refresh' => true,
+		) );
 	}
 
     function widget($args, $instance) {

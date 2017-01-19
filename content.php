@@ -36,7 +36,7 @@
                   				<div class=" latest_news_desc">
                						<?php the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                       				<h4><?php the_author(); ?> | <?php the_time( get_option('date_format') ); ?></h4>
-             						<p><?php the_excerpt(); ?></p> 
+             						<?php the_excerpt(); ?> 
              						<a class="read_more" href="<?php echo esc_url(get_permalink());?>"><?php echo esc_attr__('Read more','advance');?></a>
                    			  </div><!-- latest_news_desc-->
                  		</div>
