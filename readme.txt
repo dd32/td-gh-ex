@@ -5,6 +5,11 @@ Theme demo: http://demos.templateexpress.com/adamos/
 
 Changelog
 --------------------------------------------
+Version: 3.0
+* Tested with latest version of WordPress
+* Footer updated
+* Description and Tags updated
+
 Version: 2.9
 * Updated deprecated tags
 

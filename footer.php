@@ -74,7 +74,7 @@
 		        <?php else: ?>
 
 					<a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
-		            <?php _e('Adamos WordPress Theme','adamos'); ?></a>
+		            <?php _e('Adamos free Portfolio WordPress Theme','adamos'); ?></a>
 		            <?php echo __( 'Powered By WordPress ', 'adamos' ); ?>
 
 		        <?php endif; ?>
