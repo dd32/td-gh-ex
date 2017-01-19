@@ -192,7 +192,7 @@ function anissa_fonts_url() {
 	 * supported by Merriweather, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$arimo = esc_html_x( 'on', 'Merriweather font: on or off', 'anissa' );
+	$merriweather = esc_html_x( 'on', 'Merriweather font: on or off', 'anissa' );
 	
 
 	if ( 'off' !== $playfair && 'off' !== $montserrat && 'off' !== $merriweather ) {
@@ -254,6 +254,24 @@ function anissa_auto_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'anissa_auto_excerpt_more' );
 
 
+// Style the Tag Cloud
+function anissa_tag_cloud_widget( $args )
+{
+	$args['largest'] = 12; //largest tag
+	$args['smallest'] = 12; //smallest tag
+	$args['unit'] = 'px'; //tag font unit
+	$args['number'] = '18'; //number of tags
+	return $args;
+}
+
+add_filter( 'widget_tag_cloud_args', 'anissa_tag_cloud_widget' );
+
+// Declare WooCommerce Support
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
  *
@@ -270,24 +288,6 @@ add_filter( 'get_the_excerpt', 'anissa_custom_excerpt_more' );
 
 if ( ! function_exists( 'anissa_comments' ) ) :
 
-
-// Style the Tag Cloud
-function anissa_tag_cloud_widget( $args )
-{
-	$args['largest'] = 12; //largest tag
-	$args['smallest'] = 12; //smallest tag
-	$args['unit'] = 'px'; //tag font unit
-	$args['number'] = '18'; //number of tags
-	return $args;
-}
-
-// Declare WooCommerce Support
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-
-add_filter( 'widget_tag_cloud_args', 'anissa_tag_cloud_widget' );
 
 /*
  * Custom comments display to move Reply link,
@@ -360,9 +360,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-/**
- * Load Author Box Widget
- */
-require get_template_directory() . '/inc/widgets/author-box.php';

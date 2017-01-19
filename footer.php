@@ -12,7 +12,7 @@
 <!-- #content -->
 </div>
 <!-- .wrap  -->
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer wrap" role="contentinfo">
   <?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) ) : ?>
   <div class="footer-widgets clear">
     <div class="widget-area">

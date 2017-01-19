@@ -8,7 +8,7 @@
 /**
  * Redirect to Getting Started page on theme activation
  */
-function alienwp_redirect_on_activation() {
+function anissa_redirect_on_activation() {
 	global $pagenow;
 
 	if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
@@ -17,14 +17,14 @@ function alienwp_redirect_on_activation() {
 
 	}
 }
-add_action( 'admin_init', 'alienwp_redirect_on_activation' );
+add_action( 'admin_init', 'anissa_redirect_on_activation' );
 
 /**
  * Load Getting Started styles in the admin
  *
  * since 1.0.0
  */
-function alienwp_start_load_admin_scripts() {
+function anissa_start_load_admin_scripts() {
 
 	// Load styles only on our page
 	global $pagenow;
@@ -38,39 +38,39 @@ function alienwp_start_load_admin_scripts() {
 	 */
 
 	// Getting Started javascript
-	wp_enqueue_script( 'alienwp-getting-started', get_template_directory_uri() . '/admin/getting-started/getting-started.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'anissa-getting-started', get_template_directory_uri() . '/admin/getting-started/getting-started.js', array( 'jquery' ), '1.0.0', true );
 
 	// Getting Started styles
-	wp_register_style( 'alienwp-getting-started', get_template_directory_uri() . '/admin/getting-started/getting-started.css', false, '1.0.0' );
-	wp_enqueue_style( 'alienwp-getting-started' );
+	wp_register_style( 'anissa-getting-started', get_template_directory_uri() . '/admin/getting-started/getting-started.css', false, '1.0.0' );
+	wp_enqueue_style( 'anissa-getting-started' );
 
 	// Thickbox
 	add_thickbox();
 }
-add_action( 'admin_enqueue_scripts', 'alienwp_start_load_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'anissa_start_load_admin_scripts' );
 
 /**
  * Adds a menu item for the Getting Started page
  *
  * since 1.0.0
  */
-function license_menu() {
+function anissa_license_menu() {
 	add_theme_page(
 		__( 'Theme Help', 'anissa' ),
 		__( 'Theme Help', 'anissa' ),
 		'manage_options',
 		'anissa-getting-started',
-		'alienwp_getting_started'
+		'anissa_getting_started'
 	);
 }
-add_action( 'admin_menu', 'license_menu' );
+add_action( 'admin_menu', 'anissa_license_menu' );
 
 /**
  * Outputs the markup used on the theme license page.
  *
  * since 1.0.0
  */
-function alienwp_getting_started() {
+function anissa_getting_started() {
 
 	/**
 	 * Retrieve help file and theme update changelog
@@ -177,7 +177,9 @@ function alienwp_getting_started() {
                             
 								<h4><?php esc_html_e( 'Get our full collection of beautiful responsive themes for one price.', 'anissa' ); ?></h4>
 
-								<p><?php esc_html_e( 'Our Theme club includes all 19 of our current themes, any news themes we release and amazing customer support should you need a hand with your theme - All for $59!', 'anissa' ); ?></p>
+								<p><?php esc_html_e( 'Our Theme club includes all 20 of our current themes, any news themes we release and amazing customer support should you need a hand with your theme - All for $59!', 'anissa' ); ?></p>
+                                
+								<p><h4><?php esc_html_e( 'Use Coupon Code "Anissa" for 25% Off All Plans', 'anissa' ); ?></h4></p>
 
 								<a class="button-primary club-button" href="<?php echo esc_url('https://alienwp.com/ref/9/'); ?>"><?php esc_html_e( 'Visit AlienWP', 'anissa' ); ?> &rarr;</a>
 							</div>

@@ -57,7 +57,7 @@ function anissa_carousel_options( $wp_customize ) {
 $wp_customize->add_section(
     'carousel_section',
     array(
-        'title'     => 'Carousel settings',
+		'title'    => __( 'Carousel Settings', 'anissa' ),
         'priority'  => 202,
         'capability'  => 'edit_theme_options',
     )
@@ -76,7 +76,7 @@ $wp_customize->add_control(
         $wp_customize,
         'carousel_category',
         array(
-            'label'    => 'Category',
+			'label'          => __( 'Category', 'anissa' ),
             'settings' => 'carousel_setting',
             'section'  => 'carousel_section'
         )

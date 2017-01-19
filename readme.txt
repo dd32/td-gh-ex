@@ -2,7 +2,6 @@
 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +11,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Anissa is a beautiful WordPress blogging theme, designed in a feminine style with elegant Typography and post styling. It features a custom image header with text and custom logo upload. A featured post carousel ( choose the category and number of posts ). The theme has been designed to look perfect on all size screens, from mobiles to widescreen displays. It is fully compatible and styled for WooCommerce so you can use it to create your own online shop. It has a custom about me widget where you can add a photo and your social media links, also has a social media menu in the header and light-weight social sharing buttons built-in to each post.
+
+
+
+== Upgrade to AlienWP Membership ==
+
+The pro version of Anissa includes an extra Authors widget, you also get customer support and access to 20 more themes for just $59.
+Visit the site for more details https://alienwp.com
 
 
 
@@ -60,9 +66,6 @@ To choose the category of your featured posts Carousel, visit "Appearance" > "Cu
 To set these images visit "Appearance" > "Customize" and set the logo under "Site Identity" and the Header Image under "Header Image"
 
 
-
-
-
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
@@ -94,8 +97,9 @@ https://en-gb.wordpress.org/plugins/wp-instagram-widget/
 
 
 
-
 == Changelog ==
 
-= 11 August 2016 =
-* Initial Release
+0.0.2 Fixes for WordPress.org
+
+0.0.1
+Initial Release
