@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_icon_text_widget' );
-function register_icon_text_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_icon_text_widget' );
+function aglee_lite_register_icon_text_widget() {
     register_widget( 'aglee_lite_icon_text_widget' );
 }
 class Aglee_Lite_Icon_Text_Widget extends WP_Widget {
@@ -121,7 +121,7 @@ class Aglee_Lite_Icon_Text_Widget extends WP_Widget {
 	 * @param	array	$new_instance	Values just sent to be saved.
 	 * @param	array	$old_instance	Previously saved values from database.
 	 *
-	 * @uses	accesspress_pro_widgets_updated_field_value()		defined in widget-fields.php
+	 * @uses	aglee_lite_widgets_updated_field_value()		defined in widget-fields.php
 	 *
 	 * @return	array Updated safe values to be saved.
 	 */
@@ -151,7 +151,7 @@ class Aglee_Lite_Icon_Text_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();

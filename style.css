@@ -1,14 +1,14 @@
 /*
 Theme Name: Aglee Lite
-Theme URI: http://8degreethemes.com/demo/aglee-lite/
-Author: 8 Degree Themes
+Theme URI: http://8degreethemes.com/wordpress-themes/aglee-lite/
+Author: 8Degree Themes
 Author URI: http://8degreethemes.com/
-Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/
-Version: 1.0.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ support: support@8degreethemes.com
+Version: 1.0.20
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aglee-lite
-Tags: orange, left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, rtl-language-support, threaded-comments, translation-ready
+Tags: left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -28,21 +28,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
+    ## Links
+    ## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
     ## Posts and pages
-	## Asides
-	## Comments
+    ## Asides
+    ## Comments
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
+    ## Captions
+    ## Galleries
+    --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Normalize
@@ -643,7 +643,8 @@ Clearings
 /* Search widget */
 
 .widget_search .search-submit {
-    display: none;
+    /*display: none;*/
+    line-height: 32px;
 }
 
 .sticky {}
@@ -700,6 +701,12 @@ h1.entry-title a {
     margin: 20px 0;
 }
 
+.home .page-content,
+.home .entry-content,
+.home .entry-summary{
+    margin-top: 0px;
+}
+
 .page-links {
     clear: both;
     margin: 0 0 15px;
@@ -754,95 +761,98 @@ article.hentry .entry-footer > span {
     padding-bottom: 15px;
 }
 
-    .cat-links:before {
-        content: "\f07c";
-        font-family: FontAwesome;
-        font-style: normal;
-        margin-right: 5px;
-    }
+.cat-links:before {
+    content: "\f07c";
+    font-family: FontAwesome;
+    font-style: normal;
+    margin-right: 5px;
+}
 
-    .comments-link:before {
-        content: "\f075";
-        font-family: FontAwesome;
-        font-style: normal;
-        margin-right: 5px;
-    }
+.comments-link:before {
+    content: "\f075";
+    font-family: FontAwesome;
+    font-style: normal;
+    margin-right: 5px;
+}
 
-    .tags-links:before {
-        content: "\f02c";
-        font-family: FontAwesome;
-        font-style: normal;
-        margin-right: 3px;
-    }
+.tags-links:before {
+    content: "\f02c";
+    font-family: FontAwesome;
+    font-style: normal;
+    margin-right: 3px;
+}
 
-    .tags-links {
-        display: block;
-        margin-top: 14px;
-    }
+.tags-links {
+    display: block;
+    margin-top: 14px;
+}
 
-    .entry-footer a {
-        color: #999;
-    }
+.entry-footer a {
+    color: #999;
+}
 
-    .entry-footer a:hover {
-        color: #3b73a7;
-    }
+.entry-footer a:hover {
+    color: #3b73a7;
+}
 
-    .nav-links .meta-nav {
-        display: none;
-    }
+.navigation.posts-navigation .nav-links {
+    margin-bottom: 40px;
+}
+.nav-links .meta-nav {
+    display: none;
+}
 
-    .nav-links .nav-previous,
-    .nav-links .nav-next {
-        width: 50%;
-        float: left;
-    }
+.nav-links .nav-previous,
+.nav-links .nav-next {
+    width: 50%;
+    float: left;
+}
 
-    .nav-links .nav-next {
-        text-align: right;
-    }
+.nav-links .nav-next {
+    text-align: right;
+}
 
-    .nav-links .nav-previous a:before {
-        content: "\f0d9";
-        font-family: FontAwesome;
-        font-style: normal;
-        margin-right: 5px;
-    }
+.nav-links .nav-previous a:before {
+    content: "\f0d9";
+    font-family: FontAwesome;
+    font-style: normal;
+    margin-right: 5px;
+}
 
-    .nav-links .nav-next a:after {
-        content: "\f0da";
-        font-family: FontAwesome;
-        font-style: normal;
-        margin-left: 5px;
-    }
+.nav-links .nav-next a:after {
+    content: "\f0da";
+    font-family: FontAwesome;
+    font-style: normal;
+    margin-left: 5px;
+}
 
-    .entry-thumbnail {
-        width: 38%;
-        float: left;
-    }
+.entry-thumbnail {
+    width: 38%;
+    float: left;
+}
 
-    .entry-exrecpt {
-        width: 60%;
-        float: right;
-    }
+.entry-exrecpt {
+    width: 60%;
+    float: right;
+}
 
-    .short-content {
-        margin-bottom: 10px;
-    }
+.short-content {
+    margin-bottom: 10px;
+}
 
-    .short-content + .bttn {
-        float: right;
-    }
+.short-content + .bttn {
+    float: right;
+}
 
-    .entry-footer {
-        border-top: 1px dashed #ccc;
-        margin-top: 30px;
-    }
+.entry-footer {
+    border-top: 1px dashed #ccc;
+    margin-top: 30px;
+}
 
-    .full-width {
-        float: none;
-        width: 100%;
-    }
+.full-width {
+    float: none;
+    width: 100%;
+}
 /*--------------------------------------------------------------
 Asides
 --------------------------------------------------------------*/
@@ -1190,6 +1200,10 @@ body.boxed-layout {
     margin: 0 auto;
 }
 
+.home.blog #main .ap-container {
+    margin-top: 20px;
+}
+
 .hide {
     display: none;
 }
@@ -1215,9 +1229,10 @@ Top Header CSS
     margin-bottom: 8px;
     text-align: right;
 }
-
 .top-header {
     margin-top: 10px;
+    overflow: hidden;
+    position: relative;
     border-bottom: 1px solid #f2f2f2;
 }
 .top-header .call-us {
@@ -1254,18 +1269,18 @@ Top Header CSS
 }
 .aglee-search {
     background: #fff none repeat scroll 0 0;
-    line-height: 39px;
+    /*line-height: 39px;*/
     opacity: 0;
+    overflow: hidden;
     position: absolute;
-    right: 0px;
-    top: 3px;
+    right: -100%;
+    top: 0;
+    transition: all 0.5s ease-in-out 0s;
+    width: 300px;
+    z-index: -9999;
     transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    width: 300px;
-    overflow: hidden;
-    z-index: -9999;
-    
+    -moz-transition: all 0.5s ease-in-out 0s;    
 }
 .search-form > label {
     float: left;
@@ -1273,7 +1288,7 @@ Top Header CSS
 }
 .aglee-search form input[type='search']{
     height: 30px;
-    margin-top: 3px;
+    /*margin-top: 3px;*/
     font-size: 13px;
 }
 .aglee-search .search-form > input[type='submit']{
@@ -1284,7 +1299,7 @@ Top Header CSS
     line-height: 10px;
     margin-left: 6px;
     padding: 9px 15px;
-    margin-top: 3px;
+    /*margin-top: 3px;*/
 }
 .aglee-search .search-form > input[type='submit']:hover{
     background: #3b73a7;
@@ -1377,7 +1392,7 @@ NAV CSS
     font-size: 14px;
     text-transform: uppercase;
     display: block;
-    padding: 0 23px;
+    padding: 10px 23px;
 }
 #site-navigation ul li:last-child a{
     padding-right: 0px;
@@ -1396,7 +1411,7 @@ NAV CSS
     width: 74%;
 }
 
-#site-navigation ul ul.sub-menu {
+#site-navigation ul ul.sub-menu, #site-navigation ul ul.children {
     left: 0;
     position: absolute;
     top: 110%;
@@ -1404,7 +1419,7 @@ NAV CSS
     z-index: 99;
     text-align: left;
     background: #fff;
-    border:1px solid #ccc;
+    border:2px solid #ccc;
     padding: 10px 0;
     transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
@@ -1413,13 +1428,13 @@ NAV CSS
     filter: alpha(opacity= 0);
     visibility: hidden;
 }
-#site-navigation ul li:hover ul.sub-menu {
+#site-navigation ul li:hover ul.sub-menu, #site-navigation ul li:hover ul.children {
     opacity: 1;
     filter: alpha(opacity= 100);
     top: 100%;
     visibility: visible;
 }
-#site-navigation ul ul.sub-menu:before{
+#site-navigation ul ul.sub-menu:before, #site-navigation ul ul.children:before{
     content: "\f106";
     font-family: 'FontAwesome';
     font-size: 22px;
@@ -1429,25 +1444,25 @@ NAV CSS
     color: #ccc;
     z-index: 9999;
 }
-#site-navigation ul ul.sub-menu::after {
+#site-navigation ul ul.sub-menu::after, #site-navigation ul ul.children::after {
     background: #fff none repeat scroll 0 0;
     content: "";
-    height: 2px;
+    height: 3px;
     left: 31px;
     position: absolute;
-    top: -1px;
+    top: -2px;
     width: 11px;
 }
-#site-navigation ul li ul.sub-menu li{
+#site-navigation ul li ul.sub-menu li, #site-navigation ul li ul.children li{
     display: inline;
 }
 
-#site-navigation ul li ul.sub-menu li a {
+#site-navigation ul li ul.sub-menu li a, #site-navigation ul li ul.children li a {
     line-height: 24px;
     padding: 7px 20px;
 }
 
-#site-navigation ul ul.sub-menu li ul.sub-menu {
+#site-navigation ul ul.sub-menu li ul.sub-menu, #site-navigation ul ul.children li ul.children{
     left: 200px;
     top: 90%;
     transition: all ease-in-out 0.3s;
@@ -1457,40 +1472,40 @@ NAV CSS
     filter: alpha(opacity= 0);
     visibility: hidden;
 }
-#site-navigation ul ul.sub-menu li ul.sub-menu:before {
+#site-navigation ul ul.sub-menu li ul.sub-menu:before, #site-navigation ul ul.children li ul.children:before {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     color: #ccc;
     content: "";
     font-family: "FontAwesome";
     font-size: 22px;
-    left: -7px;
+    left: -8px;
     position: absolute;
     top: -1px;
     z-index: 9999;
 }
-#site-navigation ul ul.sub-menu ul.sub-menu::after {
-    background: #fff none repeat scroll 0 0;
-    content: "";
-    height: 9px;
-    left: -1px;
-    position: absolute;
-    top: 15px;
-    width: 3px;
+#site-navigation ul ul.sub-menu ul.sub-menu::after, #site-navigation ul ul.children ul.children::after {
+ background: #fff none repeat scroll 0 0;
+ content: "";
+ height: 11px;
+ left: -2px;
+ position: absolute;
+ top: 15px;
+ width: 5px;
 }
-#site-navigation ul ul.sub-menu li:hover ul.sub-menu {
+#site-navigation ul ul.sub-menu li:hover ul.sub-menu, #site-navigation ul ul.children li:hover ul.children {
     opacity: 1;
     filter: alpha(opacity= 100);
-    left: 208px;
+    left: 206px;
     visibility: visible;
 }
 
-#site-navigation ul.sub-menu li {
+#site-navigation ul.sub-menu li, #site-navigation ul.children li {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     float: none;
     line-height: 40px;
 }
 
-#site-navigation ul.sub-menu li:first-child {
+#site-navigation ul.sub-menu li:first-child, #site-navigation ul.children li:first-child  {
     border-top: none;
 }
 
@@ -1498,96 +1513,101 @@ NAV CSS
 @media screen and (-webkit-min-device-pixel-ratio:0) {  
   #site-navigation ul ul.sub-menu li ul.sub-menu {
     top: -45px;
-  }  
+}  
 }
 
 
 /*--------------------------------------------------------------
  Header layout CSS
  --------------------------------------------------------------*/
-header.site-header {
+ header.site-header {
     box-shadow: 0 0 5px #999;
 }
 
 /*.bottom-header {
     margin: 10px 0;
-}*/
+    }*/
 
- .header-text-only .header-text-container h1.site-title,
- .header-text-logo .header-text-container h1.site-title {
-    font-size: 33px;
-    margin-bottom: 0;
-    vertical-align: middle;
-    font-weight: 700;
-}
+    .header-text-only .header-text-container h1.site-title,
+    .header-text-logo .header-text-container h1.site-title {
+        font-size: 33px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        font-weight: 700;
+    }
 
-.header-text-only .header-text-container h2.site-description,
-.header-text-logo .header-text-container h2.site-description {
-    font-size: 14px;
-    margin-bottom: 0;
-    text-transform: lowercase;
-    color: #a7a7a7;
-}
+    .header-text-only .header-text-container h2.site-description,
+    .header-text-logo .header-text-container h2.site-description {
+        font-size: 14px;
+        margin-bottom: 0;
+        /*text-transform: lowercase;*/
+        color: #a7a7a7;
+    }
 
 
-.header-text-only .site-branding {
-    display: inline-block;
-    vertical-align: middle;
-    width: 25%;
-}
+    .header-text-only .site-branding {
+        display: inline-block;
+        vertical-align: middle;
+        width: 25%;
+    }
 
-.header-logo-only .site-title{
-    display: inline-block;
-    float: left;
-    margin-bottom: 0px;
-    text-align: left;
-    vertical-align: middle;
-    width: 25%;
-}
-.header-logo-only .menu-wrapper {
-    text-align: right;
-    width: 100%;
-    margin-top: 5px;
-}
-.header-text-logo .site-branding {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    width: 24.5%;
-}
+    .header-logo-only .site-branding{
+        display: inline-block;
+        /*float: left;*/
+        margin-bottom: 0px;
+        text-align: left;
+        vertical-align: middle;
+        width: 25%;
+    }
+    .header-logo-only .site-branding h1 {
+        margin-bottom: 0;
+    } 
+    .header-logo-only .menu-wrapper {
+        text-align: right;
+        width: 74%;
+        /*margin-top: 5px;*/
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .header-text-logo .site-branding {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        width: 24.5%;
+    }
 
-.header-text-logo .menu-wrapper {
-    display: inline-block;
-    text-align: right;
-    vertical-align: middle;
-    width: 75%;
-}
+    .header-text-logo .menu-wrapper {
+        display: inline-block;
+        text-align: right;
+        vertical-align: middle;
+        width: 75%;
+    }
 
-.header-text-logo .header-logo-container,
-.header-text-logo .header-text-container,
-.header-text-logo .header-text-container h1.site-title {
-    display: inline-block;
-    vertical-align: middle;
-}
+    .header-text-logo .header-logo-container,
+    .header-text-logo .header-text-container,
+    .header-text-logo .header-text-container h1.site-title {
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-.header-text-logo .header-text-container h1.site-title {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
+    .header-text-logo .header-text-container h1.site-title {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+    }
 
-.header-text-logo .header-text-container h2.site-description {
-    display: block;
-}
+    .header-text-logo .header-text-container h2.site-description {
+        display: block;
+    }
 
-.header-text-logo .header-logo-container {
-    margin-top: 10px;
-}
+    .header-text-logo .header-logo-container {
+        margin-top: 10px;
+    }
 
-.header-text-logo .header-logo-container h1.site-title {
-    margin-bottom: 0;
-    font: 0/0 a;
-}
+    .header-text-logo .header-logo-container h1.site-title {
+        margin-bottom: 0;
+        font: 0/0 a;
+    }
 /*--------------------------------------------------------------
  Bx-slider CSS
  --------------------------------------------------------------*/
@@ -1749,16 +1769,31 @@ header.site-header {
     background-position: right center;
 }
 
+.bx-wrapper * {
+    direction: ltr;
+}
+
 /* MAIN SLIDER CAPTION*/
 .caption_wrap {
-    padding-top:12%; 
+    background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+    bottom: 0;
     color: #fff;
+    display: block;
     left: 0;
+    margin: auto;
     position: absolute;
     right: 0;
     text-align: center;
     top: 0;
-    display: block;
+}
+.caption_wrap .slider-caption-wrap {
+    left: 0;
+    margin: -9% auto 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    width: 1170px;
 }
 .caption_wrap .slider_title{
     font-size: 49px;
@@ -1772,11 +1807,10 @@ header.site-header {
     font-weight: 100;
     color: #fff;
     line-height: 30px;
-    width: 620px;
     margin:0 auto; 
-    padding: 0 0 40px 0;
+    padding: 0 0 10px 0;
 }
-.caption_wrap > a {
+.caption_wrap a {
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
@@ -1787,7 +1821,7 @@ header.site-header {
     -webkit-transition: all ease-in-out 0.3s;
     -moz-transition: all ease-in-out 0.3s;
 }
-.caption_wrap > a:hover {
+.caption_wrap a:hover {
     background: #3b73a7;
     border: 2px solid #3b73a7;
 }
@@ -1809,12 +1843,12 @@ FEATURE CSS
 }
 
 .feature-post-wrap a h2 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-transform: uppercase;
     color: #000;
-    line-height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -1827,13 +1861,13 @@ FEATURE CSS
     margin-top: 10px;
 }
 
-.feature-post-wrap {
+#featured-post-container .feature-post-wrap {
     float: left;
     margin-right: 45px;
     text-align: center;
     width: 30.5%;
 }
-.feature-post-wrap:nth-of-type(3n) {
+#featured-post-container .feature-post-wrap:nth-of-type(3n) {
     margin-right: 0;
 }
 
@@ -1866,12 +1900,15 @@ FEATURE CSS
 }
 
 .readmore-button:after {
-    content: "\f101";
-    position: absolute;
-    right: -10px;
-    top: 0px;
+    content: "+";
     font-family: "FontAwesome";
+    font-size: 18px;
     line-height: 15px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1881,8 +1918,8 @@ FEATURE CSS
     color: #105ea7 !important;
 }
 .readmore-button:hover:after {
-    animation-name: push-right;
-    animation-duration:1s;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
     color: #105ea7;
 }
 
@@ -1899,96 +1936,96 @@ FEATURE CSS
 
 /*.feature-post-wrap {
     margin-bottom: 3%;
-}*/
+    }*/
 
-.icon-text-block-wrapper .widget {
-    float: left;
-    margin-bottom: 40px;
-    margin-right: 5%;
-    width: 30%;
-}
-.icon-text-block-wrapper .widget:nth-of-type(3n){
-    margin-right: 0;
-}
+    .icon-text-block-wrapper .widget {
+        float: left;
+        margin-bottom: 40px;
+        margin-right: 5%;
+        width: 30%;
+    }
+    .icon-text-block-wrapper .widget:nth-of-type(3n){
+        margin-right: 0;
+    }
 
-.feature-post-wrap figure.feature-post-thumbnail {
-    position: relative;
-    overflow: hidden;
-}
+    .feature-post-wrap figure.feature-post-thumbnail {
+        position: relative;
+        overflow: hidden;
+    }
 
-.feature-post-wrap figure.feature-post-thumbnail figcaption {
-    position: absolute;
-    top: 20px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    opacity: 0;
-    margin: 0 auto;
-    filter: alpha(opacity= 0);
-    visibility: hidden;
-    padding: 1em;
-    border-top:5px solid #105ea7; 
-    background-color: rgba(59, 115, 167, 0.70);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-}
-.feature-post-wrap figure.feature-post-thumbnail figcaption:after {
-    color: #105ea7;
-    content: "";
-    font-family: "FontAwesome";
-    font-size: 35px;
-    position: absolute;
-    top: -23px;
-    text-align: center;
-    right: 0;
-    left: 0;
-}
-.feature-post-wrap figure.feature-post-thumbnail img{
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    top: 20px;
-    position: relative;   
-}
-.feature-post-wrap figure.feature-post-thumbnail:hover img{
-    top: 0;
-}
+    .feature-post-wrap figure.feature-post-thumbnail figcaption {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        opacity: 0;
+        margin: 0 auto;
+        filter: alpha(opacity= 0);
+        visibility: hidden;
+        padding: 1em;
+        border-top:5px solid #105ea7; 
+        background-color: rgba(59, 115, 167, 0.70);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        -moz-transform: scale(0.5);
+    }
+    .feature-post-wrap figure.feature-post-thumbnail figcaption:after {
+        color: #105ea7;
+        content: "";
+        font-family: "FontAwesome";
+        font-size: 35px;
+        position: absolute;
+        top: -23px;
+        text-align: center;
+        right: 0;
+        left: 0;
+    }
+    .feature-post-wrap figure.feature-post-thumbnail img{
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        top: 20px;
+        position: relative;   
+    }
+    .feature-post-wrap figure.feature-post-thumbnail:hover img{
+        top: 0;
+    }
 
-.feature-post-wrap figure.feature-post-thumbnail:hover figcaption {
-    opacity: 1;
-    filter: alpha(opacity= 100);
-    visibility: visible;
-    cursor: pointer;
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    top:0;
+    .feature-post-wrap figure.feature-post-thumbnail:hover figcaption {
+        opacity: 1;
+        filter: alpha(opacity= 100);
+        visibility: visible;
+        cursor: pointer;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        top:0;
 
-}
+    }
 
 
-.feature-post-wrap figure.feature-post-thumbnail:hover figcaption:before {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-}
+    .feature-post-wrap figure.feature-post-thumbnail:hover figcaption:before {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 
-.feature-post-wrap figure.feature-post-thumbnail figcaption a {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   margin-left: -23px;
-   margin-top: -23px;
-   -webkit-transform: scale(0);
-   transform: scale(0);
-   -webkit-transition: all 0.3s ease-in-out;
-   transition: all 0.3s ease-in-out;
-}
+    .feature-post-wrap figure.feature-post-thumbnail figcaption a {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin-left: -23px;
+     margin-top: -23px;
+     -webkit-transform: scale(0);
+     transform: scale(0);
+     -webkit-transition: all 0.3s ease-in-out;
+     transition: all 0.3s ease-in-out;
+ }
 
-.feature-post-wrap figure.feature-post-thumbnail figcaption:hover a {
+ .feature-post-wrap figure.feature-post-thumbnail figcaption:hover a {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
@@ -2009,30 +2046,53 @@ FEATURE CSS
     border-radius: 0;
 }
 
-
-
-
 /*--------------------------------------------------------------
 Call To action CSS
 --------------------------------------------------------------*/
 
-.cta-wrap{
-    background: none repeat scroll 0 0 #295074;
+#cta-container aside.widget .cta-wrap{
     padding: 48px 0;
 }
-
-.cta-desc-wrap {
+aside.widget .cta-wrap {
+    background: url(images/cta-bg.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+    z-index: 1;
+}
+aside.widget .cta-wrap:after {
+    content: "";
+    background: rgba(41, 80, 116, 0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#cta-container aside.widget .ap-container, #featured-post-container aside.widget .aglee-container, #cta-container aside.widget .ag-container {
+    width: 1170px;
+    margin: 0 auto;
+}
+aside.widget .ap-container, aside.widget .aglee-container, aside.widget .ag-container {
+    width: 100%;
+}
+#cta-container .cta-desc-wrap {
     display: inline-block;
     vertical-align: middle;
     width: 71%;
 }
 
-.cta-btn-wrap {
-   display: inline-block;
-    margin-left: 13%;
-    text-align: right;
-    vertical-align: middle;
-    
+#cta-container aside.widget .cta-btn-wrap {
+ display: inline-block;
+ margin-left: 13%;
+ text-align: right;
+ vertical-align: middle;
+ margin-top: 0;
+}
+aside.widget .cta-btn-wrap {
+    margin-top: 20px
 }
 
 .cta-btn-wrap a {
@@ -2081,7 +2141,7 @@ Icon block CSS
     margin-left: 0;
     margin-right: 0%;
 }
-.icon-wrap {
+#icon-text-block-container .icon-wrap {
     float: left;
     width: 260px;
 }
@@ -2090,83 +2150,102 @@ Icon block CSS
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-    transition: all ease-in-out 0.5s;
-    -webkit-transition: all ease-in-out 0.5s;
-    -moz-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
 }
 .icon-block-title:hover{
     color: #105ea7;
 }
-
+#icon-text-block-container .icon-image,
+#icon-text-block-container .widget .icon-image {
+    float: left;
+    margin: 0 20px 0 0;
+}
 .icon-image,
 .widget .icon-image {
     background: none repeat scroll 0 0 #f7f7f7;
-    color: #cdcdcd;
     font-size: 30px;
     height: 55px;
     line-height: 55px;
-    margin-right: 20px;
     width: 55px;
     display: block;
-    float: left;
     border-radius: 100%;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 99;
 }
 
-.icon-image i {
+.icon-image i.fa {
     margin: 0 auto;
     text-align: center;
     width: 100%;
+    color: #cdcdcd;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
 }
-
-.icon-image:hover {
+.icon-image:after {
+    content: "";
     background: #295074;
-    color: #ffffff !important;
-    animation-name:zoom-in;
-    -webkit-animation-name:zoom-in;
-    animation-duration:0.5s;
-    -webkit-animation-duration:0.5s;
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+}
+.icon-image:hover i.fa {
+    color: #fff;
+}
+.icon-image:hover:after {
+    opacity: 1;
+    filter: Alpha(opacity=100);
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    animation-name: zoom-bounce;
+    -webkit-animation-name: zoom-bounce;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
 }
 
-/*ANIMATION ZOOM IN*/
-@keyframes zoom-in{
-    0%{
-        background: #295074;
+@keyframes zoom-bounce {
+    0% {
         transform: scale(0.7);
         -webkit-transform: scale(0.7);
-        -moz-transform: scale(0.7);
     }
-    50%{
-        background: #295074;
-        transform: scale(1.25);
-        -webkit-transform: scale(1.25);
-        -moz-transform: scale(1.25);
+    50% {
+        transform: scale(1.35);
+        -webkit-transform: scale(1.35);
     }
-    100%{
-        background: #295074;
+    100% {
         transform: scale(1);
         -webkit-transform: scale(1);
-        -moz-transform: scale(1);
     }
 }
 
-@-webkit-keyframes zoom-in{
-    0%{
-        background: #295074;
+@-webkit-keyframes zoom-bounce {
+    0% {
         transform: scale(0.7);
         -webkit-transform: scale(0.7);
-        -moz-transform: scale(0.7);
     }
-    50%{
-        background: #295074;
-        transform: scale(1.25);
-        -webkit-transform: scale(1.25);
-        -moz-transform: scale(1.25);
+    50% {
+        transform: scale(1.35);
+        -webkit-transform: scale(1.35);
     }
-    100%{
-        background: #295074;
+    100% {
         transform: scale(1);
         -webkit-transform: scale(1);
-        -moz-transform: scale(1);
     }
 }
 
@@ -2176,10 +2255,14 @@ Icon block CSS
 .feat-page-content {
     color: #626262;
     font-size: 14px;
-    font-weight: 300;
-    line-height: 24px;
+    font-weight: 400;
+    line-height: 25px;
     margin: 0 0 20px;
-
+}
+.icon-details,
+.feature-post-excerpt {
+    height: 100px;
+    overflow: hidden;
 }
 
 .icon_readmore-button,
@@ -2200,11 +2283,15 @@ Toggle CSS
     float: left;
     width: 37%;
 }
-#toggle-container > h1, #testimonial-container > h1 {
-    color: #295074;
+#toggle-container > h1, #testimonial-container > h1, .feature-post-wrap-block > h1 {
+    color: #000;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 40px;
+}
+.feature-post-wrap-block h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 .ag-container .widget.widget_aglee_lite_toggle{
     margin-bottom: 10px;
@@ -2214,31 +2301,30 @@ Toggle CSS
     background: #fff none repeat scroll 0 0;
     border-bottom: 2px solid #ccc;
 }
-
-.ap_toggle.close .ap_toggle_content {
+/*.ap_toggle.close .ap_toggle_content {
     display: none;
 }
 
 .ap_toggle.open .ap_toggle_content {
     display: block;
-}
+    }*/
 
-.ap_toggle_title {
-     background: #ffffff;
-    color: #295074;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 600;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 21px;
-    position: relative;
-    transition: all ease-in-out 0.3s;
-    -webkit-transition: all ease-in-out 0.3s;
-    -moz-transition: all ease-in-out 0.3s;
-}
+    .ap_toggle_title {
+       background: #ffffff;
+       color: #295074;
+       cursor: pointer;
+       font-size: 17px;
+       font-weight: 600;
+       height: 45px;
+       line-height: 45px;
+       padding: 0 21px;
+       position: relative;
+       transition: all ease-in-out 0.3s;
+       -webkit-transition: all ease-in-out 0.3s;
+       -moz-transition: all ease-in-out 0.3s;
+   }
 
-.ap_toggle_title:hover{
+   .ap_toggle_title:hover{
     background: #e8f4ff;
 }
 
@@ -2347,7 +2433,7 @@ Testimonial CSS
     margin-bottom: 40px;
 }
 
-.testimonial_content {
+#testimonial-container .testimonial_content {
     background: #fff none repeat scroll 0 0;
     border-bottom: 5px solid #295074;
     float: left;
@@ -2355,26 +2441,50 @@ Testimonial CSS
     padding: 20px;
     width: 46%;
 }
-
-.testimonial_img {
-    border: 2px solid #7797b6;
-    border-radius: 100%;
+.widget.widget_aglee_lite_testimonial .testimonial_content {
+    color: #626262;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 24px;
+}
+#testimonial-container .testimonial-image-wrap {
+    margin-right: 3%;
+    width: 43%;
     float: left;
+}
+.widget.widget_aglee_lite_testimonial .testimonial-image-wrap {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#testimonial-container .testimonial_img {
+    float: left;
+}
+.testimonial_img {
+    border: 5px solid #ddd;
+    border-radius: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     height: 75px;
     margin-right: 5%;
     overflow: hidden;
     width: 75px;
 }
+.widget.widget_aglee_lite_testimonial .testimonial_img {
+    margin: 0 auto;
+}
 .testimonial_img img {
     border-radius: 100%;
 }
+#testimonial-container .testimonial_designation, #testimonial-container .testimonial_name {
+    float: left;
+    width: 66%;
+}
 .testimonial_designation, .testimonial_name {
     color: #3b73a7;
-    float: left;
     font-size: 14px;
     font-weight: normal;
     line-height: 24px;
-    width: 66%;
+    
 }
 .testimonial_designation p{
     color: #626262;
@@ -2386,13 +2496,6 @@ Testimonial CSS
     color:#626262;
     font-size: 14px;
     font-weight: bold;
-
-}
-
-.testimonial-image-wrap {
-    margin-right: 3%;
-    width: 43%;
-    float: left;
 }
 
 .client-name {
@@ -2446,7 +2549,7 @@ Service CSS
     width: 64%;
 }
 
-.service-post-wrap {
+#services-container aside.widget .service-post-wrap {
     background: #f8f8f8 none repeat scroll 0 0;
     border-bottom: 2px solid #e9e9e9;
     float: left;
@@ -2456,16 +2559,16 @@ Service CSS
     text-align: center;
     width: 48%;
 }
-.service-post-wrap:nth-child(odd) {
+#services-container aside.widget .service-post-wrap:nth-child(odd) {
     margin-right: 0;
+}
+aside.widget.widget_aglee_lite_services .service-post-wrap {
+    margin-bottom: 30px;
 }
 .service-post-wrap .services-post-excerpt{
     margin-bottom: 10px;
 }
 
-/*.service-post-wrapper-block {
-    margin: 0 0 0 -3%;
-}*/
 .service-post-wrapper-block > h1, .feat-page-title {
     color: #000;
     font-size: 22px;
@@ -2483,6 +2586,22 @@ Service CSS
     margin: 0 0 10px 0;
 }
 
+#services-container aside.widget .service-post-wrap figure.services-post-thumbnail {
+    float: left;
+    margin-right: 4%;
+    overflow: hidden;
+    width: 108px;
+}
+.service-post-wrap figure.services-post-thumbnail {
+    margin-bottom: 10px;
+    border:1px solid transparent;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+}
+.service-post-wrap figure.services-post-thumbnail:hover {
+    border:1px solid #ccc;
+}
 .service-post-wrap figure.services-post-thumbnail img {
     width: 100%;
     transition: all ease-in-out 0.3s;
@@ -2490,17 +2609,11 @@ Service CSS
     -moz-transition: all ease-in-out 0.3s;
 }
 .service-post-wrap figure.services-post-thumbnail:hover img{
-    padding: 5px;
-    border:1px solid #ccc;
     height: auto;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
 }
-.service-post-wrap figure.services-post-thumbnail {
-    float: left;
-    margin-right: 4%;
-    overflow: hidden;
-    width: 108px;
-}
-.services_caption_wrap {
+#services-container aside.widget .services_caption_wrap {
     float: left;
     width: 63%;
     text-align: left;
@@ -2524,13 +2637,13 @@ Footer CSS
     font-size: 13px;
 }
 .aptf-tweet-content a{
-    color: #ebebeb !important;
+    color: #777 !important;
 }
 .aptf-tweet-name{
     text-transform: uppercase;
 }
 .aptf-timestamp{
-    color: #797979;
+    color: #777;
 }
 .aptf-tweet-username{
     color: #7797b6;
@@ -2539,8 +2652,12 @@ Footer CSS
 
 /*FOOTER CONTCT INFORMATION*/
 
-.featured-footer-4 div{
-    margin-bottom: 15px;
+.widget.widget_aptf_widget:before, .widget.widget_aptf_widget:after {
+    content: "";
+    display: table;
+}
+.widget.widget_aptf_widget:after {
+    clear: both;
 }
 .featured-footer-4 p{
     margin-bottom: 0;
@@ -2616,11 +2733,11 @@ Footer CSS
 }
 
 .footer-featured-section {
-    background: none repeat scroll 0 0 #444444;
+    background: #f6f6f6;
     padding: 50px 0;
 }
 .footer-featured-section .featured-footer-wrap .textwidget {
-    color: #b5b5b5;
+    color: #777;
     font-size: 13px;
     line-height: 24px;
 }
@@ -2629,7 +2746,7 @@ Footer CSS
     float: left;
     margin-right: 30px;
     width: 22.7%;
-    color: #fff;
+    color: #333;
 }
 .featured-footer a:hover{
     color: #7797b6 !important;
@@ -2643,7 +2760,7 @@ Footer CSS
 }
 
 .featured-footer-wrap .widget-title {
-    color: #fff;
+    color: #444;
     font-size: 19px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -2655,6 +2772,7 @@ Footer CSS
 }
 
 .site-info{
+    background: #444;
     padding: 25px 0;
 }
 
@@ -2668,7 +2786,7 @@ Footer CSS
 
 .footer-socials a,
 .copyright-info a {
-    color: #295074;
+    color: #fff;
 }
 .copyright-info a:hover {
     text-decoration: underline;
@@ -2761,11 +2879,11 @@ Footer CSS
     color: #7797b6;
     display: block;
     height: 45px;
-    margin-top: 30px;
+    margin-top: 0;
     padding: 0 20px;
     text-align: left;
     width: 150px;
-   transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
     -moz-transition: all ease-in-out 0.3s;
 }
@@ -2783,6 +2901,7 @@ Footer CSS
     float: none;
     width: 100%;
     margin-bottom: 0px;
+    margin-top: 20px;
 }
 .subscribe_btn::after {
     bottom: 35px;
@@ -2800,13 +2919,10 @@ Footer CSS
     color: #fff;
 }
 
-/*.newsletter.newsletter-widget p:nth-of-type(2) {
-    width: 14%;
-}*/
-/*--------------------------------------------------------------
+
+    /*--------------------------------------------------------------
     Sidebar layout css 
     --------------------------------------------------------------*/
-
     #secondary .widget_archive a, 
     #secondary .widget_categories a, 
     #secondary .widget_recent_entries a, 
@@ -2895,7 +3011,7 @@ Footer CSS
         padding: 20px;
         width: 94%;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Go to top css 
     --------------------------------------------------------------*/
 
@@ -2913,6 +3029,8 @@ Footer CSS
         vertical-align: middle;
         border: 1px solid #ccc;
         z-index: 9999;
+        transition: all ease-in-out 0.3s;
+        -webkit-transition: all ease-in-out 0.3s;
     }
 
     #go-top a {
@@ -2933,7 +3051,7 @@ Footer CSS
         -webkit-animation-duration: 0.5s;
         -moz-animation-duration: 0.5s;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Sidebar widget css 
     --------------------------------------------------------------*/
 
@@ -2972,7 +3090,7 @@ Footer CSS
     .widget_meta a,
     .widget_recent_comments a,
     .widget_recent_comments li {
-        color: #fff;
+        color: #777;
         font-size: 14px;
         font-weight: 600;
         padding-left: 22px;
@@ -3001,7 +3119,7 @@ Footer CSS
         top: -6px;
         left: 0;
         font-size: 14px;
-        color: #3d3d3d;
+        color: #777;
         font-family: "FontAwesome";
         -webkit-transition: color 0.3s ease 0s;
         -moz-transition: color 0.3s ease 0s;
@@ -3032,27 +3150,23 @@ Footer CSS
     .widget_recent_entries li,
     .widget_meta li,
     .widget_recent_comments li {
-        border-bottom: 1px solid #575757;
+        border-bottom: 1px solid #ddd;
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
-
     .post-date{
         font-size: 15px;
         font-weight: normal;
-        color: #5f5f5f;
+        color: #9f9f9f;
         display: block;
     }
-
     .comment-author-link,
     .comment-author-link a {
         font-weight: bold;
     }
-
     .widget_nav_menu .menu li {
         list-style-type: none;
     }
-
     .widget_nav_menu .menu li a {
         color: #3d3d3d;
         font-size: 14px;
@@ -3060,7 +3174,6 @@ Footer CSS
         position: relative;
         padding-left: 0px;
     }
-
     .widget_nav_menu .menu > li > a:before,
     .widget_nav_menu .menu ul > li a:before {
         content: "\f101";
@@ -3075,16 +3188,14 @@ Footer CSS
         transition: color 0.3s ease 0s;
         display: none;
     }
-
     .widget_nav_menu .menu ul > li a:before {
         content: "\f105"
     }
-
     .widget_nav_menu .menu li a:hover,
     .widget_nav_menu .menu li a:hover:before {
         color: #dc3522;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Page Header css 
     --------------------------------------------------------------*/
 
@@ -3097,7 +3208,7 @@ Footer CSS
         margin-bottom: 20px;
         padding: 5px 20px;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Blog css 
     --------------------------------------------------------------*/
 
@@ -3123,6 +3234,9 @@ Footer CSS
         font-weight: 300;
         line-height: 24px;
         margin: 20px 0;  
+    }
+    .blog-excerpt > a {
+        font-weight: 600;
     }
     .blog-full-content .entry-footer, .blog-image-medium .entry-footer,
     .blog-image-large .entry-footer, .blog-image-alternate-medium .entry-footer{
@@ -3262,7 +3376,7 @@ Footer CSS
 
     .archive .category-blogs .entry-title, .woocommerce h2, .search .entry-title,
     .page article.hentry .entry-title, .page .entry-header .entry-title,
-    .single .category-blogs .entry-title{
+    .single .category-blogs .entry-title, .archive .entry-header .entry-title, .home .entry-content .blog-title {
         background: #d1e9ff none repeat scroll 0 0;
         border-left: 3px solid #295074;
         color: #295074;
@@ -3314,7 +3428,7 @@ Footer CSS
     .widget_tag_cloud .tagcloud a:hover {
         background: #7b7b7b;
     }
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
     Search and single css 
     --------------------------------------------------------------*/
 
@@ -3339,50 +3453,48 @@ Footer CSS
     .single .entry-footer span.tags-links {
         margin-top: 0;
     }
-
-    .no-results .page-content .search-field {
-        width: 50%;
-        float: left;
-    }
-
-    .no-results .page-content input[type="submit"] {
-        height: 36px;
-        background: #dc3522;
-        color: #fff;
-    }
-
-    .no-results .page-content input[type="submit"]:hover {
-        background: #F53A25;
-    }
-
     .search-results article.instock{
         border-bottom: 1px solid #ddd;
     }
-
     .search-results .entry-footer{
         padding: 6px 0;
     }
-
     .search-results .entry-footer span a{
         padding-left: 8px;
     }
-
     .search article.hentry h1.entry-title a:hover{
         color: #3b73a7;
     }
-
     .search-results .entry-title{
         font-weight: 400;
     }
+    .search.search-no-results .no-results .search-form > label {
+        float: none;
+        display: inline-block;
+        width: 90%;
+    }
+    .search.search-no-results .no-results form .search-field {
+        background: #eee none repeat scroll 0 0;
+        border: 1px solid #ddd;
+        color: #666;
+        font-size: 20px;
+        height: 60px;
+        padding: 5px 15px;
+    }
+    .search.search-no-results .no-results form .search-submit {
+        font-size: 20px;
+        font-weight: normal;
+        height: 60px;
+        padding: 0;
+        width: 9%;
+    }
 
-
-/*--------------------------------------------------------------
+   /*--------------------------------------------------------------
    Error 404 css 
    --------------------------------------------------------------*/
-
    .error-404 {
-        text-align: center;
-    }
+    text-align: center;
+}
 
 .error-404 .page-content form,
 .error-404 .page-content p {
@@ -3394,7 +3506,7 @@ Footer CSS
 }
 
 .error-404 .page-title .oops {
-    
+
     font-size: 4em;
     text-transform: capitalize;
     font-style: italic;
@@ -3520,3 +3632,12 @@ Footer CSS
     float: left;
     width: 50%;
 }
+
+
+/** Footer overrites */
+​.site-footer .menu-menu-1-container {
+    text-align: left;
+}
+​.site-footer .widget_nav_menu .menu li a {
+    color: #fff;
+    }​

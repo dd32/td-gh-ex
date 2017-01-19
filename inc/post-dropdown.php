@@ -5,7 +5,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * Class to create a custom post control
  */
-class Post_Dropdown extends WP_Customize_Control
+class Aglee_lite_Post_Dropdown extends WP_Customize_Control
 {
     private $posts = false;
 
@@ -28,7 +28,7 @@ class Post_Dropdown extends WP_Customize_Control
                 <label>
                     <span class="customize-post-dropdown"><?php echo esc_html( $this->label ); ?></span>
                     <select data-customize-setting-link="<?php echo $this->id; ?>" name="<?php echo $this->id; ?>" id="<?php echo $this->id; ?>">
-                    <option value="none" <?php if ( get_theme_mod($this->id) == 'none' ) echo 'selected="selected"'; ?>>None </option>
+                    <option value="none" <?php if ( get_theme_mod($this->id) == 'none' ) echo 'selected="selected"'; ?>><?php __('None', 'aglee-lite'); ?> </option>
                      	 <?php  $posts = get_posts('numberposts=-1');
                           		foreach ( $posts as $post ) { ?>
                            			 <option value="<?php echo $post->ID; ?>" <?php if ( get_theme_mod($this->id) == $post->ID ) echo 'selected="selected"'; ?>><?php echo $post->post_title; ?></option>

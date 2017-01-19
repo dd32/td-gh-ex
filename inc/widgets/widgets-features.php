@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_features_widget' );
-function register_features_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_features_widget' );
+function aglee_lite_register_features_widget() {
     register_widget( 'aglee_lite_features_widget' );
 }
 class Aglee_Lite_Features_Widget extends WP_Widget {
@@ -48,23 +48,6 @@ class Aglee_Lite_Features_Widget extends WP_Widget {
                 'aglee_widgets_title' => __('Page','aglee-lite'),
                 'aglee_widgets_field_type' => 'selectpage'
             )
-            /*
-            'feature_post_4' => array(
-                'aglee_widgets_name' => 'feature_post_4',
-                'aglee_widgets_title' => __('Page','aglee-lite'),
-                'aglee_widgets_field_type' => 'selectpage'
-            ),
-            'feature_post_5' => array(
-                'aglee_widgets_name' => 'feature_post_5',
-                'aglee_widgets_title' => __('Page','aglee-lite'),
-                'aglee_widgets_field_type' => 'selectpage'
-            ),
-            'feature_post_6' => array(
-                'aglee_widgets_name' => 'feature_post_6',
-                'aglee_widgets_title' => __('Page','aglee-lite'),
-                'aglee_widgets_field_type' => 'selectpage'
-            )
-            */
 		);
 		
 		return $fields;
@@ -104,6 +87,7 @@ class Aglee_Lite_Features_Widget extends WP_Widget {
                 ?>
                 <div class="aglee-container clearfix">
                 <div class="feature-post-wrap-block clearfix">
+                <h1><?php echo get_theme_mod('aglee_lite_features_section_title',''); ?></h1>
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
                     $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'feature-posts-home');
@@ -113,9 +97,9 @@ class Aglee_Lite_Features_Widget extends WP_Widget {
                         <figure class="feature-post-thumbnail">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()) : ?>
-                                    <img src="<?php echo $img_src; ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
+                                    <img src="<?php echo esc_url($img_src); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri().'/images/no-feature-post-thumbnail.png'; ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-feature-post-thumbnail.png'); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
                                 <?php endif; ?>
                             </a>
                             <figcaption> 

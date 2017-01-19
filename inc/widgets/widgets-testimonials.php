@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_testimonial_widget' );
-function register_testimonial_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_testimonial_widget' );
+function aglee_lite_register_testimonial_widget() {
     register_widget( 'aglee_lite_testimonial_widget' );
 }
 class Aglee_Lite_Testimonial_Widget extends WP_Widget {
@@ -84,9 +84,9 @@ class Aglee_Lite_Testimonial_Widget extends WP_Widget {
                     <figure class="testimonial-image-wrap">
                             <?php if(!empty($image[0])) : ?>
                                 <div class="testimonial_img">
-                                <img src="<?php echo $image[0]; ?>" />
+                                <img src="<?php echo esc_url($image[0]); ?>" />
                             <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri().'/images/no-testimonial-thumbnail.png'; ?>" />
+                                <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-testimonial-thumbnail.png'); ?>" />
                             <?php endif; ?>
                         </div>                           
                     </figure>
@@ -140,7 +140,7 @@ class Aglee_Lite_Testimonial_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();

@@ -41,7 +41,7 @@ get_header(); ?>
                     <div class="ag-container clearfix">
                         <?php if(is_active_sidebar('aglee_toggle_section')) : ?>
                             <div id="toggle-container">
-                                <h1>Accordion</h1>
+                                <h1><?php echo get_theme_mod('aglee_lite_toggle_section_title',__('Accordion','aglee-lite')); ?></h1>
                                 <?php dynamic_sidebar('aglee_toggle_section'); ?>
                             </div>
                         <?php endif; ?>

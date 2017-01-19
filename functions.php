@@ -43,7 +43,7 @@ function aglee_lite_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'aglee-lite' ),
-	) );
+		) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -55,7 +55,7 @@ function aglee_lite_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
+		) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -67,13 +67,18 @@ function aglee_lite_setup() {
 		'video',
 		'quote',
 		'link',
-	) );
+		) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'aglee_lite_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+		) ) );
+
+	add_editor_style( array( 'css/editor-style.css') );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif; // aglee_lite_setup
 add_action( 'after_setup_theme', 'aglee_lite_setup' );
@@ -109,7 +114,7 @@ function aglee_lite_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
 }
 add_action( 'widgets_init', 'aglee_lite_widgets_init' );
 
@@ -117,21 +122,20 @@ add_action( 'widgets_init', 'aglee_lite_widgets_init' );
  * Enqueue scripts and styles.
  */
 function aglee_lite_scripts() {
-    $query_args = array( //<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-       // 'family' => 'Oswald:400,300,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic,',
-          'family' => 'Oswald:400,300,700|Raleway:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic,',
-    ); 
-    wp_enqueue_style( 'accesspress-basic-superfish-css', get_template_directory_uri() . '/css/superfish.css');
-	wp_enqueue_style('aglee-lite-google-fonts-css', add_query_arg($query_args, "//fonts.googleapis.com/css"));
+	$aglee_lite_query_args = array(
+		'family' => 'Oswald:400,300,700|Raleway:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic,',
+		); 
+	wp_enqueue_style( 'aglee-lite-superfish-css', get_template_directory_uri() . '/css/superfish.css');
+	wp_enqueue_style('aglee-lite-google-fonts-css', add_query_arg($aglee_lite_query_args, "//fonts.googleapis.com/css"));
 	wp_enqueue_style( 'aglee-lite-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'respond', get_template_directory_uri() . '/css/responsive.css', array() );
+	wp_enqueue_style( 'aglee-lite-respond', get_template_directory_uri() . '/css/responsive.css', array() );
 
 	wp_enqueue_script( 'aglee-lite-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-    wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery','hoverIntent'));
-    
+	wp_enqueue_script( 'aglee-lite-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery','hoverIntent'));
+	
 	wp_enqueue_script( 'aglee-lite-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    wp_enqueue_script( 'aglee-theme-js', get_template_directory_uri() . '/js/custom.js', array('jquery') );
-    
+	wp_enqueue_script( 'aglee-lite-aglee_lite_theme-js', get_template_directory_uri() . '/js/custom.js', array('jquery') );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -142,16 +146,16 @@ add_action( 'wp_enqueue_scripts', 'aglee_lite_scripts' );
 /**
  * For image size
  */
- add_image_size( 'home-slider', 1920, 764, true); //Portfolio Image	
+ add_image_size( 'aglee-lite-home-slider', 1920, 764, true); //Portfolio Image	
  
- add_image_size ( 'services-thumb', 108, 91, true); // services thumb image
- add_image_size ( 'feature-page-home', 364, 175, true); // featured post home page display img
- add_image_size ( 'testimonial-img', 70, 70, true); // testimonial image display in slider
- add_image_size ( 'feature-posts-home', 363,269, true); // services home page display size 
+ add_image_size ( 'aglee-lite-services-thumb', 108, 91, true); // services thumb image
+ add_image_size ( 'aglee-lite-feature-page-home', 364, 175, true); // featured post home page display img
+ add_image_size ( 'aglee-lite-testimonial-img', 70, 70, true); // testimonial image display in slider
+ add_image_size ( 'aglee-lite-feature-posts-home', 363,269, true); // services home page display size 
  
- add_image_size ( 'blog-full-width', 1170, 355, true); // blog full content
- add_image_size ( 'blog-large', 805, 355, true); // blog full content
- add_image_size ( 'blog-medium', 380, 252, true); // blog medium content
+ add_image_size ( 'aglee-lite-blog-full-width', 1170, 355, true); // blog full content
+ add_image_size ( 'aglee-lite-blog-large', 805, 355, true); // blog full content
+ add_image_size ( 'aglee-lite-blog-medium', 380, 252, true); // blog medium content
  
  
 /**
@@ -182,17 +186,17 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Widgets fields 
  */
-require get_template_directory() . '/inc/agleelite_widgets.php';
+require get_template_directory() . '/inc/agleelite-widgets.php';
 
 
 /**
  * To select the category for sliders
  */
- require get_template_directory() . '/inc/category-dropdown.php'; 
+require get_template_directory() . '/inc/category-dropdown.php'; 
 /**
  * Customizer_Options additions.
  *
- * @since AccesspressLite
+ * @since Aglee Lite
  */
 require get_template_directory() . '/inc/post-dropdown.php';
 
@@ -205,14 +209,53 @@ require get_template_directory() . '/inc/aglee-customizer.php';
 /**
  * Load aglee lite function
  */
- require get_template_directory() . '/inc/agleelite_functions.php';
- 
+require get_template_directory() . '/inc/agleelite-functions.php';
+
  /**
  * Load Aglee Lite Metabox
  */
-require get_template_directory() . '/inc/aglee-custom-metabox.php';
-
+ require get_template_directory() . '/inc/aglee-custom-metabox.php';
 /**
- * For Recomend plugin
+ * Load Aglee Lite Theme Recommendations
  */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/agleelite-tgm.php';
+/**
+ * Load Aglee Lite Theme Information
+ */
+require get_template_directory() . '/inc/theme-info.php';
+
+
+ /**
+ * 
+ * more then 4 product
+ * 
+ */
+ add_filter('loop_shop_columns', 'aglee_lite_loop_columns'); 
+ if (!function_exists('aglee_lite_loop_columns')) { 
+
+ 	function aglee_lite_loop_columns() { 
+ 		$xr = 4; 
+ 		return $xr; 
+ 	}
+ }
+
+//Declare Woocommerce support
+ add_action( 'after_setup_theme', 'aglee_lite_woocommerce_support' );
+ function aglee_lite_woocommerce_support() {
+ 	add_theme_support( 'woocommerce' );
+ }
+
+ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+ function aglee_lite_wrapper_start() {
+ 	echo '<div class="aglee-container right-sidebar"><div id="primary">';
+ }
+ add_action('woocommerce_before_main_content', 'aglee_lite_wrapper_start', 10);
+
+ function aglee_lite_wrapper_end() {
+ 	echo '</div>';
+ 	do_action( 'woocommerce_sidebar' );
+ 	echo '</div>';
+ }
+ add_action('woocommerce_after_main_content','aglee_lite_wrapper_end',9);
