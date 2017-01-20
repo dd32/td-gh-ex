@@ -37,12 +37,6 @@ get_header(); ?>
 			endif;
 		// End the loop.
 		endwhile;
-    wp_link_pages( array(
-	'before'      => '<div class="page-links"><span class="page-links-title">'.__( 'Pages:', 'abaya').'</span>',
-	'after'       => '</div>',
-	'link_before' => '<span>',
-	'link_after'  => '</span>',
-	) );
 else:  get_template_part('template-parts/content', 'none'); endif; ?>
  </section><!--container-->
 </section><!--content-->

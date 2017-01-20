@@ -54,7 +54,7 @@
 			  
 		  }else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';
        		$footertext = str_replace('[copyright]','&copy;',$footertext);
-       		$footertext = str_replace('[the-year]',date('Y'),$footertext);
+       		$footertext = str_replace('[the-year]',date_i18n(__('Y','abaya')),$footertext);
        		$footertext = str_replace('[site-name]',get_bloginfo('name'),$footertext);
        		$footertext = str_replace('[theme-credit]','- WordPress Theme by <a href="'.esc_url(__( 'https://wordpress.org/', 'abaya')).'" target="_blank">Y Design Services</a>',$footertext);
        		echo do_shortcode($footertext); } ?></p>

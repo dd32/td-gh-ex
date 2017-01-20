@@ -32,7 +32,7 @@ get_header(); ?>
          <div class="content-area" id="primary">
            <div id="main" class="site-main">
             <?php if (have_posts()): ?>
-             <?php while(have_posts()): the_post(); get_template_part('template-parts/content', get_post_format()); endwhile; ?>    
+             <?php while(have_posts()): the_post(); get_template_part('template-parts/content'); endwhile; ?>    
            <nav>
            <ul class="pagination wow fadeInUp">
            <li class="prev"><?php previous_posts_link(__('&laquo;', 'abaya')); ?></li>

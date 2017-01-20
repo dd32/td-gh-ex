@@ -13,7 +13,7 @@ if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_
    <div class="row">
      <div class="col-lg-12">
        <div class="inner-page-title">
-         <h1 class="title"><?php echo $post_page_title;  ?></h1>
+         <h1 class="title"><?php echo esc_html($post_page_title);  ?></h1>
        </div><!--header-->
      </div><!--col-->
    </div><!--row-->
@@ -36,7 +36,7 @@ if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_
                     <ul>
                       <li>
                        <?php _e('Posted On', 'abaya' ); ?>
-                       <?php the_time('F j, Y') ?>
+                       <?php the_time( get_option( 'date_format' ) );?>
                        <?php _e('|', 'abaya' ); ?> , <?php _e('Written by', 'abaya' ); ?> 
 					  </li>
                     <li><?php the_author_posts_link() ?> / </li>
@@ -55,17 +55,8 @@ if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_
 			endif;
 			// Previous/next post navigation.
 			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav alignright" aria-hidden="true">' . __( '', 'abaya' ) . '</span> ' .
-
-					'<span class="screen-reader-text alignright">' . __( 'Next post:', 'abaya' ) . '</span> ' .
-
-					'<span class="post-title alignright">' . __( 'Next &raquo;', 'abaya' ) . '</span>',
-
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '', 'abaya' ) . '</span> ' .
-
-					'<span class="screen-reader-text alignleft">' . __( 'Previous post:', 'abaya' ) . '</span> ' .
-
-					'<span class="post-title alignleft">' . __('&laquo; Previous', 'abaya') . '</span>',
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&raquo', 'abaya' ) . '</span>',
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&laquo', 'abaya' ) . '</span> ',
 			) );
 		// End the loop.
 		endwhile;  else: ?>

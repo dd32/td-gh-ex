@@ -4,7 +4,7 @@ Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
 Author: Ydesignservices
 Author URI: http://www.ydesignservices.com/
 Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
-Version: 1.6
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
@@ -123,8 +123,9 @@ ul.menu{margin:0px; position:relative; padding:0;}
 .main_nav ul ul li:last-child{ border:none;}
 .main_nav ul ul li a{display:block; padding:5px 10px; color:#737373; margin:0px;}
 .main_nav ul ul li a:hover{color:#c05500;}
+.main_nav > ul > li ul li i{top:10px; right:10px;}
 .main_nav li:hover > ul{opacity:1; visibility:visible; margin:0;}
-.main_nav ul ul ul{ position:absolute;  top:0px; left:180px;}
+.main_nav ul ul ul{ position:absolute;  top:0px; left:206px;}
 .toggle{ background:url(images/toggle.png) right 18px no-repeat  ;  width:100%; float:left;   cursor:pointer; display:none; color:#fff; font-size:19px; font-weight:bold;  text-transform:uppercase; height:48px; line-height:48px; text-align:left; }
 .open-submenu{background: url(images/aero2.png)11px 12px no-repeat;position: absolute;width: 34px;height: 33px; right: 0px; top:0px; z-index:99999; display:none; cursor:pointer;} 
 /* Mobile-menu
@@ -362,6 +363,7 @@ form.qt_cart{display:inline-block;}
 .review-text p{margin:0; vertical-align:middle;}
 .single-product .page-header{display:none;}
 .woocommerce .quantity input[type=number]::-webkit-inner-spin-button{background:url(images/incresendicrese.jpg) no-repeat; width:18px; height:33px; position: relative; right:0px;}
+ 
 /* Contact
 ============================================= */
 .contact_wrap{padding:0;}
@@ -395,8 +397,15 @@ form.qt_cart{display:inline-block;}
 .post .entry-meta ul li a{color:#c05500;}
 .post .entry-content {padding-top: 20px;}
 .pagination{width:100%;}
-.pagination li.prev{float:left;}
-.pagination li.next{float:right;}
+.pagination li.prev,.nav-previous{float:left;}
+.pagination li.next,.nav-next{float:right;}
+.nav-links{width:100%; float:left;}
+.nav-links a{display:block;}
+.nav-next,.nav-previous{    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #fff;}
 .pagination>li>a, .pagination>li>span{ border-radius:0px !important; color:#c05500;}
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{color:#fff; background-color:#c05500; border-color: #c05500;}
 .price_slider_amount input{width:75px; padding:3px 6px;     border: 1px solid #ccc;}
@@ -444,7 +453,7 @@ input#max_price {float: right;}
 .commentsection{}
 .commentsection .comment-reply-title{padding-bottom:12px;margin-bottom:30px;border-bottom:1px solid #d7d7d7;position:relative; font-weight:600;}
 .commentsection .comment-reply-title:before{background:#c05500 none repeat scroll 0 0; bottom:-1px; content:" "; display:block;height:2px;min-width:50px;position:absolute;}
-.commentsection .navigation{display:none;}
+//.commentsection .navigation{display:none;}
 .commentlist{margin:0px 0 25px 0; padding:0px;}
 .commentlist ul{margin:0; padding:0;}
 .commentlist li{list-style:none; position:relative; border-top:1px solid #dadada; padding-top:25px;}
@@ -530,3 +539,5 @@ textarea#comment{height:180px !important;padding:10px !important;}
 .sidebar .product_list_widget li .product-title{display:block;}
 .sidebar .product_list_widget li .woocommerce-Price-amount{margin:8px 0; display:inline-block;}
 .padding{padding:35px 0px; }
+.entry-content iframe{width:100% !important;}
+.entry-content img{max-width:100%; height:auto;}

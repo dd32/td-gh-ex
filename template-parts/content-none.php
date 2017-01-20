@@ -1,5 +1,5 @@
 <section id="content" class="site-content">
-  <section class="container">
+  <section>
     <div class="blog-content" id="blog-content">
       <div class="row">
         <?php if (is_home() && current_user_can('publish_posts')) : ?>

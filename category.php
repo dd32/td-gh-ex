@@ -13,7 +13,7 @@ get_header(); ?>
    <div class="row">
      <div class="col-lg-12">
        <div class="inner-page-title">
-         <h1 class="title"><?php single_cat_title(); ?></h1>
+         <h1 class="title"><?php printf( __( 'Category Archives: %s', 'abaya' ), single_cat_title( '', false ) ); ?></h1>
        </div><!--header-->
      </div><!--col-->
    </div><!--row-->
@@ -27,7 +27,7 @@ get_header(); ?>
          <div class="content-area" id="primary">
            <div id="main" class="site-main">
             <?php if (have_posts()): ?>
-             <?php while(have_posts()): the_post(); get_template_part('template-parts/content', get_post_format()); endwhile; ?>    
+             <?php while(have_posts()): the_post(); get_template_part('template-parts/content'); endwhile; ?>    
            <nav>
            <ul class="pagination wow fadeInUp">
            <li class="prev"><?php previous_posts_link(__('&laquo;', 'abaya')); ?></li>

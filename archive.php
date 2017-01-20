@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying Tag pages
- *
- * Used to display archive-type pages for posts in a tag.
+ * The template for displaying Author archive pages
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
@@ -15,7 +13,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="inner-page-title">
-          <h1 class="title"><?php the_tags(); ?></h1>
+          <h1 class="title"><span class="vcard"><?php the_archive_title();?></span></h1>
         </div><!--header-->
       </div><!--col-->
     </div><!--row-->

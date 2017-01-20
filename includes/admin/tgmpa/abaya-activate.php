@@ -8,21 +8,21 @@ add_action( 'tgmpa_register', 'abaya_register_required_plugins' );
 function abaya_register_required_plugins() {
 	$plugins = array(
 	    array(
-			'name'     				=> 'WooCommerce', // The plugin name
+			'name'     				=> esc_html__('WooCommerce', 'abaya'), // The plugin name
 			'slug'     				=> 'woocommerce', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_activation' 		        => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 		
 		),
 		array(
-			'name'     				=> 'Contact Form 7', // The plugin name
+			'name'     				=> esc_html__('Contact Form 7', 'abaya'), // The plugin name
 			'slug'     				=> 'contact-form-7', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.5.3',
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 		),array(
-			'name'     				=> 'Color Filters for WooCommerce', // The plugin name
+			'name'     				=> esc_html__('Color Filters for WooCommerce', 'abaya'), // The plugin name
 			'slug'     				=> 'color-filters', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.5.3',

@@ -13,7 +13,7 @@ function abaya_google_web_fonts_url() {
 		$fonts[ $key ] = $key . ':' . implode( ',', $value );
 	}
 	/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'abaya');
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese, raleway, lato)', 'abaya');
 	if ( 'cyrillic' == $subset ) {
 		array_push( $subsets, 'cyrillic', 'cyrillic-ext' );
 	} elseif ( 'greek' == $subset ) {
@@ -22,6 +22,10 @@ function abaya_google_web_fonts_url() {
 		array_push( $subsets, 'devanagari' );
 	} elseif ( 'vietnamese' == $subset ) {
 		array_push( $subsets, 'vietnamese' );
+	}elseif ( 'raleway' == $subset ) {
+		array_push( $subsets, 'raleway' );
+	}elseif ( 'lato' == $subset ) {
+		array_push( $subsets, 'lato' );
 	}
 	$subsets = apply_filters( 'subsets_google_web_fonts', $subsets );
 	if ( $fonts ) {
@@ -48,6 +52,12 @@ function abaya_additional_fonts( $fonts ) {
 		$fonts['Oswald'] = array('400'=>'400','300'=> '300','700'=>'700');
 	}if ( 'off' !== _x( 'on', 'Great Vibes font: on or off', 'abaya')){
 		$fonts['Great Vibes'] = array();
+	}
+	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'abaya' ) ) {
+		$fonts['Lato'] = array('300italic' => '300italic','400italic'=>'400italic','100italic'=>'100italic','700italic'=>'700italic','100'=>'100','400' => '400','300'=> '300','600'=> '600','700'=> '700','800'=> '800');
+	}
+		if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'abaya' ) ) {
+		$fonts['Raleway'] = array('300italic' => '300italic','400italic'=>'400italic','500italic'=>'500italic',' 600italic'=>'600italic',' 700italic'=>'700italic',' 800italic'=>'800italic',' 900italic'=>'900italic','300'=>'300','400' => '400','500'=> '500','600'=> '600','700'=> '700','800'=> '800','900'=> '900');
 	}
 	return $fonts;
 }
