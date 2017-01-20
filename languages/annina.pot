@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2017-01-08 11:52+0100\n"
-"PO-Revision-Date: 2017-01-08 11:53+0100\n"
+"POT-Creation-Date: 2017-01-20 16:19+0100\n"
+"PO-Revision-Date: 2017-01-20 16:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -684,7 +684,7 @@ msgstr ""
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\"></i>%s"
+msgid "<i class=\"fa fa-user spaceLeftRight\" aria-hidden=\"true\"></i>%s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
@@ -692,9 +692,9 @@ msgstr ""
 msgid " / "
 msgstr ""
 
-#: inc/template-tags.php:97
+#: inc/template-tags.php:97 inc/template-tags.php:120
 #, php-format
-msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i>%1$s"
+msgid "%1$s"
 msgstr ""
 
 #: inc/template-tags.php:103
@@ -707,11 +707,6 @@ msgstr ""
 
 #: inc/template-tags.php:103
 msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:120
-#, php-format
-msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
 #: search.php:17

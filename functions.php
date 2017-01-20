@@ -52,7 +52,7 @@ function annina_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'annina' ),
+		'primary' => esc_html__( 'Primary Menu', 'annina' ),
 	) );
 
 	/*

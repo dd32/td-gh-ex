@@ -108,7 +108,7 @@ add_action( 'wp', 'annina_setup_author' );
 */
 function annina_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+		echo '<link rel="pingback" href="', esc_url( bloginfo( 'pingback_url' ) ), '">';
 	}
 }
 add_action( 'wp_head', 'annina_pingback_header' );

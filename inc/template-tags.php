@@ -84,7 +84,7 @@ function annina_posted_on() {
 	);
 
 	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceLeftRight"></i>%s', 'post author', 'annina' ),
+		_x( '<i class="fa fa-user spaceLeftRight" aria-hidden="true"></i>%s', 'post author', 'annina' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -94,12 +94,12 @@ function annina_posted_on() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ' / ', 'annina' ) );
 		if ( $categories_list && annina_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o spaceLeftRight"></i>%1$s', 'annina' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . esc_html__( '%1$s', 'annina' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
-		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight"></i>';
+		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight" aria-hidden="true"></i>';
 		comments_popup_link( esc_html__( 'No Comments', 'annina' ), esc_html__( '1 Comment', 'annina' ), esc_html__( '% Comments', 'annina' ) );
 		echo '</span>';
 	}
@@ -117,10 +117,10 @@ function annina_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ' / ', 'annina' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i>%1$s', 'annina' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . esc_html__( '%1$s', 'annina' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
-	edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
 
