@@ -205,7 +205,7 @@ add_action( 'customize_register', 'ajaira_color_primary_register' );
 
 	// add style to theme 
 
-	function header_social_menu_color_scheme() {
+	function ajaira_header_social_menu_color_scheme() {
 
 		// define colors
 		$social_menu_color = get_option( 'social_link_color' );
@@ -228,4 +228,4 @@ add_action( 'customize_register', 'ajaira_color_primary_register' );
 		</style>
 
 	<?php }
-	add_action( 'wp_head', 'header_social_menu_color_scheme' );
+	add_action( 'wp_head', 'ajaira_header_social_menu_color_scheme' );
