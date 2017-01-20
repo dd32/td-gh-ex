@@ -393,7 +393,7 @@ class aadya_frontpage_featured_text_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-front-page-feature-text' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-front-page-feature-text', __('(Aadya) Front Page Feature Text', 'aadya'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-front-page-feature-text', __('(Aadya) Front Page Feature Text', 'aadya'), $widget_ops, $control_ops );		
 		
         }
 		

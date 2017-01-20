@@ -28,6 +28,11 @@
 	
 	$display_slider = of_get_option('display_slider');
 	
+	$interval = intval(trim(of_get_option('slider_interval')));
+	if($interval == 0) {
+		$interval= 3000;
+	}
+	
 ?>    
 <?php if(isset($display_slider) && $display_slider==true):?>
 <?php if(isset($aadya_slider_img_1) || isset($aadya_slider_img_2) || isset($aadya_slider_img_3) || isset($aadya_slider_img_4)) :?>	
@@ -35,7 +40,7 @@
     ================================================== -->
 	<div class="slider">
     
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<?php echo $interval;?>">
 	
 	  <!-- Indicators -->
       <ol class="carousel-indicators">

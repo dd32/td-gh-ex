@@ -21,7 +21,7 @@ class aadya_author_profile_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-author-profile' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-author-profile', __('(Aadya) Author Profile', 'aadya'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-author-profile', __('(Aadya) Author Profile', 'aadya'), $widget_ops, $control_ops );		
 		
         }
 		

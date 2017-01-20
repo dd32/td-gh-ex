@@ -4,10 +4,10 @@ Theme URI: http://www.opencodez.com/free-themes/aadya/
 Author: Opencodez Team
 Author URI: http://www.opencodez.com
 Description: The Aadya theme for WordPress developed on top of Twitter Bootstrap Framework 3.0. The theme is fully responsive and can be viewed on any device. With 5 different layouts for posts and pages, Aadya theme is uniquely positioned for any business or personal website. The theme has 12 widget areas, 2 strategic menu locations, nicely designed and customizable footer with its own widget areas. In addition to this the theme provieds with 5 pre-installed widgets for FrontPage Marketing Text, FrontPage Marketeing Thumbnails, Author Profile, Social Icon Box.
-Version: 1.1.0
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: light, blue, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, translation-ready, custom-colors, threaded-comments
+Tags: one-column, two-columns, three-columns, right-sidebar,left-sidebar, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, translation-ready, custom-colors, threaded-comments
 Text Domain: aadya
 */
 
@@ -739,3 +739,32 @@ input[type=search]:focus {
 	outline: none;
 }
 
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}

@@ -21,7 +21,7 @@ class aadya_frontpage_thumbnail_text_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-front-page-text' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-front-page-text', __('(Aadya) Front Page Thumbnail Text', 'aadya'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-front-page-text', __('(Aadya) Front Page Thumbnail Text', 'aadya'), $widget_ops, $control_ops );		
 		
         }
 		

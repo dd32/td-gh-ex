@@ -21,7 +21,8 @@ class aadya_socialiconbox_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-social-icon-box' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-social-icon-box', __('(Aadya) Socal Icon Box', 'aadya'), $widget_ops, $control_ops );				
+			//$this->WP_Widget( 'widget-social-icon-box', __('(Aadya) Socal Icon Box', 'aadya'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-social-icon-box', __('(Aadya) Socal Icon Box', 'aadya'), $widget_ops, $control_ops );	
         }
 		
 		/* Get Default values of fields. */
