@@ -41,6 +41,11 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.4.3 =
+* Updated skip-link-focus and navigation scripts
+* Updated some scripts in the way to detect a mobile device
+* Minor bug fixes
+
 = Version 1.4.2 =
 * Fixed a lot of strings escaping
 * Minor bug fixes

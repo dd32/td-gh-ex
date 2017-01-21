@@ -1,8 +1,6 @@
 (function($) {
 	"use strict";
-	
 	$(document).ready(function() {
-		
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
 		/*-----------------------------------------------------------------------------------*/ 
@@ -12,7 +10,6 @@
 			if ( $( '.reply' ).length ) {
 				$('.reply').addClass('smallPart');
 			}
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
@@ -21,26 +18,25 @@
 			} else {
 				$('.main-navigation .menu-item-home:first-child > a').prepend('<i class="fa fa-home spaceRight"></i>');
 			}
-			
+		/*-----------------------------------------------------------------------------------*/
+		/*  Detect Mobile Browser
+		/*-----------------------------------------------------------------------------------*/
+			var mobileDetect = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		/*-----------------------------------------------------------------------------------*/
 		/*  Search button
 		/*-----------------------------------------------------------------------------------*/ 
 			if ( $( '.showSearch' ).length ) {
 				$('.showTop').addClass('withS');
 			}
-		
 			$('#open-search').click(function() {
 				$('#search-full').fadeIn(400);
-				if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				} else {
+				if ( !mobileDetect ) {
 					$("#search-full #search-field").focus();
 				}
 			});
-
 			$('#close-search').click(function() {
 				$('#search-full').fadeOut(400);
 			});
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Sidebar Push
 		/*-----------------------------------------------------------------------------------*/ 		
@@ -54,7 +50,6 @@
 					$('body').toggleClass( "menu-opened");
 				}
 			});
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Menu Widget
 		/*-----------------------------------------------------------------------------------*/
@@ -75,7 +70,6 @@
 					}
 				});
 			}
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
@@ -101,13 +95,10 @@
 					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
 				}
 			});
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Detect Mobile Browser
 		/*-----------------------------------------------------------------------------------*/ 
-		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		} else {
-			
+		if ( !mobileDetect ) {
 			/*-----------------------------------------------------------------------------------*/
 			/*  Scroll To Top
 			/*-----------------------------------------------------------------------------------*/ 
@@ -123,10 +114,6 @@
 					$("html, body").animate({ scrollTop: 0 }, 1000);
 					return false;
 				});
-		
 		}
-		
-	
 	});
-	
 })(jQuery);

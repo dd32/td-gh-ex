@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenzero\n"
-"POT-Creation-Date: 2017-01-09 20:13+0100\n"
-"PO-Revision-Date: 2017-01-09 20:13+0100\n"
+"POT-Creation-Date: 2017-01-21 18:37+0100\n"
+"PO-Revision-Date: 2017-01-21 18:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -527,18 +527,18 @@ msgstr ""
 #: inc/template-tags.php:82
 #, php-format
 msgctxt "post date"
-msgid "<i class=\"fa fa-clock-o spaceLeftRight\"></i>%s"
+msgid "<i class=\"fa fa-clock-o spaceLeftRight\" aria-hidden=\"true\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\"></i>%s"
+msgid "<i class=\"fa fa-user spaceLeftRight\" aria-hidden=\"true\"></i>%s"
 msgstr ""
 
-#: inc/template-tags.php:96
+#: inc/template-tags.php:96 inc/template-tags.php:118
 #, php-format
-msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i>%1$s"
+msgid "%1$s"
 msgstr ""
 
 #: inc/template-tags.php:102
@@ -551,11 +551,6 @@ msgstr ""
 
 #: inc/template-tags.php:102
 msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:118
-#, php-format
-msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
 #: inc/zenzero-dynamic.php:34

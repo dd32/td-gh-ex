@@ -79,12 +79,12 @@ function zenzero_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="fa fa-clock-o spaceLeftRight"></i>%s', 'post date', 'zenzero' ),
+		_x( '<i class="fa fa-clock-o spaceLeftRight" aria-hidden="true"></i>%s', 'post date', 'zenzero' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceLeftRight"></i>%s', 'post author', 'zenzero' ),
+		_x( '<i class="fa fa-user spaceLeftRight" aria-hidden="true"></i>%s', 'post author', 'zenzero' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -93,12 +93,12 @@ function zenzero_posted_on() {
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && zenzero_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o spaceLeftRight"></i>%1$s', 'zenzero' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . esc_html__( '%1$s', 'zenzero' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
-		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight"></i>';
+		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight" aria-hidden="true"></i>';
 		comments_popup_link( esc_html__( 'Leave a comment', 'zenzero' ), esc_html__( '1 Comment', 'zenzero' ), esc_html__( '% Comments', 'zenzero' ) );
 		echo '</span>';
 	}
@@ -115,11 +115,11 @@ function zenzero_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$tags_list = get_the_tag_list( '', '' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i>%1$s', 'zenzero' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . esc_html__( '%1$s', 'zenzero' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'zenzero' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'zenzero' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
 
