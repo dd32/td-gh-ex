@@ -71,6 +71,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.04
+* Added help for setting up Default Slider
+* Styling tweaks/fixes
+* Updated language .pot file
+Premium: Added settings to change site title font and size
+Premium: Added settings to change site tagline size and spacing
+Premium: Added settings to change Blog list, Archives and single pages to left sidebar
+
 #### 1.3.03
 * Fixed 404 message bug
 * Added setting to remove Account link next to the cart

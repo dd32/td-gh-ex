@@ -46,6 +46,7 @@ TopShop Premium - Header Standard Styling
 
 .topshop-header-layout-standard .site-header-left {
     float: left;
+    padding: 0 0 2px;
 }
 .topshop-header-layout-standard .site-header-left img {
     display: block;

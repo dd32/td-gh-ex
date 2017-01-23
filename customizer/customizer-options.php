@@ -72,12 +72,11 @@ function customizer_library_topshop_options() {
         'default' => 0,
     );
     
-    // Upsell Button
     $options['topshop-upsell-layout'] = array(
         'id' => 'topshop-upsell-layout',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change cart icon<br />- Change WooCommerce Shop/Archive/single pages to full width', 'topshop' )
     );
     
     
@@ -108,7 +107,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Slider Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><br />Get the ID at <b>Posts -> Categories</b>.<br /><br />Or <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><b>See more instructions here</b></a>', 'topshop' )
     );
     $options['topshop-meta-slider-shortcode'] = array(
         'id' => 'topshop-meta-slider-shortcode',
@@ -118,12 +117,11 @@ function customizer_library_topshop_options() {
         'description' => __( 'For a more advanced slider we recommend <a href="https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs" target="_blank">Meta Slider</a><br /><br />Enter the slider shortcode here', 'topshop' )
     );
     
-    // Upsell Button
     $options['topshop-upsell-slider'] = array(
         'id' => 'topshop-upsell-slider',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider auto scroll', 'topshop' )
     );
 
 
@@ -183,14 +181,6 @@ function customizer_library_topshop_options() {
         'default' => $heading_font_color,
     );
     
-    // Upsell Button
-    $options['topshop-upsell-styling'] = array(
-        'id' => 'topshop-upsell-styling',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
-        'section' => $section,
-        'type'    => 'upsell',
-    );
-    
     $options['topshop-custom-css'] = array(
         'id' => 'topshop-custom-css',
         'label'   => __( 'Custom CSS', 'topshop' ),
@@ -198,6 +188,13 @@ function customizer_library_topshop_options() {
         'type'    => 'textarea',
         'default' => __( '', 'topshop'),
         'description' => __( 'Add custom CSS to your theme', 'topshop' )
+    );
+    
+    $options['topshop-upsell-styling'] = array(
+        'id' => 'topshop-upsell-styling',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change navigation background color<br />- Change footer background color', 'topshop' )
     );
     
     
@@ -222,7 +219,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Exclude Blog Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.', 'topshop' )
+        'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'topshop' )
     );
     $choices = array(
         'blog-use-images-loop' => __( 'Post Images Carousel', 'topshop' ),
@@ -237,12 +234,11 @@ function customizer_library_topshop_options() {
         'default' => 'blog-use-featured-image'
     );
     
-    // Upsell Button
     $options['topshop-upsell-blog'] = array(
         'id' => 'topshop-upsell-blog',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layout<br />- Change Blog List/Archive/Single pages to full width', 'topshop' )
     );
     
     
@@ -255,12 +251,11 @@ function customizer_library_topshop_options() {
         'priority' => '80'
     );
     
-    // Upsell Button
     $options['topshop-upsell-social'] = array(
         'id' => 'topshop-upsell-social',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add over 16 different social links to your site', 'topshop' )
     );
     
     
@@ -306,13 +301,13 @@ function customizer_library_topshop_options() {
         'description' => __( 'Enter the default text for when no search results are found', 'topshop' )
     );
     
-    // Upsell Button
     $options['topshop-upsell-website'] = array(
         'id' => 'topshop-upsell-website',
-        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change the site attribution text to your own', 'topshop' )
     );
+    
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;

@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.03' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.04' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -175,10 +175,24 @@ add_action('wp_head', 'topshop_print_styles', 11);
  * Enqueue topshop custom customizer styling.
  */
 function topshop_load_customizer_script() {
-    wp_enqueue_script( 'topshop-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+	wp_enqueue_script( 'topshop-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+	$topshop_upgrade_button = array(
+		'link' => admin_url( 'themes.php?page=theme_info' ),
+		'text' => __( 'Upgrade to TopShop Premium', 'topshop' ),
+		'sub_text' => __( 'Upgrade now while TopShop is offered at only $24', 'topshop' )
+	);
+	wp_localize_script( 'topshop-customizer-js', 'upgrade_button', $topshop_upgrade_button );
     wp_enqueue_style( 'topshop-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
-}    
+}
 add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_script' );
+
+/**
+ * Enqueue admin styling.
+ */
+function topshop_load_admin_script() {
+    wp_enqueue_style( 'topshop-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+}
+add_action( 'admin_enqueue_scripts', 'topshop_load_admin_script' );
 
 // Create function to check if WooCommerce exists.
 if ( ! function_exists( 'topshop_is_woocommerce_activated' ) ) :
@@ -233,7 +247,7 @@ function topshop_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
 		array(
-			'name'      => 'Easy Theme Upgrade (For upgrading to Vogue Premium / Delete after upgrade)',
+			'name'      => 'Easy Theme Upgrade (For upgrading to TopShop Premium / Delete after upgrade)',
 			'slug'      => 'easy-theme-and-plugin-upgrades',
 			'required'  => false,
 		),
@@ -277,3 +291,38 @@ function topshop_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'topshop_register_required_plugins' );
+
+/**
+ * Register a custom Post Categories ID column
+ */
+function topshop_edit_cat_columns( $topshop_cat_columns ) {
+    $topshop_cat_in = array( 'cat_id' => 'Category ID <span class="cat_id_note">For the Default Slider</span>' );
+    $topshop_cat_columns = topshop_cat_columns_array_push_after( $topshop_cat_columns, $topshop_cat_in, 0 );
+    return $topshop_cat_columns;
+}
+add_filter( 'manage_edit-category_columns', 'topshop_edit_cat_columns' );
+
+/**
+ * Print the ID column
+ */
+function topshop_cat_custom_columns( $value, $name, $cat_id ) {
+    if( 'cat_id' == $name ) 
+        echo $cat_id;
+}
+add_filter( 'manage_category_custom_column', 'topshop_cat_custom_columns', 10, 3 );
+
+/**
+ * Insert an element at the beggining of the array
+ */
+function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
+    if ( is_int( $pos ) ) {
+        $R = array_merge( array_slice( $src, 0, $pos + 1 ), $topshop_cat_in, array_slice( $src, $pos + 1 ) );
+    } else {
+        foreach ( $src as $k => $v ) {
+            $R[$k] = $v;
+            if ( $k == $pos )
+                $R = array_merge( $R, $topshop_cat_in );
+        }
+    }
+    return $R;
+}

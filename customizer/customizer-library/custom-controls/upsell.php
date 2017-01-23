@@ -23,8 +23,7 @@ class Customizer_Library_Upsell extends WP_Customize_Control {
 	public function render_content() {
 		?>
 		<div class="kaira-upsell">
-			<a href="<?php echo admin_url( 'themes.php?page=theme_info' ); ?>" target="_blank" class="kaira-upsell-btn"><?php echo __( 'Get TopShop Premium', 'topshop' ); ?></a>
-            <div class="kaira-upsell-desc"><?php echo __( 'View the <a href="https://kairaweb.com/theme/topshop/#premium-features" target="_blank">TopShop Premium features</a>', 'topshop' ); ?></div>
+            <div class="kaira-upsell-desc"><?php echo wp_kses_post( $this->description ); ?></div>
 		</div>
 		<?php
 	}
