@@ -14,7 +14,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <div class="entry-datetop">
-			<?php the_time('l, F jS, Y') ?>
+			<?php the_time( get_option( 'date_format' ) ); ?>
 		</div><!-- .entry-datetop -->
 	</header><!-- .entry-header -->
     

@@ -99,7 +99,7 @@ https://en-gb.wordpress.org/plugins/wp-instagram-widget/
 
 == Changelog ==
 
-0.0.3 Fixes for WordPress.org
+0.0.4 Fixes for WordPress.org
 
 0.0.1
 Initial Release

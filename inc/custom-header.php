@@ -15,13 +15,22 @@ function anissa_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '495762',
 		'width'                  => 1600,
-		'height'                 => 420,
-		'default-image' => get_template_directory_uri() . '/img/header.jpg',
+		'height'                 => 420,		
+		'default-image'      => get_parent_theme_file_uri( '/img/header.jpg' ),
 		'flex-height'            => true,
 		'wp-head-callback'       => 'anissa_header_style',
 		'admin-head-callback'    => 'anissa_admin_header_style',
 		'admin-preview-callback' => 'anissa_admin_header_image',
 	) ) );
+	
+	register_default_headers( array(
+		'default-image' => array(
+			'url'           => '%s/img/header.jpg',
+			'thumbnail_url' => '%s/img/header.jpg',
+			'description'   => __( 'Default Header Image', 'anissa' ),
+		),
+	) );
+	
 }
 add_action( 'after_setup_theme', 'anissa_custom_header_setup' );
 

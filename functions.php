@@ -83,6 +83,8 @@ function anissa_setup() {
 	add_theme_support( 'custom-background', apply_filters( 'anissa_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
+	
+	
 }
 endif; // anissa_setup
 add_action( 'after_setup_theme', 'anissa_setup' );

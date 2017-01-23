@@ -61,7 +61,7 @@
     <div class="item">
         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'carousel-pic' ); ?></a>
          <div class="entry-dateslide">
-			<?php the_time('l, F jS, Y') ?>
+			<?php the_time( get_option( 'date_format' ) ); ?>
 		</div><!-- .entry-datetop -->
         <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
     </div>
