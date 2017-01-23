@@ -18,7 +18,7 @@
 		<div class="entry-meta">
 			<?php semplicemente_posted_on(); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><i class="fa fa-comments-o spaceRight"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'semplicemente' ), esc_html__( '1 Comment', 'semplicemente' ), esc_html__( '% Comments', 'semplicemente' ) ); ?></span>
+				<span class="comments-link"><i class="fa fa-comments-o spaceRight" aria-hidden="true"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'semplicemente' ), esc_html__( '1 Comment', 'semplicemente' ), esc_html__( '% Comments', 'semplicemente' ) ); ?></span>
 			<?php endif; ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -42,17 +42,17 @@
 			if ( ! semplicemente_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-tags"></i>%2$s</div>';
+					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-tags" aria-hidden="true"></i>%2$s</div>';
 				} else {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-link"></i><a href="%3$s" rel="bookmark">%3$s</a>.</div>';
+					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-link" aria-hidden="true"></i><a href="%3$s" rel="bookmark">%3$s</a>.</div>';
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o"></i>%1$s<br/><i class="fa spaceRight fa-tags"></i>%2$s</div>';
+					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>%1$s<br/><i class="fa spaceRight fa-tags" aria-hidden="true"></i>%2$s</div>';
 				} else {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o"></i>%1$s</div>';
+					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>%1$s</div>';
 				}
 
 			} // end check for categories on this blog
@@ -65,6 +65,6 @@
 			);
 		?>
 
-		<?php edit_post_link( esc_html__( 'Edit', 'semplicemente' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'semplicemente' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight" aria-hidden="true"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

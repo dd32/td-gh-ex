@@ -19,7 +19,7 @@
 		<div class="entry-meta">
 			<?php semplicemente_posted_on(); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><i class="fa fa-comment-o spaceRight"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'semplicemente' ), esc_html__( '1 Comment', 'semplicemente' ), esc_html__( '% Comments', 'semplicemente' ) ); ?></span>
+				<span class="comments-link"><i class="fa fa-comment-o spaceRight" aria-hidden="true"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'semplicemente' ), esc_html__( '1 Comment', 'semplicemente' ), esc_html__( '% Comments', 'semplicemente' ) ); ?></span>
 			<?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -36,9 +36,9 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">	
-		<?php edit_post_link( esc_html__( 'Edit', 'semplicemente' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'semplicemente' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight" aria-hidden="true"></i>', '</span>' ); ?>
 		<div class="readMoreLink">
-			<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'semplicemente') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
+			<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'semplicemente') ?><i class="fa spaceLeft fa-angle-double-right" aria-hidden="true"></i></a>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

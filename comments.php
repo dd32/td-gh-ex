@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 					'style'      => 'ol',
 					'short_ping' => true,
 					'avatar_size' => '70',
-					'reply_text'        =>  '<small>' .esc_html__( 'Reply'  , 'semplicemente' ) . '<i class="fa fa-level-down spaceLeft"></i></small>',
+					'reply_text'        =>  '<small>' .esc_html__( 'Reply'  , 'semplicemente' ) . '<i class="fa fa-level-down spaceLeft" aria-hidden="true"></i></small>',
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -44,8 +44,8 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'semplicemente' ); ?></h1>
-			<div class="nav-previous"><i class="fa spaceRight fa-angle-double-left"></i><?php previous_comments_link( esc_html__( 'Older Comments', 'semplicemente' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'semplicemente' ) ); ?><i class="fa spaceLeft fa-angle-double-right"></i></div>
+			<div class="nav-previous"><i class="fa spaceRight fa-angle-double-left" aria-hidden="true"></i><?php previous_comments_link( esc_html__( 'Older Comments', 'semplicemente' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'semplicemente' ) ); ?><i class="fa spaceLeft fa-angle-double-right" aria-hidden="true"></i></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 

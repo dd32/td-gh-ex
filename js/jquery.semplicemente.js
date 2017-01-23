@@ -1,17 +1,14 @@
 (function($) {
 	"use strict";
-	
 	$(document).ready(function() {
-	
 		/*-----------------------------------------------------------------------------------*/
 		/*  Top Search Button
 		/*-----------------------------------------------------------------------------------*/ 
-		$('.top-search').click(function() {
-			$('.topSearchForm').slideToggle('fast');
-			$(this).toggleClass("active");
-			return false;
-		});
-		
+			$('.top-search').click(function() {
+				$('.topSearchForm').slideToggle('fast');
+				$(this).toggleClass("active");
+				return false;
+			});
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
@@ -20,7 +17,6 @@
 			} else {
 				$('.main-navigation .menu-item-home:first-child > a').prepend('<i class="fa fa-home spaceRight"></i>');
 			}
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
@@ -46,7 +42,5 @@
 					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
 				}
 			});
-
 	});
-	
 })(jQuery);
