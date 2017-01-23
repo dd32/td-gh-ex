@@ -80,6 +80,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.9
+* Fixed comment error
+Premium: Added setting to change Title bar background color
+Premium: Added setting to remove page titles
+
 #### 1.2.8
 * WooCommerce styling fixes/tweaks
 * Customizer javascript fix
