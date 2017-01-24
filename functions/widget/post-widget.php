@@ -10,7 +10,7 @@ class wdl_post_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'wdl_post_widget', // Base ID
-			__('Spasalon : Latest Posts', 'spasalon'), // Name
+			__('WBR : Latest Posts', 'spasalon'), // Name
 			array( 'description' => __( 'Latest Post Widget', 'spasalon' ), ) // Args
 		);
 	}

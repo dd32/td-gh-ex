@@ -19,7 +19,7 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 			'wbr_feature_page_widget', // Base ID
 			
-			__('Spasalon : Page Widget', 'spasalon'), // Name
+			__('WBR : Page Widget', 'spasalon'), // Name
 			
 			array( 'description' => __( 'Feature Page Item Widget', 'spasalon'), ) // Args
 			

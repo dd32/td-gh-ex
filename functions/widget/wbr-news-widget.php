@@ -21,7 +21,7 @@ class wbr_news_widget extends WP_Widget{
 		
 			'wbr_news_widget', // Base ID
 			
-			__('Spasalon : Latest News Widget', 'spasalon'), // Name
+			__('WBR : Recent News Widget', 'spasalon'), // Name
 			
 			array( 'description' => __( 'To display your recent post', 'spasalon'), ) // Args
 			
