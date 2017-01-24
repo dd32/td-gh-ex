@@ -12,18 +12,18 @@
 ?>
 
 <?php get_header(); ?>
-    <?php if ( of_get_option( 'bestreloaded_display_intro_text', 'no entry' ) ) : ?>
+    <?php if ( get_theme_mod( 'bestreloaded_display_intro_text' ) && get_theme_mod( 'bestreloaded_intro_text') ) : ?>
         <div class="row">
-            <div class="col-xs-12 text-center">
-                <p class="hero-p"><?php echo ( of_get_option( 'bestreloaded_intro_text', 'no entry' ) ) ?></p>
+            <div class="col-sm-12 text-center">
+                <p class="hero-p"><?php echo ( get_theme_mod( 'bestreloaded_intro_text' ) ) ?></p>
                 <hr class="hr-row-divider">
             </div><!-- end .col-xs-12 -->
         </div><!-- end .row -->
     <?php endif; ?>
     <div id="main_content" role="main">
         <div class="row">
-            <div class="col-sm-9">
-                <div id="carousel-example-generic" class="carousel slide">
+            <div class="col-md-9">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
 				    <ol class="carousel-indicators">
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -32,16 +32,18 @@
 				    </ol>
 
 				    <!-- Wrapper for slides -->
-    				<div class="carousel-inner">
+    				<div class="carousel-inner" role="listbox">
     				    <?php get_template_part( 'loop', 'slides' ); ?>
     				</div>
 
 					<!-- Controls -->
-					<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-						<span class="icon-prev"></span>
+					<a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
 					</a>
-					<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-						<span class="icon-next"></span>
+					<a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
 					</a>
 				</div>
 	            <hr class="hr-row-divider">

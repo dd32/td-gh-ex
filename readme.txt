@@ -1,9 +1,23 @@
-Enjoy the theme!
+=== Theme Name ===
+Contributors: williampatton
+Tags: left-sidebar, right-sidebar, custom-colors, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
+Requires at least: 4.3
+Tested up to: 4.7
+Stable tag: 0.8
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This theme uses Bootstrap v3.3.5 styles and scripts. It is under an MIT licence (GPL compatible)
-This theme uses the Theme Options Framework from @devinsays. It is under an MIT licence (GPL compatible)
+A Bootstrap 4 powered theme
 
-Topbar menu: This menu uses bootstrap markup and function exclusively.
-    That means that the menu has a max-dropdown level of 1 and if
-    there is a dropdown the parent link becomes '#' and acts as the
-    target to open the dropdown.
+== Description ==
+Theme desc.
+
+== Frequently Asked Questions ==
+
+= A question that someone might have =
+
+An answer to that question.
+
+== Resources ==
+* Bootstrap styles and scripts © 2011-2017 theBootstrap Authors and Twitter, Inc, Code relseased under MIT Licence
+* Tether.io © 2014-2017 HubSpot - MIT License

@@ -22,12 +22,7 @@ require 'inc/custom-posts.php';
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
 
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-
-// Loads options.php from child or parent theme
-$optionsfile = locate_template( 'options.php' );
-load_template( $optionsfile );
+require 'inc/customizer.php';
 
 // Move the Jetpack social share buttons to the beginning of the post, this is to allow for the float effect
 function pwwp_jptweak_remove_share() {
@@ -117,4 +112,41 @@ function optionsframework_custom_scripts() { ?>
     </script>
 
 <?php
+}
+
+//Filtering a Class in Navigation Menu Item
+//add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+	// check if the item has children
+	$hasChildren = (in_array('menu-item-has-children', $item->classes));
+	if ($hasChildren) {
+		if(!is_array($classes)){
+			$classes = array();
+		}
+		$classes[] = 'dropdown';
+	}
+    $classes[] = 'nav-item';
+
+    return $classes;
+}
+
+function add_class_to_items_link( $atts, $item, $args ) {
+	$atts['class'] .= $atts['class'] . ' nav-link';
+  // check if the item has children
+  $hasChildren = (in_array('menu-item-has-children', $item->classes));
+  if ($hasChildren) {
+    // add the desired attributes:
+    $atts['class'] .= $atts['class'] . ' dropdown-toggle';
+    $atts['data-toggle'] = 'dropdown';
+    $atts['aria-haspopup'] = 'true';
+	$atts['aria-expanded'] = 'false';
+  }
+  return $atts;
+}
+
+// this is a wrapper function for get_option - added for backwards compatibility
+// as the original of_get_option was removed along with it's theme options
+// framework
+function of_get_option($key = false, $default = false){
+	return get_option( $key );
 }
