@@ -3,8 +3,6 @@ add_action( 'customize_register', 'weblizar_gl_customizer' );
 
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
-	wp_enqueue_style('snow-css',  get_template_directory_uri() .'/css/snow.css');?>
-	<div id="snow"><?php
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -1246,9 +1244,7 @@ $wp_customize->add_section(
 				'section'  => 'enigma_more',
 				'settings' => 'enigma_more',
 				'priority' => 1,
-			) ) ); ?>
-			</div>
-<?php		
+			) ) ); 		
 }
 function enigma_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );

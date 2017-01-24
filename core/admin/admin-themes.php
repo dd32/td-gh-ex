@@ -12,7 +12,6 @@ function weblizar_admin_info(){
 	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
 	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome-4.7.0/css/font-awesome.css');
-	wp_enqueue_style('snow-css',  get_template_directory_uri() .'/css/snow.css');
 
 	//JS
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/core/admin/bootstrap/js/bootstrap.min.js');
@@ -27,9 +26,17 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 <div class="wrapper">
 <!-- Header -->
 <header>
-<div id="snow"></div>
-<div class="p-header-bg">
-	<img src="<?php echo get_template_directory_uri(); ?>/images/enigma-banner.png" class="img-responsive" style="width:100%;height:auto;" alt=""/>
+<div class="container-fluid p_header">
+	<div class="container">
+		<div class="row p_head">
+		<div class="col-md-4"></div>
+			<div class="col-md-4">
+			<img style="width:268px;height:193px" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo">
+				
+			</div>
+		<div class="col-md-4"></div>	
+		</div>
+	</div>
 </div>
 <nav class="navbar navbar-default menu">
 		<div class="container-fluid">
