@@ -11,7 +11,7 @@
 	function __construct() {
 		parent::__construct(
 			'appointment_info_callout', // Base ID
-			'Appointment Info Widget', // Widget Name
+			__('WBR : Info Widget','appointment'), // Widget Name
 			array(
 				'classname' => 'appointment_info_widget',
 				'description' => __('Appointment theme information widget.','appointment'),
