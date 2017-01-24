@@ -18,7 +18,7 @@ if (!function_exists('suevafree_aside_format_function')) {
 
         <div class="post-article aside">
         
-            <?php the_excerpt(); ?> 
+            <?php do_action('suevafree_after_content'); ?> 
         
         </div>
         

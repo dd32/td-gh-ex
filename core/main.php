@@ -631,45 +631,52 @@ if (!function_exists('suevafree_customize_excerpt_more')) {
 
 	function suevafree_customize_excerpt_more( $excerpt ) {
 	
-		global $post,$more;
+		global $post;
 
-		$allowed = array(
-			'span' => array(
-				'class' => array(),
-			),
-		);
+		if ( suevafree_is_single() ) :
 
-		$more = 0;
-		
-		$class = 'button ' . suevafree_setting('suevafree_readmore_layout');
-		$button = esc_html__('Read More','suevafree');
-		$container = 'class="read-more"';
+			return $excerpt;
 
-		if ( suevafree_setting('suevafree_readmore_layout') == "default" || !suevafree_setting('suevafree_readmore_layout') ) : 
-		
-			$class = 'button default';
+		else:
+
+			$allowed = array(
+				'span' => array(
+					'class' => array(),
+				),
+			);
+	
+			$class = 'button ' . suevafree_setting('suevafree_readmore_layout');
 			$button = esc_html__('Read More','suevafree');
 			$container = 'class="read-more"';
-
-		else :
-
-			$class = 'nobutton';
-			$button = ' [&hellip;] ';
-			$container = '';
-
-		endif;
 	
-		if ($pos=strpos($post->post_content, '<!--more-->')): 
+			if ( suevafree_setting('suevafree_readmore_layout') == "default" || !suevafree_setting('suevafree_readmore_layout') ) : 
+			
+				$class = 'button default';
+				$button = esc_html__('Read More','suevafree');
+				$container = 'class="read-more"';
+	
+			else :
+	
+				$class = 'nobutton';
+				$button = ' [&hellip;] ';
+				$container = '';
+	
+			endif;
 		
-			$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
-		
-		else:
-		
-			$content = $excerpt;
+			if ($pos=strpos($post->post_content, '<!--more-->')): 
+			
+				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+			
+			else:
+			
+				$content = $excerpt;
+	
+			endif;
+	
+			return $content. '<a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','suevafree').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a>';
 
 		endif;
-
-		return $content. '<a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','suevafree').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a>';
+		
 
 	}
 	
