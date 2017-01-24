@@ -4,7 +4,7 @@ Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
 Author: Ydesignservices
 Author URI: http://www.ydesignservices.com/
 Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
-Version: 1.7
+Version: 1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
@@ -363,7 +363,6 @@ form.qt_cart{display:inline-block;}
 .review-text p{margin:0; vertical-align:middle;}
 .single-product .page-header{display:none;}
 .woocommerce .quantity input[type=number]::-webkit-inner-spin-button{background:url(images/incresendicrese.jpg) no-repeat; width:18px; height:33px; position: relative; right:0px;}
- 
 /* Contact
 ============================================= */
 .contact_wrap{padding:0;}

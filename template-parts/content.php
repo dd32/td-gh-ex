@@ -14,7 +14,14 @@
           </div><!--entry-meta-->
                </div><!--entry-header-->
                <div class="entry-content">
-               <?php if ( is_single() ) : the_content(); else : ?>
+               <?php if ( is_single() ) : the_content(); 
+			    wp_link_pages( array(
+							'before'      => '<div class="page-links"><span class="page-links-title">'.__( 'Pages:', 'abaya').'</span>',
+							'after'       => '</div>',
+							'link_before' => '<span>',
+							'link_after'  => '</span>',
+							) );
+			   else : ?>
                  <?php the_excerpt(); ?>
                   <a href="<?php the_permalink(); ?>" class="btn" id="blog-btn"><?php _e('Read More','abaya'); ?></a>
                   <?php endif; ?>

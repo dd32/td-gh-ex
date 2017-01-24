@@ -1,16 +1,18 @@
 # Copyright (C) 2017 the WordPress team
 # This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Abaya 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/abaya\n"
-"POT-Creation-Date: 2015-07-27 19:47:38+00:00\n"
+"POT-Creation-Date: 2017-01-23 14:41+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: 404.php:24
 msgid "Oops!"
@@ -32,7 +34,7 @@ msgstr ""
 msgid "Author Archives"
 msgstr ""
 
-#: archive.php:49 index.php:46 
+#: archive.php:49 index.php:46
 msgid "Previous page"
 msgstr ""
 
@@ -49,43 +51,41 @@ msgid "Comments are closed"
 msgstr ""
 
 #. translators: %s: Name of current post
-#:content.php:11
+#: single.php:38
 msgid "Posted On"
 msgstr ""
 
-#:content.php:11
 msgid "By"
 msgstr ""
 
-#:content.php:13
 msgid "No Comments"
 msgstr ""
 
-#:content.php:13
+#: single.php:43
 msgid "One Comment"
 msgstr ""
 
-#:content.php:20
 msgid "Read More"
 msgstr ""
 
-#:content-page.php:11
 msgid "Pages:"
 msgstr ""
 
 #: content-none.php:6
 msgid ""
-"Ready to publish your first post? <a href="%1$s">Get started here</a>."
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:8
 msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some different keywords."
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: content-none.php:11
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: abaya-activate.php:11
@@ -100,25 +100,19 @@ msgstr ""
 msgid "Color Filters for WooCommerce"
 msgstr ""
 
-#: flexslider.php:14 flexslider.php:31
+#: flexslider.php:14 flexslider.php:31 customizer.php:31
 msgid "Click Here"
 msgstr ""
 
-#: customizer.php:31
-msgid "Click Here"
+#: footer.php:60
+msgid "WordPress Theme by"
 msgstr ""
 
-#. #-#-#-#-#  abaya.pot (Abaya 1.0)  #-#-#-#-#
-#. Author URI of the plugin/theme
-#: footer.php:25
-msgid "https://wordpress.org/"
+#: footer.php:59
+msgid "Y Design Services"
 msgstr ""
 
-#: footer.php:25
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: functions.php:85
+#: functions.php:85 includes/theme_setup.php:20
 msgid "Primary Menu"
 msgstr ""
 
@@ -199,8 +193,8 @@ msgstr ""
 
 #: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
 msgid ""
-"Abaya requires at least WordPress version 4.1. You are running "
-"version %s. Please upgrade and try again."
+"Abaya requires at least WordPress version 4.1. You are running version %s. "
+"Please upgrade and try again."
 msgstr ""
 
 #: includes/customizer.php:6
@@ -215,7 +209,7 @@ msgstr ""
 msgid "Copyright text"
 msgstr ""
 
-#: includes/customizer.php:48
+#: includes/customizer.php:48 includes/customizer.php:114
 msgid "Banner Image Change"
 msgstr ""
 
@@ -229,10 +223,6 @@ msgstr ""
 
 #: includes/customizer.php:98 includes/customizer.php:164
 msgid "Button Url"
-msgstr ""
-
-#: includes/customizer.php:114
-msgid "Banner Image Change"
 msgstr ""
 
 #: includes/customizer.php:179
@@ -291,15 +281,11 @@ msgstr ""
 msgid "Header Top Menu"
 msgstr ""
 
-#: includes/theme_setup.php:20
-msgid "Primary Menu"
-msgstr ""
-
 #: includes/theme_setup.php:21
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/widgets.php:8
+#: includes/widgets.php:8 includes/widgets.php:55
 msgid "Primary Sidebar"
 msgstr ""
 
@@ -319,10 +305,6 @@ msgstr ""
 msgid "Footer Column One"
 msgstr ""
 
-#: includes/widgets.php:55
-msgid "Primary Sidebar"
-msgstr ""
-
 #: includes/widgets.php:65
 msgid "Footer Column Three"
 msgstr ""
@@ -340,17 +322,8 @@ msgstr ""
 msgid "Search Results: %s"
 msgstr ""
 
-#: single.php:38
-msgid "Posted On"
-msgstr ""
-
 #: single.php:40
 msgid "Written by"
-msgstr ""
-
-#: single.php:43
-msgid "No Comments"
-msgid "One Comment"
 msgstr ""
 
 #: single.php:58
@@ -380,11 +353,11 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Our 2015 default theme is clean, blog-focused, and designed for clarity. "
-"Abaya's simple, straightforward typography is readable on a wide "
-"variety of screen sizes, and suitable for multiple languages. We designed it "
-"using a mobile-first approach, meaning your content takes center-stage, "
-"regardless of whether your visitors arrive by smartphone, tablet, laptop, or "
-"desktop computer."
+"Abaya's simple, straightforward typography is readable on a wide variety of "
+"screen sizes, and suitable for multiple languages. We designed it using a "
+"mobile-first approach, meaning your content takes center-stage, regardless "
+"of whether your visitors arrive by smartphone, tablet, laptop, or desktop "
+"computer."
 msgstr ""
 
 #. Author of the plugin/theme

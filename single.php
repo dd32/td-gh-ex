@@ -47,6 +47,14 @@ if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_
                <div class="entry-content">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <?php the_content(); ?>
+                <?php
+                wp_link_pages( array(
+							'before'      => '<div class="page-links"><span class="page-links-title">'.__( 'Pages:', 'abaya').'</span>',
+							'after'       => '</div>',
+							'link_before' => '<span>',
+							'link_after'  => '</span>',
+							) );
+				?>
                </div><!--entry-content-->
              </div><!--post-->
              <div class="commentsection">
