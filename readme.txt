@@ -179,3 +179,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 * Updated skip-link-focus and navigation scripts
 * Updated some scripts in the way to detect a mobile device
 * Minor bug fixes
+
+= Version 1.5.2 =
+* Minor bug fixes
