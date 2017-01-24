@@ -16,7 +16,7 @@ if (!function_exists('alhenalite_after_content_function')) {
 	
 		if ( ! alhenalite_is_single() ) :
 			
-			do_action('alhenalite_excerpt');
+			the_excerpt(); 
 	
 		else: 
 			

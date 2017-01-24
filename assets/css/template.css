@@ -251,6 +251,10 @@ span.error {
 	overflow:hidden;
 }
 
+div.sharedaddy {
+	margin-top:40px;
+}
+
 .read-more { 
 	display:block;
 	margin:30px 0 -15px 0;

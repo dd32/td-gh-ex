@@ -411,6 +411,42 @@ if (!function_exists('alhenalite_hide_excerpt_more')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Customize excerpt more */
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('alhenalite_customize_excerpt_more')) {
+
+	function alhenalite_customize_excerpt_more( $excerpt ) {
+	
+		global $post, $more;
+
+		$allowed = array(
+			'span' => array(
+				'class' => array(),
+			),
+		);
+
+		$more = 0;
+	
+		if ($pos=strpos($post->post_content, '<!--more-->')): 
+		
+			$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+		
+		else:
+		
+			$content = $excerpt;
+
+		endif;
+
+		return $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . __( "Read More", "alhena-lite") . ' </span> </a>';
+
+	}
+	
+	add_filter( 'get_the_excerpt', 'alhenalite_customize_excerpt_more' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Remove category list rel */
 /*-----------------------------------------------------------------------------------*/   
 
