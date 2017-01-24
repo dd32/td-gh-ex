@@ -8,14 +8,11 @@ $subheading = get_theme_mod('aza_blog_subtitle');
 $separator_top = get_theme_mod('aza_separator_blog_top', '1');
 $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 
-$args = array (
-    'posts_per_page' => 3,
-);
 
 ?>
 <section id="blog">
     <?php if( ! empty( $heading ) || ! empty( $subheading ) ) { ?>
-        <div class="container">
+        <div class="container title-subtitle-container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 text-center">
                     <?php
@@ -28,28 +25,28 @@ $args = array (
                     }
 
                     if( ! empty( $subheading ) ) {
-                        echo '<p class="blog-p">'. esc_html( $subheading ) .'</p>';
+                        echo '<p class="section-subheading">'. esc_html( $subheading ) .'</p>';
                     }
                     ?>
                 </div>
             </div>
         </div>
-    <?php } ?>
+    <?php }  ?>
 
-    <div class="container">
-        <div class="row row-centered text-center">
+    <div class="container posts-container">
+        <div class="row">
 
 
-            <?php $the_query = new WP_Query( $args );
-            if ( $the_query->have_posts() ) {
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
+            <?php
+            $posts_number = get_theme_mod('aza_blog_posts_number', 3);
+            $loop = new WP_Query( array( 'posts_per_page' => $posts_number, 'ignore_sticky_posts' => true ) );
+            if ( $loop->have_posts() ) {
+                while ( $loop->have_posts() ) {
+                    $loop->the_post();
                     get_template_part( 'template-parts/blog-posts', get_post_format() );
                 }
-                wp_reset_postdata();
             } else {
-                get_template_part( 'template-parts/content', 'none' );
-                wp_reset_query();
+                    get_template_part( 'template-parts/content', 'none' );
             } ?>
         </div>
 

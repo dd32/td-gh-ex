@@ -11,13 +11,18 @@
  *
  * @package aza-lite
  */
+if( is_active_sidebar( 'sidebar-1' ) ) {
+    $class_to_add = "col-md-8";
+} else {
+    $class_to_add = "col-md-8 col-md-offset-2";
+}
 
 get_header(); ?>
 
 <div class="blog-content-wrapper">
     <div class="container blog-content">
         <div class="row">
-            <div id="primary" class="content-area col-md-9">
+            <div id="primary" class="content-area <?php echo esc_attr( $class_to_add ); ?>">
                 <main id="main" class="site-main" role="main">
                     <?php if ( have_posts() ) :
 
@@ -46,9 +51,11 @@ get_header(); ?>
                 </main><!-- #main -->
             </div><!-- #primary -->
 
-            <div class="col-md-3">
-                <?php get_sidebar(); ?>
-            </div>
+            <?php if( is_active_sidebar( 'sidebar-1' ) ) { ?>
+                <div class="col-md-3 col-md-offset-1">
+                    <?php get_sidebar( 'sidebar-1' ); ?>
+                </div>
+            <?php } ?>
 
         </div>
     </div>

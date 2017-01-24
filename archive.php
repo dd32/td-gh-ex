@@ -13,7 +13,11 @@ get_header(); ?>
     
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
+                <?php if( is_active_sidebar( 'sidebar-1' ) ) { ?>
+                <div class="col-md-8">
+                    <?php } else { ?>
+                    <div class="col-md-8 col-md-offset-2">
+                        <?php } ?>
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main" role="main">
 
@@ -55,9 +59,11 @@ get_header(); ?>
                     </div>
                 </div>
                 <!-- #primary -->
-                <div class="col-md-3">
-                    <?php get_sidebar(); ?>
-                </div>
+                    <?php if( is_active_sidebar( 'sidebar-1' ) ) { ?>
+                        <div class="col-md-3 col-md-offset-1">
+                            <?php get_sidebar( 'sidebar-1' ); ?>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
     </div>

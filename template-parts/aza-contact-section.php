@@ -24,7 +24,7 @@ $separator_top = get_theme_mod('aza_separator_contact_top', '1');
                     }
 
                     if(!empty($subheading)) {
-                        echo '<p class = "team-p">'.esc_html( $subheading ).'</p>';
+                        echo '<p class="section-subheading">'.esc_html( $subheading ).'</p>';
                     }?>
                 </div>
             </div>

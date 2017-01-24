@@ -39,11 +39,11 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 	* Images
 	  
-	License:	All unsplash.com and mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
-			
-		*images/background.jpg	
-		*images/team1.jpg		https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6				
-		*images/team2.jpg		https://images.unsplash.com/photo-1444857903073-dda503df5ec5	
-		*images/team3.jpg		https://images.unsplash.com/photo-1429117257281-73c32df3dcdc
-		*images/team4.jpg		https://images.unsplash.com/photo-1420578509940-73e9f7232eae
-			
+        - License:	All unsplash.com and mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+
+        - Screenshot images:
+                Header: https://unsplash.com/photos/2oFdVd00xOg
+                Post 1: https://unsplash.com/photos/RF5sv5dv1Zc
+                Post 2: https://unsplash.com/photos/fHXP17AxOEk
+                Post 3: https://unsplash.com/photos/sxMePtMnSc4
+

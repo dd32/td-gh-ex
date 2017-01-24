@@ -21,7 +21,7 @@
 	<div class="featured-image">
 		<?php
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail('large');
+			the_post_thumbnail();
 		} ?>
 
 	</div>

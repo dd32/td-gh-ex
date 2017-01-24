@@ -12,7 +12,7 @@ $parallax_text = get_theme_mod ('aza_parallax_text');
 
 <section id="parallax">
         <div class="parallax-container">
-            <div class="parallax-background" data-parallax='{"y" : -50}' alt="">
+            <div class="parallax-background" data-parallax='{"y" : 10}'>
             </div>
             <div class="parallax-layer-1" data-parallax='{"y" : 25}'>
             </div>
@@ -32,7 +32,7 @@ $parallax_text = get_theme_mod ('aza_parallax_text');
 
                         <?php
      if(!empty($parallax_text)){
-            echo '<h3>'. esc_html($parallax_text) . '</h3>'; }?>
+            echo '<h3>'. wp_kses_post($parallax_text) . '</h3>'; }?>
                     </div>
                  </div>
             </div>

@@ -51,9 +51,9 @@ $social_icons = get_theme_mod('aza_social_ribbon_icons', json_encode(
                 echo ( $separator ) ? "<hr class='separator'/>" : "";
 
                 if( ! empty( $aza_secondary_header ) ) { ?>
-                    <h3>
+                    <p class="section-subheading">
                         <?php echo esc_html( $aza_secondary_header ); ?>
-                    </h3>
+                    </p>
                 <?php } ?>
             </div>
         </div>

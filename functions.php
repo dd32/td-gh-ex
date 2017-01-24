@@ -7,6 +7,8 @@
  * @package aza-lite
  */
 
+require_once( trailingslashit( get_template_directory() ) . 'inc/wp_bootstrap_navwalker.php' );
+
 if ( ! function_exists( 'aza_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -35,14 +37,17 @@ function aza_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', array(
+		'width'                  => 1920,
+		'height'                 => 1080,
+	) );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'aza-post-small', 360, 200, true );
+	add_image_size( 'aza-post-small', 390, 250, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -78,6 +83,8 @@ function aza_setup() {
 		add_theme_support( 'custom-logo', array(
 			'height'      => 70,
 			'flex-width' => true,
+			'container' => 'div',
+			'container-class' => 'logo-wrapper'
 		) );
 
 		if ( get_theme_mod('aza_logo') ) {
@@ -90,6 +97,7 @@ function aza_setup() {
 
 	}
 
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 
 }
@@ -144,7 +152,7 @@ function aza_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__('Footer left widget', 'aza-lite'),
+		'name'          => esc_html__('Footer right widget', 'aza-lite'),
 		'id'            => 'home_footer_3',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -163,17 +171,13 @@ function aza_scripts() {
 
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
+    wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400,700|Homemade+Apple');
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css','4.6.3' );
-
-	wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.6.3' );
 
 	wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
-
-	wp_enqueue_script( 'aza-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('jquery'), '2.0.2', true );
 
     wp_enqueue_script( 'parallax-scroll', get_template_directory_uri() . '/js/parallax-scroll.js', array('jquery'), '1.0.0', true );
 
@@ -242,6 +246,12 @@ function aza_register_menus() {
 }
 add_action( 'init', 'aza_register_menus' );
 
+function aza_excerpt_more() {
+	$output = '<a href="' . get_the_permalink() . '" class="more-link">'. __(' Read more &raquo;', 'aza-lite' ) . '</a>' ;
+
+	return $output;
+}
+add_filter('excerpt_more', 'aza_excerpt_more');
 
 /**
  * TGMPA register

@@ -151,3 +151,35 @@ button.repeater_general_control_remove_field:hover {
   left: -999999px;
   visibility: hidden;
 }
+
+/***********************************/
+/****** Google fonts Control *******/
+/***********************************/
+.aza-google-fonts-wrap {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border: 1px solid #ddd;
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.aza-google-fonts-wrap label {
+  width: 100%;
+  display: block;
+  clear: left;
+  font-size: 16px;
+  line-height: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.aza-google-fonts-wrap label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.aza-google-fonts-wrap label:hover,
+.aza-google-fonts-wrap label.aza-google-fonts-active {
+  color: #0073aa;
+}

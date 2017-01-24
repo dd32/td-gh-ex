@@ -70,7 +70,7 @@ class AZA_Repeater extends WP_Customize_Control {
 
 	/*Enqueue resources for the control*/
 	public function enqueue() {
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css','4.6.3' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.7.1' );
 
 		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri() . '/inc/customizer-repeater/css/admin-style.css','1.0.0' );
 
