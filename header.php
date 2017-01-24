@@ -84,7 +84,7 @@ if( (bool) $aza_sticky_navbar === true ) {
 <!--header-->
 <header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header site-header">
 	<div class="overlay-layer-nav">
-		<div class="navbar <?php echo esc_attr( $class_to_add ); ?>">
+		<div class="navbar <?php if( ! empty( $class_to_add ) ) { echo esc_attr( $class_to_add ); } ?>">
 			<div class="container">
 				<div class="navbar-header">
 					<!-- LOGO -->
@@ -139,7 +139,7 @@ if( (bool) $aza_sticky_navbar === true ) {
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<?php
 						wp_nav_menu( array(
-							'menu'            => esc_html__( 'Primary Menu', 'aza-lite' ),
+							'menu'            => esc_html__( 'Primary Menu', 'baicus' ),
 							'theme_location'  => 'primary',
 							'depth'           => 2,
 							'menu_class'      => 'nav navbar-nav',

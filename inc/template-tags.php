@@ -148,6 +148,8 @@ function aza_body_classes( $classes ) {
 
 	if( (bool) $aza_sticky_navbar === true ) {
 		return array_merge( $classes, array( 'sticky-navigation' ) );
+	} else {
+		return $classes;
 	}
 };
 
