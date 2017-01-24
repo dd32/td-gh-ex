@@ -46,12 +46,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
 	//Logo Upload
-	$wp_customize->add_setting(
-		'site_logo',
-		array(
-			'default-image' => '',
-		)
-	);
+    $wp_customize->add_setting(	'site_logo', array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -66,12 +65,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
 	//Favicon Upload
-	$wp_customize->add_setting(
-		'site_favicon',
-		array(
-			'default-image' => '',
-		)
-	);
+    $wp_customize->add_setting(	'site_favicon',	array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -86,12 +84,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
     //Apple touch icon 144
-    $wp_customize->add_setting(
-        'apple_touch_144',
-        array(
-            'default-image' => '',
-        )
-    );
+    $wp_customize->add_setting( 'apple_touch_144', array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -106,12 +103,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
     //Apple touch icon 114
-    $wp_customize->add_setting(
-        'apple_touch_114',
-        array(
-            'default-image' => '',
-        )
-    );
+    $wp_customize->add_setting( 'apple_touch_114', array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -126,12 +122,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
     //Apple touch icon 72
-    $wp_customize->add_setting(
-        'apple_touch_72',
-        array(
-            'default-image' => '',
-        )
-    );
+    $wp_customize->add_setting( 'apple_touch_72', array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -146,12 +141,11 @@ function areview_customize_register( $wp_customize ) {
         )
     );
     //Apple touch icon 57
-    $wp_customize->add_setting(
-        'apple_touch_57',
-        array(
-            'default-image' => '',
-        )
-    );
+    $wp_customize->add_setting( 'apple_touch_57', array(
+        'default-image'     => '',
+        'sanitize_callback' => 'areview_sanitize_image',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -247,7 +241,7 @@ function areview_customize_register( $wp_customize ) {
         'carousel_display',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to display the carousel.', 'areview'),
+            'label' => __('Check this box to display the carousel (posts should have Featured Images).', 'areview'),
             'section' => 'areview_carousel',
         )
     );
@@ -734,6 +728,26 @@ function areview_sanitize_review( $input ) {
     } else {
         return '';
     }
+}
+//Images
+function areview_sanitize_image( $image, $setting ) {
+	/*
+	 * Array of valid image file types.
+	 *
+	 * The array includes image mime types that are included in wp_get_mime_types()
+	 */
+    $mimes = array(
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif'          => 'image/gif',
+        'png'          => 'image/png',
+        'bmp'          => 'image/bmp',
+        'tif|tiff'     => 'image/tiff',
+        'ico'          => 'image/x-icon'
+    );
+	// Return an array with file extension and mime_type.
+    $file = wp_check_filetype( $image, $mimes );
+	// If $image has a valid mime_type, return it; otherwise, return the default.
+    return ( $file['ext'] ? $image : $setting->default );
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

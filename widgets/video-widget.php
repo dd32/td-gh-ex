@@ -3,9 +3,9 @@
 class aReview_Video_Widget extends WP_Widget {
 
 // constructor
-    function areview_video_widget() {
+    function __construct() {
 		$widget_ops = array('classname' => 'areview_video_widget_widget', 'description' => __( 'Display a video in your sidebar.', 'areview') );
-        parent::WP_Widget(false, $name = __('aReview: Video', 'areview'), $widget_ops);
+        parent::__construct(false, $name = __('aReview: Video', 'areview'), $widget_ops);
 		$this->alt_option_name = 'areview_video_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

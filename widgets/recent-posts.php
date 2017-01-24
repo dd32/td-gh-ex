@@ -3,9 +3,9 @@
 class aReview_Recent_Posts extends WP_Widget {
 
 // constructor
-    function areview_recent_posts() {
+    function __construct() {
 		$widget_ops = array('classname' => 'areview_recent_posts_widget', 'description' => __( 'Display your site&#8217;s recent posts with thumbnails.', 'areview') );
-        parent::WP_Widget(false, $name = __('aReview: Recent Posts', 'areview'), $widget_ops);
+        parent::__construct(false, $name = __('aReview: Recent Posts', 'areview'), $widget_ops);
 		$this->alt_option_name = 'areview_recent_posts_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
