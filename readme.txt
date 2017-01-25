@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.5 | 24th January 2017 =
+* Update: Fitvids.
+* Update: Css.
+
 = Version 2.8.4 | 24th October 2016 =
 * Update: new version number.
 
