@@ -13,11 +13,7 @@ class IGthemes_Welcome {
         add_action( 'admin_menu', array( $this, 'igthemes_welcome_register_menu' ) );
         add_action( 'load-themes.php', array( $this, 'igthemes_activation_admin_notice' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'igthemes_welcome_style' ) );
-
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_tabs' ), 10 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 20 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_wp_resources' ), 30 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_sysinfo' ), 40 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 10 );
     } // end constructor
 
     /**
@@ -56,7 +52,6 @@ class IGthemes_Welcome {
     public function igthemes_welcome_style( $hook_suffix ) {
         if ( 'appearance_page_igthemes-welcome' == $hook_suffix ) {
             wp_enqueue_style( 'igthemes-welcome-screen', get_template_directory_uri() . '/inc/admin/welcome/css/welcome.css', '1.0' );
-            wp_enqueue_script( 'igthemes-welcome-tab-script',  get_template_directory_uri() . '/inc/admin/welcome/js/tab.js' , '1.0' );
         }
     }
 
@@ -71,9 +66,6 @@ class IGthemes_Welcome {
      * The welcome screen
      */
     public function igthemes_welcome_screen() {
-        require_once( ABSPATH . 'wp-load.php' );
-        require_once( ABSPATH . 'wp-admin/admin.php' );
-        require_once( ABSPATH . 'wp-admin/admin-header.php' );
         ?>
         <div class="wrap about-wrap">
             <?php do_action( 'igthemes_welcome' ); ?>
@@ -82,28 +74,10 @@ class IGthemes_Welcome {
     }
 
     /**
-     * Welcome screen tabs
-     */
-    public function igthemes_welcome_tabs() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/tabs.php' );
-    }
-    /**
      * Welcome screen getting started
      */
     public function igthemes_welcome_getting_started() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/getting-started.php' );
-    }
-    /**
-     * Welcome screen free resource
-     */
-    public function igthemes_welcome_wp_resources() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/wp-resources.php' );
-    }
-    /**
-     * Welcome screen system info
-     */
-    public function igthemes_welcome_sysinfo() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/system-info.php' );
+        require dirname( __FILE__ ) . '/sections/getting-started.php';
     }
 
 }

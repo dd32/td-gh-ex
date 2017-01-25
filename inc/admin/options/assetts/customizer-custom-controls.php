@@ -48,15 +48,17 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <?php endif; ?>
             <p>
-                <?php esc_html_e( 'Base WP Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?>
+                <?php esc_html_e( 'Basic Shop Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?>
             <ul>
-                <li><?php esc_html_e( 'All options enabled', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'More advanced options', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'New fonts', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Shop customizer', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Custom widgets', 'base-wp' ); ?></li>
-                <li><?php esc_html_e( 'Custom page and post settings', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'New post and page settings', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Premium support', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'base-wp' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/base-wp' ); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('upgrade to premium', 'base-wp'); ?>
             </a>
             </p>
@@ -66,25 +68,6 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <?php printf( esc_html__( 'Why not leave us a review on %sWordPress.org%s?  We\'d really appreciate it!', 'base-wp' ), '<a href="https://wordpress.org/themes/base-wp">', '</a>' ); ?>
             </p>
 
-        <?php
-    }
-}
-/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
- * ONLY PREMIUM CONTROL
-**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-class IGthemes_Only_Premium extends WP_Customize_Control {
-    
-    //Render the content on the theme customizer page
-    public function render_content() { ?>
-            <?php if ( ! empty( $this->label ) ) : ?>
-                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <?php endif; ?>
-            <span class="customize-control-description">
-                <?php echo esc_html( $this->description ); ?>
-                <a href="<?php echo esc_url('http://www.iograficathemes.com/downloads/base-wp-premium/'); ?>">
-                    <?php esc_html_e( ' - only premium', 'base-wp' ); ?>
-                </a>
-            </span>
         <?php
     }
 }
@@ -100,7 +83,7 @@ class IGthemes_Heading extends WP_Customize_Control {
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif; ?>
         <?php if ( ! empty( $this->description ) ) : ?>
-            <span class="customize-control-description"><?php _e( $this->description );  ?></span>
+            <span class="customize-control-description"><?php echo $this->description; ?></span>
         <?php endif; ?>
     <?php
     }

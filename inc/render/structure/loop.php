@@ -20,11 +20,8 @@ if ( ! function_exists( 'igthemes_item_header' ) ) {
         the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php igthemes_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		<div class="entry-meta"><?php igthemes_posted_on(); ?></div><!-- .entry-meta -->
+		<?php endif; ?>
           
 	   </header><!-- .entry-header -->
    <?php }
@@ -35,15 +32,11 @@ if ( ! function_exists( 'igthemes_item_header' ) ) {
 if ( ! function_exists( 'igthemes_item_image' ) ) {
 	// start function
 	function igthemes_item_image() {  ?>
-
-		<div class="entry-image">
         <?php
             if ( get_theme_mod('main_featured_images', 1 ) == 1) {
                 igthemes_post_thumbnail( 'full' );
             }
         ?>
-		</div><!-- .entry-image -->
-
     <?php  } 
 }
 /*-----------------------------------------------------------------
@@ -80,8 +73,6 @@ if ( ! function_exists( 'igthemes_item_content' ) ) {
 if ( ! function_exists( 'igthemes_item_footer' ) ) {
 	// start function
 	function igthemes_item_footer() { ?>
-	<footer class="entry-footer">
-		<?php igthemes_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer"><?php igthemes_entry_footer(); ?></footer><!-- .entry-footer -->
 <?php }
 }
