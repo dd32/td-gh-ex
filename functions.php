@@ -124,6 +124,10 @@ function aquarella_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	//jQuery
+	wp_enqueue_script( 'jquery' );
+	
 	//bootstrap
 	wp_enqueue_style( 'aquarella-bootstrap-styles', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_script( 'aquarella-bootstrap-js', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array(), '20151215', true );

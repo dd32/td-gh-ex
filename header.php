@@ -80,7 +80,9 @@
 						<div class="">
 							<!-- Collapse Button -->
 			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-			                    <i class="fa fa-bars"></i>
+			                    <span class="icon-bar"></span> 
+							    <span class="icon-bar"></span> 
+							    <span class="icon-bar"></span>
 			                </button>
 			                <!-- /Collapse Button -->
 							<!-- Collect the nav links, forms, and other content for toggling -->
