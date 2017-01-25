@@ -1,6 +1,6 @@
 === Backyard ===
 Contributors: Y Design Services
-Tags: editor-style, translation-ready, custom-background, right-sidebar, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
+Tags: editor-style, translation-ready, custom-background, right-sidebar, one-column, two-columns, custom-menu, featured-images, full-width-template, threaded-comments
 Donate link: http://www.ydesignservices.com
 Requires at least: 4.0
 Tested up to: 4.2.2
@@ -14,15 +14,15 @@ Description
 
 Backyard is a clean and modern WordPress blog theme with premium look and feel well suited for everyone. Theme is built using bootstrap framework making it fully responsive and mobile friendly. This theme has several customization options that are available in WordPress Theme Customizer. Theme is also multilingual ready and translated in several languages. Theme comes with a lot of features to showcase your content with style and pixel perfect graphics.
 
-editor-style, translation-ready, custom-background, right-sidebar, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
+editor-style, translation-ready, custom-background, right-sidebar, one-column, two-columns, custom-menu, featured-images, full-width-template, threaded-comments
 
-Theme URI: http://www.ydesignservices.com/product/premium-wordpress-themes/backyard/
+Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/backyard-free/
 
 
 License
 --------------------
 
-Backyard WordPress Theme, Copyright 2015-2016 Y Design Services
+Backyard WordPress Theme, Copyright 2017 Y Design Services
 Backyard is distributed under the terms of the GNU GPL V2
 
 * Bootstrap v3.3.5 (C) 2011-2015 Twitter, Inc are licensed under MIT (http://getbootstrap.com/)
@@ -38,7 +38,6 @@ Backyard is distributed under the terms of the GNU GPL V2
 * pinterest_grid.js is licensed under MIT (http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html)
 * Open Sans fonts from Google Fonts are licensed under SIL Open Font License, 1.1 (https://www.google.com/fonts/)
 * Roboto fonts from Google Fonts are licensed under SIL Roboto License, 1.1 (https://www.google.com/fonts/)
-* banner.jpg homepage banner image (licensed under CC0) https://www.pexels.com/photo/mountains-nature-man-person-2857/
 * screenshot.png is edited from image (liscensed under CC0) https://www.pexels.com/photo/mountains-nature-man-person-2857/ and https://www.pexels.com/photo/water-bridge-suspension-bridge-rocks-24179/
 
 Installation
