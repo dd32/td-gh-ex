@@ -15,7 +15,7 @@ if ( ! function_exists( 'igthemes_credit' ) ) {
         <div class="site-info">
             <?php echo esc_html( apply_filters( 'igthemes_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
             <?php if ( apply_filters( 'igthemes_credit_link', true ) ) { ?>
-                <br /><?php printf( esc_attr__( '%1$s designed by %2$s.', 'base-wp' ), 'Base WP', '<a href="http://www.iograficathemes.com" alt="Free and Premium WordPress Themes & Plugins" title="Free and Premium WordPress Themes & Plugins" rel="designer">Iografica Themes</a>' ); ?>
+                <br /><?php printf( esc_attr__( '%1$s designed by %2$s.', 'base-wp' ), 'Base WP', '<a href="https://www.iograficathemes.com" alt="Free and Premium WordPress Themes & Plugins" title="Free and Premium WordPress Themes & Plugins" rel="designer">Iografica Themes</a>' ); ?>
             <?php } ?>
         </div><!-- .site-info -->
     <?php }

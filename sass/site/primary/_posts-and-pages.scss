@@ -27,7 +27,10 @@ article {
     .posted-on {
     }
     .edit-link {
-    } 
+    }
+    &:empty {
+       display: none; 
+    }
 }
 
 .single .byline,
@@ -49,6 +52,9 @@ article {
     .comments-link {
         margin-right: $small__spacing;
     }
+    &:empty {
+       display: none; 
+    }
 }
 //content
 .entry-image {
@@ -56,8 +62,11 @@ article {
     margin-right: -$base__spacing;
     margin-top: -$base__spacing;
 }
-.featured-img {
-    margin:0 0 $small__spacing 0;
+.featured-img a {
+    margin-left: -$base__spacing;
+    margin-right: -$base__spacing;
+    margin-top: -$base__spacing;
+    margin-bottom:0;
     @include padding(0);
     @include border-radius(0);
 }
@@ -101,7 +110,9 @@ article {
     @include margin(0);
     @include padding($base__spacing $base__spacing 0 $base__spacing);
 }
-
+.entry-meta:empty {
+    display: none;
+}
 /*-----------------------------
 # Home
 ------------------------------*/
@@ -113,16 +124,9 @@ article {
         margin: $base__spacing;
         padding: $base__spacing;
         clear: both;
-        -webkit-box-shadow: 1px  2px 2px rgba(0, 0, 0, 0.05);
-        -moz-box-shadow: 1px  2px 2px  rgba(0, 0, 0, 0.05);
-        box-shadow: 0px  2px 2px rgba(0, 0, 0, 0.05);
-        .title {
-            background: #fafafa;
-            margin-top: -$base__spacing;
-            margin-left: -$base__spacing;
-            margin-right: -$base__spacing;
-            margin-bottom: $small__spacing;
-            padding: ($big__spacing - 10) $base__spacing;
+        @include box-shadow(1px, 2px, 2px, rgba(0, 0, 0, 0.05));
+        h2.title {
+            background: none!important;
         }
     }
     .testimonials {

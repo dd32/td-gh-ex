@@ -16,12 +16,12 @@ get_header(); ?>
         while ( have_posts() ) : the_post();
 
             get_template_part( 'template-parts/content', get_post_format() );
-
-            the_post_navigation( array(
-            'next_text' => __( 'Next', 'base-wp' ),
-            'prev_text' => __( 'Previous', 'base-wp' ),
-            ) );
-
+            if (get_theme_mod('post_nav', true)) {
+                the_post_navigation( array(
+                'next_text' => __( 'Next', 'base-wp' ),
+                'prev_text' => __( 'Previous', 'base-wp' ),
+                ) );
+            }
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :
                 comments_template();

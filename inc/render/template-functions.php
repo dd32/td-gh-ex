@@ -12,11 +12,13 @@ if ( ! function_exists( 'igthemes_post_thumbnail' ) ) {
 	 */
     function igthemes_post_thumbnail( $size ) {
         if ( has_post_thumbnail() && is_singular() ) {
+            echo '<div class="entry-image">';
             the_post_thumbnail( $size, array( 'class' => 'featured-img' )  );
+            echo '</div>';
         } else {
-            echo '<a href=" '. esc_url( get_permalink() ) .' " rel="bookmark">';
+            echo '<div class="entry-image"><a href=" '. esc_url( get_permalink() ) .' " rel="bookmark">';
             the_post_thumbnail( $size, array( 'class' => 'featured-img' ) );
-            echo '</a>';
+            echo '</a></div>';
         }
     }
 }

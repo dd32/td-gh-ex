@@ -17,12 +17,11 @@ if ( ! function_exists( 'base_wp_setup' ) ) :
  */
 function base_wp_setup() {
     /*
-     * Make theme available for translation.
-     * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on Base WP, use a find and replace
-     * to change 'base-wp' to the name of your theme in all the template files.
-     */
-    load_theme_textdomain( 'base-wp', get_template_directory() . '/languages' );
+	 * Make theme available for translation.
+	 * If you're building a theme based on this theme, use a find and replace
+	 * to change 'base-wp' to the name of your theme in all the template files.
+	 */
+    load_theme_textdomain( 'base-wp' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -68,6 +67,9 @@ function base_wp_setup() {
 
     // Custom logo support.
     add_theme_support( 'custom-logo' );
+    
+    // Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
 add_action( 'after_setup_theme', 'base_wp_setup' );

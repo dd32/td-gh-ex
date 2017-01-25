@@ -75,7 +75,12 @@ function igthemes_posted_on() {
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
     //RETURN
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+    if ( apply_filters( 'igthemes_post_date', true ) ) :
+	    echo '<span class="posted-on">' . $posted_on . '</span>';
+    endif;
+    if ( apply_filters( 'igthemes_post_author', true ) ) :
+        echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+    endif;
 }
 endif;
 
@@ -85,21 +90,20 @@ if ( ! function_exists( 'igthemes_entry_footer' ) ) :
  */
 function igthemes_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
+	if ( 'post' === get_post_type() && apply_filters( 'igthemes_post_cat', true ) ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'base-wp' ) );
-		if ( $categories_list && igthemes_categorized_blog() ) {
+		if ( $categories_list && igthemes_categorized_blog() && apply_filters( 'igthemes_post_cat', true ) ) {
 			printf( '<span class="cat-links">' . esc_html__( apply_filters('igthemes_cat_links', 'igthemes-cat-text') . '%1$s', 'base-wp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
-
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'base-wp' ) );
-		if ( $tags_list ) {
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'base-wp' ));
+		if ( $tags_list && apply_filters( 'igthemes_post_tags', true ) ) {
 			printf( '<span class="tags-links">' . esc_html__( apply_filters('igthemes_tags_links', 'igthemes-tags-text') . '%1$s', 'base-wp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
     //commnet
-    if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+    if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && apply_filters( 'igthemes_post_comments_link', true ) ) {
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'base-wp' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
