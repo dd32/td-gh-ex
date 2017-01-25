@@ -5,14 +5,13 @@
 * @package abaya
 * @since abaya 1.0
 */
-get_header();
-?> 
+get_header();?> 
 <section class="inner-page-bg">
  <div class="container">
    <div class="row">
      <div class="col-lg-12">
        <div class="inner-page-title">
-         <h1 class="title"><?php the_title();  ?></h1>
+         <h1 class="title"><?php the_title(); ?></h1>
        </div><!--header-->
      </div><!--col-->
    </div><!--row-->

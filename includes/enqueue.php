@@ -13,7 +13,7 @@ function abaya_google_web_fonts_url() {
 		$fonts[ $key ] = $key . ':' . implode( ',', $value );
 	}
 	/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese, raleway, lato)', 'abaya');
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese, raleway, lato, montserrat)', 'abaya');
 	if ( 'cyrillic' == $subset ) {
 		array_push( $subsets, 'cyrillic', 'cyrillic-ext' );
 	} elseif ( 'greek' == $subset ) {
@@ -26,6 +26,9 @@ function abaya_google_web_fonts_url() {
 		array_push( $subsets, 'raleway' );
 	}elseif ( 'lato' == $subset ) {
 		array_push( $subsets, 'lato' );
+	}
+	elseif ( 'montserrat' == $subset ) {
+		array_push( $subsets, 'montserrat' );
 	}
 	$subsets = apply_filters( 'subsets_google_web_fonts', $subsets );
 	if ( $fonts ) {
@@ -58,6 +61,9 @@ function abaya_additional_fonts( $fonts ) {
 	}
 		if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'abaya' ) ) {
 		$fonts['Raleway'] = array('300italic' => '300italic','400italic'=>'400italic','500italic'=>'500italic',' 600italic'=>'600italic',' 700italic'=>'700italic',' 800italic'=>'800italic',' 900italic'=>'900italic','300'=>'300','400' => '400','500'=> '500','600'=> '600','700'=> '700','800'=> '800','900'=> '900');
+	}
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'abaya' ) ) {
+		$fonts['Montserrat'] = array('400italic'=>'400italic','700italic'=>'700italic','400' => '400','700'=> '700');
 	}
 	return $fonts;
 }

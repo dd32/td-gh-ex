@@ -21,18 +21,18 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="header">
- <section class="header_top">
-   <section class="container">
-     <?php  wp_nav_menu(array('theme_location'=>'header-top-menu','menu_class'=>'top_nav','depth'=> 1)); ?>
-   </section>
-   <!--container--> 
- </section>
- <!--header_top-->
- <section class="container">
-  <div id="logo"><a href="<?php echo esc_url(home_url()); ?>">
-<?php if(function_exists( 'the_custom_logo')): if(has_custom_logo()): 
-	  the_custom_logo();
-	  else : if(display_header_text()): ?>
+ <div class="header_top">
+  <div class="container">
+    <?php  wp_nav_menu(array('theme_location'=>'header-top-menu','menu_class'=>'top_nav','depth'=> 1)); ?>
+  </div><!--container--> 
+ </div><!--header_top-->
+ <div class="header-main">
+  <section class="container">
+   <div id="logo">
+   <a href="<?php echo esc_url(home_url()); ?>">
+     <?php if(function_exists( 'the_custom_logo')): if(has_custom_logo()): 
+	 the_custom_logo();
+	 else : if(display_header_text()): ?>
      <h1 class="brand-title">
        <?php bloginfo('name'); ?>
      </h1>
@@ -42,18 +42,23 @@
        <?php bloginfo('name'); ?>
      </h1>
      <p class="brand-subtitle"><?php bloginfo('description'); ?></p>
-     <?php endif; endif; ?></a></div>
-   <!--logo-->
-   </a></div>
-   <div class="toggle-mobile">
-     <span class="layer one">&nbsp;</span>
-     <span class="layer two">&nbsp;</span>
-     <span class="layer three">&nbsp;</span>
-   </div><!--toggle-mobile-->
+     <?php endif; endif; ?>
+    </a>
+   </div><!--logo-->
    <?php if(get_theme_mod('header_text' )){?>     
    <span class="t1"><?php echo esc_html(get_theme_mod('header_text'));?></span>
    <?php }?>
-   <?php wp_nav_menu( array( 'theme_location' => 'nav-menu','container' => 'nav','container_class' => 'clear main_nav' ,'menu_class'=>'menu','depth'=> 0) );?>
- </section>
- <!--container--> 
+ </section><!--container-->
+ </div><!--header-main-->
+ <div class="main-nav">
+  <div class="container">
+    <?php wp_nav_menu( array( 'theme_location' => 'nav-menu','container' => 'nav','container_class' => 'main_nav' ,'menu_class'=>'menu','depth'=> 0) );?>
+    <div class="header-search">
+      <form role="search" method="get" id="search-widget" class="search" action="<?php echo home_url( '/' ); ?>">
+        <input class="form-control" type="text" value="" name="s" id="s" placeholder="Search">
+        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+ </div> 
 </header>

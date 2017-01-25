@@ -13,17 +13,17 @@ Description
 
 Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project.
 
-Abaya also supports WP Customizer, Custom Menu, Custom Background and Custom Header, enabling flexible configuration.
+Comley also supports WP Customizer, Custom Menu, Custom Background and Custom Header, enabling flexible configuration.
 
 one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, threaded-comments
 
-Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya
+Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya-free/
 
 
 License
 --------------------
 
-Abaya WordPress Theme, Copyright 2017 Y Design Services
+Abaya WordPress Theme, Copyright 2016-2017 Y Design Services
 Abaya is distributed under the terms of the GNU GPL V2
 
 * Bootstrap v3.3.5 (C) 2011-2015 Twitter, Inc are licensed under MIT (http://getbootstrap.com/)

@@ -165,6 +165,72 @@ array(
    'section' => 'theme_setting_section',
 )
 );
+//Third sloider
+$wp_customize->add_setting('bgimg-upload-t',array(
+'default' => '',
+'sanitize_callback' => 'esc_url_raw',
+'transport'   => 'refresh',
+) );
+
+$wp_customize->add_control(
+new WP_Customize_Upload_Control(
+   $wp_customize,
+   'bgimg-upload-t',
+   array(
+       'label' => esc_html__('Banner Image Change', 'abaya'),
+       'section' => 'theme_setting_section',
+       'settings' => 'bgimg-upload-t'
+   )
+)
+);
+
+$wp_customize->add_setting(
+'banner_title_t',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'   => 'refresh',
+)
+);
+
+$wp_customize->add_control(
+'banner_title_t',
+array(
+   'type' => 'text',
+   'label' => esc_html__('Banner Title', 'abaya'),
+   'section' => 'theme_setting_section',
+)
+);
+
+$wp_customize->add_setting(
+'banner_text_t',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control(
+'banner_text_t',
+array(
+   'type' => 'textarea',
+   'label' => esc_html__('Banner Text', 'abaya'),
+   'section' => 'theme_setting_section',
+)
+);
+$wp_customize->add_setting(
+'banner_url_t',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'   => 'refresh',
+)
+);
+
+$wp_customize->add_control(
+'banner_url_t',
+array(
+   'type' => 'text',
+   'label' => esc_html__('Button Url', 'abaya'),
+   'section' => 'theme_setting_section',
+)
+);
 //video slider
 $wp_customize->add_setting(
 'video_code',array(
