@@ -396,29 +396,6 @@ function simplecatch_site_icon_migrate() {
 }
 add_action( 'after_setup_theme', 'simplecatch_site_icon_migrate' );
 
-function wpb_disable_comment_url($fields) {
-    if ( isset( $fields['url'] ) ){
-		unset( $fields['url'] );
-    }
-	if ( isset( $fields['fields']['url'] ) ){
-		unset( $fields['fields']['url'] );
-	}
-    return $fields;
-}
-add_filter('comment_form_defaults','wpb_disable_comment_url');
-
-function wpb_disable_comment_email($fields)
-{
-	if ( isset( $fields['email'] ) ){
-		unset( $fields['email'] );
-    }
-	if ( isset( $fields['fields']['email'] ) ){
-		unset( $fields['fields']['email'] );
-	}
-    return $fields;
-}
-add_filter('comment_form_defaults','wpb_disable_comment_email');
-
 
 /**
  * Migrate Custom CSS to WordPress core Custom CSS

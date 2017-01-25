@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-18 10:42-0500\n"
-"PO-Revision-Date: 2016-12-18 10:42-0500\n"
+"POT-Creation-Date: 2017-01-25 10:13+0545\n"
+"PO-Revision-Date: 2017-01-25 10:13+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Szempy <szempy@gmail.com>\n"
 "Language: hu_HU\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:13
@@ -84,8 +84,8 @@ msgstr "Hozzászólások lezárva."
 msgid "Permalink to %s"
 msgstr "Elérési útvonal %s"
 
-#: ../content.php:44 ../functions/simplecatch_functions.php:946
-#: ../image.php:46 ../page-blog.php:67
+#: ../content.php:44 ../functions/simplecatch_functions.php:946 ../image.php:46
+#: ../page-blog.php:67
 msgid "By"
 msgstr "által"
 

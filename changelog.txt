@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 3.4.2
+* Bug Fixed: more_tag_text sanitize issue
+* Remove unnecessary codes
+
 Version 3.4.1
 * Bug Fixed: Fatal error when WPML, qtranslate, polylang, etc plugins installed (Reported By: agu5ka)
 
