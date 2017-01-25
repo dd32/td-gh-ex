@@ -1,7 +1,6 @@
 <?php
 if ( ! function_exists('abaya_setup')):
 function abaya_setup() {
-load_theme_textdomain('abaya', get_template_directory() . '/languages');
 // Add default posts and comments RSS feed links to head.
 add_theme_support( 'automatic-feed-links' );
 /* Load scripts. */

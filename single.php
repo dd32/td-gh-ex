@@ -6,14 +6,13 @@
 * @since abaya 1.0
 */
 get_header();
-if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_for_posts'); $post_page_title=get_page($blog_page_id)->post_title; else : $blog_page_id=get_option('page_on_front'); $post_page_title=''.__('Blog', 'abaya'); endif;
 ?> 
 <section class="inner-page-bg">
  <div class="container">
    <div class="row">
      <div class="col-lg-12">
        <div class="inner-page-title">
-         <h1 class="title"><?php echo esc_html($post_page_title);  ?></h1>
+         <h1 class="title"><?php the_title();  ?></h1>
        </div><!--header-->
      </div><!--col-->
    </div><!--row-->

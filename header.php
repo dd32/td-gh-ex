@@ -23,7 +23,7 @@
 <header class="header">
  <section class="header_top">
    <section class="container">
-     <?php  wp_nav_menu(array('theme_location'=>'header-top-menu','menu_class'=>'top_nav')); ?>
+     <?php  wp_nav_menu(array('theme_location'=>'header-top-menu','menu_class'=>'top_nav','depth'=> 1)); ?>
    </section>
    <!--container--> 
  </section>
@@ -53,7 +53,7 @@
    <?php if(get_theme_mod('header_text' )){?>     
    <span class="t1"><?php echo esc_html(get_theme_mod('header_text'));?></span>
    <?php }?>
-   <?php wp_nav_menu( array( 'theme_location' => 'nav-menu','container' => 'nav','container_class' => 'clear main_nav' ,'menu_class'=>'menu') );?>
+   <?php wp_nav_menu( array( 'theme_location' => 'nav-menu','container' => 'nav','container_class' => 'clear main_nav' ,'menu_class'=>'menu','depth'=> 0) );?>
  </section>
  <!--container--> 
 </header>

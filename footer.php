@@ -43,7 +43,7 @@
    <section class="container">
      <div class="row">
        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu','menu_class'=>'ftr_nav') );?>
+         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu','menu_class'=>'ftr_nav','depth'=> 1) );?>
        </div>
        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
          <p><?php
