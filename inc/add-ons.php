@@ -123,16 +123,23 @@ if ( ! function_exists( 'generate_include_default_styles' ) ) :
  */
 function generate_include_default_styles() 
 {
-	// Check if Spacing and Typography add-ons are active
-	if ( defined( 'GENERATE_SPACING_VERSION' ) && defined( 'GENERATE_FONT_VERSION' ) ) {
-		// If neither of these functions exist, don't add our defaults.css
-		if ( function_exists( 'generate_include_spacing_defaults' ) && function_exists( 'generate_include_typography_defaults' ) ) {
-			return apply_filters( 'generate_include_default_styles', true );
-		} else {
+	// If Spacing is activated
+	if ( defined( 'GENERATE_SPACING_VERSION' ) ) {
+		// If we don't have this function, we can't include defaults.css
+		if ( ! function_exists( 'generate_include_spacing_defaults' ) ) {
 			return false;
 		}
 	}
 	
+	// If Typography is activated
+	if ( defined( 'GENERATE_FONT_VERSION' ) ) {
+		// If we don't have this function, we can't include defaults.css
+		if ( ! function_exists( 'generate_include_typography_defaults' ) ) {
+			return false;
+		}
+	}
+	
+	// We made it this far, return true through a filter
 	return apply_filters( 'generate_include_default_styles', true );
 }
 endif;
