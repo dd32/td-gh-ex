@@ -29,7 +29,10 @@ article {
         margin-right: $small__spacing;
     }
     .edit-link {
-    } 
+    }
+    &:empty {
+        display: none;
+    }
 }
 
 .single .byline,
@@ -47,6 +50,9 @@ article {
     }
     .comments-link {
         margin-right: $small__spacing;
+    }
+    &:empty {
+        display: none;
     }
 }
 //content
@@ -100,4 +106,41 @@ article {
 .page-header {
     @include margin(0);
     @include padding($base__spacing);
+}
+/*-----------------------------
+# Home
+------------------------------*/
+.home {
+    .testimonials,
+    .portfolio {
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+        padding: $base__spacing;
+        clear: both;
+        h2.title {
+            background: none!important;
+        }
+    }
+    .testimonials {
+        .ig-testimonials-page {
+            display: inline-block;
+            clear: both;
+            margin-top: $small__spacing;
+        }
+        .ig-testimonials {
+            text-align: left;
+            @include span-columns(6);
+            @include omega(2n);
+        }
+        .page-numbers {
+            display: none;
+        }
+    }
+    .portfolio {
+        .ig-portfolio-gallery {
+            display: inline-block;
+            margin-top: $small__spacing;
+        }
+    }
 }

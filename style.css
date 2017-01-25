@@ -1,10 +1,10 @@
 /*!
 Theme Name: Basic Shop
-Theme URI: http://www.iograficathemes.com/downloads/basic-shop/
+Theme URI: https://www.iograficathemes.com/downloads/basic-shop/
 Author: iografica
 Author URI: http://www.iograficathemes.com
 Description: A flexible and solid WordPress ecommerce theme
-Version: 1.06
+Version: 1.07
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basic-shop
@@ -2166,6 +2166,8 @@ h3.widget-title {
     margin-right: 14px; }
   .entry-meta .posted-on {
     margin-right: 14px; }
+  .entry-meta:empty {
+    display: none; }
 
 .single .byline,
 .group-blog .byline {
@@ -2179,6 +2181,8 @@ h3.widget-title {
     margin-right: 14px; }
   .entry-footer .comments-link {
     margin-right: 14px; }
+  .entry-footer:empty {
+    display: none; }
 
 .entry-image {
   -webkit-border-radius: 3px;
@@ -2231,6 +2235,46 @@ h3.widget-title {
 .page-header {
   margin: 0;
   padding: 24px; }
+
+/*-----------------------------
+# Home
+------------------------------*/
+.home .testimonials,
+.home .portfolio {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  padding: 24px;
+  clear: both; }
+  .home .testimonials h2.title, .home .testimonials legend.title,
+  .home .portfolio h2.title,
+  .home .portfolio legend.title {
+    background: none !important; }
+
+.home .testimonials .ig-testimonials-page {
+  display: inline-block;
+  clear: both;
+  margin-top: 14px; }
+
+.home .testimonials .ig-testimonials {
+  text-align: left;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .home .testimonials .ig-testimonials:last-child {
+    margin-right: 0; }
+  .home .testimonials .ig-testimonials:nth-child(2n) {
+    margin-right: 0; }
+  .home .testimonials .ig-testimonials:nth-child(2n+1) {
+    clear: left; }
+
+.home .testimonials .page-numbers {
+  display: none; }
+
+.home .portfolio .ig-portfolio-gallery {
+  display: inline-block;
+  margin-top: 14px; }
 
 /*--------------------------------------------------------------
 ## Comments

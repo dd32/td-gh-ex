@@ -22,7 +22,7 @@
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('upgrade to premium', 'basic-shop'); ?>
             </a>
         </p>
@@ -36,7 +36,7 @@
         <h3><?php esc_html_e( 'Theme Documentation', 'basic-shop' ); ?></h3>
         <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'basic-shop'), $theme_data->Name); ?></p>
         <p>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/documentation/'. $theme_data->get( 'TextDomain' ) .'-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'basic-shop'); ?></a>
+            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/documentation/'. $theme_data->get( 'TextDomain' ) .'-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'basic-shop'); ?></a>
         </p>
         <h3><?php esc_html_e( 'Theme Customizer', 'basic-shop' ); ?></h3>
         <p class="about"><?php printf(esc_html__('%s supports the Theme Customizer for all theme settings. Click "Customize" to start customize your site.', 'basic-shop'), $theme_data->Name); ?></p>

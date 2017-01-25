@@ -58,7 +58,7 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('upgrade to premium', 'basic-shop'); ?>
             </a>
             </p>

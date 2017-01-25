@@ -24,35 +24,41 @@ class IGthemes_Customizer {
             'panel' => 'igtheme_options',
             'priority' => 5, 
          ));
-        // LAYOUT
-        $wp_customize->add_section('layout-settings', array(
-            'title' => __('Layout', 'basic-shop'),
+        // Blog
+        $wp_customize->add_section('blog-settings', array(
+            'title' => __('Blog', 'basic-shop'),
             'panel' => 'igtheme_options',
             'priority' => 10, 
+         ));
+        // Post
+        $wp_customize->add_section('post-settings', array(
+            'title' => __('Post', 'basic-shop'),
+            'panel' => 'igtheme_options',
+            'priority' => 20, 
          ));
         // HEADER
         $wp_customize->add_section( 'header-settings' , array(
           'title' => __( 'Header', 'basic-shop'),
           'panel' => 'igtheme_options',
-          'priority' => 20, 
+          'priority' => 30, 
         ) );
         // TYPOGRAPHY
         $wp_customize->add_section('typography-settings', array(
             'title' => __('Typography', 'basic-shop'),
             'panel' => 'igtheme_options',
-            'priority' => 30, 
+            'priority' => 40, 
         ));
         // BUTTONS
         $wp_customize->add_section('buttons-settings', array(
             'title' => __('Buttons', 'basic-shop'),
             'panel' => 'igtheme_options',
-            'priority' => 40, 
+            'priority' => 50, 
          ));
         // FOOTER
         $wp_customize->add_section('footer-settings', array(
             'title' => __('Footer', 'basic-shop'),
             'panel' => 'igtheme_options',
-            'priority' => 50, 
+            'priority' => 60, 
         ));
         // SOCIAL
         $wp_customize->add_section('social-settings', array(
@@ -102,7 +108,8 @@ class IGthemes_Customizer {
 ******************************************************************/
 //home_heading
     $wp_customize->add_setting( 'home_heading', array(
-        'sanitize_callback' => 'igthemes_sanitize_textarea',
+        'default'    		=> null,
+        'sanitize_callback' => null,
     ));
 
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_heading', array(
@@ -114,7 +121,7 @@ class IGthemes_Customizer {
 //home_posts_per_page
     $wp_customize->add_setting( 'home_posts_per_page', array(
         'default' => '12',
-        'sanitize_callback' => 'igthemes_sanitize_text',
+        'sanitize_callback' => 'absint',
     ));
     $wp_customize->add_control('home_posts_per_page', array(
         'label' => __('', 'basic-shop'),
@@ -129,7 +136,8 @@ class IGthemes_Customizer {
     ));
 //home_portfolio_heading
     $wp_customize->add_setting( 'home_portfolio_heading', array(
-        'sanitize_callback' => 'igthemes_sanitize_textarea',
+        'default'    		=> null,
+        'sanitize_callback' => null,
     ));
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_portfolio_heading', array(
          'section' => 'home-settings',
@@ -192,7 +200,8 @@ class IGthemes_Customizer {
     ));
 //home_testimonials_heading
     $wp_customize->add_setting( 'home_testimonials_heading', array(
-        'sanitize_callback' => 'igthemes_sanitize_textarea',
+        'default'    		=> null,
+        'sanitize_callback' => null,
     ));
 
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_testimonials_heading', array(
@@ -264,7 +273,7 @@ class IGthemes_Customizer {
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'blog-layout', array(
         'label' => esc_html__('Blog layout', 'basic-shop'),
         'description' => esc_html__('', 'basic-shop'),
-        'section' => 'layout-settings',
+        'section' => 'blog-settings',
         'settings' => 'blog-layout',
         'priority'   => 1,
     ) ) );
@@ -287,7 +296,7 @@ class IGthemes_Customizer {
                 'description'	=> __( 'Select the blog layout', 'basic-shop' ),
                 'priority' =>   2, 
                 'type'          => 'radio-image',
-                'section'		=> 'layout-settings',
+                'section'		=> 'blog-settings',
                 'settings'      => 'main_sidebar',
                 'choices'		=> array(
                     'left' 	    => get_template_directory_uri() . '/inc/admin/options/assetts/images/left.png',
@@ -304,7 +313,7 @@ class IGthemes_Customizer {
         'label' => esc_html__('Display full posts content', 'basic-shop'),
         'description' => esc_html__('', 'basic-shop'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'blog-settings',
         'settings' => 'main_post_content',
         'priority'   => 3
     ));
@@ -316,7 +325,7 @@ class IGthemes_Customizer {
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'images', array(
         'label' => esc_html__('Images', 'basic-shop'),
         'description' => esc_html__('', 'basic-shop'),
-        'section' => 'layout-settings',
+        'section' => 'blog-settings',
         'settings' => 'images',
         'priority'   => 5,
     ) ) );
@@ -329,7 +338,7 @@ class IGthemes_Customizer {
         'label' => esc_html__('Display posts featured images', 'basic-shop'),
         'description' => esc_html__('', 'basic-shop'),
         'type' => 'checkbox',
-        'section' => 'layout-settings',
+        'section' => 'blog-settings',
         'settings' => 'main_featured_images',
         'priority'   => 6,
     ));
@@ -341,26 +350,9 @@ class IGthemes_Customizer {
     $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'navigation', array(
         'label' => esc_html__('Navigation', 'basic-shop'),
         'description' => esc_html__('', 'basic-shop'),
-        'section' => 'layout-settings',
+        'section' => 'blog-settings',
         'settings' => 'navigation',
-        'priority'   => 8,
     ) ) );
-//breadcrumb
-    $wp_customize->add_setting(
-        'breadcrumb',
-        array(
-            'sanitize_callback' => 'igthemes_sanitize_checkbox',
-    ));
-    $wp_customize->add_control(
-        'breadcrumb',
-        array(
-            'label'         => esc_html__('Display breadcrumb?', 'basic-shop'),
-            'description'   => __( 'Yoast Breadcrumb supported<br>NavXT Breadcrumb supported', 'basic-shop'),
-            'priority'      =>  9, 
-            'type'          => 'checkbox',
-            'section'       => 'layout-settings',
-            'settings'      => 'breadcrumb',
-    ));
 //numeric_pagination
     $wp_customize->add_setting(
         'numeric_pagination',
@@ -370,13 +362,56 @@ class IGthemes_Customizer {
     $wp_customize->add_control(
         'numeric_pagination',
         array(
-            'label'         => esc_html__('Use numeric pagination ?', 'basic-shop'),
+            'label'         => esc_html__('Use numeric pagination?', 'basic-shop'),
             'description'   => __( 'WP-PageNavi supported', 'basic-shop'),
-            'priority'      => 10,
             'type'          => 'checkbox',
-            'section'       => 'layout-settings',
+            'section'       => 'blog-settings',
             'settings'      => 'numeric_pagination',
     ));
+/*****************************************************************
+* POST SETTINGS
+******************************************************************/
+    //Navigation
+    $wp_customize->add_setting('post_navigation', array(
+        'default'    		=> null,
+        'sanitize_callback' => null,
+    ));
+    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'post_navigation', array(
+        'label' => esc_html__('Navigation', 'basic-shop'),
+        'description' => esc_html__('', 'basic-shop'),
+        'section' => 'post-settings',
+        'settings' => 'post_navigation',
+    ) ) );
+    //breadcrumb
+    $wp_customize->add_setting(
+        'post_breadcrumb',
+        array(
+            'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control(
+        'breadcrumb',
+        array(
+            'label'         => esc_html__('Display breadcrumb?', 'basic-shop'),
+            'description'   => __( 'Yoast Breadcrumb supported<br>NavXT Breadcrumb supported', 'basic-shop'),
+            'type'          => 'checkbox',
+            'section'       => 'post-settings',
+            'settings'      => 'post_breadcrumb',
+    ));
+    //post_nav
+    $wp_customize->add_setting(
+        'post_nav',
+        array(
+            'default' => true,
+            'sanitize_callback' => 'igthemes_sanitize_checkbox',
+    ));
+    $wp_customize->add_control( 'post_nav',
+        array(
+            'label'         => esc_html__('Show previous/next post links?', 'basic-shop'),
+            'description'   => __( '', 'basic-shop'),
+            'type'          => 'checkbox',
+            'section'       => 'post-settings',
+            'settings'      => 'post_nav',
+    )); 
 /*****************************************************************
 * HEADER SETTINGS
 ******************************************************************/
@@ -893,7 +928,7 @@ class IGthemes_Customizer {
             border: 2px solid #fff;
         }
         .customize-control-heading {
-            border-top: 4px solid #dedede;
+            border-top: 1px solid #ddd;
             margin-top: 15px;
             padding-top: 20px;
         }

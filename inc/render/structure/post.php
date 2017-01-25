@@ -17,9 +17,7 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
 		<?php
         the_title( '<h1 class="entry-title">', '</h1>' );
 		if ( 'post' === get_post_type() ) : ?>
-		  <div class="entry-meta">
-			<?php igthemes_posted_on(); ?>
-		  </div><!-- .entry-meta -->
+		  <div class="entry-meta"><?php igthemes_posted_on(); ?></div><!-- .entry-meta -->
 		<?php endif; ?>
     </header><!-- .entry-header -->
    <?php }
@@ -63,8 +61,6 @@ if ( ! function_exists( 'igthemes_post_content' ) ) {
 if ( ! function_exists( 'igthemes_post_footer' ) ) {
 	// start function
 	function igthemes_post_footer() { ?>
-	<footer class="entry-footer">
-		<?php igthemes_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer"><?php igthemes_entry_footer(); ?></footer><!-- .entry-footer -->
 <?php }
 }

@@ -4,11 +4,11 @@ Contributors: iografica
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.06
+Stable tag: 1.07
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Basic Shop is the perfect theme for your next blog or ecommerce project.
+Basic Shop is the perfect theme for your next blog or ecommerce project, it works like a charm with WooCommerce and Easy Digital Downloads.
 
 ## Description
 
@@ -62,3 +62,9 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 ** 1.06 **
 * Header design improvements.
+
+** 1.07 **
+* Theme options improvements.
+* Added portfolio and testimonials section for homepage.
+* Added post previus/net link options.
+* Rebuilted the welcome page.

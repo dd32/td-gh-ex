@@ -18,9 +18,10 @@ if ( ! function_exists( 'basic_shop_setup' ) ) :
 function basic_shop_setup() {
     /*
 	 * Make theme available for translation.
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/basic-shop
+	 * If you're building a theme based on this theme, use a find and replace
+	 * to change 'basic-shop' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'basic-shop' );
+    load_theme_textdomain( 'basic-shop' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
