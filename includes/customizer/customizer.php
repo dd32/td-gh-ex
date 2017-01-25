@@ -5,8 +5,7 @@
 function bento_customizer_stylesheet() {
 	
 	// Stylesheet
-	wp_register_style( 'bento-customizer-css', get_template_directory_uri().'/includes/customizer/customizer-styles.css', NULL, NULL, 'all' );
-	wp_enqueue_style( 'bento-customizer-css' );
+	wp_enqueue_style( 'bento-customizer-css', get_template_directory_uri().'/includes/customizer/customizer-styles.css', NULL, NULL, 'all' );
 	
 	// Extra styles
 	wp_add_inline_style( 'bento-customizer-css', bento_customizer_extra_css() );
@@ -57,24 +56,12 @@ function bento_localize_customizer_scripts() {
 }
 
 
-// Notification for disabled fields
-function bento_customizer_disabled_field() {
-	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
-	$exp_link = '<span class="disabled-exp">' . sprintf( esc_html__( 'This option (and much more cool stuff) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
-	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
-		$exp_link = '';
-	}
-	echo wp_kses( $exp_link, 
-		array( 
-			'a' => array( 
-				'target' => array(), 
-				'href' => array(),
-			), 
-			'span' => array( 
-				'class' => array(),
-			),
-		) 
-	);
+// Rename existing sections
+function bento_customizer_rename_sections( $wp_customize ) {
+    $wp_customize -> get_section('colors') -> title = __( 'Site Background Color', 'bento' );
+	$wp_customize -> get_section('colors') -> description = __( 'For this to have effect, the "boxed" mode should be set in the "Site layout" section. This setting will be overridden if a background image is defined in the "Site Background" section.', 'bento' );
+	$wp_customize -> get_section('background_image') -> title = __( 'Site Background Image', 'bento' );
+	$wp_customize -> get_section('background_image') -> description = __( 'For this to have effect, the "boxed" mode should be set in the "Site layout" section.', 'bento' );
 }
 
 
@@ -128,11 +115,29 @@ function bento_sanitize_choices( $input, $setting ) {
 }
 
 
+// Output disabled options
+function bento_output_disabled() {
+	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
+	$exp_link = '<span class="disabled-exp">' . sprintf( esc_html__( 'This option (and more) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
+	echo wp_kses( $exp_link, 
+		array( 
+			'a' => array( 
+				'target' => array(), 
+				'href' => array(),
+			), 
+			'span' => array( 
+				'class' => array(),
+			),
+		) 
+	); 
+}
+
+
 // Controls
 function bento_customize_register( $wp_customize ) {
 	
 	// Custom copyright control
-	class Bento_WP_Copyright_Customize_Control extends WP_Customize_Control {
+	class Bento_WP_Customize_Control_Copyright extends WP_Customize_Control {
 		public $type = 'text_copyright';
 		public function render_content() {
 			if ( ! empty( $this->label ) ) {
@@ -141,21 +146,35 @@ function bento_customize_register( $wp_customize ) {
 			if ( ! empty( $this->description ) ) {
 				echo '<span class="description customize-control-description">'.esc_html( $this->description ).'</span>';
 			}
-			bento_customizer_disabled_field();
-			$disabled_field = '';
-			if ( get_option( 'bento_ep_license_status' ) != 'valid' ) {
-				$disabled_field = 'disabled';
+			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+				echo '<input type="text" value="" data-customize-setting-link="bento_footer_copyright">';
+			} else {
+				bento_output_disabled();
 			}
-			echo '<input type="text" value="" '.$disabled_field.' data-customize-setting-link="bento_footer_copyright">';
 		}
 	}
+	
 	
 	// Custom help section
 	class Bento_WP_Help_Customize_Control extends WP_Customize_Control {
 		public $type = 'text_help';
 		public function render_content() {
+			$bento_ep_activated = '';
+			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+				$bento_ep_activated = 'bnt-customizer-ep-active';
+			}
 			echo '
-				<div class="bnt-customizer-help">
+				<div class="bnt-customizer-help '.$bento_ep_activated.'">
+					<a class="bnt-customizer-link bnt-ep-link" href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">
+						<span class="dashicons dashicons-carrot">
+						</span>
+						'.esc_html__( 'Get Expansion Pack', 'bento' ).'
+					</a>
+					<a class="bnt-customizer-link bnt-rate-link" href="https://wordpress.org/support/theme/bento/reviews/?filter=5#new-post" target="_blank">
+						<span class="dashicons dashicons-heart">
+						</span>
+						'.esc_html__( 'Rate Bento (thanks!)', 'bento' ).'
+					</a>
 					<a class="bnt-customizer-link bnt-support-link" href="http://satoristudio.net/bento-manual/" target="_blank">
 						<span class="dashicons dashicons-book">
 						</span>
@@ -166,12 +185,12 @@ function bento_customize_register( $wp_customize ) {
 						</span>
 						'.esc_html__( 'Visit support forum', 'bento' ).'
 					</a>
-					<a class="bnt-customizer-link bnt-support-link" href="https://www.facebook.com/satoristudio.net/" target="_blank">
+					<a class="bnt-customizer-link bnt-social-link" href="https://www.facebook.com/satoristudio.net/" target="_blank">
 						<span class="dashicons dashicons-facebook-alt">
 						</span>
 						'.esc_html__( 'Like our Facebook page', 'bento' ).'
 					</a>
-					<a class="bnt-customizer-link bnt-support-link" href="https://twitter.com/satoristudionet/" target="_blank">
+					<a class="bnt-customizer-link bnt-social-link" href="https://twitter.com/satoristudionet/" target="_blank">
 						<span class="dashicons dashicons-twitter">
 						</span>
 						'.esc_html__( 'Follow us on Twitter', 'bento' ).'
@@ -181,29 +200,13 @@ function bento_customize_register( $wp_customize ) {
 		}
 	}
 	
-	// This feature is available in the EP call
-	class Bento_WP_EP_Customize_Control extends WP_Customize_Control {
-		public $type = 'text_ep';
-		public function render_content() {
-			$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
-			$exp_link = sprintf( esc_html__( 'These options (and many more cool features) are available in the %s. Supercharge your Bento!', 'bento' ), $exp_url );
-			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
-				$exp_link = '';
-			}
-			echo '
-				<div class="bnt-customizer-ep-cta">
-					'.$exp_link.'
-				</div>
-			';
-		}
-	}
 	
 	// Theme support
 	
 	$wp_customize->add_section( 
 		'bento_theme_support', 
 		array(
-			'title' => esc_html__( 'Bento Help', 'bento' ),
+			'title' => esc_html__( 'Help & Expansion Pack', 'bento' ),
 			'priority' => 19,
 		) 
 	);
@@ -227,29 +230,25 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	
-	// Site Identity
-	
 	$wp_customize->add_setting( 
-		'bento_footer_copyright', 
+		'bento_novice_header', 
 		array(
 			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'bento_sanitize_copyright',
+			'default' => 0,
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
-	$wp_customize->add_control(
-		new Bento_WP_Copyright_Customize_Control(
-		$wp_customize,
-		'bento_footer_copyright', 
-			array(
-				'section' => 'title_tagline',
-				'priority' => 4,
-				'type' => 'text_copyright',
-				'label' => esc_html__( 'Customize the copyright message in the footer', 'bento' ),
-				'description' => esc_html__( 'Use this field to add your own message instead of the theme link in the footer.', 'bento' ),
-			)
+	$wp_customize->add_control( 
+		'bento_novice_header', 
+		array(
+			'section' => 'bento_theme_support',
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Permanently hide the welcome header', 'bento' ),
+			'description' => esc_html__( 'Check this option to stop displaying the welcome mat with useful links.', 'bento' ),
 		)
 	);
+	
+	// Site Identity
 	
 	$wp_customize->add_setting( 
 		'bento_logo_mobile', 
@@ -273,12 +272,34 @@ function bento_customize_register( $wp_customize ) {
 		) 
 	);
 	
+	$wp_customize->add_setting( 
+		'bento_footer_copyright', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'bento_sanitize_copyright',
+		)
+	);
+	$wp_customize->add_control(
+		new Bento_WP_Customize_Control_Copyright(
+		$wp_customize,
+		'bento_footer_copyright', 
+			array(
+				'section' => 'title_tagline',
+				'priority' => 100,
+				'type' => 'text_copyright',
+				'label' => esc_html__( 'Copyright message in the footer', 'bento' ),
+				'description' => esc_html__( 'Use this field to add your own message instead of the theme link in the footer.', 'bento' ),
+			)
+		)
+	);
+	
 	// Site Elements
 	
 	$wp_customize->add_section( 
 		'bento_site_elements', 
 		array(
-			'title' => esc_html__( 'Website Elements', 'bento' ),
+			'title' => esc_html__( 'Site Elements', 'bento' ),
 			'priority' => 21,
 		) 
 	);
@@ -408,7 +429,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_layout_background', 
 		array(
-			'title' => esc_html__( 'Layout and Background', 'bento' ),
+			'title' => esc_html__( 'Site Layout', 'bento' ),
 			'priority' => 23,
 		) 
 	);
@@ -464,91 +485,6 @@ function bento_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_website_background', 
-		array(
-			'type' => 'theme_mod',
-			'default' => 0,
-			'sanitize_callback' => 'bento_sanitize_choices',
-		)
-	);
-	$wp_customize->add_control( 
-		'bento_website_background', 
-		array(
-			'section' => 'bento_layout_background',
-			'type' => 'select',
-			'choices' => array( 
-				esc_html__( 'Solid color (default)', 'bento' ), 
-				esc_html__( 'Repeated texture', 'bento' ),
-				esc_html__( 'Full-size image', 'bento' )
-			),
-			'label' => esc_html__( 'Boxed layout: website background', 'bento' ),
-			'description' => esc_html__( 'Choose the type of background for the boxed website layout; default is solid color.', 'bento' ),
-		) 
-	);
-	
-	$wp_customize->add_setting( 
-		'bento_website_background_color', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '#e6e6e6',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'bento_website_background_color', 
-			array(
-				'section' => 'bento_layout_background',
-				'label' => esc_html__( 'Boxed layout: website background color', 'bento' ),
-				'description' => esc_html__( 'Choose the background color for the outer parts of the boxed website; default is #e6e6e6 (light-grey).', 'bento' ),
-			)
-		)
-	);
-	
-	$wp_customize->add_setting( 
-		'bento_website_background_texture', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'absint',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Media_Control(
-			$wp_customize,
-			'bento_website_background_texture', 
-			array(
-				'section' => 'bento_layout_background',
-				'mime_type' => 'image',
-				'label' => esc_html__( 'Boxed layout: website background texture', 'bento' ),
-				'description' => esc_html__( 'Upload the image to serve as the repeating texture for the outer parts of the boxed website.', 'bento' ),
-			) 
-		)
-	);
-	
-	$wp_customize->add_setting( 
-		'bento_website_background_image', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'absint',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Media_Control(
-			$wp_customize,
-			'bento_website_background_image', 
-			array(
-				'section' => 'bento_layout_background',
-				'mime_type' => 'image',
-				'label' => esc_html__( 'Boxed layout: website background image', 'bento' ),
-				'description' => esc_html__( 'Upload the image to serve as the full-width background for the outer parts of the boxed website.', 'bento' ),
-			) 
-		)
-	);
-	
-	$wp_customize->add_setting( 
 		'bento_menu_config', 
 		array(
 			'type' => 'theme_mod',
@@ -578,7 +514,7 @@ function bento_customize_register( $wp_customize ) {
 		'bento_fonts', 
 		array(
 			'title' => esc_html__( 'Fonts and Typography', 'bento' ),
-			'priority' => 24,
+			'priority' => 82,
 		) 
 	);
 	
@@ -597,28 +533,9 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
+			'priority' => 10,
 			'label' => esc_html__( 'Body font (Google Fonts)', 'bento' ),
 			'description' => sprintf( esc_html__( 'Input Google Font name for the body font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
-		)
-	);
-	
-	$wp_customize->add_setting( 
-		'bento_font_body_upload', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'bento_sanitize_font_uploads',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Upload_Control(
-			$wp_customize,
-			'bento_font_body_upload', 
-			array(
-				'section' => 'bento_fonts',
-				'label' => esc_html__( 'Body font (Upload your own)', 'bento' ),
-				'description' => esc_html__( 'Upload the font file to be used as body font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
-			) 
 		)
 	);
 	
@@ -635,6 +552,7 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'select',
+			'priority' => 20,
 			'choices' => array( 
 				12 => '12',
 				13 => '13', 
@@ -662,28 +580,9 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
+			'priority' => 30,
 			'label' => esc_html__( 'Headings font (Google Fonts)', 'bento' ),
 			'description' => sprintf( esc_html__( 'Input Google Font name for the headings font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
-		)
-	);
-	
-	$wp_customize->add_setting( 
-		'bento_font_headings_upload', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'bento_sanitize_font_uploads',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Upload_Control(
-			$wp_customize,
-			'bento_font_headings_upload', 
-			array(
-				'section' => 'bento_fonts',
-				'label' => esc_html__( 'Headings font (Upload your own)', 'bento' ),
-				'description' => esc_html__( 'Upload the font file to be used as headings font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
-			) 
 		)
 	);
 	
@@ -700,31 +599,12 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
+			'priority' => 40,
 			'label' => esc_html__( 'Menu font (Google Fonts)', 'bento' ),
 			'description' => sprintf( esc_html__( 'Input Google Font name for the menu font, e.g. Montserrat, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Montserrat.', 'bento' ), $fonts_url ),
 		)
 	);
-	
-	$wp_customize->add_setting( 
-		'bento_font_menu_upload', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'bento_sanitize_font_uploads',
-		)
-	);
-	$wp_customize->add_control( 
-		new WP_Customize_Upload_Control(
-			$wp_customize,
-			'bento_font_menu_upload', 
-			array(
-				'section' => 'bento_fonts',
-				'label' => esc_html__( 'Menu font (Upload your own)', 'bento' ),
-				'description' => esc_html__( 'Upload the font file to be used as menu font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
-			) 
-		)
-	);
-	
+
 	$wp_customize->add_setting( 
 		'bento_text_size_menu', 
 		array(
@@ -738,6 +618,7 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'select',
+			'priority' => 50,
 			'choices' => array( 
 				12 => '12',
 				13 => '13', 
@@ -765,6 +646,7 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'checkbox',
+			'priority' => 60,
 			'label' => esc_html__( 'Remove uppercase from menu text', 'bento' ),
 			'description' => esc_html__( 'Check this option to render the menu items in sentence case (normal caps).', 'bento' ),
 		)
@@ -776,7 +658,7 @@ function bento_customize_register( $wp_customize ) {
 		'bento_colors_header', 
 		array(
 			'title' => esc_html__( 'Header Colors', 'bento' ),
-			'priority' => 25,
+			'priority' => 84,
 		) 
 	);
 	
@@ -1086,7 +968,7 @@ function bento_customize_register( $wp_customize ) {
 		'bento_colors_content', 
 		array(
 			'title' => esc_html__( 'Content Colors', 'bento' ),
-			'priority' => 26,
+			'priority' => 86,
 		) 
 	);
 	
@@ -1436,7 +1318,7 @@ function bento_customize_register( $wp_customize ) {
 		'bento_colors_footer', 
 		array(
 			'title' => esc_html__( 'Footer Colors', 'bento' ),
-			'priority' => 27,
+			'priority' => 88,
 		) 
 	);
 	
@@ -1600,149 +1482,211 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	
-	// Custom CSS
+	// Static Front Page
 	
-	$wp_customize->add_section( 
-		'bento_custom_css', 
+	$wp_customize->add_setting( 
+		'bento_front_header_image', 
 		array(
-			'title' => esc_html__( 'Custom CSS', 'bento' ),
-			'priority' => 28,
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Media_Control( 
+			$wp_customize, 
+			'bento_front_header_image', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 21,
+				'mime_type' => 'image',
+				'label' => esc_html__( 'Front page: header image', 'bento' ),
+				'description' => esc_html__( 'Upload the image to be used as the full-width header for the front page.', 'bento' ),
+			) 
 		) 
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_custom_css', 
+		'bento_front_header_primary_cta_text', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 
-		'bento_custom_css', 
+		'bento_front_header_primary_cta_text', 
 		array(
-			'section' => 'bento_custom_css',
-			'type' => 'textarea',
-			'label' => esc_html__( 'Custom Styles', 'bento' ),
-			'description' => esc_html__( 'Enter any custom CSS here to apply to the website.', 'bento' ),
-		)
-	);
-	
-	// SEO Settings
-	
-	$wp_customize->add_section( 
-		'bento_seo', 
-		array(
-			'title' => esc_html__( 'SEO Settings', 'bento' ),
-			'priority' => 29,
+			'section' => 'static_front_page',
+			'priority' => 25,
+			'type' => 'text',
+			'label' => esc_html__( 'Primary call-to-action button text', 'bento' ),
+			'description' => esc_html__( 'Input the text for an optional call-to-action button on the static front page.', 'bento' ),
 		)
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_ep_seo_upg', 
+		'bento_front_header_primary_cta_link', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'esc_attr',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
-	$wp_customize->add_control(
-		new Bento_WP_EP_Customize_Control(
-		$wp_customize,
-		'bento_ep_seo_upg', 
+	$wp_customize->add_control( 
+		'bento_front_header_primary_cta_link', 
+		array(
+			'section' => 'static_front_page',
+			'priority' => 26,
+			'type' => 'text',
+			'label' => esc_html__( 'Primary call-to-action button link', 'bento' ),
+			'description' => esc_html__( 'Paste the URL link to point the call-to-action button to; leave this blank to scroll the page below the header on button click.', 'bento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_front_header_primary_cta_bck_color', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_front_header_primary_cta_bck_color', 
 			array(
-				'section' => 'bento_seo',
-				'type' => 'text_ep',
+				'section' => 'static_front_page',
+				'priority' => 27,
+				'label' => esc_html__( 'Primary call-to-action button background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the primary call-to-action button; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
 	
-	// Analytics code
-	
-	$wp_customize->add_section( 
-		'bento_analytics', 
+	$wp_customize->add_setting( 
+		'bento_front_header_primary_cta_bck_color_hover', 
 		array(
-			'title' => esc_html__( 'Analytics Code', 'bento' ),
+			'type' => 'theme_mod',
+			'default' => '#cccccc',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_front_header_primary_cta_bck_color_hover', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 28,
+				'label' => esc_html__( 'Primary call-to-action button mouse-over background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the primary call-to-action button on mouse hover; default is #cccccc (light-grey).', 'bento' ),
+			)
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_front_header_primary_cta_text_color', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_front_header_primary_cta_text_color', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 29,
+				'label' => esc_html__( 'Primary call-to-action button text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for the primary call-to-action button; default is #333333 (dark-grey).', 'bento' ),
+			)
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_front_header_secondary_cta_text', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control( 
+		'bento_front_header_secondary_cta_text', 
+		array(
+			'section' => 'static_front_page',
 			'priority' => 30,
+			'type' => 'text',
+			'label' => esc_html__( 'Secondary call-to-action button text', 'bento' ),
+			'description' => esc_html__( 'Input the text for an optional secondary call-to-action button on the static front page.', 'bento' ),
 		)
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_ep_analytics_upg', 
+		'bento_front_header_secondary_cta_link', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'esc_attr',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
-	$wp_customize->add_control(
-		new Bento_WP_EP_Customize_Control(
-		$wp_customize,
-		'bento_ep_analytics_upg', 
-			array(
-				'section' => 'bento_analytics',
-				'type' => 'text_ep',
-			)
-		)
-	);
-	
-	// Call to action popup
-	
-	$wp_customize->add_section( 
-		'bento_cta_popup', 
+	$wp_customize->add_control( 
+		'bento_front_header_secondary_cta_link', 
 		array(
-			'title' => esc_html__( 'Call to Action Popup', 'bento' ),
+			'section' => 'static_front_page',
 			'priority' => 31,
+			'type' => 'text',
+			'label' => esc_html__( 'Secondary call-to-action button link', 'bento' ),
+			'description' => esc_html__( 'Paste the URL link to point the secondary call-to-action button to; leave this blank to scroll the page below the header on button click.', 'bento' ),
 		)
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_ep_popup_upg', 
+		'bento_front_header_secondary_cta_color', 
 		array(
 			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'esc_attr',
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
-	$wp_customize->add_control(
-		new Bento_WP_EP_Customize_Control(
-		$wp_customize,
-		'bento_ep_popup_upg', 
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_front_header_secondary_cta_color', 
 			array(
-				'section' => 'bento_cta_popup',
-				'type' => 'text_ep',
+				'section' => 'static_front_page',
+				'priority' => 32,
+				'label' => esc_html__( 'Secondary call-to-action button color', 'bento' ),
+				'description' => esc_html__( 'Choose the text and border color for the secondary call-to-action button; default is #ffffff (white).', 'bento' ),
 			)
-		)
-	);
-	
-	// Preloader
-	
-	$wp_customize->add_section( 
-		'bento_preloader', 
-		array(
-			'title' => esc_html__( 'Preloader', 'bento' ),
-			'priority' => 32,
 		)
 	);
 	
 	$wp_customize->add_setting( 
-		'bento_ep_preloader_upg', 
+		'bento_front_header_secondary_cta_color_hover', 
 		array(
 			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'esc_attr',
+			'default' => '#cccccc',
+			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
-	$wp_customize->add_control(
-		new Bento_WP_EP_Customize_Control(
-		$wp_customize,
-		'bento_ep_preloader_upg', 
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_front_header_secondary_cta_color_hover', 
 			array(
-				'section' => 'bento_preloader',
-				'type' => 'text_ep',
+				'section' => 'static_front_page',
+				'priority' => 33,
+				'label' => esc_html__( 'Secondary call-to-action button mouse-over color', 'bento' ),
+				'description' => esc_html__( 'Choose the text and border color for the secondary call-to-action button on mouse hover; default is #cccccc (light-grey).', 'bento' ),
 			)
 		)
 	);
+	
 
 }
 
@@ -1753,7 +1697,7 @@ function bento_customizer_css() {
 	$customizer_css = '';
 	
 	// Theme Options: Layout and Background tab
-	$bento_content_width_med_px = get_theme_mod( 'bento_content_width', 1080 );
+	$bento_content_width_med_px = esc_html( get_theme_mod( 'bento_content_width', 1080 ) );
 	$bento_content_width_med_rem = $bento_content_width_med_px / 10;
 	$bento_content_width_hi_px = $bento_content_width_med_px + 360;
 	$bento_content_width_hi_rem = $bento_content_width_hi_px / 10;
@@ -1783,48 +1727,27 @@ function bento_customizer_css() {
 					max-width: '.$bento_box_width_med_px.'px;
 					max-width: '.$bento_box_width_med_rem.'rem;
 				}
+				.boxed-layout .fixed-header {
+					max-width: '.$bento_box_width_med_px.'px;
+					max-width: '.$bento_box_width_med_rem.'rem;
+				}
 			}
 			@media screen and (min-width: 120em) {
 				.site-wrapper {
 					max-width: '.$bento_box_width_hi_px.'px;
 					max-width: '.$bento_box_width_hi_rem.'rem;
 				}
+				.boxed-layout .fixed-header {
+					max-width: '.$bento_box_width_hi_px.'px;
+					max-width: '.$bento_box_width_hi_rem.'rem;
+				}
 			}
 		';
-		if ( get_theme_mod( 'bento_website_background', 0 ) == 1 && get_theme_mod( 'bento_website_background_texture', '' ) != '' ) {
-			$website_background_texture_id = get_theme_mod( 'bento_website_background_texture', '' );
-			$website_background_texture_image = wp_get_attachment_image_src( $website_background_texture_id , 'full' );
-			$website_background_texture = $website_background_texture_image[0];
-			$customizer_css .= '
-				body {
-					background-image: url('.$website_background_texture.');
-					background-repeat: repeat;
-				}
-			';
-		} elseif ( get_theme_mod( 'bento_website_background', 0 ) == 2 && get_theme_mod( 'bento_website_background_image', '' ) != '' ) {
-			$website_background_image_id = get_theme_mod( 'bento_website_background_image', '' );
-			$website_background_image_image = wp_get_attachment_image_src( $website_background_image_id , 'full' );
-			$website_background_image = $website_background_image_image[0];
-			$customizer_css .= '
-				body {
-					background-image: url('.$website_background_image.');
-					background-repeat: no-repeat;
-					background-position: center center;
-					background-size: cover;
-				}
-			';
-		} else {
-			$customizer_css .= '
-				body {
-					background-color: '.get_theme_mod( 'bento_website_background_color', '#e6e6e6' ).';
-				}
-			';
-		}
 	}
 	if ( get_theme_mod( 'bento_menu_config', 0 ) == 2 ) {
 		$customizer_css .= '
 			.header-menu {
-				background-color: '.get_theme_mod( 'bento_primary_menu_background', '#eeeeee' ).';
+				background-color: '.esc_html( get_theme_mod( 'bento_primary_menu_background', '#eeeeee' ) ).';
 			}
 		';
 	} else if ( get_theme_mod( 'bento_menu_config', 0 ) == 3 ) {
@@ -1833,10 +1756,10 @@ function bento_customizer_css() {
 				.header-side .primary-menu > li,
 				.header-side .primary-menu .sub-menu, 
 				.header-side .primary-menu .sub-menu li {
-					border-color: '.get_theme_mod( 'bento_menu_separators', '#eeeeee' ).';
+					border-color: '.esc_html( get_theme_mod( 'bento_menu_separators', '#eeeeee' ) ).';
 				}
 				.header-side .primary-menu .sub-menu li a:hover {
-					color: '.get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ).';
+					color: '.esc_html( get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ) ).';
 				}
 				.header-side .primary-menu .sub-menu li, 
 				.header-side #nav-mobile {
@@ -1855,40 +1778,40 @@ function bento_customizer_css() {
 		$bento_font_face_body = '
 			@font-face {
 				font-family: bodyFont;
-				src: url('.get_theme_mod( 'bento_font_body_upload', '' ).');
+				src: url('.esc_url( get_theme_mod( 'bento_font_body_upload', '' ) ).');
 			}
 		';
 		$bento_body_font = 'bodyFont';
 	} else if ( get_theme_mod( 'bento_font_body', '' ) != '' ) {
-		$bento_body_font = get_theme_mod( 'bento_font_body', '' );
+		$bento_body_font = esc_html( get_theme_mod( 'bento_font_body', '' ) );
 	}
 	if ( get_theme_mod( 'bento_font_headings_upload', '' ) != '' ) {
 		$bento_font_face_headings = '
 			@font-face {
 				font-family: headingsFont;
-				src: url('.get_theme_mod( 'bento_font_headings_upload', '' ).');
+				src: url('.esc_url( get_theme_mod( 'bento_font_headings_upload', '' ) ).');
 			}
 		';
 		$bento_headings_font = 'headingsFont';
 	} else if ( get_theme_mod( 'bento_font_headings', '' ) != '' ) {
-		$bento_headings_font = get_theme_mod( 'bento_font_headings', '' );
+		$bento_headings_font = esc_html( get_theme_mod( 'bento_font_headings', '' ) );
 	}
 	if ( get_theme_mod( 'bento_font_menu_upload', '' ) != '' ) {
 		$bento_font_face_menu = '
 			@font-face {
 				font-family: menuFont;
-				src: url('.get_theme_mod( 'bento_font_menu_upload', '' ).');
+				src: url('.esc_url( get_theme_mod( 'bento_font_menu_upload', '' ) ).');
 			}
 		';
 		$bento_menu_font = 'menuFont';
 	} else if ( get_theme_mod( 'bento_font_menu', '' ) != '' ) {
-		$bento_menu_font = get_theme_mod( 'bento_font_menu', '' );
+		$bento_menu_font = esc_html( get_theme_mod( 'bento_font_menu', '' ) );
 	}
 	if ( get_theme_mod( 'bento_text_size_body', 14 ) != 14 ) {
-		$bento_body_text_size = get_theme_mod( 'bento_text_size_body', 14 );
+		$bento_body_text_size = esc_html( get_theme_mod( 'bento_text_size_body', 14 ) );
 	}
 	if ( get_theme_mod( 'bento_text_size_menu', 14 ) != 14 ) {
-		$bento_menu_text_size = get_theme_mod( 'bento_text_size_menu', 14 );
+		$bento_menu_text_size = esc_html( get_theme_mod( 'bento_text_size_menu', 14 ) );
 	}
 	$bento_body_text_size_em = $bento_body_text_size / 10;
 	$bento_menu_text_size_rem = $bento_menu_text_size / 10;
@@ -1939,72 +1862,72 @@ function bento_customizer_css() {
 		.site-header,
 		.header-default .site-header.fixed-header,
 		.header-side .site-wrapper {
-			background: '.get_theme_mod( 'bento_header_background_color', '#ffffff' ).';
+			background: '.esc_html( get_theme_mod( 'bento_header_background_color', '#ffffff' ) ).';
 		}
 		.primary-menu > li > .sub-menu {
-			border-top-color: '.get_theme_mod( 'bento_header_background_color', '#ffffff' ).';
+			border-top-color: '.esc_html( get_theme_mod( 'bento_header_background_color', '#ffffff' ) ).';
 		}
 		.primary-menu > li > a,
 		#nav-mobile li a,
 		.mobile-menu-trigger,
 		.mobile-menu-close,
 		.ham-menu-close {
-			color: '.get_theme_mod( 'bento_primary_menu_text_color', '#333333' ).';
+			color: '.esc_html( get_theme_mod( 'bento_primary_menu_text_color', '#333333' ) ).';
 		}
 		.primary-menu > li > a:hover,
 		.primary-menu > li.current-menu-item > a,
 		.primary-menu > li.current-menu-ancestor > a {
-			color: '.get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ).';
+			color: '.esc_html( get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ) ).';
 		}
 		.primary-menu .sub-menu li,
 		#nav-mobile {
-			background-color: '.get_theme_mod( 'bento_primary_menu_submenu_background_color', '#dddddd' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_background_color', '#dddddd' ) ).';
 		}
 		.primary-menu .sub-menu li a:hover,
 		.primary-menu .sub-menu .current-menu-item:not(.current-menu-ancestor) > a,
 		#nav-mobile li a:hover,
 		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.get_theme_mod( 'bento_primary_menu_submenu_background_hover_color', '#cccccc' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_background_hover_color', '#cccccc' ) ).';
 		}
 		.primary-menu .sub-menu,
 		.primary-menu .sub-menu li,
 		#nav-mobile li a,
 		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.get_theme_mod( 'bento_primary_menu_submenu_border_color', '#cccccc' ).';
+			border-color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_border_color', '#cccccc' ) ).';
 		}
 		.primary-menu .sub-menu li a {
-			color: '.get_theme_mod( 'bento_primary_menu_submenu_text_color', '#333333' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_text_color', '#333333' ) ).'; 
 		}
 		.primary-menu .sub-menu li:hover a {
-			color: '.get_theme_mod( 'bento_primary_menu_submenu_text_hover_color', '#333333' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_text_hover_color', '#333333' ) ).'; 
 		}
 		#nav-mobile {
-			background-color: '.get_theme_mod( 'bento_mobile_menu_background_color', '#dddddd' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_mobile_menu_background_color', '#dddddd' ) ).';
 		}
 		#nav-mobile li a,
 		.mobile-menu-trigger,
 		.mobile-menu-close {
-			color: '.get_theme_mod( 'bento_mobile_menu_text_color', '#333333' ).';
+			color: '.esc_html( get_theme_mod( 'bento_mobile_menu_text_color', '#333333' ) ).';
 		}
 		#nav-mobile li a:hover,
 		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.get_theme_mod( 'bento_mobile_menu_background_hover_color', '#cccccc' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_mobile_menu_background_hover_color', '#cccccc' ) ).';
 		}
 		#nav-mobile li a,
 		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.get_theme_mod( 'bento_mobile_menu_border_color', '#cccccc' ).';	
+			border-color: '.esc_html( get_theme_mod( 'bento_mobile_menu_border_color', '#cccccc' ) ).';	
 		}
 		#nav-mobile li a:hover,
 		.mobile-menu-trigger-container:hover,
 		.mobile-menu-close:hover {
-			color: '.get_theme_mod( 'bento_mobile_menu_text_hover_color', '#333333' ).';
+			color: '.esc_html( get_theme_mod( 'bento_mobile_menu_text_hover_color', '#333333' ) ).';
 		}
 	';
 	
 	// Theme Options: Content Colors tab
 	$customizer_css .= '
 		.site-content {
-			background-color: '.get_theme_mod( 'bento_content_background_color', '#f4f4f4' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_content_background_color', '#f4f4f4' ) ).';
 		}
 		.site-content h1, 
 		.site-content h2, 
@@ -2012,17 +1935,29 @@ function bento_customizer_css() {
 		.site-content h4, 
 		.site-content h5, 
 		.site-content h6 {
-			color: '.get_theme_mod( 'bento_content_heading_text_color', '#333333' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_heading_text_color', '#333333' ) ).';
 		}
 		.products .product a h3,
 		.masonry-item-box a h2 {
 			color: inherit;	
 		}
 		.site-content {
-			color: '.get_theme_mod( 'bento_content_body_text_color', '#333333' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_body_text_color', '#333333' ) ).';
 		}
-		.site-content a:not(.masonry-item-link):not(.page-numbers):not(.ajax-load-more):not(.remove):not(.button) {
-			color: '.get_theme_mod( 'bento_content_link_text_color', '#00b285' ).';
+		.site-content a:not(.masonry-item-link) {
+			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
+		}
+		.site-content a:not(.page-numbers) {
+			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
+		}
+		.site-content a:not(.ajax-load-more) {
+			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
+		}
+		.site-content a:not(.remove) {
+			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
+		}
+		.site-content a:not(.button) {
+			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
 		}
 		.page-link-text:not(:hover) {
 			color: #00B285;
@@ -2050,7 +1985,7 @@ function bento_customizer_css() {
 		.product_meta,
 		.shop_table td.product-remove a,
 		.woocommerce-checkout .payment_methods .wc_payment_method .payment_box {
-			color: '.get_theme_mod( 'bento_content_meta_text_color', '#999999' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_meta_text_color', '#999999' ) ).';
 		}
 		hr,
 		.entry-content table,
@@ -2074,7 +2009,7 @@ function bento_customizer_css() {
 		.woocommerce-checkout-review-order table tfoot,
 		.woocommerce-checkout-review-order table tfoot .order-total,
 		.woocommerce-checkout-review-order table tfoot .shipping {
-			border-color: '.get_theme_mod( 'bento_content_delimiter_color', '#dddddd' ).';	
+			border-color: '.esc_html( get_theme_mod( 'bento_content_delimiter_color', '#dddddd' ) ).';	
 		}
 		input[type="text"], 
 		input[type="password"], 
@@ -2085,20 +2020,20 @@ function bento_customizer_css() {
 		textarea, 
 		select, 
 		.select2-container {
-			background-color: '.get_theme_mod( 'bento_content_input_background_color', '#e4e4e4' ).';
-			color: '.get_theme_mod( 'bento_content_input_text_color', '#333333' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_content_input_background_color', '#e4e4e4' ) ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_input_text_color', '#333333' ) ).';
 		}
 		::-webkit-input-placeholder { 
-			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ) ).'; 
 		}
 		::-moz-placeholder { 
-			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ) ).'; 
 		}
 		:-ms-input-placeholder { 
-			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ) ).'; 
 		}
 		input:-moz-placeholder { 
-			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.esc_html( get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ) ).'; 
 		}
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
@@ -2110,23 +2045,23 @@ function bento_customizer_css() {
 		.site-content .button,
 		.widget_price_filter .ui-slider .ui-slider-range, 
 		.widget_price_filter .ui-slider .ui-slider-handle {
-			background-color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';	
+			background-color: '.esc_html( get_theme_mod( 'bento_content_button_background_color', '#00b285' ) ).';	
 		}
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
 		.page-links .page-link-text:hover {
-			border-color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';
+			border-color: '.esc_html( get_theme_mod( 'bento_content_button_background_color', '#00b285' ) ).';
 		}
 		.page-link-text:not(:hover),
 		.pagination a, 
 		.woocommerce-pagination a,
 		.site-content a.ajax-load-more {
-			color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_button_background_color', '#00b285' ) ).';
 		}
 		input[type="submit"]:hover,
 		.site-content .button:hover {
-			background-color: '.get_theme_mod( 'bento_content_button_hover_background_color', '#00906c' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_content_button_hover_background_color', '#00906c' ) ).';
 		}
 		input[type="submit"],
 		.site-content .button,
@@ -2134,52 +2069,52 @@ function bento_customizer_css() {
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
 		.page-links .page-link-text:hover {
-			color: '.get_theme_mod( 'bento_content_button_text_color', '#ffffff' ).';	
+			color: '.esc_html( get_theme_mod( 'bento_content_button_text_color', '#ffffff' ) ).';	
 		}
 		input[type="submit"]:hover,
 		.site-content .button:hover {
-			color: '.get_theme_mod( 'bento_content_button_text_hover_color', '#ffffff' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_button_text_hover_color', '#ffffff' ) ).';
 		}
 		.shop_table .actions .button,
 		.shipping-calculator-form .button,
 		.checkout_coupon .button,
 		.widget_shopping_cart .button:first-child,
 		.price_slider_amount .button {
-			background-color: '.get_theme_mod( 'bento_content_secondary_button_background_color', '#999999' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_content_secondary_button_background_color', '#999999' ) ).';
 		}
 		.shop_table .actions .button:hover,
 		.shipping-calculator-form .button:hover,
 		.checkout_coupon .button:hover,
 		.widget_shopping_cart .button:first-child:hover,
 		.price_slider_amount .button:hover {
-			background-color: '.get_theme_mod( 'bento_content_secondary_button_hover_background_color', '#777777' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_content_secondary_button_hover_background_color', '#777777' ) ).';
 		}
 		.shop_table .actions .button,
 		.shipping-calculator-form .button,
 		.checkout_coupon .button,
 		.widget_shopping_cart .button:first-child,
 		.price_slider_amount .button {
-			color: '.get_theme_mod( 'bento_content_secondary_button_text_color', '#ffffff' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_secondary_button_text_color', '#ffffff' ) ).';
 		}
 		.shop_table .actions .button:hover,
 		.shipping-calculator-form .button:hover,
 		.checkout_coupon .button:hover,
 		.widget_shopping_cart .button:first-child:hover,
 		.price_slider_amount .button:hover {
-			color: '.get_theme_mod( 'bento_content_secondary_button_text_hover_color', '#ffffff' ).';
+			color: '.esc_html( get_theme_mod( 'bento_content_secondary_button_text_hover_color', '#ffffff' ) ).';
 		}
 	';
 	
 	// Theme Options: Footer Colors tab
 	$customizer_css .= '
 		.sidebar-footer {
-			background-color: '.get_theme_mod( 'bento_footer_widgets_background_color', '#888888' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_footer_widgets_background_color', '#888888' ) ).';
 		}
 		.site-footer {
-			color: '.get_theme_mod( 'bento_footer_text_color', '#cccccc' ).';
+			color: '.esc_html( get_theme_mod( 'bento_footer_text_color', '#cccccc' ) ).';
 		}
 		.site-footer a {
-			color: '.get_theme_mod( 'bento_footer_link_text_color', '#ffffff' ).';
+			color: '.esc_html( get_theme_mod( 'bento_footer_link_text_color', '#ffffff' ) ).';
 		}
 		.site-footer label, 
 		.site-footer .post-date-blog, 
@@ -2192,25 +2127,22 @@ function bento_customizer_css() {
 		.site-footer .widget_calendar table caption, 
 		.site-footer .widget_calendar table th, 
 		.site-footer .widget_recent_comments .recentcomments {
-			color: '.get_theme_mod( 'bento_footer_meta_text_color', '#aaaaaa' ).';
+			color: '.esc_html( get_theme_mod( 'bento_footer_meta_text_color', '#aaaaaa' ) ).';
 		}
 		.sidebar-footer .widget_recent_entries ul li, 
 		.sidebar-footer .widget_recent_comments ul li, 
 		.sidebar-footer .widget_categories ul li, 
 		.sidebar-footer .widget_archive ul li {
-			border-color: '.get_theme_mod( 'bento_footer_delimiter_color', '#999999' ).';
+			border-color: '.esc_html( get_theme_mod( 'bento_footer_delimiter_color', '#999999' ) ).';
 		}
 		.bottom-footer {
-			background-color: '.get_theme_mod( 'bento_footer_bottom_background_color', '#666666' ).';
-			color: '.get_theme_mod( 'bento_footer_bottom_text_color', '#cccccc' ).';
+			background-color: '.esc_html( get_theme_mod( 'bento_footer_bottom_background_color', '#666666' ) ).';
+			color: '.esc_html( get_theme_mod( 'bento_footer_bottom_text_color', '#cccccc' ) ).';
 		}
 		.bottom-footer a {
-			color: '.get_theme_mod( 'bento_footer_bottom_link_text_color', '#ffffff' ).';
+			color: '.esc_html( get_theme_mod( 'bento_footer_bottom_link_text_color', '#ffffff' ) ).';
 		}
 	';
-	
-	// Theme Options: Custom CSS tab
-	$customizer_css .= get_theme_mod( 'bento_custom_css', '' );
 	
 	return $customizer_css;
 	
@@ -2227,7 +2159,7 @@ function bento_woo_active() {
 function bento_customizer_admin_notice() {
 	$old_options = get_option( 'satori_options', 'none' );
 	$customizer_url = get_admin_url( null, 'customize.php' );
-	$success_message = sprintf( wp_kses( esc_html__( 'Migration successful! Check out the <a href="%s">Customizer</a>', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $customizer_url ) );
+	$success_message = sprintf( wp_kses( __( 'Migration successful! Check out the <a href="%s">Customizer</a>', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $customizer_url ) );
 	if ( $old_options != 'none' ) {
 		?>
 		<div class="notice notice-warning is-dismissible notice-migrate-bento-options">
@@ -2303,9 +2235,22 @@ function bento_migrate_customizer_options() {
 					} else if ( $old_option_name == 'custom_logo' ) {
 						$file_id = bento_get_attachment_id( $old_option_value );
 						set_theme_mod( 'custom_logo', $file_id );
-					} else if ( $old_option_name == 'site_icon' ) {
+					} else if ( $old_option_name == 'bnt_favicon' ) {
 						$file_id = bento_get_attachment_id( $old_option_value );
-						update_option( 'site_icon', $file_id );
+						update_option( 'site_icon', $file_id );		
+					} else if ( $old_option_name == 'bnt_website_background_color' ) {
+						$old_bck_color = $old_options['bnt_website_background_color'];
+						set_theme_mod( 'background_color', $old_bck_color );
+					} else if ( $old_option_name == 'bnt_website_background_texture' ) {
+						$file_url = $old_options['bnt_website_background_texture'];
+						set_theme_mod( 'background_image', $file_url );
+						set_theme_mod( 'background_preset', 'repeat' );
+					} else if ( $old_option_name == 'bnt_website_background_image' ) {
+						$file_url = $old_options['bnt_website_background_image'];
+						set_theme_mod( 'background_image', $file_url );	
+					} else if ( $old_option_name == 'bnt_custom_css' ) {
+						$old_custom_css = $old_options['bnt_custom_css'];
+						wp_update_custom_css_post( $old_custom_css );
 					} else {
 						set_theme_mod( $new_option_name, $old_option_value );
 					}

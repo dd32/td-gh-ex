@@ -10,17 +10,14 @@
 	color: #999;
 }
 
-.customizer-bento-extras {
-	margin-bottom: -15px;
-}
-
 .bnt-customizer-link {
 	width: 100%;
 	display:block;
 	padding: 9px 15px;
 	box-sizing: border-box;
 	position: relative;
-	border-top: 1px solid #ddd
+	border-top: 1px solid #ddd;
+    text-decoration: none;
 }
 
 .bnt-customizer-link:hover {
@@ -42,22 +39,24 @@
 	font-size: 20px;
 }
 
-.bnt-section-helper-top-margin {
-	margin-top: -15px;
-}
-
-.bnt-extra-link-last {
-	border-bottom: 1px solid #ddd;
-}
-
-.bnt-extra-link-rate {
-	color: #bdbd2b;
-}
-
-.bnt-extra-link-ep {
-	color: #ff8c00;
-}
-
-.bnt-support-link:first-child {
+.bnt-ep-link {
 	border-top: none;
+	color: #de811f;
+}
+
+.bnt-customizer-ep-active .bnt-ep-link {
+	display: none;
+}
+
+.bnt-customizer-ep-active .bnt-rate-link {
+	border-top: none;
+}
+
+#accordion-section-bento_theme_support .accordion-section-title {
+	font-style: italic;
+	color: #0073aa;
+}
+
+#customize-controls #accordion-section-bento_theme_support .accordion-section-title:hover {
+	color: #de811f;
 }

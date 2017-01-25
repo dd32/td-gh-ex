@@ -10,13 +10,13 @@ Author URI: http://satoristudio.net/
 
 Description: Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through a Theme Options panel as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features.
 
-Version: 1.5.5
+Version: 1.6
 
-License: GNU General Public License v2 or later
+License: GNU General Public License v3 or later
 
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, portfolio
+Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Text Domain: bento
 
@@ -195,6 +195,10 @@ body {
 	overflow: hidden;
 }
 
+.boxed-layout .site-header.fixed-header {
+	left: auto;
+}
+
 .clear:after {
 	display: table;
 	clear: both;
@@ -354,6 +358,7 @@ iframe {
 	background-color: #fff;
 	-webkit-transition: none;
 	transition: none;
+	z-index: 999;
 }
 
 .site-header .bnt-container {
@@ -365,7 +370,6 @@ iframe {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 999;
 	background: #fff;
 }
 
@@ -702,6 +706,7 @@ iframe {
 
 .post-header {
 	width: 100%;
+	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -898,10 +903,6 @@ iframe {
 3. Content
 -------------------------------------
 */
-
-.site-content {
-	background-color: #f4f4f4;	
-}
 
 .bnt-container {
 	width: 100%;
@@ -1796,7 +1797,7 @@ h3.author-name {
 	padding: 2rem 0;
 }
 
-.grid-columns .has-thumb .grid-item-box {
+.grid-columns .has-post-thumbnail .grid-item-box {
 	padding-top: 0;	
 }
 
@@ -2712,7 +2713,6 @@ h1.product_title {
 	text-align: center;
     width: 80px;
 	width: 8rem;
-    float: left;
     margin: 0;
 }
 
@@ -2828,7 +2828,6 @@ h1.product_title {
 .shop_table td.product-remove a {
 	position: relative;
     color: #999;
-    text-indent: -9999px;
     display: inline-block;
 }
 
@@ -3273,6 +3272,10 @@ a.shipping-calculator-button:hover {
 		width: 100%;
 	}
 	
+	.shop_table td.product-remove a {
+		text-indent: 9999px;
+	}
+	
 }
 
 /* Larger mobile screens - 768px and wider */
@@ -3478,6 +3481,21 @@ a.shipping-calculator-button:hover {
 	.woocommerce-page form #customer_details .form-row-first, 
 	.woocommerce-page form #customer_details .form-row-last {
 		width: 47%;
+	}
+	
+	.shop_table.cart .product-price,
+	.shop_table.cart .product-quantity,
+	.shop_table.cart .product-subtotal {
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+	
+	.shop_table td.product-remove a {
+		text-indent: -9999px;
+	}
+	
+	.cart .quantity .qty {
+		float: left;
 	}
 	
 	/* Side header */ 

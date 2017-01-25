@@ -6,67 +6,7 @@ var $str = jQuery.noConflict();
 $str(document).ready(function() {
 	
 	
-	// Add theme links
-	var links = ' \
-		<li class="accordion-section customizer-bento-extras"> \
-			<div class="bnt-section-helper-top-margin"> \
-			</div> \
-	';
-	if ( bentoCustomizerVars.license_status != 'valid' ) {
-		links += ' \
-			<a class="bnt-customizer-link bnt-extra-link bnt-extra-link-first bnt-extra-link-ep" href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank"> \
-				<span class="dashicons dashicons-carrot"> \
-				</span>'
-				+bentoCustomizerVars.exp+
-			'</a>';
-	}
-	links += ' \
-			<a class="bnt-customizer-link bnt-extra-link bnt-extra-link-last bnt-extra-link-rate" href="https://wordpress.org/support/theme/bento/reviews/?filter=5#new-post" target="_blank"> \
-				<span class="dashicons dashicons-heart"> \
-				</span>'
-				+bentoCustomizerVars.review+
-			'</a> \
-		</li>';
-	$str('#customize-theme-controls > ul').prepend(links);
-	
-	
 	// Control visibility logic
-	
-	function bntWebsiteLayout() {
-		var $parent = $str( '#customize-control-bento_website_layout select' );
-		var $child = $str( '#customize-control-bento_website_background' );
-		if ( $parent.attr('value') == 1 ) {
-			$child.show();
-		} else {
-			$child.hide();
-		}
-	}
-	bntWebsiteLayout();
-	$str( '#customize-control-bento_website_layout select' ).change( function() {
-		bntWebsiteLayout();
-		bntWebsiteBackground();
-	});
-	
-	function bntWebsiteBackground() {
-		var $parent = $str( '#customize-control-bento_website_background select' );
-		var $children = $str( '#customize-control-bento_website_background_color, #customize-control-bento_website_background_texture, #customize-control-bento_website_background_image' );
-		if ( $parent.is(':visible') ) {
-			var pvalue = $parent.attr('value');
-			$children.each(function( index, value ) {
-				if ( index == pvalue ) {
-					$str(value).show();
-				} else {
-					$str(value).hide();
-				}
-			});
-		} else {
-			$children.hide();
-		}
-	}
-	bntWebsiteBackground();
-	$str( '#customize-control-bento_website_background select' ).change( function() {
-		bntWebsiteBackground();
-	});
 	
 	function bntMenuBackground() {
 		var $parent = $str( '#customize-control-bento_menu_config select' );
@@ -114,6 +54,20 @@ $str(document).ready(function() {
 	bntPopupTrigger();
 	$str( '#customize-control-bento_cta_trigger select' ).change( function() {
 		bntPopupTrigger();
+	});
+	
+	function bntStaticFront() {
+		var $parent = $str( '#customize-control-show_on_front' );
+		var $child = $str( '#customize-control-bento_front_header_image, #customize-control-bento_front_header_primary_cta_text, #customize-control-bento_front_header_primary_cta_link, #customize-control-bento_front_header_primary_cta_bck_color, #customize-control-bento_front_header_primary_cta_bck_color_hover, #customize-control-bento_front_header_primary_cta_text_color, #customize-control-bento_front_header_secondary_cta_text, #customize-control-bento_front_header_secondary_cta_link, #customize-control-bento_front_header_secondary_cta_color, #customize-control-bento_front_header_secondary_cta_color_hover' );
+		if ( $parent.find('input[value="page"]').attr('checked') == 'checked' ) {
+			$child.show();
+		} else {
+			$child.hide();
+		}
+	}
+	bntStaticFront();
+	$str( '#customize-control-show_on_front input' ).change( function() {
+		bntStaticFront();
 	});
 		
 		

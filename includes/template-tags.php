@@ -12,14 +12,14 @@ if ( ! function_exists( 'bento_google_fonts' ) ) {
 		// Define fonts based on Customizer settings
 		$body_font = $head_font = 'Open Sans';
 		if ( get_theme_mod( 'bento_font_body' ) != '' ) {
-			$body_font = get_theme_mod( 'bento_font_body' );
+			$body_font = esc_html( get_theme_mod( 'bento_font_body' ) );
 		}
 		if ( get_theme_mod( 'bento_font_headings' ) != '' && get_theme_mod( 'bento_font_headings' ) != 'Open Sans' ) {
-			$head_font = get_theme_mod( 'bento_font_headings' );
+			$head_font = esc_html( get_theme_mod( 'bento_font_headings' ) );
 		}
 		$menu_font = 'Montserrat';
 		if ( get_theme_mod( 'bento_font_menu' ) != '' ) {
-			$menu_font = get_theme_mod( 'bento_font_menu' );
+			$menu_font = esc_html( get_theme_mod( 'bento_font_menu' ) );
 		}
 		
 		// Translators: if there are characters in your language that are not supported by chosen font, translate this to 'off'.
@@ -57,23 +57,8 @@ if ( ! function_exists( 'bento_google_fonts' ) ) {
 if ( ! function_exists( 'bento_logo' ) ) {
 	
 	function bento_logo() {
-		if ( get_theme_mod( 'custom_logo' ) != '' ) {
-			$custom_logo_id = get_theme_mod( 'custom_logo' );
-			$logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-			$logo_full = $logo_mobile = $logo_image[0];
-			if ( get_theme_mod( 'bento_logo_mobile' ) != '' ) {
-				$mobile_logo_id = get_theme_mod( 'bento_logo_mobile' );
-				$mobile_logo_image = wp_get_attachment_image_src( $mobile_logo_id , 'full' );
-				$logo_mobile = $mobile_logo_image[0];
-			}
-			echo '
-			<div class="logo clear">
-				<a href="'.esc_url( site_url() ).'">
-					<img class="logo-fullsize" src="'.$logo_full.'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
-					<img class="logo-mobile" src="'.$logo_mobile.'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
-				</a>
-			</div>
-			';
+		if ( has_custom_logo() ) {
+			echo '<div class="logo clear">'.get_custom_logo().'</div>';
 		}
 	}
     
@@ -84,6 +69,9 @@ if ( ! function_exists( 'bento_logo' ) ) {
 if ( ! function_exists( 'bento_primary_menu' ) ) {
 	
 	function bento_primary_menu() {
+		if ( ! has_nav_menu( 'primary-menu' ) ) {
+			return;
+		}
 		$depth = '3';
 		if ( get_theme_mod( 'bento_menu_config' ) == 2 ) {
 			$depth = '1';
@@ -132,6 +120,9 @@ if ( ! function_exists( 'bento_primary_menu' ) ) {
 if ( ! function_exists( 'bento_mobile_menu' ) ) {
 	
 	function bento_mobile_menu() {
+		if ( ! has_nav_menu( 'primary-menu' ) ) {
+			return;
+		}
 		$menu_depth = 3;
 		if ( get_theme_mod( 'bento_mobile_menu_submenus' ) ) {
 			$menu_depth = 1;
@@ -194,6 +185,9 @@ if ( ! function_exists( 'bento_mobile_menu' ) ) {
 if ( ! function_exists( 'bento_footer_menu' ) ) {
 	
 	function bento_footer_menu() {
+		if ( ! has_nav_menu( 'footer-menu' ) ) {
+			return;
+		}
 		?>
 		<div class="footer-menu">
 			<div id="nav-footer" class="nav">
@@ -225,12 +219,9 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 	
 	function bento_post_header() {
 		
-		// Get post ID
-		global $post;
-		$postid = '';
-		if ( is_object($post) ) {
-			$postid = $post->ID;
-		}
+		// Set variables
+		$postid = $title = $subtitle = $cta = $video_header = '';
+		$postid = get_queried_object_id();
 		
 		// Only display on single posts/pages
 		if ( ! is_singular() ) {
@@ -238,51 +229,73 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		}
 		
 		// Set titles
-		$title = $subtitle = $cta = $video_header = '';
-		if ( get_post_meta( $post->ID, 'bento_hide_title', true) != 'on' ) {
+		if ( get_post_meta( $postid, 'bento_hide_title', true) != 'on' ) {
 			$title = '<h1>'.wp_kses( get_the_title(), array( 'br' => array() ) ).'</h1>';
 		}
-		if ( get_post_meta( $postid, 'bento_subtitle', true ) != '' ) {
+		if ( has_excerpt( $postid ) ) {
 			$subtitle = '
 				<div class="post-header-subtitle">
-					'.wp_kses( get_post_meta( $postid, 'bento_subtitle', true ), array( 'br' => array() ) ).'
+					'.wp_kses( get_the_excerpt( $postid ), array( 'br' => array() ) ).'
 				</div>
 			';
 		}
 		
-		// Set call-to-action elements if defined
-		if ( get_post_meta( $postid, 'bento_cta_primary_text', true ) != '' ) {
-			$cta_primary = $cta_secondary = '';
-			if ( get_post_meta( $postid, 'bento_cta_primary_text', true ) != '' ) {
-				if ( get_post_meta( $postid, 'bento_cta_primary_link', true ) != '' ) {
-					$cta_primary = '
-						<a class="post-header-cta-primary" href="'.esc_url( get_post_meta( $postid, 'bento_cta_primary_link', true ) ).'">
-							'.esc_html( get_post_meta( $postid, 'bento_cta_primary_text', true ) ).'
-						</a>
-					';
-				} else {
-					$cta_primary = '
-						<div class="post-header-cta-primary">
-							'.esc_html( get_post_meta( $postid, 'bento_cta_primary_text', true ) ).'
-						</div>
-					';
-				}
-			}	
-			if ( get_post_meta( $postid, 'bento_cta_secondary_text', true ) != '' ) {
-				if ( get_post_meta( $postid, 'bento_cta_secondary_link', true ) != '' ) {	
-					$cta_secondary = '
-						<a class="post-header-cta-secondary" href="'.esc_url( get_post_meta( $postid, 'bento_cta_secondary_link', true ) ).'">
-							'.esc_html( get_post_meta( $postid, 'bento_cta_secondary_text', true ) ).'
-						</a>
-					';
-				} else {
-					$cta_secondary = '
-						<div class="post-header-cta-secondary">
-							'.esc_html( get_post_meta( $postid, 'bento_cta_secondary_text', true ) ).'
-						</div>
-					';
-				}
+		// Set call-to-action elements
+		$cta_front = $cta_primary = $cta_p = $cta_p_old = $cta_p_text = $cta_p_link = $cta_secondary = $cta_s = $cta_s_old = $cta_s_text = $cta_s_link = '';
+		if ( is_front_page() && 'page' == get_option('show_on_front') ) {
+			$cta_front = 'true';
+		}
+		if ( get_theme_mod( 'bento_front_header_primary_cta_text' ) != '' && $cta_front == 'true' ) {
+			$cta_p = 'on';
+			$cta_p_text = get_theme_mod( 'bento_front_header_primary_cta_text' );
+			$cta_p_link = get_theme_mod( 'bento_front_header_primary_cta_link' );
+		} else if ( get_post_meta( $postid, 'bento_cta_primary_text', true ) != '' ) {
+			$cta_p = 'on';
+			$cta_p_old = 'true';
+			$cta_p_text = get_post_meta( $postid, 'bento_cta_primary_text', true );
+			$cta_p_link = get_post_meta( $postid, 'bento_cta_primary_link', true );
+		}
+		if ( get_theme_mod('bento_front_header_secondary_cta_text') != '' && $cta_front == 'true' ) {
+			$cta_s = 'on';
+			$cta_s_text = get_theme_mod( 'bento_front_header_secondary_cta_text' );
+			$cta_s_link = get_theme_mod( 'bento_front_header_secondary_cta_link' );
+		} else if ( get_post_meta( $postid, 'bento_cta_secondary_text', true ) != '' ) {
+			$cta_s = 'on';
+			$cta_s_old = 'true';
+			$cta_s_text = get_post_meta( $postid, 'bento_cta_secondary_text', true );
+			$cta_s_link = get_post_meta( $postid, 'bento_cta_secondary_link', true );
+		}
+		if ( $cta_p == 'on' ) {
+			if ( $cta_p_link != '' ) {
+				$cta_primary = '
+					<a class="post-header-cta-primary" href="'.esc_url( $cta_p_link ).'">
+						'.esc_html( $cta_p_text ).'
+					</a>
+				';
+			} else {
+				$cta_primary = '
+					<div class="post-header-cta-primary">
+						'.esc_html( $cta_p_text ).'
+					</div>
+				';
 			}
+		}	
+		if ( $cta_s == 'on' ) {
+			if ( $cta_s_link != '' ) {	
+				$cta_secondary = '
+					<a class="post-header-cta-secondary" href="'.esc_url( $cta_s_link ).'">
+						'.esc_html( $cta_s_text ).'
+					</a>
+				';
+			} else {
+				$cta_secondary = '
+					<div class="post-header-cta-secondary">
+						'.esc_html( $cta_s_text ).'
+					</div>
+				';
+			}
+		}
+		if ( $cta_primary != '' || $cta_secondary != '' ) {
 			$cta = '
 				<div class="post-header-cta">
 					'.$cta_primary.'
@@ -292,22 +305,18 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		}
 		
 		// Set video if defined and if EP is activated
-		if ( 
-			get_post_meta( $post->ID, 'bento_header_video_source', true ) != '' && 
-			get_option( 'bento_ep_license_status' ) == 'valid' && 
-			function_exists('bento_ep_video_header') 
-		) {
+		if ( get_post_meta( $postid, 'bento_header_video_source', true ) != '' && get_option( 'bento_ep_license_status' ) == 'valid' && function_exists('bento_ep_video_header') ) {
 			$video_header = bento_ep_video_header();
 		}
 		
 		// Set Google Maps if defined and if EP is activated
-		if ( get_post_meta( $post->ID, 'bento_activate_headermap', true ) == 'on' && get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		if ( get_post_meta( $postid, 'bento_activate_headermap', true ) == 'on' && get_option( 'bento_ep_license_status' ) == 'valid' ) {
 			echo '<div id="bnt-map-canvas"></div>';
 			return;
 		}
 		
 		// Render the markup
-		if ( get_post_meta( $postid, 'bento_activate_header', true ) == 'on' && get_post_meta( $post->ID, 'bento_activate_headermap', true ) != 'on' ) {
+		if ( ( get_post_meta( $postid, 'bento_activate_header', true ) == 'on' && get_post_meta( $postid, 'bento_activate_headermap', true ) != 'on' ) || ( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) != '' ) ) {
 			echo '
 				<div class="post-header">
 					'.$video_header.'
@@ -333,8 +342,10 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 	
 	function bento_post_thumbnail() {
+		
 		global $post;
 		global $bento_parent_page_id;
+		
 		// Check if it's one of the situations when a thumbnail is not needed, and exit if yes
 		if ( 
 			! has_post_thumbnail() || 
@@ -346,6 +357,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 		) {
 			return;
 		}
+		
 		if ( is_singular() && get_page_template_slug( $bento_parent_page_id ) != 'page-grid.php' ) {
 			?>
 			<div class="post-thumbnail">
@@ -364,6 +376,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 		
 			<?php 
 		}
+		
 	}
 	
 }
@@ -422,20 +435,30 @@ if ( ! function_exists( 'bento_post_title' ) ) {
 			return;
 		}
 		
+		// If extended post header active, exit
+		if ( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' ) {
+			return;
+		}
+		
+		// If front page and Customizer-set header active, exit
+		if ( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) != '' ) {
+			return;
+		}
+		
 		echo '<header class="entry-header">';
 		// Main title
-		if ( is_single() ) {
-			if ( get_post_meta( $post->ID, 'bento_hide_title', true) != 'on' && get_post_meta( $post->ID, 'bento_activate_header', true ) != 'on' ) {
+		if ( is_singular() ) {
+			if ( get_post_meta( $post->ID, 'bento_hide_title', true) != 'on' ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			}
 		} else {
 			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		}
 		// Subtitle
-		if ( is_single() && get_post_meta( $post->ID, 'bento_subtitle', true) != '' && get_post_meta( $post->ID, 'bento_activate_header', true ) != 'on' ) {
+		if ( is_singular() && has_excerpt( $post->ID ) ) {
 			echo '
 				<div class="post-header-subtitle">
-					'.esc_html( get_post_meta( $post->ID, 'bento_subtitle', true ) ).'
+					'.esc_html( get_the_excerpt( $post->ID ) ).'
 				</div>
 			';
 		}
@@ -747,15 +770,16 @@ if ( ! function_exists( 'bento_quote_format_content' ) ) {
 if ( ! function_exists( 'bento_copyright' ) ) {
 
 	function bento_copyright() {
-		$author = 'Bento WordPress '.esc_html__( 'Theme', 'bento' );
+		$sitename = '<a href="'.esc_url( home_url( '/' ) ).'">'.esc_attr( get_bloginfo( 'name' ) ).'</a>';
+		$author = esc_html__( 'Bento WordPress theme by Satori Studio', 'bento' );
 		if ( is_front_page() ) {
-			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento WordPress theme">Bento</a> WordPress '.esc_html__( 'Theme', 'bento' );
+			$author = esc_html__( 'Bento WordPress theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
 			$copyright .= get_theme_mod( 'bento_footer_copyright' );
 		} else {
-			$copyright .= '&#169; '.date('Y').' '.$author;
+			$copyright .= '&#169; '.date('Y').' '.$sitename.'. '.$author;
 		}
 		$copyright .= '</div>';
 		echo wp_kses( $copyright, 
@@ -796,41 +820,6 @@ if ( ! function_exists( 'bento_ajax_load_more' ) ) {
     <?php 
 	}
 
-}
-
-
-// Display advanced excerpt
-if ( ! function_exists( 'bento_excerpt' ) ) {
-	
-	function bento_excerpt( $length = 300 ) {
-		$excerpt = '';
-		$content = get_extended( apply_filters( 'the_content', strip_shortcodes( get_the_content() ) ) );
-		$content = str_replace( ']]>', ']]&gt;', $content );
-		// First check if the post has an excerpt
-		if ( has_excerpt() ) {
-			$excerpt = esc_html( get_the_excerpt() ); 
-		} else {
-			$content_main = $content['main'];
-			if ( strlen($content_main) > $length ) {
-				$pos = strpos( $content_main, ' ', $length );
-				if ( $pos === false ) {
-					$excerpt = $content_main;
-				} else {
-					$excerpt = substr( $content_main, 0, $pos );
-					$excerpt .= '.. <a href="'.esc_url( get_post_permalink() ).'">&rarr;</a>';
-				}
-			} else {
-				$excerpt = $content_main;
-			}			 
-		} 
-		if ( get_post_format() === 'link' ) { 
-			$excerpt = bento_link_format_content();
-		} elseif ( get_post_format() === 'quote' ) {
-			$excerpt = bento_quote_format_content();
-		}
-		echo '<div class="entry-content grid-item-content">'.$excerpt.'</div>';
-	}
-		
 }
 
 
@@ -915,8 +904,8 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 if ( ! function_exists( 'bento_novice_header' ) ) {
 	
 	function bento_novice_header() {
-		$status = get_option( 'novice_header' );
-		if ( $status != 'dismissed' ) {
+		$status = get_theme_mod( 'bento_novice_header' );
+		if ( $status != 1 && current_user_can( 'edit_theme_options' ) ) {
 			?>
 			<div class="novice-header">
 				<div class="novice-header-inner">

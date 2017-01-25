@@ -45,7 +45,7 @@ $bento_class_array = array( $bento_tile_size, $bento_tile_hide_overlay, 'grid-it
                     </header>
                 <?php } ?>
                 
-				<?php bento_excerpt(); ?>
+				<?php the_excerpt(); ?>
                 
                 <?php bento_entry_meta(); ?>
                 

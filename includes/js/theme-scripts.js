@@ -247,7 +247,6 @@ $str(document).ready(function() {
             url:    bentoThemeVars.ajaxurl,
 			data: {
                 action: 'dismiss_novice',
-                novice_option: 'novice_header'
             },
             dataType: 'json'
 		}).done(function( json ) {
@@ -379,7 +378,7 @@ $str(window).scroll(function () {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone(true);
-				$str('body').append('<header class="site-header fixed-header"></header>');
+				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');
 				$str('.fixed-header').html($bento_headerClone).fadeIn(600);
 			}
 		} else {
