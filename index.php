@@ -17,7 +17,7 @@
 	endwhile;
 
 	// Previous/next page navigation.
-	$nav = get_the_posts_pagination( array(
+	$nav = the_posts_pagination ( array(
 		'type'          => 'list',
 		'prev_text'          => __( 'Previous page', 'barletta' ),
 		'next_text'          => __( 'Next page', 'barletta' )

@@ -189,6 +189,10 @@ function barletta_scripts() {
 	wp_enqueue_style( 'barletta-style', get_stylesheet_uri() );
 
 	// Add JS Files
+
+	// Add Modernizr for better HTML5 and CSS3 support
+	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/modernizr.min.js', array('jquery') );
+
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
 	wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery') );
 	wp_enqueue_script( 'barletta-js', get_template_directory_uri() . '/js/barletta.scripts.js', array('jquery') );

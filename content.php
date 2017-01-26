@@ -26,7 +26,7 @@
 						<div class="list-post-body">
 							<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							<div class="post-meta">
-								<span><?php echo get_the_date(); ?></span>
+								<span><?php the_date(); ?></span>
 								<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 									<span><?php comments_popup_link( esc_html__( 'Leave a comment', 'barletta' ), esc_html__( '1 Comment', 'barletta' ), esc_html__( '% Comments', 'barletta' ) ); ?></span>
 								<?php else: ?>
