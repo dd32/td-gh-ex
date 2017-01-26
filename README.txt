@@ -2,6 +2,22 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.7 Januar 26 2017 =
+* Removed Agama favicon feature & enabled default WordPress favicon feature.
+* Updated customizer header section.
+* Updated customizer styling header section.
+* Updated customizer primary color option (transport = postMessage).
+* Updated customizer header background color option (transport = postMessage).
+* Updated customizer header shrinked background color option (transport = postMessage).
+* Updated customizer header borders color option (transport = postMessage).
+* Updated customizer logo color option (transport = postMessage).
+* Updated customizer logo hover color option (transport = postMessage).
+* Updated customizer navigation color option (transport = postMessage).
+* Updated customizer navigation hover color option (transport = postMessage).
+* Updated footer widget area background color option (transport = postMessage).
+* Updated footer copyright area background color option (transport = postMessage).
+* Updated theme translation files.
+
 = 1.2.6 Januar 12 2017 =
 * Added blog post meta date (on | off) feature.
 * Added blog post meta category (on | off) feature.
