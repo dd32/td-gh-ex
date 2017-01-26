@@ -28,10 +28,10 @@ Spacious is distributed under the terms of the GNU GPL
 == THEME USAGE ==
 
 = Theme Instruction =
-Get theme instruction at http://themegrill.com/theme-instruction/spacious
+Get theme instruction at https://themegrill.com/theme-instruction/spacious
 
 = Free Support =
-Get free support at http://themegrill.com/support-forum
+Get free support at https://themegrill.com/support-forum
 
 = Theme Features Usage =
 All available options can be used from Appearance->Customize
@@ -45,6 +45,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.4 - 2017-01-24 =
+* Added - Support for Video Headers introduced in WordPress 4.7.
+
 = Version 1.4.3 - 2016-12-31 =
 * Fix - Delete the old favicon, site logo and Custom CSS code theme options table supporting the child theme
 * Added - RTL Language support.
