@@ -2,6 +2,11 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.8 January 27 2017 =
+* Fixed blog small thumbs layout, big space between posts on mobile devices.
+* Added frontpage boxes loading animation feature.
+* Added blog posts loading animation feature.
+
 = 1.2.7 Januar 26 2017 =
 * Removed Agama favicon feature & enabled default WordPress favicon feature.
 * Updated customizer header section.
@@ -203,6 +208,7 @@ Agama is distributed under the terms of the GNU GPL2
  * Animate - http://daneden.github.io/animate.css/ - MIT License
  * Easing - http://gsgd.co.uk/sandbox/jquery/easing/ - BSD License
  * Camera - http://www.pixedelic.com/plugins/camera/ - MIT License
+ * AnimOnScroll http://www.codrops.com - MIT Lcense
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 

@@ -23,7 +23,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.2.7';
+		static private $version = '1.2.8';
 		
 		/**
 		 * Class Constructor
@@ -141,7 +141,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			}
 			
 			// Agama main stylesheet
-			wp_register_style( 'agama-style', get_stylesheet_uri(), array(), uniqid() );
+			wp_register_style( 'agama-style', get_stylesheet_uri(), array(), self::$version );
 			 wp_enqueue_style( 'agama-style' );
 			 
 			// If dark skin selected, enqueue it's stylesheet

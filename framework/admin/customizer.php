@@ -798,6 +798,36 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'textarea',
 		'default'		=> 'Powerful Layout with Responsive functionality that can be adapted to any screen size.'
 	) );
+	Kirki::add_config( 'agama_frontpage_box_1_animated', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_1_animated', array(
+		'label'			=> __( 'Box Animated', 'agama' ),
+		'description'	=> __( 'Enable box loading animation ?', 'agama' ),
+		'section'		=> 'agama_frontpage_boxes_section_1',
+		'settings'		=> 'agama_frontpage_box_1_animated',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_config( 'agama_frontpage_box_1_animation', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_1_animation', array(
+		'label'				=> __( 'Box Animation', 'agama' ),
+		'description'		=> __( 'Select box loading animation.', 'agama' ),
+		'section'			=> 'agama_frontpage_boxes_section_1',
+		'settings'			=> 'agama_frontpage_box_1_animation',
+		'type'				=> 'select',
+		'choices'			=> AgamaAnimate::choices(),
+		'active_callback'	=> array(
+			array(
+				'setting'	=> 'agama_frontpage_box_1_animated',
+				'operator'	=> '==',
+				'value'		=> true
+			)
+		),
+		'default'			=> 'fadeInLeft'
+	) );
 	#############################################################
 	# FRONTPAGE BOXES SECTION 2
 	#############################################################
@@ -882,6 +912,36 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'settings'		=> 'agama_frontpage_box_2_text',
 		'type'			=> 'textarea',
 		'default'		=> 'Complete control on each & every element that provides endless customization possibilities.'
+	) );
+	Kirki::add_config( 'agama_frontpage_box_2_animated', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_2_animated', array(
+		'label'			=> __( 'Box Animated', 'agama' ),
+		'description'	=> __( 'Enable box loading animation ?', 'agama' ),
+		'section'		=> 'agama_frontpage_boxes_section_2',
+		'settings'		=> 'agama_frontpage_box_2_animated',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_config( 'agama_frontpage_box_2_animation', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_2_animation', array(
+		'label'				=> __( 'Box Animation', 'agama' ),
+		'description'		=> __( 'Select box loading animation.', 'agama' ),
+		'section'			=> 'agama_frontpage_boxes_section_2',
+		'settings'			=> 'agama_frontpage_box_2_animation',
+		'type'				=> 'select',
+		'choices'			=> AgamaAnimate::choices(),
+		'active_callback'	=> array(
+			array(
+				'setting'	=> 'agama_frontpage_box_2_animated',
+				'operator'	=> '==',
+				'value'		=> true
+			)
+		),
+		'default'			=> 'fadeInDown'
 	) );
 	#############################################################
 	# FRONTPAGE BOXES SECTION 3
@@ -968,6 +1028,36 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'textarea',
 		'default'		=> 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.'
 	) );
+	Kirki::add_config( 'agama_frontpage_box_3_animated', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_3_animated', array(
+		'label'			=> __( 'Box Animated', 'agama' ),
+		'description'	=> __( 'Enable box loading animation ?', 'agama' ),
+		'section'		=> 'agama_frontpage_boxes_section_3',
+		'settings'		=> 'agama_frontpage_box_3_animated',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_config( 'agama_frontpage_box_3_animation', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_3_animation', array(
+		'label'				=> __( 'Box Animation', 'agama' ),
+		'description'		=> __( 'Select box loading animation.', 'agama' ),
+		'section'			=> 'agama_frontpage_boxes_section_3',
+		'settings'			=> 'agama_frontpage_box_3_animation',
+		'type'				=> 'select',
+		'choices'			=> AgamaAnimate::choices(),
+		'active_callback'	=> array(
+			array(
+				'setting'	=> 'agama_frontpage_box_3_animated',
+				'operator'	=> '==',
+				'value'		=> true
+			)
+		),
+		'default'			=> 'fadeInUp'
+	) );
 	#############################################################
 	# FRONTPAGE BOXES SECTION 4
 	#############################################################
@@ -1053,6 +1143,36 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'textarea',
 		'default'		=> 'Optimized code that are completely customizable and deliver unmatched fast performance.'
 	) );
+	Kirki::add_config( 'agama_frontpage_box_4_animated', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_4_animated', array(
+		'label'			=> __( 'Box Animated', 'agama' ),
+		'description'	=> __( 'Enable box loading animation ?', 'agama' ),
+		'section'		=> 'agama_frontpage_boxes_section_4',
+		'settings'		=> 'agama_frontpage_box_4_animated',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_config( 'agama_frontpage_box_4_animation', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_frontpage_box_4_animation', array(
+		'label'				=> __( 'Box Animation', 'agama' ),
+		'description'		=> __( 'Select box loading animation.', 'agama' ),
+		'section'			=> 'agama_frontpage_boxes_section_4',
+		'settings'			=> 'agama_frontpage_box_4_animation',
+		'type'				=> 'select',
+		'choices'			=> AgamaAnimate::choices(),
+		'active_callback'	=> array(
+			array(
+				'setting'	=> 'agama_frontpage_box_4_animated',
+				'operator'	=> '==',
+				'value'		=> true
+			)
+		),
+		'default'			=> 'fadeInRight'
+	) );
 	#############################################################
 	# FRONTPAGE BOXES SECTION 5
 	#############################################################
@@ -1126,17 +1246,47 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'list'
 	) );
+	Kirki::add_config( 'agama_blog_posts_load_animated', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_blog_posts_load_animated', array(
+		'label'			=> __( 'Posts Animated', 'agama' ),
+		'description'	=> __( 'Enable posts loading animation ?', 'agama' ),
+		'section'		=> 'agama_blog_general_section',
+		'settings'		=> 'agama_blog_posts_load_animated',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_config( 'agama_blog_posts_load_animation', array(
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_blog_posts_load_animation', array(
+		'label'			=> __( 'Posts Animation', 'agama' ),
+		'description'	=> __( 'Select posts loading animation.', 'agama' ),
+		'section'		=> 'agama_blog_general_section',
+		'settings'		=> 'agama_blog_posts_load_animation',
+		'type'			=> 'select',
+		'choices'		=> AgamaAnimate::choices(),
+		'active_callback'	=> array(
+			array(
+				'setting'	=> 'agama_blog_posts_load_animated',
+				'operator'	=> '==',
+				'value'		=> true
+			)
+		),
+		'default'		=> 'bounceInUp'
+	) );
 	Kirki::add_config( 'agama_blog_thumbnails_permalink', array(
 		'capability'	=> 'edit_theme_options'
 	) );
 	Kirki::add_field( 'agama_blog_thumbnails_permalink', array(
-		'label'			=> __( 'Featured Image Permalink', 'agama' ),
-		'description'	=> __( 'Enable post featured image permalink ?', 'agama' ),
-		'help'			=> __( 'If enabled the post featured images will become clickable links.', 'agama' ),
-		'section'		=> 'agama_blog_general_section',
-		'settings'		=> 'agama_blog_thumbnails_permalink',
-		'type'			=> 'switch',
-		'default'		=> true
+		'label'				=> __( 'Featured Image Permalink', 'agama' ),
+		'description'		=> __( 'Enable post featured image permalink ?', 'agama' ),
+		'help'				=> __( 'If enabled the post featured images will become clickable links.', 'agama' ),
+		'section'			=> 'agama_blog_general_section',
+		'settings'			=> 'agama_blog_thumbnails_permalink',
+		'type'				=> 'switch',
+		'default'			=> true
 	) );
 	Kirki::add_config( 'agama_blog_excerpt', array(
 		'capability'	=> 'edit_theme_options'

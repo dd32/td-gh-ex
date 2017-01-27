@@ -265,6 +265,67 @@ var THEMEVISION = THEMEVISION || {};
 		
 	};
 	
+	THEMEVISION.widgets = {
+		
+		init: function() {
+			
+			THEMEVISION.widgets.animations();
+			THEMEVISION.widgets.animonscroll();
+			
+		},
+		
+		animations: function(){
+			var $dataAnimateEl = $('[data-animate]');
+			if( $dataAnimateEl.length > 0 ){
+				if( $body.hasClass('device-lg') || $body.hasClass('device-md') || $body.hasClass('device-sm') ){
+					$dataAnimateEl.each(function(){
+						var element = $(this),
+							animationDelay = element.attr('data-delay'),
+							animationDelayTime = 0;
+
+						if( animationDelay ) { animationDelayTime = Number( animationDelay ) + 500; } else { animationDelayTime = 500; }
+
+						if( !element.hasClass('animated') ) {
+							element.addClass('not-animated');
+							var elementAnimation = element.attr('data-animate');
+							element.appear(function () {
+								setTimeout(function() {
+									element.removeClass('not-animated').addClass( elementAnimation + ' animated');
+								}, animationDelayTime);
+							},{accX: 0, accY: -120},'easeInCubic');
+						}
+					});
+				}
+			}
+		},
+		
+		animonscroll: function() {
+			$(window).scroll( function(){
+				$('.fadeInBlock').each( function(i){
+					var bottom_of_object = $(this).position().top + $(this).outerHeight();
+					var bottom_of_window = $(window).scrollTop() + $(window).height();
+					
+					var element = $(this),
+					animationscroll = element.attr('data-animonscroll'),
+					animationDelay = element.attr('data-delay'),
+					animationDelayTime = 0;
+
+					if( ! animationscroll ) { animationscroll = 'fadeIn'; }
+					if( animationDelay ) { animationDelayTime = Number( animationDelay ) + 0 } else { animationDelayTime = 0; }
+					
+					bottom_of_window = bottom_of_window - animationDelayTime;  
+				  
+					if( bottom_of_window > bottom_of_object ){
+						
+						$(this).animate({'opacity':'1'},500).addClass('animated '+animationscroll);
+						
+					}
+				}); 
+			});
+		}
+		
+	};
+	
 	THEMEVISION.extras = {
 		
 		init: function(){
@@ -355,6 +416,7 @@ var THEMEVISION = THEMEVISION || {};
 			
 			THEMEVISION.initialize.init();
 			THEMEVISION.header.init();
+			THEMEVISION.widgets.init();
 			THEMEVISION.extras.init();
 			THEMEVISION.documentOnReady.windowscroll();
 			
@@ -364,7 +426,6 @@ var THEMEVISION = THEMEVISION || {};
 			
 			$window.on( 'scroll', function(){
 				
-				// Go To Top
 				THEMEVISION.initialize.goToTopScroll();
 				
 				// Sticky Header Class

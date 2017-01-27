@@ -74,20 +74,9 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* Removed Agama favicon feature & enabled default WordPress favicon feature.</p>';
-						echo '<p>* Updated customizer header section.</p>';
-						echo '<p>* Updated customizer styling header section.</p>';
-						echo '<p>* Updated customizer primary color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer header background color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer header shrinked background color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer header borders color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer logo color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer logo hover color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer navigation color option (transport = postMessage).</p>';
-						echo '<p>* Updated customizer navigation hover color option (transport = postMessage).</p>';
-						echo '<p>* Updated footer widget area background color option (transport = postMessage).</p>';
-						echo '<p>* Updated footer copyright area background color option (transport = postMessage).</p>';
-						echo '<p>* Updated theme translation files.</p>';
+						echo '<p>* Fixed blog small thumbs layout, big space between posts on mobile devices.</p>';
+						echo '<p>* Added frontpage boxes loading animation feature.</p>';
+						echo '<p>* Added blog posts loading animation feature.</p>';
 				echo '</div>';
 				
 			echo '</div>';
