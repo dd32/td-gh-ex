@@ -24,7 +24,7 @@ if ( ! $product || ! $product->is_visible() ) {
 // Increase loop count
 $woocommerce_loop['loop']++;
 ?>
-<li itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<li id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="col-sm-5 front__product-featured__image">
 	<a property="url" href="<?php the_permalink(); ?>">
 		<?php the_post_thumbnail();?>
@@ -46,7 +46,7 @@ $woocommerce_loop['loop']++;
 		<?php
 		$args = array (
 			'post_type' => 'product',
-			'post_id' => $product->id,
+			'post_id' => method_exists( $product, 'get_id' ) ? $product->get_id() : $product->id,
 			'number' => 1,
 			'no_found_rows' => true,
 			'status' => 'approve',
@@ -60,7 +60,15 @@ $woocommerce_loop['loop']++;
 					<span class="featured__review__author" itemprop="author"><?php echo $comment->comment_author;?></span>
 					<span class="featured__review__rating">
 					<a href="<?php the_permalink(); ?>#reviews">
-					<?php echo $product->get_rating_html();?>
+					<?php
+						if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
+						    // Older than 2.7
+						    echo $product->get_rating_html();
+						} else {
+						    // 2.7+
+						    echo wc_get_rating_html( $product->get_average_rating() );
+						}
+					?>
 					</a></span>
 				</div>
 				<div class="col-sm-8 text-center featured__review-card--right">

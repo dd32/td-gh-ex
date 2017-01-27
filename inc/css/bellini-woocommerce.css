@@ -771,7 +771,6 @@
 }
 
 .woo__info__sorting {
-    padding: 1.2% 2% 0 2%;
     margin-bottom: 1.2em;
     border-radius:2px;
 }
@@ -1086,3 +1085,12 @@ mark.count {background-color: transparent;}
 
 .woocommerce-Reviews-title{padding-bottom: .5em;}
 .woocommerce div.product .woocommerce-tabs ul.tabs {margin: 0;}
+
+.pagination__sorting--l2 {
+    padding: 0;
+    margin: 1.2em 0;
+}
+
+.product__single--l1 .single_add_to_cart_button{
+    float: none !important;
+}

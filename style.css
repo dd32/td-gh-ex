@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.38.8
+Version: 1.38.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -131,6 +131,23 @@ body {
     font-feature-settings: 'liga' 1,'kern'
 }
 
+fieldset {
+    border: 1px solid #bbb;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
 article,
 aside,
 details,
@@ -213,13 +230,6 @@ dd {
 img {
     height: auto;
     max-width: 100%;
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: crisp-edges;
 }
 
 @-moz-viewport {
@@ -318,18 +328,103 @@ td:last-child {
 # Forms
 --------------------------------------------------------------*/
 
-input[type='text'],
-input[type='email'],
-input[type='url'],
-input[type='password'],
-input[type='search'] {
-    padding: 3px;
+input[type=email],input[type=password],input[type=search],input[type=text],input[type=url] {
+    padding: 3px
 }
 
+form button,
+form input[type="button"],
+form input[type="reset"],
+form input[type="submit"] {
+  font-weight: 500;
+  clear: both;
+  line-height: 1;
+  text-shadow: 0 0 0 transparent;
+  border-style: solid;
+  border-width: 1px 1px 2px;
+  border-radius: 3px;
+  padding: 0.8573333333em 1.286em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  form button:hover,
+  form input[type="button"]:hover,
+  form input[type="reset"]:hover,
+  form input[type="submit"]:hover {
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+  form button:active,
+  form input[type="button"]:active,
+  form input[type="reset"]:active,
+  form input[type="submit"]:active {
+    border-width: 2px 1px 1px; }
+  form button:focus,
+  form input[type="button"]:focus,
+  form input[type="reset"]:focus,
+  form input[type="submit"]:focus {
+    outline: none;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
 textarea {
-    width: 100%;
-    padding-left: 3px;
-}
+  box-sizing: border-box;
+  border: 1px solid #d6d2dc;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 1px 4px #ebe9ee;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+  .sidebar input[type="text"]:focus, .sidebar
+  input[type="email"]:focus, .sidebar
+  input[type="url"]:focus, .sidebar
+  input[type="password"]:focus, .sidebar
+  input[type="search"]:focus, .sidebar
+  textarea:focus {
+    box-shadow: 0 0 1px 4px rgba(235, 233, 238, 0.3); }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 0.2962962963em 0.4444444444em; }
+
+textarea {
+  padding: 0.2962962963em 0.4444444444em;
+  width: 100%; }
+
+.post-password-form {
+  padding: 3.375em 2.25em; }
+  .post-password-form p {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto; }
+  .post-password-form p:first-child {
+    line-height: 1.5em;
+    text-transform: none; }
+  .post-password-form label {
+    clear: both;
+    line-height: 1;
+    letter-spacing: 0.1316872428em;
+  }
+  .post-password-form input[type="password"] {
+    display: block;
+    margin-bottom: 0.6666666667em;
+    width: 100%; }
+  .post-password-form input[type="submit"] {
+    display: block; }
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -388,7 +483,7 @@ input[type='submit'][disabled]:focus {
 }
 
 .button--secondary {
-    height: 32px;
+    min-height: 32px;
 }
 
 .button--cta--center {
@@ -793,41 +888,15 @@ object {
     vertical-align: top;
 }
 
-.gallery-columns-2 .gallery-item {
-    max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-    max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-    max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-    max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-    max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-    max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-    max-width: 11.11%;
-}
-
-.gallery-caption {
-    display: block;
-}
+.gallery-columns-2 .gallery-item {max-width: 50%;}
+.gallery-columns-3 .gallery-item {max-width: 33.33%;}
+.gallery-columns-4 .gallery-item {max-width: 25%;}
+.gallery-columns-5 .gallery-item {max-width: 20%;}
+.gallery-columns-6 .gallery-item {max-width: 16.66%;}
+.gallery-columns-7 .gallery-item {max-width: 14.28%;}
+.gallery-columns-8 .gallery-item {max-width: 12.5%;}
+.gallery-columns-9 .gallery-item {max-width: 11.11%;}
+.gallery-caption {display: block;}
 
 /* Shapes & Layout
    ========================================================================== */
@@ -850,8 +919,8 @@ object {
 ## Title
 --------------------------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-    margin-top: .8em;
-    margin-bottom: .8em;
+    margin-top: .4em;
+    margin-bottom: .4em;
     clear: both;
 }
 
@@ -863,7 +932,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .element-title--main {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -1244,11 +1313,11 @@ h1,h2,h3,h4,h5,h6 {
 .post-meta__category a {
     text-decoration: none;
     border: 1px solid;
-    margin-right: 4px;
+    margin: 2px;
     padding: .06em .6em;
-    font-size: .85em;
-    color: #fff;
+    font-size: .8em;
     border-radius: 2px;
+    display: inline-block;
 }
 
 .single-post__body {
@@ -1603,10 +1672,6 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom:1em;
 }
 
-.comment-body__left{
-    margin-top:1em;
-}
-
 .comment-edit-link {
     margin-left: 2%;
     text-decoration: none;
@@ -1828,6 +1893,7 @@ Hamburger Menu
 }
 
 .hamburger__menu__middle {
+    max-width:400px;
     margin: 0 auto;
     padding-bottom: 10%;
 }
@@ -2642,7 +2708,17 @@ blockquote:before {
     -ms-box-sizing: border-box;
 }
 
-.comment-body__left{text-align:center;}
+
+.comment-body__left{
+    margin-top:1em;
+    text-align:center;
+    padding: 0;
+}
+
+.comment-body__right {
+    padding: 0;
+}
+
 .comment-body__left .comment__author {padding-top:.5em;}
 .comment-body__right .button--reply,
 .comment-body__right .comment__meta {font-size:.85em}

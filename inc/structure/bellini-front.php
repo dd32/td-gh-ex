@@ -302,15 +302,29 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 					</button>
 				</a>
 			    </div>
-	    	<?php endif;
-
-		} else {
-			echo esc_html_e( 'No Products Found', 'bellini' );
-		}
+	    	<?php endif; ?>
+	    		</div>
+	</section>
+<?php
+		} else { ?>
+			<section class="container-fluid no-results">
+			<div class="row">
+			<div class="col-md-4 no-results__icon"><i class="fa fa-info-circle"></i></div>
+			<div class="col-md-8 no-results__info">
+				<h2 class="no-results__title"><?php esc_html_e( 'No Products Found!', 'bellini' ); ?></h2>
+				<ul>
+					<li><?php printf( esc_html__( 'This section will display your WooCommerce Products.', 'bellini' ) ); ?></li>
+					<li><?php printf( wp_kses( __( 'Ready to set your first Product? Head over to <a href="%1$s">Products</a>.', 'bellini' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'edit.php?post_type=product' ) ) ); ?></li>
+				</ul>
+			</div>
+			</div>
+			</section><!-- .no-results .not-found -->
+		<?php }
 		wp_reset_postdata();
 	?>
-	</div>
-	</section>
+</div>
+</div>
+</section>
 <?php
 endif;
 endif;

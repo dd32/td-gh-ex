@@ -330,11 +330,9 @@ li#customize-control-bellini_social_account_link_six{
 
 input[type=checkbox]:checked:before {
     color: #fff;
-}
-
-input[type=checkbox]:checked:before {
     background-color:#00BCD4;
     width: auto;
+    border-radius:4px;
 }
 
 .bellini_pro_section:before {

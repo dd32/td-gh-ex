@@ -34,7 +34,7 @@ woocommerce_sidebar
 	remove_action( 'woocommerce_sidebar',  					'woocommerce_get_sidebar', 					10 );
 	add_action( 'woocommerce_before_main_content',    		'bellini_before_content',              		10 );
 	add_action( 'woocommerce_before_main_content',    		'bellini_breadcrumb_integration',           20 );
-	add_action( 'woocommerce_archive_description',     		'bellini_before_shop_products',        		15 );
+	add_action( 'woocommerce_before_shop_loop',     		'bellini_before_shop_products',        		40 );
 	add_action( 'woocommerce_after_shop_loop',    			'bellini_woo_close_div',   					5 );
 	add_action( 'woocommerce_after_shop_loop',    			'bellini_woocommerce_shop_sidebar',   		10 );
 	add_action( 'woocommerce_after_main_content',     		'bellini_after_content',               		10 );
@@ -47,7 +47,7 @@ if ( absint($bellini['bellini_woo_shop_product_pagination_layout']) === 1 ):
 	remove_action( 'woocommerce_after_shop_loop',     		'woocommerce_pagination',                 	10 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_result_count',               	20 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_catalog_ordering',           	30 );
-	add_action( 'woocommerce_archive_description',     		'bellini_shop_archive_sorting_info',        20 );
+	add_action( 'woocommerce_before_shop_loop',     		'bellini_shop_archive_sorting_info',        50 );
 endif;
 
 if ( absint($bellini['bellini_woo_shop_product_pagination_layout']) === 2 ):
