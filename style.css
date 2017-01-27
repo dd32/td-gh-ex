@@ -4,7 +4,7 @@ Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
 Author: Ydesignservices
 Author URI: http://www.ydesignservices.com/
 Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
-Version: 2.1
+Version: 2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
@@ -35,7 +35,7 @@ Defaults
 ---------------------------------------------------------------------------------------------------- */
 /* Typographical Elements
 --------------------------------------------- */
-body{color:#333;font-family:'Raleway';font-size:13px;line-height:1.625;position:relative;background:#fff;}
+body{color:#333;font-family:'Raleway';font-size:13px;line-height:1.625;position:relative;background:#fff;background-size:cover;}
 blockquote{font-size:14px;font-style:italic; position:relative;line-height:28px;border:none; color:#6f6f6f; padding:15px 45px; background:#f6f6f6;}
 blockquote:before{content:"\f10d"; display:inline-block; font-family:FontAwesome; font-style:normal; font-weight:normal;    line-height:1; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing: grayscale;	position: absolute;    top: 17px;    z-index:10; left:20px; font-size:16px; color:#e5e5e5;}
 blockquote:after{content:"\f10d"; position:absolute; display:inline-block; line-height:1; font-size:16px; color:#e5e5e5; right:20px; font-family:FontAwesome; font-style:normal; font-weight:normal; bottom:15px; z-index:10; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; transform:rotateY(180deg);}
@@ -55,7 +55,7 @@ th,td{padding:10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-
 th{font-size:15px;font-weight:400;text-align:left}
 th a{text-decoration:underline;color:#e8ad1e}
 td{}
-a,button,input:focus,input[type="button"],input[type="reset"],input[type="submit"],textarea:focus,.footer .social-icons a:before,header,#logo a img,.main_nav ul ul,.mobile-menu,.site-overlay{ webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+a,button,input:focus,input[type="button"],input[type="reset"],input[type="submit"],textarea:focus,.footer .social-icons a:before,header,#logo a img,.main-nav ul ul,.mobile-menu,.site-overlay{ webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 ::-moz-selection{background:#e8ad1e;color:#fff}
 ::selection{background:#e8ad1e;color:#fff}
 a{color:#e8ad1e; text-decoration:none;}
@@ -133,25 +133,24 @@ h6{font-size:15px}
 
 /* nav
 ============================================= */
-#magic-line {position:absolute; top:0px; left:0; width:100px; height:4px; background:#fff;}
-.main_nav ul > li.open{position:relative}
-ul.menu{margin:0px; position:relative; padding:0;}
-.main_nav{display:block; position:relative;height:52px; float:left;}
-.main_nav > ul > li{list-style:none; color:#fff; display:inline-block; float:left; margin:0;font-size:12px; text-transform:uppercase; line-height:52px; position:relative;}
-.main_nav>ul>li:first-child>a{padding-left:0;}
-.main_nav > ul > li:last-child{  margin:0px;}
-.main_nav > ul > li i{position:absolute; top:17px; right:2px;}
-.main_nav > ul > li a{ display:block;  color:#ffffff;  padding:0 22px;} 
-.main_nav > ul > li > a:hover, .main_nav > ul > li:hover i{color:#e8ad1e;}
-.main_nav > ul > li > a:hover, .main_nav > ul li.active > a{}
-.main_nav ul ul{position:absolute;z-index:10000;top:52px;left:0px;width:205px;background-color:#fff;margin-top:20px;padding:0; opacity:0; visibility:hidden;}
-.main_nav ul ul li{ line-height:22px; list-style:none; float:none; height:auto; position:relative;  font-size:12px; font-weight:normal; text-align:left;}
-.main_nav ul ul li:last-child{ border:none;}
-.main_nav ul ul li a{display:block; padding:5px 10px; color:#737373; margin:0px;}
-.main_nav ul ul li a:hover{color:#e8ad1e;}
-.main_nav > ul > li ul li i{top:10px; right:10px;}
-.main_nav li:hover > ul{opacity:1; visibility:visible; margin:0;}
-.main_nav ul ul ul{ position:absolute;  top:0px; left:206px;}
+.main-nav ul{margin:0; padding:0;}
+.main-nav ul > li.open{position:relative}
+.main-nav nav{display:block; position:relative;height:52px; float:left;}
+.main-nav nav > ul > li{list-style:none; color:#fff; display:inline-block; float:left; margin:0;font-size:12px; text-transform:uppercase; line-height:52px; position:relative;}
+.main-nav nav>ul>li:first-child>a{padding-left:0;}
+.main-nav nav > ul > li:last-child{  margin:0px;}
+.main-nav nav > ul > li i{position:absolute; top:17px; right:2px;}
+.main-nav nav > ul > li a{ display:block;  color:#ffffff;  padding:0 22px;} 
+.main-nav nav > ul > li > a:hover, .main-nav nav > ul > li:hover i{color:#e8ad1e;}
+.main-nav nav > ul > li > a:hover, .main-nav nav > ul li.active > a{}
+.main-nav nav ul ul{position:absolute;z-index:10000;top:52px;left:0px;width:205px;background-color:#fff;margin-top:20px;padding:0; opacity:0; visibility:hidden;}
+.main-nav nav ul ul li{ line-height:22px; list-style:none; float:none; height:auto; position:relative;  font-size:12px; font-weight:normal; text-align:left;}
+.main-nav nav ul ul li:last-child{ border:none;}
+.main-nav nav ul ul li a{display:block; padding:5px 10px; color:#737373; margin:0px;}
+.main-nav nav ul ul li a:hover{color:#e8ad1e;}
+.main-nav nav > ul > li ul li i{top:10px; right:10px;}
+.main-nav nav li:hover > ul{opacity:1; visibility:visible; margin:0;}
+.main-nav nav ul ul ul{ position:absolute;  top:0px; left:206px;}
 .toggle{ background:url(images/toggle.png) right 18px no-repeat  ;  width:100%; float:left;   cursor:pointer; display:none; color:#fff; font-size:19px; font-weight:bold;  text-transform:uppercase; height:48px; line-height:48px; text-align:left; }
 .open-submenu{background: url(images/aero2.png)11px 12px no-repeat;position: absolute;width: 34px;height: 33px; right: 0px; top:0px; z-index:99999; display:none; cursor:pointer;} 
 /* Mobile-menu
@@ -203,7 +202,7 @@ ul.menu{margin:0px; position:relative; padding:0;}
 /* home products
 ============================================= */
 .home #content{padding:0;}
-.home .home-products{padding-bottom:90px;}
+.home .home-products{padding-bottom:50px;}
 .home .featured{padding-top:65px;}
 .featured{padding-top:0px;}
 .featured .product{margin-bottom:0px;}
@@ -219,7 +218,7 @@ ul.menu{margin:0px; position:relative; padding:0;}
 .product h6:hover{color:#e8ad1e;}
 .product .price, .woocommerce ul.products li.product .price{color:#333; font-size:17px; font-weight:bold; display:block; text-align:center; margin-bottom:0px;font-family:'Lato';}
 .add_to_cart_button{display:inline-block; padding:0px 25px; margin-top:20px; line-height:35px; margin-top:10px;}
-.added_to_cart {position: absolute;left:0;  border: 1px solid #e8ad1e; color:#fff !important; right:0; text-transform:none; background:#e8ad1e; display:inline-block; width:100%; margin-top:8px;}
+.added_to_cart {position: absolute;left:0;  border: 1px solid #e8ad1e; color:#fff !important; right:0; background:#e8ad1e; display:inline-block; width:100%;margin-top: 10px;padding: 10px;}
 .add_to_cart_button:hover, .added_to_cart:hover{background:#e8ad1e; border-color:#e8ad1e; color:#fff !important;}
 /* woocommerce
 ============================================= */
@@ -579,3 +578,5 @@ textarea#comment{height:180px !important;padding:10px !important;}
 .woocommerce nav.woocommerce-pagination ul li{margin:0px 4px; border:0;}
 .woocommerce nav.woocommerce-pagination ul li a{border:1px solid #d3ced2; width:40px; height:40px; line-height:23px; font-size:15px;}
 .woocommerce nav.woocommerce-pagination ul li span.current{border:1px solid #d3ced2; width:40px; height:40px; line-height:23px; border-color:#e8ad1e; color:#fff}
+.woocommerce-message:before {  content: "\e015";  color: #e8ad1e;}
+.woocommerce-message { border-top-color: #e8ad1e;}

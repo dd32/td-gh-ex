@@ -13,7 +13,7 @@ function abaya_google_web_fonts_url() {
 		$fonts[ $key ] = $key . ':' . implode( ',', $value );
 	}
 	/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese, raleway, lato, montserrat)', 'abaya');
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese, raleway, lato,montserrat)', 'abaya');
 	if ( 'cyrillic' == $subset ) {
 		array_push( $subsets, 'cyrillic', 'cyrillic-ext' );
 	} elseif ( 'greek' == $subset ) {

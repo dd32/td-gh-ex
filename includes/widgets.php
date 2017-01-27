@@ -20,25 +20,7 @@ function abaya_widgets_init() {
    'after_widget'  => '</aside></div>',
    'before_title'  => ' <h6 class="widget_title">',
    'after_title'   => '</h6>',
- ));
- // Front Page Widget Top
- register_sidebar(array(
-   'name'          => __('Front Page Widget Top', 'abaya'),
-   'id'            => 'front_page_widget_top',
-   'before_widget' => '<div class="featured"><aside id="%1$s" class="widget voffset3">',
-   'after_widget'  => '</aside></div>',
-   'before_title'  => '<h6 class="page_title">',
-   'after_title'   => '</h6>',
- ));
- // Front Page Widget Middle
- register_sidebar(array(
-   'name'          => __('Front Page Widget Middle', 'abaya'),
-   'id'            => 'front_page_widget_middle',
-   'before_widget' => '<div class="featured"><aside id="%1$s" class="widget">',
-   'after_widget'  => '</aside></div>',
-   'before_title'  => '<h6 class="page_title">',
-   'after_title'   => '</h6>',
- ));
+ )); 
  // Footer
    if ( function_exists('register_sidebar') )
      register_sidebar(array(

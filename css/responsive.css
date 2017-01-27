@@ -28,7 +28,7 @@
 
 @media screen and (max-width:990px) {
 .header{height:auto;}
-.main_nav{display:none;}
+.main-nav nav{display:none;}
 .toggle-mobile{display:block;}
 #magic-line{display:none;}
 .mobile-menu #logo {text-align:center;float:none;}
@@ -47,7 +47,6 @@ img{max-width:100%; height:auto;}
 .header{width:100%; display:inline-block; height:auto;}
 .header_top{text-align:center;}
 .top_nav{display:inline-block; float:none;}
-.home-products{padding:0;}
 .featured .product{margin-bottom:20%;}
 .about_imgarea{margin-bottom:30px;}
 .shop-result-count{padding:0;}
