@@ -4,12 +4,12 @@ Theme URI: http://wptema.se/miranda
 Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Miranda is an accessible and responsive two column theme with two menus (including a social menu), color options, and a flexible sidebar for your widgets.
-Version: 1.4
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright: Carolina Nymark 2014-2016
+Copyright: Carolina Nymark 2014-2017
 Text Domain: miranda
-Tags:threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, two-columns, featured-images, accessibility-ready, rtl-language-support, custom-colors, custom-header
+Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, two-columns, featured-images, accessibility-ready, rtl-language-support, custom-colors, custom-header
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -509,7 +509,6 @@ a:active {
 	display: block;
 	margin:10px auto 20px auto;
 	padding:13px 0 0 0;
-	/*background:#fff;*/
 	text-transform:uppercase;
 	z-index:99;
 	width:95%;
@@ -600,12 +599,18 @@ a:active {
 		display: block;
 	}
 
+	.main-navigation{height:auto;}
+
+	.main-navigation.toggled div{
+		display:inline-block;
+	}
+
 	.main-navigation ul {
 		display: none;
 	}
 
 	.menu-toggle{
-		margin:2px 13px;
+		margin:2px 13px 13px 13px;
 		display: inline-block;
 		z-index:9999;
 	}
@@ -624,8 +629,7 @@ a:active {
 		color: #861a50;
 		text-decoration: none;
 	}
-
-	.main-navigation  ul li{
+	.main-navigation ul li{
 		width:100%;
 		float: left;
 		position: relative;
@@ -704,8 +708,6 @@ Social menu
 .social-menu li a[href*="spotify.com"]::before { content: "\f1bc"; }
 .social-menu li a[href*="skype.com"]::before { content: "\f17e"; }
 .social-menu li a[href*="slack.com"]::before { content: "\f198"; }
-
-
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -965,6 +967,7 @@ text-decoration:none;
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	max-width:43em;
 }
 
 .entry-title,

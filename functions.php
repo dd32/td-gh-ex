@@ -2,7 +2,7 @@
 /**
  * Miranda functions and definitions
  *
- * @package miranda
+ * @package Miranda
  */
 
 /**
@@ -72,6 +72,8 @@ if ( ! function_exists( 'miranda_setup' ) ) :
 			'default-color'  => '#fff',
 		) );
 
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 	}
 endif; // End miranda_setup.
 
@@ -131,12 +133,13 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+add_filter( 'the_title', 'miranda_post_title' );
 /**
  * Add a title to posts that are missing title.
  *
  * @param mixed $title -The post title.
  */
-add_filter( 'the_title', 'miranda_post_title' );
 function miranda_post_title( $title ) {
 	if ( '' === $title ) {
 		return __( 'Untitled', 'miranda' );

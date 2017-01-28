@@ -2,7 +2,7 @@
 /**
  * Miranda Theme Customizer
  *
- * @package miranda
+ * @package Miranda
  */
 
 /**
@@ -32,10 +32,10 @@ function miranda_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_section( 'miranda_section',      array(
-            'title' => __( 'Advanced settings', 'miranda' ),
-            'priority' => 100
-        )
-    );
+		'title' => __( 'Advanced settings', 'miranda' ),
+		'priority' => 100,
+		)
+	);
 
 	$wp_customize->add_setting( 'miranda_social_footer',	array(
 			'sanitize_callback' => 'miranda_sanitize_checkbox',

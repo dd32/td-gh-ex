@@ -1,10 +1,10 @@
 === Miranda ===
 Contributors: Poena
-Tags: light, white, pink, threaded-comments, custom-menu, sticky-post, translation-ready, editor-style, two-columns, featured-images, responsive-layout, accessibility-ready, rtl-language-support, custom-colors, custom-header
+Tags: threaded-comments, custom-menu, sticky-post, translation-ready, editor-style, two-columns, featured-images, responsive-layout, accessibility-ready, rtl-language-support, custom-colors, custom-header
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2014-2016 Carolina Nymark
+Copyright 2014-2017 Carolina Nymark
 
 = Description ==
 Miranda is an accessible and responsive two column theme with two menus (including a social menu), color options, and a flexible sidebar for your widgets.
@@ -19,6 +19,12 @@ Miranda is an accessible and responsive two column theme with two menus (includi
 If you have any questions or suggestions for this theme, please visit http://wordpress.org/support/theme/miranda.
 
 == Change log ==
+Version 1.5 2017-01-28
+Minor php improvements (escaping, fixed php error).
+Changed the max width of the content for a more comfortable reading length.
+Added more spacing around the responsive menu.
+
+
 Version 1.4 2016/06/10
 Minor changes to text sizes.
 

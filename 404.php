@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package miranda
+ * @package Miranda
  */
 
 get_header(); ?>
@@ -22,23 +22,6 @@ get_header(); ?>
 					<br/><br/>
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php if ( miranda_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'miranda' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-
 					<?php
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'miranda' ), convert_smilies( ':)' ) ) . '</p>';
@@ -53,5 +36,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
+

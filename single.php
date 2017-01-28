@@ -2,33 +2,31 @@
 /**
  * The template for displaying all single posts.
  *
- * @package miranda
+ * @package Miranda
  */
 
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-			<?php 
+			<?php
 			while ( have_posts() ) : the_post();
 				the_post_navigation();
 
- 				get_template_part( 'content', 'single' );
+				get_template_part( 'content', 'single' );
 
 				the_post_navigation();
 
-				// If comments are open, load up the comment template
-				if ( comments_open()) :
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-			
-			 endwhile; // end of the loop. 
-			 ?>
 
+			endwhile; // End of the loop.
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

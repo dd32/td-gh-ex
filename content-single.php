@@ -2,6 +2,7 @@
 /**
  * @package miranda
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,17 +15,17 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php 
-		if ( has_post_thumbnail()){
+		<?php
+		if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 		}
-		
-		the_content(); 
+
+		the_content();
 
 		wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'miranda' ),
-				'after'  => '</div>',
-			) );
+			'before' => '<div class="page-links">' . __( 'Pages:', 'miranda' ),
+			'after'  => '</div>',
+		) );
 		?>
 	</div><!-- .entry-content -->
 

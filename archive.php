@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package miranda
+ * @package Miranda
  */
 
 get_header(); ?>
@@ -47,6 +47,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
- 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+
+<?php
+get_sidebar();
+get_footer();
+

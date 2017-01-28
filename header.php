@@ -26,7 +26,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth' => 2 ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php 
+		<?php
 		if ( is_home() || is_front_page() || get_theme_mod( 'miranda_header_visibility' ) ) {
 		?>
 			<header id="masthead" class="site-header" role="banner">
