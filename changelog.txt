@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+DarkOrange version 5.2 - january 2017
+- added support for hentry tags
+- updated files content-postmeta, content-list and single
+- file style: adjusted css for inputs
+- file style: improved comments display
+- file custom-editor-style: removed theme colors (because theme can be customized)
+- several small adjustments
+
 DarkOrange version 5.1 - october 2016
 - added page template with left sidebar
 - several small adjustments
