@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OneColumn\n"
-"POT-Creation-Date: 2016-10-09 17:57+0200\n"
+"POT-Creation-Date: 2017-01-28 10:13+0100\n"
 "PO-Revision-Date: 2015-11-15 22:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-list.php:25
+#: content-list.php:27
 msgid "Read More &raquo;"
 msgstr ""
 
@@ -96,10 +96,6 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:9
-msgid "OneColumn WordPress Theme"
-msgstr ""
-
 #: functions.php:18
 msgid "Primary Navigation"
 msgstr ""
@@ -140,7 +136,7 @@ msgstr ""
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: page.php:26 single.php:33
+#: page.php:26 single.php:35
 msgid "Edit"
 msgstr ""
 
