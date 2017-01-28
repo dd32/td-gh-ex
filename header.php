@@ -36,9 +36,9 @@
 			} else {
 				$menu_title = esc_attr__( 'Menu', 'darkelements' );
 			} ?>
-			<h3 class="nav-head-title"><?php echo $menu_title; ?></h3>
+			<h3 class="nav-primary-title"><?php echo $menu_title; ?></h3>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-primary' ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( is_front_page() ) {?> 
