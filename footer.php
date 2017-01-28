@@ -23,7 +23,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('Medical WordPress Theme', 'medical'); ?>  
+		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
 	</div>
 </div>
 </div><!-- #container -->
