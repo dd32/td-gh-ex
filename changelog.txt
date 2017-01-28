@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 5.5 - january 2017
+- added support for hentry tags
+- updated files content-postmeta, content-list and single
+- file style: improved comments display
+- file custom-editor-style: removed theme colors (because theme can be customized)
+- several small adjustments
+
 PrivateBusiness version 5.4 - october 2016
 - added page template with left sidebar
 - some logical changes in div elements
