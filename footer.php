@@ -22,7 +22,7 @@
 	<?php } ?>	
 
 	<div class="site-info">
-		<?php _e('Copyright', 'myknowledgebase'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('MyKnowledgeBase WordPress Theme', 'myknowledgebase'); ?>  
+		<?php _e('Copyright', 'myknowledgebase'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
 	</div>
 </div>
 </div><!-- #container -->
