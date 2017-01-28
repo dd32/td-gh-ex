@@ -25,7 +25,7 @@
 		<h4 class="sticky-title"><?php _e( 'Featured post', 'gridbulletin' ); ?></h4>
 	<?php endif; ?>
 
-	<h2 class="post-title">
+	<h2 class="post-title entry-title">
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'gridbulletin'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
 	</h2>
 
@@ -33,7 +33,9 @@
 		the_post_thumbnail('list', array('class' => 'list-image')); 
 	} ?>
 
-	<?php the_excerpt(); ?>
+	<div class="entry-content">
+		<?php the_excerpt(); ?>
+	</div>
 
 	<?php get_template_part( 'content-postmeta' ); ?>
 </article>

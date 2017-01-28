@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GridBulletin\n"
-"POT-Creation-Date: 2016-10-09 17:56+0200\n"
+"POT-Creation-Date: 2017-01-28 10:12+0100\n"
 "PO-Revision-Date: 2015-11-15 20:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -92,10 +92,6 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:25
-msgid "GridBulletin WordPress Theme"
-msgstr ""
-
 #: functions.php:18
 msgid "Primary Navigation"
 msgstr ""
@@ -160,7 +156,7 @@ msgstr ""
 msgid "Archive title"
 msgstr ""
 
-#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:32
+#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:34
 msgid "Edit"
 msgstr ""
 
