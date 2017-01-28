@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+Shipyard version 5.0 - january 2017
+- added support for hentry tags
+- updated files content-postmeta, content-list and single
+- file style: improved comments display
+- file custom-editor-style: removed theme colors (because theme can be customized)
+- several small adjustments
+
 Shipyard version 4.9 - october 2016
 - added page template with left sidebar
 - several small adjustments

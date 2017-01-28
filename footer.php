@@ -18,7 +18,7 @@
 	<?php } ?> 
 
 	<div class="site-info">
-		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('Shipyard WordPress Theme', 'shipyard'); ?>  
+		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
 	</div>
 </div>
 </div><!-- #container -->
