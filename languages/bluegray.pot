@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BlueGray\n"
-"POT-Creation-Date: 2016-10-09 17:56+0200\n"
+"POT-Creation-Date: 2017-01-28 10:12+0100\n"
 "PO-Revision-Date: 2015-11-15 16:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-list.php:25
+#: content-list.php:27
 msgid "Read More &raquo;"
 msgstr ""
 
@@ -96,10 +96,6 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:26
-msgid "BlueGray WordPress Theme"
-msgstr ""
-
 #: functions.php:18
 msgid "Primary Navigation"
 msgstr ""
@@ -153,7 +149,7 @@ msgstr ""
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:33
+#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:35
 msgid "Edit"
 msgstr ""
 

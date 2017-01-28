@@ -23,7 +23,7 @@
 	<?php } ?>	
 	
 	<div class="site-info">
-		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('BlueGray WordPress Theme', 'bluegray'); ?>  
+		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
 	</div>
 </div>
 </div><!-- #container -->
