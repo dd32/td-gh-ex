@@ -34,7 +34,7 @@ function bhost_customize_scripts() {
 	wp_enqueue_script( 'bhost_customizer_custom', get_template_directory_uri() . '/js/bhost-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 	
 	$bhost_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://getmasum.net/item/bhost-pro-responsive-wordpress-theme/' ),
+							'upgrade_link' 				=> esc_url( 'https://www.codegrape.com/item/bhost-pro-responsive-wordpress-theme/8758' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'bhost' ),
 		);
 

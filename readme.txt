@@ -36,8 +36,11 @@ Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
-= 1.3.4 - October 24 2016 =
-* Updated some code.
+= 1.3.6 - January 30 2017 =
+* Updated some codes.
+
+= 1.3.5 - November 24 2016 =
+* Updated some codes.
 
 = 1.3.3 - August 24 2016 =
 * Updated some Desing.
