@@ -2,6 +2,9 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.8.10 January 30 2017 =
+* Fixed blog posts animated minor bugs.
+
 = 1.2.8 January 27 2017 =
 * Fixed blog small thumbs layout, big space between posts on mobile devices.
 * Added frontpage boxes loading animation feature.

@@ -74,9 +74,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* Fixed blog small thumbs layout, big space between posts on mobile devices.</p>';
-						echo '<p>* Added frontpage boxes loading animation feature.</p>';
-						echo '<p>* Added blog posts loading animation feature.</p>';
+						echo '<p>* Fixed blog posts animated minor bugs.</p>';
 				echo '</div>';
 				
 			echo '</div>';

@@ -104,29 +104,29 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ):
 				$box[4]['animation'] = esc_attr( get_theme_mod( 'agama_frontpage_box_4_animation', 'fadeInRight' ) );
 				
 				$box[1]['data-animated'] = '';
-				if( $box[1]['animated'] ) {
+				if( $box[1]['animated'] && ! is_single() ) {
 					$box[1]['data-animated'] = ' data-animonscroll="'. $box[1]['animation'] .'" data-delay="100"';
 				} 
 				
 				$box[2]['data-animated'] = '';
-				if( $box[2]['animated'] ) {
+				if( $box[2]['animated'] && ! is_single() ) {
 					$box[2]['data-animated'] = ' data-animonscroll="'. $box[2]['animation'] .'" data-delay="200"';
 				}
 				
 				$box[3]['data-animated'] = '';
-				if( $box[3]['animated'] ) {
+				if( $box[3]['animated'] && ! is_single() ) {
 					$box[3]['data-animated'] = ' data-animonscroll="'. $box[3]['animation'] .'" data-delay="300"';
 				}
 				
 				$box[4]['data-animated'] = '';
-				if( $box[4]['animated'] ) {
+				if( $box[4]['animated'] && ! is_single() ) {
 					$box[4]['data-animated'] = ' data-animonscroll="'. $box[4]['animation'] .'" data-delay="400"';
 				} ?>
 				
 				<div id="frontpage-boxes" class="clearfix">
 					
 					<?php if( $box_1_enable ): ?>
-					<div class="<?php echo esc_attr( $bs_class ); ?> fadeInBlock"<?php echo $box[1]['data-animated']; ?>>
+					<div class="<?php echo esc_attr( $bs_class ); ?>"<?php echo $box[1]['data-animated']; ?>>
 						
 						<?php if( $box_1_icon_url ): ?>
 						<a href="<?php echo esc_url( $box_1_icon_url ); ?>">
@@ -149,7 +149,7 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ):
 					<?php endif; ?>
 					
 					<?php if( $box_2_enable ): ?>
-					<div class="<?php echo esc_attr( $bs_class ); ?> fadeInBlock"<?php echo $box[2]['data-animated']; ?>>
+					<div class="<?php echo esc_attr( $bs_class ); ?>"<?php echo $box[2]['data-animated']; ?>>
 						
 						<?php if( $box_2_icon_url ): ?>
 						<a href="<?php echo esc_url( $box_2_icon_url ); ?>">
@@ -172,7 +172,7 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ):
 					<?php endif; ?>
 					
 					<?php if( $box_3_enable ): ?>
-					<div class="<?php echo esc_attr( $bs_class ); ?> fadeInBlock"<?php echo $box[3]['data-animated']; ?>>
+					<div class="<?php echo esc_attr( $bs_class ); ?>"<?php echo $box[3]['data-animated']; ?>>
 						
 						<?php if( $box_3_icon_url ): ?>
 						<a href="<?php echo esc_url( $box_3_icon_url ); ?>">
@@ -195,7 +195,7 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ):
 					<?php endif; ?>
 					
 					<?php if( $box_4_enable ): ?>
-					<div class="<?php echo esc_attr( $bs_class ); ?> fadeInBlock"<?php echo $box[4]['data-animated']; ?>>
+					<div class="<?php echo esc_attr( $bs_class ); ?>"<?php echo $box[4]['data-animated']; ?>>
 						
 						<?php if( $box_4_icon_url ): ?>
 						<a href="<?php echo esc_url( $box_4_icon_url ); ?>">

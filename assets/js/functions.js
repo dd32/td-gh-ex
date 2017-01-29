@@ -300,8 +300,10 @@ var THEMEVISION = THEMEVISION || {};
 		},
 		
 		animonscroll: function() {
+			$("[data-animonscroll]").css("opacity", "0");
 			$(window).scroll( function(){
-				$('.fadeInBlock').each( function(i){
+				$("[data-animonscroll]").each( function(i){
+					
 					var bottom_of_object = $(this).position().top + $(this).outerHeight();
 					var bottom_of_window = $(window).scrollTop() + $(window).height();
 					

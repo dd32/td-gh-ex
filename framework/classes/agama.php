@@ -159,7 +159,7 @@ if( ! class_exists( 'Agama' ) ) {
 			$posts['animated']  = esc_attr( get_theme_mod( 'agama_blog_posts_load_animated', true ) );
 			$posts['animation'] = esc_attr( get_theme_mod( 'agama_blog_posts_load_animation', 'bounceInUp' ) );
 			
-			if( $posts['animated'] ) {
+			if( $posts['animated'] && ! is_single() ) {
 				echo ' data-animonscroll="'. $posts['animation'] .'" data-delay="1000"';
 			}
 		}
