@@ -339,7 +339,7 @@ function catchbox_content_nav( $nav_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) {  ?>
 		<nav id="<?php echo $nav_id; ?>">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
+			<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
 			<?php if ( function_exists('wp_pagenavi' ) )  {
 				wp_pagenavi();
 			}
@@ -368,7 +368,7 @@ function catchbox_content_query_nav( $nav_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) { ?>
 		<nav id="<?php echo $nav_id; ?>">
-        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
+        	<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'catch-box' ); ?></h3>
 			<?php if ( function_exists('wp_pagenavi' ) )  {
                 wp_pagenavi();
             }
@@ -561,7 +561,7 @@ function catchbox_body_classes( $classes ) {
 		$classes[] = 'no-sidebar full-width';
 	}
 
-	if ( empty ( $options ['enable_sec_menu'] ) ) {
+	if ( ! ( ! empty ( $options['enable_sec_menu'] ) && has_nav_menu( 'secondary' ) ) ) {
 		$classes[] = 'one-menu';
 	}
 

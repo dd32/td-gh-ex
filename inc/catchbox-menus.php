@@ -85,7 +85,7 @@ function catchbox_header_menu() {
             
         <?php
         if ( !empty ( $options ['enable_sec_menu'] ) && has_nav_menu( 'secondary' ) ) {
-            $menuclass = "menu-focus mobile-enable"; 
+            $menuclass = "mobile-enable"; 
             ?>
             <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
                 <a href="#mobile-header-right-nav" id="menu-toggle-secondary" class="genericon genericon-menu">
@@ -94,14 +94,14 @@ function catchbox_header_menu() {
             </div><!-- #mobile-header-right-menu -->
         <?php 
         } else {
-            $menuclass = "menu-focus mobile-disable";
+            $menuclass = "mobile-disable";
         }
         ?>
 
         <div id="site-header-menu-primary" class="site-header-menu">
             <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'catch-box' ); ?>">
             
-                <h3 class="assistive-text"><?php _e( 'Primary menu', 'catch-box' ); ?></h3>
+                <h3 class="screen-reader-text"><?php _e( 'Primary menu', 'catch-box' ); ?></h3>
                 <?php
                     if ( has_nav_menu( 'primary', 'catch-box' ) ) {
                         $args = array(
@@ -124,7 +124,7 @@ function catchbox_header_menu() {
             ?>
             <div id="site-header-menu-secondary" class="site-header-menu">
                 <nav id="access-secondary" class="<?php echo $menuclass; ?>"  role="navigation" aria-label="<?php esc_attr_e( 'Secondary Menu', 'catch-box' ); ?>">
-                    <h3 class="assistive-text"><?php esc_html_e( 'Secondary menu', 'catch-box' ); ?></h3>
+                    <h3 class="screen-reader-text"><?php esc_html_e( 'Secondary menu', 'catch-box' ); ?></h3>
                     <?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' => 'menu-secondary-container' ) );  ?>
                 </nav><!-- #access-secondary -->
             </div><!-- .site-header-menu -->
@@ -170,7 +170,7 @@ function catchbox_footer_menu_display() {
         
         <div id="site-footer-mobile-menu" class="site-footer-menu">
             <nav id="access-footer" class="<?php echo $menuclass; ?>" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'catch-box' ); ?>">
-                <h3 class="assistive-text"><?php _e( 'Footer menu', 'catch-box' ); ?></h3>
+                <h3 class="screen-reader-text"><?php _e( 'Footer menu', 'catch-box' ); ?></h3>
                 <?php wp_nav_menu( array( 'theme_location'  => 'footer', 'container_class' => 'menu-footer-container', 'depth' => 1 ) );  ?>
             </nav>
         </div><!-- .site-footer-menu -->

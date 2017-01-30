@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catchbox
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, German, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak, Japanese, Bosnian, Catalan, Romanian, Ukrainian and Lithuanian languages. Theme Support at https://catchthemes.com/support/
-Version: 4.6
+Version: 4.6.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: catch-box
@@ -66,7 +66,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-
+figure {
+	margin: 0;
+}
 
 /* =Structure
 ----------------------------------------------- */
@@ -588,6 +590,7 @@ a#scrollup,
 	padding: 0;
 	font-size: 36px;
 	line-height: 46px;
+	margin: 0;
 }
 #site-title a {
 	color: #111;
@@ -603,6 +606,7 @@ a#scrollup,
 	color: #555;
 	font-size: 14px;
 	line-height: 1.62em;
+	margin: 0;
 }
 .logo-wrap {
 	clear: both;
@@ -1086,6 +1090,42 @@ table td,
 a.more-link {
 	white-space: nowrap;
 }
+
+/* Caption */
+.wp-caption {
+	background-color: #eee;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 0.4em;
+	margin-bottom: 2em;
+	max-width: 100%;
+	padding: 9px;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+.wp-caption .wp-caption-text {
+	color: #666;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	margin-bottom: 0.2em;
+	padding: 10px 0 0 40px;
+	position: relative;
+}
+.wp-caption .wp-caption-text:before {
+	color: #666;
+	content: '\2014';
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	margin-right: 5px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
+}
+
 /* Images */
 .entry-content img,
 .comment-content img {
@@ -1118,42 +1158,13 @@ img.alignright,
 img.aligncenter {
 	margin-bottom: 2em;
 }
-p img,
-.wp-caption {
+p img {
 	margin-top: 0.4em;
 }
-.wp-caption {
-	background: #eee;
-	margin-bottom: 2em;
-	max-width: 96%;
-	padding: 9px;
-}
-.wp-caption img {
-	display: block;
-	margin: 0 auto;
-	max-width: 98%;
-}
-.wp-caption .wp-caption-text,
 .gallery-caption {
 	color: #666;
 	font-family: Georgia, serif;
 	font-size: 12px;
-}
-.wp-caption .wp-caption-text {
-	margin-bottom: 0.2em;
-	padding: 10px 0 0 40px;
-	position: relative;
-}
-.wp-caption .wp-caption-text:before {
-	color: #666;
-	content: '\2014';
-	font-size: 14px;
-	font-style: normal;
-	font-weight: bold;
-	margin-right: 5px;
-	position: absolute;
-	left: 10px;
-	top: 7px;
 }
 #content .gallery {
 	margin: 0 auto 2em;
@@ -2896,6 +2907,163 @@ a#scrollup:hover,
 a#scrollup:focus {
 	opacity: 1;
 	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+
+/* =Print
+----------------------------------------------- */
+
+@media print {
+	body {
+		background: none !important;
+		font-size: 10pt;
+	}
+	footer.entry-meta a[rel=bookmark]:link:after,
+	footer.entry-meta a[rel=bookmark]:visited:after {
+		content: " [" attr(href) "] "; /* Show URLs */
+	}
+	.site {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		max-width: 100%;
+		position: relative !important;
+	}
+	#branding {
+		border-top: none !important;
+		padding: 0;
+	}
+	#header-content {
+		margin: 0;
+	}
+	#site-title a {
+		font-size: 21pt;
+	}
+	#site-description {
+		font-size: 10pt;
+	}
+	#branding img {
+		display: none;
+	}
+	#access {
+		display: none;
+	}
+	#main {
+		border-top: none;
+		box-shadow: none;
+	}
+	#primary {
+		float: left;
+		margin: 0;
+		width: 100%;
+	}
+	#content {
+		margin: 0;
+		width: auto;
+	}
+	.no-sidebar #content {
+		margin: 0;
+		width: 100%;
+	}
+	.no-sidebar .entry-header .entry-meta {
+		position: static;
+	}
+	.entry-meta .edit-link a {
+		display: none;
+	}
+	#content nav {
+		display: none;
+	}
+	.no-sidebar .entry-header,
+	.no-sidebar .entry-content,
+	.no-sidebar footer.entry-meta,
+	.no-sidebar #comments-title {
+		margin: 0;
+		width: 100%;
+	}
+	.entry-title,
+	.no-sidebar .entry-title {
+		font-size: 21pt;
+	}
+	.entry-meta {
+		font-size: 10pt;
+	}
+	.entry-header .comments-link {
+		display: none;
+	}
+	.page-link {
+		display: none;
+	}
+	.no-sidebar #author-info {
+		background: none;
+		border-bottom: none;
+		border-top: none;
+		margin: 2.2em 0 0;
+		padding: 0;
+	}
+	#respond {
+		display: none;
+	}
+	.widget-area {
+		display: none;
+	}
+	#colophon {
+		display: none;
+	}
+	/* Comments */
+	.commentlist > li.comment {
+		background: none;
+		border: 1px solid #ccc;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		margin: 0 auto 2em;
+		padding: 2em;
+		position: relative;
+		width: auto;
+	}
+	.commentlist .avatar {
+		height: 39px;
+		width: 39px;
+	}
+	.commentlist li.comment .comment-meta {
+		line-height: 2em;
+		margin-left: 50px;
+	}
+	.commentlist li.comment .fn {
+		display: block;
+	}
+	.commentlist li.comment .comment-content {
+		margin: 2em 0 0;
+	}
+	.commentlist .comment-edit-link {
+		display: none;
+	}
+	.commentlist > li::before,
+	.commentlist > li.bypostauthor::before {
+		content: '';
+	}
+	.commentlist .reply {
+		display: none;
+	}
+	/* Post author highlighting */
+	.commentlist > li.bypostauthor {
+		color: #444;
+	}
+	.commentlist > li.bypostauthor .comment-meta {
+		color: #666;
+	}
+	.commentlist > li.bypostauthor:before {
+		content: none;
+	}
+	/* Post Author threaded comments */
+	.commentlist .children > li.bypostauthor {
+		background: #fff;
+		border-color: #ccc;
+	}
+	.commentlist .children > li.bypostauthor > article,
+	.commentlist .children > li.bypostauthor > article .comment-meta {
+		color: #666;
+	}
 }
 
 
