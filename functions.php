@@ -1,4 +1,5 @@
 <?php
+if( ! defined( 'ABSPATH' ) ) exit;
 
 // Include Customizer File
 get_template_part( 'includes/customizer' );
@@ -30,6 +31,18 @@ get_template_part( 'includes/customizer' );
 	// Agama Blue Stylesheet
 	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), '1.0.1' );
  }
+ 
+/**
+ * After Theme Switch
+ *
+ * @since 1.0.5
+ */
+add_action( 'after_switch_theme', 'agamablue_setup_options' );
+function agamablue_setup_options() {
+	
+	set_theme_mod( 'agama_primary_color', '#00a4d0' );
+	
+}
  
 /**
  * Agama Blue Frontpage Features

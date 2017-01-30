@@ -1,3 +1,5 @@
+<?php if( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <div class="section notopmargin notopborder section-blog">
 	<div class="container clearfix">
 		<div class="heading-block center nomargin">

@@ -20,6 +20,11 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.0.5 30 January 2017 =
+* Rewritten frontpage boxes code.
+* Fixed frontpage boxes image / icon url bug.
+* Updated files security.
+
 = 1.0.4 - 10 Mar 2016 =
 * UPDATED: Few minor changes.
 

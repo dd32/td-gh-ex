@@ -1,4 +1,6 @@
 <?php
+if( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Define Customizer Settings, Controls etc...
  *
@@ -10,7 +12,7 @@ function agama_blue_customize_register( $wp_customize ) {
 		'title'				=> __( 'Agama Blue Options', 'agama-blue' ),
 		'description'		=> __( 'Agama blue theme options.', 'agama-blue' ),
 		'capability'		=> 'edit_theme_options',
-		'priority'			=> 130
+		'priority'			=> 120
 	) ); // Blog Section
 	$wp_customize->add_section( 'agama_blue_blog_section', array(
 		'title'				=> __( 'Blog', 'agama-blue' ),

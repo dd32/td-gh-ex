@@ -8,7 +8,7 @@
  * @subpackage Agama Blue
  * @since 1.0.1
  */
-?>
+if( ! defined( 'ABSPATH' ) ) exit; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-1' ) && ! is_home() ) : ?>
 		<div id="secondary" class="widget-area col-md-3" role="complementary">
