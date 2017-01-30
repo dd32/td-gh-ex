@@ -1082,7 +1082,7 @@ function catchbox_enqueue_color_scheme() {
 	$enqueue_schemes = array( 'dark', 'blue', 'green', 'red', 'brown', 'orange' );
 	
 	if ( in_array( $color_scheme, $enqueue_schemes ) ) {
-		wp_enqueue_style( $color_scheme, get_stylesheet_directory_uri() . '/colors/' . $color_scheme . '.css', array( 'catchbox-style' ), null );
+		wp_enqueue_style( $color_scheme, get_template_directory_uri() . '/colors/' . $color_scheme . '.css', array( 'catchbox-style' ), null );
 	}
 
 	do_action( 'catchbox_enqueue_color_scheme', $color_scheme );
