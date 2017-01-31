@@ -200,16 +200,16 @@ function generate_font_css()
 	
 	// Mobile CSS
 	$output = '';
-	$mobile = apply_filters( 'generate_mobile_breakpoint', '768px' );
+	$mobile = apply_filters( 'generate_mobile_media_query', '(max-width:768px)' );
 	$mobile_site_title = ( isset( $generate_settings[ 'mobile_site_title_font_size' ] ) ) ? $generate_settings[ 'mobile_site_title_font_size' ] : '30';
 	$mobile_h1 = ( isset( $generate_settings[ 'mobile_heading_1_font_size' ] ) ) ? $generate_settings[ 'mobile_heading_1_font_size' ] : '30';
 	$mobile_h2 = ( isset( $generate_settings[ 'mobile_heading_2_font_size' ] ) ) ? $generate_settings[ 'mobile_heading_2_font_size' ] : '25';
-	$output .= '@media (max-width:' . esc_attr( $mobile ) . ') {.main-title{font-size:' . absint( $mobile_site_title ) . 'px;}h1{font-size:' . absint( $mobile_h1 ) . 'px;}h2{font-size:' . absint( $mobile_h2 ) . 'px;}}';
+	$output .= '@media ' . esc_attr( $mobile ) . ' {.main-title{font-size:' . absint( $mobile_site_title ) . 'px;}h1{font-size:' . absint( $mobile_h1 ) . 'px;}h2{font-size:' . absint( $mobile_h2 ) . 'px;}}';
 	
 	// Allow us to hook CSS into our output
 	do_action( 'generate_typography_css', $css );
 	
-	return $css->css_output() . $output;
+	return apply_filters( 'generate_typography_css_output', $css->css_output() . $output );
 }
 endif;
 
@@ -312,7 +312,12 @@ function generate_enqueue_google_fonts() {
 }
 endif;
 
-if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
+if ( ! function_exists( 'generate_fonts_customize_register' ) && ! function_exists( 'generate_default_fonts_customize_register' ) ) :
+/** 
+ * Build our Typography options
+ * Don't run if generate_fonts_customize_register (GP Premium) exists
+ * @since 0.1
+ */
 add_action( 'customize_register', 'generate_default_fonts_customize_register' );
 function generate_default_fonts_customize_register( $wp_customize ) {
 
@@ -578,6 +583,10 @@ function generate_default_fonts_customize_register( $wp_customize ) {
 endif;
 
 if ( ! function_exists( 'generate_typography_customize_preview_css' ) ) :
+/**
+ * Hide the hidden input control
+ * @since 1.3.40
+ */
 add_action('customize_controls_print_styles', 'generate_typography_customize_preview_css');
 function generate_typography_customize_preview_css() {
 	?>
@@ -847,6 +856,10 @@ function generate_get_font_family_css( $font, $settings, $default )
 endif;
 
 if ( ! function_exists( 'generate_typography_default_fonts' ) ) :
+/**
+ * Set the default system fonts
+ * @since 1.3.40
+ */
 function generate_typography_default_fonts() {
 	$fonts = array(
 		'inherit',

@@ -8,7 +8,7 @@
 // No direct access, please
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'GENERATE_VERSION', '1.3.43' );
+define( 'GENERATE_VERSION', '1.3.44' );
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -293,8 +293,9 @@ function generate_scripts()
 	}
 	
 	// Add the child theme CSS if child theme is active.
-	if ( is_child_theme() )
-		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), array( 'generate-style' ), filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
+	}
 	
 	// Font Awesome
 	$icon_essentials = apply_filters( 'generate_fontawesome_essentials', false );
@@ -517,7 +518,7 @@ function generate_base_css()
 	// Allow us to hook CSS into our output
 	do_action( 'generate_base_css', $css );
 	
-	return $css->css_output();
+	return apply_filters( 'generate_base_css_output', $css->css_output() );
 }
 endif;
 
