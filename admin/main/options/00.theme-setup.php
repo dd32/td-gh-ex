@@ -164,11 +164,11 @@ global $wp_query;
 	REMOVE NON VALID REL CATEGORY TAGS
 ---------------------------------------------------------------------------------- */
 
-function thinkup_add_nofollow_cat( $text ) { 
+function thinkup_removerel_category( $text ) { 
 	$text = str_replace( 'rel="category"', "", $text );
 	return $text; 
 };
-add_filter( 'the_category', 'thinkup_add_nofollow_cat' );  
+add_filter( 'the_category', 'thinkup_removerel_category' );  
 
 
 /* ----------------------------------------------------------------------------------
@@ -305,14 +305,9 @@ function thinkup_check_ishome() {
 	if( isset($_SERVER["HTTPS"]) ) {
 		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
 	}
-	$pageURL .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	}
-	$pageURL = rtrim($pageURL, '/') . '/';
+	$pageURL .= '://' . wp_unslash( $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] );
 
+	$pageURL = rtrim($pageURL, '/') . '/';
 	$pageURL = str_replace( "www.", "", $pageURL );
 	$siteURL = str_replace( "www.", "", site_url( '/' ) );
 

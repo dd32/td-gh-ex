@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.3
+- Updated: 	Function thinkup_check_ishome() updated to improve reliability with use of use wp_unslash.
+
 Version 1.4.2
 - Updated: 	Font Awesome updated to v4.7.0.
 - Removed: Outdated vesions of jQuery removed from prettyPhoto folder.
