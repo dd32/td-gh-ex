@@ -376,7 +376,7 @@ if ( !function_exists('weaverx_is_header_video_active') ) :
 function weaverx_is_header_video_active( $active ) {
 	// allow per page active video
 	$pp = weaverx_get_per_page_value( '_pp_video_active' );	// $pp can be '', 'yes', 'no'
-	if ( !$pp )
+	if ( !$pp || $GLOBALS['weaverx_page_who'] == 'search')
 		return $active;
 	else
 		return $pp == 'yes';

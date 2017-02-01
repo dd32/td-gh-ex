@@ -196,7 +196,10 @@ function weaverx_edit_link($echo = 'echo') {
 
 	$post_type_obj = get_post_type_object( $post->post_type );
 	$link = '<a class="post-edit-link" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';
-	$edit = $before . apply_filters( 'edit_post_link', $link, $post->ID ) . $after;
+	$flink = apply_filters( 'edit_post_link', $link, $post->ID );
+	if (!$flink)
+		$flink = $link;					// some https vs http bug in WP
+	$edit = $before . $link . $after;
 	if ('echo' == $echo)
 		echo $edit;
 	else

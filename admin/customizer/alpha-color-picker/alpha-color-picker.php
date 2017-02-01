@@ -45,17 +45,20 @@ class Customize_Alpha_Color_Control extends WP_Customize_Control {
 	 * gets initialized, then we could simply enqueue them here, but for completeness as a
 	 * stand alone class we'll register and enqueue them here.
 	 */
+
+
 	public function enqueue() {
+		$path = trailingslashit( get_template_directory_uri() ) . 'admin/customizer/';	// @@@@ Weaver Xtreme Fix 3.1.1
 		wp_enqueue_script(
 			'alpha-color-picker',
-			get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.js',
+			$path . 'alpha-color-picker/alpha-color-picker.min.js',
 			array( 'jquery', 'wp-color-picker' ),
 			'1.0.0',
 			true
 		);
 		wp_enqueue_style(
 			'alpha-color-picker',
-			get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.css',
+			$path . 'alpha-color-picker/alpha-color-picker.min.css',
 			array( 'wp-color-picker' ),
 			'1.0.0'
 		);

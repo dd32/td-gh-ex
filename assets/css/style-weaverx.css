@@ -366,7 +366,9 @@ body {                      /* body has global settings for others to inherit */
 	overflow:		hidden !important;
 }
 
-
+#primary-widget-area .widget,			/* Tweak: 3.1.1 - hide these because of margin collapse behavior */
+#secondary-widget-area .widget,
+#footer-widget-area .widget,
 #container,
 #content,
 .post-area,
@@ -916,7 +918,7 @@ p img,
 #content .gallery-item {
 	display: 		inline-block;
 	max-width: 		31.33%;
-	padding: 		0 1% 1% 0;
+	padding: 		0 1% 0 1%;
 	text-align: 	center;
 	vertical-align: top;
 	margin:			0;
@@ -946,27 +948,27 @@ p img,
 
 #content .gallery-columns-5 .gallery-item {
 	max-width: 19%;
-	padding: 0 .5% .5%;
+	padding: 0 .5% 0 .5%;
 }
 
 #content .gallery-columns-6 .gallery-item {
 	max-width: 15.66%;
-	padding: 0 .5% .5%;
+	padding: 0 .5% 0 .5%;
 }
 
 #content .gallery-columns-7 .gallery-item {
 	max-width: 13.28%;
-	padding: 0 .5% .5%;
+	padding: 0 .5% 0 .5%;
 }
 
 #content .gallery-columns-8 .gallery-item {
 	max-width: 11.5%;
-	padding: 0 .5% .5%;
+	padding: 0 .5% 0 .5%;
 }
 
 #content .gallery-columns-9 .gallery-item {
 	max-width: 10.11%;
-	padding: 0 .5% .5%;
+	padding: 0 .5% 0 .5%;
 }
 
 .gallery-icon img {
@@ -998,7 +1000,9 @@ p img,
  */
 
 
-div.gallery br {display:none;}
+div.gallery br {display:none;}					/* the WP added <br>s break layout for > 3 columns displayed as 3 columns */
+div.gallery br:last-child {display:block;}		/* have to make the last br display for its clear:both */
+
 #content .gallery-columns-6 .gallery-caption,
 #content .gallery-columns-7 .gallery-caption,
 #content .gallery-columns-8 .gallery-caption,
@@ -1006,6 +1010,7 @@ div.gallery br {display:none;}
 	display: 		block !important;
 }
 
+div.gallery-columns-3 dl:nth-of-type(3n+1),
 div.gallery-columns-4 dl:nth-of-type(3n+1),
 div.gallery-columns-5 dl:nth-of-type(3n+1),
 div.gallery-columns-6 dl:nth-of-type(3n+1),
@@ -1023,7 +1028,7 @@ div.gallery-columns-9 dl:nth-of-type(3n+1) {
 #content .gallery-columns-7 .gallery-item,
 #content .gallery-columns-9 .gallery-item {
 	max-width:	31.33% !important;
-	padding: 	0 1% 1% !important;
+	padding: 	0 1% 0 1% !important;
 	width:		100%	!important
 }
 }
@@ -1193,14 +1198,9 @@ img.fi-aligncenter-pb {
 
 #header-widget-area {			/* needs z-index for bg video header */
 	position:		relative;
-	z-index:		2000;
+	z-index:		1890;
 }
 
-.wvrx-menu-left,
-.wvrx-menu-right,
-.menu-primary .custom-logo-on-menu {
-	z-index:		30;
-}
 #title-over-image #title-tagline {
 	z-index:			19;
 }
@@ -3357,6 +3357,7 @@ ins {
 	background:			url(icons/category-1.png) center left no-repeat;
 	background-size:    22px;
 	padding-left:		26px;
+	display:			inline-block;
 	margin-left:		1.0em;
 }
 

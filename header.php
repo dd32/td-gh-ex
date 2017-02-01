@@ -262,7 +262,7 @@ function weaverx_header_image() {
 		return;
 	}
 
-	// build #header classes
+		// build #header classes
 
 	$img_class = 'header-image ';
 	if ( $h_hide != 'hide-none' && $h_hide != 'hide')
@@ -285,11 +285,33 @@ function weaverx_header_image() {
 	echo '<div id="header-image" class="' . $img_class . '">';
 
 	// Check different ways to display a header:
+	// 0. Archive type page - including search (Added Fix: 3.1.1)
 	// 1. As HTML replacement, possibly with regular image as BG header image
 	// 2. As Video Header
 	// 3. As Standard or FI BG replacement (no video supported)
 	// 4. As FI Replacement
 	// 5. As standard Image
+
+	// 0. Archive type page - just use the standard header image for archives and search
+
+	if ( is_archive() || is_search() ) {
+		if ( weaverx_getopt('link_site_image') ) {
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+		}
+		if ( weaverx_getopt('header_actual_size') ) {
+?>
+		<img src="<?php echo get_header_image() ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" class="wvrx-header-image" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+<?php
+		} else {
+			the_header_image_tag();
+		}
+
+		weaverx_e_opt('link_site_image',"</a>");	/* need to close link */
+
+		echo("\n</div><!-- #header-image -->\n");
+		return;
+	}
+
 
 	// 1. HTML replacement
 
@@ -306,8 +328,8 @@ function weaverx_header_image() {
 
 	// 2. As Header Video
 
-	if (!$hdr_html && weaverx_has_header_video() ) {
-		echo '<!-- has header video -->';
+	if ( !$hdr_html && weaverx_has_header_video()  ) {
+		// echo "<!-- has header video -->";
 		// Handle Video - don't show if HTML supplied
 
 		// Note: @todo: WP 4.7 doesn't filter has_header_video, but uses it internally, so video won't show unless defined in WP options
@@ -353,9 +375,7 @@ function weaverx_header_image() {
 
 		// have to emit background-image url... this will be Plus only.
 		if ( strlen($hdr_bg) > 1 ) {
-			echo '<div class="clear-header-image" style="clear:both"></div></div><!-- #header-image -->';
-
-			$style = "<style type='text/css'>";
+			$style = "\n<style type='text/css'>";
 
 			if ($h_hide != 'hide')
 				$style .= "#header{background-image:url({$hdr_bg});}";
@@ -370,10 +390,17 @@ function weaverx_header_image() {
 				$style .= '.is-desktop #header{background-image:none;}';
 			echo $style . "</style>\n";
 
-			return;
 		}
+		echo '<div class="clear-header-image" style="clear:both"></div></div><!-- #header-image -->';
+
+		return;
 
 	} // end of bg image handling
+
+	if ($hdr_html) {
+		echo("\n</div><!-- #header-image + HTML -->\n");
+		return;
+	}
 
 	// Most common case now - either FI replacement, or standard header image
 	// to here, then want to get an image. Where does it come from?

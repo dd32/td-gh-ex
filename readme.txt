@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.1
+Stable tag: 3.1.1
 
 == Description ==
 
@@ -372,3 +372,15 @@ Fix: More z-index tweaks
 Fix: Bug with incorrectly hiding widget areas on archive-like pages and default blog page due to per-post settings in first post on the page
 Fix: rounded corners z-index on menus
 Fix: BG color for Visual Editor, including Transparent subthemes.
+
+= Version 3.1.1 =
+New: .post-author-id-# added to the post <article> class list that wraps all post views. Allows custom per-author post CSS.
+Fix: Header Widget Area z-index
+Fix: Don't allow header video, header FI header replacement, or header html replacement for archives or search pages
+Fix: [ gallery ] CSS clear:both; fix for tablets/phones. Only apparent when 2 or more galleries on same page/post.
+Fix: Let Per Page with Posts columns override the global Masonry value.
+Fix: Issue with width of Post Category meta link info
+Fix: Customizer Color picker with Child Themes now displays correctly
+Fix: Header Image HTML replacement still showed image
+Tweak: Work-around for Cloudflare "feature" that doesn't show Edit button sometimes. See Cloudflare plugin support forum for fix for WP Admin bar if you need that.
+Tweak: Make overflow:hidden for primary, secondary, and footer widget areas

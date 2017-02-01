@@ -48,8 +48,6 @@ if ( ! function_exists( 'weaverx_setup' ) ) {
  */
 function weaverx_setup() {
 
-	$GLOBALS['wvrx_timer'] = microtime(true);	// don't have options loaded, so just always get the current time.
-
 	// Set the content width based on the theme's design and stylesheet.
 
 	if ( ! isset( $content_width ) )

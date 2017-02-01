@@ -146,10 +146,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	wp_footer();
 
 	weaverx_masonry('invoke-code');
-	if ( WEAVERX_DEV_MODE ) {
-		$end_time = microtime(true);
-		weaverx_debug_comment ('Page generated in: '. round($end_time-$GLOBALS['wvrx_timer'], 3) . ' seconds.');
-	}
 ?>
 </body>
 </html>

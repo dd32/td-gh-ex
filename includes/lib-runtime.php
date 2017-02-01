@@ -471,7 +471,7 @@ function weaverx_echo_css( $css ) {
 // # MISC ==============================================================
 function weaverx_show_header_image() {
 
-	
+
 }
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
@@ -617,6 +617,11 @@ function weaverx_post_class($hidecount = false) {
 	if ($weaverx_cur_post_count != 0 && !$hidecount)
 		$postclass .= 'post-' . (($weaverx_cur_post_count % 2) ? 'odd' : 'even') . ' post-order-' . $weaverx_cur_post_count
 	 .  ' ';
+
+	 $author_id = get_the_author_meta('ID');
+	 if ($author_id)
+		$postclass .= "post-author-id-{$author_id} ";
+
 
 	return $postclass . weaverx_area_class('post', 'pad', '-tb', 'margin-bottom' );
 }
@@ -1216,6 +1221,8 @@ function weaverx_masonry($act = false) {
 
 	$usem = weaverx_get_per_page_value('_pp_pwp_masonry');	// per page to override...
 	if ($usem < 2)
+	    if ($is_pwp && weaverx_get_per_page_value('_pp_wvrx_pwp_cols') > 0)	// let per page value override global
+			return false;
 		$usem = weaverx_getopt('masonry_cols');
 	if ($usem < 2) {
 		return false;

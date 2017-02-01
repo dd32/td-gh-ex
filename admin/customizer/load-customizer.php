@@ -39,9 +39,9 @@ function weaverx_add_customizer_content( $wp_customize ) {
 	$path = trailingslashit( get_template_directory() ) . 'admin/customizer/';
 
 	// Inlcude the Alpha Color Picker control file.
-	require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
-	require_once( dirname( __FILE__ ) . '/save-restore/save-restore.php' );
-	require_once( dirname( __FILE__ ) . '/lib-controls.php' );
+	require_once( $path . 'alpha-color-picker/alpha-color-picker.php' );
+	require_once( $path . 'save-restore/save-restore.php' );
+	require_once( $path . 'lib-controls.php' );
 
 
 	weaverx_customizer_add_panels( $wp_customize );

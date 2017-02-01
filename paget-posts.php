@@ -153,7 +153,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		/* Start the Loop */
 		$num_cols = weaverx_getopt('blog_cols'); // default
 		$pp = weaverx_get_per_page_value('_pp_wvrx_pwp_cols');
-		if ($pp) $num_cols = $pp;
+		if ($pp) {
+			$num_cols = $pp;
+		}
 		if (!$num_cols || $num_cols > 3) $num_cols = 1;
 
 		$sticky_one = weaverx_getopt_checked( 'blog_sticky_one' ) && $paged <= 1;
