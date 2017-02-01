@@ -5,7 +5,8 @@ require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/core/core.php');
-
+include_once('includes/metaboxpage.php');
+include_once('includes/metaboxsingle.php');
 // Implement the Custom Header feature.
 require get_template_directory() . '/includes/custom-header.php';
 require get_template_directory() . '/includes/customizer.php';
@@ -41,7 +42,20 @@ function digital_custom_customize_enqueue() {
 add_action( 'customize_controls_enqueue_scripts', 'digital_custom_customize_enqueue' );
 
 
+/* ----------------------------------------------------------------------------------- */
+/* Custom CSS Output
+/*----------------------------------------------------------------------------------- */
 
+
+function digital_css(){
+	$custom_css = '
+
+	 
+	'.html_entity_decode(get_theme_mod('custom_css')).'';
+
+	wp_add_inline_style( 'digital-style', $custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'digital_css' );
 
 
 //Home Icon for Menu
@@ -132,8 +146,8 @@ function digital_theme_setup() {
 	 
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'defaultthumb', 390, 210);
-		add_image_size( 'popularpost', 75, 75 , true );
-		add_image_size( 'latestpost', 125, 120 , true );
+		add_image_size( 'popularpost', 75, 75 );
+		add_image_size( 'latestpost', 125, 120 );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
 		add_editor_style();
 		add_theme_support( 'woocommerce' );
@@ -378,4 +392,38 @@ function digital_register_required_plugins() {
 );	tgmpa( $plugins, $config );
 
 }
+
+
+
+if ( ! function_exists( 'digital_site_title' ) ) :
+/**
+ * Displays the site title in the header area
+ */
+function digital_site_title() {
+	if ( is_front_page() && is_home() ) : ?>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+	<?php else : ?>
+
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+
+	<?php endif;
+}
+endif;
+
+if ( ! function_exists( 'digital_site_description' ) ) :
+/**
+ * Displays the site description in the header area
+ */
+function digital_site_description() {
+	$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+	if ( $description || is_customize_preview() ) : ?>
+
+		<p class="site-description"><?php echo $description; ?></p>
+
+	<?php
+	endif;
+}
+endif;
 ?>

@@ -7,6 +7,10 @@ function digital_backg() {
 		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
 		<?php endif; ?>
 		
+		<?php if(of_get_option('digital_thumbadj')=='off'){ ?>
+			.thumbnail img{width: auto;} <?php }
+else { echo '.thumbnail img{width: 100% !important;}';}			?>
+		
 		    </style>
 <?php };
 add_action('wp_head', 'digital_backg');

@@ -1,42 +1,71 @@
+.metabox-holder.goto {
+    float: left;
+    margin-left: 20px;
+	width:30%;
+}
+.metabox-holder.goto h3 {
+    background: #585858;
+    color: #fff;
+}
+#optionsframework {
+    width: 65%;
+    float: left;	
+    background:#fff;
+}
+
+
 #optionsframework .section{line-height: 1.4;}
 #options-group-6{
     cursor: not-allowed;
     opacity: 0.7;}
-
-/* Options Framework Admin Styles */
-.basicsettings-tab, .basicsettings-tab :hover{
-background-image: url("../images/home.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.basicsettings-tab::before{
+    content: "\f102";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
-
-.slidersettings-tab, .slidersettings-tab :hover{
-background-image: url("../images/wrock.ico");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.advanceproonly-tab::before{
+	content: "\f111";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
-.advanceoptions-tab{
-background-image: url("../images/tools.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.socialprofile-tab::before{
+	content: "\f237";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
-.socialmedia-tab{background-image: url("../images/graph.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.customstyling-tab::before{    
+	content: "\f100";
+	font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
-.customstyling-tab{background-image: url("../images/style.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.adsmanagement-tab::before{
+	content: "\f108";
+	font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
-.adsmanagement-tab{background-image: url("../images/layout.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.mobile-tab::before{
+    content: "\f470";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.slidersettings-tab::before{
+content: "\f126";
+	font-family: dashicons;
+    padding: 3px;
+	color: #339ece;
+    vertical-align: bottom;
 }
 
 .tesingh{background: #B76CA9;

@@ -1,11 +1,37 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Author     : Sandy
+    Author     : Insertcart.com
 */
+
+ul.accordion-sub-container.control-panel-content {
+        background: #EEE;
+}
+h3.accordion-section-title:before {
+    color: #0073aa;
+}
+li#customize-control-important_links a:before {
+   content: "\f504";
+    font-family: dashicons;
+    padding: 3px;
+	vertical-align: bottom;
+	    font-size: 17px;
+    font-weight: normal;}
+li#customize-control-important_links a{
+line-height: 16px;
+    background: #FF9800;
+    color: #fff;
+    display: block;
+    margin: 15px 0 0;
+    text-align: center;
+    font-weight: 600;	
+    text-decoration: none;
+    padding: 8px 0;
+}
+li#accordion-section-digital_important_links > h3.accordion-section-title:before {
+	content: "\f317";
+    font-family: dashicons;
+    padding: 3px;
+	vertical-align: bottom;
+    color: #FF9800;}
 li#accordion-section-digital_responsive > h3.accordion-section-title:before {
     content: "\f472";
     font-family: dashicons;

@@ -20,9 +20,8 @@
 <?php if (of_get_option( 'digital_logo' )): ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'digital_logo' ); ?>" max-height="100px" max-width="450px" alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
-            <h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+           	<?php digital_site_title(); ?>
+					<?php digital_site_description(); ?>
           <?php endif; ?>		
 		</div>		
 		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?>

@@ -20,6 +20,10 @@
 				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
 				<?php digital_breadcrumbs(); ?>
 				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php _e('Blog Archives', 'digital'); ?> <?php } ?>
+				<?php
+				
+					 the_archive_description( '<div class="taxonomy-description panel">', '</div>' ); 
+				?>
 				<?php while(have_posts())  : the_post(); ?>
 				<div class="imag"><?php get_template_part('/includes/post'); ?>	</div>
 					<?php endwhile; ?>

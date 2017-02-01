@@ -15,7 +15,68 @@ function digital_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
         
-      $wp_customize->remove_section("background_image");
+    //$wp_customize->remove_section("background_image");
+	  
+		// Theme important links started
+   class digital_Important_Links extends WP_Customize_Control {
+
+      public $type = "digital-important-links";
+
+      public function render_content() {
+        
+		 echo '<ul><b>
+			<li>' . esc_attr__( '* Fully Mobile Responsive', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Dedicated Option Panel', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Customize Theme Color', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* WooCommerce & bbPress Support', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* SEO Optimized', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Control Individual Meta Option like: Category, date, Author, Tags etc. ', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Full Support', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Google Fonts', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Theme Color Customization', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Custom CSS', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Website Layout', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Select Number of Columns', 'digital' ) . '</li>
+			<li>' . esc_attr__( '* Website Width Control', 'digital' ) . '</li>
+			</b></ul>
+		 ';
+         $important_links = array(
+		 
+            'theme-info' => array(
+               'link' => esc_url('http://www.insertcart.com/product/digital-wordpress-theme/'),
+               'text' => __('Digital Pro', 'digital'),
+            ),
+            'support' => array(
+               'link' => esc_url('http://www.insertcart.com/contact-us/'),
+               'text' => __('Contact us', 'digital'),
+            ),         
+			'Documentation' => array(
+               'link' => esc_url('http://www.insertcart.com/digital-wordpress-theme-setup-and-documentation/'),
+               'text' => __('Documentation', 'digital'),
+            ),			 
+         );
+         foreach ($important_links as $important_link) {
+            echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
+         }
+               }
+
+   }
+      $wp_customize->add_section('digital_important_links', array(
+      'priority' => 1,
+      'title' => __('Upgrade to Pro', 'digital'),
+   ));
+
+   $wp_customize->add_setting('digital_important_links', array(
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'digital_links_sanitize'
+   ));
+
+   $wp_customize->add_control(new digital_Important_Links($wp_customize, 'important_links', array(
+      'section' => 'digital_important_links',
+      'settings' => 'digital_important_links'
+   )));  
+	  
+	  
          $wp_customize->add_section( 'digital_responsive' , 
         array(
 				'title'       => __( 'Theme Options & Settings', 'digital' ),
@@ -82,10 +143,9 @@ function digital_registers() {
 	wp_register_script( 'digital_customizer_script', get_template_directory_uri() . '/js/customizer.js', array("jquery","digital_jquery_ui"), '20120206', true  );
 	wp_enqueue_script( 'digital_customizer_script' );
 	
-	wp_localize_script( 'digital_customizer_script', 'scatmanjhon', array(
-		'documentation' => __( 'Documentation', 'digital' ),
-		'pro' => __('Upgrade to Pro','digital'),
-		'support' => __('Support','digital')
+	wp_localize_script( 'digital_customizer_script', 'digitalpro', array(
+		'documentation' => __( 'Help & Support', 'digital' ),
+		'pro' => __('Upgrade to Pro','digital')
 		
 	) );
 }
