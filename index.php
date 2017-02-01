@@ -35,15 +35,11 @@ get_header(); ?>
 			</div><!-- #mainAnnina -->
 
 			<?php 
-			if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-				annina_paging_nav(); 
-			else :
 				the_posts_pagination( array(
 					'prev_text'          => '<i class="fa fa-angle-double-left spaceRight"></i>' . esc_html__( 'Previous', 'annina' ),
 					'next_text'          => esc_html__( 'Next', 'annina' ) . '<i class="fa fa-angle-double-right spaceLeft"></i>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'annina' ) . ' </span>',
 				) );
-			endif;
 			?>
 
 		<?php else : ?>

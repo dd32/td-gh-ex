@@ -18,64 +18,9 @@ get_header(); ?>
 				<div class="content-annina-title annDouble">
 				<h1 class="page-title">
 					<?php
-						if ( is_category() ) :
-							printf( __( 'Category: %s', 'annina' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-
-						elseif ( is_tag() ) :
-							printf( __( 'Tag: %s', 'annina' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-
-						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'annina' ), '<span class="vcard">' . get_the_author() . '</span>' );
-
-						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'annina' ), '<span>' . get_the_date() . '</span>' );
-
-						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'annina' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'annina' ) ) . '</span>' );
-
-						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'annina' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'annina' ) ) . '</span>' );
-
-						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'annina' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'annina' );
-
-						else :
-							_e( 'Archives', 'annina' );
-
-						endif;
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					?>
-				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
 				</div><!-- .content-annina -->
 			</header><!-- .page-header -->
 			
@@ -98,15 +43,11 @@ get_header(); ?>
 			</div><!-- #mainAnnina -->
 
 			<?php 
-			if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-				annina_paging_nav(); 
-			else :
 				the_posts_pagination( array(
 					'prev_text'          => '<i class="fa fa-angle-double-left spaceRight"></i>' . esc_html__( 'Previous', 'annina' ),
 					'next_text'          => esc_html__( 'Next', 'annina' ) . '<i class="fa fa-angle-double-right spaceLeft"></i>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'annina' ) . ' </span>',
 				) );
-			endif;
 			?>
 
 		<?php else : ?>
