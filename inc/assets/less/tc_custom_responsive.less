@@ -26,10 +26,11 @@
   }
 
   /*Other*/
-  .carousel .item {
+  .carousel .czr-item {
     line-height: 385px;
     overflow: hidden;
     min-height: 385px;
+    max-height: 385px;
   }
   #left .round-div {
     left: -77px;
@@ -64,6 +65,7 @@
 
 @media (min-width: 980px) {
   /* ROUND DIV FOR 3 columns Top or bottom thumb position SINCE V3.2.0*/
+  .span6 .thumb-position-bottom .round-div,
   .span6 .thumb-position-top .round-div {
     width: 125px;
     height: 125px;
@@ -106,7 +108,26 @@
   // .tc-is-mobile .navbar .nav li > ul ul {
   //   display: block;
   // }
+  /* btn-toggle-nav edge case positioning*/
+  /* when on the right */
 
+  body:not(.sticky-enabled) .tc-header .btn-toggle-nav.pull-right {
+    clear: both;
+  }
+  /* if only socials + btn-nav in navbar (no tagline), do not drop on a new line */
+  body:not(.sticky-enabled) .tc-header .social-block + .btn-toggle-nav.pull-right {
+    clear: none;
+  }
+
+  /* when on the left */
+  /* drop on a new line only when socials are present */
+  body:not(.sticky-enabled) .tc-header .social-block + .btn-toggle-nav.pull-left,
+  body:not(.sticky-enabled) .tc-header .social-block + [class*=span] + [class*=span] + .btn-toggle-nav.pull-left,
+  body:not(.sticky-enabled) .tc-header .social-block + [class*=span] + .btn-toggle-nav.pull-left {
+    clear: both;
+  }
+
+  /* btn-toggle-nav edge case positioning END */
 }
 
 
@@ -120,6 +141,7 @@
     float:none;
     text-align: center;
     width: 100%;
+    clear: both;
   }
   .container.navbar-wrapper {
     margin-bottom: 0;
@@ -185,8 +207,13 @@
   .nav-collapse, .nav-collapse.collapse.in .nav{
     display: block;
   }
-  .navbar div > ul.nav > .menu-item:first-child > a {
-    padding-left: 15px
+  .tc-header:not(.tc-second-menu-on) .navbar div > ul.nav > .menu-item:first-child > a {
+    & when (@is_rtl = false){
+      padding-left: 15px;
+    }
+    & when (@is_rtl = true){
+      padding-right: 15px;
+    }
   }
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
     font-weight:normal;
@@ -222,7 +249,7 @@
     text-align: @textAlign;
     position: relative;
   }
-  .tc-hover-menu.nav a:after {
+  .tc-header:not(.tc-second-menu-on) .tc-hover-menu.nav a:after {
     border-top: none;
     border-right: none;
     border-left: none;
@@ -247,10 +274,11 @@
   .social-block.widget {
     float: none;
   }
-  .carousel .item {
+  .carousel .czr-item {
     line-height: 309px;
     overflow: hidden;
     min-height: 309px;
+    max-height: 309px;
   }
 
   .featurette {
@@ -373,6 +401,7 @@
     margin: 0px;
   }
 
+
   .tc-header .navbar .btn-toggle-nav,
   .navbar .btn-navbar {
     display: block;
@@ -433,7 +462,7 @@
     }
   }
 
-  .dropdown-submenu>a:after {
+  .nav .dropdown-submenu>a:after {
     content: none;
   }
   .nav a {
@@ -536,6 +565,10 @@
   #right.widget-area:before{
     border-left:0px;
   }
+  .tc-no-sticky-header .navbar-wrapper,
+  .sticky-disabled .navbar-wrapper {
+    clear: both;
+  }
   .navbar-inner {
     margin: -20px;
   }
@@ -544,13 +577,14 @@
     margin-right: -20px; */
 
   }
- .carousel .item {
+ .carousel .czr-item {
     line-height: 308px;
     overflow: hidden;
     min-height: 308px;
+    max-height: 308px;
   }
 
-  .item .carousel-caption h1 {
+  .czr-item .carousel-caption h1 {
     font-size: 22px;
   }
   .carousel-caption .btn {
@@ -579,12 +613,14 @@
     text-align: center;
   }
   /* SINCE V3.2.0 */
+  .span6 .thumb-position-bottom .round-div,
   .span6 .thumb-position-top .round-div {
     width: 125px;
     height: 125px;
     top: -59px;
     left: -63px;
   }
+  .span6 .thumb-position-bottom .thumb-wrapper,
   .span6 .thumb-position-top .thumb-wrapper {
     max-width: none;
   }
@@ -648,10 +684,11 @@
   .social-block a {
   padding-right: 10px;
   }
-  .carousel .item {
+  .carousel .czr-item {
     line-height: 190px;
     overflow: hidden;
     min-height: 190px;
+    max-height: 190px;
   }
 
   .carousel-caption {
@@ -661,7 +698,7 @@
     max-height: 130px;
     overflow: hidden;
   }
-  .item .carousel-caption h1 {
+  .czr-item .carousel-caption h1 {
     font-size: 20px;
   }
   .carousel-caption .lead,
@@ -724,15 +761,16 @@
   /*end prevent overflows in mobiles */
 }
 @media (max-width: 320px) {
-  .carousel .item {
+  .carousel .czr-item {
     line-height: 140px;
     overflow: hidden;
     min-height: 140px;
+    max-height: 140px;
   }
   .carousel-caption {
     padding: 2%;
   }
-  .item .carousel-caption h1 {
+  .czr-item .carousel-caption h1 {
     font-size: 16px;
   }
   .carousel-caption .btn {
