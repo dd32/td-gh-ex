@@ -30,6 +30,28 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 ___ CHANGELOG
 
+* 1.6.1 / 1 February 2016
+Corrected the text domain in the translation function which sets sidebar names.
+Added unminified versions for all minified js files included in the theme.
+Replaced custom comment function arguments with hooks.
+Added the pagination link mechanism to page template.
+Removed the "create-function" call from the WooCommerce "loop_shop_per_page" hook.
+Removed theme prefixes from third-party script-enqueue handles.
+Escaped all input for the wp_localize_script(), image URLs in the logo function, and category lists in post meta.
+Replaced the json_encode() with the native wp_json_encode() function.
+Moved the register_nav_menus() function inside the after_setup_theme() call.
+Removed the excessive function_exists() check for the register_nav_menus() call.
+Wrapped admin strings for plugin activation module into proper localization functions.
+Added a reset to the custom grid query.
+Switched to home_url() in the custom WooCommerce search function.
+Removed the unnecessary "page-" prefix from the grid template.
+Removed excessive escaping for the get_search_query() function.
+The search form now fills with existing search query using the get_search_query() function.
+Removed the excessive post date from the bento_entry_meta() template function.
+Wrapped the year in the theme footer into a localization tag.
+Fixed the unordered multiple placeholders issues in the sprintf() on line 93 of the CMB2 helper functions and on line 2410 of the plugin activation include.
+Removed the error control operators from the included CMB2 library.
+
 * 1.6 / 25 January 2016
 Moved all theme-related support and upsell links into a single native Customizer section.
 Removed all premium sections and fields from the Customizer for non-upgraded users.

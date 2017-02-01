@@ -51,7 +51,7 @@ function bento_localize_customizer_scripts() {
 	wp_localize_script( 'bento-customizer-scripts', 'bentoCustomizerVars', array(
 		'exp' => esc_html__( 'Get the Expansion Pack', 'bento' ),
 		'review' => esc_html__( 'Rate the theme (thanks!)', 'bento' ),
-		'license_status' => $bento_license_status,
+		'license_status' => esc_html( $bento_license_status ),
 	) );
 }
 
@@ -1959,7 +1959,7 @@ function bento_customizer_css() {
 		.site-content a:not(.button) {
 			color: '.esc_html( get_theme_mod( 'bento_content_link_text_color', '#00b285' ) ).';
 		}
-		.page-link-text:not(:hover) {
+		.page-links a .page-link-text:not(:hover) {
 			color: #00B285;
 		}
 		label,
@@ -2038,7 +2038,7 @@ function bento_customizer_css() {
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover,
+		.page-links a .page-link-text:hover,
 		.widget_price_filter .ui-slider .ui-slider-range, 
 		.widget_price_filter .ui-slider .ui-slider-handle,
 		input[type="submit"],
@@ -2050,10 +2050,10 @@ function bento_customizer_css() {
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover {
+		.page-links a .page-link-text:hover {
 			border-color: '.esc_html( get_theme_mod( 'bento_content_button_background_color', '#00b285' ) ).';
 		}
-		.page-link-text:not(:hover),
+		.page-links a .page-link-text:not(:hover),
 		.pagination a, 
 		.woocommerce-pagination a,
 		.site-content a.ajax-load-more {
@@ -2065,10 +2065,11 @@ function bento_customizer_css() {
 		}
 		input[type="submit"],
 		.site-content .button,
+		.site-content a.button,
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover {
+		.page-links a .page-link-text:hover {
 			color: '.esc_html( get_theme_mod( 'bento_content_button_text_color', '#ffffff' ) ).';	
 		}
 		input[type="submit"]:hover,
@@ -2213,6 +2214,7 @@ function bento_get_attachment_id( $url ) {
 				}
 			}
 		}
+		wp_reset_postdata();
 	}
 	return $attachment_id;
 }	

@@ -40,55 +40,8 @@ if ( post_password_required() ) {
     <?php } ?>
     
     <?php 
-	// Output custom commment form
-	$commenter = wp_get_current_commenter();
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );
-    $fields =  array(
-        'author' => '
-            <div class="comment-form-field comment-form-author">
-                <label for="author">'.esc_html__( 'Name', 'bento' ).'</label>
-                <input 
-                    id="author" 
-                    name="author" 
-                    type="text" 
-                    placeholder="'.esc_html__( 'Name','bento' ).'" 
-                    value="'.esc_attr( $commenter['comment_author'] ).'" 
-                    size="30"'.$aria_req.
-                ' />
-            </div>
-        ',
-        'email' => '
-            <div class="comment-form-field comment-form-email">
-                <label for="email">'.esc_html__( 'Email', 'bento' ).'</label>
-                <input 
-                    id="email" 
-                    name="email" 
-                    type="text" 
-                    placeholder="'.esc_html__( 'Email','bento' ).'" 
-                    value="'. esc_attr( $commenter['comment_author_email'] ).'" 
-                    size="30"'.$aria_req.
-                ' />
-            </div>
-        ',
-    );
-    $comment_form_args = array(
-        'label_submit' => esc_html__( 'Submit Comment', 'bento' ),
-        'comment_notes_before' => '',
-        'comment_field' => '
-            <div class="comment-form-comment">
-                <textarea
-                    id="comment" 
-                    name="comment" 
-                    placeholder="'.esc_html__( 'Comment', 'bento' ).'" 
-                    cols="45" rows="8" 
-                    aria-required="true"
-                ></textarea>
-            </div>
-        ',
-        'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-    );
-    comment_form($comment_form_args); 
+	// Output commment form
+    comment_form(); 
     ?>
 		
 </div>

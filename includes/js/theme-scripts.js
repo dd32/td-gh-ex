@@ -289,11 +289,11 @@ $str(window).load(function () {
 	// Scroll to the correct position for hash URLs
 	if ( window.location.hash ) {
 		var bento_cleanhash = window.location.hash.substr(1);
-		if ( $str('[name="' + bento_cleanhash + '"]').length ) {
+		if ( $str('#' + bento_cleanhash).length ) {
 			if ( bentoThemeVars.fixed_menu == 1 ) {
 				var bento_headerHeight = $str('.site-header').outerHeight(true);
 			}
-			scrollPosition = $str('[name="' + bento_cleanhash + '"]').offset().top - bento_headerHeight - 10;
+			scrollPosition = $str('#' + bento_cleanhash).offset().top - bento_headerHeight - 10;
 			$str('html, body').animate( { scrollTop: scrollPosition }, 1 );
 		}
 	}

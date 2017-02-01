@@ -82,6 +82,7 @@ $bento_grid_columns = esc_html( get_post_meta( $bento_parent_page_id, 'bento_pag
 				}
 				
             }
+			wp_reset_postdata();
             ?>
                    
         </main>

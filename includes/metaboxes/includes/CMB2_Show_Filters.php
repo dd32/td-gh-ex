@@ -81,7 +81,7 @@ class CMB2_Show_Filters {
 			return $display;
 		}
 
-		$object_id = is_admin() ? $cmb->object_id() : @get_the_id();
+		$object_id = is_admin() ? $cmb->object_id() : get_the_id();
 
 		if ( ! $object_id ) {
 			return false;

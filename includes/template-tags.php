@@ -353,12 +353,12 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
 			( is_singular( array( 'post' , 'project' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
-			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && get_page_template_slug( $bento_parent_page_id ) != 'page-grid.php' ) 
+			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && get_page_template_slug( $bento_parent_page_id ) != 'grid.php' ) 
 		) {
 			return;
 		}
 		
-		if ( is_singular() && get_page_template_slug( $bento_parent_page_id ) != 'page-grid.php' ) {
+		if ( is_singular() && get_page_template_slug( $bento_parent_page_id ) != 'grid.php' ) {
 			?>
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
@@ -548,7 +548,7 @@ if ( ! function_exists( 'bento_entry_meta' ) ) {
 				$post_categories_names[] = $cat->name;
 			}
 			$post_categories_names = implode(", ", $post_categories_names);
-			$post_categories = ' <i>'.esc_html__( 'in', 'bento' ).'</i> <span class="uppercase">'.$post_categories_names.'</span>';
+			$post_categories = ' <i>'.esc_html__( 'in', 'bento' ).'</i> <span class="uppercase">'.esc_html( $post_categories_names ).'</span>';
 		}
 		$post_comments = '';
 		$num_comments = get_comments_number();
@@ -562,11 +562,7 @@ if ( ! function_exists( 'bento_entry_meta' ) ) {
 			}
 			$post_comments = ', <i>'. $comments . '</i>';
 		}
-		$post_date = '';
-		if ( is_singular('post') ) {
-			$post_date = ' <i>'.esc_html__( 'on', 'bento' ).'</i> <span class="uppercase">'.the_date('j F Y', '', '', false).'</span>';
-		}
-		$post_meta = $post_author . $post_date . $post_categories . $post_comments;
+		$post_meta = $post_author . $post_categories . $post_comments;
 		if ( get_post_type() == 'post' ) {
 			echo wp_kses( $post_meta, array( 'span' => array( 'class' => array() ), 'i' => array() ) );
 		}
@@ -779,7 +775,7 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
 			$copyright .= get_theme_mod( 'bento_footer_copyright' );
 		} else {
-			$copyright .= '&#169; '.date('Y').' '.$sitename.'. '.$author;
+			$copyright .= '&#169; '.date_i18n( __( 'Y', 'bento') ).' '.$sitename.'. '.$author;
 		}
 		$copyright .= '</div>';
 		echo wp_kses( $copyright, 

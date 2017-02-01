@@ -2407,7 +2407,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				if ( ! empty( $text ) ) {
 
 					$status_links[ $type ] = sprintf(
-						'<a href="%s"%s>%s</a>',
+						'<a href="%1$s"%2$s>%3$s</a>',
 						esc_url( $this->tgmpa->get_tgmpa_status_url( $type ) ),
 						( $type === $this->view_context ) ? ' class="current"' : '',
 						sprintf( $text, number_format_i18n( $count ) )

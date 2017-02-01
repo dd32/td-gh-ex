@@ -19,7 +19,7 @@ get_header();
                     	<?php esc_html_e( 'Search results for', 'bento' ); ?>
                     </div>
 					<h1 class="archive-title">
-						"<?php echo esc_html( get_search_query() ); ?>"
+						"<?php echo get_search_query(); ?>"
                     </h1>
 				</header>
                 <?php

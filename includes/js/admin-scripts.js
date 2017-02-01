@@ -8,7 +8,7 @@ $adm(document).ready(function() {
 	
 	// Display grid settings box when Grid page template is chosen 
 	$adm('#page_template').change( function() {
-		$adm('#grid_settings_metabox').toggle( $adm(this).val() == 'page-grid.php' );
+		$adm('#grid_settings_metabox').toggle( $adm(this).val() == 'grid.php' );
     }).change();
 	
 	
