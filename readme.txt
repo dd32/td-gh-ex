@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.3
+- Updated: 	Renamed function add_nofollow_cat() to thinkup_removerel_category() to prevent conflict issues.
+- Updated: 	Renamed function thinkup_input_breadcrumb() to wp_bac_breadcrumb() to prevent conflict issues.
+- Updated: 	Moved function thinkup_title_select() from 00.theme-setup.php to 01.general-settings.php to better group related functions.
+
 Version 1.8.2
 - Updated: 	Font Awesome updated to v4.7.0.
 
