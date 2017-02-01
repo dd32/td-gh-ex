@@ -1,26 +1,25 @@
-/*  TABLE OF CONTENTS - LAST UPDATED 24/01/2017
+/*  TABLE OF CONTENTS - LAST UPDATED 07/11/2015
 01. ANIMATION
 02. BUTTONS
 03. CAROUSEL
 04. COLUMNS
 05. CONTACT FORMS
 06. DIVIDERS
-07. FEATURED
-08. GRID
-09. ICONS (COLORED)
-10. LIGHTBOX
-11. LISTS
-12. MAPS
-13. NOTIFICATION BOXES
-14. PRICING TABLES
-15. PROGRESS BARS
-16. PROGRESS BARS / COUNTERS - KNOB
-17. SLIDESHOW - CAROUSEL (ALSO USED IN CUSTOM POST ITEM SHORTCODE)
-18. SLIDESHOW - SLIDER
-19. SOCIAL MEDIA
-20. TABS
-21. TITLES
-22. TOGGLES
+07. GRID
+08. ICONS (COLORED)
+09. LIGHTBOX
+10. LISTS
+11. MAPS
+12. NOTIFICATION BOXES
+13. PRICING TABLES
+14. PROGRESS BARS
+15. PROGRESS BARS / COUNTERS - KNOB
+16. SLIDESHOW - CAROUSEL (ALSO USED IN CUSTOM POST ITEM SHORTCODE)
+17. SLIDESHOW - SLIDER
+18. SOCIAL MEDIA
+19. TABS
+20. TITLES
+21. TOGGLES
 */
 
 
@@ -280,7 +279,6 @@ float: left;
 	display: block;
 	float: left;
 	background: none;
-	border: none;
 }
 .sc-carousel .entry-header,
 .sc-carousel .entry-header img {
@@ -292,14 +290,11 @@ float: left;
 	box-sizing: border-box;
 }
 .sc-carousel .entry-header {
-	overflow: hidden;
 	max-width: 100%;
 	position: relative;
 	display: inline-block;
-	vertical-align: top;
-}
-.sc-carousel .entry-header a {
-	padding: 0;
+	overflow: hidden;
+	margin-bottom: -6px;
 }
 .sc-carousel .entry-header img {
 }
@@ -507,19 +502,6 @@ float: left;
 	display: table-cell;
 	vertical-align: middle;
 }
-.sc-carousel.carousel-team .team-thumb.team-thumb-round img,
-.sc-carousel.carousel-team .team-thumb.team-thumb-round image-overlay {
-	-webkit-border-radius: 500px;
-	-moz-border-radius: 500px;
-	-ms-border-radius: 500px;
-	-o-border-radius: 500px;
-	border-radius: 500px;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-}
 
 /* Carousel type specific code  - Testimonial */
 .sc-carousel.carousel-testimonial {
@@ -596,7 +578,6 @@ float: left;
 	visibility: hidden;
 }
 .sc-carousel .image-overlay-inner {
-	position: relative;
 	display: table;
 	width: 100%;
 	height: 100%;
@@ -690,7 +671,6 @@ float: left;
 	padding: 0;
 	margin: 0 0 20px;
 	display: inline-block;
-	vertical-align: top;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -806,20 +786,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	07. FEATURED							*/
-/* ---------------------------------------------------------------------------- */
-.sc-featured,
-.sc-image {
-	padding: 0;
-	margin: 0 0 20px;
-}
-.sc-featured .entry-header {
-	margin-bottom: 15px !important;
-}
-
-
-/* ---------------------------------------------------------------------------- */
-/*	08. GRID (overlay css in 03. CAROUSEL)	*/
+/*	07. GRID (overlay css in 03. CAROUSEL)	*/
 /* ---------------------------------------------------------------------------- */
 .sc-grid ul {
     margin: 0 0 20px;
@@ -867,7 +834,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	09. ICONS (COLORED)							*/
+/*	08. ICONS (COLORED)							*/
 /* ---------------------------------------------------------------------------- */
 .icontext:before,
 .icontext:after,
@@ -880,7 +847,7 @@ div.wpcf7-mail-sent-ok {
 .iconfull.style1 .iconimage { float:left; }
 
 .iconmain    { overflow: hidden; padding-left: 10px; }
-.iconimage   { min-width: 32px; min-height: 32px; overflow: hidden; }
+.iconimage   { min-width: 32px; min-height: 32px; }
 .iconmain h3,
 .iconimage h3 {
 	font-weight: bold;
@@ -968,16 +935,13 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	10. LIGHTBOX								*/
+/*	09. LIGHTBOX								*/
 /* ---------------------------------------------------------------------------- */
 div.pp_overlay {
 	z-index: 99999;
 }
 div.pp_pic_holder {
 	z-index: 999999;
-}
-.pp_social {
-	display: none !important;
 }
 .prettyPhoto { 
 	max-width: 100%;
@@ -1066,7 +1030,7 @@ div.pp_pic_holder {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	11. LISTS								*/
+/*	10. LISTS								*/
 /* ---------------------------------------------------------------------------- */
 ul.list 	{ list-style: none; margin: 3px 0px; }
 ul.list li	{ padding: 0px 0px 6px 25px; background: transparent no-repeat scroll 0 1px; }
@@ -1075,26 +1039,8 @@ ul.iconfont i.fa-none   { margin-left: -39px; }
 
 
 /* ---------------------------------------------------------------------------- */
-/*	12. MAPS								*/
+/*	11. MAPS								*/
 /* ---------------------------------------------------------------------------- */
-
-.sc-gmap3 {
-	position: relative;
-}
-.sc-gmap3 iframe {
-	display: block;
-}
-.gmap3-scroll {
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-.gmap3-scroll[data-scrollwheel="on"] {
-	display: none;
-}
 
 /* Comprehensive Google Map by Alexander Zagniotov */
 .google-map-placeholder {
@@ -1102,7 +1048,7 @@ ul.iconfont i.fa-none   { margin-left: -39px; }
 }
 
 /* ---------------------------------------------------------------------------- */
-/*	13. NOTIFICATION BOXES							*/
+/*	12. NOTIFICATION BOXES							*/
 /* ---------------------------------------------------------------------------- */
 .notification {
 	margin-bottom: 20px;
@@ -1134,7 +1080,7 @@ ul.iconfont i.fa-none   { margin-left: -39px; }
 
 
 /* ---------------------------------------------------------------------------- */
-/*	14. PRICING TABLES							*/
+/*	13. PRICING TABLES							*/
 /* ---------------------------------------------------------------------------- */
 .pricing-table:before,
 .pricing-table:after { content:""; display:table; }
@@ -1228,7 +1174,7 @@ ul.iconfont i.fa-none   { margin-left: -39px; }
 
 
 /* ---------------------------------------------------------------------------- */
-/*	15. PROGRESS BARS							*/
+/*	14. PROGRESS BARS							*/
 /* ---------------------------------------------------------------------------- */
 .progress {
 	height: 28px;
@@ -1276,7 +1222,7 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	16. PROGRESS BARS / COUNTERS - KNOB						*/
+/*	15. PROGRESS BARS / COUNTERS - KNOB						*/
 /* ---------------------------------------------------------------------------- */
 
 .sc-knob {
@@ -1312,7 +1258,7 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	17. SLIDESHOW - CAROUSEL						*/
+/*	16. SLIDESHOW - CAROUSEL						*/
 /* ---------------------------------------------------------------------------- */
 .slideshow .carousel-control {
 	border: none;
@@ -1329,7 +1275,7 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	18. SLIDESHOW - SLIDER						*/
+/*	17. SLIDESHOW - SLIDER						*/
 /* ---------------------------------------------------------------------------- */
 
 /* Responsive ThinkUpSlider */
@@ -1525,18 +1471,18 @@ span.bar-per {
 }
 
 /* ---------------------------------------------------------------------------- */
-/*	19. SOCIAL MEDIA							*/
+/*	18. SOCIAL MEDIA							*/
 /* ---------------------------------------------------------------------------- */
 
 
 /* ---------------------------------------------------------------------------- */
-/*	20. TABS									*/
+/*	19. TABS									*/
 /* ---------------------------------------------------------------------------- */
 .nav>li>a:hover,
 .nav>li>a:focus {
 	background: none;
 }
-.tabs li [class^="fa fa-"] { padding-right: 15px; }
+.tabs li [class^="fa fa-"] { padding-right: 20px; }
 
 .tabs {
 	margin-bottom: 20px;
@@ -1633,7 +1579,7 @@ span.bar-per {
 }
 
 /* ---------------------------------------------------------------------------- */
-/*	21. TITLES								*/
+/*	20. TITLES								*/
 /* ---------------------------------------------------------------------------- */
 
 .customtitle {
@@ -1695,7 +1641,7 @@ display: block;
 
 
 /* ---------------------------------------------------------------------------- */
-/*	22. TOGGLES								*/
+/*	21. TOGGLES								*/
 /* ---------------------------------------------------------------------------- */
 .accordion-group {
 	margin-bottom: 3px;

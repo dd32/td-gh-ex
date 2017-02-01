@@ -28,7 +28,7 @@ global $wp_query, $post;
 		return;
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>">
+	<nav role="navigation" id="<?php echo $nav_id; ?>">
 	<?php if ( is_single() ) : ?>
 
 		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . __( 'Previous Post', 'renden' ) . '</span>' ); ?>
@@ -46,7 +46,7 @@ global $wp_query, $post;
 
 	<?php endif; ?>
 
-	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+	</nav><!-- #<?php echo $nav_id; ?> -->
 	<?php
 
 }
@@ -63,7 +63,7 @@ global $wp_query, $post;
 	?>
 
 	<nav role="navigation" id="nav-below">
-		<div class="nav-previous"><?php previous_image_link( 'false', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . __( 'Previous Post', 'renden' ) . '</span>' ); ?></div>
+		<div class="nav-previous"><?php previous_image_link( 'false', '<div class="nav-previous"><span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . __( 'Previous Post', 'renden' ) . '</span></div>' ); ?></div>
 		<div class="nav-next"><?php next_image_link( 'false', '<span class="meta-nav">' . __( 'Next Post', 'renden' ) . '</span><span class="meta-icon"><i class="fa fa-angle-right fa-lg"></i></span>' ); ?></div>
 		<div class="clearboth"></div>
 	</nav><!-- #image-navigation -->

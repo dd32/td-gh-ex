@@ -241,7 +241,6 @@ body.wp-customizer .wp-full-overlay-sidebar .wp-full-overlay-header {
 /* Change sidebar width - Upgrade Now */
 #customize-controls.thinkup-width-950 {
 	width: 950px !important;
-	max-width: 950px !important;
 }
 
 

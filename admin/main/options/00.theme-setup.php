@@ -37,11 +37,11 @@ function thinkup_title_select() {
 global $post;
 
 	if ( is_page() ) {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( __( '%s', 'renden' ), get_the_title() );
 	} elseif ( is_attachment() ) {
-		printf( __( 'Blog Post Image: %s', 'renden' ), esc_html( get_the_title( $post->post_parent ) ) );
+		printf( __( 'Blog Post Image: %s', 'renden' ), esc_attr( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( __( '%s', 'renden' ), get_the_title() );
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'renden' ), esc_html( get_search_query() ) );
 	} else if ( is_404() ) {
@@ -75,7 +75,7 @@ global $post;
 	} elseif ( is_tax() ) {
 		echo single_term_title( "", false );
 	} else {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( __( '%s', 'renden' ), get_the_title() );
 	}
 }
 
@@ -123,7 +123,7 @@ global $thinkup_general_breadcrumbdelimeter;
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				$output .= ' ' . esc_html( get_the_title() );
+				$output .= ' ' . get_the_title();
 			} else {
 
 				// Count Total categories
@@ -143,9 +143,9 @@ global $thinkup_general_breadcrumbdelimeter;
 				}
 				
 				if (strlen(get_the_title()) >= $maxLength) {
-					$output .=  ' ' . $delimiter . esc_html( trim( substr( get_the_title(), 0, $maxLength ) ) ) . ' &hellip;';
+					$output .=  ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
 				} else {
-					$output .=  ' ' . $delimiter . esc_html( get_the_title() );
+					$output .=  ' ' . $delimiter . get_the_title();
 				}
 			}
 		} elseif (is_category()) {
@@ -162,7 +162,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_search() ) {
 			$output .= __( 'Search Results for: ', 'renden' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
-			$output .=  esc_html( get_the_title() );
+			$output .=  get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
 			$post_array = get_post_ancestors( $post );
 			krsort( $post_array ); 
@@ -171,7 +171,7 @@ global $thinkup_general_breadcrumbdelimeter;
 				$title = $post_ids->post_title;
 				$output  .= '<a href="' . esc_url( get_permalink( $post_ids ) ) . '">' . esc_html( $title ) . '</a>' . $delimiter;
 			}
-			$output .= esc_html( get_the_title() );
+			$output .= get_the_title();
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
@@ -308,7 +308,7 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 		add_image_size( 'column4-2/3', 285, 190, true );
 		add_image_size( 'column4-3/4', 285, 214, true );
 	}
-	add_action( 'after_setup_theme', 'thinkup_input_addimagesizes' );
+	add_action( 'init', 'thinkup_input_addimagesizes' );
 }
 
 if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
@@ -316,28 +316,28 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		// 1 Column Layout
-		$sizes['column1-1/2'] = __( 'Full - 1:2', 'renden' );
-		$sizes['column1-1/3'] = __( 'Full - 1:3', 'renden' );
-		$sizes['column1-1/4'] = __( 'Full - 1:4', 'renden' );
-		$sizes['column1-2/5'] = __( 'Full - 2:5', 'renden' );
+		$sizes['column1-1/2'] = 'Full - 1:2';
+		$sizes['column1-1/3'] = 'Full - 1:3';
+		$sizes['column1-1/4'] = 'Full - 1:4';
+		$sizes['column1-2/5'] = 'Full - 2:5';
 
 		// 2 Column Layout
-		$sizes['column2-1/1'] = __( 'Half - 1:1', 'renden' );
-		$sizes['column2-1/2'] = __( 'Half - 1:2', 'renden' );
-		$sizes['column2-2/3'] = __( 'Half - 2:3', 'renden' );
-		$sizes['column2-3/5'] = __( 'Half - 3:5', 'renden' );
+		$sizes['column2-1/1'] = 'Half - 1:1';
+		$sizes['column2-1/2'] = 'Half - 1:2';
+		$sizes['column2-2/3'] = 'Half - 2:3';
+		$sizes['column2-3/5'] = 'Half - 3:5';
 
 		// 3 Column Layout
-		$sizes['column3-1/1'] = __( 'Third - 1:1', 'renden' );
-		$sizes['column3-1/3'] = __( 'Third - 1:3', 'renden' );
-		$sizes['column3-2/5'] = __( 'Third - 2:5', 'renden' );
-		$sizes['column3-2/3'] = __( 'Third - 2:3', 'renden' );
-		$sizes['column3-3/4'] = __( 'Third - 3:4', 'renden' );
+		$sizes['column3-1/1'] = 'Third - 1:1';
+		$sizes['column3-1/3'] = 'Third - 1:3';
+		$sizes['column3-2/5'] = 'Third - 2:5';
+		$sizes['column3-2/3'] = 'Third - 2:3';
+		$sizes['column3-3/4'] = 'Third - 3:4';
 
 		// 4 Column Layout
-		$sizes['column4-1/1'] = __( 'Quarter - 1:1', 'renden' );
-		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'renden' );
-		$sizes['column4-3/4'] = __( 'Quarter - 3:4', 'renden' );
+		$sizes['column4-1/1'] = 'Quarter - 1:1';
+		$sizes['column4-2/3'] = 'Quarter - 2:3';
+		$sizes['column4-3/4'] = 'Quarter - 3:4';
 
 		return $sizes;
 	}
