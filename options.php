@@ -12,20 +12,20 @@ add_action('optionsframework_after','optionscheck_display_sidebar', 100);
 function optionscheck_display_sidebar() { ?>
     <div class="metabox-holder goto">
         <div class="postbox">
-            <h3><?php _e('More Options','promax'); ?></h3>
+            <h3><?php _e('More Options','digital'); ?></h3>
                 <div class="inside">
 			<ol>
-				<li><?php _e('To Change Logo, Background Color, Header Image, Title Tagline','promax'); ?> <b>Go to 
+				<li><?php _e('To Change Logo, Background Color, Header Image, Title Tagline','digital'); ?> <b>Go to 
 				<a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Customizer', 'digital' ); ?></a></b>
 				</li>
 				<li>
-				<?php _e('Add Widget and put ads codes in different area in website','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'widgets.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Widget Settings', 'digital' ); ?></a></b>	
+				<?php _e('Add Widget and put ads codes in different area in website','digital'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'widgets.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Widget Settings', 'digital' ); ?></a></b>	
 				</li>
 				<li>
-			<?php _e('Google Fonts Change and Live Set from Customize > Google Fonts','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'customizer', 'digital' ); ?></a></b>	
+			<?php _e('Google Fonts Change and Live Set from Customize > Google Fonts','digital'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'customizer', 'digital' ); ?></a></b>	
 				</li>
 			</ol>
-                    <p><?php _e('Here are some more option related to basic theme setup.','promax'); ?></p>
+                    <p><?php _e('Here are some more option related to basic theme setup.','digital'); ?></p>
                 </div>
         </div>
     </div>
@@ -195,7 +195,7 @@ $options[] = array(
 		'std' => '1',
 		'type' => 'checkbox');
 		$options[] = array(
-		    'desc' => 'Change Text of Latest Post.',
+		    'desc' => __('Change Text of Latest Post.','digital'),
             'id' => 'digital_latestchange2',
             'std' => 'Categories 2 ',
 			'class' => 'mini',
@@ -635,7 +635,8 @@ $options[] = array(
 		'id' => 'digital_homecatbg',
 		'std' => '#4DD247',
 		'type' => 'color' );		
-		$options[] = array( 'name' => __('Customize Theme Fonts', 'digital'),
+		$options[] = array( 
+		'name' => __('Customize Theme Fonts', 'digital'),
 		'desc' => __('Change <b>Body (Theme) Font</b> color and Size.', 'digital'),
 		'id' => "digital_bodyfonts",
 		'std' => $typography_defaults,

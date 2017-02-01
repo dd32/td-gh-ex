@@ -13,7 +13,12 @@
     background:#fff;
 }
 
-
+#optionsframework .group h4.heading::before{
+	content: "\f345";
+    font-family: dashicons;
+    padding-right: 3px;
+    vertical-align: bottom;
+}
 #optionsframework .section{line-height: 1.4;}
 #options-group-6{
     cursor: not-allowed;
