@@ -40,8 +40,8 @@ get_header(); ?>
 				//get_template_part( 'components/navigation/navigation', 'post' );
 			the_posts_pagination( array(
 				'mid_size' => 2,
-				'prev_text' => __( '&laquo;', 'textdomain' ),
-				'next_text' => __( '&raquo;', 'textdomain' ),
+				'prev_text' => __( '&laquo;', 'authorize' ),
+				'next_text' => __( '&raquo;', 'authorize' ),
 			) ); 
 		
 			else :
