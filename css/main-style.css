@@ -215,7 +215,7 @@ article .customize-partial-edit-shortcut button, article .widget .customize-part
 	margin-left: auto;
 }
 
-body.home .ot-page-wrapper {
+body.home:not(.blog) .ot-page-wrapper {
 	width: 100%;
 	padding-right: 0px;
 	padding-left: 0px;

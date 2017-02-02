@@ -8,19 +8,23 @@
 
 	$asterion = asterion()->customizer;
 
-	if( defined('OT_WIDGETS') && current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod('asterion_about_title',esc_html__('About','asterion'));
 		$text = get_theme_mod('asterion_about_text',esc_html__('All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.','asterion'));
+		$facebook = get_theme_mod('asterion_about_facebook' ,"http://www.facebook.com/orangethemes");
+		$twitter = get_theme_mod('asterion_about_twitter',"http://www.twitter.com/orangethemes");
+		$linkedin = get_theme_mod('asterion_about_linkedin',"http://www.orange-themes.com");
 	} else {
 		$title = get_theme_mod('asterion_about_title');
 		$text = get_theme_mod('asterion_about_text');
+		$facebook = get_theme_mod('asterion_about_facebook');
+		$twitter = get_theme_mod('asterion_about_twitter');
+		$linkedin = get_theme_mod('asterion_about_linkedin');
 	}
 
 	$bg_color = get_theme_mod('asterion_about_bg_color', '#ffffff');
 	$text_color = get_theme_mod('asterion_about_text_color', 0);
-	$facebook = get_theme_mod('asterion_about_facebook');
-	$twitter = get_theme_mod('asterion_about_twitter');
-	$linkedin = get_theme_mod('asterion_about_linkedin');
+
 ?>
 
 <?php if( $title != "" || $text != "" ) : ?>

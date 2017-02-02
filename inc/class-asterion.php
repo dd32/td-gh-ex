@@ -194,6 +194,7 @@
 
 
 			 add_theme_support( 'customize-selective-refresh-widgets' );
+
 		}
 
 
@@ -236,9 +237,13 @@
 		 */
 		function body_class($classes) {
 
-			if( is_front_page() ) {
+			if( is_front_page() && !is_home() ) {
 				$classes[] = "no-sidebar";	
-			} else if( is_home() ) {
+			} else if( is_front_page() && is_home() ) {
+				if( !is_active_sidebar('sidebar-1') ) {
+					$classes[] = "no-sidebar";	
+				}
+			}  else if( is_home() ) {
 				if( !is_active_sidebar('blog-sidebar') ) {
 					$classes[] = "no-sidebar";	
 				}

@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod('asterion_contact_title',esc_html__('Contact Us','asterion'));
 		$text = get_theme_mod('asterion_contact_text',esc_html__('If you have some Questions or need Help! Please Contact Us! We make Cool and Clean Design for your Business','asterion'));
 		$address_title = get_theme_mod('asterion_contact_address_title',esc_html__('Our Business Office','asterion'));

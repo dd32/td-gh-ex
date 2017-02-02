@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( defined('OT_WIDGETS') && current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod('asterion_team_title',esc_html__('Team','asterion'));
 		$text = get_theme_mod('asterion_team_text',esc_html__('All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.','asterion'));
 	} else {
@@ -41,7 +41,7 @@
 				<div class="row <?php asterion()->home->widget_counter('sidebar-team');?>">
 					<?php dynamic_sidebar( 'sidebar-team' ); ?>
 				</div>
-			<?php elseif( current_user_can( 'edit_theme_options' ) & defined("OT_WIDGETS") ): ?>
+			<?php elseif( is_customize_preview() && defined("OT_WIDGETS") ): ?>
 				<div class="row widget-count-3 per-row-3">
 			<?php
 					$widget_args = array(

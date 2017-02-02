@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$bg_image = get_theme_mod('asterion_counters_bg_image', get_template_directory_uri() . '/images/counters-bg.jpg' );
 		$counter_set = get_theme_mod('asterion_counters_title_1', 1);
 	} else {
@@ -54,7 +54,7 @@
 					
 						foreach ($default_val as $key => $value) :
 							
-							if( current_user_can( 'edit_theme_options' ) ) {
+							if( is_customize_preview() ) {
 								$title = get_theme_mod('asterion_counters_title_'.$key, $default_val[$key]['title']);
 								$count = get_theme_mod('asterion_counters_count_'.$key, $default_val[$key]['count']);
 							} else {

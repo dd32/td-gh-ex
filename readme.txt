@@ -61,7 +61,8 @@ After Creating the menu select the Theme Location of the menu.(It’s under the 
 Hit Save.
 
 ==== THEME CHANGELOG ====
-
+= 1.0.2 =
+* Minor bug fixes
 = 1.0.1 =
 * Initial release
 = 1.0.0 =

@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( defined('OT_WIDGETS') && current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod('asterion_latest_posts_title',esc_html__('Latest Posts','asterion'));
 		$text = get_theme_mod('asterion_latest_posts_text',esc_html__('All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.','asterion'));
 	} else {

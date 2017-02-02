@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod( 'asterion_portfolio_title', esc_html__('Portfolio','asterion') );
 		$text = get_theme_mod( 'asterion_portfolio_text', esc_html__('Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.','asterion') );
 	} else {

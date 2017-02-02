@@ -6,7 +6,7 @@
  *	@subpackage asterion
  */
 
-	if( current_user_can( 'edit_theme_options' ) ) {
+	if( is_customize_preview() ) {
 		$title = get_theme_mod( 'asterion_testimonials_title', esc_html__('Testimonials','asterion') );
 		$text = get_theme_mod( 'asterion_testimonials_text', esc_html__('Mida sit una namet, cons uectetur adipiscing adon elit.','asterion') );
 	} else {
