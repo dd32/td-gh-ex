@@ -26,6 +26,12 @@ For more information about zeeDynamic please go to https://themezee.com/themes/z
 
 == Changelog ==
 
+= 1.2.1 =
+* added Magazine Homepage widgets to blog index
+* added centered layout in case no widgets were added to the sidebar
+* added fullwidth page template for blog posts
+* added centered page template for posts and static pages
+
 = 1.2.0 =
 * added new theme setting to display tagline
 * added editor shortcuts and instant live preview for site title and tagline in Customizer
