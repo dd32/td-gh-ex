@@ -38,7 +38,7 @@
 			<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt(); else the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
+					'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'puro' ) . '</span>',
 					'after'  => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
@@ -49,8 +49,8 @@
 		<div class="clear"></div>
 		
 		<footer class="entry-footer">
-			<?php do_action('puro_entry_main_bottom') ?>
-			<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
+			<?php do_action( 'puro_entry_main_bottom' ); ?>
+			<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { edit_post_link( esc_html__( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
 
@@ -58,7 +58,7 @@
 
 	</div><!-- .puro-left-medium-loop -->
 
-	<?php the_posts_pagination(); ?>
+	<?php puro_pagination(); ?>
 
 <?php else : ?>
 

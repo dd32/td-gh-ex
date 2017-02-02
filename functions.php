@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.3.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.4' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
@@ -181,10 +181,10 @@ function puro_scripts() {
 	// Mobile Menu Collapse Localisation.
 	wp_localize_script( 'puro-responsive-menu', 'puro_resp_menu_params', array( 'collapse' => siteorigin_setting( 'navigation_responsive_menu_collapse' ) ) );	
 
-	// FitVids.js.
-	if( siteorigin_setting( 'layout_fitvids' ) ) {
-		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), '1.1', $in_footer );
-	}	
+	// FitVids.	
+	if ( ! class_exists( 'Jetpack' ) && siteorigin_setting( 'layout_fitvids' ) ) {
+		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', $in_footer );
+	}		
 
 	// Comment reply.
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

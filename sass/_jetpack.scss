@@ -114,8 +114,15 @@ div[id*="contact-form"] {
 /*--------------------------------------------------------------
 17.3 - Infinite Scroll
 --------------------------------------------------------------*/
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before.
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+.infinite-scroll .paging-navigation, // Pagination.
+.infinite-scroll .pagination, // Pagination.
+.infinite-scroll.woocommerce .woocommerce-pagination, // WooCommerce pagination.
+.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling).
 	display: none;
 }
 
@@ -128,7 +135,6 @@ div[id*="contact-form"] {
 	text-align: center;
 	
 	span {
-		@include transition(0.3s);
 		background: rgba(42, 193, 118, 0.8);
 		border: none;
 		border-radius: 3px;
@@ -138,6 +144,7 @@ div[id*="contact-form"] {
 		font-weight: 400; 
 		padding: 0.5em 1em 0.375em;
 		text-transform: uppercase;
+		transition: .3s;
 		
 		&:hover {
 			background: rgba(42, 193, 118, 1);
@@ -168,7 +175,7 @@ div[id*="contact-form"] {
 	left: auto !important;
 }	
 
-.infinite-wrap {
+body:not(.woocommerce) .infinite-wrap {
 	border-color: $border-color;
 	border-top-style: solid;
 	border-top-width: 0.0625em;

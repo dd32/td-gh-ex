@@ -10,7 +10,7 @@
 }
 
 .ui-datepicker a {
-	@include transition(0);
+	transition: none;
 }
 
 .gform_confirmation_wrapper {

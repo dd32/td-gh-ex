@@ -313,7 +313,7 @@ a {
                     margin: 0 0 2px; 
                     padding: 14px 18px 15px;
                     text-align: left;
-                    @include transition(none);
+                    transition: none;
                     
                     &:hover,
                     &:hover:before {
@@ -591,6 +591,10 @@ a {
 			a[href*="facebook.com"]:before {
 				content: "\f230";
 			}
+	
+			a[href*="/feed/"]:before {
+				content: "\f09e";
+			}	
 
 			a[href*="flickr.com"]:before {
 				content: "\f16e";
@@ -685,7 +689,7 @@ a {
 				content: "\f19a";
 			}
 
-			a[href*="xing"]:before {
+			a[href*="xing.com"]:before {
 				content: "\f168";
 			}
 

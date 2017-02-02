@@ -29,7 +29,6 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include transition(0.3s);
 	background: rgba(42, 193, 118, 0.8);
 	border: none;
 	border-radius: 3px;
@@ -40,6 +39,7 @@ input[type="submit"] {
 	font-weight: 400; 
 	padding: 0.5em 1em 0.375em;
 	text-transform: uppercase;
+	transition: .3s;
 }
 
 button:hover,
@@ -80,11 +80,11 @@ input[type="password"],
 input[type="search"],
 select[multiple],
 textarea {
-	@include transition(0.3s);
 	border: 1px solid $border-color;
 	border-radius: 3px;
 	line-height: normal;
 	padding: 0.6875em 0.625rem 0.6875em; 
+	transition: .3s;
 	-webkit-appearance: none;
 }
 

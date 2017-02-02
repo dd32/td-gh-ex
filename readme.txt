@@ -98,7 +98,8 @@ Screenshot Waves and Rocks image sourced from http://unsplash.com by Angelina Od
 == Bundled Resources ==
 
 FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-Released under the WTFPL license.
+Licensed under the WTFPL license
+Source: https://github.com/davatron5000/FitVids.js/
 
 Flexie, Copyright 2010 Richard Herrera
 Licensed under the MIT License
@@ -118,6 +119,10 @@ Source: https://github.com/necolas/normalize.css/
 Selectivizr, Copyright Keith Clark
 Licensed under the MIT License
 Source: https://github.com/keithclark/selectivizr
+
+TinyColor, Copyright (c), Brian Grinstead
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/bgrins/TinyColor
 
 == SiteOrigin Settings ==
 

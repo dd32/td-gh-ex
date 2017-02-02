@@ -297,9 +297,9 @@ article {
 	}
 
 	a span {
-		@include transition(0.3s);
 		border-color: $border-color; 
 		color: $text-secondary-color;
+		transition: .3s;
 		
 		&:hover {
 			color: $highlight-color;

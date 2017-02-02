@@ -121,8 +121,8 @@ tt,
 var, 
 samp, 
 pre {
-	@include hyphens(none);
 	font-family: $consolas;
+	hyphens: none;
 }
 
 pre {

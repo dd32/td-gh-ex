@@ -43,7 +43,7 @@ function puro_pagination() {
 	}
 	?>
 		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'puro' ); ?></h1>
+			<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'puro' ); ?></h1>
 			<?php if ( function_exists( 'wp_pagenavi' ) ) : ?>
 				<?php wp_pagenavi(); ?>
 			<?php else : ?>			
@@ -56,10 +56,10 @@ function puro_pagination() {
 			echo paginate_links( array(
 				'base' => str_replace( $total, '%#%', esc_url( get_pagenum_link( $total ) ) ),
 				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
+				'current' => max( 1, get_query_var( 'paged' ) ),
 				'total' => $total,
-				'prev_text'    => __('Previous', 'puro'),
-				'next_text'    => __('Next', 'puro'),
+				'prev_text' => esc_html__( 'Previous', 'puro' ),
+				'next_text' => esc_html__( 'Next', 'puro' ),
 			) );
 			?>
 			</div><!-- .nav-links -->
@@ -107,27 +107,27 @@ function puro_posted_on() {
 		echo '<span class="featured-post">' . __( 'Sticky', 'puro' ) . '</span>';
 	}
 
-	if ( is_home() && siteorigin_setting('blog_post_date') || is_archive() && siteorigin_setting('blog_post_date') || is_search() && siteorigin_setting('blog_post_date') ) {
+	if ( is_home() && siteorigin_setting( 'blog_post_date' ) || is_archive() && siteorigin_setting( 'blog_post_date' ) || is_search() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( 'j F Y' ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
-	if ( is_single() && siteorigin_setting('blog_post_date') ) {
+	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( 'j F Y' ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
-	if ( siteorigin_setting('blog_post_author') ) {
+	if ( siteorigin_setting( 'blog_post_author' ) ) {
 		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
 	}
 
-	if ( has_category() && siteorigin_setting('blog_post_cats') ) {
+	if ( has_category() && siteorigin_setting( 'blog_post_cats' ) ) {
 		echo '<span class="cat-links">' . get_the_category_list( __( ', ', 'puro' ) ) . '</span>';
 	}
 
-	if ( has_tag() && siteorigin_setting('blog_post_tags') ) {
+	if ( has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
 		echo '<span class="tags-links">' . get_the_tag_list( '', __( ', ', 'puro' ) ) . '</span>';
 	}
 
-	if ( comments_open() && siteorigin_setting('blog_post_comment_count') ) { 
+	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) { 
 		echo '<span class="comments-link">';
   		comments_popup_link( __( 'Leave a comment', 'puro' ), __( '1 Comment', 'puro' ), __( '% Comments', 'puro' ) );
   		echo '</span>';
@@ -136,11 +136,11 @@ function puro_posted_on() {
 }
 endif;
 
-if(!function_exists('puro_display_logo')):
+if ( ! function_exists( 'puro_display_logo' ) ) :
 /**
  * Display the logo
  */
-function puro_display_logo(){
+function puro_display_logo() {
 	$logo = siteorigin_setting( 'header_image' );
 	$logo = apply_filters('puro_logo_image_id', $logo);
 
@@ -185,8 +185,8 @@ function puro_display_logo(){
 		$logo_html = apply_filters('puro_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />');
 	}
 
-	// Echo the image
-	echo apply_filters('puro_logo_html', $logo_html);
+	// Echo the image.
+	echo apply_filters( 'puro_logo_html', $logo_html );
 }
 endif;
 
