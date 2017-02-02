@@ -26,6 +26,12 @@ For more information about Beetle please go to https://themezee.com/themes/beetl
 
 == Changelog ==
 
+= 1.1.4 =
+* added Magazine Homepage widgets to blog index
+* added centered layout in case no widgets were added to the sidebar
+* added fullwidth page template for blog posts
+* added centered page template for posts and static pages
+
 = 1.1.3 =
 * added editor shortcuts and instant live preview for site title and tagline in Customizer
 * updated post pagination to use newer functions
