@@ -3,7 +3,7 @@ Contributors: xylus
 Tags: black,blue, gray, green, red, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu,  custom-header, featured-images, sticky-post, post-formats, full-width-template, threaded-comments, translation-ready, theme-options
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,3 +77,10 @@ isotope.pkgd.min.js Isotope PACKAGED v2.1.1(http://isotope.metafizzy.co), [GNU G
 WOW - v1.0.2 - 2014-10-28, Copyright (c) 2014 Matthieu Aussaguel, [MIT](http://opensource.org/licenses/MIT)
 
 TGMPA (TGM Plugin Activation) - v2.6.1 Copyright (c) 2011, Thomas Griffin, [GPL-2.0 or later license.](https://opensource.org/licenses/GPL-2.0)
+
+Header Image in screenshot. ( https://pixabay.com/en/library-books-education-literature-869061/), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+
+Screenshot Icon 1: (http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/check-icon.html ) Licence: Freeware
+Screenshot Icon 2: (http://icons.iconarchive.com/icons/graphicloads/100-flat/256/apple-icon.png ) Licence: Freeware
+Screenshot Icon 3: (http://www.iconarchive.com/show/beautiful-flat-one-color-icons-by-elegantthemes/settings-icon.html) Licence: GNU General Public License
+Screenshot Icon 4: (http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/browser-icon.html) Licence: Freeware

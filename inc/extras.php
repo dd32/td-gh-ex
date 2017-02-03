@@ -144,7 +144,7 @@ if( ! function_exists('adney_comment_form') ){
 				'email'  => '<div class="col-sm-6 comment-form-email">
         <input id="email" class="form-control" name="email"
         placeholder="' . __( 'Email', 'adney' ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . '
-        value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' />
+        value="' . antispambot( $commenter['comment_author_email'] ) . '" ' . $aria_req . ' />
         </div>
         </div>',
 
@@ -217,7 +217,7 @@ if( ! function_exists('adney_comment_form') ){
 
 				<?php } else { ?>
 
-					<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>"
+					<form action="<?php echo esc_url( site_url( '/wp-comments-post.php' ) ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>"
 						  class="form-horizontal comment-form"<?php echo $html5 ? ' novalidate' : ''; ?> role="form">
 						<?php do_action( 'comment_form_top' ); ?>
 
