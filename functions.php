@@ -115,16 +115,16 @@ if( ! function_exists( 'avvocato_enqueue_styles' ) ) {
 	function avvocato_enqueue_styles() {
 
 		// OWL Carousel
-		wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
+		wp_enqueue_style( 'avvocato-owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
 		
 		// OWL Theme
-		wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
+		wp_enqueue_style( 'avvocato-owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
 		
 		// OWL Transitions
-		wp_enqueue_style( 'owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
+		wp_enqueue_style( 'avvocato-owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
 
 		// Font Awesome
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
+		wp_enqueue_style( 'avvocato-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
 
 		// main style
 	    wp_enqueue_style( 'avvocato-style', get_stylesheet_uri() );
@@ -141,18 +141,18 @@ if( ! function_exists( 'avvocato_enqueue_scripts' ) ) {
 	function avvocato_enqueue_scripts() {
 
 		// owl carousel for sliders
-		wp_enqueue_script( 'carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );
+		wp_enqueue_script( 'avvocato-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );
 
 		// html5
-		wp_enqueue_script( 'html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
-		wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+		wp_enqueue_script( 'avvocato-html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
+		wp_script_add_data( 'avvocato-html5', 'conditional', 'lt IE 9' );
 		
 		// mediaqueries
-		wp_enqueue_script( 'mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
-		wp_script_add_data( 'mediaqueries', 'conditional', 'lt IE 9' );			
+		wp_enqueue_script( 'avvocato-mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
+		wp_script_add_data( 'avvocato-mediaqueries', 'conditional', 'lt IE 9' );			
 
 		// main for script js
-		wp_enqueue_script( 'avvocato-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null );		
+		wp_enqueue_script( 'avvocato-avvocato-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null );		
 		
 		// for nested comments
 		if ( is_singular() && comments_open() ) {
@@ -253,7 +253,7 @@ endif;
 if ( ! function_exists( 'avvocato_credits' ) ) :
 	function avvocato_credits() {
 		
-		$text = sprintf( __('Theme created by <a href="%s">PWT</a>. Powered by <a href="%s">WordPress.org</a>', 'avvocato'), esc_url('http://www.pwtthemes.com/'), esc_url('http://wordpress.org/'));
+		$text = sprintf( __('Theme created by <a href="%s">PWT</a>. Powered by <a href="%s">WordPress.org</a>', 'avvocato'), esc_url('https://www.pwtthemes.com/'), esc_url('http://wordpress.org/'));
 		
 		echo apply_filters( 'avvocato_credits_text', $text) ;
 	}

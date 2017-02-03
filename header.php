@@ -48,7 +48,11 @@
 			<div class="header-block">
 				<div class="container">
 					<div class="gutter clearfix">
-						<?php avvocato_the_custom_logo(); ?>
+                        <?php if ( has_custom_logo() ) : ?>
+                            <?php avvocato_the_custom_logo(); ?>
+                        <?php else : ?>
+                            <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                        <?php endif; ?>
 						<nav class="menu-top-container">
 							<?php if ( has_nav_menu( 'avvocato-menu' ) ) { ?>
 							   <?php wp_nav_menu( array('container'=> '', 'theme_location' => 'avvocato-menu', 'items_wrap'  => '<ul class="menu-top">%3$s</ul>'  ) ); ?>

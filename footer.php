@@ -47,7 +47,7 @@
 					<div class="column-container copyright-container">
 						<div class="column-6-12 left">
 							<div class="gutter">
-								<p><?php echo  esc_html(get_theme_mod('avvocato_copyrights',__( 'Copyright 2016 Avvocato Theme All Rights Reserved.', 'avvocato' ))); ?></p>
+								<p><?php echo  esc_html(get_theme_mod('avvocato_copyrights')); ?></p>
 							</div>
 						</div>
 						<div class="column-6-12 right">
