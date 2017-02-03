@@ -22,8 +22,8 @@ if ( $query->have_posts() ) {
 	<section id="services">
 		<div class="container">
 			<?php
-			$service_title = esc_attr( get_theme_mod( 'service_title' , '' ) );
-			$service_desc  = wp_kses_post( get_theme_mod( 'service_desc' , '' ) );			
+			$service_title = (get_option('service_title'))?sanitize_text_field(get_option('service_title')):'';
+			$service_desc = (get_option('service_desc'))?esc_textarea(get_option('service_desc')):'';
 			if($service_title != ''  || $service_desc != ''  ){ ?>
 				<div class="row">
 					<div class="section-title">
@@ -50,7 +50,7 @@ if ( $query->have_posts() ) {
 							if(has_post_thumbnail()){
 								the_post_thumbnail();
 							}else{
-								echo '<img src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="' . esc_attr( get_the_title() ) . '">';
+								echo '<img src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="'.get_the_title().'">';
 							}
 							?>
 						</div>

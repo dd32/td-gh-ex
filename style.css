@@ -4,7 +4,7 @@ Theme URI: http://xylusthemes.com/themes/adney
 Author: xylus
 Author URI: http://xylusthemes.com/
 Description: Adney WordPress Theme is a clean, modern, flat, minimal and fully responsive free business WordPress theme with a light and minimalistic styling, which is perfectly suited for web agency business,corporate business,personal and business portfolio. This flexible business WordPress theme is ideal to promote your services, business or to run a corporate blog. It is a fully responsive theme that looks great on any device.
-Version: 1.0.10
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adney
@@ -33,11 +33,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	6.  Benefits styles
 	7.  Pricing plans styles
 	8.  Team styles
-	9.  Testimonials list-style-position: 
+	9.  Testimonials styles
 	10. clients styles
 	11. Blog styles
 
 ------------------------------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); /* Montserrat font */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700);
 
 /* ##### GENERAL  ##### */
 
@@ -1553,85 +1556,6 @@ footer.main-footer nav.footer-nav ul li a{
 
 /* Comments */
 
-.comment-body {
-    border: 2px solid #e3e3e3;
-    border-radius: 0px;
-    min-height: 20px;
-    padding: 19px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-}
-
-.comment-form p.logged-in-as, .comment-form p.comment-notes {
-    border: 2px solid transparent;
-    border-radius: 0px;
-    background-color: #d9edf7;
-    color: #31708f;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-}
-
-.comment-form p.logged-in-as a{
-	color: #31708f;
-}
-
-.comment-form input[type="text"], .comment-form input[type="email"], .comment-form input[type="url"], .comment-form textarea {
-    font-family: "Montserrat", sans-serif;
-    color: #9a9a9a;
-    border: solid 2px rgba(0,0,0,.1);
-    border-radius: 0px;
-    display: block;
-    height: 44px;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-.comment-form input[type="text"]:focus, .comment-form input[type="email"]:focus, .comment-form input[type="url"]:focus, .comment-form textarea:focus {
-    border: 2px solid #46B289 !important;
-}
-
-.comment-form #comment{
-	height: auto;
-}
-
-.comment-form label {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-@media (min-width: 768px){
-	.comment-form p.comment-form-author, .comment-form p.comment-form-email{
-		width: 50%;
-		float: left;
-	}
-	.comment-form p.comment-form-author{
-		padding-right: 10px;
-	}
-	.comment-form p.comment-form-email{
-		padding-left: 10px;
-	}
-	.comment-form p.comment-form-url, .comment-form p.form-submit{
-		float: none;
-		clear: both;
-	}
-	.comment-form p.form-submit{
-		margin-top: 15px;
-	}
-}
-
 .comment-list li{
 	list-style-type: none;
 }
@@ -1644,7 +1568,7 @@ ul.comment-list .well li{
 	list-style: inherit;
 }
 
-ul.children, ol.children {
+ul.children {
 	padding-left: 50px;
 }
 
@@ -1963,13 +1887,4 @@ a.page-numbers:hover, span.page-numbers.current{
 
 .entry-content ul ul, .entry-content ol ol {
     margin-left: 20px;
-}
-
-ul.social-icons{
-	margin-top:30px;
-	float:right;
-}
-
-.post_info .post_date a{
-	color: #fff;
 }

@@ -9,7 +9,7 @@
 
 get_header();
 $content_class = 'col-md-12 col-sm-12';
-$layout = esc_attr( get_theme_mod( 'adney_blog_layout', 'right_sidebar' ) );
+$layout = (get_option('adney_blog_layout'))?sanitize_text_field(get_option('adney_blog_layout')):'right_sidebar';
 if($layout == 'left_sidebar' || $layout == 'right_sidebar'){
 	$content_class = 'col-md-9 col-sm-12';
 }

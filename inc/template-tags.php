@@ -23,7 +23,10 @@ function adney_posted_on() {
 		esc_html( get_the_date() )
 	);
 
-	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	$posted_on = sprintf(
+		esc_html_x( '%s', 'post date', 'adney' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" style="color:#fff;">' . $time_string . '</a>'
+	);
 
 	$byline = sprintf(
 		esc_html_x( ' %s', 'post author', 'adney' ),
@@ -40,7 +43,7 @@ function adney_posted_on() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'adney' ) );
 		if ( $categories_list && adney_categorized_blog() ) {
-			printf( '<i class="icon ion-briefcase"></i><span> %1$s </span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<i class="icon ion-briefcase"></i><span>' . esc_html__( '%1$s', 'adney' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 	}

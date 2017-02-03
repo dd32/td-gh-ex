@@ -7,7 +7,7 @@
  */
 
 if( is_front_page() && is_home()){
-	if(!adney_check_plugin_active()  || 'posts' == get_option('show_on_front')){
+	if(!is_plugin_active('xylus-toolkit/xylus-toolkit.php')  || 'posts' == get_option('show_on_front')){
  	?>
 		</div>
 	</section>
@@ -19,11 +19,9 @@ if( is_front_page() && is_home()){
 
 <!-- CAll to Action -->
 <?php  if(get_theme_mod('display_cta',false)){
-	
-	$cta_title = esc_attr( get_theme_mod( 'cta_title' , '' ) );
-    $cta_button_text = esc_attr( get_theme_mod( 'cta_button_text' , '' ) );
-    $cta_button_link = absint( get_theme_mod( 'cta_button_link' , 0 ) );
-	
+	$cta_title = (get_option('cta_title'))?sanitize_text_field(get_option('cta_title')):'';
+	$cta_button_text = (get_option('cta_button_text'))?sanitize_text_field(get_option('cta_button_text')):'';
+	$cta_button_link = (get_option('cta_button_link'))?absint(get_option('cta_button_link')):0;
 	if($cta_button_link > 0){
 		$cta_button_link = esc_url( get_permalink( $cta_button_link ) );
 	}else{
@@ -74,10 +72,10 @@ if( is_front_page() && is_home()){
 					} ?>
 				</nav>
 			</div>
-			<?php if( get_theme_mod('footer_copyright') ){?>
+			<?php if(get_option('footer_copyright')){?>
 				<div class="row">
 					<div class="uppercase gray-text footer_copyright">
-						<?php echo wp_kses_post( get_theme_mod( 'footer_copyright' ) ); ?>
+						<?php echo esc_textarea( get_option( 'footer_copyright' ) ); ?>
 					</div>
 				</div>
 			<?php } ?>
@@ -91,14 +89,14 @@ if( is_front_page() && is_home()){
 
 				<?php
 				if(get_theme_mod('display_social', true )){
-					$facebook = esc_url( get_theme_mod( 'facebook_url', '' ) );
-					$twittter = esc_url( get_theme_mod( 'twitter_url', '' ) );
-					$linkedin = esc_url( get_theme_mod( 'linkedin_url', '' ) );
-					$googleplus = esc_url( get_theme_mod( 'googleplus_url', '' ) );
-					$instagram = esc_url( get_theme_mod( 'instagram_url', '' ) );
-					$youtube = esc_url( get_theme_mod( 'youtube_url', '' ) );
+					$facebook = (get_option('facebook_url'))?esc_url_raw(get_option('facebook_url')):'';
+					$twittter = (get_option('twitter_url'))?esc_url_raw(get_option('twitter_url')):'';
+					$linkedin = (get_option('linkedin_url'))?esc_url_raw(get_option('linkedin_url')):'';
+					$googleplus = (get_option('googleplus_url'))?esc_url_raw(get_option('googleplus_url')):'';
+					$instagram = (get_option('instagram_url'))?esc_url_raw(get_option('instagram_url')):'';
+					$youtube = (get_option('youtube_url'))?esc_url_raw(get_option('youtube_url')):'';
 					?>
-					<ul class="social-icons">
+					<ul class="social-icons" style="margin-top:30px;float:right">
 						<?php
 						if($facebook != ''){
 							echo '<li><a href="'.$facebook.'"><i class="icon ion-social-facebook"></i></a></li>';

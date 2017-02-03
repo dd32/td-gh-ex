@@ -35,7 +35,7 @@ if ( $query->have_posts() ) {
 						if(has_post_thumbnail()){
 							the_post_thumbnail();
 						}else{
-							echo '<img src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="'.esc_attr( get_the_title() ).'">';
+							echo '<img src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="'.get_the_title().'">';
 						}
 						?>
 					</a>
