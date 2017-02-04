@@ -101,7 +101,7 @@ function arise_layout_options() {
 /******************* Save metabox data **************************************/
 add_action('save_post', 'arise_save_custom_meta');
 function arise_save_custom_meta( $post_id ) { 
-	global $arise_layout_options; 
+	global $arise_layout_options, $post; 
 	// Verify the nonce before proceeding.
 	if ( !isset( $_POST[ 'arise_custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'arise_custom_meta_box_nonce' ], basename( __FILE__ ) ) )
 		return;

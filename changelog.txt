@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 2.1.2.7 =
+	- Fix - Fixed an issue with  Default Layout Set in Customizer while it reset to default value
+	- Fix - Invalid error with reset button fixed
 
 = 2.1.2.6 =
 	- Update - Upgrade to Pro button removed from top of customizer and added on section

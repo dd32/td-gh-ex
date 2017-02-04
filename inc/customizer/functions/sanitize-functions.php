@@ -45,6 +45,8 @@ function arise_sanitize_custom_css( $input ) {
 function arise_reset_alls( $input ) {
 	if ( $input == 1 ) {
 		delete_option( 'arise_theme_options');
+		$input=0;
+		return $input;
 	} 
 	else {
 		return '';
