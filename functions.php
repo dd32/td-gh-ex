@@ -62,6 +62,7 @@ function awada_theme_setup()
 		'default-image' => '',
 		'header-text-color'=>'blue',
 		'header-text' => true,
+		'wp-head-callback'   => 'awada_header_style',
 	);
 	add_editor_style( 'css/editor-style.css' );
     add_theme_support('custom-background', $args);
@@ -173,7 +174,36 @@ function awada_theme_setup()
 	add_image_size('awada_blog_home_thumb', 330, 206, true);
 	add_image_size('awada_recent_widget_thumb', 120, 77, true);
 }
+if ( ! function_exists( 'awada_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog.
+ *
+ * @see awada_custom_header_setup().
+ */
+function awada_header_style() {
+	$header_text_color = get_header_textcolor();
 
+	// If no custom options for text are set, let's bail.
+	// get_header_textcolor() options: add_theme_support( 'custom-header' ) is default, hide text (returns 'blank') or any hex value.
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+		return;
+	}
+
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style id="awada-custom-header-styles" type="text/css">
+	<?php // Has the text been hidden?
+		if ( 'blank' === $header_text_color ) : ?>
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; // End of awada_header_style.
 // Read more tag to formatting in blog page
 function awada_content_more($read_more)
 {

@@ -1,5 +1,7 @@
+###Version 1.6.1 [02-Feb-2017]
+* Text logo issue fixed.
 ###Version 1.6 [02-Jan-2017]
-* Default color scheme swich to green.
+* Default color scheme switch to green.
 * Minor bug fixed.
 ###Version 1.5 [17-DEC-2016]
 * WordPress 4.7 compatible.
