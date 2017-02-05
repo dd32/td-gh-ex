@@ -68,13 +68,13 @@ function adelle_setup() {
     'header-text'            => true,
     'uploads'                => true,
     'wp-head-callback'       => '',
-    'admin-head-callback'    => 'ace_admin_header_style',
-    'admin-preview-callback' => 'ace_admin_header_image',
+    'admin-head-callback'    => 'adelle_admin_header_style',
+    'admin-preview-callback' => 'adelle_admin_header_image',
   ));
 
-  function ace_admin_header_style() { ?>
+  function adelle_admin_header_style() { ?>
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Muli:400,400italic|Montserrat:400,700" rel="stylesheet" type="text/css">
-    <style type="text/css" id="ace-admin-header-css">
+    <style type="text/css" id="adelle-admin-header-css">
     .appearance_page_custom-header #headimg {
       background-color: #fff;
       padding: 30px 0;
@@ -107,7 +107,7 @@ function adelle_setup() {
     </style>
   <?php }
 
-  function ace_admin_header_image() { ?>
+  function adelle_admin_header_image() { ?>
     <div id="headimg">
       <?php if ( get_header_image() ) : ?>
       <img src="<?php header_image(); ?>" alt="">

@@ -8,7 +8,7 @@
 			$comments_number = get_comments_number();
 			if ( 1 === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'ace' ), get_the_title() );
+				printf( _x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'adelle' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -17,7 +17,7 @@
 					'%1$s comments on &ldquo;%2$s&rdquo;',
 					$comments_number,
 					'comments title',
-					'ace'
+					'adelle'
 					),
 				number_format_i18n( $comments_number ),
 				get_the_title()
@@ -37,7 +37,7 @@
 	<?php endif; // Check for have_comments(). ?>
 
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'ace' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'adelle' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
