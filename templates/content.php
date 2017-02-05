@@ -68,7 +68,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 	} else {                                // ------------------ FULL POST ------------------------
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();	// <!--nextpage-->
+		weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
 <?php

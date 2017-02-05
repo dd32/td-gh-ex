@@ -56,7 +56,7 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 
 	if (weaverx_getopt('info_search')) {
 		if (function_exists('weaverxplus_search_form')) {
-			echo '<span id="infobar_search" class="wvrx-infobar-search" >';
+			echo '<span id="infobar_search" style="padding-right:4px !important;display:inline-block;padding-left:20px;">';
 			echo weaverxplus_search_form('',120);
 			echo '</span>';
 		} else {

@@ -28,7 +28,7 @@ weaverx_per_post_style();
 		<?php } else {
 			weaverx_post_div('content');
 			weaverx_the_post_full();
-			weaverx_link_pages();	// <!--nextpage-->
+			weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
 		<?php }

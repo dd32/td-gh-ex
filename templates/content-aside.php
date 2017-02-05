@@ -24,9 +24,9 @@ $do_excerpt = weaverx_do_excerpt();
 	</header><!-- .entry-header -->
 
 <?php
-		if (weaverx_show_only_title()) {
-			return;
-		}
+	if (weaverx_show_only_title()) {
+		return;
+	}
 	}
 	if ( $do_excerpt && !weaverx_compact_post() ) { // Only display Excerpts for Search
 		weaverx_post_div('summary');
@@ -38,13 +38,13 @@ $do_excerpt = weaverx_do_excerpt();
 	} else {
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();	// <!--nextpage-->
+		weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
 <?php
 	};
 ?>
-	<div class="wvrx-aside-margin"></div>
+	<div class="atw-aside-margin" style="margin-bottom:20px;"></div>
 <?php
 	if (! weaverx_compact_post()) {
 		weaverx_format_posted_on_footer('aside');

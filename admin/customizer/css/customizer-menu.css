@@ -2,6 +2,55 @@
  * Version 3.0
  */
 
+/*change outline of wx-jump menu button when over the preview area*/
+.wp-full-overlay.collapsed #wx-jump > span.dashicons-menu {
+	border-style:double !important;
+	border-width:3px !important;
+	border-color:#1b607f !important;
+}
+/*Swap right and left arrow on RTL*/
+body.rtl #wx-resize .dashicons-arrow-right-alt2:before {
+	content:"\f341";
+}
+body.rtl #wx-resize .dashicons-arrow-left-alt2:before {
+	content:"\f345";
+}
+body.rtl #wx-jumpmenu .dashicons-arrow-right-alt2:before {
+	content:"\f341";
+}
+/*Customizer size buttons*/
+#wx-resize {
+	display:inline-block;
+	color:#298cba;
+	border:1px solid grey;
+	border-radius:5px;
+	background-color:#dadada;
+	margin-left:5px; /*rtl review*/
+	margin-top:9px;
+	float:right; /*rtl review*/
+	font-weight:bold;
+	padding:3px 0;
+	line-height:.8;
+}
+#wx-resize  .wx-shrink {
+    cursor:w-resize;
+}
+
+#wx-resize  .wx-grow{
+	cursor:e-resize;
+}
+
+                cu
+body.rtl #wx-resize {
+	margin-right:5px;
+	margin-left:0px;
+	float:left;
+}
+
+#wx-resize .wx-shrink{
+	display:none;
+}
+
 /* Customizer refresh button */
 /*
 #wx-refresh {
@@ -274,6 +323,29 @@ body.rtl #wx-jump .wx-tabarrow {
 #wx-jump .wx-tabs:hover > ul,
 #wx-jump .wx-tabs:hover .wx-tabarrow {
 	display:block;
+}
+
+/* For resize button -- !!!! The two rules below are Needed if using the Grow/Shrink button, and should probably be changed in the Customizer CSS !!! */
+/* So the customizer can expand to full width on small screens (default rule does not have !important)*/
+@media screen and (max-width:640px) {
+	#customize-controls {
+		width:100% !important;
+	}
+	.wp-full-overlay.expanded {
+		margin-left:0 !important;
+	}
+	body.rtl .wp-full-overlay.expanded {
+	margin-right:0 !important;
+	}
+
+}
+/* So the customizer always goes off screen on collapse, value below must be as large as the largest width */
+.wp-full-overlay.collapsed .wp-full-overlay-sidebar {
+	margin-left:-400px;
+}
+body.rtl .wp-full-overlay.collapsed .wp-full-overlay-sidebar {
+	margin-right:-400px;
+	margin-left:0px;
 }
 
 #wx-loading {

@@ -125,10 +125,10 @@ function weaverx_setopt_array($opt, $val, $save = true) {
 	weaverx_setopt( $opt, serialize($val), $save );
 }
 
-function weaverx_delete_all_options( $no_save = false ) {
+function weaverx_delete_all_options() {
 	weaverx_clear_opt_cache('weaverx_delete_all_options');
 
-	if (!$no_save && current_user_can( 'manage_options' ))
+	if (current_user_can( 'manage_options' ))
 		delete_option( apply_filters('weaverx_options','weaverx_settings') );
 }
 
@@ -189,8 +189,6 @@ function weaverx_save_opts($who='', $bump = true) {
 		require_once(get_template_directory() . '/includes/generatecss.php');
 		weaverx_fwrite_current_css();
 	}
-	do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
-
 }
 
 function weaverx_e_opt($opt,$str) {
@@ -206,44 +204,44 @@ function weaverx_e_notopt($opt,$str) {
 
 
 // # PER PAGE OPTIONS =========================================================
-function weaverx_get_cur_page_id() {
+function weaverx_get_per_page_value($name) {
 	global $weaverx_cur_page_ID;
-	return $weaverx_cur_page_ID;
-}
 
-function weaverx_set_cur_page_id( $id ) {
-	global $weaverx_cur_page_ID;
-	$weaverx_cur_page_ID = $id;
-}
-
-
-function weaverx_get_per_page_value( $name ) {
-
-	if ( !( $id = weaverx_get_cur_page_id() ) )
+	if ( !$weaverx_cur_page_ID )
 		return false;
-	return get_post_meta( $id, $name, true);
+
+	//$template = get_page_template();
+	//if (strpos($template,'paget-posts') === false) weaverx_alert('page:' . $template);
+
+	return get_post_meta($weaverx_cur_page_ID,$name,true);
 }
 
-function weaverx_is_checked_page_opt( $meta_name ) {
+function weaverx_is_checked_page_opt($meta_name) {
 	// the standard is to check options to hide things
 
-	if ( !( $id = weaverx_get_cur_page_id() ) )
+	global $weaverx_cur_page_ID;
+	if ( !$weaverx_cur_page_ID)
 		return false;
 
-	$val = get_post_meta( $id, $meta_name, true);  // retrieve meta value
 
-	return !empty($val); 	// if value exists - 'on'
+	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
+	//	return false;
+
+	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
+
+	if (!empty($val)) return true;		// value exists - 'on'
+	return false;
 }
 
-function weaverx_get_per_post_value( $meta_name ) {
-	return get_post_meta(get_the_ID(), $meta_name, true);  // retrieve meta value
+function weaverx_get_per_post_value($meta_name) {
+	return get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
 }
 
 function weaverx_is_checked_post_opt($meta_name) {
 	// the standard is to check options to hide things
-	$val = get_post_meta( get_the_ID(), $meta_name, true );  // retrieve meta value
-
-	return !empty($val); 	// if value exists - 'on'
+	$val = get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
+	if (!empty($val)) return true;		// value exists - 'on'
+	return false;
 }
 
 function weaverx_page_posts_error($info='') {
@@ -471,6 +469,10 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
+function weaverx_show_header_image() {
+
+
+}
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
 	// 'top' => 'Top of Header'
@@ -480,27 +482,20 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 
 	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
 
-	if ( $sb_position == $where_now ) {
-		do_action('weaverx_alt_header_image');				// support plugins to add alternate header image
-		if ( weaverx_has_widgetarea('header-widget-area') ) {
-			$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
+		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
 
-			if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
-			if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
+		if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
+		if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
 
-			//weaverx_clear_both('header_sb');
-			weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
-			if (weaverx_getopt('header_sb_align') == 'float-right')
-				weaverx_clear_both('header-widget-area');
-		}
+		//weaverx_clear_both('header_sb');
+		weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
+		if (weaverx_getopt('header_sb_align') == 'float-right')
+			weaverx_clear_both('header-widget-area');
 	}
 }
 
 function weaverx_add_ie_scripts() {
-	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
-	// does not work because it can't add the test for < IE9. And you can't just include the code directly
-	// right here because it ends up before the .css enqueues. So we use a little trick as an action for
-	// wp_head which lets us put the code here, but have it emitted after the .css files.
 	echo '<!--[if lt IE 9]>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.js" type="text/javascript"></script>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>
@@ -635,8 +630,8 @@ function weaverx_post_class($hidecount = false) {
 
 function weaverx_use_inline_css($css_file) {
 	return weaverx_getopt_checked('_inline_style') || !weaverx_f_file_access_available()
-		|| !weaverx_f_exists($css_file)
-		|| is_customize_preview();		// also force inline from customizer (Changed: 3.1.10 - used is_customize_preface() )
+		|| !weaverx_f_exists($css_file) || isset($_REQUEST['wp_customize']);
+											// also force inline from customizer
 }
 
 
@@ -944,7 +939,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 		$bc = implode($larrow,$list);
 	}
 	// Wrap crumbs
-	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter, $bc);
+	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter);
 
 	if ($echo) echo $bc;
 	else return $bc;

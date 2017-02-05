@@ -641,6 +641,7 @@ if ( ! function_exists( 'weaverx_cz_sanitize_text' ) ) :
  */
 function weaverx_cz_sanitize_text( $string ) {
 	$allowedtags = wp_kses_allowed_html();
+	$allowedtags = wp_kses_allowed_html();
 	$allowedtags['a']['target'] = true;
 
 	// span
@@ -1028,33 +1029,80 @@ if ( ! class_exists( 'weaverx_cz_Prioritizer' ) ) :
  *
  */
 class weaverx_cz_Prioritizer {
-	var $initial_priority = 0;		// The starting priority.
+	/**
+	 * The starting priority.
+	 *
+	 * @since 1.0.0.
+	 *
+	 * @var   int    The priority used to start the incrementor.
+	 */
+	var $initial_priority = 0;
 
-	var $increment = 0;				// The amount to increment for each step.
+	/**
+	 * The amount to increment for each step.
+	 *
+	 * @since 1.0.0.
+	 *
+	 * @var   int    The amount to increment for each step.
+	 */
+	var $increment = 0;
 
-	var $current_priority = 0;		// Holds the reference to the current priority value.
+	/**
+	 * Holds the reference to the current priority value.
+	 *
+	 * @since 1.0.0.
+	 *
+	 * @var   int    Holds the reference to the current priority value.
+	 */
+	var $current_priority = 0;
 
 	/**
 	 * Set the initial properties on init.
+	 *
+	 * @param  int                    $initial_priority    Value to being the counter.
+	 * @param  int                    $increment           Value to increment the counter by.
+	 * @return weaverx_cz_Prioritizer
 	 */
 	function __construct( $initial_priority = 100, $increment = 100 ) {
-		$this->initial_priority = absint( $initial_priority );		// Value to begin the counter.
-		$this->increment        = absint( $increment );				// Value to increment the counter by.
+		$this->initial_priority = absint( $initial_priority );
+		$this->increment        = absint( $increment );
 		$this->current_priority = $this->initial_priority;
 	}
 
+	/**
+	 * Get the current value.
+	 *
+	 * @since  1.0.0.
+	 *
+	 * @return int    The current priority value.
+	 */
 	public function get() {
-		return $this->current_priority;	// The current priority value.
+		return $this->current_priority;
 	}
 
-	public function inc( $increment = 0 ) {		// Increment the priority.
+	/**
+	 * Increment the priority.
+	 *
+	 * @since  1.0.0.
+	 *
+	 * @param  int    $increment    The value to increment by.
+	 * @return void
+	 */
+	public function inc( $increment = 0 ) {
 		if ( 0 === $increment ) {
 			$increment = $this->increment;
 		}
 		$this->current_priority += absint( $increment );
 	}
 
-	public function add() {			// Increment by the $this->increment value.
+	/**
+	 * Increment by the $this->increment value.
+	 *
+	 * @since  1.0.0.
+	 *
+	 * @return int    The priority value.
+	 */
+	public function add() {
 		$priority = $this->get();
 		$this->inc();
 		return $priority;
@@ -1062,6 +1110,12 @@ class weaverx_cz_Prioritizer {
 
 	/**
 	 * Change the current priority and/or increment value.
+	 *
+	 * @since  1.3.0.
+	 *
+	 * @param  null|int    $new_priority     The new current priority.
+	 * @param  null|int    $new_increment    The new increment value.
+	 * @return void
 	 */
 	public function set( $new_priority = null, $new_increment = null ) {
 		if ( ! is_null( $new_priority ) ) {
@@ -1074,6 +1128,10 @@ class weaverx_cz_Prioritizer {
 
 	/**
 	 * Reset the counter.
+	 *
+	 * @since  1.0.0.
+	 *
+	 * @return void
 	 */
 	public function reboot() {
 		$this->current_priority = $this->initial_priority;
@@ -1363,19 +1421,13 @@ function weaverx_cz_checkbox($label, $description = '', $plus = '', $transport =
 
 }
 
-function weaverx_cz_checkbox_refresh( $label, $description = '', $plus = '' ) {
+function weaverx_cz_checkbox_refresh($label, $description = '') {
 	/*
 	'checkbox_refresh' => weaverx_cz_checkbox_refresh(
 				label,
 				description
 			),
 	 */
-
-	$cb = null;
-	if ( $plus != '' ) {
-		$label .= WEAVERX_PLUS_ICON;
-		$cb = WEAVERX_PLUS_CHECKBOX_CONTROL;
-	}
 	$label .= WEAVERX_REFRESH_ICON;
 
 	return array(
@@ -1384,7 +1436,6 @@ function weaverx_cz_checkbox_refresh( $label, $description = '', $plus = '' ) {
 			'transport' => 'refresh'
 		),
 		'control' => array(
-			'control_type' => $cb,
 			'label' => $label,
 			'description' => $description,
 			'type'  => 'checkbox',

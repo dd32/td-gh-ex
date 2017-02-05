@@ -1,94 +1,6 @@
 <?php
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 //  __ added - 12/11/14
-// revised 3.2.0 - reordered actions, callbacks, filters alphabetical order
-
-/*	--------------------------------- ACTIONS -------------------------------
- *
- */
-
-
-// =============================== >>> ACTION: weaverx_disable_visual_editor <<< ================================
-add_action('load-page.php', 'weaverx_disable_visual_editor');
-add_action('load-post.php', 'weaverx_disable_visual_editor');
-
-function weaverx_disable_visual_editor() {
-  global $wp_rich_edit;
-
-  if (!isset($_GET['post']))
-	return;
-  $post_id = $_GET['post'];
-  $value = get_post_meta($post_id, '_pp_hide_visual_editor', true);
-  $raw = get_post_meta($post_id, '_pp_raw_html', true);
-  if($value == 'on' || $raw == 'on')
-	$wp_rich_edit = false;
-}
-//--
-
-if (! has_action('weaverx_load_fonts') ) :
-	add_action( 'weaverx_load_fonts', 'weaverx_load_fonts_action');
-
-function weaverx_load_fonts_action() {
-
-	echo "<!-- Weaver Xtreme Standard Google Fonts for page-type: {$GLOBALS['weaverx_page_who']} -->\n";
-	$gf = WEAVERX_GOOGLE_FONTS;
-	if (weaverx_getopt('font_set_cryllic')) {
-		$gf = str_replace('&subset=','&subset=cyrillic-ext,', $gf);
-	}
-	if (weaverx_getopt('font_set_greek')) {
-		$gf = str_replace('&subset=','&subset=greek,greek-ext,', $gf);
-	}
-	if (weaverx_getopt('font_set_hebrew')) {
-		$gf = str_replace('&subset=','&subset=hebrew,', $gf);
-	}
-	if (weaverx_getopt('font_set_vietnamese')) {
-		$gf = str_replace('&subset=','&subset=vietnamese,', $gf);
-	}
-
-	if ( ! weaverx_getopt('disable_google_fonts'))
-		echo $gf . "\n";
-}
-endif;
-//--
-
-
-
-// =============================== >>> ACTION: weaverx_nav <<< ================================
-if (!has_action('weaverx_nav')) :                        // plugin can override
-	add_action( 'weaverx_nav', 'weaverx_nav_action');
-
-function weaverx_nav_action($where) {
-	// displays primary and secondary menus in the proper place
-
-	switch ( $where ) {
-		case 'top':
-			if ( ! weaverx_getopt ('m_secondary_move') )
-				get_template_part('templates/menu','secondary');
-
-			if ( weaverx_getopt ('m_primary_move') )
-				get_template_part('templates/menu','primary');
-			break;
-
-		case 'bottom':
-		default:
-			if ( weaverx_getopt ('m_secondary_move') )
-				get_template_part('templates/menu','secondary');
-
-			if ( !weaverx_getopt ('m_primary_move') )
-				get_template_part('templates/menu','primary');
-
-			break;
-	}
-}
-endif;
-//--
-
-
-/*	--------------------------------- CALLBACKS -------------------------------
- *
- */
-
-
 
 // ============================================= >>> CALLBACK: weaverx_page_menu <<< ======================================
 
@@ -157,8 +69,7 @@ function weaverx_page_menu( $args = array() ) {
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$left = apply_filters('weaverx_menu_logo','<span class="custom-logo-on-menu"><img class="custom-logo-on-menu" src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url) . $left;		// +since: 3.1.10: add alt=
-
+				$left = '<img class="custom-logo-on-menu" src="' . $custom_logo_url . '" />' . $left;
 		}
 	}
 
@@ -176,7 +87,7 @@ function weaverx_page_menu( $args = array() ) {
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";		// +since: 3.1.10: remove empty href=""
+		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 
 	if (!$left && is_customize_preview()) {
@@ -209,54 +120,21 @@ function weaverx_page_menu( $args = array() ) {
 //--
 
 
-/*	--------------------------------- FILTERS -------------------------------
- *
- */
+// =============================== >>> FILTER: weaverx_featured_image_info <<< ================================
 
+add_filter('admin_post_thumbnail_html','weaverx_featured_image_info');
 
-// =============================== >>> FILTER: weaverx_schema <<< ================================
+function weaverx_featured_image_info($text) {
+	// Show additional information on the FI Admin box
 
-// add_filter( 'weaverx_schema', 'weaverx_schema_filter' );	// disable in 3.1.12
+	return $text .
+'<p><small>' .
+ __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
 
-function weaverx_schema_filter( $who ) {
-
-	switch ( $who ) {
-		case 'archive':
-		case 'author':
-		case 'blog':
-		case 'category':
-		case 'single':
-		case 'tag':
-			$schema = ' itemtype="http://schema.org/Blog" itemscope';
-			break;
-
-		case 'body':
-			if ( is_search() ) {
-				$schema = ' itemtype="http://schema.org/SearchResultsPage" itemscope';
-			} else
-				$schema = ' itemtype="http://schema.org/WebPage" itemscope';
-			break;
-
-		case 'image':
-		case 'page':
-			$schema = ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
-			break;
-
-		default:
-			$schema = '';
-	}
-	return $schema;
 }
+//--
 
-// =============================== >>> FILTER: weaverx_schema <<< ================================
 
-add_filter( 'get_custom_logo', 'weaverx_get_custom_logo', 10, 2 );
-
-function weaverx_get_custom_logo( $html, $notused ) {
-	// I think WP has the itemprop='logo' wrong since it applies ONLY to images.
-
-	return str_replace(' itemprop="logo"', '', $html);
-}
 
 // =============================== >>> FILTER: weaverx_body_classes <<< ================================
 
@@ -286,14 +164,12 @@ function weaverx_body_classes( $classes ) {
 
 		// Add a class if there is a custom header.
 
-	$classes[] = 'weaverx-theme-body wvrx-not-safari is-menu-desktop is-menu-default';		// Changed 3.1.11 to handle Safari extended width bug
+	$classes[] = 'weaverx-theme-body is-menu-desktop is-menu-default';
 
-	if ( is_single() && weaverx_get_per_post_value('_pp_bodyclass') != '')	// add body class per post single page
-		$classes[] = weaverx_get_per_post_value('_pp_bodyclass');
-	elseif ( weaverx_get_per_page_value('_pp_bodyclass') != '' )	// add body class per page
+	if (weaverx_get_per_page_value('_pp_bodyclass') != '')	// add body class per page
 		$classes[] = weaverx_get_per_page_value('_pp_bodyclass');
 
-	if ( isset( $GLOBALS['weaverx_page_who'] ) && isset( $GLOBALS['weaverx_page_is_archive'] ) ) { // Changed: 3.1.10 - check if archive is set
+	if ( isset( $GLOBALS['weaverx_page_who'] ) ) {
 		if ( $GLOBALS['weaverx_page_is_archive'] ) {
 			$sb_layout = weaverx_sb_layout_archive( $GLOBALS['weaverx_page_who'] );
 			if ( $GLOBALS['weaverx_page_who'] != '404' )
@@ -310,33 +186,6 @@ function weaverx_body_classes( $classes ) {
 	}
 
 	return $classes;
-}
-//--
-
-
-
-// =============================== >>> FILTER: weaverx_comment_form_defaults <<< ================================
-add_filter('comment_form_defaults', 'weaverx_comment_form_defaults',10,1);
-
-function weaverx_comment_form_defaults( $defaults ) {		// filter definition
-	$defaults['title_reply'] = apply_filters('weaverx_leave_reply_form', $defaults['title_reply'] );
-	$defaults['cancel_reply_link'] = apply_filters('weaverx_cancel_reply_form',$defaults['cancel_reply_link']);
-	$defaults['label_submit'] = apply_filters('weaverx_post_comment_form',$defaults['label_submit']);
-	return $defaults;
-}
-//--
-
-
-
-// =============================== >>> FILTER: default_hidden_meta_boxes <<< ================================
-// Change what's hidden by default - show Custom Fields and Discussion by default!
-add_filter('default_hidden_meta_boxes', 'weaverx_hidden_meta_boxes', 10, 2);
-
-function weaverx_hidden_meta_boxes($hidden, $screen) {	// filter definition
-	if ( 'post' == $screen->base || 'page' == $screen->base )
-		$hidden = array('slugdiv', 'trackbacksdiv', 'postexcerpt', 'commentsdiv', 'authordiv', 'revisionsdiv');
-		// removed 'postcustom', 'commentstatusdiv',
-	return $hidden;
 }
 //--
 
@@ -363,13 +212,151 @@ function weaverx_excerpt_length( $length ) {
 //--
 
 
-// =============================== >>> FILTER: header_video_settings <<< ================================
+// =============================== >>> FILTER: weaverx_unlink_page <<< ================================
+add_filter('page_link', 'weaverx_unlink_page', 10, 2);		// for stay on page
 
-if (!function_exists('weaverx_video_controls')) :
-add_filter( 'header_video_settings', 'weaverx_video_controls' );
+function weaverx_unlink_page($link, $id) {	// filter definition
+	$stay = get_post_meta($id, '_pp_stay_on_page', true);
+	if ($stay) {
+		return "#";
+	} else {
+		return $link;
+	}
+}
+//--
+
+
+// =============================== >>> FILTER: weaverx_wp_nav_menu_objects <<< ================================
+/* add_filter('wp_nav_menu_objects', 'weaverx_wp_nav_menu_objects', 10, 2);		// for stay on page
+function weaverx_wp_nav_menu_objects($sorted_menu_items, $args) {	// filter definition
+	// echo '<!-- menu items '; print_r($sorted_menu_items); echo '-->';
+	// echo '<!-- MENU TITLES: ';
+	foreach ($sorted_menu_items as $item ) {
+		if ($item->type == 'custom')
+			$item->title = do_shortcode( $item->title );
+	}
+	// echo '-->';
+	return $sorted_menu_items;
+} */
+//--
+
+// =============================== >>> FILTER: admin_post_thumbnail_html <<< ================================
+// Change what's hidden by default - show Custom Fields and Discussion by default!
+add_filter('default_hidden_meta_boxes', 'weaverx_hidden_meta_boxes', 10, 2);
+
+function weaverx_hidden_meta_boxes($hidden, $screen) {	// filter definition
+	if ( 'post' == $screen->base || 'page' == $screen->base )
+		$hidden = array('slugdiv', 'trackbacksdiv', 'postexcerpt', 'commentsdiv', 'authordiv', 'revisionsdiv');
+		// removed 'postcustom', 'commentstatusdiv',
+	return $hidden;
+}
+//--
+
+
+
+// =============================== >>> FILTER: weaverx_get_wp_title_rss <<< ================================
+add_filter('comment_form_defaults', 'weaverx_comment_form_defaults',10,1);
+
+function weaverx_comment_form_defaults( $defaults ) {		// filter definition
+	$defaults['title_reply'] = apply_filters('weaverx_leave_reply_form', $defaults['title_reply'] );
+	$defaults['cancel_reply_link'] = apply_filters('weaverx_cancel_reply_form',$defaults['cancel_reply_link']);
+	$defaults['label_submit'] = apply_filters('weaverx_post_comment_form',$defaults['label_submit']);
+	return $defaults;
+}
+//--
+
+
+// removed RSS filter - V 4.2
+
+// =============================== >>> FILTER: weaverx_xtra_type_filter <<< ================================
+add_filter('weaverx_xtra_type', 'weaverx_xtra_type_filter');
+function weaverx_xtra_type_filter( $type ) {
+	if ( $type[0] == '+') {
+		return 'inactive';
+	}
+	return $type;
+}
+//--
+
+
+// =============================== >>> FILTER: weaverx_replace_widget_area <<< ================================
+add_filter('weaverx_replace_widget_area', 'weaverx_replace_widget_area_filter');
+
+function weaverx_replace_widget_area_filter( $area_name ) {
+	// If a replacement widget area has been specified, then use it instead.
+	$replace = weaverx_get_per_page_value( '_' . $area_name );
+
+	if ( $replace ) {       // see if the replacement widget area actually exists...
+
+		if ( ! is_active_sidebar( $replace ) ) {
+?>
+		<h3><?php _e('Notice: Widget Area Not Found:', 'weaver-xtreme' /*adm*/); ?> <em><?php echo $replace; ?></em></h3>
+		<p><?php _e('You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
+		<em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
+		widgets to the area.', 'weaver-xtreme' /*adm*/); ?></p>
+<?php
+			return $area_name;
+		}
+
+		return $replace;
+	}
+	return $area_name;
+}
+//--
+
+
+// =============================== >>> ACTION: weaverx_disable_visual_editor <<< ================================
+add_action('load-page.php', 'weaverx_disable_visual_editor');
+add_action('load-post.php', 'weaverx_disable_visual_editor');
+
+function weaverx_disable_visual_editor() {
+  global $wp_rich_edit;
+
+  if (!isset($_GET['post']))
+	return;
+  $post_id = $_GET['post'];
+  $value = get_post_meta($post_id, '_pp_hide_visual_editor', true);
+  $raw = get_post_meta($post_id, '_pp_raw_html', true);
+  if($value == 'on' || $raw == 'on')
+	$wp_rich_edit = false;
+}
+//--
+
+
+
+// =============================== >>> ACTION: weaverx_nav_action <<< ================================
+if (!has_action('weaverx_nav'))                         // plugin can override
+	add_action( 'weaverx_nav', 'weaverx_nav_action');
+
+function weaverx_nav_action($where) {
+	// displays primary and secondary menus in the proper place
+
+	switch ( $where ) {
+		case 'top':
+			if ( ! weaverx_getopt ('m_secondary_move') )
+				get_template_part('templates/menu','secondary');
+
+			if ( weaverx_getopt ('m_primary_move') )
+				get_template_part('templates/menu','primary');
+			break;
+
+		case 'bottom':
+		default:
+			if ( weaverx_getopt ('m_secondary_move') )
+				get_template_part('templates/menu','secondary');
+
+			if ( !weaverx_getopt ('m_primary_move') )
+				get_template_part('templates/menu','primary');
+
+			break;
+	}
+}
+//--
+
 /**
  * Customize video play/pause button in the custom header.
  */
+if (!function_exists('weaverx_video_controls')) :
 function weaverx_video_controls( $settings ) {
 
 	// modify the video parameters
@@ -397,15 +384,10 @@ function weaverx_video_controls( $settings ) {
 
 	return $settings;
 }
-
+add_filter( 'header_video_settings', 'weaverx_video_controls' );
 endif;
-//--
-
-// =============================== >>> FILTER: is_header_video_active <<< ================================
 
 if ( !function_exists('weaverx_is_header_video_active') ) :
-
-add_filter('is_header_video_active', 'weaverx_is_header_video_active');
 function weaverx_is_header_video_active( $active ) {
 	// allow per page active video
 	$pp = weaverx_get_per_page_value( '_pp_video_active' );	// $pp can be '', 'yes', 'no'
@@ -415,7 +397,7 @@ function weaverx_is_header_video_active( $active ) {
 		return $pp == 'yes';
 }
 
-
+add_filter('is_header_video_active', 'weaverx_is_header_video_active');
 endif;
 
 function weaverx_get_video_render() {
@@ -427,11 +409,9 @@ function weaverx_get_video_render() {
 }
 
 function weaverx_has_header_video() {
-	return weaverx_get_video_render() != 'has-header-video-none' && function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
+	return function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
 		&& (has_header_video() || weaverx_get_per_page_value( '_pp_video_url' ) != '' ) ;
 }
-
-
 
 // =============================== >>> FILTER: weaverx_mce_css <<< ================================
 add_filter('mce_css','weaverx_mce_css');
@@ -441,16 +421,12 @@ function weaverx_mce_css($default_style) {
 	/* replace the default editor-style.css with custom CSS generated on the fly by the php version */
 	if (weaverx_getopt('_hide_editor_style'))
 		return $default_style;
-	$style_file = apply_filters( 'weaverx_mce_css', $default_style); // theme support plugin builds a css file
-	if ( $style_file != $default_style )
-		return $style_file;
 
 	$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
 	$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
 	if (!@file_exists($mce_css_file)) {	// see if it is there
 		return $default_style;
 	}
-
 	/* do we need to do anything about rtl? */
 
 	/* if we have a custom style file, return that instead of the default */
@@ -670,58 +646,6 @@ function weaverx_mce_css($default_style) {
 	}
 
 	return $default_style . ',' . $mce_css_dir . $put;
-}
-//--
-
-
-// =============================== >>> FILTER: weaverx_replace_widget_area <<< ================================
-add_filter('weaverx_replace_widget_area', 'weaverx_replace_widget_area_filter');
-
-function weaverx_replace_widget_area_filter( $area_name ) {
-	// If a replacement widget area has been specified, then use it instead.
-	$replace = weaverx_get_per_page_value( '_' . $area_name );
-
-	if ( $replace ) {       // see if the replacement widget area actually exists...
-
-		if ( ! is_active_sidebar( $replace ) ) {
-?>
-		<h3><?php _e('Notice: Widget Area Not Found:', 'weaver-xtreme' /*adm*/); ?> <em><?php echo $replace; ?></em></h3>
-		<p><?php _e('You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
-		<em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
-		widgets to the area.', 'weaver-xtreme' /*adm*/); ?></p>
-<?php
-			return $area_name;
-		}
-
-		return $replace;
-	}
-	return $area_name;
-}
-//--
-
-
-
-// =============================== >>> FILTER: weaverx_unlink_page <<< ================================
-add_filter('page_link', 'weaverx_unlink_page', 10, 2);		// for stay on page
-
-function weaverx_unlink_page($link, $id) {	// filter definition
-	$stay = get_post_meta($id, '_pp_stay_on_page', true);
-	if ($stay) {
-		return "#";
-	} else {
-		return $link;
-	}
-}
-//--
-
-
-// =============================== >>> FILTER: weaverx_xtra_type_filter <<< ================================
-add_filter('weaverx_xtra_type', 'weaverx_xtra_type_filter');
-function weaverx_xtra_type_filter( $type ) {
-	if ( $type[0] == '+') {
-		return 'inactive';
-	}
-	return $type;
 }
 //--
 

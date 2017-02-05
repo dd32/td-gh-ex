@@ -42,7 +42,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";		// +since: 3.1.10: remove empty href=""
+		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'secondary');
 
@@ -63,17 +63,14 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 			$menu_class .= ' menu-alignleft';
 	}
 
-	if ( weaverx_getopt ('m_secondary_move') )
-		$nav_class = 'menu-secondary menu-secondary-moved menu-type-standard';
-	else
-		$nav_class = 'menu-secondary menu-secondary-standard menu-type-standard';
-
 	if (  weaverx_getopt('m_secondary_fixedtop') == 'fixed-top' ) {
 		$class .= ' wvrx-fixedtop';
-		$nav_class .= ' wvrx-secondary-fixedtop';
 	}
 
-	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '">' . "\n";
+	if ( weaverx_getopt ('m_secondary_move') )
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-moved menu-type-standard\">\n";
+	else
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard menu-type-standard\">\n";
 
 	$args = array(
 		'fallback_cb'     => '',

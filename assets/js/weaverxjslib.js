@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 3.1.12
+ * @version 3,0
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -13,16 +13,7 @@
  *
  ************************************************************************************* */
 //Initial load of page
-var agent = navigator.userAgent;
-
-	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
-	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
-
-	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {	// run document ready just for Safari to get around full width issues
-		jQuery(document).ready(weaverxOnResize);
-	}
-
-//jQuery(document).ready(weaverxOnResize);	// don't really nned this for non-safari - it results in a double call on initial load
+//jQuery(document).ready(weaverxOnResize);	// don't really want this - it results in a double call on initial load
 // *********************************** >>>  JavaScript Functions <<< *******************************************
 // *********************************** >>>  weaverxBrowserWidth <<< *******************************************
 function weaverxBrowserWidth() {
@@ -351,7 +342,7 @@ if (!Object.create) { // IE8 shim for Object.create
             // Automatically insert a toggle button icon - dashicon
             if (menu.toggleButton.length < 1) {
                 if (!mo.hideToggle) {
-                    if (typeof wvrxOpts !== 'undefined' && wvrxOpts.mobileAltLabel === '')
+                    if (wvrxOpts.mobileAltLabel === '')
                         menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu" alt="open menu"></div>').find('#' + mo.toggleButtonID).hide();
                     else
                         menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button menu-toggle-menu" alt="open menu">' + wvrxOpts.mobileAltLabel + '</div>').find('#' + mo.toggleButtonID).hide();
@@ -364,15 +355,6 @@ if (!Object.create) { // IE8 shim for Object.create
             menu.toggleButton.on('click', function() {
                 menu.el.toggleClass(mo.hideMobileClass);
             });
-
-
-			// Add listener to the menu items to close mobile menu when an item is clicked.
-			// Useful if menu items link to anchors in the same page and therefore do not load a new page
-			menu.el.find('a').click(function() {
-				if( $(this).children('span.toggle-submenu').length === 0 ) { //dont close mobile menu when clicking to open a sub menu
-						menu.el.toggleClass(mo.hideMobileClass);
-				}
-			});
         },
 
         /**
@@ -449,7 +431,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 (function($) {
     /* Detect device in use  */
-    if (typeof wvrxOpts !== 'undefined' &&  wvrxOpts.useSmartMenus != '0')
+    if (wvrxOpts.useSmartMenus != '0')
         return;
 
     var weaverx_isTouch = ("ontouchstart" in window) ||
@@ -533,22 +515,18 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
         }
         multiTop = multiTop + curHeight;
 
-		// calc widget area before primary since this is the most common case.
-		// Widget area always after fixed top secondary menu and before fixed top primary menu
-
-		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
-        if (curHeight > 0) {
-            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
-        }
-        multiTop = multiTop + curHeight;
-
-
         curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight();
         if (curHeight > 0) {
             $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop);
         }
         multiTop = multiTop + curHeight;
 
+
+        curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
+        if (curHeight > 0) {
+            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
+        }
+        multiTop = multiTop + curHeight;
 
         if (multiTop > 0) {
             $('body').css('margin-top', multiTop); // now maker room for the top fixed areas
@@ -591,7 +569,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 function weaverxOnResize() {
     // this function is called on initial window load, and again on resizes
     var width;
-    if (typeof wvrxOpts.menuAltswitch == 'undefined' || wvrxOpts.menuAltswitch === null)
+    if (typeof(wvrxOpts.menuAltswitch) == 'undefined' || wvrxOpts.menuAltswitch === null)
         wvrxOpts.menuAltswitch = 767;
     width = weaverxBrowserWidth();
 
@@ -625,15 +603,6 @@ function weaverxOnResize() {
     }
 
     var agent = navigator.userAgent;
-
-	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
-	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
-
-	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {
-		//alert('Safari');
-		theBody.removeClass('wvrx-not-safari');	// Changed 3.1.11 to fix safari extended width issue
-	}
-
     if (agent.match(/iPad/i) || agent.match(/iPhone/i) || agent.match(/iPod/i)) {
         device = device + ' is-ios';
         if (agent.match(/iPad/i))
@@ -671,7 +640,7 @@ jQuery(window).scroll(function() {
 jQuery(function($) {
     $('.wrapper').resizeX(weaverxOnResize);
 
-    if (typeof wvrxOpts !== 'undefined' && wvrxOpts.useSmartMenus == '0') { // SmartMenus handled inline
+    if (wvrxOpts.useSmartMenus == '0') { // SmartMenus handled inline
         $('#nav-primary .weaverx-theme-menu').thmfdnMenu({
             toggleButtonID: 'primary-toggle-button'
         });
@@ -686,6 +655,5 @@ jQuery(function($) {
 
 // Add header video class after the video is loaded.
 	jQuery( document ).on( 'wp-custom-header-video-loaded', function() {
-		if (typeof wvrxOpts !== 'undefined')
-			jQuery('body').addClass( wvrxOpts.headerVideoClass );
+		jQuery('body').addClass( wvrxOpts.headerVideoClass );
 	});

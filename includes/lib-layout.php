@@ -361,14 +361,7 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	get_header( $who );
 
-	if ($who == 'woocommerce') {
-		$body_classes = get_body_class();
-		if ( in_array('single-product', $body_classes) ) {	// Single product page - treat as page
-			$sb_layout = weaverx_sb_layout( $who );
-		} else {		// Archive like page
-			$sb_layout = weaverx_sb_layout_archive( $who );
-		}
-	} elseif ( $archive )
+	if ( $archive )
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	else
 		$sb_layout = weaverx_sb_layout( $who );
@@ -381,7 +374,7 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	do_action('weaverx_per_page');
 
-	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . apply_filters( 'weaverx_schema', $who ) . "> <!-- {$who} -->\n";
+	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
 	weaverx_inject_area( 'precontent' );
 
 	return $sb_layout;
@@ -483,15 +476,13 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 
 	// weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
 
-	if ( $who == 'woocommerce' ) {
-		$layout = weaverx_getopt( 'layout_page' , 'default');
-	}
-
 	if ( $layout == 'default' ) {
-		$layout = weaverx_getopt( 'layout_default', 'right' );
+		$layout = weaverx_getopt( 'layout_default' );
+		if ( !$layout )
+			$layout = 'right';  // fallback
 	}
 
-	return apply_filters('weaverx_sb_layout', $layout, $who);
+	return $layout;
 }
 //--
 
@@ -520,7 +511,7 @@ function weaverx_sb_layout_archive( $who ) {
 		}
 	}
 
-	return apply_filters('weaverx_sb_layout_archive', $layout, $who);
+	return $layout;
 }
 //---
 
@@ -664,7 +655,7 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return;
 	}		// hide area option checked
 
@@ -746,9 +737,7 @@ function weaverx_add_widget_classes( $params ) {
 		}
 	}
 
-	$cols = weaverx_getopt( $opt_name . '_cols_int');
-	if ( !$cols || $cols < 1 )
-		$cols = 1;
+	$cols = weaverx_getopt_default( $opt_name . '_cols_int', 1);
 	if ( $cols > 8 )
 		$cols = 8;     // sanity check
 
@@ -884,7 +873,7 @@ function weaverx_has_widgetarea( $area_name ) {
 
 	$area = apply_filters('weaverx_replace_widget_area', $area_name);
 
-	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return false;		// hide area option checked
 	}
 

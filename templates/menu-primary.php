@@ -23,13 +23,13 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
-
+				$logo = '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" /></span>';
 		}
 	}
 
 	$left = weaverx_getopt('m_primary_html_left');
 	$right = weaverx_getopt('m_primary_html_right');
+
 
 
 
@@ -52,7 +52,6 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	}
 
 	$left = $logo . $left;
-	//$right = $right . $logo;
 
 	if ( $use_smart ) {							// ==================  SMART MENUS (make any changes in default menu version, too)
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
@@ -63,7 +62,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";			// +since: 3.1.10: remove empty href=""
+		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'primary');
@@ -82,17 +81,15 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			$menu_class .= ' menu-alignleft';
 	}
 
-	if ( weaverx_getopt ('m_primary_move') )
-		$nav_class = 'menu-primary menu-primary-moved menu-type-standard';
-	else
-		$nav_class = 'menu-primary menu-primary-standard menu-type-standard';
-
 	if ( weaverx_getopt('m_primary_fixedtop') == 'fixed-top' ) {	// really is a drop-down value, so need to check for === for backward compat.
 		$class .= ' wvrx-fixedtop';
-		$nav_class .= ' wvrx-primary-fixedtop';
 	}
 
-	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '">' . "\n";
+
+	if ( weaverx_getopt ('m_primary_move') )
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-moved menu-type-standard\">\n";
+	else
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-standard menu-type-standard\">\n";
 
 	$args = array(
 		'fallback_cb' 	  => 'weaverx_page_menu',

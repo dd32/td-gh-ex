@@ -81,8 +81,7 @@ $entry_summary = 'entry-summary';
 		if ((!weaverx_compact_post() && !$linked) || !$linked)
 			weaverx_the_post_excerpt();
 	}	// display gallery format
-	weaverx_link_pages();	// <!--nextpage-->
-	?>
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-summary -->
 	<?php if (!weaverx_compact_post()) { ?>
 		<footer class="entry-utility">

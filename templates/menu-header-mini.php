@@ -13,6 +13,7 @@ if ( has_nav_menu('header-mini') || $alt_menu != '') {     // weaverx_getopt( 'm
 	$class = weaverx_menu_class( 'm_header_mini' );
 
 	echo "\n\n<div id=\"nav-header-mini\" class=\"menu-horizontal {$class}\">\n";
+	// echo '<span style="display:inline;float:left;color:yellow;padding-top:.2em;">LEFT</span>';
 	$args = array(
 		'fallback_cb'     => '',
 		'theme_location'  => 'header-mini',
@@ -27,6 +28,8 @@ if ( has_nav_menu('header-mini') || $alt_menu != '') {     // weaverx_getopt( 'm
 	}
 	wp_nav_menu( $args ) ;
 
+
+	// echo '<span style="display:inline;float:right;">RIGHT</span>';
 	weaverx_clear_both('header-mini');
 	echo "\n</div><!-- /#nav-header-mini -->\n";
 	weaverx_clear_both('nav-header-mini');

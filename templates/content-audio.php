@@ -27,9 +27,7 @@ weaverx_per_post_style();
 
 	weaverx_post_div('content');
 	echo weaverx_the_post_full();
-
-	weaverx_link_pages();	// <!--nextpage-->
-?>
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 <?php
 	if (!weaverx_compact_post()

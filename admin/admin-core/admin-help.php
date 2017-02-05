@@ -72,7 +72,12 @@ function weaverx_admin_help() {
 	<?php _e('Release Notes', 'weaver-xtreme' /*adm*/); ?>
 </h3>
 <p>
-	<em>Please scroll to the end of the releasenotes to view latest changes.</em>
+	<em>Weaver Xtreme Version 2.0</em> represents a significant upgrade over Version 1.3.
+	The major change is the addition of Customizer based options. All of the options
+	previously handled via the legacy Theme Options interface are now included in
+	the WordPress Customizer. Legacy Theme Options still available with <em>Weaver Xtreme Theme Support</em>
+	plugin. You can now preview your changes live and on the fly.
+	This is a revolutionary change in how you can design your own site.
 </p>
 <?php
 $notes = weaverx_relative_url('') . 'readme.txt';
@@ -91,13 +96,8 @@ $notes = weaverx_relative_url('') . 'readme.txt';
 </strong></p>
 <ul>
 <li style="font-size:120%;"><a href="//wordpress.org/plugins/weaverx-theme-support/" target="_blank"><?php _e('Weaver Xtreme Theme Support', 'weaver-xtreme' /*adm*/); ?></a>
-<?php _e('- provides <strong>essential</strong> Weaver Xtreme theme options and useful shortcodes.', 'weaver-xtreme' /*adm*/); ?>
+<?php _e('- provides <strong>essential</strong> Weaver Xtreme theme options and useful shortcodes', 'weaver-xtreme' /*adm*/); ?>
 </li>
-</ul>
-<p><strong>
-<?php _e('The following plugins are not essential, but can be useful when creating pages, or using Weaver Xtreme shortcodes.', 'weaver-xtreme' /*adm*/); ?>
-</strong></p>
-<ul>
 <li><a href="//wordpress.org/plugins/show-posts/" target="_blank"><?php _e('Weaver Show Posts', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- adds the [show_posts] shortcode to selectively display posts filtered by category, tag, order, id, etc.
 Also adds additional filtering options to the Weaver Xtreme Page with Posts page template.
@@ -112,7 +112,7 @@ Allows content formatting without the need for extra HTML or CSS.
 Also includes advanced features to manage your content such as post and page revision control.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 <li><a href="https://wordpress.org/plugins/widget-shortcode/" target="_blank">Widget Shortcode</a> -
-<?php _e('Adds [widget] shortcode which enables you to display any widget in any content area. This is a great enhancement to Weaver Xtreme, especially when using the Weaver Xtreme Plus Flexible Layout Widget.', 'weaver-xtreme' /*adm*/); ?>
+<?php _e('Adds [widget] shortcode which enables you to output widgets anywhere you like. This is a great enhancement to Weaver Xtreme.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 </ul>
 

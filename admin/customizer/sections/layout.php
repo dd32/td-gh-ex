@@ -476,7 +476,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 				'control' => array(
 					'label' => __( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary.',
+					'description' => __('Fix entire Header area to top of page. You may set the Header Bottom Margin for more space under the menu. Use the Extend BG Attributes to make a full width header.',
 										'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
@@ -535,7 +535,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					'transport' => 'refresh',
 				),
 				'control' => array(
-					'label' => __( 'Move Primary Menu to Top', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
+					'label' => __( 'Move Primary Menu to Top', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
 					'description' => __( 'Move Primary Menu at Top of Header Area. This is not the same as a Fixed-Top Menu (Default: Bottom)', 'weaver-xtreme' ),
 					'type'	=> 'checkbox'
 				),
@@ -554,7 +555,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					'transport' => 'refresh',
 				),
 				'control' => array(
-					'label' => __( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
+					'label' => __( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
 					'description' => __( 'Move Secondary Menu at Bottom of Header Area (Default: Top)', 'weaver-xtreme' ),
 					'type'	=> 'checkbox'
 				),

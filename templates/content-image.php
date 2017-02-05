@@ -50,7 +50,7 @@ if (weaverx_compact_post()) {
 		}
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();	// <!--nextpage-->
+		weaverx_link_pages();
 ?>
 		</div><!-- .entry-content -->
 <?php
