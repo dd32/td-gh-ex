@@ -170,7 +170,7 @@ function bento_customize_register( $wp_customize ) {
 						</span>
 						'.esc_html__( 'Get Expansion Pack', 'bento' ).'
 					</a>
-					<a class="bnt-customizer-link bnt-rate-link" href="https://wordpress.org/support/theme/bento/reviews/?filter=5#new-post" target="_blank">
+					<a class="bnt-customizer-link bnt-rate-link" href="https://wordpress.org/support/theme/bento/reviews/" target="_blank">
 						<span class="dashicons dashicons-heart">
 						</span>
 						'.esc_html__( 'Rate Bento (thanks!)', 'bento' ).'
@@ -184,16 +184,6 @@ function bento_customize_register( $wp_customize ) {
 						<span class="dashicons dashicons-sos">
 						</span>
 						'.esc_html__( 'Visit support forum', 'bento' ).'
-					</a>
-					<a class="bnt-customizer-link bnt-social-link" href="https://www.facebook.com/satoristudio.net/" target="_blank">
-						<span class="dashicons dashicons-facebook-alt">
-						</span>
-						'.esc_html__( 'Like our Facebook page', 'bento' ).'
-					</a>
-					<a class="bnt-customizer-link bnt-social-link" href="https://twitter.com/satoristudionet/" target="_blank">
-						<span class="dashicons dashicons-twitter">
-						</span>
-						'.esc_html__( 'Follow us on Twitter', 'bento' ).'
 					</a>
 				</div>
 			';

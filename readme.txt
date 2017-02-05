@@ -4,15 +4,15 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.6
+Tested up to: 4.7.2
+Stable tag: 1.6.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 ___ DESCRIPTION
 
-Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through a Theme Options panel as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features.
+Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through a Theme Options panel as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features. 
 
 
 ___ INSTALLATION
@@ -28,7 +28,21 @@ Theme manual can be found at: http://satoristudio.net/bento-manual
 For support and feature requests, please visit https://wordpress.org/support/theme/bento/
 
 
+___ ADDITIONAL NOTES
+
+The site tagline set in the "Settings -> General" admin section is not being used in the theme; the site title (set in the same admin section) is only being used for the auto-generated copyright statement in the footer.
+
+
 ___ CHANGELOG
+
+* 1.6.2 / 5 February 2016
+Removed Facebook and Twitter links and fixed the rating link in the Customizer
+Added notes on site title and tagline into the readme file.
+Moved the "Tile image" field into the Expansion Pack.
+Corrected handles for third-party scripts and styles.
+Updated the included CMB2 library.
+Fixed the "Hite title" option on WooCommerce product pages.
+Removed the unnecessary "Hide thumbnail" setting from pages.
 
 * 1.6.1 / 1 February 2016
 Corrected the text domain in the translation function which sets sidebar names.

@@ -35,6 +35,10 @@ function cmb2_autoload_classes( $class_name ) {
 		$path .= '/types';
 	}
 
+	if ( 'CMB2_REST' === $class_name || 0 === strpos( $class_name, 'CMB2_REST_' ) ) {
+		$path .= '/rest-api';
+	}
+
 	include_once( cmb2_dir( "$path/{$class_name}.php" ) );
 }
 
@@ -52,7 +56,7 @@ function cmb2_utils() {
 /**
  * Get instance of the CMB2_Ajax class
  * @since  2.0.0
- * @return CMB2_Ajax object CMB2 utilities class
+ * @return CMB2_Ajax object CMB2 ajax class
  */
 function cmb2_ajax() {
 	return CMB2_Ajax::get_instance();
@@ -90,10 +94,15 @@ function cmb2_get_oembed( $args = array() ) {
 		return '<div class="cmb2-oembed">' . $oembed['embed'] . '</div>';
 	}
 
-	$error = sprintf( esc_html__( 'No oEmbed Results Found for %1$s. View more info at %2$s.', 'bento' ), $oembed['fallback'], ' <a href="http://codex.wordpress.org/Embeds" target="_blank">codex.wordpress.org/Embeds</a>' );
+	$error = sprintf(
+		/* translators: 1: results for. 2: link to codex.wordpress.org/Embeds */
+		esc_html__( 'No oEmbed Results Found for %1$s. View more info at %2$s.', 'bento' ),
+		$oembed['fallback'],
+		'<a href="https://codex.wordpress.org/Embeds" target="_blank">codex.wordpress.org/Embeds</a>'
+	);
 
 	if ( isset( $args['wp_error'] ) && $args['wp_error'] ) {
-		return new WP_Error( 'cmb2_get_oembed_result', $wp_error, compact( 'oembed', 'args' ) );
+		return new WP_Error( 'cmb2_get_oembed_result', $error, compact( 'oembed', 'args' ) );
 	}
 
 	// Otherwise, send back error info that no oEmbeds were found
