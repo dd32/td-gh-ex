@@ -108,6 +108,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			
 			),
 
+			array(
+				
+				"label" => __( "Slideshow fixed images",'bazaar-lite'),
+				"description" => __( "Do you want to set the 'background-attachment' css rule as fixed, for the slideshow images?",'bazaar-lite'),
+				"id" => "wip_fixed_images",
+				"type" => "select",
+				"section" => "slideshow_settings",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "on",
+			
+			),
+
 			array( 
 
 				"label" => __( "Slideshow height",'bazaar-lite'),

@@ -7,8 +7,8 @@ function bazaarlite_css_custom() {
 /* =================== BODY STYLE =================== */
 
 	if ( get_theme_mod('wip_full_image_background') == "on" )
-		echo "body {  -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}"; 
-
+		echo "body {  -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
+	
 /* =================== END BODY STYLE =================== */
 
 /* =================== BEGIN PAGE WIDTH =================== */
@@ -65,7 +65,10 @@ function bazaarlite_css_custom() {
 		echo "}";  
 	
 	endif;
-	
+
+	if ( get_theme_mod('wip_fixed_images') == "off" )
+		echo ".slick-wrapper .slick-image { background-attachment: scroll; }";
+
 /* =================== END SLIDESHOW =================== */
 
 /* =================== BEGIN NAV STYLE =================== */
