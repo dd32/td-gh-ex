@@ -35,6 +35,19 @@ jQuery.noConflict()(function($){
 		return false;
 	});
 
+/* ===============================================
+   Footer
+   =============================================== */
+
+	function wip_footer() {
+	
+		var footer_h = $('#bottom_area').innerHeight();
+		$('#wrapper').css({'padding-bottom':footer_h});
+	
+	}
+	
+	$( document ).ready(wip_footer);
+	$( window ).resize(wip_footer);
 
 /* ===============================================
    Menu code
@@ -106,7 +119,7 @@ jQuery.noConflict()(function($){
 	function() {
 		$(this).animate({ opacity: 1.00 },{queue:false});
 	});
-	
+
 /* ===============================================
    Prettyphoto code
    =============================================== */

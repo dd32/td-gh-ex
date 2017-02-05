@@ -390,6 +390,21 @@ if (!function_exists('novalite_my_gallery_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*RESPONSIVE EMBED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('novalite_embed_html')) {
+	
+	function novalite_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
+	}
+	 
+	add_filter( 'embed_oembed_html', 'novalite_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'novalite_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* IE8 SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 

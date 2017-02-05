@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/nova-free-responsive-portfolio-bloggi
 Description: Nova is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 Author: Theme in Progress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.3
+Version: 1.2.4
 Tags: blue, green, orange, purple, red, yellow, light, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready
 Text Domain: novalite
 Domain Path: /languages
@@ -14,11 +14,25 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 */
 
+
 html { 
-	min-height:101%;
+	height:100%;
+	min-height:100%;
 }
+
+body { 
+	min-height:100%;
+	height:100%;
+}
+
 body.custombody { 
 	background:url(inc/images/background/patterns/pattern12.jpg) repeat;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* ===============================================
@@ -110,11 +124,6 @@ h6 {
 code {
 	display:block;
 	white-space:normal !important;
-}
-
-ul {
-	list-style:none;
-	margin-left:0px !important;
 }
 
 iframe, 
@@ -210,6 +219,21 @@ a.btn {
 }
 
 .bypostauthor {
+}
+
+/* ===============================================
+   SECTIONS
+   =============================================== */
+
+#wrapper {
+	position: relative;
+	min-height:100%;
+}
+
+#bottom_area { 
+	width:100%;
+	position:absolute;
+	bottom:0;
 }
 
 /* ===============================================
@@ -408,8 +432,6 @@ nav#mainmenu ul ul li ul:before {
    BOTTOM, FOOTER AND SIDEBARS
    =============================================== */
 
-/* ================= BOTTOM AND FOOTER ================= */
-
 .bottom_widget { 
 	background:#262626;
 	border-top:solid 1px #333333;
@@ -425,7 +447,8 @@ nav#mainmenu ul ul li ul:before {
 	padding:30px 0 50px 0;
 }
 
-#footer { 
+#footer {
+	position:relative; 
 	background:#262626;
 	color:#333;
 	border-top:solid 1px #333333;
@@ -581,8 +604,8 @@ nav#mainmenu ul ul li ul:before {
 	background: #262626;
 	border: solid 1px #333;
 	border-bottom: none;
-	width: 25px;
-	height: 15px;
+	width: 47px;
+	height: 36px;
 	text-align: center;
 	line-height: 15px;
 }
@@ -682,11 +705,30 @@ nav#mainmenu ul ul li ul:before {
 	margin-bottom:0;
 }
 
+.embed-container,
 .pin-container {
 	overflow: hidden; 
 	position: relative;
 	height:auto;
 	max-height:100%;
+}
+
+.embed-container  {
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed,
+.embed-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border:none;
 }
 
 .pin-article h1.title {
@@ -1357,15 +1399,18 @@ p.list-tags {
 	padding:10px 0 10px 36px;
 	background:url('inc/images/icons/article.png') left 15px no-repeat;
 }
+
 article .overlay-image { 
 	position:relative; 
 	overflow:hidden;
 }
+
 .overlay-image .overlay{ 
 	opacity: 0; 
 	filter: alpha(opacity=0);
 	border:none;
 }
+
 .overlay-image .zoom { 
 	background: #000 url(inc/images/icons/zoom.png) no-repeat center; 
 	position:absolute; 
@@ -1375,6 +1420,7 @@ article .overlay-image {
 	-moz-transition: none; 
 	-o-transition: none;
 }
+
 .overlay-image .link { 
 	background: #000 url(inc/images/icons/link.png) no-repeat center; 
 	position:absolute; 
@@ -1384,6 +1430,7 @@ article .overlay-image {
 	-moz-transition: none; 
 	-o-transition: none;
 }
+
 .overlay-image .video { 
 	background: #000 url(inc/images/icons/video.png) no-repeat center; 
 	position:absolute; 
@@ -1393,6 +1440,7 @@ article .overlay-image {
 	-moz-transition: none; 
 	-o-transition: none;
 }
+
 .overlay-image .wp-post-image { 
 	border:solid 1px #ddd;
 	padding:4px;

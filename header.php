@@ -20,46 +20,48 @@
 
 <body <?php body_class('custombody'); ?>>
 
-<header id="header">
-
-    <div class="container">
+<div id="wrapper">
     
-        <div class="row">
-            
-            <div class="span3" >
-               
-                <div id="logo">
-                        
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
+    <header id="header">
+    
+        <div class="container">
+        
+            <div class="row">
+                
+                <div class="span3" >
+                   
+                    <div id="logo">
                             
-                        <?php 
-                                        
-                            if ( novalite_setting('novalite_custom_logo') ):
-                                echo "<img src='".novalite_setting('novalite_custom_logo','url')."' alt='".__('Logo','novalite')."'>"; 
-                            else: 
-                                bloginfo('name');
-                            endif; 
-                            
-                        ?>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
                                 
-                    </a>
-                            
+                            <?php 
+                                            
+                                if ( novalite_setting('novalite_custom_logo') ):
+                                    echo "<img src='".novalite_setting('novalite_custom_logo','url')."' alt='".__('Logo','novalite')."'>"; 
+                                else: 
+                                    bloginfo('name');
+                                endif; 
+                                
+                            ?>
+                                    
+                        </a>
+                                
+                    </div>
+                    
+                </div>
+    
+                <div class="span9" >
+                  
+                    <nav id="mainmenu">
+                 
+                        <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
+                 
+                    </nav> 
+                                   
                 </div>
                 
-    		</div>
-
-            <div class="span9" >
-              
-                <nav id="mainmenu">
-             
-                    <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
-             
-                </nav> 
-                               
             </div>
             
         </div>
-        
-    </div>
-
-</header>
+    
+    </header>
