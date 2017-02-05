@@ -1,57 +1,46 @@
-<div class="comment-box">
+<section class="comment-box">
 
-<?php
-if( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
-  die ( 'Please do not load this page directly. Thanks!' );
-if( post_password_required() ) { ?>
-  <p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments', 'adelle' ); ?>.</p>
-<?php return; } ?>
+	<?php if ( post_password_required() ) { return; } ?>
 
-<!-- You can start editing here. -->
-  <?php if( have_comments() ) : ?>
+	<?php if ( have_comments() ) : ?>
+	<h4 id="comments">
+		<?php
+			$comments_number = get_comments_number();
+			if ( 1 === $comments_number ) {
+				/* translators: %s: post title */
+				printf( _x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'ace' ), get_the_title() );
+			} else {
+				printf(
+					/* translators: 1: number of comments, 2: post title */
+					_nx(
+					'%1$s comment on &ldquo;%2$s&rdquo;',
+					'%1$s comments on &ldquo;%2$s&rdquo;',
+					$comments_number,
+					'comments title',
+					'ace'
+					),
+				number_format_i18n( $comments_number ),
+				get_the_title()
+				);
+			}
+		?>
+	</h4>
 
-    <section class="comment-pagination">
-      <section class="alignleft"><?php previous_comments_link( __( '&ltrif;  Older comments', 'adelle' ) ) ?></section>
-      <section class="alignright"><?php next_comments_link( __( 'Newer comments &rtrif;', 'adelle' ) ) ?></section>
-    </section>
+	<?php the_comments_navigation(); ?>
 
-  <?php if( !empty( $comments_by_type['comment'] ) ) { ?>
-    <h4 id="comments"><?php comments_number(__( '0 comment', 'adelle' ), __( '1 Comment', 'adelle' ), __( '% Comments', 'adelle' )); ?> <?php _e( 'on', 'adelle' ); ?> <?php the_title(); ?></h4>
-    <ol class="commentlist">
-      <?php wp_list_comments( 'type=comment' ); ?>
-    </ol>
-  <?php } if( !empty( $comments_by_type['pings'] ) ) { ?>
-    <h4 id="comments"><?php echo absint( count( $wp_query->comments_by_type['pings'] ) ); ?><?php _e( 'Pingbacks &amp; Trackbacks on', 'adelle' ); ?> <?php the_title(); ?></h4>
-    <ol class="commentlist">
-      <?php wp_list_comments( 'type=pingback' ); ?>
-    </ol>
-  <?php } ?>
+	<ol class="commentlist">
+		<?php wp_list_comments( array( 'style' => 'ul', 'short_ping' => true, 'avatar_size' => 42 ) ); ?>
+	</ol>
 
-    <section class="comment-pagination">
-      <section class="alignleft"><?php previous_comments_link( __( '&ltrif;  Older comments', 'adelle' ) ) ?></section>
-      <section class="alignright"><?php next_comments_link( __( 'Newer comments &rtrif;', 'adelle' ) ) ?></section>
-    </section>
+	<?php the_comments_navigation(); ?>
 
-  <?php else : // this is displayed if there are no comments so far ?>
+	<?php endif; // Check for have_comments(). ?>
 
-    <?php if( 'open' == $post->comment_status ) : ?>
+	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'ace' ); ?></p>
+	<?php endif; ?>
 
-    <?php else : // comments are closed ?>
+	<?php comment_form(); ?>
 
-      <?php if( is_page() ) : else : ?>
-        <p class="nocomments"><?php _e( 'Comments are closed', 'adelle' ); ?>.</p>
-      <?php endif; ?>
+</section>
 
-    <?php endif; ?>
-
-  <?php endif; ?>
-
-  <?php if( 'open' == $post->comment_status) : ?>
-
-  <div id="comment-box-respond">
-
-    <?php comment_form(); ?>
-
-  </div>
-  <?php endif; // if you delete this the sky will fall on your head ?>
-</div>

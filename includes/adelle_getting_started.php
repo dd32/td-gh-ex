@@ -22,6 +22,8 @@ function adelle_getting_started() { ?>
 
 	<h1>Welcome to Bluchic!</h1>
 
+	<p>Check out the <a href="https://help.bluchic.com/category/adelle/">theme documentation</a> here to setup your theme now!</p>
+
 	<p>Sweet deal <strong>15% off</strong> when you upgrade to the premium theme.</p>
 
 	<section class="split-columns">
