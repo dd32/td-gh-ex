@@ -159,11 +159,13 @@
 						
 						<div class="input-right">
 
-							<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
+							<select name="<?php echo esc_attr($field['id']); ?>" id="<?php echo esc_attr($field['id']); ?>" style="width:100%">
+								
 								<?php foreach ($field['options'] as $option => $values) { ?>
-								<option <?php if (alhenalite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
+								<option <?php if ( alhenalite_postmeta($field['id']) == $option || ( !alhenalite_postmeta($field['id']) && $field['std'] == $option )) { echo 'selected="selected"'; } ?> value="<?php echo esc_attr($option); ?>"><?php echo esc_attr($values); ?></option><?php } ?>  
+                                
 							</select>
-						
+
 						</div>
 						
 						<div class="clear"></div>

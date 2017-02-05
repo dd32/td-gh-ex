@@ -790,6 +790,7 @@ nav#mainmenu ul ul li ul:before {
 	margin-top:-50px;
 }
 
+.embed-container,
 .media-container, 
 .video-container,
 .maps-container {
@@ -798,12 +799,17 @@ nav#mainmenu ul ul li ul:before {
 	height:auto;
 	max-height:100%;
 }
-.video-thumb,
-.maps-thumb {
+
+.embed-container  {
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
 }
+
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed,
+.embed-container video,
 .video-thumb iframe, 
 .video-thumb object, 
 .video-thumb embed,
@@ -817,6 +823,14 @@ nav#mainmenu ul ul li ul:before {
 	height: 100%;
 	border:none;
 }
+
+.video-thumb,
+.maps-thumb {
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
 .soundcloud {
 	margin:0 0 40px 0;
 }

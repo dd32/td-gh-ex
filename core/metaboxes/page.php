@@ -39,7 +39,8 @@ array( "type" => "begintab",
 				   "left-sidebar" =>  __( "Left Sidebar","alhena-lite"),
 				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
 			  ),
-			  ),
+			   "std" => "right-sidebar",
+		),
 			  
 ),
 

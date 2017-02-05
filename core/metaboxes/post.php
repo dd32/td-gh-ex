@@ -25,7 +25,7 @@ array( "type" => "begintab",
 			  ),
 
 		array( "name" => __( "Template","alhena-lite"),
-			   "desc" => __( "Select a template for this page", "alhena-lite"),
+			   "desc" => __( "Select a template for this page","alhena-lite"),
 			   "id" => "wip_template",
 			   "type" => "select",
 			   "options" => array(
@@ -33,7 +33,8 @@ array( "type" => "begintab",
 				   "left-sidebar" =>  __( "Left Sidebar","alhena-lite"),
 				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
 			  ),
-			  ),
+			   "std" => "right-sidebar",
+		),
 			  
 ),
 

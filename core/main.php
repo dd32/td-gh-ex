@@ -478,6 +478,21 @@ if (!function_exists('alhenalite_remove_thumbnail_dimensions')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*RESPONSIVE EMBED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('alhenalite_embed_html')) {
+	
+	function alhenalite_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
+	}
+	 
+	add_filter( 'embed_oembed_html', 'alhenalite_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'alhenalite_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Remove css gallery */
 /*-----------------------------------------------------------------------------------*/ 
 
