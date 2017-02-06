@@ -15,7 +15,7 @@
 get_header();
 
 $content_class = 'col-md-12 col-sm-12';
-$layout = (get_option('adney_page_layout'))?sanitize_text_field(get_option('adney_page_layout')):'full';
+$layout = esc_attr( get_theme_mod( 'adney_page_layout', 'full' ) );
 if($layout == 'left_sidebar' || $layout == 'right_sidebar'){
 	$content_class = 'col-md-9 col-sm-9';
 }

@@ -45,7 +45,7 @@ function adney_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'adney' ),
-		'footer' => esc_html__( 'Footer', 'adney' ),
+		'footer'  => esc_html__( 'Footer', 'adney' ),
 	) );
 
 	/*
@@ -53,9 +53,6 @@ function adney_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
 		'gallery',
 		'caption',
 	) );

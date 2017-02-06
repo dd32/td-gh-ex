@@ -68,7 +68,7 @@ if( ! function_exists("adney_comments_list") ){
 
 							<div class="comment-meta media-heading">
                                 <span class="author-name">
-                                    <?php _e('By', 'adney'); ?> <strong><?php echo get_comment_author(); ?></strong>
+                                    <?php _e('By', 'adney'); ?> <strong><?php echo esc_attr( get_comment_author() ); ?></strong>
                                 </span>
 								-
 								<time datetime="<?php echo get_comment_date(); ?>">
@@ -171,10 +171,10 @@ if( ! function_exists('adney_comment_form') ){
 
 				'must_log_in'          => '
     <div class="alert alert-danger must-log-in">'
-						. sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'adney' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) )
+						. sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'adney' ), esc_url(wp_login_url( apply_filters( 'the_permalink', esc_url( get_permalink( $post_id ) ) ) ) ) )
 						. '</div>',
 
-				'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'adney' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+				'logged_in_as'         => '<div class="alert alert-info logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'adney' ), get_edit_user_link(), $user_identity, esc_url( wp_logout_url( apply_filters( 'the_permalink', esc_url( get_permalink( $post_id ) ) ) ) ) ). '</div>',
 
 				'comment_notes_before' => '<div class="alert alert-info comment-notes">' . __( 'Your email address will not be published.', 'adney' ) . ( $req ? $required_text : '' ) . '</div>',
 

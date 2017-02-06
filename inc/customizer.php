@@ -20,10 +20,11 @@ function adney_customize_register( $wp_customize ) {
 			'title'          => __( 'General Settings', 'adney' ),
 			'capability'     => 'edit_theme_options',
 			'priority' 		 => 1,
-			'description' => __('Allows you to customize general settings for Adney.', 'adney')
+			'description'    => __('Allows you to customize general settings for Adney.', 'adney')
 	) );
 
 	$wp_customize->add_setting( 'theme_scheme_color', array(
+			'type'              => 'theme_mod',
 			'default'           => '#46B289',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
@@ -44,10 +45,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'adney_page_layout', array(
-			'type' => 'option',
-			'default' => 'full',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'              => 'theme_mod',
+			'default'           => 'full',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'adney_sanitize_layout',
 	) );
 
@@ -68,10 +69,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'adney_blog_layout', array(
-			'type' => 'option',
-			'default' => 'right_sidebar',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'              => 'theme_mod',
+			'default'           => 'right_sidebar',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'adney_sanitize_layout',
 	) );
 
@@ -95,17 +96,18 @@ function adney_customize_register( $wp_customize ) {
 	 * Homepage Settings Section
 	 * */
 	$wp_customize->add_section( 'homepage_section', array(
-			'title'          => __( 'Homepage Settings', 'adney' ),
-			'capability'     => 'edit_theme_options',
-			'priority' 		 => 1,
+			'title'       => __( 'Homepage Settings', 'adney' ),
+			'capability'  => 'edit_theme_options',
+			'priority' 	  => 1,
 			'description' => __('Allows you to customize Homepage settings for Adney.', 'adney')
 	) );
 
 
 	$wp_customize->add_setting( 'display_service', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'              => 'theme_mod',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -121,10 +123,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'service_title', array(
-			'type'      => 'option',
-			'default'   => '',
-			'capability'=> 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'      		=> 'theme_mod',
+			'default'   		=> '',
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'sanitize_text_field'
 	) );
 
@@ -141,10 +143,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'service_desc', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_textarea'
 	) );
 
@@ -162,9 +164,9 @@ function adney_customize_register( $wp_customize ) {
 
 	// Display Portfolio seting and control
 	$wp_customize->add_setting( 'display_portfolio', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -180,10 +182,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'portfolio_title', array(
-			'type'      => 'option',
-			'default'   => '',
-			'capability'=> 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'      		=> 'theme_mod',
+			'default'   		=> '',
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'sanitize_text_field'
 	) );
 
@@ -200,10 +202,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'portfolio_desc', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_textarea'
 	) );
 
@@ -221,9 +223,9 @@ function adney_customize_register( $wp_customize ) {
 
 	// Display Team seting and control
 	$wp_customize->add_setting( 'display_team', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -239,10 +241,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'team_title', array(
-			'type'      => 'option',
-			'default'   => '',
-			'capability'=> 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'      		=> 'theme_mod',
+			'default'   		=> '',
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'sanitize_text_field'
 	) );
 
@@ -259,10 +261,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'team_desc', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_textarea'
 	) );
 
@@ -280,9 +282,9 @@ function adney_customize_register( $wp_customize ) {
 
 	// Display Testimonial Section
 	$wp_customize->add_setting( 'display_testimonial', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -299,9 +301,9 @@ function adney_customize_register( $wp_customize ) {
 
 	// Display Clients Section
 	$wp_customize->add_setting( 'display_clients', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -321,18 +323,18 @@ function adney_customize_register( $wp_customize ) {
 	 * Footer Settings Section
 	 * */
 	$wp_customize->add_section( 'footer_section', array(
-			'title'          => __( 'Footer Settings', 'adney' ),
-			'capability'     => 'edit_theme_options',
-			'priority' 		 => 1,
+			'title'       => __( 'Footer Settings', 'adney' ),
+			'capability'  => 'edit_theme_options',
+			'priority' 	  => 1,
 			'description' => __('Allows you to customize Footer settings for Adney.', 'adney')
 	) );
 
 	// Copy Right section
 	$wp_customize->add_setting( 'footer_copyright', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_textarea'
 	) );
 
@@ -349,9 +351,9 @@ function adney_customize_register( $wp_customize ) {
 
 	// Display Call to action seting and control
 	$wp_customize->add_setting( 'display_cta', array(
-			'default' => false,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> false,
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -367,10 +369,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'cta_title', array(
-			'type'      => 'option',
-			'default'   => '',
-			'capability'=> 'edit_theme_options',
-			'transport' => 'refresh',
+			'type'      		=> 'theme_mod',
+			'default'   		=> '',
+			'capability'		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'sanitize_text_field'
 	) );
 
@@ -387,10 +389,10 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'cta_button_text', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default'			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'sanitize_text_field'
 	) );
 
@@ -407,11 +409,11 @@ function adney_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'cta_button_link', array(
-			'type' => 'option',
-			'transport' => 'refresh',
-			'default' => '',
+			'type' 				=> 'theme_mod',
+			'transport' 		=> 'refresh',
+			'default' 			=> '',
 			'sanitize_callback' => 'absint',
-			'capability' => 'edit_theme_options',
+			'capability' 		=> 'edit_theme_options',
 	) );
 
 	$wp_customize->add_control(
@@ -426,13 +428,10 @@ function adney_customize_register( $wp_customize ) {
 			)
 	);
 
-
-
-
 	$wp_customize->add_setting( 'display_social', array(
-			'default' => true,
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'default' 			=> true,
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'adney_sanitize_checkbox'
 	) );
 
@@ -450,10 +449,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Facebook Setting and Control
 	$wp_customize->add_setting( 'facebook_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -471,10 +470,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Twitter Setting and Control
 	$wp_customize->add_setting( 'twitter_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -492,10 +491,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Linked In Setting and Control
 	$wp_customize->add_setting( 'linkedin_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -513,10 +512,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Google Setting and Control
 	$wp_customize->add_setting( 'googleplus_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -534,10 +533,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Instagram Setting and Control
 	$wp_customize->add_setting( 'instagram_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -555,10 +554,10 @@ function adney_customize_register( $wp_customize ) {
 
 	// Instagram Setting and Control
 	$wp_customize->add_setting( 'youtube_url', array(
-			'type' => 'option',
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
+			'type' 				=> 'theme_mod',
+			'default' 			=> '',
+			'capability' 		=> 'edit_theme_options',
+			'transport' 		=> 'refresh',
 			'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -625,9 +624,6 @@ function adney_service_callback( $control ) {
 		return false;
 	}
 }
-
-
-
 
 function adney_sanitize_layout( $value ) {
 	if ( ! in_array( $value, array( 'full', 'left_sidebar','right_sidebar' ) ) )

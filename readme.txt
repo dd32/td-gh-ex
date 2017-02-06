@@ -3,7 +3,7 @@ Contributors: xylus
 Tags: black,blue, gray, green, red, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu,  custom-header, featured-images, sticky-post, post-formats, full-width-template, threaded-comments, translation-ready, theme-options
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,7 +72,7 @@ jQuery FlexSlider v2.5.0 http://www.woothemes.com/flexslider/, (C) 2012 WooTheme
 
 ionicons.min.css Ionicons, v2.0.0 http://ionicons.com/, (C)  Ben Sperry , [MIT](http://opensource.org/licenses/MIT)
 
-isotope.pkgd.min.js Isotope PACKAGED v2.1.1(http://isotope.metafizzy.co), [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html)
+isotope.pkgd.min.js Isotope PACKAGED v3.0.2(http://isotope.metafizzy.co), [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 WOW - v1.0.2 - 2014-10-28, Copyright (c) 2014 Matthieu Aussaguel, [MIT](http://opensource.org/licenses/MIT)
 
