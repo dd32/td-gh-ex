@@ -52,7 +52,7 @@
 		} else {
 			the_excerpt();
 			?>
-			<a href="<?php echo get_the_permalink();?>" class="link montserrat-text uppercase"><?php _e('continue reading','adney'); ?> <i class="icon ion-arrow-right-c"></i></a>
+			<a href="<?php echo esc_url( get_the_permalink() );?>" class="link montserrat-text uppercase"><?php _e('continue reading','adney'); ?> <i class="icon ion-arrow-right-c"></i></a>
 		<?php
 		}
 

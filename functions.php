@@ -151,6 +151,10 @@ add_action( 'widgets_init', 'adney_widgets_init' );
  */
 function adney_scripts() {
 
+	wp_enqueue_style( 'adney-google-fonts-montserrat', '//fonts.googleapis.com/css?family=Montserrat:400,700', false );
+
+	wp_enqueue_style( 'adney-google-fonts-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:400,300,500,700', false );
+
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(),'','all');
 
 	wp_enqueue_style( 'animsition', get_template_directory_uri() . '/assets/css/animsition.min.css', array(),'','all');
