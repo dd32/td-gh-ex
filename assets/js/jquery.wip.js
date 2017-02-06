@@ -310,7 +310,7 @@ jQuery.noConflict()(function($){
 	}
 
 /* ===============================================
-   ISOTOPE
+   MASONRY
    =============================================== */
    
 	$(document).ready(function(){
