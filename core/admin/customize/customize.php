@@ -176,7 +176,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"id" => "wip_slideshow_1_title",
 				"type" => "text",
 				"section" => "slideshow_1",
-				"std" => "Welcome to Bazaar Lite",
+				"std" => "Welcome on Bazaar Lite",
 
 			),
 
@@ -232,7 +232,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"id" => "wip_slideshow_2_title",
 				"type" => "text",
 				"section" => "slideshow_2",
-				"std" => "Welcome to Bazaar Lite",
+				"std" => "Welcome on Bazaar Lite",
 
 			),
 
@@ -288,7 +288,7 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"id" => "wip_slideshow_3_title",
 				"type" => "text",
 				"section" => "slideshow_3",
-				"std" => "Welcome to Bazaar Lite",
+				"std" => "Welcome on Bazaar Lite",
 
 			),
 
@@ -310,6 +310,174 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"id" => "wip_slideshow_3_url",
 				"type" => "url",
 				"section" => "slideshow_3",
+				"std" => "#",
+
+			),
+
+			/* #4 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #4",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_4",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_4_image",
+				"type" => "upload",
+				"section" => "slideshow_4",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img04.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_4_title",
+				"type" => "text",
+				"section" => "slideshow_4",
+				"std" => "Welcome on Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_4_cta",
+				"type" => "text",
+				"section" => "slideshow_4",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_4_url",
+				"type" => "url",
+				"section" => "slideshow_4",
+				"std" => "#",
+
+			),
+
+			/* #5 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #5",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_5",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_5_image",
+				"type" => "upload",
+				"section" => "slideshow_5",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img05.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_5_title",
+				"type" => "text",
+				"section" => "slideshow_5",
+				"std" => "Welcome on Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_5_cta",
+				"type" => "text",
+				"section" => "slideshow_5",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_5_url",
+				"type" => "url",
+				"section" => "slideshow_5",
+				"std" => "#",
+
+			),
+
+			/* #6 SLIDE */ 
+
+			array( 
+
+				"title" => __( "Slide #6",'bazaar-lite'),
+				"type" => "section",
+				"panel" => "slideshow_panel",
+				"priority" => "10",
+				"id" => "slideshow_6",
+
+			),
+
+			array( 
+
+				"label" => __( "Image",'bazaar-lite'),
+				"description" => __( "Upload the image",'bazaar-lite'),
+				"id" => "wip_slideshow_6_image",
+				"type" => "upload",
+				"section" => "slideshow_6",
+				"std" => get_template_directory_uri().'/assets/images/slideshow/img06.jpg',
+
+			),
+
+			array( 
+
+				"label" => __( "Title",'bazaar-lite'),
+				"description" => __( "Insert the title of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_6_title",
+				"type" => "text",
+				"section" => "slideshow_6",
+				"std" => "Welcome on Bazaar Lite",
+
+			),
+
+			array( 
+
+				"label" => __( "Call to action",'bazaar-lite'),
+				"description" => __( "Insert the call to action of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_6_cta",
+				"type" => "text",
+				"section" => "slideshow_6",
+				"std" => "Get Now",
+
+			),
+
+			array( 
+
+				"label" => __( "Url",'bazaar-lite'),
+				"description" => __( "Insert the url of this slide",'bazaar-lite'),
+				"id" => "wip_slideshow_6_url",
+				"type" => "url",
+				"section" => "slideshow_6",
 				"std" => "#",
 
 			),
