@@ -3,7 +3,7 @@ Contributors: xylus
 Tags: black,blue, gray, green, red, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu,  custom-header, featured-images, sticky-post, post-formats, full-width-template, threaded-comments, translation-ready, theme-options
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

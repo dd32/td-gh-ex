@@ -99,7 +99,8 @@ function adney_customize_register( $wp_customize ) {
 			'title'       => __( 'Homepage Settings', 'adney' ),
 			'capability'  => 'edit_theme_options',
 			'priority' 	  => 1,
-			'description' => __('Allows you to customize Homepage settings for Adney.', 'adney')
+			'description' => __('Allows you to customize Homepage settings for Adney.', 'adney'),
+			'active_callback' => 'adney_is_xylus_toolkit_active',
 	) );
 
 
@@ -584,6 +585,12 @@ function adney_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'adney_customize_preview_js' );
 
+function adney_is_xylus_toolkit_active(){
+	if( class_exists( 'Xylus_Toolkit' ) ){
+		return true;
+	}
+	return false;
+}
 
 function adney_cta_callback( $control ) {
 	if ( $control->manager->get_setting('display_cta')->value() == true ) {
