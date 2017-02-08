@@ -1,0 +1,7707 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ascend Premium\n"
+"POT-Creation-Date: 2017-02-03 18:36-0700\n"
+"PO-Revision-Date: 2015-05-08 13:15-0700\n"
+"Last-Translator: \n"
+"Language-Team: Kadence Themes\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;esc_html_e;"
+"esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets/js\n"
+"X-Poedit-SearchPathExcluded-1: themeoptions/redux\n"
+"X-Poedit-SearchPathExcluded-2: themeoptions/options\n"
+
+#: 404.php:17
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like this was the result of either a mistyped address or an out-of-"
+"date link"
+msgstr ""
+
+#: archive-portfolio.php:17 archive-staff.php:17 archive-testimonial.php:17
+#: archive.php:60 index.php:15 search.php:39
+#: templates/home/blog-main-loop.php:49
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: header.php:22
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: home.php:91 lib/kad_shortcodes/blog_shortcodes.php:95 template-blog.php:136
+#: templates/bottom-post-carousel.php:80
+msgid "Sorry, no blog entries found."
+msgstr ""
+
+#: kt_framework/kt-api.php:81
+msgid "API License Activation"
+msgstr ""
+
+#: kt_framework/kt-api.php:82 kt_framework/kt-api.php:528
+msgid "API License Deactivation"
+msgstr ""
+
+#: kt_framework/kt-api.php:221
+#, php-format
+msgid ""
+"The theme update API License Key has not been activated! %sClick here%s to "
+"activate the license api key."
+msgstr ""
+
+#: kt_framework/kt-api.php:240
+#, php-format
+msgid ""
+"<b>Warning!</b> You're blocking external requests which means you won't be "
+"able to get %s updates. Please add %s to %s."
+msgstr ""
+
+#: kt_framework/kt-api.php:262
+msgid "Saving"
+msgstr ""
+
+#: kt_framework/kt-api.php:275
+msgid "Getting Started with Ascend Premium"
+msgstr ""
+
+#: kt_framework/kt-api.php:278
+msgid "Theme activation, recomended plugins and helpful links."
+msgstr ""
+
+#: kt_framework/kt-api.php:299 kt_framework/kt-api.php:303
+msgid "Save Changes"
+msgstr ""
+
+#: kt_framework/kt-api.php:315
+msgid "Helpful Links"
+msgstr ""
+
+#: kt_framework/kt-api.php:316
+msgid "Recomended Plugins"
+msgstr ""
+
+#: kt_framework/kt-api.php:317
+msgid "Demo Content"
+msgstr ""
+
+#: kt_framework/kt-api.php:324
+msgid "Getting Started"
+msgstr ""
+
+#: kt_framework/kt-api.php:325
+msgid "Transfer Free to Premium Ascend"
+msgstr ""
+
+#: kt_framework/kt-api.php:326
+msgid "Ascend Documention"
+msgstr ""
+
+#: kt_framework/kt-api.php:327
+msgid "Ascend Demo Content"
+msgstr ""
+
+#: kt_framework/kt-api.php:328
+msgid "Ascend Tutorials"
+msgstr ""
+
+#: kt_framework/kt-api.php:329
+msgid "Support"
+msgstr ""
+
+#: kt_framework/kt-api.php:330
+msgid "Ascend Support Forms"
+msgstr ""
+
+#: kt_framework/kt-api.php:331
+msgid "Changelog"
+msgstr ""
+
+#: kt_framework/kt-api.php:332
+msgid "Ascend Premium Changelog"
+msgstr ""
+
+#: kt_framework/kt-api.php:338
+msgid "Premium Bundled Plugins"
+msgstr ""
+
+#: kt_framework/kt-api.php:339
+msgid ""
+"These are premium plugins bundled with this theme. They are not required. "
+"Just some cool plugins with cool features."
+msgstr ""
+
+#: kt_framework/kt-api.php:354
+msgid "Suggested Plugins"
+msgstr ""
+
+#: kt_framework/kt-api.php:355
+msgid ""
+"These are plugins we approve and suggest using if applicable to your site. "
+"Not all sites need these, for example if your not selling products you do "
+"not need woocommerce."
+msgstr ""
+
+#: kt_framework/kt-api.php:371 kt_framework/kt-api.php:397
+msgid "Please activate your theme license"
+msgstr ""
+
+#: kt_framework/kt-api.php:378
+msgid "Install Demo Content Importer"
+msgstr ""
+
+#: kt_framework/kt-api.php:379
+msgid ""
+"This importer plugin allows you to fill your site with demo content from one "
+"of the theme demos."
+msgstr ""
+
+#: kt_framework/kt-api.php:380
+msgid "For a turorial on how to use the Importer go here:"
+msgstr ""
+
+#: kt_framework/kt-api.php:439 kt_framework/kt-api.php:492
+msgid "Manage Plugins"
+msgstr ""
+
+#: kt_framework/kt-api.php:440 kt_framework/kt-api.php:493
+msgid "Activated"
+msgstr ""
+
+#: kt_framework/kt-api.php:522
+msgid "Update API License Activation"
+msgstr ""
+
+#: kt_framework/kt-api.php:523
+msgid "Update API License Key"
+msgstr ""
+
+#: kt_framework/kt-api.php:524
+msgid "Update API License email"
+msgstr ""
+
+#: kt_framework/kt-api.php:529
+msgid "Deactivate API License Key"
+msgstr ""
+
+#: kt_framework/kt-api.php:535
+msgid ""
+"Activating your license allows for updates to theme and bundled plugins. If "
+"you need your api key you will find it by logging in here:"
+msgstr ""
+
+#: kt_framework/kt-api.php:591
+msgid "Theme activated. "
+msgstr ""
+
+#: kt_framework/kt-api.php:598
+msgid ""
+"Connection failed to the License Key API server. Make sure your host servers "
+"php version has the curl module installed and enabled."
+msgstr ""
+
+#: kt_framework/kt-api.php:683
+msgid ""
+"The license could not be deactivated. Use the License Deactivation tab to "
+"manually deactivate the license before activating a new license."
+msgstr ""
+
+#: kt_framework/kt-api.php:725
+msgid "Theme license deactivated. "
+msgstr ""
+
+#: kt_framework/kt-api.php:807
+msgid "Deactivates an API License Key."
+msgstr ""
+
+#: kt_framework/status.php:136
+msgid "Kadence System Status"
+msgstr ""
+
+#: kt_framework/status.php:136 kt_framework/status.php:157
+msgid "System Status"
+msgstr ""
+
+#: kt_framework/status.php:255
+#, php-format
+msgid ""
+"%s - We recommend setting memory to at least 40MB. See: <a href=\"%s\" "
+"target=\"_blank\">Increasing memory allocated to PHP</a>"
+msgstr ""
+
+#: kt_framework/status.php:381
+#, php-format
+msgid "Default timezone is %s - it should be UTC"
+msgstr ""
+
+#: kt_framework/status.php:440
+msgid "Visit plugin homepage"
+msgstr ""
+
+#: lib/admin_scripts.php:49
+msgid "Extra Gallery Settings"
+msgstr ""
+
+#: lib/admin_scripts.php:51 lib/classes/class-plugin-activation.php:2642
+#: lib/kad_shortcodes/kad_shortcodes.php:117 lib/post-types.php:42
+msgid "Type"
+msgstr ""
+
+#: lib/admin_scripts.php:53 lib/admin_scripts.php:64 lib/admin_scripts.php:72
+#: lib/classes/cmb/includes/CMB2_JS.php:87 lib/classes/kt_cmb_extensions.php:34
+#: lib/kad_shortcodes/kad_shortcodes.php:368
+#: lib/kad_shortcodes/kad_shortcodes.php:835
+#: lib/metaboxes/pageheader-metaboxes.php:24
+#: lib/metaboxes/pageheader-metaboxes.php:146
+#: lib/metaboxes/portfolio-metaboxes.php:17
+#: lib/metaboxes/portfolio-metaboxes.php:93
+#: lib/metaboxes/portfolio-metaboxes.php:121
+#: lib/metaboxes/post-metaboxes.php:210 lib/metaboxes/post-metaboxes.php:221
+#: lib/metaboxes/postheader-metaboxes.php:30
+#: lib/metaboxes/postheader-metaboxes.php:152
+#: lib/metaboxes/sidebar-metaboxes.php:17 lib/taxonomy-meta.php:36
+#: lib/taxonomy-meta.php:152
+msgid "Default"
+msgstr ""
+
+#: lib/admin_scripts.php:54 lib/widgets/premium_widgets.php:70
+msgid "Slider"
+msgstr ""
+
+#: lib/admin_scripts.php:55
+msgid "Carousel"
+msgstr ""
+
+#: lib/admin_scripts.php:56 lib/metaboxes/page-template-blog-metaboxes.php:73
+#: lib/metaboxes/portfolio-metaboxes.php:150 lib/widgets/premium_widgets.php:70
+#: themeoptions/options.php:1791 themeoptions/options.php:2256
+#: themeoptions/options.php:2351 themeoptions/options.php:3182
+msgid "Mosaic"
+msgstr ""
+
+#: lib/admin_scripts.php:57
+msgid "Tiled"
+msgstr ""
+
+#: lib/admin_scripts.php:58
+msgid "Image Carousel"
+msgstr ""
+
+#: lib/admin_scripts.php:62
+msgid "Show Captions"
+msgstr ""
+
+#: lib/admin_scripts.php:65 lib/admin_scripts.php:73
+#: lib/widgets/premium_widgets.php:73 lib/widgets/premium_widgets.php:253
+#: lib/widgets/standard_widgets.php:738
+msgid "False"
+msgstr ""
+
+#: lib/admin_scripts.php:66 lib/admin_scripts.php:74
+#: lib/widgets/premium_widgets.php:73 lib/widgets/premium_widgets.php:253
+#: lib/widgets/standard_widgets.php:738
+msgid "True"
+msgstr ""
+
+#: lib/admin_scripts.php:70 lib/widgets/premium_widgets.php:70
+msgid "Masonry"
+msgstr ""
+
+#: lib/admin_scripts.php:78
+msgid "Slider Option - Settings"
+msgstr ""
+
+#: lib/admin_scripts.php:80
+msgid "Width"
+msgstr ""
+
+#: lib/admin_scripts.php:84 lib/metaboxes/pageheader-metaboxes.php:123
+#: lib/metaboxes/postheader-metaboxes.php:129 lib/taxonomy-meta.php:130
+#: lib/widgets/premium_widgets.php:1012
+msgid "Height"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/classes/class-plugin-activation.php:337 lib/kt-plugins-activate.php:112
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/classes/class-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:340 lib/kt-plugins-activate.php:113
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:393
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:394
+#: lib/classes/class-plugin-activation.php:3252 lib/kt-plugins-activate.php:125
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:395
+#: lib/classes/class-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: lib/classes/class-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/classes/class-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: lib/classes/class-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#. translators: %s: version number
+#: lib/classes/class-plugin-activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2366
+msgid "Required"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2369
+msgid "Recommended"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2388
+msgid "External Source"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2414
+msgid "Active"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: lib/classes/class-plugin-activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/classes/class-plugin-activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/classes/class-plugin-activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/classes/class-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2603
+msgid "Available version:"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2640
+msgid "Plugin"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2641
+msgid "Source"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2646
+msgid "Version"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2647
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/classes/class-plugin-activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/classes/class-plugin-activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/classes/class-plugin-activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2810
+msgid "Install"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2816
+msgid "Update"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2819
+msgid "Activate"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/classes/class-plugin-activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: lib/classes/class-plugin-activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/classes/class-plugin-activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/classes/class-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/classes/class-plugin-activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/classes/class-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/classes/class-plugin-activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2.php:129
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2.php:418
+msgid "Click to toggle"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Ajax.php:71
+msgid "Please Try Again"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Ajax.php:173
+msgid "Remove Embed"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Ajax.php:177
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Field.php:1186
+msgid "Add Group"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Field.php:1187
+msgid "Remove Group"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Field.php:1209
+#: lib/classes/cmb/includes/CMB2_Field.php:1213
+#: lib/metaboxes/portfolio-metaboxes.php:40 lib/metaboxes/post-metaboxes.php:39
+#: lib/metaboxes/post-metaboxes.php:88 lib/metaboxes/post-metaboxes.php:145
+#: lib/pagebuilder.php:101 lib/widgets/premium_widgets.php:443
+#: lib/widgets/premium_widgets.php:1176 themeoptions/options.php:597
+#: themeoptions/options.php:628 themeoptions/options.php:640
+#: themeoptions/options.php:652 themeoptions/options.php:704
+#: themeoptions/options.php:717 themeoptions/options.php:738
+#: themeoptions/options.php:760 themeoptions/options.php:808
+#: themeoptions/options.php:1015 themeoptions/options.php:1402
+#: themeoptions/options.php:2611 themeoptions/options.php:3093
+#: themeoptions/options.php:3483 themeoptions/options.php:3504
+#: themeoptions/options.php:3525
+msgid "None"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Field.php:1269
+msgid "Sorry, this field does not have a cmb_id specified."
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Field_Display.php:408
+#: lib/classes/cmb/includes/CMB2_JS.php:139
+#: lib/classes/cmb/includes/types/CMB2_Type_File_Base.php:75
+msgid "File:"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:86
+#: lib/classes/cmb/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:118
+#: lib/classes/cmb/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:137
+#: lib/classes/cmb/includes/types/CMB2_Type_File_Base.php:61
+msgid "Remove Image"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:138
+#: lib/classes/cmb/includes/CMB2_Types.php:257
+#: lib/classes/cmb/includes/types/CMB2_Type_File_Base.php:80
+#: lib/classes/kad_nav.php:337
+msgid "Remove"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:140
+#: lib/classes/cmb/includes/types/CMB2_Type_File_Base.php:78
+msgid "Download"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_Types.php:194
+msgid "Add Row"
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_hookup.php:143
+msgid ""
+"Term Metadata is a WordPress > 4.4 feature. Please upgrade your WordPress "
+"install."
+msgstr ""
+
+#: lib/classes/cmb/includes/CMB2_hookup.php:147
+msgid "Term metaboxes configuration requires a 'taxonomies' parameter"
+msgstr ""
+
+#: lib/classes/cmb/includes/helper-functions.php:93
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at %s."
+msgstr ""
+
+#: lib/classes/cmb/includes/helper-functions.php:279
+msgid "Save"
+msgstr ""
+
+#: lib/classes/cmb/includes/types/CMB2_Type_File.php:36
+msgid "Add or Upload File"
+msgstr ""
+
+#: lib/classes/cmb/includes/types/CMB2_Type_File_List.php:36
+msgid "Add or Upload Files"
+msgstr ""
+
+#: lib/classes/cmb/includes/types/CMB2_Type_Taxonomy_Multicheck.php:27
+#: lib/classes/cmb/includes/types/CMB2_Type_Taxonomy_Radio.php:25
+msgid "No terms"
+msgstr ""
+
+#: lib/classes/kad_nav.php:55
+msgid "Enable Mega Sub-Menu"
+msgstr ""
+
+#: lib/classes/kad_nav.php:60
+msgid "Submenu Number of Columns"
+msgstr ""
+
+#: lib/classes/kad_nav.php:70
+msgid "Icon Class (e.g. kt-icon-home)"
+msgstr ""
+
+#. translators: %s: title of menu item which is invalid
+#: lib/classes/kad_nav.php:203
+#, php-format
+msgid "%s (Invalid)"
+msgstr ""
+
+#. translators: %s: title of menu item in draft status
+#: lib/classes/kad_nav.php:207
+#, php-format
+msgid "%s (Pending)"
+msgstr ""
+
+#: lib/classes/kad_nav.php:220
+msgid "sub item"
+msgstr ""
+
+#: lib/classes/kad_nav.php:235
+msgid "Move up"
+msgstr ""
+
+#: lib/classes/kad_nav.php:248
+msgid "Move down"
+msgstr ""
+
+#: lib/classes/kad_nav.php:250 lib/classes/kad_nav.php:252
+msgid "Edit Menu Item"
+msgstr ""
+
+#: lib/classes/kad_nav.php:261
+msgid "URL"
+msgstr ""
+
+#: lib/classes/kad_nav.php:268
+msgid "Navigation Label"
+msgstr ""
+
+#: lib/classes/kad_nav.php:274
+msgid "Title Attribute"
+msgstr ""
+
+#: lib/classes/kad_nav.php:281
+msgid "Open link in a new tab"
+msgstr ""
+
+#: lib/classes/kad_nav.php:286
+msgid "CSS Classes (optional)"
+msgstr ""
+
+#: lib/classes/kad_nav.php:292
+msgid "Link Relationship (XFN)"
+msgstr ""
+
+#: lib/classes/kad_nav.php:298 lib/kad_shortcodes/kad_shortcodes.php:677
+#: lib/widgets/premium_widgets.php:474 lib/widgets/premium_widgets.php:1045
+#: lib/widgets/premium_widgets.php:1218
+msgid "Description"
+msgstr ""
+
+#: lib/classes/kad_nav.php:300
+msgid ""
+"The description will be displayed in the menu if the current theme supports "
+"it."
+msgstr ""
+
+#: lib/classes/kad_nav.php:312
+msgid "Move"
+msgstr ""
+
+#: lib/classes/kad_nav.php:313
+msgid "Up one"
+msgstr ""
+
+#: lib/classes/kad_nav.php:314
+msgid "Down one"
+msgstr ""
+
+#: lib/classes/kad_nav.php:317
+msgid "To the top"
+msgstr ""
+
+#: lib/classes/kad_nav.php:324
+#, php-format
+msgid "Original: %s"
+msgstr ""
+
+#: lib/classes/kad_nav.php:338
+msgid "Cancel"
+msgstr ""
+
+#: lib/classes/kt_cmb_extensions.php:20 lib/widgets/premium_widgets.php:110
+msgid "Add/Edit Gallery"
+msgstr ""
+
+#: lib/classes/kt_cmb_extensions.php:21 lib/widgets/premium_widgets.php:111
+msgid "Clear Gallery"
+msgstr ""
+
+#: lib/classes/kt_cmb_extensions.php:59
+msgid "All Blog Posts"
+msgstr ""
+
+#: lib/classes/kt_cmb_extensions.php:76 lib/post-types.php:125
+#: lib/post-types.php:185
+msgid "All Groups"
+msgstr ""
+
+#: lib/classes/kt_cmb_extensions.php:93
+msgid "All Types"
+msgstr ""
+
+#: lib/classes/taxonomy-meta-class.php:282
+#: lib/classes/taxonomy-meta-class.php:309
+msgid "Delete"
+msgstr ""
+
+#: lib/classes/taxonomy-meta-class.php:289
+msgid "Select File"
+msgstr ""
+
+#: lib/classes/taxonomy-meta-class.php:316
+msgid "Select Image"
+msgstr ""
+
+#: lib/cleanup.php:59 lib/cleanup.php:72 lib/widgets/standard_widgets.php:474
+#: templates/content-loop-testimonial.php:46 templates/content-post-full.php:50
+#: templates/home/blog-home.php:50 themeoptions/options.php:1838
+msgid "Read More"
+msgstr ""
+
+#: lib/init.php:12
+msgid "Left Navigation"
+msgstr ""
+
+#: lib/init.php:13
+msgid "Right Navigation"
+msgstr ""
+
+#: lib/init.php:14 lib/init.php:22
+msgid "Secondary Navigation"
+msgstr ""
+
+#: lib/init.php:15 lib/init.php:23
+msgid "Mobile Navigation"
+msgstr ""
+
+#: lib/init.php:16 lib/init.php:24
+msgid "Topbar Navigation"
+msgstr ""
+
+#: lib/init.php:17 lib/init.php:25
+msgid "Footer Navigation"
+msgstr ""
+
+#: lib/init.php:21
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/init.php:123 lib/pagebuilder.php:456 lib/template_hooks/authorbox.php:11
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/init.php:132
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: lib/init.php:136
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: lib/init.php:138
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: lib/init.php:140
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: lib/init.php:147
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: lib/init.php:149
+msgid "Not Found"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:11
+#: lib/widgets/standard_widgets.php:105
+msgid "Name:"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:12
+#: lib/widgets/standard_widgets.php:133
+msgid "Email:"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:13
+msgid "Subject:"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:14
+msgid "Message:"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:15
+msgid "Send Message"
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:16
+#: lib/kad_shortcodes/contact_form_shortcode.php:18
+msgid "Please enter at least 2 characters."
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:17
+msgid "Please enter a valid email."
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:19
+msgid "Please enter at least 10 characters."
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:20
+msgid "Please check your math."
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:21
+msgid "Please fill the required fields."
+msgstr ""
+
+#: lib/kad_shortcodes/contact_form_shortcode.php:22
+msgid "Thank you! Your message was sent successfully."
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:96
+#: lib/kad_shortcodes/kad_shortcodes.php:100
+#: lib/metaboxes/portfolio-metaboxes.php:44
+#: lib/metaboxes/portfolio-metaboxes.php:169
+#: lib/metaboxes/staff-metaboxes.php:59
+#: lib/metaboxes/testimonial-metaboxes.php:43
+msgid "Columns"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:102
+#: lib/metaboxes/page-template-blog-metaboxes.php:84
+#: lib/metaboxes/portfolio-metaboxes.php:50
+#: lib/metaboxes/portfolio-metaboxes.php:175
+#: lib/metaboxes/staff-metaboxes.php:66
+#: lib/metaboxes/testimonial-metaboxes.php:50
+msgid "Two Columns"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:103
+msgid "Two Columns offset Right"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:104
+msgid "Two Columns offset Left"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:105
+#: lib/metaboxes/page-template-blog-metaboxes.php:83
+#: lib/metaboxes/portfolio-metaboxes.php:51
+#: lib/metaboxes/portfolio-metaboxes.php:176
+#: lib/metaboxes/staff-metaboxes.php:67
+#: lib/metaboxes/testimonial-metaboxes.php:51
+msgid "Three Columns"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:106
+#: lib/metaboxes/page-template-blog-metaboxes.php:82
+#: lib/metaboxes/portfolio-metaboxes.php:52
+#: lib/metaboxes/portfolio-metaboxes.php:177
+#: lib/metaboxes/staff-metaboxes.php:68
+#: lib/metaboxes/testimonial-metaboxes.php:52
+msgid "Four Columns"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:113
+msgid "Fullwidth Box"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:120
+msgid "Full Stretched Content"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:121
+msgid "Full Background Only"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:126
+#: lib/kad_shortcodes/kad_shortcodes.php:278
+#: lib/kad_shortcodes/kad_shortcodes.php:551
+#: lib/kad_shortcodes/kad_shortcodes.php:654 lib/taxonomy-meta.php:83
+msgid "Background Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:132
+msgid "Table"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:136
+msgid "Use a table head?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:140
+msgid "Columns (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:145
+msgid "Extra Rows (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:152
+msgid "Divider"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:156
+msgid "Style"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:159
+msgid "Line"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:160
+msgid "Dots"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:161
+msgid "Gradient"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:166
+#: lib/kad_shortcodes/kad_shortcodes.php:188
+msgid "Size"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:178
+msgid "Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:184
+msgid "Spacing"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:202
+msgid "Tabs"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:205
+msgid "Accordion"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:208
+msgid "Pull-Quotes"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:212
+#: lib/kad_shortcodes/kad_shortcodes.php:231
+#: lib/widgets/premium_widgets.php:753
+msgid "Align"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:215
+#: lib/widgets/premium_widgets.php:699 lib/widgets/premium_widgets.php:855
+#: lib/widgets/premium_widgets.php:857 themeoptions/options.php:982
+#: themeoptions/options.php:1274 themeoptions/options.php:1610
+#: themeoptions/options.php:2724
+msgid "Center"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:216
+#: lib/kad_shortcodes/kad_shortcodes.php:234
+#: lib/widgets/premium_widgets.php:699 lib/widgets/premium_widgets.php:855
+#: lib/widgets/premium_widgets.php:999 lib/widgets/standard_widgets.php:320
+#: themeoptions/options.php:982 themeoptions/options.php:1274
+#: themeoptions/options.php:1610 themeoptions/options.php:2420
+#: themeoptions/options.php:2724
+msgid "Left"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:217
+#: lib/kad_shortcodes/kad_shortcodes.php:235
+#: lib/widgets/premium_widgets.php:699 lib/widgets/premium_widgets.php:855
+#: lib/widgets/premium_widgets.php:999 lib/widgets/standard_widgets.php:320
+#: themeoptions/options.php:982 themeoptions/options.php:1274
+#: themeoptions/options.php:1610 themeoptions/options.php:2420
+#: themeoptions/options.php:2724
+msgid "Right"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:222
+msgid "Pull-Quote Text"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:227
+msgid "Block-Quotes"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:240
+msgid "Block-Quote Text"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:245
+msgid "Simple Box"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:249
+msgid "Padding Top (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:254
+msgid "Padding Bottom (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:259
+msgid "Padding Left (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:264
+msgid "Padding Right (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:269
+msgid "Min Height (just a number)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:274
+msgid "Vertical align middle?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:283
+msgid "Background Color Opacity"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:286
+msgid "1.0"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:287
+msgid "0.9"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:288
+msgid "0.8"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:289
+msgid "0.7"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:290
+msgid "0.6"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:291
+msgid "0.5"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:292
+msgid "0.4"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:293
+msgid "0.3"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:294
+msgid "0.2"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:295
+msgid "0.1"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:296
+msgid "0.0"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:301
+msgid "Content Text"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:309
+msgid "Button"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:313
+#: lib/widgets/premium_widgets.php:1240
+msgid "Button Text"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:317
+msgid "Open Link In New Tab?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:321
+msgid "Font Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:326
+#: lib/kad_shortcodes/kad_shortcodes.php:827
+#: lib/widgets/premium_widgets.php:1252
+msgid "Button Background Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:331
+msgid "Example = 2px"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:332
+msgid "Button Border Size"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:336
+#: lib/widgets/premium_widgets.php:785
+msgid "Button Border Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:341
+msgid "Example = 6px"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:342
+msgid "Button Border Radius"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:346
+msgid "Font Hover Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:351
+msgid "Button Background Hover Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:356
+msgid "Button Border Hover Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:361
+#: lib/kad_shortcodes/kad_shortcodes.php:669
+msgid "Link URL"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:365
+#: lib/kad_shortcodes/kad_shortcodes.php:832
+msgid "Button Size"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:369
+#: lib/kad_shortcodes/kad_shortcodes.php:836 lib/widgets/premium_widgets.php:74
+msgid "Large"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:370
+#: lib/kad_shortcodes/kad_shortcodes.php:837
+msgid "Small"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:375
+msgid "Choose an Icon (optional)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:381
+msgid "Google Map"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:385
+#: lib/widgets/premium_widgets.php:573
+msgid "Address"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:389
+msgid "Map Height"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:390
+#: lib/kad_shortcodes/kad_shortcodes.php:727
+#: lib/kad_shortcodes/kad_shortcodes.php:767
+msgid "Just a number e.g. = 400"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:394
+#: lib/widgets/premium_widgets.php:581
+msgid "Map Zoom"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:421
+#: lib/widgets/premium_widgets.php:577
+msgid "Map Type"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:424
+#: lib/widgets/premium_widgets.php:559
+msgid "ROADMAP"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:425
+#: lib/widgets/premium_widgets.php:559
+msgid "HYBRID"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:426
+#: lib/widgets/premium_widgets.php:559
+msgid "TERRAIN"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:427
+#: lib/widgets/premium_widgets.php:559
+msgid "SATELLITE"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:434
+msgid "Icon"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:438
+#: lib/kad_shortcodes/kad_shortcodes.php:561
+#: lib/widgets/premium_widgets.php:457 lib/widgets/premium_widgets.php:1186
+msgid "Choose an Icon"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:443
+#: lib/kad_shortcodes/kad_shortcodes.php:566
+#: lib/widgets/premium_widgets.php:1190
+msgid "Icon Size"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:526
+#: lib/widgets/premium_widgets.php:1194 themeoptions/options.php:2024
+msgid "Icon Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:531
+msgid "Icon Float"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:541
+#: lib/widgets/premium_widgets.php:490
+msgid "Icon Style"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:545
+#: lib/widgets/premium_widgets.php:443
+msgid "Circle"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:546
+#: lib/metaboxes/portfolio-metaboxes.php:161
+#: lib/metaboxes/staff-metaboxes.php:127 lib/widgets/premium_widgets.php:443
+#: themeoptions/options.php:2103 themeoptions/options.php:2265
+#: themeoptions/options.php:3191
+msgid "Square"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:557
+msgid "Icon Box"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:649
+msgid "Icon/Font Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:659
+msgid "Hover Icon/Font Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:664
+msgid "Hover Background Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:673
+#: lib/metaboxes/page-template-blog-metaboxes.php:27
+#: lib/metaboxes/portfolio-metaboxes.php:225
+#: lib/metaboxes/staff-metaboxes.php:116
+#: lib/metaboxes/testimonial-metaboxes.php:99 themeoptions/options.php:1125
+#: themeoptions/options.php:2157 themeoptions/options.php:2299
+#: themeoptions/options.php:3217
+msgid "Title"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:683
+msgid "Animated Typed Text"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:687
+msgid "First Sentence"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:691
+msgid "Second Sentence (optional)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:695
+msgid "Third Sentence (optional)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:699
+msgid "Fourth Sentence (optional)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:703
+msgid "Start Delay (milliseconds eg: 500)"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:707
+msgid "Loop"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:713
+msgid "YouTube"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:717
+#: lib/kad_shortcodes/kad_shortcodes.php:757
+msgid "Video URL"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:721
+#: lib/kad_shortcodes/kad_shortcodes.php:761
+msgid "Video Width"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:722
+#: lib/kad_shortcodes/kad_shortcodes.php:762
+msgid "Just a number e.g. = 600"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:726
+#: lib/kad_shortcodes/kad_shortcodes.php:766
+msgid "Video Height"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:731
+#: lib/kad_shortcodes/kad_shortcodes.php:771
+msgid "Video Max Width"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:732
+#: lib/kad_shortcodes/kad_shortcodes.php:772
+msgid "Keeps the responsive video from getting too large"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:736
+msgid "Hide Controls"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:740
+#: lib/kad_shortcodes/kad_shortcodes.php:776
+msgid "Auto Play"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:744
+msgid "Show Related"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:748
+msgid "Modest Branding?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:753
+msgid "Vimeo"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:788
+#: lib/widgets/premium_widgets.php:240 lib/widgets/standard_widgets.php:965
+#: themeoptions/options.php:1077
+msgid "Blog Posts"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:792
+msgid "Order By"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:795
+#: lib/metaboxes/page-template-blog-metaboxes.php:25
+#: lib/metaboxes/portfolio-metaboxes.php:224
+#: lib/metaboxes/staff-metaboxes.php:115
+#: lib/metaboxes/testimonial-metaboxes.php:98
+#: lib/widgets/premium_widgets.php:254 themeoptions/options.php:1125
+#: themeoptions/options.php:2157 themeoptions/options.php:2299
+#: themeoptions/options.php:3217
+msgid "Date"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:796
+#: lib/metaboxes/page-template-blog-metaboxes.php:28
+#: lib/metaboxes/portfolio-metaboxes.php:226
+#: lib/metaboxes/staff-metaboxes.php:117
+#: lib/metaboxes/testimonial-metaboxes.php:100
+#: lib/widgets/premium_widgets.php:254 themeoptions/options.php:2157
+#: themeoptions/options.php:2299
+msgid "Random"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:797
+#: lib/metaboxes/page-template-blog-metaboxes.php:26
+#: lib/metaboxes/portfolio-metaboxes.php:223
+#: lib/metaboxes/staff-metaboxes.php:114
+#: lib/metaboxes/testimonial-metaboxes.php:97
+#: lib/widgets/premium_widgets.php:254 themeoptions/options.php:1125
+#: themeoptions/options.php:2157 themeoptions/options.php:2299
+#: themeoptions/options.php:3217
+msgid "Menu Order"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:803
+msgid "Category"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:808
+msgid "Number of Posts"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:814
+msgid "Modal"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:818
+msgid "Button Title"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:822
+msgid "Button Font Color"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:842
+msgid "Modal Title"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:846
+msgid "Modal Content"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:851
+msgid "Contact Form"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:855
+#: lib/kad_shortcodes/kad_shortcodes.php:907
+msgid "Name Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:856
+msgid "Default: Name:"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:860
+msgid "Email Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:861
+msgid "Default: Email:"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:865
+msgid "Subject Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:866
+msgid "Default: Subject:"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:870
+msgid "Message Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:871
+msgid "Default: Message:"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:875
+#: lib/kad_shortcodes/kad_shortcodes.php:932
+msgid "Submit Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:876
+msgid "Default: Send Message"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:880
+msgid "Email to"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:881
+msgid "Enter address you wish the forum to email"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:885
+#: lib/kad_shortcodes/kad_shortcodes.php:937
+msgid "Success Message"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:886
+msgid "Default: Thank you! Your message was sent successfully."
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:891
+msgid "Testimonial Form"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:895
+msgid "Show Location Field?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:899
+msgid "Show Position Field?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:903
+msgid "Show Link Field?"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:908
+msgid "Default: Name"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:912
+msgid "Testimonial Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:913
+msgid "Default: Testimonial"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:917
+msgid "Location Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:918
+msgid "Default: Location - Optional"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:922
+msgid "Position Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:923
+msgid "Default: Position or Company - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:927
+msgid "Link Field Label"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:928
+msgid "Default: Link - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:933
+msgid "Default: Submit"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:938
+msgid ""
+"Default: Thank you for submitting your testimonial! It is now awaiting "
+"approval from the site admnistator. Thank you!"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:948
+#: lib/kad_shortcodes/shortcodes.php:1502
+msgid "Extra Shortcodes"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:949
+msgid "Choose a shortcode"
+msgstr ""
+
+#: lib/kad_shortcodes/kad_shortcodes.php:976
+msgid "Add Shortcode"
+msgstr ""
+
+#: lib/kad_shortcodes/portfolio_shortcodes.php:114
+#: template-portfolio-grid.php:162
+#: templates/content-single-portfolio-bottom-carousel.php:115
+#: templates/home/portfolio-carousel.php:144
+#: templates/home/portfolio-full.php:152
+msgid "Sorry, no portfolio entries found."
+msgstr ""
+
+#: lib/kad_shortcodes/shortcodes.php:928
+msgid "Close"
+msgstr ""
+
+#: lib/kad_shortcodes/shortcodes.php:977 lib/kad_shortcodes/shortcodes.php:980
+#: lib/kad_shortcodes/shortcodes.php:1005
+#: lib/kad_shortcodes/shortcodes.php:1008
+msgid "please specify correct url"
+msgstr ""
+
+#: lib/kad_shortcodes/shortcodes.php:1501
+msgid "Insert Shortcode"
+msgstr ""
+
+#: lib/kad_shortcodes/staff_shortcodes.php:65 template-staff-grid.php:101
+msgid "Sorry, no staff entries found."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:13
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:99
+msgid "Name"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:14 lib/post-types.php:90
+msgid "Testimonial"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:15
+msgid "Location - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:16
+msgid "Position or Company - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:17
+msgid "Link - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:18
+msgid "Image Upload - optional"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:19
+msgid "Submit"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:20
+msgid "Check your math."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:21
+msgid "Please enter your name."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:22
+msgid "Please add testimonial content."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:23
+msgid "Sorry, an error occured."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:24
+msgid "You must be logged in to submit an testimonial."
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:25
+msgid ""
+"Thank you for submitting your testimonial! It is now awaiting approval from "
+"the site admnistator. Thank you!"
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_form_shortcode.php:98
+msgid " Testimonial Post From: "
+msgstr ""
+
+#: lib/kad_shortcodes/testimonial_shortcodes.php:56
+#: template-testimonial-grid.php:93
+msgid "Sorry, no testimonial entries found."
+msgstr ""
+
+#: lib/kt-plugins-activate.php:110
+msgid "Install Suggested Plugins"
+msgstr ""
+
+#: lib/kt-plugins-activate.php:111
+msgid "Theme Plugins"
+msgstr ""
+
+#: lib/kt-plugins-activate.php:124
+msgid "Return to recommended Plugins Installer"
+msgstr ""
+
+#: lib/kt-plugins-activate.php:126
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: lib/kt_slider.php:247
+msgid "Sorry, no entries found."
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:7
+msgid "Blog Options"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:13
+msgid "Blog Category"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:14
+msgid "Select all blog posts or a specific category to show"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:19
+msgid "Order Items By"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:32
+msgid "How Many Posts Per Page"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:38
+#: lib/metaboxes/portfolio-metaboxes.php:196
+#: lib/metaboxes/staff-metaboxes.php:87
+#: lib/metaboxes/testimonial-metaboxes.php:71
+#: lib/template_hooks/hooks_page.php:94
+msgid "All"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:39
+#: lib/metaboxes/portfolio-metaboxes.php:197
+#: lib/metaboxes/staff-metaboxes.php:88
+msgid "2"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:40
+#: lib/metaboxes/portfolio-metaboxes.php:198
+#: lib/metaboxes/staff-metaboxes.php:89
+#: lib/metaboxes/testimonial-metaboxes.php:72
+msgid "3"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:41
+#: lib/metaboxes/portfolio-metaboxes.php:199
+#: lib/metaboxes/staff-metaboxes.php:90
+#: lib/metaboxes/testimonial-metaboxes.php:73
+msgid "4"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:42
+#: lib/metaboxes/portfolio-metaboxes.php:200
+#: lib/metaboxes/staff-metaboxes.php:91
+#: lib/metaboxes/testimonial-metaboxes.php:74
+msgid "5"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:43
+#: lib/metaboxes/portfolio-metaboxes.php:201
+#: lib/metaboxes/staff-metaboxes.php:92
+#: lib/metaboxes/testimonial-metaboxes.php:75
+msgid "6"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:44
+#: lib/metaboxes/portfolio-metaboxes.php:202
+#: lib/metaboxes/staff-metaboxes.php:93
+#: lib/metaboxes/testimonial-metaboxes.php:76
+msgid "7"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:45
+#: lib/metaboxes/portfolio-metaboxes.php:203
+#: lib/metaboxes/staff-metaboxes.php:94
+#: lib/metaboxes/testimonial-metaboxes.php:77
+msgid "8"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:46
+#: lib/metaboxes/portfolio-metaboxes.php:204
+#: lib/metaboxes/staff-metaboxes.php:95
+#: lib/metaboxes/testimonial-metaboxes.php:78
+msgid "9"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:47
+#: lib/metaboxes/portfolio-metaboxes.php:205
+#: lib/metaboxes/staff-metaboxes.php:96
+#: lib/metaboxes/testimonial-metaboxes.php:79
+msgid "10"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:48
+#: lib/metaboxes/portfolio-metaboxes.php:206
+#: lib/metaboxes/staff-metaboxes.php:97
+#: lib/metaboxes/testimonial-metaboxes.php:80
+msgid "11"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:49
+#: lib/metaboxes/portfolio-metaboxes.php:207
+#: lib/metaboxes/staff-metaboxes.php:98
+#: lib/metaboxes/testimonial-metaboxes.php:81
+msgid "12"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:50
+#: lib/metaboxes/portfolio-metaboxes.php:208
+#: lib/metaboxes/staff-metaboxes.php:99
+#: lib/metaboxes/testimonial-metaboxes.php:82
+msgid "13"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:51
+#: lib/metaboxes/portfolio-metaboxes.php:209
+#: lib/metaboxes/staff-metaboxes.php:100
+#: lib/metaboxes/testimonial-metaboxes.php:83
+msgid "14"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:52
+#: lib/metaboxes/portfolio-metaboxes.php:210
+#: lib/metaboxes/staff-metaboxes.php:101
+#: lib/metaboxes/testimonial-metaboxes.php:84
+msgid "15"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:53
+#: lib/metaboxes/portfolio-metaboxes.php:211
+#: lib/metaboxes/staff-metaboxes.php:102
+#: lib/metaboxes/testimonial-metaboxes.php:85
+msgid "16"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:54
+#: lib/metaboxes/portfolio-metaboxes.php:212
+#: lib/metaboxes/staff-metaboxes.php:103
+#: lib/metaboxes/testimonial-metaboxes.php:86
+msgid "17"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:55
+#: lib/metaboxes/portfolio-metaboxes.php:213
+#: lib/metaboxes/staff-metaboxes.php:104
+#: lib/metaboxes/testimonial-metaboxes.php:87
+msgid "18"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:56
+msgid "19"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:57
+msgid "20"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:61
+#: themeoptions/options.php:1789
+msgid "Post output style"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:67
+#: lib/widgets/premium_widgets.php:70 themeoptions/options.php:1791
+#: themeoptions/options.php:2351 themeoptions/options.php:2816
+msgid "Standard"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:68
+#: themeoptions/options.php:1791 themeoptions/options.php:2351
+msgid "Standard with image below title"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:69
+#: themeoptions/options.php:1791 themeoptions/options.php:2351
+#: themeoptions/options.php:3538
+msgid "Full Post"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:70
+#: themeoptions/options.php:1791 themeoptions/options.php:2351
+#: themeoptions/options.php:4610
+msgid "Grid"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:71
+#: themeoptions/options.php:1791 themeoptions/options.php:2351
+msgid "Grid with first post as standard"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:72
+#: themeoptions/options.php:1791 themeoptions/options.php:2351
+msgid "Photo"
+msgstr ""
+
+#: lib/metaboxes/page-template-blog-metaboxes.php:77
+msgid "If grid or photo layout choose columns:"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:8
+msgid "Page Title and Subtitle"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:13
+#: lib/metaboxes/postheader-metaboxes.php:19 lib/taxonomy-meta.php:55
+#: lib/widgets/premium_widgets.php:737 lib/widgets/premium_widgets.php:903
+msgid "Subtitle"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:14
+msgid "Subtitle will go below page title"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:19
+#: lib/metaboxes/postheader-metaboxes.php:25 lib/taxonomy-meta.php:32
+msgid "Align Text"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:25
+#: lib/metaboxes/postheader-metaboxes.php:31 lib/taxonomy-meta.php:37
+msgid "Align Left"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:26
+#: lib/metaboxes/postheader-metaboxes.php:32 lib/taxonomy-meta.php:38
+msgid "Align Center"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:27
+#: lib/metaboxes/postheader-metaboxes.php:33 lib/taxonomy-meta.php:39
+msgid "Align Right"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:37
+#: lib/metaboxes/postheader-metaboxes.php:43 lib/taxonomy-meta.php:43
+msgid "Title Font Size"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:38
+#: lib/metaboxes/postheader-metaboxes.php:44 lib/taxonomy-meta.php:45
+msgid "Overrides default - Just enter number e.g. 80"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:43
+#: lib/metaboxes/postheader-metaboxes.php:49 lib/taxonomy-meta.php:49
+#: themeoptions/options.php:1221 themeoptions/options.php:1553
+#: themeoptions/options.php:2691
+msgid "Smaller Device - Title Font Size"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:44
+#: lib/metaboxes/postheader-metaboxes.php:50 lib/taxonomy-meta.php:51
+#: lib/taxonomy-meta.php:63
+msgid "Overrides default - Just enter number e.g. 40"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:55
+#: lib/metaboxes/postheader-metaboxes.php:61 lib/taxonomy-meta.php:61
+msgid "Subtitle Font Size"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:56
+#: lib/metaboxes/postheader-metaboxes.php:62
+msgid "Overrides default - Just enter number e.g. 30"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:61
+#: lib/metaboxes/postheader-metaboxes.php:67 lib/taxonomy-meta.php:67
+#: themeoptions/options.php:1260 themeoptions/options.php:1595
+#: themeoptions/options.php:2715
+msgid "Smaller Device - Subtitle Font Size"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:62
+#: lib/metaboxes/postheader-metaboxes.php:68
+msgid "Overrides default - Just enter number e.g. 18"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:80
+#: lib/metaboxes/postheader-metaboxes.php:86 lib/pagebuilder.php:37
+#: lib/taxonomy-meta.php:93
+msgid "Background Image Position"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:86
+#: lib/metaboxes/postheader-metaboxes.php:92 lib/pagebuilder.php:43
+#: lib/taxonomy-meta.php:97
+msgid "Left Top"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:87
+#: lib/metaboxes/postheader-metaboxes.php:93 lib/pagebuilder.php:44
+#: lib/taxonomy-meta.php:98
+msgid "Left Center"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:88
+#: lib/metaboxes/postheader-metaboxes.php:94 lib/pagebuilder.php:45
+#: lib/taxonomy-meta.php:99
+msgid "Left Bottom"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:89
+#: lib/metaboxes/postheader-metaboxes.php:95 lib/pagebuilder.php:46
+#: lib/taxonomy-meta.php:100
+msgid "Center Top"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:90
+#: lib/metaboxes/postheader-metaboxes.php:96 lib/pagebuilder.php:47
+#: lib/taxonomy-meta.php:101
+msgid "Center Center"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:91
+#: lib/metaboxes/postheader-metaboxes.php:97 lib/pagebuilder.php:48
+#: lib/taxonomy-meta.php:102
+msgid "Center Bottom"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:92
+#: lib/metaboxes/postheader-metaboxes.php:98 lib/pagebuilder.php:49
+#: lib/taxonomy-meta.php:103
+msgid "Right Top"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:93
+#: lib/metaboxes/postheader-metaboxes.php:99 lib/pagebuilder.php:50
+#: lib/taxonomy-meta.php:104
+msgid "Right Center"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:94
+#: lib/metaboxes/postheader-metaboxes.php:100 lib/pagebuilder.php:51
+#: lib/taxonomy-meta.php:105
+msgid "Right Bottom"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:104
+#: lib/metaboxes/postheader-metaboxes.php:110
+msgid "Background Size"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:110
+#: lib/metaboxes/postheader-metaboxes.php:116 lib/pagebuilder.php:61
+#: lib/taxonomy-meta.php:118
+msgid "Cover"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:111
+#: lib/metaboxes/postheader-metaboxes.php:117 lib/taxonomy-meta.php:119
+msgid "Contain"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:112
+#: lib/metaboxes/postheader-metaboxes.php:118 lib/taxonomy-meta.php:120
+msgid "Auto"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:113
+#: lib/metaboxes/postheader-metaboxes.php:119 lib/taxonomy-meta.php:121
+msgid "100%"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:124
+#: lib/metaboxes/postheader-metaboxes.php:130
+msgid "Overrides default - Just enter number e.g. 460"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:129
+#: lib/metaboxes/postheader-metaboxes.php:135
+msgid "Smaller Device - Height"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:130
+#: lib/metaboxes/postheader-metaboxes.php:136
+msgid "Overrides default - Just enter number e.g. 260"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:135
+#: lib/metaboxes/postheader-metaboxes.php:141
+msgid "Override and use a Shortcode Slider"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:136
+#: lib/metaboxes/postheader-metaboxes.php:142 lib/taxonomy-meta.php:144
+msgid "Paste slider shortcode here (example: [kadence_slider id=\"200\"])"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:141
+#: lib/metaboxes/postheader-metaboxes.php:147
+msgid "Hide Page Title Area"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:147
+#: lib/metaboxes/postheader-metaboxes.php:153 lib/taxonomy-meta.php:153
+msgid "Show"
+msgstr ""
+
+#: lib/metaboxes/pageheader-metaboxes.php:148
+#: lib/metaboxes/postheader-metaboxes.php:154 lib/taxonomy-meta.php:154
+msgid "Hide"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:7
+#: lib/metaboxes/portfolio-metaboxes.php:135
+msgid "Portfolio Options"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:12
+msgid "Project Layout"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:18
+msgid "Beside 40%"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:19
+msgid "Beside 33%"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:20
+msgid "Above"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:25
+msgid "Project Options"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:30
+#: lib/metaboxes/portfolio-metaboxes.php:94 lib/metaboxes/post-metaboxes.php:38
+#: themeoptions/options.php:3483
+msgid "Image"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:31 lib/metaboxes/post-metaboxes.php:82
+msgid "Image Slider (Cropped Image Ratio)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:32 lib/metaboxes/post-metaboxes.php:83
+msgid "Image Slider - (Different Image Ratio)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:33 lib/metaboxes/post-metaboxes.php:84
+msgid "Image Slider with thumbnails (Cropped Image Ratio)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:34 lib/metaboxes/post-metaboxes.php:85
+msgid "Image Carousel - (Muiltiple Images Showing At Once)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:35
+msgid "Image List"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:36 lib/metaboxes/post-metaboxes.php:86
+msgid "Image Collage - (Use 2 to 5 images)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:37
+msgid "Image Grid"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:38
+#: lib/metaboxes/post-metaboxes.php:144 themeoptions/options.php:3517
+#: themeoptions/options.php:3525
+msgid "Video"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:39 lib/metaboxes/post-metaboxes.php:87
+#: themeoptions/options.php:3504 themeoptions/options.php:3525
+msgid "Shortcode"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:53
+#: lib/metaboxes/portfolio-metaboxes.php:178
+#: lib/metaboxes/staff-metaboxes.php:69
+#: lib/metaboxes/testimonial-metaboxes.php:53
+msgid "Five Columns"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:54
+#: lib/metaboxes/portfolio-metaboxes.php:179
+#: lib/metaboxes/staff-metaboxes.php:70
+#: lib/metaboxes/testimonial-metaboxes.php:54
+msgid "Six Columns"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:58
+msgid "Portfolio Image Gallery"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:59 lib/metaboxes/post-metaboxes.php:93
+msgid "Add images for gallery here - Use large images"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:64 lib/metaboxes/post-metaboxes.php:99
+msgid "Gallery Post Shortcode"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:65
+#: lib/metaboxes/post-metaboxes.php:100
+msgid "If using shortcode place here."
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:70
+msgid "Video embed"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:71
+#: lib/metaboxes/post-metaboxes.php:151
+msgid ""
+"Place url, embed code or shortcode, works with youtube, vimeo. (Use the "
+"featured image for screen shot)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:76
+#: lib/metaboxes/post-metaboxes.php:111
+msgid "Max Slider/Image Width"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:77 lib/metaboxes/post-metaboxes.php:50
+#: lib/metaboxes/post-metaboxes.php:112 lib/metaboxes/post-metaboxes.php:169
+msgid "Note: just input number, example: 650"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:82
+#: lib/metaboxes/post-metaboxes.php:105
+msgid "Max Slider/Image Height"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:83 lib/metaboxes/post-metaboxes.php:44
+#: lib/metaboxes/post-metaboxes.php:106
+msgid "Note: just input number, example: 350"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:88
+msgid "Project Summary"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:95
+msgid "Image Slider"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:96
+msgid "Image with video lightbox (must be url)"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:105
+msgid "Portfolio Bottom Carousel Options"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:110
+#: lib/metaboxes/post-metaboxes.php:229
+msgid "Carousel Title"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:111
+msgid "ex. Similar Projects"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:116
+msgid "Bottom Portfolio Carousel"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:117
+msgid "Display a carousel with portfolio items below project?"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:122
+msgid "Related Post Carousel"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:123
+msgid "Recent Portfolio Carousel"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:124
+msgid "No Carousel"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:141 themeoptions/options.php:3180
+msgid "Portfolio Style"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:147 themeoptions/options.php:2094
+#: themeoptions/options.php:2256 themeoptions/options.php:3182
+msgid "Normal Grid"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:148 themeoptions/options.php:2094
+#: themeoptions/options.php:2256 themeoptions/options.php:3182
+msgid "Grid without margin between items"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:149 themeoptions/options.php:2094
+#: themeoptions/options.php:2256 themeoptions/options.php:3182
+msgid "Post style"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:151 lib/widgets/premium_widgets.php:70
+#: themeoptions/options.php:2256 themeoptions/options.php:3182
+msgid "Tiles"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:155
+#: lib/metaboxes/staff-metaboxes.php:121
+msgid "Image Ratio"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:156
+#: lib/metaboxes/portfolio-metaboxes.php:170
+msgid "This doens't apply when using mosaic or tiles style."
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:162
+#: lib/metaboxes/staff-metaboxes.php:128 themeoptions/options.php:2103
+#: themeoptions/options.php:2265 themeoptions/options.php:3191
+msgid "Portrait"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:163
+#: lib/metaboxes/staff-metaboxes.php:129 themeoptions/options.php:2103
+#: themeoptions/options.php:2265 themeoptions/options.php:3191
+msgid "Landscape"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:164
+#: lib/metaboxes/staff-metaboxes.php:130 themeoptions/options.php:2103
+#: themeoptions/options.php:2265 themeoptions/options.php:3191
+msgid "Wide Landscape"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:165
+msgid "Inherit from uploaded image"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:183 lib/post-types.php:41
+msgid "Portfolio Type"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:190
+#: lib/metaboxes/staff-metaboxes.php:81
+#: lib/metaboxes/testimonial-metaboxes.php:65
+msgid "Items per Page"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:217
+#: lib/metaboxes/staff-metaboxes.php:108
+#: lib/metaboxes/testimonial-metaboxes.php:91
+#: lib/widgets/premium_widgets.php:331
+msgid "Order by"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:230
+msgid "Show Type?"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:236
+#: lib/metaboxes/portfolio-metaboxes.php:248
+#: lib/metaboxes/portfolio-metaboxes.php:258
+#: lib/metaboxes/portfolio-metaboxes.php:270
+#: lib/metaboxes/staff-metaboxes.php:153 lib/metaboxes/staff-metaboxes.php:164
+#: lib/metaboxes/testimonial-metaboxes.php:122
+msgid "Yes, enabled"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:237
+#: lib/metaboxes/portfolio-metaboxes.php:247
+#: lib/metaboxes/portfolio-metaboxes.php:259
+#: lib/metaboxes/portfolio-metaboxes.php:269
+#: lib/metaboxes/staff-metaboxes.php:152 lib/metaboxes/staff-metaboxes.php:163
+#: lib/metaboxes/testimonial-metaboxes.php:121
+msgid "No, disabled"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:241
+msgid "Show Excerpt?"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:252
+msgid "Add lightbox link?"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:253
+msgid "This adds a lightbox icon to post."
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:263
+#: lib/metaboxes/staff-metaboxes.php:157
+msgid "Enable Filter"
+msgstr ""
+
+#: lib/metaboxes/portfolio-metaboxes.php:264
+msgid ""
+"This is only a filter for what is visible on the page does not query for "
+"more posts. NOTE: This doens't apply when using tiles style."
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:7
+msgid "Standard Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:12 lib/metaboxes/post-metaboxes.php:56
+#: lib/metaboxes/post-metaboxes.php:117 lib/metaboxes/post-metaboxes.php:174
+msgid "Post Summary"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:17
+msgid "Standard Post Default"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:18 lib/metaboxes/post-metaboxes.php:62
+#: themeoptions/options.php:3462 themeoptions/options.php:3475
+#: themeoptions/options.php:3496 themeoptions/options.php:3517
+msgid "Text"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:19 lib/metaboxes/post-metaboxes.php:63
+#: themeoptions/options.php:3462 themeoptions/options.php:3475
+#: themeoptions/options.php:3496 themeoptions/options.php:3517
+msgid "Portrait Image"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:20 lib/metaboxes/post-metaboxes.php:64
+#: themeoptions/options.php:3462 themeoptions/options.php:3475
+#: themeoptions/options.php:3496 themeoptions/options.php:3517
+msgid "Landscape Image"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:26
+msgid "Image Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:32
+msgid "Head Content"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:37 lib/metaboxes/post-metaboxes.php:61
+msgid "Image Post Default"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:43
+msgid "Max Image Height"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:49
+msgid "Max Image Width"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:70
+msgid "Gallery Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:76 lib/metaboxes/post-metaboxes.php:138
+msgid "Post Head Content"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:81 lib/metaboxes/post-metaboxes.php:122
+msgid "Gallery Post Default"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:92
+msgid "Post Slider Gallery"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:123 lib/metaboxes/post-metaboxes.php:181
+msgid "Portrait Image (feature image)"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:124 lib/metaboxes/post-metaboxes.php:182
+msgid "Landscape Image (feature image)"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:125
+msgid "Portrait Image Slider"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:126
+msgid "Landscape Image Slider"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:127
+msgid "Photo Collage - (Use 2 to 5 images)"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:133
+msgid "Video Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:143 lib/metaboxes/post-metaboxes.php:179
+msgid "Video Post Default"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:150
+msgid "Video post embed"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:156
+msgid "Video Meta Title"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:157 lib/metaboxes/post-metaboxes.php:163
+msgid "Used for SEO purposes"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:162
+msgid "Video Meta description"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:168
+msgid "Max Video Width"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:180
+msgid "Video - (when possible)"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:188
+msgid "Quote Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:193
+msgid "Quote author"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:200
+msgid "Post Options"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:205
+msgid "Author Info"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:206
+msgid "Display an author info box?"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:211 lib/metaboxes/post-metaboxes.php:222
+#: lib/metaboxes/sidebar-metaboxes.php:19
+msgid "No"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:212 lib/metaboxes/sidebar-metaboxes.php:18
+msgid "Yes"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:216
+msgid "Posts Carousel"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:217
+msgid "Display a carousel with similar or recent posts?"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:223 themeoptions/options.php:3365
+msgid "Yes - Display Recent Posts"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:224 themeoptions/options.php:3365
+msgid "Yes - Display Similar Posts"
+msgstr ""
+
+#: lib/metaboxes/post-metaboxes.php:230
+msgid "ex. Similar Posts"
+msgstr ""
+
+#: lib/metaboxes/postheader-metaboxes.php:8
+msgid "Post Title and Subtitle"
+msgstr ""
+
+#: lib/metaboxes/postheader-metaboxes.php:13
+#: lib/metaboxes/postheader-metaboxes.php:14
+msgid "Post Header Title"
+msgstr ""
+
+#: lib/metaboxes/postheader-metaboxes.php:20
+msgid "Subtitle will go below post title"
+msgstr ""
+
+#: lib/metaboxes/postheader-metaboxes.php:123
+msgid "Background Parallax - This will override the background size setting."
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:10
+msgid "Custom Tab 01"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:15
+#: lib/metaboxes/product-metaboxes.php:41
+#: lib/metaboxes/product-metaboxes.php:67
+msgid "Tab Title"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:16
+#: lib/metaboxes/product-metaboxes.php:42
+#: lib/metaboxes/product-metaboxes.php:68
+msgid "This will show on the tab"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:21
+#: lib/metaboxes/product-metaboxes.php:47
+#: lib/metaboxes/product-metaboxes.php:73
+msgid "Tab Content"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:22
+#: lib/metaboxes/product-metaboxes.php:48
+#: lib/metaboxes/product-metaboxes.php:74
+msgid "Add Tab Content"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:27
+#: lib/metaboxes/product-metaboxes.php:53
+#: lib/metaboxes/product-metaboxes.php:79
+msgid "Tab priority"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:28
+#: lib/metaboxes/product-metaboxes.php:54
+#: lib/metaboxes/product-metaboxes.php:80
+msgid "This will determine where the tab is shown (e.g. 20)"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:36
+msgid "Custom Tab 02"
+msgstr ""
+
+#: lib/metaboxes/product-metaboxes.php:62
+msgid "Custom Tab 03"
+msgstr ""
+
+#: lib/metaboxes/sidebar-metaboxes.php:7
+msgid "Sidebar Options"
+msgstr ""
+
+#: lib/metaboxes/sidebar-metaboxes.php:13
+msgid "Display Sidebar?"
+msgstr ""
+
+#: lib/metaboxes/sidebar-metaboxes.php:23
+msgid "Choose Sidebar"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:7 lib/metaboxes/staff-metaboxes.php:53
+msgid "Staff Options"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:12
+msgid "Job Title"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:13
+msgid "ex: Customer Service"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:18
+#: templates/content-loop-staff-meta.php:15
+msgid "Email"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:23
+msgid "Phone"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:28
+msgid "Facebook Link"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:33
+msgid "Twitter Link"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:38
+msgid "Instagram Link"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:43
+msgid "Linkedin Link"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:65
+#: lib/metaboxes/testimonial-metaboxes.php:49
+msgid "One Columns"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:74 lib/post-types.php:182
+msgid "Staff Group"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:131
+msgid "Inherent from uploaded image"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:135
+#: lib/metaboxes/testimonial-metaboxes.php:104
+msgid "Show Excerpt or full content"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:141
+#: lib/metaboxes/testimonial-metaboxes.php:111
+msgid "Excerpt"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:142
+#: lib/metaboxes/testimonial-metaboxes.php:110
+msgid "Full Content"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:146
+#: lib/metaboxes/testimonial-metaboxes.php:115
+msgid "Add link to single post?"
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:147
+msgid "This adds a link to the title and image."
+msgstr ""
+
+#: lib/metaboxes/staff-metaboxes.php:158
+msgid ""
+"This is only a filter for what is visible on the page does not query for "
+"more posts"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:7
+#: lib/metaboxes/testimonial-metaboxes.php:37
+msgid "testimonial Options"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:12
+msgid "Location"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:13
+msgid "ex: New York, NY"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:18
+#: lib/template_hooks/authorbox.php:112
+msgid "Occupation"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:19
+msgid "ex: CEO of Example Inc"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:24
+msgid "Link"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:25
+msgid "ex: http://www.example.com"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:58 lib/post-types.php:122
+msgid "Testimonial Group"
+msgstr ""
+
+#: lib/metaboxes/testimonial-metaboxes.php:116
+msgid "This is only for when showing full content."
+msgstr ""
+
+#: lib/pagebuilder.php:31 lib/taxonomy-meta.php:88
+msgid "Background Image"
+msgstr ""
+
+#: lib/pagebuilder.php:55
+msgid "Background Image Style"
+msgstr ""
+
+#: lib/pagebuilder.php:62
+msgid "Parallax"
+msgstr ""
+
+#: lib/pagebuilder.php:63
+msgid "contain"
+msgstr ""
+
+#: lib/pagebuilder.php:64
+msgid "No Repeat"
+msgstr ""
+
+#: lib/pagebuilder.php:65
+msgid "Repeat"
+msgstr ""
+
+#: lib/pagebuilder.php:66
+msgid "Repeat-X"
+msgstr ""
+
+#: lib/pagebuilder.php:67
+msgid "Repeat-y"
+msgstr ""
+
+#: lib/pagebuilder.php:71
+msgid "Border Top Size"
+msgstr ""
+
+#: lib/pagebuilder.php:77
+msgid "Border Top Color"
+msgstr ""
+
+#: lib/pagebuilder.php:83
+msgid "Border Bottom Size"
+msgstr ""
+
+#: lib/pagebuilder.php:89
+msgid "Border Bottom Color"
+msgstr ""
+
+#: lib/pagebuilder.php:95
+msgid "Row Separator"
+msgstr ""
+
+#: lib/pagebuilder.php:102
+msgid "Center Triangle"
+msgstr ""
+
+#: lib/pagebuilder.php:103
+msgid "Center Triangle Double"
+msgstr ""
+
+#: lib/pagebuilder.php:104
+msgid "Left Triangle"
+msgstr ""
+
+#: lib/pagebuilder.php:105
+msgid "Right Triangle"
+msgstr ""
+
+#: lib/pagebuilder.php:106
+msgid "Tilt Left"
+msgstr ""
+
+#: lib/pagebuilder.php:107
+msgid "Tilt Right"
+msgstr ""
+
+#: lib/pagebuilder.php:108
+msgid "Center Small Triangle"
+msgstr ""
+
+#: lib/pagebuilder.php:109
+msgid "Three Small Triangle"
+msgstr ""
+
+#: lib/pagebuilder.php:113
+msgid "Next Row Background Color"
+msgstr ""
+
+#: lib/pagebuilder.php:372
+msgid "Example Page"
+msgstr ""
+
+#: lib/pagebuilder.php:548
+msgid "Example Page 2"
+msgstr ""
+
+#: lib/pagebuilder.php:597 lib/widgets/premium_widgets.php:244
+msgid "Featured Products"
+msgstr ""
+
+#: lib/pagebuilder.php:614
+msgid "Featured Projects"
+msgstr ""
+
+#: lib/pagebuilder.php:642
+msgid "Want To See More"
+msgstr ""
+
+#: lib/pagebuilder.php:645
+msgid "Check out the newest demo site"
+msgstr ""
+
+#: lib/post-types.php:8 lib/post-types.php:20
+#: lib/widgets/standard_widgets.php:966
+msgid "Portfolio"
+msgstr ""
+
+#: lib/post-types.php:9
+msgid "Portfolio Item"
+msgstr ""
+
+#: lib/post-types.php:10 lib/post-types.php:91 lib/post-types.php:151
+msgid "Add New"
+msgstr ""
+
+#: lib/post-types.php:11
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: lib/post-types.php:12
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: lib/post-types.php:13
+msgid "New Portfolio Item"
+msgstr ""
+
+#: lib/post-types.php:14
+msgid "All Portfolio"
+msgstr ""
+
+#: lib/post-types.php:15
+msgid "View Portfolio Item"
+msgstr ""
+
+#: lib/post-types.php:16
+msgid "Search Portfolio"
+msgstr ""
+
+#: lib/post-types.php:17
+msgid "No Portfolio Item found"
+msgstr ""
+
+#: lib/post-types.php:18
+msgid "No Portfolio Items found in Trash"
+msgstr ""
+
+#: lib/post-types.php:43
+msgid "Search Type"
+msgstr ""
+
+#: lib/post-types.php:44
+msgid "All Type"
+msgstr ""
+
+#: lib/post-types.php:45
+msgid "Parent Type"
+msgstr ""
+
+#: lib/post-types.php:46
+msgid "Parent Type:"
+msgstr ""
+
+#: lib/post-types.php:47
+msgid "Edit Type"
+msgstr ""
+
+#: lib/post-types.php:48
+msgid "Update Type"
+msgstr ""
+
+#: lib/post-types.php:49
+msgid "Add New Type"
+msgstr ""
+
+#: lib/post-types.php:50
+msgid "New Type Name"
+msgstr ""
+
+#: lib/post-types.php:62
+msgid "Portfolio Tags"
+msgstr ""
+
+#: lib/post-types.php:63
+msgid "Tags"
+msgstr ""
+
+#: lib/post-types.php:64
+msgid "Search Tags"
+msgstr ""
+
+#: lib/post-types.php:65
+msgid "All Tag"
+msgstr ""
+
+#: lib/post-types.php:66
+msgid "Parent Tag"
+msgstr ""
+
+#: lib/post-types.php:67
+msgid "Parent Tag:"
+msgstr ""
+
+#: lib/post-types.php:68
+msgid "Edit Tag"
+msgstr ""
+
+#: lib/post-types.php:69
+msgid "Update Tag"
+msgstr ""
+
+#: lib/post-types.php:70
+msgid "Add New Tag"
+msgstr ""
+
+#: lib/post-types.php:71
+msgid "New Tag Name"
+msgstr ""
+
+#: lib/post-types.php:89 lib/post-types.php:101 lib/post-types.php:123
+msgid "Testimonials"
+msgstr ""
+
+#: lib/post-types.php:92
+msgid "Add New Testimonial"
+msgstr ""
+
+#: lib/post-types.php:93
+msgid "Edit Testimonial"
+msgstr ""
+
+#: lib/post-types.php:94
+msgid "New Testimonial"
+msgstr ""
+
+#: lib/post-types.php:95
+msgid "All Testimonials"
+msgstr ""
+
+#: lib/post-types.php:96
+msgid "View Testimonial"
+msgstr ""
+
+#: lib/post-types.php:97
+msgid "Search Testimonials"
+msgstr ""
+
+#: lib/post-types.php:98
+msgid "No Testimonials found"
+msgstr ""
+
+#: lib/post-types.php:99
+msgid "No Testimonials found in Trash"
+msgstr ""
+
+#: lib/post-types.php:124 lib/post-types.php:184
+msgid "Search Groups"
+msgstr ""
+
+#: lib/post-types.php:126 lib/post-types.php:186
+msgid "Parent Groups"
+msgstr ""
+
+#: lib/post-types.php:127 lib/post-types.php:187
+msgid "Parent Groups:"
+msgstr ""
+
+#: lib/post-types.php:128 lib/post-types.php:188
+msgid "Edit Group"
+msgstr ""
+
+#: lib/post-types.php:129 lib/post-types.php:189
+msgid "Update Group"
+msgstr ""
+
+#: lib/post-types.php:130 lib/post-types.php:190
+msgid "Add New Group"
+msgstr ""
+
+#: lib/post-types.php:131 lib/post-types.php:191
+msgid "New Group Name"
+msgstr ""
+
+#: lib/post-types.php:149 lib/post-types.php:150 lib/post-types.php:161
+#: lib/post-types.php:183
+msgid "Staff"
+msgstr ""
+
+#: lib/post-types.php:152
+msgid "Add New Staff"
+msgstr ""
+
+#: lib/post-types.php:153
+msgid "Edit Staff"
+msgstr ""
+
+#: lib/post-types.php:154
+msgid "New Staff"
+msgstr ""
+
+#: lib/post-types.php:155
+msgid "All Staff"
+msgstr ""
+
+#: lib/post-types.php:156
+msgid "View Staff"
+msgstr ""
+
+#: lib/post-types.php:157
+msgid "Search Staff"
+msgstr ""
+
+#: lib/post-types.php:158
+msgid "No Staff found"
+msgstr ""
+
+#: lib/post-types.php:159
+msgid "No Staff found in Trash"
+msgstr ""
+
+#: lib/scripts.php:71 lib/template_hooks/breadcrumbs.php:284
+msgid "of"
+msgstr ""
+
+#: lib/scripts.php:72
+msgid "The image could not be loaded."
+msgstr ""
+
+#: lib/taxonomy-meta.php:20
+msgid "Type Image"
+msgstr ""
+
+#: lib/taxonomy-meta.php:57
+msgid "Appears below title"
+msgstr ""
+
+#: lib/taxonomy-meta.php:69
+msgid "Overrides default - Just enter number e.g. 15"
+msgstr ""
+
+#: lib/taxonomy-meta.php:73 lib/widgets/premium_widgets.php:1214
+#: themeoptions/options.php:1195 themeoptions/options.php:1525
+#: themeoptions/options.php:2675
+msgid "Title Color"
+msgstr ""
+
+#: lib/taxonomy-meta.php:78
+msgid "Sub Title Color"
+msgstr ""
+
+#: lib/taxonomy-meta.php:109
+msgid "Repeat Background Image"
+msgstr ""
+
+#: lib/taxonomy-meta.php:114
+msgid "Background Image Size"
+msgstr ""
+
+#: lib/taxonomy-meta.php:125
+msgid "Background Parallax"
+msgstr ""
+
+#: lib/taxonomy-meta.php:132
+msgid "Overrides default - Just enter number e.g. 450"
+msgstr ""
+
+#: lib/taxonomy-meta.php:136
+msgid "Small Device Height"
+msgstr ""
+
+#: lib/taxonomy-meta.php:138
+msgid "Overrides default - Just enter number e.g. 250"
+msgstr ""
+
+#: lib/taxonomy-meta.php:142
+msgid "Overide and use a Shortcode Slider"
+msgstr ""
+
+#: lib/taxonomy-meta.php:148
+msgid "Display Page Title"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:10
+msgid "About Author"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:29 lib/template_hooks/authorbox.php:31
+#: lib/template_hooks/authorbox.php:33 lib/template_hooks/authorbox.php:35
+#: lib/template_hooks/authorbox.php:38 lib/template_hooks/authorbox.php:42
+#: lib/template_hooks/authorbox.php:46 lib/template_hooks/authorbox.php:50
+#: lib/template_hooks/authorbox.php:54 lib/template_hooks/authorbox.php:58
+#: templates/content-loop-staff-meta.php:25
+#: templates/content-loop-staff-meta.php:30
+#: templates/content-loop-staff-meta.php:35
+#: templates/content-loop-staff-meta.php:40
+msgid "Follow"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:29 templates/content-loop-staff-meta.php:25
+msgid "on Facebook"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:31 templates/content-loop-staff-meta.php:30
+msgid "on Twitter"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:33
+msgid "on Google Plus"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:35
+msgid "on YouTube"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:38
+msgid "on Flickr"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:42
+msgid "on Vimeo"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:46
+msgid "on linkedin"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:50
+msgid "on Dribbble"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:54
+msgid "on Pinterest"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:58 templates/content-loop-staff-meta.php:35
+msgid "on Instagram"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:69
+msgid "Latest posts from"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:106
+msgid "Extra profile information for author box"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:117
+msgid "Please enter your Occupation."
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:126
+msgid "Please enter your Twitter username."
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:134
+msgid "Please enter your Facebook url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:143
+msgid "Please enter your Google Plus url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:152
+msgid "Please enter your YouTube url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:161
+msgid "Please enter your Flickr url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:170
+msgid "Please enter your Vimeo url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:179
+msgid "Please enter your Linkedin url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:188
+msgid "Please enter your Dribbble url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:197
+msgid "Please enter your Pinterest url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/authorbox.php:206
+msgid "Please enter your Instagram url. (be sure to include http://)"
+msgstr ""
+
+#: lib/template_hooks/breadcrumbs.php:77
+msgid "Home"
+msgstr ""
+
+#: lib/template_hooks/breadcrumbs.php:118
+msgid "Search results for"
+msgstr ""
+
+#: lib/template_hooks/breadcrumbs.php:280
+msgid "Error 404"
+msgstr ""
+
+#: lib/template_hooks/breadcrumbs.php:284 themeoptions/options.php:3093
+msgid "Page"
+msgstr ""
+
+#: lib/template_hooks/hooks_footer.php:31
+#: lib/template_hooks/hooks_footer.php:135
+msgid "Don't have an account?"
+msgstr ""
+
+#: lib/template_hooks/hooks_header.php:193
+#: lib/template_hooks/hooks_topbar_header.php:110
+msgid "Login/Signup"
+msgstr ""
+
+#: lib/template_hooks/hooks_header.php:195
+#: lib/template_hooks/hooks_topbar_header.php:112
+msgid "Login"
+msgstr ""
+
+#: lib/template_hooks/hooks_header.php:217
+#: lib/template_hooks/hooks_topbar_header.php:70
+msgid "Cart"
+msgstr ""
+
+#: lib/template_hooks/hooks_page.php:99
+msgid "Filter"
+msgstr ""
+
+#: lib/template_hooks/portfolio.php:42
+msgid "Previous Project"
+msgstr ""
+
+#: lib/template_hooks/portfolio.php:63
+msgid "Next Project"
+msgstr ""
+
+#: lib/template_hooks/posts.php:125
+msgid "Tags:"
+msgstr ""
+
+#: lib/template_hooks/staff_hooks.php:29
+msgid "Previous staff"
+msgstr ""
+
+#: lib/template_hooks/staff_hooks.php:35
+msgid "Next staff"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:10
+msgid "Adds a gallery to any widget area."
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:11
+msgid "Ascend: Gallery"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:70
+msgid "Carousel equal ratio images"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:70
+msgid "Carousel different ratio images"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/premium_widgets.php:251
+#: lib/widgets/standard_widgets.php:739
+msgid "1 Column"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/premium_widgets.php:251
+#: lib/widgets/standard_widgets.php:739
+msgid "2 Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/premium_widgets.php:251
+#: lib/widgets/standard_widgets.php:739
+msgid "3 Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/premium_widgets.php:251
+#: lib/widgets/standard_widgets.php:739
+msgid "4 Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/premium_widgets.php:251
+#: lib/widgets/standard_widgets.php:739
+msgid "5 Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:71 lib/widgets/standard_widgets.php:739
+msgid "6 Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:72
+msgid "Off"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:72
+msgid "On"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:74 themeoptions/options.php:3789
+msgid "Full"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:74
+msgid "Medium"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:74
+msgid "Thumbnail"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:114 lib/widgets/premium_widgets.php:311
+#: lib/widgets/premium_widgets.php:470 lib/widgets/premium_widgets.php:717
+#: lib/widgets/premium_widgets.php:899 lib/widgets/premium_widgets.php:1041
+#: lib/widgets/premium_widgets.php:1206 lib/widgets/standard_widgets.php:97
+#: lib/widgets/standard_widgets.php:328 lib/widgets/standard_widgets.php:594
+#: lib/widgets/standard_widgets.php:775 lib/widgets/standard_widgets.php:960
+msgid "Title:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:118
+msgid "Gallery Type"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:122
+msgid "Gallery Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:126
+msgid "Display Captions"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:130
+msgid "Lightbox Image Size"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:133
+msgid "If Type Slider"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:135
+msgid "Slider Width (e.g. = 600)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:139
+msgid "Slider Height (e.g. = 400)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:143
+msgid "Slider Speed (e.g. = 7000)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:147
+msgid "Thumbnail Slider?"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:164
+msgid "Adds a carousel to any widget area"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:165
+msgid "Ascend: Carousel"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:241
+msgid "Blog Posts photo output"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:242 themeoptions/options.php:1077
+#: themeoptions/options.php:4781
+msgid "Portfolio Posts"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:243 themeoptions/options.php:4788
+msgid "Staff Posts"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:245
+msgid "Sale Products"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:246
+msgid "Best Products"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:247
+msgid "Category of Products"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:252
+msgid "1 item"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:252 themeoptions/options.php:1924
+#: themeoptions/options.php:2148 themeoptions/options.php:2217
+#: themeoptions/options.php:3168
+msgid "All Visible"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:315
+msgid "Carousel Type"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:319 lib/widgets/standard_widgets.php:791
+msgid "Carousel Columns"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:323
+msgid "Scroll Setting"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:327
+msgid "Items (e.g. = 8)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:335
+msgid "Blog Post Category"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:339
+msgid "Portfolio Category"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:343
+msgid "Product Category"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:347 lib/widgets/standard_widgets.php:794
+msgid "Carousel Speed (e.g. = 7000)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:351 themeoptions/options.php:1336
+#: themeoptions/options.php:1678 themeoptions/options.php:2749
+msgid "Auto Play?"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:361
+msgid "Adds a info box with icon options"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:362
+msgid "Ascend: Info Box"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:438 lib/widgets/premium_widgets.php:700
+#: lib/widgets/premium_widgets.php:861 lib/widgets/premium_widgets.php:998
+#: lib/widgets/premium_widgets.php:1166
+msgid "Self"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:438 lib/widgets/premium_widgets.php:700
+#: lib/widgets/premium_widgets.php:861 lib/widgets/premium_widgets.php:998
+#: lib/widgets/premium_widgets.php:1166 lib/widgets/standard_widgets.php:1074
+msgid "New Window"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:464
+msgid "Or upload a custom icon"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:467 lib/widgets/premium_widgets.php:888
+#: lib/widgets/premium_widgets.php:1023 lib/widgets/premium_widgets.php:1203
+#: lib/widgets/standard_widgets.php:1095
+msgid "Upload"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:478
+msgid "Box Background Color (e.g. = #f2f2f2)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:482
+msgid "Text Color (e.g. = #444444)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:486
+msgid "Icon Size (e.g. = 48)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:494
+msgid "Icon Background Color (e.g. = #444444)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:498
+msgid "Icon Color (e.g. = #f2f2f2)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:502 lib/widgets/premium_widgets.php:907
+msgid "Link:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:506 lib/widgets/premium_widgets.php:765
+#: lib/widgets/premium_widgets.php:911
+msgid "Link Target"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:518
+msgid "Adds a google map to a widget area"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:519
+msgid "Ascend: Google Map"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:585
+msgid "Map Height (e.g. = 300)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:589
+msgid "OPTIONAL: Map overlay title"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:593
+msgid "OPTIONAL: Map overlay description"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:604
+msgid "Adds a simple call to action"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:605
+msgid "Ascend: Call to Action"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:698
+msgid "h1"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:698
+msgid "h2"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:698
+msgid "h3"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:721
+msgid "Title Size (e.g. = 48)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:725
+msgid "Title Line height (e.g. = 48)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:729
+msgid "Title Color (e.g. = #f2f2f2)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:733
+msgid "Title html Tag (e.g. = h1)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:741
+msgid "Subtitle Size (e.g. = 48)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:745
+msgid "Subtitle Line Height (e.g. = 48)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:749
+msgid "Subtitle Color (e.g. = #f2f2f2)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:757
+msgid "Button Text:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:761
+msgid "Button Link:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:769
+msgid "Button Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:773
+msgid "Button Background"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:777
+msgid "Button Border Size (e.g. = 2px)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:781
+msgid "Button Border Radius (e.g. = 6px)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:789
+msgid "Button Hover Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:793
+msgid "Button Hover Background"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:797
+msgid "Button Hover Border Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:808
+msgid "Adds an image background with text, link and hover effect."
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:809
+msgid "Ascend: Image Menu Item"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:857 lib/widgets/standard_widgets.php:320
+msgid "Top"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:857 lib/widgets/standard_widgets.php:320
+msgid "Bottom"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:860
+msgid "Height setting Above"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:860 themeoptions/options.php:1984
+msgid "Image Size"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:885 lib/widgets/premium_widgets.php:1020
+msgid "Upload an image"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:891
+msgid "Item Height (e.g. = 220)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:895
+msgid "Height set by:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:915
+msgid "Text Align"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:919
+msgid "Vertically Text Align"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:930
+msgid "Adds an column with an image beside a content field."
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:931
+msgid "Ascend: Split Content"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1015
+msgid "Image content"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1025
+msgid "Force image to cover whole area"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1028 lib/widgets/standard_widgets.php:1114
+msgid "Image Link (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1032
+msgid "Image Background Color (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1036
+msgid "Image align:"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1039
+msgid "Text content"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1048
+msgid "Automatically add paragraphs"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1050
+msgid "Button Text (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1054
+msgid "Button Link (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1058
+msgid "Link link_Target (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1062
+msgid "Text Content Background Color (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1073
+msgid "Adds an box that flips to show more content."
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1074
+msgid "Ascend: Icon Flip Box"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1184
+msgid "Front Side"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1201
+msgid "Optional Image instead of icon"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1210
+msgid "Title Size"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1222
+msgid "Description Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1227
+msgid "Front Side Background"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1230
+msgid "Back Side"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1232
+msgid "Back Side Description"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1236
+msgid "Back Side Description Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1244
+msgid "Button Link"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1248
+msgid "Button Text Color"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1256
+msgid "Button Border (example: 2px solid #ffffff)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1260
+msgid "Button Border Radius (example: 6)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1264
+msgid "Button Icon (optional)"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1268
+msgid "Button Link Target"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1272
+msgid "Back Side Background"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1277
+msgid "Box Height"
+msgstr ""
+
+#: lib/widgets/premium_widgets.php:1279
+msgid "Height (example: 280)"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:21
+msgid "Use this widget to add a Vcard to your site"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:22
+msgid "Ascend: Contact/Vcard"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:101
+msgid "Company Name:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:109
+msgid "Street Address:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:113
+msgid "City/Locality:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:117
+msgid "State/Region:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:121
+msgid "Zipcode/Postal Code:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:125
+msgid "Mobile Telephone:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:129
+msgid "Fixed Telephone:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:145
+msgid "Simple way to add Social Icons"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:146
+msgid "Ascend: Social Links"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:314
+msgid "Enable"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:314
+msgid "Disable"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:332
+msgid "Facebook:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:336
+msgid "Twitter:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:340
+msgid "Instagram:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:344
+msgid "GooglePlus:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:348
+msgid "Flickr:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:352
+msgid "Vimeo:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:356
+msgid "Youtube:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:360
+msgid "Pinterest:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:364
+msgid "Dribbble:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:368
+msgid "Linkedin:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:372
+msgid "Tumblr:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:376
+msgid "Stumbleupon:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:380
+msgid "VK:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:384
+msgid "Viadeo:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:388
+msgid "xing:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:392
+msgid "Yelp:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:396
+msgid "Soundcloud:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:400
+msgid "Snapchat:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:404
+msgid "Periscope:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:408
+msgid "Behance:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:412
+msgid "RSS:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:416
+msgid "Show Tooltip"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:420
+msgid "Tooltip Direction"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:435
+msgid "This shows the most recent posts on your site with a thumbnail"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:436
+msgid "Ascend: Recent Posts"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:598 lib/widgets/standard_widgets.php:779
+msgid "Number of posts to show:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:602 lib/widgets/standard_widgets.php:783
+#: lib/widgets/standard_widgets.php:978
+msgid "Orderby:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:606
+msgid "Limit to Catagory (Optional):"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:610
+msgid "Feature first item:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:614
+msgid "View more link at end of post list?:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:618
+msgid "View more link text:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:634
+msgid "This shows a slider with your testimonials"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:635
+msgid "Ascend: Testimonial Carousel"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:787
+msgid "Limit to Group (Optional):"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:798
+msgid "Autoplay:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:802
+msgid "Content:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:806
+msgid "If full content link to post?"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:821
+msgid ""
+"This shows a grid of featured images from recent posts or portfolio items"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:822
+msgid "Ascend: Post Grid"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:963
+msgid "Grid Choice:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:969
+msgid "If Post - Choose Category (Optional):"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:972
+msgid "If Portfolio - Choose Type (Optional):"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:975
+msgid "Number of images to show:"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:990
+msgid "This allows for an image and a simple about text."
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:991
+msgid "Ascend: Image"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1073
+msgid "Lightbox"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1075
+msgid "Same Window"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1076
+msgid "No Link"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1092
+msgid "Image URL"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1098
+msgid "Image size"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1102
+msgid "Custom Width"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1106
+msgid "Custom Height"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1110
+msgid "Image opens in"
+msgstr ""
+
+#: lib/widgets/standard_widgets.php:1118
+msgid "Text/Caption (optional)"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:8
+msgid "Primary Sidebar"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:45
+msgid "Header Extras Widget Area"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:53
+msgid "Topbar Widget Area"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:62 themeoptions/options.php:1764
+msgid "Home Widget Area"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:72
+msgid "Above Footer Widget Area"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:82
+msgid "Footer Column 1"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:90
+msgid "Footer Column 2"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:104
+msgid "Footer Column 3"
+msgstr ""
+
+#: lib/widgets/widget_setup.php:114
+msgid "Footer Column 4"
+msgstr ""
+
+#: lib/woocommerce/woo-account.php:55
+msgid "Update Profile Photo"
+msgstr ""
+
+#: lib/woocommerce/woo-archive-hooks.php:85
+#: lib/woocommerce/woo-archive-hooks.php:97
+msgid "List View"
+msgstr ""
+
+#: lib/woocommerce/woo-archive-hooks.php:88
+#: lib/woocommerce/woo-archive-hooks.php:94
+msgid "Grid View"
+msgstr ""
+
+#: lib/woocommerce/woo-cart.php:22
+msgid "Cart Summary"
+msgstr ""
+
+#: lib/woocommerce/woo-single-product-hooks.php:30
+msgid "Previous Product"
+msgstr ""
+
+#: lib/woocommerce/woo-single-product-hooks.php:36
+msgid "Next Product"
+msgstr ""
+
+#: lib/woocommerce/woo-single-product-hooks.php:192
+#: lib/woocommerce/woo-single-product-hooks.php:222
+#: lib/woocommerce/woo-single-product-hooks.php:253
+msgid "Custom Tab"
+msgstr ""
+
+#: lib/woocommerce/woo-single-product-hooks.php:352
+msgid "Choose an option"
+msgstr ""
+
+#: searchform.php:9
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search for:"
+msgstr ""
+
+#: templates/bottom-post-carousel.php:18
+msgid "Similar Posts"
+msgstr ""
+
+#: templates/bottom-post-carousel.php:33
+msgid "Recent Posts"
+msgstr ""
+
+#: templates/comment.php:5
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: templates/comment.php:7
+msgid "(Edit)"
+msgstr ""
+
+#: templates/comment.php:11
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: templates/comments.php:13
+#, php-format
+msgid "One Response "
+msgid_plural "%1$s Responses "
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/comments.php:34
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-loop-staff-meta.php:20
+msgid "Call"
+msgstr ""
+
+#: templates/content-loop-staff-meta.php:40
+msgid "on Linkedin"
+msgstr ""
+
+#: templates/content-post-full-quote.php:55 templates/content-post-full.php:67
+msgid "Leave a Reply"
+msgstr ""
+
+#: templates/content-post-full-quote.php:56 templates/content-post-full.php:68
+msgid "1 Comment"
+msgstr ""
+
+#: templates/content-post-full-quote.php:57 templates/content-post-full.php:69
+msgid "% Comments"
+msgstr ""
+
+#: templates/content-post-full-quote.php:59 templates/content-post-full.php:71
+msgid "Comments are Closed"
+msgstr ""
+
+#: templates/content-single-portfolio-bottom-carousel.php:76
+msgid "Similar Projects"
+msgstr ""
+
+#: templates/content-single-portfolio-bottom-carousel.php:88
+msgid "Recent Projects"
+msgstr ""
+
+#: templates/content-single-testimonial.php:61
+msgid "Previous Testimonial"
+msgstr ""
+
+#: templates/content-single-testimonial.php:67
+msgid "Next Testimonial"
+msgstr ""
+
+#: templates/entry-meta-date-author.php:10
+msgid "by"
+msgstr ""
+
+#: templates/entry-post-links.php:13
+msgid "Previous Post"
+msgstr ""
+
+#: templates/entry-post-links.php:16
+msgid "Next Post"
+msgstr ""
+
+#: templates/home/product-carousel.php:11 themeoptions/options.php:1865
+msgid "Featured"
+msgstr ""
+
+#: templates/home/product-carousel.php:16 themeoptions/options.php:1866
+msgid "Best Selling"
+msgstr ""
+
+#: templates/home/product-carousel.php:21 themeoptions/options.php:1867
+msgid "On Sale"
+msgstr ""
+
+#: templates/home/product-carousel.php:26 themeoptions/options.php:1868
+msgid "Latest"
+msgstr ""
+
+#: themeoptions/options.php:54 themeoptions/options.php:55
+msgid "Theme Options"
+msgstr ""
+
+#: themeoptions/options.php:76
+msgid ""
+"Thank you for using the Ascend Theme by <a href=\"https://kadencethemes.com/"
+"\" target=\"_blank\">Kadence Themes</a>."
+msgstr ""
+
+#: themeoptions/options.php:128 themeoptions/options.php:131
+msgid "Layout Settings"
+msgstr ""
+
+#: themeoptions/options.php:138
+msgid "Site Layout Header Style"
+msgstr ""
+
+#: themeoptions/options.php:139
+msgid "Select left, above our right header style"
+msgstr ""
+
+#: themeoptions/options.php:151
+msgid "Site Layout Style"
+msgstr ""
+
+#: themeoptions/options.php:152
+msgid "Select Normal, Boxed or Bubbled Layout Style"
+msgstr ""
+
+#: themeoptions/options.php:164
+msgid "Site Layout Max-Width"
+msgstr ""
+
+#: themeoptions/options.php:165
+msgid ""
+"NOTE: Grids where you choose columns are designed for 1140px width. If you "
+"make the width larger the columns may increase beyond what your settings say "
+"to fill that much space."
+msgstr ""
+
+#: themeoptions/options.php:167
+msgid "940px"
+msgstr ""
+
+#: themeoptions/options.php:168
+msgid "1140px"
+msgstr ""
+
+#: themeoptions/options.php:169
+msgid "1440px"
+msgstr ""
+
+#: themeoptions/options.php:170
+msgid "1740px"
+msgstr ""
+
+#: themeoptions/options.php:171
+msgid "none"
+msgstr ""
+
+#: themeoptions/options.php:179
+msgid "Sidebar Side of page."
+msgstr ""
+
+#: themeoptions/options.php:181 themeoptions/options.php:595
+#: themeoptions/options.php:626 themeoptions/options.php:638
+#: themeoptions/options.php:650 themeoptions/options.php:702
+#: themeoptions/options.php:715 themeoptions/options.php:736
+#: themeoptions/options.php:758 themeoptions/options.php:806
+msgid "Right Side"
+msgstr ""
+
+#: themeoptions/options.php:182 themeoptions/options.php:596
+#: themeoptions/options.php:627 themeoptions/options.php:639
+#: themeoptions/options.php:651 themeoptions/options.php:703
+#: themeoptions/options.php:716 themeoptions/options.php:737
+#: themeoptions/options.php:759 themeoptions/options.php:807
+msgid "Left Side"
+msgstr ""
+
+#: themeoptions/options.php:189 themeoptions/options.php:193
+msgid "Header Settings"
+msgstr ""
+
+#: themeoptions/options.php:199
+msgid "Choose Side Header Style"
+msgstr ""
+
+#: themeoptions/options.php:208
+msgid "Choose Side Header Width"
+msgstr ""
+
+#: themeoptions/options.php:218
+msgid "Make Secondary Menu Sticky?"
+msgstr ""
+
+#: themeoptions/options.php:219
+msgid "To make the secondary menu sticky."
+msgstr ""
+
+#: themeoptions/options.php:226
+msgid "Choose Header Style"
+msgstr ""
+
+#: themeoptions/options.php:242
+msgid "*Note this header style is set with two menus."
+msgstr ""
+
+#: themeoptions/options.php:251
+msgid ""
+"*Note the header extras are split first half on the left and second half on "
+"the right."
+msgstr ""
+
+#: themeoptions/options.php:260
+msgid "Logo Area % Width"
+msgstr ""
+
+#: themeoptions/options.php:273
+msgid "Header Height"
+msgstr ""
+
+#: themeoptions/options.php:283
+msgid "Enable Sticky Parts of Header?"
+msgstr ""
+
+#: themeoptions/options.php:292
+msgid "Enable shrinking header when sticky?"
+msgstr ""
+
+#: themeoptions/options.php:293
+msgid "Choose to enable shrinking header when sticky."
+msgstr ""
+
+#: themeoptions/options.php:303
+msgid "Header Shrunk Height"
+msgstr ""
+
+#: themeoptions/options.php:317
+msgid "Header Extras"
+msgstr ""
+
+#: themeoptions/options.php:323
+msgid "Enable and Sort Header Extras"
+msgstr ""
+
+#: themeoptions/options.php:324 themeoptions/options.php:1862
+msgid "Check box to enable and sort for output order (Top First)."
+msgstr ""
+
+#: themeoptions/options.php:327
+msgid "Search"
+msgstr ""
+
+#: themeoptions/options.php:328
+msgid "Login/Register & mv-account"
+msgstr ""
+
+#: themeoptions/options.php:329
+msgid "Mini Cart"
+msgstr ""
+
+#: themeoptions/options.php:330
+msgid "Widget area - customize in apperance > widgets"
+msgstr ""
+
+#: themeoptions/options.php:342 themeoptions/options.php:746
+msgid "Show \"Cart\" Text with mini cart icon?"
+msgstr ""
+
+#: themeoptions/options.php:343 themeoptions/options.php:747
+msgid "Disabling this will just show the icon."
+msgstr ""
+
+#: themeoptions/options.php:350 themeoptions/options.php:354
+msgid "Logo Settings"
+msgstr ""
+
+#: themeoptions/options.php:360
+msgid "Logo"
+msgstr ""
+
+#: themeoptions/options.php:362
+msgid ""
+"Upload your Logo. Use an image at least twice the size of your logo width "
+"setting below."
+msgstr ""
+
+#: themeoptions/options.php:368
+msgid "Logo width"
+msgstr ""
+
+#: themeoptions/options.php:369
+msgid ""
+"While this effect the width the height is determined by your uploaded logo "
+"ratio. Logo will not overflow header size."
+msgstr ""
+
+#: themeoptions/options.php:378
+msgid "Show site title?"
+msgstr ""
+
+#: themeoptions/options.php:379
+msgid "Choose if you want your site title to appear in \"logo\" area."
+msgstr ""
+
+#: themeoptions/options.php:385
+msgid "Site Title Font"
+msgstr ""
+
+#: themeoptions/options.php:398
+msgid "Choose size and style your site title"
+msgstr ""
+
+#: themeoptions/options.php:411 themeoptions/options.php:550
+msgid "Show site Tagline?"
+msgstr ""
+
+#: themeoptions/options.php:412 themeoptions/options.php:551
+msgid "Choose if you want your site Tagline to appear in \"logo\" area."
+msgstr ""
+
+#: themeoptions/options.php:418 themeoptions/options.php:558
+msgid "Site Tagline Font"
+msgstr ""
+
+#: themeoptions/options.php:431 themeoptions/options.php:571
+msgid "Choose size and style your site tagline"
+msgstr ""
+
+#: themeoptions/options.php:450
+msgid "Mobile Header"
+msgstr ""
+
+#: themeoptions/options.php:451
+msgid "Mobile Header Settings"
+msgstr ""
+
+#: themeoptions/options.php:456
+msgid "Mobile Header Layout"
+msgstr ""
+
+#: themeoptions/options.php:457
+msgid "Select left or center mobile header style."
+msgstr ""
+
+#: themeoptions/options.php:467
+msgid "Mobile header height"
+msgstr ""
+
+#: themeoptions/options.php:476
+msgid "Make the mobile header sticky."
+msgstr ""
+
+#: themeoptions/options.php:477
+msgid "This will make the mobile header scroll with the page."
+msgstr ""
+
+#: themeoptions/options.php:483
+msgid "Mobile Logo Options"
+msgstr ""
+
+#: themeoptions/options.php:488
+msgid "Use custom mobile logo options?."
+msgstr ""
+
+#: themeoptions/options.php:495
+msgid "Mobile Logo"
+msgstr ""
+
+#: themeoptions/options.php:496
+msgid "Upload your Logo. This should be twice the pixel size needed."
+msgstr ""
+
+#: themeoptions/options.php:502
+msgid "Mobile Logo width"
+msgstr ""
+
+#: themeoptions/options.php:503
+msgid ""
+"While this effects the width the height is determined by your uploaded logo "
+"img ratio and logo will not overflow header size."
+msgstr ""
+
+#: themeoptions/options.php:513
+msgid "Show site title in mobile?"
+msgstr ""
+
+#: themeoptions/options.php:514
+msgid ""
+"Choose if you want your site title to appear in \"logo\" area of the mobile "
+"header."
+msgstr ""
+
+#: themeoptions/options.php:521
+msgid "Mobile Site Title Font Size"
+msgstr ""
+
+#: themeoptions/options.php:534
+msgid "Choose size of your site title on mobile"
+msgstr ""
+
+#: themeoptions/options.php:587 themeoptions/options.php:4259
+msgid "Mobile Menu Options"
+msgstr ""
+
+#: themeoptions/options.php:592
+msgid "Mobile Menu Display"
+msgstr ""
+
+#: themeoptions/options.php:593
+msgid "Select which side to display the mobile menu"
+msgstr ""
+
+#: themeoptions/options.php:604
+msgid "Show Search in mobile menu"
+msgstr ""
+
+#: themeoptions/options.php:605
+msgid "Show a search form in the mobile menu"
+msgstr ""
+
+#: themeoptions/options.php:611 themeoptions/options.php:725
+msgid "Search only Products?"
+msgstr ""
+
+#: themeoptions/options.php:612
+msgid "Make the mobile menu search only products"
+msgstr ""
+
+#: themeoptions/options.php:618
+msgid "Mobile Header Extras"
+msgstr ""
+
+#: themeoptions/options.php:623
+msgid "Mobile Cart Display"
+msgstr ""
+
+#: themeoptions/options.php:624
+msgid "Select to optional display a cart icon"
+msgstr ""
+
+#: themeoptions/options.php:635
+msgid "Mobile Account Display"
+msgstr ""
+
+#: themeoptions/options.php:636
+msgid "Select to optionally display an account icon"
+msgstr ""
+
+#: themeoptions/options.php:647
+msgid "Mobile Search Display"
+msgstr ""
+
+#: themeoptions/options.php:648
+msgid "Select to optionally display a search icon"
+msgstr ""
+
+#: themeoptions/options.php:663
+msgid "Topbar Settings"
+msgstr ""
+
+#: themeoptions/options.php:668
+msgid "The topbar is only for the header above content layout style."
+msgstr ""
+
+#: themeoptions/options.php:674
+msgid "Enable Topbar."
+msgstr ""
+
+#: themeoptions/options.php:675
+msgid "This controls whether on not the topbar is displayed."
+msgstr ""
+
+#: themeoptions/options.php:682
+msgid "Topbar height"
+msgstr ""
+
+#: themeoptions/options.php:692
+msgid "Topbar Layout Options"
+msgstr ""
+
+#: themeoptions/options.php:698
+msgid "Topbar Menu Location"
+msgstr ""
+
+#: themeoptions/options.php:699
+msgid "Select which side to display the topbar menu"
+msgstr ""
+
+#: themeoptions/options.php:700
+msgid "Note menu is set up in apperance > menus page"
+msgstr ""
+
+#: themeoptions/options.php:712
+msgid "Search Icon Display"
+msgstr ""
+
+#: themeoptions/options.php:713
+msgid "Select to optionally display a search icon in topbar"
+msgstr ""
+
+#: themeoptions/options.php:726
+msgid "Make the topbar search only products"
+msgstr ""
+
+#: themeoptions/options.php:733
+msgid "Cart Icon Display"
+msgstr ""
+
+#: themeoptions/options.php:734
+msgid "Select to optionally display a cart icon in topbar"
+msgstr ""
+
+#: themeoptions/options.php:755
+msgid "Account Icon Display"
+msgstr ""
+
+#: themeoptions/options.php:756
+msgid "Select to optionally display an account icon in topbar"
+msgstr ""
+
+#: themeoptions/options.php:803
+msgid "Topbar Widget area"
+msgstr ""
+
+#: themeoptions/options.php:804
+msgid "Select to optionally display a widget area in topbar"
+msgstr ""
+
+#: themeoptions/options.php:817
+msgid "Footer Settings"
+msgstr ""
+
+#: themeoptions/options.php:818
+msgid "Footer Layout"
+msgstr ""
+
+#: themeoptions/options.php:823
+msgid "Footer Widget Layout"
+msgstr ""
+
+#: themeoptions/options.php:824
+msgid "Select how many columns for footer widgets"
+msgstr ""
+
+#: themeoptions/options.php:837
+msgid "Enable an Extra Footer widget area above the footer."
+msgstr ""
+
+#: themeoptions/options.php:838
+msgid "This adds an extra footer widget area above the existing footer."
+msgstr ""
+
+#: themeoptions/options.php:844
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: themeoptions/options.php:845
+msgid ""
+"Write your own copyright text here. You can use the following shortcodes in "
+"your footer text: [copyright] [site-name] [the-year]"
+msgstr ""
+
+#: themeoptions/options.php:853
+msgid "Transparent Header Options"
+msgstr ""
+
+#: themeoptions/options.php:858
+msgid "Enable Transparent header until scrolled by default?"
+msgstr ""
+
+#: themeoptions/options.php:859
+msgid "This will make the page header background fill to the top of the page."
+msgstr ""
+
+#: themeoptions/options.php:865
+msgid "Menu Text Color (For Transparent Header)"
+msgstr ""
+
+#: themeoptions/options.php:866
+msgid "Choose the font color of the menu font while background is transparent."
+msgstr ""
+
+#: themeoptions/options.php:875
+msgid "Border Color (For Transparent Header)"
+msgstr ""
+
+#: themeoptions/options.php:876
+msgid "Choose the color of bottom border while background is transparent."
+msgstr ""
+
+#: themeoptions/options.php:884
+msgid "Site title font Color (For Transparent Header)"
+msgstr ""
+
+#: themeoptions/options.php:885
+msgid ""
+"Choose the font color for the site title while background is transparent."
+msgstr ""
+
+#: themeoptions/options.php:894
+msgid "Site tagline font Color (For Transparent Header)"
+msgstr ""
+
+#: themeoptions/options.php:895
+msgid ""
+"Choose the font color for the site tagline while background is transparent."
+msgstr ""
+
+#: themeoptions/options.php:905
+msgid "Optional Replacement Logo (For Transparent Header)"
+msgstr ""
+
+#: themeoptions/options.php:906
+msgid "Upload your Logo."
+msgstr ""
+
+#: themeoptions/options.php:912
+msgid "Default Title Options"
+msgstr ""
+
+#: themeoptions/options.php:921
+msgid "Header Title Default Background"
+msgstr ""
+
+#: themeoptions/options.php:926
+msgid "Header Title Default Color"
+msgstr ""
+
+#: themeoptions/options.php:935 themeoptions/options.php:962
+msgid "Header Title Font Size"
+msgstr ""
+
+#: themeoptions/options.php:944 themeoptions/options.php:971
+msgid "Smaller Device Title font size"
+msgstr ""
+
+#: themeoptions/options.php:953
+msgid "Header Title Default Subtitle Color"
+msgstr ""
+
+#: themeoptions/options.php:981
+msgid "Header Title Default Align"
+msgstr ""
+
+#: themeoptions/options.php:989
+msgid "Header Title Default Height"
+msgstr ""
+
+#: themeoptions/options.php:998 themeoptions/options.php:1297
+#: themeoptions/options.php:1637
+msgid "Smaller Device Title Height"
+msgstr ""
+
+#: themeoptions/options.php:1008
+msgid "Home Page Header"
+msgstr ""
+
+#: themeoptions/options.php:1009
+msgid "Home Page Header Content"
+msgstr ""
+
+#: themeoptions/options.php:1014 themeoptions/options.php:1401
+#: themeoptions/options.php:2610
+msgid "Choose home page header settings"
+msgstr ""
+
+#: themeoptions/options.php:1015 themeoptions/options.php:1402
+#: themeoptions/options.php:2611
+msgid "Page Title"
+msgstr ""
+
+#: themeoptions/options.php:1015 themeoptions/options.php:1402
+#: themeoptions/options.php:2611
+msgid "Basic Slider"
+msgstr ""
+
+#: themeoptions/options.php:1015 themeoptions/options.php:1402
+#: themeoptions/options.php:2611
+msgid "Kadence Slider Pro"
+msgstr ""
+
+#: themeoptions/options.php:1015 themeoptions/options.php:1329
+#: themeoptions/options.php:1402 themeoptions/options.php:1668
+#: themeoptions/options.php:2611 themeoptions/options.php:2742
+msgid "Shortcode Entry"
+msgstr ""
+
+#: themeoptions/options.php:1015
+msgid "Post Carousel"
+msgstr ""
+
+#: themeoptions/options.php:1022 themeoptions/options.php:1410
+msgid "Enable Typed Text instead of standard"
+msgstr ""
+
+#: themeoptions/options.php:1029 themeoptions/options.php:1417
+msgid "Home Page Title Typed Text"
+msgstr ""
+
+#: themeoptions/options.php:1039 themeoptions/options.php:1428
+msgid "Enable Typed Loop"
+msgstr ""
+
+#: themeoptions/options.php:1049 themeoptions/options.php:1439
+msgid "Home Page Title"
+msgstr ""
+
+#: themeoptions/options.php:1059 themeoptions/options.php:1450
+msgid "Home Page SubTitle"
+msgstr ""
+
+#: themeoptions/options.php:1060 themeoptions/options.php:1451
+msgid "optional text below home page title"
+msgstr ""
+
+#: themeoptions/options.php:1067 themeoptions/options.php:1461
+#: themeoptions/options.php:2624
+msgid "Basic Slider Type"
+msgstr ""
+
+#: themeoptions/options.php:1068 themeoptions/options.php:1462
+#: themeoptions/options.php:2625
+msgid "Equal Ratio Images"
+msgstr ""
+
+#: themeoptions/options.php:1068 themeoptions/options.php:1462
+#: themeoptions/options.php:2625
+msgid "Different Ratio Images"
+msgstr ""
+
+#: themeoptions/options.php:1068 themeoptions/options.php:1462
+#: themeoptions/options.php:2625
+msgid "Forced Fullwidth Images"
+msgstr ""
+
+#: themeoptions/options.php:1068 themeoptions/options.php:1462
+#: themeoptions/options.php:2625
+msgid "Thumbnails"
+msgstr ""
+
+#: themeoptions/options.php:1068 themeoptions/options.php:1462
+#: themeoptions/options.php:2625
+msgid "Images in Carousel"
+msgstr ""
+
+#: themeoptions/options.php:1076
+msgid "Post Carousel Type"
+msgstr ""
+
+#: themeoptions/options.php:1077
+msgid "Products"
+msgstr ""
+
+#: themeoptions/options.php:1087
+msgid "Blog Post Carousel Category Type"
+msgstr ""
+
+#: themeoptions/options.php:1088 themeoptions/options.php:1101
+#: themeoptions/options.php:1114 themeoptions/options.php:2113
+msgid "Leave blank to select all types"
+msgstr ""
+
+#: themeoptions/options.php:1100 themeoptions/options.php:2112
+msgid "Portfolio Carousel Category Type"
+msgstr ""
+
+#: themeoptions/options.php:1113
+msgid "Product Carousel Category Type"
+msgstr ""
+
+#: themeoptions/options.php:1124
+msgid "Post Carousel Order by:"
+msgstr ""
+
+#: themeoptions/options.php:1133
+msgid "Post Carousel Order"
+msgstr ""
+
+#: themeoptions/options.php:1134
+msgid "Descending"
+msgstr ""
+
+#: themeoptions/options.php:1134
+msgid "Ascending"
+msgstr ""
+
+#: themeoptions/options.php:1142
+msgid "Carousel Max Height"
+msgstr ""
+
+#: themeoptions/options.php:1143 themeoptions/options.php:1161
+#: themeoptions/options.php:1172 themeoptions/options.php:1484
+#: themeoptions/options.php:1498 themeoptions/options.php:2641
+#: themeoptions/options.php:2652
+msgid "Note: does not work if images are smaller than max."
+msgstr ""
+
+#: themeoptions/options.php:1153 themeoptions/options.php:1473
+#: themeoptions/options.php:2633
+msgid "Basic Slider Images"
+msgstr ""
+
+#: themeoptions/options.php:1154 themeoptions/options.php:1474
+#: themeoptions/options.php:2634
+msgid "Use large images for best results."
+msgstr ""
+
+#: themeoptions/options.php:1160 themeoptions/options.php:1483
+#: themeoptions/options.php:2640
+msgid "Slider Max Height"
+msgstr ""
+
+#: themeoptions/options.php:1171 themeoptions/options.php:1497
+#: themeoptions/options.php:2651
+msgid "Slider Max Width"
+msgstr ""
+
+#: themeoptions/options.php:1187 themeoptions/options.php:1514
+#: themeoptions/options.php:2667
+msgid "Show Captions?"
+msgstr ""
+
+#: themeoptions/options.php:1188 themeoptions/options.php:1515
+#: themeoptions/options.php:2668
+msgid "Choose to show or hide captions"
+msgstr ""
+
+#: themeoptions/options.php:1196 themeoptions/options.php:1526
+#: themeoptions/options.php:2676
+msgid "Choose the title color"
+msgstr ""
+
+#: themeoptions/options.php:1208 themeoptions/options.php:1539
+msgid "Home Page Title Font size"
+msgstr ""
+
+#: themeoptions/options.php:1210 themeoptions/options.php:1222
+#: themeoptions/options.php:1249 themeoptions/options.php:1261
+#: themeoptions/options.php:1541 themeoptions/options.php:1554
+#: themeoptions/options.php:1583 themeoptions/options.php:1596
+#: themeoptions/options.php:2685 themeoptions/options.php:2692
+#: themeoptions/options.php:2709 themeoptions/options.php:2716
+msgid "*Number Only"
+msgstr ""
+
+#: themeoptions/options.php:1234 themeoptions/options.php:1567
+#: themeoptions/options.php:2699
+msgid "Subtitle Color"
+msgstr ""
+
+#: themeoptions/options.php:1235 themeoptions/options.php:1568
+#: themeoptions/options.php:2700
+msgid "Choose the subtitle color."
+msgstr ""
+
+#: themeoptions/options.php:1247 themeoptions/options.php:1581
+msgid "Home Page Subtitle Font size"
+msgstr ""
+
+#: themeoptions/options.php:1273 themeoptions/options.php:1609
+#: themeoptions/options.php:2723
+msgid "Text align"
+msgstr ""
+
+#: themeoptions/options.php:1287 themeoptions/options.php:1624
+msgid "Home Page Title Height"
+msgstr ""
+
+#: themeoptions/options.php:1312
+msgid "Enable background parallax"
+msgstr ""
+
+#: themeoptions/options.php:1319 themeoptions/options.php:1658
+#: themeoptions/options.php:2732
+msgid "If Kadence Slider Pro"
+msgstr ""
+
+#: themeoptions/options.php:1320 themeoptions/options.php:1659
+#: themeoptions/options.php:2733
+msgid "Choose your Kadence Slider Pro Here"
+msgstr ""
+
+#: themeoptions/options.php:1330 themeoptions/options.php:1669
+#: themeoptions/options.php:2743
+msgid "Paste shortcode here"
+msgstr ""
+
+#: themeoptions/options.php:1337 themeoptions/options.php:1679
+#: themeoptions/options.php:2750
+msgid "This determines if a slider automatically scrolls"
+msgstr ""
+
+#: themeoptions/options.php:1344 themeoptions/options.php:1689
+#: themeoptions/options.php:2757
+msgid "Slider Pause Time"
+msgstr ""
+
+#: themeoptions/options.php:1345 themeoptions/options.php:1690
+#: themeoptions/options.php:2758
+msgid "How long to pause on each slide, in milliseconds."
+msgstr ""
+
+#: themeoptions/options.php:1355 themeoptions/options.php:1703
+#: themeoptions/options.php:2768
+msgid "Transition Type"
+msgstr ""
+
+#: themeoptions/options.php:1356 themeoptions/options.php:1704
+#: themeoptions/options.php:2769
+msgid "Choose a transition type"
+msgstr ""
+
+#: themeoptions/options.php:1357 themeoptions/options.php:1705
+#: themeoptions/options.php:2770
+msgid "Fade"
+msgstr ""
+
+#: themeoptions/options.php:1357 themeoptions/options.php:1705
+#: themeoptions/options.php:2770
+msgid "Slide"
+msgstr ""
+
+#: themeoptions/options.php:1367 themeoptions/options.php:1716
+#: themeoptions/options.php:2780
+msgid "Slider Transition Time"
+msgstr ""
+
+#: themeoptions/options.php:1368 themeoptions/options.php:1717
+#: themeoptions/options.php:2781
+msgid "How long for slide transitions, in milliseconds."
+msgstr ""
+
+#: themeoptions/options.php:1380
+msgid "Mobile Home Header"
+msgstr ""
+
+#: themeoptions/options.php:1381
+msgid "Create a simpler home page header for your mobile visitors."
+msgstr ""
+
+#: themeoptions/options.php:1386
+msgid "Would you like to use this feature?"
+msgstr ""
+
+#: themeoptions/options.php:1387
+msgid ""
+"Choose if you would like to show a different home page header content for "
+"your mobile visitors."
+msgstr ""
+
+#: themeoptions/options.php:1393
+msgid "Show for tablet also?"
+msgstr ""
+
+#: themeoptions/options.php:1394
+msgid ""
+"Choose if you would like to show the mobile home page header for tablets "
+"also."
+msgstr ""
+
+#: themeoptions/options.php:1731
+msgid "Home Page Layout"
+msgstr ""
+
+#: themeoptions/options.php:1736
+msgid "Display a sidebar on the Home Page?"
+msgstr ""
+
+#: themeoptions/options.php:1737
+msgid "This determines if there is a sidebar on the home page."
+msgstr ""
+
+#: themeoptions/options.php:1743
+msgid "Choose a Sidebar for your Home Page"
+msgstr ""
+
+#: themeoptions/options.php:1752
+msgid "Homepage Layout Manager"
+msgstr ""
+
+#: themeoptions/options.php:1753
+msgid "Organize how you want the layout to appear on the homepage"
+msgstr ""
+
+#: themeoptions/options.php:1757
+msgid "Latest Blog Posts"
+msgstr ""
+
+#: themeoptions/options.php:1758
+msgid "Product Carousel Tabs"
+msgstr ""
+
+#: themeoptions/options.php:1759 themeoptions/options.php:1958
+msgid "Image Menu"
+msgstr ""
+
+#: themeoptions/options.php:1760 themeoptions/options.php:2003
+msgid "Icon Menu"
+msgstr ""
+
+#: themeoptions/options.php:1761
+msgid "Portfolio Carousel"
+msgstr ""
+
+#: themeoptions/options.php:1762
+msgid "Portfolio Grid"
+msgstr ""
+
+#: themeoptions/options.php:1763
+msgid "Custom Carousel"
+msgstr ""
+
+#: themeoptions/options.php:1768
+msgid "Page Content"
+msgstr ""
+
+#: themeoptions/options.php:1777
+msgid "Module Latest Posts"
+msgstr ""
+
+#: themeoptions/options.php:1782
+msgid "Home Blog Title"
+msgstr ""
+
+#: themeoptions/options.php:1783
+msgid "e.g. = Latest posts"
+msgstr ""
+
+#: themeoptions/options.php:1784
+msgid "Latest posts"
+msgstr ""
+
+#: themeoptions/options.php:1790
+msgid "Choose how you want your posts to show"
+msgstr ""
+
+#: themeoptions/options.php:1798
+msgid "Choose how many post columns on Homepage"
+msgstr ""
+
+#: themeoptions/options.php:1813
+msgid "Choose How many posts on homepage"
+msgstr ""
+
+#: themeoptions/options.php:1823
+msgid "Limit posts to a Category"
+msgstr ""
+
+#: themeoptions/options.php:1824
+msgid "Leave blank to select all"
+msgstr ""
+
+#: themeoptions/options.php:1830
+msgid "Enable Read More Button after posts to link to blog page"
+msgstr ""
+
+#: themeoptions/options.php:1836
+msgid "Read More Button text"
+msgstr ""
+
+#: themeoptions/options.php:1837 themeoptions/options.php:2019
+msgid "e.g. = Read More"
+msgstr ""
+
+#: themeoptions/options.php:1846
+msgid "Select Read More Page link"
+msgstr ""
+
+#: themeoptions/options.php:1847
+msgid "This sets the read more button link"
+msgstr ""
+
+#: themeoptions/options.php:1855
+msgid "Module Product Carousel Tabs"
+msgstr ""
+
+#: themeoptions/options.php:1861
+msgid "Enable and Sort Product Tabs"
+msgstr ""
+
+#: themeoptions/options.php:1880
+msgid "Featured Tab Title"
+msgstr ""
+
+#: themeoptions/options.php:1881
+msgid "e.g. = Featured"
+msgstr ""
+
+#: themeoptions/options.php:1886
+msgid "Best Selling Tab Title"
+msgstr ""
+
+#: themeoptions/options.php:1887
+msgid "e.g. = Best Selling"
+msgstr ""
+
+#: themeoptions/options.php:1892
+msgid "On Sale Tab Title"
+msgstr ""
+
+#: themeoptions/options.php:1893
+msgid "e.g. = On Sale"
+msgstr ""
+
+#: themeoptions/options.php:1898
+msgid "Latest Tab Title"
+msgstr ""
+
+#: themeoptions/options.php:1899
+msgid "e.g. = Latest"
+msgstr ""
+
+#: themeoptions/options.php:1904
+msgid "Choose how many columns are in each carousel"
+msgstr ""
+
+#: themeoptions/options.php:1913
+msgid "Choose how many products are in each carousel"
+msgstr ""
+
+#: themeoptions/options.php:1922
+msgid "Carousel Scroll"
+msgstr ""
+
+#: themeoptions/options.php:1923
+msgid "Choose how the product items scroll."
+msgstr ""
+
+#: themeoptions/options.php:1924 themeoptions/options.php:2148
+#: themeoptions/options.php:2217 themeoptions/options.php:3168
+msgid "One Item"
+msgstr ""
+
+#: themeoptions/options.php:1931 themeoptions/options.php:2137
+#: themeoptions/options.php:2224 themeoptions/options.php:3148
+msgid "Choose the carousel speed (in seconds)."
+msgstr ""
+
+#: themeoptions/options.php:1940
+msgid "Auto Scroll Carousel?"
+msgstr ""
+
+#: themeoptions/options.php:1948
+msgid "Module Image Menu"
+msgstr ""
+
+#: themeoptions/options.php:1953
+msgid "Home Image Menu"
+msgstr ""
+
+#: themeoptions/options.php:1959 themeoptions/options.php:2201
+msgid "Add images, descriptions, titles, and links"
+msgstr ""
+
+#: themeoptions/options.php:1964 themeoptions/options.php:2009
+msgid "Choose how many columns in each row"
+msgstr ""
+
+#: themeoptions/options.php:1973
+msgid "Image Menu Height"
+msgstr ""
+
+#: themeoptions/options.php:1982
+msgid "Height set by"
+msgstr ""
+
+#: themeoptions/options.php:1983
+msgid "Choose how the image menu height will be set."
+msgstr ""
+
+#: themeoptions/options.php:1984
+msgid "Height setting above"
+msgstr ""
+
+#: themeoptions/options.php:1993
+msgid "Module Icon Menu"
+msgstr ""
+
+#: themeoptions/options.php:1998
+msgid "Home Icon Menu"
+msgstr ""
+
+#: themeoptions/options.php:2004
+msgid "Choose your icons for the icon menu."
+msgstr ""
+
+#: themeoptions/options.php:2018
+msgid "Icon menu button text (optional)"
+msgstr ""
+
+#: themeoptions/options.php:2025
+msgid "Choose the color for icon."
+msgstr ""
+
+#: themeoptions/options.php:2034
+msgid "Icon Border Color"
+msgstr ""
+
+#: themeoptions/options.php:2035
+msgid "Choose the border color for icon."
+msgstr ""
+
+#: themeoptions/options.php:2043
+msgid "Icon Background Color"
+msgstr ""
+
+#: themeoptions/options.php:2044
+msgid "Choose the background color for icon."
+msgstr ""
+
+#: themeoptions/options.php:2052
+msgid "Icon Menu Title and Description Font Color"
+msgstr ""
+
+#: themeoptions/options.php:2053
+msgid "Choose the color for icon menu title and description Font"
+msgstr ""
+
+#: themeoptions/options.php:2062
+msgid "Highlight Border Color"
+msgstr ""
+
+#: themeoptions/options.php:2063
+msgid "Choose the highlight border color for icon and above the read more."
+msgstr ""
+
+#: themeoptions/options.php:2075
+msgid "Module Portfolio Carousel"
+msgstr ""
+
+#: themeoptions/options.php:2080
+msgid "Home Portfolio Carousel Settings"
+msgstr ""
+
+#: themeoptions/options.php:2085
+msgid "Home Portfolio Carousel title"
+msgstr ""
+
+#: themeoptions/options.php:2086
+msgid "e.g. = Latest Projects"
+msgstr ""
+
+#: themeoptions/options.php:2087
+msgid "Latest Projects"
+msgstr ""
+
+#: themeoptions/options.php:2092
+msgid "Portfolio Carousel Item Style"
+msgstr ""
+
+#: themeoptions/options.php:2093 themeoptions/options.php:2156
+msgid "Choose how the portfolio items should be ordered in the carousel."
+msgstr ""
+
+#: themeoptions/options.php:2101
+msgid "Portfolio Carousel image ratio"
+msgstr ""
+
+#: themeoptions/options.php:2102 themeoptions/options.php:2264
+#: themeoptions/options.php:3190
+msgid "Choose how the portfolio items images should be cropped."
+msgstr ""
+
+#: themeoptions/options.php:2119 themeoptions/options.php:2206
+msgid "Choose how many columns are in carousel"
+msgstr ""
+
+#: themeoptions/options.php:2128
+msgid "Choose how many portfolio items are in carousel"
+msgstr ""
+
+#: themeoptions/options.php:2146 themeoptions/options.php:3166
+msgid "Portfolio Carousel Scroll"
+msgstr ""
+
+#: themeoptions/options.php:2147 themeoptions/options.php:3167
+msgid "Choose how the portfolio items scroll."
+msgstr ""
+
+#: themeoptions/options.php:2155
+msgid "Portfolio Carousel Order by"
+msgstr ""
+
+#: themeoptions/options.php:2164 themeoptions/options.php:2319
+msgid "Display Portfolio Types under Title"
+msgstr ""
+
+#: themeoptions/options.php:2170 themeoptions/options.php:2325
+msgid "Display Portfolio Excerpt under Title"
+msgstr ""
+
+#: themeoptions/options.php:2176 themeoptions/options.php:2331
+msgid "Display lightbox icon in portfolio posts"
+msgstr ""
+
+#: themeoptions/options.php:2184
+msgid "Module Custom Carousel"
+msgstr ""
+
+#: themeoptions/options.php:2189
+msgid "Home Custom Carousel Settings"
+msgstr ""
+
+#: themeoptions/options.php:2194
+msgid "Home Custom Carousel Title"
+msgstr ""
+
+#: themeoptions/options.php:2195
+msgid "e.g. = Featured News"
+msgstr ""
+
+#: themeoptions/options.php:2200
+msgid "Custom Carousel Items"
+msgstr ""
+
+#: themeoptions/options.php:2215
+msgid "Custom Carousel Scroll"
+msgstr ""
+
+#: themeoptions/options.php:2216
+msgid "Choose how the custom items scroll."
+msgstr ""
+
+#: themeoptions/options.php:2233
+msgid "Enable custom image ratio for carousel"
+msgstr ""
+
+#: themeoptions/options.php:2243
+msgid "Module Portfolio Grid"
+msgstr ""
+
+#: themeoptions/options.php:2248
+msgid "Home Portfolio Full Title"
+msgstr ""
+
+#: themeoptions/options.php:2249
+msgid "e.g. = Our Work"
+msgstr ""
+
+#: themeoptions/options.php:2254
+msgid "Portfolio Grid Item Style"
+msgstr ""
+
+#: themeoptions/options.php:2255
+msgid "Choose how the portfolio items should be ordered in the grid."
+msgstr ""
+
+#: themeoptions/options.php:2263 themeoptions/options.php:3189
+msgid "Portfolio Grid image ratio"
+msgstr ""
+
+#: themeoptions/options.php:2274
+msgid "Portfolio Full Category Type"
+msgstr ""
+
+#: themeoptions/options.php:2275
+msgid "Choose type for the Portfolio Grid or leave blank to show all types"
+msgstr ""
+
+#: themeoptions/options.php:2281
+msgid "Display Portfolio Filter"
+msgstr ""
+
+#: themeoptions/options.php:2288
+msgid "Choose how many Portfolio Items on Homepage"
+msgstr ""
+
+#: themeoptions/options.php:2297
+msgid "Portfolio full Order by"
+msgstr ""
+
+#: themeoptions/options.php:2298
+msgid "Choose how the portfolio items should be ordered."
+msgstr ""
+
+#: themeoptions/options.php:2306
+msgid "Choose how many Portfolio columns"
+msgstr ""
+
+#: themeoptions/options.php:2339
+msgid "Module Page Content"
+msgstr ""
+
+#: themeoptions/options.php:2344
+msgid "Page Content Options (if home page is latest post page)"
+msgstr ""
+
+#: themeoptions/options.php:2349
+msgid "Latest Post Display"
+msgstr ""
+
+#: themeoptions/options.php:2350
+msgid ""
+"If Latest Post page is front page. Choose to the latest posts output style"
+msgstr ""
+
+#: themeoptions/options.php:2358
+msgid "Post Columns"
+msgstr ""
+
+#: themeoptions/options.php:2375
+msgid "Shop Archive Settings"
+msgstr ""
+
+#: themeoptions/options.php:2380
+msgid "Shop Product Column Layout"
+msgstr ""
+
+#: themeoptions/options.php:2381
+msgid ""
+"NOTE: This sets the columns for standard screen size. May be more on larger "
+"screens and less on smaller screens."
+msgstr ""
+
+#: themeoptions/options.php:2382
+msgid "One Column"
+msgstr ""
+
+#: themeoptions/options.php:2382 themeoptions/options.php:2469
+#: themeoptions/options.php:3546
+msgid "Two Column"
+msgstr ""
+
+#: themeoptions/options.php:2382 themeoptions/options.php:2469
+#: themeoptions/options.php:3546
+msgid "Three Column"
+msgstr ""
+
+#: themeoptions/options.php:2382 themeoptions/options.php:2469
+#: themeoptions/options.php:3546
+msgid "Four Column"
+msgstr ""
+
+#: themeoptions/options.php:2382 themeoptions/options.php:2469
+msgid "Five Column"
+msgstr ""
+
+#: themeoptions/options.php:2382 themeoptions/options.php:2469
+msgid "Six Column"
+msgstr ""
+
+#: themeoptions/options.php:2389
+msgid "How many products per page"
+msgstr ""
+
+#: themeoptions/options.php:2398
+msgid "Force products into rows"
+msgstr ""
+
+#: themeoptions/options.php:2399
+msgid "Products fit into rows regardless of size"
+msgstr ""
+
+#: themeoptions/options.php:2405
+msgid "Shop Archive Sidebar Defaults"
+msgstr ""
+
+#: themeoptions/options.php:2410
+msgid "Default Layout for product archive pages"
+msgstr ""
+
+#: themeoptions/options.php:2411
+msgid "This determines if there is a sidebar on the product archive pages."
+msgstr ""
+
+#: themeoptions/options.php:2412
+msgid "No Sidebar Layout"
+msgstr ""
+
+#: themeoptions/options.php:2412 themeoptions/options.php:2800
+#: themeoptions/options.php:3033 themeoptions/options.php:3251
+#: themeoptions/options.php:3434 themeoptions/options.php:3555
+#: themeoptions/options.php:3577 themeoptions/options.php:3655
+#: themeoptions/options.php:4594
+msgid "Sidebar Layout"
+msgstr ""
+
+#: themeoptions/options.php:2418
+msgid "Sidebar side for product archive pages"
+msgstr ""
+
+#: themeoptions/options.php:2419
+msgid "This determines if the sidebar is on the left of right of page."
+msgstr ""
+
+#: themeoptions/options.php:2426
+msgid "Choose a default Sidebar for your product archive pages"
+msgstr ""
+
+#: themeoptions/options.php:2434
+msgid "Product Image Sizes"
+msgstr ""
+
+#: themeoptions/options.php:2439
+msgid "Product Image Aspect Ratio"
+msgstr ""
+
+#: themeoptions/options.php:2440
+msgid ""
+"If enabled below this sets how you want your product images to be cropped."
+msgstr ""
+
+#: themeoptions/options.php:2441 themeoptions/options.php:2478
+msgid "Square 1:1"
+msgstr ""
+
+#: themeoptions/options.php:2441 themeoptions/options.php:2478
+msgid "Portrait 3:4"
+msgstr ""
+
+#: themeoptions/options.php:2441 themeoptions/options.php:2478
+msgid "Landscape 4:3"
+msgstr ""
+
+#: themeoptions/options.php:2441 themeoptions/options.php:2478
+msgid "Wide Landscape 4:2"
+msgstr ""
+
+#: themeoptions/options.php:2441
+msgid "Variable based on uploaded image"
+msgstr ""
+
+#: themeoptions/options.php:2448
+msgid "Enable Product Image Aspect Ratio on Catalog pages"
+msgstr ""
+
+#: themeoptions/options.php:2449
+msgid ""
+"If turned off image dimensions are set by woocommerce settings - recommended "
+"width: 300px for Catalog Images"
+msgstr ""
+
+#: themeoptions/options.php:2455
+msgid "Enable Product Image Aspect Ratio on product Page"
+msgstr ""
+
+#: themeoptions/options.php:2456
+msgid ""
+"If turned off image dimensions are set by woocommerce settings - recommended "
+"width: 480px for Single Product Image"
+msgstr ""
+
+#: themeoptions/options.php:2462
+msgid "Category Image Size"
+msgstr ""
+
+#: themeoptions/options.php:2467
+msgid "Shop Category Column Layout"
+msgstr ""
+
+#: themeoptions/options.php:2468
+msgid ""
+"Choose how many Category Image columns to show on the shop and category pages"
+msgstr ""
+
+#: themeoptions/options.php:2476
+msgid "Category Image Aspect Ratio"
+msgstr ""
+
+#: themeoptions/options.php:2477
+msgid ""
+"If enabled below this sets how you want your category images to be cropped."
+msgstr ""
+
+#: themeoptions/options.php:2478
+msgid "Turn Off"
+msgstr ""
+
+#: themeoptions/options.php:2485
+msgid "Archive Product Title Settings"
+msgstr ""
+
+#: themeoptions/options.php:2490
+msgid "Shop & archive Product title Font"
+msgstr ""
+
+#: themeoptions/options.php:2504
+msgid "Choose Size and Style for product titles on category and archive pages."
+msgstr ""
+
+#: themeoptions/options.php:2518
+msgid "Product title Min Height"
+msgstr ""
+
+#: themeoptions/options.php:2519
+msgid ""
+"If your titles are long increase this to help align your products height."
+msgstr ""
+
+#: themeoptions/options.php:2528
+msgid "Shop Archive Extras"
+msgstr ""
+
+#: themeoptions/options.php:2533
+msgid "Show add to cart button only on hover"
+msgstr ""
+
+#: themeoptions/options.php:2534
+msgid "If this is turned off your add to cart button will show all the time."
+msgstr ""
+
+#: themeoptions/options.php:2540
+msgid "Show Category Filter on Shop Page"
+msgstr ""
+
+#: themeoptions/options.php:2541
+msgid ""
+"This adds an quick filter to the shop page. NOTE this filter is only "
+"designed to filter what is visible on the page. It does not act as a menu "
+"and query products from multiple pages."
+msgstr ""
+
+#: themeoptions/options.php:2547
+msgid "Show Category Filter on Category Pages"
+msgstr ""
+
+#: themeoptions/options.php:2548
+msgid ""
+"This adds an quick filter to Category pages. NOTE this filter is only "
+"designed to filter what is visible on the page. It does not act as a menu "
+"and query products from multiple pages."
+msgstr ""
+
+#: themeoptions/options.php:2554
+msgid "Use infinite scroll on shop archive pages"
+msgstr ""
+
+#: themeoptions/options.php:2555
+msgid "Not recomended that you use with filter."
+msgstr ""
+
+#: themeoptions/options.php:2561
+msgid "Show toggle buttons for list/grid on shop page"
+msgstr ""
+
+#: themeoptions/options.php:2562
+msgid ""
+"Adds two icons for toggling between a grid and list layout on shop page."
+msgstr ""
+
+#: themeoptions/options.php:2568
+msgid "Stop Product Excerpt from loading in the shop grid pages."
+msgstr ""
+
+#: themeoptions/options.php:2569
+msgid "Good to turn on if there are conflicts on your shop grid pages."
+msgstr ""
+
+#: themeoptions/options.php:2575
+msgid "Show Ratings in Shop and Category Pages"
+msgstr ""
+
+#: themeoptions/options.php:2576
+msgid "This determines if the rating is displayed in the product archive pages"
+msgstr ""
+
+#: themeoptions/options.php:2582
+msgid "Show Sold tag if product out of stock."
+msgstr ""
+
+#: themeoptions/options.php:2583
+msgid ""
+"This determines if a sold tag is displayed on the top right of the product "
+"image"
+msgstr ""
+
+#: themeoptions/options.php:2589
+msgid "Product hover image switch"
+msgstr ""
+
+#: themeoptions/options.php:2590
+msgid ""
+"This allows your product image to slide to the first gallery image when "
+"hovered over on shop page."
+msgstr ""
+
+#: themeoptions/options.php:2596
+msgid "Quantity Box plus and minus"
+msgstr ""
+
+#: themeoptions/options.php:2597
+msgid ""
+"Turn this off if you would like to use browser added plus and minus for "
+"number boxes"
+msgstr ""
+
+#: themeoptions/options.php:2604
+msgid "Shop Page Header"
+msgstr ""
+
+#: themeoptions/options.php:2605
+msgid "Shop Page Header Settings"
+msgstr ""
+
+#: themeoptions/options.php:2618
+msgid "Edit the page to change your page title options."
+msgstr ""
+
+#: themeoptions/options.php:2683
+msgid "Shop Caption Title Font size"
+msgstr ""
+
+#: themeoptions/options.php:2707
+msgid "Shop Caption Subtitle Font size"
+msgstr ""
+
+#: themeoptions/options.php:2793
+msgid "Product Settings"
+msgstr ""
+
+#: themeoptions/options.php:2794
+msgid "Single Product Settings"
+msgstr ""
+
+#: themeoptions/options.php:2799
+msgid "Single Product Sidebar Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:2800 themeoptions/options.php:3033
+#: themeoptions/options.php:3251 themeoptions/options.php:3434
+#: themeoptions/options.php:3555 themeoptions/options.php:3577
+#: themeoptions/options.php:3655 themeoptions/options.php:4594
+msgid "No sidebar layout"
+msgstr ""
+
+#: themeoptions/options.php:2807
+msgid "Choose a Default Sidebar for your Single Product post"
+msgstr ""
+
+#: themeoptions/options.php:2815
+msgid "Product Content Layout"
+msgstr ""
+
+#: themeoptions/options.php:2816
+msgid "Large Image Center"
+msgstr ""
+
+#: themeoptions/options.php:2823
+msgid "Single Product Post Header"
+msgstr ""
+
+#: themeoptions/options.php:2828
+msgid "Show Product Title in Header area by default"
+msgstr ""
+
+#: themeoptions/options.php:2829
+msgid "This can be overridden on each product."
+msgstr ""
+
+#: themeoptions/options.php:2835 themeoptions/options.php:3060
+msgid "Product Default Title Text"
+msgstr ""
+
+#: themeoptions/options.php:2836
+msgid "Product Title"
+msgstr ""
+
+#: themeoptions/options.php:2836
+msgid "Category of Product"
+msgstr ""
+
+#: themeoptions/options.php:2836 themeoptions/options.php:3061
+#: themeoptions/options.php:3325 themeoptions/options.php:3605
+#: themeoptions/options.php:3683
+msgid "Custom"
+msgstr ""
+
+#: themeoptions/options.php:2843
+msgid "Product Default Title"
+msgstr ""
+
+#: themeoptions/options.php:2844
+msgid "Example: Shop"
+msgstr ""
+
+#: themeoptions/options.php:2850
+msgid "Product Default Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:2856
+msgid "Product Navigation Options"
+msgstr ""
+
+#: themeoptions/options.php:2861
+msgid "Enable Arrow navigation for single product post?"
+msgstr ""
+
+#: themeoptions/options.php:2867
+msgid "Single Product Content Settings"
+msgstr ""
+
+#: themeoptions/options.php:2872
+msgid "Show the single Category above content title."
+msgstr ""
+
+#: themeoptions/options.php:2878 themeoptions/options.php:3113
+#: themeoptions/options.php:3350 themeoptions/options.php:3630
+#: themeoptions/options.php:3708
+msgid "Show the Title in post content"
+msgstr ""
+
+#: themeoptions/options.php:2884
+msgid "Display variations as radio buttons instead of select box?"
+msgstr ""
+
+#: themeoptions/options.php:2885
+msgid "This will display product variations in a box form."
+msgstr ""
+
+#: themeoptions/options.php:2890
+msgid "Display product tabs?"
+msgstr ""
+
+#: themeoptions/options.php:2891
+msgid "This determines if product tabs are displayed"
+msgstr ""
+
+#: themeoptions/options.php:2893
+msgid "Show as tabs"
+msgstr ""
+
+#: themeoptions/options.php:2893
+msgid "Show Content section by section"
+msgstr ""
+
+#: themeoptions/options.php:2893
+msgid "Show no content"
+msgstr ""
+
+#: themeoptions/options.php:2901
+msgid "Product Description Background"
+msgstr ""
+
+#: themeoptions/options.php:2908
+msgid "Product Additional Background"
+msgstr ""
+
+#: themeoptions/options.php:2915
+msgid "Product Reviews Background"
+msgstr ""
+
+#: themeoptions/options.php:2921
+msgid "Product Tab Order - Lowest First"
+msgstr ""
+
+#: themeoptions/options.php:2922
+msgid "Description Tab"
+msgstr ""
+
+#: themeoptions/options.php:2931
+msgid "Additional Information Tab"
+msgstr ""
+
+#: themeoptions/options.php:2940
+msgid "Reviews Tab"
+msgstr ""
+
+#: themeoptions/options.php:2949
+msgid "Activate Custom Tab 01"
+msgstr ""
+
+#: themeoptions/options.php:2950 themeoptions/options.php:2967
+#: themeoptions/options.php:2984
+msgid "This adds a custom product tab to your products"
+msgstr ""
+
+#: themeoptions/options.php:2957
+msgid "Product Custom Tab 01 Background"
+msgstr ""
+
+#: themeoptions/options.php:2966
+msgid "Activate Custom Tab 02"
+msgstr ""
+
+#: themeoptions/options.php:2974
+msgid "Product Custom Tab 02 Background"
+msgstr ""
+
+#: themeoptions/options.php:2983
+msgid "Activate Custom Tab 03"
+msgstr ""
+
+#: themeoptions/options.php:2991
+msgid "Product Custom Tab 03 Background"
+msgstr ""
+
+#: themeoptions/options.php:3000
+msgid "Display related products?"
+msgstr ""
+
+#: themeoptions/options.php:3001
+msgid "This determines related products are displayed"
+msgstr ""
+
+#: themeoptions/options.php:3007
+msgid "Choose how many columns are in related product carousel"
+msgstr ""
+
+#: themeoptions/options.php:3020 themeoptions/options.php:3021
+msgid "Portfolio Settings"
+msgstr ""
+
+#: themeoptions/options.php:3026
+msgid "Portfolio Permalink Base"
+msgstr ""
+
+#: themeoptions/options.php:3027
+msgid "Standard: portfolio *NOTE If you change this resave your permalinks"
+msgstr ""
+
+#: themeoptions/options.php:3032
+msgid "Single Portfolio Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:3040
+msgid "Choose a Default Sidebar for your Single Portfolio post"
+msgstr ""
+
+#: themeoptions/options.php:3048
+msgid "Single Portfolio Post Header"
+msgstr ""
+
+#: themeoptions/options.php:3053
+msgid "Show Portfolio Title in Header area by default"
+msgstr ""
+
+#: themeoptions/options.php:3054
+msgid "This can be overridden on each portfolio."
+msgstr ""
+
+#: themeoptions/options.php:3061
+msgid "Portfolio Title"
+msgstr ""
+
+#: themeoptions/options.php:3061
+msgid "Type of Portfolio"
+msgstr ""
+
+#: themeoptions/options.php:3068
+msgid "Portfolio Default Title"
+msgstr ""
+
+#: themeoptions/options.php:3069
+msgid "Example: Projects"
+msgstr ""
+
+#: themeoptions/options.php:3075
+msgid "Portfolio Default Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:3081
+msgid "Portfolio Navigation Options"
+msgstr ""
+
+#: themeoptions/options.php:3086
+msgid "Enable Arrow navigation for single portfolio posts?"
+msgstr ""
+
+#: themeoptions/options.php:3092
+msgid "Portfolio Grid Icon Link"
+msgstr ""
+
+#: themeoptions/options.php:3093
+msgid "Parent Portfolio Type"
+msgstr ""
+
+#: themeoptions/options.php:3102
+msgid "Select Default Portfolio Page"
+msgstr ""
+
+#: themeoptions/options.php:3103
+msgid "This sets the grid link in every portfolio post."
+msgstr ""
+
+#: themeoptions/options.php:3108
+msgid "Single Portfolio Content Settings"
+msgstr ""
+
+#: themeoptions/options.php:3119
+msgid "Allow Comments on Portfolio Posts"
+msgstr ""
+
+#: themeoptions/options.php:3120
+msgid "Turn on to allow Comments on Portfolio posts"
+msgstr ""
+
+#: themeoptions/options.php:3126
+msgid "Portfolio Post Bottom Carousel"
+msgstr ""
+
+#: themeoptions/options.php:3131
+msgid "Portfolio Bottom Carousel"
+msgstr ""
+
+#: themeoptions/options.php:3132
+msgid "Display Related Carousel by default "
+msgstr ""
+
+#: themeoptions/options.php:3132
+msgid "Display Recent Carousel by Default"
+msgstr ""
+
+#: themeoptions/options.php:3132
+msgid "No default carousel"
+msgstr ""
+
+#: themeoptions/options.php:3139
+msgid "Choose how many columns to show on recent portfolio carousel."
+msgstr ""
+
+#: themeoptions/options.php:3157
+msgid "Choose how many items to show on recent portfolio carousel."
+msgstr ""
+
+#: themeoptions/options.php:3175
+msgid "Portfolio Archive Pages"
+msgstr ""
+
+#: themeoptions/options.php:3181
+msgid "Choose how the portfolio items should be styled."
+msgstr ""
+
+#: themeoptions/options.php:3198
+msgid "Choose how many portfolio columns to show on portfolio archive pages."
+msgstr ""
+
+#: themeoptions/options.php:3207
+msgid "Choose how many portfolio items show on portfolio archive pages."
+msgstr ""
+
+#: themeoptions/options.php:3216
+msgid "Choose order for portfolio archive pages"
+msgstr ""
+
+#: themeoptions/options.php:3224
+msgid "Display lightbox link in grid?"
+msgstr ""
+
+#: themeoptions/options.php:3230
+msgid "Show portfolio type in grid?"
+msgstr ""
+
+#: themeoptions/options.php:3236
+msgid "Display Portfolio excerpt in grid?"
+msgstr ""
+
+#: themeoptions/options.php:3245
+msgid "Page Settings"
+msgstr ""
+
+#: themeoptions/options.php:3250
+msgid "Single Page Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:3258
+msgid "Choose a Default Sidebar for your Single Pages"
+msgstr ""
+
+#: themeoptions/options.php:3268 themeoptions/options.php:3269
+msgid "Blog Settings"
+msgstr ""
+
+#: themeoptions/options.php:3274
+msgid "Post Excerpt Length"
+msgstr ""
+
+#: themeoptions/options.php:3275
+msgid "Determines how many words are in an Excerpt."
+msgstr ""
+
+#: themeoptions/options.php:3284
+msgid "Show Author output with posts?"
+msgstr ""
+
+#: themeoptions/options.php:3285
+msgid "Choose to show or hide author output on posts."
+msgstr ""
+
+#: themeoptions/options.php:3291
+msgid "Show Categories with posts?"
+msgstr ""
+
+#: themeoptions/options.php:3292
+msgid "Choose to show or hide categories with posts."
+msgstr ""
+
+#: themeoptions/options.php:3298
+msgid "Show Comment count with posts?"
+msgstr ""
+
+#: themeoptions/options.php:3299
+msgid "Choose to show or hide comment counts with posts."
+msgstr ""
+
+#: themeoptions/options.php:3305
+msgid "Show Date with posts?"
+msgstr ""
+
+#: themeoptions/options.php:3306
+msgid "Choose to show or hide date with post title."
+msgstr ""
+
+#: themeoptions/options.php:3312
+msgid "Single Blog Post Header"
+msgstr ""
+
+#: themeoptions/options.php:3317
+msgid "Show Blog Title in Header area by default"
+msgstr ""
+
+#: themeoptions/options.php:3318 themeoptions/options.php:3598
+#: themeoptions/options.php:3676
+msgid "This can be overridden on each post."
+msgstr ""
+
+#: themeoptions/options.php:3324
+msgid "Blog Default Title Text"
+msgstr ""
+
+#: themeoptions/options.php:3325
+msgid "Blog Title"
+msgstr ""
+
+#: themeoptions/options.php:3325
+msgid "Category of Post"
+msgstr ""
+
+#: themeoptions/options.php:3332
+msgid "Blog Default Title"
+msgstr ""
+
+#: themeoptions/options.php:3333
+msgid "Example: Blog"
+msgstr ""
+
+#: themeoptions/options.php:3339
+msgid "Blog Default Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:3345
+msgid "Single Blog Content Settings"
+msgstr ""
+
+#: themeoptions/options.php:3356
+msgid "Blog Post Author Box Default"
+msgstr ""
+
+#: themeoptions/options.php:3357 themeoptions/options.php:3365
+msgid "No, Do not Show"
+msgstr ""
+
+#: themeoptions/options.php:3357
+msgid "Yes, Show"
+msgstr ""
+
+#: themeoptions/options.php:3364
+msgid "Blog Post Bottom Carousel Default"
+msgstr ""
+
+#: themeoptions/options.php:3372
+msgid "Choose how many items to show on recent/similar post carousel."
+msgstr ""
+
+#: themeoptions/options.php:3381
+msgid "Blog Navigation Options"
+msgstr ""
+
+#: themeoptions/options.php:3386
+msgid "Show Previous and Next posts links?"
+msgstr ""
+
+#: themeoptions/options.php:3387
+msgid ""
+"Choose to show or hide previous and next post links in the footer of a "
+"single post."
+msgstr ""
+
+#: themeoptions/options.php:3393
+msgid "Blog post navigation setting"
+msgstr ""
+
+#: themeoptions/options.php:3394
+msgid "Navigate through All Posts"
+msgstr ""
+
+#: themeoptions/options.php:3394
+msgid "Navigate through Categories"
+msgstr ""
+
+#: themeoptions/options.php:3402
+msgid "Blog archive Settings"
+msgstr ""
+
+#: themeoptions/options.php:3407
+msgid "Use Infinite Scroll on Blog Archive pages"
+msgstr ""
+
+#: themeoptions/options.php:3408
+msgid "Removes Pagination and creates infinite scroll instead."
+msgstr ""
+
+#: themeoptions/options.php:3414
+msgid "Crop blog grid images to equal height"
+msgstr ""
+
+#: themeoptions/options.php:3415
+msgid "Turn on if you want the blog grid images to have the same height."
+msgstr ""
+
+#: themeoptions/options.php:3421
+msgid "Display Blog Grid posts as rows instead of masonry"
+msgstr ""
+
+#: themeoptions/options.php:3422
+msgid ""
+"Turn on if you want the blog grid to be displayed in equal rows regardless "
+"of post content."
+msgstr ""
+
+#: themeoptions/options.php:3428
+msgid "Blog Post Defaults"
+msgstr ""
+
+#: themeoptions/options.php:3433 themeoptions/options.php:3554
+msgid "Single Blog Post Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:3441
+msgid "Choose a Default Sidebar for your Single blog post"
+msgstr ""
+
+#: themeoptions/options.php:3450
+msgid "Default post summary feature Image"
+msgstr ""
+
+#: themeoptions/options.php:3451
+msgid "Replace theme default feature image for posts without a featured image"
+msgstr ""
+
+#: themeoptions/options.php:3456
+msgid "Blog Post Defaults Standard"
+msgstr ""
+
+#: themeoptions/options.php:3461
+msgid "Standard Blog Post Summary Default"
+msgstr ""
+
+#: themeoptions/options.php:3469
+msgid "Blog Post Defaults Image"
+msgstr ""
+
+#: themeoptions/options.php:3474
+msgid "Image Blog Post Summary Default"
+msgstr ""
+
+#: themeoptions/options.php:3482
+msgid "Single Image Post Head Content"
+msgstr ""
+
+#: themeoptions/options.php:3490
+msgid "Blog Post Defaults gallery"
+msgstr ""
+
+#: themeoptions/options.php:3495
+msgid "Gallery Blog Post Summary Default"
+msgstr ""
+
+#: themeoptions/options.php:3496
+msgid "Portrait Slider"
+msgstr ""
+
+#: themeoptions/options.php:3496
+msgid "Landscape Slider"
+msgstr ""
+
+#: themeoptions/options.php:3496
+msgid "Gallery Grid"
+msgstr ""
+
+#: themeoptions/options.php:3503
+msgid "Single Gallery Post Head Content"
+msgstr ""
+
+#: themeoptions/options.php:3504
+msgid "Image Slider (Flex Slider)"
+msgstr ""
+
+#: themeoptions/options.php:3504
+msgid "Carousel Slider (Caroufedsel Slider)"
+msgstr ""
+
+#: themeoptions/options.php:3504
+msgid "Image Carousel (Caroufedsel Carousel)"
+msgstr ""
+
+#: themeoptions/options.php:3511
+msgid "Blog Post Defaults Video"
+msgstr ""
+
+#: themeoptions/options.php:3516
+msgid "Video Blog Post Summary Default"
+msgstr ""
+
+#: themeoptions/options.php:3524
+msgid "Single Video Post Head Content"
+msgstr ""
+
+#: themeoptions/options.php:3532
+msgid "Blog Category/Archive Defaults"
+msgstr ""
+
+#: themeoptions/options.php:3537 themeoptions/options.php:3545
+msgid "Category Display Type"
+msgstr ""
+
+#: themeoptions/options.php:3538
+msgid "Post Excerpt"
+msgstr ""
+
+#: themeoptions/options.php:3538
+msgid "Grid Post"
+msgstr ""
+
+#: themeoptions/options.php:3562
+msgid "Choose a Default Sidebar for your Category/Archive pages"
+msgstr ""
+
+#: themeoptions/options.php:3571
+msgid "Staff Settings"
+msgstr ""
+
+#: themeoptions/options.php:3576
+msgid "Single Staff Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:3584
+msgid "Choose a Default Sidebar for your Single Staff posts"
+msgstr ""
+
+#: themeoptions/options.php:3592
+msgid "Single Staff Post Header"
+msgstr ""
+
+#: themeoptions/options.php:3597 themeoptions/options.php:3675
+msgid "Show Post Title in Header area by default"
+msgstr ""
+
+#: themeoptions/options.php:3604
+msgid "Staff Default Title Text"
+msgstr ""
+
+#: themeoptions/options.php:3605
+msgid "Staff Title"
+msgstr ""
+
+#: themeoptions/options.php:3605
+msgid "Group of Staff"
+msgstr ""
+
+#: themeoptions/options.php:3612 themeoptions/options.php:3690
+msgid "Post Default Title"
+msgstr ""
+
+#: themeoptions/options.php:3613
+msgid "Example: Staff"
+msgstr ""
+
+#: themeoptions/options.php:3619 themeoptions/options.php:3697
+msgid "Post Default Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:3625
+msgid "Single Staff Post Content"
+msgstr ""
+
+#: themeoptions/options.php:3636
+msgid "Staff Navigation Options"
+msgstr ""
+
+#: themeoptions/options.php:3641
+msgid "Enable Arrow navigation for single staff post?"
+msgstr ""
+
+#: themeoptions/options.php:3649
+msgid "Testimonial Options"
+msgstr ""
+
+#: themeoptions/options.php:3654
+msgid "Single Testimonial Layout Default"
+msgstr ""
+
+#: themeoptions/options.php:3662
+msgid "Choose a Default Sidebar for your Single Testimonial post"
+msgstr ""
+
+#: themeoptions/options.php:3670
+msgid "Single Testimonial Post Header"
+msgstr ""
+
+#: themeoptions/options.php:3682
+msgid "Testimonial Default Title Text"
+msgstr ""
+
+#: themeoptions/options.php:3683
+msgid "Testimonial Title"
+msgstr ""
+
+#: themeoptions/options.php:3683
+msgid "Group of Testimonial"
+msgstr ""
+
+#: themeoptions/options.php:3691
+msgid "Example: Testimonial"
+msgstr ""
+
+#: themeoptions/options.php:3703
+msgid "Single testimonial Post Content"
+msgstr ""
+
+#: themeoptions/options.php:3714
+msgid "Testimonial Navigation Options"
+msgstr ""
+
+#: themeoptions/options.php:3719
+msgid "Enable Arrow navigation for single testimonial post?"
+msgstr ""
+
+#: themeoptions/options.php:3727 themeoptions/options.php:3728
+msgid "Basic Styling"
+msgstr ""
+
+#: themeoptions/options.php:3733
+msgid "Primary Color"
+msgstr ""
+
+#: themeoptions/options.php:3734
+msgid "Choose the default Highlight color for your site."
+msgstr ""
+
+#: themeoptions/options.php:3741
+msgid "Topbar Font color"
+msgstr ""
+
+#: themeoptions/options.php:3750
+msgid "Footer Font Color"
+msgstr ""
+
+#: themeoptions/options.php:3760
+msgid "Advanced Styling"
+msgstr ""
+
+#: themeoptions/options.php:3761
+msgid "Main Content Background"
+msgstr ""
+
+#: themeoptions/options.php:3767
+msgid "Content Background"
+msgstr ""
+
+#: themeoptions/options.php:3772 themeoptions/options.php:3778
+msgid "Topbar Background"
+msgstr ""
+
+#: themeoptions/options.php:3783 themeoptions/options.php:3798
+msgid "Header Background"
+msgstr ""
+
+#: themeoptions/options.php:3788
+msgid "Header Background Style"
+msgstr ""
+
+#: themeoptions/options.php:3789
+msgid "Simple"
+msgstr ""
+
+#: themeoptions/options.php:3804
+msgid "Header Background Color"
+msgstr ""
+
+#: themeoptions/options.php:3813
+msgid "If background is color, select Transparency"
+msgstr ""
+
+#: themeoptions/options.php:3822 themeoptions/options.php:3829
+msgid "Footer Background"
+msgstr ""
+
+#: themeoptions/options.php:3834 themeoptions/options.php:3840
+msgid "Body Background"
+msgstr ""
+
+#: themeoptions/options.php:3841
+msgid "This shows if site is using the boxed layout option."
+msgstr ""
+
+#: themeoptions/options.php:3848
+msgid "Typography"
+msgstr ""
+
+#: themeoptions/options.php:3849
+msgid "Header Font Options"
+msgstr ""
+
+#: themeoptions/options.php:3854
+msgid "H1 Headings"
+msgstr ""
+
+#: themeoptions/options.php:3867
+msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
+msgstr ""
+
+#: themeoptions/options.php:3881
+msgid "H2 Headings"
+msgstr ""
+
+#: themeoptions/options.php:3894
+msgid "Choose Size and Style for h2"
+msgstr ""
+
+#: themeoptions/options.php:3908
+msgid "H3 Headings"
+msgstr ""
+
+#: themeoptions/options.php:3921
+msgid "Choose Size and Style for h3"
+msgstr ""
+
+#: themeoptions/options.php:3935
+msgid "H4 Headings"
+msgstr ""
+
+#: themeoptions/options.php:3948
+msgid "Choose Size and Style for h4"
+msgstr ""
+
+#: themeoptions/options.php:3962
+msgid "H5 Headings"
+msgstr ""
+
+#: themeoptions/options.php:3975
+msgid "Choose Size and Style for h5"
+msgstr ""
+
+#: themeoptions/options.php:3989
+msgid "Page Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:4002
+msgid "Choose Size and Style for Page Subtitle"
+msgstr ""
+
+#: themeoptions/options.php:4013
+msgid "Body Font Options"
+msgstr ""
+
+#: themeoptions/options.php:4018
+msgid "Body Font"
+msgstr ""
+
+#: themeoptions/options.php:4032
+msgid "Choose Size and Style for paragraphs"
+msgstr ""
+
+#: themeoptions/options.php:4048
+msgid "Menu Settings"
+msgstr ""
+
+#: themeoptions/options.php:4049
+msgid "Menu Options"
+msgstr ""
+
+#: themeoptions/options.php:4054
+msgid "Enable sub-indicator in menu?"
+msgstr ""
+
+#: themeoptions/options.php:4055 themeoptions/options.php:4062
+msgid "Choose to enable arrows showing there is a submenu"
+msgstr ""
+
+#: themeoptions/options.php:4061
+msgid "Enable sub-indicator in vertical menu?"
+msgstr ""
+
+#: themeoptions/options.php:4070
+msgid "Primary Menu Options"
+msgstr ""
+
+#: themeoptions/options.php:4075
+msgid "Primary Menu Font"
+msgstr ""
+
+#: themeoptions/options.php:4088
+msgid "Choose Size and Style for primary menu"
+msgstr ""
+
+#: themeoptions/options.php:4103
+msgid "Hover and Active Font Color"
+msgstr ""
+
+#: themeoptions/options.php:4113
+msgid "Hover and Active Background Color"
+msgstr ""
+
+#: themeoptions/options.php:4124
+msgid "Secondary Menu Options"
+msgstr ""
+
+#: themeoptions/options.php:4130
+msgid "Secondary Menu Background"
+msgstr ""
+
+#: themeoptions/options.php:4135
+msgid "Secondary Menu Font"
+msgstr ""
+
+#: themeoptions/options.php:4148
+msgid "Choose Size and Style for secondary menu"
+msgstr ""
+
+#: themeoptions/options.php:4162
+msgid "Secondary Menu Divider Color"
+msgstr ""
+
+#: themeoptions/options.php:4171
+msgid "Secondary Hover and Active Font Color"
+msgstr ""
+
+#: themeoptions/options.php:4180
+msgid "Secondary Hover and Active Background Color"
+msgstr ""
+
+#: themeoptions/options.php:4190
+msgid "Dropdown Menu Style"
+msgstr ""
+
+#: themeoptions/options.php:4195
+msgid "Dropdown Background Color"
+msgstr ""
+
+#: themeoptions/options.php:4204
+msgid "Dropdown Border Color"
+msgstr ""
+
+#: themeoptions/options.php:4213
+msgid "Dropdown Menu Font size"
+msgstr ""
+
+#: themeoptions/options.php:4229
+msgid "Choose Size for the Dropdown menus"
+msgstr ""
+
+#: themeoptions/options.php:4241
+msgid "Dropdown Font Hover and Active Color"
+msgstr ""
+
+#: themeoptions/options.php:4250
+msgid "Dropdown Font Background Hover and Active Color"
+msgstr ""
+
+#: themeoptions/options.php:4264
+msgid "Mobile Menu background"
+msgstr ""
+
+#: themeoptions/options.php:4271
+msgid "Submenu items collapse until opened"
+msgstr ""
+
+#: themeoptions/options.php:4277
+msgid "Make menu items that have child elements only open sub items"
+msgstr ""
+
+#: themeoptions/options.php:4283
+msgid "Mobile Menu Font"
+msgstr ""
+
+#: themeoptions/options.php:4296
+msgid "Choose Size and Style for Mobile Menu"
+msgstr ""
+
+#: themeoptions/options.php:4310
+msgid "Mobile Menu font bottom border color"
+msgstr ""
+
+#: themeoptions/options.php:4319
+msgid "Mobile Hover and Active Font Color"
+msgstr ""
+
+#: themeoptions/options.php:4328
+msgid "Mobile Hover and Active Background Color"
+msgstr ""
+
+#: themeoptions/options.php:4339
+msgid "Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4340
+msgid "Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4345
+msgid "Search Placeholder Text"
+msgstr ""
+
+#: themeoptions/options.php:4346
+msgid "Standard: Search..."
+msgstr ""
+
+#: themeoptions/options.php:4351
+msgid "Header Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4356
+msgid "Cart label"
+msgstr ""
+
+#: themeoptions/options.php:4357
+msgid "Standard: Cart"
+msgstr ""
+
+#: themeoptions/options.php:4362
+msgid "Login/Signup label"
+msgstr ""
+
+#: themeoptions/options.php:4363
+msgid "Standard: Login"
+msgstr ""
+
+#: themeoptions/options.php:4368
+msgid "My Account label"
+msgstr ""
+
+#: themeoptions/options.php:4369
+msgid "Standard: My Account"
+msgstr ""
+
+#: themeoptions/options.php:4374
+msgid "Blog Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4379
+msgid "Post READ MORE text"
+msgstr ""
+
+#: themeoptions/options.php:4380
+msgid "Standard: Read More"
+msgstr ""
+
+#: themeoptions/options.php:4385
+msgid "Post Author BY text"
+msgstr ""
+
+#: themeoptions/options.php:4386
+msgid "Standard: by"
+msgstr ""
+
+#: themeoptions/options.php:4391
+msgid "Filter Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4396
+msgid "Dynamic filter All text"
+msgstr ""
+
+#: themeoptions/options.php:4397
+msgid "Standard: All"
+msgstr ""
+
+#: themeoptions/options.php:4402
+msgid "Mobile dynamic Filter text"
+msgstr ""
+
+#: themeoptions/options.php:4403
+msgid "Standard: Filter"
+msgstr ""
+
+#: themeoptions/options.php:4408
+msgid "Woocommerce Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4413
+msgid "Product Sold Text"
+msgstr ""
+
+#: themeoptions/options.php:4414
+msgid "Standard: Sold"
+msgstr ""
+
+#: themeoptions/options.php:4419
+msgid "Product Sale Text"
+msgstr ""
+
+#: themeoptions/options.php:4420
+msgid "Standard: Sale"
+msgstr ""
+
+#: themeoptions/options.php:4425
+msgid "Clear Selection Text"
+msgstr ""
+
+#: themeoptions/options.php:4426
+msgid "Standard: Clear selection"
+msgstr ""
+
+#: themeoptions/options.php:4431
+msgid "Not Available Text (radio button tooltip)"
+msgstr ""
+
+#: themeoptions/options.php:4432
+msgid "Standard: Not Available"
+msgstr ""
+
+#: themeoptions/options.php:4437
+msgid "Product Page: Description tab text"
+msgstr ""
+
+#: themeoptions/options.php:4438
+msgid "Standard: Description"
+msgstr ""
+
+#: themeoptions/options.php:4443
+msgid "Product Page: Description header text"
+msgstr ""
+
+#: themeoptions/options.php:4444
+msgid "Standard: Product Description"
+msgstr ""
+
+#: themeoptions/options.php:4449
+msgid "Product Page: Additional Information tab text"
+msgstr ""
+
+#: themeoptions/options.php:4450 themeoptions/options.php:4456
+msgid "Standard: Additional Information"
+msgstr ""
+
+#: themeoptions/options.php:4455
+msgid "Product Page: Additional Information Header text"
+msgstr ""
+
+#: themeoptions/options.php:4461
+msgid "Product Page: Reviews tab text"
+msgstr ""
+
+#: themeoptions/options.php:4462
+msgid "Standard: Reviews"
+msgstr ""
+
+#: themeoptions/options.php:4467
+msgid "Product Page: Related Products text"
+msgstr ""
+
+#: themeoptions/options.php:4468
+msgid "Standard: Related Products"
+msgstr ""
+
+#: themeoptions/options.php:4473
+msgid "Product Page: You may also like... text"
+msgstr ""
+
+#: themeoptions/options.php:4474
+msgid "Standard: You may also like&hellip;"
+msgstr ""
+
+#: themeoptions/options.php:4479
+msgid "Lightbox Quick Language Settings"
+msgstr ""
+
+#: themeoptions/options.php:4484
+msgid "LightBox: of text"
+msgstr ""
+
+#: themeoptions/options.php:4485
+msgid "Standard: of"
+msgstr ""
+
+#: themeoptions/options.php:4490
+msgid "LightBox: Error text"
+msgstr ""
+
+#: themeoptions/options.php:4491
+msgid "Standard: The Image could not be loaded."
+msgstr ""
+
+#: themeoptions/options.php:4498
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: themeoptions/options.php:4499
+msgid "Sitewide Breadcrumbs"
+msgstr ""
+
+#: themeoptions/options.php:4504
+msgid "Show Breadcrumbs in Woocommerce archive pages?"
+msgstr ""
+
+#: themeoptions/options.php:4505
+msgid "Choose to show or hide breadcrumbs on your Woocommerce archive pages"
+msgstr ""
+
+#: themeoptions/options.php:4511
+msgid "Show Breadcrumbs on Products?"
+msgstr ""
+
+#: themeoptions/options.php:4512
+msgid "Choose to show or hide breadcrumbs on your Woocommerce products"
+msgstr ""
+
+#: themeoptions/options.php:4518
+msgid "Show Breadcrumbs on Blog Posts?"
+msgstr ""
+
+#: themeoptions/options.php:4519
+msgid "Choose to show or hide breadcrumbs on your single blog post"
+msgstr ""
+
+#: themeoptions/options.php:4527
+msgid "All Blog Post Page"
+msgstr ""
+
+#: themeoptions/options.php:4528
+msgid ""
+"This sets the link for your main blog page, for breadcrumbs. Use only if "
+"your blog page is not your home page."
+msgstr ""
+
+#: themeoptions/options.php:4534
+msgid "Show Breadcrumbs on Portfolio Posts?"
+msgstr ""
+
+#: themeoptions/options.php:4535
+msgid "Choose to show or hide breadcrumbs on your single portfolio posts"
+msgstr ""
+
+#: themeoptions/options.php:4541
+msgid "Show Breadcrumbs on Staff Post?"
+msgstr ""
+
+#: themeoptions/options.php:4542
+msgid "Choose to show or hide breadcrumbs on your single staff posts"
+msgstr ""
+
+#: themeoptions/options.php:4550
+msgid "All Staff Post Page"
+msgstr ""
+
+#: themeoptions/options.php:4551
+msgid "This sets the link for your main staff page, for breadcrumbs."
+msgstr ""
+
+#: themeoptions/options.php:4557
+msgid "Show Breadcrumbs on Testimonial Post?"
+msgstr ""
+
+#: themeoptions/options.php:4558
+msgid "Choose to show or hide breadcrumbs on your single Ttstimonial posts"
+msgstr ""
+
+#: themeoptions/options.php:4566
+msgid "All Testimonial Post Page"
+msgstr ""
+
+#: themeoptions/options.php:4567
+msgid "This sets the link for your main Testimonial page, for breadcrumbs."
+msgstr ""
+
+#: themeoptions/options.php:4573
+msgid "Show Breadcrumbs on Pages & Archives?"
+msgstr ""
+
+#: themeoptions/options.php:4574
+msgid "Choose to show or hide breadcrumbs on your pages and categories"
+msgstr ""
+
+#: themeoptions/options.php:4580
+msgid "Home title for breadcrumbs"
+msgstr ""
+
+#: themeoptions/options.php:4581
+msgid "Standard: Home"
+msgstr ""
+
+#: themeoptions/options.php:4587
+msgid "Search Results Settings"
+msgstr ""
+
+#: themeoptions/options.php:4588
+msgid "Search page Settings"
+msgstr ""
+
+#: themeoptions/options.php:4593
+msgid "Search Results Layout"
+msgstr ""
+
+#: themeoptions/options.php:4601
+msgid "Choose a Default Sidebar for your search results"
+msgstr ""
+
+#: themeoptions/options.php:4609
+msgid "Search Results Layout Style"
+msgstr ""
+
+#: themeoptions/options.php:4610
+msgid "Blog Like Single Column"
+msgstr ""
+
+#: themeoptions/options.php:4618 themeoptions/options.php:4619
+msgid "Misc Settings"
+msgstr ""
+
+#: themeoptions/options.php:4624
+msgid "Select2 Select"
+msgstr ""
+
+#: themeoptions/options.php:4625
+msgid "Turn on or off the select2 select"
+msgstr ""
+
+#: themeoptions/options.php:4631
+msgid "Create Sidebars"
+msgstr ""
+
+#: themeoptions/options.php:4636
+msgid "Create Custom Sidebars"
+msgstr ""
+
+#: themeoptions/options.php:4637
+msgid "Type new sidebar name into textbox"
+msgstr ""
+
+#: themeoptions/options.php:4638
+msgid "Extra Sidebar"
+msgstr ""
+
+#: themeoptions/options.php:4643 themeoptions/options.php:4648
+msgid "Smooth Scrolling"
+msgstr ""
+
+#: themeoptions/options.php:4649
+msgid "Leave Off"
+msgstr ""
+
+#: themeoptions/options.php:4649
+msgid "Use - with scroll bar replacement"
+msgstr ""
+
+#: themeoptions/options.php:4649
+msgid "Use - no replacement of scroll bar (chrome browser only)"
+msgstr ""
+
+#: themeoptions/options.php:4656
+msgid "Enable Auto Hide"
+msgstr ""
+
+#: themeoptions/options.php:4657
+msgid "This hides the scroll bar when not scrolling."
+msgstr ""
+
+#: themeoptions/options.php:4663
+msgid "Hide Scroll background"
+msgstr ""
+
+#: themeoptions/options.php:4664
+msgid "This hides the scroll bar background."
+msgstr ""
+
+#: themeoptions/options.php:4670
+msgid "WordPress Galleries"
+msgstr ""
+
+#: themeoptions/options.php:4675
+msgid "Enable Ascend Galleries to override WordPress"
+msgstr ""
+
+#: themeoptions/options.php:4676
+msgid ""
+"Disable this if using a plugin to customize galleries, for example jetpack "
+"tiled gallery."
+msgstr ""
+
+#: themeoptions/options.php:4682
+msgid "Use Masonry Feature on Ascend Galleries by default?"
+msgstr ""
+
+#: themeoptions/options.php:4683 themeoptions/options.php:4690
+msgid "This can be changed on a gallery by gallery basis"
+msgstr ""
+
+#: themeoptions/options.php:4689
+msgid "Show captions on Ascend Galleries by default"
+msgstr ""
+
+#: themeoptions/options.php:4696
+msgid "Theme Lightbox"
+msgstr ""
+
+#: themeoptions/options.php:4701
+msgid "Lightbox On"
+msgstr ""
+
+#: themeoptions/options.php:4702
+msgid "Lightbox Off"
+msgstr ""
+
+#: themeoptions/options.php:4703
+msgid "Theme Lightbox?"
+msgstr ""
+
+#: themeoptions/options.php:4709
+msgid "Google Analytics"
+msgstr ""
+
+#: themeoptions/options.php:4714
+msgid "Google Analytics Tracking ID"
+msgstr ""
+
+#: themeoptions/options.php:4715
+msgid "Paste your Google Analytics Tracking ID Here. (example: UA-########-#)"
+msgstr ""
+
+#: themeoptions/options.php:4722
+msgid "Custom Css"
+msgstr ""
+
+#: themeoptions/options.php:4727
+msgid "Custom CSS"
+msgstr ""
+
+#: themeoptions/options.php:4728
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: themeoptions/options.php:4735
+msgid "Header and Footer Scripts"
+msgstr ""
+
+#: themeoptions/options.php:4736
+msgid "Simple output for header and footer scripts"
+msgstr ""
+
+#: themeoptions/options.php:4741
+msgid "Header Output"
+msgstr ""
+
+#: themeoptions/options.php:4746
+msgid "Outputs between &lt;head&gt; and &lt;/head&gt;"
+msgstr ""
+
+#: themeoptions/options.php:4747
+msgid "Quickly add a script to your header."
+msgstr ""
+
+#: themeoptions/options.php:4752
+msgid "Footer Output"
+msgstr ""
+
+#: themeoptions/options.php:4757
+msgid "Outputs right before &lt;/body&gt;"
+msgstr ""
+
+#: themeoptions/options.php:4758
+msgid "Quickly add a script to your footer."
+msgstr ""
+
+#: themeoptions/options.php:4765 themeoptions/options.php:4768
+msgid "Theme Extensions"
+msgstr ""
+
+#: themeoptions/options.php:4769
+msgid ""
+"Disable Built in Theme Extensions. Please Note, this does not change how the "
+"front end loads. If these items where already not used then they were not "
+"loaded it the front end. These options only clean up the admin area."
+msgstr ""
+
+#: themeoptions/options.php:4774
+msgid "Woocommerce Shop"
+msgstr ""
+
+#: themeoptions/options.php:4775
+msgid "Turn Off/On all Woocommerce references and code"
+msgstr ""
+
+#: themeoptions/options.php:4782
+msgid "Turn Off/On all Portfolio references and code"
+msgstr ""
+
+#: themeoptions/options.php:4789
+msgid "Turn Off/On all Staff references and code"
+msgstr ""
+
+#: themeoptions/options.php:4795
+msgid "Testimonial Posts"
+msgstr ""
+
+#: themeoptions/options.php:4796
+msgid "Turn Off/On all Testimonial references and code"
+msgstr ""
+
+#: themeoptions/options.php:4802
+msgid "Custom 404 Page"
+msgstr ""
+
+#: themeoptions/options.php:4803
+msgid "Turn Off/On option for custom 404 page."
+msgstr ""
+
+#: themeoptions/options.php:4811
+msgid "Choose a 404 page"
+msgstr ""
+
+#: themeoptions/options.php:4812
+msgid "Select the page to be used instead of the standard 404 page."
+msgstr ""
+
+#: themeoptions/options.php:4819
+msgid "Import / Export"
+msgstr ""
+
+#: themeoptions/options.php:4820
+msgid "Import and Export your Theme Options from text or URL."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:28
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction. Please attempt your purchase again."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:31
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:33
+msgid "My Account"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:39 woocommerce/checkout/thankyou.php:70
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:43
+msgid "Order Number:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:47
+msgid "Date:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:51
+msgid "Total:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:56
+msgid "Payment Method:"
+msgstr ""
+
+#: woocommerce/loop/rating.php:21
+msgid "not rated"
+msgstr ""
+
+#: woocommerce/loop/sale-flash.php:19
+msgid "Sold"
+msgstr ""
+
+#: woocommerce/loop/sale-flash.php:27 woocommerce/loop/sale-flash.php:36
+#: woocommerce/single-product/sale-flash.php:28
+#: woocommerce/single-product/sale-flash.php:36
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:20
+msgid "Clear selection"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:30
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: woocommerce/single-product/related.php:56
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/sale-flash.php:20
+msgid "Sold out"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:57
+msgid "You may also like"
+msgstr ""
