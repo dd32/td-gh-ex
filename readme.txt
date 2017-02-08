@@ -149,3 +149,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.7.2 =
 * Fixed some strings with escaping
 * Minor bug fixes
+
+= Version 1.7.3 =
+* Now Semplicemente is no longer compatible with WordPress 4.1 version or lower
+* Minor bug fixes

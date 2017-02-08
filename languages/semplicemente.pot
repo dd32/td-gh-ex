@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2017-01-23 14:48+0100\n"
-"PO-Revision-Date: 2017-01-23 14:48+0100\n"
+"POT-Creation-Date: 2017-02-09 00:19+0100\n"
+"PO-Revision-Date: 2017-02-09 00:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -32,86 +32,6 @@ msgstr ""
 #: 404.php:27
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:21
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: archive.php:24
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: archive.php:27
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:30
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:33
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:33
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:36
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:36
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:39
-msgid "Asides"
-msgstr ""
-
-#: archive.php:42
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:45
-msgid "Images"
-msgstr ""
-
-#: archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: archive.php:51
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:54
-msgid "Links"
-msgstr ""
-
-#: archive.php:57
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:60
-msgid "Audios"
-msgstr ""
-
-#: archive.php:63
-msgid "Chats"
-msgstr ""
-
-#: archive.php:66
-msgid "Archives"
 msgstr ""
 
 #: comments.php:28
@@ -503,11 +423,6 @@ msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:373
 msgid "More Information"
-msgstr ""
-
-#: inc/extras.php:64
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:78

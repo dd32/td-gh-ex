@@ -15,65 +15,9 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-						if ( is_category() ) :
-							printf( __( 'Category: %s', 'semplicemente' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-
-						elseif ( is_tag() ) :
-							printf( __( 'Tag: %s', 'semplicemente' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-
-						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'semplicemente' ), '<span class="vcard">' . get_the_author() . '</span>' );
-
-						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'semplicemente' ), '<span>' . get_the_date() . '</span>' );
-
-						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'semplicemente' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'semplicemente' ) ) . '</span>' );
-
-						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'semplicemente' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'semplicemente' ) ) . '</span>' );
-
-						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'semplicemente' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'semplicemente' );
-
-						else :
-							_e( 'Archives', 'semplicemente' );
-
-						endif;
-					?>
-				</h1>
 				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 

@@ -93,7 +93,7 @@
 			</div>
 				<?php if ( $hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
-						<?php get_search_form(); ?>
+					<?php get_search_form(); ?>
 				</div>
 				<?php endif; ?>
 		</div>
