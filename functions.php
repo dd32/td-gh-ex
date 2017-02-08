@@ -80,12 +80,12 @@ if ( ! function_exists( 'unlimited_customize_comments' ) ) {
 				comment_text(); ?>
 				<div class="comment-date"><?php comment_date(); ?></div>
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => __( 'Reply', 'unlimited' ),
+					'reply_text' => _x( 'Reply', 'verb', 'unlimited' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
 					'before'     => '|'
 				) ) ); ?>
-				<?php edit_comment_link( __( 'Edit', 'unlimited' ), '|' ); ?>
+				<?php edit_comment_link( _x( 'Edit', 'verb', 'unlimited' ), '|' ); ?>
 			</div>
 		</article>
 		<?php
@@ -102,13 +102,13 @@ if ( ! function_exists( 'unlimited_update_fields' ) ) {
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label for="author">' . __( "Name", "unlimited" ) . $label . '</label>
+	            <label for="author">' . _x( "Name", "noun", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . esc_attr__( "John Doe", "unlimited" ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label for="email">' . __( "Email", "unlimited" ) . $label . '</label>
+	            <label for="email">' . _x( "Email", "noun", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . esc_attr__( "name@email.com", "unlimited" ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
@@ -129,7 +129,7 @@ if ( ! function_exists( 'unlimited_update_comment_field' ) ) {
 
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label for="comment">' . __( "Comment", "unlimited" ) . '</label>
+	            <label for="comment">' . _x( "Comment", "noun", "unlimited" ) . '</label>
 	            <textarea required placeholder="' . esc_attr__( "Enter Your Comment", "unlimited" ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -146,73 +146,56 @@ if ( ! function_exists( 'unlimited_remove_comments_notes_after' ) ) {
 }
 add_action( 'comment_form_defaults', 'unlimited_remove_comments_notes_after' );
 
-if ( ! function_exists( 'unlimited_excerpt' ) ) {
-	function unlimited_excerpt() {
-
+if ( ! function_exists( 'ct_unlimited_filter_read_more_link' ) ) {
+	function ct_unlimited_filter_read_more_link() {
 		global $post;
-		$ismore         = strpos( $post->post_content, '<!--more-->' );
-		$show_full_post = get_theme_mod( 'full_post' );
-		$read_more_text = get_theme_mod( 'read_more_text' );
+		$ismore             = strpos( $post->post_content, '<!--more-->' );
+		$read_more_text     = get_theme_mod( 'read_more_text' );
+		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
+		$excerpt_more       = ( $new_excerpt_length === 0 ) ? '' : '&#8230;';
+		$output = '';
 
-		if ( ( $show_full_post == 'yes' ) && ! is_search() ) {
-			if ( $ismore ) {
-				// Has to be written this way because i18n text CANNOT be stored in a variable
-				if ( ! empty( $read_more_text ) ) {
-					the_content( esc_html( $read_more_text ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-				} else {
-					the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-				}
-			} else {
-				the_content();
-			}
-		} // use the read more link if present
-		elseif ( $ismore ) {
-			if ( ! empty( $read_more_text ) ) {
-				the_content( esc_html( $read_more_text ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-			} else {
-				the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-			}
-		} // otherwise the excerpt is automatic, so output it
-		else {
+		// add ellipsis for automatic excerpts
+		if ( empty( $ismore ) ) {
+			$output .= $excerpt_more;
+		}
+		// Because i18n text cannot be stored in a variable
+		if ( empty( $read_more_text ) ) {
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Read more', 'unlimited' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+		} else {
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+		}
+		return $output;
+	}
+}
+add_filter( 'the_content_more_link', 'ct_unlimited_filter_read_more_link' ); // more tags
+add_filter( 'excerpt_more', 'ct_unlimited_filter_read_more_link', 10 ); // automatic excerpts
+
+// handle manual excerpts 
+if ( ! function_exists( 'ct_unlimited_filter_manual_excerpts' ) ) {
+	function ct_unlimited_filter_manual_excerpts( $excerpt ) {
+		$excerpt_more = '';
+		if ( has_excerpt() ) {
+			$excerpt_more = ct_unlimited_filter_read_more_link();
+		}
+		return $excerpt . $excerpt_more;
+	}
+}
+add_filter( 'get_the_excerpt', 'ct_unlimited_filter_manual_excerpts' );
+
+if ( ! function_exists( 'ct_unlimited_excerpt' ) ) {
+	function ct_unlimited_excerpt() {
+		global $post;
+		$show_full_post = get_theme_mod( 'full_post' );
+		$ismore         = strpos( $post->post_content, '<!--more-->' );
+
+		if ( $show_full_post === 'yes' || $ismore ) {
+			the_content();
+		} else {
 			the_excerpt();
 		}
 	}
 }
-
-if ( ! function_exists( 'unlimited_excerpt_read_more_link' ) ) {
-	function unlimited_excerpt_read_more_link( $output ) {
-
-		$read_more_text = get_theme_mod( 'read_more_text' );
-
-		if ( ! empty( $read_more_text ) ) {
-			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . esc_html( $read_more_text ) . "<span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span></a></p>";
-		} else {
-			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . __( 'Read More', 'unlimited' ) . "<span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span></a></p>";
-		}
-	}
-}
-add_filter( 'the_excerpt', 'unlimited_excerpt_read_more_link' );
-
-// switch [...] to ellipsis on automatic excerpt
-if ( ! function_exists( 'unlimited_new_excerpt_more' ) ) {
-	function unlimited_new_excerpt_more( $more ) {
-
-		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
-		$excerpt_more       = ( $new_excerpt_length === 0 ) ? '' : '&#8230;';
-
-		return $excerpt_more;
-	}
-}
-add_filter( 'excerpt_more', 'unlimited_new_excerpt_more' );
-
-if ( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
-	function unlimited_remove_more_link_scroll( $link ) {
-		$link = preg_replace( '|#more-[0-9]+|', '', $link );
-
-		return $link;
-	}
-}
-add_filter( 'the_content_more_link', 'unlimited_remove_more_link_scroll' );
 
 if ( ! function_exists( 'unlimited_custom_excerpt_length' ) ) {
 	function unlimited_custom_excerpt_length( $length ) {
@@ -229,6 +212,14 @@ if ( ! function_exists( 'unlimited_custom_excerpt_length' ) ) {
 	}
 }
 add_filter( 'excerpt_length', 'unlimited_custom_excerpt_length', 99 );
+
+if ( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
+	function unlimited_remove_more_link_scroll( $link ) {
+		$link = preg_replace( '|#more-[0-9]+|', '', $link );
+		return $link;
+	}
+}
+add_filter( 'the_content_more_link', 'unlimited_remove_more_link_scroll' );
 
 if ( ! function_exists( 'unlimited_featured_image' ) ) {
 	function unlimited_featured_image() {
@@ -372,8 +363,8 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 					<li>
 						<a class="email" target="_blank"
 						   href="mailto:<?php echo antispambot( is_email( $url ) ); ?>">
-							<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'unlimited' ); ?>"></i>
-							<span class="screen-reader-text"><?php esc_html_e('email', 'unlimited'); ?></span>
+							<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'unlimited' ); ?>"></i>
+							<span class="screen-reader-text"><?php echo esc_html_x('email', 'noun', 'unlimited'); ?></span>
 						</a>
 					</li>
 				<?php
@@ -557,7 +548,7 @@ if ( ! function_exists( 'unlimited_delete_settings_notice' ) ) {
 			} else if ( $_GET['unlimited_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Unlimited successfully activated!', 'unlimited' ); ?></p>
+					<p><?php printf( __( '%s successfully activated!', 'unlimited' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
