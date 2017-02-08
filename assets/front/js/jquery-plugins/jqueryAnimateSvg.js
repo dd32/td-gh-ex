@@ -1,6 +1,7 @@
 /* ===================================================
  * jqueryAnimateSvg.js v1.0.0
  * @dependency : Vivus.js (MIT licensed)
+ * @dependency : HUParams
  * ===================================================
  * (c) 2016 Nicolas Guillaume, Nice, France
  * Animates an svg icon with Vivus given its #id
@@ -9,8 +10,7 @@
   var pluginName = 'animateSvg',
       defaults = {
         filter_opacity : 0.8,
-        svg_opacity : 0.8,
-        animation_duration : 400
+        svg_opacity : 0.8
       },
       _drawSvgIcon = function(options) {
           var id = $(this).attr('id');
@@ -30,7 +30,7 @@
               return $('#' + id ).css('opacity', options.svg_opacity );
           };
           $.when( set_opacity() ).done( function() {
-              new Vivus( id, {type: 'delayed', duration: options.animation_duration } );
+              new Vivus( id, {type: 'delayed', duration: HUParams.vivusSvgSpeed || 400 } );
           });
       };
 

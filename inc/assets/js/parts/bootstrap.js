@@ -1979,50 +1979,50 @@ var TCParams = TCParams || {};
  /* CAROUSEL PLUGIN DEFINITION
   * ========================== */
 
-  var old = $.fn.czrCarousel
+  var old = $.fn.carousel
 
-  $.fn.czrCarousel = function (option) {
+  $.fn.carousel = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('czr-carousel')
-        , options = $.extend({}, $.fn.czrCarousel.defaults, typeof option == 'object' && option)
+        , data = $this.data('carousel')
+        , options = $.extend({}, $.fn.carousel.defaults, typeof option == 'object' && option)
         , action = typeof option == 'string' ? option : options.slide
-      if (!data) $this.data('czr-carousel', (data = new Carousel(this, options)))
+      if (!data) $this.data('carousel', (data = new Carousel(this, options)))
       if (typeof option == 'number') data.to(option)
       else if (action) data[action]()
       else if (options.interval) data.pause().cycle()
     })
   }
 
-  $.fn.czrCarousel.defaults = {
+  $.fn.carousel.defaults = {
     interval: 5000
   , pause: 'hover'
   }
 
-  $.fn.czrCarousel.Constructor = Carousel
+  $.fn.carousel.Constructor = Carousel
 
 
  /* CAROUSEL NO CONFLICT
   * ==================== */
 
-  $.fn.czrCarousel.noConflict = function () {
-    $.fn.czrCarousel = old
+  $.fn.carousel.noConflict = function () {
+    $.fn.carousel = old
     return this
   }
 
  /* CAROUSEL DATA-API
   * ================= */
 
-  $(document).on('click.czr-carousel.data-api', '.customizr-slide [data-slide], .customizr-slide [data-slide-to]', function (e) {
+  $(document).on('click.carousel.data-api', '[data-slide], [data-slide-to]', function (e) {
     var $this = $(this), href
       , $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
       , options = $.extend({}, $target.data(), $this.data())
       , slideIndex
 
-    $target.czrCarousel(options);
+    $target.carousel(options)
 
     if (slideIndex = $this.attr('data-slide-to')) {
-      $target.data('czr-carousel').pause().to(slideIndex).cycle()
+      $target.data('carousel').pause().to(slideIndex).cycle()
     }
 
     e.preventDefault()
