@@ -106,23 +106,27 @@ function simplecatch_sanitize_post_id( $input ) {
  */
 function simplecatch_sanitize_category_list( $input ) {
 	if ( '' != $input  ) {
+		if( in_array( 0, $input ) ) {
+			return '0';
+		}
+
 		$args = array(
-						'type'			=> 'post',
-						'child_of'      => 0,
-						'parent'        => '',
-						'orderby'       => 'name',
-						'order'         => 'ASC',
-						'hide_empty'    => 0,
-						'hierarchical'  => 0,
-						'taxonomy'      => 'category',
-					);
+			'type'			=> 'post',
+			'child_of'      => 0,
+			'parent'        => '',
+			'orderby'       => 'name',
+			'order'         => 'ASC',
+			'hide_empty'    => 0,
+			'hierarchical'  => 0,
+			'taxonomy'      => 'category',
+		);
 
-		$categories = ( get_categories( $args ) );
+		$categories    = get_categories( $args );		
+		$category_list =	array();
 
-		$category_list 	=	array();
-
-		foreach ( $categories as $category )
+		foreach ( $categories as $category ) {
 			$category_list 	=	array_merge( $category_list, array( $category->term_id ) );
+		}
 
 		if ( count( array_intersect( $input, $category_list ) ) == count( $input ) ) {
 	    	return $input;
@@ -192,6 +196,10 @@ function simplecatch_sanitize_number_range( $number, $setting ) {
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
 function simplecatch_sanitize_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 

@@ -3,24 +3,41 @@
  * The template for displaying the footer.
  *
  * @package Catch Themes
- * @subpackage Simple_Catch
+ * @subpackage Simple_Catch_Pro
  * @since Simple Catch 1.0
  */
 ?>
-	<div id="footer">
-    	<div class="layout-978">
-			<?php //Displaying footer logo ?>
-            <div class="col7 copyright no-margin-left">
-				<?php if( function_exists( 'simplecatch_footerlogo' ) ) :
-						simplecatch_footerlogo(); 
-					  endif;	
-				?><?php _e( 'Copyright', 'simple-catch' ); ?> &copy; <?php echo date("Y"); ?> <span><?php bloginfo('name')?></span>. <?php _e( 'All Rights Reserved.', 'simple-catch' ); ?>
-            </div><!-- .col7 -->
-            
-           <?php do_action( 'simplecatch_credits' ); ?>
-            
-		</div><!-- .layout-978 -->
-	</div><!-- #footer -->      
+	</div> <!-- .wrapper -->
+</div> <!-- .site-content -->
+<?php 
+/** 
+ * catchthemes_after_main hook
+ */
+do_action( 'simplecatch_after_main' ); 
+?>
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+ 
+       <?php 
+       /** 
+         * simplecatch_footer hook
+         *
+         * @hooked simplecatch_footercontent - 15
+         */
+       do_action( 'simplecatch_footer' ); ?> 
+
+</footer><!-- #colophon -->  
+
+<?php 
+/** 
+ * simplecatch_after hook
+ *
+ * @hooked simplecatch_scrollup - 15
+ */
+do_action( 'simplecatch_after' );
+?>
+</div><!-- #page -->
 <?php wp_footer(); ?>
+
 </body>
 </html>

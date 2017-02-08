@@ -8,25 +8,25 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @package Catch Themes
- * @subpackage Simple_Catch
+ * @subpackage Simple_Catch_Pro
  * @since Simple Catch 1.0
  */
 
-get_header();
+get_header(); 
 
-	if ( function_exists( 'simplecatch_display_div' ) ) {
-		$themeoption_layout = simplecatch_display_div();
-	}
+		get_template_part( 'content' ); ?>
 
-    get_template_part( 'content' ); ?>
-
-	</div><!-- #content -->
-
-	<?php
-    if ( 'right-sidebar' == $themeoption_layout  ) {
-        get_sidebar();
-    }?>
-
-	</div><!-- #main -->
-
+        
+	</div><!-- #primary -->
+    
+    <?php
+    /** 
+     * simplecatch_below_primary hook
+     */
+    do_action( 'simplecatch_below_primary' ); 
+    ?>
+                
+	<?php get_sidebar(); ?>
+            
+        
 <?php get_footer(); ?>

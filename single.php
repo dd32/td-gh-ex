@@ -3,7 +3,9 @@
  * The Template for displaying all single posts.
  *
  * @package Catch Themes
- * @subpackage Simple_Catch
+ * @subpackage Simple_Catch_Pro
  * @since Simple Catch 1.0
  */
-if( function_exists( 'simplecatch_content' ) ) simplecatch_content();
+?>
+
+<?php if ( function_exists( 'simplecatch_content' ) ) simplecatch_content();

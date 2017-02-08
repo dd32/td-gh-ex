@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-01-25 10:13+0545\n"
-"PO-Revision-Date: 2017-01-25 10:13+0545\n"
+"POT-Creation-Date: 2017-02-08 15:49+0545\n"
+"PO-Revision-Date: 2017-02-08 15:49+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"
@@ -19,19 +19,19 @@ msgstr ""
 "X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:13
+#: ../404.php:12
 msgid "Error 404 - Page Not Found."
 msgstr "Errore 404 - Pagina non trovata"
 
-#: ../404.php:14
+#: ../404.php:15
 msgid "We&rsquo;re sorry! This page is not available."
 msgstr "Siamo spiacenti, questa pagina non è disponibile."
 
-#: ../404.php:15
+#: ../404.php:16
 msgid "This might be because:"
 msgstr "Questo potrebbe essere dovuto:"
 
-#: ../404.php:16
+#: ../404.php:17
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
@@ -39,14 +39,14 @@ msgstr ""
 "L'indirizzo che hai inserito è sbagliato; oppure la pagina che stai cercando "
 "è stata postata, aggiornata o cancellata"
 
-#: ../404.php:17
+#: ../404.php:18
 msgid "Please try the following options instead:"
 msgstr "Per favore prova le seguenti opzioni:"
 
-#: ../404.php:18
+#: ../404.php:19
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
-"browser or Use the search box at the Header."
+"browser or Use the search box below."
 msgstr ""
 "Controlla per errori nell'URL, quindi premi il pulsante di refresh nel tuo "
 "browser oppure usa la casella di ricerca nella testata."
@@ -57,21 +57,18 @@ msgstr ""
 "Questo articolo è protetto da password. Inserisci la password per vedere i "
 "commenti"
 
-#: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:948 ../image.php:48
-#: ../page-blog.php:69
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Nessun commento"
 
-#: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:948 ../image.php:48
-#: ../page-blog.php:69
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 commento"
 
-#: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:948 ../image.php:48
-#: ../page-blog.php:69
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% commenti"
 
@@ -79,21 +76,16 @@ msgstr "% commenti"
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi"
 
-#: ../content.php:23 ../content.php:41 ../page-blog.php:47 ../page-blog.php:64
-#, php-format
-msgid "Permalink to %s"
-msgstr "Collegamento permanente a %s"
-
-#: ../content.php:44 ../functions/simplecatch_functions.php:946 ../image.php:46
+#: ../content.php:50 ../functions/core.php:999 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "By"
 
-#: ../content.php:66 ../page-blog.php:107
+#: ../content.php:80 ../page-blog.php:114
 msgid "Not found"
 msgstr "Non trovato"
 
-#: ../content.php:67 ../page-blog.php:108
+#: ../content.php:83 ../page-blog.php:117
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -101,1222 +93,844 @@ msgstr ""
 "Ci scusiamo, ma non è stato trovato nessun articolo per l'archivio "
 "richiesto. Probabilmente una ricerca aiuterà a trovare articoli correlati."
 
-#: ../footer.php:17
-msgid "Copyright"
-msgstr "Copyright"
-
-#: ../footer.php:17
-msgid "All Rights Reserved."
-msgstr "Tutti i diritti riservati."
-
-#: ../functions.php:110
+#: ../functions.php:115 ../functions/core.php:691
 msgid "Primary Menu"
 msgstr "Menu principale"
 
-#: ../functions/panel/customizer/customizer-custom-controls.php:38
-msgid ""
-"Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
-"options."
-msgstr ""
-
-#: ../functions/panel/customizer/customizer-custom-controls.php:51
-msgid "Theme Instructions"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer-custom-controls.php:55
-#: ../functions/panel/theme_options.php:103
-msgid "Support"
-msgstr "Support"
-
-#: ../functions/panel/customizer/customizer-custom-controls.php:59
-msgid "Changelog"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer-custom-controls.php:63
-msgid "Donate Now"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer-custom-controls.php:67
-msgid "Review"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:33
-#: ../functions/panel/theme_options.php:42
-#: ../functions/panel/theme_options.php:43
-#: ../functions/panel/theme_options.php:116
-msgid "Theme Options"
-msgstr "Opzioni del tema"
-
-#: ../functions/panel/customizer/customizer.php:34
-msgid "Basic theme Options"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:38
-msgid "Favicon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:43
-msgid "Webclip Icon Options"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:44
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
-"144px height, which will support High Resolution Devices like iPad Retina"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:48
-#: ../functions/panel/customizer/customizer.php:274
-#: ../functions/panel/theme_options.php:388
-#: ../functions/panel/theme_options.php:393
-msgid "Default Layout"
-msgstr "Layout di default"
-
-#: ../functions/panel/customizer/customizer.php:53
-#: ../functions/panel/theme_options.php:456
-msgid "Homepage / Frontpage Category Setting"
-msgstr "Selezione delle categorie da mostrare nella pagina principale"
-
-#: ../functions/panel/customizer/customizer.php:58
-#: ../functions/panel/theme_options.php:489
-msgid "Search Text Settings"
-msgstr "Impostazioni della casella di ricerca"
-
-#: ../functions/panel/customizer/customizer.php:63
-#: ../functions/panel/theme_options.php:510
-msgid "Excerpt / More Tag Settings"
-msgstr "Link \"Continua a leggere\" ed estratto del testo"
-
-#: ../functions/panel/customizer/customizer.php:68
-#: ../functions/panel/theme_options.php:530
-msgid "Feed Redirect"
-msgstr "Redirezione dei feed"
-
-#: ../functions/panel/customizer/customizer.php:73
-#: ../functions/panel/theme_options.php:551
-msgid "Custom CSS"
-msgstr "CSS personalizzato"
-
-#: ../functions/panel/customizer/customizer.php:82
-#: ../functions/panel/customizer/customizer.php:83
-#: ../functions/panel/theme_options.php:117
-msgid "Featured Post Slider"
-msgstr "Slider degli articoli in evidenza"
-
-#: ../functions/panel/customizer/customizer.php:87
-#: ../functions/panel/theme_options.php:583
-msgid "Add Slider Options"
-msgstr "Opzioni dello slider"
-
-#: ../functions/panel/customizer/customizer.php:92
-#: ../functions/panel/theme_options.php:613
-msgid "Slider Effect Options"
-msgstr "Effetti dello slider"
-
-#: ../functions/panel/customizer/customizer.php:139
-#: ../functions/panel/theme_options.php:118
-msgid "Social Links"
-msgstr "Link sociali"
-
-#: ../functions/panel/customizer/customizer.php:150
-#: ../functions/panel/theme_options.php:119
-msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
-
-#: ../functions/panel/customizer/customizer.php:151
-#, php-format
-msgid ""
-"Webmaster Tools falls under Plugins Territory according to Theme Review "
-"Guidelines in WordPress.org. This feature will be depreciated in future "
-"versions from Catch Box free version. If you want this feature, then you can "
-"add <a target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:159
-#: ../functions/panel/customizer/customizer.php:735
-msgid "Check to Disable Site Title"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:168
-msgid "Check to Disable Site Description"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:177
-msgid "Footer Logo"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:186
-msgid "Check to Disable Footer Logo"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:197
-#: ../functions/panel/theme_options.php:280
-msgid "Default Color Scheme"
-msgstr "Default Color Scheme"
-
-#: ../functions/panel/customizer/customizer.php:207
-msgid "Heading Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:216
-msgid "Meta Description Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:225
-msgid "Text Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:234
-msgid "Link Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:243
-msgid "Sidebar Widget Heading Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:252
-msgid "Sidebar Widget Text Color"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:261
-#: ../functions/panel/theme_options.php:377
-msgid "Check to Reset Color"
-msgstr "Check to Reset Color"
-
-#: ../functions/panel/customizer/customizer.php:262
-msgid "Please refresh the customizer after saving if reset option is used"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:287
-#: ../functions/panel/theme_options.php:462
-msgid "Front page posts categories:"
-msgstr "Articoli da mostrare in home page:"
-
-#: ../functions/panel/customizer/customizer.php:288
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:299
-#: ../functions/panel/theme_options.php:494
-msgid "Default Display Text in Search"
-msgstr "Testo di default nella casella di ricerca"
-
-#: ../functions/panel/customizer/customizer.php:309
-#: ../functions/panel/theme_options.php:499
-msgid "Search Button's text"
-msgstr "Testo del pulsante di ricerca"
-
-#: ../functions/panel/customizer/customizer.php:321
-#: ../functions/panel/theme_options.php:515
-msgid "More Tag Text"
-msgstr "Testo del link \"Continua a leggere\""
-
-#: ../functions/panel/customizer/customizer.php:331
-#: ../functions/panel/theme_options.php:520
-msgid "Excerpt length(words)"
-msgstr "Lunghezza dell'estratto (in parole)"
-
-#: ../functions/panel/customizer/customizer.php:347
-#: ../functions/panel/theme_options.php:535
-msgid "Feed Redirect URL"
-msgstr "URL di redirezione dei feed"
-
-#: ../functions/panel/customizer/customizer.php:348
-msgid " Add in the Feedburner URL"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:360
-msgid "Enter your custom CSS styles"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:372
-msgid "Check to Exclude Slider posts from Homepage posts"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:382
-#: ../functions/panel/theme_options.php:592
-msgid "Number of Slides"
-msgstr "Numero di slide"
-
-#: ../functions/panel/customizer/customizer.php:383
-msgid ""
-"Customizer page needs to be refreshed after saving if number of slides is "
-"changed"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:399
-msgid "Check to Disable Slider Background Effect"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:409
-msgid "Transition Effect"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:420
-#: ../functions/panel/theme_options.php:643
-msgid "Transition Delay"
-msgstr "Attesa tra le transizioni"
-
-#: ../functions/panel/customizer/customizer.php:436
-#: ../functions/panel/theme_options.php:650
-msgid "Transition Length"
-msgstr "Durata della transizione"
-
-#: ../functions/panel/customizer/customizer.php:455
-#: ../functions/panel/theme_options.php:105
-#: ../functions/panel/theme_options.php:668
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../functions/panel/customizer/customizer.php:464
-#: ../functions/panel/theme_options.php:106
-#: ../functions/panel/theme_options.php:673
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../functions/panel/customizer/customizer.php:473
-#: ../functions/panel/theme_options.php:678
-msgid "Google+"
-msgstr "Google+"
-
-#: ../functions/panel/customizer/customizer.php:482
-#: ../functions/panel/theme_options.php:683
-msgid "Pinterest"
-msgstr "Pinterest"
-
-#: ../functions/panel/customizer/customizer.php:491
-#: ../functions/panel/theme_options.php:688
-msgid "Youtube"
-msgstr "Youtube"
-
-#: ../functions/panel/customizer/customizer.php:500
-#: ../functions/panel/theme_options.php:693
-msgid "Vimeo"
-msgstr "Vimeo"
-
-#: ../functions/panel/customizer/customizer.php:509
-msgid "LinkedIn"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:518
-#: ../functions/panel/theme_options.php:704
-msgid "Slideshare"
-msgstr "Slideshare"
-
-#: ../functions/panel/customizer/customizer.php:527
-#: ../functions/panel/theme_options.php:709
-msgid "Foursquare"
-msgstr "Foursquare"
-
-#: ../functions/panel/customizer/customizer.php:536
-#: ../functions/panel/theme_options.php:714
-msgid "Flickr"
-msgstr "Flickr"
-
-#: ../functions/panel/customizer/customizer.php:545
-#: ../functions/panel/theme_options.php:719
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: ../functions/panel/customizer/customizer.php:554
-#: ../functions/panel/theme_options.php:724
-msgid "deviantART"
-msgstr "deviantART"
-
-#: ../functions/panel/customizer/customizer.php:563
-#: ../functions/panel/theme_options.php:729
-msgid "Dribbble"
-msgstr "Dribbble"
-
-#: ../functions/panel/customizer/customizer.php:572
-#: ../functions/panel/theme_options.php:734
-msgid "MySpace"
-msgstr "MySpace"
-
-#: ../functions/panel/customizer/customizer.php:581
-#: ../functions/panel/theme_options.php:739
-#: ../functions/simplecatch_functions.php:775
-msgid "WordPress"
-msgstr "WordPress"
-
-#: ../functions/panel/customizer/customizer.php:590
-#: ../functions/panel/theme_options.php:744
-msgid "RSS"
-msgstr "RSS"
-
-#: ../functions/panel/customizer/customizer.php:599
-#: ../functions/panel/theme_options.php:749
-msgid "Delicious"
-msgstr "Delicious"
-
-#: ../functions/panel/customizer/customizer.php:608
-#: ../functions/panel/theme_options.php:754
-msgid "Last.fm"
-msgstr "Last.fm"
-
-#: ../functions/panel/customizer/customizer.php:617
-#: ../functions/panel/theme_options.php:759
-msgid "Instagram"
-msgstr "Instagram"
-
-#: ../functions/panel/customizer/customizer.php:626
-#: ../functions/panel/theme_options.php:764
-msgid "GitHub"
-msgstr "GitHub"
-
-#: ../functions/panel/customizer/customizer.php:635
-#: ../functions/panel/theme_options.php:769
-msgid "Vkontakte"
-msgstr "Vkontakte"
-
-#: ../functions/panel/customizer/customizer.php:644
-#: ../functions/panel/theme_options.php:774
-msgid "My World"
-msgstr "My World"
-
-#: ../functions/panel/customizer/customizer.php:653
-#: ../functions/panel/theme_options.php:779
-msgid "Odnoklassniki"
-msgstr "Odnoklassniki"
-
-#: ../functions/panel/customizer/customizer.php:662
-#: ../functions/panel/theme_options.php:784
-msgid "Goodreads"
-msgstr "Goodreads"
-
-#: ../functions/panel/customizer/customizer.php:671
-#: ../functions/panel/theme_options.php:789
-msgid "Skype"
-msgstr "Skype"
-
-#: ../functions/panel/customizer/customizer.php:680
-#: ../functions/panel/theme_options.php:794
-msgid "Soundcloud"
-msgstr "Soundcloud"
-
-#: ../functions/panel/customizer/customizer.php:689
-#: ../functions/panel/theme_options.php:799
-#: ../functions/simplecatch_functions.php:1032
-msgid "Email"
-msgstr "Email"
-
-#: ../functions/panel/customizer/customizer.php:700
-#: ../functions/panel/theme_options.php:815
-msgid "Code to display on Header"
-msgstr "Codice da inserire nel tag header"
-
-#: ../functions/panel/customizer/customizer.php:701
-msgid ""
-"Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
-"will load on Header"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:710
-#: ../functions/panel/theme_options.php:824
-msgid "Code to display on Footer"
-msgstr "Codice da mostrare a piè pagina"
-
-#: ../functions/panel/customizer/customizer.php:711
-msgid ""
-"Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
-"will load on footer"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:726
-msgid "Header Logo"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:753
-msgid "Check to Disable Favicon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:764
-msgid "Fav Icon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:777
-msgid "Web Clip Icon"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:964
-#, php-format
-msgid "#%s Featured Post ID"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:978
-msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:980
-msgid "Reset all settings"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:991
-msgid "Check to reset all settings to default"
-msgstr ""
-
-#: ../functions/panel/customizer/customizer.php:1001
-#: ../functions/panel/customizer/customizer.php:1012
-msgid "Important Links"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:83
-msgid "Options Saved"
-msgstr "Opzioni salvate"
-
-#: ../functions/panel/theme_options.php:89
-msgid "Theme Options By"
-msgstr "Opzioni del tema da"
-
-#: ../functions/panel/theme_options.php:91
-#: ../functions/simplecatch_functions.php:775
-msgid "https://catchthemes.com/"
-msgstr "https://catchthemes.com/"
-
-#: ../functions/panel/theme_options.php:91
-#: ../functions/panel/theme_options.php:92
-msgid "Catch Themes"
-msgstr "Catch Themes"
-
-#: ../functions/panel/theme_options.php:97
-msgid "https://catchthemes.com/themes/simple-catch-pro/"
-msgstr "https://catchthemes.com/themes/simple-catch-pro/"
-
-#: ../functions/panel/theme_options.php:97
-msgid "Upgrade to Simple Catch Pro"
-msgstr "Aggiorna a Simple Catch Pro"
-
-#: ../functions/panel/theme_options.php:102
-msgid "https://catchthemes.com/donate/"
-msgstr "https://catchthemes.com/donate/"
-
-#: ../functions/panel/theme_options.php:102
-msgid "Donate"
-msgstr "Donate"
-
-#: ../functions/panel/theme_options.php:103
-msgid "https://catchthemes.com/support/"
-msgstr "https://catchthemes.com/support/"
-
-#: ../functions/panel/theme_options.php:104
-msgid "https://catchthemes.com/theme-instructions/simple-catch/"
-msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
-
-#: ../functions/panel/theme_options.php:104
-msgid "Theme Instruction"
-msgstr "Istruzioni del tema"
-
-#: ../functions/panel/theme_options.php:105
-msgid "https://www.facebook.com/catchthemes/"
-msgstr "https://www.facebook.com/catchthemes/"
-
-#: ../functions/panel/theme_options.php:105
-msgid "Like Catch Themes on Facebook"
-msgstr "Metti il like a Catch Themes su Facebook"
-
-#: ../functions/panel/theme_options.php:106
-msgid "https://twitter.com/catchthemes/"
-msgstr "https://twitter.com/catchthemes/"
-
-#: ../functions/panel/theme_options.php:106
-msgid "Follow Catch Themes on Twitter"
-msgstr "Segui Catch Themes su Twitter"
-
-#: ../functions/panel/theme_options.php:107
-msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
-msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
-
-#: ../functions/panel/theme_options.php:107
-msgid "Rate us 5 Star on WordPress"
-msgstr "Votaci 5 stelle su WordPress"
-
-#: ../functions/panel/theme_options.php:107
-msgid "5 Star Rating"
-msgstr "Vota su WordPress"
-
-#: ../functions/panel/theme_options.php:125
-msgid "Logo Options"
-msgstr "Opzioni del logo"
-
-#: ../functions/panel/theme_options.php:130
-msgid "Header logo url:"
-msgstr "URL del logo dell'intestazione:"
-
-#: ../functions/panel/theme_options.php:137
-msgid "Insert Header Logo"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:137
-msgid "Add/Change Header Logo"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:141
-#: ../functions/panel/theme_options.php:181
-#: ../functions/panel/theme_options.php:220
-#: ../functions/panel/theme_options.php:256
-#: ../functions/panel/theme_options.php:437
-msgid "Preview: "
-msgstr "Anteprima:"
-
-#: ../functions/panel/theme_options.php:153
-msgid "Disable Header Logo?"
-msgstr "Disable Header Logo?"
-
-#: ../functions/panel/theme_options.php:155
-#: ../functions/panel/theme_options.php:162
-#: ../functions/panel/theme_options.php:167
-#: ../functions/panel/theme_options.php:195
-#: ../functions/panel/theme_options.php:234
-msgid "Check to Disable."
-msgstr "Seleziona per disabilitare."
-
-#: ../functions/panel/theme_options.php:160
-msgid "Disable Site Title?"
-msgstr "Disabilito il titolo del sito?"
-
-#: ../functions/panel/theme_options.php:165
-msgid "Disable Site Description?"
-msgstr "Disabilita la descrizione del sito?"
-
-#: ../functions/panel/theme_options.php:170
-msgid "Footer logo url: "
-msgstr "URL del logo a piè pagina:"
-
-#: ../functions/panel/theme_options.php:177
-msgid "Insert Footer Logo"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:177
-msgid "Add/Change Footer Logo"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:193
-msgid "Disable Footer Logo?"
-msgstr "Disabilita il logo a piè pagina?"
-
-#: ../functions/panel/theme_options.php:199
-#: ../functions/panel/theme_options.php:238
-#: ../functions/panel/theme_options.php:270
-#: ../functions/panel/theme_options.php:383
-#: ../functions/panel/theme_options.php:419
-#: ../functions/panel/theme_options.php:484
-#: ../functions/panel/theme_options.php:505
-#: ../functions/panel/theme_options.php:525
-#: ../functions/panel/theme_options.php:541
-#: ../functions/panel/theme_options.php:570
-#: ../functions/panel/theme_options.php:607
-#: ../functions/panel/theme_options.php:658
-#: ../functions/panel/theme_options.php:804
-#: ../functions/panel/theme_options.php:835
-msgid "Save"
-msgstr "Salva"
-
-#: ../functions/panel/theme_options.php:204
-msgid "Fav Icon Option"
-msgstr "Opzioni della Favicon"
-
-#: ../functions/panel/theme_options.php:209
-msgid "Favicon URL:"
-msgstr "URL della Favicon:"
-
-#: ../functions/panel/theme_options.php:216
-msgid "Insert Favicon"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:216
-msgid "Add/Change Favicon"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:232
-msgid "Disable Fav Icon?"
-msgstr "Disable Fav Icon?"
-
-#: ../functions/panel/theme_options.php:243
-msgid "Web Clip Icon Option"
-msgstr "Opzioni dell'icona Web Clip"
-
-#: ../functions/panel/theme_options.php:248
-msgid "Web Clip Icon URL:"
-msgstr "URL dell'icona Web Clip"
-
-#: ../functions/panel/theme_options.php:251
-msgid "Insert Web Clip Icon"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:251
-msgid "Add/Change Web Clip Icon"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:262
-msgid "No Web Clip Icon Found. Upload Web Clip Icon."
-msgstr "Non è stata trovata un'icona Web Clip. Carica l'icona Web Clip."
-
-#: ../functions/panel/theme_options.php:275
-msgid "Color Options"
-msgstr "Color Options"
-
-#: ../functions/panel/theme_options.php:284
-msgid "Default"
-msgstr "Default"
-
-#: ../functions/panel/theme_options.php:288
-#: ../functions/simplecatch_themeoptions_defaults.php:106
-msgid "Dark"
-msgstr "Dark"
-
-#: ../functions/panel/theme_options.php:292
-#: ../functions/simplecatch_themeoptions_defaults.php:107
-msgid "Brown"
-msgstr "Brown"
-
-#: ../functions/panel/theme_options.php:299
-msgid "Content Background:"
-msgstr "Content Background:"
-
-#: ../functions/panel/theme_options.php:303
-msgid "Need to replace default background?"
-msgstr "Vuoi sostituire lo sfondo di default?"
-
-#: ../functions/panel/theme_options.php:303
-#, php-format
-msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">Clicca qui</a>"
-
-#: ../functions/panel/theme_options.php:309
-msgid "Heading Color:"
-msgstr "Colore dei titoli:"
-
-#: ../functions/panel/theme_options.php:320
-msgid "Meta Description Color:"
-msgstr "Colore della descrizione:"
-
-#: ../functions/panel/theme_options.php:331
-msgid "Text Color:"
-msgstr "Colore del testo:"
-
-#: ../functions/panel/theme_options.php:342
-msgid "Link Color:"
-msgstr "Colore dei link:"
-
-#: ../functions/panel/theme_options.php:353
-msgid "Sidebar Widget Heading Color:"
-msgstr "Colore dell'intestazione dei widget della barra laterale"
-
-#: ../functions/panel/theme_options.php:364
-msgid "Sidebar Widget Text Color:"
-msgstr "Colore del testo dei widget nella barra laterale: "
-
-#: ../functions/panel/theme_options.php:374
-msgid "Reset Color:"
-msgstr "Ripristina i colori:"
-
-#: ../functions/panel/theme_options.php:397
-msgid "Content on Left"
-msgstr "Contenuto a sinistra"
-
-#: ../functions/panel/theme_options.php:402
-#: ../functions/simplecatch_themeoptions_defaults.php:121
-msgid "Content on Right"
-msgstr "Contenuto a destra"
-
-#: ../functions/panel/theme_options.php:407
-#: ../functions/simplecatch_themeoptions_defaults.php:122
-msgid "No Sidebar"
-msgstr "Nessuna barra laterale"
-
-#: ../functions/panel/theme_options.php:412
-#: ../functions/simplecatch_themeoptions_defaults.php:123
-msgid "No Sidebar, Full Width"
-msgstr "Nessuna barra laterale, larghezza piena"
-
-#: ../functions/panel/theme_options.php:424
-msgid "Header Options"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:429
-msgid "Header Image:"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:432
-msgid "Click here to change header image"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:432
-msgid "Click here to change Header Image"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:445
-msgid "There is no Header Image"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:464
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
-msgstr ""
-"Solo gli articoli che appartengono alle categorie selezionate  qui verranno "
-"mostrati nella pagina principale."
-
-#: ../functions/panel/theme_options.php:469
-msgid "--Disabled--"
-msgstr "--Disabilitato--"
-
-#: ../functions/panel/theme_options.php:479
-msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Puoi selezionare più categorie tenendo premuto il tasto CTRL"
-
-#: ../functions/panel/theme_options.php:556
-msgid "Enter your custom CSS styles."
-msgstr "Inserisci il tuo stile CSS personalizzato."
-
-#: ../functions/panel/theme_options.php:563
-msgid "CSS Tutorial from W3Schools."
-msgstr "Tutorial CSS su W3Schools."
-
-#: ../functions/panel/theme_options.php:565
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
-
-#: ../functions/panel/theme_options.php:565
-msgid "CSS Tutorial"
-msgstr "Utorial CSS"
-
-#: ../functions/panel/theme_options.php:565
-msgid "Click Here to Read"
-msgstr "Clicca qua per leggere"
-
-#: ../functions/panel/theme_options.php:587
-msgid "Exclude Slider post from Home page posts:"
-msgstr "Escludi i post dello slider dalla pagina principale"
-
-#: ../functions/panel/theme_options.php:598
-msgid "Featured Post ID"
-msgstr "Featured Post ID"
-
-#: ../functions/panel/theme_options.php:600
-msgid "Click Here To Edit"
-msgstr "Clicca qua per modificare"
-
-#: ../functions/panel/theme_options.php:606
-msgid ""
-"Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr ""
-"Nota: qua puoi inserire gli ID degli articoli che verranno mostrati nello "
-"slider nella pagina principale."
-
-#: ../functions/panel/theme_options.php:617
-msgid "Disable Slider Background Effect:"
-msgstr "Disabilita gli effetti di background dello slider"
-
-#: ../functions/panel/theme_options.php:624
-msgid "Transition Effect:"
-msgstr "Effetto di transizione"
-
-#: ../functions/panel/theme_options.php:628
-#: ../functions/simplecatch_themeoptions_defaults.php:136
-msgid "fade"
-msgstr "dissolvenza"
-
-#: ../functions/panel/theme_options.php:629
-#: ../functions/simplecatch_themeoptions_defaults.php:137
-msgid "wipe"
-msgstr "wipe"
-
-#: ../functions/panel/theme_options.php:630
-#: ../functions/simplecatch_themeoptions_defaults.php:138
-#: ../functions/simplecatch_themeoptions_defaults.php:140
-msgid "scrollUp"
-msgstr "scorri in alto"
-
-#: ../functions/panel/theme_options.php:631
-#: ../functions/simplecatch_themeoptions_defaults.php:139
-msgid "scrollDown"
-msgstr "scorri in basso"
-
-#: ../functions/panel/theme_options.php:632
-#: ../functions/simplecatch_themeoptions_defaults.php:141
-msgid "scrollLeft"
-msgstr "scorri a sinistra"
-
-#: ../functions/panel/theme_options.php:633
-#: ../functions/simplecatch_themeoptions_defaults.php:142
-msgid "scrollRight"
-msgstr "scorri a destra"
-
-#: ../functions/panel/theme_options.php:634
-#: ../functions/simplecatch_themeoptions_defaults.php:143
-msgid "blindX"
-msgstr "sostituisci orizzontale"
-
-#: ../functions/panel/theme_options.php:635
-#: ../functions/simplecatch_themeoptions_defaults.php:144
-msgid "blindY"
-msgstr "sostituisci verticale"
-
-#: ../functions/panel/theme_options.php:636
-#: ../functions/simplecatch_themeoptions_defaults.php:145
-msgid "blindZ"
-msgstr "sostituisci diagonale"
-
-#: ../functions/panel/theme_options.php:637
-#: ../functions/simplecatch_themeoptions_defaults.php:146
-msgid "cover"
-msgstr "copri"
-
-#: ../functions/panel/theme_options.php:638
-#: ../functions/simplecatch_themeoptions_defaults.php:147
-msgid "shuffle"
-msgstr "a caso"
-
-#: ../functions/panel/theme_options.php:646
-#: ../functions/panel/theme_options.php:653
-msgid "second(s)"
-msgstr "secondi"
-
-#: ../functions/panel/theme_options.php:699
-msgid "Linkedin"
-msgstr "Linkedin"
-
-#: ../functions/panel/theme_options.php:810
-msgid "Header and Footer Codes"
-msgstr "Header and Footer Codes"
-
-#: ../functions/panel/theme_options.php:821
-msgid ""
-"Note: Here you can put scripts from Google, Facebook etc. which will load on "
-"Header"
-msgstr ""
-"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
-"verrano caricati nell'header"
-
-#: ../functions/panel/theme_options.php:831
-msgid ""
-"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
-"will load on footer"
-msgstr ""
-"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
-"verrano caricati a piè pagina"
-
-#: ../functions/simplecatch_functions.php:77
-msgid "on"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:131 ../searchform.php:17
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: ../functions/simplecatch_functions.php:495
+#: ../functions/core.php:542
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s su Facebook"
 
-#: ../functions/simplecatch_functions.php:500
+#: ../functions/core.php:547
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s su Twitter"
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/core.php:552
 #, php-format
 msgid "%s on Google+"
 msgstr "%s su Google+"
 
-#: ../functions/simplecatch_functions.php:510
+#: ../functions/core.php:557
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s su Linkedin"
 
-#: ../functions/simplecatch_functions.php:515
+#: ../functions/core.php:562
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s su Pinterest"
 
-#: ../functions/simplecatch_functions.php:520
+#: ../functions/core.php:567
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s su YouTube"
 
-#: ../functions/simplecatch_functions.php:525
+#: ../functions/core.php:572
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s su Vimeo"
 
-#: ../functions/simplecatch_functions.php:530
+#: ../functions/core.php:577
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s su Slideshare"
 
-#: ../functions/simplecatch_functions.php:535
+#: ../functions/core.php:582
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s su Foursquare"
 
-#: ../functions/simplecatch_functions.php:540
+#: ../functions/core.php:587
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s su Flickr"
 
-#: ../functions/simplecatch_functions.php:545
+#: ../functions/core.php:592
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s su Tumblr"
 
-#: ../functions/simplecatch_functions.php:550
+#: ../functions/core.php:597
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s su deviantART"
 
-#: ../functions/simplecatch_functions.php:555
+#: ../functions/core.php:602
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s su Dribbble"
 
-#: ../functions/simplecatch_functions.php:560
+#: ../functions/core.php:607
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s su MySpace"
 
-#: ../functions/simplecatch_functions.php:565
+#: ../functions/core.php:612
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s su WordPress"
 
-#: ../functions/simplecatch_functions.php:570
+#: ../functions/core.php:617
 #, php-format
 msgid "%s on RSS"
 msgstr "%s su RSS"
 
-#: ../functions/simplecatch_functions.php:575
+#: ../functions/core.php:622
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s su Delicious"
 
-#: ../functions/simplecatch_functions.php:580
+#: ../functions/core.php:627
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s su Last.fm"
 
-#: ../functions/simplecatch_functions.php:585
+#: ../functions/core.php:632
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s su Instagram"
 
-#: ../functions/simplecatch_functions.php:590
+#: ../functions/core.php:637
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s su GitHub"
 
-#: ../functions/simplecatch_functions.php:595
+#: ../functions/core.php:642
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s su Vkontakte"
 
-#: ../functions/simplecatch_functions.php:600
+#: ../functions/core.php:647
 #, php-format
 msgid "%s on My World"
 msgstr "%s su My World"
 
-#: ../functions/simplecatch_functions.php:605
+#: ../functions/core.php:652
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s su Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:610
+#: ../functions/core.php:657
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s su Goodreads"
 
-#: ../functions/simplecatch_functions.php:615
+#: ../functions/core.php:662
 #, php-format
 msgid "%s on Skype"
 msgstr "%s su Skype"
 
-#: ../functions/simplecatch_functions.php:620
+#: ../functions/core.php:667
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s su Soundcloud"
 
-#: ../functions/simplecatch_functions.php:625
+#: ../functions/core.php:672
 #, php-format
 msgid "%s on Email"
 msgstr "%s su Email"
 
-#: ../functions/simplecatch_functions.php:775
-msgid "Powered By:"
-msgstr "Fornito da:"
+#: ../functions/core.php:689 ../functions/core.php:1115
+msgid "Menu"
+msgstr "Menu"
 
-#: ../functions/simplecatch_functions.php:775
-msgid "http://wordpress.org/"
-msgstr "http://it.wordpress.org/"
+#: ../functions/core.php:692
+msgid "Primary menu"
+msgstr "Menu principale"
 
-#: ../functions/simplecatch_functions.php:775
-msgid "Powered By WordPress"
-msgstr "Fornito da WordPress"
-
-#: ../functions/simplecatch_functions.php:775
-msgid "Theme:"
-msgstr "Tema:"
-
-#: ../functions/simplecatch_functions.php:775
-msgid "Simple Catch"
-msgstr "Simple Catch"
-
-#: ../functions/simplecatch_functions.php:962
+#: ../functions/core.php:1022
 msgid "Categories: "
 msgstr "Categorie:"
 
-#: ../functions/simplecatch_functions.php:1031
+#: ../functions/core.php:1024
+msgid "Tags"
+msgstr ""
+
+#: ../functions/core.php:1043
 msgid "Name"
 msgstr "Nome"
 
-#: ../functions/simplecatch_functions.php:1031
-#: ../functions/simplecatch_functions.php:1032
+#: ../functions/core.php:1043 ../functions/core.php:1044
 msgid "( required )"
 msgstr "(richiesto)"
 
-#: ../functions/simplecatch_functions.php:1033
+#: ../functions/core.php:1044
+msgid "Email"
+msgstr "Email"
+
+#: ../functions/core.php:1045
 msgid "Website"
 msgstr "Sito web"
 
-#: ../functions/simplecatch_functions.php:1069
-msgid "ID"
-msgstr "ID"
+#: ../functions/metabox.php:14 ../functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr "Opzioni Simple Catch"
 
-#: ../functions/simplecatch_functions.php:1173 ../page-blog.php:97
-msgid "Previous"
-msgstr "Precedente"
-
-#: ../functions/simplecatch_functions.php:1174 ../page-blog.php:98
-msgid "Next"
-msgstr "Successivo"
-
-#: ../functions/simplecatch_metabox.php:14
-#: ../functions/simplecatch_metabox.php:20
-msgid "Select Sidebar layout"
-msgstr "Seleziona il layout della barra laterale"
-
-#: ../functions/simplecatch_metabox.php:33
+#: ../functions/metabox.php:33
 #, php-format
-msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr ""
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr "Layout di default in <a href=\"%s\">Impostazioni Tema</a>"
 
-#: ../functions/simplecatch_metabox.php:39
-msgid "Right sidebar"
-msgstr "Barra laterale a destra"
-
-#: ../functions/simplecatch_metabox.php:45
-msgid "Left sidebar"
-msgstr "Barra laterale a sinistra"
-
-#: ../functions/simplecatch_metabox.php:51
+#: ../functions/metabox.php:39
 msgid "No sidebar"
 msgstr "Nessuna barra laterale"
 
-#: ../functions/simplecatch_metabox.php:57
+#: ../functions/metabox.php:45
 msgid "No sidebar, Full Width"
 msgstr "Nessuna barra laterale, larghezza piena"
 
-#: ../functions/simplecatch_themeoptions_defaults.php:105
-msgid "Default (Light)"
-msgstr ""
+#: ../functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Barra laterale a sinistra"
 
-#: ../functions/simplecatch_themeoptions_defaults.php:120
-msgid "Content on Left "
-msgstr ""
+#: ../functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Barra laterale a destra"
 
-#: ../functions/widgets.php:12 ../functions/widgets.php:14
-msgid "sidebar"
-msgstr "barra laterale"
+#: ../functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr "Opzioni del Layout della barra laterale"
 
-#: ../functions/widgets.php:41
-msgid "CT: Tag Clouds"
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:253
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Contenuto a sinistra"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "Contenuto a destra"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Nessuna barra laterale"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "Nessuna barra laterale, larghezza piena"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "dissolvenza"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "wipe"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:305
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "scorri in alto"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "scorri in basso"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "scorri a sinistra"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "scorri a destra"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "sostituisci orizzontale"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "sostituisci verticale"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "sostituisci diagonale"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "copri"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "a caso"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr "Mostra l'estratto dell'articolo"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr "Mostra l'articolo intero"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr "Pagina principale"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr "Intero sito"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr "Disabilita"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr "Slider delle immagini in evidenza"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Slider degli articoli in evidenza"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr "Slider delle pagine in evidenza"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr "Slider delle categorie in evidenza"
+
+#: ../functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr "Barra laterale principale"
+
+#: ../functions/widgets.php:19
+msgid "This is main sideabar"
 msgstr ""
 
 #: ../functions/widgets.php:42
-msgid "Displays Custom Tag Cloud designed for Simple Catch Theme"
+msgid "CT: Custom Tag Cloud"
 msgstr ""
 
-#: ../functions/widgets.php:124
-msgid "CT: Social Icons"
+#: ../functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
 msgstr ""
 
-#: ../functions/widgets.php:125
-msgid "Displays Social Icons added from Theme Options Panel"
-msgstr ""
-
-#: ../functions/widgets.php:208
-msgid "CT: Advertisement"
-msgstr ""
-
-#: ../functions/widgets.php:209
-msgid "Use this widget to add any type of Advertisement as a widget"
-msgstr ""
-
-#: ../functions/widgets.php:227
+#: ../functions/widgets.php:101 ../functions/widgets.php:229
 msgid "Title (optional):"
 msgstr "Title (optional):"
 
-#: ../functions/widgets.php:232
-msgid "Advertisement Code:"
-msgstr "Advertisement Code:"
+#: ../functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr ""
 
-#: ../functions/widgets.php:238
-msgid "Image Url:"
-msgstr "Image Url:"
+#: ../functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
 
-#: ../functions/widgets.php:242
-msgid "Link URL:"
-msgstr "Link URL:"
-
-#: ../functions/widgets.php:246
-msgid "Open Link in New Window"
-msgstr "Open Link in New Window"
-
-#: ../functions/widgets.php:249
-msgid "Alt text:"
-msgstr "Alt text:"
-
-#: ../functions/widgets.php:312
+#: ../functions/widgets.php:172
 msgid "Add Advertisement Code or Image URL"
 msgstr "Add Advertisement Code or Image URL"
 
-#: ../image.php:106
+#: ../functions/widgets.php:234
+msgid "Ad Code:"
+msgstr ""
+
+#: ../functions/widgets.php:240
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../functions/widgets.php:244
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr ""
+
+#: ../functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: ../functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: ../header.php:34
+msgid "Skip to content"
+msgstr "Salta al contenuto"
+
+#: ../image.php:86
 msgid "Previous Image"
 msgstr "Immagine precedente"
 
-#: ../image.php:107
+#: ../image.php:87
 msgid "Next Image"
 msgstr "Immagine successiva"
 
-#: ../search.php:17
-#, php-format
-msgid "Showing results for: <span class=\"img-title\">%s</span>"
-msgstr "Risultati per: <span class=\"img-title\">%s</span>"
+#: ../page-blog.php:104 ../search.php:44
+msgid "Previous"
+msgstr "Precedente"
 
-#: ../search.php:33
+#: ../page-blog.php:105 ../search.php:45
+msgid "Next"
+msgstr "Successivo"
+
+#: ../search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Risultati per: <span>%s</span>"
+
+#: ../search.php:54
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
 msgstr "La ricerca <span> \"%s\" </span> non ha prodotto risultati"
 
-#: ../search.php:35
+#: ../search.php:57
 msgid "A few suggestions"
 msgstr "Qualche suggerimento"
 
-#: ../search.php:37
+#: ../search.php:59
 msgid "Make sure all words are spelled correctly"
 msgstr "Controlla che tutte le parole siano scritte correttamente"
 
-#: ../search.php:38
+#: ../search.php:60
 msgid "Try different keywords"
 msgstr "Prova parole chiave differenti"
 
-#: ../search.php:39
+#: ../search.php:61
 msgid "Try more general keywords"
 msgstr "Prova parole chiave più generiche"
+
+#: ../searchform.php:20
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: ../sidebar.php:59
+msgid "Archives"
+msgstr "Archivi"
+
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Controlla per errori nell'URL, quindi premi il pulsante di refresh nel "
+#~ "tuo browser oppure usa la casella di ricerca nella testata."
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Collegamento permanente a %s"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved."
+#~ msgstr "Tutti i diritti riservati."
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Theme Options"
+#~ msgstr "Opzioni del tema"
+
+#~ msgid "Default Layout"
+#~ msgstr "Layout di default"
+
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Selezione delle categorie da mostrare nella pagina principale"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Impostazioni della casella di ricerca"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Link \"Continua a leggere\" ed estratto del testo"
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Redirezione dei feed"
+
+#~ msgid "Custom CSS"
+#~ msgstr "CSS personalizzato"
+
+#~ msgid "Add Slider Options"
+#~ msgstr "Opzioni dello slider"
+
+#~ msgid "Slider Effect Options"
+#~ msgstr "Effetti dello slider"
+
+#~ msgid "Social Links"
+#~ msgstr "Link sociali"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster Tools"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Default Color Scheme"
+
+#~ msgid "Check to Reset Color"
+#~ msgstr "Check to Reset Color"
+
+#~ msgid "Front page posts categories:"
+#~ msgstr "Articoli da mostrare in home page:"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Testo di default nella casella di ricerca"
+
+#~ msgid "Search Button's text"
+#~ msgstr "Testo del pulsante di ricerca"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Testo del link \"Continua a leggere\""
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Lunghezza dell'estratto (in parole)"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "URL di redirezione dei feed"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Numero di slide"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Attesa tra le transizioni"
+
+#~ msgid "Transition Length"
+#~ msgstr "Durata della transizione"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+#~ msgid "My World"
+#~ msgstr "My World"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Codice da inserire nel tag header"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Codice da mostrare a piè pagina"
+
+#~ msgid "Options Saved"
+#~ msgstr "Opzioni salvate"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Opzioni del tema da"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Aggiorna a Simple Catch Pro"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Istruzioni del tema"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Metti il like a Catch Themes su Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Segui Catch Themes su Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Votaci 5 stelle su WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "Vota su WordPress"
+
+#~ msgid "Logo Options"
+#~ msgstr "Opzioni del logo"
+
+#~ msgid "Header logo url:"
+#~ msgstr "URL del logo dell'intestazione:"
+
+#~ msgid "Preview: "
+#~ msgstr "Anteprima:"
+
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Disable Header Logo?"
+
+#~ msgid "Check to Disable."
+#~ msgstr "Seleziona per disabilitare."
+
+#~ msgid "Disable Site Title?"
+#~ msgstr "Disabilito il titolo del sito?"
+
+#~ msgid "Disable Site Description?"
+#~ msgstr "Disabilita la descrizione del sito?"
+
+#~ msgid "Footer logo url: "
+#~ msgstr "URL del logo a piè pagina:"
+
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Disabilita il logo a piè pagina?"
+
+#~ msgid "Save"
+#~ msgstr "Salva"
+
+#~ msgid "Fav Icon Option"
+#~ msgstr "Opzioni della Favicon"
+
+#~ msgid "Favicon URL:"
+#~ msgstr "URL della Favicon:"
+
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Disable Fav Icon?"
+
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Opzioni dell'icona Web Clip"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "URL dell'icona Web Clip"
+
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "Non è stata trovata un'icona Web Clip. Carica l'icona Web Clip."
+
+#~ msgid "Color Options"
+#~ msgstr "Color Options"
+
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+#~ msgid "Content Background:"
+#~ msgstr "Content Background:"
+
+#~ msgid "Need to replace default background?"
+#~ msgstr "Vuoi sostituire lo sfondo di default?"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Clicca qui</a>"
+
+#~ msgid "Heading Color:"
+#~ msgstr "Colore dei titoli:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Colore della descrizione:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Colore del testo:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Colore dei link:"
+
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Colore dell'intestazione dei widget della barra laterale"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Colore del testo dei widget nella barra laterale: "
+
+#~ msgid "Reset Color:"
+#~ msgstr "Ripristina i colori:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Solo gli articoli che appartengono alle categorie selezionate  qui "
+#~ "verranno mostrati nella pagina principale."
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Disabilitato--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr "Puoi selezionare più categorie tenendo premuto il tasto CTRL"
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Inserisci il tuo stile CSS personalizzato."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "Tutorial CSS su W3Schools."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "Utorial CSS"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Clicca qua per leggere"
+
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr "Escludi i post dello slider dalla pagina principale"
+
+#~ msgid "Featured Post ID"
+#~ msgstr "Featured Post ID"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Clicca qua per modificare"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Nota: qua puoi inserire gli ID degli articoli che verranno mostrati nello "
+#~ "slider nella pagina principale."
+
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Disabilita gli effetti di background dello slider"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Effetto di transizione"
+
+#~ msgid "second(s)"
+#~ msgstr "secondi"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Header and Footer Codes"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
+#~ "verrano caricati nell'header"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
+#~ "verrano caricati a piè pagina"
+
+#~ msgid "Powered By:"
+#~ msgstr "Fornito da:"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://it.wordpress.org/"
+
+#~ msgid "Powered By WordPress"
+#~ msgstr "Fornito da WordPress"
+
+#~ msgid "Theme:"
+#~ msgstr "Tema:"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Seleziona il layout della barra laterale"
+
+#~ msgid "sidebar"
+#~ msgstr "barra laterale"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Risultati per: <span class=\"img-title\">%s</span>"
 
 #, fuzzy
 #~ msgid "Simple Catch Pro"
@@ -1329,10 +943,6 @@ msgstr "Prova parole chiave più generiche"
 #, fuzzy
 #~ msgid "Catch Themes Team"
 #~ msgstr "Catch Themes"
-
-#, fuzzy
-#~ msgid "https://catchthemes.com"
-#~ msgstr "https://catchthemes.com/"
 
 #~ msgid "Change Header Logo"
 #~ msgstr "Change Header Logo"

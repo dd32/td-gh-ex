@@ -1,8 +1,15 @@
-== Changelog ==
+== Change Log ==
 
-Version 3.4.2
+Version 3.5 (Major Version Update)
+* Added responsive design and disable option
 * Bug Fixed: more_tag_text sanitize issue
-* Remove unnecessary codes
+* Enhanced: Keyboard Navigation
+* Enhanced: Heading tags
+* Enhanced: ARIA Landmark Roles
+* Optimized: Code
+* Removed: Unnecessary codes
+* Removed: Theme Options Panel
+* Upgraded: HTML4 and CSS2 to HTML5 and CSS3
 
 Version 3.4.1
 * Bug Fixed: Fatal error when WPML, qtranslate, polylang, etc plugins installed (Reported By: agu5ka)
