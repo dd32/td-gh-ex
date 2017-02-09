@@ -25,6 +25,10 @@ if ( is_front_page() ) :
 		$mp_artwork_class = $mp_artwork_class . ' artwork-custom-home';
 	endif;
 endif;
+$mp_artwork_menu_behavior = esc_attr( get_theme_mod( mp_artwork_get_prefix() . 'menu_behavior' ) );
+if ( $mp_artwork_menu_behavior === 'always' ) {
+	$mp_artwork_class = $mp_artwork_class . ' show-header-always';
+}
 ?>
 
 <body <?php body_class( $mp_artwork_class ); ?> >
@@ -34,14 +38,14 @@ endif;
 		<div class="top-header">
 			<span class="menu-icon"><i class="fa fa-bars"></i></span>
 			<div class="top-header-content">
-				<div class="top-content <?php echo get_theme_mod('custom_logo') ? 'with-logo' : 'without-logo'?>">
-				<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
-					<div class="site-logo">
-						<div class="header-logo ">
-							<?php the_custom_logo(); ?>
+				<div class="top-content <?php echo get_theme_mod( 'custom_logo' ) ? 'with-logo' : 'without-logo' ?>">
+					<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
+						<div class="site-logo">
+							<div class="header-logo ">
+								<?php the_custom_logo(); ?>
+							</div>
 						</div>
-					</div>
-				<?php endif; ?>
+					<?php endif; ?>
 					<div id="navbar" class="navbar <?php
 					if ( get_theme_mod( 'custom_logo' ) === "" ): echo 'navbar-full-width';
 					endif;

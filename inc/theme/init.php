@@ -266,6 +266,17 @@ class MP_Artwork {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+		if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			register_sidebar( array(
+				'name'          => __( 'Shop Widget Area', 'artwork-lite' ),
+				'id'            => 'sidebar-shop',
+				'description'   => __( 'Appears on shop pages in the sidebar.', 'artwork-lite' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			) );
+		}
 		register_sidebar( array(
 			'name'          => __( 'Footer Left', 'artwork-lite' ),
 			'id'            => 'sidebar-2',

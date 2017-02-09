@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-11-08 16:46+0200\n"
+"POT-Creation-Date: 2017-02-09 12:55+0200\n"
 "PO-Revision-Date: 2016-05-24 09:48+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e;esc_attr_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15
@@ -422,39 +422,39 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: footer.php:24
+#: footer.php:21
 msgid "&copy; Copyright "
 msgstr ""
 
-#: footer.php:33
+#: footer.php:30
 msgid "&#8226; Designed by"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:30
 msgid "http://www.getmotopress.com/"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:30
 msgid "Premium WordPress Plugins and Themes"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:30
 msgid "MotoPress"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:31
 msgid "&#8226; Proudly Powered by "
 msgstr ""
 
-#: footer.php:34
+#: footer.php:31
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:31
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:31
 msgid "WordPress"
 msgstr ""
 
@@ -462,59 +462,71 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: inc/admin/customize.php:82
+#: inc/admin/customize.php:74
+msgid "Main Menu Behavior"
+msgstr ""
+
+#: inc/admin/customize.php:78
+msgid "Display on mouse over"
+msgstr ""
+
+#: inc/admin/customize.php:79
+msgid "Display always"
+msgstr ""
+
+#: inc/admin/customize.php:99
 msgid "Text Color"
 msgstr ""
 
-#: inc/admin/customize.php:94
+#: inc/admin/customize.php:111
 msgid "Accent Color"
 msgstr ""
 
-#: inc/admin/customize.php:106
+#: inc/admin/customize.php:123
 msgid "First Section Color"
 msgstr ""
 
-#: inc/admin/customize.php:118
+#: inc/admin/customize.php:135
 msgid "Second Section Color"
 msgstr ""
 
-#: inc/admin/customize.php:131
+#: inc/admin/customize.php:148
 msgid "Third Section Color"
 msgstr ""
 
-#: inc/admin/customize.php:143
+#: inc/admin/customize.php:160
 msgid "Fourth Section Color"
 msgstr ""
 
-#: inc/admin/customize.php:153
+#: inc/admin/customize.php:170
 msgid "Posts Settings"
 msgstr ""
 
-#: inc/admin/customize.php:167
+#: inc/admin/customize.php:184
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/admin/customize.php:185
+#: inc/admin/customize.php:202
 msgid "Show Meta"
 msgstr ""
 
-#: inc/admin/customize.php:204
+#: inc/admin/customize.php:221
 msgid "Show Categories"
 msgstr ""
 
-#: inc/admin/customize.php:223
+#: inc/admin/customize.php:240
 msgid "Show Tags"
 msgstr ""
 
-#: inc/admin/customize.php:292
+#: inc/admin/customize.php:309
 msgid "Default"
 msgstr ""
 
-#: inc/admin/customize.php:351
+#: inc/admin/customize.php:368
 msgid "Full Width"
 msgstr ""
 
-#: inc/admin/customize.php:352
+#: inc/admin/customize.php:369
 msgid "With Sidebar"
 msgstr ""
 
@@ -551,19 +563,27 @@ msgstr ""
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: inc/theme/init.php:270
+#: inc/theme/init.php:271
+msgid "Shop Widget Area"
+msgstr ""
+
+#: inc/theme/init.php:273
+msgid "Appears on shop pages in the sidebar."
+msgstr ""
+
+#: inc/theme/init.php:281
 msgid "Footer Left"
 msgstr ""
 
-#: inc/theme/init.php:272 inc/theme/init.php:282 inc/theme/init.php:292
+#: inc/theme/init.php:283 inc/theme/init.php:293 inc/theme/init.php:303
 msgid "Appears in the footer section of the site."
 msgstr ""
 
-#: inc/theme/init.php:280
+#: inc/theme/init.php:291
 msgid "Footer Center"
 msgstr ""
 
-#: inc/theme/init.php:290
+#: inc/theme/init.php:301
 msgid "Footer Right"
 msgstr ""
 
@@ -627,4 +647,12 @@ msgstr ""
 
 #: inc/woocommerce/woo-init.php:57
 msgid "Home"
+msgstr ""
+
+#: searchform.php:9
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:9
+msgid "Search for:"
 msgstr ""

@@ -2,7 +2,7 @@
 Contributors: MotoPress
 Tags: one-column,two-columns,right-sidebar,responsive-layout,custom-colors,custom-menu,featured-images,full-width-template,post-formats,theme-options,translation-ready
 Requires at least: 4.1
-Tested up to: 4.6
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

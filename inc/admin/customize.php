@@ -46,8 +46,8 @@ class MP_Artwork_Customizer {
 		/*$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';*/
-		
-		$wp_customize->get_setting( 'custom_logo' )->transport         = 'refresh';
+
+		$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 		$wp_customize->remove_section( "header_image" );
 
 
@@ -62,7 +62,24 @@ class MP_Artwork_Customizer {
 			)
 		);
 
-
+		/*
+		 * Add 'Main Menu Behavior'
+		 */
+		$wp_customize->add_setting( $this->get_prefix() . 'menu_behavior', array(
+			'default'           => 'on_mouse_hover',
+			'sanitize_callback' => array( $this, 'sanitize_select' ),
+		) );
+		$wp_customize->add_control( $this->get_prefix() . 'menu_behavior', array(
+			'type'     => 'select',
+			'label'    => __( 'Main Menu Behavior',  'artwork-lite' ),
+			'section'  => $this->get_prefix() . 'general_section',
+			'priority' => 10,
+			'choices'  => array(
+				'on_mouse_hover' => __( 'Display on mouse over', 'artwork-lite' ),
+				'always'         => __( 'Display always', 'artwork-lite' )
+			)
+		) );
+		
 		
 
 		$color_scheme = $this->get_color_scheme();
@@ -366,5 +383,24 @@ class MP_Artwork_Customizer {
 		$theme_info = wp_get_theme( get_template() );
 
 		return $theme_info->get( 'Version' );
+	}
+
+	/*
+	* Sanitize function for select
+	* @since Atrwork 1.1.3
+	* @access public
+	* @return string
+	*/
+
+	function sanitize_select( $input, $setting ) {
+		global $wp_customize;
+
+		$control = $wp_customize->get_control( $setting->id );
+
+		if ( array_key_exists( $input, $control->choices ) ) {
+			return $input;
+		} else {
+			return $setting->default;
+		}
 	}
 }

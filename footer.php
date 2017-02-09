@@ -12,9 +12,6 @@
 ?>
 
 <?php if ( get_page_template_slug() != 'template-landing-page.php' || is_search() ): ?>
-	<?php
-	$mp_artwork_copyright = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'copyright' ) );
-	?>
 	<footer id="footer" class="site-footer">
 		<div class="footer-inner">
 			<?php get_sidebar( 'footer' ); ?>
