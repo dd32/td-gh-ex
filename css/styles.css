@@ -4,8 +4,8 @@
 
 Project:  Aquarella Lite
 Author: Themebear.co
-Version:  1.0.2
-Last change:  25/01/2017
+Version:  1.0.3
+Last change:  09/02/2017
 Primary use:  Blogs
 
 /*------------------------------------------------------------------
@@ -1093,9 +1093,10 @@ p {
   -webkit-border-radius: 18px;
   padding-left: 25px;
   padding-right: 25px;
-  height: 44px;
-  padding-top: 10px;
-  color: #ffffff !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 1;
+  color: #ffffff;
   font-weight: bold;
 }
 .btn-special:hover {
@@ -1246,7 +1247,7 @@ input[type=submit]:hover {
 @media (min-width: 768px) {
   .navbar-brand {
     width: auto;
-  }
+  }  
 }
 @media (min-width: 768px) {
   .navbar-brand img {
@@ -1283,29 +1284,48 @@ input[type=submit]:hover {
 }
 .navbar li {
   position: relative;
+  display: block;
 }
 .navbar li a {
   white-space: nowrap;
   font-size: 13px;
 }
-.navbar li > ul {
+.navbar > li > ul {
   list-style: none;
   border: 0!important;
-  border-radius: 6px !important;
-  -moz-border-radius: 6px !important;
-  -webkit-border-radius: 6px !important;
+  
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
+
+@media (max-width: 768px) {
+  .navbar li > ul .dropdown-menu {
+    display: block;
+  }
+  .navbar li > ul .dropdown-menu li a{
+    padding-left: 35px!important;
+    font-style: italic;
+  }
+  .navbar-nav .open .dropdown-menu {
+     margin: 0;
+     padding: 0;
+  }
+}
+
 @media (min-width:992px) {
-  .navbar li > ul {
+  .navbar > li > ul {
     margin-top: 6px!important;
     margin-left: 10px!important;
+    border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    -webkit-border-radius: 6px !important;
   }
 }
 .navbar li > ul > li {
   padding: 0;
 }
-.navbar li > ul > li a {
+.navbar > li > ul > li a {
   padding: 5px;
   padding-left: 8px;
   display: block;
@@ -1328,6 +1348,32 @@ input[type=submit]:hover {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+  }
+  .navbar li > ul li ul {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    font-size: 10px;
+    font-style: italic;
+    left: 99%;
+    top: -1px;
+  }
+  .navbar li > ul li ul a {
+    font-size: 10px;
+    line-height: 18px;
+  }
+  .navbar li > ul li.menu-item-has-children > a:after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 12px;
+    background: url(../img/menu-right.png) no-repeat center center transparent;
+    vertical-align: middle;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -6px;
+    opacity: 0.8;
   }
   .navbar li > ul > li {
     padding: 0;
@@ -1369,6 +1415,12 @@ input[type=submit]:hover {
   font-weight: bold;
   font-size: 11px;
   background: #f8be27;
+}
+
+.navbar-collapse.in {
+  overflow: hidden;
+  max-height: none !important;
+  height: auto !important;
 }
 
 span.icon-bar {
@@ -1920,13 +1972,13 @@ a.rsswidget:hover {
   -moz-box-shadow: 0 0 0!important;
   -webkit-box-shadow: 0 0 0!important;
 }
-@media (min-width: 768px) {
-  .search-form .search-submit {
-    position: absolute;
-    right: 10px;
-    top: 0;
-  }
+
+.search-form .search-submit {
+  position: absolute;
+  right: 10px;
+  top: 0;
 }
+
 .search-form .search-field {
   width: 100%!important;
   max-width: 100%!important;

@@ -106,42 +106,42 @@ body,
 	color: #ffffff;
 }
 
-.btn-special,
-.btn-stroke:hover,
-.btn-stroke-negative,
-.tagcloud a,
-.tagcloud a:hover,
-.footer-social-icons .social-icons-list a,
-.footer-social-icons .social-icons-list a:hover,
-.contrast-with-image,
-.social-icons a,
-.post-element-header,
-.comments-area input[type=submit],
-.hero-slideshow {
-	color: #ffffff !important;
+body .btn-special,
+body .btn-stroke:hover,
+body .btn-stroke-negative,
+body .tagcloud a,
+body .tagcloud a:hover,
+body .footer-social-icons .social-icons-list a,
+body .footer-social-icons .social-icons-list a:hover,
+body .contrast-with-image,
+body .social-icons a,
+body .post-element-header,
+body .comments-area input[type=submit],
+body .hero-slideshow {
+	color: #ffffff ;
 }
 
-.btn-stroke {
+body .btn-stroke {
 	border-color: <?php echo $color_one; ?>;
 }
 
-.btn-stroke:before,
-.navbar .nav li a,
-.post-element-header,
-.owl-carousel .owl-dot.active span {
-	background-color: <?php echo $color_three; ?>; !important;
+body .btn-stroke:before,
+body .navbar .nav li a,
+body .post-element-header,
+body .owl-carousel .owl-dot.active span {
+	background-color: <?php echo $color_three; ?>;
 }
 
-.btn-stroke:hover {
-	border-color: <?php echo $color_three; ?>; !important;
+body .btn-stroke:hover {
+	border-color: <?php echo $color_three; ?>; 
 }
 
-.btn-stroke:hover {
-	background-color: transparent!important;
+body .btn-stroke:hover {
+	background-color: transparent;
 }
 
-.btn-stroke-negative {
-	border-color: #ffffff !important;
+body .btn-stroke-negative {
+	border-color: #ffffff ;
 }
 
 .form-control,
@@ -161,12 +161,12 @@ body,
 	background-color: <?php echo $color_two; ?>;
 }
 
-.header-social-icons ul a {
-	color: <?php echo $color_three; ?>!important;
+body .header-social-icons ul a {
+	color: <?php echo $color_three; ?>;
 }
 
-.header-social-icons ul a:hover {
-	color: <?php echo $color_one; ?>!important;
+body .header-social-icons ul a:hover {
+	color: <?php echo $color_one; ?>;
 }
 
 #colophon {
@@ -192,8 +192,8 @@ body,
 	color: #555;
 }
 
-.sidebar-area .widget_search #s {
-	border-color: #ccc !important;
+body .sidebar-area .widget_search #s {
+	border-color: #ccc;
 }
 
 .sidebar-area .widget_search #s {

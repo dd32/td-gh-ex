@@ -90,7 +90,7 @@
 								<?php wp_nav_menu( array(
 					                'menu'              => '',
 					                'theme_location'    => 'primary',
-					                'depth'             => 2,
+					                'depth'             => 3,
 					                'container'         => '',
 					                'container_class'   => '',
 					                'container_id'      => '',
