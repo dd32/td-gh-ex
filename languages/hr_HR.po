@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 08:09+0545\n"
-"PO-Revision-Date: 2017-02-09 08:09+0545\n"
+"POT-Creation-Date: 2017-02-09 11:59+0545\n"
+"PO-Revision-Date: 2017-02-09 11:59+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: hr\n"
@@ -57,17 +57,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 "Ovaj post je zaštićen zaporkom. Unesite zaporku da pogledate komentare."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Nema komentara"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Komentar"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% Komentara"
@@ -76,7 +76,7 @@ msgstr "% Komentara"
 msgid "Comments are closed."
 msgstr "Komentari su zatvoreni."
 
-#: ../content.php:50 ../functions/core.php:997 ../image.php:21
+#: ../content.php:50 ../functions/core.php:998 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "od"
@@ -232,7 +232,7 @@ msgstr "%s u Soundcloud"
 msgid "%s on Email"
 msgstr "%s u Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1113
+#: ../functions/core.php:687 ../functions/core.php:1114
 msgid "Menu"
 msgstr "izbornik"
 
@@ -240,27 +240,27 @@ msgstr "izbornik"
 msgid "Primary menu"
 msgstr "Primarni izbornik"
 
-#: ../functions/core.php:1020
+#: ../functions/core.php:1021
 msgid "Categories: "
 msgstr "Kategorije:"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1023
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1041
+#: ../functions/core.php:1042
 msgid "Name"
 msgstr "Ime"
 
-#: ../functions/core.php:1041 ../functions/core.php:1042
+#: ../functions/core.php:1042 ../functions/core.php:1043
 msgid "( required )"
 msgstr "( obavezno )"
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1043
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1044
 msgid "Website"
 msgstr "Web stranica"
 

@@ -1,8 +1,8 @@
 === Simple Catch ===
-* by the Catch Themes team, https://catchthemes.com/
+Simple Catch is a Highly Customizable Simple, Clean and Responsive WordPress Theme for anyone looking to give their website a professional look. It's easy customization through WordPress theme customizer, ultra-readable typography, large thumbnail and featured slider makes it outstanding. It comes with a wide variety of options: like Custom Menu, Custom Widgets, Custom Layouts, Featured Post Slider, Header Logo, Footer Logo, Fav Icon, Header Image, Background Image, Social Icons, Color Schemes, Custom CSS Styles, Excerpt settings and scroll up. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Russian, Ukrainian, Polish and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/simple-catch/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simplecatch/
 
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 23 see file license.txt
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3 see file license.txt
 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

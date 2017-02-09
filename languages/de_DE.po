@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 08:08+0545\n"
-"PO-Revision-Date: 2017-02-09 08:08+0545\n"
+"POT-Creation-Date: 2017-02-09 11:59+0545\n"
+"PO-Revision-Date: 2017-02-09 11:59+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -57,17 +57,17 @@ msgstr ""
 "Dieser Beitrag ist passwortgeschützt. Gib das Passwort ein um Kommentare zu "
 "sehen."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% Kommentare"
@@ -76,7 +76,7 @@ msgstr "% Kommentare"
 msgid "Comments are closed."
 msgstr "Kommentare sind deaktiviert."
 
-#: ../content.php:50 ../functions/core.php:997 ../image.php:21
+#: ../content.php:50 ../functions/core.php:998 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "Von"
@@ -232,7 +232,7 @@ msgstr "%s auf Soundcloud"
 msgid "%s on Email"
 msgstr "%s auf Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1113
+#: ../functions/core.php:687 ../functions/core.php:1114
 msgid "Menu"
 msgstr "Menü"
 
@@ -240,27 +240,27 @@ msgstr "Menü"
 msgid "Primary menu"
 msgstr "Primäres Menü"
 
-#: ../functions/core.php:1020
+#: ../functions/core.php:1021
 msgid "Categories: "
 msgstr "Kategorien:"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1023
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1041
+#: ../functions/core.php:1042
 msgid "Name"
 msgstr "Name"
 
-#: ../functions/core.php:1041 ../functions/core.php:1042
+#: ../functions/core.php:1042 ../functions/core.php:1043
 msgid "( required )"
 msgstr "( Pflicht )"
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1043
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1044
 msgid "Website"
 msgstr "Website"
 

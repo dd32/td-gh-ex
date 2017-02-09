@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 08:09+0545\n"
-"PO-Revision-Date: 2017-02-09 08:09+0545\n"
+"POT-Creation-Date: 2017-02-09 12:00+0545\n"
+"PO-Revision-Date: 2017-02-09 12:00+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: zh_CN\n"
@@ -51,17 +51,17 @@ msgstr "检查URL是否正确，然后刷新或者使用顶部搜索框"
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "本文受密码保护。请输入密码以查看评论"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "暂无评论"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1条评论"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% 条评论"
@@ -70,7 +70,7 @@ msgstr "% 条评论"
 msgid "Comments are closed."
 msgstr "评论被关闭"
 
-#: ../content.php:50 ../functions/core.php:997 ../image.php:21
+#: ../content.php:50 ../functions/core.php:998 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "作者"
@@ -224,7 +224,7 @@ msgstr "%s on Soundcloud"
 msgid "%s on Email"
 msgstr "%s on Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1113
+#: ../functions/core.php:687 ../functions/core.php:1114
 msgid "Menu"
 msgstr "菜单"
 
@@ -232,27 +232,27 @@ msgstr "菜单"
 msgid "Primary menu"
 msgstr "主菜单"
 
-#: ../functions/core.php:1020
+#: ../functions/core.php:1021
 msgid "Categories: "
 msgstr "分类"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1023
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1041
+#: ../functions/core.php:1042
 msgid "Name"
 msgstr "名称"
 
-#: ../functions/core.php:1041 ../functions/core.php:1042
+#: ../functions/core.php:1042 ../functions/core.php:1043
 msgid "( required )"
 msgstr "( 必要的 )"
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1043
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1044
 msgid "Website"
 msgstr "网址"
 

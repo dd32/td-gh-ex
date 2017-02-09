@@ -872,27 +872,28 @@ function simplecatch_pass_slider_value() {
 }// simplecatch_pass_slider_value
 
 
-/**
- * Alter the query for the main loop in home page
- * @uses pre_get_posts hook
- */
-function simple_catch_alter_home( $query ){
-	// Get theme options
-	$options = simplecatch_get_options();
-	$cats    = $options['front_page_category'];
+if ( ! function_exists( 'simple_catch_alter_home' ) ) :
+	/**
+	 * Alter the query for the main loop in home page
+	 * @uses pre_get_posts hook
+	 */
+	function simple_catch_alter_home( $query ){
+		if ( $query->is_main_query() && $query->is_home() ) {
+			// Get theme options
+			$options = simplecatch_get_options();
+			$cats    = $options['front_page_category'];
 
-    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['post__not_in'] = $options['featured_slider'];
+		    if ( '0' != $options['exclude_slider_post'] && !empty( $options['featured_slider'] ) ) {
+				$query->query_vars['post__not_in'] = $options['featured_slider'];
+			}
+
+			if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+				$query->query_vars['category__in'] = $options['front_page_category'];
+			}
 		}
 	}
-
-	if( $query->is_main_query() && $query->is_home() ) {
-		$query->query_vars['category__in'] = $options['front_page_category'];
-	}
-}
+endif;
 add_action( 'pre_get_posts','simple_catch_alter_home' );
-
 
 if ( ! function_exists( 'simplecatch_class_names' ) ) :
 /**

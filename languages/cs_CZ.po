@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 08:08+0545\n"
-"PO-Revision-Date: 2017-02-09 08:08+0545\n"
+"POT-Creation-Date: 2017-02-09 11:59+0545\n"
+"PO-Revision-Date: 2017-02-09 11:59+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: cs\n"
@@ -60,17 +60,17 @@ msgstr ""
 "Tento článek mohou kompletně zobrazit pouze vyvolení. Jestli mezi ně "
 "patříte, zadejte heslo."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Žádné komentáře"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 komentář"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% komentářů"
@@ -79,7 +79,7 @@ msgstr "% komentářů"
 msgid "Comments are closed."
 msgstr "U tohoto článku nemůžete přidávat komentáře."
 
-#: ../content.php:50 ../functions/core.php:997 ../image.php:21
+#: ../content.php:50 ../functions/core.php:998 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "od"
@@ -234,7 +234,7 @@ msgstr "%s on Soundcloud"
 msgid "%s on Email"
 msgstr "%s on Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1113
+#: ../functions/core.php:687 ../functions/core.php:1114
 msgid "Menu"
 msgstr "Menu"
 
@@ -242,27 +242,27 @@ msgstr "Menu"
 msgid "Primary menu"
 msgstr "Primární menu"
 
-#: ../functions/core.php:1020
+#: ../functions/core.php:1021
 msgid "Categories: "
 msgstr "kategorií:"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1023
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1041
+#: ../functions/core.php:1042
 msgid "Name"
 msgstr "Jméno"
 
-#: ../functions/core.php:1041 ../functions/core.php:1042
+#: ../functions/core.php:1042 ../functions/core.php:1043
 msgid "( required )"
 msgstr "( požadovaný )"
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1043
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1044
 msgid "Website"
 msgstr "webové stránky"
 
