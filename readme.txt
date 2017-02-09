@@ -18,12 +18,15 @@ Go to https://wordpress.org/support/theme/actuate or contact us at contact[at]mu
 
 == Changelog ==
 
+= Version 1.0.1.5 - 09/02/2017 =
+* (Translations) Added fr_FR translation
+
 = Version 1.0.1.4 - 07/03/2016 =
-(footer.php) Modified i18n string
-(functions.php) Modified function actuate_nav() to call wp_nav_menu() once
-(style.css) Fixed bug for cite tag and sidebar nested lists
-(readme.txt) Added license for Google fonts
-(actuate.pot) Regenerated translation file
+* (footer.php) Modified i18n string
+* (functions.php) Modified function actuate_nav() to call wp_nav_menu() once
+* (style.css) Fixed bug for cite tag and sidebar nested lists
+* (readme.txt) Added license for Google fonts
+* (actuate.pot) Regenerated translation file
 
 = Version 1.0.1.3 - 28/01/2016 =
 * (style.css) Fixed bug for comments CSS
