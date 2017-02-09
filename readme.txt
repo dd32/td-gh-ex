@@ -18,6 +18,9 @@ Go to https://wordpress.org/support/theme/afford
 
 == Changelog ==
 
+= 1.0.1.3 - 09/02/2017 =
+* (Translations) Added fr_FR translations
+
 = 1.0.1.2 - 14/10/2015 =
 * (assets/global/respond.js) Added unminified code
 * (functions.php) Now respond.min.js enqueued instead of respond.js
