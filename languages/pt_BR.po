@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-08 16:24+0545\n"
-"PO-Revision-Date: 2017-02-08 16:24+0545\n"
+"POT-Creation-Date: 2017-02-09 08:09+0545\n"
+"PO-Revision-Date: 2017-02-09 08:09+0545\n"
 "Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -63,19 +63,19 @@ msgstr ""
 "Esse post é protegido por senha. Digite a senha para ver os comentários."
 
 # @ simplecatch
-#: comments.php:29 content.php:52 functions/core.php:1001 image.php:23
+#: comments.php:29 content.php:52 functions/core.php:999 image.php:23
 #: page-blog.php:69
 msgid "No Comments"
 msgstr "Nenhum comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:52 functions/core.php:1001 image.php:23
+#: comments.php:29 content.php:52 functions/core.php:999 image.php:23
 #: page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:52 functions/core.php:1001 image.php:23
+#: comments.php:29 content.php:52 functions/core.php:999 image.php:23
 #: page-blog.php:69
 msgid "% Comments"
 msgstr "% Comentários"
@@ -86,7 +86,7 @@ msgid "Comments are closed."
 msgstr "Comentários desativados."
 
 # @ simplecatch
-#: content.php:50 functions/core.php:999 image.php:21 page-blog.php:67
+#: content.php:50 functions/core.php:997 image.php:21 page-blog.php:67
 msgid "By"
 msgstr "Por"
 
@@ -109,35 +109,35 @@ msgstr ""
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
-#: functions/core.php:689 functions/core.php:1115
+#: functions/core.php:687 functions/core.php:1113
 msgid "Menu"
 msgstr "Menu"
 
-#: functions/core.php:692
+#: functions/core.php:690
 msgid "Primary menu"
 msgstr "Menu principal"
 
 # @ simplecatch
-#: functions/core.php:1022
+#: functions/core.php:1020
 msgid "Categories: "
 msgstr "Categorias:"
 
-#: functions/core.php:1024
+#: functions/core.php:1022
 msgid "Tags"
 msgstr "Tags"
 
 # @ simplecatch
-#: functions/core.php:1043
+#: functions/core.php:1041
 msgid "Name"
 msgstr "Nome"
 
 # @ simplecatch
-#: functions/core.php:1044
+#: functions/core.php:1042
 msgid "Email"
 msgstr "Email"
 
 # @ simplecatch
-#: functions/core.php:1045
+#: functions/core.php:1043
 msgid "Website"
 msgstr "Site"
 

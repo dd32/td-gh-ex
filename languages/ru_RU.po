@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-08 16:29+0545\n"
-"PO-Revision-Date: 2017-02-08 16:29+0545\n"
+"POT-Creation-Date: 2017-02-09 08:09+0545\n"
+"PO-Revision-Date: 2017-02-09 08:09+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: kurpachev@gmail.com\n"
 "Language: ru\n"
@@ -58,17 +58,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 "Это сообщение защищено паролем. Введите пароль, чтобы увидеть комментарии."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Без комментариев"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Комментарий"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% Комментари(я,ев)"
@@ -77,7 +77,7 @@ msgstr "% Комментари(я,ев)"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: ../content.php:50 ../functions/core.php:999 ../image.php:21
+#: ../content.php:50 ../functions/core.php:997 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "на"
@@ -94,174 +94,174 @@ msgstr ""
 "Извините, но для запрашиваемого архива, поиск не дал никаких результатов . "
 "Возможно, поиск поможет найти связанное сообщение."
 
-#: ../functions.php:115 ../functions/core.php:691
+#: ../functions.php:115 ../functions/core.php:689
 msgid "Primary Menu"
 msgstr "Основное меню."
 
-#: ../functions/core.php:542
+#: ../functions/core.php:540
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s в Facebook"
 
-#: ../functions/core.php:547
+#: ../functions/core.php:545
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s в Twitter"
 
-#: ../functions/core.php:552
+#: ../functions/core.php:550
 #, php-format
 msgid "%s on Google+"
 msgstr "%s в Google+"
 
-#: ../functions/core.php:557
+#: ../functions/core.php:555
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s в Linkedin"
 
-#: ../functions/core.php:562
+#: ../functions/core.php:560
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s в Pinterest"
 
-#: ../functions/core.php:567
+#: ../functions/core.php:565
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s в Youtube"
 
-#: ../functions/core.php:572
+#: ../functions/core.php:570
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s в Vimeo"
 
-#: ../functions/core.php:577
+#: ../functions/core.php:575
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s в Slideshare"
 
-#: ../functions/core.php:582
+#: ../functions/core.php:580
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s в Foursquare"
 
-#: ../functions/core.php:587
+#: ../functions/core.php:585
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s в Flickr"
 
-#: ../functions/core.php:592
+#: ../functions/core.php:590
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s в Tumblr"
 
-#: ../functions/core.php:597
+#: ../functions/core.php:595
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s в deviantART"
 
-#: ../functions/core.php:602
+#: ../functions/core.php:600
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s в Dribbble"
 
-#: ../functions/core.php:607
+#: ../functions/core.php:605
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s в MySpace"
 
-#: ../functions/core.php:612
+#: ../functions/core.php:610
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s в WordPress"
 
-#: ../functions/core.php:617
+#: ../functions/core.php:615
 #, php-format
 msgid "%s on RSS"
 msgstr "%s в RSS"
 
-#: ../functions/core.php:622
+#: ../functions/core.php:620
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s в Delicious"
 
-#: ../functions/core.php:627
+#: ../functions/core.php:625
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s в Last.fm"
 
-#: ../functions/core.php:632
+#: ../functions/core.php:630
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s в Instagram"
 
-#: ../functions/core.php:637
+#: ../functions/core.php:635
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s в GitHub"
 
-#: ../functions/core.php:642
+#: ../functions/core.php:640
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s в Vkontakte"
 
-#: ../functions/core.php:647
+#: ../functions/core.php:645
 #, php-format
 msgid "%s on My World"
 msgstr "%s в My World"
 
-#: ../functions/core.php:652
+#: ../functions/core.php:650
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s в Odnoklassniki"
 
-#: ../functions/core.php:657
+#: ../functions/core.php:655
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s в Goodreads"
 
-#: ../functions/core.php:662
+#: ../functions/core.php:660
 #, php-format
 msgid "%s on Skype"
 msgstr "%s в Skype"
 
-#: ../functions/core.php:667
+#: ../functions/core.php:665
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s в Soundcloud"
 
-#: ../functions/core.php:672
+#: ../functions/core.php:670
 #, php-format
 msgid "%s on Email"
 msgstr "%s в Email"
 
-#: ../functions/core.php:689 ../functions/core.php:1115
+#: ../functions/core.php:687 ../functions/core.php:1113
 msgid "Menu"
 msgstr "меню"
 
-#: ../functions/core.php:692
+#: ../functions/core.php:690
 msgid "Primary menu"
 msgstr "Основное меню"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1020
 msgid "Categories: "
 msgstr "Категории:"
 
-#: ../functions/core.php:1024
+#: ../functions/core.php:1022
 msgid "Tags"
 msgstr "Теги"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1041
 msgid "Name"
 msgstr "Имя"
 
-#: ../functions/core.php:1043 ../functions/core.php:1044
+#: ../functions/core.php:1041 ../functions/core.php:1042
 msgid "( required )"
 msgstr "( обязательно )"
 
-#: ../functions/core.php:1044
+#: ../functions/core.php:1042
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/core.php:1045
+#: ../functions/core.php:1043
 msgid "Website"
 msgstr "Веб-сайт"
 

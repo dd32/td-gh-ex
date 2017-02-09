@@ -27,23 +27,26 @@ if ( ! function_exists( 'simplecatch_slider_display' ) ) :
 		$output = '';
 
 
-		if ( !$output = get_transient( 'simplecatch_slider_display' ) ) {		
-			$output = '
-			<div id="main-slider" class="post-slider">
-				<div class="featured-slider">';
+		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 
-			$output .= simplecatch_page_post_category_slider( $options );
+			if ( !$output = get_transient( 'simplecatch_slider_display' ) ) {		
+				$output = '
+				<div id="main-slider" class="post-slider">
+					<div class="featured-slider">';
 
-			$output .= '
-				</div> <!-- .featured-slider -->
+				$output .= simplecatch_page_post_category_slider( $options );
+
+				$output .= '
+					</div> <!-- .featured-slider -->
+					
+					<div id="controllers">
+					</div><!-- #controllers -->
 				
-				<div id="controllers">
-				</div><!-- #controllers -->
-			
-			</div><!-- #main-slider -->';
-		}
+				</div><!-- #main-slider -->';
+			}
 
-		set_transient( 'simplecatch_slider_display', $output, 86940 );
+			set_transient( 'simplecatch_slider_display', $output, 86940 );
+		}
 
 		echo $output;
 	} // simplecatch_slider_display

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-08 15:49+0545\n"
-"PO-Revision-Date: 2017-02-08 15:49+0545\n"
+"POT-Creation-Date: 2017-02-09 08:09+0545\n"
+"PO-Revision-Date: 2017-02-09 08:09+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"
@@ -57,17 +57,17 @@ msgstr ""
 "Questo articolo è protetto da password. Inserisci la password per vedere i "
 "commenti"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "No Comments"
 msgstr "Nessun commento"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 commento"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1001
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:999
 #: ../image.php:23 ../page-blog.php:69
 msgid "% Comments"
 msgstr "% commenti"
@@ -76,7 +76,7 @@ msgstr "% commenti"
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi"
 
-#: ../content.php:50 ../functions/core.php:999 ../image.php:21
+#: ../content.php:50 ../functions/core.php:997 ../image.php:21
 #: ../page-blog.php:67
 msgid "By"
 msgstr "By"
@@ -93,174 +93,174 @@ msgstr ""
 "Ci scusiamo, ma non è stato trovato nessun articolo per l'archivio "
 "richiesto. Probabilmente una ricerca aiuterà a trovare articoli correlati."
 
-#: ../functions.php:115 ../functions/core.php:691
+#: ../functions.php:115 ../functions/core.php:689
 msgid "Primary Menu"
 msgstr "Menu principale"
 
-#: ../functions/core.php:542
+#: ../functions/core.php:540
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s su Facebook"
 
-#: ../functions/core.php:547
+#: ../functions/core.php:545
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s su Twitter"
 
-#: ../functions/core.php:552
+#: ../functions/core.php:550
 #, php-format
 msgid "%s on Google+"
 msgstr "%s su Google+"
 
-#: ../functions/core.php:557
+#: ../functions/core.php:555
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s su Linkedin"
 
-#: ../functions/core.php:562
+#: ../functions/core.php:560
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s su Pinterest"
 
-#: ../functions/core.php:567
+#: ../functions/core.php:565
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s su YouTube"
 
-#: ../functions/core.php:572
+#: ../functions/core.php:570
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s su Vimeo"
 
-#: ../functions/core.php:577
+#: ../functions/core.php:575
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s su Slideshare"
 
-#: ../functions/core.php:582
+#: ../functions/core.php:580
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s su Foursquare"
 
-#: ../functions/core.php:587
+#: ../functions/core.php:585
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s su Flickr"
 
-#: ../functions/core.php:592
+#: ../functions/core.php:590
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s su Tumblr"
 
-#: ../functions/core.php:597
+#: ../functions/core.php:595
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s su deviantART"
 
-#: ../functions/core.php:602
+#: ../functions/core.php:600
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s su Dribbble"
 
-#: ../functions/core.php:607
+#: ../functions/core.php:605
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s su MySpace"
 
-#: ../functions/core.php:612
+#: ../functions/core.php:610
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s su WordPress"
 
-#: ../functions/core.php:617
+#: ../functions/core.php:615
 #, php-format
 msgid "%s on RSS"
 msgstr "%s su RSS"
 
-#: ../functions/core.php:622
+#: ../functions/core.php:620
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s su Delicious"
 
-#: ../functions/core.php:627
+#: ../functions/core.php:625
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s su Last.fm"
 
-#: ../functions/core.php:632
+#: ../functions/core.php:630
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s su Instagram"
 
-#: ../functions/core.php:637
+#: ../functions/core.php:635
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s su GitHub"
 
-#: ../functions/core.php:642
+#: ../functions/core.php:640
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s su Vkontakte"
 
-#: ../functions/core.php:647
+#: ../functions/core.php:645
 #, php-format
 msgid "%s on My World"
 msgstr "%s su My World"
 
-#: ../functions/core.php:652
+#: ../functions/core.php:650
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s su Odnoklassniki"
 
-#: ../functions/core.php:657
+#: ../functions/core.php:655
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s su Goodreads"
 
-#: ../functions/core.php:662
+#: ../functions/core.php:660
 #, php-format
 msgid "%s on Skype"
 msgstr "%s su Skype"
 
-#: ../functions/core.php:667
+#: ../functions/core.php:665
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s su Soundcloud"
 
-#: ../functions/core.php:672
+#: ../functions/core.php:670
 #, php-format
 msgid "%s on Email"
 msgstr "%s su Email"
 
-#: ../functions/core.php:689 ../functions/core.php:1115
+#: ../functions/core.php:687 ../functions/core.php:1113
 msgid "Menu"
 msgstr "Menu"
 
-#: ../functions/core.php:692
+#: ../functions/core.php:690
 msgid "Primary menu"
 msgstr "Menu principale"
 
-#: ../functions/core.php:1022
+#: ../functions/core.php:1020
 msgid "Categories: "
 msgstr "Categorie:"
 
-#: ../functions/core.php:1024
+#: ../functions/core.php:1022
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1041
 msgid "Name"
 msgstr "Nome"
 
-#: ../functions/core.php:1043 ../functions/core.php:1044
+#: ../functions/core.php:1041 ../functions/core.php:1042
 msgid "( required )"
 msgstr "(richiesto)"
 
-#: ../functions/core.php:1044
+#: ../functions/core.php:1042
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/core.php:1045
+#: ../functions/core.php:1043
 msgid "Website"
 msgstr "Sito web"
 

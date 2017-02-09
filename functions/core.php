@@ -118,11 +118,9 @@ function simplecatch_scripts_method() {
 	}
 
 	/**
-	 * Adds Slider JavaScript to the page setup with slider only
+	 * Adds Slider JavaScript to homepage only in Free version
 	 */
-	$enableslider = $options['enable_slider'];
-
-	if ( 'enable-slider-allpage' == $enableslider || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
+	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 		//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 		wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 

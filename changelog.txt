@@ -1,7 +1,10 @@
 == Change Log ==
 
+Version 3.5.1
+* Featured slider needs to show only in homepage (Reported by Marlo)
+
 Version 3.5 (Major Version Update)
-* Added responsive design and disable option
+* Added: Responsive design and disable option
 * Bug Fixed: more_tag_text sanitize issue
 * Enhanced: Keyboard Navigation
 * Enhanced: Heading tags
