@@ -7,9 +7,11 @@ get_header(); ?>
 
 <div id="content" class="clearfix">
 
-	<div class="column column-narrow">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div><!-- end .column-narrow -->
+    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+    	<div class="column column-narrow">
+    		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+    	</div><!-- end .column-narrow -->
+    <?php endif; ?>
 
 	<div id="column-content" class="column column-content posts">
 

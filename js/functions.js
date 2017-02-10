@@ -26,7 +26,12 @@
          * Activate jQuery.mmenu.
          */
         $("#menu-main-slide").mmenu({
-            slidingSubmenus: false
+            "slidingSubmenus": false,
+            "extensions": [
+                "theme-dark",
+                "pageshadow",
+                "border-full"
+            ]
         })
 
     });

@@ -111,7 +111,7 @@ function acedemica_customizer_display_css() {
 
     if ( '#0a5794' != ( $header_background_color = get_theme_mod( 'header-background-color', '#0a5794' ) ) ) {
         $styles[] = array(
-            'selectors' => '#header',
+            'selectors' => '#header, .navbar-nav ul',
             'declarations' => array(
                 'background-color' => $header_background_color
             )

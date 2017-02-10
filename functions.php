@@ -26,6 +26,18 @@ function academica_setup() {
 		'footer'  => __( 'Footer Menu', 'academica' ),
 	) );
 
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ) );
+
 	// Featured Image
 	add_theme_support( 'post-thumbnails' );
    	add_image_size( 'academica-featured-posts-widget', 75, 50, true );
@@ -105,11 +117,13 @@ function academica_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	// Custom Theme Widgets
-    require_once get_template_directory() . '/inc/widgets.php';
-	require_once get_template_directory() . '/inc/wpzoom-widgets.php';
+	// Custom Theme Widget
+	require_once get_template_directory() . '/inc/widgets.php';
+    require_once get_template_directory() . '/inc/wpzoom-widgets.php';
+
 }
 add_action( 'widgets_init', 'academica_widgets_init' );
+
 
 /**
  * Add some useful default widgets to the Academica sidebar
@@ -348,9 +362,9 @@ function academica_entry_meta() {
 
 	// Translators: 1 is the author's name, 2 is category, and 3 is the date.
 	if ( $categories_list ) {
-		$utility_text = __( '<span class="by-author">By %1$s </span>in <span class="category">%2$s</span> on <span class="datetime">%3$s</span>', 'academica' );
+		$utility_text = __( '<span class="by-author">By %1$s </span>in <span class="category">%2$s</span> on <span class="datetime">%3$s</span>.', 'academica' );
 	} else {
-		$utility_text = __( '<span class="by-author">By %1$s </span>on <span class="datetime">%3$s</span>', 'academica' );
+		$utility_text = __( '<span class="by-author">By %1$s </span>on <span class="datetime">%3$s</span>.', 'academica' );
 	}
 
 	printf(
