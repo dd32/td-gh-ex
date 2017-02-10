@@ -10,7 +10,7 @@
  */
 function zenzero_new_excerpt_more($more) {
        global $post;
-	return ' ...';
+	return '&hellip;';
 }
 add_filter('excerpt_more', 'zenzero_new_excerpt_more');
 

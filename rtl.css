@@ -101,6 +101,23 @@ aside ul.menu ul.sub-menu {
 	padding-left: 0em;
 	padding-right: 1.5em;
 }
+.widget_archive li a, .widget_categories li a {
+	float: right;
+}
+.widget_archive li, .widget_categories li {
+	text-align: left;
+}
+.widget.widget_categories li:before {
+	padding-right: inherit;
+	padding-left: 0.5em;
+	float: right;
+}
+.widget.widget_archive li:before {
+	content: "\f0d9";
+	padding-right: inherit;
+	padding-left: 0.5em;
+	float: right;
+}
 @media all and (max-width: 1024px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {
 		text-align: right;
