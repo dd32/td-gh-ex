@@ -1426,7 +1426,12 @@ function catchflames_theme_options_validate( $options ) {
 
 	// data validation for Homepage/Frontpage posts categories
     if ( isset( $input['front_page_category' ] ) ) {
-		$input_validated['front_page_category'] = $input['front_page_category'];
+        if( in_array( 0, $input['front_page_category' ] ) ) {
+            $input_validated['front_page_category'] = '0';
+        }
+        else {
+		    $input_validated['front_page_category'] = $input['front_page_category'];
+        }
     }
 
 	// data validation for More Tags and Excerpt Length

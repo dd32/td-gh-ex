@@ -631,16 +631,15 @@ add_action( 'admin_head-edit.php', 'catchflames_posts_id_column_css' );
  * @uses pre_get_posts hook
  */
 function catchflames_alter_home( $query ){
-	global $post, $catchflames_options_settings;
-    $options = $catchflames_options_settings;
-	$cats = $options[ 'front_page_category' ];
+	if ( $query->is_main_query() && $query->is_home() ) {
+		global $post, $catchflames_options_settings;
+	    $options = $catchflames_options_settings;
+		$cats = $options['front_page_category'];
 
-	if ( !in_array( '0', $cats ) ) {
-		if ( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+			$query->query_vars['category__in'] = $cats;
 		}
 	}
-
 }
 add_action( 'pre_get_posts','catchflames_alter_home' );
 

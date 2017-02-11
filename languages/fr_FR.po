@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 14:47-0500\n"
-"PO-Revision-Date: 2016-12-07 14:47-0500\n"
+"POT-Creation-Date: 2017-02-11 17:18+0545\n"
+"PO-Revision-Date: 2017-02-11 17:18+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
@@ -109,11 +109,10 @@ msgstr "Commentaires Plus récents &rarr;"
 msgid "Comments are closed."
 msgstr "Commentaires fermés"
 
-#: ../content-aside.php:18 ../content-featured.php:14
-#: ../content-gallery.php:18 ../content-gallery.php:50 ../content-image.php:18
-#: ../content-link.php:18 ../content-page.php:13 ../content-quote.php:16
-#: ../content-status.php:17 ../content.php:31 ../content.php:35
-#: ../inc/catchflames-functions.php:925
+#: ../content-aside.php:18 ../content-featured.php:14 ../content-gallery.php:18
+#: ../content-gallery.php:50 ../content-image.php:18 ../content-link.php:18
+#: ../content-page.php:13 ../content-quote.php:16 ../content-status.php:17
+#: ../content.php:31 ../content.php:35 ../inc/catchflames-functions.php:924
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalien pour %s"
@@ -151,22 +150,20 @@ msgstr "% Commentaires &darr;"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../content-aside.php:37 ../content-featured.php:24
-#: ../content-gallery.php:57 ../content-image.php:31 ../content-link.php:37
-#: ../content-page.php:22 ../content-quote.php:40 ../content-single.php:33
-#: ../content-status.php:38 ../content.php:69 ../image.php:90
+#: ../content-aside.php:37 ../content-featured.php:24 ../content-gallery.php:57
+#: ../content-image.php:31 ../content-link.php:37 ../content-page.php:22
+#: ../content-quote.php:40 ../content-single.php:33 ../content-status.php:38
+#: ../content.php:69 ../image.php:90
 msgid "Pages:"
 msgstr "Pages:"
 
-#: ../content-aside.php:52 ../content-featured.php:51
-#: ../content-gallery.php:98 ../content-image.php:76 ../content-link.php:52
-#: ../content-page.php:30 ../content-quote.php:81 ../content-single.php:66
-#: ../content-status.php:53 ../content.php:113 ../image.php:100
-#: ../inc/catchflames-functions.php:449
+#: ../content-aside.php:52 ../content-featured.php:51 ../content-gallery.php:98
+#: ../content-image.php:76 ../content-link.php:52 ../content-page.php:30
+#: ../content-quote.php:81 ../content-single.php:66 ../content-status.php:53
+#: ../content.php:113 ../image.php:100 ../inc/catchflames-functions.php:449
 msgid "Edit"
 msgstr "Editer"
 
-#. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:70 ../content-gallery.php:80 ../content-image.php:55
 #: ../content-image.php:64 ../content-quote.php:53 ../content-quote.php:63
@@ -368,7 +365,6 @@ msgstr "(Modifier)"
 msgid "Post author"
 msgstr "Post author"
 
-#. translators: 1: date, 2: time
 #: ../inc/catchflames-functions.php:438
 #, php-format
 msgid "%1$s at %2$s"
@@ -401,151 +397,151 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchflames-functions.php:758
+#: ../inc/catchflames-functions.php:757
 #: ../inc/panel/customizer/customizer.php:609
 #: ../inc/panel/theme-options.php:115 ../inc/panel/theme-options.php:1046
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchflames-functions.php:763
+#: ../inc/catchflames-functions.php:762
 #: ../inc/panel/customizer/customizer.php:619
 #: ../inc/panel/theme-options.php:116 ../inc/panel/theme-options.php:1054
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchflames-functions.php:768
+#: ../inc/catchflames-functions.php:767
 #: ../inc/panel/customizer/customizer.php:629
 #: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:1062
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchflames-functions.php:773 ../inc/panel/theme-options.php:1094
+#: ../inc/catchflames-functions.php:772 ../inc/panel/theme-options.php:1094
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchflames-functions.php:778
+#: ../inc/catchflames-functions.php:777
 #: ../inc/panel/customizer/customizer.php:639
 #: ../inc/panel/theme-options.php:1070
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchflames-functions.php:783
+#: ../inc/catchflames-functions.php:782
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchflames-functions.php:788
+#: ../inc/catchflames-functions.php:787
 #: ../inc/panel/customizer/customizer.php:659
 #: ../inc/panel/theme-options.php:1086
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchflames-functions.php:793
+#: ../inc/catchflames-functions.php:792
 #: ../inc/panel/customizer/customizer.php:679
 #: ../inc/panel/theme-options.php:1102
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchflames-functions.php:798
+#: ../inc/catchflames-functions.php:797
 #: ../inc/panel/customizer/customizer.php:689
 #: ../inc/panel/theme-options.php:1110
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchflames-functions.php:803
+#: ../inc/catchflames-functions.php:802
 #: ../inc/panel/customizer/customizer.php:699
 #: ../inc/panel/theme-options.php:1119
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchflames-functions.php:808
+#: ../inc/catchflames-functions.php:807
 #: ../inc/panel/customizer/customizer.php:709
 #: ../inc/panel/theme-options.php:1127
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchflames-functions.php:813
+#: ../inc/catchflames-functions.php:812
 #: ../inc/panel/customizer/customizer.php:719
 #: ../inc/panel/theme-options.php:1135
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchflames-functions.php:818
+#: ../inc/catchflames-functions.php:817
 #: ../inc/panel/customizer/customizer.php:729
 #: ../inc/panel/theme-options.php:1143
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchflames-functions.php:823
+#: ../inc/catchflames-functions.php:822
 #: ../inc/panel/customizer/customizer.php:739
 #: ../inc/panel/theme-options.php:1152
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchflames-functions.php:828
+#: ../inc/catchflames-functions.php:827
 #: ../inc/panel/customizer/customizer.php:749
 #: ../inc/panel/theme-options.php:1160
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchflames-functions.php:833
+#: ../inc/catchflames-functions.php:832
 #: ../inc/panel/customizer/customizer.php:759
 #: ../inc/panel/theme-options.php:1168
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchflames-functions.php:838
+#: ../inc/catchflames-functions.php:837
 #: ../inc/panel/customizer/customizer.php:769
 #: ../inc/panel/theme-options.php:1176
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchflames-functions.php:843
+#: ../inc/catchflames-functions.php:842
 #: ../inc/panel/customizer/customizer.php:779
 #: ../inc/panel/theme-options.php:1184
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchflames-functions.php:848
+#: ../inc/catchflames-functions.php:847
 #: ../inc/panel/customizer/customizer.php:789
 #: ../inc/panel/theme-options.php:1192
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchflames-functions.php:853
+#: ../inc/catchflames-functions.php:852
 #: ../inc/panel/customizer/customizer.php:799
 #: ../inc/panel/theme-options.php:1200
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchflames-functions.php:858
+#: ../inc/catchflames-functions.php:857
 #: ../inc/panel/customizer/customizer.php:809
 #: ../inc/panel/theme-options.php:1208
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchflames-functions.php:863
+#: ../inc/catchflames-functions.php:862
 #: ../inc/panel/customizer/customizer.php:819
 #: ../inc/panel/theme-options.php:1216
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchflames-functions.php:868
+#: ../inc/catchflames-functions.php:867
 msgid "SpecificFeeds"
 msgstr "SpecificFeeds"
 
-#: ../inc/catchflames-functions.php:873
+#: ../inc/catchflames-functions.php:872
 #: ../inc/panel/customizer/customizer.php:838
 #: ../inc/panel/theme-options.php:1224
 msgid "Meetup"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:878
+#: ../inc/catchflames-functions.php:877
 #: ../inc/panel/customizer/customizer.php:848
 #: ../inc/panel/theme-options.php:1232
 msgid "Goodreads"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:883
+#: ../inc/catchflames-functions.php:882
 #: ../inc/panel/customizer/customizer.php:858
 #: ../inc/panel/theme-options.php:1240
 msgid "github"
@@ -605,8 +601,7 @@ msgstr "Sidebar gauche"
 msgid "No sidebar"
 msgstr "Pas de sidebar"
 
-#: ../inc/catchflames-metabox.php:75
-#: ../inc/panel/customizer/customizer.php:378
+#: ../inc/catchflames-metabox.php:75 ../inc/panel/customizer/customizer.php:378
 msgid "Sidebar Layout Options"
 msgstr "Options sidebar"
 
@@ -849,29 +844,33 @@ msgstr ""
 msgid "Hide Content"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:47
+#: ../inc/panel/customizer/customizer-custom-controls.php:34
+msgid "All Categories"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer-custom-controls.php:48
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:60
+#: ../inc/panel/customizer/customizer-custom-controls.php:61
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:64
+#: ../inc/panel/customizer/customizer-custom-controls.php:65
 msgid "Support"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:68
+#: ../inc/panel/customizer/customizer-custom-controls.php:69
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:72
+#: ../inc/panel/customizer/customizer-custom-controls.php:73
 msgid "Donate Now"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:76
+#: ../inc/panel/customizer/customizer-custom-controls.php:77
 msgid "Review"
 msgstr ""
 
@@ -884,8 +883,7 @@ msgstr "Options du thème"
 msgid "Basic theme Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:38
-#: ../inc/panel/theme-options.php:146
+#: ../inc/panel/customizer/customizer.php:38 ../inc/panel/theme-options.php:146
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -899,8 +897,7 @@ msgid ""
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:50
-#: ../inc/panel/theme-options.php:242
+#: ../inc/panel/customizer/customizer.php:50 ../inc/panel/theme-options.php:242
 msgid "Fixed Header Top Options"
 msgstr "Fixed Header Top Options"
 
@@ -910,28 +907,23 @@ msgid ""
 "location as Featured Header Top Menu. For more go to Menu Option"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:55
-#: ../inc/panel/theme-options.php:290
+#: ../inc/panel/customizer/customizer.php:55 ../inc/panel/theme-options.php:290
 msgid "Header Options"
 msgstr "Options de l'en-tête"
 
-#: ../inc/panel/customizer/customizer.php:60
-#: ../inc/panel/theme-options.php:490
+#: ../inc/panel/customizer/customizer.php:60 ../inc/panel/theme-options.php:490
 msgid "Search Options"
 msgstr "Options de recherche"
 
-#: ../inc/panel/customizer/customizer.php:70
-#: ../inc/panel/theme-options.php:507
+#: ../inc/panel/customizer/customizer.php:70 ../inc/panel/theme-options.php:507
 msgid "Layout Options"
 msgstr "Options de la disposition"
 
-#: ../inc/panel/customizer/customizer.php:75
-#: ../inc/panel/theme-options.php:568
+#: ../inc/panel/customizer/customizer.php:75 ../inc/panel/theme-options.php:568
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Configuration Page d'accueil et catégories de première page"
 
-#: ../inc/panel/customizer/customizer.php:80
-#: ../inc/panel/theme-options.php:598
+#: ../inc/panel/customizer/customizer.php:80 ../inc/panel/theme-options.php:598
 msgid "Excerpt / More Tag Settings"
 msgstr "Config balise Excerpt/More"
 
@@ -939,13 +931,11 @@ msgstr "Config balise Excerpt/More"
 msgid "Feed Redirect"
 msgstr "Redirection du flux"
 
-#: ../inc/panel/customizer/customizer.php:90
-#: ../inc/panel/theme-options.php:637
+#: ../inc/panel/customizer/customizer.php:90 ../inc/panel/theme-options.php:637
 msgid "Custom CSS"
 msgstr "Personnaliser CSS"
 
-#: ../inc/panel/customizer/customizer.php:95
-#: ../inc/panel/theme-options.php:665
+#: ../inc/panel/customizer/customizer.php:95 ../inc/panel/theme-options.php:665
 msgid "Scroll Up"
 msgstr "Scroll Up"
 
@@ -1214,7 +1204,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:105 ../inc/panel/theme-options.php:106
-#: ../inc/panel/theme-options.php:1764
+#: ../inc/panel/theme-options.php:1769
 msgid "Catch Themes"
 msgstr "Thèmes Catch"
 
@@ -1652,19 +1642,19 @@ msgstr "Activer les icônes sociales dans le pied de page?"
 msgid "Enable SpecificFeeds?"
 msgstr "Enable SpecificFeeds?"
 
-#: ../inc/panel/theme-options.php:1732
+#: ../inc/panel/theme-options.php:1737
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1753
+#: ../inc/panel/theme-options.php:1758
 msgid "Theme: Catch Flames by "
 msgstr "Theme: Catch Flames by "
 
-#: ../inc/panel/theme-options.php:1775
+#: ../inc/panel/theme-options.php:1780
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1775
+#: ../inc/panel/theme-options.php:1780
 msgid "All Rights Reserved"
 msgstr "Tous droits réservés"
 
