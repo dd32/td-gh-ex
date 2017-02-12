@@ -24,3 +24,5 @@ Default Image:
 - added customizer post excerpt length
 - added logo and icon support
 - fixed navwalker
+1.0.2
+- fixed non-printable character

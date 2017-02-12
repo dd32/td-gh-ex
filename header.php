@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage appeal
- * @since appeal 1.0
+ * @since appeal 1.0.1
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -87,5 +87,3 @@
    <div class="clearfix"></div>
 		<div id="page-content"><!-- ends in footer -->
 			<div class="container"><!-- ends in footer -->
-
-                
