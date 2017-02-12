@@ -16,11 +16,22 @@ function appeal_theme_support() {
 
     set_post_thumbnail_size(180, 180, true);   // default thumb size
 
+    //page background image and color support
+    $defaults = array(
+	   'default-color'          => '#fcfcfc',
+	   'default-image'          => '',
+	   'wp-head-callback'       => '_custom_background_cb',
+	   'admin-head-callback'    => '',
+	   'admin-preview-callback' => ''
+    );
+    add_theme_support( 'custom-background', $defaults );
+    add_theme_support( 'custom-logo' );
 
     // main nav in header (not sticky)
     register_nav_menus(
         array(
-            'primary' => __('Main Menu Top', 'appeal')
+            'primary' => __('Main Menu Top', 'appeal'),
+            'author_modal' => __('Author Links PopUp', 'appeal')
         )
     );
 
@@ -28,18 +39,24 @@ function appeal_theme_support() {
 }
 add_action('after_setup_theme','appeal_theme_support');
 
+function appeal_theme_custom_logo() {
+    // Try to retrieve the Custom Logo
+    $output = '';
+    if (function_exists('get_custom_logo'))
+        $output = '<div class="header-logo">';
 
-/**
- * custom excerpt length
- * @return excerpt_length
- * integer value
-*/
-function appeal_theme_excerpt_length( $length )
-{
-   $content = wp_strip_all_tags(get_the_content() , true );
-    echo wp_trim_words( $content, $length );
+$output .= get_custom_logo();
+$output .= '</div>';
+
+
+    // Nothing in the output: Custom Logo is not supported, or there is no selected logo
+    // In both cases we display the site's name
+    if (empty($output))
+        $output = '';
+
+    echo $output;
 }
-add_filter( 'excerpt_length', 'appeal_theme_excerpt_length', 999 );
+
 
 
 /**
@@ -76,6 +93,10 @@ function appeal_theme_scripts() {
                         array ( 'jquery' ),
                         '3.3.7',
                         true);
+wp_register_script( 'navwalker-script',
+                        get_template_directory_uri() . '/assets/wp_bootstrap_navwalker.php');
+wp_enqueue_script( 'navwalker-script',
+                        get_template_directory_uri() . '/assets/wp_bootstrap_navwalker.php');
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

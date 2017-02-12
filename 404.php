@@ -8,10 +8,7 @@
 
 			<section class="post_content">
 
-				<h2>
-					<?php _e("Page not found", "appeal"); ?>
-				</h2>
-				<?php get_search_form(); ?>
+				<?php get_template_part( 'nothing' ); ?>
 
 			</section>
 

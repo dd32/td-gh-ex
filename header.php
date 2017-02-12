@@ -25,37 +25,33 @@
 <a class="skip-link screen-reader-text" href="#content">
 <?php _e( 'Skip to content', 'appeal' ); ?></a>
 
-<div id="content-wrapper">
+<div id="content-wrapper"><!-- ends in footer -->
     <div class="site-head">
 
+        <?php appeal_theme_custom_logo() ?>
+
         <div class="hgroup">
-            <ul class="list-inline">
-                <li class="site-title"><a
-                    href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                    title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                    <?php bloginfo('name') ?></a>
-                </li>
-                <li class="site-description">
-                    <em> | </em>
-                </li>
-                <li class="site-description">
-                    <?php bloginfo('description') ?>
-                </li>
-            </ul>
+            <p class="list-inline">
+            <span class="site-title"><a
+                  href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                  title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                  <?php bloginfo('name') ?></a></span>
+            <span class="site-description"><em> | </em></span>
+            <span class="site-description"><?php bloginfo('description') ?></span></p>
         </div>
+
     </div>
+
 		<header>
 			<nav class="navbar navbar-default navbar-static-top semi-fixed">
 				<div class="container">
-
 					<div class="navbar-header">
-						<?php if (has_nav_menu("main_nav")): ?>
+						<?php if (has_nav_menu("primary")): ?>
 						<button type="button" class="navbar-toggle collapsed"
                                 data-toggle="collapse"
                                 data-target="#navbar-responsive-collapse">
 		    				<span class="sr-only"><?php _e('Navigation',
-                                                           'appeal'); ?>
-                            </span>
+                                                           'appeal'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -64,33 +60,32 @@
 						<a class="navbar-brand"
                            title="<?php bloginfo('description'); ?>"
                            href="<?php echo esc_url(home_url('/')); ?>">
-                     <?php bloginfo('name'); ?></a>
+                           <img src="<?php echo get_template_directory_uri()
+                                            . '/assets/homepng.png'; ?>"
+                                alt="<?php _e( 'Home', 'appeal' ); ?>"
+                                height="45" /></a>
 					</div>
 
-					<div id="navbar-responsive-collapse"
-                         class="collapse navbar-collapse">
+					<div id="navbar-responsive-collapse" class="collapse navbar-collapse">
 
-	    <?php
-            wp_nav_menu( array(
-                'menu'              => 'primary',
-                'theme_location'    => 'primary',
-                'depth'             => 2,
-                'container'         => 'div',
-                'container_class'   => 'collapse navbar-collapse',
-                'container_id'      => 'bs-example-navbar-collapse-1',
-                'menu_class'        => 'nav navbar-nav',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            );
-        ?>
+	    <?php wp_nav_menu( array(
+                'menu'             => 'primary',
+                'theme_location'  => 'primary',
+                'depth'          => 2,
+                'container_id'  => 'none',
+                'menu_class'   => 'nav navbar-nav',
+                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                'walker'     => new wp_bootstrap_navwalker())
+            ); ?>
 
 					</div>
 				</div>
 			</nav>
+
 		</header>
 
    <div class="clearfix"></div>
 		<div id="page-content"><!-- ends in footer -->
-			<div class="container">
+			<div class="container"><!-- ends in footer -->
 
                 

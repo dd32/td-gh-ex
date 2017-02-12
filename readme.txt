@@ -20,3 +20,7 @@ Default Image:
 2016 Erich Haugen - Between Reno and Sacramento
 
 == Change Log ==
+1.0.1
+- added customizer post excerpt length
+- added logo and icon support
+- fixed navwalker
