@@ -284,14 +284,17 @@ function bento_insert_custom_styles() {
 			';
 		}
 		$postheader = '';
-		if ( has_post_thumbnail( $postid ) ) {
-			$postheader = get_the_post_thumbnail_url( $postid, 'full' );
-		} else if ( get_post_meta( $postid, 'bento_activate_header', true ) != '' && get_post_meta( $postid, 'bento_header_image', true ) != '' ) {
+		if ( get_post_meta( $postid, 'bento_activate_header', true ) != '' && get_post_meta( $postid, 'bento_header_image', true ) != '' ) {
 			$postheader = esc_url( get_post_meta( $postid, 'bento_header_image', true ) );
+		} else if ( has_post_thumbnail( $postid ) ) {
+			$postheader = get_the_post_thumbnail_url( $postid, 'full' );
 		}
 		if ( is_front_page() && 'page' == get_option('show_on_front') ) {
 			if ( get_theme_mod( 'bento_front_header_image' ) != '' ) {
-				$postheader = esc_url( wp_get_attachment_image_src( get_theme_mod( 'bento_front_header_image' ), 'full' )[0] );
+				$postheader_obj = wp_get_attachment_image_src( get_theme_mod( 'bento_front_header_image' ), 'full' );
+				if ( $postheader_obj ) {
+					$postheader = esc_url( $postheader_obj[0] );
+				}
 			}	
 		}
 		if ( $postheader != '' ) {
@@ -1030,17 +1033,28 @@ function bento_metaboxes() {
 			'default' => '10%',
 		)
 	);
-	$bento_header_settings->add_field(
-		array(
-			'name' => esc_html__( 'Header image', 'bento' ),
-			'desc' => esc_html__( 'You can upload the image to serve as the header using the "Featured image" box in the right sidebar; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'bento' ),
-			'id' => $bento_prefix . 'header_image',
-			'type' => 'text',
-			'attributes'  => array(
-				'hidden' => 'hidden',
-			),
-		)
-	);
+	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		$bento_header_settings->add_field(
+			array(
+				'name' => esc_html__( 'Header image', 'satori' ),
+				'desc' => esc_html__( 'Upload the image to serve as the header; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'satori' ),
+				'id' => $bento_prefix . 'header_image',
+				'type' => 'file',
+			)
+		);
+	} else {
+		$bento_header_settings->add_field(
+			array(
+				'name' => esc_html__( 'Header image', 'bento' ),
+				'desc' => sprintf( esc_html__( 'You can upload the image to serve as the header using the "Featured image" box in the right sidebar; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience. Install the %s in order to be able to upload a separate image as the header image.', 'bento' ), $bento_ep_url ),
+				'id' => $bento_prefix . 'header_image',
+				'type' => 'text',
+				'attributes'  => array(
+					'hidden' => 'hidden',
+				),
+			)
+		);
+	}
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$bento_header_settings->add_field(
 			array(

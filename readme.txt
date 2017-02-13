@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,7 +35,12 @@ The site tagline set in the "Settings -> General" admin section is not being use
 
 ___ CHANGELOG
 
-* 1.6.2 / 5 February 2016
+* 1.6.3 / 13 February 2017
+Added the header image upload field for the Expansion Pack.
+The bottom footer does not display at all now if the footer menu and the copyright statement are blank.
+Fixed the featured image behaviour in the presence of extended header on Grid pages.
+
+* 1.6.2 / 5 February 2017
 Removed Facebook and Twitter links and fixed the rating link in the Customizer
 Added notes on site title and tagline into the readme file.
 Moved the "Tile image" field into the Expansion Pack.
@@ -44,7 +49,7 @@ Updated the included CMB2 library.
 Fixed the "Hite title" option on WooCommerce product pages.
 Removed the unnecessary "Hide thumbnail" setting from pages.
 
-* 1.6.1 / 1 February 2016
+* 1.6.1 / 1 February 2017
 Corrected the text domain in the translation function which sets sidebar names.
 Added unminified versions for all minified js files included in the theme.
 Replaced custom comment function arguments with hooks.
@@ -66,7 +71,7 @@ Wrapped the year in the theme footer into a localization tag.
 Fixed the unordered multiple placeholders issues in the sprintf() on line 93 of the CMB2 helper functions and on line 2410 of the plugin activation include.
 Removed the error control operators from the included CMB2 library.
 
-* 1.6 / 25 January 2016
+* 1.6 / 25 January 2017
 Moved all theme-related support and upsell links into a single native Customizer section.
 Removed all premium sections and fields from the Customizer for non-upgraded users.
 Got rid of the 'add_option' call on theme activation.

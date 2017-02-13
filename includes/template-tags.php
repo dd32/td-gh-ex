@@ -353,7 +353,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
 			( is_singular( array( 'post' , 'project' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
-			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && get_page_template_slug( $bento_parent_page_id ) != 'grid.php' ) 
+			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' ) 
 		) {
 			return;
 		}
@@ -778,19 +778,21 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 			$copyright .= '&#169; '.date_i18n( __( 'Y', 'bento') ).' '.$sitename.'. '.$author;
 		}
 		$copyright .= '</div>';
-		echo wp_kses( $copyright, 
-			array( 
-				'a' => array( 
-					'target' => array(), 
-					'href' => array(),
-					'title' => array(),
-				),
-				'div' => array(
-					'class' => array(),
-				),
-				'span' => array(),
-			)
-		);
+		if ( get_option( 'bento_ep_license_status' ) != 'valid' || get_theme_mod( 'bento_footer_copyright' ) != '' ) {
+			echo wp_kses( $copyright, 
+				array( 
+					'a' => array( 
+						'target' => array(), 
+						'href' => array(),
+						'title' => array(),
+					),
+					'div' => array(
+						'class' => array(),
+					),
+					'span' => array(),
+				)
+			);
+		}
 	}
 	
 }
