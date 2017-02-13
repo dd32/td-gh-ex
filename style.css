@@ -5,7 +5,7 @@
  *
  * Author:      Larry Judd Oliver
  * Author URI:  http://tradesouthwest.com/
- * Version:     1.0.2
+ * Version:     1.0.3
  * Text Domain: appeal
  * Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template
  * License:     GPL 3
@@ -14,9 +14,10 @@
 
 /**
  * All content is parsed from within 'content' template part file
- *
- * Selectors outside of Bootstrap-rdc below ==== Theme ====
- *
+ * -----------------------------------------------------------
+ * Selectors outside of Bootstrap-rdc are located below the
+ *  ==== Theme ==== comment tag in this stylesheet
+ * -----------------------------------------------------
 */
 
 html {
@@ -4099,14 +4100,14 @@ button.close {
 #cancel-comment-reply-link {color:red; }
 #commentform {color:#222; }
 textarea#comment {
-padding: 3px;
-border: 1px solid #ddd;
-background-image: none;
-background: #fff linear-gradient( to bottom, #ffffff, #efefef );
-box-shadow: 0 1px 1px #aaaaaa;
-width: 540px;
-height: 100px;
-border-radius: 4px;
+  padding: 3px;
+  border: 1px solid #ddd;
+  background-image: none;
+  background: #fff linear-gradient( to bottom, #ffffff, #efefef );
+  box-shadow: 0 1px 1px #aaaaaa;
+  width: 540px;
+  height: 100px;
+  border-radius: 4px;
 }
 textarea#comment:focus {
   box-shadow: 0 3px 5px #5588cc;
@@ -4116,25 +4117,25 @@ textarea#comment:focus {
 .comment-form-email label {margin-left: 4px;}
 .comment-form-url label {margin-left: 0;}
 
-.comment-form-comment {}
-.comment-form-comment label {   }
+.comment-form-comment {color: inherit;}
+.comment-form-comment label { color: inherit;  }
 .form-allowed-tags{
-font-size: .938rem;
-color: #888;
-max-width: 520px;
-word-wrap: break-word;
-margin-left: 2em;
+  font-size: .938rem;
+  color: #888;
+  max-width: 520px;
+  word-wrap: break-word;
+  margin-left: 2em;
  }
 .form-allowed-tags code {
-background: none;
-color: #888;
+  background: none;
+  color: #888;
 }
 
-#cancel-comment-reply {}
-#cancel-comment-reply a {}
+#cancel-comment-reply {color: inherit;}
+#cancel-comment-reply a {color: inherit;}
 /* input fields of form */
 #respond {
-
+color: inherit;
 }
 
 /* Highlight active form field */
@@ -4154,12 +4155,13 @@ color: #888;
 background-image: linear-gradient( to bottom, #ffffff, #efefef );
 }
 @media screen and (max-width: 760px){
-#respond input[type=text],
-#respond input[type=email],
-#respond input[type=url] {
-  min-width: 120px;
-  width: auto;
-}}
+  #respond input[type=text],
+  #respond input[type=email],
+  #respond input[type=url] {
+    min-width: 120px;
+    width: auto;
+  }
+}
 
 #respond input[type=text]:focus,
 #respond input[type=email]:focus,
@@ -4168,21 +4170,25 @@ background-image: linear-gradient( to bottom, #ffffff, #efefef );
   margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
 }
-
+h3.comment-reply-title {
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+}
 .required {color:red;padding-right:5px; }
 
 #submit {
-font-family: Arial, sans-serif;
-color: #111;
-font-size: 1em;
-padding: 5px 15px;
-text-decoration: none;
-box-shadow: 0px 1px 2px #bbbbbb;
-text-shadow: 1px 1px 3px #eee;
-margin-top: 8px;
-border-radius: 4px;
-border-color: #f1f1f1;
-background-image: linear-gradient( #e8e8e8, #efefef);
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 1em;
+  padding: 5px 15px;
+  text-decoration: none;
+  box-shadow: 0px 1px 2px #bbbbbb;
+  text-shadow: 1px 1px 3px #eee;
+  margin-top: 8px;
+  border-radius: 4px;
+  border-color: #f1f1f1;
+  background-image: linear-gradient( #e8e8e8, #efefef);
 }
 
 #submit:hover {
@@ -4190,7 +4196,17 @@ background-image: linear-gradient( #e8e8e8, #efefef);
   border-radius: 5px;
 }
 
-/* gallery and captions */
+/* widgets
+------------------------------------------- */
+.widget ul{
+  margin-left: -2em;
+}
+.widget .calendar_wrap {
+padding-left: 1em;
+}
+
+/* gallery and captions
+------------------------------------------- */
 .wp-caption {
   color: inherit;
 }
@@ -4225,13 +4241,13 @@ max-width: 140px;
 /* WordPress-added  attr are scaled correctly */
 img[class*="align"],
 img[class*="wp-image-"] {
- height: auto;
- max-width: 100%;
- max-width: 60.25vw;
+  height: auto;
+  max-width: 100%;
+  max-width: 60.25vw;
 }
 img.size-full {
-   max-width: 97.5%;
-    width: auto;  /* Prevent stretching of full-size images in IE8 */
+  max-width: 97.5%;
+  width: auto;  /* Prevent stretching of full-size images in IE8 */
 }
 .bypostauthor {
 color: inherit;
@@ -4287,8 +4303,8 @@ color: inherit;
 /** =Navbar at end of sheet to make generic changes
 ----------------------------------------------- */
 .semi-fixed {
-position: relative;
-top: 1px;
+  position: relative;
+  top: 1px;
 }
 
 .navbar-default {
@@ -4314,6 +4330,30 @@ top: 1px;
 
 /* =pagination
 ----------------------------------------------- */
+.social-footer {
+  width: 100%;
+  padding: 0 15px 7px 15px;
+  margin-bottom: 1px;
+  height: 51px;
+
+}
+.social-footer li a {
+  background: rgba( 255, 255, 255, .7);
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #bbb;
+  color: black;
+  margin-right: 0;
+
+}
+.social-footer li:last-child {
+  border-right: 1px solid #ccc;
+}
+@media screen and (max-width: 800px) {
+  .social-footer {
+    margin-bottom: 1em;
+    display: inline-block;
+  }
+}
 .pagination {
   display: inline-block;
   width: 98%;
@@ -4323,14 +4363,16 @@ top: 1px;
 .pagination span {
 }
 
-.nav-previous, .nav-next {
+.nav-previous,
+.nav-next,
+.postlink li.btn-paging {
   min-height: 2.4em;
   background: #eee;
   border-top: 2px solid #fafafa;
   border-right: 2px solid #f5f5f5;
   border-bottom: 2px solid #f2f2f2;
   border-left: 2px solid #f2f2f2;
-border-radius: 4px;
+  border-radius: 4px;
   padding: 3px;
   display: inline-block;
   width: auto;
@@ -4340,6 +4382,7 @@ border-radius: 4px;
 }
 
 .nav-title {
+color: inherit;
 }
 
 .nav-subtitle {
@@ -4357,46 +4400,55 @@ a.navbar-brand img {
   top: -.7825em;
 }
 
+.postlink {
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+
 /* =Header
 ----------------------------------------------- */
 form.search-form input[type='submit'] {
-background-image: none;
-float: right;
-position: relative;
-right: 1em;
-background: #f9f9f9;
-box-shadow: none;
-border: 1px solid #ddd;
-border-radius: 5px;
+  background-image: none;
+  float: right;
+  position: relative;
+  right: 1em;
+  background: #f9f9f9;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 .site-title {
   font-size: 220%;
   position: relative;
-  top: 1.35em;
+  top: 1.575em;
   color: #37c;
 }
 .site-description {
   font-size: 170%;
   position: relative;
-  top: 1.46em;
+  top: 1.984em;
   color: #37c;
 }
 .site-head {
-overflow:hidden;
-padding: 15px;
+  overflow:hidden;
+  padding: 15px;
+  min-height: 130px;
 }
 .site-head .hgroup{
-padding-left: 30px;
-z-index: 1300;
-position: absolute;
-top: 0;
+  padding-left: 30px;
+  z-index: 1300;
+  position: absolute;
+  top: 0;
 }
 .header-logo {
-  margin-top: 15px;
   z-index: 3;
 }
 .custom-header-img {
+  background: transparent;
 }
+
 h3 em {
   color: #767676;
 }
@@ -4419,7 +4471,8 @@ body {
   padding: 7px;
   background: rgba(255,255,255, .9);
   width: 220px;
-  height:248px;
+  min-height:48px;
+  height: auto;
   display: table-cell;
   vertical-align: middle;
   margin: 0;
@@ -4435,8 +4488,7 @@ body {
   border-left: 5px solid #eee;
 }
 .pullquote aside {
-vertical-align:bottom;
-
+  vertical-align:bottom;
 }
 .pullquote aside p {
   font-size: 112% !important;
@@ -4588,11 +4640,6 @@ div.more-link {
   padding-bottom: 15px;
 }
 
-.postlink {
-  width: 100%;
-  padding: 0 15px;
-  text-align: center;
-}
 .footer-footer {
   width: 100%;
   min-height: 90px;
@@ -4605,6 +4652,7 @@ margin-bottom: 0;
   min-height: 30px;
   height:     100%;
 margin-bottom: 0;
+text-shadow: 0 .5px .5px #333;
 }
 
 .copyright {

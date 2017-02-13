@@ -3,6 +3,17 @@
         </div><!-- .container -->
     </div><!-- .content-wrapper -->
             <footer class="footer-footer container-fluid">
+        <nav class="social-footer">
+            <?php if ( has_nav_menu( 'author_modal' ) ) {
+                    wp_nav_menu( array(
+                    'menu'               => 'author_modal',
+                    'theme_location'    => 'author_modal',
+                    'container'        => 'ul',
+                    'container_class' => 'list-inline',
+                    'container_id'   => 'modalLinkA',
+                    'menu_class'    => 'nav navbar-nav'));
+             } ?>
+        </nav>
                 <div id="inner-footer">
 
                     <div class="row">

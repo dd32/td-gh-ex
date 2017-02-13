@@ -32,7 +32,9 @@ $more = 0;
 ?>
 		    <section class="post_content">
             <?php
-            // only showing excerpts on author page
+            /** only showing excerpts on author page
+             *  change number in () and keep '' intact
+             */
             appeal_theme_excerpt_length( '48' );
             ?>
                     <nav class="pagination"><?php // more tag display

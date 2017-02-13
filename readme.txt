@@ -17,7 +17,7 @@ Description:  Appeal is a Three-Two-One dynamic template that shows three column
 - wp_bootstrap_navwalker GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker, Author: Edward McIntyre - @twittem, License: GPL-2.0+
 
 Default Image:
-2016 Erich Haugen - Between Reno and Sacramento
+2016 Erich Haugen - Between Reno and Sacramento  GPL-2.0+
 
 == Change Log ==
 1.0.1
@@ -26,3 +26,11 @@ Default Image:
 - fixed navwalker
 1.0.2
 - fixed non-printable character
+1.0.3
+- registered nav walker correctly
+- added instructions in customizer
+- added color for footer text
+- added background for footer
+- added excerpt controls
+- added nothing page
+- added attachment page

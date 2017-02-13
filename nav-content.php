@@ -3,13 +3,13 @@
     <div class="postlink">
         <nav class="block">
             <ul class="list-inline">
-                <li class="btn btn-default notblank previous">
+                <li class="btn btn-paging notblank previous">
                     <?php next_posts_link("&laquo; "
                           . __('Older posts', "appeal")); ?></li>
                 <li></li>
-                <li class="btn btn-default notblank"> &laquo; &nbsp; &raquo; </li>
+                <li class="btn btn-paging notblank"> &laquo; &nbsp; &raquo; </li>
                 <li></li>
-                <li class="btn btn-default notblank next">
+                <li class="btn btn-paging notblank next">
                     <?php previous_posts_link(
                           __('Newer posts', "appeal") . " &raquo;"); ?></li>
             </ul>

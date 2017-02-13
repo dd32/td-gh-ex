@@ -24,14 +24,14 @@ function appeal_register_theme_customizer($wp_customize)
     */
 	$wp_customize->add_setting(	'appeal_header_background_color_setting', array(
             'type'              => 'theme_mod',
-            'default'           => 'ffffff',
+            'default'           => 'f7f7f7',
 			'sanitize_callback'	=> 'esc_attr',
-			'transport'			=> 'postMessage'
+			'transport'			=> 'refresh'
 		)
 	);
 
     /* (2)
-     * WP_Customize_Manager/add_setting for header background color
+     * WP_Customize_Manager/add_setting for content background color
     */
 	$wp_customize->add_setting(	'appeal_page_background_color_setting', array(
             'type'              => 'theme_mod',
@@ -73,14 +73,15 @@ function appeal_register_theme_customizer($wp_customize)
 		)
 	);
 
-    // (1)
+    // (1) Header and Footer background color
     $wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'header_background_color', array(
+			'appeal_header_background_color', array(
 				'settings'		=> 'appeal_header_background_color_setting',
 				'section'		=> 'colors',
-				'label'			=> __( 'Header Background Color', 'appeal' ),
+'priority'          => 1,
+				'label'			=> __( 'Header and Footer Background Color', 'appeal' ),
 				'description'	=> __(
                     'Select the background color of the header area.
                     Header Image should be Off.', 'appeal' ),
@@ -92,7 +93,7 @@ function appeal_register_theme_customizer($wp_customize)
     $wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'header_background_color', array(
+			'appeal_page_background_color', array(
 				'settings'		=> 'appeal_page_background_color_setting',
 				'section'		=> 'colors',
 				'label'			=> __( 'Content Background Color', 'appeal' ),
@@ -142,7 +143,7 @@ function appeal_register_theme_customizer($wp_customize)
             'type'              => 'hidden',
             'section'           => 'appeal_custom_teaser_length_section',
             'label'             => __( 'Further Theme Instructions', 'appeal' ),
-            'description'       => __( 'To set up social or company media links in the display on the Author page---and the popup---use the Menu settings Appearance > Menus. Then create your links using Custom Links panel to left of Menu Structure panel.', 'appeal' ),
+            'description'       => __( 'To set up social or company media links in the page footer---and the popup---use the Menu settings <b>Appearance > Menus</b>. Then create your links using the Custom Links panel to left of Menu Structure panel.<br><b>Other notes: </b><br>Author Links are taken from the User Profile. Be creative by replacing website field with a social link.', 'appeal' ),
         )
     );
 

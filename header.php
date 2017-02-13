@@ -72,11 +72,12 @@
                 'menu'             => 'primary',
                 'theme_location'  => 'primary',
                 'depth'          => 2,
-                'container_id'  => 'none',
+                'container_id'  => 'bs-example-navbar-collapse-1',
                 'menu_class'   => 'nav navbar-nav',
                 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                'walker'     => new wp_bootstrap_navwalker())
-            ); ?>
+                'walker'     =>  new wp_bootstrap_navwalker()
+            ));
+/*new wp_bootstrap_navwalker())*/ ?>
 
 					</div>
 				</div>

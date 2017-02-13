@@ -1,4 +1,6 @@
 <?php
+// functions for theme Appeal
+// @since 1.0.2
 
 // Declaration of theme supported features
 function appeal_theme_support() {
@@ -11,17 +13,17 @@ function appeal_theme_support() {
     ));
 
     add_theme_support( 'title-tag' );
-    add_theme_support('automatic-feed-links'); // rss feederz
-    add_theme_support('post-thumbnails');      // wp thumbnails (sizes handled below)
+    add_theme_support( 'automatic-feed-links' ); // rss feederz
+    add_theme_support( 'post-thumbnails' );      // wp thumbnails (sizes handled below)
 
-    set_post_thumbnail_size(180, 180, true);   // default thumb size
+    set_post_thumbnail_size( 180, 180, true );   // default thumb size
 
     //page background image and color support
     $defaults = array(
-	   'default-color'          => '#fcfcfc',
-	   'default-image'          => '',
-	   'wp-head-callback'       => '_custom_background_cb',
-	   'admin-head-callback'    => '',
+	   'default-color'      => '#fcfcfc',
+	   'default-image'       => '',
+	   'wp-head-callback'     => '_custom_background_cb',
+	   'admin-head-callback'   => '',
 	   'admin-preview-callback' => ''
     );
     add_theme_support( 'custom-background', $defaults );
@@ -31,7 +33,7 @@ function appeal_theme_support() {
     register_nav_menus(
         array(
             'primary' => __('Main Menu Top', 'appeal'),
-            'author_modal' => __('Author Links PopUp', 'appeal')
+            'author_modal' => __('Footer and Author Links', 'appeal')
         )
     );
 
@@ -39,24 +41,56 @@ function appeal_theme_support() {
 }
 add_action('after_setup_theme','appeal_theme_support');
 
+
+//include (enqueue) scripts and stylesheets
+function appeal_theme_scripts() {
+
+    // register all scripts with WP
+    wp_register_style( 'appeal-google-fonts',
+                       'http://fonts.googleapis.com/css?family=Raleway',
+                       false );
+    // For use of child themes
+    wp_register_style( 'appeal-style',
+                        get_stylesheet_directory_uri() . '/style.css',
+                        array(),
+                        null,
+                        'all' );
+
+    //enqueue (sane and include) scripts into WP
+    wp_enqueue_style( 'appeal-google-fonts');
+    wp_enqueue_style( 'appeal-style' );
+    wp_enqueue_script( 'bootstrap-script',
+                        get_template_directory_uri() . '/assets/bootstrap.js',
+                        array ( 'jquery' ),
+                        '3.3.7',
+                        true);
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+
+
+/**
+ * support for logo upload, output
+ */
 function appeal_theme_custom_logo() {
+
     // Try to retrieve the Custom Logo
     $output = '';
     if (function_exists('get_custom_logo'))
         $output = '<div class="header-logo">';
+        $output .= get_custom_logo();
+        $output .= '</div>';
 
-$output .= get_custom_logo();
-$output .= '</div>';
-
-
-    // Nothing in the output: Custom Logo is not supported, or there is no selected logo
+    // If Custom Logo is not supported, or there is no selected logo
     // In both cases we display the site's name
     if (empty($output))
         $output = '';
 
     echo $output;
 }
-
 
 
 /**
@@ -70,39 +104,11 @@ function appeal_theme_excerpt_support()
 }
 add_action( 'init', 'appeal_theme_excerpt_support' );
 
-
-
-//include (enqueue) scripts and stylesheets
-function appeal_theme_scripts() {
-
-    wp_register_style( 'appeal-google-fonts',
-                       'http://fonts.googleapis.com/css?family=Raleway',
-                       false );
-
-    // For use of child themes
-    wp_register_style( 'appeal-style',
-                        get_stylesheet_directory_uri() . '/style.css',
-                        array(),
-                        null,
-                        'all' );
-
-    wp_enqueue_style( 'appeal-google-fonts');
-    wp_enqueue_style( 'appeal-style' );
-    wp_enqueue_script( 'bootstrap-script',
-                        get_template_directory_uri() . '/assets/bootstrap.js',
-                        array ( 'jquery' ),
-                        '3.3.7',
-                        true);
-wp_register_script( 'navwalker-script',
-                        get_template_directory_uri() . '/assets/wp_bootstrap_navwalker.php');
-wp_enqueue_script( 'navwalker-script',
-                        get_template_directory_uri() . '/assets/wp_bootstrap_navwalker.php');
-
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
+function appeal_theme_modify_read_more_link() {
+    return '<a class="more-link" href="' . get_permalink() . '">[ + ]</a>';
 }
-add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+add_filter( 'the_content_more_link', 'appeal_theme_modify_read_more_link' );
+
 
 /**
  * Implementation of the Custom Header feature.
@@ -173,8 +179,7 @@ function appeal_theme_header_style()
             else
             {
             echo '
-            .site-title a,
-            .site-description {
+            #inner-footer li a, #inner-footer h4, .site-title a, .site-description {
             color: '; ?> #<?php echo esc_attr( $header_text_color ); ?>;
             <?php
             }
@@ -236,6 +241,54 @@ function appeal_register_sidebars() {
 
 }
 add_action( 'widgets_init', 'appeal_register_sidebars' );
+
+
+
+/**
+ * Add Photographer Name and URL fields to media uploader
+ *
+ * @param $form_fields array, fields to include in attachment form
+ * @param $post object, attachment record in database
+ * @return $form_fields, modified form fields
+ */
+function appeal_attachment_field_credit( $form_fields, $post ) {
+	$form_fields['appeal-photographer-name'] = array(
+		'label' => __( 'Photographer Name', 'appeal' ),
+		'input' => 'text',
+		'value' => get_post_meta( $post->ID, 'appeal_photographer_name', true ),
+		'helps' => __( 'If provided, photo credit will be displayed', 'appeal' ),
+	);
+
+	$form_fields['appeal-photographer-url'] = array(
+		'label' => __( 'Photographer URL', 'appeal' ),
+		'input' => 'text',
+		'value' => get_post_meta( $post->ID, 'appeal_photographer_url', true ),
+		'helps' => __( 'Add Photographer URL', 'appeal' ),
+	);
+
+	return $form_fields;
+}
+add_filter( 'attachment_fields_to_edit', 'appeal_attachment_field_credit', 10, 2 );
+
+/**
+ * Save values of Photographer Name and URL in media uploader
+ *
+ * @param $post array, the post data for database
+ * @param $attachment array, attachment fields from $_POST form
+ * @return $post array, modified post data
+ */
+
+function appeal_attachment_field_credit_save( $post, $attachment ) {
+	if( isset( $attachment['appeal-photographer-name'] ) )
+		update_post_meta( $post['ID'], 'appeal_photographer_name', $attachment['appeal-photographer-name'] );
+
+	if( isset( $attachment['appeal-photographer-url'] ) )
+update_post_meta( $post['ID'], 'appeal_photographer_url', esc_url( $attachment['appeal-photographer-url'] ) );
+
+	return $post;
+}
+add_filter( 'attachment_fields_to_save', 'appeal_attachment_field_credit_save', 10, 2 );
+
 
 
 /**
