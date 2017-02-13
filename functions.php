@@ -108,7 +108,45 @@ add_theme_support('automatic-feed-links');
 		 
 load_theme_textdomain('advance', get_template_directory() . '/languages');  
  
- 
+add_theme_support( 'starter-content', array(
+
+
+	'posts' => array(
+		'home',
+		'about' => array(
+			'thumbnail' => '{{image-sandwich}}',
+		),
+		'contact' => array(
+			'thumbnail' => '{{image-espresso}}',
+		),
+		'blog' => array(
+			'thumbnail' => '{{image-coffee}}',
+		),
+		'homepage-section' => array(
+			'thumbnail' => '{{image-espresso}}',
+		),
+	),
+
+
+	'options' => array(
+		'show_on_front' => 'page',
+		'page_on_front' => '{{home}}',
+		'page_for_posts' => '{{blog}}',
+	),
+
+	'nav_menus' => array(
+		'primary' => array(
+			'name' => __( 'Top Menu', 'advance' ),
+			'items' => array(
+				'page_home',
+				'page_about',
+				'page_blog',
+				'page_contact',
+			),
+		),
+
+	),
+) ); 
 }
 endif; // advance_setup
 add_action( 'after_setup_theme', 'advance_setup' );
