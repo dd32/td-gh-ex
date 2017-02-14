@@ -17,7 +17,7 @@ if ( ! function_exists( 'actions_footer_credit' ) ) {
         $name = $actions_theme->get( 'Name' );
 		$url = $actions_theme->get( 'ThemeURI' );
 		$author = $actions_theme->get( 'Author' );
-		$copyright = __( 'Copyright &copy; ', 'actions' ) . get_bloginfo( 'name' ) . ' ' . esc_attr( date( 'Y' ) );
+		$copyright = __( 'Copyright &copy; ', 'actions' ) . get_bloginfo( 'name' ) . ' ' . esc_attr( date_i18n( __( 'Y', 'actions' ) ) );
 		
 		do_action( 'actions_footer_open' );
 		do_action( 'actions_before_footer' );

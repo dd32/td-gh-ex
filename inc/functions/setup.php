@@ -122,6 +122,24 @@ function actions_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	
+	// Header Left Widgets.
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Top Left', 'actions' ),
+		'id'            => 'header-widgets-left',
+		'description'   => esc_html__( 'Place for widgets on left side of header. Avoid adding a title to any widget! Custom menu should ideally be short without child menu items.', 'actions' ),
+		'before_widget' => '<div class="widget  %2$s">',
+		'after_widget'  => '</div>',
+	) );
+
+	// Header Right Widgets.
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Top Right', 'actions' ),
+		'id'            => 'header-widgets-right',
+		'description'   => esc_html__( 'Place for widgets on right side of header. Avoid adding a title to any widget! Custom menu should ideally be short without child menu items.', 'actions' ),
+		'before_widget' => '<div class="widget  %2$s">',
+		'after_widget'  => '</div>',
+	) );
+	
 	register_sidebar( array(
 		'name'          => __( 'Header Widget', 'actions' ),
 		'id'            => 'sidebar-header',
@@ -164,13 +182,13 @@ function actions_fonts_url() {
 	}
 
 	if ( $fonts ) {
-		$fonts_url = esc_url( add_query_arg( array(
+		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' ) );
+		), '//fonts.googleapis.com/css' );
 	}
 
-	return $fonts_url;
+	return esc_url_raw( $fonts_url );
 }
 endif;
 
@@ -185,6 +203,16 @@ function actions_javascript_detection() {
 	echo "<script>( function( html ){html.className = html.className.replace(/\bno-js\b/,'js')})( document.documentElement );</script>\n";
 }
 add_action( 'wp_head', 'actions_javascript_detection', 0 );
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function actions_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'actions_pingback_header' );
 
 /**
  * Enqueue scripts and styles.

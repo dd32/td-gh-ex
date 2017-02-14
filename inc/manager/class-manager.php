@@ -494,7 +494,7 @@ class ActionsMB_Manager {
 			$this->post_id = $post_id;
 
 		// Verify the nonce for this manager.
-		if ( ! isset( $_POST["actionsmb_{$this->name}"] ) || ! wp_verify_nonce( $_POST["actionsmb_{$this->name}"], "actionsmb_{$this->name}_nonce" ) )
+		if ( ! isset( $_POST["actionsmb_{$this->name}"] ) || ! wp_verify_nonce( wp_unslash( $_POST["actionsmb_{$this->name}"] ), "actionsmb_{$this->name}_nonce" ) )
 			return;
 
 		// Loop through each setting and save it.

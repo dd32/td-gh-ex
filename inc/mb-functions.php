@@ -24,6 +24,7 @@ function actions_disable_title() {
 	if ( isset( $post ) ? get_post_meta( $post->ID, '_actions_page_title', true ) : '' ) {
 		remove_action( 'actions_page_elements', 'actions_page_header', 10 );
 		remove_action( 'post_header', 'actions_post_header', 	20 );
+		remove_action( 'actionshomepage_entry_top', 'actionshomepage_entry_header', 10 );
 	}
 }
 add_action( 'template_redirect', 'actions_disable_title' );

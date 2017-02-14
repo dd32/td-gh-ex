@@ -11,9 +11,9 @@
 if ( ! function_exists( 'actions_top_header' ) ) {
 	function actions_top_header() {
 		?>
-		<div class="header-area full">	    
+		<div class="header-area full">
 			<header id="masthead" class="site-header inner">
-	    <?php
+	    <?php		
 	}
 }
 

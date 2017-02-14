@@ -26,6 +26,7 @@ add_action( 'actions_sidebar',		 'actions_get_sidebar',			 10 );
  * @see  actions_primary_navigation()
  */
 add_action( 'actions_header_elements',	'actions_skip_links', 		  0 );
+add_action( 'actions_header_elements',  'actions_header_widgets',	  5 );
 add_action( 'actions_header_elements',  'actions_top_header',		  10 );
 add_action( 'actions_header_elements',  'actions_site_branding',	  20 );
 add_action( 'actions_header_elements',  'actions_primary_navigation', 40 );
@@ -99,9 +100,11 @@ add_action( 'entry_top', 		 'actions_post_meta',						20 );
 /**
  * Single Post
  */
-add_action( 'actions_single_post_elements',	  'actions_post_content',		  	10 );
-add_action( 'actions_single_post_elements',	  'actions_display_comments',	  	20 );
-add_action( 'actions_single_post_elements',	  'actions_post_nav',			  	30 );
+add_action( 'actions_single_post_elements',	  'actions_post_content',		10 );
+add_action( 'actions_single_post_elements',	  'actions_display_comments',	20 );
+add_action( 'actions_single_post_elements',	  'actions_post_nav',			30 );
+
+add_action( 'entry_bottom', 	'actions_page_links', 	 20 );
 
 /**
  * Pages
@@ -109,10 +112,10 @@ add_action( 'actions_single_post_elements',	  'actions_post_nav',			  	30 );
  * @see  actions_page_content()
  * @see  actions_display_comments()
  */
-add_action( 'actions_page_elements', 		  'actions_post_thumbnail',	  	   	5 );
-add_action( 'actions_page_elements', 		  'actions_page_header',		  	10 );
-add_action( 'actions_page_elements', 		  'actions_page_content',		  	20 );
-add_action( 'actions_page_elements', 	      'actions_display_comments',	  	30 );
+add_action( 'actions_page_elements', 		  'actions_post_thumbnail',	  	5 );
+add_action( 'actions_page_elements', 		  'actions_page_header',		10 );
+add_action( 'actions_page_elements', 		  'actions_page_content',		20 );
+add_action( 'actions_page_elements', 	      'actions_display_comments',	30 );
 
 /**
  * Extras

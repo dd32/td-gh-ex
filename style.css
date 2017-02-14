@@ -1,13 +1,13 @@
 /*
  Theme Name:   Actions
- Theme URI:    http://www.wpdevhq.com/themes/actions
- Description:  Simple, clean and actionable WordPress theme built around Actions.
+ Theme URI:    https://wpdevhq.com/themes/actions
+ Description:  Simple, clean and actionable WordPress theme built around Actions. Supports a left or right sidebar, full width narrow as well as full width wide modes. Actions is fully compatible with the Elementor Page builder plugin making it the idea theme for any kind of wibesite builds that you may have in mind.
  Author:       WP DevHQ
- Author URI:   http://www.wpdevhq.com/
- Version:      1.0.9
+ Author URI:   https://wpdevhq.com/
+ Version:      1.1.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         custom-menu, right-sidebar, sticky-post, theme-options, threaded-comments, two-columns, translation-ready, custom-logo, featured-images, blog
+ Tags:         right-sidebar, left-sidebar, sticky-post, custom-logo, custom-menu, featured-images, blog, theme-options, threaded-comments, translation-ready, two-columns, one-column
  Text Domain:  actions
 */
 
@@ -20,7 +20,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Some of the CSS is borrowed from the default theme Twenty Sixteen.
 
-Actions Copyright 2016 WPDevHQ. (email : themes@wpdevhq.com)
+Actions Copyright 2016 - 2017 WPDevHQ. (email : themes@wpdevhq.com)
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -66,7 +66,7 @@ html {
 body,
 .header-area,
 .main-content-area {
-	background-color: #fff;
+	background-color: #ffffff;
 	color: #404040;
 }
 article,
@@ -971,6 +971,196 @@ Header
 
 .header-elements .widget:not(:empty) {
 	margin-top: 0;
+}
+
+.header-widgets {
+	font-size: 14px;
+	background-color: #e6e9ec;
+	margin-bottom: 0;
+	padding-left: 10%;
+	padding-right: 10%; 
+}
+
+.header-widgets .widget li {
+	padding-bottom: 0;
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .header-widgets {
+		padding-left: 30px;
+		padding-right: 30px; 
+	} 
+}
+@media (min-width: 992px) {
+    .header-widgets {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		min-height: 60px; 
+	} 
+}
+@media (min-width: 1200px) {
+    .header-widgets {
+		padding-left: 14%;
+		padding-right: 14%; 
+	} 
+}
+.header-widgets__left, 
+.header-widgets__right {
+	padding: 7px 0; 
+}
+@media (min-width: 992px) {
+	.header-widgets__left, 
+	.header-widgets__right {
+        padding: 3.5px 0; 
+	} 
+}
+@media (min-width: 992px) {
+    .header-widgets__left .widget, 
+	.header-widgets__right .widget {
+        display: inline-block; 
+	} 
+}
+.header-widgets__left .widget:not(:last-of-type) {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
+	margin-bottom: 10px; 
+}
+@media (min-width: 992px) {
+	.header-widgets__left .widget:not(:last-of-type) {
+        border-bottom: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 0;
+        padding-right: 20px;
+        margin-bottom: 0;
+        margin-right: 20px; 
+	} 
+}
+.header-widgets__left + .header-widgets__right .widget {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding-top: 10px;
+	margin-top: -10px; 
+}
+@media (min-width: 992px) {
+	.header-widgets__left + .header-widgets__right .widget {
+        border-top: 0;
+        padding-top: 8px;
+        margin-top: 8px; 
+	} 
+}
+@media (min-width: 992px) {
+    .header-widgets__right .widget:not(:first-of-type) {
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		padding-left: 20px;
+		margin-left: 20px; 
+	} 
+}
+.header-widgets__right .widget:not(:last-of-type) {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
+	margin-bottom: 10px; 
+}
+@media (min-width: 992px) {
+    .header-widgets__right .widget:not(:last-of-type) {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0; 
+	} 
+}
+
+.header-widgets .widget_search .search-form__submit {
+	background-color: transparent; 
+}
+
+.header-widgets .widget_search .search-form__field {
+	background-color: transparent; 
+}
+.header-widgets .widget_search .search-form__field:focus {
+	background-color: #ffffff; 
+}
+	
+.header-widgets .textwidget .fa {
+	font-size: 20px;
+	vertical-align: middle;
+	padding-bottom: 2px;
+	margin-right: 10px; 
+}
+
+.header-widgets .textwidget a {
+	color: #696773;
+	-webkit-transition: all 100ms ease-out;
+	transition: all 100ms ease-out; 
+}
+.header-widgets .textwidget a:focus, 
+.header-widgets .textwidget a:hover {
+	text-decoration: none;
+	color: #272727; 
+}
+	
+.header-widgets .widget_nav_menu .menu > .menu-item {
+	border-top: 0;
+	display: inline-block; 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item:first-of-type > a {
+	padding-left: 0; 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item:last-of-type > a {
+	padding-right: 0; 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item:not(:last-of-type) {
+	border-right: 1px solid rgba(0, 0, 0, 0.1); 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item:focus > .sub-menu, 
+.header-widgets .widget_nav_menu .menu > .menu-item:hover > .sub-menu {
+	opacity: 1;
+	visibility: visible; 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item a {
+	color: #696773;
+	padding: 10px 8px; 
+}
+.header-widgets .widget_nav_menu .menu > .menu-item a:focus, 
+.header-widgets .widget_nav_menu .menu > .menu-item a:hover {
+	color: #4c4a53; 
+}
+
+.header-widgets .widget_nav_menu .menu .sub-menu {
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+	visibility: hidden;
+	border: 1px solid #ffffff;
+	border-radius: 2px; 
+}
+.header-widgets .widget_nav_menu .menu .sub-menu .menu-item {
+	display: block;
+	border-top: 0; 
+}
+.header-widgets .widget_nav_menu .menu .sub-menu .menu-item:focus > .sub-menu, 
+.header-widgets .widget_nav_menu .menu .sub-menu .menu-item:hover > .sub-menu {
+	visibility: visible;
+	opacity: 1; 
+}
+.header-widgets .widget_nav_menu .menu .sub-menu a {
+	display: block;
+	background-color: #e6e9ec;
+	padding: 8px 16px;
+	white-space: nowrap; 
+}
+.header-widgets .widget_nav_menu .menu .sub-menu .sub-menu {
+	left: 100%;
+	top: -1px; 
+}
+.header-widgets .widget_nav_menu .menu .sub-menu .sub-menu .menu-item a {
+	padding: 8px 16px; 
 }
 
 /*--------------------------------------------------------------

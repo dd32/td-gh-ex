@@ -150,7 +150,7 @@ class ActionsMB_Setting {
 		$value = '';
 
 		if ( isset( $_POST[ $this->get_field_name() ] ) )
-			$value = $_POST[ $this->get_field_name() ];
+			$value = wp_unslash( $_POST[ $this->get_field_name() ] );
 
 		return $this->sanitize( $value );
 	}

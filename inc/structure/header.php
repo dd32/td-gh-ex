@@ -22,7 +22,7 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 					<?php					
 						$title = get_bloginfo('name');
 						$description = get_bloginfo( 'description'); ?>						
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); /* WPCS: xss ok. */ ?>" alt="<?php echo esc_attr( $title ); ?>">
 							<?php bloginfo( 'name' ); ?>
 						</a>
 					</span>
@@ -32,6 +32,31 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 		</div>
 			
 	<?php 
+	}
+}
+
+if ( ! function_exists( 'actions_header_widgets' ) ) {
+	function actions_header_widgets() {
+		// Hide header widgets, if both header sidebars are not in use.
+		if ( is_active_sidebar( 'header-widgets-left' ) || is_active_sidebar( 'header-widgets-right' ) ) {
+		?>
+			<div class="header-widgets">
+				<!--<div class="main">-->
+				<!-- Header widget left area -->
+				<?php if ( is_active_sidebar( 'header-widgets-left' ) ) : ?>
+					<div class="header-widgets__left">
+						<?php dynamic_sidebar( 'header-widgets-left' ); ?>
+					</div>
+				<?php endif; ?>
+				<!-- Header widget right area -->
+				<?php if ( is_active_sidebar( 'header-widgets-right' ) ) : ?>
+					<div class="header-widgets__right">
+						<?php dynamic_sidebar( 'header-widgets-right' ); ?>
+					</div>
+				<?php endif; ?>
+				<!--</div>-->
+			</div>
+		<?php }
 	}
 }
 
