@@ -109,6 +109,10 @@ input, button, select, textarea {
 	max-width: 100%;
 }
 
+div.sharedaddy {
+	margin-top:50px;
+}
+
 a { 
 	outline: none; 
 	border:none;
@@ -1488,10 +1492,6 @@ tr:nth-child(2n+2) {
 		padding-right:0px ;
 	}
 	
-	#wpadminbar {
-		position:fixed;
-	}
-
 	#header {
 		padding:10px 0;
 	}

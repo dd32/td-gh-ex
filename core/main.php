@@ -268,6 +268,24 @@ if (!function_exists('lookilite_postmeta')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* IS SINGLE */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('lookilite_is_single')) {
+
+	function lookilite_is_single() {
+		
+		if ( is_single() || is_page() ) :
+		
+			return true;
+		
+		endif;
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* CONTENT TEMPLATE */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -376,7 +394,7 @@ if (!function_exists('lookilite_prettyPhoto')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Excerpt more */
+/* EXCERPT MORE  */
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('lookilite_hide_excerpt_more')) {
@@ -387,6 +405,52 @@ if (!function_exists('lookilite_hide_excerpt_more')) {
 	
 	add_filter('the_content_more_link', 'lookilite_hide_excerpt_more');
 	add_filter('excerpt_more', 'lookilite_hide_excerpt_more');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Customize excerpt more */
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('lookilite_customize_excerpt_more')) {
+
+	function lookilite_customize_excerpt_more( $excerpt ) {
+
+		global $post;
+
+		if ( lookilite_is_single() ) :
+
+			return $excerpt;
+
+		else:
+
+			$allowed = array(
+				'span' => array(
+					'class' => array(),
+				),
+			);
+	
+			$class = 'more';
+			$button = ' [...] ';
+
+			if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
+			
+				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+			
+			else:
+			
+				$content = $excerpt;
+	
+			endif;
+	
+			return $content. '<a class="'. wp_kses($class, $allowed) . '" href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','lookilite').'">' . $button . '</a>';
+
+		endif;
+		
+
+	}
+	
+	add_filter( 'get_the_excerpt', 'lookilite_customize_excerpt_more' );
 
 }
 
