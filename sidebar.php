@@ -22,7 +22,7 @@
 						));
 		
 						the_widget( 'WP_Widget_Calendar',
-						array("title"=> __('Calendar',"diarjolite")),
+						array("title"=> __('Calendar',"diarjo-lite")),
 						array('before_widget' => '<div class="post-article">',
 							  'after_widget'  => '</div>',
 							  'before_title'  => '<h3 class="title">',

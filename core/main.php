@@ -76,7 +76,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			$title = "$title $sep $site_description";
 	
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'diarjolite' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page %s', 'diarjo-lite' ), max( $paged, $page ) );
 	
 		return $title;
 		
@@ -248,6 +248,24 @@ if (!function_exists('diarjolite_setting')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* IS SINGLE */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('diarjolite_is_single')) {
+
+	function diarjolite_is_single() {
+		
+		if ( is_single() || is_page() ) :
+		
+			return true;
+		
+		endif;
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* POST META */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -383,19 +401,63 @@ if (!function_exists('diarjolite_prettyPhoto')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Excerpt more */
+/* EXCERPT MORE  */
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('diarjolite_hide_excerpt_more')) {
-	
+
 	function diarjolite_hide_excerpt_more() {
-	
 		return '';
-	
 	}
 	
 	add_filter('the_content_more_link', 'diarjolite_hide_excerpt_more');
 	add_filter('excerpt_more', 'diarjolite_hide_excerpt_more');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Customize excerpt more */
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('diarjolite_customize_excerpt_more')) {
+
+	function diarjolite_customize_excerpt_more( $excerpt ) {
+
+		global $post;
+
+		if ( diarjolite_is_single() ) :
+
+			return $excerpt;
+
+		else:
+
+			$allowed = array(
+				'span' => array(
+					'class' => array(),
+				),
+			);
+	
+			$class = 'more';
+			$button = ' [...] ';
+
+			if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
+			
+				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+			
+			else:
+			
+				$content = $excerpt;
+	
+			endif;
+	
+			return $content. '<a class="'. wp_kses($class, $allowed) . '" href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','diarjo-lite').'">' . $button . '</a>';
+
+		endif;
+		
+
+	}
+	
+	add_filter( 'get_the_excerpt', 'diarjolite_customize_excerpt_more' );
 
 }
 
@@ -555,7 +617,7 @@ if (!function_exists('diarjolite_setup')) {
 	
 		register_nav_menu( 'main-menu', 'Main menu' );
 
-		load_theme_textdomain("diarjolite", get_template_directory() . '/languages');
+		load_theme_textdomain("diarjo-lite", get_template_directory() . '/languages');
 
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f3'

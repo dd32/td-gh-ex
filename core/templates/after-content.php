@@ -14,7 +14,7 @@ function diarjolite_after_content_function() {
 
 	if ((is_home()) || (is_category()) || (is_search()) || (is_tag()) || ( (is_page()) && (get_post_type() <> "page")) ):
 		
-		do_action('diarjolite_excerpt');
+		the_excerpt();
 		 
 	?>
 
@@ -31,7 +31,7 @@ function diarjolite_after_content_function() {
 	
 	?>
 
-    	<div class="line"> <span> <?php echo __( "On ","diarjolite") . get_the_date() . __( " by ","diarjolite") . get_the_author(); ?> </span> </div>
+    	<div class="line"> <span> <?php echo __( "On ","diarjo-lite") . get_the_date() . __( " by ","diarjo-lite") . get_the_author(); ?> </span> </div>
 
 	<?php
 	

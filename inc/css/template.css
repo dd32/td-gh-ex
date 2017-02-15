@@ -106,6 +106,10 @@ input, button, select, textarea {
 	max-width: 100%;
 }
 
+div.sharedaddy {
+	margin-top:50px;
+}
+
 a { 
 	outline: none; 
 	border:none;

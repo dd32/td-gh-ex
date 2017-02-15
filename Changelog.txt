@@ -1,27 +1,28 @@
 Diarjo Lite Changelog
 
-Version 1.1.1 - Released: 23.08.2016
+- Version 1.1.3 - Released: 15.02.2017
 
-Important : For a short period of time you can download the premium version of Diarjo for Free.
+-- Fixed : Issue between Sean Lite and the sharing function of Jetpack plugin.
+-- Edit  : Code optimized.
 
-Version 1.1.0 - Released: 20.09.2015
+- Version 1.1.0 - Released: 20.09.2015
 
-Moved : Option panel under WordPress Customizer.
-Edit  : Code optimized.
-Updated : Font Awesome 4.4.0
+-- Moved : Option panel under WordPress Customizer.
+-- Edit  : Code optimized.
+-- Updated : Font Awesome 4.4.0
 
-Version 1.0.9 - Released: 24.01.2015
+- Version 1.0.9 - Released: 24.01.2015
 
-Fixed : Category pagination with the last version of WordPress.
+-- Fixed : Category pagination with the last version of WordPress.
 
-Version 1.0.8 - Released: 16.09.2014
+- Version 1.0.8 - Released: 16.09.2014
 
-Fixed : Removed the “Post format” tab, from the post settings (It was not necessary).
+-- Fixed : Removed the “Post format” tab, from the post settings (It was not necessary).
 
-Version 1.0.7 - Released: 04.09.2014
+- Version 1.0.7 - Released: 04.09.2014
 
-Added : Search sidebar.
+-- Added : Search sidebar.
 
-Version 1.0.6 - Released: 09.06.2014
+- Version 1.0.6 - Released: 09.06.2014
 
-Fixed : Pagination for archive and tag pages.
+-- Fixed : Pagination for archive and tag pages.

@@ -30,21 +30,21 @@
                         
                     <div class="post-article">
         
-                        <h1><?php _e( 'Content not found',"diarjolite" ) ?></h1>           
+                        <h1><?php _e( 'Content not found',"diarjo-lite" ) ?></h1>           
                         
-                        <p> <?php _e( 'No article found in this blog.','diarjolite'); ?> </p>
+                        <p> <?php _e( 'No article found in this blog.','diarjo-lite'); ?> </p>
         
-                        <h2> <?php _e( 'What can i do?',"diarjolite" ) ?> </h2>           
+                        <h2> <?php _e( 'What can i do?',"diarjo-lite" ) ?> </h2>           
         
-                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','diarjolite'); ?> </a> </p>
+                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','diarjo-lite'); ?> </a> </p>
                       
-                        <p> <?php _e( 'Make a search, from the below form:','diarjolite'); ?> </p>
+                        <p> <?php _e( 'Make a search, from the below form:','diarjo-lite'); ?> </p>
                         
                         <section class="contact-form">
                         
                             <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                                 <input type="text" value="<?php _e( 'Search', 'diarjolite' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'diarjolite' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'diarjolite' ) ?>') {this.value = '';}" class="input-search"/>
-                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'diarjolite' ) ?>" />
+                                 <input type="text" value="<?php _e( 'Search', 'diarjo-lite' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'diarjo-lite' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'diarjo-lite' ) ?>') {this.value = '';}" class="input-search"/>
+                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'diarjo-lite' ) ?>" />
                             </form>
                             
                             <div class="clear"></div>
@@ -86,7 +86,7 @@
                     ));
     
                     the_widget( 'WP_Widget_Calendar',
-                    array("title"=> __('Calendar',"diarjolite")),
+                    array("title"=> __('Calendar',"diarjo-lite")),
                     array('before_widget' => '<div class="post-article">',
                           'after_widget'  => '</div>',
                           'before_title'  => '<h3 class="title">',

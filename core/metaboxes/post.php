@@ -14,7 +14,7 @@ $diarjolite_new_metaboxes = new diarjolite_metaboxes ('post', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","diarjolite")),   
+       "item" => array( "setting" => __( "Setting","diarjo-lite")),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -22,18 +22,18 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","diarjolite"),
+		array( "name" => __( "Setting","diarjo-lite"),
 			   "type" => "title",
 			  ),
 
-		array( "name" => __( "Template","diarjolite"),
-			   "desc" => __( "Select a template for this page","diarjolite"),
+		array( "name" => __( "Template","diarjo-lite"),
+			   "desc" => __( "Select a template for this page","diarjo-lite"),
 			   "id" => "diarjolite_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => __( "Full Width","diarjolite"),
-				   "left-sidebar" =>  __( "Left Sidebar","diarjolite"),
-				   "right-sidebar" => __( "Right Sidebar","diarjolite"),
+				   "full" => __( "Full Width","diarjo-lite"),
+				   "left-sidebar" =>  __( "Left Sidebar","diarjo-lite"),
+				   "right-sidebar" => __( "Right Sidebar","diarjo-lite"),
 			  ),
 			  
 			  "std" => "right-sidebar"

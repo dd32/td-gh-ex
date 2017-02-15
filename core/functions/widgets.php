@@ -6,9 +6,9 @@ if (!function_exists('diarjolite_loadwidgets')) {
 
 		register_sidebar(array(
 		
-			'name' => __('Sidebar','diarjolite'),
+			'name' => __('Sidebar','diarjo-lite'),
 			'id'   => 'side-sidebar-area',
-			'description' => __('This sidebar will be shown after the content.','diarjolite'),
+			'description' => __('This sidebar will be shown after the content.','diarjo-lite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -18,9 +18,9 @@ if (!function_exists('diarjolite_loadwidgets')) {
 	
 		register_sidebar(array(
 
-			'name' => __('Home Sidebar','diarjolite'),
+			'name' => __('Home Sidebar','diarjo-lite'),
 			'id'   => 'home-sidebar-area',
-			'description' => __('This sidebar will be shown in the homepage.','diarjolite'),
+			'description' => __('This sidebar will be shown in the homepage.','diarjo-lite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -30,9 +30,9 @@ if (!function_exists('diarjolite_loadwidgets')) {
 	
 		register_sidebar(array(
 
-			'name' => __('Category Sidebar','diarjolite'),
+			'name' => __('Category Sidebar','diarjo-lite'),
 			'id'   => 'category-sidebar-area',
-			'description' => __('This sidebar will be shown at the side of content.','diarjolite'),
+			'description' => __('This sidebar will be shown at the side of content.','diarjo-lite'),
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -42,9 +42,9 @@ if (!function_exists('diarjolite_loadwidgets')) {
 	
 		register_sidebar(array(
 
-			'name' => __('Bottom Sidebar','diarjolite'),
+			'name' => __('Bottom Sidebar','diarjo-lite'),
 			'id'   => 'bottom-sidebar-area',
-			'description' => __('This sidebar will be shown at the bottom of page.','diarjolite'),
+			'description' => __('This sidebar will be shown at the bottom of page.','diarjo-lite'),
 			'before_widget' => '<div class="col-md-4 widget-box">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="title">',

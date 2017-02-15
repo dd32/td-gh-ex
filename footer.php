@@ -30,14 +30,14 @@
 								
 							else: 
 							
-								echo __('Copyright','diarjolite') . ' ' . get_bloginfo("name") . ' ' . date("Y") . " | ";
-								echo __('Theme by','diarjolite').' <a href="'.esc_url('https://www.themeinprogress.com/').'" target="_blank">Theme in Progress</a> | ';
+								echo __('Copyright','diarjo-lite') . ' ' . get_bloginfo("name") . ' ' . date("Y") . " | ";
+								echo __('Theme by','diarjo-lite').' <a href="'.esc_url('https://www.themeinprogress.com/').'" target="_blank">Theme in Progress</a> | ';
                        
 							endif; 
 						
 						?> 
                         
-                        	<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'diarjolite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'diarjolite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'diarjolite' ), 'WordPress' ); ?></a>
+                        	<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'diarjo-lite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'diarjo-lite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'diarjo-lite' ), 'WordPress' ); ?></a>
                     
                     </p>
 

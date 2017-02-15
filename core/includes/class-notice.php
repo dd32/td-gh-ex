@@ -55,12 +55,12 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
             <div class="update-nag notice diarjolite-notice">
             
             	<div class="diarjolite-noticedescription">
-                    <strong><?php _e( 'Upgrade to the premium version of Diarjo, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjolite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Diarjo, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjo-lite' ); ?></strong><br/>
 
-					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','diarjolite'), esc_url( '?diarjolite-dismiss=1' ) ); ?>
+					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','diarjo-lite'), esc_url( '?diarjolite-dismiss=1' ) ); ?>
                 </div>
                 
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Upgrade to Diarjo Premium', 'diarjolite' ); ?></a>
+                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Upgrade to Diarjo Premium', 'diarjo-lite' ); ?></a>
                 <div class="clear"></div>
 
             </div>

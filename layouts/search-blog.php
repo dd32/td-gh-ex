@@ -6,7 +6,7 @@
             
             <div class="col-md-12">
             
-            	<h1><?php _e( '<span>Search </span> results for: ', "diarjolite" ); echo $s; ?></h1>
+            	<h1><?php _e( '<span>Search </span> results for: ', "diarjo-lite" ); echo $s; ?></h1>
                 
             </div>   
                  
@@ -48,23 +48,23 @@
                         
                     <div class="post-article">
         
-                        <h2> <?php _e( 'Content not found',"diarjolite" ) ?> </h2>           
+                        <h2> <?php _e( 'Content not found',"diarjo-lite" ) ?> </h2>           
                         
-                        <p> <?php _e( 'The page that you requested, was not found.',"diarjolite"); ?> </p>
+                        <p> <?php _e( 'The page that you requested, was not found.',"diarjo-lite"); ?> </p>
         
-                        <h3> <?php _e( 'What can i do?',"diarjolite" ) ?> </h3>           
+                        <h3> <?php _e( 'What can i do?',"diarjo-lite" ) ?> </h3>           
         
-                        <p> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage',"diarjolite"); ?> </a> </p>
+                        <p> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage',"diarjo-lite"); ?> </a> </p>
                       
-                        <p> <?php _e( 'Check the typed term',"diarjolite"); ?> </p>
+                        <p> <?php _e( 'Check the typed term',"diarjo-lite"); ?> </p>
     
-                        <p> <?php _e( 'Make a new search, from the below form:',"diarjolite"); ?> </p>
+                        <p> <?php _e( 'Make a new search, from the below form:',"diarjo-lite"); ?> </p>
                         
                         <section class="contact-form">
                         
                             <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                                 <input type="text" value="<?php _e( 'Search', "diarjolite" ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', "diarjolite" ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', "diarjolite" ) ?>') {this.value = '';}" class="input-search"/>
-                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "diarjolite" ) ?>" />
+                                 <input type="text" value="<?php _e( 'Search', "diarjo-lite" ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', "diarjo-lite" ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', "diarjo-lite" ) ?>') {this.value = '';}" class="input-search"/>
+                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "diarjo-lite" ) ?>" />
                             </form>
                             
                             <div class="clear"></div>
@@ -107,7 +107,7 @@
                     ));
     
                     the_widget( 'WP_Widget_Calendar',
-                    array("title"=> __('Calendar',"diarjolite")),
+                    array("title"=> __('Calendar',"diarjo-lite")),
                     array('before_widget' => '<div class="post-article">',
                           'after_widget'  => '</div>',
                           'before_title'  => '<h3 class="title">',

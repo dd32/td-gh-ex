@@ -31,7 +31,7 @@ class diarjolite_customize {
 		);
 
 		$diarjolite_details = array(
-			'label' => __( 'Upgrade to Diarjo Premium', 'lookilite' ),
+			'label' => __( 'Upgrade to Diarjo Premium', 'diarjo-lite' ),
 			'url' => esc_url('https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/')
 		);
 	
