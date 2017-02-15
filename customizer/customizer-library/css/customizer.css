@@ -21,27 +21,47 @@
     color: #FFF !important;
 }
 
-.kaira-upsell {
-	padding: 10px 0 5px;
+a.kaira-upgrade-btn {
+    display: inline-block;
+    font-size: 11px;
+    background-color: #006CC9;
+    color: #FFF;
+    line-height: 14px;
+    margin: 6px 0 0;
+    padding: 5px 8px 6px;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
-.kaira-upsell-title {
-	font-weight: 600;
+a.kaira-upgrade-btn:hover {
+    background-color: #0952A9;
+    color: #FFF;
 }
-.kaira-upsell-btn {
-	background-color: #006CC9;
-	display: inline-block;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-	margin: 8px 0 0;
-	padding: 8px 20px 10px;
-	color: #ECECEC !important;
+.kaira-upgrade-txt {
+	font-size: 11px;
+	color: #999;
 }
-.kaira-upsell-btn:hover {
-    background-color: #0952A9 !important;
-    color: #FFF !important;
-}
+
 .kaira-upsell-desc {
-    font-size: 12px;
-    padding: 4px 0 0;
+    font-size: 11px;
+    color: rgb(142, 142, 142);
+}
+.kaira-upsell {
+    margin-top: 30px;
+    font-size: 11px;
+    color: rgb(142, 142, 142);
+}
+.kaira-upsell b {
+    font-weight: 500;
+    color: #006cc9;
+}
+
+#customize-control-background_color,
+#customize-control-kra-header-font-color,
+#customize-control-kra-main-color-hover,
+#customize-control-kra-heading-font-color {
+    border-bottom: 1px solid #b7b7b7;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
 }

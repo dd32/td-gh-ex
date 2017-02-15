@@ -54,11 +54,7 @@
         
         <?php do_action ( 'electa_hook_after_navigation' ); ?>
         
-        <?php if( get_theme_mod( 'kra-header-search', false ) ) : ?>
-        <div class="header-social">
-            <i class="fa fa-search search-btn"></i>
-        </div>
-        <?php endif; ?>
+        <?php get_template_part( '/inc/social-links' ); ?>
         
         <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
     </div>

@@ -61,6 +61,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.04
+* Styling fixes/tweaks
+* Added social links - Email, Facebook & Twitter
+* Added help for setting up Home & Blog blocks layout
+* Updated the language .pot file
+Premium: Updated & added over 20 social links
+Premium: Added setting for any social network required
+Premium: Added setting to make blog list, archive and single pages full width
+Premium: Added setting to adjust blocks layout title size
+
 #### 1.3.03
 * Fix navigation custom color hover css
 * Fix breadcrumb styling on mobile
@@ -95,7 +105,7 @@ Premium: Added setting to align navigation text - Left, Right or Center aligned
 * Updated theme tags
 * Updated Font Awesome - 4.6.3
 * Removed old update system & link out for premium
-* Updated language .pot file
+* Updated the language .pot file
 Premium: Added social link for Behance
 Premium: Added social link for Medium
 Premium: Added social link for Vimeo
@@ -105,7 +115,7 @@ Premium: Added social link for Vimeo
 * Removed favicon setting - now in WP core
 * Added new mobile slide out menu
 * Added new easier upgrade system -('upgrade' folder)-(user doesn't lose old settings)-(has been approved for WordPress.org by reviewers)
-* Updated language .pot file
+* Updated the language .pot file
 Premium: Added theme styling for WooCommerce
 Premium: Added option to make shop page full width
 
@@ -117,7 +127,7 @@ Premium: Added option to make shop page full width
 * Fix translation textdomain error
 
 #### 1.2.3
-* Updated language .pot file.
+* Updated the language .pot file
 
 #### 1.2.2
 * Fixed bug with bocks layout.

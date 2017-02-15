@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.03' );
+define( 'KAIRA_THEME_VERSION' , '1.3.04' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -125,7 +125,7 @@ function kaira_scripts() {
     if( !get_theme_mod( 'kra-heading-font', false ) ) {
         wp_enqueue_style( 'electa-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
-    wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
+    wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
     if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
@@ -159,9 +159,24 @@ function kaira_custom_css_styles(){
 add_action( 'wp_head', 'kaira_custom_css_styles', 11 );
 
 /**
+ * Enqueue admin styling.
+ */
+function kaira_load_admin_script() {
+    wp_enqueue_style( 'kaira-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+}
+add_action( 'admin_enqueue_scripts', 'kaira_load_admin_script' );
+
+/**
  * Enqueue Electa custom customizer styling.
  */
 function load_kaira_customizer_style() {
+    wp_enqueue_script( 'kaira-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    $kaira_upgrade_button = array(
+        'link' => admin_url( 'themes.php?page=theme_info' ),
+        'text' => __( 'Upgrade to Electa Premium', 'electa' ),
+        'sub_text' => __( 'Upgrade now while Electa is offered at only $20', 'electa' )
+    );
+    wp_localize_script( 'kaira-customizer-js', 'upgrade_button', $kaira_upgrade_button );
     wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
 }    
 add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
@@ -190,4 +205,39 @@ if ( is_plugin_active( 'ml-slider/ml-slider.php' ) ) {
     }
     add_filter( 'metaslider_hoplink', 'metaslider_hoplink', 10, 1 );
     
+}
+
+/**
+ * Register a custom Post Categories ID column
+ */
+function kaira_edit_cat_columns( $kaira_cat_columns ) {
+    $kaira_cat_in = array( 'cat_id' => 'Category ID <span class="cat_id_note">Blocks Layouts Category ID</span>' );
+    $kaira_cat_columns = kaira_cat_columns_array_push_after( $kaira_cat_columns, $kaira_cat_in, 0 );
+    return $kaira_cat_columns;
+}
+add_filter( 'manage_edit-category_columns', 'kaira_edit_cat_columns' );
+
+/**
+ * Print the ID column
+ */
+function kaira_cat_custom_columns( $value, $name, $cat_id ) {
+    if( 'cat_id' == $name ) 
+        echo $cat_id;
+}
+add_filter( 'manage_category_custom_column', 'kaira_cat_custom_columns', 10, 3 );
+
+/**
+ * Insert an element at the beggining of the array
+ */
+function kaira_cat_columns_array_push_after( $src, $kaira_cat_in, $pos ) {
+    if ( is_int( $pos ) ) {
+        $R = array_merge( array_slice( $src, 0, $pos + 1 ), $kaira_cat_in, array_slice( $src, $pos + 1 ) );
+    } else {
+        foreach ( $src as $k => $v ) {
+            $R[$k] = $v;
+            if ( $k == $pos )
+                $R = array_merge( $R, $kaira_cat_in );
+        }
+    }
+    return $R;
 }

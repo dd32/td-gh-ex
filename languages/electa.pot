@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2016-10-19 11:13+0200\n"
+"POT-Creation-Date: 2017-02-15 10:18+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 
-#: 404.php:15 customizer/customizer-options.php:245
+#: 404.php:15 customizer/customizer-options.php:255
 msgid "Oops! That page can't be found."
 msgstr ""
 
-#: 404.php:27 customizer/customizer-options.php:253
+#: 404.php:27 customizer/customizer-options.php:263
 msgid ""
 "The page you are looking for can't be found. Please select one of the "
 "options below."
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 
 #: content-none.php:21 content-none.php:34
-#: customizer/customizer-options.php:261
+#: customizer/customizer-options.php:271
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords or return to home."
@@ -146,10 +146,6 @@ msgstr ""
 
 #: content-page.php:32 inc/template-tags.php:122
 msgid "Edit"
-msgstr ""
-
-#: customizer/customizer-library/custom-controls/upsell.php:27
-msgid "Buy Electa Premium"
 msgstr ""
 
 #: customizer/customizer-library/extensions/fonts.php:115
@@ -227,172 +223,182 @@ msgstr ""
 msgid "Enable to show a search box on the site"
 msgstr ""
 
-#: customizer/customizer-options.php:55
-msgid "Sticky Header"
+#: customizer/customizer-options.php:56
+msgid ""
+"<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and "
+"sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- "
+"Remove Page titles<br />- Enable a sticky header<br />- Align Navigation - "
+"Left\\Center\\Right<br />- Remove Navigation lines"
 msgstr ""
 
-#: customizer/customizer-options.php:58
-msgid "Upgrade for only $20 to enable the sticky header option"
-msgstr ""
-
-#: customizer/customizer-options.php:67
+#: customizer/customizer-options.php:65
 msgid "Home Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:73
+#: customizer/customizer-options.php:71
 msgid "Enable home blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:76
+#: customizer/customizer-options.php:74
 msgid ""
 "Enable this to change the layout of the home page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:81
+#: customizer/customizer-options.php:79
 msgid "Home Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:84
+#: customizer/customizer-options.php:82
 msgid ""
 "Enter the ID's of the post categories you want to display in the home blocks."
-"<br />Eg: \"13,17,19\"<br />(no spaces and only comma's and category ID's... "
-"NOT post ID's)<br /><br />Leaving it blank displays all posts."
+"<br />Eg: \"13,17,19\"<br /><br />Get the ID's at <b>Posts -> Categories</"
+"b><br /><br />Leaving it blank displays all posts."
 msgstr ""
 
-#: customizer/customizer-options.php:89
-msgid "Home Blocks Columns"
+#: customizer/customizer-options.php:88
+msgid ""
+"<b>Premium Extra Features:</b><br />- Setting to change home blocks columns "
+"layout"
 msgstr ""
 
-#: customizer/customizer-options.php:92
-msgid "Upgrade for only $20 to change the layout of the block columns"
-msgstr ""
-
-#: customizer/customizer-options.php:102
+#: customizer/customizer-options.php:98
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:108
+#: customizer/customizer-options.php:104
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:115
+#: customizer/customizer-options.php:111
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:124
+#: customizer/customizer-options.php:120
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:132
+#: customizer/customizer-options.php:128
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:139
+#: customizer/customizer-options.php:135
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:147
+#: customizer/customizer-options.php:143
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:155
+#: customizer/customizer-options.php:151
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:159
+#: customizer/customizer-options.php:155
 msgid ""
 "Add custom CSS to your theme. For advanced custom styling we recommend using "
 "a <a href=\"https://wordpress.org/plugins/so-css/\" target=\"_blank\">Custom "
 "CSS plugin</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:168
+#: customizer/customizer-options.php:162
+msgid ""
+"<b>Premium Extra Features:</b><br />- Change header background and font "
+"colors<br />- Select between mobile navigation skins - Dark / Light<br />- "
+"Customize the colors for the mobile navigation<br />- Adjust block layout "
+"title sizes"
+msgstr ""
+
+#: customizer/customizer-options.php:171
 msgid "Blog Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:174
+#: customizer/customizer-options.php:177
 msgid "Enable blog blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:177
+#: customizer/customizer-options.php:180
 msgid ""
 "Enable this to change the layout of the blog page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:182
+#: customizer/customizer-options.php:185
 msgid "Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:185
+#: customizer/customizer-options.php:188
 msgid ""
 "Enter the ID's of the post categories you want to EXCLUDE from the blog, "
-"with a minus(-) before it.<br />Eg: \"-13,-17,-19\" (no spaces and only "
-"comma's and category ID's... NOT post ID's)"
+"with a minus(-) before.<br />Eg: \"-13,-17,-19\"<br /><br /> Get the ID's at "
+"<b>Posts -> Categories</b>"
 msgstr ""
 
-#: customizer/customizer-options.php:189
+#: customizer/customizer-options.php:192
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:197
-msgid "Blog Blocks Columns"
-msgstr ""
-
-#: customizer/customizer-options.php:200
+#: customizer/customizer-options.php:201
 msgid ""
-"Upgrade for only $20<br /><br />This will enable the options to change the "
-"layout of the block columns and apply the blocks layout to the category/"
-"archive list pages"
+"<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns "
+"layout<br />- Enable blocks layout on Archive pages<br />- Set WooCommerce "
+"Shop page to full width"
 msgstr ""
 
-#: customizer/customizer-options.php:209
+#: customizer/customizer-options.php:210
 msgid "Social Links"
 msgstr ""
 
 #: customizer/customizer-options.php:216
-msgid "Enable Social Links"
+msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:219
-msgid "Upgrade for only $20 to add more social profile links"
+#: customizer/customizer-options.php:222
+msgid "Facebook"
 msgstr ""
 
 #: customizer/customizer-options.php:228
-msgid "Website Text"
+msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:235
-msgid "Site Copy Text"
-msgstr ""
-
-#: customizer/customizer-options.php:238
-msgid "Upgrade for only $20 to change the copyright text to your own"
-msgstr ""
-
-#: customizer/customizer-options.php:242
-msgid "404 Error Page Heading"
+#: customizer/customizer-options.php:237
+msgid ""
+"<b>Premium Extra Features:</b><br />- Over 18 different social profile links "
+"available<br />- Setting to add any social link required"
 msgstr ""
 
 #: customizer/customizer-options.php:246
+msgid "Website Text"
+msgstr ""
+
+#: customizer/customizer-options.php:252
+msgid "404 Error Page Heading"
+msgstr ""
+
+#: customizer/customizer-options.php:256
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:250
+#: customizer/customizer-options.php:260
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:254
+#: customizer/customizer-options.php:264
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:258
+#: customizer/customizer-options.php:268
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:262
+#: customizer/customizer-options.php:272
 msgid "Enter the default text for when no search results are found"
+msgstr ""
+
+#: customizer/customizer-options.php:279
+msgid ""
+"<b>Premium Extra Features:</b><br />- Change site attribution text to your "
+"own copy"
 msgstr ""
 
 #: functions.php:76
@@ -403,11 +409,19 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:44
+#: functions.php:176
+msgid "Upgrade to Electa Premium"
+msgstr ""
+
+#: functions.php:177
+msgid "Upgrade now while Electa is offered at only $20"
+msgstr ""
+
+#: header.php:48
 msgid "Menu"
 msgstr ""
 
-#: header.php:57
+#: header.php:59
 #, php-format
 msgid "</div><div class=\"site-info\">Theme: %1$s by %2$s"
 msgstr ""
@@ -419,6 +433,18 @@ msgstr ""
 #: inc/extras.php:64
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: inc/social-links.php:4
+msgid "Send Us an Email"
+msgstr ""
+
+#: inc/social-links.php:8
+msgid "Find Us on Facebook"
+msgstr ""
+
+#: inc/social-links.php:12
+msgid "Follow Us on Twitter"
 msgstr ""
 
 #: inc/template-tags.php:21

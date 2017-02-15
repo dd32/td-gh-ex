@@ -49,13 +49,11 @@ function customizer_library_kaira_options() {
         'description' => __( 'Enable to show a search box on the site', 'electa' ),
         'default' => 0,
     );
-    // Upsell Button One
-    $options['kra-upsell-one'] = array(
-        'id' => 'kra-upsell-one',
-        'label'   => __( 'Sticky Header', 'electa' ),
+    $options['kra-upsell-header'] = array(
+        'id' => 'kra-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( 'Upgrade for only $20 to enable the sticky header option', 'electa' ),
+        'description' => __( '<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- Remove Page titles<br />- Enable a sticky header<br />- Align Navigation - Left\Center\Right<br />- Remove Navigation lines', 'electa' )
     );
     
     
@@ -81,15 +79,13 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Home Categories', 'electa' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to display in the home blocks.<br />Eg: "13,17,19"<br />(no spaces and only comma\'s and category ID\'s... NOT post ID\'s)<br /><br />Leaving it blank displays all posts.', 'electa' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the home blocks.<br />Eg: "13,17,19"<br /><br />Get the ID\'s at <b>Posts -> Categories</b><br /><br />Leaving it blank displays all posts.', 'electa' )
     );
-    // Upsell Button Two
-    $options['kra-upsell-two'] = array(
-        'id' => 'kra-upsell-two',
-        'label'   => __( 'Home Blocks Columns', 'electa' ),
+    $options['kra-upsell-homepage'] = array(
+        'id' => 'kra-upsell-homepage',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( 'Upgrade for only $20 to change the layout of the block columns', 'electa' ),
+        'description' => __( '<b>Premium Extra Features:</b><br />- Setting to change home blocks columns layout', 'electa' )
     );
 
 
@@ -159,6 +155,13 @@ function customizer_library_kaira_options() {
         'description' => __( 'Add custom CSS to your theme. For advanced custom styling we recommend using a <a href="https://wordpress.org/plugins/so-css/" target="_blank">Custom CSS plugin</a>', 'electa' )
     );
     
+    $options['kra-upsell-styling'] = array(
+        'id' => 'kra-upsell-styling',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change header background and font colors<br />- Select between mobile navigation skins - Dark / Light<br />- Customize the colors for the mobile navigation<br />- Adjust block layout title sizes', 'electa' )
+    );
+    
     
     // Blog Settings
     $section = 'kra-blog';
@@ -182,7 +185,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Blog Categories', 'electa' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to EXCLUDE from the blog, with a minus(-) before it.<br />Eg: "-13,-17,-19" (no spaces and only comma\'s and category ID\'s... NOT post ID\'s)', 'electa' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to EXCLUDE from the blog, with a minus(-) before.<br />Eg: "-13,-17,-19"<br /><br /> Get the ID\'s at <b>Posts -> Categories</b>', 'electa' )
     );
     $options['kra-blog-title'] = array(
         'id' => 'kra-blog-title',
@@ -191,13 +194,11 @@ function customizer_library_kaira_options() {
         'type'    => 'text',
         'default' => 'Blog'
     );
-    // Upsell Button Three
     $options['kra-upsell-blog'] = array(
         'id' => 'kra-upsell-blog',
-        'label'   => __( 'Blog Blocks Columns', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( 'Upgrade for only $20<br /><br />This will enable the options to change the layout of the block columns and apply the blocks layout to the category/archive list pages', 'electa' ),
+        'description' => __( '<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns layout<br />- Enable blocks layout on Archive pages<br />- Set WooCommerce Shop page to full width', 'electa' )
     );
     
     
@@ -210,13 +211,30 @@ function customizer_library_kaira_options() {
         'priority' => '160'
     );
     
-    // Upsell Button Four
-    $options['kra-upsell-four'] = array(
-        'id' => 'kra-upsell-four',
-        'label'   => __( 'Enable Social Links', 'electa' ),
+    $options['kra-social-email'] = array(
+        'id' => 'kra-social-email',
+        'label'   => __( 'Email Address', 'electa' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['kra-social-facebook'] = array(
+        'id' => 'kra-social-facebook',
+        'label'   => __( 'Facebook', 'electa' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['kra-social-twitter'] = array(
+        'id' => 'kra-social-twitter',
+        'label'   => __( 'Twitter', 'electa' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    
+    $options['kra-upsell-social'] = array(
+        'id' => 'kra-upsell-social',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( 'Upgrade for only $20 to add more social profile links', 'electa' ),
+        'description' => __( '<b>Premium Extra Features:</b><br />- Over 18 different social profile links available<br />- Setting to add any social link required', 'electa' )
     );
     
     
@@ -229,14 +247,6 @@ function customizer_library_kaira_options() {
         'priority' => '160'
     );
     
-    // Upsell Button Five
-    $options['kra-upsell-five'] = array(
-        'id' => 'kra-upsell-five',
-        'label'   => __( 'Site Copy Text', 'electa' ),
-        'section' => $section,
-        'type'    => 'upsell',
-        'description' => __( 'Upgrade for only $20 to change the copyright text to your own', 'electa' ),
-    );
     $options['kra-website-error-head'] = array(
         'id' => 'kra-website-error-head',
         'label'   => __( '404 Error Page Heading', 'electa' ),
@@ -260,6 +270,13 @@ function customizer_library_kaira_options() {
         'type'    => 'textarea',
         'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.', 'electa'),
         'description' => __( 'Enter the default text for when no search results are found', 'electa' )
+    );
+    
+    $options['kra-upsell-website'] = array(
+        'id' => 'kra-upsell-website',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change site attribution text to your own copy', 'electa' )
     );
 
 	// Adds the sections to the $options array
