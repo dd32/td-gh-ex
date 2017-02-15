@@ -39,12 +39,20 @@ if ( !function_exists( 'pwwp_bestreloaded_setup' ) ) {
         // This theme uses Featured Images (also known as post thumbnails)
         add_theme_support( 'post-thumbnails' );
 
+		// Adds the image sizes we use
+		add_image_size('featured-slide', '865', '400', true);
+
         // This feature enables post and comment RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
 
         // This enables WP 4.1+ title-tag support. Fallback in place for
         // old versions
         add_theme_support( 'title-tag' );
+
+		$args = array(
+			'default-color' => 'dddddd',
+		);
+		add_theme_support( 'custom-background', $args );
 
     }
     /* ===| end bestreloaded_setup() |================================== */
@@ -100,15 +108,18 @@ if ( !function_exists( 'pwwp_load_bestreloaded_scripts' ) ) {
 if ( !function_exists( 'pwwp_bestreloaded_theme_options' ) ) {
     function pwwp_bestreloaded_theme_options() {
 
-        $background                = get_theme_mod( 'bestreloaded_background' );
-        $link_color_main           = get_theme_mod( 'bestreloaded_link_color_main' );
-        $link_color_hover_main     = get_theme_mod( 'bestreloaded_link_hover_color_main' );
-        $link_color_footer         = get_theme_mod( 'bestreloaded_link_color_footer' );
-        $link_color_hover_footer   = get_theme_mod( 'bestreloaded_link_hover_color_footer' );
-        $background_featured       = get_theme_mod( 'bestreloaded_background_featured_content' );
-        $text_color_featured       = get_theme_mod( 'bestreloaded_text_color_featured_content' );
-        $link_color_featured       = get_theme_mod( 'bestreloaded_link_color_featured_content' );
-        $link_color_hover_featured = get_theme_mod( 'bestreloaded_link_hover_color_featured_content' ); ?>
+		// arrays of values
+        $background					= get_theme_mod( 'bestreloaded_background' );
+        $background_featured    	= get_theme_mod( 'bestreloaded_background_featured_content' );
+
+		// these are all hex values
+        $link_color_main 			= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_color_main' ) );
+        $link_color_hover_main 		= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_hover_color_main' ) );
+        $link_color_footer 			= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_color_footer' ) );
+        $link_color_hover_footer	= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_hover_color_footer' ) );
+        $text_color_featured    	= sanitize_hex_color( get_theme_mod( 'bestreloaded_text_color_featured_content' ) );
+        $link_color_featured    	= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_color_featured_content' ) );
+        $link_color_hover_featured 	= sanitize_hex_color( get_theme_mod( 'bestreloaded_link_hover_color_featured_content' ) ); ?>
 
             <style type="text/css">
 

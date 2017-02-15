@@ -125,7 +125,7 @@ function best_reloaded_customizer($wp_customize){
        'type' => 'theme_mod'
    ) );
    $wp_customize->add_control( 'bestreloaded_featured_bar', array(
-       'label' => __('', 'best-reloaded'),
+       'label' => __('Feature Bar Content', 'best-reloaded'),
        'section' => 'best_reloaded_other',
        'settings' => 'bestreloaded_featured_bar',
        'type' => 'textarea'
@@ -155,16 +155,16 @@ function best_reloaded_customizer($wp_customize){
        'type' => 'checkbox'
    ) );
 
-   $wp_customize->add_setting( 'bestreloaded_footer_bottom_tagline', array(     
-       'sanitize_callback' => 'of_sanitize_textarea',
+   $wp_customize->add_setting( 'bestreloaded_footer_bottom_tagline', array(
+	   'sanitize_callback' => 'of_sanitize_textarea',
        'default' => __('&copy; 2017 <a href="#">Site Title</a>', 'best-reloaded'),
        'type' => 'theme_mod'
    ) );
-   $wp_customize->add_control( new PWWP_Customize_Textarea_Control( $wp_customize, 'bestreloaded_footer_bottom_tagline', array(
+   $wp_customize->add_control( 'bestreloaded_footer_bottom_tagline', array(
        'label' => __('Footer Bottom Tagline', 'best-reloaded'),
        'section' => 'best_reloaded_footer',
        'settings' => 'bestreloaded_footer_bottom_tagline',
        'type' => 'textarea'
-   ) ) );
+   ) );
 
 }
