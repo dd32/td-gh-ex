@@ -182,3 +182,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.5.2 =
 * Minor bug fixes
+
+= Version 1.5.3 =
+* Now Blogghiamo is no longer compatible with WordPress 4.3 version or lower
+* Added icons to Categories Widget and Archives Widget
+* Minor bug fixes

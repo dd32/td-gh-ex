@@ -7,34 +7,6 @@
  * @package blogghiamo
  */
 
-if ( ! function_exists( 'blogghiamo_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- */
-function blogghiamo_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'blogghiamo' ); ?></h2>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous" title="<?php esc_html_e( 'Older Posts', 'blogghiamo' ); ?>"><?php next_posts_link( '<i class="fa fa-lg fa-angle-left"></i>' ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next" title="<?php esc_html_e( 'Newer Posts', 'blogghiamo' ); ?>"><?php previous_posts_link( '<i class="fa fa-lg fa-angle-right"></i>' ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( 'blogghiamo_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -158,6 +130,9 @@ function blogghiamo_categorized_blog() {
  * Flush out the transients used in blogghiamo_categorized_blog.
  */
 function blogghiamo_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'blogghiamo_categories' );
 }
