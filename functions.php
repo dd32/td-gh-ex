@@ -329,8 +329,8 @@ endif;
     } elseif (is_attachment()) {
         $parent = get_post($post->post_parent);
         $cat = get_the_category($parent->ID);
-        $cat = $cat[0];
-        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        //$cat = $cat[0];
+       // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
         echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_page() && !$post->post_parent) {
