@@ -1,5 +1,12 @@
 == Change log ==
 
+Version 3.9.1
+* Added: Option to Display all Categories in Customizer
+* Changed: Text in Customizer (Homepage Featured Content to Featured Content)
+* Code Optimization
+* Removed: Custom Favicon and WebClip icon support
+* Updated: Screenshot
+
 Version 3.9
 * Bug Fixed: Reset Options in customizer updated
 * Updated: Used the_archive_title() and the_archive_description() in archive.php

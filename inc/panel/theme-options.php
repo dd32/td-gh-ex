@@ -205,11 +205,11 @@ function catchkathmandu_theme_options_do_page() {
                     </div><!-- .option-container -->
 
                     <div is="homepage-featured-content" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage Featured Content Options', 'catch-kathmandu' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Content Options', 'catch-kathmandu' ); ?></a></h3>
                         <div class="option-content inside">
                             <div class="row">
                                 <div class="col col-1">
-                                    <?php _e( 'Disable Homepage Featured Content?', 'catch-kathmandu' ); ?>
+                                    <?php _e( 'Disable Featured Content?', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
                                     <input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_featured]'>
@@ -347,7 +347,7 @@ function catchkathmandu_theme_options_do_page() {
                             </div><!-- .row -->
                             <div class="row">
                                 <div class="col col-1">
-                                    <?php _e( 'Move above Homepage Featured Content?', 'catch-kathmandu' ); ?>
+                                    <?php _e( 'Move above Featured Content?', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
                                     <input type='hidden' value='0' name='catchkathmandu_options[move_posts_home]'>
@@ -386,107 +386,6 @@ function catchkathmandu_theme_options_do_page() {
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
-
-                  	<?php
-                    //@remove Remove if block when WordPress 4.8 is released
-                    if( !function_exists( 'has_site_icon' ) ) {
-                    ?>
-
-                        <div id="fav-icons" class="option-container">
-                            <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-kathmandu' ); ?></a></h3>
-                            <div class="option-content inside">
-                           		<div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Disable Favicon?', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-                                    	<input type='hidden' value='0' name='catchkathmandu_options[remove_favicon]'>
-                                        <input type="checkbox" id="favicon" name="catchkathmandu_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
-                                    </div>
-                              	</div><!-- .row -->
-                           		<div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Fav Icon URL:', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-                                    	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
-                                        <?php } else { ?>
-                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
-                                        <?php }  ?>
-                                        <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-kathmandu' );?>" />
-                                    </div>
-                                </div><!-- .row -->
-                           		<div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-                            			<?php
-    										if ( !empty( $options[ 'fav_icon' ] ) ) {
-    											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
-    										} else {
-    											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
-    										}
-    									?>
-                                  	</div>
-                                </div><!-- .row -->
-                                <div class="row">
-                          			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                              	</div><!-- .row -->
-                            </div><!-- .option-content -->
-                        </div><!-- .option-container -->
-
-                        <div id="webclip-icon" class="option-container">
-                            <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-kathmandu' ); ?></a></h3>
-                            <div class="option-content inside">
-                           		<div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Disable Web Clip Icon?', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-                            			<input type='hidden' value='0' name='catchkathmandu_options[remove_web_clip]'>
-                            			<input type="checkbox" id="favicon" name="catchkathmandu_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-kathmandu'); ?>
-                                  	</div>
-                             	</div><!-- .row -->
-                                <div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Web Clip Icon URL:', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-                            			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
-                                            <input class="upload-url" size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                        <?php } else { ?>
-                                            <input size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
-                                        <?php }  ?>
-                                        <input  ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-kathmandu' );?>" />
-                                  	</div>
-                             	</div><!-- .row -->
-                                <div class="row">
-                                	<div class="col col-1">
-                                    	<?php _e( 'Preview', 'catch-kathmandu' ); ?>
-                                    </div>
-                                    <div class="col col-2">
-    									<?php
-    									if ( !empty( $options[ 'web_clip' ] ) ) {
-    										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
-    									} else {
-    										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
-    									}
-    									?>
-                                  	</div>
-                             	</div><!-- .row -->
-                                <div class="row">
-                                 	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-kathmandu' ); ?>
-                               	</div><!-- .row -->
-                                <div class="row">
-                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                              	</div><!-- .row -->
-                            </div><!-- .option-content -->
-                        </div><!-- .option-container -->
-                    <?php
-                    }
-                    ?>
 
                     <div id="header-options" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catch-kathmandu' ); ?></a></h3>
@@ -1381,24 +1280,6 @@ function catchkathmandu_theme_options_validate( $options ) {
 		$input_validated[ 'enable_menus' ] = $input[ 'enable_menus' ];
 	}
 
-	// Data Validation for Favicon
-	if ( isset( $input[ 'fav_icon' ] ) ) {
-		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
-	}
-	if ( isset( $input['remove_favicon'] ) ) {
-		// Our checkbox value is either 0 or 1
-		$input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
-	}
-
-	// Data Validation for web clip icon
-	if ( isset( $input[ 'web_clip' ] ) ) {
-		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
-	}
-	if ( isset( $input['remove_web_clip'] ) ) {
-		// Our checkbox value is either 0 or 1
-		$input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
-	}
-
 	// Data Validation for Homepage Headline Message
 	if( isset( $input[ 'homepage_headline' ] ) ) {
 		$input_validated['homepage_headline'] =  sanitize_text_field( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
@@ -1482,7 +1363,7 @@ function catchkathmandu_theme_options_validate( $options ) {
         $input_validated[ 'disable_scrollup' ] = $input[ 'disable_scrollup' ];
     }
 
-	// Data Validation for Homepage Featured Content
+	// Data Validation for Featured Content
 	if ( isset( $input[ 'disable_homepage_featured' ] ) ) {
 		$input_validated[ 'disable_homepage_featured' ] = $input[ 'disable_homepage_featured' ];
 	}
@@ -1544,7 +1425,12 @@ function catchkathmandu_theme_options_validate( $options ) {
     }
 	// Front page posts categories
     if( isset( $input['front_page_category' ] ) ) {
-		$input_validated['front_page_category'] = $input['front_page_category'];
+        if( in_array( 0, $input['front_page_category'] ) ) {
+            $input_validated[ 'front_page_category' ] = '0';
+        }
+        else {
+    		$input_validated['front_page_category'] = $input['front_page_category'];
+        }
     }
 
 	// data validation for Slider Type
@@ -1592,7 +1478,12 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	//Featured Catgory Slider
 	if ( isset( $input['slider_category'] ) ) {
-		$input_validated[ 'slider_category' ] = $input[ 'slider_category' ];
+        if( in_array( 0, $input['slider_category'] ) ) {
+            $input_validated[ 'slider_category' ] = '0';
+        }
+        else {
+		    $input_validated[ 'slider_category' ] = $input[ 'slider_category' ];
+        }
 	}
 
 	// data validation for Featured Image SLider
@@ -1810,7 +1701,6 @@ function catchkathmandu_theme_options_validate( $options ) {
  */
 function catchkathmandu_themeoption_invalidate_caches() {
 	delete_transient('catchkathmandu_responsive'); // Responsive design
-	delete_transient( 'catchkathmandu_favicon' );	 // favicon on cpanel/ backend and frontend
 	delete_transient( 'catchkathmandu_featured_image' ); // featured header image
 	delete_transient( 'catchkathmandu_inline_css' ); // Custom Inline CSS
 	delete_transient( 'catchkathmandu_post_sliders' ); // featured post slider
@@ -1825,8 +1715,7 @@ function catchkathmandu_themeoption_invalidate_caches() {
 	delete_transient( 'catchkathmandu_social_networks' ); // Social Networks
 	delete_transient( 'catchkathmandu_webmaster' ); // scripts which loads on header
 	delete_transient( 'catchkathmandu_footercode' ); // scripts which loads on footer
-	delete_transient( 'catchkathmandu_web_clip' ); // web clip icons
-    delete_transient( 'catchkathmandu_scrollup' ); // Scroll Up code
+	delete_transient( 'catchkathmandu_scrollup' ); // Scroll Up code
 }
 
 

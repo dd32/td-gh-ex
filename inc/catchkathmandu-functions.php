@@ -144,53 +144,6 @@ function catchkathmandu_responsive() {
 add_filter( 'wp_head', 'catchkathmandu_responsive', 1 );
 
 
-/**
- * Get the favicon Image from theme options
- *
- * @uses favicon
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default favicon if favicon field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function catchkathmandu_favicon() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-	//delete_transient( 'catchkathmandu_favicon' );
-
-	if ( ( !$catchkathmandu_favicon = get_transient( 'catchkathmandu_favicon' ) ) ) {
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( empty( $options[ 'remove_favicon' ] ) ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$catchkathmandu_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$catchkathmandu_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
-			endif;
-		endif;
-
-		set_transient( 'catchkathmandu_favicon', $catchkathmandu_favicon, 86940 );
-	}
-	echo $catchkathmandu_favicon ;
-} // catchkathmandu_favicon
-
-//Load Favicon in Header Section
-add_action('wp_head', 'catchkathmandu_favicon');
-
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'catchkathmandu_favicon' );
-
-
 if ( ! function_exists( 'catchkathmandu_featured_image' ) ) :
 /**
  * Template for Featured Header Image from theme options
@@ -302,10 +255,10 @@ function catchkathmandu_featured_image() {
 		$catchkathmandu_featured_image = '<div id="header-featured-image">';
 			// Header Image Link
 			if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
-				$catchkathmandu_featured_image .= '<a title="'.$title.'" href="'.$link.'" target="'.$target.'"><img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" /></a>';
+				$catchkathmandu_featured_image .= '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="' . esc_attr( $target ) . '"><img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="'.esc_url( $options[ 'featured_header_image' ] ).'" /></a>';
 			else:
 				// if empty featured_header_image on theme options, display default
-				$catchkathmandu_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />';
+				$catchkathmandu_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />';
 			endif;
 		$catchkathmandu_featured_image .= '</div><!-- #header-featured-image -->';
 	}
@@ -351,7 +304,7 @@ function catchkathmandu_featured_page_post_image() {
 					$title = '';
 				endif;
 
-				$linkopen = '<a title="'.$title.'" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'">';
+				$linkopen = '<a title="' . esc_attr( $title ) . '" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'">';
 				$linkclose = '</a>';
 			}
 			else {
@@ -572,21 +525,6 @@ add_filter( 'excerpt_length', 'catchkathmandu_excerpt_length' );
 
 
 /**
- * Change the defult excerpt length of 30 to whatever passed as value
- *
- * @use excerpt(10) or excerpt (..)  if excerpt length needs only 10 or whatevere
- * @uses get_permalink, get_the_excerpt
- */
-function catchkathmandu_excerpt_desired( $num ) {
-    $limit = $num+1;
-    $excerpt = explode( ' ', get_the_excerpt(), $limit );
-    array_pop( $excerpt );
-    $excerpt = implode( " ",$excerpt )."<a href='" .get_permalink() ." '></a>";
-    return $excerpt;
-}
-
-
-/**
  * Returns a "Continue Reading" link for excerpts
  */
 function catchkathmandu_continue_reading() {
@@ -595,7 +533,7 @@ function catchkathmandu_continue_reading() {
    	$options = $catchkathmandu_options_settings;
 
 	$more_tag_text = $options[ 'more_tag_text' ];
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catch-kathmandu' ) , $more_tag_text ) . '</a>';
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
 }
 
 /**
@@ -791,27 +729,27 @@ function catchkathmandu_post_sliders() {
 		$catchkathmandu_post_sliders = '
 		<div id="main-slider" class="container">
         	<section class="featured-slider">';
-				$get_featured_posts = new WP_Query( array(
+				$loop = new WP_Query( array(
 					'posts_per_page' => $options[ 'slider_qty' ],
 					'post__in'		 => $options[ 'featured_slider' ],
 					'orderby' 		 => 'post__in',
 					'ignore_sticky_posts' => 1 // ignore sticky posts
 				));
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = 'post postid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'post postid-'.$post->ID.' hentry slides displaynone'; }
 					$catchkathmandu_post_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+									<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 								</h1>
 							</header>';
 							if ( $excerpt !='') {
@@ -855,32 +793,32 @@ function catchkathmandu_category_sliders() {
    	$options = $catchkathmandu_options_settings;
 
 
-	if ( ( !$catchkathmandu_category_sliders = get_transient( 'catchkathmandu_category_sliders' ) ) && !empty( $options[ 'slider_category' ] ) ) {
+	if ( ( !$catchkathmandu_category_sliders = get_transient( 'catchkathmandu_category_sliders' ) ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catchkathmandu_category_sliders = '
 		<div id="main-slider" class="container">
         	<section class="featured-slider">';
-				$get_featured_posts = new WP_Query( array(
+				$loop = new WP_Query( array(
 					'posts_per_page'		=> $options[ 'slider_qty' ],
 					'category__in'			=> $options[ 'slider_category' ],
 					'ignore_sticky_posts' 	=> 1 // ignore sticky posts
 				));
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = 'post pageid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'post pageid-'.$post->ID.' hentry slides displaynone'; }
 					$catchkathmandu_category_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+									<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 								</h1>
 							</header>';
 							if ( $excerpt !='') {
@@ -1011,7 +949,7 @@ function catchkathmandu_slider_display() {
 		if (  'post-slider' == $slidertype  && !empty( $options[ 'featured_slider' ] ) && function_exists( 'catchkathmandu_post_sliders' ) ) {
 			catchkathmandu_post_sliders();
 		}
-		elseif (  'category-slider' == $slidertype  && !empty( $options[ 'slider_category' ] ) && function_exists( 'catchkathmandu_category_sliders' ) ) {
+		elseif (  'category-slider' == $slidertype && function_exists( 'catchkathmandu_category_sliders' ) ) {
 			catchkathmandu_category_sliders();
 		}
 		else {
@@ -1063,10 +1001,10 @@ function catchkathmandu_homepage_headline() {
 			$catchkathmandu_homepage_headline = '<div id="homepage-message" class="container"><div class="left-section">';
 
 			if ( $disable_headline == "0" ) {
-				$catchkathmandu_homepage_headline .= '<h2>' . sprintf( __( '%s', 'catch-kathmandu' ) , $homepage_headline ) . '</h2>';
+				$catchkathmandu_homepage_headline .= '<h2>' . $homepage_headline . '</h2>';
 			}
 			if ( $disable_subheadline == "0" ) {
-				$catchkathmandu_homepage_headline .= '<p>' . sprintf( __( '%s', 'catch-kathmandu' ) , $homepage_subheadline ) . '</p>';
+				$catchkathmandu_homepage_headline .= '<p>' . $homepage_subheadline . '</p>';
 			}
 
 			$catchkathmandu_homepage_headline .= '</div><!-- .left-section -->';
@@ -1103,7 +1041,7 @@ function catchkathmandu_default_featured_content() {
 	$layouts = $options [ 'homepage_featured_layout' ];
 
 	if ( $disable_homepage_featured == "0" ) {
-		if ( !$catchkathmandu_default_featured_content = get_transient( 'catchkathmandu_default_featured_content' ) ) {
+		if ( !$output = get_transient( 'catchkathmandu_default_featured_content' ) ) {
 			//Checking Layout
 			if ( 'four-columns' == $layouts  ) {
 				$classes = "layout-four";
@@ -1112,7 +1050,7 @@ function catchkathmandu_default_featured_content() {
 				$classes = "layout-three";
 			}
 
-			$catchkathmandu_default_featured_content = '
+			$output = '
 			<section id="featured-post" class="' . $classes . '">
 				<h1 id="feature-heading" class="entry-title">Popular Places</h1>
 				<div class="featued-content-wrap">
@@ -1191,7 +1129,7 @@ function catchkathmandu_default_featured_content() {
 				</div><!-- .featued-content-wrap -->
 			</section><!-- #featured-post -->';
 		}
-		echo $catchkathmandu_default_featured_content;
+		echo $output;
 	}
 }
 
@@ -1219,7 +1157,7 @@ function catchkathmandu_homepage_featured_content() {
 
 	if ( $disable_homepage_featured == "0" ) {
 
-		if ( !$catchkathmandu_homepage_featured_content = get_transient( 'catchkathmandu_homepage_featured_content' )  && ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) ) {
+		if ( !$output = get_transient( 'catchkathmandu_homepage_featured_content' )  && ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) ) {
 
 			echo '<!-- refreshing cache -->';
 
@@ -1231,17 +1169,15 @@ function catchkathmandu_homepage_featured_content() {
 				$classes = "layout-three";
 			}
 
-			$catchkathmandu_homepage_featured_content = '<section id="featured-post" class="' . $classes . '">';
+			$output = '<section id="featured-post" class="' . $classes . '">';
 
 			if ( !empty( $headline ) ) {
-				$catchkathmandu_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
+				$output .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
 			}
 
-			$catchkathmandu_homepage_featured_content .= '<div class="featued-content-wrap">';
+			$output .= '<div class="featued-content-wrap">';
 
 				for ( $i = 1; $i <= $quantity; $i++ ) {
-
-
 					//Checking Link
 					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
 						//support qTranslate plugin
@@ -1270,67 +1206,67 @@ function catchkathmandu_homepage_featured_content() {
 					}
 
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
-						$catchkathmandu_homepage_featured_content .= '
+						$output .= '
 						<article id="featured-post-'.$i.'" class="post hentry">';
 							if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
-								$catchkathmandu_homepage_featured_content .= '<figure class="featured-homepage-image">';
+								$output .= '<figure class="featured-homepage-image">';
 
 									if ( !empty ( $link ) ) {
-										$catchkathmandu_homepage_featured_content .= '
-										<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
-											<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
+										$output .= '
+										<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="' . esc_attr( $target ) . '">
+											<img src="' . esc_url( $options[ 'homepage_featured_image' ][ $i ] ) . '" class="wp-post-image" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">
 										</a>';
 									}
 									else {
-										$catchkathmandu_homepage_featured_content .= '
-										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">';
+										$output .= '
+										<img src="' . esc_url( $options[ 'homepage_featured_image' ][ $i ] ) . '" class="wp-post-image" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">';
 									}
 
-								$catchkathmandu_homepage_featured_content .= '</figure>';
+								$output .= '</figure>';
 							}
 							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
-								$catchkathmandu_homepage_featured_content .= '<div class="entry-container">';
+								$output .= '<div class="entry-container">';
 
 									if ( !empty ( $title ) ) {
 
-										$catchkathmandu_homepage_featured_content .= '
+										$output .= '
 										<header class="entry-header">
 											<h1 class="entry-title">';
 												if ( !empty ( $link ) ) {
-													$catchkathmandu_homepage_featured_content .= '<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>';
+													$output .= '<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . esc_attr( $target ) . '">' . esc_attr( $title ) . '</a>';
 												}
 												else {
-													$catchkathmandu_homepage_featured_content .= $title;
+													$output .= $title;
 												}
-											$catchkathmandu_homepage_featured_content .= '
+											$output .= '
 											</h1>
 										</header>';
 
 									}
 									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
 
-										$catchkathmandu_homepage_featured_content .= '
+										$output .= '
 										<div class="entry-content">
 											' . $options[ 'homepage_featured_content' ][ $i ] . '
 										</div>';
 
 									}
-								$catchkathmandu_homepage_featured_content .= '
+								$output .= '
 								</div><!-- .entry-container -->';
 							}
-						$catchkathmandu_homepage_featured_content .= '
+						$output .= '
 						</article><!-- .post -->';
 					}
 
 				}
 
-			$catchkathmandu_homepage_featured_content .= '</div><!-- .featued-content-wrap -->';
+			$output .= '</div><!-- .featued-content-wrap -->';
 
-			$catchkathmandu_homepage_featured_content .= '</section><!-- #featured-post -->';
+			$output .= '</section><!-- #featured-post -->';
 
 		}
 
-		echo $catchkathmandu_homepage_featured_content;
+		echo $output;
 
 	}
 
@@ -1343,7 +1279,7 @@ endif; // catchkathmandu_homepage_featured_content
  *
  */
 function catchkathmandu_homepage_featured_display() {
-	global $post, $wp_query, $catchkathmandu_options_settings;
+	global $wp_query, $catchkathmandu_options_settings;
 
 	// Getting data from Theme Options
    	$options = $catchkathmandu_options_settings;
@@ -1490,18 +1426,18 @@ add_action( 'catchkathmandu_site_generator', 'catchkathmandu_footer_content', 10
  * @uses pre_get_posts hook
  */
 function catchkathmandu_alter_home( $query ){
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	if ( $query->is_main_query() && $query->is_home() ) {
+		global $catchkathmandu_options_settings;
+	   	$options = $catchkathmandu_options_settings;
 
-    $cats = $options[ 'front_page_category' ];
+	    $cats = $options['front_page_category'];
 
-    if ( $query->is_main_query() && $query->is_home() ) {
-    	if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
+	    if ( $options['exclude_slider_post'] != "0" && !empty( $options['featured_slider'] ) ) {
+			$query->query_vars['post__not_in'] = $options['featured_slider'];
 		}
-
-		if ( !in_array( '0', $cats ) ) {
-			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+		
+		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+			$query->query_vars['category__in'] = $cats;
 		}
 	}
 }
@@ -1901,52 +1837,6 @@ function catchkathmandu_header_top() {
 
 }
 add_action( 'catchkathmandu_before_hgroup_wrap', 'catchkathmandu_header_top', 10 );
-
-
-/**
- * Get the Web Clip Icon Image from theme options
- *
- * @uses web_clip and remove_web_clip
- * @get the data value of image from theme options
- * @display webclip icons
- *
- * @uses default Web Click Icon if web_clip field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function catchkathmandu_web_clip() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-	//delete_transient( 'catchkathmandu_web_clip' );
-
-	if ( ( !$catchkathmandu_web_clip = get_transient( 'catchkathmandu_web_clip' ) ) ) {
-
-		// get the data value from theme options
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( empty( $options[ 'remove_web_clip' ] ) ) :
-			// if not empty web_clip on theme options
-			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$catchkathmandu_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			else:
-				// if empty web_clip on theme options, display default webclip icon
-				$catchkathmandu_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
-			endif;
-		endif;
-
-		set_transient( 'catchkathmandu_web_clip', $catchkathmandu_web_clip, 86940 );
-	}
-	echo $catchkathmandu_web_clip ;
-} // catchkathmandu_web_clip
-
-//Load webclip icon in Header Section
-add_action( 'wp_head', 'catchkathmandu_web_clip' );
 
 
 if ( ! function_exists( 'catchkathmandu_breadcrumb_display' ) ) :

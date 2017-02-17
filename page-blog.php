@@ -17,9 +17,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); 
 
-global $more, $catchkathmandu_options_settings; 
-$more = 0;
-
+global $catchkathmandu_options_settings; 
 //Getting data from Theme Options Panel and Meta Box  
 $options = $catchkathmandu_options_settings;
 
@@ -34,28 +32,9 @@ $moretag = $options[ 'more_tag_text' ];
 			<div id="content" class="site-content" role="main">
             
             	<?php 
-				global $wp_query, $paged;
-				
-				if ( get_query_var( 'paged' ) ) {
-					
-					$paged = get_query_var( 'paged' );
-					
-				}
-				elseif ( get_query_var( 'page' ) ) {
-					
-					$paged = get_query_var( 'page' );
-					
-				}
-				else {
-					
-					$paged = 1;
-					
-				}
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				
 				$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
-				$temp_query = $wp_query;
-				$wp_query = null;
-				$wp_query = $blog_query;
 
 				if ( $blog_query->have_posts() ) : ?>
                 
@@ -63,7 +42,26 @@ $moretag = $options[ 'more_tag_text' ];
 						<h1 class="page-title"><?php the_title(); ?></h1>
                   	</header><!-- .page-header -->
                     
-                    <?php catchkathmandu_content_nav( 'nav-above' ); ?>
+                    <?php 
+                    // Pagination start
+                    if ( $blog_query->max_num_pages > 1 ) { ?>
+                        <nav role="navigation" id="nav-above" class="site-navigation paging-navigation">
+                            <h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'catch-kathmandu' ); ?></h3>
+                            
+                            <?php 
+                            if ( function_exists('wp_pagenavi' ) )  {
+                                wp_pagenavi();
+                            } elseif ( function_exists('wp_page_numbers' ) ) {
+                                wp_page_numbers();
+                            } else { ?>
+                                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-kathmandu' ), $blog_query->max_num_pages ); ?></div>
+                                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-kathmandu' ) ); ?></div>
+                            <?php
+                            } ?>
+                        </nav><!-- #nav -->
+                    <?php
+                    }
+                    ?>
                     
 					<?php /* Start the Loop */ ?>
 					<?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
@@ -78,14 +76,32 @@ $moretag = $options[ 'more_tag_text' ];
 
 					<?php endwhile; ?>
                         
-                    <?php catchkathmandu_content_query_nav( 'nav-below' ); ?>	
+                    <?php 
+                    // Pagination start
+                    if ( $blog_query->max_num_pages > 1 ) { ?>
+                        <nav role="navigation" id="nav-below" class="site-navigation paging-navigation">
+                            <h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'catch-kathmandu' ); ?></h3>
+                            
+                            <?php 
+                            if ( function_exists('wp_pagenavi' ) )  {
+                                wp_pagenavi();
+                            } elseif ( function_exists('wp_page_numbers' ) ) {
+                                wp_page_numbers();
+                            } else { ?>
+                                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-kathmandu' ), $blog_query->max_num_pages ); ?></div>
+                                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-kathmandu' ) ); ?></div>
+                            <?php
+                            } ?>
+                        </nav><!-- #nav -->
+                    <?php
+                    }
+                    ?>
 
 				<?php else : ?>   
 
 					<?php get_template_part( 'no-results', 'archive' ); ?>
 					
 				<?php endif; 
-				$wp_query = $temp_query;
 				wp_reset_postdata();
 				?>
 

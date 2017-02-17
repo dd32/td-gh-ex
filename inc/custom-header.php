@@ -106,17 +106,6 @@ add_action( 'after_setup_theme', 'catchkathmandu_custom_header_setup' );
  * @since Catch Kathmandu 1.0
  */
 
-if ( ! function_exists( 'get_custom_header' ) ) {
-	function get_custom_header() {
-		return (object) array(
-			'url'           => get_header_image(),
-			'thumbnail_url' => get_header_image(),
-			'width'         => HEADER_IMAGE_WIDTH,
-			'height'        => HEADER_IMAGE_HEIGHT,
-		);
-	}
-}
-
 
 if ( ! function_exists( 'catchkathmandu_header_style' ) ) :
 /**
@@ -129,8 +118,8 @@ if ( ! function_exists( 'catchkathmandu_header_style' ) ) :
 function catchkathmandu_header_style() {
 
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// get_header_textcolor() options: get_theme_support( 'custom-header', 'default-text-color' ) is default, hide text (returns 'blank') or any hex value
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -172,7 +161,7 @@ if ( ! function_exists( 'catchkathmandu_admin_header_style' ) ) :
 function catchkathmandu_admin_header_style() {
 	?>
 	<style type="text/css">
-	<?php if ( HEADER_TEXTCOLOR == get_header_textcolor() ) : ?>
+	<?php if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() ) : ?>
 		#site-logo,
 		#hgroup {
 			display: inline-block;

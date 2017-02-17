@@ -154,7 +154,6 @@ if ( ! function_exists( 'catchkathmandu_comment' ) ) :
  * @since Catch Kathmandu Pro 1.0
  */
 function catchkathmandu_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
