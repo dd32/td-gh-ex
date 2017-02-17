@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 11:59+0545\n"
-"PO-Revision-Date: 2017-02-09 11:59+0545\n"
+"POT-Creation-Date: 2017-02-17 11:16+0545\n"
+"PO-Revision-Date: 2017-02-17 11:16+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <charni@gmail.com>\n"
 "Language: fi\n"
@@ -58,17 +58,17 @@ msgstr ""
 "artikkelia."
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "No Comments"
 msgstr "Ei kommentteja"
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "1 Comment"
 msgstr "Yksi kommentti"
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "% Comments"
 msgstr "% kommenttia"
 
@@ -77,15 +77,15 @@ msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
 
 #: ../content.php:50 ../functions/core.php:998 ../image.php:21
-#: ../page-blog.php:67
+#: ../page-blog.php:53
 msgid "By"
 msgstr "Kirjoittanut"
 
-#: ../content.php:80 ../page-blog.php:114
+#: ../content.php:80 ../page-blog.php:100
 msgid "Not found"
 msgstr "Ei löytynyt"
 
-#: ../content.php:83 ../page-blog.php:117
+#: ../content.php:83 ../page-blog.php:103
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -486,11 +486,11 @@ msgstr "Edellinen kuva"
 msgid "Next Image"
 msgstr "Seuraava kuva"
 
-#: ../page-blog.php:104 ../search.php:44
+#: ../page-blog.php:87 ../search.php:44
 msgid "Previous"
 msgstr "Edellinen"
 
-#: ../page-blog.php:105 ../search.php:45
+#: ../page-blog.php:89 ../search.php:45
 msgid "Next"
 msgstr "Seuraava"
 
@@ -520,14 +520,12 @@ msgstr "Kokeile erilaisia hakutermejä"
 msgid "Try more general keywords"
 msgstr "Kokeile käyttää yleisempiä hakutermejä"
 
-#: ../searchform.php:20
-#, php-format
-msgid "%s"
-msgstr "%s"
-
 #: ../sidebar.php:59
 msgid "Archives"
 msgstr ""
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid ""
 #~ "Check for a mis-typed URL error, then press the refresh button on your "

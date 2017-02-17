@@ -102,7 +102,7 @@ if ( ! function_exists( 'simplecatch_page_post_category_slider' ) ) :
 					<div class="post-thumbnail featured-img">';
 						if( has_post_thumbnail() ) {
 
-							$output .= '<a href="javascript:void(0);" title="' . $title_attribute . '">';
+							$output .= '<a href="' . esc_url( get_permalink() ) . '" title="' . $title_attribute . '">';
 
 							if( $slidereffect == "0" ) {
 								$output .= '<span class="img-effect pngfix"></span>';

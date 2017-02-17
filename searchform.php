@@ -17,5 +17,5 @@ $button_text  = $options[ 'search_button_text' ];
 		<input type="text" class="search" value="<?php echo esc_attr( $display_text ); ?>" name="s" id="s" title="<?php echo esc_attr( $display_text ); ?>" />
    	</div>
     
-    <button><?php printf( __( '%s', 'simple-catch' ), esc_attr( $button_text ) ); ?></button>
+    <button><?php echo $button_text; ?></button>
 </form>

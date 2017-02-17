@@ -14,26 +14,12 @@ if ( !defined('ABSPATH')) exit;
  * @since Simple Catch 2.1
  */
 get_header();
-global $more, $wp_query, $paged, $simplecatch_options_settings;
-$more = 0;
+global $simplecatch_options_settings;
 $options = $simplecatch_options_settings;
 $contentlayout = $options[ 'content_layout' ];
 $moretag = $options[ 'more_tag_text' ];
 
-	if ( get_query_var( 'paged' ) ) {
-		$paged = get_query_var( 'paged' );
-	}
-	elseif ( get_query_var( 'page' ) ) {
-		$paged = get_query_var( 'page' );
-	}
-	else {
-		$paged = 1;
-	}
-
-	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
-	$temp_query = $wp_query;
-	$wp_query = null;
-	$wp_query = $blog_query;
+    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 	if ( $blog_query->have_posts() ) : ?>
 
@@ -88,24 +74,24 @@ $moretag = $options[ 'more_tag_text' ];
 
       	<?php endwhile;
 
-		// Checking WP Page Numbers plugin exist
-		if ( function_exists('wp_pagenavi' ) ) :
-			wp_pagenavi();
-
-		// Checking WP-PageNaviplugin exist
-		elseif ( function_exists('wp_page_numbers' ) ) :
-			wp_page_numbers();
-
-		else:
-			global $wp_query;
-			if ( $wp_query->max_num_pages > 1 ) :
-		?>
-				<ul class="default-wp-page clearfix">
-					<li class="previous"><?php next_posts_link( __( 'Previous', 'simple-catch' ) ); ?></li>
-					<li class="next"><?php previous_posts_link( __( 'Next', 'simple-catch' ) ); ?></li>
-				</ul>
-			<?php endif;
-		endif;
+        // Pagination start
+        if ( $blog_query->max_num_pages > 1 ) { 
+            if ( function_exists('wp_pagenavi' ) )  {
+                wp_pagenavi();
+            }
+            elseif ( function_exists('wp_page_numbers' ) ) {
+                wp_page_numbers();
+            }
+            else { ?>
+                <ul class="default-wp-page clearfix">
+                    <li class="previous"><?php next_posts_link( __( 'Previous', 'simple-catch' ), $blog_query->max_num_pages ); ?></li>
+                    
+                    <li class="next"><?php previous_posts_link( __( 'Next', 'simple-catch' ) ); ?></li>
+                </ul>
+            <?php
+            } ?>
+        <?php
+        };
 
 	else : ?>
         <article id="post-not-found" <?php post_class(); ?>>
@@ -122,7 +108,6 @@ $moretag = $options[ 'more_tag_text' ];
         </article><!-- .post -->
 
 		<?php endif;
-        $wp_query = $temp_query;
         wp_reset_postdata();
         ?>
 	</div><!-- #primary -->

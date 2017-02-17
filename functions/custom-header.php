@@ -53,7 +53,7 @@ function simplecatch_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
-	if ( $text_color == HEADER_TEXTCOLOR )
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color )
 		return;
 
 	// If we get this far, we have custom styles. Let's do this.

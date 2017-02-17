@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch Pro\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 11:59+0545\n"
+"POT-Creation-Date: 2017-02-17 11:15+0545\n"
 "PO-Revision-Date: 2016-12-06 13:43-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -57,17 +57,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000 ../image.php:23
-#: ../page-blog.php:69
+#: ../page-blog.php:55
 msgid "No Comments"
 msgstr ""
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000 ../image.php:23
-#: ../page-blog.php:69
+#: ../page-blog.php:55
 msgid "1 Comment"
 msgstr ""
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000 ../image.php:23
-#: ../page-blog.php:69
+#: ../page-blog.php:55
 msgid "% Comments"
 msgstr ""
 
@@ -75,15 +75,15 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content.php:50 ../functions/core.php:998 ../image.php:21 ../page-blog.php:67
+#: ../content.php:50 ../functions/core.php:998 ../image.php:21 ../page-blog.php:53
 msgid "By"
 msgstr ""
 
-#: ../content.php:80 ../page-blog.php:114
+#: ../content.php:80 ../page-blog.php:100
 msgid "Not found"
 msgstr ""
 
-#: ../content.php:83 ../page-blog.php:117
+#: ../content.php:83 ../page-blog.php:103
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -276,11 +276,11 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: ../functions/core.php:1178 ../page-blog.php:104 ../search.php:44
+#: ../functions/core.php:1178 ../page-blog.php:87 ../search.php:44
 msgid "Previous"
 msgstr ""
 
-#: ../functions/core.php:1179 ../page-blog.php:105 ../search.php:45
+#: ../functions/core.php:1179 ../page-blog.php:89 ../search.php:45
 msgid "Next"
 msgstr ""
 
@@ -914,11 +914,6 @@ msgstr ""
 
 #: ../search.php:61
 msgid "Try more general keywords"
-msgstr ""
-
-#: ../searchform.php:20
-#, php-format
-msgid "%s"
 msgstr ""
 
 #: ../sidebar.php:59

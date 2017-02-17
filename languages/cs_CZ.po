@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-09 11:59+0545\n"
-"PO-Revision-Date: 2017-02-09 11:59+0545\n"
+"POT-Creation-Date: 2017-02-17 11:15+0545\n"
+"PO-Revision-Date: 2017-02-17 11:15+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: cs\n"
@@ -61,17 +61,17 @@ msgstr ""
 "patříte, zadejte heslo."
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "No Comments"
 msgstr "Žádné komentáře"
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "1 Comment"
 msgstr "1 komentář"
 
 #: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
-#: ../image.php:23 ../page-blog.php:69
+#: ../image.php:23 ../page-blog.php:55
 msgid "% Comments"
 msgstr "% komentářů"
 
@@ -80,15 +80,15 @@ msgid "Comments are closed."
 msgstr "U tohoto článku nemůžete přidávat komentáře."
 
 #: ../content.php:50 ../functions/core.php:998 ../image.php:21
-#: ../page-blog.php:67
+#: ../page-blog.php:53
 msgid "By"
 msgstr "od"
 
-#: ../content.php:80 ../page-blog.php:114
+#: ../content.php:80 ../page-blog.php:100
 msgid "Not found"
 msgstr "nebyla nalezena"
 
-#: ../content.php:83 ../page-blog.php:117
+#: ../content.php:83 ../page-blog.php:103
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -488,11 +488,11 @@ msgstr "Předešlý Obrázek"
 msgid "Next Image"
 msgstr "Další Obrázek"
 
-#: ../page-blog.php:104 ../search.php:44
+#: ../page-blog.php:87 ../search.php:44
 msgid "Previous"
 msgstr "Předešlý"
 
-#: ../page-blog.php:105 ../search.php:45
+#: ../page-blog.php:89 ../search.php:45
 msgid "Next"
 msgstr "Další"
 
@@ -522,14 +522,12 @@ msgstr "Zkuste to prosím znovu s nějakým jiným klíčovým slovem."
 msgid "Try more general keywords"
 msgstr " "
 
-#: ../searchform.php:20
-#, php-format
-msgid "%s"
-msgstr "%s"
-
 #: ../sidebar.php:59
 msgid "Archives"
 msgstr "Archiv"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid ""
 #~ "Check for a mis-typed URL error, then press the refresh button on your "
