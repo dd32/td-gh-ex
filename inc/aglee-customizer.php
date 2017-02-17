@@ -1211,30 +1211,6 @@ $wp_customize -> add_control(
         )
     );
 
-// Custom Css/Js
-$wp_customize -> add_section(
-    'aglee_lite_custom_tools',
-    array(
-        'title' => __('Custom Tools','aglee-lite'),
-        'priority' => 220,
-        )
-    );
-
-//Custom css code
-$wp_customize->add_setting('aglee_lite_custom_css', array(
-    'default' => '',
-    'capability'           => 'edit_theme_options',
-    'sanitize_callback'    => 'wp_filter_nohtml_kses',
-    'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-    ));
-
-$wp_customize->add_control('aglee_lite_custom_css',array(
-    'type' => 'textarea',
-    'label' => __('Custom Css Code','aglee-lite'),
-    'description' => __( 'Enter your custom css code here.', 'aglee-lite' ),
-    'section' => 'aglee_lite_custom_tools',
-    ));
-
 //General dropdown sanitize for integer value
 function aglee_lite_sanitize_dropdown_general( $input ) {
     return absint( $input );

@@ -74,14 +74,6 @@
             </style>
             <?php
             endif;
-        //Custom CSS CODE
-            $custom_css = wp_filter_nohtml_kses(get_theme_mod('aglee_lite_custom_css',''));
-            if(!empty($custom_css)){echo "<style>$custom_css</style>";}
-        //custom js
-            $custom_js = get_theme_mod('aglee_lite_custom_js');
-            if(!empty($custom_js)){
-                echo '<script type="text/javascript">'.$custom_js.'</script>';
-            }
         }
         add_action('wp_head','aglee_lite_custom_dynamic_styles');
 
@@ -106,71 +98,3 @@ function aglee_lite_admin_scripts() {
 }
 add_action('admin_enqueue_scripts', 'aglee_lite_admin_scripts');
 endif;
-
-
-
-/** Plugin Install ***/
-function aglee_lite_required_plugins() {
-
-/**
-* Array of plugin arrays. Required keys are name and slug.
-* If the source is NOT from the .org repo, then source is also required.
-*/
-$plugins = array(
-    array(
-        'name'      => '8 Degree Coming Soon Page',
-        'slug'      => '8-degree-coming-soon-page',
-        'required'  => false,
-        'force_activation'   => false,
-        'force_deactivation' => true,
-        ),
-    array(
-        'name'      => '8 Degree Notification Bar',
-        'slug'      => '8-degree-notification-bar',
-        'required'  => false,
-        'force_activation'   => false,
-        'force_deactivation' => true,
-        ),
-    );
-
-    /**
-    * Array of configuration settings. Amend each line as needed.
-    * If you want the default strings to be available under your own theme domain,
-    * leave the strings uncommented.
-    * Some of the strings are added into a sprintf, so see the comments at the
-    * end of each line for what each argument will be.
-    */
-    $config = array(
-        'default_path' => '',
-        'menu'         => 'aglee-lite-install-plugins',
-        'has_notices'  => true,
-        'dismissable'  => true,
-        'dismiss_msg'  => '',
-        'is_automatic' => true,
-        'message'      => '',
-        'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'aglee-lite' ),
-            'menu_title'                      => __( 'Install Plugins', 'aglee-lite' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'aglee-lite' ),
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'aglee-lite' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','aglee-lite' ),
-            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','aglee-lite' ),
-            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.','aglee-lite' ),
-            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.','aglee-lite' ),
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.','aglee-lite' ),
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.','aglee-lite' ),
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.','aglee-lite' ),
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','aglee-lite' ),
-            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins','aglee-lite' ),
-            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins','aglee-lite' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'aglee-lite' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'aglee-lite' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'aglee-lite' ),
-            'nag_type'                        => 'updated'
-            )
-        );
-
-    tgmpa( $plugins, $config );
-
-}
-add_action( 'tgmpa_register', 'aglee_lite_required_plugins' );

@@ -1,7 +1,7 @@
 === Aglee Lite ===
 
 Requires at least: 4.0
-Tested up to: 4.3
+Tested up to: 4.7
 Aglee lite WordPress Theme, Copyright 2015 8degree Themes
 Aglee lite is distributed under the terms of the GNU GPL v3
 License: GPLv3 or later
@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.21 - 17th February, 2017 =
+* New Theme Setup page created
+* Easy detailed instructions and recommended plugins section.
+
 = 1.0.20 - 19th January, 2017 =
 * Wp4.7 edit icons supported.
 * Fixed single page image issues.

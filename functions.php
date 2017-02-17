@@ -218,11 +218,7 @@ require get_template_directory() . '/inc/agleelite-functions.php';
 /**
  * Load Aglee Lite Theme Recommendations
  */
-require get_template_directory() . '/inc/agleelite-tgm.php';
-/**
- * Load Aglee Lite Theme Information
- */
-require get_template_directory() . '/inc/theme-info.php';
+require get_template_directory() . '/inc/about-theme.php';
 
 
  /**
