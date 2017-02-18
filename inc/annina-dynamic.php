@@ -8,24 +8,34 @@
 /**
  * Custom Excerpt Length
  */
-function annina_custom_excerpt_length( $length ) {
-	return 20;
+if ( ! function_exists( 'annina_custom_excerpt_length' ) ) {
+	function annina_custom_excerpt_length( $length ) {
+		if ( ! is_admin() ) {
+			return 20;
+		} else {
+			return $length;
+		}
+	}
 }
 add_filter( 'excerpt_length', 'annina_custom_excerpt_length', 999 );
 
 /**
  * Replace Excerpt More
  */
-function annina_new_excerpt_more( $more ) {
-	return '...';
+if ( ! function_exists( 'annina_new_excerpt_more' ) ) {
+	function annina_new_excerpt_more( $more ) {
+		return '&hellip;';
+	}
 }
 add_filter('excerpt_more', 'annina_new_excerpt_more');
 
  /**
  * Delete font size style from tag cloud widget
  */
-function annina_fix_tag_cloud($tag_string){
-   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+if ( ! function_exists( 'annina_fix_tag_cloud' ) ) {
+	function annina_fix_tag_cloud($tag_string){
+	   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+	}
 }
 add_filter('wp_generate_tag_cloud', 'annina_fix_tag_cloud',10,3);
 
@@ -166,7 +176,7 @@ function annina_color_primary_register( $wp_customize ) {
         'default'    => '#',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'is_email'
+		'sanitize_callback' => 'sanitize_email'
     ) );
 	
 	$wp_customize->add_control('annina_theme_options_emailurl', array(

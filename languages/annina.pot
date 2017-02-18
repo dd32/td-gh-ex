@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2017-02-01 12:29+0100\n"
-"PO-Revision-Date: 2017-02-01 12:29+0100\n"
+"POT-Creation-Date: 2017-02-18 10:32+0100\n"
+"PO-Revision-Date: 2017-02-18 10:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -251,7 +251,7 @@ msgstr ""
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Annina! To fully take advantage of the best "
-"our theme can offer please make sure you visit our %swelcome page%s."
+"our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
 #: inc/admin/annina-admin-page.php:94
@@ -386,7 +386,7 @@ msgstr ""
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:334 inc/annina-dynamic.php:238
+#: inc/admin/annina-admin-page.php:334 inc/annina-dynamic.php:248
 msgid "Loading Page"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgstr ""
 msgid "Infinite scroll"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:344 inc/annina-dynamic.php:237
+#: inc/admin/annina-admin-page.php:344 inc/annina-dynamic.php:247
 msgid "Font switcher"
 msgstr ""
 
@@ -410,11 +410,11 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:364 inc/annina-dynamic.php:240
+#: inc/admin/annina-admin-page.php:364 inc/annina-dynamic.php:250
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:369 inc/annina-dynamic.php:242
+#: inc/admin/annina-admin-page.php:369 inc/annina-dynamic.php:252
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -422,11 +422,11 @@ msgstr ""
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:379 inc/annina-dynamic.php:244
+#: inc/admin/annina-admin-page.php:379 inc/annina-dynamic.php:254
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:384 inc/annina-dynamic.php:245
+#: inc/admin/annina-admin-page.php:384 inc/annina-dynamic.php:255
 msgid "Information About Author Box"
 msgstr ""
 
@@ -438,115 +438,115 @@ msgstr ""
 msgid "More Information"
 msgstr ""
 
-#: inc/annina-dynamic.php:41
+#: inc/annina-dynamic.php:51
 msgid "Box Text Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:47
+#: inc/annina-dynamic.php:57
 msgid "Header Background"
 msgstr ""
 
-#: inc/annina-dynamic.php:53
+#: inc/annina-dynamic.php:63
 msgid "Box Background Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:59
+#: inc/annina-dynamic.php:69
 msgid "Special Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:90
+#: inc/annina-dynamic.php:100
 msgid "Annina Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:103
+#: inc/annina-dynamic.php:113
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:108
+#: inc/annina-dynamic.php:118
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:113
+#: inc/annina-dynamic.php:123
 msgid "Google Plus URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:118
+#: inc/annina-dynamic.php:128
 msgid "Linkedin URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:123
+#: inc/annina-dynamic.php:133
 msgid "Instagram URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:128
+#: inc/annina-dynamic.php:138
 msgid "YouTube URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:133
+#: inc/annina-dynamic.php:143
 msgid "Pinterest URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:138
+#: inc/annina-dynamic.php:148
 msgid "VK URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:173
+#: inc/annina-dynamic.php:183
 msgid "Your Email"
 msgstr ""
 
-#: inc/annina-dynamic.php:190
+#: inc/annina-dynamic.php:200
 msgid "Show Search Button in Main Menu"
 msgstr ""
 
-#: inc/annina-dynamic.php:208
+#: inc/annina-dynamic.php:218
 msgid "Last Post Box Big?"
 msgstr ""
 
-#: inc/annina-dynamic.php:222
+#: inc/annina-dynamic.php:232
 msgid "Get Annina PRO WP Theme for only"
 msgstr ""
 
-#: inc/annina-dynamic.php:227
+#: inc/annina-dynamic.php:237
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/annina-dynamic.php:230
+#: inc/annina-dynamic.php:240
 msgid "Get Annina PRO Theme"
 msgstr ""
 
-#: inc/annina-dynamic.php:234
+#: inc/annina-dynamic.php:244
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:235
+#: inc/annina-dynamic.php:245
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/annina-dynamic.php:236
+#: inc/annina-dynamic.php:246
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/annina-dynamic.php:239
+#: inc/annina-dynamic.php:249
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/annina-dynamic.php:241
+#: inc/annina-dynamic.php:251
 msgid "Post format"
 msgstr ""
 
-#: inc/annina-dynamic.php:243
+#: inc/annina-dynamic.php:253
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/annina-dynamic.php:246
+#: inc/annina-dynamic.php:256
 msgid "Sticky Sidebar"
 msgstr ""
 
-#: inc/annina-dynamic.php:247
+#: inc/annina-dynamic.php:257
 msgid "And much more..."
 msgstr ""
 
-#: inc/annina-dynamic.php:253
+#: inc/annina-dynamic.php:263
 msgid "More features? Upgrade to PRO"
 msgstr ""
 

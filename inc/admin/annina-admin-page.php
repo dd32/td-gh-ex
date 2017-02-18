@@ -89,7 +89,7 @@ class Annina_Admin {
 		?>
 		<div id="message" class="updated cresta-message">
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'annina-hide-notice', 'welcome' ) ), 'annina_hide_notices_nonce', '_annina_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'annina' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Annina! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'annina' ), '<a href="' . esc_url( admin_url( 'themes.php?page=annina-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Annina! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'annina' ), '<a href="' . esc_url( admin_url( 'themes.php?page=annina-welcome' ) ) . '">', '</a>' ); ?></p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=annina-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Annina', 'annina' ); ?></a>
 			</p>

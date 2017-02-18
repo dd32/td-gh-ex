@@ -131,6 +131,9 @@ function annina_categorized_blog() {
  * Flush out the transients used in annina_categorized_blog.
  */
 function annina_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'annina_categories' );
 }
