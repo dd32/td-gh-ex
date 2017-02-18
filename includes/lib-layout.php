@@ -482,7 +482,7 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 			$layout = 'right';  // fallback
 	}
 
-	return $layout;
+	return apply_filters('weaverx_sb_layout', $layout, $who);
 }
 //--
 
@@ -511,7 +511,7 @@ function weaverx_sb_layout_archive( $who ) {
 		}
 	}
 
-	return $layout;
+	return apply_filters('weaverx_sb_layout_archive', $layout, $who);
 }
 //---
 

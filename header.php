@@ -82,11 +82,6 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 <?php
 	do_action('weaverxplus_action','body_top');	// mostly for the loading screen
 
-	if ( false && WEAVERX_DEV_MODE ) {
-		if (is_customize_preview())
-			echo '<h2>DISPLAYED WHILE CUSTOMIZER UP</h2>';
-	}
-
 	weaverx_inject_area('prewrapper');
 
 	weaverx_area_div( 'wrapper' );
@@ -276,6 +271,7 @@ function weaverx_header_image() {
 	}
 
 	$page_type = ( is_single() ) ? 'post' : 'page';
+
 	$hdr_bg = weaverx_fi( $page_type, 'header-image' );
 
 	$hdr_type = ($hdr_bg) ? 'fi' : 'std';
@@ -292,9 +288,9 @@ function weaverx_header_image() {
 	// 4. As FI Replacement
 	// 5. As standard Image
 
-	// 0. Archive type page - just use the standard header image for archives and search
+	// 0. Archive type page - just use the standard header image for archives and search - maybe add as optoin?
 
-	if ( is_archive() || is_search() ) {
+	/* if ( is_archive() || is_search() ) {
 		if ( weaverx_getopt('link_site_image') ) {
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
 		}
@@ -306,11 +302,11 @@ function weaverx_header_image() {
 			the_header_image_tag();
 		}
 
-		weaverx_e_opt('link_site_image',"</a>");	/* need to close link */
+		weaverx_e_opt('link_site_image',"</a>");	// need to close link
 
 		echo("\n</div><!-- #header-image -->\n");
 		return;
-	}
+	} */
 
 
 	// 1. HTML replacement
@@ -362,10 +358,8 @@ function weaverx_header_image() {
 
 	// 3. As Standard or FI BG replacement (no video supported)
 
-
 	if ( weaverx_getopt_default('header_image_render','header-as-img') != 'header-as-img'	// use as BG image?
 		&& ( !$hdr_html || weaverx_getopt('header_image_html_plus_bg') ) ) { // have bg, or have BOTH HTML and bg image?
-
 
 		if ( !$hdr_bg ) {
 			$hdr_bg = get_header_image();		// get the url of the standard header image

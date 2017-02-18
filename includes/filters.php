@@ -409,7 +409,7 @@ function weaverx_get_video_render() {
 }
 
 function weaverx_has_header_video() {
-	return function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
+	return weaverx_get_video_render() != 'has-header-video-none' && function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
 		&& (has_header_video() || weaverx_get_per_page_value( '_pp_video_url' ) != '' ) ;
 }
 

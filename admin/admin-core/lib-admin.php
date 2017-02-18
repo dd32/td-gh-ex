@@ -95,21 +95,21 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 	// customizer only, keep values, preserve values, save values, not legacy (search terms for these kinds of settings)
 	$non_sapi = apply_filters('weaverx_non_sapi_options',array(		// non-sapi elements in the db
 		'weaverx_version_id', 'style_version',
-		'theme_filename', 'addon_name', '_hide_theme_thumbs', 'last_option', 'header_video_render',
+		'theme_filename', 'addon_name', '_hide_theme_thumbs', 
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
 		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
-		'_options_level', '_PHP_warning_displayed'));
+		'_options_level', '_PHP_warning_displayed', 'last_option'));
 
 	/*	The following code allows the SAPI to save the non-sapi values. If you don't do this here,
 		then the values will be set to false, and be lost! SAPI is not tolerant of submitting a form
 		that doesn't include EVERY setting for the form group. */
 
+	weaverx_setopt('last_option','Weaver Xtreme');	// Safety check for limited PHP $_POST variables
 	foreach ($non_sapi as $name) {
 ?>
 	<input name="<?php weaverx_sapi_main_name($name); ?>" id="<?php echo $name;?>" type="hidden" value="<?php echo weaverx_getopt($name); ?>" />
 <?php
 	}
-	weaverx_setopt('last_option','Weaver Xtreme');	// Safety check for limited PHP $_POST variables
 	echo ("</form> <!-- $form_name -->\n");
 }
 
@@ -152,9 +152,10 @@ function weaverx_validate_all_options($in) {
 
 
 	$wvr_last = '';
-
+	$cur_item = '';
 
 	foreach ($in as $key => $value) {
+		//$cur_key = $key;
 		switch ($key) {
 
 			/* -------- integer -------- */
@@ -347,18 +348,23 @@ function weaverx_validate_all_options($in) {
 		}
 	}
 
-	if ($wvr_last != 'Weaver Xtreme') {
+	if ( $wvr_last != 'Weaver Xtreme') {
 		//$err_msg .=
 		$vars = ini_get( 'max_input_vars' );
-		$msg =
-		__("<p><strong style='color:red;'>WARNING - Your current settings have not been saved. Your previous settings are unchanged.</strong>
-</p><p>
-Your host may be configured to limit how many input var options you are allowed to pass via PHP. This is usually controlled with the PHP <em>max_input_vars</em> configuration setting (Current value: {$vars}). The standard value of 1000 is too small, and should be increased to 2000. Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface. The Customizer is will still work, as will the 'Save/Restore' tab options.
-</p><p>
-For details on how to increase the <em>max_input_vars</em> PHP setting, please see the
-<a href='https://guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host Configuration: PHP max_input_vars</a> article on the Weaver Xtreme guide site.
-<p>
-PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p>", 'weaver-xtreme' /*adm*/);
+		$newvars = $vars + 1000;
+		$posts = isset($GLOBALS['WVRX_POSTS']) ? $GLOBALS['WVRX_POSTS'] : '?';
+		$gets = isset($GLOBALS['WVRX_GETS']) ? $GLOBALS['WVRX_GETS'] : '?';
+		$cookies = isset($GLOBALS['WVRX_COOKIES']) ? $GLOBALS['WVRX_COOKIES'] : '?';
+		$msg = sprintf(
+		__("<h3 style='color:red;text-align:center;'>WARNING - Your current settings have NOT been saved!<br /> Your previous settings are unchanged.</strong>
+</h3><p>
+Your host seems to be configured to limit how many input form options you are allowed to use with PHP. This is usually controlled by the PHP <em>max_input_vars</em> configuration setting. The current value of <em> %s </em> is too small for your current <em>WordPress</em> and <em>Weaver Xtreme</em> installation. It should be increased to <em> %s </em>. <strong>Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface.</strong> The <em>Customizer</em> will still work, as will the options on the <em>Save/Restore</em> tab. Your site is still functional.
+</p><p style='text-align:center;font-weight:bold;padding:1em;border:1px solid black;'>
+For help on how to increase the <em>max_input_vars</em> PHP setting, please click to see the
+<a href='//guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host&nbsp;Configuration:&nbsp;PHP&nbsp; max_input_vars</a> article on the Weaver Xtreme guide site.</p>
+<p style='color:blue;font-weight:bold;text-align:center;'>
+PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%s/P-%s/G-%s/C-%s/K-%s </small</p>", 'weaver-xtreme'),
+		$vars, $newvars, $vars, $posts, $gets, $cookies,$key);
 		wp_die($msg);
 	}
 

@@ -390,3 +390,9 @@ with testing and feature suggestions.
 * Fix: missing .site-title, .site-tagline generated CSS
 * Fix: Masonry Per Page option
 
+= Version 3.1.3 =
+* Fix: JetPack Infinite scroll now will also work correctly with multi-column posts display.
+* Fix: Legacy interface handling of video rendering in header
+* Fix: Archive pages not showing BG header
+* Tweak: Minor tweaks to the "Go" subthemes
+* API: Added filters for page and archive sidebar layouts

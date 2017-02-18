@@ -48,8 +48,6 @@ if ( ! function_exists( 'weaverx_setup' ) ) {
  */
 function weaverx_setup() {
 
-	// Set the content width based on the theme's design and stylesheet.
-
 	if ( ! isset( $content_width ) )
 		$content_width = (int)(WEAVERX_THEME_WIDTH * .75);   // 1100 * .75 - default for content with a sidebar
 
@@ -168,6 +166,15 @@ function weaverx_init_opts($who='') {
 	}
 
 	do_action('weaverx_init_opts');
+
+	// Keep some info for max_input_vars detection. These have to be collected here because the
+	// WP settings API clears $_POST after the after_setup_theme action
+
+	$GLOBALS['WVRX_POSTS'] = count($_POST, COUNT_RECURSIVE);	// count all elements
+	$GLOBALS['WVRX_GETS'] = count($_GET, COUNT_RECURSIVE);
+	$GLOBALS['WVRX_COOKIES'] = count($_COOKIE, COUNT_RECURSIVE);
+	// echo 'vars: COOKIE ' . count($_COOKIE) . ' GET: ' . count($_GET) . ' POST: ' . count($_POST);
+	// echo '<pre>'; var_dump($_POST); echo '</pre>';
 }
 }
 //--
@@ -479,7 +486,7 @@ function weaverx_render_infinite_scroll() {
 	/* Start the Loop */
 
 	weaverx_post_count_clear();
-	echo ("<div class=\"wvrx-posts\">\n");
+	echo '<div class="wvrx-posts" style="clear:both;">';
 
 	while ( have_posts() ) {
 		the_post();
@@ -523,9 +530,10 @@ function weaverx_render_infinite_scroll() {
 		weaverx_masonry('end-post');
 	}	// end while have posts
 	weaverx_masonry('end-posts');
-	echo ("</div>\n");
+	echo "</div><div style='clear:both;'>\n";	// fix 3.1.3
 
 }
+
 
 /**
  * Increase the maximum image width to be included in a 'srcset' attribute.
