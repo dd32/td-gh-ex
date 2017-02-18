@@ -1,7 +1,7 @@
 /*
 Theme Name:		Adelle
 Description:	Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
-Version:		17.02
+Version:		17.02.1
 Author:			Bluchic
 Author URI:		http://www.bluchic.com
 Theme URI:		http://www.bluchic.com/freebies/adelle-theme/
@@ -103,13 +103,13 @@ a:hover {color: #000;}
 
 .nav ul ul a {display: block; padding: 10px; position: relative;}
 
-.nav li {display: inline-block; float: left; position: relative;}
+.nav li {display: inline-block; position: relative;}
 .nav li:hover > ul {opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100); zoom: 1; visibility: visible; height: auto;}
 .nav ul ul {opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); -webkit-transition: opacity .3s ease-in-out; -moz-transition: opacity .3s ease-in-out; -o-transition: opacity .3s ease-in-out; transition: opacity .3s ease-in-out; zoom: 0; visibility: hidden; height: 0; position: absolute; width: 200px; background: #000; z-index: 200;}
 
 .nav li.has-sub {position: relative;}
-.nav ul li.has-sub > a:after {content: ' \25BE'; font-size: 1.2em; display: inline-block; position: absolute; top: 15px; right: 2px; color: #555;}
-.nav ul ul li.has-sub > a:after {content: ' \25B8'; top: 14px; right: 2px;}
+.nav ul li.has-sub > a:after {content: ' \25BE'; font-size: 1.2em; display: inline-block;}
+.nav ul ul li.has-sub > a:after {content: ' \25B8'; position: absolute; top: 14px; right: 2px;}
 
 .nav ul ul li {display: block; float: none;}
 
@@ -358,8 +358,9 @@ label {display: inline-block; margin-right: 10px;}
 	.nav ul {text-align: center;}
 	.nav ul li, .nav .menu ul ul {display: block; float: none;}
 	.nav a {display: block; padding: 12px;}
-	.nav ul ul, .nav ul ul ul {background: transparent; position: relative; left: auto; top: auto; font-size: .9em; width: auto; height: auto; zoom: 1; visibility: visible; opacity: 1; filter: alpha(opacity=100); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
-	.nav ul li.has-sub > a:after {content: ' \25BE'; font-size: 1.2em; display: inline-block; position: relative; top: 0; right: -10px; color: #555;}
+	.nav ul ul, .nav ul ul ul {position: relative; width: 100%; display: block; left: auto; top: auto;}
+	/*.nav ul ul, .nav ul ul ul {background: transparent; position: relative; left: auto; top: auto; font-size: .9em; width: auto; height: auto; zoom: 1; visibility: visible; opacity: 1; filter: alpha(opacity=100); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
+	*/.nav ul li.has-sub > a:after {content: ' \25BE'; font-size: 1.2em; display: inline-block; position: relative; top: 0; right: -10px; color: #555;}
 	.nav ul ul li.has-sub > a:after {content: ' \25BE'; top: 0; right: -10px;}
 	.nav a {color: #fff;}
 	.nav a:hover {text-decoration: underline; color: #fff;}
@@ -392,8 +393,7 @@ label {display: inline-block; margin-right: 10px;}
 	.footer {clear: both; overflow: hidden; margin: 0 auto; width: 100%; color: #777;}
 
 	/* .header form */
-	.header-form {clear: both; overflow: hidden; position: absolute; top: 8px; right: 20px;}
-	.header-text {width: 80px; border: 1px solid #bbb;}
+	.header-form {display: none;}
 
 	/* .header */
 	.header h1,
@@ -417,7 +417,7 @@ label {display: inline-block; margin-right: 10px;}
 	ul.post-info-meta li.post-info-comment {float: right;}
 
 	/* .footer */
-	p.footer-copy {position: relative; background: #000; color: #aaa; padding: 10px 30px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+	p.footer-copy {position: relative; background: #000; color: #aaa; padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
 	p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 
 }
@@ -433,7 +433,7 @@ label {display: inline-block; margin-right: 10px;}
 	.footer {clear: both; overflow: hidden; margin: 0 auto; width: 1020px; color: #777;}
 
 	/* .header form */
-	.header-form {clear: both; overflow: hidden; position: absolute; top: 8px; right: 40px;}
+	.header-form {clear: both; overflow: hidden; position: absolute; top: 6px; right: 40px;}
 	.header-text {width: 100px; border: 1px solid #bbb;}
 
 	/* .header */
@@ -446,12 +446,11 @@ label {display: inline-block; margin-right: 10px;}
 	.mobile-nav,
 	.tinynav,
 	.menu-click {display: none;}
-	.nav {position: relative; width: 970px; display: inline-block; background: #000; padding: 0 25px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
-
+	.nav {position: relative; width: 950px; display: inline-block; background: #000; padding: 0 35px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
 	.nav:before,
 	.nav:after {border: 1.5em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
-	.nav:before {border-left-color: #fff; border-right-width: 1.4em; left: 0;}
-	.nav:after {border-left-width: 1.4em; border-right-color:#fff; right: 0;}
+	.nav:before {border-left-color: #fff; border-right-width: 1em; left: 0;}
+	.nav:after {border-left-width: 1em; border-right-color:#fff; right: 0;}
 
 	.nav ul {list-style: none; max-width: 780px; display: inline-block;}
 	.nav a {display: block; padding: 14px; color: #fff;}
@@ -464,12 +463,12 @@ label {display: inline-block; margin-right: 10px;}
 	ul.post-info-meta li.post-info-comment {float: right;}
 
 	/* .footer */
-	p.footer-copy {position: relative; background: #000; color: #aaa; padding: 10px 40px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+	p.footer-copy {position: relative; background: #000; color: #aaa; padding: 12px 40px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
 	p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
-	p.footer-copy :before,
-	p.footer-copy :after {border: 1.8em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
-	p.footer-copy :before {border-left-color: #fff; border-right-width: 1.4em; left: 0;}
-	p.footer-copy :after {border-left-width: 1.4em; border-right-color:#fff; right: 0;}
+	p.footer-copy:before,
+	p.footer-copy:after {border: 1.8em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
+	p.footer-copy:before {border-left-color: #fff; border-right-width: 1em; left: 0;}
+	p.footer-copy:after {border-left-width: 1em; border-right-color:#fff; right: 0;}
 
 }
 

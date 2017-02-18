@@ -8,13 +8,13 @@
 
       <?php get_search_form();?>
 
-      <div class="left">
+      <div class="colleft">
         <h3><?php _e( 'Archives by month', 'adelle' ); ?></h3>
         <ul>
           <?php wp_get_archives( 'type=monthly' ); ?>
         </ul>
       </div>
-      <div class="right">
+      <div class="colright">
         <h3><?php _e( 'Archives by category', 'adelle' ); ?></h3>
         <ul>
           <?php wp_list_categories( 'sort_column=name' ); ?>
