@@ -8,7 +8,7 @@
 <div class="search-login socialnormal"><span class="searchlibef"></span>
 <?php 
 beautyandspa_social_links();
-if ( esc_textarea(beautyandspa_get_option('phone-num', '0123-456789')) != '' ): echo '<div class="phonenumber">'.esc_textarea(beautyandspa_get_option('phone-num', '0123-456789')).'</div>'; endif;
-get_search_form();  
+if ( esc_textarea(beautyandspa_get_option('phone-num', '')) != '' ): echo '<div class="phonenumber">'.esc_textarea(beautyandspa_get_option('phone-num', '')).'</div>'; endif;
+get_search_form();
 ?>
 <span class="searchliaft"></span></div>

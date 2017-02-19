@@ -1,7 +1,7 @@
 ----------------------------------
 Beauty and Spa
 ----------------------------------
-Version: 	1.0
+Version: 	1.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -45,3 +45,8 @@ featured-image3.jpg	: CC0 Public Domain - https://pixabay.com/en/seductive-hot-g
 FontAwesome 	: GPL Friendly Licenses, Source -  http://fortawesome.github.io/Font-Awesome
 html5.js		: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
 jquery.skitter.js	: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
+
+
+Changelog 1.1
+-----------------------
+

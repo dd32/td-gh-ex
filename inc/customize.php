@@ -9,16 +9,16 @@ function beautyandspa_customize_register($wp_customize){
 		'title'    		=> __('BEAUTY AND SPA OPTIONS', 'beauty-and-spa'),
 		'description'   => ' <div class="infohead">' . __('We appreciate an','beauty-and-spa') . ' <a href="https://wordpress.org/support/theme/beauty-and-spa/reviews" target="_blank">' . __('Honest Review','beauty-and-spa') . '</a> ' . __('of this Theme if you Love our Work','beauty-and-spa') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','beauty-and-spa') . '<a href="' . esc_url('http://d5creation.com/theme/beautyandspa') .'
-" target="_blank"><strong>' . __('Beauty and Spa Extend','beauty-and-spa') . '</strong></a><br /> <br /> 
+' . __('You can learn more on This Theme from the ','beauty-and-spa') . '<a href="' . esc_url('https://d5creation.com/theme/beautyandspa') .'
+" target="_blank"><strong>' . __('Theme Page','beauty-and-spa') . '</strong></a><br /> <br /> 
         
         
-' . __('You can Visit the Beauty and Spa Extend ','beauty-and-spa') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Beauty and Spa') .'" target="_blank"><strong>' . __('Demo Here','beauty-and-spa') . '</strong></a> 
+' . __('You can find a working ','beauty-and-spa') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Beauty and Spa') .'" target="_blank"><strong>' . __('Demo Here','beauty-and-spa') . '</strong></a> 
         </div>	
 		
 		<div class="specialmsg">
-    		<div>'. __('Do you want the Site Like the Demo ? Please visit to : ', 'beauty-and-spa').'</div>
-        	<a href="'. esc_url('http://d5creation.com/forums/topic/beauty-and-spa-theme-introduction').'" target="_blank"><h3>'.__('Beauty and Spa Theme Tutorial', 'beauty-and-spa').'</h3></a>
+    		<div>'. __('Do you want the Site Like the Demo ? For Supports and Questions, Please visit to : ', 'beauty-and-spa').'</div>
+        	<a href="'. esc_url('https://d5creation.com/forums/topic/beauty-and-spa-theme-introduction').'" target="_blank"><h3>'.__('Beauty and Spa Theme Tutorial', 'beauty-and-spa').'</h3></a>
     	</div>
 			
 		'
@@ -63,7 +63,7 @@ function beautyandspa_customize_register($wp_customize){
 	
 //  Contact Number
     $wp_customize->add_setting('beautyandspa[phone-num]', array(
-        'default'        	=> __('(000) 111-222',  'beauty-and-spa'),
+        'default'        	=> '',
     	'sanitize_callback' => 'esc_textarea',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
@@ -81,7 +81,7 @@ function beautyandspa_customize_register($wp_customize){
     $wp_customize->add_setting('beautyandspa[dfimage]', array(
         'default'           => get_template_directory_uri() . '/images/fimage.jpg',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'esc_url_raw',
         'type'           	=> 'option'
     ));
 
@@ -96,7 +96,7 @@ function beautyandspa_customize_register($wp_customize){
     $wp_customize->add_setting('beautyandspa[nfi404]', array(
         'default'           => get_template_directory_uri() . '/images/404.png',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'esc_url_raw',
         'type'           	=> 'option'
     ));
 
@@ -133,39 +133,39 @@ function beautyandspa_customize_register($wp_customize){
         'settings'   => 'beautyandspa[heading_text]'
     ));
 	
-// Front Page Heading Description
-    $wp_customize->add_setting('beautyandspa[heading_des]', array(
-        'default'        	=> __('WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time','beauty-and-spa'),
-        'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
-        'type'           	=> 'option'
-
-    ));
-
-    $wp_customize->add_control('beautyandspa_heading_des' , array(
-        'label'      => __('Front Page Heading Description', 'beauty-and-spa'),
-        'section'    => 'beautyandspa_heading',
-        'settings'   => 'beautyandspa[heading_des]',
-		'type' 		 => 'textarea'
-    ));
-
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
-
+ 
  $wp_customize->add_section('beautyandspa_slide', array(
         'priority' 		=> 12,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slide', 'beauty-and-spa'),
         'description'   => ''
     ));
+	
+	$wp_customize->add_setting('beautyandspa[sfpsld]', array(
+        'default'        	=> '',
+        'capability'     	=> 'edit_theme_options',
+    	'sanitize_callback' => 'esc_attr',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('beautyandspa_sfpsld' , array(
+        'label'      	=> __('Show the Slider', 'beauty-and-spa'),
+        'section'    	=> 'beautyandspa_slide',
+        'settings'   	=> 'beautyandspa[sfpsld]',
+		'type'     		=> 'checkbox',
+    ));
+
   
  foreach (range(1, 3) as $beautyandspa_sinumber )  {	  
 //  Banner Image/ Slide Image
     $wp_customize->add_setting('beautyandspa[slide-image'.$beautyandspa_sinumber.']', array(
         'default'           => get_template_directory_uri() . '/images/slide-image/slide-image'.$beautyandspa_sinumber.'.jpg',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'esc_url_raw',
         'type'           	=> 'option'
     ));
 
@@ -271,22 +271,6 @@ foreach (range(1, 4) as $beautyandspa_fbxp )  {
         'settings'   => 'beautyandspa[staffboxes-heading]'
     ));
 	
-// Staff Box Description
-    $wp_customize->add_setting('beautyandspa[staffboxes-heading-des]', array(
-        'default'        	=> __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','beauty-and-spa'),
-        'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
-        'type'           	=> 'option'
-
-    ));
-
-    $wp_customize->add_control('beautyandspa_staffboxes-heading-des' , array(
-        'label'      => __('Staff Box Description', 'beauty-and-spa'),
-        'section'    => 'beautyandspa_fubx',
-        'settings'   => 'beautyandspa[staffboxes-heading-des]',
-		'type' 		 => 'textarea'
-    ));
-
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
@@ -342,7 +326,7 @@ foreach (range(1, 7) as $beautyandspa_sl )  {
 //  Social Link
     $wp_customize->add_setting('beautyandspa[sl'.$beautyandspa_sl.']', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'esc_url_raw',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
     ));

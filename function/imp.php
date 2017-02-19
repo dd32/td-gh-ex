@@ -4,9 +4,8 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 3.0
 */
-
 // 	Social Links
-	function beautyandspa_social_links( $beautyandspa_sval = '1' ) { 
+function beautyandspa_social_links( $beautyandspa_sval = '1' ) { 
 	 If ( $beautyandspa_sval == '1' ): ?>
 	 <div class="social social-link"><?php foreach (range(1, 7 ) as $beautyandspa_numslinksn) { if ( esc_url(beautyandspa_get_option('sl' . $beautyandspa_numslinksn, '')) != '' ): echo '<a href="'. esc_url(beautyandspa_get_option('sl' . $beautyandspa_numslinksn, '')) .'" target="_blank"> </a>'; endif; } ?></div>
 	<?php endif; 
@@ -33,7 +32,7 @@
 	}
 	
 	function beautyandspa_creditline () {
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"><img  src="'. get_template_directory_uri().'/images/d5logofooter.png" /> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 
 
@@ -69,5 +68,5 @@
 			
 	if ( is_single() ): echo  $beautyandspa_authorbio; endif; 
 	endif;  
-	} ?>
+	} 
 	

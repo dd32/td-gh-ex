@@ -22,6 +22,7 @@
 
 	add_theme_support( "title-tag" );
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'html5', array( 'search-form' ) );
 	
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width; if ( ! isset( $content_width ) ) $content_width = 784;
@@ -88,7 +89,9 @@
 	
 	function beautyandspa_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' .__('Read More', 'beauty-and-spa') . '</a>';
+	if (!is_admin()):
+	return '<a href="'. esc_url(get_permalink($post->ID)) . '" class="read-more">' . __('Read More', 'beauty-and-spa'). '</a>';
+	endif;
 	}
 	add_filter('excerpt_more', 'beautyandspa_excerpt_more');
 	
@@ -168,5 +171,5 @@
 	add_action( 'widgets_init', 'beautyandspa_widgets_init' );
 	
 	add_filter('the_title', 'beautyandspa_title');
-	function beautyandspa_title($beautyandspa_title) { if ( '' == $beautyandspa_title ) { return '(Untitled)'; } else { return $beautyandspa_title; } }
+	function beautyandspa_title($beautyandspa_title) { if ( '' == $beautyandspa_title ) { return __('(Untitled)', 'beauty-and-spa'); } else { return $beautyandspa_title; } }
 

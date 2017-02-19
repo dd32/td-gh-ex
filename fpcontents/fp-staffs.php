@@ -16,8 +16,7 @@ if ( ! empty( $beautyandspa_users->results ) ) :
 <div class="clear"></div>
 <div id="staff-box-item" class="staffbox-item">
 	<h2 class="boxtoptitle" ><?php echo esc_textarea(beautyandspa_get_option('staffboxes-heading', 'WE ARE INSIDE')); ?></h2>
-	<h4 class="boxtopdes" ><?php echo esc_textarea(beautyandspa_get_option('staffboxes-heading-des', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua')); ?></h4>
-	
+
 			<div class="staff-box">
 				<?php foreach ( $beautyandspa_users->results as $beautyandspa_userx ) { ?><!--
 				--><div class="view-staff">

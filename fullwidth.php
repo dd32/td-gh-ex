@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div id="container">
 <div class="content-full">
 <?php get_template_part( 'post-content' ); ?>

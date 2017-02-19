@@ -7,6 +7,7 @@
 */
 
 ?>
+<?php if ( esc_attr(beautyandspa_get_option ( 'sfpsld' , '') == '1' ) || esc_attr(beautyandspa_get_option ( 'dsfp' , '')) == '1' ): ?>
 <div class="box100">
 <div id="mslideback"> </div>
 <div class="clear"></div>
@@ -22,5 +23,5 @@
 	</div>
 </div>
 <div class="clear"></div>
-
+<?php endif; ?>
 

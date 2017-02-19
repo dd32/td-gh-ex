@@ -1,14 +1,10 @@
 <?php
-
 /* 	Beauty and Spa Theme's Header
 	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */
-
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />

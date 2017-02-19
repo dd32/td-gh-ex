@@ -7,7 +7,7 @@ Author URI: http://d5creation.com
 
 Description: Beauty and Spa is a CSS3 Powered and WordPress Latest Version Ready Theme for Beauty Salon and Massage Parlors. It can also be used in any Small Business to Corporate Business. Beauty and Spa Theme is E-Commerce Ready by WooCommerce
 
-Version: 1.0
+Version: 1.1
 
 Tags: two-columns, right-sidebar, custom-header, featured-images, blog, education, entertainment, holiday, photography, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, portfolio, full-width-template, theme-options 
 
@@ -175,8 +175,8 @@ iframe { max-width: 100%; max-height: 100%; }
 #footer-sidebar .widget li{list-style: square outside none; padding: 5px 0;}
 #right-sidebar input#s,
 #footer-sidebar input#s{width:60%;min-width:100px;}
-#right-sidebar form#searchform input[type="submit"],
-#footer-sidebar form#searchform input[type="submit"]{padding:8px 7px;}
+#right-sidebar form.search-form input[type="submit"],
+#footer-sidebar form.search-form input[type="submit"]{padding:8px 7px;}
 .textwedget{width:100%;}
 
 /*..... Design Elements
@@ -492,18 +492,18 @@ ul.page-numbers { list-style: none; margin: 0; }
 .mobile-menu { cursor:pointer; font-size: 20px; display: none; padding: 5px; color: #ffffff; background: #e200ba; text-align: center; }
 .mobile-menu::before { font-style: normal; font-weight: normal; content:'\f0c9'; padding-right: 10px; }
 
-.phonenumber, .extranumber, .search-login #searchform::before, a.loginicon::before, a.loginicon:hover::before { color: #fb4baa; }
+.phonenumber, .extranumber, .search-login .search-form::before, a.loginicon::before, a.loginicon:hover::before { color: #fb4baa; }
 .search-login { position: absolute; right: 5%; z-index: 9999; background: #f7f7f7; padding: 3px 3px 1px; height: 31px; margin-right: 35px; }
 .searchlibef { width: 0; height: 0; border-style: solid; border-width: 0 35px 31px 0; border-color: transparent #f7f7f7 transparent transparent; left: -35px; top: 0; position: absolute; }
 .searchliaft { width: 0; height: 0; border-style: solid; border-width: 31px 35px 0 0;; border-color: #f7f7f7 transparent transparent transparent; right: -35px; top: 0; position: absolute; }
 
-.search-login #searchform { display: inline-block; vertical-align: top;  }
-.search-login #searchsubmit { display: none; }
+.search-login .search-form { display: inline-block; vertical-align: top;  }
+.search-login .search-submit { display: none; }
 
-.search-login #searchform::before { font-style: normal; font-weight: normal; content: '\f002'; font-size: 19px; font-weight: bold; padding: 0 3px; vertical-align: middle; position: absolute; z-index: 10; margin-left: 5px; margin-top: 1px; }
+.search-login .search-form::before { font-style: normal; font-weight: normal; content: '\f002'; font-size: 19px; font-weight: bold; padding: 0 3px; vertical-align: middle; position: absolute; z-index: 10; margin-left: 5px; margin-top: 1px; }
 
-.search-login input#s{ min-width: 0px; font-size: 13px; padding: 3px; width: 70px; width: 0px; background: transparent; border-radius: 3px; border: none; padding-left: 25px; cursor: pointer;  -webkit-transition-duration: 400ms; -webkit-transition-property: width, background; -webkit-transition-timing-function: ease; -moz-transition-duration: 400ms; -moz-transition-property: width, background; -moz-transition-timing-function: ease; -o-transition-duration: 400ms; -o-transition-property: width, background; -o-transition-timing-function: ease; color: #aaaaaa; z-index: 20; position: relative; }
-.search-login input#s:focus { width: 170px; color: #aaaaaa; background: #ffffff; cursor: text; z-index: 9; border: 1px solid #fb4baa; }
+.search-login input.search-field{ min-width: 0px; font-size: 13px; padding: 3px; width: 70px; width: 0px; background: transparent; border-radius: 3px; border: none; padding-left: 25px; cursor: pointer;  -webkit-transition-duration: 400ms; -webkit-transition-property: width, background; -webkit-transition-timing-function: ease; -moz-transition-duration: 400ms; -moz-transition-property: width, background; -moz-transition-timing-function: ease; -o-transition-duration: 400ms; -o-transition-property: width, background; -o-transition-timing-function: ease; color: #aaaaaa; z-index: 20; position: relative; }
+.search-login input.search-field:focus { width: 170px; color: #aaaaaa; background: #ffffff; cursor: text; z-index: 9; border: 1px solid #fb4baa; }
 .phonenumber, .extranumber { display: inline-block; font-size: 17px; vertical-align: top; margin: 0 10px 0 0; }
 .phonenumber:before, .extranumber:before { font-style: normal; font-weight: normal; content: '\f098'; vertical-align: middle; font-size: 20px; margin:0 3px 0 0; position: relative; display: inline-block; }
 .extranumber:before { content: ''; }
@@ -543,7 +543,7 @@ ul.page-numbers { list-style: none; margin: 0; }
 .screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
 .screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #21759b; 	display: block; font-size: 14px; font-size: 0.875rem; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; 	text-decoration: none; top: 5px; width: auto; z-index: 100000; /* Above WP toolbar. */ }
 
-.phonenumber::before, .contactinfo span::before, .go-top::before, .read-more::before, .read-more::after, .plusicon::before, .minusicon::before, .serlink::after, .wccart-icon::before, .extranumber:before , a.loginicon::before, .search-login #searchform::before, .mobile-menu::before, #main-menu-con a::after, .top-menu-con a::before, .connumber::before,  .social-link a::before, .social a, .social a::before, .profile-link a::before, .fea-item::before, .box-icon::before, .contactinfo span::before, .glink::before, .plusicon::before, .serlink::after, page-title::before, .post-meta span::before, .slide_btn::before, .slide_btn::after, .wccart-icon::before, .page-nav a span::before, .up-bottom-border span::before, .page-link::before, blockquote:before, q:before, blockquote:after, q:after, .commentsbox::before, .searchinfo h1::before, .post-container::before, .tespn::before { font-family: FontAwesome !important; }
+.phonenumber::before, .contactinfo span::before, .go-top::before, .read-more::before, .read-more::after, .plusicon::before, .minusicon::before, .serlink::after, .wccart-icon::before, .extranumber:before , a.loginicon::before, .search-login .search-form::before, .mobile-menu::before, #main-menu-con a::after, .top-menu-con a::before, .connumber::before,  .social-link a::before, .social a, .social a::before, .profile-link a::before, .fea-item::before, .box-icon::before, .contactinfo span::before, .glink::before, .plusicon::before, .serlink::after, page-title::before, .post-meta span::before, .slide_btn::before, .slide_btn::after, .wccart-icon::before, .page-nav a span::before, .up-bottom-border span::before, .page-link::before, blockquote:before, q:before, blockquote:after, q:after, .commentsbox::before, .searchinfo h1::before, .post-container::before, .tespn::before, .search-form::before { font-family: FontAwesome !important; }
 
 * { box-sizing:  border-box;  }
 ::-webkit-input-placeholder { color: #555555; }
