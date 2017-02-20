@@ -89,7 +89,7 @@ class Semplicemente_Admin {
 		?>
 		<div id="message" class="updated cresta-message">
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'semplicemente-hide-notice', 'welcome' ) ), 'semplicemente_hide_notices_nonce', '_semplicemente_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'semplicemente' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Semplicemente! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'semplicemente' ), '<a href="' . esc_url( admin_url( 'themes.php?page=semplicemente-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Semplicemente! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'semplicemente' ), '<a href="' . esc_url( admin_url( 'themes.php?page=semplicemente-welcome' ) ) . '">', '</a>' ); ?></p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=semplicemente-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Semplicemente', 'semplicemente' ); ?></a>
 			</p>

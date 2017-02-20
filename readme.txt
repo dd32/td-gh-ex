@@ -153,3 +153,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.7.3 =
 * Now Semplicemente is no longer compatible with WordPress 4.1 version or lower
 * Minor bug fixes
+
+= Version 1.7.4 =
+* Added icons to Categories Widget and Archives Widget
+* Minor bug fixes

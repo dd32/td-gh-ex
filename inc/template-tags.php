@@ -128,6 +128,9 @@ function semplicemente_categorized_blog() {
  * Flush out the transients used in semplicemente_categorized_blog.
  */
 function semplicemente_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'semplicemente_categories' );
 }
