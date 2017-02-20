@@ -36,8 +36,33 @@ if ( ! defined( 'ABSPATH' ) ) {
     			} else {
     				$target = '_self';
     			} 
+    			if(isset($icon['attachment_id'])) {
+					$id = $icon['attachment_id'];
+				} else {
+					$id = '';
+				}
+				if(isset($icon['icon_o'])) {
+					$icon_o = $icon['icon_o'];
+				} else {
+					$icon_o = '';
+				}
+				if(isset($icon['url'])) {
+					$link = $icon['url'];
+				} else {
+					$link = '';
+				}
+				if(isset($icon['title'])) {
+					$title = $icon['title'];
+				} else {
+					$title = '';
+				}
+				if(isset($icon['description'])) {
+					$subtitle = $icon['description'];
+				} else {
+					$subtitle = '';
+				}
                 echo '<div class="'.esc_attr($itemsize).' box-iconmenu iconitemcount'.esc_attr($counter).'">';
-    				ascend_icon_menu_output($icon['icon_o'], $icon['attachment_id'], $icon['url'], $target, $icon['title'], $icon['description'], $readmore);
+    				ascend_icon_menu_output($icon_o, $id, $link, $target, $title, $subtitle, $readmore);
     			echo '</div>';
                 $counter ++;
             endforeach; 

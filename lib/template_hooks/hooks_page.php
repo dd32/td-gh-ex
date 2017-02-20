@@ -194,3 +194,200 @@ if(!function_exists('ascend_build_image_menu')) {
 	
 	}
 }
+if(!function_exists('ascend_build_post_content_carousel')) {
+    function ascend_build_post_content_carousel($id='content_carousel', $columns='4', $type = 'post', $cat = null, $items = 8, $orderby = null, $order = null, $class = null, $offset = null, $auto = 'true', $speed = '9000', $scroll = '1', $arrows = 'true', $trans_speed = '400', $productargs = null, $xxlcol = null, $xlcol = null, $mdcol = null, $smcol = null, $xscol = null, $sscol = null ) {
+    	$cc = array();
+		if ($columns == '2') {
+			$cc = ascend_carousel_columns('2');
+		} else if ($columns == '3'){
+			$cc = ascend_carousel_columns('3');
+		} else if ($columns == '6'){
+			$cc = ascend_carousel_columns('6');
+		} else if ($columns == '5'){ 
+			$cc = ascend_carousel_columns('5');
+		} else {
+			$cc = ascend_carousel_columns('4');
+		} 
+		$cc = apply_filters('kadence_carousel_columns', $cc, $id);
+		if( !empty($xxlcol) ) {
+			$cc['xxl'] = $xxlcol;
+		}
+		if( !empty($xlcol) ) {
+			$cc['xl'] = $xlcol;
+		}
+		if( !empty($mdcol) ) {
+			$cc['md'] = $mdcol;
+		}
+		if( !empty($smcol) ) {
+			$cc['sm'] = $smcol;
+		}
+		if( !empty($xscol) ) {
+			$cc['xs'] = $xscol;
+		}
+		if( !empty($sscol) ) {
+			$cc['ss'] = $sscol;
+		}
+		$post_type = $type;
+    	$extraargs = array();
+    	if($type == 'portfolio') {
+    		$tax = 'portfolio-type';
+    		$margin = 'row-margin-small';
+    		global $kt_portfolio_loop;
+            $kt_portfolio_loop = array(
+            	'lightbox' 		=> 'true',
+             	'showexcerpt' 	=> 'false',
+             	'showtypes' 	=> 'true',
+            	'columns' 		=> $columns,
+            	'ratio' 		=> 'square',
+            	'style' 		=> 'pgrid',
+            	'carousel' 		=> 'true',
+            	'tileheight' 	=> '',
+         	);
+         	if(empty($orderby)) {
+				$orderby = 'menu_order';
+			}
+			if(empty($order)) {
+				$order = 'ASC';
+			}
+    	} elseif($type == 'product') {
+    		global $woocommerce_loop;
+    		$margin = 'row-margin-small';
+    		if(empty($orderby)) {
+				$orderby = 'menu_order';
+			}
+			if(empty($order)) {
+				$order = 'ASC';
+			}
+			if($columns == 1) {
+		  		$woocommerce_loop['columns'] = 3;
+		  	}else {
+		  		$woocommerce_loop['columns'] = $columns;
+	    	}
+    		if($productargs == 'featured'){
+	    		$extraargs = array(
+	    			'meta_key' 		=> '_featured',
+					'meta_value' 	=> 'yes',
+				);
+    		} else if ($productargs == 'best') {
+    			$extraargs = array(
+	    			'meta_key' 		=> 'total_sales',
+					'orderby' 	=> 'meta_value_num',
+				);
+			} else if ($productargs == 'sale'){
+				if (class_exists('woocommerce')) {
+					global $woocommerce, $woocommerce_loop;
+					$product_ids_on_sale = woocommerce_get_product_ids_on_sale(); $product_ids_on_sale[] = 0;
+					$meta_query = array();
+			        $meta_query[] = $woocommerce->query->visibility_meta_query();
+			        $meta_query[] = $woocommerce->query->stock_status_meta_query();
+			        $extraargs = array(
+		    			'meta_query' 		=> $meta_query,
+						'post__in' 			=> $product_ids_on_sale,
+					);
+      			}
+			} else if ($productargs == 'latest'){
+			        $extraargs = array(
+		    			'orderby' 	=> 'date',
+						'order' 	=> 'desc',
+					);
+			}
+    		$tax = 'product_cat';
+    	} else if($type == 'staff') {
+    		$margin = 'rowtight';
+    		$tax = 'staff-group';
+    		if(empty($orderby)) {
+				$orderby = 'menu_order';
+			}
+			if(empty($order)) {
+				$order = 'ASC';
+			}
+    	} else if($type == 'testimonal') {
+    		$margin = 'rowtight';
+    		$tax = 'testimonal-group';
+    		if(empty($orderby)) {
+				$orderby = 'menu_order';
+			}
+			if(empty($order)) {
+				$order = 'ASC';
+			}
+    	} else {
+    		$post_type = 'post';
+    		global $kt_grid_columns, $kt_grid_carousel;
+    		$kt_grid_columns = $columns;
+    		$kt_grid_carousel = true;
+    		$margin = 'rowtight';
+    		$tax = 'category';
+    		if(empty($orderby)) {
+				$orderby = 'date';
+			}
+			if(empty($order)) {
+				$order = 'DESC';
+			}
+			if ($kt_grid_columns == '2') {
+		        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
+		    } else if ($kt_grid_columns == '3'){ 
+		        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+		    } else {
+		        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
+		   	}
+    	}
+    	$args = array(
+			'orderby' 			=> $orderby,
+			'order' 			=> $order,
+			'post_type' 		=> $post_type,
+			'offset' 			=> $offset,
+			'post_status' 		=> 'publish',
+			$tax 				=> $cat,
+			'posts_per_page' 	=> $items,
+		);
+		$args = array_merge($args, $extraargs);
+			echo '<div class="carousel_outerrim">';
+			echo '<div class="carouselcontainer '.esc_attr($margin).'">';
+			echo '<div id="kadence-carousel-'.esc_attr($id).'" class="slick-slider '.esc_attr($class).' carousel_shortcode kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="'.esc_attr($trans_speed).'" data-slider-scroll="'.esc_attr($scroll).'" data-slider-auto="'.esc_attr($auto).'" data-slider-speed="'.esc_attr($speed).'" data-slider-xxl="'.esc_attr($cc['xxl']).'" data-slider-xl="'.esc_attr($cc['xl']).'" data-slider-md="'.esc_attr($cc['md']).'" data-slider-sm="'.esc_attr($cc['sm']).'" data-slider-xs="'.esc_attr($cc['xs']).'" data-slider-ss="'.esc_attr($cc['ss']).'">';
+            		if(isset($wp_query)) {
+            			$temp = $wp_query; 
+            		} else {
+            			$temp = null;
+            		}
+				  	$wp_query = null; 
+				  	$wp_query = new WP_Query();
+				  	$wp_query->query($args);
+					if ( $wp_query ) : 
+						if($type == 'portfolio') {
+							while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+					        	get_template_part('templates/content', 'loop-portfolio'); 
+					        endwhile;
+                    	} elseif($type == 'product') {
+							while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    			woocommerce_get_template_part( 'content', 'product' ); 
+                    		endwhile;
+                    	} elseif($type == 'staff') {
+                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    			get_template_part('templates/content', 'loop-staff'); 
+                    		endwhile;
+                    	} elseif($type == 'testimonal') {
+                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    			get_template_part('templates/content', 'loop-stestimonal');
+                    		endwhile;
+                    	} elseif($type == 'post_photo') {
+                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    			echo '<div class="'.esc_attr($itemsize).' b_item kad_blog_item">';
+                    				get_template_part('templates/content', 'post-photo-grid');
+                    			echo '</div>';
+                    		endwhile;
+                    	} else {
+                    		while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                    			echo '<div class="'.esc_attr($itemsize).' b_item kad_blog_item">'; 
+                    				get_template_part('templates/content', 'post-grid');
+                    			echo '</div>';
+                    		endwhile;
+                    	}
+					endif; 
+                    $wp_query = null; 
+                    $wp_query = $temp;  // Reset
+                    wp_reset_query(); 
+            echo '</div>';
+            echo '</div>';
+            echo '</div> <!--Carousel-->';
+    }
+}

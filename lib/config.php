@@ -98,7 +98,7 @@ function ascend_carousel_columns($columns, $sidebar = false) {
         $cc['ss'] = 2;
     } else if($columns == 3) {
         $cc['md'] = 3; 
-        $cc['sm'] = 3; 
+        $cc['sm'] = 2; 
         $cc['xs'] = 2;
         $cc['ss'] = 1;
     } else if($columns == 2) {
@@ -285,6 +285,7 @@ $icons = array('kt-icon-asterisk','kt-icon-plus','kt-icon-question','kt-icon-min
 return apply_filters('kadence_icon_list', $icons);
 
 }
-add_filter( "redux/ascend/field/font/icons", 'ascend_icon_list' );
+add_filter( 'redux/ascend/field/font/icons', 'ascend_icon_list' );
+add_filter( 'kt_toolkit_icon_list', 'ascend_icon_list' );
 
 if (!isset($content_width)) { $content_width = 1140; }

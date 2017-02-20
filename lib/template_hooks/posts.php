@@ -89,9 +89,14 @@ function ascend_single_post_meta_date_author() {
 add_action( 'kadence_single_attachment_header', 'ascend_post_header_title', 20 );
 add_action( 'kadence_single_post_header', 'ascend_post_header_title', 20 );
 function ascend_post_header_title() {
-	echo '<h1 class="entry-title" itemprop="name headline">';
-	the_title();
-	echo '</h1>';
+	global $ascend;
+	if(isset($ascend['blog_post_title_inpost']) && $ascend['blog_post_title_inpost'] == 0) {
+		// do nothing
+	} else {
+		echo '<h1 class="entry-title" itemprop="name headline">';
+			the_title();
+		echo '</h1>';
+	}
 }
 
 add_action( 'kadence_single_attachment_before_header', 'ascend_single_attachment_image', 20 );
@@ -126,7 +131,8 @@ function ascend_post_footer_tags() {
 		echo '</div>';
 	}
 }
-
+add_action( 'kadence_post_grid_excerpt_footer', 'ascend_post_footer_meta', 30 );
+add_action( 'kadence_post_excerpt_footer', 'ascend_post_footer_meta', 30 );
 add_action( 'kadence_single_loop_post_footer', 'ascend_post_footer_meta', 30 );
 add_action( 'kadence_single_post_footer', 'ascend_post_footer_meta', 30 );
 function ascend_post_footer_meta() {

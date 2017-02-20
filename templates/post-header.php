@@ -93,10 +93,10 @@
 		// Blog Post
 		if(!empty($post_header_title)) {
 			$page_title_title = $post_header_title;
-		} else if(isset($ascend['single_post_header_title']) && $ascend['single_post_header_title'] == 'custom') {
+		} else if(isset($ascend['blog_post_title_content']) && $ascend['blog_post_title_content'] == 'custom') {
 			if(isset($ascend['post_header_title_text'])) {$page_title_title = $ascend['post_header_title_text']; } else { $page_title_title = '';}
 			if(!empty($ascend['post_header_subtitle_text'])){ $bsub = $ascend['post_header_subtitle_text'];}
-		} else if (isset($ascend['single_post_header_title']) && $ascend['single_post_header_title'] == 'posttitle') {
+		} else if (isset($ascend['blog_post_title_content']) && $ascend['blog_post_title_content'] == 'posttitle') {
 			$page_title_title =  get_the_title();
 		} else {
 			$terms = wp_get_post_terms( $post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'DESC' ) );

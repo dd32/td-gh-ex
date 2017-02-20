@@ -45,7 +45,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 					$target = '_self';
 				}
 				$class = 'home-image-menu-'.$counter;
-			echo ascend_build_image_menu( $slide['attachment_id'], $type, $height, $slide['link'], $target, $slide['title'], $slide['description'], 'left', 'bottom', $class);
+				if(isset($slide['attachment_id'])) {
+					$id = $slide['attachment_id'];
+				} else {
+					$id = '';
+				}
+				if(isset($slide['url'])) {
+					$image_uri = $slide['url'];
+				} else {
+					$image_uri = '';
+				}
+				if(isset($slide['link'])) {
+					$link = $slide['link'];
+				} else {
+					$link = '';
+				}
+				if(isset($slide['title'])) {
+					$title = $slide['title'];
+				} else {
+					$title = '';
+				}
+				if(isset($slide['description'])) {
+					$subtitle = $slide['description'];
+				} else {
+					$subtitle = '';
+				}
+			echo ascend_build_image_menu( $id, $type, $height, $link, $target, $title, $subtitle, 'left', 'bottom', $class, $image_uri);
 			echo '</div>';
 			$counter ++;
 

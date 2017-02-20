@@ -48,6 +48,7 @@ body.body-style-normal #wrapper, body.body-style-bubbled #wrapper {
 }
 body.body-style-boxed #wrapper {
     width: 100% !important;
+    position: relative;
 }
 
 // sidebar
@@ -72,6 +73,10 @@ body.body-style-boxed #wrapper {
 #content {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+body.siteorigin-panels:not(.single-product) #content {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 #content.page-content-no-padding {
     padding-top: 0;
@@ -104,12 +109,7 @@ body.body-style-bubbled {
 body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass {
     background: transparent;
 }
-body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .ascend-trans-logo {
-    display: block;
-}
-body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .ascend-logo {
-    display: none;
-}
+
 body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .nav-main ul.sf-menu > li > a, body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .kt-header-extras ul.sf-menu > li > a, body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .kt-header-extras .kt-extras-label [class*="kt-icon-"], body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .kt-header-extras .kadence_social_widget a, body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .second-navclass .sf-menu > li > a, body.trans-header:not(.kad-header-position-above) div:not(.is-sticky) > .second-navclass .sf-menu > li > a {
 	color:#fff;
 }
@@ -148,14 +148,17 @@ body.trans-header #kad-header-menu, body.trans-header #kad-mobile-banner{
     width: 100%;
     left: 0;
     top: 0;
-    z-index: 500;
+   z-index: 1000;
     border-bottom: 1px solid transparent;
+}
+body.trans-header.body-style-boxed #kad-header-menu {
+	left: auto;
 }
 body.trans-header:not(.kad-header-position-above) .outside-second .second-navclass{
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 500;
+   z-index: 1000;
     border-bottom: 1px solid transparent;
 }
 body.trans-header:not(.kad-header-position-above) .outside-second .sticky-wrapper {
@@ -170,11 +173,11 @@ body.trans-header #kad-header-menu-sticky-wrapper {
 body.trans-header #kad-mobile-banner-sticky-wrapper {
 	height: 0 !important;
 }
-body.trans-header.admin-bar #kad-header-menu, body.trans-header.admin-bar #kad-mobile-banner{
+body.trans-header.admin-bar:not(.body-style-boxed) #kad-header-menu, body.trans-header.admin-bar:not(.body-style-boxed) #kad-mobile-banner{
     top: 32px;
 }
 @media screen and (max-width: 782px) {
-	body.trans-header.admin-bar #kad-mobile-banner {
+	body.trans-header.admin-bar:not(.body-style-boxed) #kad-mobile-banner {
 	    top: 46px;
 	}
 }
@@ -207,57 +210,14 @@ body {
 .sf-vertical.sf-menu li.menu-widget-area-kt {
     margin-top: 5px;
 }
-
+.siteorigin-panels-home #content.homepagecontent {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.kt-no-cell-margin .panel-grid-cell, .kt-no-cell-margin .panel-grid-cell .so-panel {
+    margin-bottom: 0 !important;
+}
 .kt-row-style-no-padding {
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
-}
-.kt_sep_panel {
-	height: 100px;
-    position: relative;
-    svg {
-    	position: absolute;
-	    bottom: -5px;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-	    display: block;
-    }
-}
-.sep_right_triangle svg, .sep_tilt_left svg {
-	.scaleX(-1);
-}
-.sep_center_small_triangle {
-    height: 0;
-}
-.sep_center_triangle_double path.large-center-triangle {
-    fill: rgba(0,0,0,.2);
-}
-.sep-triangle-bottom {
-	width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 50px solid #fff;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    z-index: 1;
-    margin-left: -50px;
-}
-.sep_three_small_triangle {
-	height: 0;
-	.sep-triangle-bottom {
-	    border-left: 30px solid transparent;
-	    border-right: 30px solid transparent;
-	    border-top: 30px solid #fff;
-	    left: 50%;
-	    margin-left: -30px;
-	}
-	.sep-triangle-bottom.left-small {
-	    margin-left: -90px;
-	}
-	.sep-triangle-bottom.right-small {
-	    margin-left: 30px;
-	}
 }

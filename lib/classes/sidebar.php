@@ -506,14 +506,25 @@ function ascend_sidebar_on_home_page() {
     }
 }
 function ascend_sidebar_on_archive() {
-    if(is_archive()) {
-        global $ascend; 
-        if(isset($ascend['blog_cat_layout']) && $ascend['blog_cat_layout'] == 'full') {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    if( class_exists('woocommerce') ) {
+	    if( is_archive() && (!is_tax('portfolio-type') && !is_tax('portfolio-tag') && !is_tax('product_cat') && !is_tax('product_tag') && !is_tax('staff-group') && !is_tax('testimonial-group') && !is_shop() ) ) {
+	        global $ascend; 
+	        if(isset($ascend['blog_cat_layout']) && $ascend['blog_cat_layout'] == 'full') {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
+	} else {
+		if(is_archive() && (!is_tax('portfolio-type') && !is_tax('portfolio-tag') && !is_tax('staff-group') && !is_tax('testimonial-group'))) {
+	        global $ascend; 
+	        if(isset($ascend['blog_cat_layout']) && $ascend['blog_cat_layout'] == 'full') {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
+	}
 }
 
 

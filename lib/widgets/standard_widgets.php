@@ -516,7 +516,8 @@ class kad_recent_posts_widget extends WP_Widget {
 		    echo '</ul>';
 	    	if($readmore == 'true') {
 	    		if(isset($instance['thecate']) && !empty($instance['thecate'])) {
-	    			$link = get_category_link($instance['thecate']);
+	    			$cat = get_category_by_slug($instance['thecate']); 
+	    			$link = get_category_link($cat->term_id);
 	    		} else {
 	    			$post_id = get_option( 'page_for_posts' );
 	    			if(isset($post_id) && !empty($post_id)) {

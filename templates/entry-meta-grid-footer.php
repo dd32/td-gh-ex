@@ -7,9 +7,10 @@
         echo '<span class="postcommentscount kt-post-comments"><a href="'.get_the_permalink().'#comments" class="kt_color_gray"><i class="kt-icon-comments-o"></i>'.get_comments_number( '0', '1', '%' ).'</a></span>';
     } ?>
     <span class="postauthor kt-post-author author vcard">
-            <span itemprop="author">
-                <span class="fn kt_color_gray" rel="author" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
-                 <i class="kt-icon-user"></i>
+            <span>
+                <span class="kt_color_gray" rel="author" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
+                	<meta itemprop="author" class="fn" content="<?php echo get_the_author() ?>">
+                 	<i class="kt-icon-user"></i>
                 </span>
             </span>
     </span>

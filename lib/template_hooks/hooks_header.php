@@ -167,8 +167,8 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 					case 'search':
 						if($value == '1') { ?>
 				        	 <li class="menu-search-icon-kt">
-								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo home_url().'/?s=""'; ?>">
-									<div class="kt-extras-label"><i class="kt-icon-search"></i></div>
+								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo home_url().'/?s='; ?>">
+									<span class="kt-extras-label"><i class="kt-icon-search"></i></span>
 								</a>
 				        	</li>
 							<?php 
@@ -187,7 +187,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 
 						                ?>
 							            <a class="menu-account-btn" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-							                <div class=" kt-extras-label"><span><?php echo esc_html($title);?></span></div>
+							                <span class=" kt-extras-label"><span><?php echo esc_html($title);?></span></span>
 							            </a>
 							            <ul id="kad-head-my-account-menu" class="sf-dropdown-menu kad-head-my-account-menu">
 							            <?php 
@@ -203,7 +203,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 						                    $title =  __('Login', 'ascend');
 						                } ?>
 					             		<a class="menu-account-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-login">
-					                		<div class="kt-extras-label"><span><?php echo esc_html($title);?></span></div>
+					                		<span class="kt-extras-label"><span><?php echo esc_html($title);?></span></span>
 					            		</a>
 
 					              	<?php  } ?>
@@ -217,22 +217,23 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 							if (class_exists('woocommerce'))  {  ?>
 						        	<li class="menu-cart-icon-kt sf-dropdown">
 						        		<a class="menu-cart-btn" href="<?php echo esc_url($woocommerce->cart->get_cart_url() ); ?>">
-						          			<div class="kt-extras-label">
-						          			<?php if(isset($ascend['header_extras_cart']) && !empty($ascend['header_extras_cart'])) { 
-						          				if(isset($ascend['tl_cart']) && !empty($ascend['tl_cart'])) {
-								                   	$title =  $ascend['tl_cart'];
-								                } else {
-								                	$title =  __('Cart', 'ascend');
-								                }?>
-						          				<span class="cart-extras-title"><?php echo esc_html($title);?></span>
-						          			<?php } ?>
-						          			<i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span></div>
+						          			<span class="kt-extras-label">
+							          			<?php if(isset($ascend['header_extras_cart']) && !empty($ascend['header_extras_cart'])) { 
+							          				if(isset($ascend['tl_cart']) && !empty($ascend['tl_cart'])) {
+									                   	$title =  $ascend['tl_cart'];
+									                } else {
+									                	$title =  __('Cart', 'ascend');
+									                }?>
+							          				<span class="cart-extras-title"><?php echo esc_html($title);?></span>
+							          			<?php } ?>
+							          			<i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
+						          			</span>
 						        		</a>
 						        		<ul id="kad-head-cart-popup" class="sf-dropdown-menu kad-head-cart-popup">
-						            		<div class="kt-mini-cart-refreash">
+						            		<li class="kt-mini-cart-refreash">
 						            			<?php woocommerce_mini_cart(); 
 						            				do_action( 'kadence_cart_menu_popup_after' ); ?>
-						            		</div>
+						            		</li>
 						          		</ul>
 						        	</li>
 						        <?php

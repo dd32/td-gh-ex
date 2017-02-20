@@ -205,6 +205,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
                    	*/
                    	do_action( 'kadence_post_excerpt_after_footer' );
                    	?>
+                   	</div><!-- Text inner -->
               	</div><!-- Text size -->
          	</div><!-- row-->
     	</article> <!-- Article -->

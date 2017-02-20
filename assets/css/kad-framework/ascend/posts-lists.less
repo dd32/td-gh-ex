@@ -167,28 +167,10 @@ article.kad_blog_item {
 .kt-mosiac-wrap {
     margin: -5px;
 }
-.blog_mosaic_item {
-        position: relative;
-    .blog_photo_item {
-        height: 0;
-        margin-bottom: 0;
-    }
-    .blog_photo_item .imghoverclass {
-        height: 100%;
-    }
-    .blog_mosaic_item_inner{
-        position: absolute;
-        left: 5px;
-        right: 5px;
-        top: 5px;
-        bottom: 5px;
-        overflow: hidden;
-        .translate3d(0,0px,0);
-    }
-    .kt-intrinsic {
-        padding-bottom: 0;
-        height: 100%;
-        overflow: hidden;
-    }
+@media (max-width: 544px) {
+.col-md-4 > .blog_item {
+    max-width: 420px;
+    margin: 0 auto;
+}
 }
 

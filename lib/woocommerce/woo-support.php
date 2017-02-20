@@ -37,7 +37,7 @@ function ascend_woocommerce_support() {
 	    $mini_cart = ob_get_clean();
 
 	    // Fragments and mini cart are returned
-	    $fragments['div.kt-header-mini-cart-refreash'] ='<div class="kt-header-mini-cart-refreash">' . $mini_cart . '</div>';
+	    $fragments['li.kt-mini-cart-refreash'] ='<li class="kt-mini-cart-refreash">' . $mini_cart . '</li>';
 
 	    return $fragments;
 

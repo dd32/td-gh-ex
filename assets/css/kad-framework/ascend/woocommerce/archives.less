@@ -299,6 +299,9 @@ span.onsale {
 					color:#fff;
 					border-color: @primary;
 					background-color: @primary;
+					&:hover {
+						color: #fff;
+					}
 				}
 			}
 	    }
@@ -416,4 +419,53 @@ span.onsale {
     width: 100%;
     height: 100%;
     position: absolute;
+}
+.widget_layered_nav, .widget_layered_nav_filters, .widget_rating_filter{
+ 	ul {
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	    li {
+	    	position: relative;
+	    	margin-bottom: 4px;
+		    a {
+			    display: block;
+			    border: 2px solid rgba(0,0,0,.1);
+			    padding: 2px 6px;
+			}
+			span.count {
+		        position: absolute;
+			    right: 0;
+			    top: 0;
+			    height: 100%;
+			    background: rgba(0,0,0,0.1);
+			    font-size: 12px;
+			    padding: 2px 4px;
+			    border: 2px solid transparent;
+			}
+			span.star-rating {
+			    margin-top: 4px;
+			}
+		}
+	}
+}
+
+.widget_layered_nav ul li.chosen, .widget_layered_nav_filters ul li, .widget_rating_filter ul li.chosen {
+	a {
+	    border-color:@primary;
+		&:before {
+			.icon_font();
+			content: "\f00d";
+			font-size: 10px;
+			vertical-align: bottom;
+			padding-right: 5px;
+		}
+	}
+	span.count {
+		background: @primary;
+		color: #fff;
+	}
+}
+.price_slider_wrapper  {
+	input#min_price, input#max_price {opacity:0}
 }

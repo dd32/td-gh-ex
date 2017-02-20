@@ -48,13 +48,6 @@ global $post, $ascend;
             echo do_shortcode('[gallery ids="'.$image_gallery.'" columns="'.$columns.'"]');
         echo '</section>'; 
 
-    } else if ($kt_project == 'imagelist') { 
-
-        $image_gallery 	= get_post_meta( $post->ID, '_kad_image_gallery', true );
-        echo '<section class="postfeat">';
-            echo do_shortcode('[gallery ids="'.$image_gallery.'" columns="1" imgwidth="'.$slidewidth.'" masonry="true"]');
-        echo '</section>'; 
-
     } else if ($kt_project == 'collage') { 
     		global $kt_has_sidebar;
     		$kt_has_sidebar = 'false';
@@ -81,7 +74,7 @@ global $post, $ascend;
             }
                    ?>
             <div class="imghoverclass postfeat post-single-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <a href="<?php echo esc_url($img['full']); ?>" rel-data="lightbox">
+                <a href="<?php echo esc_url($img['full']); ?>" data-rel="lightbox">
                     <img <?php echo $image_src_output; ?> itemprop="contentUrl" alt="<?php esc_attr($img['alt']); ?>" width="<?php echo esc_attr($img['width']);?>" height="<?php echo esc_attr($img['height']);?>" <?php echo $img['srcset'];?> />
                     <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
                     <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>px">

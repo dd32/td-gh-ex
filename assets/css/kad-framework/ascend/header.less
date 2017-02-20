@@ -59,7 +59,7 @@
 		border:0;
 	}	
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     #kad-vertical-menu {
         display: none;
     }
@@ -306,16 +306,44 @@ ul.product_list_widget {
 .kt-header-layout-center-menu {
 	.kad-header-flex {
 		position: relative;
+		display: block;
 	}
 	.kt-header-extras {
 	    float: right;
+	    height:100%;
+		top:0;
 	}
 	.kad-left-header, .kad-right-header {
 	    z-index: 100;
+	        position: relative;
+	}
+	.kad-left-header {
+		float: left;
+	}
+	.kad-right-header {
+		float: right;
+		height:100%;
+		top:0;
+	}
+	.kt-header-extras ul.sf-menu {
+		height:100%;
+		top:0;
+	}
+	.kad-center-header .nav-main > ul.sf-menu {
+		.justify-content(center);
 	}
 	.kad-center-header.kt-header-flex-item {
 	    position: absolute;
     	width: 100%;
+	    padding-right: 20%;
+	    padding-left: 20%;
+	    left: 0;
+	    height:100%;
+		top:0;
+	}
+	.kad-center-header .nav-main>ul.sf-menu, .nav-main {
+		height:100%;
+		top:0;
 	}
 }
 // Center Logo
@@ -366,7 +394,12 @@ ul.product_list_widget {
 	.header-sidewidth {width:38%;} 
 	.header-logo-width {width:24%;}
 	.kad-left-header ul.sf-menu {
-	    float: right;
+	    float: left;
+	}
+	.kad-right-header.kt-header-flex-item.header-sidewidth {
+	    -webkit-justify-content: flex-end;
+	    -ms-justify-content: flex-end;
+	    justify-content: flex-end;
 	}
 
 }
@@ -445,7 +478,7 @@ ul.product_list_widget {
     padding: 0 80px;
 }
 .kad-mobile-logo-left {
-    flex-grow: 2;
+    .flex-grow(2);
 }
 #kad-mobile-banner #mobile-logo.kad-mobile-logo-left a {
 	.justify-content(flex-start);
@@ -476,7 +509,7 @@ ul.product_list_widget {
 		}
 	}
 	#mobile-logo-placeholder {
-	    flex-grow: 2;
+	    .flex-grow(2);
 	}
 }
 .kt-mobile-header-toggle {
@@ -843,7 +876,7 @@ html.mag-pop-sldr-open {
 .kt-showsub-indicator .second-navclass .sf-menu > li.sf-dropdown > a {
 	padding-right: 15px;
 }
-span.kad-site-title {
+a.brand {
     font-size: 30px;
     color: #444;
     font-weight: bold;
@@ -851,4 +884,11 @@ span.kad-site-title {
 span.kad-site-tagline {
     font-size: 16px;
     font-weight: 400;
+}
+.kt-mini-cart-refreash, .kt-extras-label, .kt-mnt {
+	display: block;
+}
+li.kt-mini-cart-refreash ul {
+    display: block !important;
+    top: 0px !important;
 }

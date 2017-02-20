@@ -1,6 +1,6 @@
 <?php 
 global $ascend;
-echo '<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="'.esc_url(get_the_permalink()).'">';
+echo '<meta itemscope itemprop="mainEntityOfPage" content="'.esc_url(get_the_permalink()).'" itemType="https://schema.org/WebPage" itemid="'.esc_url(get_the_permalink()).'">';
 echo '<meta itemprop="dateModified" content="'.esc_attr(get_the_modified_date('c')).'">';
 echo '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';
     if (isset($ascend['ascend_logo']['url']) && !empty($ascend['ascend_logo']['url'])) {  

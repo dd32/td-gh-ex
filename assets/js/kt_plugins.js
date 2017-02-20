@@ -73,7 +73,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 (function( $ ){
 
-  $.fn.fitText = function( kompressor, options ) {
+  $.fn.kt_fitText = function( kompressor, options ) {
 
     // Setup options
     var compressor = kompressor || 1,
@@ -88,11 +88,13 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
       // Store the object
       var $this = $(this);
-
       // Resizer() resizes items based on the object width divided by the compressor * 10
       var resizer = function () {
-      	if(settings.maxWidth > $this.width() ) {
+      	var $width = $this.width();
+      	if(settings.maxWidth > $width && settings.minWidth < $width) {
         	$this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+        } else if(settings.minWidth > $width) {
+        	$this.css('font-size', settings.minFontSize);
         } else {
         	$this.css('font-size', settings.maxFontSize);
         }

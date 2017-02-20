@@ -96,7 +96,7 @@
 }
 
 // Default Variables
-@slick-font-family: "kt-icon";
+@slick-font-family: 'kt-font-awesome';
 @slick-loader-path: "./";
 @slick-arrow-color: black;
 @slick-dot-color: black;
@@ -125,16 +125,16 @@
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: transparent;
+    background: rgba(0,0,0,.3);
     color: transparent;
     top: 50%;
     .translate(0, -50%);
     .transition(all 0.2s ease-in-out);
     padding: 0;
-    border: 2px solid rgba(255, 255, 255, 0.75);
+    //border: 2px solid rgba(255, 255, 255, 0.75);
     outline: none;
-    .box-shadow( 0px 0px 10px 1px rgba(0,0,0,0.1));
-    text-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+    .box-shadow( none );
+    //text-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
     &:before {
         .icon_font();
         font-size: 24px;
@@ -144,7 +144,7 @@
     }
     &:hover, &:focus {
         outline: none;
-        background: transparent;
+       	background: rgba(0,0,0,.4);
         border-color: rgba(255, 255, 255,1);
         color: transparent;
         &:before {
@@ -241,7 +241,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                content: @slick-dot-character;
+                content: "•";
                 width: 20px;
                 height: 20px;
                 font-family: @slick-font-family;
@@ -334,7 +334,7 @@
 
 .kt-image-carousel-center-fade {
 	.kt-slick-slide.slick-slide {
-	    opacity: .7;
+	    opacity: 1;
 	        -webkit-transition: opacity 0.35s ease-in-out;
 	    -o-transition: opacity 0.35s ease-in-out;
 	    transition: opacity 0.35s ease-in-out;

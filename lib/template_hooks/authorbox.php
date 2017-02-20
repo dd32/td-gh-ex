@@ -34,29 +34,17 @@ if(!function_exists('ascend_author_box')) {
                     <?php } if ( get_the_author_meta( 'youtube' ) ) { ?>
                         <a href="<?php the_author_meta( 'youtube' ); ?>" target="_blank" class="youtube_link" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on YouTube', 'ascend');?>"><i class="kt-icon-youtube"></i></a>
                     <?php } if ( get_the_author_meta( 'flickr' ) ) { ?>
-                    <span class="flickrlink">
-                        <a href="<?php the_author_meta( 'flickr' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'ascend');?>"><i class="kt-icon-flickr"></i></a>
-                    </span>
+                        <a href="<?php the_author_meta( 'flickr' ); ?>"  class="flickr_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'ascend');?>"><i class="kt-icon-flickr"></i></a>
                     <?php } if ( get_the_author_meta( 'vimeo' ) ) { ?>
-                    <span class="vimeolink">
-                        <a href="<?php the_author_meta( 'vimeo' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Vimeo', 'ascend');?>"><i class="kt-icon-vimeo"></i></a>
-                    </span>
+                        <a href="<?php the_author_meta( 'vimeo' ); ?>" class="vimeo_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Vimeo', 'ascend');?>"><i class="kt-icon-vimeo"></i></a>
                     <?php } if ( get_the_author_meta( 'linkedin' ) ) { ?>
-                    <span class="linkedinlink">
-                        <a href="<?php the_author_meta( 'linkedin' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on linkedin', 'ascend');?>"><i class="kt-icon-linkedin"></i></a>
-                    </span>
+                        <a href="<?php the_author_meta( 'linkedin' ); ?>" class="linkedin_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on linkedin', 'ascend');?>"><i class="kt-icon-linkedin"></i></a>
                     <?php } if ( get_the_author_meta( 'dribbble' ) ) { ?>
-                    <span class="dribbblelink">
-                        <a href="<?php the_author_meta( 'dribbble' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Dribbble', 'ascend');?>"><i class="kt-icon-dribbble"></i></a>
-                    </span>
+                        <a href="<?php the_author_meta( 'dribbble' ); ?>" class="dribbble_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Dribbble', 'ascend');?>"><i class="kt-icon-dribbble"></i></a>
               <?php } if ( get_the_author_meta( 'pinterest' ) ) { ?>
-                    <span class="pinterestlink">
-                        <a href="<?php the_author_meta( 'pinterest' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Pinterest', 'ascend');?>"><i class="kt-icon-pinterest"></i></a>
-                    </span>
+                        <a href="<?php the_author_meta( 'pinterest' ); ?>" class="pinterest_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Pinterest', 'ascend');?>"><i class="kt-icon-pinterest"></i></a>
               <?php } if ( get_the_author_meta( 'instagram' ) ) { ?>
-              <span class="instagramlink">
-                <a href="<?php the_author_meta( 'instagram' ); ?>" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Instagram', 'ascend');?>"><i class="kt-icon-instagram"></i></a>
-              </span>
+                <a href="<?php the_author_meta( 'instagram' ); ?>" class="instagram_link" target="_blank" title="<?php _e('Follow', 'ascend'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Instagram', 'ascend');?>"><i class="kt-icon-instagram"></i></a>
                 <?php } ?>
             </div><!--Author Follow-->
             </div>

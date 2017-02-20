@@ -20,8 +20,8 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
     } else {
         if(!empty($kt_grid_columns)) {
             if($kt_grid_columns == '3') {
-                $image_width = 420;
-                $image_height = 280;
+                $image_width = 480;
+                $image_height = 320;
 
             } else if($kt_grid_columns == '2') {
                 $image_width = 660;

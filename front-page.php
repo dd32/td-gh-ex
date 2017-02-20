@@ -15,12 +15,17 @@
         	<div class="main <?php echo esc_attr(ascend_main_class()); ?>" role="main">
           		<div class="entry-content" itemprop="mainContentOfPage">
 
-		      	<?php 
-		      	if(isset($ascend['homepage_layout']['enabled'])) { 
-		  			$layout = $ascend['homepage_layout']['enabled'];
+		      	<?php
+		      	if(isset($ascend['homepage_layout'])) { 
+		      		$layout = array();
+		      		foreach ($ascend['homepage_layout'] as $key => $value) {
+		      			if($value == 1) {
+		      				$layout[$key] = $value;
+		      			}
+		      		}
 		  		} else {
 		  			// Default layout show content
-		  			$layout = array("block_one" => "block_one");
+		  			$layout = array("block_one" => "1");
 		  		}
 
 				if ($layout):

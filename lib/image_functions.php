@@ -31,9 +31,11 @@ function ascend_get_srcset($width,$height,$url,$id) {
   	// If possible add in our images on the fly sizes
   	$ext = substr($image_meta['file'], strrpos($image_meta['file'], "."));
   	$pathflyfilename = str_replace($ext,'-'.$width.'x'.$height.'' . $ext, $image_meta['file']);
-  	$pathretinaflyfilename = str_replace($ext, '-'.$width.'x'.$height.'@2x' . $ext, $image_meta['file']);
+  	$retina_w = $width*2;
+	$retina_h = $height*2;
+  	$pathretinaflyfilename = str_replace($ext, '-'.$retina_w.'x'.$retina_h.'' . $ext, $image_meta['file']);
   	$flyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'' . $ext;
-  	$retinaflyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'@2x' . $ext;
+  	$retinaflyfilename = basename($image_meta['file'], $ext) . '-'.$retina_w.'x'.$retina_h.'' . $ext;
 
 	$upload_info = wp_upload_dir();
   	$upload_dir = $upload_info['basedir'];
@@ -55,18 +57,15 @@ function ascend_get_srcset($width,$height,$url,$id) {
       	$image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize);
 	}
 	if (file_exists($retinafile)) {
-  		$size = getimagesize( $retinafile );
-  		if(($size[0] == 2 * $width) && ($size[1] == 2 * $height) ) {
-    		$kt_add_imagesize_retina = array(
+  		$kt_add_imagesize_retina = array(
     			'kt_on_fly_retina' => array( 
 	          	'file'=> $retinaflyfilename,
-	          	'width' => 2 * $width,
-	          	'height' => 2 * $height,
+	          	'width' => $retina_w,
+	          	'height' => $retina_h,
 	          	'mime-type' => isset($image_meta['sizes']['thumbnail']) ? $image_meta['sizes']['thumbnail']['mime-type'] : '', 
 	          	)
     		);
-    		$image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize_retina);
-  		}
+    	$image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize_retina);
 	}
 	if(function_exists ( 'wp_calculate_image_srcset') ){
   		$output = wp_calculate_image_srcset(array( $width, $height), $url, $image_meta, $id);

@@ -34,11 +34,7 @@ global $ascend;
 	 	$breadcrumb = false;
 	 	$breadclass = "kt_bc_not_active";
 	}
-if(!empty($shortcode)) { ?>
-		<div class="sliderclass archive-header-area">
-		<?php echo do_shortcode( $shortcode); ?>
-		</div><!--sliderclass-->
-<?php } else { ?>
+	?>
 <div id="pageheader" class="titleclass archive-header-area <?php echo esc_attr($breadclass);?>">
 <div class="header-color-overlay"></div>
 <?php do_action("kt_header_overlay"); ?>
@@ -46,7 +42,7 @@ if(!empty($shortcode)) { ?>
 		<div class="page-header">
 			<div class="page-header-inner">
 			<div class="header-case">
-		  		<h1 <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo ascend_title(); ?></h1>
+		  		<h1 class="entry-title" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo ascend_title(); ?></h1>
 		  		</div>
 			  	<?php if(!empty($bsub)) { echo '<div class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"> '.$bsub.' </div>'; } ?>
 			</div>
@@ -54,4 +50,3 @@ if(!empty($shortcode)) { ?>
 	</div><!--container-->
 	<?php if($breadcrumb) { ascend_breadcrumbs(); } ?>
 </div><!--titleclass-->
-<?php } 

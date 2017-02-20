@@ -58,7 +58,7 @@ function ascend_excerpt_more($more) {
   	} else { 
   		$readmore =  __('Read More', 'ascend') ;
   	}
-  	return ' &hellip; <a class="kt-excerpt-readmore more-link" href="' . get_permalink() . '">'. $readmore . '</a>';
+  	return ' &hellip; <a class="kt-excerpt-readmore more-link" href="' . get_permalink() . '">'. esc_html($readmore) . '</a>';
 }
 add_filter('excerpt_more', 'ascend_excerpt_more');
 
@@ -71,7 +71,7 @@ function ascend_custom_excerpt_more( $excerpt ) {
     	} else {
     		$readmore =  __('Read More', 'ascend') ;
     	}
-    	$excerpt_more = '&hellip; <a class="kt-excerpt-readmore more-link" href="' . get_permalink() . '">'. $readmore . '</a>';
+    	$excerpt_more = '&hellip; <a class="kt-excerpt-readmore more-link" href="' . get_permalink() . '">'. esc_html($readmore) . '</a>';
   	}
   	return $excerpt . $excerpt_more;
 }

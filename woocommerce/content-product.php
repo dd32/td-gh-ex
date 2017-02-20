@@ -37,7 +37,7 @@ if ( ! $product || ! $product->is_visible() )
 	} else if ($product_column == '2') {
  		$itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12';
  	} else if ($product_column == '3'){ 
- 		$itemsize = 'col-xxl-3 col-xl-3 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+ 		$itemsize = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
  	} else if ($product_column == '6'){
  		$itemsize = 'col-xxl-15 col-xl-2 col-md-2 col-sm-3 col-xs-4 col-ss-6'; 
  	} else if ($product_column == '5'){ 

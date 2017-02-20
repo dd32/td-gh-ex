@@ -23,7 +23,7 @@
  */
 
 if(!class_exists('KT_Aq_Resize')) {
-    class kt_Aq_Exception extends Exception {}
+    class KT_Aq_Exception extends Exception {}
 
     class KT_Aq_Resize
     {
@@ -66,7 +66,7 @@ if(!class_exists('KT_Aq_Resize')) {
             try {
                 // Validate inputs.
                 if (!$url)
-                    throw new Aq_Exception('$url parameter is required');
+                    throw new KT_Aq_Exception('$url parameter is required');
 
                 // Caipt'n, ready to hook.
                 if ( true === $upscale ) add_filter( 'image_resize_dimensions', array($this, 'kt_aq_upscale'), 10, 6 );
@@ -156,7 +156,7 @@ if(!class_exists('KT_Aq_Resize')) {
                 }
 
                 // Okay, leave the ship.
-                if ( true === $upscale ) remove_filter( 'image_resize_dimensions', array( $this, 'aq_upscale' ) );
+                if ( true === $upscale ) remove_filter( 'image_resize_dimensions', array( $this, 'kt_aq_upscale' ) );
 
                 // Return the output.
                 if ( $single ) {
@@ -173,40 +173,39 @@ if(!class_exists('KT_Aq_Resize')) {
 
                 // RETINA Support ---------------------------------------------------------------> 
                     if ( apply_filters( 'kadence_retina_support', true ) ) : 
-                    $retina_w = $dst_w*2;
-                    $retina_h = $dst_h*2;
-                    
-                    //get image size after cropping
-                    $dims_x2 = image_resize_dimensions($orig_w, $orig_h, $retina_w, $retina_h, $crop);
-                    $dst_x2_w = $dims_x2[4];
-                    $dst_x2_h = $dims_x2[5];
-                    
-                    // If possible lets make the @2x image
-                    if($dst_x2_h) {
+	                    $retina_w = $dst_w*2;
+	                    $retina_h = $dst_h*2;
+	                    
+	                    //get image size after cropping
+	                    $dims_x2 = image_resize_dimensions($orig_w, $orig_h, $retina_w, $retina_h, $crop);
+	                    $dst_x2_w = $dims_x2[4];
+	                    $dst_x2_h = $dims_x2[5];
+	                    
+	                    // If possible lets make the @2x image
+	                    if($dst_x2_h) {
 
-                        if (true == $crop && ( $dst_x2_w < $retina_w || $dst_x2_h < $retina_h ) ) {
-                            // do nothing
-                        } else {
-                    
-                            //@2x image url
-                            $destfilename = "{$upload_dir}{$dst_rel_path}-{$suffix}@2x.{$ext}";
-                            
-                            //check if retina image exists
-                            if(file_exists($destfilename) && getimagesize($destfilename)) { 
-                                // already exists, do nothing
-                            } else {
-                                // doesnt exist, lets create it
-                                $editor = wp_get_image_editor($img_path);
-                                if ( ! is_wp_error( $editor ) ) {
-                                    $editor->resize( $retina_w, $retina_h, true );
-                                    $editor->set_quality( 100 );
-                                    $filename = $editor->generate_filename( $dst_w . 'x' . $dst_h . '@2x'  );
-                                    $editor = $editor->save($filename); 
-                                }
-                            }
-                        }
-                    
-                    }
+	                        if (true == $crop && ( $dst_x2_w < $retina_w || $dst_x2_h < $retina_h ) ) {
+	                            // do nothing
+	                        } else {
+	                    
+	                            $x2suffix = "{$dst_x2_w}x{$dst_x2_h}";
+	                            //@2x image url
+	                            $destfilename = "{$upload_dir}{$dst_rel_path}-{$x2suffix}.{$ext}";
+	                            
+	                            //check if retina image exists
+	                            if(file_exists($destfilename) && getimagesize($destfilename)) { 
+	                                // already exists, do nothing
+	                            } else {
+	                                // doesnt exist, lets create it
+	                                $editor = wp_get_image_editor($img_path);
+	                                if ( ! is_wp_error( $editor ) ) {
+	                                	$editor->resize( $retina_w, $retina_h, true );
+	                                    $editor = $editor->save(); 
+	                                }
+	                            }
+	                        }
+	                    
+	                    }
                     endif;
 
                 return $image;

@@ -12,6 +12,9 @@
     .widget {
 	    margin-top: 30px;
 	}
+	.widget.so-panel {
+	    margin-top: 0px;
+	}
 	.widget-first {
 	    margin-top: 0px;
 	}
@@ -21,7 +24,7 @@
         text-transform: uppercase;
         margin-bottom: 10px;
         &:before {
-            background: #555;
+            background: rgba(255,255,255,.3);
         }
         span {
             background: #333;
@@ -38,7 +41,7 @@
                 line-height: 24px;
                 letter-spacing: 1px;
                 display: block;
-                border-bottom: 1px solid #555;
+                border-bottom: 1px solid rgba(255,255,255,.3);
                 .transition(all 0.2s ease-in-out);
                 &:hover {
                     border-color: @primary;
@@ -49,13 +52,16 @@
     .kadence_social_widget {
         text-align: left;
             a{
-            border-color:#555;
+            border-color:rgba(255,255,255,.3);
             &:hover {
                 border-color: rgba(0,0,0,.1);
                 color:#fff;
             }
         }
     }
+}
+.footerclass .col-md-12 .kadence_social_widget {
+    text-align: center;
 }
 body.body-style-bubbled .footerclass .footer-widget-title span {
 	background: #333;

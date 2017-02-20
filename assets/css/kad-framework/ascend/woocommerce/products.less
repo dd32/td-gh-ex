@@ -371,6 +371,7 @@ table.variations {
 	min-width: 300px;
 	td.product_label {
 	    padding: 0 8px 0 0;
+	    text-transform: uppercase;
 	    display: block;
 	    line-height: 34px;
 	}
@@ -419,7 +420,7 @@ h1.product_title {
 	    .product-img-case .images {
 	    	.flex-display(flex);
 			.align-items(center);
-			.justify-content(flex-start);
+			.justify-content(flex-end);
 	    }
 	    .product_thumbnails.thumbnails {
 		    width: 20%;
@@ -450,17 +451,23 @@ h1.product_title {
 	}
 }
 @media (max-width: 766px) {
-.product-img-case {
-    max-width: 410px;
-    margin: 0 auto;
-}
+	.product-img-case {
+	    max-width: 410px;
+	    margin: 0 auto;
+	    padding-bottom: 10px;
+	}
 }
 // tabs List
 
 .woocommerce-tabs-list, .woocommerce-Tabs-panel-list {
     padding: 20px 0;
 }
-
+body.siteorigin-panels .container.tab-list-container > h2 {
+    display: none;
+}
+body.siteorigin-panels #list-tab-description {
+    padding: 0;
+}
 .product .woocommerce-tabs-list h2, .product .woocommerce-tabs-list .comment-reply-title {
     font-size: 24px;
     line-height: 40px;
@@ -501,71 +508,7 @@ a.added_to_cart {
     text-align: center;
     border: 2px solid @primary;
 }
-.variations .kad_radio_variations {
-	label {
-	  	float: left;
-	  	padding: 2px 10px;
-    	margin: 2px 5px 2px 0;
-	  	border: 2px solid #eee;
-	  	border-color: rgba(0,0,0,0.1);
-	  	position: relative;
-	    .transition(border 0.3s ease-in-out);
-	    &.kt_disabled {
-		    color: rgba(0,0,0,.3);
-		    border-color: rgba(0,0,0,0.03);
-		    &:after {
-			    content: 'Not Available';
-			    position: absolute;
-			    font-size: 10px;
-			    font-weight: normal;
-			    width: 90px;
-			    border-radius: 5px;
-			    top: 0px;
-			    line-height: 20px;
-			    left: 50%;
-			    background-color: rgba(0,0,0,.6);
-			    margin-left: -45px;
-			    text-align: center;
-			    color: white;
-			    opacity: 0;
-			    .transition(all .3s ease-out);
-			}
-			&:hover:after {
-				opacity: 1;
- 				top: -25px;
-			}
-		}
-		&:hover {
-			border-color:@primary;
-		}
-		&.selectedValue {
-			border-color:@primary;
-		    background: @primary;
-		    color:#fff;
-		}
-		input[type=radio] {
-			height: 0;
-			overflow: hidden;
-			z-index: -10000;
-			position: absolute;
-			visibility: hidden;
-			float: none;
-		}
-	}
-}
-.variations tr:first-child .kad_radio_variations label.kt_disabled {
-    color: inherit;
-    border-color: rgba(0,0,0,0.1);
-    &:after {
-	    content: '';
-	    position: static;
-	    display:none;
-	    opacity: 0;
-    }
-}
-.variations tr:first-child .kad_radio_variations label.selectedValue {
- 	color:#fff;
-}
+
 .variations fieldset {
 	border:0;
 	padding: 0;

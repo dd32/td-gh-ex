@@ -116,11 +116,11 @@ function ascend_mobile_menu_ouput($side = 'right') {
 	if (has_nav_menu('primary_navigation') || has_nav_menu('mobile_navigation')) : ?>
         	<div class="kad-mobile-menu-flex-item kad-mobile-header-height kt-mobile-header-toggle kad-mobile-menu-<?php echo esc_attr($side);?>">
              	<button class="mobile-navigation-toggle kt-sldr-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-menu" data-pop-sldr-direction="<?php echo esc_attr($side);?>" data-pop-sldr-class="sldr-menu-animi">
-             	<div class="kt-mnt">
-                	<span></span>
-					<span></span>
-					<span></span>
-					</div>
+             		<span class="kt-mnt">
+	                	<span></span>
+						<span></span>
+						<span></span>
+					</span>
               	</button>
             </div>
    	<?php  endif; 
@@ -129,7 +129,7 @@ function ascend_mobile_header_cart($side = 'right') {
 	if (class_exists('woocommerce'))  { ?>
       	<div class="kad-mobile-cart-flex-item kad-mobile-header-height kt-mobile-header-toggle kad-mobile-cart-<?php echo esc_attr($side);?>">
              	<button class="kt-woo-cart-toggle kt-sldr-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-cart" data-pop-sldr-direction="<?php echo esc_attr($side);?>"  data-pop-sldr-class="sldr-cart-animi">
-					<div class="kt-extras-label"><i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo WC()->cart->get_cart_contents_count(); ?></span></div>
+					<span class="kt-extras-label"><i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo WC()->cart->get_cart_contents_count(); ?></span></span>
               	</button>
         </div>
     <?php } 
@@ -139,11 +139,11 @@ function ascend_mobile_header_account($side = 'right') {
       	<div class="kad-mobile-account-flex-item kad-mobile-header-height kt-mobile-header-toggle kad-mobile-account-<?php echo esc_attr($side);?>">
       		<?php if ( is_user_logged_in() ) { ?>
              	<button class="kt-woo-account-toggle  kt-sldr-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-account" data-pop-sldr-direction="<?php echo esc_attr($side);?>"  data-pop-sldr-class="sldr-account-animi">
-					<div class="kt-extras-label header-underscore-icon"><i class="kt-icon-user"></i></div>
+					<span class="kt-extras-label header-underscore-icon"><i class="kt-icon-user"></i></span>
           		</button>
             <?php } else { ?>
             	<button class="kt-woo-account-toggle kt-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-modal-login">
-					<div class="kt-extras-label"><i class="kt-icon-user"></i></div>
+					<span class="kt-extras-label"><i class="kt-icon-user"></i></span>
               	</button>
              <?php 	} ?>
         </div>
@@ -152,7 +152,7 @@ function ascend_mobile_header_account($side = 'right') {
 function ascend_mobile_header_search($side = 'right') {  ?>
       	<div class="kad-mobile-seearch-flex-item kad-mobile-header-height kt-mobile-header-toggle kad-mobile-search-<?php echo esc_attr($side);?>">
              	<button class="kt-search-toggle kt-pop-modal" rel="nofollow" data-mfp-src="#kt-extras-modal-search">
-					<div class="kt-extras-label"><i class="kt-icon-search"></i></div>
+					<span class="kt-extras-label"><i class="kt-icon-search"></i></span>
           		</button>
         </div>
     <?php

@@ -10,14 +10,14 @@ function ascend_display_page_breadcrumbs() {
             $showbreadcrumbs = false;
         }
     } else {
-        $showbreadcrumbs = true;
+        $showbreadcrumbs = false;
     }
   return $showbreadcrumbs;
 }
 function ascend_display_archive_breadcrumbs() {
-  global $ascend;
-  if(isset($ascend['show_breadcrumbs_page'])) {
-      if($ascend['show_breadcrumbs_page'] == 1 ) {
+    global $ascend;
+    if(isset($ascend['show_breadcrumbs_archive'])) {
+      if($ascend['show_breadcrumbs_archive'] == 1 ) {
             $showbreadcrumbs = true;
         } else {
             $showbreadcrumbs = false;
@@ -36,9 +36,15 @@ function ascend_display_post_breadcrumbs() {
 }
 function ascend_display_shop_breadcrumbs() {
   global $ascend;
-   if(isset($ascend['show_breadcrumbs_shop'])) {
-  if($ascend['show_breadcrumbs_shop'] == 1 ) {$showbreadcrumbs = true;} else { $showbreadcrumbs = false;}
-} else {$showbreadcrumbs = true;}
+   if(isset($ascend['show_breadcrumbs_page'])) {
+	  	if($ascend['show_breadcrumbs_page'] == 1 ) {
+	  		$showbreadcrumbs = true;
+	  	} else { 
+	  		$showbreadcrumbs = false;
+	  	}
+	} else {
+		$showbreadcrumbs = true;
+	}
   return $showbreadcrumbs;
 }
 function ascend_display_product_breadcrumbs() {

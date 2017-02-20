@@ -7,13 +7,6 @@
     get_header(); 
     global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop, $kt_grid_carousel; 
 
-    if(ascend_display_sidebar()) {
-        $fullclass = '';
-        $kt_has_sidebar = true;
-    } else {
-        $fullclass = 'fullwidth';
-        $kt_has_sidebar = false;
-    }
     $kt_grid_carousel = false;
     $kt_blog_loop['loop'] = 1;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -28,13 +21,27 @@
     } else {
         $kt_grid_columns = '3';
     } 
-    if ($kt_grid_columns == '2') {
-        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-    } else if ($kt_grid_columns == '3'){ 
-        $itemsize = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+    if(ascend_display_sidebar()) {
+        $fullclass = '';
+        $kt_has_sidebar = true;
+        if ($kt_grid_columns == '2') {
+	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
+	    } else if ($kt_grid_columns == '3'){ 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
+	    } else {
+	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
+	   	}
     } else {
-        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-   }
+        $fullclass = 'fullwidth';
+        $kt_has_sidebar = false;
+        if ($kt_grid_columns == '2') {
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
+	    } else if ($kt_grid_columns == '3'){ 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
+	    } else {
+	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
+	   	}
+    }
     /**
     * @hooked ascend_archive_title - 20
     */

@@ -74,10 +74,10 @@ function ascend_topbar_cart($side = 'right') {
 	          			 <i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo WC()->cart->get_cart_contents_count(); ?></span></div>
 					</a>
 					<ul id="topbar-kad-head-cart-popup" class="sf-dropdown-menu kad-head-cart-popup">
-			    		<div class="kt-mini-cart-refreash">
+			    		<li class="kt-mini-cart-refreash">
 			    			<?php woocommerce_mini_cart(); 
 			    				do_action( 'kadence_cart_menu_popup_after' ); ?>
-			    		</div>
+			    		</li>
 			  		</ul>
 				</li>
 			</ul>
@@ -126,7 +126,7 @@ function ascend_topbar_search($side = 'right') {  ?>
       	<div class="kad-topbar-flex-item kad-topbar-search kad-topbar-item-<?php echo esc_attr($side);?>">
       		<ul class="sf-menu">
       			<li>
-	             	<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo home_url().'/?s=""'; ?>">
+	             	<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo home_url().'/?s='; ?>">
 						<div class="kt-extras-label"><i class="kt-icon-search"></i></div>
 					</a>
 				</li>

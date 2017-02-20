@@ -8,7 +8,7 @@ function ascend_custom_css() {
 	// Theme options
 
 	if(isset($ascend['primary_color']) && !empty($ascend['primary_color'])) {
-		$primary_color = 'a, .author-box .author-follow a, .primary-color, .postlist article .entry-content a.more-link:hover,.widget_price_filter .price_slider_amount .button, .product .product_meta a:hover, .star-rating, .above-footer-widgets a:not(.button):hover, .sidebar a:not(.button):hover, .footerclass a:hover, .posttags a:hover, .tagcloud a:hover, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .wp-pagenavi a:hover{color:'.$ascend['primary_color'].';} .comment-content a:not(.button):hover, .entry-content p a:not(.button):not(.select2-choice):not([data-rel="lightbox"]):hover, .kt_product_toggle_outer .toggle_grid:hover, .kt_product_toggle_outer .toggle_list:hover, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .product_meta a, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked+label, .kt-woo-account-nav .woocommerce-MyAccount-navigation ul li.is-active a, a.added_to_cart, .widget_pages ul li.kt-drop-toggle > .kt-toggle-sub, .widget_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_product_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_recent_entries ul li a:hover ~ .kt-toggle-sub, .widget_recent_comments ul li a:hover ~ .kt-toggle-sub, .widget_archive ul li a:hover ~ .kt-toggle-sub, .widget_pages ul li a:hover ~ .kt-toggle-sub, .widget_categories ul li a:hover ~ .kt-toggle-sub, .widget_meta ul li a:hover ~ .kt-toggle-sub, .widget_product_categories ul li a:hover ~ .kt-toggle-sub,.kt-tabs.kt-tabs-style2 > li > a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .footerclass .menu li a:hover, .widget_recent_entries ul li a:hover, .posttags a:hover, .tagcloud a:hover,.widget_recent_comments ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .widget_meta ul li a:hover, .widget_product_categories ul li a:hover, .box-icon-item .icon-container .icon-left-highlight,.box-icon-item .icon-container .icon-right-highlight, .widget_pages ul li.current-cat > a, .widget_categories ul li.current-cat > a, .widget_product_categories ul li.current-cat > a, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .wp-pagenavi .current, .wp-pagenavi a:hover, .kt-mobile-header-toggle .header-underscore-icon [class*=kt-icon-]{border-color:'.$ascend['primary_color'].';} .kt-header-extras span.kt-cart-total, .btn, .button, .submit, button, input[type="submit"], .portfolio-loop-image-container .portfolio-hover-item .portfolio-overlay-color, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, .product .woocommerce-tabs .wc-tabs:before, .woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-noreviews, p.no-comments, .widget_pages ul li ul li.current-cat > a:before, .widget_categories ul li ul li.current-cat > a:before, .widget_product_categories ul li ul li.current-cat > a:before, .widget_pages ul li ul li a:hover:before, .widget_categories ul li ul li a:hover:before, .widget_product_categories ul li ul li a:hover:before, .kadence_recent_posts a.posts_widget_readmore:hover:before, .kt-accordion > .panel h5:after, .kt-tabs:before, .image_menu_overlay, .kadence_social_widget a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .widget_pages ul li.current-cat > .count, .widget_categories ul li.current-cat > .count, .widget_product_categories ul li.current-cat > .count, .widget_recent_entries ul li a:hover ~ .count, .widget_recent_comments ul li a:hover ~ .count, .widget_archive ul li a:hover ~ .count, .widget_pages ul li a:hover ~ .count, .widget_categories ul li a:hover ~ .count, .widget_meta ul li a:hover ~ .count, .widget_product_categories ul li a:hover ~ .count, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .select2-results .select2-highlighted, .wp-pagenavi .current, .kt-header-extras span.kt-cart-total, .kt-mobile-header-toggle span.kt-cart-total{background:'.$ascend['primary_color'].';}@media (max-width: 767px){.filter-set li a.selected{background:'.$ascend['primary_color'].';}}';
+		$primary_color = 'a, .author-box .author-follow a, .primary-color, .postlist article .entry-content a.more-link:hover,.widget_price_filter .price_slider_amount .button, .product .product_meta a:hover, .star-rating, .above-footer-widgets a:not(.button):hover, .sidebar a:not(.button):hover, .footerclass a:hover, .posttags a:hover, .tagcloud a:hover, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .wp-pagenavi a:hover, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover{color:'.$ascend['primary_color'].';} .comment-content a:not(.button):hover, .entry-content p a:not(.button):not(.select2-choice):not([data-rel="lightbox"]):hover, .kt_product_toggle_outer .toggle_grid:hover, .kt_product_toggle_outer .toggle_list:hover, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .product_meta a, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked+label, .kt-woo-account-nav .woocommerce-MyAccount-navigation ul li.is-active a, a.added_to_cart, .widget_pages ul li.kt-drop-toggle > .kt-toggle-sub, .widget_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_product_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_recent_entries ul li a:hover ~ .kt-toggle-sub, .widget_recent_comments ul li a:hover ~ .kt-toggle-sub, .widget_archive ul li a:hover ~ .kt-toggle-sub, .widget_pages ul li a:hover ~ .kt-toggle-sub, .widget_categories ul li a:hover ~ .kt-toggle-sub, .widget_meta ul li a:hover ~ .kt-toggle-sub, .widget_product_categories ul li a:hover ~ .kt-toggle-sub,.kt-tabs.kt-tabs-style2 > li > a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .footerclass .menu li a:hover, .widget_recent_entries ul li a:hover, .posttags a:hover, .tagcloud a:hover,.widget_recent_comments ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .widget_meta ul li a:hover, .widget_product_categories ul li a:hover, .box-icon-item .icon-container .icon-left-highlight,.box-icon-item .icon-container .icon-right-highlight, .widget_pages ul li.current-cat > a, .widget_categories ul li.current-cat > a, .widget_product_categories ul li.current-cat > a, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .wp-pagenavi .current, .wp-pagenavi a:hover, .kt-mobile-header-toggle .header-underscore-icon [class*=kt-icon-], .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover, .widget_layered_nav ul li.chosen a, .widget_layered_nav_filters ul li a, .widget_rating_filter ul li.chosen a, .variations .kad_radio_variations label.selectedValue, .variations .kad_radio_variations label:hover{border-color:'.$ascend['primary_color'].';} .kt-header-extras span.kt-cart-total, .btn, .button, .submit, button, input[type="submit"], .portfolio-loop-image-container .portfolio-hover-item .portfolio-overlay-color, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, .product .woocommerce-tabs .wc-tabs:before, .woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-noreviews, p.no-comments, .widget_pages ul li ul li.current-cat > a:before, .widget_categories ul li ul li.current-cat > a:before, .widget_product_categories ul li ul li.current-cat > a:before, .widget_pages ul li ul li a:hover:before, .widget_categories ul li ul li a:hover:before, .widget_product_categories ul li ul li a:hover:before, .kadence_recent_posts a.posts_widget_readmore:hover:before, .kt-accordion > .panel h5:after, .kt-tabs:before, .image_menu_overlay, .kadence_social_widget a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .widget_pages ul li.current-cat > .count, .widget_categories ul li.current-cat > .count, .widget_product_categories ul li.current-cat > .count, .widget_recent_entries ul li a:hover ~ .count, .widget_recent_comments ul li a:hover ~ .count, .widget_archive ul li a:hover ~ .count, .widget_pages ul li a:hover ~ .count, .widget_categories ul li a:hover ~ .count, .widget_meta ul li a:hover ~ .count, .widget_product_categories ul li a:hover ~ .count, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .select2-results .select2-highlighted, .wp-pagenavi .current, .kt-header-extras span.kt-cart-total, .kt-mobile-header-toggle span.kt-cart-total, .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current,.widget_price_filter .ui-slider .ui-slider-handle, .widget_layered_nav ul li.chosen span.count, .widget_layered_nav_filters ul li span.count, .variations .kad_radio_variations label.selectedValue, .box-icon-item .menu-icon-read-more .read-more-highlight{background:'.$ascend['primary_color'].';}@media (max-width: 767px){.filter-set li a.selected {background:'.$ascend['primary_color'].';}}';
 	} else {
 		$primary_color = '';
 	}
@@ -24,8 +24,43 @@ function ascend_custom_css() {
 	if(!empty($ascend['header_background_choice']) && $ascend['header_background_choice'] == 'simple' && !empty($ascend['header_background_color'])) {
 	    $head_bgcolor = ascend_hex2rgb($ascend['header_background_color']); 
 	  	$hbg_color = '.headerclass, .mobile-headerclass, .kad-fixed-vertical-background-area{background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$ascend['header_background_transparency'].');}';
+	  	if($head_bgcolor[0] + $head_bgcolor[1] + $head_bgcolor[2] < 382){
+		  // this is dark colour!
+	  		$social_border = '.kt-header-extras .kadence_social_widget a {border-color: rgba(255,255,255,.2);}';
+		} else {
+			$social_border = '';
+		}
 	} else {
 	  	$hbg_color = '';
+	  	$social_border = '';
+	}
+	if(!empty($ascend['dropdown_background_color'])) {
+	    $drop_bgcolor = ascend_hex2rgb($ascend['dropdown_background_color']); 
+		if($drop_bgcolor[0] + $drop_bgcolor[1] + $drop_bgcolor[2] < 382){
+		  // this is dark colour!
+	  		$dbg_color = '.sf-menu.sf-menu-normal>li.kt-lgmenu>ul>li>a:before, .sf-menu.sf-vertical>li.kt-lgmenu>ul>li>a:before {background: rgba(255,255,255,.1);}';
+		} else {
+			$dbg_color = '';
+		}
+	} else {
+	  	$dbg_color = '';
+	}
+	if(!empty($ascend['trans_header_background_transparency']) && $ascend['trans_header_background_transparency'] != '0') {
+		if(isset($ascend['header_background_color']) && !empty($ascend['header_background_color']) ){
+	    	$head_bgcolor = ascend_hex2rgb($ascend['header_background_color']); 
+	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$ascend['trans_header_background_transparency'].');}';
+	  	} else {
+	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba(255,255,255,'.$ascend['trans_header_background_transparency'].');}';
+	  	}
+	  	if(isset($ascend['second_menu_background']) && !empty($ascend['second_menu_background']['background-color']) ){
+	    	$second_bgcolor = ascend_hex2rgb($ascend['second_menu_background']['background-color']); 
+	  		$trans_second_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.second-navclass, body.trans-header div:not(.is-sticky)>.second-navclass {background: rgba('.$second_bgcolor[0].', '.$second_bgcolor[1].', '.$second_bgcolor[2].', '.$ascend['trans_header_background_transparency'].');}';
+	  	} else {
+	  		$trans_second_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.second-navclass, body.trans-header div:not(.is-sticky)>.second-navclass {background: rgba(255,255,255,'.$ascend['trans_header_background_transparency'].');}';
+	  	}
+	} else {
+	  	$trans_hbg_color = '';
+	  	$trans_second_color = '';
 	}
 	if(isset($ascend['product_add_to_cart_show']) && $ascend['product_add_to_cart_show'] == '0') {
 		$product_button = '.product_item .button {opacity: 1;}.product_item .product_action_wrap {opacity: 1;visibility: visible; position: relative; bottom: 0;} .product_item:hover .product_action_wrap:before{display:none;}';
@@ -38,7 +73,7 @@ function ascend_custom_css() {
 		$dropdown_font = '';
 	}
 	if(isset($ascend['font_primary_menu']) && !empty($ascend['font_primary_menu']['color'])) {
-		$menu_font_color = '.kt-header-extras .kadence_social_widget a {color:'.$ascend['font_primary_menu']['color'].';} .kt-header-extras .kadence_social_widget a:hover{color:#fff;}';
+		$menu_font_color = '.kt-header-extras .kadence_social_widget a, .mobile-header-container .kt-mobile-header-toggle button {color:'.$ascend['font_primary_menu']['color'].';} button.mobile-navigation-toggle .kt-mnt span {background:'.$ascend['font_primary_menu']['color'].';} .kt-header-extras .kadence_social_widget a:hover{color:#fff;}';
 	} else {
 		$menu_font_color = '';
 	}
@@ -52,7 +87,7 @@ function ascend_custom_css() {
 		$tb_height = 0;
 		$header_height = '';
 		if(isset($ascend['beside_header_width'])) {
-			$header_width = '.kad-vertical-menu, .kad-fixed-vertical-background-area {width:'.$ascend['beside_header_width'].'px;}@media (min-width: 992px) {.kad-header-position-left #wrapper {padding-left: '.$ascend['beside_header_width'].'px;}.kad-header-position-right #wrapper {padding-right: '.$ascend['beside_header_width'].'px;}} @media (min-width: 1500px) {.kad-header-position-left.kt-width-large.body-style-boxed #wrapper, .kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-large.body-style-boxed #wrapper {max-width: '.floor(1470 + $ascend['beside_header_width']).'px;}}@media (min-width: 1800px) {.kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper{max-width: '.floor(1770 + $ascend['beside_header_width']).'px;}}';
+			$header_width = '.kad-vertical-menu, .kad-fixed-vertical-background-area {width:'.$ascend['beside_header_width'].'px;}@media (min-width: 992px) {.kad-header-position-left #wrapper {padding-left: '.$ascend['beside_header_width'].'px;}.kad-header-position-right #wrapper {padding-right: '.$ascend['beside_header_width'].'px;}} @media (min-width: '.floor(1470 + $ascend['beside_header_width'] + 40).'px) {.kad-header-position-left.kt-width-large.body-style-boxed #wrapper, .kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-large.body-style-boxed #wrapper {max-width: '.floor(1470 + $ascend['beside_header_width']).'px;}}@media (min-width: '.floor(1770 + $ascend['beside_header_width'] + 40).'px) {.kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper{max-width: '.floor(1770 + $ascend['beside_header_width']).'px;}}';
 
 			if($ascend['beside_header_width'] < '120') {
 				$header_width .= '.kt-header-extras .sf-vertical.kt-search-and-cart li.menu-cart-icon-kt, .kt-header-extras .sf-vertical.kt-search-and-cart li.menu-search-icon-kt {width: 100%;text-align: center;float:none;border-right: 0;}';
@@ -81,7 +116,7 @@ function ascend_custom_css() {
 		$header_width = '';
 	}
 	if(isset($ascend['pagetitle_uppercase']) && $ascend['pagetitle_uppercase'] == '1') {
-	    $title_uppercase = '.titleclass .entry-title {text-transform:uppercase;}'; 
+	    $title_uppercase = '.titleclass .entry-title, .titleclass h1 {text-transform:uppercase;}'; 
 	} else {
 	    $title_uppercase = '';
 	}
@@ -127,7 +162,7 @@ function ascend_custom_css() {
 	}
 	
 	if(isset($ascend['topbar_height'])) {
-	    $tbheight = '.kad-topbar-height {min-height:'.$ascend['topbar_height'].'px;} .kad-topbar-flex-item .sf-menu > li > a {line-height: '.$ascend['topbar_height'].'px;}'; 
+	    $tbheight = '.kad-topbar-height {min-height:'.$ascend['topbar_height'].'px;}'; 
 	} else {
 	    $tbheight = '';
 	}
@@ -158,6 +193,12 @@ function ascend_custom_css() {
 		if(isset($ascend['above_header_logo_width'])) {
 				$sidewidth = (100 - $ascend['above_header_logo_width']) / 2;
 				$header_logo_width = '.kt-header-position-above .header-sidewidth {width:'.$sidewidth.'%;} .kt-header-position-above .header-logo-width {width:'.$ascend['above_header_logo_width'].'%;}';
+		} else {
+		  	$header_logo_width = '';
+		}
+	} else if(isset($ascend['above_header_style']) && $ascend['above_header_style'] == 'center_menu') {
+		if(isset($ascend['above_header_logo_width'])) {
+				$header_logo_width = '.kt-header-layout-center-menu .kad-center-header.kt-header-flex-item {padding-left:'.$ascend['above_header_logo_width'].'%; padding-right:'.$ascend['above_header_logo_width'].'%;}';
 		} else {
 		  	$header_logo_width = '';
 		}
@@ -193,6 +234,8 @@ function ascend_custom_css() {
 			}
 			if(isset($ascend['home_page_title_height_min'])) {
 				$height_small 	= $ascend['home_page_title_height_min'];
+			} else {
+				$height_small 	= '';
 			}
 
 	} 
@@ -218,9 +261,13 @@ function ascend_custom_css() {
 	}
 	if(!empty($height)) {
 		$titlecss .= '.titleclass .page-header {min-height:'.$height.'px;}';
+	} elseif(isset($ascend['page_title_height'])) {
+		$titlecss .= '.titleclass .page-header  {min-height:'.$ascend['page_title_height'].'px;}';
 	}
 	if(!empty($height_small)) {
 		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {min-height:'.$height_small.'px;}}';
+	} elseif(isset($ascend['page_title_height_min'])) {
+		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {min-height:'.$ascend['page_title_height_min'].'px;}}';
 	}
 	if(isset($ascend['pagetitle_align'])) {
 	    $titlealign = '.page-header {text-align:'.$ascend['pagetitle_align'].';}'; 
@@ -244,7 +291,7 @@ function ascend_custom_css() {
 	}
 
 	$kad_custom_css = '<style type="text/css" id="kt-custom-css">';
-	$kad_custom_css .= $primary_color.$header_height.$header_width.$header_logo_width.$mobile_subnav.$mobile_slider.$tbheight.$mhheight.$mhheight_items.$hbg_color.$titlecss.$stminheight.$secondmenu_font_color.$menu_font_color.$titlealign.$dropdown_font.$product_button.$title_padding.$notavailable_placeholder_text.$logo_switch.$mobile_logo_switch.$title_uppercase.$subtitle_uppercase.$post_author.$post_cats.$post_comments.$post_postdate.$custom_css;
+	$kad_custom_css .= $primary_color.$header_height.$header_width.$header_logo_width.$mobile_subnav.$mobile_slider.$tbheight.$mhheight.$mhheight_items.$hbg_color.$trans_hbg_color.$trans_second_color.$titlecss.$stminheight.$secondmenu_font_color.$menu_font_color.$titlealign.$dropdown_font.$social_border.$dbg_color.$product_button.$title_padding.$notavailable_placeholder_text.$logo_switch.$mobile_logo_switch.$title_uppercase.$subtitle_uppercase.$post_author.$post_cats.$post_comments.$post_postdate.$custom_css;
 	$kad_custom_css .= '</style>';
 
 	echo $kad_custom_css;

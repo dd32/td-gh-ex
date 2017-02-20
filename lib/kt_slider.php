@@ -24,32 +24,34 @@ if(!function_exists('ascend_build_slider_home')) {
         if(!empty($slides)) :
             echo '<div id="'.esc_attr($id).'" class="slick-slider kad-light-gallery kt-slickslider titleclass loading '.esc_attr($class).'" data-slider-speed="'.esc_attr($speed).'" data-slider-anim-speed="'.esc_attr($fade_speed).'" data-slider-fade="'.esc_attr($fade).'" data-slider-type="'.esc_attr($stype).'" data-slider-auto="'.esc_attr($auto).'" data-slider-thumbid="#'.esc_attr($id).'-thumbs" data-slider-arrows="'.esc_attr($arrows).'" data-slider-thumbs-showing="'.esc_attr(ceil($width/80)).'" style="max-width:'.esc_attr($width).'px;">';
                     foreach ($slides as $slide) {
-                        $alt = get_post_meta($slide['attachment_id'], '_wp_attachment_image_alt', true);
-                        $img = ascend_get_image($imgwidth, $height, $crop, null, $alt, $slide['attachment_id'], false);
-                        echo '<div class="kt-slick-slide">';
-                            if(!empty($slide['link'])) {
-                                echo '<a href="'.esc_url($slide['link']).'" class="kt-slider-image-link">';
-                            }
-                                echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
-                                echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>';
-                                echo '<meta itemprop="url" content="'.esc_url($img['src']).'">';
-                                echo '<meta itemprop="width" content="'.esc_attr($img['width']).'px">';
-                                echo '<meta itemprop="height" content="'.esc_attr($img['height']).'>px">';
-                                echo '</div>';
-                                if ($captions == 'true') {
-                                	echo '<div class="basic-caption"><div class="flex-caption-case" style="text-align:'.esc_attr($align).'">';
-                                  	if (!empty($slide['title'])) {
-                                    	echo '<div class="captiontitle entry-title h1class" data-max-size="'.esc_attr($title_max).'" data-min-size="'.esc_attr($title_min).'">'.$slide['title'].'</div>'; 
-                                  	}
-                                  	if (!empty($slide['description'])) {
-                                    	echo '<div class="captiontext subtitle" data-max-size="'.esc_attr($subtitle_max).'" data-min-size="'.esc_attr($subtitle_min).'">'.$slide['description'].'</div>';
-                                  	}
-                                  	echo '</div></div>';
-                          		}
-                            if(!empty($slide['link'])) {
-                            	echo '</a>';
-                        	}
-                        echo '</div>';
+                    	if(!empty($slide['attachment_id'])) {
+	                        $alt = get_post_meta($slide['attachment_id'], '_wp_attachment_image_alt', true);
+	                        $img = ascend_get_image($imgwidth, $height, $crop, null, $alt, $slide['attachment_id'], false);
+	                        echo '<div class="kt-slick-slide">';
+	                            if(!empty($slide['link'])) {
+	                                echo '<a href="'.esc_url($slide['link']).'" class="kt-slider-image-link">';
+	                            }
+	                                echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
+	                                echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>';
+	                                echo '<meta itemprop="url" content="'.esc_url($img['src']).'">';
+	                                echo '<meta itemprop="width" content="'.esc_attr($img['width']).'px">';
+	                                echo '<meta itemprop="height" content="'.esc_attr($img['height']).'>px">';
+	                                echo '</div>';
+	                                if ($captions == 'true') {
+	                                	echo '<div class="basic-caption"><div class="flex-caption-case" style="text-align:'.esc_attr($align).'">';
+	                                  	if (!empty($slide['title'])) {
+	                                    	echo '<div class="captiontitle entry-title h1class" data-max-size="'.esc_attr($title_max).'" data-min-size="'.esc_attr($title_min).'">'.$slide['title'].'</div>'; 
+	                                  	}
+	                                  	if (!empty($slide['description'])) {
+	                                    	echo '<div class="captiontext subtitle" data-max-size="'.esc_attr($subtitle_max).'" data-min-size="'.esc_attr($subtitle_min).'">'.$slide['description'].'</div>';
+	                                  	}
+	                                  	echo '</div></div>';
+	                          		}
+	                            if(!empty($slide['link'])) {
+	                            	echo '</a>';
+	                        	}
+	                        echo '</div>';
+	                    }
                     }                      
             echo '</div> <!--Image Slider-->';
             if($type == 'thumb') {
@@ -120,11 +122,6 @@ if(!function_exists('ascend_build_slider')) {
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             $img = ascend_get_image($width, $height, true, null, $alt, $attachment, false);
-                            if( ascend_lazy_load_filter() ) {
-                                $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
-                            } else {
-                                $image_src_output = 'src="'.esc_url($img['src']).'"'; 
-                            }
                             echo '<div class="kt-slick-slide">';
                                 if($link == "post") {
                                     echo '<a href="'.get_the_permalink().'" class="kt-slider-image-link">';
@@ -134,11 +131,22 @@ if(!function_exists('ascend_build_slider')) {
                                     echo '<a href="'.esc_url($img['full']).'" data-rel="lightbox" class="kt-slider-image-link">';
                                 }
                                     echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
-                                    echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>';
+                                    echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>';
                                     echo '<meta itemprop="url" content="'.esc_url($img['src']).'">';
                                     echo '<meta itemprop="width" content="'.esc_attr($img['width']).'px">';
                                     echo '<meta itemprop="height" content="'.esc_attr($img['height']).'>px">';
                                     echo '</div>';
+                                    if ($captions == 'true') {
+                                    	$item = get_post($attachment);
+                                    	if(trim($item->post_excerpt) ) {
+                                    		echo  '<div class="gallery_item">';
+							      			echo  '<div class="photo-caption-bg"></div>';
+							        		echo  '<div class="caption kad_caption">';
+							        			echo  '<div class="kad_caption_inner">' . wptexturize($item->post_excerpt) . '</div>';
+							        		echo  '</div>';
+							        		echo  '</div>';
+							        	}
+						      		}
                                 echo '</a>';
                             echo '</div>';
                         }
@@ -151,13 +159,8 @@ if(!function_exists('ascend_build_slider')) {
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             $img = ascend_get_image(80, 80, true, null, $alt, $attachment, false);
-                            if( ascend_lazy_load_filter() ) {
-                                $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
-                            } else {
-                                $image_src_output = 'src="'.esc_url($img['src']).'"'; 
-                            }
                             echo '<div class="kt-slick-thumb">';
-                                    echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="image" '.$img['srcset'].'/>';
+                                    echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="image" '.$img['srcset'].'/>';
                                     echo '<div class="thumb-highlight"></div>';
                             echo '</div>';
                         }

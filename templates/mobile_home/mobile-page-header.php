@@ -7,6 +7,11 @@
 		} else {
 			$loop = 'false';
 		}
+		if(isset($ascend['home_mobile_page_title_typed_text_delay']) && !empty($ascend['home_mobile_page_title_typed_text_delay']) ) {
+			$delay = $ascend['home_mobile_page_title_typed_text_delay'];
+		} else {
+			$delay = '500';
+		}
 		$home_page_title = '<span class="kt_typed_element"';
 		$i = 0;
 		foreach ($ascend['home_mobile_page_title_typed'] as $text) {
@@ -17,15 +22,15 @@
 				$data = 'second';
 			} else if($i == 3) {
 				$data = 'third';
-			} else if($i == 3) {
+			} else if($i == 4) {
 				$data = 'fourth';
 			}
-			$home_page_title .= 'data-'.$data.'-sentence="'.$text.'"';
+			$home_page_title .= 'data-'.esc_attr($data).'-sentence="'.esc_attr($text).'"';
 			if($i == 4) {
 				break;
 			}
 		}
-		$home_page_title  .= 'data-sentence-count="'.$i.'" data-loop="'.$loop.'" data-speed="40" data-start-delay="500"></span>';
+		$home_page_title  .= 'data-sentence-count="'.esc_attr($i).'" data-loop="'.esc_attr($loop).'" data-speed="40" data-start-delay="500" data-back-delay="'.esc_attr($delay).'"></span>';
 	} else {
 		if(isset($ascend['home_mobile_page_title'])) {
 			$home_page_title = $ascend['home_mobile_page_title'];

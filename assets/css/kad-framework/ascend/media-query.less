@@ -17,6 +17,27 @@
 		height: auto;
 	}
 }
+@media only screen and (max-device-width: 1024px) {
+	.kt-header-position-above {
+		display: none;
+	}
+	.second-nav-container {
+		display: none;
+	}
+	#kad-mobile-banner {
+		display: block;
+		height: auto;
+	}
+    body.kad-header-position-left #wrapper {
+        padding-left: 0px;
+    }
+    body.kad-header-position-right #wrapper {
+        padding-right: 0px;
+    }
+    #kad-vertical-menu {
+        display: none;
+    }
+}
 // Mobile Vertical
 @media (max-width: 544px) {
 	// Post
@@ -42,10 +63,12 @@
 @media (max-width: 992px) {
 	.kad-ascend-parallax, .kt-parallax-stellar {
 		background-attachment: scroll !important;
+		background-position: center !important;
 	}
 }
 @media only screen and (max-device-width: 1024px) {
 	.kad-ascend-parallax, .kt-parallax-stellar {
 		background-attachment: scroll !important;
+		background-position: center !important;
 	}
 }

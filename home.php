@@ -46,7 +46,7 @@ global $post, $ascend, $kt_grid_carousel;
         if ($kt_grid_columns == '2') {
 	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
 	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
 	    } else {
 	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
 	   	}
@@ -56,7 +56,7 @@ global $post, $ascend, $kt_grid_carousel;
         if ($kt_grid_columns == '2') {
 	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
 	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
 	    } else {
 	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
 	   	}

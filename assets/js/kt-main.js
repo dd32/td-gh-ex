@@ -67,13 +67,16 @@ jQuery(document).ready(function ($) {
 					loopeffect = $(this).data('loop'),
 					speed = $(this).data('speed'),
 					startdelay = $(this).data('start-delay'),
+					backdelay = $(this).data('back-delay'),
 					linecount = $(this).data('sentence-count');
 					if(startdelay == null) {startdelay = 500;}
+					if(backdelay == null) {backdelay = 500;}
 					if(linecount == '1'){
 						var options = {
 					      strings: [first],
 					      typeSpeed: speed,
 					      startDelay: startdelay,
+					      backDelay: backdelay,
 					      loop: loopeffect,
 					  }
 			    	}else if(linecount == '3'){
@@ -81,6 +84,7 @@ jQuery(document).ready(function ($) {
 					      strings: [first, second, third],
 					      typeSpeed: speed,
 					      startDelay: startdelay,
+					      backDelay: backdelay,
 					      loop: loopeffect,
 					  }
 			    	} else if(linecount == '4'){
@@ -88,6 +92,7 @@ jQuery(document).ready(function ($) {
 					      strings: [first, second, third, fourth],
 					      typeSpeed: speed,
 					      startDelay: startdelay,
+					      backDelay: backdelay,
 					      loop: loopeffect,
 					  }
 			    	} else {
@@ -95,6 +100,7 @@ jQuery(document).ready(function ($) {
 					      strings: [first, second],
 					      typeSpeed: speed,
 					      startDelay: startdelay,
+					      backDelay: backdelay,
 					      loop: loopeffect,
 					  }
 			    	}
@@ -551,6 +557,15 @@ jQuery(document).ready(function ($) {
 				$(this).removeClass('kt-subright');
 			}
 		});
+		$('.kad-header-menu-outer .sf-menu-normal > li.kt-lgmenu > ul').each(function(){
+			var width = $(this).outerWidth()/2;
+			var offset = $(this).parent('li').offset().left;
+			if(width + offset > win_width) {
+				$(this).addClass('kt-subright');
+			} else {
+				$(this).removeClass('kt-subright');
+			}
+		});
 	}
 	if($('.kad-header-menu-outer .sf-menu-normal').length) {
 		main_header_submenus();
@@ -561,6 +576,16 @@ jQuery(document).ready(function ($) {
 		var win_width = $(window).width();
 		$('.nav-second .sf-menu-normal > li > ul').each(function(){
 			var width = $(this).outerWidth();
+			var offset = $(this).parent('li').offset().left;
+
+			if(width + offset > win_width) {
+				$(this).addClass('kt-subright');
+			} else {
+				$(this).removeClass('kt-subright');
+			}
+		});
+		$('.nav-second .sf-menu-normal > li.kt-lgmenu > ul').each(function(){
+			var width = $(this).outerWidth()/2;
 			var offset = $(this).parent('li').offset().left;
 
 			if(width + offset > win_width) {
@@ -593,24 +618,17 @@ jQuery(document).ready(function ($) {
 	}
 	// Responsive Text for Titles
 	if($('.titleclass').length) {
-		var maxsize = $(".titleclass .entry-title").data('max-size'),
-			minsize = $(".titleclass .entry-title").data('min-size');
-			$(".titleclass .entry-title").fitText(1.3, { minFontSize: minsize, maxFontSize: maxsize, maxWidth: 1140, minWidth: 400 });
+		$('.titleclass .entry-title').each(function(){
+			var maxsize = $(this).data('max-size'),
+			minsize = $(this).data('min-size');
+			$(this).kt_fitText(1.4, { minFontSize: minsize, maxFontSize: maxsize, maxWidth: 1140, minWidth: 400 });
+		});
 		if($('.titleclass .subtitle').length) {
-			var sub_maxsize = $(".titleclass .subtitle").data('max-size'),
-			sub_minsize = $(".titleclass .subtitle").data('min-size');
-			$(".titleclass .subtitle").fitText(1.5, { minFontSize: sub_minsize, maxFontSize: sub_maxsize, maxWidth: 1140, minWidth: 400  });
-		}
-	}
-	// Responsive Text for call To action
-	if($('.kt-ctaw .kt-call-to-action-title').length) {
-		var maxsize = $(".kt-ctaw .kt-call-to-action-title").data('max-size'),
-			minsize = $(".kt-ctaw .kt-call-to-action-title").data('min-size');
-			$(".kt-ctaw .kt-call-to-action-title").fitText(1.3, { minFontSize: minsize, maxFontSize: maxsize, maxWidth: 1140, minWidth: 400 });
-		if($('.kt-ctaw .kt-call-to-action-subtitle').length) {
-			var sub_maxsize = $(".kt-ctaw .kt-call-to-action-subtitle").data('max-size'),
-			sub_minsize = $(".kt-ctaw .kt-call-to-action-subtitle").data('min-size');
-			$(".kt-ctaw .kt-call-to-action-subtitle").fitText(1.5, { minFontSize: sub_minsize, maxFontSize: sub_maxsize, maxWidth: 1140, minWidth: 400  });
+			$('.titleclass .subtitle').each(function(){
+				var sub_maxsize = $(this).data('max-size'),
+				sub_minsize = $(this).data('min-size');
+				$(this).kt_fitText(1.5, { minFontSize: sub_minsize, maxFontSize: sub_maxsize, maxWidth: 1140, minWidth: 400  });
+			});
 		}
 	}
 
@@ -698,8 +716,10 @@ jQuery(document).ready(function ($) {
 		if (mobilestickyheader == 1) {
 			$('#kad-mobile-banner').sticky({topSpacing:topOffest, zIndex:1000});
 			$(window).on("debouncedresize", function( event ) {
+				if( !kt_isMobile.any() ) {
 					$('#kad-mobile-banner').unstick();
-				 $('#kad-mobile-banner').sticky({topSpacing:topOffest, zIndex:1000});
+				 	$('#kad-mobile-banner').sticky({topSpacing:topOffest, zIndex:1000});
+				}
 			});
 		}
 	}

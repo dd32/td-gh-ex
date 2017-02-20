@@ -60,8 +60,8 @@ function ascend_ie_support_header() {
     echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/vendor/html5shiv.min.js' ) . '"></script>'. "\n";
     echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/vendor/respond.min.js' ) . '"></script>'. "\n";
     echo '<![endif]-->'. "\n";
-    echo '<!--[if IE ]>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/vendor/flexibility.min.js' ) . '"></script>'. "\n";
+    echo '<!--[if IE]>'. "\n";
+    echo '<link rel="stylesheet" id="ascend_ie_fallback" href="' . esc_url( get_template_directory_uri() . '/assets/css/ie_fallback.css').'" type="text/css" media="all">'. "\n";
     echo '<![endif]-->'. "\n";
 }
 add_action( 'wp_head', 'ascend_ie_support_header', 15 );

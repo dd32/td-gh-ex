@@ -22,6 +22,9 @@
 .sf-menu li a i {
 	margin-right: 5px;
 }
+.sf-menu .kadence_social_widget a i {
+    margin: 0;
+}
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
     display: block;
@@ -33,9 +36,13 @@
     zoom:1;
     letter-spacing: .2px;
     padding:10px;
+    .transition(all 0.2s ease-in-out);
 }
 .sf-menu > li > a {
     text-transform: uppercase;
+}
+.sf-menu ul a {
+    padding: 10px 15px;
 }
 .sf-menu ul ul {
     top: 0;
@@ -58,6 +65,9 @@
     border-left-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
+}
+.sf-menu.sf-menu-normal>li.menu-cart-icon-kt>ul:not(.kt-subright):before {
+	left:16px
 }
 .sf-menu ul {
     background: #fff;
@@ -87,6 +97,8 @@
 .kt-showsub-indicator .sf-menu-normal .sf-dropdown > a:after {
     right: 10px;
     height: auto;
+        min-height: 20px;
+            text-align: right;
     width: 16px;
     vertical-align: bottom;
     display: inline-block;
@@ -109,6 +121,9 @@
     content: "\f0da";
     display: inline;
     .icon_font();
+}
+.kt-header-extras ul.sf-menu .kt-extras-label i.kt-icon-shopping-bag {
+	margin-right: 0;
 }
 .kt-showsub-indicator .widget_nav_menu .sf-dropdown-submenu > a:after, .kt-showsub-indicator .widget_nav_menu .sf-dropdown > a:after {
 	//display: none;
@@ -165,7 +180,19 @@
 		width:50%;
 		float: left;
 		> a {
+			padding-top: 15px;
 			text-transform: uppercase;
+			&:before {
+			    content:'';
+			    display:block;
+			    position:absolute;
+			    width:auto;
+			    left:15px;
+			    right:15px;
+			    height:1px;
+			    background:rgba(0,0,0,.1);
+			    bottom:0;
+			}
 		}
 		a:after {
 				display: none;
@@ -214,6 +241,17 @@
 		float: left;
 		> a {
 			text-transform: uppercase;
+			&:before {
+			    content:'';
+			    display:block;
+			    position:absolute;
+			    width:auto;
+			    left:15px;
+			    right:15px;
+			    height:1px;
+			    background:rgba(0,0,0,.1);
+			    bottom:0;
+			}
 		}
 		a:after {
 				display: none;
@@ -250,7 +288,9 @@
 		position: static;
 		> ul {
 			width: 100%;
-			right:0;
+			margin-left: 0 !important;
+		    right: 0;
+		    left: auto;
 			&:before {
 				display: none;
 			}

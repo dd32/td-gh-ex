@@ -107,9 +107,6 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 		<?php 
 		endif; 
 
-		if ($wp_query->max_num_pages > 1) : 
-				ascend_wp_pagenav();   
-		endif; 
 		$wp_query = $temp;  // Reset 
 		wp_reset_query(); ?>
 		</div>

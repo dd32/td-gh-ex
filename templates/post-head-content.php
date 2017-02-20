@@ -85,7 +85,7 @@ global $post, $ascend, $kt_feat_width, $kt_has_sidebar;
             }
                    ?>
             <div class="imghoverclass postfeat post-single-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <a href="<?php echo esc_url($img['full']); ?>" rel-data="lightbox">
+                <a href="<?php echo esc_url($img['full']); ?>" data-rel="lightbox">
                     <img <?php echo $image_src_output; ?> itemprop="contentUrl" alt="<?php esc_attr($img['alt']); ?>" width="<?php echo esc_attr($img['width']);?>" height="<?php echo esc_attr($img['height']);?>" <?php echo $img['srcset'];?> />
                     <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
                     <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>px">

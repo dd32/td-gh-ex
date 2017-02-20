@@ -6,13 +6,6 @@ get_header();
 
 global $post, $ascend, $kt_grid_carousel;
 	$post_id = $post->ID;
-	if(ascend_display_sidebar()) {
-        $fullclass = '';
-        $kt_has_sidebar = true;
-    } else {
-        $fullclass = 'fullwidth';
-        $kt_has_sidebar = false;
-    }
     $kt_grid_carousel = false;
     $blog_type 		= get_post_meta( $post_id, '_kad_blog_type', true );
     $blog_columns 	= get_post_meta( $post_id, '_kad_blog_columns', true );
@@ -48,13 +41,27 @@ global $post, $ascend, $kt_grid_carousel;
     } else {
         $kt_grid_columns = '3';
     } 
-    if ($kt_grid_columns == '2') {
-        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-    } else if ($kt_grid_columns == '3'){ 
-        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
+    if(ascend_display_sidebar()) {
+        $fullclass = '';
+        $kt_has_sidebar = true;
+        if ($kt_grid_columns == '2') {
+	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
+	    } else if ($kt_grid_columns == '3'){ 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
+	    } else {
+	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
+	   	}
     } else {
-        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-   	}
+        $fullclass = 'fullwidth';
+        $kt_has_sidebar = false;
+        if ($kt_grid_columns == '2') {
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
+	    } else if ($kt_grid_columns == '3'){ 
+	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
+	    } else {
+	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
+	   	}
+    }
 
     /**
     * @hooked ascend_page_title - 20

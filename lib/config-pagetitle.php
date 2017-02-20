@@ -59,29 +59,11 @@ function ascend_display_pagetitle() {
         }
     } else if(is_tax('product_cat') || is_tax('product_tag') || is_category() ||  is_tag() ) {
         global $ascend;
-        $cat_term_id = get_queried_object()->term_id;
-        $meta = get_option('product_cat_pageheader');
-        if (empty($meta)) {
-            $meta = array();
-        }
-        if (!is_array($meta)) {
-            $meta = (array) $meta;
-        }
-        $meta = isset($meta[$cat_term_id]) ? $meta[$cat_term_id] : array();
-        if(isset($meta['kad_pagetitle_hide'])) {
-            $hidepagetitle = $meta['kad_pagetitle_hide'];
-        }
-        if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
-            $pagetitledisplay = false;
-        } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
-            $pagetitledisplay = true;
-        } else {
             if(isset($ascend['default_showpagetitle']) && $ascend['default_showpagetitle'] == '0') {
                 $pagetitledisplay = false;
             } else {
                 $pagetitledisplay = true;
             }
-        }
     } else if (is_singular('portfolio') ) {
         global $post, $ascend;
         $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
@@ -104,7 +86,7 @@ function ascend_display_pagetitle() {
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
-            if(isset($ascend['default_showposttitle']) && $ascend['default_showposttitle'] == '0') {
+            if(isset($ascend['blog_post_title']) && $ascend['blog_post_title'] == '0') {
                 $pagetitledisplay = false;
             } else {
                 $pagetitledisplay = true;

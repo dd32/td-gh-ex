@@ -44,7 +44,7 @@
 			<div class="page-header" >
 				<div class="page-header-inner">
 					<h1 class="page_head_title entry-title" itemprop="name" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>>
-						<?php echo apply_filters('kadence_page_title', ascend_title() ); ?>
+						<?php echo apply_filters('kadence_page_title', woocommerce_page_title() ); ?>
 					</h1>
 					<?php if(!empty($bsub)) { echo '<p class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"> '.do_shortcode($bsub).' </p>'; } ?>
 				</div>

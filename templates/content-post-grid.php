@@ -20,8 +20,8 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns;
     } else {
         if(!empty($kt_grid_columns)) {
             if($kt_grid_columns == '3') {
-                $image_width = 420;
-                $image_height = 280;
+                $image_width = 480;
+                $image_height = 320;
 
             } else if($kt_grid_columns == '2') {
                	$image_width = 660;
@@ -58,7 +58,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns;
             </a> 
         </div>
     <?php 
-    } elseif($postsummery == 'slider_landscape' || $postsummery == 'slider_portrait') { 
+    } elseif($postsummery == 'slider_landscape' || $postsummery == 'slider_portrait' || $postsummery == 'gallery_grid') { 
         echo '<div class="blog-grid-media">';
             $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
             $attachments = array_filter( explode( ',', $image_gallery ) );

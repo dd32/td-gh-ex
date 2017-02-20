@@ -29,35 +29,35 @@
 					</div> 
 		        <?php }; ?>
 		    <?php } else if($footer_layout == "threec") {
-		    	if (is_active_sidebar('footer_third_1') ) { ?> 
+		    	if (is_active_sidebar('footer_1') ) { ?> 
 					<div class="col-md-4 footercol1">
-					<?php dynamic_sidebar('footer_third_1'); ?>
+					<?php dynamic_sidebar('footer_1'); ?>
 					</div> 
             	<?php }; ?>
-				<?php if (is_active_sidebar('footer_third_2') ) { ?> 
+				<?php if (is_active_sidebar('footer_2') ) { ?> 
 					<div class="col-md-4 footercol2">
-					<?php dynamic_sidebar('footer_third_2'); ?>
+					<?php dynamic_sidebar('footer_2'); ?>
 					</div> 
 		        <?php }; ?>
-		        <?php if (is_active_sidebar('footer_third_3') ) { ?> 
+		        <?php if (is_active_sidebar('footer_3') ) { ?> 
 					<div class="col-md-4 footercol3">
-					<?php dynamic_sidebar('footer_third_3'); ?>
+					<?php dynamic_sidebar('footer_3'); ?>
 					</div> 
 	            <?php }; ?>
 	         <?php } else if($footer_layout == "three_single") {
-		    	if (is_active_sidebar('footer_third_1') ) { ?> 
+		    	if (is_active_sidebar('footer_1') ) { ?> 
 					<div class="col-md-12 footercol1">
-					<?php dynamic_sidebar('footer_third_1'); ?>
+					<?php dynamic_sidebar('footer_1'); ?>
 					</div> 
             	<?php }; ?>
-				<?php if (is_active_sidebar('footer_third_2') ) { ?> 
+				<?php if (is_active_sidebar('footer_2') ) { ?> 
 					<div class="col-md-6 col-sm-6 footercol2">
-					<?php dynamic_sidebar('footer_third_2'); ?>
+					<?php dynamic_sidebar('footer_2'); ?>
 					</div> 
 		        <?php }; ?>
-		        <?php if (is_active_sidebar('footer_third_3') ) { ?> 
+		        <?php if (is_active_sidebar('footer_3') ) { ?> 
 					<div class="col-md-6 col-sm-6 footercol3">
-					<?php dynamic_sidebar('footer_third_3'); ?>
+					<?php dynamic_sidebar('footer_3'); ?>
 					</div> 
 	            <?php }; ?>
 			<?php } else if($footer_layout == "four_single") {
@@ -82,14 +82,14 @@
 					</div> 
 		        <?php }; ?>
 			<?php } else {
-					if (is_active_sidebar('footer_double_1') ) { ?>
+					if (is_active_sidebar('footer_1') ) { ?>
 					<div class="col-md-6 col-sm-6 footercol1">
-					<?php dynamic_sidebar('footer_double_1'); ?> 
+					<?php dynamic_sidebar('footer_1'); ?> 
 					</div> 
 		            <?php }; ?>
-		        <?php if (is_active_sidebar('footer_double_2') ) { ?>
+		        <?php if (is_active_sidebar('footer_2') ) { ?>
 					<div class="col-md-6 col-sm-6 footercol2">
-					<?php dynamic_sidebar('footer_double_2'); ?> 
+					<?php dynamic_sidebar('footer_2'); ?> 
 					</div> 
 		            <?php }; ?>
 		        <?php } ?>
