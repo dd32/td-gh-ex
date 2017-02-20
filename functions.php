@@ -4,13 +4,6 @@
  *
  * @package storto
  */
- 
- /**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800; /* pixels */
-}
 
 if ( ! function_exists( 'storto_setup' ) ) :
 /**
@@ -80,6 +73,18 @@ endif; // storto_setup
 add_action( 'after_setup_theme', 'storto_setup' );
 
 /**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function storto_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'storto_content_width', 800 );
+}
+add_action( 'after_setup_theme', 'storto_content_width', 0 );
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -125,9 +130,10 @@ add_action( 'wp_enqueue_scripts', 'storto_scripts' );
 /**
  * Replace more Excerpt
  */
-function storto_new_excerpt_more($more) {
-       global $post;
-	return ' ...';
+if ( ! function_exists( 'storto_new_excerpt_more' ) ) {
+	function storto_new_excerpt_more($more) {
+		return '&hellip;';
+	}
 }
 add_filter('excerpt_more', 'storto_new_excerpt_more');
 

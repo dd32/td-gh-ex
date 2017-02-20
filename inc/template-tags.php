@@ -128,6 +128,9 @@ function storto_categorized_blog() {
  * Flush out the transients used in storto_categorized_blog.
  */
 function storto_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'storto_categories' );
 }

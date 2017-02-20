@@ -20,6 +20,11 @@
 				jQuery(this).append("<span class='indicator'></span>");
 			}
 		});
+		
+		/*-----------------------------------------------------------------------------------*/
+		/*  Detect Mobile Browser
+		/*-----------------------------------------------------------------------------------*/
+			var mobileDetect = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	
 		/*-----------------------------------------------------------------------------------*/
 		/*  Menu Effect
@@ -47,24 +52,22 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Detect Mobile Browser
 		/*-----------------------------------------------------------------------------------*/ 
-		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		} else {
-				
-				/*-----------------------------------------------------------------------------------*/
-				/*  Scroll To Top
-				/*-----------------------------------------------------------------------------------*/ 
-					$(window).scroll(function(){
-						if ($(this).scrollTop() > 800) {
-							$('#toTop').fadeIn();
-						} 
-						else {
-							$('#toTop').fadeOut();
-						}
-					}); 
-					$('#toTop').click(function(){
-						$("html, body").animate({ scrollTop: 0 }, 1000);
-						return false;
-					});
+		if ( !mobileDetect ) {
+			/*-----------------------------------------------------------------------------------*/
+			/*  Scroll To Top
+			/*-----------------------------------------------------------------------------------*/ 
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 800) {
+						$('#toTop').fadeIn();
+					} 
+					else {
+						$('#toTop').fadeOut();
+					}
+				}); 
+				$('#toTop').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 1000);
+					return false;
+				});
 				
 			/*-----------------------------------------------------------------------------------*/
 			/*  Sticky Sidebar

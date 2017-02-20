@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2017-01-11 12:01+0100\n"
-"PO-Revision-Date: 2017-01-11 12:01+0100\n"
+"POT-Creation-Date: 2017-02-20 16:57+0100\n"
+"PO-Revision-Date: 2017-02-20 16:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -32,86 +32,6 @@ msgstr ""
 #: 404.php:27
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:21
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: archive.php:24
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: archive.php:27
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:30
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:33
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:33
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:36
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:36
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:39
-msgid "Asides"
-msgstr ""
-
-#: archive.php:42
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:45
-msgid "Images"
-msgstr ""
-
-#: archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: archive.php:51
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:54
-msgid "Links"
-msgstr ""
-
-#: archive.php:57
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:60
-msgid "Audios"
-msgstr ""
-
-#: archive.php:63
-msgid "Chats"
-msgstr ""
-
-#: archive.php:66
-msgid "Archives"
 msgstr ""
 
 #: comments.php:28
@@ -256,61 +176,56 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:54
+#: functions.php:47
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:94
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:52
+#: header.php:51
 msgid "Facebook"
 msgstr ""
 
-#: header.php:55
+#: header.php:54
 msgid "Twitter"
 msgstr ""
 
-#: header.php:58
+#: header.php:57
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:61
+#: header.php:60
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:64
+#: header.php:63
 msgid "Instagram"
 msgstr ""
 
-#: header.php:67
+#: header.php:66
 msgid "YouTube"
 msgstr ""
 
-#: header.php:70
+#: header.php:69
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:73
+#: header.php:72
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:76
+#: header.php:75
 msgid "VK"
 msgstr ""
 
-#: header.php:85
+#: header.php:83
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:90
+#: header.php:88
 msgid "Select a page..."
-msgstr ""
-
-#: inc/extras.php:64
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:77
