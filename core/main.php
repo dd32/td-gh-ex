@@ -663,7 +663,7 @@ if (!function_exists('suevafree_customize_excerpt_more')) {
 	
 			endif;
 		
-			if ($pos=strpos($post->post_content, '<!--more-->')): 
+			if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
 			
 				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
 			
