@@ -1,6 +1,6 @@
 <?php
 /** nav-menu-walker.php */
-class rambo_nav_walker extends Walker_Nav_Menu {	
+class webriti_nav_walker extends Walker_Nav_Menu {	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -32,7 +32,7 @@ class rambo_nav_walker extends Walker_Nav_Menu {
 		//$attributes .= ($args->has_children) 	    ? ' data-toggle="dropdown" data-target="#" class="dropdown-toggle"' : '';
 			
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
+		$item_output .= '<a class="dropdown-toggle" '. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= ($args->has_children && $depth == 0) ? '<b class="caret"></b></a>' : '</a>';
 		$item_output .= $args->after;

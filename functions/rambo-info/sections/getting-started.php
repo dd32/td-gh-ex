@@ -45,14 +45,14 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6"> 
 				<div class="rambo-tab-pane-half rambo-tab-pane-first-half">
 
-					<a href="<?php echo esc_url(__('http://webriti.com/demo/wp/lite/rambo/','rambo')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
+					<a href="<?php echo 'http://webriti.com/demo/wp/lite/rambo/'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
 					<p class="info-text"><?php echo __('Lite Demo','rambo'); ?></p></a>
 					
 					
-					<a href="<?php echo esc_url(__('http://webriti.com/demo/wp/preview/?prev=rambo/','rambo')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<a href="<?php echo 'http://webriti.com/demo/wp/preview/?prev=rambo/'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
 					<p class="info-text"><?php echo __('View Pro','rambo'); ?></p></a>
 					
-					<a href="<?php echo esc_url(__('http://webriti.com/support/categories/rambo','rambo')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo 'http://webriti.com/support/categories/rambo'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Premium Theme Support','rambo'); ?></p></a>
 					
 				</div>
@@ -61,10 +61,10 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6">	
 				<div class="rambo-tab-pane-half rambo-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url(__('https://wordpress.org/support/theme/rambo/reviews/#new-post','rambo')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
+					<a href="<?php echo 'https://wordpress.org/support/theme/rambo/reviews/#new-post'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
 					<p class="info-text"><?php echo __('Rate This Theme','rambo'); ?></p></a>
 					
-					<a href="<?php echo esc_url(__('https://wordpress.org/support/theme/rambo','rambo')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo 'https://wordpress.org/support/theme/rambo'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Support','rambo'); ?></p></a>
 				</div>
 			</div>

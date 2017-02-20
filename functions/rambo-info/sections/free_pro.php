@@ -97,7 +97,7 @@
 					<ul class="feature">
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner Image, No of 4 Services, No of 4 Projects, Latest News, 3 Column Footer Widgetizeds area','rambo'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Blog Left Sidebar, Full Width Template','rambo'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('4','rambo'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '4'; ?> </li>
 						
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Simple Thumbnail Gallery','rambo'); ?> </li>
 						
@@ -127,7 +127,7 @@
 					<ul class="feature">
 						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Slider [Unlimited Slides], Site Intro, Service [Unlimited Services], Projects [Unlimited Products], Latest News, Footer Callout and 3 Column Footer Widgetizeds area','rambo'); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px"><?php _e('Custom Homepage, About Us, Service, Portfolio 2,3 and 4 column, Blog Left & Right Sidebar, Blog Full Width, Page Left & Right Sidebar, Page Left Sidebar, Page Right Sidebar, Page Full Width and Contact Page','rambo'); ?></li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('7','rambo'); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '7'; ?></li>
 						
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Overlay Effects Gallery' ,'rambo'); ?> </li>
 						

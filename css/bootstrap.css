@@ -224,10 +224,10 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 20px;
-  color: #767676;
+  color: #767676; */
   background-color: #ffffff;
   
   
@@ -750,7 +750,7 @@ h6 {
   /* font-weight: bold; Shahid */
   line-height: 20px;
   color: inherit;
-  /*text-rendering: optimizelegibility;*/
+  text-rendering: optimizelegibility;
 }
 
 h1 small,
@@ -1063,6 +1063,7 @@ input,
 button,
 select,
 textarea {
+  font-size: 14px;
   font-weight: normal;
   line-height: 20px;
 }
@@ -1162,7 +1163,7 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: #DB2723;
+  border-color: #dddddd;
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */

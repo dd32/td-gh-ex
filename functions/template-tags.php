@@ -16,14 +16,19 @@ if(!function_exists( 'rambo_post_pagination' )) :
 function rambo_post_pagination()
 {
 ?>
-<div class="pagination_section">
-	<div class="pagination text-center">
+<div class="pagination_section">	
+		<div class="pagination text-center">
 	 <ul>
-		<li><?php previous_posts_link(); ?></li>
-		<li><?php next_posts_link(); ?></li>
+		<?php
+				// Previous/next page navigation.
+				the_posts_pagination( array(
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+				) );
+				?>
 	</ul>
 	</div>
-    </div>
+</div>
 <?php } endif; 
 // this function fetch the post featured images also you can specify the class
 if(!function_exists( 'rambo_post_thumbnail' )) :

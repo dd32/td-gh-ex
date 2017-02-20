@@ -11,6 +11,7 @@
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 
 .upgrade_pro
@@ -28,6 +29,7 @@ background-color: #1d4467;
     word-wrap: break-word;
     line-height: 25px;
 	text-transform: uppercase;
+	text-decoration:none;
 }
 
 .review {
@@ -43,6 +45,7 @@ background-color: #1d4467;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .document{
   background-color: #ee591f;
@@ -57,6 +60,7 @@ background-color: #1d4467;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .sortable{ 
 list-style-type: none;

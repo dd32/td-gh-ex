@@ -1,11 +1,4 @@
 <?php
-/**
-* @Theme Name	:	rambo
-* @file         :	comment-function.php
-* @package      :	rambo
-* @author       :	webriti
-* @license      :	license.txt
-*/
 // code for comment
 if ( ! function_exists( 'rambo_comment' ) ) :
 
@@ -25,24 +18,28 @@ function rambo_comment( $comment, $args, $depth )
 			<a class="pull-left">
             <?php echo get_avatar($comment,$size = '65'); ?>
             </a>
+			<div class="media-body">
             <div class="blog_single_post_content">
-			<h4 class="blog_single_post_heading"><?php the_author();?><small> | </small>
+			<h4 class="blog_single_post_heading"><?php printf(('%s'), get_comment_author_link()) ?> <small> | </small>
 			<span><?php comment_time('M j,Y');?></span>
 			<div class="reply">
 			<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
     	    </div>
 			</h4>
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'rambo' ); ?></em>
+			<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','rambo'); ?></em>
 			<br/>
 			<?php endif; ?>
     	    <p><?php comment_text() ;?></p><!-- /comment-text -->
     	    </div><!-- /comment-content -->
+			</div>
+			
 		  </div><!-- /comment-details -->
 <?php
 }
 endif;
 add_filter('get_avatar','rambo_add_gravatar_class');
+
 function rambo_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
     return $class;

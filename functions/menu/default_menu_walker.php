@@ -1,13 +1,13 @@
 <?php 
-function rambo_page_menu_args( $args ) {
+function webriti_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'rambo_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'webriti_page_menu_args' );
 
  
-function rambo_fallback_page_menu( $args = array() ) {
+function webriti_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args = wp_parse_args( $args, $defaults );
@@ -26,7 +26,7 @@ function rambo_fallback_page_menu( $args = array() ) {
 		$class = '';
 		if ( is_front_page() && !is_paged() )
 			$class = 'class="current_page_item"';
-		$menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+		$menu .= '<li ' . $class . '><a  href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list
 		if (get_option('show_on_front') == 'page') {
 			if ( !empty( $list_args['exclude'] ) ) {
@@ -40,7 +40,7 @@ function rambo_fallback_page_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$list_args['walker'] = new rambo_walker_page_menu;
+	$list_args['walker'] = new webriti_walker_page_menu;
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
 
 	if ( $menu )
@@ -53,7 +53,7 @@ function rambo_fallback_page_menu( $args = array() ) {
 	else
 		return $menu;
 }
-class rambo_walker_page_menu extends Walker_Page{
+class webriti_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class='dropdown-menu'>\n";

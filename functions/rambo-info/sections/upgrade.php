@@ -94,7 +94,8 @@
 	<div class="col-md-6">
 	<div class="rambo-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'rambo' ); ?></strong></p>
-		<p><?php esc_html_e( 'We provide good  knowledge base articles which helps you to create an effective wesbite. You can visit these articles on our  ', 'rambo' ); ?><a href="http://webriti.com/help/themes/rambo/rambo-wordpress-theme/" target="_blank"><?php _e('Help Section','rambo'); ?></a></a></p>
+		<p><?php esc_html_e( 'We provide good  knowledge base articles which helps you to create an effective wesbite. You can visit these articles on our  ', 'rambo' ); ?>
+		<a href=<?php echo esc_url("http://webriti.com/help/themes/rambo/rambo-wordpress-theme/"); ?> target="_blank"><?php _e('Help Section','rambo'); ?></a></a></p>
 		<hr>
 	</div>
 	</div>
