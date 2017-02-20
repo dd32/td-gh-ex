@@ -227,7 +227,7 @@ function catchflames_page_content( $options ) {
 
 	}
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
                     'posts_per_page' 		=> $number_of_page,
                     'post__in'       		=> $page_list,
                     'orderby'        		=> 'post__in',
@@ -235,7 +235,7 @@ function catchflames_page_content( $options ) {
                 ));
 
 		$i=0;
-		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
+		while ( $loop->have_posts()) : $loop->the_post(); $i++;
 			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to: ', 'catch-flames' ), 'echo' => false ) );
 
 			$excerpt = get_the_excerpt();
@@ -245,18 +245,18 @@ function catchflames_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$catchflames_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
-						'. get_the_post_thumbnail( $post->ID, 'featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
+						<a href="' . esc_url( get_permalink() ) . '" title="'.the_title( '', '', false ).'">
+						'. get_the_post_thumbnail( $post->ID, 'featured-content', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
 				}
 				else {
-					$catchflames_first_image = catchflames_get_first_image( $post->ID, 'catch-flames-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+					$catchflames_first_image = catchflames_get_first_image( $post->ID, 'catch-flames-featured-content', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );
 
 					if ( '' != $catchflames_first_image ) {
 						$catchflames_page_content .= '
 						<figure class="featured-homepage-image">
-							<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
+							<a href="' . esc_url( get_permalink() ) . '" title="'.the_title( '', '', false ).'">
 								'. $catchflames_first_image .'
 							</a>
 						</figure>';
@@ -267,7 +267,7 @@ function catchflames_page_content( $options ) {
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
-								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+								<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 							</h1>
 						</header>';
 						if ( 'excerpt' == $show_content ) {

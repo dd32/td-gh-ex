@@ -26,7 +26,7 @@ $options = $catchflames_options_settings; ?>
 			global $catchflames_options_settings;
 			$options = $catchflames_options_settings;
 			$more_tag_text = $options[ 'more_tag_text' ];
-			the_content( sprintf( __( '%s', 'catch-flames' ), esc_attr( $more_tag_text ) ) ); ?>
+			the_content( $more_tag_text ); ?>
 			<?php wp_link_pages( array(
                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
                 'after'			=> '</div>',

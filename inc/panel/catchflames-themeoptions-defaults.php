@@ -66,10 +66,6 @@ endif;
  */
 global $catchflames_options_defaults;
 $catchflames_options_defaults = array(
-	'favicon'							=> get_template_directory_uri().'/images/favicon.ico',
- 	'remove_favicon'					=> '1',
-	'web_clip'							=> get_template_directory_uri().'/images/apple-touch-icon.png',
- 	'remove_web_clip'					=> '1',
 	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
  	'remove_header_logo'				=> '1',
  	'disable_header_menu'				=> '0',
@@ -85,10 +81,10 @@ $catchflames_options_defaults = array(
 	//Promotion Headline Options
 	'promotion_headline_option'         => 'disabled',
 	'promotion_headline_left_width'     => '80',
-	'promotion_headline'                => __( 'Catch Flames is a Responsive WordPress Theme', 'catch-flames' ),
-	'promotion_subheadline'             => __( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catch-flames' ),
-	'promotion_headline_button'         => __( 'Learn More', 'catch-flames' ),
-	'promotion_headline_url'            => esc_url( 'https://catchthemes.com/themes/catch-flames/' ),
+	'promotion_headline'                => esc_html__( 'Catch Flames is a Responsive WordPress Theme', 'catch-flames' ),
+	'promotion_subheadline'             => esc_html__( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catch-flames' ),
+	'promotion_headline_button'         => esc_html__( 'Learn More', 'catch-flames' ),
+	'promotion_headline_url'            => '#',
 	'promotion_headline_target'         => 1,
 
 	'sidebar_layout'					=> 'three-columns',

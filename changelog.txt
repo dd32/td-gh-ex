@@ -1,5 +1,8 @@
 == Change log ==
 
+Version 3.3.1
+* Code Optimization
+
 Version 3.3
 * Added: Option to Display all Categories in Customizer
 * Bug Fixed: Added qtrans_convertURL() function_exists check

@@ -6,24 +6,6 @@
  */
 
 
-if( ! function_exists( 'catchflames_is_favicon_active' ) ) :
-	/**
-	* Return true if no core site icon is present
-	*
-	* @since Catch Flames 2.7
-	*/
-	function catchflames_is_site_icon_active( $control ) {
-		//Check if has_site_icon function exists. If it does not, WP version is less than 4.3
-		if ( function_exists( 'has_site_icon' ) ) {
-			//Return true if core site icon is not present, else return false
-			return !has_site_icon();
-		}
-		else {
-			return true;
-		}
-	}
-endif;
-
 if( ! function_exists( 'catchflames_is_slider_active' ) ) :
 	/**
 	* Return true if slider is active

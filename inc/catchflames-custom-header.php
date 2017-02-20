@@ -41,8 +41,6 @@ function catchflames_custom_header_setup() {
 
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'catchflames_header_style',
-		'admin-head-callback'    => 'catchflames_admin_header_style',
-		'admin-preview-callback' => 'catchflames_admin_header_image',
 	);
 
 	$args = apply_filters( 'custom-header', $args );
@@ -67,7 +65,7 @@ function catchflames_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
-	if ( $text_color == HEADER_TEXTCOLOR )
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color )
 		return;
 
 	// If we get this far, we have custom styles. Let's do this.
@@ -91,119 +89,10 @@ function catchflames_header_style() {
 			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
-	<?php
-	// Site Title Hover Color
-	if ( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
-		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
-	}
-	// Site Tagline Color
-	if ( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
-		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
-	}
-	?>
 	</style>
 	<?php
 }
 endif; // catchflames_header_style
-
-if ( ! function_exists( 'catchflames_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @since Catch Flames 1.0
- */
-function catchflames_admin_header_style() {
-	global $catchflames_options_settings, $catchflames_options_defaults;
-    $options = $catchflames_options_settings;
-	$defaults = $catchflames_options_defaults;
-?>
-	<style type="text/css">
-	.appearance_page_custom-header #headimg {
-		border: none;
-	}
-	#site-logo {
-		float: left;
-		line-height: 0;
-	}
-	#site-details {
-		float: left;
-	}
-	#site-logo.title-right {
-		padding-right: 20px;
-	}
-	#site-title {
-		font-size: 46px;
-		font-weight: bold;
-		line-height: 50px;
-		padding: 0;
-		margin: 0;
-	}
-	#site-title a {
-		color: #111111;
-		text-decoration: none;
-	}
-	#site-description {
-		color: #7a7a7a;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 14px;
-		line-height: 1.62em;
-		padding-left: 5px;
-	}
-	<?php
-		// If the user has set a custom color for the text use that
-		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
-	?>
-		#site-title a {
-			color: #<?php echo get_header_textcolor(); ?>;
-		}
-
-	<?php endif; ?>
-	<?php
-	// Site Title Hover Color
-	if ( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
-		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
-	}
-	// Site Tagline Color
-	if ( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
-		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
-	}
-	?>
-
-	#headimg img {
-		height: auto;
-		max-width: 100%;
-	}
-	</style>
-<?php
-}
-endif; // catchflames_admin_header_style
-
-
-if ( ! function_exists( 'catchflames_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @since Catch Flames 1.0
- */
-function catchflames_admin_header_image() { ?>
-	<div id="headimg">
-		<?php
-		$color = get_header_textcolor();
-		$image = get_header_image();
-		if ( $color && 'blank' != $color )
-			$style = ' style="color:#' . $color . '"';
-		else
-			$style = ' style="display:none"';
-		?>
-
-        <?php catchflames_headerdetails(); ?>
-
-		<?php if ( $image ) : ?>
-			<img src="<?php echo esc_url( $image ); ?>" alt="" />
-		<?php endif; ?>
-	</div>
-<?php }
-endif; // catchflames_admin_header_image
 
 
 if ( ! function_exists( 'catchflames_logo' ) ) :

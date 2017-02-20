@@ -101,7 +101,7 @@ function catchflames_page_sliders() {
 				<!-- empty element for pager links -->
 	    		<div id="controllers" class="cycle-pager"></div>';
 
-				$get_featured_posts = new WP_Query( array(
+				$loop = new WP_Query( array(
 					'posts_per_page'	=> $options[ 'slider_qty' ],
 					'post_type'			=> 'page',
 					'post__in'			=> $options[ 'featured_slider_page' ],
@@ -109,15 +109,15 @@ function catchflames_page_sliders() {
 				));
 
 
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = 'page pageid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'page pageid-'.$post->ID.' hentry slides displaynone'; }
 					$catchflames_page_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, $imagesize, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, $imagesize, array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>';
 						if ( empty ( $options[ 'disable_slider_text' ] ) ) {
@@ -125,7 +125,7 @@ function catchflames_page_sliders() {
 							<div class="entry-container">
 								<header class="entry-header">
 									<h1 class="entry-title">
-										<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 									</h1>
 								</header>';
 								if ( $excerpt !='') {

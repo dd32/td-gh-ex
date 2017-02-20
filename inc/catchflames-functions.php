@@ -132,48 +132,6 @@ add_filter( 'wp_head', 'catchflames_responsive', 1 );
 
 
 /**
- * Get the favicon Image from theme options
- *
- * @uses favicon
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default favicon if favicon field on theme options is empty
- *
- * @uses set_transient and delete_transient
- */
-function catchflames_favicon() {
-	//delete_transient( 'catchflames_favicon' );
-
-	if ( ( !$catchflames_favicon = get_transient( 'catchflames_favicon' ) ) ) {
-
-		global $catchflames_options_settings;
-        $options = $catchflames_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_favicon' ] == "0" ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$catchflames_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$catchflames_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
-			endif;
-		endif;
-
-		set_transient( 'catchflames_favicon', $catchflames_favicon, 86940 );
-	}
-	echo $catchflames_favicon ;
-} // catchflames_favicon
-
-//Load Favicon in Header Section
-add_action('wp_head', 'catchflames_favicon');
-
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'catchflames_favicon' );
-
-
-/**
  * Enqueue the styles for the current color scheme.
  *
  * @since Catch Flames 1.0
@@ -407,7 +365,6 @@ if ( ! function_exists( 'catchflames_comment' ) ) :
  * @since Catch Flames 1.0
  */
 function catchflames_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -960,44 +917,6 @@ function catchflames_post_classes( $classes ) {
 }
 add_filter( 'post_class', 'catchflames_post_classes' );
 
-
-/**
- * Get the Web Clip Icon Image from theme options
- *
- * @uses web_clip and remove_web_clip
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default Web Click Icon if web_clip field on theme options is empty
- *
- * @uses set_transient and delete_transient
- */
-function catchflames_web_clip() {
-	//delete_transient( 'catchflames_web_clip' );
-
-	if ( ( !$catchflames_web_clip = get_transient( 'catchflames_web_clip' ) ) ) {
-
-		global $catchflames_options_settings;
-        $options = $catchflames_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_web_clip' ] == "0" ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$catchflames_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$catchflames_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
-			endif;
-		endif;
-
-		set_transient( 'catchflames_web_clip', $catchflames_web_clip, 86940 );
-	}
-	echo $catchflames_web_clip ;
-} // catchflames_web_clip
-
-//Load WebClip Icon in Header Section
-add_action('wp_head', 'catchflames_web_clip');
 
 /**
  * Third Sidebar

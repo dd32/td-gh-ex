@@ -7,39 +7,26 @@ if ( !defined('ABSPATH')) exit;
  * Description: A Page Template that disables a blog
  *
  * @package Catch Themes
- * @subpackage Catch Flames
- * @since Catch Flames 1.0
+ * @subpackage Catch Flames Pro
+ * @since Catch Flames Pro 1.0
  */
 
 get_header(); ?>
 
 			<?php
-			global $more, $wp_query, $post, $paged;
-			$more = 0;
-
-			if ( get_query_var( 'paged' ) ) {
-				$paged = get_query_var( 'paged' );
-			}
-			elseif ( get_query_var( 'page' ) ) {
-				$paged = get_query_var( 'page' );
-			}
-			else {
-				$paged = 1;
-
-			}
-
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+			
 			$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
-			$temp_query = $wp_query;
-			$wp_query = null;
-			$wp_query = $blog_query;
-
+			
 			if ( $blog_query->have_posts() ) : ?>
 
 				<header class="page-header">
 					<h1 class="page-title"><?php the_title(); ?></h1>
 				</header>
 
-				<?php while ( $blog_query->have_posts() ) : $blog_query->the_post();  ?>
+				<?php while ( $blog_query->have_posts() ) : 
+
+					$blog_query->the_post();  ?>
 
 					<?php
 						/* Include the Post-Format-specific template for the content.
@@ -51,7 +38,25 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-                <?php catchflames_content_nav( 'nav-below' ); ?>
+                <?php 
+                // Pagination start
+                if ( $blog_query->max_num_pages > 1 ) { ?>
+			        <nav role="navigation" id="nav-below">
+			        	<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'catch-flames' ); ?></h3>
+						<?php if ( function_exists('wp_pagenavi' ) )  {
+			                wp_pagenavi();
+			            }
+			            elseif ( function_exists('wp_page_numbers' ) ) {
+			                wp_page_numbers();
+			            }
+			            else { ?>
+			                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-flames' ), $blog_query->max_num_pages ); ?></div>
+			                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-flames' ) ); ?></div>
+			            <?php
+			            } ?>
+			        </nav><!-- #nav -->
+				<?php
+				}; ?>
 
 			<?php else : ?>
 
@@ -67,7 +72,6 @@ get_header(); ?>
 				</article><!-- #post-0 -->
 
 			<?php endif;
-			$wp_query = $temp_query;
 			wp_reset_postdata(); ?>
 
 			</div><!-- #content -->

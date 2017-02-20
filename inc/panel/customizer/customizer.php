@@ -33,18 +33,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Theme Options', 'catch-flames' ),
 			'description' 	=> __( 'Basic theme Options', 'catch-flames' ),
 			'sections' 		=> array(
-				'favicon' => array(
-					'id' 				=> 'favicon',
-					'title' 			=> __( 'Favicon', 'catch-flames' ),
-					'description' 		=> '',
-					'active_callback'	=> 'catchflames_is_site_icon_active',
-				),
-				'web_clip_icon_options' => array(
-					'id' 				=> 'web_clip_icon_options',
-					'title' 			=> __( 'Webclip Icon Options', 'catch-flames' ),
-					'description' 		=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina', 'catch-flames' ),
-					'active_callback'	=> 'catchflames_is_site_icon_active',
-				),
 				'fixed_header_top_options' => array(
 					'id' 			=> 'fixed_header_top_options',
 					'title' 		=> __( 'Fixed Header Top Options', 'catch-flames' ),
@@ -960,57 +948,6 @@ function catchflames_customize_register( $wp_customize ) {
 	);
 
 	$settings_parameters = array_merge( $settings_parameters, $featured_content_options);
-
-	//@remove Remove if block when WordPress 4.8 is released
-	if( !function_exists( 'has_site_icon' ) ) {
-		$settings_favicon = array(
-			//Favicon
-			'remove_favicon' => array(
-				'id' 				=> 'remove_favicon',
-				'title' 			=> __( 'Check to Disable Favicon', 'catch-flames' ),
-				'description'		=> '',
-				'field_type' 		=> 'checkbox',
-				'sanitize' 			=> 'catchflames_sanitize_checkbox',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'favicon',
-				'default' 			=> $defaults['remove_favicon'],
-			),
-			'fav_icon' => array(
-				'id' 				=> 'fav_icon',
-				'title' 			=> __( 'Fav Icon', 'catch-flames' ),
-				'description'		=> '',
-				'field_type' 		=> 'image',
-				'sanitize' 			=> 'catchflames_sanitize_image',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'favicon',
-				'default' 			=> $defaults['fav_icon'],
-			),
-
-			//Web Clip Icon
-			'remove_web_clip' => array(
-				'id' 				=> 'remove_web_clip',
-				'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-flames' ),
-				'description'		=> '',
-				'field_type' 		=> 'checkbox',
-				'sanitize' 			=> 'catchflames_sanitize_checkbox',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'web_clip_icon_options',
-				'default' 			=> $defaults['remove_web_clip'],
-			),
-			'web_clip' => array(
-				'id' 				=> 'web_clip',
-				'title' 			=> __( 'Web Clip Icon', 'catch-flames' ),
-				'description'		=> '',
-				'field_type' 		=> 'image',
-				'sanitize' 			=> 'catchflames_sanitize_image',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'web_clip_icon_options',
-				'default' 			=> $defaults['web_clip'],
-			),
-		);
-
-		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
-	}
 
 	//@remove Remove if block when WordPress 4.8 is released
 	if( !function_exists( 'has_custom_logo' ) ) {
