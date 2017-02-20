@@ -216,6 +216,8 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 				$label = 'StumbleUpon';
 			} elseif ( $social_site == 'deviantart' ) {
 				$label = 'DeviantArt';
+			} elseif ( $social_site == 'google-wallet' ) {
+				$label = 'Google Wallet';
 			} elseif ( $social_site == 'hacker-news' ) {
 				$label = 'Hacker News';
 			} elseif ( $social_site == 'whatsapp' ) {
@@ -366,7 +368,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 			'settings' => 'ct_tracks_comments_setting',
 			'type'     => 'multi-checkbox',
 			'choices'  => array(
-				'posts'       => __( 'Posts', 'tracks' ),
+				'posts'       => _x( 'Posts', 'noun', 'tracks' ),
 				'pages'       => __( 'Pages', 'tracks' ),
 				'attachments' => __( 'Attachments', 'tracks' ),
 				'none'        => __( 'Do not show', 'tracks' )
@@ -511,11 +513,11 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 	// control - full-width image style
 	$wp_customize->add_control( 'premium_layouts_full_width_image_style', array(
 		'type'    => 'radio',
-		'label'   => __( 'Style', 'tracks' ),
+		'label'   => _x( 'Style', 'noun: pick a style', 'tracks' ),
 		'section' => 'ct_tracks_premium_layouts',
 		'setting' => 'premium_layouts_setting',
 		'choices' => array(
-			'overlay' => __( 'Overlay', 'tracks' ),
+			'overlay' => _x( 'Overlay', 'noun: the overlay style', 'tracks' ),
 			'title'   => __( 'Title below', 'tracks' )
 		),
 	) );
@@ -556,7 +558,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		'setting'  => 'additional_options_no_featured_image',
 		'priority' => 5,
 		'choices'  => array(
-			'empty'    => __( 'Empty half', 'tracks' ),
+			'empty'    => _x( 'Empty half', 'noun: display an empty half', 'tracks' ),
 			'full'     => __( 'Full-width text', 'tracks' ),
 			'fallback' => __( 'Fallback image', 'tracks' )
 		),
@@ -856,7 +858,7 @@ function ct_tracks_all_yes_no_setting_sanitization( $input ) {
 function ct_tracks_sanitize_comments_setting( $input ) {
 
 	$valid = array(
-		'posts'       => __( 'Posts', 'tracks' ),
+		'posts'       => _x( 'Posts', 'nount', 'tracks' ),
 		'pages'       => __( 'Pages', 'tracks' ),
 		'attachments' => __( 'Attachments', 'tracks' ),
 		'none'        => __( 'Do not show', 'tracks' )
@@ -902,7 +904,7 @@ function ct_tracks_sanitize_premium_layouts_image_height( $input ) {
 
 function ct_tracks_sanitize_premium_layouts_image_style( $input ) {
 	$valid = array(
-		'overlay' => __( 'Overlay', 'tracks' ),
+		'overlay' => _x( 'Overlay', 'noun: the overlay style', 'tracks' ),
 		'title'   => __( 'Title below', 'tracks' )
 	);
 
@@ -933,7 +935,7 @@ function ct_tracks_sanitize_text( $input ) {
 
 function ct_tracks_sanitize_no_featured_image( $input ) {
 	$valid = array(
-		'empty'    => __( 'Empty half', 'tracks' ),
+		'empty'    => _x( 'Empty half', 'noun: display an empty half', 'tracks' ),
 		'full'     => __( 'Full-width text', 'tracks' ),
 		'fallback' => __( 'Fallback image', 'tracks' )
 	);
