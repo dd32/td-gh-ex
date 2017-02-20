@@ -1,11 +1,10 @@
-@charset "UTF-8";
 /**
  * Theme Name: Activation
- * Theme URI: https://github.com/godaddy/wp-activation-theme
+ * Theme URI: https://wordpress.org/themes/activation/
  * Author: GoDaddy
  * Author URI: https://www.godaddy.com/
  * Description: Activation is a Primer child theme with a colorful, fitness-focused design.
- * Version: 0.9.0
+ * Version: 0.9.1
  * License: GPL-2.0
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: activation
@@ -16,7 +15,7 @@
  * This theme, like WordPress, is licensed under the GPL.
  * Use it to make something cool, have fun, and share what you've learned with others.
  *
- * Copyright © 2016 GoDaddy Operating Company, LLC. All Rights Reserved.
+ * Copyright © 2017 GoDaddy Operating Company, LLC. All Rights Reserved.
  */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -1632,7 +1631,7 @@ body.page-template-page-builder-no-header .content-area {
     .site-title-wrapper {
       position: relative;
       width: auto;
-      max-width: 90%;
+      max-width: 80%;
       z-index: 8; } }
   .site-title-wrapper .site-title {
     text-transform: uppercase;
@@ -1641,10 +1640,6 @@ body.page-template-page-builder-no-header .content-area {
     letter-spacing: -0.03em;
     font-weight: 700;
     font-size: 1.6em; }
-    .site-title-wrapper .site-title a {
-      color: #ffffff; }
-      .site-title-wrapper .site-title a:hover, .site-title-wrapper .site-title a:visited:hover {
-        color: rgba(255, 255, 255, 0.8); }
 
 .site-description {
   color: #ffffff; }
