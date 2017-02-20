@@ -158,6 +158,9 @@ function zenzero_categorized_blog() {
  * Flush out the transients used in zenzero_categorized_blog.
  */
 function zenzero_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'zenzero_categories' );
 }

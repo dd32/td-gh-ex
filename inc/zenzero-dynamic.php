@@ -8,17 +8,20 @@
 /**
  * Replace more Excerpt
  */
-function zenzero_new_excerpt_more($more) {
-       global $post;
-	return '&hellip;';
+if ( ! function_exists( 'zenzero_new_excerpt_more' ) ) {
+	function zenzero_new_excerpt_more($more) {
+		return '&hellip;';
+	}
 }
 add_filter('excerpt_more', 'zenzero_new_excerpt_more');
 
 /**
  * Delete font size style from tag cloud widget
  */
-function zenzero_fix_tag_cloud($tag_string){
-   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+if ( ! function_exists( 'zenzero_fix_tag_cloud' ) ) {
+	function zenzero_fix_tag_cloud($tag_string){
+	   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+	}
 }
 add_filter('wp_generate_tag_cloud', 'zenzero_fix_tag_cloud',10,3);
 

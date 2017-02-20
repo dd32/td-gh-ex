@@ -4,13 +4,6 @@
  *
  * @package zenzero
  */
- 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 930; /* pixels */
-}
 
 if ( ! function_exists( 'zenzero_setup' ) ) :
 /**
@@ -70,6 +63,18 @@ function zenzero_setup() {
 }
 endif; // zenzero_setup
 add_action( 'after_setup_theme', 'zenzero_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function zenzero_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'zenzero_content_width', 930 );
+}
+add_action( 'after_setup_theme', 'zenzero_content_width', 0 );
 
 /**
  * Register widget area.
