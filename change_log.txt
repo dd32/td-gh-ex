@@ -1,0 +1,8 @@
+Version 1.1
+i) Intial version Release
+
+Version 1.1.0
+i) Fixes
+
+Version 1.1.2
+i) Fix author urls
