@@ -12,9 +12,9 @@ html .mceContentBody {
 }
 
 body {
-	color: #333;
+	color: #454545;
 	font-family: "Oxygen", sans-serif;
-	line-height: 1.5;
+	line-height: 1.65;
 	text-rendering: optimizeLegibility;
 	vertical-align: baseline;
 }
@@ -27,7 +27,7 @@ h5,
 h6 {
 	clear: both;
 	font-family: "Oxygen", sans-serif;
-	line-height: 1.3;
+	line-height: 1.4;
 	color: #252525;
 }
 
@@ -62,6 +62,15 @@ h5 {
 	margin: 0 0 0.5em;
 }
 
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
 p {
     margin: 0 0 1.5em;
 }
@@ -72,8 +81,7 @@ img {
 	vertical-align: middle;
 }
 
-a,
-a:visited {
+a {
 	color: #0fa5d9;
 	text-decoration: none;
 }
@@ -91,20 +99,20 @@ strong {
 .wp-caption.alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1em;
+	margin: 0 1em 0.25em 0;
 }
 
 .alignright,
 .wp-caption.alignright {
 	display: inline;
 	float: right;
-	margin-left: 1em;
+	margin: 0 0 0.25em 1em;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
-	margin: 0.5em auto;
+	margin: 1em auto;
 }
 
 embed,

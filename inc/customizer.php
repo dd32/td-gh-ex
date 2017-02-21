@@ -17,6 +17,69 @@ add_action( 'customize_preview_init', 'thebox_customize_preview_js' );
 
 
 /**
+ * Loads Customizer stylesheet
+ */
+function thebox_customize_style() {
+    wp_enqueue_style('customize-styles', get_template_directory_uri() . '/inc/css/customize-style.css', array(), '1.0.1' );
+}
+add_action( 'customize_controls_enqueue_scripts', 'thebox_customize_style' );
+
+
+/**
+ * Custom Classes
+ */
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	class TheBox_Post_Layout_Control extends WP_Customize_Control {
+		public function render_content() {
+			if ( empty( $this->choices ) )
+				return;
+	
+			$name = '_customize-radio-' . $this->id;
+	
+			?>
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php
+			foreach ( $this->choices as $value => $label ) :
+				?>
+				<label>
+					<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
+					<?php echo '<div class="' . esc_attr( $value ) . '"></div>'; ?>
+				</label>
+				<?php
+			endforeach;
+		}
+	}
+
+	class DL_Important_Links extends WP_Customize_Control {
+		
+		public $type = "thebox-important-links";
+	
+		public function render_content() {
+	    	$important_links = array(
+				'upsell' => array(
+		        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/'),
+		        'text' => __('Try The Box Plus &rarr;', 'the-box'),
+		        ),
+		        'rate' => array(
+				'link' => esc_url('https://wordpress.org/support/theme/the-box/reviews/#new-post'),
+				'text' => __('Rate This Theme &rarr;', 'the-box'),
+				),
+				'documentation' => array(
+				'link' => esc_url('https://www.designlabthemes.com/the-box-documentation/'),
+				'text' => __('Documentation &rarr;', 'the-box'),
+				)
+			);
+	    	foreach ($important_links as $important_link) :
+	        	echo '<p><a target="_blank" href="' . esc_url( $important_link['link'] ). '" >' . esc_html($important_link['text']) . ' </a></p>';
+	        endforeach;
+	    }
+	}
+	
+} // end if class_exists
+
+
+/**
  * The Box Theme Settings
  */
 function thebox_theme_customizer( $wp_customize ) {
@@ -26,44 +89,77 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
-	// Accent Color
-	$wp_customize->add_setting( 'color_primary', array(
-		'default' => '#0fa5d9',
-		'type' => 'option', 
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-		
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_primary', array(
-		'label' => __( 'Accent Color', 'the-box' ),
-		'section' => 'colors',
-		'settings' => 'color_primary',
-	) ) );
-	
-	// Footer Background
-	$wp_customize->add_setting( 'color_footer', array(
-		'default' => '#353535',
-		'type' => 'option', 
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_footer', array(
-		'label' => __( 'Footer Background', 'the-box' ),
-		'section' => 'colors',
-		'settings' => 'color_footer',
-	) ) );
-	
 	// The Box Panel
 	$wp_customize->add_panel( 'thebox_panel', array(
     	'title' => __( 'Theme Settings', 'the-box' ),
-		'priority' => 20,
+		'priority' => 10,
+	) );
+	
+	// Layout Section
+	$wp_customize->add_section( 'thebox_layout_section' , array(
+		'title' => __( 'Layout', 'the-box' ),
+		'priority' => 10,
+		'panel' => 'thebox_panel',
+	) );
+	
+	// Layout Options
+	$wp_customize->add_setting( 'thebox_sidebar_settings', array(
+		'default' => 'content-sidebar',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_attr',
+	) );
+
+	$wp_customize->add_control( new TheBox_Post_Layout_Control( $wp_customize, 'thebox_sidebar_settings', array(
+		'label' => __( 'Layout Options', 'the-box' ),
+		'section' => 'thebox_layout_section',
+		'settings' => 'thebox_sidebar_settings',
+		'size' => false,
+		'choices' => array(
+            'content-sidebar' => __( 'Sidebar Right', 'the-box' ),
+            'sidebar-content' => __( 'Sidebar Left', 'the-box' ),
+            'one-column' => __( 'One Column', 'the-box' ),
+			'grid2-sidebar' => __( '2 Columns + Sidebar Right', 'the-box' ),
+		),
+	) ) );
+	
+	// Excerpt or Full Content
+	$wp_customize->add_setting( 'thebox_post_settings', array(
+		'default' => 'option1',
+		'sanitize_callback' => 'thebox_sanitize_choices',
+	) );
+	
+	$wp_customize->add_control( 'thebox_post_settings', array(
+		'label' => __( 'Post length', 'the-box' ),
+		'section' => 'thebox_layout_section',
+		'settings' => 'thebox_post_settings',
+		'active_callback' => 'thebox_check_layout_options',
+		'type' => 'radio',
+		'choices' => array(
+		'option1' => __( 'Excerpt', 'the-box' ),
+		'option2' => __( 'Full Content', 'the-box' ),
+		),
+	) );
+	
+	// Display Thumbnails
+	$wp_customize->add_setting( 'thebox_show_thumbnails', array(
+        'default' => 1,
+        'type' => 'option',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'thebox_sanitize_checkbox',
+    ) );
+   	
+	$wp_customize->add_control( 'thebox_show_thumbnails', array(
+	    'label'    => __( 'Display Post Thumbnails', 'the-box' ),
+	    'section' => 'thebox_layout_section',
+	    'settings' => 'thebox_show_thumbnails',
+	    'type'     => 'checkbox',
 	) );
 	
 	// Post Section
 	$wp_customize->add_section( 'thebox_post_section' , array(
 		'title' => __( 'Post', 'the-box' ),
-		'priority' => 10,
+		'priority' => 15,
 		'panel' => 'thebox_panel',
 	) );
 	
@@ -77,6 +173,7 @@ function thebox_theme_customizer( $wp_customize ) {
    	
 	$wp_customize->add_control( 'thebox_enable_featured_image', array(
 	    'label'    		=> __( 'Enable Featured Image', 'the-box' ),
+	    'description'	=> __( 'Display Featured Image on Single Posts.', 'the-box' ),
 	    'section'  		=> 'thebox_post_section',
 	    'settings' 		=> 'thebox_enable_featured_image',
 	    'type'     		=> 'checkbox',
@@ -85,7 +182,7 @@ function thebox_theme_customizer( $wp_customize ) {
 	// Page Section
 	$wp_customize->add_section( 'thebox_page_section' , array(
 		'title' => __( 'Page', 'the-box' ),
-		'priority' => 15,
+		'priority' => 20,
 		'panel' => 'thebox_panel',
 	) );
 	
@@ -99,6 +196,7 @@ function thebox_theme_customizer( $wp_customize ) {
    	
 	$wp_customize->add_control( 'thebox_page_featured_image', array(
 	    'label'    		=> __( 'Enable Featured Image', 'the-box' ),
+	    'description'	=> __( 'Display Featured Image on Pages.', 'the-box' ),
 	    'section'  		=> 'thebox_page_section',
 	    'settings' 		=> 'thebox_page_featured_image',
 	    'type'     		=> 'checkbox',
@@ -107,7 +205,7 @@ function thebox_theme_customizer( $wp_customize ) {
 	// Social Links Section
 	$wp_customize->add_section('thebox_social_section' , array(
 	  	'title' => __('Social Links', 'the-box'),
-	  	'priority' => 20,
+	  	'priority' => 25,
 	  	'description' => __('Paste here your Social Links.', 'the-box' ),
 	  	'panel' => 'thebox_panel',
 	) );
@@ -149,7 +247,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['facebookurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'facebook_url', array(
@@ -163,7 +261,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['twitterurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'twitter_url', array(
@@ -177,7 +275,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['googleplusurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'googleplus_url', array(
@@ -191,7 +289,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['linkedinurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'linkedin_url', array(
@@ -205,7 +303,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['instagramurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'instagram_url', array(
@@ -219,7 +317,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['youtubeurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'youtube_url', array(
@@ -233,7 +331,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['pinteresturl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'pinterest_url', array(
@@ -247,7 +345,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['stumbleuponurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'stumbleupon_url', array(
@@ -261,7 +359,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['flickrurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'flickr_url', array(
@@ -275,7 +373,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['tumblrurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'tumblr_url', array(
@@ -289,7 +387,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['mediumurl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'medium_url', array(
@@ -303,7 +401,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => $options['githuburl'],
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'github_url', array(
@@ -317,7 +415,7 @@ function thebox_theme_customizer( $wp_customize ) {
         'default' => '',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'thebox_nohtml_sanitize',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 	
     $wp_customize->add_control( 'xing_url', array(
@@ -326,6 +424,50 @@ function thebox_theme_customizer( $wp_customize ) {
         'settings' => 'xing_url',
         'type' => 'text',
     ) );
+    
+	// The Box Links
+	$wp_customize->add_section('thebox_links_section', array(
+	  'title' => __('The Box Links', 'the-box'),
+	  'priority' => 11,
+	) );
+	
+	$wp_customize->add_setting('thebox_links', array(
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'thebox_links_sanitize',
+	) );
+	
+	$wp_customize->add_control(new DL_Important_Links($wp_customize, 'thebox_links', array(
+	  'section' => 'thebox_links_section',
+	  'settings' => 'thebox_links',
+	) ) );
+   
+    // Accent Color
+	$wp_customize->add_setting( 'color_primary', array(
+		'default' => '#0fa5d9',
+		'type' => 'option', 
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+		
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_primary', array(
+		'label' => __( 'Accent Color', 'the-box' ),
+		'section' => 'colors',
+		'settings' => 'color_primary',
+	) ) );
+	
+	// Footer Background
+	$wp_customize->add_setting( 'color_footer', array(
+		'default' => '#353535',
+		'type' => 'option', 
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_footer', array(
+		'label' => __( 'Footer Background', 'the-box' ),
+		'section' => 'colors',
+		'settings' => 'color_footer',
+	) ) );
 	
 }
 add_action('customize_register', 'thebox_theme_customizer');
@@ -341,6 +483,43 @@ function thebox_sanitize_checkbox( $input ) {
         return '';
     }
 }
+
+
+/**
+ * Sanitize Radio Buttons and Select Lists
+ */
+function thebox_sanitize_choices( $input, $setting ) {
+    global $wp_customize;
+ 
+    $control = $wp_customize->get_control( $setting->id );
+ 
+    if ( array_key_exists( $input, $control->choices ) ) {
+        return $input;
+    } else {
+        return $setting->default;
+    }
+}
+
+
+/**
+ * Sanitize The Box Links
+ *
+ */ 
+function thebox_links_sanitize() {
+	return false;
+}
+
+
+/** 
+ * Add specific CSS class by filter
+ */
+function thebox_custom_classes( $classes ) {
+	// add 'class-name' to the $classes array
+	$classes[] = get_option('thebox_sidebar_settings', 'content-sidebar');
+	// return the $classes array
+	return $classes;
+}
+add_filter( 'body_class', 'thebox_custom_classes' );
 
 
 /**
@@ -365,11 +544,14 @@ function thebox_hex2rgb($hex) {
 
 
 /**
- * Strips all of the HTML in the content
- *
- */ 
-function thebox_nohtml_sanitize( $input ) {
-    return wp_filter_nohtml_kses( esc_url_raw( $input ) );
+ * Checks conditions to display Post Lenght Option
+ */
+function thebox_check_layout_options( $control ) {
+    if ( $control->manager->get_setting('thebox_sidebar_settings')->value() != 'grid2-sidebar'  ) {
+		return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -480,14 +662,3 @@ function thebox_custom_styles() {
 
 }
 add_action( 'wp_enqueue_scripts', 'thebox_custom_styles' );
-
-
-/**
- * Upgrade Link
- */
-function the_box_plus_customize_js() { ?>
-	<script>
-		jQuery('#customize-info').prepend('<div class="the-box-upgrade" style="background-color:#40a149;text-align:center;"><a style="display:block;color:#fff;padding:10px 14px" href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/" target="_blank"><?php _e('View the Box Plus Upgrade', 'the-box'); ?> <span>&rarr;</span></a></div>');
-	</script>
-<?php }
-add_action( 'customize_controls_print_footer_scripts', 'the_box_plus_customize_js' );

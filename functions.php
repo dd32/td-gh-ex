@@ -68,22 +68,68 @@ endif;
 add_action( 'after_setup_theme', 'thebox_setup' );
 
 
+if ( ! function_exists( 'thebox_fonts_url' ) ) :
+/**
+ * Register Google fonts.
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function thebox_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Source Sans Pro: on or off', 'the-box' ) ) {
+		$fonts[] = 'Source Sans Pro:400,700,400italic,700italic';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Oxygen: on or off', 'the-box' ) ) {
+		$fonts[] = 'Oxygen:400,700,300';
+	}
+
+	/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'the-box' );
+
+	if ( 'cyrillic' == $subset ) {
+		$subsets .= ',cyrillic,cyrillic-ext';
+	} elseif ( 'greek' == $subset ) {
+		$subsets .= ',greek,greek-ext';
+	} elseif ( 'devanagari' == $subset ) {
+		$subsets .= ',devanagari';
+	} elseif ( 'vietnamese' == $subset ) {
+		$subsets .= ',vietnamese';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), '//fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+endif;
+
+
 /**
  * Enqueue scripts and styles for the front end.
  *
  */
 function thebox_scripts() {
 	
-	// Add Google Fonts, used in the main stylesheet.
+	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
 	
 	// Add Icons Font, used in the main stylesheet.
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.5' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.6' );
 	
-	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -98,97 +144,13 @@ add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
 
 
 /**
- * Return the Google font stylesheet URL, if available.
- *
- * @return string Font stylesheet or empty string if disabled.
- *
- */
-function thebox_fonts_url() {
-	$fonts_url = '';
-	
-	/* Translators: If there are characters in your language that are not
-	 * supported by the font, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$heading_font = _x( 'on', 'Source Sans Pro font: on or off', 'the-box' );
-	
-	/* Translators: If there are characters in your language that are not
-	 * supported by the font, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$text_font = _x( 'on', 'Oxygen font: on or off', 'the-box' );
-
-
-	if ( 'off' !== $heading_font || 'off' !== $text_font ) {
-		$font_families = array();
-
-		if ( 'off' !== $heading_font )
-			$font_families[] = 'Source Sans Pro:400,700,400italic,700italic';
-
-		if ( 'off' !== $text_font )
-			$font_families[] = 'Oxygen:300,400,700';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
-	}
-
-	return $fonts_url;
-}
-
-
-/**
- * Enqueue Google fonts style to admin screen for custom header display.
+ * Enqueue Google fonts to admin screen.
  *
  */
 function thebox_admin_fonts() {
 	wp_enqueue_style( 'thebox-admin-fonts', thebox_fonts_url(), array(), null );
 }
 add_action( 'admin_print_scripts-appearance_page_custom-header', 'thebox_admin_fonts' );
-
-
-/**
- * Helper function for getting the script/style `.min` suffix for minified files.
- *
- */
-function thebox_get_min_suffix() {
-	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-}
-
-
-/**
- * Filters the 'stylesheet_uri' to allow theme developers to offer a minimized version of their main 
- * 'style.css' file.  It will detect if a 'style.min.css' file is available and use it if SCRIPT_DEBUG 
- * is disabled.
- * 
- * from Hybrid Core, Copyright Justin Tadlock.
- */
-function thebox_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
-
-	/* Get the minified suffix. */
-	$suffix = thebox_get_min_suffix();
-
-	/* Use the .min stylesheet if available. */
-	if ( !empty( $suffix ) ) {
-
-		/* Remove the stylesheet directory URI from the file name. */
-		$stylesheet = str_replace( trailingslashit( $stylesheet_dir_uri ), '', $stylesheet_uri );
-
-		/* Change the stylesheet name to 'style.min.css'. */
-		$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
-
-		/* If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet. */
-		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $stylesheet ) )
-			$stylesheet_uri = trailingslashit( $stylesheet_dir_uri ) . $stylesheet;
-	}
-
-	/* Return the theme stylesheet. */
-	return $stylesheet_uri;
-}
-/* Load the development stylsheet in script debug mode. */
-add_filter( 'stylesheet_uri', 'thebox_min_stylesheet_uri', 5, 2 );
 
 
 /**
@@ -222,6 +184,55 @@ add_action( 'widgets_init', 'thebox_widgets_init' );
  *
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+
+
+/**
+ * Helper function for getting the script/style `.min` suffix for minified files.
+ *
+ */
+function thebox_get_min_suffix() {
+	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+}
+
+
+/**
+ * Add Upsell "pro" link to the customizer
+ *
+ */
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/class-customize.php' );
+
+
+/**
+ * Filters the 'stylesheet_uri' to allow theme developers to offer a minimized version of their main 
+ * 'style.css' file.  It will detect if a 'style.min.css' file is available and use it if SCRIPT_DEBUG 
+ * is disabled.
+ * 
+ * from Hybrid Core, Copyright Justin Tadlock.
+ */
+function thebox_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
+
+	/* Get the minified suffix. */
+	$suffix = thebox_get_min_suffix();
+
+	/* Use the .min stylesheet if available. */
+	if ( !empty( $suffix ) ) {
+
+		/* Remove the stylesheet directory URI from the file name. */
+		$stylesheet = str_replace( trailingslashit( $stylesheet_dir_uri ), '', $stylesheet_uri );
+
+		/* Change the stylesheet name to 'style.min.css'. */
+		$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
+
+		/* If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet. */
+		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $stylesheet ) )
+			$stylesheet_uri = trailingslashit( $stylesheet_dir_uri ) . $stylesheet;
+	}
+
+	/* Return the theme stylesheet. */
+	return $stylesheet_uri;
+}
+/* Load the development stylsheet in script debug mode. */
+add_filter( 'stylesheet_uri', 'thebox_min_stylesheet_uri', 5, 2 );
 
 
 /*
@@ -327,11 +338,17 @@ function thebox_social_links() {
 
 
 /**
- * Filter the except length to 20 characters.
+ * Filter the except length to 18/40 characters.
  *
  */
 function thebox_custom_excerpt_length( $length ) {
-    return 40;
+	if ( get_option( 'thebox_sidebar_settings' ) == 'grid2-sidebar' ) {
+    return 18;
+    } elseif ( get_option( 'thebox_sidebar_settings' ) == 'one-column') {
+	return 50;
+	} else {
+	return 40;
+    }
 }
 add_filter( 'excerpt_length', 'thebox_custom_excerpt_length', 999 );
 
@@ -349,6 +366,22 @@ function thebox_excerpt_more( $more ) {
     );
 }
 add_filter( 'excerpt_more', 'thebox_excerpt_more' );
+
+
+/**
+ * The Box Grid
+ */
+if ( !function_exists('thebox_grid') ) {
+	function thebox_grid() {
+		// Get Sidebar Options
+		$layout_type = get_option( 'thebox_sidebar_settings', 'content-sidebar' );
+		if ( $layout_type == 'grid2-sidebar' ) {
+			echo 'col-6 col-sm-6';
+		} else {
+			echo 'col-12';
+		}
+	} 
+}
 
 
 /*

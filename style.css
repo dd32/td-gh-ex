@@ -1,14 +1,14 @@
 /*
 Theme Name: The Box
-Theme URI: http://www.designlabthemes.com/the-box-wordpress-theme/
+Theme URI: https://www.designlabthemes.com/the-box-wordpress-theme/
 Author: Design Lab
-Author URI: http://www.designlabthemes.com/
-Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.4.5
+Author URI: https://www.designlabthemes.com/
+Description: Clean and Simple WordPress Theme designed for blogs and online publications. With easy to use options The Box lets you focus on your awesome writing.
+Version: 1.4.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: the-box
-Tags: one-column, two-columns, right-sidebar, theme-options, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, translation-ready
+Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, one-column, post-formats, right-sidebar, sticky-post, theme-options, two-columns, translation-ready
 
 */
 
@@ -16,6 +16,9 @@ Tags: one-column, two-columns, right-sidebar, theme-options, custom-header, cust
  * Please don't edit this file.  You can lose all modifications if the theme is updated.
  * Please use a child theme. You can overwrite specific style rules in your child theme's 'style.css' file.
  * See here more about Child Themes: https://codex.wordpress.org/Child_Themes
+ 
+ * This file is only loaded if 'SCRIPT_DEBUG' is set to 'TRUE' in your 'wp-config.php' file. Otherwise,
+ * the 'style.min.css' file is loaded.
 ********************************************************************************************************/ 
 
 /*
@@ -31,7 +34,7 @@ Tags: one-column, two-columns, right-sidebar, theme-options, custom-header, cust
 09: - Widgets
 10: - Footer
 11: - Comments
-12: - Page Templates
+12: - Additional Styles
 13: - Responsive
 
 */
@@ -386,6 +389,7 @@ h2 {
 
 h3 {
 	font-size: 1.286em; /* 18px */
+	line-height: 1.4;
 	font-weight: 700;
 	margin: 0 0 0.5em;
 }
@@ -713,12 +717,6 @@ textarea {
 	color: #fff;
 }
 
-.icon-font {
-	font-size: 14px;
-	display: inline-block;
-	vertical-align: -10%;
-}
-
 /* Search Form */
 
 .search-form {
@@ -846,13 +844,13 @@ h3 a {
 .alignleft {
 	display: inline;
 	float: left;
-	margin: 0 1em 0.5em 0;
+	margin: 0 1em 0.25em 0;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin: 0 0 0.5em 1em;
+	margin: 0 0 0.25em 1em;
 }
 
 .aligncenter {
@@ -1235,15 +1233,15 @@ button.menu-toggle:focus {
 	position: relative;
 	margin: 20px 0;
 }
-	
+
 hgroup {
-    float: left;
+	float: left;
     width: 50%;
     padding: 0 20px 0 0;
     -webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-	
+
 hgroup h1 a {
 	text-decoration: none;
 	outline: none;
@@ -1266,6 +1264,11 @@ hgroup h1 a {
 .header-ads {
 	margin: 0 auto 20px;
 	text-align: center;
+}
+
+.header-ads img {
+	display: block;
+	margin: auto;
 }
 
 /* Social Links */
@@ -1440,10 +1443,6 @@ hgroup h1 a {
 	margin: 0;
 }
 
-.entry-footer .icon-font {
-	color: #0fa5d9;
-}
-
 .posted-on,
 .byline,
 .comments-link,
@@ -1472,6 +1471,18 @@ hgroup h1 a {
 	height: auto;
 }
 
+/* Icons */
+
+.icon-font {
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: -10%;
+}
+
+.entry-footer .icon-font {
+	color: #0fa5d9;
+}
+
 /* Single Posts and Pages */
 
 .page-header {
@@ -1490,7 +1501,7 @@ hgroup h1 a {
 }
 
 .page-header .taxonomy-description p {
-	margin: 1em 0;
+	margin: 5px 0 0;
 }
 
 .page-links {
@@ -1658,7 +1669,6 @@ hgroup h1 a {
  * 08: Posts Formats
  */
 
-
 .format-quote .entry-summary blockquote {
 	margin: 0;
 }
@@ -1767,7 +1777,7 @@ hgroup h1 a {
 .widget-title {
 	color: #353535;
 	font-size: 1.154em;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	line-height: 1.4;
 }
 
@@ -1801,7 +1811,6 @@ hgroup h1 a {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
 	font-size: 14px;
 	width: 14px;
 	text-align: left;
@@ -1919,7 +1928,7 @@ hgroup h1 a {
 
 .site-footer {
 	clear: both;
-	color: #ccc;
+	color: rgba(255, 255, 255, 0.85);
     padding: 20px;
     background: #353535;
 }
@@ -2011,7 +2020,7 @@ textarea {
 }
 
 /* 
- * 12: Page Templates
+ * 12: Additional Styles
  */
 
 /* No Sidebar Template */
@@ -2020,6 +2029,58 @@ textarea {
 .page-template-no-sidebar-php .content-area {
 	width: 100%;
 	float: none;
+}
+
+/* Layout Options */
+
+/* One Column Layout */
+
+.one-column .content-area,
+.one-column.site-paged .content-area {
+	width: 100%;
+	float: none;
+}
+
+/* Two Columns Grid Layout */
+
+.grid2-sidebar .posts-loop .entry-time {
+	display: none;
+}
+
+.grid2-sidebar .post-thumbnail img {
+	max-width: 100%;
+	margin: 0 auto 5px;
+}
+
+.grid2-sidebar .posts-loop .entry-title {
+	padding: 0;
+	font-size: 1.429em;
+}
+
+.grid2-sidebar .posts-loop .entry-header {
+	padding: 20px 20px 10px;
+}
+
+.grid2-sidebar .entry-summary {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.grid2-sidebar .posts-loop .entry-footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.grid2-sidebar.site-paged .posts-loop .entry-header,
+.grid2-sidebar.site-paged .posts-loop .entry-summary,
+.grid2-sidebar.site-paged .posts-loop .entry-footer {
+	padding: 0;
+}
+
+.grid2-sidebar .posts-loop .hentry embed,
+.grid2-sidebar .posts-loop .hentry iframe,
+.grid2-sidebar .posts-loop .hentry object {
+	max-height: 200px;
 }
 
 /*
@@ -2056,6 +2117,10 @@ textarea {
 	}
 	#tertiary > .row > .widget:nth-child(2n+1) {
 	clear: left;
+	}
+	/* Layout Options */
+	.one-column .post-thumbnail .size-medium {
+	max-width: 50%;
 	}
 }
 
@@ -2112,6 +2177,10 @@ textarea {
 	.footer-navigation {
 	margin: 10px 0;
 	}
+	/* Layout Options */
+	.grid2-sidebar .row > div:nth-child(2n+1) {
+	clear: left;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -2129,11 +2198,15 @@ textarea {
 	width: 30.6123%; /* 300px */
 	float: right;
 	}
+	/* Layout Options */
 	.sidebar-content .content-area {
 	float: right;	
 	}
 	.sidebar-content .widget-area {
 	float: left;	
+	}
+	.one-column .post-thumbnail .size-medium {
+	max-width: 300px;
 	}
 }
 

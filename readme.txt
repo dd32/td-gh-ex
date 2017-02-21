@@ -1,7 +1,7 @@
 === The Box ===
 Requires at least: WordPress 4.3
-Tested up to: WordPress 4.6
-Version: 1.4.4
+Tested up to: WordPress 4.7.2
+Version: 1.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,11 @@ The Box Theme bundles the following third-party resources:
 	Copyright	Copyright (c) 2008 - 2015, Justin Tadlock
 	Link		http://themehybrid.com/hybrid-core
 	License		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+*	Images in the screenshot
+	(C) Unsplash https://unsplash.com/
+	Creative Commons Zero
+	http://creativecommons.org/publicdomain/zero/1.0/
 	
 *	Dutch translation by Theo Muys
 
@@ -93,9 +98,13 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 - Fix: Text Domain (it was ‘thebox’, now is ‘the-box’ to match the theme's slug)
 - Update: Css Optimization
 - Update: Theme Functions update to follow new WordPress standards
-- Update: Add Social links options to the Customizer
+- Update: Social links options to the Customizer
 - Update: High resolution Header Image
-- New: Add Xing Social Link
+- New: Xing Social Link
 
 1.4.5
 - Fix: Mobile Menu
+
+1.4.6
+- New: Layout Options
+- New: Excerpt or Full Content Option

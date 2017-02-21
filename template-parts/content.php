@@ -7,9 +7,27 @@
  */
 ?>
 
+<?php // The Box Plus Settings
+	$layout_type = get_option( 'thebox_sidebar_settings' );
+	$post_lenght = get_theme_mod( 'thebox_post_settings' );
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<header class="entry-header">
+		
+		<?php if ( $layout_type == 'grid2-sidebar' ) { ?>
+			
+			<?php if ( has_post_thumbnail() && ! post_password_required() && get_option( 'thebox_show_thumbnails', 1 ) ) : ?>
+				<div class="post-thumbnail">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
+						<?php the_post_thumbnail( 'medium' ); ?>
+					</a>
+				</div>
+			<?php endif; ?>	
+		
+		<?php } ?>
+		
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<div class="entry-time">
 			<span class="entry-time-day"><?php the_time('j') ?></span>
@@ -18,8 +36,18 @@
 		</div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
-		<?php if ( get_post_format() ) : ?>
+	<?php if ( $layout_type != 'grid2-sidebar' && ( get_post_format() || $post_lenght == 'option2' ) ) : ?>
+			
+		<div class="entry-content">
+			
+			<?php if ( has_post_thumbnail() && ! post_password_required() && get_option( 'thebox_show_thumbnails', 1 ) ) : ?>
+				<div class="post-thumbnail">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
+						<?php the_post_thumbnail( 'large' ); ?>
+					</a>
+				</div>
+			<?php endif; ?>
+			
 			<?php 
 				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'the-box' ) );
 				wp_link_pages( array(
@@ -31,17 +59,22 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 				) );
 			?>
-		<?php else : ?>
-			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+		</div> <!-- .entry-content -->
+		
+	<?php else : ?>
+		
+		<div class="entry-summary">
+			<?php if ( get_option( 'thebox_show_thumbnails', 1 ) && has_post_thumbnail() && ! post_password_required() && $layout_type != 'grid2-sidebar' ) : ?>
 				<div class="post-thumbnail">
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'the-box' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
 						<?php the_post_thumbnail('large'); ?>
 					</a>
 				</div>
 			<?php endif; ?>
 			<?php the_excerpt(); ?>
-		<?php endif; // get_post_format() ?>
-	</div><!-- .entry-summary -->
+		</div> <!-- .entry-summary -->
+		
+	<?php endif; // get_post_format() ?>
 
 	<footer class="entry-footer">
 		<p>
