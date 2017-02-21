@@ -115,6 +115,8 @@ function bellini_font_preset(){
         'amatit'                    => 'Amaranth and Titillium Web',
         'amaand'                    => 'Amatic SC and Andika',
         'amajos'                    => 'Amatic SC and Josefin Sans',
+        'antjur'                    => 'Anton and Jura',
+        'arcten'                    => 'Archivo Black and Tenor Sans',
         'bevpon'                    => 'Bevan and Pontano Sans',
         'bitsou'                    => 'Bitter & Source Sans Pro',
         'bitral'                    => 'Bitter and Raleway',
@@ -237,6 +239,7 @@ function bellini_font_preset(){
         'poposw'                    => 'Poppins and Oswald',
         'popral'                    => 'Poppins and Raleway',
         'poprob'                    => 'Poppins and Roboto',
+        'pralat'                    => 'Pragati Narrow and Lato',
         'preope'                    => 'Press Start 2P and Open Sans',
         'preply'                    => 'Press Start 2P and Play',
         'ptscab'                    => 'PT Sans and Cabin',
@@ -278,6 +281,10 @@ function bellini_font_preset(){
         'sharob'                    => 'Shadows and Roboto',
         'sigope'                    => 'Signika and Open Sans',
         'squall'                    => 'Squada One and Allerta',
+        'stalat'                    => 'Stardos Stencil and Lato',
+        'staope'                    => 'Stardos Stencil and Open Sans',
+        'staral'                    => 'Stardos Stencil and Raleway',
+        'stassp'                    => 'Stardos Stencil and Source Sans Pro',
         'spaope'                    => 'Space Mono and Open sans',
         'sparob'                    => 'Space Mono and Roboto',
         'stipon'                    => 'Stint Ultra and Pontano Sans',
@@ -345,6 +352,8 @@ function bellini_font_preset_title($font){
     if($font == 'amatit'){ return "'Amaranth', sans-serif";}
     if($font == 'amaand'){ return "'Amatic SC', cursive";}
     if($font == 'amajos'){ return "'Amatic SC', cursive";}
+    if($font == 'antjur'){ return "'Anton', sans-serif";}
+    if($font == 'arcten'){ return "'Archivo Black', sans-serif";}
     if($font == 'bevpon'){ return "'Bevan', cursive";}
     if($font == 'bitsou'){ return "'Bitter', serif";}
     if($font == 'bitral'){ return "'Bitter', serif";}
@@ -467,6 +476,7 @@ function bellini_font_preset_title($font){
     if($font == 'poposw'){ return "'Poppins', sans-serif"; }
     if($font == 'popral'){ return "'Poppins', sans-serif"; }
     if($font == 'poprob'){ return "'Poppins', sans-serif"; }
+    if($font == 'pralat'){ return "'Pragati Narrow', sans-serif"; }
     if($font == 'preope'){ return "'Press Start 2P', cursive";}
     if($font == 'preply'){ return "'Press Start 2P', cursive";}
     if($font == 'ptscab'){ return "'PT Sans', sans-serif";}
@@ -508,6 +518,10 @@ function bellini_font_preset_title($font){
     if($font == 'sharob'){ return "'Shadows Into Light', cursive";}
     if($font == 'sigope'){ return "'Signika', sans-serif";}
     if($font == 'squall'){ return "'Squada One', cursive";}
+    if($font == 'stalat'){ return "'Stardos Stencil', cursive";}
+    if($font == 'staope'){ return "'Stardos Stencil', cursive";}
+    if($font == 'staral'){ return "'Stardos Stencil', cursive";}
+    if($font == 'stassp'){ return "'Stardos Stencil', cursive";}    
     if($font == 'spaope'){ return "'Space Mono', monospace";}
     if($font == 'sparob'){ return "'Space Mono', monospace";}
     if($font == 'stipon'){ return "'Stint Ultra Expanded', cursive";}
@@ -568,6 +582,8 @@ function bellini_font_preset_body($font){
     if($font == 'amatit'){ return "'Titillium Web', sans-serif";}
     if($font == 'amaand'){ return "'Andika', sans-serif";}
     if($font == 'amajos'){ return "'Josefin Sans', sans-serif";}
+    if($font == 'antjur'){ return "'Jura', sans-serif";}
+    if($font == 'arcten'){ return "'Tenor Sans', sans-serif";}
     if($font == 'bevpon'){ return "'Pontano Sans', sans-serif";}
     if($font == 'bitsou'){ return "'Source Sans Pro', sans-serif";}
     if($font == 'bitral'){ return "'Raleway', sans-serif";}
@@ -690,6 +706,7 @@ function bellini_font_preset_body($font){
     if($font == 'poposw'){ return "'Oswald', sans-serif";}
     if($font == 'popral'){ return "'Raleway', sans-serif";}
     if($font == 'poprob'){ return "'Roboto', sans-serif";}
+    if($font == 'pralat'){ return "'Lato', sans-serif";}
     if($font == 'preope'){ return "'Open Sans', sans-serif";}
     if($font == 'preply'){ return "'Play', sans-serif";}
     if($font == 'ptscab'){ return "'Cabin', sans-serif";}
@@ -733,6 +750,10 @@ function bellini_font_preset_body($font){
     if($font == 'spaope'){ return "'Open Sans', sans-serif"; }
     if($font == 'sparob'){ return "'Roboto', sans-serif";}
     if($font == 'squall'){ return "'Allerta', sans-serif";}
+    if($font == 'stalat'){ return "'Lato', sans-serif"; }
+    if($font == 'staope'){ return "'Open Sans', sans-serif"; }
+    if($font == 'staral'){ return "'Raleway', sans-serif";}
+    if($font == 'stassp'){ return "'Source Sans Pro', sans-serif";}    
     if($font == 'stipon'){ return "'Pontano Sans', sans-serif";}
     if($font == 'titlat'){ return "'Lato', sans-serif"; }
     if($font == 'titope'){ return "'Open Sans', sans-serif";}
@@ -855,6 +876,16 @@ endif;
 if ( 'amajos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Amatic+SC:400,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
+endif;
+
+if ( 'antjur' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Anton&amp;subset=latin-ext,vietnamese');
+    wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Jura:300,400,500,600&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext');
+endif;
+
+if ( 'arcten' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-arcten-title', '//fonts.googleapis.com/css?family=Archivo+Black&amp;subset=latin-ext');
+    wp_enqueue_style('bellini-font-arcten-title', '//fonts.googleapis.com/css?family=Tenor+Sans&amp;subset=cyrillic,latin-ext');
 endif;
 
 if ( 'bevpon' == esc_attr($bellini['preset_font']) ):
@@ -1470,6 +1501,11 @@ if ( 'poprob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-poprob-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
+if ( 'pralat' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-pralat-title', '//fonts.googleapis.com/css?family=Pragati+Narrow:400,700&amp;subset=devanagari,latin-ext');
+    wp_enqueue_style('bellini-font-pralat-title', '//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext');
+endif;
+
 if ( 'preope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-preope-title', '//fonts.googleapis.com/css?family=Press+Start+2P&subset=cyrillic,greek,latin-ext');
     wp_enqueue_style('bellini-font-preope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
@@ -1683,6 +1719,26 @@ endif;
 if ( 'squall' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-squall-title', '//fonts.googleapis.com/css?family=Squada+One');
     wp_enqueue_style('bellini-font-squall-title', '//fonts.googleapis.com/css?family=Allerta');
+endif;
+
+if ( 'stalat' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-stalat-title', '//fonts.googleapis.com/css?family=Stardos+Stencil:400,700');
+    wp_enqueue_style('bellini-font-stalat-body', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
+endif;
+
+if ( 'staope' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-staope-title', '//fonts.googleapis.com/css?family=Stardos+Stencil:400,700');
+    wp_enqueue_style('bellini-font-staope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
+endif;
+
+if ( 'staral' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-staral-title', '//fonts.googleapis.com/css?family=Stardos+Stencil:400,700');
+    wp_enqueue_style('bellini-font-staral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
+endif;
+
+if ( 'stassp' == esc_attr($bellini['preset_font']) ):
+    wp_enqueue_style('bellini-font-stassp-title', '//fonts.googleapis.com/css?family=Stardos+Stencil:400,700');
+    wp_enqueue_style('bellini-font-stassp-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
 if ( 'stipon' == esc_attr($bellini['preset_font']) ):

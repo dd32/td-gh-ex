@@ -188,7 +188,7 @@
 	//Hero Image
 	$wp_customize->add_setting('bellini[bellini_static_slider_image]', array(
 		'type' 				=> 'option',
-		'default'           => get_template_directory_uri() . '/images/slider.jpg',
+		'default'           => get_parent_theme_file_uri( '/images/slider.jpg'),
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' 		=> 'refresh',
 		'active_callback' 	=> 'is_active_slider_type_bellini_hero',
@@ -1517,7 +1517,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 1 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_one]', array(
-		'default'	=> get_template_directory_uri() . '/images/block_one.png',
+		'default'	=> get_parent_theme_file_uri( '/images/block_one.png'),
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
@@ -1581,7 +1581,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 2 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_two]', array(
-		'default'	=> get_template_directory_uri() . '/images/block_two.png',
+		'default'	=> get_parent_theme_file_uri( '/images/block_two.png'),
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
@@ -1644,7 +1644,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 3 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_three]', array(
-		'default'	=> get_template_directory_uri() . '/images/block_three.png',
+		'default'	=> get_parent_theme_file_uri( '/images/block_three.png'),
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',

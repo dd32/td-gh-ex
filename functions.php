@@ -36,7 +36,12 @@ function bellini_setup() {
 	add_theme_support( 'html5', array('search-form','comment-form','comment-list','gallery','caption',) );
 	add_theme_support('widget-customizer');
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// WooCommerce Integration
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	add_theme_support( 'custom-background', apply_filters( 'bellini_custom_background_args', array(
 		'default-color' => '#eceef1',
@@ -294,14 +299,14 @@ function bellini_option_defaults() {
 		'bellini_social_account_link_five' 				=> '',
 		'bellini_social_account_link_six' 				=> '',
 		'bellini_show_page_breadcrumb'   				=> '',
-		'bellini_feature_block_image_one' 				=> get_template_directory_uri() . '/images/block_one.png',
-		'bellini_feature_block_image_two' 				=> get_template_directory_uri() . '/images/block_two.png',
-		'bellini_feature_block_image_three' 			=> get_template_directory_uri() . '/images/block_three.png',
+		'bellini_feature_block_image_one' 				=> get_parent_theme_file_uri( '/images/block_one.png'),
+		'bellini_feature_block_image_two' 				=> get_parent_theme_file_uri( '/images/block_two.png'),
+		'bellini_feature_block_image_three' 			=> get_parent_theme_file_uri( '/images/block_three.png'),
 		'bellini_feature_block_image_four' 				=> '',
 		'bellini_blog_pagination_type' 					=> 1,
 		'bellini_show_scroll_to_top'					=> true,
 		'bellini_footer_widget_column_selector'        	=> 3,
-		'bellini_post_featured_image'  					=> get_template_directory_uri() . '/images/featured-image.jpg',
+		'bellini_post_featured_image'  					=> get_parent_theme_file_uri('/images/featured-image.jpg'),
 		'bellini_show_footer_menu'						=> true,
 		'bellini_post_category_selector'				=> false,
 		'bellini_feature_block_title_one'				=> __('Search lights are trained', 'bellini'),

@@ -7,10 +7,21 @@
     color: #323b43;
 }
 .appearance_page_bellini-getting-started #wpcontent {background-color:#e8e8e8;}
-.getting-started__header {margin-bottom: 1.5rem;}
+.getting-started__header {margin-bottom: 3rem;}
 .intro h2{font-size:2rem; display:inline-block; margin-top:0;}
-.intro__version {display:inline-block; padding-left:.5rem;}
-.intro__review p{margin-top:0; text-align:right;}
+.intro__version {
+    display: inline-block;
+    font-size: 1.4em;
+    line-height: 1.4;
+}
+
+.intro__review p {
+    margin-top: 0;
+    text-align: right;
+    background-color: #E1F5FE;
+    padding: 1em;
+    border-radius: 2px;
+}
 
 .dashboard__block {
     background-color: white;

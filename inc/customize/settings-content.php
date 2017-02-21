@@ -6,7 +6,7 @@
 
 // Default Image
 $wp_customize->add_section('bellini_default_image',array(
-	'title' => esc_html__( 'Set Default Image', 'bellini' ),
+	'title' => esc_html__( 'Page header & Background Image', 'bellini' ),
 	'capability' => 'edit_theme_options',
 	'priority' => 1,
 	'panel' => 'bellini_misc_panel'
@@ -110,7 +110,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	//Default Post Featured Image
 	$wp_customize->add_setting('bellini[bellini_post_featured_image]', array(
 		'type' => 'option',
-		'default'         => get_template_directory_uri() . '/images/featured-image.jpg',
+		'default'         => get_parent_theme_file_uri('/images/featured-image.jpg'),
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
 	) );
@@ -146,9 +146,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->selective_refresh->add_partial( 'bellini_copyright_text', array(
 				'selector'        => '.site-footer.footer__copyright',
 				'settings'        => 'bellini[bellini_copyright_text]',
-				'render_callback' => function() {
-								        return get_option('bellini_copyright_text');
-								      },
+				'render_callback' => function() { return get_option('bellini_copyright_text');},
 				'fallback_refresh' => false,
 			) );
 

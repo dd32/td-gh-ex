@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.38.9
+Version: 1.39
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -44,62 +44,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-
-p {
-    margin-bottom: 0;
-    padding: 0 0 .8125em 0;
-}
-
-dfn,
-cite,
-em,
-i {
-    font-style: italic;
-}
-
-address {
-    margin: 0 0 1.5em;
-}
-
-pre {
-    margin-bottom: 1.6em;
-    padding: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    font-family: 'Courier 10 Pitch',Courier,monospace;
-    font-size: 15px;
-    font-size: .9375em;
-    line-height: 1.6;
-    background: #eee;
-}
-
-code,
-kbd,
-tt,
-var {
-    font-family: Monaco,Consolas,'Andale Mono','DejaVu Sans Mono',monospace;
-    font-size: 15px;
-    font-size: .9375em;
-}
-
-abbr,
-acronym {
-    border-bottom: 1px dotted #666;
-    cursor: help;
-}
-
-mark,
-ins {
-    text-decoration: none;
-}
-
-big {
-    font-size: 125%;
-}
-
-/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 
@@ -124,12 +68,14 @@ body {
     line-height: 1.618;
     word-break: normal;
     vertical-align: baseline;
-    background: #fff;
+    background-color: #fff;
     -o-font-feature-settings: 'liga' 1,'kern';
     -ms-font-feature-settings: 'liga' 1,'kern';
     -webkit-font-feature-settings: 'liga' 1,'kern';
     font-feature-settings: 'liga' 1,'kern'
 }
+
+.site { overflow-x: hidden; }
 
 fieldset {
     border: 1px solid #bbb;
@@ -253,6 +199,62 @@ img {
 }
 
 /*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+p {
+    margin-bottom: 0;
+    padding: 0 0 .8125em 0;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    font-family: 'Courier 10 Pitch',Courier,monospace;
+    font-size: 15px;
+    font-size: .9375em;
+    line-height: 1.6;
+    background-color: #eee;
+}
+
+code,
+kbd,
+tt,
+var {
+    font-family: Monaco,Consolas,'Andale Mono','DejaVu Sans Mono',monospace;
+    font-size: 15px;
+    font-size: .9375em;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    text-decoration: none;
+}
+
+big {
+    font-size: 125%;
+}
+
+/*--------------------------------------------------------------
 # Font Declaration
 --------------------------------------------------------------*/
 
@@ -334,8 +336,7 @@ input[type=email],input[type=password],input[type=search],input[type=text],input
 
 form button,
 form input[type="button"],
-form input[type="reset"],
-form input[type="submit"] {
+form input[type="reset"] {
   font-weight: 500;
   clear: both;
   line-height: 1;
@@ -383,7 +384,7 @@ textarea {
   input[type="search"]:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 1px 4px #ebe9ee;
+    box-shadow: 0 0 1px 2px #ebe9ee;
     -webkit-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out; }
   .sidebar input[type="text"]:focus, .sidebar
@@ -454,7 +455,7 @@ input[type='submit'][disabled]:focus {
     font-weight: 500;
     line-height: 1;
     color: #fff;
-    background: #1a1a1a;
+    background-color: #1a1a1a;
 }
 
 .button {
@@ -1541,7 +1542,6 @@ h1,h2,h3,h4,h5,h6 {
 .feature-block__content--l2 {
     position: absolute;
     top: 0;
-    background: beige;
     width: 100%;
     height: 100%;
     padding: 4em 1em 1em 1em;
@@ -1889,7 +1889,7 @@ Hamburger Menu
     -webkit-transform: translateX(0);
     transform: translateX(0);
     overflow-x: hidden;
-    z-index: 9;
+    z-index: 99;
 }
 
 .hamburger__menu__middle {
@@ -2068,7 +2068,6 @@ Hamburger Menu
     margin-right: 10px;
     margin-bottom: 2px;
     border-radius: 50%;
-    background-color: #e91e63;
 }
 
 .site-footer {
@@ -2167,7 +2166,6 @@ Hamburger Menu
     bottom: 0;
     left: 0;
     height: 4px;
-    background: #ff5722;
     transition-timing-function: ease-out;
     transition-duration: .3s;
     transition-property: right;
@@ -2562,8 +2560,9 @@ Hamburger Menu
     .s__post--l4 .container--card-content {
         width: 90%;
         margin: 0 5%;
-}
+    }
 
+    .bellini-social__link {text-align: center;}
 }
 
 @media(max-width:640px) {
@@ -2571,6 +2570,7 @@ Hamburger Menu
         position: static;
         width: 100%;
         margin: 0;
+        padding-bottom: 0;
     }
 
     .slider-content h3 {
@@ -2631,14 +2631,7 @@ blockquote:before {
 .post-navigation .nav-previous,
 .post-navigation .nav-next {
     padding: 4rem 0;
-    border-bottom: 1px solid #eee;
-    border-top: 1px solid #eee;
 }
-
-.post-navigation .nav-previous{
-    border-right: 1px solid #eee;
-}
-
 
 .breadcrumb_last,
 .single.post-meta,
@@ -2732,7 +2725,7 @@ blockquote:before {
     h6 {
         line-height: 1.4
     }
-    h1 {font-size: 3rem}
+    h1,.element-title,.element-title--main,.single-page__title,.page-title,.single-post__title,.single-post__title--l2,.single-post__title--l3,.single-post__title--l4 {font-size: 3rem}
     h2 {font-size: 2.3125rem}
     h3 {font-size: 1.6875rem}
     h4 {font-size: 1.4375rem}
@@ -2780,7 +2773,6 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
 .main-navigation ul ul li:first-of-type a {
   margin-top: .8em;
   padding-top: .8em;
-  border-top: 1px solid #e8e9ea;
 }
 .main-navigation ul ul a {
   padding-left: 1.6em;
@@ -2833,7 +2825,7 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
   transform: translateX(-100%) translateX(-1.6em);
 }
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
-  background: transparent;
+  background-color: transparent;
 }
 
 .menu-toggle {
@@ -2886,7 +2878,7 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
     display: block;
     list-style: none;
     margin: 0 0 -1.3em;
-    padding: .8em 0 0 0;
+    padding:0;
   }
   .main-navigation ul ul {
     background-color: white;
@@ -3071,3 +3063,7 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
 .front-section__title {
     margin-bottom: 1.8em;
 }
+
+input.wpcf7-text {width: 100%;}
+
+.blog__post__right .button--secondary--post{text-decoration:none;}

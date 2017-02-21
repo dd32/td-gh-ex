@@ -43,8 +43,10 @@ function bellini_getting_started() {
 		<div class="getting-started__header">
 		<div class="row">
 			<div class="col-md-8 intro">
-				<h2><?php esc_html_e( 'Bellini', 'bellini' ); ?></h2>
-				<span class="intro__version"><?php echo $theme['Version'];?></span>
+				<h2><?php esc_html_e( 'Welcome to Bellini ', 'bellini' ); ?><?php echo $theme['Version'];?></h2>
+				<span class="intro__version">
+				Congratulations! You are about to use the most easy to use and felxible WordPress theme built for launching an online store.
+				</span>
 			</div>
 			<div class="col-md-4 intro__review">
 			<p>Enjoying Bellini? Why not <a href="<?php echo esc_url('https://wordpress.org/support/theme/bellini/reviews/#new-post'); ?>">leave a review</a> on WordPress.org? We'd really appreciate it!</p>

@@ -13,7 +13,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
 	}
 	else{
 		// Get the default image
-		$bellini_static_slider_image = get_template_directory_uri() . '/images/slider.jpg';
+		$bellini_static_slider_image = get_parent_theme_file_uri( '/images/slider.jpg');
 	}
 	?>
 	<section class="front__slider__static">
@@ -322,9 +322,6 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 		<?php }
 		wp_reset_postdata();
 	?>
-</div>
-</div>
-</section>
 <?php
 endif;
 endif;

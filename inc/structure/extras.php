@@ -196,7 +196,7 @@ function bellini_post_thumbnail(){
         );
         echo '</figure>';
     }else{?>
-        <img itemprop="image" src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_template_directory_uri() . '/images/featured-image.jpg'; endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
+        <img itemprop="image" src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_parent_theme_file_uri('/images/featured-image.jpg'); endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
     <?php }
 }
 

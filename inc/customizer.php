@@ -326,7 +326,7 @@ if ( is_woocommerce_activated() ):
 		$woo_class_prices 					= ".site-cart__icon,.product-card__info__price,.product-card__info__price,.product-featured__price .amount,.product-featured__price--l2 .amount,.product-card__info__price .amount,.woocommerce div.product span.price,.add_to_cart_button:before";
 		$woo_additional 					= ".product-featured__review--centered,.product .onsale,.product--l2 .onsale,.listed__total,.woocommerce span.onsale, .product-card__inner__hover";
 		$woo_class_buttons 					= ".product-featured__add-cart .add_to_cart_button,.product-featured__add-cart--l2 .add_to_cart_button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button";
-		$woo_product_card_background 		= ".product-card__inner,.front-product-category__card__inner,.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3";
+		$woo_product_card_background 		= ".product-card__inner,.front-product-category__card__inner,.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3,.woocommerce div.product .woocommerce-tabs ul.tabs li.active,.woocommerce div.product .woocommerce-tabs .panel";
 
 	?>
 
@@ -369,11 +369,11 @@ endif;
 add_action( 'customize_preview_init', 'bellini_customize_preview_js' );
 
 function bellini_customize_preview_js() {
-	wp_enqueue_script( 'bellini_customizer', get_template_directory_uri() . '/inc/js/customizer.js', array( 'customize-preview' ), '20160709', true );
+	wp_enqueue_script( 'bellini_customizer', get_theme_file_uri( '/inc/js/customizer.js' ), array( 'customize-preview' ), '20170221', true );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'bellini_customizer_style');
 
 function bellini_customizer_style() {
-	wp_enqueue_style('CustomizerUI',get_template_directory_uri(). '/inc/css/customizer-ui.css');
+	wp_enqueue_style('CustomizerUI', get_theme_file_uri( '/inc/css/customizer-ui.css'));
 }

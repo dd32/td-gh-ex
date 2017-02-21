@@ -894,7 +894,6 @@
     min-width: initial !important;
     min-height: initial !important;
     position: absolute;
-    z-index: initial !important;
     top: initial !important;
     right: initial !important;
     overflow: hidden;
@@ -1094,3 +1093,17 @@ mark.count {background-color: transparent;}
 .product__single--l1 .single_add_to_cart_button{
     float: none !important;
 }
+
+.woocommerce div.product .woocommerce-tabs .panel{border-radius:3px;}
+
+.woocommerce-products-header {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.variations .value select{min-height: 36px; border-radius:3px;}
+.variations tr{border:none;}
+
+.product__single--l1 .tagged_as,
+.product__single--l1 .posted_in,
+.product__single--l1 .sku_wrapper {display:block;}
