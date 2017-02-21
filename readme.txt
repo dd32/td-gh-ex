@@ -1,11 +1,11 @@
 === App Landing Page ===
 
 Author: Rara Theme (http://raratheme.com)
-Tags: two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
+Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog
 
 Requires at least: 4.6
-Tested up to: 4.6.1
-Stable tag: 1.0.1
+Tested up to: 4.7.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -193,6 +193,12 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
    == Change Log ==
+
+    1.0.3
+    * Tag list Updated.
+
+    1.0.2
+    * issue fixed mentioned in theme tracs.
 
     1.0.1
     * Added Documentation in readme.txt.
