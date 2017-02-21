@@ -1,10 +1,11 @@
 # Copyright (C) 2016 Catch Themes
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame 2.5\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 16:49-0500\n"
+"POT-Creation-Date: 2017-02-21 21:46+0545\n"
 "PO-Revision-Date: 2016-12-07 16:49-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -12,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -33,27 +34,33 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: ../comments.php:27
+#: ../comments.php:30
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../comments.php:35
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:34 ../comments.php:59
+#: ../comments.php:50 ../comments.php:75
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:35 ../comments.php:60
+#: ../comments.php:51 ../comments.php:76
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:36 ../comments.php:61
+#: ../comments.php:52 ../comments.php:77
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:71
+#: ../comments.php:87
 msgid "Comments are closed."
 msgstr ""
 
@@ -82,33 +89,37 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:636
-#: ../inc/fullframe-core.php:655 ../inc/fullframe-core.php:781
+#: ../content-page.php:35 ../inc/fullframe-core.php:554
+#: ../inc/fullframe-core.php:573 ../inc/fullframe-core.php:699
 msgid "Edit"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:41
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:30
+msgid "All Categories"
+msgstr ""
+
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:42
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:55
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:59
 msgid "Support"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:63
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:67
 msgid "Donate Now"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:70
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:71
 msgid "Review"
 msgstr ""
 
@@ -265,7 +276,7 @@ msgid "Featured Header Image Link URL"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:439
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:413
 msgid "Check to Open Link in New Window/Tab"
 msgstr ""
 
@@ -365,132 +376,118 @@ msgstr ""
 msgid "Icon Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:189
-msgid "Select/Add Favicon"
-msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:200
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
-"height, which will support High Resolution Devices like iPad Retina."
-msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:201
-msgid "Select/Add Web Clip Icon"
-msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:213
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:187
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:214
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:188
 msgid "Select/Add Logo Icon"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:225
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:199
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:242
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:216
 msgid "Default Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:262
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:236
 msgid "Archive Content Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:282
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:256
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:293
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:267
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
-"<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
-"Plugin</a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%1$s\">WP-PageNavi Plugin</"
+"a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%2$s"
+"\">JetPack Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:300
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:274
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:311
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:285
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:296
 msgid "Pagination Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:313
 msgid "Pagination type"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:348
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
 msgid "To disable the fields, simply leave them empty."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:351
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:325
 msgid "Promotion Headline Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:368
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
 msgid "Enable Promotion Headline on"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:382
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:356
 msgid "Appropriate Words: 10"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:383
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:357
 msgid "Promotion Headline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:396
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:370
 msgid "Appropriate Words: 15"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:397
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:371
 msgid "Promotion Subheadline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:410
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:384
 msgid "Appropriate Words: 3"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:411
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:385
 msgid "Promotion Headline Button Text "
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:399
 msgid "Promotion Headline Link"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:451
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:461
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:435
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:470
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:444
 msgid "Change default placeholder text in Search."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:473
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:447
 msgid "Search Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:483
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:457
 msgid "Default Display Text in Search"
 msgstr ""
 
@@ -582,95 +579,90 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/fullframe-core.php:602
+#: ../inc/fullframe-core.php:522
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/fullframe-core.php:636
+#: ../inc/fullframe-core.php:554
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/fullframe-core.php:646
+#: ../inc/fullframe-core.php:564
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:652
+#: ../inc/fullframe-core.php:570
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:659
+#: ../inc/fullframe-core.php:577
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/fullframe-core.php:762
+#: ../inc/fullframe-core.php:680
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:769
+#: ../inc/fullframe-core.php:687
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/fullframe-core.php:798 ../inc/fullframe-core.php:806
+#: ../inc/fullframe-core.php:716 ../inc/fullframe-core.php:724
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/fullframe-core.php:801
+#: ../inc/fullframe-core.php:719
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:809
+#: ../inc/fullframe-core.php:727
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:952
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: ../inc/fullframe-core.php:1415
+#: ../inc/fullframe-core.php:1333
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1433
+#: ../inc/fullframe-core.php:1351
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1434
+#: ../inc/fullframe-core.php:1352
 msgid "By"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1475
+#: ../inc/fullframe-core.php:1393
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1476
+#: ../inc/fullframe-core.php:1394
 msgid "Next post:"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1478
+#: ../inc/fullframe-core.php:1396
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1479
+#: ../inc/fullframe-core.php:1397
 msgid "Previous post:"
 msgstr ""
 

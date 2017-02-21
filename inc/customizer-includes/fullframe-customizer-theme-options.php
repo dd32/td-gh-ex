@@ -178,32 +178,6 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'title'    		=> esc_html__( 'Icon Options', 'full-frame' ),
 	) );
 
-	//@remove Remove this block when WordPress 4.8 is released
-	if ( ! function_exists( 'has_site_icon' ) ) {
-		$wp_customize->add_setting( 'fullframe_theme_options[favicon]', array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'fullframe_sanitize_image',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[favicon]', array(
-			'label'		=> esc_html__( 'Select/Add Favicon', 'full-frame' ),
-			'section'    => 'fullframe_icons',
-	        'settings'   => 'fullframe_theme_options[favicon]',
-		) ) );
-
-		$wp_customize->add_setting( 'fullframe_theme_options[web_clip]', array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'fullframe_sanitize_image',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[web_clip]', array(
-			'description'	=> esc_html__( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'full-frame'),
-			'label'		 	=> esc_html__( 'Select/Add Web Clip Icon', 'full-frame' ),
-			'section'    	=> 'fullframe_icons',
-	        'settings'   	=> 'fullframe_theme_options[web_clip]',
-		) ) );
-	}
-
 	$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
 		'capability'		=> 'edit_theme_options',
 		'sanitize_callback'	=> 'fullframe_sanitize_image',
@@ -290,7 +264,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	// Pagination Options
 	$pagination_type	= $options['pagination_type'];
 
-	$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
+	$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%1$s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%2$s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
 
 	/**
 	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled

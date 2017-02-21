@@ -56,7 +56,7 @@ function fullframe_get_default_theme_options() {
 		'excerpt_more_text'									=> esc_html__( 'Read More ...', 'full-frame' ),
 
 		//Homepage / Frontpage Settings
-		'front_page_category'								=> array(),
+		'front_page_category'								=> '0',
 
 		//Pagination Options
 		'pagination_type'									=> 'default',

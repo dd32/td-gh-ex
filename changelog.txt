@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.5.1 =
+* Added: Option to Display all Categories in Customizer
+* Code Optimization
+
 = 2.5 =
 * Updated: HTML Shiv script loading
 * Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'

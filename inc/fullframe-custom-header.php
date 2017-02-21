@@ -69,8 +69,8 @@ if ( ! function_exists( 'fullframe_header_style' ) ) :
 function fullframe_header_style() {
 
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// get_header_textcolor() options: get_theme_support( 'custom-header', 'default-text-color' ) is default, hide text (returns 'blank') or any hex value
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -147,7 +147,7 @@ function fullframe_admin_header_style() {
 	}
 	<?php
 	// If the user has set a custom color for the text use that
-	if ( get_header_textcolor() != HEADER_TEXTCOLOR ) {
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) !== get_header_textcolor() ) {
 		echo '
 		#site-branding .site-title a,
 		#site-branding .site-description {

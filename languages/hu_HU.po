@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 16:49-0500\n"
-"PO-Revision-Date: 2016-12-07 16:49-0500\n"
+"POT-Creation-Date: 2017-02-21 21:46+0545\n"
+"PO-Revision-Date: 2017-02-21 21:46+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -30,30 +30,36 @@ msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Úgy tűnik, ezen a helyen nem található semmi. Próbálja meg az alábbi linkeket "
-"vagy a keresést."
+"Úgy tűnik, ezen a helyen nem található semmi. Próbálja meg az alábbi "
+"linkeket vagy a keresést."
 
-#: ../comments.php:27
+#: ../comments.php:30
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "&ldquo;%2$s&rdquo; bejegyzéshez egy hozzászólás"
-msgstr[1] "&ldquo;%2$s&rdquo; bejegyzéshez %1$s hozzászólás"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
 
-#: ../comments.php:34 ../comments.php:59
+#: ../comments.php:35
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:50 ../comments.php:75
 msgid "Comment navigation"
 msgstr "Hozzászólás navigáció"
 
-#: ../comments.php:35 ../comments.php:60
+#: ../comments.php:51 ../comments.php:76
 msgid "&larr; Older Comments"
 msgstr "&larr; Régebbi hozzászólások"
 
-#: ../comments.php:36 ../comments.php:61
+#: ../comments.php:52 ../comments.php:77
 msgid "Newer Comments &rarr;"
 msgstr "Újabb hozzászólások &rarr;"
 
-#: ../comments.php:71
+#: ../comments.php:87
 msgid "Comments are closed."
 msgstr "Hozzászólások ezen a részen nem engedélyezettek"
 
@@ -63,9 +69,11 @@ msgstr "Nincs találat"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Készen áll az első bejegyzése közzétételére? <a href=\"%1$s\">Kezdje el itt!</a>."
+"Készen áll az első bejegyzése közzétételére? <a href=\"%1$s\">Kezdje el itt!"
+"</a>."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
@@ -75,42 +83,48 @@ msgstr "Sajnos nincs találat a kifejezésre. Próbálja meg más szavakkal!"
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
-"can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr "Úgy tűnik, nem található a kért anyag. Talán a kereső segíthet."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
 msgstr "Oldalak:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:636
-#: ../inc/fullframe-core.php:655 ../inc/fullframe-core.php:781
+#: ../content-page.php:35 ../inc/fullframe-core.php:554
+#: ../inc/fullframe-core.php:573 ../inc/fullframe-core.php:699
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:41
-msgid ""
-"Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:30
+msgid "All Categories"
 msgstr ""
-"A Ctrl (Windows) / Command (Mac) gomb lenyomva tartásával több is kiválasztható."
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:42
+msgid ""
+"Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
+"options."
+msgstr ""
+"A Ctrl (Windows) / Command (Mac) gomb lenyomva tartásával több is "
+"kiválasztható."
+
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:55
 msgid "Theme Instructions"
 msgstr "Téma utasítások"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:59
 msgid "Support"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:63
 msgid "Changelog"
 msgstr "Változások"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:67
 msgid "Donate Now"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:70
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:71
 msgid "Review"
 msgstr "Értékelések"
 
@@ -168,8 +182,8 @@ msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
 msgstr ""
-"Mentse és frissítse az oldalt, ha a kiemelt tartalmak száma változott (maximum "
-"20 lehet)"
+"Mentse és frissítse az oldalt, ha a kiemelt tartalmak száma változott "
+"(maximum 20 lehet)"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:173
 msgid "No of Featured Content"
@@ -229,13 +243,13 @@ msgstr "Áttünés hossza"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:133
 msgid ""
-"True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
-"are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
-"the height overlap issue.<br> Slideshow will start only after all images are "
-"available."
+"True: Fixes the height overlap issue. Slideshow will start as soon as two "
+"slider are available. Slide may display in random, as image is fetch."
+"<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only "
+"after all images are available."
 msgstr ""
-"Igen: Kijavítja a magasság átfedési porblémákat. A diavetítés elindul, ahogy már "
-"két kép a rendelkezésre áll. A megjelenítés véletlenszerű lehet a képek "
+"Igen: Kijavítja a magasság átfedési porblémákat. A diavetítés elindul, ahogy "
+"már két kép a rendelkezésre áll. A megjelenítés véletlenszerű lehet a képek "
 "letöltödésének sorrendje miatt. <br> Várjon: Kijavítja a magasság átfedési "
 "problémákat. <br> A diavetítés csak akkor veszi kezdetét, ha az összes kép a "
 "rendelkezésre áll."
@@ -250,7 +264,8 @@ msgstr "Válasszon Slider típust"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:172
 msgid ""
-"Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
+"Save and refresh the page if No. of Slides is changed (Max no of slides is "
+"20)"
 msgstr ""
 "Mentse és frissítse az oldalt, ha a Slider képek száma változott (maximum 20 "
 "lehet)"
@@ -276,7 +291,7 @@ msgid "Featured Header Image Link URL"
 msgstr "Fejrész kiemelt kép URL címe"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:439
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:413
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Hivatkozás megnyitása új ablakon/fülön"
 
@@ -307,9 +322,9 @@ msgstr "Téma beállítások"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:28
 msgid ""
-"Breadcrumbs are a great way of letting your visitors find out where they are on "
-"your site with just a glance. You can enable/disable them on homepage and entire "
-"site."
+"Breadcrumbs are a great way of letting your visitors find out where they are "
+"on your site with just a glance. You can enable/disable them on homepage and "
+"entire site."
 msgstr ""
 "A Breadcrumbs (kenyérmorzsa) nagyszerű módja annak, hogy a látogatók egy "
 "pillantás alatt lássák, hogy a honlap melyik részén járnak éppen. "
@@ -361,8 +376,8 @@ msgstr "Tovább ..."
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:151
 msgid ""
-"Only posts that belong to the categories selected here will be displayed on the "
-"front page"
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page"
 msgstr ""
 "Csak az itt kiválasztott kategóriába tartozó hozzászólások jelennek meg a "
 "címlapon"
@@ -383,142 +398,123 @@ msgstr "Távolítsa el az Ikonokat a kikapcsoláshoz"
 msgid "Icon Options"
 msgstr "Ikon tulajdonságok"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:189
-msgid "Select/Add Favicon"
-msgstr "Honlap ikon kiválasztása / hozzáadása"
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:200
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
-"height, which will support High Resolution Devices like iPad Retina."
-msgstr ""
-"Web Clip Icon Apple eszközökhöz. Ajánlott méret: 144px x 144px, amely támogatja "
-"a nagy felbontású készülékeket, mint pl. iPad Retina."
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:201
-msgid "Select/Add Web Clip Icon"
-msgstr "Web Clip ikon kiválasztása / hozzáadása"
-
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:213
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:187
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:214
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:188
 msgid "Select/Add Logo Icon"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:225
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:199
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Oldalelrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:242
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:216
 msgid "Default Layout"
 msgstr "Alapértelmezett elrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:262
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:236
 msgid "Archive Content Layout"
 msgstr "Archív tartalom elrendezése"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:282
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:256
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Aloldal / Hozzászólás kép elrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:293
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:267
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
-"<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
-"Plugin</a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%1$s\">WP-PageNavi "
+"Plugin</a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href="
+"\"%2$s\">JetPack Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"Az oldalszámozás a <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>-t "
-"igényli. <br/>A végtelen scrollozáshoz a <a target=\"_blank\" href=\"%s"
-"\">JetPack Plugin</a> szükséges, és engedélyezni kell benne az Infinite Scroll "
-"modult."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:300
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:274
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"A végtelen scrollozáshoz a <a target=\"_blank\" href=\"%s\">JetPack Plugin</a> "
-"szükséges, és engedélyezni kell benne az Infinite Scroll modult."
+"A végtelen scrollozáshoz a <a target=\"_blank\" href=\"%s\">JetPack Plugin</"
+"a> szükséges, és engedélyezni kell benne az Infinite Scroll modult."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:311
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:285
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
+"a>."
 msgstr ""
 "Az oldalszámozás a <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>-t "
 "igényli."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:296
 msgid "Pagination Options"
 msgstr "Oldalszámozás tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:313
 msgid "Pagination type"
 msgstr "Oldalszámozás típusa"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:348
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
 msgid "To disable the fields, simply leave them empty."
 msgstr "A mezők letiltásához egyszerűen csak hagyja őket üresen."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:351
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:325
 msgid "Promotion Headline Options"
 msgstr "Promóciós főcím tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:368
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
 msgid "Enable Promotion Headline on"
 msgstr "Promóciós főcím engedélyezése"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:382
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:356
 msgid "Appropriate Words: 10"
 msgstr "Megfelelő szavak: 10"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:383
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:357
 msgid "Promotion Headline Text"
 msgstr "Promóciós főcím szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:396
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:370
 msgid "Appropriate Words: 15"
 msgstr "Megfelelő szavak: 15"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:397
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:371
 msgid "Promotion Subheadline Text"
 msgstr "Promóciós alcím szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:410
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:384
 msgid "Appropriate Words: 3"
 msgstr "Megfelelő szavak: 3"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:411
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:385
 msgid "Promotion Headline Button Text "
 msgstr "Promóciós főcím gomb  szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:399
 msgid "Promotion Headline Link"
 msgstr "Promóciós főcím linkje"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:451
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:461
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:435
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:470
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:444
 msgid "Change default placeholder text in Search."
 msgstr "Keresésben megjelenő alap szöveg megváltoztatása."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:473
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:447
 msgid "Search Options"
 msgstr "Keresés opciók"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:483
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:457
 msgid "Default Display Text in Search"
 msgstr "Keresésben megjelenő alap szöveg"
 
@@ -544,11 +540,11 @@ msgstr "Színséma"
 
 #: ../inc/customizer-includes/fullframe-customizer.php:146
 msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view full "
-"effects."
+"Caution: Reset all settings to default. Refresh the page after save to view "
+"full effects."
 msgstr ""
-"Figyelem! Minden beállítás alapértékre állítása. Frissítse az oldalt, hogy lássa "
-"az eredményt."
+"Figyelem! Minden beállítás alapértékre állítása. Frissítse az oldalt, hogy "
+"lássa az eredményt."
 
 #: ../inc/customizer-includes/fullframe-customizer.php:148
 msgid "Reset all settings"
@@ -612,95 +608,90 @@ msgstr "Oldal %s"
 msgid "Primary Menu"
 msgstr "Elsődleges menü"
 
-#: ../inc/fullframe-core.php:602
+#: ../inc/fullframe-core.php:522
 msgid "Post navigation"
 msgstr "Bejegyzés navigáció"
 
-#: ../inc/fullframe-core.php:636
+#: ../inc/fullframe-core.php:554
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:646
+#: ../inc/fullframe-core.php:564
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">szerint:</span>"
 
-#: ../inc/fullframe-core.php:652
+#: ../inc/fullframe-core.php:570
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s a %2$s-ből"
 
-#: ../inc/fullframe-core.php:659
+#: ../inc/fullframe-core.php:577
 msgid "Your comment is awaiting moderation."
 msgstr "A hozzászólása moderálásra vár."
 
-#: ../inc/fullframe-core.php:762
+#: ../inc/fullframe-core.php:680
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Közzétéve</span>"
 
-#: ../inc/fullframe-core.php:769
+#: ../inc/fullframe-core.php:687
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Szerző</span>"
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "Leave a comment"
 msgstr "Szóljon hozzá!"
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "1 Comment"
 msgstr "1 hozzászólás"
 
-#: ../inc/fullframe-core.php:777
+#: ../inc/fullframe-core.php:695
 msgid "% Comments"
 msgstr "% hozzászólás"
 
-#: ../inc/fullframe-core.php:798 ../inc/fullframe-core.php:806
+#: ../inc/fullframe-core.php:716 ../inc/fullframe-core.php:724
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: ../inc/fullframe-core.php:801
+#: ../inc/fullframe-core.php:719
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategóriák</span>"
 
-#: ../inc/fullframe-core.php:809
+#: ../inc/fullframe-core.php:727
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Címkék</span>"
 
-#: ../inc/fullframe-core.php:952
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: ../inc/fullframe-core.php:1415
+#: ../inc/fullframe-core.php:1333
 msgid "Scroll Up"
 msgstr "Felfelé görgetés"
 
-#: ../inc/fullframe-core.php:1433
+#: ../inc/fullframe-core.php:1351
 msgid "Posted on"
 msgstr "Közzétéve"
 
-#: ../inc/fullframe-core.php:1434
+#: ../inc/fullframe-core.php:1352
 msgid "By"
 msgstr "Írta:"
 
-#: ../inc/fullframe-core.php:1475
+#: ../inc/fullframe-core.php:1393
 msgid "Next &rarr;"
 msgstr "Következő &rarr;"
 
-#: ../inc/fullframe-core.php:1476
+#: ../inc/fullframe-core.php:1394
 msgid "Next post:"
 msgstr "Következő bejegyzés"
 
-#: ../inc/fullframe-core.php:1478
+#: ../inc/fullframe-core.php:1396
 msgid "&larr; Previous"
 msgstr "&larr; Előző"
 
-#: ../inc/fullframe-core.php:1479
+#: ../inc/fullframe-core.php:1397
 msgid "Previous post:"
 msgstr "Előző bejegyzés"
 
@@ -714,8 +705,8 @@ msgstr ""
 
 #: ../inc/fullframe-default-options.php:67
 msgid ""
-"This is promotion headline. You can edit this from Appearance -> Customize -> "
-"Theme Options -> Promotion Headline Options"
+"This is promotion headline. You can edit this from Appearance -> Customize -"
+"> Theme Options -> Promotion Headline Options"
 msgstr ""
 "Ez egy promóciós főcím. Szerkeszthető a Megjelenés -> Testreszabás -> Téma "
 "beállítások -> Promotion Headline Options menüpontban"
@@ -925,7 +916,8 @@ msgstr "Twitter"
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:505 ../inc/fullframe-social-icons.php:37
+#: ../inc/fullframe-default-options.php:505
+#: ../inc/fullframe-social-icons.php:37
 msgid "Email"
 msgstr "E-mail cím"
 
@@ -1119,7 +1111,8 @@ msgid "Primary Sidebar"
 msgstr "Elsődleges oldalsáv"
 
 #: ../inc/fullframe-widgets.php:31
-msgid "This is the primary sidebar if you are using two column site layout option."
+msgid ""
+"This is the primary sidebar if you are using two column site layout option."
 msgstr ""
 
 #: ../inc/fullframe-widgets.php:38
@@ -1174,9 +1167,9 @@ msgstr ""
 #: ../sidebar.php:40
 #, php-format
 msgid ""
-"By default it will load Search and Archives widgets as shown below. You can add "
-"widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
-"replace default widgets."
+"By default it will load Search and Archives widgets as shown below. You can "
+"add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
+"which will replace default widgets."
 msgstr ""
 "Alapértelmezésben a Keresés és az Archívum widget fog megjelenni. Felvehet "
 "widgeteket erre a területre, ha ellátogat a <a href=\"%s\">Widget Panel</a> "
@@ -1185,6 +1178,39 @@ msgstr ""
 #: ../sidebar.php:53
 msgid "Archives"
 msgstr "Archívum"
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "&ldquo;%2$s&rdquo; bejegyzéshez egy hozzászólás"
+#~ msgstr[1] "&ldquo;%2$s&rdquo; bejegyzéshez %1$s hozzászólás"
+
+#~ msgid "Select/Add Favicon"
+#~ msgstr "Honlap ikon kiválasztása / hozzáadása"
+
+#~ msgid ""
+#~ "Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
+#~ "Height 144px height, which will support High Resolution Devices like iPad "
+#~ "Retina."
+#~ msgstr ""
+#~ "Web Clip Icon Apple eszközökhöz. Ajánlott méret: 144px x 144px, amely "
+#~ "támogatja a nagy felbontású készülékeket, mint pl. iPad Retina."
+
+#~ msgid "Select/Add Web Clip Icon"
+#~ msgstr "Web Clip ikon kiválasztása / hozzáadása"
+
+#~ msgid ""
+#~ "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+#~ "Plugin</a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" "
+#~ "href=\"%s\">JetPack Plugin</a> with Infinite Scroll module Enabled."
+#~ msgstr ""
+#~ "Az oldalszámozás a <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
+#~ "a>-t igényli. <br/>A végtelen scrollozáshoz a <a target=\"_blank\" href="
+#~ "\"%s\">JetPack Plugin</a> szükséges, és engedélyezni kell benne az "
+#~ "Infinite Scroll modult."
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #, fuzzy
 #~ msgid "Full Frame"
@@ -1277,7 +1303,8 @@ msgstr "Archívum"
 #~ "This is the primary sidebar if you are using a two or three column site "
 #~ "layout option."
 #~ msgstr ""
-#~ "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést használja."
+#~ "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést "
+#~ "használja."
 
 #~ msgid "Secondary Sidebar"
 #~ msgstr "Másodlagos oldalsáv"
@@ -1285,7 +1312,8 @@ msgstr "Archívum"
 #~ msgid ""
 #~ "This is the secondary sidebar if you are using a three column site layout "
 #~ "option."
-#~ msgstr "Ez a másodlagos oldalsáv, ha a három oszlopos elrendezést használja."
+#~ msgstr ""
+#~ "Ez a másodlagos oldalsáv, ha a három oszlopos elrendezést használja."
 
 #~ msgid "CT: Social Icons"
 #~ msgstr "Közösségi ikonok"
@@ -1294,8 +1322,8 @@ msgstr "Archívum"
 #~ msgstr "Google+"
 
 #~ msgid ""
-#~ "Some settings might be missing or disorganized in this version of WordPress. "
-#~ "So we suggest you to upgrade to version 4.0 or better."
+#~ "Some settings might be missing or disorganized in this version of "
+#~ "WordPress. So we suggest you to upgrade to version 4.0 or better."
 #~ msgstr ""
 #~ "Néhány beállítás esetleg hiányzik, vagy szervezetlen ebben a WordPress "
 #~ "verzióban. Javasoljuk, hogy frissítsen 4.0 vagy annál újabb verzóra."
@@ -1306,13 +1334,15 @@ msgstr "Archívum"
 #~ msgid ""
 #~ "This is the Secondary Sidebar Widget Area if you are using a three column "
 #~ "site layout option."
-#~ msgstr "Ez a másodlagos oldalsáv, ha a három oszlopos elrendezést használja."
+#~ msgstr ""
+#~ "Ez a másodlagos oldalsáv, ha a három oszlopos elrendezést használja."
 
 #~ msgid ""
 #~ "This is the Primary Sidebar Widget Area if you are using a two or three "
 #~ "column site layout option."
 #~ msgstr ""
-#~ "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést használja."
+#~ "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést "
+#~ "használja."
 
 #~ msgctxt "Used before publish date."
 #~ msgid "<span class=\"screen-reader-text\">Posted on</span>"

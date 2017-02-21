@@ -27,6 +27,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 					'hide_empty'       => false,
 					'show_option_none' => false,
 					'hide_if_empty'    => false,
+					'show_option_all'  => esc_html__( 'All Categories', 'full-frame' )
 				)
 			);
 

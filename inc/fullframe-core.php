@@ -369,12 +369,6 @@ function fullframe_flush_transients(){
 
 	delete_transient( 'fullframe_featured_slider' );
 
-	//@remove Remove version check when WordPress 4.8 is released
-	delete_transient( 'fullframe_favicon' );
-
-	//@remove Remove version check when WordPress 4.8 is released
-	delete_transient( 'fullframe_webclip' );
-
 	delete_transient( 'fullframe_custom_css' );
 
 	delete_transient( 'fullframe_footer_content' );
@@ -431,80 +425,6 @@ function fullframe_flush_post_transients(){
 }
 add_action( 'save_post', 'fullframe_flush_post_transients' );
 
-
-if ( ! function_exists( 'fullframe_favicon' ) ) :
-	/**
-	 * Get the favicon Image options
-	 *
-	 * @uses favicon
-	 * @get the data value of image from options
-	 * @display favicon
-	 *
-	 * @uses set_transient
-	 *
-	 * @action wp_head, admin_head
-	 *
-	 * @since Fullframe 1.0
-	 *
-	 * @remove Remove version check when WordPress 4.8 is released
-	 */
-	function fullframe_favicon() {
-		if( ( !$fullframe_favicon = get_transient( 'fullframe_favicon' ) ) ) {
-			$options 	= fullframe_get_theme_options();
-
-			echo '<!-- refreshing cache -->';
-
-			if ( isset( $options[ 'favicon' ] ) &&  $options[ 'favicon' ] != '' &&  !empty( $options[ 'favicon' ] ) ) {
-				// if not empty fav_icon on options
-				$fullframe_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
-			}
-
-			set_transient( 'fullframe_favicon', $fullframe_favicon, 86940 );
-		}
-		echo $fullframe_favicon ;
-	}
-endif; //fullframe_favicon
-//Load Favicon in Header Section
-add_action( 'wp_head', 'fullframe_favicon' );
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'fullframe_favicon' );
-
-
-if ( ! function_exists( 'fullframe_web_clip' ) ) :
-	/**
-	 * Get the Web Clip Icon Image from options
-	 *
-	 * @uses web_clip and remove_web_clip
-	 * @get the data value of image from theme options
-	 * @display web clip
-	 *
-	 * @uses default Web Click Icon if web_clip field on theme options is empty
-	 *
-	 * @uses set_transient and delete_transient
-	 *
-	 * @action wp_head
-	 *
-	 * @since Fullframe 1.0
-	 *
-	 * @remove Remove version check when WordPress 4.8 is released
-	 */
-	function fullframe_web_clip() {
-		if( ( !$fullframe_web_clip = get_transient( 'fullframe_web_clip' ) ) ) {
-			$options 	= fullframe_get_theme_options();
-
-			echo '<!-- refreshing cache -->';
-
-			if ( isset( $options[ 'web_clip' ] ) &&  $options[ 'web_clip' ] != '' &&  !empty( $options[ 'web_clip' ] ) ){
-				$fullframe_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			}
-
-			set_transient( 'fullframe_web_clip', $fullframe_web_clip, 86940 );
-		}
-		echo $fullframe_web_clip ;
-	} // fullframe_web_clips
-endif; //fullframe_web_clip
-//Load Fullframe Icon in Header Section
-add_action('wp_head', 'fullframe_web_clip');
 
 if ( ! function_exists( 'fullframe_custom_css' ) ) :
 	/**
@@ -627,8 +547,6 @@ if ( ! function_exists( 'fullframe_comment' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
-
 		if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -729,7 +647,7 @@ if ( ! function_exists( 'fullframe_the_attached_image' ) ) :
 
 		printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
 			esc_url( $next_attachment_url ),
-			the_title_attribute( array( 'echo' => false ) ),
+			the_title_attribute( 'echo=0' ),
 			wp_get_attachment_image( $post->ID, $attachment_size )
 		);
 	}
@@ -949,7 +867,7 @@ if ( ! function_exists( 'fullframe_continue_reading' ) ) :
 		$options		=	fullframe_get_theme_options();
 		$more_tag_text	= $options['excerpt_more_text'];
 
-		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( esc_html__( '%s', 'full-frame' ) , $more_tag_text ) . '</a>';
+		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . $more_tag_text . '</a>';
 	}
 endif; //fullframe_continue_reading
 add_filter( 'excerpt_more', 'fullframe_continue_reading' );
@@ -1445,13 +1363,13 @@ if ( ! function_exists( 'fullframe_alter_home' ) ) :
 	 * @action pre_get_posts action
 	 */
 	function fullframe_alter_home( $query ){
-		$options = fullframe_get_theme_options();
+		if( $query->is_main_query() && $query->is_home() ) {
+			$options = fullframe_get_theme_options();
 
-	    $cats = $options[ 'front_page_category' ];
+		    $cats = $options['front_page_category'];
 
-		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
-			if( $query->is_main_query() && $query->is_home() ) {
-				$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+			if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+				$query->query_vars['category__in'] = $cats;
 			}
 		}
 	}
@@ -1520,41 +1438,6 @@ function fullframe_logo_migrate() {
 
 }
 add_action( 'after_setup_theme', 'fullframe_logo_migrate' );
-
-/**
- * Migrate Custom Favicon to WordPress core Site Icon
- *
- * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
- */
-function fullframe_site_icon_migrate() {
-	$ver = get_theme_mod( 'site_icon_version', false );
-
-	// Return if update has already been run
-	if ( version_compare( $ver, '2.8' ) >= 0 ) {
-		return;
-	}
-
-	/**
-	 * Get Theme Options Values
-	 */
-	$options 	= fullframe_get_theme_options();
-
-	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'has_site_icon' ) ) {
-		if ( isset( $options['favicon'] ) && '' != $options['favicon'] ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$site_icon = attachment_url_to_postid( $options['favicon'] );
-
-			if ( is_int( $site_icon ) ) {
-				update_option( 'site_icon', $site_icon );
-			}
-		}
-
-	  	// Update to match site_icon_version so that script is not executed continously
-		set_theme_mod( 'site_icon_version', '2.8' );
-	}
-}
-add_action( 'after_setup_theme', 'fullframe_site_icon_migrate' );
 
 
 /**

@@ -286,7 +286,7 @@ function fullframe_page_content( $options ) {
 
 	}
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
                     'posts_per_page' 		=> $number_of_page,
                     'post__in'       		=> $page_list,
                     'orderby'        		=> 'post__in',
@@ -298,12 +298,12 @@ function fullframe_page_content( $options ) {
 		$fullframe_page_content = '
 		<div class="featured_content_slider_wrap">';
 
-		while ( $get_featured_posts->have_posts()) :
-			$get_featured_posts->the_post();
+		while ( $loop->have_posts()) :
+			$loop->the_post();
 
 			$i++;
 
-			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+			$title_attribute = the_title_attribute( 'echo=0' );
 
 			$excerpt = get_the_excerpt();
 
@@ -312,8 +312,8 @@ function fullframe_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$fullframe_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ). '">
-						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
+						<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ). '">
+						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
 				}
@@ -322,14 +322,14 @@ function fullframe_page_content( $options ) {
 					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1680x720.jpg" >';
 
 					//Get the first image in page, returns false if there is no image
-					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-featured-content', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );
 
 					//Set value of image as first image if there is an image present in the page
 					if ( '' != $fullframe_first_image ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
 						'. $fullframe_image .'
 					</a>';
 				}
@@ -341,7 +341,7 @@ function fullframe_page_content( $options ) {
 						$fullframe_page_content .= '
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+									<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 								</h1>
 							</header>';
 					}
@@ -368,7 +368,7 @@ function fullframe_page_content( $options ) {
 				}
 		endwhile;
 
-		wp_reset_query();
+		wp_reset_postdata();
 
 		$fullframe_page_content .= '</div><!-- .featured_content_slider_wrap -->';
 	}
