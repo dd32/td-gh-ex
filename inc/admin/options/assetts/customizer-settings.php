@@ -15,7 +15,7 @@ class IGthemes_Customizer {
         //PANEL
         $wp_customize->add_panel( 'igtheme_options', array(
           'title' => __( 'Theme Settings', 'basic-shop'),
-          'description' => '', 
+          'description' =>'',
           'priority' => 10, 
         ) );
         // HOME
@@ -84,8 +84,8 @@ class IGthemes_Customizer {
             if ( apply_filters( 'igthemes_customizer_more', true ) ) {
 
                 $wp_customize->add_section( 'upgrade_premium' , array(
-                    'title'      		=> __( 'More Options', 'basic-shop' ),
-                    'panel'             => 'igtheme_options',
+                    'title'      		=> __( 'Want More? Get Premium', 'basic-shop' ),
+                    'panel'             => '',
                     'priority'   		=> 1,
                 ) );
 
@@ -965,6 +965,13 @@ class IGthemes_Customizer {
         #customize-control-upgrade_premium ul {
             list-style: square;
             margin: 10px 16px;
+        }
+        #accordion-section-upgrade_premium .accordion-section-title {
+            color: #0073aa;
+            background: #f9f9f9;
+            border-left-color: #0073aa
+        }
+        #accordion-section-upgrade_premium .accordion-section-title:hover {
         }
         </style>
         <?php

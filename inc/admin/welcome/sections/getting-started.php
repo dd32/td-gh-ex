@@ -15,15 +15,18 @@
                 <?php esc_html_e( 'Basic Shop Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'basic-shop' ); ?>
             <ul>
                 <li><?php esc_html_e( 'More advanced options', 'basic-shop' ); ?></li>
-                <li><?php esc_html_e( 'New fonts', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'Different menu layout', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'Blog customizer', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Shop customizer', 'basic-shop' ); ?></li>
-                <li><?php esc_html_e( 'Custom widgets', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'Custom fonts', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'New post and page settings', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'New advanced widgets', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'Premium shortcodes', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
             <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
-                <?php esc_html_e('upgrade to premium', 'basic-shop'); ?>
+                <?php esc_html_e('view all premium features', 'basic-shop'); ?>
             </a>
         </p>
     </div>
