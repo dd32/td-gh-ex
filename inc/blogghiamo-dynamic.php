@@ -170,7 +170,7 @@ function blogghiamo_color_primary_register( $wp_customize ) {
         'default'    => '#',
         'type'       => 'theme_mod',
         'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'is_email'
+		'sanitize_callback' => 'sanitize_email'
     ) );
 	
 	$wp_customize->add_control('blogghiamo_theme_options_emailurl', array(

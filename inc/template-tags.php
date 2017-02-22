@@ -49,23 +49,16 @@ function blogghiamo_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+	
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	$posted_on = sprintf(
-		_x( '<i class="fa fa-calendar spaceRight" aria-hidden="true"></i>%s', 'post date', 'blogghiamo' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceRight" aria-hidden="true"></i>%s', 'post author', 'blogghiamo' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on"><i class="fa fa-calendar spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>';
 	
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && blogghiamo_categorized_blog() ) {
-			printf( '<span class="cat-links smallPart"><i class="fa fa-folder-open spaceRight" aria-hidden="true"></i>%1$s</span>', $categories_list );
+			echo '<span class="cat-links"><i class="fa fa-folder-open spaceRight" aria-hidden="true"></i>' . $categories_list. '</span>';
 		}
 	}
 	
@@ -87,11 +80,19 @@ function blogghiamo_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$tags_list = get_the_tag_list( '', ' / ' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>%1$s</span>', $tags_list );
+			echo '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>';
 		}
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'blogghiamo' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
+	edit_post_link(
+		sprintf(
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', 'blogghiamo' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>',
+		'</span>'
+	);
 }
 endif;
 

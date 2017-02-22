@@ -4,13 +4,6 @@
  *
  * @package blogghiamo
  */
- 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 794; /* pixels */
-}
 
 if ( ! function_exists( 'blogghiamo_setup' ) ) :
 /**
@@ -78,6 +71,18 @@ function blogghiamo_setup() {
 }
 endif; // blogghiamo_setup
 add_action( 'after_setup_theme', 'blogghiamo_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function blogghiamo_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'blogghiamo_content_width', 650 );
+}
+add_action( 'after_setup_theme', 'blogghiamo_content_width', 0 );
 
 /**
  * Register widget area.

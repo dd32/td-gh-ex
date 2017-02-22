@@ -97,7 +97,7 @@
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
-					<a href="mailto:<?php echo sanitize_email($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
+					<a href="mailto:<?php echo antispambot($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideRss == 1 ) : ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2017-02-15 14:23+0100\n"
-"PO-Revision-Date: 2017-02-15 14:23+0100\n"
+"POT-Creation-Date: 2017-02-22 12:21+0100\n"
+"PO-Revision-Date: 2017-02-22 12:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -40,88 +40,95 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: comments.php:28
+#. translators: %s: post title
+#: comments.php:31
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:36
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:39
+#: comments.php:55
 msgid "Reply"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:62
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:63
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:64
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:67
+#: comments.php:83
 msgid "Name *"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:84
 msgid "Email *"
 msgstr ""
 
-#: comments.php:69
+#: comments.php:85
 msgid "Website *"
 msgstr ""
 
-#: comments.php:69
+#: comments.php:85
 msgid "Website"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:87
 msgid " Required fields are marked "
 msgstr ""
 
-#: comments.php:75
+#: comments.php:91
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:76
+#: comments.php:92
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:93
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:78
+#: comments.php:94
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:95
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:80
+#: comments.php:96
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:81
+#: comments.php:97
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:82
+#: comments.php:98
 msgid "Comment *"
 msgstr ""
 
@@ -151,7 +158,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:35 content.php:45 inc/template-tags.php:94
+#: content-page.php:35 content.php:45
 msgid "Edit"
 msgstr ""
 
@@ -169,11 +176,11 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:54
+#: functions.php:47
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:94
 msgid "Sidebar"
 msgstr ""
 
@@ -270,7 +277,7 @@ msgstr ""
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Blogghiamo! To fully take advantage of the "
-"best our theme can offer please make sure you visit our %swelcome page%s."
+"best our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
 #: inc/admin/blogghiamo-admin-page.php:94
@@ -612,28 +619,22 @@ msgstr ""
 msgid "Next Post:"
 msgstr ""
 
-#: inc/template-tags.php:54
-#, php-format
-msgctxt "post date"
-msgid "<i class=\"fa fa-calendar spaceRight\" aria-hidden=\"true\"></i>%s"
-msgstr ""
-
-#: inc/template-tags.php:59
-#, php-format
-msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceRight\" aria-hidden=\"true\"></i>%s"
-msgstr ""
-
-#: inc/template-tags.php:74
+#: inc/template-tags.php:67
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:74
+#: inc/template-tags.php:67
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:74
+#: inc/template-tags.php:67
 msgid "% Comments"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:90
+#, php-format
+msgid "Edit %s"
 msgstr ""
 
 #: search.php:16
