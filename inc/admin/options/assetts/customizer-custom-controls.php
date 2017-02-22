@@ -48,18 +48,21 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <?php endif; ?>
             <p>
-                <?php esc_html_e( 'Basic Shop Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?>
+                <?php esc_html_e( 'Base WP Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?>
             <ul>
                 <li><?php esc_html_e( 'More advanced options', 'base-wp' ); ?></li>
-                <li><?php esc_html_e( 'New fonts', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Different menu layout', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Blog customizer', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Shop customizer', 'base-wp' ); ?></li>
-                <li><?php esc_html_e( 'Custom widgets', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Custom fonts', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'New post and page settings', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'New advanced widgets', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Premium shortcodes', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Premium support', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'base-wp' ); ?></li>
             </ul>
             <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/base-wp' ); ?>" target="_blank" class="button-upgrade">
-                <?php esc_html_e('upgrade to premium', 'base-wp'); ?>
+                <?php esc_html_e('view all premium features', 'base-wp'); ?>
             </a>
             </p>
             <span class="customize-control-title"><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></span>
