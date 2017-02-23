@@ -219,6 +219,21 @@ function awesomeone_categorized_blog() {
 	}
 }
 
+if ( ! function_exists( 'awesomeone_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ */
+function awesomeone_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
+
+
 /**
  * Flush out the transients used in awesomeone_categorized_blog
  */

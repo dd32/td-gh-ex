@@ -49,14 +49,6 @@ function awesomeone_sanitize_checkbox( $input ) {
 	
 	$wp_customize->remove_control('header_textcolor');
 	
-	$wp_customize->add_section(
-        'logo_sec',
-        array(
-            'title' => __('Logo (PRO Version)', 'awesomeone'),
-            'priority' => 1,
-            'description' => __('<strong>Logo settings available in</strong>','awesomeone'). '<a href="'.esc_url(pro_theme_url).'" target="_blank">PRO Version</a>.',
-        )
-    );  
     $wp_customize->add_setting('Awesomeone_options[font-info]', array(
 			'sanitize_callback' => 'sanitize_text_field',
             'type' => 'info_control',

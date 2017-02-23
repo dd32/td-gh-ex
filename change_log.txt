@@ -31,3 +31,6 @@ i) Remove error from post comments.
 
 Version 1.2.8
 i) Added field for purchase button link.
+
+Version 1.2.9
+i) Enabled logo option and fix css bugs.

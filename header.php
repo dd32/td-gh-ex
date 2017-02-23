@@ -20,9 +20,13 @@
 <div class="header" <?php if(!is_home() || !is_front_page()) {?> style="position:inherit;"<?php }?>>
             		<div class="header-inner">
                     		<div class="logo">
-                            		
-    	                                    <h1><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?> </a></h1>
-                                            <span><?php bloginfo('description'); ?></span>
+    	                                    <?php awesomeone_the_custom_logo(); ?>
+						<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_attr(bloginfo( 'name' )); ?></a></h1>
+
+					<?php $description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p><?php echo $description; ?></p>
+					<?php endif; ?>
                                    
                              </div>
                              <div class="header-widget">

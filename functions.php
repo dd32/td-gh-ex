@@ -27,6 +27,11 @@ function awesomeone_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 240,
+		'width'       => 240,
+		'flex-height' => true,
+	) );
 	add_image_size('awesomeone-homepage-thumb',240,145,true);
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'awesomeone' ),

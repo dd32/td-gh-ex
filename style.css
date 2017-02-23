@@ -5,11 +5,11 @@ Author: Flythemes
 Author URI: http://flythemes.net
 Description: AwesomeOne Pro theme is responsive corporate WordPress theme which can useful for multipurpose industries. This theme is responsive and compatible with latest version of WordPress. This theme can also be useful for business, blogging, photography, magazine, religious, portfolio, counselling, restro etc. This theme has multiple features like color changing option, font typography, slider settings, multiple section and many more. This theme is very to use for non coders. This theme has created with the HTML5 and CSS3, AwesomeOne theme is cross borwser compatible with iphone and ipad and runs very smoothly. this theme is comaptible with plugins like woocommerce, contact form 7, jetpack etc. This is translation ready theme it can be translated in any language.  Check demo at: http://flythemes.net/demo/awesomeone/
 
-Version: 1.2.8
+Version: 1.2.9
 License: GNU General Public License
 License URI: license.txt
 Text Domain: awesomeone
-Tags: gray, black, dark, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
 AwesomeOne WordPress Theme has been created by Flythemes(flythemes.net), 2015.
 AwesomeOne WordPress Theme is released under the terms of GNU GPL
@@ -58,7 +58,7 @@ a.read-more, .common_btn{ display:inline-block; font:400 16px 'Roboto Condensed'
 .header .header-inner .logo{margin:0; padding:0; }
 .header .header-inner .logo h1{ font-weight:700; text-transform:uppercase; padding:0; font-family:'Roboto Condensed'; font-size:30px; }
 .header .header-inner .logo a{ color:#ffffff;}
-.header .header-inner .logo span{ font-size:12px; color:#ffffff; font-family:arial;}
+.header .header-inner .logo p{ font-size:12px; color:#ffffff; font-family:arial;}
 .container{ width:1160px; margin:0 auto; padding:0; position:relative;}
 .toggle{display:none;}
 .header{position:absolute; z-index:999; width:100%;  height:auto; padding:12px 0; background-color:rgba(0,0,0,0.6);}
@@ -72,7 +72,7 @@ a.read-more, .common_btn{ display:inline-block; font:400 16px 'Roboto Condensed'
 .header .header-inner .nav ul li:hover > ul{display:block; background:#000000; width:200px; position:absolute; top:20px; left:0; text-align:left;}
 .header .header-inner .nav ul li:hover > ul li{ display:block;}
 .header .header-inner .nav ul li:hover ul li ul{display:none;}
-.header .header-inner .nav ul li:hover ul li:hover > ul{display:block; position:absolute; left:200px; top:22px;}
+.header .header-inner .nav ul li:hover ul li:hover > ul{display:block; position:absolute; left:200px; top:-5px;}
 .header .header-inner .logo{float:left; margin-top:8px; }
 }
 .header-widget{ margin:0; padding:0; clear:right; color:#ffffff; text-align:right;}

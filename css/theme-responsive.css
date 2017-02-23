@@ -194,5 +194,5 @@ a.contact{ margin-top:15px !important; font-size:18px !important;}
 	#aboutsec .cont-fix{ width:auto !important;}
 	.cat_comments .cat{ width:48%;}
 	.testimonials{ width:90%; margin:0 auto;}
-	.bx-wrapper{ width:100%;}
+	.bx-wrapper, .content-area{ width:100%;}
 }

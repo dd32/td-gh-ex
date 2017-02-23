@@ -4,10 +4,10 @@
 
 Theme Name      :   Awesomeone
 Theme URI       :    https://www.flythemes.net/wordpress-themes/awesomeone-corporate-wordpress-theme/
-Version         :   1.2.8
-Tested up to    :   WP 4.6
+Version         :   1.2.9
+Tested up to    :   WP 4.7.2
 Author          :   Flythemes
-Author URI      :   http://www.flythemes.net/
+Author URI      :   https://www.flythemes.net/
 
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
