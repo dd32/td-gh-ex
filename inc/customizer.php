@@ -26,15 +26,15 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/apex-pro/';
 			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/apex-pro.png' srcset='" . get_template_directory_uri() . "/assets/images/apex-pro-2x.png 2x' /></a>";
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Apex Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'apex'), $link) . "</p>";
-			echo "<p>" . __('Apex Pro adds the following features to Apex:', 'apex') . "</p>";
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'apex'), $link, wp_get_theme( get_template() ) ) . "</p>";
+			echo "<p>" . sprintf( __('%1$s Pro adds the following features to %1$s:', 'apex'), wp_get_theme( get_template() ) ) . "</p>";
 			echo "<ul>
 					<li>" . __('Custom Colors', 'apex') . "</li>
 					<li>" . __('7 New layouts', 'apex') . "</li>
 					<li>" . __('Featured Videos', 'apex') . "</li>
 					<li>" . __('+ 7 more features', 'apex') . "</li>
 				  </ul>";
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='apex-pro-button' href='" . $link . "'>" . __('View Apex Pro', 'apex') . "</a></p>";
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='apex-pro-button' href='" . $link . "'>" . sprintf( __('View %s Pro', 'apex'), wp_get_theme( get_template() ) ) . "</a></p>";
 		}
 	}
 
@@ -44,7 +44,7 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	if ( !function_exists( 'ct_apex_pro_init' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_apex_pro', array(
-			'title'    => __( 'Apex Pro', 'apex' ),
+			'title'    => sprintf( __( '%s Pro', 'apex' ), wp_get_theme( get_template() ) ),
 			'priority' => 1
 		) );
 		// Upload - setting
@@ -129,6 +129,8 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 				$label = 'StumbleUpon';
 			} elseif ( $social_site == 'deviantart' ) {
 				$label = 'DeviantArt';
+			} elseif ( $social_site == 'google-wallet' ) {
+				$label = 'Google Wallet';
 			} elseif ( $social_site == 'hacker-news' ) {
 				$label = 'Hacker News';
 			} elseif ( $social_site == 'whatsapp' ) {
@@ -208,7 +210,7 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'apex_blog', array(
-		'title'    => __( 'Blog', 'apex' ),
+		'title'    => _x( 'Blog', 'noun: the blog section', 'apex' ),
 		'priority' => 45
 	) );
 	// setting
@@ -269,6 +271,22 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 		'label'    => __( 'Display post author name in byline?', 'apex' ),
 		'section'  => 'apex_additional',
 		'settings' => 'author_byline',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'apex' ),
+			'no'  => __( 'No', 'apex' )
+		)
+	) );
+	// comments link - setting
+	$wp_customize->add_setting( 'comments_link', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_apex_sanitize_yes_no_settings'
+	) );
+	// comments link - control
+	$wp_customize->add_control( 'comments_link', array(
+		'label'    => __( 'Display comments link after posts?', 'apex' ),
+		'section'  => 'apex_additional',
+		'settings' => 'comments_link',
 		'type'     => 'radio',
 		'choices'  => array(
 			'yes' => __( 'Yes', 'apex' ),

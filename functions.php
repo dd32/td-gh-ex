@@ -82,11 +82,11 @@ if ( ! function_exists( ( 'ct_apex_customize_comments' ) ) ) {
 			<div class="comment-footer">
 				<span class="comment-date"><?php comment_date(); ?></span>
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => __( 'Reply', 'apex' ),
+					'reply_text' => _x( 'Reply', 'verb: reply to this comment', 'apex' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth']
 				) ) ); ?>
-				<?php edit_comment_link( __( 'Edit', 'apex' ) ); ?>
+				<?php edit_comment_link( _x( 'Edit', 'verb: edit this comment', 'apex' ) ); ?>
 			</div>
 		</article>
 		<?php
@@ -103,14 +103,14 @@ if ( ! function_exists( 'ct_apex_update_fields' ) ) {
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label for="author">' . __( "Name", "apex" ) . $label . '</label>
+	            <label for="author">' . _x( "Name", "noun", "apex" ) . $label . '</label>
 	            <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label for="email">' . __( "Email", "apex" ) . $label . '</label>
+	            <label for="email">' . _x( "Email", "noun", "apex" ) . $label . '</label>
 	            <input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
@@ -132,7 +132,7 @@ if ( ! function_exists( 'ct_apex_update_comment_field' ) ) {
 
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label for="comment">' . __( "Comment", "apex" ) . '</label>
+	            <label for="comment">' . _x( "Comment", "noun", "apex" ) . '</label>
 	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -149,50 +149,56 @@ if ( ! function_exists( 'ct_apex_remove_comments_notes_after' ) ) {
 }
 add_action( 'comment_form_defaults', 'ct_apex_remove_comments_notes_after' );
 
+if ( ! function_exists( 'ct_apex_filter_read_more_link' ) ) {
+	function ct_apex_filter_read_more_link() {
+		global $post;
+		$ismore             = strpos( $post->post_content, '<!--more-->' );
+		$read_more_text     = get_theme_mod( 'read_more_text' );
+		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
+		$excerpt_more       = ( $new_excerpt_length === 0 ) ? '' : '&#8230;';
+		$output = '';
+
+		// add ellipsis for automatic excerpts
+		if ( empty( $ismore ) ) {
+			$output .= $excerpt_more;
+		}
+		// Because i18n text cannot be stored in a variable
+		if ( empty( $read_more_text ) ) {
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Continue reading', 'apex' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+		} else {
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+		}
+		return $output;
+	}
+}
+add_filter( 'the_content_more_link', 'ct_apex_filter_read_more_link' ); // more tags
+add_filter( 'excerpt_more', 'ct_apex_filter_read_more_link', 10 ); // automatic excerpts
+
+// handle manual excerpts
+if ( ! function_exists( 'ct_apex_filter_manual_excerpts' ) ) {
+	function ct_apex_filter_manual_excerpts( $excerpt ) {
+		$excerpt_more = '';
+		if ( has_excerpt() ) {
+			$excerpt_more = ct_apex_filter_read_more_link();
+		}
+		return $excerpt . $excerpt_more;
+	}
+}
+add_filter( 'get_the_excerpt', 'ct_apex_filter_manual_excerpts' );
+
 if ( ! function_exists( 'ct_apex_excerpt' ) ) {
 	function ct_apex_excerpt() {
-
 		global $post;
-		$read_more_text = get_theme_mod( 'read_more_text' );
 		$show_full_post = get_theme_mod( 'full_post' );
 		$ismore         = strpos( $post->post_content, '<!--more-->' );
 
-		if ( ( $show_full_post == 'yes' ) && ! is_search() ) {
-			if ( $ismore ) {
-				// Has to be written this way because i18n text CANNOT be stored in a variable
-				if ( ! empty( $read_more_text ) ) {
-					the_content( esc_html( $read_more_text ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-				} else {
-					the_content( __( 'Continue reading', 'apex' ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-				}
-			} else {
-				the_content();
-			}
-		} elseif ( $ismore ) {
-			if ( ! empty( $read_more_text ) ) {
-				the_content( esc_html( $read_more_text ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-			} else {
-				the_content( __( 'Continue reading', 'apex' ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span>" );
-			}
+		if ( $show_full_post === 'yes' || $ismore ) {
+			the_content();
 		} else {
 			the_excerpt();
 		}
 	}
 }
-
-if ( ! function_exists( 'ct_apex_excerpt_read_more_link' ) ) {
-	function ct_apex_excerpt_read_more_link( $output ) {
-
-		$read_more_text = get_theme_mod( 'read_more_text' );
-
-		if ( ! empty( $read_more_text ) ) {
-			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . esc_html( $read_more_text ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span></a></p>";
-		} else {
-			return $output . "<p><a class='more-link' href='" . esc_url( get_permalink() ) . "'>" . __( 'Continue reading', 'apex' ) . " <span class='screen-reader-text'>" . esc_html( get_the_title() ) . "</span></a></p>";
-		}
-	}
-}
-add_filter( 'the_excerpt', 'ct_apex_excerpt_read_more_link' );
 
 if ( ! function_exists( 'ct_apex_custom_excerpt_length' ) ) {
 	function ct_apex_custom_excerpt_length( $length ) {
@@ -209,17 +215,6 @@ if ( ! function_exists( 'ct_apex_custom_excerpt_length' ) ) {
 	}
 }
 add_filter( 'excerpt_length', 'ct_apex_custom_excerpt_length', 99 );
-
-if ( ! function_exists( 'ct_apex_new_excerpt_more' ) ) {
-	function ct_apex_new_excerpt_more( $more ) {
-
-		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
-		$excerpt_more       = ( $new_excerpt_length === 0 ) ? '' : '&#8230;';
-
-		return $excerpt_more;
-	}
-}
-add_filter( 'excerpt_more', 'ct_apex_new_excerpt_more' );
 
 if ( ! function_exists( 'ct_apex_remove_more_link_scroll' ) ) {
 	function ct_apex_remove_more_link_scroll( $link ) {
@@ -293,6 +288,9 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 			'meetup'        => 'apex_meetup_profile',
 			'telegram'      => 'apex_telegram_profile',
 			'podcast'       => 'apex_podcast_profile',
+			'amazon'        => 'apex_amazon_profile',
+			'google-wallet' => 'apex_google_wallet_profile',
+			'yelp'          => 'apex_yelp_profile',
 			'whatsapp'      => 'apex_whatsapp_profile',
 			'steam'         => 'apex_steam_profile',
 			'qq'            => 'apex_qq_profile',
@@ -359,8 +357,8 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 						<li>
 							<a class="email" target="_blank"
 							   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>">
-								<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'apex' ); ?>"></i>
-								<span class="screen-reader-text"><?php esc_html_e('email', 'apex'); ?></span>
+								<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'apex' ); ?>"></i>
+								<span class="screen-reader-text"><?php echo esc_html_x('email', 'noun', 'apex'); ?></span>
 							</a>
 						</li>
 					<?php } elseif ( $active_site == 'skype' ) { ?>
@@ -407,7 +405,7 @@ if ( ! function_exists( ( 'ct_apex_nav_dropdown_buttons' ) ) ) {
 		if ( $args->theme_location == 'primary' ) {
 
 			if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
-				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . __( "open dropdown menu", "apex" ) . '</span></button>', $item_output );
+				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . _x( "open dropdown menu", 'verb: open the dropdown menu', "apex" ) . '</span></button>', $item_output );
 			}
 		}
 
@@ -489,7 +487,7 @@ if ( ! function_exists( ( 'ct_apex_delete_settings_notice' ) ) ) {
 			} else if ( $_GET['apex_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Apex successfully activated!', 'apex' ); ?></p>
+					<p><?php printf( __( '%s successfully activated!', 'apex' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
