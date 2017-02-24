@@ -102,7 +102,10 @@ Support
 
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
+
 ============================Change Log================================
+@Version 1.7.9
+1. Update pot file for theme info.
 @Version 1.7.8
 1. Changed widget name
 @Version 1.7.7
