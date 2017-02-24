@@ -41,32 +41,6 @@ function rambo_header_customizer( $wp_customize ) {
 					'type' => 'textarea',
 				));
 		}
-		
-				/* favicon option */
-				$wp_customize->add_section( 'front_page_setting' , array(
-				  'title'       => __( 'Front page setting', 'rambo' ),
-				  'priority'    => 50,
-				  'panel'  => 'header_options',
-				) );
-				
-				$wp_customize->add_setting(
-				'rambo_pro_theme_options[front_page]'
-				,
-				array(
-					'default' => true,
-					'capability'     => 'edit_theme_options',
-					'sanitize_callback' => 'sanitize_text_field',
-					'type' => 'option',
-				)	
-				);
-				$wp_customize->add_control(
-				'rambo_pro_theme_options[front_page]',
-				array(
-					'label' => __('Enable Home on front page.','rambo'),
-					'section' => 'front_page_setting',
-					'type' => 'checkbox',
-				)
-				);
 	
 }
 add_action( 'customize_register', 'rambo_header_customizer' );

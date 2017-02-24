@@ -6,15 +6,12 @@ function rambo_scripts()
 	wp_enqueue_style('rambo-style', get_stylesheet_uri() );
 	wp_enqueue_style ('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
 	//bootstrap css
-	wp_enqueue_style('default', WEBRITI_TEMPLATE_DIR_URI . '/css/default');
+	wp_enqueue_style('default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
 	wp_enqueue_style ('font-awesome',WEBRITI_TEMPLATE_DIR_URI .'/css/font-awesome/css/font-awesome.css');
 
 	wp_enqueue_style ('element',WEBRITI_TEMPLATE_DIR_URI.'/css/element.css');
 	wp_enqueue_style ('bootstrap-responsive',WEBRITI_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css'); //boot rsp css
 	wp_enqueue_style ('docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css'); //docs css
-	
-	/*Layout Change Css*/
-	wp_enqueue_style ('layout-responsive',WEBRITI_TEMPLATE_DIR_URI.'/css/switcher/layout-responsive.css');
 	
 	/*Style Media Css*/
 	wp_enqueue_style ('style-media',WEBRITI_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media

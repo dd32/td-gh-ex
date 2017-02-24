@@ -12,7 +12,6 @@ function theme_data_setup()
 {
 	return $rambo_pro_theme_options  = array(
 			//Logo and Fevicon header			
-			'front_page' => true,
 			'layout_selector' => 'wide',
 			'rambopro_stylesheet'=>'default.css',			
 			'upload_image_logo'=>'',

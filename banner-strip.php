@@ -28,6 +28,10 @@ get_template_part('index','slider');
 				{
 					printf( __( "Search results for %s", 'rambo' ), get_search_query() );
 				}
+				elseif(is_404())
+				{
+				 _e('Oops! Page not found', 'rambo' );	
+				}
 				else
 				{
 				$page_title = $wp_query->post->post_title;
