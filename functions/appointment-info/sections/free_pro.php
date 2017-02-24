@@ -10,7 +10,7 @@
 				<div class="plan text-center">
 					
 					<header>
-						<h2><?php echo __('Features','appointment'); ?></h2>
+						<h2><?php echo _e('Features','appointment'); ?></h2>
 					</header>
 					
 					<ul class="feature">
@@ -31,7 +31,6 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','appointment' ); ?></span>
-							<p><?php esc_html_e( '','appointment' ); ?></p>
 						</li>
 						
 						<li>

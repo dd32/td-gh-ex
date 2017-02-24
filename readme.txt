@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.6
+1. Update pot file for theme info.
 @Version 2.5.9
 1. Chnaged widget name
 @Version 2.5.8
