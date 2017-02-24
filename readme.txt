@@ -126,7 +126,7 @@ JavaScripts
 		images are licensed under GPL.
 		
 Font Awesome...
-Font Awesome 4.7 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 		   
@@ -142,6 +142,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.7.5
+1. Update pot file for theme info.
 @Version 1.7.4
 1. Updated Strings.
 @Version 1.7.3
