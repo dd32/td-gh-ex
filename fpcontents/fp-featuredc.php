@@ -1,6 +1,6 @@
 <?php
 /* 	Beauty and Spa Theme's Featured Content to show the Featured Items of Front Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */
@@ -28,7 +28,7 @@ echo '<img class="box-icon" src="'.get_template_directory_uri() . '/images/featu
 </a>
 <?php global $beautyandspa_excerpt_length; $beautyandspa_excerpt_length = 10; the_excerpt(); ?>
 </span><!--
---><?php endwhile; endif; wp_reset_query(); ?>
+--><?php endwhile; endif; wp_reset_postdata(); ?>
 </div> 
 </div>
 </div>

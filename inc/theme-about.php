@@ -1,6 +1,6 @@
 <?php 
 /* 	Beauty and Spa Theme's About Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 3.0
 */
@@ -22,7 +22,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/forums/topic/beauty-and-spa-theme-introduction'); ?>" target="_blank"><?php _e('Want Your Site Like the Demo ?', 'beauty-and-spa'); ?></a>
     	</div>
     
-    <div class="infohead"><span class="donation"><?php _e('A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can', 'beauty-and-spa'); ?> <a href="https://wordpress.org/support/theme/beauty-and-spa/reviews" target="_blank"> <strong><?php _e('Review Here', 'beauty-and-spa'); ?></strong></a></span><br /><br /><br /><span class="donation"> <?php _e('Need More Features and Options including Multi Layer Slides, Unlimited Slide Items, Links from Featured Boxes, Portfolio and 100+ Advanced Features and Controls? Try', 'beauty-and-spa'); ?> <a href="https://d5creation.com/theme/beautyandspa/" target="_blank"><strong>Beauty and Spa Extend</strong></a></span><br /> <br /><br /><span class="donation"> <?php _e('You can Visit the Full Featured', 'beauty-and-spa'); ?> Beauty and Spa Extend <a href="http://demo.d5creation.com/themes/?theme=Beauty and Spa" target="_blank"><strong><?php _e('DEMO HERE', 'beauty-and-spa'); ?></strong></a></span><a href="https://d5creation.com/theme/beautyandspa/" target="_blank" class="extendlink"> </a>
+    <div class="infohead"><span class="donation"><?php _e('A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can', 'beauty-and-spa'); ?> <a href="https://wordpress.org/support/theme/beauty-and-spa/reviews" target="_blank"> <strong><?php _e('Review Here', 'beauty-and-spa'); ?></strong></a></span><br /><br /><br /><span class="donation"> <?php _e('Need More Features and Options including 3D Slider, Unlimited Slide Items, Links from Featured Boxes, Portfolio and 100+ Advanced Features and Controls? Try', 'beauty-and-spa'); ?> <a href="https://d5creation.com/theme/beautyandspa/" target="_blank"><strong>Beauty and Spa Extend</strong></a></span><br /> <br /><br /><span class="donation"> <?php _e('You can Visit the Full Featured', 'beauty-and-spa'); ?> Beauty and Spa Extend <a href="http://demo.d5creation.com/themes/?theme=Beauty and Spa" target="_blank"><strong><?php _e('DEMO HERE', 'beauty-and-spa'); ?></strong></a></span><a href="https://d5creation.com/theme/beautyandspa/" target="_blank" class="extendlink"> </a>
 	</div>
         
         <p><?php _e('Beauty and Spa is a CSS3 Powered and WordPress Latest Version Ready Theme for Beauty Salon and Massage Parlors. It can also be used in any Small Business to Corporate Business. Beauty and Spa Theme is E-Commerce Ready by WooCommerce', 'beauty-and-spa'); ?>
@@ -39,7 +39,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>"><?php _e('View Pricing and Features', 'beauty-and-spa'); ?></a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="<?php _e('D5 Creation Themes', 'beauty-and-spa'); ?>"/></div>
+        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="<?php _e(esc_html('D5 Creation Themes'), 'beauty-and-spa'); ?>"/></div>
   
 
 	<div class="floatcntr">

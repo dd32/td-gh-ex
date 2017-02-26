@@ -32,7 +32,7 @@ function beautyandspa_social_links( $beautyandspa_sval = '1' ) {
 	}
 	
 	function beautyandspa_creditline () {
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date_i18n(__('Y','beauty-and-spa')). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 
 

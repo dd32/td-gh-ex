@@ -5,10 +5,10 @@
 	Since Awesome 3.0
 */
 ?>
-<?php if ( esc_textarea(beautyandspa_get_option('heading_text', 'Welcome to the World of Beauty !')) != '' ): ?>
+<?php if ( esc_textarea(beautyandspa_get_option('heading_text', __('Welcome to the World of Beauty !','beauty-and-spa'))) != '' ): ?>
 <div id="heading-box-item" class="box100 fpheadcon">
 	<div class="box90">
-    	<h1 id="heading"><?php echo esc_textarea(beautyandspa_get_option('heading_text', 'Welcome to the World of Beauty !')); ?></h1>
+    	<h1 id="heading"><?php echo esc_textarea(beautyandspa_get_option('heading_text', __('Welcome to the World of Beauty !','beauty-and-spa'))); ?></h1>
 	</div>
 </div>
 <?php endif; ?>

@@ -1,7 +1,7 @@
 ----------------------------------
 Beauty and Spa
 ----------------------------------
-Version: 	1.1
+Version: 	1.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 

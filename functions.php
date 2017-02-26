@@ -1,6 +1,6 @@
 <?php
 /* 	Beauty and Spa Theme's Functions
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */
@@ -70,21 +70,35 @@
 	add_action( 'wp_enqueue_scripts', 'beautyandspa_enqueue_scripts' );
 
 // 	Functions for adding script to Admin Area
-	function beautyandspa_admin_style() { wp_enqueue_style( 'beautyandspa_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	function beautyandspa_admin_style($hook) {  
+	if ( 'appearance_page_theme-about' != $hook ) { return;  } 
+	wp_enqueue_style( 'beautyandspa_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
 	add_action( 'admin_enqueue_scripts', 'beautyandspa_admin_style' );
+
+// 	Functions for adding Style to the Customizer	
+	function beautyandspa_customizer_styles() { ?>
+	<style>.infohead a { color: #14AAFD; text-decoration: none; }
+	.infohead { background:#333333; border-left: 3px solid #14AAFD; color: #EEEEEE; padding: 10px; transition:all .75s; -moz-transition:all .75s; -o-transition:all .75s; -webkit-transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
+.infohead:hover { background:#111111; border-color: #ee510c; }
+	</style>
+	<?php
+
+}
+add_action( 'customize_controls_print_styles', 'beautyandspa_customizer_styles', 999 );
 
 
 // 	Add Some Sub Functions necessary for the Site
-	get_template_part( 'function/imp' );
+	require_once ( trailingslashit(get_template_directory()) . 'function/imp.php' );
 
 //	function tied to the excerpt_more filter hook.
 	function beautyandspa_excerpt_length( $beautyandspa_excerpt_length ) {
+	if (!is_admin()):
 	global $beautyandspa_excerpt_length;
 	if ($beautyandspa_excerpt_length) {
     return $beautyandspa_excerpt_length;
 	} else {
     return 50; //default value
-    } }
+    } endif; }
 	add_filter( 'excerpt_length', 'beautyandspa_excerpt_length', 999 );
 	
 	function beautyandspa_excerpt_more($more) {

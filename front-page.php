@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	Beauty and Spa Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */

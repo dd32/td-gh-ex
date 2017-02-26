@@ -1,11 +1,11 @@
 /* 	SIMPLIFY Theme's Admin Style
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SIMPLIFY 3.0
 */
 
 #about-page { width:90%; min-width: 950px; display: block; margin: 10px 0; border-radius: 5px; background: #DDDDDD; border: 1px solid #cccccc; padding: 10px 15px; line-height: 1.7; overflow: hidden; }
-.about-title { background: #CCCCCC url("images/d5logo.png") no-repeat scroll left center / auto 85%; text-align: right; font-size: 35px; padding: 10px; margin: -10px -15px 10px; color: #06add7; text-shadow: 1px 1px 0 #dddddd; font-weight: 100; }
+.about-title { background: #CCCCCC url("images/d5logo.png") no-repeat scroll 10px center / auto 85%; text-align: right; font-size: 35px; padding: 10px; margin: -10px -15px 10px; color: #06add7; text-shadow: 1px 1px 0 #dddddd; font-weight: 100; }
 .about-title span { font-size: 45px; }
 #about-page a, .infohead a { color: #14AAFD; text-decoration: none; }
 .impspe { color: #06add7; }

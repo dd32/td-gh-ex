@@ -9,18 +9,8 @@ function beautyandspa_customize_register($wp_customize){
 		'title'    		=> __('BEAUTY AND SPA OPTIONS', 'beauty-and-spa'),
 		'description'   => ' <div class="infohead">' . __('We appreciate an','beauty-and-spa') . ' <a href="https://wordpress.org/support/theme/beauty-and-spa/reviews" target="_blank">' . __('Honest Review','beauty-and-spa') . '</a> ' . __('of this Theme if you Love our Work','beauty-and-spa') . '<br /> <br />
 
-' . __('You can learn more on This Theme from the ','beauty-and-spa') . '<a href="' . esc_url('https://d5creation.com/theme/beautyandspa') .'
-" target="_blank"><strong>' . __('Theme Page','beauty-and-spa') . '</strong></a><br /> <br /> 
-        
-        
-' . __('You can find a working ','beauty-and-spa') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Beauty and Spa') .'" target="_blank"><strong>' . __('Demo Here','beauty-and-spa') . '</strong></a> 
-        </div>	
-		
-		<div class="specialmsg">
-    		<div>'. __('Do you want the Site Like the Demo ? For Supports and Questions, Please visit to : ', 'beauty-and-spa').'</div>
-        	<a href="'. esc_url('https://d5creation.com/forums/topic/beauty-and-spa-theme-introduction').'" target="_blank"><h3>'.__('Beauty and Spa Theme Tutorial', 'beauty-and-spa').'</h3></a>
-    	</div>
-			
+' . __('You can learn more on This Theme from the ','beauty-and-spa') . '<a href="' . esc_url(admin_url( 'themes.php?page=theme-about' )) .'
+" target="_blank"><strong>' . __('Theme Page','beauty-and-spa') . '</strong></a> in this Dashboard. 
 		'
     ));
 	
@@ -64,7 +54,7 @@ function beautyandspa_customize_register($wp_customize){
 //  Contact Number
     $wp_customize->add_setting('beautyandspa[phone-num]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'sanitize_text_field',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -122,7 +112,7 @@ function beautyandspa_customize_register($wp_customize){
     $wp_customize->add_setting('beautyandspa[heading_text]', array(
         'default'        	=> __('Welcome to the World of Creativity!','beauty-and-spa'),
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'sanitize_text_field',
         'type'           	=> 'option'
 
     ));
@@ -260,7 +250,7 @@ foreach (range(1, 4) as $beautyandspa_fbxp )  {
     $wp_customize->add_setting('beautyandspa[staffboxes-heading]', array(
         'default'        	=> __('WE ARE INSIDE','beauty-and-spa'),
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'sanitize_text_field',
         'type'           	=> 'option'
 
     ));

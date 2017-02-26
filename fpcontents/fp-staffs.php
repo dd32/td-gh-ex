@@ -1,6 +1,6 @@
 <?php 
 /* 	Beauty and Spa Theme's Staff Part
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Beauty and Spa 1.0
 */
@@ -15,7 +15,7 @@ if ( ! empty( $beautyandspa_users->results ) ) :
 
 <div class="clear"></div>
 <div id="staff-box-item" class="staffbox-item">
-	<h2 class="boxtoptitle" ><?php echo esc_textarea(beautyandspa_get_option('staffboxes-heading', 'WE ARE INSIDE')); ?></h2>
+	<h2 class="boxtoptitle" ><?php echo esc_textarea(beautyandspa_get_option('staffboxes-heading', __('WE ARE INSIDE','beauty-and-spa'))); ?></h2>
 
 			<div class="staff-box">
 				<?php foreach ( $beautyandspa_users->results as $beautyandspa_userx ) { ?><!--
