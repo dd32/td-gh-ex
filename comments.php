@@ -1,43 +1,25 @@
-<?php 
+<?php
 /**
- * The template for displaying the comments
+ * The template for displaying Comments.
  *
- * @package astrology
  */
-?>
-<?php if ( have_comments() ) : ?>
-<div class="comment-part" id="comments">
-		<h3><?php echo comments_number(); ?></h3>
-		<?php
-			wp_list_comments('type=comment&callback=AstrologyComment'); ?>
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) return; ?>
+<div class="row">
+     <div class="col-md-12 col-sm-12 col-xs-12 admin">
+     	 <?php wp_list_comments(array('avatar_size' => 110,'status' => 'approve', 'style' => 'div', 'short_ping' => true,)); ?>
+    </div>
 </div>
-<?php 
-	endif; 
-	$fields =  array(
-		'author' =>
-		'<div class="row"><div class="col-sm-5"><div class="group">' .
-		( $req ? '<span class="required"></span>' : '' ) .
-		'<input id="author" name="author" placeholder="Name" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-		'" size="30" required/> <span class="highlight"></span></div></div>',
-		'email' =>
-		'<div class="col-sm-7"><div class="group">'.
-		( $req ? '<span class="required"></span>' : '' ) .
-		'<input id="email" name="email" placeholder="Email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-		'" size="30" required/><span class="highlight"></span></div></div></div>',
-	);
-
-	$commentBox = '<div class="row"><div class="col-sm-12"><div class="group">' .
-        '<textarea id="comment" name="comment" placeholder="Message" cols="20" rows="6" required></textarea>' .
-        '<span class="highlight"></span></div></div></div>';
-
-	comment_form( array(
-		'comment_field' => $commentBox,
-		'fields' => $fields,
-		'title_reply' => 'Post Your Comment',
-		'title_reply_before' => '<h3>',
-		'title_reply_after'  => '</h3>',
-		'comment_notes_before' => '',
-		'class_form' => 'leave-reply-form',
-		'label_submit' => __( 'POST' , 'astrology'),
-		'class_submit' => 'postBtn',
-	) ); ?>
+<div class="row">
+	<div class="col-md-12 comment">
+        <h5> <?php comments_number(); ?></h5>
+    </div>
+	<div class="col-md-12 col-sm-12 leave_form">
+    	<?php comment_form(); ?>	
+    </div>
+    <?php the_comments_navigation(); ?>
+</div>

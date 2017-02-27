@@ -24,12 +24,12 @@
                     <nav id='top-menu'>
                         <div class="logo">
                             <?php 
-                            $customLogoId = get_theme_mod( 'custom_logo' );
-                            $image = wp_get_attachment_url( $customLogoId );
+                            $custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $image = wp_get_attachment_url( $custom_logo_id );
                             if (!has_custom_logo()) { ?>
-                                <a href="<?php echo get_site_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+                                <a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
                             <?php } 
-                            else { ?> <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
+                            else { ?> <a href="<?php echo home_url(); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
                         </div>
                         <div id="box-top-mobile"></div>
                         <div class="menu">
@@ -39,12 +39,13 @@
                         </div>
                          <?php
                             if (has_nav_menu('primary')) {
-                                $astrologyDefaults = array(
+                                $astrology_defaults = array(
                                     'theme_location' => 'primary',
+                                    'fallback_cb'    => 'astrology_fallback_menu',
                                     'container'      => 'none', 
                             		'menu_class'	=> 'offside',
                                 );
-                                wp_nav_menu($astrologyDefaults);                                        
+                                wp_nav_menu($astrology_defaults);                                        
                             } ?>  
             		</nav>
                 </div>

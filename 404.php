@@ -9,7 +9,7 @@ get_header(); ?>
     <div class="container">
         <div class="blog-title">
             <h2><?php _e( "Oops! That page can't be found", 'astrology' ); ?></h2>
-            <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
+            <div class="breadCumbs"><?php astrology_custom_breadcrumbs(); ?></div>
         </div>
     </div>
 </section>
@@ -25,4 +25,4 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

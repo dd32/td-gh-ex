@@ -5,22 +5,20 @@
  * @package astrology
  */
 require_once (dirname(__FILE__) . '/inc/class-tgm-plugin-activation.php');
-if ( ! function_exists( 'AstrologySetup' ) ) :
+if ( ! function_exists( 'astrology_setup' ) ) :
 
-function AstrologySetup() {
+function astrology_setup() {
 	
 	load_theme_textdomain( 'astrology', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' ); 
 
 	add_theme_support( 'custom-logo' );
 	
-	add_editor_style();
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'astrology' ),
-		'footer' => esc_html__( 'Footer', 'astrology' ),
 	) );
 	add_theme_support( 'html5', array(
 		'search-form',
@@ -33,68 +31,46 @@ function AstrologySetup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) );
-	function AstrologyActiveWidgets($active){
-
-	    //Bundled Widgets
-        $active['video'] = true;
-        $active['testimonial'] = true;
-        $active['taxonomy'] = true;
-        $active['social-media-buttons'] = true;
-        $active['simple-masonry'] = true;
-        $active['slider'] = true;
-        $active['cta'] = true;
-        $active['contact'] = true;
-        $active['features'] = true;
-        $active['headline'] = true;
-        $active['hero'] = true;
-        $active['icon'] = true;
-        $active['image-grid'] = true;
-        $active['price-table'] = true;
-        $active['layout-slider'] = true;
-	    return $active;
-  	}
 }
-
 endif;
+add_action( 'after_setup_theme', 'astrology_setup' );
 
-add_action( 'after_setup_theme', 'AstrologySetup' );
-
-function AstrologyContentWidth() {
+function astrology_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'astrology_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'AstrologyContentWidth', 0 );
+add_action( 'after_setup_theme', 'astrology_content_width', 0 );
 
-function AstrologerCustomExcerptLength( $length ) {
+function astrology_custom_excerpt_length( $length ) {
     return 34;
 }
-add_filter( 'excerpt_length', 'AstrologerCustomExcerptLength', 999 );
-function AstrologerCustomExcerptLengthMore( $more ) {
+add_filter( 'excerpt_length', 'astrology_custom_excerpt_length', 999 );
+function astrology_custom_excerpt_length_more( $more ) {
     return ' {...}';
 }
-add_filter( 'excerpt_more', 'AstrologerCustomExcerptLengthMore' );
+add_filter( 'excerpt_more', 'astrology_custom_excerpt_length_more' );
 
 /*
 * TGM plugin activation register hook 
 */
-add_action( 'tgmpa_register', 'AstrologyActionTgmPluginActiveRegisterRequiredPlugins' );
-function AstrologyActionTgmPluginActiveRegisterRequiredPlugins() {
+add_action( 'tgmpa_register', 'astrology_action_tgm_plugin_active_register_required_plugins' );
+function astrology_action_tgm_plugin_active_register_required_plugins() {
     if(class_exists('TGM_Plugin_Activation')){
       $plugins = array(
         array(
            'name'      => __('Page Builder by SiteOrigin','astrology'),
            'slug'      => 'siteorigin-panels',
-           'required'  => true,
+           'required'  => false,
         ),
         array(
            'name'      => __('SiteOrigin Widgets Bundle','astrology'),
            'slug'      => 'so-widgets-bundle',
-           'required'  => true,
+           'required'  => false,
         )
       );
       $config = array(
         'default_path' => '',
         'menu'         => 'astrology-install-plugins',
-        'has_notices'  => true,
+        'has_notices'  => false,
         'dismissable'  => true,
         'dismiss_msg'  => '',
         'is_automatic' => false,
@@ -120,8 +96,18 @@ function AstrologyActionTgmPluginActiveRegisterRequiredPlugins() {
            'nag_type'                        => 'updated'
         )
       );
-      Astrology( $plugins, $config );
+      astrology( $plugins, $config );
     }
+}
+function astrology_fallback_menu(){
+  $html = '<ul id="astrology-default-menu" class="offside">';
+    $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
+      $html .= '<a href="' . esc_url( home_url() ) . '" title="' . __( 'Home', 'astrology' ) . '">';
+        $html .= __( 'Home', 'astrology' );
+      $html .= '</a>';
+    $html .= '</li>';
+  $html .= '</ul>';
+  echo $html;
 }
 /**
  * wp enqueue style and script.
@@ -137,9 +123,4 @@ require_once get_template_directory() . '/inc/widgets.php';
  * customizer additions.
  */
 require_once get_template_directory() . '/inc/customizer.php';
-
-/**
- * default astrology functions.
- */
-require_once get_template_directory() . '/inc/default.php';
 require_once get_template_directory() . '/inc/breadcumbs.php';

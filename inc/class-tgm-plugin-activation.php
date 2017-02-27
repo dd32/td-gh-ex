@@ -2123,7 +2123,7 @@ if ( ! function_exists( 'Astrology' ) ) {
 	 * @param array $plugins An array of plugin arrays.
 	 * @param array $config  Optional. An array of configuration values.
 	 */
-	function Astrology( $plugins, $config = array() ) {
+	function astrology( $plugins, $config = array() ) {
 		$instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 
 		foreach ( $plugins as $plugin ) {

@@ -10,8 +10,7 @@
     <div class="col-xs-12 col-sm-12 col-md-9 content">
         <div class="bloginner-content-part2">
             <div class="grid">
-            <?php
-                if ( have_posts() ) : $i=1;
+            <?php if ( have_posts() ) : $i=1;
                     while ( have_posts() ) : the_post();?>                
                         <div class="grid-sizer"></div>
                         <div class="blog-content-left grid-item <?php post_class(); ?>" id="post-<?php the_ID(); ?>">
@@ -32,8 +31,7 @@
                                 <a href="<?php the_permalink(); ?>"><?php _e('Read More','astrology')?></a>
                             </div>
                         </div>
-                    <?php
-					if($i % 2 == 0):
+                    <?php if($i % 2 == 0):
 						echo '<div class="clearfix"></div>'; 
 					endif;
 					$i++;
@@ -45,9 +43,8 @@
                         'prev_text'          => __( 'Previous', 'astrology' ),
                         'next_text'          => __( 'Next', 'astrology' ),
                     ) );
-                endif; 
-            ?>
+                endif; ?>
         </div>
     </div>
 </div>
-</div>                       
+</div>

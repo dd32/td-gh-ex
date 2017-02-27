@@ -1,6 +1,5 @@
-/**** Dogcare Custom Js ****/
 /* Main-Menu Js */
-/* Deafult js */
+/* Default js */
 (function (jQuery) {
     jQuery.fn.menumaker = function (options) {
         var cssmenu = jQuery(this),
@@ -87,7 +86,7 @@
     });
 })(jQuery);
 jQuery(window).scroll(function () {
-    if (jQuery(window).scrollTop() > 150) {
+    if (jQuery(window).scrollTop() > 2050) {
         jQuery('.header-top').addClass('fixed-header');
     } else {
         jQuery('.header-top').removeClass('fixed-header');

@@ -6,5 +6,9 @@
  */
 ?>
 <div class="fullwidth-content-part">         
-    <?php the_content(); ?>
+    <?php the_post_thumbnail('full');
+    the_content();
+    if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	} ?>
 </div>

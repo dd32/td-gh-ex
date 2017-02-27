@@ -35,7 +35,7 @@ License Name: Open Font License (OFL) Version 4.6.3
 
 iii)Fonts
 ===========
-https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i	
+https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i
 They are under SIL Open Font.
 
 ---------------------------------------------------------

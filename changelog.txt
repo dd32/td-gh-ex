@@ -15,4 +15,9 @@ ii) Screenshot changed.
 
 Version 1.0.4 (19-11-2016)
 i) Fixed breadcumbs for archive pages.
-ii) Fixed menu styling for responsive layouts. 
+ii) Fixed menu styling for responsive layouts.
+
+Version 1.0.5 (27-02-2017)
+i) Removed important from css.
+ii) Changed comment template styling.
+iii) Changed screenshot.

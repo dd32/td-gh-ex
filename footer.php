@@ -3,8 +3,7 @@
  * The footer for our theme
  *
  * @package astrology
- */
-?>
+ */ ?>
 <footer id="main-footer">
     <div class="container">
         <div class="row">
@@ -32,16 +31,14 @@
         </div>
         <div class="row">
             <div class="footer-menu">
-                <ul>
-                <?php
-                    if (has_nav_menu('footer')) {
-                        $astrologyDefaults = array(
+                <?php if (has_nav_menu('footer')) {
+                        $astrology_defaults = array(
                             'theme_location' => 'footer',
                             'container'      => 'none',
                             'menu_class'    => false,
                         );
-                        wp_nav_menu($astrologyDefaults);                                        
-                    }   ?> 
+                        wp_nav_menu($astrology_defaults);                                        
+                    } ?> 
             </div>
         </div>
     <!-- Row End -->
@@ -49,14 +46,14 @@
         <div class="footer-social-icon">
             <ul>
                 <?php for($i=1; $i<=5; $i++) : 
-					if((get_theme_mod('socialLink'. $i) != '')) : ?>
+					if((get_theme_mod('social_link_'. $i) != '')) : ?>
                         <li> 
-                            <a href="<?php echo esc_url(get_theme_mod('socialLink'.$i)) ?>">
-                                <span class="fa <?php echo esc_attr(get_theme_mod('socialIcon'.$i)) ?>"></span>
+                            <a href="<?php echo esc_url(get_theme_mod('social_link_'.$i)) ?>">
+                                <span class="fa <?php echo esc_attr(get_theme_mod('social_icon_'.$i)) ?>"></span>
                             </a>
                         </li>
-                    <?php endif; ?>
-                <?php endfor; ?>
+                    <?php endif;
+                    endfor; ?>
             </ul>
         </div>
     </div>

@@ -15,4 +15,4 @@ get_header(); ?>
 <section id="blogcontent">    
     	<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2016-11-18 22:48-0800\n"
+"POT-Creation-Date: 2017-02-27 18:44+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,70 +34,58 @@ msgstr ""
 msgid "Author: "
 msgstr ""
 
-#: category.php:11
-msgid "Category: "
-msgstr ""
-
-#: comments.php:41
-msgid "POST"
-msgstr ""
-
-#: footer.php:67
+#: footer.php:64
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:67
+#: footer.php:64
 msgid "Astrology WordPress Theme"
 msgstr ""
 
-#: functions.php:22
+#: functions.php:21
 msgid "Primary"
 msgstr ""
 
-#: functions.php:23
-msgid "Footer"
-msgstr ""
-
-#: functions.php:84
+#: functions.php:60
 msgid "Page Builder by SiteOrigin"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:65
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:103 inc/class-tgm-plugin-activation.php:334
+#: functions.php:79 inc/class-tgm-plugin-activation.php:334
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions.php:104 inc/class-tgm-plugin-activation.php:335
+#: functions.php:80 inc/class-tgm-plugin-activation.php:335
 msgid "Install Plugins"
 msgstr ""
 
-#: functions.php:105 inc/class-tgm-plugin-activation.php:337
+#: functions.php:81 inc/class-tgm-plugin-activation.php:337
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions.php:106 inc/class-tgm-plugin-activation.php:340
+#: functions.php:82 inc/class-tgm-plugin-activation.php:340
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions.php:107 inc/class-tgm-plugin-activation.php:343
+#: functions.php:83 inc/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:108 inc/class-tgm-plugin-activation.php:349
+#: functions.php:84 inc/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:109
+#: functions.php:85
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -110,21 +98,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:110 inc/class-tgm-plugin-activation.php:367
+#: functions.php:86 inc/class-tgm-plugin-activation.php:367
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:111 inc/class-tgm-plugin-activation.php:373
+#: functions.php:87 inc/class-tgm-plugin-activation.php:373
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:112
+#: functions.php:88
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -137,7 +125,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:113 inc/class-tgm-plugin-activation.php:355
+#: functions.php:89 inc/class-tgm-plugin-activation.php:355
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -148,7 +136,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:114
+#: functions.php:90
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -161,33 +149,37 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:115 inc/class-tgm-plugin-activation.php:378
+#: functions.php:91 inc/class-tgm-plugin-activation.php:378
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:116 inc/class-tgm-plugin-activation.php:388
+#: functions.php:92 inc/class-tgm-plugin-activation.php:388
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:117 inc/class-tgm-plugin-activation.php:392
+#: functions.php:93 inc/class-tgm-plugin-activation.php:392
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: functions.php:118 inc/class-tgm-plugin-activation.php:394
+#: functions.php:94 inc/class-tgm-plugin-activation.php:394
 #: inc/class-tgm-plugin-activation.php:3252
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions.php:119
+#: functions.php:95
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: inc/breadcumbs.php:215 template-parts/content-single.php:31
+#: functions.php:105 functions.php:106
+msgid "Home"
+msgstr ""
+
+#: inc/breadcumbs.php:215 template-parts/content-single.php:30
 msgid "Page"
 msgstr ""
 
@@ -588,10 +580,6 @@ msgstr ""
 msgid "Secondary Color"
 msgstr ""
 
-#: inc/default.php:18
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
 #: inc/widgets.php:9
 msgid "Sidebar"
 msgstr ""
@@ -616,11 +604,11 @@ msgstr ""
 msgid "BLOG"
 msgstr ""
 
-#: page.php:30 single.php:29 template-parts/content.php:45
+#: page.php:28 single.php:38 template-parts/content.php:43
 msgid "Previous"
 msgstr ""
 
-#: page.php:31 single.php:28 template-parts/content.php:46
+#: page.php:29 single.php:37 template-parts/content.php:44
 msgid "Next"
 msgstr ""
 
@@ -629,42 +617,43 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:9
+#: searchform.php:8
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:10
+#: searchform.php:9
 msgctxt "placeholder"
 msgid "Search..."
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:11
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: tag.php:10
-msgid "Tag: "
+#: single.php:29
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-none.php:11
+#: template-parts/content-none.php:10
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:22
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:28
+#: template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:34
+#: template-parts/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -678,11 +667,11 @@ msgstr ""
 msgid "Posted on "
 msgstr ""
 
-#: template-parts/content-single.php:27
+#: template-parts/content-single.php:26
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content.php:32
+#: template-parts/content.php:31
 msgid "Read More"
 msgstr ""
 
