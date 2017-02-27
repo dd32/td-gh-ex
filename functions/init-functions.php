@@ -72,7 +72,9 @@ function hu_is_partial_refreshed_on() {
 //the old options used 'on' and 'off'
 //the new options use 1 and 0
 function hu_is_checked( $opt_name = '') {
-  $val = hu_get_option($opt_name);
+  $val = hu_get_option( $opt_name );
+  //cast to string if array
+  $val = is_array($val) ? $val[0]: $val;
   return hu_booleanize_checkbox_val( $val );
 }
 
@@ -177,11 +179,26 @@ function hu_get_raw_option( $opt_name = null, $opt_group = null ) {
 /**
 * helper
 * Check if we are displaying posts lists or front page
+* => not real home
 * @return  bool
 */
 function hu_is_home() {
   //get info whether the front page is a list of last posts or a page
   return is_home() || ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || '__nothing__' == get_option( 'show_on_front' ) ) ) || is_front_page();
+}
+
+
+/**
+* helper ( can be already defined in hueman-addons)
+* Check if we are really on home, all cases covered
+* @return  bool
+*/
+if ( ! function_exists( 'hu_is_real_home') ) {
+  function hu_is_real_home() {
+    return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || '__nothing__' == get_option( 'show_on_front' ) ) )
+    || ( 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
+    || is_front_page();
+  }
 }
 
 /**
@@ -255,8 +272,15 @@ function hu_is_singular() {
 * @return  bool
 */
 function hu_has_social_links() {
-  $_socials = hu_get_option('social-links');
-  return ! empty( $_socials ) && false != $_socials;
+    $_raw_socials = hu_get_option('social-links');
+    if ( ! is_array( $_raw_socials ) )
+      return;
+    //get the social mod opts and the items
+    foreach( $_raw_socials as $key => $item ) {
+      if ( ! array_key_exists( 'is_mod_opt', $item ) )
+          $_social_items[] =  $item;
+    }
+    return ! empty( $_social_items );
 }
 
 /**

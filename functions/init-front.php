@@ -4,6 +4,61 @@
  *  https://codex.wordpress.org/Pluggable_Functions
 /* ------------------------------------------------------------------------- */
 
+/*  Print the wp content
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_get_content') ) {
+  //@return void()
+  //Print the content based on the template string
+  function hu_get_content( $tmpl = 'index-tmpl' ) {
+    $tmpl = hu_is_authorized_tmpl( $tmpl ) ? $tmpl : 'index-tmpl';
+    $seks = apply_filters(  'hu_content_sektions', array( 'wp' ) );
+    //Are we good after filtering ?
+    if ( ! is_array( $seks ) )
+      return;
+
+    ?>
+      <?php do_action( '__before_content_section', $tmpl ); ?>
+        <section class="content">
+          <?php hu_get_template_part('parts/page-title'); ?>
+          <div class="pad group">
+            <?php
+              foreach ( $seks as $_id ) {
+                  if ( 'wp' == $_id )
+                    hu_get_template_part("tmpl/{$tmpl}");
+                  else
+                    hu_print_sek( $_id );
+              }
+            ?>
+          </div><!--/.pad-->
+        </section><!--/.content-->
+      <?php do_action( '__after_content_section', $tmpl ); ?>
+    <?php
+  }
+}
+
+//helper
+//@return bool
+function hu_is_authorized_tmpl( $tmpl ) {
+    $ct_map = apply_filters(
+        'hu_content_map',
+        array( 'index-tmpl', 'archive-tmpl', 'page-tmpl', 'single-tmpl', 'search-tmpl', '404-tmpl' )
+    );
+    //Are we good after filtering ?
+    if ( ! is_array( $ct_map ) || ! is_string( $tmpl ) )
+      return;
+    return in_array( $tmpl, $ct_map );
+}
+
+
+if ( ! function_exists( 'hu_print_sek') ) {
+  //@return void
+  function hu_print_sek( $sek_id ) {
+      do_action( "hu_sek_{$sek_id}" );
+  }
+}
+
+
+
 /*  Layout class
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_layout_class' ) ) {
@@ -153,26 +208,62 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_print_social_links' ) ) {
   function hu_print_social_links() {
-    $_socials = hu_get_option('social-links');
-    if ( empty( $_socials ) )
-      return;
+    $_raw_socials     = hu_get_option('social-links');
+    $_default_color   = array('rgb(90,90,90)', '#5a5a5a'); //both notations
+    $_default_size    = '14'; //px
+    $_social_opts     = array( 'social-size' => $_default_size );
+    $_social_items    = array();
+
+    //get the social mod opts and the items
+    foreach( $_raw_socials as $key => $item ) {
+      if ( ! array_key_exists( 'is_mod_opt', $item ) ) {
+          $_social_items[] =  $item;
+      } else {
+          $_social_opts = wp_parse_args( $item, $_social_opts );
+      }
+    }
+
+    if ( empty( $_social_items ) ) {
+        if ( hu_is_customizing() ) {
+            printf( '<ul class="social-links"><li style="font-size:0.9em;color:white"><span><i>%1$s</i></span></li></ul>',
+                __('You can set your social links here from the live customizer')
+            );
+        }
+        return;
+    }
+
+    $font_size_value = $_social_opts['social-size'];
+    //if the size is the default one, do not add the inline style css
+    $social_size_css  = empty( $font_size_value ) || $_default_size == $font_size_value ? '' : "font-size:{$font_size_value}px";
 
     echo '<ul class="social-links">';
-    foreach( $_socials as $key => $item ) {
-      //do we have an id set ?
-      //Typically not if the user still uses the old options value.
-      //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
+      foreach( $_social_items as $key => $item ) {
+        //skip if mod_opt
+        if ( array_key_exists( 'is_mod_opt', $item ) )
+          continue;
 
-      // Put them together
-      printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" href="%3$s" %4$s style="color:%5$s"><i class="fa %6$s"></i></a></li>',
-        ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
-        isset($item['title']) ? esc_attr( $item['title'] ) : '',
-        ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
-        ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
-        isset($item['social-color']) ? esc_attr($item['social-color']) : '#000',
-        isset($item['social-icon']) ? esc_attr($item['social-icon']) : ''
-      );
-    }
+         /* Maybe build inline style */
+        $social_color_css      = isset($item['social-color']) ? esc_attr($item['social-color']) : $_default_color[0];
+        //if the color is the default one, do not print the inline style css
+        $social_color_css      = in_array( $social_color_css, $_default_color ) ? '' : "color:{$social_color_css}";
+        $style_props           = implode( ';', array_filter( array( $social_color_css, $social_size_css ) ) );
+
+        $style_attr            = $style_props ? sprintf(' style="%1$s"', $style_props ) : '';
+
+        //do we have an id set ?
+        //Typically not if the user still uses the old options value.
+        //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
+
+        // Put them together
+        printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" href="%3$s" %4$s %5$s><i class="fa %6$s"></i></a></li>',
+            ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
+            isset($item['title']) ? esc_attr( $item['title'] ) : '',
+            ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
+            ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
+            $style_attr,
+            isset($item['social-icon']) ? esc_attr($item['social-icon']) : ''
+        );
+      }
     echo '</ul>';
   }
 }
@@ -755,16 +846,10 @@ add_action( 'wp_enqueue_scripts', 'hu_scripts' );
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_styles' ) ) {
   function hu_styles() {
-    $_main_style = hu_is_checked('responsive') ? 'main' : 'main-not-responsive';
-
     //registered only, will be loaded as a dependency of the wp style.css
     wp_register_style(
         'hueman-main-style',
-        sprintf('%1$s/assets/front/css/%2$s%3$s.css',
-            get_template_directory_uri(),
-            $_main_style,
-            hu_is_checked('minified-css') ? '.min' : ''
-        ),
+        hu_get_front_style_url(),//defined in init-core
         array(),
         ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
         'all'
@@ -793,6 +878,7 @@ if ( ! function_exists( 'hu_styles' ) ) {
         ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
         'all'
     );
+    wp_add_inline_style( 'theme-stylesheet', apply_filters( 'ha_user_options_style' , '' ) );
   }
 }
 add_action( 'wp_enqueue_scripts', 'hu_styles' );
@@ -880,32 +966,6 @@ if ( ! function_exists( 'hu_ie_js_footer' ) ) {
 
 }
 add_action( 'wp_footer', 'hu_ie_js_footer', 20 );
-
-
-
-/*  WooCommerce basic support
-/* ------------------------------------ */
-function hu_wc_wrapper_start() {
-  echo '<section class="content">';
-  echo '<div class="pad">';
-}
-function hu_wc_wrapper_end() {
-  echo '</div>';
-  echo '</section>';
-}
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', 'hu_wc_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'hu_wc_wrapper_end', 10);
-
-
-/*  WP-PageNavi support - @devinsays (via GitHub)
-/* ------------------------------------ */
-function hu_deregister_styles() {
-  wp_deregister_style( 'wp-pagenavi' );
-}
-add_action( 'wp_print_styles', 'hu_deregister_styles', 100 );
-
 
 
 

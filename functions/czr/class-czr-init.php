@@ -129,7 +129,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
     function hu_augment_customizer( $manager ) {
       $_classes = array(
         'controls/class-base-control.php',
-        //'controls/class-background-control.php',
         'controls/class-cropped-image-control.php',
 
         'controls/class-layout-control.php',
@@ -610,7 +609,9 @@ if ( ! class_exists( 'HU_customize' ) ) :
                 'flex_width',
                 'flex_height',
                 'dst_width',
-                'dst_height'
+                'dst_height',
+
+                'ubq_section'
           )
       );
       return apply_filters( 'hu_customizer_arguments', $args );
@@ -796,6 +797,11 @@ if ( ! class_exists( 'HU_customize' ) ) :
             'sub_set_wrapper'     => 'czr-sub-set',
             'sub_set_input'       => 'czr-input',
             'img_upload_container' => 'czr-imgup-container',
+
+            'edit_modopt_icon'    => 'czr-toggle-modopt',
+            'close_modopt_icon'   => 'czr-close-modopt',
+            'mod_opt_wrapper'     => 'czr-mod-opt-wrapper',
+
 
             'items_wrapper'     => 'czr-items-wrapper',
             'single_item'        => 'czr-single-item',

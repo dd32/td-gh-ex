@@ -10,13 +10,16 @@ add_action( 'customize_preview_init'                    , 'hu_add_preview_footer
 //Add the control dependencies
 add_action( 'customize_controls_print_footer_scripts'   , 'hu_extend_ctrl_dependencies', 10 );
 
+//Add various dom ready
+add_action( 'customize_controls_print_footer_scripts'   , 'hu_add_various_dom_ready_actions', 10 );
+
 //hook : customize_preview_init
 function hu_customize_preview_js() {
   global $wp_version;
 
   wp_enqueue_script(
     'hu-customizer-preview' ,
-    sprintf('%1$s/assets/czr/js/czr-preview%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+    sprintf('%1$s/assets/czr/js/czr-preview-base%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
     array( 'customize-preview', 'underscore'),
     ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
     true
@@ -31,6 +34,7 @@ function hu_customize_preview_js() {
             'themeFolder'     => get_template_directory_uri(),
             'wpBuiltinSettings' => HU_customize::$instance -> hu_get_wp_builtin_settings(),
             'themeOptions'  => HU_THEME_OPTIONS,
+            'fonts' => array( 'src' => hu_get_fonts( array( 'all' => true, 'request' => 'src' ) ), 'family' => hu_get_fonts( array( 'all' => true, 'request' => 'family' ) ) ),
             //patch for old wp versions which don't trigger preview-ready signal => since WP 4.1
             'preview_ready_event_exists'   => version_compare( $wp_version, '4.1' , '>=' ),
             'blogname' => get_bloginfo('name'),
@@ -56,41 +60,41 @@ function hu_customize_preview_js() {
 function hu_customize_controls_js_css() {
 
   wp_enqueue_style(
-    'hu-customizer-controls-style',
-    sprintf('%1$s/assets/czr/css/czr-control%2$s.css' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
-    array( 'customize-controls' ),
-    HUEMAN_VER,
-    $media = 'all'
+      'hu-customizer-controls-style',
+      sprintf('%1$s/assets/czr/css/czr-control-base%2$s.css' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+      array( 'customize-controls' ),
+      HUEMAN_VER,
+      $media = 'all'
   );
   wp_enqueue_script(
-    'hu-customizer-controls',
-    sprintf('%1$s/assets/czr/js/czr-control%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
-    array( 'customize-controls' , 'underscore'),
-    HUEMAN_VER,
-    true
+      'hu-customizer-controls',
+      sprintf('%1$s/assets/czr/js/czr-control-base%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+      array( 'customize-controls' , 'underscore'),
+      HUEMAN_VER,
+      true
   );
 
   //localizes
   wp_localize_script(
-    'hu-customizer-controls',
-    'serverControlParams',
-    apply_filters('hu_js_customizer_control_params' ,
-      array(
-          'AjaxUrl'       => admin_url( 'admin-ajax.php' ),
-          'docURL'        => esc_url('docs.presscustomizr.com/'),
-          'HUNonce'       => wp_create_nonce( 'hu-customizer-nonce' ),
-          'wpBuiltinSettings' => HU_customize::$instance -> hu_get_wp_builtin_settings(),
-          'themeName'     => THEMENAME,
-          'themeOptions'  => HU_THEME_OPTIONS,
-          'optionAjaxAction' => HU_OPT_AJAX_ACTION,
-          'faviconOptionName' => 'favicon',
-          'css_attr' => HU_customize::$instance -> hu_get_controls_css_attr(),
-          'translatedStrings' => hu_get_translated_strings(),
-          'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
-          'isThemeSwitchOn' => isset( $_GET['theme']),
-          'themeSettingList' => HU_utils::$_theme_setting_list
+      'hu-customizer-controls',
+      'serverControlParams',
+      apply_filters('hu_js_customizer_control_params' ,
+        array(
+            'AjaxUrl'       => admin_url( 'admin-ajax.php' ),
+            'docURL'        => esc_url('docs.presscustomizr.com/'),
+            'HUNonce'       => wp_create_nonce( 'hu-customizer-nonce' ),
+            'wpBuiltinSettings' => HU_customize::$instance -> hu_get_wp_builtin_settings(),
+            'themeName'     => THEMENAME,
+            'themeOptions'  => HU_THEME_OPTIONS,
+            //'optionAjaxAction' => HU_OPT_AJAX_ACTION,//DEPRECATED
+            'faviconOptionName' => 'favicon',
+            'css_attr' => HU_customize::$instance -> hu_get_controls_css_attr(),
+            'i18n' => hu_get_czr_translated_strings(),
+            'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
+            'isThemeSwitchOn' => ! (bool)HU_IS_PRO,
+            'themeSettingList' => HU_utils::$_theme_setting_list
+        )
       )
-    )
   );
 
 }
@@ -111,88 +115,112 @@ function hu_extend_postmessage_cb() {
   <script id="preview-settings-cb" type="text/javascript">
     (function (api, $, _ ) {
           var $_body    = $( 'body' ),
-            setting_cbs = api.CZR_preview.prototype.setting_cbs || {},
-            subsetting_cbs = api.CZR_preview.prototype.subsetting_cbs || {};
+              setting_cbs = api.CZR_preview.prototype.setting_cbs || {},
+              input_cbs = api.CZR_preview.prototype.input_cbs || {},
+              _settingsCbsExtend = {},
+              _inputCbsExtend = {};
+
+          _inputCbsExtend = {
+                'social-links' : {
+                      'social-size' : function( data ) {
+                            if ( ! _.isObject( data ) || _.isUndefined( data.value ) || ! $('li a', '.social-links').length )
+                              return;
+                            $('li a', '.social-links').css( 'font-size', data.value + 'px');
+                      },
+                      'social-color' : function( data ) {
+                            if ( ! _.isObject( data ) || _.isUndefined( data.value ) || _.isUndefined( data.input_parent_id ) )
+                              return;
+                            if ( ! $('li', '.social-links').find('a[data-model-id=' + data.input_parent_id +']').length )
+                              return;
+                            $('li', '.social-links').find('a[data-model-id=' + data.input_parent_id +']').css( 'color', data.value );
+                      }
+                }
+          };
+
+          _settingsCbsExtend = {
+                blogname : function(to) {
+                  var self = this,
+                      _proto_ = api.CZR_preview.prototype,
+                      _hasLogo,
+                      _logoSet;
+                  //the logo was previously set with a custom hueman theme option => custom-logo
+                  if ( api.has( _proto_._build_setId('custom-logo') ) )
+                    _logoSet ? api( _proto_._build_setId('custom-logo') ).get() : '';
+                  else if ( api.has( _proto_._build_setId('custom_logo') ) )
+                     _logoSet ? api( _proto_._build_setId('custom_logo') ).get() : '';
+
+                  _hasLogo = ( _.isNumber(_logoSet) && _logoSet > 0 ) || ( ! _.isEmpty(_logoSet) && ( false !== _logoSet ) );
+
+                  if ( _hasLogo )
+                    return;
+                  $( '.site-title a' ).text( to );
+                },
+                blogdescription : function(to) {
+                  $( '.site-description' ).text( to );
+                },
+                'font' : function( font_id ) {
+                    var gfontUrl        = ['//fonts.googleapis.com/css?family='],
+                        fontList = CZRPreviewParams.fonts,
+                        fontFamily, fontSrc;
+
+                    if ( fontList.family && fontList.src ) {
+                        fontSrc = false != fontList.src[font_id] ? fontList.src[font_id] : null;
+                        if ( ! _.isNull( fontSrc ) ) {
+                            gfontUrl.push( fontSrc );
+                            if ( 0 === $('link#gfontlink' ).length ) {
+                                $gfontlink = $('<link>' , {
+                                    id    : 'gfontlink' ,
+                                    href  : gfontUrl.join(''),
+                                    rel   : 'stylesheet',
+                                    type  : 'text/css'
+                                });
+
+                                $('link:last').after($gfontlink);
+                            }
+                            else {
+                                $('link#gfontlink' ).attr('href', gfontUrl.join('') );
+                            }
+                        }
+
+                        fontFamily = false != fontList.family[font_id] ? fontList.family[font_id] : null;
+                        if ( ! _.isNull( fontFamily ) ) {
+                            $('body').css( 'font-family', fontFamily );
+                        }
+                    }
+                },
+                'body-font-size' : function( to ) {
+                  to = parseInt( to , 10);
+                  if ( ! _.isNumber( to ) )
+                    return;
+                  var _rem = parseFloat( to ) / 16;
+                  $( 'body' ).css( { 'font-size' : _rem + 'rem' } );
+                  $( '.nav > li').css( { 'font-size' : _rem + 'rem' } );
+                },
+                'body-background' :  function(to) {
+                  $('body').css('background-color', to);
+                },
+                'color-topbar' : function(to) {
+                  $('.search-expand, #nav-topbar.nav-container, #nav-topbar .nav ul').css('background-color', to);
+                },
+                'color-header': function(to) {
+                  $('#header').css('background-color', to);
+                },
+                'color-header-menu' : function(to) {
+                  $('#nav-header.nav-container, #nav-header .nav ul').css('background-color', to);
+                },
+                'color-footer' : function(to) {
+                  $('#footer-bottom').css('background-color', to);
+                },
+                credit : function(to) {
+                  $( '#footer-bottom #credit' ).slideToggle();
+                }
+          };
 
           $.extend( api.CZR_preview.prototype, {
-              setting_cbs : $.extend( setting_cbs, {
-                    blogname : function(to) {
-                      var self = this,
-                          _proto_ = api.CZR_preview.prototype,
-                          _hasLogo,
-                          _logoSet;
-                      //the logo was previously set with a custom hueman theme option => custom-logo
-                      if ( api.has( _proto_._build_setId('custom-logo') ) )
-                        _logoSet ? api( _proto_._build_setId('custom-logo') ).get() : '';
-                      else if ( api.has( _proto_._build_setId('custom_logo') ) )
-                         _logoSet ? api( _proto_._build_setId('custom_logo') ).get() : '';
-
-                      _hasLogo = ( _.isNumber(_logoSet) && _logoSet > 0 ) || ( ! _.isEmpty(_logoSet) && ( false !== _logoSet ) );
-
-                      if ( _hasLogo )
-                        return;
-                      $( '.site-title a' ).text( to );
-                    },
-                    blogdescription : function(to) {
-                      $( '.site-description' ).text( to );
-                    },
-                    'body-background' :  function(to) {
-                      $('body').css('background-color', to);
-                    },
-                    'color-topbar' : function(to) {
-                      $('.search-expand, #nav-topbar.nav-container, #nav-topbar .nav ul').css('background-color', to);
-                    },
-                    'color-header': function(to) {
-                      $('#header').css('background-color', to);
-                    },
-                    'color-header-menu' : function(to) {
-                      $('#nav-header.nav-container, #nav-header .nav ul').css('background-color', to);
-                    },
-                    'color-footer' : function(to) {
-                      $('#footer-bottom').css('background-color', to);
-                    },
-                    credit : function(to) {
-                      $( '#footer-bottom #credit' ).slideToggle();
-                    }
-              }),//_.extend()
-
-
-
-              subsetting_cbs : $.extend( subsetting_cbs, {
-                  'social-links' : {
-                      'title' : function( obj ) {
-                        $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).attr('title', obj.value );
-                      },
-                      'social-color' : function( obj ) {
-                        $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).css('color', obj.value );
-                      },
-                      'social-icon' : function( obj ) {
-                        var $_el = $( '#'+ obj.model_id, '.social-links' ).find('i'),
-                            _classes = ! _.isUndefined( $_el.attr('class') ) ? $_el.attr('class').split(' ') : [],
-                            _prev = '';
-
-                        //find the previous class
-                        _.filter(_classes, function(_c){
-                          if ( -1 != _c.indexOf('fa-') )
-                            _prev = _c;
-                        });
-
-                        $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).find('i').removeClass(_prev).addClass( obj.value );
-                      },
-                      'social-link' : function( obj ) {
-                        var self = this;
-                        $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).attr('href', ! self._isValidURL(obj.value) ? 'javascript:void(0);' : obj.value );
-                      },
-                      'social-target' : function( obj ) {
-                        if ( 0 !== ( obj.value * 1 ) )
-                          $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).attr('target', "_blank");
-                        else
-                          $( '[data-model-id="'+ obj.model_id +'"]', '.social-links' ).removeAttr('target');
-                      }
-                  }
-              })
+              setting_cbs : $.extend( setting_cbs, _settingsCbsExtend ),
+              input_cbs : $.extend( input_cbs, _inputCbsExtend )
           });
-    }) ( wp.customize, jQuery, _);
+    }) ( wp.customize, jQuery, _ );
   </script>
   <?php
 }
@@ -203,24 +231,40 @@ function hu_extend_postmessage_cb() {
 //hook : wp_footer in the preview
 function hu_add_customize_preview_data() {
   global $wp_query, $wp_customize;
+  $current_obj  = get_queried_object();
+  $query_data = array(
+      'post_id'           => false,
+      'post_thumbnail_id' => false,
+      'post_title'        => false
+  );
+  //post, custom post types, page
+  if ( is_singular() && ! hu_is_real_home() && isset($current_obj -> post_type) ) {
+      $query_data['post_id'] = $current_obj -> ID;
+      $query_data['post_title'] = $current_obj -> post_title;
+      $query_data['post_thumbnail_id'] = has_post_thumbnail( $current_obj -> ID ) ? get_post_thumbnail_id( $current_obj -> ID ) :  false;
+  }
 
-  $_wp_conditionals = array();
+  $_wp_query_infos = array(
+      'conditional_tags' => array(),
+      'query_data' => $query_data
+  );
   $_available_locations = hu_get_available_widget_loc();
 
-  //export only the conditional tags
+  //Populates the conditional tags
   foreach( (array)$wp_query as $prop => $val ) {
-    if (  false === strpos($prop, 'is_') )
-      continue;
-    if ( 'is_home' == $prop )
-      $val = hu_is_home();
+      if (  false === strpos($prop, 'is_') )
+        continue;
+      if ( 'is_home' == $prop )
+        $val = hu_is_real_home();
 
-    $_wp_conditionals[$prop] = $val;
+      $_wp_query_infos['conditional_tags'][$prop] = $val;
   }
+  $_wp_query_infos = apply_filters( 'czr-preview-query-data', $_wp_query_infos );
 
   ?>
     <script type="text/javascript" id="czr-customizer-data">
       (function ( _export ){
-        _export.czr_wp_conditionals = <?php echo wp_json_encode( $_wp_conditionals ) ?>;
+        _export.czr_wpQueryInfos = <?php echo wp_json_encode( $_wp_query_infos ) ?>;
         _export.availableWidgetLocations = <?php echo wp_json_encode( $_available_locations ) ?>;
       })( _wpCustomizeSettings );
     </script>
@@ -304,7 +348,7 @@ function hu_extend_ctrl_dependencies() {
                 {
                         dominus : 'use-header-image',
                         onSectionExpand : false,
-                        servi : ['header_image', 'display-header-logo', 'custom_logo', 'custom-logo', 'logo-max-height', 'blogname', 'blogdescription', 'header-ads'],
+                        servi : ['header_image', 'display-header-logo', 'custom_logo', 'custom-logo', 'logo-max-height', 'blogname', 'blogdescription', 'header-ads', 'site-description'],
                         visibility : function( to, servusShortId ) {
                               if ( 'header_image' != servusShortId )
                                 return 'unchanged';
@@ -323,6 +367,7 @@ function hu_extend_ctrl_dependencies() {
                                     case 'blogdescription' :
                                     case 'custom-logo' :
                                     case 'header-ads' :
+                                    case 'site-description' :
                                         if ( ! api.control.has(wpServusId) )
                                           return;
 
@@ -348,6 +393,7 @@ function hu_extend_ctrl_dependencies() {
                                     case 'custom_logo' :
                                     case 'custom-logo' :
                                     case 'header-ads' :
+                                    case 'site-description' :
                                         if ( ! api.control.has(wpServusId) )
                                           return;
                                         if ( ! _is_checked(to) ) {
@@ -498,9 +544,27 @@ function hu_extend_ctrl_dependencies() {
   <?php
 }
 
+function hu_add_various_dom_ready_actions() {
+  ?>
+  <script id="control-various-dom-ready" type="text/javascript">
+    (function (wp, $) {
+        $( function($) {
+            var api = wp.customize || api;
 
-function hu_get_translated_strings() {
-  return apply_filters('controls_translated_strings',
+            /* WIDGET PANEL ICON */
+            if ( $('.control-panel-widgets').find('.accordion-section-title').first().length ) {
+                  $('.control-panel-widgets').find('.accordion-section-title')
+                        .first()
+                        .prepend( $('<span/>', {class:'fa fa-magic'} ) );
+            }
+        });//end of $( function($) ) dom ready
+    }) ( wp, jQuery );
+  </script>
+  <?php
+}
+
+function hu_get_czr_translated_strings() {
+  return apply_filters( 'controls_translated_strings',
       array(
             'edit' => __('Edit', 'hueman'),
             'close' => __('Close', 'hueman'),
@@ -513,23 +577,81 @@ function hu_get_translated_strings() {
             'followUs' => __('Follow us on', 'hueman'),
             'successMessage' => __('Done !', 'hueman'),
             'socialLinkAdded' => __('New Social Link created ! Scroll down to edit it.', 'hueman'),
+
             'selectBgRepeat'  => __('Select repeat property', 'hueman'),
             'selectBgAttachment'  => __('Select attachment property', 'hueman'),
             'selectBgPosition'  => __('Select position property', 'hueman'),
+
             'widgetZone' => __('Widget Zone', 'hueman'),
             'widgetZoneAdded' => __('New Widget Zone created ! Scroll down to edit it.', 'hueman'),
             'inactiveWidgetZone' => __('Inactive in current context/location', 'hueman'),
             'unavailableLocation' => __('Unavailable location. Some settings must be changed.', 'hueman'),
             'locationWarning' => __('A selected location is not available with the current settings.', 'hueman'),
+
             'readDocumentation' => __('Learn more about this in the documentation', 'hueman'),
+            'Settings' => __('Settings', 'hueman'),
+            'Options for' => __('Options for', 'hueman'),
 
-            //WP TEXT EDITOR MODULE
-            'textEditorOpen' => __('Edit', 'hueman'),
-            'textEditorClose' => __('Close Editor', 'hueman'),
+            'skope' => array(
+                //skope reset
+                'Reset the current customizations for' => __('Reset the current customizations for','hueman'),
+                'Reset the theme options published sitewide' => __('Reset the theme options published sitewide','hueman'),
+                'Reset your website published options for' => __('Reset your website published options for','hueman'),
+                'Please confirm that you want to reset your current ( not published ) customizations for' => __('Please confirm that you want to reset your current ( not published ) customizations for','hueman'),
+                'Your customizations have been reset for' => __('Your customizations have been reset for','hueman'),
+                'Please confirm that you want to reset your sitewide published customizations. Note : this will not reset the customizations made in other option scopes' => __('Please confirm that you want to reset your sitewide published customizations. Note : this will not reset the customizations made in other option scopes', 'hueman'),
+                'Please confirm that you want to reset your published customizations for' => __('Please confirm that you want to reset your published customizations for','hueman'),
+                'Your published customizations have been reset for' => __('Your published customizations have been reset for','hueman'),
 
-            //SLIDER MODULE
-            'slideAdded'   => __('New Slide created ! Scroll down to edit it.', 'hueman'),
-            'slideTitle'   => __( 'Slide', 'hueman')
+                //control reset
+                'Reset your customized ( and published ) value' => __('Reset your customized ( and published ) value', 'hueman'),
+                'Reset your customized ( but not yet published ) value' => __('Reset your customized ( but not yet published ) value', 'hueman'),
+                'Not customized yet, nothing to reset' => __('Not customized yet, nothing to reset', 'hueman'),
+                'Reset your customized ( but not yet published ) value' => __('Reset your customized ( but not yet published ) value', 'hueman'),
+                'Please confirm that you want to reset your current customizations for this option' => __( 'Please confirm that you want to reset your current customizations for this option', 'hueman' ),
+                'Please confirm that you want to reset your current customizations for this option in' => __('Please confirm that you want to reset your current customizations for this option in', 'hueman'),
+                'sitewide' => __('sitewide', 'hueman'),
+                'Your customizations have been reset' => __('Your customizations have been reset', 'hueman'),
+                'This WordPress setting can not be reset sitewide' => __('This WordPress setting can not be reset sitewide', 'hueman'),
+                'Please confirm that you want to reset this option' => __('Please confirm that you want to reset this option', 'hueman'),
+                'Please confirm that you want to reset this option in' => __('Please confirm that you want to reset this option in', 'hueman'),
+                'The option has been reset' => __('The option has been reset', 'hueman'),
+
+                //control notices
+                'Display informations about the scope of this option.' => __('Display informations about the scope of this option.', 'hueman'),
+                'This option is always customized sitewide and cannot be reset.' => __('This option is always customized sitewide and cannot be reset.', 'hueman'),
+                'Customized. Will be applied sitewide once published.' => __('Customized. Will be applied sitewide once published.','hueman'),
+                'Customized. Will be applied to' => __('Customized. Will be applied to', 'hueman'),
+                'once published.' => __('once published.', 'hueman'),
+                'Customized and applied sitewide.' => __('Customized and applied sitewide.', 'hueman'),
+                'Customized and applied to' => __('Customized and applied to','hueman'),
+                'Default website value applied sitewide.' => __('Default website value applied sitewide.','hueman'),
+                'Default website value.' => __('Default website value.','hueman'),
+                'You can customize this specifically for' => __('You can customize this specifically for', 'hueman'),
+                'Currently inherited from' => __('Currently inherited from','hueman'),
+                'You can customize this specifically for' => __('You can customize this specifically for','hueman'),
+                'The value currently applied to' => __('The value currently applied to','hueman'),
+                'The value that will be applied to' => __('The value that will be applied to','hueman'),
+                'is set in' => __('is set in','hueman'),
+                'is customized in' => __('is customized in','hueman'),
+
+                //various skope
+                'can only be customized sitewide.' => __('can only be customized sitewide.', 'hueman'),
+                'Menus are created sitewide.' => __('Menus are created sitewide.', 'hueman'),
+                'Widgets are created sitewide.' => __('Widgets are created sitewide.', 'hueman'),
+                'and' => __('and', 'hueman'),
+                'Switch to scope' => __('Switch to scope', 'hueman'),
+                'In this context :' => __('In this context :', 'hueman'),
+                'inherits from' => __('inherits from', 'hueman'),
+                'overridden by' => __('overridden by', 'hueman'),
+
+                //error when loading
+                'There was a problem when trying to load the customizer.' => __('There was a problem when trying to load the customizer.','hueman'),
+                'Please open your' => __('Please open your','hueman'),
+                'browser debug tool' => __('browser debug tool','hueman'),
+                'and report any error message (in red) printed in the javascript console in the' => __('and report any error message (in red) printed in the javascript console in the','hueman'),
+                'Hueman theme forum' => __('Hueman theme forum','hueman'),
+            )
       )
   );
 }
