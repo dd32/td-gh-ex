@@ -51,7 +51,7 @@ input[type="submit"],
 .read-more-button a,
 .paging .nav-links span,
 .howl-email-subs-box,
-.woocommerce #respond input#submit, 
+.woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
@@ -145,4 +145,7 @@ body {
 }
 
 <?php } ?>
+.secondary-navigation .tinynav{
+	background: <?php echo get_theme_mod('mmc-color-setting', '#d23f50') ?>;
+}
 </style>

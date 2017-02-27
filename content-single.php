@@ -11,7 +11,19 @@
 			<div class="postdcp"><?php drag_themes_posted_on(); ?></div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-
+	<?php
+   if(get_theme_mod('aqueduct_featured_toggle', false)){
+		 if ( get_the_post_thumbnail() != '' ) {
+	   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
+	   $source_image_url = get_the_post_thumbnail_url($post->ID, 'aqueduct-xlarge');
+	    echo '<img src="';
+	    echo $source_image_url;
+	    echo '" alt="';the_title();
+	    echo '" />';
+	     echo '</a>';
+	     }
+	 }
+	 ?>
 	<div class="entry-content" itemprop="text">
 		<?php the_content(); ?>
 		<?php

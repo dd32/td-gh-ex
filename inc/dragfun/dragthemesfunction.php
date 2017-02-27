@@ -4,21 +4,8 @@
 /*---------------------------------------------------
 Copyright DragThemes
 ----------------------------------------------------*/
-/**
- * Catching First Image of Post
- */
-function howlthemes_catch_that_image() {
-  global $post, $posts;
-  $first_img = '';
-  ob_start();
-  ob_end_clean();
-  if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches)){
-  $first_img = $matches [1] [0];
-  }
-  return $first_img;
-}
 
- 
+
 function howlthemes_foot(){?>
 <footer id="colophon" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
   <div class="container">
@@ -47,36 +34,36 @@ function howlthemes_foot(){?>
 function howlthemes_customizer( $wp_customize ) {
 
 /*------------------------------------------------------
-*Custom Class 
+*Custom Class
 *-----------------------------------------------*/
 /**
 * for Image Radio Button
 */
 class aqueduct_radio_image extends WP_Customize_Control {
     public $type = 'imageradio';
- 
+
     public function render_content() {
         ?>
             <label>
                 <input type="text" class="headertype" <?php $this->link(); ?> />
 
                 <div class="imgradio_hldr">
-                <img 
+                <img
                 src='<?php echo esc_url( get_template_directory_uri() ) . "/img/default.jpg"; ?> ' class="default_header">
                 </div>
                 <div class="imgradio_hldr">
-                <img 
+                <img
                 src='<?php echo esc_url( get_template_directory_uri() ) . "/img/centered.jpg"; ?> ' class="center_header">
                 </div>
                 <div class="imgradio_hldr">
-                <img 
+                <img
                 src='<?php echo esc_url( get_template_directory_uri() ) . "/img/nobraking.jpg"; ?> ' class="best_header">
                 </div>
                 <style>.imgradio_hldr img{ opacity:.5; } .imgradio_hldr img:hover{ opacity:.9; } .selected_radio{ opacity:1 !important; } input.headertype {display: none;}.imgradio_hldr { margin-bottom: 10px; }</style>
                 <script>
                 jQuery(document).ready(function(){
                 jQuery('.<?php echo get_theme_mod("imageradio") ?>_header').addClass('selected_radio');
-    
+
                 jQuery('.default_header').click(function(){
                   jQuery('.headertype').val('default').change();
                 });
@@ -107,13 +94,13 @@ class aqueduct_radio_image extends WP_Customize_Control {
 
 class aqueduct_homebuilder_Control extends WP_Customize_Control {
     public $type = 'homebuilder';
- 
+
     public function render_content() {
         ?>
         <label>
         <input type="text" class="homebuilderin" <?php $this->link(); ?> />
         </label>
-        
+
         <ul class="sortable-builder">
         <?php if(get_theme_mod("homebuilder") && get_theme_mod("category_remember")){
         $totalslide =  explode(', ', get_theme_mod("homebuilder"));
@@ -195,7 +182,7 @@ class aqueduct_homebuilder_Control extends WP_Customize_Control {
                 }
                 catarrangement = catarrangement + currentcatid+', ';
             });
-            jQuery('#customize-control-category_remember input').val(catarrangement).change(); 
+            jQuery('#customize-control-category_remember input').val(catarrangement).change();
         }
         function selectonchange(){
         jQuery('.idcatcon').on('change', function() {
@@ -237,7 +224,7 @@ class aqueduct_homebuilder_Control extends WP_Customize_Control {
         </style>
 
 
-        
+
         <?php
     }
 }
@@ -257,14 +244,14 @@ class aqueduct_homebuilder_Control extends WP_Customize_Control {
     );
 
 
-$wp_customize->add_setting( 
+$wp_customize->add_setting(
   'imageradio',
     array(
         'default' => 'default',
         'sanitize_callback' => 'sanitize_text_field',
     )
   );
- 
+
 $wp_customize->add_control(
     new aqueduct_radio_image(
         $wp_customize,
@@ -305,7 +292,7 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_key',
     )
 );
- 
+
 $wp_customize->add_control(
     'layout_placement',
     array(
@@ -337,6 +324,30 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'howl
     'settings' => 'howl-themes_bgimg',
 ) ) );
 
+/**
+  * Sanatize Callback
+  */
+  function aqueduct_sanitize_bool( $string ) {
+	return (bool)$string;
+}
+
+// Aqueduct General settings
+$wp_customize->add_section( 'aqueduct_general_settings' , array(
+    'title'       => __( 'Aqueduct Settings', 'aqueduct' ),
+    'priority'    => 30,
+
+) );
+
+$wp_customize->add_setting('aqueduct_featured_toggle', array(
+    'sanitize_callback' => 'aqueduct_sanitize_bool',
+    'default' => false,
+));
+$wp_customize->add_control('aqueduct_featured_toggle', array(
+    'type' => 'checkbox',
+    'label' => __('Show Featured Image on Post Page', 'aqueduct'),
+    'section' => 'aqueduct_general_settings',
+));
+
 // Home Panel
 $wp_customize->add_panel( 'frontpage', array(
   'title' => __( 'Home Page Setting', 'aqueduct'),
@@ -359,7 +370,7 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_key',
     )
 );
- 
+
 $wp_customize->add_control(
     'home_display',
     array(
@@ -381,7 +392,7 @@ $wp_customize->add_section( 'howl-themes_newsbox_one' , array(
 ) );
 
 
-$wp_customize->add_setting( 
+$wp_customize->add_setting(
   'homebuilder',
     array(
         'sanitize_callback' => 'sanitize_text_field',
@@ -436,6 +447,31 @@ $wp_customize->add_control(
             'label' => __('Choose Color', 'aqueduct' ),
             'section' => 'howl-themes_theme_color',
             'settings' => 'color-setting',
+        )
+    )
+);
+//Mobile Menu color
+$wp_customize->add_section( 'aqueduct-mmc-section' , array(
+    'title'       => __( 'Mobile Menu Color', 'aqueduct' ),
+    'priority'    => 30,
+    'panel' => 'styling',
+) );
+
+$wp_customize->add_setting(
+    'mmc-color-setting',
+    array(
+        'default' => '#d23f50',
+        'sanitize_callback' => 'sanitize_hex_color',
+    )
+);
+$wp_customize->add_control(
+    new WP_Customize_Color_Control(
+        $wp_customize,
+        'mmc-color-setting',
+        array(
+            'label' => __('Choose Color', 'aqueduct' ),
+            'section' => 'aqueduct-mmc-section',
+            'settings' => 'mmc-color-setting',
         )
     )
 );
@@ -583,7 +619,7 @@ $wp_customize->add_control(
  */
 class aqueduct_Customize_Textarea_Control extends WP_Customize_Control {
     public $type = 'fontsize';
- 
+
     public function render_content() {
         ?>
             <label>
@@ -598,14 +634,14 @@ $wp_customize->add_section( 'howl-themes_fontsize' , array(
     'priority'    => 30,
     'panel' => 'typo',
 ) );
-$wp_customize->add_setting( 
+$wp_customize->add_setting(
   'fontsize',
     array(
         'default' => '18',
         'sanitize_callback' => 'sanitize_text_field',
     )
   );
- 
+
 $wp_customize->add_control(
     new aqueduct_Customize_Textarea_Control(
         $wp_customize,
@@ -743,8 +779,14 @@ add_action( 'customize_register', 'howlthemes_customizer' );
 /**
  * Enqueue script for custom customize control.
  */
-function custom_customize_enqueue() {
+function aqueduct_customize_enqueue() {
        wp_enqueue_script( 'jqueryui-customize', '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery', 'customize-controls' ), true );
        wp_enqueue_script( 'customjs-customize', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-controls' ), true );
+
+       wp_localize_script( 'customjs-customize', 'aqueduct_customizer_local_obj', array(
+
+       'fivestartxt' => __('Please Give Us 5 Stars','aqueduct'),
+
+    ) );
 }
-add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
+add_action( 'customize_controls_enqueue_scripts', 'aqueduct_customize_enqueue' );

@@ -17,37 +17,15 @@
 
 	<div class="entry-content">
 		<div class="thumbnail-container" itemprop="image">
-		<?php 
+		<?php
  if ( get_the_post_thumbnail() != '' ) {
  	echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 250 && $imginfo[1] >= 200){
-  $resizedImage = aq_resize($source_image_url, 250, 200, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'medium');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-} elseif(howlthemes_catch_that_image()){
- $source_image_url = howlthemes_catch_that_image();
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 250 && $imginfo[1] >= 200){
-  $resizedImage = aq_resize($source_image_url, 250, 200, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
- echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
- echo '<img src="';
- echo $resizedImage;
- echo '" alt="';the_title();
- echo '" />';
- echo '</a>';
 }
 else{
 	 echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';

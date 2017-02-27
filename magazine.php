@@ -18,36 +18,13 @@ while($featpost->have_posts()) : $featpost->the_post();
 if($newnum != 1){
   if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 250 && $imginfo[1] >= 200){
-  $resizedImage = aq_resize($source_image_url, 250, 200, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'medium');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
 }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-   $imginfo = getimagesize($source_image_url);
-    if($imginfo[0] >= 250 && $imginfo[1] >= 200){
-   $resizedImage = aq_resize($source_image_url, 250, 200, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
-    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -60,36 +37,13 @@ if($newnum != 1){
   else{
  if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 586 && $imginfo[1] >= 420){
-  $resizedImage = aq_resize($source_image_url, 586, 420, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'aqueduct-xlarge');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
 }
- elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-   $imginfo = getimagesize($source_image_url);
-     if($imginfo[0] >= 586 && $imginfo[1] >= 420){
-   $resizedImage = aq_resize($source_image_url, 586, 420, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
-    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -153,35 +107,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <div class="slider-img-con" itemprop="image">
   <?php if ( get_the_post_thumbnail() != '' ) {
   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 740 && $imginfo[1] >= 400){
-  $resizedImage = aq_resize($source_image_url, 740, 400, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'aqueduct-xlarge');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-   $imginfo = getimagesize($source_image_url);
-   if($imginfo[0] >= 740 && $imginfo[1] >= 400){
-   $resizedImage = aq_resize($source_image_url, 740, 400, true);
-   }
-   else{
-   $resizedImage = $source_image_url;
-   }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -214,35 +145,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <div class="imgcarholder" itemprop="image">
  <?php if ( get_the_post_thumbnail() != '' ) {
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 300 && $imginfo[1] >= 180){
-  $resizedImage = aq_resize($source_image_url, 300, 180, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'medium');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-   elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 300 && $imginfo[1] >= 180){
-  $resizedImage = aq_resize($source_image_url, 300, 180, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -277,35 +185,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
  <?php
  if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 477 && $imginfo[1] >= 247){
-  $resizedImage = aq_resize($source_image_url, 477, 247, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'aqueduct-large');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 477 && $imginfo[1] >= 247){
-  $resizedImage = aq_resize($source_image_url, 477, 247, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -329,35 +214,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <div class="grid-posts-small" itemprop="image">
  <?php if ( get_the_post_thumbnail() != '' ) {
   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 250 && $imginfo[1] >= 160){
-  $resizedImage = aq_resize($source_image_url, 250, 160, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'medium');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
-  $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 250 && $imginfo[1] >= 160){
-   $resizedImage = aq_resize($source_image_url, 250, 160, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -384,35 +246,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <?php
   if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 365 && $imginfo[1] >= 220){
-  $resizedImage = aq_resize($source_image_url, 365, 220, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'aqueduct-large');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 365 && $imginfo[1] >= 220){
-  $resizedImage = aq_resize($source_image_url, 365, 220, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -446,35 +285,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 <?php if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-  $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 220 && $imginfo[1] >= 170){
-  $resizedImage = aq_resize($source_image_url, 220, 170, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
+  $source_image_url = get_the_post_thumbnail_url($post->ID, 'medium');
    echo '<img src="';
-   echo $resizedImage;
+   echo $source_image_url;
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    }
-    elseif(howlthemes_catch_that_image()){
-   $source_image_url = howlthemes_catch_that_image();
- $imginfo = getimagesize($source_image_url);
-  if($imginfo[0] >= 220 && $imginfo[1] >= 170){
-  $resizedImage = aq_resize($source_image_url, 220, 170, true);
-  }
-  else{
-  $resizedImage = $source_image_url;
-  }
-   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
-   echo '<img src="';
-   echo $resizedImage;
-   echo '" alt="';the_title();
-   echo '" />';
-   echo '</a>';
     }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
