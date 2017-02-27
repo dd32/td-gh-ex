@@ -68,7 +68,7 @@ class App_Landing_Page_Recent_Post extends WP_Widget {
                             <?php if( $show_date ) { ?>
                                 <div class="entry-meta">
                                     <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                        <time datetime="<?php printf( __( '%1$s', 'app-landing-page' ), get_the_date('Y-m-d') ); ?>"><?php printf( __( '%1$s', 'app-landing-page' ), get_the_date('F j, Y') ); ?></time></a>
+                                        <time datetime="<?php printf( '%1$s', get_the_date('Y-m-d') ); ?>"><?php printf( '%1$s', get_the_date('F j, Y') ); ?></time></a>
                                     </span>
                                 </div>
                             <?php } ?>

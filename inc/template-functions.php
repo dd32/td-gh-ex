@@ -101,7 +101,7 @@ if( ! function_exists( 'app_landing_page_breadcrumbs_cb' ) ) :
 function app_landing_page_breadcrumbs_cb() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_separator', __( '>', 'app-landing-page' ) ) ); // delimiter between crumbs
+  $delimiter = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_separator', '>' ) ); // delimiter between crumbs
   $home = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_home_text', __( 'Home', 'app-landing-page' ) ) ); // text for the 'Home' link
   $showCurrent = get_theme_mod( 'app_landing_page_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
@@ -237,7 +237,7 @@ function app_landing_page_page_header(){
                         <?php
                             if( is_search() ){ 
                                 printf( esc_html__( '%s Search Results for ','app-landing-page' ), $wp_query->found_posts ); 
-                                printf( esc_html__( '%s', 'app-landing-page' ), get_search_query() ); }
+                                printf( '%s', get_search_query() ); }
                             elseif( is_404() ){ esc_html_e( '404 - Page Not Found ' ,'app-landing-page' ); } 
                             elseif( is_page() ){ the_title(); }
                             elseif( is_archive() ){ the_archive_title(); }
@@ -252,8 +252,6 @@ function app_landing_page_page_header(){
          } 
 } 
 endif;
-
-add_action( 'app_landing_page_header_main', 'app_landing_page_page_header');
 
 
 if( ! function_exists( 'app_landing_page_content_start' ) ) :
@@ -388,7 +386,6 @@ function app_landing_page_post_author(){
     }  
 }
 endif;
-add_action( 'app_landing_page_author_info_box', 'app_landing_page_post_author' );
 
 if( ! function_exists( 'app_landing_page_get_comment_section' ) ) :
 /**
@@ -462,14 +459,11 @@ if( ! function_exists( 'app_landing_page_footer_credit' ) ) :
  */
 function app_landing_page_footer_credit(){
       
-    echo '<div class="site-info">';
-    esc_html_e( '&copy;&nbsp;', 'app-landing-page' ); 
+    echo '<div class="site-info">&copy;&nbsp;';
     echo esc_html( date_i18n( 'Y' ), 'app-landing-page' );
-    esc_html_e( '&nbsp;', 'app-landing-page' );
-    echo ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
-    esc_html_e( '.&nbsp;', 'app-landing-page' );
-    printf( esc_html__( '%s', 'app-landing-page' ), '<a href="'. esc_url( __( 'http://raratheme.com/wordpress-themes/app-landing-page/', 'app-landing-page' ) ) .'" target="_blank">'. esc_html__( 'App Landing Page By Rara Theme. ', 'app-landing-page' ) .'</a>' );
-    printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'app-landing-page' ) ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>' );
+    echo ' &nbsp;<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.&nbsp;';
+    printf( '%s', '<a href="'. esc_url( 'http://raratheme.com/wordpress-themes/app-landing-page/' ) .'" target="_blank">'. esc_html__( 'App Landing Page By Rara Theme. ', 'app-landing-page' ) .'</a>' );
+    printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( 'https://wordpress.org/', 'app-landing-page' ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>' );
     echo '</div>';
 }
 endif;

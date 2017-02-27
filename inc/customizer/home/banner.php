@@ -134,7 +134,7 @@ function app_landing_page_customize_register_banner( $wp_customize ) {
     $wp_customize->add_setting(
         'app_landing_page_banner_button_url',
         array(
-            'default' => __( '#', 'app-landing-page' ),
+            'default' => '#',
             'sanitize_callback' => 'esc_url_raw',
         )
     );

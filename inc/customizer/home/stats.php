@@ -248,7 +248,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_stats_button_link',
         array(
-            'default' => __( '#', 'app-landing-page' ),
+            'default' => '#',
             'sanitize_callback' => 'esc_url_raw',
         )
     );

@@ -7,7 +7,7 @@
 
 $app_landing_page_stats_page = get_theme_mod( 'app_landing_page_stats_page' );
 $app_landing_page_stats_button = get_theme_mod( 'app_landing_page_stats_button', __( 'Download Button', 'app-landing-page' ) );
-$app_landing_page_stats_button_link = get_theme_mod( 'app_landing_page_stats_button_link', __( '#', 'app-landing-page' ) );
+$app_landing_page_stats_button_link = get_theme_mod( 'app_landing_page_stats_button_link', '#' );
 $app_landing_page_year = get_theme_mod( 'app_landing_page_date_year' );
 $app_landing_page_month = get_theme_mod( 'app_landing_page_date_month' );
 $app_landing_page_date_odd = get_theme_mod( 'app_landing_page_date_day_odd' );

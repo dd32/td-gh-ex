@@ -48,11 +48,11 @@ add_action( 'app_landing_page_before_content', 'app_landing_page_content_start',
 add_action( 'app_landing_page_breadcrumbs', 'app_landing_page_breadcrumbs_cb' );
 
 /**
- * app_landing_page Content
+ * Page header
  * 
- * @see app_landing_page_content_start
+ * @see app_landing_page_page_header
 */
-//add_action( 'app_landing_page_content', 'app_landing_page_content_start' );
+add_action( 'app_landing_page_header_main', 'app_landing_page_page_header');
 
 /**
  * Before Page entry content
@@ -92,7 +92,7 @@ add_action( 'app_landing_page_before_search_entry_summary', 'app_landing_page_po
  * 
  * @see app_landing_page_post_author  - 10
 */
-add_action( 'app_landing_page_after_post_content', 'app_landing_page_post_author', 10 );
+add_action( 'app_landing_page_author_info_box', 'app_landing_page_post_author',10 );
 
 
 /**
@@ -102,6 +102,7 @@ add_action( 'app_landing_page_after_post_content', 'app_landing_page_post_author
 */
 
 add_action( 'app_landing_page_after_post_entry_content', 'app_landing_page_post_entry_header_after', 10 );
+
 
 /**
  * app_landing_page Comment

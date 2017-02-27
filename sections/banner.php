@@ -10,7 +10,7 @@ $app_landing_page_banner_button_one_url = get_theme_mod( 'app_landing_page_banne
 $app_landing_page_banner_button_two = get_theme_mod( 'app_landing_page_banner_button_two' );
 $app_landing_page_banner_button_two_url = get_theme_mod( 'app_landing_page_banner_button_two_url' );
 $app_landing_page_banner_button_text = get_theme_mod( 'app_landing_page_banner_button_text', __( 'Download Now', 'app-landing-page' ) );
-$app_landing_page_banner_button_url = get_theme_mod( 'app_landing_page_banner_button_url', __( '#', 'app-landing-page' ) );
+$app_landing_page_banner_button_url = get_theme_mod( 'app_landing_page_banner_button_url', '#' );
 
 
 if( have_posts() ){                

@@ -13,7 +13,7 @@ if( $app_landing_page_featured_cat ){
         echo '<div class="container">';
         	if( $app_landing_page_featured_section_title ) echo '<h2 class="title">' . esc_html( $app_landing_page_featured_section_title ) . '</h2>'; 
         		$blog_qry = new WP_Query( array( 
-        			'cat' 					=> esc_html( 'app_landing_page_featured_cat' ),
+        			'cat' 					=> $app_landing_page_featured_cat,
         			'post_status'           => 'publish',
         			'posts_per_page'		=> 6,
         			'ignore_sticky_posts'   => true ) );

@@ -53,24 +53,6 @@ function app_landing_page_setup() {
 		'search-form',
 		'comment-form',
 		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-		'gallery',
-        'status',
-        'audio', 
-        'chat'
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -97,7 +79,6 @@ function app_landing_page_setup() {
 
 }
 endif;
-add_action( 'after_setup_theme', 'app_landing_page_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,7 +90,6 @@ add_action( 'after_setup_theme', 'app_landing_page_setup' );
 function app_landing_page_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'app_landing_page_content_width', 750 );
 }
-add_action( 'after_setup_theme', 'app_landing_page_content_width', 0 );
 
 
 /**
@@ -190,7 +170,7 @@ function app_landing_page_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'app_landing_page_scripts' );
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -245,8 +225,6 @@ function app_landing_page_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'app_landing_page_categories' );
 }
-add_action( 'edit_category', 'app_landing_page_category_transient_flusher' );
-add_action( 'save_post',     'app_landing_page_category_transient_flusher' );
 
 /** 
  * Hook to move comment text field to the bottom in WP 4.4 

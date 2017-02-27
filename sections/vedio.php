@@ -7,7 +7,7 @@
 
 $app_landing_page_vedio_section_page = get_theme_mod( 'app_landing_page_vedio_section_page' );
 $app_landing_page_vedio_video = get_theme_mod( 'app_landing_page_vedio_video' );
-$app_landing_page_vedio_section_button_link=  get_theme_mod( 'app_landing_page_vedio_section_button_link' , __( '#', 'app-landing-page' ) );
+$app_landing_page_vedio_section_button_link=  get_theme_mod( 'app_landing_page_vedio_section_button_link' , '#' );
 $app_landing_page_vedio_section_button = get_theme_mod( 'app_landing_page_vedio_section_button' , __( 'Download Button', 'app-landing-page' ) );
 
 if( $app_landing_page_vedio_section_page || $app_landing_page_vedio_video ){

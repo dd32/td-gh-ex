@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-12-07 07:01+0000\n"
+"POT-Creation-Date: 2017-02-27 12:39+0000\n"
 "POT-Revision-Date: Wed May 11 2016 14:55:55 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -118,69 +118,47 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/extras.php:30
-#, php-format
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#: inc/extras.php:49
+#: inc/extras.php:41
 #, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
 #. translators: %s: post title
-#: inc/extras.php:62
+#: inc/extras.php:54
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/extras.php:69 inc/extras.php:75
-msgid ", "
-msgstr ""
-
-#: inc/extras.php:71 inc/extras.php:77 inc/widgets/widget-popular-post.php:74
-#: inc/widgets/widget-recent-post.php:71 inc/widgets/widget-recent-post.php:71
-#, php-format
-msgid "%1$s"
-msgstr ""
-
 #. translators: %s: Name of current post
-#: inc/extras.php:95 template-parts/content-page.php:38
+#: inc/extras.php:87 template-parts/content-page.php:38
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: inc/extras.php:161
-#, php-format
-msgid "<b class=\"fn\">%s</b>"
-msgstr ""
-
-#: inc/extras.php:164
+#: inc/extras.php:156
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/extras.php:168
+#: inc/extras.php:160
 msgid "Posted on&nbsp;"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: inc/extras.php:171
+#: inc/extras.php:163
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/extras.php:171
+#: inc/extras.php:163
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:193
+#: inc/extras.php:185
 msgid "<span class=\"fa fa-angle-double-left\"></span>"
 msgstr ""
 
-#: inc/extras.php:194
+#: inc/extras.php:186
 msgid "<span class=\"fa fa-angle-double-right\"></span>"
 msgstr ""
 
@@ -198,10 +176,6 @@ msgstr ""
 
 #: inc/metabox.php:42
 msgid "Choose Sidebar Template"
-msgstr ""
-
-#: inc/template-functions.php:104 inc/customizer/breadcrumb.php:79
-msgid ">"
 msgstr ""
 
 #: inc/template-functions.php:105 inc/customizer/breadcrumb.php:61
@@ -225,11 +199,6 @@ msgstr ""
 msgid "%s Search Results for "
 msgstr ""
 
-#: inc/template-functions.php:240 inc/template-functions.php:471
-#, php-format
-msgid "%s"
-msgstr ""
-
 #: inc/template-functions.php:241
 msgid "404 - Page Not Found "
 msgstr ""
@@ -242,48 +211,21 @@ msgstr ""
 msgid "Posted on "
 msgstr ""
 
-#: inc/template-functions.php:466
-msgid "&copy;&nbsp;"
-msgstr ""
-
 #: inc/template-functions.php:468
-msgid "&nbsp;"
-msgstr ""
-
-#: inc/template-functions.php:470
-msgid ".&nbsp;"
-msgstr ""
-
-#: inc/template-functions.php:471
-msgid "http://raratheme.com/wordpress-themes/app-landing-page/"
-msgstr ""
-
-#: inc/template-functions.php:471
 msgid "App Landing Page By Rara Theme. "
 msgstr ""
 
-#: inc/template-functions.php:472
+#: inc/template-functions.php:469
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/template-functions.php:472
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: inc/template-functions.php:472
+#: inc/template-functions.php:469
 msgid "WordPress"
 msgstr ""
 
 #: sections/banner.php:12 inc/customizer/home/banner.php:119
 msgid "Download Now"
-msgstr ""
-
-#: sections/banner.php:13 sections/service.php:21 sections/stats.php:10
-#: sections/vedio.php:10 inc/customizer/home/banner.php:137
-#: inc/customizer/home/service.php:250 inc/customizer/home/stats.php:251
-#: inc/customizer/home/vedio.php:99
-msgid "#"
 msgstr ""
 
 #: sections/service.php:20 sections/stats.php:9 sections/vedio.php:11

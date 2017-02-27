@@ -18,7 +18,7 @@ $app_landing_page_service_seven_post = get_theme_mod( 'app_landing_page_service_
 $app_landing_page_service_eight_post = get_theme_mod( 'app_landing_page_service_post_eight' );
 
 $app_landing_page_service_section_button = get_theme_mod( 'app_landing_page_service_section_button', __( 'Download Button', 'app-landing-page' ) );
-$app_landing_page_service_section_button_link = get_theme_mod( 'app_landing_page_service_section_button_link' , __( '#', 'app-landing-page' ) );
+$app_landing_page_service_section_button_link = get_theme_mod( 'app_landing_page_service_section_button_link' , '#' );
 
 if( $app_landing_page_service_one_post || $app_landing_page_service_two_post || $app_landing_page_service_three_post || $app_landing_page_service_four_post || $app_landing_page_service_five_post || $app_landing_page_service_six_post || $app_landing_page_service_seven_post || $app_landing_page_service_eight_post ) { 
 

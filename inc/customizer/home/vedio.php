@@ -96,7 +96,7 @@ function app_landing_page_customize_register_vedio( $wp_customize ) {
     $wp_customize->add_setting(
         'app_landing_page_vedio_section_button_link',
         array(
-            'default' => __( '#', 'app-landing-page' ),
+            'default' => '#',
             'sanitize_callback' => 'esc_url_raw',
         )
     );

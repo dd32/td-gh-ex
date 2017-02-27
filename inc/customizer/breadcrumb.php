@@ -76,7 +76,7 @@ function app_landing_page_customize_register_breadcrumbs( $wp_customize ) {
     $wp_customize->add_setting(
         'app_landing_page_breadcrumb_separator',
         array(
-            'default' => __( '>', 'app-landing-page' ),
+            'default' => '>',
             'sanitize_callback' => 'sanitize_text_field',
         )
     );

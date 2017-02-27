@@ -71,7 +71,7 @@ class App_Landing_Page_Popular_Post extends WP_Widget {
                                 <div class="entry-meta">
                                     <span class="posted-on">
                                         <a href="<?php the_permalink(); ?>">
-                                            <time><?php printf( esc_html__( '%1$s', 'app-landing-page' ), get_the_date() ); ?></time>
+                                            <time><?php printf( '%1$s', get_the_date() ); ?></time>
                                         </a>                                    
                                     </span>
                                 </div>

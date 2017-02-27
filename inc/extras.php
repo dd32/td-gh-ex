@@ -14,25 +14,17 @@ if ( ! function_exists( 'app_landing_page_author_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function app_landing_page_author_posted_on() {
+
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_html( get_the_date() )
 	);
-
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'app-landing-page' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	echo $posted_on; // WPCS: XSS OK.
-
+    
+	echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 }
 endif;
@@ -66,15 +58,15 @@ function app_landing_page_posted_on() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) { 
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'app-landing-page' ) );
+		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && app_landing_page_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'app-landing-page' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'app-landing-page' ) );
+		$tags_list = get_the_tag_list('',', ','' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'app-landing-page' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">%1$s</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -158,7 +150,7 @@ function app_landing_page_categorized_blog() {
     
         <div class="comment-author vcard">
     	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    	<?php printf( __( '<b class="fn">%s</b>', 'app-landing-page' ), get_comment_author_link() ); ?>
+    	<?php printf( '<b class="fn">%s</b>', get_comment_author_link() ); ?>
     	</div>
     	<?php if ( $comment->comment_approved == '0' ) : ?>
     		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'app-landing-page' ); ?></em>
