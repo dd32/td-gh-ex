@@ -130,40 +130,25 @@ if (!function_exists('alhenalite_require')) {
 	function alhenalite_require($folder) {
 	
 		if (isset($folder)) : 
-	
-			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
 		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 						
-						if ( !is_dir( $dir . $value) ) { 
+					if ( !is_dir( $dir . $value) ) { 
 							
-							require_once $dir . $value;
+						require_once $dir . $value;
 						
-						} 
-					
 					} 
+					
+				} 
 
-				}  
-			
-			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
+			}  
 				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-					
-						require_once get_template_directory()."/".$folder.$filename;
-					
-					}
-				}
-			}
 		
 		endif;
 		
@@ -179,44 +164,26 @@ if (!function_exists('alhenalite_enqueue_script')) {
 
 	function alhenalite_enqueue_script($folder) {
 	
-		if (isset($folder)) : 
+		if ( isset($folder) ) : 
 	
-			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
-		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 						
-						if ( !is_dir( $dir . $value) ) { 
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
 							
-							wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
+						wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
 						
-						} 
-					
 					} 
-
-				}  
-
-			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
 					
-					}
-					
-				}
-		
-			}
-			
+				} 
+
+			}  
+
 		endif;
 	
 	}
@@ -233,42 +200,24 @@ if (!function_exists('alhenalite_enqueue_style')) {
 	
 		if (isset($folder)) : 
 	
-			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
-			
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 						
-						if ( !is_dir( $dir . $value) ) { 
-							
-							wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
 						
-						} 
-					
+						wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
+						
 					} 
+					
+				} 
 
-				}  
+			}  
 			
-			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
-				
-					}
-				
-				}
-			
-			}
-		
 		endif;
 	
 	}
@@ -427,9 +376,9 @@ if (!function_exists('alhenalite_customize_excerpt_more')) {
 		);
 
 		$more = 0;
-	
-		if ($pos=strpos($post->post_content, '<!--more-->')): 
-		
+
+		if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
+
 			$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
 		
 		else:

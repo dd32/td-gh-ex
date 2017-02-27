@@ -12,7 +12,11 @@
 
 if (!function_exists('alhenalite_post_info_function')) {
 	
-	function alhenalite_post_info_function() { ?>
+	function alhenalite_post_info_function() { 
+	
+		global $post;
+		
+?>
 
         <div class="entry-info">
            
