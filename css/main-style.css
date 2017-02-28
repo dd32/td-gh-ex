@@ -653,6 +653,7 @@ body.left-sidebar .ot-sidebar {
 .nav ul li {
 	padding: 0px;
 	margin-bottom: -2px;
+	position: relative;
 }
 
 .navbar .navbar-nav>.open>a, .navbar .navbar-nav>.open>a:focus, .navbar .navbar-nav>.open>a:hover {
@@ -676,6 +677,11 @@ body.left-sidebar .ot-sidebar {
 
 	.sub-menu>li>a:hover {
 		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	.navbar ul ul li:hover > ul, .navbar ul ul li.focus > ul {
+		left: 100%;
+		top: 0;
 	}
 
 	.navbar

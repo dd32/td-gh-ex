@@ -121,8 +121,8 @@
 			add_theme_support( 'post-thumbnails' );
 			set_post_thumbnail_size( 1200, 9999 );
 			add_image_size( 'asterion-single-thumbnail', 750, 550, true );
-			add_image_size( 'asterion-single-thumbnail-full', 1140, 660, true );
-			add_image_size( 'asterion-blog-thumbnaill-full', 1140, 660, true );
+			add_image_size( 'asterion-single-full-thumbnail', 1140, 660, true );
+			add_image_size( 'asterion-blog-full-thumbnail', 1140, 660, true );
 			add_image_size( 'asterion-blog-thumbnail', 750, 500, true );
 			add_image_size( 'asterion-portfolio', 774, 516, true );
 			add_image_size( 'asterion-testimonials', 90, 90, true );
@@ -476,7 +476,7 @@
 			//front page sidebars 
 			register_sidebar( 
 				array(
-					'name'          => esc_html__( 'Features Sidebar', 'asterion' ),
+					'name'          => esc_html__( 'Features Widget Area in Front Page', 'asterion' ),
 					'id'            => 'sidebar-features',
 					'description'   => esc_html__( 'Front page features panel widgets section', 'asterion' ),
 	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
@@ -487,7 +487,7 @@
 			);
 			register_sidebar( 
 				array(
-					'name'          => esc_html__( 'Team Sidebar', 'asterion' ),
+					'name'          => esc_html__( 'Team Widget Area in Front Page', 'asterion' ),
 					'id'            => 'sidebar-team',
 					'description'   => esc_html__( 'Front page team panel widgets section', 'asterion' ),
 	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',

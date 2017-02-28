@@ -1,12 +1,12 @@
 ﻿== ABOUT THEME == 
 
 Theme Name : Asterion
-Version    : 1.0.1
-Theme URL  : http://www.orange-themes.com/asterion/
-Theme Documentation  : http://www.orange-themes.com/asterion-documentation/
+Version    : 1.0.3
+Theme URL  : https://www.orange-themes.com/asterion/
+Theme Documentation  : https://www.orange-themes.com/asterion-documentation/
 
 Author:     Orange Themes
-Author URL: http://www.orange-themes.com/
+Author URL: https://www.orange-themes.com/
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -61,6 +61,8 @@ After Creating the menu select the Theme Location of the menu.(It’s under the 
 Hit Save.
 
 ==== THEME CHANGELOG ====
+= 1.0.3 =
+* Minor bug fixes
 = 1.0.2 =
 * Minor bug fixes
 = 1.0.1 =

@@ -31,7 +31,7 @@
 	$bg_color = get_theme_mod('asterion_testimonials_bg_color', '#ffffff');
 	$text_color = get_theme_mod('asterion_testimonials_text_color', 0);
 ?>
-<?php if( $title != "" || $text != "" || $jetpack_testimonials_query->have_posts() ) : ?>
+<?php if( ( $title != "" || $text != "" ) && $jetpack_testimonials_query->have_posts() && post_type_exists( 'jetpack-testimonial' ) ) : ?>
 	<section id="testimonials" class="ot-section <?php echo esc_attr(( $text_color == 1 ) ? 'text-light' : 'text-dark'); ?>" style="background-color:<?php echo esc_attr( $bg_color );?>">
 		<div class="ot-container">
 			<?php if( $title || $text) { ?>

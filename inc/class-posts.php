@@ -28,7 +28,7 @@
 							if( is_active_sidebar( 'blog-sidebar' ) && !is_page_template('page-templates/no-sidebar.php') ) {
 								the_post_thumbnail( 'asterion-single-thumbnail' ); 
 							} else {
-								the_post_thumbnail( 'asterion-single-thumbnail-full' ); 
+								the_post_thumbnail( 'asterion-single-full-thumbnail' ); 
 							}
 						?>
 					</a>
@@ -42,7 +42,7 @@
 							if( is_active_sidebar( 'blog-sidebar' ) ) {
 								the_post_thumbnail( 'asterion-blog-thumbnail' ); 
 							} else {
-								the_post_thumbnail( 'asterion-blog-thumbnaill-full' ); 
+								the_post_thumbnail( 'asterion-blog-full-thumbnail' ); 
 							}
 						?>
 					</a>

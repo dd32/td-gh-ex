@@ -38,7 +38,7 @@
 			<?php endif; ?>
 
 			<?php if ( is_active_sidebar( 'sidebar-team' ) ) : ?>
-				<div class="row <?php asterion()->home->widget_counter('sidebar-team');?>">
+				<div class="row <?php asterion()->home->widget_counter_class('sidebar-team');?>">
 					<?php dynamic_sidebar( 'sidebar-team' ); ?>
 				</div>
 			<?php elseif( is_customize_preview() && defined("OT_WIDGETS") ): ?>

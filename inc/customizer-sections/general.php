@@ -109,7 +109,7 @@ $wp_customize->add_control(
 $wp_customize->selective_refresh->add_partial( $prefix . '_copyright', 
     array(
         'selector'            => '.ot-footer .ot-copyright',
-        'container_inclusive' => true,
+        'container_inclusive' => true
     ) 
 );
 

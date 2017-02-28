@@ -89,7 +89,7 @@
 								$args =	array(
 											'menu'              => 'main-menu',
 											'theme_location'    => 'main-menu',
-											'depth'             => 2,
+											'depth'             => 3,
 											'container'         => 'nav',
 											'container_class'   => 'asterion-navigation nav',
 											'menu_class'        => 'menu menu-right',

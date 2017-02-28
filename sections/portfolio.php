@@ -34,7 +34,7 @@
 	$overlay_color = get_theme_mod('asterion_portfolio_image_overlay_color', '#1a1a1a');
 
 ?>
-<?php if( $title != "" || $text != "" || $jetpack_portfolio_query->have_posts() ) : ?>
+<?php if( ( $title != "" || $text != "" ) && $jetpack_portfolio_query->have_posts() && post_type_exists( 'jetpack-portfolio' ) ) : ?>
 	<section id="portfolio" class="ot-section <?php echo esc_attr(( $text_color == 1 ) ? 'text-light' : 'text-dark'); ?>" style="background-color:<?php echo esc_attr( $bg_color );?>">
 		<div class="ot-container">
 			<?php if( $title || $text) { ?>
