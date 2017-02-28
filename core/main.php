@@ -180,6 +180,7 @@ if (!function_exists('bazaarlite_setup')) {
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/breadcrumb.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/footer_sidebar.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/header_sidebar.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/header-slideshow.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/masonry.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/media.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/pagination.php' );

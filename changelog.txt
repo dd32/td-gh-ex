@@ -1,5 +1,10 @@
 Bazaar Lite Changelog
 
+- Version 1.3.4 - Released: 28.02.2017
+
+-- Fixed : Now each default image from slideshow is hidden when you remove the image URL
+-- Edit : Code optimized.
+
 - Version 1.3.3 - Released: 20.02.2017
 
 -- Edit : Default slideshow images optimized.

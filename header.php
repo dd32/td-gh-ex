@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?>>
 <head>
    
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
@@ -75,59 +74,8 @@
 
 	if ( is_front_page() ) {
 
-		if ( bazaarlite_setting('wip_enable_slideshow') == 'on' || !bazaarlite_setting('wip_enable_slideshow') ) : 
-		
-?>
-	
-		<div class="slick-wrapper">
-	
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_1_image', get_template_directory_uri().'/assets/images/slideshow/img01.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_1_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_1_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_1_cta','Get Now'))?></a>
-		   
-			</div>
-		
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_2_image', get_template_directory_uri().'/assets/images/slideshow/img02.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_2_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_2_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_2_cta','Get Now'))?></a>
-		   
-			</div>
-		
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_3_image', get_template_directory_uri().'/assets/images/slideshow/img03.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_3_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_3_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_3_cta','Get Now'))?></a>
-		   
-			</div>
-		
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_4_image', get_template_directory_uri().'/assets/images/slideshow/img04.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_4_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_4_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_4_cta','Get Now'))?></a>
-		   
-			</div>
-		
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_5_image', get_template_directory_uri().'/assets/images/slideshow/img05.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_5_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_5_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_5_cta','Get Now'))?></a>
-		   
-			</div>
-		
-			<div class="slick-image" style="background-image:url('<?php echo esc_url(bazaarlite_setting('wip_slideshow_6_image', get_template_directory_uri().'/assets/images/slideshow/img06.jpg'))?>')">
-			
-				<p class="slick-title"><?php echo esc_html(bazaarlite_setting('wip_slideshow_6_title','Welcome to Bazaar Lite'))?></p>
-				<a class="button" href="<?php echo esc_url(bazaarlite_setting('wip_slideshow_6_url','#'))?>"><?php echo esc_html(bazaarlite_setting('wip_slideshow_6_cta','Get Now'))?></a>
-		   
-			</div>
-		
-		</div>
-	
-<?php
-	
-		endif;
+		if ( bazaarlite_setting('wip_enable_slideshow') == 'on' || !bazaarlite_setting('wip_enable_slideshow') )
+			do_action('bazaarlite_header_slideshow');
 	
 	} else {
 	

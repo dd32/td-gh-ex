@@ -158,6 +158,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_1_default_image",
+				"type" => "select",
+				"section" => "slideshow_1",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
+			),
+
 			array( 
 
 				"label" => __( "Image",'bazaar-lite'),
@@ -214,6 +230,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_2_default_image",
+				"type" => "select",
+				"section" => "slideshow_2",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
+			),
+
 			array( 
 
 				"label" => __( "Image",'bazaar-lite'),
@@ -268,6 +300,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"priority" => "10",
 				"id" => "slideshow_3",
 
+			),
+			
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_3_default_image",
+				"type" => "select",
+				"section" => "slideshow_3",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
 			),
 
 			array( 
@@ -326,6 +374,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_4_default_image",
+				"type" => "select",
+				"section" => "slideshow_4",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
+			),
+
 			array( 
 
 				"label" => __( "Image",'bazaar-lite'),
@@ -382,6 +446,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_5_default_image",
+				"type" => "select",
+				"section" => "slideshow_5",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
+			),
+
 			array( 
 
 				"label" => __( "Image",'bazaar-lite'),
@@ -436,6 +516,22 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"priority" => "10",
 				"id" => "slideshow_6",
 
+			),
+
+			array(
+				
+				"label" => __( "Default image",'bazaar-lite'),
+				"description" => __( "Do you want to hide this slideshow item?",'bazaar-lite'),
+				"id" => "wip_slideshow_6_default_image",
+				"type" => "select",
+				"section" => "slideshow_6",
+				"options" => array (
+				   "off" => __( "No",'bazaar-lite'),
+				   "on" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "off",
+			
 			),
 
 			array( 
