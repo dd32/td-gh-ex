@@ -287,24 +287,25 @@ jQuery.noConflict()(function($){
 
 	function suevafree_masonry() {
 
-		if( $(window).width() < 992 ){
-			
-			if( $('.masonry').masonry() ) {
-			
-				$('.masonry').masonry('destroy');
-			
-			}
-		
-		} else {
+		if ( $(window).width() >= 992 ) {
 
 			$('.masonry').imagesLoaded(function () {
 
 				$('.masonry').masonry({
 					itemSelector: '.masonry-item',
+					isAnimated: true
 				});
-				
+
 			});
-		
+	
+		} else {
+
+			$('.masonry').imagesLoaded(function () {
+
+				$('.masonry').masonry( 'destroy' );
+
+			});
+
 		}
 
 	}

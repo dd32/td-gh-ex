@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.0.8 - Released: 28.02.2017
+
+-- Fixed : Masonry bug on mobile version.
+
 - Version 3.0.7 - Released: 20.02.2017
 
 -- Fixed : Issue between the custom excerpt and the more tag.
