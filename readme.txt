@@ -1,7 +1,7 @@
 ----------------------------------
 Smartia Theme
 ----------------------------------
-Version: 	3.01
+Version: 	3.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -30,6 +30,11 @@ jquery.easing.1.3.js:   Open source under the BSD License, http://gsgd.co.uk/san
 
 Changelog
 ===================
+
+Version 3.2
+====================================
+- Code Cleanup
+
 
 Version 3.0
 ====================================

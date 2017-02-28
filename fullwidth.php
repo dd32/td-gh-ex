@@ -2,13 +2,11 @@
 /*
 	Template Name: Full Width
  	Smartia Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Smartia 2.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 
 
 <div id="content-full">
@@ -19,7 +17,7 @@
  <?php wp_link_pages(array('before' => '<p><strong>' . __('Pages','d5-smartia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit', '<p>', '</p>'); ?>
-<?php if (d5smartia_get_option ('cpage', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+<?php if (d5smartia_get_option ('cpage', '' ) != '1' ): comments_template('', true); endif;?>
  <?php endwhile; endif; ?>
  
 

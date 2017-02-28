@@ -1,7 +1,7 @@
 <?php
 
 /* 	Smartia Theme's 404 Error Page
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Smartia 2.0
 */
