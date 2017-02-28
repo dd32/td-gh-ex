@@ -108,7 +108,7 @@ if ( ! function_exists( 'simplecatch_page_post_category_slider' ) ) :
 								$output .= '<span class="img-effect pngfix"></span>';
 							}
 
-							$output .= get_the_post_thumbnail( get_the_id(), 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
+							$output .= get_the_post_thumbnail( get_the_ID(), 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
 						}
 						else {
 							$output .= '<span class="img-effect pngfix"></span>';

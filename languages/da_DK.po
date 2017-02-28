@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-02-17 11:15+0545\n"
-"PO-Revision-Date: 2017-02-17 11:15+0545\n"
+"POT-Creation-Date: 2017-03-01 00:52+0545\n"
+"PO-Revision-Date: 2017-03-01 00:52+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
 "Language: da\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:12
@@ -56,17 +56,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 "Dette indlæg er password-beskyttet. Indtast password for at se kommentarer."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
 #: ../image.php:23 ../page-blog.php:55
 msgid "No Comments"
 msgstr "Ingen kommentarer"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
 #: ../image.php:23 ../page-blog.php:55
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:1000
+#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
 #: ../image.php:23 ../page-blog.php:55
 msgid "% Comments"
 msgstr "% Kommentarer"
@@ -75,7 +75,7 @@ msgstr "% Kommentarer"
 msgid "Comments are closed."
 msgstr "Lukket for kommentarer."
 
-#: ../content.php:50 ../functions/core.php:998 ../image.php:21
+#: ../content.php:50 ../functions/core.php:996 ../image.php:21
 #: ../page-blog.php:53
 msgid "By"
 msgstr "Af"
@@ -231,7 +231,7 @@ msgstr "%s på Soundcloud"
 msgid "%s on Email"
 msgstr "%s på Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1114
+#: ../functions/core.php:687 ../functions/core.php:1112
 msgid "Menu"
 msgstr "Menu"
 
@@ -239,27 +239,27 @@ msgstr "Menu"
 msgid "Primary menu"
 msgstr "Primær menu"
 
-#: ../functions/core.php:1021
+#: ../functions/core.php:1019
 msgid "Categories: "
 msgstr "Kategorier:"
 
-#: ../functions/core.php:1023
+#: ../functions/core.php:1021
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1040
 msgid "Name"
 msgstr "Navn"
 
-#: ../functions/core.php:1042 ../functions/core.php:1043
+#: ../functions/core.php:1040 ../functions/core.php:1041
 msgid "( required )"
 msgstr "( påkrævet )"
 
-#: ../functions/core.php:1043
+#: ../functions/core.php:1041
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/core.php:1044
+#: ../functions/core.php:1042
 msgid "Website"
 msgstr "Website"
 

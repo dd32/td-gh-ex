@@ -338,7 +338,7 @@ class simplecatch_social_widget extends WP_Widget {
 		 * @return string Name attribute for $field_name
 		 */
 		echo '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 'Title:' . '</label><input class="widefat" id="' .
-		$this->get_field_id( 'title' ) . '" name="' .       $this->get_field_name( 'title' ) . '" type="text" value="' . $title . '" /> </p>';
+		$this->get_field_id( 'title' ) . '" name="' .       $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" /> </p>';
 
 	}
 }// end simplecatch_social_widget class

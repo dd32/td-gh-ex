@@ -942,8 +942,6 @@ if ( ! function_exists( 'simplecatch_content' ) ) :
 
 			</div><!-- #main -->
 
-		</div><!-- #primary -->
-
 	    <?php
 	    /**
 	     * simplecatch_below_primary hook
