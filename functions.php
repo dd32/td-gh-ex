@@ -4,7 +4,7 @@
  *
  * Contains all of the Theme's setup functions, custom functions,
  * custom hooks and Theme settings.
- * 
+ *
  * @package    Delivery Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
@@ -79,6 +79,9 @@ function delivery_theme_setup() {
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 
+	// Indicate widget sidebars can use selective refresh in the Customizer.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // delivery_theme_setup
 add_action( 'after_setup_theme', 'delivery_theme_setup' );
@@ -139,7 +142,7 @@ function delivery_register_sidebars() {
 			'after_title'   => '</h1>',
 		)
 	);
-	
+
 }
 endif; // delivery_register_sidebars
 add_action( 'widgets_init', 'delivery_register_sidebars' );
@@ -213,3 +216,13 @@ require trailingslashit( get_template_directory() ) . 'inc/hybrid/attr.php';
  * Custom categories widget.
  */
 require trailingslashit( get_template_directory() ) . 'inc/classes/widget-categories.php';
+
+/**
+ * Require and recommended plugins list.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/plugins.php';
+
+/**
+ * Demo importer
+ */
+require trailingslashit( get_template_directory() ) . 'inc/demo/demo-importer.php';
