@@ -25,23 +25,14 @@
 
 			<div class="widget one-third recent-comments">
 				<h3><?php _e( 'Recent Comments', 'arix' ) ?></h3>
-				<?php
-				$args = array(
-					'number'  => '3',
-					'post_id' => 0,
-				);
-				$comments = get_comments( $args );
-				foreach( $comments as $comment ) :
-					echo( '<h5>' . $comment->comment_author . '</h5><p>' . $comment->comment_content . '</p>' );
-				endforeach;
-				?>
+				<?php arix_recent_comments(); ?>
 			</div>
 
 			<?php endif; ?>
 
 			<div class="copyright">
-				<p><?php esc_attr_e( 'Copyright &copy;', 'arix' ); ?> <?php bloginfo( 'name' ); ?><br />
-				<a href="<?php echo esc_url( __( 'http://photricity.com/', 'arix' ) ); ?>"><?php esc_attr_e( 'Arix theme', 'arix' ); ?></a> <?php esc_attr_e( 'by Photricity', 'arix' ); ?></p>
+				<p><?php esc_html_e( 'Copyright &copy;', 'arix' ); ?> <?php bloginfo( 'name' ); ?><br />
+				<a href="<?php echo esc_url( __( 'http://photricity.com/', 'arix' ) ); ?>"><?php esc_html_e( 'Arix theme', 'arix' ); ?></a> <?php esc_html_e( 'by Photricity', 'arix' ); ?></p>
 			</div>
 		</div>
 	</footer>

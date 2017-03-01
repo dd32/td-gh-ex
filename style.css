@@ -4,7 +4,7 @@ Theme URI: http://photricity.com/wordpress-themes/arix/
 Author: Josh Meyer
 Author URI: http://photricity.com
 Description: Arix is a simple and beautiful WordPress theme with a customizable background image that is lightened in the header and darkened in the footer. Arix has a mobile-friendly design with a responsive layout, and supports a custom logo, single-level submenus and widgetized sidebar and footer area. If you're looking to add a light, fresh, and modern touch to your website or blog, Arix is for you.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, featured-images, sticky-post, editor-style, two-columns, right-sidebar, custom-background, custom-logo, footer-widgets
@@ -36,8 +36,8 @@ body {
 	font: 1.3em/1.7 Dosis, "Arial Narrow", sans-serif;
 	font-weight: 300;
 	color: #777;
-	background: #dce2e5 url(images/arix-background.jpg);
-	background-position: -99999em -99999em;
+	/*background: #dce2e5 url(images/arix-background.jpg);*/
+	/*background-position: -99999em -99999em;*/
 	word-wrap: break-word;
 }
 
@@ -242,49 +242,49 @@ li {
 	list-style: none;
 }
 
-.post ul,
-.page ul,
-.post ol,
-.page ol {
+article.post ul,
+article.page ul,
+article.post ol,
+article.page ol {
 	margin-bottom: 1em;
 }
 
-.post ul li,
-.page ul li {
+article.post ul li,
+article.page ul li {
 	margin-left: 1.2em;
 	list-style: disc outside none;
 }
 
-.post .post-content > ul,
-.page .post-content > ul {
+article.post .post-content > ul,
+article.page .post-content > ul {
 	margin-bottom: 1em;
 }
 
-.post ul ul li,
-.page ul ul li {
+article.post ul ul li,
+article.page ul ul li {
 	list-style: circle outside none;
 }
 
-.post ol ul li,
-.page ol ul li {
+article.post ol ul li,
+article.page ol ul li {
 	list-style: disc outside none;
 }
 
-.post ol li,
-.page ol li,
-.post ol ol ol li,
-.page ol ol ol li {
+article.post ol li,
+article.page ol li,
+article.post ol ol ol li,
+article.page ol ol ol li {
 	margin-left: 1.4em;
 	list-style: decimal outside none;
 }
 
-.post .post-content > ol,
-.page .post-content > ol {
+article.post .post-content > ol,
+article.page .post-content > ol {
 	margin-bottom: 1em;
 }
 
-.post ol ol li,
-.page ol ol li {
+article.post ol ol li,
+article.page ol ol li {
 	list-style: lower-alpha outside none;
 }
 
@@ -317,9 +317,9 @@ a:focus {
  * Posts
  */
 
-.post,
-.page,
-.attachment {
+article.post,
+article.page,
+article.attachment {
 	margin-bottom: 2em;
 	overflow: hidden;
 }
@@ -700,60 +700,6 @@ table th {
 
 
 /**
- * Misc
- */
-
-embed,
-iframe,
-object,
-video {
-	max-width: 100%;
-	margin-bottom: 1.5em;
-}
-
-p > embed,
-p > iframe,
-p > object,
-span > embed,
-span > iframe,
-span > object {
-	margin-bottom: 0;
-}
-
-[hidden],
-template {
-	display: none;
-}
-
-.tag-cloud {
-	line-height: 1.5;
-}
-
-.recent-comments p {
-	font-size: 80%;
-	line-height: 1.2;
-}
-
-.copyright {
-	clear: both;
-	width: 100%;
-	margin-top: 2em;
-	text-align: center;
-	font-size: 80%;
-}
-
-.footer-widgets {
-	overflow: hidden;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-
-/**
  * Navigation
  */
 
@@ -1005,7 +951,7 @@ input[type="reset"],
 .button:hover,
 .button:active,
 .button:focus,
-#header .button:hover
+#header .button:hover,
 .more-link:hover,
 .comment-reply-link:hover,
 .comment-reply-link:active,

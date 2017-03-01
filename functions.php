@@ -37,8 +37,7 @@ function arix_functions() {
 
 	// custom background image support
 	add_theme_support( 'custom-background' , array(
-		'default-color'       => 'dce2e5',
-		'default-image'       => '%1$s/images/arix-background.jpg',
+		'default-image'       => get_template_directory_uri() . '/images/arix-background.jpg',
 		'default-repeat'      => 'no-repeat',
 		'default-position-x'  => 'center',
 		'default-position-y'  => 'center',
@@ -151,6 +150,24 @@ function arix_google_fonts() {
 	return $fonts_url;
 }
 endif;
+
+
+
+
+// recent comments
+function arix_recent_comments( $no_comments = 3, $comment_len = 130 ) {
+	$comments_query = new WP_Comment_Query();
+	$comments = $comments_query->query( array( 'number' => $no_comments ) );
+	$comm = '';
+	if ( $comments ) : foreach ( $comments as $comment ) :
+		$comm .= '<li><a class="author" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
+		$comm .= get_comment_author( $comment->comment_ID ) . ':</a> ';
+		$comm .= '<p>' . strip_tags( substr( apply_filters( 'get_comment_text', $comment->comment_content ), 0, $comment_len ) ) . '...</p></li>';
+	endforeach; else :
+		$comm .= 'No comments.';
+	endif;
+	echo $comm;
+}
 
 
 

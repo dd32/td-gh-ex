@@ -1,5 +1,5 @@
 === Arix WordPress Theme ===
-Version: 1.1.1
+Version: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,10 +14,14 @@ For more information about Arix please go to http://photricity.com/wordpress-the
 Arix WordPress Theme, Copyright 2016 Photricity Web Design (photricity.com)
 Arix is distributed under the terms of the GNU GPL
 
-Included jpeg images, svg images and screenshot are Copyright 2016 Photricity Web Design
+Included background image, svg images and screenshot are Copyright 2016 Photricity Web Design
 License: GPLv2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Changelog ==
+
+Version: 1.1.2
+Date: 3/1/2017
+Description: Bugfixes and compliance changes.
 
 Version: 1.1.1
 Date: 10/12/2016

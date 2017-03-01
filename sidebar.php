@@ -27,7 +27,7 @@
 				</ul>
 			</div>
 
-			<div class="widget widget_tag_cloud">
+			<div class="widget widget_calendar">
 				<?php get_calendar(); ?>
 			</div>
 
