@@ -29,18 +29,6 @@
             </div>
             <?php endif; ?>
         </div>
-        <div class="row">
-            <div class="footer-menu">
-                <?php if (has_nav_menu('footer')) {
-                        $astrology_defaults = array(
-                            'theme_location' => 'footer',
-                            'container'      => 'none',
-                            'menu_class'    => false,
-                        );
-                        wp_nav_menu($astrology_defaults);                                        
-                    } ?> 
-            </div>
-        </div>
     <!-- Row End -->
     <div class="row">
         <div class="footer-social-icon">

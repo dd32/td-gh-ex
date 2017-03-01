@@ -76,7 +76,7 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
         'is_automatic' => false,
         'message'      => '',
         'strings'      => array(
-           'page_title'                      => __( 'Install Required Plugins', 'astrology' ),
+           'page_title'                      => __( 'Install Recommended Plugins', 'astrology' ),
            'menu_title'                      => __( 'Install Plugins', 'astrology' ),
            'installing'                      => __( 'Installing Plugin: %s', 'astrology' ), 
            'oops'                            => __( 'Something went wrong with the plugin API.', 'astrology' ),
@@ -90,7 +90,7 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','astrology' ), 
            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins','astrology' ),
            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins','astrology' ),
-           'return'                          => __( 'Return to Required Plugins Installer', 'astrology' ),
+           'return'                          => __( 'Return to Recommended Plugins Installer', 'astrology' ),
            'plugin_activated'                => __( 'Plugin activated successfully.', 'astrology' ),
            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'astrology' ), 
            'nag_type'                        => 'updated'
@@ -98,16 +98,6 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
       );
       astrology( $plugins, $config );
     }
-}
-function astrology_fallback_menu(){
-  $html = '<ul id="astrology-default-menu" class="offside">';
-    $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
-      $html .= '<a href="' . esc_url( home_url() ) . '" title="' . __( 'Home', 'astrology' ) . '">';
-        $html .= __( 'Home', 'astrology' );
-      $html .= '</a>';
-    $html .= '</li>';
-  $html .= '</ul>';
-  echo $html;
 }
 /**
  * wp enqueue style and script.

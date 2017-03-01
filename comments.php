@@ -8,7 +8,8 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) return; ?>
+if ( post_password_required() ) return;
+if ( comments_open()) { ?>
 <div class="row">
      <div class="col-md-12 col-sm-12 col-xs-12 admin">
      	 <?php wp_list_comments(array('avatar_size' => 110,'status' => 'approve', 'style' => 'div', 'short_ping' => true,)); ?>
@@ -23,3 +24,4 @@ if ( post_password_required() ) return; ?>
     </div>
     <?php the_comments_navigation(); ?>
 </div>
+<?php } ?>

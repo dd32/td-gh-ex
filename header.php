@@ -37,16 +37,12 @@
                             <span class="menu-global menu-middle"></span>
                             <span class="menu-global menu-bottom"></span>
                         </div>
-                         <?php
-                            if (has_nav_menu('primary')) {
-                                $astrology_defaults = array(
-                                    'theme_location' => 'primary',
-                                    'fallback_cb'    => 'astrology_fallback_menu',
-                                    'container'      => 'none', 
-                            		'menu_class'	=> 'offside',
-                                );
-                                wp_nav_menu($astrology_defaults);                                        
-                            } ?>  
+                         <?php $astrology_defaults = array(
+                                'theme_location' => 'primary',
+                                'container'      => 'ul', 
+                        		'menu_class'	=> 'offside',
+                            );
+                            wp_nav_menu($astrology_defaults); ?>  
             		</nav>
                 </div>
                 </div>

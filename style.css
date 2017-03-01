@@ -4,7 +4,7 @@ Theme URI: https://vaultthemes.com/wordpress-themes/astrology/
 Author: VaultThemes
 Author URI: https://vaultthemes.com
 Description: Astrology is a premium quality WordPress theme for astrologers , pudits and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: astrology
@@ -186,4 +186,7 @@ p > video {
 .sticky .entry-date {
     display: none;
 }
-.bypostauthor {}
+.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
+    border: 2px solid #333;
+    padding: 2px;
+}

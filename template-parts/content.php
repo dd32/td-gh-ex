@@ -13,7 +13,7 @@
             <?php if ( have_posts() ) : $i=1;
                     while ( have_posts() ) : the_post();?>                
                         <div class="grid-sizer"></div>
-                        <div class="blog-content-left grid-item <?php post_class(); ?>" id="post-<?php the_ID(); ?>">
+                        <div <?php post_class('blog-content-left grid-item'); ?> id="post-<?php the_ID(); ?>">
                             <div class="blog-info-text">
                                 <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
                                 <ul>

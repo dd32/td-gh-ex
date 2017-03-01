@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2017-02-27 18:44+0530\n"
+"POT-Creation-Date: 2017-03-01 17:43+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Author: "
 msgstr ""
 
-#: footer.php:64
+#: footer.php:52
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:64
+#: footer.php:52
 msgid "Astrology WordPress Theme"
 msgstr ""
 
@@ -54,8 +54,8 @@ msgstr ""
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:79 inc/class-tgm-plugin-activation.php:334
-msgid "Install Required Plugins"
+#: functions.php:79
+msgid "Install Recommended Plugins"
 msgstr ""
 
 #: functions.php:80 inc/class-tgm-plugin-activation.php:335
@@ -161,8 +161,8 @@ msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:93 inc/class-tgm-plugin-activation.php:392
-msgid "Return to Required Plugins Installer"
+#: functions.php:93
+msgid "Return to Recommended Plugins Installer"
 msgstr ""
 
 #: functions.php:94 inc/class-tgm-plugin-activation.php:394
@@ -175,12 +175,17 @@ msgstr ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: functions.php:105 functions.php:106
-msgid "Home"
+#: inc/breadcumbs.php:9
+msgid "Homepage"
 msgstr ""
 
-#: inc/breadcumbs.php:215 template-parts/content-single.php:30
+#: inc/breadcumbs.php:200 template-parts/content-page.php:24
+#: template-parts/content-single.php:28
 msgid "Page"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:339
@@ -200,6 +205,10 @@ msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:393
 #: inc/class-tgm-plugin-activation.php:920
@@ -612,6 +621,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: page.php:34 single.php:29
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
@@ -630,11 +644,6 @@ msgstr ""
 #: searchform.php:11
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
-
-#: single.php:29
-#, php-format
-msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #: template-parts/content-none.php:10
@@ -659,16 +668,16 @@ msgid ""
 "searching can help."
 msgstr ""
 
+#: template-parts/content-page.php:20 template-parts/content-single.php:24
+msgid "Pages:"
+msgstr ""
+
 #: template-parts/content-single.php:12
 msgid "By "
 msgstr ""
 
 #: template-parts/content-single.php:13
 msgid "Posted on "
-msgstr ""
-
-#: template-parts/content-single.php:26
-msgid "Pages:"
 msgstr ""
 
 #: template-parts/content.php:31

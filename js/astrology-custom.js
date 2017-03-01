@@ -26,7 +26,7 @@
                 }
             });
             cssmenu.find('li ul').parent().addClass('has-sub');
-            multiTg = function () {
+            var multiTg = function () {
                 cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
                 cssmenu.find('.submenu-button').on('click', function () {
                     jQuery(this).toggleClass('submenu-opened');
@@ -40,7 +40,7 @@
             if (settings.format === 'multitoggle') multiTg();
             else cssmenu.addClass('dropdown');
             if (settings.sticky === true) cssmenu.css('position', 'fixed');
-            resizeFix = function () {
+            var resizeFix = function () {
                 var mediasize = 1024;
                 if (jQuery(window).width() > mediasize) {
                     cssmenu.find('ul').show();
@@ -60,6 +60,10 @@
         jQuery("#top-menu").menumaker({
             format: "multitoggle"
         });
+        jQuery('.menu-top').addClass('menu-top-click');
+        jQuery('.menu-middle').addClass('menu-middle-click');
+        jQuery('.menu-bottom').addClass('menu-bottom-click');
+        jQuery('.offside').addClass('open');
         /** Set Position of Sub-Menu **/
         var wapoMainWindowWidth = jQuery(window).width();
         jQuery('#top-menu ul ul li').mouseenter(function () {
@@ -84,6 +88,7 @@
             });
         });
     });
+    
 })(jQuery);
 jQuery(window).scroll(function () {
     if (jQuery(window).scrollTop() > 2050) {
@@ -113,7 +118,6 @@ var Menu = {
                 'click',
                 function (event) {
                     Menu.activateMenu(event);
-                    event.preventDefault();
                 }
             );
     },
@@ -124,5 +128,4 @@ var Menu = {
         Menu.el.menuBottom.toggleClass('menu-bottom-click');
     }
 };
-
 Menu.init();

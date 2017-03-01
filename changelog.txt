@@ -21,3 +21,8 @@ Version 1.0.5 (27-02-2017)
 i) Removed important from css.
 ii) Changed comment template styling.
 iii) Changed screenshot.
+
+Version 1.0.6 (01-03-2017)
+i) Changed readme.txt.
+ii) Fixed full-width template.
+iii) Fixed issue with custom menu widget.

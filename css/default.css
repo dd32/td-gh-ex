@@ -383,7 +383,9 @@ a.btn-effect:hover {
     position: relative;
     font: 24px verdana;
     float: left;
-    line-height: 67px;
+    line-height: 1.4;
+    max-width: 250px;
+    margin: 15px 0 0;
 }
 .logo a {
     color: #ad2737;
@@ -672,11 +674,10 @@ a {
 .blog-sidebar ul li a:hover {
     color: #ad2737;
 }
-.blog-sidebar .widget_categories ul li a: {
+.blog-sidebar .widget_categories ul li a {
     content: '';
     display: block;
     width: 0;
-    height: 2px;
     background: #ff3d2e;
     transition: width .3s;
 }

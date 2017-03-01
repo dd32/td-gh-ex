@@ -6,10 +6,7 @@ function astrology_custom_breadcrumbs() {
     $astrology_separator          = '&gt;';
     $astrology_breadcrums_id      = 'breadcrumbs';
     $astrology_breadcrums_class   = 'breadcrumbs';
-    $astrology_home_title         = 'Homepage';
-      
-    // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
-    $astrology_custom_taxonomy    = 'product_cat';
+    $astrology_home_title         =  __('Homepage','astrology');
        
     // Get the query & post information
     global $post,$wp_query;
@@ -83,18 +80,6 @@ function astrology_custom_breadcrumbs() {
                     $astrology_cat_display .= '<li class="separator"> ' . $astrology_separator . ' </li>';
                 }
              
-            }
-              
-            // If it's a custom post type within a custom taxonomyastrology_
-            $astrology_taxonomy_exists = taxonomy_exists($astrology_custom_taxonomy);
-            if(empty($astrology_last_category) && !empty($astrology_custom_taxonomy) && $astrology_taxonomy_exists) {
-                   
-                $astrology_taxonomy_terms = get_the_terms( $post->ID, $astrology_custom_taxonomy );
-                $astrology_cat_id         = $astrology_taxonomy_terms[0]->term_id;
-                $astrology_cat_nicename   = $astrology_taxonomy_terms[0]->slug;
-                $astrology_cat_link       = get_term_link($astrology_taxonomy_terms[0]->term_id, $astrology_custom_taxonomy);
-                $astrology_cat_name       = $astrology_taxonomy_terms[0]->name;
-               
             }
               
             // Check if the post is in a category
