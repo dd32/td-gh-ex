@@ -39,6 +39,9 @@ if(!function_exists('cpotheme_setup')){
 		$locale = get_locale();
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);
+
+		
+
 	}
 }
 
@@ -58,8 +61,8 @@ if(!function_exists('cpotheme_scripts_front')){
 		wp_enqueue_script('cpotheme-html5', $scripts_path.'html5-min.js');
 		//Register custom scripts for later enqueuing
 		wp_enqueue_script('cpotheme-core', $scripts_path.'core.js', array(), false, true);
-		wp_register_script('cpotheme-cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
-		wp_register_script('cpotheme-magnific', $scripts_path.'jquery-magnific-min.js', array('jquery'), false, true);
+		wp_enqueue_script('cpotheme-cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
+		wp_enqueue_script('cpotheme-magnific', $scripts_path.'jquery-magnific-min.js', array('jquery'), false, true);
 	}
 }
 
@@ -131,7 +134,6 @@ if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;
 require_once($core_path.'classes/class_customizer.php');
 require_once($core_path.'classes/class_menu.php');
 //Main Components
-require_once($core_path.'admin.php');
 require_once($core_path.'functions.php');
 require_once($core_path.'markup.php');
 require_once($core_path.'filters.php');
