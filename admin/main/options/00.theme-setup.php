@@ -47,11 +47,11 @@ function thinkup_title_select() {
 global $post;
 
 	if ( is_page() ) {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	} elseif ( is_attachment() ) {
-		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_attr( get_the_title( $post->post_parent ) ) );
+		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
 	} else if ( is_404() ) {
@@ -75,7 +75,7 @@ global $post;
 	} elseif ( thinkup_check_isblog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	}
 }
 
