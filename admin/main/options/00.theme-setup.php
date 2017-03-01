@@ -37,11 +37,11 @@ function thinkup_title_select() {
 global $post;
 
 	if ( is_page() ) {
-		printf( __( '%s', 'renden' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	} elseif ( is_attachment() ) {
-		printf( __( 'Blog Post Image: %s', 'renden' ), esc_attr( get_the_title( $post->post_parent ) ) );
+		printf( __( 'Blog Post Image: %s', 'renden' ), esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( __( '%s', 'renden' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'renden' ), esc_html( get_search_query() ) );
 	} else if ( is_404() ) {
@@ -75,7 +75,7 @@ global $post;
 	} elseif ( is_tax() ) {
 		echo single_term_title( "", false );
 	} else {
-		printf( __( '%s', 'renden' ), get_the_title() );
+		printf( '%s', esc_html( get_the_title() ) );
 	}
 }
 

@@ -93,12 +93,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.4
+- Updated: style-shortcodes.css updated.
+- Removed: Unnecesary translation wrappers removed from string containins no text in function thinkup_title_select().
+
 Version 1.3.3
-- Updated: 	Function thinkup_check_ishome() updated to improve reliability with use of use wp_unslash.
-- Updated: 	Function thinkup_check_currentpage() updated to improve reliability with use of use wp_unslash.
+- Updated: Function thinkup_check_ishome() updated to improve reliability with use of use wp_unslash.
+- Updated: Function thinkup_check_currentpage() updated to improve reliability with use of use wp_unslash.
 
 Version 1.3.2
-- Updated: 	Font Awesome updated to v4.7.0.
+- Updated: Font Awesome updated to v4.7.0.
 - Removed: Outdated vesions of jQuery removed from prettyPhoto folder.
 
 Version 1.3.1
