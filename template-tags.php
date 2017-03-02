@@ -75,7 +75,24 @@ function becorp_wp_footer () { ?>
 			<div class="">
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</div>	
-			<?php } ?>    		
+			<?php } else {
+
+						$foot_args=( array(
+							'before_widget' => '<div class="col-md-3 col-sm-6">',
+							'after_widget' => '</div>',
+							'before_title' => '<div class="widget_title wow fadeInDown animated" data-wow-delay="0.4s"><h2><i>',
+							'after_title' => '</i></h2></div>',
+						) );
+						
+						the_widget('WP_Widget_Calendar', 'title=Calendar', $foot_args);
+						the_widget('WP_Widget_Categories', null, $foot_args);
+						the_widget('WP_Widget_Pages', null, $foot_args);
+						the_widget('WP_Widget_Archives', null, $foot_args);
+						}
+
+
+
+			?>    		
     </div>
     </div>
 </div>

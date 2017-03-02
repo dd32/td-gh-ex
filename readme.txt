@@ -82,6 +82,10 @@ released
 2. Add Header image setting in the theme and default header image added also.
 3. Update style default tags.
 
+@Version 3.0
+1. Add Default widgets in footer.
+2. Resolved styling issues. 
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
