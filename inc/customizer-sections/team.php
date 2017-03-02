@@ -24,7 +24,7 @@ $wp_customize->add_section( $section_id,
 $wp_customize->add_setting( $prefix . '_team_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 1,
+        'default'           => 0,
         //'transport'         => 'postMessage'
     )
 );
@@ -34,7 +34,8 @@ $wp_customize->add_control(
         'type'      => 'checkbox',
         'label'     => esc_html__( 'Show this section?', 'asterion' ),
         'section'   => $section_id,
-        'priority'  => 1
+        'priority'  => 1,
+        'active_callback'   => array( asterion()->customizer, 'ot_widgets_active_callback' )
     )
 );
 
@@ -52,7 +53,8 @@ $wp_customize->add_control(
         'label'         => esc_html__( 'Title', 'asterion' ),
         'description'   => esc_html__( 'Add the title for this section.', 'asterion'),
         'section'       => $section_id,
-        'priority'      => 2
+        'priority'      => 2,
+        'active_callback'   => array( asterion()->customizer, 'ot_widgets_active_callback' )
     )
 );
 $wp_customize->selective_refresh->add_partial( $prefix . '_team_title', 
@@ -76,7 +78,8 @@ $wp_customize->add_control(
         'description'   => esc_html__( 'Add the content for this section.', 'asterion'),
         'section'       => $section_id,
         'priority'      => 3,
-        'type'          => 'textarea'
+        'type'          => 'textarea',
+        'active_callback'   => array( asterion()->customizer, 'ot_widgets_active_callback' )
     )
 );
 
@@ -92,6 +95,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $pref
     'section'     => $section_id,
     'settings'    => $prefix . '_team_bg_color',
     'priority'    => 4,
+        'active_callback'   => array( asterion()->customizer, 'ot_widgets_active_callback' )
 ) ) );
 
 
@@ -110,6 +114,31 @@ $wp_customize->add_control(
         'label'     => esc_html__( 'Light text?', 'asterion' ),
         'description' => esc_html__( 'Choose text color scheme, light or dark', 'asterion' ),
         'section'   => $section_id,
-        'priority'  => 5
+        'priority'  => 5,
+        'active_callback'   => array( asterion()->customizer, 'ot_widgets_active_callback' )
+    )
+);
+
+
+//ot widgets form installation
+$wp_customize->add_setting(
+    $prefix .'_ot_widgets_install',
+    array(
+        'sanitize_callback' => 'esc_html',
+        'default'           => ''
+    )
+);
+$wp_customize->add_control(
+    new Asterion_Custom_Text(
+        $wp_customize, 
+        $prefix .'_ot_widgets_install',
+        array(
+            'label'             => esc_html__( 'Install Orange Themes Custom Widgets', 'asterion' ),
+            'description'       => sprintf( '%s %s %s', esc_html__( 'This option requires ', 'asterion' ), '<a href="https://wordpress.org/plugins/orange-themes-custom-widgets" title="Orange Themes Custom Widgets" target="_blank">Orange Themes Custom Widgets</a>', esc_html__( ', please install it to enable team widgets.', 'asterion' ) ),
+            'section'           => $section_id,
+            'settings'          => $prefix .'_ot_widgets_install',
+            'priority'          => 7,
+            'active_callback'   => array( asterion()->customizer, 'ot_widgets_inactive_callback' )
+        )
     )
 );

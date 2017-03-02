@@ -24,7 +24,7 @@ $wp_customize->add_section( $section_id,
 $wp_customize->add_setting( $prefix . '_portfolio_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 1,
+        'default'           => 0,
         //'transport'         => 'postMessage'
     )
 );
@@ -124,7 +124,8 @@ $wp_customize->add_control(
             'milo'      => esc_html__( 'Milo', 'asterion' ),
             'jazz'      => esc_html__( 'Jazz', 'asterion' ),
             'goliath'   => esc_html__( 'Goliath', 'asterion' ),
-        )
+        ),
+        'active_callback'   => array( asterion()->customizer, 'jetpack_portfolio_active_callback' )
     )
 );
 
@@ -140,6 +141,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $pref
         'section'     => $section_id,
         'settings'    => $prefix . '_portfolio_image_overlay_color',
         'priority'    => 5,
+        'active_callback'   => array( asterion()->customizer, 'jetpack_portfolio_active_callback' )
     ) 
 ) );
 

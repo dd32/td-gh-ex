@@ -6,23 +6,14 @@
  *	@subpackage asterion
  */
 
-	if( is_customize_preview() ) {
-		$title = get_theme_mod('asterion_contact_title',esc_html__('Contact Us','asterion'));
-		$text = get_theme_mod('asterion_contact_text',esc_html__('If you have some Questions or need Help! Please Contact Us! We make Cool and Clean Design for your Business','asterion'));
-		$address_title = get_theme_mod('asterion_contact_address_title',esc_html__('Our Business Office','asterion'));
-		$address = get_theme_mod('asterion_contact_address',esc_html__('34522 Street, Barcelona 442 &#13;&#10;Spain, New Building North, 25th Floor','asterion'));
-		$info_title = get_theme_mod('asterion_contact_info_title',esc_html__('Contacts','asterion'));
-		$info_phone = get_theme_mod('asterion_contact_info_phone',esc_html__('+101 377 655 22127','asterion'));
-		$info_email = get_theme_mod('asterion_contact_info_email',esc_html__('mail@yourcompany.com','asterion'));
-	} else {
-		$title = get_theme_mod('asterion_contact_title');
-		$text = get_theme_mod('asterion_contact_text');
-		$address_title = get_theme_mod('asterion_contact_address_title');
-		$address = get_theme_mod('asterion_contact_address');
-		$info_title = get_theme_mod('asterion_contact_info_title');
-		$info_phone = get_theme_mod('asterion_contact_info_phone');
-		$info_email = get_theme_mod('asterion_contact_info_email');
-	}
+	$title = get_theme_mod('asterion_contact_title');
+	$text = get_theme_mod('asterion_contact_text');
+	$address_title = get_theme_mod('asterion_contact_address_title');
+	$address = get_theme_mod('asterion_contact_address');
+	$info_title = get_theme_mod('asterion_contact_info_title');
+	$info_phone = get_theme_mod('asterion_contact_info_phone');
+	$info_email = get_theme_mod('asterion_contact_info_email');
+
 
 	$bg_color = get_theme_mod('asterion_contact_bg_color', '#333231');
 	$text_color = get_theme_mod('asterion_contact_text_color', 1);

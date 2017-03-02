@@ -6,13 +6,10 @@
  *	@subpackage asterion
  */
 
-	if( is_customize_preview() ) {
-		$title = get_theme_mod( 'asterion_testimonials_title', esc_html__('Testimonials','asterion') );
-		$text = get_theme_mod( 'asterion_testimonials_text', esc_html__('Mida sit una namet, cons uectetur adipiscing adon elit.','asterion') );
-	} else {
-		$title = get_theme_mod( 'asterion_testimonials_title' );
-		$text = get_theme_mod( 'asterion_testimonials_text' );
-	}
+
+	$title = get_theme_mod( 'asterion_testimonials_title' );
+	$text = get_theme_mod( 'asterion_testimonials_text' );
+
 
 	$count = get_theme_mod( 'asterion_testimonials_count', 6 );
 

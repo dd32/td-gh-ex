@@ -6,20 +6,10 @@
  *	@subpackage asterion
  */
 
-	if( is_customize_preview() ) {
-		$bg_image = get_theme_mod('asterion_counters_bg_image', get_template_directory_uri() . '/images/counters-bg.jpg' );
-		$counter_set = get_theme_mod('asterion_counters_title_1', 1);
-	} else {
-		$bg_image = get_theme_mod('asterion_counters_bg_image');
-		$counter_set = get_theme_mod('asterion_counters_title_1');
-	}
 
-	$default_val = array(
-		1 => array( 'title' => esc_html__('Awards','asterion'), 'count' => '16'),
-		2 => array( 'title' => esc_html__('Clients','asterion'), 'count' => '453'),
-		3 => array( 'title' => esc_html__('Team','asterion'), 'count' => '7'),
-		4 => array( 'title' => esc_html__('Projects','asterion'), 'count' => '24'),
-	);
+	$bg_image = get_theme_mod('asterion_counters_bg_image');
+	$counter_set = get_theme_mod('asterion_counters_title_1');
+
 
 	$bg_color = get_theme_mod('asterion_counters_bg_color', '#ffffff');
 
@@ -51,18 +41,11 @@
 			<div class="ot-container text-center">
 				<div class="row">
 					<?php 
-					
-						foreach ($default_val as $key => $value) :
-							
-							if( is_customize_preview() ) {
-								$title = get_theme_mod('asterion_counters_title_'.$key, $default_val[$key]['title']);
-								$count = get_theme_mod('asterion_counters_count_'.$key, $default_val[$key]['count']);
-							} else {
-								$title = get_theme_mod('asterion_counters_title_'.$key);
-								$count = get_theme_mod('asterion_counters_count_'.$key);
-							}
 
-							
+						for ($i=0; $i < 5; $i++) :
+							$title = get_theme_mod('asterion_counters_title_'.$i);
+							$count = get_theme_mod('asterion_counters_count_'.$i);
+
 					?>
 						<?php if( $title || $count ) : ?>
 							<div class="col-md-3 mb-sm-30 <?php echo esc_attr( 'ot-counter-nr-'.$key );?>">
@@ -72,7 +55,7 @@
 								</div>
 							</div>
 						<?php endif; ?>
-					<?php endforeach; ?>
+					<?php endfor; ?>
 				
 
 				</div>

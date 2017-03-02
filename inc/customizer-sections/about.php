@@ -24,7 +24,7 @@ $wp_customize->add_section( $section_id,
 $wp_customize->add_setting( $prefix . '_about_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 1,
+        'default'           => 0,
         //'transport'         => 'postMessage'
     )
 );

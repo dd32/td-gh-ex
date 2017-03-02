@@ -215,12 +215,17 @@ article .customize-partial-edit-shortcut button, article .widget .customize-part
 	margin-left: auto;
 }
 
-body.home:not(.blog) .ot-page-wrapper {
+body.home:not(.blog) .ot-page-wrapper, body.home .content-area .site-main {
 	width: 100%;
 	padding-right: 0px;
 	padding-left: 0px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+body.home .content-area .site-main {
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .col-md-3, .col-md-4, .col-md-6 {
@@ -234,11 +239,17 @@ body.home:not(.blog) .ot-page-wrapper {
 	.ot-container, .ot-page-wrapper {
 		width: 750px;
 	}
+	body.home .content-area .site-main {
+		width: 750px !important;
+	} 
 }
 @media (min-width: 992px) {
 	.ot-container, .ot-page-wrapper {
 		width: 970px;
 	}
+	body.home .content-area .site-main {
+		width: 970px !important;
+	} 
 	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
 		float: left;
 	}
@@ -284,6 +295,9 @@ body.home:not(.blog) .ot-page-wrapper {
 		float: left;
 		width: 66.66666667%;
 	}
+	body.home .content-area .site-main {
+		width: 1170px !important;
+	} 
 	.ot-sidebar {
 		float: left;
 		width: 33.33333333%;
@@ -296,7 +310,9 @@ body.home:not(.blog) .ot-page-wrapper {
 body.no-sidebar .content-area {
 	width: 100%;
 }
-
+body.home .content-area {
+	padding: 80px 0;
+} 
 body.left-sidebar .ot-sidebar {
 	padding-left: 0px;
 	padding-right: 60px;
@@ -1640,14 +1656,14 @@ Latest posts
 	color: #27282b;
 }
 .home .blog-post .blog-post-body .entry-title {
-    font-size: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #1e1e1f;
-    font-weight: 500;
-    position: relative;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+	font-size: 27px;
+	text-transform: uppercase;
+	letter-spacing: -0.5px;
+	color: #1e1e1f;
+	font-weight: 700;
+	position: relative;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 .home .blog-post .blog-post-body .entry-title:after {
 left: 50%;

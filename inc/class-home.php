@@ -82,7 +82,7 @@
 
 	    	foreach ( $sections as $key => $section) {
 
-	    		$_section = get_theme_mod( 'asterion_'.strtolower(str_replace( ' ', '_', $section[0] )).'_show', 1 );
+	    		$_section = get_theme_mod( 'asterion_'.strtolower(str_replace( ' ', '_', $section[0] )).'_show', 0 );
 
 	    		if( $val == $key && $_section == 1 ) {
 	    			get_template_part( 'sections/'.strtolower(str_replace( ' ', '-', $section[0] )) );

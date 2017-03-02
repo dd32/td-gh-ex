@@ -159,6 +159,21 @@
 			}
 		}
 
+		function ot_widgets_active_callback() {
+			if( class_exists( 'OT_Widgets' ) ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		function ot_widgets_inactive_callback() {
+			if( !class_exists( 'OT_Widgets' ) ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
 	}
 
 ?>
