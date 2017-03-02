@@ -15,7 +15,7 @@
     <?php if ( get_theme_mod( 'bestreloaded_display_intro_text' ) && get_theme_mod( 'bestreloaded_intro_text') ) : ?>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <p class="hero-p"><?php echo ( get_theme_mod( 'bestreloaded_intro_text' ) ) ?></p>
+                <p class="hero-p"><?php echo wp_kses_post( get_theme_mod( 'bestreloaded_intro_text' ) ); ?></p>
                 <hr class="hr-row-divider">
             </div><!-- end .col-xs-12 -->
         </div><!-- end .row -->
@@ -39,11 +39,11 @@
 					<!-- Controls -->
 					<a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
+						<span class="sr-only"><?php esc_html_e('Previous', 'best-reloaded' ); ?></span>
 					</a>
 					<a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
+						<span class="sr-only"><?php esc_html_e('Next', 'best-reloaded');?></span>
 					</a>
 				</div>
 	            <hr class="hr-row-divider">

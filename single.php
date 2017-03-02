@@ -21,8 +21,8 @@
                         <h2 class="page-title"><?php the_title(); ?></h2>
                         <span class="meta text-muted"><span class="glyphicon glyphicon-pencil"></span> Written by <?php the_author_link(); ?> on <?php the_time('F j, Y'); ?> and posted in <?php the_category( ' and ' ); ?>.</span>
                         <ul class="prev-next-single pager clearfix">
-                            <li class="previous"><?php previous_post_link( '%link', 'Previous Post' ); ?></li>
-                            <li class="next"><?php next_post_link( '%link', 'Next Post' ); ?></li>
+                            <li class="previous"><?php previous_post_link( '%link', '&larr; Previous Post' ); ?></li>
+                            <li class="next"><?php next_post_link( '%link', 'Next Post &rarr;' ); ?></li>
                         </ul>
 
 						<div id="social">
@@ -31,8 +31,9 @@
 									sharing_display( '', true );
 								}
 								if ( class_exists( 'Jetpack_Likes' ) ) {
-									$custom_likes = new Jetpack_Likes;
-									echo $custom_likes->post_likes( '' );
+									$jp_likes = new Jetpack_Likes;
+									// all user input escaped by jetpack in the class
+									echo $jp_likes->post_likes( '' ); //xss ok
 								} ?>
 							</div>
 						</div>
