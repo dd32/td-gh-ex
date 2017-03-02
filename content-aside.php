@@ -8,8 +8,7 @@
  */
  
 //Getting data from Theme Options Panel
-global $adventurous_options_settings;
-$options = $adventurous_options_settings;
+$options = adventurous_get_options();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

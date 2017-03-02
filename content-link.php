@@ -7,11 +7,10 @@
  * @since Adventurous 1.0
  */
 //Getting data from Theme Options Panel and Meta Box 
-global $adventurous_options_settings;
-$options = $adventurous_options_settings; 
+$options = adventurous_get_options(); 
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ]; 
+$moretag = $options['more_tag_text']; 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +20,7 @@ $moretag = $options[ 'more_tag_text' ];
 	<div class="entry-container post-format">
     
         <header class="entry-format">
-        	<a href="<?php echo get_post_format_link( 'link' ); ?>" title="<?php _e( 'All Link Posts', 'adventurous' ); ?>"><?php _e( 'Link', 'adventurous' ); ?></a>
+        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'adventurous' ); ?>"><?php esc_attr_e( 'Link', 'adventurous' ); ?></a>
         </header>
         
         <div class="entry-content">

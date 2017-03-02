@@ -148,7 +148,6 @@ if ( ! function_exists( 'adventurous_comment' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :

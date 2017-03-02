@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 14:16-0500\n"
-"PO-Revision-Date: 2016-12-07 14:16-0500\n"
+"POT-Creation-Date: 2017-03-02 22:32+0545\n"
+"PO-Revision-Date: 2017-03-02 22:32+0545\n"
 "Last-Translator: Alexander Leo-Hansen <alexanderleoh@gmail.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -35,167 +35,165 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr "Mest anvendte kategorier"
 
-#. translators: %1$s: smilie
 #: ../404.php:36
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Prøv at kigge i den månedlige arkiver. %1$s"
 
-#: ../comments.php:33
+#: ../comments.php:36
 #, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s tanker om &ldquo;%2$s&rdquo;"
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
 
-#: ../comments.php:40 ../comments.php:60
+#: ../comments.php:56 ../comments.php:76
 msgid "Comment navigation"
 msgstr "Kommentar navigation"
 
-#: ../comments.php:41 ../comments.php:61
+#: ../comments.php:57 ../comments.php:77
 msgid "&larr; Older Comments"
 msgstr "&larr; Ældre kommentarer"
 
-#: ../comments.php:42 ../comments.php:62
+#: ../comments.php:58 ../comments.php:78
 msgid "Newer Comments &rarr;"
 msgstr "Nyere kommentarer &rarr;"
 
-#: ../comments.php:72
+#: ../comments.php:88
 msgid "Comments are closed."
 msgstr "Kommentarer er lukket"
 
-#: ../content-aside.php:21 ../content-audio.php:21 ../content-chat.php:22
-#: ../content-gallery.php:25 ../content-gallery.php:42
-#: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
-#: ../content-search.php:16 ../content-single.php:18 ../content-video.php:24
-#: ../content.php:32 ../inc/adventurous-functions.php:191
+#: ../content-aside.php:20 ../content-audio.php:20 ../content-chat.php:21
+#: ../content-gallery.php:24 ../content-gallery.php:41
+#: ../content-gallery.php:42 ../content-image.php:22 ../content-page.php:18
+#: ../content-search.php:16 ../content-single.php:18 ../content-video.php:23
+#: ../content.php:31 ../inc/adventurous-functions.php:140
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink til %s"
 
-#: ../content-aside.php:27 ../content-audio.php:33 ../content-chat.php:34
-#: ../content-gallery.php:49 ../content-image.php:35 ../content-link.php:30
-#: ../content-page.php:24 ../content-quote.php:26 ../content-single.php:29
-#: ../content-status.php:34 ../content-video.php:36 ../content.php:52
+#: ../content-aside.php:26 ../content-audio.php:32 ../content-chat.php:33
+#: ../content-gallery.php:48 ../content-image.php:34 ../content-link.php:29
+#: ../content-page.php:24 ../content-quote.php:25 ../content-single.php:29
+#: ../content-status.php:33 ../content-video.php:35 ../content.php:51
 #: ../image.php:92
 msgid "Pages:"
 msgstr "Sider:"
 
-#: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
-#: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
-#: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
-#: ../content-video.php:49 ../content.php:66
+#: ../content-aside.php:39 ../content-audio.php:45 ../content-chat.php:46
+#: ../content-gallery.php:62 ../content-image.php:47 ../content-link.php:41
+#: ../content-quote.php:37 ../content-single.php:45 ../content-status.php:45
+#: ../content-video.php:48 ../content.php:65
 msgid "Leave a reply"
 msgstr "Efterlad et svar"
 
-#: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
-#: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
-#: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
-#: ../content-video.php:49 ../content.php:66
+#: ../content-aside.php:39 ../content-audio.php:45 ../content-chat.php:46
+#: ../content-gallery.php:62 ../content-image.php:47 ../content-link.php:41
+#: ../content-quote.php:37 ../content-single.php:45 ../content-status.php:45
+#: ../content-video.php:48 ../content.php:65
 msgid "1 Reply"
 msgstr "1 svar"
 
-#: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
-#: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
-#: ../content-quote.php:38 ../content-status.php:46 ../content-video.php:49
+#: ../content-aside.php:39 ../content-audio.php:45 ../content-chat.php:46
+#: ../content-gallery.php:62 ../content-image.php:47 ../content-link.php:41
+#: ../content-quote.php:37 ../content-status.php:45 ../content-video.php:48
 msgid "% Replies;"
 msgstr "% svar;"
 
-#: ../content-aside.php:42 ../content-audio.php:48 ../content-chat.php:49
-#: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
-#: ../content-page.php:33 ../content-quote.php:40 ../content-search.php:24
-#: ../content-single.php:49 ../content-status.php:48 ../content-video.php:51
-#: ../content.php:69 ../image.php:38 ../image.php:111
-#: ../inc/adventurous-template-tags.php:190
+#: ../content-aside.php:41 ../content-audio.php:47 ../content-chat.php:48
+#: ../content-gallery.php:64 ../content-image.php:49 ../content-link.php:43
+#: ../content-page.php:33 ../content-quote.php:39 ../content-search.php:24
+#: ../content-single.php:48 ../content-status.php:47 ../content-video.php:50
+#: ../content.php:68 ../image.php:38 ../image.php:111
+#: ../inc/adventurous-template-tags.php:189
 msgid "Edit"
 msgstr "Rediger"
 
-#: ../content-audio.php:22
+#: ../content-audio.php:21
 msgid "All Audio Posts"
 msgstr "Alle lyd indlæg"
 
-#: ../content-audio.php:22
+#: ../content-audio.php:21
 msgid "Audio"
 msgstr "Lyd"
 
-#: ../content-chat.php:23
+#: ../content-chat.php:22
 msgid "All Chat Posts"
 msgstr "Alle chat indlæg"
 
-#: ../content-chat.php:23
+#: ../content-chat.php:22
 msgid "Chat"
 msgstr "Chat"
 
-#: ../content-gallery.php:26
+#: ../content-gallery.php:25
 msgid "All Gallery Posts"
 msgstr "Alle galleri indlæg"
 
-#: ../content-gallery.php:26
+#: ../content-gallery.php:25
 msgid "Gallery"
 msgstr "Galleri"
 
-#: ../content-gallery.php:43
+#: ../content-gallery.php:42
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr[0] "Dette galleri indeholder <a %1$s>%2$s billede</a>."
 msgstr[1] "Dette galleri indeholder <a %1$s>%2$s billeder</a>."
 
-#: ../content-image.php:24
+#: ../content-image.php:23
 msgid "All Image Posts"
 msgstr "Alle billede indlæg"
 
-#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:875
+#: ../content-image.php:23
 msgid "Image"
 msgstr "Billede"
 
-#: ../content-link.php:24
+#: ../content-link.php:23
 msgid "All Link Posts"
 msgstr "Alle link indlæg"
 
-#: ../content-link.php:24
+#: ../content-link.php:23
 msgid "Link"
 msgstr "Link"
 
-#: ../content-single.php:46 ../content.php:66
+#: ../content-single.php:45 ../content.php:65
 msgid "% Replies"
 msgstr "% svar"
 
-#: ../content-single.php:62 ../content.php:76
+#: ../content-single.php:61 ../content.php:75
 #, php-format
 msgid "About %s"
 msgstr "Om %s"
 
-#: ../content-single.php:66 ../content.php:80
+#: ../content-single.php:65 ../content.php:79
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Vis alle indlæg af %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../content-status.php:28
+#: ../content-status.php:27
 msgid "All Status Posts"
 msgstr "Alle status indlæg"
 
-#: ../content-status.php:28
+#: ../content-status.php:27
 msgid "Status"
 msgstr "Status"
 
-#: ../content-video.php:25
+#: ../content-video.php:24
 msgid "All Video Posts"
 msgstr "Alle video indlæg"
 
-#: ../content-video.php:25
+#: ../content-video.php:24
 msgid "Video"
 msgstr "Video"
 
-#: ../content.php:24
+#: ../content.php:23
 msgid "Featured post"
 msgstr "Fremhævet indlæg"
 
-#: ../functions.php:124
+#: ../functions.php:119
 msgid "Header Right Menu"
 msgstr ""
 
-#: ../functions.php:125
+#: ../functions.php:120
 msgid "Header Secondary Menu"
 msgstr ""
 
@@ -255,163 +253,155 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Både kommentarer og trackback er i øjeblikket lukket."
 
-#. translators: header image description
 #: ../inc/adventurous-custom-header.php:35
 msgid "Highway"
 msgstr ""
 
-#. translators: header image description
 #: ../inc/adventurous-custom-header.php:41
 msgid "Buddha"
 msgstr "Buddha"
 
-#: ../inc/adventurous-functions.php:704
-#: ../inc/panel/adventurous-theme-options.php:108
-#: ../inc/panel/adventurous-theme-options.php:1110
+#: ../inc/adventurous-default-options.php:96
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ../inc/adventurous-default-options.php:96
+msgid "All Rights Reserved"
+msgstr "Alle rettigheder forbeholdt"
+
+#: ../inc/adventurous-default-options.php:96
+msgid "Adventurous Theme by"
+msgstr ""
+
+#: ../inc/adventurous-default-options.php:144
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+#: ../inc/adventurous-default-options.php:144
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../inc/adventurous-functions.php:628
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/adventurous-functions.php:709
-#: ../inc/panel/adventurous-theme-options.php:109
-#: ../inc/panel/adventurous-theme-options.php:1118
+#: ../inc/adventurous-functions.php:633
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/adventurous-functions.php:714
-#: ../inc/panel/adventurous-theme-options.php:1126
+#: ../inc/adventurous-functions.php:638
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/adventurous-functions.php:719
+#: ../inc/adventurous-functions.php:643
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/adventurous-functions.php:724
-#: ../inc/panel/adventurous-theme-options.php:1134
+#: ../inc/adventurous-functions.php:648
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/adventurous-functions.php:729
+#: ../inc/adventurous-functions.php:653
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/adventurous-functions.php:734
-#: ../inc/panel/adventurous-theme-options.php:1150
+#: ../inc/adventurous-functions.php:658
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/adventurous-functions.php:739
+#: ../inc/adventurous-functions.php:663
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/adventurous-functions.php:744
+#: ../inc/adventurous-functions.php:668
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/adventurous-functions.php:749
-#: ../inc/panel/adventurous-theme-options.php:1182
+#: ../inc/adventurous-functions.php:673
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/adventurous-functions.php:754
-#: ../inc/panel/adventurous-theme-options.php:1190
+#: ../inc/adventurous-functions.php:678
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/adventurous-functions.php:759
-#: ../inc/panel/adventurous-theme-options.php:1198
+#: ../inc/adventurous-functions.php:683
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/adventurous-functions.php:764
-#: ../inc/panel/adventurous-theme-options.php:1206
+#: ../inc/adventurous-functions.php:688
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/adventurous-functions.php:769
-#: ../inc/panel/adventurous-theme-options.php:1214
+#: ../inc/adventurous-functions.php:693
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/adventurous-functions.php:774
-#: ../inc/panel/adventurous-theme-options.php:1222
+#: ../inc/adventurous-functions.php:698
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/adventurous-functions.php:779
-#: ../inc/panel/adventurous-theme-options.php:1230
+#: ../inc/adventurous-functions.php:703
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/adventurous-functions.php:784
-#: ../inc/panel/adventurous-theme-options.php:1238
+#: ../inc/adventurous-functions.php:708
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/adventurous-functions.php:789
-#: ../inc/panel/adventurous-theme-options.php:1246
+#: ../inc/adventurous-functions.php:713
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/adventurous-functions.php:794
-#: ../inc/panel/adventurous-theme-options.php:1254
+#: ../inc/adventurous-functions.php:718
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/adventurous-functions.php:799
-#: ../inc/panel/adventurous-theme-options.php:1262
+#: ../inc/adventurous-functions.php:723
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/adventurous-functions.php:804
-#: ../inc/panel/adventurous-theme-options.php:1270
+#: ../inc/adventurous-functions.php:728
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/adventurous-functions.php:809
-#: ../inc/panel/adventurous-theme-options.php:1278
+#: ../inc/adventurous-functions.php:733
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/adventurous-functions.php:814
-#: ../inc/panel/adventurous-theme-options.php:1286
+#: ../inc/adventurous-functions.php:738
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/adventurous-functions.php:819
+#: ../inc/adventurous-functions.php:743
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/adventurous-functions.php:824
-#: ../inc/panel/adventurous-theme-options.php:1302
+#: ../inc/adventurous-functions.php:748
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/adventurous-functions.php:829
+#: ../inc/adventurous-functions.php:753
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/adventurous-functions.php:834
-#: ../inc/panel/adventurous-theme-options.php:1318
+#: ../inc/adventurous-functions.php:758
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/adventurous-functions.php:839
-#: ../inc/panel/adventurous-theme-options.php:1326
+#: ../inc/adventurous-functions.php:763
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ../inc/adventurous-functions.php:844
-#: ../inc/panel/adventurous-theme-options.php:1334
+#: ../inc/adventurous-functions.php:768
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/adventurous-functions.php:849
-#: ../inc/panel/adventurous-theme-options.php:1342
+#: ../inc/adventurous-functions.php:773
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/adventurous-functions.php:871
+#: ../inc/adventurous-functions.php:795
 msgid "ID"
 msgstr "ID"
 
@@ -423,7 +413,7 @@ msgstr "Primær Menu"
 msgid "Skip to content"
 msgstr "Spring til indhold"
 
-#: ../inc/adventurous-menus.php:45
+#: ../inc/adventurous-menus.php:44
 msgid "Secondary Menu"
 msgstr "Sekundær menu"
 
@@ -440,13 +430,6 @@ msgid "Enable"
 msgstr "Aktiver"
 
 #: ../inc/adventurous-metabox.php:44
-#: ../inc/panel/adventurous-theme-options-defaults.php:185
-#: ../inc/panel/adventurous-theme-options-defaults.php:250
-#: ../inc/panel/adventurous-theme-options-defaults.php:297
-#: ../inc/panel/adventurous-theme-options.php:364
-#: ../inc/panel/adventurous-theme-options.php:506
-#: ../inc/panel/adventurous-theme-options.php:811
-#: ../inc/panel/adventurous-theme-options.php:967
 msgid "Disable"
 msgstr "Deaktivér"
 
@@ -468,32 +451,18 @@ msgid "No sidebar"
 msgstr "Ingen sidebar"
 
 #: ../inc/adventurous-metabox.php:91
-#: ../inc/panel/adventurous-theme-options-defaults.php:201
-#: ../inc/panel/adventurous-theme-options-defaults.php:217
-#: ../inc/panel/adventurous-theme-options.php:382
-#: ../inc/panel/adventurous-theme-options.php:464
 msgid "Featured Image"
 msgstr "Indlæggets thumbnail "
 
 #: ../inc/adventurous-metabox.php:96
-#: ../inc/panel/adventurous-theme-options-defaults.php:199
-#: ../inc/panel/adventurous-theme-options-defaults.php:215
-#: ../inc/panel/adventurous-theme-options.php:374
-#: ../inc/panel/adventurous-theme-options.php:468
 msgid "Full Image"
 msgstr "Fuldt billede"
 
 #: ../inc/adventurous-metabox.php:101
-#: ../inc/panel/adventurous-theme-options-defaults.php:200
-#: ../inc/panel/adventurous-theme-options-defaults.php:216
-#: ../inc/panel/adventurous-theme-options.php:378
-#: ../inc/panel/adventurous-theme-options.php:472
 msgid "Slider Image"
 msgstr "Slider billede"
 
 #: ../inc/adventurous-metabox.php:106
-#: ../inc/panel/adventurous-theme-options-defaults.php:218
-#: ../inc/panel/adventurous-theme-options.php:476
 msgid "Disable Image"
 msgstr "Deaktiver billede"
 
@@ -502,16 +471,14 @@ msgid "Sidebar Layout"
 msgstr "Sidebar Layout"
 
 #: ../inc/adventurous-metabox.php:153
-#: ../inc/panel/adventurous-theme-options.php:330
 msgid "Header Featured Image Options"
 msgstr "Header featured billede indstillinger"
 
 #: ../inc/adventurous-metabox.php:181
-#: ../inc/panel/adventurous-theme-options.php:456
 msgid "Content Featured Image Options"
 msgstr "Indhold featured billede indstillinger"
 
-#: ../inc/adventurous-slider.php:240
+#: ../inc/adventurous-slider.php:243
 msgid ""
 "You have selected Post Slider but you haven't added the Post ID in "
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
@@ -521,7 +488,7 @@ msgstr ""
 "=> Tema Indstillinger => Udvalgte Sliders => Udvalgte Indlæg Slider "
 "indstillinger\""
 
-#: ../inc/adventurous-slider.php:248
+#: ../inc/adventurous-slider.php:251
 msgid ""
 "You have selected Category Slider but you haven't selected any categories in "
 "\"Appearance => Theme Options => Featured Slider => Featured Category Slider "
@@ -558,39 +525,38 @@ msgstr "<span class=\"meta-nav\"> ← </ span> Ældre indlæg"
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyere indlæg <span class=\"meta-nav\"> → </ span>"
 
-#: ../inc/adventurous-template-tags.php:158
+#: ../inc/adventurous-template-tags.php:157
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/adventurous-template-tags.php:158
+#: ../inc/adventurous-template-tags.php:157
 msgid "(Edit)"
 msgstr "(Rediger)"
 
-#: ../inc/adventurous-template-tags.php:173
+#: ../inc/adventurous-template-tags.php:172
 msgid "Post author"
 msgstr "Forfatter"
 
-#. translators: 1: date, 2: time
-#: ../inc/adventurous-template-tags.php:179
+#: ../inc/adventurous-template-tags.php:178
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s ved %2$s"
 
-#: ../inc/adventurous-template-tags.php:185
+#: ../inc/adventurous-template-tags.php:184
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar venter på at blive godkendt"
 
-#: ../inc/adventurous-template-tags.php:194
+#: ../inc/adventurous-template-tags.php:193
 msgid "Reply"
 msgstr "Svar"
 
-#: ../inc/adventurous-template-tags.php:223
-#: ../inc/adventurous-template-tags.php:296
+#: ../inc/adventurous-template-tags.php:222
+#: ../inc/adventurous-template-tags.php:295
 #, php-format
 msgid "View all posts by %s"
 msgstr "Se alle poster af %s"
 
-#: ../inc/adventurous-template-tags.php:228
+#: ../inc/adventurous-template-tags.php:227
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
@@ -599,14 +565,14 @@ msgstr ""
 "<span class=\"on-date\">Udgivet den %1$s</span><span class=\"by-author\"> af "
 "%2$s</span>"
 
-#: ../inc/adventurous-template-tags.php:250
-#: ../inc/adventurous-template-tags.php:253
-#: ../inc/adventurous-template-tags.php:282
-#: ../inc/adventurous-template-tags.php:285
+#: ../inc/adventurous-template-tags.php:249
+#: ../inc/adventurous-template-tags.php:252
+#: ../inc/adventurous-template-tags.php:281
+#: ../inc/adventurous-template-tags.php:284
 msgid ", "
 msgstr ", "
 
-#: ../inc/adventurous-template-tags.php:258
+#: ../inc/adventurous-template-tags.php:257
 #, php-format
 msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
@@ -615,12 +581,12 @@ msgstr ""
 "<span class=\"in-category\">Udgivet den %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">Tagged %2$s</span>"
 
-#: ../inc/adventurous-template-tags.php:260
+#: ../inc/adventurous-template-tags.php:259
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
 msgstr "<span class=\"in-category\">Udgivet i %1$s</span>"
 
-#: ../inc/adventurous-template-tags.php:302
+#: ../inc/adventurous-template-tags.php:301
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -633,7 +599,7 @@ msgstr ""
 "%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> af %4$s</"
 "span>"
 
-#: ../inc/adventurous-template-tags.php:304
+#: ../inc/adventurous-template-tags.php:303
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -644,7 +610,7 @@ msgstr ""
 "under in %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "af %4$s</span>."
 
-#: ../inc/adventurous-template-tags.php:306
+#: ../inc/adventurous-template-tags.php:305
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
@@ -695,889 +661,33 @@ msgstr ""
 msgid "Title (optional):"
 msgstr "Title (optional):"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:21
-msgid "Adventurous is a Simple, Clean and Responsive WordPress Theme"
+#: ../inc/panel/customizer/customizer-custom-controls.php:34
+msgid "All Categories"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:22
-msgid ""
-"This is Promotion Headline. You can edit this from \"Appearance => Theme "
-"Options => Promotion Headline Options\""
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:23
-msgid "Reviews"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:39
-msgid "Continue Reading &rarr;"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:42
-msgid "Search &hellip;"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1794
-msgid "Copyright"
-msgstr "Copyright"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1794
-msgid "All Rights Reserved"
-msgstr "Alle rettigheder forbeholdt"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1794
-msgid "Adventurous Theme by"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:117
-msgid "Y"
-msgstr "Y"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:138
-msgid "https://catchthemes.com"
-msgstr "https://catchthemes.com"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:138
-#: ../inc/panel/adventurous-theme-options.php:93
-#: ../inc/panel/adventurous-theme-options.php:94
-msgid "Catch Themes"
-msgstr "Catch Themes"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:149
-msgid "Light (Blue)"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:150
-msgid "Dark"
-msgstr "Mørk"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:151
-msgid "Light (Black)"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:165
-#: ../inc/panel/adventurous-theme-options.php:848
-msgid "3 Columns"
-msgstr "3 kolonner"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:166
-#: ../inc/panel/adventurous-theme-options.php:853
-msgid "4 Columns"
-msgstr "4 kolonner"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:180
-#: ../inc/panel/adventurous-theme-options-defaults.php:248
-#: ../inc/panel/adventurous-theme-options-defaults.php:295
-#: ../inc/panel/adventurous-theme-options.php:339
-#: ../inc/panel/adventurous-theme-options.php:496
-#: ../inc/panel/adventurous-theme-options.php:803
-#: ../inc/panel/adventurous-theme-options.php:959
-msgid "Homepage"
-msgstr "Forside"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:181
-#: ../inc/panel/adventurous-theme-options.php:344
-msgid "Excluding Homepage"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:182
-#: ../inc/panel/adventurous-theme-options-defaults.php:249
-#: ../inc/panel/adventurous-theme-options-defaults.php:296
-#: ../inc/panel/adventurous-theme-options.php:349
-#: ../inc/panel/adventurous-theme-options.php:501
-#: ../inc/panel/adventurous-theme-options.php:807
-#: ../inc/panel/adventurous-theme-options.php:963
-msgid "Entire Site"
-msgstr "Hele siden"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:183
-#: ../inc/panel/adventurous-theme-options.php:354
-msgid "Entire Site, Page/Post Featured Image"
-msgstr "Hele siden, Indlæg/Side fremvisningsbillede"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:184
-#: ../inc/panel/adventurous-theme-options.php:359
-msgid "Pages & Posts"
-msgstr "Sider & indlæg"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:232
-#: ../inc/panel/adventurous-theme-options.php:644
-msgid "Right Sidebar"
-msgstr "Højre Sidebar"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:233
-#: ../inc/panel/adventurous-theme-options.php:649
-msgid "Left Sidebar"
-msgstr "Venstre Sidebar"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:234
-#: ../inc/panel/adventurous-theme-options.php:654
-msgid "No Sidebar"
-msgstr "Ingen Seitenleiste"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:264
-#: ../inc/panel/adventurous-theme-options.php:664
-msgid "Full Content Display"
-msgstr "Fuld Content Display"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:265
-#: ../inc/panel/adventurous-theme-options.php:668
-msgid "Excerpt/Blog Display"
-msgstr "Uddrag / blogvisning"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:279
-#: ../inc/panel/adventurous-theme-options.php:938
-msgid "Demo Slider"
-msgstr "Demo Slider"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:280
-#: ../inc/panel/adventurous-theme-options.php:942
-msgid "Post Slider"
-msgstr "Indlæg Slider"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:281
-#: ../inc/panel/adventurous-theme-options.php:947
-msgid "Category Slider"
-msgstr "Kategori slider"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:311
-#: ../inc/panel/adventurous-theme-options.php:994
-msgid "fade"
-msgstr "Tone ud (fade)"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:312
-#: ../inc/panel/adventurous-theme-options.php:995
-msgid "wipe"
-msgstr "slette (wipe)"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:313
-#: ../inc/panel/adventurous-theme-options-defaults.php:315
-#: ../inc/panel/adventurous-theme-options.php:996
-msgid "scrollUp"
-msgstr "scrollUp"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:314
-#: ../inc/panel/adventurous-theme-options.php:997
-msgid "scrollDown"
-msgstr "scrollDown"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:316
-#: ../inc/panel/adventurous-theme-options.php:998
-msgid "scrollLeft"
-msgstr "scrollLeft"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:317
-#: ../inc/panel/adventurous-theme-options.php:999
-msgid "scrollRight"
-msgstr "scrollRight"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:318
-#: ../inc/panel/adventurous-theme-options.php:1000
-msgid "blindX"
-msgstr "blindX"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:319
-#: ../inc/panel/adventurous-theme-options.php:1001
-msgid "blindY"
-msgstr "blindY"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:320
-#: ../inc/panel/adventurous-theme-options.php:1002
-msgid "blindZ"
-msgstr "blindZ"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:321
-#: ../inc/panel/adventurous-theme-options.php:1003
-msgid "cover"
-msgstr "cover"
-
-#: ../inc/panel/adventurous-theme-options-defaults.php:322
-#: ../inc/panel/adventurous-theme-options.php:1004
-msgid "shuffle"
-msgstr "shuffle"
-
-#: ../inc/panel/adventurous-theme-options.php:44
-#: ../inc/panel/adventurous-theme-options.php:45
-#: ../inc/panel/adventurous-theme-options.php:125
-msgid "Theme Options"
-msgstr "Tema indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:85
-msgid "Options Saved"
-msgstr "Gemte Indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:91
-msgid "Theme Options By"
-msgstr "Tema indstillinger af"
-
-#: ../inc/panel/adventurous-theme-options.php:93
-msgid "https://catchthemes.com/"
-msgstr "https://catchthemes.com/"
-
-#: ../inc/panel/adventurous-theme-options.php:100
-msgid "https://catchthemes.com/themes/adventurous-pro/"
-msgstr "https://catchthemes.com/themes/adventurous-pro/"
-
-#: ../inc/panel/adventurous-theme-options.php:100
-msgid "Upgrade to Adventurous Pro"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:105
-msgid "https://catchthemes.com/donate/"
-msgstr "https://catchthemes.com/donate/"
-
-#: ../inc/panel/adventurous-theme-options.php:105
-msgid "Donate to Adventurous"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:105
-#: ../inc/panel/customizer/customizer-custom-controls.php:72
-msgid "Donate Now"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:106
-msgid "https://catchthemes.com/support/"
-msgstr "https://catchthemes.com/support/"
-
-#: ../inc/panel/adventurous-theme-options.php:106
-#: ../inc/panel/customizer/customizer-custom-controls.php:64
-msgid "Support"
-msgstr "Support"
-
-#: ../inc/panel/adventurous-theme-options.php:107
-msgid "https://catchthemes.com/theme-instructions/adventurous-pro/"
-msgstr "https://catchthemes.com/theme-instructions/adventurous-pro/"
-
-#: ../inc/panel/adventurous-theme-options.php:107
-msgid "Theme Instruction"
-msgstr "Instruktion for Tema"
-
-#: ../inc/panel/adventurous-theme-options.php:108
-msgid "https://www.facebook.com/catchthemes/"
-msgstr "https://www.facebook.com/catchthemes/"
-
-#: ../inc/panel/adventurous-theme-options.php:108
-msgid "Like Catch Themes on Facebook"
-msgstr "Vælg Like Catch Themes på Facebook"
-
-#: ../inc/panel/adventurous-theme-options.php:109
-msgid "https://twitter.com/catchthemes/"
-msgstr "https://twitter.com/catchthemes/"
-
-#: ../inc/panel/adventurous-theme-options.php:109
-msgid "Follow Catch Themes on Twitter"
-msgstr "Følg Catch Themes på Twitter"
-
-#: ../inc/panel/adventurous-theme-options.php:110
-msgid "http://wordpress.org/support/view/theme-reviews/adventurous"
-msgstr "http://wordpress.org/support/view/theme-reviews/adventurous"
-
-#: ../inc/panel/adventurous-theme-options.php:110
-msgid "Rate us 5 Star on WordPress"
-msgstr "Tildel os 5 stjerner på WordPress"
-
-#: ../inc/panel/adventurous-theme-options.php:110
-msgid "5 Star Rating"
-msgstr "5-stjernet bedømmelse"
-
-#: ../inc/panel/adventurous-theme-options.php:116
-#, php-format
-msgctxt "1: Customizer Link Start, 2: Customizer Link End"
-msgid ""
-"Theme Options Panel will be retired on future versions. Please use %1$s "
-"Customizer %2$s instead."
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:126
-msgid "Featured Content"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:127
-msgid "Featured Slider"
-msgstr "Featured Slider"
-
-#: ../inc/panel/adventurous-theme-options.php:128
-msgid "Social Links"
-msgstr "Sociale Links"
-
-#: ../inc/panel/adventurous-theme-options.php:141
-msgid "Favicon"
-msgstr "Favicon"
-
-#: ../inc/panel/adventurous-theme-options.php:145
-msgid "Disable Favicon?"
-msgstr "Deaktiver Favicon?"
-
-#: ../inc/panel/adventurous-theme-options.php:149
-#: ../inc/panel/adventurous-theme-options.php:194
-#: ../inc/panel/adventurous-theme-options.php:276
-#: ../inc/panel/adventurous-theme-options.php:560
-#: ../inc/panel/adventurous-theme-options.php:569
-#: ../inc/panel/adventurous-theme-options.php:578
-#: ../inc/panel/adventurous-theme-options.php:779
-#: ../inc/panel/adventurous-theme-options.php:977
-msgid "Check to disable"
-msgstr "Kontroller at deaktivere"
-
-#: ../inc/panel/adventurous-theme-options.php:154
-msgid "Fav Icon URL:"
-msgstr "Fav Icon URL:"
-
-#: ../inc/panel/adventurous-theme-options.php:162
-msgid "Insert as Fav Icon"
-msgstr "Insert as Fav Icon"
-
-#: ../inc/panel/adventurous-theme-options.php:162
-msgid "Change Fav Icon"
-msgstr "Skift Fav ikon"
-
-#: ../inc/panel/adventurous-theme-options.php:167
-#: ../inc/panel/adventurous-theme-options.php:212
-#: ../inc/panel/adventurous-theme-options.php:296
-#: ../inc/panel/adventurous-theme-options.php:403
-msgid "Preview"
-msgstr "Preview"
-
-#: ../inc/panel/adventurous-theme-options.php:180
-#: ../inc/panel/adventurous-theme-options.php:228
-#: ../inc/panel/adventurous-theme-options.php:257
-#: ../inc/panel/adventurous-theme-options.php:323
-#: ../inc/panel/adventurous-theme-options.php:450
-#: ../inc/panel/adventurous-theme-options.php:481
-#: ../inc/panel/adventurous-theme-options.php:582
-#: ../inc/panel/adventurous-theme-options.php:629
-#: ../inc/panel/adventurous-theme-options.php:682
-#: ../inc/panel/adventurous-theme-options.php:699
-#: ../inc/panel/adventurous-theme-options.php:733
-#: ../inc/panel/adventurous-theme-options.php:762
-#: ../inc/panel/adventurous-theme-options.php:783
-#: ../inc/panel/adventurous-theme-options.php:859
-#: ../inc/panel/adventurous-theme-options.php:919
-#: ../inc/panel/adventurous-theme-options.php:1027
-#: ../inc/panel/adventurous-theme-options.php:1062
-#: ../inc/panel/adventurous-theme-options.php:1095
-#: ../inc/panel/adventurous-theme-options.php:1349
-msgid "Save Changes"
-msgstr "Gem Ændringer"
-
-#: ../inc/panel/adventurous-theme-options.php:186
-msgid "Web Clip Icon Options"
-msgstr "Web Clip Ikon Valg"
-
-#: ../inc/panel/adventurous-theme-options.php:190
-msgid "Disable Web Clip Icon?"
-msgstr "Deaktivere Web Clip Ikon?"
-
-#: ../inc/panel/adventurous-theme-options.php:199
-msgid "Web Clip Icon URL:"
-msgstr "Web Clip Icon URL:"
-
-#: ../inc/panel/adventurous-theme-options.php:207
-msgid "Insert as Web Clip Icon"
-msgstr "Insert as Web Clip Icon"
-
-#: ../inc/panel/adventurous-theme-options.php:207
-msgid "Change Web Clip Icon"
-msgstr "Skift Web Clip Ikon"
-
-#: ../inc/panel/adventurous-theme-options.php:225
-msgid ""
-"Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
-"Height 144px height, which will support High Resolution Devices like iPad "
-"Retina."
-msgstr ""
-"Bemærk: Web Clip Ikon til Apple enheder. Anbefalede størrelse - Bredde 144px "
-"og højde 144px højde, som vil støtte høj opløsning Enheder som iPad Retina."
-
-#: ../inc/panel/adventurous-theme-options.php:237
-msgid "Menu Options"
-msgstr "Menupunkter"
-
-#: ../inc/panel/adventurous-theme-options.php:241
-msgid "Custom Menus"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:244
-msgid "Click to Create Custom Menus"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:249
-msgid "Assign Locations"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:250
-msgid ""
-"Note: You can assign your custom menu to Header Right Menu Location and "
-"Header Secondary Menu Location. This will replace the WordPress default page "
-"menu"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:253
-msgid "Click to Manage Menu Locations"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:263
-msgid "Header Options"
-msgstr "Header Indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:272
-msgid "Disable Logo?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:281
-msgid "Logo url"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:291
-msgid "Insert as Logo"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:291
-msgid "Change Logo"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:315
-msgid "Disable Header Right Section?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:319
-#: ../inc/panel/adventurous-theme-options.php:596
-msgid "Check to Disable"
-msgstr "Afkryds for at deaktivere"
-
-#: ../inc/panel/adventurous-theme-options.php:334
-msgid "Enable Featured Header Image"
-msgstr "Aktiver Featured Header Billede"
-
-#: ../inc/panel/adventurous-theme-options.php:370
-msgid "Page/Post Featured Image Size"
-msgstr "Side/Indlæg Featured billede størrelse"
-
-#: ../inc/panel/adventurous-theme-options.php:388
-msgid "Header Image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:394
-msgid "Click here to change header image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:394
-msgid "Click here to change Header Image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:396
-msgid "Click here to add header image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:396
-msgid "Click here to add Header Image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:410
-msgid "There is no Header Image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:417
-msgid "Featured Header Image Alt/Title Tag"
-msgstr "Featured Header Billede Alt/Title Tag"
-
-#: ../inc/panel/adventurous-theme-options.php:425
-msgid "Featured Header Image Link URL"
-msgstr "Featured Header Billede Link URL"
-
-#: ../inc/panel/adventurous-theme-options.php:433
-#: ../inc/panel/adventurous-theme-options.php:892
-msgid "Target. Open Link in New Window?"
-msgstr "Åben i nyt vindue?"
-
-#: ../inc/panel/adventurous-theme-options.php:437
-#: ../inc/panel/adventurous-theme-options.php:551
-#: ../inc/panel/adventurous-theme-options.php:896
-msgid "Check to open in new window"
-msgstr "Afkryds for at åbne i nyt vindue"
-
-#: ../inc/panel/adventurous-theme-options.php:442
-msgid "Reset Header Featured Image Options?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:446
-#: ../inc/panel/adventurous-theme-options.php:678
-#: ../inc/panel/adventurous-theme-options.php:729
-msgid "Check to reset"
-msgstr "Kontroller at nulstille"
-
-#: ../inc/panel/adventurous-theme-options.php:460
-msgid "Content Featured Image Size"
-msgstr "Featured billede størrelse"
-
-#: ../inc/panel/adventurous-theme-options.php:487
-msgid "Promotion Headline Options"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:491
-msgid "Enable Promotion"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:512
-msgid "Headline Text"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:513
-msgid "The appropriate length for Headine is around 10 words."
-msgstr "Den passende længde for overskriften er omkring 10 ord."
-
-#: ../inc/panel/adventurous-theme-options.php:521
-msgid "Subheadline Text"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:522
-msgid "The appropriate length for Headine is around 15 words."
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:530
-msgid "Button Text"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:531
-msgid "The appropriate length for Headine is around 3 words."
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:539
-msgid "Button Link"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:547
-msgid "Target. Open Link in New Window? "
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:556
-msgid "Disable Headline?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:565
-msgid "Disable Subheadline?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:574
-msgid "Disable Button?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:588
-msgid "Homepage / Frontpage Settings"
-msgstr "Forside indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:592
-msgid "Disable Latest Posts?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:601
-msgid "Add Page instead of Latest Posts"
-msgstr "Tilføj side i stedet for seneste indlæg"
-
-#: ../inc/panel/adventurous-theme-options.php:604
-msgid "Click Here to Set Static Front Page Instead of Latest Posts"
-msgstr "Klik her for at vælge en statisk forside i stedet for seneste indlæg"
-
-#: ../inc/panel/adventurous-theme-options.php:609
-msgid "Homepage posts categories:"
-msgstr "Forside indlægskategorier:"
-
-#: ../inc/panel/adventurous-theme-options.php:610
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
-msgstr "Kun indlæg som hører til de valgte kategorier vil blive vist på"
-
-#: ../inc/panel/adventurous-theme-options.php:614
-#: ../inc/panel/adventurous-theme-options.php:1077
-msgid "--Disabled--"
-msgstr "--Deaktiveret--"
-
-#: ../inc/panel/adventurous-theme-options.php:625
-#: ../inc/panel/adventurous-theme-options.php:1088
-msgid "You may select multiple categories by holding down the CTRL key."
-msgstr ""
-"Du kan vælge flere kategorier på én gang ved at holde CTRL-tasten nede."
-
-#: ../inc/panel/adventurous-theme-options.php:635
-msgid "Layout Options"
-msgstr "Layout muligheder"
-
-#: ../inc/panel/adventurous-theme-options.php:639
-msgid "Sidebar Layout Options"
-msgstr "Sidebar layoutindstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:660
-msgid "Content Layout"
-msgstr "Content Layout"
-
-#: ../inc/panel/adventurous-theme-options.php:674
-msgid "Reset Layout?"
-msgstr "Reset Layout?"
-
-#: ../inc/panel/adventurous-theme-options.php:688
-msgid "Search Text Settings"
-msgstr "Søg efter indstillinger for tekst"
-
-#: ../inc/panel/adventurous-theme-options.php:692
-msgid "Default Display Text in Search"
-msgstr "Standardtekst i søgefelt"
-
-#: ../inc/panel/adventurous-theme-options.php:705
-msgid "Excerpt / More Tag Settings"
-msgstr "Ekstrakt / flere Tag Indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:709
-msgid "More Tag Text"
-msgstr "Mere Tag Tekst"
-
-#: ../inc/panel/adventurous-theme-options.php:717
-msgid "Excerpt length(words)"
-msgstr "Uddrag længde (ord)"
-
-#: ../inc/panel/adventurous-theme-options.php:725
-msgid "Reset Excerpt?"
-msgstr "Nulstil"
-
-#: ../inc/panel/adventurous-theme-options.php:743
-msgid "Custom CSS"
-msgstr "Custom CSS"
-
-#: ../inc/panel/adventurous-theme-options.php:747
-msgid "Enter your custom CSS styles."
-msgstr "Indtast custom CSS styles."
-
-#: ../inc/panel/adventurous-theme-options.php:755
-msgid "CSS Tutorial from W3Schools."
-msgstr "CSS Tutorial fra W3Schools."
-
-#: ../inc/panel/adventurous-theme-options.php:758
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
-
-#: ../inc/panel/adventurous-theme-options.php:758
-msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
-
-#: ../inc/panel/adventurous-theme-options.php:758
-msgid "Click Here to Read"
-msgstr "Klik her for at læse"
-
-#: ../inc/panel/adventurous-theme-options.php:771
-msgid "Scroll Up"
-msgstr "Rul op"
-
-#: ../inc/panel/adventurous-theme-options.php:775
-msgid "Disable Scroll Up?"
-msgstr "Deaktiver rul op?"
-
-#: ../inc/panel/adventurous-theme-options.php:794
-msgid "Featured Settings"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:798
-msgid "Enable Featured Content"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:817
-msgid "Featured Content Headline Text"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:818
-msgid "Leave empty if you want to remove headline."
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:826
-msgid "Featured Content Subheadline Text"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:827
-msgid "Leave empty if you want to remove Subheadline"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:835
-msgid "Number of Featured Content"
-msgstr "Antal featured indhold"
-
-#: ../inc/panel/adventurous-theme-options.php:843
-msgid "Featured Content Layout"
-msgstr "Featured indhold layout"
-
-#: ../inc/panel/adventurous-theme-options.php:866
-msgid "Featured Content Options"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:872
-#, php-format
-msgid "Featured Content #%s"
-msgstr "Featured inhold #%s"
-
-#: ../inc/panel/adventurous-theme-options.php:879
-msgid "Insert Image"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:879
-msgid "Change Image"
-msgstr "Ændre billede"
-
-#: ../inc/panel/adventurous-theme-options.php:884
-msgid "Link URL"
-msgstr "Link URL"
-
-#: ../inc/panel/adventurous-theme-options.php:887
-msgid "Add in the Target URL for the content"
-msgstr "Tilføj i Target URL for indholdet"
-
-#: ../inc/panel/adventurous-theme-options.php:901
-msgid "Title"
-msgstr "Titel"
-
-#: ../inc/panel/adventurous-theme-options.php:904
-msgid "Leave empty if you want to remove title"
-msgstr "Skal være blank hvis du ønsker titlen skal væk"
-
-#: ../inc/panel/adventurous-theme-options.php:909
-msgid "Content"
-msgstr "Indhold"
-
-#: ../inc/panel/adventurous-theme-options.php:910
-msgid "The appropriate length for Content is around 10 words."
-msgstr "Den passende længde for indholdet er omkring 10 ord."
-
-#: ../inc/panel/adventurous-theme-options.php:929
-msgid "Slider Options"
-msgstr "Slider-indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:933
-msgid "Select Slider Type"
-msgstr "Vælg slider type"
-
-#: ../inc/panel/adventurous-theme-options.php:954
-msgid "Enable Slider"
-msgstr "Aktiver slider"
-
-#: ../inc/panel/adventurous-theme-options.php:973
-msgid "Disable Text in Slider?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:982
-msgid "Number of Slides"
-msgstr "Antal Slides"
-
-#: ../inc/panel/adventurous-theme-options.php:990
-msgid "Transition Effect:"
-msgstr "Transitions-effekt:"
-
-#: ../inc/panel/adventurous-theme-options.php:1010
-msgid "Transition Delay"
-msgstr "Transition - forsinkelse"
-
-#: ../inc/panel/adventurous-theme-options.php:1014
-#: ../inc/panel/adventurous-theme-options.php:1023
-msgid "second(s)"
-msgstr "sekund(er)"
-
-#: ../inc/panel/adventurous-theme-options.php:1019
-msgid "Transition Length"
-msgstr "Transitions-længde"
-
-#: ../inc/panel/adventurous-theme-options.php:1034
-msgid "Featured Post Slider Options"
-msgstr "Nyeste indlæg Slider muligheder"
-
-#: ../inc/panel/adventurous-theme-options.php:1038
-msgid "Exclude Slider post from Homepage posts?"
-msgstr "Udeluk Slider indlæg fra Homepage indlæg?"
-
-#: ../inc/panel/adventurous-theme-options.php:1042
-msgid "Check to exclude"
-msgstr "kryds af for at udelukke"
-
-#: ../inc/panel/adventurous-theme-options.php:1049
-#, php-format
-msgid "Featured Post Slider #%s"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:1053
-msgid "Click Here To Edit"
-msgstr "Klik her for at redigere"
-
-#: ../inc/panel/adventurous-theme-options.php:1059
-msgid ""
-"Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr ""
-"Note: Her kan du indtaste dine indlægs-ID'er, der vises på din Homepage som "
-"Slider."
-
-#: ../inc/panel/adventurous-theme-options.php:1068
-msgid "Featured Category Slider Options"
-msgstr "Featured kategori slider indstillinger"
-
-#: ../inc/panel/adventurous-theme-options.php:1072
-msgid "Select Slider Categories"
-msgstr "Vælg slider kategorier"
-
-#: ../inc/panel/adventurous-theme-options.php:1073
-msgid ""
-"Use this only is you want to display posts from Specific Categories in "
-"Featured Slider"
-msgstr ""
-"Brug dette hvis du ønsker at vise indlæg fra specifikke kategorier i "
-"Udvalgte Sliders"
-
-#: ../inc/panel/adventurous-theme-options.php:1092
-msgid ""
-"Note: Here you can select the categories from which latest posts will "
-"display on Featured Slider."
-msgstr ""
-"Bemærk: Her kan du vælge de kategorier, som skal vises på Featured Slider."
-
-#: ../inc/panel/adventurous-theme-options.php:1106
-msgid "Predefine Social Icons"
-msgstr "Predefinerede ikoner"
-
-#: ../inc/panel/adventurous-theme-options.php:1142
-msgid "Youtube"
-msgstr "Youtube"
-
-#: ../inc/panel/adventurous-theme-options.php:1158
-msgid "Linkedin"
-msgstr "Linkedin"
-
-#: ../inc/panel/adventurous-theme-options.php:1166
-msgid "Slideshare"
-msgstr "Slideshare"
-
-#: ../inc/panel/adventurous-theme-options.php:1174
-msgid "Foursquare"
-msgstr "Foursquare"
-
-#: ../inc/panel/adventurous-theme-options.php:1294
-msgid "Goodreads"
-msgstr "Goodreads"
-
-#: ../inc/panel/adventurous-theme-options.php:1310
-msgid "Soundcloud"
-msgstr "Soundcloud"
-
-#: ../inc/panel/customizer/customizer-custom-controls.php:47
+#: ../inc/panel/customizer/customizer-custom-controls.php:48
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:60
+#: ../inc/panel/customizer/customizer-custom-controls.php:61
 msgid "Theme Instructions"
 msgstr "Theme Instructions"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:68
+#: ../inc/panel/customizer/customizer-custom-controls.php:65
+msgid "Support"
+msgstr "Support"
+
+#: ../inc/panel/customizer/customizer-custom-controls.php:69
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:76
+#: ../inc/panel/customizer/customizer-custom-controls.php:73
+msgid "Donate Now"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer-custom-controls.php:77
 msgid "Review"
 msgstr ""
 
@@ -1613,18 +723,431 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr "Søgeresultater for: %s"
 
-#: ../searchform.php:17 ../searchform.php:19
+#: ../searchform.php:16 ../searchform.php:18
 msgid "Search"
 msgstr "Søg"
-
-#: ../searchform.php:18
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: ../sidebar.php:64
 msgid "Archives"
 msgstr "Arkiver"
+
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s tanker om &ldquo;%2$s&rdquo;"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "Dark"
+#~ msgstr "Mørk"
+
+#~ msgid "3 Columns"
+#~ msgstr "3 kolonner"
+
+#~ msgid "4 Columns"
+#~ msgstr "4 kolonner"
+
+#~ msgid "Homepage"
+#~ msgstr "Forside"
+
+#~ msgid "Entire Site"
+#~ msgstr "Hele siden"
+
+#~ msgid "Entire Site, Page/Post Featured Image"
+#~ msgstr "Hele siden, Indlæg/Side fremvisningsbillede"
+
+#~ msgid "Pages & Posts"
+#~ msgstr "Sider & indlæg"
+
+#~ msgid "Right Sidebar"
+#~ msgstr "Højre Sidebar"
+
+#~ msgid "Left Sidebar"
+#~ msgstr "Venstre Sidebar"
+
+#~ msgid "No Sidebar"
+#~ msgstr "Ingen Seitenleiste"
+
+#~ msgid "Full Content Display"
+#~ msgstr "Fuld Content Display"
+
+#~ msgid "Excerpt/Blog Display"
+#~ msgstr "Uddrag / blogvisning"
+
+#~ msgid "Demo Slider"
+#~ msgstr "Demo Slider"
+
+#~ msgid "Post Slider"
+#~ msgstr "Indlæg Slider"
+
+#~ msgid "Category Slider"
+#~ msgstr "Kategori slider"
+
+#~ msgid "fade"
+#~ msgstr "Tone ud (fade)"
+
+#~ msgid "wipe"
+#~ msgstr "slette (wipe)"
+
+#~ msgid "scrollUp"
+#~ msgstr "scrollUp"
+
+#~ msgid "scrollDown"
+#~ msgstr "scrollDown"
+
+#~ msgid "scrollLeft"
+#~ msgstr "scrollLeft"
+
+#~ msgid "scrollRight"
+#~ msgstr "scrollRight"
+
+#~ msgid "blindX"
+#~ msgstr "blindX"
+
+#~ msgid "blindY"
+#~ msgstr "blindY"
+
+#~ msgid "blindZ"
+#~ msgstr "blindZ"
+
+#~ msgid "cover"
+#~ msgstr "cover"
+
+#~ msgid "shuffle"
+#~ msgstr "shuffle"
+
+#~ msgid "Theme Options"
+#~ msgstr "Tema indstillinger"
+
+#~ msgid "Options Saved"
+#~ msgstr "Gemte Indstillinger"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Tema indstillinger af"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/adventurous-pro/"
+#~ msgstr "https://catchthemes.com/themes/adventurous-pro/"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/adventurous-pro/"
+#~ msgstr "https://catchthemes.com/theme-instructions/adventurous-pro/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Instruktion for Tema"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Vælg Like Catch Themes på Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Følg Catch Themes på Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/adventurous"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/adventurous"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Tildel os 5 stjerner på WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "5-stjernet bedømmelse"
+
+#~ msgid "Featured Slider"
+#~ msgstr "Featured Slider"
+
+#~ msgid "Social Links"
+#~ msgstr "Sociale Links"
+
+#~ msgid "Favicon"
+#~ msgstr "Favicon"
+
+#~ msgid "Disable Favicon?"
+#~ msgstr "Deaktiver Favicon?"
+
+#~ msgid "Check to disable"
+#~ msgstr "Kontroller at deaktivere"
+
+#~ msgid "Fav Icon URL:"
+#~ msgstr "Fav Icon URL:"
+
+#~ msgid "Insert as Fav Icon"
+#~ msgstr "Insert as Fav Icon"
+
+#~ msgid "Change Fav Icon"
+#~ msgstr "Skift Fav ikon"
+
+#~ msgid "Preview"
+#~ msgstr "Preview"
+
+#~ msgid "Save Changes"
+#~ msgstr "Gem Ændringer"
+
+#~ msgid "Web Clip Icon Options"
+#~ msgstr "Web Clip Ikon Valg"
+
+#~ msgid "Disable Web Clip Icon?"
+#~ msgstr "Deaktivere Web Clip Ikon?"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "Web Clip Icon URL:"
+
+#~ msgid "Insert as Web Clip Icon"
+#~ msgstr "Insert as Web Clip Icon"
+
+#~ msgid "Change Web Clip Icon"
+#~ msgstr "Skift Web Clip Ikon"
+
+#~ msgid ""
+#~ "Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
+#~ "Height 144px height, which will support High Resolution Devices like iPad "
+#~ "Retina."
+#~ msgstr ""
+#~ "Bemærk: Web Clip Ikon til Apple enheder. Anbefalede størrelse - Bredde "
+#~ "144px og højde 144px højde, som vil støtte høj opløsning Enheder som iPad "
+#~ "Retina."
+
+#~ msgid "Menu Options"
+#~ msgstr "Menupunkter"
+
+#~ msgid "Header Options"
+#~ msgstr "Header Indstillinger"
+
+#~ msgid "Check to Disable"
+#~ msgstr "Afkryds for at deaktivere"
+
+#~ msgid "Enable Featured Header Image"
+#~ msgstr "Aktiver Featured Header Billede"
+
+#~ msgid "Page/Post Featured Image Size"
+#~ msgstr "Side/Indlæg Featured billede størrelse"
+
+#~ msgid "Featured Header Image Alt/Title Tag"
+#~ msgstr "Featured Header Billede Alt/Title Tag"
+
+#~ msgid "Featured Header Image Link URL"
+#~ msgstr "Featured Header Billede Link URL"
+
+#~ msgid "Target. Open Link in New Window?"
+#~ msgstr "Åben i nyt vindue?"
+
+#~ msgid "Check to open in new window"
+#~ msgstr "Afkryds for at åbne i nyt vindue"
+
+#~ msgid "Check to reset"
+#~ msgstr "Kontroller at nulstille"
+
+#~ msgid "Content Featured Image Size"
+#~ msgstr "Featured billede størrelse"
+
+#~ msgid "The appropriate length for Headine is around 10 words."
+#~ msgstr "Den passende længde for overskriften er omkring 10 ord."
+
+#~ msgid "Homepage / Frontpage Settings"
+#~ msgstr "Forside indstillinger"
+
+#~ msgid "Add Page instead of Latest Posts"
+#~ msgstr "Tilføj side i stedet for seneste indlæg"
+
+#~ msgid "Click Here to Set Static Front Page Instead of Latest Posts"
+#~ msgstr ""
+#~ "Klik her for at vælge en statisk forside i stedet for seneste indlæg"
+
+#~ msgid "Homepage posts categories:"
+#~ msgstr "Forside indlægskategorier:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr "Kun indlæg som hører til de valgte kategorier vil blive vist på"
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Deaktiveret--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr ""
+#~ "Du kan vælge flere kategorier på én gang ved at holde CTRL-tasten nede."
+
+#~ msgid "Layout Options"
+#~ msgstr "Layout muligheder"
+
+#~ msgid "Sidebar Layout Options"
+#~ msgstr "Sidebar layoutindstillinger"
+
+#~ msgid "Content Layout"
+#~ msgstr "Content Layout"
+
+#~ msgid "Reset Layout?"
+#~ msgstr "Reset Layout?"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Søg efter indstillinger for tekst"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Standardtekst i søgefelt"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Ekstrakt / flere Tag Indstillinger"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Mere Tag Tekst"
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Uddrag længde (ord)"
+
+#~ msgid "Reset Excerpt?"
+#~ msgstr "Nulstil"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Custom CSS"
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Indtast custom CSS styles."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "CSS Tutorial fra W3Schools."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "CSS Tutorial"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Klik her for at læse"
+
+#~ msgid "Scroll Up"
+#~ msgstr "Rul op"
+
+#~ msgid "Disable Scroll Up?"
+#~ msgstr "Deaktiver rul op?"
+
+#~ msgid "Number of Featured Content"
+#~ msgstr "Antal featured indhold"
+
+#~ msgid "Featured Content Layout"
+#~ msgstr "Featured indhold layout"
+
+#~ msgid "Featured Content #%s"
+#~ msgstr "Featured inhold #%s"
+
+#~ msgid "Change Image"
+#~ msgstr "Ændre billede"
+
+#~ msgid "Link URL"
+#~ msgstr "Link URL"
+
+#~ msgid "Add in the Target URL for the content"
+#~ msgstr "Tilføj i Target URL for indholdet"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "Leave empty if you want to remove title"
+#~ msgstr "Skal være blank hvis du ønsker titlen skal væk"
+
+#~ msgid "Content"
+#~ msgstr "Indhold"
+
+#~ msgid "The appropriate length for Content is around 10 words."
+#~ msgstr "Den passende længde for indholdet er omkring 10 ord."
+
+#~ msgid "Slider Options"
+#~ msgstr "Slider-indstillinger"
+
+#~ msgid "Select Slider Type"
+#~ msgstr "Vælg slider type"
+
+#~ msgid "Enable Slider"
+#~ msgstr "Aktiver slider"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Antal Slides"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Transitions-effekt:"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Transition - forsinkelse"
+
+#~ msgid "second(s)"
+#~ msgstr "sekund(er)"
+
+#~ msgid "Transition Length"
+#~ msgstr "Transitions-længde"
+
+#~ msgid "Featured Post Slider Options"
+#~ msgstr "Nyeste indlæg Slider muligheder"
+
+#~ msgid "Exclude Slider post from Homepage posts?"
+#~ msgstr "Udeluk Slider indlæg fra Homepage indlæg?"
+
+#~ msgid "Check to exclude"
+#~ msgstr "kryds af for at udelukke"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Klik her for at redigere"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Note: Her kan du indtaste dine indlægs-ID'er, der vises på din Homepage "
+#~ "som Slider."
+
+#~ msgid "Featured Category Slider Options"
+#~ msgstr "Featured kategori slider indstillinger"
+
+#~ msgid "Select Slider Categories"
+#~ msgstr "Vælg slider kategorier"
+
+#~ msgid ""
+#~ "Use this only is you want to display posts from Specific Categories in "
+#~ "Featured Slider"
+#~ msgstr ""
+#~ "Brug dette hvis du ønsker at vise indlæg fra specifikke kategorier i "
+#~ "Udvalgte Sliders"
+
+#~ msgid ""
+#~ "Note: Here you can select the categories from which latest posts will "
+#~ "display on Featured Slider."
+#~ msgstr ""
+#~ "Bemærk: Her kan du vælge de kategorier, som skal vises på Featured Slider."
+
+#~ msgid "Predefine Social Icons"
+#~ msgstr "Predefinerede ikoner"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Leave empty if you want to remove headline"
 #~ msgstr "Efterlad tom hvis du vil fjerne overskriften"

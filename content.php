@@ -8,14 +8,13 @@
  */
 
 //Getting data from Theme Options Panel and Meta Box
-global $adventurous_options_settings;
-$options = $adventurous_options_settings;
+$options = adventurous_get_options();
 
 //Content Layout
 $current_content_layout = $options['content_layout'];
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ];
+$moretag = $options['more_tag_text'];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

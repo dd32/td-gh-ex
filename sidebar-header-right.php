@@ -13,10 +13,9 @@
  */
 do_action( 'adventurous_before_header_right' ); ?> 
 <?php 
-global $adventurous_options_settings;
-$options = $adventurous_options_settings;
+$options = adventurous_get_options();
 
-if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
+if ( $options['disable_header_right_sidebar'] == "0" ) {	?>
     <div id="header-right" class="header-sidebar widget-area">
         <aside class="widget widget_nav_menu">
             <?php adventurous_primary_menu(); ?>

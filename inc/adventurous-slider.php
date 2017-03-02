@@ -3,12 +3,12 @@
  * Function to pass the slider effect parameters from php file to js file.
  */
 function adventurous_pass_slider_value() {
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
-	$transition_effect = $options[ 'transition_effect' ];
-	$transition_delay = $options[ 'transition_delay' ] * 1000;
-	$transition_duration = $options[ 'transition_duration' ] * 1000;
+	$transition_effect   = $options['transition_effect'];
+	$transition_delay    = $options['transition_delay'] * 1000;
+	$transition_duration = $options['transition_duration'] * 1000;
+	
 	wp_localize_script(
 		'adventurous-slider',
 		'js_value',
@@ -35,16 +35,16 @@ function adventurous_default_sliders() {
 
 				<article class="post hentry slides demo-image displayblock">
 					<figure class="slider-image">
-						<a title="Seto Ghumba" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/slider-1-1600x600.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
+						<a title="Tiger" href="#">
+							<img src="'. get_template_directory_uri() . '/images/demo/slider-1-1600x600.jpg" class="wp-post-image" alt="Tiger" title="Tiger">
 						</a>
 					</figure>
 				</article><!-- .slides -->
 
 				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
-						<a title="Kathmandu Durbar Square" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/slider-2-1600x600.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
+						<a title="Tiger" href="#">
+							<img src="'. get_template_directory_uri() . '/images/demo/slider-2-1600x600.jpg" class="wp-post-image" alt="Tiger" title="Tiger">
 						</a>
 					</figure>
 				</article><!-- .slides -->
@@ -75,52 +75,52 @@ if ( ! function_exists( 'adventurous_post_sliders' ) ) :
 function adventurous_post_sliders() {
 	//delete_transient( 'adventurous_post_sliders' );
 
-	global $post, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-
-
-	if ( ( !$adventurous_post_sliders = get_transient( 'adventurous_post_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
+	if ( ( !$output = get_transient( 'adventurous_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
 		echo '<!-- refreshing cache -->';
 
-		$adventurous_post_sliders = '
+		global $post;
+
+		$options  = adventurous_get_options();
+		
+		$output = '
 		<div id="main-slider">
         	<section class="featured-slider">';
-				$get_featured_posts = new WP_Query( array(
-					'posts_per_page' => $options[ 'slider_qty' ],
-					'post__in'		 => $options[ 'featured_slider' ],
+				$loop = new WP_Query( array(
+					'posts_per_page' => $options['slider_qty'],
+					'post__in'		 => $options['featured_slider'],
 					'orderby' 		 => 'post__in',
 					'ignore_sticky_posts' => 1 // ignore sticky posts
 				));
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = 'post postid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'post postid-'.$post->ID.' hentry slides displaynone'; }
-					$adventurous_post_sliders .= '
+					$output .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>';
-						if ( empty ( $options[ 'disable_slider_text' ] ) ) {
-							$adventurous_post_sliders .= '
+						if ( empty ( $options['disable_slider_text'] ) ) {
+							$output .= '
 							<div class="entry-container">
 								<header class="entry-header">
 									<h1 class="entry-title">
-										<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 									</h1>
 								</header>';
 								if ( $excerpt !='') {
-									$adventurous_post_sliders .= '<div class="entry-content">'. $excerpt.'</div>';
+									$output .= '<div class="entry-content">'. $excerpt.'</div>';
 								}
-								$adventurous_post_sliders .= '
+								$output .= '
 							</div>';
 						}
 
-					$adventurous_post_sliders .= '</article><!-- .slides -->';
+					$output .= '</article><!-- .slides -->';
 
-				endwhile; wp_reset_query();
-				$adventurous_post_sliders .= '
+				endwhile; wp_reset_postdata();
+				$output .= '
 			</section>
         	<div id="slider-nav">
         		<a class="slide-previous"><span>Previous</span></a>
@@ -129,9 +129,9 @@ function adventurous_post_sliders() {
         	<div id="controllers"></div>
   		</div><!-- #main-slider -->';
 
-	set_transient( 'adventurous_post_sliders', $adventurous_post_sliders, 86940 );
+	set_transient( 'adventurous_post_sliders', $output, 86940 );
 	}
-	echo $adventurous_post_sliders;
+	echo $output;
 } // adventurous_post_sliders
 endif;
 
@@ -149,38 +149,40 @@ if ( ! function_exists( 'adventurous_category_sliders' ) ) :
 function adventurous_category_sliders() {
 	//delete_transient( 'adventurous_category_sliders' );
 
-	global $post, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
 
 
-	if ( ( !$adventurous_category_sliders = get_transient( 'adventurous_category_sliders' ) ) && !empty( $options[ 'slider_category' ] ) ) {
+
+	if ( ( !$adventurous_category_sliders = get_transient( 'adventurous_category_sliders' ) ) ) {
 		echo '<!-- refreshing cache -->';
+		global $post;
+
+		$options = adventurous_get_options();
 
 		$adventurous_category_sliders = '
 		<div id="main-slider">
         	<section class="featured-slider">';
-				$get_featured_posts = new WP_Query( array(
-					'posts_per_page'		=> $options[ 'slider_qty' ],
-					'category__in'			=> $options[ 'slider_category' ],
+				$loop = new WP_Query( array(
+					'posts_per_page'		=> $options['slider_qty'],
+					'category__in'			=> $options['slider_category'],
 					'ignore_sticky_posts' 	=> 1 // ignore sticky posts
 				));
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = 'post pageid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'post pageid-'.$post->ID.' hentry slides displaynone'; }
 					$adventurous_category_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>';
-						if ( empty ( $options[ 'disable_slider_text' ] ) ) {
+						if ( empty ( $options['disable_slider_text'] ) ) {
 							$adventurous_category_sliders .= '
 							<div class="entry-container">
 								<header class="entry-header">
 									<h1 class="entry-title">
-										<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 									</h1>
 								</header>';
 								if ( $excerpt !='') {
@@ -191,7 +193,7 @@ function adventurous_category_sliders() {
 						}
 					$adventurous_category_sliders .= '</article><!-- .slides -->';
 
-				endwhile; wp_reset_query();
+				endwhile; wp_reset_postdata();
 				$adventurous_category_sliders .= '
 			</section>
         	<div id="slider-nav">
@@ -214,15 +216,16 @@ if ( ! function_exists( 'adventurous_slider_display' ) ) :
  * Shows Slider
  */
 function adventurous_slider_display() {
-	global $post, $wp_query, $adventurous_options_settings;;
-   	$options = $adventurous_options_settings;
+	global $post, $wp_query;
+
+	$options = adventurous_get_options();
 
 	// get data value from theme options
-	$enableslider = $options[ 'enable_slider' ];
-	$slidertype = $options[ 'select_slider_type' ];
+	$enableslider = $options['enable_slider'];
+	$slidertype   = $options['select_slider_type'];
 
 	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
+	$page_on_front  = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
@@ -233,7 +236,7 @@ function adventurous_slider_display() {
 		if ( function_exists( 'adventurous_pass_slider_value' ) ) : adventurous_pass_slider_value(); endif;
 
 		if (  'post-slider' == $slidertype ) {
-			if ( !empty( $options[ 'featured_slider' ] ) && function_exists( 'adventurous_post_sliders' ) ) {
+			if ( !empty( $options['featured_slider'] ) && function_exists( 'adventurous_post_sliders' ) ) {
 				adventurous_post_sliders();
 			}
 			else {
@@ -241,7 +244,7 @@ function adventurous_slider_display() {
 			}
 		}
 		elseif (  'category-slider' == $slidertype ) {
-			if ( !empty( $options[ 'slider_category' ] ) && function_exists( 'adventurous_category_sliders' ) ) {
+			if ( function_exists( 'adventurous_category_sliders' ) ) {
 				adventurous_category_sliders();
 			}
 			else {

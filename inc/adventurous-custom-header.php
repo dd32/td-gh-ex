@@ -116,8 +116,8 @@ if ( ! function_exists( 'adventurous_header_style' ) ) :
 function adventurous_header_style() {
 
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// get_header_textcolor() options: get_theme_support( 'custom-header', 'default-text-color' ) is default, hide text (returns 'blank') or any hex value
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -148,7 +148,7 @@ if ( ! function_exists( 'adventurous_admin_header_style' ) ) :
 function adventurous_admin_header_style() {
 	?>
 	<style type="text/css">
-	<?php if ( HEADER_TEXTCOLOR == get_header_textcolor() ) : ?>
+	<?php if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() ) : ?>
 		#site-logo,
 		#hgroup {
 			display: inline-block;
@@ -232,8 +232,7 @@ if ( ! function_exists( 'adventurous_header_image' ) ) :
  */
 function adventurous_header_image() {
 	//Get Theme Options Data
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 	$text_color = get_header_textcolor();
 
 	echo '<div id="header-left">';
@@ -265,7 +264,7 @@ function adventurous_header_image() {
             	<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
 
-					if ( !empty( $options[ 'featured_logo_header' ] ) ) {
+					if ( !empty( $options['featured_logo_header'] ) ) {
 						$adventurous_header_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" />';
 					} else {
 						// if empty featured_logo_header on theme options, display default logo
@@ -339,37 +338,35 @@ if ( ! function_exists( 'adventurous_featured_image' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_featured_image() {
+	$options = adventurous_get_options();
 
-	// Getting Data from Theme Options Panel
-	global $adventurous_options_settings, $_wp_default_headers;
-   	$options = $adventurous_options_settings;
 	$header_image = get_header_image();
-	$enableheaderimage = $options[ 'enable_featured_header_image' ];
+	$enableheaderimage = $options['enable_featured_header_image'];
 
 	if ( !empty( $header_image ) ) {
 
 		// Header Image Title/Alt
-		if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-			$title = esc_attr($options[ 'featured_header_image_alt' ]);
+		if ( !empty( $options['featured_header_image_alt'] ) ) :
+			$title = esc_attr($options['featured_header_image_alt']);
 		else:
 			$title = '';
 		endif;
 
 		// Header Image Link
-		if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
+		if ( !empty( $options['featured_header_image_url'] ) ) :
 			//support for qtranslate custom link
 			if ( function_exists( 'qtrans_convertURL' ) ) {
-				$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+				$link = qtrans_convertURL($options['featured_header_image_url']);
 			}
 			else {
-				$link = esc_url($options[ 'featured_header_image_url' ]);
+				$link = esc_url($options['featured_header_image_url']);
 			}
-			if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
+			if ( !empty( $options['featured_header_image_base'] ) ) :
 				$base = '_blank';
 			else:
 				$base = '_self';
 			endif;
-			$linkopen = '<a title="'.$title.'" href="'.$link.'" target="'.$base.'">';
+			$linkopen = '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="'.$base.'">';
 			$linkclose = '</a>';
 		else:
 			$link = '';
@@ -378,7 +375,7 @@ function adventurous_featured_image() {
 			$linkclose = '';
 		endif;
 
-		echo '<div id="header-featured-image">' . $linkopen . '<img id="main-feat-img" alt="' . $title . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-featured-image -->';
+		echo '<div id="header-featured-image">' . $linkopen . '<img id="main-feat-img" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-featured-image -->';
 	}
 
 } // adventurous_featured_image
@@ -396,30 +393,32 @@ if ( ! function_exists( 'adventurous_featured_page_post_image' ) ) :
  */
 function adventurous_featured_page_post_image() {
 
-	global $post, $wp_query, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	global $post;
+
+	$options  = adventurous_get_options();
+
 	$featured_image = $options['page_featured_image'];
 
 	if ( has_post_thumbnail() ) {
 
 		echo '<div id="header-featured-image">';
 
-			if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+			if ( !empty( $options['featured_header_image_url'] ) ) {
 				// Header Image Link Target
-				if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
+				if ( !empty( $options['featured_header_image_base'] ) ) :
 					$base = '_blank';
 				else:
 					$base = '_self';
 				endif;
 
 				// Header Image Title/Alt
-				if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-					$title = esc_attr( $options[ 'featured_header_image_alt' ] );
+				if ( !empty( $options['featured_header_image_alt'] ) ) :
+					$title = esc_attr( $options['featured_header_image_alt'] );
 				else:
 					$title = '';
 				endif;
 
-				$linkopen = '<a title="'.$title.'" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'">';
+				$linkopen = '<a title="' . esc_attr( $title ) . '" href="'.$options['featured_header_image_url'] .'" target="'.$base.'">';
 				$linkclose = '</a>';
 			}
 			else {
@@ -429,13 +428,13 @@ function adventurous_featured_page_post_image() {
 
 			echo $linkopen;
 				if ( 'featured' == $featured_image ) {
-					echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
+					echo get_the_post_thumbnail( $post->ID, 'featured', array('id' => 'main-feat-img'));
 				}
 				elseif ( 'slider' == $featured_image ) {
-					echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
+					echo get_the_post_thumbnail( $post->ID, 'slider', array('id' => 'main-feat-img'));
 				}
 				else {
-					echo get_the_post_thumbnail($post->ID, 'full', array('id' => 'main-feat-img'));
+					echo get_the_post_thumbnail( $post->ID, 'full', array('id' => 'main-feat-img'));
 				}
 			echo $linkclose;
 
@@ -460,9 +459,11 @@ if ( ! function_exists( 'adventurous_featured_overall_image' ) ) :
  */
 function adventurous_featured_overall_image() {
 
-	global $post, $wp_query, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
+	global $post, $wp_query;
+
+	$options  = adventurous_get_options();
+
+	$enableheaderimage =  $options['enable_featured_header_image'];
 
 	// Front page displays in Reading Settings
 	$page_for_posts = get_option('page_for_posts');

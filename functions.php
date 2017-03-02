@@ -63,17 +63,12 @@ function adventurous_setup() {
 	/**
 	 * Theme Options Defaults
 	 */
-	require( get_template_directory() . '/inc/panel/adventurous-theme-options-defaults.php' );
+	require( get_template_directory() . '/inc/adventurous-default-options.php' );
 
 	/**
 	 * Customizer Options
 	 */
 	require( get_template_directory() . '/inc/panel/customizer/customizer.php' );
-
-	/**
-	 * Custom Theme Options
-	 */
-	require( get_template_directory() . '/inc/panel/adventurous-theme-options.php' );
 
 	/**
 	 * Custom functions that act independently of the theme templates
@@ -218,8 +213,7 @@ if ( ! function_exists( 'adventurous_get_theme_layout' ) ) :
 		}
 
 		//Load options data
-		global $adventurous_options_settings;
-   		$options = $adventurous_options_settings;
+		$options = adventurous_get_options();
 
    		//check empty and load default
 		if ( empty( $layout ) || 'default' == $layout ) {
@@ -248,8 +242,7 @@ function adventurous_logo_migrate() {
 	/**
 	 * Get Theme Options Values
 	 */
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
    	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'the_custom_logo' ) ) {
@@ -267,43 +260,6 @@ function adventurous_logo_migrate() {
 	}
 }
 add_action( 'after_setup_theme', 'adventurous_logo_migrate' );
-
-
-/**
- * Migrate Custom Favicon to WordPress core Site Icon
- *
- * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
- */
-function adventurous_site_icon_migrate() {
-	$ver = get_theme_mod( 'site_icon_version', false );
-
-	//Return if update has already been run
-	if ( version_compare( $ver, '3.6' ) >= 0 ) {
-		return;
-	}
-
-	/**
-	 * Get Theme Options Values
-	 */
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-
-   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'has_site_icon' ) ) {
-		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
-
-			if ( is_int( $site_icon ) ) {
-				update_option( 'site_icon', $site_icon );
-			}
-		}
-
-	  	// Update to match site_icon_version so that script is not executed continously
-		set_theme_mod( 'site_icon_version', '3.6' );
-	}
-}
-add_action( 'after_setup_theme', 'adventurous_site_icon_migrate' );
 
 
 /**
@@ -325,8 +281,7 @@ function adventurous_custom_css_migrate(){
 	    /**
 		 * Get Theme Options Values
 		 */
-		global $adventurous_options_settings;
-	   	$options = $adventurous_options_settings;
+		$options = adventurous_get_options();	
 
 	    if ( '' != $options['custom_css'] ) {
 			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.

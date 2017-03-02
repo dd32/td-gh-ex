@@ -37,8 +37,7 @@ if ( ! function_exists( 'adventurous_secondary_menu' ) ) :
  * Hooked to adventurous_after_hgroup_wrap
  */
 function adventurous_secondary_menu() { 
-	global $adventurous_options_settings;
-	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 	if ( has_nav_menu( 'secondary' ) ) { ?>
         <div id="secondary-menu">
             <nav id="access-secondary" role="navigation">

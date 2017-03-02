@@ -31,7 +31,7 @@ get_header();
                                         wp_get_attachment_url(),
                                         $metadata['width'],
                                         $metadata['height'],
-                                        get_permalink( $post->post_parent ),
+                                        esc_url( get_permalink( $post->post_parent ) ),
                                         get_the_title( $post->post_parent )
                                     );
                                 ?>
@@ -74,7 +74,7 @@ get_header();
                                         }
                                     ?>
 
-                                    <a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
+                                    <a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
                                         $attachment_size = apply_filters( 'adventurous_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
                                         echo wp_get_attachment_image( $post->ID, 'full' );
                                     ?></a>

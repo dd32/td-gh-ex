@@ -12,24 +12,25 @@ if ( ! function_exists( 'adventurous_homepage_headline' ) ) :
 function adventurous_homepage_headline() {
 	//delete_transient( 'adventurous_homepage_headline' );
 
-	global $post, $wp_query, $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	global $wp_query;
+
+	$options  = adventurous_get_options();
 
 	// Getting data from Theme Options
-	$disable_headline = $options[ 'disable_homepage_headline' ];
-	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
-	$disable_button = $options[ 'disable_homepage_button' ];
-	$homepage_headline = $options[ 'homepage_headline' ];
-	$homepage_subheadline = $options[ 'homepage_subheadline' ];
-	$homepage_headline_button = $options[ 'homepage_headline_button' ];
-	$homepage_headline_target = $options[ 'homepage_headline_target' ];
+	$disable_headline         = $options['disable_homepage_headline'];
+	$disable_subheadline      = $options['disable_homepage_subheadline'];
+	$disable_button           = $options['disable_homepage_button'];
+	$homepage_headline        = $options['homepage_headline'];
+	$homepage_subheadline     = $options['homepage_subheadline'];
+	$homepage_headline_button = $options['homepage_headline_button'];
+	$homepage_headline_target = $options['homepage_headline_target'];
 
 	//support qTranslate plugin
 	if ( function_exists( 'qtrans_convertURL' ) ) {
-		$homepage_headline_url = qtrans_convertURL($options[ 'homepage_headline_url' ]);
+		$homepage_headline_url = qtrans_convertURL($options['homepage_headline_url']);
 	}
 	else {
-		$homepage_headline_url = $options[ 'homepage_headline_url' ];
+		$homepage_headline_url = $options['homepage_headline_url'];
 	}
 
 	// Front page displays in Reading Settings
@@ -64,7 +65,7 @@ function adventurous_homepage_headline() {
 					$headlinetarget = '_self';
 				}
 
-				$adventurous_homepage_headline .= '<div class="right-section"><a href="' . $homepage_headline_url . '" target="' . $headlinetarget . '">' . $homepage_headline_button . '</a></div><!-- .right-section -->';
+				$adventurous_homepage_headline .= '<div class="right-section"><a href="' . esc_url( $homepage_headline_url ) . '" target="' . $headlinetarget . '">' . esc_html( $homepage_headline_button ) . '</a></div><!-- .right-section -->';
 			}
 
 			$adventurous_homepage_headline .= '</div><!-- .container --></div><!-- #homepage-message -->';
@@ -82,11 +83,12 @@ if ( ! function_exists( 'adventurous_promotion_display' ) ) :
  * Shows Promotion Headline
  */
 function adventurous_promotion_display() {
-	global $post, $wp_query, $adventurous_options_settings;;
-   	$options = $adventurous_options_settings;
+	global $wp_query;
+
+	$options  = adventurous_get_options();
 
 	// get data value from theme options
-	$enablepromotion = $options[ 'enable_promotion' ];
+	$enablepromotion = $options['enable_promotion'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;

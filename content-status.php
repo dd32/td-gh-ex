@@ -7,11 +7,10 @@
  * @since Adventurous 1.0
  */
 //Getting data from Theme Options Panel and Meta Box 
-global $adventurous_options_settings;
-$options = $adventurous_options_settings; 
+$options = adventurous_get_options(); 
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ];
+$moretag = $options['more_tag_text'];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -25,7 +24,7 @@ $moretag = $options[ 'more_tag_text' ];
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'adventurous_status_avatar', '60' ) ); ?>
                 <h1 class="entry-title"><?php the_author(); ?></h1>
             </header>
-            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'status' ); ?>" title="<?php _e( 'All Status Posts', 'adventurous' ); ?>"><?php _e( 'Status', 'adventurous' ); ?></a></h2>
+            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>" title="<?php esc_attr_e( 'All Status Posts', 'adventurous' ); ?>"><?php esc_attr_e( 'Status', 'adventurous' ); ?></a></h2>
 		</div><!-- .entry-header -->
 
 		<div class="entry-content">

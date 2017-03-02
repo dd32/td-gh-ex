@@ -1,5 +1,14 @@
 = Changelog ==
 
+Version 2.2
+* Added: Option to Display all Categories in Customizer
+* Bug Fixed: Replaced wp_script_add_data with wp_style_add_data
+* Code Optimization
+* Disabled Slider by default
+* Optimization: Replaced wp_reset_query with wp_reset_postdata
+* Removed: Backward compatibility functions
+* Updated: Used wp_script_add_data to load selectivizr and iecss in IE less than 9
+
 Version 2.1
 * Bug Fixed: Reset Options in customizer updated
 * Updated: Used the_archive_title() and the_archive_description() in archive.php

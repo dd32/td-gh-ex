@@ -23,9 +23,7 @@ get_header(); ?>
 
 					<?php
 					//Getting data from Theme Options Panel and Meta Box 
-					global $adventurous_options_settings;
-					$options = $adventurous_options_settings; 
-
+					$options  = adventurous_get_options();
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() ) {
 						comments_template( '', true );

@@ -9,14 +9,13 @@
 
 get_header(); 
 
-	global $post, $wp_query, $adventurous_options_settings;
+	global  $wp_query;
 
 	// Getting data from Theme Options
-	$options = $adventurous_options_settings;
-	$enable_post = $options[ 'enable_posts_home' ];
+	$options = adventurous_get_options();
+	$enable_post = $options['enable_posts_home'];
 
 	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 	
 	// Get Page ID outside Loop

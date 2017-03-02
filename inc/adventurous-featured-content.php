@@ -8,9 +8,8 @@ function adventurous_default_featured_content() {
 	//delete_transient( 'adventurous_default_featured_content' );
 
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-	$layouts = $options [ 'homepage_featured_layout' ];
+	$options = adventurous_get_options();
+	$layouts = $options['homepage_featured_layout'];
 
 	if ( !$adventurous_default_featured_content = get_transient( 'adventurous_default_featured_content' ) ) {
 
@@ -124,12 +123,11 @@ function adventurous_homepage_featured_content() {
 	//delete_transient( 'adventurous_homepage_featured_content' );
 
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-	$quantity = $options [ 'homepage_featured_qty' ];
-	$headline = $options [ 'homepage_featured_headline' ];
-	$subheadline = $options [ 'homepage_featured_subheadline' ];
-	$layouts = $options [ 'homepage_featured_layout' ];
+	$options = adventurous_get_options();
+	$quantity = $options['homepage_featured_qty'];
+	$headline = $options['homepage_featured_headline'];
+	$subheadline = $options['homepage_featured_subheadline'];
+	$layouts = $options['homepage_featured_layout'];
 
 	if ( !$adventurous_homepage_featured_content = get_transient( 'adventurous_homepage_featured_content' ) ) {
 
@@ -156,65 +154,65 @@ function adventurous_homepage_featured_content() {
 			}
 
 		//Checking Featured Content Details
-		if ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
+		if ( !empty( $options['homepage_featured_image'] ) || !empty( $options['homepage_featured_title'] ) || !empty( $options['homepage_featured_content'] ) ) {
 
 			$adventurous_homepage_featured_content .= '<div class="featued-content-wrap">';
 
 				for ( $i = 1; $i <= $quantity; $i++ ) {
 
-					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
+					if ( !empty ( $options['homepage_featured_base'][ $i ] ) ) {
 						$target = '_blank';
 					} else {
 						$target = '_self';
 					}
 
 					//Checking Link
-					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
+					if ( !empty ( $options['homepage_featured_url'][ $i ] ) ) {
 						//support qTranslate plugin
 						if ( function_exists( 'qtrans_convertURL' ) ) {
-							$link = qtrans_convertURL($options[ 'homepage_featured_url' ][ $i ]);
+							$link = qtrans_convertURL($options['homepage_featured_url'][ $i ]);
 						}
 						else {
-							$link = $options[ 'homepage_featured_url' ][ $i ];
+							$link = $options['homepage_featured_url'][ $i ];
 						}
 					} else {
 						$link = '#';
 					}
 
 					//Checking Title
-					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
-						$title = $options[ 'homepage_featured_title' ][ $i ];
+					if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
+						$title = $options['homepage_featured_title'][ $i ];
 					} else {
 						$title = '';
 					}
 
-					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+					if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) || !empty ( $options['homepage_featured_image'][ $i ] ) ) {
 						$adventurous_homepage_featured_content .= '
 						<article id="featured-post-'.$i.'" class="post hentry">';
-							if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+							if ( !empty ( $options['homepage_featured_image'][ $i ] ) ) {
 								$adventurous_homepage_featured_content .= '
 								<figure class="featured-homepage-image">
-									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
-										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
+									<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="' . $target . '">
+										<img src="'.$options['homepage_featured_image'][ $i ].'" class="wp-post-image" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">
 									</a>
 								</figure>';
 							}
-							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
+							if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) ) {
 								$adventurous_homepage_featured_content .= '
 								<div class="entry-container">';
 
-									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
+									if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
 										$adventurous_homepage_featured_content .= '
 										<header class="entry-header">
 											<h1 class="entry-title">
-												<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>
+												<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . $target . '">' . $title . '</a>
 											</h1>
 										</header>';
 									}
-									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
+									if ( !empty ( $options['homepage_featured_content'][ $i ] ) ) {
 										$adventurous_homepage_featured_content .= '
 										<div class="entry-content">
-											' . $options[ 'homepage_featured_content' ][ $i ] . '
+											' . $options['homepage_featured_content'][ $i ] . '
 										</div>';
 									}
 								$adventurous_homepage_featured_content .= '
@@ -245,11 +243,11 @@ endif; // adventurous_homepage_featured_content
  *
  */
 function adventurous_homepage_featured_display() {
-	global $post, $wp_query, $adventurous_options_settings;
+	global $wp_query;
 
-	// Getting data from Theme Options
-   	$options = $adventurous_options_settings;
-	$enablefeatured = $options[ 'enable-featured' ];
+	$options  = adventurous_get_options();
+
+	$enablefeatured = $options['enable-featured'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -259,7 +257,7 @@ function adventurous_homepage_featured_display() {
 	$page_id = $wp_query->get_queried_object_id();
 
 	if ( ( 'allpage' == $enablefeatured ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablefeatured ) ) {
-		if  ( !empty( $options[ 'homepage_featured_headline' ] ) || !empty( $options[ 'homepage_featured_subheadline' ] ) || !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
+		if  ( !empty( $options['homepage_featured_headline'] ) || !empty( $options['homepage_featured_subheadline'] ) || !empty( $options['homepage_featured_image'] ) || !empty( $options['homepage_featured_title'] ) || !empty( $options['homepage_featured_content'] ) ) {
 			adventurous_homepage_featured_content();
 		} else {
 			adventurous_default_featured_content();

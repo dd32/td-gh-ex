@@ -31,6 +31,7 @@ class Adventurous_Customize_Dropdown_Categories_Control extends WP_Customize_Con
 				'hide_empty'       => false,
 				'show_option_none' => false,
 				'hide_if_empty'    => false,
+				'show_option_all'  => __( 'All Categories', 'adventurous' )
 			)
 		);
 
@@ -77,7 +78,7 @@ class Adventurous_Important_Links extends WP_Customize_Control {
 							),
 						);
 		foreach ( $important_links as $important_link) {
-			echo '<p><a target="_blank" href="' . $important_link['link'] .'" >' . esc_attr( $important_link['text'] ) .' </a></p>';
+			echo '<p><a target="_blank" href="' . esc_url( $important_link['link'] ) .'" >' . esc_attr( $important_link['text'] ) .' </a></p>';
 		}
     }
 }

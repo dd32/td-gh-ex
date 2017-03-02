@@ -14,12 +14,11 @@
  */
 function adventurous_scripts() {
 
-	global $post, $wp_query, $adventurous_options_settings;
+	global $wp_query;
 	// Getting data from Theme Options
-	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();;
 
 	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
@@ -68,24 +67,21 @@ function adventurous_scripts() {
 	/**
 	 * Loads up adventurous-slider and jquery-cycle set up as dependent on adventurous-slider
 	 */
-	$enableslider = $options[ 'enable_slider' ];
+	$enableslider = $options['enable_slider'];
+	
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_enqueue_script( 'adventurous-slider', get_template_directory_uri() . '/js/adventurous-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'adventurous-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
-	wp_script_add_data( 'adventurous-html5', 'conditional', 'lt IE 9' );
+	wp_style_add_data( 'adventurous-html5', 'conditional', 'lt IE 9' );
 
-	/**
-	 * Browser Specific Enqueue Script
-	 */
-	$adventurous_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if (preg_match('/(?i)msie [1-8]/',$adventurous_ua)) {
-	 	wp_enqueue_script( 'selectivizr', get_template_directory_uri() . '/js/selectivizr.min.js', array( 'jquery' ), '20130114', false );
-		wp_enqueue_style( 'adventurous-iecss', get_template_directory_uri() . '/css/ie.css' );
-	}
+	wp_enqueue_script( 'selectivizr', get_template_directory_uri() . '/js/selectivizr.min.js', array( 'jquery' ), '20130114', false );
+	wp_style_add_data( 'selectivizr', 'conditional', 'lt IE 9' );
 
+	wp_enqueue_style( 'adventurous-iecss', get_template_directory_uri() . '/css/ie.css' );
+	wp_style_add_data( 'adventurous-iecss', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'adventurous_scripts' );
 
@@ -101,52 +97,6 @@ function adventurous_responsive() {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">';
 } // adventurous_responsive
 add_filter( 'wp_head', 'adventurous_responsive', 1 );
-
-
-/**
- * Get the favicon Image from theme options
- *
- * @uses favicon
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default favicon if favicon field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function adventurous_favicon() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-
-	if ( ( !$adventurous_favicon = get_transient( 'adventurous_favicon' ) ) ) {
-		global $adventurous_options_settings;
-   		$options = $adventurous_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_favicon' ] == "0" ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$adventurous_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$adventurous_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
-			endif;
-		endif;
-
-		set_transient( 'adventurous_favicon', $adventurous_favicon, 86940 );
-	}
-	echo $adventurous_favicon ;
-} // adventurous_favicon
-
-//Load Favicon in Header Section
-add_action('wp_head', 'adventurous_favicon');
-
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'adventurous_favicon' );
 
 
 if ( ! function_exists( 'adventurous_content_image' ) ) :
@@ -178,8 +128,7 @@ function adventurous_content_image() {
 	}
 
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
 	$featured_image = $options['featured_image'];
 
@@ -224,11 +173,9 @@ function adventurous_inline_css() {
 	//delete_transient( 'adventurous_inline_css' );
 
 	if ( ( !$output = get_transient( 'adventurous_inline_css' ) ) ) {
-		// Getting data from Theme Options
-		global $adventurous_options_settings, $adventurous_options_defaults;
-   		$options = $adventurous_options_settings;
+		$options = adventurous_get_options();
 
-		if ( !empty( $options[ 'custom_css' ] ) )  {
+		if ( !empty( $options['custom_css'] ) )  {
 
 			$output	.= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
 	        $output .= '<style type="text/css" media="screen">' . "\n";
@@ -253,27 +200,11 @@ add_action('wp_head', 'adventurous_inline_css');
  */
 function adventurous_excerpt_length( $length ) {
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
-	return $options[ 'excerpt_length' ];
+	return $options['excerpt_length'];
 }
 add_filter( 'excerpt_length', 'adventurous_excerpt_length' );
-
-
-/**
- * Change the defult excerpt length of 30 to whatever passed as value
- *
- * @use excerpt(10) or excerpt (..)  if excerpt length needs only 10 or whatevere
- * @uses get_permalink, get_the_excerpt
- */
-function adventurous_excerpt_desired( $num ) {
-    $limit = $num+1;
-    $excerpt = explode( ' ', get_the_excerpt(), $limit );
-    array_pop( $excerpt );
-    $excerpt = implode( " ",$excerpt )."<a href='" .get_permalink() ." '></a>";
-    return $excerpt;
-}
 
 
 /**
@@ -281,11 +212,10 @@ function adventurous_excerpt_desired( $num ) {
  */
 function adventurous_continue_reading() {
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
-	$more_tag_text = $options[ 'more_tag_text' ];
-	return ' <a class="more-link" href="'. get_permalink() . '">' .  $more_tag_text . '</a>';
+	$more_tag_text = $options['more_tag_text'];
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
 }
 
 /**
@@ -319,10 +249,9 @@ add_filter( 'get_the_excerpt', 'adventurous_custom_excerpt' );
  */
 function adventurous_more_link( $more_link, $more_link_text ) {
 	// Getting data from Theme Options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 
 	return str_replace( $more_link_text, $more_tag_text, $more_link );
 }
@@ -335,8 +264,7 @@ add_filter( 'the_content_more_link', 'adventurous_more_link', 10, 2 );
  * @since Adventurous 1.0
  */
 function adventurous_body_classes( $classes ) {
-	global $adventurous_options_settings;
-	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
 	if ( ( class_exists( 'Woocommerce' ) && is_woocommerce() ) &&  !is_active_sidebar( 'adventurous_woocommerce_sidebar' ) ) {
 		$classes[] = 'woocommerce-nosidebar';
@@ -463,10 +391,10 @@ if ( ! function_exists( 'content_sidebar_check' ) ) :
  *
  */
 function content_sidebar_check() {
-	global $post, $wp_query, $adventurous_options_settings;
+	global $wp_query;
 	// Getting data from Theme Options
-	$options = $adventurous_options_settings;
-	$enable_post = $options[ 'enable_posts_home' ];
+	$options     = adventurous_get_options();
+	$enable_post = $options['enable_posts_home'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -592,10 +520,9 @@ function adventurous_footer_content() {
 		echo '<!-- refreshing cache -->';
 
 		// get the data value from theme options
-		global $adventurous_options_settings;
-   	 	$options = $adventurous_options_settings;
+		$options = adventurous_get_options();
 
-		$adventurous_footer_content = $options[ 'footer_code' ];
+		$adventurous_footer_content = $options['footer_code'];
 
     	set_transient( 'adventurous_footer_content', $adventurous_footer_content, 86940 );
     }
@@ -610,19 +537,17 @@ add_action( 'adventurous_site_generator', 'adventurous_footer_content', 20 );
  * @uses pre_get_posts hook
  */
 function adventurous_alter_home( $query ){
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	if ( $query->is_main_query() && $query->is_home() ) {
+		$options = adventurous_get_options();	
 
-    $cats = $options[ 'front_page_category' ];
+	    $cats = $options['front_page_category'];
 
-    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if ( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
+	    if ( '0' != $options[ 'exclude_slider_post'] && !empty( $options['featured_slider'] ) ) {
+			$query->query_vars['post__not_in'] = $options['featured_slider'];
 		}
-	}
-	if ( !in_array( '0', $cats ) ) {
-		if ( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+		
+		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+			$query->query_vars['category__in'] = $cats;
 		}
 	}
 }
@@ -642,41 +567,40 @@ function adventurous_social_networks() {
 	//delete_transient( 'adventurous_social_networks' );
 
 	// get the data value from theme options
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
+	$options = adventurous_get_options();
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ],
-						$options[ 'social_twitter' ],
-						$options[ 'social_googleplus' ],
-						$options[ 'social_linkedin' ],
-						$options[ 'social_pinterest' ],
-						$options[ 'social_youtube' ],
-						$options[ 'social_vimeo' ],
-						$options[ 'social_slideshare' ],
-						$options[ 'social_foursquare' ],
-						$options[ 'social_flickr' ],
-						$options[ 'social_tumblr' ],
-						$options[ 'social_deviantart' ],
-						$options[ 'social_dribbble' ],
-						$options[ 'social_myspace' ],
-						$options[ 'social_wordpress' ],
-						$options[ 'social_rss' ],
-						$options[ 'social_delicious' ],
-						$options[ 'social_lastfm' ],
-						$options[ 'social_instagram' ],
-						$options[ 'social_github' ],
-						$options[ 'social_vkontakte' ],
-						$options[ 'social_myworld' ],
-						$options[ 'social_odnoklassniki' ],
-						$options[ 'social_goodreads' ],
-						$options[ 'social_skype' ],
-						$options[ 'social_soundcloud' ],
-						$options[ 'social_email' ],
-						$options[ 'social_contact' ],
-						$options[ 'social_xing' ],
-						$options[ 'social_meetup' ]
+	$elements = array( 	$options['social_facebook'],
+						$options['social_twitter'],
+						$options['social_googleplus'],
+						$options['social_linkedin'],
+						$options['social_pinterest'],
+						$options['social_youtube'],
+						$options['social_vimeo'],
+						$options['social_slideshare'],
+						$options['social_foursquare'],
+						$options['social_flickr'],
+						$options['social_tumblr'],
+						$options['social_deviantart'],
+						$options['social_dribbble'],
+						$options['social_myspace'],
+						$options['social_wordpress'],
+						$options['social_rss'],
+						$options['social_delicious'],
+						$options['social_lastfm'],
+						$options['social_instagram'],
+						$options['social_github'],
+						$options['social_vkontakte'],
+						$options['social_myworld'],
+						$options['social_odnoklassniki'],
+						$options['social_goodreads'],
+						$options['social_skype'],
+						$options['social_soundcloud'],
+						$options['social_email'],
+						$options['social_contact'],
+						$options['social_xing'],
+						$options['social_meetup']
 					);
 	$flag = 0;
 	if ( !empty( $elements ) ) {
@@ -693,160 +617,160 @@ function adventurous_social_networks() {
 		}
 	}
 
-	if ( ( !$adventurous_social_networks = get_transient( 'adventurous_social_networks' ) ) && ( $flag == 1 || !empty ( $options[ 'social_custom_image' ] ) ) )  {
+	if ( ( !$adventurous_social_networks = get_transient( 'adventurous_social_networks' ) ) && ( $flag == 1 || !empty ( $options['social_custom_image'] ) ) )  {
 		echo '<!-- refreshing cache -->';
 
 		$adventurous_social_networks .='
 		<ul class="social-profile">';
 			//facebook
-			if ( !empty( $options[ 'social_facebook' ] ) ) {
+			if ( !empty( $options['social_facebook'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'adventurous' ) .'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options['social_facebook'] ).'" title="'. esc_attr__( 'Facebook', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'adventurous' ) .'</a></li>';
 			}
 			//Twitter
-			if ( !empty( $options[ 'social_twitter' ] ) ) {
+			if ( !empty( $options['social_twitter'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'adventurous' ) .'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options['social_twitter'] ).'" title="'. esc_attr__( 'Twitter', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'adventurous' ) .'</a></li>';
 			}
 			//Google+
-			if ( !empty( $options[ 'social_googleplus' ] ) ) {
+			if ( !empty( $options['social_googleplus'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Google+', 'adventurous' ) .'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options['social_googleplus'] ).'" title="'. esc_attr__( 'Google+', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Google+', 'adventurous' ) .'</a></li>';
 			}
 			//Linkedin
-			if ( !empty( $options[ 'social_linkedin' ] ) ) {
+			if ( !empty( $options['social_linkedin'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'LinkedIn', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'adventurous' ) .'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options['social_linkedin'] ).'" title="'. esc_attr__( 'LinkedIn', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'adventurous' ) .'</a></li>';
 			}
 			//Pinterest
-			if ( !empty( $options[ 'social_pinterest' ] ) ) {
+			if ( !empty( $options['social_pinterest'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'adventurous' ) .'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options['social_pinterest'] ).'" title="'. esc_attr__( 'Pinterest', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'adventurous' ) .'</a></li>';
 			}
 			//Youtube
-			if ( !empty( $options[ 'social_youtube' ] ) ) {
+			if ( !empty( $options['social_youtube'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'adventurous' ) .'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options['social_youtube'] ).'" title="'. esc_attr__( 'YouTube', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'adventurous' ) .'</a></li>';
 			}
 			//Vimeo
-			if ( !empty( $options[ 'social_vimeo' ] ) ) {
+			if ( !empty( $options['social_vimeo'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'adventurous' ) .'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options['social_vimeo'] ).'" title="'. esc_attr__( 'Vimeo', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'adventurous' ) .'</a></li>';
 			}
 			//Slideshare
-			if ( !empty( $options[ 'social_slideshare' ] ) ) {
+			if ( !empty( $options['social_slideshare'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'SlideShare', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'adventurous' ) .'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options['social_slideshare'] ).'" title="'. esc_attr__( 'SlideShare', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'adventurous' ) .'</a></li>';
 			}
 			//Foursquare
-			if ( !empty( $options[ 'social_foursquare' ] ) ) {
+			if ( !empty( $options['social_foursquare'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'. esc_attr__( 'FourSquare', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'adventurous' ) .'</a></li>';
+					'<li class="foursquare"><a href="'.esc_url( $options['social_foursquare'] ).'" title="'. esc_attr__( 'FourSquare', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'adventurous' ) .'</a></li>';
 			}
 			//Flickr
-			if ( !empty( $options[ 'social_flickr' ] ) ) {
+			if ( !empty( $options['social_flickr'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'adventurous' ) .'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options['social_flickr'] ).'" title="'. esc_attr__( 'Flickr', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'adventurous' ) .'</a></li>';
 			}
 			//Tumblr
-			if ( !empty( $options[ 'social_tumblr' ] ) ) {
+			if ( !empty( $options['social_tumblr'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'adventurous' ) .'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options['social_tumblr'] ).'" title="'. esc_attr__( 'Tumblr', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'adventurous' ) .'</a></li>';
 			}
 			//deviantART
-			if ( !empty( $options[ 'social_deviantart' ] ) ) {
+			if ( !empty( $options['social_deviantart'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'adventurous' ) .'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options['social_deviantart'] ).'" title="'. esc_attr__( 'deviantART', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'adventurous' ) .'</a></li>';
 			}
 			//Dribbble
-			if ( !empty( $options[ 'social_dribbble' ] ) ) {
+			if ( !empty( $options['social_dribbble'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'adventurous' ) .'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options['social_dribbble'] ).'" title="'. esc_attr__( 'Dribbble', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'adventurous' ) .'</a></li>';
 			}
 			//MySpace
-			if ( !empty( $options[ 'social_myspace' ] ) ) {
+			if ( !empty( $options['social_myspace'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'adventurous' ) .'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options['social_myspace'] ).'" title="'. esc_attr__( 'MySpace', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'adventurous' ) .'</a></li>';
 			}
 			//WordPress
-			if ( !empty( $options[ 'social_wordpress' ] ) ) {
+			if ( !empty( $options['social_wordpress'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'adventurous' ) .'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options['social_wordpress'] ).'" title="'. esc_attr__( 'WordPress', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'adventurous' ) .'</a></li>';
 			}
 			//RSS
-			if ( !empty( $options[ 'social_rss' ] ) ) {
+			if ( !empty( $options['social_rss'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'RSS', 'adventurous' ) .'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options['social_rss'] ).'" title="'. esc_attr__( 'RSS', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'RSS', 'adventurous' ) .'</a></li>';
 			}
 			//Delicious
-			if ( !empty( $options[ 'social_delicious' ] ) ) {
+			if ( !empty( $options['social_delicious'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'. esc_attr__( 'Delicious', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'adventurous' ) .'</a></li>';
+					'<li class="delicious"><a href="'.esc_url( $options['social_delicious'] ).'" title="'. esc_attr__( 'Delicious', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'adventurous' ) .'</a></li>';
 			}
 			//Last.fm
-			if ( !empty( $options[ 'social_lastfm' ] ) ) {
+			if ( !empty( $options['social_lastfm'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'. esc_attr__( 'Last.fm', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'adventurous' ) .'</a></li>';
+					'<li class="lastfm"><a href="'.esc_url( $options['social_lastfm'] ).'" title="'. esc_attr__( 'Last.fm', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'adventurous' ) .'</a></li>';
 			}
 			//Instagram
-			if ( !empty( $options[ 'social_instagram' ] ) ) {
+			if ( !empty( $options['social_instagram'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'adventurous' ) .'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options['social_instagram'] ).'" title="'. esc_attr__( 'Instagram', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'adventurous' ) .'</a></li>';
 			}
 			//GitHub
-			if ( !empty( $options[ 'social_github' ] ) ) {
+			if ( !empty( $options['social_github'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'GitHub', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'adventurous' ) .'</a></li>';
+					'<li class="github"><a href="'.esc_url( $options['social_github'] ).'" title="'. esc_attr__( 'GitHub', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'adventurous' ) .'</a></li>';
 			}
 			//Vkontakte
-			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
+			if ( !empty( $options['social_vkontakte'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'. esc_attr__( 'Vkontakte', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'adventurous' ) .'</a></li>';
+					'<li class="vkontakte"><a href="'.esc_url( $options['social_vkontakte'] ).'" title="'. esc_attr__( 'Vkontakte', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'adventurous' ) .'</a></li>';
 			}
 			//My World
-			if ( !empty( $options[ 'social_myworld' ] ) ) {
+			if ( !empty( $options['social_myworld'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'. esc_attr__( 'My World', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'My World', 'adventurous' ) .'</a></li>';
+					'<li class="myworld"><a href="'.esc_url( $options['social_myworld'] ).'" title="'. esc_attr__( 'My World', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'My World', 'adventurous' ) .'</a></li>';
 			}
 			//Odnoklassniki
-			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
+			if ( !empty( $options['social_odnoklassniki'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'. esc_attr__( 'Odnoklassniki', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'adventurous' ) .'</a></li>';
+					'<li class="odnoklassniki"><a href="'.esc_url( $options['social_odnoklassniki'] ).'" title="'. esc_attr__( 'Odnoklassniki', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'adventurous' ) .'</a></li>';
 			}
 			//Goodreads
-			if ( !empty( $options[ 'social_goodreads' ] ) ) {
+			if ( !empty( $options['social_goodreads'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'. esc_attr__( 'GoodReads', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'adventurous' ) .'</a></li>';
+					'<li class="goodreads"><a href="'.esc_url( $options['social_goodreads'] ).'" title="'. esc_attr__( 'GoodReads', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'adventurous' ) .'</a></li>';
 			}
 			//Skype
-			if ( !empty( $options[ 'social_skype' ] ) ) {
+			if ( !empty( $options['social_skype'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Skype', 'adventurous' ) .'</a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options['social_skype'] ).'" title="'. esc_attr__( 'Skype', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Skype', 'adventurous' ) .'</a></li>';
 			}
 			//Soundcloud
-			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+			if ( !empty( $options['social_soundcloud'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'SoundCloud', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'adventurous' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options['social_soundcloud'] ).'" title="'. esc_attr__( 'SoundCloud', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'adventurous' ) .'</a></li>';
 			}
 			//Email
-			if ( !empty( $options[ 'social_email' ] ) ) {
+			if ( !empty( $options['social_email'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Email', 'adventurous' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options['social_email'] ).'" title="'. esc_attr__( 'Email', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Email', 'adventurous' ) .'</a></li>';
 			}
 			//Contact
-			if ( !empty( $options[ 'social_contact' ] ) ) {
+			if ( !empty( $options['social_contact'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'adventurous' ) .'">'. esc_attr__( 'Contact', 'adventurous' ) .'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options['social_contact'] ).'" title="'. esc_attr__( 'Contact', 'adventurous' ) .'">'. esc_attr__( 'Contact', 'adventurous' ) .'</a></li>';
 			}
 			//Xing
-			if ( !empty( $options[ 'social_xing' ] ) ) {
+			if ( !empty( $options['social_xing'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Xing', 'adventurous' ) .'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options['social_xing'] ).'" title="'. esc_attr__( 'Xing', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Xing', 'adventurous' ) .'</a></li>';
 			}
 			//Meetup
-			if ( !empty( $options[ 'social_meetup' ] ) ) {
+			if ( !empty( $options['social_meetup'] ) ) {
 				$adventurous_social_networks .=
-					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Meetup', 'adventurous' ) .'</a></li>';
+					'<li class="meetup"><a href="'.esc_url( $options['social_meetup'] ).'" title="'. esc_attr__( 'Meetup', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Meetup', 'adventurous' ) .'</a></li>';
 			}
 
 			$adventurous_social_networks .='
@@ -914,52 +838,6 @@ endif; // adventurous_pagemenu_filter
 add_filter('wp_page_menu', 'adventurous_pagemenu_filter');
 
 
-
-/**
- * Get the Web Clip Icon Image from theme options
- *
- * @uses web_clip and remove_web_clip
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default Web Click Icon if web_clip field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function adventurous_web_clip() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-
-	if ( ( !$adventurous_web_clip = get_transient( 'adventurous_web_clip' ) ) ) {
-
-		// get the data value from theme options
-		global $adventurous_options_settings;
-   		$options = $adventurous_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( empty( $options[ 'remove_web_clip' ] ) ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$adventurous_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$adventurous_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
-			endif;
-		endif;
-
-		set_transient( 'adventurous_web_clip', $adventurous_web_clip, 86940 );
-	}
-	echo $adventurous_web_clip ;
-} // adventurous_web_clip
-
-//Load Favicon in Header Section
-add_action( 'wp_head', 'adventurous_web_clip' );
-
-
 if ( ! function_exists( 'adventurous_breadcrumb_display' ) ) :
 /**
  * Display breadcrumb on header
@@ -1010,8 +888,7 @@ function adventurous_scrollup() {
 	if ( !$adventurous_scrollup = get_transient( 'adventurous_scrollup' ) ) {
 
 		// get the data value from theme options
-		global $adventurous_options_settings;
-   		$options = $adventurous_options_settings;
+		$options = adventurous_get_options();
 		echo '<!-- refreshing cache -->';
 
 		//site stats, analytics header code

@@ -38,8 +38,7 @@
         	<?php adventurous_footer_meta(); ?>
 			<?php 
 			//Getting data from Theme Options Panel
-			global $adventurous_options_settings;
-			$options = $adventurous_options_settings;
+			$options = adventurous_get_options();
 			if ( comments_open() && ! post_password_required() ) : ?>
                 <span class="sep"> | </span>
                 <span class="comments-link">

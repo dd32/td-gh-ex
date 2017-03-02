@@ -16,11 +16,8 @@
  * @since Adventurous 1.6.2
  */
 function adventurous_customize_register( $wp_customize ) {
-	global $adventurous_options_settings, $adventurous_options_defaults;
-
-    $options = $adventurous_options_settings;
-
-	$defaults = $adventurous_options_defaults;
+	$options  = adventurous_get_options();
+	$defaults = adventurous_get_defaults();
 
 	//Custom Controls
 	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
@@ -33,16 +30,6 @@ function adventurous_customize_register( $wp_customize ) {
 			'title' 		=> esc_html__( 'Theme Options', 'adventurous' ),
 			'description' 	=> esc_html__( 'Basic theme Options', 'adventurous' ),
 			'sections' 		=> array(
-				'favicon' => array(
-					'id' 			=> 'favicon',
-					'title' 		=> esc_html__( 'Favicon', 'adventurous' ),
-					'description' 	=> '',
-				),
-				'web_clip_icon_options' => array(
-					'id' 			=> 'web_clip_icon_options',
-					'title' 		=> esc_html__( 'Webclip Icon Options', 'adventurous' ),
-					'description' 	=> esc_html__( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina', 'adventurous' )
-				),
 				'header_options' => array(
 					'id' 			=> 'header_options',
 					'title' 		=> esc_html__( 'Header Options', 'adventurous' ),
@@ -968,57 +955,6 @@ function adventurous_customize_register( $wp_customize ) {
 	);
 
 	//@remove Remove if block when WordPress 4.8 is released
-	if( !function_exists( 'has_site_icon' ) ) {
-		$settings_favicon = array(
-			//Favicon
-			'remove_favicon' => array(
-				'id' 			=> 'remove_favicon',
-				'title' 		=> esc_html__( 'Check to Disable Favicon', 'adventurous' ),
-				'description'	=> '',
-				'field_type' 	=> 'checkbox',
-				'sanitize' 		=> 'adventurous_sanitize_checkbox',
-				'panel' 		=> 'theme_options',
-				'section' 		=> 'favicon',
-				'default' 		=> $defaults['remove_favicon']
-			),
-			'fav_icon' => array(
-				'id' 			=> 'fav_icon',
-				'title' 		=> esc_html__( 'Fav Icon', 'adventurous' ),
-				'description'	=> '',
-				'field_type' 	=> 'image',
-				'sanitize' 		=> 'adventurous_sanitize_image',
-				'panel' 		=> 'theme_options',
-				'section' 		=> 'favicon',
-				'default' 		=> $defaults['fav_icon']
-			),
-
-			//Web Clip Icon
-			'remove_web_clip' => array(
-				'id' 			=> 'remove_web_clip',
-				'title' 		=> esc_html__( 'Check to Disable Web Clip Icon', 'adventurous' ),
-				'description'	=> '',
-				'field_type' 	=> 'checkbox',
-				'sanitize' 		=> 'adventurous_sanitize_checkbox',
-				'panel' 		=> 'theme_options',
-				'section' 		=> 'web_clip_icon_options',
-				'default' 		=> $defaults['remove_web_clip']
-			),
-			'web_clip' => array(
-				'id' 			=> 'web_clip',
-				'title' 		=> esc_html__( 'Web Clip Icon', 'adventurous' ),
-				'description'	=> '',
-				'field_type' 	=> 'image',
-				'sanitize' 		=> 'adventurous_sanitize_image',
-				'panel' 		=> 'theme_options',
-				'section' 		=> 'web_clip_icon_options',
-				'default' 		=> $defaults['web_clip']
-			)
-		);
-
-		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
-	}
-
-	//@remove Remove if block when WordPress 4.8 is released
 	if( !function_exists( 'has_custom_logo' ) ) {
 		$settings_logo = array(
 			'featured_logo_header' => array(
@@ -1193,7 +1129,7 @@ function adventurous_customize_register( $wp_customize ) {
 	}
 
 	//Add featured content elements with respect to no of featured content
-	for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
@@ -1326,7 +1262,7 @@ function adventurous_customize_register( $wp_customize ) {
 	}
 
 	//Add featured post elements with respect to no of featured sliders
-	for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['slider_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[featured_slider][' . $i . ']',
@@ -1407,14 +1343,40 @@ add_action( 'customize_register', 'adventurous_customize_register' );
  */
 function adventurous_customize_preview() {
 	//Remove transients on preview
-	adventurous_themeoption_invalidate_caches();
-
-	global $adventurous_options_defaults ,$adventurous_options_settings;
-
-	$adventurous_options_settings = adventurous_options_set_defaults( $adventurous_options_defaults );
+	adventurous_flush_transients();
 }
 add_action( 'customize_preview_init', 'adventurous_customize_preview' );
 add_action( 'customize_save', 'adventurous_customize_preview' );
+
+
+
+/*
+ * Clearing the cache if any changes in Admin Theme Option
+ */
+function adventurous_flush_transients() {
+	delete_transient( 'adventurous_featured_image' ); // featured header image
+	delete_transient( 'adventurous_inline_css' ); // Custom Inline CSS
+	delete_transient( 'adventurous_post_sliders' ); // featured post slider
+	delete_transient( 'adventurous_category_sliders' ); // featured category slider
+	delete_transient( 'adventurous_default_sliders' ); //Default slider
+	delete_transient( 'adventurous_homepage_headline' ); // Homepage Headline Message
+	delete_transient( 'adventurous_default_featured_content' ); // Homepage Default Featured Content
+	delete_transient( 'adventurous_homepage_featured_content' ); // Homepage Featured Content
+	delete_transient( 'adventurous_footer_content' ); // Footer Content
+	delete_transient( 'adventurous_social_networks' ); // Social Networks
+	delete_transient( 'adventurous_scrollup' ); // scrollup
+}
+
+
+/*
+ * Clearing the cache if any changes in post or page
+ */
+function adventurous_flush_post_transients(){
+	delete_transient( 'adventurous_post_sliders' ); // featured post slider
+	delete_transient( 'adventurous_category_sliders' ); // featured category slider
+}
+//Add action hook here save post
+add_action( 'save_post', 'adventurous_flush_post_transients' );
 
 
 /**
@@ -1426,6 +1388,61 @@ function adventurous_customize_scripts() {
 	wp_enqueue_script( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'adventurous_customize_scripts' );
+
+
+/**
+ * Function to reset date with respect to condition
+ */
+function adventurous_reset_data() {
+	$options  = adventurous_get_options();
+    if ( $options['reset_all_settings'] ) {
+    	remove_theme_mods();
+
+    	delete_option( 'adventurous_options' );
+
+        // Flush out all transients	on reset
+        adventurous_flush_transients();
+
+        return;
+    }
+
+	$defaults = adventurous_get_defaults();
+
+	//Reset Header Featured Image Options
+	if ( $options['reset_featured_image'] ) {
+		unset( $options['enable_featured_header_image'] );
+		unset( $options['page_featured_image'] );
+		unset( $options['featured_header_image_alt'] );
+		unset( $options['featured_header_image_url'] );
+		unset( $options['featured_header_image_base'] );
+		unset( $options['reset_featured_image'] );
+        
+        remove_theme_mod( 'header_image' );
+	}
+
+	//Reset Color Options
+	if ( $options['reset_moretag'] ) {
+		unset( $options['more_tag_text'] );
+		unset( $options['excerpt_length'] );
+		
+		unset( $options['reset_moretag'] );
+	}
+
+	//Reset Color Options
+	if ( $options['reset_layout'] ) {
+		unset( $options['sidebar_layout'] );
+		unset( $options['content_layout'] );
+		unset( $options['featured_image'] );
+        
+        unset( $options['reset_layout'] );
+	}
+
+	update_option( 'adventurous_options', $options );
+
+	// Flush out all transients	on reset
+	adventurous_flush_transients();
+}
+add_action( 'customize_save_after', 'adventurous_reset_data' );
 
 //Active callbacks for customizer
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
