@@ -53,7 +53,7 @@ get_header(); ?>
                             <div class="metabox">
                                 <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
                                 <span class="entry-author"> <?php the_author(); ?></span>
-                                <span class="entry-comments"> <?php comments_number( '0 Comments', '0 Comments', '% Comments' ); ?></span>
+                                <span class="entry-comments"> <?php comments_number( __('0 Comments','bb-mobile-application'), __('0 Comments','bb-mobile-application'), __('% Comments','bb-mobile-application') ); ?></span>
                             </div>
                             <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php _e( 'Read Full', 'bb-mobile-application' ); ?>"><?php _e('Read Full','bb-mobile-application'); ?></a>
                         </div>

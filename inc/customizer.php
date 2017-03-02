@@ -82,7 +82,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
             )
         );
 	    $wp_customize->add_setting('bb_mobile_application_our_newsletter',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -93,7 +93,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    ));
 	    
 	    $wp_customize->add_setting('bb_mobile_application_our_newsletter_desc',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -104,7 +104,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    ));
 	    
 	    $wp_customize->add_setting('bb_mobile_application_our_newsletter_shortcode',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -115,7 +115,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    ));
 
 	    $wp_customize->add_setting('bb_mobile_application_news-title',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'bb-mobile-application_format_for_editor',
 	    ));
 	    
@@ -128,7 +128,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    );
 
 	    $wp_customize->add_setting('bb_mobile_application_address-title',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -141,7 +141,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    );
 
 	    $wp_customize->add_setting('bb_mobile_application_address',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -154,7 +154,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    );
 	    
 	    $wp_customize->add_setting('bb_mobile_application_contact-number',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -167,7 +167,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    );
 	    
 	    $wp_customize->add_setting('bb_mobile_application_cont_email',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -179,7 +179,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	        )
 	    );
 	    $wp_customize->add_setting('bb_mobile_application_website',array(
-	        'default'   => __('','bb-mobile-application'),
+	        'default'   => '',
 	        'sanitize_callback' => 'sanitize_text_field',
 	    ));
 	    
@@ -193,13 +193,13 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 		$wp_customize->add_section('bb_mobile_application_footer_section',array(
 			'title'	=> __('Footer Text','bb-mobile-application'),
-			'description'	=> __('','bb-mobile-application'),
+			'description'	=> '',
 			'priority'	=> null,
 			'panel' => 'bb_mobile_application_panel_id',
 		));
 		
 		$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
-			'default'	=> __('','bb-mobile-application'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field',
 		));
 		

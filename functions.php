@@ -152,25 +152,21 @@ function bb_mobile_application_font_url() {
 /* Theme enqueue scripts */
 function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bb-mobile-application-font', bb_mobile_application_font_url(), array() );
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
 	wp_enqueue_style( 'bb-mobile-application-basic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bb-mobile-application-editor-style', get_template_directory_uri().'/editor-style.css' );
-	wp_enqueue_style( 'nivo-gen', get_template_directory_uri().'/css/genericons/genericons.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
 	wp_enqueue_style( 'bb-mobile-application-effect', get_template_directory_uri().'/css/effect.css' );
 
 	if ( is_home() || is_front_page() ) { 
 		wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
-		wp_enqueue_script( 'nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
+		wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 		wp_enqueue_script( 'bb-mobile-application-custom-front', get_template_directory_uri() . '/js/custom-front.js', array('jquery') ,'',true);
 	}
 	wp_enqueue_script( 'bb-mobile-application-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	/* Enqueue the Dashicons script */
-	wp_enqueue_style( 'dashicons' );
 
 	/** Load our IE-only stylesheet for all versions of IE.
 	*   <!--[if lt IE 9]> ... <![endif]-->
