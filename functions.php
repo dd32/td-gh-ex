@@ -63,7 +63,6 @@ function aquarella_setup() {
 	/*	Image Sizes
 	 */
 	add_image_size( 'aquarella_imgsize_1', 1170, 800, true ); 
-	add_image_size( 'aquarella-logo', 220, 220 );
 	
 	/*	Native Site Logo
 	 */
