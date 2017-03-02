@@ -31,7 +31,7 @@
 				endif;
 				$description = get_bloginfo( 'description', 'display' ); 
 				if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; ?></p>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 			</div>
 		<?php 
@@ -97,11 +97,11 @@
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
-					<a href="mailto:<?php echo antispambot($emailURL); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
+					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideRss == 1 ) : ?>
-					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php esc_attr_e( 'RSS', 'blogghiamo' ); ?>"><i class="fa spaceRightDouble fa-rss"><span class="screen-reader-text"><?php esc_html_e( 'RSS', 'blogghiamo' ); ?></span></i></a>
+					<a href="<?php esc_url(bloginfo( 'rss2_url' )); ?>" title="<?php esc_attr_e( 'RSS', 'blogghiamo' ); ?>"><i class="fa spaceRightDouble fa-rss"><span class="screen-reader-text"><?php esc_html_e( 'RSS', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>

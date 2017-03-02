@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.5.4
+Version: 1.5.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -841,7 +841,9 @@ a:active {
 .widget_archive li:before, 
 .widget_archive li:after, 
 .widget_categories li:before,
-.widget_categories li:after {
+.widget_categories li:after,
+.widget.widget_search:before,
+.widget.widget_search:after {
 	content: "";
 	display: table;
 }
@@ -854,7 +856,8 @@ a:active {
 .site-footer:after,
 .nav-links:after,
 .widget_archive li:after, 
-.widget_categories li:after {
+.widget_categories li:after,
+.widget.widget_search:after {
 	clear: both;
 }
 
@@ -943,11 +946,6 @@ aside ul li {
 	float: left;
 }
 
-/* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
-
 /* Calendar Widget */
 #wp-calendar {
 	margin: 0px;
@@ -1019,6 +1017,26 @@ aside ul.menu .indicatorBar:before {
 
 aside ul.menu .indicatorBar.yesOpenBar:before {
 	content: "\f106";
+}
+/* Search widget */
+.widget.widget_search input[type="search"] {
+	width: 68%;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 4px 15px;
+    line-height: 1;
+	float: left;
+	height: 40px;
+}
+.widget.widget_search input[type="submit"] {
+	width: 32%;
+    display: inline-block;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+	float: right;
+	height: 40px;
 }
 
 /*--------------------------------------------------------------

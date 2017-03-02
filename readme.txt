@@ -190,3 +190,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.5.4 =
 * Minor bug fixes
+
+= Version 1.5.5 =
+* Fixed some strings escaping
+* Fixed Infinite Scroll with JetPack
+* Improved search widget CSS
