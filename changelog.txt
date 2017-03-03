@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 5.7 - march 2017
+- file style: fixed alignment issue of #respond
+
 PrivateBusiness version 5.6 - march 2017
 - file style: minor changes in html tags
 - file style: styling of select tag (cross-browser compatibility)
