@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+Shipyard version 5.2 - march 2017
+- file style: fixed alignment issue of #respond
+
 Shipyard version 5.1 - march 2017
 - file style: minor changes in html tags
 - file style: removed unnecessary border underneath header and above footer
