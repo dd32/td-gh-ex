@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-
 
 Requires at least: 4.6
 Tested up to: 4.7.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -175,6 +175,7 @@ jquery-match-height.js, http://brm.io/jquery-match-height, (C), MIT License, htt
 jquery.nicescroll.js, https://github.com/inuyaksa/jquery.nicescroll  (C) 2015 InuYaksa, MIT License, https://github.com/inuyaksa/jquery.nicescroll/blob/master/MIT.LICENSE
 jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
 jquery.countdown.js, http://hilios.github.io/jQuery.countdown/, (C) 2015 Edson Hilios, https://github.com/hilios/jQuery.countdown/blob/master/LICENSE.md
+wow.js, https://github.com/matthieua/WOW, (C) Matthieu Aussaguel, https://www.gnu.org/licenses/gpl-3.0.en.html
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
@@ -193,6 +194,11 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
    == Change Log ==
+
+    1.0.5
+    * Issue fixed mentioned in theme tracs.
+    * Bug fixes.
+
     1.0.4
     * Issue fixed mentioned in theme tracs.
 	

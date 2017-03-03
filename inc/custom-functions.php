@@ -123,11 +123,13 @@ function app_landing_page_scripts() {
     wp_enqueue_style( 'app-landing-page-google-fonts', add_query_arg( $app_landing_page_query_args, "//fonts.googleapis.com/css" ) );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
     wp_enqueue_style( 'jquery.sidr.light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
+    wp_enqueue_style( 'animate.light', get_template_directory_uri() . '/css/animate.css' );
     wp_enqueue_style( 'app-landing-page-style', get_stylesheet_uri(), array(), APP_LANDING_PAGE_THEME_VERSION );
     
 	wp_enqueue_script( 'jquery-ui-datepicker' );
 
     wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.1.2', true );
     wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/js/jquery.countdown.js', array('jquery'), '2.1.0', true );
 	wp_enqueue_script( 'equal-height', get_template_directory_uri() . '/js/equal-height.js', array('jquery'), '0.7.0', true );
 	wp_enqueue_script( 'nice-scroll', get_template_directory_uri() . '/js/nice-scroll.js', array('jquery'), '3.6.6', true );
@@ -256,3 +258,49 @@ function app_landing_page_excerpt_length( $length ) {
 	return 40;
 }
 endif;
+
+
+/**
+ * Register the required plugins for this theme.
+ */
+function app_landing_page_register_required_plugins() {
+    /*
+     * Array of plugin arrays. Required keys are name and slug.
+     * If the source is NOT from the .org repo, then source is also required.
+     */
+    $plugins = array(
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository.
+        array(
+            'name'      => __( 'Newsletter', 'app-landing-page' ),
+            'slug'      => 'newsletter',
+            'required'  => false,
+        ),
+   
+    );
+
+    /*
+     * Array of configuration settings. Amend each line as needed.
+     *
+     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+     * strings available, please help us make TGMPA even better by giving us access to these translations or by
+     * sending in a pull-request with .po file(s) with the translations.
+     *
+     * Only uncomment the strings in the config array if you want to customize the strings.
+     */
+    $config = array(
+        'id'           => 'app-landing-page',    // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to bundled plugins.
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'parent_slug'  => 'themes.php',            // Parent menu slug.
+        'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+        'has_notices'  => true,                    // Show admin notices or not.
+        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                      // Message to output right before the plugins table.
+
+    );
+
+    tgmpa( $plugins, $config );
+}

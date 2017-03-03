@@ -1,27 +1,18 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-02-27 12:39+0000\n"
-"POT-Revision-Date: Wed May 11 2016 14:55:55 GMT+0545 (Nepal Standard Time)\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-01 06:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
+"X-Generator: Loco https://localise.biz/"
 
 #: 404.php:17
 msgid "Looks Like Something Went Wrong!"
@@ -118,19 +109,24 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
+#: inc/custom-functions.php:275
+msgid "Newsletter"
+msgstr ""
+
 #: inc/extras.php:41
 #, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
-#. translators: %s: post title
+#. %s: post title
 #: inc/extras.php:54
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#. translators: %s: Name of current post
+#. %s: Name of current post
+#. %s: Name of current post
 #: inc/extras.php:87 template-parts/content-page.php:38
 #, php-format
 msgid "Edit %s"
@@ -144,7 +140,7 @@ msgstr ""
 msgid "Posted on&nbsp;"
 msgstr ""
 
-#. translators: 1: date, 2: time
+#. 1: date, 2: time
 #: inc/extras.php:163
 #, php-format
 msgid "%1$s at %2$s"
@@ -203,24 +199,24 @@ msgstr ""
 msgid "404 - Page Not Found "
 msgstr ""
 
-#: inc/template-functions.php:373
+#: inc/template-functions.php:371
 msgid "About Admin"
 msgstr ""
 
-#: inc/template-functions.php:379
+#: inc/template-functions.php:377
 msgid "Posted on "
 msgstr ""
 
-#: inc/template-functions.php:468
+#: inc/template-functions.php:465
 msgid "App Landing Page By Rara Theme. "
 msgstr ""
 
-#: inc/template-functions.php:469
+#: inc/template-functions.php:466
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/template-functions.php:469
+#: inc/template-functions.php:466
 msgid "WordPress"
 msgstr ""
 
@@ -228,8 +224,8 @@ msgstr ""
 msgid "Download Now"
 msgstr ""
 
-#: sections/service.php:20 sections/stats.php:9 sections/vedio.php:11
-#: inc/customizer/home/service.php:232 inc/customizer/home/stats.php:233
+#: sections/service.php:19 sections/stats.php:9 sections/vedio.php:11
+#: inc/customizer/home/service.php:251 inc/customizer/home/stats.php:233
 #: inc/customizer/home/vedio.php:81
 msgid "Download Button"
 msgstr ""
@@ -282,7 +278,6 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#. translators: %s: Name of current post.
 #: template-parts/content.php:28
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
@@ -487,12 +482,12 @@ msgstr ""
 msgid "Banner Button Two Url"
 msgstr ""
 
-#: inc/customizer/home/banner.php:127 inc/customizer/home/service.php:240
+#: inc/customizer/home/banner.php:127 inc/customizer/home/service.php:259
 #: inc/customizer/home/stats.php:241 inc/customizer/home/vedio.php:89
 msgid "Download Button Text"
 msgstr ""
 
-#: inc/customizer/home/banner.php:145 inc/customizer/home/service.php:258
+#: inc/customizer/home/banner.php:145 inc/customizer/home/service.php:277
 #: inc/customizer/home/stats.php:259 inc/customizer/home/vedio.php:107
 msgid "Download Button Url"
 msgstr ""
@@ -561,51 +556,47 @@ msgstr ""
 msgid "Intro Section Page"
 msgstr ""
 
-#: inc/customizer/home/service.php:16
+#: inc/customizer/home/service.php:17
 msgid "Service Section"
 msgstr ""
 
-#: inc/customizer/home/service.php:34
+#: inc/customizer/home/service.php:35
 msgid "Enable Service Section"
 msgstr ""
 
-#: inc/customizer/home/service.php:52
-msgid "Service Section Title"
-msgstr ""
-
-#: inc/customizer/home/service.php:70
-msgid "Service Section Content"
-msgstr ""
-
 #: inc/customizer/home/service.php:88
-msgid "Select Service Post One"
+msgid "Select Services Page"
 msgstr ""
 
 #: inc/customizer/home/service.php:107
-msgid "Select Service Post Two"
+msgid "Select Service Post One"
 msgstr ""
 
 #: inc/customizer/home/service.php:126
-msgid "Select Service Post Three"
+msgid "Select Service Post Two"
 msgstr ""
 
 #: inc/customizer/home/service.php:145
-msgid "Select Service Post Four"
+msgid "Select Service Post Three"
 msgstr ""
 
 #: inc/customizer/home/service.php:164
-msgid "Select Service Post Five"
+msgid "Select Service Post Four"
 msgstr ""
 
 #: inc/customizer/home/service.php:183
-msgid "Select Service Post Six"
+msgid "Select Service Post Five"
 msgstr ""
 
 #: inc/customizer/home/service.php:202
-msgid "Select Service Post Seven"
+msgid "Select Service Post Six"
 msgstr ""
 
 #: inc/customizer/home/service.php:221
+msgid "Select Service Post Seven"
+msgstr ""
+
+#: inc/customizer/home/service.php:240
 msgid "Select Service Post Eight"
 msgstr ""
 

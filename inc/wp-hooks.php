@@ -49,3 +49,8 @@ add_filter( 'comment_form_fields', 'app_landing_page_move_comment_field_to_botto
 */
 add_filter( 'excerpt_more', 'app_landing_page_excerpt_more' );
 add_filter( 'excerpt_length', 'app_landing_page_excerpt_length', 999 );
+
+/**
+* @see app_landing_page_register_required_plugins
+*/
+add_action( 'tgmpa_register', 'app_landing_page_register_required_plugins' );
