@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+DarkElements version 5.1 - march 2017
+- file style: fixed alignment issue of #respond
+
 DarkElements version 5.0 - march 2017
 - file style: fixed alignment issue of #container
 - file style: minor changes in html tags
