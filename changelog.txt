@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+SimplyBlack version 5.0 - march 2017
+- file style: minor changes in html tags
+- file style: removed unnecessary border underneath header and above footer
+- file style: styling of select tag (cross-browser compatibility)
+- file style: added width and float to several elements (for better alignment)
+- file functions and single: removed post format (status)
+- several small adjustments
+
 SimplyBlack version 4.9 - january 2017
 - added support for hentry tags
 - updated files content-postmeta, content-list and single

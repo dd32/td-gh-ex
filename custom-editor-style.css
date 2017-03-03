@@ -62,8 +62,9 @@ cite, em, abbr, acronym {font-style:italic;}
 code, kbd, samp, var {font-family:monospace, monospace;}
 pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #999;}
 blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #999;}
-address {margin:10px 0; font-size:1.2em; line-height:1.5em; font-style:italic;}
+address {margin:10px 0; font-style:italic;}
 p {margin:0 0 10px;}
+hr {height:1px; background:#999; border:0;}
 
 
 /* ALIGNMENTS */
