@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+BlueGray version 5.1 - march 2017
+- file style: fixed alignment issue of #respond
+
 BlueGray version 5.0 - march 2017
 - file style: minor changes in html tags
 - file style: styling of select tag (cross-browser compatibility)
