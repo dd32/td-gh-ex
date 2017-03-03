@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.9 - march 2017
+- file style: fixed alignment issue of #respond
+
 MyKnowledgeBase version 4.8 - march 2017
 - file style: minor changes in html tags
 - file style: styling of select tag (cross-browser compatibility)
