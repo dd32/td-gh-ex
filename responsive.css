@@ -1,10 +1,6 @@
 ﻿#container {max-width: 100%;}
 
-@media screen and (max-width:900px){
-	#nav .menu > li, #nav .menu > ul > li {border-bottom: 1px solid #111;}
-}
-
-@media screen and (max-width:800px){
+@media screen and (max-width:1024px){
 	body {padding: 0;}
 	#main #content, #main  #sidebar  { 
 		display: block;
@@ -19,10 +15,12 @@
 		margin: 16px auto;
 	}
 
+	#nav .menu > li, #nav .menu > ul > li {border-bottom: 1px solid #111;}
+
 	.rtl #content, .rtl #sidebar  {float: right;}
 }
 
-@media screen and (max-width:640px){
+@media screen and (max-width:840px){
 	#header-info-wrap {
 		float: none;
 		text-align: center;
@@ -131,6 +129,13 @@
 	}
 }
 
-@media screen and (max-width:320px){
-	.blog-view .entry-thumbnail {display: none;}
+@media screen and (max-width:400px){
+	.blog-view .entry-content {
+		text-align: center;
+	}
+
+	.blog-view .entry-thumbnail {
+		display: inline-flex;
+		float: none;
+	}
 }

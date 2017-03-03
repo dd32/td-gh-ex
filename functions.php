@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.2.2";
+$ast_version = "1.2.3";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -401,7 +401,8 @@ function asteroid_menu_search_form( $items, $args ) {
 	Schema.org Markup
 --------------------------------------*/
 function asteroid_schema( $name ) {
-	echo apply_filters( 'asteroid_schema', asteroid_get_schema( $name ) );
+	$value = asteroid_get_schema( $name );
+	echo apply_filters( 'asteroid_schema', $value, $name );
 }
 
 function asteroid_get_schema( $name ) {
