@@ -170,6 +170,11 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
  */
 require get_template_directory() . '/inc/custom-widgets.php';
 /**
+ * TGM Plugin Activation
+ */
+require_once get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-config.php';
+/**
  * Kirki
  */
 require_once get_template_directory() . '/inc/tmb-aquarella-kirki.php';
