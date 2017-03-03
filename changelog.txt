@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+DarkOrange version 5.3 - march 2017
+- file style: minor changes in html tags
+- file style: styling of select tag (cross-browser compatibility)
+- file style: added width and float to several elements (for better alignment)
+- file functions and single: removed post format (status)
+- several small adjustments
+
 DarkOrange version 5.2 - january 2017
 - added support for hentry tags
 - updated files content-postmeta, content-list and single
