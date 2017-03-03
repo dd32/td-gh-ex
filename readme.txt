@@ -1,7 +1,7 @@
 === GridBulletin ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.7
+Version: 4.8
 Requires at least: 4.2
 Tested up to: 4.7
 License: GNU General Public License v3 or later
@@ -35,9 +35,9 @@ Set a logo to replace site title and tagline via WordPress Dashboard > Appearanc
 You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 = Menu = 
-Theme offers a menu that can contain subpages (2 levels deep).
+You can create and set a menu via WordPress Dashboard > Appearance > Menus.
 
-You can create and set menu via WordPress Dashboard > Appearance > Menus.
+The mobile menu supports 2 levels of subpages.
 
 = Archive page =
 Display your archive page with or without sidebar and archive title via WordPress Dashboard > Appearance > Customize. 
