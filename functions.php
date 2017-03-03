@@ -66,7 +66,7 @@
 			add_theme_support( 'custom-background', $background_args ); 
 
 		// Post formats
-			add_theme_support( 'post-formats', array( 'aside', 'status', 'image', 'video', 'gallery', 'audio' ) );
+			add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'gallery', 'audio' ) );
 	}
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
 
