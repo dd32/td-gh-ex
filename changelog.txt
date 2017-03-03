@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+Medical version 4.6 - march 2017
+- file style: fixed alignment issue of #respond
+
 Medical version 4.5 - march 2017
 - file style: minor changes in html tags
 - file style: styling of select tag (cross-browser compatibility)
