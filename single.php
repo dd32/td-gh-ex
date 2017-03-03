@@ -13,10 +13,6 @@
 
 			<?php get_template_part( 'content-postmeta' ); ?>
 
-			<?php if (has_post_format('status') ) {?>
-				<?php printf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_avatar( get_the_author_meta( 'ID' ), 96 )  ); ?>
-			<?php } ?>
-		
 			<div class="entry-content">
 				<?php the_content(); ?>
 
