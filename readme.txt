@@ -5,14 +5,14 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 ___ DESCRIPTION
 
-Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through a Theme Options panel as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features. 
+Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through the native WP Customizer interface as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features. 
 
 
 ___ INSTALLATION
@@ -28,12 +28,17 @@ Theme manual can be found at: http://satoristudio.net/bento-manual
 For support and feature requests, please visit https://wordpress.org/support/theme/bento/
 
 
-___ ADDITIONAL NOTES
-
-The site tagline set in the "Settings -> General" admin section is not being used in the theme; the site title (set in the same admin section) is only being used for the auto-generated copyright statement in the footer.
-
-
 ___ CHANGELOG
+
+* 1.6.4 / 3 March 2017
+Fixed the featured images control visibility issue for the project content type.
+In case of empty logo the theme now displays site title in its place.
+Replaced the theme screenshot with a more accurate one.
+Replaced the front-end welcome header with an admin page.
+Removed Expansion-Pack-specific metaboxes from the front-end.
+Moved the option to edit the credit link in the footer into the Expansion Pack.
+Corrected the name and description of the colors section of the Customizer.
+Fixed the output of the "link" and "quote" format posts and linked to single post view.
 
 * 1.6.3 / 13 February 2017
 Added the header image upload field for the Expansion Pack.

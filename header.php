@@ -25,9 +25,7 @@
     <body <?php body_class(); ?>>
 	
 		<?php do_action('bento_body_top'); ?>
-         		
-		<?php bento_novice_header(); ?>
-		
+         				
 		<div class="site-wrapper clear">
 
 			<header class="site-header no-fixed-header">

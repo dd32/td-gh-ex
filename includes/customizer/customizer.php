@@ -58,8 +58,8 @@ function bento_localize_customizer_scripts() {
 
 // Rename existing sections
 function bento_customizer_rename_sections( $wp_customize ) {
-    $wp_customize -> get_section('colors') -> title = __( 'Site Background Color', 'bento' );
-	$wp_customize -> get_section('colors') -> description = __( 'For this to have effect, the "boxed" mode should be set in the "Site layout" section. This setting will be overridden if a background image is defined in the "Site Background" section.', 'bento' );
+    $wp_customize -> get_section('colors') -> title = __( 'Site Colors', 'bento' );
+	$wp_customize -> get_control('background_color') -> description = __( 'For this to have effect, the "boxed" mode should be set in the "Site layout" section. This setting will be overridden if a background image is defined in the "Site Background" section.', 'bento' );
 	$wp_customize -> get_section('background_image') -> title = __( 'Site Background Image', 'bento' );
 	$wp_customize -> get_section('background_image') -> description = __( 'For this to have effect, the "boxed" mode should be set in the "Site layout" section.', 'bento' );
 }
@@ -115,44 +115,8 @@ function bento_sanitize_choices( $input, $setting ) {
 }
 
 
-// Output disabled options
-function bento_output_disabled() {
-	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
-	$exp_link = '<span class="disabled-exp">' . sprintf( esc_html__( 'This option (and more) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
-	echo wp_kses( $exp_link, 
-		array( 
-			'a' => array( 
-				'target' => array(), 
-				'href' => array(),
-			), 
-			'span' => array( 
-				'class' => array(),
-			),
-		) 
-	); 
-}
-
-
 // Controls
 function bento_customize_register( $wp_customize ) {
-	
-	// Custom copyright control
-	class Bento_WP_Customize_Control_Copyright extends WP_Customize_Control {
-		public $type = 'text_copyright';
-		public function render_content() {
-			if ( ! empty( $this->label ) ) {
-				echo '<span class="customize-control-title">'.esc_html( $this->label ).'</span>';
-			}
-			if ( ! empty( $this->description ) ) {
-				echo '<span class="description customize-control-description">'.esc_html( $this->description ).'</span>';
-			}
-			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
-				echo '<input type="text" value="" data-customize-setting-link="bento_footer_copyright">';
-			} else {
-				bento_output_disabled();
-			}
-		}
-	}
 	
 	
 	// Custom help section
@@ -220,23 +184,6 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 
-		'bento_novice_header', 
-		array(
-			'type' => 'theme_mod',
-			'default' => 0,
-			'sanitize_callback' => 'bento_sanitize_checkboxes',
-		)
-	);
-	$wp_customize->add_control( 
-		'bento_novice_header', 
-		array(
-			'section' => 'bento_theme_support',
-			'type' => 'checkbox',
-			'label' => esc_html__( 'Permanently hide the welcome header', 'bento' ),
-			'description' => esc_html__( 'Check this option to stop displaying the welcome mat with useful links.', 'bento' ),
-		)
-	);
 	
 	// Site Identity
 	
@@ -262,27 +209,26 @@ function bento_customize_register( $wp_customize ) {
 		) 
 	);
 	
-	$wp_customize->add_setting( 
-		'bento_footer_copyright', 
-		array(
-			'type' => 'theme_mod',
-			'default' => '',
-			'sanitize_callback' => 'bento_sanitize_copyright',
-		)
-	);
-	$wp_customize->add_control(
-		new Bento_WP_Customize_Control_Copyright(
-		$wp_customize,
-		'bento_footer_copyright', 
+	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		$wp_customize->add_setting( 
+			'bento_footer_copyright', 
+			array(
+				'type' => 'theme_mod',
+				'default' => '',
+				'sanitize_callback' => 'bento_sanitize_copyright',
+			)
+		);
+		$wp_customize->add_control(
+			'bento_footer_copyright', 
 			array(
 				'section' => 'title_tagline',
 				'priority' => 100,
-				'type' => 'text_copyright',
+				'type' => 'text',
 				'label' => esc_html__( 'Copyright message in the footer', 'bento' ),
 				'description' => esc_html__( 'Use this field to add your own message instead of the theme link in the footer.', 'bento' ),
 			)
-		)
-	);
+		);
+	}
 	
 	// Site Elements
 	

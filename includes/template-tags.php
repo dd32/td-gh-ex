@@ -57,9 +57,7 @@ if ( ! function_exists( 'bento_google_fonts' ) ) {
 if ( ! function_exists( 'bento_logo' ) ) {
 	
 	function bento_logo() {
-		if ( has_custom_logo() ) {
-			echo '<div class="logo clear">'.get_custom_logo().'</div>';
-		}
+		echo '<div class="logo clear">'.get_custom_logo().'</div>';
 	}
     
 }
@@ -389,7 +387,7 @@ if ( ! function_exists( 'bento_post_date_blog' ) ) {
 		if ( is_single() ) {
 			return;
 		}
-		if ( get_the_title() == '' ) {
+		if ( get_the_title() == '' || get_post_format() === 'quote' || get_post_format() === 'link' ) {
 			$post_date_link = '<a href="'.get_the_permalink().'">';	
 			$post_date_link_close = '</a>';
 		} else {
@@ -485,13 +483,20 @@ if ( ! function_exists( 'bento_post_content' ) ) {
 		
 		// Check for post format and display respective content
 		if ( get_post_format() === 'link' ) { 
-			echo bento_link_format_content();
-		} elseif ( get_post_format() === 'quote' ) {
-			echo bento_quote_format_content();
+			if ( bento_link_format_content() != false ) {
+				echo bento_link_format_content();
+			} else {
+				the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );
+			}
+		} else if ( get_post_format() === 'quote' ) {
+			$quote = esc_html( get_the_content() );
+			echo '<div class="format-quote-text">';
+			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );
+			echo '</div><div class="format-quote-author">'.esc_html( get_the_title() ).'</div>';
 		} else {
 			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );	
 		}
-		
+
 		// Navigation for paged posts
 		wp_link_pages( 
 			array(
@@ -725,22 +730,16 @@ if ( ! function_exists( 'bento_grid_pagination' ) ) {
 if ( ! function_exists( 'bento_link_format_content' ) ) {
 
 	function bento_link_format_content() {
-		$url = wp_kses( 
-			get_the_content(), 
-			array( 
-				'a' => array( 
-					'href' => array(), 
-					'title' => array(), 
-					'target' => array() 
-				) 
-			) 
-		);
-		$anchor = get_the_title();
-		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) === false ) { 
-			return '<a href="'.esc_url( $url ).'" title="'.esc_attr( $anchor ).'" target="_blank">'.esc_html( $anchor ).'</a>';
+		
+		$content = get_the_content();
+		$first_url = get_url_in_content( $content );
+		if ( $first_url ) {
+			$anchor = get_the_title();
+			return '<a href="'.esc_url( $first_url ).'" title="'.esc_attr( $anchor ).'" target="_blank">'.esc_html( $anchor ).'</a>';
 		} else {
-			return $url;	
+			return false;
 		}
+		
 	}
 	
 }
@@ -767,9 +766,9 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 
 	function bento_copyright() {
 		$sitename = '<a href="'.esc_url( home_url( '/' ) ).'">'.esc_attr( get_bloginfo( 'name' ) ).'</a>';
-		$author = esc_html__( 'Bento WordPress theme by Satori Studio', 'bento' );
+		$author = esc_html__( 'Bento theme by Satori', 'bento' );
 		if ( is_front_page() ) {
-			$author = esc_html__( 'Bento WordPress theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a>';
+			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
@@ -893,39 +892,6 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 		
 		echo $tile_content;
 		
-	}
-	
-}
-
-
-// Display info header for new users
-if ( ! function_exists( 'bento_novice_header' ) ) {
-	
-	function bento_novice_header() {
-		$status = get_theme_mod( 'bento_novice_header' );
-		if ( $status != 1 && current_user_can( 'edit_theme_options' ) ) {
-			?>
-			<div class="novice-header">
-				<div class="novice-header-inner">
-					<div class="novice-header-title">
-						<?php esc_html_e( 'Welcome to', 'bento' ); ?> <span class="novice-header-title-red">Bento</span><br>
-						<?php esc_html_e( 'The Ultimate Free WordPress Theme', 'bento' ); ?>
-					</div>
-					<div class="novice-header-options">
-						<a class="novice-header-button nhb-manual" href="http://satoristudio.net/bento-manual" target="_blank">
-							<?php esc_html_e( 'Open theme manual', 'bento' ); ?>
-						</a>
-						<a class="novice-header-button nhb-demo" href="http://satoristudio.net/bento" target="_blank">
-							<?php esc_html_e( 'View full demo', 'bento' ); ?>
-						</a>
-						<a class="novice-header-button nhb-dismiss" target="_blank">
-							<?php esc_html_e( 'Dismiss this heading', 'bento' ); ?>
-						</a>
-					</div>
-				</div>
-			</div>
-			<?php
-		}
 	}
 	
 }

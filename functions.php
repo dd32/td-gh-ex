@@ -8,7 +8,7 @@ function bento_theme_setup() {
 	
 	// Features
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'project', 'product' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'link', 'image' ) );
@@ -19,11 +19,11 @@ function bento_theme_setup() {
 	// Actions
 	add_action( 'wp_enqueue_scripts', 'bento_theme_styles_scripts' );
 	add_action( 'admin_enqueue_scripts', 'bento_admin_scripts' );
+	add_action( 'admin_menu', 'bento_about_page' );
+	add_action( 'load-themes.php', 'bento_add_welcome_message' );
 	add_action( 'template_redirect', 'bento_theme_adjust_content_width' );
 	add_action( 'init', 'bento_page_excerpt_support' );
 	add_action( 'get_header', 'bento_enable_threaded_comments' );
-	add_action( 'wp_ajax_dismiss_novice', 'bento_dismiss_novice' );
-	add_action( 'wp_ajax_nopriv_dismiss_novice', 'bento_dismiss_novice' );
 	add_action( 'tgmpa_register', 'bento_register_required_plugins' );
 	add_action( 'wp_ajax_ajax_pagination', 'bento_ajax_pagination' );
 	add_action( 'wp_ajax_nopriv_ajax_pagination', 'bento_ajax_pagination' );
@@ -102,7 +102,7 @@ function bento_theme_styles_scripts () {
 	wp_enqueue_script( 'bento-theme-scripts', get_template_directory_uri().'/includes/js/theme-scripts.js', array('jquery'), false, true );
 		
 	// Styles
-	wp_enqueue_style( 'bento-theme', get_template_directory_uri().'/style.css', array( 'dashicons' ), null, 'all' );
+	wp_enqueue_style( 'bento-theme-styles', get_template_directory_uri().'/style.css', array( 'dashicons' ), null, 'all' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.min.css', array(), null, 'all' );
 	wp_enqueue_style( 'google-fonts', bento_google_fonts(), array(), null );
 		
@@ -110,8 +110,8 @@ function bento_theme_styles_scripts () {
 	bento_localize_scripts();
 
 	// Inline styles for customizing the theme
-	wp_add_inline_style( 'bento-theme', bento_customizer_css() );
-	wp_add_inline_style( 'bento-theme', bento_insert_custom_styles() );
+	wp_add_inline_style( 'bento-theme-styles', bento_customizer_css() );
+	wp_add_inline_style( 'bento-theme-styles', bento_insert_custom_styles() );
 	    
 }
 
@@ -123,11 +123,14 @@ function bento_admin_scripts () {
 	$screen = get_current_screen();
 	$edit_screens = array( 'post', 'page', 'project', 'product' );
 	if ( in_array( $screen->id, $edit_screens ) ) {
-		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/js/admin-scripts.js', array('jquery'), false, true );
+		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js', array('jquery'), false, true );
 	}
 	$old_options = get_option( 'satori_options', 'none' );
 	if ( $old_options != 'none' ) {
 		wp_enqueue_script( 'bento-migrate-scripts', get_template_directory_uri().'/includes/js/migrate-scripts.js', array('jquery'), false, true );
+	}
+	if ( 'appearance_page_about-bento' == $screen->id ) {
+		wp_enqueue_style( 'bento-admin-styles', get_template_directory_uri().'/includes/admin/admin-styles.css', array(), null, 'all' );
 	}
 	
 	// Passing php variables to admin scripts
@@ -136,7 +139,7 @@ function bento_admin_scripts () {
 }
 
 
-// Registed theme status for the Expansion Pack
+// Register theme status for the Expansion Pack
 function bento_active() {
 	$current_theme = wp_get_theme();
 	if ( $current_theme == 'Bento' ) {
@@ -145,6 +148,150 @@ function bento_active() {
 		return false;
 	}
 }
+
+
+// Welcome notice and page
+	
+	// Add welcome message
+	function bento_add_welcome_message() {
+		$screen = get_current_screen();
+		if ( is_admin() && ( 'themes' == $screen->id ) && isset( $_GET['activated'] ) ) {
+			add_action( 'admin_notices', 'bento_render_welcome_message', 99 );
+		}
+	}
+	
+	// Display welcome message
+	function bento_render_welcome_message() {
+		?>
+			<div class="notice notice-success is-dismissible">
+				<p><?php echo sprintf( esc_html__( 'Thank you for choosing Bento! Visit the %swelcome page%s to get the most out of the theme:', 'bento' ), '<a href="' . esc_url( admin_url( 'themes.php?page=about-bento' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=about-bento' ) ); ?>" class="button button-primary" style="text-decoration: none;"><?php esc_html_e( 'Get started with Bento', 'bento' ); ?></a></p>
+			</div>
+		<?php
+	}
+	
+	// Create the submenu item
+	function bento_about_page() {
+		add_theme_page( esc_html__( 'Welcome to Bento!', 'bento' ), esc_html__( 'About Bento', 'bento' ), 'edit_theme_options', 'about-bento', 'bento_about_page_content' );
+	}
+	
+	// Render page content
+	function bento_about_page_content() {
+		$current_theme = wp_get_theme();
+		$theme_version = $current_theme->get( 'Version' );
+		$theme_actions = array(
+			array(
+				'name' => 'demo',
+				'text' => esc_html__( 'See full demonstration', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento/' ),
+				'icon' => '<span class="dashicons dashicons-welcome-view-site"></span>',
+			),
+			array(
+				'name' => 'manual',
+				'text' => esc_html__( 'Detailed instructions', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento-manual/' ),
+				'icon' => '<span class="dashicons dashicons-book-alt"></span>',
+			),
+			array(
+				'name' => 'support',
+				'text' => esc_html__( 'Visit official forum', 'bento' ),
+				'url' => esc_url( 'https://wordpress.org/support/theme/bento/' ),
+				'icon' => '<span class="dashicons dashicons-sos"></span>',
+			),
+		);
+		$actions_html = '';
+		foreach ( $theme_actions as $theme_action ) {
+			$action = '
+				<div class="bento-welcome-action bento-welcome-'.$theme_action['name'].'">
+					<div class="bento-welcome-action-inner">
+						<a href="'.$theme_action['url'].'" target="_blank">
+							<div class="bento-welcome-action-icon">
+								'.$theme_action['icon'].'
+							</div>
+							<div class="bento-welcome-action-title">
+								'.ucfirst($theme_action['name']).'
+							</div>
+							<div class="bento-welcome-action-text">
+								'.$theme_action['text'].'
+							</div>
+						</a>
+					</div>
+				</div>
+			';
+			$actions_html .= $action;
+		}
+		$upgrade_html = '';
+		$ep_features = array(
+			array (
+				'title' => esc_html__( 'Footer copyright', 'bento' ),
+				'text' => esc_html__( 'customize or remove the copyright statement in the footer', 'bento' ),
+				'url' => esc_url( '' ),
+			),
+			array (
+				'title' => esc_html__( 'Portfolio', 'bento' ),
+				'text' => esc_html__( 'add stunning corporate portfolios, online storefronts, or personal showcases.', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento/portfolio-masonry/' ),
+			),
+			array (
+				'title' => esc_html__( 'Pre-built layouts', 'bento' ),
+				'text' => esc_html__( 'simplify the process of creating new pages using ready-made layouts.', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento/pre-built-layouts/' ),
+			),
+			array (
+				'title' => esc_html__( 'Video and maps headers', 'bento' ),
+				'text' => esc_html__( 'make your pages stand out with custom header content.', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento/video-background-in-header/' ),
+			),
+			array (
+				'title' => esc_html__( 'Preloaders', 'bento' ),
+				'text' => esc_html__( 'show your visitors a stylish progress animation until the page is fully loaded.', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento/preloader/' ),
+			),
+			array (
+				'title' => esc_html__( 'And', 'bento' ),
+				'text' => esc_html__( 'tons of other cool features.', 'bento' ),
+				'url' => esc_url( 'http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack' ),
+			),
+		);
+		foreach ( $ep_features as $ep_feature ) {
+			$link = '';
+			if ( $ep_feature['url'] != '' ) {
+				$link = '<a href="'.$ep_feature['url'].'" target="_blank">'.esc_html__( 'Preview', 'bento' ).'</a>';
+			}
+			$upgrade_html .= '
+				<li><strong>'.$ep_feature['title'].'</strong>: '.$ep_feature['text'].' '.$link.'</li>';
+		}
+		?>
+			<div class="wrap bento-welcome-container">
+				<h1><?php esc_html_e( 'Thank you for choosing Bento!', 'bento' ); ?></h1>
+				<div class="bento-welcome-about">
+					<div class="bento-welcome-top">
+						<a class="bento-welcome-rate" href="<?php echo esc_url( 'https://wordpress.org/support/theme/bento/reviews/' ); ?>" target="_blank">
+							<span class="dashicons dashicons-heart"></span>
+							<span class="bento-welcome-rate-link">
+								<?php esc_html_e( 'Rate the theme', 'bento' ); ?>
+							</span>
+						</a>
+					</div>
+					<div class="bento-welcome-description">
+						<?php esc_html_e( 'Bento is a powerful yet user-friendly WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme is being constantly maintained by its author and offers regular free updates with bugfixes and additional features.', 'bento' ); ?>
+					</div>
+				</div>
+				<div class="bento-welcome-actions">
+					<?php echo $actions_html; ?>
+				</div>
+				<div class="bento-welcome-upgrade">
+					<h2><?php esc_html_e( 'Supercharge your Bento', 'bento' ); ?> &mdash;</h2>
+					<div class="bento-welcome-upgrade-cta">
+						<a href="<?php echo esc_url( 'http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack' ); ?>" class="button button-primary" target="_blank"><?php esc_html_e( 'Get the Expansion Pack', 'bento' ); ?></a>
+					</div>
+					<ul class="bento-welcome-upgrade-features">
+						<?php echo $upgrade_html; ?>
+					</ul>
+				</div>
+			</div>
+		<?php
+	}
 
 
 // Localize scripts
@@ -406,15 +553,6 @@ function bento_insert_custom_styles() {
 }
 
 
-// Dismiss novice header on button click
-function bento_dismiss_novice() {
-	$new_value = 1;
-	if ( current_user_can('edit_theme_options') ) {
-		set_theme_mod( 'bento_novice_header', $new_value );
-	}
-}
-
-
 // Load custom template tags
 if ( file_exists( get_template_directory() . '/includes/template-tags.php' ) ) {
 	require_once get_template_directory() . '/includes/template-tags.php';
@@ -603,20 +741,25 @@ function bento_custom_excerpt_more($more) {
 
 // Custom logo markup
 function bento_get_custom_logo() {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-	$logo_full = $logo_mobile = $logo_image[0];
+	$logo = '<span class="logo-default">'.get_bloginfo( 'name' ).'</span>';
+	if ( get_theme_mod( 'custom_logo' ) ) {
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+		$logo_full_url = $logo_mobile_url = $logo_image[0];
+		$logo = '<img class="logo-fullsize" src="'.esc_url( $logo_full_url ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />';
+	}
 	if ( get_theme_mod( 'bento_logo_mobile' ) != '' ) {
+		if ( ! get_theme_mod( 'custom_logo' ) ) {
+			$logo = '<span class="logo-default logo-fullsize">'.get_bloginfo( 'name' ).'</span>';
+		}
 		$mobile_logo_id = get_theme_mod( 'bento_logo_mobile' );
 		$mobile_logo_image = wp_get_attachment_image_src( $mobile_logo_id , 'full' );
-		$logo_mobile = $mobile_logo_image[0];
+		$logo_mobile_url = $mobile_logo_image[0];
+		$logo .= '<img class="logo-mobile" src="'.esc_url( $logo_mobile_url ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />';
+	} else if ( get_theme_mod( 'custom_logo' ) ) {
+		$logo .= '<img class="logo-mobile" src="'.esc_url( $logo_full_url ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />';
 	}
-	$logo_html = '
-		<a href="'.esc_url( home_url( '/' ) ).'">
-			<img class="logo-fullsize" src="'.esc_url( $logo_full ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
-			<img class="logo-mobile" src="'.esc_url( $logo_mobile ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
-		</a>
-	';
+	$logo_html = '<a href="'.esc_url( home_url( '/' ) ).'">'.$logo.'</a>';
 	return $logo_html;
 }
 
@@ -1036,22 +1179,10 @@ function bento_metaboxes() {
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$bento_header_settings->add_field(
 			array(
-				'name' => esc_html__( 'Header image', 'satori' ),
-				'desc' => esc_html__( 'Upload the image to serve as the header; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'satori' ),
+				'name' => esc_html__( 'Header image', 'bento' ),
+				'desc' => esc_html__( 'Upload the image to serve as the header; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'bento' ),
 				'id' => $bento_prefix . 'header_image',
 				'type' => 'file',
-			)
-		);
-	} else {
-		$bento_header_settings->add_field(
-			array(
-				'name' => esc_html__( 'Header image', 'bento' ),
-				'desc' => sprintf( esc_html__( 'You can upload the image to serve as the header using the "Featured image" box in the right sidebar; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience. Install the %s in order to be able to upload a separate image as the header image.', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'header_image',
-				'type' => 'text',
-				'attributes'  => array(
-					'hidden' => 'hidden',
-				),
 			)
 		);
 	}
@@ -1062,18 +1193,6 @@ function bento_metaboxes() {
 				'desc' => esc_html__( 'Upload the video file to be used as header background; if this is active, the header image will serve as a placeholder for mobile devices; .mp4 files are recommended, but you can also use .ogv and .webm formats. Please mind the file size - excessively large images may worsen user experience', 'bento' ),
 				'id' => $bento_prefix . 'header_video_source',
 				'type' => 'file',
-			)
-		);
-	} else {
-		$bento_header_settings->add_field(
-			array(
-				'name' => esc_html__( 'Header video', 'bento' ),
-				'desc' => sprintf( esc_html__( 'Install the %s to use the header video feature', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'header_video_source',
-				'type' => 'text',
-				'attributes'  => array(
-					'hidden' => 'hidden',
-				),
 			)
 		);
 	}
@@ -1134,17 +1253,17 @@ function bento_metaboxes() {
 	);
 	
 	// Map header settings
-	$bento_headermap_settings = new_cmb2_box( 
-		array(
-			'id'            => 'post_headermap_metabox',
-			'title'         => esc_html__( 'Map Header', 'bento' ),
-			'object_types'  => array( 'page' ),
-			'context'       => 'normal',
-			'priority'      => 'low',
-			'show_names' => true,
-		) 
-	);
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		$bento_headermap_settings = new_cmb2_box( 
+			array(
+				'id'            => 'post_headermap_metabox',
+				'title'         => esc_html__( 'Map Header', 'bento' ),
+				'object_types'  => array( 'page' ),
+				'context'       => 'normal',
+				'priority'      => 'low',
+				'show_names' => true,
+			) 
+		);
 		$bento_headermap_settings->add_field(
 			array(
 				'name' => esc_html__( 'Activate Google Maps header', 'bento' ),
@@ -1230,18 +1349,6 @@ function bento_metaboxes() {
 				'type' => 'textarea',
 			)
 		);
-	} else {
-		$bento_headermap_settings->add_field(
-			array(
-				'name' => esc_html__( 'Activate Google Maps header', 'bento' ),
-				'desc' => sprintf( esc_html__( 'Install the %s to activate the Google Maps header', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'activate_headermap',
-				'type' => 'text',
-				'attributes'  => array(
-					'hidden' => 'hidden',
-				),
-			)
-		);
 	}
 	
 	// Masonry tile settings
@@ -1286,18 +1393,6 @@ function bento_metaboxes() {
 				'desc' => esc_html__( 'Upload the image to be used in the tile; if this field is empty, the featured image (thumbnail) will be used.', 'bento' ),
 				'id' => $bento_prefix . 'tile_image',
 				'type' => 'file',
-			)
-		);
-	} else {
-		$bento_tile_settings->add_field(
-			array(
-				'name' => esc_html__( 'Tile image', 'bento' ),
-				'desc' => sprintf( esc_html__( 'Install the %s to set custom images for individual tiles', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'tile_image',
-				'type' => 'text',
-				'attributes'  => array(
-					'hidden' => 'hidden',
-				),
 			)
 		);
 	}
@@ -1459,17 +1554,17 @@ function bento_metaboxes() {
 	);
 	
 	// SEO settings
-	$bento_seo_settings = new_cmb2_box( 
-		array(
-			'id'            => 'seo_settings_metabox',
-			'title'         => esc_html__( 'SEO Settings', 'bento' ),
-			'object_types'  => array( 'post', 'page', 'project', 'product' ),
-			'context'       => 'normal',
-			'priority'      => 'low',
-			'show_names'	=> true,
-		) 
-	);
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		$bento_seo_settings = new_cmb2_box( 
+			array(
+				'id'            => 'seo_settings_metabox',
+				'title'         => esc_html__( 'SEO Settings', 'bento' ),
+				'object_types'  => array( 'post', 'page', 'project', 'product' ),
+				'context'       => 'normal',
+				'priority'      => 'low',
+				'show_names'	=> true,
+			) 
+		);
 		$bento_seo_settings->add_field(
 			array(
 				'name' => esc_html__( 'Meta title', 'bento' ),
@@ -1486,29 +1581,6 @@ function bento_metaboxes() {
 				'type' => 'textarea',
 				'attributes' => array(
 					'rows' => 3,
-				),
-			)
-		);
-	} else {
-		$bento_seo_settings->add_field(
-			array(
-				'name' => esc_html__( 'Meta title', 'bento' ),
-				'desc' => sprintf( esc_html__( 'Install the %s to set the meta title for individual posts and pages', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'meta_title',
-				'type' => 'text',
-				'attributes'  => array(
-					'hidden' => 'hidden',
-				),
-			)
-		);
-		$bento_seo_settings->add_field(
-			array(
-				'name' => esc_html__( 'Meta description', 'bento' ),
-				'desc' => sprintf( esc_html__( 'Install the %s to set the meta description for individual posts and pages', 'bento' ), $bento_ep_url ),
-				'id' => $bento_prefix . 'meta_description',
-				'type' => 'textarea',
-				'attributes'  => array(
-					'hidden' => 'hidden',
 				),
 			)
 		);
