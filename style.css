@@ -4,12 +4,11 @@ Theme URI: http://pankogut.com/wordpress-themes/gump
 Author: PanKogut
 Author URI: http://pankogut.com
 Description: Responsive Wordpress Theme for Bloggers. Now you can change all colors via Customizer Panel. There is also the custom widget with social links.
-Version: 1.1
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-image-header, full-width-template, post-formats, theme-options, featured-images, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-menu, editor-style, featured-image-header, full-width-template, post-formats, theme-options, featured-images, translation-ready
 Text Domain: gump
-Domain Path: /languages/ 
 */
 
 /*--------------------------------------------------------------
@@ -1152,6 +1151,14 @@ a.more-link {
 .site-footer {
 	padding: 2em 0;
 	text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+	.footer-sidebar .footer-widget {
+	    float: left;
+	    padding: 0px 15px;
+	    width: 33.3%;
+	}
 }
 
 /*--------------------------------------------------------------

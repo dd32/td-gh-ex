@@ -1,11 +1,13 @@
 gump
 ===============================
 
-For a detailed theme documentation: http://pankogut.com/wordpress-themes/gump
-
-Support Forum: http://support.pankogut.com
+For a detailed theme documentation: https://pankogut.com/wordpress-themes/gump
 
 ===============================
+
+Version 1.3.0
+===============================
+- new three columns sidebar in the footer
 
 Version 1.0
 ===============================
