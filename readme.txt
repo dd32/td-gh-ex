@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.7
+Version: 4.8
 Requires at least: 4.2
 Tested up to: 4.7
 License: GNU General Public License v3 or later
@@ -35,16 +35,18 @@ Set a logo to replace site title and tagline via WordPress Dashboard > Appearanc
 You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
 
 = Menu = 
-Theme offers a menu that can contain subpages (2 levels deep).
+You can create and set a menu via WordPress Dashboard > Appearance > Menus.
 
-You can create and set menu via WordPress Dashboard > Appearance > Menus.
+The mobile menu supports 2 levels of subpages.
 
 = Create a knowledgebase =
 The knowledgebase uses the default WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
-Show or hide page title, exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize. 
+Show or hide page title, exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize.
+
+Parent and subcategories are listed the same way.
 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 
