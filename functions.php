@@ -4,13 +4,6 @@
  *
  * @package annina
  */
- 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 950; /* pixels */
-}
 
 if ( ! function_exists( 'annina_setup' ) ) :
 /**
@@ -81,6 +74,18 @@ endif; // annina_setup
 add_action( 'after_setup_theme', 'annina_setup' );
 
 /**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function annina_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'annina_content_width', 900 );
+}
+add_action( 'after_setup_theme', 'annina_content_width', 0 );
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -112,7 +117,6 @@ function annina_scripts() {
 
 	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery', 'jquery-masonry'), '1.0', true );
 	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'annina-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'annina-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

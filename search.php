@@ -14,7 +14,12 @@ get_header(); ?>
 
 			<header class="page-header">
 				<div class="content-annina-title annDouble">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'annina' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title">
+					<?php
+					/* translators: %s: search query */
+					printf( esc_html__( 'Search Results for: %s', 'annina' ), '<span>' . get_search_query() . '</span>' );
+					?>
+					</h1>
 				</div><!-- .content-annina -->
 			</header><!-- .page-header -->
 			

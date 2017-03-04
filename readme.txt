@@ -48,6 +48,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+= Version 1.5.1 =
+* Fixed some strings escaping
+* Improved search widget CSS
+
 = Version 1.5.0 =
 * Now Annina is no longer compatible with WordPress 4.3 version or lower
 * Added icons to Categories Widget and Archives Widget

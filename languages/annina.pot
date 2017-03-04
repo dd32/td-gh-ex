@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2017-02-18 10:32+0100\n"
-"PO-Revision-Date: 2017-02-18 10:32+0100\n"
+"POT-Creation-Date: 2017-03-04 15:50+0100\n"
+"PO-Revision-Date: 2017-03-04 15:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -34,88 +34,98 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:47 index.php:39 search.php:41
+#: archive.php:46 index.php:39 search.php:46
 msgid "Previous"
 msgstr ""
 
-#: archive.php:48 index.php:40 search.php:42
+#: archive.php:47 index.php:40 search.php:47
 msgid "Next"
 msgstr ""
 
-#: archive.php:49 index.php:41 search.php:43
+#: archive.php:48 index.php:41 search.php:48
 msgid "Page"
 msgstr ""
 
-#: comments.php:28
+#. translators: %s: post title
+#: comments.php:31
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:36
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:39
+#: comments.php:55
 msgid "Reply"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:62
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:67
+#: comments.php:83
 msgid "Name *"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:84
 msgid "Email *"
 msgstr ""
 
-#: comments.php:69
+#: comments.php:85
 msgid "Website"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:87
 msgid " Required fields are marked "
 msgstr ""
 
-#: comments.php:75
+#. translators: %s: wordpress login url
+#: comments.php:92
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:76
+#. translators: 1: profile user link, 2: username, 3: logout link
+#: comments.php:94
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:95
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:78
+#: comments.php:96
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:79
+#. translators: %s: name of person to reply
+#: comments.php:98
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:80
+#: comments.php:99
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:81
+#: comments.php:100
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:82
+#: comments.php:101
 msgid "Comment *"
 msgstr ""
 
@@ -123,19 +133,20 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:22
+#. translators: %1$s: create new post link
+#: content-none.php:25
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:26
+#: content-none.php:31
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:31
+#: content-none.php:36
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -145,7 +156,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:39 content.php:45 inc/template-tags.php:95
+#: content-page.php:39 content.php:45 inc/template-tags.php:88
 msgid "Edit"
 msgstr ""
 
@@ -157,21 +168,23 @@ msgstr ""
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:14
+#. translators: %s: WordPress name
+#: footer.php:17
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:16
+#. translators: 1: theme name, 2: theme developer
+#: footer.php:23
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:55
+#: functions.php:48
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:95
 msgid "Sidebar"
 msgstr ""
 
@@ -231,7 +244,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:36 inc/admin/annina-admin-page.php:110
+#: inc/admin/annina-admin-page.php:36 inc/admin/annina-admin-page.php:115
 msgid "About"
 msgstr ""
 
@@ -247,194 +260,195 @@ msgstr ""
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:92
+#. translators: 1: start option panel link, 2: end option panel link
+#: inc/admin/annina-admin-page.php:95
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Annina! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:94
+#: inc/admin/annina-admin-page.php:99
 msgid "Get started with Annina"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:117
+#: inc/admin/annina-admin-page.php:122
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:119
+#: inc/admin/annina-admin-page.php:124
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:121
+#: inc/admin/annina-admin-page.php:126
 msgid "View PRO version Demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:123
+#: inc/admin/annina-admin-page.php:128
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:138
+#: inc/admin/annina-admin-page.php:143
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:141
+#: inc/admin/annina-admin-page.php:146
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:175
+#: inc/admin/annina-admin-page.php:180
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:176
+#: inc/admin/annina-admin-page.php:181
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:177
+#: inc/admin/annina-admin-page.php:182
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:181
+#: inc/admin/annina-admin-page.php:186
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:182
+#: inc/admin/annina-admin-page.php:187
 msgid "Please put it in our support forum."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:183
+#: inc/admin/annina-admin-page.php:188
 msgid "Support"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:187
+#: inc/admin/annina-admin-page.php:192
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:188 inc/admin/annina-admin-page.php:287
+#: inc/admin/annina-admin-page.php:193 inc/admin/annina-admin-page.php:292
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:189
+#: inc/admin/annina-admin-page.php:194
 msgid "Info about PRO version"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:195 inc/admin/annina-admin-page.php:203
+#: inc/admin/annina-admin-page.php:200 inc/admin/annina-admin-page.php:208
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:199
+#: inc/admin/annina-admin-page.php:204
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:215
+#: inc/admin/annina-admin-page.php:220
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:215
+#: inc/admin/annina-admin-page.php:220
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:218
+#: inc/admin/annina-admin-page.php:223
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:218
+#: inc/admin/annina-admin-page.php:223
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:235
+#: inc/admin/annina-admin-page.php:240
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:292
+#: inc/admin/annina-admin-page.php:297
 msgid "Features"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:293
+#: inc/admin/annina-admin-page.php:298
 msgid "Annina"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:294
+#: inc/admin/annina-admin-page.php:299
 msgid "Annina PRO"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:299
+#: inc/admin/annina-admin-page.php:304
 msgid "Responsive Design"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:304
+#: inc/admin/annina-admin-page.php:309
 msgid "Change Background"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:309
+#: inc/admin/annina-admin-page.php:314
 msgid "Unlimited Text Color"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:314
+#: inc/admin/annina-admin-page.php:319
 msgid "Choose Social Incons"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:319
+#: inc/admin/annina-admin-page.php:324
 msgid "RTL Support"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:324
+#: inc/admin/annina-admin-page.php:329
 msgid "5 Post format"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:329
+#: inc/admin/annina-admin-page.php:334
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:334 inc/annina-dynamic.php:248
+#: inc/admin/annina-admin-page.php:339 inc/annina-dynamic.php:248
 msgid "Loading Page"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:339
+#: inc/admin/annina-admin-page.php:344
 msgid "Infinite scroll"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:344 inc/annina-dynamic.php:247
+#: inc/admin/annina-admin-page.php:349 inc/annina-dynamic.php:247
 msgid "Font switcher"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:349
+#: inc/admin/annina-admin-page.php:354
 msgid "Choose header position (left or right)"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:354
+#: inc/admin/annina-admin-page.php:359
 msgid "Choose sidebar position (left or right)"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:359
+#: inc/admin/annina-admin-page.php:364
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:364 inc/annina-dynamic.php:250
+#: inc/admin/annina-admin-page.php:369 inc/annina-dynamic.php:250
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:369 inc/annina-dynamic.php:252
+#: inc/admin/annina-admin-page.php:374 inc/annina-dynamic.php:252
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:374
+#: inc/admin/annina-admin-page.php:379
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:379 inc/annina-dynamic.php:254
+#: inc/admin/annina-admin-page.php:384 inc/annina-dynamic.php:254
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:384 inc/annina-dynamic.php:255
+#: inc/admin/annina-admin-page.php:389 inc/annina-dynamic.php:255
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:392
+#: inc/admin/annina-admin-page.php:397
 msgid "View PRO version demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:393
+#: inc/admin/annina-admin-page.php:398
 msgid "More Information"
 msgstr ""
 
@@ -578,41 +592,25 @@ msgstr ""
 msgid "Next Post:"
 msgstr ""
 
-#: inc/template-tags.php:54
-#, php-format
-msgctxt "post date"
-msgid "<i class=\"fa fa-calendar spaceRight\"></i>%s"
-msgstr ""
-
-#: inc/template-tags.php:59
-#, php-format
-msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\" aria-hidden=\"true\"></i>%s"
-msgstr ""
-
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:67 inc/template-tags.php:90
+#: inc/template-tags.php:60 inc/template-tags.php:83
 msgid " / "
 msgstr ""
 
-#: inc/template-tags.php:69 inc/template-tags.php:92
-#, php-format
-msgid "%1$s"
-msgstr ""
-
-#: inc/template-tags.php:75
+#: inc/template-tags.php:68
 msgid "No Comments"
 msgstr ""
 
-#: inc/template-tags.php:75
+#: inc/template-tags.php:68
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:75
+#: inc/template-tags.php:68
 msgid "% Comments"
 msgstr ""
 
-#: search.php:17
+#. translators: %s: search query
+#: search.php:20
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
