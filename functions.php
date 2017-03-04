@@ -96,7 +96,7 @@ add_action( 'customize_controls_print_styles', 'beautyandspa_customizer_styles',
 	$link = sprintf( '<a href="%1$s" class="read-more">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Read More', 'beautyandspa' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Read More', 'beauty-and-spa' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 	}

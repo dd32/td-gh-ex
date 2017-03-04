@@ -39,7 +39,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>"><?php _e('View Pricing and Features', 'beauty-and-spa'); ?></a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="<?php _e(esc_html('D5 Creation Themes'), 'beauty-and-spa'); ?>"/></div>
+        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="<?php esc_html(_e('D5 Creation Themes', 'beauty-and-spa')); ?>"/></div>
   
 
 	<div class="floatcntr">
