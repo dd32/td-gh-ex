@@ -16,7 +16,7 @@
 			else $barletta_thumbnail = 'barletta-thumbnail';
 		?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		<?php echo get_the_post_thumbnail( get_the_ID(), $barletta_thumbnail ); ?>
+		<?php the_post_thumbnail( $barletta_thumbnail ); ?>
 		</a>
 	<?php endif; ?>
 		

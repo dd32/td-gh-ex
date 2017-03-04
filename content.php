@@ -18,7 +18,7 @@
 
 								?>
 								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-								<?php echo get_the_post_thumbnail( get_the_ID(), $barletta_thumbnail ); ?>
+								<?php the_post_thumbnail( $barletta_thumbnail ); ?>
 								</a>
 							<?php endif; ?>
 						</div>
@@ -34,7 +34,7 @@
 								<?php endif; ?>
 							</div>
 
-							<!-- <div class="post-date"><span>Posted by <?php the_author_posts_link(); ?> on <?php echo get_the_date(); ?></span></div>-->
+							<!-- <div class="post-date"><span>Posted by <?php the_author_posts_link(); ?> on <?php the_date(); ?></span></div>-->
 
 							<?php if ( is_search() ) : // Only display Excerpts for Search
 								the_excerpt();

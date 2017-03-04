@@ -1,5 +1,5 @@
 ﻿Theme Name : Barletta
-Version    : 1.1.2
+Version    : 1.1.3
 Theme URL  : http://moozthemes.com/barletta-wordpress-theme
 Theme Documentation  : http://moozthemes.com/barletta-wordpress-theme-documentation/
 
@@ -127,3 +127,7 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 
 1.1.2 - 26.1.2017
 * Fixed issue with unclickable buttons on mobile phones
+
+1.1.3 - 19.2.2017
+* Added "Orange Themes" widget support
+* Fixed issues with escaping

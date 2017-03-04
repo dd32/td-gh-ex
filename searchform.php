@@ -11,7 +11,7 @@
   <div class="input-group">
 
   	<label class="screen-reader-text" for="s"><?php esc_html_e( 'Search for:', 'barletta' ); ?></label>
-    <input type="text" class="form-control search-query" placeholder="<?php echo esc_attr_x( 'Search & help', 'placeholder', 'barletta' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'barletta' ); ?>" />
+    <input type="text" class="form-control search-query" placeholder="<?php echo esc_attr_x( 'Search & help', 'placeholder', 'barletta' ); ?>" value="<?php the_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'barletta' ); ?>" />
     <span class="input-group-btn">
       <button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'barletta' ); ?>"><span class="glyphicon glyphicon-search"></span></button>
     </span>
