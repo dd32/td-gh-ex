@@ -89,25 +89,21 @@ add_action( 'customize_controls_print_styles', 'beautyandspa_customizer_styles',
 
 // 	Add Some Sub Functions necessary for the Site
 	require_once ( trailingslashit(get_template_directory()) . 'function/imp.php' );
-
-//	function tied to the excerpt_more filter hook.
-	function beautyandspa_excerpt_length( $beautyandspa_excerpt_length ) {
-	if (!is_admin()):
-	global $beautyandspa_excerpt_length;
-	if ($beautyandspa_excerpt_length) {
-    return $beautyandspa_excerpt_length;
-	} else {
-    return 50; //default value
-    } endif; }
-	add_filter( 'excerpt_length', 'beautyandspa_excerpt_length', 999 );
 	
-	function beautyandspa_excerpt_more($more) {
-    global $post;
-	if (!is_admin()):
-	return '<a href="'. esc_url(get_permalink($post->ID)) . '" class="read-more">' . __('Read More', 'beauty-and-spa'). '</a>';
-	endif;
+	function beautyandspa_excerpt_more( $link ) {
+	if ( is_admin() ) { return $link; }
+
+	$link = sprintf( '<a href="%1$s" class="read-more">%2$s</a>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Read More', 'beautyandspa' ), get_the_title( get_the_ID() ) )
+	);
+	return ' &hellip; ' . $link;
 	}
-	add_filter('excerpt_more', 'beautyandspa_excerpt_more');
+	add_filter( 'excerpt_more', 'beautyandspa_excerpt_more' );
+	
+	
+	
 	
 	// Content Type Showing
 	function beautyandspa_content() {
