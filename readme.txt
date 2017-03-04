@@ -2,7 +2,7 @@
 
 Astrology Theme by VaultThemes http://vaultthemes.com/
 
-=== About c ===
+=== About Astrology ===
 Astrology is a premium quality WordPress theme for astrologers , pudits and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
 
 === Tags ===
@@ -13,6 +13,9 @@ one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custo
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the astrology.zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+== Menu Restrictions ==
+Astrology works perfectly fine with upto level 3 menu. If there are further levels than it overwrites the content of previous menu items. 
 
 == License ==
 Astrology WordPress Theme, Copyright 2012 VaultThemes

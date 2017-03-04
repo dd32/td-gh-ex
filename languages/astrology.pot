@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2017-03-01 17:43+0530\n"
+"POT-Creation-Date: 2017-03-04 18:59+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -613,19 +613,6 @@ msgstr ""
 msgid "BLOG"
 msgstr ""
 
-#: page.php:28 single.php:38 template-parts/content.php:43
-msgid "Previous"
-msgstr ""
-
-#: page.php:29 single.php:37 template-parts/content.php:44
-msgid "Next"
-msgstr ""
-
-#: page.php:34 single.php:29
-#, php-format
-msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
@@ -644,6 +631,19 @@ msgstr ""
 #: searchform.php:11
 msgctxt "submit button"
 msgid "Search"
+msgstr ""
+
+#: single.php:29
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: single.php:37 template-parts/content.php:44
+msgid "Next"
+msgstr ""
+
+#: single.php:38 template-parts/content.php:43
+msgid "Previous"
 msgstr ""
 
 #: template-parts/content-none.php:10

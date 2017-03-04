@@ -21,22 +21,7 @@ get_header(); ?>
                 <div class="blog-single-inner-page">
                 	<?php if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
-							get_template_part( 'template-parts/content-page', get_post_format() );
-							the_posts_pagination( array(
-								'type'	=> 'list',
-			                    'screen_reader_text' => ' ',
-			                    'prev_text'          => __( 'Previous', 'astrology' ),
-			                    'next_text'          => __( 'Next', 'astrology' ),
-		                	) );
-		                	edit_post_link(	
-								sprintf(
-									/* translators: %s: Name of current post */
-									__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'astrology' ),
-									get_the_title()
-								),
-								'<span class="edit-link">',
-								'</span>'
-							);
+							get_template_part( 'template-parts/content-page', get_post_format() );							
 						endwhile;
 						//Commnet Part
 				        if ( comments_open() || get_comments_number() ) {

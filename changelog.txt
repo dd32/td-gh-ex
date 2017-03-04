@@ -26,3 +26,8 @@ Version 1.0.6 (01-03-2017)
 i) Changed readme.txt.
 ii) Fixed full-width template.
 iii) Fixed issue with custom menu widget.
+
+Version 1.0.7 (04-03-2017)
+i) Changed readme file.
+ii) Fixed page template.
+iii) Minor bug fixes.
