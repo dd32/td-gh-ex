@@ -159,16 +159,7 @@ function customizer_library_rescue_options() {
 		'default' 	=> 0,
 	);
 
-	$options['header-donate-plus'] = array(
-	    'id' => 'header-donate-plus',
-	    'label' => __( 'Display donation button', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>Display a donation button right on the header menu:</p><ul><li>Button Color</li><li></li><li>Button Border Color</li><li>Button Hover Color</li><li>Button Hover Border Color</li><li>Button Animations</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Header Donation Button Settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
+	
 
 	// Home Top Widgets
 	$section = 'home-top-widgets';
@@ -197,83 +188,7 @@ function customizer_library_rescue_options() {
 		'type'    	=> 'color',
 		'default' 	=> $home_top_widgets_hover
 	);
-
-    $options['home_top_widgets-plus'] = array(
-	    'id' => 'home_top_widgets-plus',
-	    'label' => __( 'Home Top Widget Animation Effects', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p></p>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Top Widget Effects</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-    // Home Events
-	$section = 'home-events-plus';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title' 		=> __( 'Home Events', 'advocator-lite' ),
-		'priority' 		=> '40',
-		'description' 	=> __( 'Home events section options', 'advocator-lite' ),
-		'panel' 		=> 'theme_options'
-	);
-
-    $options['home-events-plus'] = array(
-	    'id' => 'home-events-plus',
-	    'label' => __( 'Advanced Home Events Settings', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>Display Events on the home page:</p><ul><li>Home Event Animations</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Home Event settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-	// Home News
-	$section = 'home-news-plus';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title' 		=> __( 'Home News', 'advocator-lite' ),
-		'priority' 		=> '40',
-		'description' 	=> __( 'Home blog posts options', 'advocator-lite' ),
-		'panel' 		=> 'theme_options'
-	);
-
-	$options['home-news-plus'] = array(
-	    'id' => 'home-news-plus',
-	    'label' => __( 'Advanced Home News/Blog Settings', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>Display news and blogs posts on the home page:</p><ul><li>Number of posts to display</li><li>Home Blog Post Category to Display</li><li>Home Blog Post Animations</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Home News settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-
-
-	// Home Gallery
-	$section = 'home-gallery-plus';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title' 		=> __( 'Home Gallery', 'advocator-lite' ),
-		'priority' 		=> '50',
-		'description' 	=> __( '', 'advocator-lite' ),
-		'panel' 		=> 'theme_options',
-	);
-
-	$options['home-gallery-plus'] = array(
-	    'id' => 'home-gallery-plus',
-	    'label' => __( 'Advanced Home Gallery Settings', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>Add portfolio posts to display gallery images on the home page:</p><ul><li>Number of gallery images to display</li><li>Home Gallery animations</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Home Gallery settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-
+	
 
 	// Typography
 	$section = 'typography-plus';
@@ -287,17 +202,6 @@ function customizer_library_rescue_options() {
 
 	
 
-	$options['typography-plus'] = array(
-	    'id' => 'typography-plus',
-	    'label' => __( 'Advanced Typography Settings', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>You\'ll have access to 500+ Google Fonts to change for headers and paragraphs along with changing:</p><ul><li>Header Font Color</li><li>Button color</li><li>Button Hover Color</li><li>Content Link Hover Color</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to typography settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-
 
 	// Footer
 	$section = 'footer';
@@ -310,17 +214,7 @@ function customizer_library_rescue_options() {
 		'panel' 		=> 'theme_options',
 	);
 	
-	$options['footer-plus'] = array(
-	    'id' => 'footer-plus',
-	    'label' => __( 'Advanced Footer Settings', 'advocator-lite' ),
-	    'section' 	=> $section,
-	    'type' => 'content',
-	    'input_attrs' => array(
-	    'content' => __( '<p>You\'ll have access to add or change:</p><ul><li>Footer background Color</li><li>Add more Social Icon Buttons</li><li>Social Icon Color</li><li>Social Icon Hover Color</li><li>Social Icon Animations</li></ul>', 'advocator-lite' )
-	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to footer settings</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-
+	
 	$options['twitter_link'] = array(
 		'id' 		=> 'twitter_link',
 		'label'   	=> __( 'Enter a Twitter link', 'advocator-lite' ),
@@ -393,37 +287,100 @@ function customizer_library_rescue_options() {
 		'default' 	=> '&#169; Copyright',
 	);
 
-	// Plus: WooCommerce
-	$section = 'events-calendar-plus';
+	
+
+	// Pro
+	$section = 'pro';
 
 	$sections[] = array(
 		'id' 			=> $section,
-		'title' 		=> __( 'Events', 'advocator-lite' ),
-		'priority'	 	=> '65',
-		'description' 	=> '',
-		'panel' 		=> 'theme_options'
+		'title' 		=> __( 'Plus Features', 'advocator-lite' ),
+		'priority' 		=> '70',
+		'description' 	=> __( '', 'advocator-lite' ),
+		'panel' 		=> 'theme_options',
+	);
+	
+	$options['header-donate-plus'] = array(
+	    'id' => 'header-donate-plus',
+	    'label' => __( 'Display donation button', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>Display a donation button right on the header menu:</p><ul><li>Button Color</li><li></li><li>Button Border Color</li><li>Button Hover Color</li><li>Button Hover Border Color</li><li>Button Animations</li></ul>', 'advocator-lite' )
+	    ),
+	);
+	
+	$options['home_top_widgets-plus'] = array(
+	    'id' => 'home_top_widgets-plus',
+	    'label' => __( 'Home Top Widget Animation Effects', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p></p><ul><li>Home Event Animations</li></ul>', 'advocator-lite' )
+	    ),
+	);
+	
+	  $options['home-events-plus'] = array(
+	    'id' => 'home-events-plus',
+	    'label' => __( 'Advanced Home Events Settings', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>Display Events on the home page:</p><ul><li>Home Event Animations</li></ul>', 'advocator-lite' )
+	    ),
+	);
+	
+	$options['home-news-plus'] = array(
+	    'id' => 'home-news-plus',
+	    'label' => __( 'Advanced Home News/Blog Settings', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>Display news and blogs posts on the home page:</p><ul><li>Number of posts to display</li><li>Home Blog Post Category to Display</li><li>Home Blog Post Animations</li></ul>', 'advocator-lite' )
+	    ),
 	);
 
-	$options['events-calendar-plus'] = array(
-	    'id' => 'events-calendar-plus',
-	    'label' => __( 'Events Calendar', 'advocator-lite' ),
+
+	$options['home-gallery-plus'] = array(
+	    'id' => 'home-gallery-plus',
+	    'label' => __( 'Advanced Home Gallery Settings', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>Add portfolio posts to display gallery images on the home page:</p><ul><li>Number of gallery images to display</li><li>Home Gallery animations</li></ul>', 'advocator-lite' )
+	    ),
+	);
+
+	
+	$options['typography-plus'] = array(
+	    'id' => 'typography-plus',
+	    'label' => __( 'Advanced Typography Settings', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>You\'ll have access to 500+ Google Fonts to change for headers and paragraphs along with changing:</p><ul><li>Header Font Color</li><li>Button color</li><li>Button Hover Color</li><li>Content Link Hover Color</li></ul>', 'advocator-lite' )
+	    ),
+	);
+
+
+	$options['footer-plus'] = array(
+	    'id' => 'footer-plus',
+	    'label' => __( 'Advanced Footer Settings', 'advocator-lite' ),
+	    'section' 	=> $section,
+	    'type' => 'content',
+	    'input_attrs' => array(
+	    'content' => __( '<p>You\'ll have access to add or change:</p><ul><li>Footer background Color</li><li>Add more Social Icon Buttons</li><li>Social Icon Color</li><li>Social Icon Hover Color</li><li>Social Icon Animations</li></ul>', 'advocator-lite' )
+	    ),
+	);
+	
+	$options['woocommerce-plus'] = array(
+	    'id' => 'woocommerce-plus',
+	    'label' => __( 'WooCommerce', 'advocator-lite' ),
 	    'section' => $section,
 	    'type' => 'content',
 	    'input_attrs' => array(
-	        'content' => __( '<p>Advocator Plus provides compatibility with the popular event system, The Events Calendar. Your events will look beautiful and stunning.</p>', 'advocator-lite' )
+	        'content' => __( '<p>Advocator Plus provides compatibility with the world\'s most popular ecommerce system, WooCommerce. Whether it\'s physical products, music files, or your time, it\'s all possible.</p>', 'advocator-lite' )
 	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Events Calendar support</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
-	);
-
-	// Plus: WooCommerce
-	$section = 'give-plus';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title' 		=> __( 'Give Donations', 'advocator-lite' ),
-		'priority'	 	=> '66',
-		'description' 	=> '',
-		'panel' 		=> 'theme_options'
 	);
 
 	$options['give-plus'] = array(
@@ -434,50 +391,18 @@ function customizer_library_rescue_options() {
 	    'input_attrs' => array(
 	        'content' => __( '<p>Advocator Plus provides compatibility with the popular donation plugin, Give. Make your donation forms stand out.</p>', 'advocator-lite' )
 	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to Give donations support</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
 	);
 
-	// Plus: WooCommerce
-	$section = 'woocommerce-plus';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title' 		=> __( 'eCommerce Shop', 'advocator-lite' ),
-		'priority'	 	=> '67',
-		'description' 	=> '',
-		'panel' 		=> 'theme_options'
-	);
-
-	$options['woocommerce-plus'] = array(
-	    'id' => 'woocommerce-plus',
-	    'label' => __( 'WooCommerce', 'advocator-lite' ),
+	$options['events-calendar-plus'] = array(
+	    'id' => 'events-calendar-plus',
+	    'label' => __( 'Events Calendar', 'advocator-lite' ),
 	    'section' => $section,
 	    'type' => 'content',
 	    'input_attrs' => array(
-	        'content' => __( '<p>Advocator Plus provides compatibility with the world\'s most popular ecommerce system, WooCommerce. Whether it\'s physical products, music files, or your time, it\'s all possible.</p>', 'advocator-lite' )
+	        'content' => __( '<p>Advocator Plus provides compatibility with the popular event system, The Events Calendar. Your events will look beautiful and stunning.</p>', 'advocator-lite' )
 	    ),
-	    'description' => sprintf( __( '<a target="_blank" href="%1$s">Get access to ecommerce support</a>', 'advocator-lite' ), esc_url( $upgrade_link ) )
 	);
-
-	// Custom CSS
-	$section = 'Custom-css';
-
-	$sections[] = array(
-		'id' 			=> $section,
-		'title'		 	=> __( 'Custom CSS', 'advocator-lite' ),
-		'priority' 		=> '80',
-		'description' 	=> __( 'Enter custom CSS styles', 'advocator-lite' ),
-		'panel' 		=> 'theme_options',
-	);
-
-	$options['custom_css_textarea'] = array(
-		'id' 			=> 'custom_css_textarea',
-		'label'   		=> __( 'Custom CSS', 'advocator-lite' ),
-		'section' 		=> $section,
-		'type'    		=> 'textarea',
-		'default' 		=> ''
-	);
-
+	
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
@@ -486,6 +411,8 @@ function customizer_library_rescue_options() {
 	$customizer_library->add_options( $options );
 
 	// To delete custom mods use: customizer_library_remove_theme_mods();
+	
+	
 
 }
 add_action( 'init', 'customizer_library_rescue_options' );

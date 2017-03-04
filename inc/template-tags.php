@@ -3,6 +3,58 @@
  * Custom template tags for this theme.
  *
  */
+ 
+/**
+ * Default menu item if no menu is assigned in bottom header
+ * Called in header.php
+ */
+if ( ! function_exists( 'advocator_demo_bottom_header_nav' ) ) :
+	function advocator_demo_bottom_header_nav() { ?>
+
+		<ul class="right">
+			<li class="menu-item">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home','advocator-lite') ?></a>
+			</li>
+			<li class="menu-item">
+				<a href="#"><?php _e('Blog','advocator-lite') ?></a>
+			</li>
+			<li class="menu-item has-dropdown">
+				<a href="#"><?php _e('Dropdown','advocator-lite') ?></a>
+				<ul class="sub-menu dropdown">
+					<li class="menu-item"><a href="#"><?php _e('First Level','advocator-lite') ?></a></li>
+					<li class="menu-item"><a href="#"><?php _e('Second Level','advocator-lite') ?></a></li>
+					<li class="menu-item"><a href="#"><?php _e('Third Level','advocator-lite') ?></a></li>
+				</ul>
+			</li>
+			<li class="menu-item">
+				<a href="#"><?php _e('Example Menu','advocator-lite') ?></a>
+			</li>
+		</ul>
+
+	<?php }
+endif;
+
+/**
+ * Default menu item if no menu is assigned in top and footer header
+ * Called in header.php
+ */
+if ( ! function_exists( 'advocator_demo_top_header_nav' ) ) :
+	function advocator_demo_top_header_nav() { ?>
+
+		<ul class="right">
+			<li class="menu-item">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home','advocator-lite') ?></a>
+			</li>
+			<li class="menu-item">
+				<a href="#"><?php _e('Blog','advocator-lite') ?></a>
+			</li>
+			<li class="menu-item">
+				<a href="#"><?php _e('Example Menu','advocator-lite') ?></a>
+			</li>
+		</ul>
+
+	<?php }
+endif;
 
 /*----------------------------------------------------*/
 /*  Custom Walker for Foundation Nav - http://goo.gl/mTkWbg
@@ -112,8 +164,8 @@ endif;
 /*----------------------------------------------------*/
 /*  Template for comments and pingbacks.
 /*----------------------------------------------------*/
-if ( ! function_exists( 'rescue_comments' ) ) :
-    function rescue_comments( $comment, $args, $depth ) {
+if ( ! function_exists( 'advocator_lite_comments' ) ) :
+    function advocator_lite_comments( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
         switch ( $comment->comment_type ) :
             case '' :
@@ -121,7 +173,7 @@ if ( ! function_exists( 'rescue_comments' ) ) :
         <li <?php comment_class('clearfix'); ?> id="li-comment-<?php comment_ID() ?>">
             <div id="comment-<?php comment_ID(); ?>" class=" clearfix">
                 <div class="left">
-                    <?php echo get_avatar($comment,$size='60',$default='mm' ); ?>
+                    <?php echo get_avatar($comment,$size='60'); ?>
                 </div><!-- end left -->
                 <div class="right-comments">
                     <div class="comment-text">

@@ -24,7 +24,7 @@
 		;
  
 		setTimeout(function () {
-			$('#accordion-section-header h3, #accordion-section-home-top-widgets h3, #accordion-section-home-events-plus h3, #accordion-section-home-news-plus h3, #accordion-section-home-gallery-plus h3, #accordion-section-typography-plus h3, #accordion-section-footer h3, #accordion-section-events-calendar-plus h3, #accordion-section-give-plus h3, #accordion-section-woocommerce-plus h3').append(upsellMini);
+			$('#accordion-section-pro h3').append(upsellMini);
 		}, 200);
 
 	}

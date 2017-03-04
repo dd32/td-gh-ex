@@ -41,8 +41,8 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'style'      => 'ol',
-					'callback' => 'rescue_comments',
 					'short_ping' => true,
+					'callback' => 'advocator_lite_comments'
 				) );
 			?>
 		</ol><!-- .comment-list -->

@@ -93,7 +93,7 @@
 			        'container' => false,
 			        'menu_class' => '',
 			        'depth' => 5,
-			        'fallback_cb' => false,
+			        'fallback_cb' => 'advocator_demo_top_header_nav', // located at 'inc/template-tags.php'
 			        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			        'walker' => new foundation_walker()
 				);

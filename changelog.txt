@@ -1,0 +1,5 @@
+*** Advocator Lite Changelog ***
+
+Dec 06 2016 - Version 1.0
+
+	* First Release

@@ -5,7 +5,7 @@ Theme URI: https://rescuethemes.com/wordpress-themes/advocator-lite/
 Author: Rescue Themes
 Author URI: https://rescuethemes.com
 Description: A WordPress theme for non-profits, charities, and organizations that do good.
-Version:  1.0 
+Version:  1.0.1 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advocator-lite
@@ -54,6 +54,7 @@ Advocator is based on Underscores http://underscores.me/, (C) 2012-2015 Automatt
 13.0 Inifinte Scroll
 14.0 Give Donations
 15.0 WooCommerce
+16.0 Clearings
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1864,5 +1865,49 @@ footer#site_footer {
   #infinite-footer .blog-info a:hover {
     text-decoration: none !important;
     color: #1fa67a !important; }
+
+/*--------------------------------------------------------------
+	16.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+blockquote:before,
+.format-link:before,
+blockquote:after,
+.format-link:after,
+.entry-content:before,
+.entry-content:after,
+.entry-summary:before,
+.entry-summary:after,
+.comment-content:before,
+.comment-content:after,
+.site-content:before,
+.site-content:after,
+.site-main > article:before,
+.site-main > article:after,
+.primary-menu:before,
+.primary-menu:after,
+.social-links-menu:before,
+.social-links-menu:after,
+.textwidget:before,
+.textwidget:after,
+.content-bottom-widgets:before,
+.content-bottom-widgets:after {
+  content: "";
+  display: table; }
+
+.clear:after,
+blockquote:after,
+.format-link:after,
+.entry-content:after,
+.entry-summary:after,
+.comment-content:after,
+.site-content:after,
+.site-main > article:after,
+.primary-menu:after,
+.social-links-menu:after,
+.textwidget:after,
+.content-bottom-widgets:after {
+  clear: both; }
 
 /*# sourceMappingURL=style.css.map */
