@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'semplicemente_setup' );
  * @global int $content_width
  */
 function semplicemente_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'semplicemente_content_width', 702 );
+	$GLOBALS['content_width'] = apply_filters( 'semplicemente_content_width', 670 );
 }
 add_action( 'after_setup_theme', 'semplicemente_content_width', 0 );
 

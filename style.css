@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/semplicemente/
-Version: 1.7.4
+Version: 1.7.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -320,9 +320,6 @@ input[type="radio"] {
 }
 input[type="search"] {
 	-webkit-appearance: none; /* Addresses appearance set to searchfield in S5, Chrome */
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-	-moz-box-sizing:    content-box;
-	box-sizing:         content-box;
 }
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
@@ -688,7 +685,9 @@ header.entry-header:after,
 .widget_categories li:before,
 .widget_categories li:after,
 .nav-links:before,
-.nav-links:after {
+.nav-links:after,
+.widget.widget_search:before,
+.widget.widget_search:after {
 	content: '';
 	display: table;
 }
@@ -703,7 +702,8 @@ footer.entry-footer:after,
 header.entry-header:after,
 .widget_archive li:after, 
 .widget_categories li:after,
-.nav-links:after {
+.nav-links:after,
+.widget.widget_search:after {
 	clear: both;
 }
 
@@ -720,10 +720,6 @@ header.entry-header:after,
 	max-width: 100%;
 }
 
-/* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
 .widget-title {
 	border-bottom: 1px solid rgba(0,0,0,.05);
 	margin-bottom: 1em;
@@ -760,6 +756,26 @@ aside ul li ul.sub-menu, aside ul li ul.children {
 }
 aside ul li ul.sub-menu li, aside ul li ul.children li {
 	border-bottom: 0px;
+}
+/* Search widget */
+.widget.widget_search input[type="search"] {
+	width: 68%;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 4px 15px;
+    line-height: 1;
+	float: left;
+	height: 33px;
+}
+.widget.widget_search input[type="submit"] {
+	width: 32%;
+    display: inline-block;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+	float: right;
+	height: 33px;
 }
 
 /*--------------------------------------------------------------
@@ -1068,6 +1084,7 @@ p.site-description {
 	border: 1px solid rgba(0,0,0,.1);
 	padding: 1.5em;
 	margin: 0 0 1.5em;
+	border-radius: 4px;
 }
 #comments ol ol {
 	padding-left: 5%;

@@ -157,3 +157,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.7.4 =
 * Added icons to Categories Widget and Archives Widget
 * Minor bug fixes
+
+= Version 1.7.5 =
+* Fixed some strings escaping
+* Improved search widget CSS

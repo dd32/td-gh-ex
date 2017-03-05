@@ -77,6 +77,20 @@ textarea {
 .readMoreLink i.fa-angle-double-right:before {
 	content: "\f100";
 }
+.widget.widget_search input[type="search"] {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+	border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+	float: right;
+}
+.widget.widget_search input[type="submit"] {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+	border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+	float: left;
+}
 @media screen and (max-width: 1024px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {
 		text-align: right;
