@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-03-02 22:32+0545\n"
-"PO-Revision-Date: 2017-03-02 22:32+0545\n"
+"POT-Creation-Date: 2017-03-05 08:53+0545\n"
+"PO-Revision-Date: 2017-03-05 08:53+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Piotrekkk <fansitejustgames@gmail.com>\n"
 "Language: pl\n"
@@ -482,7 +482,7 @@ msgstr "Header Featured Image Options"
 msgid "Content Featured Image Options"
 msgstr "Content Featured Image Options"
 
-#: ../inc/adventurous-slider.php:243
+#: ../inc/adventurous-slider.php:240
 msgid ""
 "You have selected Post Slider but you haven't added the Post ID in "
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
@@ -492,7 +492,7 @@ msgstr ""
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
 "Options\""
 
-#: ../inc/adventurous-slider.php:251
+#: ../inc/adventurous-slider.php:248
 msgid ""
 "You have selected Category Slider but you haven't selected any categories in "
 "\"Appearance => Theme Options => Featured Slider => Featured Category Slider "

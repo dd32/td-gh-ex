@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-03-02 22:32+0545\n"
+"POT-Creation-Date: 2017-03-05 08:53+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dan Frolec <dan@frolec.cz>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -477,7 +477,7 @@ msgstr "Nastavení vybraného obrázku hlavičky"
 msgid "Content Featured Image Options"
 msgstr "Nastavení vybraného obrázku obsahu"
 
-#: ../inc/adventurous-slider.php:243
+#: ../inc/adventurous-slider.php:240
 msgid ""
 "You have selected Post Slider but you haven't added the Post ID in "
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
@@ -486,7 +486,7 @@ msgstr ""
 "Vybral jsi Slider Příspěvků, ale nezadal ID příspěvku v “Appearance => Theme "
 "Options => Featured Slider => Featured Post Slider Options”"
 
-#: ../inc/adventurous-slider.php:251
+#: ../inc/adventurous-slider.php:248
 msgid ""
 "You have selected Category Slider but you haven't selected any categories in "
 "\"Appearance => Theme Options => Featured Slider => Featured Category Slider "

@@ -1,5 +1,8 @@
 = Changelog ==
 
+Version 2.2.1
+* Bug Fixed: Featured Post Slider not showing ( Reported By: khgeorge, francesca78 and mdani76 )
+
 Version 2.2
 * Added: Option to Display all Categories in Customizer
 * Bug Fixed: Replaced wp_script_add_data with wp_style_add_data

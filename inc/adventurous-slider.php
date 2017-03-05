@@ -75,7 +75,7 @@ if ( ! function_exists( 'adventurous_post_sliders' ) ) :
 function adventurous_post_sliders() {
 	//delete_transient( 'adventurous_post_sliders' );
 
-	if ( ( !$output = get_transient( 'adventurous_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
+	if ( ! $output = get_transient( 'adventurous_post_sliders' ) ) {
 		echo '<!-- refreshing cache -->';
 
 		global $post;
@@ -148,9 +148,6 @@ if ( ! function_exists( 'adventurous_category_sliders' ) ) :
  */
 function adventurous_category_sliders() {
 	//delete_transient( 'adventurous_category_sliders' );
-
-
-
 
 	if ( ( !$adventurous_category_sliders = get_transient( 'adventurous_category_sliders' ) ) ) {
 		echo '<!-- refreshing cache -->';

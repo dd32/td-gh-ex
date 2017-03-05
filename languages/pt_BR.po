@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-03-02 22:32+0545\n"
-"PO-Revision-Date: 2017-03-02 22:32+0545\n"
+"POT-Creation-Date: 2017-03-05 08:54+0545\n"
+"PO-Revision-Date: 2017-03-05 08:54+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -479,7 +479,7 @@ msgstr "Opções da imagem em destaque no cabeçalho (Header)"
 msgid "Content Featured Image Options"
 msgstr "Opções de conteúdo de imagem em destaque"
 
-#: ../inc/adventurous-slider.php:243
+#: ../inc/adventurous-slider.php:240
 msgid ""
 "You have selected Post Slider but you haven't added the Post ID in "
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
@@ -489,7 +489,7 @@ msgstr ""
 "postagem em: \"Aparência => Opções do Tema => Slider em destaque => Opções "
 "de Slider em destaque na postagem\""
 
-#: ../inc/adventurous-slider.php:251
+#: ../inc/adventurous-slider.php:248
 msgid ""
 "You have selected Category Slider but you haven't selected any categories in "
 "\"Appearance => Theme Options => Featured Slider => Featured Category Slider "
