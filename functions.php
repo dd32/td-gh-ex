@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'zenzero_setup' );
  * @global int $content_width
  */
 function zenzero_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'zenzero_content_width', 930 );
+	$GLOBALS['content_width'] = apply_filters( 'zenzero_content_width', 770 );
 }
 add_action( 'after_setup_theme', 'zenzero_content_width', 0 );
 

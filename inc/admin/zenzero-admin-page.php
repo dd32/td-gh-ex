@@ -70,14 +70,14 @@ class Zenzero_Admin {
 	public static function hide_notices() {
 		if ( isset( $_GET['zenzero-hide-notice'] ) && isset( $_GET['_zenzero_notice_nonce'] ) ) {
 			if ( ! wp_verify_nonce( $_GET['_zenzero_notice_nonce'], 'zenzero_hide_notices_nonce' ) ) {
-				wp_die( __( 'Action failed. Please refresh the page and retry.', 'zenzero' ) );
+				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'zenzero' ) );
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'Cheatin&#8217; huh?', 'zenzero' ) );
+				wp_die( esc_html__( 'Cheatin&#8217; huh?', 'zenzero' ) );
 			}
 
-			$hide_notice = sanitize_text_field( $_GET['zenzero-hide-notice'] );
+			$hide_notice = sanitize_text_field( wp_unslash($_GET['zenzero-hide-notice'] ));
 			update_option( 'zenzero_admin_notice_' . $hide_notice, 1 );
 		}
 	}
@@ -89,7 +89,11 @@ class Zenzero_Admin {
 		?>
 		<div id="message" class="updated cresta-message">
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'zenzero-hide-notice', 'welcome' ) ), 'zenzero_hide_notices_nonce', '_zenzero_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'zenzero' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Zenzero! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'zenzero' ), '<a href="' . esc_url( admin_url( 'themes.php?page=zenzero-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php
+			/* translators: 1: start option panel link, 2: end option panel link */
+			printf( esc_html__( 'Welcome! Thank you for choosing Zenzero! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'zenzero' ), '<a href="' . esc_url( admin_url( 'themes.php?page=zenzero-welcome' ) ) . '">', '</a>' );
+			?>
+			</p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=zenzero-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Zenzero', 'zenzero' ); ?></a>
 			</p>
@@ -108,13 +112,13 @@ class Zenzero_Admin {
 		<div class="cresta-theme-info">
 				<h1>
 					<?php esc_html_e('About', 'zenzero'); ?>
-					<?php echo $theme->get( 'Name' ) ." ". $theme->get( 'Version' ); ?>
+					<?php echo esc_html($theme->get( 'Name' )) ." ". esc_html($theme->get( 'Version' )); ?>
 				</h1>
 
 			<div class="welcome-description-wrap">
-				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
+				<div class="about-text"><?php echo esc_html($theme->display( 'Description' )); ?>
 				<p class="cresta-actions">
-					<a href="<?php echo esc_url( 'https://crestaproject.com/downloads/zenzero/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'zenzero' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'https://crestaproject.com/downloads/zenzero/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'zenzero' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://crestaproject.com/demo/zenzero/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'zenzero' ); ?></a>
 
@@ -132,7 +136,7 @@ class Zenzero_Admin {
 
 		<h2 class="nav-tab-wrapper">
 			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'zenzero-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'zenzero-welcome' ), 'themes.php' ) ) ); ?>">
-				<?php echo $theme->display( 'Name' ); ?>
+				<?php echo esc_html($theme->display( 'Name' )); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'zenzero-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
 				<?php esc_html_e( 'Free Vs PRO', 'zenzero' ); ?>
@@ -148,7 +152,7 @@ class Zenzero_Admin {
 	 * Welcome screen page.
 	 */
 	public function welcome_screen() {
-		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
+		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( wp_unslash($_GET['tab']) );
 
 		// Look for a {$current_tab}_screen method.
 		if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
@@ -174,7 +178,7 @@ class Zenzero_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Theme Customizer', 'zenzero' ); ?></h3>
 						<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'zenzero' ) ?></p>
-						<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'zenzero' ); ?></a></p>
+						<p><a href="<?php echo esc_url(admin_url( 'customize.php' )); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'zenzero' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -193,7 +197,7 @@ class Zenzero_Admin {
 						<h3>
 							<?php
 							esc_html_e( 'Translate', 'zenzero' );
-							echo ' ' . $theme->display( 'Name' );
+							echo ' ' . esc_html($theme->display( 'Name' ));
 							?>
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'zenzero' ) ?></p>
@@ -201,7 +205,7 @@ class Zenzero_Admin {
 							<a target="_blank" href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/zenzero/' ); ?>" class="button button-secondary">
 								<?php
 								esc_html_e( 'Translate', 'zenzero' );
-								echo ' ' . $theme->display( 'Name' );
+								echo ' ' . esc_html($theme->display( 'Name' ));
 								?>
 							</a>
 						</p>
