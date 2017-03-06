@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2017-03-04 18:59+0530\n"
+"POT-Creation-Date: 2017-03-06 19:08+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -180,7 +180,7 @@ msgid "Homepage"
 msgstr ""
 
 #: inc/breadcumbs.php:200 template-parts/content-page.php:24
-#: template-parts/content-single.php:28
+#: template-parts/content-single.php:29
 msgid "Page"
 msgstr ""
 
@@ -633,7 +633,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:29
+#: single.php:29 template-parts/content-full.php:15
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -668,7 +668,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20 template-parts/content-single.php:24
+#: template-parts/content-page.php:20 template-parts/content-single.php:25
 msgid "Pages:"
 msgstr ""
 
@@ -678,6 +678,10 @@ msgstr ""
 
 #: template-parts/content-single.php:13
 msgid "Posted on "
+msgstr ""
+
+#: template-parts/content-single.php:14
+msgid "Category : "
 msgstr ""
 
 #: template-parts/content.php:31

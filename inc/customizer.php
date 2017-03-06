@@ -158,48 +158,47 @@ function astrology_custom_css(){
 	else { $astrology_color_section_secondary_color = esc_attr(get_theme_mod('astrology_color_section_secondary_color')); } ?>
 	<style type="text/css">
 		/* Primary Color*/
-		.blog-sidebar h2{ color: <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar{border-color: <?php echo esc_attr($astrology_color_section_primary_color); ?>;}
-		.logo a{ color: <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.menu-global{ border-top: 3px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.footer-socail-icon span:hover,.reply a.comment-reply-link:hover { background: <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.postBtn,.footer-social-icon span:hover{ background : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.comment-info a{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>;	}
-		.blog-sidebar .widget ul li a:hover,.blog-content-left a{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.footer-copyrights a:hover, .footer-copyrights a:focus{	color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.bloginner-content-part ul li a:hover{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.footer-menu ul li a:hover{	color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.meta-nav-next:hover, .meta-nav-prev:hover{	background : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.bar:before, .bar:after{ background : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		textarea:focus ~ label{	color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		input:focus ~ label, input:valid ~ label{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.footer-menu ul li:before{ border-top: 3px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.footer-menu ul li:after{  border-bottom: 3px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.blog-content-left h2:hover{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.blog-content-left a:hover,#breadcrumbs .separator{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
+		.blog-sidebar h2{ color: <?php echo $astrology_color_section_primary_color; ?>; }
+		.logo a{ color: <?php echo $astrology_color_section_primary_color; ?>;	}
+		.menu-global{ border-top: 3px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		.footer-socail-icon span:hover,.reply a.comment-reply-link:hover { background: <?php echo $astrology_color_section_primary_color; ?>; }
+		.postBtn,.footer-social-icon span:hover{ background : <?php echo $astrology_color_section_primary_color; ?>; }
+		.comment-info a{ color : <?php echo $astrology_color_section_primary_color; ?>;	}
+		.blog-sidebar .widget ul li a:hover,.blog-content-left a{ color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.footer-copyrights a:hover, .footer-copyrights a:focus{	color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.bloginner-content-part ul li a:hover{ color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.footer-menu ul li a:hover{	color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.meta-nav-next:hover, .meta-nav-prev:hover{	background : <?php echo $astrology_color_section_primary_color; ?>; }
+		.bar:before, .bar:after{ background : <?php echo $astrology_color_section_primary_color; ?>; }
+		textarea:focus ~ label{	color : <?php echo $astrology_color_section_primary_color; ?>; }
+		input:focus ~ label, input:valid ~ label{ color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.footer-menu ul li:before{ border-top: 3px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		.footer-menu ul li:after{  border-bottom: 3px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		.blog-content-left h2:hover{ color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.blog-content-left a:hover,#breadcrumbs .separator{ color : <?php echo $astrology_color_section_primary_color; ?>; }
 		.page-numbers.current, a.page-numbers:hover,.astrology-search-form .search-submit,
-		.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus, .leave-reply-form p.form-submit:active,button.search-submit,button, html input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover{ background : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-        input:focus,textarea:focus,#top-menu ul.offside.open,#top-menu ul.offside{border-bottom-color: <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		#top-menu > ul > li:hover > a, #top-menu ul li.active a{border-top-color : <?php echo esc_attr($astrology_color_section_primary_color); ?>;}
-		#blog-innerpage-content .bloginner-content-part blockquote{ border-left : 5px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.search-form .screen-reader-text{ color : <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.blog-sidebar .search-submit{ background : <?php echo esc_attr($astrology_color_section_primary_color); ?>; border: 1px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.blog-sidebar input:focus {	border: 1px solid <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		a:focus, a:hover{ color: <?php echo esc_attr($astrology_color_section_primary_color); ?>; }
-		.blog-sidebar #today{ background : <?php echo esc_attr($astrology_color_section_primary_color); ?>;}
+		.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus, .leave-reply-form p.form-submit:active,button.search-submit,button, html input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover{ background : <?php echo $astrology_color_section_primary_color; ?>; }
+        input:focus,textarea:focus,#top-menu ul.offside.open,#top-menu ul.offside{border-bottom-color: <?php echo $astrology_color_section_primary_color; ?>; }
+		#top-menu > ul > li:hover > a, #top-menu ul li.active a{border-top-color : <?php echo $astrology_color_section_primary_color; ?>;}
+		#blog-innerpage-content .bloginner-content-part blockquote{ border-left : 5px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		.search-form .screen-reader-text{ color : <?php echo $astrology_color_section_primary_color; ?>; }
+		.blog-sidebar .search-submit{ background : <?php echo $astrology_color_section_primary_color; ?>; border: 1px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		.blog-sidebar input:focus {	border: 1px solid <?php echo $astrology_color_section_primary_color; ?>; }
+		a:focus, a:hover{ color: <?php echo $astrology_color_section_primary_color; ?>; }
+		.blog-sidebar #today{ background : <?php echo $astrology_color_section_primary_color; ?>;}
 		/* Secondary Color*/
 	   .blog-content-left:hover .blog-img a:after {
-    		box-shadow: inset -20px 0 0px -6px <?php echo esc_attr($astrology_color_section_secondary_color); ?>, inset 20px 0 0px -6px <?php echo esc_attr($astrology_color_section_secondary_color); ?>, inset 0 -15px 0px -6px <?php echo esc_attr($astrology_color_section_secondary_color); ?>;
+    		box-shadow: inset -20px 0 0px -6px <?php echo $astrology_color_section_secondary_color; ?>, inset 20px 0 0px -6px <?php echo $astrology_color_section_secondary_color; ?>, inset 0 -15px 0px -6px <?php echo $astrology_color_section_secondary_color; ?>;
 		}
-        #top-menu .submenu-button::after, #top-menu .submenu-button::before,button, html input[type=button], input[type=reset], input[type=submit],.footer-social-icon span{Background-color: <?php echo esc_attr($astrology_color_section_secondary_color); ?>;}
-        #top-menu > ul > li.has-sub > a::after{border-bottom-color: <?php echo esc_attr($astrology_color_section_secondary_color); ?>;border-right-color: <?php echo esc_attr($astrology_color_section_secondary_color); ?>; }
-        .blog-sidebar th,.widget select,.blog-content-left ul li a,.blog-content-left ul li,.blog-sidebar .widget ul li a,.meta-nav-prev, .meta-nav-next,input, textarea,#top-menu > ul > li > a,.bloginner-content-part .title-data h2,.bloginner-content-part .title-data h2,.footer-copyrights p, a,.blog-content-left h2,.footer-menu ul li a,body,.bloginner-content-part .title-data ul li,.bloginner-content-part ul li a{color: <?php echo esc_attr($astrology_color_section_secondary_color); ?>;}
+        #top-menu .submenu-button::after, #top-menu .submenu-button::before,button, html input[type=button], input[type=reset], input[type=submit],.footer-social-icon span{Background-color: <?php echo $astrology_color_section_secondary_color; ?>;}
+        #top-menu > ul > li.has-sub > a::after{border-bottom-color: <?php echo $astrology_color_section_secondary_color; ?>;border-right-color: <?php echo $astrology_color_section_secondary_color; ?>; }
+        .blog-sidebar th,.widget select,.blog-content-left ul li a,.blog-content-left ul li,.blog-sidebar .widget ul li a,.meta-nav-prev, .meta-nav-next,input, textarea,#top-menu > ul > li > a,.bloginner-content-part .title-data h2,.bloginner-content-part .title-data h2,.footer-copyrights p, a,.blog-content-left h2,.footer-menu ul li a,body,.bloginner-content-part .title-data ul li,.bloginner-content-part ul li a{color: <?php echo $astrology_color_section_secondary_color; ?>;}
 		@media screen and (min-width: 1025px){
-			#top-menu ul ul li a {background: <?php echo esc_attr($astrology_color_section_primary_color); ?>;}
+			#top-menu ul ul li a {background: <?php echo $astrology_color_section_primary_color; ?>;}
 		}
 		@media screen and (max-width: 1024px) {
 			#top-menu ul li a, #top-menu ul ul li a {
-				color: <?php echo esc_attr($astrology_color_section_secondary_color); ?>;
+				color: <?php echo $astrology_color_section_secondary_color; ?>;
 			}
 		}
 	</style>

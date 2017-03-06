@@ -9,8 +9,9 @@
     <div class="title-data">
         <h2><?php the_title(); ?></h2>
         <ul>
-            <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo __('By ', 'astrology').ucfirst(get_the_author()); ?></a></li>
-            <li><?php echo __('Posted on ','astrology').get_the_date(get_option('date_format')); ?></li>
+            <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo esc_html__('By ', 'astrology').ucfirst(get_the_author()); ?></a></li>
+            <li><?php echo esc_html__('Posted on ','astrology').get_the_date(get_option('date_format')); ?></li>
+            <li><?php echo esc_html__('Category : ','astrology').get_the_category_list(', ',''); ?></li>
         </ul>
     </div>
     <?php if ( has_post_thumbnail() ) : ?> 

@@ -4,6 +4,14 @@
  * @package astrology
  */
 get_header(); ?>
+<section id="blog-title-top">
+    <div class="container">
+        <div class="blog-title">
+            <h2><?php the_title(); ?></h2>
+            <div class="breadCumbs"><?php astrology_custom_breadcrumbs(); ?></div>
+        </div>
+    </div>
+</section>
 <section>
     <div class="container">
         <div class="row">               
@@ -13,7 +21,8 @@ get_header(); ?>
 						while ( have_posts() ) : the_post();
 							get_template_part( 'template-parts/content-full', get_post_format() );
 						endwhile;
-					endif; ?>         
+					endif;
+                    if ( comments_open() || get_comments_number() ) { comments_template(); } ?>
 				</div>
             </div>
         </div>

@@ -31,3 +31,7 @@ Version 1.0.7 (04-03-2017)
 i) Changed readme file.
 ii) Fixed page template.
 iii) Minor bug fixes.
+
+Version 1.0.8 (06-03-2017)
+i) Fixed floating issue.
+ii) Added edit link in page for logged in users.

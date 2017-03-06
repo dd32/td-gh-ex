@@ -8,7 +8,7 @@ get_header(); ?>
 <section id="blog-title-top">
 	<div class="container">
 		<div class="blog-title">
-		    <h2><?php the_title();?></h2>
+		    <h2><?php the_title(); ?></h2>
 		    <div class="breadCumbs"><?php astrology_custom_breadcrumbs(); ?></div>
 		</div>
 	</div>

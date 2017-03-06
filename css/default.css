@@ -718,6 +718,10 @@ a {
     margin: 10px 0 0;
     display: inline-block;
 }
+.bloginner-content-part,.fullwidth-content-part{
+    clear: both;
+    overflow: hidden;
+}
 .bloginner-content-part .blog-img {
     margin: 0px 0 20px
 }
@@ -1712,7 +1716,6 @@ form.search-form {
         overflow-x: hidden;
     }
     .header-top {
-        height: 70px;
         z-index: 99999;
         width: 100%;
         display: inline-block;
