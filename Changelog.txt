@@ -1,8 +1,12 @@
 Diarjo Lite Changelog
 
+- Version 1.1.4 - Released: 06.03.2017
+
+-- Fixed : Embed videos size.
+
 - Version 1.1.3 - Released: 15.02.2017
 
--- Fixed : Issue between Sean Lite and the sharing function of Jetpack plugin.
+-- Fixed : Issue between Diarjo Lite and the sharing function of Jetpack plugin.
 -- Edit  : Code optimized.
 
 - Version 1.1.0 - Released: 20.09.2015

@@ -288,6 +288,21 @@ if (!function_exists('diarjolite_postmeta')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*RESPONSIVE EMBED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('diarjolite_embed_html')) {
+	
+	function diarjolite_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
+	}
+	 
+	add_filter( 'embed_oembed_html', 'diarjolite_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'diarjolite_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* POST ICON */
 /*-----------------------------------------------------------------------------------*/ 
 

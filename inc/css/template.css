@@ -740,6 +740,14 @@ nav#mainmenu ul ul li ul:before {
 	padding-top:0;
 }
 
+.embed-container {
+	position: relative;
+	max-height:100%;
+	overflow:hidden;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+
 .video-thumb,
 .maps-thumb {
 	padding-bottom: 56.25%;
@@ -748,6 +756,10 @@ nav#mainmenu ul ul li ul:before {
 	position:relative;
 }
 
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed,
+.embed-container video ,
 .video-thumb iframe, 
 .video-thumb object, 
 .video-thumb embed,
