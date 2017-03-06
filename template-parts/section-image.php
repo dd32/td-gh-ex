@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for displaying the posts with video format in the front page.
+ * The template for displaying the posts with image format in the front page.
  *
  * @package Bassist
  * @since Bassist 1.0
  */
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
-$video_section_title = $bassist_theme_options['video_section_title'];
+$image_section_title = $bassist_theme_options['image_section_title'];
 ?>
 
-<section id="video-section" class="video-format-section">
+<section id="image-section" class="image-format-section">
 	<div class="inner">
 
 <?php
@@ -19,7 +19,7 @@ $video_section_title = $bassist_theme_options['video_section_title'];
 							'taxonomy' => 'post_format',
 							'field' => 'slug',
 							'terms' => array(
-								'post-format-video',
+								'post-format-image',
 							),
 							'operator' => 'IN',
 							),
@@ -28,9 +28,9 @@ $video_section_title = $bassist_theme_options['video_section_title'];
 	$query = new WP_Query($args);
 
 		if ( $query->have_posts() ) :?>
-			<h2 class="section-title"><?php printf( esc_html( $video_section_title ) ) ?></h2>
+			<h2 class="section-title"><?php printf( esc_html( $image_section_title ) ) ?></h2>
 			
-			<div class="flex-container video-posts">
+			<div class="flex-container image-posts">
 			<?php
 				// Start the Loop again.
 				while ( $query->have_posts() ) : $query->the_post();
@@ -47,11 +47,11 @@ $video_section_title = $bassist_theme_options['video_section_title'];
 			</div> 
 <?php 	else:
 			printf( '<h1>%1$s</h1><p>%2$s</p>',
-					__('This is the video section', 'bassist'),
-					__('To fill up this section you have to create some posts, choose the format "video" in Format and save. To put a picture before this section, use the parallax settings in the Customizer.', 'bassist') );
+					__('This is the image section', 'bassist'),
+					__('To fill up this section you have to create some posts, choose the format "image" in Format and save. To put a picture before this section, use the parallax settings in the Customizer.', 'bassist') );
 
 		endif; ?>
 	</div><!--/inner-->
 
-</section><!--/video-format-section-->
+</section><!--/image-format-section-->
 

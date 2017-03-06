@@ -139,35 +139,35 @@ if ( ! function_exists('bassist_post_format_info')) :
  * @since Bassist 1.0
  */
 function bassist_post_format_info() {
-	$format = get_post_format(); // Esto lo voy a usar cuando le de un estilo especial a cada formato.
+	$format = get_post_format() ; // Esto lo voy a usar cuando le de un estilo especial a cada formato.
 	$format_link = get_post_format_link($format);
 	switch ($format) {
 		case 'aside':
-			printf('<a href="%1$s"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'image':
-			printf('<a href="%1$s"><i class="fa fa-camera" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-camera" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'video':
-			printf('<a href="%1$s"><i class="fa fa-film" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-film" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'quote':
-			printf('<a href="%1$s"><i class="fa fa-quote-right" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-quote-right" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'link':
-			printf('<a href="%1$s"><i class="fa fa-link" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-link" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'gallery':
-			printf('<a href="%1$s"><i class="fa fa-picture-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-picture-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'status':
-			printf('<a href="%1$s"><i class="fa fa-commenting-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-commenting-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'audio':
-			printf('<a href="%1$s"><i class="fa fa-music" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-music" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'chat':
-			printf('<a href="%1$s"><i class="fa fa-comments-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-comments-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;		
 		default:
 			printf('<a href="%1$s"><i class="fa fa-thumb-tack" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), __('Standard', 'bassist'));

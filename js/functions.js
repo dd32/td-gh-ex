@@ -5,7 +5,7 @@
 (function ($) {
 	
 menuToggle = $('.menu-toggle');
-siteNavigation = $('#main-menu');
+siteNavigation = $('#masthead');
 linkToggle = $('#main-menu a');
 _window = $(window);
 
@@ -93,8 +93,9 @@ menuToggle.on( 'focus', function(){
 });
 
 $('.nav-menu > li:last-of-type a:last').on( 'focusout', function(){
-    $('#main-menu').removeClass('focused');
+	$('#main-menu').removeClass('focused');
 } );
+
 
 })( jQuery );
 

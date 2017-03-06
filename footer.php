@@ -13,7 +13,7 @@
 </main><!-- #main -->
 
 <footer id="page-footer" role="contentinfo">
-    <div id="dddddoo" class="inner">
+    <div class="inner">
         <div id="site-info">
         <span class="footer-site-title"> &copy <?php echo date('Y') ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
         
@@ -26,6 +26,7 @@
                                 'theme_location' => 'social',
                                 'container' => 'ul',
                                 'menu_id' => 'footer-social-menu',
+                                'depth'          => 1,
                                 'link_before'    => '<span class="screen-reader-text">',
                                 'link_after'     => '</span>', )); ?>
             </nav> <!--/social--> 

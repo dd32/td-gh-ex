@@ -1,11 +1,10 @@
 === Bassist ===
 
-Contributors: automattic
+Contributors: acalfieri
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio
-
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 1.0.1
+Tested up to: 4.7.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +12,7 @@ A theme called Bassist, based on Underscores.
 
 == Description ==
 
-Hi. I'm a theme called Bassist, and I'm based on Underscores. I'm developed for musicians, have a Front Page dedicated to show pictures, audios and videos.
+Description: Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats.
 
 == Installation ==
 
@@ -29,6 +28,9 @@ Bassist includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.2 - Mar 6 2017
+* General improvements
+
 = 1.0.1 - Jan 9 2017 =
 * General improvements
 
@@ -41,3 +43,8 @@ Bassist includes support for Infinite Scroll in Jetpack.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Font Awesome icons http://fontawesome.io/, (C) Dave Gandy, [SIL OFL 1.1](http://scripts.sil.org/OFL) and [MIT](https://opensource.org/licenses/MIT)
 * color-calculations.php https://plugins.trac.wordpress.org/browser/custom-highlight-color/trunk/color-calculations.php, (C) 2016 Nick Halsey, , [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+https://pixabay.com/en/concert-black-and-white-black-white-1149805/
+https://pixabay.com/en/concert-people-crowd-audience-731227/
+https://pixabay.com/en/street-musician-city-night-984141/
+https://pixabay.com/en/bass-guitar-bass-instrument-e-bass-894524/

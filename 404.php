@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<div class="inner">
+<div class="inner flex-container">
 	<div id="main-content">
 		<section class="error-404 not-found">
 			<header class="page-header">

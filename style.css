@@ -3,8 +3,8 @@ Theme Name: Bassist
 Theme URI: http://ebyb.eu/themes/bassist/
 Author: acalfieri
 Author URI: http://ebyb.eu
-Description: Hi. I'm a theme called Bassist, and I'm based on Underscores. I'm developed for musicians, have a Front Page dedicated to show pictures, audios and videos.
-Version: 1.0.1
+Description: Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio
@@ -66,7 +66,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
 
 .small-caps{
-font-variant: small-caps;
+	font-variant: small-caps;
 }
 
 html {
@@ -184,6 +184,10 @@ textarea {
 
 select {
 	text-transform: none;
+	padding: 0.3em;
+	border: 1px solid #ddd;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	
 }
 
 button {
@@ -526,7 +530,7 @@ html {
 }
 
 body {
-	background: #fdffff;
+	background: #f9f9f9;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -751,6 +755,7 @@ textarea:focus {
 .search-form {
 	position: relative;
 }
+
 header .search-form {
    display: none;
 }
@@ -762,7 +767,6 @@ input[type="search"].search-field {
 }
 
 .search-submit:before {
-	/*! content: "\f400"; */
 	font-size: 24px;
 	left: 2px;
 	line-height: 24px;
@@ -820,11 +824,10 @@ a:focus {
 
 .nav-menu {
 	display: none;
-	position: absolute;
+	position: relative;
 	left: -999em;
 	top: 3.7em;
 	width: 100%;
-	/*! background-color: #fafafa; */
 	z-index: 5;
 	border-bottom: 1px solid #ddd;
 }
@@ -845,6 +848,7 @@ a:focus {
 .toggled-on .nav-menu {
 	display: block;
 	left: 0;
+	border-top: 1px solid;
 }
 
 .toggled-on .nav-menu ul {
@@ -874,7 +878,6 @@ a:focus {
 	font-size: 1.3em;
 	color: #222;
 	background-color: transparent;
-	/*! background-color: red; */
 }
 
 .nav-menu li { 
@@ -1222,11 +1225,11 @@ footer .social-navigation a:before {
 	color: #333;
 }
 
-.posts-navigation .nav-previous a .fa{
+.posts-navigation .nav-previous a .fa:before {
 	margin-right: 0.5em;
 }
 
-.posts-navigation .nav-next a .fa{
+.posts-navigation .nav-next a .fa:before {
 	margin-left: 0.5em;
 }
 
@@ -1292,6 +1295,10 @@ footer .social-navigation a:before {
 .infinite-scroll .posts-navigation,
 .infinite-scroll .pagination {
 	display: none;
+}
+
+#infinite-footer {
+	z-index: 1;
 }
 
 /**
@@ -1361,12 +1368,12 @@ footer .social-navigation a:before {
 
 img.alignleft {
 	float: left;
-	margin: 0.375em 1.667em 1.667em -4em;
+	margin: 0.375em 1.667em 1.667em 0;
 }
 
 img.alignright {
 	float: right;
-	margin: 0.375em -4em 1.667em 1.667em;
+	margin: 0.375em 0 1.667em 1.667em;
 }
 
 img.aligncenter {
@@ -1554,26 +1561,35 @@ main {
 
 .site-identity {
 	border: 0px solid red;
-	width: calc(100% - 3rem);
-	margin: 0 0 0 3.8em;     
+	width: calc(100% - 7.2em);
+	margin-left: 3.6em;
+}
+
+.toggled-on .site-identity {
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 5
 }
 
 .home-link {
 	display: flex;
 	align-content: center;
 	box-sizing: border-box;
-	height: 3.6em
+	height: 3.6em;
 }
 .home-link img {
 	height: 3.6em;
-	padding: 0.4em 0.8em 0.4em 0;
+	padding: 0.4em 0;
 }
 	
 .site-title {
 	border: 0px solid red;
+	width: 100%;
+	text-align: center;
 	color: #222;
 	font-variant: small-caps;
-	margin: auto 0;
+	margin: auto;
 }
 
 .site-title:hover,
@@ -1597,6 +1613,14 @@ main {
 
 .post:last-of-type {
 	border: 0;
+}
+
+.infinite-scroll .post:last-of-type {
+	border-bottom: 2px solid;
+}
+
+.infinite-scroll .infinite-wrap:last-of-type .post:last-of-type {
+	border-bottom: 0;
 }
 
 .single .post {
@@ -1637,7 +1661,9 @@ main {
 .entry-content {
 	margin: 0 0 1em;
 }
-
+.entry-footer{
+	margin: 0 0 1em;
+}
 .entry-meta,
 .attachment-meta {
 	color: #656565;
@@ -1854,10 +1880,10 @@ a.entry-date {
 	background: #f2f2e8;
 	border: 1px solid #f2f2e8;
 	display: inline-block;
-	height: 22px;
-	margin: 0 1px 2px 0;
+	height: 26px;
+	margin: 0 2px 0;
 	text-align: center;
-	width: 22px;
+	width: 26px;
 }
 
 .page-links a {
@@ -1874,7 +1900,6 @@ a.entry-date {
 }
 
 .page-links > .page-links-title {
-	height: auto;
 	margin: 0;
 	padding-right: 7px;
 	width: auto;
@@ -2341,7 +2366,7 @@ a.entry-date {
 .section-title {
 	text-align: center;
 	margin-top: 0;
-	font-size: 2.074em;
+	font-size: 2.774em;
 }
 
 .contact-section .section-title {
@@ -2356,7 +2381,8 @@ a.entry-date {
 
 .parallax .bg__1,
 .parallax .bg__2,
-.parallax .bg__3 {
+.parallax .bg__3,
+.parallax .bg__4 {
 	position: relative;
 	height: 60vh;
 	text-indent: -9999px;
@@ -2369,6 +2395,7 @@ a.entry-date {
 .about-section,
 .audio-format-section,
 .video-format-section,
+.image-format-section,
 .contact-section {
 	position: relative;
 	padding: 2em 0;
@@ -2380,7 +2407,7 @@ a.entry-date {
 }
 
 .social-section {
-	padding: 0;
+	padding: 1.667em 0;
 	background-color: #404948;
 }
 
@@ -2424,6 +2451,7 @@ a.entry-date {
 .contact-section {
 	position: relative;
 	padding: 5em 0 4em;
+	color: #fafafa;
 }
 
 .contact-form {
@@ -2971,25 +2999,27 @@ h6 {
 }
 
 /* 6.5 */
+/* Posts navigation */
 
 .posts-navigation .nav-links {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	font-size: 1rem;
 }
 
-.posts-navigation .nav-next,
-.posts-navigation .nav-previous {
-	width: 50%;    
-}
-
+.posts-navigation .nav-previous,
 .posts-navigation .nav-next {
-	text-align: right;
-	margin-left: 0;
+	width: 50%;
+	margin: 0;
 }
 
 .posts-navigation .nav-previous {
 	text-align: left;
-	margin-right: 0;	
+}
+
+.posts-navigation .nav-next {
+	text-align: right;
+	margin-left: 50%;
 }
 
 /**
@@ -3034,6 +3064,7 @@ main {
 
 .no-sidebar #main-content {
 	width: 100%;
+	padding: 4em;
 }
 	
 .front-page #main-content {
@@ -3045,6 +3076,10 @@ main {
 	padding: 4em 0;
 
 }
+	
+	.no-sidebar.blog #main-content {
+		padding: 4em;
+	}
 
 #primary-sidebar,
 .sidebar {
@@ -3091,7 +3126,10 @@ main {
 	justify-content: space-around;
 	align-items: center;
 	margin: auto;
-	height: 7em
+	height: auto;
+	padding: 0.4em 0;
+	min-height: 7em;
+	box-sizing: border-box;
 }
 	
 .site-title {
@@ -3117,7 +3155,9 @@ main {
 }
 
 .home-link img {
-	height: 6em
+	min-height: 5em;
+	height: 5em;
+	padding: 0;
 }
 
 /**
@@ -3137,11 +3177,10 @@ main {
 	font-size: 2.168em;
 }
 	
-.featured-post,
-.has-post-thumbnail .featured-post {
+.featured-post {
 	position: absolute;
 	top:1.667em;
-	right: 1em;
+	right: 0;
 	z-index: 2
 }
 	
@@ -3161,9 +3200,7 @@ main {
 
 .contributor {
 	width: 47%
-}
-	
-	
+}	
 
 /**
  * 11.3 - Post Formats
@@ -3192,11 +3229,6 @@ main {
 
 }
 
-.single .format-audio .entry-content {
-	width: 66.667%;
-	margin:0;
-}
-
 .format-quote {
 }
 	
@@ -3208,10 +3240,18 @@ main {
 }
 
 .format-video iframe {
-	max-height: 540px;
+	max-height: 420px;
 	padding: 0;    
 }
 	
+.no-sidebar .format-video iframe {
+	max-height: 600px;
+}
+
+.front-page .format-video iframe{
+	max-height: 300px;
+}
+
 .format-video p {
 	position: relative;
 	top:100%;
@@ -3224,6 +3264,13 @@ main {
 }
 .audio-posts .format-audio .entry-content {
 	width: 100%;
+}
+	
+.video-posts .post,
+.image-posts .post {
+	width: 50%;
+	border: 0;
+	padding: 0 1em;
 }
 
 .format-chat .entry-content {
@@ -3388,7 +3435,8 @@ main {
 
 .parallax .bg__1,
 .parallax .bg__2,
-.parallax .bg__3 {
+.parallax .bg__3,
+.parallax .bg__4 {
 	position: relative;
 	height: 85vh;
 	text-indent: -9999px;
@@ -3401,6 +3449,7 @@ main {
 .about-section,
 .audio-format-section,
 .video-format-section,
+.image-format-section,
 .contact-section {
 	padding: 5em 0 4em;
 }
@@ -3410,7 +3459,7 @@ main {
 }
 
 .social-section .social-navigation {
-	padding: 3em 0;
+	padding: 1.333em 0;
 }
 
 .social-section .social-navigation a:before {
@@ -3461,7 +3510,7 @@ div.wpcf7 {
 
 @media (min-width: 881px) and (max-width: 1500px) {
 	.inner {
-		width: 70.81145152%;
+		width: 78.5%;
 	}
 
 }

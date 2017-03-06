@@ -10,21 +10,27 @@ $about_page = $bassist_theme_options['about_slug'];
 ?>
 
 <section id="about" class="about-section">
-    <div class="inner">
+<div class="skewed-separator"></div>
+			
+	<div class="inner">
 <?php
    $about = new WP_Query( array( 'pagename' => $about_page ) );   
 
-    if ($about->have_posts()) :
-        while ( $about->have_posts() ): $about->the_post(); ?>
-        <h2 class="section-title"><?php the_title(); ?></h2>
-        <div class="entry-content">
-           <?php the_content();
-        endwhile;
-        wp_reset_postdata();
-    endif;
+	if ($about->have_posts()) :
+		while ( $about->have_posts() ): $about->the_post(); ?>
+			<h2 class="section-title"><?php the_title(); ?></h2>
+			<div class="entry-content">
+			   <?php the_content(); ?>
+			</div>
+<?php 	endwhile;
+		wp_reset_postdata();
+	else:
+		printf( '<h1>%1$s</h1><p>%2$s</p>',
+				__('This is the about section', 'bassist'),
+				__('To fill up this section, create a page with the title "About", "About me" or something similar and write the slug of the page in the Customizer. To put a picture before this section, use the parallax settings in the Customizer.', 'bassist') );
+	endif;
 ?>
 
-    </div><!--/inner-->
+	</div><!--/inner-->
 
 </section><!--/about-section-->
-

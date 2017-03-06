@@ -21,8 +21,7 @@ function bassist_header_style() {
 	$header_image = get_header_image();
 	$text_color   = get_header_textcolor();
 	$bassist_theme_options = bassist_get_options();
-	//echo '<pre>'; print_r($bassist_theme_options); echo '</pre>';
-
+	
 	// If no custom options for header are set, let's bail.
 	if (  ! bassist_get_options()  )
 		return;
@@ -76,7 +75,7 @@ function bassist_header_style() {
 			if ( empty( $header_image ) ) :
 		?>
 			.home-link {
-				min-height: 5em;
+				min-height: 7em;
 			}
 
 			@media (max-width: 767px) {
@@ -94,9 +93,10 @@ function bassist_header_style() {
 
 		// If the user has set a custom color for the text, use that.
 		if ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
-		.site-title {
+		.site-title, #nav-button {
 			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
+
 <?php endif;
 
 if( $bassist_theme_options['site_description_color'] ) : ?>

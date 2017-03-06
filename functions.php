@@ -83,7 +83,7 @@ function bassist_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', 'css/font-awesome.css', bassist_fonts_url() ) );
+	add_editor_style( array( 'css/editor-style.css', 'css/font-awesome.css' ) );
 
 	// Add theme support for Custom Header
 	add_theme_support( 'custom-header', array(
@@ -97,13 +97,13 @@ function bassist_setup() {
 
 	// Add theme support for Custom Background
 	add_theme_support( 'custom-background', array(
-		'default-color' => 'f2f2ef',
+		'default-color' => 'f9f9f9',
 		) );
 
 	// Add theme support for Custom Logo
 	add_theme_support( 'custom-logo', array(
-		'width'       => 100,
-		'height'      => 100,
+		'width'       => 450,
+		'height'      => 150,
 		'flex-width'  => true,
 		'flex-height' => false,
 		) );
@@ -138,67 +138,16 @@ function bassist_widgets_init() {
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	=> '</h2>',
 	) );
-	register_sidebar(array(
-		'name'			=> esc_html__( 'Contact Area', 'bassist' ),
-		'id' 			=> 'contact-area',
-		'description'	=> esc_html__( 'Add a text widget with the contact form shortcode here.', 'bassist' ),
-		'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h2 class="widget-title">',
-		'after_title'	=> '</h2>',
-	));
 }
 add_action( 'widgets_init', 'bassist_widgets_init' );
-
-if ( ! function_exists( 'bassist_fonts_url' ) ) :
-/**
- * Register Google fonts for Twenty Sixteen.
- *
- * Create your own bassist_fonts_url() function to override in a child theme.
- *
- * @since Bassist 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function bassist_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'bassist' ) ) {
-		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
-	}
-
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'bassist' ) ) {
-		$fonts[] = 'Montserrat:400,700';
-	}
-
-	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'bassist' ) ) {
-		$fonts[] = 'Inconsolata:400';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
 
 /**
  * Enqueue scripts and styles.
  */
 function bassist_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'bassist-fonts', bassist_fonts_url(), array(), null );
 	wp_enqueue_style( 'bassist-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bassist-font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
 	wp_enqueue_script( 'bassist-scripts', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151215', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -238,6 +187,24 @@ function bassist_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'bassist_body_classes' );
+
+/**
+ * Adds custom classes to the array of post classes.
+ *
+ * @since Bassist 1.0.2
+ *
+ * @param array $classes Classes for the post element.
+ * @return array (Maybe) filtered post classes.
+ */
+function bassist_post_classes( $classes ) {
+	// Adds a class of post-format to post with special formats (video, image, chat, aside, etc).
+	if ( ! get_post_format() ) {
+		$classes[] = 'standard';
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'bassist_post_classes' );
 
 /**
  * Implement the Custom Header feature.
