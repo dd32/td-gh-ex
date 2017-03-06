@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 01:10+0200\n"
-"PO-Revision-Date: 2016-10-29 01:10+0200\n"
+"POT-Creation-Date: 2017-03-06 20:37+0100\n"
+"PO-Revision-Date: 2017-03-06 20:38+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;_n_noop;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.6\n"
@@ -24,15 +25,15 @@ msgstr "Non Trovato"
 msgid "Sorry, no posts matched your criteria"
 msgstr "Spiacente, nessun articolo risponde ai criteri di ricerca impostati."
 
-#: comments.php:5 core/templates/post-info.php:24
+#: comments.php:5 core/templates/post-info.php:28
 msgid "No comments"
 msgstr "Nessun commento"
 
-#: comments.php:5 core/templates/post-info.php:24
+#: comments.php:5 core/templates/post-info.php:28
 msgid "comment"
 msgstr "commento"
 
-#: comments.php:5 core/templates/post-info.php:24
+#: comments.php:5 core/templates/post-info.php:28
 msgid "comments"
 msgstr "commenti"
 
@@ -82,13 +83,13 @@ msgstr ""
 "Vuoi impostare uno sfondo a piena pagina? (Dopo l'upload, seleziona \"Fixed"
 "\" dalle impostazioni di attaccamento dell'immagine)"
 
-#: core/admin/customize/customize.php:31 core/admin/customize/customize.php:194
-#: core/admin/customize/customize.php:474
+#: core/admin/customize/customize.php:31 core/admin/customize/customize.php:168
+#: core/admin/customize/customize.php:448
 msgid "No"
 msgstr "No"
 
-#: core/admin/customize/customize.php:32 core/admin/customize/customize.php:195
-#: core/admin/customize/customize.php:475
+#: core/admin/customize/customize.php:32 core/admin/customize/customize.php:169
+#: core/admin/customize/customize.php:449
 msgid "Yes"
 msgstr "Si"
 
@@ -96,147 +97,123 @@ msgstr "Si"
 msgid "General"
 msgstr "Generali"
 
-#: core/admin/customize/customize.php:53
-msgid "Load system"
-msgstr "Sistema di caricamento"
-
-#: core/admin/customize/customize.php:63
-msgid "Choose a load system"
-msgstr "Scegli un sistema di caricamento"
-
-#: core/admin/customize/customize.php:64
-msgid ""
-"Select a load system, if you've some problems with the theme (for example a "
-"blank page)."
-msgstr ""
-"Scegli un sistema di caricamento, nel caso tu abbia qualche problema con il "
-"tema (per esempio, pagina bianca)"
-
-#: core/admin/customize/customize.php:69
-msgid "Mode a"
-msgstr "Tipo a"
-
-#: core/admin/customize/customize.php:70
-msgid "Mode b"
-msgstr "Tipo b"
-
-#: core/admin/customize/customize.php:81
+#: core/admin/customize/customize.php:55
 msgid "Color Scheme"
 msgstr "Schema di colori"
 
-#: core/admin/customize/customize.php:91
+#: core/admin/customize/customize.php:65
 msgid "Predefined Color Schemes"
 msgstr "Colore schema predefinito"
 
-#: core/admin/customize/customize.php:92
+#: core/admin/customize/customize.php:66
 msgid "Choose your Color Scheme"
 msgstr "Scegli uno schema di colori"
 
-#: core/admin/customize/customize.php:98
+#: core/admin/customize/customize.php:72
 msgid "Light&Orange"
 msgstr "Chiaro e Arancione"
 
-#: core/admin/customize/customize.php:99
+#: core/admin/customize/customize.php:73
 msgid "Light&Turquoise"
 msgstr "Chiaro e Turchese"
 
-#: core/admin/customize/customize.php:100
+#: core/admin/customize/customize.php:74
 msgid "Light&Blue"
 msgstr "Chiaro e Blu"
 
-#: core/admin/customize/customize.php:101
+#: core/admin/customize/customize.php:75
 msgid "Light&Red"
 msgstr "Chiaro e Rosso"
 
-#: core/admin/customize/customize.php:102
+#: core/admin/customize/customize.php:76
 msgid "Light&Pink"
 msgstr "Chiaro e Rosa"
 
-#: core/admin/customize/customize.php:103
+#: core/admin/customize/customize.php:77
 msgid "Light&Purple"
 msgstr "Chiaro e Viola"
 
-#: core/admin/customize/customize.php:104
+#: core/admin/customize/customize.php:78
 msgid "Light&Yellow"
 msgstr "Chiaro e Giallo"
 
-#: core/admin/customize/customize.php:105
+#: core/admin/customize/customize.php:79
 msgid "Light&Green"
 msgstr "Chiaro e Verde"
 
-#: core/admin/customize/customize.php:106
+#: core/admin/customize/customize.php:80
 msgid "Orange"
 msgstr "Arancione"
 
-#: core/admin/customize/customize.php:107
+#: core/admin/customize/customize.php:81
 msgid "Turquoise"
 msgstr "Turchese"
 
-#: core/admin/customize/customize.php:108
+#: core/admin/customize/customize.php:82
 msgid "Blue"
 msgstr "Blu"
 
-#: core/admin/customize/customize.php:109
+#: core/admin/customize/customize.php:83
 msgid "Red"
 msgstr "Rosso"
 
-#: core/admin/customize/customize.php:110
+#: core/admin/customize/customize.php:84
 msgid "Pink"
 msgstr "Rosa"
 
-#: core/admin/customize/customize.php:111
+#: core/admin/customize/customize.php:85
 msgid "Purple"
 msgstr "Viola"
 
-#: core/admin/customize/customize.php:112
+#: core/admin/customize/customize.php:86
 msgid "Yellow"
 msgstr "Giallo"
 
-#: core/admin/customize/customize.php:113
+#: core/admin/customize/customize.php:87
 msgid "Green"
 msgstr "Verde"
 
-#: core/admin/customize/customize.php:114
+#: core/admin/customize/customize.php:88
 msgid "Dark&Orange"
 msgstr "Scuro e Arancione"
 
-#: core/admin/customize/customize.php:115
+#: core/admin/customize/customize.php:89
 msgid "Dark&Turquoise"
 msgstr "Scuro e Turchese"
 
-#: core/admin/customize/customize.php:116
+#: core/admin/customize/customize.php:90
 msgid "Dark&Blue"
 msgstr "Scuro e Blu"
 
-#: core/admin/customize/customize.php:117
+#: core/admin/customize/customize.php:91
 msgid "Dark&Red"
 msgstr "Scuro e Rosso"
 
-#: core/admin/customize/customize.php:118
+#: core/admin/customize/customize.php:92
 msgid "Dark&Pink"
 msgstr "Scuro e Rosa"
 
-#: core/admin/customize/customize.php:119
+#: core/admin/customize/customize.php:93
 msgid "Dark&Purple"
 msgstr "Scuro e Viola"
 
-#: core/admin/customize/customize.php:120
+#: core/admin/customize/customize.php:94
 msgid "Dark&Yellow"
 msgstr "Scuro e Giallo"
 
-#: core/admin/customize/customize.php:121
+#: core/admin/customize/customize.php:95
 msgid "Dark&Green"
 msgstr "Scuro e Verde"
 
-#: core/admin/customize/customize.php:133
+#: core/admin/customize/customize.php:107
 msgid "Page width"
 msgstr "Larghezza pagina"
 
-#: core/admin/customize/customize.php:143
+#: core/admin/customize/customize.php:117
 msgid "Screen greater than 768px"
 msgstr "Risoluzione superiore a 768px"
 
-#: core/admin/customize/customize.php:144
+#: core/admin/customize/customize.php:118
 msgid ""
 "Set a width, for a screen greater than 768 pixel (for example 750 and not "
 "750px ) "
@@ -244,11 +221,11 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 768 pixel (Ad esempio "
 "750 e non 750px)"
 
-#: core/admin/customize/customize.php:154
+#: core/admin/customize/customize.php:128
 msgid "Screen greater than 992px"
 msgstr "Risoluzione superiore a 992px"
 
-#: core/admin/customize/customize.php:155
+#: core/admin/customize/customize.php:129
 msgid ""
 "Set a width, for a screen greater than 992 pixel (for example 940 and not "
 "940px ) "
@@ -256,11 +233,11 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 992 pixel (Ad esempio "
 "992 e non 992px)"
 
-#: core/admin/customize/customize.php:165
+#: core/admin/customize/customize.php:139
 msgid "Screen greater than 1200px"
 msgstr "Risoluzione superiore a 1200px"
 
-#: core/admin/customize/customize.php:166
+#: core/admin/customize/customize.php:140
 msgid ""
 "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 "
 "and not 1170px ) "
@@ -268,323 +245,323 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 1200 pixel (Ad esempio "
 "1200 e non 1200px)"
 
-#: core/admin/customize/customize.php:178
+#: core/admin/customize/customize.php:152
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: core/admin/customize/customize.php:188
+#: core/admin/customize/customize.php:162
 msgid "Comments"
 msgstr "Commenti"
 
-#: core/admin/customize/customize.php:189
+#: core/admin/customize/customize.php:163
 msgid "Do you want to view the comments after articles?"
 msgstr "Vuoi visualizzare i commenti dopo gli articoli?"
 
-#: core/admin/customize/customize.php:204
+#: core/admin/customize/customize.php:178
 msgid "Styles"
 msgstr "Stili"
 
-#: core/admin/customize/customize.php:214
+#: core/admin/customize/customize.php:188
 msgid "Custom css"
 msgstr "Css personalizzato"
 
-#: core/admin/customize/customize.php:215
+#: core/admin/customize/customize.php:189
 msgid "Insert your custom css code."
 msgstr "Inserisci il tuo codice css personalizzato."
 
-#: core/admin/customize/customize.php:227
+#: core/admin/customize/customize.php:201
 msgid "Layouts"
 msgstr "Layout"
 
-#: core/admin/customize/customize.php:237
+#: core/admin/customize/customize.php:211
 msgid "Home Blog Layout"
 msgstr "Layout per la Homepage"
 
-#: core/admin/customize/customize.php:238
+#: core/admin/customize/customize.php:212
 msgid "If you've set the latest articles, for the homepage, choose a layout."
 msgstr ""
 "Se hai scelto di visualizzare gli ultimi articoli, nella pagina principale, "
 "scegli un layout"
 
-#: core/admin/customize/customize.php:243
-#: core/admin/customize/customize.php:261
-#: core/admin/customize/customize.php:279 core/metaboxes/page.php:38
+#: core/admin/customize/customize.php:217
+#: core/admin/customize/customize.php:235
+#: core/admin/customize/customize.php:253 core/metaboxes/page.php:38
 #: core/metaboxes/post.php:32 core/metaboxes/product.php:38
 msgid "Full Width"
 msgstr "Piena pagina"
 
-#: core/admin/customize/customize.php:244
-#: core/admin/customize/customize.php:262
-#: core/admin/customize/customize.php:280 core/metaboxes/page.php:39
+#: core/admin/customize/customize.php:218
+#: core/admin/customize/customize.php:236
+#: core/admin/customize/customize.php:254 core/metaboxes/page.php:39
 #: core/metaboxes/post.php:33 core/metaboxes/product.php:39
 msgid "Left Sidebar"
 msgstr "Sidebar a sinistra"
 
-#: core/admin/customize/customize.php:245
-#: core/admin/customize/customize.php:263
-#: core/admin/customize/customize.php:281 core/metaboxes/page.php:40
+#: core/admin/customize/customize.php:219
+#: core/admin/customize/customize.php:237
+#: core/admin/customize/customize.php:255 core/metaboxes/page.php:40
 #: core/metaboxes/post.php:34 core/metaboxes/product.php:40
 msgid "Right Sidebar"
 msgstr "Sidebar a destra"
 
-#: core/admin/customize/customize.php:246
-#: core/admin/customize/customize.php:264
+#: core/admin/customize/customize.php:220
+#: core/admin/customize/customize.php:238
 msgid "Masonry"
 msgstr "Muratura"
 
-#: core/admin/customize/customize.php:255
+#: core/admin/customize/customize.php:229
 msgid "Category Layout"
 msgstr "Layout categoria"
 
-#: core/admin/customize/customize.php:256
+#: core/admin/customize/customize.php:230
 msgid "Select a layout for category pages."
 msgstr "Seleziona un layout per le categorie."
 
-#: core/admin/customize/customize.php:273
+#: core/admin/customize/customize.php:247
 msgid "WooCommerce Category Layout"
 msgstr "Layout categorie WooCommerce"
 
-#: core/admin/customize/customize.php:274
+#: core/admin/customize/customize.php:248
 msgid "Select a layout for the woocommerce categories."
 msgstr "Scegli un layout per le categorie di woocommerce"
 
-#: core/admin/customize/customize.php:292
+#: core/admin/customize/customize.php:266
 msgid "Header"
 msgstr "Testata"
 
-#: core/admin/customize/customize.php:302
+#: core/admin/customize/customize.php:276
 msgid "Custom Logo"
 msgstr "Logo personalizzato"
 
-#: core/admin/customize/customize.php:303
+#: core/admin/customize/customize.php:277
 msgid "Upload an image as logo"
 msgstr "Carica un'immagine come logo"
 
-#: core/admin/customize/customize.php:315
+#: core/admin/customize/customize.php:289
 msgid "Footer"
 msgstr "Footer"
 
-#: core/admin/customize/customize.php:325
+#: core/admin/customize/customize.php:299
 msgid "Copyright Text"
 msgstr "Testo del copyright"
 
-#: core/admin/customize/customize.php:326
+#: core/admin/customize/customize.php:300
 msgid "Insert your copyright text."
 msgstr "Inserisci il testo per il copyright"
 
-#: core/admin/customize/customize.php:336
+#: core/admin/customize/customize.php:310
 msgid "Facebook Url"
 msgstr "Url Facebook"
 
-#: core/admin/customize/customize.php:337
+#: core/admin/customize/customize.php:311
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:347
+#: core/admin/customize/customize.php:321
 msgid "Twitter Url"
 msgstr "Url Twitter"
 
-#: core/admin/customize/customize.php:348
+#: core/admin/customize/customize.php:322
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:358
+#: core/admin/customize/customize.php:332
 msgid "Flickr Url"
 msgstr "Flickr Url"
 
-#: core/admin/customize/customize.php:359
+#: core/admin/customize/customize.php:333
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:369
+#: core/admin/customize/customize.php:343
 msgid "Google Url"
 msgstr "Url Google"
 
-#: core/admin/customize/customize.php:370
+#: core/admin/customize/customize.php:344
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:380
+#: core/admin/customize/customize.php:354
 msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
-#: core/admin/customize/customize.php:381
+#: core/admin/customize/customize.php:355
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:391
+#: core/admin/customize/customize.php:365
 msgid "Myspace Url"
 msgstr "Url Myspace"
 
-#: core/admin/customize/customize.php:392
+#: core/admin/customize/customize.php:366
 msgid "Insert Myspace Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:402
+#: core/admin/customize/customize.php:376
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/customize/customize.php:403
+#: core/admin/customize/customize.php:377
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:413
+#: core/admin/customize/customize.php:387
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/customize/customize.php:414
+#: core/admin/customize/customize.php:388
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:424
+#: core/admin/customize/customize.php:398
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/customize/customize.php:425
+#: core/admin/customize/customize.php:399
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:435
+#: core/admin/customize/customize.php:409
 msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
-#: core/admin/customize/customize.php:436
+#: core/admin/customize/customize.php:410
 msgid "Insert Vimeo Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:446
+#: core/admin/customize/customize.php:420
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/customize/customize.php:447
+#: core/admin/customize/customize.php:421
 msgid "Insert Skype ID (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:457
+#: core/admin/customize/customize.php:431
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:458
+#: core/admin/customize/customize.php:432
 msgid "Insert Email Address (empty if you want to hide the button)"
 msgstr ""
 "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:468
+#: core/admin/customize/customize.php:442
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:469
+#: core/admin/customize/customize.php:443
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:486
-#: core/admin/customize/customize.php:487
+#: core/admin/customize/customize.php:460
+#: core/admin/customize/customize.php:461
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:498
+#: core/admin/customize/customize.php:472
 msgid "Logo"
 msgstr "Font per il logo"
 
-#: core/admin/customize/customize.php:508
-#: core/admin/customize/customize.php:531
-#: core/admin/customize/customize.php:554
+#: core/admin/customize/customize.php:482
+#: core/admin/customize/customize.php:505
+#: core/admin/customize/customize.php:528
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:509
+#: core/admin/customize/customize.php:483
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo ( Per esempio, 60px )"
 
-#: core/admin/customize/customize.php:521
+#: core/admin/customize/customize.php:495
 msgid "Menu"
 msgstr "Font per il menu"
 
-#: core/admin/customize/customize.php:532
+#: core/admin/customize/customize.php:506
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:544
+#: core/admin/customize/customize.php:518
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:555
+#: core/admin/customize/customize.php:529
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr ""
 "Inserisci una grandezza, per il font dei contenuti ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:568
+#: core/admin/customize/customize.php:542
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:578
+#: core/admin/customize/customize.php:552
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:579
+#: core/admin/customize/customize.php:553
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 ( Per esempio, 24px )"
 
-#: core/admin/customize/customize.php:589
+#: core/admin/customize/customize.php:563
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:590
+#: core/admin/customize/customize.php:564
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 ( Per esempio, 22px )"
 
-#: core/admin/customize/customize.php:600
+#: core/admin/customize/customize.php:574
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:601
+#: core/admin/customize/customize.php:575
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 ( Per esempio, 20px )"
 
-#: core/admin/customize/customize.php:611
+#: core/admin/customize/customize.php:585
 msgid "H4 headline"
 msgstr "Elementi H4"
 
-#: core/admin/customize/customize.php:612
+#: core/admin/customize/customize.php:586
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 ( Per esempio, 18px )"
 
-#: core/admin/customize/customize.php:622
+#: core/admin/customize/customize.php:596
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:623
+#: core/admin/customize/customize.php:597
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 ( Per esempio, 16px )"
 
-#: core/admin/customize/customize.php:633
+#: core/admin/customize/customize.php:607
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:634
+#: core/admin/customize/customize.php:608
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
 
@@ -621,6 +598,72 @@ msgstr "Installing il plugin: %s"
 #: core/classes/class-plugin-activation.php:304
 msgid "Something went wrong with the plugin API."
 msgstr "Qualcosa è andata storta con le API plugin"
+
+#: core/classes/class-plugin-activation.php:306
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgstr "Questo tema richiede il seguente plugin: %1$s."
+
+#: core/classes/class-plugin-activation.php:311
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgstr "Questo tema raccomanda il seguente plugin: %1$s."
+
+#: core/classes/class-plugin-activation.php:316
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgstr "Spiacente, ma non hai i permessi per installare il %1$s plugin."
+
+#: core/classes/class-plugin-activation.php:321
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr ""
+"I seguenti plugin richiedono l’aggiornamento alla versione più recente per "
+"assicurare la massima compatibilità con questo tema: %1$s."
+
+#: core/classes/class-plugin-activation.php:326
+#, php-format
+msgid "There is an update available for: %1$s."
+msgstr "È disponibile un nuovo aggiornamento per:  %1$s."
+
+#: core/classes/class-plugin-activation.php:331
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgstr "Spiacente, ma non hai i permessi per aggiornare il %1$s plugin."
+
+#: core/classes/class-plugin-activation.php:336
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgstr "Il seguente plugin richiesto è attualmente non attivo: %1$s."
+
+#: core/classes/class-plugin-activation.php:341
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgstr "Il seguente plugin raccomandato è attualmente non attivo: %1$s."
+
+#: core/classes/class-plugin-activation.php:346
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgstr "Spiacente, ma non hai i permessi per attivare il %1$s plugin."
+
+#: core/classes/class-plugin-activation.php:351
+msgid "Begin installing plugin"
+msgstr "Inizia l’installazione del plugin."
+
+#: core/classes/class-plugin-activation.php:356
+msgid "Begin updating plugin"
+msgstr "Inizia l’aggiornamento del plugin."
+
+#: core/classes/class-plugin-activation.php:361
+msgid "Begin activating plugin"
+msgstr "Inizia l’attivazione del plugin."
 
 #: core/classes/class-plugin-activation.php:365
 msgid "Return to Required Plugins Installer"
@@ -663,6 +706,50 @@ msgid "Please contact the administrator of this site for help."
 msgstr ""
 "Si prega di contattare l’amministratore di questo sito per richiedere "
 "assistenza."
+
+#: core/classes/class-plugin-activation.php:489
+msgid "Update Required"
+msgstr "Aggiornamento richiesto."
+
+#: core/classes/class-plugin-activation.php:604
+msgid "Set the parent_slug config variable instead."
+msgstr "Impostare invece la variabile di configurazione parent_slug."
+
+#: core/classes/class-plugin-activation.php:798
+#: core/classes/class-plugin-activation.php:3364
+msgid "Return to the Dashboard"
+msgstr "Ritorna alla dashboard."
+
+#: core/classes/class-plugin-activation.php:905
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Il pacchetto di plug-in remoto non contiene una cartella con lo slum "
+"desiderato ed il comando rinomina non ha funzionato."
+
+#: core/classes/class-plugin-activation.php:905
+#: core/classes/class-plugin-activation.php:908
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Si prega di contattare lo sviluppatore del plugin e richiedere di sviluppare "
+"il plugin seguendo le linee guida di WordPress."
+
+#: core/classes/class-plugin-activation.php:908
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Il pacchetto di plugin è costituito da più di un file, ma i file non sono "
+"confezionati in una cartella."
+
+#: core/classes/class-plugin-activation.php:1086
+#: core/classes/class-plugin-activation.php:2783
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
 
 #: core/classes/class-plugin-activation.php:2122
 msgid "Required"
@@ -749,6 +836,10 @@ msgstr "Versione"
 msgid "Status"
 msgstr "Stato"
 
+#: core/classes/class-plugin-activation.php:2525
+msgid "Upgrade message from the plugin author:"
+msgstr "Messaggio di aggiornamento dall’autore del plugin:"
+
 #: core/classes/class-plugin-activation.php:2558
 msgid "Install"
 msgstr "Installa"
@@ -776,6 +867,16 @@ msgstr "Nessun plugin è disponibile per essere installato in questo momento."
 #: core/classes/class-plugin-activation.php:2638
 msgid "No plugins are available to be updated at this time."
 msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#: core/classes/class-plugin-activation.php:2743
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+"Nessun plugin sono stati selezionati per essere attivati. Nessuna azione "
+"intrapresa."
+
+#: core/classes/class-plugin-activation.php:2769
+msgid "No plugins are available to be activated at this time."
+msgstr "Nessun plugin è disponibile per essere attivato in questo momento."
 
 #: core/classes/class-plugin-activation.php:2958
 msgid "Plugin activation failed."
@@ -811,6 +912,16 @@ msgstr ""
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s installato ed attivato con successo."
 
+#: core/classes/class-plugin-activation.php:3296
+#: core/classes/class-plugin-activation.php:3302
+msgid "Show Details"
+msgstr "Visualizza dettagli"
+
+#: core/classes/class-plugin-activation.php:3296
+#: core/classes/class-plugin-activation.php:3302
+msgid "Hide Details"
+msgstr "Nascondi dettagli"
+
 #: core/classes/class-plugin-activation.php:3297
 msgid "All installations and activations have been completed."
 msgstr "Tutte le installazioni e attivazioni sono state completate."
@@ -827,6 +938,11 @@ msgid ""
 msgstr ""
 "Il processo d'installazione è avviato. Questo processo può richiedere un pò "
 "di tempo, per favore siate pazienti."
+
+#: core/classes/class-plugin-activation.php:3302
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s installato con successo."
 
 #: core/classes/class-plugin-activation.php:3303
 msgid "All installations have been completed."
@@ -899,14 +1015,118 @@ msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
 msgid "View your shopping cart"
 msgstr "Visualizza il tuo carrello"
 
-#: core/main.php:298
+#: core/main.php:97
+#, php-format
+msgid "Category: %s"
+msgstr "Categoria: %s"
+
+#: core/main.php:99
+#, php-format
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: core/main.php:101
+#, php-format
+msgid "Author: %s"
+msgstr "Autore: %s"
+
+#: core/main.php:103
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: core/main.php:103
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: core/main.php:105
+#, php-format
+msgid "Month: %s"
+msgstr "Mese: %s"
+
+#: core/main.php:105
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: core/main.php:107
+#, php-format
+msgid "Day: %s"
+msgstr "Giorno: %s"
+
+#: core/main.php:107
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: core/main.php:110
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Digressione"
+
+#: core/main.php:112
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Gallerie"
+
+#: core/main.php:114
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Immagini"
+
+#: core/main.php:116
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Video"
+
+#: core/main.php:118
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: core/main.php:120
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Links"
+
+#: core/main.php:122
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Stati"
+
+#: core/main.php:124
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: core/main.php:126
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Chats"
+
+#: core/main.php:129
+#, php-format
+msgid "Archives: %s"
+msgstr "Archivi: %s"
+
+#: core/main.php:132
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: core/main.php:286
 #, php-format
 msgid "Page %s"
 msgstr "Pagine %s"
 
-#: core/main.php:348
+#: core/main.php:336
 msgid "Article"
 msgstr "Articolo"
+
+#: core/main.php:429
+msgid "Read More"
+msgstr "Continua"
 
 #: core/metaboxes/page.php:15 core/metaboxes/page.php:23
 #: core/metaboxes/post.php:15 core/metaboxes/post.php:23
@@ -955,10 +1175,6 @@ msgstr "Crea una ricerca, dal seguente modulo:"
 #: core/templates/masonry.php:54 core/templates/masonry.php:55 search.php:54
 msgid "Search"
 msgstr "Cerca"
-
-#: core/templates/readmore.php:31
-msgid "Read More"
-msgstr "Continua"
 
 #: footer.php:14
 msgid "Copyright"
@@ -1056,6 +1272,10 @@ msgstr "Quantità"
 #: woocommerce/cart/cart.php:57
 msgid "Remove this item"
 msgstr "Rimuovi questo elemento"
+
+#: woocommerce/cart/cart.php:86
+msgid "Available on backorder"
+msgstr "Disponibile su ordine inevaso"
 
 #: woocommerce/cart/cart.php:133
 msgid "Coupon"
@@ -1235,6 +1455,25 @@ msgstr "Proprietario verificato"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Load system"
+#~ msgstr "Sistema di caricamento"
+
+#~ msgid "Choose a load system"
+#~ msgstr "Scegli un sistema di caricamento"
+
+#~ msgid ""
+#~ "Select a load system, if you've some problems with the theme (for example "
+#~ "a blank page)."
+#~ msgstr ""
+#~ "Scegli un sistema di caricamento, nel caso tu abbia qualche problema con "
+#~ "il tema (per esempio, pagina bianca)"
+
+#~ msgid "Mode a"
+#~ msgstr "Tipo a"
+
+#~ msgid "Mode b"
+#~ msgstr "Tipo b"
 
 #~ msgid "Rated %d out of 5"
 #~ msgstr "Valutato %d su 5"
@@ -2098,18 +2337,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 
 #~ msgid "Plugin installed successfully."
 #~ msgstr "Plugin installato con successo."
-
-#~ msgid "Show Details"
-#~ msgstr "Visualizza dettagli"
-
-#~ msgid "Hide Details"
-#~ msgstr "Nascondi dettagli"
-
-#~ msgid "%1$s installed successfully."
-#~ msgstr "%1$s installato con successo."
-
-#~ msgid "Return to the Dashboard"
-#~ msgstr "Ritorna alla dashboard."
 
 #~ msgid "All plugins installed and activated successfully. %s"
 #~ msgstr "Tutti i plugin installati ed attivati con successo. %s"

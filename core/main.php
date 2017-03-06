@@ -93,10 +93,49 @@ if (!function_exists('alhenalite_get_archive_title')) {
 
 	function alhenalite_get_archive_title() {
 		
-		if ( get_the_archive_title()  && ( get_the_archive_title() <> 'Archives' ) ) :
-		
-			return get_the_archive_title();
-		
+		if ( is_category() ) {
+			$title = sprintf( esc_html__( 'Category: %s', 'alhena-lite' ), single_cat_title( '', false ) );
+		} elseif ( is_tag() ) {
+			$title = sprintf( esc_html__( 'Tag: %s', 'alhena-lite' ), single_tag_title( '', false ) );
+		} elseif ( is_author() ) {
+			$title = sprintf( esc_html__( 'Author: %s', 'alhena-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		} elseif ( is_year() ) {
+			$title = sprintf( esc_html__( 'Year: %s', 'alhena-lite' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'alhena-lite' ) ) );
+		} elseif ( is_month() ) {
+			$title = sprintf( esc_html__( 'Month: %s', 'alhena-lite' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'alhena-lite' ) ) );
+		} elseif ( is_day() ) {
+			$title = sprintf( esc_html__( 'Day: %s', 'alhena-lite' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'alhena-lite' ) ) );
+		} elseif ( is_tax( 'post_format' ) ) {
+			if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+				$title = esc_html_x( 'Asides', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+				$title = esc_html_x( 'Galleries', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+				$title = esc_html_x( 'Images', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+				$title = esc_html_x( 'Videos', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+				$title = esc_html_x( 'Quotes', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+				$title = esc_html_x( 'Links', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+				$title = esc_html_x( 'Statuses', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+				$title = esc_html_x( 'Audio', 'post format archive title', 'alhena-lite' );
+			} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+				$title = esc_html_x( 'Chats', 'post format archive title', 'alhena-lite' );
+			}
+		} elseif ( is_post_type_archive() ) {
+			$title = sprintf( esc_html__( 'Archives: %s', 'alhena-lite' ), post_type_archive_title( '', false ) );
+		} elseif ( is_tax() ) {
+			$tax = get_taxonomy( get_queried_object()->taxonomy );
+			$title = sprintf( esc_html__( '%1$s: %2$s', 'alhena-lite' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		}
+	
+		if ( isset($title) )  :
+			return $title;
+		else:
+			return false;
 		endif;
 	
 	}
