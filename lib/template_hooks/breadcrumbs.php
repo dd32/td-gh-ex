@@ -73,7 +73,7 @@ function ascend_breadcrumbs() {
 
 	$prepend = '';
 	if (class_exists('woocommerce') && isset($ascend['shop_breadcrumbs']) && $ascend['shop_breadcrumbs'] == 1) {
-	    $shop_page_id = woocommerce_get_page_id( 'shop' );
+	    $shop_page_id = wc_get_page_id( 'shop' );
 	    $shop_page    = get_post( $shop_page_id );
 	    if (get_option( 'page_on_front' ) !== $shop_page_id ) {
 	        $prepend = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . get_permalink( $shop_page ) . '"><span itemprop="title">' . get_the_title($shop_page_id)  . '</span></a></span> ' . $delimiter;
@@ -261,7 +261,15 @@ function ascend_breadcrumbs() {
               $bparentpagelink = get_page_link($ascend['blog_link']); $bparenttitle = get_the_title($ascend['blog_link']);
               echo '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="'.$bparentpagelink. '"><span itemprop="title">' . $bparenttitle . '</span></a></span> ' . $delimiter . ' ';
             } 
-      echo $before . ' &ldquo;' . single_tag_title('', false) . '&ldquo;' . $after;
+      echo $before . single_tag_title('', false) . $after;
+
+  	} elseif ( is_tax('post_format') ) {
+    	$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+      	if( !empty($ascend['blog_link'])){ 
+            $bparentpagelink = get_page_link($ascend['blog_link']); $bparenttitle = get_the_title($ascend['blog_link']);
+            echo '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="'.$bparentpagelink. '"><span itemprop="title">' . $bparenttitle . '</span></a></span> ' . $delimiter . ' ';
+        } 
+      	echo $before .  $term->name . $after;
   
     } elseif ( is_author() ) {
        	global $author;

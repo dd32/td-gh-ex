@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action('wp_footer', 'ascend_header_extras_login_modal', 20);
 function ascend_header_extras_login_modal() {
 	global $ascend;
-		if(isset($ascend['header_extras']['login']) && $ascend['header_extras']['login'] == '1' && !is_user_logged_in()) { ?>
+		if(isset($ascend['header_extras']['login']) && $ascend['header_extras']['login'] == '1' || isset($ascend['topbar_account']) && $ascend['topbar_account'] != 'none' && !is_user_logged_in()){ ?>
 	        	<div class="mag-pop-modal mfp-hide mfp-with-anim kt-loggin-modal" id="kt-extras-modal-login" tabindex="-1" role="dialog" aria-hidden="true">
 	                <div class="pop-modal-content">
 	                    <div class="pop-modal-body">

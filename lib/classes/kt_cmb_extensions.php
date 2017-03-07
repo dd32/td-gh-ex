@@ -10,7 +10,9 @@ function ascend_cmb_sidebar_options() {
         'default' => __('Default', 'ascend')
     );
     $nonsidebars = array(
-        'homewidget',
+    	'homewidget',
+    	'header_extras_widget',
+        'topbar_widget',
         'footer_1',
         'footer_2',
         'footer_3',

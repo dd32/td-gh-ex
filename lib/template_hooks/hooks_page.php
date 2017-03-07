@@ -359,7 +359,7 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 					        endwhile;
                     	} elseif($type == 'product') {
 							while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
-                    			woocommerce_get_template_part( 'content', 'product' ); 
+                    			wc_get_template_part( 'content', 'product' ); 
                     		endwhile;
                     	} elseif($type == 'staff') {
                     		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 

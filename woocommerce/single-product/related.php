@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -47,7 +47,7 @@ $args = apply_filters('woocommerce_related_products_args', array(
 	'posts_per_page' 		=> $posts_per_page,
 	'orderby' 				=> $orderby,
 	'post__in' 				=> $related,
-	'post__not_in'			=> array($product->id)
+	'post__not_in'			=> array($product->get_id())
 ) );
 
 if(!empty($ascend['related_products_text'])) {
@@ -67,7 +67,7 @@ if ( $products->have_posts() ) : ?>
 
 			<?php while ( $products->have_posts() ) : $products->the_post();
 
-			 woocommerce_get_template_part( 'content', 'product' ); 
+			 wc_get_template_part( 'content', 'product' ); 
 
 			endwhile; ?>
 

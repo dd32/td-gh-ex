@@ -8,6 +8,9 @@ global $ascend;
   }
 ?>
 <div id="kad-mobile-banner" class="banner mobile-headerclass" data-mobile-header-sticky="<?php echo esc_attr($sticky);?>">
+<?php 
+        do_action('kadence_mobile_header_top');
+	?>
   <div class="container mobile-header-container kad-mobile-header-height">
         <?php 
         /* 

@@ -42,14 +42,12 @@ function ascend_setup() {
         'caption',
     ) );
 
-    //add_theme_support( 'custom-logo');
-
     // Indicate widget sidebars can use selective refresh in the Customizer.
     add_theme_support( 'customize-selective-refresh-widgets' );
 
     add_post_type_support( 'attachment', 'page-attributes' );
 
-    define( 'ASCEND_VERSION', '1.0.1' );
+    define( 'ASCEND_VERSION', '1.0.2' );
 
 	// Add Most image sizes (impossible to get all because of infinate possiblities)
 	add_image_size( 'kt_mosaic_large', 800, 800, true);
@@ -149,13 +147,6 @@ function ascend_setup() {
 }
 add_action('after_setup_theme', 'ascend_setup');
 
-/**
- * Handles JavaScript detection.
- */
-function ascend_javascript_detection() {
-    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-}
-add_action( 'wp_head', 'ascend_javascript_detection', 0 );
 
 
 /**

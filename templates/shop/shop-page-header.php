@@ -2,7 +2,7 @@
 	// Shop Page Header
 	global $ascend; 
 
-	$post_id = woocommerce_get_page_id('shop');
+	$post_id = wc_get_page_id('shop');
 	
 		if(isset($ascend['single_header_title_size'])){
 			$title_data = $ascend['single_header_title_size'];

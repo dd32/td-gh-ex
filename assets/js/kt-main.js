@@ -325,6 +325,10 @@ jQuery(document).ready(function ($) {
 			slider_arrows = container.data('slider-arrows'),
 			slider_auto = container.data('slider-auto'),
 			slider_type = container.data('slider-type');
+			var slick_rtl = false;
+			if($('body.rtl').length >= 1){
+				slick_rtl = true;
+			} 
 			if(slider_type == 'carousel') {
 				var sliders_show = container.data('slides-to-show');
 				if(sliders_show == null) {sliders_show = 1;}
@@ -339,6 +343,7 @@ jQuery(document).ready(function ($) {
 					autoplaySpeed: slider_speed,
 					fade: slider_animation,
 					pauseOnHover:false,
+					rtl:slick_rtl, 
 					dots: true,
 				});
 			}else if(slider_type == 'content-carousel') {
@@ -374,6 +379,7 @@ jQuery(document).ready(function ($) {
 					fade: slider_animation,
 					pauseOnHover:false,
 					dots: false,
+					rtl:slick_rtl, 
 					responsive: [
 							    {
 							      breakpoint: 1499,
@@ -427,6 +433,7 @@ jQuery(document).ready(function ($) {
 					pauseOnHover:false,
 					adaptiveHeight: true,
 					dots: false,
+					rtl:slick_rtl, 
 					asNavFor: thumbid,
 				});
 				$(thumbid).slick({
@@ -434,6 +441,7 @@ jQuery(document).ready(function ($) {
 				  	slidesToScroll: 1,
 				  	asNavFor: '#'+sliderid,
 				  	dots: false,
+				  	rtl:slick_rtl, 
 				  	centerMode: false,
 				  	focusOnSelect: true
 				});
@@ -447,6 +455,7 @@ jQuery(document).ready(function ($) {
 					autoplaySpeed: slider_speed,
 					fade: slider_animation,
 					pauseOnHover:false,
+					rtl:slick_rtl, 
 					adaptiveHeight: true,
 					dots: true,
 				});

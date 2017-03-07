@@ -129,6 +129,38 @@ function ascend_shop_page_title($show) {
 function ascend_trans_header() {
   	if(!ascend_display_pagetitle()) {
     	$trans_head = false;
+    	if(is_front_page()) {
+    		$post_id =  get_option( 'page_on_front' );
+    		$hs_behind = get_post_meta( $post_id, '_kad_transparent_header', true );
+    		if(isset($hs_behind) && $hs_behind == 'true') {
+            	$trans_head = true;
+            }
+    	} elseif(is_home()) {
+    		$post_id = get_option( 'page_for_posts' );
+        	$hs_behind = get_post_meta( $post_id, '_kad_transparent_header', true );
+    		if(isset($hs_behind) && $hs_behind == 'true') {
+            	$trans_head = true;
+            }
+    	} elseif (class_exists('woocommerce') && is_shop())  {
+	        $post_id = wc_get_page_id('shop');
+	        $hs_behind = get_post_meta( $post_id, '_kad_transparent_header', true );
+        	if(isset($hs_behind) && $hs_behind == 'true') {
+            	$trans_head = true;
+          	}
+	    } elseif(is_page() || is_single() || is_singular() ) {
+	    	global $post;
+    		if(is_search()){
+				$post_id = '';
+			} else if(is_404()){
+				$post_id = '';
+			} else {
+				$post_id = $post->ID;
+			}
+        	$hs_behind = get_post_meta( $post_id, '_kad_transparent_header', true );
+    		if(isset($hs_behind) && $hs_behind == 'true') {
+            	$trans_head = true;
+            }
+    	}
   	} else {
     	if(is_front_page()) {
       			global $ascend;

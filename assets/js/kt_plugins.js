@@ -166,7 +166,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
       for (var i = 0, l = sticked.length; i < l; i++) {
         var s = sticked[i],
-          elementTop = s.stickyWrapper.offset().top,
+          elementTop = parseInt(Math.max(0,s.stickyWrapper.offset().top), 10),
           etse = elementTop - s.topSpacing - extra;
 
         //update height in case of dynamic content

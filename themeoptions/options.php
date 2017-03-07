@@ -165,6 +165,7 @@
 		    'id' => 'header_settings',
 		    'header' => '',
 		    //'priority'=> '37',
+		    'customizer_width' => '450px',
     		'desc' => "<div class='redux-info-field'><h3>".__('Header Settings', 'ascend')."</h3></div>",
 		    'icon' => '',
 		    'fields' => array(
@@ -300,8 +301,8 @@
 			    'mode'     => 'checkbox',
 			    'options'  => array(
 			        'search'    => __('Search', 'ascend'),
-			        'login'     => __('Login/Register & my-account', 'ascend'),
-			        'cart'     	=> __('Mini Cart', 'ascend'),
+			        'login'     => __('Login/Register & my-account - woocommerce only', 'ascend'),
+			        'cart'     	=> __('Mini Cart - woocommerce only', 'ascend'),
 			        'widget'    => __('Widget area - customize in appearance > widgets', 'ascend'),
 			    ),
 			    'default' => array(
@@ -930,7 +931,7 @@ Redux::setSection( $opt_name, array(
     array(
         'id'=>'pagesubtitle_color',
         'type' => 'color',
-        'title' => __('Header Title Default Subtitle Color', 'ascend'), 
+        'title' => __('Header Subtitle Default Color', 'ascend'), 
         'transparent'=>false,
         'validate' => 'color',
         'default' => '#ffffff',
@@ -939,7 +940,7 @@ Redux::setSection( $opt_name, array(
     array(
         'id'=>'single_header_subtitle_size',
         'type' => 'slider', 
-        'title' => __('Header Title Font Size', 'ascend'),
+        'title' => __('Header Subtitle Font Size', 'ascend'),
         "default"       => "40",
         "min"       => "10",
         "step"      => "1",
@@ -948,7 +949,7 @@ Redux::setSection( $opt_name, array(
     array(
         'id'=>'single_header_subtitle_size_small',
         'type' => 'slider', 
-        'title' => __('Smaller Device Title font size', 'ascend'),
+        'title' => __('Smaller Device Subtitle Font Size', 'ascend'),
         "default"       => "20",
         "min"       => "5",
         "step"      => "1",
@@ -1668,6 +1669,7 @@ Redux::setSection( $opt_name, array(
 Redux::setSection( $opt_name, array(
     'id' => 'home_layout',
     'title' => __('Home Page Layout', 'ascend'),
+    'customizer' => false,
     'fields' => array(
        	array(
             'id'=>'home_sidebar_layout',
@@ -1716,6 +1718,7 @@ Redux::setSection( $opt_name, array(
 Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_latest_posts',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Latest Posts', 'ascend'),
 	    'fields' => array(
         array(
@@ -1793,6 +1796,7 @@ Redux::setSection( $opt_name, array(
 Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_tabs_products',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Product Carousel Tabs', 'ascend'),
 	    'fields' => array(
 	    	array(
@@ -1840,7 +1844,7 @@ Redux::setSection( $opt_name, array(
 	            'subtitle' => __('e.g. = Latest', 'ascend'),
 	        ),
          	array(
-	            'id'		=>'home_product_feat_column',
+	            'id'		=>'home_product_tabs_column',
 	            'type' 		=> 'slider', 
 	            'title' 	=> __('Choose how many columns are in each carousel', 'ascend'),
 	            'default'   => "4",
@@ -1886,6 +1890,7 @@ Redux::setSection( $opt_name, array(
 Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_image',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Image Menu', 'ascend'),
 	    'fields' => array(
         array(
@@ -1931,6 +1936,7 @@ Redux::setSection( $opt_name, array(
  Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_icon_menu',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Icon Menu', 'ascend'),
 	    'fields' => array(
            	array(
@@ -2013,6 +2019,7 @@ Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_portfolio_carousel',
 	    //'priority'=> '38',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Portfolio Carousel', 'ascend'),
 	    'fields' => array(
          array(
@@ -2124,6 +2131,7 @@ Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_portfolio_full',
 	    //'priority'=> '38',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Portfolio Grid', 'ascend'),
 	    'fields' => array(
            array(
@@ -2209,6 +2217,7 @@ Redux::setSection( $opt_name, array(
  Redux::setSection( $opt_name, array(
 	    'id' => 'home_layout_page_content',
 	    'subsection'       => true,
+	    'customizer' => false,
 	    'title' => __('Module Page Content', 'ascend'),
 	    'fields' => array(
            array(
@@ -2846,7 +2855,13 @@ Redux::setSection( $opt_name, array(
             'data' => 'sidebars',
             'default' => 'sidebar-primary',
             'width' => 'width:60%',
-        ), 
+        ),
+        array(
+            'id'		=>'default_showpagetitle',
+            'type' 		=> 'switch', 
+            'title' 	=> __('Display page title by default', 'ascend'),
+            "default"	=> 1,
+            ),
     ),
 ) );
 Redux::setSection( $opt_name, array(
@@ -3121,7 +3136,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'category_post_grid_column',
             'type' => 'select',
-            'title' => __('Category Display Type', 'ascend'), 
+            'title' => __('Category Display Columns', 'ascend'), 
             'options' => array('2' => __('Two Column', 'ascend'),'3' => __('Three Column', 'ascend'), '4' => __('Four Column', 'ascend')),
             'width' => 'width:60%',
             'default' => '3',

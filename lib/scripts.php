@@ -44,6 +44,14 @@ function ascend_scripts() {
 }
 add_action('wp_enqueue_scripts', 'ascend_scripts', 100);
 
+/**
+ * Handles JavaScript detection.
+ */
+function ascend_javascript_detection() {
+    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action( 'wp_head', 'ascend_javascript_detection', 0 );
+
 function ascend_lightbox_text() {
   	global $ascend; 
   	if(!empty($ascend['lightbox_of_text'])) {$of_text = $ascend['lightbox_of_text'];} else {$of_text = __('of', 'ascend');}

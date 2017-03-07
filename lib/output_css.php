@@ -156,7 +156,7 @@ function ascend_custom_css() {
 	    $logo_switch = '';
 	}
 	if(isset($ascend['mobile_logo_switch']) && $ascend['mobile_logo_switch'] == '1' && isset($ascend['mobile_logo']['id']) && !empty($ascend['mobile_logo']['id']) && isset($ascend['trans_logo_mobile']['id']) && !empty($ascend['trans_logo_mobile']['id'])) {
-	    $mobile_logo_switch = 'body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .ascend-mobile-trans-logo {display: block;}body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .ascend-mobile-logo {display: none;}'; 
+	    $mobile_logo_switch = 'body.trans-header div:not(.is-sticky) > .mobile-headerclass .ascend-mobile-trans-logo {display: block;}body.trans-header div:not(.is-sticky) > .mobile-headerclass .ascend-mobile-logo {display: none;}'; 
 	} else {
 	    $mobile_logo_switch = '';
 	}
@@ -206,6 +206,8 @@ function ascend_custom_css() {
 		$header_logo_width = '';
 	}
 	$titlecss = '';
+	$mobile_height_small = '';
+	$mobile_height 	= '';
 	if(is_front_page()) {
 			if(isset($ascend['home_page_title_max_size']) ) {
 				$t_large_size 	= $ascend['home_page_title_max_size'];
@@ -237,6 +239,12 @@ function ascend_custom_css() {
 			} else {
 				$height_small 	= '';
 			}
+			if(isset($ascend['home_mobile_page_title_height'])) {
+				$mobile_height 	= '.titleclass.kt_mobile_slider .page-header  {height:'.$ascend['home_mobile_page_title_height'].'px;}';
+			}
+			if(isset($ascend['home_mobile_page_title_height_min'])) {
+				$mobile_height_small =  '@media (max-width: 768px) {.titleclass.kt_mobile_slider .page-header {height:'.$ascend['home_mobile_page_title_height_min'].'px;}}';
+			} 
 
 	} 
 	if(!empty($t_large_size)) {
@@ -260,14 +268,14 @@ function ascend_custom_css() {
 		$titlecss .= '@media (max-width: 768px) {.titleclass .subtitle{font-size:'.$ascend['single_header_subtitle_size_small'].'px;}}';
 	}
 	if(!empty($height)) {
-		$titlecss .= '.titleclass .page-header {min-height:'.$height.'px;}';
+		$titlecss .= '.titleclass .page-header {height:'.$height.'px;}';
 	} elseif(isset($ascend['page_title_height'])) {
-		$titlecss .= '.titleclass .page-header  {min-height:'.$ascend['page_title_height'].'px;}';
+		$titlecss .= '.titleclass .page-header  {height:'.$ascend['page_title_height'].'px;}';
 	}
 	if(!empty($height_small)) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {min-height:'.$height_small.'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.$height_small.'px;}}';
 	} elseif(isset($ascend['page_title_height_min'])) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {min-height:'.$ascend['page_title_height_min'].'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.$ascend['page_title_height_min'].'px;}}';
 	}
 	if(isset($ascend['pagetitle_align'])) {
 	    $titlealign = '.page-header {text-align:'.$ascend['pagetitle_align'].';}'; 
@@ -291,7 +299,7 @@ function ascend_custom_css() {
 	}
 
 	$kad_custom_css = '<style type="text/css" id="kt-custom-css">';
-	$kad_custom_css .= $primary_color.$header_height.$header_width.$header_logo_width.$mobile_subnav.$mobile_slider.$tbheight.$mhheight.$mhheight_items.$hbg_color.$trans_hbg_color.$trans_second_color.$titlecss.$stminheight.$secondmenu_font_color.$menu_font_color.$titlealign.$dropdown_font.$social_border.$dbg_color.$product_button.$title_padding.$notavailable_placeholder_text.$logo_switch.$mobile_logo_switch.$title_uppercase.$subtitle_uppercase.$post_author.$post_cats.$post_comments.$post_postdate.$custom_css;
+	$kad_custom_css .= $primary_color.$header_height.$header_width.$header_logo_width.$mobile_subnav.$mobile_slider.$tbheight.$mhheight.$mhheight_items.$hbg_color.$trans_hbg_color.$trans_second_color.$titlecss.$stminheight.$mobile_height.$mobile_height_small.$secondmenu_font_color.$menu_font_color.$titlealign.$dropdown_font.$social_border.$dbg_color.$product_button.$title_padding.$notavailable_placeholder_text.$logo_switch.$mobile_logo_switch.$title_uppercase.$subtitle_uppercase.$post_author.$post_cats.$post_comments.$post_postdate.$custom_css;
 	$kad_custom_css .= '</style>';
 
 	echo $kad_custom_css;

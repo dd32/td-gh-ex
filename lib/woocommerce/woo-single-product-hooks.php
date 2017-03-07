@@ -77,7 +77,7 @@ function ascend_single_woocommerce_support() {
             'ignore_sticky_posts'   => 1,
             'orderby'               => 'rand',
             'post__in'              => $related,
-            'post__not_in'          => array($product->id)
+            'post__not_in'          => array($product->get_id())
         );
         return $args;
     }

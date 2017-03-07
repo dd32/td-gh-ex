@@ -115,7 +115,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 	}
 	// For logo Above menu
 	if(isset($side) && ($side == 'left' || $side == 'right')) {
-		if (isset($header_extras)){
+		if (isset($header_extras) && !empty($header_extras)){
 			$n = 0;
 			foreach ($header_extras as $key=>$value) {
 				if($value == 1) {
@@ -137,7 +137,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 	// For vertical header lets see if cart is after search
 	$outerclass = '';
 	if($class == 'sf-vertical') {
-		if (isset($header_extras)){
+		if (isset($header_extras) && !empty($header_extras)){
 			$search_in_loop = 9;
 			$i = 1;
 			foreach ($header_extras as $key=>$value) {
@@ -160,7 +160,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 		 /* 
 	    */
 	    do_action('kadence_before_header_extras');
-	    if (isset($header_extras)):
+	    if (isset($header_extras) && !empty($header_extras)):
 			foreach ($header_extras as $key=>$value) {
 
 				switch($key) {
