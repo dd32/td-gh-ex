@@ -23,7 +23,15 @@ while ( have_posts() ) : the_post(); ?>
     <div id="content-vw" class="container">
         <div class="middle-align">       
     		<div class="col-md-12">
-                <?php the_content(); ?>                       
+                <?php the_content();
+                wp_link_pages( array(
+                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',
+                    'after'       => '</div>',
+                    'link_before' => '<span>',
+                    'link_after'  => '</span>',
+                    'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>%',
+                    'separator'   => '<span class="screen-reader-text">, </span>',
+                ) ); ?>               
             </div>        
             <div class="clear"></div>    
         </div>

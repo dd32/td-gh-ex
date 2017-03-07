@@ -212,14 +212,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function bb_mobile_application_customize_preview_js() {
-	wp_enqueue_script( 'bb_mobile_application_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'bb_mobile_application_customize_preview_js' );
-
 
 /**
  * Singleton class for handling the theme's customizer integration.
@@ -295,7 +287,7 @@ final class bb_mobile_application_customize {
 				$manager,
 				'example_1',
 				array(
-					'title'    => esc_html__( 'BB Mobile Application Pro', 'bb-mobile-application' ),
+					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-mobile-application' ),
 					'pro_url'  => 'http://www.burhanuddinbohra.com/product/bb-mobile-application-theme/'
 				)

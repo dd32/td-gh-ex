@@ -13,7 +13,7 @@
           <h3><?php echo esc_html(get_theme_mod('bb_mobile_application_our_newsletter','')); ?></h3>
           <div class="sub-title"><?php echo esc_html(get_theme_mod('bb_mobile_application_our_newsletter_desc','')); ?></div>
           <div class="news-form">
-            <?php echo get_theme_mod('bb_mobile_application_our_newsletter_shortcode',''); ?>
+            <?php echo esc_html(get_theme_mod('bb_mobile_application_our_newsletter_shortcode','')); ?>
   		      <div class="clearfix"></div>
           </div> 
         </div>
@@ -33,7 +33,7 @@
           	<div class="col-md-8"><p><?php echo get_theme_mod('bb_mobile_application_contact-number',''); ?></p></div>
           	<div class="clearfix"></div>
     	      <div class="col-md-4"><p><?php _e('Email:','bb-mobile-application'); ?></p></div>
-        	  <div class="col-md-8"><p><a href="<?php echo esc_attr(get_theme_mod('bb_mobile_application_cont_email','')); ?>"><?php echo esc_attr(get_theme_mod('bb_mobile_application_cont_email','')); ?></a></p></div>
+        	  <div class="col-md-8"><p><a href="<?php echo esc_html(get_theme_mod('bb_mobile_application_cont_email','')); ?>"><?php echo esc_attr(get_theme_mod('bb_mobile_application_cont_email','')); ?></a></p></div>
         	  <div class="clearfix"></div>
     	      <div class="col-md-4"><p><?php _e('Website:','bb-mobile-application'); ?></p></div>
     	      <div class="col-md-8"><p><?php echo esc_html(get_theme_mod('bb_mobile_application_website','')); ?></p></div>
@@ -45,7 +45,7 @@
       </div>
       <div class="inner">
           <div class="copyright text-center">
-            <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('&copy; 2017 BB Mobile Application theme by ',"bb-mobile-application"))); ?> <a href="http://www.burhanuddinbohra.com/bb-mobile-application-theme/" target="_blank">burhanuddinbohra</a></p>
+            <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('&copy; 2017 BB Mobile Application theme by ',"bb-mobile-application"))); ?> <a href="http://www.burhanuddinbohra.com/bb-mobile-application-theme/" target="_blank"><?php _e('burhanuddinbohra','bb-mobile-application'); ?></a></p>
           </div>
           <div class="clear"></div>           
       </div>

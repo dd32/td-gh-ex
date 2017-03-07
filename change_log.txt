@@ -9,3 +9,6 @@ i) Fix author urls
 
 Version 1.1.3
 i) Fix requried points of data validation and other.
+
+Version 1.1.4
+i) Minor fixes

@@ -1,7 +1,7 @@
 ( function( api ) {
 
-	// Extends our custom "vw-education-lite" section.
-	api.sectionConstructor['vw-education-lite'] = api.Section.extend( {
+	// Extends our custom "bb-mobile-application" section.
+	api.sectionConstructor['bb-mobile-application'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

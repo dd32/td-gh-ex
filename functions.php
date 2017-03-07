@@ -64,7 +64,6 @@ function bb_mobile_application_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f1f1f1'
 	) );
-	add_editor_style( 'editor-style.css' );
 }
 endif;
 add_action( 'after_setup_theme', 'bb_mobile_application_setup' );
@@ -155,7 +154,6 @@ function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
 	wp_enqueue_style( 'bb-mobile-application-basic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bb-mobile-application-editor-style', get_template_directory_uri().'/editor-style.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
 	wp_enqueue_style( 'bb-mobile-application-effect', get_template_directory_uri().'/css/effect.css' );
 
 	if ( is_home() || is_front_page() ) { 
@@ -185,7 +183,4 @@ add_action( 'wp_enqueue_scripts', 'bb_mobile_application_scripts' );
 require get_template_directory() . '/inc/template-tags.php';
 /* Customizer additions. */
 require get_template_directory() . '/inc/customizer.php';
-
-/* Load Jetpack compatibility file. */
-require get_template_directory() . '/inc/jetpack.php';
 ?>
