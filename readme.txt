@@ -136,3 +136,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Now Storto is no longer compatible with WordPress 4.3 version or lower
 * Added icons to Categories Widget and Archives Widget
 * Minor bug fixes
+
+= Version 1.4.7 =
+* Fixed some strings with escaping

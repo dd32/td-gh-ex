@@ -66,9 +66,9 @@ if ( ! function_exists( 'storto_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function storto_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -77,19 +77,32 @@ function storto_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+	
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	$posted_on = sprintf(
-		_x( '<i class="fa fa-clock-o spaceRight"></i>%s', 'post date', 'storto' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	echo '<span class="posted-on"><i class="fa fa-clock-o spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 
-	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceRight"></i>%s', 'post author', 'storto' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+}
+endif;
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+if ( ! function_exists( 'storto_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for categories, tags and edit link.
+ */
+function storto_entry_footer() {
+	if ( 'post' == get_post_type() ) {
+		$categories_list = get_the_category_list( ' ' );
+		if ( $categories_list && storto_categorized_blog() ) {
+			echo '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>' . $categories_list . '</div>';
+		}
+		$tags_list = get_the_tag_list( '', ' ' );
+		if ( $tags_list ) {
+			echo '<div class="dataBottom"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</div>';
+		}
+	}
 
+	edit_post_link( esc_html__( 'Edit', 'storto' ), '<span class="edit-link spaceRight"><i class="fa fa-pencil-square-o spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
 
@@ -99,29 +112,24 @@ endif;
  * @return bool
  */
 function storto_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'storto_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'storto_categories' );
+	
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$categories = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = count( $categories );
 
 		set_transient( 'storto_categories', $all_the_cool_cats );
 	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so storto_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so storto_categorized_blog should return false.
-		return false;
-	}
+	
+	return $all_the_cool_cats > 1;
 }
 
 /**

@@ -34,37 +34,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer smallPart">
-		<?php
-			$category_list = get_the_category_list( ' ' );
-
-			$tag_list = get_the_tag_list( '', ' ' );
-
-			if ( ! storto_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-tags"></i>%2$s</div>';
-				} else {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-link"></i><a href="%3$s" rel="bookmark">%3$s</a>.</div>';
-				}
-
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o"></i>%1$s<br/><i class="fa spaceRight fa-tags"></i>%2$s</div>';
-				} else {
-					$meta_text = '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o"></i>%1$s</div>';
-				}
-
-			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
-
-		<?php edit_post_link( esc_html__( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
+		<?php storto_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
