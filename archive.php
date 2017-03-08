@@ -55,7 +55,7 @@ get_header(); ?>
                                 <span class="entry-author"> <?php the_author(); ?></span>
                                 <span class="entry-comments"> <?php comments_number( __('0 Comments','bb-mobile-application'), __('0 Comments','bb-mobile-application'), __('% Comments','bb-mobile-application') ); ?></span>
                             </div>
-                            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php _e( 'Read Full', 'bb-mobile-application' ); ?>"><?php _e('Read Full','bb-mobile-application'); ?></a>
+                            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read Full', 'bb-mobile-application' ); ?>"><?php _e('Read Full','bb-mobile-application'); ?></a>
                         </div>
                         <div class="clearfix"></div> 
                     </div>

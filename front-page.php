@@ -79,7 +79,7 @@ get_header(); ?>
 
   <?php /** post section **/ ?>
   <section id="our-services">
-    <div class="innerlightbox" style="background-color:;background-image:url('')">
+    <div class="innerlightbox">
 		  <div class="container">
         <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-8 col-sm-8 col-xs-12'); ?>>          
           <?php if ( have_posts() ) :

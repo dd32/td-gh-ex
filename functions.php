@@ -56,7 +56,7 @@ function bb_mobile_application_setup() {
 	) );
 	add_image_size('bb-mobile-application-homepage-thumb',240,145,true);
 	
-       register_nav_menus( array(
+    register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'bb-mobile-application' ),
 		'footer'	=> __('Footer Menu', 'bb-mobile-application'),
 	) );
@@ -156,7 +156,7 @@ function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bb-mobile-application-effect', get_template_directory_uri().'/css/effect.css' );
 
 	if ( is_home() || is_front_page() ) { 
-		wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
+		wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 		wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 		wp_enqueue_script( 'bb-mobile-application-custom-front', get_template_directory_uri() . '/js/custom-front.js', array('jquery') ,'',true);
 	}
