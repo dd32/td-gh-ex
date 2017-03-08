@@ -109,42 +109,43 @@ function kt_get_srcset($width,$height,$url,$id) {
     return;
   }
   // If possible add in our images on the fly sizes
-  $ext = substr($image_meta['file'], strrpos($image_meta['file'], "."));
-  $pathflyfilename = str_replace($ext,'-'.$width.'x'.$height.'' . $ext, $image_meta['file']);
-  $pathretinaflyfilename = str_replace($ext, '-'.$width.'x'.$height.'@2x' . $ext, $image_meta['file']);
-  $flyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'' . $ext;
-  $retinaflyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'@2x' . $ext;
+  	$ext = substr($image_meta['file'], strrpos($image_meta['file'], "."));
+  	$pathflyfilename = str_replace($ext,'-'.$width.'x'.$height.'' . $ext, $image_meta['file']);
+  	$retina_w = $width*2;
+	$retina_h = $height*2;
+  	$pathretinaflyfilename = str_replace($ext, '-'.$retina_w.'x'.$retina_h . $ext, $image_meta['file']);
+  	$flyfilename = basename($image_meta['file'], $ext) . '-'.$width.'x'.$height.'' . $ext;
+  	$retinaflyfilename = basename($image_meta['file'], $ext) . '-'.$retina_w.'x'.$retina_h . $ext;
 
-  $upload_info = wp_upload_dir();
-  $upload_dir = $upload_info['basedir'];
+  	$upload_info = wp_upload_dir();
+  	$upload_dir = $upload_info['basedir'];
 
-  $flyfile = trailingslashit($upload_dir).$pathflyfilename;
-  $retinafile = trailingslashit($upload_dir).$pathretinaflyfilename;
-  if(empty($image_meta['sizes']) ){ $image_meta['sizes'] = array();}
+  	$flyfile = trailingslashit($upload_dir).$pathflyfilename;
+  	$retinafile = trailingslashit($upload_dir).$pathretinaflyfilename;
+  	if(empty($image_meta['sizes']) ){ 
+  		$image_meta['sizes'] = array();
+  	}
     if (file_exists($flyfile)) {
-      $kt_add_imagesize = array(
-        'kt_on_fly' => array( 
-          'file'=> $flyfilename,
-          'width' => $width,
-          'height' => $height,
-          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
-          )
-      );
-      $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize);
+      	$kt_add_imagesize = array(
+        	'kt_on_fly' => array( 
+          	'file'=> $flyfilename,
+          	'width' => $width,
+          	'height' => $height,
+          	'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          	)
+      	);
+      	$image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize);
     }
     if (file_exists($retinafile)) {
-      $size = getimagesize( $retinafile );
-      if(($size[0] == 2 * $width) && ($size[1] == 2 * $height) ) {
         $kt_add_imagesize_retina = array(
-        'kt_on_fly_retina' => array( 
-          'file'=> $retinaflyfilename,
-          'width' => 2 * $width,
-          'height' => 2 * $height,
-          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
-          )
+        	'kt_on_fly_retina' => array( 
+          	'file'=> $retinaflyfilename,
+          	'width' => 2 * $width,
+          	'height' => 2 * $height,
+          	'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          	)
         );
         $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize_retina);
-      }
     }
     if(function_exists ( 'wp_calculate_image_srcset') ){
       $output = wp_calculate_image_srcset(array( $width, $height), $url, $image_meta, $id);

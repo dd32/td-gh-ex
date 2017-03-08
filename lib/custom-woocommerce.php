@@ -75,7 +75,7 @@ function kadence_woo_related_products_limit() {
     'ignore_sticky_posts'   => 1,
     //'orderby'               => $orderby,
     'post__in'              => $related,
-    'post__not_in'          => array($product->id)
+    'post__not_in'          => array($product->get_id())
   );
   return $args;
 }
@@ -157,8 +157,8 @@ if ( ! function_exists( 'kt_woocommerce_single_variation_add_to_cart_button' ) )
     <div class="variations_button">
       <?php woocommerce_quantity_input( array( 'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 ) ); ?>
       <button type="submit" class="kad_add_to_cart headerfont kad-btn kad-btn-primary single_add_to_cart_button"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-      <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->id ); ?>" />
-      <input type="hidden" name="product_id" value="<?php echo absint( $product->id ); ?>" />
+      <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
+      <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
       <input type="hidden" name="variation_id" class="variation_id" value="" />
     </div>
     <?php
