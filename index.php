@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Silverclean WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Main Index
  *
@@ -51,7 +51,7 @@ get_header();
 						the_content();
 					else the_excerpt();
 					?></div><?php
-		
+
 				?></div><?php
 
 				?><div class="postmetadata"><?php
@@ -88,7 +88,7 @@ get_header();
 				?><h2><?php _e('Nothing Found', 'silverclean-lite'); ?></h2><?php
 				?><p><?php _e('Maybe a search will help ?', 'silverclean-lite'); ?></p><?php
 				get_search_form();
-			
+
 			else:
 
 				?><h2><?php _e('Not Found', 'silverclean-lite'); ?></h2><?php
@@ -111,4 +111,4 @@ get_header();
 
 	?></div><?php // End main content
 
-get_footer(); ?>
+get_footer();

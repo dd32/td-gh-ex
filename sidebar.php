@@ -1,16 +1,16 @@
 <?php
 /**
  *
- * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Silverclean WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Sidebar Template
  *
  */
 
 ?><ul id="sidebar"><?php
-	if ( ! dynamic_sidebar( 'Sidebar' ) ):
+	if ( ! dynamic_sidebar( 'sidebar' ) ):
 		?><li id="recent" class="widget-container"><?php
 	    	?><h3 class="widget-title"><?php _e( 'Recent Posts', 'silverclean-lite' ); ?></h3><?php
 			?><ul><?php wp_get_archives( 'type=postbypost&limit=5' ); ?></ul><?php

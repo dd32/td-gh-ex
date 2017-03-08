@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Silverclean WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -46,6 +46,9 @@ function silverclean_setup(){
 								)
 					);
 
+	/* Support HTML5 Search Form */
+	add_theme_support( 'html5', array( 'search-form' ) );
+
 }
 add_action('after_setup_theme', 'silverclean_setup');
 
@@ -57,16 +60,6 @@ function silverclean_content_width() {
 	}
 }
 add_action( 'template_redirect', 'silverclean_content_width' );
-
-/*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function silverclean_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'silverclean_render_title' );
-endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -115,10 +108,6 @@ add_action( 'widgets_init', 'silverclean_widgets_init' );
  */
 function silverclean_styles() {
 
-	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
-	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
-	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
-
 	$responsive_mode = get_theme_mod('silverclean_responsive_mode');
 
 	if ($responsive_mode != 'off'):
@@ -127,17 +116,35 @@ function silverclean_styles() {
 		$stylesheet = '/css/silverclean-unresponsive.min.css';
 	endif;
 
-	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
-	 * or the parent theme's version otherwise
-	 */
-	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
-		wp_register_style( 'silverclean', $stylesheet_directory_uri . $stylesheet );
-	else
-		wp_register_style( 'silverclean', $template_directory_uri . $stylesheet );
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheets in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		wp_register_style( 'silverclean', get_theme_file_uri( $stylesheet ) );
 
-	// Always enqueue style.css from the current theme
-	wp_register_style( 'silverclean-style', $stylesheet_directory_uri . '/style.css');
+		// Enqueue style.css from the current theme
+		wp_register_style( 'silverclean-style', get_theme_file_uri( '/style.css' ) );
+
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+
+		$template_directory_uri = get_template_directory_uri(); // Parent theme URI
+		$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
+		$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
+
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheets in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+			wp_register_style( 'silverclean', $stylesheet_directory_uri . $stylesheet );
+		else
+			wp_register_style( 'silverclean', $template_directory_uri . $stylesheet );
+
+		// Always enqueue style.css from the current theme
+		wp_register_style( 'silverclean-style', $stylesheet_directory_uri . '/style.css');
+
+	endif;
 
 	wp_enqueue_style( 'silverclean' );
 	wp_enqueue_style( 'silverclean-style' );
@@ -156,9 +163,13 @@ add_action( 'init', 'silverclean_editor_styles' );
  * Enqueue Javascripts
  */
 function silverclean_scripts() {
-	wp_enqueue_script('silverclean', get_template_directory_uri() . '/js/silverclean.min.js', array('jquery','hoverIntent'));
-    /* Threaded comments support */
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		wp_enqueue_script('silverclean', get_theme_file_uri( '/js/silverclean.min.js' ), array('jquery','hoverIntent'));
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+		wp_enqueue_script('silverclean', get_template_directory_uri() . '/js/silverclean.min.js', array('jquery','hoverIntent'));
+	endif;
+  /* Threaded comments support */
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'silverclean_scripts');
@@ -178,7 +189,9 @@ add_filter('post_class','silverclean_remove_hentry');
  * Remove "rel" tags in category links (HTML5 invalid)
  */
 function silverclean_remove_rel_cat( $text ) {
-	$text = str_replace(' rel="category"', "", $text); return $text;
+	$text = str_replace(' rel="category"', "", $text);
+  $text = str_replace(' rel="category tag"', ' rel="tag"', $text); 
+  return $text;
 }
 add_filter( 'the_category', 'silverclean_remove_rel_cat' );
 
@@ -190,6 +203,12 @@ function silverclean_excerpt_more( $more ) {
 	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'silverclean-lite') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'silverclean_excerpt_more' );
+
+function silverclean_content_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'silverclean-lite') .'</a></div>';
+}
+add_filter( 'the_content_more_link', 'silverclean_content_more' );
 
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
@@ -279,5 +298,3 @@ function silverclean_adjacent_image_link($prev = true) {
  */
 
 require_once 'inc/customizer/customizer.php';
-
-?>

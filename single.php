@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Silverclean WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Single Post Template
  *
@@ -19,7 +19,7 @@ get_header();
 			while(have_posts()) : the_post();
 
 			?><div id="post-<?php the_ID(); ?>" <?php post_class("single-post"); ?>><?php
-		
+
 			?><div class="post-content"><?php
 			?><div class="postmetadata"><?php
 				if ( '' != get_the_post_thumbnail() ):	// As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()
@@ -59,9 +59,9 @@ get_header();
 				'echo'             => 1
 			);
 			wp_link_pages( $args );
-			
+
 			?></div><?php // end div post
-		
+
 			// Display comments section only if comments are open or if there are comments already.
 			if ( comments_open() || get_comments_number()!=0 ):
 				?><hr /><?php
@@ -106,11 +106,11 @@ get_header();
 			?></div><?php
 
 		?></div><?php // End page container
-		
+
 		?><div id="sidebar-container" class="right"><?php
 			get_sidebar();
 		?></div><?php // End sidebar column
 
 	?></div><?php // End main content
 
-get_footer(); ?>
+get_footer();
