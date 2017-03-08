@@ -1,8 +1,8 @@
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * BoldR Lite CSS (unresponsive)
  *
@@ -241,6 +241,7 @@ fieldset {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea,
@@ -271,6 +272,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -560,7 +562,7 @@ or wrap each row of columns in a <div class="row"> */
 
 #navbar ul li,
 #navbar ul li a,
-#nav-search #s {
+#nav-search .search-field {
 	transition: all .5s;
 	-moz-transition: all .5s;
 	-webkit-transition: all .5s;
@@ -642,20 +644,20 @@ or wrap each row of columns in a <div class="row"> */
 	width: 190px;
 }
 
-#searchform {
+.search-form {
 	margin: 15px 0;
 	position: relative;
 }
 
-#searchform #s {
-	width: 160px;
+.search-form .search-field {
+	width: 170px;
 }
 
 #searchform label {
-	display: none;
+	position: relative;
 }
 
-#searchform #searchsubmit {
+.search-form .search-submit {
 	height: 30px;
 	width: 30px;
 	margin: 0;
@@ -848,7 +850,7 @@ h1.entry-title {
 	background-color: #25ceff;
 	background-image: url('../img/arrow-right.png');
 	background-position: 100% center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
     display: block;
     float: left;
     height: 30px;
@@ -956,7 +958,7 @@ h1.entry-title {
 	max-width: 595px;
 }
 
-.single-post .post-contents {	
+.single-post .post-contents {
 	float: none;
 	width: 595px;
 	margin-bottom: 20px;
@@ -1110,7 +1112,7 @@ h1.entry-title {
 	background-color: #25CEFF;
 	background-image: url('../img/arrow-right.png');
 	background-position: 100% center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
     display: block;
     float:right;
     height: 30px;
@@ -1249,7 +1251,7 @@ h1.entry-title {
 /* #Comment form */
 
 p.form-allowed-tags {
-	display: none; 
+	display: none;
 }
 
 p.comment-form-author,
@@ -1260,7 +1262,7 @@ p.comment-form-url
 }
 
 #respond #commentform label .required {
-	color: red; 
+	color: red;
 }
 
 #cancel-comment-reply-link {
@@ -1345,9 +1347,19 @@ p.comment-form-url
 }
 
 /* Search */
-#searchform div {
-	position: relative;
+#sidebar .search-form {
+	padding: 0;
 }
+
+.search-form .search-field::-webkit-input-placeholder { color: #fff; }
+.search-form .search-field::-moz-placeholder { color: #fff; }
+.search-form .search-field:-ms-input-placeholder { color: #fff; }
+.search-form .search-field:-moz-placeholder { color: #fff; }
+
+.search-form .search-field:focus::-webkit-input-placeholder { color: transparent }
+.search-form .search-field:focus::-moz-placeholder { color: transparent; }
+.search-form .search-field:focus:-ms-input-placeholder { color: transparent; }
+.search-form .search-field:focus:-moz-placeholder { color: transparent; }
 
 /* Calendar */
 
@@ -1690,7 +1702,7 @@ blockquote, blockquote p {
 	font-style: italic;
 }
 
-blockquote {	
+blockquote {
 	margin: 0 40px 20px 40px;
 	padding: 10px 20px;
 	border-left: 3px solid #DDD;
@@ -1747,7 +1759,7 @@ th {
 }
 
 tr {
-	 
+
 }
 
 tr:nth-child(even) {
@@ -1825,6 +1837,7 @@ label {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea {
@@ -1845,6 +1858,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -1852,9 +1866,11 @@ textarea:focus {
 	color: #fff;
 	border: none;
 	box-shadow: none;
+	outline: none;
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"] {
 	height: 30px;
@@ -2085,4 +2101,22 @@ a img.aligncenter {
 
 .gallery-caption {
 	font-size: 80%;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    clip: auto !important;
+    display: block;
+    height: auto;
+    left: 5px;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
 }

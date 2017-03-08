@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -22,7 +22,7 @@ function boldr_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('boldr', get_template_directory() . '/languages');
+	load_theme_textdomain('boldr-lite', get_template_directory() . '/languages');
 
 	/* Feed links support */
 	add_theme_support( 'automatic-feed-links' );
@@ -54,6 +54,9 @@ function boldr_setup(){
 								)
 					);
 
+	/* Support HTML5 Search Form */
+	add_theme_support( 'html5', array( 'search-form' ) );
+
 }
 add_action('after_setup_theme', 'boldr_setup');
 
@@ -68,16 +71,6 @@ function boldr_content_width() {
 		$content_width = 920;
 }
 add_action( 'template_redirect', 'boldr_content_width' );
-
-/*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function boldr_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'boldr_render_title' );
-endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -101,10 +94,10 @@ function boldr_add_menu_parent_class( $items ) {
 	}
 	foreach ( $items as $item ) {
 		if ( in_array( $item->ID, $parents ) ) {
-			$item->classes[] = 'menu-parent-item'; 
+			$item->classes[] = 'menu-parent-item';
 		}
 	}
-	return $items;    
+	return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'boldr_add_menu_parent_class' );
 
@@ -113,7 +106,7 @@ add_filter( 'wp_nav_menu_objects', 'boldr_add_menu_parent_class' );
  */
 function boldr_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Default Sidebar', 'boldr' ),
+		'name'          => __( 'Default Sidebar', 'boldr-lite' ),
 		'id'            => 'sidebar',
 		'description'   => '',
 	    'class'         => '',
@@ -123,9 +116,9 @@ function boldr_widgets_init() {
 		'after_title'   => '</h3>',
 		)
 	);
-	
+
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'boldr' ),
+		'name'          => __( 'Footer', 'boldr-lite' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
@@ -144,29 +137,43 @@ add_action( 'widgets_init', 'boldr_widgets_init' );
  */
 function boldr_styles() {
 
-	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
-	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
-	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
-
 	$responsive_mode = get_theme_mod('boldr_responsive_mode');
-	
+
 	if ($responsive_mode != 'off'):
 		$stylesheet = '/css/boldr.min.css';
 	else:
 		$stylesheet = '/css/boldr-unresponsive.min.css';
 	endif;
 
-	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-	 * or the parent theme's version otherwise
-	 */
-	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
-		wp_register_style( 'boldr', $stylesheet_directory_uri . $stylesheet );
-	else
-		wp_register_style( 'boldr', $template_directory_uri . $stylesheet );				
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		wp_register_style( 'boldr', get_theme_file_uri( $stylesheet ) );
 
-	// Always enqueue style.css from the current theme
-	wp_register_style( 'boldr-style', $stylesheet_directory_uri . '/style.css');
+		// Enqueue style.css from the current theme
+		wp_register_style( 'boldr-style', get_theme_file_uri( '/style.css' ) );
+
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+
+		$template_directory_uri = get_template_directory_uri(); // Parent theme URI
+		$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
+		$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
+
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+			wp_register_style( 'boldr', $stylesheet_directory_uri . $stylesheet );
+		else
+			wp_register_style( 'boldr', $template_directory_uri . $stylesheet );
+
+		// Always enqueue style.css from the current theme
+		wp_register_style( 'boldr-style', $stylesheet_directory_uri . '/style.css');
+
+	endif;
 
 	wp_enqueue_style( 'boldr' );
 	wp_enqueue_style( 'boldr-style' );
@@ -190,9 +197,14 @@ add_action( 'init', 'boldr_editor_styles' );
  * Enqueue Javascripts
  */
 function boldr_scripts() {
-	wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery','hoverIntent'));
-    /* Threaded comments support */
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		wp_enqueue_script('boldr', get_theme_file_uri( '/js/boldr.min.js' ), array('jquery','hoverIntent'));
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+		wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery','hoverIntent'));
+	endif;
+  /* Threaded comments support */
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'boldr_scripts');
@@ -212,7 +224,9 @@ add_filter('post_class','boldr_remove_hentry');
  * Remove "rel" tags in category links (HTML5 invalid)
  */
 function boldr_remove_rel_cat( $text ) {
-	$text = str_replace(' rel="category"', "", $text); return $text;
+	$text = str_replace(' rel="category"', "", $text); 
+  $text = str_replace(' rel="category tag"', ' rel="tag"', $text);
+  return $text;
 }
 add_filter( 'the_category', 'boldr_remove_rel_cat' );
 
@@ -221,9 +235,15 @@ add_filter( 'the_category', 'boldr_remove_rel_cat' );
  */
 function boldr_excerpt_more( $more ) {
 	global $post;
-	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr') .'</a></div>';
+	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr-lite') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'boldr_excerpt_more' );
+
+function boldr_content_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'boldr-lite') .'</a></div>';
+}
+add_filter( 'the_content_more_link', 'boldr_content_more' );
 
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
@@ -249,7 +269,7 @@ function boldr_trim_excerpt($text = '') {
 		if ( ( preg_match('/<!--more(.*?)?-->/', $post->post_content ) || preg_match('/<!--nextpage-->/', $post->post_content ) ) && strpos($text,$excerpt_more) === false ) {
 		 $text .= $excerpt_more;
 		}
-		
+
 	}
 	return apply_filters('boldr_trim_excerpt', $text, $raw_excerpt);
 }
@@ -274,9 +294,9 @@ function boldr_dropdown_nav_menu () {
 		}
 		$menu_list .= '</select>';
    		// $menu_list now ready to output
-   		echo $menu_list;    
+   		echo $menu_list;
 		}
-    } 
+    }
 }
 
 /*
@@ -290,12 +310,12 @@ function boldr_page_has_comments_nav() {
 function boldr_page_has_next_comments_link() {
 	global $wp_query;
 	$max_cpage = $wp_query->max_num_comment_pages;
-	$cpage = get_query_var( 'cpage' );	
+	$cpage = get_query_var( 'cpage' );
 	return ( $max_cpage > $cpage );
 }
 
 function boldr_page_has_previous_comments_link() {
-	$cpage = get_query_var( 'cpage' );	
+	$cpage = get_query_var( 'cpage' );
 	return ($cpage > 1);
 }
 
@@ -325,5 +345,3 @@ function boldr_adjacent_image_link($prev = true) {
  */
 
 require_once 'inc/customizer/customizer.php';
-
-?>

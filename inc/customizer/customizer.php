@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Customizer functions
  *
@@ -15,26 +15,33 @@ class BoldR_Customizer {
 		// Move default settings "background_color" in the same section as background image settings
 		// and rename the section just "Background"
 		$wp_customize->get_control( 'background_color' )->section = 'background_image';
-		$wp_customize->get_section( 'background_image' )->title = __('Background', 'boldr');
+		$wp_customize->get_section( 'background_image' )->title = __('Background', 'boldr-lite');
 
 		// Add new sections
+		if ( ! function_exists('wp_site_icon') ) :
 		$wp_customize->add_section( 'boldr_logo_favicon' , array(
-			'title'      => __( 'Logo & Favicon', 'boldr' ),
+			'title'      => __( 'Logo & Favicon', 'boldr-lite' ),
 			'priority'   => 20,
 		) );
+		else:
+		$wp_customize->add_section( 'boldr_logo_favicon' , array(
+			'title'      => __( 'Logo', 'boldr-lite' ),
+			'priority'   => 20,
+		) );
+		endif;
 
 		$wp_customize->add_section( 'boldr_blog_settings' , array(
-			'title'      => __( 'Blog Settings', 'boldr' ),
+			'title'      => __( 'Blog Settings', 'boldr-lite' ),
 			'priority'   => 80,
 		) );
 
 		$wp_customize->add_section( 'boldr_misc_settings' , array(
-			'title'      => __( 'Misc', 'boldr' ),
+			'title'      => __( 'Misc', 'boldr-lite' ),
 			'priority'   => 100,
 		) );
 
 		$wp_customize->add_section( 'boldr_more' , array(
-			'title'      => __( 'More', 'boldr' ),
+			'title'      => __( 'More', 'boldr-lite' ),
 			'priority'   => 130,
 		) );
 
@@ -46,8 +53,8 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control( $wp_customize, 'boldr_logo',
 				array(
-					'label'      => __( 'Upload your logo', 'boldr' ),
-					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'boldr'),
+					'label'      => __( 'Upload your logo', 'boldr-lite' ),
+					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'boldr-lite'),
 					'section'    => 'boldr_logo_favicon',
 					'settings'   => 'boldr_logo',
 				)
@@ -55,20 +62,22 @@ class BoldR_Customizer {
 		);
 
 		// Setting and control for favicon
-		$wp_customize->add_setting( 'boldr_favicon' , array(
-			'default'     => '',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control( $wp_customize, 'boldr_favicon',
-				array(
-					'label'			=> __( 'Upload a custom favicon', 'boldr' ),
-					'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'boldr'),
-					'section'		=> 'boldr_logo_favicon',
-					'settings'		=> 'boldr_favicon',
+		if ( ! function_exists('wp_site_icon') ) :
+			$wp_customize->add_setting( 'boldr_favicon' , array(
+				'default'     => '',
+				'sanitize_callback' => 'esc_url_raw',
+			) );
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control( $wp_customize, 'boldr_favicon',
+					array(
+						'label'			=> __( 'Upload a custom favicon', 'boldr-lite' ),
+						'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'boldr-lite'),
+						'section'		=> 'boldr_logo_favicon',
+						'settings'		=> 'boldr_favicon',
+					)
 				)
-			)
-		);
+			);
+		endif;
 
 		// Setting and control for blog index content switch
 		$wp_customize->add_setting( 'boldr_blog_index_content' , array(
@@ -78,13 +87,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'boldr_blog_index_content',
 				array(
-					'label'		=> __( 'Blog Index Content', 'boldr' ),
+					'label'		=> __( 'Blog Index Content', 'boldr-lite' ),
 					'section'	=> 'boldr_blog_settings',
 					'settings'	=> 'boldr_blog_index_content',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'excerpt'	=> __( 'Excerpt', 'boldr' ),
-						'content'	=> __( 'Full content', 'boldr' )
+						'excerpt'	=> __( 'Excerpt', 'boldr-lite' ),
+						'content'	=> __( 'Full content', 'boldr-lite' )
 					)
 				)
 			)
@@ -98,13 +107,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'boldr_responsive_mode',
 				array(
-					'label'		=> __( 'Responsive Mode', 'boldr' ),
+					'label'		=> __( 'Responsive Mode', 'boldr-lite' ),
 					'section'	=> 'boldr_misc_settings',
 					'settings'	=> 'boldr_responsive_mode',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'boldr' ),
-						'off'	=> __( 'Off', 'boldr' )
+						'on'	=> __( 'On', 'boldr-lite' ),
+						'off'	=> __( 'Off', 'boldr-lite' )
 					)
 				)
 			)
@@ -118,13 +127,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'home_header_image',
 				array(
-					'label'		=> __( 'Display header on Homepage', 'boldr' ),
+					'label'		=> __( 'Display header on Homepage', 'boldr-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'home_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'boldr' ),
-						'off'	=> __( 'Off', 'boldr' )
+						'on'	=> __( 'On', 'boldr-lite' ),
+						'off'	=> __( 'Off', 'boldr-lite' )
 					)
 				)
 			)
@@ -137,13 +146,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'blog_header_image',
 				array(
-					'label'		=> __( 'Display header on Blog Index', 'boldr' ),
+					'label'		=> __( 'Display header on Blog Index', 'boldr-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'blog_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'boldr' ),
-						'off'	=> __( 'Off', 'boldr' )
+						'on'	=> __( 'On', 'boldr-lite' ),
+						'off'	=> __( 'Off', 'boldr-lite' )
 					)
 				)
 			)
@@ -156,13 +165,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'single_header_image',
 				array(
-					'label'		=> __( 'Display header on Single Posts', 'boldr' ),
+					'label'		=> __( 'Display header on Single Posts', 'boldr-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'single_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'boldr' ),
-						'off'	=> __( 'Off', 'boldr' )
+						'on'	=> __( 'On', 'boldr-lite' ),
+						'off'	=> __( 'Off', 'boldr-lite' )
 					)
 				)
 			)
@@ -175,13 +184,13 @@ class BoldR_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'pages_header_image',
 				array(
-					'label'		=> __( 'Display header on Pages', 'boldr' ),
+					'label'		=> __( 'Display header on Pages', 'boldr-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'pages_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'boldr' ),
-						'off'	=> __( 'Off', 'boldr' )
+						'on'	=> __( 'On', 'boldr-lite' ),
+						'off'	=> __( 'Off', 'boldr-lite' )
 					)
 				)
 			)
@@ -189,14 +198,14 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR upgrade message
 		$wp_customize->add_setting( 'boldr_upgrade', array(
-			'default'	=> 'http://www.iceablethemes.com/shop/boldr-pro/',
+			'default'	=> 'https://www.iceablethemes.com/shop/boldr-pro/',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
 			new BoldR_Button_Customize_Control( $wp_customize, 'boldr_upgrade',
 				array(
-					'label'			=> __( 'Get BoldR Pro', 'boldr' ),
-					'description'	=> __( 'Unleash the full potential of BoldR with tons of additional settings, advanced features and premium support.', 'boldr'),
+					'label'			=> __( 'Get BoldR Pro', 'boldr-lite' ),
+					'description'	=> __( 'Unleash the full potential of BoldR with tons of additional settings, advanced features and premium support.', 'boldr-lite'),
 					'section'		=> 'boldr_more',
 					'settings'		=> 'boldr_upgrade',
 					'type'			=> 'button',
@@ -206,14 +215,14 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR support forums message
 		$wp_customize->add_setting( 'boldr_support', array(
-			'default'	=> 'http://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/',
+			'default'	=> 'https://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
 			new BoldR_Button_Customize_Control( $wp_customize, 'boldr_support',
 				array(
-					'label'			=> __( 'BoldR Lite support forums', 'boldr' ),
-					'description'	=> __( 'Have a question? Need help?', 'boldr'),
+					'label'			=> __( 'BoldR Lite support forums', 'boldr-lite' ),
+					'description'	=> __( 'Have a question? Need help?', 'boldr-lite'),
 					'section'		=> 'boldr_more',
 					'settings'		=> 'boldr_support',
 					'type'			=> 'button',
@@ -223,14 +232,14 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR feedback message
 		$wp_customize->add_setting( 'boldr_feedback', array(
-			'default'	=> 'http://wordpress.org/support/view/theme-reviews/boldr-lite',
+			'default'	=> 'https://wordpress.org/support/view/theme-reviews/boldr-lite',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
 			new BoldR_Button_Customize_Control( $wp_customize, 'boldr_feedback',
 				array(
-					'label'			=> __( 'Rate BoldR Lite', 'boldr' ),
-					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'boldr'),
+					'label'			=> __( 'Rate BoldR Lite', 'boldr-lite' ),
+					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'boldr-lite'),
 					'section'		=> 'boldr_more',
 					'settings'		=> 'boldr_feedback',
 					'type'			=> 'button',
@@ -247,7 +256,7 @@ class BoldR_Customizer {
 			array( 'customize-controls' )
 		);
 
-		wp_register_script( 
+		wp_register_script(
 			  'boldr-customizer-section',
 			  get_template_directory_uri() . '/inc/customizer/js/boldr-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
@@ -255,7 +264,7 @@ class BoldR_Customizer {
 			  true
 		);
 		$boldr_customizer_section_l10n = array(
-			'upgrade_pro' => __( 'Upgrade to BoldR Pro!', 'boldr' ),
+			'upgrade_pro' => __( 'Upgrade to BoldR Pro!', 'boldr-lite' ),
 		);
 		wp_localize_script( 'boldr-customizer-section', 'boldr_customizer_section_l10n', $boldr_customizer_section_l10n );
 		wp_enqueue_script( 'boldr-customizer-section' );
@@ -299,7 +308,5 @@ function boldr_sanitize_on_off( $input ){
 }
 
 function boldr_sanitize_button( $input ){
-	return '';	
+	return '';
 }
-
-?>

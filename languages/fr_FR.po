@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.2\n"
 "POT-Creation-Date: 2015-07-10 17:21+0100\n"
-"PO-Revision-Date: 2015-07-10 17:28+0100\n"
+"PO-Revision-Date: 2016-06-15 16:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -74,8 +74,8 @@ msgid "Proudly powered by <a href=\"%s\" title=\"%s\">%s</a>."
 msgstr "Fièrement propulsé par <a href=\"%s\" title=\"%s\">%s</a>."
 
 #: ../footer.php:27
-msgid "http://wordpress.org/"
-msgstr "http://fr.wordpress.org/"
+msgid "https://wordpress.org/"
+msgstr "https://fr.wordpress.org/"
 
 #: ../footer.php:29
 msgid "WordPress"
@@ -256,8 +256,7 @@ msgstr "Transférez votre logo"
 
 #: ../inc/customizer/customizer.php:49
 msgid "If no logo is uploaded, the site title will be displayed instead."
-msgstr ""
-"Si aucun logo n'est défini, le nom de site sera affiché à la place."
+msgstr "Si aucun logo n'est défini, le nom de site sera affiché à la place."
 
 #: ../inc/customizer/customizer.php:63
 msgid "Upload a custom favicon"

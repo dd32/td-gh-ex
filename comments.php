@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Comments template
  *
@@ -11,22 +11,22 @@
 
 // Do not delete these lines
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-	die ( __('Please do not load this page directly. Thanks!', 'boldr' ) );
+	die ( __('Please do not load this page directly. Thanks!', 'boldr-lite' ) );
 
 if ( post_password_required() ):
-	?><p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'boldr'); ?></p><?php
+	?><p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'boldr-lite'); ?></p><?php
 	return;
 endif;
 
 if ( have_comments() ):
 	?><h3 id="comments"><?php
-		printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'boldr' ),
+		printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'boldr-lite' ),
 					number_format_i18n( get_comments_number() ),  get_the_title() );
 	?></h3><?php
 
 	?><ol class="commentlist"><?php
 	wp_list_comments( array(	'avatar_size' => 64,
-								'reply_text'=>'<div class="reply-button"><span>'.__('Reply', 'boldr').'</span></div>',
+								'reply_text'=>'<div class="reply-button"><span>'.__('Reply', 'boldr-lite').'</span></div>',
 							)
 					);
 	?></ol><?php
@@ -34,10 +34,10 @@ if ( have_comments() ):
 	if (boldr_page_has_comments_nav() ):
 	?><div class="comments_nav"><?php
 		if ( boldr_page_has_previous_comments_link() ):
-		?><div class="previous"><?php previous_comments_link( __('Older comments', 'boldr') ) ?></div><?php
+		?><div class="previous"><?php previous_comments_link( __('Older comments', 'boldr-lite') ) ?></div><?php
 		endif;
 		if ( boldr_page_has_next_comments_link() ):
-		?><div class="next"><?php next_comments_link( __('Newer comments', 'boldr') ) ?></div><?php
+		?><div class="next"><?php next_comments_link( __('Newer comments', 'boldr-lite') ) ?></div><?php
 		endif;
 	?></div><?php
 	endif;
@@ -46,7 +46,7 @@ else : // this is displayed if there are no comments so far
 
 	if ( comments_open() ) : // If comments are open, but there are no comments.
 	else : // comments are closed
-		?><p class="nocomments"><?php _e('Comments are closed.', 'boldr'); ?></p><?php
+		?><p class="nocomments"><?php _e('Comments are closed.', 'boldr-lite'); ?></p><?php
 	endif;
 
 endif;

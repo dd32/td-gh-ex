@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Page Template
  *
@@ -22,19 +22,19 @@ while(have_posts()) : the_post();
 
 				the_content();
 				$boldr_link_pages_args = array(
-					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr'),
+					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr-lite'),
 					'after'            => '</div>',
 					'link_before'      => '<span>',
 					'link_after'       => '</span>',
 					'next_or_number'   => 'number',
-					'nextpagelink'     => __('Next page', 'boldr'),
-					'previouspagelink' => __('Previous page', 'boldr'),
+					'nextpagelink'     => __('Next page', 'boldr-lite'),
+					'previouspagelink' => __('Previous page', 'boldr-lite'),
 					'pagelink'         => '%',
 					'echo'             => 1
 				);
 				wp_link_pages( $boldr_link_pages_args );
 				?><br class="clear" /><?php
-				edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />');
+				edit_post_link(__('Edit', 'boldr-lite'), '<span class="editlink">', '</span><br class="clear" />');
 				?><br class="clear" /><?php
 
 				// Display comments section only if comments are open or if there are comments already.
@@ -48,10 +48,10 @@ while(have_posts()) : the_post();
 				endif;
 
 	endwhile;
-	
+
 	else:
-		?><h2><?php _e('Not Found', 'boldr'); ?></h2><?php
-		?><p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p><?php
+		?><h2><?php _e('Not Found', 'boldr-lite'); ?></h2><?php
+		?><p><?php _e('What you are looking for isn\'t here...', 'boldr-lite'); ?></p><?php
 	endif;
 
 	?></div><?php // End page container
@@ -62,4 +62,4 @@ while(have_posts()) : the_post();
 
 ?></div><?php // End main content
 
-get_footer(); ?>
+get_footer();
