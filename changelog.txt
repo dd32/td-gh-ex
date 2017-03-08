@@ -35,3 +35,7 @@ iii) Minor bug fixes.
 Version 1.0.8 (06-03-2017)
 i) Fixed floating issue.
 ii) Added edit link in page for logged in users.
+
+Version 1.0.9 (08-03-2017)
+i) Fixed JS issues.
+ii) Fixed menu issue.

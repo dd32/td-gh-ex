@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="container">
         <div class="row responsiveLayout">
             <?php get_sidebar(); ?>
-            <div class="col-xs-12 col-sm-12 col-md-9 sidebar">
+            <div class="col-xs-12 col-sm-12 col-md-9 content">
                 <div class="blog-single-inner-page">
                 	<?php if ( have_posts() ) :
 						while ( have_posts() ) : the_post();

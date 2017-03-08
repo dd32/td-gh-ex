@@ -32,12 +32,14 @@
                             else { ?> <a href="<?php echo home_url(); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
                         </div>
                         <div id="box-top-mobile"></div>
-                        <div class="menu">
-                            <span class="menu-global menu-top"></span>
-                            <span class="menu-global menu-middle"></span>
-                            <span class="menu-global menu-bottom"></span>
-                        </div>
-                         <?php $astrology_defaults = array(
+                        <?php if(has_nav_menu('primary')): ?>
+                            <div class="menu">
+                                <span class="menu-global menu-top"></span>
+                                <span class="menu-global menu-middle"></span>
+                                <span class="menu-global menu-bottom"></span>
+                            </div>
+                        <?php endif;
+                            $astrology_defaults = array(
                                 'theme_location' => 'primary',
                                 'container'      => 'ul', 
                         		'menu_class'	=> 'offside',
