@@ -153,7 +153,6 @@ function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bb-mobile-application-font', bb_mobile_application_font_url(), array() );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
 	wp_enqueue_style( 'bb-mobile-application-basic-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bb-mobile-application-editor-style', get_template_directory_uri().'/editor-style.css' );
 	wp_enqueue_style( 'bb-mobile-application-effect', get_template_directory_uri().'/css/effect.css' );
 
 	if ( is_home() || is_front_page() ) { 
