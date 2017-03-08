@@ -60,35 +60,25 @@ if (!function_exists('novalite_require')) {
 	function novalite_require($folder) {
 	
 		if (isset($folder)) : 
-	
-			if ( ( !novalite_setting('novalite_loadsystem') ) || ( novalite_setting('novalite_loadsystem') == "mode_a" ) ) {
 		
-				$folder = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($folder);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
-				
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
-					
-						require_once $folder . $name;
-					
+			foreach ($files as $key => $value) {  
+
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+						
+					if ( !is_dir( $dir . $value) ) { 
+							
+						require_once $dir . $value;
+						
 					} 
-				}  
-			
-			} else if ( novalite_setting('novalite_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
+					
+				} 
+
+			}  
 				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-					
-						require_once get_template_directory()."/".$folder.$filename;
-					
-					}
-				}
-			}
 		
 		endif;
 		
@@ -104,39 +94,26 @@ if (!function_exists('novalite_enqueue_script')) {
 
 	function novalite_enqueue_script($folder) {
 	
-		if (isset($folder)) : 
+		if ( isset($folder) ) : 
 	
-			if ( ( !novalite_setting('novalite_loadsystem') ) || ( novalite_setting('novalite_loadsystem') == "mode_a" ) ) {
-		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
+			foreach ($files as $key => $value) {  
 
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 						
-						wp_enqueue_script( str_replace('.js','',$name), get_template_directory_uri() . $folder . "/" . $name , array('jquery'), FALSE, TRUE ); 
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
+							
+						wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
 						
 					} 
-				}  
-			
-			} else if ( novalite_setting('novalite_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
 					
-					}
-					
-				}
-		
-			}
-			
+				} 
+
+			}  
+
 		endif;
 	
 	}
@@ -153,38 +130,24 @@ if (!function_exists('novalite_enqueue_style')) {
 	
 		if (isset($folder)) : 
 	
-			if ( ( !novalite_setting('novalite_loadsystem') ) || ( novalite_setting('novalite_loadsystem') == "mode_a" ) ) {
-			
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $name) {  
-					
-					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+			foreach ($files as $key => $value) {  
+
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 						
-						wp_enqueue_style( str_replace('.css','',$name), get_template_directory_uri() . $folder . "/" . $name ); 
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
+						
+						wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
 						
 					} 
-				}  
+					
+				} 
+
+			}  
 			
-			
-			} else if ( novalite_setting('novalite_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
-				
-					}
-				
-				}
-			
-			}
-		
 		endif;
 	
 	}
@@ -405,28 +368,6 @@ if (!function_exists('novalite_embed_html')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* IE8 SCRIPTS */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('novalite_ie8_scripts')) {
-
-	function novalite_ie8_scripts() { ?>
-
-<!--[if IE 8]>
-    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/html5.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/selectivizr-min.js" type="text/javascript"></script>
-<![endif]-->
-
-<?php
-
-	}
-	
-	add_action('wp_head', 'novalite_ie8_scripts');
-
-	
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* STYLES AND SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -441,12 +382,16 @@ if (!function_exists('novalite_scripts_styles')) {
 
 		novalite_enqueue_style('/inc/css');
 
-		if ( ( get_theme_mod('novalite_skin') ) && ( get_theme_mod('novalite_skin') <> "turquoise" ) ):
-	
+		if ( get_theme_mod('novalite_skin') && get_theme_mod('novalite_skin') <> "turquoise" )
 			wp_enqueue_style( 'novalite-' . get_theme_mod('novalite_skin') , get_template_directory_uri() . '/inc/skins/' . get_theme_mod('novalite_skin') . '.css' ); 
-		endif;
 
-		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Montez|Oxygen|Yanone+Kaffeesatz&subset=latin,latin-ext' );
+		wp_enqueue_style( 'novalite-google-fonts', '//fonts.googleapis.com/css?family=Montez|Oxygen|Yanone+Kaffeesatz&subset=latin,latin-ext' );
+
+		wp_enqueue_script ( 'novalite-html5', get_template_directory_uri().'/inc/scripts/html5.js');
+		wp_script_add_data ( 'novalite-html5', 'conditional', 'IE 8' );
+		
+		wp_enqueue_script ( 'novalite-selectivizr', get_template_directory_uri().'/inc/scripts/selectivizr-min.js');
+		wp_script_add_data ( 'novalite-selectivizr', 'conditional', 'IE 8' );
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	

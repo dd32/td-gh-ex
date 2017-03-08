@@ -34,32 +34,6 @@ if (!function_exists('novalite_customize_panel_function')) {
 				
 			),
 
-			array( 
-
-				"title" => __( "Load system","novalite"),
-				"type" => "section",
-				"id" => "loadsystem_section",
-				"panel" => "general_panel",
-				"priority" => "10",
-
-			),
-
-			array(
-				
-				"label" => __( "Choose a load system","novalite"),
-				"description" => __( "Select a load system, if you've some problems with the theme (for example a blank page).","novalite"),
-				"id" => "novalite_loadsystem",
-				"type" => "select",
-				"section" => "loadsystem_section",
-				"options" => array (
-				   "mode_a" => __( "Mode a","novalite"),
-				   "mode_b" => __( "Mode b","novalite"),
-				),
-				
-				"std" => "mode_a",
-			
-			),
-
 			/* SKINS */ 
 
 			array( 
