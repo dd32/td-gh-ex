@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
  *
  * Template Name: Full-width Page Template, No Sidebar
  *
@@ -29,7 +29,7 @@ while(have_posts()) : the_post();
 	the_content();
 
 		$wortex_link_pages_args = array(
-			'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'woe'),
+			'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'wortex-lite'),
 			'after'            => '</div>',
 			'link_before'      => '<span>',
 			'link_after'       => '</span>',
@@ -45,23 +45,23 @@ while(have_posts()) : the_post();
 
 	// Display comments section only if comments are open or if there are comments already.
 	if ( comments_open() || get_comments_number()!=0 ):
-		?><hr /><div class="comments"><?php 
+		?><hr /><div class="comments"><?php
 		comments_template( '', true );
 		next_comments_link(); previous_comments_link();
 		?></div><?php
 	endif;
-				
+
 endwhile;
-	
+
 else: // Empty loop (this should never happen!)
 
 	?><h2><?php _e('Not Found', 'wortex-lite'); ?></h2>
 	<p><?php _e('What you are looking for isn\'t here...', 'wortex-lite'); ?></p><?php
 
 endif;
-	
+
 ?></div><?php // End page container
 
 ?></div><?php
 
-get_footer(); ?>
+get_footer();

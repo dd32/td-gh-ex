@@ -1,17 +1,17 @@
 === WORTEX LITE ===
 
 Contributors: Iceable
-Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 3.5
-Tested up to: 4.3.1
-Stable tag: 1.2.1
+Tags: one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, footer-widgets, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
+Requires at least: 4.1
+Tested up to: 4.7
+Stable tag: 1.2.8
 
 == ABOUT WORTEX LITE ==
 
 Wortex Lite is a clean, professional looking, responsive theme for WordPress. Perfect for tech or design oriented blogs and creative business websites.
 It features two widgetizable areas (sidebar and optional footer), two custom menus (main navbar and optional footer menu) and a full-width header image.
 
-Wortex Lite is the lite version of Wortex Pro, which comes with many additional features and access to premium class pro support forum and can be found at http://www.iceablethemes.com
+Wortex Lite is the lite version of Wortex Pro, which comes with many additional features and access to premium class pro support forum and can be found at https://www.iceablethemes.com
 
 == GETTING STARTED ==
 
@@ -20,13 +20,13 @@ If you will be using a custom header image, you can also optionally choose to en
 It is highly recommended to set a menu (in Appearance > Menus) instead of relying on the default fallback menu. Doing so will automatically activate the dropdown version of your menu in responsive mode.
 You can also set a custom menu to appear at the bottom right of your site. Note this footer menu doesn't support sub-menus, only top-level menu items will be displayed.
 
-Additional documentation and free support forums can be found at http://www.iceablethemes.com under "support".
+Additional documentation and free support forums can be found at https://www.iceablethemes.com under "support".
 
 == SPECIAL FEATURES INSTRUCTIONS ==
 
 * Footer widgets: The widgetizable footer is disabled by default. To activate it, simply go to Appearance > Widgets and drop some widgets in the "Footer" area, just like you would do for the sidebar. It is recommended to use 4 widgets in the footer, or no widgets at all to disable it.
 
-Additional documentation and free support forums can be found at http://www.iceablethemes.com under "support".
+Additional documentation and free support forums can be found at https://www.iceablethemes.com under "support".
 
 == LICENSE ==
 
@@ -40,7 +40,7 @@ This theme bundles some third party javascript/jQuery plugins and font, all open
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * Font Awesome: Copyright Dave Gandy. Font licensed under SIL OFL 1.1. CSS code licensed under MIT License. http://fortawesome.github.io/Font-Awesome/
 
-All other files are Copyright 2014-2015 Iceable Media.
+All other files are Copyright 2014-2017 Iceable Media.
 
 == TRANSLATIONS ==
 
@@ -48,13 +48,60 @@ Currently available translations:
 
 * French (fr_FR) translation: by Iceable Media
 
-Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
-If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, OSX and Linux.
+Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
+If you don't have a .po file editor yet, you can download Poedit from https://www.poedit.net/download.php - Poedit is free and available for Windows, OSX and Linux.
 
-If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
+If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at https://www.iceablethemes.com
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.10 =
+Mars 8th, 2017
+* Fixed wortex_remove_rel_cat() to only remove "category" (but not "tag") value from the rel attribute
+* Added php tags in footer.php, making it less confusing for users who want to modify the footer note
+
+= 1.2.9 =
+January 9th, 2017
+* Updated copyright to 2017
+
+= 1.2.8 =
+December 12th, 2016
+* Now using get_theme_file_uri() to register stylesheets and javascripts for WordPress 4.7
+* Tested with WordPress 4.7
+
+= 1.2.7 =
+November 14th, 2016
+* Updated searchforms to HTML5 markup
+
+= 1.2.6 =
+August 29th, 2016
+* Removed function wortex_render_title() used as a fallback for title tag support
+* Dropped support for WordPress lesser than 4.1
+* Tested with WordPress 4.6
+
+= 1.2.5 =
+June 16th, 2016
+* Tested with WordPress 4.5.2
+* Update font-awesome to 4.6.3
+* Updated external links to wordpress.org and iceablethemes.com to https
+* Removed php closing tags from end of files to prevent potential issues
+* Updated theme tags for WordPress.org
+
+= 1.2.4 =
+January 13th, 2016
+* Enhanced support for <!--more--> quicktag
+* Updated copyright to 2016
+* Tested with WordPress 4.4.1
+
+= 1.2.3 =
+November 23rd, 2015
+* Fixed issue with sidebar in WordPress 4.4
+* Tested with WordPress 4.4 (beta 4)
+
+= 1.2.2 =
+November 5th, 2015
+* Fixed text-domain typo in full-width.php
 
 = 1.2.1 =
 November 4th, 2015

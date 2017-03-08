@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
  *
  * 404 Page Template
  *
@@ -27,4 +27,4 @@ get_header();
 ?></div><?php // End sidebar
 
 ?></div><?php
-get_footer(); ?>
+get_footer();
