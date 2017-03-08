@@ -23,8 +23,8 @@ $slider_posts = new WP_Query( array(
                 ?>
                     
                     <li>
-                        <a href="<?php the_permalink(); ?>" rel="bookmark">
-                        <div class="arouse-slider-container">
+                        
+                        <div class="arouse-slider-container" data-loc="<?php echo esc_url( get_permalink() ); ?>">
                         
                             <?php if ( has_post_thumbnail() ) { 
 
@@ -52,7 +52,7 @@ $slider_posts = new WP_Query( array(
                                 </div><!-- .arouse-slide-holder -->
 
                         </div><!-- .arouse-slider-container -->
-                        </a>
+                        
                     </li>
 
                 <?php 

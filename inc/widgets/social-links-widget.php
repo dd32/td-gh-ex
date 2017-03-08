@@ -26,9 +26,13 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
+		
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo $args['before_title'];
+			echo apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+			echo $args['after_title'];
 		}
+		
 		?>
 
 		<div class="arouse-social-links">
@@ -175,7 +179,7 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 } // class Arouse_Social_Media_Widget
 
 // register Arouse_Social_Media_Widget widget
-function register_arouse_social_media_widget() {
+function arouse_register_social_media() {
     register_widget( 'Arouse_Social_Media_Widget' );
 }
-add_action( 'widgets_init', 'register_arouse_social_media_widget' );
+add_action( 'widgets_init', 'arouse_register_social_media' );

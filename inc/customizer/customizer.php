@@ -58,7 +58,7 @@ function arouse_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Category_Control( 
+		new Arouse_Customize_Category_Control( 
 			$wp_customize,
 			'slider_category', 
 			array(
@@ -170,7 +170,7 @@ function arouse_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Category_Control( 
+		new Arouse_Customize_Category_Control( 
 			$wp_customize,
 			'fcontent_category', 
 			array(

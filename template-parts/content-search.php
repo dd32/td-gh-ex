@@ -38,15 +38,7 @@ $arouse_post_class = ( $arouse_post_layout === 'grid' ) ? 'arouse-post-grid' : '
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php
-
-				the_excerpt();
-
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'arouse' ),
-					'after'  => '</div>',
-				) );
-			?>
+			<?php the_excerpt(); ?>
 		</div><!-- .entry-content -->
 
 		<div class="entry-meta">

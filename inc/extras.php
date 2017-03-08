@@ -25,7 +25,8 @@ function arouse_body_classes( $classes ) {
 	}
 
 	$display_slider = get_theme_mod( 'display_slider', false );
-	if ( $display_slider == true && is_home() && ! is_paged() ) { $classes[] = 'slider-active'; }
+	
+	if ( $display_slider == true && is_front_page() && ! is_paged() ) { $classes[] = 'slider-active'; }
 	
 	if ( $display_slider == true && is_page_template( 'template-slider.php' ) ) { $classes[] = 'slider-active'; }
 
@@ -47,7 +48,12 @@ add_filter('widget_tag_cloud_args','arouse_tag_cloud_sizes');
 /**
  * Replaces content [...] with ...
  */
-function arouse_excerpt_more() {
+function arouse_excerpt_more( $more ) {
+
+	if ( is_admin() ) {
+		return $more;
+	}
+
 	return '&hellip; ';
 }
 add_filter( 'excerpt_more', 'arouse_excerpt_more' );

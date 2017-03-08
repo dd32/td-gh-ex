@@ -3,7 +3,7 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return NULL;
 
-class WP_Customize_Category_Control extends WP_Customize_Control {
+class Arouse_Customize_Category_Control extends WP_Customize_Control {
 
 	public function render_content() {
         $dropdown = wp_dropdown_categories(

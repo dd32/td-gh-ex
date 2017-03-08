@@ -71,8 +71,8 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );	
-		$instance[ 'category' ]	= $new_instance[ 'category' ];
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );	
+		$instance[ 'category' ]	= strip_tags( $new_instance[ 'category' ] );
 		$instance[ 'number_posts' ] = (int)$new_instance[ 'number_posts' ];
 		$instance[ 'sticky_posts' ] = (bool)$new_instance[ 'sticky_posts' ];
 		return $instance;
@@ -93,7 +93,7 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
 		$category = $instance['category'];
-		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] )  : 5; 
+		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 5; 
 		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : false;
 
 		// Latest Posts
@@ -109,7 +109,9 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 		<div class="arouse-category-posts">
 		<?php
 			if ( ! empty( $instance['title'] ) ) {
-				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+				echo $args['before_title'];
+				echo apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+				echo $args['after_title'];
 			}
 		?>
 
@@ -119,13 +121,13 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 					<div class="ar-cat-post">
 						<?php if ( has_post_thumbnail() ) { ?>
 							<div class="ar-cat-thumb">
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">	
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">	
 									<?php the_post_thumbnail( 'arouse-featured-thumbnail' ); ?>
 								</a>
 							</div>
 						<?php } ?>
 						<div class="ar-cat-details">
-							<?php the_title( sprintf( '<h3 class="ar-cat-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+							<?php the_title( sprintf( '<h3 class="ar-cat-title"><a href="%s" rel="bookmark">', esc_url_raw( get_permalink() ) ), '</a></h3>' ); ?>
 							<p class="ar-cat-meta"><?php the_time('F j, Y'); ?></p>
 						</div>
 					</div><!-- .ar-cat-post -->
@@ -143,7 +145,7 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 }
 
 // Register single category posts widget
-function register_arouse_sidebar_posts() {
+function arouse_register_sidebar_posts() {
     register_widget( 'Arouse_Sidebar_Posts' );
 }
-add_action( 'widgets_init', 'register_arouse_sidebar_posts' );
+add_action( 'widgets_init', 'arouse_register_sidebar_posts' );

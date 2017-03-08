@@ -47,10 +47,9 @@
 			<div class="arouse-search-button-icon"></div>
 			<div class="arouse-search-box-container">
 				<div class="arouse-search-box">
-					<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="arouse-search-form" method="get">
-						<input type="text" value="" name="s" id="s" />
-						<input type="submit" value="<?php _e( 'Search', 'arouse' ); ?>" />
-					</form>
+					<div class="arouse-search-form">
+						<?php get_search_form(); ?>
+					</div>
 				</div><!-- th-search-box -->
 			</div><!-- .th-search-box-container -->
 		</div><!-- .mainnav-container -->

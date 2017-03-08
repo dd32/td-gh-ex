@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.0.8\n"
-"POT-Creation-Date: 2017-01-05 20:32+0530\n"
-"PO-Revision-Date: 2017-01-05 20:32+0530\n"
+"Project-Id-Version: arouse.1.1.0\n"
+"POT-Creation-Date: 2017-03-08 23:35+0530\n"
+"PO-Revision-Date: 2017-03-08 23:37+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__;_x\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__;_x;_nx\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -21,19 +21,29 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: comments.php:40 comments.php:62
+#: comments.php:33
+#, php-format
+msgid "One Comment on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:38
+#, php-format
+msgid "%1$s Comment on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:53 comments.php:75
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:65
+#: comments.php:56 comments.php:78
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:66
+#: comments.php:57 comments.php:79
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:92
 msgid "Comments are closed."
 msgstr ""
 
@@ -49,6 +59,10 @@ msgstr ""
 #: footer.php:55
 #, php-format
 msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: front-page.php:40
+msgid "Latest Articles"
 msgstr ""
 
 #: functions.php:51
@@ -85,14 +99,6 @@ msgstr ""
 
 #: header.php:27
 msgid "Skip to content"
-msgstr ""
-
-#: header.php:52
-msgid "Search"
-msgstr ""
-
-#: home.php:32
-msgid "Latest Articles"
 msgstr ""
 
 #: search.php:21
@@ -307,7 +313,7 @@ msgid "Latest Posts"
 msgstr ""
 
 #: inc/widgets/category-posts-widget.php:41
-#: inc/widgets/social-links-widget.php:89
+#: inc/widgets/social-links-widget.php:93
 msgid "Title:"
 msgstr ""
 
@@ -331,43 +337,43 @@ msgstr ""
 msgid "Adds social media icons to widget areas."
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:86
+#: inc/widgets/social-links-widget.php:90
 msgid "New title"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:95
+#: inc/widgets/social-links-widget.php:99
 msgid "Facebook Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:101
+#: inc/widgets/social-links-widget.php:105
 msgid "Twitter Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:107
+#: inc/widgets/social-links-widget.php:111
 msgid "Google Plus Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:113
+#: inc/widgets/social-links-widget.php:117
 msgid "Instagram Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:119
+#: inc/widgets/social-links-widget.php:123
 msgid "LinkedIn Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:125
+#: inc/widgets/social-links-widget.php:129
 msgid "Pinterest Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:131
+#: inc/widgets/social-links-widget.php:135
 msgid "Dribbble Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:137
+#: inc/widgets/social-links-widget.php:141
 msgid "RSS Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:143
+#: inc/widgets/social-links-widget.php:147
 msgid "Email Address"
 msgstr ""
 
@@ -393,8 +399,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content-search.php:46
-#: template-parts/content-single.php:45 template-parts/content.php:45
+#: template-parts/content-page.php:22 template-parts/content-single.php:45
 msgid "Pages:"
 msgstr ""
 

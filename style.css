@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
@@ -555,6 +555,25 @@ textarea {
   width: 100%;
 }
 
+.search-field::-moz-placeholder {
+  color: #aaaaaa;
+  opacity: 1;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-field:-ms-input-placeholder {
+  color: #aaaaaa;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-field::-webkit-input-placeholder {
+  color: #aaaaaa;
+  font-weight: normal;
+  font-style: italic;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -740,7 +759,7 @@ a:hover, a:active {
   z-index: 999;
 }
 
-#arouse-search-form input[type="submit"] {
+.arouse-search-form .search-form .search-submit {
   border-radius: 0;
   box-shadow: none;
   background-color: #a58e78;
@@ -761,15 +780,15 @@ a:hover, a:active {
   transition: background 0.2s ease-in-out;
 }
 
-#arouse-search-form input[type="submit"]:hover {
+.arouse-search-form .search-form .search-submit:hover {
   background: #333333;
 }
 
-#arouse-search-form input[type="submit"]:focus {
+.arouse-search-form .search-form .search-submit:focus {
   outline: none;
 }
 
-#arouse-search-form input[type="text"] {
+.arouse-search-form .search-form .search-field {
   background: #f1f1f1;
   border: none;
   color: #222;
@@ -780,7 +799,7 @@ a:hover, a:active {
   width: 220px;
 }
 
-#arouse-search-form input[type="text"]:focus {
+.arouse-search-form .search-form .search-field:focus {
   outline: none;
 }
 
@@ -1076,6 +1095,7 @@ a:hover, a:active {
   color: #1d1d1d;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  font-weight: 500;
   line-height: 20px;
   padding: 10px 0;
   text-align: center;
@@ -1237,7 +1257,7 @@ a:hover, a:active {
   width: 100px;
   height: 80px;
   float: left;
-  margin-right: 30px;
+  margin-right: 25px;
   background: #eeeeee;
 }
 
@@ -1387,6 +1407,7 @@ a:hover, a:active {
   color: #cecece;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  font-weight: 500;
   line-height: 40px;
   padding: 0 10px;
   text-align: center;
@@ -1437,6 +1458,7 @@ a:hover, a:active {
 
 .arouse-slider-container {
   position: relative;
+  cursor: pointer;
 }
 
 .arouse-slide-holder {
@@ -1480,7 +1502,8 @@ a:hover, a:active {
   text-transform: uppercase;
   font-size: 13px;
   font-size: 1.3rem;
-  margin: 0 0 8px;
+  font-weight: 500;
+  margin: 0 0 5px;
   display: block;
 }
 @media (max-width: 480px) {
@@ -1575,6 +1598,7 @@ a:hover, a:active {
 
 .arouse-entry-category {
   font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
@@ -1754,6 +1778,7 @@ a:hover, a:active {
   text-transform: uppercase;
   font-size: 12px;
   font-size: 1.2rem;
+  font-weight: 500;
 }
 .arouse-single-post .tags-links a:hover {
   background: #3c3c3c;
@@ -2009,6 +2034,7 @@ article.page {
   padding: 12px 0;
   margin: 0;
   background: #ffffff;
+  font-weight: 500;
 }
 
 .error404 .content-area {
