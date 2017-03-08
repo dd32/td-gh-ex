@@ -22,7 +22,6 @@
 	    public static $instance = null;
 
 	    public $posts;
-	    public $home;
 	    public $customizer;
 	    public $panel;
 	    public $tgmpa;
@@ -54,7 +53,6 @@
 
 			// Instantiate secondary classes
 			$this->posts = new Asterion_Posts();
-			$this->home = new Asterion_Home();
 			$this->customizer = new Asterion_Customizer();
 			$this->panel = new Asterion_Backend_panel();
 			$this->tgmpa = new TGM_Plugin_Activation();
@@ -90,7 +88,7 @@
 			/*
 			 * Make theme available for translation.
 			 */
-			load_theme_textdomain( 'asterion' );
+			load_theme_textdomain( 'asterion', get_template_directory() . '/languages' );
 
 
 			/*
@@ -124,9 +122,7 @@
 			add_image_size( 'asterion-single-full-thumbnail', 1140, 660, true );
 			add_image_size( 'asterion-blog-full-thumbnail', 1140, 660, true );
 			add_image_size( 'asterion-blog-thumbnail', 750, 500, true );
-			add_image_size( 'asterion-portfolio', 774, 516, true );
-			add_image_size( 'asterion-testimonials', 90, 90, true );
-			add_image_size( 'asterion-latest-posts-front', 712, 474, true );
+
 
 
 			// This theme uses wp_nav_menu() in two locations.
@@ -204,8 +200,7 @@
 		*/
 		public function enqueue_scripts() {
 			
-			// Add Bootstrap default CSS
-			wp_enqueue_style( 'slick', get_template_directory_uri().'/css/slick.css' );
+
 			wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
 			wp_enqueue_style( 'asterion-main-style', get_template_directory_uri().'/css/main-style.css' );
 
@@ -217,9 +212,7 @@
 
 			// Add JS Files
 			wp_enqueue_script('jquery');
-			wp_enqueue_script( 'appear-js', get_template_directory_uri() . '/js/jquery.appear.js', array('jquery') );
 			wp_enqueue_script( 'sticky-js', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery') );
-			wp_enqueue_script( 'slick-slider', get_template_directory_uri() . '/js/slick.min.js', array('jquery') );
 			wp_enqueue_script( 'asterion-js', get_template_directory_uri() . '/js/asterion.js', array('jquery') );
 
 			// Threaded comments
@@ -300,7 +293,17 @@
 					'name'     				=> esc_html__( 'Orange Themes Custom Widgets', 'asterion' ), // The plugin name
 					'slug'     				=> 'orange-themes-custom-widgets', // The plugin slug (typically the folder name)
 					'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-					'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+					'version' 				=> '1.0.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+					'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+					'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+					'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+					'is_callable'        	=> true,
+				),
+				array(
+					'name'     				=> esc_html__( 'Orange Front Page', 'asterion' ), // The plugin name
+					'slug'     				=> 'orange-front-page', // The plugin slug (typically the folder name)
+					'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+					'version' 				=> '1.0.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 					'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
@@ -472,30 +475,6 @@
 					'after_title'  => '</span></h2>',
 	            )
 	        );
-
-			//front page sidebars 
-			register_sidebar( 
-				array(
-					'name'          => esc_html__( 'Features Widget Area in Front Page', 'asterion' ),
-					'id'            => 'sidebar-features',
-					'description'   => esc_html__( 'Front page features panel widgets section', 'asterion' ),
-	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
-	                'after_widget' => '</div>',
-					'before_title' => '<h2 class="ot-widget-title"><span>',
-					'after_title'  => '</span></h2>',
-				) 
-			);
-			register_sidebar( 
-				array(
-					'name'          => esc_html__( 'Team Widget Area in Front Page', 'asterion' ),
-					'id'            => 'sidebar-team',
-					'description'   => esc_html__( 'Front page team panel widgets section', 'asterion' ),
-	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
-	                'after_widget' => '</div>',
-					'before_title' => '<h2 class="ot-widget-title"><span>',
-					'after_title'  => '</span></h2>',
-				) 
-			);
 
 
 			register_sidebar( 

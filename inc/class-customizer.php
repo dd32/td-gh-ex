@@ -22,12 +22,12 @@
 			require_once ASTERION_INC_PATH . 'custom-controls.php';
 			// Blog page options
 			require_once ASTERION_INC_PATH . 'customizer-sections/blog.php';
+			// About section options
+			require_once ASTERION_INC_PATH . 'customizer-sections/about.php';
 			// Featured section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/features.php';
 			// Portfolio section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/portfolio.php';
-			// About section options
-			require_once ASTERION_INC_PATH . 'customizer-sections/about.php';
 			// Counters section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/counters.php';
 			// Testimonials section options
@@ -37,7 +37,7 @@
 			// Latest posts section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/latest-posts.php';
 			// Contact section options
-			require_once ASTERION_INC_PATH . 'customizer-sections/contact-us.php';
+			require_once ASTERION_INC_PATH . 'customizer-sections/contact-us.php';	
 			// General section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/general.php';
 			// Header section options
@@ -108,15 +108,7 @@
 			}
 		}
 
-        function cf7_active_callback() {
 
-            if( class_exists( 'WPCF7' ) ) {
-				return true;
-			} else {
-				return false;
-            }
-
-        }
 
         function cf7_inactive_callback() {
 
@@ -128,14 +120,6 @@
 
         }
 
-		function jetpack_testimonials_active_callback() {
-			if ( post_type_exists( 'jetpack-testimonial' ) ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
 		function jetpack_testimonials_inactive_callback() {
 			if ( !post_type_exists( 'jetpack-testimonial' ) ) {
 				return true;
@@ -144,13 +128,6 @@
 			}
 		}
 
-		function jetpack_portfolio_active_callback() {
-			if ( post_type_exists( 'jetpack-portfolio' ) ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
 		function jetpack_portfolio_inactive_callback() {
 			if ( !post_type_exists( 'jetpack-portfolio' ) ) {
 				return true;
@@ -159,15 +136,17 @@
 			}
 		}
 
-		function ot_widgets_active_callback() {
-			if( class_exists( 'OT_Widgets' ) ) {
+
+		function ot_widgets_inactive_callback() {
+			if( !class_exists( 'OT_Widgets' ) ) {
 				return true;
 			} else {
 				return false;
 			}
 		}
-		function ot_widgets_inactive_callback() {
-			if( !class_exists( 'OT_Widgets' ) ) {
+
+		function ot_orange_inactive_callback() {
+			if( !class_exists( 'OT_Front_Page' ) ) {
 				return true;
 			} else {
 				return false;

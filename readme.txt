@@ -1,7 +1,7 @@
 ﻿== ABOUT THEME == 
 
 Theme Name : Asterion
-Version    : 1.0.34
+Version    : 1.0.5
 Theme URL  : https://www.orange-themes.com/asterion/
 Theme Documentation  : https://www.orange-themes.com/asterion-documentation/
 
@@ -61,6 +61,8 @@ After Creating the menu select the Theme Location of the menu.(It’s under the 
 Hit Save.
 
 ==== THEME CHANGELOG ====
+= 1.0.5 =
+* Moved all home sections to the Orange Front Page plugin
 = 1.0.4 =
 * Removed default front page blocks.
 = 1.0.3 =

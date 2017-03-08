@@ -20,6 +20,7 @@ Import Google Fonts
 body {
 	margin: 0px;
 	font-family: "Hind", Sans-serif;
+	background-color: #fff;
 }
 
 h1,
@@ -1167,6 +1168,7 @@ figure.effect-bubba {
 
 figure.effect-bubba img {
 	opacity: 1;
+	width: 100%;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
@@ -2898,7 +2900,7 @@ and (max-width : 480px) {
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .slick-dots

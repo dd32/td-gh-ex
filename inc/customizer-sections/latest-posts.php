@@ -6,7 +6,7 @@ $prefix = 'asterion';
 $section_id = $prefix.'_latest_posts_section';
 
 /***********************************************/
-/****************** Latest Posts  *****************/
+/********************* Latest Posts  *****************/
 /***********************************************/
 $wp_customize->add_section( $section_id,
     array(
@@ -20,158 +20,25 @@ $wp_customize->add_section( $section_id,
 
 
 
-// Show this section
-$wp_customize->add_setting( $prefix . '_latest_posts_show',
-    array(
-        'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 0,
-        //'transport'         => 'postMessage'
-    )
-);
-$wp_customize->add_control(
-    $prefix . '_latest_posts_show',
-    array(
-        'type'      => 'checkbox',
-        'label'     => esc_html__( 'Show this section?', 'asterion' ),
-        'section'   => $section_id,
-        'priority'  => 1
-    )
-);
-
-// Title
-$wp_customize->add_setting( $prefix .'_latest_posts_title',
-    array(
-        'sanitize_callback' => array( asterion()->customizer, 'sanitize_html' ),
-        'default'           => esc_html__( 'Latest Posts', 'asterion' ),
-        'transport'         => 'postMessage'
-    )
-);
-$wp_customize->add_control(
-    $prefix .'_latest_posts_title',
-    array(
-        'label'         => esc_html__( 'Title', 'asterion' ),
-        'description'   => esc_html__( 'Add the title for this section.', 'asterion'),
-        'section'       => $section_id,
-        'priority'      => 2
-    )
-);
-$wp_customize->selective_refresh->add_partial( $prefix . '_latest_posts_title', 
-    array(
-        'selector'            => '#latest-posts .section-title',
-        'container_inclusive' => true,
-    ) 
-);
-
-
-// Text
-$wp_customize->add_setting( $prefix .'_latest_posts_text',
-    array(
-        'sanitize_callback' => array( asterion()->customizer, 'sanitize_html' ),
-        'default'           => esc_html__( 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.', 'asterion' ),
-        'transport'         => 'postMessage'
-    )
-);
-$wp_customize->add_control(
-    $prefix .'_latest_posts_text',
-    array(
-        'label'         => esc_html__( 'Text', 'asterion' ),
-        'description'   => esc_html__( 'Add the content for this section.', 'asterion'),
-        'section'       => $section_id,
-        'priority'      => 3,
-        'type'          => 'textarea'
-    )
-);
-
-// Post count
-$wp_customize->add_setting( $prefix . '_latest_posts_count', 
-    array(
-        'sanitize_callback' => array( asterion()->customizer, 'sanitize_radio' ),
-        'default'           => 3,
-        //'transport'         => 'postMessage'
-    ) 
-);
-$wp_customize->add_control( $prefix . '_latest_posts_count', 
-    array(
-        'label'     => esc_html__( 'Post Count', 'asterion' ),
-        'section'   => $section_id,
-        'settings'  => $prefix . '_latest_posts_count',
-        'type'      => 'radio',
-        'choices'   => array(
-                3   => esc_html__( '3 Posts', 'asterion' ),
-                4   => esc_html__( '4 Posts', 'asterion' )
-            ),
-        'priority'  => 3
-    ) 
-);
-
-// Post offset
-$wp_customize->add_setting( $prefix .'_latest_posts_offset',
+//ot widgets form installation
+$wp_customize->add_setting(
+    $prefix .'_ot_widgets_install_7',
     array(
         'sanitize_callback' => 'esc_html',
-        'default'           => absint( 0 ),
+        'default'           => ''
     )
 );
 $wp_customize->add_control(
-    $prefix .'_latest_posts_offset',
-    array(
-        'label'             => esc_html__( 'Post Offset', 'asterion' ),
-        'description'       => esc_html__( 'Post listing offset, the listing will start from the post you entered.', 'asterion'),
-        'section'           => $section_id,
-        'priority'          => 4
-    )
-);
-// Post images
-$wp_customize->add_setting( $prefix .'_latest_posts_images',
-    array(
-        'sanitize_callback' => 'esc_html',
-        'default'           => absint( 1 ),
-    )
-);
-$wp_customize->add_control( $prefix . '_latest_posts_images', 
-    array(
-        'label'     => esc_html__( 'Post Images', 'asterion' ),
-        'section'   => $section_id,
-        'settings'  => $prefix . '_latest_posts_images',
-        'type'      => 'radio',
-        'choices'   => array(
-                1   => esc_html__( 'Show Images', 'asterion' ),
-                2   => esc_html__( 'Hide Images', 'asterion' )
-            ),
-        'priority'  => 4
-    ) 
-);
-
-// background color
-$wp_customize->add_setting( $prefix . '_latest_posts_bg_color', array(
-    'sanitize_callback' => 'sanitize_hex_color',
-    'default'           => '#ffffff',
-    'transport'         => 'postMessage'
-) );
-$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix . '_latest_posts_bg_color', 
-    array(
-        'label'       => esc_html__( 'Background color', 'asterion' ),
-        'description' => esc_html__( 'Latest posts section background color', 'asterion' ),
-        'section'     => $section_id,
-        'settings'    => $prefix . '_latest_posts_bg_color',
-        'priority'    => 5
-    ) 
-) );
-
-// text color
-$wp_customize->add_setting( $prefix . '_latest_posts_text_color',
-    array(
-        'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 0,
-        'transport'         => 'postMessage'
-    )
-);
-$wp_customize->add_control(
-    $prefix . '_latest_posts_text_color',
-    array(
-        'type'      => 'checkbox',
-        'label'     => esc_html__( 'Light text?', 'asterion' ),
-        'description' => esc_html__( 'Choose text color scheme, light or dark', 'asterion' ),
-        'section'   => $section_id,
-        'priority'  => 6
+    new Asterion_Custom_Text(
+        $wp_customize, 
+        $prefix .'_ot_widgets_install_7',
+        array(
+            'label'             => esc_html__( 'Install Orange Front Page', 'asterion' ),
+            'description'       => sprintf( '%s %s %s', esc_html__( 'This option requires ', 'asterion' ), '<a href="https://wordpress.org/plugins/orange-front-page/" title="Orange Front Page" target="_blank">Orange Front Page</a>', esc_html__( ', please install it to enable this section.', 'asterion' ) ),
+            'section'           => $section_id,
+            'settings'          => $prefix .'_ot_widgets_install_7',
+            'priority'          => 7,
+            'active_callback'   => array( asterion()->customizer, 'ot_orange_inactive_callback' )
+        )
     )
 );

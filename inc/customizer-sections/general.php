@@ -5,12 +5,11 @@ $prefix = 'asterion';
 // Set section id
 $panel_id = $prefix.'_general_section';
 $section_id = $prefix.'_copyright';
-$section_id_2 = $prefix.'_section_order';
 $section_id_3 = $prefix.'_color_options';
 
 
 /***********************************************/
-/********************* Contact  *****************/
+/**************** General Settings  ************/
 /***********************************************/
 
 $wp_customize->add_panel( $panel_id,
@@ -22,55 +21,6 @@ $wp_customize->add_panel( $panel_id,
         'description'       => esc_html__( 'Theme general options like header and footer settings, copyright information etc.', 'asterion' ),
     )
 );
-
-/***********************************************/
-/**************** SECTION ORDER  ***************/
-/***********************************************/
-
-$wp_customize->add_section( $section_id_2,
-    array(
-        'priority'          => 1,
-        'theme_supports'    => '',
-        'title'             => esc_html__( 'Section Order', 'asterion' ),
-        'description'       => esc_html__( 'Reorder the front page sections.', 'asterion' ),
-        'panel'             => $panel_id
-    )
-);
-
-
-
-$section_order = asterion()->home->section_order();
-$sections = asterion()->home->sections();
-//update the array key 
-foreach ($sections as $key => $section) {
-    $_sections[$key+1] = $section;
-}
-
-$sections = $_sections;
-
-foreach ( $section_order as $key => $section) {
-
-
-    $wp_customize->add_setting( $prefix .'_section_order_'.$key,
-        array(
-            'sanitize_callback' => 'esc_attr',
-            'default'           => $key
-        )
-    );
-
-    $wp_customize->add_control(
-        $prefix .'_section_order_'.$key,
-        array(
-            'label'         => sprintf( '%s %s', $section[1]." ", esc_html__( 'section', 'asterion' ) ),
-            'description'   => sprintf( '%s %s %s', esc_html__( 'Select what section you would like see', 'asterion' )," ".strtolower($section[1])." ", esc_html__( 'on the front page.', 'asterion' ) ),
-            'type'          => 'select',
-            'section'       => $section_id_2,
-            'choices'       => $sections
-        )
-    );
-
-}
-
 
 
 /***********************************************/

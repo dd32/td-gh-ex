@@ -13,10 +13,7 @@
 		asterion()->posts->post_thumbnail(); 
 	?>
 	<div class="blog-post-body">
-		<?php 
-			//load categories
-			asterion()->posts->categories(); 
-		?>
+
 		<h1 class="entry-title">
 			<?php the_title(); ?>
 		</h1>

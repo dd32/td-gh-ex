@@ -13,7 +13,7 @@ jQuery(function($) {
     }
 
     //importing front page
-	jQuery(".ot-import-front-page").not('.ot-disabled').on('click', function() {
+    jQuery(".ot-import-front-page").not('.ot-disabled').on('click', function() {
         var clicked_button = jQuery(this);
 
         clicked_button.addClass('ot-disabled');
@@ -28,20 +28,20 @@ jQuery(function($) {
             },
             success:function(results) { 
 
-           		if( results == 'ok' ) {
-	           		jQuery('.ot-import-font-page').hide();
-	           		jQuery('.ot-imported-font-page').show();
+                if( results == 'ok' ) {
+                    jQuery('.ot-import-font-page').hide();
+                    jQuery('.ot-imported-font-page').show();
                     clicked_button.html(clicked_button.data('imported'));
-           		} else {
-           			jQuery('.ot-error p').html( results );
+                } else {
+                    jQuery('.ot-error p').html( results );
                     jQuery('.ot-error').show();
-           		}
+                }
 
             }
         });
-		
-		return false;
-	});
+        
+        return false;
+    });
 
 
     //resteing settings

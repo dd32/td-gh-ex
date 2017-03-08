@@ -56,14 +56,7 @@ else:
 		endwhile;
 	endif;
 
-
-	for ( $i = 0; $i < 10; $i++ ) { 
-		$section = get_theme_mod( 'asterion_section_order_'.$i, $i);
-
-		if( $section ):
-			asterion()->home->section( $section );
-		endif;
-	}
+	do_action( 'orange_themes_front_page' );
 
 endif;
 
