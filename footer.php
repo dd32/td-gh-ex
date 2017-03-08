@@ -12,9 +12,17 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>">
+			<?php
+			/* translators: %s: WordPress name */
+			printf( esc_html__( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' );
+			?>
+			</a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject WordPress Themes' ); ?>
+			<?php
+			/* translators: 1: theme name, 2: theme developer */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject WordPress Themes' );
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

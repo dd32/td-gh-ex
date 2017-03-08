@@ -70,14 +70,14 @@ class Blogghiamo_Admin {
 	public static function hide_notices() {
 		if ( isset( $_GET['blogghiamo-hide-notice'] ) && isset( $_GET['_blogghiamo_notice_nonce'] ) ) {
 			if ( ! wp_verify_nonce( $_GET['_blogghiamo_notice_nonce'], 'blogghiamo_hide_notices_nonce' ) ) {
-				wp_die( __( 'Action failed. Please refresh the page and retry.', 'blogghiamo' ) );
+				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'blogghiamo' ) );
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'Cheatin&#8217; huh?', 'blogghiamo' ) );
+				wp_die( esc_html__( 'Cheatin&#8217; huh?', 'blogghiamo' ) );
 			}
 
-			$hide_notice = sanitize_text_field( $_GET['blogghiamo-hide-notice'] );
+			$hide_notice = sanitize_text_field( wp_unslash($_GET['blogghiamo-hide-notice'] ));
 			update_option( 'blogghiamo_admin_notice_' . $hide_notice, 1 );
 		}
 	}
@@ -89,7 +89,12 @@ class Blogghiamo_Admin {
 		?>
 		<div id="message" class="updated cresta-message">
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'blogghiamo-hide-notice', 'welcome' ) ), 'blogghiamo_hide_notices_nonce', '_blogghiamo_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'blogghiamo' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Blogghiamo! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'blogghiamo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=blogghiamo-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p>
+			<?php
+			/* translators: 1: start option panel link, 2: end option panel link */
+			printf( esc_html__( 'Welcome! Thank you for choosing Blogghiamo! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'blogghiamo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=blogghiamo-welcome' ) ) . '">', '</a>' );
+			?>
+			</p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=blogghiamo-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Blogghiamo', 'blogghiamo' ); ?></a>
 			</p>
@@ -108,11 +113,11 @@ class Blogghiamo_Admin {
 		<div class="cresta-theme-info">
 				<h1>
 					<?php esc_html_e('About', 'blogghiamo'); ?>
-					<?php echo $theme->get( 'Name' ) ." ". $theme->get( 'Version' ); ?>
+					<?php echo esc_html($theme->get( 'Name' )) ." ". esc_html($theme->get( 'Version' )); ?>
 				</h1>
 
 			<div class="welcome-description-wrap">
-				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
+				<div class="about-text"><?php echo esc_html($theme->display( 'Description' )); ?>
 				<p class="cresta-actions">
 					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'https://crestaproject.com/downloads/blogghiamo/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'blogghiamo' ); ?></a>
 
@@ -132,7 +137,7 @@ class Blogghiamo_Admin {
 
 		<h2 class="nav-tab-wrapper">
 			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'blogghiamo-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'blogghiamo-welcome' ), 'themes.php' ) ) ); ?>">
-				<?php echo $theme->display( 'Name' ); ?>
+				<?php echo esc_html($theme->display( 'Name' )); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'blogghiamo-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
 				<?php esc_html_e( 'Free Vs PRO', 'blogghiamo' ); ?>
@@ -148,7 +153,7 @@ class Blogghiamo_Admin {
 	 * Welcome screen page.
 	 */
 	public function welcome_screen() {
-		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
+		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( wp_unslash($_GET['tab']) );
 
 		// Look for a {$current_tab}_screen method.
 		if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
@@ -174,7 +179,7 @@ class Blogghiamo_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Theme Customizer', 'blogghiamo' ); ?></h3>
 						<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'blogghiamo' ) ?></p>
-						<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'blogghiamo' ); ?></a></p>
+						<p><a href="<?php echo esc_url(admin_url( 'customize.php' )); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'blogghiamo' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -193,7 +198,7 @@ class Blogghiamo_Admin {
 						<h3>
 							<?php
 							esc_html_e( 'Translate', 'blogghiamo' );
-							echo ' ' . $theme->display( 'Name' );
+							echo ' ' . esc_html($theme->display( 'Name' ));
 							?>
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'blogghiamo' ) ?></p>
@@ -201,7 +206,7 @@ class Blogghiamo_Admin {
 							<a target="_blank" href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/blogghiamo/' ); ?>" class="button button-secondary">
 								<?php
 								esc_html_e( 'Translate', 'blogghiamo' );
-								echo ' ' . $theme->display( 'Name' );
+								echo ' ' . esc_html($theme->display( 'Name' ));
 								?>
 							</a>
 						</p>

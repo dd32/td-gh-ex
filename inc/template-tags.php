@@ -53,7 +53,7 @@ function blogghiamo_posted_on() {
 	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	echo '<span class="posted-on"><i class="fa fa-calendar spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>';
+	echo '<span class="posted-on"><i class="fa fa-calendar spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 	
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' / ' );
@@ -102,29 +102,24 @@ endif;
  * @return bool
  */
 function blogghiamo_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'blogghiamo_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'blogghiamo_categories' );
+	
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$categories = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = count( $categories );
 
 		set_transient( 'blogghiamo_categories', $all_the_cool_cats );
 	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so blogghiamo_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so blogghiamo_categorized_blog should return false.
-		return false;
-	}
+	
+	return $all_the_cool_cats > 1;
 }
 
 /**

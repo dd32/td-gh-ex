@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2017-03-02 18:36+0100\n"
-"PO-Revision-Date: 2017-03-02 18:36+0100\n"
+"POT-Creation-Date: 2017-03-08 18:23+0100\n"
+"PO-Revision-Date: 2017-03-08 18:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -28,15 +28,15 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: archive.php:35 index.php:32 search.php:30
+#: archive.php:35 index.php:32 search.php:35
 msgid "Previous"
 msgstr ""
 
-#: archive.php:36 index.php:33 search.php:31
+#: archive.php:36 index.php:33 search.php:36
 msgid "Next"
 msgstr ""
 
-#: archive.php:37 index.php:34 search.php:32
+#: archive.php:37 index.php:34 search.php:37
 msgid "Page"
 msgstr ""
 
@@ -95,40 +95,43 @@ msgstr ""
 msgid " Required fields are marked "
 msgstr ""
 
-#: comments.php:91
+#. translators: %s: wordpress login url
+#: comments.php:92
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:92
+#. translators: 1: profile user link, 2: username, 3: logout link
+#: comments.php:94
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:93
+#: comments.php:95
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:94
+#: comments.php:96
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:95
+#. translators: %s: name of person to reply
+#: comments.php:98
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:99
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:97
+#: comments.php:100
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:101
 msgid "Comment *"
 msgstr ""
 
@@ -136,19 +139,20 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:19
+#. translators: %1$s: create new post link
+#: content-none.php:22
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:23
+#: content-none.php:28
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:28
+#: content-none.php:33
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -166,12 +170,14 @@ msgstr ""
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:15
+#. translators: %s: WordPress name
+#: footer.php:18
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:17
+#. translators: 1: theme name, 2: theme developer
+#: footer.php:24
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
@@ -257,7 +263,7 @@ msgid "Menu"
 msgstr ""
 
 #: inc/admin/blogghiamo-admin-page.php:36
-#: inc/admin/blogghiamo-admin-page.php:110
+#: inc/admin/blogghiamo-admin-page.php:115
 msgid "About"
 msgstr ""
 
@@ -273,200 +279,201 @@ msgstr ""
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:92
+#. translators: 1: start option panel link, 2: end option panel link
+#: inc/admin/blogghiamo-admin-page.php:95
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Blogghiamo! To fully take advantage of the "
 "best our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:94
+#: inc/admin/blogghiamo-admin-page.php:99
 msgid "Get started with Blogghiamo"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:117
+#: inc/admin/blogghiamo-admin-page.php:122
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:119
+#: inc/admin/blogghiamo-admin-page.php:124
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:121
+#: inc/admin/blogghiamo-admin-page.php:126
 msgid "View PRO version Demo"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:123
+#: inc/admin/blogghiamo-admin-page.php:128
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:138
+#: inc/admin/blogghiamo-admin-page.php:143
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:141
+#: inc/admin/blogghiamo-admin-page.php:146
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:175
+#: inc/admin/blogghiamo-admin-page.php:180
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:176
+#: inc/admin/blogghiamo-admin-page.php:181
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:177
+#: inc/admin/blogghiamo-admin-page.php:182
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:181
+#: inc/admin/blogghiamo-admin-page.php:186
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:182
+#: inc/admin/blogghiamo-admin-page.php:187
 msgid "Please put it in our support forum."
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:183
+#: inc/admin/blogghiamo-admin-page.php:188
 msgid "Support"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:187
+#: inc/admin/blogghiamo-admin-page.php:192
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:188
-#: inc/admin/blogghiamo-admin-page.php:287
+#: inc/admin/blogghiamo-admin-page.php:193
+#: inc/admin/blogghiamo-admin-page.php:292
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:189
+#: inc/admin/blogghiamo-admin-page.php:194
 msgid "Info about PRO version"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:195
-#: inc/admin/blogghiamo-admin-page.php:203
+#: inc/admin/blogghiamo-admin-page.php:200
+#: inc/admin/blogghiamo-admin-page.php:208
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:199
+#: inc/admin/blogghiamo-admin-page.php:204
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:215
+#: inc/admin/blogghiamo-admin-page.php:220
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:215
+#: inc/admin/blogghiamo-admin-page.php:220
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:218
+#: inc/admin/blogghiamo-admin-page.php:223
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:218
+#: inc/admin/blogghiamo-admin-page.php:223
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:235
+#: inc/admin/blogghiamo-admin-page.php:240
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:292
+#: inc/admin/blogghiamo-admin-page.php:297
 msgid "Features"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:293
+#: inc/admin/blogghiamo-admin-page.php:298
 msgid "Blogghiamo"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:294
+#: inc/admin/blogghiamo-admin-page.php:299
 msgid "Blogghiamo PRO"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:299
+#: inc/admin/blogghiamo-admin-page.php:304
 msgid "Responsive Design"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:304
+#: inc/admin/blogghiamo-admin-page.php:309
 msgid "Change Background"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:309
+#: inc/admin/blogghiamo-admin-page.php:314
 msgid "Unlimited Text Color"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:314
+#: inc/admin/blogghiamo-admin-page.php:319
 msgid "Choose Social Incons"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:319
+#: inc/admin/blogghiamo-admin-page.php:324
 msgid "RTL Support"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:324
+#: inc/admin/blogghiamo-admin-page.php:329
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:329
+#: inc/admin/blogghiamo-admin-page.php:334
 msgid "Choose share buttons"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:334
+#: inc/admin/blogghiamo-admin-page.php:339
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:339
+#: inc/admin/blogghiamo-admin-page.php:344
 msgid "Animations"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:344 inc/blogghiamo-dynamic.php:259
+#: inc/admin/blogghiamo-admin-page.php:349 inc/blogghiamo-dynamic.php:259
 msgid "Loading Page"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:349 inc/blogghiamo-dynamic.php:258
+#: inc/admin/blogghiamo-admin-page.php:354 inc/blogghiamo-dynamic.php:258
 msgid "Font switcher"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:354
+#: inc/admin/blogghiamo-admin-page.php:359
 msgid "Beautiful posts slider"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:359 inc/blogghiamo-dynamic.php:262
+#: inc/admin/blogghiamo-admin-page.php:364 inc/blogghiamo-dynamic.php:262
 msgid "Breaking News"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:364 inc/blogghiamo-dynamic.php:264
+#: inc/admin/blogghiamo-admin-page.php:369 inc/blogghiamo-dynamic.php:264
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:369 inc/blogghiamo-dynamic.php:263
+#: inc/admin/blogghiamo-admin-page.php:374 inc/blogghiamo-dynamic.php:263
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:374 inc/blogghiamo-dynamic.php:266
+#: inc/admin/blogghiamo-admin-page.php:379 inc/blogghiamo-dynamic.php:266
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:379 inc/blogghiamo-dynamic.php:267
+#: inc/admin/blogghiamo-admin-page.php:384 inc/blogghiamo-dynamic.php:267
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:384 inc/blogghiamo-dynamic.php:268
+#: inc/admin/blogghiamo-admin-page.php:389 inc/blogghiamo-dynamic.php:268
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:389 inc/blogghiamo-dynamic.php:269
+#: inc/admin/blogghiamo-admin-page.php:394 inc/blogghiamo-dynamic.php:269
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:397
+#: inc/admin/blogghiamo-admin-page.php:402
 msgid "View PRO version demo"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:398
+#: inc/admin/blogghiamo-admin-page.php:403
 msgid "More Information"
 msgstr ""
 
@@ -637,7 +644,8 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: search.php:16
+#. translators: %s: search query
+#: search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""

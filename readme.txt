@@ -195,3 +195,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 * Fixed some strings escaping
 * Fixed Infinite Scroll with JetPack
 * Improved search widget CSS
+
+= Version 1.5.6 =
+* Fixed some strings escaping

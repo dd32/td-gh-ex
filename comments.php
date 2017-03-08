@@ -88,10 +88,13 @@ if ( post_password_required() ) {
 	?>
 	<?php comment_form( array(
 		'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+		/* translators: %s: wordpress login url */
 		'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' , 'blogghiamo' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+		/* translators: 1: profile user link, 2: username, 3: logout link */
 		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'blogghiamo' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
 		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.'  , 'blogghiamo' ) . ( $req ? $required_text : '' ) . '</p>',
 		'title_reply' => __( 'Leave a Reply'  , 'blogghiamo' ),
+		/* translators: %s: name of person to reply */
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'blogghiamo' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'blogghiamo' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'blogghiamo' ),
