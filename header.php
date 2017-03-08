@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Header Template
  *
@@ -72,4 +72,4 @@ endif;
 		?></div><?php
 		$header_image = true;
 		endif;
-	endif; ?>
+	endif;

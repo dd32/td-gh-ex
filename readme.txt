@@ -1,17 +1,17 @@
 === CHOOKO LITE ===
 
 Contributors: Iceable
-Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 3.5
-Tested up to: 4.3.1
-Stable tag: 1.2.1
+Tags: two-columns, right-sidebar, grid-layout, custom-header, custom-background, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment, food-and-drink, holiday
+Requires at least: 4.1
+Tested up to: 4.7
+Stable tag: 1.2.8
 
 == ABOUT CHOOKO LITE ==
 
 Chooko Lite is a sweet, colorful and responsive theme for WordPress. Perfect for personal, fashion, beauty or cooking oriented blogs and creative websites.
 It features two widgetizable areas (sidebar and optional footer).
 
-Chooko Lite is the lite version of Chooko Pro, which comes with many additional features and access to premium class pro support forum and can be found at http://www.iceablethemes.com
+Chooko Lite is the lite version of Chooko Pro, which comes with many additional features and access to premium class pro support forum and can be found at https://www.iceablethemes.com
 
 == GETTING STARTED ==
 
@@ -19,13 +19,13 @@ Once you activate the theme from your WordPress admin panel, you can visit the "
 If you will be using a custom header image, you can also optionally choose to enable or disable it on your homepage, blog index pages, single post pages and individual pages.
 It is highly recommended to set a menu (in appearance > menu) instead of relying on the default fallback menu. Doing so will automatically activate the dropdown version of your menu in responsive mode.
 
-Additional documentation and free support forums can be found at http://www.iceablethemes.com under "support".
+Additional documentation and free support forums can be found at https://www.iceablethemes.com under "support".
 
 == SPECIAL FEATURES INSTRUCTIONS ==
 
 * Footer widgets: The widgetizable footer is disabled by default. To activate it, simply go to Appearance > Widgets and drop some widgets in the "Footer" area, just like you would do for the sidebar. It is recommended to use 4 widgets in the footer, or no widgets at all to disable it.
 
-Additional documentation and free support forums can be found at http://www.iceablethemes.com under "support".
+Additional documentation and free support forums can be found at https://www.iceablethemes.com under "support".
 
 == LICENSE ==
 
@@ -38,7 +38,7 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
+All other files are copyright 2013-2017 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
@@ -46,13 +46,59 @@ Currently available translation (GNU GPLv2 Licensed):
 
 * French (fr_FR) translation: by Iceable Media
 
-Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
-If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
+Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
+If you don't have a .po file editor yet, you can download Poedit from https://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
 
-If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
+If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at https://www.iceablethemes.com
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.10 =
+March 8th, 2017
+* Fixed chooko_remove_rel_cat() to only remove "category" (but not "tag") value from the rel attribute
+* Added php tags in footer.php, making it less confusing for users who want to modify the footer note
+
+= 1.2.9 =
+January 9th, 2017
+* Updated copyright to 2017
+
+= 1.2.8 =
+December 12th, 2016
+* Now using get_theme_file_uri() to register stylesheets and javascripts for WordPress 4.7
+* Tested with WordPress 4.7
+
+= 1.2.7 =
+November 14th, 2016
+* Updated searchforms to HTML5 markup
+
+= 1.2.6 =
+August 29th, 2016
+* Fixed typo that slipped through the last update
+
+= 1.2.5 =
+August 29th, 2016
+* Removed function chooko_render_title() used as a fallback for title tag support
+* Dropped support for WordPress lesser than 4.1
+* Tested with WordPress 4.6
+
+= 1.2.4 =
+June 16th, 2016
+* Tested with WordPress 4.5.2
+* Updated external links to wordpress.org and iceablethemes.com to https
+* Removed php closing tags from end of files to prevent potential issues
+* Updated theme tags for WordPress.org
+
+= 1.2.3 =
+January 13th, 2016
+* Enhanced support for <!--more--> quicktag
+* Updated copyright to 2016
+* Tested with WordPress 4.4.1
+
+= 1.2.2 =
+November 23rd, 2015
+* Fixed issue with sidebar in WordPress 4.4
+* Tested with WordPress 4.4 (beta 4)
 
 = 1.2.1 =
 November 4th, 2015

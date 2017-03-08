@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -54,6 +54,9 @@ function chooko_setup(){
 								)
 					);
 
+	/* Support HTML5 Search Form */
+	add_theme_support( 'html5', array( 'search-form' ) );
+
 }
 add_action('after_setup_theme', 'chooko_setup');
 
@@ -64,16 +67,6 @@ function chooko_content_width() {
 		$content_width = 920;
 }
 add_action( 'template_redirect', 'chooko_content_width' );
-
-/*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function chooko_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'chooko_render_title' );
-endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -141,10 +134,6 @@ add_action( 'widgets_init', 'chooko_widgets_init' );
  */
 function chooko_styles() {
 
-	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
-	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
-	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
-
 	$responsive_mode = get_theme_mod('chooko_responsive_mode');
 
 	if ($responsive_mode != 'off'):
@@ -153,18 +142,35 @@ function chooko_styles() {
 		$stylesheet = '/css/chooko-unresponsive.min.css';
 	endif;
 
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		wp_register_style( 'chooko', get_theme_file_uri( $stylesheet ) );
 
-	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-	 * or the parent theme's version otherwise
-	 */
-	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
-		wp_register_style( 'chooko', $stylesheet_directory_uri . $stylesheet );
-	else
-		wp_register_style( 'chooko', $template_directory_uri . $stylesheet );
+		// Enqueue style.css from the current theme
+		wp_register_style( 'chooko-style', get_theme_file_uri( '/style.css' ) );
 
-	// Always enqueue style.css from the current theme
-	wp_register_style( 'chooko-style', $stylesheet_directory_uri . '/style.css');
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+
+		$template_directory_uri = get_template_directory_uri(); // Parent theme URI
+		$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
+		$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
+
+		/* Child theme support:
+		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+		 * or the parent theme's version otherwise
+		 */
+		if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+			wp_register_style( 'chooko', $stylesheet_directory_uri . $stylesheet );
+		else
+			wp_register_style( 'chooko', $template_directory_uri . $stylesheet );
+
+		// Always enqueue style.css from the current theme
+		wp_register_style( 'chooko-style', $stylesheet_directory_uri . '/style.css');
+
+	endif;
 
 	wp_enqueue_style( 'chooko' );
 	wp_enqueue_style( 'chooko-style' );
@@ -186,10 +192,14 @@ add_action( 'init', 'chooko_editor_styles' );
  * Enqueue Javascripts
  */
 function chooko_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/chooko.min.js', array('jquery','hoverIntent'));
 
-    /* Threaded comments support */
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
+		wp_enqueue_script('chooko', get_theme_file_uri( '/js/chooko.min.js' ), array('jquery','hoverIntent'));
+	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
+		wp_enqueue_script('chooko', get_template_directory_uri() . '/js/chooko.min.js', array('jquery','hoverIntent'));
+	endif;
+  /* Threaded comments support */
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'chooko_scripts');
@@ -210,8 +220,8 @@ add_filter('post_class','chooko_remove_hentry');
  */
 function chooko_remove_rel_cat( $text ) {
 	$text = str_replace(' rel="category"', "", $text);
-	$text = str_replace(' rel="category tag"', "", $text);
-	return $text;
+  $text = str_replace(' rel="category tag"', ' rel="tag"', $text);
+  return $text;
 }
 add_filter( 'the_category', 'chooko_remove_rel_cat' );
 
@@ -223,6 +233,12 @@ function chooko_excerpt_more( $more ) {
 	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'chooko-lite') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'chooko_excerpt_more' );
+
+function chooko_content_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'chooko-lite') .'</a></div>';
+}
+add_filter( 'the_content_more_link', 'chooko_content_more' );
 
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
@@ -327,5 +343,3 @@ function chooko_adjacent_image_link($prev = true) {
  */
 
 require_once 'inc/customizer/customizer.php';
-
-?>
