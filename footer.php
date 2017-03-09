@@ -57,7 +57,7 @@
       </div>
       <div class="inner">
           <div class="copyright text-center">
-            <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('&copy; 2017 BB Mobile Application theme by ',"bb-mobile-application"))); ?> <a href="http://www.burhanuddinbohra.com/bb-mobile-application-theme/" target="_blank"><?php _e('burhanuddinbohra','bb-mobile-application'); ?></a></p>
+            <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('BB Mobile Application theme by ',"bb-mobile-application"))); ?> <a href="http://www.burhanuddinbohra.com/bb-mobile-application-theme/" target="_blank"><?php _e('burhanuddinbohra','bb-mobile-application'); ?></a></p>
           </div>
           <div class="clear"></div>           
       </div>

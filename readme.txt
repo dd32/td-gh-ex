@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   http://burhanuddinbohra.com/free/wp-bb-mobile-application-theme/
-Version         :   1.1.6
+Version         :   1.1.7
 Tested up to    :   WP 6.0+
 Author          :   burhanuddinbohra
 Author URI      :   https://www.burhanuddinbohra.com/
@@ -57,7 +57,7 @@ Theme is Built using the following resource bundles.
  		 * Copyright 2011-2015 Twitter, Inc.
 4. Screenshot Images
    -- https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
-   -- https://www.google.co.in/search?q=iphone+6+5.5+inch+golden+png+mobile&rlz=1C1ASUM_enIN714IN714&espv=2&biw=1366&bih=662&source=lnms&tbm=isch&sa=X&ved=0ahUKEwin48r_8sbSAhUnLcAKHUKPCa0Q_AUIBigB#tbm=isch&q=iphone+6+5.5+inch+golden+png+mobile+front+view&*&imgrc=iSoH--kUCnRssM:
+   -- https://pixabay.com/en/iphone-iphone-6s-smartphone-mobile-1936818/
 		
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
