@@ -135,8 +135,18 @@ function activello_featured_slider() {
       echo '<ul class="slides">';
 
         $slidecat = get_theme_mod( 'activello_featured_cat' );
-
-        $query = new WP_Query( array( 'cat' => $slidecat,'posts_per_page' => -1 ) );
+        $slidelimit = get_theme_mod( 'activello_featured_limit', -1 );
+        $slider_args = array( 
+            'cat' => $slidecat,
+            'posts_per_page' => $slidelimit,
+            'meta_query' => array(
+                array(
+                 'key' => '_thumbnail_id',
+                 'compare' => 'EXISTS'
+                ),
+            )
+        );
+        $query = new WP_Query( $slider_args );
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post();
                 
@@ -255,7 +265,7 @@ function activello_cb_comment($comment, $args, $depth) {
 	 <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 
-	<div class="comment-author vcard">
+	<div class="comment-author vcard asdasd">
   	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
   	<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>', 'activello' ), get_comment_author_link() ); ?>
   	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
@@ -263,7 +273,7 @@ function activello_cb_comment($comment, $args, $depth) {
     <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
       <?php
         /* translators: 1: date, 2: time */
-        sprintf( __( '%1$s at %2$s', 'activello' ), get_comment_date(), get_comment_time() ); ?></a><?php edit_comment_link( __( 'Edit', 'activello' ), '  ', '' );
+        printf( __( '%1$s at %2$s', 'activello' ), get_comment_date(), get_comment_time() ); ?></a><?php edit_comment_link( __( 'Edit', 'activello' ), '  ', '' );
       ?>
     </div>
 
@@ -303,6 +313,7 @@ if (!function_exists('get_activello_theme_setting'))  {
           .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a,
           .navbar-default .navbar-nav > .open > a:hover, blockquote:before,
           .navbar-default .navbar-nav > .open > a:focus, .cat-title a,
+          .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
           .single .entry-content a, .site-info a:hover {color:' . esc_html(get_theme_mod('accent_color')) . '}';
 
       echo 'article.post .post-categories:after, .post-inner-content .cat-item:after, #secondary .widget-title:after {background:' . esc_html(get_theme_mod('accent_color')) . '}';
@@ -318,8 +329,8 @@ if (!function_exists('get_activello_theme_setting'))  {
           .woocommerce input.button.alt:hover, .input-group-btn:last-child>.btn:hover, .scroll-to-top:hover,
           button, html input[type=button]:hover, input[type=reset]:hover, .comment-list li .comment-body:after, .page-links a:hover span, .page-links span,
           input[type=submit]:hover, .comment-form #submit:hover, .tagcloud a:hover,
-          .single .entry-content a:hover, .dropdown-menu > li > a:hover, 
-          .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+          .single .entry-content a:hover,  
+          .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
           .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{background-color:' . esc_html( get_theme_mod('accent_color') ) . '; }';
     }
     if ( get_theme_mod('social_color')) {
