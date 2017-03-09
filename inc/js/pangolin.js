@@ -20,9 +20,6 @@ jQuery(document).ready(function () {
     jQuery('.equal-height').matchHeight();
     jQuery('.front__product-featured__text, .front__product-featured__image').matchHeight();
     jQuery('.front-product-category__card').matchHeight();
-    jQuery('.front__product-featured__left--2,.front__product-featured__right--2').matchHeight();
-    jQuery('.front__product-featured__left--3,.front__product-featured__right--3').matchHeight();
-    jQuery('.front-product-category__card__inner--l2').matchHeight();
     jQuery('.front-product-category__card__inner').matchHeight();
     jQuery('.post-item').matchHeight();
     jQuery('.product-card__info').matchHeight();
@@ -59,7 +56,6 @@ jQuery(document).ready(function () {
 
     // Hero Image Headline Fittext
     jQuery(".slider-content__title").fitText();
-    jQuery(".entry-header--lb-2").fitText(1);
 
     // Scroll To Top
     if (jQuery(window).scrollTop() > jQuery('.site-header').outerHeight(true)) {

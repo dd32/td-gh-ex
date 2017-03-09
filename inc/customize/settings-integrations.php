@@ -46,7 +46,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woo_shop_product_layout',array(
-				'label'      => esc_html__( 'Shop Page', 'bellini' ),
+				'label'      => esc_html__( 'Products Layout', 'bellini' ),
 				'description' => esc_html__('Applies to Shop & Archive pages','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_shop_product_layout]',
@@ -59,21 +59,6 @@
 		);
 
 
-	//Show * Products per page
-	$wp_customize->add_setting('bellini[bellini_woo_shop_product_per_page]', array(
-		'type' => 'option',
-		'default' => 12,
-		'sanitize_callback' => 'absint',
-		'transport' => 'refresh',
-	) );
-			$wp_customize->add_control('bellini_woo_shop_product_per_page', array(
-				'type' => 'number',
-				'label' => esc_html__('Shop Page - Products per page','bellini'),
-				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini[bellini_woo_shop_product_per_page]',
-				'priority'   => 6,
-			) );
-
 	// Product Column
 	$wp_customize->add_setting( 'bellini[bellini_woo_shop_product_column]',
 		array(
@@ -85,17 +70,19 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woo_shop_product_column',array(
-				'label'      => esc_html__( 'Shop Page - Product Columns ', 'bellini' ),
-				'description' => esc_html__('Product items of Shop & Archive pages','bellini'),
+				'label'      => esc_html__( 'Product Columns ', 'bellini' ),
+				'description' => esc_html__( 'Display Products in a 1, 2, 3 or 4 columns', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_shop_product_column]',
-			    'priority'   => 4,
+			    'priority'   => 3,
 			    'type'       => 'select',
 				'choices'    => array(
-					'col-sm-12' => esc_html__( '1', 'bellini' ),
-					'col-sm-6'  => esc_html__( '2', 'bellini' ),
-					'col-sm-4' 	=> esc_html__( '3', 'bellini' ),
-					'col-sm-3' 	=> esc_html__( '4', 'bellini' ),
+					'col-sm-12' => esc_html__( '1 Column', 'bellini' ),
+					'col-sm-6'  => esc_html__( '2 Columns', 'bellini' ),
+					'col-sm-4' 	=> esc_html__( '3 Columns', 'bellini' ),
+					'col-sm-3' 	=> esc_html__( '4 Columns', 'bellini' ),
+					'col-sm-15' => esc_html__( '5 Columns', 'bellini' ),
+					'col-sm-2' 	=> esc_html__( '6 Columns', 'bellini' ),
 				),
 			)
 		);
@@ -111,11 +98,11 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woo_shop_product_pagination_layout',array(
-				'label'      => esc_html__( 'Shop Page - Sorting Section', 'bellini' ),
+				'label'      => esc_html__( 'Pagination & Sorting Layout', 'bellini' ),
 				'description' => esc_html__('Product sorting, pagination layouts','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_shop_product_pagination_layout]',
-			    'priority'   => 3,
+			    'priority'   => 4,
 			    'type'       => 'select',
 				'choices'    => array(
 					1   => esc_html__( 'Layout 1', 'bellini' ),
@@ -123,6 +110,21 @@
 				),
 			)
 		);
+
+	//Show * Products per page
+	$wp_customize->add_setting('bellini[bellini_woo_shop_product_per_page]', array(
+		'type' => 'option',
+		'default' => 12,
+		'sanitize_callback' => 'absint',
+		'transport' => 'refresh',
+	) );
+			$wp_customize->add_control('bellini_woo_shop_product_per_page', array(
+				'type' => 'number',
+				'label' => esc_html__('Products Per Page','bellini'),
+				'section' => 'bellini_woocommerce_integration',
+				'settings' => 'bellini[bellini_woo_shop_product_per_page]',
+				'priority'   => 5,
+			) );
 
 	/*--------------------------------------------------------------
 	## Typography
@@ -242,7 +244,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_card_back_color',
 			array(
-				'label'      => esc_html__( 'Product Card - Background Color', 'bellini' ),
+				'label'      => esc_html__( 'Product Card Colors', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_card_back_color]',
 			    'priority'   => 31,
@@ -261,7 +263,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_title_color',
 			array(
-				'label'      => esc_html__( 'Product Title - Color', 'bellini' ),
+				'label'      => esc_html__( 'Product Title Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_title_color]',
 			    'priority'   => 32,
@@ -280,7 +282,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_button_text_color',
 			array(
-				'label'      => esc_html__( 'Add To Card Button - Text Color', 'bellini' ),
+				'label'      => esc_html__( 'Add To Cart Button Text Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_button_text_color]',
 			    'priority'   => 33,
@@ -299,7 +301,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_button_color',
 			array(
-				'label'      => esc_html__( 'Add To Button - Color', 'bellini' ),
+				'label'      => esc_html__( 'Add To Cart Button Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_button_color]',
 			    'priority'   => 34,
@@ -317,7 +319,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woo_single_product_layout',array(
-				'label'      => esc_html__( 'Single Product Pages', 'bellini' ),
+				'label'      => esc_html__( 'Single Product Layout', 'bellini' ),
 				'description' => esc_html__('Applies to Single Product Page','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_single_product_layout]',

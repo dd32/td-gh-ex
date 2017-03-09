@@ -20,6 +20,7 @@ global $bellini;
 	    <div class="blog__post__right">
 	    	<div class="blog-post__meta">
 		    	<?php bellini_published_on();?>
+		    	<meta itemprop="author" content="<?php the_author_link(); ?>">
 	    	</div>
 		    <header class="entry-header">
 				<?php the_title( sprintf( '<h3 itemprop="headline" class="entry-title"><a href="%s" class="element-title element-title--post" rel="bookmark" itemprop="name">',

@@ -21,6 +21,9 @@ $wp_customize->get_control( 'display_header_text' )->section  	= 'bellini_hide_h
 $wp_customize->get_control('custom_logo')->label 				= esc_html__('Logo Image', 'bellini');
 $wp_customize->get_control('custom_logo')->description 			= esc_html__('Upload a logo image to used in the place of your site title.', 'bellini');
 
+$wp_customize->get_control('blogname')->description 			= esc_html__("Your Website's Name", 'bellini');
+$wp_customize->get_control('blogdescription')->description 		= esc_html__("Your Website's Tagline", 'bellini');
+
 $wp_customize->get_control('custom_logo')->priority 			= 2;
 $wp_customize->get_control('blogname')->priority 				= 3;
 $wp_customize->get_control('blogdescription')->priority 		= 4;
@@ -33,7 +36,7 @@ $wp_customize->get_control( 'header_textcolor' )->section 	= 'text_color';
 $wp_customize->get_setting( 'background_color' )->default 	= '#eceef1';
 $wp_customize->get_control( 'background_color' )->section 	= 'section_color';
 $wp_customize->get_control( 'background_color' )->priority 	= 3;
-$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website Background', 'bellini');
+$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website Background Color', 'bellini');
 
 
 
@@ -197,7 +200,7 @@ $bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
 $primary_color_text 			= ".bellini-social__link a span,.scrollToTop";
-$primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
+$primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.product-featured__title h1:after,.product-featured__title--l2 h1:after";
 
 $bellini_meta_color_text 		= ".comments-link a,.post-meta__time,.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
 $bellini_meta_color_background 	= ".main-navigation li a:before,.post-meta__tag__item a:before";
@@ -220,11 +223,12 @@ textarea{
 	font-family: <?php echo $logo_font_select;?>;
 }
 
+h1,h2,h3,h4,h5,h6,
 .element-title,
-.page-title,
 .element-title--post,
 .element-title--main,
 .single-page__title,
+.page-title,
 .single-post__title,
 .main-navigation a,
 .hamburger__menu--open .menu-item{
@@ -323,15 +327,28 @@ if ( is_woocommerce_activated() ):
 
 
 		// CSS Classes
-		$woo_class_prices 					= ".site-cart__icon,.product-card__info__price,.product-card__info__price,.product-featured__price .amount,.product-featured__price--l2 .amount,.product-card__info__price .amount,.woocommerce div.product span.price,.add_to_cart_button:before";
-		$woo_additional 					= ".product-featured__review--centered,.product .onsale,.product--l2 .onsale,.listed__total,.woocommerce span.onsale, .product-card__inner__hover";
-		$woo_class_buttons 					= ".product-featured__add-cart .add_to_cart_button,.product-featured__add-cart--l2 .add_to_cart_button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button";
-		$woo_product_card_background 		= ".product-card__inner,.front-product-category__card__inner,.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3,.woocommerce div.product .woocommerce-tabs ul.tabs li.active,.woocommerce div.product .woocommerce-tabs .panel";
+		$woo_class_prices 						= ".site-cart__icon,.product-card__info__price,.product-card__info__price,.product-featured__price .amount,.product-card__info__price .amount,.woocommerce div.product span.price,.add_to_cart_button:before";
+		$woo_additional 						= ".product-featured__review--centered,.product .onsale,.listed__total,.woocommerce span.onsale";
+		$woo_class_buttons 						= ".product-featured__add-cart .add_to_cart_button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button";
+		$woo_product_card_background 			= ".product-card__inner,.front-product-category__card__inner,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.woocommerce div.product .woocommerce-tabs ul.tabs li.active,.woocommerce div.product .woocommerce-tabs .panel";
 
+		$font_preset   							= esc_attr($bellini['preset_font']);
+		$font_preset_title 						= bellini_font_preset_title($font_preset);
 	?>
 
 
 	<style type="text/css">
+
+	.product_title,
+	.category_title,
+	.woocommerce-loop-category__title,
+	.woocommerce-loop-product__title,
+	.related.products h2,
+	.wc-tabs li a,
+	.up-sells h2{
+		font-family: <?php echo $font_preset_title; ?>;
+	}
+
 	.product-card__info__product a,
 	.product-featured__title a,
 	.woocommerce ul.products li.product h3,

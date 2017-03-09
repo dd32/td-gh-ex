@@ -10,11 +10,25 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<div class="row bellini__canvas">
+		<div itemscope itemtype="https://schema.org/SearchResultsPage">
+
 		<?php if ( have_posts() ) : ?>
+
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bellini' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<!-- Title for search results containing search term -->
+				<h1 class="page-title">
+					<?php
+					/**
+					 * Structure assumes we're using a search.php template
+					 *
+					 * @link https://codex.wordpress.org/Creating_a_Search_Page
+					 */
+					printf( esc_html__( 'Search Results for: %s', 'bellini' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1>
 			</header><!-- .page-header -->
-			<?php /* Start the Loop */ ?>
+
+			<ol>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php
 				/**
@@ -25,10 +39,17 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 				?>
 			<?php endwhile; ?>
-			<?php bellini_pagination(); ?>
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-		<?php endif; ?>
+			</ol>
+
+			<?php
+				bellini_pagination();
+
+		 else :
+			 get_template_part( 'template-parts/content', 'none' );
+
+		 endif;
+		 ?>
+		</div>
 		</div>
 		</main><!-- #main -->
 	</section><!-- #primary -->

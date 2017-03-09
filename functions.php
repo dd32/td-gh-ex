@@ -1,26 +1,22 @@
 <?php
 /**
- * bellini functions and definitions.
+ * Bellini functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package bellini
+ * @author  Towhid, Atlantis Themes
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU Public License
  */
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/extras.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/customize/bellini-customizer-choices.php');          //Choices
-require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/integration/jetpack.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/customize/customizer-sanitization.php');
 
-if ( is_woocommerce_activated() ) {
-	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-functions.php');
-	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-hooks.php');
-}
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
 
 if ( ! function_exists( 'bellini_setup' ) ) :
 
@@ -28,13 +24,57 @@ add_action( 'after_setup_theme', 'bellini_setup' );
 
 function bellini_setup() {
 
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on Bellini, use a find and replace
+	 * to change 'bellini' to the name of your theme in all the template files
+	 */
 	load_theme_textdomain( 'bellini', get_template_directory() . '/languages' );
+
+	/*
+     * Add default posts and comments RSS feed links to head.
+     */
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'bellini-thumb', 820, 400 );
+
+	/*
+     * This theme uses wp_nav_menu() in the following locations.
+     */
+	register_nav_menus( array(
+		'primary' 	=> esc_html__( 'Primary Menu', 'bellini' ),
+	) );
+
+	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo');
+
+	/*
+	 * Switch default core yorkup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support( 'html5', array('search-form','comment-form','comment-list','gallery','caption',) );
+
 	add_theme_support('widget-customizer');
+
+    /*
+     * Enable support for Customizer Selective Refresh.
+     * See: https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/
+     */
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// WooCommerce Integration
@@ -48,12 +88,7 @@ function bellini_setup() {
 		'default-image' => '',
 	) ) );
 
-	register_nav_menus( array(
-		'primary' 	=> esc_html__( 'Primary Menu', 'bellini' ),
-	) );
-
-	add_image_size( 'bellini-thumb', 820, 400 );
-
+	// Set the default content width.
 	$GLOBALS['content_width'] = apply_filters( 'bellini_content_width', 640 );
 
 	add_editor_style();
@@ -61,12 +96,18 @@ function bellini_setup() {
 
 endif; // bellini_setup
 
+/**
+ * Register widget areas.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+
 add_action( 'widgets_init', 'bellini_widgets_init' );
 
 function bellini_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar Right', 'bellini' ),
+		'name'          => esc_html__( 'Right Sidebar', 'bellini' ),
 		'id'            => 'sidebar-right',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -76,7 +117,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar Left', 'bellini' ),
+		'name'          => esc_html__( 'Left Sidebar', 'bellini' ),
 		'id'            => 'sidebar-left',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -86,7 +127,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar Blog Right', 'bellini' ),
+		'name'          => esc_html__( 'Blog Sidebar Right', 'bellini' ),
 		'id'            => 'sidebar-blog',
 		'description'   => esc_html__( 'These widgets will be only visible in Blog Page Template, Archive pages','bellini' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -96,7 +137,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Widget Area - Footer', 'bellini' ),
+		'name'          => esc_html__( 'Footer Widgets', 'bellini' ),
 		'id'            => 'sidebar-footer',
 		'description'   => esc_html__( 'You can change the Footer Widget Column count from Customize - Layout - Layout Footer','bellini' ),
 		'before_widget' => apply_filters('bellini_widget_footer_column','<section id="%1$s" class="widget__footer col-md-3 %2$s">'),
@@ -323,4 +364,41 @@ function bellini_option_defaults() {
       $options = wp_parse_args( $options, $defaults );
 
 	return $options;
+}
+
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/extras.php');
+/**
+ * Implement the Custom Header feature.
+ */
+require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.php');
+
+/**
+ * Customizer additions.
+ */
+require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize/bellini-customizer-choices.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize/customizer-sanitization.php');
+
+require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php');
+
+/**
+ * Support for Jetpack
+ * https://wordpress.org/plugins/jetpack/
+ */
+if ( class_exists( 'Jetpack' )){
+	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/jetpack.php');
+}
+
+/**
+ * Support for WooCommerce
+ * https://wordpress.org/plugins/woocommerce/
+ */
+if ( is_woocommerce_activated() ) {
+	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-functions.php');
+	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-hooks.php');
 }

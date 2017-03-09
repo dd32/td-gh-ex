@@ -105,11 +105,16 @@ function bellini_post_tag() {
 */
 function bellini_published_on() { ?>
     <span class="post-meta__time">
-      <span itemprop="datePublished" content="<?php echo get_the_date(get_option('date_format')); ?>">
+
+      <span itemprop="datePublished">
+        <time datetime="<?php echo get_the_date(get_option('date_format')); ?>" pubdate>
         <?php echo get_the_date(get_option('date_format'));?>
+        </time>
       </span>
+
       <meta itemprop="dateModified" content="<?php the_modified_time(get_option('date_format'));?>">
     </span>
+
 <?php }
 
 /**
@@ -126,11 +131,18 @@ function bellini_comment_count(){
 /**
 * Prints HTML with meta information for the current post-date/time and author.
 */
-function bellini_post_author() {
-    $byline = sprintf('<span class="fn n post-meta__author " itemprop="name"><a class="post-meta__author__link" itemprop="url" rel="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>');
-    echo '<p class="vcard author post-meta__author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"> ' . $byline . '</p>';
-}
+function bellini_post_author() { ?>
 
+  <p class="post-meta__author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+  <span itemprop="author">
+  <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
+  <?php the_author_link(); ?>
+  </a>
+  </span>
+  </p>
+
+<?php
+}
 
 /**
 * Edit Content
@@ -187,14 +199,19 @@ function bellini_category_transient_flusher() {
 function bellini_post_thumbnail(){
     global $bellini;
     if ( has_post_thumbnail() ) {
-        echo '<figure>';
-        the_post_thumbnail('bellini-thumb', array(
-                                    'class'     => 'img-respponsive blog__post__image',
-                                    'itemprop'  => 'image',
-                                    'role'      => 'img',
-                                    )
-        );
-        echo '</figure>';
+
+                $meta   = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
+                $width  = $meta['width'];
+                $height = $meta['height'];
+        ?>
+            <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                <?php the_post_thumbnail('bellini-thumb', array('class' => 'img-respponsive blog__post__image'));?>
+                <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
+                <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
+                <meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
+            </figure><!--/itemprop=image-->
+
+<?php
     }else{?>
         <img itemprop="image" src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_parent_theme_file_uri('/images/featured-image.jpg'); endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
     <?php }
@@ -232,10 +249,7 @@ function bellini_pagination() {
     if($bellini['bellini_blog_pagination_type'] == 2):
         // Numeric Pagination
         echo '<div class="col-xs-12">';
-        the_posts_pagination(array(
-            'prev_text' =>'<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            'next_text' =>'<i class="fa fa-angle-right" aria-hidden="true"></i>',
-          ));
+        the_posts_pagination();
         echo '</div>';
     endif;
     if($bellini['bellini_blog_pagination_type'] == 3):
@@ -285,21 +299,22 @@ endif;
 * Prints Out Single Post thumbnail with Schema
 */
 function bellini_single_post_thumbnail(){
-    if ( has_post_thumbnail() ) {?>
-        <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <?php the_post_thumbnail('full', array('class' => 'img-responsive single-post__featured-image'));?>
-            <?php
-                $thumb_id = get_post_thumbnail_id();
-                $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
-                $thumb_url = $thumb_url_array[0];
-                $thumb_width = $thumb_url_array[1];
-                $thumb_height = $thumb_url_array[2];
-            ?>
-            <meta itemprop="url" content="<?php echo $thumb_url;?>">
-            <meta itemprop="width" content="<?php echo $thumb_width;?>">
-            <meta itemprop="height" content="<?php echo $thumb_height;?>">
-        </figure>
-    <?php }
+    if ( has_post_thumbnail() ) : ?>
+
+        <?php
+                $meta   = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
+                $width  = $meta['width'];
+                $height = $meta['height'];
+        ?>
+            <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                <?php the_post_thumbnail('full', array('class' => 'img-responsive single-post__featured-image'));?>
+                <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
+                <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
+                <meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
+            </figure><!--/itemprop=image-->
+    <?php
+
+    endif;
 }
 
 /**

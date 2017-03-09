@@ -28,7 +28,7 @@
 
 	// Front Page Section Category
 	$wp_customize->add_section('bellini_frontpage_section_category',array(
-			'title' 			=> esc_html__( 'WooCommerce - Category', 'bellini' ),
+			'title' 			=> esc_html__( 'Product Categories', 'bellini' ),
 			'capability' 		=> 'edit_theme_options',
 			'priority' 			=> 2,
 			'panel' 			=> 'bellini_frontpage_panel',
@@ -39,7 +39,7 @@
 
 	// Front Page WooCommerce Products
 	$wp_customize->add_section('bellini_frontpage_section_product',array(
-			'title' 			=> esc_html__( 'WooCommerce - Products', 'bellini' ),
+			'title' 			=> esc_html__( 'Product Listings', 'bellini' ),
 			'capability' 		=> 'edit_theme_options',
 			'priority' 			=> 3,
 			'panel' 			=> 'bellini_frontpage_panel',
@@ -49,7 +49,7 @@
 
 	// Front Page Section Featured Product
 	$wp_customize->add_section('bellini_frontpage_section_featured',array(
-			'title' 			=> esc_html__( 'WooCommerce - Featured Slider', 'bellini' ),
+			'title' 			=> esc_html__( 'Featured Products', 'bellini' ),
 			'capability' 		=> 'edit_theme_options',
 			'priority' 			=> 4,
 			'panel' 			=> 'bellini_frontpage_panel',
@@ -197,6 +197,7 @@
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_static_slider_image',array(
                'section'    => 'bellini_frontpage_section_slider',
                'settings'   => 'bellini[bellini_static_slider_image]',
+               'description'=> esc_html__('Slider Image', 'bellini'),
                'priority'   => 2,
                'active_callback' 	=> 'is_active_slider_type_bellini_hero',
 			   )
@@ -231,6 +232,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_title',array(
 				'type' 		=>'text',
+				'description'=> esc_html__('Slider Title', 'bellini'),
                'input_attrs' 	=> array('placeholder' 	=> esc_html__( 'Title', 'bellini' ),),
                'section'    => 'bellini_frontpage_section_slider',
                'settings'   => 'bellini[bellini_static_slider_title]',
@@ -248,6 +250,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_content',array(
 				'type' 		=>'textarea',
+				'description'=> esc_html__('Slider Content', 'bellini'),
                'section'    => 'bellini_frontpage_section_slider',
                'settings'   => 'bellini[bellini_static_slider_content]',
                'priority'   => 5,
@@ -282,6 +285,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_button_text-1',array(
 				'type' 				=>'text',
+				'description'=> esc_html__('Slider Button 1 Label', 'bellini'),
                'section'    		=> 'bellini_frontpage_section_slider',
                'settings'   		=> 'bellini[bellini_static_slider_button_text-1]',
                'priority'   		=> 7,
@@ -300,6 +304,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_button_url-1',array(
 				'type' 		=>'url',
+				'description'=> esc_html__('Slider Button 1 Link', 'bellini'),
                'section'    => 'bellini_frontpage_section_slider',
                'settings'   => 'bellini[bellini_static_slider_button_url-1]',
                'priority'   => 8,
@@ -318,6 +323,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_button_text-2',array(
 				'type' 			=>'text',
+				'description'=> esc_html__('Slider Button 2 Label', 'bellini'),
                'section'    	=> 'bellini_frontpage_section_slider',
                'settings'   	=> 'bellini[bellini_static_slider_button_text-2]',
                'priority'   	=> 9,
@@ -335,6 +341,7 @@
 
 			$wp_customize->add_control('bellini_static_slider_button_url-2',array(
 				'type' 		=>'url',
+				'description'=> esc_html__('Slider Button 2 Link', 'bellini'),
                'section'    => 'bellini_frontpage_section_slider',
                'settings'   => 'bellini[bellini_static_slider_button_url-2]',
                'priority'   => 10,
@@ -533,7 +540,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_category_section_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Category - Heading','bellini'),
+					'label' => esc_html__('Product Categories','bellini'),
 					'section' => 'bellini_frontpage_section_category',
 					'settings'    => 'bellini[bellini_woo_category_section_title]',
 					'priority'   => 1,
@@ -580,7 +587,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_category_option_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Category - Layout','bellini'),
+					'label' => esc_html__('Product Category Layout','bellini'),
 					'section' => 'bellini_frontpage_section_category',
 					'settings'    => 'bellini[bellini_woo_category_option_title]',
 					'priority'   => 20,
@@ -598,7 +605,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 	);
 
 		$wp_customize->add_control( 'woo_product_category_layout',array(
-				'label'      => esc_html__( 'Layout - Category', 'bellini' ),
+				'label'      => esc_html__( 'Category Layout', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_category',
 				'settings'   => 'bellini[woo_product_category_layout]',
 			    'priority'   => 21,
@@ -621,17 +628,17 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 	);
 
 		$wp_customize->add_control( 'woo_product_category_row',array(
-				'label'      => esc_html__( 'Column - Category ', 'bellini' ),
+				'label'      => esc_html__( 'Category Column', 'bellini' ),
 				'description'      => esc_html__( 'Display Category in 1, 2, 3 or 4 Column ', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_category',
 				'settings'   => 'bellini[woo_product_category_row]',
 			    'priority'   => 22,
 			    'type'       => 'radio',
 				'choices'    => array(
-					'col-sm-12'   => esc_html__( 'One', 'bellini' ),
-					'col-sm-6'  => esc_html__( 'Two', 'bellini' ),
-					'col-sm-4' => esc_html__( 'Three', 'bellini' ),
-					'col-sm-3' => esc_html__( 'Four', 'bellini' ),
+					'col-sm-12'   => esc_html__( '1 Column', 'bellini' ),
+					'col-sm-6'  => esc_html__( '2 Columns', 'bellini' ),
+					'col-sm-4' => esc_html__( '3 Columns', 'bellini' ),
+					'col-sm-3' => esc_html__( '4 Columns', 'bellini' ),
 				),
 			)
 		);
@@ -647,7 +654,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 	);
 
 		$wp_customize->add_control( 'bellini_product_category_des_pos',array(
-				'label'      => esc_html__( 'Position - Section Heading', 'bellini' ),
+				'label'      => esc_html__( 'Section Heading Alignment', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_category',
 				'settings'   => 'bellini[bellini_product_category_des_pos]',
 			    'priority'   => 23,
@@ -671,7 +678,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_category_color_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Category - Color & Image','bellini'),
+					'label' => esc_html__('Product Category Color & Image','bellini'),
 					'section' => 'bellini_frontpage_section_category',
 					'settings'    => 'bellini[bellini_woo_category_color_title_helper]',
 					'priority'   => 30,
@@ -711,7 +718,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_product_section_content_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Section - Heading','bellini'),
+					'label' => esc_html__('Product Section Heading','bellini'),
 					'section' => 'bellini_frontpage_section_product',
 					'settings'    => 'bellini[bellini_woo_product_section_content_helper]',
 					'priority'   => 1,
@@ -727,7 +734,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control('bellini_woo_product_title',array(
 				'type' 		=>'text',
-               'label'      => esc_html__( 'Section Title', 'bellini' ),
+               'label'      => esc_html__( 'Product Section Title', 'bellini' ),
                'section'    => 'bellini_frontpage_section_product',
                'settings'   => 'bellini[bellini_woo_product_title]',
                'priority'   => 2,
@@ -742,7 +749,7 @@ esc_url( 'https://wordpress.org/plugins/soliloquy-lite/' ));
 
 			$wp_customize->add_control('bellini_woo_product_description',array(
 				'type' 		=>'textarea',
-               'label'      => esc_html__( 'Section Description', 'bellini' ),
+               'label'      => esc_html__( 'Product Section Description', 'bellini' ),
                'section'    => 'bellini_frontpage_section_product',
                'settings'   => 'bellini[bellini_woo_product_description]',
                'priority'   => 3,
@@ -804,7 +811,7 @@ if ( is_woocommerce_activated() ) {
 	) );
 
 		$wp_customize->add_control( 'bellini_woo_category_selector', array(
-			'label'      	=> esc_html__( 'Product Category', 'bellini' ),
+			'label'      	=> esc_html__( 'Select Product Category', 'bellini' ),
 			'description'      	=> esc_html__( 'Select Category you want to display', 'bellini' ),
 		    'settings' => 'bellini[bellini_woo_category_selector]',
 		    'type' => 'select',
@@ -874,7 +881,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_product_cta_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Section - Call To Action','bellini'),
+					'label' => esc_html__('Call To Action Section','bellini'),
 					'section' => 'bellini_frontpage_section_product',
 					'settings'    => 'bellini[bellini_woo_product_cta_title]',
 					'priority'   => 30,
@@ -921,7 +928,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_product_layout_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Section - Layout','bellini'),
+					'label' => esc_html__('Product Section Layout','bellini'),
 					'section' => 'bellini_frontpage_section_product',
 					'settings'    => 'bellini[bellini_woo_product_layout_title_helper]',
 					'priority'   => 40,
@@ -939,7 +946,7 @@ if ( is_woocommerce_activated() ) {
 	);
 
 		$wp_customize->add_control( 'woo_product_new_layout',array(
-				'label'      => esc_html__( 'Layout - Products', 'bellini' ),
+				'label'      => esc_html__( 'Product Layouts', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_product',
 				'settings'   => 'bellini[woo_product_new_layout]',
 			    'priority'   => 41,
@@ -962,17 +969,19 @@ if ( is_woocommerce_activated() ) {
 	);
 
 		$wp_customize->add_control( 'woo_product_new_row',array(
-				'label'      => esc_html__( 'Column - Products ', 'bellini' ),
+				'label'      => esc_html__( 'Product Columns', 'bellini' ),
 				'description'      => esc_html__( 'Display * Products in a 1, 2, 3 or 4 columns', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_product',
 				'settings'   => 'bellini[woo_product_new_row]',
 			    'priority'   => 42,
 			    'type'       => 'radio',
 				'choices'    => array(
-					'col-sm-12' => esc_html__( 'One', 'bellini' ),
-					'col-sm-6'  => esc_html__( 'Two', 'bellini' ),
-					'col-sm-4' 	=> esc_html__( 'Three', 'bellini' ),
-					'col-sm-3' 	=> esc_html__( 'Four', 'bellini' ),
+					'col-sm-12' => esc_html__( '1 Column', 'bellini' ),
+					'col-sm-6'  => esc_html__( '2 Columns', 'bellini' ),
+					'col-sm-4' 	=> esc_html__( '3 Columns', 'bellini' ),
+					'col-sm-3' 	=> esc_html__( '4 Columns', 'bellini' ),
+					'col-sm-15' => esc_html__( '5 Columns', 'bellini' ),
+					'col-sm-2' 	=> esc_html__( '6 Columns', 'bellini' ),
 				),
 			)
 		);
@@ -988,7 +997,7 @@ if ( is_woocommerce_activated() ) {
 	);
 
 		$wp_customize->add_control( 'bellini_product_general_des_pos',array(
-				'label'      => esc_html__( 'Position - Section Heading', 'bellini' ),
+				'label'      => esc_html__( 'Section Heading Alignment', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_product',
 				'settings'   => 'bellini[bellini_product_general_des_pos]',
 			    'priority'   => 43,
@@ -1011,7 +1020,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woo_product_section_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Product Section - Color & Image','bellini'),
+					'label' => esc_html__('Product Section Color & Image','bellini'),
 					'section' => 'bellini_frontpage_section_product',
 					'settings'    => 'bellini[bellini_woo_product_section_title]',
 					'priority'   => 50,
@@ -1051,7 +1060,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_featured_product_content_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Featured Products - Heading','bellini'),
+					'label' => esc_html__('Featured Products Section','bellini'),
 					'section' => 'bellini_frontpage_section_featured',
 					'settings'    => 'bellini[bellini_featured_product_content_title_helper]',
 					'priority'   => 10,
@@ -1066,7 +1075,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('woo_featured_product_title',array(
 				'type' 		=>'text',
-               'label'      => esc_html__( 'Section Title', 'bellini' ),
+               'label'      => esc_html__( 'Featured Section Title', 'bellini' ),
                'section'    => 'bellini_frontpage_section_featured',
                'settings'   => 'bellini[woo_featured_product_title]',
                'priority'   => 11,
@@ -1081,7 +1090,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('woo_featured_product_description',array(
 				'type' 		=>'textarea',
-               'label'      => esc_html__( 'Section Description', 'bellini' ),
+               'label'      => esc_html__( 'Featured Section Description', 'bellini' ),
                'section'    => 'bellini_frontpage_section_featured',
                'settings'   => 'bellini[woo_featured_product_description]',
                'priority'   => 12,
@@ -1099,7 +1108,7 @@ if ( is_woocommerce_activated() ) {
 	);
 
 		$wp_customize->add_control( 'bellini_featured_slides_no_selector',array(
-				'label'      	=> esc_html__( 'Number of Featured Products to display', 'bellini' ),
+				'label'      	=> esc_html__( 'Featured Products Per Page', 'bellini' ),
 				'section'    	=> 'bellini_frontpage_section_featured',
 				'settings'   	=> 'bellini[bellini_featured_slides_no_selector]',
 			    'priority'   	=> 13,
@@ -1118,7 +1127,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_featured_product_color_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Featured Products - Style & Layout','bellini'),
+					'label' => esc_html__('Featured Products Style & Layout','bellini'),
 					'section' => 'bellini_frontpage_section_featured',
 					'settings'    => 'bellini[bellini_featured_product_color_title_helper]',
 					'priority'   => 30,
@@ -1135,7 +1144,7 @@ if ( is_woocommerce_activated() ) {
 	);
 
 		$wp_customize->add_control( 'woo_featured_product_layout',array(
-				'label'      => esc_html__( 'Slider Layout', 'bellini' ),
+				'label'      => esc_html__( 'Featured Product Layouts', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_featured',
 				'settings'   => 'bellini[woo_featured_product_layout]',
 			    'priority'   => 31,
@@ -1179,7 +1188,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_blog_section_front_content_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Blog Section - Heading','bellini'),
+					'label' => esc_html__('Front Blog Section','bellini'),
 					'section' => 'bellini_frontpage_section_blog',
 					'settings'    => 'bellini[bellini_blog_section_front_content_title_helper]',
 					'priority'   => 10,
@@ -1196,7 +1205,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_home_blogposts_title',array(
 				'type' 		=>'text',
-               'label'      => esc_html__( 'Section Title', 'bellini' ),
+               'label'      => esc_html__( 'Blog Section Title', 'bellini' ),
                'section'    => 'bellini_frontpage_section_blog',
                'settings'   => 'bellini[bellini_home_blogposts_title]',
                'priority'   => 11,
@@ -1212,7 +1221,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_home_blogposts_description',array(
 				'type' 		=>'textarea',
-               'label'      => esc_html__( 'Section Description', 'bellini' ),
+               'label'      => esc_html__( 'Blog Section Description', 'bellini' ),
                'section'    => 'bellini_frontpage_section_blog',
                'settings'   => 'bellini[bellini_home_blogposts_description]',
                'priority'   => 12,
@@ -1228,7 +1237,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_blog_section_front_cta_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Blog Section - Call To Action','bellini'),
+					'label' => esc_html__('Front Blog Call To Action','bellini'),
 					'section' => 'bellini_frontpage_section_blog',
 					'settings'    => 'bellini[bellini_blog_section_front_cta_title_helper]',
 					'priority'   => 20,
@@ -1244,6 +1253,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_home_blogposts_button_text',array(
 				'type' 		=>'text',
+				'description' => esc_html__('Blog Section Button','bellini'),
                'section'    => 'bellini_frontpage_section_blog',
                'settings'   => 'bellini[bellini_home_blogposts_button_text]',
                'priority'   => 21,
@@ -1259,6 +1269,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_home_blogposts_button_url',array(
 				'type' 		=>'url',
+				'description' => esc_html__('Blog Section Link','bellini'),
                'section'    => 'bellini_frontpage_section_blog',
                'settings'   => 'bellini[bellini_home_blogposts_button_url]',
                'priority'   => 22,
@@ -1275,7 +1286,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_blog_section_front_layout_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Blog Posts - Layout','bellini'),
+					'label' => esc_html__('Blog Posts Layout','bellini'),
 					'description' => esc_html__('this layout settings will be aplicable to frontpage blog posts.','bellini'),
 					'section' => 'bellini_frontpage_section_blog',
 					'settings'    => 'bellini[bellini_blog_section_front_layout_title_helper]',
@@ -1317,7 +1328,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_blog_section_front_color_title_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Section - Color & Image','bellini'),
+					'label' => esc_html__('Blog Section Color & Image','bellini'),
 					'section' => 'bellini_frontpage_section_blog',
 					'settings'    => 'bellini[bellini_blog_section_front_color_title_helper]',
 					'priority'   => 40,
@@ -1405,9 +1416,9 @@ if ( is_woocommerce_activated() ) {
 			    'priority'   => 22,
 			    'type'       => 'radio',
 				'choices'    => array(
-					'col-sm-12'   => esc_html__( 'One', 'bellini' ),
-					'col-sm-6'    => esc_html__( 'Two', 'bellini' ),
-					'col-sm-4'    => esc_html__( 'Three', 'bellini' ),
+					'col-sm-12'   => esc_html__( '1 Column', 'bellini' ),
+					'col-sm-6'    => esc_html__( '2 Columns', 'bellini' ),
+					'col-sm-4'    => esc_html__( '3 Columns', 'bellini' ),
 				),
 			)
 		);
@@ -1477,7 +1488,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellii_feature_block_one_helper_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Block One','bellini'),
+					'label' => esc_html__('Block 1','bellini'),
 					'section' => 'bellini_frontpage_section_blocks',
 					'settings'    => 'bellini[bellii_feature_block_one_helper_title]',
 					'priority'   => 3,
@@ -1494,6 +1505,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_title_one',array(
 				'type' 			=>'text',
+				'description'=> esc_html__('Block 1 Title', 'bellini'),
                'section'    	=> 'bellini_frontpage_section_blocks',
                'settings'   	=> 'bellini[bellini_feature_block_title_one]',
                'input_attrs'  	=> array('placeholder' 	=> esc_html__( 'Title', 'bellini' ),),
@@ -1510,6 +1522,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_content_one',array(
 				'type' 		=>'textarea',
+				'description'=> esc_html__('Block 1 Description', 'bellini'),
                'section'    => 'bellini_frontpage_section_blocks',
                'settings'   => 'bellini[bellini_feature_block_content_one]',
                'priority'   	=> 5,
@@ -1525,6 +1538,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_feature_block_image_one',array(
                'section'    => 'bellini_frontpage_section_blocks',
+               'description'=> esc_html__('Block 1 Image', 'bellini'),
                'settings'   => 'bellini[bellini_feature_block_image_one]',
                'priority'   	=> 6,
 			   )
@@ -1541,7 +1555,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_feature_block_two_helper_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Block Two','bellini'),
+					'label' => esc_html__('Block 2','bellini'),
 					'section' => 'bellini_frontpage_section_blocks',
 					'settings'    => 'bellini[bellini_feature_block_two_helper_title]',
 					'priority'   => 7,
@@ -1558,6 +1572,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_title_two',array(
 				'type' 		=>'text',
+				'description'=> esc_html__('Block 2 Title', 'bellini'),
                'section'    => 'bellini_frontpage_section_blocks',
                'settings'   => 'bellini[bellini_feature_block_title_two]',
                'input_attrs'  	=> array('placeholder' 	=> esc_html__( 'Title', 'bellini' ),),
@@ -1574,6 +1589,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_content_two',array(
 				'type' 		=>'textarea',
+				'description'=> esc_html__('Block 2 Description', 'bellini'),
                'section'    => 'bellini_frontpage_section_blocks',
                'settings'   => 'bellini[bellini_feature_block_content_two]',
                'priority'   	=> 9,
@@ -1589,6 +1605,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_feature_block_image_two',array(
                'section'    => 'bellini_frontpage_section_blocks',
+               'description'=> esc_html__('Block 2 Image', 'bellini'),
                'settings'   => 'bellini[bellini_feature_block_image_two]',
                'priority'   	=> 10,
 			   )
@@ -1604,7 +1621,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellii_feature_block_three_helper_title', array(
 					'type' => 'info',
-					'label' => esc_html__('Block Three','bellini'),
+					'label' => esc_html__('Block 3','bellini'),
 					'section' => 'bellini_frontpage_section_blocks',
 					'settings'    => 'bellini[bellii_feature_block_three_helper_title]',
 					'priority'   => 11,
@@ -1621,6 +1638,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_title_three',array(
 				'type' 		=>'text',
+				'description'=> esc_html__('Block 3 Title', 'bellini'),
                'section'    => 'bellini_frontpage_section_blocks',
                'settings'   => 'bellini[bellini_feature_block_title_three]',
                'input_attrs'  	=> array('placeholder' 	=> esc_html__( 'Title', 'bellini' ),),
@@ -1637,6 +1655,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control('bellini_feature_block_content_three',array(
 				'type' 		=>'textarea',
+				'description'=> esc_html__('Block 3 Description', 'bellini'),
                'section'    => 'bellini_frontpage_section_blocks',
                'settings'   => 'bellini[bellini_feature_block_content_three]',
                 'priority'   	=> 13,
@@ -1652,6 +1671,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_feature_block_image_three',array(
                'section'    => 'bellini_frontpage_section_blocks',
+               'description'=> esc_html__('Block 3 Image', 'bellini'),
                'settings'   => 'bellini[bellini_feature_block_image_three]',
                'priority'   	=> 14,
 			   )
@@ -1687,7 +1707,7 @@ if ( is_woocommerce_activated() ) {
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_frontpage_textarea_section_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Section - Color & Image','bellini'),
+					'label' => esc_html__('Section Color & Image','bellini'),
 					'section' => 'bellini_frontpage_section_text_field',
 					'settings'    => 'bellini[bellini_frontpage_textarea_section_helper]',
 					'priority'   => 2,

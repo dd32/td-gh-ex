@@ -6,7 +6,7 @@
 
 // Background Color
 $wp_customize->add_section('section_color',array(
-	'title' => esc_html__( 'Color - Background', 'bellini' ),
+	'title' => esc_html__( 'Background Color', 'bellini' ),
 	'capability' => 'edit_theme_options',
 	'priority' => 1,
 	'panel' => 'bellini_colors_panel'
@@ -15,7 +15,7 @@ $wp_customize->add_section('section_color',array(
 
 // Text Color
 $wp_customize->add_section('text_color',array(
-	'title' => esc_html__( 'Color - Texts', 'bellini' ),
+	'title' => esc_html__( 'Text Color', 'bellini' ),
 	'capability' => 'edit_theme_options',
 	'priority' => 2,
 	'panel' => 'bellini_colors_panel'
@@ -25,7 +25,7 @@ $wp_customize->add_section('text_color',array(
 
 // Button Color
 $wp_customize->add_section('bellini_link_color_section',array(
-	'title' => esc_html__( 'Color - Buttons & Links', 'bellini' ),
+	'title' => esc_html__( 'Buttons & Links Color', 'bellini' ),
 	'capability' => 'edit_theme_options',
 	'priority' => 4,
 	'panel' => 'bellini_colors_panel'
@@ -50,7 +50,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'header_background_color',
 			array(
-				'label'      => esc_html__( 'Header Background', 'bellini' ),
+				'label'      => esc_html__( 'Header Background Color', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[header_background_color]',
 			    'priority'   => 3
@@ -70,7 +70,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'widgets_background_color',
 			array(
-				'label'      => esc_html__( 'Widget Background', 'bellini' ),
+				'label'      => esc_html__( 'Widget Area Background Color', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[widgets_background_color]',
 			    'priority'   => 4,
@@ -90,7 +90,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'footer_background_color',
 			array(
-				'label'      => esc_html__( 'Footer Background', 'bellini' ),
+				'label'      => esc_html__( 'Footer Background Color', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[footer_background_color]',
 			    'priority'   => 6
@@ -114,7 +114,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'body_text_color',
 			array(
-				'label'      => esc_html__( 'Body - Text Color', 'bellini' ),
+				'label'      => esc_html__( 'Body Text Color', 'bellini' ),
 				'description'      => esc_html__( 'Applies to site wide text including input & textarea field text', 'bellini' ),
 				'section'    => 'text_color',
 				'settings'   => 'bellini[body_text_color]',
@@ -134,7 +134,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'title_text_color',
 			array(
-				'label'      	=> esc_html__( 'Title - Text Color', 'bellini' ),
+				'label'      	=> esc_html__( 'Title Text Color', 'bellini' ),
 				'description'	=> esc_html__( 'Applies to all the titles', 'bellini' ),
 				'section'    	=> 'text_color',
 				'settings'   	=> 'bellini[title_text_color]',
@@ -144,7 +144,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 
 	// Logo Text Color
-	$wp_customize->get_control('header_textcolor')->label = esc_html__('Logo - Text Color', 'bellini');
+	$wp_customize->get_control('header_textcolor')->label = esc_html__('Logo Title Color', 'bellini');
 	$wp_customize->get_control('header_textcolor')->priority = 6;
 
 	// Menu Text Color -- Settings
@@ -159,7 +159,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'menu_text_color',
 			array(
-				'label'      => esc_html__( 'Menu - Text Color', 'bellini' ),
+				'label'      => esc_html__( 'Menu or Navigation Color', 'bellini' ),
 				'section'    => 'text_color',
 				'settings'   => 'bellini[menu_text_color]',
 			    'priority'   => 8

@@ -16,7 +16,7 @@ function bellini_comment( $comment, $args, $depth ) {
             <article <?php comment_class('comment'); ?>>
             <div class="comment-body row">
 
-                <div class="col-md-2 col-xs-4 comment-body__left text-right">
+                <div class="col-md-2 col-xs-12 comment-body__left text-right">
                 <div class="author vcard">
                     <?php echo get_avatar( $comment, 60 ); ?>
                 </div>
@@ -25,7 +25,7 @@ function bellini_comment( $comment, $args, $depth ) {
                 </h5>
                 </div>
 
-                <div class="col-md-10 col-xs-8 comment-body__right text-left">
+                <div class="col-md-10 col-xs-12 comment-body__right text-left">
                 <div class="row">
 
                     <div class="col-md-12 comment__body">

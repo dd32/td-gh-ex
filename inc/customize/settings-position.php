@@ -9,7 +9,7 @@
 
 	// General
 	$wp_customize->add_section('bellini_general_layout',array(
-		'title' => esc_html__( 'Layout - General', 'bellini' ),
+		'title' => esc_html__( 'Site Wide Layouts', 'bellini' ),
 		'capability' => 'edit_theme_options',
 		'priority' => 1,
 		'panel' => 'bellini_placeholder_layout_panel'
@@ -18,7 +18,7 @@
 
 	// Header Layout Section
 	$wp_customize->add_section('bellini_header_section_layout',array(
-		'title' => esc_html__( 'Layout - Header', 'bellini' ),
+		'title' => esc_html__( 'Header Layouts', 'bellini' ),
 		'capability' => 'edit_theme_options',
 		'priority' => 2,
 		'panel' => 'bellini_placeholder_layout_panel'
@@ -27,7 +27,7 @@
 
 	// Posts Layout
 	$wp_customize->add_section('bellini_post_layout_settings',array(
-			'title' => esc_html__( 'Layout - Posts', 'bellini' ),
+			'title' => esc_html__( 'Post Layouts', 'bellini' ),
 			'capability' => 'edit_theme_options',
 			'priority' => 3,
 			'panel' => 'bellini_placeholder_layout_panel'
@@ -36,7 +36,7 @@
 
 	// Page Layout
 	$wp_customize->add_section('bellini_page_layout_settings',array(
-			'title' => esc_html__( 'Layout - Page', 'bellini' ),
+			'title' => esc_html__( 'Page Layouts', 'bellini' ),
 			'capability' => 'edit_theme_options',
 			'priority' => 3,
 			'panel' => 'bellini_placeholder_layout_panel'
@@ -45,7 +45,7 @@
 
 	// Footer Layout
 	$wp_customize->add_section('bellini_layout_settings_footer',array(
-			'title' => esc_html__( 'Layout - Footer', 'bellini' ),
+			'title' => esc_html__( 'Footer Layouts', 'bellini' ),
 			'capability' => 'edit_theme_options',
 			'priority' => 4,
 			'panel' => 'bellini_placeholder_layout_panel'
@@ -54,7 +54,7 @@
 
 	// Other Layout
 	$wp_customize->add_section('bellini_layout_settings_other',array(
-			'title' => esc_html__( 'Layout - Others', 'bellini' ),
+			'title' => esc_html__( 'Other Layouts', 'bellini' ),
 			'capability' => 'edit_theme_options',
 			'priority' => 5,
 			'panel' => 'bellini_placeholder_layout_panel'
@@ -81,7 +81,7 @@
 			)) );
 
 
-	//Website Orientation
+	//Canvas Width
 	$wp_customize->add_setting('bellini[bellini_website_width]',
 			      array(
 			          'default'         => '100',
@@ -94,7 +94,7 @@
 
 		  $wp_customize->add_control(new WP_Customize_Control($wp_customize,'bellini_website_width',
 		            array(
-		                'label'          => esc_html__( 'Website Orientation', 'bellini' ),
+		                'label'          => esc_html__( 'Canvas Width', 'bellini' ),
 		                'description'    => esc_html__( 'From Box to Full Width', 'bellini' ),
 		                'section'        => 'bellini_general_layout',
 		                'settings'       => 'bellini[bellini_website_width]',
@@ -109,7 +109,7 @@
 		        )
 		   );
 
-	//Canvas Width
+	//Site Width
 	$wp_customize->add_setting('bellini[bellini_canvas_width]', array(
 			'type' 				=> 'option',
 			'default'         	=> '1200px',
@@ -119,7 +119,7 @@
 
 			$wp_customize->add_control('bellini_canvas_width',array(
 				'type' 			=>'text',
-               'label'      	=> esc_html__( 'Canvas Width', 'bellini' ),
+               'label'      	=> esc_html__( 'Site Width', 'bellini' ),
                'description' 	=> esc_html__( 'Write your width in px. Example: 1200px. Your content will be confined within this area.', 'bellini' ),
                'section'    	=> 'bellini_general_layout',
                'settings'   	=> 'bellini[bellini_canvas_width]',
@@ -141,7 +141,7 @@
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_header_section_layout_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Header Section Layout','bellini'),
+					'label' => esc_html__('Header Layouts','bellini'),
 					'section' => 'bellini_header_section_layout',
 					'settings'    => 'bellini[bellini_header_section_layout_helper]',
 					'priority'   => 1,
@@ -160,15 +160,15 @@
 	);
 
 		$wp_customize->add_control( 'bellini_header_menu_layout',array(
-				'label'      => esc_html__( 'Layout - Header Components', 'bellini' ),
+				'label'      => esc_html__( 'Header Layouts', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_header_menu_layout]',
-			    'priority'   => 3,
+			    'priority'   => 2,
 			    'type'       => 'select',
 				'choices'    => array(
 							1   => esc_html__( 'Logo + Menu', 'bellini' ),
 							2  	=> esc_html__( 'Menu + Logo', 'bellini' ),
-							3 	=> esc_html__( 'Logo + Menu + Other Header Item', 'bellini' ),
+							3 	=> esc_html__( 'Logo + Menu + More..', 'bellini' ),
 					),
 			)
 		);
@@ -186,14 +186,14 @@
 
 		$wp_customize->add_control( 'bellini_other_header_items_selector',
 			array(
-				'label'      	=> esc_html__( 'Other Header Items', 'bellini' ),
+				'label'      	=> esc_html__( 'Display More Header Items', 'bellini' ),
 				'description'   => esc_html__( 'Before selecting Cart & Search, make sure you have WooCommerce installed.', 'bellini' ),
 				'section'    	=> 'bellini_header_section_layout',
 				'settings'   	=> 'bellini[bellini_other_header_items_selector]',
-			    'priority'   	=> 4,
+			    'priority'   	=> 3,
 			    'type'       	=> 'radio',
 					'choices'   => array(
-							1   	=> esc_html__( 'Cart & Search', 'bellini' ),
+							1   	=> esc_html__( 'WooCommerce Cart & Search', 'bellini' ),
 							2  		=> esc_html__( 'Social Icons', 'bellini' ),
 					),
 			)
@@ -211,13 +211,13 @@
 
 		$wp_customize->add_control( 'bellini_header_orientation',
 			array(
-				'label'      	=> esc_html__( 'Type - Header', 'bellini' ),
+				'label'      	=> esc_html__( 'Header Section Behaviour', 'bellini' ),
 				'section'    	=> 'bellini_header_section_layout',
 				'settings'   	=> 'bellini[bellini_header_orientation]',
-			    'priority'   	=> 2,
+			    'priority'   	=> 4,
 			    'type'       	=> 'radio',
 					'choices'    => array(
-						'header__general'   => esc_html__( 'Colored', 'bellini' ),
+						'header__general'   => esc_html__( 'Solid Color', 'bellini' ),
 						'header__trans'  	=> esc_html__( 'Transparent', 'bellini' ),
 					),
 			)
@@ -255,14 +255,14 @@
 	);
 
 		$wp_customize->add_control( 'bellini_menu_layout',array(
-				'label'      => esc_html__( 'Type - Header Menu', 'bellini' ),
+				'label'      => esc_html__( 'Header Navigation Type', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_menu_layout]',
 			    'priority'   => 7,
 			    'type'       => 'radio',
 				'choices'    => array(
-					'general'   => esc_html__( 'Normal', 'bellini' ),
-					'hamburger'  => esc_html__( 'Hamburger', 'bellini' ),
+					'general'   => esc_html__( 'Full Menu', 'bellini' ),
+					'hamburger'  => esc_html__( 'Hamburger Icon', 'bellini' ),
 				),
 			)
 		);
@@ -279,7 +279,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_menu_position',array(
-				'label'      => esc_html__( 'Alignment - Header Menu', 'bellini' ),
+				'label'      => esc_html__( 'Navigation Alignment', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_menu_position]',
 			    'priority'   => 8,
@@ -360,7 +360,7 @@
 	);
 
 		$wp_customize->add_control( 'page_title_position',array(
-				'label'      => esc_html__( 'Alignment - Page Title', 'bellini' ),
+				'label'      => esc_html__( 'Page Title Alignment', 'bellini' ),
 				'section'    => 'bellini_page_layout_settings',
 				'settings'   => 'bellini[page_title_position]',
 			    'priority'   => 2,
@@ -414,17 +414,17 @@
 
 		$wp_customize->add_control( 'bellini_footer_widget_column_selector',
 			array(
-				'label'      	=> esc_html__( 'Column - Footer Widgets', 'bellini' ),
+				'label'      	=> esc_html__( 'Footer Widget Columns', 'bellini' ),
 				'description'   => esc_html__( 'Display the footer widgets in 1, 2, 3 or 4 columns', 'bellini' ),
 				'section'    	=> 'bellini_layout_settings_footer',
 				'settings'   	=> 'bellini[bellini_footer_widget_column_selector]',
 			    'priority'   	=> 2,
 			    'type'       	=> 'select',
 					'choices'   => array(
-								1   => esc_html__( 'One', 'bellini' ),
-								2  	=> esc_html__( 'Two', 'bellini' ),
-								3  	=> esc_html__( 'Three', 'bellini' ),
-								4  	=> esc_html__( 'Four', 'bellini' ),
+								1   => esc_html__( '1 Column', 'bellini' ),
+								2  	=> esc_html__( '2 Columns', 'bellini' ),
+								3  	=> esc_html__( '3 Columns', 'bellini' ),
+								4  	=> esc_html__( '4 Columns', 'bellini' ),
 					),
 			)
 		);

@@ -101,7 +101,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_featured_image_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Featured Image','bellini'),
+					'label' => esc_html__('Post Thumbnail Image','bellini'),
 					'section' => 'bellini_default_image',
 					'settings'    => 'bellini[bellini_featured_image_helper]',
 					'priority'   => 5,
@@ -442,6 +442,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	$wp_customize->add_control('bellini_custom_css',
 		array(
 			'label'    => esc_html__( 'Custom CSS', 'bellini' ),
+			'description' => esc_html__('You can add your own CSS here.','bellini'),
 			'section'  => 'bellini_custom_css_section',
 			'settings' => 'bellini[bellini_custom_css]',
 			'type'     => 'textarea'

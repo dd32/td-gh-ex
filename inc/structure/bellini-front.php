@@ -184,7 +184,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 			    endif;
 			 ?>
 		</div>
-			<div class="fearured-product__slider">
+			<div class="featured-product__slider">
 			<ul class="single-item--featured">
 				<?php
 				 while ( $loop->have_posts() ) : $loop->the_post();
@@ -438,7 +438,7 @@ endif;
 
 function bellini_frontpage_text_field_shortcode(){
 	global $bellini;
- if($bellini['bellini_show_frontpage_text_section'] == true) : ?>
+ if($bellini['bellini_show_frontpage_text_section'] == true && !empty($bellini['bellini_frontpage_textarea_section_field'])): ?>
 	<section class="front-text-field">
 	<div class="bellini__canvas">
 	<div class="row">
