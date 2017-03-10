@@ -14,11 +14,8 @@ if ( !defined('ABSPATH')) exit;
  * @since Simple Catch 2.1
  */
 get_header();
-global $simplecatch_options_settings;
-$options       = $simplecatch_options_settings;
-$contentlayout = $options['content_layout'];
-$moretag       = $options['more_tag_text'];
-
+$options    = simplecatch_get_options();
+$moretag    = $options['more_tag_text'];
 $paged      = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 $blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 
@@ -35,18 +32,16 @@ $blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
             	<?php
 				$format = get_post_format();
 				//If category has thumbnail it displays thumbnail and excerpt of content else excerpt only
-				if ( has_post_thumbnail() && $contentlayout == "excerpt" && ( false === $format ) ) : ?>
+				if ( has_post_thumbnail() && ( false === $format ) ) : ?>
                     <div class="post-thumbnail post-thumb no-margin-left">
                         <a href="<?php the_permalink(); ?>">
                             <?php the_post_thumbnail( 'featured' ); ?>
                         </a>
                     </div><!-- .post-thumbnail -->
-					<?php $postclass = "entry-container post-article";
-				else :
-					$postclass = "entry-container full-width";
+					<?php
 				endif; ?>
 
-                <div class="<?php echo $postclass; ?>">
+                <div class="entry-container post-article">
                     <header class="entry-header">
                         <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                         <div class="entry-meta">
@@ -59,7 +54,7 @@ $blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
                     </header> <!-- .entry-header -->
 
                     <?php $simplecatch_excerpt = get_the_excerpt();
-                    if ( $contentlayout == "excerpt" && !empty( $simplecatch_excerpt ) && ( false === $format ) ) :
+                    if ( !empty( $simplecatch_excerpt ) && ( false === $format ) ) :
                         echo '<div class="entry-summary">';
                                 the_excerpt();
                         echo '</div><!-- .entry-summary --> ';
