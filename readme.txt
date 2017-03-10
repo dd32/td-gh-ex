@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.7 | 10th March 2017 =
+* Update: Woocommerce 2.7 Support.
+
 = Version 2.8.6 | 7th March 2017 =
 * Update: css for checkout.
 * Update: Image resize functions.

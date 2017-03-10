@@ -29,10 +29,25 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<?php
 				$quantites_required = false;
 				foreach ( $grouped_products as $grouped_product ) {
-					$post_object = get_post( $grouped_product->get_id() );
-					$quantites_required = $quantites_required || $grouped_product->is_purchasable();
+					if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
+						$product_id = $grouped_product;
+						if ( ! $grouped_product = wc_get_product( $grouped_product ) ) {
+							continue;
+						}
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+						if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) && ! $grouped_product->is_in_stock() ) {
+							continue;
+						}
+
+						$post    = $grouped_product->post;
+						setup_postdata( $post );
+
+					} else {
+						$post_object = get_post( $grouped_product->get_id() );
+						$quantites_required = $quantites_required || $grouped_product->is_purchasable();
+
+						setup_postdata( $GLOBALS['post'] =& $post_object );
+					}
 					?>
 					<tr id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
@@ -48,13 +63,21 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									 * @since 2.7.0.
 									 */
 									do_action( 'woocommerce_before_add_to_cart_quantity' );
-
-									woocommerce_quantity_input( array(
-										'input_name'  => 'quantity[' . $grouped_product->get_id() . ']',
-										'input_value' => isset( $_POST['quantity'][ $grouped_product->get_id() ] ) ? wc_stock_amount( $_POST['quantity'][ $grouped_product->get_id() ] ) : 0,
-										'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $grouped_product ),
-										'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $grouped_product->get_max_purchase_quantity(), $grouped_product ),
-									) );
+									if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
+										woocommerce_quantity_input( array(
+										'input_name'  => 'quantity[' . $product_id . ']',
+										'input_value' => ( isset( $_POST['quantity'][$product_id] ) ? wc_stock_amount( $_POST['quantity'][$product_id] ) : 0 ),
+										'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $product ),
+										'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product )
+										) );
+									} else {
+										woocommerce_quantity_input( array(
+											'input_name'  => 'quantity[' . $grouped_product->get_id() . ']',
+											'input_value' => isset( $_POST['quantity'][ $grouped_product->get_id() ] ) ? wc_stock_amount( $_POST['quantity'][ $grouped_product->get_id() ] ) : 0,
+											'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $grouped_product ),
+											'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $grouped_product->get_max_purchase_quantity(), $grouped_product ),
+										) );
+									}
 
 									/**
 									 * @since 2.7.0.
@@ -71,8 +94,17 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<?php do_action( 'woocommerce_grouped_product_list_before_price', $grouped_product ); ?>
 						<td class="price">
 							<?php
+							if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
+								echo $product->get_price_html();
+
+								if ( $availability = $product->get_availability() ) {
+									$availability_html = empty( $availability['availability'] ) ? '' : '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';
+									echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );
+								}
+							} else {
 								echo $grouped_product->get_price_html();
 								echo wc_get_stock_html( $grouped_product );
+							}
 							?>
 						</td>
 					</tr>
