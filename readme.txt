@@ -86,6 +86,10 @@ released
 1. Add Default widgets in footer.
 2. Resolved styling issues. 
 
+@Version 3.1
+1. Update theme color scheme.
+2. Update styling issues.
+3. Update header image setting.
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

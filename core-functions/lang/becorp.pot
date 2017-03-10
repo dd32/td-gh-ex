@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp 1.0\n"
-"POT-Creation-Date: 2016-10-03 15:00+0530\n"
-"PO-Revision-Date: 2016-10-03 15:00+0530\n"
+"POT-Creation-Date: 2017-03-09 23:14+0530\n"
+"PO-Revision-Date: 2017-03-09 23:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content-post.php:25 page.php:26 search.php:35 single.php:29
+#: content-post.php:26 page.php:26 search.php:35 single.php:29
 msgid ", "
 msgstr ""
 
@@ -213,7 +213,7 @@ msgid "Footer Customization Developed By"
 msgstr ""
 
 #: core-functions/customizer/customizer-header.php:377
-#: theme_default_data.php:28
+#: theme_default_data.php:45
 msgid "Asia Themes "
 msgstr ""
 
@@ -233,68 +233,144 @@ msgstr ""
 msgid "becorp Premium"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:451
-#: core-functions/customizer/customizer-header.php:475
-msgid "Upgrade to becorp Premium"
+#: core-functions/customizer/customizer-header.php:426
+msgid "Featured Slider Settings"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:457
-msgid "Becorp Premium - Features"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:459
-msgid "One Year Free Support "
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:460
-msgid "Responsive Design"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:461
-msgid "More than 10 Templates"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:462
-msgid "3 Types of Portfolio Templates"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:463
-msgid "8 types Themes Colors Scheme"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:464
-msgid "Patterns Background"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:465
-msgid "WPML Compatible"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:466
-msgid "Image Background"
-msgstr ""
-
-#: core-functions/customizer/customizer-header.php:467
-msgid "Ultimate Portfolio layout with Taxonomy Tab effect"
+#: core-functions/customizer/customizer-header.php:445
+msgid "Hide Home slider"
 msgstr ""
 
 #: core-functions/customizer/customizer-header.php:468
+msgid "Upload Slider Image One"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:476
+#: core-functions/customizer/customizer-header.php:525
+#: core-functions/customizer/customizer-header.php:574
+#: theme_default_data.php:28 theme_default_data.php:32
+#: theme_default_data.php:36
+msgid "Responsive Wordpress Theme"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:482
+msgid "Slider Image Title one :"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:489
+#: core-functions/customizer/customizer-header.php:538
+#: theme_default_data.php:29 theme_default_data.php:33
+#: theme_default_data.php:37
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:495
+msgid "Slider Image  Description One:"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:517
+msgid "Upload Slider Image Two"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:531
+msgid "Slider Image Title Two"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:544
+msgid "Slider Image two Description :"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:566
+msgid "Upload Slider Image Three"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:580
+msgid "Slider Image Title Three"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:593
+msgid "Slider Image three Description"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:602
+#: theme_default_data.php:38
+msgid "More Details!"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:609
+msgid "Slider Button Text"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:623
+msgid "Slider Button Link"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:640
+msgid "Open New tab/window"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:677
+#: core-functions/customizer/customizer-header.php:701
+msgid "Upgrade to becorp Premium"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:683
+msgid "Becorp Premium - Features"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:685
+msgid "One Year Free Support "
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:686
+msgid "Responsive Design"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:687
+msgid "More than 10 Templates"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:688
+msgid "3 Types of Portfolio Templates"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:689
+msgid "8 types Themes Colors Scheme"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:690
+msgid "Patterns Background"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:691
+msgid "WPML Compatible"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:692
+msgid "Image Background"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:693
+msgid "Ultimate Portfolio layout with Taxonomy Tab effect"
+msgstr ""
+
+#: core-functions/customizer/customizer-header.php:694
 msgid "Translation Ready"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:469
+#: core-functions/customizer/customizer-header.php:695
 msgid "Coming Soon Mode"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:470
+#: core-functions/customizer/customizer-header.php:696
 msgid "Google Fonts"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:477
+#: core-functions/customizer/customizer-header.php:703
 msgid "Enjoying With Becorp"
 msgstr ""
 
-#: core-functions/customizer/customizer-header.php:480
+#: core-functions/customizer/customizer-header.php:706
 #, php-format
 msgid ""
 "If you Like our Products , Please do Rate us on %sWordPress.org%s?  We'd "
@@ -338,7 +414,7 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:40 template-tags.php:224
+#: search.php:40 template-tags.php:243
 msgid "Read More"
 msgstr ""
 
@@ -396,19 +472,19 @@ msgstr ""
 msgid "Error 404  : Page Not Found"
 msgstr ""
 
-#: template-tags.php:150
+#: template-tags.php:169
 msgid "Post navigation"
 msgstr ""
 
-#: template-tags.php:160
+#: template-tags.php:179
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: template-tags.php:164
+#: template-tags.php:183
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-tags.php:246
+#: template-tags.php:265
 msgid "MORE"
 msgstr ""
 
@@ -416,10 +492,10 @@ msgstr ""
 msgid "becorp@gmail.com"
 msgstr ""
 
-#: theme_default_data.php:26
+#: theme_default_data.php:43
 msgid "@ 2016 Becorp Theme"
 msgstr ""
 
-#: theme_default_data.php:27
+#: theme_default_data.php:44
 msgid "Developed By"
 msgstr ""

@@ -5,7 +5,7 @@ Author: asiathemes
 Author URI:https://asiathemes.com/
 Created by: Asiathemes
 Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.You can create your front-page with Home-page template for making your site wonderfull.we have provide all sections like Slider,Home Portfolio, Home-blog latest news etc in our Home-page template.For create your default home page then please read our About Theme page visible in appearance menu on dashboard.Becorp Is also supports the WPML , for making the MULTILIGUAL website. We have add Default header image on index page if you want to change this image then please use customizer header image setting you can change header image from there.
-Version:  3.0
+Version:  3.1
 Tags: custom-menu, right-sidebar, sticky-post, theme-options, threaded-comments, featured-images, flexible-header
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -151,7 +151,7 @@ ul.top-social li a.icon-linkedin:before {
 }
 .site-logo a {
   font-weight: 600;
-  font-family: 'LatoMedium';
+ font-family: 'LatoSemibold';
   margin-bottom:5px;
   font-size: 40px;
   padding: 27px 0px 39px;
@@ -262,7 +262,7 @@ ul.top-social li a.icon-linkedin:before {
 .post-meta {
  margin:0;
  padding:0;
- padding: 14px;
+ padding: 10px;
  list-style:none;
 }
 .post-meta  li {display:inline-block;}
@@ -271,6 +271,7 @@ ul.top-social li a.icon-linkedin:before {
   font-weight: 400;
   font-size: 14px;
   margin-right:8px;
+  display: inline-block;
 }
  .post-meta li i {
   border: 0 none;
@@ -400,7 +401,7 @@ body.boxed  .carousel-inner > .item > a > img {
     right:0;
     width:100%;
     height:100%;
-    padding: 28% 0%;
+    padding: 24% 0%;
     display: none;
     text-align:center;
     z-index:2;
@@ -517,7 +518,11 @@ a.project-next:before {
 	vertical-align:middle;
 }
 /*-------FOOTER------------------------------------------*/
-.footer {width: 100%;padding:30px 0;}
+.footer {width: 100%;}
+.footer-inner {
+  padding:30px 0;
+}
+.footer-widget ul li{padding:5px 0px;}
 .footer_graph {
 	float: left;
 	width: 100%;
@@ -527,7 +532,7 @@ a.project-next:before {
 .footer h2 {
 	font-size: 23px;
 	font-weight: 300;
-	margin-bottom: 25px;
+	margin-bottom:15px;
 	padding-bottom:8px;
 }
 .footer h2 i {font-weight: normal;font-style: normal;}
@@ -595,7 +600,8 @@ ul.footer_social_links li a {margin: 0;}
 }
 .member-name {
     font-size: 16px;
-	font-family: 'LatoBoldItalic';
+	font-family: 'LatoItalic';
+	font-weight:bold;
     margin: 10px 0 4px;
 }
 .member-job {font-family: 'LatoLight';}
@@ -761,22 +767,22 @@ ul.list-ok li:before {
     white-space: nowrap;
 }
 .search_box {
-  border-top-left-radius:4px !important;
-  border-bottom-left-radius:4px !important;
-  box-shadow: none;
-  display: inline-block !important;
-  height:45px !important;
-  width: 82% !important;
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+    box-shadow: none;
+    display: inline-block !important;
+    height: 45px !important;
+    width: 86% !important;
 }
 .search_box:focus{box-shadow: none;}
 .btn-search {
-  border-radius:0 !important;
-  height:45px !important;
-  border-top-right-radius:4px !important;
-  border-bottom-right-radius:4px !important;
-  margin-left: -6px !important;
-  margin-top: -2px;
-  width: 18% !important;
+    border-radius: 0 !important;
+    height: 45px !important;
+    border-top-right-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+    margin-left: -6px !important;
+    margin-top: -2px;
+    width: 14% !important;
 }
 .widget{
     padding: 0px 0px 15px;
@@ -1052,7 +1058,7 @@ ul.icons-list li i {font-size: 14px;margin-right: 4px;}
 td, th {padding: 6px !important;}
 /**Default Widget style**/
 .widget.fa-angle-right:before {content: "\f105" !important;}
-.widget > ul  > li> a:before {
+.widget > ul  > li> a:before , .cat-item  a:before{
     content: "\f105" !important;
 	font-family: FontAwesome;
 	font-weight:400;
@@ -1063,7 +1069,7 @@ td, th {padding: 6px !important;}
     margin-bottom: 0;
     list-style: none;
 	position: relative;
-    display: block;
+    display:inline-block;
     padding: 10px 15px;
 	font-size: 16px;
 }
@@ -1075,7 +1081,7 @@ td, th {padding: 6px !important;}
   padding: 13px 0 !important;
  }
 .widget >ul >li>a:hover,.widget >ul >li>a:focus,.widget >.fa > .fa-angle-right:before { 
- content: "\f105" !important;
+  content: "\f105" !important;
   margin-left:5px !important;
   -webkit-transition: all 0.4s ease !important;
   -moz-transition: all 0.4s ease !important;
@@ -1252,7 +1258,7 @@ select{max-width:100% !important;height:34px !important;}
     padding: 0 5px;
 }
 .blog-pagination span{ 
-	background-color: #0099ff !important;
+	background-color: #ff2851 !important;
     color: #FFFFFF;
 	cursor: pointer;
     display: inline-block;
@@ -1281,7 +1287,7 @@ h1.site-description a{ line-height: 0px; }
 { color:#64646d !important; }
 
 .site-nav-previous, .nav-previous a:hover
-{ color:#0099ff !important; transition: all .3s ease 0s; }
+{ color:#ff2851 !important; transition: all .3s ease 0s; }
 
 .site-nav-next, .nav-next{
  float:right;
@@ -1292,8 +1298,39 @@ h1.site-description a{ line-height: 0px; }
 .site-nav-next, .nav-next a 
 { color:#64646d !important; }
 
-.site-nav-next, .nav-next a:hover { color:#0099ff !important; transition: all .3s ease 0s; }
+.site-nav-next, .nav-next a:hover { color:#ff2851 !important; transition: all .3s ease 0s; }
 /* Header Image Css */
 .header-image a img {
     width: 100%;
+}
+/*--Carousel-fade effect---------------*/
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+.post-meta .gravatar img{
+ width:60px;
+ height:60px;
+ border-radius:50px;
+ margin-right:5px;
+ border: 3px solid #e3e0e0;
 }

@@ -416,6 +416,232 @@ $wp_customize->remove_control('header_textcolor');
 				'settings' => 'becorp_pro',
 				'priority' => 1,
 			) ) );
+			
+			
+		// Slider Setting Section
+	
+	$wp_customize->add_section(
+        'slider_section_settings',
+        array(
+            'title' => __('Featured Slider Settings','becorp'),
+            'description' => '',
+			'panel'  => 'header_options',
+			'priority' => 35,
+			) );
+	
+	//Hide slider
+	
+	$wp_customize->add_setting(
+    'becorp_option[home_banner_enabled]',
+    array(
+        'default' => 1,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+	$wp_customize->add_control(
+    'becorp_option[home_banner_enabled]',
+    array(
+        'label' => __('Hide Home slider','becorp'),
+        'section' => 'slider_section_settings',
+        'type' => 'checkbox',
+    )
+	);
+	 
+	 
+	//portfolio Image one setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_one]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/header-default.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_one]',
+			   array(
+				   'label'          => __( 'Upload Slider Image One', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 150,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_one]'
+		, array(
+        'default'        => __('Responsive Wordpress Theme','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_one]', array(
+        'label'   => __('Slider Image Title one :', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 151,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_one]'
+		, array(
+        'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_one]', array(
+        'label'   => __('Slider Image  Description One:', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 152,
+    ));
+	
+//portfolio Image two setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_two]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/header-default2.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_two]',
+			   array(
+				   'label'          => __( 'Upload Slider Image Two', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 155,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_two]'
+		, array(
+        'default'        => __('Responsive Wordpress Theme','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_two]', array(
+        'label'   => __('Slider Image Title Two', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 156,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_two]'
+		, array(
+        'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_two]', array(
+        'label'   => __('Slider Image two Description :', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 157,
+    ));
+	
+//portfolio Image three setting
+	
+	$wp_customize->add_setting(
+		'becorp_option[slider_image_three]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/header-default3.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+		   new WP_Customize_Image_Control(
+			   $wp_customize,
+			   'becorp_option[slider_image_three]',
+			   array(
+				   'label'          => __( 'Upload Slider Image Three', 'becorp' ),
+				   'section'        => 'slider_section_settings',
+				   'priority'   => 160,
+			   )
+		   )
+	);
+	$wp_customize->add_setting('becorp_option[slider_image_title_three]'
+		, array(
+        'default'        => __('Responsive Wordpress Theme','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_title_three]', array(
+        'label'   => __('Slider Image Title Three', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 161,
+    ));
+	$wp_customize->add_setting('becorp_option[slider_image_description_three]'
+		, array(
+        'default'        => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_description_three]', array(
+        'label'   => __('Slider Image three Description', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 162,
+    ));
+	
+	$wp_customize->add_setting(
+    'becorp_option[slider_button_text]',
+    array(
+        'default' => __('More Details!','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+		)
+	);	
+	$wp_customize->add_control( 'becorp_option[slider_button_text]',array(
+    'label'   => __('Slider Button Text','becorp'),
+    'section' => 'slider_section_settings',
+	 'type' => 'text',
+	 'priority'   => 163,
+	 )  );
+		
+	$wp_customize->add_setting('becorp_option[slider_image_link]'
+		, array(
+        'default'        => '#',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[slider_image_link]', array(
+        'label'   => __('Slider Button Link', 'becorp'),
+        'section' => 'slider_section_settings',
+        'type'    => 'text',
+		'priority'   => 164,
+    ));
+	$wp_customize->add_setting(
+	'becorp_option[slider_button_tab]'
+    ,array(
+	'default' => 1,
+	'sanitize_callback' => 'sanitize_text_field',
+	'type' => 'option',
+	));
+
+	$wp_customize->add_control(
+    'becorp_option[slider_button_tab]',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Open New tab/window','becorp'),
+        'section' => 'slider_section_settings',
+		'priority'   => 165,
+    )
+);
 } 
 /* Custom Control Class */
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'becorp_Customize_Misc_Control' ) ) :

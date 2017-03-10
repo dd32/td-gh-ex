@@ -21,6 +21,23 @@ function becorp_theme_default_data()
 	'google_media_enabled' => 0,
 	'rss_media_enabled' => 0,
 	'becorp_custom_css'=> '',
+	
+	//Slider settings
+	'home_banner_enabled' => 1,
+	'slider_image_one' => get_template_directory_uri().'/images/header-default.jpg',
+	'slider_image_title_one' => get_theme_mod('slider_image_title_one',__('Responsive Wordpress Theme','becorp')),
+	'slider_image_description_one' => get_theme_mod('slider_image_description_one',__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','becorp')),
+		
+	'slider_image_two' => get_template_directory_uri().'/images/header-default2.jpg',
+	'slider_image_title_two' => get_theme_mod('slider_image_title_two',__('Responsive Wordpress Theme','becorp')),
+	'slider_image_description_two' => get_theme_mod('slider_image_description_two',__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','becorp')),
+		
+	'slider_image_three' => get_template_directory_uri().'/images/header-default3.jpg',
+	'slider_image_title_three' => get_theme_mod('slider_image_title_three',__('Responsive Wordpress Theme','becorp')),
+	'slider_image_description_three' => get_theme_mod('slider_image_description_three',__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','becorp')),
+	'slider_button_text' => get_theme_mod('slider_button_text',__('More Details!','becorp')),
+	'slider_image_link' => '#',
+	'slider_button_tab' => 1,
 		
 	// Fooetr Customization
 	'footer_customization_text' => get_theme_mod('footer_customization_text',__('@ 2016 Becorp Theme','becorp')),

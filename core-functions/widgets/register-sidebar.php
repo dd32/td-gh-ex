@@ -19,8 +19,8 @@ register_sidebar( array(
 		'description' => __( 'footer widget area', 'becorp' ),
 		'before_widget' => '<div class="col-md-3 col-sm-6">',
 		'after_widget' => '</div>',
-		'before_title' => '<div class="widget_title wow fadeInDown animated" data-wow-delay="0.4s"><h2><i>',
-		'after_title' => '</i></h2></div>',
+		'before_title' => '<div class="widget_title wow fadeInDown animated" data-wow-delay="0.4s"><h2><span>',
+		'after_title' => '</span></h2></div>',
 	) );
 	
 }	                     

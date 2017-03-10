@@ -1,26 +1,7 @@
 /*Fonts Family Created by Asiathemes*/
 
 /* Lato Fonts*/
-@font-face {
-    font-family: 'LatoBlack';
-    src: url('Lato-Black.eot');
-    src: url('Lato-Black.eot?#iefix') format('embedded-opentype'),
-         /* url('Lato-Black.woff') format('woff'), */
-         url('Lato-Black.ttf') format('truetype'),
-         url('Lato-Black.svg#LatoBlack') format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'LatoBlackItalic';
-    src: url('Lato-BlackItalic.eot');
-    src: url('Lato-BlackItalic.eot?#iefix') format('embedded-opentype'),
-         /* url('Lato-BlackItalic.woff') format('woff'), */
-         url('Lato-BlackItalic.ttf') format('truetype'),
-         url('Lato-BlackItalic.svg#LatoBlackItalic') format('svg');
-    font-weight: 400;
-    font-style: italic;
-}
+
 @font-face {
     font-family: 'LatoBold';
     src: url('Lato-Bold.eot');
@@ -31,17 +12,6 @@
     font-weight: 700;
     font-style: normal;
 }
-@font-face {
-    font-family: 'LatoBoldItalic';
-    src: url('Lato-BoldItalic.eot');
-    src: url('Lato-BoldItalic.eot?#iefix') format('embedded-opentype'),
-         /* url('Lato-BoldItalic.woff') format('woff'), */
-         url('Lato-BoldItalic.ttf') format('truetype'),
-         url('Lato-BoldItalic.svg#LatoBoldItalic') format('svg');
-    font-weight: 700;
-    font-style: italic;
-}
-
 @font-face {
     font-family: 'LatoItalic';
     src: url('Lato-Italic.eot');
@@ -60,16 +30,6 @@
          url('Lato-Light.ttf') format('truetype'),
          url('Lato-Light.svg#LatoLight') format('svg');
     font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'LatoMedium';
-    src: url('Lato-Medium.eot');
-    src: url('Lato-Medium.eot?#iefix') format('embedded-opentype'),
-        /*  url('Lato-Medium.woff') format('woff'), */
-         url('Lato-Medium.ttf') format('truetype'),
-         url('Lato-Medium.svg#LatoMedium') format('svg');
-    font-weight: 400;
     font-style: normal;
 }
 @font-face {

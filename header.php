@@ -113,9 +113,12 @@ if(is_home() || is_front_page()):
 				</div>
 			<?php  else: ?>
 				<div class="header-image">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo get_template_directory_uri() ?>/images/header-default.jpg" />
-					</a>
+					<!-- Header image Section -->	
+<?php if($header_setting['home_banner_enabled'] == 1 ) {
+	becorp_home_slider();
+}
+ ?>
+<!-- /Slider Section -->
 					
 				</div>
 				<?php endif; endif; ?>
