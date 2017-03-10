@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-03-01 00:53+0545\n"
-"PO-Revision-Date: 2017-03-01 00:53+0545\n"
+"POT-Creation-Date: 2017-03-10 08:21+0545\n"
+"PO-Revision-Date: 2017-03-10 08:21+0545\n"
 "Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -64,19 +64,19 @@ msgstr ""
 
 # @ simplecatch
 #: comments.php:29 content.php:52 functions/core.php:998 image.php:23
-#: page-blog.php:55
+#: page-blog.php:56
 msgid "No Comments"
 msgstr "Nenhum comentário"
 
 # @ simplecatch
 #: comments.php:29 content.php:52 functions/core.php:998 image.php:23
-#: page-blog.php:55
+#: page-blog.php:56
 msgid "1 Comment"
 msgstr "1 Comentário"
 
 # @ simplecatch
 #: comments.php:29 content.php:52 functions/core.php:998 image.php:23
-#: page-blog.php:55
+#: page-blog.php:56
 msgid "% Comments"
 msgstr "% Comentários"
 
@@ -86,17 +86,17 @@ msgid "Comments are closed."
 msgstr "Comentários desativados."
 
 # @ simplecatch
-#: content.php:50 functions/core.php:996 image.php:21 page-blog.php:53
+#: content.php:50 functions/core.php:996 image.php:21 page-blog.php:54
 msgid "By"
 msgstr "Por"
 
 # @ simplecatch
-#: content.php:80 page-blog.php:100
+#: content.php:80 page-blog.php:101
 msgid "Not found"
 msgstr "Não encontrado"
 
 # @ simplecatch
-#: content.php:83 page-blog.php:103
+#: content.php:83 page-blog.php:104
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -386,12 +386,12 @@ msgid "Next Image"
 msgstr "Próxima Imagem"
 
 # @ simplecatch
-#: page-blog.php:87 search.php:44
+#: page-blog.php:88 search.php:44
 msgid "Previous"
 msgstr "Anteriores"
 
 # @ simplecatch
-#: page-blog.php:89 search.php:45
+#: page-blog.php:90 search.php:45
 msgid "Next"
 msgstr "Próximos"
 

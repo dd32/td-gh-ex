@@ -15,11 +15,12 @@ if ( !defined('ABSPATH')) exit;
  */
 get_header();
 global $simplecatch_options_settings;
-$options = $simplecatch_options_settings;
-$contentlayout = $options[ 'content_layout' ];
-$moretag = $options[ 'more_tag_text' ];
+$options       = $simplecatch_options_settings;
+$contentlayout = $options['content_layout'];
+$moretag       = $options['more_tag_text'];
 
-    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$paged      = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 
 	if ( $blog_query->have_posts() ) : ?>
 

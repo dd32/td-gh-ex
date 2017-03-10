@@ -9,8 +9,8 @@
 // Get theme options
 $options = simplecatch_get_options();
 
-$display_text = $options[ 'search_display_text' ];
-$button_text  = $options[ 'search_button_text' ];
+$display_text = $options['search_display_text'];
+$button_text  = $options['search_button_text'];
 ?>
 <form method="get" class="searchform clearfix" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div class="search-box">

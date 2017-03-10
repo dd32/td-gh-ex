@@ -145,7 +145,7 @@ function simplecatch_scripts_method() {
 	wp_enqueue_script ( 'simplecatch-search', get_template_directory_uri() . '/js/search.js', array( 'jquery' ), '1.0', true );
 
 	//Responsive Menu and Style
-	if ( '0' == $options[ 'disable_responsive' ] ) {
+	if ( '0' == $options['disable_responsive'] ) {
 		wp_enqueue_style( 'simplecatch-responsive', get_template_directory_uri() . '/css/responsive.css' );
 		
 		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20130324', true );
@@ -161,7 +161,7 @@ function simplecatch_scripts_method() {
 	/**
 	 * Loads up Scroll Up script
 	 */
-	if ( $options[ 'disable_scrollup' ] == '0' ) {
+	if ( $options['disable_scrollup'] == '0' ) {
 		wp_enqueue_script( 'simplecatch-scrollup', get_template_directory_uri() . '/js/scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	}
 
@@ -219,7 +219,7 @@ function simplecatch_responsive() {
 
 	$output = '<!-- Disable Responsive -->';
 
-	if ( "0" == $options[ 'disable_responsive' ] ) {
+	if ( "0" == $options['disable_responsive'] ) {
 		$output = '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">';
 	}
 
@@ -249,7 +249,7 @@ function simplecatch_excerpt_length( $length ) {
 	// Get theme options
 	$options = simplecatch_get_options();
 
-	return $options[ 'excerpt_length' ];
+	return $options['excerpt_length'];
 }
 add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
 
@@ -261,7 +261,7 @@ function simplecatch_continue_reading() {
 	// Get theme options
 	$options = simplecatch_get_options();
 
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . esc_attr( $more_tag_text ) . '</a>';
 }
 
@@ -316,7 +316,7 @@ if ( ! function_exists( 'simplecatch_header_title' ) ) :
 		// Get theme options
 		$options = simplecatch_get_options();
 
-		if ( !empty( $options[ 'remove_site_title' ] ) && !empty( $options[ 'remove_site_description' ] ) ) {
+		if ( !empty( $options['remove_site_title'] ) && !empty( $options['remove_site_description'] ) ) {
 			$branding_class = "site-branding-text screen-reader-text";
 			$title_class = "site-title";
 			$description_class = "site-description";
@@ -324,14 +324,14 @@ if ( ! function_exists( 'simplecatch_header_title' ) ) :
 		else {
 			$branding_class = "site-branding-text";
 
-			if( empty( $options[ 'remove_site_title' ] ) ) {
+			if( empty( $options['remove_site_title'] ) ) {
 				$title_class = "site-title";
 			}
 			else {
 				$title_class = "site-title screen-reader-text";
 			}
 			
-			if( empty( $options[ 'remove_site_description' ] ) ) {
+			if( empty( $options['remove_site_description'] ) ) {
 				$description_class = "site-description";
 			}
 			else {
@@ -425,7 +425,7 @@ function simplecatch_footerlogo() {
 
 		// if not empty featured_logo_footer on theme options
 		if ( !empty( $options['featured_logo_footer'] ) ) {
-			$output = '<a href="'.esc_url( home_url( '/' ) ).'#masthead" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"><img src="'.esc_url( $options[ 'featured_logo_footer' ] ).'" alt="'.get_bloginfo( 'name' ).'" /></a>';
+			$output = '<a href="'.esc_url( home_url( '/' ) ).'#masthead" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"><img src="'.esc_url( $options['featured_logo_footer'] ).'" alt="'.get_bloginfo( 'name' ).'" /></a>';
 		}
 	}
 
@@ -485,33 +485,33 @@ if ( ! function_exists( 'simplecatch_headersocialnetworks' ) ) :
 
 	    $elements = array();
 
-		$elements = array( 	$options[ 'social_facebook' ],
-							$options[ 'social_twitter' ],
-							$options[ 'social_googleplus' ],
-							$options[ 'social_linkedin' ],
-							$options[ 'social_pinterest' ],
-							$options[ 'social_youtube' ],
-							$options[ 'social_vimeo' ],
-							$options[ 'social_slideshare' ],
-							$options[ 'social_foursquare' ],
-							$options[ 'social_flickr' ],
-							$options[ 'social_tumblr' ],
-							$options[ 'social_deviantart' ],
-							$options[ 'social_dribbble' ],
-							$options[ 'social_myspace' ],
-							$options[ 'social_wordpress' ],
-							$options[ 'social_rss' ],
-							$options[ 'social_delicious' ],
-							$options[ 'social_lastfm' ],
-							$options[ 'social_instagram' ],
-							$options[ 'social_github' ],
-							$options[ 'social_vkontakte' ],
-							$options[ 'social_myworld' ],
-							$options[ 'social_odnoklassniki' ],
-							$options[ 'social_goodreads' ],
-							$options[ 'social_skype' ],
-							$options[ 'social_soundcloud' ],
-							$options[ 'social_email' ]
+		$elements = array( 	$options['social_facebook'],
+							$options['social_twitter'],
+							$options['social_googleplus'],
+							$options['social_linkedin'],
+							$options['social_pinterest'],
+							$options['social_youtube'],
+							$options['social_vimeo'],
+							$options['social_slideshare'],
+							$options['social_foursquare'],
+							$options['social_flickr'],
+							$options['social_tumblr'],
+							$options['social_deviantart'],
+							$options['social_dribbble'],
+							$options['social_myspace'],
+							$options['social_wordpress'],
+							$options['social_rss'],
+							$options['social_delicious'],
+							$options['social_lastfm'],
+							$options['social_instagram'],
+							$options['social_github'],
+							$options['social_vkontakte'],
+							$options['social_myworld'],
+							$options['social_odnoklassniki'],
+							$options['social_goodreads'],
+							$options['social_skype'],
+							$options['social_soundcloud'],
+							$options['social_email']
 						);
 		$flag = 0;
 		if( !empty( $elements ) ) {
@@ -535,139 +535,139 @@ if ( ! function_exists( 'simplecatch_headersocialnetworks' ) ) :
 			<ul class="social-profile">';
 
 				//facebook
-				if ( !empty( $options[ 'social_facebook' ] ) ) {
+				if ( !empty( $options['social_facebook'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
+						'<li class="facebook"><a href="'.esc_url( $options['social_facebook'] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
 				}
 				//Twitter
-				if ( !empty( $options[ 'social_twitter' ] ) ) {
+				if ( !empty( $options['social_twitter'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="twitter"><a href="'.esc_url( $options['social_twitter'] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
 				//Google+
-				if ( !empty( $options[ 'social_googleplus' ] ) ) {
+				if ( !empty( $options['social_googleplus'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+						'<li class="google-plus"><a href="'.esc_url( $options['social_googleplus'] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
 				}
 				//Linkedin
-				if ( !empty( $options[ 'social_linkedin' ] ) ) {
+				if ( !empty( $options['social_linkedin'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+						'<li class="linkedin"><a href="'.esc_url( $options['social_linkedin'] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
 				}
 				//Pinterest
-				if ( !empty( $options[ 'social_pinterest' ] ) ) {
+				if ( !empty( $options['social_pinterest'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="pinterest"><a href="'.esc_url( $options['social_pinterest'] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
 				//Youtube
-				if ( !empty( $options[ 'social_youtube' ] ) ) {
+				if ( !empty( $options['social_youtube'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
+						'<li class="you-tube"><a href="'.esc_url( $options['social_youtube'] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
 				//Vimeo
-				if ( !empty( $options[ 'social_vimeo' ] ) ) {
+				if ( !empty( $options['social_vimeo'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+						'<li class="viemo"><a href="'.esc_url( $options['social_vimeo'] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
 				}
 				//Slideshare
-				if ( !empty( $options[ 'social_slideshare' ] ) ) {
+				if ( !empty( $options['social_slideshare'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+						'<li class="slideshare"><a href="'.esc_url( $options['social_slideshare'] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
 				}
 				//Foursquare
-				if ( !empty( $options[ 'social_foursquare' ] ) ) {
+				if ( !empty( $options['social_foursquare'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+						'<li class="foursquare"><a href="'.esc_url( $options['social_foursquare'] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
 				}
 				//Flickr
-				if ( !empty( $options[ 'social_flickr' ] ) ) {
+				if ( !empty( $options['social_flickr'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+						'<li class="flickr"><a href="'.esc_url( $options['social_flickr'] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
 				}
 				//Tumblr
-				if ( !empty( $options[ 'social_tumblr' ] ) ) {
+				if ( !empty( $options['social_tumblr'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+						'<li class="tumblr"><a href="'.esc_url( $options['social_tumblr'] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
 				}
 				//deviantART
-				if ( !empty( $options[ 'social_deviantart' ] ) ) {
+				if ( !empty( $options['social_deviantart'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+						'<li class="deviantart"><a href="'.esc_url( $options['social_deviantart'] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
 				}
 				//Dribbble
-				if ( !empty( $options[ 'social_dribbble' ] ) ) {
+				if ( !empty( $options['social_dribbble'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+						'<li class="dribbble"><a href="'.esc_url( $options['social_dribbble'] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
 				}
 				//MySpace
-				if ( !empty( $options[ 'social_myspace' ] ) ) {
+				if ( !empty( $options['social_myspace'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+						'<li class="myspace"><a href="'.esc_url( $options['social_myspace'] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
 				}
 				//WordPress
-				if ( !empty( $options[ 'social_wordpress' ] ) ) {
+				if ( !empty( $options['social_wordpress'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+						'<li class="wordpress"><a href="'.esc_url( $options['social_wordpress'] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
 				}
 				//RSS
-				if ( !empty( $options[ 'social_rss' ] ) ) {
+				if ( !empty( $options['social_rss'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
+						'<li class="rss"><a href="'.esc_url( $options['social_rss'] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
 				//Delicious
-				if ( !empty( $options[ 'social_delicious' ] ) ) {
+				if ( !empty( $options['social_delicious'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+						'<li class="delicious"><a href="'.esc_url( $options['social_delicious'] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
 				}
 				//Last.fm
-				if ( !empty( $options[ 'social_lastfm' ] ) ) {
+				if ( !empty( $options['social_lastfm'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+						'<li class="lastfm"><a href="'.esc_url( $options['social_lastfm'] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
 				}
 				//Instagram
-				if ( !empty( $options[ 'social_instagram' ] ) ) {
+				if ( !empty( $options['social_instagram'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
+						'<li class="instagram"><a href="'.esc_url( $options['social_instagram'] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
 				}
 				//GitHub
-				if ( !empty( $options[ 'social_github' ] ) ) {
+				if ( !empty( $options['social_github'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
+						'<li class="github"><a href="'.esc_url( $options['social_github'] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
 				}
 				//Vkontakte
-				if ( !empty( $options[ 'social_vkontakte' ] ) ) {
+				if ( !empty( $options['social_vkontakte'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
+						'<li class="vkontakte"><a href="'.esc_url( $options['social_vkontakte'] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
 				}
 				//My World
-				if ( !empty( $options[ 'social_myworld' ] ) ) {
+				if ( !empty( $options['social_myworld'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
+						'<li class="myworld"><a href="'.esc_url( $options['social_myworld'] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
 				}
 				//Odnoklassniki
-				if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
+				if ( !empty( $options['social_odnoklassniki'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
+						'<li class="odnoklassniki"><a href="'.esc_url( $options['social_odnoklassniki'] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
 				}
 				//Goodreads
-				if ( !empty( $options[ 'social_goodreads' ] ) ) {
+				if ( !empty( $options['social_goodreads'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
+						'<li class="goodreads"><a href="'.esc_url( $options['social_goodreads'] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
 				}
 				//Skype
-				if ( !empty( $options[ 'social_skype' ] ) ) {
+				if ( !empty( $options['social_skype'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'simple-catch' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
+						'<li class="skype"><a href="'.esc_attr( $options['social_skype'] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'simple-catch' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
 				}
 				//Soundcloud
-				if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+				if ( !empty( $options['social_soundcloud'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
+						'<li class="soundcloud"><a href="'.esc_url( $options['social_soundcloud'] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
 				}
 				//Email
-				if ( !empty( $options[ 'social_email' ] ) && is_email($options[ 'social_email' ] ) ) {
+				if ( !empty( $options['social_email'] ) && is_email($options['social_email'] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="email"><a href="mailto:'.antispambot( sanitize_email( $options[ 'social_email' ] ) ).'" title="'.sprintf( esc_attr__( '%s on Email', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
+						'<li class="email"><a href="mailto:'.antispambot( sanitize_email( $options['social_email'] ) ).'" title="'.sprintf( esc_attr__( '%s on Email', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
 				}
 				$simplecatch_headersocialnetworks .='
 			</ul><div class="clear"></div>';
@@ -727,27 +727,27 @@ if ( ! function_exists( 'simplecatch_inline_css' ) ) :
 	        $simplecatch_inline_css = '';
 
 			//Color Options
-			if( $defaults[ 'heading_color' ] != $options[ 'heading_color' ] ) {
-				$simplecatch_inline_css	.=  ".site-content .entry-title, .site-content .entry-title a { color: ".  $options[ 'heading_color' ] ."; }". "\n";
+			if( $defaults[ 'heading_color' ] != $options['heading_color'] ) {
+				$simplecatch_inline_css	.=  ".site-content .entry-title, .site-content .entry-title a { color: ".  $options['heading_color'] ."; }". "\n";
 			}
-			if( $defaults[ 'meta_color' ] != $options[ 'meta_color' ] ) {
-				$simplecatch_inline_css	.=  ".site-content .entry-meta, .site-content .entry-meta a { color: ".  $options[ 'meta_color' ] ."; }". "\n";
+			if( $defaults[ 'meta_color' ] != $options['meta_color'] ) {
+				$simplecatch_inline_css	.=  ".site-content .entry-meta, .site-content .entry-meta a { color: ".  $options['meta_color'] ."; }". "\n";
 			}
-			if( $defaults[ 'text_color' ] != $options[ 'text_color' ] ) {
-				$simplecatch_inline_css	.=  ".site-content { color: ".  $options[ 'text_color' ] ."; }". "\n";
+			if( $defaults[ 'text_color' ] != $options['text_color'] ) {
+				$simplecatch_inline_css	.=  ".site-content { color: ".  $options['text_color'] ."; }". "\n";
 			}
-			if( $defaults[ 'link_color' ] != $options[ 'link_color' ] ) {
-				$simplecatch_inline_css	.=  ".site-content a { color: ".  $options[ 'link_color' ] ."; }". "\n";
+			if( $defaults[ 'link_color' ] != $options['link_color'] ) {
+				$simplecatch_inline_css	.=  ".site-content a { color: ".  $options['link_color'] ."; }". "\n";
 			}
-			if( $defaults[ 'widget_heading_color' ] != $options[ 'widget_heading_color' ] ) {
-				$simplecatch_inline_css	.=  "#secondary .widget-title, #secondary .widget-title a, #supplementary .widget-title, #supplementary .widget-title a { color: ".  $options[ 'widget_heading_color' ] ."; }". "\n";
+			if( $defaults[ 'widget_heading_color' ] != $options['widget_heading_color'] ) {
+				$simplecatch_inline_css	.=  "#secondary .widget-title, #secondary .widget-title a, #supplementary .widget-title, #supplementary .widget-title a { color: ".  $options['widget_heading_color'] ."; }". "\n";
 			}
-			if( $defaults[ 'widget_text_color' ] != $options[ 'widget_text_color' ] ) {
-				$simplecatch_inline_css	.=  "#secondary .widget,  #supplementary .widget { color: ".  $options[ 'widget_text_color' ] ."; }". "\n";
+			if( $defaults[ 'widget_text_color' ] != $options['widget_text_color'] ) {
+				$simplecatch_inline_css	.=  "#secondary .widget,  #supplementary .widget { color: ".  $options['widget_text_color'] ."; }". "\n";
 			}
 
 			//Custom CSS Option
-			if( !empty( $options[ 'custom_css' ] ) ) {
+			if( !empty( $options['custom_css'] ) ) {
 				$simplecatch_inline_css .=  "\n/* Styles From Custom CSS Box */\n" . $options['custom_css'] . "\n";
 			}
 			//Custom CSS Option End
@@ -857,9 +857,9 @@ function simplecatch_pass_slider_value() {
 	// Get theme options
 	$options = simplecatch_get_options();
 
-	$transition_effect   = $options[ 'transition_effect' ];
-	$transition_delay    = $options[ 'transition_delay' ] * 1000;
-	$transition_duration = $options[ 'transition_duration' ] * 1000;
+	$transition_effect   = $options['transition_effect'];
+	$transition_delay    = $options['transition_delay'] * 1000;
+	$transition_duration = $options['transition_duration'] * 1000;
 	wp_localize_script(
 		'simplecatch_slider',
 		'js_value',
@@ -913,7 +913,7 @@ function simplecatch_class_names($classes) {
 
 	$classes[] = simplecatch_get_theme_layout();
 
-	if ( '1' == $options[ 'disable_responsive' ] ) {
+	if ( '1' == $options['disable_responsive'] ) {
 		$classes[] = 'fixed-layout';
 	}
 

@@ -9,8 +9,8 @@
 
 // Get theme options
 $options       = simplecatch_get_options();
-$contentlayout = $options[ 'content_layout' ];
-$moretag       = $options[ 'more_tag_text' ];
+$contentlayout = $options['content_layout'];
+$moretag       = $options['more_tag_text'];
 ?>
 
 			<?php if ( have_posts() ) : ?>
