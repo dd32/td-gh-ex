@@ -5,32 +5,27 @@
  */
 get_header(); ?>
 <section id="blog-title-top">
-	<div class="blog-title">
-	    <h2><?php the_title();?></h2>
-	    <span><?php echo get_breadcrumb(); ?></span>
-	</div>	
+    <div class="container">
+        <div class="blog-title">
+            <h2><?php the_title(); ?></h2>
+            <div class="breadCumbs"><?php astrology_custom_breadcrumbs(); ?></div>
+        </div>
+    </div>
 </section>
-<section id="blog-innerpage-content">
+<section>
     <div class="container">
         <div class="row">               
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="blog-single-inner-page">
-                	<?php
-					if ( have_posts() ) :
+                <div class="blog-single-inner-page fullWidth">
+                	<?php if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
-							get_template_part( 'template-parts/content-single', get_post_format() );
-
-							the_posts_pagination( array(
-								'type'	=> 'list',
-			                    'screen_reader_text' => ' ',
-			                    'prev_text'          => __( 'Previous', 'astrology' ),
-			                    'next_text'          => __( 'Next', 'astrology' ),
-		                	) );
+							get_template_part( 'template-parts/content-full', get_post_format() );
 						endwhile;
-					endif; ?>         
+					endif;
+                    if ( comments_open() || get_comments_number() ) { comments_template(); } ?>
 				</div>
             </div>
         </div>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

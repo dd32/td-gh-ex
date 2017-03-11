@@ -11,7 +11,8 @@
         <div class="bloginner-content-part2">
             <div class="grid">
             <?php if ( have_posts() ) : $i=1;
-                    while ( have_posts() ) : the_post();?>                
+                    while ( have_posts() ) : the_post();
+                    if ( 'post' === get_post_type() ) : ?>
                         <div class="grid-sizer"></div>
                         <div <?php post_class('blog-content-left grid-item'); ?> id="post-<?php the_ID(); ?>">
                             <div class="blog-info-text">
@@ -34,7 +35,28 @@
                     <?php if($i % 2 == 0):
 						echo '<div class="clearfix"></div>'; 
 					endif;
-					$i++;
+                    elseif ( 'page' === get_post_type()) : ?>
+                        <div class="grid-sizer"></div>
+                        <div <?php post_class('blog-content-left grid-item'); ?> id="post-<?php the_ID(); ?>">
+                            <div class="blog-info-text">
+                                <div>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h2><?php the_title(); ?></h2>
+                                    </a>
+                                </div>
+                                <?php if ( has_post_thumbnail() ) { ?>
+                                <div class="">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_post_thumbnail( 'full', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+                                    </a>
+                                </div>
+                            <?php } ?>
+                                <?php the_excerpt(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php _e('Read More','astrology')?></a>
+                            </div>
+                        </div>
+					<?php endif;
+                    $i++;
                     endwhile; ?>
                     </div>
                     <?php the_posts_pagination( array(

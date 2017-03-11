@@ -4,7 +4,7 @@
  *
  * @package astrology
  */
-function AstrologyWidgetsInit() {
+function astrology_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'astrology' ),
 		'id'            => 'sidebar-1',
@@ -42,4 +42,4 @@ function AstrologyWidgetsInit() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'AstrologyWidgetsInit' );
+add_action( 'widgets_init', 'astrology_widgets_init' );

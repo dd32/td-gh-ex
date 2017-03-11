@@ -4,3 +4,41 @@ i)  Theme Submitted for approval
 Version 1.0.1 (14-11-2016)
 i)  Added masonry in blog listing page.
 ii) Changed menu style.
+
+Version 1.0.2 (14-11-2016)
+i)  Minor Changes.
+ii) Theme URI Changed.
+
+Version 1.0.3 (18-11-2016)
+i) Fixed CSS bugs.
+ii) Screenshot changed.
+
+Version 1.0.4 (19-11-2016)
+i) Fixed breadcumbs for archive pages.
+ii) Fixed menu styling for responsive layouts.
+
+Version 1.0.5 (27-02-2017)
+i) Removed important from css.
+ii) Changed comment template styling.
+iii) Changed screenshot.
+
+Version 1.0.6 (01-03-2017)
+i) Changed readme.txt.
+ii) Fixed full-width template.
+iii) Fixed issue with custom menu widget.
+
+Version 1.0.7 (04-03-2017)
+i) Changed readme file.
+ii) Fixed page template.
+iii) Minor bug fixes.
+
+Version 1.0.8 (06-03-2017)
+i) Fixed floating issue.
+ii) Added edit link in page for logged in users.
+
+Version 1.0.9 (08-03-2017)
+i) Fixed JS issues.
+ii) Fixed menu issue.
+
+Version 1.0.10 (10-03-2017)
+i) Fixed default menu issue.
