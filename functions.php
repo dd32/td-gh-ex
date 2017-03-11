@@ -203,7 +203,7 @@ if ( ! function_exists( 'beka_load_font' ) ) :
 	 */
 	function beka_load_font() {
 
-		wp_enqueue_style( 'beka-google-fonts', 'http://fonts.googleapis.com/css?family=Playfair+Display:400,700|Caveat:400,700|Signika:400,300,600,700', false );
+		wp_enqueue_style( 'beka-google-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:400,700|Caveat:400,700|Signika:400,300,600,700', false );
 	}
 
 endif;
