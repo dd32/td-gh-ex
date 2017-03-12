@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: A Responsive, flexible and powerful theme that comes with plugin "TemplatesNext Toolkit" giving you features like portfolios, testimonials, services, columns, custom blog pages, unlimited sliders, etc. The i-transform theme for WordPress is developed using a popular theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc. Whether you are a first time user looking for a clean, simple and easy to use theme for blogging or looking for a powerful theme to build business sites; i-transform is the perfect theme for you.
-Version: 3.0.2
+Version: 3.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -1970,25 +1970,38 @@ footer.entry-meta {
 
 .iheader {
 	display: block;
+	position: relative;
 	height: 100px;
 	width: 100%;
 	text-align: center;
-	background-color: #3787be;
-	background: rgba(31,118,176,1);
-	background: -moz-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(31,118,176,1)), color-stop(30%, rgba(55,136,190,1)), color-stop(69%, rgba(55,136,190,1)), color-stop(100%, rgba(31,118,176,1)));
-	background: -webkit-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
-	background: -o-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
-	background: -ms-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
-	background: linear-gradient(to bottom, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f76b0', endColorstr='#1f76b0', GradientType=0 );
-	
 }
+
+.iheader:after {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	content: " ";
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background: rgba(31,118,176,1);
+	background: -moz-linear-gradient(top, rgba(0,0,0,.2) 0%, rgba(0,0,0,.05) 30%, rgba(0,0,0,.1) 70%, rgba(0,0,0,.2) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,.2)), color-stop(30%, rgba(0,0,0,.05)), color-stop(69%, rgba(0,0,0,.05)), color-stop(100%, rgba(0,0,0,.2)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,.2) 0%, rgba(0,0,0,.051) 30%, rgba(0,0,0,.05) 69%, rgba(0,0,0,.2) 100%);
+	background: -o-linear-gradient(top, rgba(0,0,0,.2) 0%, rgba(0,0,0,.05) 30%, rgba(0,0,0,.05)) 69%, rgba(0,0,0,.2) 100%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,.2) 0%, rgba(0,0,0,.05) 30%, rgba(0,0,0,.05) 69%, rgba(0,0,0,.2) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,.05) 30%, rgba(0,0,0,.05) 69%, rgba(0,0,0,.2) 100%);
+}
+
+
 .titlebar {
 	display: block;
+	position: relative;
 	width: 100%;
 	max-width: 1600px;
 	margin: 0px auto;
+	z-index: 2;
 }
 
 .titlebar h1 {

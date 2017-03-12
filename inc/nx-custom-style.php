@@ -92,7 +92,7 @@
 
 			echo '.format-gallery .entry-content .page-links a:hover,.format-audio .entry-content .page-links a:hover,.format-status .entry-content .page-links a:hover,.format-video .entry-content .page-links a:hover,.format-chat .entry-content .page-links a:hover,.format-quote .entry-content .page-links a:hover,.page-links a:hover {	color: '.$primary_color.';}';
 
-			echo '.iheader {background: rgba(31,118,176,1);	background: -moz-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(31,118,176,1)), color-stop(30%, rgba(55,136,190,1)), color-stop(69%, rgba(55,136,190,1)), color-stop(100%, rgba(31,118,176,1)));	background: -webkit-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);}';
+			echo '.iheader {background-color: '.$primary_color.';}';
 
 			echo '.iheader.front { background-color: '.$primary_color.';}';
 

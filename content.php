@@ -63,7 +63,11 @@
         
             <?php if ( is_search() || $full_content == 0 ) : // Only display Excerpts for Search ?>
             <div class="entry-summary">
-                <?php the_excerpt(); ?>
+            	<?php if ( !is_single() ) : ?>
+                	<?php the_excerpt(); ?>
+                <?php else : ?>
+                	<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'i-transform' ) ); ?>
+                <?php endif;  ?>
             </div><!-- .entry-summary -->
             <?php else : ?>
             <div class="entry-content">
