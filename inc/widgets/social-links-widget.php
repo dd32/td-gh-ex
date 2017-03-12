@@ -162,15 +162,15 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? esc_attr( $new_instance['title'] ) : '';
-		$instance['facebook_url'] = ( ! empty( $new_instance['facebook_url'] ) ) ? esc_url( $new_instance['facebook_url'] ) : '';
-		$instance['twitter_url'] = ( ! empty( $new_instance['twitter_url'] ) ) ? esc_url( $new_instance['twitter_url'] ) : '';
-		$instance['google_plus_url'] = ( ! empty( $new_instance['google_plus_url'] ) ) ? esc_url( $new_instance['google_plus_url'] ) : '';
-		$instance['instagram_url'] = ( ! empty( $new_instance['instagram_url'] ) ) ? esc_url( $new_instance['instagram_url'] ) : '';
-		$instance['linkedin_url'] = ( ! empty( $new_instance['linkedin_url'] ) ) ? esc_url( $new_instance['linkedin_url'] ) : '';
-		$instance['pinterest_url'] = ( ! empty( $new_instance['pinterest_url'] ) ) ? esc_url( $new_instance['pinterest_url'] ) : '';
-		$instance['dribbble_url'] = ( ! empty( $new_instance['dribbble_url'] ) ) ? esc_url( $new_instance['dribbble_url'] ) : '';
-		$instance['rss_url'] = ( ! empty( $new_instance['rss_url'] ) ) ? esc_url( $new_instance['rss_url'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['facebook_url'] = ( ! empty( $new_instance['facebook_url'] ) ) ? esc_url_raw( $new_instance['facebook_url'] ) : '';
+		$instance['twitter_url'] = ( ! empty( $new_instance['twitter_url'] ) ) ? esc_url_raw( $new_instance['twitter_url'] ) : '';
+		$instance['google_plus_url'] = ( ! empty( $new_instance['google_plus_url'] ) ) ? esc_url_raw( $new_instance['google_plus_url'] ) : '';
+		$instance['instagram_url'] = ( ! empty( $new_instance['instagram_url'] ) ) ? esc_url_raw( $new_instance['instagram_url'] ) : '';
+		$instance['linkedin_url'] = ( ! empty( $new_instance['linkedin_url'] ) ) ? esc_url_raw( $new_instance['linkedin_url'] ) : '';
+		$instance['pinterest_url'] = ( ! empty( $new_instance['pinterest_url'] ) ) ? esc_url_raw( $new_instance['pinterest_url'] ) : '';
+		$instance['dribbble_url'] = ( ! empty( $new_instance['dribbble_url'] ) ) ? esc_url_raw( $new_instance['dribbble_url'] ) : '';
+		$instance['rss_url'] = ( ! empty( $new_instance['rss_url'] ) ) ? esc_url_raw( $new_instance['rss_url'] ) : '';
 		$instance['email_address'] = ( ! empty( $new_instance['email_address'] ) ) ? esc_email( $new_instance['email_address'] ) : '';
 
 		return $instance;

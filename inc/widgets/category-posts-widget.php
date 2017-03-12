@@ -72,7 +72,7 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );	
-		$instance[ 'category' ]	= strip_tags( $new_instance[ 'category' ] );
+		$instance[ 'category' ]	= absint( $new_instance[ 'category' ] );
 		$instance[ 'number_posts' ] = (int)$new_instance[ 'number_posts' ];
 		$instance[ 'sticky_posts' ] = (bool)$new_instance[ 'sticky_posts' ];
 		return $instance;
@@ -92,7 +92,7 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 		extract($args);
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$category = $instance['category'];
+		$category = ( ! empty( $instance['category'] ) ) ? $instance['category'] : 0;
 		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 5; 
 		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : false;
 
