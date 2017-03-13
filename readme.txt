@@ -74,6 +74,15 @@ This theme uses Bootstrap as a design tool
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 ============================================
+Version 1.1
+============================================
+****** fixes on ******
+ style.css
+ template-parts/slider.php
+ inc/customizer.php
+ inc/widget.php
+
+============================================
 Version 1.0
 ============================================
 * First public release

@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/big-blue-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com/
 Description: Big Blue is a classic blogging theme, with a light on dark color scheme. It offers an optional home page slider which can be managed in the customizer. The customizer also provides simple control of the main theme colors, header image, background image, social media links as well as the ability to add your own custom CSS.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: big-blue
@@ -59,7 +59,7 @@ body {
 	margin: 0;
 	font-family: 'Raleway', sans-serif;
 	background: #001627;
-	color:#999999;
+	color:#ffffff;
 }
 
 article,
@@ -652,7 +652,6 @@ textarea {
 --------------------------------------------------------------*/
 
 #home-slider .carousel.slide .item{
-	height: 500px;
     overflow: hidden;	
 	background-position: center center; 
 	background-color:#e1e1e1;
@@ -672,10 +671,12 @@ textarea {
 }
 .carousel-content-bg,
 .article-header{
-	height: 500px;
     display: flex;
     justify-content: center;
-	position:relative;
+	position:relative;	
+}
+.carousel-content-bg{
+	height:500px;
 }
 .slide-post-details{
 	text-align:center;
@@ -1169,10 +1170,10 @@ article, .page-content{
 	margin-top:0;
 }
 .entry-title a{
-	color: #fff;
+	color: #ffd21f;
 }
 .entry-title a:hover{
-	color: #ffd21f;
+	color: #ffffff;
 }
 .entry-meta a{
 	color: #666666;
@@ -1307,6 +1308,9 @@ article, .page-content{
 body.custom-background{
 	background-size: cover;
 }
+.featured-image{
+	min-height:400px;
+}
 .article-header{
 	position: relative;
     width: 100%;
@@ -1314,6 +1318,7 @@ body.custom-background{
 }
 .article-header .container{
 	align-self: center;
+	padding:50px 0;
 }
 .entry-detail {
     text-align: center;
@@ -1454,7 +1459,7 @@ body.custom-background{
 	color: #01a0e1;
 }
 .reply a:hover{
-	color: #343434;
+	color: #ffffff;
 }
 .comment-metadata a{
 	color: #a1a1a1;
@@ -1465,7 +1470,7 @@ body.custom-background{
 	color: #ffd21f;
 }
 .comment-meta .fn a:hover{
-	color: #343434;
+	color: #ffffff;
 }
 #comments input[type='text']{
 	max-width: 100%;
@@ -1479,6 +1484,9 @@ body.custom-background{
 	border-radius: 1px;
     border: solid 1px #707070;
 	color: #999999;
+}
+ol.children{
+	list-style:none;
 }
 
 /*--------------------------------------------------------------

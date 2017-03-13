@@ -6,7 +6,7 @@
  *
  * @package Big Blue
  */
-	$slider_display = get_theme_mod( 'big_blue_display_slider_setting', 1);
+	$slider_display = get_theme_mod( 'big_blue_display_slider_setting', 0);
 	$slider_cat = get_theme_mod( 'big_blue_category_setting');
  
 	//query posts

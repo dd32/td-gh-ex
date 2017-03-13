@@ -41,7 +41,7 @@ function big_blue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('big_blue_display_slider_setting', array(
-		'default'        => 1,
+		'default'        => 0,
 		'sanitize_callback' => 'big_blue_sanitize_checkbox',
 	));
 

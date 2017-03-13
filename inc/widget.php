@@ -15,15 +15,13 @@ class big_blue_recent_posts extends WP_Widget {
 	function widget( $args, $instance ) {
 		global $post;
 		extract($args);
-
+		// Output
+		echo $before_widget;
 		// Widget options
-		$title 	 = apply_filters( 'widget_title', empty( $instance['title'] ) ? _e( 'Big Blue Recent Post', 'big-blue' ) : $instance['title'], $instance, $this->id_base ); // Title		
+		$title 	 = apply_filters( 'widget_title', empty( $instance['title'] ) ? _e( '<h2 class="widget-title"><span>Big Blue Recent Post</span></h2>', 'big-blue' ) : $instance['title'], $instance, $this->id_base ); // Title		
 		/*$cpt 	 = $instance['types'];*/ // Post type(s) 		
 	    $types   = 'post';
-		$number	 = absint($instance['number']); // Number of posts to show
-		
-        // Output
-		echo $before_widget;
+		$number	 = absint($instance['number']); // Number of posts to show	
 		
 	    if ( $title ) echo $before_title . $title . $after_title;
 			
