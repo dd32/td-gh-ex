@@ -237,6 +237,29 @@ $wp_customize->add_control( $prefix . '_menu_style',
 );
 
 
+// Menu background style
+$wp_customize->add_setting( $prefix . '_menu_bg_style', 
+    array(
+        'sanitize_callback' => array( asterion()->customizer, 'sanitize_radio' ),
+        'default'           => 1,
+        'transport'         => 'postMessage'
+    ) 
+);
+$wp_customize->add_control( $prefix . '_menu_bg_style', 
+    array(
+        'label'     => esc_html__( 'Main Menu Background Style', 'asterion' ),
+        'section'   => $section_id_3,
+        'settings'  => $prefix . '_menu_bg_style',
+        'type'      => 'radio',
+        'choices'   => array(
+                1   => esc_html__( 'No Background', 'asterion' ),
+                2   => esc_html__( 'Menu Overlay', 'asterion' )
+            ),
+        'priority'  => 1
+    ) 
+);
+
+
 // Menu position
 $wp_customize->add_setting( $prefix . '_menu_position', 
     array(

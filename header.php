@@ -29,6 +29,13 @@
 	} else { 
 		$menu_style = "ot-dark-text"; 
 	}
+
+	$menu_bg_style = get_theme_mod( 'asterion_menu_bg_style', 1 );
+	if( $menu_bg_style == 2 ) {
+		$menu_bg_style_class = " ot-dark-menu";
+	} else {
+		$menu_bg_style_class = " ot-light-menu";
+	}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -52,7 +59,7 @@
 	    </div><!-- end .asterion-offcanvas-wrap -->
 		<header id="header" class="<?php echo esc_attr( ( is_front_page() ) ? 'intro-image': 'intro-blog' ); ?> <?php echo esc_attr( $parallax_class ); ?> <?php echo esc_attr( $menu_style ); ?>" style="background-image: url(' <?php echo esc_url( ( is_front_page() ) ? $intro_image : ( ! get_header_image() ) ? $intro_image : get_header_image() ); ?>');">
 
-			<div class="navbar<?php echo ( $menu_position == "1" ) ? ' navbar-fixed-top' : false ; ?>">
+			<div class="navbar<?php echo ( $menu_position == "1" ) ? ' navbar-fixed-top' : false ; echo esc_attr($menu_bg_style_class); ?>">
 				<div class="ot-container">
 
 			        <!-- Toggle menu -->

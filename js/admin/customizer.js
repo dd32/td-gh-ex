@@ -208,6 +208,17 @@
 			}
 		} );
 	} );
+	// main menu background style
+	wp.customize( 'asterion_menu_bg_style', function( value ) {
+		value.bind( function( to ) {
+			if( to == 2 ) {
+				$( 'header div.navbar' ).addClass('ot-dark-menu').removeClass('ot-light-menu');
+			} else {
+				$( 'header div.navbar' ).addClass('ot-light-menu').removeClass('ot-dark-menu');
+
+			}
+		} );
+	} );
 	// main menu position
 	wp.customize( 'asterion_menu_position', function( value ) {
 		value.bind( function( to ) {

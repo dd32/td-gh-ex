@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Asterion\n"
-"POT-Creation-Date: 2017-03-08 12:22+0200\n"
-"PO-Revision-Date: 2017-03-08 12:22+0200\n"
+"POT-Creation-Date: 2017-03-13 15:35+0200\n"
+"PO-Revision-Date: 2017-03-13 15:35+0200\n"
 "Last-Translator: Orange Themes <support@orange-themes.com>\n"
 "Language-Team: Orange Themes <support@orange-themes.com>\n"
 "Language: en\n"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: ../archive.php:27 ../front-page.php:32 ../index.php:28 ../search.php:28
+#: ../archive.php:27 ../front-page.php:38 ../index.php:33 ../search.php:28
 msgid "Previous page"
 msgstr ""
 
-#: ../archive.php:28 ../front-page.php:33 ../index.php:29 ../search.php:29
+#: ../archive.php:28 ../front-page.php:39 ../index.php:34 ../search.php:29
 msgid "Next page"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "by Orange Themes"
 msgstr ""
 
-#: ../header.php:104
+#: ../header.php:111
 msgid "Please set up the menu"
 msgstr ""
 
@@ -783,18 +783,30 @@ msgid "Light Menu"
 msgstr ""
 
 #: ../inc/customizer-sections/header.php:250
-msgid "Main Menu Position"
+msgid "Main Menu Background Style"
 msgstr ""
 
 #: ../inc/customizer-sections/header.php:255
-msgid "Sticky Menu"
+msgid "No Background"
 msgstr ""
 
 #: ../inc/customizer-sections/header.php:256
+msgid "Menu Overlay"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:273
+msgid "Main Menu Position"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:278
+msgid "Sticky Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:279
 msgid "Fixed Menu"
 msgstr ""
 
-#: ../inc/customizer-sections/header.php:265
+#: ../inc/customizer-sections/header.php:288
 msgid "Blog Archive Header Image"
 msgstr ""
 
