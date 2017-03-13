@@ -27,9 +27,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<table cellspacing="0" class="group_table">
 		<tbody>
 			<?php
-				$quantites_required = false;
 				foreach ( $grouped_products as $grouped_product ) {
 					if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
+						$quantites_required = true;
 						$product_id = $grouped_product;
 						if ( ! $grouped_product = wc_get_product( $grouped_product ) ) {
 							continue;
@@ -43,6 +43,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						setup_postdata( $post );
 
 					} else {
+						$quantites_required = false;
 						$post_object = get_post( $grouped_product->get_id() );
 						$quantites_required = $quantites_required || $grouped_product->is_purchasable();
 
@@ -87,7 +88,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							<?php endif; ?>
 						</td>
 						<td class="label">
-							<label for="product-<?php echo $grouped_product->get_id(); ?>">
+							<label for="product-<?php echo esc_attr($grouped_product->get_id()); ?>">
 								<?php echo $product->is_visible() ? '<a href="' . esc_url( apply_filters( 'woocommerce_grouped_product_list_link', get_permalink(), $grouped_product->get_id() ) ) . '">' . get_the_title() . '</a>' : get_the_title(); ?>
 							</label>
 						</td>
