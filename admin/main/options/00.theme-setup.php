@@ -34,6 +34,45 @@ function thinkup_fix_oembed( $embed ) {
 add_filter( 'embed_oembed_html', 'thinkup_fix_oembed', 1 );
 
 
+//----------------------------------------------------------------------------------
+//	ADD PAGE TITLE
+//----------------------------------------------------------------------------------
+
+function thinkup_title_select() {
+	global $post;
+
+	if ( is_page() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} elseif ( is_attachment() ) {
+		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
+	} else if ( is_single() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} else if ( is_search() ) {
+		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
+	} else if ( is_404() ) {
+		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
+	} else if ( is_category() ) {
+		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		printf( __( 'Tag Archives: %s', 'lan-thinkupthemes' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		the_post();
+		printf( __( 'Author Archives: %s', 'lan-thinkupthemes' ), get_the_author() );
+		rewind_posts();
+	} elseif ( is_day() ) {
+		printf( __( 'Daily Archives: %s', 'lan-thinkupthemes' ), get_the_date() );
+	} elseif ( is_month() ) {
+		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
+	} elseif ( is_year() ) {
+		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
+	} elseif ( thinkup_check_isblog() ) {
+		printf( __( 'Blog', 'lan-thinkupthemes' ) );
+	} else {
+		printf( '%s', esc_html( get_the_title() ) );
+	}
+}
+
+
 /* ----------------------------------------------------------------------------------
 	ADD BREADCRUMBS FUNCTIONALITY
 ---------------------------------------------------------------------------------- */

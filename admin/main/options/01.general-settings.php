@@ -306,41 +306,6 @@ return $output;
 	Intro Default options
 ---------------------------------------------------------------------------------- */
 
-/* Select Page Title */
-function thinkup_title_select() {
-	global $post;
-
-	if ( is_page() ) {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
-	} elseif ( is_attachment() ) {
-		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_attr( get_the_title( $post->post_parent ) ) );
-	} else if ( is_single() ) {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
-	} else if ( is_search() ) {
-		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
-	} else if ( is_404() ) {
-		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
-	} else if ( is_category() ) {
-		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
-	} elseif ( is_tag() ) {
-		printf( __( 'Tag Archives: %s', 'lan-thinkupthemes' ), single_tag_title( '', false ) );
-	} elseif ( is_author() ) {
-		the_post();
-		printf( __( 'Author Archives: %s', 'lan-thinkupthemes' ), get_the_author() );
-		rewind_posts();
-	} elseif ( is_day() ) {
-		printf( __( 'Daily Archives: %s', 'lan-thinkupthemes' ), get_the_date() );
-	} elseif ( is_month() ) {
-		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
-	} elseif ( is_year() ) {
-		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
-	} elseif ( thinkup_check_isblog() ) {
-		printf( __( 'Blog', 'lan-thinkupthemes' ) );
-	} else {
-		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
-	}
-}
-
 /* Add custom intro section [Extend for more options in future update] */
 function thinkup_custom_intro() {
 
