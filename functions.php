@@ -4,11 +4,15 @@
  *
  */
 
-/*----------------------------------------------------*/
-/*	Set content width based on theme design
-/*----------------------------------------------------*/
-if ( ! isset( $content_width ) ) {
-	$content_width = 940; /* pixels */
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function rescuethemes_culinary_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'advocator-lite', 940 );
 }
 
 /*----------------------------------------------------*/
@@ -37,8 +41,8 @@ function rescue_setup() {
 
 	// Enable featured images
 	add_theme_support( 'post-thumbnails' );
-    add_image_size( 'blog_posts', 550, 380, false );
-    add_image_size( 'full_page', 1000, 550, false );
+    add_image_size( 'advocator-blog_posts', 550, 380, false );
+    add_image_size( 'advocator-full_page', 1000, 550, false );
 
 	// Register our navigation areas
 	register_nav_menus(
@@ -65,19 +69,6 @@ function rescue_setup() {
 endif; // rescue_setup
 add_action( 'after_setup_theme', 'rescue_setup' );
 
-
-/*----------------------------------------------------*/
-/*  WooCommerce
-/*----------------------------------------------------*/
-function advocator_lite_woocommerce_support() {
-  add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'advocator_lite_woocommerce_support' );
-
-/*----------------------------------------------------*/
-/*  Enable Shortcodes in Text Widgets
-/*----------------------------------------------------*/
-add_filter('widget_text', 'do_shortcode');
 
 /*----------------------------------------------------*/
 /*	Register widgetized areas
@@ -191,24 +182,6 @@ if ( ! function_exists( 'advocator_lite_admin_bar_nav' ) ) :
 endif; // advocator_lite_admin_bar_nav
 add_action('wp_head', 'advocator_lite_admin_bar_nav');
 
-/*----------------------------------------------------*/
-/*  Foundation Navigation - http://goo.gl/mTkWbg
-/*----------------------------------------------------*/
-class advocator_lite_foundation_walker extends Walker_Nav_Menu {
-
-    function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
-        $element->has_children = !empty($children_elements[$element->ID]);
-        $element->classes[] = ($element->current || $element->current_item_ancestor) ? 'active' : '';
-        $element->classes[] = ($element->has_children) ? 'has-dropdown' : '';
-
-        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-    }
-
-    function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "\n<ul class=\"sub-menu dropdown\">\n";
-    }
-
-} // end advocator_lite_foundation_walker
 
 /*----------------------------------------------------*/
 /*	Enqueue scripts and styles
@@ -223,18 +196,9 @@ function rescue_scripts() {
     // Enqueue Styles & Scripts
     wp_enqueue_style( 'google-font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800');
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css', array(), '4.6.1', 'all' );
-    wp_enqueue_style( 'fancybox_style', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.css', array(), '', 'all' );
-    wp_enqueue_style( 'fancybox_buttons', get_template_directory_uri() . '/inc/fancybox/helpers/jquery.fancybox-buttons.css', array(), '', 'all' );
-    wp_enqueue_style( 'fancybox_thumbs', get_template_directory_uri() . '/inc/fancybox/helpers/jquery.fancybox-thumbs.css', array(), '', 'all' );
     wp_enqueue_style( 'rescue_animate', get_template_directory_uri() . '/animate.css', array(), '', 'all' );
     wp_enqueue_style( 'rescue_style', get_stylesheet_uri(), array(), $advocator['Version'] );
 
-    wp_enqueue_script( 'fancybox_mousewheel', get_template_directory_uri() . '/inc/fancybox/jquery.mousewheel-3.0.6.pack.js', array( 'jquery' ), '', false );
-    wp_enqueue_script( 'fancybox_jquery', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.pack.js', array( 'jquery' ), '', false );
-    wp_enqueue_script( 'fancybox_buttons', get_template_directory_uri() . '/inc/fancybox/helpers/jquery.fancybox-buttons.js', array( 'jquery' ), '', false );
-    wp_enqueue_script( 'fancybox_media', get_template_directory_uri() . '/inc/fancybox/helpers/jquery.fancybox-media.js', array( 'jquery' ), '', false );
-    wp_enqueue_script( 'fancybox_thumbs_script', get_template_directory_uri() . '/inc/fancybox/helpers/jquery.fancybox-thumbs.js', array( 'jquery' ), '', false );
-    wp_enqueue_script( 'rescue_wow', get_template_directory_uri() . '/js/wow.min.js', array( 'jquery' ), '1.1.2', true );
     wp_enqueue_script( 'rescue_scripts', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -283,4 +247,4 @@ require get_template_directory() . '/inc/plugins.php';
 /**
  * Upgrade Notice
  */
-require get_template_directory() . '/inc/upgrade/upgrade.php';
+require_once( trailingslashit( get_template_directory() ) . '/inc/upgrade/class-customize.php' );

@@ -363,7 +363,12 @@ function customizer_library_demo_styles() {
 	
 	// Echo the rules
 	
-	echo Customizer_Library_Styles()->build();
+	$css = Customizer_Library_Styles()->build();
+	if ( ! empty( $css ) ) {
+		echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"demo-custom-css\">\n";
+		echo wp_strip_all_tags($css);
+		echo "\n</style>\n<!-- End Custom CSS -->\n";
+	}
 	
 }
 endif;

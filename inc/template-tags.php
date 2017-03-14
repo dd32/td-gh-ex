@@ -59,7 +59,7 @@ endif;
 /*----------------------------------------------------*/
 /*  Custom Walker for Foundation Nav - http://goo.gl/mTkWbg
 /*----------------------------------------------------*/
-class foundation_walker extends Walker_Nav_Menu {
+class advocator_lite_foundation_walker extends Walker_Nav_Menu {
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
         $element->has_children = !empty($children_elements[$element->ID]);
@@ -76,33 +76,11 @@ class foundation_walker extends Walker_Nav_Menu {
 } // end custom walker
 
 /*----------------------------------------------------*/
-/*  Events Plugin Featured Image Output
-/*----------------------------------------------------*/
-if ( ! function_exists( 'rescue_tribe_event_featured_image' ) ) :
-   function rescue_tribe_event_featured_image( $post_id = null, $size = 'large' ) {
-
-       if ( is_null( $post_id ) )
-           $post_id = get_the_ID();
-           $image_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $size );
-           $featured_image = '';
-
-           if ( !empty( $image_src ) ) {
-               $featured_image .= '<img src="'.  $image_src[0] .'" title="'. get_the_title( $post_id ) .'" />';
-           }
-           if ( empty( $image_src ) ) {
-               $featured_image .= '<img src="'. get_template_directory_uri() .'/img/bg_events.jpg" title="'. get_the_title( $post_id ) .'" />';
-           }
-
-       return apply_filters( 'rescue_tribe_event_featured_image', $featured_image, $post_id, $size, $image_src );
-   }
-endif;
-
-/*----------------------------------------------------*/
 /*  Customize the_excerpt() Output and Length
 /*----------------------------------------------------*/
 if ( ! function_exists( 'rescue_excerpt_more' ) ) :
     function rescue_excerpt_more( $more ) {
-      return ' ... <i><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('read more', 'advocator-lite' ) . '</a></i>';
+      return ' &hellip <i><a class="read-more" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __('read more', 'advocator-lite' ) . '</a></i>';
     }
     add_filter( 'excerpt_more', 'rescue_excerpt_more' );
 endif;

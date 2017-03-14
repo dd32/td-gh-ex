@@ -11,7 +11,7 @@
 ?>
 
 	<div class="featured_image">
-		<a href="<?php echo esc_url( $img_url ); ?>" class="fancybox image_hover" title="<?php printf( __( '%s', 'advocator-lite' ), esc_attr( get_the_title() ) ); ?>"><?php the_post_thumbnail( 'full_page' );  ?></a>
+		<a href="<?php echo esc_url( $img_url ); ?>" class="fancybox" title="<?php printf( __( '%s', 'advocator-lite' ), esc_attr( get_the_title() ) ); ?>"><?php the_post_thumbnail( 'full_page' );  ?></a>
 	</div><!-- .featured_image -->
 
 <?php endif; // featured image check ?>

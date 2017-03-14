@@ -95,7 +95,7 @@
 			        'depth' => 5,
 			        'fallback_cb' => 'advocator_demo_top_header_nav', // located at 'inc/template-tags.php'
 			        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			        'walker' => new foundation_walker()
+			        'walker' => new advocator_lite_foundation_walker()
 				);
 
 				wp_nav_menu( $defaults );

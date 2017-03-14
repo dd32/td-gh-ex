@@ -130,8 +130,19 @@ Font Awesome - ​http://fontawesome.io
 Fonts: SIL OFL 1.1, CSS: MIT License - http://fontawesome.io/license
 Copyright: @davegandy
 
+Modernizer - http://modernizr.com, (C) Faruk Ates, Paul Irish, Alex Sexton,
+[MIT](http://opensource.org/licenses/MIT)
+
+Image in Theme screenshot.png
+https://www.flickr.com/photos/isafmedia/6862450441/
+[CC2](https://creativecommons.org/licenses/by/2.0/)
+
+Logo Image - http://demo.rescuethemes.com/advocator/wp-content/uploads/sites/2/2014/11/advocator-logo.png
+[CC0] 1.0 Universal (CC0 1.0) - http://creativecommons.org/publicdomain/zero/1.0/
+Copyright: @jamigibbs
 
 == Changelog ==
 
-= 1.0, Dec 6, 2016 =
+= 1.0.2, Mar 14, 2017 =
 * Initial release
+

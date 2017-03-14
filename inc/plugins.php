@@ -5,7 +5,7 @@
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+add_action( 'tgmpa_register', 'advocator_lite_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -20,7 +20,7 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function my_theme_register_required_plugins() {
+function advocator_lite_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -31,12 +31,6 @@ function my_theme_register_required_plugins() {
 			'name'      => 'Rescue Shortcodes',
 			'slug'      => 'rescue-shortcodes',
 			'required'  => false,
-		),
-
-		array(
-			'name'      => 'Rescue Portfolio',
-			'slug'      => 'rescue-portfolio',
-			'source'    => 'https://github.com/RescueThemes/rescue-portfolio/archive/master.zip',
 		),
 
 		array(

@@ -52,7 +52,7 @@
   			        'depth'           => 5,
   			        'fallback_cb'     => 'advocator_demo_top_header_nav', // located at 'inc/template-tags.php'
   			        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-  			        'walker'          => new foundation_walker()
+  			        'walker'          => new advocator_lite_foundation_walker()
   				);
 
   				wp_nav_menu( $defaults );
@@ -94,7 +94,7 @@
 			        'depth'           => 5,
 			        'fallback_cb'     => 'advocator_demo_bottom_header_nav', // located at 'inc/template-tags.php'
 			        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			        'walker'          => new foundation_walker()
+			        'walker'          => new advocator_lite_foundation_walker()
 				);
 
 				wp_nav_menu( $defaults );
@@ -120,7 +120,7 @@
           href="<?php echo esc_url( get_theme_mod( 'donation_button_link', '#' ) ); ?>"
           class="button large <?php if ( $donate_button_animate != 'none' ) { echo 'wow '; echo esc_html( $donate_button_animate ); };  ?>">
 
-          <?php printf( __( '%s', 'advocator-lite'  ), esc_attr( get_theme_mod('donate_button_text', customizer_library_get_default( 'donate_button_text' ) ) ) ); ?>
+          <?php printf( __( '%s', 'advocator-lite'  ), esc_html( get_theme_mod('donate_button_text', customizer_library_get_default( 'donate_button_text' ) ) ) ); ?>
 
         </a>
       </div><!-- .donation_button -->
