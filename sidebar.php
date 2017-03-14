@@ -11,7 +11,7 @@ if ( ! chip_life_has_sidebar() ) {
 ?>
 <div id="site-sidebar" class="sidebar-area <?php chip_life_layout_class( 'sidebar' ); ?>">
 	<div id="secondary" class="sidebar widget-area">
-		<?php do_action( 'before_sidebar' ); ?>
+		<?php do_action( 'chip_life_before_sidebar' ); ?>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div><!-- .sidebar -->
 </div><!-- .col-* columns of main sidebar -->

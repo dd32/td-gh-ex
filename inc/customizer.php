@@ -99,7 +99,7 @@ function chip_life_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new WP_Chip_Life_Button_Control(
+		new Chip_Life_Button_Control(
 			$wp_customize,
 			'chip_life_theme_about',
 			array(
@@ -120,7 +120,7 @@ function chip_life_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new WP_Chip_Life_Button_Control(
+		new Chip_Life_Button_Control(
 			$wp_customize,
 			'chip_life_theme_support',
 			array(
@@ -142,7 +142,7 @@ add_action( 'customize_register', 'chip_life_customize_register' );
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class WP_Chip_Life_Button_Control extends WP_Customize_Control {
+	class Chip_Life_Button_Control extends WP_Customize_Control {
 		/**
 		 * @access public
 		 * @var string

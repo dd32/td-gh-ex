@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site-wrapper site">
 
-	<?php do_action( 'before' ); ?>
+	<?php do_action( 'chip_life_before' ); ?>
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="row">

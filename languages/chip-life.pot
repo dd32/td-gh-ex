@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Chip Life\n"
-"POT-Creation-Date: 2017-03-13 22:31+0500\n"
+"POT-Creation-Date: 2017-03-14 23:28+0500\n"
 "PO-Revision-Date: 2017-03-13 22:31+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,27 +35,33 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:33
+#: comments.php:36
 #, php-format
 msgctxt "comments title"
-msgid "One thought"
-msgid_plural "%1$s thoughts"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:43
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:41 comments.php:61
+#: comments.php:58 comments.php:78
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:63
+#: comments.php:60 comments.php:80
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:64
+#: comments.php:61 comments.php:81
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:94
 msgid "Comments are closed."
 msgstr ""
 
@@ -146,6 +152,10 @@ msgstr ""
 msgid "Chip Life Support"
 msgstr ""
 
+#: inc/extras.php:20
+msgid "Y"
+msgstr ""
+
 #: inc/extras.php:59
 msgctxt "Playfair Display font: on or off"
 msgid "on"
@@ -161,7 +171,7 @@ msgctxt "Add new subset (cyrillic, greek, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: inc/extras.php:258
+#: inc/extras.php:268
 msgid "Powered by"
 msgstr ""
 

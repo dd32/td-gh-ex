@@ -17,7 +17,7 @@ function chip_life_default( $theme_mod = 'chip_life_sidebar_position' ) {
 
 	$chip_life_default = array(
 		'chip_life_sidebar_position' => 'right',
-		'chip_life_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date( 'Y' ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'chip_life_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'chip-life' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
 		'chip_life_credit'           => true,
 	);
 
@@ -129,6 +129,11 @@ add_filter( 'wp_page_menu', 'chip_life_page_menu_class' );
  * @return int
  */
 function chip_life_excerpt_length( $length ) {
+	if ( is_admin() ) {
+		return $length;
+	}
+
+	// Excerpt Length
 	$length = 45;
 
 	/**
@@ -147,6 +152,11 @@ add_filter( 'excerpt_length', 'chip_life_excerpt_length' );
  * @return str
  */
 function chip_life_excerpt_more( $excerpt_more ) {
+	if ( is_admin() ) {
+		return $excerpt_more;
+	}
+
+	// Excerpt More Suffix
 	$excerpt_more = '&hellip;';
 
 	/**
@@ -301,7 +311,7 @@ function chip_life_hide_elements() {
 	$css = sprintf( '%1$s { clip: rect(1px, 1px, 1px, 1px); position: absolute; }', $elements );
 
 	// Add Inline Style
-	wp_add_inline_style( 'chip-life-style', chip_life_minify_css( $css ) );
+	wp_add_inline_style( 'chip-life-style', $css );
 }
 add_action( 'wp_enqueue_scripts', 'chip_life_hide_elements', 15 );
 
@@ -321,27 +331,6 @@ function chip_life_attachment_link( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'chip_life_attachment_link', 10, 2 );
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function chip_life_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
-}
-add_action( 'wp', 'chip_life_setup_author' );
 
 if ( ! function_exists( 'chip_life_the_attached_image' ) ) :
 /**
@@ -415,26 +404,3 @@ function chip_life_the_attached_image() {
 
 }
 endif;
-
-/**
- * Minify the CSS.
- *
- * @param string $css.
- * @return minified css
- */
-function chip_life_minify_css( $css ) {
-
-    // Remove CSS comments
-    $css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
-
-    // Remove space after colons
-	$css = str_replace( ': ', ':', $css );
-
-	// Remove space before curly braces
-	$css = str_replace( ' {', '{', $css );
-
-    // Remove whitespace i.e tabs, spaces, newlines, etc.
-    $css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '     '), '', $css );
-
-    return $css;
-}

@@ -29,10 +29,27 @@ if ( post_password_required() ) {
 
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought', '%1$s thoughts', get_comments_number(), 'comments title', 'chip-life' ) ),
-					number_format_i18n( get_comments_number() )
-				);
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					printf(
+						/* translators: %s: post title */
+						esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'chip-life' ) ),
+						get_the_title()
+					);
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						esc_html( _nx(
+							'%1$s Reply to &ldquo;%2$s&rdquo;',
+							'%1$s Replies to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'chip-life'
+						) ),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
+				}
 			?>
 		</h2>
 

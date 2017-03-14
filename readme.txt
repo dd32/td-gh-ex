@@ -87,6 +87,18 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
+= 2.0.2 =
+Released: March 14, 2017
+
+* Theme slug prefixed added in `do_action` actions.
+* Singular placeholder added in `comments.php`.
+* Retrieve the date in localized format.
+* Admin check added for the `excerpt_length` and `excerpt_more`.
+* Action removed `chip_life_setup_author`.
+* Function removed `chip_life_minify_css`.
+* Prefix `WP_Chip_Life_Button_Control` changed to `Chip_Life_Button_Control`.
+* POT file updated.
+
 = 2.0.1 =
 Released: March 14, 2017
 
