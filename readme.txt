@@ -1,48 +1,94 @@
-=== Chiplife ===
-
-Contributors: Life.Object
-Tags: white, light, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 3.5
-Tested up to: 3.5.1
-
-== IMPORTANT NOTE ==
-
-Chip Life 1.5 is a major update so i will strongly recommend to backup the old version of Chip Life before testing the new one.
-Several new features have been added and many of old one are obsolete now.
-Code Architecture and Design of Chip Life has been changed in order to make it more professional and for the regular future updates.
+=== Chip Life ===
+Contributors: TutorialChip.com
+Requires at least: WordPress 4.5
+Tested up to: WordPress 4.7.3
+Version: 2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 
 == Description ==
+Chip Life is an elegant theme powered by an advanced code architecture and grid system. Along with the elegant design the theme is easily customizable with numerous theme options. Make it yours with a custom menu, logo, and background.
 
-Chip Life is an elegant theme powered by an advanced code architeture and grid system. Along with the elegant design the theme is easily customizable with numerous theme options. Make it yours with a custom menu, logo, and background.
+* Mobile-first, Responsive Layout
+* Custom Colors
+* Custom Header
+* Post Formats
+* The GPL v2.0 or later license. :) Use it to make something cool.
 
-== Design Notes ==
+For more information about Chip Life please go to http://www.tutorialchip.com/chip-life.
 
-Short "Site Title/ Description" is best and Image Logo of suggested dimenstions (280x60) is ideal for design.
-"Primary Menu" will work best for six to eight menu items.
-"Nested Menu" with two levels is ideal.
+== Notes ==
 
-== License ==
-
-See the "Help" tab in the "Chip Life Options" admin page for license, changelog and other informations.
+Primary Menu supports up to three levels.
 
 == Installation ==
 
-Manual installation:
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Chip Life in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to http://www.tutorialchip.com/chip-life for a guide on how to customize this theme.
+5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-1. Upload the `chip-life` folder to the `/wp-content/themes/` directory
+== Copyright ==
 
-Installation using "Add New Theme"
+Chip Life WordPress Theme, Copyright 2013-2017 TutorialChip.com
+Chip Life is distributed under the terms of the GNU GPL
 
-1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for 'chip life'
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
 
-Activiation and Use
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Chip Life Options for Theme Options
+== LICENSES ==
 
-== Screenshots ==
+Bundled resources in the theme are licensed under GPL or MIT (or both).
+Please see the file headers for more information.
 
-1. Standard Theme Screenshot
+= FONTS =
+
+Font Awesome v4.6.3, Copyright: Dave Gandy, https://twitter.com/davegandy
+License: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io - @fontawesome
+
+= CSS =
+
+Bootstrap Grid v4.0.0-alpha.6, Copyright 2011-2017 Twitter, Inc.
+License: MIT
+Source: http://getbootstrap.com
+
+= JS =
+
+Awesome Media Queries in JavaScript v2.1.2, Copyright (c) 2014 Nick Williams
+License: MIT
+Source: http://wicky.nillia.ms/enquire.js
+
+hoverIntent r7, Copyright 2007, 2013 Brian Cherne
+License: MIT
+Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
+
+jQuery Superfish Menu Plugin v1.7.5, Copyright (c) 2014 Joel Birch
+Licenses: MIT/GPL
+Source: http://users.tpg.com.au/j_birch/plugins/superfish/
+
+= IMAGES =
+
+Image used in screenshot.png
+Licensed under the terms of CC0
+Source: https://unsplash.com/
+
+- https://unsplash.com/photos/HxrAN-G0IfI
+- https://unsplash.com/photos/JmS0fkLlUtA
+
+== Changelog ==
+
+= 2.0=
+Released: March 14, 2017
+
+* New responsive design.
+* New code framework.

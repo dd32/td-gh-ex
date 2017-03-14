@@ -1,7 +1,15 @@
-<div class="search">
-  <form method="get" class="searchform" action="<?php echo trailingslashit( esc_url( home_url() ) ); ?>">
-    <label for="s" class="assistive-text"><?php _e( 'Search for:', 'chiplife' ); ?></label>
-    <input type="text" class="field" name="s" id="s" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else esc_attr_e( 'Search', 'chiplife' ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-    <input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'chiplife' ); ?>" />
-  </form>
-</div><!-- end .search -->
+<?php
+/**
+ * The template for displaying search forms.
+ *
+ * @package Chip Life
+ */
+?>
+
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label>
+		<span class="screen-reader-text"><?php echo esc_html_x( 'Search for:', 'label', 'chip-life' ); ?></span>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'chip-life' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'chip-life' ); ?>" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', 'chip-life' ); ?></span></button>
+</form>
