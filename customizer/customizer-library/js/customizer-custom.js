@@ -6,7 +6,24 @@
     
     $( window ).load( function() {
         
-        // Show / Hide Color selector for slider setting
+        // Show / Hide Center Navigation
+        var conica_center_nav_value = $( '#customize-control-conica-set-header-layout select' ).val();
+        conica_center_nav_check( conica_center_nav_value );
+        
+        $( '#customize-control-conica-set-header-layout select' ).on( 'change', function() {
+            var conica_center_nav_select_value = $( this ).val();
+            conica_center_nav_check( conica_center_nav_select_value );
+        });
+        
+        function conica_center_nav_check( conica_center_nav_select_value ) {
+            if ( conica_center_nav_select_value == 'conica-header-layout-three' ) {
+                $( '#sub-accordion-section-conica-panel-website-section-header #customize-control-conica-set-header-nav-center-align' ).show();
+            } else {
+                $( '#sub-accordion-section-conica-panel-website-section-header #customize-control-conica-set-header-nav-center-align' ).hide();
+            }
+        }
+        
+        // Show / Hide Slider Settings
         var conica_slider_select_value = $( '#customize-control-conica-slider-type select' ).val();
         conica_customizer_slider_check( conica_slider_select_value );
         

@@ -31,7 +31,7 @@
 			<?php endif; ?>
 			
 			<div class="site-footer-social-copy">
-				<?php printf( __( 'Theme: %1$s by %2$s', 'conica' ), 'Conica', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
+				<?php printf( __( 'Theme: %1$s by %2$s', 'conica' ), '<a href="https://kairaweb.com/theme/conica/">Conica</a>', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
 			</div>
             
             <div class="clearboth"></div>

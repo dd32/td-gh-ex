@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/conica/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Conica Premium </span><em>$39</em>', 'conica' ) ); ?>
+                    <?php printf( __( '<span>Conica Premium </span><em>$25</em>', 'conica' ) ); ?>
                 </a>
             </div>
             
@@ -21,9 +21,8 @@
                         <?php printf( __( 'Purchase and Download Conica Premium', 'conica' ) ); ?>
                     </a>
                 </p>
-                <p><?php printf( __( 'Install and activate the <a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Easy Theme Upgrades Plugin</a>... That\'s all to do with the plugin', 'conica' ) ); ?></p>
+                <p><?php printf( __( '<a href="https://kairaweb.com/documentation/delete-a-theme/" target="_blank">Delete the old free theme</a>... Then', 'conica' ) ); ?></p>
                 <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the Conica Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'conica' ) ); ?></p>
-                <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'conica' ) ); ?></p>
             </div>
             
             <div class="upgrade-order-number-info-btns">
@@ -45,7 +44,7 @@
             <h3 class="upgrade-page-sub-title"><?php _e( 'Upgrade to Premium', 'conica' ); ?></h3>
             <div class="upgrade-page-left-box">
                 <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "If you've enjoyed using our Conica theme to build your website, then you should love the premium version which comes with a bunch of <a href='https://kairaweb.com/theme/conica/#premium-features' class='upgrade-btn' target='_blank'>extra premium features</a> for a low cost of <strong>$39</strong>.<br /><br />With Conica premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'conica' ) ); ?>
+                    <?php printf( __( "If you've enjoyed using our Conica theme to build your website, then you should love the premium version which comes with a bunch of <a href='https://kairaweb.com/theme/conica/#premium-features' class='upgrade-btn' target='_blank'>extra premium features</a> for a low cost of <strong>$25</strong>.<br /><br />With Conica premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'conica' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
                     <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php esc_attr_e( 'Upgrade to Premium', 'conica' ); ?>" />

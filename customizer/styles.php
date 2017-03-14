@@ -32,6 +32,8 @@ function customizer_library_conica_build_styles() {
 				.conica-navigation-style-blocks a:hover span,
 				.conica-navigation-style-blocks li.current_page_item > a span,
 				.conica-navigation-style-blocks li.current_page_ancestor > a span,
+				.conica-navigation-style-blocks li.current-menu-item > a span,
+				.conica-navigation-style-blocks li.current-menu-parent > a span,
 				.main-navigation ul ul li a:hover,
 				.main-navigation ul ul li.current-menu-item > a,
 				.main-navigation ul ul li.current_page_item > a,

@@ -71,6 +71,7 @@
 
 .site-branding {
 	display: inline-block;
+    margin: 0 0 -5px;
 }
 .site-branding a,
 .site-branding a img {

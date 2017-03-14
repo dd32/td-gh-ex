@@ -67,8 +67,7 @@ function customizer_library_conica_options() {
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,
-        'default' => 'conica-site-full-width',
-        'description' => __( '', 'conica' )
+        'default' => 'conica-site-full-width'
     );
     
     $options['conica-upsell-layout'] = array(
@@ -102,6 +101,20 @@ function customizer_library_conica_options() {
         'type'    => 'checkbox',
         'default' => 0
     );
+    $options['conica-set-topbar-switch'] = array(
+        'id' => 'conica-set-topbar-switch',
+        'label'   => __( 'Switch Top Bar', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0
+    );
+    $options['conica-set-header-align-right'] = array(
+        'id' => 'conica-set-header-align-right',
+        'label'   => __( 'Switch Header Main', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0
+    );
     $choices = array(
         'conica-header-layout-one' => __( 'Header Layout One', 'conica' ),
         'conica-header-layout-two' => __( 'Header Layout Two', 'conica' ),
@@ -116,17 +129,9 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-header-layout-one'
     );
-    $options['conica-set-topbar-switch'] = array(
-        'id' => 'conica-set-topbar-switch',
-        'label'   => __( 'Switch Top Bar', 'conica' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'default' => 0,
-        'description' => __( 'Check this box to switch the position of the top bar elements', 'conica' )
-    );
-    $options['conica-set-header-align-right'] = array(
-        'id' => 'conica-set-header-align-right',
-        'label'   => __( 'Switch Header Main', 'conica' ),
+    $options['conica-set-sticky-header'] = array(
+        'id' => 'conica-set-sticky-header',
+        'label'   => __( 'Sticky Header', 'conica' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0
@@ -134,13 +139,6 @@ function customizer_library_conica_options() {
     $options['conica-set-header-nav-center-align'] = array(
         'id' => 'conica-set-header-nav-center-align',
         'label'   => __( 'Center Align Navigation', 'conica' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'default' => 0
-    );
-    $options['conica-set-sticky-header'] = array(
-        'id' => 'conica-set-sticky-header',
-        'label'   => __( 'Sticky Header', 'conica' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0
@@ -171,7 +169,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Remove WooCommerce Cart from header', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
     
@@ -266,7 +264,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-slider',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Set each slide to have custom url link<br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Slider Settings
     
@@ -481,15 +479,13 @@ function customizer_library_conica_options() {
         'id' => 'conica-set-text-header-custom',
         'label'   => __( 'Custom Text', 'conica' ),
         'section' => $section,
-        'type'    => 'text',
-        'default' => __( '', 'conica' )
+        'type'    => 'text'
     );
     $options['conica-set-text-header-custom-icon'] = array(
         'id' => 'conica-set-text-header-custom-icon',
         'label'   => __( 'Custom Text Icon', 'conica' ),
         'section' => $section,
         'type'    => 'text',
-        'default' => __( '', 'conica' ),
         'description' => __( 'You can select any icon to add from <a href="http://fontawesome.io/cheatsheet/" target="_blank">Font Awesome</a>, add only the text next to the icon. Eg: fa-link', 'conica' )
     );
     // ----------------------------------------------------------------------------------------- Header Text
@@ -672,7 +668,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-social',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Over 15 different social profile links available<br />- Let us know which links you need and we\'ll add it!', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Over 18 different social profile links available<br />- Custom setting to add any needed link<br />- Let us know which links you need and we\'ll add it!', 'conica' )
     );
     // ------------------------------------------------------- Social Options
     
@@ -698,6 +694,12 @@ function customizer_library_conica_options() {
         'section' => $section,
         'type'    => 'color',
         'default' => $secondary_color,
+    );
+    $options['conica-upsell-colors'] = array(
+        'id' => 'conica-upsell-colors',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />Conica Premium ($25) has advanced color settings to change Header, Top Bar and Navigation colors, Default Slider colors, Page Title & Widget heading colors, Footer & Bottom Bar colors + more', 'conica' )
     );
     // --------------------------------------------------------------- Colors
 

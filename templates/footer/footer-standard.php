@@ -17,7 +17,7 @@
 			
 			<div class="site-footer-bottom-bar-left">
                 
-                <?php printf( __( 'Theme: %1$s by %2$s', 'conica' ), 'Conica', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
+                <?php printf( __( 'Theme: %1$s by %2$s', 'conica' ), '<a href="https://kairaweb.com/theme/conica/">Conica</a>', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
                 
                 <?php do_action ( 'conica_footer_bottombar_left' ); ?>
                 

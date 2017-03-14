@@ -6,25 +6,12 @@
     background-color: #006CC9;
     color: #FFF;
 }
-
-#customize-theme-controls #accordion-panel-conica-panel-website li.accordion-section div.accordion-section-title,
-#customize-theme-controls #accordion-panel-conica-panel-text li.accordion-section div.accordion-section-title,
-#customize-theme-controls #accordion-panel-conica-panel-font-options li.accordion-section div.accordion-section-title,
-#customize-theme-controls #accordion-section-colors li.accordion-section div.accordion-section-title,
-#customize-theme-controls #accordion-section-conica-section-social li.accordion-section div.accordion-section-title {
-    background-color: #006CC9 !important;
-    color: #FFF !important;
-}
-
-#customize-controls .control-section .customize-section-title h3 {
-	color: inherit;
-}
-
-#customize-control-conica-website-error-msg,
-#customize-control-conica-website-txt-copy {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	padding: 0 0 25px;
-    margin-bottom: 20px;
+#customize-theme-controls #accordion-panel-conica-panel-website:hover > .accordion-section-title:after,
+#customize-theme-controls #accordion-panel-conica-panel-text:hover > .accordion-section-title:after,
+#customize-theme-controls #accordion-panel-conica-panel-font-options:hover > .accordion-section-title:after,
+#customize-theme-controls #accordion-section-colors:hover > .accordion-section-title:after,
+#customize-theme-controls #accordion-section-conica-section-social:hover > .accordion-section-title:after {
+    color: #FFF;
 }
 
 #accordion-section-conica_premium a.button {
@@ -48,4 +35,27 @@
 .kaira-upsell b {
     font-weight: 500;
     color: #006cc9;
+}
+
+#customize-control-conica-set-site-skin,
+#customize-control-conica-set-header-remove-topbar,
+#customize-control-conica-set-header-align-right,
+#customize-control-conica-set-header-layout,
+#customize-control-conica-slider-cats,
+#customize-control-conica-set-blog-layout,
+#customize-control-conica-footer-hide-social,
+#customize-control-conica-set-text-header-add,
+#customize-control-conica-website-error-msg,
+#customize-control-conica-body-font-color,
+#customize-control-background_color,
+#customize-control-custom_logo,
+#customize-control-blogdescription {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 0 25px;
+    margin-bottom: 20px;
+}
+#customize-control-conica-set-show-search {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 25px 0 0;
+    margin-top: 20px;
 }

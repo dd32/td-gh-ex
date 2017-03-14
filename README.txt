@@ -2,7 +2,7 @@
 Contributors: Kaira
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, holiday, portfolio
 Requires at least: 4.0
-Tested up to: 4.6.1
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ View the theme settings under "Appearance" -> Customize.
 2. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.00
+* Styling fixes/tweaks
+* Updated the language.pot file
+Premium: Added setting to set custom links for default slider posts
+Premium: Added setting to add any social link needed
+Premium: Added setting to set search results page to Left SideBar / Full Width
+Premium: Added extra color settings for header, top bar & navigation colors, defaut slider colors and footer & bottom bar colors
 
 #### 1.2.9
 * Fixed comment error
