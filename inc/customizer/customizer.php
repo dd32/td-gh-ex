@@ -26,16 +26,36 @@ function arouse_customize_register( $wp_customize ) {
     	'arouse_slider', 
     	array(
 			'title' => __( 'Slider', 'arouse' ),
-			'description' => __( 'Use this section to setup the homepage slider. Featured images of the posts of the selected category will be displayed as slider images.', 'arouse' ),
+			'description' => __( 'Use this section to setup the front page slider. Featured images of the posts of the selected category will be displayed as slider images.', 'arouse' ),
 			'priority' => 30,
 		) 
 	);
+
+	$wp_customize->add_setting( 
+		'slider_active_help', 
+		array(
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'slider_active_help', 
+			array(
+				'section' 		=> 'arouse_slider',
+				'label' 		=> __( 'Important', 'arouse' ),
+				'content' 		=> __( 'You need to create a page that uses <b>"Featured Front Page"</b> template in order to activate slider and featured content. Read the documentation for more information.', 'arouse' ),
+				'active_callback'	=> 'arouse_is_other_template'
+			) 
+		) 
+	);	
 
     // Display slider?
     $wp_customize->add_setting(
 		'display_slider',
 		array(
-			'default'			=> false,
+			'default'			=> true,
 			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
 		)
 	);
@@ -45,7 +65,7 @@ function arouse_customize_register( $wp_customize ) {
 			'settings'		=> 'display_slider',
 			'section'		=> 'arouse_slider',
 			'type'			=> 'checkbox',
-			'label'			=> __( 'Display slider on homepage ?', 'arouse' )
+			'label'			=> __( 'Display slider?', 'arouse' )
 		)
 	);
 
@@ -84,10 +104,30 @@ function arouse_customize_register( $wp_customize ) {
 		) 
 	);	
 
+	$wp_customize->add_setting( 
+		'featured_section_active_help', 
+		array(
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'featured_section_active_help', 
+			array(
+				'section' 		=> 'arouse_featured_section',
+				'label' 		=> __( 'Important', 'arouse' ),
+				'content' 		=> __( 'You need to create a page that uses <b>"Featured Front Page"</b> template in order to activate slider and featured content. Read the documentation for more information.', 'arouse' ),
+				'active_callback'	=> 'arouse_is_other_template'
+			) 
+		) 
+	);	
+
     $wp_customize->add_setting(
 		'display_featured_section',
 		array(
-			'default'			=> false,
+			'default'			=> true,
 			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
 		)
 	);
@@ -525,6 +565,18 @@ function arouse_featured_content_choice_callback( $control ) {
 
     return false;
     
+}
+
+function arouse_is_other_template() {
+    // Get the page's template
+    $template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+    $is_template = preg_match( '%template-featured.php%', $template );
+
+    if ( $is_template == 0 ){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**

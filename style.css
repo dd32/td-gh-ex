@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
@@ -1662,6 +1662,52 @@ a:hover, a:active {
 .arouse-post-list .entry-content p,
 .arouse-post-grid .entry-content p {
   margin-bottom: 15px;
+}
+
+.page-template-template-featured .arouse-post-list .entry-title,
+.page-template-template-featured .arouse-post-list .search-entry-title,
+.page-template-template-featured .arouse-post-grid .entry-title,
+.page-template-template-featured .arouse-post-grid .search-entry-title {
+  font-size: 19px;
+  font-size: 1.9rem;
+  margin: 10px 0 17px;
+  line-height: 1.3;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.page-template-template-featured .arouse-post-list .entry-title a,
+.page-template-template-featured .arouse-post-list .search-entry-title a,
+.page-template-template-featured .arouse-post-grid .entry-title a,
+.page-template-template-featured .arouse-post-grid .search-entry-title a {
+  color: #222222;
+}
+.page-template-template-featured .arouse-post-list .entry-title a:hover,
+.page-template-template-featured .arouse-post-list .search-entry-title a:hover,
+.page-template-template-featured .arouse-post-grid .entry-title a:hover,
+.page-template-template-featured .arouse-post-grid .search-entry-title a:hover {
+  color: #a58e78;
+}
+.page-template-template-featured .arouse-post-list .cat-links a,
+.page-template-template-featured .arouse-post-grid .cat-links a {
+  color: #a58e78;
+}
+.page-template-template-featured .arouse-post-list .cat-links a:hover,
+.page-template-template-featured .arouse-post-grid .cat-links a:hover {
+  color: #262626;
+}
+.page-template-template-featured .arouse-post-list .entry-content,
+.page-template-template-featured .arouse-post-grid .entry-content {
+  margin-top: 0;
+  color: #676767;
+}
+.page-template-template-featured .arouse-post-list .entry-content p,
+.page-template-template-featured .arouse-post-grid .entry-content p {
+  margin-bottom: 15px;
+}
+.page-template-template-featured .entry-header {
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+  border-bottom: none !important;
 }
 
 .arouse-post-grid {

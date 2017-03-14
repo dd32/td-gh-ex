@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.1.0\n"
-"POT-Creation-Date: 2017-03-08 23:35+0530\n"
-"PO-Revision-Date: 2017-03-08 23:37+0530\n"
+"Project-Id-Version: arouse.1.1.2\n"
+"POT-Creation-Date: 2017-03-14 11:33+0530\n"
+"PO-Revision-Date: 2017-03-14 11:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,6 +11,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__;_x;_nx\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:19
@@ -59,10 +60,6 @@ msgstr ""
 #: footer.php:55
 #, php-format
 msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: front-page.php:40
-msgid "Latest Articles"
 msgstr ""
 
 #: functions.php:51
@@ -114,6 +111,10 @@ msgstr ""
 msgid "Previous Article"
 msgstr ""
 
+#: template-featured.php:33
+msgid "Latest Articles"
+msgstr ""
+
 #: inc/template-tags.php:38
 msgid "Leave a comment"
 msgstr ""
@@ -141,154 +142,165 @@ msgstr ""
 
 #: inc/customizer/customizer.php:29
 msgid ""
-"Use this section to setup the homepage slider. Featured images of the posts "
-"of the selected category will be displayed as slider images."
+"Use this section to setup the front page slider. Featured images of the "
+"posts of the selected category will be displayed as slider images."
 msgstr ""
 
-#: inc/customizer/customizer.php:48
-msgid "Display slider on homepage ?"
+#: inc/customizer/customizer.php:47 inc/customizer/customizer.php:120
+msgid "Important"
 msgstr ""
 
-#: inc/customizer/customizer.php:65
+#: inc/customizer/customizer.php:48 inc/customizer/customizer.php:121
+msgid ""
+"You need to create a page that uses <b>\"Featured Front Page\"</b> template "
+"in order to activate slider and featured content. Read the documentation for "
+"more information."
+msgstr ""
+
+#: inc/customizer/customizer.php:68
+msgid "Display slider?"
+msgstr ""
+
+#: inc/customizer/customizer.php:85
 msgid "Select the category for slider."
 msgstr ""
 
-#: inc/customizer/customizer.php:66
+#: inc/customizer/customizer.php:86
 msgid ""
 "Featured images of the posts from selected category will be displayed in the "
 "slider"
 msgstr ""
 
-#: inc/customizer/customizer.php:81
+#: inc/customizer/customizer.php:101
 msgid "Featured Content"
 msgstr ""
 
-#: inc/customizer/customizer.php:82
+#: inc/customizer/customizer.php:102
 msgid ""
 "Use this section to setup the three featured content boxes that are just "
 "below the slider."
 msgstr ""
 
-#: inc/customizer/customizer.php:99
+#: inc/customizer/customizer.php:139
 msgid "Display featured content section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:114
+#: inc/customizer/customizer.php:154
 msgid "Featured Content Type"
 msgstr ""
 
-#: inc/customizer/customizer.php:117
+#: inc/customizer/customizer.php:157
 msgid "Select the featured content type."
 msgstr ""
 
-#: inc/customizer/customizer.php:119
+#: inc/customizer/customizer.php:159
 msgid "Pages + Featured Images."
 msgstr ""
 
-#: inc/customizer/customizer.php:120
+#: inc/customizer/customizer.php:160
 msgid "Posts + Featured Images."
 msgstr ""
 
-#: inc/customizer/customizer.php:137
+#: inc/customizer/customizer.php:177
 msgid "Display page titles?"
 msgstr ""
 
-#: inc/customizer/customizer.php:155
+#: inc/customizer/customizer.php:195
 #, php-format
 msgid "Select page %d."
 msgstr ""
 
-#: inc/customizer/customizer.php:177
+#: inc/customizer/customizer.php:217
 msgid "Select the category for featured posts."
 msgstr ""
 
-#: inc/customizer/customizer.php:178
+#: inc/customizer/customizer.php:218
 msgid "You can leave this empty to display latest posts."
 msgstr ""
 
-#: inc/customizer/customizer.php:197
+#: inc/customizer/customizer.php:237
 msgid "Display post titles?"
 msgstr ""
 
-#: inc/customizer/customizer.php:206
+#: inc/customizer/customizer.php:246
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:223
+#: inc/customizer/customizer.php:263
 msgid "Blog posts listing layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:226
+#: inc/customizer/customizer.php:266
 msgid "Select the main layout for blog posts listing."
 msgstr ""
 
-#: inc/customizer/customizer.php:228
+#: inc/customizer/customizer.php:268
 msgid "Grid Layout."
 msgstr ""
 
-#: inc/customizer/customizer.php:229
+#: inc/customizer/customizer.php:269
 msgid "List Layout."
 msgstr ""
 
-#: inc/customizer/customizer.php:249
+#: inc/customizer/customizer.php:289
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer/customizer.php:250
+#: inc/customizer/customizer.php:290
 msgid "Primary color applies to menu items, links, buttons, etc."
 msgstr ""
 
-#: inc/customizer/customizer.php:269
+#: inc/customizer/customizer.php:309
 msgid "Category Link Color"
 msgstr ""
 
-#: inc/customizer/customizer.php:270
+#: inc/customizer/customizer.php:310
 msgid "Pick a color for article category links."
 msgstr ""
 
-#: inc/customizer/customizer.php:289
+#: inc/customizer/customizer.php:329
 msgid "Display featured image on single post article?"
 msgstr ""
 
-#: inc/customizer/customizer.php:296
+#: inc/customizer/customizer.php:336
 msgid "Arouse Theme Info"
 msgstr ""
 
-#: inc/customizer/customizer.php:314
+#: inc/customizer/customizer.php:354
 msgid "Arouse Documentation"
 msgstr ""
 
-#: inc/customizer/customizer.php:315
+#: inc/customizer/customizer.php:355
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/arouse-wordpress-theme-"
 "documentation/\" target=\"_blank\">Read the documentation.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:333
+#: inc/customizer/customizer.php:373
 msgid "Arouse Demo"
 msgstr ""
 
-#: inc/customizer/customizer.php:334
+#: inc/customizer/customizer.php:374
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse/\" target="
 "\"_blank\">See the demo.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:352
+#: inc/customizer/customizer.php:392
 msgid "Arouse Pro Details"
 msgstr ""
 
-#: inc/customizer/customizer.php:353
+#: inc/customizer/customizer.php:393
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/themes/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Details.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:372
+#: inc/customizer/customizer.php:412
 msgid "Arouse Pro Demo"
 msgstr ""
 
-#: inc/customizer/customizer.php:373
+#: inc/customizer/customizer.php:413
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Demo.</a>"
