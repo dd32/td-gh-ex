@@ -1,8 +1,8 @@
 === Aileron ===
 Contributors: ThemeCot.com
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.4
-Tested up to: 4.6
+Requires at least: 4.5
+Tested up to: 4.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Aileron is a magazine and blog WordPress theme with a clean design and modern lo
 
 == How can I setup Aileron WordPress theme? ==
 
-http://themecot.com/aileron-theme-documentation/
+https://themecot.com/aileron-theme-documentation/
 
 == License ==
 
@@ -35,6 +35,11 @@ Fonts are licensed - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT 
 aileron/fonts
 
 == Changelog ==
+
+= 1.0.5 =
+Release Date: March 14, 2017
+
+* Enhancement : CSS code improvement.
 
 = 1.0.4 =
 Release Date: August 25, 2016

@@ -183,7 +183,7 @@ function aileron_site_info() {
 				<div class="designer-info">
 					<?php
 					printf( '<a href="%1$s">%2$s</a> <span class="sep">%3$s</span> %6$s <a href="%4$s">%5$s</a>',
-						'http://themecot.com/wordpress-theme/aileron/', 'Aileron Theme', __( '&middot;', 'aileron' ), 'http://wordpress.org/', 'WordPress', __( 'Powered by', 'aileron' )
+						'https://themecot.com/aileron/', 'Aileron Theme', __( '&middot;', 'aileron' ), 'http://wordpress.org/', 'WordPress', __( 'Powered by', 'aileron' )
 					);
 					?>
 				</div>
