@@ -210,6 +210,8 @@ function accesspress_basic_widgets_updated_field_value( $widget_field, $new_fiel
 		return strip_tags( $new_field_value, $apbasic_widgets_allowed_tags );
 		
 	// No allowed tags for all other fields
+	} elseif( $apbasic_widgets_field_type == 'contentarea' ) {
+		return wp_kses_post( $new_field_value, $apbasic_widgets_allowed_tags );
 	} else {
 		return strip_tags( $new_field_value );
 	}

@@ -65,6 +65,7 @@
                 <?php endif; ?>    
             </div>
 		</div><!-- .site-info -->
+        <?php echo do_shortcode('[gtranslate]'); ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <div id="go-top"><a href="#page"><i class="fa fa-caret-up"></i></a></div>

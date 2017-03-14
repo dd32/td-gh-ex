@@ -129,3 +129,8 @@ Version 3.0.6
 ===============
 * Fixed some escaping issues.
 * Updated Latest Font awesome
+
+Version 3.0.7
+===============
+* Updated the fontawesome files.
+* Fixed Toggle Content not displaying the HTML markups.

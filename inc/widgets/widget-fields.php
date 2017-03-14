@@ -59,6 +59,15 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 			</p>
 			<?php
 			break;
+
+		// Textarea field
+		case 'contentarea' : ?>
+			<p>
+				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
+				<textarea class="widefat" rows="6" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>"><?php echo wp_kses_post($athm_field_value); ?></textarea>
+			</p>
+			<?php
+			break;
 			
 		// Checkbox field
 		case 'checkbox' : ?>
