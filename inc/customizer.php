@@ -78,7 +78,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Facebook URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 3
+        'priority'   => 3,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     );
     
@@ -96,7 +97,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Twitter URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 4
+        'priority'   => 4,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     );
     
@@ -114,7 +116,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Google Plus URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 5
+        'priority'   => 5,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     );
     
@@ -132,7 +135,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Instagram URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 6
+        'priority'   => 6,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     );
     
@@ -150,7 +154,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Pinterest URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 7
+        'priority'   => 7,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     );
     
@@ -168,7 +173,8 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('Youtube URL','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 8
+        'priority'   => 8,
+        'active_callback'	=> 'attirant_social_enable'
     	)
     ); 
     
@@ -186,9 +192,18 @@ function attirant_customize_register( $wp_customize ) {
     	'label'		=> __('E-Mail','attirant'),
     	'section'	=> 'attirant_social',
     	'type'		=> 'text',
-        'priority'   => 8
+        'priority'   => 8,
+        'active_callback'	=> 'attirant_social_enable'
     	)
-    );    
+    );   
+    
+     function attirant_social_enable() {
+	    if ( get_theme_mod('social', false ) ) {
+		    return true;
+	    } else {
+		    return false;
+	    }
+    } 
 	
 /*---- Showcase Area Settings ----*/
 
@@ -235,6 +250,7 @@ function attirant_customize_register( $wp_customize ) {
 		    'title'		=> __('Featured Item 1','attirant'),
 		    'priority'	=> 1,
 		    'panel'		=> 'attirant-showcase',
+		    'active_callback'	=> 'attirant_fa_enable'
 	    )
     );
     
@@ -290,6 +306,7 @@ function attirant_customize_register( $wp_customize ) {
 		    'title'		=> __('Featured Item 2','attirant'),
 		    'priority'	=> 2,
 		    'panel'		=> 'attirant-showcase',
+		    'active_callback'	=> 'attirant_fa_enable'
 	    )
     );
     
@@ -345,6 +362,7 @@ function attirant_customize_register( $wp_customize ) {
 		    'title'		=> __('Featured Item 3','attirant'),
 		    'priority'	=> 2,
 		    'panel'		=> 'attirant-showcase',
+		    'active_callback'	=> 'attirant_fa_enable'
 	    )
     );
     
@@ -394,6 +412,14 @@ function attirant_customize_register( $wp_customize ) {
 		)
 	);
 	
+	function attirant_fa_enable() {
+	    if ( get_theme_mod( 'attirant-showcase-blog', false ) ) {
+		    return true;
+	    } else {
+		    return false;
+	    }
+    }
+	
 /*---- Slider Settings ----*/
 	
 	 $wp_customize-> add_panel(
@@ -436,6 +462,7 @@ function attirant_customize_register( $wp_customize ) {
     'attirant-slider-settings', array(
     	'title'		=> __('Slider Settings', 'attirant'),
     	'panel'		=> 'attirant-slider',
+    	'active_callback'	=> 'attirant_slider_enable'
     	)
     );
     
@@ -491,6 +518,7 @@ function attirant_customize_register( $wp_customize ) {
     'attirant-slide-1', array(
     	'title'		=> __('Slide 1', 'attirant'),
     	'panel'		=> 'attirant-slider',
+    	'active_callback'	=> 'attirant_slider_enable'
     	)
     );
     
@@ -544,6 +572,7 @@ function attirant_customize_register( $wp_customize ) {
     'attirant-slide-2', array(
     	'title'		=> __('Slide 2', 'attirant'),
     	'panel'		=> 'attirant-slider',
+    	'active_callback'	=> 'attirant_slider_enable'
     	)
     );
     
@@ -597,6 +626,7 @@ function attirant_customize_register( $wp_customize ) {
     'attirant-slide-3', array(
     	'title'		=> __('Slide 3', 'attirant'),
     	'panel'		=> 'attirant-slider',
+    	'active_callback'	=> 'attirant_slider_enable'
     	)
     );
     
@@ -645,6 +675,14 @@ function attirant_customize_register( $wp_customize ) {
 		'type'		=> 'text',
 		)
 	);
+	
+	function attirant_slider_enable() {
+	    if ( get_theme_mod( 'attirant-slider-blog', false ) ) {
+		    return true;
+	    } else {
+		    return false;
+	    }
+    }
 	
 	//---- Pro Settings ----//
 	
