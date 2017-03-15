@@ -16,11 +16,11 @@ if ( post_password_required() )
 
 	<div class="comment-list">
 		<?php
-		wp_list_comments( array(
+		wp_kses_post( wp_list_comments( array(
 			'style'       => 'div',
 			'short_ping'  => true,
 			'avatar_size' => 40
-		) );
+		) ) );
 		?>
 	</div><!-- .comment-list -->
 

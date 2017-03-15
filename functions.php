@@ -166,7 +166,7 @@ function arix_recent_comments( $no_comments = 3, $comment_len = 130 ) {
 	endforeach; else :
 		$comm .= 'No comments.';
 	endif;
-	echo $comm;
+	return wp_kses_post( $comm );
 }
 
 
