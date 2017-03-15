@@ -4,7 +4,7 @@ Theme URI: http://burhanuddinbohra.com/free/wp-bb-mobile-application-theme/
 Author: burhanuddinbohra
 Author URI: http://www.burhanuddinbohra.com/
 Description: BB Mobile Application is a free WordPress theme for APP websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider,service and footer from customize admin section. Demo: http://www.burhanuddinbohra.com/bb-mobile-application-theme/
-Version: 1.1.7
+Version: 1.1.8
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
@@ -342,8 +342,7 @@ a.button{
 }
 
 .home #header{
-	position:absolute;
-	background:transparent;
+	background:#ffffff;
 }
 
 #header{
@@ -752,6 +751,7 @@ section .innerdarkbox{
 	padding:40px 0 30px;
 	text-align:left;
 	font-family:Helvetica;
+        clear:both;
 }
 #footer h3{
 	text-align:left;
@@ -1044,7 +1044,7 @@ section#blog{
 	text-transform:uppercase;
 	font-weight:bold;
 	margin-top:20px;
-	width:46%;
+	width:25%;
 	margin-left:15px;
 }
 

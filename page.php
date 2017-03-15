@@ -35,12 +35,12 @@ while ( have_posts() ) : the_post(); ?>
             </div>        
             <div class="clear"></div>    
         </div>
-    </div><!-- container -->
     <?php
         // If comments are open or we have at least one comment, load up the comment template.
         if ( comments_open() || get_comments_number() ) {
             comments_template();
         }
     ?>
+    </div><!-- container -->
 <?php endwhile; // end of the loop. ?>    
 <?php get_footer(); ?>

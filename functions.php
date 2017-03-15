@@ -58,7 +58,6 @@ function bb_mobile_application_setup() {
 	
     register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'bb-mobile-application' ),
-		'footer'	=> __('Footer Menu', 'bb-mobile-application'),
 	) );
 
 	add_theme_support( 'custom-background', array(

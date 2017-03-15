@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   http://burhanuddinbohra.com/free/wp-bb-mobile-application-theme/
-Version         :   1.1.7
+Version         :   1.1.8
 Tested up to    :   WP 6.0+
 Author          :   burhanuddinbohra
 Author URI      :   https://www.burhanuddinbohra.com/
