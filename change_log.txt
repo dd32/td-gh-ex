@@ -28,3 +28,5 @@ i)  REQUIRED: Comment form missing in single page.
     REQUIRED: readme.txt - I find only one image URL. Even in slides folder there are 3. Can you please check thoroughly? 
 Version 1.1.8
 i) Style changes
+Version 1.1.9
+i) fix console error
