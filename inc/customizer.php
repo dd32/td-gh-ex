@@ -289,7 +289,7 @@ final class bb_mobile_application_customize {
 				array(
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-mobile-application' ),
-					'pro_url'  => 'http://www.burhanuddinbohra.com/product/bb-mobile-application-theme/'
+					'pro_url'  => 'http://www.themeshopy.com/product/bb-mobile-application-theme/'
 				)
 			)
 		);

@@ -30,3 +30,5 @@ Version 1.1.8
 i) Style changes
 Version 1.1.9
 i) fix console error
+Version 1.2
+i) URL Changed

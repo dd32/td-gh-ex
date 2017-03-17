@@ -3,11 +3,11 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   BB Mobile Application
-Theme URI       :   http://burhanuddinbohra.com/free/wp-bb-mobile-application-theme/
-Version         :   1.1.9
+Theme URI       :   http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
+Version         :   1.2
 Tested up to    :   WP 6.0+
 Author          :   burhanuddinbohra
-Author URI      :   https://www.burhanuddinbohra.com/
+Author URI      :   http://www.themeshopy.com/
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
 
@@ -15,7 +15,7 @@ License URI     :   http://www.gnu.org/licenses/gpl.html
 /* About Author - Contact Details */
 /*-----------------------------------------------------------------------------------*/
 
-email       	:   support@burhanuddinbohra.com
+email       	:   support@themeshopy.com
 
 /*-----------------------------------------------------------------------------------*/
 /* Theme Resources */
