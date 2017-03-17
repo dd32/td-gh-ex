@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 5.4
+Version: 5.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -10,8 +10,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: darkorange
 
-DarkOrange, Copyright 2013, Guido van der Leest
-DarkOrange is licensed under the GPL
+This theme, like WordPress, is licensed under the GPL.
 */
 
 
@@ -175,7 +174,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* HEADER SECOND LOGO */
 .logo {width:100%; clear:both; float:left; padding:20px 0;}
-.logo h1 {text-align:left; font-weight:bold;}
+.logo h1 {font-weight:bold;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {padding:10px 0 0; text-align:center; font-style:italic; font-size:1.45em;}
 
@@ -190,18 +189,19 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* PAGE */
-.page-title {clear:both; padding:0 0 20px;}
+.page-title {clear:both; margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
-.pagelink {width:100%; clear:both; float:left; display:block; padding:20px 0 10px;}
+.pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
-.post-title {clear:both;}
+.post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.post-title-single {clear:both;}
+.post-title-single {clear:both; margin:0 0 20px;}
+.entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
 .sticky-title {clear:both; text-align:center; margin:10px 0 20px; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
-.postmetadata {width:100%; clear:both; float:left; display:block; margin:20px 0; padding:5px 10px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px; box-sizing:border-box;}
-.more {width:100%; clear:both; float:left; display:block; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #eee;}
+.postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px;}
+.more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #eee;}
 a.readmore {float:right; padding:2px 5px; background:#444; color:#fff; text-decoration:none; border-radius:5px;}
 a.readmore:hover {background:#ff6600; text-decoration:none;}
 
@@ -217,13 +217,13 @@ a.readmore:hover {background:#ff6600; text-decoration:none;}
 
 
 /* POST NAV */
-.post-nav {width:100%; clear:both; float:left; display:block;}
+.post-nav {width:100%; clear:both; float:left;}
 .nav-prev {float:left; padding:5px 0;}
 .nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */
-.edit-link {width:100%; clear:both; float:left; display:block; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+.edit-link {width:100%; clear:both; float:left; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
 
 
 /* IMAGE AND VIDEO */
@@ -256,10 +256,11 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-list, .comment-list .children {list-style:none; margin:0; padding:0;}
 .comment-list li {margin:0; padding:0;}
 .comment-list .children > li {margin:0 0 0 10px;}
-.comment-body {background:#f8f8f8; border:1px solid #ccc; border-radius:5px; padding:10px; margin:20px 0;}
+.comment-body {background:#f8f8f8; border:1px solid #ccc; border-radius:5px; padding:10px; margin:0 0 20px;}
 .comment-content {margin:10px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
+.comments-title {margin:0 0 20px;}
 .comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
 .bypostauthor .comment-content {font-style:italic;}
 .comment-awaiting-moderation {font-style:italic;}
@@ -273,7 +274,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS NAV */
-.comment-nav {width:100%; clear:both; float:left; display:block;}
+.comment-nav {width:100%; clear:both; float:left;}
 .comment-prev {float:left; padding:10px 0;}
 .comment-next {float:right; padding:10px 0;}
 
@@ -282,7 +283,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 #sidebar {width:32%; float:right; padding:20px 4% 20px 0;}
 #sidebar-left {width:32%; float:left; padding:20px 0 20px 4%;}
 .widget {padding:0 0 20px; margin:0 0 20px; border-bottom:1px solid #eee;}
-.widgettitle {color:#333; margin:0 0 20px;}
+.widgettitle {clear:both; color:#333; margin:0 0 20px;}
 
 
 /* FOOTER */
@@ -307,7 +308,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; padding:10px 1%; margin:0 auto 0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; float:left; padding:15px 0 10px;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:15px 0 10px;}
 
 	/* HEADER FIRST */
 	#header-first {display:none;}
@@ -316,20 +317,20 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second {width:100%; margin:0; padding:0; border:0;}
 
 	/* HEADER SECOND LOGO */
-	.logo {padding:0; margin:0 0 10px; text-align:center;}
+	.logo {padding:0 0 10px; text-align:center;}
 	.logo h1 {text-align:center; font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
-	.image-homepage {width:100%;}
-	.header-img {width:96%; padding:1%; margin:0 auto 0; display:block; border:1px solid #ccc;}
+	.image-homepage {width:100%; clear:both;}
+	.header-img {width:96%; display:block; padding:1%; margin:0 auto 0; border:1px solid #ccc;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; margin:0 auto 0; float:left;} 
+	.sidebar-homepage {width:100%; clear:both; float:left; margin:0 auto 0;} 
 
 	/* HEADER SECOND MOBILE MENU */
 	.nav-head-mobile ul {display:none;} 
-	.nav-head-mobile {width:100%; display:block; margin:0 0 10px; padding:0;}
+	.nav-head-mobile {width:100%; clear:both; display:block; margin:0 0 10px;}
 	.nav-head-mobile select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* POST */
@@ -343,12 +344,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; padding:0; float:left;}
+	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
 	.widget {padding:0 0 5px; margin:0 0 10px; border:0;}
 	.widgettitle {margin:5px 0 10px;}
 
 	/* FOOTER WIDGET AREA */
-	.footer-right, .footer-left {width:100%; float:left; margin:0;} 
+	.footer-right, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 	#footer .widget {margin:10px 0; padding:0 4%;}
 	#footer .widgettitle {margin:0 0 10px;}
 }
