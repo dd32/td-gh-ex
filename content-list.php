@@ -29,11 +29,10 @@
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'gridbulletin'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
 	</h2>
 
-	<?php if ( has_post_thumbnail() ) { 
-		the_post_thumbnail('list', array('class' => 'list-image')); 
-	} ?>
-
 	<div class="entry-content">
+		<?php if ( has_post_thumbnail() ) { 
+			the_post_thumbnail('list', array('class' => 'list-image')); 
+		} ?>
 		<?php the_excerpt(); ?>
 	</div>
 
