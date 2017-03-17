@@ -3,10 +3,6 @@ Used to style the post and page TinyMCE editor.
 */
 
 
-/* IMPORT FONT */
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
-
-
 /* RESET STYLESHEET */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, ins, mark, 
 em, img, q, small, strong, sub, sup, b, dl, dt, dd, ol, ul, li, table, caption, tr, th, td {
@@ -49,7 +45,7 @@ h6 {font-size:0.80em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
-a {text-decoration:none; color:#999;}
+a {text-decoration:none; color:#21759b;}
 a:hover {text-decoration:underline;}
 
 strong, b {font-weight:bold;}
@@ -57,7 +53,7 @@ small {font-size:0.80em;}
 big {font-size:1.20em;}
 sub {vertical-align:sub; font-size:0.9em;}
 sup {vertical-align:super; font-size:0.9em;}
-ins, mark {font-weight:bold; background:none; text-decoration:none; color:#999;}
+ins, mark {font-weight:bold; background:none; text-decoration:none; color:#21759b;}
 cite, em, abbr, acronym {font-style:italic;}
 code, kbd, samp, var {font-family:monospace, monospace;}
 pre {margin:10px 0; padding:5px 10px; white-space:pre-wrap; border:1px solid #999;}

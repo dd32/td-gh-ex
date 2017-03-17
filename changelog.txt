@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Shipyard version 5.3 - march 2017
+- file style: changed margin of several elements to avoid margin collapsing
+- cleaned up file style
+- updated files content-list and custom-editor-style
+- file functions: improved font family registering
+
 Shipyard version 5.2 - march 2017
 - file style: fixed alignment issue of #respond
 
