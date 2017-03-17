@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/beetle/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Beetle is a fast & elegant Lifestyle Magazine WordPress theme. It comes with a clean typography, subtle colors and works great with strong pictures. Beetle makes use of the Customizer and a few widget areas which allow you to easily set up your online magazine in just a few minutes.
-Version: 1.1.4
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beetle
@@ -1127,7 +1127,6 @@ textarea {
 /*--------------------------------------------------------------
 ## 11.2 - Magazine Posts Widgets
 --------------------------------------------------------------*/
-
 .widget-magazine-posts {
 	margin-bottom: -1em;
 }
@@ -1205,15 +1204,20 @@ textarea {
 }
 
 /* Magazine Posts Grid Widget */
-.widget-magazine-posts-grid .magazine-posts-grid-row {
+.widget-magazine-posts .magazine-grid {
 	margin-right: -2em;
 }
 
-.widget-magazine-posts-grid .magazine-posts-grid-row .large-post {
+.widget-magazine-posts .magazine-grid .large-post {
 	float: left;
 	box-sizing: border-box;
 	padding-right: 2em;
 	width: 50%;
+}
+
+.widget-magazine-posts .magazine-grid .post-column:nth-child(3n) .large-post,
+.widget-magazine-posts .magazine-grid .post-column:nth-child(4n) .medium-post {
+	clear: left;
 }
 
 /* Magazine Posts Columns Widget */
@@ -1383,6 +1387,25 @@ textarea {
 }
 
 .entry-meta span:last-child:after {
+	display: none;
+}
+
+/* Hide post meta if they are deactivated in settings */
+body.date-hidden .entry-meta .meta-date,
+body.author-hidden .entry-meta .meta-author,
+body.categories-hidden .entry-meta .meta-category {
+	 position: absolute;
+	 clip: rect(1px, 1px, 1px, 1px);
+}
+
+body.author-hidden.categories-hidden .entry-meta .meta-date:after,
+body.categories-hidden .entry-meta .meta-author:after,
+body.author-hidden .widget-magazine-posts .entry-meta .meta-date:after {
+	display: none;
+}
+
+body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta,
+body.date-hidden.author-hidden .widget-magazine-posts .entry-meta {
 	display: none;
 }
 
@@ -2148,15 +2171,15 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	/* Magazine Post Widgets */
-	.widget-magazine-posts-grid .magazine-posts-grid-row {
+	.widget-magazine-posts .magazine-grid-two-columns {
 		margin-right: 0;
 	}
 
-	.widget-magazine-posts-grid .medium-post-row {
+	.widget-magazine-posts .magazine-grid-three-columns {
 		margin-right: -1.2em;
 	}
 
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post,
+	.widget-magazine-posts .magazine-grid .large-post,
 	.widget-magazine-posts-columns .magazine-posts-column-left {
 		float: none;
 		padding: 0;
@@ -2176,11 +2199,11 @@ object {
 		max-width: 50%;
 	}
 
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post {
+	.widget-magazine-posts .magazine-grid .large-post {
 		clear: left;
 	}
 
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post .wp-post-image {
+	.widget-magazine-posts .magazine-grid .large-post .wp-post-image {
 		margin-bottom: 1em;
 	}
 
@@ -2209,7 +2232,7 @@ object {
 		display: none;
 	}
 
-	.widget-magazine-posts-grid .medium-post-row {
+	.widget-magazine-posts .magazine-grid-three-columns {
 		margin-right: 0;
 	}
 
@@ -2271,7 +2294,7 @@ object {
 	}
 
 	.widget-magazine-posts .large-post .wp-post-image,
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post .wp-post-image {
+	.widget-magazine-posts .magazine-grid .large-post .wp-post-image {
 		float: none;
 		margin: 0 0 0.5em 0;
 		max-width: 100%;

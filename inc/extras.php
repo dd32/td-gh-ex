@@ -35,6 +35,21 @@ function beetle_body_classes( $classes ) {
 		$classes[] = 'sidebar-left';
 	}
 
+	// Hide Date?
+	if ( false === $theme_options['meta_date'] ) {
+		$classes[] = 'date-hidden';
+	}
+
+	// Hide Author?
+	if ( false === $theme_options['meta_author'] ) {
+		$classes[] = 'author-hidden';
+	}
+
+	// Hide Categories?
+	if ( false === $theme_options['meta_category'] ) {
+		$classes[] = 'categories-hidden';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'beetle_body_classes' );
@@ -62,6 +77,16 @@ function beetle_hide_elements() {
 		$elements[] = '.site-description';
 	}
 
+	// Hide Post Tags?
+	if ( false === $theme_options['meta_tags'] ) {
+		$elements[] = '.type-post .entry-footer .entry-tags';
+	}
+
+	// Hide Post Navigation?
+	if ( false === $theme_options['post_navigation'] ) {
+		$elements[] = '.type-post .entry-footer .post-navigation';
+	}
+
 	// Return early if no elements are hidden.
 	if ( empty( $elements ) ) {
 		return;
@@ -69,10 +94,7 @@ function beetle_hide_elements() {
 
 	// Create CSS.
 	$classes = implode( ', ', $elements );
-	$custom_css = $classes . ' {
-	position: absolute;
-	clip: rect(1px, 1px, 1px, 1px);
-}';
+	$custom_css = $classes . ' { position: absolute; clip: rect(1px, 1px, 1px, 1px); }';
 
 	// Add Custom CSS.
 	wp_add_inline_style( 'beetle-stylesheet', $custom_css );
@@ -102,16 +124,6 @@ add_filter( 'excerpt_length', 'beetle_excerpt_length' );
 
 
 /**
- * Function to change excerpt length for posts in category posts widgets
- *
- * @param int $length Length of excerpt in number of words.
- * @return int
- */
-function beetle_magazine_posts_excerpt_length( $length ) {
-	return 15;
-}
-
-/**
  * Change excerpt more text for posts
  *
  * @param String $more_text Excerpt More Text.
@@ -123,6 +135,7 @@ function beetle_excerpt_more( $more_text ) {
 
 }
 add_filter( 'excerpt_more', 'beetle_excerpt_more' );
+
 
 /**
  * Set wrapper start for wooCommerce
