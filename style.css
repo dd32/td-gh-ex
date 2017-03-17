@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 4.9
+Version: 5.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -10,8 +10,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: myknowledgebase
 
-MyKnowledgeBase, Copyright 2014, Guido van der Leest
-MyKnowledgeBase is licensed under the GPL
+This theme, like WordPress, is licensed under the GPL.
 */
 
 
@@ -165,7 +164,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER FIRST MENU */
-.nav-head {width:65%; float:right; text-align:right; margin:25px 0 0;}
+.nav-head {width:65%; float:right; margin:25px 0 0; text-align:right;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head ul li {display:inline-block; position:relative; padding:0; margin:0 0 0 20px;}
@@ -224,19 +223,20 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* PAGE */
-.page-title {clear:both; padding:0 0 10px;}
+.page-title {clear:both; margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
-.pagelink {width:100%; clear:both; float:left; display:block; padding:20px 0 10px;}
+.pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
-.post-title {clear:both;}
+.post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.post-title-single {clear:both;}
+.post-title-single {clear:both; margin:0 0 20px;}
+.entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
 .sticky-title {clear:both; text-align:center; margin:10px 0 20px; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
-.postmetadata {width:100%; clear:both; float:left; display:block; margin:20px 0; padding:5px 10px; background:#f8f8f8; border:1px solid #eee; box-sizing:border-box;}
-.more {width:100%; clear:both; float:left; display:block; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #eee;}
+.postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#f8f8f8; border:1px solid #eee;}
+.more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #eee;}
 a.readmore {float:right; padding:2px 10px; background:#08a0ff; color:#fff; text-decoration:none;}
 a.readmore:hover {background:#333; text-decoration:none;}
 
@@ -248,13 +248,13 @@ a.readmore:hover {background:#333; text-decoration:none;}
 
 
 /* POST NAV */
-.post-nav {width:100%; clear:both; float:left; display:block;}
+.post-nav {width:100%; clear:both; float:left;}
 .nav-prev {float:left; padding:5px 0;}
 .nav-next {float:right; padding:5px 0;}
 
 
 /* EDIT LINK */
-.edit-link {width:100%; clear:both; float:left; display:block; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
+.edit-link {width:100%; clear:both; float:left; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
 
 
 /* IMAGE AND VIDEO */
@@ -287,10 +287,11 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-list, .comment-list .children {list-style:none; margin:0; padding:0;}
 .comment-list li {margin:0; padding:0;}
 .comment-list .children > li {margin:0 0 0 10px;}
-.comment-body {background:#f8f8f8; border:1px solid #eee; padding:10px; margin:20px 0;}
+.comment-body {background:#f8f8f8; border:1px solid #eee; padding:10px; margin:0 0 20px;}
 .comment-content {margin:10px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
+.comments-title {margin:0 0 20px;}
 .comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
 .bypostauthor .comment-content {font-style:italic;}
 .comment-awaiting-moderation {font-style:italic;}
@@ -304,7 +305,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS NAV */
-.comment-nav {width:100%; clear:both; float:left; display:block;}
+.comment-nav {width:100%; clear:both; float:left;}
 .comment-prev {float:left; padding:10px 0;}
 .comment-next {float:right; padding:10px 0;}
 
@@ -313,7 +314,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 #sidebar {width:33%; float:right; padding:20px 0 0;}
 #sidebar-left {width:33%; float:left; padding:20px 0 0;}
 .widget {padding:0 0 10px; margin:0 0 20px; border-bottom:1px solid #eee;}
-.widgettitle {margin:0 0 10px;}
+.widgettitle {clear:both; margin:0 0 10px;}
 
 
 /* FOOTER */
@@ -340,7 +341,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; padding:0 1%;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; float:left; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:10px 0;}
 
 	/* HEADER FIRST LOGO */
 	.logo {width:100%; text-align:center;}
@@ -349,14 +350,14 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* HEADER FIRST MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {width:100%; margin:5px 0 0;}
+	.nav-head {width:100%; clear:both; margin:0 0 10px; text-align:left;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;} 
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
-	.image-homepage {width:100%; margin:0 0 10px;}
+	.image-homepage {width:100%; clear:both; margin:0 0 10px;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; float:left;}
+	.sidebar-homepage {width:100%; clear:both; float:left;}
 	#header-second .widget {padding:0 3%;}
 	#header-second .widgettitle {padding:0; background:none;}
 
@@ -388,7 +389,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; padding:0 0 10px; float:left;}
+	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0 0 10px;}
 	.widget {margin:10px 0;}
 	.widgettitle {padding:5px 3%; background:#08a0ff; color:#fff;}
 
@@ -396,7 +397,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#footer {width:94%; padding:10px 3% 0;}
 
 	/* FOOTER WIDGET AREA */
-	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
+	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 	#footer .widget {margin:5px 0;}
 	#footer .widgettitle {padding:0; background:none;}
 }

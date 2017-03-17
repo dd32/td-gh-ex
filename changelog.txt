@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 5.0 - march 2017
+- file style: changed margin of several elements to avoid margin collapsing
+- cleaned up file style
+- updated files content-list and custom-editor-style
+- file functions: improved font family registering
+
 MyKnowledgeBase version 4.9 - march 2017
 - file style: fixed alignment issue of #respond
 
