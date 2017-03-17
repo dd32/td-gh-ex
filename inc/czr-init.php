@@ -1,7 +1,6 @@
 <?php
 /**
-* The czr_fn__f() function is an extension of WP built-in apply_filters() where the $value param becomes optional.
-* It is shorter than the original apply_filters() and only used on already defined filters.
+* The czr_fn__f() function is a wrapper of the WP built-in apply_filters() where the $value param becomes optional.
 *
 * By convention in Customizr, filter hooks are used as follow :
 * 1) declared with add_filters in class constructors (mainly) to hook on WP built-in callbacks or create "getters" used everywhere
@@ -659,7 +658,7 @@ if ( ! class_exists( 'CZR_init' ) ) :
                 'black.css'       =>  __( 'Black' , 'customizr' ),
                 'black2.css'      =>  __( 'Flat black' , 'customizr' ),
                 'grey.css'        =>  __( 'Grey' , 'customizr' ),
-                'grey2.css'       =>  __( 'Ligth grey' , 'customizr' ),
+                'grey2.css'       =>  __( 'Light grey' , 'customizr' ),
                 'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
                 'purple.css'      =>  __( 'Purple' , 'customizr' ),
                 'red2.css'        =>  __( 'Flat red' , 'customizr' ),
@@ -1023,57 +1022,63 @@ if ( ! class_exists( 'CZR_init' ) ) :
        */
 
       function czr_fn_customizr_setup() {
-        /* Set default content width for post images and media. */
-        global $content_width;
-        if (! isset( $content_width ) )
-          $content_width = apply_filters( 'tc_content_width' , 1170 );
+          /* Set default content width for post images and media. */
+          global $content_width;
+          if (! isset( $content_width ) )
+            $content_width = apply_filters( 'tc_content_width' , 1170 );
 
-        /*
-         * Makes Customizr available for translation.
-         * Translations can be added to the /inc/lang/ directory.
-         */
-        load_theme_textdomain( 'customizr' , CZR___::czr_fn_is_pro() ? TC_BASE . '/inc/lang_pro' : TC_BASE . '/inc/lang' );
+          /*
+           * Makes Customizr available for translation.
+           * Translations can be added to the /inc/lang/ directory.
+           */
+          load_theme_textdomain( 'customizr' , CZR___::czr_fn_is_pro() ? TC_BASE . '/inc/lang_pro' : TC_BASE . '/inc/lang' );
 
-        /* Adds RSS feed links to <head> for posts and comments. */
-        add_theme_support( 'automatic-feed-links' );
+          /* Adds RSS feed links to <head> for posts and comments. */
+          add_theme_support( 'automatic-feed-links' );
 
-        /*  This theme supports nine post formats. */
-        $post_formats   = apply_filters( 'tc_post_formats', array( 'aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat' ) );
-        add_theme_support( 'post-formats' , $post_formats );
+          /*  This theme supports nine post formats. */
+          $post_formats   = apply_filters( 'tc_post_formats', array( 'aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat' ) );
+          add_theme_support( 'post-formats' , $post_formats );
 
-        /* support for page excerpt (added in v3.0.15) */
-        add_post_type_support( 'page', 'excerpt' );
+          /* support for page excerpt (added in v3.0.15) */
+          add_post_type_support( 'page', 'excerpt' );
 
-        /* This theme uses a custom image size for featured images, displayed on "standard" posts. */
-        add_theme_support( 'post-thumbnails' );
-          //set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+          /* This theme uses a custom image size for featured images, displayed on "standard" posts. */
+          add_theme_support( 'post-thumbnails' );
+            //set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 
-        /* @since v3.2.3 see : https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/ */
-        add_theme_support( 'title-tag' );
-        //remove theme support => generates notice in admin @todo fix-it!
-         /* remove_theme_support( 'custom-background' );
-          remove_theme_support( 'custom-header' );*/
+          /* @since v3.2.3 see : https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/ */
+          add_theme_support( 'title-tag' );
+          //remove theme support => generates notice in admin @todo fix-it!
+           /* remove_theme_support( 'custom-background' );
+            remove_theme_support( 'custom-header' );*/
 
-        //post thumbnails for featured pages and post lists (archive, search, ...)
-        $tc_thumb_size    = apply_filters( 'tc_thumb_size' , $this -> tc_thumb_size );
-        add_image_size( 'tc-thumb' , $tc_thumb_size['width'] , $tc_thumb_size['height'], $tc_thumb_size['crop'] );
+          //post thumbnails for featured pages and post lists (archive, search, ...)
+          $tc_thumb_size    = apply_filters( 'tc_thumb_size' , $this -> tc_thumb_size );
+          add_image_size( 'tc-thumb' , $tc_thumb_size['width'] , $tc_thumb_size['height'], $tc_thumb_size['crop'] );
 
-        //slider full width
-        $slider_full_size = apply_filters( 'tc_slider_full_size' , $this -> slider_full_size );
-        add_image_size( 'slider-full' , $slider_full_size['width'] , $slider_full_size['height'], $slider_full_size['crop'] );
+          //slider full width
+          $slider_full_size = apply_filters( 'tc_slider_full_size' , $this -> slider_full_size );
+          add_image_size( 'slider-full' , $slider_full_size['width'] , $slider_full_size['height'], $slider_full_size['crop'] );
 
-        //slider boxed
-        $slider_size      = apply_filters( 'tc_slider_size' , $this -> slider_size );
-        add_image_size( 'slider' , $slider_size['width'] , $slider_size['height'], $slider_size['crop'] );
+          //slider boxed
+          $slider_size      = apply_filters( 'tc_slider_size' , $this -> slider_size );
+          add_image_size( 'slider' , $slider_size['width'] , $slider_size['height'], $slider_size['crop'] );
 
-        //add support for svg and svgz format in media upload
-        add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
+          //add support for svg and svgz format in media upload
+          add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
 
-        //add help button to admin bar
-        add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
+          //add help button to admin bar
+          add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
 
-        //Javascript detection
-        add_action( 'wp_head'                             , array( $this, 'czr_fn_javascript_detection'), 0 );
+          //Javascript detection
+          add_action( 'wp_head'                             , array( $this, 'czr_fn_javascript_detection'), 0 );
+          // Add theme support for selective refresh for widgets.
+          // Only add if the link manager is not enabled
+          // cf WP core ticket #39451
+          if ( ! get_option( 'link_manager_enabled' ) ) {
+            add_theme_support( 'customize-selective-refresh-widgets' );
+          }
       }
 
 
@@ -2810,6 +2815,7 @@ if ( ! class_exists( 'CZR_utils_settings_map' ) ) :
           'czr_fn_post_metas_option_map',
           'czr_fn_post_list_option_map',
           'czr_fn_single_post_option_map',
+          'czr_fn_single_page_option_map',
           'czr_fn_gallery_option_map',
           'czr_fn_paragraph_option_map',
           'czr_fn_post_navigation_option_map',
@@ -4260,7 +4266,46 @@ if ( ! class_exists( 'CZR_utils_settings_map' ) ) :
     }
 
 
+    /*-----------------------------------------------------------------------------------------------------
+                                   SINGLE PAGESS SECTION
+    ------------------------------------------------------------------------------------------------------*/
+    function czr_fn_single_page_option_map( $get_default = null ) {
+      return array(
+          'tc_single_page_thumb_location'  =>  array(
+                            'default'       => 'hide',
+                            'control'     => 'CZR_controls' ,
+                            'label'         => __( "Post thumbnail position" , "customizr" ),
+                            'section'       => 'single_pages_sec' ,
+                            'type'      =>  'select' ,
+                            'choices'     => array(
+                                    'hide'                    => __( "Don't display" , 'customizr' ),
+                                    '__before_main_wrapper|200'   => __( 'Before the title in full width' , 'customizr' ),
+                                    '__before_content|0'     => __( 'Before the title boxed' , 'customizr' ),
+                                    '__after_content_title|10'    => __( 'After the title' , 'customizr' ),
+                            ),
+                            'priority'      => 10,
+                            'notice'    => sprintf( '%s<br/>%s',
+                              __( 'You can display the featured image (also called the post thumbnail) of your pages before their content, when they are displayed individually.' , 'customizr' ),
+                              sprintf( __( "Don't know how to set a featured image to a page? Learn how in the %s.", "customizr" ),
+                                  sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>' , esc_url('codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail'), __("WordPress documentation" , "customizr" ) )
+                              )
+                            )
+          ),
+          'tc_single_page_thumb_height' => array(
+                            'default'       => 250,
+                            'sanitize_callback' => array( $this , 'czr_fn_sanitize_number' ),
+                            'control'   => 'CZR_controls' ,
+                            'label'       => __( "Set the thumbnail's max height in pixels" , 'customizr' ),
+                            'section'     => 'single_pages_sec' ,
+                            'type'        => 'number' ,
+                            'step'        => 1,
+                            'min'         => 0,
+                            'priority'      => 20,
+                            'transport'   => 'postMessage'
+          )
+      );
 
+    }
 
 
 
@@ -5196,6 +5241,12 @@ if ( ! class_exists( 'CZR_utils_settings_map' ) ) :
                             'title'     =>  __( 'Single posts' , 'customizr' ),
                             'priority'    =>  $this -> is_wp_version_before_4_0 ? 17 : 24,
                             'description' =>  __( 'Set up single posts options' , 'customizr' ),
+                            'panel'   => 'tc-content-panel'
+        ),
+        'single_pages_sec'        => array(
+                            'title'     =>  __( 'Single pages' , 'customizr' ),
+                            'priority'    =>  $this -> is_wp_version_before_4_0 ? 17 : 24,
+                            'description' =>  __( 'Set up single pages options' , 'customizr' ),
                             'panel'   => 'tc-content-panel'
         ),
         'breadcrumb_sec'        => array(
@@ -6424,18 +6475,14 @@ if ( ! class_exists( 'CZR_utils' ) ) :
 
 
       /**
-      * Check if we are displaying posts lists or front page
-      *
-      * @since Customizr 3.0.6
-      *
+      * Check if we are really on home, all cases covered
       */
       function czr_fn_is_home() {
-        //get info whether the front page is a list of last posts or a page
-        return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || 'nothing' == get_option( 'show_on_front' ) ) ) || is_front_page();
+          //get info whether the front page is a list of last posts or a page
+          return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || 'nothing' == get_option( 'show_on_front' ) ) )
+            || ( 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
+            || is_front_page();
       }
-
-
-
 
 
       /**
@@ -8000,8 +8047,9 @@ if ( ! class_exists( 'CZR_placeholders' ) ) :
       $_dont_display_conditions = array(
         ! is_user_logged_in() || ! current_user_can('edit_theme_options'),
         'disabled' == get_transient("tc_thumbnail_help"),
-        'hide' != CZR_utils::$inst->czr_fn_opt('tc_single_post_thumb_location'),
-        ! is_admin() && ! is_single(),
+        ( is_single() && 'hide' != CZR_utils::$inst->czr_fn_opt('tc_single_post_thumb_location') ),
+        ( is_page() && 'hide' != CZR_utils::$inst->czr_fn_opt('tc_single_page_thumb_location') ),
+        ! is_admin() && ! is_singular(),
         ! self::$instance -> czr_fn_is_front_help_enabled()
       );
 
@@ -8427,8 +8475,8 @@ if ( ! class_exists( 'CZR_placeholders' ) ) :
     */
     static function czr_fn_is_widget_placeholder_enabled( $_position = null ) {
       //never display when customizing
-      if ( CZR___::$instance -> czr_fn_is_customizing() )
-        return;
+      // if ( CZR___::$instance -> czr_fn_is_customizing() )
+      //   return;
 
       //always display in DEV mode
       if ( defined('CZR_DEV') && true === CZR_DEV )
@@ -8500,10 +8548,13 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
       add_filter( 'tc_slide_caption_data' , array( $this, 'czr_fn_set_demo_slide_data'), 100, 3 );
       add_filter( 'tc_opt_tc_slider_delay', array( $this, 'czr_fn_set_demo_slider_delay') );
 
-      //SINGLE POSTS
+      //SINGLE POSTS AND PAGES
       add_filter( 'tc_show_single_post_thumbnail', '__return_true');
-      add_filter( 'tc_single_post_thumb_hook', array( $this, 'czr_fn_set_single_post_thumb_hook') );
-      add_filter( 'tc_single_post_thumb_height', array( $this, 'czr_fn_set_single_post_thumb_height') );
+      add_filter( 'tc_show_single_page_thumbnail', '__return_true');
+      add_filter( 'tc_single_post_thumb_hook', array( $this, 'czr_fn_set_singular_thumb_hook') );
+      add_filter( 'tc_single_page_thumb_hook', array( $this, 'czr_fn_set_singular_thumb_hook') );
+      add_filter( 'tc_single_post_thumb_height', array( $this, 'czr_fn_set_singular_thumb_height') );
+      add_filter( 'tc_single_page_thumb_height', array( $this, 'czr_fn_set_singular_thumb_height') );
 
       //SOCIALS
       add_filter( 'option_tc_theme_options', array( $this, 'czr_fn_set_socials'), 100 );
@@ -8556,9 +8607,11 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
 
 
     /* ------------------------------------------------------------------------- *
-     *  Front page
+     *  Front page : WP Core
     /* ------------------------------------------------------------------------- */
     function czr_fn_set_front_page_content( $value ) {
+        if ( CZR___::$instance -> czr_fn_is_customizing() )
+          return $value;
         return 'posts';
     }
 
@@ -8783,11 +8836,10 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
     /* ------------------------------------------------------------------------- *
      *  Single Posts
     /* ------------------------------------------------------------------------- */
-    function czr_fn_set_single_post_thumb_hook() {
+    function czr_fn_set_singular_thumb_hook() {
       return '__before_main_wrapper';
     }
-
-    function czr_fn_set_single_post_thumb_height() {
+    function czr_fn_set_singular_thumb_height() {
       return 350;
     }
 
@@ -8927,40 +8979,66 @@ do_action('czr_load');
 
 //@return an array of unfiltered options
 //=> all options or a single option val
-function czr_fn_get_raw_option( $opt_name = null, $opt_group = null ) {
+function czr_fn_get_raw_option( $opt_name = null, $opt_group = null, $from_cache = true ) {
     $alloptions = wp_cache_get( 'alloptions', 'options' );
-    $alloptions = maybe_unserialize($alloptions);
-    if ( ! is_null( $opt_group ) && isset($alloptions[$opt_group]) ) {
-      $alloptions = maybe_unserialize($alloptions[$opt_group]);
+    $alloptions = maybe_unserialize( $alloptions );
+    //is there any option group requested ?
+    if ( ! is_null( $opt_group ) && array_key_exists( $opt_group, $alloptions ) ) {
+      $alloptions = maybe_unserialize( $alloptions[ $opt_group ] );
     }
-    if ( is_null( $opt_name ) )
-      return $alloptions;
-    return isset( $alloptions[$opt_name] ) ? maybe_unserialize($alloptions[$opt_name]) : false;
+    //shall we return a specific option ?
+    if ( is_null( $opt_name ) ) {
+        return $alloptions;
+    } else {
+        $opt_value = array_key_exists( $opt_name, $alloptions ) ? maybe_unserialize( $alloptions[ $opt_name ] ) : false;//fallback on cache option val
+        //do we need to get the db value instead of the cached one ? <= might be safer with some user installs not properly handling the wp cache
+        //=> typically used to checked the template name for czr_fn_isprevdem()
+        if ( ! $from_cache ) {
+            global $wpdb;
+            //@see wp-includes/option.php : get_option()
+            $row = $wpdb->get_row( $wpdb->prepare( "SELECT option_value FROM $wpdb->options WHERE option_name = %s LIMIT 1", $opt_name ) );
+            if ( is_object( $row ) ) {
+                $opt_value = $row->option_value;
+            }
+        }
+        return $opt_value;
+    }
 }
 
 //@return an array of options
 function czr_fn_get_admin_option( $option_group = null ) {
-  $option_group           = is_null($option_group) ? CZR_THEME_OPTIONS : $option_group;
+    $option_group           = is_null($option_group) ? CZR_THEME_OPTIONS : $option_group;
 
-  //here we could hook a callback to remove all the filters on "option_{CZR_THEME_OPTIONS}"
-  do_action( "tc_before_getting_option_{$option_group}" );
-  $options = get_option( $option_group, array() );
-  //here we could hook a callback to re-add all the filters on "option_{CZR_THEME_OPTIONS}"
-  do_action( "tc_after_getting_option_{$option_group}" );
+    //here we could hook a callback to remove all the filters on "option_{CZR_THEME_OPTIONS}"
+    do_action( "tc_before_getting_option_{$option_group}" );
+    $options = get_option( $option_group, array() );
+    //here we could hook a callback to re-add all the filters on "option_{CZR_THEME_OPTIONS}"
+    do_action( "tc_after_getting_option_{$option_group}" );
 
-  return $options;
+    return $options;
 }
 
 //@return bool
 function czr_fn_isprevdem() {
-  return apply_filters( 'czr_fn_isprevdem', ( czr_fn_get_raw_option( 'template' ) != get_stylesheet() && ! is_child_theme() && ! CZR___::czr_fn_is_pro() ) );
+    global $wp_customize;
+    $is_dirty = false;
+    if ( is_object( $wp_customize ) && method_exists( $wp_customize, 'unsanitized_post_values' ) ) {
+        $real_cust            = $wp_customize -> unsanitized_post_values( array( 'exclude_changeset' => true ) );
+        $_preview_index       = array_key_exists( 'customize_messenger_channel' , $_POST ) ? $_POST['customize_messenger_channel'] : '';
+        $_is_first_preview    = false !== strpos( $_preview_index ,'-0' );
+        $_doing_ajax_partial  = array_key_exists( 'wp_customize_render_partials', $_POST );
+        //There might be cases when the unsanitized post values contains old widgets infos on initial preview load, giving a wrong dirtyness information
+        $is_dirty             = ( ! empty( $real_cust ) && ! $_is_first_preview ) || $_doing_ajax_partial;
+    }
+    return apply_filters( 'czr_fn_isprevdem', ! $is_dirty && czr_fn_get_raw_option( 'template', null, false ) != get_stylesheet() && ! is_child_theme() && ! CZR___::czr_fn_is_pro() );
 }
 
 if ( czr_fn_isprevdem() && class_exists('CZR_prevdem') ) {
-  new CZR_prevdem();
+    new CZR_prevdem();
 }
 
 //may be load pro
-if ( CZR___::czr_fn_is_pro() )
-  new CZR_init_pro(CZR___::$theme_name );
+if ( CZR___::czr_fn_is_pro() ) {
+    new CZR_init_pro(CZR___::$theme_name );
+}
 ?>

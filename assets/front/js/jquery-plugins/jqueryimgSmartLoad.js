@@ -11,7 +11,6 @@
  *
  * (c) 2016 Nicolas Guillaume, Nice, France
  *
- *
  * Example of gif 1px x 1px placeholder :
  * 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
  *
