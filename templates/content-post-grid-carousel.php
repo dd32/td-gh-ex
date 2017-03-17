@@ -16,16 +16,22 @@
             }?>
               <div id="post-<?php the_ID(); ?>" class="blog_item postclass grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                   <?php if(has_post_thumbnail( $post->ID )) {
-                          $image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
-                          $thumbnailURL = $image_url[0];
-                          $image = aq_resize($thumbnailURL, $image_width, $image_height, true);
-                          if(empty($image)) { $image = $thumbnailURL; }
+                         	$image_id = get_post_thumbnail_id( $post->ID );
+                        	$image_url = wp_get_attachment_image_src( $image_id, 'full' ); 
+                          	$thumbnailURL = $image_url[0];
+                          	$image = aq_resize($thumbnailURL, $image_width, $image_height, true, false, false, $image_id);
+                          	if(empty($image[0])) {$image = array($thumbnailURL,$image_width,$image_height);}
                         } else {
-                          $image = pinnacle_img_placeholder(); 
+                          	$image_id = '';
+                      		$thumbnailURL = pinnacle_post_default_placeholder();
+                      		$image = aq_resize($thumbnailURL, $image_width, $image_height, true, false);
                         }?>
-                        <div class="imghoverclass img-margin-center">
-                              <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" itemprop="image" class="iconhover" style="display:block;">
+                        <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                              <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
+                                 <img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>"  itemprop="contentUrl" <?php echo 'width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'"';?> <?php echo kt_get_srcset_output( $image[1], $image[2], $thumbnailURL, $image_id);?> class="iconhover" style="display:block;">
+                                      <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+		                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+		                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                               </a> 
                         </div>
                         <?php $image = null; $thumbnailURL = null;   ?>
@@ -43,6 +49,20 @@
                                 </p> 
                               </div>
                           <footer class="clearfix">
+                          <?php 
+                          echo '<meta itemprop="dateModified" content="'.esc_attr(get_the_modified_date('c')).'">';
+							echo '<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="'.esc_url(get_the_permalink()).'">';
+							echo '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';
+							    if (!empty($pinnacle['x1_logo_upload']['url'])) {  
+							    echo '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+							    echo '<meta itemprop="url" content="'.esc_attr($pinnacle['x1_logo_upload']['url']).'">';
+							    echo '<meta itemprop="width" content="'.esc_attr($pinnacle['x1_logo_upload']['width']).'">';
+							    echo '<meta itemprop="height" content="'.esc_attr($pinnacle['x1_logo_upload']['height']).'">';
+							    echo '</div>';
+							    }
+							    echo '<meta itemprop="name" content="'.esc_attr(get_bloginfo('name')).'">';
+							echo '</div>';
+							?>
                           </footer>
                         </div><!-- Text size -->
             </div> <!-- Blog Item -->

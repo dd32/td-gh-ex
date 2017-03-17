@@ -32,6 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.4.7 | 17th March 2016 = 
+* Update: Image sizing.
+* Update: Schema.
+* Udpate: Archive title.
+* Update: Scripts.
+
 = 1.4.6 | 7th November 2016 = 
 * Update: Add some checks for images.
 
