@@ -1,7 +1,7 @@
 /*
 Theme Name: SimplyBlack
 Theme URI: http://www.guidovanderleest.nl/simplyblack
-Version: 5.1
+Version: 5.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: SimplyBlack is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -10,8 +10,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: simplyblack
 
-SimplyBlack, Copyright 2013, Guido van der Leest
-SimplyBlack is licensed under the GPL
+This theme, like WordPress, is licensed under the GPL.
 */
 
 
@@ -170,22 +169,23 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* PAGE */
-.page-title {clear:both; padding:0 0 10px;}
+.page-title {clear:both; margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
-.pagelink {width:100%; clear:both; float:left; display:block; padding:20px 0 10px;}
+.pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
-.post-title {clear:both;}
+.post-title {clear:both; margin:0 0 20px;}
 .post-title a {color:#000; text-decoration:none;}
 .post-title a:hover {color:#666; text-decoration:none;}
-.post-title-single {clear:both;}
+.post-title-single {clear:both; margin:0 0 20px;}
+.entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
 .sticky-title {clear:both; text-align:center; margin:0 0 20px; padding:2px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
-.postmetadata {width:96%; clear:both; float:left; display:block; margin:20px 0; padding:5px 2%; background:#000; color:#fff;}
+.postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#000; color:#fff;}
 .postmetadata a {color:#ccc; text-decoration:none;}
 .postmetadata a:hover {color:#fff; text-decoration:none;}
-.more {width:100%; clear:both; float:left; display:block; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #ccc;}
+.more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
 a.readmore {float:right; padding:2px 5px; background:#000; color:#fff; text-decoration:none;}
 a.readmore:hover {background:#666; text-decoration:none;}
 
@@ -197,13 +197,13 @@ a.readmore:hover {background:#666; text-decoration:none;}
 
 
 /* POST NAV */
-.post-nav {width:100%; clear:both; float:left; display:block;}
+.post-nav {width:100%; clear:both; float:left;}
 .nav-prev {float:left; padding:10px 0;}
 .nav-next {float:right; padding:10px 0;}
 
 
 /* EDIT LINK */
-.edit-link {width:100%; clear:both; float:left; display:block; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+.edit-link {width:100%; clear:both; float:left; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
 
 
 /* IMAGE AND VIDEO */
@@ -236,10 +236,11 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-list, .comment-list .children {list-style:none; margin:0; padding:0;}
 .comment-list li {margin:0; padding:0;}
 .comment-list .children > li {margin:0 0 0 10px;}
-.comment-body {background:#f8f8f8; border:1px solid #ccc; padding:10px; margin:20px 0;}
+.comment-body {background:#f8f8f8; border:1px solid #ccc; padding:10px; margin:0 0 20px;}
 .comment-content {margin:10px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
+.comments-title {margin:0 0 20px;}
 .comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
 .bypostauthor .comment-content {font-style:italic;}
 .comment-awaiting-moderation {font-style:italic;}
@@ -253,7 +254,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS NAV */
-.comment-nav {width:100%; clear:both; float:left; display:block;}
+.comment-nav {width:100%; clear:both; float:left;}
 .comment-prev {float:left; padding:10px 0;}
 .comment-next {float:right; padding:10px 0;}
 
@@ -262,7 +263,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 #sidebar {width:32%; float:right; padding:20px 0 0;}
 #sidebar-left {width:32%; float:left; padding:20px 0 0;}
 .widget {padding:0 0 10px; margin:0 0 20px; border-bottom:1px solid #ccc;}
-.widgettitle {background:#000; color:#fff; padding:5px 10px; margin:0 0 10px;}
+.widgettitle {clear:both; background:#000; color:#fff; padding:5px 10px; margin:0 0 10px;}
 
 
 /* FOOTER */
@@ -287,7 +288,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; margin:0 auto 0; padding:10px 1%; border:0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; float:left; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:10px 0;}
 
 	/* HEADER LOGO */
 	.logo {padding:10px 0; text-align:center;}
@@ -296,7 +297,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* HEADER MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {width:100%; margin:0 0 10px; padding:0;}
+	.nav-head {width:100%; margin:0 0 10px; padding:0; background:none;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;} 
 
 	/* HEADINGS */
@@ -307,8 +308,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; padding:0; float:left;}
+	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
 
 	/* FOOTER WIDGET AREA */
-	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
+	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 }
