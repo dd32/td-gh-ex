@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Medical version 4.7 - march 2017
+- file style: changed margin of several elements to avoid margin collapsing
+- cleaned up file style
+- updated files content-list and custom-editor-style
+- file functions: improved font family registering
+
 Medical version 4.6 - march 2017
 - file style: fixed alignment issue of #respond
 
