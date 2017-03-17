@@ -31,11 +31,11 @@
 		</div>
 	</div>
 
+	<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 	<div id="header-second-container">
-		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
-		<?php endif; ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 	</div>
+	<?php endif; ?>
 
 	<?php if ( is_front_page() ) {?> 
 	<?php if ( get_header_image() ) {?> 
