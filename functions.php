@@ -22,7 +22,7 @@
 			add_theme_support( 'title-tag' );
 
 		// Add editor styles
-			add_editor_style( 'custom-editor-style.css' );
+			add_editor_style( array( 'custom-editor-style.css', darkelements_font_url() ) );
 
 		// Custom header	
 			$header_args = array(		
@@ -74,7 +74,7 @@
 	function darkelements_scripts() {
 		wp_enqueue_style( 'darkelements-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'darkelements-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-		wp_enqueue_style( 'darkelements-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+		wp_enqueue_style( 'darkelements-googlefonts', darkelements_font_url() ); 
 
 		// Add html5 support for IE 8 and older 
 		wp_enqueue_script( 'darkelements_html5', get_template_directory_uri() . '/js/ie.js' );
@@ -92,6 +92,13 @@
 		wp_localize_script( 'darkelements-nav', 'objectL10n', $darkelements_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'darkelements_scripts' );
+
+
+// Font family
+	function darkelements_font_url() {
+		$font_url = '//fonts.googleapis.com/css?family=Open+Sans';
+		return esc_url_raw( $font_url );
+	}
 
 
 // Sidebars
