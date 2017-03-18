@@ -96,7 +96,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<td class="price">
 							<?php
 							if ( version_compare( WC_VERSION, '2.7', '<' ) ) {
-								echo $product->get_price_html();
+								echo $grouped_product->get_price_html();
 
 								if ( $availability = $product->get_availability() ) {
 									$availability_html = empty( $availability['availability'] ) ? '' : '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';

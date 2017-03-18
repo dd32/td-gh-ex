@@ -57,7 +57,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 				}
 				$lite_box_title = esc_attr( get_the_title( get_post_thumbnail_id() ) );
 				$image_url = aq_resize($full_size_image[0], $productimgwidth, $productimgheight, true);
-				if(empty($image_url)) {$image_url = $product_image_url;} 
+				if(empty($image_url)) {$image_url = $full_size_image[0];} 
 				// Get srcset
 		        $img_srcset = kt_get_srcset( $productimgwidth, $productimgheight, $full_size_image[0], $post_thumbnail_id);
 		        if(!empty($img_srcset) ) {
@@ -66,7 +66,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 		        	$img_srcset_output = '';
 		        }
 		        $html  = '<figure data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '" title="'.esc_attr($lite_box_title).'">';
-				$html .= '<img width="'.$productimgwidth.'" height="'.$productimgheight.'" src="'.$image_url.'" class="attachment-shop_single wp-post-image" '.$img_srcset_output.' title="'.$image_title.'" alt="'.$alttag.'">';
+				$html .= '<img width="'.$productimgwidth.'" height="'.$productimgheight.'" src="'.esc_url($image_url).'" class="attachment-shop_single wp-post-image" '.$img_srcset_output.' title="'.$image_title.'" alt="'.$alttag.'">';
 				$html .= '</a></figure>';
 			} else {
 				$html  = '<figure data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';

@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.9 | 18th March 2017 =
+* Update: Grouped Product issue.
+* Update: Single Product issue.
+* Update: Lightbox Title issue.
+
 = Version 2.8.8 | 13th March 2017 =
 * Update: Grouped Product issue.
 * Update: Google Fonts
