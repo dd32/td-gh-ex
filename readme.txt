@@ -3,7 +3,7 @@
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
 Tested up to: 4.7.3
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,9 @@ Arouse supports woocommerce plugin.
 * removed template-slider.php
 * added template-featured.php
 * Updated translation files.
+
+= 1.1.3 - Mar 19 2017 = 
+* Fixed customizer color option issues.
 
 == Credits ==
 

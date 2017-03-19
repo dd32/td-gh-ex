@@ -128,7 +128,7 @@ function arouse_custom_styles() {
 			.main-navigation .current-menu-ancestor > a {
 				color: '. $primary_color .';
 			}
-			#arouse-search-form input[type="submit"] {
+			.arouse-search-form .search-form .search-submit {
 				background-color: '. $primary_color .';
 			}
 			.nav-links .current {
@@ -161,6 +161,12 @@ function arouse_custom_styles() {
 			.arouse-post-grid .search-entry-title a:hover {
 				color: '. $primary_color .';
 			}
+			.page-template-template-featured .arouse-post-list .entry-title a:hover,
+			.page-template-template-featured .arouse-post-list .search-entry-title a:hover,
+			.page-template-template-featured .arouse-post-grid .entry-title a:hover,
+			.page-template-template-featured .arouse-post-grid .search-entry-title a:hover {
+				color: '. $primary_color .';
+			}			
 			.comment-author .fn,
 			.comment-author .url,
 			.comment-reply-link,
@@ -206,6 +212,10 @@ function arouse_custom_styles() {
 			}
 			.arouse-post-list .cat-links a,
 			.arouse-post-grid .cat-links a {
+				color: '. $category_link_color .';
+			}	
+			.page-template-template-featured .arouse-post-list .cat-links a,
+			.page-template-template-featured .arouse-post-grid .cat-links a {
 				color: '. $category_link_color .';
 			}	
 		';
