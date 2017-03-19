@@ -15,6 +15,7 @@
 
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 
+
 get_header(); ?>
 
 <div class="inner flex-container">

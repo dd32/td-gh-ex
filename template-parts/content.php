@@ -70,22 +70,16 @@
 
 	<div class="entry-content">
 		<?php
-
-		if ( get_post_format() && ! has_post_format('chat') ) {
-			the_content();
-		}
-
-		elseif ( is_home() || is_search() || is_archive() || is_dynamic_sidebar() ) {
-			the_excerpt();
-		} 
-
-		else {
-			the_content( sprintf( __( 'Continue reading', 'bassist' ).' %s',
+		if ( strpos( $post->post_content, '<!--more' ) || get_post_format() ) {
+			the_content( sprintf(
+				__( 'Continue reading', 'bassist' ).' %s <span class="meta-nav">&rarr;</span>',
 				the_title( '<span class="screen-reader-text">', '</span>', false )
-		) );
-		}	
-
+			) );
+		} else {
+			the_excerpt();
+		}
 		?>
+
 	</div><!-- .entry-content -->
 
 	<?php bassist_entry_footer(); ?>

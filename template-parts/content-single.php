@@ -55,7 +55,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-excerpt">
-		<?php 	if ( ! get_post_format() ):
+		<?php 	if ( ! get_post_format() && has_excerpt() ):
 					the_excerpt();
 				endif ?>
 	</div>

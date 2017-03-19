@@ -24,10 +24,10 @@ $about_page = $bassist_theme_options['about_slug'];
 			</div>
 <?php 	endwhile;
 		wp_reset_postdata();
-	else:
+	elseif ( is_customize_preview() ):
 		printf( '<h1>%1$s</h1><p>%2$s</p>',
 				__('This is the about section', 'bassist'),
-				__('To fill up this section, create a page with the title "About", "About me" or something similar and write the slug of the page in the Customizer. To put a picture before this section, use the parallax settings in the Customizer.', 'bassist') );
+				__('To fill up this section, create a page with the title "About", "About me" or something similar and write the slug of the page in the Customizer. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide About Section" in the Customizer.', 'bassist') );
 	endif;
 ?>
 

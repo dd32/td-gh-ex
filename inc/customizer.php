@@ -322,7 +322,7 @@ $wp_customize->add_section( 'Parallax', array(
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[parallax_background_image_1]', array(
 	'default'			=> '',
-	'sanitize_callback'	=> 'esc_url',
+	'sanitize_callback'	=> 'esc_url_raw',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option', 
 ));
@@ -336,7 +336,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'paral
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[parallax_background_image_2]', array(
 	'default'			=> '',
-	'sanitize_callback'	=> 'esc_url',
+	'sanitize_callback'	=> 'esc_url_raw',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option', 
 ));
@@ -350,7 +350,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'paral
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[parallax_background_image_3]', array(
 	'default'			=> '',
-	'sanitize_callback'	=> 'esc_url',
+	'sanitize_callback'	=> 'esc_url_raw',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option', 
 ));
@@ -364,7 +364,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'paral
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[parallax_background_image_4]', array(
 	'default'			=> '',
-	'sanitize_callback'	=> 'esc_url',
+	'sanitize_callback'	=> 'esc_url_raw',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option', 
 ));
@@ -401,7 +401,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'conta
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[contact_section_background_image]', array(
 	'default'			=> '',
-	'sanitize_callback'	=> 'esc_url',
+	'sanitize_callback'	=> 'esc_url_raw',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option', 
 ));
@@ -574,7 +574,7 @@ function bassist_theme_custom_styling() {
 	$css = '';
 
 	if ( is_front_page() && true === $front_page_entry_meta )	
-	$css .= '.entry-meta { position: absolute; left: -9999px;}' . "\n";
+	$css .= '.front-page .entry-meta { position: absolute; left: -9999px;}' . "\n";
 
 	if ( is_home() && true === $blog_page_entry_meta )	
 	$css .= '.entry-meta { position: absolute; left: -9999px;}' . "\n";

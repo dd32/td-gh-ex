@@ -37,8 +37,8 @@
 							the_custom_logo();
 						 } else { ?>
 							<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-								<h1 class="site-title"><?php esc_html( bloginfo( 'name' ) ); ?></h1>
-								<p class="site-description"><?php esc_html( bloginfo( 'description' ) ); ?></p>
+								<h1 class="site-title"><?php bloginfo( 'name' ) ?></h1>
+								<p class="site-description"><?php bloginfo( 'description' )  ?></p>
 							</a>
 						<?php } ?>
 				</div><!--/site-identity-->

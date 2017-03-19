@@ -15,13 +15,13 @@
 <footer id="page-footer" role="contentinfo">
     <div class="inner">
         <div id="site-info">
-        <span class="footer-site-title"> &copy <?php echo date('Y') ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+        <span class="footer-site-title"> &copy <?php echo date_i18n( esc_html__( 'Y', 'bassist' ) ) ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
         
-        <a href="<?php echo esc_url('https://wordpress.org/' ); ?>"><?php printf( __( 'Proudly powered by', 'bassist' ).' %s', 'WordPress' ); ?></a>
+        <a href="<?php echo esc_url( __('https://wordpress.org/', 'bassist') ); ?>"><?php printf( __( 'Proudly powered by', 'bassist' ).' %s', 'WordPress' ); ?></a>
         </div><!--/site-info-->
         
         <?php if (has_nav_menu('social')): ?>
-            <nav id="footer-social-navigation" class="site-navigation social-navigation" role="navigation" aria-label='<?php _e( 'Social Menu ', 'bassist' ); ?>' >
+            <nav id="footer-social-navigation" class="site-navigation social-navigation" role="navigation" aria-label='<?php esc_attr_e( 'Social Menu ', 'bassist' ); ?>' >
                 <?php wp_nav_menu( array(
                                 'theme_location' => 'social',
                                 'container' => 'ul',

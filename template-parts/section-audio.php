@@ -46,10 +46,10 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 				wp_reset_postdata();
 			?>
 			</div> 
-<?php 	else:
+<?php 	elseif ( is_customize_preview() ):
 			printf( '<h1>%1$s</h1><p>%2$s</p>',
 					__('This is the audio section', 'bassist'),
-					__('To fill up this section you have to create some posts, choose the format "audio" in Format and save. To put a picture before this section, use the parallax settings in the Customizer.', 'bassist') );
+					__('To fill up this section you have to create some posts, choose the format "audio" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Audio Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
 	</div><!--/inner-->

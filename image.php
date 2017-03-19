@@ -37,9 +37,10 @@ get_header(); ?>
 						// Translators: There is a space before and after "in".
 						_e( ' in ', 'bassist');
 
-						printf('<a href="%1$s" class="parent-post-link" title="'.__('Return to:', 'bassist').' %2$s" rel="gallery"><i class="fa fa-camera" aria-hidden="true"></i>%3$s</a>',
-							esc_url(get_permalink($post->post_parent)),
-							esc_attr( strip_tags($post_title)),
+						printf('<a href="%1$s" class="parent-post-link" title="%2$s" rel="gallery"><i class="fa fa-camera" aria-hidden="true"></i>%3$s</a>',
+							esc_url( get_permalink( $post->post_parent) ),
+							// Translators: There is a space after "Return to:".
+							the_title_attribute( array( 'before' => __('Return to: ', 'bassist'), 'echo' => 0, 'post' => $post->post_parent) ),
 							$post_title
 							);
 						}                            

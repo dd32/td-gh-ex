@@ -22,7 +22,7 @@ $contact_page = $bassist_theme_options['contact_page_slug'];
 		   <?php the_content();
 		endwhile;
 		wp_reset_postdata();
-	else:
+	elseif ( is_customize_preview() ):
 		printf( '<h1>%1$s</h1><p>%2$s</p>',
 				__('This is the contact section', 'bassist'),
 				__('To fill up this section, create a page with the title "Contact", "Contact me" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and write the slug of the page. This section can have a background picture.', 'bassist') );

@@ -197,7 +197,7 @@ function bassist_excerpt_more( $more ) {
 	return ' &hellip; ' . $link;
 	}
 
-	else{
+	else {
 		return '. ';
 	}
 }

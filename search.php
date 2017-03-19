@@ -14,7 +14,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h2 class="page-title"><?php printf( __( 'Search Results for:', 'bassist' ).' %s', '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+				<h2 class="page-title"><?php printf( __( 'Search Results for:', 'bassist' ).' %s', '<span>' .  get_search_query() . '</span>' ); ?></h2>
 			</header><!-- .page-header -->
 
 			<?php
