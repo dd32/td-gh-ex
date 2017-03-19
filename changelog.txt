@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.0.9 - Released: 28.02.2017
+
+-- Fixed : Layout errors on WooCommerce warnings.
+-- Edit  : Code optimized.
+
 - Version 3.0.8 - Released: 28.02.2017
 
 -- Fixed : Masonry bug on mobile version.
