@@ -83,6 +83,9 @@ function awaken_setup() {
 		$content_width = 747; /* pixels */
 	}	
 
+	// Declare WooCommerce support.
+	add_theme_support( 'woocommerce' );	
+
 }
 endif; // awaken_setup
 add_action( 'after_setup_theme', 'awaken_setup' ); 
@@ -205,6 +208,15 @@ function awaken_widgets_init() {
 		'before_title'  => '<h2 class="footer-widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'awaken' ),
+		'id'            => 'awaken-woocommerce-sidebar',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="widget-title-container"><h2 class="widget-title">',
+		'after_title'   => '</h2></div>',
+	) );	
 }
 add_action( 'widgets_init', 'awaken_widgets_init' );
 

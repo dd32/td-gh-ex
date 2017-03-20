@@ -70,3 +70,43 @@ function awaken_setup_author() {
 	}
 }
 add_action( 'wp', 'awaken_setup_author' );
+
+/**
+ * WooCommerce Support
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+add_action( 'woocommerce_before_main_content', 'awaken_woocommerce_before_main_content', 10 );
+add_action( 'woocommerce_after_main_content', 'awaken_woocommerce_after_main_content', 10 );
+
+function awaken_woocommerce_before_main_content() {
+	if ( is_active_sidebar( 'awaken-woocommerce-sidebar' ) ) {
+		echo '<div class="row"><div class="col-xs-12 col-sm-12 col-md-8">';
+	}
+}
+
+function awaken_woocommerce_after_main_content() {
+
+	if ( ! is_active_sidebar( 'awaken-woocommerce-sidebar' ) ) {
+		return;
+	}
+
+	echo '</div><!-- .bootstrap-cols -->';
+
+	?>
+
+	<div class="col-xs-12 col-sm-12 col-md-4">
+		<div class="woocommerce-widget-area">
+			<aside class="widget-area" role="complementary">
+				<?php dynamic_sidebar( 'awaken-woocommerce-sidebar' ); ?>
+			</aside>
+		</div><!-- .woocommerce-widget-area -->
+	</div><!-- .bootstrap-cols -->
+
+	<?php
+
+	echo '</div><!-- .row-last -->';
+
+}

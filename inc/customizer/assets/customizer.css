@@ -119,13 +119,29 @@ Header Settings
 }
 
 /* Menus */
-#accordion-panel-nav_menus h3.accordion-section-title:before {
+#accordion-panel-nav_menus > h3.accordion-section-title:before {
 	content: '\f0c9';
 } 
 
+#sub-accordion-panel-nav_menus h3.accordion-section-title:before {
+	content: none !important;
+} 
+
+#sub-accordion-panel-nav_menus h3.accordion-section-title {
+	padding-left: 14px;
+} 
+
 /* Widgets */
-#accordion-panel-widgets h3.accordion-section-title:before {
+#accordion-panel-widgets > h3.accordion-section-title:before {
 	content: '\f009';
+} 
+
+#sub-accordion-panel-widgets h3.accordion-section-title:before {
+	content: none !important;
+} 
+
+#sub-accordion-panel-widgets h3.accordion-section-title {
+	padding-left: 14px;
 } 
 
 /* Background Image */
@@ -152,6 +168,10 @@ Header Settings
 #accordion-section-awaken_pro_details h3.accordion-section-title:before {
 	content: '\f219';
 }  
+
+#accordion-section-colors h3.accordion-section-title:before {
+	content: '\f1fc';
+}
 
 #accordion-section-themes h3.accordion-section-title:before {
 	display: none;

@@ -4,11 +4,11 @@ Theme URI: http://themezhut.com/themes/awaken
 Author: ThemezHut
 Author URI: http://themezhut.com/
 Description: Awaken WordPress theme is an elegant magazine/news WordPress theme. It has a magazine layout with two main widget areas. And the theme is featured with three post widgets to display posts in different styles. This theme consists with a responsive layout which is created using twitter bootstrap. Some of the main features of this theme are theme customizer, featured slider, ad widgets, youtube video widget and social media. Find more information about this theme at http://www.themezhut.com/themes/awaken. View the demonstration at http://www.themezhut.com/demo/awaken.
-Version: 2.1.1
+Version: 2.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: awaken
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,rtl-language-support,news,blog,entertainment
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,rtl-language-support,news,entertainment,e-commerce
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2436,4 +2436,412 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+.woocommerce .page-title {
+    margin: 10px 0;
+}
+
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product {
+  text-align: center;
+}
+
+.woocommerce ul.products li.product .star-rating {
+  color: #eac600;
+}
+
+.woocommerce ul.products li.product h3 {
+  color: #222222;
+  margin-bottom: 1em;
+}
+
+.woocommerce ul.products li.product h3:hover {
+  color: #fa5742;
+}
+
+.woocommerce .products .star-rating {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.woocommerce .woocommerce-ordering {
+  margin: 0 0 30px;
+} 
+
+.woocommerce .woocommerce-result-count {
+  margin: 10px 0 20px;
+}
+
+.woocommerce select {
+    padding: 8px;
+}
+
+.woocommerce-product-search {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.woocommerce-product-search .search-field {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    height: 45px;
+    padding: 10px 80px 10px 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.woocommerce-product-search input[type="submit"]:hover {
+  background: #333333;
+}
+
+.woocommerce-product-search input[type="submit"]:focus {
+  outline: none;
+}
+
+.woocommerce-product-search input[type="submit"] {
+    height: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #fa5742;
+    color: #fff;
+}
+
+.woocommerce ul.products li.product .button {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
+  border: none;
+  background: #fa5742;
+  color: #ffffff;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 9px 15px;
+  border-radius: 0;
+}
+
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover {
+  background: #333333;
+  color: #ffffff;
+} 
+
+.woocommerce ul.cart_list li, 
+.woocommerce ul.product_list_widget li {
+    padding: 10px 0;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li,
+.woocommerce.widget_shopping_cart .cart_list li {
+    margin-top: 10px;
+}
+
+.woocommerce ul.cart_list li img, 
+.woocommerce ul.product_list_widget li img {
+    margin-top: 2px;
+    width: 50px;
+}
+
+.woocommerce .widget_shopping_cart .total, 
+.woocommerce.widget_shopping_cart .total {
+    padding: 10px 0 0;
+}
+
+/* WC WIDGETS */
+
+/* Layered Nav */
+.woocommerce-pagination {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.woocommerce .widget_layered_nav ul li {
+  padding: 8px 0;
+}
+
+/* Average Rating Widget */
+.woocommerce .widget_rating_filter ul li {
+  padding: 8px 0;
+}
+
+/* Woocommerce Pagination */
+.woocommerce nav.woocommerce-pagination ul {
+    border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li span {
+    margin: 0 2px;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a {
+    background: #383732;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus {
+  background: #fa5742;;
+  color: #ffffff;  
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+  background: #fa5742;;
+  color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #fa5742;
+    color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+    border-right: none;
+}
+
+.woocommerce .page-numbers {
+    background-color: transparent;
+}
+
+/* Woocommerce Product Page */
+.woocommerce .entry-summary {
+    margin-top: 0;
+}
+
+.woocommerce div.product .product_title {
+    margin-bottom: 20px;
+}
+
+.woocommerce .cart input[type="number"] {
+   padding: 0;
+   line-height: 32px;
+   color: #222222;
+   font-weight: bold;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border: 1px solid #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs:before {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:after {
+    box-shadow: -2px 2px 0 #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:before {
+    box-shadow: -2px 2px 0 #eeeeee;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+    border: 1px solid #eeeeee;
+}
+
+.woocommerce .star-rating span {
+    color: #eac600;
+}
+
+.woocommerce div.product .woocommerce-product-rating {
+    margin-bottom: 20px;
+}
+
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price {
+    font-size: 15px;
+}
+
+.woocommerce .posted_in a,
+a.woocommerce-review-link {
+    color: #404040;
+}
+
+.woocommerce .posted_in a:hover,
+a.woocommerce-review-link:hover {
+  color: #222222;
+}
+
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price {
+    color: #3f3f3f;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+
+    margin: 10px 0 40px;
+    padding: 10px 0 20px;
+
+}
+
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+    margin-top: 0;
+}
+
+.woocommerce #reviews #comments ol.commentlist li {
+    margin: 0 0 30px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+    margin: 0 0 0 70px;
+    padding: 20px 20px 10px;
+    border-radius: 0;    
+}
+
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+    width: 50px;
+    background: #eeeeee;
+    border: 1px solid #eeeeee;
+    padding: 0;
+}
+
+.woocommerce #reviews h3 {
+    margin: 20px 0;
+}
+
+.woocommerce #review_form .stars {
+    margin-bottom: 0;
+}
+
+.woocommerce #review_form #respond p {
+    margin: 0 0 25px;
+}
+
+.select2-container .select2-choice {
+    border: 1px solid #eee;
+    border-radius: 0;
+}
+
+.woocommerce .widget_price_filter .ui-slider {
+    margin-top: 5px;
+} 
+
+.woocommerce span.onsale {
+  background-color: #fa5742;
+}
+
+.woocommerce ul.products li.product .price {
+  color: #404040;
+}
+
+.woocommerce-widget-area ul {
+  list-style: none;
+  margin: 0;
+}
+.woocommerce-widget-area ul li {
+  margin: 0.4em 0;
+  padding: 0 1.2em;
+}
+.woocommerce-widget-area ul li a {
+  color: #383732;
+}
+.woocommerce-widget-area ul li a:hover {
+  text-decoration: none;
+  color: #fa5742;
+}
+.woocommerce-widget-area .widget-title {
+  background: #fa5742;
+  color: white;
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 0 1px 0;
+  padding: 0 1.2em;
+  text-transform: uppercase;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background: #fa5742;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover {
+  background: #333333;
+}
+
+.woocommerce #respond input#submit.disabled, 
+.woocommerce #respond input#submit:disabled, 
+.woocommerce #respond input#submit:disabled[disabled], 
+.woocommerce a.button.disabled, .woocommerce a.button:disabled, 
+.woocommerce a.button:disabled[disabled], 
+.woocommerce button.button.disabled, 
+.woocommerce button.button:disabled, 
+.woocommerce button.button:disabled[disabled], 
+.woocommerce input.button.disabled, 
+.woocommerce input.button:disabled, 
+.woocommerce input.button:disabled[disabled] {
+  padding: 9px 15px;
+}
+
+.woocommerce #respond input#submit.alt.disabled, 
+.woocommerce #respond input#submit.alt.disabled:hover, 
+.woocommerce #respond input#submit.alt:disabled, 
+.woocommerce #respond input#submit.alt:disabled:hover, 
+.woocommerce #respond input#submit.alt:disabled[disabled], 
+.woocommerce #respond input#submit.alt:disabled[disabled]:hover, 
+.woocommerce a.button.alt.disabled, 
+.woocommerce a.button.alt.disabled:hover, 
+.woocommerce a.button.alt:disabled, 
+.woocommerce a.button.alt:disabled:hover, 
+.woocommerce a.button.alt:disabled[disabled], 
+.woocommerce a.button.alt:disabled[disabled]:hover, 
+.woocommerce button.button.alt.disabled, 
+.woocommerce button.button.alt.disabled:hover, 
+.woocommerce button.button.alt:disabled, 
+.woocommerce button.button.alt:disabled:hover, 
+.woocommerce button.button.alt:disabled[disabled], 
+.woocommerce button.button.alt:disabled[disabled]:hover, 
+.woocommerce input.button.alt.disabled, 
+.woocommerce input.button.alt.disabled:hover, 
+.woocommerce input.button.alt:disabled, 
+.woocommerce input.button.alt:disabled:hover, 
+.woocommerce input.button.alt:disabled[disabled], 
+.woocommerce input.button.alt:disabled[disabled]:hover {
+  background-color: #fa5742;
 }

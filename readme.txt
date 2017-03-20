@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.1
+Version    : 2.1.2
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -204,3 +204,7 @@ Fine tuned the slider.
 
 - Version 2.1.1
 Quick fix for the slider issue.
+
+- Version 2.1.2
+Added woocommerce support.
+Added awaken.pot file in addition to default.po file.
