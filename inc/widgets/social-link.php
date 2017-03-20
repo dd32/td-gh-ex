@@ -8,9 +8,7 @@
  */
 
 
-if ( ! class_exists( 'WP_Widget' ) ) {
-	return null;
-}
+if ( ! class_exists( 'Academic_Social_Link' ) ) :
 
 /**
  * Social Link class.
@@ -24,9 +22,9 @@ class Academic_Social_Link extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname'   => 'academic-social-link',
-			'description' => __( 'Enter the url only the icon will be displayed as per the links.', 'academic' ),
+			'description' => esc_html__( 'Enter the url only the icon will be displayed as per the links.', 'academic' ),
 		);
-		parent::__construct( 'academic-social-link', __( 'TP : Social Link', 'academic' ), $widget_ops );
+		parent::__construct( 'academic-social-link', esc_html__( 'TP : Social Link', 'academic' ), $widget_ops );
 	}
 
 	/**
@@ -41,7 +39,7 @@ class Academic_Social_Link extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Stay Connected', 'academic' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Stay Connected', 'academic' );
 
 		echo $args['before_widget'];
 			if ( ! empty( $title ) ) {
@@ -70,24 +68,24 @@ class Academic_Social_Link extends WP_Widget {
 	 * @param array $instance The widget options
 	 */
 	public function form( $instance ) {
-		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : __( 'Stay Connected', 'academic' );
+		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : esc_html__( 'Stay Connected', 'academic' );
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 3;
 	   ?>
 
 	   <p>
-		   <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php _e( 'Title:', 'academic' ); ?></label>
+		   <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title:', 'academic' ); ?></label>
 		   <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 	   </p>
 
 	   <p>
-	   	<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of links to show:', 'academic' ); ?></label>
+	   	<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of links to show:', 'academic' ); ?></label>
 	   	<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $number ); ?>" size="3" />
 	   </p>
 
 	   <?php for ( $i=1; $i <= $number; $i++ ) {
 	   	$link = isset( $instance['link'. '-' . $i ] ) ? $instance['link' . '-' . $i ] : '';?>
 		   <p>
-		   	<label for="<?php echo esc_attr( $this->get_field_id( 'link' . '-' . $i ) ); ?>"><?php printf( __( 'Link %s :', 'academic' ), $i ); ?></label>
+		   	<label for="<?php echo esc_attr( $this->get_field_id( 'link' . '-' . $i ) ); ?>"><?php printf( esc_html__( 'Link %s :', 'academic' ), $i ); ?></label>
 		   	<input type="url" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link' . '-' . $i ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link' . '-' . $i ) ); ?>" value="<?php echo esc_url( $link ); ?>"/>
 		   </p>
 	   <?php }?>
@@ -107,8 +105,9 @@ class Academic_Social_Link extends WP_Widget {
 		$instance['title']  = sanitize_text_field( $new_instance['title'] );
 		$instance['number'] = (int) $new_instance['number'];
 		for ( $i=1; $i <= $instance['number']; $i++ ) {
-			$instance['link' . '-' . $i] = esc_url( $new_instance['link' . '-' . $i] );
+			$instance['link' . '-' . $i] = esc_url_raw( $new_instance['link' . '-' . $i] );
 		}
 		return $instance;
 	}
 }
+endif;

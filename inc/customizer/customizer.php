@@ -45,30 +45,30 @@ function academic_customize_register( $wp_customize ) {
 
 	// Add panel for sections
 	$wp_customize->add_panel( 'academic_sections_panel' , array(
-	    'title'      => __( 'Sections','academic' ),
-	    'description'=> __( 'Section Options.', 'academic' ),
+	    'title'      => esc_html__( 'Sections','academic' ),
+	    'description'=> esc_html__( 'Section Options.', 'academic' ),
 	    'priority'   => 140,
 	) );
 
 	// Slider
 	require get_template_directory() . '/inc/customizer/sections/slider.php';
 
-	// About
-	require get_template_directory() . '/inc/customizer/sections/about.php';
-
 	// category blog one
 	require get_template_directory() . '/inc/customizer/sections/category-blog-first.php';
 
 	// category blog second
 	require get_template_directory() . '/inc/customizer/sections/category-blog-second.php';
+	
+	// About
+	require get_template_directory() . '/inc/customizer/sections/about.php';
 
 	// partner
 	require get_template_directory() . '/inc/customizer/sections/partner.php';
 
 	// Add panel for common theme options
 	$wp_customize->add_panel( 'academic_theme_options_panel' , array(
-	    'title'      => __( 'Theme Options','academic' ),
-	    'description'=> __( 'Theme Options.', 'academic' ),
+	    'title'      => esc_html__( 'Theme Options','academic' ),
+	    'description'=> esc_html__( 'Theme Options.', 'academic' ),
 	    'priority'   => 150,
 	) );
 
@@ -101,6 +101,9 @@ add_action( 'customize_register', 'academic_customize_register' );
  * Load customizer sanitization functions.
  */
 require get_template_directory() . '/inc/customizer/sanitize.php';
+
+// Load customizer theme pro link
+require get_template_directory() . '/inc/customizer/upgrade-to-pro/class-customize.php';
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -145,6 +148,36 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 	 */
 	function academic_inline_css() {
 		$options = academic_get_theme_options();
+
+		$css = '';
+		$header_text_color = get_header_textcolor();
+
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color ) {
+
+			// If we get this far, we have custom styles. Let's do this.
+				// Has the text been hidden?
+			if ( ! display_header_text() ) :
+			$css .='	
+			.site-title,
+			.site-description {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}';
+
+			// If the user has set a custom color for the text use that.
+			else :
+			$css .='	
+			.site-title a,
+			#site-header .site-title a,
+			.site-description {
+				color: #'.esc_attr( $header_text_color ).';
+			}';
+			endif; 
+		}
 		
 		// Set header image by comparing the meta values
 		$header_image = academic_header_image_meta_option();
@@ -155,7 +188,7 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 			$header_image = $header_image;
 		}
 
-		$css = '
+		$css .= '
 			/* Custom header background image */
 			#banner-image {
 				background-image: url("'.esc_url( $header_image ).'");

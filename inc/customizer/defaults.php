@@ -24,7 +24,7 @@ function academic_get_default_theme_options() {
 		'site_layout'         			=> 'wide',
 		'sidebar_position'         		=> 'right-sidebar',
 		'long_excerpt_length'           => 50,
-		'read_more_text'		        => __( 'Read More', 'academic' ),
+		'read_more_text'		        => esc_html__( 'Read More', 'academic' ),
 		'breadcrumb_enable'         	=> false,
 		'breadcrumb_separator'         	=> '/',
 		'pagination_enable'         	=> false,
@@ -52,7 +52,7 @@ function academic_get_default_theme_options() {
 		'category_blog_two_enable'		=> 'disabled',
 		'category_blog_two_dragable'	=> true,
 		'category_blog_two_autoplay'	=> true,
-		'category_blog_two_title'		=> __( 'First Category Blog', 'academic' ),
+		'category_blog_two_title'		=> esc_html__( 'First Category Blog', 'academic' ),
 		'category_blog_two_count'		=> 8,
 		'category_blog_two_type'		=> 'recent-posts',
 		'category_blog_two_layout'		=> 4,
@@ -63,14 +63,14 @@ function academic_get_default_theme_options() {
 		'category_blog_three_autoplay'	=> true,
 		'category_blog_three_count'		=> 7,
 		'category_blog_three_layout'	=> 6,
-		'category_blog_three_title'		=> __( 'Second Category Blog', 'academic' ),
-		'category_blog_three_sub_title'	=> __( 'How can we help you', 'academic' ),
+		'category_blog_three_title'		=> esc_html__( 'Second Category Blog', 'academic' ),
+		'category_blog_three_sub_title'	=> esc_html__( 'How can we help you', 'academic' ),
 		'category_blog_three_type'		=> 'category',
 		'category_blog_three_icon'		=> 'fa-snapchat-ghost',
 
 		// Partners
 		'partner_enable'				=> 'disabled',
-		'partner_title'					=> __( 'Our Partners', 'academic' ),
+		'partner_title'					=> esc_html__( 'Our Partners', 'academic' ),
 		'no_of_partner'					=> 3,
 		'partner_layout'				=> 6,
 		'partner_dragable'				=> true,
@@ -78,15 +78,15 @@ function academic_get_default_theme_options() {
 
 		// news letter
 		'news_letter_enable'			=> 'disabled',
-		'news_letter_title'				=> __( 'Stay Updated With University', 'academic' ),
-		'news_letter_sub_title'			=> __( 'Lorem Ipsum roin gravida nibh vel', 'academic' ),
+		'news_letter_title'				=> esc_html__( 'Stay Updated With University', 'academic' ),
+		'news_letter_sub_title'			=> esc_html__( 'Lorem Ipsum roin gravida nibh vel', 'academic' ),
 
 		// Contact info
-		'contact_us_contact_info_title'			=> __( 'Contact Info', 'academic' ),
+		'contact_us_contact_info_title'			=> esc_html__( 'Contact Info', 'academic' ),
 		'contact_us_contact_info_phone'			=> '+977-123456789',
-		'contact_us_contact_info_address'		=> __( '28 Jackson Blvd Ste 1020 Chicago IL 60604-2340', 'academic' ),
+		'contact_us_contact_info_address'		=> esc_html__( '28 Jackson Blvd Ste 1020 Chicago IL 60604-2340', 'academic' ),
 		'contact_us_contact_info_email'			=> 'info@university.com',
-		'contact_us_contact_map_title'			=> __( 'Location Map', 'academic' ),
+		'contact_us_contact_map_title'			=> esc_html__( 'Location Map', 'academic' ),
 		'contact_us_map_shortcode'=>'[gmap latitude="23.2012841" longitude="90.01247147" width="80%" map_type="ROADMAP" ]',
 		'contact_us_form_shortcode'=>'[contact-form-7 id="1880" title="Contact form 1"]',
 

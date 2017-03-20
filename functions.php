@@ -241,7 +241,7 @@ require get_template_directory() . '/inc/core.php';
 */
 function academic_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'academic-category-image' 		=> __( 'Gallery Thumbnail', 'academic' ),
+        'academic-category-image' 		=> esc_html__( 'Gallery Thumbnail', 'academic' ),
     ) );
 }
 add_filter( 'image_size_names_choose', 'academic_custom_sizes' );

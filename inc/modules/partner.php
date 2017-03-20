@@ -66,7 +66,7 @@ if ( ! function_exists( 'academic_get_partner_details' ) ) :
         'no_found_rows'  => true,
         'orderby'        => 'post__in',
         'post_type'      => 'page',
-        'include'        => $ids,
+        'post__in'       => $ids,
     );
     $posts = get_posts( $args );
     $i = 1;

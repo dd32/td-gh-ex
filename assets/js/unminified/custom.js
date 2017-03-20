@@ -270,11 +270,6 @@ if ($(window).width() < 615 )
     $("#testimonial-slider button.slick-prev").insertBefore("#testimonial-slider button.slick-next");
 }
 
-$("#testimonial-slider .slick-dots li").click(function() {
-    $("#testimonial-slider .slick-dots li").removeClass("slick-active");
-    $(this).addClass("slick-active");
-});
-
 /*------------------------------------------------
                 END SLICK SLIDER
 ------------------------------------------------*/

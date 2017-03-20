@@ -55,11 +55,15 @@ if ( ! function_exists( 'academic_is_sidebar_enable' ) ) :
 
 		if ( is_home() ) {
 			$post_id = get_option( 'page_for_posts' );
+			if( ! empty( $post_id ) )
+				$post_sidebar_position = get_post_meta( $post_id, 'academic-sidebar-position', true );
+			else
+				$post_sidebar_position = '';
+		} elseif( is_archive() || is_search() ) {
+			$post_sidebar_position = '';
 		} else {
-			$post_id = get_the_id();
+			$post_sidebar_position = get_post_meta( get_the_id(), 'academic-sidebar-position', true );
 		}
-
-		$post_sidebar_position = get_post_meta( $post_id, 'academic-sidebar-position', true );
 
 		if ( ( $sidebar_position == 'no-sidebar' && $post_sidebar_position == "" ) || $post_sidebar_position == 'no-sidebar' ) {
 			return false;
@@ -114,12 +118,12 @@ if ( ! function_exists( 'academic_simple_breadcrumb' ) ) :
 
 		/* === OPTIONS === */
 		$text['home']     = get_bloginfo( 'name' ); // text for the 'Home' link
-		$text['category'] = __( 'Archive for <em>%s</em>', 'academic' ); // text for a category page
-		$text['tax']      = __( 'Archive for <em>%s</em>', 'academic' ); // text for a taxonomy page
-		$text['search']   = __( 'Search results for: <em>%s</em>', 'academic' ); // text for a search results page
-		$text['tag']      = __( 'Posts tagged <em>%s</em>', 'academic' ); // text for a tag page
-		$text['author']   = __( 'View all posts by <em>%s</em>', 'academic' ); // text for an author page
-		$text['404']      = __( 'Error 404', 'academic' ); // text for the 404 page
+		$text['category'] = esc_html__( 'Archive for <em>%s</em>', 'academic' ); // text for a category page
+		$text['tax']      = esc_html__( 'Archive for <em>%s</em>', 'academic' ); // text for a taxonomy page
+		$text['search']   = esc_html__( 'Search results for: <em>%s</em>', 'academic' ); // text for a search results page
+		$text['tag']      = esc_html__( 'Posts tagged <em>%s</em>', 'academic' ); // text for a tag page
+		$text['author']   = esc_html__( 'View all posts by <em>%s</em>', 'academic' ); // text for an author page
+		$text['404']      = esc_html__( 'Error 404', 'academic' ); // text for the 404 page
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
@@ -237,7 +241,7 @@ if ( ! function_exists( 'academic_simple_breadcrumb' ) ) :
 
 			if ( get_query_var( 'paged' ) ) {
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) { echo ' ('; }
-				echo __( 'Page', 'academic' ) . ' ' . get_query_var( 'paged' );
+				echo esc_html__( 'Page', 'academic' ) . ' ' . get_query_var( 'paged' );
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) { echo ')'; }
 			}
 
@@ -266,8 +270,8 @@ if ( ! function_exists( 'academic_pagination' ) ) :
 			elseif ( $pagination == 'numeric' ) :
 				the_posts_pagination( array(
 				    'mid_size' => 4,
-				    'prev_text' => __( 'Previous Posts', 'academic' ),
-				    'next_text' => __( 'Next Posts', 'academic' ),
+				    'prev_text' => esc_html__( 'Previous Posts', 'academic' ),
+				    'next_text' => esc_html__( 'Next Posts', 'academic' ),
 				) );
 			endif;
 		}
@@ -510,13 +514,13 @@ if ( ! function_exists( 'academic_title_as_per_template' ) ) :
 		if ( is_singular() ) {
 			the_title();
 		} elseif( is_404() ) {
-			echo __( '404 Page', 'academic' );
+			echo esc_html__( '404 Page', 'academic' );
 		} elseif( is_search() ){
-			echo __( 'Search Page', 'academic' );
+			echo esc_html__( 'Search Page', 'academic' );
 		} elseif ( is_archive() ) {
 			the_archive_title();
 		} elseif ( is_home() ) {
-			echo __( 'Blog Page', 'academic' );
+			echo esc_html__( 'Blog Page', 'academic' );
 		}
 	}
 endif;

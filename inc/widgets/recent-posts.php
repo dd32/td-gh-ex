@@ -7,9 +7,7 @@
  * @since 0.3
  */
 
-if ( ! class_exists( 'WP_Widget' ) ) {
-	return null;
-}
+if ( ! class_exists( 'Academic_Recent_Posts' ) ) :
 
 /**
  * Core class used to implement a Recent Posts widget.
@@ -29,10 +27,10 @@ class Academic_Recent_Posts extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'academic_recent_posts',
-			'description' => __( 'Your site&#8217;s most recent Posts with Featured Image.', 'academic' ),
+			'description' => esc_html__( 'Your site&#8217;s most recent Posts with Featured Image.', 'academic' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'academic_recent_posts', __( 'TP: Recent Posts', 'academic' ), $widget_ops );
+		parent::__construct( 'academic_recent_posts', esc_html__( 'TP: Recent Posts', 'academic' ), $widget_ops );
 	}
 
 	/**
@@ -50,7 +48,7 @@ class Academic_Recent_Posts extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts', 'academic' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts', 'academic' );
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
@@ -135,14 +133,15 @@ class Academic_Recent_Posts extends WP_Widget {
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 ?>
-		<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'academic' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'academic' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-		<p><label for="<?php echo absint( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'academic' ); ?></label>
+		<p><label for="<?php echo absint( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'academic' ); ?></label>
 		<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $number ); ?>" size="3" /></p>
 
 		<p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>" />
-		<label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php _e( 'Display post date?', 'academic' ); ?></label></p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_html_e( 'Display post date?', 'academic' ); ?></label></p>
 <?php
 	}
 }
+endif;

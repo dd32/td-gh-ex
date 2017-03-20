@@ -64,7 +64,7 @@ if ( ! function_exists( 'academic_get_about_section_details' ) ) :
             $content[0]['excerpt']      = academic_trim_content( 100, $post );
             $content[0]['alt']          = get_the_title( $page_id );
             $content[0]['url']          = get_permalink( $page_id );
-            $content[0]['btn_label']    = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] : __( 'Read More', 'academic' );
+            $content[0]['btn_label']    = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] : esc_html__( 'Read More', 'academic' );
             $content[0]['btn_target']   = '';
         }
     }

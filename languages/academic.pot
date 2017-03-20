@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Academic 0.3\n"
+"Project-Id-Version: Academic 0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-09-21 08:12:31+00:00\n"
+"POT-Creation-Date: 2016-12-26 04:03:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,12 +91,13 @@ msgid "Read More"
 msgstr ""
 
 #: inc/customizer/defaults.php:55
-#: inc/customizer/sections/category-blog-second.php:11
-msgid "Second Category Blog"
+#: inc/customizer/sections/category-blog-first.php:11
+msgid "First Category Blog"
 msgstr ""
 
 #: inc/customizer/defaults.php:66
-msgid "Third Category Blog"
+#: inc/customizer/sections/category-blog-second.php:11
+msgid "Second Category Blog"
 msgstr ""
 
 #: inc/customizer/defaults.php:67
@@ -146,10 +147,6 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-first.php:11
-msgid "First Category Blog"
-msgstr ""
-
 #: inc/customizer/sections/category-blog-first.php:12
 msgid "First Category Blog options."
 msgstr ""
@@ -167,31 +164,30 @@ msgid "Enable Slide Dragable"
 msgstr ""
 
 #: inc/customizer/sections/category-blog-first.php:73
-#: inc/customizer/sections/partner.php:73
-msgid "Enable Auto Slide"
+msgid "Enable Slide Auto Slide"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-first.php:87
-msgid "No. of Articles"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-first.php:88
-msgid "Min 1 / Max 12"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-first.php:106
-#: inc/customizer/sections/category-blog-second.php:86
+#: inc/customizer/sections/category-blog-first.php:86
+#: inc/customizer/sections/category-blog-second.php:106
 #: inc/customizer/theme-options/layout.php:11
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-first.php:120
-#: inc/customizer/sections/category-blog-second.php:100
+#: inc/customizer/sections/category-blog-first.php:100
+#: inc/customizer/sections/category-blog-second.php:120
 msgid "Content Type"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-first.php:133
-msgid "Select Category"
+#: inc/customizer/sections/category-blog-first.php:114
+msgid "Icon"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-first.php:115
+msgid "Use font awesome icon: Eg: %s. %sSee more here%s"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-first.php:127
+msgid "Select Parent Category"
 msgstr ""
 
 #: inc/customizer/sections/category-blog-second.php:12
@@ -199,19 +195,20 @@ msgid "Second Category Blog options."
 msgstr ""
 
 #: inc/customizer/sections/category-blog-second.php:73
-msgid "Enable Slide Auto Slide"
+#: inc/customizer/sections/partner.php:73
+msgid "Enable Auto Slide"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-second.php:114
-msgid "Icon"
+#: inc/customizer/sections/category-blog-second.php:87
+msgid "No. of Articles"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-second.php:115
-msgid "Use font awesome icon: Eg: %s. %sSee more here%s"
+#: inc/customizer/sections/category-blog-second.php:88
+msgid "Min 1 / Max 12"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-second.php:127
-msgid "Select Parent Category"
+#: inc/customizer/sections/category-blog-second.php:133
+msgid "Select Category"
 msgstr ""
 
 #: inc/customizer/sections/partner.php:11
@@ -366,6 +363,14 @@ msgstr ""
 msgid "Check to reset all settings"
 msgstr ""
 
+#: inc/customizer/upgrade-to-pro/class-customize.php:76
+msgid "Academic Pro"
+msgstr ""
+
+#: inc/customizer/upgrade-to-pro/class-customize.php:77
+msgid "Go Pro"
+msgstr ""
+
 #: inc/customizer/validation.php:18 inc/customizer/validation.php:37
 #: inc/customizer/validation.php:60 inc/customizer/validation.php:79
 #: inc/customizer/validation.php:97 inc/customizer/validation.php:114
@@ -498,7 +503,7 @@ msgstr ""
 msgid "Default ( to customizer option )"
 msgstr ""
 
-#: inc/modules/category-blog-second.php:76
+#: inc/modules/category-blog-first.php:76
 msgid "fa-snapchat-ghost"
 msgstr ""
 
@@ -730,14 +735,14 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "A clean, modern, engaging and responsive WordPress education theme ideal "
-"for educational institutions. Features including full width and boxed "
-"layout with slider, focused content, slick effects, posts/features/courses "
-"showcasing.  It is loaded with theme options and provides several features "
-"to make user-friendly, interactive and visually stunning website with "
-"implementation of all features of latest WordPress like partial refresh and "
-"validation. It is compatible with top WordPress plugins such as JetPack and "
-"Contact Form 7. A special accent is made on its cross-browser "
-"compatibility, mobile friendly design and responsive features."
+"for educational institutions and agencies. Features including full width "
+"and boxed layout with slider, focused content, slick effects, "
+"posts/features/courses showcasing.  It is loaded with theme options and "
+"provides several features to make user-friendly, interactive and visually "
+"stunning website with implementation of all features of latest WordPress "
+"like partial refresh and validation. It is compatible with top WordPress "
+"plugins such as JetPack and Contact Form 7. A special accent is made on its "
+"cross-browser compatibility, mobile friendly design and responsive features."
 msgstr ""
 
 #. Author of the plugin/theme

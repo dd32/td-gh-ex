@@ -179,7 +179,7 @@ class Academic_Dropdown_Category_Control extends WP_Customize_Control {
       <?php endif; ?>
        <select <?php $this->link(); ?> multiple>
 			<?php
-			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '--None--', 'academic' ) );
+			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), esc_html__( '--None--', 'academic' ) );
 			?>
 			<?php if ( ! empty( $taxonomies ) ) :  ?>
             <?php foreach ( $taxonomies as $key => $tax ) :  ?>
@@ -258,7 +258,7 @@ class Academic_Dropdown_Taxonomy extends WP_Customize_Control {
       <?php endif; ?>
        <select <?php $this->link(); ?> >
 			<?php
-			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '--None--', 'academic' ) );
+			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), esc_html__( '--None--', 'academic' ) );
 			?>
 			<?php if ( ! empty( $this->taxonomy ) ) : ?>
             <?php foreach ( $this->taxonomy as $tax ) :  ?>

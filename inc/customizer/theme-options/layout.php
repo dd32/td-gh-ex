@@ -8,8 +8,8 @@
 
 // Add sidebar section
 $wp_customize->add_section( 'academic_layout', array(
-	'title'               => __('Layout','academic'),
-	'description'         => __( 'Layout section options.', 'academic' ),
+	'title'               => esc_html__('Layout','academic'),
+	'description'         => esc_html__( 'Layout section options.', 'academic' ),
 	'panel'               => 'academic_theme_options_panel'
 ) );
 
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'academic_theme_options[sidebar_position]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[sidebar_position]', array(
-	'label'               => __( 'Sidebar Position', 'academic' ),
+	'label'               => esc_html__( 'Sidebar Position', 'academic' ),
 	'section'             => 'academic_layout',
 	'type'                => 'select',
 	'choices'			  => academic_sidebar_position(),
@@ -33,7 +33,7 @@ $wp_customize->add_setting( 'academic_theme_options[site_layout]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[site_layout]', array(
-	'label'               => __( 'Site Layout', 'academic' ),
+	'label'               => esc_html__( 'Site Layout', 'academic' ),
 	'section'             => 'academic_layout',
 	'type'                => 'select',
 	'choices'			  => academic_site_layout(),

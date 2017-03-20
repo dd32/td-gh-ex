@@ -8,8 +8,8 @@
 
 // Add about enable section
 $wp_customize->add_section( 'academic_about_section', array(
-	'title'             => __('About','academic'),
-	'description'       => __( 'About section options.', 'academic' ),
+	'title'             => esc_html__('About','academic'),
+	'description'       => esc_html__( 'About section options.', 'academic' ),
 	'panel'             => 'academic_sections_panel'
 ) );
 
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'academic_theme_options[about_section_enable]', arra
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[about_section_enable]', array(
-	'label'             => __( 'Enable on', 'academic' ),
+	'label'             => esc_html__( 'Enable on', 'academic' ),
 	'section'           => 'academic_about_section',
 	'type'              => 'select',
 	'choices'           => academic_enable_disable_options()
@@ -32,7 +32,7 @@ $wp_customize->add_setting( 'academic_theme_options[about_content_page]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[about_content_page]', array(
-	'label'           	=> __( 'Select Page', 'academic' ),
+	'label'           	=> esc_html__( 'Select Page', 'academic' ),
 	'section'         	=> 'academic_about_section',
 	'type'            	=> 'dropdown-pages',
 	'active_callback' 	=> 'academic_is_about_active',

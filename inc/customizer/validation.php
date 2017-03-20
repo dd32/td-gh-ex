@@ -15,11 +15,11 @@
 function academic_validate_long_excerpt( $validity, $value ){
   $value = intval( $value );
   if ( empty( $value ) || ! is_numeric( $value ) ) {
-    $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+    $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
   } elseif ( $value < 5 ) {
-    $validity->add( 'min_no_of_words', __( 'Minimum no of words is 5', 'academic' ) );
+    $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of words is 5', 'academic' ) );
   } elseif ( $value > 100 ) {
-    $validity->add( 'max_no_of_words', __( 'Maximum no of words is 100', 'academic' ) );
+    $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of words is 100', 'academic' ) );
   }
   return $validity;
 }
@@ -34,11 +34,11 @@ function academic_validate_long_excerpt( $validity, $value ){
 function academic_validate_short_excerpt( $validity, $value ){
   $value = intval( $value );
   if ( empty( $value ) || ! is_numeric( $value ) ) {
-    $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+    $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
   } elseif ( $value < 5 ) {
-    $validity->add( 'min_no_of_words', __( 'Minimum no of words is 5', 'academic' ) );
+    $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of words is 5', 'academic' ) );
   } elseif ( $value > 25 ) {
-    $validity->add( 'max_no_of_words', __( 'Maximum no of words is 25', 'academic' ) );
+    $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of words is 25', 'academic' ) );
   }
   return $validity;
 }
@@ -57,11 +57,11 @@ function academic_validate_short_excerpt( $validity, $value ){
 function academic_top_bar_field_number( $validity, $value ){
   $value = intval( $value );
   if ( empty( $value ) || ! is_numeric( $value ) ) {
-      $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+      $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
   } elseif ( $value < 1 ) {
-      $validity->add( 'min_value', __( 'Minimum value is 1', 'academic' ) );
+      $validity->add( 'min_value', esc_html__( 'Minimum value is 1', 'academic' ) );
   } elseif ( $value > 3 ) {
-      $validity->add( 'max_value', __( 'Maximum value is 3', 'academic' ) );
+      $validity->add( 'max_value', esc_html__( 'Maximum value is 3', 'academic' ) );
   }
   return $validity;
 }
@@ -76,11 +76,11 @@ function academic_top_bar_field_number( $validity, $value ){
 function academic_validate_no_of_slider( $validity, $value ){
        $value = intval( $value );
    if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
    } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_words', __( 'Minimum no of slide is 1', 'academic' ) );
+       $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of slide is 1', 'academic' ) );
    } elseif ( $value > 5 ) {
-       $validity->add( 'max_no_of_words', __( 'Maximum no of slide is 5', 'academic' ) );
+       $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of slide is 5', 'academic' ) );
    }
    return $validity;
 }
@@ -94,11 +94,11 @@ function academic_validate_no_of_slider( $validity, $value ){
 function academic_validate_no_of_about_statistics( $validity, $value ){
        $value = intval( $value );
    if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
    } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_words', __( 'Minimum no of statistics is 1', 'academic' ) );
+       $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of statistics is 1', 'academic' ) );
    } elseif ( $value > 6 ) {
-       $validity->add( 'max_no_of_words', __( 'Maximum no of statistics is 6', 'academic' ) );
+       $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of statistics is 6', 'academic' ) );
    }
    return $validity;
 }
@@ -111,11 +111,11 @@ function academic_validate_no_of_about_statistics( $validity, $value ){
 function academic_validate_cat_blog_four_post_num_range( $validity, $value ){
   $value = intval( $value );
   if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
   } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_posts', __( 'Minimum number of posts is 1', 'academic' ) );
+       $validity->add( 'min_no_of_posts', esc_html__( 'Minimum number of posts is 1', 'academic' ) );
   } elseif ( $value > 15 ) {
-       $validity->add( 'max_no_of_posts', __( 'Maximum number of posts is 15', 'academic' ) );
+       $validity->add( 'max_no_of_posts', esc_html__( 'Maximum number of posts is 15', 'academic' ) );
   }
   return $validity;
 }
@@ -130,11 +130,11 @@ function academic_validate_cat_blog_four_post_num_range( $validity, $value ){
 function academic_validate_category_blog_one_count( $validity, $value ){
        $value = intval( $value );
    if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
    } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_words', __( 'Minimum no of article is 1', 'academic' ) );
+       $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of article is 1', 'academic' ) );
    } elseif ( $value > 12 ) {
-       $validity->add( 'max_no_of_words', __( 'Maximum no of articles is 12', 'academic' ) );
+       $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of articles is 12', 'academic' ) );
    }
    return $validity;
 }
@@ -148,11 +148,11 @@ function academic_validate_category_blog_one_count( $validity, $value ){
 function academic_validate_category_blog_two_count( $validity, $value ){
        $value = intval( $value );
    if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
    } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_words', __( 'Minimum no of article is 1', 'academic' ) );
+       $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of article is 1', 'academic' ) );
    } elseif ( $value > 12 ) {
-       $validity->add( 'max_no_of_words', __( 'Maximum no of articles is 12', 'academic' ) );
+       $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of articles is 12', 'academic' ) );
    }
    return $validity;
 }
@@ -167,11 +167,11 @@ function academic_validate_category_blog_two_count( $validity, $value ){
 function academic_validate_partner_count( $validity, $value ){
        $value = intval( $value );
    if ( empty( $value ) || ! is_numeric( $value ) ) {
-       $validity->add( 'required', __( 'You must supply a valid number.', 'academic' ) );
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
    } elseif ( $value < 1 ) {
-       $validity->add( 'min_no_of_words', __( 'Minimum no of list is 1', 'academic' ) );
+       $validity->add( 'min_no_of_words', esc_html__( 'Minimum no of list is 1', 'academic' ) );
    } elseif ( $value > 15 ) {
-       $validity->add( 'max_no_of_words', __( 'Maximum no of Lists is 15', 'academic' ) );
+       $validity->add( 'max_no_of_words', esc_html__( 'Maximum no of Lists is 15', 'academic' ) );
    }
    return $validity;
 }

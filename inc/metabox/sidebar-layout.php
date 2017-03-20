@@ -10,9 +10,9 @@ function academic_sidebar_position_callback( $post ) {
     ?>
 
     <p>
-     <label for="academic-sidebar-position" class="academic-row-title"><?php _e( 'Sidebar Position', 'academic' )?></label>
+     <label for="academic-sidebar-position" class="academic-row-title"><?php esc_html_e( 'Sidebar Position', 'academic' )?></label>
      <select name="academic-sidebar-position" id="academic-sidebar-position">
-      <option value=""><?php _e( 'Default ( to customizer option )', 'academic' ); ?></option>
+      <option value=""><?php esc_html_e( 'Default ( to customizer option )', 'academic' ); ?></option>
 
         <?php foreach ( $sidebar_positions as $sidebar_position => $value ) { ?>
          <option value="<?php echo esc_attr( $sidebar_position );?>" <?php if ( isset ( $stored_sidebar_position ) ) selected( $stored_sidebar_position, $sidebar_position ); ?>><?php echo esc_html( $value ); ?></option>
@@ -31,7 +31,7 @@ function academic_sidebar_layout_save( $post_id ) {
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'academic_nonce' ] ) && wp_verify_nonce( $_POST[ 'academic_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'academic_nonce' ] ) && wp_verify_nonce( sanitize_key( $_POST[ 'academic_nonce' ] ), basename( __FILE__ ) ) ) ? 'true' : 'false';
 
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || ! $is_valid_nonce ) {
@@ -40,7 +40,7 @@ function academic_sidebar_layout_save( $post_id ) {
 
     // Checks for input and sanitizes/saves if needed
     if( isset( $_POST[ 'academic-sidebar-position' ] ) ) {
-        update_post_meta( $post_id, 'academic-sidebar-position', esc_html( $_POST[ 'academic-sidebar-position' ] ) );
+        update_post_meta( $post_id, 'academic-sidebar-position', sanitize_text_field( $_POST[ 'academic-sidebar-position' ] ) );
     }
 
 }

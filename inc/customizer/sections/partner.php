@@ -8,8 +8,8 @@
 
 // Add Partners enable section
 $wp_customize->add_section( 'academic_partner', array(
-	'title'             => __('Partners','academic'),
-	'description'       => __( 'Partners options.', 'academic' ),
+	'title'             => esc_html__('Partners','academic'),
+	'description'       => esc_html__( 'Partners options.', 'academic' ),
 	'panel'             => 'academic_sections_panel'
 ) );
 
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'academic_theme_options[partner_enable]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[partner_enable]', array(
-	'label'             => __( 'Enable on', 'academic' ),
+	'label'             => esc_html__( 'Enable on', 'academic' ),
 	'section'           => 'academic_partner',
 	'type'              => 'select',
 	'choices'           => academic_enable_disable_options()
@@ -34,7 +34,7 @@ $wp_customize->add_setting( 'academic_theme_options[partner_title]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[partner_title]', array(
-	'label'             => __( 'Title', 'academic' ),
+	'label'             => esc_html__( 'Title', 'academic' ),
 	'section'           => 'academic_partner',
 	'type'              => 'text',
 	'active_callback'	=> 'academic_partner_active'
@@ -57,7 +57,7 @@ $wp_customize->add_setting( 'academic_theme_options[partner_dragable]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[partner_dragable]', array(
-	'label'             => __( 'Enable Slide Dragable', 'academic' ),
+	'label'             => esc_html__( 'Enable Slide Dragable', 'academic' ),
 	'section'           => 'academic_partner',
 	'type'              => 'checkbox',
 	'active_callback'	=> 'academic_partner_active'
@@ -70,7 +70,7 @@ $wp_customize->add_setting( 'academic_theme_options[partner_autoplay]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[partner_autoplay]', array(
-	'label'             => __( 'Enable Auto Slide', 'academic' ),
+	'label'             => esc_html__( 'Enable Auto Slide', 'academic' ),
 	'section'           => 'academic_partner',
 	'type'              => 'checkbox',
 	'active_callback'	=> 'academic_partner_active'
@@ -84,8 +84,8 @@ $wp_customize->add_setting( 'academic_theme_options[no_of_partner]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[no_of_partner]', array(
-	'label'             => __( 'No of partners', 'academic' ),
-	'description'		=> __( 'Min 1 / Max 15. Notice: Please refresh after the number of features is set to see the effects.' , 'academic' ),
+	'label'             => esc_html__( 'No of partners', 'academic' ),
+	'description'		=> esc_html__( 'Min 1 / Max 15. Notice: Please refresh after the number of features is set to see the effects.' , 'academic' ),
 	'section'           => 'academic_partner',
 	'type'              => 'number',
 	'input_attrs' 		=> array(
@@ -107,7 +107,7 @@ for ( $i = 1; $i <= $options['no_of_partner']; $i++ ) {
 	);
 	$wp_customize->add_control( 'academic_theme_options[partner_page_'. $i .']',
 	    array(
-	    	'label'       		=> sprintf( __( 'Select Page # %s', 'academic' ), $i ),
+	    	'label'       		=> sprintf( esc_html__( 'Select Page # %s', 'academic' ), $i ),
 			'section'     		=> 'academic_partner',
 			'type'				=> 'dropdown-pages',
 			'active_callback'	=> 'academic_partner_active',

@@ -7,8 +7,8 @@
 */
 
 $wp_customize->add_section( 'academic_breadcrumb', array(
-	'title'             => __('Breadcrumb','academic'),
-	'description'       => __( 'Breadcrumb section options.', 'academic' ),
+	'title'             => esc_html__('Breadcrumb','academic'),
+	'description'       => esc_html__( 'Breadcrumb section options.', 'academic' ),
 	'panel'             => 'academic_theme_options_panel'
 ) );
 
@@ -19,7 +19,7 @@ $wp_customize->add_setting( 'academic_theme_options[breadcrumb_enable]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[breadcrumb_enable]', array(
-	'label'            	=> __( 'Enable Breadcrumb', 'academic' ),
+	'label'            	=> esc_html__( 'Enable Breadcrumb', 'academic' ),
 	'section'          	=> 'academic_breadcrumb',
 	'type'             	=> 'checkbox',
 ) );
@@ -31,7 +31,7 @@ $wp_customize->add_setting( 'academic_theme_options[breadcrumb_separator]', arra
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[breadcrumb_separator]', array(
-	'label'            	=> __( 'Breadcrumb Seperator', 'academic' ),
+	'label'            	=> esc_html__( 'Breadcrumb Seperator', 'academic' ),
 	'section'          	=> 'academic_breadcrumb',
 	'type'             	=> 'text',
 	'input_attrs'		=> array(

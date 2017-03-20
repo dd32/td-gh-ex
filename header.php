@@ -28,7 +28,7 @@
 	 */
 	do_action( 'academic_before_wp_head' );
 
-	wp_head(); 
+	wp_head();
 ?>
 </head>
 

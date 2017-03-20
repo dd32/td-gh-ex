@@ -59,7 +59,7 @@ add_filter( 'body_class', 'academic_body_classes' );
  */
 function academic_custom_search_form( $form ) {
     $form = '<form action="'. esc_url( home_url( '/' ) ) .'" method="get">
-			  <input type="text" name="s" placeholder="' . __( 'Search...', 'academic' ) . '">
+			  <input type="text" name="s" placeholder="' . esc_html__( 'Search...', 'academic' ) . '">
 			  <button type="submit"><i class="fa fa-search"></i></button>
 			</form>';
  

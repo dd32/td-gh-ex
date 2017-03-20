@@ -31,13 +31,31 @@ function academic_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	$comment_meta = '<span class="comments-links">
-                      <span class="screen-reader-text">'.__( 'Comments', 'academic' ).'</span> 
-                      <a class="comments-number" href="#">'.sprintf( // WPCS: XSS OK.
-					esc_html( _nx( '1 comment', '%1$s comments', get_comments_number(), 'comments title', 'academic' ) ),
-					number_format_i18n( get_comments_number() )					
-				).'</a>
-                    </span>';
+    $comment_meta = '';
+	$comment_meta .= '<span class="comments-links">
+                      <span class="screen-reader-text">'.esc_html__( 'Comments', 'academic' ).'</span> 
+                      <a class="comments-number" href="#">';
+
+	$comments_number = get_comments_number();
+	if ( '1' === $comments_number ) {
+		/* translators: %s: post title */
+		$comment_meta .= sprintf( _x( 'Feedback on &ldquo;%s&rdquo;', 'comments title', 'academic' ), get_the_title() );
+	} else {
+		$comment_meta .= 
+			sprintf(
+				/* translators: 1: number of comments, 2: post title */
+				_nx(
+					'%1$s Feedback on &ldquo;%2$s&rdquo;',
+					'%1$s Feedbacks on &ldquo;%2$s&rdquo;',
+					$comments_number,
+					'comments title',
+					'academic'
+				),
+				number_format_i18n( $comments_number ),
+				get_the_title()
+			);
+	}
+    $comment_meta .= '</a></span>';
 
     if ( 'post' === get_post_type() ) {
     	/* translators: used between list items, there is a space after the comma */

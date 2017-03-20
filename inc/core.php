@@ -40,7 +40,7 @@ function academic_get_theme_options() {
 function academic_slider_image_instruction( $content, $post_id ) {
   $allowed = array( 'page' );
   if ( in_array( get_post_type( $post_id ), $allowed ) ) {
-    return $content .= '<p><b>' . __( 'Note', 'academic' ) . ':</b>' . __( ' The recommended size for image is 1170px by 500px while using it for slider', 'academic' ) . '</p>';
+    return $content .= '<p><b>' . esc_html__( 'Note', 'academic' ) . ':</b>' . esc_html__( ' The recommended size for image is 1170px by 500px while using it for slider', 'academic' ) . '</p>';
   } 
   return $content;
 }

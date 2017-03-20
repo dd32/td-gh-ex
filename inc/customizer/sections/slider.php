@@ -8,8 +8,8 @@
 
 // Add slider enable section
 $wp_customize->add_section( 'academic_slider_section', array(
-	'title'             => __('Slider','academic'),
-	'description'       => __( 'Slider section options.', 'academic' ),
+	'title'             => esc_html__('Slider','academic'),
+	'description'       => esc_html__( 'Slider section options.', 'academic' ),
 	'panel'             => 'academic_sections_panel'
 ) );
 
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'academic_theme_options[slider_enable]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[slider_enable]', array(
-	'label'             => __( 'Enable on', 'academic' ),
+	'label'             => esc_html__( 'Enable on', 'academic' ),
 	'section'           => 'academic_slider_section',
 	'type'              => 'select',
 	'choices'           => academic_enable_disable_options()
@@ -33,7 +33,7 @@ $wp_customize->add_setting( 'academic_theme_options[slider_content_effect]', arr
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[slider_content_effect]', array(
-	'label'           => __( 'Transition Effects', 'academic' ),
+	'label'           => esc_html__( 'Transition Effects', 'academic' ),
 	'section'         => 'academic_slider_section',
 	'type'            => 'select',
 	'active_callback' => 'academic_is_slider_active',
@@ -47,7 +47,7 @@ $wp_customize->add_setting( 'academic_theme_options[enable_slider_controls]', ar
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[enable_slider_controls]', array(
-	'label'           => __( 'Enable Arrow Controls', 'academic' ),
+	'label'           => esc_html__( 'Enable Arrow Controls', 'academic' ),
 	'section'         => 'academic_slider_section',
 	'type'            => 'checkbox',
 	'active_callback' => 'academic_is_slider_active',
@@ -60,7 +60,7 @@ $wp_customize->add_setting( 'academic_theme_options[enable_slider_pager]', array
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[enable_slider_pager]', array(
-	'label'           => __( 'Enable Pager Controls', 'academic' ),
+	'label'           => esc_html__( 'Enable Pager Controls', 'academic' ),
 	'section'         => 'academic_slider_section',
 	'type'            => 'checkbox',
 	'active_callback' => 'academic_is_slider_active',
@@ -73,7 +73,7 @@ $wp_customize->add_setting( 'academic_theme_options[enable_slider_dragable]', ar
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[enable_slider_dragable]', array(
-	'label'           => __( 'Slider Dragable', 'academic' ),
+	'label'           => esc_html__( 'Slider Dragable', 'academic' ),
 	'section'         => 'academic_slider_section',
 	'type'            => 'checkbox',
 	'active_callback' => 'academic_is_slider_active',
@@ -87,8 +87,8 @@ $wp_customize->add_setting( 'academic_theme_options[no_of_slider]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[no_of_slider]', array(
-	'label'           => __( 'Number of slides', 'academic' ),
-	'description'     => __( 'Notice: Please refresh after the number of slides is set to see the effects.', 'academic' ),
+	'label'           => esc_html__( 'Number of slides', 'academic' ),
+	'description'     => esc_html__( 'Notice: Please refresh after the number of slides is set to see the effects.', 'academic' ),
 	'section'         => 'academic_slider_section',
 	'type'            => 'number',
 	'active_callback' => 'academic_is_slider_active',
@@ -109,7 +109,7 @@ for ($i=1; $i <= $options['no_of_slider']; $i++) {
 	) );
 
 	$wp_customize->add_control( 'academic_theme_options[slider_content_page_'.$i.']', array(
-		'label'           => sprintf( __( 'Page Slider #%s', 'academic' ), $i ),
+		'label'           => sprintf( esc_html__( 'Page Slider # %s', 'academic' ), $i ),
 		'section'         => 'academic_slider_section',
 		'active_callback' => 'academic_is_slider_active',
 		'type'				=> 'dropdown-pages'

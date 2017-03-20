@@ -13,8 +13,8 @@ $wp_customize->add_setting( 'academic_theme_options[enable_frontpage_content]', 
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[enable_frontpage_content]', array(
-	'label'       => __( 'Enable Content', 'academic' ),
-	'description' => __( 'Check to enable content on static front page only.', 'academic' ),
+	'label'       => esc_html__( 'Enable Content', 'academic' ),
+	'description' => esc_html__( 'Check to enable content on static front page only.', 'academic' ),
 	'section'     => 'static_front_page',
 	'type'        => 'checkbox'
 ) );

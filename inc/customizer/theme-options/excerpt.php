@@ -8,8 +8,8 @@
 
 // Add excerpt section
 $wp_customize->add_section( 'academic_excerpt_section', array(
-	'title'             => __('Excerpt','academic'),
-	'description'       => __( 'Excerpt section options.', 'academic' ),
+	'title'             => esc_html__('Excerpt','academic'),
+	'description'       => esc_html__( 'Excerpt section options.', 'academic' ),
 	'panel'             => 'academic_theme_options_panel'
 ) );
 
@@ -22,8 +22,8 @@ $wp_customize->add_setting( 'academic_theme_options[long_excerpt_length]', array
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[long_excerpt_length]', array(
-	'label'       => __( 'Blog Page Excerpt Length', 'academic' ),
-	'description' => __( 'Total words to be displayed in archive page/search page.', 'academic' ),
+	'label'       => esc_html__( 'Blog Page Excerpt Length', 'academic' ),
+	'description' => esc_html__( 'Total words to be displayed in archive page/search page.', 'academic' ),
 	'section'     => 'academic_excerpt_section',
 	'type'        => 'number',
 	'input_attrs' => array(
@@ -40,7 +40,7 @@ $wp_customize->add_setting( 'academic_theme_options[read_more_text]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[read_more_text]', array(
-	'label'       => __( 'Read More Text', 'academic' ),
+	'label'       => esc_html__( 'Read More Text', 'academic' ),
 	'section'     => 'academic_excerpt_section',
 	'type'        => 'text',
 ) );

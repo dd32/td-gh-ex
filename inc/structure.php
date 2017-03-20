@@ -281,7 +281,7 @@ if ( ! function_exists( 'academic_copyright' ) ) :
 		
 	    <div class="site-info copyright text-center">
 	    	<div class="container">
-	      		<?php echo sprintf( _x( 'Copyright &copy; %1$s. All Rights Reserved', '1: Year, 2: Site Title with home URL', 'academic' ), date( 'Y' ) ) . ' &#124; ' . esc_html( $theme_data->get( 'Name') ) . '&nbsp;' . __( 'by', 'academic' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_html( $theme_data->get( 'Author' ) ) .'</a>'?>
+	      		<?php echo sprintf( _x( 'Copyright &copy; %1$s. All Rights Reserved', '1: Year, 2: Site Title with home URL', 'academic' ), date( 'Y' ) ) . ' &#124; ' . esc_html( $theme_data->get( 'Name') ) . '&nbsp;' . esc_html__( 'by', 'academic' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_html( $theme_data->get( 'Author' ) ) .'</a>'?>
 	    	</div>
 	    </div><!-- end .site-info -->  	
 	<?php

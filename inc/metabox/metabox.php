@@ -19,10 +19,10 @@ require get_template_directory() . '/inc/metabox/header-image.php';
  */
 function academic_custom_meta() {
 	// Sidebar layout meta
-    add_meta_box( 'academic_sidebar_layout_meta', __( 'Sidebar Layout', 'academic' ), 'academic_sidebar_position_callback', array( 'post', 'page', 'jetpack-testimonial' ) );
+    add_meta_box( 'academic_sidebar_layout_meta', esc_html__( 'Sidebar Layout', 'academic' ), 'academic_sidebar_position_callback', array( 'post', 'page', 'jetpack-testimonial' ) );
 	
 	// Header image meta
-    add_meta_box( 'academic_header_image', __( 'Header Image', 'academic' ), 'academic_header_image_callback', array( 'post', 'page' ) );
+    add_meta_box( 'academic_header_image', esc_html__( 'Header Image', 'academic' ), 'academic_header_image_callback', array( 'post', 'page' ) );
 }
 add_action( 'add_meta_boxes', 'academic_custom_meta' );
 

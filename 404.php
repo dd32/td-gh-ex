@@ -21,7 +21,7 @@ do_action( 'academic_page_section' );?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title title-404" ><?php _e( '404', 'academic' ); ?></h1>
+					<h1 class="page-title title-404" ><?php esc_html_e( '404', 'academic' ); ?></h1>
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'academic' ); ?></h1>
 				</header><!-- .page-header -->
 

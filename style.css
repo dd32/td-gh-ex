@@ -3,8 +3,8 @@ Theme Name: Academic
 Theme URI: http://themepalace.com/downloads/academic/
 Author: Theme Palace
 Author URI: http://themepalace.com/	
-Description: A clean, modern, engaging and responsive WordPress education theme ideal for educational institutions. Features including full width and boxed layout with slider, focused content, slick effects, posts/features/courses showcasing.  It is loaded with theme options and provides several features to make user-friendly, interactive and visually stunning website with implementation of all features of latest WordPress like partial refresh and validation. It is compatible with top WordPress plugins such as JetPack and Contact Form 7. A special accent is made on its cross-browser compatibility, mobile friendly design and responsive features.
-Version: 0.4
+Description: A clean, modern, engaging and responsive WordPress education theme ideal for educational institutions and agencies. Features including full width and boxed layout with slider, focused content, slick effects, posts/features/courses showcasing.  It is loaded with theme options and provides several features to make user-friendly, interactive and visually stunning website with implementation of all features of latest WordPress like partial refresh and validation. It is compatible with top WordPress plugins such as JetPack and Contact Form 7. A special accent is made on its cross-browser compatibility, mobile friendly design and responsive features.
+Version: 0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: academic
@@ -600,6 +600,9 @@ body.search .page-content form button[type="submit"] {
 .site-footer form {
     position: relative;
     width: 250px;
+}
+.site-footer a {
+   color: #333;
 }
 #secondary ul.children {
     display: none;
@@ -1365,6 +1368,11 @@ body.sidr-open {
 .blog .byline {
 	display: inline-block;
 }
+
+.no-results.not-found {
+    text-align: center;
+    padding: 50px 0;
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2090,7 +2098,6 @@ header.entry-header {
     width: 80px;
     height: 80px;
     border-radius: 80px;
-    background-color: #FEBF32;
     overflow: hidden;
     margin-right: 10px;
     -webkit-transition: all 0.3s ease-in-out;
@@ -2105,9 +2112,6 @@ header.entry-header {
 }
 #testimonial-slider .slick-dots li:last-child {
 	margin-right: 0;
-}
-#testimonial-slider .slick-dots li.slick-active {
-	background-color: #fff;
 }
 #testimonial-slider .slick-dots {
     position: relative;
@@ -2145,6 +2149,21 @@ header.entry-header {
 }
 #testimonial-slider button.slick-next {
 	float: none;
+}
+#testimonial-slider .slick-slide:nth-child(1) .slick-dots li:nth-child(1) a,
+#testimonial-slider .slick-slide:nth-child(2) .slick-dots li:nth-child(2) a,
+#testimonial-slider .slick-slide:nth-child(3) .slick-dots li:nth-child(3) a,
+#testimonial-slider .slick-slide:nth-child(4) .slick-dots li:nth-child(4) a,
+#testimonial-slider .slick-slide:nth-child(5) .slick-dots li:nth-child(5) a,
+#testimonial-slider .slick-slide:nth-child(6) .slick-dots li:nth-child(6) a,
+#testimonial-slider .slick-slide:nth-child(7) .slick-dots li:nth-child(7) a,
+#testimonial-slider .slick-slide:nth-child(8) .slick-dots li:nth-child(8) a {
+   background-color: #fff;
+}
+#testimonial-slider .slick-slide .slick-dots li a {
+   background-color: #FEBF32 ;
+   position: relative;
+   display: inline-block;
 }
 #recent-courses-slider .slide-description p {
     color: #646464;
@@ -3771,6 +3790,10 @@ li .wide {
 	}
 	.topbar-toggle {
 		display: none;
+	}
+	.no-results.not-found h1.page-title {
+	    font-size: 65px;
+	    margin-bottom: 25px;
 	}
 }
 @media screen and (max-width: 1200px) and (min-width: 767px) {
