@@ -4,7 +4,7 @@
  Description:  Simple, clean and actionable WordPress theme built around Actions. Supports a left or right sidebar, full width narrow as well as full width wide modes. Actions is fully compatible with the Elementor Page builder plugin making it the idea theme for any kind of wibesite builds that you may have in mind.
  Author:       WP DevHQ
  Author URI:   https://wpdevhq.com/
- Version:      1.1.1
+ Version:      1.1.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         right-sidebar, left-sidebar, sticky-post, custom-logo, custom-menu, featured-images, blog, theme-options, threaded-comments, translation-ready, two-columns, one-column
@@ -1561,17 +1561,22 @@ h3.widget-title {
 .widget:not(:empty) {
     margin-top: 20px;
 }
-
-.widget ul {
+.widget li,
+.widget ul, 
+.widget ol,
+.elementor-widget-sidebar li,
+.elementor-widget-sidebar ul,
+.elementor-widget-sidebar ol {
+	list-style: none;
 	margin: 0;
 }
+
 .widget ul ul {
 	margin-top: 10px;
 	border-top: 1px solid rgba(0,0,0,.05);
 	padding-top: 10px;
 }
 .widget li {
-	list-style: none;
 	padding-bottom: 10px;
 	border-bottom: 1px solid rgba(0,0,0,.05);
 	margin-bottom: 10px;
@@ -1726,6 +1731,26 @@ Plugin support
 	display: block;
 	float: none;
 	width: 100%;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+    background-color: #ffffff;
+    color: #333333;
+	width: 100%;
+	float : none; 
+	margin: 0 auto;
+}
+
+.wpcf7 textarea {
+    padding: 20px;
+}
+
+.wpcf7 input[type="submit"] {
+    padding: 5px 20px 8px;
+	float : none; 
+	margin: 0 auto;
 }
 
 /**

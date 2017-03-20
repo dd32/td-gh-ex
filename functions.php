@@ -14,6 +14,18 @@ require_once ( trailingslashit( get_template_directory() ) . 'inc/framework.php'
 
 require_once( trailingslashit( get_template_directory() ) . 'inc/customizer/class-customize.php' );
 
+require_once( trailingslashit( get_template_directory() ) . 'elementor/custom.php' );
+require_once( trailingslashit( get_template_directory() ) . 'elementor/helper-functions.php' );
+
+function actions_new_elements() {
+	if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
+		return;
+	}
+	require_once( trailingslashit( get_template_directory() ) . 'elementor/widgets/contact-form.php' );
+
+}
+add_action( 'elementor/widgets/widgets_registered', 'actions_new_elements' );
+
 // For each version release, the priority needs to decrement by 1. This is so that
 // we can load newer versions earlier than older versions when there's a conflict.
 add_action( 'init', 'actionsmb_loader_100', 9999 );
