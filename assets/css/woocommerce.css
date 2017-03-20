@@ -537,9 +537,12 @@ article.woocommerce_cart_page .post-article {
 
 .woocommerce .container-fluid .woocommerce-error ,
 .woocommerce .container-fluid .woocommerce-message ,
-.woocommerce .container-fluid .woocommerce-info {
-	margin-left:15px;
-	margin-right:15px;
+.woocommerce .container-fluid .woocommerce-info ,
+.woocommerce_cart_page .container-fluid .woocommerce-error ,
+.woocommerce_cart_page .container-fluid .woocommerce-message ,
+.woocommerce_cart_page .container-fluid .woocommerce-info {
+	margin-left:15px !important;
+	margin-right:15px !important;
 }
 
 body.minimal-layout .woocommerce-error ,
