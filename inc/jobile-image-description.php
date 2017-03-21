@@ -5,7 +5,7 @@ function jobile_image_widget() {
 }
 class jobile_image_widget extends WP_Widget {
 
-    function jobile_image_widget() {
+    function __construct() {
         $jobile_widget_ops = array( 'classname' => 'jobile_image', 'description' => __('A widget that displays the image and description.', 'jobile') );      
         $jobile_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'jobile-image-widget' );       
         parent::__construct( 'jobile-image-widget', __('Jobile Image Description', 'jobile'), $jobile_widget_ops, $jobile_control_ops );

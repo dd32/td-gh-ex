@@ -5,7 +5,7 @@ function jobile_social_widget() {
 }
 class jobile_social_widget extends WP_Widget {
 
-    function jobile_social_widget() {
+    function __construct() {
         $jobile_widget_ops = array( 'classname' => 'jobile_social', 'description' => __('A widget that displays social icon.', 'jobile') );      
         $jobile_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'jobile-social-widget' );       
         parent::__construct( 'jobile-social-widget', __('Jobial Social Icon', 'jobile'), $jobile_widget_ops, $jobile_control_ops );

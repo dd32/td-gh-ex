@@ -115,12 +115,9 @@ function jobile_framework_page(){
             </div>
 		  </div>
            <div id="options-group-2" class="group jobile-inner-tabs fasterthemes-pro-image">
-          	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/jobile_logopro_features.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/wordpress-themes/jobile" target="_blank">
-			  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
-              </div>
-          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/jobile_pro_features.png" />
+              <a href="https://fasterthemes.com/wordpress-themes/jobile" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/jobile_pro_features.png" />
+              </a>
           </div> 
         <!--  F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
