@@ -21,8 +21,7 @@
 <body <?php body_class(); ?>>
 <div>
 	<!-- Header Section -->
-	<div class="header_section hd_cover" >		
-		<img style="position: absolute;" class="hd-img" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> 
+	<div class="header_section hd_cover" <?php if ( has_header_image() ) { ?> style='background-image: url("<?php header_image(); ?>")' <?php  } ?> >		
 		<div class="container" >
 			<!-- Logo & Contact Info -->
 			<div class="row ">

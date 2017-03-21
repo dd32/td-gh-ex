@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.8.5 [20/03/2017]
+1. Minor changes in custom header.
+
+CHANGE-LOG:
 @Version: 2.8.4 [16/02/2017]
 Gallery bug fixed.
 
