@@ -17,7 +17,7 @@
             <header>
                 <a href="<?php the_permalink(); ?>" class="post-thumb">
                     <span>
-                        <?php get_template_part( 'featured', 'image' ); ?>
+                        <?php get_template_part( 'inc/parts/featured', 'image' ); ?>
                     </span>
                 </a>
                 <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -32,7 +32,7 @@
             <header>
                 <a href="<?php the_permalink(); ?>" class="post-thumb">
                     <span>
-                        <?php get_template_part( 'featured', 'image' ); ?>
+                        <?php get_template_part( 'inc/parts/featured', 'image' ); ?>
                     </span>
                 </a>
                 <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -46,7 +46,7 @@
                         <span class="meta"><?php esc_html_e('Written by', 'best-reloaded' ); ?> <?php the_author_link(); ?></span>
                         <span class="meta"><?php esc_html_e('on', 'best-reloaded' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></span>
                         <span class="meta"><?php esc_html_e('in', 'best-reloaded' ); ?> <?php the_category( ' and ' ); ?></span>
-                        <span class="meta"><?php esc_html_e('with', 'best-reloaded' ); ?> <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a></span>
+
                     </footer>
                 </div>
             </div><!-- end .row -->

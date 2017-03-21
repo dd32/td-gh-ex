@@ -29,10 +29,11 @@
 
                 <?php
                     global $postcount;
-
                     $args = array( 'posts_per_page' => 3 );
+					// query for 3 latest posts
                     $loop = new WP_Query( $args );
                     if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); if ( ++$postcount > 3 ) continue;
+					wp_reset_postdata();
                 ?>
 
                 <div class="col-sm-4">
@@ -47,7 +48,7 @@
                         </header>
                         <?php the_excerpt(); ?>
                         <footer>
-                            <span class="meta"><?php the_time('F j, Y'); ?> &#8226; <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a></span>
+                            <span class="meta"><?php the_time( get_option( 'date_format' ) ); ?> &#8226; <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a></span>
                         </footer>
                     </article>
                     <hr class="hr-row-divider">
@@ -56,7 +57,7 @@
                 <?php endwhile; else: ?>
 
                 <div class="col-sm-9">
-                    <p class="hero-p no-content-message"><?php esc_html_e( 'There is currently nothing to display :(', 'best-reloaded' ); ?></p>
+                    <p class="hero-p no-content-message"><?php esc_html_e( 'There is currently nothing to display.', 'best-reloaded' ); ?></p>
                 </div>
 
                 <?php endif; ?>

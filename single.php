@@ -25,7 +25,7 @@
 							esc_html_e( ' Written by ', 'best-reloaded' );
 							the_author_link();
 							esc_html_e( ' on ', 'best-reloaded' );
-							the_time('F j, Y');
+							the_time( get_option( 'date_format' ) );
 							esc_html_e( ' and posted in ', 'best-reloaded' );
 							the_category( ' and ' ); ?>.
 						</span>
@@ -61,7 +61,7 @@
 
                     <?php endwhile; else: ?>
 
-                        <p class="hero-p no-content-message"><?php esc_html_e( 'There is currently nothing to display :(', 'best-reloaded' ); ?></p>
+                        <p class="hero-p no-content-message"><?php esc_html_e( 'There is currently nothing to display.', 'best-reloaded' ); ?></p>
 
                     <?php endif; ?>
 
