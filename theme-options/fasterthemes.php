@@ -154,11 +154,9 @@ function mywiki_framework_page(){
           </div>   
           <!-- Third group -->
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image">
-          	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" width="75%" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/wordpress-themes/MyWiki" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <a href="https://fasterthemes.com/wordpress-themes/MyWiki" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" width="100%" />
               </div>
-          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.jpg" width="85%" />
           </div>
         <!-- F I N A L - - T H E M E - - O P T I O N S --> 
       </div>

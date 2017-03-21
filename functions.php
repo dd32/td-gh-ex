@@ -162,7 +162,7 @@ register_widget( 'mywiki_recentpost_widget' );
 }
 /** Define the Widget as an extension of WP_Widget **/
 class mywiki_popular_widget extends WP_Widget {
-function mywiki_popular_widget() {
+function __construct() {
 /* Widget settings. */
 $mywiki_widget_ops = array( 'classname' => 'widget_popular', 'description' => __('Displays most popular posts by comment count','mywiki'));
  
@@ -232,7 +232,7 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 }
 }
 class mywiki_recentpost_widget extends WP_Widget {
-function mywiki_recentpost_widget() {
+function __construct() {
 /* Widget settings. */
 $mywiki_widget_ops = array( 'classname' => 'widget_recentpost', 'description' => __('Displays most recent posts by post count','mywiki') );
  

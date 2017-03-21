@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyWiki\n"
-"POT-Creation-Date: 2017-01-04 17:59+0530\n"
+"POT-Creation-Date: 2017-03-21 18:57+0530\n"
 "PO-Revision-Date: 2014-12-05 12:04+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -355,14 +355,14 @@ msgstr ""
 msgid "Linkedin profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:169
+#: theme-options/fasterthemes.php:167
 msgid "fasterthemes.com"
 msgstr ""
 
-#: theme-options/fasterthemes.php:172
+#: theme-options/fasterthemes.php:170
 msgid "Save options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:177
+#: theme-options/fasterthemes.php:175
 msgid "Options saved successfully."
 msgstr ""

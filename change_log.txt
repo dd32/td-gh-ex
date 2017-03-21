@@ -102,3 +102,6 @@ Version 2.3 (19th March 2016)
 
 Version 2.4 (04th Jan 2017)
     i) Fixed Small Bugs
+
+Version 2.5 (21st March 2017)
+    i) Changed feature image.
