@@ -171,6 +171,10 @@ if ( ! function_exists( 'jgtazalea_excerpt_more' ) ) :
  * Replace "[...]" (appended to automatically generated excerpts) with ... and a 'Read More' link.
  */
 function jgtazalea_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+
 	$link = sprintf( '<span class="read-more"><a href="%1$s" class="more-link">%2$s</a></span>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		esc_html__( 'Read More', 'azalea' )
@@ -213,7 +217,7 @@ function jgtazalea_site_info() {
 	if ( get_theme_mod( 'jgtazalea_footer_text' ) ) {
 		echo wp_kses_post( get_theme_mod( 'jgtazalea_footer_text' ) );
 	} else {
-		printf( esc_html__( '&copy; %1$s %2$s', 'azalea' ), date( 'Y' ), sprintf( '<a href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ), get_bloginfo( 'name', 'display' ) ) );
+		printf( esc_html__( '&copy; %1$s %2$s', 'azalea' ), date_i18n( __( 'Y', 'azalea' ) ), sprintf( '<a href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ), get_bloginfo( 'name', 'display' ) ) );
 		echo '<br />';
 		printf( esc_html__( 'Theme by %s.', 'azalea' ), sprintf( '<a href="%s">justgoodthemes.com</a>', esc_url( 'http://justgoodthemes.com/' ) ) );
 	}

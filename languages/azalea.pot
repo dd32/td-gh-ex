@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Azalea 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/azalea\n"
-"POT-Creation-Date: 2017-03-21 10:13:55+00:00\n"
+"POT-Creation-Date: 2017-03-21 13:25:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -346,36 +346,40 @@ msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:176 template-parts/content-gallery.php:43
+#: inc/template-tags.php:180 template-parts/content-gallery.php:43
 #: template-parts/content-video.php:26 template-parts/content.php:31
 msgid "Read More"
 msgstr ""
 
-#: inc/template-tags.php:197
+#: inc/template-tags.php:201
 msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:198
+#: inc/template-tags.php:202
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:206
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:203
+#: inc/template-tags.php:207
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:204
+#: inc/template-tags.php:208
 msgid "Page"
 msgstr ""
 
-#: inc/template-tags.php:216
+#: inc/template-tags.php:220
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: inc/template-tags.php:218
+#: inc/template-tags.php:220
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:222
 msgid "Theme by %s."
 msgstr ""
 

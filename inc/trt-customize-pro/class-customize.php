@@ -90,8 +90,8 @@ final class JgtAzalea_Premium_Customize {
 	 * @return void
 	 */
 	public function enqueue_control_scripts() {
-		wp_enqueue_script( 'azalea-customize-controls', get_template_directory_uri() . '/inc/trt-customize-pro/customize-controls.js', array( 'customize-controls' ) );
-		wp_enqueue_style( 'azalea-customize-controls', get_template_directory_uri() . '/inc/trt-customize-pro/customize-controls.css' );
+		wp_enqueue_script( 'jgtazalea-customize-controls', get_template_directory_uri() . '/inc/trt-customize-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_style( 'jgtazalea-customize-controls', get_template_directory_uri() . '/inc/trt-customize-pro/customize-controls.css' );
 	}
 }
 

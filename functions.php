@@ -162,19 +162,19 @@ endif;
  */
 function jgtazalea_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'azalea-fonts', jgtazalea_fonts_url(), array(), null );
+	wp_enqueue_style( 'jgtazalea-fonts', jgtazalea_fonts_url(), array(), null );
 	
 	// Theme main stylesheet.
-	wp_enqueue_style( 'azalea-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'jgtazalea-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'azalea-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '20170321', true );
-	wp_enqueue_script( 'azalea-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '20170321', true );
-	wp_enqueue_script( 'azalea-script', get_template_directory_uri() . '/js/functions.js', array( 'azalea-fitvids', 'azalea-slick' ), '20170321', true );
-	wp_localize_script( 'azalea-script', 'azaleaVars', array(
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '20170321', true );
+	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '20170321', true );
+	wp_enqueue_script( 'jgtazalea-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery-fitvids', 'jquery-slick' ), '20170321', true );
+	wp_localize_script( 'jgtazalea-script', 'jgtazaleaVars', array(
 		'screenReaderText' => esc_html__( 'submenu', 'azalea' )
 	) );
 }

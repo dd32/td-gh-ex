@@ -38,7 +38,7 @@
 		}
 
 		// Add dropdown toggle
-		var dropdownArrow = $('<button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">' + azaleaVars.screenReaderText + '</span></button>');
+		var dropdownArrow = $('<button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">' + jgtazaleaVars.screenReaderText + '</span></button>');
 		$siteNav.find('.menu-item-has-children > a, .page_item_has_children > a').after(dropdownArrow);
 		$siteNav.find('.dropdown-toggle').click( function(e) {
 			var _this = $(this);
