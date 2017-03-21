@@ -11,7 +11,7 @@ if ( ! function_exists( 'jgtazalea_entry_category' ) ) :
  */
 function jgtazalea_entry_category() {
 	if ( 'post' === get_post_type() ) {
-		$categories_list = get_the_category_list( ' <span class="meta-sep">&#47;</span> ' );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'azalea') );
 		if ( $categories_list && jgtazalea_categorized_blog() ) {
 			printf( '<div class="cat-links"><span class="meta-before">%1$s</span> %2$s</div>',
 				esc_html_x( 'In', 'Used before category links.', 'azalea' ),
@@ -39,9 +39,6 @@ function jgtazalea_posted_on() {
 			get_the_author()
 		);
 		jgtazalea_entry_date();
-		if ( get_theme_mod( 'jgtazalea_show_reading_time' ) ) {
-			jgtazalea_post_reading_time();
-		}
 	} elseif ( 'attachment' == get_post_type() ) {
 		jgtazalea_entry_date();
 		if ( wp_attachment_is_image() ) {
@@ -68,15 +65,15 @@ if ( ! function_exists( 'jgtazalea_entry_footer' ) ) :
  */
 function jgtazalea_entry_footer() {
 	if ( 'post' === get_post_type() ) {
-		$tags_list = get_the_tag_list( '', ' <span class="meta-sep">&#47;</span> ' );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'azalea') );
 		if ( $tags_list ) {
-			printf( '<div class="tag-links"><span class="meta-before">%1$s</span> %2$s</div>',
+			printf( '<footer class="entry-footer"><div class="tag-links"><span class="screen-reader-text">%1$s</span> %2$s</div></footer>',
 				esc_html_x( 'Tags:', 'Used before tag links.', 'azalea' ),
 				$tags_list
 			);
 		}
 	} elseif ( 'attachment' === get_post_type() ) {
-		previous_post_link( '<div class="parent-post-link"><span class="meta-before">' . esc_html__( 'Published in:', 'azalea' ) . '</span> %link</div>', '%title' );
+		previous_post_link( '<footer class="entry-footer"><div class="parent-post-link"><span class="meta-before">' . esc_html__( 'Published in:', 'azalea' ) . '</span> %link</div></footer>', '%title' );
 	}
 }
 endif;
@@ -86,12 +83,18 @@ if ( ! function_exists( 'jgtazalea_post_thumbnail' ) ) :
  * Displays an optional post thumbnail.
  */
 function jgtazalea_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() )
+	if ( is_attachment() || ! has_post_thumbnail() )
 		return;
 	if ( is_singular() ) :
 	?>
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php
+			if ( is_page_template( 'page-templates/full-width.php' ) ) {
+				the_post_thumbnail( 'jgtazalea-slider' );
+			} else {
+				the_post_thumbnail();
+			}
+		?>
 	</div><!-- .post-thumbnail -->
 	<?php else : ?>
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) ); ?></a>
@@ -119,22 +122,6 @@ function jgtazalea_entry_date() {
 		esc_url( get_permalink() ),
 		$time_string
 	);
-}
-endif;
-
-if ( ! function_exists( 'jgtazalea_post_reading_time' ) ) :
-/**
- * Prints HTML with average required time to complete reading a post.
-*/
-function jgtazalea_post_reading_time() {
-	$content = apply_filters( 'the_content', get_post_field( 'post_content', get_the_ID() ) );
-	$total_words = str_word_count( strip_tags( $content ) );
-	$minutes = round( $total_words / 200 );
-	if ( $minutes > 0 ) {
-		printf( '<span class="reading-time">%s</span>', sprintf( esc_html__( '%s min to read', 'azalea' ), $minutes) );
-	} else {
-		printf( '<span class="reading-time">%s</span>', esc_html__( 'Less than 1 min to read', 'azalea' ) );
-	}
 }
 endif;
 

@@ -4,8 +4,10 @@
  *
  * @package Azalea
  */
+
+if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) :
 ?>
-<aside id="footer-widgets" class="footer-widgets" aria-label="<?php esc_attr_e( 'Footer Widgets', 'azalea' ); ?>">
+<div id="footer-columns" class="footer-columns">
 	<div class="inner">
 		<div class="grid">
 		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
@@ -25,4 +27,5 @@
 		<?php endif; ?>
 		</div><!-- .grid -->
 	</div><!-- .inner -->
-</aside><!-- .footer-widgets -->
+</div><!-- .footer-columns -->
+<?php endif; ?>

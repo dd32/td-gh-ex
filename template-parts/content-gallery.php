@@ -21,23 +21,20 @@
 				edit_post_link( esc_html__( 'Edit', 'azalea' ), '<span class="edit-link">', '</span>' );
 			?>
 		</div><!-- .entry-meta -->
-		<?php
-			$gallery = get_post_gallery( get_the_ID(), false );
-			if ( ! empty( $gallery ) ) {
-				echo '<div class="post-gallery">';
-				$gallery_ids = explode( ',', $gallery['ids'] );
-				foreach( $gallery_ids as $id ) {
-					$gallery_image = wp_get_attachment_image_src( $id, 'post-thumbnail' );
-					$image_caption = get_post_field( 'post_excerpt', $id );
-					echo '<div><img src="' . $gallery_image[0] . '" alt="" />';
-					if ( ! empty( $image_caption ) )
-						echo '<div class="slider-caption">'. $image_caption .'</div>';
-					echo '</div>';
-				}
-				echo '</div>';
-			}
-		?>
 	</header><!-- .entry-header -->
+	<?php
+		$gallery = get_post_gallery( get_the_ID(), false );
+		if ( ! empty( $gallery ) ) {
+			echo '<div class="post-gallery">';
+			$gallery_ids = explode( ',', $gallery['ids'] );
+			foreach( $gallery_ids as $id ) {
+				$gallery_image = wp_get_attachment_image_src( $id, 'post-thumbnail' );
+				$image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true);
+				echo '<div><img src="' . esc_url( $gallery_image[0] ) . '" alt="' . esc_attr( $image_alt ) . '" /></div>';
+			}
+			echo '</div>';
+		}
+	?>
 	<div class="entry-content">
 		<?php
 			if ( is_search() || ( get_theme_mod( 'jgtazalea_auto_excerpt' ) && ! is_singular() ) ) {
@@ -63,7 +60,7 @@
 			}
 		?>
 	</div><!-- .entry-content -->
-	<footer class="entry-footer"><?php jgtazalea_entry_footer(); ?></footer><!-- .entry-footer -->
+	<?php jgtazalea_entry_footer(); ?>
 	<?php
 	if ( is_single() && ! is_attachment() && get_theme_mod( 'jgtazalea_show_author_box' ) ) :
 		get_template_part( 'template-parts/biography' );

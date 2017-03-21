@@ -66,14 +66,15 @@
 					esc_url( home_url( '/' ) ),
 					esc_attr( get_bloginfo( 'name', 'display' ) )
 				);
+				$header_text_class = ( display_header_text() ) ? '' : ' screen-reader-text';
 				?>
 				<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title<?php if ( get_theme_mod( 'jgtazalea_hide_site_title' ) ) echo ' screen-reader-text'; ?>"><?php echo $site_title_link; ?></h1>
+				<h1 class="site-title<?php echo $header_text_class; ?>"><?php echo $site_title_link; ?></h1>
 				<?php else : ?>
-				<p class="site-title<?php if ( get_theme_mod( 'jgtazalea_hide_site_title' ) ) echo ' screen-reader-text'; ?>"><?php echo $site_title_link; ?></p>
+				<p class="site-title<?php echo $header_text_class; ?>"><?php echo $site_title_link; ?></p>
 				<?php endif; ?>
 				<?php if ( get_bloginfo( 'description' ) ) : ?>
-				<p class="site-description<?php if ( get_theme_mod( 'jgtazalea_hide_tagline' ) ) echo ' screen-reader-text'; ?>"><?php bloginfo( 'description' ); ?></p>
+				<p class="site-description<?php echo $header_text_class; ?>"><?php bloginfo( 'description' ); ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 		</div><!-- .inner -->

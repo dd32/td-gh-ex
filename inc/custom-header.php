@@ -20,24 +20,28 @@ function jgtazalea_custom_header_setup() {
 	register_default_headers( array(
 		'white_wall_hash'  => array(
 			'url'           => '%s/images/white_wall_hash.png',
-			'thumbnail_url' => '%s/images/white_wall_hash.png',
-			'description'   => 'White Wall Hash'
+			'thumbnail_url' => '%s/images/white_wall_hash_thumb.png',
+			'description'   => esc_html__( 'White Wall Hash', 'azalea' )
 		),
 		'wet_snow'  => array(
 			'url'           => '%s/images/wet_snow.png',
-			'thumbnail_url' => '%s/images/wet_snow.png',
-			'description'   => 'Wet Snow'
+			'thumbnail_url' => '%s/images/wet_snow_thumb.png',
+			'description'   => esc_html__( 'Wet Snow', 'azalea' )
+		),
+		'fresh_snow'  => array(
+			'url'           => '%s/images/fresh_snow.png',
+			'thumbnail_url' => '%s/images/fresh_snow_thumb.png',
+			'description'   => esc_html__( 'Fresh Snow', 'azalea' )
 		),
 		'subtle_white_feathers'  => array(
 			'url'           => '%s/images/subtle_white_feathers.png',
-			'thumbnail_url' => '%s/images/subtle_white_feathers.png',
-			'description'   => 'Subtle White Feathers'
+			'thumbnail_url' => '%s/images/subtle_white_feathers_thumb.png',
+			'description'   => esc_html__( 'Subtle White Feathers', 'azalea' )
 		),
-		
 		'subtle_grunge'  => array(
 			'url'           => '%s/images/subtle_grunge.png',
-			'thumbnail_url' => '%s/images/subtle_grunge.png',
-			'description'   => 'Subtle Grunge'
+			'thumbnail_url' => '%s/images/subtle_grunge_thumb.png',
+			'description'   => esc_html__( 'Subtle Grunge', 'azalea' )
 		)
 	) );
 }
@@ -48,17 +52,22 @@ add_action( 'after_setup_theme', 'jgtazalea_custom_header_setup' );
  */
 function jgtazalea_header_background_css() {
 	$header_image = get_header_image();
-	$header_bg_color = get_theme_mod( 'jgtazalea_header_background_color', '#f9f9f9' );
+	$header_bg_color = get_theme_mod( 'jgtazalea_header_background_color', '#ffffff' );
+	$css = '';
 
-	if ( empty( $header_image ) && $header_bg_color === '#f9f9f9' ) {
+	if ( $header_bg_color !== '#ffffff' ) {
+		$css .= 'background-color:' . esc_attr( $header_bg_color ) . ';border-color:' . esc_attr( $header_bg_color ) . ';';
+	}
+
+	if ( ! empty( $header_image ) ) {
+		$css .= 'background-image:url(' . esc_url( $header_image ) . ');background-repeat:' . get_theme_mod( 'jgtazalea_header_background_repeat', 'repeat' ) . ';background-position:50% 0%;background-size:' . get_theme_mod( 'jgtazalea_header_background_size', 'auto' ) . ';';
+	}
+
+	if ( empty( $css ) ) {
 		return;
 	}
 
-	$css = '.site-header { background-color: ' . esc_attr( $header_bg_color ) . '; ';
-	if ( ! empty( $header_image ) ) {
-		$css .= 'background-image: url(' . esc_url( $header_image ) . '); background-repeat: ' . esc_attr( get_theme_mod( 'jgtazalea_header_background_repeat', 'repeat' ) ) . '; background-position: 50% 50%; background-size: ' . esc_attr( get_theme_mod( 'jgtazalea_header_background_size', 'auto' ) ) . '; ';
-	}
-	$css .= '}';
+	$css = '.site-header{' . $css . '}';
 	wp_add_inline_style( 'azalea-style', $css );
 }
 add_action( 'wp_enqueue_scripts', 'jgtazalea_header_background_css', 11 );

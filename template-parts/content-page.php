@@ -10,9 +10,9 @@
 		<?php
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			edit_post_link( esc_html__( 'Edit', 'azalea' ), '<div class="entry-meta">', '</div>' );
-			jgtazalea_post_thumbnail();
 		?>
 	</header><!-- .entry-header -->
+	<?php jgtazalea_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
 			the_content();

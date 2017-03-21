@@ -28,3 +28,12 @@ function jgtazalea_infinite_scroll_render() {
 		get_template_part( 'template-parts/content', get_post_format() );
 	}
 }
+
+/**
+ * Change "Older posts" text in Infinite Scroll.
+ */
+function jgtazalea_infinite_scroll_handle_text( $js_settings ) {
+	$js_settings['text'] = esc_html__( 'Load more', 'azalea' );
+	return $js_settings;
+}
+add_filter( 'infinite_scroll_js_settings', 'jgtazalea_infinite_scroll_handle_text' );

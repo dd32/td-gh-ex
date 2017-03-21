@@ -21,34 +21,9 @@ function jgtazalea_customize_register( $wp_customize ) {
 		'priority' => 9
 	) );
 
-	// Remove the core display site title and tagline control.
-	$wp_customize->remove_control( 'display_header_text' );
-
-	// Hide site title.
-	$wp_customize->add_setting( 'jgtazalea_hide_site_title', array(
-		'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
-	) );
-	$wp_customize->add_control( 'jgtazalea_hide_site_title', array(
-		'label'    => esc_html__( 'Hide Site Title.', 'azalea' ),
-		'section'  => 'title_tagline',
-		'settings' => 'jgtazalea_hide_site_title',
-		'type'     => 'checkbox'
-	) );
-
-	// Hide tagline.
-	$wp_customize->add_setting( 'jgtazalea_hide_tagline', array(
-		'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
-	) );
-	$wp_customize->add_control( 'jgtazalea_hide_tagline', array(
-		'label'    => esc_html__( 'Hide Tagline.', 'azalea' ),
-		'section'  => 'title_tagline',
-		'settings' => 'jgtazalea_hide_tagline',
-		'type'     => 'checkbox'
-	) );
-
 	// Header background color.
 	$wp_customize->add_setting( 'jgtazalea_header_background_color', array(
-		'default'           => '#f9f9f9',
+		'default'           => '#ffffff',
 		'sanitize_callback' => 'sanitize_hex_color'
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jgtazalea_header_background_color', array(
@@ -113,7 +88,7 @@ function jgtazalea_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'jgtazalea_sanitize_select'
 		) );
 		$wp_customize->add_control( 'jgtazalea_layout', array(
-			'label'    => esc_html__( 'Layout', 'azalea' ),
+			'label'    => esc_html__( 'Sidebar Position', 'azalea' ),
 			'section'  => 'jgtazalea_general_settings',
 			'settings' => 'jgtazalea_layout',
 			'type'     => 'radio',
@@ -181,17 +156,6 @@ function jgtazalea_customize_register( $wp_customize ) {
 			'type'     => 'checkbox'
 		) );
 
-		// Post reading time.
-		$wp_customize->add_setting( 'jgtazalea_show_reading_time', array(
-			'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
-		) );
-		$wp_customize->add_control( 'jgtazalea_show_reading_time', array(
-			'label'    => esc_html__( 'Display post reading time below the post title.', 'azalea' ),
-			'section'  => 'jgtazalea_post_settings',
-			'settings' => 'jgtazalea_show_reading_time',
-			'type'     => 'checkbox'
-		) );
-
 		// Author box.
 		$wp_customize->add_setting( 'jgtazalea_show_author_box', array(
 			'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
@@ -236,13 +200,6 @@ function jgtazalea_sanitize_nohtml( $input ) {
 }
 
 /**
- * CSS sanitization callback.
- */
-function jgtazalea_sanitize_css( $input ) {
-	return wp_strip_all_tags( $input );
-}
-
-/**
  * Enqueue front-end CSS for the accent color.
  */
 function jgtazalea_accent_color_css() {
@@ -254,36 +211,8 @@ function jgtazalea_accent_color_css() {
 		return;
 	}
 
-	$css = 'a,blockquote:before,.main-navigation a:hover,.primary-menu li:hover > a,.primary-menu .current-menu-item > a,.primary-menu .current-menu-ancestor > a,.primary-menu .current_page_item > a,.primary-menu .current_page_ancestor > a,.entry-meta a:hover,.entry-footer a:hover,.navigation a:hover,.page-links a:hover .page-link,.comment-author a:hover,.comment-metadata a:hover,#footer-social-links a:hover,.widget_archive a:hover,.widget_categories a:hover,.widget_pages a:hover,.widget_meta a:hover,.widget_recent_entries a:hover,.widget_recent_comments a:hover,.widget_rss a:hover,.widget_nav_menu a:hover,.widget_tag_cloud a,#wp-calendar tbody a { color: ' . esc_attr( $custom_color ) . '; } blockquote,.nav-previous a,.nav-next a,.nav-links .prev,.nav-links .next { border-color: ' . esc_attr( $custom_color ) . '; } button,input[type="submit"],input[type="button"],input[type="reset"],.slick-arrow:hover,.slick-arrow:focus,.button:hover,.more-link:hover,.site-footer .top-link,.infinite-scroll #infinite-handle span:hover { background-color: ' . esc_attr( $custom_color ) . '; } button:hover,button:focus,input[type="submit"]:hover,input[type="submit"]:focus,input[type="button"]:hover,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:focus,button:active,input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active,.button,.more-link,.infinite-scroll #infinite-handle span { border-color: ' . esc_attr( $custom_color ) . '; color: ' . esc_attr( $custom_color ) . '; } .widget_tag_cloud a:hover,#wp-calendar tbody a:hover { background-color: ' . esc_attr( $custom_color ) . '; border-color: ' . esc_attr( $custom_color ) . '; }';
+	$css = 'blockquote,.nav-previous a,.nav-next a,.nav-links .prev,.nav-links .next,.infinite-scroll #infinite-handle span{border-color:' . esc_attr( $custom_color ) . ';}a,blockquote:before,.main-navigation a:hover,.primary-menu li:hover > a,.primary-menu .current-menu-item > a,.primary-menu .current-menu-ancestor > a,.primary-menu .current_page_item > a,.primary-menu .current_page_ancestor > a,.entry-meta a:hover,.entry-footer a:hover,.navigation a:hover,.page-links a:hover .page-link,.comment-author a:hover,.comment-metadata a:hover,#footer-social-links a:hover,.widget_archive a:hover,.widget_categories a:hover,.widget_pages a:hover,.widget_meta a:hover,.widget_recent_entries a:hover,.widget_recent_comments a:hover,.widget_rss a:hover,.widget_nav_menu a:hover,.infinite-scroll #infinite-handle span:hover{color:' . esc_attr( $custom_color ) . ';}button,input[type="submit"],input[type="button"],input[type="reset"],.widget_tag_cloud a:hover{background-color:' . esc_attr( $custom_color ) . ';border-color:' . esc_attr( $custom_color ) . ';}button:hover,button:focus,input[type="submit"]:hover,input[type="submit"]:focus,input[type="button"]:hover,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:focus,button:active,input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active,.button,.more-link{border-color:' . esc_attr( $custom_color ) . ';color:' . esc_attr( $custom_color ) . ';}.button:hover,.more-link:hover,.slick-arrow:hover,.slick-arrow:focus,.site-footer .top-link{background-color:' . esc_attr( $custom_color ) . ';}';
 
 	wp_add_inline_style( 'azalea-style', $css );
 }
 add_action( 'wp_enqueue_scripts', 'jgtazalea_accent_color_css', 11 );
-
-/**
- * Display Azalea Pro info in the Customizer controls header.
- */
-function jgtazalea_pro_upgrade_info() {
-	?>
-	<script type="application/javascript">
-		(function($) {
-			$(document).ready(function() {
-				var pro = $('<a class="jgtazalea-pro-link button-primary"></a>')
-					.attr('href', '<?php echo esc_js( 'https://justgoodthemes.com/themes/azalea-pro/' ); ?>')
-					.attr('target', '_blank')
-					.text('<?php esc_html_e( 'Upgrade to Azalea Pro', 'azalea' ); ?>')
-					.css({ 'margin-top' : '8px', 'clear' : 'both' })
-					;
-				setTimeout(function () {
-					$('#customize-info .preview-notice').append(pro);
-				}, 200);
-				// Remove accordion click event
-				$('.jgtazalea-pro-link').on('click', function(e) {
-					e.stopPropagation();
-				});
-			});
-		})(jQuery);
-	</script>
-	<?php
-}
-add_action( 'customize_controls_print_footer_scripts', 'jgtazalea_pro_upgrade_info' );

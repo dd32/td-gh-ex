@@ -21,8 +21,8 @@
 				edit_post_link( esc_html__( 'Edit', 'azalea' ), '<span class="edit-link">', '</span>' );
 			?>
 		</div><!-- .entry-meta -->
-		<?php jgtazalea_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
+	<?php jgtazalea_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
 			if ( is_search() || ( get_theme_mod( 'jgtazalea_auto_excerpt' ) && ! is_singular() ) ) {
@@ -38,7 +38,7 @@
 			}
 		?>
 	</div><!-- .entry-content -->
-	<footer class="entry-footer"><?php jgtazalea_entry_footer(); ?></footer><!-- .entry-footer -->
+	<?php jgtazalea_entry_footer(); ?>
 	<?php
 	if ( is_single() && ! is_attachment() && get_theme_mod( 'jgtazalea_show_author_box' ) ) :
 		get_template_part( 'template-parts/biography' );

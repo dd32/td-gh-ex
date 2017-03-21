@@ -18,9 +18,9 @@ get_header(); ?>
 							<?php
 								the_title( '<h1 class="entry-title">', '</h1>' );
 								edit_post_link( esc_html__( 'Edit', 'azalea' ), '<div class="entry-meta">', '</div>' );
-								jgtazalea_post_thumbnail();
 							?>
 						</header><!-- .entry-header -->
+						<?php jgtazalea_post_thumbnail(); ?>
 						<div class="entry-content">
 							<?php 
 							the_content();
@@ -40,10 +40,10 @@ get_header(); ?>
 									<?php echo get_avatar( $author_id, 110 ); ?>
 								</div>
 								<div class="author-details">
-									<div class="author-stats"><?php printf( _n( '%d post', '%d posts', $post_count, 'azalea' ), $post_count ); ?></div>
-									<h2 class="author-title"><a href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" rel="author"><?php echo get_the_author_meta( 'display_name', $author_id ); ?></a></h2>
+								<div class="author-stats"><?php printf( esc_html( _n( '%d post', '%d posts', $post_count, 'azalea' ) ), number_format_i18n( $post_count ) ); ?></div>
+									<h2 class="author-title"><a href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" rel="author"><?php echo esc_html( get_the_author_meta( 'display_name', $author_id ) ); ?></a></h2>
 									<?php if ( get_the_author_meta( 'description', $author_id ) ) : ?>
-									<p class="author-description"><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
+									<p class="author-description"><?php echo wp_kses_post( get_the_author_meta( 'description', $author_id ) ); ?></p>
 									<?php endif; ?>
 								</div><!-- .author-details -->
 							</div><!-- .author-info -->

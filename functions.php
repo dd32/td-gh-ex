@@ -36,7 +36,6 @@ function jgtazalea_setup() {
 
 	// Register additional image sizes.
 	add_image_size( 'jgtazalea-slider', 1400, 9999 );
-	add_image_size( 'jgtazalea-small', 400, 250, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -67,6 +66,9 @@ function jgtazalea_setup() {
 
 	// Style the visual editor to resemble the theme style.
 	add_editor_style( 'css/editor-style.css' );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
 add_action( 'after_setup_theme', 'jgtazalea_setup' );
@@ -131,11 +133,11 @@ function jgtazalea_fonts_url() {
 	$fonts = array();
 
 	/* translators: If there are characters in your language that are not
-	 * supported by Lora, translate this to 'off'. Do not translate
+	 * supported by Crimson Text, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Lora font: on or off', 'azalea' ) )
-		$fonts[] = 'Lora:400,400italic,700,700italic';
+	if ( 'off' !== _x( 'on', 'Crimson Text font: on or off', 'azalea' ) )
+		$fonts[] = 'Crimson Text:400,400italic,700,700italic';
 
 	/* translators: If there are characters in your language that are not
 	 * supported by PT Sans, translate this to 'off'. Do not translate
@@ -169,8 +171,9 @@ function jgtazalea_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'azalea-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '20161215', true );
-	wp_enqueue_script( 'azalea-script', get_template_directory_uri() . '/js/functions.js', array( 'azalea-plugins' ), '20161215', true );
+	wp_enqueue_script( 'azalea-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '20170321', true );
+	wp_enqueue_script( 'azalea-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '20170321', true );
+	wp_enqueue_script( 'azalea-script', get_template_directory_uri() . '/js/functions.js', array( 'azalea-fitvids', 'azalea-slick' ), '20170321', true );
 	wp_localize_script( 'azalea-script', 'azaleaVars', array(
 		'screenReaderText' => esc_html__( 'submenu', 'azalea' )
 	) );
@@ -260,3 +263,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Display Azalea Pro info in the Customizer.
+ */
+require_once get_template_directory() . '/inc/trt-customize-pro/class-customize.php';

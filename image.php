@@ -44,7 +44,7 @@ get_header(); ?>
 							) );
 							?>
 						</div><!-- .entry-content -->
-						<footer class="entry-footer"><?php jgtazalea_entry_footer(); ?></footer><!-- .entry-footer -->
+						<?php jgtazalea_entry_footer(); ?>
 					</article><!-- #post-## -->
 					<?php
 					// Show navigation if there is more than one attachment
