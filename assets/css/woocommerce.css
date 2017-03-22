@@ -442,6 +442,13 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 	line-height: 34px;
 }
 
+.woocommerce_cart_page .container-fluid .woocommerce-error ,
+.woocommerce_cart_page .container-fluid .woocommerce-message ,
+.woocommerce_cart_page .container-fluid .woocommerce-info {
+	margin-left:15px !important;
+	margin-right:15px !important;
+}
+
 .woocommerce-error:before, 
 .woocommerce-info:before, 
 .woocommerce-message:before {
