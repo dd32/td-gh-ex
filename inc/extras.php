@@ -417,8 +417,8 @@ function accesspresslite_bxslidercb(){
 							<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 							<div class="slider-caption">
 								<div class="ak-container">
-									<h1 class="caption-title"><?php the_title();?></h1>
-									<h2 class="caption-description"><?php echo get_the_content();?></h2>
+									<div class="caption-title"><?php the_title();?></div>
+									<div class="caption-description"><?php echo get_the_content();?></div>
 								</div>
 							</div>
 							<?php  endif; ?>
@@ -452,8 +452,8 @@ function accesspresslite_bxslidercb(){
 					<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title"><?php the_title();?></h1>
-							<h2 class="caption-description"><?php echo get_the_content();?></h2>
+							<div class="caption-title"><?php the_title();?></div>
+							<div class="caption-description"><?php echo get_the_content();?></div>
 						</div>
 					</div>
 					<?php  endif; ?>
@@ -491,8 +491,8 @@ function accesspresslite_bxslidercb(){
                 <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 				<div class="slider-caption">
 					<div class="ak-container">
-						<h1 class="caption-title">AccessPress Lite</h1>
-						<h2 class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</h2>
+						<div class="caption-title">AccessPress Lite</div>
+						<div class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</div>
 					</div>
 				</div>
                 <?php  endif; ?>
@@ -503,8 +503,8 @@ function accesspresslite_bxslidercb(){
                 <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 				<div class="slider-caption">
 					<div class="ak-container">
-						<h1 class="caption-title">Easy Customization</h1>
-						<h2 class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</h2>
+						<div class="caption-title">Easy Customization</div>
+						<div class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</div>
 					</div>
 				</div>
                 <?php  endif; ?>

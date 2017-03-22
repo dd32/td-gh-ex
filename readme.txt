@@ -65,6 +65,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.50
+* HTML validation
+
 Version 2.46.9
 * Change Screenshot
 * Post Title issue solve

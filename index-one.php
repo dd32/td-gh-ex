@@ -35,7 +35,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 			$query1 = new WP_Query( $args );
 				while ($query1->have_posts()) : $query1->the_post(); ?>
 					 
-					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					
 					<?php 
 					if( has_post_thumbnail() ){
@@ -68,7 +68,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				
 				else{ ?>
 				
-				<h1><a href="#"><?php _e('Free WordPress theme - ACCESSPRESS LITE','accesspress-lite'); ?></a></h1>
+				<h2><a href="#"><?php _e('Free WordPress theme - ACCESSPRESS LITE','accesspress-lite'); ?></a></h2>
 				<figure class="welcome-text-image">
 				<a href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/welcome-image.jpg" alt="welcome">
@@ -99,7 +99,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	                'posts_per_page' => $accesspresslite_show_event_number,
 	            )); ?>
 
-	        <h1><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h1>
+	        <h2><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h2>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
@@ -142,7 +142,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 	        } else { ?>
 	        
-	        <h1>Latest Events/News</h1>
+	        <h2>Latest Events/News</h2>
 		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
 		        <div class="event-list clearfix">
 						<figure class="event-thumbnail">

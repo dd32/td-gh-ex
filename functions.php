@@ -76,6 +76,14 @@ function accesspresslite_setup() {
 		'default-image' => '',
 	) ) );
 
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
 }
 endif; // accesspresslite_setup
 add_action( 'after_setup_theme', 'accesspresslite_setup' );

@@ -9,7 +9,7 @@
 ?>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 	<?php 
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );

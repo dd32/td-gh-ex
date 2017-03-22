@@ -45,7 +45,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 					</figure>	
 					<?php } ?>
                     <div class="welcome_right_content <?php if( !has_post_thumbnail() ){echo 'welcome_fill_content';} ?>">
-    					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+    					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
     					
     					<?php if($accesspresslite_settings['welcome_post_content'] == 0 || empty($accesspresslite_settings['welcome_post_content'])){ ?>
@@ -72,7 +72,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						</a>
 				</figure>	
                     <div class="welcome_right_content">
-    					<h1><a href="#"><?php _e('About AccessPress Lite','accesspress-lite') ?></a></h1>
+    					<h2><a href="#"><?php _e('About AccessPress Lite','accesspress-lite') ?></a></h2>
     					<div  class="welcome-detail welcome-detail-full-width">
     					<p><?php 
     						_e("AccessPress Lite is a HTML5 & CSS3 Responsive WordPress Business Theme with clean, minimal yet highly professional design.With our years of experience, we've developed this theme and given back to this awesome WordPress community. The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. abore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua.Ulabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboxx",'accesspress-lite');
@@ -86,7 +86,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 </section>
 <?php do_action('accesspresslite_call_to_action');?>
 <section id="mid-section" class="ak-container">
-<?php if($featured_section_title){ ?><h1><?php echo esc_attr($featured_section_title); ?></h1><?php } ?>
+<?php if($featured_section_title){ ?><h2><?php echo esc_attr($featured_section_title); ?></h2><?php } ?>
 <?php 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     ?><div class="feature_wrap clearfix"><?php 
@@ -354,7 +354,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
     
     	        } else { ?>
     	        
-    	           <h1>Events/News</h1>
+    	           <h2>Events/News</h2>
                    <div class="event_mail_wraper clearfix">
     		        <?php for ( $event_count=1 ; $event_count < 5 ; $event_count++ ) { ?>
                     
