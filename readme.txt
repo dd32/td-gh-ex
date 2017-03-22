@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.4.8 | 22th March 2016 = 
+* Update: Workaround for certain odd servers and trailingslashit
+
 = 1.4.7 | 17th March 2016 = 
 * Update: Image sizing.
 * Update: Schema.
