@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: A1 V1.4\n"
-"POT-Creation-Date: 2017-01-02 19:01+0530\n"
+"POT-Creation-Date: 2017-03-22 13:41+0530\n"
 "PO-Revision-Date: 2015-01-21 14:22+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/a1.php:108 theme-options/a1.php:654
+#: theme-options/a1.php:108 theme-options/a1.php:652
 msgid "Save Options"
 msgstr ""
 
@@ -589,6 +589,6 @@ msgid ""
 "Check this to hide meta info on all archieve pages (author, tag, date etc)."
 msgstr ""
 
-#: theme-options/a1.php:660
+#: theme-options/a1.php:658
 msgid "Options saved successfully"
 msgstr ""

@@ -40,3 +40,6 @@ iii) Fixed home page settings theme option.
 
 Version 1.5 (02nd Jan 2017)
 i) Minor fixes.
+
+Version 1.6 (22nd March 2017)
+i) Changed feature image.

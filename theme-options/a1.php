@@ -638,11 +638,9 @@ function a1_framework_page() {
                         </div>
                         <!-- Pro Features group -->
                         <div id="options-group-6" class="group faster-inner-tabs fasterthemes-pro-image">
-                            <div class="fasterthemes-pro-header">
-                                <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features-logo.png" class="fasterthemes-pro-logo" />
-                                <a href="http://fasterthemes.com/wordpress-themes/A1" target="_blank" class="fasterthemes-pro-buynow"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/starting-button.png" /></a>
-                            </div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features.png" />
+                            <a href="https://fasterthemes.com/wordpress-themes/A1" target="_blank" class="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features.png" />
+                            </a>
                         </div>
                         <!-- End group -->
                     </div>
