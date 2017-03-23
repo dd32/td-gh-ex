@@ -480,8 +480,23 @@ span.sku_wrapper {
 .woocommerce .woocommerce-message ,
 .woocommerce .woocommerce-info {
 	border:none;
-	line-height:40px;
+	line-height:34px;
     background-color: #fff;
+}
+
+.woocommerce_cart_page .container-fluid .woocommerce-error ,
+.woocommerce_cart_page .container-fluid .woocommerce-message ,
+.woocommerce_cart_page .container-fluid .woocommerce-info {
+	margin-left:15px !important;
+	margin-right:15px !important;
+}
+
+.woocommerce-error:before, 
+.woocommerce-info:before, 
+.woocommerce-message:before {
+	top: 50%;
+    line-height: 0;
+    padding: 0;
 }
 
 .woocommerce form.checkout .woocommerce-error {
