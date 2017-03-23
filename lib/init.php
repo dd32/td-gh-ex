@@ -20,7 +20,7 @@ function backyard_excerpt_more($more) {
 add_filter('excerpt_length', 'backyard_excerpt_length');
 add_filter('excerpt_more', 'backyard_excerpt_more');
 // Custom Excerpt 
-function excerpt($limit) {
+function backyard_excerpt($limit) {
 $excerpt = explode(' ', get_the_excerpt(), $limit);
 if (count($excerpt)>=$limit) {
 array_pop($excerpt);
@@ -70,7 +70,14 @@ $args = array(
         'wp-head-callback' =>'backyard_header_style',
        
     );
-    add_theme_support('custom-header', apply_filters('backyard_custom_header_args',$args));
+add_theme_support('custom-logo', array(
+'height' => 100,
+'width' => 300,
+'flex-width' => true,
+'flex-height' => true,
+));
+add_theme_support('custom-header', apply_filters('backyard_custom_header_args',$args));
+add_theme_support( 'custom-background', $args);
 }
 add_action('after_setup_theme', 'backyard_setup');
 
@@ -162,6 +169,7 @@ add_action('after_setup_theme', 'backyard_content_width', 0);
 if ( ! function_exists( 'backyard_header_style' ) ) :
 function backyard_header_style() {
     $text_color = esc_html(get_header_textcolor());
+	$get_background_color=esc_html(get_background_color());
     ?>
     <style type="text/css">
     <?php if (!display_header_text() ) : ?>
@@ -169,5 +177,13 @@ function backyard_header_style() {
     <?php else : ?>
         #logo a{font-family: 'Playfair Display', serif;font-size: 44px;text-transform: uppercase;color: #<?php echo $text_color; ?>;letter-spacing: 4px;line-height: 45px;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
     <?php endif; ?>
+	<?php
+	if($get_background_color!=='')
+{?>
+	body.custom-background{background-color:<?php echo '#'.$get_background_color?>;}
+<?php }
+	?>
     </style>
-<?php } endif; ?>
+<?php }
+
+ endif; ?>

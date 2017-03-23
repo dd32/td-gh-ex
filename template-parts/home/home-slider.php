@@ -9,7 +9,6 @@
 		'posts_per_page'=>-1,
 		'orderby'=>'post__in');
 		$wp_query=new WP_Query($args);
-        
               if ($wp_query->have_posts()) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
                       if (has_post_thumbnail( $post->ID ) ) {
                           $backyard_slider_attachment = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ), 'full'); 
@@ -17,8 +16,8 @@
                           <li> 
                               <div class="slider-image" style="background-image:url(<?php echo esc_url($backyard_slider_imageUrl); ?>)"></div>
                                <div class="slider-content">
-          <h1><?php backyard_title_limit( 18, '...'); ?></h1>
-          <p><?php echo excerpt(20); ?></p>
+          <h1><?php the_title(); ?></h1>
+          <p><?php the_excerpt(); ?></p>
           <a href="<?php the_permalink(); ?>" class="btn"><?php _e('READ MORE', 'backyard'); ?></a>
           </div></li>
               <?php } endwhile; else: ?>

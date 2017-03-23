@@ -16,7 +16,7 @@ get_header();
             global $the_query;
             $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8));
             if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
-            get_template_part('template-parts/content', get_post_format());  
+            get_template_part('template-parts/content');  
            ?>
             <!--post-->
            <?php endwhile; ?>

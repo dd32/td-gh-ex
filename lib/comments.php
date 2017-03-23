@@ -251,7 +251,10 @@ if (!class_exists('backyard_walker_comment')) {
         <?php endif; ?>
         <div class="comment-author vcard">
             <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-            <?php _e('<cite class="fn">%s</cite> <span class="says">says:</span>','backyard'); echo get_comment_author_link($comment ); ?>
+            <?php //_e('<cite class="fn">%s</cite> <span class="says">says:</span>','backyard'); echo get_comment_author_link($comment ); ?>
+            
+            
+            <?php printf( __( '%s <span class="says">says:</span>', 'backyard' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
         </div>
         <?php if ( '0' == $comment->comment_approved ) : ?>
         <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','backyard') ?></em>
@@ -302,7 +305,8 @@ if (!class_exists('backyard_walker_comment')) {
                 <footer class="comment-meta">
                     <div class="comment-author vcard">
                         <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-                        <?php _e('%s <span class="says">says:</span> <b class="fn">%s</b>','backyard'); echo get_comment_author_link($comment); ?>
+                        <?php printf( __( '%s <span class="says">says:</span>', 'backyard' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                        <?php //_e('%s <span class="says">says:</span> <b class="fn">%s</b>','backyard'); echo get_comment_author_link($comment); ?>
                     </div><!-- .comment-author -->
  
                     <div class="comment-metadata">

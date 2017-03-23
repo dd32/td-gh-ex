@@ -5,7 +5,7 @@
 
  if (have_comments()) : ?>
   <section id="comments">
-    <h3 class="title2"><?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'backyard'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
+    <h3 class="title2"><?php printf(_n(__('One Response','backyard'), __('%1$s Responses ','backyard'), get_comments_number(), 'backyard'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
 
     <ol class="commentlist">
       <?php wp_list_comments(array('walker' => new backyard_walker_comment)); ?>

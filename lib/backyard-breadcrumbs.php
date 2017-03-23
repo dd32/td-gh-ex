@@ -1,16 +1,14 @@
 <?php 
 function backyard_breadcrumbs(){
-	
 	if(get_theme_mod('enable_breadcrumb',true)){
-	
   /* === OPTIONS === */
-	$text['home']     = 'Home'; // text for the 'Home' link
-	$text['category'] = 'Archive by Category "%s"'; // text for a category page
-	$text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
-	$text['search']   = 'Search Results for "%s" Query'; // text for a search results page
-	$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
-	$text['author']   = 'Articles Posted by %s'; // text for an author page
-	$text['404']      = 'Error 404'; // text for the 404 page
+	$text['home']     = __('Home','backyard'); // text for the 'Home' link
+	$text['category'] = __('Archive by Category "%s"','backyard'); // text for a category page
+	$text['tax'] 	  = __('Archive for "%s"','backyard'); // text for a taxonomy page
+	$text['search']   = __('Search Results for "%s" Query','backyard'); // text for a search results page
+	$text['tag']      = __('Posts Tagged "%s"','backyard');// text for a tag page
+	$text['author']   = __('Articles Posted by %s','backyard'); // text for an author page
+	$text['404']      = __('Error 404','backyard'); // text for the 404 page
 	$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 	$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
 	$delimiter   = '<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>'; // delimiter between crumbs
@@ -22,15 +20,13 @@ function backyard_breadcrumbs(){
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';
-	$link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
+	$link = $linkBefore . '<a' . esc_url($linkAttr) . ' href="%1$s">%2$s</a>' . $linkAfter;
 
 	if (is_front_page()) {
 
 	}elseif( is_home() ){ $blog_page_id = get_option('page_for_posts'); echo '<div id="crumbs" xmlns:v="http://rdf.data-vocabulary.org/#">' . sprintf($link, $homeLink, $text['home']) . $delimiter." ".get_page($blog_page_id)->post_title;} else {
 
 		echo '<div id="crumbs" xmlns:v="http://rdf.data-vocabulary.org/#">' . sprintf($link, $homeLink, $text['home']) . $delimiter;
-
-		
 		if ( is_category() ) {
 			$thisCat = get_category(get_query_var('cat'), false);
 			if ($thisCat->parent != 0) {

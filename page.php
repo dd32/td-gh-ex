@@ -9,13 +9,14 @@
            <?php if(have_posts()): while(have_posts()): the_post(); ?>
           <main id="main" class="site-main wow fadeInUp">
            <?php
-	         get_template_part('template-parts/content', 'page'); ?>
+	         get_template_part('template-parts/content', 'page');
+			 if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+			  ?>
           </main>
           <?php endwhile; ?>
-          <?php wp_link_pages(array('before'=>'<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'backyard' ).'</span>', 'after'=> '</div>','link_before' => '<span>','link_after'  => '</span>',)); ?>
-          
-          <?php endif; ?>
-
+		  <?php endif; ?>
         </div>
        <?php get_sidebar(); ?>
       </div>

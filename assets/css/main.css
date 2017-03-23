@@ -400,7 +400,7 @@ ol.commentlist #respond h3 small{ float:right;line-height: 27px;}
 .commentlist li:last-child{ border:none; margin-bottom:0px; padding-bottom:0px;}
 .commentlist .avatar{width: 91px;height: 85px;float: left;margin: 7px 0 0 -110px;}
 .commentlist li .reply{ position:absolute; top:0px;right:0px; font-family:Times New Roman; font-style:italic;  }
-.commentlist cite,span.says{ color:#3c3c3c;  font-size:15px; font-style:normal; font-weight:600; }
+.commentlist cite,span.says{ color:#3c3c3c;  font-size:15px; font-style:normal; font-weight:600;text-transform: capitalize; }
 .commentlist .commentmetadata{ font-family:Times New Roman; font-size:13px;font-style: italic;}
 .commentlist p{ line-height:22px;margin: 0px;}
 .commentlist>li>ul.children{background-color:#f6f6f6;border-left:#e1a232 solid 2px; margin-top: 30px;margin-bottom: 30px;padding: 15px 20px 27px 20px;}
@@ -488,7 +488,7 @@ address a{ color:#838383;}
 .mosaic-col:hover img{filter: grayscale(100%);-webkit-filter: grayscale(100%);filter: gray;}
 .Image_Wrapper{ opacity:0;  }
 .header-main{background:#fff;position:relative;display:block;padding: 18px 0px;-moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -webkit-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}
-.fixed{ position:fixed;}
+.fixed{ position:fixed;top: 0px;}
 #header.fixed .header-main{padding: 10px 0px;}
 #header.fixed #logo a{font-size: 30px;line-height: 31px;}
 #header.fixed #logo a p{font-size: 11px;padding-left: 3px;}

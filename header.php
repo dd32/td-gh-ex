@@ -37,16 +37,15 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pull-left">
 <div class="main-logo">   <div id="logo">
            <a href="<?php echo esc_url(home_url('/')); ?>">
-           <?php if(get_header_image()): ?>
-           <img src="<?php echo esc_url(get_header_image()); ?>" class="img-responsive" alt="<?php bloginfo('name'); ?>"/>
-           <?php else: bloginfo( 'name' ); endif; ?>
+           <?php if(has_custom_logo()): the_custom_logo();
+           else: bloginfo( 'name' ); endif; ?>
            </a>
            </div></div><!--main-logo-->
            <!--logo--></div>
           <?php if(has_nav_menu('primary_navigation')) : ?>  
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-2 pull-right">
           <nav id="nav">
-    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '')); ?>
+    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '','depth'=> 0)); ?>
           </nav>
           <!--main-nav--> 
         </div>
