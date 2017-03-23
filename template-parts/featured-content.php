@@ -142,4 +142,68 @@ if ( $featured_content_type == 'pages' ) {
 		</div><!-- .container -->
 	</div><!-- .arouse-featured-content -->
 
+<?php } elseif ( $featured_content_type == 'sticky' ) {
+
+	$featured_posts = new WP_Query(
+		array(
+			'posts_per_page' => 3,
+			'post__in'  => get_option( 'sticky_posts' ),
+			'ignore_sticky_posts' => 1
+		)
+	);
+
+	?>
+
+	<div class="arouse-featured-content">
+		<div class="container">
+			<div class="row">
+				<?php 
+
+					if ( $featured_posts->have_posts() ) :
+					
+						while( $featured_posts->have_posts() ) : $featured_posts->the_post(); ?>
+					
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="<?php the_permalink(); ?>" rel="bookmark">
+							<div class="arouse-fpost-block">
+
+	                            <?php if ( has_post_thumbnail() ) { 
+
+	                                $thumb_id           = get_post_thumbnail_id();
+	                                $thumb_url_array    = wp_get_attachment_image_src( $thumb_id, 'arouse-featured' );
+	                                $featured_image_url = $thumb_url_array[0]; 
+
+	                                ?>
+	                                <div class="arouse-fpost-holder" style="background: url(<?php echo esc_url( $featured_image_url ); ?>);">
+	                            <?php } else { ?>
+	                                <div class="arouse-fpost-holder" style="background: url(<?php echo get_template_directory_uri() . '/images/featured-default.jpg' ?>);">
+	                            <?php } ?>	
+
+	                            		<div class="arouse-fpost-content">							
+
+										<?php if ( get_theme_mod( 'display_fpost_titles', true ) ) : ?>
+											<div class="overlay"></div>
+											<div class="arouse-fpost-title">
+												<h3><?php the_title(); ?></h3>
+											</div>
+										<?php endif; ?>
+
+										</div><!-- .arouse-fpost-content -->
+
+									</div><!-- .arouse-fpost-holder -->
+
+							</div><!-- .arouse-fpost-block -->
+							</a>
+						</div><!--.bootstrap cols -->
+
+					<?php
+						endwhile; 
+						wp_reset_postdata();
+
+					endif;
+				?>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .arouse-featured-content -->
+
 <?php }

@@ -24,9 +24,11 @@ function arouse_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	$display_slider = get_theme_mod( 'display_slider', true );
+	$display_slider = get_theme_mod( 'display_slider', false );
 	
 	if ( $display_slider == true && is_page_template( 'template-featured.php' )  && ! is_paged() ) { $classes[] = 'slider-active'; }
+	
+	if ( $display_slider == true && is_home() && ! is_paged() ) { $classes[] = 'slider-active'; }
 	
 	if ( $display_slider == true && is_page_template( 'template-slider.php' ) ) { $classes[] = 'slider-active'; }
 
@@ -98,6 +100,111 @@ function arouse_woocommerce_after_main_content() {
 
 }
 
+function arouse_get_featured_content_ids() {
+
+	$featured_content_type = get_theme_mod( 'featured_content_type', 'posts' );
+
+	if ( $featured_content_type == 'sticky' ) {
+
+		$featured_ids = get_posts( array(
+						'fields' 				=> 'ids',
+						'numberposts'			=> 3,
+						'suppress_filters'		=> false,
+						'post__in'  			=> get_option( 'sticky_posts' ),
+						'ignore_sticky_posts' 	=> 1
+					) );
+
+	} elseif ( $featured_content_type == 'posts' ) {
+
+		$category_id = get_theme_mod( 'fcontent_category', '' );
+
+		if ( $category_id ) {
+
+			$featured_ids = get_posts( array(
+								'fields' 			=> 'ids',
+								'numberposts'		=> 3,
+								'suppress_filters'	=> false,
+								'tax_query'			=> array(
+										array(
+											'field'		=> 'term_id',
+											'taxonomy'	=> 'category',
+											'terms'		=> $category_id,
+										),
+									),
+								)
+							);
+		} else {
+
+			// Get the latest post ids.
+			$featured_ids = get_posts( array(
+								'fields' 			=> 'ids',
+								'numberposts'		=> 3,
+								'suppress_filters'	=> false,
+								)
+							);
+
+		}		
+
+	} else {
+		$featured_ids = array();
+	}
+
+	return array_map( 'absint', $featured_ids );
+
+}
+
+/**
+ * Hides the first three featured posts from blog that are already displayed on featured content.
+ */
+function arouse_hide_featured_posts( $query ) {
+
+	// Stop if the featured post boxes are not displayed.
+	if( get_theme_mod( 'display_featured_section', false ) == false ) {
+		return;
+	}
+
+	$featured_content_type = get_theme_mod( 'featured_content_type', 'posts' );
+	
+	// Stop if featured content type is pages.
+	if( $featured_content_type == 'pages' ) {
+		return;
+	}
+
+	// Stop if the user does not want to exclude posts from the blog posts.
+	if( get_theme_mod( 'hide_fposts_onblog', false ) == false ) {
+		return;
+	}
+
+	// Bail if not home or not main query.
+	if ( ! $query->is_home() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	// Bail if the blog page is not the front page.
+	if ( 'posts' !== get_option( 'show_on_front' ) ) {
+		return;
+	}
+
+	$featured = arouse_get_featured_content_ids();
+
+	// Bail if no featured posts.
+	if ( ! $featured ) {
+		return;
+	}
+
+	// We need to respect post ids already in the blacklist.
+	$post__not_in = $query->get( 'post__not_in' );
+
+	if ( ! empty( $post__not_in ) ) {
+		$featured = array_merge( (array) $post__not_in, $featured );
+		$featured = array_unique( $featured );
+	}
+
+	$query->set( 'post__not_in', $featured );	
+
+}
+
+add_action( 'pre_get_posts', 'arouse_hide_featured_posts', 30 );
 
 /**
  * Hooks custom css into the head.
@@ -217,7 +324,7 @@ function arouse_custom_styles() {
 			.page-template-template-featured .arouse-post-list .cat-links a,
 			.page-template-template-featured .arouse-post-grid .cat-links a {
 				color: '. $category_link_color .';
-			}	
+			}
 		';
 	}
 

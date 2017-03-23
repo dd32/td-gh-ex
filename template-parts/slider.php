@@ -1,12 +1,6 @@
 <?php
 
-$category = get_theme_mod( 'slider_category', '' );
-
-$slider_posts = new WP_Query( array(
-        'posts_per_page' => 5,
-        'cat'	=>	$category
-    )
-); 
+$slider_posts = arouse_get_featured_posts();
 
 ?>
 
@@ -14,11 +8,10 @@ $slider_posts = new WP_Query( array(
     <section class="slider">
         <div class="flexslider">
             <ul class="slides">
-                <?php 
+                <?php
 
-                if ( $slider_posts->have_posts() ) :
-                
-                    while( $slider_posts->have_posts() ) : $slider_posts->the_post(); 
+                    foreach( (array) $slider_posts as $order => $post ) :
+                        setup_postdata( $post );
 
                 ?>
                     
@@ -57,10 +50,8 @@ $slider_posts = new WP_Query( array(
 
                 <?php 
 
-                    endwhile;
+                    endforeach;
                     wp_reset_postdata();
-                
-                endif;
 
                 ?>
             </ul>

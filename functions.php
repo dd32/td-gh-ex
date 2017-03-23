@@ -84,6 +84,12 @@ function arouse_setup() {
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
+	// Add support for featured content.
+	add_theme_support( 'arouse-featured-content', array(
+		'featured_content_filter' => 'arouse_get_featured_posts',
+		'max_posts' => 5,
+	) );	
+
 }
 endif;
 add_action( 'after_setup_theme', 'arouse_setup' );
@@ -290,3 +296,15 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/widgets/social-links-widget.php';
 require get_template_directory() . '/inc/widgets/category-posts-widget.php';
+
+function arouse_get_featured_posts() {
+	return apply_filters( 'arouse_get_featured_posts', array() );
+}
+
+function arouse_has_featured_posts() {
+	return ! is_paged() && (bool) arouse_get_featured_posts();
+}
+
+if ( ! class_exists( 'Arouse_Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
+	require get_template_directory() . '/inc/featured-content.php';
+}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.1.2\n"
-"POT-Creation-Date: 2017-03-14 11:33+0530\n"
-"PO-Revision-Date: 2017-03-14 11:33+0530\n"
+"Project-Id-Version: arouse.1.1.4\n"
+"POT-Creation-Date: 2017-03-23 10:27+0530\n"
+"PO-Revision-Date: 2017-03-23 10:27+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -66,36 +66,40 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:116
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:118
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:119
+#: functions.php:125
 msgid "Shop Page Sidebar"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:134
 msgid "Footer Left Sidebar"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:143
 msgid "Footer Mid Sidebar"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:152
 msgid "Footer Right Sidebar"
 msgstr ""
 
-#: functions.php:199 functions.php:205 functions.php:211
+#: functions.php:205 functions.php:211 functions.php:217
 msgid "on"
 msgstr ""
 
 #: header.php:27
 msgid "Skip to content"
+msgstr ""
+
+#: index.php:36 template-featured.php:33
+msgid "Latest Articles"
 msgstr ""
 
 #: search.php:21
@@ -111,8 +115,38 @@ msgstr ""
 msgid "Previous Article"
 msgstr ""
 
-#: template-featured.php:33
-msgid "Latest Articles"
+#: inc/featured-content.php:143
+msgid "Slider"
+msgstr ""
+
+#: inc/featured-content.php:144
+msgid ""
+"Use this section to setup the front page slider. Featured images of the "
+"posts of the selected category will be displayed as slider images."
+msgstr ""
+
+#: inc/featured-content.php:163
+msgid "Display slider?"
+msgstr ""
+
+#: inc/featured-content.php:180
+msgid "Select the category for slider."
+msgstr ""
+
+#: inc/featured-content.php:181
+msgid ""
+"Featured images of the posts from selected category will be displayed in the "
+"slider"
+msgstr ""
+
+#: inc/featured-content.php:202
+msgid "Display slider posts on blog?"
+msgstr ""
+
+#: inc/featured-content.php:203
+msgid ""
+"Leave the checkbox empty if you want to hide posts from blog that are "
+"already displayed in the slider"
 msgstr ""
 
 #: inc/template-tags.php:38
@@ -136,171 +170,160 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/customizer/customizer.php:28
-msgid "Slider"
-msgstr ""
-
 #: inc/customizer/customizer.php:29
-msgid ""
-"Use this section to setup the front page slider. Featured images of the "
-"posts of the selected category will be displayed as slider images."
+msgid "Featured Content Boxes"
 msgstr ""
 
-#: inc/customizer/customizer.php:47 inc/customizer/customizer.php:120
-msgid "Important"
-msgstr ""
-
-#: inc/customizer/customizer.php:48 inc/customizer/customizer.php:121
-msgid ""
-"You need to create a page that uses <b>\"Featured Front Page\"</b> template "
-"in order to activate slider and featured content. Read the documentation for "
-"more information."
-msgstr ""
-
-#: inc/customizer/customizer.php:68
-msgid "Display slider?"
-msgstr ""
-
-#: inc/customizer/customizer.php:85
-msgid "Select the category for slider."
-msgstr ""
-
-#: inc/customizer/customizer.php:86
-msgid ""
-"Featured images of the posts from selected category will be displayed in the "
-"slider"
-msgstr ""
-
-#: inc/customizer/customizer.php:101
-msgid "Featured Content"
-msgstr ""
-
-#: inc/customizer/customizer.php:102
+#: inc/customizer/customizer.php:30
 msgid ""
 "Use this section to setup the three featured content boxes that are just "
 "below the slider."
 msgstr ""
 
-#: inc/customizer/customizer.php:139
+#: inc/customizer/customizer.php:47
 msgid "Display featured content section?"
 msgstr ""
 
-#: inc/customizer/customizer.php:154
+#: inc/customizer/customizer.php:62
 msgid "Featured Content Type"
 msgstr ""
 
-#: inc/customizer/customizer.php:157
+#: inc/customizer/customizer.php:65
 msgid "Select the featured content type."
 msgstr ""
 
-#: inc/customizer/customizer.php:159
+#: inc/customizer/customizer.php:67
 msgid "Pages + Featured Images."
 msgstr ""
 
-#: inc/customizer/customizer.php:160
+#: inc/customizer/customizer.php:68
 msgid "Posts + Featured Images."
 msgstr ""
 
-#: inc/customizer/customizer.php:177
+#: inc/customizer/customizer.php:69
+msgid "Sticky Posts + Featured Images"
+msgstr ""
+
+#: inc/customizer/customizer.php:86
 msgid "Display page titles?"
 msgstr ""
 
-#: inc/customizer/customizer.php:195
+#: inc/customizer/customizer.php:104
 #, php-format
 msgid "Select page %d."
 msgstr ""
 
-#: inc/customizer/customizer.php:217
+#: inc/customizer/customizer.php:126
 msgid "Select the category for featured posts."
 msgstr ""
 
-#: inc/customizer/customizer.php:218
+#: inc/customizer/customizer.php:127
 msgid "You can leave this empty to display latest posts."
 msgstr ""
 
-#: inc/customizer/customizer.php:237
+#: inc/customizer/customizer.php:147
+msgid "Making Sticky Posts"
+msgstr ""
+
+#: inc/customizer/customizer.php:148
+msgid ""
+"You can mark a post as sticky by using the <b>Visibility</b> edit option "
+"that says “Stick to the front page” in the Post Settings."
+msgstr ""
+
+#: inc/customizer/customizer.php:166
+msgid "Hide featured content posts from blog?"
+msgstr ""
+
+#: inc/customizer/customizer.php:167
+msgid ""
+"Mark the checkbox if you want to hide the three posts that are already "
+"displayed on featured content."
+msgstr ""
+
+#: inc/customizer/customizer.php:184
 msgid "Display post titles?"
 msgstr ""
 
-#: inc/customizer/customizer.php:246
+#: inc/customizer/customizer.php:193
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:263
+#: inc/customizer/customizer.php:210
 msgid "Blog posts listing layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:266
+#: inc/customizer/customizer.php:213
 msgid "Select the main layout for blog posts listing."
 msgstr ""
 
-#: inc/customizer/customizer.php:268
+#: inc/customizer/customizer.php:215
 msgid "Grid Layout."
 msgstr ""
 
-#: inc/customizer/customizer.php:269
+#: inc/customizer/customizer.php:216
 msgid "List Layout."
 msgstr ""
 
-#: inc/customizer/customizer.php:289
+#: inc/customizer/customizer.php:236
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer/customizer.php:290
+#: inc/customizer/customizer.php:237
 msgid "Primary color applies to menu items, links, buttons, etc."
 msgstr ""
 
-#: inc/customizer/customizer.php:309
+#: inc/customizer/customizer.php:256
 msgid "Category Link Color"
 msgstr ""
 
-#: inc/customizer/customizer.php:310
+#: inc/customizer/customizer.php:257
 msgid "Pick a color for article category links."
 msgstr ""
 
-#: inc/customizer/customizer.php:329
+#: inc/customizer/customizer.php:276
 msgid "Display featured image on single post article?"
 msgstr ""
 
-#: inc/customizer/customizer.php:336
+#: inc/customizer/customizer.php:283
 msgid "Arouse Theme Info"
 msgstr ""
 
-#: inc/customizer/customizer.php:354
+#: inc/customizer/customizer.php:301
 msgid "Arouse Documentation"
 msgstr ""
 
-#: inc/customizer/customizer.php:355
+#: inc/customizer/customizer.php:302
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/arouse-wordpress-theme-"
 "documentation/\" target=\"_blank\">Read the documentation.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:373
+#: inc/customizer/customizer.php:320
 msgid "Arouse Demo"
 msgstr ""
 
-#: inc/customizer/customizer.php:374
+#: inc/customizer/customizer.php:321
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse/\" target="
 "\"_blank\">See the demo.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:392
+#: inc/customizer/customizer.php:339
 msgid "Arouse Pro Details"
 msgstr ""
 
-#: inc/customizer/customizer.php:393
+#: inc/customizer/customizer.php:340
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/themes/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Details.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:412
+#: inc/customizer/customizer.php:359
 msgid "Arouse Pro Demo"
 msgstr ""
 
-#: inc/customizer/customizer.php:413
+#: inc/customizer/customizer.php:360
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Demo.</a>"

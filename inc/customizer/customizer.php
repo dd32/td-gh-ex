@@ -20,114 +20,22 @@ function arouse_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     /**
-     * Slider Settings section.
-     */
-    $wp_customize->add_section( 
-    	'arouse_slider', 
-    	array(
-			'title' => __( 'Slider', 'arouse' ),
-			'description' => __( 'Use this section to setup the front page slider. Featured images of the posts of the selected category will be displayed as slider images.', 'arouse' ),
-			'priority' => 30,
-		) 
-	);
-
-	$wp_customize->add_setting( 
-		'slider_active_help', 
-		array(
-			'sanitize_callback'	=> 'arouse_sanitize_html'
-		) 
-	);
-
-	$wp_customize->add_control( 
-		new Arouse_Custom_Content( 
-			$wp_customize, 
-			'slider_active_help', 
-			array(
-				'section' 		=> 'arouse_slider',
-				'label' 		=> __( 'Important', 'arouse' ),
-				'content' 		=> __( 'You need to create a page that uses <b>"Featured Front Page"</b> template in order to activate slider and featured content. Read the documentation for more information.', 'arouse' ),
-				'active_callback'	=> 'arouse_is_other_template'
-			) 
-		) 
-	);	
-
-    // Display slider?
-    $wp_customize->add_setting(
-		'display_slider',
-		array(
-			'default'			=> true,
-			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control(
-		'display_slider',
-		array(
-			'settings'		=> 'display_slider',
-			'section'		=> 'arouse_slider',
-			'type'			=> 'checkbox',
-			'label'			=> __( 'Display slider?', 'arouse' )
-		)
-	);
-
-	$wp_customize->add_setting(
-		'slider_category',
-		array(
-			'default'			=> '',
-			'sanitize_callback'	=> 'arouse_sanitize_category_dropdown'
-		)
-	);
-
-	$wp_customize->add_control(
-		new Arouse_Customize_Category_Control( 
-			$wp_customize,
-			'slider_category', 
-			array(
-			    'label'   		=> __( 'Select the category for slider.', 'arouse' ),
-			    'description'	=> __( 'Featured images of the posts from selected category will be displayed in the slider', 'arouse' ),
-			    'section' 		=> 'arouse_slider',
-			    'settings'  	=> 'slider_category',
-			) 
-		) 
-	);
-
-
-    /**
      * Featured Content section.
      */
 
     $wp_customize->add_section( 
     	'arouse_featured_section', 
     	array(
-			'title' 		=> __( 'Featured Content', 'arouse' ),
+			'title' 		=> __( 'Featured Content Boxes', 'arouse' ),
 			'description' 	=> __( 'Use this section to setup the three featured content boxes that are just below the slider.', 'arouse' ),
 			'priority'		=> 31
-		) 
-	);	
-
-	$wp_customize->add_setting( 
-		'featured_section_active_help', 
-		array(
-			'sanitize_callback'	=> 'arouse_sanitize_html'
-		) 
-	);
-
-	$wp_customize->add_control( 
-		new Arouse_Custom_Content( 
-			$wp_customize, 
-			'featured_section_active_help', 
-			array(
-				'section' 		=> 'arouse_featured_section',
-				'label' 		=> __( 'Important', 'arouse' ),
-				'content' 		=> __( 'You need to create a page that uses <b>"Featured Front Page"</b> template in order to activate slider and featured content. Read the documentation for more information.', 'arouse' ),
-				'active_callback'	=> 'arouse_is_other_template'
-			) 
 		) 
 	);	
 
     $wp_customize->add_setting(
 		'display_featured_section',
 		array(
-			'default'			=> true,
+			'default'			=> false,
 			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
 		)
 	);
@@ -157,7 +65,8 @@ function arouse_customize_register( $wp_customize ) {
             'description'		=> __( 'Select the featured content type.', 'arouse' ),
             'choices'   => array (
                 'pages' 	=> __( 'Pages + Featured Images.', 'arouse' ),
-                'posts'  	=> __( 'Posts + Featured Images.', 'arouse' )
+                'posts'  	=> __( 'Posts + Featured Images.', 'arouse' ),
+                'sticky'	=> __( 'Sticky Posts + Featured Images', 'arouse' )
             )
         )
     );	
@@ -222,6 +131,44 @@ function arouse_customize_register( $wp_customize ) {
 		) 
 	);	
 
+	$wp_customize->add_setting( 
+	        'sticky_help', 
+	        array(
+	                'sanitize_callback'     => 'arouse_sanitize_html'
+	        ) 
+	);
+
+	$wp_customize->add_control( 
+	        new Arouse_Custom_Content( 
+	                $wp_customize, 
+	                'sticky_help', 
+	                array(
+	                        'section'               => 'arouse_featured_section',
+	                        'label'                 => __( 'Making Sticky Posts', 'arouse' ),
+	                        'content'               => __( 'You can mark a post as sticky by using the <b>Visibility</b> edit option that says “Stick to the front page” in the Post Settings.', 'arouse' ),
+	                        'active_callback'       => 'arouse_featured_content_choice_callback'
+	                ) 
+	        ) 
+	);
+
+    $wp_customize->add_setting(
+		'hide_fposts_onblog',
+		array(
+			'default'			=> false,
+			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control(
+		'hide_fposts_onblog',
+		array(
+			'section'			=> 'arouse_featured_section',
+			'type'				=> 'checkbox',
+			'label'				=> __( 'Hide featured content posts from blog?', 'arouse' ),
+			'description'		=> __( 'Mark the checkbox if you want to hide the three posts that are already displayed on featured content.', 'arouse' ),
+			'active_callback'	=> 'arouse_featured_content_choice_callback'
+		)
+	);	 
+
     $wp_customize->add_setting(
 		'display_fpost_titles',
 		array(
@@ -237,7 +184,7 @@ function arouse_customize_register( $wp_customize ) {
 			'label'				=> __( 'Display post titles?', 'arouse' ),
 			'active_callback'	=> 'arouse_featured_content_choice_callback'
 		)
-	);	
+	);
 
 	/* Theme Options */
     $wp_customize->add_section( 
@@ -560,23 +507,20 @@ function arouse_featured_content_choice_callback( $control ) {
     }
      
     if ( $control_id == 'display_page_titles'  && $radio_setting == 'pages' ) return true;
-    if ( $control_id == 'display_fpost_titles'  && $radio_setting == 'posts' ) return true;
+    if ( $control_id == 'display_fpost_titles'  && ( $radio_setting == 'posts' || $radio_setting == 'sticky' ) ) return true;
     if ( $control_id == 'fcontent_category' && $radio_setting == 'posts' ) return true;
+    if ( $control_id == 'sticky_help' && $radio_setting == 'sticky' ) return true;
+    if ( $control_id == 'hide_fposts_onblog' && ( $radio_setting == 'posts' || $radio_setting == 'sticky' ) && 'posts' === get_option( 'show_on_front' ) ) return true;
 
     return false;
     
 }
 
-function arouse_is_other_template() {
-    // Get the page's template
-    $template = get_post_meta( get_the_ID(), '_wp_page_template', true );
-    $is_template = preg_match( '%template-featured.php%', $template );
-
-    if ( $is_template == 0 ){
-        return true;
-    } else {
-        return false;
-    }
+function arouse_is_home_activated() {
+	if( get_option( 'show_on_front' ) === 'posts' ) {
+		return true;
+	}
+	return false;
 }
 
 /**
