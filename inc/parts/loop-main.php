@@ -3,7 +3,6 @@
   * loop-main.php
   * The main loop used primarily by index.php and search.php
   *
-  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
@@ -46,7 +45,7 @@
                         <span class="meta"><?php esc_html_e('Written by', 'best-reloaded' ); ?> <?php the_author_link(); ?></span>
                         <span class="meta"><?php esc_html_e('on', 'best-reloaded' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></span>
                         <span class="meta"><?php esc_html_e('in', 'best-reloaded' ); ?> <?php the_category( ' and ' ); ?></span>
-
+                        <span class="meta"><?php esc_html_e('with', 'best-reloaded' ); ?> <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a></span>
                     </footer>
                 </div>
             </div><!-- end .row -->

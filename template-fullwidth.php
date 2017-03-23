@@ -5,14 +5,13 @@
   * template-fullwidth.php
   * Page template used for full width pages
   *
-  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
 ?>
 
 <?php get_header(); ?>
-        <?php get_template_part( 'featured', 'bar' ); ?>
+        <?php get_template_part( 'inc/parts/featured', 'bar' ); ?>
 
         <div class="row">
             <div class="col-xs-12">

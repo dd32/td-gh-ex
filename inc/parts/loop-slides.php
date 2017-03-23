@@ -3,7 +3,6 @@
   * loop-slides.php
   * Loop used to generate the slider
   *
-  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
@@ -30,7 +29,7 @@ if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 $best_doNotGetDuplicates[] = get_the_ID();
 ?>
 
-<div class="carousel-item <?php if ($i==0) { echo esc_attr( 'active' ); $i++; } ?>">
+<div class="carousel-item <?php if ($i==0) { echo 'active'; $i++; } ?>">
 
     <?php
             // display image without being wrapped in anchor element - should link this

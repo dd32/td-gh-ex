@@ -3,7 +3,6 @@
   * header.php
   * Outputs the <head> section, opens any wrappers and displays the main site nav
   *
-  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
@@ -24,7 +23,7 @@
 
 			<div class="container">
 
-			  	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle navigation', 'best-reloaded' ); ?>">
 			    	<span class="navbar-toggler-icon"></span>
 			  	</button>
 

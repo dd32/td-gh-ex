@@ -3,7 +3,6 @@
   * related-posts.php
   * Displays related posts based on post tags for blog entries
   *
-  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
@@ -29,7 +28,7 @@
                 <div class="col-md-4">
                     <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="post-thumb">
                         <span>
-                            <?php get_template_part( 'featured', 'image' ); ?>
+                            <?php get_template_part( 'inc/parts/featured', 'image' ); ?>
                         </span>
                     </a>
                     <h4 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
@@ -53,7 +52,7 @@
                 <div class="col-md-4">
                     <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="post-thumb">
                         <span>
-                            <?php get_template_part( 'featured', 'image' ); ?>
+                            <?php get_template_part( 'inc/parts/featured', 'image' ); ?>
                         </span>
                     </a>
                     <h4 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
@@ -64,4 +63,3 @@
         endif;
         wp_reset_postdata();
     }
-	

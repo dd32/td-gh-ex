@@ -3,14 +3,14 @@
   * single.php
   * Displays content for a single blog post
   *
-  * @package WordPress
+  *
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
 ?>
 
 <?php get_header(); ?>
-        <?php get_template_part( 'featured', 'bar' ); ?>
+        <?php get_template_part( 'inc/parts/featured', 'bar' ); ?>
 
         <div class="row">
             <div class="col-md-8">
@@ -49,7 +49,7 @@
 
 						<?php if( is_active_sidebar('sidebar-9') || ( true == get_post_meta($post->ID, 'ofo', true) && true == get_post_meta($post->ID, 'ofo-text', true) ) ) { ?>
                             <div class="featured-bar featured-bar-post">
-            						<?php get_template_part( 'featured', 'post-open' ); ?>
+            						<?php get_template_part( 'inc/parts/featured', 'post-open' ); ?>
             				</div>
                         <?php } ?>
                         <?php the_content(); ?>

@@ -3,7 +3,6 @@
  * footer.php
  * Outputs the site footer and closes any remaining opened tags
  *
- * @package WordPress
  * @subpackage Best_Reloaded
  * @since Best Reloaded 0.1
  */
@@ -38,7 +37,7 @@
         <div class="footer-bottom">
             <div class="row">
                 <div class="col-sm-5">
-                    <p id="footer-site-title"><?php echo wp_kses_post( get_theme_mod( 'bestreloaded_footer_bottom_tagline', '&copy; 2017 '. get_bloginfo( 'name' ) ) ); ?></p>
+                    <p id="footer-site-title"><?php echo wp_kses_post( get_theme_mod( 'bestreloaded_footer_bottom_tagline', sprintf( __( '&copy; %1$s %2$s' ), date_i18n( __( 'Y', 'best-reloaded' ) ), get_bloginfo( 'name' ) ) ) ); ?></p>
                 </div>
                 <div class="col-sm-7">
                     <nav role="navigation">
