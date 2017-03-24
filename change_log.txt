@@ -26,9 +26,18 @@ i)  REQUIRED: Comment form missing in single page.
     REQUIRED: footer.php L33; esc_html() is not appropriate for escaping href value.
     REQUIRED: Custom section should not be displayed when Latest Posts or Posts Page. It should be displayed only in static front page. Please fix it.
     REQUIRED: readme.txt - I find only one image URL. Even in slides folder there are 3. Can you please check thoroughly? 
+
 Version 1.1.8
 i) Style changes
+
 Version 1.1.9
 i) fix console error
+
 Version 1.2
 i) URL Changed
+
+Version 1.2.1
+i) Description Changed
+ii) Author Name Changed
+iii) Footer Link Changed
+

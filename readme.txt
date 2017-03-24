@@ -4,9 +4,9 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2
+Version         :   1.2.1
 Tested up to    :   WP 6.0+
-Author          :   burhanuddinbohra
+Author          :   ThemeShopy
 Author URI      :   http://www.themeshopy.com/
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
@@ -58,7 +58,8 @@ Theme is Built using the following resource bundles.
 4. Screenshot Images
    -- https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
    -- https://pixabay.com/en/iphone-iphone-6s-smartphone-mobile-1936818/
-		
+
+	
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
 All the icons taken from genericons licensed under GPL License.
