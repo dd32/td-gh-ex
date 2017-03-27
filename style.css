@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: TopShop is the perfect theme for all users from the beginner to the developer. Being a quick and simple to setup responsive multipurpose WordPress theme, TopShop is very flexible and can be used for any website from a simple blog displaying your personal portfolio, to a corporate business website for your agency, online community, restaurant or real estate purposes, to selling products for your fully functional online eCommerce store. Simply turn TopShop into an online shop by installing the WooCommerce plugin and start selling online in no time at all. TopShop features a simple, clean, minimal and elegant style design which will work perfectly for almost any kind of store. TopShop integrates seamlessly with top popular free plugins such as WooCommerce, for an online eCommerce store, SiteOrigin's drag and drop Page Builder, along with our multiple page templates, for building any type of page layout needed, and lots more. Go on... Give it a try!
-Version: 1.3.04
+Version: 1.3.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -729,12 +729,14 @@ a:active {
 .woocommerce #container,
 .woocommerce-page #container,
 .content-area {
+	box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04) inset;
 	width: 75%;
 	float: left;
 	padding: 0 2% 0 0;
 }
 
 .widget-area {
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04);
 	width: 25%;
 	float: left;
 	padding: 15px 0 0 2%;
@@ -758,13 +760,11 @@ a:active {
 }
 
 .page-template-template-left-sidebar-php .content-area {
-	width: 75%;
 	float: left;
 	padding: 0 0 0 2%;
 }
 
 .page-template-template-left-sidebar-php .widget-area {
-	width: 25%;
 	float: left;
 	padding: 15px 2% 0 0;
 }
@@ -787,19 +787,19 @@ a:active {
 }
 
 .page-template-default .content-area {
-    box-shadow: -1px 0 0 #eaeaea inset;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04) inset;
 }
 
 .page-template-template-left-sidebar-php .content-area {
-    box-shadow: -1px 0 0 #eaeaea;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04);
 }
 
 .page-template-default .widget-area {
-    box-shadow: -1px 0 0 #eaeaea;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04);
 }
 
 .page-template-template-left-sidebar-php .widget-area {
-    box-shadow: -1px 0 0 #eaeaea inset;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04) inset;
 }
 
 .content-no-sidebar .content-area,
@@ -953,8 +953,12 @@ a:active {
 
 .woocommerce h1.page-title,
 .woocommerce-page h1.page-title {
-    margin: 0 0 9px;
+    margin: 0 0 15px;
     padding: 0;
+}
+
+header.entry-header .entry-title {
+	font-size: 32px;
 }
 
 /* -------- Breadcrumbs Styling -------- */
@@ -1172,7 +1176,7 @@ a:active {
 
 .site-footer-bottom-bar {
 	border-top: 1px solid rgba(0, 0, 0, 0.08);
-	padding: 10px 0 15px;
+	padding: 15px 0 15px;
 	font-size: 28px;
 }
 .site-footer-bottom-bar-left {
@@ -1798,12 +1802,12 @@ object {
         padding: 0 0 20px;
     }
     .page-template-template-left-sidebar-php .widget-area {
-        box-shadow: 0 1px 0 #eaeaea;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
         padding: 0 0 10px;
         margin: 0 0 30px;
     }
     .page-template-default .widget-area {
-        box-shadow: 0 -1px 0 #eaeaea;
+        box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04);
         padding: 30px 0 0;
         margin: 10px 0 0;
     }

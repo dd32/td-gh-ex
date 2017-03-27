@@ -6,18 +6,28 @@
  * @author		The Theme Foundry
  */
 
-if ( ! function_exists( 'customizer_library_get_all_fonts' ) ) :
+if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
 /**
- * Compile font options from different sources.
+ * Packages the font choices into value/label pairs for use with the customizer.
  *
  * @since  1.0.0.
  *
- * @return array    All available fonts.
+ * @return array    The fonts in value/label pairs.
  */
 function customizer_library_get_all_fonts() {
+	$heading1       = array( 1 => array( 'label' => sprintf( '--- %s ---', __( 'Standard Fonts', 'topshop' ) ) ) );
 	$standard_fonts = customizer_library_get_standard_fonts();
+	$heading2       = array( 2 => array( 'label' => sprintf( '--- %s ---', __( 'Google Fonts', 'topshop' ) ) ) );
 	$google_fonts   = customizer_library_get_google_fonts();
-	return apply_filters( 'customizer_library_all_fonts', array_merge( $standard_fonts, $google_fonts ) );
+
+	/**
+	 * Allow for developers to modify the full list of fonts.
+	 *
+	 * @since 1.3.0.
+	 *
+	 * @param array    $fonts    The list of all fonts.
+	 */
+	return apply_filters( 'customizer_library_all_fonts', array_merge( $heading1, $standard_fonts, $heading2, $google_fonts ) );
 }
 endif;
 
@@ -2538,6 +2548,40 @@ function customizer_library_get_google_fonts() {
 			),
 			'subsets' => array(
 				'latin',
+			),
+		),
+		'Fira Sans' => array(
+			'label'    => 'Fira Sans',
+			'variants' => array(
+				'300',
+				'300italic',
+				'400',
+				'400italic',
+				'500',
+				'500italic',
+				'700',
+				'700italic',
+			),
+			'subsets' => array(
+				'latin',
+				'greek',
+				'cyrillic',
+				'latin-ext',
+				'cyrillic-ext',
+			),
+		),
+		'Fira Mono' => array(
+			'label'    => 'Fira Mono',
+			'variants' => array(
+				'400',
+				'700',
+			),
+			'subsets' => array(
+				'latin',
+				'greek',
+				'cyrillic',
+				'latin-ext',
+				'cyrillic-ext',
 			),
 		),
 		'Fjalla One' => array(
@@ -5907,6 +5951,26 @@ function customizer_library_get_google_fonts() {
 				'latin-ext',
 			),
 		),
+		'Rubik One' => array(
+			'label'    => 'Rubik One',
+			'variants' => array(
+				'400',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+			),
+		),
+		'Rubik Mono One' => array(
+			'label'    => 'Rubik Mono One',
+			'variants' => array(
+				'400',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+			),
+		),
 		'Rufina' => array(
 			'label'    => 'Rufina',
 			'variants' => array(
@@ -6428,6 +6492,18 @@ function customizer_library_get_google_fonts() {
 			'subsets' => array(
 				'latin',
 				'vietnamese',
+				'latin-ext',
+			),
+		),
+		'Source Serif Pro' => array(
+			'label'    => 'Source Serif Pro',
+			'variants' => array(
+				'400',
+				'600',
+				'700',
+			),
+			'subsets' => array(
+				'latin',
 				'latin-ext',
 			),
 		),

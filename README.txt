@@ -71,6 +71,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.05
+* Styling tweaks
+* Neatened up Customizer Settings
+* Updated language .pot file
+Premium: Added a bunch of color settings - Customize -> Layout Colors
+Premium: Added settings to adjust Side Container & Sidebar widths
+Premium: Added and updated over 20 social icons + added custom social icon setting
+Premium: Added 2 new footer layouts + advanced custom footer layout
+Premium: Added the option to add custom links to the default slider posts
+
 #### 1.3.04
 * Added help for setting up Default Slider
 * Styling tweaks/fixes

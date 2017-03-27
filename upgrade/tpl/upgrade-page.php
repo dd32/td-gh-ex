@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$24</em>', 'topshop' ) ); ?>
+                    <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
                 </a>
             </div>
             
@@ -21,9 +21,8 @@
                         <?php printf( __( 'Purchase and Download TopShop Premium', 'topshop' ) ); ?>
                     </a>
                 </p>
-                <p><?php printf( __( 'Install and activate the <a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Easy Theme Upgrades Plugin</a>... That\'s all to do with the plugin', 'topshop' ) ); ?></p>
-                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the TopShop Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'topshop' ) ); ?></p>
-                <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'topshop' ) ); ?></p>
+                <p><?php printf( __( '<a href="https://kairaweb.com/documentation/delete-a-theme/" target="_blank">Delete the old free theme</a>... Then', 'topshop' ) ); ?></p>
+                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install TopShop Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'topshop' ) ); ?></p>
             </div>
             
             <div class="upgrade-changelog">
@@ -56,7 +55,7 @@
             <h3 class="upgrade-page-sub-title"><?php _e( 'Upgrade to Premium', 'topshop' ); ?></h3>
             <div class="upgrade-page-left-box">
                 <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "If you've enjoyed using our TopShop theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$24</strong>.<br /><br />With TopShop premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'topshop' ) ); ?>
+                    <?php printf( __( "If you've enjoyed using our TopShop theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$25</strong>.<br /><br />With TopShop premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'topshop' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
                     <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php _e( 'Upgrade to Premium', 'topshop' ); ?>" />

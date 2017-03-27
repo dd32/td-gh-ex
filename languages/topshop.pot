@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2017-01-23 13:54+0200\n"
+"POT-Creation-Date: 2017-03-27 18:24+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -58,133 +58,130 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:115
+#: customizer/customizer-library/extensions/fonts.php:18
+msgid "Standard Fonts"
+msgstr ""
+
+#: customizer/customizer-library/extensions/fonts.php:20
+msgid "Google Fonts"
+msgstr ""
+
+#: customizer/customizer-library/extensions/fonts.php:125
 msgid "All"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:116
+#: customizer/customizer-library/extensions/fonts.php:126
 msgid "Cyrillic"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:117
+#: customizer/customizer-library/extensions/fonts.php:127
 msgid "Cyrillic Extended"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:118
+#: customizer/customizer-library/extensions/fonts.php:128
 msgid "Devanagari"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:119
+#: customizer/customizer-library/extensions/fonts.php:129
 msgid "Greek"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:120
+#: customizer/customizer-library/extensions/fonts.php:130
 msgid "Greek Extended"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:121
+#: customizer/customizer-library/extensions/fonts.php:131
 msgid "Khmer"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:122
+#: customizer/customizer-library/extensions/fonts.php:132
 msgid "Latin"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:123
+#: customizer/customizer-library/extensions/fonts.php:133
 msgid "Latin Extended"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:124
+#: customizer/customizer-library/extensions/fonts.php:134
 msgid "Vietnamese"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:184
+#: customizer/customizer-library/extensions/fonts.php:194
 msgctxt "font style"
 msgid "Serif"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:188
+#: customizer/customizer-library/extensions/fonts.php:198
 msgctxt "font style"
 msgid "Sans Serif"
 msgstr ""
 
-#: customizer/customizer-library/extensions/fonts.php:192
+#: customizer/customizer-library/extensions/fonts.php:202
 msgctxt "font style"
 msgid "Monospaced"
 msgstr ""
 
-#: customizer/customizer-options.php:32
-msgid "Layout Options"
+#: customizer/customizer-options.php:34
+msgid "Layout Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:38
-msgid "Show Search"
-msgstr ""
-
-#: customizer/customizer-options.php:41
-msgid "Enable to a slogan for your site. This uses the site Tagline"
-msgstr ""
-
-#: customizer/customizer-options.php:46
-msgid "Sticky Header"
+#: customizer/customizer-options.php:42
+msgid "Header"
 msgstr ""
 
 #: customizer/customizer-options.php:49
-msgid "Select this box to make the main navigation sticky"
-msgstr ""
-
-#: customizer/customizer-options.php:54
 msgid "Show Top Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:57
-msgid ""
-"This will show/hide the top bar in the header<br /><br /><a href=\"https://"
-"kairaweb.com/documentation/topshop-hooks-developers/\" target=\"_blank"
-"\">TopShop Premium has hooks</a> integrated for developers to hook on to."
+#: customizer/customizer-options.php:56
+msgid "Show Search"
 msgstr ""
 
-#: customizer/customizer-options.php:62
+#: customizer/customizer-options.php:63
+msgid "Sticky Header"
+msgstr ""
+
+#: customizer/customizer-options.php:71
 msgid "Remove \"Sign In/Account\" link"
 msgstr ""
 
-#: customizer/customizer-options.php:69
+#: customizer/customizer-options.php:78
 msgid "Remove WooCommerce Cart"
 msgstr ""
 
-#: customizer/customizer-options.php:79
-msgid ""
-"<b>Premium Extra Features:</b><br />- Change the site layout to boxed or "
-"full width<br />- Select between 3 header layouts<br />- Remove Page "
-"Titles<br />- Change cart icon<br />- Change WooCommerce Shop/Archive/single "
-"pages to full width"
-msgstr ""
-
 #: customizer/customizer-options.php:88
-msgid "Slider Options"
+msgid ""
+"<b>Premium Extra Features:</b><br />- Set custom website width<br />- Set "
+"custom width of sidebar<br />- Change the site layout to boxed or full "
+"width<br />- Select between 3 header layouts<br />- Remove Page Titles<br /"
+">- Change cart icon"
 msgstr ""
 
-#: customizer/customizer-options.php:93
+#: customizer/customizer-options.php:97
+msgid "Home Page Slider"
+msgstr ""
+
+#: customizer/customizer-options.php:103
 msgid "Default Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:94
+#: customizer/customizer-options.php:104 functions.php:267
 msgid "Meta Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:95
+#: customizer/customizer-options.php:105
 msgid "None"
 msgstr ""
 
-#: customizer/customizer-options.php:99
+#: customizer/customizer-options.php:109
 msgid "Choose a Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:107
+#: customizer/customizer-options.php:117
 msgid "Slider Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:110
+#: customizer/customizer-options.php:120
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
 "\"13,17,19\" (no spaces and only comma's)<br /><br />Get the ID at <b>Posts -"
@@ -193,78 +190,36 @@ msgid ""
 "here</b></a>"
 msgstr ""
 
-#: customizer/customizer-options.php:114
+#: customizer/customizer-options.php:124
 msgid "Slider Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:117
+#: customizer/customizer-options.php:127
 msgid ""
 "For a more advanced slider we recommend <a href=\"https://getdpd.com/cart/"
 "hoplink/15318?referrer=9jtzbgs34v8k4c0gs\" target=\"_blank\">Meta Slider</"
 "a><br /><br />Enter the slider shortcode here"
 msgstr ""
 
-#: customizer/customizer-options.php:124
+#: customizer/customizer-options.php:134
 msgid ""
 "<b>Premium Extra Features:</b><br />- Link slide to single post<br />- "
-"Remove slider title/text<br />- Stop slider auto scroll"
+"Remove slider text<br />- Stop slider auto scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:134
-msgid "Styling Options"
+#: customizer/customizer-options.php:142
+msgid "Blog"
 msgstr ""
 
-#: customizer/customizer-options.php:140
-msgid "Main Color"
-msgstr ""
-
-#: customizer/customizer-options.php:147
-msgid "Secondary Color"
-msgstr ""
-
-#: customizer/customizer-options.php:155
-msgid "Body Font"
-msgstr ""
-
-#: customizer/customizer-options.php:163
-msgid "Body Font Color"
-msgstr ""
-
-#: customizer/customizer-options.php:170
-msgid "Headings Font"
-msgstr ""
-
-#: customizer/customizer-options.php:178
-msgid "Heading Font Color"
-msgstr ""
-
-#: customizer/customizer-options.php:186
-msgid "Custom CSS"
-msgstr ""
-
-#: customizer/customizer-options.php:190
-msgid "Add custom CSS to your theme"
-msgstr ""
-
-#: customizer/customizer-options.php:197
-msgid ""
-"<b>Premium Extra Features:</b><br />- Change navigation background color<br /"
-">- Change footer background color"
-msgstr ""
-
-#: customizer/customizer-options.php:206
-msgid "Blog Options"
-msgstr ""
-
-#: customizer/customizer-options.php:212
+#: customizer/customizer-options.php:149
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:219
+#: customizer/customizer-options.php:156
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:222
+#: customizer/customizer-options.php:159
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -273,90 +228,149 @@ msgid ""
 "at <b>Posts -> Categories</b>."
 msgstr ""
 
-#: customizer/customizer-options.php:225
+#: customizer/customizer-options.php:162
 msgid "Post Images Carousel"
 msgstr ""
 
-#: customizer/customizer-options.php:226
+#: customizer/customizer-options.php:163
 msgid "Use only the featured image"
 msgstr ""
 
-#: customizer/customizer-options.php:230
+#: customizer/customizer-options.php:167
 msgid "Blog List Image"
 msgstr ""
 
-#: customizer/customizer-options.php:241
+#: customizer/customizer-options.php:178
 msgid ""
 "<b>Premium Extra Features:</b><br />- Select between blog side or top "
-"layout<br />- Change Blog List/Archive/Single pages to full width"
+"layout<br />- Change Blog List/Archive/Single pages to full width<br />- "
+"Change WooCommerce Shop/Archive/single pages to full width"
 msgstr ""
 
-#: customizer/customizer-options.php:250
-msgid "Social Links"
+#: customizer/customizer-options.php:186
+msgid "Footer"
 msgstr ""
 
-#: customizer/customizer-options.php:258
+#: customizer/customizer-options.php:195
 msgid ""
-"<b>Premium Extra Features:</b><br />- Add over 16 different social links to "
-"your site"
+"<b>Premium Extra Features:</b><br />- Premium offers 3 different footer "
+"layouts<br />- Advanced Custom Footer layout to specify columns and column "
+"widths"
+msgstr ""
+
+#: customizer/customizer-options.php:205
+msgid "Style Settings"
+msgstr ""
+
+#: customizer/customizer-options.php:212
+msgid "Body Font"
+msgstr ""
+
+#: customizer/customizer-options.php:220
+msgid "Body Font Color"
+msgstr ""
+
+#: customizer/customizer-options.php:227
+msgid "Headings Font"
+msgstr ""
+
+#: customizer/customizer-options.php:235
+msgid "Heading Font Color"
+msgstr ""
+
+#: customizer/customizer-options.php:243
+msgid "Custom CSS"
+msgstr ""
+
+#: customizer/customizer-options.php:246
+msgid "Add custom CSS to your theme"
+msgstr ""
+
+#: customizer/customizer-options.php:254
+msgid "Colors"
+msgstr ""
+
+#: customizer/customizer-options.php:260
+msgid "Main Color"
 msgstr ""
 
 #: customizer/customizer-options.php:267
-msgid "Website Text"
-msgstr ""
-
-#: customizer/customizer-options.php:273
-msgid "Header Info Text"
-msgstr ""
-
-#: customizer/customizer-options.php:276
-msgid "Call Us: 082 444 BOOM"
+msgid "Secondary Color"
 msgstr ""
 
 #: customizer/customizer-options.php:277
+msgid ""
+"<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color "
+"settings to change colors for the Header, Top Bar, Navigation & Footer"
+msgstr ""
+
+#: customizer/customizer-options.php:286
+msgid "Social Links"
+msgstr ""
+
+#: customizer/customizer-options.php:294
+msgid ""
+"<b>Premium Extra Features:</b><br />Premium offers over 20 different social "
+"icons to add to your site, as well as the setting to add any custom icon you "
+"may need."
+msgstr ""
+
+#: customizer/customizer-options.php:303
+msgid "Website Text"
+msgstr ""
+
+#: customizer/customizer-options.php:309
+msgid "Header Info Text"
+msgstr ""
+
+#: customizer/customizer-options.php:312
+msgid "Call Us: 082 444 BOOM"
+msgstr ""
+
+#: customizer/customizer-options.php:313
 msgid "This is the text in the header"
 msgstr ""
 
-#: customizer/customizer-options.php:281
+#: customizer/customizer-options.php:317
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:284
+#: customizer/customizer-options.php:320
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: customizer/customizer-options.php:285
+#: customizer/customizer-options.php:321
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:289
+#: customizer/customizer-options.php:325
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:292
+#: customizer/customizer-options.php:328
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
 
-#: customizer/customizer-options.php:293
+#: customizer/customizer-options.php:329
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:297
+#: customizer/customizer-options.php:333
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:300
+#: customizer/customizer-options.php:336
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:301
+#: customizer/customizer-options.php:337
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
-#: customizer/customizer-options.php:308
+#: customizer/customizer-options.php:344
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change the site attribution text to "
 "your own"
@@ -382,11 +396,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:70
 msgid "Top Bar Menu"
 msgstr ""
 
@@ -394,20 +408,32 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:118
 msgid "TopShop Footer"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:120
 msgid "The footer will divide into however many widgets are put here."
 msgstr ""
 
-#: functions.php:181
-msgid "Upgrade to TopShop Premium"
+#: functions.php:242
+msgid "Page Builder"
 msgstr ""
 
-#: functions.php:182
-msgid "Upgrade now while TopShop is offered at only $24"
+#: functions.php:247
+msgid "WooCommerce"
+msgstr ""
+
+#: functions.php:252
+msgid "Widgets Bundle"
+msgstr ""
+
+#: functions.php:257
+msgid "Contact Form 7"
+msgstr ""
+
+#: functions.php:262
+msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: includes/inc/class-tgm-plugin-activation.php:327
@@ -950,7 +976,16 @@ msgid_plural "(%d)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: search.php:22
+#: includes/topshop-pro/class-customize.php:76
+msgid "Topshop"
+msgstr ""
+
+#: includes/topshop-pro/class-customize.php:77 upgrade/tpl/upgrade-page.php:55
+#: upgrade/tpl/upgrade-page.php:61
+msgid "Upgrade to Premium"
+msgstr ""
+
+#: search.php:22 templates/titlebar.php:17
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1005,16 +1040,12 @@ msgstr ""
 msgid "Install WooCommerce to start building your online store"
 msgstr ""
 
-#: templates/titlebar.php:7
-msgid "Blog"
-msgstr ""
-
 #: upgrade/tpl/upgrade-page.php:4 upgrade/upgrade.php:13
 msgid "About TopShop"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<span>TopShop Premium </span><em>$24</em>"
+msgid "<span>TopShop Premium </span><em>$25</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:18
@@ -1027,91 +1058,82 @@ msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:24
 msgid ""
-"Install and activate the <a href=\"https://kairaweb.com/support/install-the-"
-"premium-theme/\" target=\"_blank\">Easy Theme Upgrades Plugin</a>... That's "
-"all to do with the plugin"
+"<a href=\"https://kairaweb.com/documentation/delete-a-theme/\" target="
+"\"_blank\">Delete the old free theme</a>... Then"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:25
 msgid ""
 "Upload and <a href=\"https://kairaweb.com/documentation/install-theme-zip-"
-"file/\" target=\"_blank\">install the TopShop Premium zip</a> as normal at:"
+"file/\" target=\"_blank\">install TopShop Premium zip</a> as normal at:"
 "<b>Appearance -> Themes -> Add New -> Upload Theme</b>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:26
-msgid "You can then delete the Easy Theme Upgrades plugin"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:30
+#: upgrade/tpl/upgrade-page.php:29
 msgid "Latest features added to TopShop Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:32
+#: upgrade/tpl/upgrade-page.php:31
 msgid "New leader layout"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:33
+#: upgrade/tpl/upgrade-page.php:32
 msgid "New setting to make blog archive pages full width"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:34
+#: upgrade/tpl/upgrade-page.php:33
 msgid "New setting to make blog single pages full width"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:35
+#: upgrade/tpl/upgrade-page.php:34
 msgid "WooCommerce shop full width settings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:36
+#: upgrade/tpl/upgrade-page.php:35
 msgid "Added new Social Links"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:42
+#: upgrade/tpl/upgrade-page.php:41
 msgid "<em>Support</em><span>TopShop Documentation </span>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:47
+#: upgrade/tpl/upgrade-page.php:46
 msgid ""
 "We support all our themes, offering one on one email support to help you "
 "build the website you want"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:48
+#: upgrade/tpl/upgrade-page.php:47
 msgid ""
 "While we do support our both free and premium themes... <strong>Premium "
 "themes get prioritized support</strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:56 upgrade/tpl/upgrade-page.php:62
-msgid "Upgrade to Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:59
+#: upgrade/tpl/upgrade-page.php:58
 msgid ""
 "If you've enjoyed using our TopShop theme to build your website, then you "
 "should love the premium version which comes with a bunch of extra features "
-"for a low cost of <strong>$24</strong>.<br /><br />With TopShop premium we "
+"for a low cost of <strong>$25</strong>.<br /><br />With TopShop premium we "
 "offer continued updates and you'll get prioritized support to help you build "
 "the website you want."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:67 upgrade/tpl/upgrade-page.php:73
+#: upgrade/tpl/upgrade-page.php:66 upgrade/tpl/upgrade-page.php:72
 msgid "Continued Updates"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:70
+#: upgrade/tpl/upgrade-page.php:69
 msgid ""
 "Once you upgrade to TopShop Premium, you'll then support and move over to "
 "our premium updates system which will ensure TopShop works with all future "
 "versions of WordPress that are released."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:78 upgrade/tpl/upgrade-page.php:84
+#: upgrade/tpl/upgrade-page.php:77 upgrade/tpl/upgrade-page.php:83
 msgid "Get Premium Support"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:81
+#: upgrade/tpl/upgrade-page.php:80
 msgid ""
 "Upgrading to TopShop Premium will also give you prioritized support, "
 "ensuring we get to your queries first.<br /><br />We have a growing <a "
@@ -1120,52 +1142,52 @@ msgid ""
 "target='_blank'>email support</a> to sort out any queries you may have."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:95
+#: upgrade/tpl/upgrade-page.php:94
 msgid ""
 "We aim to keep our prices low, all our themes are under <strong>$30</"
 "strong>, while still offering you great WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:97
+#: upgrade/tpl/upgrade-page.php:96
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:99
+#: upgrade/tpl/upgrade-page.php:98
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:103
+#: upgrade/tpl/upgrade-page.php:102
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:114
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:118
+#: upgrade/tpl/upgrade-page.php:117
 msgid "Very user-friendly theme with etopshoplent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:124
+#: upgrade/tpl/upgrade-page.php:123
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:127
+#: upgrade/tpl/upgrade-page.php:126
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:133
+#: upgrade/tpl/upgrade-page.php:132
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:136
+#: upgrade/tpl/upgrade-page.php:135
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "

@@ -19,26 +19,43 @@ function customizer_library_topshop_options() {
 
 	// Stores all the sections to be added
 	$sections = array();
+    
+    // Stores all the panels to be added
+    $panels = array();
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
     
     
-    // Layout Settings
-    $section = 'topshop-layout';
-
-    $sections[] = array(
-        'id' => $section,
-        'title' => __( 'Layout Options', 'topshop' ),
+    $panel = 'topshop-panel-layout';
+    
+    $panels[] = array(
+        'id' => $panel,
+        'title' => __( 'Layout Settings', 'topshop' ),
         'priority' => '30'
     );
     
+    $section = 'topshop-panel-layout-section-header';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Header', 'topshop' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+    
+    $options['topshop-show-header-top-bar'] = array(
+        'id' => 'topshop-show-header-top-bar',
+        'label'   => __( 'Show Top Bar', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['topshop-header-search'] = array(
         'id' => 'topshop-header-search',
         'label'   => __( 'Show Search', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable to a slogan for your site. This uses the site Tagline', 'topshop' ),
         'default' => 0,
     );
     $options['topshop-sticky-header'] = array(
@@ -46,17 +63,9 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Sticky Header', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Select this box to make the main navigation sticky', 'topshop' ),
         'default' => 0,
     );
-    $options['topshop-show-header-top-bar'] = array(
-        'id' => 'topshop-show-header-top-bar',
-        'label'   => __( 'Show Top Bar', 'topshop' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="https://kairaweb.com/documentation/topshop-hooks-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
-        'default' => 0,
-    );
+    
     $options['topshop-header-remove-acc'] = array(
         'id' => 'topshop-header-remove-acc',
         'label'   => __( 'Remove "Sign In/Account" link', 'topshop' ),
@@ -76,17 +85,18 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-upsell-layout',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change cart icon<br />- Change WooCommerce Shop/Archive/single pages to full width', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Set custom website width<br />- Set custom width of sidebar<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change cart icon', 'topshop' )
     );
     
     
-    // Blog Settings
-    $section = 'topshop-slider';
+    // Slider Settings
+    $section = 'topshop-panel-layout-section-slider';
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Slider Options', 'topshop' ),
-        'priority' => '35'
+        'title' => __( 'Home Page Slider', 'topshop' ),
+        'priority' => '20',
+        'panel' => $panel
     );
     
     $choices = array(
@@ -121,9 +131,70 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-upsell-slider',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider auto scroll', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
     );
+    
+    // Slider Settings
+    $section = 'topshop-panel-layout-section-blog';
 
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Blog', 'topshop' ),
+        'priority' => '30',
+        'panel' => $panel
+    );
+    
+    $options['topshop-blog-title'] = array(
+        'id' => 'topshop-blog-title',
+        'label'   => __( 'Blog Page Title', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => 'Blog'
+    );
+    $options['topshop-blog-cats'] = array(
+        'id' => 'topshop-blog-cats',
+        'label'   => __( 'Exclude Blog Categories', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+        'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'topshop' )
+    );
+    $choices = array(
+        'blog-use-images-loop' => __( 'Post Images Carousel', 'topshop' ),
+        'blog-use-featured-image' => __( 'Use only the featured image', 'topshop' )
+    );
+    $options['topshop-blog-list-image-type'] = array(
+        'id' => 'topshop-blog-list-image-type',
+        'label'   => __( 'Blog List Image', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'blog-use-featured-image'
+    );
+    
+    $options['topshop-upsell-blog'] = array(
+        'id' => 'topshop-upsell-blog',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layout<br />- Change Blog List/Archive/Single pages to full width<br />- Change WooCommerce Shop/Archive/single pages to full width', 'topshop' )
+    );
+    
+    // Slider Settings
+    $section = 'topshop-panel-layout-section-footer';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Footer', 'topshop' ),
+        'priority' => '40',
+        'panel' => $panel
+    );
+    
+    $options['topshop-upsell-footer'] = array(
+        'id' => 'topshop-upsell-footer',
+        'section' => $section,
+        'type'    => 'upsell',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers 3 different footer layouts<br />- Advanced Custom Footer layout to specify columns and column widths', 'topshop' )
+    );
+    
 
 	// Colors
 	$section = 'topshop-styling';
@@ -131,24 +202,10 @@ function customizer_library_topshop_options() {
 
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Styling Options', 'topshop' ),
-		'priority' => '38'
+		'title' => __( 'Style Settings', 'topshop' ),
+		'priority' => '40'
 	);
 
-	$options['topshop-main-color'] = array(
-		'id' => 'topshop-main-color',
-		'label'   => __( 'Main Color', 'topshop' ),
-		'section' => $section,
-		'type'    => 'color',
-		'default' => $primary_color,
-	);
-	$options['topshop-main-color-hover'] = array(
-		'id' => 'topshop-main-color-hover',
-		'label'   => __( 'Secondary Color', 'topshop' ),
-		'section' => $section,
-		'type'    => 'color',
-		'default' => $secondary_color,
-	);
     
     $options['topshop-body-font'] = array(
         'id' => 'topshop-body-font',
@@ -186,59 +243,38 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Custom CSS', 'topshop' ),
         'section' => $section,
         'type'    => 'textarea',
-        'default' => __( '', 'topshop'),
         'description' => __( 'Add custom CSS to your theme', 'topshop' )
     );
     
-    $options['topshop-upsell-styling'] = array(
-        'id' => 'topshop-upsell-styling',
-        'section' => $section,
-        'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change navigation background color<br />- Change footer background color', 'topshop' )
-    );
-    
-    
-    // Blog Settings
-    $section = 'topshop-blog';
+    // Colors
+    $section = 'colors';
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Blog Options', 'topshop' ),
+        'title' => __( 'Colors', 'topshop' ),
         'priority' => '50'
     );
     
-    $options['topshop-blog-title'] = array(
-        'id' => 'topshop-blog-title',
-        'label'   => __( 'Blog Page Title', 'topshop' ),
+    $options['topshop-main-color'] = array(
+        'id' => 'topshop-main-color',
+        'label'   => __( 'Main Color', 'topshop' ),
         'section' => $section,
-        'type'    => 'text',
-        'default' => 'Blog'
+        'type'    => 'color',
+        'default' => $primary_color,
     );
-    $options['topshop-blog-cats'] = array(
-        'id' => 'topshop-blog-cats',
-        'label'   => __( 'Exclude Blog Categories', 'topshop' ),
+    $options['topshop-main-color-hover'] = array(
+        'id' => 'topshop-main-color-hover',
+        'label'   => __( 'Secondary Color', 'topshop' ),
         'section' => $section,
-        'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'topshop' )
-    );
-    $choices = array(
-        'blog-use-images-loop' => __( 'Post Images Carousel', 'topshop' ),
-        'blog-use-featured-image' => __( 'Use only the featured image', 'topshop' )
-    );
-    $options['topshop-blog-list-image-type'] = array(
-        'id' => 'topshop-blog-list-image-type',
-        'label'   => __( 'Blog List Image', 'topshop' ),
-        'section' => $section,
-        'type'    => 'select',
-        'choices' => $choices,
-        'default' => 'blog-use-featured-image'
+        'type'    => 'color',
+        'default' => $secondary_color,
     );
     
-    $options['topshop-upsell-blog'] = array(
-        'id' => 'topshop-upsell-blog',
+    $options['topshop-upsell-colors'] = array(
+        'id' => 'topshop-upsell-colors',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layout<br />- Change Blog List/Archive/Single pages to full width', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
     );
     
     
@@ -248,14 +284,14 @@ function customizer_library_topshop_options() {
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Social Links', 'topshop' ),
-        'priority' => '80'
+        'priority' => '50'
     );
     
     $options['topshop-upsell-social'] = array(
         'id' => 'topshop-upsell-social',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Add over 16 different social links to your site', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers over 20 different social icons to add to your site, as well as the setting to add any custom icon you may need.', 'topshop' )
     );
     
     
@@ -311,6 +347,9 @@ function customizer_library_topshop_options() {
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
+    
+    // Adds the panels to the $options array
+    $options['panels'] = $panels;
 
 	$customizer_library = Customizer_Library::Instance();
 	$customizer_library->add_options( $options );

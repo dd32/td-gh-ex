@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.04' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.05' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -23,6 +23,8 @@ require get_template_directory() . '/customizer/mods.php';
 
 // Load TGM plugin class
 require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
+// Add customizer Upgrade class
+require_once( get_template_directory() . '/includes/topshop-pro/class-customize.php' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -78,7 +80,6 @@ function topshop_theme_setup() {
 	
 	// The custom header is used for the logo
 	add_theme_support( 'custom-header', array(
-        'default-image' => '',
 		'width'         => 280,
 		'height'        => 91,
 		'flex-width'    => true,
@@ -89,7 +90,6 @@ function topshop_theme_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'topshop_custom_background_args', array(
 		'default-color' => 'ffffff',
-		'default-image' => '',
 	) ) );
     
     add_theme_support( 'title-tag' );
@@ -108,7 +108,6 @@ function topshop_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'topshop' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -130,7 +129,7 @@ function topshop_theme_scripts() {
     wp_enqueue_style( 'topshop-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-google-heading-font-default', '//fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,400,300', array(), TOPSHOP_THEME_VERSION );
     
-	wp_enqueue_style( 'topshop-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
+	wp_enqueue_style( 'topshop-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
 	wp_enqueue_style( 'topshop-style', get_stylesheet_uri(), array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-woocommerce-style', get_template_directory_uri().'/templates/css/topshop-woocommerce-style.css', array(), TOPSHOP_THEME_VERSION );
 	
@@ -139,10 +138,9 @@ function topshop_theme_scripts() {
 	wp_enqueue_script( 'topshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), TOPSHOP_THEME_VERSION, true );
 	wp_enqueue_script( 'topshop-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	
-	if ( get_theme_mod( 'topshop-sticky-header', false ) ) {
+	if ( get_theme_mod( 'topshop-sticky-header' ) ) {
 		wp_enqueue_script( 'topshop-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	    wp_enqueue_script( 'topshop-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
-        
         wp_enqueue_script( 'topshop-waypoints-custom', get_template_directory_uri() . '/js/waypoints-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	}
 	
@@ -176,12 +174,6 @@ add_action('wp_head', 'topshop_print_styles', 11);
  */
 function topshop_load_customizer_script() {
 	wp_enqueue_script( 'topshop-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
-	$topshop_upgrade_button = array(
-		'link' => admin_url( 'themes.php?page=theme_info' ),
-		'text' => __( 'Upgrade to TopShop Premium', 'topshop' ),
-		'sub_text' => __( 'Upgrade now while TopShop is offered at only $24', 'topshop' )
-	);
-	wp_localize_script( 'topshop-customizer-js', 'upgrade_button', $topshop_upgrade_button );
     wp_enqueue_style( 'topshop-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_script' );
@@ -247,37 +239,32 @@ function topshop_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
 		array(
-			'name'      => 'Easy Theme Upgrade (For upgrading to TopShop Premium / Delete after upgrade)',
-			'slug'      => 'easy-theme-and-plugin-upgrades',
-			'required'  => false,
-		),
-		array(
-			'name'      => 'Page Builder',
+			'name'      => __( 'Page Builder', 'topshop' ),
 			'slug'      => 'siteorigin-panels',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'WooCommerce',
+			'name'      => __( 'WooCommerce', 'topshop' ),
 			'slug'      => 'woocommerce',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'Widgets Bundle',
+			'name'      => __( 'Widgets Bundle', 'topshop' ),
 			'slug'      => 'siteorigin-panels',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'Contact Form 7',
+			'name'      => __( 'Contact Form 7', 'topshop' ),
 			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'Breadcrumb NavXT',
+			'name'      => __( 'Breadcrumb NavXT', 'topshop' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'Meta Slider',
+			'name'      => __( 'Meta Slider', 'topshop' ),
 			'slug'      => 'ml-slider',
 			'required'  => false,
 		)
@@ -285,7 +272,6 @@ function topshop_register_required_plugins() {
 	$config = array(
 		'id'           => 'topshop',
 		'menu'         => 'tgmpa-install-plugins',
-		'message'      => '',
 	);
 
 	tgmpa( $plugins, $config );

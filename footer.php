@@ -9,7 +9,7 @@
 ?>
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer <?php echo ( get_theme_mod( 'topshop-footer-switch-bottombar' ) ) ? sanitize_html_class( 'site-footer-bottom-bar-switch' ) : ''; ?>" role="contentinfo">
 	
     <div class="site-footer-widgets">
         <div class="site-container">
