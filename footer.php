@@ -15,7 +15,7 @@
                 if (!empty($advent_options['footertext'])) {
                     echo esc_attr($advent_options['footertext']) . '. ';
                 }
-                printf(__('Powered by %1$s', 'advent'),'<a href="http://fruitthemes.com/wordpress-themes/advent" target="_blank">Advent WordPress Theme</a>'); ?></p>
+                printf(__('Powered by %1$s', 'advent'),'<a href="https://fasterthemes.com/wordpress-themes/advent" target="_blank">Advent WordPress Theme</a>'); ?></p>
         </div>
     </div>
 </footer>

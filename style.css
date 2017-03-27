@@ -1,13 +1,13 @@
 /*
 Theme Name: Advent
-Theme URI: http://fruitthemes.com/wordpress-themes/advent
-Author: FruitThemes
-Author URI: http://fruitthemes.com/
+Theme URI: https://fasterthemes.com/wordpress-themes/advent/
+Author URI: https://fasterthemes.com/
+Author: Fasterthemes
 Description: Advent is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Advent Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
-Version: 1.0.7
+Version: 1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Advent WordPress Theme, Copyright 2017 fruitthemes.com
+Advent WordPress Theme, Copyright 2017 fasterthemes.com
 Advent is distributed under the terms of the GNU GPL
 Tags: left-sidebar, right-sidebar, custom-background, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
 Text Domain: advent
@@ -1819,5 +1819,4 @@ textarea:focus{
         min-width: 133px;        
     }
 }
-
 /* end media.css */

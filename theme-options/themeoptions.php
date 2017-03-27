@@ -88,7 +88,7 @@ function advent_framework_page() {
                 <div class="logo">
     <?php
     $advent_image = get_template_directory_uri() . '/theme-options/images/dashboard-logo.png';
-    echo "<a href='http://fruitthemes.com/' target='_blank'><img src='" . $advent_image . "' alt='" . __('FruitThemes', 'advent') . "' /></a>"; ?>
+    echo "<a href='https://fasterthemes.com/' target='_blank'><img src='" . $advent_image . "' alt='" . __('Fasterthemes', 'advent') . "' /></a>"; ?>
                 </div>
                 <div class="header-right">
     <?php
@@ -434,7 +434,7 @@ echo esc_attr($advent_options['pinterest']);
 				<div id="options-group-4" class="group theme-option-inner-tabs advent-pro-image">  
 					<div class="advent-pro-header">
 					  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/advent_logopro_features.png" class="advent-pro-logo" />
-					  <a href="http://fruitthemes.com/wordpress-themes/advent" target="_blank">
+					  <a href="https://fasterthemes.com/wordpress-themes/advent/" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/advent-buy-now.png" class="advent-pro-buynow" /></a>
 					  </div>
 					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/advent_pro_features.png" />
