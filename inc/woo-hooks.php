@@ -7,32 +7,15 @@
  */
 
 
-/**
- *
- * @return string
- */
-if ( ! function_exists( 'basic_woo_custom_cart_button_text' ) ) :
-	function basic_woo_custom_cart_button_text() {
 
-		return __( 'Add to Cart', 'basic' );
+function basic_woo_custom_cart_button_text() {
 
-	}
-endif;
+	return __( 'Add to Cart', 'basic' );
+
+}
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'basic_woo_custom_cart_button_text' );
 add_filter( 'woocommerce_product_add_to_cart_text', 'basic_woo_custom_cart_button_text' );
 
 
-/**
- *
- * @param $cols
- *
- * @return int
- */
-if ( ! function_exists( 'basic_woo_custom_cols' ) ) :
-	function basic_woo_custom_cols( $cols ) {
 
-		return 12;
-
-	}
-endif;
-add_filter( 'loop_shop_per_page', 'basic_woo_custom_cols', 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );

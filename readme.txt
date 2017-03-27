@@ -1,8 +1,8 @@
 === Basic ===
 Contributors: wppuzzle, avovkdesign
-Requires at least: WordPress 5.0
-Tested up to: WordPress 5.5
-Version: 1.3.12
+Requires at least: WordPress 4.2
+Tested up to: WordPress 4.7.3
+Version: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.liqpay.com/checkout/wppuzzle
@@ -27,85 +27,6 @@ Basic is simple responsive WordPress theme. It has custom color option, customiz
 
 
 == Changelog ==
-
-= 1.3.12 =
-* added missing style.css tags
-* added `wp_body_open();`
-* added 'esc_html' for custom home h1 title
-
-
-= 1.3.11 =
-* tested up PHP 7.3
-* tested up to WordPress 5.5
-* added: filter hooks:
-	* `basic_main_wrap_class`
-* added: action hooks:
-	* `basic_main_wrap_inner_begin`
-	* `basic_main_wrap_inner_end`
-	* `basic_main_archive_inner_begin`
-	* `basic_main_archive_inner_end`
-	* `basic_main_archive_after_before_loop`
-
-
-= 1.3.10 =
-* tested up to WordPress 5.0 Beta 5
-* added: option for customize layout for WooCommerce product page and product archive
-* added: custom H1 text and position for blog home page
-* fixed: H1 in header disabled for static front page
-
-= 1.3.9 =
-* tested up to WordPress 5.0 Beta 3
-* changed: ok.ru share button URL
-* fixed: show custom share button by default
-
-= 1.3.8 =
-* tested up to WordPress 4.9.7
-* fixed: class name mistake `wrapper clearfix`
-* added: 404.php template
-* added actions:
- * `basic_main_content_404_inner_begin`
- * `basic_main_content_404_inner_end`
- * `basic_before_page_404_article`
- * `basic_after_page_404_article`
- * `basic_before_page_404_content_box`
- * `basic_after_page_404_content_box`
-
-
-= 1.3.7 =
-* tested up to WordPress 4.9.6
-* added: new customizer option `header_image_position` with 6 ways to display header image
-* added: action hooks:
-	* `basic_header_top_wrap_begin`
-	* `basic_header_top_wrap_end`
-* added: css mobile menu (box-shadow)
-* added: toggle mobile submenus
-* added: Privacy Policy link in footer
-* added: acceptance checkbox to save user data in cookies when commenting
-* fixed: adaptive header image
-* fixed: adaptive site title font size
-* fixed: css `line-height` units
-* deleted: customizer option `header_image_repeat`
-
-= 1.3.6 =
-* fixed bug with h1 unclosed tag
-
-= 1.3.5 =
-* tested up to WordPress 4.9.1
-* fixed: add homepage link for logo for 2,3,... pages
-
-= 1.3.4 =
-* tested up to WordPress 4.9
-* fix: error preview option "Hide share buttons on static pages"
-* fix: showing marker with comments list
-* fix: hierarchy visibility in mobile menu
-* add: responsive video container
-* delete: removed CSS class 'hentry' for posts
-
-= 1.3.3 =
-* tested up to WordPress 4.8
-* fix: notice `undefined index in inc\html-blocks.php on line 128`
-* add: filter for copyrights `basic_footer_copyrights_enabled`
-* fix: `li:before` changed by `list-style-image` and svg image
 
 = 1.3.2 =
 * fix: lang prefix

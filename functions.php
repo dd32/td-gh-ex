@@ -27,7 +27,6 @@ if ( ! function_exists( 'basic_setup' ) ) :
 			'width'       => 1080,
 			'height'      => 190,
 			'flex-height' => true,
-			'flex-width' => true,
 		) );
 
 		register_nav_menus( array(
@@ -69,7 +68,7 @@ if ( ! function_exists( 'basic_enqueue_style_and_script' ) ) :
 		wp_enqueue_script( 'basic-scripts', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), true, true );
 
 		if ( is_singular() ) {
-			$socbtns = basic_get_theme_option( 'social_share', 'custom' );
+			$socbtns = basic_get_theme_option( 'social_share' );
 
 			if ( 'yandex' == $socbtns ) {
 				wp_enqueue_script( 'basic-yandexshare', '//yastatic.net/share2/share.js', array(), true, true );

@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 	<main id="content">
-    <?php do_action( 'basic_main_archive_inner_begin' ); ?>
 
 <?php if (have_posts()) :
 
@@ -31,8 +30,6 @@
  	<?php endif; ?>
 	</header>
 
-	<?php do_action( 'basic_main_archive_after_before_loop' ); ?>
-
 	<?php while (have_posts()) : the_post(); 
 
 		get_template_part( 'content' ); 
@@ -55,7 +52,6 @@ else: ?>
 		
 <?php endif; ?>
 
-    <?php do_action( 'basic_main_archive_inner_end' ); ?>
 	</main> <!-- #content -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

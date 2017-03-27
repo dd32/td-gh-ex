@@ -2,47 +2,59 @@ jQuery(document).ready(function ($) {
 
 // toTop button 
 	$(window).scroll(function () {
-		if ( $(this).scrollTop() !== 0 ) $('#toTop').fadeIn();
-		else $('#toTop').fadeOut();
+		if ($(this).scrollTop() != 0) $('#toTop').fadeIn();
+		else    $('#toTop').fadeOut();
 	});
 	$('#toTop').click(function () {
 		$('body,html').animate({scrollTop: 0}, 500);
 	});
 
 
-// responsive menu
-	var $window = $(window),
-		$nav = $('.topnav nav'),
-		$button = $('#mobile-menu');
+// responsive menu 
+// 	var nav = $('.topnav nav'),
+// 		pull = $('#mobile-menu');
+//
+// 	if ( window.innerWidth < 1024) {
+// 	// if ( $(document).width() < 1024) {
+// 		nav.hide();
+// 		pull.removeClass('mm-active');
+// 	}
+// 	pull.click(function() {
+// 		if ( nav.is(':visible') ) {
+// 			nav.hide();
+// 			pull.removeClass('mm-active');
+// 		} else {
+// 			nav.show();
+// 			pull.addClass('mm-active');
+// 		}
+// 		return false;
+// 	});
+// 	$(window).resize(function(){
+// 		if ( window.innerWidth >= 1024 ) {
+// 			pull.hide();
+// 			nav.show();
+// 		} else {
+// 			pull.show().removeClass('mm-active');
+// 			nav.hide();
+// 		}
+// 	});
 
-	$button.on('click', function () {
-		$nav.slideToggle();
-	});
+	// responsive menu
+	// $(function () {
+		var $window = $(window),
+			$nav = $('.topnav nav'),
+			$button = $('#mobile-menu');
 
-	$window.on('resize', function () {
-		if ($window.width() >= 1024) {
-			$nav.show();
-		}
-	});
+		$button.on('click', function () {
+			$nav.slideToggle();
+		});
 
-// mobile sub-menus
-	var $sub_menus = $nav.find('.sub-menu');
-	$nav.find('.open-submenu').on( 'click', function () {
-		$(this).parent().toggleClass('submenu-opened');
-		$(this).siblings('.sub-menu').toggleClass('closed');
-	});
-	set_sub_menu_classes( $window.width() );
-	$window.on('resize', function () {
-		set_sub_menu_classes( $window.width() );
-	});
-	function set_sub_menu_classes( w ){
-		if ( w < 1024 ) {
-			$sub_menus.addClass('closed');
-		} else {
-			$sub_menus.removeClass('closed');
-			$nav.find('.submenu-opened').removeClass('submenu-opened');
-		}
-	}
+		$window.on('resize', function () {
+			if ($window.width() >= 1024) {
+				$nav.show();
+			}
+		});
+	// });
 
 
 // social buttons
