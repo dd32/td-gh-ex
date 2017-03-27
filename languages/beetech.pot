@@ -1,0 +1,857 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2017-03-24 12:01+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-03-24 12:01+0000\n"
+"Last-Translator: admin <psychoknowledge@hotmail.com>\n"
+"Language-Team: English (United States)\n"
+"Language: en-US\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: 404.php:16
+msgid "400"
+msgstr ""
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:22
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#. 1: number of comments, 2: post title
+#: comments.php:37
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:53 comments.php:74
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:56 comments.php:77
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:57 comments.php:78
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:91
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:24
+#, php-format
+msgid "beetech by %1$s."
+msgstr ""
+
+#: footer.php:24
+msgid "BeeThemes"
+msgstr ""
+
+#: functions.php:68
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:69
+msgid "Top Header Menu"
+msgstr ""
+
+#: functions.php:110 inc/customizer/customizer-option.php:1497 
+#: inc/customizer/customizer-option.php:1544 
+#: inc/customizer/customizer-option.php:1591
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:112
+msgid ""
+"Added widgets are display at Right Sidebar section in every "
+"posts/pages/archive."
+msgstr ""
+
+#: functions.php:125 inc/customizer/customizer-option.php:1493 
+#: inc/customizer/customizer-option.php:1540 
+#: inc/customizer/customizer-option.php:1587
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:127
+msgid ""
+"Added widgets are display at Left Sidebar section in every "
+"posts/pages/archive."
+msgstr ""
+
+#: inc/beetech-breadcrumbs.php:11 inc/beetech-functions.php:454
+msgid "Home"
+msgstr ""
+
+#: inc/beetech-breadcrumbs.php:14 inc/beetech-functions.php:457
+#, php-format
+msgid "Search Results for \"%s\" Query"
+msgstr ""
+
+#: inc/beetech-breadcrumbs.php:119 inc/beetech-functions.php:561
+msgid "Page"
+msgstr ""
+
+#: inc/beetech-functions.php:46
+msgid "Main"
+msgstr ""
+
+#: inc/beetech-functions.php:47
+msgid "Top Section"
+msgstr ""
+
+#: inc/beetech-functions.php:50
+msgid "Services"
+msgstr ""
+
+#: inc/beetech-functions.php:51
+msgid "Our Services"
+msgstr ""
+
+#: inc/beetech-functions.php:54
+msgid "About"
+msgstr ""
+
+#: inc/beetech-functions.php:55
+msgid "About Us"
+msgstr ""
+
+#: inc/beetech-functions.php:60
+msgid "Client Says"
+msgstr ""
+
+#: inc/beetech-functions.php:64
+msgid "Fact Us"
+msgstr ""
+
+#: inc/beetech-functions.php:67 inc/beetech-functions.php:68 
+#: inc/customizer/customizer-option.php:1042
+msgid "Portfolio"
+msgstr ""
+
+#: inc/beetech-functions.php:72 inc/customizer/customizer-option.php:487
+msgid "Our Team"
+msgstr ""
+
+#: inc/beetech-functions.php:75
+msgid "Blog"
+msgstr ""
+
+#: inc/beetech-functions.php:76 inc/customizer/customizer-option.php:1133
+msgid "Our Blog"
+msgstr ""
+
+#: inc/beetech-functions.php:80 inc/customizer/customizer-option.php:1225
+msgid "Our Clients"
+msgstr ""
+
+#: inc/beetech-functions.php:83
+msgid "Contact"
+msgstr ""
+
+#: inc/beetech-functions.php:84 inc/customizer/customizer-option.php:1348
+msgid "Contact Us"
+msgstr ""
+
+#: inc/beetech-functions.php:224
+msgid "Learn More"
+msgstr ""
+
+#: inc/beetech-functions.php:272
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#. $id
+#: inc/metabox.php:14
+msgid "Post Options"
+msgstr ""
+
+#. $id
+#: inc/metabox.php:22
+msgid "Page Options"
+msgstr ""
+
+#: inc/metabox.php:35
+msgid "Default Sidebar"
+msgstr ""
+
+#: inc/metabox.php:41
+msgid "Left sidebar"
+msgstr ""
+
+#: inc/metabox.php:47
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/metabox.php:53
+msgid "No sidebar Full width"
+msgstr ""
+
+#: inc/metabox.php:59
+msgid "No sidebar Content Centered"
+msgstr ""
+
+#: inc/metabox.php:74
+msgid "Sidebars"
+msgstr ""
+
+#: inc/metabox.php:81
+msgid ""
+"Select Sidebar layout for page. If you want to set default sidebar got "
+"Customizer->Design Setting"
+msgstr ""
+
+#: inc/template-tags.php:29 inc/template-tags.php:74 inc/template-tags.php:120
+msgid "post date"
+msgstr ""
+
+#: inc/template-tags.php:34 inc/template-tags.php:79 inc/template-tags.php:125
+msgid "post author"
+msgstr ""
+
+#. %s: post title
+#. %s: post title
+#. %s: post title
+#: inc/template-tags.php:43 inc/template-tags.php:88 inc/template-tags.php:134
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:153
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:155
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:162
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: template-parts/content-archive.php:26 template-parts/content-search.php:21 
+#: template-parts/content.php:26
+msgid "Read More"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content-single.php:32
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content-single.php:37
+msgid "Pages:"
+msgstr ""
+
+#. Name of the template
+msgid "Home Page"
+msgstr ""
+
+#: inc/customizer/beetech-customizer-classes.php:86
+msgid "&mdash; Select Category &mdash;"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:38 
+#: inc/customizer/customizer-option.php:64 
+#: inc/customizer/customizer-option.php:89 
+#: inc/customizer/customizer-option.php:170 
+#: inc/customizer/customizer-option.php:279 
+#: inc/customizer/customizer-option.php:335 
+#: inc/customizer/customizer-option.php:476 
+#: inc/customizer/customizer-option.php:587 
+#: inc/customizer/customizer-option.php:781 
+#: inc/customizer/customizer-option.php:854 
+#: inc/customizer/customizer-option.php:1031 
+#: inc/customizer/customizer-option.php:1122 
+#: inc/customizer/customizer-option.php:1214 
+#: inc/customizer/customizer-option.php:1324
+msgid "Show"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:39 
+#: inc/customizer/customizer-option.php:65 
+#: inc/customizer/customizer-option.php:90 
+#: inc/customizer/customizer-option.php:171 
+#: inc/customizer/customizer-option.php:280 
+#: inc/customizer/customizer-option.php:336 
+#: inc/customizer/customizer-option.php:477 
+#: inc/customizer/customizer-option.php:588 
+#: inc/customizer/customizer-option.php:782 
+#: inc/customizer/customizer-option.php:855 
+#: inc/customizer/customizer-option.php:1032 
+#: inc/customizer/customizer-option.php:1123 
+#: inc/customizer/customizer-option.php:1215 
+#: inc/customizer/customizer-option.php:1325
+msgid "Hide"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:55 
+#: inc/customizer/customizer-option.php:194
+msgid "Enable"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:56 
+#: inc/customizer/customizer-option.php:195
+msgid "Disable"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:72 
+#: inc/customizer/customizer-option.php:122
+msgid "Parallax"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:73 
+#: inc/customizer/beetech-sanitize.php:89 
+#: inc/customizer/customizer-option.php:123
+msgid "Default"
+msgstr ""
+
+#: inc/customizer/beetech-sanitize.php:90
+msgid "Float Menu"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:18
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:24
+msgid "Single Page Banner Image"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:34
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:41
+msgid "Top Header Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:60
+msgid "Top Header Option"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:61
+msgid "Show/hide option for Top Header Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:85
+msgid "Social Icons Option"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:86
+msgid "Show/hide option for Top Header Social Icon Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:100
+msgid "Menu Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:118
+msgid "Primary Menu Type"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:119
+msgid "Enable Parallax Menu."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:166
+msgid "Search Icon"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:167
+msgid "Show/hide search icons on primary menu section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:190
+msgid "Header Sticky"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:191
+msgid "Enable/disable option for header sticky."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:205
+msgid "Social Icons"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:212
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:213
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:214
+msgid "Linkedin"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:215
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:216
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:217
+msgid "Youtube"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:248
+msgid "HomePage Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:257
+msgid "Slider Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:275
+msgid "Slider Option"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:276
+msgid "Show/hide option for homepage Slider Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:300
+msgid "Slider Category"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:301
+msgid "Select cateogry for Homepage Slider Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:312
+msgid "Service Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:331 
+#: inc/customizer/customizer-option.php:472 
+#: inc/customizer/customizer-option.php:583 
+#: inc/customizer/customizer-option.php:777 
+#: inc/customizer/customizer-option.php:850 
+#: inc/customizer/customizer-option.php:1027 
+#: inc/customizer/customizer-option.php:1118 
+#: inc/customizer/customizer-option.php:1210 
+#: inc/customizer/customizer-option.php:1320
+msgid "Section Option"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:332
+msgid "Show/hide option for Homepage Service Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:346
+msgid "Service"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:355 
+#: inc/customizer/customizer-option.php:496 
+#: inc/customizer/customizer-option.php:607 
+#: inc/customizer/customizer-option.php:801 
+#: inc/customizer/customizer-option.php:874 
+#: inc/customizer/customizer-option.php:1051 
+#: inc/customizer/customizer-option.php:1142 
+#: inc/customizer/customizer-option.php:1234 
+#: inc/customizer/customizer-option.php:1357
+msgid "Section Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:364 
+#: template-parts/sections/section-services.php:14
+msgid "Who We Are"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:373 
+#: inc/customizer/customizer-option.php:515 
+#: inc/customizer/customizer-option.php:625 
+#: inc/customizer/customizer-option.php:892 
+#: inc/customizer/customizer-option.php:1069 
+#: inc/customizer/customizer-option.php:1160 
+#: inc/customizer/customizer-option.php:1252
+msgid "Section Description"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:398
+#, php-format
+msgid "%s Service"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:418
+msgid "Service Icon"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:419 
+#: inc/customizer/customizer-option.php:724 
+#: inc/customizer/customizer-option.php:958
+msgid "Choose the icon from lists."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:439
+msgid "Service Page"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:440
+msgid "Select page for Homepage Service Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:453
+msgid "Our Team Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:473
+msgid "Show/hide option for Homepage Our Team Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:533 
+#: inc/customizer/customizer-option.php:819 
+#: inc/customizer/customizer-option.php:1087 
+#: inc/customizer/customizer-option.php:1270
+msgid "Section Category"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:534
+msgid "Select cateogry for Homepage Our Team Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:544
+msgid "View All"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:553
+msgid "View All Button"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:564
+msgid "Our About Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:584
+msgid "Show/hide option for Homepage Our About Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:598
+msgid "About Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:644 
+#: inc/customizer/customizer-option.php:910 
+#: inc/customizer/customizer-option.php:1291
+msgid "Section Background Image"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:669
+#, php-format
+msgid "%s About"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:687
+msgid "About Tab Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:688
+msgid "Please Input Tab Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:704
+msgid "About Tab Sub Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:705
+msgid "Please Input Tab Sub Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:723
+msgid "About Icon"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:743
+msgid "About Page"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:744
+msgid "Select page for Homepage About Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:758
+msgid "Testimonials Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:778
+msgid "Show/hide option for Homepage Testimonials Section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:792
+msgid "Clients Say"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:820
+msgid "Select cateogry for Homepage Testimonials Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:831
+msgid "Our Facts Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:851
+msgid "Show/hide option for Homepage Our Facts."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:865
+msgid "Fact About Us"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:937
+#, php-format
+msgid "%s Fact Counter"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:957
+msgid "Fact Icon"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:977
+msgid "Fact Title"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:995
+msgid "Fact Number"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1008
+msgid "PortFolio Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1028
+msgid "Show/hide option for Homepage Portfolio section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1088
+msgid "Select cateogry for Homepage Portfolio Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1099
+msgid "Blog Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1119
+msgid "Show/hide option for Homepage Latest Blog section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1151
+msgid "Latest News"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1178
+msgid "Blog Category"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1179
+msgid "Select cateogry for Homepage Blog Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1191
+msgid "Our Clients Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1211
+msgid "Show/hide option for Homepage Our Clients section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1271
+msgid "Select cateogry for Homepage Our Clients Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1301
+msgid "Contact Us Section"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1321
+msgid "Show/hide option for Homepage Contact Us section."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1338
+msgid "Map Page"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1369
+msgid "Contact Form Page"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1370
+msgid "Use contact form 7 shortcode."
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1388
+msgid "Call Us"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1397
+msgid "Alaxender Avenue, Harrow, Middlesex, UK"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1406
+msgid "Address"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1419
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1427
+msgid "Bottom Footer Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1436
+msgid "2016 beetech"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1445
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1462
+msgid "Design Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1471
+msgid "Archive Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1488
+msgid "Archive Sidebars"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1489 
+#: inc/customizer/customizer-option.php:1536 
+#: inc/customizer/customizer-option.php:1583
+msgid "Choose sidebar from available layouts"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1501 
+#: inc/customizer/customizer-option.php:1548 
+#: inc/customizer/customizer-option.php:1595
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1505 
+#: inc/customizer/customizer-option.php:1552 
+#: inc/customizer/customizer-option.php:1599
+msgid "No Sidebar Center"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1518
+msgid "Page Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1535
+msgid "Page Sidebars"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1565
+msgid "Post Settings"
+msgstr ""
+
+#: inc/customizer/customizer-option.php:1582
+msgid "Post Sidebars"
+msgstr ""
+
+#: template-parts/sections/section-about.php:121 
+#: template-parts/sections/section-about.php:149 
+#: template-parts/sections/section-about.php:177 
+#: template-parts/sections/section-about.php:205
+msgid "Learn more"
+msgstr ""
+
+#: template-parts/sections/section-blog.php:54
+msgid "Read more"
+msgstr ""
+
+#: template-parts/sections/section-blog.php:59
+msgid " comment"
+msgstr ""
+
+#: template-parts/sections/section-contact.php:55
+msgid "Call US: "
+msgstr ""
+
+#: template-parts/sections/section-contact.php:56
+msgid "Visit US: "
+msgstr ""
+
+#: template-parts/sections/section-services.php:13
+msgid "service"
+msgstr ""
+
+#. Name of the theme
+msgid "beetech"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Beetheme is a responsive free WordPress theme for Construction and business "
+"website. All our options use the WordPress Customizer so you can see every "
+"change you make live. The theme is also clean, and SEO optimized and we "
+"promise to make best website."
+msgstr ""
+
+#. URI of the theme
+msgid "http://buzthemes.com/demo/beetech/"
+msgstr ""
+
+#. Author of the theme
+msgid "Buzthemes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://buzthemes.com"
+msgstr ""
