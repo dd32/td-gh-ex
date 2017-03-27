@@ -1,35 +1,33 @@
 <!-- bhumi Callout Section -->
 <?php $cpm_theme_options = bhumi_get_options(); ?>
 <!-- Footer Widget Secton -->
-<div class="bhumi_footer_widget_area">
-	<div class="container">
-		<div class="row">
-			<?php
-			if ( is_active_sidebar( 'footer-widget-area' ) ){
-				dynamic_sidebar( 'footer-widget-area' );
-			} else
-			{
-				$args = array(
-				'before_widget' => '<div class="col-md-3 col-sm-6 bhumi_footer_widget_column">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<div class="bhumi_footer_widget_title">',
-				'after_title'   => '<div class="bhumi-footer-separator"></div></div>' );
-				the_widget('WP_Widget_Pages', null, $args);
-			} ?>
+<?php if ($cpm_theme_options['enable_pre_footer'] == 1 ) :?>
+	<div class="bhumi_footer_widget_area">
+		<div class="container">
+			<div class="row">
+				<?php
+						if ( is_active_sidebar( 'footer-widget-area' ) ){
+							dynamic_sidebar( 'footer-widget-area' );
+						} else
+						{
+							$args = array(
+							'before_widget' => '<div class="col-md-3 col-sm-6 bhumi_footer_widget_column">',
+							'after_widget'  => '</div>',
+							'before_title'  => '<div class="bhumi_footer_widget_title">',
+							'after_title'   => '<div class="bhumi-footer-separator"></div></div>' );
+							the_widget('WP_Widget_Pages', null, $args);
+						}
+				?>
+			</div>
 		</div>
 	</div>
-</div>
+<?php endif; ?>
 <div class="bhumi_footer_area">
 		<div class="container">
 			<div class="col-md-12">
 			<p class="bhumi_footer_copyright_info cpm_rtl" >
-			<?php if($cpm_theme_options['footer_customizations']) {
-					echo esc_html($cpm_theme_options['footer_customizations']);
-				}
-			if($cpm_theme_options['developed_by_text']) {
-				 echo "|" .esc_html($cpm_theme_options['developed_by_text']);
-			 } ?>
-			<a target="_blank" rel="nofollow" href="<?php if($cpm_theme_options['developed_by_link']) { echo esc_url($cpm_theme_options['developed_by_link']); } ?>"><?php if($cpm_theme_options['developed_by_bhumi_text']) { echo esc_html($cpm_theme_options['developed_by_bhumi_text']); } ?></a></p>
+			<?php esc_html_e('Theme Developed By ', 'bhumi'); ?>
+			<a target="_blank" rel="nofollow" href="<?php echo esc_url('https://codethemes.co');?>"><?php echo esc_html__('Code Themes', 'bhumi');?></a></p>
 			<?php if($cpm_theme_options['footer_section_social_media_enbled'] == '1') { ?>
 					<div class="bhumi_footer_social_div">
 						<ul class="social">

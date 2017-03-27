@@ -5,6 +5,15 @@ function bhumi_customizer( $wp_customize ) {
 	wp_enqueue_style('customizer', BHUMI_TEMPLATE_DIR_URI .'/assets/css/customizer.css');
 		$cpm_theme_options = bhumi_get_options();
 
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+            'selector' => '.logo a',
+            'render_callback' => 'bhumi_customize_partial_blogname',
+        ) );
+        $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+            'selector' => '.site-description',
+            'render_callback' => 'bhumi_customize_partial_blogdescription',
+        ) );
+
 		if(!function_exists('bhumi_get_categories_select')):
 			function bhumi_get_categories_select() {
 				$bhumi_cat = get_categories();
@@ -682,67 +691,22 @@ function bhumi_customizer( $wp_customize ) {
 	'capability'=>'edit_theme_options',
     'priority' => 35
 	));
-	$wp_customize->add_setting(
-	'bhumi_options[footer_customizations]',
-		array(
-		'default'=>esc_html($cpm_theme_options['footer_customizations']),
-		'type'=>'option',
-		'sanitize_callback'=>'bhumi_sanitize_text',
-		'capability'=>'edit_theme_options'
-		)
-	);
-	$wp_customize->add_control( 'footer_customizations', array(
-		'label'        => __( 'Footer Customization Text', 'bhumi' ),
-		'type'=>'text',
-		'section'    => 'footer_section',
-		'settings'   => 'bhumi_options[footer_customizations]'
-	) );
 
 	$wp_customize->add_setting(
-	'bhumi_options[developed_by_text]',
-		array(
-		'default'=>esc_html($cpm_theme_options['developed_by_text']),
-		'type'=>'option',
-		'sanitize_callback'=>'bhumi_sanitize_text',
-		'capability'=>'edit_theme_options'
-		)
-	);
-	$wp_customize->add_control( 'developed_by_text', array(
-		'label'        => __( 'Developed By Text', 'bhumi' ),
-		'type'=>'text',
-		'section'    => 'footer_section',
-		'settings'   => 'bhumi_options[developed_by_text]'
-	) );
-	$wp_customize->add_setting(
-	'bhumi_options[developed_by_bhumi_text]',
-		array(
-		'default'=>esc_html($cpm_theme_options['developed_by_bhumi_text']),
-		'type'=>'option',
-		'sanitize_callback'=>'bhumi_sanitize_text',
-		'capability'=>'edit_theme_options'
-		)
-	);
-	$wp_customize->add_control( 'developed_by_bhumi_text', array(
-		'label'        => __( 'Developed By Link Text', 'bhumi' ),
-		'type'=>'text',
-		'section'    => 'footer_section',
-		'settings'   => 'bhumi_options[developed_by_bhumi_text]'
-	) );
-	$wp_customize->add_setting(
-	'bhumi_options[developed_by_link]',
-		array(
-		'default'=>esc_url($cpm_theme_options['developed_by_link']),
-		'type'=>'option',
-		'capability'=>'edit_theme_options',
-		'sanitize_callback'=>'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'developed_by_link', array(
-		'label'        => __( 'Developed By Link', 'bhumi' ),
-		'type'=>'url',
-		'section'    => 'footer_section',
-		'settings'   => 'bhumi_options[developed_by_link]'
-	) );
+	  'bhumi_options[enable_pre_footer]',
+	  array(
+	    'default'=>1,
+	    'type'=>'option',
+	    'sanitize_callback'=>'bhumi_sanitize_checkbox',
+	    'capability'=>'edit_theme_options'
+	    )
+	  );
+	$wp_customize->add_control( 'enable_pre_footer', array(
+	  'label'    => __( 'Show Pre Footer?', 'bhumi' ),
+	  'type'     =>'checkbox',
+	  'section'  => 'footer_section',
+	  'settings' => 'bhumi_options[enable_pre_footer]'
+	  ) );
 	$version_wp = get_bloginfo('version');
 	if($version_wp < 4.7){
 		$wp_customize->add_section('custom_css',array(
@@ -809,3 +773,23 @@ if(!function_exists('bhumi_blog_category_select')):
         return false;
     }
 endif;
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ *
+ * @return void
+ */
+function bhumi_customize_partial_blogname() {
+    bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ *
+ * @return void
+ */
+function bhumi_customize_partial_blogdescription() {
+    bloginfo( 'description' );
+}

@@ -53,7 +53,7 @@
                             }
                             ?>
                     </a>
-                    <p><?php bloginfo( 'description' ); ?></p>
+                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                     </div>
                 </div>
                 <?php if($cpm_theme_options['header_social_media_in_enabled']=='1') { ?>

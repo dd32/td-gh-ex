@@ -47,12 +47,9 @@
 
 				'email_id'                           => '',
 				'phone_no'                           => '',
-				'footer_customizations'              => __(' &#169; 2016 Code Themes', 'bhumi' ),
-				'developed_by_text'                  => __('Theme Developed By', 'bhumi' ),
-				'developed_by_bhumi_text'            => __('Code Themes', 'bhumi' ),
-				'developed_by_link'                  => 'https://codethemes.co/',
-
 				'home_service_heading'               => '',
+
+				'enable_pre_footer'						=> 1,
 
 
 				//Portfolio Settings:
@@ -114,7 +111,20 @@
 				'flex-height' => true,
 				'flex-width'  => true,
 			) );
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
+
+	/**
+	 * Registers an editor stylesheet for the theme.
+	 */
+	if ( ! function_exists( 'bhumi_theme_add_editor_styles' ) ) :
+		function bhumi_theme_add_editor_styles() {
+		    add_editor_style( 'assets/css/editor-style.css' );
+		}
+		add_action( 'admin_init', 'bhumi_theme_add_editor_styles' );
+	endif;
 
 
 	// Read more tag to formatting in blog page
