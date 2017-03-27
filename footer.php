@@ -33,7 +33,7 @@
 					    <p class="color-text"><?php echo esc_attr($impressive_options['footertext']);?></p>
 					    <p>
 						<?php
-						 printf( __( 'Powered by %1$s.', 'impressive' ), '<a href="http://fruitthemes.com/wordpress-themes/impressive" target="_blank">Impressive WordPress Theme</a>' );
+						 printf( __( 'Powered by %1$s.', 'impressive' ), '<a href="https://fasterthemes.com/wordpress-themes/impressive/" target="_blank">Impressive WordPress Theme</a>' );
 						 ?>
 						 </p>
                     </div>

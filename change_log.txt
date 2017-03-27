@@ -21,3 +21,7 @@ Version 1.0.4 (28-2-2015)
 
 Version 1.1 (05th Jan 2017) 
 	i)	 Misc Changes.
+
+Version 1.2 (27 March 2017)
+	i)	Changed Author Details.
+

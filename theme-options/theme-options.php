@@ -84,7 +84,7 @@ function impressive_framework_page(){
     <div class="logo">
       <?php
 		$impressive_image=get_template_directory_uri().'/theme-options/images/logo.png';
-			echo "<a href='http://fruitthemes.com' target='_blank'><img src='".esc_url($impressive_image)."' alt='".__('FruitThemes','impressive')."'  /></a>";
+			echo "<a href='https://fasterthemes.com/' target='_blank'><img src='".esc_url($impressive_image)."' alt='".__('FasterThemes','impressive')."'  /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -423,7 +423,7 @@ function impressive_framework_page(){
 		  <div id="options-group-7" class="group theme-option-inner-tabs impressive-pro-image">  
 			<div class="impressive-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive_logopro_features.png" class="impressive-pro-logo" />
-              <a href="http://fruitthemes.com/wordpress-themes/impressive" target="_blank">
+              <a href="https://fasterthemes.com/wordpress-themes/impressive/" target="_blank">
 					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive-buy-now.png" class="impressive-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive_pro_features.jpg" />
