@@ -2,8 +2,7 @@
 /**
  * The category template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <section>
 	  <!--Breadcrumb Start-->
             <div class="breadcrumb-bg">
@@ -26,14 +25,10 @@ get_header();
                             </div>
                         </div>
                         <?php get_sidebar();?>
-                            
                         </div>
                     </div>
                 </div>
             </div>
             <!--Our-Blog End-->
-            
         </section>
-      
 <?php get_footer(); ?>
-

@@ -1,6 +1,5 @@
 <?php
 require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
-
 add_action( 'avocation_register', 'avocation_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function avocation_theme_register_plugins() {
@@ -13,9 +12,7 @@ function avocation_theme_register_plugins() {
             'slug'      => 'soliloquy-lite',
             'required'  => false,
         ),
-
     );
-
     /*  Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'avocation',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -48,4 +45,4 @@ function avocation_theme_register_plugins() {
         )
     );
     avocation( $plugins, $config );
-}
+} ?>

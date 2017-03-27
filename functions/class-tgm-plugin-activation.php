@@ -154,7 +154,7 @@
             } ?>
 
 <div class="avocation wrap">
-  <h2><?php _e(esc_html( get_admin_page_title() ), 'avocation'); ?></h2>
+  <h2><?php echo get_admin_page_title(); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
   <?php if ( isset( $this->message ) ) {
                     echo( wp_kses_post( $this->message ));
@@ -1139,4 +1139,4 @@ function avocation_load_bulk_installer() {
                     wp_ob_end_flush_all();
                     flush();
                     $this->i++;
-} } } } }
+} } } } } ?>

@@ -4,7 +4,6 @@
 **/
 get_header(); ?>
 <section>
-
             <!--Breadcrumb Start-->
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
@@ -16,16 +15,12 @@ get_header(); ?>
                     </div>  
                 </div>
             </div>
-            <!--Breadcrumb End-->   
-
-
+            <!--Breadcrumb End-->
             <!--Our-Blog  Start-->
-            
              <div class="avocation-container  container"> 
                 <div class="blog-wrap">
                     <div class="row">
-                        <div class="blog-page col-md-8 col-sm-8">                        
-                                                    
+                        <div class="blog-page col-md-8 col-sm-8">
                             <?php while ( have_posts() ) : the_post(); ?>
                             <div class="blog-box">
                             <?php if ( has_post_thumbnail() ) : ?>
@@ -33,34 +28,25 @@ get_header(); ?>
 						 <?php the_post_thumbnail( 'avocation-latest-post', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?>
 					</div>
 				<?php endif; ?>
-                                
                               <a class="blog-title"><?php echo esc_attr(get_the_title()); ?></a>  
                                 <?php avocation_entry_meta(); ?> 
                                 <div class="our-blog-details">
                                     <?php the_content(); ?>
-                                    
                                 </div>
                             </div> 
-                              <?php endwhile;  ?>   
-
-                
+                            <?php endwhile;  ?>
                             <div class="comments-article">
 							<?php comments_template( '', true ); ?>
 							</div>
 							<div class="site-pagination">
-                                <?php avocation_pagination();?>			
+                                <?php avocation_pagination(); ?>			
                             </div>
                         </div>
-				
-							<?php get_sidebar();?>
-			
-                            
+							<?php get_sidebar(); ?>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Our-Blog End-->
-            
         </section>
-      
 <?php get_footer(); ?>

@@ -1,37 +1,24 @@
-<?php
-
-function avocation_custom_header_setup() {
+<?php function avocation_custom_header_setup() {
 	$avocation_args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '220e10',
-		
-
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'avocation_header_style',
 		'admin-head-callback'    => 'avocation_admin_header_style',
 		'admin-preview-callback' => 'avocation_admin_header_image',
 	);
-
 	add_theme_support( 'custom-header', $avocation_args );
-
-	
 }
 add_action( 'after_setup_theme', 'avocation_custom_header_setup', 11 );
-
 function avocation_header_style() {
 	$avocation_header_image = get_header_image();
 	$avocation_text_color   = get_header_textcolor();
-
 	// If no custom options for text are set, let's bail.
 	if ( empty( $avocation_header_image ) && $avocation_text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
-
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="avocation-header-css">
-	<?php
-		if ( ! empty( $avocation_header_image ) ) :
-	?>
+	<?php if ( ! empty( $avocation_header_image ) ) : ?>
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
 			background-size: 1600px auto;
@@ -46,30 +33,22 @@ function avocation_header_style() {
 				background-size: 360px auto;
 			}
 		}
-	<?php
-		endif;
-
+	<?php endif;
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-			if ( empty( $avocation_header_image ) ) :
-	?>
+	<?php if ( empty( $avocation_header_image ) ) : ?>
 		.site-header .home-link {
 			min-height: 0;
 		}
-	<?php
-			endif;
-
+	<?php endif;
 		// If the user has set a custom color for the text, use that.
-		elseif ( $avocation_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $avocation_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title,
 		.site-description {
 			color: #<?php echo esc_attr( $avocation_text_color ); ?>;
@@ -78,11 +57,8 @@ function avocation_header_style() {
 	</style>
 	<?php
 }
-
-
 function avocation_admin_header_style() {
-	$avocation_header_image = get_header_image();
-?>
+	$avocation_header_image = get_header_image(); ?>
 	<style type="text/css" id="avocation-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
@@ -131,14 +107,10 @@ function avocation_admin_header_style() {
 		margin: 0;
 		text-shadow: none;
 	}
-	
 	</style>
 <?php
 }
-
-
-function avocation_admin_header_image() {
-	?>
+function avocation_admin_header_image() { ?>
 	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 1600px auto;">
 		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
@@ -146,5 +118,4 @@ function avocation_admin_header_image() {
 			<h2 id="desc" class="displaying-header-text"<?php echo $avocation_style; ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
-<?php }
-
+<?php } ?>

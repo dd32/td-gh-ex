@@ -4,7 +4,6 @@
  */
 if ( ! function_exists( 'avocation_setup' ) ) :
 function avocation_setup() {
-	
 	// This theme uses wp_nav_menu() in one locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'avocation' ),	
@@ -14,7 +13,6 @@ function avocation_setup() {
 			/*
 		 * Make avocation theme available for translation.
 		 */
-
 	load_theme_textdomain( 'avocation', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style(array('css/editor-style.css', avocation_font_url()));
@@ -35,7 +33,6 @@ function avocation_setup() {
 		'search-form', 'comment-form', 'comment-list',
 	));
 	
-	
 	add_theme_support( 'custom-header', apply_filters( 'avocation_custom_header_args', array(
 	'uploads'       => true,
 	'flex-height'   => true,
@@ -49,8 +46,6 @@ function avocation_setup() {
 	) ) );
 	// This theme uses its own gallery styles.       
 	add_filter('use_default_gallery_style', '__return_false');
-	
-	  	
 }
 
 endif; // avocation_setup
@@ -79,9 +74,6 @@ function avocation_purpose_bg_img_css()
 		echo $avocation_footer_output;	
 	}
 }
-
-
-
 /***  excerpt Length ***/ 
 function avocation_change_excerpt_more( $avocation_more ) {
     return '<div class="read-more"><a class="theme-btn" href="'. get_permalink() . '" >'.__('READ MORE','avocation').'</a></div>';
@@ -117,4 +109,4 @@ require get_template_directory() . '/functions/tgm-plugins.php';
 require get_template_directory() . '/functions/theme-customizer.php';
 
 /*** Customizer ***/
-require get_template_directory() . '/theme-options/theme-option.php';
+require get_template_directory() . '/theme-options/theme-option.php'; ?>

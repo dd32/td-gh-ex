@@ -1,18 +1,18 @@
 === Avocation ===
-Avocation Theme by FruitThemes http://fruitthemes.com/
+Avocation Theme by Fasterthemes https://fasterthemes.com/
 
 === About Avocation ===
 Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
-left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments , translation-ready
+left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template,  sticky-post, theme-options, threaded-comments, translation-ready
 
 == License ==
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Avocation Wordpress Theme, Copyright 2014 fruitthemes.com
+Avocation Wordpress Theme, Copyright 2017 fasterthemes.com
 Avocation is distributed under the terms of the GNU GPL
 
 

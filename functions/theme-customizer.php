@@ -31,14 +31,10 @@ function avocation_theme_customizer( $wp_customize ) {
 		'priority'    => 30,
 		'panel'  => 'home_id',
 	) );
-   
-        
 	$wp_customize->add_section( 'avocation_social_icons_section', array(
 		'title'          => 'Social Settings',
 		'priority'       => 35,
 	) );
-	
-
 	/* basic section */
 	$wp_customize->add_setting( 'avocation_logo' ,array(
 		'sanitize_callback' => 'esc_attr',
@@ -145,12 +141,12 @@ function avocation_theme_customizer( $wp_customize ) {
 	$avocation_args = array(
 	'posts_per_page'=> -1,
 	'meta_query' => array(
-						array(
-						'key' => '_thumbnail_id',
-						'compare' => 'EXISTS'
-							),
-						)
-					);  
+		array(
+		'key' => '_thumbnail_id',
+		'compare' => 'EXISTS'
+			),
+		)
+	);  
 	$avocation_post = new WP_Query( $avocation_args );
 	$avocation_cat_id=array();
 	while($avocation_post->have_posts()){
@@ -159,7 +155,6 @@ function avocation_theme_customizer( $wp_customize ) {
 	foreach($avocation_post_categories as $avocation_post_category)
 		$avocation_cat_id[]=$avocation_post_category;
 	}
-	
 	$avocation_cat_id=array_unique($avocation_cat_id);
 	$avocation_args = array(
 	'orderby' => 'name',
@@ -175,8 +170,7 @@ function avocation_theme_customizer( $wp_customize ) {
 			$i++;
 		}
 		$avocation_cats[$avocation_category->term_id] =  $avocation_category->cat_name;
-	  }        
-      
+	  }
 	 $wp_customize->add_setting( 'avocation_blogcategory', array(
 		'default'        => $avocation_default,
 		'sanitize_callback' => 'esc_attr',
@@ -202,7 +196,6 @@ function avocation_theme_customizer( $wp_customize ) {
            
         ) );    
  	 //about us
-    
 	// Social Section
 	$wp_customize->add_setting( 'twitter_setting', array(
 		'default'        => '',
@@ -263,10 +256,6 @@ function avocation_theme_customizer( $wp_customize ) {
 		'section' => 'avocation_social_icons_section',
 		'type'    => 'text',
 		'priority' => 1
-	) );        
-	
-            
+	) );    
 }
-add_action( 'customize_register', 'avocation_theme_customizer' );
-
-?>
+add_action( 'customize_register', 'avocation_theme_customizer' ); ?>

@@ -25,21 +25,16 @@
                    <?php }?>
 					<div class="copyright">  
 						<span>
-							<?php printf( __( 'Powered by %1$s and %2$s.', 'avocation' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fruitthemes.com/wordpress-themes/avocation" target="_blank">Avocation</a>' ); ?>
-							</span>                   
+							<?php printf( __( 'Powered by %1$s', 'avocation' ),'<a href="https://fasterthemes.com/wordpress-themes/avocation/" target="_blank">Avocation WordPress Theme</a>' ); ?>
+							</span>
 						<?php $copyright_check = get_theme_mod( 'copyright_url_setting' );
 						if(!empty($copyright_check)) { ?>
-							<p><?php echo esc_html( get_theme_mod('copyright_url_setting', '') );  ?></p> 
+							<p><?php echo esc_html( get_theme_mod('copyright_url_setting', '') ); ?></p> 
 						<?php } ?>
 					</div>
-
 				</div>              	
 			</div>
 		</footer>
-	  
     <?php wp_footer(); ?>
-
     </body>
-
-
 </html>

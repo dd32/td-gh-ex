@@ -14,7 +14,6 @@ function avocation_font_url() {
  * avocation Main Sidebar
 */
 function avocation_widgets_init() {
-
 	register_sidebar( array(
 		'name'          => __( 'Main Sidebar', 'avocation' ),
 		'id'            => 'sidebar-1',
@@ -77,21 +76,17 @@ function avocation_entry_meta() {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-	
 	$avocation_author = sprintf( '<a href="%1$s" title="%2$s" >%3$s</a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'avocation' ), get_the_author() ) ),
 		get_the_author()
 	);
-
-	
 	if($avocation_category_list) {
 		$avocation_utility_text = '<div class="blog-meta"><ul><li><a href='.esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))).' > <i class="fa fa-calendar"></i> %3$s </a></li> <li> <i class="fa fa-user"></i> %4$s </li> <li>  %2$s </li> <li> <i class="fa fa-list-alt"></i> %1$s </li> <li> <i class="fa fa-comment"></i> '.avocation_comment_number_custom().'</li></ul></div>';						
 	}
 	elseif($avocation_tag_list ) {
 		$avocation_utility_text = '<div class="blog-meta"><ul><li><a href='.esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))).' > <i class="fa fa-calendar"></i> %3$s </a></li> <li> <i class="fa fa-user"></i> %4$s </li> </li> <li>  %2$s </li>  <li>  %1$s </li> <li> <i class="fa fa-comment"></i> '.avocation_comment_number_custom().'</li></ul></div>';
 	}
-	
 	 else{
 		$avocation_utility_text = '<div class="blog-meta"><ul><li><a href='.esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))).' > <i class="fa fa-calendar"></i> %3$s </a></li> <li> <i class="fa fa-user"></i> %4$s </li>  <li> <i class="fa fa-comment"></i> '.avocation_comment_number_custom().'</li></ul></div>';
 	}
@@ -117,14 +112,11 @@ if ( comments_open() ) {
 }
 return $avocation_comments;
 }
-
-
 /*
  * Comments placeholder function
  * 
 **/
 add_filter( 'comment_form_default_fields', 'avocation_comment_placeholders' );
-
 function avocation_comment_placeholders( $fields )
 {
 	$fields['author'] = str_replace(
@@ -162,7 +154,6 @@ function avocation_comment_placeholders( $fields )
 		. '" required',
 	$fields['url']
 	);
-	
 	return $fields;
 }
 add_filter( 'comment_form_defaults', 'avocation_textarea_insert' );
@@ -181,7 +172,6 @@ add_filter( 'comment_form_defaults', 'avocation_textarea_insert' );
 		);
 	return $fields;
 	}
-	 
 function avocation_pagination() {
 	if(is_single()){
 		the_post_navigation( array(
@@ -195,5 +185,4 @@ function avocation_pagination() {
 		  'before_page_number' => '<span class="meta-nav screen-reader-text"></span>',
 		));
 	}
-}
-?>
+} ?>
