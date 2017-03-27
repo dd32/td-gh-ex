@@ -1,5 +1,5 @@
 === Deserve ===
-Deserve Theme by FruitThemes http://fruitthemes.com/
+Deserve Theme by FasterThemes https://fasterthemes.com
 
 === About Deserve ===
 Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
@@ -12,7 +12,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Deserve Theme, Copyright 2017 fruitthemes.com
+Deserve Theme, Copyright 2017 fasterthemes.com
 Deserve is distributed under the terms of the GNU GPL
 
 

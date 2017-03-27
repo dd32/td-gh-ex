@@ -90,7 +90,7 @@ function deserve_framework_page(){
     <div class="logo">
       <?php
 		$deserve_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fruitthemes.com' target='_blank'><img src='".$deserve_image."' alt='fruitthemes' /></a>";
+		echo "<a href='https://fasterthemes.com/' target='_blank'><img src='".$deserve_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -320,7 +320,7 @@ function deserve_framework_page(){
            <div id="options-group-4" class="group theme-option-inner-tabs deserve-pro-image">  
 			<div class="deserve-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_logopro_features.png" class="deserve-pro-logo" />
-              <a href="http://fruitthemes.com/wordpress-themes/Deserve" target="_blank">
+              <a href="https://fasterthemes.com/wordpress-themes/deserve/" target="_blank">
 					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve-buy-now.png" class="deserve-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_pro_features.png" />

@@ -20,7 +20,7 @@ $deserve_options = get_option( 'deserve_theme_options' ); ?>
         <p><?php 	echo esc_html($deserve_options['footertext']).' ';  ?></p>
         <?php } ?>        
         <span class='deserve-poweredby'>
-		<?php printf( __( 'Powered by %1$s.', 'deserve' ), '<a href="http://fruitthemes.com/wordpress-themes/deserve" target="_blank">Deserve WordPress Theme</a>' ); ?>
+		<?php printf( __( 'Powered by %1$s.', 'deserve' ), '<a href="https://fasterthemes.com/wordpress-themes/deserve/" target="_blank">Deserve WordPress Theme</a>' ); ?>
 		</span>
         <div class="terms">
              <?php wp_nav_menu(array('theme_location'  => 'secondary', 'fallback_cb' => false)); ?>
