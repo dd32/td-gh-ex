@@ -24,6 +24,9 @@ add_filter( 'excerpt_length', 'annina_custom_excerpt_length', 999 );
  */
 if ( ! function_exists( 'annina_new_excerpt_more' ) ) {
 	function annina_new_excerpt_more( $more ) {
+		if ( is_admin() ) {
+			return $more;
+		}
 		return '&hellip;';
 	}
 }

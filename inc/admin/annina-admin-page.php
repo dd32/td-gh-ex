@@ -25,6 +25,7 @@ class Annina_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 	}
 
 	/**
@@ -32,16 +33,19 @@ class Annina_Admin {
 	 */
 	public function admin_menu() {
 		$theme = wp_get_theme( get_template() );
-
-		$page = add_theme_page( esc_html__( 'About', 'annina' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'annina' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'annina-welcome', array( $this, 'welcome_screen' ) );
-		add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
+		global $annina_adminpage;
+		$annina_adminpage = add_theme_page( esc_html__( 'About', 'annina' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'annina' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'annina-welcome', array( $this, 'welcome_screen' ) );
 	}
 
 	/**
 	 * Enqueue styles.
 	 */
-	public function enqueue_styles() {
-
+	public function enqueue_admin_scripts() {
+		global $annina_adminpage;
+		$screen = get_current_screen();
+		if ( $screen->id != $annina_adminpage ) {
+			return;
+		}
 		wp_enqueue_style( 'annina-welcome', get_template_directory_uri() . '/inc/admin/welcome.css', array(), '1.0' );
 	}
 
