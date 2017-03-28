@@ -183,21 +183,21 @@ function adamos_scripts() {
 
 	wp_enqueue_style( 'adamos-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', '', '2.0');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', '', '3.1');
 
-	wp_enqueue_style( 'jquery-flexslider', get_template_directory_uri() . '/css/flexslider.css', '', '2.0');
+	wp_enqueue_style( 'jquery-flexslider', get_template_directory_uri() . '/css/flexslider.css', '', '3.1');
 
 
 	
-	wp_enqueue_script( 'jquery-small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '2.0', true );
+	wp_enqueue_script( 'jquery-small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '3.1', true );
 
-	wp_enqueue_script( 'jquery-smoothup', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '2.0',  true );
+	wp_enqueue_script( 'jquery-smoothup', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '3.1',  true );
 	
-	wp_enqueue_script( 'jquery-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '2.0', true );
+	wp_enqueue_script( 'jquery-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '3.1', true );
 
- 	wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'), '2.0', true);
+ 	wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'), '3.1', true);
     
-    wp_enqueue_script( 'jquery-flexslider-init', get_template_directory_uri() .'/js/flexslider-init.js', array('jquery-flexslider'), '2.0', true);
+    wp_enqueue_script( 'jquery-flexslider-init', get_template_directory_uri() .'/js/flexslider-init.js', array('jquery-flexslider'), '3.1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 
@@ -209,7 +209,26 @@ function adamos_scripts() {
 add_action( 'wp_enqueue_scripts', 'adamos_scripts' );
 
 
+/**
+ * Show Welcome screen on activation
+*/
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/welcome-screen.php';
+}
+function adamos_welcome_redirect(){
+  global $pagenow;
+  if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
+  	wp_redirect( admin_url( 'themes.php?page=adamos-welcome' ) );
+  }
+}
+add_action('after_setup_theme', 'adamos_welcome_redirect');
 
+/**
+ * Pro Link
+ */
+ function adamos_get_pro_link( $content ) {
+	return esc_url( 'https://www.templateexpress.com/adamos-pro-theme' );
+}
 
 /**
  * Implement excerpt for homepage slider

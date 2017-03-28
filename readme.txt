@@ -1,10 +1,15 @@
-adamos is a responsive, highly customizable theme.
+Adamos is a full-width, fully responsive and highly customizable free Portfolio WordPress Theme
 
 Theme instructions: http://www.templateexpress.com/docs/adamos/
 Theme demo: http://demos.templateexpress.com/adamos/
 
 Changelog
 --------------------------------------------
+Version: 3.1
+* Added Theme Welcome Page
+* Footer link colors fixed
+* Content text color changed
+
 Version: 3.0
 * Tested with latest version of WordPress
 * Footer updated
