@@ -4,7 +4,7 @@ Theme URI: http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: http://www.themeshopy.com
 Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: http://www.themeshopy.com/bb-mobile-application-theme/
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
@@ -332,24 +332,20 @@ a.button{
 	text-align:center;
 }
 #header .logo a{
-	color:#14c2a0;
+	color:#fff;
 	font-family:'Roboto';
 }
 #header .logo p{
 	font-size:12px;
 	font-family:arimo;
-	color: #14c2a0;
-}
-
-.home #header{
-	background:#ffffff;
+	color: #fff;
 }
 
 #header{
 	z-index:999;
 	width:100%;
 	height:auto;
-	background-color:none;
+	background:#14c2a0;
 }
 
 #header .header-top{
@@ -426,7 +422,7 @@ a.button{
 	display:block;
 }
 #header .nav ul li a:hover{
-	color:#14c2a0;
+	color:#000;
 }
 #header .nav ul li a:active{
 	color:#3890cb;
@@ -543,8 +539,8 @@ a.button{
 		margin:27px 0 0 0;
 	}
 	#header .nav ul li a{
-		color:#25333c;
-		padding:7px 10px;
+		color:#fff;
+		padding:7px 7px;
 		display:block;
 	}
 }
@@ -573,11 +569,13 @@ a.button{
 	margin-top:30px;
 }
 #our-services .page-box{
-	color:#25333c;
-	border-radius:5px;
-	padding:30px 0;
-	margin: 0 0 2% 0;
-	border:1px solid #14c2a0;
+	height: auto;
+    margin: 0 0 25px 0;
+    position: relative;
+    transition: 0.3s;
+    background: #FFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	padding: 0 0 25px 0;
 }
 #our-services .page-box h4 a{
 	color:#25333c;
@@ -610,6 +608,22 @@ a.button{
 	margin:40px 0 20px 0;
 }
 
+.new-text{
+	    border-left: 20px solid #00b18e;
+    padding-left: 20px;
+}
+.read-more-box{
+color: #fff;
+    padding: 5px;
+    text-decoration: none;
+    margin: 20px 15px 0 0;
+    padding: 7px 20px;
+    background: #00b18e;
+    display: table;
+}
+.read-more-box:hover{background:#000;
+color:#fff;}
+	
 /* Headings */
 section h2{
 	font-weight:bold;
@@ -1181,13 +1195,13 @@ a.blog-more{
 	font-weight:bold;
 	font-size:20px;
 	font-family:Roboto;
-	background:#18cfab;
+	background:#2e4a5b;
 	color:#fff;
 	text-align:left;
 }
 #sidebar input[type="search"] {
 	background:#eeeeee;
-	padding:9px 10px;
+	padding:7px 10px;
 	border:none;
 	font-size:15px;
 	color:#000;
@@ -1210,7 +1224,7 @@ a.blog-more{
 
 #sidebar aside{
 	margin-bottom:30px;
-	border:1px solid #c7c7c7;
+	border:1px solid #2e4a5b;
 }
 
 #sidebar ul {list-style:none;

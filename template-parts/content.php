@@ -10,16 +10,21 @@
   
     <div class="page-box">
    
-    <?php 
-        if(has_post_thumbnail()) { ?>
-    <div class="box-image col-md-6">
-          <?php the_post_thumbnail();  ?>
+
+    <div class="box-image">
+         <?php 
+                        if(has_post_thumbnail()) { 
+                          the_post_thumbnail(); 
+                        }
+						
+                      ?>
     </div>
-    <?php } ?>
-    <div class="new-text <?php 
-        if(has_post_thumbnail()) { ?>col-md-6"<?php } else { ?>col-md-12"<?php } ?>>
+
+    <div class="new-text"
+	<?php if(has_post_thumbnail()) { ?><?php } ?>>
 	 <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
       <?php the_excerpt();?>
+	  <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php _e('Read More','bb-mobile-application'); ?>"><?php _e('Read More','bb-mobile-application'); ?></a> 
     </div>
     <div class="clearfix"></div>
    </div>

@@ -22,12 +22,12 @@
   <div class="toggle"><a class="toggleMenu" href="#"><?php _e('Menu','bb-mobile-application'); ?></a></div>
   <div id="header">
     <div class="container">
-      <div class="menubox col-md-9 col-sm-9 col-md-push-3">
+      <div class="menubox col-md-8 col-sm-8 col-md-push-4">
         <div class="nav">
 		 <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
         </div><?php /** nav  **/ ?>
       </div><?php /** menubox **/ ?>
-      <div class="logo col-md-3 col-sm-3 wow  col-md-pull-9 bounceInDown">
+      <div class="logo col-md-4 col-sm-4 wow  col-md-pull-8 bounceInDown">
 	<?php bb_mobile_application_the_custom_logo(); ?>
 	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 

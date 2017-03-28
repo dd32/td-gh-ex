@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.1
+Version         :   1.2.2
 Tested up to    :   WP 6.0+
 Author          :   ThemeShopy
 Author URI      :   http://www.themeshopy.com/
