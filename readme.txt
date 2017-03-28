@@ -1,12 +1,12 @@
 /*========= Athenea =========*/
 
 Theme Name: Athenea
-Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.7
+Theme URI: https://ibermega.com/themes/athenea
+Version: 1.2.8
 Requires at least: 3.0.1
-Tested up to: 4.7.1
-Author: Miguel Angel Rico
-Author URI: http://www.ibermega.com
+Tested up to: 4.7.3
+Author: IBERMEGA themes
+Author URI: https://ibermega.com
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 -------------------------------------------------------
@@ -62,7 +62,12 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 == Changelog ==
 
-= 1.2.7 - 21.01.2016 =
+= 1.2.8 - 28.03.2017 =
+* Some style.css elements are modified.
+* Some readme.txt elements are modified.
+* Author URL is modified in footer.php, readme.txt and style.css
+
+= 1.2.7 - 21.01.2017 =
 * Some style.css tags are modified.
 
 = 1.2.6 - 09.01.2016 =

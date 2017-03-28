@@ -16,7 +16,7 @@
         Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?><br>
         <?php printf( __( 'Proudly powered by %s', 'athenea' ), '<a href="http://www.wordpress.org/" title="WordPress"><div alt="f205" class="genericon genericon-wordpress"></div> WordPress</a>' ); ?>
         <span class="sep"> | </span>
-        <a href="<?php echo esc_url( __( 'http://www.ibermega.com/themes/', 'athenea' ) ); ?>" rel="designer"><?php _e('Theme Athenea designed by','athenea'); ?> <?php _e('IBERMEGA themes','athenea'); ?></a>
+        <a href="<?php echo esc_url( __( 'https://ibermega.com/themes/', 'athenea' ) ); ?>" rel="nofollow"><?php _e('Theme Athenea designed by','athenea'); ?> <?php _e('IBERMEGA themes','athenea'); ?></a>
       </div>
       <div class="col-xs-4">
       <a href="#toop" class="scroller pull-right" data-section="#page" title="<?php _e( 'Top', 'athenea' ); ?>"><span class="genericon-collapse"></span></a>
