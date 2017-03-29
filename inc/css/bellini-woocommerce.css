@@ -682,6 +682,7 @@ mark.count {background-color: transparent;}
 .variations .value select{min-height: 36px; border-radius:3px;}
 .variations tr{border:none;}
 
+.woocommerce-info a,
 .woo__cat mark,
 .woo__cat a,
 .site-header-cart a,
@@ -905,4 +906,21 @@ mark.count {background-color: transparent;}
     .woocommerce-Tabs-panel--reviews #review_form_wrapper{
         width:100%;
     }
+}
+
+#order_review_heading {
+    display: none;
+}
+
+#customer_details {
+    float: left;
+    width: 66%;
+    padding-right:4%;
+}
+
+#order_review {
+    position: relative;
+    float: right;
+    line-height: 1.6;
+    width: 30%;
 }

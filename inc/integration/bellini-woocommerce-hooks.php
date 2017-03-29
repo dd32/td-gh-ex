@@ -109,3 +109,9 @@ if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_column_twelve', 				5 );
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_woo_close_div', 				25 );
 endif;
+
+/*--------------------------------------------------------------
+## Checkout Page
+--------------------------------------------------------------*/
+
+add_action( 'woocommerce_checkout_order_review', 'bellini_woo_order_heading', 5 );

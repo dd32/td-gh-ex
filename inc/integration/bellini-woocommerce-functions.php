@@ -229,3 +229,11 @@ if (  ! function_exists( 'bellini_product_cat_class' ) ) {
 
 }
 add_filter( 'product_cat_class' , 'bellini_product_cat_class' );
+
+/*--------------------------------------------------------------
+## Checkout Order Heading
+--------------------------------------------------------------*/
+
+function bellini_woo_order_heading(){ ?>
+	<h3 class="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+<?php }
