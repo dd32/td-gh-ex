@@ -125,7 +125,6 @@ define( 'ACCELERATE_ADMIN_IMAGES_DIR', ACCELERATE_ADMIN_DIR . '/images' );
 define( 'ACCELERATE_ADMIN_JS_DIR', ACCELERATE_ADMIN_DIR . '/js' );
 define( 'ACCELERATE_ADMIN_CSS_DIR', ACCELERATE_ADMIN_DIR . '/css' );
 
-
 /**
  * Define URL Location Constants
  */
@@ -155,6 +154,13 @@ require_once( ACCELERATE_ADMIN_DIR . '/meta-boxes.php' );
 
 /** Load Widgets and Widgetized Area */
 require_once( ACCELERATE_WIDGETS_DIR . '/widgets.php' );
+
+/**
+ * Load Demo Importer Configs.
+ */
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}
 
 /**
  * Assign the Accelerate version to a variable.

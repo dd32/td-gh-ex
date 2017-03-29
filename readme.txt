@@ -1,4 +1,4 @@
-== ACCELERATE ==
+﻿== ACCELERATE ==
 
 Accelerate is multipurpose WordPress theme made for simplicity and ease of use. This theme is a piece of art that has this premium look and feel which will make your site stand out. Supports all post formats. Accelerate can be used for portfolio, business, blog, personal, travel, corporate, business services or any other kinds of sites.
 
@@ -32,10 +32,10 @@ Accelerate is distributed under the terms of the GNU GPL
 == THEME USAGE ==
 
 = Theme Instruction =
-Get theme instruction at http://docs.themegrill.com/accelerate/
+Get theme instruction at https://docs.themegrill.com/accelerate/
 
 = Free Support =
-Get free support at http://themegrill.com/support-forum
+Get free support at https://themegrill.com/support-forum
 
 = Theme Features Usage =
 All available options can be used from Appearance->Theme Options
@@ -48,6 +48,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.3.0 - 2017-03-21 =
+* Added - Support for Video Headers introduced in WordPress 4.7.
+* Feature - Added compatibility for ThemeGrill Demo Importer plugin
 
 = Version 1.2.9 - 2016-12-31 =
 * Fixes - Site Icon migrate script issue fixes
