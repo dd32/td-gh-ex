@@ -476,9 +476,9 @@ span.sku_wrapper {
 	margin:30px 0 0 0;
 }
 
-.woocommerce .woocommerce-error ,
-.woocommerce .woocommerce-message ,
-.woocommerce .woocommerce-info {
+.woocommerce-error ,
+.woocommerce-message ,
+.woocommerce-info {
 	border:none;
 	line-height:34px;
     background-color: #fff;

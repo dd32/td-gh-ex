@@ -10,7 +10,7 @@ if( !class_exists( 'alhenalite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'alhenalite_notice_userid_' . get_current_user_id() , TRUE ) ) {
+			if ( !get_user_meta( get_current_user_id(), 'alhena-lite_notice_userid_' . get_current_user_id() , TRUE ) ) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
@@ -26,7 +26,7 @@ if( !class_exists( 'alhenalite_admin_notice' ) ) {
 		 */
 
 		public function update_dismiss() {
-			delete_metadata( 'user', null, 'alhenalite_notice_userid_' . get_current_user_id(), null, true );
+			delete_metadata( 'user', null, 'alhena-lite_notice_userid_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -35,9 +35,9 @@ if( !class_exists( 'alhenalite_admin_notice' ) ) {
 		
 		public function dismiss() {
 		
-			if ( isset( $_GET['alhenalite-dismiss'] ) ) {
+			if ( isset( $_GET['alhena-lite-dismiss'] ) ) {
 		
-				update_user_meta( get_current_user_id(), 'alhenalite_notice_userid_' . get_current_user_id() , $_GET['alhenalite-dismiss'] );
+				update_user_meta( get_current_user_id(), 'alhena-lite_notice_userid_' . get_current_user_id() , $_GET['alhena-lite-dismiss'] );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 
@@ -56,7 +56,7 @@ if( !class_exists( 'alhenalite_admin_notice' ) ) {
             
             	<div class="alhenalite-noticedescription">
 					<strong><?php _e( 'Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more.', 'alhena-lite' ); ?></strong><br/>
-					<?php printf( '<a href="%1$s" class="dismiss-notice">'. __( 'Dismiss this notice', 'alhena-lite' ) .'</a>', esc_url( '?alhenalite-dismiss=1' ) ); ?>
+					<?php printf( '<a href="%1$s" class="dismiss-notice">'. __( 'Dismiss this notice', 'alhena-lite' ) .'</a>', esc_url( '?alhena-lite-dismiss=1' ) ); ?>
                 </div>
                 
                 <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-notice' ); ?>" class="button"><?php _e( 'Upgrade to Alhena Premium', 'alhena-lite' ); ?></a>
