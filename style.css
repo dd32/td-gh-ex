@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 5.2
+Version: 5.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -67,7 +67,7 @@ table {
 
 /* BODY AND CONTAINER */
 body {background:#eee; color:#333; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; text-align:left; word-wrap:break-word;}
-#container {width:100%; float:left; margin:0 auto 0;}
+#container {width:100%; clear:both; float:left;}
 
 
 /* MAIN CONTENT AREA */
@@ -150,7 +150,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER FIRST LOGO */
-.logo {width:100%; clear:both; float:left; padding:20px 0;}
+.logo {clear:both; padding:20px 0;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {padding:5px 0 0; font-size:1.45em;}
 
@@ -196,6 +196,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both; margin:0 0 20px;}
@@ -279,12 +280,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:32%; float:right; padding:20px 0 0;}
 #sidebar-left {width:32%; float:left; padding:20px 0 0;}
-.widget {padding:15px 5%; margin:0 0 20px; background:#f8f8f8; border:1px solid #ddd;}
+.widget {padding:15px 20px; margin:0 0 20px; background:#f8f8f8; border:1px solid #ddd;}
 .widgettitle {clear:both; margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff;}
 
 
 /* FOOTER */
-#footer {width:100%; clear:both; float:left; background:#333; color:#ddd; margin:0 auto 0;}
+#footer {width:100%; clear:both; float:left; background:#333; color:#ddd;}
 #footer a {color:#ddd;}
 .site-info {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:15px 20px; text-align:center;}
 
@@ -296,7 +297,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .footer-middle {float:left; width:32%; margin:20px 2% 0;}
 .footer-right {float:right; width:32%; margin:20px 0 0;}
 
-#footer .widget {padding:10px 0; margin:0 0 10px; background:none; border:none;}
+#footer .widget {padding:0; background:none; border:0;}
 #footer .widgettitle {padding:0; color:#ddd; border:0;}
 
 
@@ -305,26 +306,30 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:98%; padding:0 1%;}
+	#container {width:98%; padding:10px 1% 0;}
 
 	/* MAIN CONTENT AREA */
 	#main-content {width:100%; float:left; padding:0;}
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
 
 	/* HEADER FIRST */
 	#header-first {width:100%; float:left; padding:0;}
 
 	/* HEADER FIRST LOGO */
+	.logo {padding:10px 0 20px;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
 
 	/* HEADER SECOND MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {margin:0 0 10px; background:none;}
+	.nav-head {margin:0 0 20px; background:none;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
+	/* HEADER SECOND HOMEPAGE IMAGE */
+	.header-img {margin:0 0 20px;}
+
 	/* HOMEPAGE WIDGET AREA */
-	#homepage-widgets {border:0; margin:10px 0 0;}
+	#homepage-widgets {border:0;}
 	.home-right, .home-middle, .home-left {width:100%; clear:both; float:left; margin:0;} 
 
 	/* HEADINGS */
@@ -336,7 +341,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR AND WIDGETS */
 	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
-	.widget {padding:10px 3%; margin:0 0 10px;} 
+	.widget {padding:10px 3%;} 
 
 	/* FOOTER */
 	#footer {width:94%; padding:10px 3%;}
