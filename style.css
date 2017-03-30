@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 5.5
+Version: 5.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -72,9 +72,9 @@ body {background:#f2f2f2; color:#333; font-family:'Open Sans', sans-serif; font-
 
 
 /* MAIN CONTENT AREA */
-#content {width:56%; float:left; padding:20px 0 30px 4%;}
-#content-right {width:56%; float:right; padding:20px 4% 30px 0;}
-#content-full {width:92%; float:left; padding:20px 4% 30px;}
+#content {width:56%; float:left; padding:30px 0 30px 4%;}
+#content-right {width:56%; float:right; padding:30px 4% 30px 0;}
+#content-full {width:92%; float:left; padding:30px 4% 30px;}
 
 
 /* HEADINGS */
@@ -165,7 +165,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER SECOND */
-#header-second {width:92%; clear:both; float:left; margin:0 4% 10px; padding:0 0 10px; border-bottom:1px solid #eee;}
+#header-second {width:92%; clear:both; float:left; margin:0 4% 0; border-bottom:1px solid #eee;}
 
 
 /* HEADER SECOND MOBILE MENU */
@@ -173,14 +173,14 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER SECOND LOGO */
-.logo {width:100%; clear:both; float:left; padding:20px 0;}
+.logo {clear:both; padding:20px 0;}
 .logo h1 {font-weight:bold;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {padding:10px 0 0; text-align:center; font-style:italic; font-size:1.45em;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
-.image-homepage {width:61%; float:left;}
+.image-homepage {width:61%; float:left; margin:0 0 15px;}
 .header-img {width:95%; height:auto; padding:2%; border:1px solid #eee; border-radius:5px;}
 
 
@@ -195,6 +195,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* POST */
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both; margin:0 0 20px;}
@@ -280,8 +281,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width:32%; float:right; padding:20px 4% 20px 0;}
-#sidebar-left {width:32%; float:left; padding:20px 0 20px 4%;}
+#sidebar {width:32%; float:right; padding:30px 4% 10px 0;}
+#sidebar-left {width:32%; float:left; padding:30px 0 10px 4%;}
 .widget {padding:0 0 20px; margin:0 0 20px; border-bottom:1px solid #eee;}
 .widgettitle {clear:both; color:#333; margin:0 0 20px;}
 
@@ -293,10 +294,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:100%; clear:both; float:left;}
-.footer-left {float:left; width:44%; margin:0 0 0 4%;}
-.footer-right {float:right; width:44%; margin:0 4% 0 0;}
+.footer-left {float:left; width:44%; margin:20px 0 0 4%;}
+.footer-right {float:right; width:44%; margin:20px 4% 0 0;}
 
-#footer .widget {margin:40px 0; padding:0; border:0;}
+#footer .widget {padding:0; border:0;}
 #footer .widgettitle {color:#aaa;}
 
 
@@ -305,10 +306,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:98%; padding:10px 1%; margin:0 auto 0;}
+	#container {width:98%; padding:10px 1% 0; margin:0 auto 0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:15px 0 10px;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
 
 	/* HEADER FIRST */
 	#header-first {display:none;}
@@ -317,7 +318,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second {width:100%; margin:0; padding:0; border:0;}
 
 	/* HEADER SECOND LOGO */
-	.logo {padding:0 0 10px; text-align:center;}
+	.logo {padding:10px 0 20px; text-align:center;}
 	.logo h1 {text-align:center; font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
 
@@ -326,15 +327,15 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.header-img {width:96%; display:block; padding:1%; margin:0 auto 0; border:1px solid #ccc;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; clear:both; float:left; margin:0 auto 0;} 
+	.sidebar-homepage {width:100%; clear:both; float:left;} 
 
 	/* HEADER SECOND MOBILE MENU */
 	.nav-head-mobile ul {display:none;} 
-	.nav-head-mobile {width:100%; clear:both; display:block; margin:0 0 10px;}
+	.nav-head-mobile {width:100%; clear:both; display:block; margin:0 0 20px;}
 	.nav-head-mobile select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* POST */
-	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 auto 0;}
+	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}
@@ -345,11 +346,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR AND WIDGETS */
 	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
-	.widget {padding:0 0 5px; margin:0 0 10px; border:0;}
-	.widgettitle {margin:5px 0 10px;}
+	.widgettitle {margin:0 0 10px;}
 
 	/* FOOTER WIDGET AREA */
+	#footer-widgets {margin:20px 0 0;}
+	#footer .widget {padding:0 4%;}
 	.footer-right, .footer-left {width:100%; clear:both; float:left; margin:0;} 
-	#footer .widget {margin:10px 0; padding:0 4%;}
-	#footer .widgettitle {margin:0 0 10px;}
 }
