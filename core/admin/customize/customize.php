@@ -146,6 +146,28 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => __( "Image position",'bazaar-lite'),
+				"description" => __( "Image position",'bazaar-lite'),
+				"id" => "wip_slideshow_image_position",
+				"type" => "select",
+				"section" => "slideshow_settings",
+				"options" => array(
+					"" => "None",
+					"top left" => "top left",
+					"top center" => "top center",
+					"top right" => "top right",
+					"center" => "center",
+					"bottom left" => "bottom left",
+					"bottom center" => "bottom center",
+					"bottom right" => "bottom right",
+				),
+				
+				"std" => "center",
+			
+			),
+
 			/* #1 SLIDE */ 
 
 			array( 
@@ -679,6 +701,17 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 				"label" => __( "Screen greater than 1200px",'bazaar-lite'),
 				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'bazaar-lite'),
 				"id" => "wip_screen3",
+				"type" => "text",
+				"section" => "pagewidth_section",
+				"std" => "940",
+
+			),
+
+			array( 
+
+				"label" => esc_html__( "Screen greater than 1400px",'bazaar-lite'),
+				"description" => esc_html__( "Set a width, in px, for a screen greater than 1400px pixel (for example 1370 and not 1370px ) ",'bazaar-lite'),
+				"id" => "wip_screen4",
 				"type" => "text",
 				"section" => "pagewidth_section",
 				"std" => "940",

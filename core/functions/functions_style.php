@@ -33,7 +33,15 @@ function bazaarlite_css_custom() {
 		echo "@media (min-width:1200px){.container.block{width:" . (esc_html(bazaarlite_setting('wip_screen3'))-10) . "px}}"; 
 		echo "@media (min-width:768px){.container.grid-container{width:" . (esc_html(bazaarlite_setting('wip_screen3'))-20) . "px}}"; 
 	}
-	
+
+	if (bazaarlite_setting('wip_screen4'))  {
+				
+		echo "@media (min-width:1400px){.container{width:".esc_html(bazaarlite_setting('wip_screen4'))."px}}"; 
+		echo "@media (min-width:1400px){.container.block{width:" . (esc_html(bazaarlite_setting('wip_screen4'))-10) . "px}}"; 
+		echo "@media (min-width:768px) {.container.grid-container{width:" . (esc_html(bazaarlite_setting('wip_screen4'))-20) . "px}}"; 
+			
+	}
+
 /* =================== END PAGE WIDTH =================== */
 
 /* =================== BEGIN LOGO STYLE =================== */
@@ -68,6 +76,9 @@ function bazaarlite_css_custom() {
 
 	if ( get_theme_mod('wip_fixed_images') == "off" )
 		echo ".slick-wrapper .slick-image { background-attachment: scroll; }";
+	
+	if ( bazaarlite_setting('wip_slideshow_image_position') )
+		echo ".slick-wrapper .slick-image { background-position:".esc_html(bazaarlite_setting('wip_slideshow_image_position'))."; } ";  
 
 /* =================== END SLIDESHOW =================== */
 
