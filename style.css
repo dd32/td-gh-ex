@@ -1,7 +1,7 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 4.7
+Version: 4.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: LeftSide is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, sidebar navigation, footer widgets, custom header image, custom background, custom logo to replace site title and tagline. For more info please check readme file. Enjoy.
@@ -67,7 +67,7 @@ table {
 
 /* BODY AND CONTAINER */
 body {background:#eee; color:#333; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; text-align:left; word-wrap:break-word;}
-#container {max-width:1200px; position:relative; background:#fff; margin:10px auto;}
+#container {max-width:1200px; position:relative; background:#fff; margin:10px auto 10px;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
 
@@ -145,14 +145,14 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* SIDEBAR LOGO */
-.logo {width:100%; clear:both; float:left; text-align:center; padding:0 0 20px;}
+.logo {clear:both; padding:0 0 20px; text-align:center;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {padding:5px 0; font-size:1.45em;}
 .logo img {padding:10px 0 0;}
 
 
 /* SIDEBAR MENU */
-.nav-primary {width:100%; clear:both; float:left; padding:10px 0;}
+.nav-primary {width:100%; clear:both; float:left; margin:0 0 20px;}
 .nav-primary select {display:none;}
 .nav-primary ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-primary ul li {position:relative; padding:0; margin:0;}
@@ -175,8 +175,8 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* WIDGETS */
 #sidebar-widgets {width:100%; clear:both; float:left;}
-.widget {padding:10px 0; margin:0 0 10px;}
-.widgettitle {clear:both; background:#666; color:#ddd; padding:5px 15px; margin:0 0 10px;}
+.widget {margin:0 0 20px;}
+.widgettitle {clear:both; padding:5px 15px; margin:0 0 10px; background:#666; color:#ddd;}
 
 
 /* HEADER IMAGE */
@@ -196,6 +196,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both; margin:0 0 20px;}
@@ -283,11 +284,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:100%; clear:both; float:left;}
-.footer-left {float:left; width:30%; margin:10px 0 0 2%;}
-.footer-middle {float:left; width:30%; margin:10px 3%;}
-.footer-right {float:right; width:30%; margin:10px 2% 0 0;}
+.footer-left {float:left; width:30%; margin:20px 0 0 2%;}
+.footer-middle {float:left; width:30%; margin:20px 3% 0;}
+.footer-right {float:right; width:30%; margin:20px 2% 0 0;}
 
-#footer .widget {padding:0; margin:20px 0 0;}
 #footer .widgettitle {padding:0; background:none;}
 
 
@@ -296,36 +296,33 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:96%; padding:10px 2%; margin:0 auto 0;}
+	#container {width:98%; padding:10px 1% 0; margin:0 auto 0;}
 
 	/* MAIN CONTENT AREA */
-	#content {width:100%; clear:both; float:left; padding:10px 0;}
+	#content {width:100%; clear:both; float:left; padding:10px 0 20px;}
 
 	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; padding:0; background:none;}
 
 	/* SIDEBAR LOGO */
-	.logo {padding: 10px 0;}
+	.logo {padding:10px 0 20px;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
 	.logo img {padding:0;}
 
 	/* SIDEBAR MENU */
 	.nav-primary ul {display: none;} 
-	.nav-primary {margin:0 0 10px; padding:0;}
+	.nav-primary {margin:0 0 20px; padding:0;}
 	.nav-primary select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* SIDEBAR MENU TITLE */
 	.nav-primary-title {display:none;}
 
-	/* WIDGETS */
-	.widget {padding:5px 0; margin:0 0 5px;}
-
 	/* HEADER IMAGE */
 	#header-image {display:none;}
 
 	/* HEADER IMAGE MOBILE */
-	#header-image-mobile {display:block; width:100%; float:left;}
+	#header-image-mobile {display:block; width:100%; float:left; margin:0 0 20px;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}
@@ -334,7 +331,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
 
+	/* FOOTER */
+	#footer {padding:10px 0;}
+
 	/* FOOTER WIDGET AREA */
 	.footer-right, .footer-middle, .footer-left {width:94%; clear:both; float:left; margin:0; padding:0 3%;} 
-	#footer .widget {padding:5px 0; margin:0 0 5px;}
 }

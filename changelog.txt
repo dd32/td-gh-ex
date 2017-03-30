@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+LeftSide version 4.8 - april 2017
+- file single: added post class .post-single
+- file style: changed margin and padding of several elements (layout improvement)
+
 LeftSide version 4.7 - march 2017
 - file style: changed margin of several elements to avoid margin collapsing
 - cleaned up file style
