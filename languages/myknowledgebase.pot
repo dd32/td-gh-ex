@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2017-01-28 10:13+0100\n"
+"POT-Creation-Date: 2017-03-25 11:59+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-list.php:27
+#: content-list.php:26
 msgid "Read More &raquo;"
 msgstr ""
 
@@ -108,100 +108,104 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:107
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
-#: functions.php:142
+#: functions.php:109 functions.php:119 functions.php:129 functions.php:139
+#: functions.php:149
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:110
+#: functions.php:117
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:127
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:137
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:147
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:186 functions.php:195
+#: functions.php:193 functions.php:202
 msgid "Logo"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:195
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:200
+#: functions.php:207
 msgid "Knowledgebase"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:209
 msgid "Settings for the knowledgebase page template."
 msgstr ""
 
-#: functions.php:210
+#: functions.php:217
 msgid "Display page title"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:222 functions.php:237
 msgid "Yes"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:223 functions.php:238
 msgid "No"
 msgstr ""
 
-#: functions.php:224
-msgid "Posts per category"
-msgstr ""
-
-#: functions.php:225
-msgid "Only numeric characters allowed."
-msgstr ""
-
-#: functions.php:235
-msgid "Exclude category by ID"
-msgstr ""
-
-#: functions.php:236
-msgid "Use a comma to separate multiple categories."
+#: functions.php:232
+msgid "Display category description"
 msgstr ""
 
 #: functions.php:246
-msgid "Order posts"
+msgid "Posts per category"
 msgstr ""
 
-#: functions.php:251
-msgid "By date"
+#: functions.php:247
+msgid "Only numeric characters allowed."
 msgstr ""
 
-#: functions.php:252
-msgid "By name"
-msgstr ""
-
-#: functions.php:256
-msgid "Search Bar"
+#: functions.php:257
+msgid "Exclude category by ID"
 msgstr ""
 
 #: functions.php:258
+msgid "Use a comma to separate multiple categories."
+msgstr ""
+
+#: functions.php:268
+msgid "Order posts"
+msgstr ""
+
+#: functions.php:273
+msgid "By date"
+msgstr ""
+
+#: functions.php:274
+msgid "By name"
+msgstr ""
+
+#: functions.php:278
+msgid "Search Bar"
+msgstr ""
+
+#: functions.php:280
 msgid "Settings for the knowledgebase search bar."
 msgstr ""
 
-#: functions.php:265
+#: functions.php:287
 msgid "Title"
 msgstr ""
 
-#: functions.php:266
+#: functions.php:288
 msgid "This will overwrite the default title."
 msgstr ""
 
@@ -213,7 +217,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:35
+#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:31
 msgid "Edit"
 msgstr ""
 

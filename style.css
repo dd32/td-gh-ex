@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 5.0
+Version: 5.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -154,11 +154,11 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER FIRST */
-#header-first {width:100%; clear:both; float:left; padding:10px 0 0;}
+#header-first {width:100%; clear:both; float:left; padding:20px 0;}
 
 
 /* HEADER FIRST LOGO */
-.logo {width:35%; float:left; padding:0 0 10px;}
+.logo {width:35%; float:left;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {font-style:italic; font-size:1.20em;}
 
@@ -182,22 +182,22 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER SECOND */
-#header-second {width:100%; clear:both; float:left; padding:10px 0;}
+#header-second {width:100%; clear:both; float:left;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
-.image-homepage {width:49%; float:left;}
+.image-homepage {width:49%; float:left; margin:0 0 15px;}
 .header-img {width:100%; height:auto;}
 
 
 /* HEADER SECOND HOMEPAGE SIDEBAR */
-.sidebar-homepage {width:49%; float:right; background:#08a0ff; color:#fff;}
-#header-second .widget {margin:15px 0; padding:0 20px; border:0;}
+.sidebar-homepage {width:49%; float:right; margin:0 0 20px; padding:20px 0 0; background:#08a0ff; color:#fff;}
+#header-second .widget {padding:0 20px; border:0;}
 #header-second .widget a {color:#fff;}
 
 
 /* HEADER THIRD */
-#header-third {width:96%; clear:both; float:left; margin:10px 0 0; padding:0 2%; background:#08a0ff; color:#fff;}
+#header-third {width:96%; clear:both; float:left; padding:0 2%; background:#08a0ff; color:#fff;}
 
 
 /* HEADER THIRD SEARCH BAR */
@@ -219,6 +219,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 .cat-name {margin:0 0 5px; list-style:none; font-size:1.2em; line-height:1.2em; font-weight:bold; padding:0 0 10px; border-bottom:2px solid #08a0ff;}
 .cat-name a:hover {text-decoration:none; color:#333;}
+.cat-description {padding:5px 0 0;}
 .post-name {margin:0 0 0 20px;}
 
 
@@ -230,6 +231,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both; margin:0 0 20px;}
@@ -320,16 +322,16 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* FOOTER */
 #footer {width:96%; clear:both; float:left; padding:0 2%; background:#08a0ff; color:#fff;}
 #footer a {color:#fff;}
-.site-info {clear:both; text-align:center; padding:15px 0;}
+.site-info {clear:both; text-align:center; padding:10px 0;}
 
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:100%; clear:both; float:left;}
-.footer-left {float:left; width:32%; margin:5px 0 0;}
-.footer-middle {float:left; width:32%; margin:5px 2% 0;}
-.footer-right {float:right; width:32%; margin:5px 0 0;}
+.footer-left {float:left; width:32%; margin:20px 0 0;}
+.footer-middle {float:left; width:32%; margin:20px 2% 0;}
+.footer-right {float:right; width:32%; margin:20px 0 0;}
 
-#footer .widget {margin:15px 0 0; border-bottom:1px solid #fff;}
+#footer .widget {border-bottom:1px solid #fff;}
 #footer .widgettitle {color:#fff;}
 
 
@@ -338,31 +340,34 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:98%; padding:0 1%;}
+	#container {width:98%; padding:10px 1% 0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+
+	/* HEADER FIRST */
+	#header-first {padding:0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {width:100%; text-align:center;}
+	.logo {width:100%; padding:10px 0 20px; text-align:center;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {font-size:1.45em;}
 
 	/* HEADER FIRST MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {width:100%; clear:both; margin:0 0 10px; text-align:left;}
+	.nav-head {width:100%; clear:both; margin:0 0 20px; text-align:left;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;} 
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
-	.image-homepage {width:100%; clear:both; margin:0 0 10px;}
+	.image-homepage {width:100%; clear:both;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; clear:both; float:left;}
+	.sidebar-homepage {width:100%; clear:both; float:left; padding:10px 0 0;}
 	#header-second .widget {padding:0 3%;}
 	#header-second .widgettitle {padding:0; background:none;}
 
 	/* HEADER THIRD */
-	#header-third {width:94%; padding:0 3%;}
+	#header-third {width:94%; padding:0 3%; margin:0 0 20px;}
 
 	/* HEADER THIRD SEARCH BAR */
 	#header-third .search-form {width:100%; float:left; text-align:left;} 
@@ -389,15 +394,13 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0 0 10px;}
-	.widget {margin:10px 0;}
+	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
 	.widgettitle {padding:5px 3%; background:#08a0ff; color:#fff;}
 
 	/* FOOTER */
-	#footer {width:94%; padding:10px 3% 0;}
+	#footer {width:94%; padding:10px 3%;}
 
 	/* FOOTER WIDGET AREA */
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
-	#footer .widget {margin:5px 0;}
 	#footer .widgettitle {padding:0; background:none;}
 }

@@ -223,16 +223,20 @@
 				'no' => __('No', 'myknowledgebase'), 
 			), 
 		) ) );
-		$wp_customize->add_setting( 'myknowledgebase_posts', array( 
+		$wp_customize->add_setting( 'myknowledgebase_cat_description', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'no', 
 		) ); 
-		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_posts', array( 
-			'label' => __( 'Posts per category', 'myknowledgebase' ), 
-			'description' => __( 'Only numeric characters allowed.', 'myknowledgebase' ), 
-			'section' => 'myknowledgebase_posts_section', 
-			'type' => 'number', 
-			'settings' => 'myknowledgebase_posts', 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_cat_description', array( 
+			'label' => __( 'Display category description', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section',
+			'settings' => 'myknowledgebase_cat_description', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'myknowledgebase'), 
+				'no' => __('No', 'myknowledgebase'), 
+			), 
 		) ) );
 		$wp_customize->add_setting( 'myknowledgebase_exclude', array( 
 			'capability' => 'edit_theme_options', 
@@ -243,6 +247,17 @@
 			'description' => __( 'Use a comma to separate multiple categories.', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_posts_section', 
 			'settings' => 'myknowledgebase_exclude', 
+		) ) );
+		$wp_customize->add_setting( 'myknowledgebase_posts', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_posts', array( 
+			'label' => __( 'Posts per category', 'myknowledgebase' ), 
+			'description' => __( 'Only numeric characters allowed.', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section', 
+			'type' => 'number', 
+			'settings' => 'myknowledgebase_posts', 
 		) ) );
 		$wp_customize->add_setting( 'myknowledgebase_order', array( 
 			'capability' => 'edit_theme_options', 

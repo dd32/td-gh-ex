@@ -42,6 +42,10 @@
 		foreach ( $myknowledgebase_cats as $cat ) :
 			echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';	
 
+			if ( get_theme_mod( 'myknowledgebase_cat_description' ) == 'yes' ) :
+				echo '<div class="cat-description">'. wp_kses_post( category_description( $cat->cat_ID ) ) .'</div>'; 
+			endif;
+
 			if ( get_theme_mod( 'myknowledgebase_posts' ) ) :
 				$posts_per_page = esc_attr( get_theme_mod( 'myknowledgebase_posts' ) );
 			else :
@@ -57,10 +61,18 @@
 			endif;
 
 			$myknowledgebase_post_args = array(
+				'post_type' => 'post',
+				'tax_query' => array( 
+					array( 
+						'taxonomy' => 'category',
+						'field' => 'term_id', 
+						'terms' => $cat->term_id, 
+						'include_children' => false,
+					) 
+				), 
 				'posts_per_page' => $posts_per_page,
 				'orderby' => $orderby,
-				'order' => $order,
-				'category__in' => $cat->cat_ID
+				'order' => $order
 			);
 
 			$myknowledgebase_posts = get_posts( $myknowledgebase_post_args ); 
