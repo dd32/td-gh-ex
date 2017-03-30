@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 5.2 - april 2017
+- file style: minor changes
+
 MyKnowledgeBase version 5.1 - april 2017
 - file single: added post class .post-single
 - file style: changed margin and padding of several elements (layout improvement)
