@@ -1,7 +1,7 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 4.7
+Version: 4.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Medical is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -172,16 +172,16 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER SECOND */
-#header-second {width:100%; clear:both; float:left; padding:20px 0 10px; border-bottom:10px solid #08a0ff; border-radius:15px;}
+#header-second {width:100%; clear:both; float:left; padding:20px 0 0; border-bottom:10px solid #08a0ff; border-radius:15px;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
-.image-homepage {width:49%; float:left;}
+.image-homepage {width:49%; float:left; margin:0 0 15px;}
 .header-img {width:100%; height:auto; border-top-left-radius:15px;}
 
 
 /* HEADER SECOND HOMEPAGE SIDEBAR */
-.sidebar-homepage {width:49%; float:right; background:#08a0ff; border-top-right-radius:15px;}
+.sidebar-homepage {width:49%; float:right; margin:0 0 20px; background:#08a0ff; border-top-right-radius:15px;}
 #header-second .widget {margin:15px 0; padding:0 15px; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
 
@@ -194,6 +194,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both; margin:0 0 20px;}
@@ -282,17 +283,15 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* FOOTER */
-#footer {width:100%; clear:both; float:left; background:none;}
-.site-info {clear:both; text-align:center; padding:15px 0;}
+#footer {width:100%; clear:both; float:left;}
+.site-info {clear:both; text-align:center; padding:10px 0;}
 
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:100%; clear:both; float:left;}
-.footer-left {float:left; width:32%; margin:5px 0 0;}
-.footer-middle {float:left; width:32%; margin:5px 2% 0;}
-.footer-right {float:right; width:32%; margin:5px 0 0;}
-
-#footer .widget {margin:15px 0 0;}
+.footer-left {float:left; width:32%; margin:20px 0 0;}
+.footer-middle {float:left; width:32%; margin:20px 2% 0;}
+.footer-right {float:right; width:32%; margin:20px 0 0;}
 
 
 /* MOBILE */
@@ -300,26 +299,29 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em; background:none;}
 	body.custom-background {background-image:none !important;}
-	#container {width:98%; padding:0 1%;}
+	#container {width:98%; padding:10px 1%;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+
+	/* HEADER FIRST */
+	#header-first {padding:0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {width:100%; padding:0 0 10px; text-align:center;}
+	.logo {width:100%; padding:10px 0 20px; text-align:center;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {font-size:1.45em;}
 
 	/* HEADER FIRST MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {width:100%; clear:both; margin:0 0 10px;}
+	.nav-head {width:100%; clear:both; margin:0 0 20px;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* HEADER SECOND */
-	#header-second {padding:10px 0; border:0;}
+	#header-second {padding:20px 0 0; border:0;}
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
-	.image-homepage {width:100%; clear:both; margin:0 0 10px;}
+	.image-homepage {width:100%; clear:both;}
 	.header-img {border-radius:15px;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
@@ -334,12 +336,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR AND WIDGETS */
 	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0 0 10px;}
-	.widget {margin:10px 0;}
 
 	/* FOOTER */
 	#footer {padding:10px 0 0;}
 
 	/* FOOTER WIDGET AREA */
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
-	#footer .widget {margin:5px 0;}
 }
