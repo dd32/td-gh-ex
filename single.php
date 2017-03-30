@@ -10,16 +10,16 @@
 		/**
 	    * @hooked asencd_single_post_header - 20
 	    */
-	    do_action('kadence_post_header');
+	    do_action('ascend_post_header');
 
 		/**
 	    * @hooked ascend_single_post_upper_headcontent - 10
 	    */
-	    do_action( 'kadence_single_post_begin' ); 
+	    do_action( 'ascend_single_post_begin' ); 
 	    ?>
 		<div id="content" class="container clearfix">
     		<div class="row single-article">
-    			<div class="main <?php echo ascend_main_class(); ?>" id="ktmain" role="main">
+    			<div class="main <?php echo esc_attr(ascend_main_class()); ?>" id="ktmain" role="main">
 			    	<?php 
 					/**
 				    * Content

@@ -200,7 +200,6 @@
                     }
 
                 }
-
                 return $data;
             }
 
@@ -442,6 +441,21 @@
                         if ( ! isset( $section['subsection'] ) || ( isset( $section['subsection'] ) && $section['subsection'] != true ) ) {
                             $panel = "";
                         }
+                        if('header_settings' == $section['id']) {
+                        	$this->add_panel( $section['id'], array(
+	                            'priority'    => $section['priority'],
+	                            'capability'  => $section['permissions'],
+	                            //'theme_supports' => '',
+	                            'title'       => $section['title'],
+	                            'section'     => $section,
+	                            'opt_name'    => $this->parent->args['opt_name'],
+	                            'description' => '',
+	                        ), $wp_customize );
+                        	$panel = $section['id'];
+                        } else if('logo_settings' == $section['id'] || 'mobile_header_settings' == $section['id'] || 'topbar_header_settings' == $section['id'] || 'transparent_header_options' == $section['id'] || 'home_header_section' == $section['id'] || 'page_title' == $section['id'] ) {
+                        	$panel = 'header_settings';
+                        }
+                        //error_log($section['id']);
                         $this->add_section( $section['id'], array(
                             'title'       => $section['title'],
                             'priority'    => $section['priority'],

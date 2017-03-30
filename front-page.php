@@ -7,7 +7,7 @@
     /**
     * @hooked ascend_front_page_header - 20
     */
-    do_action('kadence_front_page_title_container');                
+    do_action('ascend_front_page_title_container');                
 
 ?>
     <div id="content" class="container homepagecontent">
@@ -16,6 +16,7 @@
           		<div class="entry-content" itemprop="mainContentOfPage">
 
 		      	<?php
+		      	$ascend = ascend_get_options();
 		      	if(isset($ascend['homepage_layout'])) { 
 		      		$layout = array();
 		      		foreach ($ascend['homepage_layout'] as $key => $value) {
@@ -44,7 +45,7 @@
 					                * @hooked ascend_page_content - 20
 					                * @hooked ascend_page_content_wrap_after - 30
 					                */
-					                do_action('kadence_page_content');
+					                do_action('ascend_page_content');
 						    	}
 						    break;
 						    case 'block_two': 

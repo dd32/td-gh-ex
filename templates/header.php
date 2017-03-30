@@ -1,5 +1,5 @@
 <?php 
-global $ascend;
+$ascend = ascend_get_options();
 if(isset($ascend['site_layout'])) {
     $site_layout = $ascend['site_layout'];
 } else {

@@ -1,6 +1,5 @@
 <?php
-	define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' );
-	load_theme_textdomain('ascend', get_template_directory() . '/languages');
+	define( 'ASCEND_OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' );
 
 
 	/*
@@ -113,9 +112,9 @@
 		            'title' => __('Site Layout Header Style', 'ascend'), 
 		            'subtitle' => __('Select left, above or right header style', 'ascend'),
 		            'options' => array(
-		                    'left' => array('alt' => 'Left Layout', 'img' => OPTIONS_PATH.'img/left_layout-min.png'),
-		                    'above' => array('alt' => 'Above Layout', 'img' => OPTIONS_PATH.'img/above_layout-min.png'),
-		                    'right' => array('alt' => 'Right Layout', 'img' => OPTIONS_PATH.'img/right_layout-min.png'),
+		                    'left' => array('alt' => 'Left Layout', 'img' => ASCEND_OPTIONS_PATH.'img/left_layout-min.png'),
+		                    'above' => array('alt' => 'Above Layout', 'img' => ASCEND_OPTIONS_PATH.'img/above_layout-min.png'),
+		                    'right' => array('alt' => 'Right Layout', 'img' => ASCEND_OPTIONS_PATH.'img/right_layout-min.png'),
 		                ),
 		            'default' => 'above',
 		        ),
@@ -126,9 +125,9 @@
 		            'title' => __('Site Layout Style', 'ascend'), 
 		            'subtitle' => __('Select Normal or Boxed Layout Style', 'ascend'),
 		            'options' => array(
-		                    'normal' => array('alt' => 'Normal Layout', 'img' => OPTIONS_PATH.'img/wide_layout.png'),
-		                    'boxed' => array('alt' => 'Boxed Layout', 'img' => OPTIONS_PATH.'img/boxed_layout.png'),
-		                    //'bubbled' => array('alt' => 'Bubbled Layout', 'img' => OPTIONS_PATH.'img/3cm.png'),
+		                    'normal' => array('alt' => 'Normal Layout', 'img' => ASCEND_OPTIONS_PATH.'img/wide_layout.png'),
+		                    'boxed' => array('alt' => 'Boxed Layout', 'img' => ASCEND_OPTIONS_PATH.'img/boxed_layout.png'),
+		                    //'bubbled' => array('alt' => 'Bubbled Layout', 'img' => ASCEND_OPTIONS_PATH.'img/3cm.png'),
 		                ),
 		            'default' => 'normal',
 	            ),
@@ -201,11 +200,11 @@
 	            'type' => 'image_select',
 	            'title' => __('Choose Header Style', 'ascend'), 
 	            'options' => array(
-		                    'standard' => array('alt' => 'Logo / Menu + Extras', 'img' => OPTIONS_PATH.'img/logo_menu.png'),
-		                    'center' => array('alt' => 'Menu / Logo / Menu + Extras', 'img' => OPTIONS_PATH.'img/center.png'),
-		                    'center_menu' => array('alt' => 'Logo / Menu / Extras', 'img' => OPTIONS_PATH.'img/center_menu.png'),
-		                    'bylogo' => array('alt' => 'Logo + Menu / Extras', 'img' => OPTIONS_PATH.'img/bylogo.png'),
-		                    'center_below' => array('alt' => 'Extras / Logo / Extras 2 // Menu', 'img' => OPTIONS_PATH.'img/center_below.png'),
+		                    'standard' => array('alt' => 'Logo / Menu + Extras', 'img' => ASCEND_OPTIONS_PATH.'img/logo_menu.png'),
+		                    'center' => array('alt' => 'Menu / Logo / Menu + Extras', 'img' => ASCEND_OPTIONS_PATH.'img/center.png'),
+		                    'center_menu' => array('alt' => 'Logo / Menu / Extras', 'img' => ASCEND_OPTIONS_PATH.'img/center_menu.png'),
+		                    'bylogo' => array('alt' => 'Logo + Menu / Extras', 'img' => ASCEND_OPTIONS_PATH.'img/bylogo.png'),
+		                    'center_below' => array('alt' => 'Extras / Logo / Extras 2 // Menu', 'img' => ASCEND_OPTIONS_PATH.'img/center_below.png'),
 		                ),
 	            //'options' => array('standard' => 'Logo / Menu + Extras','center' => 'Menu / Logo / Menu + Extras','center_menu' => 'Logo / Menu / Extras', 'bylogo' => 'Logo + Menu / Extras', 'center_below' => 'Extras / Logo / Extras 2 // Menu'),
 	            'default' => 'standard',
@@ -334,7 +333,8 @@ Redux::setSection( $opt_name, array(
             'type' => 'media', 
             'url'=> true,
             'title' => __('Logo', 'ascend'),
-            'customizer' => true,
+            'customizer' => false,
+            'validate_callback' => 'ascend_update_callback_custom_logo',
             'subtitle' => __('Upload your Logo. Use an image at least twice the size of your logo width setting below.', 'ascend'),
             ),
         array(
@@ -434,8 +434,8 @@ Redux::setSection( $opt_name, array(
             'title' => __('Mobile Header Layout', 'ascend'), 
             'subtitle' => __('Select left or center mobile header style.', 'ascend'),
             'options' => array(
-                    'left' => array('alt' => 'Left Logo with right menu', 'img' => OPTIONS_PATH.'img/mheader_style_left-min.png'),
-                    'center' => array('alt' => 'Center Logo, Right and Left Extras', 'img' => OPTIONS_PATH.'img/mheader_style_center-min.png'),
+                    'left' => array('alt' => 'Left Logo with right menu', 'img' => ASCEND_OPTIONS_PATH.'img/mheader_style_left-min.png'),
+                    'center' => array('alt' => 'Center Logo, Right and Left Extras', 'img' => ASCEND_OPTIONS_PATH.'img/mheader_style_center-min.png'),
                 ),
             'default' => 'left',
         ),
@@ -752,8 +752,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'topbar_account',
              'type' => 'select',
-            'title' => __('Account Icon Display', 'ascend'), 
-            'subtitle' => __('Select to optionally display an account icon in topbar', 'ascend'),
+            'title' => __('Account/Login Display', 'ascend'), 
+            'subtitle' => __('Select to optionally display an account/login in topbar', 'ascend'),
             'options' => array(
             	'right' => __('Right Side', 'ascend'), 
             	'left' => __('Left Side', 'ascend'),
@@ -788,11 +788,11 @@ Redux::setSection( $opt_name, array(
             'title' => __('Footer Widget Layout', 'ascend'), 
             'subtitle' => __('Select how many columns for footer widgets', 'ascend'),
             'options' => array(
-                    'fourc' => array('alt' => 'Four Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-4.png'),
-                    'threec' => array('alt' => 'Three Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-3.png'),
-                    'twoc' => array('alt' => 'Two Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-2.png'),
-                    'four_single' => array('alt' => 'One column with three below Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-4-single.png'),
-                    'three_single' => array('alt' => 'One column with two below Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-3-single.png'),
+                    'fourc' => array('alt' => 'Four Column Layout', 'img' => ASCEND_OPTIONS_PATH.'img/footer-widgets-4.png'),
+                    'threec' => array('alt' => 'Three Column Layout', 'img' => ASCEND_OPTIONS_PATH.'img/footer-widgets-3.png'),
+                    'twoc' => array('alt' => 'Two Column Layout', 'img' => ASCEND_OPTIONS_PATH.'img/footer-widgets-2.png'),
+                    'four_single' => array('alt' => 'One column with three below Layout', 'img' => ASCEND_OPTIONS_PATH.'img/footer-widgets-4-single.png'),
+                    'three_single' => array('alt' => 'One column with two below Layout', 'img' => ASCEND_OPTIONS_PATH.'img/footer-widgets-3-single.png'),
                 ),
             'default' => 'fourc',
             ),
@@ -999,7 +999,7 @@ Redux::setSection( $opt_name, array(
             'id'=>'home_header',
             'type' => 'select',
             'title' => __('Choose home page header settings', 'ascend'), 
-            'options' => array('pagetitle' => __('Page Title', 'ascend'), 'basic' => __('Basic Slider', 'ascend'), 'basic_post_carousel' => __('Post Carousel', 'ascend'), 'none' => __('None', 'ascend')),
+            'options' => array('pagetitle' => __('Page Title', 'ascend'), 'none' => __('None', 'ascend')),
             'default' => 'pagetitle',
             'width' => 'width:60%',
         ),
@@ -1075,8 +1075,8 @@ Redux::setSection( $opt_name, array(
             'id'=>'home_basic_slider_type',
             'type' => 'select',
             'title' => __('Basic Slider Type', 'ascend'), 
-            'options' => array('equal-ratio' => __('Equal Ratio Images', 'ascend'), 'different-ratio' => __('Different Ratio Images', 'ascend'), 'fullwidth' => __('Forced Fullwidth Images', 'ascend'), 'thumb' => __('Thumbnails', 'ascend'), 'carousel' => __('Images in Carousel', 'ascend')),
-            'default' => 'equal-ratio',
+            'options' => array('equal-ratio' => __('Equal Ratio Images', 'ascend'), 'different-ratio' => __('Different Ratio Images', 'ascend'), 'fullwidth' => __('Forced Fullwidth Images', 'ascend'), 'thumb' => __('Thumbnails', 'ascend'), 'carousel' => __('Images in Carousel', 'ascend'), 'latest-posts' => __('Latest posts', 'ascend')),
+            'default' => 'latest-posts',
             'width' => 'width:60%',
             'required' => array('home_header','=','basic'),
         ),
@@ -1109,7 +1109,10 @@ Redux::setSection( $opt_name, array(
             'type' => 'kad_slides',
             'title' => __('Basic Slider Images', 'ascend'),
             'subtitle'=> __('Use large images for best results.', 'ascend'),
-            'required' => array('home_header','=','basic'),
+             'required' => array(
+            	array('home_header','=','basic'),
+            	array('home_basic_slider_type','!=','latest-posts'),
+            	),
         ),
         array(
             'id'=>'slider_size',
@@ -1121,6 +1124,7 @@ Redux::setSection( $opt_name, array(
             "step"      => "5",
             "max"       => "1000",
             'required' => array('home_header','=','basic'),
+           
             ), 
         array(
             'id'=>'slider_size_width',
@@ -1154,8 +1158,6 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('Choose the title color', 'ascend'),
             'transparent'=>false,
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1167,8 +1169,6 @@ Redux::setSection( $opt_name, array(
             'validate' => 'numeric',
             'subtitle' => __('*Number Only', 'ascend'),
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1180,8 +1180,6 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('*Number Only', 'ascend'),
             'validate' => 'numeric',
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1194,8 +1192,6 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('Choose the subtitle color.', 'ascend'),
             'transparent'=>false,
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1207,8 +1203,6 @@ Redux::setSection( $opt_name, array(
             'validate' => 'numeric',
             'subtitle' => __('*Number Only', 'ascend'),
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1220,8 +1214,6 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('*Number Only', 'ascend'),
             'validate' => 'numeric',
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -1234,8 +1226,6 @@ Redux::setSection( $opt_name, array(
             'default' => 'center',
             'width' => 'width:60%',
             'required' => array(
-            	array('home_header','!=','shortcode'),
-            	array('home_header','!=','ksp'),
             	array('home_header','!=','basic_post_carousel'),
             	array('home_header','!=','none'),
             	),
@@ -2378,8 +2368,8 @@ Redux::setSection( $opt_name, array(
             'output' => array('.product_item .product_archive_title'),
             'subtitle'=> __("Choose Size and Style for product titles on category and archive pages.", 'ascend'),
             'default'=> array(
-                'font-family'=>'Source Sans Pro"',
-                'color'=>"#444444", 
+                'font-family'=>'Source Sans Pro',
+                'color'=>'#444444', 
                 'font-style'=>'600',
                 'font-size'=>'15px', 
                 'line-height'=>'20px', 
@@ -2531,6 +2521,18 @@ Redux::setSection( $opt_name, array(
             'title' => __('Show the Title in post content', 'ascend'),
             'default' => 1,
         ),
+        array(
+            'id'=>'product_gallery_slider',
+            'type' => 'switch', 
+            'title' => __('Enable woocommerce slider for product gallery? (must be woocommerce 3.0+)', 'ascend'),
+            "default" => 1,
+        ),
+        array(
+            'id'=>'product_gallery_zoom',
+            'type' => 'switch', 
+            'title' => __('Enable woocommerce hover zoom for product gallery? (must be woocommerce 3.0+)', 'ascend'),
+            "default" => 1,
+        ), 
         array(
             'id'=>'product_tabs',
             'title' => __('Display product tabs?', 'ascend'),
@@ -2797,23 +2799,6 @@ Redux::setSection( $opt_name, array(
             "step"      => "1",
             "max"       => "6",
             ),
-         array(
-            'id'		=>'portfolio_tax_items',
-            'type' 		=> 'slider', 
-            'title' 	=> __('Choose how many portfolio items show on portfolio archive pages', 'ascend'),
-            "default"   => "12",
-            "min"       => "2",
-            "step"      => "1",
-            "max"       => "48",
-            ),
-         array(
-            'id'		=>'portfolio_tax_order',
-            'type'		=> 'select',
-            'title' 	=> __('Choose order for portfolio archive pages', 'ascend'), 
-            'options' 	=> array('menu_order' => __('Menu Order', 'ascend'), 'date' => __('Date', 'ascend'),'title' => __('Title', 'ascend')),
-            'width' 	=> 'width:60%',
-            'default' 	=> 'menu_order',
-            ),
         array(
             'id'		=>'portfolio_tax_show_lightbox',
             'type' 		=> 'switch', 
@@ -3038,7 +3023,7 @@ Redux::setSection( $opt_name, array(
             'width' => 'width:60%',
         ), 
         array(
-            'id'=>'post_summery_default_image',
+            'id'=>'default_placeholder_image',
             'type' => 'media', 
             'url'=> true,
             'title' => __('Default post summary feature Image', 'ascend'),
@@ -3089,7 +3074,7 @@ Redux::setSection( $opt_name, array(
             'title' => __('Gallery Blog Post Summary Default', 'ascend'), 
             'options' => array('text' => __('Text', 'ascend'), 'img_portrait' => __('Portrait Image', 'ascend'), 'img_landscape' => __('Landscape Image', 'ascend'),'slider_portrait' => __('Portrait Slider', 'ascend'), 'slider_landscape' => __('Landscape Slider', 'ascend'), 'gallery_grid' => __('Photo Collage - (Use 2 to 5 images)', 'ascend')),
             'width' => 'width:60%',
-            'default' => 'slider_landscape',
+            'default' => 'img_landscape',
             ),
         array(
             'id'=>'gallery_post_blog_default',
@@ -3097,7 +3082,7 @@ Redux::setSection( $opt_name, array(
             'title' => __('Single Gallery Post Head Content', 'ascend'), 
             'options' => array('none' => __('None', 'ascend'), 'flex' => __('Image Slider - (Cropped Image Ratio)', 'ascend'),'carouselslider' => __('Carousel Slider - (Different Image Ratio)', 'ascend'),'thumbslider' => __('Image Slider with thumbnails (Cropped Image Ratio)', 'ascend'),'imgcarousel' => __('Image Carousel - (Muiltiple Images Showing At Once)', 'ascend'),'imgcarousel' => __('Image Collage - (Use 2 to 5 images)', 'ascend'),'shortcode' => __('Shortcode', 'ascend')),
             'width' => 'width:60%',
-            'default' => 'flex',
+            'default' => 'carouselslider',
             ),
         array(
             'id'=>'info_blog_defaults_video',
@@ -3177,12 +3162,13 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('Choose the default Highlight color for your site.', 'ascend'),
             'transparent'=>false,
             'validate' => 'color',
+            'default' => '#16A085',
             ),
         array(
             'id'=>'topbar_font_color',
             'type' => 'color',
             'title' => __('Topbar Font color', 'ascend'), 
-            'default' => '',
+            'default' => '#ffffff',
             'output'    => array('.kad-topbar-flex-item, .kad-topbar-flex-item a, .kad-topbar-flex-item .kadence_social_widget a, .topbarclass .kt-woo-account-nav .kad-customer-name h5, .topbarclass .kt-mini-cart-refreash .total'),
             'transparent'=>false,
             'validate' => 'color',
@@ -3191,7 +3177,7 @@ Redux::setSection( $opt_name, array(
             'id'=>'topbar_font_hover_color',
             'type' => 'color',
             'title' => __('Topbar Font Link Hover color', 'ascend'), 
-            'default' => '',
+            'default' => '#ffffff',
             'output'    => array('.kad-topbar-flex-item a:hover'),
             'transparent'=>false,
             'validate' => 'color',
@@ -3203,6 +3189,7 @@ Redux::setSection( $opt_name, array(
             'output'    => array('.footerclass a, .footerclass, .footerclass h4, .footerclass h3, .footerclass h5'),
             'transparent'=>false,
             'validate' => 'color',
+            'default' => '#eeeeee',
             ),
         array(
             'id'=>'footerfont_hover_color',
@@ -3211,6 +3198,7 @@ Redux::setSection( $opt_name, array(
             'output'    => array('color' => '.footerclass a:hover', 'border-color' => '.footerclass .menu li a:hover'),
             'transparent'=>false,
             'validate' => 'color',
+            'default' => '#ffffff',
             ),
       ),
 ) );
@@ -3225,6 +3213,9 @@ Redux::setSection( $opt_name, array(
 	        'type'      => 'background',
 	        'output'    => array('.contentclass, .above-footer-widgets .widget-title span, .footer-widget-title span, .kt-title span, .sidebar .widget-title span'),
 	        'title'     => __('Content Background', 'ascend'),
+	        'default'  => array(
+		        'background-color' => '#ffffff',
+		    ),
         ),
       	array(
             'id'=>'info_topbar_background',
@@ -3236,6 +3227,9 @@ Redux::setSection( $opt_name, array(
 	        'type'      => 'background',
 	        'output'    => array('.topbarclass, .topbarclass .sf-menu ul '),
 	        'title'     => __('Topbar Background', 'ascend'),
+	        'default'  => array(
+		        'background-color' => '#444444',
+		    ),
 	    ),
       	array(
             'id'=>'info_header_background',
@@ -3262,7 +3256,7 @@ Redux::setSection( $opt_name, array(
             'id'=>'header_background_color',
             'type' => 'color',
             'title' => __('Header Background Color', 'ascend'), 
-            'default' => '',
+            'default' => '#ffffff',
             'transparent'=>false,
             'validate' => 'color',
             'required' => array('header_background_choice','=','simple'),
@@ -3297,12 +3291,18 @@ Redux::setSection( $opt_name, array(
 	        'type'      => 'background',
 	        'output'    => array('.footerclass, .footerclass .footer-widget-title span, body.body-style-bubbled .footerclass .footer-widget-title span'),
 	        'title'     => __('Footer Background', 'ascend'),
+	        'default'  => array(
+		        'background-color' => '#333333',
+		    ),
         ),
         array(
 	        'id'        => 'footer_base_background',
 	        'type'      => 'background',
 	        'output'    => array('.footerbase'),
 	        'title'     => __('Footer Base Background', 'ascend'),
+	        'default'  => array(
+		        'background-color' => '#2e2e2e',
+		    ),
         ),
       	array(
             'id'=>'info_body_background',
@@ -3315,6 +3315,9 @@ Redux::setSection( $opt_name, array(
 	        'output'    => array('body'),
 	        'title'     => __('Body Background', 'ascend'),
 	        'subtitle'  => __('This shows if site is using the boxed layout option.', 'ascend'),
+	        'default'  => array(
+		        'background-color' => '#ffffff',
+		    ),
         ),
     ),
 ) );
@@ -4126,15 +4129,14 @@ Redux::setSection( $opt_name, array(
 	) );
 
 
-function ascend_override_redux_icons_css() {
+function ascend_override_redux_css() {
   	wp_dequeue_style( 'redux-admin-css' );
-  	wp_register_style( 'kt-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 001);    
-  	wp_enqueue_style( 'kt-redux-custom-css');
+  	wp_enqueue_style( 'kt-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 001);
   	wp_dequeue_style( 'select2-css');
     wp_dequeue_style( 'redux-elusive-icon' );
     wp_dequeue_style( 'redux-elusive-icon-ie7' );
 }
-add_action('redux/page/ascend/enqueue', 'ascend_override_redux_icons_css', 100);
+add_action('redux/page/ascend/enqueue', 'ascend_override_redux_css', 100);
 
 function ascend_remove_demo() {
 
@@ -4147,4 +4149,63 @@ function ascend_remove_demo() {
             remove_action( 'admin_notices', array( ReduxFrameworkPlugin::instance(), 'admin_notices' ) );
         }
     }
+function ascend_update_callback_custom_logo($field, $value, $existing_value) {
+	set_theme_mod( 'custom_logo', $value['id']);
+	$return['value'] = $value;
+	return $return;
+}
+add_action( 'customize_save_after', 'ascend_customizer_save_after' );
+function ascend_customizer_save_after( $wp_customize ) {
+   	$logo_id = get_theme_mod( 'custom_logo' );
+	if(isset($logo_id)){
+		$options = get_option( 'ascend' );
+		if(isset($options['logo']['id']) && ($options['logo']['id'] != $logo_id) ){
+			$logo = wp_get_attachment_image_src($logo_id, 'full');
+			$options['logo']['id'] = absint($logo_id);
+			$options['logo']['url'] = esc_url_raw($logo['0']);
+			$options['logo']['height'] = absint($logo['1']);
+			$options['logo']['width'] = absint($logo['2']);
+			$options['logo']['thumbnail'] = esc_url_raw($logo['0']);
 
+			update_option( 'ascend',  $options); 
+		}
+	}
+}
+add_action( 'init', 'ascend_customizer_override_values');
+function ascend_customizer_override_values() {
+	global $pagenow, $wp_customize;
+    if ( ! isset( $wp_customize ) && $pagenow !== "customize.php" && $pagenow !== "admin-ajax.php" ) {
+        return;
+    }
+	if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == "on" && isset( $_POST['customized'] ) && ! empty( $_POST['customized'] ) && ! isset( $_POST['action'] ) ) {
+		 add_filter( 'ascend_theme_options_filter',  'ascend_override_options_filter', 100 );
+    }
+}
+function ascend_override_options_filter($data) {
+    $post_values = json_decode( stripslashes_deep( $_POST['customized'] ), true );
+    if ( isset( $_POST['customized'] ) && ! empty( $post_values ) ) {
+        if ( is_array( $post_values ) ) {
+            foreach ( $post_values as $key => $value ) {
+            	if($key == 'custom_logo') {
+            		$value = absint($value);
+            		$logo = wp_get_attachment_image_src($value, 'full');
+            		$data[ 'logo' ]['id'] = absint($value);
+            		$data[ 'logo' ]['url'] = esc_url_raw($logo['0']);
+					$data[ 'logo' ]['height'] = absint($logo['1']);
+					$data[ 'logo' ]['width'] = absint($logo['2']);
+					$data[ 'logo' ]['thumbnail'] = esc_url_raw($logo['0']);
+            	}
+            	if ( strpos( $key, 'ascend' ) !== false ) {
+                    $key 			= str_replace( 'ascend[', '', rtrim( $key, "]" ) );
+                    $data[ $key ] 	= $value;
+                }
+			}
+        }
+
+    }
+    return $data;
+}
+function ascend_custom_logo_customize_register( $wp_customize ) {
+    $wp_customize->get_control( 'custom_logo' )->section = 'logo_settings';
+}
+add_action( 'customize_register', 'ascend_custom_logo_customize_register', 80);

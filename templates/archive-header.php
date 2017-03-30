@@ -1,6 +1,6 @@
 <?php
 // Archive header
-global $ascend;
+$ascend = ascend_get_options();
 
 	
 		if(isset($ascend['single_header_title_size'])){
@@ -37,14 +37,14 @@ global $ascend;
 	?>
 <div id="pageheader" class="titleclass archive-header-area <?php echo esc_attr($breadclass);?>">
 <div class="header-color-overlay"></div>
-<?php do_action("kt_header_overlay"); ?>
+<?php do_action('ascend_header_overlay'); ?>
 	<div class="container">
 		<div class="page-header">
 			<div class="page-header-inner">
 			<div class="header-case">
-		  		<h1 class="entry-title" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo ascend_title(); ?></h1>
+		  		<h1 class="entry-title" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo esc_html(ascend_title()); ?></h1>
 		  		</div>
-			  	<?php if(!empty($bsub)) { echo '<div class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"> '.$bsub.' </div>'; } ?>
+			  	<?php if(!empty($bsub)) { echo '<div class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"> '.wp_kses_post($bsub).' </div>'; } ?>
 			</div>
 		</div>
 	</div><!--container-->

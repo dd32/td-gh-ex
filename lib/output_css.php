@@ -4,11 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 function ascend_custom_css() {
 
-	global $ascend, $post; 
-	// Theme options
+	$ascend = ascend_get_options();
 
 	if(isset($ascend['primary_color']) && !empty($ascend['primary_color'])) {
-		$primary_color = 'a, .author-box .author-follow a, .primary-color, .postlist article .entry-content a.more-link:hover,.widget_price_filter .price_slider_amount .button, .product .product_meta a:hover, .star-rating, .above-footer-widgets a:not(.button):hover, .sidebar a:not(.button):hover, .footerclass a:hover, .posttags a:hover, .tagcloud a:hover, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .wp-pagenavi a:hover, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover{color:'.$ascend['primary_color'].';} .comment-content a:not(.button):hover, .entry-content p a:not(.button):not(.select2-choice):not([data-rel="lightbox"]):hover, .kt_product_toggle_outer .toggle_grid:hover, .kt_product_toggle_outer .toggle_list:hover, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .product_meta a, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked+label, .kt-woo-account-nav .woocommerce-MyAccount-navigation ul li.is-active a, a.added_to_cart, .widget_pages ul li.kt-drop-toggle > .kt-toggle-sub, .widget_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_product_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_recent_entries ul li a:hover ~ .kt-toggle-sub, .widget_recent_comments ul li a:hover ~ .kt-toggle-sub, .widget_archive ul li a:hover ~ .kt-toggle-sub, .widget_pages ul li a:hover ~ .kt-toggle-sub, .widget_categories ul li a:hover ~ .kt-toggle-sub, .widget_meta ul li a:hover ~ .kt-toggle-sub, .widget_product_categories ul li a:hover ~ .kt-toggle-sub,.kt-tabs.kt-tabs-style2 > li > a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .footerclass .menu li a:hover, .widget_recent_entries ul li a:hover, .posttags a:hover, .tagcloud a:hover,.widget_recent_comments ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .widget_meta ul li a:hover, .widget_product_categories ul li a:hover, .box-icon-item .icon-container .icon-left-highlight,.box-icon-item .icon-container .icon-right-highlight, .widget_pages ul li.current-cat > a, .widget_categories ul li.current-cat > a, .widget_product_categories ul li.current-cat > a, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .wp-pagenavi .current, .wp-pagenavi a:hover, .kt-mobile-header-toggle .header-underscore-icon [class*=kt-icon-], .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover, .widget_layered_nav ul li.chosen a, .widget_layered_nav_filters ul li a, .widget_rating_filter ul li.chosen a, .variations .kad_radio_variations label.selectedValue, .variations .kad_radio_variations label:hover{border-color:'.$ascend['primary_color'].';} .kt-header-extras span.kt-cart-total, .btn, .button, .submit, button, input[type="submit"], .portfolio-loop-image-container .portfolio-hover-item .portfolio-overlay-color, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, .product .woocommerce-tabs .wc-tabs:before, .woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-noreviews, p.no-comments, .widget_pages ul li ul li.current-cat > a:before, .widget_categories ul li ul li.current-cat > a:before, .widget_product_categories ul li ul li.current-cat > a:before, .widget_pages ul li ul li a:hover:before, .widget_categories ul li ul li a:hover:before, .widget_product_categories ul li ul li a:hover:before, .kadence_recent_posts a.posts_widget_readmore:hover:before, .kt-accordion > .panel h5:after, .kt-tabs:before, .image_menu_overlay, .kadence_social_widget a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .widget_pages ul li.current-cat > .count, .widget_categories ul li.current-cat > .count, .widget_product_categories ul li.current-cat > .count, .widget_recent_entries ul li a:hover ~ .count, .widget_recent_comments ul li a:hover ~ .count, .widget_archive ul li a:hover ~ .count, .widget_pages ul li a:hover ~ .count, .widget_categories ul li a:hover ~ .count, .widget_meta ul li a:hover ~ .count, .widget_product_categories ul li a:hover ~ .count, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .select2-results .select2-highlighted, .wp-pagenavi .current, .kt-header-extras span.kt-cart-total, .kt-mobile-header-toggle span.kt-cart-total, .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current,.widget_price_filter .ui-slider .ui-slider-handle, .widget_layered_nav ul li.chosen span.count, .widget_layered_nav_filters ul li span.count, .variations .kad_radio_variations label.selectedValue, .box-icon-item .menu-icon-read-more .read-more-highlight{background:'.$ascend['primary_color'].';}@media (max-width: 767px){.filter-set li a.selected {background:'.$ascend['primary_color'].';}}';
+		$primary_color = 'a, .primary-color, .postlist article .entry-content a.more-link:hover,.widget_price_filter .price_slider_amount .button, .product .product_meta a:hover, .star-rating, .above-footer-widgets a:not(.button):hover, .sidebar a:not(.button):hover, .footerclass a:hover, .posttags a:hover, .tagcloud a:hover, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .wp-pagenavi a:hover, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover{color:'.esc_attr($ascend['primary_color']).';} .comment-content a:not(.button):hover, .entry-content p a:not(.button):not(.select2-choice):not([data-rel="lightbox"]):hover, .kt_product_toggle_outer .toggle_grid:hover, .kt_product_toggle_outer .toggle_list:hover, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .product_meta a, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked+label, .kt-woo-account-nav .woocommerce-MyAccount-navigation ul li.is-active a, a.added_to_cart, .widget_pages ul li.kt-drop-toggle > .kt-toggle-sub, .widget_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_product_categories ul li.kt-drop-toggle > .kt-toggle-sub, .widget_recent_entries ul li a:hover ~ .kt-toggle-sub, .widget_recent_comments ul li a:hover ~ .kt-toggle-sub, .widget_archive ul li a:hover ~ .kt-toggle-sub, .widget_pages ul li a:hover ~ .kt-toggle-sub, .widget_categories ul li a:hover ~ .kt-toggle-sub, .widget_meta ul li a:hover ~ .kt-toggle-sub, .widget_product_categories ul li a:hover ~ .kt-toggle-sub,.kt-tabs.kt-tabs-style2 > li > a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .kt_bc_nomargin #kadbreadcrumbs a:hover, #kadbreadcrumbs a:hover, .footerclass .menu li a:hover, .widget_recent_entries ul li a:hover, .posttags a:hover, .tagcloud a:hover,.widget_recent_comments ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .widget_meta ul li a:hover, .widget_product_categories ul li a:hover, .box-icon-item .icon-container .icon-left-highlight,.box-icon-item .icon-container .icon-right-highlight, .widget_pages ul li.current-cat > a, .widget_categories ul li.current-cat > a, .widget_product_categories ul li.current-cat > a, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .wp-pagenavi .current, .wp-pagenavi a:hover, .kt-mobile-header-toggle .header-underscore-icon [class*=kt-icon-], .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current, .woocommerce-pagination ul.page-numbers li a:hover, .woocommerce-pagination ul.page-numbers li span:hover, .widget_layered_nav ul li.chosen a, .widget_layered_nav_filters ul li a, .widget_rating_filter ul li.chosen a, .variations .kad_radio_variations label.selectedValue, .variations .kad_radio_variations label:hover{border-color:'.esc_attr($ascend['primary_color']).';} .kt-header-extras span.kt-cart-total, .btn, .button, .submit, button, input[type="submit"], .portfolio-loop-image-container .portfolio-hover-item .portfolio-overlay-color, .kt_product_toggle_outer .toggle_grid.toggle_active, .kt_product_toggle_outer .toggle_list.toggle_active, .product .woocommerce-tabs .wc-tabs > li.active > a, .product .woocommerce-tabs .wc-tabs > li.active > a:hover, .product .woocommerce-tabs .wc-tabs > li.active > a:focus, .product .woocommerce-tabs .wc-tabs:before, .woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-noreviews, p.no-comments, .widget_pages ul li ul li.current-cat > a:before, .widget_categories ul li ul li.current-cat > a:before, .widget_product_categories ul li ul li.current-cat > a:before, .widget_pages ul li ul li a:hover:before, .widget_categories ul li ul li a:hover:before, .widget_product_categories ul li ul li a:hover:before, .kadence_recent_posts a.posts_widget_readmore:hover:before, .kt-accordion > .panel h5:after, .kt-tabs:before, .image_menu_overlay, .kadence_social_widget a:hover, .kt-tabs > li.active > a, .kt-tabs > li.active > a:hover, .kt-tabs > li.active > a:focus, .widget_pages ul li.current-cat > .count, .widget_categories ul li.current-cat > .count, .widget_product_categories ul li.current-cat > .count, .widget_recent_entries ul li a:hover ~ .count, .widget_recent_comments ul li a:hover ~ .count, .widget_archive ul li a:hover ~ .count, .widget_pages ul li a:hover ~ .count, .widget_categories ul li a:hover ~ .count, .widget_meta ul li a:hover ~ .count, .widget_product_categories ul li a:hover ~ .count, #payment ul.wc_payment_methods li.wc_payment_method input[type=radio]:first-child:checked + label:before, .select2-results .select2-highlighted, .wp-pagenavi .current, .kt-header-extras span.kt-cart-total, .kt-mobile-header-toggle span.kt-cart-total, .woocommerce-pagination ul.page-numbers li a.current, .woocommerce-pagination ul.page-numbers li span.current,.widget_price_filter .ui-slider .ui-slider-handle, .widget_layered_nav ul li.chosen span.count, .widget_layered_nav_filters ul li span.count, .variations .kad_radio_variations label.selectedValue, .box-icon-item .menu-icon-read-more .read-more-highlight{background:'.esc_attr($ascend['primary_color']).';}@media (max-width: 767px){.filter-set li a.selected {background:'.esc_attr($ascend['primary_color']).';}}';
 	} else {
 		$primary_color = '';
 	}
@@ -23,7 +22,7 @@ function ascend_custom_css() {
 	}
 	if(!empty($ascend['header_background_choice']) && $ascend['header_background_choice'] == 'simple' && !empty($ascend['header_background_color'])) {
 	    $head_bgcolor = ascend_hex2rgb($ascend['header_background_color']); 
-	  	$hbg_color = '.headerclass, .mobile-headerclass, .kad-fixed-vertical-background-area{background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$ascend['header_background_transparency'].');}';
+	  	$hbg_color = '.headerclass, .mobile-headerclass, .kad-fixed-vertical-background-area{background: rgba('.esc_attr($head_bgcolor[0]).', '.esc_attr($head_bgcolor[1]).', '.esc_attr($head_bgcolor[2]).', '.esc_attr($ascend['header_background_transparency']).');}';
 	  	if($head_bgcolor[0] + $head_bgcolor[1] + $head_bgcolor[2] < 382){
 		  // this is dark colour!
 	  		$social_border = '.kt-header-extras .kadence_social_widget a {border-color: rgba(255,255,255,.2);}';
@@ -48,13 +47,13 @@ function ascend_custom_css() {
 	if(!empty($ascend['trans_header_background_transparency']) && $ascend['trans_header_background_transparency'] != '0') {
 		if(isset($ascend['header_background_color']) && !empty($ascend['header_background_color']) ){
 	    	$head_bgcolor = ascend_hex2rgb($ascend['header_background_color']); 
-	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$ascend['trans_header_background_transparency'].');}';
+	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba('.esc_attr($head_bgcolor[0]).', '.esc_attr($head_bgcolor[1]).', '.esc_attr($head_bgcolor[2]).', '.esc_attr($ascend['trans_header_background_transparency']).');}';
 	  	} else {
-	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba(255,255,255,'.$ascend['trans_header_background_transparency'].');}';
+	  		$trans_hbg_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.kad-header-topbar-primary-outer div:not(.is-sticky)>.headerclass, body.trans-header div:not(.is-sticky)>.mobile-headerclass {background: rgba(255,255,255,'.esc_attr($ascend['trans_header_background_transparency']).');}';
 	  	}
 	  	if(isset($ascend['second_menu_background']) && !empty($ascend['second_menu_background']['background-color']) ){
 	    	$second_bgcolor = ascend_hex2rgb($ascend['second_menu_background']['background-color']); 
-	  		$trans_second_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.second-navclass, body.trans-header div:not(.is-sticky)>.second-navclass {background: rgba('.$second_bgcolor[0].', '.$second_bgcolor[1].', '.$second_bgcolor[2].', '.$ascend['trans_header_background_transparency'].');}';
+	  		$trans_second_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.second-navclass, body.trans-header div:not(.is-sticky)>.second-navclass {background: rgba('.esc_attr($second_bgcolor[0]).', '.esc_attr($second_bgcolor[1]).', '.esc_attr($second_bgcolor[2]).', '.esc_attr($ascend['trans_header_background_transparency']).');}';
 	  	} else {
 	  		$trans_second_color = 'body.trans-header div:not(.is-sticky)>.headerclass-outer div:not(.is-sticky)>.second-navclass, body.trans-header div:not(.is-sticky)>.second-navclass {background: rgba(255,255,255,'.$ascend['trans_header_background_transparency'].');}';
 	  	}
@@ -68,17 +67,17 @@ function ascend_custom_css() {
 		$product_button = '';
 	}
 	if(isset($ascend['dropdown_menu_font_size']) && !empty($ascend['dropdown_menu_font_size']['color'])) {
-		$dropdown_font = '.kt-header-extras #kad-head-cart-popup ul a:not(.remove), .kt-header-extras #kad-head-cart-popup ul .quantity, .kt-header-extras #kad-head-cart-popup ul li.empty, .kad-header-menu-inner .kt-header-extras .kt-woo-account-nav h5, .kad-relative-vertical-content .kt-header-extras .kt-woo-account-nav h5 {color:'.$ascend['dropdown_menu_font_size']['color'].';}';
+		$dropdown_font = '.kt-header-extras #kad-head-cart-popup ul a:not(.remove), .kt-header-extras #kad-head-cart-popup ul .quantity, .kt-header-extras #kad-head-cart-popup ul li.empty, .kad-header-menu-inner .kt-header-extras .kt-woo-account-nav h5, .kad-relative-vertical-content .kt-header-extras .kt-woo-account-nav h5 {color:'.esc_attr($ascend['dropdown_menu_font_size']['color']).';}';
 	} else {
 		$dropdown_font = '';
 	}
 	if(isset($ascend['font_primary_menu']) && !empty($ascend['font_primary_menu']['color'])) {
-		$menu_font_color = '.kt-header-extras .kadence_social_widget a, .mobile-header-container .kt-mobile-header-toggle button {color:'.$ascend['font_primary_menu']['color'].';} button.mobile-navigation-toggle .kt-mnt span {background:'.$ascend['font_primary_menu']['color'].';} .kt-header-extras .kadence_social_widget a:hover{color:#fff;}';
+		$menu_font_color = '.kt-header-extras .kadence_social_widget a, .mobile-header-container .kt-mobile-header-toggle button {color:'.esc_attr($ascend['font_primary_menu']['color']).';} button.mobile-navigation-toggle .kt-mnt span {background:'.esc_attr($ascend['font_primary_menu']['color']).';} .kt-header-extras .kadence_social_widget a:hover{color:#fff;}';
 	} else {
 		$menu_font_color = '';
 	}
 	if(isset($ascend['font_secondary_menu']) && !empty($ascend['font_secondary_menu']['color'])) {
-		$secondmenu_font_color = '.second-navclass .sf-menu>li:after {background:'.$ascend['font_secondary_menu']['color'].';}';
+		$secondmenu_font_color = '.second-navclass .sf-menu>li:after {background:'.esc_attr($ascend['font_secondary_menu']['color']).';}';
 	} else {
 		$secondmenu_font_color = '';
 	}
@@ -87,7 +86,7 @@ function ascend_custom_css() {
 		$tb_height = 0;
 		$header_height = '';
 		if(isset($ascend['beside_header_width'])) {
-			$header_width = '.kad-vertical-menu, .kad-fixed-vertical-background-area {width:'.$ascend['beside_header_width'].'px;}@media (min-width: 992px) {.kad-header-position-left #wrapper {padding-left: '.$ascend['beside_header_width'].'px;}.kad-header-position-right #wrapper {padding-right: '.$ascend['beside_header_width'].'px;}} @media (min-width: '.floor(1470 + $ascend['beside_header_width'] + 40).'px) {.kad-header-position-left.kt-width-large.body-style-boxed #wrapper, .kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-large.body-style-boxed #wrapper {max-width: '.floor(1470 + $ascend['beside_header_width']).'px;}}@media (min-width: '.floor(1770 + $ascend['beside_header_width'] + 40).'px) {.kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper{max-width: '.floor(1770 + $ascend['beside_header_width']).'px;}}';
+			$header_width = '.kad-vertical-menu, .kad-fixed-vertical-background-area {width:'.esc_attr($ascend['beside_header_width']).'px;}@media (min-width: 992px) {.kad-header-position-left #wrapper {padding-left: '.esc_attr($ascend['beside_header_width']).'px;}.kad-header-position-right #wrapper {padding-right: '.esc_attr($ascend['beside_header_width']).'px;}} @media (min-width: '.esc_attr(floor(1470 + $ascend['beside_header_width'] + 40)).'px) {.kad-header-position-left.kt-width-large.body-style-boxed #wrapper, .kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-large.body-style-boxed #wrapper {max-width: '.esc_attr(floor(1470 + $ascend['beside_header_width'])).'px;}}@media (min-width: '.esc_attr(floor(1770 + $ascend['beside_header_width'] + 40)).'px) {.kad-header-position-left.kt-width-xlarge.body-style-boxed #wrapper, .kad-header-position-right.kt-width-xlarge.body-style-boxed #wrapper{max-width: '.esc_attr(floor(1770 + $ascend['beside_header_width'])).'px;}}';
 
 			if($ascend['beside_header_width'] < '120') {
 				$header_width .= '.kt-header-extras .sf-vertical.kt-search-and-cart li.menu-cart-icon-kt, .kt-header-extras .sf-vertical.kt-search-and-cart li.menu-search-icon-kt {width: 100%;text-align: center;float:none;border-right: 0;}';
@@ -97,7 +96,7 @@ function ascend_custom_css() {
 		}
 	} else {
 		if(isset($ascend['above_header_height'])) {
-			$header_height = '.kad-header-height {height:'.$ascend['above_header_height'].'px;}';
+			$header_height = '.kad-header-height {height:'.esc_attr($ascend['above_header_height']).'px;}';
 			$hd_height = $ascend['above_header_height'];
 		} else {
 		  	$header_height = '.kad-header-height {height:100px;}';
@@ -162,7 +161,7 @@ function ascend_custom_css() {
 	}
 	
 	if(isset($ascend['topbar_height'])) {
-	    $tbheight = '.kad-topbar-height {min-height:'.$ascend['topbar_height'].'px;}'; 
+	    $tbheight = '.kad-topbar-height {min-height:'.esc_attr($ascend['topbar_height']).'px;}'; 
 	} else {
 	    $tbheight = '';
 	}
@@ -172,14 +171,14 @@ function ascend_custom_css() {
 		$sc_height = 0;
 	}
 	if(isset($ascend['mobile_header_height'])) {
-	    $mhheight = '.kad-mobile-header-height {height:'.$ascend['mobile_header_height'].'px;}'; 
+	    $mhheight = '.kad-mobile-header-height {height:'.esc_attr($ascend['mobile_header_height']).'px;}'; 
 	    $mhd_height = $ascend['mobile_header_height'];
 	} else {
 	    $mhheight = '.kad-mobile-header-height {height:60px;}';
 	    $mhd_height = 60;
 	}
 	if(ascend_trans_header()) {
-		$title_padding = '.titleclass {padding-top:'.floor($hd_height + $tb_height + $sc_height).'px;}@media (max-width: 991px){.titleclass {padding-top:'.$mhd_height.'px;}}';
+		$title_padding = '.titleclass {padding-top:'.esc_attr(floor($hd_height + $tb_height + $sc_height)).'px;}@media (max-width: 991px){.titleclass {padding-top:'.esc_attr($mhd_height).'px;}}';
 	} else {
 		$title_padding = '';
 	}
@@ -192,13 +191,13 @@ function ascend_custom_css() {
 	if(isset($ascend['above_header_style']) && ($ascend['above_header_style'] == 'center' || $ascend['above_header_style'] == 'center_below' ) ) {
 		if(isset($ascend['above_header_logo_width'])) {
 				$sidewidth = (100 - $ascend['above_header_logo_width']) / 2;
-				$header_logo_width = '.kt-header-position-above .header-sidewidth {width:'.$sidewidth.'%;} .kt-header-position-above .header-logo-width {width:'.$ascend['above_header_logo_width'].'%;}';
+				$header_logo_width = '.kt-header-position-above .header-sidewidth {width:'.esc_attr($sidewidth).'%;} .kt-header-position-above .header-logo-width {width:'.esc_attr($ascend['above_header_logo_width']).'%;}';
 		} else {
 		  	$header_logo_width = '';
 		}
 	} else if(isset($ascend['above_header_style']) && $ascend['above_header_style'] == 'center_menu') {
 		if(isset($ascend['above_header_logo_width'])) {
-				$header_logo_width = '.kt-header-layout-center-menu .kad-center-header.kt-header-flex-item {padding-left:'.$ascend['above_header_logo_width'].'%; padding-right:'.$ascend['above_header_logo_width'].'%;}';
+				$header_logo_width = '.kt-header-layout-center-menu .kad-center-header.kt-header-flex-item {padding-left:'.esc_attr($ascend['above_header_logo_width']).'%; padding-right:'.esc_attr($ascend['above_header_logo_width']).'%;}';
 		} else {
 		  	$header_logo_width = '';
 		}
@@ -240,60 +239,60 @@ function ascend_custom_css() {
 				$height_small 	= '';
 			}
 			if(isset($ascend['home_mobile_page_title_height'])) {
-				$mobile_height 	= '.titleclass.kt_mobile_slider .page-header  {height:'.$ascend['home_mobile_page_title_height'].'px;}';
+				$mobile_height 	= '.titleclass.kt_mobile_slider .page-header  {height:'.esc_attr($ascend['home_mobile_page_title_height']).'px;}';
 			}
 			if(isset($ascend['home_mobile_page_title_height_min'])) {
-				$mobile_height_small =  '@media (max-width: 768px) {.titleclass.kt_mobile_slider .page-header {height:'.$ascend['home_mobile_page_title_height_min'].'px;}}';
+				$mobile_height_small =  '@media (max-width: 768px) {.titleclass.kt_mobile_slider .page-header {height:'.esc_attr($ascend['home_mobile_page_title_height_min']).'px;}}';
 			} 
 
 	} 
 	if(!empty($t_large_size)) {
-		$titlecss .= '.titleclass .entry-title{font-size:'.$t_large_size.'px;}';
+		$titlecss .= '.titleclass .entry-title{font-size:'.esc_attr($t_large_size).'px;}';
 	} elseif(isset($ascend['single_header_title_size'])) {
-		$titlecss .= '.titleclass .entry-title{font-size:'.$ascend['single_header_title_size'].'px;}';
+		$titlecss .= '.titleclass .entry-title{font-size:'.esc_attr($ascend['single_header_title_size']).'px;}';
 	}
 	if(!empty($t_small_size)) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .entry-title{font-size:'.$t_small_size.'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .entry-title{font-size:'.esc_attr($t_small_size).'px;}}';
 	} elseif(isset($ascend['single_header_title_size_small'])) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .entry-title{font-size:'.$ascend['single_header_title_size_small'].'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .entry-title{font-size:'.esc_attr($ascend['single_header_title_size_small']).'px;}}';
 	}
 	if(!empty($s_large_size)) {
-		$titlecss .= '.titleclass .subtitle{font-size:'.$s_large_size.'px;}';
+		$titlecss .= '.titleclass .subtitle{font-size:'.esc_attr($s_large_size).'px;}';
 	} elseif(isset($ascend['single_header_subtitle_size'])) {
-		$titlecss .= '.titleclass .subtitle{font-size:'.$ascend['single_header_subtitle_size'].'px;}';
+		$titlecss .= '.titleclass .subtitle{font-size:'.esc_attr($ascend['single_header_subtitle_size']).'px;}';
 	}
 	if(!empty($s_small_size)) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .subtitle{font-size:'.$s_small_size.'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .subtitle{font-size:'.esc_attr($s_small_size).'px;}}';
 	} elseif(isset($ascend['single_header_subtitle_size_small'])) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .subtitle{font-size:'.$ascend['single_header_subtitle_size_small'].'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .subtitle{font-size:'.esc_attr($ascend['single_header_subtitle_size_small']).'px;}}';
 	}
 	if(!empty($height)) {
-		$titlecss .= '.titleclass .page-header {height:'.$height.'px;}';
+		$titlecss .= '.titleclass .page-header {height:'.esc_attr($height).'px;}';
 	} elseif(isset($ascend['page_title_height'])) {
-		$titlecss .= '.titleclass .page-header  {height:'.$ascend['page_title_height'].'px;}';
+		$titlecss .= '.titleclass .page-header  {height:'.esc_attr($ascend['page_title_height']).'px;}';
 	}
 	if(!empty($height_small)) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.$height_small.'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.esc_attr($height_small).'px;}}';
 	} elseif(isset($ascend['page_title_height_min'])) {
-		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.$ascend['page_title_height_min'].'px;}}';
+		$titlecss .= '@media (max-width: 768px) {.titleclass .page-header {height:'.esc_attr($ascend['page_title_height_min']).'px;}}';
 	}
 	if(isset($ascend['pagetitle_align'])) {
-	    $titlealign = '.page-header {text-align:'.$ascend['pagetitle_align'].';}'; 
+	    $titlealign = '.page-header {text-align:'.esc_attr($ascend['pagetitle_align']).';}'; 
 	} else {
-	   	$titlealign = '';
+	   	$titlealign = '.page-header {text-align:center;}';
 	}
 	if(isset($ascend['shop_title_min_height'])) {
-	    $stminheight = '.product_item .product_archive_title {min-height:'.$ascend['shop_title_min_height'].'px;}'; 
+	    $stminheight = '.product_item .product_archive_title {min-height:'.esc_attr($ascend['shop_title_min_height']).'px;}'; 
 	} else {
 	   	$stminheight = '';
 	}
 	if (isset($ascend['notavailable_placeholder_text']) && !empty($ascend['notavailable_placeholder_text']) ) {
-	  	$notavailable_placeholder_text = '.variations .kad_radio_variations label.kt_disabled:after {content: '.$ascend['notavailable_placeholder_text'].';}';
+	  	$notavailable_placeholder_text = '.variations .kad_radio_variations label.kt_disabled:after {content: '.esc_attr($ascend['notavailable_placeholder_text']).';}';
 	} else {
 	  	$notavailable_placeholder_text = '';
 	}
 	if (!empty($ascend['custom_css'])) {
-	  	$custom_css = $ascend['custom_css'];
+	  	$custom_css = esc_attr($ascend['custom_css']);
 	} else {
 	  	$custom_css = '';
 	}

@@ -1,4 +1,5 @@
-<?php  global $post, $ascend, $kt_portfolio_loop;
+<?php  global $post, $kt_portfolio_loop;
+		$ascend = ascend_get_options();
 		$portfolio_carousel = get_post_meta( $post->ID, '_kad_portfolio_carousel', true ); 
 		if (empty($portfolio_carousel) || $portfolio_carousel == 'default')  { 
 			if(isset($ascend['portfolio_bottom_carousel'])) {
@@ -61,7 +62,7 @@
         } else {
             $bc = ascend_carousel_columns('3');
         } 
-        $bc = apply_filters('kadence_bottom_portfolio_carousel_columns', $bc);
+        $bc = apply_filters('ascend_bottom_portfolio_carousel_columns', $bc);
         $kt_portfolio_loop = array(
          	'lightbox' 		=> $portfolio_lightbox,
          	'showexcerpt' 	=> $portfolio_excerpt,
@@ -99,7 +100,7 @@
         if(!empty($ctitle)) {
             $title = $ctitle;
         } else {
-        	$title = apply_filters( 'kadence_portfolio_bottom_carousel_title', $default_title );
+        	$title = apply_filters( 'ascend_portfolio_bottom_carousel_title', $default_title );
         } 
         echo '<h4 class="kt-title bottom-carousel-title post-carousel-title"><span>'.esc_html($title).'</span></h4>'; ?>
 
@@ -107,7 +108,7 @@
 		<div class="portfolio-carouselcontainer row-margin-small">
     		<div id="portfolio-recent-carousel" class="slick-slider portfolio_carousel kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="400" data-slider-scroll="<?php echo esc_attr($carousel_scroll);?>" data-slider-auto="true" data-slider-speed="<?php echo esc_attr($carousel_speed);?>" data-slider-xxl="<?php echo esc_attr($bc['xxl']);?>" data-slider-xl="<?php echo esc_attr($bc['xl']);?>" data-slider-md="<?php echo esc_attr($bc['md']);?>" data-slider-sm="<?php echo esc_attr($bc['sm']);?>" data-slider-xs="<?php echo esc_attr($bc['xs']);?>" data-slider-ss="<?php echo esc_attr($bc['ss']);?>">
             <?php
-				$bpc = new WP_Query(apply_filters('kadence_bottom_portfolio_carousel_args', $args));
+				$bpc = new WP_Query(apply_filters('ascend_bottom_portfolio_carousel_args', $args));
 				if ( $bpc ) : while ( $bpc->have_posts() ) : $bpc->the_post();
                     get_template_part('templates/content', 'loop-portfolio');  
 				

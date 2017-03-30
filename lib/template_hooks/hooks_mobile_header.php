@@ -2,9 +2,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-add_action('kadence_mobile_header_left', 'ascend_mobile_left', 20);
+add_action('ascend_mobile_header_left', 'ascend_mobile_left', 20);
 function ascend_mobile_left() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	if(isset($ascend['mobile_header_menu']) && $ascend['mobile_header_menu'] == 'left') {
 		ascend_mobile_menu_ouput('left');
 	}
@@ -23,17 +23,17 @@ function ascend_mobile_left() {
 		ascend_the_custom_mobile_logo();
 	}
 }
-add_action('kadence_mobile_header_center', 'ascend_mobile_center', 20);
+add_action('ascend_mobile_header_center', 'ascend_mobile_center', 20);
 function ascend_mobile_center() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	if(isset($ascend['mobile_header_layout']) && $ascend['mobile_header_layout'] == 'center') {
 		ascend_the_custom_mobile_logo('center');
 		ascend_the_custom_mobile_logo_decoy();
 	}
 }
-add_action('kadence_mobile_header_right', 'ascend_mobile_right', 20);
+add_action('ascend_mobile_header_right', 'ascend_mobile_right', 20);
 function ascend_mobile_right() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	if(isset($ascend['mobile_header_search']) && $ascend['mobile_header_search'] == 'right')  {
 		ascend_mobile_header_search('right');
 	}
@@ -48,9 +48,9 @@ function ascend_mobile_right() {
 	}
 }
 function ascend_the_custom_mobile_logo($position = 'left') {
-	global $ascend;
+	$ascend = ascend_get_options();
 	echo '<div id="mobile-logo" class="logocase kad-mobile-header-height kad-mobile-logo-'.esc_attr($position).'">';
-		echo '<a class="brand logofont" href="'.esc_url(apply_filters('kadence_logo_link', home_url())).'">';
+		echo '<a class="brand logofont" href="'.esc_url(apply_filters('ascend_logo_link', home_url())).'">';
 		$liu = '';
 		if(isset($ascend['mobile_logo_switch']) && $ascend['mobile_logo_switch'] == '0') {
 			if(isset($ascend['logo']['id']) && !empty($ascend['logo']['id'])) {
@@ -59,11 +59,11 @@ function ascend_the_custom_mobile_logo($position = 'left') {
 				} else {
 					$width = 300;
 				}
-				$width = apply_filters('kadence_mobile_logo_width', $width);
+				$width = apply_filters('ascend_mobile_logo_width', $width);
 				$alt = get_bloginfo('name');
-				echo ascend_get_image_output($width, null, false, 'ascend-mobile-logo', $alt, $ascend['logo']['id'], false, false, false);
+				echo ascend_get_full_image_output($width, null, false, 'ascend-mobile-logo', $alt, $ascend['logo']['id'], false, false, false);
 				if(isset($ascend['trans_logo']['id']) && !empty($ascend['trans_logo']['id'])) {
-					$img = ascend_get_image($width, null, false, 'ascend-trans-logo', $alt, $ascend['trans_logo']['id'], false);
+					$img = ascend_get_image_array($width, null, false, 'ascend-trans-logo', $alt, $ascend['trans_logo']['id'], false);
 					echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" style="max-height:'.esc_attr($img['height']).'px" alt="'.esc_attr($img['alt']).'">';
 				}
 				$liu = 'kad-logo-used';
@@ -85,11 +85,11 @@ function ascend_the_custom_mobile_logo($position = 'left') {
 				} else {
 					$width = 300;
 				}
-				$width = apply_filters('kadence_mobile_logo_width', $width);
+				$width = apply_filters('ascend_mobile_logo_width', $width);
 				$alt = get_bloginfo('name');
-				echo ascend_get_image_output($width, null, false, 'ascend-mobile-logo', $alt, $ascend['mobile_logo']['id'], false, false, false);
+				echo ascend_get_full_image_output($width, null, false, 'ascend-mobile-logo', $alt, $ascend['mobile_logo']['id'], false, false, false);
 				if(isset($ascend['trans_logo_mobile']['id']) && !empty($ascend['trans_logo_mobile']['id'])) {
-					$img = ascend_get_image($width, null, false, 'ascend-mobile-trans-logo', $alt, $ascend['trans_logo_mobile']['id'], false);
+					$img = ascend_get_image_array($width, null, false, 'ascend-mobile-trans-logo', $alt, $ascend['trans_logo_mobile']['id'], false);
 					echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" style="max-height:'.esc_attr($img['height']).'px" alt="'.esc_attr($img['alt']).'">';
 				}
 				$liu = 'kad-logo-used';
@@ -129,7 +129,7 @@ function ascend_mobile_header_cart($side = 'right') {
 	if (class_exists('woocommerce'))  { ?>
       	<div class="kad-mobile-cart-flex-item kad-mobile-header-height kt-mobile-header-toggle kad-mobile-cart-<?php echo esc_attr($side);?>">
              	<button class="kt-woo-cart-toggle kt-sldr-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-cart" data-pop-sldr-direction="<?php echo esc_attr($side);?>"  data-pop-sldr-class="sldr-cart-animi">
-					<span class="kt-extras-label"><i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo WC()->cart->get_cart_contents_count(); ?></span></span>
+					<span class="kt-extras-label"><i class="kt-icon-shopping-bag"></i><span class="kt-cart-total"><?php echo esc_html(WC()->cart->get_cart_contents_count()); ?></span></span>
               	</button>
         </div>
     <?php } 

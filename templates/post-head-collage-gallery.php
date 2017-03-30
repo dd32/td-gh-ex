@@ -24,10 +24,10 @@ global $post, $kt_has_sidebar;
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             if($i == 1) {
-                                $img = ascend_get_image($widthimgsize, $heightimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($widthimgsize, $heightimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($heightimgsize/$widthimgsize) * 100;
                             } else {
-                                $img = ascend_get_image($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($smallimgsize/$smallimgsize) * 100;
                             }
                             if( ascend_lazy_load_filter() ) {
@@ -67,10 +67,10 @@ global $post, $kt_has_sidebar;
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             if($i == 1) {
-                                $img = ascend_get_image($widthimgsize, $heightimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($widthimgsize, $heightimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($heightimgsize/$widthimgsize) * 100;
                             } else {
-                                $img = ascend_get_image($swidthimgsize, $sheightimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($swidthimgsize, $sheightimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($sheightimgsize/$swidthimgsize) * 100;
                             }
                             if( ascend_lazy_load_filter() ) {
@@ -112,13 +112,13 @@ global $post, $kt_has_sidebar;
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             if($i == 1) {
-                                $img = ascend_get_image($largeimgsize, floor($largeimgsize*1.55), true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($largeimgsize, floor($largeimgsize*1.55), true, null, $alt, $attachment, false);
                                 $padding = (floor($largeimgsize*1.55)/$largeimgsize) * 100;
                             } elseif($i == 4) {
-                                $img = ascend_get_image($largeimgsize, $smallimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($largeimgsize, $smallimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($smallimgsize/$largeimgsize) * 100;
                             } else {
-                                $img = ascend_get_image($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($smallimgsize/$smallimgsize) * 100;
                             }
                             if( ascend_lazy_load_filter() ) {
@@ -160,13 +160,13 @@ global $post, $kt_has_sidebar;
                         foreach ($attachments as $attachment) {
                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
                             if($i == 3) {
-                                $img = ascend_get_image($largeimgsize, $largeimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($largeimgsize, $largeimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($largeimgsize/$largeimgsize) * 100;
                             } else if($i == 4 || $i == 5) {
-                                $img = ascend_get_image($largeimgsize, $smallimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($largeimgsize, $smallimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($smallimgsize/$largeimgsize) * 100;
                             } else {
-                                $img = ascend_get_image($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array($smallimgsize, $smallimgsize, true, null, $alt, $attachment, false);
                                 $padding = ($smallimgsize/$smallimgsize) * 100;
                             }
                             if( ascend_lazy_load_filter() ) {

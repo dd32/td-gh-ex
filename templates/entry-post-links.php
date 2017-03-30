@@ -1,5 +1,5 @@
 <?php 
-global $ascend;
+$ascend = ascend_get_options();
 
 if(isset($ascend['postlinks_in_cat']) && $ascend['postlinks_in_cat'] == "cat"){
 	$cat_setting = true;

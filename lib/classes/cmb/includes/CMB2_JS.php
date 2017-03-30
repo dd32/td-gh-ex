@@ -50,6 +50,11 @@ class CMB2_JS {
 		// Filter required script dependencies
 		$dependencies = apply_filters( 'cmb2_script_dependencies', self::$dependencies );
 
+		// Only use minified files if SCRIPT_DEBUG is off
+		$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
+
+		$min = $debug ? '' : '.min';
+
 		// if colorpicker
 		if ( ! is_admin() && isset( $dependencies['wp-color-picker'] ) ) {
 			self::colorpicker_frontend();
@@ -58,21 +63,29 @@ class CMB2_JS {
 		// if file/file_list
 		if ( isset( $dependencies['media-editor'] ) ) {
 			wp_enqueue_media();
+			CMB2_Type_File_Base::output_js_underscore_templates();
 		}
 
 		// if timepicker
 		if ( isset( $dependencies['jquery-ui-datetimepicker'] ) ) {
-			wp_register_script( 'jquery-ui-datetimepicker', cmb2_utils()->url( 'js/jquery-ui-timepicker-addon.min.js' ), array( 'jquery-ui-slider' ), CMB2_VERSION );
+			wp_register_script( 'jquery-ui-datetimepicker', CMB2_Utils::url( 'js/jquery-ui-timepicker-addon.min.js' ), array( 'jquery-ui-slider' ), CMB2_VERSION );
 		}
 
-		// Only use minified files if SCRIPT_DEBUG is off
-		$debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
-		$min   = $debug ? '' : '.min';
+		// if cmb2-wysiwyg
+		$enqueue_wysiwyg = isset( $dependencies['cmb2-wysiwyg'] ) && $debug;
+		unset( $dependencies['cmb2-wysiwyg'] );
 
-		// Register cmb JS
-		wp_enqueue_script( self::$handle, cmb2_utils()->url( "js/cmb2{$min}.js" ), $dependencies, CMB2_VERSION, true );
+		// Enqueue cmb JS
+		wp_enqueue_script( self::$handle, CMB2_Utils::url( "js/cmb2{$min}.js" ), $dependencies, CMB2_VERSION, true );
+
+		// if SCRIPT_DEBUG, we need to enqueue separately.
+		if ( $enqueue_wysiwyg ) {
+			wp_enqueue_script( 'cmb2-wysiwyg', CMB2_Utils::url( 'js/cmb2-wysiwyg.js' ), array( 'jquery', 'wp-util' ), CMB2_VERSION );
+		}
 
 		self::localize( $debug );
+
+		do_action( 'cmb2_footer_enqueue' );
 	}
 
 	/**
@@ -83,10 +96,10 @@ class CMB2_JS {
 		wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), CMB2_VERSION );
 		wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), CMB2_VERSION );
 		wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', array(
-			'clear'         => __( 'Clear', 'ascend' ),
-			'defaultString' => __( 'Default', 'ascend' ),
-			'pick'          => __( 'Select Color', 'ascend' ),
-			'current'       => __( 'Current Color', 'ascend' ),
+			'clear'         => esc_html__( 'Clear', 'ascend' ),
+			'defaultString' => esc_html__( 'Default', 'ascend' ),
+			'pick'          => esc_html__( 'Select Color', 'ascend' ),
+			'current'       => esc_html__( 'Current Color', 'ascend' ),
 		) );
 	}
 
@@ -95,6 +108,12 @@ class CMB2_JS {
 	 * @since  2.0.7
 	 */
 	protected static function localize( $debug ) {
+		static $localized = false;
+		if ( $localized ) {
+			return;
+		}
+
+		$localized = true;
 		$l10n = array(
 			'ajax_nonce'       => wp_create_nonce( 'ajax_nonce' ),
 			'ajaxurl'          => admin_url( '/admin-ajax.php' ),
@@ -107,38 +126,38 @@ class CMB2_JS {
 					'changeMonth'     => true,
 					'changeYear'      => true,
 					'dateFormat'      => _x( 'mm/dd/yy', 'Valid formatDate string for jquery-ui datepicker', 'ascend' ),
-					'dayNames'        => explode( ',', __( 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday', 'ascend' ) ),
-					'dayNamesMin'     => explode( ',', __( 'Su, Mo, Tu, We, Th, Fr, Sa', 'ascend' ) ),
-					'dayNamesShort'   => explode( ',', __( 'Sun, Mon, Tue, Wed, Thu, Fri, Sat', 'ascend' ) ),
-					'monthNames'      => explode( ',', __( 'January, February, March, April, May, June, July, August, September, October, November, December', 'ascend' ) ),
-					'monthNamesShort' => explode( ',', __( 'Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec', 'ascend' ) ),
-					'nextText'        => __( 'Next', 'ascend' ),
-					'prevText'        => __( 'Prev', 'ascend' ),
-					'currentText'     => __( 'Today', 'ascend' ),
-					'closeText'       => __( 'Done', 'ascend' ),
-					'clearText'       => __( 'Clear', 'ascend' ),
+					'dayNames'        => explode( ',', esc_html__( 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday', 'ascend' ) ),
+					'dayNamesMin'     => explode( ',', esc_html__( 'Su, Mo, Tu, We, Th, Fr, Sa', 'ascend' ) ),
+					'dayNamesShort'   => explode( ',', esc_html__( 'Sun, Mon, Tue, Wed, Thu, Fri, Sat', 'ascend' ) ),
+					'monthNames'      => explode( ',', esc_html__( 'January, February, March, April, May, June, July, August, September, October, November, December', 'ascend' ) ),
+					'monthNamesShort' => explode( ',', esc_html__( 'Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec', 'ascend' ) ),
+					'nextText'        => esc_html__( 'Next', 'ascend' ),
+					'prevText'        => esc_html__( 'Prev', 'ascend' ),
+					'currentText'     => esc_html__( 'Today', 'ascend' ),
+					'closeText'       => esc_html__( 'Done', 'ascend' ),
+					'clearText'       => esc_html__( 'Clear', 'ascend' ),
 				),
 				'time_picker'  => array(
-					'timeOnlyTitle' => __( 'Choose Time', 'ascend' ),
-					'timeText'      => __( 'Time', 'ascend' ),
-					'hourText'      => __( 'Hour', 'ascend' ),
-					'minuteText'    => __( 'Minute', 'ascend' ),
-					'secondText'    => __( 'Second', 'ascend' ),
-					'currentText'   => __( 'Now', 'ascend' ),
-					'closeText'     => __( 'Done', 'ascend' ),
+					'timeOnlyTitle' => esc_html__( 'Choose Time', 'ascend' ),
+					'timeText'      => esc_html__( 'Time', 'ascend' ),
+					'hourText'      => esc_html__( 'Hour', 'ascend' ),
+					'minuteText'    => esc_html__( 'Minute', 'ascend' ),
+					'secondText'    => esc_html__( 'Second', 'ascend' ),
+					'currentText'   => esc_html__( 'Now', 'ascend' ),
+					'closeText'     => esc_html__( 'Done', 'ascend' ),
 					'timeFormat'    => _x( 'hh:mm TT', 'Valid formatting string, as per http://trentrichardson.com/examples/timepicker/', 'ascend' ),
 					'controlType'   => 'select',
 					'stepMinute'    => 5,
 				),
 			),
 			'strings' => array(
-				'upload_file'  => __( 'Use this file', 'ascend' ),
-				'upload_files' => __( 'Use these files', 'ascend' ),
-				'remove_image' => __( 'Remove Image', 'ascend' ),
-				'remove_file'  => __( 'Remove', 'ascend' ),
-				'file'         => __( 'File:', 'ascend' ),
-				'download'     => __( 'Download', 'ascend' ),
-				'check_toggle' => __( 'Select / Deselect All', 'ascend' ),
+				'upload_file'  => esc_html__( 'Use this file', 'ascend' ),
+				'upload_files' => esc_html__( 'Use these files', 'ascend' ),
+				'remove_image' => esc_html__( 'Remove Image', 'ascend' ),
+				'remove_file'  => esc_html__( 'Remove', 'ascend' ),
+				'file'         => esc_html__( 'File:', 'ascend' ),
+				'download'     => esc_html__( 'Download', 'ascend' ),
+				'check_toggle' => esc_html__( 'Select / Deselect All', 'ascend' ),
 			),
 		);
 

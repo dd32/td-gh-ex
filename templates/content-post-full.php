@@ -1,10 +1,10 @@
  <?php 
- global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
-
+ global $post, $kt_has_sidebar, $kt_feat_width;
+ 	$ascend = ascend_get_options();
     if($kt_has_sidebar){
-        $kt_feat_width = apply_filters('kt_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
+        $kt_feat_width = apply_filters('ascend_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
     } else {
-        $kt_feat_width = apply_filters('kt_blog_full_image_width', ascend_post_image_width()); 
+        $kt_feat_width = apply_filters('ascend_blog_full_image_width', ascend_post_image_width()); 
     }
     $postclass = array('postclass');
     $kt_headcontent = ascend_get_post_head_content();
@@ -18,9 +18,9 @@
     /**
     * @hooked ascend_single_post_upper_headcontent - 10
     */
-    do_action( 'kadence_single_post_begin' ); 
+    do_action( 'ascend_single_post_begin' ); 
 
-    do_action( 'kadence_single_post_before' ); 
+    do_action( 'ascend_single_post_before' ); 
     ?> 
     <article <?php post_class($postclass); ?> itemscope itemtype="http://schema.org/BlogPosting">
          <?php 
@@ -28,7 +28,7 @@
           * @hooked ascend_single_post_headcontent - 10
           * @hooked ascend_post_header_meta_categories - 20
           */
-          do_action( 'kadence_single_post_before_header' );
+          do_action( 'ascend_single_post_before_header' );
           ?>
         <header>
           <?php 
@@ -36,14 +36,14 @@
             * @hooked ascend_post_full_loop_title - 20
             * @hooked ascend_single_post_meta_date_author - 30
             */
-            do_action( 'kadence_single_loop_post_header' );
+            do_action( 'ascend_single_loop_post_header' );
             ?>
         </header>
         <div class="entry-content clearfix" itemprop="articleBody">
         <?php 
-            do_action( 'kadence_single_post_content_before' );
+            do_action( 'ascend_single_post_content_before' );
 
-            global $more; $more = 0; 
+            global $more; 
             if(!empty($ascend['post_readmore_text'])) {
                 $readmore = $ascend['post_readmore_text'];
             } else { 
@@ -51,7 +51,7 @@
             }
             the_content($readmore); 
 
-            do_action( 'kadence_single_post_content_after' );
+            do_action( 'ascend_single_post_content_after' );
         ?>
         </div>
         <footer class="single-footer">
@@ -59,7 +59,7 @@
             /**
             * @hooked ascend_post_footer_meta - 30
             */
-            do_action( 'kadence_single_loop_post_footer' );
+            do_action( 'ascend_single_loop_post_footer' );
 
             if ( comments_open() ) :
                 echo '<p class="kad_comments_link">';

@@ -4,17 +4,17 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.7.0
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop, $ascend;
+global $product, $woocommerce_loop;
 
 if ( empty( $product ) || ! $product->exists() ) {
 	return;
 }
-
+$ascend = ascend_get_options();
 if(!empty($ascend['related_item_column'])) {
 	$product_related_column = $ascend['related_item_column'];
 } else {
@@ -34,9 +34,13 @@ if ($product_related_column == '2') {
 } else {
 	$rpc = ascend_carousel_columns('4');
 } 
-$rpc = apply_filters('kt_related_products_columns', $rpc);
+$rpc = apply_filters('ascend_related_products_columns', $rpc);
 
-$related = $product->get_related($posts_per_page);
+if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+	$related = wc_get_related_products($product->get_id(), $posts_per_page);
+} else {
+	$related = $product->get_related($posts_per_page);
+}
 
 if ( sizeof( $related ) == 0 ) return;
 

@@ -5,47 +5,35 @@
 */
 
     get_header(); 
-    global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop, $kt_grid_carousel; 
+    global $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop, $kt_grid_carousel; 
+    $ascend 				= ascend_get_options();
+    $kt_grid_carousel 		= false;
+    $kt_blog_loop['loop'] 	= 1;
+    $paged 					= (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-    $kt_grid_carousel = false;
-    $kt_blog_loop['loop'] = 1;
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     if(isset($ascend['category_post_summary'])) {
     	$layout = $ascend['category_post_summary'];
     } else {
     	$layout = 'normal';
     }
-    $lay = ascend_get_postlayout($layout);
+    $lay 	= ascend_get_postlayout($layout);
     if(isset($ascend['category_post_grid_column'])) {
         $kt_grid_columns = $ascend['category_post_grid_column'];
     } else {
         $kt_grid_columns = '3';
     } 
     if(ascend_display_sidebar()) {
-        $fullclass = '';
-        $kt_has_sidebar = true;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
+        $fullclass 			= '';
+        $kt_has_sidebar 	= true;
     } else {
-        $fullclass = 'fullwidth';
-        $kt_has_sidebar = false;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
+        $fullclass 			= 'fullwidth';
+        $kt_has_sidebar 	= false;
     }
+    $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
     /**
     * @hooked ascend_archive_title - 20
     */
-     do_action('kadence_archive_title_container');
+     do_action('ascend_archive_title_container');
     ?>
 <div id="content" class="container clearfix">
     <div class="row">
@@ -57,7 +45,7 @@
                 <?php get_search_form(); ?>
             </div>
         <?php endif; ?>
-            <div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" <?php echo $lay['data'];?>> 
+            <div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
                 <?php 
                 $kt_blog_loop['count'] = $wp_query->post_count;
                 while (have_posts()) : the_post();
@@ -90,9 +78,11 @@
 	            ?>
 	            </div><!-- /.archive content -->
 	            <?php
-                if ($wp_query->max_num_pages > 1) : 
-                      ascend_wp_pagenav(); 
-                endif; ?>
+               	/**
+                * @hooked ascend_pagination - 20
+                */
+                do_action('ascend_pagination');
+	                 ?>
         </div><!-- /.main -->
         <?php 
 			/**

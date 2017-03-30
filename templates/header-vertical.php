@@ -1,5 +1,5 @@
 <?php 
-global $ascend;
+$ascend = ascend_get_options();
 if(isset($ascend['site_layout'])) {
     $site_layout = $ascend['site_layout'];
 } else {
@@ -17,17 +17,17 @@ if(isset($ascend['site_layout'])) {
 		        * Hooked ascend_the_custom_logo 10
 		        * Hooked ascend_header_vertical_extras 20
 		        */
-                do_action('kadence_start_vertical_header'); 
+                do_action('ascend_start_vertical_header'); 
     
                 /* 
 		        * Hooked ascend_primary_vertical_menu 20
 		        */
-                do_action('kadence_menu_vertical_header'); 
+                do_action('ascend_menu_vertical_header'); 
 
                 /* 
 		        * Hooked ascend_header_vertical_extras 20
 		        */
-                do_action('kadence_end_vertical_header'); ?>
+                do_action('ascend_end_vertical_header'); ?>
             </div>
         </div>
     </div> <!-- close v header innner -->
@@ -36,5 +36,5 @@ if(isset($ascend['site_layout'])) {
 /* 
     * Hooked ascend_secondary_menu 20
     */
-do_action('kadence_after_vertical_header'); 
+do_action('ascend_after_vertical_header'); 
 ?>

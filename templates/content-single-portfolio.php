@@ -1,7 +1,8 @@
 <?php 
-do_action('kadence_portfolio_content_before'); 
+do_action('ascend_portfolio_content_before'); 
 	while (have_posts()) : the_post(); 
-	global $post, $ascend; 
+	global $post; 
+		$ascend = ascend_get_options();
 		$layout = ascend_portfolio_single_layout();
 		if($layout == 'above' || $layout == 'three' )  {
 			$projectclass 	= 'col-md-12';
@@ -13,7 +14,7 @@ do_action('kadence_portfolio_content_before');
 			$projectclass 	= 'col-md-7';
 			$contentclass 	= 'col-md-5';
 		}
-			do_action( 'kadence_single_portfolio_before' ); 
+			do_action( 'ascend_single_portfolio_before' ); 
 		 ?>
 		<article <?php post_class('postclass'); ?>>
   			<div class="row">
@@ -22,7 +23,7 @@ do_action('kadence_portfolio_content_before');
       				/*
 			    	*	@hooked ascend_portfolio_single_project_output 20
 			    	*/
-			      	do_action( 'kadence_single_portfolio_project' ); 
+			      	do_action( 'ascend_single_portfolio_project' ); 
       				?>
   				</div>
   				<div class="<?php echo esc_attr($contentclass); ?> portfolio-content">
@@ -34,14 +35,14 @@ do_action('kadence_portfolio_content_before');
 						</header>
 						<div class="entry-content">
 			  				<?php
-			  				do_action( 'kadence_single_portfolio_before_content' ); 
+			  				do_action( 'ascend_single_portfolio_before_content' ); 
 			  				
 			  				the_content(); 
 
 			  				/*
 					    	*	@hooked ascend_wp_link_pages 10
 					    	*/
-			  				do_action( 'kadence_single_portfolio_after_content' );?>
+			  				do_action( 'ascend_single_portfolio_after_content' );?>
 						</div>
 					</div>
 				</div>
@@ -51,7 +52,7 @@ do_action('kadence_portfolio_content_before');
 		      	/*
 		    	*	@hooked ascend_portfolio_navigation 20
 		    	*/
-		      	do_action( 'kadence_single_portfolio_footer' ); 
+		      	do_action( 'ascend_single_portfolio_footer' ); 
 		      	?>
 		    </footer>
   		</article>
@@ -60,7 +61,7 @@ do_action('kadence_portfolio_content_before');
       	*	@hooked ascend_portfolio_bottom_carousel - 30
      	* 	@hooked ascend_portfolio_comments - 40
       	*/
-      	do_action( 'kadence_single_portfolio_after' );
+      	do_action( 'ascend_single_portfolio_after' );
 
 	endwhile; 
-do_action('kadence_portfolio_content_after');
+do_action('ascend_portfolio_content_after');

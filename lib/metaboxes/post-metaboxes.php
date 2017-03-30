@@ -96,11 +96,5 @@ function ascend_post_metaboxes(){
 			),
 		
 	) );
-	$kt_post->add_field( array(
-		'name' => __('Carousel Title', 'ascend'),
-		'desc' => __('ex. Similar Posts', 'ascend'),
-		'id'   => $prefix . 'blog_carousel_title',
-		'type' => 'text_medium',
-	) );
 
 }

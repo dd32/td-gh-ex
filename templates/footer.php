@@ -1,7 +1,7 @@
 <?php
-	global $ascend;
+	$ascend = ascend_get_options();
 
-	do_action('kt_before_footer');
+	do_action('ascend_before_footer');
 ?>
 <footer id="containerfooter" class="footerclass">
   <div class="container">
@@ -126,4 +126,3 @@
     		</div><!-- container -->
     </div><!-- footerbase -->
 </footer>
-<?php wp_footer(); ?>

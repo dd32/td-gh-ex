@@ -8,7 +8,7 @@
     /**
     * @hooked ascend_page_title - 20
     */
-     do_action('kadence_page_title_container');
+     do_action('ascend_page_title_container');
     ?>
     <div id="content" class="container">
       	<div class="row">

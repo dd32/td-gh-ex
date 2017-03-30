@@ -1,18 +1,18 @@
  <?php 
- global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
+ global $post, $kt_has_sidebar, $kt_feat_width;
 
-    global $post;
+    $ascend = ascend_get_options();
 
     $postclass = array('postclass');
     $postclass[] = 'kt_no_post_header_content';
     $postclass[] = 'kad_blog_item';
 
-    do_action( 'kadence_single_post_before' ); 
+    do_action( 'ascend_single_post_before' ); 
     ?> 
     <article <?php post_class($postclass); ?> itemscope itemtype="http://schema.org/CreativeWork">
                 <?php if (has_post_thumbnail( $post->ID ) ) { 
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-                    $style = 'style="background-image: url('.esc_url($image[0]).');"'; 
+                    $style = 'background-image: url('.esc_url($image[0]).');'; 
                     $quote_class = 'kt-image-quote'; ?>
                     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                         <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
@@ -24,14 +24,14 @@
                     $quote_class = 'kt-text-quote';
                     $style = '';
                 } ?>
-                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" <?php echo $style;?> >
+                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" style="<?php echo esc_attr($style);?>">
                     <div class="kt-quote-post">
                         <?php
-                        do_action( 'kadence_single_post_content_before' );
+                        do_action( 'ascend_single_post_content_before' );
                         
                             the_content(); 
                         
-                        do_action( 'kadence_single_post_content_after' );
+                        do_action( 'ascend_single_post_content_after' );
                         ?>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             /**
             * @hooked ascend_post_footer_meta - 30
             */
-            do_action( 'kadence_single_loop_post_footer' );
+            do_action( 'ascend_single_loop_post_footer' );
 
             if ( comments_open() ) :
                 echo '<p class="kad_comments_link">';

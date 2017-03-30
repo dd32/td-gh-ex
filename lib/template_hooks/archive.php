@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-add_action( 'kadence_archive_title_container', 'ascend_archive_title', 20 );
+add_action( 'ascend_archive_title_container', 'ascend_archive_title', 20 );
 function ascend_archive_title() {
 	if(ascend_display_pagetitle()){
 		get_template_part('/templates/archive', 'header'); 

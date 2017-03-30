@@ -22,7 +22,11 @@ global $post;
                 <meta itemprop="thumbnailURL" content="<?php the_post_thumbnail_url(); ?>"/>
             <?php } 
             preg_match('/src="([^"]+)"/', $video, $match);
-            $url = $match[1];
+            if(is_array($match)){
+            	$url = $match[1];
+            } else {
+            	$url = '';
+            }
             ?>
             <meta itemprop="embedURL" content="<?php echo esc_attr($url);?>" />
             <div id="schema-videoobject" class="videofit video-container">

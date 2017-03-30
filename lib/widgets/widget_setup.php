@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 /**
  * Register sidebars and widgets
  */
@@ -108,3 +111,15 @@ function ascend_widgets_init() {
     register_widget('kad_image_widget');
 }
 add_action('widgets_init', 'ascend_widgets_init');
+
+/**
+ * Tag Cloud Adjustments
+ */
+function ascend_widget_tag_cloud_args( $args ) {
+    $args['largest'] = 13;
+    $args['smallest'] = 13;
+    $args['unit'] = 'px';
+    return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'ascend_widget_tag_cloud_args' );
+add_filter( 'woocommerce_product_tag_cloud_widget_args', 'ascend_widget_tag_cloud_args' );

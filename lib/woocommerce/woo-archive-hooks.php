@@ -21,7 +21,7 @@ function ascend_woo_archive_support() {
     }
     add_action( 'woocommerce_before_main_content', 'ascend_woo_shop_archive_title', 5 );
 	function ascend_woo_shop_archive_title() {
-		global $ascend;
+		$ascend = ascend_get_options();
 		if (is_shop()) {
 				if(ascend_display_pagetitle()) {
 					get_template_part('templates/shop/shop', 'page-header');
@@ -55,7 +55,7 @@ function ascend_woo_archive_support() {
 		}
 	}
     function ascend_woo_main_wrap_content_open() {
-      	echo '<div id="content" class="container"><div class="row"><div class="main '.ascend_main_class().'" role="main">';
+      	echo '<div id="content" class="container"><div class="row"><div class="main '.esc_attr(ascend_main_class()).'" role="main">';
     }
     add_action( 'woocommerce_before_main_content', 'ascend_woo_main_wrap_content_open', 10 );
    
@@ -102,7 +102,7 @@ function ascend_woo_archive_support() {
     // Number of products per page
     add_filter('loop_shop_per_page', 'ascend_woo_products_per_page');
     function ascend_woo_products_per_page() {
-        global $ascend;
+        $ascend = ascend_get_options();
         if ( isset( $ascend['products_per_page'] ) && !empty($ascend['products_per_page']) ) {
           	return $ascend['products_per_page'];
         }
@@ -111,7 +111,7 @@ function ascend_woo_archive_support() {
     // Shop Columns
     add_filter('loop_shop_columns', 'ascend_woo_loop_columns');
     function ascend_woo_loop_columns() {
-        global $ascend;
+        $ascend = ascend_get_options();
         if(isset($ascend['product_shop_layout']) && !empty($ascend['product_shop_layout'])) {
           	return $ascend['product_shop_layout'];
         } else {
@@ -137,14 +137,15 @@ function ascend_woo_archive_hooks_output() {
 	* woocommerce_before_shop_loop_item_title
 	*/
 	function ascend_woocommerce_image_link_open() {
-        echo  '<a href="'.get_the_permalink().'" class="product_item_link product_img_link">';
+        echo  '<a href="'.esc_url( get_the_permalink() ).'" class="product_item_link product_img_link">';
     }
     add_action( 'woocommerce_before_shop_loop_item_title', 'ascend_woocommerce_image_link_open', 2 );
 
 
     remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
     function ascend_woocommerce_template_loop_product_thumbnail() {
-        global $product, $woocommerce_loop, $ascend, $post;
+        global $product, $woocommerce_loop, $post;
+        $ascend = ascend_get_options();
         
         $product_column = $woocommerce_loop['columns'];
 
@@ -188,8 +189,8 @@ function ascend_woo_archive_hooks_output() {
                 $productimgheight = $productimgwidth;
             }
         }
-        $productimgwidth = apply_filters('kadence_product_catelog_image_width', $productimgwidth);
-        $productimgheight = apply_filters('kadence_product_catelog_image_height', $productimgheight);
+        $productimgwidth = apply_filters('ascend_product_catelog_image_width', $productimgwidth);
+        $productimgheight = apply_filters('ascend_product_catelog_image_height', $productimgheight);
         if($productimgheight == null){
         	$ratio_height = $productimgwidth;
         	$ratio_class = 'kt-product-softcrop';
@@ -200,7 +201,7 @@ function ascend_woo_archive_hooks_output() {
         if ( $resizeimage == 1 ) {
             if ( has_post_thumbnail() ) {
                 $image_id = get_post_thumbnail_id( $post->ID );
-                $img = ascend_get_image($productimgwidth, $productimgheight, $image_crop, 'attachment-shop_catalog wp-post-image', null, $image_id, $placeholder = false);              
+                $img = ascend_get_image_array($productimgwidth, $productimgheight, $image_crop, 'attachment-shop_catalog wp-post-image', null, $image_id, $placeholder = false);              
             } else {
                 $img = array(
                 	'src' => wc_placeholder_img_src(),
@@ -217,7 +218,7 @@ function ascend_woo_archive_hooks_output() {
 	            $image_src_output = 'src="'.esc_url($img['src']).'"'; 
 	        }
 
-            echo '<div class="kad-product-noflipper '.esc_attr($ratio_class).' kt-product-intrinsic" style="padding-bottom:'. ($ratio_height/$productimgwidth) * 100 .'%;">';
+            echo '<div class="kad-product-noflipper '.esc_attr($ratio_class).' kt-product-intrinsic" style="padding-bottom:'. esc_attr(($ratio_height/$productimgwidth) * 100 ).'%;">';
             	echo '<div class="kt-product-animation-contain">';
 	                ob_start(); 	
 	                	echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).' size-'.esc_attr($img['width'].'x'.$img['height']).'" alt="'.esc_attr($img['alt']).'">';
@@ -250,7 +251,7 @@ function ascend_woo_archive_hooks_output() {
 	}
 	add_action( 'woocommerce_shop_loop_item_title', 'ascend_woocommerce_archive_title_wrap_start', 6 );
 	function ascend_woocommerce_archive_title_link_start() {
-				echo '<a href="'.get_the_permalink().'" class="product_item_link">';
+				echo '<a href="'.esc_url( get_the_permalink() ).'" class="product_item_link">';
 	}
 	add_action( 'woocommerce_shop_loop_item_title', 'ascend_woocommerce_archive_title_link_start', 7 );
 
@@ -267,8 +268,9 @@ function ascend_woo_archive_hooks_output() {
 	add_action( 'woocommerce_shop_loop_item_title', 'ascend_woocommerce_archive_title_link_end', 15 );
 
 	function ascend_woocommerce_archive_excerpt() {
-		global $ascend, $post;
-		if(isset($ascend['shop_excerpt']) && $ascend['shop_excerpt'] == 0) {
+		global $post;
+		$ascend = ascend_get_options();
+		if(isset($ascend['shop_excerpt']) && 0 == $ascend['shop_excerpt']) {
 			echo '<div class="product_excerpt">';
 				if ($post->post_excerpt){
 					echo apply_filters( 'archive_woocommerce_short_description', $post->post_excerpt );
@@ -317,7 +319,7 @@ function ascend_woo_archive_cat_hooks_output() {
         	echo '<h3 class="product_archive_title">';
             	echo $category->name;
                 if ( $category->count > 0 ) {
-                    echo apply_filters( 'woocommerce_subcategory_count_html', ' <small class="count">(' . $category->count . ')</small>', $category );
+                    echo apply_filters( 'woocommerce_subcategory_count_html', ' <small class="count">(' . esc_html($category->count) . ')</small>', $category );
                 }
         	echo '</h3>';
         	echo '</div>';
@@ -329,7 +331,7 @@ function ascend_woo_archive_cat_hooks_output() {
     add_action( 'woocommerce_after_subcategory', 'ascend_woocommerce_template_loop_category_link_close', 10 );
 
     function ascend_woocommerce_template_loop_category_link_open( $category ) {
-        echo '<a href="' . get_term_link( $category->slug, 'product_cat' ) . '">';
+        echo '<a href="' . esc_url( get_term_link( $category->slug, 'product_cat' ) ) . '">';
     }
     function ascend_woocommerce_template_loop_category_link_close() {
         echo '</a>';
@@ -346,8 +348,8 @@ function ascend_woo_archive_cat_image_output() {
     remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
     add_action( 'woocommerce_before_subcategory_title', 'ascend_woocommerce_subcategory_thumbnail', 10 );
     function ascend_woocommerce_subcategory_thumbnail($category) {
-        global $woocommerce_loop, $ascend;
-
+        global $woocommerce_loop;
+        $ascend = ascend_get_options();
         if(is_shop() || is_product_category() || is_product_tag()) {
             if(isset($ascend['product_cat_layout']) && !empty($ascend['product_cat_layout'])) {
                 $product_cat_column = $ascend['product_cat_layout'];
@@ -400,7 +402,7 @@ function ascend_woo_archive_cat_image_output() {
         } else {
             $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true  );
             if ( $thumbnail_id ) {
-            	$img = ascend_get_image( $catimgwidth, $catimgheight, true, 'attachment-shop_catalog wp-post-image', null, $thumbnail_id, true);
+            	$img = ascend_get_image_array( $catimgwidth, $catimgheight, true, 'attachment-shop_catalog wp-post-image', null, $thumbnail_id, true);
             } else {
                 $img = array(
                 	'src' => wc_placeholder_img_src(),

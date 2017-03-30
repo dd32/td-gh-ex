@@ -2,33 +2,34 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-add_action('kadence_start_vertical_header', 'ascend_the_custom_logo', 10);
-add_action('kadence_below_logo_header_center', 'ascend_the_custom_logo', 20);
-add_action('kadence_center_logo_header_center', 'ascend_the_custom_logo', 20);
-add_action('kadence_header_left', 'ascend_the_custom_logo', 20);
+add_action('ascend_start_vertical_header', 'ascend_the_custom_logo', 10);
+add_action('ascend_below_logo_header_center', 'ascend_the_custom_logo', 20);
+add_action('ascend_center_logo_header_center', 'ascend_the_custom_logo', 20);
+add_action('ascend_header_left', 'ascend_the_custom_logo', 20);
 function ascend_the_custom_logo() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	echo '<div id="logo" class="logocase kad-header-height">';
-		echo '<a class="brand logofont" href="'.esc_url(apply_filters('kadence_logo_link', home_url())).'">';
+		echo '<a class="brand logofont" href="'.esc_url(apply_filters('ascend_logo_link', home_url())).'">';
 		$liu = '';
+		$ascend['logo']['id'] = get_theme_mod( 'custom_logo' );
 		if(isset($ascend['logo']['id']) && !empty($ascend['logo']['id'])) {
 			if(isset($ascend['logo_width']) && !empty($ascend['logo_width'])) {
 				$width = $ascend['logo_width'];
 			} else {
 				$width = 300;
 			}
-			$width = apply_filters('kadence_logo_width', $width);
+			$width = apply_filters('ascend_logo_width', $width);
 			$alt = get_bloginfo('name');
-			$img = ascend_get_image($width, null, false, 'ascend-logo', $alt, $ascend['logo']['id'], false);
+			$img = ascend_get_image_array($width, null, false, 'ascend-logo', $alt, $ascend['logo']['id'], false);
 			echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" style="max-height:'.esc_attr($img['height']).'px" alt="'.esc_attr($img['alt']).'">';
 			if(isset($ascend['trans_logo']['id']) && !empty($ascend['trans_logo']['id'])) {
-				$img = ascend_get_image($width, null, false, 'ascend-trans-logo', $alt, $ascend['trans_logo']['id'], false);
+				$img = ascend_get_image_array($width, null, false, 'ascend-trans-logo', $alt, $ascend['trans_logo']['id'], false);
 				echo '<img src="'.esc_url($img['src']).'" width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" style="max-height:'.esc_attr($img['height']).'px" alt="'.esc_attr($img['alt']).'">';
 			}
 			$liu = 'kad-logo-used';
 		}
 		if(isset($ascend['site_title']) && $ascend['site_title'] == 1 || !isset($ascend['site_title'])) {
-			echo '<span class="kad-site-title '.$liu.'">';
+			echo '<span class="kad-site-title '.esc_attr($liu).'">';
 			echo apply_filters('kad_site_name', get_bloginfo('name')); 
 			if(isset($ascend['site_tagline']) && $ascend['site_tagline'] == 1 || !isset($ascend['site_tagline'])) {
 				echo '<span class="kad-site-tagline">';
@@ -41,7 +42,7 @@ function ascend_the_custom_logo() {
 	echo '</div>';
 }
 
-add_action('kadence_menu_vertical_header', 'ascend_primary_vertical_menu', 20);
+add_action('ascend_menu_vertical_header', 'ascend_primary_vertical_menu', 20);
 function ascend_primary_vertical_menu() {
 		if (has_nav_menu('primary_navigation')) : ?>
 		<div class="kad-header-menu">
@@ -53,8 +54,8 @@ function ascend_primary_vertical_menu() {
         endif; 
 }	
 
-add_action('kadence_below_logo_header_below', 'ascend_primary_menu_area', 20);
-add_action('kadence_header_center', 'ascend_primary_menu_area', 20);
+add_action('ascend_below_logo_header_below', 'ascend_primary_menu_area', 20);
+add_action('ascend_header_center', 'ascend_primary_menu_area', 20);
 function ascend_primary_menu_area() {
 		if (has_nav_menu('primary_navigation')) : ?>
 	        <nav class="nav-main clearfix">
@@ -63,7 +64,7 @@ function ascend_primary_menu_area() {
         <?php 
         endif; 
 }	
-add_action('kadence_center_logo_header_left', 'ascend_left_header_menu', 10);
+add_action('ascend_center_logo_header_left', 'ascend_left_header_menu', 10);
 function ascend_left_header_menu() {
 		if (has_nav_menu('left_navigation')) : ?>
 	        <nav class="nav-main clearfix">
@@ -72,7 +73,7 @@ function ascend_left_header_menu() {
         <?php 
         endif; 
 }	
-add_action('kadence_center_logo_header_right', 'ascend_right_header_menu', 10);
+add_action('ascend_center_logo_header_right', 'ascend_right_header_menu', 10);
 function ascend_right_header_menu() {
 		if (has_nav_menu('right_navigation')) : ?>
 	        <nav class="nav-main clearfix">
@@ -81,27 +82,27 @@ function ascend_right_header_menu() {
         <?php 
         endif;  
 }
-add_action('kadence_below_logo_header_left', 'ascend_header_extras_hook_left', 20);
+add_action('ascend_below_logo_header_left', 'ascend_header_extras_hook_left', 20);
 function ascend_header_extras_hook_left() {
 		ascend_header_extras('sf-menu-normal', 'left');
 }
-add_action('kadence_below_logo_header_right', 'ascend_header_extras_hook_right', 20);
+add_action('ascend_below_logo_header_right', 'ascend_header_extras_hook_right', 20);
 function ascend_header_extras_hook_right() {
 		ascend_header_extras('sf-menu-normal', 'right');
 }
-add_action('kadence_center_logo_header_right', 'ascend_header_extras_hook', 20);
-add_action('kadence_header_right', 'ascend_header_extras_hook', 20);
+add_action('ascend_center_logo_header_right', 'ascend_header_extras_hook', 20);
+add_action('ascend_header_right', 'ascend_header_extras_hook', 20);
 function ascend_header_extras_hook() {
 		ascend_header_extras('sf-menu-normal');
 }
-add_action('kadence_start_vertical_header', 'ascend_header_vertical_extras_top', 20);
+add_action('ascend_start_vertical_header', 'ascend_header_vertical_extras_top', 20);
 function ascend_header_vertical_extras_top() {
 	global $ascend;
 	if(isset($ascend['beside_header_style']) && $ascend['beside_header_style'] == 'extras_above_menu') {
 		ascend_header_extras('sf-vertical');
 	}
 }
-add_action('kadence_end_vertical_header', 'ascend_header_vertical_extras_bottom', 20);
+add_action('ascend_end_vertical_header', 'ascend_header_vertical_extras_bottom', 20);
 function ascend_header_vertical_extras_bottom() {
 		global $ascend;
 	if((isset($ascend['beside_header_style']) && $ascend['beside_header_style'] == 'standard') || !isset($ascend['beside_header_style'])) {
@@ -159,7 +160,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 		<?php 
 		 /* 
 	    */
-	    do_action('kadence_before_header_extras');
+	    do_action('ascend_before_header_extras');
 	    if (isset($header_extras) && !empty($header_extras)):
 			foreach ($header_extras as $key=>$value) {
 
@@ -167,7 +168,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 					case 'search':
 						if($value == '1') { ?>
 				        	 <li class="menu-search-icon-kt">
-								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo home_url().'/?s='; ?>">
+								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo esc_url(home_url().'/?s='); ?>">
 									<span class="kt-extras-label"><i class="kt-icon-search"></i></span>
 								</a>
 				        	</li>
@@ -186,7 +187,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 						                }
 
 						                ?>
-							            <a class="menu-account-btn" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+							            <a class="menu-account-btn" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>">
 							                <span class=" kt-extras-label"><span><?php echo esc_html($title);?></span></span>
 							            </a>
 							            <ul id="kad-head-my-account-menu" class="sf-dropdown-menu kad-head-my-account-menu">
@@ -232,7 +233,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 						        		<ul id="kad-head-cart-popup" class="sf-dropdown-menu kad-head-cart-popup">
 						            		<li class="kt-mini-cart-refreash">
 						            			<?php woocommerce_mini_cart(); 
-						            				do_action( 'kadence_cart_menu_popup_after' ); ?>
+						            				do_action( 'ascend_cart_menu_popup_after' ); ?>
 						            		</li>
 						          		</ul>
 						        	</li>
@@ -254,14 +255,14 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 		endif;
 	    /* 
 	    */
-	    do_action('kadence_after_header_extras');
+	    do_action('ascend_after_header_extras');
 	    ?>
 	    </ul>
 	</div>
     <?php 
 }
-add_action('kadence_after_above_header', 'ascend_secondary_menu_area', 20);
-add_action('kadence_after_vertical_header', 'ascend_secondary_menu_area', 20);
+add_action('ascend_after_above_header', 'ascend_secondary_menu_area', 20);
+add_action('ascend_after_vertical_header', 'ascend_secondary_menu_area', 20);
 function ascend_secondary_menu_area() {
 		if (has_nav_menu('secondary_navigation')) : 
 			global $ascend;
@@ -272,15 +273,15 @@ function ascend_secondary_menu_area() {
 				}
 			} 
 			?>
-		<div class="outside-second">	
-		<div class="second-navclass" data-sticky="<?php echo esc_attr($data_second_sticky);?>">
-			<div class="second-nav-container container">
-		        <nav class="nav-second clearfix">
-		            <?php wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'sf-menu sf-menu-normal'));  ?>
-		        </nav>
-		    </div>
-		</div>
-		</div>
-        <?php 
+			<div class="outside-second">	
+			<div class="second-navclass" data-sticky="<?php echo esc_attr($data_second_sticky);?>">
+				<div class="second-nav-container container">
+			        <nav class="nav-second clearfix">
+			            <?php wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'sf-menu sf-menu-normal'));  ?>
+			        </nav>
+			    </div>
+			</div>
+			</div>
+	        <?php 
         endif; 
 }	

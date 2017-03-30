@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	/**
     * @hooked asencd_single_post_header - 20
     */
-    do_action('kadence_post_header');
+    do_action('ascend_post_header');
     ?>
     <div id="content" class="container">
    		<div class="row">

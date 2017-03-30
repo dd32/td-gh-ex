@@ -9,7 +9,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $post, $product, $ascend;
+global $post, $product;
+	$ascend = ascend_get_options();
 	if(isset($ascend['outofstocktag']) && $ascend['outofstocktag'] == 1) {
 
 		if (! $product->is_in_stock() ) : 
@@ -18,7 +19,7 @@ global $post, $product, $ascend;
 	 		} else {
 	 			$sold_text = __( 'Sold', 'ascend');
 	 		} 
-	    	echo apply_filters('kt_woocommerce_soldout_flash', '<span class="onsale kad-out-of-stock">' . $sold_text . '</span>', $post, $product);
+	    	echo apply_filters('ascend_woocommerce_soldout_flash', '<span class="onsale kad-out-of-stock">' . $sold_text . '</span>', $post, $product);
 
 	    elseif ($product->is_on_sale()) : 
 	        if(!empty($ascend['sale_placeholder_text'])) {

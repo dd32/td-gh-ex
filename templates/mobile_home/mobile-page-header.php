@@ -1,6 +1,6 @@
 <?php
 	// Front Page Header
-	global $ascend; 
+	$ascend = ascend_get_options();
 	if(isset($ascend['home_mobile_page_title_typed_text']) && $ascend['home_mobile_page_title_typed_text'] == '1') {
 		if(isset($ascend['home_mobile_page_title_typed_text_loop']) && $ascend['home_mobile_page_title_typed_text_loop'] == '1') {
 			$loop = 'true';
@@ -125,14 +125,14 @@
 	?>
 	<div id="pageheader" class="titleclass kt_mobile_slider post-header-area kt_bc_not_active" style="<?php echo esc_attr($bg_style).' '.esc_attr($bg_position).' '.esc_attr($bg_size).' '.esc_attr($bg_repeat).' '.esc_attr($bg_attachment);?>">
 	<div class="header-color-overlay"></div>
-	<?php do_action("kt_header_overlay"); ?>
+	<?php do_action('ascend_header_overlay'); ?>
 		<div class="container">
 			<div class="page-header" style="<?php echo esc_attr($talign);?>">
 				<div class="page-header-inner">
 					<h1 class="page_head_title home_head_title entry-title" itemprop="name" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>>
 						<?php echo do_shortcode($home_page_title); ?>
 					</h1>
-					<?php if(!empty($bsub)) { echo '<p class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"  style="'.$scolor.'"> '.do_shortcode($bsub).' </p>'; } ?>
+					<?php if(!empty($bsub)) { echo '<p class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"  style="'.esc_attr($scolor).'"> '.do_shortcode($bsub).' </p>'; } ?>
 				</div>
 			</div>
 		</div><!--container-->

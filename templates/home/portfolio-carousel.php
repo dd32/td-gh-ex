@@ -2,7 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-global $ascend, $kt_portfolio_loop;
+global $kt_portfolio_loop;
+$ascend = ascend_get_options();
 	if(!empty($ascend['home_portfolio_carousel_title'])) {
 		$btitle = $ascend['home_portfolio_carousel_title'];
 	} else { 
@@ -86,7 +87,7 @@ global $ascend, $kt_portfolio_loop;
     } else {
     	$margins = 'row-margin-small';
     }
-    $bc = apply_filters('kadence_home_portfolio_carousel_columns', $bc);
+    $bc = apply_filters('ascend_home_portfolio_carousel_columns', $bc);
     $kt_portfolio_loop = array(
      	'lightbox' 		=> $portfolio_lightbox,
      	'showexcerpt' 	=> $portfolio_excerpt,
@@ -120,30 +121,21 @@ global $ascend, $kt_portfolio_loop;
 		<div class="portfolio-carouselcontainer <?php echo esc_attr($margins);?>">
     		<div id="portfolio-home-carousel" class="slick-slider portfolio_carousel kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="400" data-slider-scroll="<?php echo esc_attr($carousel_scroll);?>" data-slider-auto="true" data-slider-speed="<?php echo esc_attr($carousel_speed);?>" data-slider-xxl="<?php echo esc_attr($bc['xxl']);?>" data-slider-xl="<?php echo esc_attr($bc['xl']);?>" data-slider-md="<?php echo esc_attr($bc['md']);?>" data-slider-sm="<?php echo esc_attr($bc['sm']);?>" data-slider-xs="<?php echo esc_attr($bc['xs']);?>" data-slider-ss="<?php echo esc_attr($bc['ss']);?>">
             <?php
-            	if(isset($wp_query)) {
-					$temp = $wp_query;
-				} else {
-					$temp = null;
-				}
-				$wp_query = null; 
-			  	$wp_query = new WP_Query();
-			  	$wp_query->query(array(
+			  	$loop = new WP_Query(array(
 			  		'orderby' => $portfolio_order,
 			        'order' =>	$p_order,
 			        'post_type' => 'portfolio',
 			        'portfolio-type' => $p_type_slug,
 			        'posts_per_page'=> $carousel_items
-			        )
-			  	);
-				if ( $wp_query ) :
-				 	while ( $wp_query->have_posts() ) : $wp_query->the_post();
+			        ));
+				if ( $loop ) :
+				 	while ( $loop->have_posts() ) : $loop->the_post();
                     get_template_part('templates/content', 'loop-portfolio');  
 				
                 endwhile; else: ?>
 				    <div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'ascend');?></div>
 
 				<?php endif; 
-				$wp_query = $temp;  // Reset
 				wp_reset_query(); ?>								
 			</div>
         </div>

@@ -1,7 +1,6 @@
 <?php 
-
  /**
-   * Custom Woocommerce Account Functions 2.6
+   * Custom Woocommerce Account Functions 
    */
 if ( ! defined( 'ABSPATH' ) ) {
   exit;
@@ -21,7 +20,7 @@ function ascend_page_endpoint_title( $title ) {
 }
 function ascend_add_woo_endpoint_title() {
     echo '<h2 class="kad_endpointtitle">';
-     	echo ascend_page_endpoint_title(get_the_title());
+     	echo esc_html(ascend_page_endpoint_title(get_the_title()));
     echo '</h2>';
 }
 add_action('woocommerce_before_account_orders', 'ascend_add_woo_endpoint_title');
@@ -30,7 +29,7 @@ add_action('woocommerce_before_edit_account_form', 'ascend_add_woo_endpoint_titl
 add_action('woocommerce_before_edit_account_address_form', 'ascend_add_woo_endpoint_title');
 add_action('woocommerce_before_account_payment_methods', 'ascend_add_woo_endpoint_title');
 add_action('woocommerce_before_account_downloads', 'ascend_add_woo_endpoint_title');
-add_action('kadence_woo_thank_you_start', 'ascend_add_woo_endpoint_title');
+add_action('ascend_woo_thank_you_start', 'ascend_add_woo_endpoint_title');
 
 function ascend_woo_account_before_div() {
 	echo '<div class="kt-woo-account-nav">';

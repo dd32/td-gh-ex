@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $woocommerce_loop, $ascend;
+global $product, $woocommerce_loop;
 
-
+$ascend = ascend_get_options();
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) ) {
 	$woocommerce_loop['loop'] = 0;

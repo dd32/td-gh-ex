@@ -21,13 +21,15 @@ a.kt_color_gray:hover {
 }
 //Page navi
 .wp-pagenavi {
+	nav.navigation.pagination {
        	text-align:center;
         margin: 10px 0;
-    &:before {
-		clear: both;
-		display: table;
-		content: ' ';
-	}
+        &:before {
+			clear: both;
+			display: table;
+			content: ' ';
+		}
+    }
 	a,
 	span {
 		padding:8px 18px;
@@ -184,7 +186,9 @@ a.kt_color_gray:hover {
 .alignright { 
 	float: right; 
 }
-
+figure.wp-caption {
+    max-width: 100%;
+}
 figure.alignnone { 
 	margin-left: 0; 
 	margin-right: 0; 

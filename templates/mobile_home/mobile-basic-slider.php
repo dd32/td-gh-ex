@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
   exit; // Exit if accessed directly
 }
-    global $ascend;
+    $ascend = ascend_get_options();
 
         if(isset($ascend['mobile_slider_size'])) {
         	$slideheight = $ascend['mobile_slider_size'];

@@ -4,7 +4,7 @@ Template Name: Blog
 */
 get_header(); 
 
-global $post, $ascend, $kt_grid_carousel;
+global $post, $kt_grid_carousel;
 	$post_id = $post->ID;
     $kt_grid_carousel = false;
     $blog_type 		= get_post_meta( $post_id, '_kad_blog_type', true );
@@ -36,37 +36,20 @@ global $post, $ascend, $kt_grid_carousel;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $lay = ascend_get_postlayout($blog_type);
 
-    if(isset($blog_columns)) {
-        $kt_grid_columns = $blog_columns;
-    } else {
-        $kt_grid_columns = '3';
-    } 
+    $kt_grid_columns 		= $blog_columns ? absint( $blog_columns ) : 3;
     if(ascend_display_sidebar()) {
-        $fullclass = '';
+        $fullclass 		= '';
         $kt_has_sidebar = true;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
     } else {
-        $fullclass = 'fullwidth';
+        $fullclass 		= 'fullwidth';
         $kt_has_sidebar = false;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
     }
+    $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
 
     /**
     * @hooked ascend_page_title - 20
     */
-     do_action('kadence_page_title_container');
+     do_action('ascend_page_title_container');
     ?>
 	
 	<div id="content" class="container">
@@ -78,9 +61,9 @@ global $post, $ascend, $kt_grid_carousel;
                 * @hooked ascend_page_content - 20
                 * @hooked ascend_page_content_wrap_after - 30
                 */
-                do_action('kadence_page_content');
+                do_action('ascend_page_content');
                 ?>
-				<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" <?php echo $lay['data'] ;?>> 
+				<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
 	  				<?php				
 					if(isset($wp_query)) {
 						$temp = $wp_query;
@@ -132,15 +115,16 @@ global $post, $ascend, $kt_grid_carousel;
             		?>
             	 </div><!-- /.archive content -->
             	 <?php 
-					if ($wp_query->max_num_pages > 1) : 
-		    				ascend_wp_pagenav();   
-					endif; 
+		    		/**
+	                * @hooked ascend_pagination - 20
+	                */
+	                do_action('ascend_pagination');
 					$wp_query = $temp;  // Reset 
 					wp_reset_query(); 
 	                /**
 	                * @hooked ascend_page_comments - 20
 	                */
-	                do_action('kadence_page_footer');
+	                do_action('ascend_page_footer');
 	                ?>		
 			</div><!-- /.main -->
 			<?php

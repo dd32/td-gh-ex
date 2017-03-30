@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ascend_display_pagetitle() {
     if( is_front_page() ) {
-        global $ascend;
+        $ascend = ascend_get_options();
         if(isset($ascend['home_header']) && $ascend['home_header'] == 'none') {
             $pagetitledisplay = false;
         } else {
@@ -21,6 +21,7 @@ function ascend_display_pagetitle() {
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
+        	$ascend = ascend_get_options();
            if(isset($ascend['default_showpagetitle']) && $ascend['default_showpagetitle'] == '0') {
                 $pagetitledisplay = false;
             } else {
@@ -30,13 +31,14 @@ function ascend_display_pagetitle() {
     } else if (is_attachment()) {
         $pagetitledisplay = false;
     } else if(is_page() && !is_front_page() && !is_home() ) {
-        global $post, $ascend;
+        global $post;
         $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
         if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
             $pagetitledisplay = false;
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
+        	$ascend = ascend_get_options();
             if(isset($ascend['default_showpagetitle']) && $ascend['default_showpagetitle'] == '0') {
                 $pagetitledisplay = false;
             } else {
@@ -44,13 +46,14 @@ function ascend_display_pagetitle() {
             }
         }
     } else if (is_singular('product') ) {
-        global $post, $ascend;
+        global $post;
         $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
         if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
             $pagetitledisplay = false;
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
+        	$ascend = ascend_get_options();
             if(isset($ascend['product_post_title']) && $ascend['product_post_title'] == '1') {
                 $pagetitledisplay = true;
             } else {
@@ -58,20 +61,21 @@ function ascend_display_pagetitle() {
             }
         }
     } else if(is_tax('product_cat') || is_tax('product_tag') || is_category() ||  is_tag() ) {
-        global $ascend;
+        $ascend = ascend_get_options();
             if(isset($ascend['default_showpagetitle']) && $ascend['default_showpagetitle'] == '0') {
                 $pagetitledisplay = false;
             } else {
                 $pagetitledisplay = true;
             }
     } else if (is_singular('portfolio') ) {
-        global $post, $ascend;
+        global $post;
         $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
         if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
             $pagetitledisplay = false;
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
+        	$ascend = ascend_get_options();
             if(isset($ascend['portfolio_post_title']) && $ascend['portfolio_post_title'] == '0') {
                 $pagetitledisplay = false;
             } else {
@@ -79,13 +83,14 @@ function ascend_display_pagetitle() {
             }
         }
     } else if (is_single() ) {
-        global $post, $ascend;
+        global $post;
         $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
         if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
             $pagetitledisplay = false;
         } else if(isset($hidepagetitle) && $hidepagetitle == 'show') {
             $pagetitledisplay = true;
         } else {
+        	$ascend = ascend_get_options();
             if(isset($ascend['blog_post_title']) && $ascend['blog_post_title'] == '0') {
                 $pagetitledisplay = false;
             } else {
@@ -93,7 +98,7 @@ function ascend_display_pagetitle() {
             }
         }
     } else {
-        global $ascend;
+        $ascend = ascend_get_options();
         if(isset($ascend['default_showpagetitle']) && $ascend['default_showpagetitle'] == '0') {
             $pagetitledisplay = false;
         } else {
@@ -101,13 +106,13 @@ function ascend_display_pagetitle() {
         }
     }
 
-    return apply_filters('kadence_pagetitle_display', $pagetitledisplay);
+    return apply_filters('ascend_pagetitle_display', $pagetitledisplay);
 }
-add_filter('kadence_pagetitle_display', 'ascend_shop_page_title');
+add_filter('ascend_pagetitle_display', 'ascend_shop_page_title');
 function ascend_shop_page_title($show) {
     if (class_exists('woocommerce')) {
         if(is_shop()) {
-            global $ascend;
+            $ascend = ascend_get_options();
             $shopid = get_option( 'woocommerce_shop_page_id' );
             $hidepagetitle = get_post_meta( $shopid, '_kad_pagetitle_hide', true );
             if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
@@ -163,7 +168,7 @@ function ascend_trans_header() {
     	}
   	} else {
     	if(is_front_page()) {
-      			global $ascend;
+      			$ascend = ascend_get_options();
                 if(isset($ascend['home_transheader']) && $ascend['home_transheader'] == 'true') {
                   	$trans_head = true;
                 } elseif(isset($ascend['home_transheader']) && $ascend['home_transheader'] == 'false') {
@@ -176,7 +181,7 @@ function ascend_trans_header() {
 		        	}
 		        }
       	} else {
-        	global $ascend;
+        	$ascend = ascend_get_options();
         	if(isset($ascend['page_trans_default']) && $ascend['page_trans_default'] == '1') {
                   	$trans_head = true;
                 } else {
@@ -184,5 +189,5 @@ function ascend_trans_header() {
                 }
       	}
   	}
-    return apply_filters('kadence_transparent_header', $trans_head);
+    return apply_filters('ascend_transparent_header', $trans_head);
 }

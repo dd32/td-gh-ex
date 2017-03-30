@@ -36,9 +36,7 @@ class CMB2_Type_Colorpicker extends CMB2_Type_Text {
 		$meta_value = $this->value ? $this->value : $this->field->escaped_value();
 
 		$hex_color = '(([a-fA-F0-9]){3}){1,2}$';
-		if($meta_value == 'transparent') {
-			
-		} elseif ( preg_match( '/^' . $hex_color . '/i', $meta_value ) ) {
+		if ( preg_match( '/^' . $hex_color . '/i', $meta_value ) ) {
 			// Value is just 123abc, so prepend #
 			$meta_value = '#' . $meta_value;
 		} elseif ( ! preg_match( '/^#' . $hex_color . '/i', $meta_value ) ) {

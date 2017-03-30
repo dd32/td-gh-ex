@@ -1,7 +1,7 @@
 <?php
 	// Post Header
-	global $post, $ascend; 
-		
+	global $post; 
+			$ascend = ascend_get_options();
 			if(isset($ascend['single_header_title_size'])){
 				$title_data = $ascend['single_header_title_size'];
 			} else {
@@ -128,6 +128,15 @@
 		 	$breadcrumb = false;
 		 	$breadclass = "kt_bc_not_active";
 		}
+	} else if(is_attachment()){
+		$page_title_title = get_the_title();
+		if( apply_filters('ascend_attachment_breadcrumbs', false) ) {
+		 	$breadcrumb = true;
+		 	$breadclass = "kt_bc_active";
+		} else {
+		 	$breadcrumb = false;
+		 	$breadclass = "kt_bc_not_active";
+		}
 	} else {
 		// Other singe post.
 		if(!empty($post_header_title)) {
@@ -135,7 +144,7 @@
 		} else  {
 			$page_title_title =  get_the_title();
 		} 
-		if( apply_filters('kadence_custom_post_type_breadcrumbs', false, $post) ) {
+		if( apply_filters('ascend_custom_post_type_breadcrumbs', false, $post) ) {
 		 	$breadcrumb = true;
 		 	$breadclass = "kt_bc_active";
 		} else {
@@ -147,7 +156,7 @@
 ?>
 	<div id="pageheader" class="titleclass post-header-area <?php echo esc_attr($breadclass);?>">
 	<div class="header-color-overlay"></div>
-	<?php do_action("kt_header_overlay"); ?>
+	<?php do_action('ascend_header_overlay'); ?>
 		<div class="container">
 			<div class="page-header">
 				<div class="page-header-inner">

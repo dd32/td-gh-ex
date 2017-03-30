@@ -3,7 +3,7 @@
     /**
     * @hooked ascend_archive_title - 20
     */
-     do_action('kadence_archive_title_container');
+     do_action('ascend_archive_title_container');
     ?>
   
 	<div id="content" class="container">
@@ -22,9 +22,11 @@
 	          get_template_part('templates/content', get_post_format()); 
 	        endwhile; 
 
-	        if ($wp_query->max_num_pages > 1) : 
-	          ascend_wp_pagenav();   
-	        endif; ?>
+	       	/**
+            * @hooked ascend_pagination - 20
+            */
+            do_action('ascend_pagination'); 
+            ?>
         </div><!-- /.main -->
 			<?php 
 			/**

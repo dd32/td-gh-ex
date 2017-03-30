@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
-    global $ascend; 
+    $ascend = ascend_get_options();
     
     $icons = $ascend['icon_menu']; 
     if(!empty($ascend['home_icon_menu_column'])) {

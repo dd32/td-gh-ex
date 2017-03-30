@@ -589,42 +589,7 @@
              */
             private function _internationalization() {
 
-                /**
-                 * Locale for text domain
-                 * filter 'redux/textdomain/{opt_name}'
-                 *
-                 * @param string     The locale of the blog or from the 'locale' hook
-                 * @param string     'redux-framework'  text domain
-                 */
-                //                $locale = apply_filters( "redux/textdomain/{$this->args['opt_name']}", get_locale(), 'ascend' );
-                //
-                //                if ( strpos( $locale, '_' ) === false ) {
-                //                    if ( file_exists( self::$_dir . 'languages/' . strtolower( $locale ) . '_' . strtoupper( $locale ) . '.mo' ) ) {
-                //                        $locale = strtolower( $locale ) . '_' . strtoupper( $locale );
-                //                    }
-                //                }
-
-                $basename = basename( __FILE__ );
-                $basepath = plugin_basename( __FILE__ );
-                $basepath = str_replace( $basename, '', $basepath );
-
-                $basepath = apply_filters( "redux/textdomain/basepath/{$this->args['opt_name']}", $basepath );
-
-                $loaded = load_plugin_textdomain( 'redux-framework', false, $basepath . 'languages');
-
-                if ( !$loaded ){
-                    $loaded = load_muplugin_textdomain( 'redux-framework', $basepath . 'languages' );
-                }
-
-                if ( !$loaded ){
-                    $loaded = load_theme_textdomain( 'redux-framework', $basepath . 'languages' );
-                }
-
-                if ( ! $loaded ) {
-                    $locale = apply_filters( 'plugin_locale', get_locale(), 'redux-framework' );
-                    $mofile = dirname( __FILE__ ) . '/languages/redux-framework-' . $locale . '.mo';
-                    load_textdomain( 'redux-framework', $mofile );
-                }
+                load_theme_textdomain('ascend', get_template_directory() . '/languages');
             }
             // _internationalization()
 
@@ -638,14 +603,7 @@
 
             // get_instance()
 
-            private function _tracking() {
-                if ( file_exists( dirname( __FILE__ ) . '/inc/tracking.php' ) ) {
-                    require_once dirname( __FILE__ ) . '/inc/tracking.php';
-                    $tracking = Redux_Tracking::get_instance();
-                    $tracking->load( $this );
-                }
-            }
-            // _tracking()
+  
 
             /**
              * ->_get_default(); This is used to return the default value if default_show is set
@@ -1701,7 +1659,7 @@
                     }
 
                     // Construct message
-                    $msg = sprintf( __( 'Hints are tooltips that popup when %d the hint icon, offering addition information about the field in which they appear.  They can be %d d by using the link below.', 'ascend' ), $event, strtolower( $s ) ) . '<br/><br/>' . $url;
+                    $msg = sprintf( __( 'Hints are tooltips that popup when %1$d the hint icon, offering addition information about the field in which they appear.  They can be %2$d d by using the link below.', 'ascend' ), $event, strtolower( $s ) ) . '<br/><br/>' . $url;
 
                     // Construct hint tab
                     $tab = array(
@@ -2957,7 +2915,7 @@
                                      * @param        string                validation class file path
                                      * @param string $class_file           validation class file path
                                      */
-                                    $class_file = apply_filters( "redux/validate/{$this->args['opt_name']}/class/{$field['validate']}", self::$_dir . "inc/validation/{$field['validate']}/validation_{$field['validate']}.php", $class_file );
+                                    //$class_file = apply_filters( "redux/validate/{'$this->args['opt_name']'}/class/{$field['validate']}", self::$_dir . "inc/validation/{$field['validate']}/validation_{$field['validate']}.php", $class_file );
 
                                     if ( $class_file ) {
                                         if ( file_exists( $class_file ) ) {

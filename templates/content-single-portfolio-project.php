@@ -1,18 +1,19 @@
 <?php 
-global $post, $ascend;
+global $post;
+	$ascend = ascend_get_options();
 	$kt_project = get_post_meta( $post->ID, '_kad_ppost_type', true );
 	$imgheight 	= get_post_meta( $post->ID, '_kad_portfolio_slider_height', true );
 	$imgwidth 	= get_post_meta( $post->ID, '_kad_portfolio_slider_width', true );
    	if (!empty($imgheight)) {
 		$slideheight = $imgheight;
 	} else { 
-		$slideheight = apply_filters('kt_single_portfolio_image_height', null); 
+		$slideheight = apply_filters('ascend_single_portfolio_image_height', null); 
 	} 
 	if (!empty($imgwidth)) {
 		$slidewidth = $imgwidth;
 	} else {
 		$slidewidth = ascend_portfolio_slider_width();
-		$slidewidth = apply_filters('kt_single_portfolio_image_width', $slidewidth); 
+		$slidewidth = apply_filters('ascend_single_portfolio_image_width', $slidewidth); 
 	}
     if(empty($kt_project)) {
     	$kt_project = 'image';
@@ -66,7 +67,7 @@ global $post, $ascend;
     } else if ($kt_project == 'image') {
         if (has_post_thumbnail( $post->ID ) ) {          
             $image_id = get_post_thumbnail_id();
-            $img = ascend_get_image($slidewidth, $slideheight, true, null, get_the_title(), $image_id, false);
+            $img = ascend_get_image_array($slidewidth, $slideheight, true, null, get_the_title(), $image_id, false);
             if( ascend_lazy_load_filter() ) {
                 $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
             } else {
@@ -93,7 +94,7 @@ global $post, $ascend;
                         if ($attachments) {
                             foreach ($attachments as $attachment) {
                                 $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
-                                $img = ascend_get_image(null, $slideheight, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array(null, $slideheight, true, null, $alt, $attachment, false);
                                 if( ascend_lazy_load_filter() ) {
                                     $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
                                 } else {

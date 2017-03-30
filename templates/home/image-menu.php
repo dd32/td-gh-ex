@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-	global $ascend; 
+	$ascend = ascend_get_options();
 
 	if(!empty($ascend['img_menu_height'])) {
 		$height = $ascend['img_menu_height'];

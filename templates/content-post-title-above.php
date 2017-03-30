@@ -4,13 +4,14 @@
 *
 *
 */
-global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
+global $post, $kt_has_sidebar, $kt_feat_width;
+	$ascend = ascend_get_options();
     if (has_post_format( 'quote' )) { ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item clearfix'); ?> itemscope itemtype="http://schema.org/CreativeWork">
               <div class="postcontent">
                <?php if (has_post_thumbnail( $post->ID ) ) { 
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-                    $style = 'style="background-image: url('.esc_url($image[0]).');"'; 
+                    $style = 'background-image: url('.esc_url($image[0]).');'; 
                     $quote_class = 'kt-image-quote'; ?>
                     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                         <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
@@ -22,14 +23,14 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
                     $quote_class = 'kt-text-quote';
                     $style = '';
                 } ?>
-                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" <?php echo $style;?> >
+                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" style="<?php echo esc_attr($style);?>" >
                     <div class="kt-quote-post">
                         <?php 
-                             do_action( 'kadence_post_excerpt_content_before' );
+                             do_action( 'ascend_post_excerpt_content_before' );
 
                              the_content();
 
-                             do_action( 'kadence_post_excerpt_content_after' );
+                             do_action( 'ascend_post_excerpt_content_after' );
                         ?>
                    </div>
                    </div>
@@ -46,11 +47,11 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
     } else {
 
         if($kt_has_sidebar){
-            $kt_feat_width = apply_filters('kt_blog_image_width_sidebar', ascend_post_sidebar_image_width()); 
+            $kt_feat_width = apply_filters('ascend_blog_image_width_sidebar', ascend_post_sidebar_image_width()); 
             $kt_portraittext = 'col-xxl-95 col-xl-9 col-md-8 col-sm-8 col-xs-7';
             $kt_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-5 col-ss-4';
         } else {
-            $kt_feat_width = apply_filters('kt_blog_image_width', ascend_post_image_width()); 
+            $kt_feat_width = apply_filters('ascend_blog_image_width', ascend_post_image_width()); 
             $kt_portraittext = 'col-xxl-95 col-xl-9 col-md-9 col-sm-8 col-xs-7';
             $kt_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-5 col-ss-4';
         }
@@ -63,7 +64,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
                 $imageheight = $height;
             } else {
                 $slideheight = 400;
-                $imageheight = apply_filters('kt_single_post_image_height', 400); 
+                $imageheight = apply_filters('ascend_single_post_image_height', 400); 
             }
             if (!empty($swidth)) {
                 $slidewidth = $swidth;
@@ -76,7 +77,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
             if (!empty($height)) {
                 $imageheight = $height;
             } else {
-                $imageheight = apply_filters('kt_single_post_image_height', 400); 
+                $imageheight = apply_filters('ascend_single_post_image_height', 400); 
             }
             if (!empty($swidth)) {
                 $slidewidth = $swidth;
@@ -84,7 +85,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
                 $slidewidth = $kt_feat_width;
             }
         } else {
-            $imageheight = apply_filters('kt_single_post_image_height', 400);
+            $imageheight = apply_filters('ascend_single_post_image_height', 400);
             $slidewidth = $kt_feat_width;
         }
         // get post summary
@@ -96,7 +97,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 	          	/**
 	            *
 	            */
-	            do_action( 'kadence_post_excerpt_before_content' );
+	            do_action( 'ascend_post_excerpt_before_content' );
 	            ?>
 
               	<div class="col-md-12 post-text-container postcontent">
@@ -105,7 +106,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 	                    /**
 	                    * @hooked ascend_post_header_meta_categories - 20
 	                    */
-	                    do_action( 'kadence_post_excerpt_before_header' );
+	                    do_action( 'ascend_post_excerpt_before_header' );
 	                    ?>
 	                   	<header>
 	                        <?php 
@@ -113,7 +114,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 	                        * @hooked ascend_post_excerpt_header_title - 10
 	                        * @hooked ascend_post_header_meta - 20
 	                        */
-	                        do_action( 'kadence_post_excerpt_header' );
+	                        do_action( 'ascend_post_excerpt_header' );
 	                        ?>
 	                   	</header>
 	                   	<div class="row kt-media-below-title">
@@ -123,8 +124,8 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 			                        ?>
 			                        <div class="col-md-12 post-land-image-container">
 			                              <div class="imghoverclass img-margin-center">
-			                                <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-			                                    <?php echo ascend_get_image_output($slidewidth, $imageheight, true, 'attachment-thumb wp-post-image kt-image-link', null, null, true); ?>
+			                                <a href="<?php the_permalink();  ?>" title="<?php the_title_attribute(); ?>">
+			                                    <?php echo ascend_get_full_image_output($slidewidth, $imageheight, true, 'attachment-thumb wp-post-image kt-image-link', null, null, true); ?>
 			                                </a> 
 			                            </div>
 			                        </div>
@@ -132,14 +133,14 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 			              
 			                } elseif($postsummery == 'img_portrait') { 
 
-			                    $portraitwidth = apply_filters('kt_post_excerpt_image_width_portrait', 270);
-			                    $portraitheight = apply_filters('kt_post_excerpt_image_height_portrait', 310);
+			                    $portraitwidth = apply_filters('ascend_post_excerpt_image_width_portrait', 270);
+			                    $portraitheight = apply_filters('ascend_post_excerpt_image_height_portrait', 310);
 			                    $textsize = $kt_portraittext;
 			                    ?>
 			                    <div class="<?php echo esc_attr($kt_portraitimg_size);?> post-image-container">
 			                        <div class="imghoverclass img-margin-center">
-			                            <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-			                                <?php echo ascend_get_image_output($portraitwidth, $portraitheight, true, 'attachment-thumb wp-post-image kt-image-link', null, null, true); ?>
+			                            <a href="<?php the_permalink();  ?>" title="<?php the_title_attribute(); ?>">
+			                                <?php echo ascend_get_full_image_output($portraitwidth, $portraitheight, true, 'attachment-thumb wp-post-image kt-image-link', null, null, true); ?>
 			                            </a> 
 			                        </div>
 			                    </div>
@@ -164,8 +165,8 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 			              	} elseif($postsummery == 'slider_portrait') { 
 
 			                    $textsize = $kt_portraittext; 
-			                    $portraitwidth = apply_filters('kt_post_excerpt_image_width_portrait', 270);
-			                    $portraitheight = apply_filters('kt_post_excerpt_image_height_portrait', 310); 
+			                    $portraitwidth = apply_filters('ascend_post_excerpt_image_width_portrait', 270);
+			                    $portraitheight = apply_filters('ascend_post_excerpt_image_height_portrait', 310); 
 
 			                    echo '<div class="'.esc_attr($kt_portraitimg_size).' post-image-container">';
 			                        $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -188,11 +189,11 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
               			<div class="<?php echo esc_attr($textsize);?> kt-media-below-text-content">
 		                   	<div class="entry-content" itemprop="articleBody">
 		                        <?php 
-		                             do_action( 'kadence_post_excerpt_content_before' );
+		                             do_action( 'ascend_post_excerpt_content_before' );
 
 		                             the_excerpt();
 
-		                             do_action( 'kadence_post_excerpt_content_after' );
+		                             do_action( 'ascend_post_excerpt_content_after' );
 		                        ?>
 		                   	</div>
 		                   	<footer>
@@ -200,7 +201,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 		                        /**
 		                        *
 		                        */
-		                        do_action( 'kadence_post_excerpt_footer' );
+		                        do_action( 'ascend_post_excerpt_footer' );
 		                        ?>
 		                   	</footer>
 	                   	</div>
@@ -209,7 +210,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_feat_width;
 	                   	/**
 	                   	* 
 	                   	*/
-	                   	do_action( 'kadence_post_excerpt_after_footer' );
+	                   	do_action( 'ascend_post_excerpt_after_footer' );
 	                   	?>
 	                </div><!-- Inner -->
               	</div><!-- Text size -->

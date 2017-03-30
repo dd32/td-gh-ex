@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-global $ascend;
+$ascend = ascend_get_options();
 	// Check for Sidebar
 	if(isset($ascend['home_post_column'])) {
 	} 
@@ -47,36 +47,23 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 	$kt_blog_loop['loop'] = 1;
 	$kt_grid_columns = $blogcolumns;
 	$kt_grid_carousel = false;
-	if ($blogcolumns == '2') {
-        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-    } else if ($blogcolumns == '3'){ 
-        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
-    } else {
-        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-   	} ?>
+	$itemsize = ascend_get_post_grid_item_size($blogcolumns, false);
+	 ?>
    	<div class="kt_blog_home <?php echo esc_attr($lay['pclass']); ?>">
-	   	<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']);?>" <?php echo $lay['data'];?>> 
+	   	<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']);?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
 		   	<?php 
-		   	if(isset($wp_query)) {
-				$temp = $wp_query;
-			} else {
-				$temp = null;
-			}
-			$wp_query = null; 
-			$wp_query = new WP_Query();
-			$wp_query->query(array(
+			$loop = new WP_Query(array(
 				'orderby' 				=> 'date',
 				'order' 				=> 'DESC',
 				'category_name'	 		=> $blog_cat_slug,
 				'post_type' 			=> 'post',
 				'ignore_sticky_posts' 	=> false,
 				'posts_per_page' 		=> $blogcount
-				)
-			);
-		if ( $wp_query ) : 
-			$kt_blog_loop['count'] = $wp_query->post_count;
+				));
+		if ( $loop ) : 
+			$kt_blog_loop['count'] = $loop->post_count;
 
-			while ( $wp_query->have_posts() ) : $wp_query->the_post();
+			while ( $loop->have_posts() ) : $loop->the_post();
 			if($lay['sum'] == 'full'){ 
                 if (has_post_format( 'quote' )) {
                     get_template_part('templates/content', 'post-full-quote'); 
@@ -107,7 +94,6 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 		<?php 
 		endif; 
 
-		$wp_query = $temp;  // Reset 
 		wp_reset_query(); ?>
 		</div>
 	</div>

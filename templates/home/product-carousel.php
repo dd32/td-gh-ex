@@ -3,7 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-	global $ascend, $woocommerce_loop;
+	global $woocommerce_loop;
+	$ascend = ascend_get_options();
 
 		if(!empty($ascend['home_featured_title'])) {
 			$featured_title = $ascend['home_featured_title'];

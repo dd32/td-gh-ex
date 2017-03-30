@@ -6,7 +6,7 @@ function ascend_postheader_metaboxes(){
 	$kt_postheader = new_cmb2_box( array(
 		'id'         	=> 'post_header_metabox',
 		'title'      	=> __("Post Title and Subtitle", 'ascend'),
-		'object_types'  => array( 'product', 'post', 'portfolio', 'staff', 'testimonial', 'tribe_events', 'recipe'),
+		'object_types'  => array( 'product', 'post', 'portfolio', 'tribe_events', 'recipe'),
 		'priority'   	=> 'default',
 	) );
 	

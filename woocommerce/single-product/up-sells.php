@@ -11,8 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $woocommerce, $woocommerce_loop, $ascend;
+global $product, $woocommerce, $woocommerce_loop;
 
+$ascend = ascend_get_options();
 if(!empty($ascend['related_item_column'])) {
 	$product_related_column = $ascend['related_item_column'];
 } else {
@@ -32,9 +33,13 @@ if ($product_related_column == '2') {
 } else {
 	$rpc = ascend_carousel_columns('4');
 } 
-$rpc = apply_filters('kt_upsell_products_columns', $rpc);
+$rpc = apply_filters('ascend_upsell_products_columns', $rpc);
 
-$upsells = $product->get_upsells();
+if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+	$upsells = $product->get_upsell_ids();
+} else {
+	$upsells = $product->get_upsells();
+}
 
 if ( sizeof( $upsells ) === 0 ) {
 	return;

@@ -7,13 +7,13 @@
 
    	while (have_posts()) : the_post(); 
          
-        do_action( 'kadence_single_post_before' ); 
+        do_action( 'ascend_single_post_before' ); 
 
         ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class($postclass); ?> itemscope itemtype="http://schema.org/CreativeWork">
                 <?php if (has_post_thumbnail( $post->ID ) ) { 
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-                    $style = 'style="background-image: url('.esc_url($image[0]).');"'; 
+                    $style = 'background-image: url('.esc_url($image[0]).');'; 
                     $quote_class = 'kt-image-quote'; ?>
                     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                         <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
@@ -25,14 +25,14 @@
                     $quote_class = 'kt-text-quote';
                     $style = '';
                 } ?>
-                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" <?php echo $style;?> >
+                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" style="<?php echo esc_attr($style);?>">
                     <div class="kt-quote-post">
                         <?php
-                        do_action( 'kadence_single_post_content_before' );
+                        do_action( 'ascend_single_post_content_before' );
                         
                             the_content(); 
                         
-                        do_action( 'kadence_single_post_content_after' );
+                        do_action( 'ascend_single_post_content_after' );
                         ?>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                 * @hooked ascend_post_footer_meta - 30
                 * @hooked ascend_post_nav - 40
                 */
-                do_action( 'kadence_single_post_footer' );
+                do_action( 'ascend_single_post_footer' );
                 ?>
                 </footer>
             </article>
@@ -62,8 +62,8 @@
             * @hooked ascend_post_bottom_carousel - 30
             * @hooked ascend_post_comments - 40
             */
-            do_action( 'kadence_single_post_after' );
+            do_action( 'ascend_single_post_after' );
 
             endwhile; 
 
-do_action( 'kadence_single_post_end' ); 
+do_action( 'ascend_single_post_end' ); 

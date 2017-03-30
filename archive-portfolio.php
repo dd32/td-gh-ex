@@ -3,12 +3,12 @@
     /**
     * @hooked ascend_archive_title - 20
     */
-     do_action('kadence_archive_title_container');
+     do_action('ascend_archive_title_container');
     ?>
 	
     <div id="content" class="container clearfix">
    		<div class="row">
-      		<div class="main <?php echo ascend_main_class(); ?>" role="main">
+      		<div class="main <?php echo esc_attr(ascend_main_class()); ?>" role="main">
       			<div class="entry-content">
       				<?php echo category_description(); ?>
       			</div>
@@ -18,22 +18,13 @@
 		                <?php get_search_form(); ?>
 		            </div>
 				<?php endif; 
-				global $ascend, $kt_portfolio_loop, $kt_portfolio_loop_count;
+				global $kt_portfolio_loop, $kt_portfolio_loop_count;
+				$ascend = ascend_get_options();
 				if(isset($ascend['portfolio_tax_show_type']) && $ascend['portfolio_tax_show_type'] == '0') {
 					$portfolio_item_types = 'false';
 				} else {
 					$portfolio_item_types = 'true';
 				}
-				if(isset($ascend['portfolio_tax_order'])) {
-					$p_orderby = $ascend['portfolio_tax_order'];
-				} else {
-					$p_orderby = 'menu_order';
-				}
-				if($p_orderby == 'menu_order' || $p_orderby == 'title') {
-			   		$p_order = 'ASC';
-			   	} else {
-			   		$p_order = 'DESC';
-			   	}
 				if(isset($ascend['portfolio_tax_show_excerpt']) && $ascend['portfolio_tax_show_excerpt'] == '1') {
 					$portfolio_excerpt = 'true';
 				} else {
@@ -84,20 +75,7 @@
 					echo '<div class="kad-portfolio-wrapper-outer p-outer-'.esc_attr($portfolio_style).'">';
 			            echo '<div id="portfolio_template_wrapper" class="'.esc_attr($isoclass).' entry-content portfolio-grid-light-gallery '.esc_attr($margins).'" data-masonry-selector=".p_item" data-masonry-style="masonry">';
 							
-							global $wp_query;
-							// get the query object
-							$cat_obj = $wp_query->get_queried_object();
-					 		$termslug = $cat_obj->slug;
-					 		$tax = $cat_obj->taxonomy;
-							query_posts(array(
-								'paged' 			=> $paged,
-								'orderby' 			=> $p_orderby,
-								'order' 			=> $p_order,
-								'post_type' 		=> 'portfolio',
-								$tax  				=> $termslug,
-								) 
-							);
-							
+							global $wp_query;							
 							if ( $wp_query ) : 
 								$kt_portfolio_loop_count['loop'] = 1;
 								$kt_portfolio_loop_count['count'] = $wp_query->post_count;
@@ -109,9 +87,11 @@
 			            </div> <!--portfoliowrapper-->
 			        </div> <!--portfoliowrapper-outer-->
                 
-                <?php if ($wp_query->max_num_pages > 1) :
-                        ascend_wp_pagenav(); 
-                endif;
+                <?php 
+                	/**
+	                * @hooked ascend_pagination - 20
+	                */
+	                do_action('ascend_pagination');
 				?>
 			</div><!-- /.main -->
 			<?php

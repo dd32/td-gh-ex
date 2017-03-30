@@ -3,7 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $ascend, $kt_portfolio_loop, $kt_portfolio_loop_count;
+global $kt_portfolio_loop, $kt_portfolio_loop_count;
+$ascend = ascend_get_options();
 	if(!empty($ascend['home_portfolio_full_title'])) {
 		$btitle = $ascend['home_portfolio_full_title'];
 	} else { 
@@ -99,27 +100,19 @@ global $ascend, $kt_portfolio_loop, $kt_portfolio_loop_count;
 		echo '<div class="kad-portfolio-wrapper-outer p-outer-'.esc_attr($portfolio_style).'">';
             echo '<div id="portfolio_template_wrapper" class="'.esc_attr($isoclass).' entry-content portfolio-grid-light-gallery '.esc_attr($margins).'" data-masonry-selector=".p_item" data-masonry-style="masonry">';
 				
-				if(isset($wp_query)) {
-					$temp = $wp_query;
-				} else {
-					$temp = null;
-				}
-			  	$wp_query = null; 
-			  	$wp_query = new WP_Query();
-			  	$wp_query->query(array(
+			  	$loop = new WP_Query(array(
 					'paged' 			=> $paged,
 					'orderby' 			=> $p_orderby,
 					'order' 			=> $p_order,
 					'post_type' 		=> 'portfolio',
 					'portfolio-type'	=> $portfolio_type_slug,
 					'posts_per_page' 	=> $portfolio_items
-					)
-			  	);
+					));
 				
-				if ( $wp_query ) : 
+				if ( $loop ) : 
 					$kt_portfolio_loop_count['loop'] = 1;
-					$kt_portfolio_loop_count['count'] = $wp_query->post_count;
-					while ( $wp_query->have_posts() ) : $wp_query->the_post();
+					$kt_portfolio_loop_count['count'] = $loop->post_count;
+					while ( $loop->have_posts() ) : $loop->the_post();
 								get_template_part('templates/content', 'loop-portfolio'); 
 								$kt_portfolio_loop_count['loop']++;
 					endwhile; else: ?>
@@ -130,5 +123,5 @@ global $ascend, $kt_portfolio_loop, $kt_portfolio_loop_count;
             </div> <!--portfoliowrapper-->
         </div> <!--portfoliowrapper-outer-->
     </div> <!--home-portfolio-full -->
-	<?php  $wp_query = $temp;  // Reset
+	<?php  
             wp_reset_query(); 

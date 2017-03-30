@@ -10,9 +10,10 @@
     /**
     * @hooked ascend_page_title - 20
     */
-    do_action('kadence_page_title_container');
+    do_action('ascend_page_title_container');
 
-    global $ascend, $kt_has_sidebar; 
+    global $kt_has_sidebar; 
+    $ascend = ascend_get_options();
     if(ascend_display_sidebar()) {
     	$kt_has_sidebar = true;
         $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12';
@@ -32,7 +33,7 @@
 	}?>
     <div id="content" class="container">
       	<div class="row">
-      		<div class="main <?php echo ascend_main_class(); ?> " id="ktmain" role="main">
+      		<div class="main <?php echo esc_attr(ascend_main_class()); ?> " id="ktmain" role="main">
 
 				<?php if (!have_posts()) : ?>
 				  	<div class="alert">
@@ -54,9 +55,10 @@
 				</div> <!-- Blog Grid -->
 				
 				<?php 
-					if ($wp_query->max_num_pages > 1) : 
-				        ascend_wp_pagenav(); 
-					 endif; ?>
+					/**
+	                * @hooked ascend_pagination - 20
+	                */
+	                do_action('ascend_pagination'); ?>
 				</div><!-- /.main -->
 				<?php
 				/**

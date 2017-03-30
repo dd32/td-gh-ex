@@ -2,7 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop; 
+global $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop;
+$ascend = ascend_get_options(); 
 
     $kt_blog_loop['loop'] = 1;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -18,26 +19,13 @@ global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop;
         $kt_grid_columns = '3';
     } 
     if(ascend_display_sidebar()) {
-        $fullclass = '';
+        $fullclass 		= '';
         $kt_has_sidebar = true;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
     } else {
-        $fullclass = 'fullwidth';
+        $fullclass 		= 'fullwidth';
         $kt_has_sidebar = false;
-        if ($kt_grid_columns == '2') {
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-	    } else if ($kt_grid_columns == '3'){ 
-	        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-6 col-xs-6 col-ss-12'; 
-	    } else {
-	        $itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
-	   	}
     }
+    $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
 
 		if (!have_posts()) : ?>
             <div class="error-not-found">
@@ -46,7 +34,7 @@ global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop;
             </div>
         <?php endif; ?>
         <div class="<?php echo esc_attr($lay['pclass']); ?>">
-            <div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" <?php echo $lay['data'] ;?>> 
+            <div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
                 <?php 
                 $kt_blog_loop['count'] = $wp_query->post_count;
                 while (have_posts()) : the_post();
@@ -80,7 +68,8 @@ global $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop;
                 ?>
             </div><!-- /.archive content -->
             <?php 
-             if ($wp_query->max_num_pages > 1) : 
-                      ascend_wp_pagenav(); 
-                endif; ?>
+            /**
+            * @hooked ascend_pagination - 20
+            */
+            do_action('ascend_pagination'); ?>
                 </div>

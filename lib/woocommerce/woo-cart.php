@@ -23,10 +23,3 @@ function ascend_woo_cart_summary_title() {
 }
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' ); 
 add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' ); 
-
-
-
-//add_action('kadence_woo_thank_you_start', 'ascend_woo_thankyou_title');
-function ascend_woo_thankyou_title() {
-    the_title( '<h2 class="kad_thankyou_title">', '</h2>' );
-}

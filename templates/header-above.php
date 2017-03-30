@@ -1,5 +1,5 @@
 <?php 
-global $ascend;
+$ascend = ascend_get_options();
 if(isset($ascend['above_header_style']) && $ascend['above_header_style'] == 'center_menu') {
 	$headerclass = 'kt-header-layout-center-menu';
 } elseif( isset($ascend['above_header_style']) && $ascend['above_header_style'] == 'center' ) {
@@ -44,7 +44,7 @@ if(isset($ascend['above_header_height'])) {
  	   	/* 
         * Hooked ascend_top_bar 20
         */
-        do_action('kadence_before_above_header');
+        do_action('ascend_before_above_header');
 	?>	<div class="outside-headerclass">
 		<div class="kad-header-menu-outer headerclass">
 		    <div class="kad-header-menu-inner container">
@@ -56,14 +56,14 @@ if(isset($ascend['above_header_height'])) {
 			        		/* 
 					        * Hooked ascend_left_header_menu 10
 					        */
-					        do_action('kadence_center_logo_header_left'); ?>
+					        do_action('ascend_center_logo_header_left'); ?>
 			           	</div> <!-- Close left header-->
 			            <div class="kad-center-header kt-header-flex-item header-logo-width">
 			            	<?php 
 			        		/* 
 					        * Hooked ascend_the_custom_logo 20
 					        */
-					        do_action('kadence_center_logo_header_center'); ?>
+					        do_action('ascend_center_logo_header_center'); ?>
 			            </div>  <!-- Close center header-->
 			            <div class="kad-right-header kt-header-flex-item header-sidewidth">
 			            	<?php 
@@ -71,7 +71,7 @@ if(isset($ascend['above_header_height'])) {
 			        		* Hooked ascend_right_header_menu 10
 					        * Hooked ascend_header_extras 20
 					        */
-					        do_action('kadence_center_logo_header_right'); ?>
+					        do_action('ascend_center_logo_header_right'); ?>
 					    </div>  <!-- Close right header-->
 			        </div>  <!-- Close container--> 
 		    	<?php 
@@ -82,21 +82,21 @@ if(isset($ascend['above_header_height'])) {
 			        		/* 
 					        * Hooked ascend_second_header_extras 10
 					        */
-					        do_action('kadence_below_logo_header_left'); ?>
+					        do_action('ascend_below_logo_header_left'); ?>
 			           	</div> <!-- Close left header-->
 			            <div class="kad-center-header kt-header-flex-item header-logo-width">
 			            	<?php 
 			        		/* 
 					        * Hooked ascend_the_custom_logo 20
 					        */
-					        do_action('kadence_below_logo_header_center'); ?>
+					        do_action('ascend_below_logo_header_center'); ?>
 			            </div>  <!-- Close center header-->
 			            <div class="kad-right-header kt-header-flex-item header-sidewidth">
 			            	<?php 
 			        		/* 
 					        * Hooked ascend_header_extras 20
 					        */
-					        do_action('kadence_below_logo_header_right'); ?>
+					        do_action('ascend_below_logo_header_right'); ?>
 					    </div>  <!-- Close right header-->
 					</div>
 					<div class="menu_below_container">
@@ -105,7 +105,7 @@ if(isset($ascend['above_header_height'])) {
 			        		/* 
 					        * Hooked ascend_primary_menu_area 20
 					        */
-					        do_action('kadence_below_logo_header_below'); ?>
+					        do_action('ascend_below_logo_header_below'); ?>
 					    </div>  <!-- Close right header-->
 			        </div>  <!-- Close container--> 
 		        <?php 
@@ -116,21 +116,21 @@ if(isset($ascend['above_header_height'])) {
 			        		/* 
 					        * Hooked ascend_the_custom_logo 20
 					        */
-					        do_action('kadence_header_left'); ?>
+					        do_action('ascend_header_left'); ?>
 			           	</div> <!-- Close left header-->
 			            <div class="kad-center-header kt-header-flex-item">
 			            	<?php 
 			        		/* 
 					        * Hooked ascend_primary_menu_area 20
 					        */
-					        do_action('kadence_header_center'); ?>
+					        do_action('ascend_header_center'); ?>
 			            </div>  <!-- Close center header-->
 			            <div class="kad-right-header kt-header-flex-item">
 			            	<?php 
 			        		/* 
 					        * Hooked ascend_header_extras 20
 					        */
-					        do_action('kadence_header_right'); ?>
+					        do_action('ascend_header_right'); ?>
 					    </div>  <!-- Close right header-->
 			        </div>  <!-- Close container--> 
 	        	<?php }  ?>
@@ -143,6 +143,6 @@ if(isset($ascend['above_header_height'])) {
 	/* 
     * Hooked ascend_secondary_menu 20
     */
-    do_action('kadence_after_above_header'); 
+    do_action('ascend_after_above_header'); 
     ?>
 </header>

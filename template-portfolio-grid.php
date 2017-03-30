@@ -7,7 +7,7 @@ get_header();
     /**
     * @hooked ascend_page_title - 20
     */
-     do_action('kadence_page_title_container');
+     do_action('ascend_page_title_container');
     ?>
 	
     <div id="content" class="container">
@@ -19,9 +19,10 @@ get_header();
             * @hooked ascend_page_content - 20
             * @hooked ascend_page_content_wrap_after - 30
             */
-            do_action('kadence_page_content');
+            do_action('ascend_page_content');
 
-      		global $post, $ascend, $kt_portfolio_loop, $kt_portfolio_loop_count; 
+      		global $post, $kt_portfolio_loop, $kt_portfolio_loop_count; 
+      		$ascend = ascend_get_options();
   			$portfolio_type 		= get_post_meta( $post->ID, '_kad_portfolio_type', true );
 		   	$portfolio_items 		= get_post_meta( $post->ID, '_kad_portfolio_items', true );
 		   	$portfolio_order 		= get_post_meta( $post->ID, '_kad_portfolio_order', true );
@@ -145,17 +146,17 @@ get_header();
                 </div> <!--portfoliowrapper-outer-->
                                     
                 <?php 
-                if ($wp_query->max_num_pages > 1) : 
-                	 ascend_wp_pagenav();    
-                endif;  
-                
+                /**
+                * @hooked ascend_pagination - 20
+                */
+                do_action('ascend_pagination');
                 $wp_query = $temp;  // Reset
                 wp_reset_query(); 
 
                 /**
                 * @hooked ascend_page_comments - 20
                 */
-                do_action('kadence_page_footer');
+                do_action('ascend_page_footer');
                 ?>
 			</div><!-- /.main -->
 			<?php 

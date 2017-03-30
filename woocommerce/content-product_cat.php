@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $woocommerce_loop, $ascend;
-
+global $woocommerce_loop;
+$ascend = ascend_get_options();
 	if(is_shop() || is_product_category() || is_product_tag()) {
 		if(isset($ascend['product_cat_layout']) && !empty($ascend['product_cat_layout'])) {
 			$product_cat_column = $ascend['product_cat_layout'];

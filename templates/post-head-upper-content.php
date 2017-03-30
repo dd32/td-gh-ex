@@ -1,5 +1,6 @@
 <?php 
-global $post, $ascend;
+global $post;
+	$ascend = ascend_get_options();
     $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
     if (!empty($height)) {
       $slideheight = $height;
@@ -18,7 +19,7 @@ global $post, $ascend;
                         if ($attachments) {
                             foreach ($attachments as $attachment) {
                                 $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
-                                $img = ascend_get_image(null, $slideheight, true, null, $alt, $attachment, false);
+                                $img = ascend_get_image_array(null, $slideheight, true, null, $alt, $attachment, false);
                                 if( ascend_lazy_load_filter() ) {
                                     $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
                                 } else {

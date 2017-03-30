@@ -389,7 +389,7 @@
                 $sysinfo['redux_data_dir'] = ReduxFramework::$_upload_dir;
                 $f                         = 'fo' . 'pen';
                 // Only is a file-write check
-                $sysinfo['redux_data_writeable'] = self::makeBoolStr( @$f( ReduxFramework::$_upload_dir . 'test-log.log', 'a' ) );
+                $sysinfo['redux_data_writeable'] = self::makeBoolStr( $f( ReduxFramework::$_upload_dir . 'test-log.log', 'a' ) );
                 $sysinfo['wp_content_url']       = WP_CONTENT_URL;
                 $sysinfo['wp_ver']               = get_bloginfo( 'version' );
                 $sysinfo['wp_multisite']         = is_multisite();
@@ -489,7 +489,7 @@
                         $sysinfo['wp_remote_post_error'] = $response->get_error_message();
                     }
 
-                    $response = @wp_remote_get( 'http://reduxframework.com/wp-admin/admin-ajax.php?action=get_redux_extensions' );
+                    $response = wp_remote_get( 'http://reduxframework.com/wp-admin/admin-ajax.php?action=get_redux_extensions' );
 
                     if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 ) {
                         $sysinfo['wp_remote_get']       = 'true';
@@ -509,7 +509,7 @@
                 $sysinfo['plugins'] = array();
 
                 foreach ( $active_plugins as $plugin ) {
-                    $plugin_data = @get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
+                    $plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
                     $plugin_name = esc_html( $plugin_data['Name'] );
 
                     $sysinfo['plugins'][ $plugin_name ] = $plugin_data;
@@ -607,7 +607,7 @@
                                     $outdated_templates = true;
                                 }
 
-                                $found_files[ $plugin_name ][] = sprintf( __( '<code>%s</code> version <strong style="color:red">%s</strong> is out of date. The core version is %s', 'ascend' ), str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ), $theme_version ? $theme_version : '-', $core_version );
+                                $found_files[ $plugin_name ][] = sprintf( __( '<code>%1$s</code> version <strong style="color:red">%2$s</strong> is out of date. The core version is %3$s', 'ascend' ), str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ), $theme_version ? $theme_version : '-', $core_version );
                             } else {
                                 $found_files[ $plugin_name ][] = sprintf( '<code>%s</code>', str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ) );
                             }

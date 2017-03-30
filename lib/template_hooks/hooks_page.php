@@ -6,30 +6,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 function ascend_wp_link_pages() { 
 	 wp_link_pages(array('before' => '<nav class="pagination kt-pagination">', 'after' => '</nav>', 'link_before'=> '<span>','link_after'=> '</span>'));
 }
-add_action( 'kadence_single_testimonial_content_after', 'ascend_wp_link_pages', 10 );
 
-add_action( 'kadence_page_content', 'ascend_page_content_wrap_before', 10 );
+add_action( 'ascend_page_content', 'ascend_page_content_wrap_before', 10 );
 function ascend_page_content_wrap_before() {
 	echo '<div class="entry-content" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">';
 }
-add_action( 'kadence_page_content', 'ascend_page_content', 20 );
+add_action( 'ascend_page_content', 'ascend_page_content', 20 );
 function ascend_page_content() {
 	get_template_part('templates/content', 'page'); 
 }
-add_action( 'kadence_page_content', 'ascend_page_content_wrap_after', 30 );
+add_action( 'ascend_page_content', 'ascend_page_content_wrap_after', 30 );
 function ascend_page_content_wrap_after() {
 	echo '</div>';
 }
 
-add_action( 'kadence_page_footer', 'ascend_page_comments', 20 );
+add_action( 'ascend_page_footer', 'ascend_page_comments', 20 );
 function ascend_page_comments() {
-	global $ascend;
-	if(isset($ascend['page_comments']) && $ascend['page_comments'] == '1') {
 		comments_template('/templates/comments.php');
-	}
 }
 
-add_action( 'kadence_page_title_container', 'ascend_page_title', 20 );
+add_action( 'ascend_page_title_container', 'ascend_page_title', 20 );
 function ascend_page_title() {
 	if(ascend_display_pagetitle()) {
 		get_template_part('templates/page', 'header');
@@ -41,9 +37,9 @@ function ascend_page_title() {
 		}
 	}
 }
-add_action( 'kadence_front_page_title_container', 'ascend_front_page_header', 20 );
+add_action( 'ascend_front_page_title_container', 'ascend_front_page_header', 20 );
 function ascend_front_page_header() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	if(isset($ascend['mobile_switch']) && $ascend['mobile_switch'] == 1) {
 		if(isset($ascend['home_mobile_header'])) { 
 	  		$m_home_header = $ascend['home_mobile_header'];
@@ -114,7 +110,7 @@ function ascend_icon_menu_output($icon = 'kt-icon-cogs', $imageid = null, $link 
 			$icon = 'kt-icon-cogs';
 		} 
 		 	if(!empty($link)) {
-            	echo '<a href="'.esc_url($link).'" target="'.esc_attr($target).'"  title="'.strip_tags(esc_attr($title)).'" class="box-icon-item">';
+            	echo '<a href="'.esc_url($link).'" target="'.esc_attr($target).'"  title="'.esc_attr($title).'" class="box-icon-item">';
          	} else {
                 echo '<div class="box-icon-item">';
             } 
@@ -128,13 +124,13 @@ function ascend_icon_menu_output($icon = 'kt-icon-cogs', $imageid = null, $link 
                     }
                 echo '</div>';
                 if (!empty($title)){
-                	echo '<h4 style="'.esc_attr($textcolor).'">'.$title.'</h4>';
+                	echo '<h4 style="'.esc_attr($textcolor).'">'.esc_html($title).'</h4>';
                 } 
                 if (!empty($description)){
-                 	echo '<div class="menu-icon-description" style="'.esc_attr($textcolor).'">'.$description.'</div>';
+                 	echo '<div class="menu-icon-description" style="'.esc_attr($textcolor).'">'.wp_filter_kses($description).'</div>';
                 }
                 if (!empty($readmore)){
-                 	echo '<div class="menu-icon-read-more" style="'.esc_attr($textcolor).'"><span class="read-more-highlight" style="'.esc_attr($highlight_bg).'"></span>'.$readmore.'</div>';
+                 	echo '<div class="menu-icon-read-more" style="'.esc_attr($textcolor).'"><span class="read-more-highlight" style="'.esc_attr($highlight_bg).'"></span>'.esc_html($readmore).'</div>';
                 }
             if(!empty($link)) {
                 echo '</a>';
@@ -159,7 +155,7 @@ if(!function_exists('ascend_build_image_menu')) {
 			?>
 			<div class="<?php echo esc_attr($csstype);?> image-menu_item <?php echo esc_attr($class);?>">
 			    <?php if(!empty($link)) {
-		    		echo '<a href="'.esc_attr($link).'" class="image_menu_item_link" target="'.esc_attr($target).'">';
+		    		echo '<a href="'.esc_url($link).'" class="image_menu_item_link" target="'.esc_attr($target).'">';
 		    	} else {
 		    		echo '<div class="image_menu_item_link">';
 		    	}?>
@@ -173,10 +169,10 @@ if(!function_exists('ascend_build_image_menu')) {
                     <div class="image_menu_message  <?php echo 'imt-align-'.esc_attr($align);?> <?php echo 'imt-valign-'.esc_attr($valign);?>">
                     	<div class="image_menu_message_inner">
 			        		<?php if (!empty($title)) {
-			        			echo '<h4>'.$title.'</h4>';
+			        			echo '<h4>'.esc_html($title).'</h4>';
 			        		} 
 			        		if (!empty($subtitle)) {
-			            		echo '<h5>'.$subtitle.'</h5>';
+			            		echo '<h5>'.esc_html($subtitle).'</h5>';
 			            	}?>
 			            </div>
 				    </div>
@@ -208,7 +204,7 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 		} else {
 			$cc = ascend_carousel_columns('4');
 		} 
-		$cc = apply_filters('kadence_carousel_columns', $cc, $id);
+		$cc = apply_filters('ascend_carousel_columns', $cc, $id);
 		if( !empty($xxlcol) ) {
 			$cc['xxl'] = $xxlcol;
 		}
@@ -276,7 +272,11 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 			} else if ($productargs == 'sale'){
 				if (class_exists('woocommerce')) {
 					global $woocommerce, $woocommerce_loop;
-					$product_ids_on_sale = woocommerce_get_product_ids_on_sale(); $product_ids_on_sale[] = 0;
+					if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+						$product_ids_on_sale = wc_get_product_ids_on_sale(); 
+					} else {
+						$product_ids_on_sale = woocommerce_get_product_ids_on_sale(); $product_ids_on_sale[] = 0;
+					}
 					$meta_query = array();
 			        $meta_query[] = $woocommerce->query->visibility_meta_query();
 			        $meta_query[] = $woocommerce->query->stock_status_meta_query();
@@ -344,50 +344,55 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 			echo '<div class="carousel_outerrim">';
 			echo '<div class="carouselcontainer '.esc_attr($margin).'">';
 			echo '<div id="kadence-carousel-'.esc_attr($id).'" class="slick-slider '.esc_attr($class).' carousel_shortcode kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="'.esc_attr($trans_speed).'" data-slider-scroll="'.esc_attr($scroll).'" data-slider-auto="'.esc_attr($auto).'" data-slider-speed="'.esc_attr($speed).'" data-slider-xxl="'.esc_attr($cc['xxl']).'" data-slider-xl="'.esc_attr($cc['xl']).'" data-slider-md="'.esc_attr($cc['md']).'" data-slider-sm="'.esc_attr($cc['sm']).'" data-slider-xs="'.esc_attr($cc['xs']).'" data-slider-ss="'.esc_attr($cc['ss']).'">';
-            		if(isset($wp_query)) {
-            			$temp = $wp_query; 
-            		} else {
-            			$temp = null;
-            		}
-				  	$wp_query = null; 
-				  	$wp_query = new WP_Query();
-				  	$wp_query->query($args);
-					if ( $wp_query ) : 
+				  	$loop = new WP_Query($args);
+					if ( $loop ) : 
 						if($type == 'portfolio') {
-							while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+							while ( $loop->have_posts() ) : $loop->the_post(); 
 					        	get_template_part('templates/content', 'loop-portfolio'); 
 					        endwhile;
                     	} elseif($type == 'product') {
-							while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+							while ( $loop->have_posts() ) : $loop->the_post(); 
                     			wc_get_template_part( 'content', 'product' ); 
                     		endwhile;
                     	} elseif($type == 'staff') {
-                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    		while ( $loop->have_posts() ) : $loop->the_post(); 
                     			get_template_part('templates/content', 'loop-staff'); 
                     		endwhile;
                     	} elseif($type == 'testimonal') {
-                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    		while ( $loop->have_posts() ) : $loop->the_post(); 
                     			get_template_part('templates/content', 'loop-stestimonal');
                     		endwhile;
                     	} elseif($type == 'post_photo') {
-                    		while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+                    		while ( $loop->have_posts() ) : $loop->the_post(); 
                     			echo '<div class="'.esc_attr($itemsize).' b_item kad_blog_item">';
                     				get_template_part('templates/content', 'post-photo-grid');
                     			echo '</div>';
                     		endwhile;
                     	} else {
-                    		while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                    		while ( $loop->have_posts() ) : $loop->the_post();
                     			echo '<div class="'.esc_attr($itemsize).' b_item kad_blog_item">'; 
                     				get_template_part('templates/content', 'post-grid');
                     			echo '</div>';
                     		endwhile;
                     	}
+                    	wp_reset_postdata();
 					endif; 
-                    $wp_query = null; 
-                    $wp_query = $temp;  // Reset
-                    wp_reset_query(); 
             echo '</div>';
             echo '</div>';
             echo '</div> <!--Carousel-->';
     }
+}
+
+// Page Navigation
+add_action( 'ascend_pagination', 'ascend_pagination', 10 );
+function ascend_pagination() {
+
+  	$args['mid_size'] = 3;
+  	$args['end_size'] = 1;
+  	$args['prev_text'] = '<i class="kt-icon-chevron-left"></i>';
+  	$args['next_text'] = '<i class="kt-icon-chevron-right"></i>';
+
+  	echo '<div class="wp-pagenavi">';
+ 			the_posts_pagination($args);
+ 	 echo '</div>';
 }

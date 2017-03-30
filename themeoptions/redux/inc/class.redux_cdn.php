@@ -58,7 +58,7 @@
                 } else {
 
                     $prefix       = $src_cdn[1] == "/" ? 'http:' : '';
-                    $cdn_response = @wp_remote_get( $prefix . $src_cdn );
+                    $cdn_response = wp_remote_get( $prefix . $src_cdn );
 
                     if ( is_wp_error( $cdn_response ) || wp_remote_retrieve_response_code( $cdn_response ) != '200' ) {
                         if ( class_exists( 'Redux_VendorURL' ) ) {
@@ -110,7 +110,7 @@
                     if ( ! self::$_set ) {
                         self::$_parent->admin_notices[] = array(
                             'type'    => 'error',
-                            'msg'     => sprintf( __( 'The <a href="%s">Vendor Support plugin</a> (or extension) is either not installed or not activated and thus, some controls may not render properly.  Please ensure that it is installed and <a href="%s">activated</a>', 'ascend' ), 'https://github.com/reduxframework/redux-vendor-support', admin_url( 'plugins.php' ) ),
+                            'msg'     => sprintf( __( 'The <a href="%1$1s">Vendor Support plugin</a> (or extension) is either not installed or not activated and thus, some controls may not render properly.  Please ensure that it is installed and <a href="%2$2s">activated</a>', 'ascend' ), 'https://github.com/reduxframework/redux-vendor-support', admin_url( 'plugins.php' ) ),
                             'id'      => $handle . '23',
                             'dismiss' => false,
                         );

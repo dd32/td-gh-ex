@@ -2,7 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
   exit; // Exit if accessed directly
 }
-global $post, $ascend, $kt_has_sidebar;
+global $post, $kt_has_sidebar;
+$ascend = ascend_get_options();
 if($kt_has_sidebar) {
 	$image_width = 360;
 	$image_height = 240;
@@ -21,7 +22,7 @@ if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] =
     <article id="post-<?php the_ID(); ?>" class="search_results_item postclass kt_item_fade_in grid_item">
         <?php 
         if (has_post_thumbnail( $post->ID ) ) {
-	        $img = ascend_get_image($image_width, $image_height, $image_crop, null, null, null, true);
+	        $img = ascend_get_image_array($image_width, $image_height, $image_crop, null, null, null, true);
 	        if( ascend_lazy_load_filter() ) {
 	            $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
 	        } else {
@@ -29,7 +30,7 @@ if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] =
 	        }
         ?>
         	<a href="<?php the_permalink() ?>" class="imghoverclass img-margin-center">
-	            <div class="kt-intrinsic" style="padding-bottom:<?php echo ($img['height']/$img['width']) * 100;?>%;">
+	            <div class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr(($img['height']/$img['width']) * 100);?>%;">
 	                <?php 
 	                echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
 	                    echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" itemprop="contentUrl" alt="'.esc_attr($img['alt']).'">';

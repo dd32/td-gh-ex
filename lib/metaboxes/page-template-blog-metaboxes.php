@@ -20,7 +20,7 @@ function ascend_blog_page_metaboxes(){
 		'desc'    => '',
 		'id'      => $prefix . 'blog_order',
 		'type'    => 'select',
-		'default' => 'date',
+		'default' => '',
 		'options' => array(
 			'date' 			=> __('Date', 'ascend' ),
 			'menu_order' 	=> __('Menu Order', 'ascend' ),
@@ -62,7 +62,7 @@ function ascend_blog_page_metaboxes(){
 		'desc'    => '',
 		'id'      => $prefix . 'blog_type',
 		'type'    => 'select',
-		'default' => 'center center',
+		'default' => 'normal',
 		'options' => array(
 			'normal' 		=> __('Standard', 'ascend' ),
 			'below_title' 	=> __('Standard with image below title', 'ascend' ),

@@ -1,5 +1,6 @@
 <?php 
-global $post, $ascend, $kt_feat_width, $kt_has_sidebar;
+global $post, $kt_feat_width, $kt_has_sidebar;
+	$ascend = ascend_get_options();
     if (has_post_format( 'gallery' )) {
         $swidth = get_post_meta( $post->ID, '_kad_gallery_posthead_width', true ); 
         $height = get_post_meta( $post->ID, '_kad_gallery_posthead_height', true );
@@ -8,7 +9,7 @@ global $post, $ascend, $kt_feat_width, $kt_has_sidebar;
             $imageheight = $height;
         } else {
             $slideheight = 400;
-            $imageheight = apply_filters('kt_single_post_image_height', 400); 
+            $imageheight = apply_filters('ascend_single_post_image_height', 400); 
         }
         if (!empty($swidth)) {
             $slidewidth = $swidth;
@@ -21,7 +22,7 @@ global $post, $ascend, $kt_feat_width, $kt_has_sidebar;
         if (!empty($height)) {
             $imageheight = $height;
         } else {
-            $imageheight = apply_filters('kt_single_post_image_height', 400); 
+            $imageheight = apply_filters('ascend_single_post_image_height', 400); 
         }
         if (!empty($swidth)) {
             $slidewidth = $swidth;
@@ -77,7 +78,7 @@ global $post, $ascend, $kt_feat_width, $kt_has_sidebar;
     } else if ($kt_headcontent == 'image') {
         if (has_post_thumbnail( $post->ID ) ) {          
             $image_id = get_post_thumbnail_id();
-            $img = ascend_get_image($slidewidth, $height, true, null, get_the_title(), $image_id, false);
+            $img = ascend_get_image_array($slidewidth, $height, true, null, get_the_title(), $image_id, false);
             if( ascend_lazy_load_filter() ) {
                 $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
             } else {

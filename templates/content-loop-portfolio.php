@@ -1,6 +1,6 @@
 <?php 
 global $post, $kt_portfolio_loop, $kt_portfolio_loop_count;
-do_action('kadence_portfolio_loop_start');
+do_action('ascend_portfolio_loop_start');
 	$postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
 	$crop = true;
 	if( $kt_portfolio_loop['carousel'] == 'true') {
@@ -47,8 +47,8 @@ do_action('kadence_portfolio_loop_start');
     } else {
 		$image_height = $image_width;
 	}
-	$image_width = apply_filters('kt_portfolio_grid_image_width', $image_width);
-    $image_height = apply_filters('kt_portfolio_grid_image_height', $image_height);
+	$image_width = apply_filters('ascend_portfolio_grid_image_width', $image_width);
+    $image_height = apply_filters('ascend_portfolio_grid_image_height', $image_height);
 	
     $terms = get_the_terms( $post->ID, 'portfolio-type' );
 	if ( $terms && ! is_wp_error( $terms ) ) : 
@@ -62,31 +62,31 @@ do_action('kadence_portfolio_loop_start');
 	endif;
 	?>
 	<div class="<?php echo esc_attr($itemsize);?> <?php echo esc_attr($tax); ?> <?php echo esc_attr($class);?>">
-		<div class="portfolio_item grid_item kt_item_fade_in" data-post-title="<?php esc_attr(the_title())?>">
+		<div class="portfolio_item grid_item kt_item_fade_in" data-post-title="<?php the_title_attribute()?>">
 			<div class="portfolio-loop-image-container">
             <?php 
             if ($postsummery == 'slider') {
             		$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
             		$attachments = array_filter( explode( ',', $image_gallery ) );
                     if (!empty($attachments)) {
-                        $img = ascend_get_image($image_width, $image_height, $crop, null, null, $attachments[0], true);
+                        $img = ascend_get_image_array($image_width, $image_height, $crop, null, null, $attachments[0], true);
                     } else {
 			            $attach_args = array('order'=> 'ASC','post_type'=> 'attachment','post_parent'=> $post->ID,'post_mime_type' => 'image','post_status'=> null,'orderby'=> 'menu_order','numberposts'=> -1);
 			            $attachments_posts = get_posts($attach_args);
 			            if(isset($attachments_posts[0]->ID) && !empty($attachments_posts[0]->ID) ) {
-			            	$img = ascend_get_image($image_width, $image_height, $crop, null, null, $attachments_posts[0]->ID, true);
+			            	$img = ascend_get_image_array($image_width, $image_height, $crop, null, null, $attachments_posts[0]->ID, true);
 			            } else {
 			            	$img['width'] = $image_width;
 			            	$img['height'] = $image_width;
 			            }
                     }
-            		echo '<div class="img-hoverclass kt-intrinsic portfolio-loop-image" style="padding-bottom:'.(($img['height']/$img['width']) * 100).'%;">';
+            		echo '<div class="img-hoverclass kt-intrinsic portfolio-loop-image" style="padding-bottom:'.esc_attr(($img['height']/$img['width']) * 100).'%;">';
             		echo '</div><div class="portfolio-loop-slider portfolio-light-gallery portfolio-light-gallery-'.esc_attr($post->ID).'">';
             			ascend_build_slider($post->ID, $image_gallery, $img['width'], $img['height'], 'image', 'kt-slider-same-image-ratio', 'slider', 'false', 'true', '7000', 'false', 'true', '400', rand(1, 400));
             		echo '</div>';
            	} else {
- 				$img = ascend_get_image($image_width, $image_height, $crop, null, null, null, true);
-				echo '<div class="img-hoverclass kt-intrinsic portfolio-loop-image" style="padding-bottom:'.(($img['height']/$img['width']) * 100).'%;">';
+ 				$img = ascend_get_image_array($image_width, $image_height, $crop, null, null, null, true);
+				echo '<div class="img-hoverclass kt-intrinsic portfolio-loop-image" style="padding-bottom:'.esc_attr(($img['height']/$img['width']) * 100).'%;">';
 					echo '<div class="portfolio-img-hover-inner">';
 					if( ascend_lazy_load_filter() ) {
 			            $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
@@ -100,7 +100,7 @@ do_action('kadence_portfolio_loop_start');
 			echo '<div class="portfolio-hover-item">';
 			echo '<div class="portfolio-overlay-color"></div>';
 			echo '<div class="portfolio-overlay-border"></div>';
-			echo '<a href="'.get_the_permalink().'" class="portfolio-hover-item-link"></a>';
+			echo '<a href="'.esc_url( get_the_permalink() ).'" class="portfolio-hover-item-link"></a>';
 			echo '<div class="portfolio-hover-item-inner">';
                 if($kt_portfolio_loop['lightbox'] == 'true') {
                 	$light_class = 'portfolio_lightbox';
@@ -134,7 +134,7 @@ do_action('kadence_portfolio_loop_start');
 	                                    foreach($terms as $term){ 
 	                                    	$output[] = $term->name;
 	                                    } 
-	                                    echo implode(' | ', $output); ?>
+	                                    echo esc_html(implode(' | ', $output)); ?>
 	                                </div>
 	                          	<?php } 
 	                    } ?>
@@ -161,7 +161,7 @@ do_action('kadence_portfolio_loop_start');
 	                                    foreach($terms as $term){ 
 	                                    	$output[] = $term->name;
 	                                    } 
-	                                    echo implode(' | ', $output); ?>
+	                                    echo esc_html(implode(' | ', $output)); ?>
 	                                </div>
 	                        <?php } 
                        	} ?>
@@ -177,5 +177,5 @@ do_action('kadence_portfolio_loop_start');
         </div>
     </div>
     <?php 
-    do_action('kadence_portfolio_loop_end');
+    do_action('ascend_portfolio_loop_end');
 

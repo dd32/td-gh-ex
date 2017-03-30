@@ -5,7 +5,7 @@
 	        /* 
 	        * Hooked ascend_topbar_left 20
 	        */
-	        do_action('kadence_header_topbar_left');
+	        do_action('ascend_header_topbar_left');
 	        ?>
 	    </div>
 	    <div class="kt-topbar-right">
@@ -13,7 +13,7 @@
 	        /* 
 	        * Hooked ascend_topbar_right 20
 	        */
-	        do_action('kadence_header_topbar_right'); 
+	        do_action('ascend_header_topbar_right'); 
 
 	        ?>
 	    </div>

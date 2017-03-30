@@ -1,6 +1,7 @@
 <?php 
 
-global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
+global $post, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
+	$ascend = ascend_get_options();
     if($kt_has_sidebar) {
         if(!empty($kt_grid_columns)) {
             if($kt_grid_columns == '3') {
@@ -36,8 +37,8 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
         }
     }
 
-    $image_width = apply_filters('kt_post_grid_image_width', $image_width);
-    $image_height = apply_filters('kt_post_grid_image_height', $image_height);
+    $image_width = apply_filters('ascend_post_grid_image_width', $image_width);
+    $image_height = apply_filters('ascend_post_grid_image_height', $image_height);
     if(isset($kt_grid_carousel) && $kt_grid_carousel != true) {
 	    if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] == 1) {
 	        $image_crop = true;
@@ -52,14 +53,14 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
     <article id="post-<?php the_ID(); ?>" class="blog_item blog_photo_item kt_item_fade_in grid_item" itemscope itemtype="http://schema.org/CreativeWork">
         <div class="imghoverclass img-margin-center blog-grid-photo">
         <?php 
-        $img = ascend_get_image($image_width, $image_height, $image_crop, null, null, null, true);
+        $img = ascend_get_image_array($image_width, $image_height, $image_crop, null, null, null, true);
         if( ascend_lazy_load_filter() ) {
             $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
         } else {
             $image_src_output = 'src="'.esc_url($img['src']).'"'; 
         }
         ?>
-            <div class="kt-intrinsic" style="padding-bottom:<?php echo ($img['height']/$img['width']) * 100;?>%;">
+            <div class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr(($img['height']/$img['width']) * 100);?>%;">
                 <?php 
                 echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
                     echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" itemprop="contentUrl" alt="'.esc_attr($img['alt']).'">';
@@ -78,14 +79,14 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
                 /**
                 *
                 */
-                do_action( 'kadence_post_photo_grid_excerpt_before_header' );
+                do_action( 'ascend_post_photo_grid_excerpt_before_header' );
                 ?>
                 <header>
                     <?php 
                     /**
                     * @hooked ascend_post_grid_excerpt_header_title - 10
                     */
-                    do_action( 'kadence_post_photo_grid_excerpt_header' );
+                    do_action( 'ascend_post_photo_grid_excerpt_header' );
                     ?>
                 </header>
                 <div class="kt-post-photo-added-content">
@@ -93,7 +94,7 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
                     /**
                     * @hooked ascend_post_header_meta_categories - 20
                     */
-                    do_action( 'kadence_post_photo_grid_excerpt_after_header' );
+                    do_action( 'ascend_post_photo_grid_excerpt_after_header' );
                     ?>
                 </div>
             </div>
@@ -104,6 +105,6 @@ global $post, $ascend, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
         /**
         * 
         */
-        do_action( 'kadence_post_grid_excerpt_after_footer' );
+        do_action( 'ascend_post_grid_excerpt_after_footer' );
         ?>
     </article> <!-- Blog Item -->

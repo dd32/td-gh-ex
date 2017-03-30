@@ -6,8 +6,8 @@
  * @package 	WooCommerce/Templates
  * @version     2.0.0
  */
-global $woocommerce, $woocommerce_loop, $ascend;
-
+global $woocommerce, $woocommerce_loop;
+	$ascend = ascend_get_options();
 	if ( empty( $woocommerce_loop['columns'] ) ) {
 	 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
 	}
