@@ -79,6 +79,7 @@ if ( $attachment_ids ) {
 			}
 			$attributes = array(
 				'title'                   => $image_title,
+				'data-src'                => $full_size_image[0],
 				'data-large-image'        => $full_size_image[0],
 				'data-large-image-width'  => $full_size_image[1],
 				'data-large-image-height' => $full_size_image[2],
@@ -96,8 +97,4 @@ if ( $attachment_ids ) {
 			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id );
 
 		}
-
-	?>
-	<!-- </div> -->
-	<?php
 }

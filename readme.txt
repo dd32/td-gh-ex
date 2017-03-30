@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.0.5 | 30th March 2017 =
+* Change: Version to try and upload.
+
 = Version 1.0.4 | 14th March 2017 =
 * Update: Use custom logo
 * Fix: issue with customizer not showing some updates. 
