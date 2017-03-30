@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 5.0
+Version: 5.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: grid layout on blog and archive page, sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -72,9 +72,9 @@ body {background:#eee; color:#333; font-family:'Open Sans', sans-serif; font-siz
 
 
 /* MAIN CONTENT AREA */
-#content {width:59%; float:left; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
-#content-right {width:59%; float:right; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
-#content-full {width:92%; float:left; margin:20px 2%; padding:15px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
+#content {width:59%; float:left; margin:20px 2%; padding:20px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
+#content-right {width:59%; float:right; margin:20px 2%; padding:20px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
+#content-full {width:92%; float:left; margin:20px 2%; padding:20px 2%; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
 
 
 /* HEADINGS */
@@ -136,17 +136,17 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER FIRST */
-#header-first {width:100%; clear:both; float:left; padding:0 2% 0; background:none;}
+#header-first {width:96%; clear:both; float:left; padding:0 2% 10px;}
 
 
 /* HEADER FIRST LOGO */
-.logo {width:100%; clear:both; float:left; padding:0 0 10px; text-align:center;}
+.logo {clear:both; padding:0 0 10px; text-align:center;}
 .logo h1 a:hover {text-decoration:none; color:#0066ff;}
 .logo h2 {padding:5px 0 0; font-size:1.45em;}
 
 
 /* HEADER SECOND */
-#header-second {width:100%; clear:both; float:left; background:none;}
+#header-second {width:100%; clear:both; float:left;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
@@ -154,7 +154,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER SECOND MENU */
-.nav-head {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%; margin:10px 0 0;}
+.nav-head {width:98%; clear:both; float:left; background:#0066ff; padding:0 1%;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999; list-style:none;}
 .nav-head ul li {display:inline-block; position:relative; padding:0; margin:0 0 0 20px;}
@@ -173,11 +173,12 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* PAGE */
 .page-title {clear:both; margin:0 0 20px;}
-.archive-description {width:100%; clear:both; float:left; font-style:italic;}
+.archive-description {width:100%; clear:both; float:left; padding:0 0 10px; font-style:italic;}
 .pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
+.post-single {width:100%; clear:both; float:left;}
 .post-title {clear:both; margin:0 0 10px; text-align:center; font-weight:bold; font-size:1.0em;}
 .post-title-single {clear:both; margin:0 0 20px;}
 .entry-content {width:100%; clear:both; float:left; margin:0 0 10px;}
@@ -186,13 +187,13 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 .postmetadata {clear:both; margin:0 0 20px; padding:3px 10px; background:#0066ff; color:#fff;}
 .postmetadata a {color:#fff;}
 
-.post-three {width:28%; float:left; margin:10px 2% 10px 0; padding:20px 2% 0; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
+.post-three {width:28%; float:left; margin:0 2% 20px 0; padding:20px 2% 0; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
 .post-three.left {clear:left;}
-.post-three.right {margin:10px 0 10px;}
+.post-three.right {margin:0 0 20px;}
 
-.post-four {width: 21.5%; float:left; margin:10px 2% 10px 0; padding:20px 1% 0; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
+.post-four {width: 21.5%; float:left; margin:0 2% 20px 0; padding:20px 1% 0; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
 .post-four.left {clear:left;}
-.post-four.right {margin: 10px 0 10px;}
+.post-four.right {margin:0 0 20px;}
 
 
 /* POST FORMATS */
@@ -267,21 +268,21 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:31%; float:right; margin:20px 2% 0 0;}
 #sidebar-left {width:31%; float:left; margin:20px 0 0 2%;}
-.widget {padding:15px 15px; margin:0 0 20px; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
+.widget {padding:20px 15px; margin:0 0 20px; background:#eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px; border-top-left-radius:10px;}
 .widgettitle {clear:both; margin:0 0 10px;}
 
 
 /* FOOTER */
-#footer {width:100%; clear:both; float:left; background:none; color:#333;}
+#footer {width:100%; clear:both; float:left; color:#333;}
 .site-info {clear:both; text-align:center; padding:10px; background:#0066ff; color:#fff;}
 .site-info a {color:#fff;}
 
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:96%; clear:both; float:left; padding:0 2%;}
-.footer-left {float:left; width:32%; margin:10px 0 0;}
-.footer-middle {float:left; width:32%; margin:10px 2% 0;}
-.footer-right {float:right; width:32%; margin:10px 0 0;}
+.footer-left {float:left; width:32%; margin:5px 0 0;}
+.footer-middle {float:left; width:32%; margin:5px 2% 0;}
+.footer-right {float:right; width:32%; margin:5px 0 0;}
 
 
 /* MOBILE */
@@ -289,30 +290,30 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */ 
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:94%; padding:5px 2%; margin:5px auto 5px;}
+	#container {width:94%; padding:10px 2%; margin:5px auto 5px;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:96%; clear:both; float:left; padding:10px 2%; margin:10px 0;}
+	#content, #content-right, #content-full {width:96%; clear:both; float:left; padding:20px 2%; margin:0 0 20px;}
 
 	/* HEADER FIRST */
 	#header-first {padding:0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {padding:10px 0;}
+	.logo {padding:10px 0 20px;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
-	.header-img {margin:10px 0 0;}
+	.header-img {margin:0 0 20px;}
 
 	/* HEADER SECOND MENU */
 	.nav-head ul {display:none;} 
-	.nav-head {width:100%; padding:0; margin:0 0 10px; background:none;}
+	.nav-head {width:100%; padding:0; margin:0 0 20px; background:none;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* POST */
-	.post-three, .post-three.left, .post-three.right {width:100%; float:left; border:0; margin:5px 0 0; padding:0; background:none;} 
-	.post-four, .post-four.left, .post-four.right {width:100%; float:left; border:0; margin:5px 0 0; padding:0; background:none;} 
+	.post-three, .post-three.left, .post-three.right {width:100%; float:left; border:0; margin:0 0 20px; padding:0; background:none;} 
+	.post-four, .post-four.left, .post-four.right {width:100%; float:left; border:0; margin:0 0 20px; padding:0; background:none;} 
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}
@@ -324,7 +325,6 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR AND WIDGETS */
 	#sidebar, #sidebar-left {width:100%; clear:both; float:left; margin:0;}
-	.widget {margin:10px 0;}
 
 	/* FOOTER WIDGET AREA */
 	#footer-widgets {width:100%; padding:0;}

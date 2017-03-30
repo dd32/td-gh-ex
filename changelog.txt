@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+GridBulletin version 5.1 - april 2017
+- file single: added post class .post-single
+- file style: changed margin and padding of several elements (layout improvement)
+
 GridBulletin version 5.0 - march 2017
 - file style: changed margin of several elements to avoid margin collapsing
 - cleaned up file style
