@@ -968,6 +968,18 @@ Redux::setSection( $opt_name, array(
             'desc' => __('Product Page Settings', 'virtue'),
             ),
         array(
+            'id'=>'product_gallery_slider',
+            'type' => 'switch', 
+            'title' => __('Enable woocommerce slider for product gallery? (must be woocommerce 3.0+)', 'virtue'),
+            "default" => 0,
+        ),
+        array(
+            'id'=>'product_gallery_zoom',
+            'type' => 'switch', 
+            'title' => __('Enable woocommerce hover zoom for product gallery? (must be woocommerce 3.0+)', 'virtue'),
+            "default" => 0,
+        ), 
+        array(
             'id'=>'product_tabs',
             'type' => 'switch', 
             'title' => __('Display product tabs?', 'virtue'),

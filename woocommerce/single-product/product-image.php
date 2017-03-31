@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.6.3
+ * @version     3.0.0
  */
 
 
@@ -12,11 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $post, $woocommerce, $product, $virtue;
 
-$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
+$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 5 );
 $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
 $thumbnail_post    = get_post( $post_thumbnail_id );
 $image_title       = $thumbnail_post->post_content;
+if(!empty($image_title)) {
+	$light_title  = $image_title;
+} else if(!empty($thumbnail_post->post_excerpt)){
+	$light_title  = $thumbnail_post->post_excerpt;
+} else {
+	$light_title  = get_the_title($post_thumbnail_id);
+}
 $placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
@@ -25,7 +32,27 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 	'images',
 	'kad-light-gallery',
 ) );
-
+if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+	if(isset($virtue['product_gallery_slider']) && 1 == $virtue['product_gallery_slider']) {
+		$galleryslider = 'woo_product_slider_enabled';
+		$galslider = true;
+	} else {
+		$galleryslider = 'woo_product_slider_disabled';
+		$galslider = false;
+	}
+	if(isset($virtue['product_gallery_zoom']) && 1 == $virtue['product_gallery_zoom']) {
+		$galleryzoom = 'woo_product_zoom_enabled';
+		$galzoom = true;
+	} else {
+		$galleryzoom= 'woo_product_zoom_disabled';
+		$galzoom = false;
+	}
+} else {
+	$galleryslider = 'woo_product_slider_disabled';
+	$galslider = false;
+	$galleryzoom = 'woo_product_zoom_disabled';
+	$galzoom = false;
+}
 if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0) {
 	$presizeimage = 0;
 } else {
@@ -36,13 +63,15 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 
 ?>
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>">
-	<figure class="woocommerce-product-gallery__wrapper">
-	<div class="product_image">
-
+	<figure class="woocommerce-product-gallery__wrapper <?php echo esc_attr($galleryslider.' '.$galleryzoom);?>">
 	<?php
+		if(! $galslider) {
+			echo '<div class="product_image">';
+		}
 
 		$attributes = array(
 			'title'                   => $image_title,
+			'data-src'                => $full_size_image[0],
 			'data-large-image'        => $full_size_image[0],
 			'data-large-image-width'  => $full_size_image[1],
 			'data-large-image-height' => $full_size_image[2],
@@ -53,36 +82,36 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 				if( !empty($alt) ) {
 					$alttag	= $alt;
 				} else {
-					$alttag	= $image_title;
+					$alttag	= $light_title;
 				}
-				$lite_box_title = esc_attr( get_the_title( get_post_thumbnail_id() ) );
-				$image_url = aq_resize($full_size_image[0], $productimgwidth, $productimgheight, true);
-				if(empty($image_url)) {$image_url = $full_size_image[0];} 
-				// Get srcset
-		        $img_srcset = kt_get_srcset( $productimgwidth, $productimgheight, $full_size_image[0], $post_thumbnail_id);
-		        if(!empty($img_srcset) ) {
-		        	$img_srcset_output = 'srcset="'.esc_attr($img_srcset).'" sizes="(max-width: '.esc_attr($productimgwidth).'px) 100vw, '.esc_attr($productimgwidth).'px"';
-		        } else {
-		        	$img_srcset_output = '';
-		        }
-		        $html  = '<figure data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '" title="'.esc_attr($lite_box_title).'">';
-				$html .= '<img width="'.$productimgwidth.'" height="'.$productimgheight.'" src="'.esc_url($image_url).'" class="attachment-shop_single wp-post-image" '.$img_srcset_output.' title="'.$image_title.'" alt="'.$alttag.'">';
-				$html .= '</a></figure>';
+		        $html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '" title="'.esc_attr($light_title).'">';
+				$html .= virtue_get_full_image_output($productimgwidth, $productimgheight, true, 'attachment-shop_single shop_single wp-post-image', $alttag, $post_thumbnail_id, false, false, false, $attributes);
+				$html .= '</a></div>';
 			} else {
-				$html  = '<figure data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
+				$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
 				$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
-				$html .= '</a></figure>';
+				$html .= '</a></div>';
 			}
 		} else {
-			$html  = '<figure class="woocommerce-product-gallery__image--placeholder">';
+			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
 			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'virtue' ) );
-			$html .= '</figure>';
+			$html .= '</div>';
 		}
 
 		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, get_post_thumbnail_id( $post->ID ) );
-	?>
-	</div>
-	<?php do_action( 'woocommerce_product_thumbnails' ); ?>		
+		
+		if(! $galslider) {
+			echo '</div>';
+		}
+		if(! $galslider) {
+			echo '<div class="product_thumbnails thumbnails">';
+		}
+
+		do_action( 'woocommerce_product_thumbnails' ); 
+
+		if(! $galslider) {
+			echo '</div>';
+		}?>		
 	</figure>
 </div>
 

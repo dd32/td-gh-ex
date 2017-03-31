@@ -3,6 +3,14 @@
 /**
  * Configuration values
  */
+function virtue_get_options() {
+    $options = get_option( 'virtue' );
+	if ( isset( $_REQUEST['wp_customize'] ) ) {
+    	$options = apply_filters('virtue_theme_options_filter', $options);
+    }
+
+    return $options;
+}
 
 define('POST_EXCERPT_LENGTH', 40);
 

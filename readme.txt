@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.0 | 31th March 2017 =
+* Update: Ready for WC 3.0
+* Update: Move user profile options to plugin.
+* Update: Start intergrating Kadence Image processing.
+
 = Version 2.8.9 | 18th March 2017 =
 * Update: Grouped Product issue.
 * Update: Single Product issue.

@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.7.0
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -16,7 +16,7 @@ if ( ! $product->is_purchasable() ) return;
 
 <?php
 	// Availability
-	if ( version_compare( WC_VERSION, '2.7', '>' ) ) {
+	if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
 		echo wc_get_stock_html( $product );
 	} else {
 		$availability      = $product->get_availability();
