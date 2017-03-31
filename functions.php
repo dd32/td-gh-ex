@@ -123,6 +123,9 @@ add_action( 'wp_enqueue_scripts', 'semplicemente_scripts' );
  */
 if ( ! function_exists( 'semplicemente_new_excerpt_more' ) ) {
 	function semplicemente_new_excerpt_more($more) {
+		if ( is_admin() ) {
+			return $more;
+		}
 		return '&hellip;';
 	}
 }

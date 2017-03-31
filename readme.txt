@@ -161,3 +161,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.7.5 =
 * Fixed some strings escaping
 * Improved search widget CSS
+
+= Version 1.7.6 =
+* Minor bug fixes

@@ -25,6 +25,7 @@ class Semplicemente_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 	}
 
 	/**
@@ -32,16 +33,19 @@ class Semplicemente_Admin {
 	 */
 	public function admin_menu() {
 		$theme = wp_get_theme( get_template() );
-
-		$page = add_theme_page( esc_html__( 'About', 'semplicemente' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'semplicemente' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'semplicemente-welcome', array( $this, 'welcome_screen' ) );
-		add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
+		global $semplicemente_adminpage;
+		$semplicemente_adminpage = add_theme_page( esc_html__( 'About', 'semplicemente' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'semplicemente' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'semplicemente-welcome', array( $this, 'welcome_screen' ) );
 	}
 
 	/**
 	 * Enqueue styles.
 	 */
-	public function enqueue_styles() {
-
+	public function enqueue_admin_scripts() {
+		global $semplicemente_adminpage;
+		$screen = get_current_screen();
+		if ( $screen->id != $semplicemente_adminpage ) {
+			return;
+		}
 		wp_enqueue_style( 'semplicemente-welcome', get_template_directory_uri() . '/inc/admin/welcome.css', array(), '1.0' );
 	}
 
@@ -69,7 +73,7 @@ class Semplicemente_Admin {
 	 */
 	public static function hide_notices() {
 		if ( isset( $_GET['semplicemente-hide-notice'] ) && isset( $_GET['_semplicemente_notice_nonce'] ) ) {
-			if ( ! wp_verify_nonce( $_GET['_semplicemente_notice_nonce'], 'semplicemente_hide_notices_nonce' ) ) {
+			if ( ! wp_verify_nonce( sanitize_key($_GET['_semplicemente_notice_nonce'] ), 'semplicemente_hide_notices_nonce' ) ) {
 				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'semplicemente' ) );
 			}
 
@@ -136,7 +140,7 @@ class Semplicemente_Admin {
 		</div>
 
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'semplicemente-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'semplicemente-welcome' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && isset( $_GET['page'] ) && $_GET['page'] == 'semplicemente-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'semplicemente-welcome' ), 'themes.php' ) ) ); ?>">
 				<?php echo esc_html($theme->display( 'Name' )); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'semplicemente-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
