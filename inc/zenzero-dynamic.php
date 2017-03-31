@@ -10,6 +10,9 @@
  */
 if ( ! function_exists( 'zenzero_new_excerpt_more' ) ) {
 	function zenzero_new_excerpt_more($more) {
+		if ( is_admin() ) {
+			return $more;
+		}
 		return '&hellip;';
 	}
 }
