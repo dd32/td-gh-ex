@@ -492,6 +492,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"options" => array (
 					'' => esc_html__( 'Layout 1', 'suevafree'),
 					'footer_layout_2' => esc_html__( 'Layout 2', 'suevafree'),
+					'footer_layout_3' => esc_html__( 'Layout 3', 'suevafree'),
 				),
 				
 				"std" => "",

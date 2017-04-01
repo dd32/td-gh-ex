@@ -374,9 +374,9 @@ if (!function_exists('suevafree_body_classes_function')) {
 	
 		endif;
 		
-		if ( suevafree_setting('suevafree_footer_layout') == "footer_layout_2" ) :
+		if ( suevafree_setting('suevafree_footer_layout') <> '' ) :
 				
-			$classes[] = 'footer_layout_2';
+			$classes[] = suevafree_setting('suevafree_footer_layout');
 	
 		endif;
 		
