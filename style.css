@@ -1,7 +1,7 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 4.9
+Version: 5.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Medical is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -302,7 +302,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; padding:10px 1%;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-right, #content-full {width:100%; clear:both; float:left;}
 
 	/* HEADER FIRST */
 	#header-first {padding:0;}
@@ -318,14 +318,14 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.nav-head select {width:100%; display:block; margin:0 auto 0; font-size:1em; line-height:1.2em;}
 
 	/* HEADER SECOND */
-	#header-second {padding:20px 0 0; border:0;}
+	#header-second {border:0; border-radius:0;}
 
 	/* HEADER SECOND HOMEPAGE IMAGE */
 	.image-homepage {width:100%; clear:both;}
 	.header-img {border-radius:15px;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; clear:both; float:left; border-radius:15px;}
+	.sidebar-homepage {width:100%; clear:both; float:left; margin:0; border-radius:15px;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}
@@ -338,7 +338,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0 0 10px;}
 
 	/* FOOTER */
-	#footer {padding:10px 0 0;}
+	#footer {padding:20px 0 0;}
 
 	/* FOOTER WIDGET AREA */
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
