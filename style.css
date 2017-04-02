@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/bassist/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio
@@ -406,7 +406,7 @@ i {
 blockquote {
 	border: 0 solid #333;
 	border-left-width: 4px;
-	color: #777;
+	color: #656565;
 	font-style: italic;
 	line-height: 1.5;
 	margin: 0 0 1.5em;
@@ -704,7 +704,7 @@ textarea {
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	border: 1px solid #ccc;
 	border-radius: 2px;
-	color: #777;
+	color: #656565;
 	padding: 0.2em 0.4375em;
 	width: 100%;
 }
@@ -733,7 +733,7 @@ textarea:focus {
 }
 
 .post-password-form label {
-	color: #777;
+	color: #656565;
 	display: block;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -1463,7 +1463,7 @@ aside:after,
  }
 
  .widget-area a:hover {
-	color: #777;
+	color: #656565;
  }
 
 .widget_calendar table {
@@ -1798,9 +1798,6 @@ main {
 	color: #333;
 }
 
-a.entry-date {
-	margin: 0 0 0 8px;
-}
 
 .entry-author a:hover,
 .entry-author a:focus {
@@ -1814,9 +1811,9 @@ a.entry-date {
 }
 
 .tag-links a {
-	background-color: #777;
+	background-color: #656565;
 	border-radius: 0 2px 2px 0;
-	color: #fafafa;
+	color: #fff;
 	display: inline-block;
 	font-size: 11px;
 	font-weight: 700;
@@ -1830,12 +1827,12 @@ a.entry-date {
 .tag-links a:hover,
 .tag-links a:focus {
 	background-color: #000;
-	color: #fafafa;
+	color: #fff;
 }
 
 .tag-links a:before {
 	border-top: 10px solid transparent;
-	border-right: 8px solid #777;
+	border-right: 8px solid #656565;
 	border-bottom: 10px solid transparent;
 	content: "";
 	height: 0;
@@ -1850,7 +1847,7 @@ a.entry-date {
 }
 
 .tag-links a:after {
-	background-color: #fafafa;
+	background-color: #fff;
 	border-radius: 50%;
 	content: "";
 	height: 4px;
@@ -2068,7 +2065,7 @@ a.entry-date {
 .comment-list .trackback a,
 .comment-list .pingback a,
 .comment-metadata a {
-	color: #777;
+	color: #656565;
 }
 
 .comment-author a:hover,
@@ -2179,7 +2176,7 @@ a.entry-date {
 .no-comments,
 .form-allowed-tags,
 .form-allowed-tags code {
-	color: #777;
+	color: #656565;
 }
 
 .comment-notes,
@@ -2498,7 +2495,7 @@ a.entry-date {
 	margin: 2em;
 	line-height: 1.8;
 	font-size: 1.2em;
-	color:#777;
+	color:#656565;
 }
 
 .contact-success a[href^="mailto:"]:before {
@@ -2645,7 +2642,7 @@ p > video {
 }
 
 .wp-caption .wp-caption-text {
-	color: #777;
+	color: #656565;
 	font-size: 13px;
 	font-size: 1rem;
 	font-style: italic;
@@ -2707,7 +2704,7 @@ p > video {
 }
 
 .gallery-caption {
-	color: #777;
+	color: #656565;
 	display: block;
 	font-size: 13px;
 	font-size: 0.8125rem;

@@ -34,9 +34,8 @@ if ( ! function_exists( 'bassist_entry_footer' ) ) :
 function bassist_entry_footer() { ?>
 	<footer class="entry-footer">
 		<div class="entry-meta">
-		<?php
-		
-			printf( '<a href="%1$s" rel="bookmark"><span class="screen-reader-text"> %2$s</span><time class="entry-date" datetime="%3$s"><i class="fa fa-clock-o" aria-hidden="true"></i>%4$s</time></a>',
+		<?php		
+			printf( '<a class="entry-date" href="%1$s" rel="bookmark"><span class="screen-reader-text"> %2$s</span><time datetime="%3$s"><i class="fa fa-clock-o" aria-hidden="true"></i>%4$s</time></a>',
 			esc_url( get_permalink() ),
 			esc_html( get_the_title() ),
 			esc_attr( get_the_date( 'c' ) ),
@@ -50,12 +49,33 @@ function bassist_entry_footer() { ?>
 			}
 
 			if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-				<span class="comments-link"><i class="fa fa-comment" aria-hidden="true"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
-			<?php endif; ?>
+				<span class="comments-link">
+					<i class="fa fa-comment" aria-hidden="true"></i>
+					<?php bassist_comments_popup_link(); ?>
+				</span>
+		<?php endif; ?>
 			
 		</div><!-- .entry-meta -->
 	</footer><!-- .entry-footer -->
 <?php }
+endif;
+
+if ( ! function_exists( 'bassist_comments_popup_link') ):
+/**
+ * Prints the markup for the navigation between posts and changes the default strings of the_post_navigation().
+ *
+ * @since Bassist 1.0.4
+ */
+function bassist_comments_popup_link() {
+	comments_popup_link(
+		// Translators: there is a space after "on.
+		'<span aria-hidden="true">0</span><span class="screen-reader-text">' . __('No comments on ', 'bassist') . get_the_title() . '</span>',
+		// Translators: there is a space after "on.
+		'<span aria-hidden="true">1</span><span class="screen-reader-text">' . __('Only one comment on ', 'bassist') . get_the_title() . '</span>',
+		// Translators: there is a space after "on.
+		'<span aria-hidden="true">%</span><span class="screen-reader-text">' . __('% comments on ', 'bassist') . get_the_title() . '</span>'
+		);
+}
 endif;
 
 

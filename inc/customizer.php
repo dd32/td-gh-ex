@@ -574,7 +574,7 @@ function bassist_theme_custom_styling() {
 	$css = '';
 
 	if ( is_front_page() && true === $front_page_entry_meta )	
-	$css .= '.front-page .entry-meta { position: absolute; left: -9999px;}' . "\n";
+	$css .= '.front-page .entry-meta { position: absolute; left: -9999px; display: none}' . "\n";
 
 	if ( is_home() && true === $blog_page_entry_meta )	
 	$css .= '.entry-meta { position: absolute; left: -9999px;}' . "\n";

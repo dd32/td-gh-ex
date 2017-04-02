@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bassist 1.0.2\n"
+"Project-Id-Version: Bassist 1.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bassist\n"
-"POT-Creation-Date: 2017-03-19 22:01:16+00:00\n"
+"POT-Creation-Date: 2017-04-02 14:32:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +47,7 @@ msgid "https://wordpress.org/"
 msgstr ""
 
 #: footer.php:20
-msgid "Proudly powered by"
+msgid "Proudly powered by WordPress"
 msgstr ""
 
 #: footer.php:24 template-parts/section-social.php:12
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Full resolution"
 msgstr ""
 
-#: image.php:57 inc/template-tags.php:227 template-parts/content-aside.php:47
+#: image.php:57 inc/template-tags.php:247 template-parts/content-aside.php:47
 #: template-parts/content-audio.php:47 template-parts/content-chat.php:47
 #: template-parts/content-image.php:45 template-parts/content-link.php:45
 #: template-parts/content-page.php:15 template-parts/content-quote.php:35
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: image.php:96 inc/template-tags.php:79
+#: image.php:96 inc/template-tags.php:99
 #: page-templates/no-sidebar-full-width.php:33
 #: template-parts/content-page.php:38 template-parts/content-single.php:80
 msgid "Page"
@@ -367,51 +367,69 @@ msgstr ""
 
 #. Translators: used between list items, there is a space after the comma.
 
-#: inc/template-tags.php:47 template-parts/content-search.php:19
+#: inc/template-tags.php:46 template-parts/content-search.php:19
 #: template-parts/content-single.php:16 template-parts/content-single.php:91
 #: template-parts/content.php:19
 msgid ", "
 msgstr ""
 
+#. Translators: there is a space after "on.
+
 #: inc/template-tags.php:72
+msgid "No comments on "
+msgstr ""
+
+#. Translators: there is a space after "on.
+
+#: inc/template-tags.php:74
+msgid "Only one comment on "
+msgstr ""
+
+#. Translators: there is a space after "on.
+
+#: inc/template-tags.php:76
+msgid "% comments on "
+msgstr ""
+
+#: inc/template-tags.php:92
 msgid "Older articles"
 msgstr ""
 
-#: inc/template-tags.php:73
+#: inc/template-tags.php:93
 msgid "Newer articles"
 msgstr ""
 
-#: inc/template-tags.php:77 page-templates/no-sidebar-full-width.php:31
+#: inc/template-tags.php:97 page-templates/no-sidebar-full-width.php:31
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:78 page-templates/no-sidebar-full-width.php:32
+#: inc/template-tags.php:98 page-templates/no-sidebar-full-width.php:32
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:93
+#: inc/template-tags.php:113
 msgid "Next post:"
 msgstr ""
 
-#: inc/template-tags.php:97
+#: inc/template-tags.php:117
 msgid "Previous post:"
 msgstr ""
 
-#: inc/template-tags.php:111
+#: inc/template-tags.php:131
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:112
+#: inc/template-tags.php:132
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:173
+#: inc/template-tags.php:193
 msgid "Standard"
 msgstr ""
 
 #. Translators: %s: Name of current post
 
-#: inc/template-tags.php:195
+#: inc/template-tags.php:215
 msgid "More"
 msgstr ""
 

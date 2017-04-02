@@ -3,8 +3,8 @@
 Contributors: acalfieri
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio
 Requires at least: 4.5
-Tested up to: 4.7.2
-Stable tag: 1.0.2
+Tested up to: 4.7.4
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

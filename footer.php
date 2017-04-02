@@ -17,7 +17,7 @@
         <div id="site-info">
         <span class="footer-site-title"> &copy <?php echo date_i18n( esc_html__( 'Y', 'bassist' ) ) ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
         
-        <a href="<?php echo esc_url( __('https://wordpress.org/', 'bassist') ); ?>"><?php printf( __( 'Proudly powered by', 'bassist' ).' %s', 'WordPress' ); ?></a>
+        <a href="<?php echo esc_url( __('https://wordpress.org/', 'bassist') ); ?>"><?php  _e( 'Proudly powered by WordPress', 'bassist' ) ; ?></a>
         </div><!--/site-info-->
         
         <?php if (has_nav_menu('social')): ?>
