@@ -30,12 +30,12 @@ $attribute_keys = array_keys( $attributes );
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 				<tr>
 					
-					<td class="product_label"><label for="<?php echo sanitize_title($attribute_name); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label></td>
-					<td class="product_value">
+					<td class="product_label label"><label for="<?php echo sanitize_title($attribute_name); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label></td>
+					<td class="product_value value">
 					<?php
-								$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) : $product->get_variation_default_attribute( $attribute_name );
+								$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 								wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected, 'class'=>'kad-select') );
-								echo end( $attribute_keys ) === $attribute_name ? '<a class="reset_variations" href="#">' . __( 'Clear selection', 'virtue' ) . '</a>' : '';
+								echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear selection', 'virtue' ) . '</a>' ) : '';
 							?>
 
 					</td>

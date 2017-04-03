@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.1 | 3rd April 2017 =
+* Update: Fix for Jetpack Photon.
+* Update: Fix for certain variation plugin.
+
 = Version 2.9.0 | 31th March 2017 =
 * Update: Ready for WC 3.0
 * Update: Move user profile options to plugin.
