@@ -70,7 +70,7 @@
                           if(empty($image[0])) {$image = array($thumbnailURL,$image_width,$image_height);} ?>
                               <div class="imghoverclass img-margin-center" itemscope itemtype="https://schema.org/ImageObject">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
-                                  	<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output( $image[1], $image[2], $thumbnailURL, $image_id);?> itemprop="image" class="iconhover" style="display:block;">
+                                  	<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output( $image[1], $image[2], $thumbnailURL, $image_id);?> itemprop="contentUrl" class="iconhover" style="display:block;">
                                   	<meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
 		                           	<meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
 		                            <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
@@ -94,7 +94,7 @@
                                             <li>
                                                 <a href="<?php the_permalink() ?>">
                                                 	<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-	                                                    <img src="<?php echo esc_url($image[0]);?>"  width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output( $image_width, $image_height, $attachment_url, $attachment);?> itemprop="image" class="" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
+	                                                    <img src="<?php echo esc_url($image[0]);?>"  width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output( $image_width, $image_height, $attachment_url, $attachment);?> itemprop="contentUrl" class="" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
 	                                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
 							                           	<meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
 							                            <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">

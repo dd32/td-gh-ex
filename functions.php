@@ -17,6 +17,8 @@ require_once locate_template('/themeoptions/options_assets/pinnacle_extension.ph
 require_once locate_template('/lib/utils.php');           								// Utility functions
 require_once locate_template('/lib/init.php');            								// Initial theme setup and constants
 require_once locate_template('/lib/aq_resizer.php');      								// Resize on the fly
+require_once locate_template('/lib/class-pinnacle-get-image.php');      								// image_functions
+require_once locate_template('/lib/image_functions.php');      								// image_functions
 require_once locate_template('/lib/sidebar.php');         								// Sidebar class
 require_once locate_template('/lib/config.php');          								// Configuration
 require_once locate_template('/lib/cleanup.php');        								// Cleanup

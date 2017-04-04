@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 do_action( 'woocommerce_before_single_product' );
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div itemscope itemtype="<?php  if ( version_compare( WC_VERSION, '2.7', '<' ) ) { echo woocommerce_get_product_schema(); } ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
 		<div class="<?php echo esc_attr($imagecontainer); ?> product-img-case">
 

@@ -5,6 +5,15 @@
 
 define('POST_EXCERPT_LENGTH', 40);
 
+function pinnacle_get_options() {
+    $options = get_option( 'pinnacle' );
+	if ( isset( $_REQUEST['wp_customize'] ) ) {
+    	$options = apply_filters('pinnacle_theme_options_filter', $options);
+    }
+
+    return $options;
+}
+
 
 /**
  * .main classes

@@ -3,21 +3,63 @@
 /* This theme supports WooCommerce */
 /*-----------------------------------------------------------------------------------*/
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-  add_theme_support( 'woocommerce' );
-}
-/*-----------------------------------------------------------------------------------*/
-/* WooCommerce Functions */
-/*-----------------------------------------------------------------------------------*/
+add_action( 'after_setup_theme', 'pinnacle_woocommerce_support' );
+function pinnacle_woocommerce_support() {
+  	add_theme_support( 'woocommerce' );
 
-if (class_exists('woocommerce')) {
-  add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-  // Disable WooCommerce Lightbox
-    if (get_option( 'woocommerce_enable_lightbox' ) == true ) {
-        update_option( 'woocommerce_enable_lightbox', false );
-    }
-    
+	if (class_exists('woocommerce')) {
+	  	add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+	  	if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+			$pinnacle = pinnacle_get_options();
+			if(isset($pinnacle['product_gallery_zoom']) && 1 == $pinnacle['product_gallery_zoom']) {
+				add_theme_support( 'wc-product-gallery-zoom' );
+			}
+			if(isset($pinnacle['product_gallery_slider']) && 1 == $pinnacle['product_gallery_slider']) {
+				add_theme_support( 'wc-product-gallery-slider' );
+			}
+		}
+	  	// Disable WooCommerce Lightbox
+	    if (get_option( 'woocommerce_enable_lightbox' ) == true ) {
+	        update_option( 'woocommerce_enable_lightbox', false );
+	    }
+	    if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+	    	add_filter('woocommerce_add_to_cart_fragments', 'pinnacle_get_refreshed_fragments');
+	    } else {
+	    	add_filter('add_to_cart_fragments', 'pinnacle_get_refreshed_fragments');
+	    }
+		 function pinnacle_get_refreshed_fragments($fragments) {
+		    // Get mini cart
+		    ob_start();
+
+		    woocommerce_mini_cart();
+
+		    $mini_cart = ob_get_clean();
+
+		    // Fragments and mini cart are returned
+		    $fragments['div.kt-header-mini-cart-refreash'] ='<div class="kt-header-mini-cart-refreash">' . $mini_cart . '</div>';
+
+		    return $fragments;
+
+		}
+	  	if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+	    	add_filter('woocommerce_add_to_cart_fragments', 'pinnacle_get_refreshed_fragments_number');
+	    } else {
+	    	add_filter('add_to_cart_fragments', 'pinnacle_get_refreshed_fragments_number');
+	    }
+		 function pinnacle_get_refreshed_fragments_number($fragments) {
+		    global $woocommerce;
+		    // Get mini cart
+		    ob_start();
+
+		    ?><span class="kt-cart-total"><?php echo $woocommerce->cart->cart_contents_count; ?></span> <?php
+
+		    $fragments['span.kt-cart-total'] = ob_get_clean();
+
+		    return $fragments;
+
+		  }
+	    
+	}
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
@@ -98,35 +140,6 @@ if ( isset( $pinnacle['default_showproducttitle_inpost'] ) && $pinnacle['default
 
   }
 }
-
-add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments' );
- function kt_get_refreshed_fragments($fragments) {
-    // Get mini cart
-    ob_start();
-
-    woocommerce_mini_cart();
-
-    $mini_cart = ob_get_clean();
-
-    // Fragments and mini cart are returned
-    $fragments['div.kt-header-mini-cart-refreash'] ='<div class="kt-header-mini-cart-refreash">' . $mini_cart . '</div>';
-
-    return $fragments;
-
-  }
-  add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments_number' );
- function kt_get_refreshed_fragments_number($fragments) {
-    global $woocommerce;
-    // Get mini cart
-    ob_start();
-
-    ?><span class="kt-cart-total"><?php echo $woocommerce->cart->cart_contents_count; ?></span> <?php
-
-    $fragments['span.kt-cart-total'] = ob_get_clean();
-
-    return $fragments;
-
-  }
 
 
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
@@ -267,7 +280,7 @@ function kad_woo_archive_cat_image_output() {
     remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
     add_action( 'woocommerce_before_subcategory_title', 'kad_woocommerce_subcategory_thumbnail', 10 );
     function kad_woocommerce_subcategory_thumbnail($category) {
-        global $woocommerce_loop, $virtue;
+        global $woocommerce_loop, $pinnacle;
         
         if(is_shop() || is_product_category() || is_product_tag()) {
             if(isset($pinnacle['product_cat_layout'])) {
