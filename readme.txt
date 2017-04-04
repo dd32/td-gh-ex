@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.2 | 3rd April 2017 =
+* Fix: Small bug with thumbnails srcset and photon.
+* Update: Google font options.
+
 = Version 2.9.1 | 3rd April 2017 =
 * Update: Fix for Jetpack Photon.
 * Update: Fix for certain variation plugin.

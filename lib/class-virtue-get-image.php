@@ -59,7 +59,7 @@ if ( ! class_exists( 'Virtue_Get_Image' ) ) {
 		            0 => jetpack_photon_url( $image_url, $args ),
 		            1 => $width,
 		            2 => $height,
-		            3 => self::toolkit_get_srcset_output($id, $image_url, $width, $height),
+		            3 => self::virtue_get_srcset_output($id, $image_url, $width, $height),
 					4 => $image_url,
 					5 => $id
 		        );
