@@ -49,6 +49,11 @@
 	text-transform:none;
 }
 
+.header-cart-widget .widget_shopping_cart a.button {
+    margin-right: 5px !important;
+    margin-bottom: 5px !important;
+}
+
 .woocommerce ul.cart_list li dl.variation {
 	display:none;
 	visibility:hidden;
@@ -171,6 +176,12 @@ a.reset_variations {
 	display:none;
 }
 
+.woocommerce-shipping-fields:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 /* ===============================================
    Woocommerce Tabs
    ============================================= */
@@ -279,6 +290,14 @@ span.sku_wrapper {
 body.woocommerce-checkout .post-article header.title ,
 .post-article .woocommerce-MyAccount-content header.title {
 	text-align:left !important
+}
+
+.woocommerce .woocommerce-MyAccount-content .button {
+    margin: 0;
+}
+
+.woocommerce table.my_account_orders .button {
+    margin: 5px 0 -5px 0;
 }
 
 /* ===============================================
