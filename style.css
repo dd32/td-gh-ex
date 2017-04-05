@@ -5,7 +5,7 @@
  Tags: one-column, two-columns, right-sidebar, full-width-template, sticky-post, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
  Author:CPOThemes
  Author URI: https://cpothemes.com/
- Version: 0.4
+ Version: 0.5
  License: GNU General Public License 3.0 or later
  License URI: license.md
  Template: allegiant
@@ -76,14 +76,14 @@ a,
 .menu-main li ul ul { transform: translateX(0); }
 
 /* Slider */
-.slider-slides .slide-content {
+.slider-slides .slide-title {
 	font-size: 15px;
 	line-height: 30px;
 	color: #70b85d;
 	margin-bottom: 40px;
 	padding-bottom: 0;
 }
-.slider-slides .slide-title {
+.slider-slides .slide-content {
 	font-size: 33px;
 	line-height: 40px;
 	font-weight: 900;
@@ -132,12 +132,19 @@ body .section-heading {
 
 /* Tagline */
 .tagline .container,
-.tagline-title {
+body:not(.allegian_pro_template) .tagline-title,
+body.allegian_pro_template .tagline-content {
     font-size: 26px;
     font-family: "Raleway";
-    font-weight: 100;
+    font-weight: 400;
     line-height: 44px;
     text-transform: initial;
+}
+body.allegian_pro_template .tagline-title {
+	font-size: 30px;
+    line-height: 35px;
+    font-weight: 800;
+    font-family: "Raleway";
 }
 .tagline-body {
 	padding-bottom: 0;
@@ -149,6 +156,9 @@ body .section-heading {
 }
 .tagline a {
 	color: #70b85d;
+}
+body #tagline {
+	color: #fff;
 }
 
 /* Portfolio */
@@ -223,11 +233,11 @@ body .section-heading {
 	padding: 20px 30px;
 }
 .team .team-member-description {
-	font-size: 15px;
+	font-size: 12px;
 	line-height: 24px;
 	text-transform: initial;
 	font-family: "Raleway";
-	font-weight: 100;
+	font-weight: 400;
 }
 .testimonial-position {
     font-family: "Raleway";
@@ -286,7 +296,7 @@ input[type=submit] {
 }
 #footer {
 	border-top: 1px solid #a9afb1;
-	padding: 30px 0;
+	padding: 10px 0;
 }
 .footer:before {
 	display: none;
@@ -325,6 +335,11 @@ body #subfooter {
     transform: translateY(60px);
 }
 
+/* Features */
+.features .feature .feature-content p {
+    line-height: 26px;
+}
+
 /* Pro CSS */
 .slider-slides .slide-title {
 	padding-bottom: 0;
@@ -344,3 +359,4 @@ body #subfooter {
 .allegian_pro_template .menu-main li ul .has-children:before {
 	margin-top: -12px;
 }
+
