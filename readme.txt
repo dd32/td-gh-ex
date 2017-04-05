@@ -1,4 +1,6 @@
 Appointment Blue is the child version of Appointment theme.
+@version 1.1.5
+1. Update Pagination Color.
 @version 1.1.4
 1. Update theme Description.
 @version 1.1.3

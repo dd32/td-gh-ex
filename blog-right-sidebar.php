@@ -19,15 +19,12 @@ get_template_part('index','banner'); ?>
 					global $more;
 					$more = 0;
 					get_template_part('content',''); 
-					} ?>
-				<div class="blog-pagination">
-				<?php 
+					}  
                 $GLOBALS['wp_query']->max_num_pages = $post_type_data->max_num_pages;
 				the_posts_pagination( array(
 				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
 				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
 				) ); ?>
-				</div>
 			</div>
 			<!-- /Blog Area -->			
 			<!--Sidebar Area-->
