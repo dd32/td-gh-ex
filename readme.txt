@@ -1,12 +1,18 @@
 Appointment Red is the child theme of Appointment theme. Give it a try you will love it
 
 === Description ===
-In this version you will get the theme red color variant. Couple of templates added which is not found in the parent appointment theme.
+A Business theme which is ideal for creating a corporate / business website. Appointment Red theme is a child theme of appointment theme and it is the Red color variation. Appointment Red theme comes with Spanish translation. Other translations / locals yet to come. Theme has couple of extra templates makes it even more powerful.
 
 === Support ===
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+1.1.4
+1. Update Pagination Color.
+1.1.4
+1. Updated Strings.
+1.1.3
+1. Added Spanish Locale
 1.1.2
 1. Solved Responsive issue.
 2. Add Title Tag Support.
