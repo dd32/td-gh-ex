@@ -90,7 +90,7 @@ function hu_customize_controls_js_css() {
             'faviconOptionName' => 'favicon',
             'css_attr' => HU_customize::$instance -> hu_get_controls_css_attr(),
             'i18n' => hu_get_czr_translated_strings(),
-            'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
+            'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('CZR_DEV') && true === CZR_DEV ),
             'isThemeSwitchOn' => ! (bool)HU_IS_PRO,
             'themeSettingList' => HU_utils::$_theme_setting_list
         )
@@ -277,7 +277,7 @@ function hu_add_customize_preview_data() {
 function hu_extend_ctrl_dependencies() {
   $_header_img_notice = esc_js( sprintf( __( "When the %s, this element will not be displayed in your header.", 'hueman'),
       sprintf('<a href="%1$s" title="%2$s">%2$s</a>',
-        "javascript:wp.customize.section(\'header_design_sec\').focus();",
+        "javascript:wp.customize.section(\'header_image_sec\').focus();",
         __('header image is enabled', 'hueman')
       )
   ) );
@@ -289,7 +289,7 @@ function hu_extend_ctrl_dependencies() {
   ) );
   $_header_menu_notice = esc_js( sprintf( __( "The menu currently displayed in your header is a default page menu, you can disable it in the %s.", 'hueman'),
       sprintf('<a href="%1$s" title="%2$s">%2$s</a>',
-        "javascript:wp.customize.section(\'header_menu_sec\').focus();",
+        "javascript:wp.customize.section(\'header_design_sec\').focus();",
         __('Header Panel', 'hueman')
       )
   ) );
@@ -404,27 +404,6 @@ function hu_extend_ctrl_dependencies() {
                                     break;
                               }
                         }//actions()
-                  },
-                  {
-                        dominus : 'dynamic-styles',
-                        servi : [
-                              'boxed',
-                              'font',
-                              'body-font-size',
-                              'container-width',
-                              'sidebar-padding',
-                              'color-1',
-                              'color-2',
-                              'color-topbar',
-                              'color-header',
-                              'color-header-menu',
-                              'image-border-radius',
-                              'body-background',
-                              'color-footer'
-                        ],
-                        visibility : function ( to ) {
-                              return _is_checked(to);
-                        }
                   },
                   {
                         dominus : 'blog-heading-enabled',

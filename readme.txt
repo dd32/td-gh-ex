@@ -1,4 +1,4 @@
-# Hueman v3.3.7
+# Hueman v3.3.8
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites. It's been designed to beautifully display pictures and text content, and engineered to be easy to use and fast. The Hueman theme helps you attract and retain more visitors, that's why it's already used by 70K+ active websites in the world and has received hundreds of five stars ratings.
@@ -73,6 +73,24 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
+= 3.3.8 April 5th 2017 =
+* fixed : home layout not applied if static home page choosen
+* fixed : prevdem mode should be turned off when user starts customizing
+* fixed : user defined WP core settings like show_on_front should be preserved if customizing in prevdem mode
+* fixed : don't wrap logo in h1 tag
+* added match Media polyfill
+* updated the parallax jquery plugin => added a matchMedia option set to 'only screen and (max-width: 768px)' by default
+* added tmpl parts/header-nav-main.php
+* added new hamburger menu markup, css + js
+* improved : mobile menu slide up down using jQuery built-in methods
+* improved : display a default page menu for topbar in prevdem mode
+* improved : use the real template path in function hu_get_content()
+* improved : only dispay the social link notice if user is_super_admin()
+* added : utility hu_print_mobile_btn() used to render the mobile buttons in the header
+* added : animated mobile menu button
+* added : mobile menu style customizer option
+* removed : dynamic style option. Dynamic style is now applied for each option as soon as the user change the option to a value different than default.
+
 = 3.3.7 March 8th 2017 =
 * fixed : drag resize image inserted into visual editor #415 
 
