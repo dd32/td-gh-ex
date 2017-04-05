@@ -285,7 +285,7 @@ body.woocommerce-order-received .post-container .page-format header.title {
 }
 
 .woocommerce-tabs #reviews h3.comments,
-h3.additional_information_title {
+h2.additional_information_title {
     margin: 10px auto 30px auto;
 	text-align:center
 }
@@ -775,6 +775,12 @@ body.sneak_button .woocommerce .wc-proceed-to-checkout input:hover {
 	border:none;
 }
 
+.woocommerce-shipping-fields:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 /* ===============================================
    Woocommerce shop layout
    ============================================= */
@@ -833,6 +839,11 @@ body.archive.woocommerce .masonry ,
 
 .product-thumbnail {
 	overflow:hidden;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+    margin-top: 1em;
+    margin-right: 3.8%;
 }
 
 .cross-sells h2, 
@@ -1141,6 +1152,11 @@ body.disable_box_shadow.woocommerce nav.woocommerce-pagination ul li span {
 
 .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
 	color:#fff !important
+}
+
+.header-cart-widget .widget_shopping_cart a.button {
+    margin-right: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 .widget_shopping_cart li,

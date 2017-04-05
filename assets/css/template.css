@@ -548,7 +548,7 @@ body.footer_layout_3 .copyright .col-md-7 {
 }
 
 body.footer_layout_3 #footer .copyright {
-    padding: 50px 0;
+    padding: 50px 0 25px 0;
     text-align: center;
 }
 
@@ -2001,7 +2001,7 @@ tr:nth-child(2n+2) {
 
 body.footer_layout_3 .social-buttons { 
 	float:none;
-	margin-top:25px
+	margin:25px auto
 }
 
 body.footer_layout_3 .social-buttons a { 

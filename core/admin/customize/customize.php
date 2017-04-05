@@ -148,6 +148,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"priority" => "12",
 
 			),
+			
+			array(
+				
+				"label" => esc_html__( "Breadcrumb","suevafree"),
+				"description" => esc_html__( "Do you want to enable a breadcrumb, using the header layout 4?","suevafree"),
+				"id" => "suevafree_view_breadcrumb",
+				"type" => "select",
+				"section" => "settings_section",
+				"options" => array (
+				   "off" => esc_html__( "No","suevafree"),
+				   "on" => esc_html__( "Yes","suevafree"),
+				),
+				
+				"std" => "off",
+			
+			),
 
 			array(
 				

@@ -71,7 +71,9 @@ if (!function_exists('suevafree_header_layout_4_function')) {
                 </div>
             
 <?php
-		
+			if ( !is_front_page() && suevafree_setting('suevafree_view_breadcrumb') == 'on' ) 
+				do_action('suevafree_get_breadcrumb'); 
+
 	}
 
 	add_action( 'suevafree_header_layout_4', 'suevafree_header_layout_4_function', 10, 2 );

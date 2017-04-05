@@ -51,6 +51,36 @@ p.demo_store {
 }
 
 /* ===============================================
+   BREADCRUMB
+   =============================================== */
+
+#breadcrumb_wrapper {
+	width:100%; 
+	background:#eeeeee; 
+	margin-top:-50px; 
+	padding:25px 0; 
+	margin-bottom:50px;
+}
+
+#breadcrumb_wrapper ul#breadcrumb {
+	margin:0;
+	text-align:left;
+	font-size:11px !important;
+	padding:0;
+}
+
+#breadcrumb_wrapper ul#breadcrumb li { 
+	display:inline-block; 
+	line-height:1em;
+	font-size:11px !important;
+}
+
+#breadcrumb_wrapper ul#breadcrumb , 
+#breadcrumb_wrapper ul#breadcrumb li { 
+	color:inherit;
+}
+
+/* ===============================================
    LOGO
    =============================================== */
 
