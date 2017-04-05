@@ -15,13 +15,39 @@ function pinnacle_img_placeholder_cat() {
 function pinnacle_img_placeholder_small() {
   return apply_filters('kadence_placeholder_image_small', get_template_directory_uri() . '/assets/img/post_standard-60x60.jpg');
 }
-
+function pinnacle_post_default_placeholder_override() {
+  global $pinnacle;
+  $custom_image = $pinnacle['post_summery_default_image']['url'];
+  return $custom_image;
+}
+add_action('init', 'kt_check_for_post_image');
+function kt_check_for_post_image() {
+  global $pinnacle;
+  if (isset($pinnacle['post_summery_default_image']) && !empty($pinnacle['post_summery_default_image']['url'])) {
+  add_filter('kadence_placeholder_image_small', 'pinnacle_post_default_placeholder_override');
+  add_filter('kadence_post_default_placeholder_image', 'pinnacle_post_default_placeholder_override');
+  add_filter('kadence_post_default_placeholder_image_square', 'pinnacle_post_default_placeholder_override');
+  }
+}
 function pinnacle_default_placeholder_image() {
     return apply_filters('pinnacle_default_placeholder_image', 'http://placehold.it/');
+}
+function pinnacle_get_options_placeholder_image() {
+    global $pinnacle;
+    if(isset($pinnacle['post_summery_default_image']) && isset($pinnacle['post_summery_default_image']['id']) && !empty($pinnacle['post_summery_default_image']['id'])){
+        return $pinnacle['post_summery_default_image']['id'];
+    } else {
+        return '';
+    }
 }
 function pinnacle_get_image_array($width = null, $height = null, $crop = true, $class = null, $alt = null, $id = null, $placeholder = false) {
     if(empty($id)) {
         $id = get_post_thumbnail_id();
+    }
+    if(empty($id)){
+        if($placeholder == true) {
+            $id = pinnacle_get_options_placeholder_image();
+        }
     }
     if(!empty($id)) {
         $pinnacle_Get_Image = Pinnacle_Get_Image::getInstance();

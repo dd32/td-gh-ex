@@ -32,18 +32,22 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
-= 1.5.0 | 4th April 2016 = 
+
+= 1.5.1 | 4th April 2017 = 
+* Fix: Issue with related/similar carousel when no image is set.
+
+= 1.5.0 | 4th April 2017 = 
 * Update: remove warnings.
 * Update: Woo 3.0 Gallery.
 
-= 1.4.9 | 22th March 2016 = 
+= 1.4.9 | 22th March 2017 = 
 * Update: WC ready for 3.0
 * Update: Schema.
 
-= 1.4.8 | 22th March 2016 = 
+= 1.4.8 | 22th March 2017 = 
 * Update: Workaround for certain odd servers and trailingslashit
 
-= 1.4.7 | 17th March 2016 = 
+= 1.4.7 | 17th March 2017 = 
 * Update: Image sizing.
 * Update: Schema.
 * Udpate: Archive title.

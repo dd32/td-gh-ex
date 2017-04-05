@@ -1755,6 +1755,13 @@ Redux::setSection( $opt_name, array(
             'default' => 'no',
             ),
         array(
+            'id'=>'post_summery_default_image',
+            'type' => 'media', 
+            'url'=> true,
+            'title' => __('Default post summary feature Image', 'pinnacle'),
+            'subtitle' => __('Replace theme default feature image for posts without a featured image', 'pinnacle'),
+            ),
+        array(
             'id'=>'post_carousel_default',
             'type' => 'select',
             'title' => __('Blog Post Bottom Carousel Default', 'pinnacle'), 

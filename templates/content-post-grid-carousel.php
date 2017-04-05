@@ -14,24 +14,15 @@
               $image_width = 340;
               $image_height = 226;
             }?>
-              <div id="post-<?php the_ID(); ?>" class="blog_item postclass grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
-                  <?php if(has_post_thumbnail( $post->ID )) {
-                         	$image_id = get_post_thumbnail_id( $post->ID );
-                        	$image_url = wp_get_attachment_image_src( $image_id, 'full' ); 
-                          	$thumbnailURL = $image_url[0];
-                          	$image = aq_resize($thumbnailURL, $image_width, $image_height, true, false, false, $image_id);
-                          	if(empty($image[0])) {$image = array($thumbnailURL,$image_width,$image_height);}
-                        } else {
-                          	$image_id = '';
-                      		$thumbnailURL = pinnacle_post_default_placeholder();
-                      		$image = aq_resize($thumbnailURL, $image_width, $image_height, true, false);
-                        }?>
+              <div id="post-<?php esc_attr(the_ID()); ?>" class="blog_item postclass grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
+                  <?php
+                        $img = pinnacle_get_image_array( $image_width, $image_height, true,'iconhover', get_the_title(), null, true); ?>
                         <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                               <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
-                                 <img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>"  itemprop="contentUrl" <?php echo 'width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'"';?> <?php echo kt_get_srcset_output( $image[1], $image[2], $thumbnailURL, $image_id);?> class="iconhover" style="display:block;">
-                                      <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-		                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-		                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                                 <img src="<?php echo esc_url($img['src']); ?>" alt="<?php the_title_attribute(); ?>"  itemprop="contentUrl" <?php echo 'width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'"';?> <?php echo $img['srcset']; ?> class="<?php echo esc_attr($img['class']);?>" style="display:block;">
+                                    <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
+		                            <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
+		                            <meta itemprop="height" content="<?php echo esc_attr($img['height'])?>">
                               </a> 
                         </div>
                         <?php $image = null; $thumbnailURL = null;   ?>
