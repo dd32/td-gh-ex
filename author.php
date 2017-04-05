@@ -6,7 +6,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="page-title"><h1><?php printf( __( 'Author Archive', 'appointment' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' ); ?></h1></div>
+					<div class="page-title">
+						<h1>
+						<?php 
+						printf(_e('Author Archive','appointment').' '.'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' ); ?>
+						</h1>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">
@@ -33,17 +38,12 @@
 						get_template_part( 'content','');
 					endwhile;
 				endif;
-				?>	
-				<div class="blog-pagination">
-				<?php
 				// Previous/next page navigation.
 				the_posts_pagination( array(
 				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
 				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
 				) );
 				?>
-				</div>
-			<!-- /Blog Pagination -->
 			</div>
 			<!--Sidebar Area-->
 			<div class="col-md-4">

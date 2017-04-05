@@ -146,8 +146,37 @@
 		 </div>
 	 </div>
 	 
-	 
-	 
+	 <div class="col-md-4">	
+		<div class="appointment-tab-pane-half appointment-tab-pane-first-half">	
+			<!-- Zifer Child -->
+			<div class="appointment-child-theme-container">
+				<div class="appointment-child-theme-image-container">
+					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/appointment-info/img/appointment-wordpress.png'; ?>" alt="<?php esc_html_e( 'SHK Corporate Child Theme','appointment'); ?>" />
+					<div class="appointment-child-theme-description">
+						<h2><?php esc_html_e( 'SHK Corporate','appointment'); ?></h2>
+					</div>
+				</div>
+				<div class="appointment-child-theme-details">
+					<?php if ( 'shk-corporate' != $current_theme['Name'] ) { ?>
+						<div class="theme-details">
+							<span class="theme-name"><?php echo _e('SHK Corporate','appointment'); ?></span>
+							<span class="theme-btn">
+							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=shk-corporate' ), 'install-theme_shk-corporate' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'appointment' ), '<span class="screen-reader-text">shk-corporate</span>' ); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/shk-corporate"><?php esc_html_e( 'Live Preview','appointment'); ?></a>
+							</span>
+							<div class="appointment-clear"></div>
+						</div>
+					<?php } else { ?>
+						<div class="theme-details active">
+							<span class="theme-name"><?php echo esc_html_e( 'SHK Corporate - Current theme', 'appointment' ); ?></span>
+							<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php esc_html_e( 'Customize','appointment'); ?></a>
+							<div class="appointment-clear"></div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		 </div>
+	 </div>
 	 
 	</div>
 </div>	

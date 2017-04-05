@@ -42,13 +42,13 @@ h6, .h6 {
 	color: #242526;
 	margin: 0 0 20px;
 }
-p {
+p, .textwidget {
 	color: #727272;
     font-family: 'Open Sans';
     font-size: 15px;
 	font-weight:400;
     letter-spacing: 0.2px;
-    line-height: 27px;
+    line-height: 25px;
     margin: 0 0 20px;
 	word-wrap: break-word;
 }
@@ -142,7 +142,7 @@ table th, table td { border: 1px solid #E8E7E7; padding: 5px 10px; }
 table th, table td { border: 1px solid #E8E7E7; padding: 5px 10px; }
 .calendar_wrap { padding: 0; }
 .calendar_wrap th { text-align: center; border-width: 0 1px 1px 0; line-height: 1.9375; }
-.calendar_wrap td { border-width: 0 1px 1px 0; line-height: 1.9375; }
+.calendar_wrap td { border-width: 0 1px 1px 0; line-height: 1.9375; color: #8f969c; }
 table tbody a { font-weight: 700;}
 .calendar_wrap table > caption {
 	color: #242526;

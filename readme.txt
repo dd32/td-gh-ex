@@ -94,6 +94,10 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.6.2
+1. Fixed section spacing issue.
+@Version 2.6.1
+1. Add SHK Corporate Child theme Info.
 @Version 2.6
 1. Update pot file for theme info.
 @Version 2.5.9

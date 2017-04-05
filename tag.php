@@ -6,7 +6,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="page-title"><h1><?php printf( __('Tag Archive','appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1></div>
+					<div class="page-title">
+						<h1>
+						<?php 
+						echo _e('Tag Archive','appointment');
+						echo ' ';
+						echo single_cat_title("", false);
+						?>
+						</h1>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">
@@ -28,18 +36,12 @@
 							get_template_part('content','');
 						endwhile;
 					endif;	
-				?>
-			<!-- Blog Pagination -->
-				<div class="blog-pagination">
-					<?php
 					// Previous/next page navigation.
 					the_posts_pagination( array(
 					'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
 					'next_text'          => '<i class="fa fa-angle-double-right"></i>',
 					) );
 					?>
-				</div>
-			<!-- /Blog Pagination -->
 			</div>
 			<!--Sidebar Area-->
 			<div class="col-md-4">

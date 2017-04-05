@@ -5,7 +5,7 @@ Author: Webriti
 Author URI: https://WordPress.org/
 Description: Appointment WordPress Theme is a fully responsive and translation ready theme that allows you to create stunning blogs and websites. Theme is well suited for companies, law firms, travel, photography, recipe, design, art, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablets friendly. It has various options in WordPress Customizer to change look of the theme. Theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout and many more . In the premium version you can add different type of slides like video, aside, quote, status and standard all have a different HTML look. Number of inbuilt widgets, sidebars support for WPML, Polylang translation WordPress Plugins, Contact Form 7, portfolio template, contact us , portfolio column layouts and many sections on business homepage template. Appointment theme comes with various locales. Just navigate to Appearance / Customize to start customizing.
 Tags: full-width-template, threaded-comments, two-columns,  right-sidebar, sticky-post, custom-menu, translation-ready, blog, portfolio, photography, education, entertainment, food-and-drink, footer-widgets, featured-images, featured-image-header, custom-header, news, holiday
-Version: 2.6
+Version: 2.6.2
 License URI: https://webriti.com
 License: GNU General Public License v3 or later
 Text Domain: appointment
@@ -337,9 +337,9 @@ h6, .h6 {
 
 /*Section Title-------------------------------------------------------------------------------------------------*/
 .section-heading-title {
-    background-position: center top;
+	background-position: center top;
     background-repeat: no-repeat;
-    margin: 0 auto 53px;
+    margin: -5px auto 53px;
     padding: 0 15px;
     position: relative;
     width: 97.4%;
@@ -363,8 +363,8 @@ h6, .h6 {
 /*Service Section-----------------------------------------------------------------------------------------------*/
 .Service-section {
     background: transparent;
-	margin: 72px 0 0;
-    padding: 0;
+	margin: 0;
+    padding: 80px 0 30px;
     width: 100%;
 }
 .page-builder .Service-section { margin: 0; }
@@ -413,7 +413,7 @@ h6, .h6 {
 .callout-section {
     background: url("./images/callout-bg.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
 	height: 100%;
-    margin: 50px 0;
+	margin: 0;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -492,7 +492,7 @@ h6, .h6 {
 a:hover, a:focus { text-decoration: none !important;}
 
 /*Blog Homepage Section Css here---------------------------------------------------------------------------------*/
-.blog-section { margin: 50px 0 0; padding: 0; }
+.blog-section { margin: 0;  padding: 80px 0 25px; }
 .blog-sm-area { margin: 0px; padding: 0px 0px 55px; overflow: hidden; }
 .blog-sm-box { float: left; margin: 0 25px 0 0; padding: 0; width: 200px; height: auto; }
 .blog-sm-box img {
@@ -578,7 +578,6 @@ a:hover, a:focus { text-decoration: none !important;}
 /*Footer Widget Section--------------------------------------------------------------------------------------*/
 .footer-section {
     background-color: #f4f4f4;
-	margin: 50px 0 0;
     padding: 80px 0 0;
     width: 100%;
 }
@@ -603,14 +602,14 @@ a:hover, a:focus { text-decoration: none !important;}
 }
 .footer-widget-section { padding: 0px 0 0px; }
 .footer-widget-column { margin-bottom: 80px; }
-.footer-widget-title, 
-.footer-widget-title a.rsswidget {
+.footer-widget-title { margin: -8px 0 45px; }
+.footer-widget-title a.rsswidget { margin: 0 0 45px; }
+.footer-widget-title, .footer-widget-title a.rsswidget {
     color: #242526;
     font-family: 'Open Sans';
 	font-weight:400;
     font-size: 27px;
     line-height: 35px;
-    margin: 0 0 45px;
 }
 .footer-logo { display: bolck; margin: 25px 0 15px; }
 .footer-blog-post {
@@ -676,7 +675,7 @@ a:hover, a:focus { text-decoration: none !important;}
 	color: #ffffff;
 }
 .footer-widget-column ul {
-    margin: 10px 0 0;
+    margin: 0;
     overflow: hidden;
     padding: 0;
 }
@@ -692,6 +691,7 @@ a:hover, a:focus { text-decoration: none !important;}
     padding: 0;
 }
 .footer-widget-column ul li a { color: #727272; transition: all 0.3s ease 0s; }
+.footer-widget-column ul li:last-child { margin: 0px; }
 .footer-widget-column > ul > li > a:before {
     content: "\f192";
     font-family: FontAwesome;
@@ -707,6 +707,7 @@ a:hover, a:focus { text-decoration: none !important;}
 }
 .footer-copyright-section {
     background-color: #ffffff;
+	border-top: 1px solid #f4f4f4;
 	margin: 0;
     padding: 0;
     width: 100%;
@@ -807,7 +808,7 @@ a:hover, a:focus { text-decoration: none !important;}
 .margin-top { margin-top: 0px; } .margin-bottom { margin-bottom: 0px; }
 
 /*Blog Section Css ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.page-builder { margin: 100px 0 0; padding: 0; }
+.page-builder { margin: 0px; padding: 80px 0 0; }
 .media-body { overflow: hidden; display: block !important; }
 .blog-post-date-area {
 	background: none repeat scroll 0 0 #ffffff;
@@ -850,8 +851,6 @@ a:hover, a:focus { text-decoration: none !important;}
 .blog-post-date-area .comment:hover > a { color: #ffffff; }
 .blog-post-date-area .comment > a > i { padding-right: 10px; font-size: 17px; }
 .blog-lg-area-left { margin: 0px; padding: 0px 10px 60px 0px; overflow: hidden; }
-.blog-lg-area-right { margin: 0px; padding: 0px 0px 60px 10px; overflow: hidden; }
-.blog-lg-area-full { margin: 0px; padding: 0px 0px 60px 0px; overflow: hidden; }
 .blog-lg-box { margin: 0 0px 0 0; padding: 0; display: block; }
 .blog-lg-box img {
 	margin: 0 0 20px;
@@ -939,6 +938,10 @@ a.more-link:hover, a.more-link:focus { color: #ffffff; }
 	border-bottom: 1px solid #eeeeee;
 	padding: 0 0 40px;
  }
+ 
+.page-template-default p:last-child, .page-template-fullwidth p:last-child { margin-bottom: 0; }
+.blog-lg-area-left:last-child, .blog-lg-area-full:last-child { padding-bottom: 80px; } 
+ 
 /*Image Paragraph Alignment*/
 .blog-paragraph-image { float: none; margin: 15px 10px 10px 0; padding: 0; }
 .media-align { margin-bottom: 15px; }
@@ -1014,7 +1017,7 @@ a.more-link:hover, a.more-link:focus { color: #ffffff; }
 	border-radius: 100%;
 	height: 30px;
 	margin-bottom: 0px;
-	margin-right: 0px;
+	margin-right: 4px;
 	margin-top: 0px;
 	padding: 0px;
 	text-align: center;
@@ -1096,11 +1099,8 @@ a.more-link:hover, a.more-link:focus { color: #ffffff; }
 }
 /*Comment Form*/
 .comment-form-section { background-color: transparent; }
-.comment-form-section, .contact-form-section  {
-	float: none;
-	margin: 0 10px 50px 0;
-	padding: 0;
-}
+.contact-form-section { float: none; margin: 0 10px 50px 0; padding: 0; }
+.comment-form-section { background-color: transparent; float: none; margin: 0 10px 0px 0; padding: 0 0 60px; }
 .form-inline .blog-form-group, .form-inline .contact-form-group {
 	display: inline-block;
 	margin-bottom: 0;
@@ -1189,7 +1189,7 @@ a.more-link:hover, a.more-link:focus { color: #ffffff; }
 .sidebar-section-right {
 	background-color: #fbfbfb;
 	border: 1px solid #e9e9e9;
-	margin-bottom: 70px;
+	margin-bottom: 80px;
 	margin-left: 0;
 	padding: 30px 20px 30px 20px;
 }
@@ -1341,13 +1341,13 @@ ul.post-content > li > a:before {
 .tagcloud a:hover { color: #ffffff; }
 
 /*Blog Pagination*/
-.blog-pagination {
-	margin: 0 0 40px;
+.navigation.pagination .nav-links {
+	margin: 0px;
 	overflow: hidden;
-	padding: 0;
+	padding: 0 0 70px;
 	text-align: center;
 }
-.blog-pagination a, .blog-pagination .page-numbers {
+.navigation.pagination .nav-links .page-numbers, .navigation.pagination .nav-links a {
 	background-color: #ffffff;
 	border: 1px solid #dbdbdb;
 	color: #242526;
@@ -1366,16 +1366,14 @@ ul.post-content > li > a:before {
 	width: 40px;
 	height: 40px;
 }
-.blog-pagination span.current{
-	background-color:#ee591f;
-	color:#fff;
-}
-.blog-pagination a:hover, .blog-pagination a.active {
-	color: #FFFFFF;
-}
+
+.navigation.pagination .nav-links .page-numbers.current,  .navigation.pagination .nav-links a:hover { color: #FFFFFF; }
+
+.navigation.pagination { margin: 0; display: block; }
+
 /*404 Page Section-------------------------------------------------------------------------------------------*/
-.error-section { margin: 50px 0; padding: 0; }
-.error-404 { clear: both; padding: 50px 0 0px; text-align: center; }
+.error-section { margin: 0; padding: 80px 0 80px; }
+.error-404 { clear: both; padding: 0; text-align: center; }
 .error-404 .text-center > i {
 	display: inline-block;
 	color: #242526;
@@ -1411,7 +1409,7 @@ ul.post-content > li > a:before {
     line-height: 25px;
     margin-bottom: 25px;
 }
-.error-btn-area { display: block; margin: 16px 0; text-align: center; }
+.error-btn-area { display: block; margin: 16px 0 0; text-align: center; }
 a.error-btn {
     border-radius: 3px;
     color: #ffffff;
@@ -1739,6 +1737,9 @@ word-wrap: break-word;
 .top-contact-detail-section .calendar_wrap table > caption  {
 	color: #ffffff; 
 }
+.footer-widget-column select { margin: 0 !important; }
+#wp-calendar { margin: 0; }
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);

@@ -4,15 +4,14 @@ get_header(); ?>
 	<div class="overlay">
 		<div class="container">
 			<div class="row">
-			<?php the_post(); ?>
 				<div class="col-md-6">
 					<div class="page-title"><h1>
         <?php if ( is_day() ) : ?>
-        <?php  _e( "Daily Archive", 'appointment' ); echo (get_the_date()); ?>
+        <?php  _e( "Daily Archive", 'appointment' ); echo ' '; echo (get_the_date()); ?>
         <?php elseif ( is_month() ) : ?>
-        <?php  _e( "Monthly Archive", 'appointment' ); echo (get_the_date( 'F Y' )); ?>
+        <?php  _e( "Monthly Archive", 'appointment' ); echo ' '; echo (get_the_date( 'F Y' )); ?>
         <?php elseif ( is_year() ) : ?>
-        <?php  _e( "Yearly Archive", 'appointment' );  echo (get_the_date( 'Y' )); ?>
+        <?php  _e( "Yearly Archive", 'appointment' );  echo ' '; echo (get_the_date( 'Y' )); ?>
         <?php else : ?>
         <?php _e( "Blog Archive", 'appointment' ); ?>
         <?php endif; ?>	
@@ -45,16 +44,13 @@ get_header(); ?>
 				$more = 0;
 				?>
 				<?php get_template_part('content',''); ?>
-				<?php endwhile;	?>
-				<div class="blog-pagination">
-				<?php
+				<?php endwhile;
 				// Previous/next page navigation.
 				the_posts_pagination( array(
 				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
 				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
 				) );
 				?>
-				</div>
 			</div>
 			<!--Sidebar Area-->
 			<div class="col-md-4">
