@@ -102,6 +102,11 @@ body.woocommerce-checkout .header-cart-widget:before {
 	color:#fff !important
 }
 
+.header-cart-widget .widget_shopping_cart a.button {
+    margin-right: 5px !important;
+    margin-bottom: 5px !important;
+}
+
 /* ===============================================
    Woocommerce Form
    ============================================= */
@@ -334,6 +339,14 @@ span.sku_wrapper {
 
 .post-article .woocommerce-MyAccount-content header.title {
 	text-align:left
+}
+
+.woocommerce .woocommerce-MyAccount-content .button {
+    margin: 0;
+}
+
+.woocommerce table.my_account_orders .button {
+    margin: 5px 0 -5px 0;
 }
 
 /* ===============================================
@@ -785,6 +798,12 @@ body.minimal-layout .woocommerce-info {
 	border-bottom:none;
 }
 
+.woocommerce-shipping-fields:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 /* ===============================================
    Woocommerce shop layout
    ============================================= */
@@ -820,6 +839,11 @@ body.archive.woocommerce .product-category mark.count {
 
 .product-thumbnail img {
 	width:100%
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+    margin-top: 1em;
+    margin-right: 3.8%;
 }
 
 .product-wrapper {
