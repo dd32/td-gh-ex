@@ -2,7 +2,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
 <div class="entry-header">
 <h3 class="entry-title"><span class="center-block"><?php backyard_post_title(); ?></span></h3>
-<div class="entry-meta font-italic textcolor"><span class="text-uppercase"><?php the_author_posts_link() ?></span> <?php _e('-','backyard'); ?> <?php echo get_the_date(get_option( 'date_format' )); ?>  <?php _e('-','backyard'); ?> <span>
+<div class="entry-meta font-italic textcolor"><span class="text-uppercase"><?php the_author_posts_link() ?></span> <?php esc_html_e('-','backyard'); ?> <?php echo get_the_date(get_option( 'date_format' )); ?>  <?php esc_html_e('-','backyard'); ?> <span>
 <a href="#comments"><i class="fa fa-comment-o"></i><?php comments_number(__('No Comments','backyard'), __('One Comment','backyard'), '% Comments'); ?></a></span>
 </span></div>
 <!--entry-meta--> 
@@ -13,7 +13,7 @@
 <?php the_post_thumbnail('backyard-post-thumb', array('class'=>'img-responsive','alt' => get_the_title() )); ?></a> 
 </div>
  <!--post-media-->
-<div class="entry-content"> <?php if (is_single()) : else: ?><a href="<?php the_permalink(); ?>" class="btn fillbg"><?php _e('READ MORE','backyard'); ?></a><?php endif; ?>
+<div class="entry-content"> <?php if (is_single()) : else: ?><a href="<?php the_permalink(); ?>" class="btn fillbg"><?php esc_html_e('READ MORE','backyard'); ?></a><?php endif; ?>
 <?php if (is_single()): ?>
 <?php the_content();
 wp_link_pages( array(

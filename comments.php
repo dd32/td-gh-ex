@@ -5,10 +5,34 @@
 
  if (have_comments()) : ?>
   <section id="comments">
-    <h3 class="title2"><?php printf(_n(__('One Response','backyard'), __('%1$s Responses ','backyard'), get_comments_number(), 'backyard'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
-
+    <h3 class="title2">
+    <?php
+				$comments_number = get_comments_number();
+				if ( 1 === $comments_number ) {
+					/* translators: %s: post title */
+					printf( esc_html( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'backyard' ), get_the_title() );
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						esc_html(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'backyard'
+						),
+						esc_html(number_format_i18n( $comments_number )),
+						get_the_title()
+					);
+				}
+			?>
+</h3>
     <ol class="commentlist">
-      <?php wp_list_comments(array('walker' => new backyard_walker_comment)); ?>
+     <?php
+				wp_list_comments( array(
+					'callback' => 'backyard_comment',
+				) );
+			?>
     </ol>
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
@@ -25,27 +49,19 @@
     <?php endif; ?>
 
     <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-    <?php global $backyard; if(isset($backyard['close_comments'])) {$show_closed_comment = $backyard['close_comments']; } else {$show_closed_comment = 1;}
-    if($show_closed_comment == 1){ ?>
-    <div class="alert">
-      <?php _e('Comments are closed.', 'backyard'); ?>
-    </div>
-    <?php } else { } ?>
+      <div class="alert">
+      <?php esc_html_e('Comments are closed.', 'backyard'); ?>
+    </div>    
 <?php endif; ?>
   </section><!-- /#comments -->
   <?php endif; ?>
-
 <?php if (!have_comments() && !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-  <?php global $backyard; if(isset($backyard['close_comments'])) {$show_closed_comment = $backyard['close_comments']; } else {$show_closed_comment = 1;}
-    if($show_closed_comment == 1){ ?>
-  <section id="comments">
+   <section id="comments">
     <div class="alert">
-      <?php _e('Comments are closed.', 'backyard'); ?>
+      <?php esc_html_e('Comments are closed.', 'backyard'); ?>
     </div>
   </section><!-- /#comments -->
-  <?php } else { } ?>
 <?php endif; ?>
-
 <?php if (comments_open()) : ?>
   <section id="respond">
 
@@ -75,7 +91,7 @@
               'class_submit'         => 'btn btn-default fillbg',
               'name_submit'          => 'submit',
               'title_reply'          => __('Leave a Reply', 'backyard'),
-              'title_reply_to'       => __('Leave a Reply to %s', 'backyard'),
+              'title_reply_to'       => __('Leave a Reply to', 'backyard'),
               'label_submit'         => __('Post Comment', 'backyard'),
               'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
               'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',

@@ -11,11 +11,6 @@
 		'title' => __('General', 'backyard'),
 		'description' => __('Page Settings', 'backyard'),
 		'fields' => array(
-                 'enable_breadcrumb' => array(
-			'type' => 'checkbox',
-			'label' => __('Enable Breadcrumb', 'backyard'),
-			'default' => 0,
-			'sanitize_callback' => 'backyard_boolean',),
  		 'show_top_bar' => array(
 			'type' => 'checkbox',
 			'label' => __('Show Top Bar', 'backyard'),
@@ -47,7 +42,7 @@
 						'copyright' => array(
 						 'type' => 'textarea',
 						 'label' =>__('Footer Copyright Text (Validated for HTML)', 'backyard'),
-						 'description' => esc_html__('Validated for HTML', 'backyard'),
+						 'description' =>__('Validated for HTML', 'backyard'),
 						 'sanitize_callback' => 'backyard_allowhtml_string',
 													),
 						  ),
@@ -76,7 +71,7 @@
                     
                     'social_media' => array(
                     'title' => __('Social Media', 'backyard'),
-                    'description' => esc_html__('Enter your social media links here (with http://) and then activate which ones you would like to display in your footer options', 'backyard'),
+                    'description' =>__('Enter your social media links here (with http://) and then activate which ones you would like to display in your footer options', 'backyard'),
                     'fields' => array(
                     'facebook_url' => array(
 		    'type' => 'text',

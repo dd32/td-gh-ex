@@ -33,6 +33,8 @@ Backyard is distributed under the terms of the GNU GPL V2
 * Respond.js v1.4.2: min/max-width media query polyfill * Copyright 2013 Scott Jehl licensed under MIT (https://oss.maxcdn.com/respond/1.4.2/respond.min.js)
 * jQuery FlexSlider v2.6.0, Copyright 2012 WooThemes contributing Author: Tyler Smith (http://flexslider.woothemes.com/)
 * Open Sans fonts from Google Fonts are licensed under SIL Open Font License, 1.1 (https://www.google.com/fonts/)
+* Glyphicons are under Bootstrap's Apache 2.0 license (http://getbootstrap.com/components/)
+* ftr-bg.jpg footer background image (licensed under CC0) https://www.pexels.com/photo/dawn-sunset-person-sunrise-3371/
 * screenshot.png is edited from image (liscensed under CC0) https://static.pexels.com/photos/29672/pexels-photo-29672.jpg, https://static.pexels.com/photos/1002/nature-fashion-person-woman.jpg and https://static.pexels.com/photos/413/sunglasses-love-woman-flowers.jpg
 
 

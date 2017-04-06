@@ -18,11 +18,11 @@
                                <div class="slider-content">
           <h1><?php the_title(); ?></h1>
           <p><?php the_excerpt(); ?></p>
-          <a href="<?php the_permalink(); ?>" class="btn"><?php _e('READ MORE', 'backyard'); ?></a>
+          <a href="<?php the_permalink(); ?>" class="btn"><?php esc_html_e('READ MORE', 'backyard'); ?></a>
           </div></li>
               <?php } endwhile; else: ?>
-                <li class="error-not-found"><?php _e('Sorry, no blog entries found.', 'backyard'); ?></li>
-              <?php endif;  wp_reset_query(); ?>
+                <li class="error-not-found"><?php esc_html_e('Sorry, no blog entries found.', 'backyard'); ?></li>
+              <?php endif;  wp_reset_postdata(); ?>
             </ul>
 </div>
 <?php endif; ?>

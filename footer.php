@@ -35,7 +35,7 @@
            <?php if(get_theme_mod('footer_copyright_bar',true)){ ?>
             <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 pull-right">
                 <?php if(get_theme_mod('copyright')): ?>
-	     <p class="copyright"><?php echo do_shortcode(get_theme_mod('copyright' , __('', 'backyard'))); ?></p>
+	     <p class="copyright"><?php echo do_shortcode(get_theme_mod('copyright' , __('Copyright', 'backyard'))); ?></p>
              <?php else : ?>
              <p class="copyright"><?php $footertext = '[copyright] [the-year] [site-name] [theme-credit]';
         		$footertext = str_replace('[copyright]','&copy;',$footertext);

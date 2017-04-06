@@ -35,7 +35,7 @@ function backyard_title_limit($length, $replacer = '...') {
  $string = the_title('','',FALSE);
  if(strlen($string) > $length)
  $string = (preg_match('/^(.*)\W.*$/', substr($string, 0, $length+1), $matches) ? $matches[1] : substr($string, 0, $length)) . $replacer;
- echo $string;
+ echo esc_html($string);
 }
 
 function backyard_setup() {
@@ -142,15 +142,15 @@ function backyard_comment_nav() {
     if ( get_comment_pages_count() > 1 && get_option('page_comments') ) :
     ?>
     <nav class="navigation comment-navigation" role="navigation">
-        <h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'backyard' ); ?></h2>
+        <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'backyard' ); ?></h2>
         <div class="nav-links">
             <?php
-                if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'backyard' ) ) ) :
-                    printf( '<div class="nav-previous">%s</div>', $prev_link );
+                if ( $prev_link = get_previous_comments_link( esc_html_e( 'Older Comments', 'backyard' ) ) ) :
+                    printf( '<div class="nav-previous">%s</div>', esc_html($prev_link) );
                 endif;
  
-                if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'backyard' ) ) ) :
-                    printf( '<div class="nav-next">%s</div>', $next_link );
+                if ( $next_link = get_next_comments_link( esc_html_e( 'Newer Comments', 'backyard' ) ) ) :
+                    printf( '<div class="nav-next">%s</div>', esc_html($next_link) );
                 endif;
             ?>
         </div><!-- .nav-links -->
@@ -170,19 +170,30 @@ if ( ! function_exists( 'backyard_header_style' ) ) :
 function backyard_header_style() {
     $text_color = esc_html(get_header_textcolor());
 	$get_background_color=esc_html(get_background_color());
+	$get_header_image=get_header_image();
+	$get_background_image=get_background_image();
     ?>
     <style type="text/css">
     <?php if (!display_header_text() ) : ?>
         #logo a{font-family: 'Playfair Display', serif;font-size: 44px;text-transform: uppercase;color: #e1a232;letter-spacing: 4px;line-height: 45px;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
     <?php else : ?>
-        #logo a{font-family: 'Playfair Display', serif;font-size: 44px;text-transform: uppercase;color: #<?php echo $text_color; ?>;letter-spacing: 4px;line-height: 45px;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
+        #logo a{font-family: 'Playfair Display', serif;font-size: 44px;text-transform: uppercase;color: #<?php echo esc_html($text_color); ?>;letter-spacing: 4px;line-height: 45px;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
     <?php endif; ?>
 	<?php
 	if($get_background_color!=='')
 {?>
-	body.custom-background{background-color:<?php echo '#'.$get_background_color?>;}
+	body.custom-background{background-color:<?php echo '#'.esc_html($get_background_color);?>;}
+<?php }
+if($get_header_image!=='')
+{?>
+	.header-main{ background-image:url(<?php echo esc_url($get_header_image);?>); background-size:cover; background-position:50% 50%; background-repeat:no-repeat;}
+<?php }
+if($get_background_image!=='')
+{?>
+	body.custom-background{ background-image:url(<?php echo esc_url($get_background_image);?>); background-repeat:<?php echo esc_html(get_theme_mod('background_repeat'));?>; background-attachment:<?php echo esc_html(get_theme_mod('background_attachment'));?>; background-position-x:<?php echo esc_html(get_theme_mod('background_position_x'));?>; background-size:cover;}
 <?php }
 	?>
+	
     </style>
 <?php }
 

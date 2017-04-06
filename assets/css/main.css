@@ -257,7 +257,7 @@ table#wp-calendar tfoot{ display:none;}
 .parallax_slider_outer .trasp{ position: absolute;background: rgba(1,1,1,0.5);top: 0px;left: 0px;right: 0px; bottom: 0px;}
 /*main-slider-end*/
 #content{ padding-bottom:70px; position: relative;  padding-top: 30px; }
-.home #content{background-color: #fcfcfc; }
+.home #content{}
 .sidebar{padding-left: 71px;}
 .sidebar.left-sidebar{padding-right: 71px; padding-left:0px;}
 .post{display:block;padding-bottom:10px;margin-bottom:30px;}
@@ -398,7 +398,7 @@ ol.commentlist #respond h3 small{ float:right;line-height: 27px;}
 .commentlist li{ list-style:none; position:relative;min-height: 85px;margin-bottom: 30px;}
 .commentlist li .comment-body{padding-left:110px;min-height: 98px;}
 .commentlist li:last-child{ border:none; margin-bottom:0px; padding-bottom:0px;}
-.commentlist .avatar{width: 91px;height: 85px;float: left;margin: 7px 0 0 -110px;}
+.commentlist .avatar{width: 91px;height: 85px;float: left;margin: 7px 17px 0 12px;}
 .commentlist li .reply{ position:absolute; top:0px;right:0px; font-family:Times New Roman; font-style:italic;  }
 .commentlist cite,span.says{ color:#3c3c3c;  font-size:15px; font-style:normal; font-weight:600;text-transform: capitalize; }
 .commentlist .commentmetadata{ font-family:Times New Roman; font-size:13px;font-style: italic;}

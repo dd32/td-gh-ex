@@ -8,6 +8,5 @@
  get_template_part('/lib/init'); // Initial theme setup and constants
  get_template_part('/lib/widgets'); //  setup sidebar
  get_template_part('/lib/theme-options');
- get_template_part('/lib/backyard-breadcrumbs');
- get_template_part('/lib/comments');
+ get_template_part('/lib/backyard-comments');
 ?>

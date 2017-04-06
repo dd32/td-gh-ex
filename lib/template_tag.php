@@ -61,7 +61,7 @@ add_action( 'init', 'update_cart_action', 9);
 function update_cart_action() {
     global $woocommerce;
     if ( ( ! empty( $_POST['update_cart'] ) || ! empty( $_POST['proceed'] ) ) && $woocommerce->verify_nonce('cart')) {
-        $cart_totals = isset( $_POST['cart'] ) ? $_POST['cart'] : '';
+        $cart_totals = isset( $_POST['cart'] ) ? sanitize_text_field(wp_unslash($_POST['cart'])) : '';
         if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) {
             foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
                 if ( isset( $cart_totals[ $cart_item_key ]['url'] ) ) {
