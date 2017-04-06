@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auckland v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2017-03-31 01:58:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:15
+#@ auckland
+msgid "404"
+msgstr ""
+
+#: 404.php:23
+#@ auckland
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:25
+#@ auckland
+msgid "The article you were looking for was not found. You may want to check your link or perhaps that page does not exist anymore. Maybe try a search?"
+msgstr ""
+
+#: comments.php:21
+#@ auckland
+msgid "<span>No</span> Comments"
+msgstr ""
+
+#: comments.php:21
+#@ auckland
+msgid "<span>1</span> Comment"
+msgstr ""
+
+#: comments.php:21
+#@ auckland
+msgid "<span>%</span> Comments"
+msgid_plural "<span>%</span> Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:41
+#@ auckland
+msgid "&larr; Previous Comments"
+msgstr ""
+
+#: comments.php:42
+#@ auckland
+msgid "Next Comments &rarr;"
+msgstr ""
+
+#: comments.php:47
+#@ auckland
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:54
+#@ auckland
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:55
+#, php-format
+#@ auckland
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:56
+#@ auckland
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:57
+#@ auckland
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:59
+#@ auckland
+msgid "Name"
+msgstr ""
+
+#: comments.php:61
+#@ auckland
+msgid "Email"
+msgstr ""
+
+#: comments.php:63
+#@ auckland
+msgid "Website"
+msgstr ""
+
+#: contents/content-none.php:14
+#@ auckland
+msgid "Nothing Found"
+msgstr ""
+
+#: contents/content-none.php:21
+#, php-format
+#@ auckland
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: contents/content-none.php:25
+#@ auckland
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: contents/content-none.php:31
+#@ auckland
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: contents/content-page.php:19
+#: contents/content-single.php:22
+#: contents/content-sticky.php:32
+#: contents/content.php:30
+#@ auckland
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: contents/content-page.php:32
+#, php-format
+#@ auckland
+msgid "Edit %s"
+msgstr ""
+
+#: inc/customizer/controls.php:20
+#@ auckland
+msgid "Primary Color Scheme"
+msgstr ""
+
+#: inc/functions/custom-functions.php:135
+#@ auckland
+msgid "&laquo;"
+msgstr ""
+
+#: inc/functions/custom-functions.php:136
+#@ auckland
+msgid "&raquo;"
+msgstr ""
+
+#: inc/functions/functions.php:105
+#@ auckland
+msgid "Main Nav"
+msgstr ""
+
+#: inc/functions/functions.php:106
+#@ auckland
+msgid "Footer Nav"
+msgstr ""
+
+#: inc/functions/functions.php:107
+#@ auckland
+msgid "Social Media Links"
+msgstr ""
+
+#: inc/functions/functions.php:120
+#@ auckland
+msgid "Posts Widget Area"
+msgstr ""
+
+#: inc/functions/functions.php:121
+#@ auckland
+msgid "The Posts Widget Area."
+msgstr ""
+
+#: inc/functions/functions.php:130
+#@ auckland
+msgid "Page Widget Area"
+msgstr ""
+
+#: inc/functions/functions.php:131
+#@ auckland
+msgid "The Page Widget Area."
+msgstr ""
+
+#: inc/functions/functions.php:140
+#@ auckland
+msgid "Footer Widget Area 1"
+msgstr ""
+
+#: inc/functions/functions.php:141
+#: inc/functions/functions.php:151
+#: inc/functions/functions.php:161
+#@ auckland
+msgid "The Footer Widget Area."
+msgstr ""
+
+#: inc/functions/functions.php:150
+#@ auckland
+msgid "Footer Widget Area 2"
+msgstr ""
+
+#: inc/functions/functions.php:160
+#@ auckland
+msgid "Footer Widget Area 3"
+msgstr ""
+
+#: inc/functions/functions.php:192
+#@ auckland
+msgid "Newer Posts <span class=\"fa fa-chevron-right\"></span>"
+msgstr ""
+
+#: inc/functions/functions.php:196
+#@ auckland
+msgid "<span class=\"fa fa-chevron-left\"></span> Older Posts"
+msgstr ""
+
+#: inc/functions/functions.php:215
+#@ auckland
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/functions/functions.php:219
+#, php-format
+#@ auckland
+msgid "<cite class=\"fn\">%1$s</cite> %2$s"
+msgstr ""
+
+#: inc/functions/functions.php:219
+#@ auckland
+msgid "(Edit)"
+msgstr ""
+
+#: inc/functions/functions.php:220
+#@ auckland
+msgid "F jS, Y"
+msgstr ""
+
+#: inc/functions/social-nav.php:36
+#@ auckland
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/functions/social-nav.php:41
+#@ auckland
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/functions/template-hooks.php:21
+#@ auckland
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/functions/template-hooks.php:120
+#@ auckland
+msgid "Y"
+msgstr ""
+
+#: inc/functions/template-hooks.php:122
+#@ auckland
+msgid "Thanks to"
+msgstr ""
+
+#: inc/functions/template-hooks.php:122
+#@ auckland
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: inc/functions/template-hooks.php:122
+#@ auckland
+msgid "and"
+msgstr ""
+
+#: inc/functions/template-hooks.php:122
+#@ auckland
+msgid "http://charlescoxhead.com/"
+msgstr ""
+
+#: inc/functions/template-hooks.php:142
+#@ auckland
+msgid "Social Links Menu"
+msgstr ""
+
+#: inc/functions/template-hooks.php:183
+#@ auckland
+msgid ", "
+msgstr ""
+
+#: inc/functions/template-hooks.php:211
+#@ auckland
+msgid "Posted By "
+msgstr ""
+
+#: search.php:13
+#@ auckland
+msgid "Search Results for:"
+msgstr ""
+
+#: sidebar.php:24
+#@ auckland
+msgid "This is a widget ready area. Add some and they will appear here."
+msgstr ""
+

@@ -1,0 +1,9 @@
+@import url( 'assets/css/style.css' );
+
+html{
+    padding: 10px 30px;
+}
+
+body{
+    background: #fff;
+}
