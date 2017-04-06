@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.1.7 =
+
+** Compalibility with WooCommerce 3.0.0
+
 = 2.1.6 =
 
 ** Change the plugins activation function use latest version.

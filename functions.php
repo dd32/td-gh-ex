@@ -41,6 +41,9 @@ function accesspress_store_setup() {
 	add_theme_support( 'title-tag' );
     
     add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
