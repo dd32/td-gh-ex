@@ -39,20 +39,27 @@ $fallback_cb = apply_filters( 'hu_mobile_menu_fallback_cb', $fallback_cb )//set 
     <?php //hu_print_mobile_btn(); ?>
   <?php //endif; ?>
 
-  <?php hu_print_mobile_btn(); ?>
+      <?php hu_print_mobile_btn(); ?>
 
-  <div class="nav-text"><?php apply_filters( 'hu_mobile_menu_text', '' );//put your mobile menu text here ?></div>
-  <div class="nav-wrap container">
-    <?php
-      wp_nav_menu(
-        array(
-            'theme_location' => $mobile_menu_location,
-            'menu_class'=>'nav container-inner group',
-            'container'=>'',
-            'menu_id' => '',
-            'fallback_cb'=> $fallback_cb
-        )
-      );
-    ?>
-  </div>
+      <div class="nav-text"><?php apply_filters( 'hu_mobile_menu_text', '' );//put your mobile menu text here ?></div>
+      <div class="nav-wrap container">
+        <ul class="nav container-inner group mobile-search">
+          <li>
+            <?php get_search_form(); ?>
+          </li>
+        </ul>
+        <?php
+          if ( has_nav_menu( $mobile_menu_location ) || ! empty( $fallback_cb ) ) {
+              wp_nav_menu(
+                array(
+                    'theme_location' => $mobile_menu_location,
+                    'menu_class'=>'nav container-inner group',
+                    'container'=>'',
+                    'menu_id' => '',
+                    'fallback_cb'=> $fallback_cb
+                )
+              );
+          }
+        ?>
+      </div>
 </nav><!--/#nav-topbar-->
