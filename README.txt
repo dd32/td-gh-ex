@@ -71,6 +71,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.06
+* Updated/fixed compatibility with new WooCommerce Gallery
+
 #### 1.3.05
 * Styling tweaks
 * Neatened up Customizer Settings

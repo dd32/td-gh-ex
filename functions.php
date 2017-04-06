@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.05' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.06' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -95,6 +95,9 @@ function topshop_theme_setup() {
     add_theme_support( 'title-tag' );
 	
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // topshop_theme_setup
 add_action( 'after_setup_theme', 'topshop_theme_setup' );
