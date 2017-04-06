@@ -23,7 +23,8 @@
 	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
 	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
 	$wl_theme_options=array(
-			//Logo and Fevicon header	
+			//Logo and Fevicon header
+			'title_position'=>'',
 			'upload__header_image'=>'',
 			'upload_image_logo'=>'',
 			'height'=>'55',
@@ -492,12 +493,12 @@ function enigma_plugin_recommend(){
             'name'      => 'Flickr Album Gallery',
             'slug'      => 'flickr-album-gallery',
             'required'  => false,
-        ),
+        ),*/
 	array(
-            'name'      => 'Gallery Pro',
-            'slug'      => 'gallery-pro',
+            'name'      => 'Appointment Scheduler',
+            'slug'      => 'appointment-scheduler-weblizar',
             'required'  => false,
-        ), */
+        ), 
 	array(
             'name'      => 'Admin Custom Login',
             'slug'      => 'admin-custom-login',

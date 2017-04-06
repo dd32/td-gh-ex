@@ -25,6 +25,20 @@
 		<div class="container" >
 			<!-- Logo & Contact Info -->
 			<div class="row ">
+			<?php if($wl_theme_options['title_position']) { ?>
+				<div class="col-md-6 col-sm-12 wl_rtl" >					
+					<div claSS="logo logocenter">						
+					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<?php if($wl_theme_options['upload_image_logo']){ ?>
+						<img class="img-responsive" src="<?php echo $wl_theme_options['upload_image_logo']; ?>" style="height:<?php if($wl_theme_options['height']!='') { echo $wl_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($wl_theme_options['width']!='') { echo $wl_theme_options['width']; }  else { "200"; } ?>px;" />
+						<?php } else {
+							echo get_bloginfo('name');
+						} ?>
+					</a>
+					<p><?php bloginfo( 'description' ); ?></p>
+					</div>
+				</div>
+			<?php } else { ?>
 				<div class="col-md-6 col-sm-12 wl_rtl" >					
 					<div claSS="logo">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -37,6 +51,7 @@
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</div>
+			<?php } ?>
 				<?php if($wl_theme_options['header_social_media_in_enabled']=='1') { ?>
 				<div class="col-md-6 col-sm-12">
 				<?php if($wl_theme_options['email_id'] || $wl_theme_options['phone_no'] !='') { ?>
@@ -57,7 +72,7 @@
 	                <?php } if($wl_theme_options['gplus']!='') { ?>
 					<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="gplus"><a href="<?php echo esc_url($wl_theme_options['gplus']) ; ?>"><i class="fa fa-google-plus"></i></a></li>
 	                <?php } if($wl_theme_options['instagram']!='') { ?>
-					<li class="facebook" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($wl_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
+					<li class="instagram" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($wl_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
 	                <?php } if($wl_theme_options['vk_link']!='') { ?>
 					<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="vk"><a href="<?php echo esc_url($wl_theme_options['vk_link']) ; ?>"><i class="fa fa-vk"></i></a></li>
 	                <?php } if($wl_theme_options['qq_link']!='') { ?>

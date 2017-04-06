@@ -46,6 +46,22 @@ $wp_customize->add_section(
 	) );
 	
 	$wp_customize->add_setting(
+		'enigma_options[title_position]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['title_position'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'title_position', array(
+		'label'        => __( 'Show Site Title in Center', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[title_position]',
+	) );
+	
+	$wp_customize->add_setting(
 		'enigma_options[upload__header_image]',
 		array(
 			'type'    => 'option',
@@ -64,6 +80,19 @@ $wp_customize->add_section(
 			'capability'        => 'edit_theme_options',
 		)
 	);
+	
+	// site title and logo position : left and center //
+	$wp_customize->add_setting(
+		'enigma_options[title_position]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['title_position'],
+			'sanitize_callback'=>'esc_url_raw',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	// site title and logo position : left and center //
+	
 	$wp_customize->add_setting(
 		'enigma_options[height]',
 		array(
@@ -73,6 +102,8 @@ $wp_customize->add_section(
 			'capability'        => 'edit_theme_options'
 		)
 	);
+	
+	
 	
 	$wp_customize->add_setting(
 		'enigma_options[width]',
