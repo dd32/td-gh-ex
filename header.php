@@ -20,8 +20,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page">
-		<header id="masthead" role="banner">
+	<div id="page" class="main-bg">
+		<header id="masthead" class="main-bg" role="banner">
 			<nav class="top-navigation menus" role="navigation">
 				<div class="container">
 					<?php abacus_login_register_menu(); ?>

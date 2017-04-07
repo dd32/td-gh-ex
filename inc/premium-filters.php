@@ -63,3 +63,10 @@ if ( ! function_exists( 'abacus_fonts_manager_defaults' ) ) {
 		);
 	}
 }
+
+add_filter( 'abc_slider_description', 'abacus_slider_description' );
+if ( ! function_exists( 'abacus_slider_description' ) ) {
+	function abacus_slider_description() {
+		return __( 'Displaying a slider will overwrite the header image and jumbo headline section', 'abacus' );
+	}
+}

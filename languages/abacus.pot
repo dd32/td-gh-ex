@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Abacus\n"
-"POT-Creation-Date: 2016-09-28 12:56-0400\n"
-"PO-Revision-Date: 2016-09-28 12:56-0400\n"
-"Last-Translator: c.bavota <cbavota@gmail.com>\n"
-"Language-Team: c.bavota <cbavota@gmail.com>\n"
+"POT-Creation-Date: 2017-04-07 14:33-0400\n"
+"PO-Revision-Date: 2017-04-07 14:32-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -28,27 +28,33 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Perhaps try a search?"
 msgstr ""
 
-#: comments.php:28
+#: comments.php:31
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:36
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:45
+#: comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:62
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:63
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:73
 msgid "Comments are closed."
 msgstr ""
 
@@ -67,57 +73,57 @@ msgstr ""
 msgid "The %1$s Theme by %2$s."
 msgstr ""
 
-#: functions.php:78
+#: functions.php:81
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:82
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:151
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:159
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:182
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:184
 msgid "This section appears on the right of the main content on every page."
 msgstr ""
 
-#: functions.php:190
+#: functions.php:192
 msgid "Jumbo Headline"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:194
 msgid ""
 "This section appears on the front page in the centre of the header image. "
 "Designed specifically for one Text widget. "
 msgstr ""
 
-#: functions.php:201
+#: functions.php:203
 msgid "Shop Categories"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:205
 msgid ""
 "This section appears on the Front Page template below the featured section. "
 "Designed specifically for three widgets. "
 msgstr ""
 
-#: functions.php:211
+#: functions.php:213
 msgid "Shop Banner"
 msgstr ""
 
-#: functions.php:213
+#: functions.php:215
 msgid ""
 "This section appears on the Front Page template above the trending section. "
 "Designed specifically for one widget. "
@@ -164,93 +170,104 @@ msgid ""
 msgstr ""
 
 #: inc/about.php:56
-msgid "Custom Colors"
+msgid "Content Slider"
 msgstr ""
 
 #: inc/about.php:58
+msgid ""
+"Sure, you can have a static header image if you want. But why not spice "
+"things up with a dynamic content slider so you can feature your latest posts "
+"or products. "
+msgstr ""
+
+#: inc/about.php:64
+msgid "Custom Colors"
+msgstr ""
+
+#: inc/about.php:66
 msgid ""
 "Why settle on one color when you can choose from any color imaginable. With "
 "the Custom Color plugin, you have the ability to set different colors for "
 "text elements, page backgrounds and more."
 msgstr ""
 
-#: inc/about.php:64
+#: inc/about.php:72
 msgid "Fonts Manager"
 msgstr ""
 
-#: inc/about.php:66
+#: inc/about.php:74
 msgid ""
 "A font can say a lot about a site, so why not test out a few to see which "
 "one might work better. With our Font Manager plugin, you can easily pick "
 "from over 600 Google Fonts or even set up Typekit."
 msgstr ""
 
-#: inc/about.php:72
+#: inc/about.php:80
 msgid "Custom Footer"
 msgstr ""
 
-#: inc/about.php:74
+#: inc/about.php:82
 msgid ""
 "Sometimes you need a little bit more space in your footer for widgets. With "
 "this plugin, you can add up to six columns above the footer and even "
 "customize the text in your footer notice."
 msgstr ""
 
-#: inc/about.php:80
+#: inc/about.php:88
 msgid "Social Icons"
 msgstr ""
 
-#: inc/about.php:82
+#: inc/about.php:90
 msgid ""
 "Being socially active online is a must for any business. That&rsquo;s why we "
 "created the ABC Social Icons premium plugin. Now you can direct any of your "
 "visitors to the social networks you use so they can stay up to date."
 msgstr ""
 
-#: inc/about.php:88
+#: inc/about.php:96
 #, php-format
 msgid ""
 "Want more? Take a look at alphabetthemes.com to see what options are "
 "available when you upgrade. %1$sUpgrade now &rarr;%2$s"
 msgstr ""
 
-#: inc/about.php:95
+#: inc/about.php:103
 msgid "View Documentation"
 msgstr ""
 
-#: inc/about.php:96
+#: inc/about.php:104
 #, php-format
 msgid ""
 "You can read detailed information on how to use %s&rsquo;s features in our "
 "online documentation section."
 msgstr ""
 
-#: inc/about.php:97
+#: inc/about.php:105
 msgid "View documentation &rarr;"
 msgstr ""
 
-#: inc/about.php:105
+#: inc/about.php:113
 msgid "Install Free Plugins"
 msgstr ""
 
-#: inc/about.php:106
+#: inc/about.php:114
 #, php-format
 msgid "Check out some available free plugins that work with %s."
 msgstr ""
 
-#: inc/about.php:109
+#: inc/about.php:117
 msgid "ABC Responsive Videos"
 msgstr ""
 
-#: inc/about.php:112
+#: inc/about.php:120
 msgid "Jetpack by WordPress.com"
 msgstr ""
 
-#: inc/about.php:118
+#: inc/about.php:126
 msgid "Need Support?"
 msgstr ""
 
-#: inc/about.php:119
+#: inc/about.php:127
 #, php-format
 msgid ""
 "If you&rsquo;ve purchased a license from Alphabet Themes, you can access our "
@@ -258,64 +275,88 @@ msgid ""
 "themes or plugins."
 msgstr ""
 
-#: inc/about.php:121
+#: inc/about.php:129
 #, php-format
 msgid "Are you enjoying %s?"
 msgstr ""
 
-#: inc/about.php:122
+#: inc/about.php:130
 #, php-format
 msgid ""
 "Why not leave a review on %1$sWordPress.org%2$s? We&rsquo;d really "
 "appreciate it! %3$s"
 msgstr ""
 
-#: inc/customizer.php:12
-msgid "Continue reading"
-msgstr ""
-
-#: inc/customizer.php:13
-msgid "Featured product description text"
-msgstr ""
-
-#: inc/customizer.php:14
-msgid "Popular product description text"
-msgstr ""
-
-#: inc/customizer.php:23 inc/customizer.php:125
+#: inc/customizer/class-abc-customizer-controls.php:40
+#: inc/customizer/customizer.php:128
 msgid "Reset"
 msgstr ""
 
-#: inc/customizer.php:81
+#: inc/customizer/customizer.php:12
+msgid "Continue reading"
+msgstr ""
+
+#: inc/customizer/customizer.php:13
+msgid "Featured"
+msgstr ""
+
+#: inc/customizer/customizer.php:14
+msgid "Featured product description text"
+msgstr ""
+
+#: inc/customizer/customizer.php:15
+msgid "Trending"
+msgstr ""
+
+#: inc/customizer/customizer.php:16
+msgid "Popular product description text"
+msgstr ""
+
+#: inc/customizer/customizer.php:58
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:91
+#: inc/customizer/customizer.php:68
 msgid "Read More text"
 msgstr ""
 
-#: inc/customizer.php:103
-msgid "Featured product description"
+#: inc/customizer/customizer.php:80
+msgid "Featured product title"
 msgstr ""
 
-#: inc/customizer.php:104 inc/customizer.php:117
+#: inc/customizer/customizer.php:81 inc/customizer/customizer.php:94
+#: inc/customizer/customizer.php:107 inc/customizer/customizer.php:120
 msgid "Only on shop grid template"
 msgstr ""
 
-#: inc/customizer.php:116
+#: inc/customizer/customizer.php:93
+msgid "Featured product description"
+msgstr ""
+
+#: inc/customizer/customizer.php:106
+msgid "Popular product title"
+msgstr ""
+
+#: inc/customizer/customizer.php:119
 msgid "Popular product description"
 msgstr ""
 
-#: inc/customizer.php:137
+#: inc/customizer/customizer.php:140
 msgid "Click on the button below to reset all theme options back to default."
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer/customizer.php:149
 msgid "Unlock Premium Theme Options"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer/customizer.php:162
 msgid "Are you sure?"
+msgstr ""
+
+#: inc/premium-filters.php:70
+msgid ""
+"Displaying a slider will overwrite the header image and jumbo headline "
+"section"
 msgstr ""
 
 #: inc/template-tags.php:26
@@ -392,15 +433,7 @@ msgstr[1] ""
 msgid "Place order"
 msgstr ""
 
-#: page-templates/template-shop-grid.php:33
-msgid "Featured"
-msgstr ""
-
-#: page-templates/template-shop-grid.php:67
-msgid "Trending"
-msgstr ""
-
-#: page-templates/template-shop-grid.php:97
+#: page-templates/template-shop-grid.php:128
 msgid "Reviews"
 msgstr ""
 

@@ -4,7 +4,7 @@ Theme URI: https://alphabetthemes.com/downloads/abacus-wordpress-theme/
 Author: Alphabet Themes
 Author URI: https://alphabetthemes.com
 Description: Simplify your site with Abacus, an elegant theme specifically built for WooCommerce. Display your products using the included Shop Grid page template. Install Jetpack to add testimonials and more. With tons of possibilities, no two layouts are the same. Designed to look great on desktop browsers, tablets and handheld devices. For a live demo go to http://demos.alphabetthemes.com/?theme=abacus.
-Version: 1.0.7
+Version: 1.0.8
 Text Domain: abacus
 Domain Path: /languages/
 Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
@@ -337,6 +337,80 @@ th {
 
   .pull-left {
     float: left !important; } }
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block;
+    width: 100%; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 /* =Defaults
 -------------------------------------------------------------- */
 * {
@@ -664,7 +738,7 @@ img {
   width: 100%;
   background: #fff;
   z-index: 999;
-  border-bottom: 1px solid #e6e6e6; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
   @media (min-width: 769px) {
     #masthead {
       position: fixed; }
@@ -2284,6 +2358,101 @@ p.demo_store {
 
 .woocommerce-checkout #payment .payment_method_paypal .about_paypal {
   margin-left: 5px; }
+
+/* =Slider
+-------------------------------------------------------------- */
+.slick-dots {
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .slick-dots li {
+    display: inline-block; }
+    .slick-dots li button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: rgba(255, 255, 255, 0.5); }
+    .slick-dots li:hover button, .slick-dots li.slick-active button {
+      background: rgba(0, 0, 0, 0.75); }
+
+.slick-slide {
+  position: relative;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease; }
+
+.slick-center {
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08); }
+
+.slick-arrow {
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 120px;
+  z-index: 10;
+  border: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 60px; }
+  .slick-arrow.slick-next {
+    left: auto;
+    right: 0; }
+  .slick-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 255, 0.75); }
+
+#slider {
+  -moz-transition: opacity 300ms ease;
+  -o-transition: opacity 300ms ease;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  opacity: 0; }
+  #slider .title-wrapper {
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center; }
+    #slider .title-wrapper h3 {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin: 0 0 10px; }
+      @media (min-width: 600px) {
+        #slider .title-wrapper h3 {
+          font-size: 48px;
+          font-size: 3rem; } }
+    #slider .title-wrapper a,
+    #slider .title-wrapper p {
+      color: #fff;
+      text-shadow: 1px 0 5px rgba(0, 0, 0, 0.4); }
 
 /* =WordPress Core
 -------------------------------------------------------------- */

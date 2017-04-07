@@ -14,7 +14,11 @@
 get_header();
 ?>
 
-	<?php if ( has_header_image() && is_front_page() ) : ?>
+	<?php
+	if ( abacus_sanitize_checkbox( get_theme_mod( 'abc_slider_display' ) ) && defined( 'ABC_SLIDER' ) && function_exists( 'abc_display_slider' ) && is_front_page() ) {
+		abc_display_slider();
+	} else if ( has_header_image() && is_front_page() ) :  
+		 ?>
 		<div class="parallax">
 			<div class="header-img"></div>
 			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>
@@ -27,12 +31,14 @@ get_header();
 			</div>
 			<?php } ?>
 		</div>
-	<?php endif; ?>
+		<?php 
+	endif; 
+	?>
 
 	<?php if ( is_front_page() ) { ?>
 	<div class="home-container">
 	<?php } ?>
-	<div class="container">
+	<div class="container page-bg">
 		<div class="row">
 			<div id="primary" class="cols">
 				<?php

@@ -11,7 +11,10 @@
 $abacus_default_theme_options = abacus_default_theme_options();
 get_header(); ?>
 
-	<?php if ( has_header_image() ) : ?>
+	<?php 
+	if ( abacus_sanitize_checkbox( get_theme_mod( 'abc_slider_display' ) ) && defined( 'ABC_SLIDER' ) && function_exists( 'abc_display_slider' ) ) {
+		abc_display_slider();
+	} else	if ( has_header_image() ) : ?>
 		<div class="parallax">
 			<div class="header-img"></div>
 			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>
@@ -24,10 +27,12 @@ get_header(); ?>
 			</div>
 			<?php } ?>
 		</div>
-	<?php endif; ?>
+		<?php 
+	endif; 
+	?>
 
 	<div class="home-container">
-	<div id="primary" class="container">
+	<div id="primary" class="container page-bg">
 
 		<?php
 		// Display page content if there is any
@@ -46,7 +51,7 @@ get_header(); ?>
 			$feature_args = apply_filters( 'abacus_featured_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'Featured', 'abacus' ),
+				'title'				=> abacus_sanitize_text( get_theme_mod( 'featured_title', $abacus_default_theme_options['featured_title'] ) ),
 				'description'		=> abacus_sanitize_text( get_theme_mod( 'featured_title_description', $abacus_default_theme_options['featured_title_description'] ) ),
 				)
 			);
@@ -80,7 +85,7 @@ get_header(); ?>
 			$pop_args = apply_filters( 'abacus_popular_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'Trending', 'abacus' ),
+				'title'				=> abacus_sanitize_text( get_theme_mod( 'popular_title', $abacus_default_theme_options['popular_title'] ) ),
 				'description'		=> abacus_sanitize_text( get_theme_mod( 'popular_title_description', $abacus_default_theme_options['popular_title_description'] ) ),
 				)
 			);
@@ -90,9 +95,19 @@ get_header(); ?>
 				?>
 				<section class="product-section popular-products">
 					<h2 class="entry-title page-header"><?php echo esc_attr( $pop_args['title'] ); ?></h2>
-					<p class="entry-desc"><?php echo esc_attr( $feature_args['description'] ); ?></p>
+					<p class="entry-desc"><?php echo esc_attr( $pop_args['description'] ); ?></p>
 
 					<?php echo $pop_products; ?>
+				</section>
+				<?php
+			} else {
+				$latest_products = do_shortcode( '[recent_products per_page="' . intval( $pop_args['limit'] ) . '" columns="' . intval( $pop_args['columns'] ) . '"]' );
+				?>
+				<section class="product-section popular-products">
+					<h2 class="entry-title page-header"><?php echo esc_attr( $pop_args['title'] ); ?></h2>
+					<p class="entry-desc"><?php echo esc_attr( $pop_args['description'] ); ?></p>
+
+					<?php echo $latest_products; ?>
 				</section>
 				<?php
 			}

@@ -16,7 +16,7 @@
  
 get_header(); ?>
 
-	<div class="container">
+	<div class="container page-bg">
 		<div class="row">
 			<section id="primary" class="cols">
 				<?php if ( have_posts() ) : ?>

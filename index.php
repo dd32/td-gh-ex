@@ -15,7 +15,7 @@
  
 get_header(); ?>
 
-	<div class="container">
+	<div class="container page-bg">
 		<div class="row">
 			<div id="primary" class="cols">
 				<?php

@@ -57,6 +57,16 @@ Source: https://github.com/justintadlock/trt-customizer-pro
 
 == CHANGELOG ==
 
+04/07/2017 v1.0.8
+* Fixed issue with shop grid
+* Fixed customizer error issue
+* Added title option to shop grid
+* Added latest products to shop grid if no popular products
+* Added content slider hook
+* Updated to Font Awesome 4.7.0
+* Updated code for new color classes
+* Updated language file
+
 01/09/2017 v1.0.7
 * Fixed date function for internationalization
 * Removed background customizer setting

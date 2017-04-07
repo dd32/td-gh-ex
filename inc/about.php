@@ -52,6 +52,14 @@ class Abacus_Documentation {
 			<div class="feature-section two-col">
 				<div class="col">
 					<div class="media-container">
+						<img src="<?php echo ABACUS_THEME_URL; ?>/images/content-slider-plugin.jpg" />
+						<h3 class="plugin-title"><?php _e( 'Content Slider', 'abacus' ); ?></h3>
+					</div>
+					<p><?php _e( 'Sure, you can have a static header image if you want. But why not spice things up with a dynamic content slider so you can feature your latest posts or products. ', 'abacus' ); ?></p>
+				</div>
+
+				<div class="col">
+					<div class="media-container">
 						<img src="<?php echo ABACUS_THEME_URL; ?>/images/custom-colors-plugin.jpg" />
 						<h3 class="plugin-title"><?php _e( 'Custom Colors', 'abacus' ); ?></h3>
 					</div>
@@ -109,7 +117,7 @@ class Abacus_Documentation {
 							<a href="https://wordpress.org/plugins/abc-responsive-videos/"><?php _e( 'ABC Responsive Videos', 'abacus' ); ?></a>
 						</li>
 						<li>
-							<a href="https://wordpress.org/plugins/jetpack/"><?php _e( 'Jetpack by WordPress.com', 'abacus' ); ?></a>
+							<a href="https://refer.wordpress.com/r/1090/jetpack/"><?php _e( 'Jetpack by WordPress.com', 'abacus' ); ?></a>
 						</li>
 					</ul>
 				</div>

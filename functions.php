@@ -30,14 +30,18 @@ define( 'ABACUS_THEME_URL', get_template_directory_uri() );
 define( 'ABACUS_THEME_TEMPLATE', get_template_directory() );
 define( 'ABACUS_THEME_VERSION', trim( $abacus_theme_data->Version ) );
 define( 'ABACUS_THEME_NAME', $abacus_theme_data->Name );
+define( 'ABC_SLIDER', true );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 860;
 }
 
-foreach ( glob( ABACUS_THEME_TEMPLATE . '/inc/*' ) as $filename ) {
-	include $filename;
-}
+require 'inc/about.php';
+require 'inc/jetpack.php';
+require 'inc/premium-filters.php';
+require 'inc/template-tags.php';
+require 'inc/woocommerce.php';
+require 'inc/customizer/customizer.php';
 
 add_action( 'after_setup_theme', 'abacus_setup' );
 if ( ! function_exists( 'abacus_setup' ) ) {
@@ -66,7 +70,7 @@ if ( ! function_exists( 'abacus_setup' ) ) {
 		) ) );
 		if ( function_exists( 'abc_premium_features' ) ) {
 			add_theme_support( 'custom-background', apply_filters( 'abacus_custom_background_args', array(
-				'default-color' => '2E3739',
+				'default-color' => 'ffffff',
 			) ) );
 		}
 		add_theme_support( 'jetpack-testimonial' );
@@ -88,7 +92,6 @@ if ( ! function_exists( 'abacus_header_style' ) ) {
 		$header_text_color = get_header_textcolor();
 
 		// If no custom options for text are set, let's bail
-		// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
@@ -118,7 +121,7 @@ if ( ! function_exists( 'abacus_enqueue' ) ) {
 
 		wp_enqueue_style( 'abacus-stylesheet', get_stylesheet_uri() );
 		wp_enqueue_style( 'abacus-google-fonts', abacus_fonts_url(), array(), null );
-		wp_enqueue_style( 'font-awesome', ABACUS_THEME_URL .'/css/font-awesome.css', false, '4.4.0', 'all' );
+		wp_enqueue_style( 'font-awesome', ABACUS_THEME_URL .'/css/font-awesome.css', false, '4.7.0', 'all' );		
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
