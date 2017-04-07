@@ -640,7 +640,7 @@ if ( ! function_exists( 'bento_comments_nav' ) ) {
 // Custom comment template
 if ( ! function_exists( 'bento_comment' ) ) {
 
-	function bento_comment($comment, $args, $depth) {
+	function bento_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		?>
 			<div <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
@@ -649,7 +649,13 @@ if ( ! function_exists( 'bento_comment' ) ) {
 				<div class="comment-author vcard clear">
 					<?php echo get_avatar( $comment, 40 ); ?>
 					<div class="fn author-name">
-                    	<?php comment_author(); ?>
+                    	<?php 
+						if ( in_array( $comment->comment_type, array( 'pingback','trackback') )  ) {
+							comment_author_link(); 
+						} else {
+							comment_author(); 
+						}
+						?>
                     </div>
                     <div class="comment-meta">
                         <a href="<?php comment_link() ?>" class="comment-date">

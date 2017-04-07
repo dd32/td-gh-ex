@@ -40,6 +40,45 @@ function bentoEmValue(input) {
 	return output;
 }
 
+// Handle same-page menu links
+function bentoOnePage() {
+	var bento_menuindex = 0;
+	$str('.primary-menu a').each(function() {
+		var $parent = $str(this).parent();
+		var $next = $parent.next('li');
+		var nextlink = $next.children('a');
+		if ( $str(this).attr('href').indexOf("#") != -1 ) {
+			bento_menuindex++;
+			var hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
+			var headerHeight = 0;
+			if ( bentoThemeVars.fixed_menu == 1 ) {
+				headerHeight = $str('.site-header').outerHeight(true);
+			}
+			var currentPosition = $str(window).scrollTop();
+			var scrollPosition = $str('#' + hash).offset().top - headerHeight - 10;
+			// Check if there's another menu item after this one 
+			var nexthash = '';
+			var nextPosition = 9999999;
+			if ( nextlink.length ) {
+				nexthash = nextlink.attr('href').substring(nextlink.attr('href').indexOf('#')+1);
+				var nextPosition = $str('#' + nexthash).offset().top - headerHeight - 10;
+			}
+			// Highlight only the item which corresponds to the currently scrolled section of the page
+			$parent.removeClass('current-menu-item');
+			if ( ( currentPosition == 0 && bento_menuindex == 1 ) || ( currentPosition >= scrollPosition && currentPosition <= nextPosition ) ) {
+				$parent.addClass('current-menu-item');
+			}
+			// Smooth scroll on click
+			$str(this).click(function(e) {
+				if ( $str('#' + hash).length ) {
+					e.preventDefault();
+					$str('html, body').animate( { scrollTop: scrollPosition }, 500 );
+				}
+			});
+		}
+	});
+}
+
 
 $str(document).ready(function() {
 	
@@ -126,34 +165,16 @@ $str(document).ready(function() {
 	}
 	
 	
-	// Fixed header on scroll
+	// Fixed header
 	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(80) ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone();
-				$str('body').append('<header class="site-header fixed-header"></header>');
+				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');
 				$str('.fixed-header').html($bento_headerClone);
 			}
 		}
 	}
-	
-	
-	// Smooth scrolling for same-page menu links
-	$str('.menu-container a').click(function(e) {
-		if ( $str(this).attr('href').indexOf("#") != -1 ) {
-			var hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
-			var scrollPosition = 0; 
-			var headerHeight = 0;
-			if ( bentoThemeVars.fixed_menu == 1 ) {
-				headerHeight = $str('.site-header').outerHeight(true);
-			}
-			if ( $str('#' + hash).length ) {
-				e.preventDefault();
-				scrollPosition = $str('#' + hash).offset().top - headerHeight - 10;
-				$str('html, body').animate( { scrollTop: scrollPosition }, 500 );
-			}
-		}
-	});
 	
 	
 	// Comment form labels
@@ -297,6 +318,10 @@ $str(window).load(function () {
 			$str('html, body').animate( { scrollTop: scrollPosition }, 1 );
 		}
 	}
+	
+	
+	// Same-page menu links
+	bentoOnePage();
 
 
 });
@@ -387,6 +412,10 @@ $str(window).scroll(function () {
 			}
 		}
 	}
+	
+	
+	// Same-page menu links on scroll
+	bentoOnePage();
 	
 	
 });

@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 1.6.4
+Stable tag: 1.6.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,13 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.6.5 / 7 April 2017
+Added full pingback support in the theme using native WP functions.
+Improved the function that determines the number of WooCommerce shop columns.
+Fixed the appearance of the WooCommerce Star Rating filter widget.
+Fixed same-page menu item highlight on scroll.
+Fixed the sticky header positioning when loading the page in the middle.
 
 * 1.6.4 / 3 March 2017
 Fixed the featured images control visibility issue for the project content type.

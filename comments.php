@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 			// The primary comments loop
 			wp_list_comments( array(
 				'style' => 'div',
-				'type' => 'comment',
+				'type' => 'all',
 				'avatar_size' => 40,
 				'callback' => 'bento_comment',
 			) );

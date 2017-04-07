@@ -1669,7 +1669,10 @@ function bento_metaboxes() {
 	
 	// Custom number of columns on the shop page
 	function bento_woo_loop_columns() {
-		$bento_wc_shop_col = (int)get_theme_mod( 'bento_wc_shop_columns' );
+		$bento_wc_shop_col = 3;
+		$bento_wc_settings_shop_col = (int)get_theme_mod( 'bento_wc_shop_columns' );
+		if ( is_int($bento_wc_settings_shop_col) && $bento_wc_settings_shop_col > 0 ) 
+		$bento_wc_shop_col = $bento_wc_settings_shop_col;
 		return $bento_wc_shop_col;
 	}
  
