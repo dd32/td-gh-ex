@@ -158,9 +158,12 @@ body.woocommerce-page.post-type-archive-product #content h1.page-title {
 }
 
 .woocommerce ul.products li.product h3,
-.woocommerce-page ul.products li.product h3 {
+.woocommerce-page ul.products li.product h3,
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
     line-height: 1em;
-    font-weight: 500;
+    font-weight: 400;
     margin: 0;
     padding: 8px 0;
     text-align: center;
@@ -274,6 +277,17 @@ body.woocommerce-page.post-type-archive-product #content h1.page-title {
 .woocommerce ul.products li.product a:hover .star-rating,
 .woocommerce-page ul.products li.product a:hover .star-rating {
     opacity: 1;
+}
+
+/* -- New Gallery CSS -- */
+.woocommerce div.product div.images .flex-control-thumbs {
+    margin: 5px -5px 0;
+}
+.woocommerce div.product div.images .flex-control-thumbs li {
+    padding: 5px;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+    min-height: auto !important;
 }
 
 /* -------- Single Page Styling -------- */

@@ -80,6 +80,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.01
+* Updated/fixed compatibility with new WooCommerce Gallery
+* Color setting fix
+
 #### 1.3.00
 * Styling fixes/tweaks
 * Updated the language.pot file

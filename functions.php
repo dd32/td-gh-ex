@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.00' );
+define( 'CONICA_THEME_VERSION' , '1.3.01' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -84,8 +84,13 @@ function conica_setup_theme() {
 	) );
 	
 	add_editor_style();
+	
     add_theme_support( 'custom-background', array( 'default-color' => '#FFFFFF', ) );
+    
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // conica_setup_theme
 add_action( 'after_setup_theme', 'conica_setup_theme' );
