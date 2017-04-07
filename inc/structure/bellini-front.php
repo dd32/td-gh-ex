@@ -23,7 +23,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
     	// Hero Image Heading
     	if($bellini['bellini_static_slider_title']):
     		$bellini_static_slider_title = wp_kses_post($bellini['bellini_static_slider_title']);?>
-    		<h2 class="element-title slider-content__title">
+    		<h2 class="element-title slider-content__title animate-pop-in">
 				<?php echo do_shortcode(wp_kses_post($bellini_static_slider_title) );?>
 			</h2>
 	    <?php endif; ?>
@@ -31,7 +31,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
     	// Hero Section Content
     	if($bellini['bellini_static_slider_content']):
     		$bellini_static_slider_content = wp_kses_post($bellini['bellini_static_slider_content']);
-    		echo '<div class="slider-content__text animated fadeIn">';
+    		echo '<div class="slider-content__text animate-pop-in">';
 			echo do_shortcode(wp_kses_post($bellini_static_slider_content));
 			echo '</div>';
 	    endif;
@@ -45,7 +45,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
 		if($bellini['bellini_static_slider_button_text-1']):
 				$bellini_slider_cta_one_text = esc_html($bellini['bellini_static_slider_button_text-1']);
 			?>
-		    <a class="button slider__cta--one" role="button" href="<?php if(!empty($bellini['bellini_static_slider_button_url-1'])): echo esc_url($bellini['bellini_static_slider_button_url-1']); endif;?>">
+		    <a class="button slider__cta--one animate-pop-up" role="button" href="<?php if(!empty($bellini['bellini_static_slider_button_url-1'])): echo esc_url($bellini['bellini_static_slider_button_url-1']); endif;?>">
 				<?php echo $bellini_slider_cta_one_text ;?>
 			</a>
 	    <?php endif;?>
@@ -54,7 +54,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
 		if($bellini['bellini_static_slider_button_text-2']):
 			$bellini_slider_cta_two_text = esc_html($bellini['bellini_static_slider_button_text-2']);
 		?>
-		    <a class="button slider__cta--two" role="button" href="<?php if(!empty($bellini['bellini_static_slider_button_url-2'])): echo esc_url($bellini['bellini_static_slider_button_url-2']); endif;?>">
+		    <a class="button slider__cta--two animate-pop-up" role="button" href="<?php if(!empty($bellini['bellini_static_slider_button_url-2'])): echo esc_url($bellini['bellini_static_slider_button_url-2']); endif;?>">
 				<?php echo $bellini_slider_cta_two_text;?>
 			</a>
 	    <?php endif;?>
@@ -146,13 +146,25 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 
 	<?php
 
+	$meta_query  = WC()->query->get_meta_query();
+	$tax_query   = WC()->query->get_tax_query();
+	$tax_query[] = array(
+			'taxonomy' => 'product_visibility',
+			'field'    => 'name',
+			'terms'    => 'featured',
+			'operator' => 'IN',
+	);
+
 	$args = array(
-		'post_type' => 'product',
-		'post_status' => 'publish',
-		'meta_key' => '_featured',
-		'meta_value' => 'yes',
-		'posts_per_page' => absint($bellini['bellini_featured_slides_no_selector']),
-		'no_found_rows' => true,
+		'post_type' 			=> 'product',
+		'post_status' 			=> 'publish',
+		'ignore_sticky_posts' 	=> 1,
+		'posts_per_page' 		=> absint($bellini['bellini_featured_slides_no_selector']),
+		'orderby'  				=> 'date',
+		'order'    				=> 'desc',
+		'meta_query'          	=> $meta_query,
+		'tax_query'           	=> $tax_query,
+		'no_found_rows' 		=> true,
 	);
 
 	if(has_filter('bellini_front_featured_product_args')) {

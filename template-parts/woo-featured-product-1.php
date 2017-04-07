@@ -33,9 +33,9 @@ $woocommerce_loop['loop']++;
 <div class="col-sm-7 front__product-featured__text">
 <div class="row">
 	<div class="col-sm-9 element-title product-featured__title">
-			<a property="url" href="<?php the_permalink(); ?>">
-			<?php woocommerce_template_single_title();?>
-			</a>
+		<a property="url" href="<?php the_permalink(); ?>">
+			<?php the_title( '<h3 class="product_title entry-title">', '</h3>' );?>
+		</a>
 	</div>
 	<div class="col-sm-3 product-featured__price">
 		<?php woocommerce_template_single_price();?>

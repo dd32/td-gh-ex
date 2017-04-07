@@ -69,4 +69,6 @@ jQuery(document).ready(function () {
         jQuery(this).find( '.sub-menu' ).toggleClass('delay--hover');
      });
 
+    jQuery("select").simpleselect();
+
 });

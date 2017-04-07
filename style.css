@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce (WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.41
+Version: 1.42
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -555,6 +555,13 @@ select {
     min-height: 32px;
 }
 
+.simpleselect {
+    color: inherit;
+    font-size: inherit;
+    display: inline-block;
+    padding-right:.8em;
+}
+
 /*--------------------------------------------------------------
 # 4.0 - Tables
 --------------------------------------------------------------*/
@@ -653,7 +660,12 @@ input[type=submit][disabled]:hover {
 }
 
 .button:hover {
-  box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .2)
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 .button--primary {
@@ -829,6 +841,11 @@ a.page-numbers,
 
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
   background-color: transparent;
+}
+
+.main-navigation .menu-item a{
+  border-bottom: 4px solid transparent;
+  transition:border-color .6s linear;
 }
 
 /*--------------------------------------------------------------
@@ -1894,21 +1911,70 @@ object {
     line-height: 1.618;
 }
 
-
-
 .slider__cta--one,
 .slider__cta--two {
     display: inline-block;
     padding: 1.5% 5%;
     transition: all .3s linear;
-    border-radius: 4px;
+    border-radius: 2px;
     margin:0 .6em;
 }
 
 .slider__cta--one:hover,
 .slider__cta--two:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.24);
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+
+/* Static Slider Animations */
+
+.animate-pop-in {
+  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+
+.animate-pop-up {
+  animation: pop-up .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+
+.slider-content__title {
+  animation-delay: .8s;
+}
+
+.slider-content__text {
+  animation-delay: 1s;
+}
+
+.slider__cta--one,.slider__cta--two {
+  animation-delay: 1.5s;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /*--------------------------------------------------------------
