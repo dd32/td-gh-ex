@@ -32,6 +32,8 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.5.2 | 6th April 2017 = 
+* Fix: Issue with woocommerce notice.
 
 = 1.5.1 | 4th April 2017 = 
 * Fix: Issue with related/similar carousel when no image is set.
