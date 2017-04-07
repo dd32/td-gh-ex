@@ -12,13 +12,13 @@
     */
     do_action('ascend_page_title_container');
 
-    global $kt_has_sidebar; 
+    global $ascend_has_sidebar; 
     $ascend = ascend_get_options();
     if(ascend_display_sidebar()) {
-    	$kt_has_sidebar = true;
+    	$ascend_has_sidebar = true;
         $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12';
     } else {
-    	$kt_has_sidebar = false;
+    	$ascend_has_sidebar = false;
         $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
     }
     if(isset($ascend['search_layout_style'])) {

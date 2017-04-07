@@ -2,20 +2,20 @@
 add_filter( 'cmb2_admin_init', 'ascend_blog_page_metaboxes');
 function ascend_blog_page_metaboxes(){
 	$prefix = '_kad_';
-	$kt_blog_page = new_cmb2_box( array(
+	$ascend_blog_page = new_cmb2_box( array(
 		'id'         	=> 'blog_template_metabox',
 		'title'      	=> __('Blog Options', 'ascend'),
 		'object_types'  => array('page'),
 		'show_on' 		=> array('key' => 'blog-page'),
 		'priority'   	=> 'high',
 	) );
-	$kt_blog_page->add_field( array(
+	$ascend_blog_page->add_field( array(
 		'name' => __('Blog Category', 'ascend'),
 		'desc' 	=> __('Select all blog posts or a specific category to show', 'ascend'),
 		'id'   	=> $prefix . 'blog_cat',
 		'type' => 'kt_select_category',
 	) );
-	$kt_blog_page->add_field( array(
+	$ascend_blog_page->add_field( array(
 		'name'    => __('Order Items By', 'ascend'),
 		'desc'    => '',
 		'id'      => $prefix . 'blog_order',
@@ -28,7 +28,7 @@ function ascend_blog_page_metaboxes(){
 			'rand' 			=> __('Random', 'ascend' ),
 		),
 	) );
-	$kt_blog_page->add_field( array(
+	$ascend_blog_page->add_field( array(
 		'name'    => __('How Many Posts Per Page', 'ascend'),
 		'desc'    => '',
 		'id'      => $prefix . 'blog_items',
@@ -57,7 +57,7 @@ function ascend_blog_page_metaboxes(){
 			'20' 	=> __('20', 'ascend' ),
 		),
 	) );
-	$kt_blog_page->add_field( array(
+	$ascend_blog_page->add_field( array(
 		'name'    => __('Post output style', 'ascend'),
 		'desc'    => '',
 		'id'      => $prefix . 'blog_type',
@@ -72,7 +72,7 @@ function ascend_blog_page_metaboxes(){
 			'photo' 		=> __('Photo', 'ascend' ),
 		),
 	) );
-	$kt_blog_page->add_field( array(
+	$ascend_blog_page->add_field( array(
 		'name'    => __('If grid or photo layout choose columns:', 'ascend'),
 		'desc'    => '',
 		'id'      => $prefix . 'blog_columns',

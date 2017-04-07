@@ -24,8 +24,9 @@ function ascend_get_options_placeholder_image() {
         return '';
     }
 }
-function ascend_default_placeholder_image() {
-    return apply_filters('ascend_default_placeholder_image', 'http://placehold.it/');
+
+function ascend_default_placeholder_image_url() {
+    return apply_filters('ascend_default_placeholder_image_url', get_template_directory_uri() . '/assets/img/placeholder-min.jpg');
 }
 
 function ascend_basic_image_sizes() {
@@ -75,13 +76,13 @@ function ascend_get_image_array($width = null, $height = null, $crop = true, $cl
     		$width = $height;
     	}
         $return_array = array(
-            'src' => ascend_default_placeholder_image().$width.'x'.$height.'?text=Image+Placeholder',
+            'src' => ascend_default_placeholder_image_url(),
             'width' => $width,
             'height' => $height,
             'srcset' => '',
             'class' => $class,
             'alt' => $alt,
-            'full' => ascend_default_placeholder_image().$width.'x'.$height.'?text=Image+Placeholder',
+            'full' => ascend_default_placeholder_image_url(),
         );
     } else {
         $return_array = array(

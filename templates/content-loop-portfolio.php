@@ -1,34 +1,34 @@
 <?php 
-global $post, $kt_portfolio_loop, $kt_portfolio_loop_count;
+global $post, $ascend_portfolio_loop, $ascend_portfolio_loop_count;
 do_action('ascend_portfolio_loop_start');
 	$postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
 	$crop = true;
-	if( $kt_portfolio_loop['carousel'] == 'true') {
+	if( $ascend_portfolio_loop['carousel'] == 'true') {
 		$class = 'portfolio_carousel_item kt-slick-slide p_item';
 	} else{
 		$class = 'p_item';
 	}
-	if ($kt_portfolio_loop['columns'] == '2') {
+	if ($ascend_portfolio_loop['columns'] == '2') {
 	 	$itemsize 	= 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12';
 	 	$image_width = 860;
-	} else if ($kt_portfolio_loop['columns'] == '1'){
+	} else if ($ascend_portfolio_loop['columns'] == '1'){
 		$itemsize = 'col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-ss-12';
 		$image_width = 860;
-	} else if ($kt_portfolio_loop['columns'] == '3'){
+	} else if ($ascend_portfolio_loop['columns'] == '3'){
 		$itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12';
 		$image_width = 600;
-	} else if ($kt_portfolio_loop['columns'] == '6'){
+	} else if ($ascend_portfolio_loop['columns'] == '6'){
 		$itemsize = 'col-xxl-15 col-xl-2 col-md-2 col-sm-3 col-xs-4 col-ss-6';
 		$image_width = 240;
-	} else if ($kt_portfolio_loop['columns'] == '5'){
+	} else if ($ascend_portfolio_loop['columns'] == '5'){
 		$itemsize = 'col-xxl-2 col-xl-2 col-md-25 col-sm-3 col-xs-4 col-ss-6';
 		$image_width = 240;
 	} else {
 		$itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-12';
 		$image_width = 300;
 	}
-    if(isset($kt_portfolio_loop['ratio']) && !empty($kt_portfolio_loop['ratio'])) {
-    	$portfolio_ratio = $kt_portfolio_loop['ratio'];
+    if(isset($ascend_portfolio_loop['ratio']) && !empty($ascend_portfolio_loop['ratio'])) {
+    	$portfolio_ratio = $ascend_portfolio_loop['ratio'];
     } else {
 		$portfolio_ratio = 'square';
     }
@@ -102,7 +102,7 @@ do_action('ascend_portfolio_loop_start');
 			echo '<div class="portfolio-overlay-border"></div>';
 			echo '<a href="'.esc_url( get_the_permalink() ).'" class="portfolio-hover-item-link"></a>';
 			echo '<div class="portfolio-hover-item-inner">';
-                if($kt_portfolio_loop['lightbox'] == 'true') {
+                if($ascend_portfolio_loop['lightbox'] == 'true') {
                 	$light_class = 'portfolio_lightbox';
                 	if($postsummery == 'videolight'){
                 		$video = get_post_meta( $post->ID, '_kad_post_video', true );
@@ -123,10 +123,10 @@ do_action('ascend_portfolio_loop_start');
 						</a>
 				<?php 
 				}
-				if($kt_portfolio_loop['style'] != "poststyle") { ?>
+				if($ascend_portfolio_loop['style'] != "poststyle") { ?>
 					<a href="<?php the_permalink() ?>" class="portfolio-inner-link">
 	                    <h5 class="portfolio-loop-title"><?php the_title();?></h5>
-	                    <?php if($kt_portfolio_loop['showtypes'] == 'true') {
+	                    <?php if($ascend_portfolio_loop['showtypes'] == 'true') {
 	                            if ( $terms && ! is_wp_error( $terms ) ) {?> 
 	                               	<div class="portfolio-loop-types">
 	                                    <?php 
@@ -139,7 +139,7 @@ do_action('ascend_portfolio_loop_start');
 	                          	<?php } 
 	                    } ?>
 	                    </a>
-						<?php if($kt_portfolio_loop['showexcerpt'] == 'true') {?> 
+						<?php if($ascend_portfolio_loop['showexcerpt'] == 'true') {?> 
 	                        <div class="portfolio-loop-excerpt">
 	                            <?php the_excerpt(); ?>
 	                        </div>
@@ -149,11 +149,11 @@ do_action('ascend_portfolio_loop_start');
                 </div>
 			</div> 
 			<?php 
-            if($kt_portfolio_loop['style'] == "poststyle" ) { ?>
+            if($ascend_portfolio_loop['style'] == "poststyle" ) { ?>
             	<div class="portfolio-poststyle-content postclass">
               		<a href="<?php the_permalink() ?>" class="portfolio-poststyle-link">  
                         <h5 class="portfolio-loop-title"><?php the_title();?></h5>
-                        <?php if($kt_portfolio_loop['showtypes'] == 'true') {
+                        <?php if($ascend_portfolio_loop['showtypes'] == 'true') {
                         		if ( $terms && ! is_wp_error( $terms ) ) {?> 
 	                               	<div class="portfolio-loop-types">
 	                                    <?php 
@@ -167,7 +167,7 @@ do_action('ascend_portfolio_loop_start');
                        	} ?>
                     </a>
                     <?php 
-                       	if($kt_portfolio_loop['showexcerpt'] == 'true') { ?> 
+                       	if($ascend_portfolio_loop['showexcerpt'] == 'true') { ?> 
                        		<div class="portfolio-loop-excerpt">
                        			<?php the_excerpt(); ?>
                        		</div> 

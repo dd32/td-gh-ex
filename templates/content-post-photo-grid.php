@@ -1,13 +1,13 @@
 <?php 
 
-global $post, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
+global $post, $ascend_has_sidebar, $ascend_grid_columns, $ascend_grid_carousel;
 	$ascend = ascend_get_options();
-    if($kt_has_sidebar) {
-        if(!empty($kt_grid_columns)) {
-            if($kt_grid_columns == '3') {
+    if($ascend_has_sidebar) {
+        if(!empty($ascend_grid_columns)) {
+            if($ascend_grid_columns == '3') {
                 $image_width = 420;
                 $image_height = 280;
-            } else if($kt_grid_columns == '2') {
+            } else if($ascend_grid_columns == '2') {
                 $image_width = 660;
                 $image_height = 440;
             } else {
@@ -19,12 +19,12 @@ global $post, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
             $image_height = 240;
         }
     } else {
-        if(!empty($kt_grid_columns)) {
-            if($kt_grid_columns == '3') {
+        if(!empty($ascend_grid_columns)) {
+            if($ascend_grid_columns == '3') {
                 $image_width = 480;
                 $image_height = 320;
 
-            } else if($kt_grid_columns == '2') {
+            } else if($ascend_grid_columns == '2') {
                 $image_width = 660;
                 $image_height = 440;
             } else {
@@ -39,7 +39,7 @@ global $post, $kt_has_sidebar, $kt_grid_columns, $kt_grid_carousel;
 
     $image_width = apply_filters('ascend_post_grid_image_width', $image_width);
     $image_height = apply_filters('ascend_post_grid_image_height', $image_height);
-    if(isset($kt_grid_carousel) && $kt_grid_carousel != true) {
+    if(isset($ascend_grid_carousel) && $ascend_grid_carousel != true) {
 	    if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] == 1) {
 	        $image_crop = true;
 	    } else {

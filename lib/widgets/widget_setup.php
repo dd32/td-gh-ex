@@ -104,11 +104,11 @@ function ascend_widgets_init() {
     }
 
       // Widgets
-    register_widget('kad_contact_widget');
-    register_widget('kad_social_widget');
-    register_widget('kad_recent_posts_widget');
-    register_widget('kad_post_grid_widget');
-    register_widget('kad_image_widget');
+    register_widget('ascend_contact_widget');
+    register_widget('ascend_social_widget');
+    register_widget('ascend_recent_posts_widget');
+    register_widget('ascend_post_grid_widget');
+    register_widget('ascend_image_widget');
 }
 add_action('widgets_init', 'ascend_widgets_init');
 

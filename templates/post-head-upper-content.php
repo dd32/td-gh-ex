@@ -7,9 +7,9 @@ global $post;
     } else {
       $slideheight = 400;
     }
-    $kt_headcontent = ascend_get_post_head_content();
+    $ascend_headcontent = ascend_get_post_head_content();
 
-    if ($kt_headcontent == 'imgcarousel') { ?>
+    if ($ascend_headcontent == 'imgcarousel') { ?>
         <section class="postfeat kt-upper-head-content post-carousel-upper">
             <div class="slick-slider kad-light-gallery kt-slickslider kt-image-carousel loading" data-slider-speed="7000" data-slider-anim-speed="400" data-slider-fade="false" data-slider-type="carousel" data-slider-auto="true" data-slider-arrows="true">
                     <?php

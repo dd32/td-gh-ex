@@ -2,19 +2,19 @@
 /* 
 * Single Content 
 */
-    global $post, $kt_feat_width, $kt_has_sidebar;
+    global $post, $ascend_feat_width, $ascend_has_sidebar;
 
     if(ascend_display_sidebar()) {
-        $kt_feat_width = apply_filters('ascend_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
-        $kt_has_sidebar = true;
+        $ascend_feat_width = apply_filters('ascend_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
+        $ascend_has_sidebar = true;
     } else {
-        $kt_feat_width = apply_filters('ascend_blog_full_image_width', ascend_post_image_width()); 
-        $kt_has_sidebar = false;
+        $ascend_feat_width = apply_filters('ascend_blog_full_image_width', ascend_post_image_width()); 
+        $ascend_has_sidebar = false;
     }
     $postclass = array('postclass');
-    $kt_headcontent = ascend_get_post_head_content();
-    if($kt_headcontent != 'none'){
-        $postclass[] = 'kt_post_header_content-'.$kt_headcontent;
+    $ascend_headcontent = ascend_get_post_head_content();
+    if($ascend_headcontent != 'none'){
+        $postclass[] = 'kt_post_header_content-'.$ascend_headcontent;
     } else {
         $postclass[] = 'kt_no_post_header_content';
     }

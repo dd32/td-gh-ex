@@ -46,8 +46,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				} else {
 					$icon_o = '';
 				}
-				if(isset($icon['url'])) {
-					$link = $icon['url'];
+				if(isset($icon['link'])) {
+					$link = $icon['link'];
 				} else {
 					$link = '';
 				}

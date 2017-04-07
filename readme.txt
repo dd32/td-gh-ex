@@ -28,6 +28,26 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.0.8 | 7th April 2017 =
+* Fix: Issue with WC 3.0 and featured products.
+* Fix: Issue with portfolio sidebar.
+* Fix: Issue with image zoom not starting up.
+* Update: Woo template notice.
+* Update: Remove comment.php file
+* Remove: Remove two woo files.
+* Update: Add option for 1 column image menu item.
+* Update: Replace all global varibles with ascend prefix.
+* Update: Rename wiget classes to use ascend prefix.
+* Update: replace: wp_reset_query() with wp_reset_postdata()
+* Update: remove placehold.it.
+
+= Version 1.0.7 | 3rd April 2017 =
+* Fix: Issue with photon.
+* Fix: Clear floats.
+
+= Version 1.0.6 | 30th March 2017 =
+* Update: Link issue with icon menu.
+
 = Version 1.0.5 | 30th March 2017 =
 * Change: Version to try and upload.
 

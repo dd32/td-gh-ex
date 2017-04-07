@@ -43,11 +43,11 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/portf
 /*
  * Init Widgets
  */
-require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-kad_contact_widget.php');         	// Contact Widget
-require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-kad_recent_posts_widget.php');       // Recent Posts Widget
-require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-kad_post_grid_widget.php');         	// Post Grid Widget
-require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-kad_social_widget.php');         	// Social Widget
-require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-kad_image_widget.php');         		// Image Widget
+require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-ascend_contact_widget.php');         	// Contact Widget
+require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-ascend_recent_posts_widget.php');       // Recent Posts Widget
+require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-ascend_post_grid_widget.php');         	// Post Grid Widget
+require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-ascend_social_widget.php');         	// Social Widget
+require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/class-ascend_image_widget.php');         		// Image Widget
 require_once( trailingslashit( get_template_directory() ) . 'lib/widgets/widget_setup.php');  						// Widget Setup
 
 /*
@@ -82,7 +82,6 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/woocommerce/woo
 require_once( trailingslashit( get_template_directory() ) . 'lib/admin_scripts.php');    					// Admin Scripts
 require_once( trailingslashit( get_template_directory() ) . 'lib/scripts.php');        					// Front End Scripts and stylesheets
 require_once( trailingslashit( get_template_directory() ) . 'lib/output_css.php'); 						// Fontend Custom CSS
-
 
 /**
  * Note: Do not add any custom code here. Please use a custom plugin or child theme so that your customizations aren't lost during updates.

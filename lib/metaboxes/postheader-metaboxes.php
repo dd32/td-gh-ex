@@ -3,14 +3,14 @@ add_filter( 'cmb2_admin_init', 'ascend_postheader_metaboxes');
 function ascend_postheader_metaboxes(){
 	$prefix = '_kad_';
 
-	$kt_postheader = new_cmb2_box( array(
+	$ascend_postheader = new_cmb2_box( array(
 		'id'         	=> 'post_header_metabox',
 		'title'      	=> __("Post Title and Subtitle", 'ascend'),
 		'object_types'  => array( 'product', 'post', 'portfolio', 'tribe_events', 'recipe'),
 		'priority'   	=> 'default',
 	) );
 	
-	$kt_postheader->add_field( array(
+	$ascend_postheader->add_field( array(
 		'name'    => __("Hide Page Title Area", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'pagetitle_hide',

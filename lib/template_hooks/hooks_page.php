@@ -228,8 +228,8 @@ if(!function_exists('ascend_build_post_content_carousel')) {
     	if($type == 'portfolio') {
     		$tax = 'portfolio-type';
     		$margin = 'row-margin-small';
-    		global $kt_portfolio_loop;
-            $kt_portfolio_loop = array(
+    		global $ascend_portfolio_loop;
+            $ascend_portfolio_loop = array(
             	'lightbox' 		=> 'true',
              	'showexcerpt' 	=> 'false',
              	'showtypes' 	=> 'true',
@@ -260,10 +260,30 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 		  		$woocommerce_loop['columns'] = $columns;
 	    	}
     		if($productargs == 'featured'){
-	    		$extraargs = array(
-	    			'meta_key' 		=> '_featured',
-					'meta_value' 	=> 'yes',
-				);
+	    		if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+			        $meta_query  = WC()->query->get_meta_query();
+					$tax_query   = WC()->query->get_tax_query();
+					$tax_query[] = array(
+						'taxonomy' => 'product_visibility',
+						'field'    => 'name',
+						'terms'    => 'featured',
+						'operator' => 'IN',
+					);
+					$extraargs = array(
+						'meta_query'          => $meta_query,
+						'tax_query'           => $tax_query,
+					);
+				} else {
+					$meta_query   = WC()->query->get_meta_query();
+					$meta_query[] = array(
+						'key'   => '_featured',
+						'value' => 'yes'
+					);
+
+					$extraargs = array(
+						'meta_query'	 => $meta_query
+					);
+				}
     		} else if ($productargs == 'best') {
     			$extraargs = array(
 	    			'meta_key' 		=> 'total_sales',
@@ -312,9 +332,9 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 			}
     	} else {
     		$post_type = 'post';
-    		global $kt_grid_columns, $kt_grid_carousel;
-    		$kt_grid_columns = $columns;
-    		$kt_grid_carousel = true;
+    		global $ascend_grid_columns, $ascend_grid_carousel;
+    		$ascend_grid_columns = $columns;
+    		$ascend_grid_carousel = true;
     		$margin = 'rowtight';
     		$tax = 'category';
     		if(empty($orderby)) {
@@ -323,9 +343,9 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 			if(empty($order)) {
 				$order = 'DESC';
 			}
-			if ($kt_grid_columns == '2') {
+			if ($ascend_grid_columns == '2') {
 		        $itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12'; 
-		    } else if ($kt_grid_columns == '3'){ 
+		    } else if ($ascend_grid_columns == '3'){ 
 		        $itemsize = 'col-xxl-3 col-xl-4 col-md-4 col-sm-4 col-xs-6 col-ss-12'; 
 		    } else {
 		        $itemsize = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-6 col-ss-12';
@@ -337,10 +357,26 @@ if(!function_exists('ascend_build_post_content_carousel')) {
 			'post_type' 		=> $post_type,
 			'offset' 			=> $offset,
 			'post_status' 		=> 'publish',
-			$tax 				=> $cat,
 			'posts_per_page' 	=> $items,
 		);
 		$args = array_merge($args, $extraargs);
+		if ( ! empty( $cat ) ) {
+			if('product' == $post_type) {
+				if ( empty( $args['tax_query'] ) ) {
+					$args['tax_query'] = array();
+				}
+				$args['tax_query'][] = array(
+					array(
+						'taxonomy' => $tax,
+						'terms'    => array_map( 'sanitize_title', explode( ',', $cat ) ),
+						'field'    => 'slug',
+					),
+				);
+			} else {
+				$ccat = array($tax => $cat);
+				$args = array_merge($args, $ccat);
+			}
+		}
 			echo '<div class="carousel_outerrim">';
 			echo '<div class="carouselcontainer '.esc_attr($margin).'">';
 			echo '<div id="kadence-carousel-'.esc_attr($id).'" class="slick-slider '.esc_attr($class).' carousel_shortcode kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="'.esc_attr($trans_speed).'" data-slider-scroll="'.esc_attr($scroll).'" data-slider-auto="'.esc_attr($auto).'" data-slider-speed="'.esc_attr($speed).'" data-slider-xxl="'.esc_attr($cc['xxl']).'" data-slider-xl="'.esc_attr($cc['xl']).'" data-slider-md="'.esc_attr($cc['md']).'" data-slider-sm="'.esc_attr($cc['sm']).'" data-slider-xs="'.esc_attr($cc['xs']).'" data-slider-ss="'.esc_attr($cc['ss']).'">';

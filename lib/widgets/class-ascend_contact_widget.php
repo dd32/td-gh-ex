@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Contact widget
  */
-class kad_contact_widget extends WP_Widget {
+class ascend_contact_widget extends WP_Widget {
     private static $instance = 0;
     public function __construct() {
         $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'ascend'));

@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *  Just a rewite of wp recent post
  * 
  */
-class kad_recent_posts_widget extends WP_Widget {
+class ascend_recent_posts_widget extends WP_Widget {
 
   	private static $instance = 0;
 	public function __construct() {

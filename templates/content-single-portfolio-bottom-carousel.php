@@ -1,12 +1,12 @@
-<?php  global $post, $kt_portfolio_loop;
+<?php  global $post, $ascend_portfolio_loop;
 		$ascend = ascend_get_options();
 		$portfolio_carousel = get_post_meta( $post->ID, '_kad_portfolio_carousel', true ); 
 		if (empty($portfolio_carousel) || $portfolio_carousel == 'default')  { 
 			if(isset($ascend['portfolio_bottom_carousel'])) {
-				$kt_bottom_carousel = $ascend['portfolio_bottom_carousel'];
+				$ascend_bottom_carousel = $ascend['portfolio_bottom_carousel'];
 			}
 		} else if($portfolio_carousel != 'no'){
-			$kt_bottom_carousel = $portfolio_carousel;
+			$ascend_bottom_carousel = $portfolio_carousel;
 		}
 		if(isset($ascend['portfolio_type_under_title']) && $ascend['portfolio_type_under_title'] == '0') {
 			$portfolio_item_types = 'false';
@@ -29,9 +29,9 @@
 			$portfolio_ratio = 'square';
 		}
 		if(isset($ascend['portfolio_bottom_car_column']) ) {
-            $kt_grid_columns = $ascend['portfolio_bottom_car_column'];
+            $ascend_grid_columns = $ascend['portfolio_bottom_car_column'];
         } else {
-            $kt_grid_columns = '4';
+            $ascend_grid_columns = '4';
         }
         if(isset($ascend['portfolio_bottom_car_items']) ) {
             $carousel_items = $ascend['portfolio_bottom_car_items'];
@@ -51,29 +51,29 @@
    		$style = 'pgrid';
    		$tileheight = '0';
 		$bc = array();
-        if ($kt_grid_columns == '4') {
+        if ($ascend_grid_columns == '4') {
             $bc = ascend_carousel_columns('4');
-        } else if($kt_grid_columns == '5') {
+        } else if($ascend_grid_columns == '5') {
             $bc = ascend_carousel_columns('5');
-        } else if($kt_grid_columns == '6') {
+        } else if($ascend_grid_columns == '6') {
             $bc = ascend_carousel_columns('6');
-        } else if($kt_grid_columns == '2') {
+        } else if($ascend_grid_columns == '2') {
             $bc = ascend_carousel_columns('2');
         } else {
             $bc = ascend_carousel_columns('3');
         } 
         $bc = apply_filters('ascend_bottom_portfolio_carousel_columns', $bc);
-        $kt_portfolio_loop = array(
+        $ascend_portfolio_loop = array(
          	'lightbox' 		=> $portfolio_lightbox,
          	'showexcerpt' 	=> $portfolio_excerpt,
          	'showtypes' 	=> $portfolio_item_types,
-         	'columns' 		=> $kt_grid_columns,
+         	'columns' 		=> $ascend_grid_columns,
          	'ratio' 		=> $portfolio_ratio,
          	'style' 		=> $style,
          	'carousel' 		=> 'true',
          	'tileheight' 	=> $tileheight,
         );
-        if($kt_bottom_carousel == 'related') {
+        if($ascend_bottom_carousel == 'related') {
             $default_title = __('Similar Projects', 'ascend');
             $typeterms =  wp_get_post_terms( $post->ID, 'portfolio-type', array( 'orderby' => 'parent', 'order' => 'ASC' ));
 			$typeterm = $typeterms[0]; 
@@ -116,7 +116,7 @@
 				    <div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'ascend');?></div>
 
 				<?php endif; 
-				wp_reset_query(); ?>								
+				wp_reset_postdata(); ?>								
 			</div>
         </div>
     </div>

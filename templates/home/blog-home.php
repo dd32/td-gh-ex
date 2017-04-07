@@ -43,10 +43,10 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 		echo '</div>';
 	}
 	$lay = ascend_get_postlayout($type);
-	global $kt_grid_columns, $kt_blog_loop, $kt_grid_carousel;
-	$kt_blog_loop['loop'] = 1;
-	$kt_grid_columns = $blogcolumns;
-	$kt_grid_carousel = false;
+	global $ascend_grid_columns, $ascend_blog_loop, $ascend_grid_carousel;
+	$ascend_blog_loop['loop'] = 1;
+	$ascend_grid_columns = $blogcolumns;
+	$ascend_grid_carousel = false;
 	$itemsize = ascend_get_post_grid_item_size($blogcolumns, false);
 	 ?>
    	<div class="kt_blog_home <?php echo esc_attr($lay['pclass']); ?>">
@@ -61,7 +61,7 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 				'posts_per_page' 		=> $blogcount
 				));
 		if ( $loop ) : 
-			$kt_blog_loop['count'] = $loop->post_count;
+			$ascend_blog_loop['count'] = $loop->post_count;
 
 			while ( $loop->have_posts() ) : $loop->the_post();
 			if($lay['sum'] == 'full'){ 
@@ -71,7 +71,7 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
                     get_template_part('templates/content', 'post-full'); 
                 }
 	        } else if($lay['sum'] == 'grid') { 
-	        	if($lay['highlight'] == 'true' && $kt_blog_loop['loop'] == 1) {
+	        	if($lay['highlight'] == 'true' && $ascend_blog_loop['loop'] == 1) {
                     get_template_part('templates/content', get_post_format());
                 } else { ?>
                    	<div class="<?php echo esc_attr($itemsize);?> b_item kad_blog_item">
@@ -88,13 +88,13 @@ echo '<div class="home_blog home-margin clearfix home-padding">';
 	        } else { 
 	        	get_template_part('templates/content', get_post_format());
 	        }
-	        $kt_blog_loop['loop'] ++;
+	        $ascend_blog_loop['loop'] ++;
         endwhile; else: ?>
 			<div class="error-not-found"><?php _e('Sorry, no blog entries found.', 'ascend'); ?></div>
 		<?php 
 		endif; 
 
-		wp_reset_query(); ?>
+		wp_reset_postdata(); ?>
 		</div>
 	</div>
 	<?php  	

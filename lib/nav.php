@@ -22,8 +22,8 @@ add_filter('nav_menu_item_id', '__return_null');
  * add span around text in links, add icon, add description.
  */
 function ascend_menu_nav_args($args, $item, $depth) {
-	$kt_iconmenu = get_post_meta($item->ID, '_menu_item_kticonmenu', true);
-	$args->link_before = ! empty( $kt_iconmenu) ? '<i class="'.esc_attr( $kt_iconmenu).'"></i>' : '';
+	$ascend_iconmenu = get_post_meta($item->ID, '_menu_item_kticonmenu', true);
+	$args->link_before = ! empty( $ascend_iconmenu) ? '<i class="'.esc_attr( $ascend_iconmenu).'"></i>' : '';
 	if($depth == 0) {
 		$args->after = ! empty( $item->description ) ? '<span class="sf-description">'.esc_attr( $item->description ).'</span>' : '';
 	}
@@ -35,10 +35,10 @@ add_filter('nav_menu_item_args', 'ascend_menu_nav_args', 20, 3);
 * add classes
 */
 function ascend_menu_nav_li_css_classes($classes, $item, $args, $depth) {
-	if ($kt_lgmenu = get_post_meta($item->ID, '_menu_item_ktlgmenu', true)) {
+	if ($ascend_lgmenu = get_post_meta($item->ID, '_menu_item_ktlgmenu', true)) {
         $classes[] = 'kt-lgmenu';
-        if ($kt_columnmenu = get_post_meta($item->ID, '_menu_item_ktcolumnmenu', true)) {
-          $classes[] = 'kt-menu-column-'.$kt_columnmenu;
+        if ($ascend_columnmenu = get_post_meta($item->ID, '_menu_item_ktcolumnmenu', true)) {
+          $classes[] = 'kt-menu-column-'.$ascend_columnmenu;
         }
     }
     if(in_array('menu-item-has-children', $classes)) {

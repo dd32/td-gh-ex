@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-global $kt_portfolio_loop;
+global $ascend_portfolio_loop;
 $ascend = ascend_get_options();
 	if(!empty($ascend['home_portfolio_carousel_title'])) {
 		$btitle = $ascend['home_portfolio_carousel_title'];
@@ -45,9 +45,9 @@ $ascend = ascend_get_options();
 		$portfolio_ratio = 'square';
 	}
 	if(isset($ascend['home_portfolio_carousel_column']) ) {
-        $kt_grid_columns = $ascend['home_portfolio_carousel_column'];
+        $ascend_grid_columns = $ascend['home_portfolio_carousel_column'];
     } else {
-        $kt_grid_columns = '4';
+        $ascend_grid_columns = '4';
     }
     if(isset($ascend['home_portfolio_carousel_count']) ) {
         $carousel_items = $ascend['home_portfolio_carousel_count'];
@@ -71,13 +71,13 @@ $ascend = ascend_get_options();
 		$p_type_slug = '';
 	}
 	$bc = array();
-    if ($kt_grid_columns == '4') {
+    if ($ascend_grid_columns == '4') {
         $bc = ascend_carousel_columns('4');
-    } else if($kt_grid_columns == '5') {
+    } else if($ascend_grid_columns == '5') {
         $bc = ascend_carousel_columns('5');
-    } else if($kt_grid_columns == '6') {
+    } else if($ascend_grid_columns == '6') {
         $bc = ascend_carousel_columns('6');
-    } else if($kt_grid_columns == '2') {
+    } else if($ascend_grid_columns == '2') {
         $bc = ascend_carousel_columns('2');
     } else {
         $bc = ascend_carousel_columns('3');
@@ -88,11 +88,11 @@ $ascend = ascend_get_options();
     	$margins = 'row-margin-small';
     }
     $bc = apply_filters('ascend_home_portfolio_carousel_columns', $bc);
-    $kt_portfolio_loop = array(
+    $ascend_portfolio_loop = array(
      	'lightbox' 		=> $portfolio_lightbox,
      	'showexcerpt' 	=> $portfolio_excerpt,
      	'showtypes' 	=> $portfolio_item_types,
-     	'columns' 		=> $kt_grid_columns,
+     	'columns' 		=> $ascend_grid_columns,
      	'ratio' 		=> $portfolio_ratio,
      	'style' 		=> $portfolio_style,
      	'carousel' 		=> 'true',
@@ -136,7 +136,7 @@ $ascend = ascend_get_options();
 				    <div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'ascend');?></div>
 
 				<?php endif; 
-				wp_reset_query(); ?>								
+				wp_reset_postdata(); ?>								
 			</div>
         </div>
     </div>

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Social widget
  */
-class kad_social_widget extends WP_Widget {
+class ascend_social_widget extends WP_Widget {
   	private static $instance = 0;
     public function __construct() {
     	$widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'ascend'));

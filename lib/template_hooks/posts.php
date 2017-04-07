@@ -166,16 +166,16 @@ function ascend_post_authorbox() {
 }
 add_action( 'ascend_single_post_after', 'ascend_post_bottom_carousel', 30 );
 function ascend_post_bottom_carousel() {
- 	global $post, $kt_bottom_carousel;
+ 	global $post, $ascend_bottom_carousel;
  	$ascend = ascend_get_options();
-		$kt_bottom_carousel = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); 
-      	if(empty($kt_bottom_carousel) || $kt_bottom_carousel == 'default' ) { 
+		$ascend_bottom_carousel = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); 
+      	if(empty($ascend_bottom_carousel) || $ascend_bottom_carousel == 'default' ) { 
       		if(isset($ascend['post_carousel_default'])) {
-      			$kt_bottom_carousel = $ascend['post_carousel_default']; 
+      			$ascend_bottom_carousel = $ascend['post_carousel_default']; 
       		}
       	}
 	      
-	    if ($kt_bottom_carousel == 'similar' || $kt_bottom_carousel == 'recent') { 
+	    if ($ascend_bottom_carousel == 'similar' || $ascend_bottom_carousel == 'recent') { 
 	      	get_template_part('templates/bottom', 'post-carousel');
 	    }
 }

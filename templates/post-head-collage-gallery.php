@@ -1,5 +1,5 @@
 <?php 
-global $post, $kt_has_sidebar;
+global $post, $ascend_has_sidebar;
 
 ?>
  <div class="kad_post_grid kad-light-gallery">
@@ -12,7 +12,7 @@ global $post, $kt_has_sidebar;
                     $count = count($attachments);
                     if($count == 2) {
                         echo '<div class="kad_postgrid_wrap kt-2-collage clearfix">';
-                        if($kt_has_sidebar) {
+                        if($ascend_has_sidebar) {
                             $widthimgsize = 525;
                             $heightimgsize = 350;
                             $smallimgsize = 330;
@@ -53,7 +53,7 @@ global $post, $kt_has_sidebar;
                         echo '</div>';
                     } else if($count == 3){
                         echo '<div class="kad_postgrid_wrap kt-3-collage clearfix">';
-                        if($kt_has_sidebar) {
+                        if($ascend_has_sidebar) {
                             $widthimgsize = 525;
                             $heightimgsize = 350;
                             $swidthimgsize = 330;
@@ -102,7 +102,7 @@ global $post, $kt_has_sidebar;
 
                     } else if($count == 4) {
                         echo '<div class="kad_postgrid_wrap kt-4-collage clearfix">';
-                        if($kt_has_sidebar) {
+                        if($ascend_has_sidebar) {
                             $largeimgsize = 440;
                             $smallimgsize = 220;
                         } else {
@@ -150,7 +150,7 @@ global $post, $kt_has_sidebar;
 
                     } else {
                         echo '<div class="kad_postgrid_wrap kt-5-collage clearfix">';
-                        if($kt_has_sidebar) {
+                        if($ascend_has_sidebar) {
                             $largeimgsize = 440;
                             $smallimgsize = 220;
                         } else {

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $kt_portfolio_loop, $kt_portfolio_loop_count;
+global $ascend_portfolio_loop, $ascend_portfolio_loop_count;
 $ascend = ascend_get_options();
 	if(!empty($ascend['home_portfolio_full_title'])) {
 		$btitle = $ascend['home_portfolio_full_title'];
@@ -50,9 +50,9 @@ $ascend = ascend_get_options();
 		$portfolio_ratio = 'square';
 	}
 	if(isset($ascend['home_portfolio_full_column']) ) {
-        $kt_grid_columns = $ascend['home_portfolio_full_column'];
+        $ascend_grid_columns = $ascend['home_portfolio_full_column'];
     } else {
-        $kt_grid_columns = '4';
+        $ascend_grid_columns = '4';
     }
     if(isset($ascend['home_portfolio_full_count']) ) {
         $portfolio_items = $ascend['home_portfolio_full_count'];
@@ -78,11 +78,11 @@ $ascend = ascend_get_options();
     	$margins 	= 'rowtight';
     }
 
-    $kt_portfolio_loop = array(
+    $ascend_portfolio_loop = array(
      	'lightbox' 		=> $portfolio_lightbox,
      	'showexcerpt' 	=> $portfolio_excerpt,
      	'showtypes' 	=> $portfolio_item_types,
-     	'columns' 		=> $kt_grid_columns,
+     	'columns' 		=> $ascend_grid_columns,
      	'ratio' 		=> $portfolio_ratio,
      	'style' 		=> $portfolio_style,
      	'carousel' 		=> 'false',
@@ -110,11 +110,11 @@ $ascend = ascend_get_options();
 					));
 				
 				if ( $loop ) : 
-					$kt_portfolio_loop_count['loop'] = 1;
-					$kt_portfolio_loop_count['count'] = $loop->post_count;
+					$ascend_portfolio_loop_count['loop'] = 1;
+					$ascend_portfolio_loop_count['count'] = $loop->post_count;
 					while ( $loop->have_posts() ) : $loop->the_post();
 								get_template_part('templates/content', 'loop-portfolio'); 
-								$kt_portfolio_loop_count['loop']++;
+								$ascend_portfolio_loop_count['loop']++;
 					endwhile; else: ?>
 				 
 						<div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'ascend');?></div>
@@ -124,4 +124,4 @@ $ascend = ascend_get_options();
         </div> <!--portfoliowrapper-outer-->
     </div> <!--home-portfolio-full -->
 	<?php  
-            wp_reset_query(); 
+            wp_reset_postdata(); 

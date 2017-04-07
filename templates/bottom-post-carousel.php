@@ -3,20 +3,20 @@
  * Template Bottom Post Carousel
  */
 
-global $post, $kt_has_sidebar, $kt_grid_columns, $kt_bottom_carousel, $kt_grid_carousel;
+global $post, $ascend_has_sidebar, $ascend_grid_columns, $ascend_bottom_carousel, $ascend_grid_carousel;
 $ascend = ascend_get_options();
 		if(isset($ascend['post_carousel_columns']) ) {
-            $kt_grid_columns = $ascend['post_carousel_columns'];
+            $ascend_grid_columns = $ascend['post_carousel_columns'];
         } else {
-            $kt_grid_columns = '3';
+            $ascend_grid_columns = '3';
         }
         if(ascend_display_sidebar()) {
-            $kt_has_sidebar = true;
+            $ascend_has_sidebar = true;
         } else {
-            $kt_has_sidebar = false;
+            $ascend_has_sidebar = false;
         }
-        $kt_grid_carousel = true;
-        if($kt_bottom_carousel == 'similar') {
+        $ascend_grid_carousel = true;
+        if($ascend_bottom_carousel == 'similar') {
             $default_title = __('Similar Posts', 'ascend');
             $categories = get_the_category($post->ID);
             if ($categories) {
@@ -39,8 +39,8 @@ $ascend = ascend_get_options();
                     );
         }
         $bc = array();
-        $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
-        $bc = ascend_carousel_columns($kt_grid_columns, $kt_has_sidebar);
+        $itemsize = ascend_get_post_grid_item_size($ascend_grid_columns, $ascend_has_sidebar);
+        $bc = ascend_carousel_columns($ascend_grid_columns, $ascend_has_sidebar);
         $bc = apply_filters('ascend_bottom_post_carousel_columns', $bc);
         $title = apply_filters( 'ascend_bottom_post_title', $default_title );
 
@@ -63,7 +63,7 @@ $ascend = ascend_get_options();
 				    <div class="error-not-found"><?php _e('Sorry, no blog entries found.', 'ascend');?></div>
 
 				<?php endif; 
-				wp_reset_query(); ?>								
+				wp_reset_postdata(); ?>								
 			</div>
         </div>
     </div>

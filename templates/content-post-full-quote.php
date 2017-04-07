@@ -1,5 +1,5 @@
  <?php 
- global $post, $kt_has_sidebar, $kt_feat_width;
+ global $post, $ascend_has_sidebar, $ascend_feat_width;
 
     $ascend = ascend_get_options();
 

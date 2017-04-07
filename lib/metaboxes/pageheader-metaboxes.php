@@ -3,14 +3,14 @@ add_filter( 'cmb2_admin_init', 'ascend_pageheader_metaboxes');
 function ascend_pageheader_metaboxes(){
 	$prefix = '_kad_';
 
-	$kt_pageheader = new_cmb2_box( array(
+	$ascend_pageheader = new_cmb2_box( array(
 		'id'         	=> 'pageheader_metabox',
 		'title'      	=> __("Page Title and Subtitle", 'ascend'),
 		'object_types'  => array('page'),
 		'priority'   	=> 'default',
 	) );
 	
-	$kt_pageheader->add_field( array(
+	$ascend_pageheader->add_field( array(
 		'name'    => __("Hide Page Title Area", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'pagetitle_hide',

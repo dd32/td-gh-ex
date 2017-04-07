@@ -4,7 +4,7 @@
 *
 *
 */
-global $post, $kt_has_sidebar, $kt_feat_width;
+global $post, $ascend_has_sidebar, $ascend_feat_width;
 	$ascend = ascend_get_options();
     if (has_post_format( 'quote' )) { ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass clearfix'); ?> itemscope itemtype="http://schema.org/CreativeWork">
@@ -46,14 +46,14 @@ global $post, $kt_has_sidebar, $kt_feat_width;
     <?php
     } else {
 
-        if($kt_has_sidebar){
-            $kt_feat_width = apply_filters('ascend_blog_image_width_sidebar', ascend_post_sidebar_image_width()); 
-            $kt_portraittext = 'col-xxl-95 col-xl-9 col-md-8 col-sm-8 col-xs-7';
-            $kt_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-5 col-ss-4';
+        if($ascend_has_sidebar){
+            $ascend_feat_width = apply_filters('ascend_blog_image_width_sidebar', ascend_post_sidebar_image_width()); 
+            $ascend_portraittext = 'col-xxl-95 col-xl-9 col-md-8 col-sm-8 col-xs-7';
+            $ascend_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-5 col-ss-4';
         } else {
-            $kt_feat_width = apply_filters('ascend_blog_image_width', ascend_post_image_width()); 
-            $kt_portraittext = 'col-xxl-95 col-xl-9 col-md-9 col-sm-8 col-xs-7';
-            $kt_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-5 col-ss-4';
+            $ascend_feat_width = apply_filters('ascend_blog_image_width', ascend_post_image_width()); 
+            $ascend_portraittext = 'col-xxl-95 col-xl-9 col-md-9 col-sm-8 col-xs-7';
+            $ascend_portraitimg_size = 'col-xxl-25 col-xl-3 col-md-3 col-sm-4 col-xs-5 col-ss-4';
         }
 
         if (has_post_format( 'gallery' )) {
@@ -69,7 +69,7 @@ global $post, $kt_has_sidebar, $kt_feat_width;
             if (!empty($swidth)) {
                 $slidewidth = $swidth;
             } else {
-                $slidewidth = $kt_feat_width;
+                $slidewidth = $ascend_feat_width;
             } 
         } elseif (has_post_format( 'image' )) {
             $swidth = get_post_meta( $post->ID, '_kad_image_posthead_width', true );
@@ -82,11 +82,11 @@ global $post, $kt_has_sidebar, $kt_feat_width;
             if (!empty($swidth)) {
                 $slidewidth = $swidth;
             } else {
-                $slidewidth = $kt_feat_width;
+                $slidewidth = $ascend_feat_width;
             }
         } else {
             $imageheight = apply_filters('ascend_single_post_image_height', 400);
-            $slidewidth = $kt_feat_width;
+            $slidewidth = $ascend_feat_width;
         }
         // get post summary
         $postsummery = ascend_get_postsummary();
@@ -110,9 +110,9 @@ global $post, $kt_has_sidebar, $kt_feat_width;
 
                     $portraitwidth = apply_filters('ascend_post_excerpt_image_width_portrait', 270);
                     $portraitheight = apply_filters('ascend_post_excerpt_image_height_portrait', 310);
-                    $textsize = $kt_portraittext;
+                    $textsize = $ascend_portraittext;
                     ?>
-                    <div class="<?php echo esc_attr($kt_portraitimg_size);?> post-image-container">
+                    <div class="<?php echo esc_attr($ascend_portraitimg_size);?> post-image-container">
                         <div class="imghoverclass img-margin-center">
                             <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
                                 <?php echo ascend_get_full_image_output($portraitwidth, $portraitheight, true, 'attachment-thumb wp-post-image kt-image-link', null, null, true); ?>
@@ -139,11 +139,11 @@ global $post, $kt_has_sidebar, $kt_feat_width;
 
               	} elseif($postsummery == 'slider_portrait') { 
 
-                    $textsize = $kt_portraittext; 
+                    $textsize = $ascend_portraittext; 
                     $portraitwidth = apply_filters('ascend_post_excerpt_image_width_portrait', 270);
                     $portraitheight = apply_filters('ascend_post_excerpt_image_height_portrait', 310); 
 
-                    echo '<div class="'.esc_attr($kt_portraitimg_size).' post-image-container">';
+                    echo '<div class="'.esc_attr($ascend_portraitimg_size).' post-image-container">';
                         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                         ascend_build_slider($post->ID, $image_gallery, $portraitwidth, $portraitheight, 'post', 'kt-slider-same-image-ratio');
                     echo '</div>';                 

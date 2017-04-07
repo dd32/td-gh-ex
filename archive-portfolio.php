@@ -18,7 +18,7 @@
 		                <?php get_search_form(); ?>
 		            </div>
 				<?php endif; 
-				global $kt_portfolio_loop, $kt_portfolio_loop_count;
+				global $ascend_portfolio_loop, $ascend_portfolio_loop_count;
 				$ascend = ascend_get_options();
 				if(isset($ascend['portfolio_tax_show_type']) && $ascend['portfolio_tax_show_type'] == '0') {
 					$portfolio_item_types = 'false';
@@ -46,9 +46,9 @@
 					$portfolio_ratio = 'square';
 				}
 				if(isset($ascend['portfolio_tax_column']) ) {
-			        $kt_grid_columns = $ascend['portfolio_tax_column'];
+			        $ascend_grid_columns = $ascend['portfolio_tax_column'];
 			    } else {
-			        $kt_grid_columns = '4';
+			        $ascend_grid_columns = '4';
 			    }
 			    if($portfolio_style == 'poststyle') {
 			    	$margins 	= 'row';
@@ -61,11 +61,11 @@
 			    	$margins 	= 'rowtight';
 			    }
 
-			    $kt_portfolio_loop = array(
+			    $ascend_portfolio_loop = array(
 			     	'lightbox' 		=> $portfolio_lightbox,
 			     	'showexcerpt' 	=> $portfolio_excerpt,
 			     	'showtypes' 	=> $portfolio_item_types,
-			     	'columns' 		=> $kt_grid_columns,
+			     	'columns' 		=> $ascend_grid_columns,
 			     	'ratio' 		=> $portfolio_ratio,
 			     	'style' 		=> $portfolio_style,
 			     	'carousel' 		=> 'false',
@@ -77,11 +77,11 @@
 							
 							global $wp_query;							
 							if ( $wp_query ) : 
-								$kt_portfolio_loop_count['loop'] = 1;
-								$kt_portfolio_loop_count['count'] = $wp_query->post_count;
+								$ascend_portfolio_loop_count['loop'] = 1;
+								$ascend_portfolio_loop_count['count'] = $wp_query->post_count;
 								while ( $wp_query->have_posts() ) : $wp_query->the_post();
 											get_template_part('templates/content', 'loop-portfolio'); 
-											$kt_portfolio_loop_count['loop']++;
+											$ascend_portfolio_loop_count['loop']++;
 								endwhile;
 							endif; ?>
 			            </div> <!--portfoliowrapper-->

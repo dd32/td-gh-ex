@@ -81,7 +81,7 @@ function ascend_sidebar_id() {
         } else {
           $sidebar = 'sidebar-primary';
         } 
-    } elseif( is_singular('portfolio') || is_tax('portfolio-type') || is_tax('portfolio-tag') ) {
+    } elseif( is_singular('portfolio') ) {
         global $post;
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
         if (empty($sidebar_name) || $sidebar_name == 'default') {
@@ -96,6 +96,13 @@ function ascend_sidebar_id() {
         } else {
           $sidebar = 'sidebar-primary';
         } 
+    } elseif(is_tax('portfolio-type') || is_tax('portfolio-tag') ) {
+        $ascend = ascend_get_options();
+        if(!empty($ascend['portfolio_sidebar_default_sidebar'])) {
+            $sidebar = $ascend['portfolio_sidebar_default_sidebar'];
+        } else {
+            $sidebar = 'sidebar-primary';
+        }
     } elseif( is_singular('staff') || is_tax('staff-group')) {
         global $post;
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
@@ -415,11 +422,11 @@ function ascend_sidebar_on_portfolio() {
     if(is_singular('portfolio') ) {
         global $post;
         $postsidebar = get_post_meta( $post->ID, '_kad_post_sidebar', true );
-        if(isset($postsidebar) && $postsidebar == 'no') {
-            return true;
-        } else if(isset($postsidebar) && $postsidebar == 'default' || empty($postsidebar) ) {
+        if(isset($postsidebar) && $postsidebar == 'yes') {
+            return false;
+        } else if(isset($postsidebar) && 'default' == $postsidebar || empty($postsidebar) ) {
             $ascend = ascend_get_options();
-            if(isset($ascend['portfolio_layout']) && $ascend['portfolio_layout'] == 'sidebar') {
+            if(isset($ascend['portfolio_layout']) && 'sidebar' == $ascend['portfolio_layout']) {
                 return false;
             } else {
                 return true;

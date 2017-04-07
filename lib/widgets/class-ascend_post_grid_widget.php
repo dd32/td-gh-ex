@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Kadence_Image_Grid_Widget widget class
  * 
  */
-class kad_post_grid_widget extends WP_Widget {
+class ascend_post_grid_widget extends WP_Widget {
 
   private static $instance = 0;
     public function __construct() {

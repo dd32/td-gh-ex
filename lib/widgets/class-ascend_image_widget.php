@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class kad_image_widget extends WP_Widget{
+class ascend_image_widget extends WP_Widget{
     private static $instance = 0;
     public function __construct() {
         $widget_ops = array('classname' => 'kadence_about_with_image', 'description' => __('This allows for an image and a simple about text.', 'ascend'));

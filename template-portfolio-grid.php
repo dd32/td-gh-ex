@@ -21,7 +21,7 @@ get_header();
             */
             do_action('ascend_page_content');
 
-      		global $post, $kt_portfolio_loop, $kt_portfolio_loop_count; 
+      		global $post, $ascend_portfolio_loop, $ascend_portfolio_loop_count; 
       		$ascend = ascend_get_options();
   			$portfolio_type 		= get_post_meta( $post->ID, '_kad_portfolio_type', true );
 		   	$portfolio_items 		= get_post_meta( $post->ID, '_kad_portfolio_items', true );
@@ -100,7 +100,7 @@ get_header();
             	$isoclass 	= 'init-masonry-intrinsic'; 
             	$margins 	= 'rowtight';
             }
-            $kt_portfolio_loop = array(
+            $ascend_portfolio_loop = array(
              	'lightbox' 		=> $portfolio_lightbox,
              	'showexcerpt' 	=> $portfolio_excerpt,
              	'showtypes' 	=> $portfolio_item_types,
@@ -114,12 +114,6 @@ get_header();
             	echo '<div class="kad-portfolio-wrapper-outer p-outer-'.esc_attr($style).'">';
                		echo '<div id="portfolio_template_wrapper" class="'.esc_attr($isoclass).' entry-content portfolio-grid-light-gallery '.esc_attr($margins).'" data-masonry-selector=".p_item" data-masonry-style="masonry">';
 				
-					if(isset($wp_query)) {
-						$temp = $wp_query;
-					} else {
-						$temp = null;
-					}
-				  	$wp_query = null; 
 				  	$wp_query = new WP_Query();
 				  	$wp_query->query(array(
 						'paged' 			=> $paged,
@@ -132,11 +126,11 @@ get_header();
 				  	);
 					
 					if ( $wp_query ) : 
-						$kt_portfolio_loop_count['loop'] = 1;
-						$kt_portfolio_loop_count['count'] = $wp_query->post_count;
+						$ascend_portfolio_loop_count['loop'] = 1;
+						$ascend_portfolio_loop_count['count'] = $wp_query->post_count;
 						while ( $wp_query->have_posts() ) : $wp_query->the_post();
 									get_template_part('templates/content', 'loop-portfolio'); 
-									$kt_portfolio_loop_count['loop']++;
+									$ascend_portfolio_loop_count['loop']++;
 						endwhile; else: ?>
 					 
 							<div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'ascend');?></div>
@@ -150,8 +144,7 @@ get_header();
                 * @hooked ascend_pagination - 20
                 */
                 do_action('ascend_pagination');
-                $wp_query = $temp;  // Reset
-                wp_reset_query(); 
+                wp_reset_postdata();
 
                 /**
                 * @hooked ascend_page_comments - 20

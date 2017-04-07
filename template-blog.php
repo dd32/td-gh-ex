@@ -4,9 +4,9 @@ Template Name: Blog
 */
 get_header(); 
 
-global $post, $kt_grid_carousel;
+global $post, $ascend_grid_carousel;
 	$post_id = $post->ID;
-    $kt_grid_carousel = false;
+    $ascend_grid_carousel = false;
     $blog_type 		= get_post_meta( $post_id, '_kad_blog_type', true );
     $blog_columns 	= get_post_meta( $post_id, '_kad_blog_columns', true );
     $blog_category 	= get_post_meta( $post_id, '_kad_blog_cat', true );
@@ -32,19 +32,19 @@ global $post, $kt_grid_carousel;
 	} else {
 		$b_order = 'DESC';
 	}
-    $kt_blog_loop['loop'] = 1;
+    $ascend_blog_loop['loop'] = 1;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $lay = ascend_get_postlayout($blog_type);
 
-    $kt_grid_columns 		= $blog_columns ? absint( $blog_columns ) : 3;
+    $ascend_grid_columns 		= $blog_columns ? absint( $blog_columns ) : 3;
     if(ascend_display_sidebar()) {
         $fullclass 		= '';
-        $kt_has_sidebar = true;
+        $ascend_has_sidebar = true;
     } else {
         $fullclass 		= 'fullwidth';
-        $kt_has_sidebar = false;
+        $ascend_has_sidebar = false;
     }
-    $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
+    $itemsize = ascend_get_post_grid_item_size($ascend_grid_columns, $ascend_has_sidebar);
 
     /**
     * @hooked ascend_page_title - 20
@@ -64,24 +64,17 @@ global $post, $kt_grid_carousel;
                 do_action('ascend_page_content');
                 ?>
 				<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
-	  				<?php				
-					if(isset($wp_query)) {
-						$temp = $wp_query;
-					} else {
-						$temp = null;
-					} 
-					$wp_query = null; 
-					$wp_query = new WP_Query();
-					$wp_query->query(array(
+	  				<?php	
+	  				$args = array(
 						'paged'		 	 	=> $paged,
 						'orderby' 			=> $b_orderby,
 						'order' 			=> $b_order,
 						'category_name'	 	=> $blog_cat_slug,
 						'posts_per_page' 	=> $blog_items
-						)
-					);
+						);			
+					$wp_query = new WP_Query($args);;
 					if ( $wp_query ) : 
-						$kt_blog_loop['count'] = $wp_query->post_count;
+						$ascend_blog_loop['count'] = $wp_query->post_count;
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
 					 	if($lay['sum'] == 'full'){ 
 			                if (has_post_format( 'quote' )) {
@@ -90,7 +83,7 @@ global $post, $kt_grid_carousel;
 			                    get_template_part('templates/content', 'post-full'); 
 			                }
 				        } else if($lay['sum'] == 'grid') { 
-				        	if($lay['highlight'] == 'true' && $kt_blog_loop['loop'] == 1 && $paged == 1) {
+				        	if($lay['highlight'] == 'true' && $ascend_blog_loop['loop'] == 1 && $paged == 1) {
 		                        get_template_part('templates/content', get_post_format());
 		                    } else { ?>
 		                       	<div class="<?php echo esc_attr($itemsize);?> b_item kad_blog_item">
@@ -107,7 +100,7 @@ global $post, $kt_grid_carousel;
 				        } else { 
 				        	get_template_part('templates/content', get_post_format());
 				        }
-				        $kt_blog_loop['loop'] ++;
+				        $ascend_blog_loop['loop'] ++;
 	                endwhile; else: ?>
 						<div class="error-not-found"><?php _e('Sorry, no blog entries found.', 'ascend'); ?></div>
 					<?php 
@@ -119,8 +112,7 @@ global $post, $kt_grid_carousel;
 	                * @hooked ascend_pagination - 20
 	                */
 	                do_action('ascend_pagination');
-					$wp_query = $temp;  // Reset 
-					wp_reset_query(); 
+	                wp_reset_postdata();
 	                /**
 	                * @hooked ascend_page_comments - 20
 	                */

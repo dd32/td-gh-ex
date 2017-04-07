@@ -2,9 +2,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
   exit; // Exit if accessed directly
 }
-global $post, $kt_has_sidebar;
+global $post, $ascend_has_sidebar;
 $ascend = ascend_get_options();
-if($kt_has_sidebar) {
+if($ascend_has_sidebar) {
 	$image_width = 360;
 	$image_height = 240;
 } else {

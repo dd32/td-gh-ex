@@ -2,14 +2,14 @@
 add_filter( 'cmb2_admin_init', 'ascend_portfolio_template_metaboxes');
 function ascend_portfolio_template_metaboxes(){
 	$prefix = '_kad_';
-	$kt_portfolio_page = new_cmb2_box( array(
+	$ascend_portfolio_page = new_cmb2_box( array(
 		'id'         	=> 'portfolio_page_metabox',
 		'title'      	=> __("Portfolio Options", 'ascend'),
 		'object_types'  => array('page'),
 		'show_on'      	=> array( 'key' => 'page-template', 'value' => 'template-portfolio-grid.php' ),
 		'priority'   	=> 'high',
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Portfolio Style", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'portfolio_style',
@@ -21,7 +21,7 @@ function ascend_portfolio_template_metaboxes(){
 			'poststyle' 		=> __("Post style", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Image Ratio", 'ascend' ),
 		'desc'    => __("This doens't apply when using mosaic or tiles style.", 'ascend' ),
 		'id'      => $prefix . 'portfolio_ratio',
@@ -35,7 +35,7 @@ function ascend_portfolio_template_metaboxes(){
 			'softcrop' 		=> __("Inherit from uploaded image", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Columns", 'ascend' ),
 		'desc'    => __("This doens't apply when using mosaic or tiles style.", 'ascend' ),
 		'id'      => $prefix . 'portfolio_columns',
@@ -49,14 +49,14 @@ function ascend_portfolio_template_metaboxes(){
 			'6' 	=> __("Six Columns", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name' 		=> __('Portfolio Type', 'ascend'),
 		'desc' 		=> '',
 		'id'   		=> $prefix . 'portfolio_type',
 		'type' 		=> 'kt_select_type',
 		'taxonomy' 	=> 'portfolio-type',
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Items per Page", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'portfolio_items',
@@ -83,7 +83,7 @@ function ascend_portfolio_template_metaboxes(){
 			'18' 	=> __("18", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Order by", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'portfolio_orderby',
@@ -96,7 +96,7 @@ function ascend_portfolio_template_metaboxes(){
 			'rand' 			=> __("Random", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Show Type?", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'portfolio_types',
@@ -107,7 +107,7 @@ function ascend_portfolio_template_metaboxes(){
 			'false' => __("No, disabled", 'ascend' ),
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Show Excerpt?", 'ascend' ),
 		'desc'    => '',
 		'id'      => $prefix . 'portfolio_excerpt',
@@ -118,7 +118,7 @@ function ascend_portfolio_template_metaboxes(){
 			'true' 	=> __("Yes, enabled", 'ascend' )
 		),
 	) );
-	$kt_portfolio_page->add_field( array(
+	$ascend_portfolio_page->add_field( array(
 		'name'    => __("Add lightbox link?", 'ascend' ),
 		'desc'    => __("This adds a lightbox icon to post.", 'ascend' ),
 		'id'      => $prefix . 'portfolio_lightbox',

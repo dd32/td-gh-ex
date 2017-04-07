@@ -1,15 +1,15 @@
  <?php 
- global $post, $kt_has_sidebar, $kt_feat_width;
+ global $post, $ascend_has_sidebar, $ascend_feat_width;
  	$ascend = ascend_get_options();
-    if($kt_has_sidebar){
-        $kt_feat_width = apply_filters('ascend_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
+    if($ascend_has_sidebar){
+        $ascend_feat_width = apply_filters('ascend_blog_full_image_width_sidebar', ascend_post_sidebar_image_width()); 
     } else {
-        $kt_feat_width = apply_filters('ascend_blog_full_image_width', ascend_post_image_width()); 
+        $ascend_feat_width = apply_filters('ascend_blog_full_image_width', ascend_post_image_width()); 
     }
     $postclass = array('postclass');
-    $kt_headcontent = ascend_get_post_head_content();
-    if($kt_headcontent != 'none'){
-        $postclass[] = 'kt_post_header_content-'.$kt_headcontent;
+    $ascend_headcontent = ascend_get_post_head_content();
+    if($ascend_headcontent != 'none'){
+        $postclass[] = 'kt_post_header_content-'.$ascend_headcontent;
     } else {
         $postclass[] = 'kt_no_post_header_content';
     }

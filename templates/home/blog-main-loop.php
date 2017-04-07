@@ -2,10 +2,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-global $kt_has_sidebar, $kt_grid_columns, $kt_blog_loop;
+global $ascend_has_sidebar, $ascend_grid_columns, $ascend_blog_loop;
 $ascend = ascend_get_options(); 
 
-    $kt_blog_loop['loop'] = 1;
+    $ascend_blog_loop['loop'] = 1;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     if(isset($ascend['home_main_post_style'])) {
     	$layout = $ascend['home_main_post_style'];
@@ -14,18 +14,18 @@ $ascend = ascend_get_options();
     }
     $lay = ascend_get_postlayout($layout);
     if(isset($ascend['home_main_columns'])) {
-        $kt_grid_columns = $ascend['home_main_columns'];
+        $ascend_grid_columns = $ascend['home_main_columns'];
     } else {
-        $kt_grid_columns = '3';
+        $ascend_grid_columns = '3';
     } 
     if(ascend_display_sidebar()) {
         $fullclass 		= '';
-        $kt_has_sidebar = true;
+        $ascend_has_sidebar = true;
     } else {
         $fullclass 		= 'fullwidth';
-        $kt_has_sidebar = false;
+        $ascend_has_sidebar = false;
     }
-    $itemsize = ascend_get_post_grid_item_size($kt_grid_columns, $kt_has_sidebar);
+    $itemsize = ascend_get_post_grid_item_size($ascend_grid_columns, $ascend_has_sidebar);
 
 		if (!have_posts()) : ?>
             <div class="error-not-found">
@@ -36,7 +36,7 @@ $ascend = ascend_get_options();
         <div class="<?php echo esc_attr($lay['pclass']); ?>">
             <div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
                 <?php 
-                $kt_blog_loop['count'] = $wp_query->post_count;
+                $ascend_blog_loop['count'] = $wp_query->post_count;
                 while (have_posts()) : the_post();
 	                if($lay['sum'] == 'full'){ 
 	                    if (has_post_format( 'quote' )) {
@@ -45,7 +45,7 @@ $ascend = ascend_get_options();
 	                        get_template_part('templates/content', 'post-full'); 
 	                    }
 	                } else if($lay['sum'] == 'grid') { 
-	                    if($lay['highlight'] == 'true' && $kt_blog_loop['loop'] == 1 && $paged == 1) {
+	                    if($lay['highlight'] == 'true' && $ascend_blog_loop['loop'] == 1 && $paged == 1) {
 	                        get_template_part('templates/content', get_post_format());
 	                    } else { ?>
 	                        <div class="<?php echo esc_attr($itemsize);?> b_item kad_blog_item">
@@ -62,7 +62,7 @@ $ascend = ascend_get_options();
 	                } else { 
 	                    get_template_part('templates/content', get_post_format());
 	                }
-	                $kt_blog_loop['loop'] ++;
+	                $ascend_blog_loop['loop'] ++;
 	            endwhile;
 
                 ?>

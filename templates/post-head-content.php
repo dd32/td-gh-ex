@@ -1,5 +1,5 @@
 <?php 
-global $post, $kt_feat_width, $kt_has_sidebar;
+global $post, $ascend_feat_width, $ascend_has_sidebar;
 	$ascend = ascend_get_options();
     if (has_post_format( 'gallery' )) {
         $swidth = get_post_meta( $post->ID, '_kad_gallery_posthead_width', true ); 
@@ -14,7 +14,7 @@ global $post, $kt_feat_width, $kt_has_sidebar;
         if (!empty($swidth)) {
             $slidewidth = $swidth;
         } else {
-            $slidewidth = $kt_feat_width;
+            $slidewidth = $ascend_feat_width;
         } 
     } elseif (has_post_format( 'image' )) {
         $swidth = get_post_meta( $post->ID, '_kad_image_posthead_width', true );
@@ -27,47 +27,47 @@ global $post, $kt_feat_width, $kt_has_sidebar;
         if (!empty($swidth)) {
             $slidewidth = $swidth;
         } else {
-            $slidewidth = $kt_feat_width;
+            $slidewidth = $ascend_feat_width;
         }
     } elseif (has_post_format( 'video' )) {
         $swidth = get_post_meta( $post->ID, '_kad_video_posthead_width', true );
         if (!empty($swidth)) {
             $slidewidth = $swidth;
         } else {
-            $slidewidth = $kt_feat_width;
+            $slidewidth = $ascend_feat_width;
         }
     }
 
-    $kt_headcontent = ascend_get_post_head_content();
+    $ascend_headcontent = ascend_get_post_head_content();
 
-    if ($kt_headcontent == 'flex') { 
+    if ($ascend_headcontent == 'flex') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, $slidewidth, $slideheight, 'image', 'kt-slider-same-image-ratio');
         echo '</section>';
 
-    } else if ($kt_headcontent == 'carouselslider') { 
+    } else if ($ascend_headcontent == 'carouselslider') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, null, $slideheight, 'image', 'kt-slider-different-image-ratio');
         echo '</section>';
         
-    } else if ($kt_headcontent == 'thumbslider') { 
+    } else if ($ascend_headcontent == 'thumbslider') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, $slidewidth, $slideheight, 'image', 'kt-slider-same-image-ratio-thumb', 'thumb');
         echo '</section>'; 
 
-    } else if ($kt_headcontent == 'gallery') { 
+    } else if ($ascend_headcontent == 'gallery') { 
 
             echo '<section class="postfeat">';
                 get_template_part('templates/post', 'head-collage-gallery');
             echo '</section>';
 
-    } else if ($kt_headcontent == 'video') { 
+    } else if ($ascend_headcontent == 'video') { 
 
             echo '<section class="postfeat">';
                 echo '<div style="max-width:'.esc_attr($slidewidth).'px; margin:0 auto;">';
@@ -75,7 +75,7 @@ global $post, $kt_feat_width, $kt_has_sidebar;
                 echo '</div>';
             echo '</section>';
 
-    } else if ($kt_headcontent == 'image') {
+    } else if ($ascend_headcontent == 'image') {
         if (has_post_thumbnail( $post->ID ) ) {          
             $image_id = get_post_thumbnail_id();
             $img = ascend_get_image_array($slidewidth, $height, true, null, get_the_title(), $image_id, false);

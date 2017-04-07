@@ -1899,7 +1899,7 @@ Redux::setSection( $opt_name, array(
             'type' => 'slider', 
             'title' => __('Choose how many columns in each row', 'ascend'),
             "default"       => "3",
-            "min"       => "2",
+            "min"       => "1",
             "step"      => "1",
             "max"       => "6",
             ),

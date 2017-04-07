@@ -1,7 +1,7 @@
 <?php 
 global $post;
 	$ascend = ascend_get_options();
-	$kt_project = get_post_meta( $post->ID, '_kad_ppost_type', true );
+	$ascend_project = get_post_meta( $post->ID, '_kad_ppost_type', true );
 	$imgheight 	= get_post_meta( $post->ID, '_kad_portfolio_slider_height', true );
 	$imgwidth 	= get_post_meta( $post->ID, '_kad_portfolio_slider_width', true );
    	if (!empty($imgheight)) {
@@ -15,32 +15,32 @@ global $post;
 		$slidewidth = ascend_portfolio_slider_width();
 		$slidewidth = apply_filters('ascend_single_portfolio_image_width', $slidewidth); 
 	}
-    if(empty($kt_project)) {
-    	$kt_project = 'image';
+    if(empty($ascend_project)) {
+    	$ascend_project = 'image';
     }
 
-    if ($kt_project == 'flex') { 
+    if ($ascend_project == 'flex') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, $slidewidth, $slideheight, 'image', 'kt-slider-same-image-ratio');
         echo '</section>';
 
-    } else if ($kt_project == 'carouselslider') { 
+    } else if ($ascend_project == 'carouselslider') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, null, $slideheight, 'image', 'kt-slider-different-image-ratio');
         echo '</section>';
         
-    } else if ($kt_project == 'thumbslider') { 
+    } else if ($ascend_project == 'thumbslider') { 
 
         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
         echo '<section class="postfeat">';
             ascend_build_slider($post->ID, $image_gallery, $slidewidth, $slideheight, 'image', 'kt-slider-same-image-ratio-thumb', 'thumb');
         echo '</section>'; 
 
-    } else if ($kt_project == 'imagegrid') { 
+    } else if ($ascend_project == 'imagegrid') { 
 
         $image_gallery 	= get_post_meta( $post->ID, '_kad_image_gallery', true );
        	$columns 		= get_post_meta( $post->ID, '_kad_portfolio_img_grid_columns', true );
@@ -49,14 +49,14 @@ global $post;
             echo do_shortcode('[gallery ids="'.$image_gallery.'" columns="'.$columns.'"]');
         echo '</section>'; 
 
-    } else if ($kt_project == 'collage') { 
-    		global $kt_has_sidebar;
-    		$kt_has_sidebar = 'false';
+    } else if ($ascend_project == 'collage') { 
+    		global $ascend_has_sidebar;
+    		$ascend_has_sidebar = 'false';
             echo '<section class="postfeat">';
                 get_template_part('templates/post', 'head-collage-gallery');
             echo '</section>';
 
-    } else if ($kt_project == 'video') { 
+    } else if ($ascend_project == 'video') { 
 
             echo '<section class="postfeat">';
                 echo '<div style="max-width:'.esc_attr($slidewidth).'px; margin:0 auto;">';
@@ -64,7 +64,7 @@ global $post;
                 echo '</div>';
             echo '</section>';
 
-    } else if ($kt_project == 'image') {
+    } else if ($ascend_project == 'image') {
         if (has_post_thumbnail( $post->ID ) ) {          
             $image_id = get_post_thumbnail_id();
             $img = ascend_get_image_array($slidewidth, $slideheight, true, null, get_the_title(), $image_id, false);
@@ -84,7 +84,7 @@ global $post;
             </div>
         <?php
         } 
-    }  else if ($kt_project == 'imgcarousel') { ?>
+    }  else if ($ascend_project == 'imgcarousel') { ?>
         <section class="postfeat kt-upper-head-content post-carousel-upper">
             <div class="slick-slider kad-light-gallery kt-slickslider kt-image-carousel loading" data-slider-speed="7000" data-slider-anim-speed="400" data-slider-fade="false" data-slider-type="carousel" data-slider-auto="true" data-slider-arrows="true">
                     <?php
@@ -110,7 +110,7 @@ global $post;
                     } ?>                        
             </div> <!--Image Slider-->
         </section>
-<?php } else if ($kt_project == 'shortcode') { ?>
+<?php } else if ($ascend_project == 'shortcode') { ?>
       <div class="sliderclass kt-upper-head-content postfeat">
         <?php 
         $shortcodeslider = get_post_meta( $post->ID, '_kad_portfolio_shortcode', true );
