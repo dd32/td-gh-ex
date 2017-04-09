@@ -93,6 +93,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.5
+- Updated: Custom image size names now translation ready.
+- Updated: Improved escaping of outputs in thinkup_input_breadcrumb() function in 00.theme-setup.php.
+
 Version 1.3.4
 - Updated: style-shortcodes.css updated.
 - Removed: Unnecesary translation wrappers removed from string containins no text in function thinkup_title_select().
