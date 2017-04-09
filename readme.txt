@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.5
+- Updated: Custom image size names now translation ready.
+- Updated: Function thinkup_check_isblog() updated to no longer trigger on single posts.
+
 Version 1.4.4
 - Updated: style-shortcodes.css updated.
 - Removed: Unnecesary translation wrappers removed from string containins no text in function thinkup_title_select().
