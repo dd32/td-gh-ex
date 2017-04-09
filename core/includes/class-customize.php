@@ -294,22 +294,20 @@ if( !class_exists( 'suevafree_customize' ) ) {
 
 	   }
 	
-		public function customize_select_sanize ( $value, $setting ) {
+		public function customize_select_sanize ($value, $setting) {
+
+			global $wp_customize;
 			
-			$theme_panel = $this->theme_fields ;
-	
-			foreach ( $theme_panel as $element ) {
-				
-				if ( $element['id'] == $setting->id ) :
-	
-					if ( array_key_exists($value, $element['options'] ) ) : 
-							
-						return $value;
-	
-					endif;
-	
-				endif;
-				
+			$control = $wp_customize->get_control( $setting->id );
+		 
+			if ( array_key_exists( $value, $control->choices ) ) {
+			
+				return $value;
+			
+			} else {
+			
+				return $setting->default;
+			
 			}
 
 		}
