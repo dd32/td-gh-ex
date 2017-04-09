@@ -935,3 +935,32 @@ if( !kt_isMobile.any() ) {
 jQuery( window ).load(function () {
 	jQuery('body').animate({'opacity' : 1});
 });
+/*
+ * jQuery Scroll to Top Control script
+ */
+jQuery(document).ready(function($){
+
+	function kt_scrollup_top() {
+		var visible = false,
+			item = $('<div id="topcontrol"><div class="to_the_top"><div class="kt-icon-chevron-up"></div></div></div>')
+		.css({position:'fixed', bottom:2, right:0, opacity:0, cursor:'pointer'})
+		.click(function(){
+			item.css({opacity:0});
+			$('body').animate({scrollTop: 0}, 1200);
+		 	return false
+		 })
+		.appendTo('body');
+
+		$(window).bind('scroll resize', function(e){
+			var scrolltop=jQuery(window).scrollTop()
+			if(scrolltop>=200 && !visible) {
+				item.animate({opacity:1}, 500);
+				visible = true;
+			} else if(scrolltop < 200 && visible) {
+				item.animate({opacity:0}, 200);
+				visible = false;
+			}
+		})
+	}
+	kt_scrollup_top();
+});

@@ -23,7 +23,7 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 // Don't duplicate me!
-if( !class_exists( 'ReduxFramework_Extension_kad_slides' ) ) {
+if( !class_exists( 'ReduxFramework_Extension_ascend_slides' ) ) {
 
 
     /**
@@ -31,7 +31,7 @@ if( !class_exists( 'ReduxFramework_Extension_kad_slides' ) ) {
      *
      * @since       3.1.6
      */
-    class ReduxFramework_Extension_kad_slides extends ReduxFramework {
+    class ReduxFramework_Extension_ascend_slides extends ReduxFramework {
 
         // Protected vars
         protected $parent;
@@ -55,7 +55,7 @@ if( !class_exists( 'ReduxFramework_Extension_kad_slides' ) ) {
             if ( empty( $this->extension_dir ) ) {
                 $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
             }
-            $this->field_name = 'kad_slides';
+            $this->field_name = 'ascend_slides';
 
             self::$theInstance = $this;
 
@@ -72,5 +72,5 @@ if( !class_exists( 'ReduxFramework_Extension_kad_slides' ) ) {
             return dirname(__FILE__).'/'.$this->field_name.'/field_'.$this->field_name.'.php';
         }
 
-    } // class
-} // if
+    } 
+}

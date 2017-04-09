@@ -46,7 +46,7 @@ global $post;
        	$columns 		= get_post_meta( $post->ID, '_kad_portfolio_img_grid_columns', true );
        	if(empty($columns)) {$columns = '4';}
         echo '<section class="postfeat">';
-            echo do_shortcode('[gallery ids="'.$image_gallery.'" columns="'.$columns.'"]');
+            echo do_shortcode('[gallery ids="'.esc_attr($image_gallery).'" columns="'.esc_attr($columns).'"]');
         echo '</section>'; 
 
     } else if ($ascend_project == 'collage') { 
@@ -110,12 +110,4 @@ global $post;
                     } ?>                        
             </div> <!--Image Slider-->
         </section>
-<?php } else if ($ascend_project == 'shortcode') { ?>
-      <div class="sliderclass kt-upper-head-content postfeat">
-        <?php 
-        $shortcodeslider = get_post_meta( $post->ID, '_kad_portfolio_shortcode', true );
-        if(!empty($shortcodeslider)) { 
-            echo do_shortcode( $shortcodeslider ); 
-        } ?>
-        </div><!--sliderclass-->
 <?php } 

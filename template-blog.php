@@ -64,7 +64,12 @@ global $post, $ascend_grid_carousel;
                 do_action('ascend_page_content');
                 ?>
 				<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
-	  				<?php	
+	  				<?php
+	  				if(isset($wp_query)) {
+						$temp = $wp_query;
+					} else {
+						$temp = null;
+					} 
 	  				$args = array(
 						'paged'		 	 	=> $paged,
 						'orderby' 			=> $b_orderby,
@@ -112,7 +117,8 @@ global $post, $ascend_grid_carousel;
 	                * @hooked ascend_pagination - 20
 	                */
 	                do_action('ascend_pagination');
-	                wp_reset_postdata();
+	                $wp_query = $temp;  // Reset 
+                	wp_reset_postdata();
 	                /**
 	                * @hooked ascend_page_comments - 20
 	                */

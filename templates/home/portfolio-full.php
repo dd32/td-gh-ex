@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $ascend_portfolio_loop, $ascend_portfolio_loop_count;
 $ascend = ascend_get_options();
-	if(!empty($ascend['home_portfolio_full_title'])) {
-		$btitle = $ascend['home_portfolio_full_title'];
+	if(!empty($ascend['portfolio_full_title'])) {
+		$btitle = $ascend['portfolio_full_title'];
 	} else { 
 		$btitle = '';
 	}
@@ -49,8 +49,8 @@ $ascend = ascend_get_options();
 	} else {
 		$portfolio_ratio = 'square';
 	}
-	if(isset($ascend['home_portfolio_full_column']) ) {
-        $ascend_grid_columns = $ascend['home_portfolio_full_column'];
+	if(isset($ascend['home_portfolio_full_columns']) ) {
+        $ascend_grid_columns = $ascend['home_portfolio_full_columns'];
     } else {
         $ascend_grid_columns = '4';
     }

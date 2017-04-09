@@ -1106,7 +1106,7 @@ Redux::setSection( $opt_name, array(
             ), 
         array(
             'id'=>'home_basic_slider',
-            'type' => 'kad_slides',
+            'type' => 'ascend_slides',
             'title' => __('Basic Slider Images', 'ascend'),
             'subtitle'=> __('Use large images for best results.', 'ascend'),
              'required' => array(
@@ -1417,7 +1417,7 @@ Redux::setSection( $opt_name, array(
         ), 
         array(
             'id'=>'home_mobile_basic_slider',
-            'type' => 'kad_slides',
+            'type' => 'ascend_slides',
             'title' => __('Basic Slider Images', 'ascend'),
             'subtitle'=> __('Use large images for best results.', 'ascend'),
             'required' => array(
@@ -1890,7 +1890,7 @@ Redux::setSection( $opt_name, array(
             ),
         array(
             'id'=>'home_image_menu',
-            'type' => 'kad_slides',
+            'type' => 'ascend_slides',
             'title' => __('Image Menu', 'ascend'),
             'subtitle'=> __('Add images, descriptions, titles, and links', 'ascend'),
         ),
@@ -1936,7 +1936,7 @@ Redux::setSection( $opt_name, array(
            	),
            	array(
 	            'id'=>'icon_menu',
-	            'type' => 'kad_icons',
+	            'type' => 'ascend_icons',
 	            'title' => __('Icon Menu', 'ascend'),
 	            'subtitle'=> __('Choose your icons for the icon menu.', 'ascend'),
         	), 
@@ -3308,16 +3308,19 @@ Redux::setSection( $opt_name, array(
             'id'=>'info_body_background',
             'type' => 'info',
             'desc' => __('Body Background', 'ascend'),
+            'customizer' => false,
         ),
      	 array(
 	        'id'        => 'body_background',
 	        'type'      => 'background',
-	        'output'    => array('body'),
+	        //'output'    => array('body'),
 	        'title'     => __('Body Background', 'ascend'),
 	        'subtitle'  => __('This shows if site is using the boxed layout option.', 'ascend'),
 	        'default'  => array(
 		        'background-color' => '#ffffff',
 		    ),
+		    'customizer' => false,
+            'validate_callback' => 'ascend_update_callback_custom_background',
         ),
     ),
 ) );
@@ -4150,7 +4153,38 @@ function ascend_remove_demo() {
         }
     }
 function ascend_update_callback_custom_logo($field, $value, $existing_value) {
-	set_theme_mod( 'custom_logo', $value['id']);
+	set_theme_mod( 'custom_logo', absint($value['id']));
+	$return['value'] = $value;
+	return $return;
+}
+function ascend_update_callback_custom_background($field, $value, $existing_value) {
+	if(isset($value['background-image'])) {
+		set_theme_mod( 'background_image', esc_url_raw($value['background-image']));
+	}
+	set_theme_mod( 'background_preset', 'custom');
+	if(isset($value['background-attachment'])) {
+		set_theme_mod( 'background_attachment', sanitize_text_field($value['background-attachment']));
+	}
+	if(isset($value['background-position'])) {
+		$background_position = explode(' ', $value['background-position']);
+		if(isset($background_position[0])) {
+			set_theme_mod( 'background_position_x', sanitize_text_field($background_position[0]));
+		}
+		if(isset($background_position[1])) {
+			set_theme_mod( 'background_position_y', sanitize_text_field($background_position[1]));
+		}
+	}
+	if(isset($value['background-size'])) {
+		set_theme_mod( 'background_size', sanitize_text_field($value['background-size']));
+	}
+	if(isset($value['background-repeat'])) {
+		set_theme_mod( 'background_repeat', sanitize_text_field($value['background-repeat']));
+	}
+	if(isset($value['background-color'])) {
+    	$color = str_replace( '#', '', $value['background-color'] );
+		set_theme_mod( 'background_color', sanitize_text_field($color));
+	}
+
 	$return['value'] = $value;
 	return $return;
 }
@@ -4168,6 +4202,53 @@ function ascend_customizer_save_after( $wp_customize ) {
 			$options['logo']['thumbnail'] = esc_url_raw($logo['0']);
 
 			update_option( 'ascend',  $options); 
+		}
+	}
+	$background_src = get_theme_mod( 'background_image' );
+	if(isset($background_src)) {
+		$options = get_option( 'ascend' );
+		if(!is_array($options['body_background'])) {
+			$options['body_background'] = array();
+		}
+		if(isset($options['body_background']['background-image']) && ($options['body_background']['background-image'] != $background_src) || !isset($options['body_background']['background-image']) ){
+			$options['body_background']['background-image'] = esc_url_raw($background_src);
+		}
+
+		$background_attachment = get_theme_mod( 'background_attachment' );
+		if(isset($options['body_background']['background-attachment']) && ($options['body_background']['background-attachment'] != $background_attachment) || !isset($options['body_background']['background-attachment']) ){
+			$options['body_background']['background-attachment'] = sanitize_text_field($background_attachment);
+
+		}
+
+		$background_size = get_theme_mod( 'background_size' );
+		if(isset($options['body_background']['background-size']) && ($options['body_background']['background-size'] != $background_size) || !isset($options['body_background']['background-size']) ){
+			$options['body_background']['background-size'] = sanitize_text_field($background_size);
+		}
+
+		$background_repeat = get_theme_mod( 'background_repeat' );
+		if(isset($options['body_background']['background-repeat']) && ($options['body_background']['background-repeat'] != $background_repeat) || !isset($options['body_background']['background-repeat']) ){
+			$options['body_background']['background-repeat'] = sanitize_text_field($background_repeat);
+		}
+
+		$background_position_x = get_theme_mod( 'background_position_x' );
+		$background_position_y = get_theme_mod( 'background_position_y' );
+		if(isset($background_position_x)) {
+			$options['body_background']['background-position'] = sanitize_text_field($background_position_x.' '.$background_position_y);
+		} 
+
+		update_option( 'ascend',  $options);
+	}
+	$background_color = get_theme_mod( 'background_color' );
+	error_log($background_color);
+	if(isset($background_color)){
+		$options = get_option( 'ascend' );
+		if(!is_array($options['body_background'])) {
+			$options['body_background'] = array();
+		}
+		if(isset($options['body_background']['background-color']) && ($options['body_background']['background-color'] != $background_color) || !isset($options['body_background']['background-color'])  ){
+			$options['body_background']['background-color'] = sanitize_hex_color('#'.$background_color);
+
+			update_option( 'ascend',  $options);
 		}
 	}
 }
@@ -4205,7 +4286,10 @@ function ascend_override_options_filter($data) {
     }
     return $data;
 }
-function ascend_custom_logo_customize_register( $wp_customize ) {
+function ascend_custom_wp_control_customize_register( $wp_customize ) {
     $wp_customize->get_control( 'custom_logo' )->section = 'logo_settings';
+
+    $wp_customize->get_section( 'background_image' )->title = __('Body Background', 'ascend');
+    $wp_customize->get_control( 'background_color' )->section = 'background_image';
 }
-add_action( 'customize_register', 'ascend_custom_logo_customize_register', 80);
+add_action( 'customize_register', 'ascend_custom_wp_control_customize_register', 199);

@@ -12,14 +12,14 @@ function ascend_customizer_fields(){
             public $type = "redux-info";
         }
     }
-    if ( ! class_exists( 'Redux_Customizer_Control_kad_slides' ) ) {
-        class Redux_Customizer_Control_kad_slides extends Redux_Customizer_Control {
-            public $type = "redux-kad_slides";
+    if ( ! class_exists( 'Redux_Customizer_Control_ascend_slides' ) ) {
+        class Redux_Customizer_Control_ascend_slides extends Redux_Customizer_Control {
+            public $type = "redux-ascend_slides";
         }
     }
-    if ( ! class_exists( 'Redux_Customizer_Control_kad_icons' ) ) {
-        class Redux_Customizer_Control_kad_icons extends Redux_Customizer_Control {
-            public $type = "redux-kad_icons";
+    if ( ! class_exists( 'Redux_Customizer_Control_ascend_icons' ) ) {
+        class Redux_Customizer_Control_ascend_icons extends Redux_Customizer_Control {
+            public $type = "redux-ascend_icons";
         }
     }
      if ( ! class_exists( 'Redux_Customizer_Control_background' ) ) {

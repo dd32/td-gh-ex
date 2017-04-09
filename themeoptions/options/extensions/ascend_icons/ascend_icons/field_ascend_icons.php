@@ -4,14 +4,14 @@
 if (!defined('ABSPATH')) exit;
 
 // Don't duplicate me!
-if (!class_exists('ReduxFramework_kad_icons')) {
+if (!class_exists('ReduxFramework_ascend_icons')) {
 
     /**
      * Main ReduxFramework_icons class
      *
      * @since       1.0.0
      */
-    class ReduxFramework_kad_icons {
+    class ReduxFramework_ascend_icons {
 
         /**
          * Field Constructor.
@@ -243,17 +243,16 @@ if (!class_exists('ReduxFramework_kad_icons')) {
 
 
             wp_enqueue_script (
-                'kad-field-icons-js', 
-                //get_template_directory_uri() . '/themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons' . Redux_Functions::isMin () . '.js', 
-                get_template_directory_uri() . '/themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.js', 
+                'ascend-field-icons-js',  
+                get_template_directory_uri() . '/themeoptions/options/extensions/ascend_icons/ascend_icons/field_ascend_icons.js', 
                 array( 'jquery', 'jquery-ui-core', 'jquery-ui-accordion', 'wp-color-picker' ), 
                 time (), 
                 true
             );
 
             wp_enqueue_style (
-                'kad-field-icons-css', 
-                get_template_directory_uri() . '/themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.css', 
+                'ascend-field-icons-css', 
+                get_template_directory_uri() . '/themeoptions/options/extensions/ascend_icons/ascend_icons/field_ascend_icons.css', 
                 time (), 
                 true
             );

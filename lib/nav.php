@@ -77,7 +77,7 @@ add_filter('wp_nav_menu_args', 'ascend_nav_menu_args', '10');
 /**
  * Custom Menu Walker
  */
-class kadence_mobile_walker extends Walker_Nav_Menu {
+class ascend_mobile_walker extends Walker_Nav_Menu {
 
   function start_lvl(&$output, $depth = 0, $args = array()) {
     $output .= "\n<ul class=\"sub-menu sf-dropdown-menu collapse\">\n";
@@ -92,8 +92,6 @@ class kadence_mobile_walker extends Walker_Nav_Menu {
     $class_names = $value = '';
     $li_attributes = '';
     $classes = empty($item->classes) ? array() : (array) $item->classes;
-
-    //$classes = array_filter($classes, array(&$this, 'check_current'));
 
     $id = 'menu-' . $slug;
 

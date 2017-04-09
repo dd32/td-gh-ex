@@ -23,7 +23,7 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 // Don't duplicate me!
-if( !class_exists( 'ReduxFramework_Extension_kad_icons' ) ) {
+if( !class_exists( 'ReduxFramework_Extension_ascend_icons' ) ) {
 
 
     /**
@@ -31,7 +31,7 @@ if( !class_exists( 'ReduxFramework_Extension_kad_icons' ) ) {
      *
      * @since       3.1.6
      */
-    class ReduxFramework_Extension_kad_icons extends ReduxFramework {
+    class ReduxFramework_Extension_ascend_icons extends ReduxFramework {
 
         // Protected vars
         protected $parent;
@@ -50,15 +50,13 @@ if( !class_exists( 'ReduxFramework_Extension_kad_icons' ) ) {
         * @return      void
         */
         public function __construct( $parent ) {
-            
             $this->parent = $parent;
             if ( empty( $this->extension_dir ) ) {
                 $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
             }
-            $this->field_name = 'kad_icons';
+            $this->field_name = 'ascend_icons';
 
             self::$theInstance = $this;
-
             add_filter( 'redux/'.$this->parent->args['opt_name'].'/field/class/'.$this->field_name, array( &$this, 'overload_field_path' ) ); // Adds the local field
 
         }

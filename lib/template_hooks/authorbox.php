@@ -71,7 +71,7 @@ if(!function_exists('ascend_author_box')) {
                     if ( $loop ) : 
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                         <li>
-                            <a href="<?php the_permalink();?>"><?php the_title(); ?></a><span class="recentpost-date"> - <?php echo get_the_time('F j, Y'); ?></span></li>
+                            <a href="<?php the_permalink();?>"><?php the_title(); ?></a><span class="recentpost-date"> - <?php echo get_the_time(get_option( 'date_format' )); ?></span></li>
                         <?php endwhile; 
                          wp_reset_postdata();
                     endif;  ?>

@@ -91,7 +91,6 @@ function ascend_breadcrumbs() {
   		$home = __('Home', 'ascend');
   	}
 
-	$homelink 			= home_url('/');
 	$wrap_before    	= '<div id="kadbreadcrumbs"><div class="kt-breadcrumb-container container">';
 	$wrap_after     	= '</div></div>';
 	$delimiter 			= apply_filters('ascend_breadcrumb_delimiter', '&raquo;');
@@ -105,7 +104,7 @@ function ascend_breadcrumbs() {
 	$link           	= $link_before . '<a href="%1$s" itemprop="url">' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
 	$before 			= '<span class="kad-breadcurrent">';
  	$after 				= '</span>';
- 	$home_link      	= $link_before . '<a href="' . esc_url($homelink) . '" itemprop="url" class="kad-bc-home">' . $link_in_before . esc_html($home) . $link_in_after . '</a>' . $link_after . $sep;
+ 	$home_link      	= $link_before . '<a href="' . esc_url(home_url('/')) . '" itemprop="url" class="kad-bc-home">' . $link_in_before . esc_html($home) . $link_in_after . '</a>' . $link_after . $sep;
  	$shop_bread = '';
 	if (class_exists('woocommerce') && isset($ascend['shop_breadcrumbs']) && $ascend['shop_breadcrumbs'] == 1) {
 	    $shop_page_id = wc_get_page_id( 'shop' );
@@ -366,7 +365,7 @@ function ascend_breadcrumbs() {
 	    }
  		// Paged
 	    if ( get_query_var('paged') ) {
-	      	echo ' - ' .__('Page', 'ascend') . ' ' . esc_html(get_query_var('paged')) . ' ' .__('of', 'ascend') . ' ' . esc_html($wp_query->max_num_pages);
+	      	echo ' - ' .__('Page', 'ascend') . ' ' . esc_html(get_query_var('paged'));
 	    }
   
     	echo $wrap_after;

@@ -45,10 +45,11 @@ function ascend_setup() {
 	   'flex-width' 	=> true,
 	   'flex-height' 	=> true,
 	) );
+	add_theme_support('custom-background');
     // Indicate widget sidebars can use selective refresh in the Customizer.
     add_theme_support( 'customize-selective-refresh-widgets' );
 
-    define( 'ASCEND_VERSION', '1.0.6' );
+    define( 'ASCEND_VERSION', '1.0.9' );
     // Square
 	add_image_size( 'ascend-600x600', 600, 600, true);
 	//portrait

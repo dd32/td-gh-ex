@@ -54,7 +54,7 @@ function ascend_sidebar_id() {
     } elseif( is_page() ) {
         global $post;
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
-        if (empty($sidebar_name) || $sidebar_name == 'default') {
+        if (empty($sidebar_name) || 'default' == $sidebar_name) {
             $ascend = ascend_get_options();
             if(!empty($ascend['page_sidebar_default_sidebar'])) {
                 $sidebar = $ascend['page_sidebar_default_sidebar'];

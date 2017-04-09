@@ -28,6 +28,25 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.0.9 | 8th April 2017 =
+* Fix: Issue home full portfolio settings.
+* Fix: Issue with sidebar on portfolio/blog templates pagination.
+* Update: Add un-minify css files.
+* Update: Add Fittext to credits.
+* Update: Remove masonry and hoverIntent from credits since they are part of core.
+* Update: Move Script for "scroll to top" to main.js and unminify.
+* Update: Add un-minify respond.js and html5shiv.js
+* Update: Changed home link in breadcrumbs just so no one can miss read it.
+* Update: Add tags, custom-logo, threaded-comments, custom-background, editor-style. 
+* Update: Remove tag "custom-header".
+* Add: Custom background support.
+* Update: Change defined date to "get_option( 'date_format' )"
+* Update: Change kadence_mobile_walker to ascend_mobile_walker
+* Update: Class names for slides and icons.
+* Remove: a few comments in code so php sniffer doesn't put out a warning.
+* Update: Use wp_kses_post on video output.
+* Remove icon-select.
+
 = Version 1.0.8 | 7th April 2017 =
 * Fix: Issue with WC 3.0 and featured products.
 * Fix: Issue with portfolio sidebar.
@@ -179,21 +198,17 @@ Source: http://www.google.com/fonts/
 Select2 licensed under GNU General Public License v2.0 or later
 Source: http://ivaynberg.github.io/select2/
 
-* Masonry Javascript, Copyright 2017 David DeSandro
-Masonry licensed under MIT license
-Source: http://masonry.desandro.com/
-
 * TGM Plugin Activation library, Copyright 2017 Thomas Griffin, Gary Jones, Juliette Reinders Folmer
 TGM Plugin Activation library licensed under GNU General Public License v2.0 or later
 Source: https://github.com/thomasgriffin/TGM-Plugin-Activation
 
-* hoverIntent Javascript, Copyright 2017 Brian Cherne
-hoverIntent licensed under MIT license
-Source: https://github.com/briancherne/jquery-hoverIntent
-
 * Superfish Javascript, Copyright 2013 Joel Birch
 Superfish Dual licensed under the MIT and GPL license.
 Source: https://github.com/joeldbirch/superfish
+
+* FitText Javascript, Copyright 2011, Dave Rupert
+FitText licensed under the WTFPL license.
+Source: https://github.com/davatron5000/FitText.js/blob/master/jquery.fittext.js
 
 * Magnific Popup, Copyright 2014-2016 Dmitry Semenov
 Magnific Popup licensed under MIT license

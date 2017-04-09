@@ -65,7 +65,7 @@ function ascend_mobile_menu_sldr() {
                   	} 
                   	if(has_nav_menu($menu_location)) {
 	                  	if(isset($ascend['mobile_submenu_collapse']) && $ascend['mobile_submenu_collapse'] == '1') {
-	                    	wp_nav_menu( array('theme_location' => $menu_location,'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'menu_class' => 'kad-mobile-nav', 'walker' => new kadence_mobile_walker()));
+	                    	wp_nav_menu( array('theme_location' => $menu_location,'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'menu_class' => 'kad-mobile-nav', 'walker' => new ascend_mobile_walker()));
 	                  	} else {
 	                    	wp_nav_menu( array('theme_location' => $menu_location,'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'menu_class' => 'kad-mobile-nav'));
 	                  	} 

@@ -113,18 +113,19 @@ get_header();
 
             	echo '<div class="kad-portfolio-wrapper-outer p-outer-'.esc_attr($style).'">';
                		echo '<div id="portfolio_template_wrapper" class="'.esc_attr($isoclass).' entry-content portfolio-grid-light-gallery '.esc_attr($margins).'" data-masonry-selector=".p_item" data-masonry-style="masonry">';
-				
-				  	$wp_query = new WP_Query();
-				  	$wp_query->query(array(
+					if(isset($wp_query)) {
+						$temp = $wp_query;
+					} else {
+						$temp = null;
+					} 
+				  	$wp_query = new WP_Query(array(
 						'paged' 			=> $paged,
 						'orderby' 			=> $p_orderby,
 						'order' 			=> $p_order,
 						'post_type' 		=> 'portfolio',
 						'portfolio-type'	=> $portfolio_type_slug,
 						'posts_per_page' 	=> $portfolio_items
-						)
-				  	);
-					
+						));
 					if ( $wp_query ) : 
 						$ascend_portfolio_loop_count['loop'] = 1;
 						$ascend_portfolio_loop_count['count'] = $wp_query->post_count;
@@ -144,6 +145,7 @@ get_header();
                 * @hooked ascend_pagination - 20
                 */
                 do_action('ascend_pagination');
+                $wp_query = $temp;  // Reset 
                 wp_reset_postdata();
 
                 /**

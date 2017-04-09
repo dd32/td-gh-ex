@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ascend\n"
-"POT-Creation-Date: 2017-03-30 10:30-0600\n"
+"POT-Creation-Date: 2017-04-08 23:56-0600\n"
 "PO-Revision-Date: 2015-05-08 13:15-0700\n"
 "Last-Translator: \n"
 "Language-Team: Kadence Themes\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;esc_html_e;"
 "esc_html__\n"
 "X-Poedit-Basepath: ..\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: home.php:34 template-blog.php:112 templates/bottom-post-carousel.php:63
+#: home.php:34 template-blog.php:110 templates/bottom-post-carousel.php:63
 #: templates/home/blog-home.php:93
 msgid "Sorry, no blog entries found."
 msgstr ""
@@ -886,8 +886,8 @@ msgid "No terms"
 msgstr ""
 
 #: lib/cleanup.php:71 lib/cleanup.php:81
-#: lib/widgets/class-kad_recent_posts_widget.php:54
-#: lib/widgets/class-kad_recent_posts_widget.php:59
+#: lib/widgets/class-ascend_recent_posts_widget.php:54
+#: lib/widgets/class-ascend_recent_posts_widget.php:59
 #: templates/content-post-full.php:50 templates/home/blog-home.php:105
 #: themeoptions/options.php:1772
 msgid "Read More"
@@ -921,35 +921,35 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: lib/init.php:70 lib/template_hooks/authorbox.php:11
+#: lib/init.php:71 lib/template_hooks/authorbox.php:11
 msgid "Latest Posts"
 msgstr ""
 
-#: lib/init.php:75
+#: lib/init.php:76
 #, php-format
 msgid "Search Results for %s"
 msgstr ""
 
-#: lib/init.php:77
+#: lib/init.php:78
 msgid "Not Found"
 msgstr ""
 
-#: lib/init.php:91
+#: lib/init.php:92
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: lib/init.php:95
+#: lib/init.php:96
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: lib/init.php:97
+#: lib/init.php:98
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: lib/init.php:99
+#: lib/init.php:100
 #, php-format
 msgid "Year: %s"
 msgstr ""
@@ -1129,7 +1129,7 @@ msgstr ""
 
 #: lib/metaboxes/page-template-blog-metaboxes.php:70
 #: themeoptions/options.php:1726 themeoptions/options.php:2223
-#: themeoptions/options.php:3117 themeoptions/options.php:4053
+#: themeoptions/options.php:3117 themeoptions/options.php:4056
 msgid "Grid"
 msgstr ""
 
@@ -1406,7 +1406,7 @@ msgstr ""
 msgid "Choose Sidebar"
 msgstr ""
 
-#: lib/scripts.php:53 lib/template_hooks/breadcrumbs.php:369
+#: lib/scripts.php:53
 msgid "of"
 msgstr ""
 
@@ -1474,15 +1474,15 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: lib/template_hooks/breadcrumbs.php:154
+#: lib/template_hooks/breadcrumbs.php:153
 msgid "Search results for"
 msgstr ""
 
-#: lib/template_hooks/breadcrumbs.php:365
+#: lib/template_hooks/breadcrumbs.php:364
 msgid "Error 404"
 msgstr ""
 
-#: lib/template_hooks/breadcrumbs.php:369 themeoptions/options.php:2683
+#: lib/template_hooks/breadcrumbs.php:368 themeoptions/options.php:2683
 msgid "Page"
 msgstr ""
 
@@ -1491,17 +1491,17 @@ msgstr ""
 msgid "Don't have an account?"
 msgstr ""
 
-#: lib/template_hooks/hooks_header.php:211
+#: lib/template_hooks/hooks_header.php:210
 #: lib/template_hooks/hooks_topbar_header.php:112
 msgid "Login/Signup"
 msgstr ""
 
-#: lib/template_hooks/hooks_header.php:213
+#: lib/template_hooks/hooks_header.php:212
 #: lib/template_hooks/hooks_topbar_header.php:114
 msgid "Login"
 msgstr ""
 
-#: lib/template_hooks/hooks_header.php:235
+#: lib/template_hooks/hooks_header.php:234
 #: lib/template_hooks/hooks_topbar_header.php:71
 msgid "Cart"
 msgstr ""
@@ -1518,300 +1518,300 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:12
+#: lib/widgets/class-ascend_contact_widget.php:12
 msgid "Use this widget to add a Vcard to your site"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:13
+#: lib/widgets/class-ascend_contact_widget.php:13
 msgid "Ascend: Contact/Vcard"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:90
-#: lib/widgets/class-kad_post_grid_widget.php:156
-#: lib/widgets/class-kad_recent_posts_widget.php:180
-#: lib/widgets/class-kad_social_widget.php:189
+#: lib/widgets/class-ascend_contact_widget.php:90
+#: lib/widgets/class-ascend_post_grid_widget.php:156
+#: lib/widgets/class-ascend_recent_posts_widget.php:180
+#: lib/widgets/class-ascend_social_widget.php:189
 msgid "Title:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:94
+#: lib/widgets/class-ascend_contact_widget.php:94
 msgid "Company Name:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:98
+#: lib/widgets/class-ascend_contact_widget.php:98
 msgid "Name:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:102
+#: lib/widgets/class-ascend_contact_widget.php:102
 msgid "Street Address:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:106
+#: lib/widgets/class-ascend_contact_widget.php:106
 msgid "City/Locality:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:110
+#: lib/widgets/class-ascend_contact_widget.php:110
 msgid "State/Region:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:114
+#: lib/widgets/class-ascend_contact_widget.php:114
 msgid "Zipcode/Postal Code:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:118
+#: lib/widgets/class-ascend_contact_widget.php:118
 msgid "Mobile Telephone:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:122
+#: lib/widgets/class-ascend_contact_widget.php:122
 msgid "Fixed Telephone:"
 msgstr ""
 
-#: lib/widgets/class-kad_contact_widget.php:126
+#: lib/widgets/class-ascend_contact_widget.php:126
 msgid "Email:"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:9
+#: lib/widgets/class-ascend_image_widget.php:9
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:10
+#: lib/widgets/class-ascend_image_widget.php:10
 msgid "Ascend: Image"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:92
+#: lib/widgets/class-ascend_image_widget.php:92
 msgid "Lightbox"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:93
+#: lib/widgets/class-ascend_image_widget.php:93
 msgid "New Window"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:94
+#: lib/widgets/class-ascend_image_widget.php:94
 msgid "Same Window"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:95
+#: lib/widgets/class-ascend_image_widget.php:95
 msgid "No Link"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:111
+#: lib/widgets/class-ascend_image_widget.php:111
 msgid "Image URL"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:114
+#: lib/widgets/class-ascend_image_widget.php:114
 msgid "Upload"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:117
+#: lib/widgets/class-ascend_image_widget.php:117
 msgid "Image size"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:121
+#: lib/widgets/class-ascend_image_widget.php:121
 msgid "Custom Width"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:125
+#: lib/widgets/class-ascend_image_widget.php:125
 msgid "Custom Height"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:129
+#: lib/widgets/class-ascend_image_widget.php:129
 msgid "Image opens in"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:133
+#: lib/widgets/class-ascend_image_widget.php:133
 msgid "Image Link (optional)"
 msgstr ""
 
-#: lib/widgets/class-kad_image_widget.php:137
+#: lib/widgets/class-ascend_image_widget.php:137
 msgid "Text/Caption (optional)"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:13
+#: lib/widgets/class-ascend_post_grid_widget.php:13
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:14
+#: lib/widgets/class-ascend_post_grid_widget.php:14
 msgid "Ascend: Post Grid"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:159
+#: lib/widgets/class-ascend_post_grid_widget.php:159
 msgid "Grid Choice:"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:161
+#: lib/widgets/class-ascend_post_grid_widget.php:161
 msgid "Blog Posts"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:162
+#: lib/widgets/class-ascend_post_grid_widget.php:162
 msgid "Portfolio"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:165
+#: lib/widgets/class-ascend_post_grid_widget.php:165
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:168
+#: lib/widgets/class-ascend_post_grid_widget.php:168
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:171
+#: lib/widgets/class-ascend_post_grid_widget.php:171
 msgid "Number of images to show:"
 msgstr ""
 
-#: lib/widgets/class-kad_post_grid_widget.php:174
-#: lib/widgets/class-kad_recent_posts_widget.php:188
+#: lib/widgets/class-ascend_post_grid_widget.php:174
+#: lib/widgets/class-ascend_recent_posts_widget.php:188
 msgid "Orderby:"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:15
+#: lib/widgets/class-ascend_recent_posts_widget.php:15
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:16
+#: lib/widgets/class-ascend_recent_posts_widget.php:16
 msgid "Ascend: Recent Posts"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:184
+#: lib/widgets/class-ascend_recent_posts_widget.php:184
 msgid "Number of posts to show:"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:192
+#: lib/widgets/class-ascend_recent_posts_widget.php:192
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:196
+#: lib/widgets/class-ascend_recent_posts_widget.php:196
 msgid "Feature first item:"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:200
+#: lib/widgets/class-ascend_recent_posts_widget.php:200
 msgid "View more link at end of post list?:"
 msgstr ""
 
-#: lib/widgets/class-kad_recent_posts_widget.php:204
+#: lib/widgets/class-ascend_recent_posts_widget.php:204
 msgid "View more link text:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:12
+#: lib/widgets/class-ascend_social_widget.php:12
 msgid "Simple way to add Social Icons"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:13
+#: lib/widgets/class-ascend_social_widget.php:13
 msgid "Ascend: Social Links"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:175
+#: lib/widgets/class-ascend_social_widget.php:175
 msgid "Enable"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:175
+#: lib/widgets/class-ascend_social_widget.php:175
 msgid "Disable"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:181
+#: lib/widgets/class-ascend_social_widget.php:181
 msgid "Top"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:181
+#: lib/widgets/class-ascend_social_widget.php:181
 msgid "Bottom"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:181 themeoptions/options.php:969
+#: lib/widgets/class-ascend_social_widget.php:181 themeoptions/options.php:969
 #: themeoptions/options.php:1225 themeoptions/options.php:1560
 #: themeoptions/options.php:2285
 msgid "Left"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:181 themeoptions/options.php:969
+#: lib/widgets/class-ascend_social_widget.php:181 themeoptions/options.php:969
 #: themeoptions/options.php:1225 themeoptions/options.php:1560
 #: themeoptions/options.php:2285
 msgid "Right"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:193
+#: lib/widgets/class-ascend_social_widget.php:193
 msgid "Facebook:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:197
+#: lib/widgets/class-ascend_social_widget.php:197
 msgid "Twitter:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:201
+#: lib/widgets/class-ascend_social_widget.php:201
 msgid "Instagram:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:205
+#: lib/widgets/class-ascend_social_widget.php:205
 msgid "GooglePlus:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:209
+#: lib/widgets/class-ascend_social_widget.php:209
 msgid "Flickr:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:213
+#: lib/widgets/class-ascend_social_widget.php:213
 msgid "Vimeo:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:217
+#: lib/widgets/class-ascend_social_widget.php:217
 msgid "Youtube:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:221
+#: lib/widgets/class-ascend_social_widget.php:221
 msgid "Pinterest:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:225
+#: lib/widgets/class-ascend_social_widget.php:225
 msgid "Dribbble:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:229
+#: lib/widgets/class-ascend_social_widget.php:229
 msgid "Linkedin:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:233
+#: lib/widgets/class-ascend_social_widget.php:233
 msgid "Tumblr:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:237
+#: lib/widgets/class-ascend_social_widget.php:237
 msgid "Stumbleupon:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:241
+#: lib/widgets/class-ascend_social_widget.php:241
 msgid "VK:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:245
+#: lib/widgets/class-ascend_social_widget.php:245
 msgid "Viadeo:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:249
+#: lib/widgets/class-ascend_social_widget.php:249
 msgid "xing:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:253
+#: lib/widgets/class-ascend_social_widget.php:253
 msgid "Yelp:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:257
+#: lib/widgets/class-ascend_social_widget.php:257
 msgid "Soundcloud:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:261
+#: lib/widgets/class-ascend_social_widget.php:261
 msgid "Snapchat:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:265
+#: lib/widgets/class-ascend_social_widget.php:265
 msgid "Behance:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:269
+#: lib/widgets/class-ascend_social_widget.php:269
 msgid "RSS:"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:273
+#: lib/widgets/class-ascend_social_widget.php:273
 msgid "Show Tooltip"
 msgstr ""
 
-#: lib/widgets/class-kad_social_widget.php:277
+#: lib/widgets/class-ascend_social_widget.php:277
 msgid "Tooltip Direction"
 msgstr ""
 
@@ -1871,7 +1871,7 @@ msgstr ""
 msgid "Search for:"
 msgstr ""
 
-#: template-portfolio-grid.php:142
+#: template-portfolio-grid.php:137
 #: templates/content-single-portfolio-bottom-carousel.php:116
 #: templates/home/portfolio-carousel.php:136
 #: templates/home/portfolio-full.php:120
@@ -1884,14 +1884,6 @@ msgstr ""
 
 #: templates/bottom-post-carousel.php:35
 msgid "Recent Posts"
-msgstr ""
-
-#: templates/comment.php:7
-msgid "(Edit)"
-msgstr ""
-
-#: templates/comment.php:11
-msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: templates/comments.php:16
@@ -2269,7 +2261,7 @@ msgstr ""
 msgid "Choose size of your site title on mobile"
 msgstr ""
 
-#: themeoptions/options.php:565 themeoptions/options.php:3740
+#: themeoptions/options.php:565 themeoptions/options.php:3743
 msgid "Mobile Menu Options"
 msgstr ""
 
@@ -3276,7 +3268,7 @@ msgstr ""
 #: themeoptions/options.php:2277 themeoptions/options.php:2444
 #: themeoptions/options.php:2624 themeoptions/options.php:2832
 #: themeoptions/options.php:3013 themeoptions/options.php:3139
-#: themeoptions/options.php:4037
+#: themeoptions/options.php:4040
 msgid "Sidebar Layout"
 msgstr ""
 
@@ -3454,7 +3446,7 @@ msgstr ""
 
 #: themeoptions/options.php:2444 themeoptions/options.php:2624
 #: themeoptions/options.php:2832 themeoptions/options.php:3013
-#: themeoptions/options.php:3139 themeoptions/options.php:4037
+#: themeoptions/options.php:3139 themeoptions/options.php:4040
 msgid "No sidebar layout"
 msgstr ""
 
@@ -4116,547 +4108,548 @@ msgstr ""
 msgid "Footer Base Background"
 msgstr ""
 
-#: themeoptions/options.php:3310 themeoptions/options.php:3316
+#: themeoptions/options.php:3310 themeoptions/options.php:3317
+#: themeoptions/options.php:4292
 msgid "Body Background"
 msgstr ""
 
-#: themeoptions/options.php:3317
+#: themeoptions/options.php:3318
 msgid "This shows if site is using the boxed layout option."
 msgstr ""
 
-#: themeoptions/options.php:3328
+#: themeoptions/options.php:3331
 msgid "Typography"
 msgstr ""
 
-#: themeoptions/options.php:3329
+#: themeoptions/options.php:3332
 msgid "Header Font Options"
 msgstr ""
 
-#: themeoptions/options.php:3334
+#: themeoptions/options.php:3337
 msgid "H1 Headings"
 msgstr ""
 
-#: themeoptions/options.php:3347
+#: themeoptions/options.php:3350
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 
-#: themeoptions/options.php:3361
+#: themeoptions/options.php:3364
 msgid "H2 Headings"
 msgstr ""
 
-#: themeoptions/options.php:3374
+#: themeoptions/options.php:3377
 msgid "Choose Size and Style for h2"
 msgstr ""
 
-#: themeoptions/options.php:3388
+#: themeoptions/options.php:3391
 msgid "H3 Headings"
 msgstr ""
 
-#: themeoptions/options.php:3401
+#: themeoptions/options.php:3404
 msgid "Choose Size and Style for h3"
 msgstr ""
 
-#: themeoptions/options.php:3415
+#: themeoptions/options.php:3418
 msgid "H4 Headings"
 msgstr ""
 
-#: themeoptions/options.php:3428
+#: themeoptions/options.php:3431
 msgid "Choose Size and Style for h4"
 msgstr ""
 
-#: themeoptions/options.php:3442
+#: themeoptions/options.php:3445
 msgid "H5 Headings"
 msgstr ""
 
-#: themeoptions/options.php:3455
+#: themeoptions/options.php:3458
 msgid "Choose Size and Style for h5"
 msgstr ""
 
-#: themeoptions/options.php:3469
+#: themeoptions/options.php:3472
 msgid "Page Subtitle"
 msgstr ""
 
-#: themeoptions/options.php:3482
+#: themeoptions/options.php:3485
 msgid "Choose Size and Style for Page Subtitle"
 msgstr ""
 
-#: themeoptions/options.php:3493
+#: themeoptions/options.php:3496
 msgid "Body Font Options"
 msgstr ""
 
-#: themeoptions/options.php:3498
+#: themeoptions/options.php:3501
 msgid "Body Font"
 msgstr ""
 
-#: themeoptions/options.php:3512
+#: themeoptions/options.php:3515
 msgid "Choose Size and Style for paragraphs"
 msgstr ""
 
-#: themeoptions/options.php:3528
+#: themeoptions/options.php:3531
 msgid "Menu Settings"
 msgstr ""
 
-#: themeoptions/options.php:3530
+#: themeoptions/options.php:3533
 msgid "Menu Options"
 msgstr ""
 
-#: themeoptions/options.php:3535
+#: themeoptions/options.php:3538
 msgid "Enable sub-indicator in menu?"
 msgstr ""
 
-#: themeoptions/options.php:3536 themeoptions/options.php:3543
+#: themeoptions/options.php:3539 themeoptions/options.php:3546
 msgid "Choose to enable arrows showing there is a submenu"
 msgstr ""
 
-#: themeoptions/options.php:3542
+#: themeoptions/options.php:3545
 msgid "Enable sub-indicator in vertical menu?"
 msgstr ""
 
-#: themeoptions/options.php:3551
+#: themeoptions/options.php:3554
 msgid "Primary Menu Options"
 msgstr ""
 
-#: themeoptions/options.php:3556
+#: themeoptions/options.php:3559
 msgid "Primary Menu Font"
 msgstr ""
 
-#: themeoptions/options.php:3569
+#: themeoptions/options.php:3572
 msgid "Choose Size and Style for primary menu"
 msgstr ""
 
-#: themeoptions/options.php:3584
+#: themeoptions/options.php:3587
 msgid "Hover and Active Font Color"
 msgstr ""
 
-#: themeoptions/options.php:3594
+#: themeoptions/options.php:3597
 msgid "Hover and Active Background Color"
 msgstr ""
 
-#: themeoptions/options.php:3605
+#: themeoptions/options.php:3608
 msgid "Secondary Menu Options"
 msgstr ""
 
-#: themeoptions/options.php:3611
+#: themeoptions/options.php:3614
 msgid "Secondary Menu Background"
 msgstr ""
 
-#: themeoptions/options.php:3616
+#: themeoptions/options.php:3619
 msgid "Secondary Menu Font"
 msgstr ""
 
-#: themeoptions/options.php:3629
+#: themeoptions/options.php:3632
 msgid "Choose Size and Style for secondary menu"
 msgstr ""
 
-#: themeoptions/options.php:3643
+#: themeoptions/options.php:3646
 msgid "Secondary Menu Divider Color"
 msgstr ""
 
-#: themeoptions/options.php:3652
+#: themeoptions/options.php:3655
 msgid "Secondary Hover and Active Font Color"
 msgstr ""
 
-#: themeoptions/options.php:3661
+#: themeoptions/options.php:3664
 msgid "Secondary Hover and Active Background Color"
 msgstr ""
 
-#: themeoptions/options.php:3671
+#: themeoptions/options.php:3674
 msgid "Dropdown Menu Style"
 msgstr ""
 
-#: themeoptions/options.php:3676
+#: themeoptions/options.php:3679
 msgid "Dropdown Background Color"
 msgstr ""
 
-#: themeoptions/options.php:3685
+#: themeoptions/options.php:3688
 msgid "Dropdown Border Color"
 msgstr ""
 
-#: themeoptions/options.php:3694
+#: themeoptions/options.php:3697
 msgid "Dropdown Menu Font size"
 msgstr ""
 
-#: themeoptions/options.php:3710
+#: themeoptions/options.php:3713
 msgid "Choose Size for the Dropdown menus"
 msgstr ""
 
-#: themeoptions/options.php:3722
+#: themeoptions/options.php:3725
 msgid "Dropdown Font Hover and Active Color"
 msgstr ""
 
-#: themeoptions/options.php:3731
+#: themeoptions/options.php:3734
 msgid "Dropdown Font Background Hover and Active Color"
 msgstr ""
 
-#: themeoptions/options.php:3745
+#: themeoptions/options.php:3748
 msgid "Mobile Menu background"
 msgstr ""
 
-#: themeoptions/options.php:3752
+#: themeoptions/options.php:3755
 msgid "Submenu items collapse until opened"
 msgstr ""
 
-#: themeoptions/options.php:3758
+#: themeoptions/options.php:3761
 msgid "Make menu items that have child elements only open sub items"
 msgstr ""
 
-#: themeoptions/options.php:3764
+#: themeoptions/options.php:3767
 msgid "Mobile Menu Font"
 msgstr ""
 
-#: themeoptions/options.php:3777
+#: themeoptions/options.php:3780
 msgid "Choose Size and Style for Mobile Menu"
 msgstr ""
 
-#: themeoptions/options.php:3791
+#: themeoptions/options.php:3794
 msgid "Mobile Menu font bottom border color"
 msgstr ""
 
-#: themeoptions/options.php:3800
+#: themeoptions/options.php:3803
 msgid "Mobile Hover and Active Font Color"
 msgstr ""
 
-#: themeoptions/options.php:3809
+#: themeoptions/options.php:3812
 msgid "Mobile Hover and Active Background Color"
 msgstr ""
 
-#: themeoptions/options.php:3821
+#: themeoptions/options.php:3824
 msgid "Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3822
+#: themeoptions/options.php:3825
 msgid "Quick Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3827
+#: themeoptions/options.php:3830
 msgid "Search Placeholder Text"
 msgstr ""
 
-#: themeoptions/options.php:3828
+#: themeoptions/options.php:3831
 msgid "Standard: Search..."
 msgstr ""
 
-#: themeoptions/options.php:3833
+#: themeoptions/options.php:3836
 msgid "Header Quick Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3838
+#: themeoptions/options.php:3841
 msgid "Cart label"
 msgstr ""
 
-#: themeoptions/options.php:3839
+#: themeoptions/options.php:3842
 msgid "Standard: Cart"
 msgstr ""
 
-#: themeoptions/options.php:3844
+#: themeoptions/options.php:3847
 msgid "Login/Signup label"
 msgstr ""
 
-#: themeoptions/options.php:3845
+#: themeoptions/options.php:3848
 msgid "Standard: Login"
 msgstr ""
 
-#: themeoptions/options.php:3850
+#: themeoptions/options.php:3853
 msgid "My Account label"
 msgstr ""
 
-#: themeoptions/options.php:3851
+#: themeoptions/options.php:3854
 msgid "Standard: My Account"
 msgstr ""
 
-#: themeoptions/options.php:3856
+#: themeoptions/options.php:3859
 msgid "Blog Quick Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3861
+#: themeoptions/options.php:3864
 msgid "Post READ MORE text"
 msgstr ""
 
-#: themeoptions/options.php:3862
+#: themeoptions/options.php:3865
 msgid "Standard: Read More"
 msgstr ""
 
-#: themeoptions/options.php:3867
+#: themeoptions/options.php:3870
 msgid "Post Author BY text"
 msgstr ""
 
-#: themeoptions/options.php:3868
+#: themeoptions/options.php:3871
 msgid "Standard: by"
 msgstr ""
 
-#: themeoptions/options.php:3873
+#: themeoptions/options.php:3876
 msgid "Woocommerce Quick Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3878
+#: themeoptions/options.php:3881
 msgid "Product Sold Text"
 msgstr ""
 
-#: themeoptions/options.php:3879
+#: themeoptions/options.php:3882
 msgid "Standard: Sold"
 msgstr ""
 
-#: themeoptions/options.php:3884
+#: themeoptions/options.php:3887
 msgid "Product Sale Text"
 msgstr ""
 
-#: themeoptions/options.php:3885
+#: themeoptions/options.php:3888
 msgid "Standard: Sale"
 msgstr ""
 
-#: themeoptions/options.php:3890
+#: themeoptions/options.php:3893
 msgid "Clear Selection Text"
 msgstr ""
 
-#: themeoptions/options.php:3891
+#: themeoptions/options.php:3894
 msgid "Standard: Clear selection"
 msgstr ""
 
-#: themeoptions/options.php:3896
+#: themeoptions/options.php:3899
 msgid "Product Page: Description tab text"
 msgstr ""
 
-#: themeoptions/options.php:3897
+#: themeoptions/options.php:3900
 msgid "Standard: Description"
 msgstr ""
 
-#: themeoptions/options.php:3902
+#: themeoptions/options.php:3905
 msgid "Product Page: Description header text"
 msgstr ""
 
-#: themeoptions/options.php:3903
+#: themeoptions/options.php:3906
 msgid "Standard: Product Description"
 msgstr ""
 
-#: themeoptions/options.php:3908
+#: themeoptions/options.php:3911
 msgid "Product Page: Additional Information tab text"
 msgstr ""
 
-#: themeoptions/options.php:3909 themeoptions/options.php:3915
+#: themeoptions/options.php:3912 themeoptions/options.php:3918
 msgid "Standard: Additional Information"
 msgstr ""
 
-#: themeoptions/options.php:3914
+#: themeoptions/options.php:3917
 msgid "Product Page: Additional Information Header text"
 msgstr ""
 
-#: themeoptions/options.php:3920
+#: themeoptions/options.php:3923
 msgid "Product Page: Reviews tab text"
 msgstr ""
 
-#: themeoptions/options.php:3921
+#: themeoptions/options.php:3924
 msgid "Standard: Reviews"
 msgstr ""
 
-#: themeoptions/options.php:3926
+#: themeoptions/options.php:3929
 msgid "Product Page: Related Products text"
 msgstr ""
 
-#: themeoptions/options.php:3927
+#: themeoptions/options.php:3930
 msgid "Standard: Related Products"
 msgstr ""
 
-#: themeoptions/options.php:3932
+#: themeoptions/options.php:3935
 msgid "Product Page: You may also like... text"
 msgstr ""
 
-#: themeoptions/options.php:3933
+#: themeoptions/options.php:3936
 msgid "Standard: You may also like&hellip;"
 msgstr ""
 
-#: themeoptions/options.php:3938
+#: themeoptions/options.php:3941
 msgid "Lightbox Quick Language Settings"
 msgstr ""
 
-#: themeoptions/options.php:3943
+#: themeoptions/options.php:3946
 msgid "LightBox: of text"
 msgstr ""
 
-#: themeoptions/options.php:3944
+#: themeoptions/options.php:3947
 msgid "Standard: of"
 msgstr ""
 
-#: themeoptions/options.php:3949
+#: themeoptions/options.php:3952
 msgid "LightBox: Error text"
 msgstr ""
 
-#: themeoptions/options.php:3950
+#: themeoptions/options.php:3953
 msgid "Standard: The Image could not be loaded."
 msgstr ""
 
-#: themeoptions/options.php:3958
+#: themeoptions/options.php:3961
 msgid "Breadcrumb Settings"
 msgstr ""
 
-#: themeoptions/options.php:3959
+#: themeoptions/options.php:3962
 msgid "Sitewide Breadcrumbs"
 msgstr ""
 
-#: themeoptions/options.php:3964
+#: themeoptions/options.php:3967
 msgid "Show Breadcrumbs in Woocommerce archive pages?"
 msgstr ""
 
-#: themeoptions/options.php:3965
+#: themeoptions/options.php:3968
 msgid "Choose to show or hide breadcrumbs on your Woocommerce archive pages"
 msgstr ""
 
-#: themeoptions/options.php:3971
+#: themeoptions/options.php:3974
 msgid "Show Breadcrumbs on Products?"
 msgstr ""
 
-#: themeoptions/options.php:3972
+#: themeoptions/options.php:3975
 msgid "Choose to show or hide breadcrumbs on your Woocommerce products"
 msgstr ""
 
-#: themeoptions/options.php:3978
+#: themeoptions/options.php:3981
 msgid "Show Breadcrumbs on Blog Posts?"
 msgstr ""
 
-#: themeoptions/options.php:3979
+#: themeoptions/options.php:3982
 msgid "Choose to show or hide breadcrumbs on your single blog post"
 msgstr ""
 
-#: themeoptions/options.php:3987
+#: themeoptions/options.php:3990
 msgid "All Blog Post Page"
 msgstr ""
 
-#: themeoptions/options.php:3988
+#: themeoptions/options.php:3991
 msgid ""
 "This sets the link for your main blog page, for breadcrumbs. Use only if "
 "your blog page is not your home page."
 msgstr ""
 
-#: themeoptions/options.php:3994
+#: themeoptions/options.php:3997
 msgid "Show Breadcrumbs on Portfolio Posts?"
 msgstr ""
 
-#: themeoptions/options.php:3995
+#: themeoptions/options.php:3998
 msgid "Choose to show or hide breadcrumbs on your single portfolio posts"
 msgstr ""
 
-#: themeoptions/options.php:4001
+#: themeoptions/options.php:4004
 msgid "Show Breadcrumbs on Archives?"
 msgstr ""
 
-#: themeoptions/options.php:4002
+#: themeoptions/options.php:4005
 msgid "Choose to show or hide breadcrumbs on your archives"
 msgstr ""
 
-#: themeoptions/options.php:4008
+#: themeoptions/options.php:4011
 msgid "Show Breadcrumbs on Pages?"
 msgstr ""
 
-#: themeoptions/options.php:4009
+#: themeoptions/options.php:4012
 msgid "Choose to show or hide breadcrumbs on your pages"
 msgstr ""
 
-#: themeoptions/options.php:4015
+#: themeoptions/options.php:4018
 msgid "Home title for breadcrumbs"
 msgstr ""
 
-#: themeoptions/options.php:4016
+#: themeoptions/options.php:4019
 msgid "Standard: Home"
 msgstr ""
 
-#: themeoptions/options.php:4021
+#: themeoptions/options.php:4024
 msgid "Show Shop page in breadcrumbs?"
 msgstr ""
 
-#: themeoptions/options.php:4022
+#: themeoptions/options.php:4025
 msgid "Choose to show or hide the shop page in breadcrumbs on your site"
 msgstr ""
 
-#: themeoptions/options.php:4030
+#: themeoptions/options.php:4033
 msgid "Search Results Settings"
 msgstr ""
 
-#: themeoptions/options.php:4031
+#: themeoptions/options.php:4034
 msgid "Search page Settings"
 msgstr ""
 
-#: themeoptions/options.php:4036
+#: themeoptions/options.php:4039
 msgid "Search Results Layout"
 msgstr ""
 
-#: themeoptions/options.php:4044
+#: themeoptions/options.php:4047
 msgid "Choose a Default Sidebar for your search results"
 msgstr ""
 
-#: themeoptions/options.php:4052
+#: themeoptions/options.php:4055
 msgid "Search Results Layout Style"
 msgstr ""
 
-#: themeoptions/options.php:4053
+#: themeoptions/options.php:4056
 msgid "Blog Like Single Column"
 msgstr ""
 
-#: themeoptions/options.php:4062 themeoptions/options.php:4063
+#: themeoptions/options.php:4065 themeoptions/options.php:4066
 msgid "Misc Settings"
 msgstr ""
 
-#: themeoptions/options.php:4068
+#: themeoptions/options.php:4071
 msgid "Create Sidebars"
 msgstr ""
 
-#: themeoptions/options.php:4073
+#: themeoptions/options.php:4076
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: themeoptions/options.php:4074
+#: themeoptions/options.php:4077
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: themeoptions/options.php:4075
+#: themeoptions/options.php:4078
 msgid "Extra Sidebar"
 msgstr ""
 
-#: themeoptions/options.php:4080
+#: themeoptions/options.php:4083
 msgid "WordPress Galleries"
 msgstr ""
 
-#: themeoptions/options.php:4085
+#: themeoptions/options.php:4088
 msgid "Enable Ascend Galleries to override WordPress"
 msgstr ""
 
-#: themeoptions/options.php:4086
+#: themeoptions/options.php:4089
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: themeoptions/options.php:4092
+#: themeoptions/options.php:4095
 msgid "Theme Lightbox"
 msgstr ""
 
-#: themeoptions/options.php:4097
+#: themeoptions/options.php:4100
 msgid "Lightbox On"
 msgstr ""
 
-#: themeoptions/options.php:4098
+#: themeoptions/options.php:4101
 msgid "Lightbox Off"
 msgstr ""
 
-#: themeoptions/options.php:4099
+#: themeoptions/options.php:4102
 msgid "Theme Lightbox?"
 msgstr ""
 
-#: themeoptions/options.php:4107
+#: themeoptions/options.php:4110
 msgid "Custom Css"
 msgstr ""
 
-#: themeoptions/options.php:4112
+#: themeoptions/options.php:4115
 msgid "Custom CSS"
 msgstr ""
 
-#: themeoptions/options.php:4113
+#: themeoptions/options.php:4116
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: themeoptions/options.php:4120
+#: themeoptions/options.php:4123
 msgid "Import / Export"
 msgstr ""
 
-#: themeoptions/options.php:4121
+#: themeoptions/options.php:4124
 msgid "Import and Export your Theme Options from text or URL."
 msgstr ""
 

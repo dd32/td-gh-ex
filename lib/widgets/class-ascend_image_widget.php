@@ -111,7 +111,7 @@ class ascend_image_widget extends WP_Widget{
         <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image URL', 'ascend'); ?></label><br />
         <input type="text" class="widefat kad_custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo esc_attr($image_uri); ?>">
         <input type="hidden" value="<?php echo esc_attr($image_id); ?>" class="kad_custom_media_id" name="<?php echo $this->get_field_name('image_id'); ?>" id="<?php echo $this->get_field_id('image_id'); ?>" />
-        <input type="button" value="<?php _e('Upload', 'ascend'); ?>" class="button kad_custom_media_upload" id="kad_custom_image_uploader" />
+        <input type="button" value="<?php esc_attr_e('Upload', 'ascend'); ?>" class="button kad_custom_media_upload" id="kad_custom_image_uploader" />
     </p>
     <p>
         <label for="<?php echo $this->get_field_id('image_size'); ?>"><?php _e('Image size', 'ascend'); ?></label><br />

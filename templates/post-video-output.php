@@ -1,6 +1,6 @@
 <?php 
 global $post;
- $video = get_post_meta( $post->ID, '_kad_post_video', true );
+ 	$video = get_post_meta( $post->ID, '_kad_post_video', true );
     if (filter_var($video, FILTER_VALIDATE_URL)) {  ?>
         <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
             <meta itemprop="name" content="<?php echo esc_attr(get_post_meta( $post->ID, '_kad_video_title', true ));?>" />
@@ -10,7 +10,7 @@ global $post;
             <?php } ?>
             <meta itemprop="contentURL" content="<?php echo esc_attr($video);?>" />
             <div id="schema-videoobject" class="videofit video-container">
-            <?php echo do_shortcode(wp_oembed_get($video));?>
+            <?php echo wp_kses_post(do_shortcode(wp_oembed_get($video)));?>
             </div>
         </div>
     <?php 
@@ -30,7 +30,7 @@ global $post;
             ?>
             <meta itemprop="embedURL" content="<?php echo esc_attr($url);?>" />
             <div id="schema-videoobject" class="videofit video-container">
-            <?php echo do_shortcode($video); ?>
+            <?php echo wp_kses_post(do_shortcode($video)); ?>
             </div>
         </div>
 <?php }  
