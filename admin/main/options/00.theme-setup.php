@@ -250,21 +250,21 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		// 1 Column Layout
-		$sizes['column1-1/3'] = 'Full - 1:3';
-		$sizes['column1-2/3'] = 'Full - 2:3';
-		$sizes['column1-2/5'] = 'Full - 2:5';
+		$sizes['column1-1/3'] = __( 'Full - 1:3', 'lan-thinkupthemes' );
+		$sizes['column1-2/3'] = __( 'Full - 2:3', 'lan-thinkupthemes' );
+		$sizes['column1-2/5'] = __( 'Full - 2:5', 'lan-thinkupthemes' );
 
 		// 2 Column Layout
-		$sizes['column2-1/2'] = 'Half - 1:2';
-		$sizes['column2-2/3'] = 'Half - 2:3';
-		$sizes['column2-2/5'] = 'Half - 2:5';
-		$sizes['column2-3/5'] = 'Half - 3:5';
+		$sizes['column2-1/2'] = __( 'Half - 1:2', 'lan-thinkupthemes' );
+		$sizes['column2-2/3'] = __( 'Half - 2:3', 'lan-thinkupthemes' );
+		$sizes['column2-2/5'] = __( 'Half - 2:5', 'lan-thinkupthemes' );
+		$sizes['column2-3/5'] = __( 'Half - 3:5', 'lan-thinkupthemes' );
 
 		// 3 Column Layout
-		$sizes['column3-2/3'] = 'Third - 2:3';
+		$sizes['column3-2/3'] = __( 'Third - 2:3', 'lan-thinkupthemes' );
 
 		// 4 Column Layout
-		$sizes['column4-2/3'] = 'Quarter - 2:3';
+		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'lan-thinkupthemes' );
 
 		return $sizes;
 	}
@@ -394,7 +394,7 @@ function thinkup_check_isblog() {
     //Check all blog-related conditional tags, as well as the current post type,
     //to determine if we're viewing a blog page.
     return (
-        ( is_home() || is_archive() || is_single() )
+        ( is_home() || is_archive() )
         && ($post_type == 'post')
     ) ? true : false ;
  
