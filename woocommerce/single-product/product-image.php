@@ -70,9 +70,9 @@ if(isset($pinnacle['product_simg_resize']) && $pinnacle['product_simg_resize'] =
 		$attributes = array(
 			'title'                   => $image_title,
 			'data-src'                => $full_size_image[0],
-			'data-large-image'        => $full_size_image[0],
-			'data-large-image-width'  => $full_size_image[1],
-			'data-large-image-height' => $full_size_image[2],
+			'data-large_image'        => $full_size_image[0],
+			'data-large_image_width'  => $full_size_image[1],
+			'data-large_image_height' => $full_size_image[2],
 		);
 		if ( has_post_thumbnail() ) {
 			if($presizeimage == 1){

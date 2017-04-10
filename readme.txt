@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.5.3 | 10th April 2017 = 
+* Fix: Issue with woocommerce zoom init.
+
 = 1.5.2 | 6th April 2017 = 
 * Fix: Issue with woocommerce notice.
 
