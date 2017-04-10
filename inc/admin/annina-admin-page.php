@@ -73,7 +73,7 @@ class Annina_Admin {
 	 */
 	public static function hide_notices() {
 		if ( isset( $_GET['annina-hide-notice'] ) && isset( $_GET['_annina_notice_nonce'] ) ) {
-			if ( ! wp_verify_nonce( $_GET['_annina_notice_nonce'], 'annina_hide_notices_nonce' ) ) {
+			if ( ! wp_verify_nonce( sanitize_key($_GET['_annina_notice_nonce'] ), 'annina_hide_notices_nonce' ) ) {
 				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'annina' ) );
 			}
 
@@ -140,7 +140,7 @@ class Annina_Admin {
 		</div>
 
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'annina-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'annina-welcome' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && isset( $_GET['page'] ) && $_GET['page'] == 'annina-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'annina-welcome' ), 'themes.php' ) ) ); ?>">
 				<?php echo esc_html($theme->display( 'Name' )); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'annina-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">

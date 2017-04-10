@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2017-03-04 15:50+0100\n"
-"PO-Revision-Date: 2017-03-04 15:50+0100\n"
+"POT-Creation-Date: 2017-04-10 16:49+0100\n"
+"PO-Revision-Date: 2017-04-10 16:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -244,323 +244,323 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:36 inc/admin/annina-admin-page.php:115
+#: inc/admin/annina-admin-page.php:37 inc/admin/annina-admin-page.php:119
 msgid "About"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:73
+#: inc/admin/annina-admin-page.php:77
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:77
+#: inc/admin/annina-admin-page.php:81
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:91
+#: inc/admin/annina-admin-page.php:95
 msgid "Dismiss"
 msgstr ""
 
 #. translators: 1: start option panel link, 2: end option panel link
-#: inc/admin/annina-admin-page.php:95
+#: inc/admin/annina-admin-page.php:99
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Annina! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:99
+#: inc/admin/annina-admin-page.php:103
 msgid "Get started with Annina"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:122
+#: inc/admin/annina-admin-page.php:126
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:124
+#: inc/admin/annina-admin-page.php:128
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:126
+#: inc/admin/annina-admin-page.php:130
 msgid "View PRO version Demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:128
+#: inc/admin/annina-admin-page.php:132
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:143
+#: inc/admin/annina-admin-page.php:147
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:146
+#: inc/admin/annina-admin-page.php:150
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:180
+#: inc/admin/annina-admin-page.php:184
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:181
+#: inc/admin/annina-admin-page.php:185
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:182
+#: inc/admin/annina-admin-page.php:186
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:186
+#: inc/admin/annina-admin-page.php:190
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:187
+#: inc/admin/annina-admin-page.php:191
 msgid "Please put it in our support forum."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:188
+#: inc/admin/annina-admin-page.php:192
 msgid "Support"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:192
+#: inc/admin/annina-admin-page.php:196
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:193 inc/admin/annina-admin-page.php:292
+#: inc/admin/annina-admin-page.php:197 inc/admin/annina-admin-page.php:296
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:194
+#: inc/admin/annina-admin-page.php:198
 msgid "Info about PRO version"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:200 inc/admin/annina-admin-page.php:208
+#: inc/admin/annina-admin-page.php:204 inc/admin/annina-admin-page.php:212
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:204
+#: inc/admin/annina-admin-page.php:208
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:220
+#: inc/admin/annina-admin-page.php:224
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:220
+#: inc/admin/annina-admin-page.php:224
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:223
+#: inc/admin/annina-admin-page.php:227
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:223
+#: inc/admin/annina-admin-page.php:227
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:240
+#: inc/admin/annina-admin-page.php:244
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:297
+#: inc/admin/annina-admin-page.php:301
 msgid "Features"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:298
+#: inc/admin/annina-admin-page.php:302
 msgid "Annina"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:299
+#: inc/admin/annina-admin-page.php:303
 msgid "Annina PRO"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:304
+#: inc/admin/annina-admin-page.php:308
 msgid "Responsive Design"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:309
+#: inc/admin/annina-admin-page.php:313
 msgid "Change Background"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:314
+#: inc/admin/annina-admin-page.php:318
 msgid "Unlimited Text Color"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:319
+#: inc/admin/annina-admin-page.php:323
 msgid "Choose Social Incons"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:324
+#: inc/admin/annina-admin-page.php:328
 msgid "RTL Support"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:329
+#: inc/admin/annina-admin-page.php:333
 msgid "5 Post format"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:334
+#: inc/admin/annina-admin-page.php:338
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:339 inc/annina-dynamic.php:248
+#: inc/admin/annina-admin-page.php:343 inc/annina-dynamic.php:251
 msgid "Loading Page"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:344
+#: inc/admin/annina-admin-page.php:348
 msgid "Infinite scroll"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:349 inc/annina-dynamic.php:247
+#: inc/admin/annina-admin-page.php:353 inc/annina-dynamic.php:250
 msgid "Font switcher"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:354
+#: inc/admin/annina-admin-page.php:358
 msgid "Choose header position (left or right)"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:359
+#: inc/admin/annina-admin-page.php:363
 msgid "Choose sidebar position (left or right)"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:364
+#: inc/admin/annina-admin-page.php:368
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:369 inc/annina-dynamic.php:250
+#: inc/admin/annina-admin-page.php:373 inc/annina-dynamic.php:253
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:374 inc/annina-dynamic.php:252
+#: inc/admin/annina-admin-page.php:378 inc/annina-dynamic.php:255
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:379
+#: inc/admin/annina-admin-page.php:383
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:384 inc/annina-dynamic.php:254
+#: inc/admin/annina-admin-page.php:388 inc/annina-dynamic.php:257
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:389 inc/annina-dynamic.php:255
+#: inc/admin/annina-admin-page.php:393 inc/annina-dynamic.php:258
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:397
+#: inc/admin/annina-admin-page.php:401
 msgid "View PRO version demo"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:398
+#: inc/admin/annina-admin-page.php:402
 msgid "More Information"
 msgstr ""
 
-#: inc/annina-dynamic.php:51
+#: inc/annina-dynamic.php:54
 msgid "Box Text Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:57
+#: inc/annina-dynamic.php:60
 msgid "Header Background"
 msgstr ""
 
-#: inc/annina-dynamic.php:63
+#: inc/annina-dynamic.php:66
 msgid "Box Background Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:69
+#: inc/annina-dynamic.php:72
 msgid "Special Color"
 msgstr ""
 
-#: inc/annina-dynamic.php:100
+#: inc/annina-dynamic.php:103
 msgid "Annina Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:113
+#: inc/annina-dynamic.php:116
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:118
+#: inc/annina-dynamic.php:121
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:123
+#: inc/annina-dynamic.php:126
 msgid "Google Plus URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:128
+#: inc/annina-dynamic.php:131
 msgid "Linkedin URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:133
+#: inc/annina-dynamic.php:136
 msgid "Instagram URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:138
+#: inc/annina-dynamic.php:141
 msgid "YouTube URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:143
+#: inc/annina-dynamic.php:146
 msgid "Pinterest URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:148
+#: inc/annina-dynamic.php:151
 msgid "VK URL"
 msgstr ""
 
-#: inc/annina-dynamic.php:183
+#: inc/annina-dynamic.php:186
 msgid "Your Email"
 msgstr ""
 
-#: inc/annina-dynamic.php:200
+#: inc/annina-dynamic.php:203
 msgid "Show Search Button in Main Menu"
 msgstr ""
 
-#: inc/annina-dynamic.php:218
+#: inc/annina-dynamic.php:221
 msgid "Last Post Box Big?"
 msgstr ""
 
-#: inc/annina-dynamic.php:232
+#: inc/annina-dynamic.php:235
 msgid "Get Annina PRO WP Theme for only"
 msgstr ""
 
-#: inc/annina-dynamic.php:237
+#: inc/annina-dynamic.php:240
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/annina-dynamic.php:240
+#: inc/annina-dynamic.php:243
 msgid "Get Annina PRO Theme"
 msgstr ""
 
-#: inc/annina-dynamic.php:244
+#: inc/annina-dynamic.php:247
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:245
+#: inc/annina-dynamic.php:248
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/annina-dynamic.php:246
+#: inc/annina-dynamic.php:249
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/annina-dynamic.php:249
+#: inc/annina-dynamic.php:252
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/annina-dynamic.php:251
+#: inc/annina-dynamic.php:254
 msgid "Post format"
 msgstr ""
 
-#: inc/annina-dynamic.php:253
+#: inc/annina-dynamic.php:256
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/annina-dynamic.php:256
+#: inc/annina-dynamic.php:259
 msgid "Sticky Sidebar"
 msgstr ""
 
-#: inc/annina-dynamic.php:257
+#: inc/annina-dynamic.php:260
 msgid "And much more..."
 msgstr ""
 
-#: inc/annina-dynamic.php:263
+#: inc/annina-dynamic.php:266
 msgid "More features? Upgrade to PRO"
 msgstr ""
 
