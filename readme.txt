@@ -18,6 +18,10 @@ custom header images, backgrounds, menus, full-width page templates, basic schem
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.2.4
+	* Fixed Layout for low resolution Desktops.
+	* CSS changes.
+
 Version 1.2.3
 	* Improved schema.org filter.
 	* CSS changes.

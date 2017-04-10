@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.2.3";
+$ast_version = "1.2.4";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -411,6 +411,9 @@ function asteroid_get_schema( $name ) {
 	$itemprop = '';
 	$itemscope = false;
 	$itemtype = '';
+
+	if ( is_singular() && !in_array( get_post_type(), array( 'post', 'page' ) ) )
+		return;
 
 	switch ( $name ) {
 

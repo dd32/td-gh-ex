@@ -1,6 +1,6 @@
 ﻿#container {max-width: 100%;}
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:960px){
 	body {padding: 0;}
 	#main #content, #main  #sidebar  { 
 		display: block;
@@ -26,11 +26,16 @@
 		text-align: center;
 		margin: 0 auto;
 	}
-	#header-info-wrap #header-logo, #header-info-wrap #header-text {
+	#header-info-wrap #header-text {
 		margin-left: 0;
 		margin-right: 0;
 	}
 	
+	#header-info-wrap #header-logo {
+		display: table;
+		margin: 0 auto;
+	}
+
 	.author-avatar, .author-description {display: block;}
 
 	#nav li:hover > ul { display: none;}
@@ -129,7 +134,7 @@
 	}
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:480px){
 	.blog-view .entry-content {
 		text-align: center;
 	}
