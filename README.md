@@ -41,6 +41,11 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+v. 1.3.0
+ * Site URL's changed.
+ * .po file updated.
+ * Responsive Sticky problem fixed.
+ 
 v. 1.2.9
  * Added Header Background Video
  

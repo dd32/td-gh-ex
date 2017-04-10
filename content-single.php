@@ -6,7 +6,7 @@ global $boxy;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( get_theme_mod('enable_single_post_top_meta',true ) ): ?>
 		    <div class="entry-meta">
 		    <?php if(function_exists('boxy_entry_top_meta') ) {
@@ -15,7 +15,7 @@ global $boxy;
 			</div><!-- .entry-meta -->
 	<?php endif; ?>
 
-	<div class="entry-content">  
+	<div class="entry-content">   
 	
 <?php
 $single_featured_image = get_theme_mod( 'single_featured_image',true );
