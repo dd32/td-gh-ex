@@ -46,6 +46,12 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 
 == Change Log ==
 
+Version 1.2.3
+  * Site URL's changed
+  * .po file updated.
+  * Responsive Sticky menu problem fixed
+  * Filter added for Responsive menu title.
+
 Version 1.2.2
   * Fix Search page title bug
 

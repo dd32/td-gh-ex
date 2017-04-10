@@ -103,7 +103,7 @@ endif;
 				<div class="ten columns">
 					<div class="top-right">
 						<nav id="site-navigation" class="main-navigation" role="navigation">
-							<button class="menu-toggle"><?php _e( 'Primary Menu', 'greenr' ); ?></button>
+							<button class="menu-toggle"><?php echo apply_filters('greenr_responsive_menu_title',__('Primary Menu','greenr') ); ?></button>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 						</nav><!-- #site-navigation -->
 					</div>

@@ -4,7 +4,7 @@ if(! function_exists('greenr_footer_credits') ) {
 	function greenr_footer_credits() { 
 		printf( __('<p>Powered by <a href="%1$s">WordPress</a>', 'greenr'), esc_url( 'http://wordpress.org/') );
 		printf( '<span class="sep"> .</span>' );
-		printf( __( 'Theme: Greenr by <a href="%1$s" rel="designer">Webulous Themes</a></p>', 'greenr' ), esc_url('http://www.webulousthemes.com/') );
+		printf( __( 'Theme: Greenr by <a href="%1$s" rel="designer">Webulous Themes</a></p>', 'greenr' ), esc_url('https://www.webulousthemes.com/') );
     }  
 }
 	

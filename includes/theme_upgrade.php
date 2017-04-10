@@ -36,13 +36,13 @@ $greenr_documentation = __( 'Documentation', 'greenr' );
 
 $greenr_why_upgrade = <<< FEATURES
 <p class="wrap-header">   
-   <a class="ask-question" href="http://www.webulousthemes.com/free-support-request/" target="_blank">
+   <a class="ask-question" href="https://www.webulousthemes.com/free-support-request/" target="_blank">
        <i class="fa fa-question-circle"></i> $greenr_ask_question</a>
-    <a class="view-doc" href="http://www.webulousthemes.com/greenr-free/" target="_blank">
+    <a class="view-doc" href="https://www.webulousthemes.com/greenr-free/" target="_blank">
         <i class="fa fa-server"></i>$greenr_documentation</a>
-    <a class="upgrade" href="http://www.webulousthemes.com/theme/greenr-pro" target="_blank">
+    <a class="upgrade" href="https://www.webulousthemes.com/theme/greenr-pro" target="_blank">
         <i class="fa fa-upload"></i> $greenr_upgrade_to_pro</a>
-    <a class="view-demo" href="http://greenr.webulous.in/" target="_blank">
+    <a class="view-demo" href="https://greenr.webulous.in/" target="_blank">
         <i class="fa fa-eye"></i> $greenr_view_demo</a> 
 
 </p>
