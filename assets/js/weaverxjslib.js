@@ -355,6 +355,15 @@ if (!Object.create) { // IE8 shim for Object.create
             menu.toggleButton.on('click', function() {
                 menu.el.toggleClass(mo.hideMobileClass);
             });
+
+
+			// Add listener to the menu items to close mobile menu when an item is clicked.
+			// Useful if menu items link to anchors in the same page and therefore do not load a new page
+			menu.el.find('a').click(function() {
+				if( $(this).children('span.toggle-submenu').length === 0 ) { //dont close mobile menu when clicking to open a sub menu
+						menu.el.toggleClass(mo.hideMobileClass);
+				}
+			});
         },
 
         /**

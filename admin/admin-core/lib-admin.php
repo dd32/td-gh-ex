@@ -95,7 +95,7 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 	// customizer only, keep values, preserve values, save values, not legacy (search terms for these kinds of settings)
 	$non_sapi = apply_filters('weaverx_non_sapi_options',array(		// non-sapi elements in the db
 		'weaverx_version_id', 'style_version',
-		'theme_filename', 'addon_name', '_hide_theme_thumbs', 
+		'theme_filename', 'addon_name', '_hide_theme_thumbs',
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
 		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
 		'_options_level', '_PHP_warning_displayed', 'last_option'));
@@ -413,15 +413,12 @@ For details on how to increase the <em>max_input_vars</em> PHP setting, please s
 
 function weaverx_donate_button() {
 
-	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) { ?>
-<div style="float:right;padding-right:30px;"><small><strong><?php _e('Like Weaver X? Consider', 'weaver-xtreme' /*adm*/); ?></strong></small>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="6Y68LG9G9M82W">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) {
+		$img = WP_CONTENT_URL . '/themes/weaver-xtreme/assets/images/donate-button.png';
+	?>
+<div style="float:right;padding-right:30px;display:inline-block;"><div style="font-size:14px;font-weight:bold;display:inline-block;vertical-align: top;"><?php _e('Like <em>Weaver Xtreme</em>? Please', 'weaver-xtreme' /*adm*/); ?></div>&nbsp;&nbsp;<a href='//weavertheme.com/donate' target='_blank' alt='Please Donate' ><img src="<?php echo $img; ?>" alt="donate" style="max-height:28px;"/></a>
 </div>
+
 <?php }
 }
 

@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.1.2
+Stable tag: 3.1.4
 
 == Description ==
 
@@ -396,3 +396,11 @@ with testing and feature suggestions.
 * Fix: Archive pages not showing BG header
 * Tweak: Minor tweaks to the "Go" subthemes
 * API: Added filters for page and archive sidebar layouts
+
+= Version 3.1.4 =
+* Fix: Move Top/Bottoms Menu option was marked as X-Plus option in Customizer - was correct in Legacy
+* Fix: JS update issue when both Primary and Secondary menus hidden
+* Fix: Issue with z-index and Smart Menus
+* Fix: Menu not closing for link to anchor on same page. Fixed so now better supports one page websites.
+* Fix: z-index for fixed top primary vs secondary menus and fixed top header widget area
+* Fix: WooCommerce: Single Product Page uses Page Sidebar Layout, Multi-Product List page uses Archive Sidebar Layout

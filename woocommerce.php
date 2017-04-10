@@ -11,6 +11,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	weaverx_sb_precontent('page');
 
 	// generate page content
+	echo "\n<!-- Weaver Woocommerce page -->\n";
 	if (function_exists('woocommerce_content')) {
 		woocommerce_content();
 	} else {

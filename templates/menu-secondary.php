@@ -63,14 +63,17 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 			$menu_class .= ' menu-alignleft';
 	}
 
+	if ( weaverx_getopt ('m_secondary_move') )
+		$nav_class = 'menu-secondary menu-secondary-moved menu-type-standard';
+	else
+		$nav_class = 'menu-secondary menu-secondary-standard menu-type-standard';
+
 	if (  weaverx_getopt('m_secondary_fixedtop') == 'fixed-top' ) {
 		$class .= ' wvrx-fixedtop';
+		$nav_class .= ' wvrx-secondary-fixedtop';
 	}
 
-	if ( weaverx_getopt ('m_secondary_move') )
-		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-moved menu-type-standard\">\n";
-	else
-		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard menu-type-standard\">\n";
+	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '">' . "\n";
 
 	$args = array(
 		'fallback_cb'     => '',

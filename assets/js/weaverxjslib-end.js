@@ -1,4 +1,4 @@
-/*! Weaver Xtreme JavaScript Library 3.0 - Copyright 2016, Weaver Theme + Copyrights of sub-scripts */
+/*! Weaver Xtreme JavaScript Library 3.0.1 - Copyright 2016,2017, Weaver Theme + Copyrights of sub-scripts */
 /* Weaver Xtreme FitVids - added to end of page html. If add more than FitVids, need to fix
  * how _disable_FitVids works.
  * */
@@ -618,7 +618,7 @@ For a custom background color and height change add
 */
 
 //Primary Only
-if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix')) {
+if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix') && ($('#nav-primary').length) ) {
     $(window).scroll(function() {
 		var wvrxAdminOffset = 0; //initialize offset for admin bar
 		var wvrxFixedOffset = 0;
@@ -649,7 +649,7 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'sc
 }
 
 //Secondary only
-if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'scroll-fix')) {
+if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'scroll-fix') && ($('#nav-secondary').length) ) {
     $(window).scroll(function() {
 		var wvrxAdminOffset = 0; //initialize offset for admin bar
 		var wvrxFixedOffset = 0;
@@ -680,7 +680,8 @@ if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'sc
 }
 
 //Primary & Secondary fixed
-if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'scroll-fix')) {
+if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'scroll-fix')
+	&& ($('#nav-primary').length) && ($('#nav-secondary').length) ) {
     //Scrool loop
     $(window).scroll(function() {
     	var wvrxAdminOffset = 0; //initialize offset for admin bar

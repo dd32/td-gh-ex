@@ -361,7 +361,14 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	get_header( $who );
 
-	if ( $archive )
+	if ($who == 'woocommerce') {
+		$body_classes = get_body_class();
+		if ( in_array('single-product', $body_classes) ) {	// Single product page - treat as page
+			$sb_layout = weaverx_sb_layout( $who );
+		} else {		// Archive like page
+			$sb_layout = weaverx_sb_layout_archive( $who );
+		}
+	} elseif ( $archive )
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	else
 		$sb_layout = weaverx_sb_layout( $who );
@@ -476,10 +483,12 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 
 	// weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
 
+	if ( $who == 'woocommerce' ) {
+		$layout = weaverx_getopt( 'layout_page' , 'default');
+	}
+
 	if ( $layout == 'default' ) {
-		$layout = weaverx_getopt( 'layout_default' );
-		if ( !$layout )
-			$layout = 'right';  // fallback
+		$layout = weaverx_getopt( 'layout_default', 'right' );
 	}
 
 	return apply_filters('weaverx_sb_layout', $layout, $who);

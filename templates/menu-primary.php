@@ -81,15 +81,17 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			$menu_class .= ' menu-alignleft';
 	}
 
+	if ( weaverx_getopt ('m_primary_move') )
+		$nav_class = 'menu-primary menu-primary-moved menu-type-standard';
+	else
+		$nav_class = 'menu-primary menu-primary-standard menu-type-standard';
+
 	if ( weaverx_getopt('m_primary_fixedtop') == 'fixed-top' ) {	// really is a drop-down value, so need to check for === for backward compat.
 		$class .= ' wvrx-fixedtop';
+		$nav_class .= ' wvrx-primary-fixedtop';
 	}
 
-
-	if ( weaverx_getopt ('m_primary_move') )
-		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-moved menu-type-standard\">\n";
-	else
-		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-standard menu-type-standard\">\n";
+	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '">' . "\n";
 
 	$args = array(
 		'fallback_cb' 	  => 'weaverx_page_menu',
