@@ -11,6 +11,9 @@ The Footer Menu is best suitable for short menues with just a few links, as it o
 
 == Changelog ==
 
+= 2.0.3 (April 11, 2017) =
+* Updated TGM library to latest version - 2.6.1
+
 = 2.0.2 (February 10, 2017) =
 * Fixed columns order on mobile devices (sidebars appear after main column with content)
 * Multiple fixes in the header
