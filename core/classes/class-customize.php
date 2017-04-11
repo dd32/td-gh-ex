@@ -248,24 +248,22 @@ class alhenalite_customize {
 
    }
 
-	public function customize_select_sanize ( $value, $setting ) {
-		
-		$theme_panel = $this->theme_fields ;
+	public function customize_select_sanize ($value, $setting) {
 
-		foreach ( $theme_panel as $element ) {
+		global $wp_customize;
 			
-			if ( $element['id'] == $setting->id ) :
-
-				if ( array_key_exists($value, $element['options'] ) ) : 
-						
-					return $value;
-
-				endif;
-
-			endif;
+		$control = $wp_customize->get_control( $setting->id );
+		 
+		if ( array_key_exists( $value, $control->choices ) ) {
+			
+			return $value;
+			
+		} else {
+			
+			return $setting->default;
 			
 		}
-		
+
 	}
 
 	public function customize_button_sanize ( $value, $setting ) {
