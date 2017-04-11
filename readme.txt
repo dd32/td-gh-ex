@@ -198,3 +198,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.5.6 =
 * Fixed some strings escaping
+
+= Version 1.5.7 =
+* Fixed some strings escaping
+* Minor bug fixes
