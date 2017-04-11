@@ -109,3 +109,6 @@ Version 1.2.5
 
 Version 1.2.6
 	* Added Help / Documentation buttons
+
+Version 1.2.7
+* Updated TGM script
