@@ -59,7 +59,7 @@
     while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
  
     <div class="item">
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'carousel-pic' ); ?></a>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'anissa-carousel-pic' ); ?></a>
          <div class="entry-dateslide">
 			<?php the_time( get_option( 'date_format' ) ); ?>
 		</div><!-- .entry-datetop -->

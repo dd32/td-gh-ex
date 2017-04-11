@@ -18,8 +18,7 @@
 		</div><!-- .entry-datetop -->
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="featured-image">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'anissa-home' ); ?></a>    
-               <?php get_template_part( 'sharing' );  ?>      
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'anissa-home' ); ?></a>         
 			</div>
 		<?php endif; ?>
 	</header><!-- .entry-header -->

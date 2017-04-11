@@ -21,7 +21,6 @@
     <?php if ( is_single() || is_page() && has_post_thumbnail() ) : ?>
 		<div class="featured-header-image">
 				<?php the_post_thumbnail( 'anissa-home' ); ?>
-                <?php get_template_part( 'sharing' );  ?>
 		</div><!-- .featured-header-image -->
 	<?php endif; ?>
 

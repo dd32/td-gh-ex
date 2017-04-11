@@ -33,11 +33,7 @@ function anissa_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 	
-		/* Admin functionality */
-	if ( is_admin() ) {
-		// Add Theme Documentation Page
-		require_once( get_template_directory() . '/admin/getting-started/getting-started.php' );
-	}
+	
 	
 	/**
 	Custom Logo
@@ -58,7 +54,7 @@ function anissa_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'anissa-home', 900, 450, true );
 	add_image_size( 'anissa-header', 1400, 400, true );
-	add_image_size( 'carousel-pic', 480, 320, true ); 
+	add_image_size( 'anissa-carousel-pic', 480, 320, true ); 
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -167,7 +163,7 @@ add_action( 'wp_enqueue_scripts', 'anissa_scripts' );
 
 
 function anissa_carousel_scripts() {
-   wp_enqueue_script( 'anissa-owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '20120206', true );
+   wp_enqueue_script( 'owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '20120206', true );
     wp_enqueue_script( 'anissa-effects', get_template_directory_uri() . '/js/effects.js', array('jquery'), '20120206', true );
 }
 add_action( 'wp_enqueue_scripts', 'anissa_carousel_scripts' );
@@ -288,8 +284,8 @@ function anissa_custom_excerpt_more( $output ) {
 }
 add_filter( 'get_the_excerpt', 'anissa_custom_excerpt_more' );
 
-if ( ! function_exists( 'anissa_comments' ) ) :
 
+if ( ! function_exists( 'anissa_comments' ) ) :
 
 /*
  * Custom comments display to move Reply link,

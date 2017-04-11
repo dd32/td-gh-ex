@@ -1,12 +1,13 @@
 ﻿=== Anissa ===
 
 Requires at least: 4.0
-Tested up to: 4.2.2
+Tested up to: 4.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-
+Anissa WordPress Theme incorporates code from Underscores and Cerauno WordPress Themes, Copyright 2012-2016 Automattic, Inc
+Anissa WordPress Theme is distributed under the terms of the GNU GPL
 
 == Description ==
 
@@ -98,6 +99,8 @@ https://en-gb.wordpress.org/plugins/wp-instagram-widget/
 
 
 == Changelog ==
+
+0.0.5 Fixes for WordPress.org
 
 0.0.4 Fixes for WordPress.org
 

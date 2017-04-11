@@ -1,6 +1,5 @@
 <?php
 /**
- * Template Name: No Sidebars
  *
  * @package anissa
  */
