@@ -201,6 +201,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  background: $color__brand-red;
   .container {
     position: relative;
     top: 40%;
@@ -285,6 +286,7 @@
   padding-bottom: 30px;
   position: relative;
   border-bottom: 1px solid #ebebeb;
+
   &:last-of-type {
     margin-bottom: 10px;
   }
@@ -308,6 +310,9 @@
       float: none;
       width: 100%;
       margin-bottom: 25px;
+      .plyr__play-large {
+        padding: 25px;
+      }
     }
     .newsmag-format-sign {
       position: absolute;
@@ -325,6 +330,13 @@
         color: #FFF;
         font-size: 20px;
       }
+    }
+  }
+
+  &.video {
+    .newsmag-image {
+      float: initial;
+      display: block;
     }
   }
 
@@ -648,6 +660,35 @@
       a {
         color: $color__brand-red;
       }
+    }
+  }
+}
+
+.entry-content {
+  .nav-links {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    .sep {
+      margin:0 7px;
+    }
+    a {
+      display: inline-block;
+      font-family: 'Lato';
+      padding: 5px;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:not(.dots):not(.next):not(.prev) {
+        &:hover, &:focus {
+          border-bottom-color: $color__brand-red;
+          color: $color__brand-red;
+        }
+      }
+
     }
   }
 }

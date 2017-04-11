@@ -22,28 +22,28 @@ if ( ! $image_in_content ) {
 	}
 }
 $title = get_the_title( get_the_ID() );
-?>
-<?php if ( ! empty( $img ) ): ?>
-	<div
-		class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>"
-		style="background-image:url(<?php echo esc_url_raw( $img ) ?>)">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2><?php echo esc_html( $title ) ?></h2>
-				</div>
-			</div>
-		</div>
-	</div>
+
+$additional = '';
+if ( ! empty( $img ) ): ?>
+	<?php $additional = 'style="background-image:url(' . esc_url( $img ) . '">' ?>
 <?php endif; ?>
 
+    <div class="newsmag-custom-header <?php echo ( is_single() && ! $image_in_content ) ? 'newsmag-custom-header-single-post' : '' ?>" <?php echo $additional; ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2><?php echo esc_html( $title ) ?></h2>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 $breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
 if ( $breadcrumbs_enabled ) { ?>
 	<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
 		<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
 			<div class="col-xs-12">
-				<?php newsmag_breadcrumbs(); ?>
+				<?php Newsmag_Helper::add_breadcrumbs(); ?>
 			</div>
 		</div>
 	</div>
@@ -62,7 +62,6 @@ if ( $breadcrumbs_enabled ) { ?>
 				<main id="main" class="site-main" role="main">
 					<?php
 					while ( have_posts() ) : the_post();
-
 						get_template_part( 'template-parts/content', 'single' );
 
 						// If comments are open or we have at least one comment, load up the comment template.
