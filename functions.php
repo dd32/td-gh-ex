@@ -13,6 +13,8 @@ function bento_theme_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'link', 'image' ) );
 	add_theme_support( 'woocommerce' ); 
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'custom-background', array ( 'default-color' => '#f4f4f4' ) );
 	
@@ -829,7 +831,7 @@ function bento_extra_classes( $classes ) {
 	} else {
 		if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
 			if ( is_shop() ) {
-				$page_id = woocommerce_get_page_id('shop');
+				$page_id = wc_get_page_id('shop');
 				if ( get_post_meta( $page_id, 'bento_sidebar_layout', true ) == 'full-width' ) {
 					$classes[] = 'no-sidebar';	
 				} else {

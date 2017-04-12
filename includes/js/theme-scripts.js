@@ -42,49 +42,46 @@ function bentoEmValue(input) {
 
 // Handle same-page menu links
 function bentoOnePage() {
-	var bento_menuindex = 0;
+	var headerHeight = 0;
+	if ( bentoThemeVars.fixed_menu == 1 ) {
+		headerHeight = $str('.site-header').outerHeight(true);
+	}
+	var menuitems = new Object();
 	$str('.primary-menu a').each(function() {
-		var $parent = $str(this).parent();
-		var $next = $parent.next('li');
-		var nextlink = $next.children('a');
+		var itemclasses = 0;
+		itemclasses = $str(this).parent('li').attr('class').split(" ");
+		var itemid = itemclasses.slice(-1).pop();
+		var itemPosition = 0;
 		if ( $str(this).attr('href').indexOf("#") != -1 ) {
-			bento_menuindex++;
-			var hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
-			var headerHeight = 0;
-			if ( bentoThemeVars.fixed_menu == 1 ) {
-				headerHeight = $str('.site-header').outerHeight(true);
+			hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
+			if ( $str('#' + hash).length ) {
+				itemPosition = $str('#' + hash).offset().top - headerHeight - 10;
+				menuitems[itemid] = itemPosition;
 			}
-			var currentPosition = $str(window).scrollTop();
-			var scrollPosition = $str('#' + hash).offset().top - headerHeight - 10;
-			// Check if there's another menu item after this one 
-			var nexthash = '';
-			var nextPosition = 9999999;
-			if ( nextlink.length ) {
-				nexthash = nextlink.attr('href').substring(nextlink.attr('href').indexOf('#')+1);
-				var nextPosition = $str('#' + nexthash).offset().top - headerHeight - 10;
-			}
-			// Highlight only the item which corresponds to the currently scrolled section of the page
-			$parent.removeClass('current-menu-item');
-			if ( ( currentPosition == 0 && bento_menuindex == 1 ) || ( currentPosition >= scrollPosition && currentPosition <= nextPosition ) ) {
-				$parent.addClass('current-menu-item');
-			}
-			// Smooth scroll on click
-			$str(this).click(function(e) {
-				if ( $str('#' + hash).length ) {
-					e.preventDefault();
-					$str('html, body').animate( { scrollTop: scrollPosition }, 500 );
-				}
-			});
 		}
 	});
+	return menuitems;
 }
 
 
 $str(document).ready(function() {
 	
+	
+	// Fixed header
+	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(80) ) {
+		if ( $str(window).scrollTop() > 0 ) {
+			if ( ! $str('.fixed-header').length ) {
+				var $bento_headerClone = $str('.site-header > .bnt-container').clone();
+				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');
+				$str('.fixed-header').html($bento_headerClone);
+			}
+		}
+	}
+	
+	
 	// Submenu animations
 	if ( bentoThemeVars.menu_config < 2 ) {
-		$str('.primary-menu .menu-item-has-children').hover(function() {
+		$str('.site-wrapper').on( 'mouseenter mouseleave', '.menu-item-has-children', function(ev) {
 			var parentMenu = $str(this);
 			var submPos = parentMenu.offset().left;
 			var windowWidth = $str(window).width();
@@ -99,9 +96,11 @@ $str(document).ready(function() {
 					parentMenu.children('.sub-menu').css({'right':'0'});
 				}
 			}
-			$str(this).children('.sub-menu').fadeIn(200);
-		}, function() {
-			$str(this).children('.sub-menu').fadeOut(200);
+			if ( ev.type === 'mouseenter' ) {
+				$str(this).children('.sub-menu').fadeIn(200);
+			} else {
+				$str(this).children('.sub-menu').fadeOut(200);
+			}	
 		});
 	} else if ( bentoThemeVars.menu_config == 2 ) {
 		$str('.ham-menu-trigger-container').click(function() {
@@ -162,18 +161,6 @@ $str(document).ready(function() {
 			bento_headertop = $str('#wpadminbar').outerHeight(true);
 		}
 		$str('.header-side .site-header').css('top',bento_headertop+'px');
-	}
-	
-	
-	// Fixed header
-	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(80) ) {
-		if ( $str(window).scrollTop() > 0 ) {
-			if ( ! $str('.fixed-header').length ) {
-				var $bento_headerClone = $str('.site-header > .bnt-container').clone();
-				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');
-				$str('.fixed-header').html($bento_headerClone);
-			}
-		}
 	}
 	
 	
@@ -321,7 +308,17 @@ $str(window).load(function () {
 	
 	
 	// Same-page menu links
-	bentoOnePage();
+	var bento_op_menu = bentoOnePage();
+	if ( ! $str.isEmptyObject(bento_op_menu) ) {
+		$str('.primary-menu li').removeClass('current-menu-item');
+		$str.each( bento_op_menu, function( ind, val ) {
+			$str('.'+ind+' > a').click(function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				$str('html, body').animate( { scrollTop: val }, 500 );
+			});
+		});
+	}
 
 
 });
@@ -415,7 +412,22 @@ $str(window).scroll(function () {
 	
 	
 	// Same-page menu links on scroll
-	bentoOnePage();
+	var bento_op_menu = bentoOnePage();
+	var activeParent = '';
+	var activeParentPrev = '';
+	if ( ! $str.isEmptyObject(bento_op_menu) ) {
+		var currentPosition = $str(window).scrollTop();
+		$str.each( bento_op_menu, function( ind, val ) {
+			if ( currentPosition >= val ) {
+				activeParent = ind;
+			}
+		});
+		if ( activeParent != '' && activeParent != activeParentPrev ) {
+			$str('.'+activeParent).addClass('current-menu-item');
+			$str('.primary-menu li:not(".'+activeParent+'")').removeClass('current-menu-item');
+			var activeParentPrev = activeParent;
+		}
+	}
 	
 	
 });
