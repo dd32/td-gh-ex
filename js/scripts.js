@@ -6,9 +6,11 @@ jQuery(document).ready(function ($) {
     
     /* WOW effect with ScrollReveal */
     window.sr = ScrollReveal();
+    /*
     sr.reveal('.top-bar li', {
         duration: 1000
     }, 50);
+    */
     sr.reveal('.reveal', {
         duration: 1000
     }, 200);
@@ -29,7 +31,7 @@ jQuery(document).ready(function ($) {
         // Waits 1000ms after typing "First
         stringsElement: $('.strings')
         , loop: true
-        , backDelay: 3000
+        , backDelay: 10*1000
         , typeSpeed: 0.2
         , backSpeed: 0.5
     });

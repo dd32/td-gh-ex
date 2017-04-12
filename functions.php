@@ -23,6 +23,9 @@ function acajou_setup() {
 	 * to change 'acajou' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'acajou', get_template_directory() . '/languages' );
+    
+    // get rid of the default gallery style
+    add_filter( 'use_default_gallery_style', '__return_false' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -61,10 +64,44 @@ function acajou_setup() {
 		'caption',
 	) );
 
-
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+    
+    // Add theme support for background images or solid colors for the background
+    add_theme_support( "custom-background");
+        
+    /**
+     * Set up the WordPress core custom header feature.
+     *
+     * @uses acajou_header_back()
+     */
+
+    $args = array(
+            'flex-height'            => true,
+            'width'                  => 1350,
+            'height'                 => 310,
+            //'default-image'          => get_template_directory_uri() . '/img/back.jpg',
+            'default-image'          => '',
+        );
+    add_theme_support( 'custom-header', $args );
+
+    /**
+     * Set up the default content width
+     *
+     */
+    if ( ! isset( $content_width ) ) $content_width = 900;
+
+    /**
+     *  Taking advantage of the Custom Logo API
+     *  @link https://codex.wordpress.org/Theme_Logo
+     *  @link https://www.sitepoint.com/wordpress-custom-logo-api/
+     */
+    add_theme_support('custom-logo');
+    add_image_size('acajou-logo', 150, 150);
+    add_theme_support('custom-logo', array(
+        'size' => 'acajou-logo'
+    ));
+    
 }
 endif;
 add_action( 'after_setup_theme', 'acajou_setup' );
@@ -114,11 +151,10 @@ function acajou_scripts() {
 	wp_enqueue_style( 'acajou-style', get_template_directory_uri().'/css/'.$style.'.css' );
     
     // JS
+    wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'modernizer', get_template_directory_uri().'/js/modernizr.min.js');
-	wp_enqueue_script( 'jquery', get_template_directory_uri().'/js/jquery.min.js');
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri().'/js/foundation.min.js');
 	wp_enqueue_script( 'typed', get_template_directory_uri().'/js/typed.js');
-	wp_enqueue_script( 'slippry-slider', get_template_directory_uri().'/js/slippry.min.js');
 	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri().'/js/scrollreveal.min.js');
 	wp_enqueue_script( 'main-scripts', get_template_directory_uri().'/js/scripts.js');
 
@@ -136,17 +172,6 @@ function acajou_admin_js($hook) {
 
 }
 add_action( 'wp_enqueue_scripts', 'acajou_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Custom functions that act independently of the theme templates.
  */
