@@ -283,7 +283,7 @@ function pinnacle_hide_pagetitle() {
             }
       }
    } else if (class_exists('woocommerce') && is_shop())  {
-                  $shop_page_id = woocommerce_get_page_id('shop');
+                  $shop_page_id = wc_get_page_id('shop');
                   $hide = get_post_meta( $shop_page_id, '_kad_pagetitle_hide', true );
                     if(isset($hide) && $hide == 'hide') {
                       $pagetitledisplay = false;
@@ -341,7 +341,7 @@ function pinnacle_shop_behindheader($pageheaderbg) {
    if (class_exists('woocommerce'))  {
       if(is_shop()) {
               global $pinnacle;
-              $shop_page_id = woocommerce_get_page_id('shop');
+              $shop_page_id = wc_get_page_id('shop');
               $hs_behind = get_post_meta( $shop_page_id, '_kad_pagetitle_behind_head', true );
                 if(isset($hs_behind) && $hs_behind == 'true') {
                   $pageheaderbg = true;

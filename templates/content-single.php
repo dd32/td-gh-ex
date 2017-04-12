@@ -6,66 +6,26 @@
           $slide_sidebar = 1170;
         }
         // Get Post Head settings
-        if ( has_post_format( 'video' )) {
-              $headcontent = get_post_meta( $post->ID, '_kad_video_blog_head', true );
-              if(empty($headcontent) || $headcontent == 'default') {
-                  if(!empty($pinnacle['video_post_blog_default'])) {
-                        $headcontent = $pinnacle['video_post_blog_default'];
-                    } else {
-                        $headcontent = 'video';
-                    }
-              }
-              $swidth = get_post_meta( $post->ID, '_kad_video_posthead_width', true ); 
-              if (!empty($swidth)) {
-                $slidewidth = $swidth;
-              } else {
-                $slidewidth = $slide_sidebar;
-              }
-        } else if (has_post_format( 'gallery' )) {
-              $headcontent = get_post_meta( $post->ID, '_kad_gallery_blog_head', true );
-              if(empty($headcontent) || $headcontent == 'default') {
-                  if(!empty($pinnacle['gallery_post_blog_default'])) {
-                        $headcontent = $pinnacle['gallery_post_blog_default'];
-                    } else {
-                        $headcontent = 'flex';
-                    }
-              }
-              $height = get_post_meta( $post->ID, '_kad_gallery_posthead_height', true );
-              $swidth = get_post_meta( $post->ID, '_kad_gallery_posthead_width', true );
-                if (!empty($height)){
-                  $slideheight = $height;
-                } else {
-                  $slideheight = 400;
-                }
-                if (!empty($swidth)) {
-                  $slidewidth = $swidth;
-                } else {
-                  $slidewidth = $slide_sidebar;
-                }
-        } elseif (has_post_format( 'image' )) {
-               $headcontent = get_post_meta( $post->ID, '_kad_image_blog_head', true );
-              if(empty($headcontent) || $headcontent == 'default') {
-                  if(!empty($pinnacle['image_post_blog_default'])) {
-                        $headcontent = $pinnacle['image_post_blog_default'];
-                    } else {
-                        $headcontent = 'image';
-                    }
-              }
-              $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true );
-              if (!empty($swidth)) {
-                $slidewidth = $swidth;
-              } else {
-                $slidewidth = $slide_sidebar;
-              } 
-        } else {
-                  $headcontent = 'none';
-        } ?>
+        $headcontent = pinnacle_get_post_head_content();
+         ?>
         <div id="content" class="container">
           <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
               <?php while (have_posts()) : the_post(); ?>
                 <article <?php post_class('postclass'); ?>>
-                  <?php if ($headcontent == 'flex') { ?>
+                  <?php if ($headcontent == 'flex') { 
+                  	$height = get_post_meta( $post->ID, '_kad_gallery_posthead_height', true );
+             		$swidth = get_post_meta( $post->ID, '_kad_gallery_posthead_width', true );
+	                if (!empty($height)){
+	                  	$slideheight = $height;
+	                } else {
+	                  	$slideheight = 400;
+	                }
+	                if (!empty($swidth)) {
+	                  	$slidewidth = $swidth;
+	                } else {
+	                  	$slidewidth = $slide_sidebar;
+	                }?>
                     <section class="postfeat">
                       <div class="flexslider kt-flexslider loading kad-light-gallery" style="max-width:<?php echo esc_attr($slidewidth);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                         <ul class="slides">
@@ -89,7 +49,19 @@
                         </ul>
                       </div> <!--Flex Slides-->
                     </section>
-                  <?php } else if ($headcontent == 'carouselslider') { ?>
+                  <?php } else if ($headcontent == 'carouselslider') { 
+                  	$height = get_post_meta( $post->ID, '_kad_gallery_posthead_height', true );
+             		$swidth = get_post_meta( $post->ID, '_kad_gallery_posthead_width', true );
+	                if (!empty($height)){
+	                  	$slideheight = $height;
+	                } else {
+	                  	$slideheight = 400;
+	                }
+	                if (!empty($swidth)) {
+	                  	$slidewidth = $swidth;
+	                } else {
+	                  	$slidewidth = $slide_sidebar;
+	                }?>
                     <section class="postfeat">
                       <div id="imageslider" class="loading">
                         <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo esc_attr($slidewidth);?>px; height: <?php echo esc_attr($slideheight);?>px; margin-left: auto; margin-right:auto;">
@@ -119,7 +91,13 @@
                           </div> 
                       </div>  
                     </section>
-                  <?php } else if ($headcontent == 'video') { ?>
+                  <?php } else if ($headcontent == 'video') { 
+                  	$swidth = get_post_meta( $post->ID, '_kad_video_posthead_width', true ); 
+		            if (!empty($swidth)) {
+		                $slidewidth = $swidth;
+		            } else {
+		                $slidewidth = $slide_sidebar;
+		            } ?>
                     <section class="postfeat">
                         <div class="videofit" style="max-width: <?php echo esc_attr($slidewidth);?>px; margin-left: auto; margin-right: auto;">
                               <?php echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
@@ -133,7 +111,13 @@
                             </div>
                         <?php } ?>
                     </section>
-                  <?php } else if ($headcontent == 'image') {           
+                  <?php } else if ($headcontent == 'image') {
+	                  	$swidth = get_post_meta( $post->ID, '_kad_posthead_width', true );
+		              	if (!empty($swidth)) {
+		               		$slidewidth = $swidth;
+		              	} else {
+		                	$slidewidth = $slide_sidebar;
+		              	}       
                     $image_id = get_post_thumbnail_id();
                     $image_src = wp_get_attachment_image_src( $image_id, 'full' ); 
                     $image = aq_resize( $image_src[0], $slidewidth, null, true, false, false, $image_id);
