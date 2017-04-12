@@ -133,6 +133,45 @@ https://pixabay.com/en/trousers-underwear-nostalgia-past-362781/
 
 == Changelog ==
 
+= 11 April 2017 =
+* Rework Header Colour a bit, so the preview is accurate, and returning to the default returns both the site title and description to their original (different) colours.
+
+= 22 March 2017 =
+* add Custom Colors annotations directly to the theme
+* move fonts annotations directly into the theme
+* Check for post parent before outputting next, previous, and image attachment information to prevent fatals.
+
+= 20 February 2017 =
+* Print date on new line.
+* Make sure date isn't being duplicated wheb printing.
+
+= 25 January 2017 =
+* check for is_wp_error() when using get_the_tag_list() to prevent potential fatals.
+
+= 17 January 2017 =
+* Add new grid-layout tag to stylesheet.
+
+= 30 December 2016 =
+* Update line height for links in gallery captions - they were inheriting styles that were meant to reduce gaps in the gallery.
+
+= 8 December 2016 =
+* Make sure Content Options can hide the date on single posts.
+
+= 24 November 2016 =
+* Add support for Content Options - Featured Images
+
+= 4 November 2016 =
+* Add drowdown-toggle buttons to parent items in the main navigation on small devices.
+
+= 19 October 2016 =
+* Use CSS selector for Content Options
+
+= 8 August 2016 =
+* Update Headstart attachment URLs to smaller files.
+
+= 22 July 2016 =
+* Add support for Content Options
+
 = 28 June 2016 =
 * Tweaking JS used for menu, to allow dropdowns to work on wider touch devices.
 

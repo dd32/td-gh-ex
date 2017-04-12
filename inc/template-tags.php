@@ -146,7 +146,7 @@ if ( ! function_exists( 'apostrophe_entry_footer' ) ) :
 			}
 
 			$tags_list = get_the_tag_list( '<ul class="post-tags"><li>', '</li><li>', '</li></ul>' );
-			if ( $tags_list ) {
+			if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 				$apostrophe_tags .= $tags_list;
 			}
 

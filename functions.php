@@ -198,12 +198,17 @@ function apostrophe_scripts() {
 	wp_enqueue_style( 'apostrophe-fonts', apostrophe_fonts_url(), array(), null );
 
 	wp_enqueue_script( 'apostrophe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150605', true );
-	wp_enqueue_script( 'apostrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20150318', true );
+	wp_enqueue_script( 'apostrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20161104', true );
 	wp_enqueue_script( 'apostrophe', get_template_directory_uri() . '/js/apostrophe.js', array( 'jquery' ), '20150226', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	wp_localize_script( 'apostrophe-navigation', 'screenReaderText', array(
+		'expand'   => esc_html__( 'expand child menu', 'apostrophe' ),
+		'collapse' => esc_html__( 'collapse child menu', 'apostrophe' ),
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_scripts' );
 

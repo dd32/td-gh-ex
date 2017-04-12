@@ -1,43 +1,35 @@
-# Translation of WordPress.com - Themes - Apostrophe in Albanian
+# Translation of WordPress.com - Themes - Apostrophe in Catalan
 # This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 06:02:31+0000\n"
+"PO-Revision-Date: 2017-01-16 22:28:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: sq_AL\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: ca\n"
 "Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
-
-#: inc/wpcom-colors.php:139
-msgid "Accents"
-msgstr "Thekse"
-
-#: inc/wpcom-colors.php:118
-msgid "Links and Buttons"
-msgstr "Lidhje dhe Butona"
 
 #: functions.php:210
 msgid "collapse child menu"
-msgstr "tkurre menunë pjellë"
+msgstr "contrau el menú fill"
 
 #: functions.php:209
 msgid "expand child menu"
-msgstr "zgjeroje menunë pjellë"
+msgstr "amplia el menú fill"
 
 #: comments.php:26
 msgctxt "comments title"
 msgid "One comment"
 msgid_plural "%s comments"
-msgstr[0] "Një koment"
-msgstr[1] "%s komente"
+msgstr[0] "Hi ha un comentari"
+msgstr[1] "Hi ha %s comentaris"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/apostrophe/full-width-page.php
 msgid "Full-Width Page"
-msgstr "Faqe Në Gjerësi të Plotë"
+msgstr "Pàgina d'amplada completa"
 
 #. Author URI of the plugin/theme
 #: wp-content/themes/pub/apostrophe/style.css
@@ -52,15 +44,15 @@ msgstr "Automattic"
 #. Description of the plugin/theme
 #: wp-content/themes/pub/apostrophe/style.css
 msgid "A clean, no-nonsense magazine theme"
-msgstr "Një temë revistash e pastër, pa gjëra të tepërta"
+msgstr "Un tema de revista net i ordenat"
 
 #: search.php:15
 msgid "Search Results for: %s"
-msgstr "Përfundime Kërkimi për: %s"
+msgstr "Resultats de la cerca per a: %s"
 
 #: inc/template-tags.php:351
 msgid "Posts navigation"
-msgstr "Lëvizje te postimet"
+msgstr "Navegació d'entrades"
 
 #: inc/template-tags.php:329 inc/template-tags.php:331
 msgid "&larr;"
@@ -72,7 +64,7 @@ msgstr "&rarr;"
 
 #: inc/template-tags.php:221
 msgid "Archives"
-msgstr "Arkiva"
+msgstr "Arxiu"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:219
@@ -81,70 +73,70 @@ msgstr "%1$s: %2$s"
 
 #: inc/template-tags.php:215
 msgid "Archives: %s"
-msgstr "Arkiva: %s"
+msgstr "Arxiu: %s"
 
 #: inc/template-tags.php:213
 msgctxt "post format archive title"
 msgid "Chats"
-msgstr "Fjalosje"
+msgstr "Xats"
 
 #: inc/template-tags.php:211
 msgctxt "post format archive title"
 msgid "Audio"
-msgstr "Audio"
+msgstr "Àudio"
 
 #: inc/template-tags.php:209
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr "Gjendje"
+msgstr "Estats"
 
 #: inc/template-tags.php:207
 msgctxt "post format archive title"
 msgid "Links"
-msgstr "Lidhje"
+msgstr "Enllaços"
 
 #: inc/template-tags.php:205
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr "Citime"
+msgstr "Citacions"
 
 #: inc/template-tags.php:203
 msgctxt "post format archive title"
 msgid "Videos"
-msgstr "Video"
+msgstr "Vídeos"
 
 #: inc/template-tags.php:201
 msgctxt "post format archive title"
 msgid "Images"
-msgstr "Figura"
+msgstr "Imatges"
 
 #: inc/template-tags.php:199
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr "Galeri"
+msgstr "Galeries"
 
 #: inc/template-tags.php:197
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr "Anësore"
+msgstr "Anotacions"
 
 #: inc/template-tags.php:195
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr "j F, Y"
+msgstr "j \\d\\e F \\d\\e Y"
 
 #: inc/template-tags.php:195
 msgid "Day: %s"
-msgstr "Ditë: %s"
+msgstr "Dia: %s"
 
 #: inc/template-tags.php:193
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "F Y"
+msgstr "F \\\\d\\\\e Y"
 
 #: inc/template-tags.php:193
 msgid "Month: %s"
-msgstr "Muaj: %s"
+msgstr "Mes: %s"
 
 #: inc/template-tags.php:191
 msgctxt "yearly archives date format"
@@ -153,7 +145,7 @@ msgstr "Y"
 
 #: inc/template-tags.php:191
 msgid "Year: %s"
-msgstr "Vit: %s"
+msgstr "Any: %s"
 
 #: inc/template-tags.php:189
 msgid "Author: %s"
@@ -161,103 +153,103 @@ msgstr "Autor: %s"
 
 #: inc/template-tags.php:187
 msgid "Tag: %s"
-msgstr "Etiketë: %s"
+msgstr "Etiqueta: %s"
 
 #: inc/template-tags.php:185
 msgid "Category: %s"
-msgstr "Kategori: %s"
+msgstr "Categoria: %s"
 
 #: inc/template-tags.php:127
 msgid "%s year ago"
 msgid_plural "%s years ago"
-msgstr[0] "%s vit më parë"
-msgstr[1] "%s vjet më parë"
+msgstr[0] "Fa %s any"
+msgstr[1] "Fa %s anys"
 
 #: inc/template-tags.php:122
 msgid "%s month ago"
 msgid_plural "%s months ago"
-msgstr[0] "%s muaj më parë"
-msgstr[1] "%s muaj më parë"
+msgstr[0] "Fa %s mes"
+msgstr[1] "Fa %s mesos"
 
 #: inc/template-tags.php:117
 msgid "%s week ago"
 msgid_plural "%s weeks ago"
-msgstr[0] "%s javë më parë"
-msgstr[1] "%s javë më parë"
+msgstr[0] "Fa %s setmana"
+msgstr[1] "Fa %s setmanes"
 
 #: inc/template-tags.php:112
 msgid "%s day ago"
 msgid_plural "%s days ago"
-msgstr[0] "%s ditë më parë"
-msgstr[1] "%s ditë më parë"
+msgstr[0] "Fa %s dia"
+msgstr[1] "Fa %s dies"
 
 #: inc/template-tags.php:107
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
-msgstr[0] "%s orë më parë"
-msgstr[1] "%s orë më parë"
+msgstr[0] "Fa %s hora"
+msgstr[1] "Fa %s hores"
 
 #. translators: min=minute
 #: inc/template-tags.php:102
 msgid "%s min ago"
 msgid_plural "%s mins ago"
-msgstr[0] "%s minutë më parë"
-msgstr[1] "%s minutë më parë"
+msgstr[0] "Fa %s minut"
+msgstr[1] "Fa %s minuts"
 
 #: inc/template-tags.php:52
 msgctxt "Next post link"
 msgid "Next"
-msgstr "Pasuesi"
+msgstr "Entrada següent"
 
 #: inc/template-tags.php:49
 msgctxt "Previous post link"
 msgid "Previous"
-msgstr "I mëparshmi"
+msgstr "Entrada anterior"
 
 #: inc/template-tags.php:46
 msgid "Post navigation"
-msgstr "Lëvizje te postimet"
+msgstr "Navegació per l'entrada"
 
 #: inc/extras.php:36
 msgid "Page %s"
-msgstr "Faqe %s"
+msgstr "Pàgina %s"
 
 #: inc/customizer.php:44
 msgid "Enable front end feature-starring for easier tagging of Featured Content."
-msgstr "Aktivizoni shfaqje të zgjedhurash në pjesën e dukshme nga vizitorët, për etiketim më të lehtë të Lëndës së Zgjedhur."
+msgstr "Activa la funció per facilitar l'etiquetatge de contingut destacat."
 
 #: inc/customizer.php:32
 msgid "Hide author bio panel on individual post pages."
-msgstr "Fshihe panelin e jetëshkrimit të autorit në faqe individuale postimesh."
+msgstr "Oculta el tauler de la biografia de l'autor en les pàgines individuals publicades."
 
 #: inc/customizer.php:22
 msgid "Theme"
-msgstr "Temë"
+msgstr "Tema"
 
-#: image.php:64
+#: image.php:63
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
-msgstr "<span class=\"meta-nav\">Botuar te</span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">Publicat en</span><span class=\"post-title\">%title</span>"
 
 #: image.php:57
 msgid "Next Image &raquo;"
-msgstr "Figura Pasuese &raquo;"
+msgstr "Propera imatge"
 
 #: image.php:57
 msgid "&laquo; Previous Image"
-msgstr "&laquo; Figura e Mëparshme"
+msgstr "Imatge prèvia"
 
 #: image.php:48
 msgid "Page"
-msgstr "Faqe"
+msgstr "Pàgina"
 
 #: header.php:35
 msgid "Skip to content"
-msgstr "Hidhu te lënda"
+msgstr "Vés al contingut"
 
 #: header.php:34
 msgid "Menu"
-msgstr "Menu"
+msgstr "Menú"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Open Sans, translate this to 'off'. Do not translate
@@ -277,35 +269,35 @@ msgstr "on"
 
 #: functions.php:141
 msgid "Footer Sidebar"
-msgstr "Anështyllë Fundfaqeje"
+msgstr "Barra lateral del peu de pàgina "
 
 #: functions.php:132
 msgid "Tertiary"
-msgstr "Terciare"
+msgstr "Tercera"
 
 #: functions.php:123
 msgid "Secondary"
-msgstr "Dytësore"
+msgstr "Secundària"
 
 #: functions.php:114
 msgid "Primary"
-msgstr "Parësor"
+msgstr "Primària"
 
 #: functions.php:62
 msgid "Social Menu"
-msgstr "Menu Shoqërore"
+msgstr "Menú de xarxes socials"
 
 #: functions.php:61
 msgid "Primary Menu"
-msgstr "Menuja Parësore"
+msgstr "Menú principal"
 
 #: footer.php:26
 msgid "Theme: %1$s by %2$s."
-msgstr "Temë: %1$s nga %2$s."
+msgstr "Tema: %1$s de %2$s."
 
 #: footer.php:24
 msgid "Proudly powered by %s"
-msgstr "Bazohet me krenari në %s"
+msgstr "Gràcies al %s"
 
 #: footer.php:24
 msgid "http://wordpress.org/"
@@ -313,57 +305,57 @@ msgstr "http://wordpress.org/"
 
 #: content-single.php:10 image.php:21
 msgid "Edit"
-msgstr "Përpunojeni"
+msgstr "Edita"
 
 #: content-page.php:18 content-single.php:21 image.php:44
 msgid "Pages:"
-msgstr "Faqe:"
+msgstr "Pàgines:"
 
 #: content-none.php:28
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Duket se nuk qemë në gjendje të gjenim ç&#8217;po kërkonit. Ndoshta mund t&#8217;ju ndihë kërkimi."
+msgstr "Sembla que no em trobat el que esteu cercant. Potser una cerca us ajudaria."
 
 #: content-none.php:23
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Na ndjeni, por nuk u përputh gjë me kriterin tuaj të kërkimit. Ju lutemi, riprovoni me ndonjë fjalëkyç tjetër."
+msgstr "Res no coincideix amb els termes de cerca. Torneu-ho a provar amb algunes paraules claus diferents."
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Gati për botimin e postimit tuaj të parë? <a href=\"%1$s\">Fillojani këtu</a>."
+msgstr "Preparats per a publicar la primera entrada? <a href=\"%s\">Comenceu aquí</a>."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr "Nuk U Gjet Gjë"
+msgstr "No s'ha trobat res"
 
 #: comments.php:61
 msgid "Comments are closed."
-msgstr "Komentet janë mbyllur."
+msgstr "Els comentaris estan tancats."
 
 #: comments.php:35 comments.php:51
 msgid "Newer Comments &raquo;"
-msgstr "Komentet Më të Reja &raquo;"
+msgstr "Comentaris més recents &raquo;"
 
 #: comments.php:34 comments.php:50
 msgid "&laquo; Older Comments"
-msgstr "&laquo; Komentet Më të Vjetra"
+msgstr "&laquo; Comentaris anteriors"
 
 #: comments.php:33 comments.php:49
 msgid "Comment navigation"
-msgstr "Lëvizje te komentet"
+msgstr "Navegació dels comentaris"
 
 #. translators: %1$s: smiley
 #: 404.php:46
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Provoni të shihni te arkivat mujore. %1$s"
+msgstr "Intenteu cercar en l'arxiu mensual. %1$s"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr "Kategoritë Më të Përdorura"
+msgstr "Categories més usades"
 
 #: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Duket se nuk u gjet gjë në këtë vend. Të provohet një nga lidhjet më poshtë, ose ndoshta një kërkim?"
+msgstr "Sembla que no s'ha trobat res en aquest lloc. Potser podeu provar un dels següents enllaços o fer una cerca?"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Hmm! Ajo faqe nuk gjendet dot."
+msgstr "Buf! Aquesta pàgina no es pot trobar."

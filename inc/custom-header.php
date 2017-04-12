@@ -11,6 +11,7 @@
 function apostrophe_custom_header_setup() {
 	add_theme_support( 'custom-header', array(
 		'default-image'          => '',
+		'default-text-color'     => '362e77',
 		'width'                  => 1048,
 		'height'                 => 214,
 		'flex-width'             => true,
