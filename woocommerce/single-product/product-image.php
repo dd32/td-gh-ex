@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version     3.0.2
  */
 
 
@@ -15,12 +15,9 @@ global $post, $woocommerce, $product, $virtue;
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 5 );
 $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-$thumbnail_post    = get_post( $post_thumbnail_id );
-$image_title       = $thumbnail_post->post_content;
+$image_title       = get_post_field( 'post_excerpt', $attachment_id );
 if(!empty($image_title)) {
 	$light_title  = $image_title;
-} else if(!empty($thumbnail_post->post_excerpt)){
-	$light_title  = $thumbnail_post->post_excerpt;
 } else {
 	$light_title  = get_the_title($post_thumbnail_id);
 }
@@ -72,9 +69,9 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 		$attributes = array(
 			'title'                   => $image_title,
 			'data-src'                => $full_size_image[0],
-			'data-large-image'        => $full_size_image[0],
-			'data-large-image-width'  => $full_size_image[1],
-			'data-large-image-height' => $full_size_image[2],
+			'data-large_image'        => $full_size_image[0],
+			'data-large_image_width'  => $full_size_image[1],
+			'data-large_image_height' => $full_size_image[2],
 		);
 		if ( has_post_thumbnail() ) {
 			if($presizeimage == 1){

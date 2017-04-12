@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.4 | 12th April 2017 = 
+* Fix: Issue with woocommerce zoom init.
+* Update: Checkout CSS.
+* Fix: Woo Notice.
+
 = Version 2.9.3 | 6th April 2017 =
 * Fix: Notice from WC of out of date templates.
 
