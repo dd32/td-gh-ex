@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.1.2.8 =
+	- Fix - Fixed Ticket link
+			- Fix an issue and used a latest version of TGM Plugin
+
 = 2.1.2.7 =
 	- Fix - Fixed an issue with  Default Layout Set in Customizer while it reset to default value
 	- Fix - Invalid error with reset button fixed

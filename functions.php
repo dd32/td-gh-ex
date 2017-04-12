@@ -135,7 +135,7 @@ if(!class_exists('Arise_Plus_Features')){
 			<a href="<?php echo esc_url( 'https://themefreesia.com/theme-instruction/arise/' ); ?>" title="<?php esc_attr_e( 'Theme Instructions', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Theme Instructions', 'arise' ); ?>
 			</a><br/>
-			<a href="<?php echo esc_url( 'https://themefreesia.com/support-forum/' ); ?>" title="<?php esc_attr_e( 'Forum', 'arise' ); ?>" target="_blank" id="about_arise">
+			<a href="<?php echo esc_url( 'https://tickets.themefreesia.com/' ); ?>" title="<?php esc_attr_e( 'Support Ticket', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Forum', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url( 'http://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
