@@ -362,17 +362,6 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Myspace Url","alhena-lite"),
-				"description" => __( "Insert Myspace Url (empty if you want to hide the button)","alhena-lite"),
-				"id" => "wip_footer_myspace_button",
-				"type" => "url",
-				"section" => "footer_section",
-				"std" => "",
-
-			),
-
-			array( 
-
 				"label" => __( "Pinterest Url","alhena-lite"),
 				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_pinterest_button",
@@ -420,6 +409,62 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"label" => __( "Skype Url","alhena-lite"),
 				"description" => __( "Insert Skype ID (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_skype_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Instagram Url","alhena-lite"),
+				"description" => __( "Insert Instagram Url (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_instagram_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Deviantart Url","alhena-lite"),
+				"description" => __( "Insert Deviantart Url (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_deviantart_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Github Url","alhena-lite"),
+				"description" => __( "Insert Github Url (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_github_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Xing Url","alhena-lite"),
+				"description" => __( "Insert Xing Url (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_xing_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+
+			array( 
+
+				"label" => __( "Whatsapp Number","alhena-lite"),
+				"description" => __( "Insert Whatsapp Number (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_whatsapp_button",
 				"type" => "button",
 				"section" => "footer_section",
 				"std" => "",

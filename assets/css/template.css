@@ -1794,63 +1794,34 @@ tr:nth-child(2n+2) {
 }
 #footer .socials a { 
 	display:inline-block; 
-	margin: 1px 0 0 5px; 
+	margin: 0; 
 	height:24px;
 	width:24px;
-	text-indent:-9999px; 
+	background:#454545;
 	filter: none !important;
+	text-align:center;
+	line-height:24px;
 }
-#footer .socials a:hover { 
+
+#footer .socials a i {
+	font-size:11px 
+}
+
+#footer .socials a:hover , 
+#footer .socials a:active , 
+#footer .socials a:focus { 
 	opacity: 0.7; 
 	filter: alpha(opacity=70);
 	border-bottom:none;
+	color:#fff !important
 }
+
 .tipsy { 
 	padding: 5px; 
 	opacity: 0.8; 
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
 	background-image: url(../images/icons/tipsy.gif);
-}
-
-#footer a.facebook { 
-	background:url('../images/icons/social/facebook.png') no-repeat;
-}
-#footer a.flickr { 
-	background:url('../images/icons/social/flickr.png') no-repeat;
-}
-#footer a.google  { 
-	background:url('../images/icons/social/google.png') no-repeat;
-}
-#footer a.linkedin  { 
-	background:url('../images/icons/social/linkedin.png') no-repeat;
-}
-#footer a.myspace  { 
-	background:url('../images/icons/social/myspace.png') no-repeat;
-}
-#footer a.pinterest {  
-	background:url('../images/icons/social/pinterest.png') no-repeat;
-}
-#footer a.rss { 
-	background:url('../images/icons/social/rss.png') no-repeat;
-}
-#footer a.skype  { 
-	background:url('../images/icons/social/skype.png') no-repeat;
-}
-#footer a.tumblr  { 
-	background:url('../images/icons/social/tumblr.png') no-repeat;
-}
-#footer a.twitter { 
-	background:url('../images/icons/social/twitter.png') no-repeat;
-}
-#footer a.vimeo  { 
-	background:url('../images/icons/social/vimeo.png') no-repeat;
-}
-#footer a.youtube  { 
-	background:url('../images/icons/social/youtube.png') no-repeat;
-}
-#footer a.email  { 
-	background:url('../images/icons/social/email.png') no-repeat;
 }
 
 .tipsy-inner { 
@@ -2026,7 +1997,7 @@ tr:nth-child(2n+2) {
 		text-align:center
 	}
 	#footer .socials a {
-		margin:10px 0;
+		margin:0 0 5px 0;
 	}
 	.widget-box {
 		padding:20px 0;
