@@ -15,7 +15,7 @@ global $post, $woocommerce, $product, $virtue;
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 5 );
 $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-$image_title       = get_post_field( 'post_excerpt', $attachment_id );
+$image_title       = get_post_field( 'post_excerpt', $post_thumbnail_id );
 if(!empty($image_title)) {
 	$light_title  = $image_title;
 } else {

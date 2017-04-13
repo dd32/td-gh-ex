@@ -64,7 +64,7 @@
 							 		} ?>
 									<div class="<?php echo esc_attr($imagesize);?>">
 									 	<div class="imghoverclass" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 			                           			<img src="<?php echo esc_url($image[0]); ?>" itemprop="contentUrl"
 			                           			width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" 
 			                           			<?php echo $img_srcset; ?>
@@ -96,7 +96,7 @@
 										?>
 									<div class="<?php echo esc_attr($imagesize);?>">
 									 	<div class="imghoverclass"  itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			                           		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 			                           			<img src="<?php echo esc_url($image[0]); ?>" itemprop="contentUrl"
 			                           			width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" 
 			                           			<?php echo $img_srcset; ?>

@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.5 | 13th April 2017 = 
+* Fix: Issue with undifined varible.
+* Fix: Issue with shop back link.
+
 = Version 2.9.4 | 12th April 2017 = 
 * Fix: Issue with woocommerce zoom init.
 * Update: Checkout CSS.

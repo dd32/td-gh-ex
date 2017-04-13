@@ -91,7 +91,7 @@
                         ?>
                             <div class="imghoverclass postfeat post-single-img" itemscope itemtype="https://schema.org/ImageObject">
                                 <a href="<?php echo esc_url($image_src[0]); ?>" data-rel="lightbox" class="lightboxhover">
-                                    <img src="<?php echo esc_url($image[0]); ?>"  width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" <?php echo kt_get_srcset_output($image[1], $image[2], $image[0], $image_id);?> itemprop="contentUrl" alt="<?php the_title(); ?>" />
+                                    <img src="<?php echo esc_url($image[0]); ?>"  width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" <?php echo kt_get_srcset_output($image[1], $image[2], $image[0], $image_id);?> itemprop="contentUrl" alt="<?php the_title_attribute(); ?>" />
                                     <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
                                     <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
                                     <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
