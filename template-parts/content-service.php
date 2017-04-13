@@ -23,7 +23,7 @@ if ( $query->have_posts() ) {
 		<div class="container">
 			<?php
 			$service_title = esc_attr( get_theme_mod( 'service_title' , '' ) );
-			$service_desc  = esc_textarea( get_theme_mod( 'service_desc' , '' ) );			
+			$service_desc  = wp_kses_post( get_theme_mod( 'service_desc' , '' ) );			
 			if($service_title != ''  || $service_desc != ''  ){ ?>
 				<div class="row">
 					<div class="section-title">

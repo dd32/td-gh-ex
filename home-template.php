@@ -35,7 +35,7 @@ if(have_posts()){
 <!-- PORTFOLIO -->
 <?php  if(get_theme_mod('display_portfolio', true)){
     $portfolio_title = esc_attr( get_theme_mod( 'portfolio_title' , '' ) );
-    $portfolio_desc  = esc_textarea( get_theme_mod( 'portfolio_desc' , '' ) );
+    $portfolio_desc  = wp_kses_post( get_theme_mod( 'portfolio_desc' , '' ) );
     ?>
     <section class="portfolio">
         <div class="container">
@@ -63,7 +63,7 @@ if(have_posts()){
 <!-- TEAM -->
 <?php  if(get_theme_mod('display_team',true)){
     $team_title = esc_attr( get_theme_mod( 'team_title' , '' ) );
-    $team_desc  = esc_textarea( get_theme_mod( 'team_desc' , '' ) );
+    $team_desc  = wp_kses_post( get_theme_mod( 'team_desc' , '' ) );
     ?>
     <section>
         <div class="container">

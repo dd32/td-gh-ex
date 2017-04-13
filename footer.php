@@ -7,7 +7,7 @@
  */
 
 if( is_front_page() && is_home()){
-	if(!is_plugin_active('xylus-toolkit/xylus-toolkit.php')  || 'posts' == get_option('show_on_front')){
+	if(!adney_check_plugin_active()  || 'posts' == get_option('show_on_front')){
  	?>
 		</div>
 	</section>
@@ -77,7 +77,7 @@ if( is_front_page() && is_home()){
 			<?php if( get_theme_mod('footer_copyright') ){?>
 				<div class="row">
 					<div class="uppercase gray-text footer_copyright">
-						<?php echo esc_textarea( get_theme_mod( 'footer_copyright' ) ); ?>
+						<?php echo wp_kses_post( get_theme_mod( 'footer_copyright' ) ); ?>
 					</div>
 				</div>
 			<?php } ?>
