@@ -1,53 +1,49 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme.
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Cherish
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> >
-<a href="#wrapper" class="skip-link screen-reader-text"><?php _e('Skip to content', 'cherish' );?></a>
+
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="page" class="site">
+<a href="#wrapper" class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to content', 'cherish' );?></a>
+<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<button id="mobile-menu-toggle" aria-controls="top-bar-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cherish' ); ?></button>
+	<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_id' => 'top-bar-menu', 'depth' => 3, 'container' => false ) ); ?>
+</nav>
 <?php
-if ( has_nav_menu( 'header' ) ) {
-	echo '<a href="#" id="mobile-menu"><span class="screen-reader-text">' . esc_attr( 'Show and hide menu', 'cherish' ) . '</span></a>';
-	wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu', 'items_wrap' => '<nav role="navigation"><ul id="%1$s" class="%2$s">%3$s</ul></nav>', 'fallback_cb' => false) ); 
-?>
-	<div id="menu-wrap" role="navigation"><?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu', 'fallback_cb' => false ) ); ?></div>
-<?php 
-}
-if ( is_home() || is_front_page() ) {?>
+if ( is_home() || is_front_page() ) { ?>
 	<div id="header" role="banner">
-	<?php if (display_header_text() ) {	?>
-		<h1 class="site-title" data-0="opacity:1;" data-200="opacity:0.0;"><?php bloginfo( 'name' ); ?></h1>
-		<?php if (get_option('blogdescription')<> ''){	?>	
-			<h2 class="site-description" data-0="opacity:1;" data-200="opacity:0.0;"><?php bloginfo( 'description' ); ?></h2>
+	<?php
+	the_custom_logo();
+	if ( display_header_text() ) {
+	?>
+		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 		<?php
-			}
-		if( get_theme_mod( 'cherish_hide_action' ) == '') {
-		?>
-			<div id="action">
-			<?php 
-			if( get_theme_mod( 'cherish_action_text' ) <> '') {
-				if( get_theme_mod( 'cherish_action_link' ) <> '') {
-					echo '<a href="' . esc_url( get_theme_mod( 'cherish_action_link' ) ) .'">';
-				}
-				echo esc_html( get_theme_mod( 'cherish_action_text' ) );
-				if( get_theme_mod( 'cherish_action_link' ) <> '') {
-					echo '</a>';
-				}
-			}else{			
-				_e("This is your call to action area. You can change it's appearance and text in the customizer.", 'cherish');
-			}
-			?>
-			</div>
+		if ( get_option( 'blogdescription' ) ) {?>
+			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 		<?php
 		}
+		cherish_action();
 	}
 	?>
 	</div>
-<?php 
+<?php
 }
 ?>
 <div id="wrapper" role="main">

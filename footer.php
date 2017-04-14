@@ -1,55 +1,53 @@
-</div>
-<div id="footer" role="contentinfo">
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Cherish
+ */
 
-<?php if ( is_home() || is_front_page() || is_404() || is_search() ) {?>
+?>
+
+<div id="footer" role="contentinfo">
 	<div class="widget_wrap">
-	<?php 
-	if (is_active_sidebar(1)){
+	<?php
+	if ( is_active_sidebar( 1 ) ) {
 		echo '<ul class="footer_widget_1">';
-			dynamic_sidebar(1);
+			dynamic_sidebar( 1 );
 		echo '</ul>';
 	}
-	if (is_active_sidebar(2)){
+	if ( is_active_sidebar( 2 ) ) {
 			echo '<ul class="footer_widget_2">';
-			dynamic_sidebar(2);
+			dynamic_sidebar( 2 );
 		echo '</ul>';
 	}
-	if (is_active_sidebar(3)){
+	if ( is_active_sidebar( 3 ) ) {
 			echo '<ul class="footer_widget_3">';
-			dynamic_sidebar(3);
+			dynamic_sidebar( 3 );
 		echo '</ul>';
 	}
 	?>
 	</div>
-<?php
-}
-?>
+	<?php
+	if ( ! get_theme_mod( 'cherish_details' ) ) {
+		echo '<div class="divider"></div>';
+	}
+	?>
 	<div class="footer-credit">
-	<?php
-	if( get_theme_mod( 'cherish_logo' ) ) {
-		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
-			echo '<a href="' . esc_url(get_theme_mod( 'cherish_logo_link' )) . '">';
-		}
-		echo '<img src="' . esc_url( get_theme_mod( 'cherish_logo' )) . '" class="footer-logo">';
-		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
-			echo '</a>';
-		}
-	}
-	if( get_theme_mod( 'cherish_footer_title' ) <> '') {
-	?>
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-	<?php
-	}
-	?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
-	<a href="http://wordpress.org/"><?php printf( __( 'Proudly powered by %s', 'cherish' ), 'WordPress' ); ?></a>
-	<span class="sep"> | </span>
-	<a href="<?php echo esc_url('http://wptema.se/cherish'); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'cherish' ), 'Cherish'); ?></a>
+		<span class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></span>
+		
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
+		<a href="http://wordpress.org/"><?php printf( esc_html__( 'Proudly powered by %s', 'cherish' ), 'WordPress' ); ?></a>
+		<span class="sep"> | </span>
+		<a href="<?php echo esc_url( 'https://wptema.se/cherish' ); ?>" rel="nofollow"><?php printf( esc_html__( 'Theme: %1$s by Carolina', 'cherish' ), 'Cherish' ); ?></a>
 	</div> <!--End Footer Credit -->
 	
-<span class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></span>
 </div> <!--End Footer -->
+</div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,27 +1,29 @@
-<?php 
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Cherish
+ */
+
 get_header();
-	while ( have_posts() ) : the_post(); 
-		$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
-		if ($cherish_color_meta_value == '' AND is_sticky()){
-			echo '<div class="container" style="background:#edaeae">';
-		}else{		
-			echo '<div class="container" style="background:' . esc_attr($cherish_color_meta_value) . ';">';
-		}
-		get_template_part( 'content', get_post_format() ); 
-		echo '</div>';
-	endwhile;
-	
-	echo '<div class="nav">';
-	if( get_next_posts_link() ){
-		echo '<div class="newer-posts">';
-		next_posts_link(__('Next page &rarr;', 'cherish'));
-		echo '</div>'; 
+
+while ( have_posts() ) : the_post();
+	$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
+	if ( ! $cherish_color_meta_value ) {
+		echo '<div class="container">';
+	} else {
+		echo '<div class="container" style="background:' . esc_attr( $cherish_color_meta_value ) . ';">';
 	}
-	if( get_previous_posts_link() ){
-		echo '<div class="older-posts">';
-		previous_posts_link(__('&larr; Previous page','cherish'));
-		echo '</div>'; 
-	}
+	get_template_part( 'content', get_post_format() );
 	echo '</div>';
-get_footer(); 
-?>
+endwhile;
+
+the_posts_navigation( array( 'prev_text' => __( '&larr; Previous page','cherish' ), 'next_text' => __( 'Next page &rarr;', 'cherish' ) ) );
+
+get_footer();

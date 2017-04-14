@@ -17,7 +17,7 @@ add_action( 'add_meta_boxes', 'cherish_add_meta_box' );
 
 /**
  * Prints the box content.
- * 
+ *
  * @param WP_Post $post The object for the current post/page.
  */
 function cherish_meta_box_callback( $post ) {
@@ -32,7 +32,8 @@ function cherish_meta_box_callback( $post ) {
 	$cherish_color_meta_value = get_post_meta( $post->ID, 'meta-color', true );
 	?>
 	<p>
-    <label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>&nbsp; <input name="meta-color" type="text" value="<?php echo $cherish_color_meta_value ?>" class="meta-color" />
+	<label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>&nbsp; 
+	<input name="meta-color" type="text" value="<?php echo esc_attr( $cherish_color_meta_value); ?>" class="meta-color" />
 	</p>
 <?php
 }
@@ -47,22 +48,27 @@ function cherish_save_meta_box_data( $post_id ) {
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
 	 */
+
 	// Check if our nonce is set.
 	if ( ! isset( $_POST['cherish_meta_box_nonce'] ) ) {
 		return;
 	}
+
 	// Verify that the nonce is valid.
 	if ( ! wp_verify_nonce( $_POST['cherish_meta_box_nonce'], 'cherish_meta_box' ) ) {
 		return;
 	}
+
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
+
 	// Check the user's permissions.
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
 	/* OK, its safe for us to save the data now. */
 	// Make sure that it is set.
 	if ( ! isset( $_POST['meta-color'] ) ) {

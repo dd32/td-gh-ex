@@ -1,36 +1,31 @@
 <?php get_header(); ?>
-<div class="container">
-	<?php 
-	if ( have_posts() && strlen( trim(get_search_query()) ) != 0 ) {
+	<?php
+	if ( have_posts() && strlen( trim( get_search_query() ) ) != 0 ) {
 	?>
-		<div class="search-post"> 	
-			<h1 class="post-title"><?php printf( __( 'Search Results for: %s', 'cherish'), get_search_query()); ?></h1>		
+	<header class="entry-header">
+		<h1 class="post-title"><?php printf( __( 'Search Results for: %s', 'cherish' ), get_search_query() ); ?></h1>
+		<?php get_search_form(); ?>
+	</header><!-- .entry-header -->
+		<?php
+		while ( have_posts() ) : the_post();
+			$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
+			if ( ! $cherish_color_meta_value ) {
+				echo '<div class="container">';
+			} else {
+				echo '<div class="container" style="background:' . esc_attr( $cherish_color_meta_value ) . ';">';
+			}
+			get_template_part( 'content', get_post_format() );
+			echo '</div>';
+		endwhile;
+		the_posts_navigation( array( 'prev_text' => __( '&larr; Previous page','cherish' ), 'next_text' => __( 'Next page &rarr;', 'cherish' ) ) );
+	} else {
+		?>
+		<header class="entry-header">
+			<h1 class="post-title"><?php esc_html_e( 'No results found', 'cherish' ); ?></h1>
 			<?php get_search_form(); ?>
-		</div>
-		<?php while ( have_posts() ) : the_post(); ?> 					
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<?php
-				if (strpos($post->post_content,'[gallery') === false){
-					if ( has_post_thumbnail()) {
-						the_post_thumbnail();
-					}
-				}
-				the_content(); 
-				wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'cherish' ), 'after' => '</div>' ) ); 
-				cherish_meta();
-				?>						
-			</div>
-		<?php endwhile; 
-	}else{
-	?>
-		<div class="search-post"> 	
-			<h1 class="post-title"><?php _e( 'No results found', 'cherish'); ?></h1>
-
-			<?php get_search_form(); ?>
-		</div>
+		</header><!-- .entry-header -->
 	<?php
 	}
 	?>
-</div>
-<?php get_footer(); ?> 
+<?php
+get_footer();
