@@ -92,7 +92,7 @@ if ( absint($bellini['bellini_woo_shop_product_layout']) === 1 ):
 	remove_action( 'woocommerce_after_shop_loop_item_title', 	'woocommerce_template_loop_price',              	10 );
 	remove_action( 'woocommerce_after_shop_loop_item_title', 	'woocommerce_template_loop_rating',        			5 );
 	add_action( 'woocommerce_before_shop_loop_item', 			'bellini_before_woo_product_archive_item_one', 		1 );
-	add_action( 'woocommerce_before_shop_loop_item_title', 		'bellini_woo_product_info_archive_item', 			10 );
+	add_action( 'woocommerce_before_shop_loop_item_title', 		'bellini_woo_product_info_archive_item', 			12 );
 	add_action( 'woocommerce_before_shop_loop_item_title', 		'bellini_woo_product_info_title_archive_item', 		15 );
 	add_action( 'woocommerce_after_shop_loop_item_title', 		'bellini_woocommerce_template_loop_price', 			10 );
 endif;
@@ -108,6 +108,17 @@ if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
 	add_action( 'woocommerce_single_product_summary', 'bellini_woo_close_div', 						60 );
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_column_twelve', 				5 );
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_woo_close_div', 				25 );
+endif;
+
+
+/*--------------------------------------------------------------
+## Product Category Layout
+--------------------------------------------------------------*/
+
+if ( absint($bellini['woo_product_category_layout']) === 1 ):
+/* Category Layout 1 */
+	add_action( 'woocommerce_before_subcategory', 'bellini_woo_product_category_layout_one_inner_open', 5 );
+	add_action( 'woocommerce_after_subcategory', 'bellini_woo_product_category_layout_one_inner_close', 12 );
 endif;
 
 /*--------------------------------------------------------------

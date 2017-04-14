@@ -18,6 +18,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
 	?>
 	<section class="front__slider__static">
     <img src="<?php echo $bellini_static_slider_image;?>" class="img-responsive">
+    <div class="bellini__canvas">
     <div class="slider-content">
     	<?php
     	// Hero Image Heading
@@ -61,6 +62,7 @@ if (absint($bellini['bellini_front_slider_type']) === 1):
 		</div>
 	    <?php endif;?>
     </div><!-- Slider Content ends-->
+    </div>
 </section>
 <?php endif;
 
@@ -371,7 +373,7 @@ if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 
 		$args = array(
 			'post_type' 		=> 'post',
-			'posts_per_page' 	=> 6,
+			'posts_per_page' 	=> absint($bellini['blog_front_post_per_page_select']),
 			'orderby' 			=> 'date',
 			'order' 			=> 'DESC',
 		);

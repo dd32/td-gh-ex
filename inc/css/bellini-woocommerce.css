@@ -181,7 +181,11 @@
 
 .bellini__cart {
     padding-top: .75rem;
+    text-align:right;
 }
+
+.header_cart_fragments {list-style:none; display:inline-block; }
+.header__cart,.header__search{ display:inline-block;}
 
 .site-cart__icon {
     float: right;
@@ -397,8 +401,6 @@
 
 .category_title{
     text-align: center;
-    margin-top: .4em;
-    margin-bottom: .4em;
 }
 
 
@@ -941,3 +943,6 @@ mark.count {background-color: transparent;}
 }
 
 table.variations label{text-transform: capitalize;}
+
+.animate__cart {animation: swing 2s cubic-bezier(0, 0.9, 0.3, 1.2) infinite;}
+.empty__cart{opacity:.8;}

@@ -131,8 +131,7 @@ if ( ! function_exists( 'bellini_header_cart' ) ) {
 					</ul>
 			</div>
 		</div>
-		<button class="cart-toggles">
-			<?php esc_html_e( 'My Bag ', 'bellini' );?>  (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+		<button class="cart-toggles <?php bellini_header_cart_class();?>">
 		</button><!-- cart toggle ends -->
 		<?php
 		}
@@ -143,14 +142,14 @@ if ( ! function_exists( 'bellini_header_cart' ) ) {
 function bellini_top_header(){
 	if(is_woocommerce_activated()){?>
 	<div class="bellini__cart">
-		<div class="row">
-			<div class="col-md-10 col-xs-10 text-right text-left-xs">
+		<ul class="header_cart_fragments">
+			<li class="header__cart">
 				<?php bellini_header_cart(); ?>
-			</div>
-			<div class="col-md-2 col-xs-2">
+			</li>
+			<li class="header__search">
 				<?php bellini_product_search(); ?>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</div>
 <?php
 	}

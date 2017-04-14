@@ -14,16 +14,27 @@ jQuery(document).ready(function () {
             arrows:false,
         });
 
+
+    jQuery(function($) {
+        var $container = $('.products');
+        $container.imagesLoaded( function() {
+            jQuery('.product-card__inner').matchHeight({byRow: false});
+        });
+    });
+
+    jQuery(function($) {
+        var $container = $('.product__categories');
+        $container.imagesLoaded( function() {
+            jQuery('.front-product-category__card').matchHeight({byRow: false});
+        });
+    });
+
     // Equal Height
     jQuery('.nav-previous, .nav-next').matchHeight();
     jQuery('.feature-block__inner').matchHeight();
     jQuery('.equal-height').matchHeight();
     jQuery('.front__product-featured__text, .front__product-featured__image').matchHeight();
-    jQuery('.front-product-category__card').matchHeight();
-    jQuery('.front-product-category__card__inner').matchHeight();
-    jQuery('.post-item').matchHeight();
-    jQuery('.product-card__info').matchHeight();
-    jQuery('.product-card__inner').matchHeight();
+    jQuery('.post-item--l5').matchHeight();
     jQuery('.type-product').matchHeight();
 
     // Cart Toggle

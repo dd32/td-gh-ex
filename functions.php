@@ -244,6 +244,7 @@ function bellini_option_defaults() {
 		'bellini_body_font_size' 						=> 16,
 		'bellini_title_font_size' 						=> 22,
 		'bellini_menu_font_size'						=> 14,
+		'blog_front_post_per_page_select' 				=> 6,
 		'bellini_feature_block_background_color'		=> '#ffffff',
 		'woo_category_background_color'					=> '#FFEB3B',
 		'woo_product_background_color'					=> '#FFEB3B',

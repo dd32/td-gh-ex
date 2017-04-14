@@ -191,7 +191,7 @@ endif;
 
 if ( ! function_exists( 'bellini_woo_product_info_archive_item' ) ):
 	function bellini_woo_product_info_archive_item() { ?>
-		<div class="product-card__info equal-height">
+		<div class="product-card__info">
 		<?php
 	}
 endif;
@@ -222,7 +222,7 @@ if (  ! function_exists( 'bellini_product_cat_class' ) ) {
     function bellini_product_cat_class() {
 		global $bellini;
         $classes[] = esc_attr($bellini['bellini_woo_shop_product_column']);
-        $classes[] = 'woo__cat equal-height';
+        $classes[] = 'woo__cat';
 
         return array_unique( array_filter( $classes ) );
     }
@@ -237,3 +237,35 @@ add_filter( 'product_cat_class' , 'bellini_product_cat_class' );
 function bellini_woo_order_heading(){ ?>
 	<h3 class="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
 <?php }
+
+
+/*--------------------------------------------------------------
+## Front Cart Animation Class
+--------------------------------------------------------------*/
+
+if (  ! function_exists( 'bellini_header_cart_class' ) ) {
+
+    function bellini_header_cart_class() {
+    	if(WC()->cart->get_cart_contents_count() === 0){
+    		echo "empty__cart";
+    	}else{
+    		echo "animate__cart";
+    	}
+    }
+}
+
+
+// Product Category Layout 1
+if ( ! function_exists( 'bellini_woo_product_category_layout_one_inner_open' ) ):
+	function bellini_woo_product_category_layout_one_inner_open() { ?>
+		<div class="front-product-category__card__inner">
+		<?php
+	}
+endif;
+
+if ( ! function_exists( 'bellini_woo_product_category_layout_one_inner_close' ) ):
+	function bellini_woo_product_category_layout_one_inner_close() { ?>
+		</div>
+		<?php
+	}
+endif;

@@ -30,8 +30,8 @@
 		?>
 	</div>
 	<div class="blog__post__author-box">
-		<?php echo get_avatar($author_id, '70');?>
-		<p><?php bellini_post_author();?></p>
+		<?php echo get_avatar($author_id, '65');?>
+		<?php bellini_post_author();?>
 	</div>
 	</div>
 </div>

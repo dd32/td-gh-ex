@@ -1227,6 +1227,26 @@ if ( is_woocommerce_activated() ) {
                'priority'   => 12,
 			));
 
+	// Blog Posts Per Page
+	$wp_customize->add_setting( 'bellini[blog_front_post_per_page_select]',
+		array(
+			'default' => 6,
+			'type' => 'option',
+			'sanitize_callback' => 'absint',
+			'transport' => 'refresh'
+		)
+	);
+
+		$wp_customize->add_control( 'blog_front_post_per_page_select',array(
+				'label'      	=> esc_html__( 'Number of Posts to Display', 'bellini' ),
+				'section'    	=> 'bellini_frontpage_section_blog',
+				'settings'   	=> 'bellini[blog_front_post_per_page_select]',
+			    'priority'   	=> 13,
+			    'type'       	=> 'text',
+	    		'input_attrs' 	=> array('placeholder' 	=> esc_html__( 'example: 6', 'bellini' ),),
+			)
+		);
+
 
 	$wp_customize->add_setting( 'bellini[bellini_blog_section_front_cta_title_helper]',
 		array(
