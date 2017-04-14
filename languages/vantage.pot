@@ -1,4 +1,4 @@
-# Copyright (C) 2016 vantage
+# Copyright (C) 2017 vantage
 # This file is distributed under the same license as the vantage package.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SiteOrigin <support@siteorigin.com>\n"
 "Language-Team: SiteOrigin <support@siteorigin.com>\n"
 "X-Poedit-Basepath: ..\n"
@@ -204,59 +204,59 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:256, inc/customizer.php:36
+#: functions.php:257, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:259
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:267
+#: functions.php:268
 msgid "Shop"
 msgstr ""
 
-#: functions.php:269
+#: functions.php:270
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:278, inc/customizer.php:40
+#: functions.php:279, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:281
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:288
+#: functions.php:289
 msgid "Header"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:291
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:298
+#: functions.php:299
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:301
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:395
+#: functions.php:396
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:595
+#: functions.php:596
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:600
+#: functions.php:601
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:605
+#: functions.php:606
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -1188,7 +1188,7 @@ msgstr ""
 msgid "No Bottom Margin"
 msgstr ""
 
-#: inc/panels.php:332
+#: inc/panels.php:328
 msgid "Vantage Widgets"
 msgstr ""
 
