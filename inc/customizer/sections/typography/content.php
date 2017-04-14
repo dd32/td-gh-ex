@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-content-typo',
 		'priority'    => 4,
-		'label'       => __( 'Heading <H1>', 'astra-theme' ),
+		'label'       => __( 'Heading <H1>', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 5,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-content-typo',
 		'priority'    => 9,
-		'label'       => __( 'Heading <H2>', 'astra-theme' ),
+		'label'       => __( 'Heading <H2>', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 10,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -79,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-content-typo',
 		'priority'    => 14,
-		'label'       => __( 'Heading <H3>', 'astra-theme' ),
+		'label'       => __( 'Heading <H3>', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 15,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * Option: Heading <H4> Divider
 	 */
 	$wp_customize->add_control( new Ast_Control_Divider( $wp_customize, AST_THEME_SETTINGS . '[divider-section-h4]', array(
-		'label'       => __( 'Heading <H4>', 'astra-theme' ),
+		'label'       => __( 'Heading <H4>', 'astra' ),
 		'section'     => 'section-content-typo',
 		'type'        => 'ast-divider',
 		'priority'    => 19,
@@ -126,7 +126,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 20,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -139,7 +139,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-content-typo',
 		'priority'    => 24,
-		'label'       => __( 'Heading <H5>', 'astra-theme' ),
+		'label'       => __( 'Heading <H5>', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -156,7 +156,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 25,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -166,7 +166,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * Option: Heading <H6> Divider
 	 */
 	$wp_customize->add_control( new Ast_Control_Divider( $wp_customize, AST_THEME_SETTINGS . '[divider-section-h6]', array(
-		'label'       => __( 'Heading <H6>', 'astra-theme' ),
+		'label'       => __( 'Heading <H6>', 'astra' ),
 		'section'     => 'section-content-typo',
 		'type'        => 'ast-divider',
 		'priority'    => 29,
@@ -186,7 +186,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-content-typo',
 		'priority' => 30,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),

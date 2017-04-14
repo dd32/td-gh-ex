@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-header-typo',
 		'priority'    => 5,
-		'label'       => __( 'Site Title', 'astra-theme' ),
+		'label'       => __( 'Site Title', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-dimension',
 		'section'     => 'section-header-typo',
 		'priority'    => 10,
-		'label'       => __( 'Font Size', 'astra-theme' ),
+		'label'       => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-header-typo',
 		'priority'    => 15,
-		'label'       => __( 'Site Tagline', 'astra-theme' ),
+		'label'       => __( 'Site Tagline', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-dimension',
 		'section'     => 'section-header-typo',
 		'priority'    => 20,
-		'label'       => __( 'Font Size', 'astra-theme' ),
+		'label'       => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),

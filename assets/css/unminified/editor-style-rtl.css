@@ -1864,20 +1864,17 @@ input[type="submit"]:focus {
 .ast-header-break-point .ast-search-menu-icon .search-field,
 .ast-header-break-point .ast-search-menu-icon.ast-inline-search .search-field {
   width: 100%;
-  padding-left: 2em;
+  padding-left: 5.5em;
 }
 
 .ast-header-break-point .ast-search-menu-icon .search-submit {
   display: block;
-  background: none;
-  border: none;
   position: absolute;
   height: 100%;
-  left: 0.5em;
-  padding: 0;
   top: 0;
-  font-size: 1.3em;
-  color: inherit;
+  left: 0;
+  padding: 0 1em;
+  border-radius: 0;
 }
 
 .ast-header-break-point .ast-search-menu-icon .search-form {

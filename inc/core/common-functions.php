@@ -50,61 +50,6 @@ if ( ! function_exists( 'ast_get_foreground_color' ) ) {
 }
 
 /**
- * Contrasting Color
- */
-if ( ! function_exists( 'ast_contrasting_color' ) ) {
-
-	/**
-	 * Contrasting Color
-	 *
-	 * @since 1.0
-	 * @param  string $hexcolor Color code in HEX format.
-	 * @param  string $dark     Darker color in HEX format.
-	 * @param  string $light    Light color in HEX format.
-	 * @return string           Contrasting Color.
-	 */
-	function ast_contrasting_color( $hexcolor, $dark = '#000000', $light = '#FFFFFF' ) {
-		return ( hexdec( $hexcolor ) > 0xffffff / 2 ) ? $dark : $light;
-	}
-}
-
-/**
- * Color conversion from HEX to RGB or RGBA.
- */
-if ( ! function_exists( 'ast_hex2rgba' ) ) {
-
-	/**
-	 * Color conversion from HEX to RGB or RGBA.
-	 *
-	 * @since 1.0
-	 * @param  string $hex   Color code in HEX format.
-	 * @param  string $alpha Color code alpha value for RGBA conversion.
-	 * @return string        Return RGB or RGBA color code.
-	 */
-	function ast_hex2rgba( $hex, $alpha = '' ) {
-		$hex = str_replace( '#', '', $hex );
-		if ( strlen( $hex ) == 3 ) {
-			$r = hexdec( substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) );
-			$g = hexdec( substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) );
-			$b = hexdec( substr( $hex, 2, 1 ) . substr( $hex, 2, 1 ) );
-		} else {
-			$r = hexdec( substr( $hex, 0, 2 ) );
-			$g = hexdec( substr( $hex, 2, 2 ) );
-			$b = hexdec( substr( $hex, 4, 2 ) );
-		}
-		$rgb = $r . ',' . $g . ',' . $b;
-
-		if ( '' === $alpha ) {
-			return 'rgb(' . $rgb . ')';
-		} else {
-			$alpha = floatval( $alpha );
-
-			return 'rgba(' . $rgb . ',' . $alpha . ')';
-		}
-	}
-}
-
-/**
  * Retrieve theme or meta options subkey value.
  */
 if ( ! function_exists( 'ast_get_option_subkey' ) ) {
@@ -112,7 +57,7 @@ if ( ! function_exists( 'ast_get_option_subkey' ) ) {
 	/**
 	 * Retrieve theme or meta options subkey value.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  string $result_key Return sub key.
 	 * @param  string $subkeys   Subkey value.
 	 * @param  string $default   Return default value if not found.
@@ -176,136 +121,6 @@ if ( ! function_exists( 'ast_css' ) ) {
 		}
 	}
 }
-
-/**
- * Set background color / image etc
- */
-if ( ! function_exists( 'ast_css_background' ) ) {
-
-	/**
-	 * Set background color / image etc
-	 *
-	 * @param  string $selector     CSS selector.
-	 * @param  string $bg_color     Background color in HEX.
-	 * @param  string $bg_img       Background image URL.
-	 * @param  string $bg_pos       Background image position.
-	 * @param  string $bg_rep       Background image repeat.
-	 * @param  int    $bg_size      Background image size.
-	 * @param  string $bg_atch      Background image attachment.
-	 * @return void               	Echo the generated CSS.
-	 */
-	function ast_css_background( $selector = '', $bg_color = '', $bg_img = '', $bg_pos = '', $bg_rep = '', $bg_size = '', $bg_atch = '' ) {
-
-		/**
-		 * Selector
-		 */
-		if ( $selector ) {
-
-			$css = '';
-
-			// Has bg color?
-			if ( $bg_color ) {
-
-				// set [parent] HEX color.
-				$css .= $selector;
-				$css .= '{';
-				$css .= '	background-color: ' . $bg_color . ';';
-				$css .= '}';
-			}
-
-			// Has bg image?
-			if ( $bg_img ) {
-				$css .= $selector;
-				$css .= '{';
-
-				$css .= '	background-image: url(' . $bg_img . ');';
-
-				// background repeat.
-				if ( $bg_rep ) {
-					$css .= '	background-repeat:' . $bg_rep . ';';
-				}
-
-				// background size.
-				if ( $bg_size ) {
-					$css .= '	background-size:' . $bg_size . ';';
-				}
-
-				// background attachment.
-				if ( $bg_atch ) {
-					$css .= '	background-attachment:' . $bg_atch . ';';
-				}
-
-				$css .= '}';
-			}
-
-			echo $css;
-		}// End if().
-	}
-}// End if().
-
-/**
- * CSS Font Font
- */
-if ( ! function_exists( 'ast_css_font' ) ) {
-
-	/**
-	 * CSS Font Font
-	 *
-	 * @since 1.0
-	 * @param  string $selector    CSS selector.
-	 * @param  number $font_size   Font size.
-	 * @param  string $font_weight Font weight.
-	 * @param  string $font_family Font family.
-	 * @return void              Echo the generated CSS.
-	 */
-	function ast_css_font( $selector = '', $font_size = '', $font_weight = '', $font_family = '' ) {
-
-		$output         = '';
-		$theme_options  = Ast_Theme_Options::get_options();
-		$body_font_size = ( $theme_options['font-size-body'] ) ? $theme_options['font-size-body'] : '';
-
-		if ( $selector ) {
-
-			/**
-			 * Selector
-			 */
-			$output .= $selector;
-			$output .= ' { ';
-
-			/**
-			 * Font Size
-			 */
-			if ( $font_size ) {
-
-				// font size in 'px'.
-				// font size in 'rem'.
-				$output .= 'font-size: ' . esc_attr( round( $font_size ) ) . 'px;';
-
-				if ( $body_font_size ) {
-					$output .= 'font-size: ' . ( esc_attr( $font_size ) / esc_attr( $body_font_size ) ) . 'rem;';
-				}
-			}
-
-			/**
-			 * Font Weight
-			 */
-			if ( $font_weight && 'inherit' != $font_weight ) {
-				$output .= 'font-weight: ' . esc_attr( $font_weight ) . ';';
-			}
-
-			/**
-			 * Font Family
-			 */
-			if ( $font_family && 'inherit' != $font_family ) {
-				$output .= 'font-family: ' . esc_attr( $font_family ) . ';';
-			}
-
-			$output .= ' } ';
-		}// End if().
-
-		echo $output;
-	}
-}// End if().
 
 /**
  * Get CSS value
@@ -526,47 +341,6 @@ if ( ! function_exists( 'ast_get_option_meta' ) ) {
 		}
 
 		return $value;
-	}
-}// End if().
-
-/**
- * Output markup required for the language switcher for WPML.
- */
-if ( ! function_exists( 'ast_language_switcher' ) ) {
-
-	/**
-	 * Output markup required for the language switcher for WPML.
-	 *
-	 * @since 1.0
-	 * @return HTML
-	 */
-	function ast_language_switcher() {
-
-		if ( ! function_exists( 'icl_get_languages' ) ) {
-			return;
-		}
-
-		$languages = icl_get_languages( 'skip_missing=0&orderby=code' );
-
-		echo '<div class="langs-list">';
-		echo '<span>';
-		echo '<i class="icon-global28"></i>';
-		echo esc_attr__( 'Select Language', 'astra-theme' );
-		echo '<i class="icon-chevron-small-down arrow"></i>';
-		echo '</span>';
-		echo '<ul>';
-
-		foreach ( $languages as $l ) {
-			echo '<li>';
-			echo '<a href="' . esc_url( $l['url'] ) . '">';
-			echo '<img src="' . esc_url( $l['country_flag_url'] ) . '" height="8" alt="' . esc_attr( $l['language_code'] ) . '" width="14" /> ';
-			echo esc_html( $l['translated_name'] );
-			echo '</a>';
-			echo '</li>';
-		}
-
-		echo '</ul>';
-		echo '</div>';
 	}
 }// End if().
 
@@ -806,13 +580,13 @@ if ( ! function_exists( 'ast_get_the_title' ) ) {
 		// for 404 page - title always display.
 		if ( is_404() ) {
 
-			$title = apply_filters( 'ast_the_404_page_title', esc_html( 'This page doesn\'t seem to exist.', 'astra-theme' ) );
+			$title = apply_filters( 'ast_the_404_page_title', esc_html( 'This page doesn\'t seem to exist.', 'astra' ) );
 
 			// for search page - title always display.
 		} elseif ( is_search() ) {
 
 			/* translators: 1: search string */
-			$title = apply_filters( 'ast_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra-theme' ), '<span>' . get_search_query() . '</span>' ) );
+			$title = apply_filters( 'ast_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
 
 		} elseif ( class_exists( 'WooCommerce' ) && is_shop() ) {
 
@@ -911,7 +685,7 @@ if ( ! function_exists( 'ast_archive_page_info' ) ) {
 				<section class="ast-archive-description">
 					<?php
 						/* translators: 1: search string */
-						$title = apply_filters( 'ast_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra-theme' ), '<span>' . get_search_query() . '</span>' ) );
+						$title = apply_filters( 'ast_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
 					?>
 					<h1 class="page-title ast-archive-title"> <?php echo $title; ?> </h1>
 				</section>
@@ -978,98 +752,3 @@ if ( ! function_exists( 'ast_adjust_brightness' ) ) {
 	}
 }// End if().
 
-/**
- * Convert colors from HEX to RGBA
- */
-if ( ! function_exists( 'ast_hex_to_rgba' ) ) {
-
-	/**
-	 * Convert colors from HEX to RGBA
-	 *
-	 * @param  string  $color   Color code in HEX.
-	 * @param  boolean $opacity Color code opacity.
-	 * @return string           Color code in RGB or RGBA.
-	 */
-	function ast_hex_to_rgba( $color, $opacity = false ) {
-
-		$default = 'rgb(0,0,0)';
-
-		// Return default if no color provided.
-		if ( empty( $color ) ) {
-	          return $default;
-		}
-
-		// Sanitize $color if "#" is provided.
-	    if ( '#' == $color[0] ) {
-	    	$color = substr( $color, 1 );
-	    }
-
-	    // Check if color has 6 or 3 characters and get values.
-	    if ( 6 == strlen( $color ) ) {
-	    	$hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
-	    } elseif ( 3 == strlen( $color ) ) {
-	    	$hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
-	    } else {
-	    	return $default;
-	    }
-
-	    // Convert HEX to RGB.
-	    $rgb = array_map( 'hexdec', $hex );
-
-	    // Check if opacity is set(RGBA or RGB).
-	    if ( $opacity ) {
-	    	if ( 1 < abs( $opacity ) ) {
-	    		$opacity = 1.0;
-			}
-	    	$output = 'rgba(' . implode( ',',$rgb ) . ',' . $opacity . ')';
-	    } else {
-	    	$output = 'rgb(' . implode( ',',$rgb ) . ')';
-	    }
-
-	    // Return RGB(a) color string.
-	    return $output;
-	}
-}// End if().
-
-/**
- * Convert colors from HEX to RGBA
- */
-if ( ! function_exists( 'ast_get_color_rgba' ) ) {
-
-	/**
-	 * Convert colors from HEX to RGBA
-	 *
-	 * @param  string  $color   Color code in HEX.
-	 * @param  boolean $alpha 	Color code alpha value.
-	 * @return string           Color code in RGB or RGBA.
-	 */
-	function ast_get_color_rgba( $color, $alpha = '' ) {
-
-		// Alpha value is not exist.
-		if ( '' == trim( $alpha ) ) {
-			return $color;
-		}
-
-		if ( strlen( $color ) == 7 || strlen( $color ) == 4 ) {
-
-			$result = ast_hex2rgba( $color, $alpha );
-
-		} elseif ( 'rgba' == strtolower( substr( $color , 0, 4 ) ) || 'rgb' == strtolower( substr( $color , 0, 3 ) ) ) {
-
-			$color = str_replace( array( 'rgba', 'rgb', '(', ')' ), '', $color );
-			$color = explode( ',', $color );
-
-			$r = str_pad( dechex( $color[0] ), 2, '0', STR_PAD_LEFT );
-			$g = str_pad( dechex( $color[1] ), 2, '0', STR_PAD_LEFT );
-			$b = str_pad( dechex( $color[2] ), 2, '0', STR_PAD_LEFT );
-
-			$hex_color = '#' . $r . $g . $b;
-
-			$result = ast_hex2rgba( $hex_color, $alpha );
-
-		} else {
-			$result = $color;
-		}
-		return $result;
-	}
-}// End if().

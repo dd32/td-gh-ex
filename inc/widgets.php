@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 /**
@@ -74,7 +74,7 @@ if ( ! function_exists( 'ast_widgets_init' ) ) :
 	function ast_widgets_init() {
 
 		register_sidebar( apply_filters( 'ast_widgets_init', array(
-			'name'          => esc_html__( 'Main Sidebar', 'astra-theme' ),
+			'name'          => esc_html__( 'Main Sidebar', 'astra' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',

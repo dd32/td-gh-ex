@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[button-color]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Button Color', 'astra-theme' ),
+		'label'       => __( 'Button Color', 'astra' ),
 	) ) );
 
 	/**
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[button-h-color]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Button Hover Color', 'astra-theme' ),
+		'label'       => __( 'Button Hover Color', 'astra' ),
 	) ) );
 
 	/**
@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[button-bg-color]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Button Background Color', 'astra-theme' ),
+		'label'       => __( 'Button Background Color', 'astra' ),
 	) ) );
 
 	/**
@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[button-bg-h-color]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Button Background Hover Color', 'astra-theme' ),
+		'label'       => __( 'Button Background Hover Color', 'astra' ),
 	) ) );
 
 	/**
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[button-radius]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Button Radius', 'astra-theme' ),
+		'label'       => __( 'Button Radius', 'astra' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'min'  => 0,
@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[button-v-padding]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Vertical Padding', 'astra-theme' ),
+		'label'       => __( 'Vertical Padding', 'astra' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'min'  => 1,
@@ -116,7 +116,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[button-h-padding]', array(
 		'section'     => 'section-advanced-button',
-		'label'       => __( 'Horizontal Padding', 'astra-theme' ),
+		'label'       => __( 'Horizontal Padding', 'astra' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'min'  => 1,

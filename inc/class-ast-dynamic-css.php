@@ -7,7 +7,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,7 +61,7 @@ if ( ! class_exists( 'AST_Dynamic_CSS' ) ) {
 			 * - Variable Declaration
 			 */
 			$page_width                   = '100%';
-			$site_content_width           = ast_get_option( 'site-content-width' , '' , 1280 );
+			$site_content_width           = ast_get_option( 'site-content-width' , '' , 1200 );
 			$ast_header_width             = ast_get_option( 'header-main-layout-width' );
 
 			// Site Background Color.
@@ -361,6 +361,18 @@ if ( ! class_exists( 'AST_Dynamic_CSS' ) ) {
 				$parse_css .= ast_parse_css( $genral_global_responsive, '544' );
 			}
 
+			/* Width for Comments for Page Builder Template */
+			$page_builder_comment = array(
+				'.ast-page-builder-template .comments-area, .single.ast-page-builder-template .entry-header, .single.ast-page-builder-template .post-navigation' => array(
+					'max-width' => ast_get_css_value( $site_content_width, 'px' ),
+					'margin-left' => 'auto',
+					'margin-right' => 'auto',
+				),
+			);
+
+			/* Parse CSS from array()*/
+			$parse_css .= ast_parse_css( $page_builder_comment, '544' );
+
 			$separate_container_css = array(
 				'body, .ast-separate-container' => array(
 					'background-color' => $box_bg_color,
@@ -417,21 +429,7 @@ if ( ! class_exists( 'AST_Dynamic_CSS' ) ) {
 					$sml_footer_css .= 'border-top-width:' . $small_footer_divider . 'px;';
 					$sml_footer_css .= 'border-top-color:' . $small_footer_divider_color;
 				$sml_footer_css .= '}';
-				if ( 'footer-sml-layout-2' == $small_footer_layout ) {
-
-					$sml_footer_css .= '.ast-small-footer-section-1, .ast-small-footer-section-2 {';
-						$sml_footer_css .= 'text-align: center;';
-					$sml_footer_css .= '}';
-
-					$sml_footer_css .= '@media all and (min-width: 768px) {';
-						$sml_footer_css .= '.ast-small-footer-section-1 {';
-							$sml_footer_css .= 'text-align: left;';
-						$sml_footer_css .= '}';
-						$sml_footer_css .= '.ast-small-footer-section-2 {';
-							$sml_footer_css .= 'text-align: right;';
-						$sml_footer_css .= '}';
-					$sml_footer_css .= '}';
-				} else {
+				if ( 'footer-sml-layout-2' != $small_footer_layout ) {
 					$sml_footer_css .= '.ast-small-footer-wrap{';
 						$sml_footer_css .= 'text-align: center;';
 					$sml_footer_css .= '}';

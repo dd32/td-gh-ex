@@ -50,7 +50,7 @@ if ( ! class_exists( 'Ast_Visual_Composer' ) ) :
 		/**
 		 * Force Visual Composer to initialize as "built into the theme". This will hide certain tabs under the Settings->Visual Composer page
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function vc_set_as_theme() {
 

@@ -99,13 +99,13 @@ class Ast_Control_Dimension extends WP_Customize_Control {
 	 * Returns an array of translation strings.
 	 *
 	 * @access protected
-	 * @since 2.4.0
+	 * @since 1.0.0
 	 * @param string|false $id The string-ID.
 	 * @return string
 	 */
 	protected function l10n( $id = false ) {
 		$translation_strings = array(
-			'invalid-value' => esc_attr__( 'Invalid Value', 'astra-theme' ),
+			'invalid-value' => esc_attr__( 'Invalid Value', 'astra' ),
 		);
 		return $translation_strings;
 	}

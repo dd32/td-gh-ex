@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,11 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-header',
 		'priority' 	  => 5,
-		'label'       => __( 'Custom Menu Item', 'astra-theme' ),
+		'label'       => __( 'Custom Menu Item', 'astra' ),
 		'choices'     => array(
-			'none'      => __( 'None', 'astra-theme' ),
-			'search'    => __( 'Search', 'astra-theme' ),
-			'text-html' => __( 'Text / HTML', 'astra-theme' ),
+			'none'      => __( 'None', 'astra' ),
+			'search'    => __( 'Search', 'astra' ),
+			'text-html' => __( 'Text / HTML', 'astra' ),
 		),
 	) );
 
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'textarea',
 		'section'     => 'section-header',
 		'priority'    => 10,
-		'label'       => __( 'Custom Menu Text / HTML', 'astra-theme' ),
+		'label'       => __( 'Custom Menu Text / HTML', 'astra' ),
 	) );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'number',
 		'section'     => 'section-header',
 		'priority'    => 25,
-		'label'       => __( 'Bottom Border Size', 'astra-theme' ),
+		'label'       => __( 'Bottom Border Size', 'astra' ),
 		'input_attrs' => array(
 			'min'  => 0,
 			'step' => 1,
@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[header-main-sep-color]', array(
 		'section'     => 'section-header',
 		'priority'    => 30,
-		'label'       => __( 'Bottom Border Color', 'astra-theme' ),
+		'label'       => __( 'Bottom Border Color', 'astra' ),
 	) ) );
 
 	/**
@@ -105,9 +105,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-header',
 		'priority'    => 35,
-		'label'       => __( 'Header Width', 'astra-theme' ),
+		'label'       => __( 'Header Width', 'astra' ),
 		'choices'     => array(
-			'full'    => __( 'Full Width', 'astra-theme' ),
-			'content' => __( 'Content Width', 'astra-theme' ),
+			'full'    => __( 'Full Width', 'astra' ),
+			'content' => __( 'Content Width', 'astra' ),
 		),
 	) );

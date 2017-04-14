@@ -25,7 +25,7 @@
 /**
  * AST_After_Setup_Theme initial setup
  *
- * @since 1.0
+ * @since 1.0.0
  */
 if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 
@@ -44,7 +44,7 @@ if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 		/**
 		 * Initiator
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @return object
 		 */
 		public static function get_instance() {
@@ -65,7 +65,7 @@ if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 		/**
 		 * Content Width
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function content_width() {
 			$GLOBALS['content_width'] = apply_filters( 'ast_content_width', 700 );
@@ -74,7 +74,7 @@ if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 		/**
 		 * Setup theme
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function setup_theme() {
 
@@ -88,9 +88,9 @@ if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 			 * Make theme available for translation.
 			 * Translations can be filed in the /languages/ directory.
 			 * If you're building a theme based on Next, use a find and replace
-			 * to change 'astra-theme' to the name of your theme in all the template files.
+			 * to change 'astra' to the name of your theme in all the template files.
 			 */
-			load_theme_textdomain( 'astra-theme', AST_THEME_DIR . '/languages' );
+			load_theme_textdomain( 'astra', AST_THEME_DIR . '/languages' );
 
 			/**
 			 * Theme Support
@@ -125,6 +125,14 @@ if ( ! class_exists( 'AST_After_Setup_Theme' ) ) {
 				'audio',
 				'status',
 				'aside',
+			) );
+
+			// Add theme support for Custom Logo.
+			add_theme_support( 'custom-logo', array(
+				'width'       => 250,
+				'height'      => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
 			) );
 
 			// WooCommerce.

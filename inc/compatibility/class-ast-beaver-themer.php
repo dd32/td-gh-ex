@@ -51,7 +51,7 @@ if ( ! class_exists( 'Ast_Beaver_Themer' ) ) :
 		/**
 		 * Function to add Theme Support
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function header_footer_support() {
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Ast_Beaver_Themer' ) ) :
 		/**
 		 * Function to update Atra header/footer with Beaver template
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function theme_header_footer_render() {
 
@@ -89,7 +89,7 @@ if ( ! class_exists( 'Ast_Beaver_Themer' ) ) :
 		/**
 		 * Function to Astra theme parts
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		function register_part_hooks() {
 
@@ -97,22 +97,22 @@ if ( ! class_exists( 'Ast_Beaver_Themer' ) ) :
 				array(
 					'label' => 'Header',
 					'hooks' => array(
-						'ast_header_before' => __( 'Before Header', 'astra-theme' ),
-						'ast_header_after'  => __( 'After Header', 'astra-theme' ),
+						'ast_header_before' => __( 'Before Header', 'astra' ),
+						'ast_header_after'  => __( 'After Header', 'astra' ),
 					),
 				),
 				array(
 					'label' => 'Content',
 					'hooks' => array(
-						'ast_content_before' => __( 'Before Content', 'astra-theme' ),
-						'ast_content_after'  => __( 'After Content', 'astra-theme' ),
+						'ast_content_before' => __( 'Before Content', 'astra' ),
+						'ast_content_after'  => __( 'After Content', 'astra' ),
 					),
 				),
 				array(
 					'label' => 'Footer',
 					'hooks' => array(
-						'ast_footer_before' => __( 'Before Footer', 'astra-theme' ),
-						'ast_footer_after'  => __( 'After Footer', 'astra-theme' ),
+						'ast_footer_before' => __( 'Before Footer', 'astra' ),
+						'ast_footer_after'  => __( 'After Footer', 'astra' ),
 					),
 				),
 			);

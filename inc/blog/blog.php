@@ -109,14 +109,6 @@ if ( ! function_exists( 'ast_blog_post_get_featured_item' ) ) {
 
 			switch ( $post_format ) {
 				case 'image':
-					if ( ! is_attachment() ) :
-						$has_image = ast_get_first_image_from_post();
-						if ( ! empty( $has_image ) ) {
-							$post_featured_data  = '<a href="' . esc_url( get_permalink() ) . '" >';
-							$post_featured_data .= ast_get_first_image_from_post();
-							$post_featured_data .= '</a>';
-						}
-								endif;
 					break;
 
 				case 'video':
@@ -128,9 +120,12 @@ if ( ! function_exists( 'ast_blog_post_get_featured_item' ) ) {
 					if ( isset( $post_featured_data['ids'] ) ) {
 						$img_ids = explode( ',', $post_featured_data['ids'] );
 
+						$image_alt = get_post_meta( $img_ids[0], '_wp_attachment_image_alt', true );
+						$image_url = wp_get_attachment_url( $img_ids[0] );
+
 						if ( isset( $img_ids[0] ) ) {
 							$post_featured_data  = '<a href="' . esc_url( get_permalink() ) . '" >';
-							$post_featured_data .= '<img src="' . esc_url( wp_get_attachment_url( $img_ids[0] ) ) . '" alt="' . get_the_title() . '" >';
+							$post_featured_data .= '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" >';
 							$post_featured_data .= '</a>';
 						}
 					}
@@ -207,34 +202,5 @@ if ( ! function_exists( 'ast_get_video_from_post' ) ) {
 	            return $embed;
 	        }
 	    }
-	}
-}
-
-/**
- * Get first image from post content
- */
-if ( ! function_exists( 'ast_get_first_image_from_post' ) ) {
-
-	/**
-	 * Get first image from post content
-	 *
-	 * @since 1.0
-	 * @return mixed
-	 */
-	function ast_get_first_image_from_post() {
-
-		global $post, $posts;
-		$image_thumb = '';
-		$first_img = '';
-
-		if ( preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches ) ) {
-			$first_img = $matches[1][0];
-		}
-
-		if ( empty( $first_img ) ) {
-			return '';
-		}
-
-		return '<img src="' . esc_url( $first_img ) . '" alt="' . get_the_title() . '">';
 	}
 }

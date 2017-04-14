@@ -1,7 +1,7 @@
 /**
  * File sortable.js
  *
- * Handles sortble list
+ * Handles sortable list
  *
  * @package Astra
  */

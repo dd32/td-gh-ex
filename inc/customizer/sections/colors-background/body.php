@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[text-color]', array(
 		'section'     => 'section-colors-body',
 		'priority'    => 5,
-		'label'       => __( 'Text Color', 'astra-theme' ),
+		'label'       => __( 'Text Color', 'astra' ),
 	) ) );
 
 	/**
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[link-color]', array(
 		'section'     => 'section-colors-body',
 		'priority'    => 10,
-		'label'       => __( 'Link Color / Theme Color', 'astra-theme' ),
+		'label'       => __( 'Link Color / Theme Color', 'astra' ),
 	) ) );
 
 	/**
@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[link-h-color]', array(
 		'section'     => 'section-colors-body',
 		'priority'    => 15,
-		'label'       => __( 'Link Hover Color', 'astra-theme' ),
+		'label'       => __( 'Link Hover Color', 'astra' ),
 	) ) );
 
 

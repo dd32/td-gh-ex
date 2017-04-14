@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 // No direct access, please.
@@ -64,19 +64,22 @@ if ( ! class_exists( 'AST_Customizer_Partials' ) ) {
 		}
 
 		/**
-		 * Render Partial Logo
+		 * Render Partial Site Tagline
 		 */
-		static function _render_partial_astlogo() {
-			ast_logo();
+		static function _render_partial_site_tagline() {
+			$options = Ast_Theme_Options::get_options();
+			if ( true == $options['display-site-tagline'] ) {
+				return get_bloginfo( 'description' );
+			}
 		}
 
 		/**
 		 * Render Partial Site Tagline
 		 */
-		static function _render_partial_site_tagline() {
+		static function _render_partial_site_title() {
 			$options = Ast_Theme_Options::get_options();
-			if ( true == $options['site-tagline'] ) {
-				return get_bloginfo( 'description' );
+			if ( true == $options['display-site-title'] ) {
+				return get_bloginfo( 'name' );
 			}
 		}
 
@@ -98,11 +101,11 @@ if ( ! class_exists( 'AST_Customizer_Partials' ) ) {
 			$output = str_replace( '[site_title]', '<span class="ast-footer-site-title">' . get_option( 'blogname' ) . '</span>', $output );
 
 			$theme_author = apply_filters( 'ast_theme_author', array(
-				'theme_name'       => __( 'Astra', 'astra-theme' ),
+				'theme_name'       => __( 'Astra', 'astra' ),
 				'theme_author_url' => 'https://www.brainstormforce.com/',
 			) );
 
-			$output = str_replace( '[theme_author]', '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '">' . esc_attr( $theme_author['theme_name'] ) . '</a>', $output );
+			$output = str_replace( '[theme_author]', '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '">' . esc_html( $theme_author['theme_name'] ) . '</a>', $output );
 			return do_shortcode( $output );
 		}
 
@@ -116,11 +119,11 @@ if ( ! class_exists( 'AST_Customizer_Partials' ) ) {
 			$output = str_replace( '[site_title]', '<span class="ast-footer-site-title">' . get_option( 'blogname' ) . '</span>', $output );
 
 			$theme_author = apply_filters( 'ast_theme_author', array(
-				'theme_name'       => __( 'Astra', 'astra-theme' ),
+				'theme_name'       => __( 'Astra', 'astra' ),
 				'theme_author_url' => 'https://www.brainstormforce.com/',
 			) );
 
-			$output = str_replace( '[theme_author]', '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '">' . esc_attr( $theme_author['theme_name'] ) . '</a>', $output );
+			$output = str_replace( '[theme_author]', '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '">' . esc_html( $theme_author['theme_name'] ) . '</a>', $output );
 			return do_shortcode( $output );
 		}
 	}

@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 // No direct access, please.
@@ -88,7 +88,7 @@ if ( ! class_exists( 'AST_Customizer_Sanitizes' ) ) {
 		 */
 		static public function validate_email( $validity, $value ) {
 		    if ( ! is_email( $value ) ) {
-		        $validity->add( 'required', __( 'Enter valid email address!', 'astra-theme' ) );
+		        $validity->add( 'required', __( 'Enter valid email address!', 'astra' ) );
 		    }
 		    return $validity;
 		}

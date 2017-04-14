@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-slider',
 		'section'     => 'section-site-layout',
 		'priority'    => 10,
-		'label'       => __( 'Container Width', 'astra-theme' ),
+		'label'       => __( 'Container Width', 'astra' ),
 		'suffix'      => '',
 		'input_attrs' => array(
 			'min'    => 768,

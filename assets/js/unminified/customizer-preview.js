@@ -71,39 +71,6 @@ function get_hexdec( hex ) {
 }
 
 /**
- * Convert HEX to RGBA
- *
- * @param  {string} hex   HEX color code.
- * @param  {number} alpha Alpha number for RGBA.
- * @return {string}       Return RGBA or RGB.
- */
-function ast_hex2rgba( hex, alpha ) {
-
-	hex = hex.replace( '#', '' );
-	var r = g = b = '';
-
-	if ( hex.length == 3 ) {
-		r = get_hexdec( hex.substring( 0, 1 ) + hex.substring( 0, 1 ) );
-		g = get_hexdec( hex.substring( 1, 1 ) + hex.substring( 1, 1 ) );
-		b = get_hexdec( hex.substring( 2, 1 ) + hex.substring( 2, 1 ) );
-	} else {
-		r = get_hexdec( hex.substring( 0, 2 ) );
-		g = get_hexdec( hex.substring( 2, 4 ) );
-		b = get_hexdec( hex.substring( 4, 6 ) );
-	}
-
-	var rgb = r + ',' + g + ',' + b;
-
-	if ( '' == alpha ) {
-		return 'rgb(' + rgb + ')';
-	} else {
-		alpha = parseFloat( alpha );
-
-		return 'rgba(' + rgb + ',' + alpha + ')';
-	}
-}
-
-/**
  * Apply CSS for the element
  */
 function ast_css( control, css_property, selector, unit ) {
@@ -185,6 +152,11 @@ function ast_add_dynamic_css( control, style ) {
 				var dynamicStyle = '@media (min-width: 554px) {';
 				dynamicStyle += '.ast-container, .fl-builder #content .entry-header { max-width: ' + ( 40 + parseInt( width ) ) + 'px } ';
 				dynamicStyle += '}';
+				if (  jQuery( 'body' ).hasClass( 'ast-page-builder-template' ) ) {
+					dynamicStyle += '@media (min-width: 554px) {';
+					dynamicStyle += '.ast-page-builder-template .comments-area { max-width: ' + ( 40 + parseInt( width ) ) + 'px } ';
+					dynamicStyle += '}';
+				}
 
 				ast_add_dynamic_css( 'site-content-width', dynamicStyle );
 
@@ -223,24 +195,6 @@ function ast_add_dynamic_css( control, style ) {
 				dynamicStyle += '}';
 				ast_add_dynamic_css( 'blog-max-width', dynamicStyle );
 
-		} );
-	} );
-
-	/**
-	 * Blog Name
-	 */
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( new_value ) {
-			jQuery( '.main-header-bar .site-title a, .ast-small-footer-wrap .ast-footer-site-title' ).text( new_value );
-		} );
-	} );
-
-	/**
-	 * Blog Description
-	 */
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( new_value ) {
-			jQuery( '.main-header-bar .site-description' ).text( new_value );
 		} );
 	} );
 

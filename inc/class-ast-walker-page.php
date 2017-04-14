@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 /**
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Ast_Walker_Page' ) && class_exists( 'Walker_Page' ) ) :
 	/**
 	 * Ast_Walker_Page extends Walker_Page
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	class Ast_Walker_Page extends Walker_Page {
 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Ast_Walker_Page' ) && class_exists( 'Walker_Page' ) ) :
 		 * Outputs the beginning of the current element in the tree.
 		 *
 		 * @see Walker::start_el()
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @access public
 		 *
 		 * @param string  $output       Used to append additional content. Passed by reference.
@@ -103,7 +103,7 @@ if ( ! class_exists( 'Ast_Walker_Page' ) && class_exists( 'Walker_Page' ) ) :
 			/**
 			 * Filters the list of CSS classes to include with each page item in the list.
 			 *
-			 * @since 1.0
+			 * @since 1.0.0
 			 *
 			 * @see wp_list_pages()
 			 *
@@ -118,7 +118,7 @@ if ( ! class_exists( 'Ast_Walker_Page' ) && class_exists( 'Walker_Page' ) ) :
 
 			if ( '' === $page->post_title ) {
 			    /* translators: %d: ID of a post */
-			    $page->post_title = sprintf( __( '#%d (no title)', 'astra-theme' ), $page->ID );
+			    $page->post_title = sprintf( __( '#%d (no title)', 'astra' ), $page->ID );
 			}
 
 			$args['link_before'] = empty( $args['link_before'] ) ? '' : $args['link_before'];

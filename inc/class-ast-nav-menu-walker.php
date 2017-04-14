@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 /**
@@ -60,7 +60,7 @@ if ( ! class_exists( 'Ast_Nav_Menu_Walker' ) && class_exists( 'Walker_Nav_Menu' 
 		 *
 		 * @see Walker_Nav_Menu::start_el()
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 * @global int $_nav_menu_placeholder
 		 *
@@ -77,7 +77,7 @@ if ( ! class_exists( 'Ast_Nav_Menu_Walker' ) && class_exists( 'Walker_Nav_Menu' 
 
 		  	if ( $args->has_children ) {
 				$css_class[] = 'menu-item-has-children';
-				$args->after = '<button role="button" class="ast-menu-toggle" aria-expanded="false"><span class="screen-reader-text">' . esc_attr( $item->title ) . '</span></button>';
+				$args->after = '<button role="button" class="ast-menu-toggle" aria-expanded="false"></button>';
 			}
 
 			// passed classes.
@@ -110,7 +110,7 @@ if ( ! class_exists( 'Ast_Nav_Menu_Walker' ) && class_exists( 'Walker_Nav_Menu' 
 		/**
 		 * Ends the element output, if needed.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 * @see Walker::end_el()
 		 *

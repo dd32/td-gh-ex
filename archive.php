@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Astra
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>

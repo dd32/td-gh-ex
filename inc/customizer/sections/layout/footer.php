@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,18 +25,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-radio-image',
 		'section'     => 'section-footer-small',
 		'priority'    => 5,
-		'label'       => __( 'Footer', 'astra-theme' ),
+		'label'       => __( 'Footer', 'astra' ),
 		'choices'     => array(
 			'disabled'            => array(
-									'label' => __( 'Disabled', 'astra-theme' ),
+									'label' => __( 'Disabled', 'astra' ),
 									'path'	=> AST_THEME_URI . 'assets/images/disabled-footer-76x48.png',
 								),
 			'footer-sml-layout-1' => array(
-									'label' => __( 'Footer Layout 1', 'astra-theme' ),
+									'label' => __( 'Footer Layout 1', 'astra' ),
 									'path'	=> AST_THEME_URI . 'assets/images/footer-layout-1-76x48.png',
 								),
 			'footer-sml-layout-2' => array(
-									'label' => __( 'Footer Layout 2', 'astra-theme' ),
+									'label' => __( 'Footer Layout 2', 'astra' ),
 									'path'	=> AST_THEME_URI . 'assets/images/footer-layout-2-76x48.png',
 								),
 		),
@@ -68,11 +68,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-footer-small',
 		'priority'    => 15,
-		'label'       => __( 'Section 1', 'astra-theme' ),
+		'label'       => __( 'Section 1', 'astra' ),
 		'choices'     => array(
-			''       => __( 'None', 'astra-theme' ),
-			'menu'   => __( 'Footer Menu', 'astra-theme' ),
-			'custom' => __( 'Custom Text', 'astra-theme' ),
+			''       => __( 'None', 'astra' ),
+			'menu'   => __( 'Footer Menu', 'astra' ),
+			'custom' => __( 'Custom Text', 'astra' ),
 		),
 	) );
 
@@ -89,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'textarea',
 		'section'     => 'section-footer-small',
 		'priority'    => 20,
-		'label'       => __( 'Section 1 Custom Text', 'astra-theme' ),
+		'label'       => __( 'Section 1 Custom Text', 'astra' ),
 	) );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -112,11 +112,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-footer-small',
 		'priority'    => 25,
-		'label'       => __( 'Section 2', 'astra-theme' ),
+		'label'       => __( 'Section 2', 'astra' ),
 		'choices'     => array(
-			''       => __( 'None', 'astra-theme' ),
-			'menu'   => __( 'Footer Menu', 'astra-theme' ),
-			'custom' => __( 'Custom Text', 'astra-theme' ),
+			''       => __( 'None', 'astra' ),
+			'menu'   => __( 'Footer Menu', 'astra' ),
+			'custom' => __( 'Custom Text', 'astra' ),
 		),
 	) );
 
@@ -133,7 +133,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'textarea',
 		'section'     => 'section-footer-small',
 		'priority'    => 30,
-		'label'       => __( 'Section 2 Custom Text', 'astra-theme' ),
+		'label'       => __( 'Section 2 Custom Text', 'astra' ),
 	) );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -167,7 +167,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'number',
 		'section'     => 'section-footer-small',
 		'priority'    => 40,
-		'label'       => __( 'Footer Top Border', 'astra-theme' ),
+		'label'       => __( 'Footer Top Border', 'astra' ),
 		'input_attrs' => array(
 			'min'  => 0,
 			'step' => 1,
@@ -187,7 +187,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[footer-sml-divider-color]', array(
 		'section'     => 'section-footer-small',
 		'priority'    => 45,
-		'label'       => __( 'Footer Top Border Color', 'astra-theme' ),
+		'label'       => __( 'Footer Top Border Color', 'astra' ),
 	) ) );
 
 	/**
@@ -202,9 +202,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-footer-small',
 		'priority'    => 35,
-		'label'       => __( 'Footer Width', 'astra-theme' ),
+		'label'       => __( 'Footer Width', 'astra' ),
 		'choices'     => array(
-			'full'    => __( 'Full Width', 'astra-theme' ),
-			'content' => __( 'Content Width', 'astra-theme' ),
+			'full'    => __( 'Full Width', 'astra' ),
+			'content' => __( 'Content Width', 'astra' ),
 		),
 	) );

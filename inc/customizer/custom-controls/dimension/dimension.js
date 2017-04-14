@@ -1,7 +1,7 @@
 /**
- * File dimention.js
+ * File dimension.js
  *
- * Handles the dimention
+ * Handles the dimension
  *
  * @package Astra
  */

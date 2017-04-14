@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Astra
- * @since 1.0
+ * @since 1.0.0
  */
 
 ?>
@@ -22,7 +22,7 @@
 		$title_enabled = 'ast-no-title';
 	}
 	?>
-	<header class="entry-header <?php echo $title_enabled; ?>">
+	<header class="entry-header <?php echo esc_attr( $title_enabled ); ?>">
 		<?php if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) : ?>
 			<div class="post-thumb">
 				<?php the_post_thumbnail(); ?>
@@ -31,7 +31,7 @@
 
 		<?php ast_the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	
+
 	<div class="entry-content clear" itemprop="text">
 
 		<?php ast_entry_content_before(); ?>
@@ -39,7 +39,7 @@
 		<?php the_content(); ?>
 
 		<?php ast_entry_content_after(); ?>
-		
+
 		<?php
 			wp_link_pages( array(
 				'before'      => '<div class="page-links">' . ast_default_strings( 'string-single-page-links-before', false ),
@@ -56,14 +56,14 @@
 
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'astra-theme' ),
+				esc_html__( 'Edit %s', 'astra' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<footer class="entry-footer"><span class="edit-link">',
 			'</span></footer><!-- .entry-footer -->'
 		);
 	?>
-	
+
 	<?php ast_entry_bottom(); ?>
 
 </article><!-- #post-## -->

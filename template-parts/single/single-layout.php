@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 ?>
@@ -44,7 +44,7 @@
 
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'astra-theme' ),
+					esc_html__( 'Edit %s', 'astra' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

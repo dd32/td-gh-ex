@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 /**
@@ -17,7 +17,7 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 	/**
 	 * Customizer Loader
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	class AST_Customizer {
 
@@ -45,12 +45,6 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		public function __construct() {
 
 			/**
-			 * AJAX customizer reset
-			 */
-			add_action( 'wp_ajax_ast_customizer_reset',  array( $this, 'ajax_customizer_reset' ) );
-			add_action( 'wp_ajax_ast_regenerate_assets', array( $this, 'regenerate_assets' ) );
-
-			/**
 			 * Customizer
 			 */
 			add_action( 'customize_preview_init',                  array( $this, 'preview_init' ) );
@@ -61,42 +55,9 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		}
 
 		/**
-		 * AJAX Customizer Reset
-		 *
-		 * @since 1.0
-		 * @return void
-		 */
-		public function ajax_customizer_reset() {
-
-			// Reset option 'ast-settings'.
-			delete_option( AST_THEME_SETTINGS );
-
-			// Reset option 'site_icon'.
-			delete_option( 'site_icon' );
-
-			wp_die();
-		}
-
-		/**
-		 * Generate assets
-		 *
-		 * @since 1.0
-		 * @return void
-		 */
-		public function regenerate_assets() {
-
-			// Update variables.
-			Ast_Theme_Options::refresh();
-
-			do_action( 'ast_ajax_ast_regenerate_assets' );
-
-			wp_die();
-		}
-
-		/**
 		 * Print Footer Scripts
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @return void
 		 */
 		public function print_footer_scripts() {
@@ -125,7 +86,7 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		/**
 		 * Add postMessage support for site title and description for the Theme Customizer.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 		 */
 		function customize_register( $wp_customize ) {
@@ -190,7 +151,7 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		/**
 		 * Customizer Controls
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @return void
 		 */
 		function controls_scripts() {
@@ -216,11 +177,6 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 
 			wp_localize_script( 'ast-customizer-controls-toggle-js', 'ast', apply_filters( 'ast_theme_customizer_js_localize', array(
 				'customizer' => array(
-					'reset' => array(
-						'stringConfirm' => __( 'Attention! This will remove all customizations ever made via customizer to this theme! This action is irreversible!', 'astra-theme' ),
-						'stringReset'   => __( 'Reset All', 'astra-theme' ),
-						'nonce'         => wp_create_nonce( 'ast-customizer-reset' ),
-					),
 					'settings' => array(
 						'sidebars' => array(
 							'single' => array(
@@ -252,7 +208,7 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		/**
 		 * Customizer Preview Init
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @return void
 		 */
 		function preview_init() {
@@ -271,7 +227,7 @@ if ( ! class_exists( 'AST_Customizer' ) ) {
 		 * Called by the customize_save_after action to refresh
 		 * the cached CSS when Customizer settings are saved.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 * @return void
 		 */
 		function customize_save() {

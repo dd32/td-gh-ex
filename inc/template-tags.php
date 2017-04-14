@@ -29,7 +29,7 @@ if ( ! function_exists( 'ast_entry_footer' ) ) :
 
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'astra-theme' ),
+				esc_html__( 'Edit %s', 'astra' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<span class="edit-link">',

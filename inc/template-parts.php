@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 add_action( 'ast_masthead_toggle_buttons', 	'ast_masthead_toggle_buttons_primary' );
@@ -31,7 +31,7 @@ if ( ! function_exists( 'ast_masthead_get_menu_items' ) ) :
 	 * @see ast_masthead_get_menu_items
 	 * @see ast_masthead_custom_nav_menu_items
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_masthead_get_menu_items() {
 
@@ -72,7 +72,7 @@ if ( ! function_exists( 'ast_masthead_custom_page_menu_items' ) ) :
 	 *
 	 * /header.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  array $args Array of arguments.
 	 * @return array       Modified menu item array.
 	 */
@@ -107,7 +107,7 @@ if ( ! function_exists( 'ast_masthead_custom_nav_menu_items' ) ) :
 	 *
 	 * /header.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  array $items Nav menu item array.
 	 * @param  array $args  Nav menu item arguments array.
 	 * @return array       Modified menu item array.
@@ -143,15 +143,17 @@ if ( ! function_exists( 'ast_masthead_toggle_buttons_primary' ) ) {
 	 *
 	 * /header.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_masthead_toggle_buttons_primary() {
+		$menu_title = apply_filters( 'ast_main_menu_toggle_label', __( 'Menu', 'astra' ) );
+		$menu_icon  = apply_filters( 'ast_main_menu_toggle_icon', 'menu-toggle-icon' )
 		?>
 		<div class="ast-button-wrap">
-			<span class="screen-reader-text"><?php echo apply_filters( 'ast_main_menu_toggle_label', __( 'Menu', 'astra-theme' ) ); ?></span>
-			<button type="button" class="menu-toggle main-header-menu-toggle" rel="main-menu" aria-controls='masthead-primary-menu' aria-expanded='false'>
-				<i class="<?php echo apply_filters( 'ast_main_menu_toggle_icon', 'menu-toggle-icon' ); ?>">
-					<span class="mobile-menu"><?php echo apply_filters( 'ast_main_menu_toggle_label', __( 'Menu', 'astra-theme' ) ); ?></span>
+			<span class="screen-reader-text"><?php echo esc_html( $menu_title ); ?></span>
+			<button type="button" class="menu-toggle main-header-menu-toggle" rel="main-menu" aria-controls='primary-menu' aria-expanded='false'>
+				<i class="<?php echo esc_attr( $menu_icon ); ?>">
+					<span class="mobile-menu"><?php echo esc_html( $menu_title ); ?></span>
 				</i>
 			</button>
 		</div>
@@ -171,7 +173,7 @@ if ( ! function_exists( 'ast_footer_small_footer_template' ) ) {
 	 *
 	 * /footer.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_footer_small_footer_template() {
 
@@ -202,7 +204,7 @@ if ( ! function_exists( 'ast_masthead_primary_template' ) ) {
 	 *
 	 * /header.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_masthead_primary_template() {
 		get_template_part( 'template-parts/header/header-main-layout' );
@@ -221,7 +223,7 @@ if ( ! function_exists( 'ast_entry_content_single_template' ) ) {
 	 *
 	 * /template-parts/content-single.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_entry_content_single_template() {
 		get_template_part( 'template-parts/single/single-layout' );
@@ -241,7 +243,7 @@ if ( ! function_exists( 'ast_entry_content_blog_template' ) ) {
 	 * /template-parts/content-blog.php
 	 * /template-parts/content-search.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_entry_content_blog_template() {
 		get_template_part( 'template-parts/blog/blog-layout' );
@@ -260,7 +262,7 @@ if ( ! function_exists( 'ast_entry_content_404_page_template' ) ) {
 	 *
 	 * /template-parts/content-404.php
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_entry_content_404_page_template() {
 

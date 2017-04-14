@@ -70,7 +70,7 @@ class Ast_Control_Divider extends WP_Customize_Control {
 	 */
 	protected function content_template() {
 		?>
-		
+
 		<# if ( data.caption ) { #>
 			<span class="customize-control-caption">{{{ data.caption }}}</span>
 		<# } #>

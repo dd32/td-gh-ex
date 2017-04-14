@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Astra
- * @since 1.0
+ * @since 1.0.0
  */
 
 ?>
@@ -29,7 +29,7 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'astra-theme' ), array(
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'astra' ), array(
 					'span' => array(
 						'class' => array(),
 					),

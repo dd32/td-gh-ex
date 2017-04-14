@@ -2,13 +2,11 @@
 /**
  * Helper class for font settings.
  *
- * @see  https://github.com/zamoose/themehookalliance
- *
  * @package     Astra
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 // Exit if accessed directly.
@@ -24,7 +22,7 @@ final class Ast_Fonts {
 	/**
 	 * Get fonts to generate.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @var array $fonts
 	 */
 	static private $fonts = array();
@@ -32,7 +30,7 @@ final class Ast_Fonts {
 	/**
 	 * Adds data to the $fonts array for a font to be rendered.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param string $name The name key of the font to add.
 	 * @param array  $variants An array of weight variants.
 	 * @return void
@@ -82,7 +80,7 @@ final class Ast_Fonts {
 	/**
 	 * Renders the <link> tag for all fonts in the $fonts array.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return void
 	 */
 	static public function render_fonts() {

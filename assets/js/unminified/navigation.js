@@ -221,6 +221,7 @@ var toggleClass = function ( el, className ) {
 				var sibling = this.parentNode.parentNode.querySelector( '.ast-search-menu-icon' );
 				if ( ! sibling.classList.contains( 'ast-dropdown-active' ) ) {
 					sibling.classList.add( 'ast-dropdown-active' );
+					sibling.querySelector( '.search-field' ).setAttribute('autocomplete','off');
 					setTimeout(function() {
 						sibling.querySelector( '.search-field' ).focus();
 					},200);

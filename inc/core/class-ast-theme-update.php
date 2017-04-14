@@ -14,7 +14,7 @@ if ( ! class_exists( 'Ast_Theme_Update' ) ) {
 	/**
 	 * Ast_Theme_Update initial setup
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	class Ast_Theme_Update {
 

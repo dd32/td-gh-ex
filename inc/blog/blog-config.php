@@ -74,7 +74,7 @@ if ( ! function_exists( 'ast_get_post_meta' ) ) {
 /**
  * Function to get Date of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_date' ) ) {
@@ -88,29 +88,13 @@ if ( ! function_exists( 'ast_post_date' ) ) {
 
 		$output = '';
 		$format = apply_filters( 'ast_post_date_format','' );
-
-		$time_string = '<time class="published updated" datetime="%1$s"><span class="date-month">%2$s</span> <span class="date-day">%3$s</span> <span class="date-year">%4$s</span></time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="published" datetime="%1$s"><span class="date-month">%2$s</span> <span class="date-day">%3$s</span> <span class="date-year">%4$s</span></time><time class="updated" datetime="%5$s">%6$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date( 'M' ) ),
-			esc_html( get_the_date( 'j' ) ),
-			esc_html( get_the_date( 'Y' ) ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
-
+		$time_string = esc_html( get_the_date( $format ) );
 		$posted_on = sprintf(
 			/* translators: 1: post date */
-			esc_html_x( '%s ', 'post date', 'astra-theme' ),
+			esc_html_x( '%s ', 'post date', 'astra' ),
 			$time_string
 		);
-
 		$output .= '<span class="posted-on" itemprop="datePublished"> ' . $posted_on . '</span>';
-
 		return apply_filters( 'ast_post_date', $output );
 	}
 }// End if().
@@ -118,7 +102,7 @@ if ( ! function_exists( 'ast_post_date' ) ) {
 /**
  * Function to get Date Box of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_date_box' ) ) {
@@ -147,7 +131,7 @@ if ( ! function_exists( 'ast_post_date_box' ) ) {
 
 		$posted_on = sprintf(
 			/* translators: 1: post date */
-			esc_html_x( '%s ', 'post date', 'astra-theme' ),
+			esc_html_x( '%s ', 'post date', 'astra' ),
 			$time_string
 		);
 
@@ -158,7 +142,7 @@ if ( ! function_exists( 'ast_post_date_box' ) ) {
 /**
  * Function to get Author of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_author' ) ) {
@@ -174,8 +158,8 @@ if ( ! function_exists( 'ast_post_author' ) ) {
 
 		$byline = sprintf(
 			/* translators: 1: post author */
-			esc_html_x( '%s ', 'post author', 'astra-theme' ),
-			'<a class="url fn n" title="View all posts by ' . esc_html( get_the_author() ) . '" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" itemprop="url"> <span class="author-name" itemprop="name">' . esc_html( get_the_author() ) . '</span> </a>'
+			esc_html_x( '%s ', 'post author', 'astra' ),
+			'<a class="url fn n" title="View all posts by ' . esc_attr( get_the_author() ) . '" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" itemprop="url"> <span class="author-name" itemprop="name">' . esc_html( get_the_author() ) . '</span> </a>'
 		);
 
 		$output .= '<span class="posted-by" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> ' . $byline . '</span>';
@@ -187,7 +171,7 @@ if ( ! function_exists( 'ast_post_author' ) ) {
 /**
  * Function to get Read More Link of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_link' ) ) {
@@ -202,8 +186,8 @@ if ( ! function_exists( 'ast_post_link' ) ) {
 
 		$post_link = sprintf(
 			/* translators: 1: post link */
-			esc_html_x( '%s ', 'post link', 'astra-theme' ),
-			'<a href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . 'Read More &raquo;</a>'
+			esc_html_x( '%s ', 'post link', 'astra' ),
+			'<a href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . __( 'Read More &raquo;', 'astra' ) . '</a>'
 		);
 
 		$output = ' ...<p class="read-more"> ' . $post_link . '</p>';
@@ -212,12 +196,11 @@ if ( ! function_exists( 'ast_post_link' ) ) {
 	}
 }
 add_filter( 'excerpt_more', 'ast_post_link', 1 );
-add_filter( 'the_content_more_link', 'ast_post_link', 1 );
 
 /**
  * Function to get Number of Comments of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_comments' ) ) {
@@ -247,7 +230,7 @@ if ( ! function_exists( 'ast_post_comments' ) ) {
 				<!-- Comment Schema Meta -->
 				<span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
 					<meta itemprop="interactionType" content="http://schema.org/CommentAction" />
-					<meta itemprop="userInteractionCount" content="<?php echo wp_count_comments( get_the_ID() )->approved; ?>" />
+					<meta itemprop="userInteractionCount" content="<?php echo absint( wp_count_comments( get_the_ID() )->approved ); ?>" />
 				</span>
 			</span>
 
@@ -263,7 +246,7 @@ if ( ! function_exists( 'ast_post_comments' ) ) {
 /**
  * Function to get Tags applied of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_tags' ) ) {
@@ -279,11 +262,11 @@ if ( ! function_exists( 'ast_post_tags' ) ) {
 		$output = '';
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'astra-theme' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'astra' ) );
 		if ( $tags_list ) {
 			$tags = sprintf( // WPCS: XSS OK.
 				/* translators: 1: post tags */
-				esc_html_x( '%1$s ', 'post tags', 'astra-theme' ), $tags_list
+				esc_html_x( '%1$s ', 'post tags', 'astra' ), $tags_list
 			);
 
 			$output .= '<span class="tags-links">' . $tags . '</span>';
@@ -296,7 +279,7 @@ if ( ! function_exists( 'ast_post_tags' ) ) {
 /**
  * Function to get Categories of Post
  *
- * @since 1.0
+ * @since 1.0.0
  * @return html
  */
 if ( ! function_exists( 'ast_post_categories' ) ) {
@@ -312,12 +295,12 @@ if ( ! function_exists( 'ast_post_categories' ) ) {
 		$output = '';
 
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'astra-theme' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'astra' ) );
 
 		if ( $categories_list ) {
 			$categories = sprintf(
 				/* translators: 1: post tags */
-				esc_html_x( '%1$s ', 'post categories', 'astra-theme' ), $categories_list
+				esc_html_x( '%1$s ', 'post categories', 'astra' ), $categories_list
 			);
 
 			$output .= '<span class="cat-links">' . $categories . '</span>';
@@ -330,7 +313,7 @@ if ( ! function_exists( 'ast_post_categories' ) ) {
 /**
  * Display classes for primary div
  *
- * @since 1.0
+ * @since 1.0.0
  */
 if ( ! function_exists( 'ast_blog_layout_class' ) ) {
 
@@ -350,7 +333,7 @@ if ( ! function_exists( 'ast_blog_layout_class' ) ) {
 /**
  * Retrieve the classes for the body element as an array.
  *
- * @since 1.0
+ * @since 1.0.0
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
@@ -366,7 +349,11 @@ if ( ! function_exists( 'ast_get_blog_layout_class' ) ) {
 		// array of class names.
 		$classes = array();
 
-		$post_format = get_post_format() ? : 'standard';
+		$post_format = get_post_format();
+		if ( $post_format ) {
+			$post_format = 'standard';
+		}
+
 		$classes[]   = 'ast-post-format-' . $post_format;
 
 		if ( ! has_post_thumbnail() || ! wp_get_attachment_image_src( get_post_thumbnail_id() ) ) {

@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-sidebars',
 		'priority'    => 5,
-		'label'       => __( 'Sidebar Layout', 'astra-theme' ),
+		'label'       => __( 'Sidebar Layout', 'astra' ),
 		'choices'     => array(
-			'no-sidebar'    => __( 'No Sidebar', 'astra-theme' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'astra-theme' ),
-			'right-sidebar' => __( 'Right Sidebar', 'astra-theme' ),
+			'no-sidebar'    => __( 'No Sidebar', 'astra' ),
+			'left-sidebar'  => __( 'Left Sidebar', 'astra' ),
+			'right-sidebar' => __( 'Right Sidebar', 'astra' ),
 		),
 	) );
 
@@ -56,12 +56,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-sidebars',
 		'priority'    => 5,
-		'label'       => __( 'Page', 'astra-theme' ),
+		'label'       => __( 'Page', 'astra' ),
 		'choices'     => array(
-			'default'       => __( 'Default', 'astra-theme' ),
-			'no-sidebar'    => __( 'No Sidebar', 'astra-theme' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'astra-theme' ),
-			'right-sidebar' => __( 'Right Sidebar', 'astra-theme' ),
+			'default'       => __( 'Default', 'astra' ),
+			'no-sidebar'    => __( 'No Sidebar', 'astra' ),
+			'left-sidebar'  => __( 'Left Sidebar', 'astra' ),
+			'right-sidebar' => __( 'Right Sidebar', 'astra' ),
 		),
 	) );
 
@@ -77,12 +77,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-sidebars',
 		'priority'    => 5,
-		'label'       => __( 'Blog Post', 'astra-theme' ),
+		'label'       => __( 'Blog Post', 'astra' ),
 		'choices'     => array(
-			'default'       => __( 'Default', 'astra-theme' ),
-			'no-sidebar'    => __( 'No Sidebar', 'astra-theme' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'astra-theme' ),
-			'right-sidebar' => __( 'Right Sidebar', 'astra-theme' ),
+			'default'       => __( 'Default', 'astra' ),
+			'no-sidebar'    => __( 'No Sidebar', 'astra' ),
+			'left-sidebar'  => __( 'Left Sidebar', 'astra' ),
+			'right-sidebar' => __( 'Right Sidebar', 'astra' ),
 		),
 	) );
 
@@ -98,12 +98,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-sidebars',
 		'priority'    => 5,
-		'label'       => __( 'Blog Post Archive', 'astra-theme' ),
+		'label'       => __( 'Blog Post Archive', 'astra' ),
 		'choices'     => array(
-			'default'       => __( 'Default', 'astra-theme' ),
-			'no-sidebar'    => __( 'No Sidebar', 'astra-theme' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'astra-theme' ),
-			'right-sidebar' => __( 'Right Sidebar', 'astra-theme' ),
+			'default'       => __( 'Default', 'astra' ),
+			'no-sidebar'    => __( 'No Sidebar', 'astra' ),
+			'left-sidebar'  => __( 'Left Sidebar', 'astra' ),
+			'right-sidebar' => __( 'Right Sidebar', 'astra' ),
 		),
 	) );
 
@@ -130,7 +130,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-slider',
 		'section'     => 'section-sidebars',
 		'priority'    => 15,
-		'label'       => __( 'Sidebar Width', 'astra-theme' ),
+		'label'       => __( 'Sidebar Width', 'astra' ),
 		'suffix'      => '%',
 		'input_attrs' => array(
 			'min'    => 15,

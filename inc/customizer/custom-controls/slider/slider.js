@@ -1,7 +1,7 @@
 /**
  * File slider.js
  *
- * Handles Slider cotrol
+ * Handles Slider control
  *
  * @package Astra
  */

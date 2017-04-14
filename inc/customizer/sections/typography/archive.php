@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-divider',
 		'section'     => 'section-archive-typo',
 		'priority'    => 5,
-		'label'       => __( 'Blog Post Title', 'astra-theme' ),
+		'label'       => __( 'Blog Post Title', 'astra' ),
 		'settings'    => array(),
 	) ) );
 
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-archive-typo',
 		'priority' => 10,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),

@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,12 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[site-content-layout]', array(
 		'type'        => 'select',
 		'section'     => 'section-container-layout',
-		'label'       => __( 'Content Layout', 'astra-theme' ),
+		'label'       => __( 'Content Layout', 'astra' ),
 		'choices'     => array(
-			'boxed-container'   		=> __( 'Boxed', 'astra-theme' ),
-			'content-boxed-container' 	=> __( 'Content Boxed', 'astra-theme' ),
-			'plain-container'      		=> __( 'Plain', 'astra-theme' ),
-			'page-builder'      		=> __( 'Page Builder', 'astra-theme' ),
+			'plain-container'      		=> __( 'Plain', 'astra' ),
+			'boxed-container'   		=> __( 'Boxed', 'astra' ),
+			'content-boxed-container' 	=> __( 'Content Boxed', 'astra' ),
+			'page-builder'      		=> __( 'Page Builder', 'astra' ),
 		),
 	) );
 
@@ -38,7 +38,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new Ast_Control_Divider( $wp_customize, AST_THEME_SETTINGS . '[single-page-content-layout-divider]', array(
 		'type'     => 'ast-divider',
 		'section'  => 'section-container-layout',
-		'caption'  => __( '<b>Note:</b> <i>In case of `Page Builder` Sidebar, Title Bar (if activated) & Normal Title will be disabled.</i>', 'astra-theme' ),
 		'settings' => array(),
 	) ) );
 
@@ -53,13 +52,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[single-page-content-layout]', array(
 		'type'        => 'select',
 		'section'     => 'section-container-layout',
-		'label'       => __( 'Page', 'astra-theme' ),
+		'label'       => __( 'Page', 'astra' ),
 		'choices'     => array(
-			'default'            			=> __( 'Default', 'astra-theme' ),
-			'boxed-container'   			=> __( 'Boxed', 'astra-theme' ),
-			'content-boxed-container' 		=> __( 'Content Boxed', 'astra-theme' ),
-			'plain-container'      			=> __( 'Plain', 'astra-theme' ),
-			'page-builder'      			=> __( 'Page Builder', 'astra-theme' ),
+			'default'            			=> __( 'Default', 'astra' ),
+			'plain-container'      			=> __( 'Plain', 'astra' ),
+			'boxed-container'   			=> __( 'Boxed', 'astra' ),
+			'content-boxed-container' 		=> __( 'Content Boxed', 'astra' ),
+			'page-builder'      			=> __( 'Page Builder', 'astra' ),
 		),
 	) );
 
@@ -74,13 +73,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[single-post-content-layout]', array(
 		'type'        => 'select',
 		'section'     => 'section-container-layout',
-		'label'       => __( 'Blog Post', 'astra-theme' ),
+		'label'       => __( 'Blog Post', 'astra' ),
 		'choices'     => array(
-			'default'            		=> __( 'Default', 'astra-theme' ),
-			'boxed-container'   		=> __( 'Boxed', 'astra-theme' ),
-			'content-boxed-container' 	=> __( 'Content Boxed', 'astra-theme' ),
-			'plain-container'      		=> __( 'Plain', 'astra-theme' ),
-			'page-builder'      		=> __( 'Page Builder', 'astra-theme' ),
+			'default'            		=> __( 'Default', 'astra' ),
+			'plain-container'      		=> __( 'Plain', 'astra' ),
+			'boxed-container'   		=> __( 'Boxed', 'astra' ),
+			'content-boxed-container' 	=> __( 'Content Boxed', 'astra' ),
+			'page-builder'      		=> __( 'Page Builder', 'astra' ),
 		),
 	) );
 
@@ -95,13 +94,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[archive-post-content-layout]', array(
 		'type'        => 'select',
 		'section'     => 'section-container-layout',
-		'label'       => __( 'Blog Post Archive', 'astra-theme' ),
+		'label'       => __( 'Blog Post Archive', 'astra' ),
 		'choices'     => array(
-			'default'            		=> __( 'Default', 'astra-theme' ),
-			'boxed-container'   		=> __( 'Boxed', 'astra-theme' ),
-			'content-boxed-container' 	=> __( 'Content Boxed', 'astra-theme' ),
-			'plain-container'      		=> __( 'Plain', 'astra-theme' ),
-			'page-builder'      		=> __( 'Page Builder', 'astra-theme' ),
+			'default'            		=> __( 'Default', 'astra' ),
+			'plain-container'      		=> __( 'Plain', 'astra' ),
+			'boxed-container'   		=> __( 'Boxed', 'astra' ),
+			'content-boxed-container' 	=> __( 'Content Boxed', 'astra' ),
+			'page-builder'      		=> __( 'Page Builder', 'astra' ),
 		),
 	) );
 
@@ -117,5 +116,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, AST_THEME_SETTINGS . '[site-layout-outside-bg-color]', array(
 		'section'     => 'section-colors-body',
 		'priority'    => 25,
-		'label'       => __( 'Background Color', 'astra-theme' ),
+		'label'       => __( 'Background Color', 'astra' ),
 	) ) );

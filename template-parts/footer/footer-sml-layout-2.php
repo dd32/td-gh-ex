@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 $section_1    = ast_get_small_footer( 'footer-sml-section-1' );
@@ -44,17 +44,17 @@ switch ( $sections ) {
 			<div class="ast-small-footer-wrap" >
 				
 				<?php if ( '' != $section_wrap ) : ?>
-					<div class="<?php echo $section_wrap; ?>">
+					<div class="<?php echo esc_attr( $section_wrap ); ?>">
 				<?php endif; ?>
 				
 					<?php if ( $section_1 ) : ?>
-						<div class="ast-small-footer-section ast-small-footer-section-1 <?php echo $section_class; ?>" >
+						<div class="ast-small-footer-section ast-small-footer-section-1 <?php echo esc_attr( $section_class ); ?>" >
 							<?php echo $section_1; ?>
 						</div>
 				<?php endif; ?>
 
 					<?php if ( $section_2 ) : ?>
-						<div class="ast-small-footer-section ast-small-footer-section-2 <?php echo $section_class; ?>" >
+						<div class="ast-small-footer-section ast-small-footer-section-2 <?php echo esc_attr( $section_class ); ?>" >
 							<?php echo $section_2; ?>
 						</div>
 				<?php endif; ?>

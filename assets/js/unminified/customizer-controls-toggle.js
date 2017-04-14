@@ -62,85 +62,33 @@
 	 */
 	ASTCustomizerToggles = {
 
-		/**
-		 * General
-		 */
-		'ast-settings[site-identity]' :
+		'ast-settings[display-site-title]' :
 		[
 			{
 				controls: [
-					'ast-settings[site-logo]',
-				],
-				callback: function( site_identity ) {
-
-					if ( 'logo' == site_identity ) {
-						return true;
-					}
-					return false;
-				}
-			},
-			{
-				controls: [
-					'ast-settings[site-tagline]',
-					'blogname',
-					'ast-settings[font-size-site-title]',
 					'ast-settings[divider-section-header-typo-title]',
-					'display_header_text'
+					'ast-settings[font-size-site-title]',
 				],
-				callback: function( site_identity ) {
+				callback: function( value ) {
 
-					if ( 'site-title' == site_identity ) {
+					if ( value ) {
 						return true;
 					}
 					return false;
 				}
 			},
-			{
-				controls: [
-					'blogdescription',
-					'ast-settings[font-size-site-tagline]',
-					'ast-settings[divider-section-header-typo-tagline]',
-				],
-				callback: function( site_identity ) {
-
-					var display_tagline = api( 'ast-settings[site-tagline]' ).get();
-
-					if ( 'site-title' == site_identity && '1' == display_tagline ) {
-						return true;
-					}
-					return false;
-				}
-			}
 		],
-		'ast-settings[site-tagline]' :
+
+		'ast-settings[display-site-tagline]' :
 		[
 			{
 				controls: [
-					'blogdescription',
-					'ast-settings[font-size-site-tagline]',
 					'ast-settings[divider-section-header-typo-tagline]',
+					'ast-settings[font-size-site-tagline]',
 				],
-				callback: function( display_tagline ) {
+				callback: function( value ) {
 
-					var site_identity = api( 'ast-settings[site-identity]' ).get();
-
-					if ( 'site-title' == site_identity && '1' == display_tagline ) {
-						return true;
-					}
-					return false;
-				}
-			}
-		],
-		
-		'ast-settings[site-sidebar]' :
-		[
-			{
-				controls: [
-					'ast-settings[site-sidebar-width]',
-				],
-				callback: function( sidebar ) {
-
-					if ( 'full-width' != sidebar ) {
+					if ( value ) {
 						return true;
 					}
 					return false;
@@ -398,7 +346,7 @@
 	 * Sidebar Manager
 	 *
 	 * => Dependent Addons:
-	 * 
+	 *
 	 * @ Spacing Addon
 	 */
 	var site_layout      = [ 'site-sidebar-layout' ],
@@ -421,7 +369,7 @@
 						// @SPACING addon setting
 						'ast-settings[sidebar-content-plain-spacing]',
 						'ast-settings[sidebar-content-boxed-spacing]',
-						
+
 						// @BLOGPRO addon setting
 						'ast-settings[responsive-sidebar]',
 						'ast-settings[responsive-sidebar-divider]',
@@ -457,69 +405,6 @@
 			]
 
 		});
-	});
-
-
-
-	/**
-	 * Theme Customizer enhancements for a better user experience.
-	 *
-	 * Contains handlers to make Theme Customizer preview reload changes asynchronously.
-	 *
-	 * => Contents
-	 *
-	 * 	-	Site title and description.
-	 * 	-	Colors
-	 */
-
-	/**
-	 * Reset "Astra Theme" Customizer Options
-	 */
-	jQuery( document ).ready(function($) {
-
-	    var container = jQuery( '#customize-header-actions' );
-
-	    var button = jQuery( '<input type="submit" name="ast-reset" id="ast-reset" class="button-secondary button">' )
-	        .attr( 'value', ast.customizer.reset.stringReset )
-	        .css({
-	            'float': 'right',
-	            'margin-top': '9px'
-	        });
-
-	    button.on('click', function (event) {
-	        event.preventDefault();
-
-	        // Reset all confirm?
-	        if ( confirm( ast.customizer.reset.stringConfirm ) ) {
-
-		        // Enable loader.
-		    	container.find( '.spinner' ).addClass( 'is-active' );
-
-		        var data = {
-		            wp_customize: 'on',
-		            action: 'ast_customizer_reset',
-		            nonce: ast.customizer.reset.nonce
-		        };
-
-		        button.attr( 'disabled', 'disabled' );
-
-		        jQuery.post( ajaxurl, data, function() {
-		        	wp.customize.state( 'saved' ).set( true );
-
-		        	var data = {
-			            action: 'ast_regenerate_assets',
-			        };
-
-			        jQuery.post( ajaxurl, data, function( result ) {
-		        		var Url = window.location.href;
-							Url = Url.split( "?" )[0]
-							window.location.href = Url;
-		        	});
-		        });
-	        }
-	    });
-
-	    container.append( button );
 	});
 
 } )( jQuery );

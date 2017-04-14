@@ -8,7 +8,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Astra
- * @since 1.0
+ * @since 1.0.0
  */
 
 /*
@@ -33,15 +33,14 @@ if ( post_password_required() ) {
 				<?php
 					printf( // WPCS: XSS OK.
 						/* translators: 1: number of comments */
-						esc_html( _nx( '%s Comment', '%s Comments', get_comments_number(), 'comments title', 'astra-theme' ) ),
-						number_format_i18n( get_comments_number() )
-					);
+						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'astra' ) ),
+					number_format_i18n( get_comments_number() ), get_the_title() );
 				?>
 			</h3>
 		</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation" aria-label="<?php _e( 'Comments Navigation', 'astra-theme' ); ?>">
+		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation" aria-label="<?php esc_html_e( 'Comments Navigation', 'astra' ); ?>">
 			<h3 class="screen-reader-text"><?php ast_default_strings( 'string-comment-navigation-next' ); ?></h3>
 			<div class="nav-links">
 
@@ -60,7 +59,7 @@ if ( post_password_required() ) {
 		</ol><!-- .ast-comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation" aria-label="<?php _e( 'Comments Navigation', 'astra-theme' ); ?>">
+		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation" aria-label="<?php esc_html_e( 'Comments Navigation', 'astra' ); ?>">
 			<h3 class="screen-reader-text"><?php ast_default_strings( 'string-comment-navigation-next' ); ?></h3>
 			<div class="nav-links">
 

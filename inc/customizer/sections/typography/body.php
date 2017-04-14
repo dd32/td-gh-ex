@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-font-family',
 		'section'  => 'section-body-typo',
 		'priority' => 5,
-		'label'    => __( 'Font Family', 'astra-theme' ),
+		'label'    => __( 'Font Family', 'astra' ),
 		'connect'  => AST_THEME_SETTINGS . '[body-font-weight]',
 	) ) );
 
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-font-weight',
 		'section'  => 'section-body-typo',
 		'priority' => 10,
-		'label'    => __( 'Font Weight', 'astra-theme' ),
+		'label'    => __( 'Font Weight', 'astra' ),
 		'connect'  => AST_THEME_SETTINGS . '[body-font-family]',
 	) ) );
 
@@ -59,13 +59,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'select',
 		'section'  => 'section-body-typo',
 		'priority' => 15,
-		'label'    => __( 'Text Transform', 'astra-theme' ),
+		'label'    => __( 'Text Transform', 'astra' ),
 		'choices'  => array(
-			''           => __( 'Inherit', 'astra-theme' ),
-			'none'       => __( 'None', 'astra-theme' ),
-			'capitalize' => __( 'Capitalize', 'astra-theme' ),
-			'uppercase'  => __( 'Uppercase', 'astra-theme' ),
-			'lowercase'  => __( 'Lowercase', 'astra-theme' ),
+			''           => __( 'Inherit', 'astra' ),
+			'none'       => __( 'None', 'astra' ),
+			'capitalize' => __( 'Capitalize', 'astra' ),
+			'uppercase'  => __( 'Uppercase', 'astra' ),
+			'lowercase'  => __( 'Lowercase', 'astra' ),
 		),
 	) );
 
@@ -81,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-body-typo',
 		'priority' => 20,
-		'label'    => __( 'Font Size', 'astra-theme' ),
+		'label'    => __( 'Font Size', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),
@@ -100,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'     => 'ast-dimension',
 		'section'  => 'section-body-typo',
 		'priority' => 25,
-		'label'    => __( 'Line Height', 'astra-theme' ),
+		'label'    => __( 'Line Height', 'astra' ),
 		'input_attrs' => array(
 			'min' => 0,
 		),

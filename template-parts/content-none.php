@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Astra
- * @since 1.0
+ * @since 1.0.0
  */
 
 ?>
@@ -18,7 +18,7 @@
 			<p><?php
 				printf(
 					/* translators: 1: link to new post */
-					wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'astra-theme' ), array(
+					wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'astra' ), array(
 						'a' => array(
 						'href' => array(),
 						),

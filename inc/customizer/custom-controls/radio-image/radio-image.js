@@ -1,5 +1,5 @@
 /**
- * File radui-image.js
+ * File radio-image.js
  *
  * Handles toggling the radio images button
  *

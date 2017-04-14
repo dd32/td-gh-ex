@@ -111,7 +111,6 @@ if ( ! function_exists( 'ast_theme_comment' ) ) {
 	 */
 	function ast_theme_comment( $comment, $args, $depth ) {
 
-		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) {
 
 			case 'pingback' :
@@ -119,7 +118,7 @@ if ( ! function_exists( 'ast_theme_comment' ) ) {
 				// Display trackbacks differently than normal comments.
 			?>
 				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-					<p><?php _e( 'Pingback:', 'astra-theme' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'astra-theme' ), '<span class="edit-link">', '</span>' ); ?></p>
+					<p><?php _e( 'Pingback:', 'astra' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'astra' ), '<span class="edit-link">', '</span>' ); ?></p>
 				</li>
 				<?php
 				break;
@@ -148,7 +147,7 @@ if ( ! function_exists( 'ast_theme_comment' ) ) {
 										esc_url( get_comment_link( $comment->comment_ID ) ),
 										get_comment_time( 'c' ),
 										/* translators: 1: date, 2: time */
-										sprintf( __( '%1$s at %2$s', 'astra-theme' ), get_comment_date(), get_comment_time() )
+										sprintf( esc_html__( '%1$s at %2$s', 'astra' ), get_comment_date(), get_comment_time() )
 									);
 
 									?>

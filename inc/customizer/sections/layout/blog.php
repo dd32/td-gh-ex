@@ -6,7 +6,7 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,12 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) );
 	$wp_customize->add_control( AST_THEME_SETTINGS . '[blog-post-content]', array(
 		'section'     => 'section-blog',
-		'label'       => __( 'Blog Post Content', 'astra-theme' ),
+		'label'       => __( 'Blog Post Content', 'astra' ),
 		'type'        => 'select',
 		'priority'	  => 3,
 		'choices'     => array(
-			'full-content' => __( 'Full Content', 'astra-theme' ),
-			'excerpt'      => __( 'Excerpt', 'astra-theme' ),
+			'full-content' => __( 'Full Content', 'astra' ),
+			'excerpt'      => __( 'Excerpt', 'astra' ),
 		),
 	) );
 
@@ -44,13 +44,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-sortable',
 		'section'     => 'section-blog',
 		'priority'    => 5,
-		'label'       => __( 'Blog Meta', 'astra-theme' ),
+		'label'       => __( 'Blog Meta', 'astra' ),
 		'choices'     => array(
-			'comments'	=> __( 'Comments', 'astra-theme' ),
-			'category'	=> __( 'Category', 'astra-theme' ),
-			'author'	=> __( 'Author', 'astra-theme' ),
-			'date'		=> __( 'Publish Date', 'astra-theme' ),
-			'tag'		=> __( 'Tag', 'astra-theme' ),
+			'comments'	=> __( 'Comments', 'astra' ),
+			'category'	=> __( 'Category', 'astra' ),
+			'author'	=> __( 'Author', 'astra' ),
+			'date'		=> __( 'Publish Date', 'astra' ),
+			'tag'		=> __( 'Tag', 'astra' ),
 		),
 	) ) );
 
@@ -77,10 +77,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'select',
 		'section'     => 'section-blog',
 		'priority'    => 15,
-		'label'       => __( 'Blog Content Width', 'astra-theme' ),
+		'label'       => __( 'Blog Content Width', 'astra' ),
 		'choices'     => array(
-			'default' => __( 'Default', 'astra-theme' ),
-			'custom'  => __( 'Custom', 'astra-theme' ),
+			'default' => __( 'Default', 'astra' ),
+			'custom'  => __( 'Custom', 'astra' ),
 		),
 	) );
 
@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'type'        => 'ast-slider',
 		'section'     => 'section-blog',
 		'priority'    => 20,
-		'label'       => __( 'Enter Width', 'astra-theme' ),
+		'label'       => __( 'Enter Width', 'astra' ),
 		'suffix'      => '',
 		'input_attrs' => array(
 			'min'    => 768,

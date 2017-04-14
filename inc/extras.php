@@ -8,26 +8,18 @@
  * @author      Brainstorm Force
  * @copyright   Copyright (c) 2015, Brainstorm Force
  * @link        http://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       Astra 1.0.0
  */
 
-add_filter( 'get_site_icon_url', 'ast_favicon_url', 10, 3 );
+add_action( 'wp_head', 'ast_pingback_header' );
 
 /**
- * Update favicon URL.
- *
- * @param  string $url     Site favicon URL.
- * @param  string $size    Site favicon Size.
- * @param  string $blog_id Site favicon blog_id.
- * @return string          Site favicon URL.
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function ast_favicon_url( $url, $size, $blog_id ) {
-
-	if ( empty( $url ) ) {
-		return AST_THEME_URI . 'assets/images/favicon.png';
+function ast_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
-
-	return $url;
 }
 
 /**
@@ -38,12 +30,13 @@ if ( ! function_exists( 'ast_schema_body' ) ) :
 	/**
 	 * Adds schema tags to the body classes.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_schema_body() {
 
 		// Check conditions.
 		$is_blog = ( is_home() || is_archive() || is_attachment() || is_tax() || is_single() ) ? true : false;
+
 		// Set up default itemtype.
 		$itemtype = 'WebPage';
 
@@ -56,7 +49,7 @@ if ( ! function_exists( 'ast_schema_body' ) ) :
 		$result = apply_filters( 'astra_schema_body_itemtype', $itemtype );
 
 		// Return our HTML.
-		echo apply_filters( 'astra_schema_body', "itemtype='http://schema.org/$result' itemscope='itemscope'" );
+		echo apply_filters( 'astra_schema_body', "itemtype='http://schema.org/" . esc_html( $result ) . "' itemscope='itemscope'" );
 	}
 endif;
 
@@ -68,7 +61,7 @@ if ( ! function_exists( 'ast_body_classes' ) ) {
 	/**
 	 * Adds custom classes to the array of body classes.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param array $classes Classes for the body element.
 	 * @return array
 	 */
@@ -80,14 +73,6 @@ if ( ! function_exists( 'ast_body_classes' ) ) {
 
 		// Apply header layout class to the body.
 		$classes[] = 'header-main-layout-1';
-
-		// Site Identity.
-		$site_have_logo = ast_get_option( 'site-identity' );
-		if ( 'logo' == $site_have_logo ) {
-			$classes[] = 'ast-site-have-logo';
-		} else {
-			$classes[] = 'ast-site-have-title';
-		}
 
 		// Apply separate container class to the body.
 		$content_layout = ast_get_content_layout();
@@ -119,95 +104,17 @@ if ( ! function_exists( 'ast_number_pagination' ) ) {
 	/**
 	 * Astra Pagination
 	 *
-	 * @since 1.0
-	 * @param  number $numpages  Number of pages.
-	 * @param  number $pagerange Page range.
-	 * @param  number $paged     Paged.
+	 * @since 1.0.0
 	 * @return void            Generate & echo pagination markup.
 	 */
-	function ast_number_pagination( $numpages = '', $pagerange = '', $paged = '' ) {
+	function ast_number_pagination() {
 
-		global $paged;
-		global $wp_query;
-
-		if ( empty( $pagerange ) ) {
-			$pagerange = 2;
-		}
-
-		/**
-		 * This first part of our function is a fallback
-		 * for custom pagination inside a regular loop that
-		 * uses the global $paged and global $wp_query variables.
-		 *
-		 * It's good because we can now override default pagination
-		 * in our theme, and use this function in default quries
-		 * and custom queries.
-		 */
-		if ( empty( $paged ) ) {
-			$paged = 1;
-		}
-
-		if ( '' == $numpages ) {
-			$numpages = $wp_query->max_num_pages;
-			if ( ! $numpages ) {
-				$numpages = 1;
-			}
-		}
-
-		/**
-		 * We construct the pagination arguments to enter into our paginate_links
-		 * function.
-		 *
-		 * @see https://codex.wordpress.org/Function_Reference/paginate_links
-		 */
-		$pagination_args = array(
-			'base'         => add_query_arg( 'paged', '%#%' ),
-			'format'       => '',
-			'total'        => $numpages,
-			'current'      => $paged,
-			'show_all'     => false,
-			'end_size'     => 1,
-			'mid_size'     => $pagerange,
-			'prev_next'	   => false,
-			'type'         => 'array',
-			'add_args'     => false,
-			'add_fragment' => '',
-		);
-
-		$paginate_links = paginate_links( $pagination_args );
-
-		// Get Navigation Links.
-		$ast_page  = '';
-		$prev_page = '';
-		$prev_wrap  = '<div class="ast-prev">';
-
-		if ( get_previous_posts_link() ) {
-			$prev_page = get_previous_posts_link( ast_default_strings( 'string-blog-navigation-previous', false ) );
-			$prev_page = str_replace( '<a', '<a class="prev page-navigation" ', $prev_page );
-			$prev_wrap .= $prev_page;
-		}
-		$prev_wrap  .= '</div>';
-		$next_wrap  = '<div class="ast-next">';
-		if ( get_next_posts_link() ) {
-			$ast_page = get_next_posts_link( ast_default_strings( 'string-blog-navigation-next', false ), 0 );
-			$ast_page = str_replace( '<a', '<a class="next page-navigation" ', $ast_page );
-			$next_wrap .= $ast_page;
-		}
-		$next_wrap .= '</div>';
-
-		if ( isset( $paginate_links ) && count( $paginate_links ) ) {
-
-			echo "<nav class='ast-pagination'>";
-			/* translators: 1: current page 2: number of pages */
-			echo "<span class='screen-reader-text'>" . sprintf( __( 'Page %1$s of %2$s', 'astra-theme' ), $paged, $numpages ) . '</span>';
-			echo $prev_wrap;
-			foreach ( $paginate_links as $key => $value ) {
-				echo $value;
-			}
-
-			echo $next_wrap;
-			echo '</nav>';
-		}
+		echo "<div class='ast-pagination'>";
+		the_posts_pagination( array(
+			'prev_text' => ast_default_strings( 'string-blog-navigation-previous', false ),
+			'next_text' => ast_default_strings( 'string-blog-navigation-next', false ),
+		) );
+		echo '</div>';
 	}
 }// End if().
 
@@ -221,53 +128,36 @@ if ( ! function_exists( 'ast_logo' ) ) {
 	/**
 	 * Return or echo site logo markup.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  boolean $echo Echo markup.
 	 * @return mixed echo or return markup.
 	 */
 	function ast_logo( $echo = true ) {
 
-		$site_identity = ast_get_option( 'site-identity' );
-		$site_tagline  = ast_get_option( 'site-tagline' );
-		$logo          = apply_filters( 'ast_logo_url', ast_get_option( 'site-logo' ) );
-		$html          = '';
+		$site_tagline         = ast_get_option( 'display-site-tagline' );
+		$display_site_tagline = ast_get_option( 'display-site-title' );
+		$logo                 = apply_filters( 'ast_logo_url', ast_get_option( 'site-logo' ) );
+		$html                 = '';
 
-		$tag = 'span';
-		if ( is_home() || is_front_page() ) {
-			$tag = 'h1';
+		// Site logo.
+		$html .= '<span class="site-logo-img">';
+		$html .= get_custom_logo();
+		$html .= '</span>';
+
+		// Site Title.
+		if ( $display_site_tagline ) {
+
+			$tag = 'span';
+			if ( is_home() || is_front_page() ) {
+				$tag = 'h1';
+			}
+			$html .= '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . get_bloginfo( 'name' ) . '</a> </' . $tag . '>';
 		}
 
-		switch ( $site_identity ) {
-
-			case 'logo':
-
-				if ( ! empty( $logo ) ) {
-					$html .= '<' . $tag . ' itemprop="name" class="site-title screen-reader-text">' . get_bloginfo( 'name' ) . '</' . $tag . '>';
-					$html .= '<a class="site-logo-img" itemprop="url" href="' . esc_url( home_url( '/' ) ) . '" rel="home" title="' . get_bloginfo( 'name' ) . '"><img itemprop="logo" itemscope itemtype="http://schema.org/ImageObject" src="' . esc_url( $logo ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
-				} else {
-					$html .= '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . get_bloginfo( 'name' ) . '</a> </' . $tag . '>';
-				}
-
-				break;
-
-			case 'site-title':
-
-					$html .= '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . get_bloginfo( 'name' ) . '</a> </' . $tag . '>';
-
-				if ( $site_tagline ) {
-					$html .= '<p class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . '</p>';
-				}
-
-				break;
-
-			default:
-
-					$html .= '<' . $tag . ' itemprop="name" class="site-title screen-reader-text">' . get_bloginfo( 'name' ) . '</' . $tag . '>';
-
-				break;
-
+		// Site description.
+		if ( $site_tagline ) {
+			$html .= '<p class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . '</p>';
 		}
-
 		/**
 		 * Echo or Return the Logo Markup
 		 */
@@ -287,7 +177,7 @@ if ( ! function_exists( 'ast_get_dynamic_header_content' ) ) {
 	/**
 	 * Return the selected sections
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  string $option Custom content type. E.g. search, text-html etc.
 	 * @return array         Array of Custom contents.
 	 */
@@ -319,22 +209,18 @@ if ( ! function_exists( 'ast_get_search' ) ) {
 	/**
 	 * Adding Wrapper for Search Form.
 	 *
-	 * @since 1.0
-	 * @param  string $filter_html Filter HTML.
+	 * @since 1.0.0
+	 * @param  string $option 	Search Option name.
 	 * @return mixed Search HTML structure created.
 	 */
-	function ast_get_search( $filter_html = '' ) {
+	function ast_get_search( $option = '' ) {
 
 		$search_html = '<div class="ast-search-icon"><a class="slide-search astra-search-icon" href="#"></a></div>
-						<div class="ast-search-menu-icon slide-search" id="ast-search-form" >
-							<form class="search-form" action="' . esc_url( home_url() ) . '/" method="get" role="search">
-								<label for="s" class="screen-reader-text"> ' . __( 'Search', 'astra-theme' ) . ' </label>
-								<input type="search" autocomplete="off" class="search-field" placeholder="' . ast_default_strings( 'string-search-input-placeholder', false ) . '" value="" name="s">
-								<button type="submit" class="search-submit" value="' . __( 'Search', 'astra-theme' ) . '"><i class="astra-search-icon"></i></button>
-							</form>
-						</div>';
+						<div class="ast-search-menu-icon slide-search" id="ast-search-form" >';
+		$search_html .= get_search_form( false );
+		$search_html .= '</div>';
 
-		return apply_filters( 'ast_get_search', $search_html, $filter_html );
+		return apply_filters( 'ast_get_search', $search_html, $option );
 	}
 }
 
@@ -346,7 +232,7 @@ if ( ! function_exists( 'ast_get_custom_html' ) ) {
 	/**
 	 * Get custom HTML added by user.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  string $option_name Option name.
 	 * @return String TEXT/HTML added by user in options panel.
 	 */
@@ -358,7 +244,7 @@ if ( ! function_exists( 'ast_get_custom_html' ) ) {
 		if ( ! empty( $custom_html_content ) ) {
 			$custom_html = '<div class="ast-custom-html">' . do_shortcode( $custom_html_content ) . '</div>';
 		} elseif ( current_user_can( 'edit_theme_options' ) ) {
-			$custom_html = '<a href="' . admin_url( 'customize.php?autofocus[control]=ast-settings[' . $option_name . ']' ) . '">' . __( 'Add Custom HTML', 'astra-theme' ) . '</a>';
+			$custom_html = '<a href="' . admin_url( 'customize.php?autofocus[control]=ast-settings[' . $option_name . ']' ) . '">' . __( 'Add Custom HTML', 'astra' ) . '</a>';
 		}
 
 		return $custom_html;
@@ -373,7 +259,7 @@ if ( ! function_exists( 'ast_nav_menu' ) ) {
 	/**
 	 * Helper function for wp_nav_menu() checks if menu is set, if not set returns with message for capable users to set the menu.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param  array   $menu		  It will be either 'Menu location' (string) or Argument array of 'Menu'.
 	 * @param  array   $fallback_menu Fallback menu if menu location is not set.
 	 * @param  boolean $echo          Echo menu markup.
@@ -396,7 +282,11 @@ if ( ! function_exists( 'ast_nav_menu' ) ) {
 		 */
 		} elseif ( false == $fallback_menu ) {
 
-			$nav = '<span class="nav-fallback-text"><a href="' . admin_url( 'nav-menus.php?action=locations' ) . '" style="padding: 0;">Assign a menu</a> to location ' . strtoupper( $menu['theme_location'] ) . '</span>';
+			/* translators: 1: nav manu location 2: menu location name */
+			$nav = printf( __( '<span class="nav-fallback-text"><a href="%1$s" style="padding: 0;">Assign a menu</a> to location %2$s </span>', 'astra' ),
+				admin_url( 'nav-menus.php?action=locations' ),
+				strtoupper( $menu['theme_location'] )
+			);
 
 			/**
 		 * Set fallback menu support.
@@ -429,7 +319,7 @@ if ( ! function_exists( 'ast_get_small_footer' ) ) {
 	/**
 	 * Function to get Small Left/Right Footer
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param string $section 	Sections of Small Footer.
 	 * @return mixed 			Markup of sections.
 	 */
@@ -449,7 +339,7 @@ if ( ! function_exists( 'ast_get_small_footer' ) ) {
 					$output = str_replace( '[site_title]', '<span class="ast-footer-site-title">' . get_option( 'blogname' ) . '</span>', $output );
 
 					$theme_author = apply_filters( 'ast_theme_author', array(
-						'theme_name'       => __( 'Astra', 'astra-theme' ),
+						'theme_name'       => __( 'Astra', 'astra' ),
 						'theme_author_url' => 'https://www.brainstormforce.com/',
 					) );
 
@@ -470,7 +360,7 @@ if ( ! function_exists( 'ast_get_small_footer_menu' ) ) {
 	/**
 	 * Function to get Footer Menu
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return html
 	 */
 	function ast_get_small_footer_menu() {
@@ -491,7 +381,7 @@ if ( ! function_exists( 'ast_get_small_footer_menu' ) ) {
 			} else {
 				if ( is_user_logged_in() && current_user_can( 'edit_theme_options' ) ) {
 					?>
-						<a href="<?php echo esc_url( admin_url( '/nav-menus.php?action=locations' ) ); ?>"><?php _e( 'Assign Footer Menu', 'astra-theme' ); ?></a>
+						<a href="<?php echo esc_url( admin_url( '/nav-menus.php?action=locations' ) ); ?>"><?php _e( 'Assign Footer Menu', 'astra' ); ?></a>
 					<?php
 				}
 			}
@@ -511,7 +401,7 @@ if ( ! function_exists( 'ast_header_markup' ) ) {
 	/**
 	 * Site Header - <header>
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_header_markup() {
 		?>
@@ -539,7 +429,7 @@ if ( ! function_exists( 'ast_site_branding_markup' ) ) {
 	/**
 	 * Site Title / Logo
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_site_branding_markup() {
 		?>
@@ -564,7 +454,7 @@ if ( ! function_exists( 'ast_toggle_buttons_markup' ) ) {
 	/**
 	 * Toggle Button Markup
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_toggle_buttons_markup() {
 		?>
@@ -591,7 +481,7 @@ if ( ! function_exists( 'ast_primary_navigation_markup' ) ) {
 	/**
 	 * Site Title / Logo
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_primary_navigation_markup() {
 
@@ -613,7 +503,7 @@ if ( ! function_exists( 'ast_primary_navigation_markup' ) ) {
 			'menu_class' => 'main-navigation',
 			'menu_id'    => 'primary-menu',
 			'container'  => 'div',
-			'before'     => '<ul id="primary-menu" class="main-header-menu ast-flex ast-justify-content-flex-end' . $submenu_class . '">',
+			'before'     => '<ul class="main-header-menu ast-flex ast-justify-content-flex-end' . $submenu_class . '">',
 			'after'      => '</ul>',
 			'echo'       => false,
 			'walker'     => new Ast_Walker_Page(),
@@ -625,7 +515,7 @@ if ( ! function_exists( 'ast_primary_navigation_markup' ) ) {
 
 		<div class="main-header-bar-navigation" >
 
-			<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" class="ast-flex-grow-1" role="navigation" aria-label="<?php _e( 'Site Navigation', 'astra-theme' ); ?>">
+			<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" class="ast-flex-grow-1" role="navigation" aria-label="<?php _e( 'Site Navigation', 'astra' ); ?>">
 				<?php ast_nav_menu( $primary_menu_args, $fallback_menu_args ); ?>
 			</nav><!-- #site-navigation -->
 
@@ -644,7 +534,7 @@ if ( ! function_exists( 'ast_footer_markup' ) ) {
 	/**
 	 * Site Footer - <footer>
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_footer_markup() {
 		?>
@@ -672,7 +562,7 @@ if ( ! function_exists( 'ast_header_break_point' ) ) {
 	/**
 	 * Function to get Header Breakpoint
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return number
 	 */
 	function ast_header_break_point() {
@@ -689,7 +579,7 @@ if ( ! function_exists( 'ast_body_font_family' ) ) {
 	/**
 	 * Function to get Body Font Family
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return string
 	 */
 	function ast_body_font_family() {
@@ -713,7 +603,7 @@ if ( ! function_exists( 'astra_edit_post_link' ) ) {
 	/**
 	 * Function to get Edit Post Link
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param string $text 		Anchor Text.
 	 * @param string $before 	Anchor Text.
 	 * @param string $after 	Anchor Text.
@@ -737,7 +627,7 @@ if ( ! function_exists( 'ast_header_classes' ) ) {
 	/**
 	 * Function to get Header Classes
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_header_classes() {
 
@@ -755,7 +645,7 @@ if ( ! function_exists( 'ast_footer_classes' ) ) {
 	/**
 	 * Function to get Footer Classes
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_footer_classes() {
 
@@ -773,7 +663,7 @@ if ( ! function_exists( 'ast_header_breakpoint_style' ) ) {
 	/**
 	 * Function to Add Header Breakpoint Style
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_header_breakpoint_style() {
 
@@ -820,7 +710,7 @@ if ( ! function_exists( 'ast_comment_form_default_fields_markup' ) ) {
 	/**
 	 * Function filter comment form's default fields
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param array $fields Array of comment form's default fields.
 	 * @return array 		Comment form fields.
 	 */
@@ -853,7 +743,7 @@ if ( ! function_exists( 'ast_comment_form_default_markup' ) ) {
 	/**
 	 * Function filter comment form arguments
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param array $args 	Comment form arguments.
 	 * @return array
 	 */
@@ -879,7 +769,7 @@ if ( ! function_exists( 'ast_404_page_layout' ) ) {
 	/**
 	 * Function filter comment form arguments
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param array $layout 	Comment form arguments.
 	 * @return array
 	 */
@@ -901,7 +791,7 @@ if ( ! function_exists( 'ast_get_content_layout' ) ) {
 	/**
 	 * Return current content layout
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return boolean 	content layout.
 	 */
 	function ast_get_content_layout() {
@@ -954,7 +844,7 @@ if ( ! function_exists( 'page_builder_disable_title' ) ) {
 	/**
 	 * Disbale title for Page Builder template
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param boolean $default 	Title enabled or not.
 	 * @return boolean 			Title enable or disable.
 	 */
@@ -976,7 +866,7 @@ if ( ! function_exists( 'ast_the_excerpt' ) ) {
 	/**
 	 * Display Blog Post Excerpt
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function ast_the_excerpt() {
 
