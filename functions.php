@@ -212,7 +212,7 @@ add_action('customize_controls_print_styles','wallstreet_custmizer_style');
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once get_stylesheet_directory() . '/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'wallstreet_register_required_plugins' );
 
