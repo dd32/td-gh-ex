@@ -1,16 +1,15 @@
 /*
 Theme Name: Star
-Theme URI: http://wptema.se/star
+Theme URI: https://wptema.se/star
 Author: Carolina Nymark
-Author URI: http://wptema.se
-Description: Star is a responsive, accessibility-ready blogging theme. Features include Call to action that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Star also works well with Woocommerce and BBpress.
-If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/star.
-Version: 1.8
+Author URI: https://wptema.se
+Description: Star is a responsive, accessibility-ready blogging theme. Features include a Call to action that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. I recommend that you install the Jetpack plugin to make full use of supported features featured content, contact forms, and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Star also works well with Woocommerce and BBpress. If you have any questions, accessibility issues or feature requests for this theme, please visit https://wptema.se/star.
+Version: 1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright: Carolina Nymark 2011-2015
+Copyright: Carolina Nymark 2011-2017
 Text Domain: star
-Tags: light, white, threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, two-columns, featured-images, responsive-layout, accessibility-ready, custom-header
+Tags: threaded-comments, custom-menu, editor-style, translation-ready, two-columns, featured-images, accessibility-ready, custom-header, blog, custom-logo
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -933,11 +932,11 @@ li a:before{
 	list-style: none;
 	position:relative;
 	padding:18px;
-	margin:0 0.5em 45px 0.5em;
+	margin:0 auto 45px auto;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;   
 	box-sizing: border-box;	
-	width:90%;
+	width:100%;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -1128,7 +1127,8 @@ table#wp-calendar,
 	z-index: 1; /*This z-index must be lower than our main menus.*/
 	text-align:center; 
 	display:block;
-	min-height:500px;
+	clear:both;
+	min-height:400px;
 }
 
 .site-title{
@@ -1192,10 +1192,6 @@ table#wp-calendar,
 .page .site-content,
 .archive .site-content{
 	margin-top:120px;
-}
-
-.home .site-content{
-	margin-top:45px;
 }
 
 .site-content .widget-area {
@@ -1280,26 +1276,12 @@ table#wp-calendar,
 .site-description{
 	font-size: 24px;
 	font-size: 2.4rem;
-	color:#487694;
-	margin:70px auto 0 auto;
-	padding:25px;
-	background-color:#fff;
-	box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.09);
+	margin:1em auto 0 auto;
 	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
-	position:absolute;
-	bottom:0;
 	display:block;
-	width:100%;
+	color:#000000;
 }
-
-.site-description p{
-	background:url(images/border.png) repeat-x bottom; 
-	margin:0;
-	display:inline;
-		padding-bottom:4px;
-}
-
 
 /*--------------------------------------------------------------
 10.2 Posts and pages
@@ -1438,6 +1420,12 @@ table#wp-calendar,
 
 .entry-header{margin-top:10px;}
 
+.categories{ list-style: none; }
+
+
+.featured-post a img,
+.entry-content a img,
+.cat-item,
 .entry-meta{
 	font-size:14px;
 	font-size:1.4rem; 
@@ -1448,7 +1436,21 @@ table#wp-calendar,
 	border:4px solid #fff;
 	border-radius:4px;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.12);
+	display: inline-block;
 }
+
+.featured-post a img,
+.entry-content a img{
+	padding:3px;
+}
+
+.featured-post a img:hover,
+.featured-post a img:focus,
+.entry-content a img:hover,
+.entry-content a img:focus{
+	border:4px solid #eee;
+}
+
 
 .sticky .entry-footer,
 .sticky .entry-meta{
@@ -1512,14 +1514,17 @@ table#wp-calendar,
 
 .type-page .entry-footer{display:none;}
 
+article.cat-item a,
 .widget a,
-.entry-meta a , 
+.entry-meta a,
 .entry-footer a, 
 .site-footer a, 
 .page-links a{
 	text-decoration:none;
 }
 
+article.cat-item a:focus,
+article.cat-item a:hover,
 .widget a:focus,
 .widget a:hover,
 .entry-meta a:focus,
@@ -1664,7 +1669,7 @@ table#wp-calendar,
 
 .comment-metadata{
 	margin-left:70px;
-	margin-top:-25px;
+	margin-top:-5px;
 }
 
 .comment-metadata a{text-decoration:none; }
@@ -1933,7 +1938,6 @@ object {
 	vertical-align: top;
 	width: 100%;
 	margin:0.4%;
-	border:3px solid #fafafa;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -2143,26 +2147,47 @@ span.bbp-admin-links a,
 --------------------------------------------------------------*/
 
 @media screen and (max-width: 1100px) {
+
 	.site-content .widget-area, 
 	.site-footer .widget-area,
-	.content-area{width:100%; margin:0 auto;}
+	.content-area{
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.site-content .widget-area{
+		float: left;
+	}
 
 	.site-footer .widget,
-	.widget{width:32%;}
+	.widget{
+		width: 32%;
+		margin:0.5% 0.5% 1.5em 0.5%;
+	}
 
-	#action{width:60%;}
+	#action{
+		width: 60%;
+	}
+
+	.featured-wrap{	width:85%; padding: 5px 2% 1.5em 2%;}
 
 	.featured-post{
-		width:20%;	
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
+@media screen and (max-width: 900px) {
+	.site-footer .widget,
+	.widget{
+		width:48.74%;
+
+	}
+}
 
 @media screen and (max-width: 800px) {	
 	.topsearch{display:none;}
-
-	.site-footer .widget,
-	.widget{width:48.5%;}
 
 	.comment-navigation .nav-previous,
 	.posts-navigation .nav-previous,
@@ -2178,41 +2203,33 @@ span.bbp-admin-links a,
 		margin: 0 0 10px 0;
 	}
 
-	.featured-post
-	 { 
-		width: 80%;
+	.featured-post { 
 		margin:0 auto 45px auto;
 	}
+
+	.featured-wrap{	padding: 5px 2% 0 2%;}
 
 	#action{
 		width: 80%;
 		margin:45px auto 45px auto;
 	}
 
-	.site-main{width: 100%; }
-
-	.post	 { 
-		width: 95%;
-		margin:0 auto 45px auto;
-	}
-
-	.type-post{width:95%;}
-
+	.featured-wrap,
+	.featured-post,
+	.site-footer .widget,
+	.widget,
+	.site-main,
 	.single-jetpack-portfolio .content-area, 
 	.no-sidebar .content-area, 
 	.entry-footer, 
-	.entry-content{
-		width:100%;
+	.entry-content {
+		width: 100%;
 	}
 
 	.page-title{text-align:center;}
 }
 
 @media screen and (max-width: 600px) {
-
-	.site-footer .widget,
-	.widget{width:100%;}
-	
 	.site-title {font-size: 4rem;}
 
 	/*Increase text-size on tiny screens */

@@ -34,8 +34,6 @@
 		} );
 	} );
 
-
-
 	wp.customize( 'star_hide_search', function( value ) {
 		value.bind( function( newval ) {
 			if( true === newval ){
@@ -60,7 +58,6 @@
 		});
 
 	} );
-
 
 	wp.customize( 'star_featured_headline', function( value ) {
 		value.bind( function( to ) {

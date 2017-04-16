@@ -7,32 +7,32 @@
  * @package star
  */
 
-get_header(); 
+get_header();
 
 if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
 	?>
 		<section class="featured-wrap">
 			<header class="page-header">
-				<h1 class="page-title"><?php _e('Portfolio','star'); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Portfolio','star' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div class="featured-post star-border">
-						<?php 
-						if ( has_post_thumbnail())	{
-								the_post_thumbnail( 'star-featured-posts-thumb' ); 
-						}	
-						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); 
+						<?php
+						if ( has_post_thumbnail() ) {
+							echo  '<a href="' . esc_url( get_permalink() ) . '" >' . get_the_post_thumbnail( $post->ID, 'star-featured-posts-thumb' ) . '</a>';
+						}
+						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 						echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">',', ','</span>' );
-					?>
+						?>
 					</div>
 				<?php endwhile; ?>
 		</section>
-	<?php 
-	get_footer(); 
+	<?php
+	get_footer();
 
-}else{ ?>
+} else { ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -47,7 +47,6 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 			</header><!-- .page-header -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
@@ -69,10 +68,7 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
- 
-	<?php 
-	get_sidebar(); 
+	<?php
+	get_sidebar();
 	get_footer();
-
 }
-?>

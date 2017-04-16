@@ -12,13 +12,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php 
-		if ( has_post_thumbnail()){
+		<?php
+		if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
 		}
-			
-		the_content(); 
-		
+
+		the_content();
+
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . __( 'Pages:', 'star' ),
 			'after'  => '</div>',
