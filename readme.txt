@@ -1,18 +1,19 @@
 == AyaSpirit WordPress Theme ==
 
 Contributors: Aya Templates
-Tags: blog, two-columns, right-sidebar, custom-background, custom-logo,
-custom-colors, custom-header, custom-menu, featured-images, threaded-comments,
-translation-ready, sticky-post, theme-options
+Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background,
+custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments,
+translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form,
+footer-widgets
 
 Requires at least: 4.3.0
-Tested up to: 4.6.1
+Tested up to: 4.7.3
 
 == Description ==
 
-AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice for a spiritual, non profit organization website,
-blog about spritiuality, etc. 100% Responsive Design, Customizable, and Easy to Use WordPress Theme.
-
+AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice for a spiritual, non profit
+organization website, blog about spritiuality, etc. 100% Responsive Design, Customizable,
+and Easy to Use WordPress Theme.
 
 == Installation ==
 
@@ -34,7 +35,7 @@ Activiation and Use
 
 == License ==
 
-AyaSpirit WordPress Theme, Copyright 2016 ABC
+AyaSpirit WordPress Theme, Copyright 2016 AyaTemplates.com
 AyaSpirit is distributed under the terms of the GNU GPL
 
 Unless otherwise specified, all the theme files, scripts and images

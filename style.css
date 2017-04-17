@@ -4,9 +4,9 @@ Description: AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice f
 Theme URI: https://ayatemplates.com/product/ayaspirit
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayaspirit
-Tags: blog, two-columns, right-sidebar, custom-background, custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options
+Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -190,23 +190,23 @@ dt.gallery-icon > a:before,
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 16.66%;
+	max-width: 15%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 14.28%;
+	max-width: 13%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 12.5%;
+	max-width: 11%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 11.11%;
+	max-width: 10%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 10.11%;
+	max-width: 9%;
 }
 
 .gallery-icon img {
@@ -373,6 +373,12 @@ article ul > li:before {
     clear: both;
 }
 
+#main-content-full {
+    overflow:hidden;
+    margin:0 0 20px 2%;
+    width:96%;
+}
+
 #infoTxt {
 	padding:10px 0 10px 0;
 }
@@ -414,6 +420,20 @@ article,
 
 #footer-main .post-date {
 	margin:0 0 0 14px;
+}
+
+.footer-title {
+	padding:0 5px 1px 1px;
+	margin-bottom:-2px;
+	font-weight:normal;
+	font-size:21px;
+	color:#33d4f4;
+	letter-spacing:1px;
+	float:left;
+}
+
+.footer-after-title {
+	clear:both;
 }
 
 #fsocial {
@@ -564,6 +584,7 @@ blockquote, figure {
 
 .nav-links .nav-previous {
 	float:left;
+	width:45%;
 }
 
 .nav-links .nav-previous:before {
@@ -574,6 +595,7 @@ blockquote, figure {
 
 .nav-links .nav-next {
 	float:right;
+	width:45%;
 }
 
 .nav-links .nav-next:after {
@@ -853,6 +875,7 @@ blockquote, figure {
 .page-after-content {
 	padding-top:5px;
 	padding-bottom:5px;
+	clear:both;
 }
 
 .author-icon > a,
@@ -1290,6 +1313,11 @@ blockquote {
 
 /* Responsive Web Design */
 
+.post-links .left,
+.post-links .right {
+    width: 40%;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 	
@@ -1362,6 +1390,41 @@ blockquote {
 		color:#000000;
 		background-color:#ffffff;
 	}
+
+	#navmain ul ul:not(.cart_list) {
+        opacity:0;
+    }
+
+	#navmain ul li:hover > ul {
+       display:block;
+       opacity:1;
+       animation: opacity 700ms ease-in-out normal;
+       -moz-animation: opacity 700ms ease-in-out normal;
+       -ms-animation: opacity 700ms ease-in-out normal;
+       -o-animation: opacity 700ms ease-in-out normal;
+       -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    @keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
+    @-moz-keyframes opacity {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @-ms-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-o-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-webkit-keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
 
 	#navmain ul li ul a {
 		display:block;
@@ -1466,6 +1529,23 @@ blockquote {
 	#sidebar #searchsubmit {
 		padding-top:7px;
 		padding-bottom:7px;
+	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:30.6%;
+	}
+	
+	.col3a,
+	.col3b {
+		margin:0 3.5% 5px 0;
+	}
+	
+	.col3c {
+		margin:0 0 5px 0;
 	}
 }
 
@@ -1665,6 +1745,27 @@ blockquote {
 	#container .button {
 		padding:6px 8px;
 	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:48%;
+	}
+
+	.col3a,
+	.col3c {
+		margin:0 4% 5px 0;
+	}
+
+	.col3b {
+		margin:0 0 5px 0;
+	}
+
+	.col3c {
+		clear:both;
+	}
 }
 
 /* Small Resolution */
@@ -1725,6 +1826,14 @@ blockquote {
 	#contact-form input[type="url"],
 	#contact-form textarea {
 		width:96%;
+	}
+
+	.col3a,
+	.col3b,
+	.col3c {
+		float:none;
+		width:96%;
+		margin:0 2% 5px 2%;
 	}
 }
 

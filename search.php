@@ -15,7 +15,9 @@
 	<div id="main-content">
 
 		<div id="infoTxt">
-			<?php printf( __( 'You searched for "%s". Here are the results:', 'ayaspirit' ),
+			<?php
+				/* translators: %s: search query */
+				printf( esc_html__( 'You searched for "%s". Here are the results:', 'ayaspirit' ),
 						get_search_query() );
 			?>
 		</div><!-- #infoTxt -->

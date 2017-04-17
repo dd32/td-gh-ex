@@ -276,9 +276,9 @@ function ayaspirit_show_website_logo_image_and_title() {
     
         echo '<div id="site-identity">';
         echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-        echo '<h1>'.get_bloginfo('name').'</h1>';
+        echo '<h1 class="entry-title">' . esc_html(get_bloginfo('name') ) . '</h1>';
         echo '</a>';
-        echo '<strong>'.get_bloginfo('description').'</strong>';
+        echo '<strong>' . esc_html( get_bloginfo('description') ) . '</strong>';
         echo '</div>';
     }
 }
@@ -311,6 +311,39 @@ function ayaspirit_widgets_init() {
 						'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',
 						'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 					) );
+
+	// Register Footer Column #1
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #1', 'ayaspirit' ),
+							'id' 			 =>  'footer-column-1-widget-area',
+							'description'	 =>  __( 'The Footer Column #1 widget area', 'ayaspirit' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
+	
+	// Register Footer Column #2
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #2', 'ayaspirit' ),
+							'id' 			 =>  'footer-column-2-widget-area',
+							'description'	 =>  __( 'The Footer Column #2 widget area', 'ayaspirit' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
+	
+	// Register Footer Column #3
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #3', 'ayaspirit' ),
+							'id' 			 =>  'footer-column-3-widget-area',
+							'description'	 =>  __( 'The Footer Column #3 widget area', 'ayaspirit' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
 }
 
 add_action( 'widgets_init', 'ayaspirit_widgets_init' );
@@ -389,7 +422,7 @@ function ayaspirit_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main-fixed {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>

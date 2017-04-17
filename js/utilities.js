@@ -25,25 +25,6 @@ jQuery( document ).ready(function() {
 		}
 	});
 
-	jQuery("#navmain > div > ul li").mouseleave( function(event) {
-    event.preventDefault();
-		if (ayaspirit_IsLargeResolution()) {
-			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
-		}
-	});
-	
-	jQuery("#navmain > div > ul li").mouseenter( function(event) {
-
-    event.preventDefault();
-		if (ayaspirit_IsLargeResolution()) {
-
-			var curMenuLi = jQuery(this);
-			jQuery("#navmain > div > ul > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
-		
-			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
-		}
-	});
-
 	if (typeof jQuery( '#slider' ).slitslider == 'function') {
 
 		var Page = (function() {
