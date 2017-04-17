@@ -1,93 +1,74 @@
-<?php get_header(); ?>
-		<div id="container">
-			<div id="content" role="main">
 <?php
-	/* Queue the first post, that way we know
-	 * what date we're dealing with (if that is the case).
-	 *
-	 * We reset this later so we can run the loop
-	 * properly with a call to rewind_posts().
-	 */
-	if ( have_posts() )
-		the_post();
-?>
+/**
+ * The template for displaying archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package star
+ */
 
-<h1 class="tag-page-title">
-<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'star' ), get_the_date() ); ?>
-<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'star' ), get_the_date('F Y') ); ?>
-<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'star' ), get_the_date('Y') ); ?>
-<?php elseif ( is_tag() ) : ?>	
-			<?php printf( __( 'Tag Archives: %s', 'star' ), '<span>' . single_tag_title( '', false ) . '</span>' );?>
-<?php elseif ( is_category() ) : ?>	
-			<?php printf( __( 'Category Archives: %s', 'star' ), '<span>' . single_cat_title( '', false ) . '</span>' );?>
-<?php elseif ( is_author() ) : ?>	
-			<?php printf( __( 'Author Archives: %s', 'star' ), "<span class='vcard'>" . get_the_author() . "</span>" ); ?>
-<?php else : ?>
-				<?php _e( 'Blog Archives', 'star' ); ?>
-<?php endif; ?>
-			</h1>
+get_header();
 
-<?php
-	rewind_posts();
-?>
+if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
+	?>
+		<section class="featured-wrap">
+			<header class="page-header">
+				<h1 class="page-title"><?php esc_html_e( 'Portfolio','star' ); ?></h1>
+			</header><!-- .page-header -->
 
-<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div class="nav navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'star' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'star' ) ); ?></div>
-				</div><!-- #nav -->
-		<?php endif; ?>
-		
-<?php while ( have_posts() ) : the_post(); ?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<div class="star-date">
-							<a href="<?php the_permalink(); ?>"><?php the_time('d') ?><br/><?php the_time('m') ?><br/><?php the_time('y') ?><br/></a>
-							<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'star' ), __( '1 Comment', 'star' ), __( '% Comments', 'star' ) ); ?></span>
-						</div>
-						<h2 class="front-title"><a href="<?php the_permalink(); ?>" title="<?php printf ( __('Permalink to %s', 'star' ), the_title_attribute( 'echo=0' )); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-						<div class="entry-meta">
-						<?php if ( count( get_the_category() ) ) : ?>
-								<span class="cat-links entry-utility-prep entry-utility-prep-cat-links">
-									<?php echo __('Posted by ', 'star');
-									the_author_posts_link();
-									?>
-									<span class="meta-sep">|</span>
-									<?php echo get_the_category_list(', '); ?>
-								</span>
-								<span class="meta-sep">|</span>
-						<?php endif;
-						$tags_list = get_the_tag_list( '', ', ' );
-						if ( $tags_list ):
-							?>
-							<span class="tag-links">
-								<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'star' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
-							</span>
-							<span class="meta-sep">|</span>
-					<?php endif; ?>
-					<?php edit_post_link( __( 'Edit', 'star' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-				</div><!-- .entry-meta -->
-				<div class="entry-content">
+			<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<div class="featured-post star-border">
+						<?php
+						if ( has_post_thumbnail() ) {
+							echo  '<a href="' . esc_url( get_permalink() ) . '" >' . get_the_post_thumbnail( $post->ID, 'star-featured-posts-thumb' ) . '</a>';
+						}
+						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+						echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">',', ','</span>' );
+						?>
+					</div>
+				<?php endwhile; ?>
+		</section>
+	<?php
+	get_footer();
+
+} else { ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
 				<?php
-				if ( has_post_thumbnail() ) 
-				{
-				the_post_thumbnail();// check if the post has a Post Thumbnail assigned to it.
-				}
-				the_content();
-				wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'star' ), 'after' => '</div>' ) ); ?>
-				</div><!-- .entry-content -->
-			</div><!-- #post-## -->
-<?php
-endwhile; // End the loop. Whew. ?>
-		<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div class="nav navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'star' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'star' ) ); ?></div>
-				</div><!-- #nav -->
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php the_post_navigation(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
 		<?php endif; ?>
-			</div><!-- #content -->
-			<?php get_sidebar(); ?>
-		</div><!-- #container -->
-<?php get_footer(); ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php
+	get_sidebar();
+	get_footer();
+}

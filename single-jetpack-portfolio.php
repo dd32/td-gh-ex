@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The Template for displaying all single projects.
  *
  * @package star
  */
@@ -12,7 +12,7 @@ get_header(); ?>
 
 		<?php
 		while ( have_posts() ) : the_post();
-			get_template_part( 'content', 'single' );
+			get_template_part( 'content', 'portfolio-single' );
 			the_post_navigation();
 			comments_template();
 		endwhile; // end of the loop.
@@ -20,7 +20,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	
 <?php
-get_sidebar();
 get_footer();

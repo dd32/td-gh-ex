@@ -1,19 +1,32 @@
-<?php get_header(); ?>
-	<div id="container">
-		<div id="content" role="main">
-			<div id="post-0" class="no-results">
-					<h2 class="front-title"><?php _e( 'Nothing Found', 'star' ); ?></h2>
-					<div class="entry-content">
-						<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'star' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-		</div><!-- #post- 0 -->
-	
-	<script type="text/javascript">
-		// focus on search field after it has loaded
-		document.getElementById('s') && document.getElementById('s').focus();
-	</script>
-			</div><!-- #content -->
-			<?php get_sidebar(); ?>
-		</div><!-- #container -->
-<?php get_footer(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found).
+ *
+ * @package star
+ */
+
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'star' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'star' ); ?></p>
+					<?php get_search_form(); ?>
+					<br/><br/>
+					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();
