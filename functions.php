@@ -5,6 +5,16 @@ $functions_path = get_template_directory() . '/functions/';
 /* These files build out the options interface.  Likely won't need to edit these. */
 require_once ($functions_path . 'themes-page.php');  // InkThmes Theme Page 
 require_once ($functions_path . 'customizer.php');  // InkThmes Theme Page 
+add_theme_support( "custom-header");
+add_theme_support( "custom-background");
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function wpdocs_theme_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
 
 /* ----------------------------------------------------------------------------------- */
 /* jQuery Enqueue */
@@ -21,6 +31,15 @@ function appointway_wp_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'appointway_wp_enqueue_scripts');
 
+
+function wpse218049_enqueue_comments_reply() {
+
+    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+        // Load comment-reply.js (into footer)
+        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+    }
+}
+add_action(  'wp_enqueue_scripts', 'wpse218049_enqueue_comments_reply' );
 
 /* ----------------------------------------------------------------------------------- */
 /* Custom Jqueries Enqueue */
@@ -206,5 +225,19 @@ function appointway_import_file($file, $post_id = 0, $import_date = 'file') {
 
     return $id;
 }
+
+function appointway_tracking_admin_notice() {
+    global $current_user;
+    $user_id = $current_user->ID;
+    /* Check that the user hasn't already clicked to ignore the message */
+    if (!get_user_meta($user_id, 'wp_email_tracking_ignore_notice')) {
+        ?>
+        <div class="updated um-admin-notice"><p><?php _e('Allow Appointway theme to send you setup guide? Opt-in to our newsletter and we will immediately e-mail you a setup guide along with 20% discount which you can use to purchase any theme.', 'appointway'); ?></p><p><a href="<?php echo get_template_directory_uri() . '/functions/smtp.php?wp_email_tracking=email_smtp_allow_tracking'; ?>" class="button button-primary"><?php _e('Allow Sending', 'appointway'); ?></a>&nbsp;<a href="<?php echo get_template_directory_uri() . '/functions/smtp.php?wp_email_tracking=email_smtp_hide_tracking'; ?>" class="button-secondary"><?php _e('Do not allow', 'appointway'); ?></a></p></div>
+        <?php
+    }
+}
+
+add_action('admin_notices', 'appointway_tracking_admin_notice');
+
 
 ?>

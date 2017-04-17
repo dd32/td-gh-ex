@@ -32,7 +32,9 @@
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <!--Start post-->
                                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                    <?php if(has_post_thumbnail()){ ?>
                                     <div class="post_thumbnail"><?php the_post_thumbnail(); ?></div>
+                                    <?php }?>
                                     <h1 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                                     <div class="post_content"> 
                                         <ul class="post_meta">

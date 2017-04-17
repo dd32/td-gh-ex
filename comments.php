@@ -31,7 +31,7 @@ if (post_password_required()) {
         <?php else : // comments are closed  ?>
             <!-- If comments are closed. -->
             <?php if (!is_page()) : ?>
-                <p class="nocomments">Comments are closed.</p>
+<!--                <p class="nocomments">Comments are closed.</p>-->
             <?php endif; ?>
         <?php endif; ?>
     <?php endif; ?>

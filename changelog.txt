@@ -2,6 +2,11 @@
 
 = Theme Name: Appointway Theme=
 
+= Version: 1.1.0 =
+1.Change styling on post content.
+2.Theme check issue fixed.
+3.Make changes to display post. 
+
 = Version: 1.0.9 =
 * Support Link Button Added In WordPress Customize.
 
