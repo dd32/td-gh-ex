@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
@@ -1546,6 +1546,11 @@ a:hover, a:active {
   }
 }
 
+.site-info a {
+  border-bottom: 1px solid #3c3c3c;
+  color: #dadada;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -2777,4 +2782,17 @@ a.woocommerce-review-link:hover {
 
 .woocommerce .widget_price_filter .ui-slider {
   margin-top: 5px;
+}
+
+.woocommerce .flex-control-nav {
+  display: block !important;
+}
+.woocommerce .label {
+  color: #676767;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+  color: #222222;
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.1.4\n"
-"POT-Creation-Date: 2017-03-23 10:27+0530\n"
-"PO-Revision-Date: 2017-03-23 10:27+0530\n"
+"Project-Id-Version: arouse.1.1.5\n"
+"POT-Creation-Date: 2017-04-18 14:02+0530\n"
+"PO-Revision-Date: 2017-04-18 14:02+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,49 +48,45 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:53
-msgid "https://wordpress.org/"
+#: footer.php:57
+#, php-format
+msgid "Copyright &#169; %1$s %2$s."
 msgstr ""
 
-#: footer.php:53
+#: footer.php:63
 #, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:55
-#, php-format
-msgid "Theme: %1$s by %2$s."
+msgid "Powered by %1$s and %2$s."
 msgstr ""
 
 #: functions.php:51
 msgid "Primary"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:119
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:121
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:125
+#: functions.php:128
 msgid "Shop Page Sidebar"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:137
 msgid "Footer Left Sidebar"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:146
 msgid "Footer Mid Sidebar"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:155
 msgid "Footer Right Sidebar"
 msgstr ""
 
-#: functions.php:205 functions.php:211 functions.php:217
+#: functions.php:208 functions.php:214 functions.php:220
 msgid "on"
 msgstr ""
 
@@ -286,44 +282,44 @@ msgid "Display featured image on single post article?"
 msgstr ""
 
 #: inc/customizer/customizer.php:283
-msgid "Arouse Theme Info"
+msgid "Arouse Important Links"
 msgstr ""
 
 #: inc/customizer/customizer.php:301
-msgid "Arouse Documentation"
+msgid "Arouse PRO"
 msgstr ""
 
 #: inc/customizer/customizer.php:302
-msgid ""
-"<a class=\"button\" href=\"http://themezhut.com/arouse-wordpress-theme-"
-"documentation/\" target=\"_blank\">Read the documentation.</a>"
-msgstr ""
-
-#: inc/customizer/customizer.php:320
-msgid "Arouse Demo"
-msgstr ""
-
-#: inc/customizer/customizer.php:321
-msgid ""
-"<a class=\"button\" href=\"http://themezhut.com/demo/arouse/\" target="
-"\"_blank\">See the demo.</a>"
-msgstr ""
-
-#: inc/customizer/customizer.php:339
-msgid "Arouse Pro Details"
-msgstr ""
-
-#: inc/customizer/customizer.php:340
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/themes/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Details.</a>"
 msgstr ""
 
-#: inc/customizer/customizer.php:359
+#: inc/customizer/customizer.php:320
+msgid "Arouse Documentation"
+msgstr ""
+
+#: inc/customizer/customizer.php:321
+msgid ""
+"<a class=\"button\" href=\"http://themezhut.com/arouse-wordpress-theme-"
+"documentation/\" target=\"_blank\">Read the documentation.</a>"
+msgstr ""
+
+#: inc/customizer/customizer.php:339
+msgid "Arouse Demo"
+msgstr ""
+
+#: inc/customizer/customizer.php:340
+msgid ""
+"<a class=\"button\" href=\"http://themezhut.com/demo/arouse/\" target="
+"\"_blank\">See the demo.</a>"
+msgstr ""
+
+#: inc/customizer/customizer.php:358
 msgid "Arouse Pro Demo"
 msgstr ""
 
-#: inc/customizer/customizer.php:360
+#: inc/customizer/customizer.php:359
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse-pro/\" target="
 "\"_blank\">Arouse Pro Demo.</a>"

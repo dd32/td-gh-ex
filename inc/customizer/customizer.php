@@ -280,10 +280,29 @@ function arouse_customize_register( $wp_customize ) {
     $wp_customize->add_section( 
     	'arouse_theme_info', 
     	array(
-			'title' 		=> __( 'Arouse Theme Info', 'arouse' ),
-			'priority'		=> 160
+			'title' 		=> __( 'Arouse Important Links', 'arouse' ),
+			'priority'		=> 1
 		) 
 	);
+
+	$wp_customize->add_setting( 
+		'arouse_pro_details', 
+		array(
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'arouse_pro_details', 
+			array(
+				'section' 		=> 'arouse_theme_info',
+				'label' 		=> __( 'Arouse PRO', 'arouse' ),
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/themes/arouse-pro/" target="_blank">Arouse Pro Details.</a>', 'arouse' ),
+			) 
+		) 
+	);	
 
 	$wp_customize->add_setting( 
 		'arouse_documentation_link', 
@@ -322,26 +341,6 @@ function arouse_customize_register( $wp_customize ) {
 			) 
 		) 
 	);
-
-	$wp_customize->add_setting( 
-		'arouse_pro_details', 
-		array(
-			'sanitize_callback'	=> 'arouse_sanitize_html'
-		) 
-	);
-
-	$wp_customize->add_control( 
-		new Arouse_Custom_Content( 
-			$wp_customize, 
-			'arouse_pro_details', 
-			array(
-				'section' 		=> 'arouse_theme_info',
-				'label' 		=> __( 'Arouse Pro Details', 'arouse' ),
-				'content' 		=> __( '<a class="button" href="http://themezhut.com/themes/arouse-pro/" target="_blank">Arouse Pro Details.</a>', 'arouse' ),
-			) 
-		) 
-	);		
-
 
 	$wp_customize->add_setting( 
 		'arouse_pro_demo_link', 

@@ -83,6 +83,9 @@ function arouse_setup() {
 
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	// Add support for featured content.
 	add_theme_support( 'arouse-featured-content', array(

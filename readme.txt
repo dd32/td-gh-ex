@@ -3,7 +3,7 @@
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
 Tested up to: 4.7.3
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,9 @@ Arouse supports woocommerce plugin.
 * Added arouse_hide_featured_posts function to extras.php
 * Added sticky posts support to featured content boxes.
 * Modified translation files.
+
+= 1.1.5 - Apr 18 2017 =
+* Added theme support for woocommerce 3.0+
 
 == Credits ==
 

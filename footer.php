@@ -50,9 +50,22 @@
 		</div><!-- .container -->
 		<div class="site-info">
 			<div class="container">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'arouse' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'arouse' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'arouse' ), 'Arouse', '<a href="http://themezhut.com/themes/arouse" rel="designer">ThemezHut</a>' ); ?>
+				<div>
+					<?php 
+
+						$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" >' . esc_attr( get_bloginfo( 'name' ) ) . '</a>';
+						printf( __( 'Copyright &#169; %1$s %2$s.', 'arouse' ), date_i18n( 'Y' ), $site_link );		
+					
+					?>
+				</div>
+				<div>
+					<?php
+						printf( esc_html__( 'Powered by %1$s and %2$s.', 'arouse' ),
+							'<a href="http://wordpress.org" target="_blank" title="WordPress">WordPress</a>',
+							'<a href="http://themezhut.com/themes/arouse/" target="_blank" title="Arouse WordPress Theme">Arouse</a>'
+						); 
+					?>
+				</div>
 			</div><!-- .container -->
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
