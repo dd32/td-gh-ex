@@ -12,7 +12,7 @@
 		$queryslider = new WP_query('page_id='.get_theme_mod('avvocato_slider_content1' ,true)); 
 		while( $queryslider->have_posts() ) : $queryslider->the_post();
 		?> 
-		<div class="item" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
+		<div class="item" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))); ?>')"  <?php  endif; ?>>
 			<div class="overlay">
 				<div class="container">
 					<div class="gutter">
@@ -31,7 +31,7 @@
 		$queryslider = new WP_query('page_id='.get_theme_mod('avvocato_slider_content2' ,true)); 
 		while( $queryslider->have_posts() ) : $queryslider->the_post();
 		?> 
-		<div class="item" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
+		<div class="item" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))); ?>')"  <?php  endif; ?>>
 			<div class="overlay">
 				<div class="container">
 					<div class="gutter">

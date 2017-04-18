@@ -10,7 +10,7 @@
 			<div class="container">
 				<div class="gutter">
 					<p class="page-title"><?php echo esc_html(get_theme_mod('avvocato_blog_page_title',__( 'Our Blog', 'avvocato' ))); ?></p>
-					<p><?php echo esc_html(get_theme_mod('avvocato_blog_subtitle',__( 'Class aptent tactic socislifd lorem ipsum dummy', 'avvocato' ))); ?></p>
+					<p><?php echo esc_html(get_theme_mod('avvocato_blog_subtitle',__( '', 'avvocato' ))); ?></p>
 				</div>
 			</div> <!--  END container  -->
 		</div> <!--  END overlay  -->

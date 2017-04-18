@@ -74,8 +74,6 @@ if( ! function_exists( 'avvocato_theme_setup' ) ) {
 		// add excerpt support for pages
 		add_post_type_support( 'page', 'excerpt' );
 
-		// Add CSS for the TinyMCE editor
-		add_editor_style();
 	}
 	add_action( 'after_setup_theme', 'avvocato_theme_setup' );
 }
@@ -141,15 +139,15 @@ if( ! function_exists( 'avvocato_enqueue_scripts' ) ) {
 	function avvocato_enqueue_scripts() {
 
 		// owl carousel for sliders
-		wp_enqueue_script( 'avvocato-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );
+		wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );
 
 		// html5
 		wp_enqueue_script( 'avvocato-html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
 		wp_script_add_data( 'avvocato-html5', 'conditional', 'lt IE 9' );
 		
 		// mediaqueries
-		wp_enqueue_script( 'avvocato-mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
-		wp_script_add_data( 'avvocato-mediaqueries', 'conditional', 'lt IE 9' );			
+		wp_enqueue_script( 'css3-mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
+		wp_script_add_data( 'css3-mediaqueries', 'conditional', 'lt IE 9' );			
 
 		// main for script js
 		wp_enqueue_script( 'avvocato-avvocato-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null );		
@@ -175,7 +173,7 @@ function avvocato_sidebars() {
 		'name' => __( 'Blog Sidebar', "avvocato"),
 		'id' => 'blog-sidebar',
 		'description' => __( 'Sidebar on the blog layout.', "avvocato"),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%s" class="widget %s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
@@ -187,7 +185,7 @@ function avvocato_sidebars() {
 		'name' => __( 'Footer Widget Area 1', "avvocato"),
 		'id' => 'footer-widget-area-1',
 		'description' => __( 'The footer widget area 1', "avvocato"),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"> ',
+		'before_widget' => '<aside id="%s" class="widget %s"> ',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
@@ -197,7 +195,7 @@ function avvocato_sidebars() {
 		'name' => __( 'Footer Widget Area 2', "avvocato"),
 		'id' => 'footer-widget-area-2',
 		'description' => __( 'The footer widget area 2', "avvocato"),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"> ',
+		'before_widget' => '<aside id="%s" class="widget %s"> ',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
@@ -207,7 +205,7 @@ function avvocato_sidebars() {
 		'name' => __( 'Footer Widget Area 3', "avvocato"),
 		'id' => 'footer-widget-area-3',
 		'description' => __( 'The footer widget area 3', "avvocato"),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"> ',
+		'before_widget' => '<aside id="%s" class="widget %s"> ',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
@@ -217,7 +215,7 @@ function avvocato_sidebars() {
 		'name' => __( 'Footer Widget Area 4', "avvocato"),
 		'id' => 'footer-widget-area-4',
 		'description' => __( 'The footer widget area 4', "avvocato"),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"> ',
+		'before_widget' => '<aside id="%s" class="widget %s"> ',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
