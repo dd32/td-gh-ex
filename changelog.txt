@@ -1,6 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
--------------- September 2016 ----------------
+-------------- April 2017 ----------------
+
+18/04/2017  - Version 1.8.2
+
+- Display fix for Categories and Tags on home page
+- Safari browser search button fix
+- Assistive update - correct screen reader  markup
 
 01/09/2016  - Version 1.7.8
 

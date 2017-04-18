@@ -51,12 +51,12 @@
 		<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( is_home() &&( get_theme_mod( 'iconic_one_catg_home' ) == '1' ) ) : ?>
+		<?php if ( is_home() && ( get_theme_mod( 'iconic_one_catg_home' , '1' ) == '1' ) ) : ?>
 			<span><?php _e('Category:','iconic-one'); ?> <?php the_category(' '); ?></span>
 		<?php elseif( !is_home() ): ?>
 			<span><?php _e('Category:','iconic-one'); ?> <?php the_category(' '); ?></span>
 		<?php endif; ?>
-		<?php if ( is_home() &&( get_theme_mod( 'iconic_one_tag_home' ) == '1' ) ) : ?>
+		<?php if ( is_home() && ( get_theme_mod( 'iconic_one_tag_home' , '1' ) == '1' ) ) : ?>
 				<span><?php the_tags(); ?></span>
 		<?php elseif( !is_home() ): ?>
 				<span><?php the_tags(); ?></span>

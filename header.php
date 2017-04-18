@@ -81,7 +81,7 @@
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="themonic-nav" role="navigation">
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'iconic-one' ); ?>"><?php _e( 'Skip to content', 'iconic-one' ); ?></a>
+			<a class="assistive-text" href="#main" title="<?php esc_attr_e( 'Skip to content', 'iconic-one' ); ?>"><?php _e( 'Skip to content', 'iconic-one' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'menu-top', 'menu_class' => 'nav-menu', 'container' => 'ul' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<div class="clear"></div>
