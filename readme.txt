@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.7 | 18th April 2017 = 
+* Fix: Issue with cart reload and quantity.
+* Update: Icon font to include vimeo.
+
 = Version 2.9.6 | 17th April 2017 = 
 * Fix: Issue with WC notice.
 
