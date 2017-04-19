@@ -25,11 +25,13 @@ Layout: Responsive
 
 @media only screen and (min-width: 992px) {
 	.sticky-header {
-		height: 70px;
+		height: auto;
 	}
-
+        .sticky-header .main-navigation{
+                max-height: 100%;
+       }
 	.main-navigation {
-		max-width: 80%;
+		max-width: 65%;
 		max-height: 85px;
 	}
 
@@ -52,9 +54,11 @@ Layout: Responsive
 	}
 
 	.sticky-header .main-navigation > ul > li > a {
-		padding: 18px 0 17px 20px;
+		padding: 18px 0 17px 15px;
 	}
-
+.sticky-header .main-navigation > ul > li:first-child > a {
+    padding-left: 0;
+}
 	#portfolio-container {
 		height: 0;
 

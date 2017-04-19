@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="page-title"><?php echo esc_html( '404' ); ?></h1>
+					<h1 class="page-title"><?php echo esc_html__( '404','beonepage' ); ?></h1>
 
 					<?php beonepage_get_breadcrumbs(); ?>
 				</div><!-- col-md-12 -->

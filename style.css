@@ -4,7 +4,7 @@ Theme URI: http://betheme.me/themes/beonepage/
 Author: BeTheme
 Author URI: http://betheme.me/
 Description: BeOnePage is a professional one-page creative WordPress theme. Perfect to promote your work or your creative business. It is cross-browser compatible, fully responsive, and retina ready. BeOnePage is very easy to set up and customize, being powered by the amazing WordPress Customizer. The theme performs beautifully on all devices, with smooth animations and optimum speed.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beonepage
@@ -401,8 +401,26 @@ input.form-control:focus {
 .site-branding {
     display: inline-block;
     float: left;
+    width:35%;
 }
 
+.admin-bar .site-header {
+    margin-top: 0px !important;
+    top: 0 !important;
+}
+body.home.page-template-template-home-page-php .site-header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+}
+body.home.page-template-template-home-page-php .slider{
+    top: 0px !important; 
+    margin-bottom: 0px !important; 
+}
+body.home.page-template-template-home-page-php.admin-bar .site-header {
+    margin-top: 32px !important;
+}
 /*--------------------------------------------------------------
 2.1 Site Title
 --------------------------------------------------------------*/
@@ -431,6 +449,12 @@ input.form-control:focus {
 /*--------------------------------------------------------------
 2.2 Header Menu
 --------------------------------------------------------------*/
+.page-template-template-home-page-php .site-header {
+    height: auto;
+}
+.page-template-template-home-page-php .main-navigation {
+    max-height: initial;
+}
 .main-navigation {
 	font: 400 .846em/3.183em "Raleway", sans-serif;
     letter-spacing: .273em;
@@ -452,7 +476,7 @@ input.form-control:focus {
 .main-navigation a {
 	position: relative;
     display: block;
-    padding: 25px 0 25px 20px;
+    padding: 25px 0 25px 15px;
 	color: #fff;
 	text-decoration: none;
 }

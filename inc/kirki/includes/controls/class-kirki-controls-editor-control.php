@@ -1,55 +1,77 @@
 <?php
 /**
- * editor Customizer Control.
+ * Customizer Control: editor.
  *
  * Creates a TinyMCE textarea.
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
+ * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Early exit if the class already exists
-if ( class_exists( 'Kirki_Controls_Editor_Control' ) ) {
-	return;
-}
+if ( ! class_exists( 'Kirki_Controls_Editor_Control' ) ) {
 
-class Kirki_Controls_Editor_Control extends Kirki_Customize_Control {
+	/**
+	 * A TinyMCE control.
+	 */
+	class Kirki_Controls_Editor_Control extends Kirki_Customize_Control {
 
-	public $type = 'editor';
+		/**
+		 * The control type.
+		 *
+		 * @access public
+		 * @var string
+		 */
+		public $type = 'kirki-editor';
 
-	public function render_content() { ?>
-		<?php if ( '' != $this->help ) : ?>
-			<a href="#" class="tooltip hint--left" data-hint="<?php echo esc_html( $this->help ); ?>"><span class='dashicons dashicons-info'></span></a>
-		<?php endif; ?>
+		/**
+		 * Enqueue control related scripts/styles.
+		 *
+		 * @access public
+		 */
+		public function enqueue() {
+			wp_enqueue_script( 'kirki-editor' );
+		}
 
-		<label>
-			<span class="customize-control-title">
-				<?php echo esc_html( $this->label ); ?>
-				<?php if ( ! empty( $this->description ) ) : ?>
-					<span class="description customize-control-description"><?php echo $this->description; ?></span>
-				<?php endif; ?>
-			</span>
-			<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>">
-			<?php
-				$settings = array(
-					'textarea_name' => $this->id,
-					'teeny'         => true,
-				);
-				wp_editor( html_entity_decode( wp_kses_post( $this->value() ) ), $this->id, $settings );
-
-				do_action( 'admin_footer' );
-				do_action( 'admin_print_footer_scripts' );
+		/**
+		 * An Underscore (JS) template for this control's content (but not its container).
+		 *
+		 * Class variables for this control class are available in the `data` JS object;
+		 * export custom variables by overriding {@see Kirki_Customize_Control::to_json()}.
+		 *
+		 * The actual editor is added from the Kirki_Field_Editor class.
+		 * All this template contains is a button that triggers the global editor on/off
+		 * and a hidden textarea element that is used to mirror save the options.
+		 *
+		 * @see WP_Customize_Control::print_template()
+		 *
+		 * @access protected
+		 */
+		protected function content_template() {
 			?>
-		</label>
-		<?php
+			<# if ( data.tooltip ) { #>
+				<a href="#" class="tooltip hint--left" data-hint="{{ data.tooltip }}"><span class='dashicons dashicons-info'></span></a>
+			<# } #>
+			<label>
+				<# if ( data.label ) { #>
+					<span class="customize-control-title">{{{ data.label }}}</span>
+				<# } #>
+				<# if ( data.description ) { #>
+					<span class="description customize-control-description">{{{ data.description }}}</span>
+				<# } #>
+				<div class="customize-control-content">
+					<a href="#" class="button button-primary toggle-editor"></a>
+					<textarea {{{ data.inputAttrs }}} class="hidden" {{{ data.link }}}>{{ data.value }}</textarea>
+				</div>
+			</label>
+			<?php
+		}
 	}
-
 }

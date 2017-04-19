@@ -6,151 +6,225 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
+ * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Early exit if the class already exists
-if ( class_exists( 'Kirki_Sanitize_Values' ) ) {
-	return;
-}
-
-class Kirki_Sanitize_Values extends Kirki_Sanitize {
+if ( ! class_exists( 'Kirki_Sanitize_Values' ) ) {
 
 	/**
-	 * Checkbox sanitization callback.
-	 *
-	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
-	 * as a boolean value, either TRUE or FALSE.
-	 *
-	 * @param bool|string $checked Whether the checkbox is checked.
-	 * @return bool Whether the checkbox is checked.
+	 * A simple wrapper class for static methods.
 	 */
-	public static function checkbox( $checked ) {
-		return ( ( isset( $checked ) && ( true == $checked || 'on' == $checked ) ) ? true : false );
-	}
+	class Kirki_Sanitize_Values {
 
-	/**
-	 * Sanitize number options
-	 *
-	 * @since 0.5
-	 */
-	public static function number( $value ) {
-		return ( is_numeric( $value ) ) ? $value : intval( $value );
-	}
+		/**
+		 * Fallback for non-existing methods.
+		 *
+		 * @static
+		 * @access public
+		 * @param string $name The method we're trying to access.
+		 * @param mixed  $arguments The arguments the method we're trying to call accepts.
+		 * @return mixed The $arguments provided.
+		 */
+		public static function __callStatic( $name, $arguments ) {
+			error_log( "Kirki_Sanitize_Values::$name does not exist" );
+			return $arguments;
+		}
 
-	/**
-	 * Drop-down Pages sanitization callback.
-	 *
-	 * - Sanitization: dropdown-pages
-	 * - Control: dropdown-pages
-	 *
-	 * Sanitization callback for 'dropdown-pages' type controls. This callback sanitizes `$page_id`
-	 * as an absolute integer, and then validates that $input is the ID of a published page.
-	 *
-	 * @see absint() https://developer.wordpress.org/reference/functions/absint/
-	 * @see get_post_status() https://developer.wordpress.org/reference/functions/get_post_status/
-	 *
-	 * @param int                  $page_id    Page ID.
-	 * @param WP_Customize_Setting $setting Setting instance.
-	 * @return int|string Page ID if the page is published; otherwise, the setting default.
-	 */
-	public static function dropdown_pages( $page_id, $setting ) {
-		// Ensure $input is an absolute integer.
-		$page_id = absint( $page_id );
+		/**
+		 * Checkbox sanitization callback.
+		 *
+		 * Sanitization callback for 'checkbox' type controls.
+		 * This callback sanitizes `$value` as a boolean value, either TRUE or FALSE.
+		 *
+		 * Deprecated. Use Kirki_Field_Checkbox::sanitize() instead.
+		 *
+		 * @static
+		 * @access public
+		 * @see Kirki_Field_Checkbox::sanitize()
+		 * @param bool|string $value Whether the checkbox is checked.
+		 * @return bool Whether the checkbox is checked.
+		 */
+		public static function checkbox( $value ) {
+			return Kirki_Field_Checkbox::sanitize( $value );
+		}
 
-		// If $page_id is an ID of a published page, return it; otherwise, return the default.
-		return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
-	}
+		/**
+		 * Sanitize number options.
+		 *
+		 * @static
+		 * @access public
+		 * @since 0.5
+		 * @param int|float|double|string $value The value to be sanitized.
+		 * @return int|float|double
+		 */
+		public static function number( $value ) {
+			return ( is_numeric( $value ) ) ? $value : intval( $value );
+		}
 
-	/**
-	 * Sanitize sortable controls
-	 *
-	 * @since 0.8.3
-	 *
-	 * @return mixed
-	 */
+		/**
+		 * Drop-down Pages sanitization callback.
+		 *
+		 * - Sanitization: dropdown-pages
+		 * - Control: dropdown-pages
+		 *
+		 * Sanitization callback for 'dropdown-pages' type controls. This callback sanitizes `$page_id`
+		 * as an absolute integer, and then validates that $input is the ID of a published page.
+		 *
+		 * @see absint() https://developer.wordpress.org/reference/functions/absint/
+		 * @see get_post_status() https://developer.wordpress.org/reference/functions/get_post_status/
+		 *
+		 * @param int                  $page_id    Page ID.
+		 * @param WP_Customize_Setting $setting Setting instance.
+		 * @return int|string Page ID if the page is published; otherwise, the setting default.
+		 */
+		public static function dropdown_pages( $page_id, $setting ) {
+			// Ensure $input is an absolute integer.
+			$page_id = absint( $page_id );
 
-	public static function sortable( $value ) {
-		if ( is_serialized( $value ) ) {
+			// If $page_id is an ID of a published page, return it; otherwise, return the default.
+			return ( 'publish' === get_post_status( $page_id ) ? $page_id : $setting->default );
+		}
+
+		/**
+		 * Sanitizes css dimensions.
+		 *
+		 * @static
+		 * @access public
+		 * @since 2.2.0
+		 * @param string $value The value to be sanitized.
+		 * @return string
+		 */
+		public static function css_dimension( $value ) {
+
+			// Trim it.
+			$value = trim( $value );
+
+			// If the value is round, then return 50%.
+			if ( 'round' === $value ) {
+				$value = '50%';
+			}
+
+			// If the value is empty, return empty.
+			if ( '' === $value ) {
+				return '';
+			}
+
+			// If auto, return auto.
+			if ( 'auto' === $value ) {
+				return 'auto';
+			}
+
+			// Return empty if there are no numbers in the value.
+			if ( ! preg_match( '#[0-9]#' , $value ) ) {
+				return '';
+			}
+
+			// If we're using calc() then return the value.
+			if ( false !== strpos( $value, 'calc(' ) ) {
+				return $value;
+			}
+
+			// The raw value without the units.
+			$raw_value = self::filter_number( $value );
+			$unit_used = '';
+
+			// An array of all valid CSS units. Their order was carefully chosen for this evaluation, don't mix it up!!!
+			$units = array( 'rem', 'em', 'ex', '%', 'px', 'cm', 'mm', 'in', 'pt', 'pc', 'ch', 'vh', 'vw', 'vmin', 'vmax' );
+			foreach ( $units as $unit ) {
+				if ( false !== strpos( $value, $unit ) ) {
+					$unit_used = $unit;
+				}
+			}
+
+			// Hack for rem values.
+			if ( 'em' === $unit_used && false !== strpos( $value, 'rem' ) ) {
+				$unit_used = 'rem';
+			}
+
+			return $raw_value . $unit_used;
+		}
+
+		/**
+		 * Filters numeric values.
+		 *
+		 * @static
+		 * @access public
+		 * @param string $value The value to be sanitized.
+		 * @return int|float
+		 */
+		public static function filter_number( $value ) {
+			return filter_var( $value, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
+		}
+
+		/**
+		 * Sanitize sortable controls
+		 *
+		 * @static
+		 * @since 0.8.3
+		 * @param string|array $value The value to be sanitized.
+		 * @return string
+		 */
+		public static function sortable( $value ) {
+			if ( is_serialized( $value ) ) {
+				return $value;
+			} else {
+				return serialize( $value );
+			}
+		}
+
+		/**
+		 * Sanitize RGBA colors
+		 *
+		 * @static
+		 * @since 0.8.5
+		 * @param string $value The value to be sanitized.
+		 * @return string
+		 */
+		public static function rgba( $value ) {
+			$color = ariColor::newColor( $value );
+			return $color->toCSS( 'rgba' );
+		}
+
+		/**
+		 * Sanitize colors.
+		 *
+		 * @static
+		 * @since 0.8.5
+		 * @param string $value The value to be sanitized.
+		 * @return string
+		 */
+		public static function color( $value ) {
+			// If the value is empty, then return empty.
+			if ( '' === $value ) {
+				return '';
+			}
+			// If transparent, then return 'transparent'.
+			if ( is_string( $value ) && 'transparent' === trim( $value ) ) {
+				return 'transparent';
+			}
+			// Instantiate the object.
+			$color = ariColor::newColor( $value );
+			// Return a CSS value, using the auto-detected mode.
+			return $color->toCSS( $color->mode );
+		}
+
+		/**
+		 * DOES NOT SANITIZE ANYTHING.
+		 *
+		 * @static
+		 * @since 0.5
+		 * @param int|string|array $value The value to be sanitized.
+		 * @return int|string|array
+		 */
+		public static function unfiltered( $value ) {
 			return $value;
-		} else {
-			return serialize( $value );
 		}
 	}
-
-	/**
-	 * Sanitize RGBA colors
-	 *
-	 * @since 0.8.5
-	 *
-	 * @return string
-	 */
-	public static function rgba( $value ) {
-
-		// If empty or an array return transparent
-		if ( empty( $value ) || is_array( $value ) ) {
-			return 'rgba(0,0,0,0)';
-		}
-
-		// If string does not start with 'rgba', then treat as hex
-		// sanitize the hex color and finally convert hex to rgba
-		if ( false === strpos( $value, 'rgba' ) ) {
-			return Kirki_Color::get_rgba( Kirki_Color::sanitize_hex( $value ) );
-		}
-
-		// By now we know the string is formatted as an rgba color so we need to further sanitize it.
-		$value = str_replace( ' ', '', $value );
-		sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
-		return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
-
-	}
-
-	/**
-	 * Sanitize colors.
-	 * Determine if the current value is a hex or an rgba color and call the appropriate method.
-	 *
-	 * @since 0.8.5
-	 * @return string
-	 */
-	public static function color( $value ) {
-
-		// Is this an rgba color or a hex?
-		$mode = ( false === strpos( $value, 'rgba' ) ) ? 'rgba' : 'hex';
-
-		if ( 'rgba' == $mode ) {
-			return Kirki_Color::sanitize_hex( $value );
-		} else {
-			return self::rgba( $value );
-		}
-
-	}
-
-	/**
-	 * multicheck callback
-	 */
-	public static function multicheck( $values ) {
-
-		$multi_values = ( ! is_array( $values ) ) ? explode( ',', $values ) : $values;
-		return ( ! empty( $multi_values ) ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
-
-	}
-
-	/**
-	 * DOES NOT SANITIZE ANYTHING.
-	 *
-	 * @since 0.5
-	 *
-	 * @return mixed
-	 */
-	public static function unfiltered( $value ) {
-		return $value;
-	}
-
 }

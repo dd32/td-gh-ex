@@ -57,7 +57,7 @@ function beonepage_register_required_plugins() {
 		array(
 			'name'               => 'BeOnePage Lite Plugin',
 			'slug'               => 'beonepage-lite-plugin',
-			'source'             => 'http://hostingsites.co.in/developer15/betheme/beonepage-lite-plugin.zip',
+			'source'             => 'https://betheme.me/wp-content/uploads/2017/04/beonepage-lite-plugin.zip',
 			'required'           => true,
 			'version'            => '1.0.0',
 			'force_activation'   => true,
@@ -171,38 +171,7 @@ function beonepage_ajax_portfolio() {
 add_action( 'wp_ajax_ajax_portfolio', 'beonepage_ajax_portfolio' );
 add_action( 'wp_ajax_nopriv_ajax_portfolio', 'beonepage_ajax_portfolio' );
 
-/**
- * Send mail using wp_mail().
- */
-function beonepage_contact_send_message() {
-	if ( ! wp_verify_nonce( $_POST['ajax_contact_form_nonce'], 'ajax_contact_form' ) ) {
-		$msg = array( 'error' => __( 'Verification error. Try again!', 'beonepage' ) );
-	} else {
-		$to       = get_option( 'admin_email' );
-		$name     = sanitize_text_field( $_POST['name'] );
-		$email    = sanitize_email( $_POST['email'] );
-		$phone    = sanitize_text_field( $_POST['phone'] );
-		$subject  = sanitize_text_field( $_POST['subject'] );
-		$message  = sanitize_text_field( $_POST['message'] );
-		$headers  = 'From: ' . $name . ' <' . $email . '>' . "\r\n";
-		$headers .= "Reply-To: $email\r\n";
 
-		if ( $phone != '' ) {
-			$subject .= ', from: ' . $name . ', ' . __( 'phone', 'beonepage' ) . ': ' . $phone ;
-		}
-
-		// Send the email using wp_mail().
-		if ( wp_mail( $to, $subject, $message, $headers ) ) {
-			$msg = array( 'success' => __( 'Thank you. The Mailman is on his way!', 'beonepage' ) );
-		} else {
-			$msg = array( 'error' => __( "Sorry, don't know what happened. Try later!", 'beonepage' ) );
-		}
-	}
-
-	wp_send_json( $msg );
-}
-add_action( 'wp_ajax_contact_form', 'beonepage_contact_send_message' );
-add_action( 'wp_ajax_nopriv_contact_form', 'beonepage_contact_send_message' );
 
 /**
  * Add numeric pagination.
@@ -277,13 +246,7 @@ function beonepage_set_post_type( $post_id ) {
 }
 add_action( 'save_post', 'beonepage_set_post_type', 10, 3 );
 
-/**
- * Remove WordPress Admin Bar style from header.
- */
-function beonepage_remove_admin_bar_style() {
-	remove_action( 'wp_head', '_admin_bar_bump_cb' );
-}
-add_action( 'get_header', 'beonepage_remove_admin_bar_style' );
+
 
 /**
  * Remove Recent Comments Widget style from header.
@@ -307,9 +270,9 @@ function beonepage_custom_tag_cloud_font( $args ) {
 add_filter( 'widget_tag_cloud_args', 'beonepage_custom_tag_cloud_font' );
 
 /**
- * Hide editor on Front Page.
+ * Add meta instead of editor on Front Page.
  *
- */
+ */ 
 function beonepage_hide_editor() {
 	global $pagenow, $post;
 

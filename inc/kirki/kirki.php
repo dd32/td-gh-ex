@@ -5,71 +5,62 @@
  * Description:   The ultimate WordPress Customizer Toolkit
  * Author:        Aristeides Stathopoulos
  * Author URI:    http://aristeides.com
- * Version:       1.0.2
+ * Version:       2.3.7
  * Text Domain:   kirki
  *
+ * GitHub Plugin URI: aristath/kirki
+ * GitHub Plugin URI: https://github.com/aristath/kirki
  *
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
+ * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Include the autoloader
-include_once get_template_directory() . '/inc/kirki/autoloader.php' ;
+// No need to proceed if Kirki already exists.
+if ( class_exists( 'Kirki' ) ) {
+	return;
+}
+
+// Include the autoloader. 
+get_template_part('inc/kirki/autoloader');
 
 if ( ! function_exists( 'Kirki' ) ) {
 	/**
-	 * Returns the Kirki object
+	 * Returns an instance of the Kirki object.
 	 */
 	function Kirki() {
-		// Make sure the class is instanciated
 		$kirki = Kirki_Toolkit::get_instance();
-
-		$kirki->font_registry = new Kirki_Google_Fonts_Registry();
-		$kirki->api           = new Kirki();
-		$kirki->scripts       = new Kirki_Scripts_Registry();
-		$kirki->styles        = array(
-			'back'  => new Kirki_Styles_Customizer(),
-			'front' => new Kirki_Styles_Frontend(),
-		);
-
-		/**
-		 * The path of the current Kirki instance
-		 */
-		Kirki::$path = dirname( __FILE__ );
-
 		return $kirki;
-
 	}
-
-	global $kirki;
-	$kirki = Kirki();
 }
+// Start Kirki.
+global $kirki;
+$kirki = Kirki();
 
-/**
- * Apply the filters to the Kirki::$url
- */
-if ( ! function_exists( 'kirki_filtered_url' ) ) {
-	function kirki_filtered_url() {
-		$config = apply_filters( 'kirki/config', array() );
-		if ( isset( $config['url_path'] ) ) {
-			Kirki::$url = esc_url_raw( $config['url_path'] );
-		}
-	}
-	add_action( 'after_setup_theme', 'kirki_filtered_url' );
-}
+// Make sure the path is properly set.
+Kirki::$path = wp_normalize_path( dirname( __FILE__ ) );
 
-include_once get_template_directory() . '/inc/kirki/includes/deprecated.php';
-// Include the API class
-include_once get_template_directory() . '/inc/kirki/includes/class-kirki.php';
+// Instantiate 2ndary classes.
+new Kirki_l10n();
+new Kirki_Scripts_Registry();
+new Kirki_Styles_Customizer();
+new Kirki_Styles_Frontend();
+new Kirki_Selective_Refresh();
+new Kirki();
 
-// Add an empty config for global fields
+// Include deprecated functions & methods.
+include_once wp_normalize_path( dirname( __FILE__ ) . '/includes/deprecated.php' );
+
+// Include the ariColor library.
+include_once wp_normalize_path( dirname( __FILE__ ) . '/includes/lib/class-aricolor.php' );
+
+// Add an empty config for global fields.
 Kirki::add_config( '' );
