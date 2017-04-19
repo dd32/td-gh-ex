@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 5.3 - april 2017
+- removed page template with left sidebar
+- because knowledgebase does not support left sidebar
+- removed files page-sidebar-left and sidebar-left
+- file style: minor changes
+
 MyKnowledgeBase version 5.2 - april 2017
 - file style: minor changes
 

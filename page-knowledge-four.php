@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Knowledge Base
+ * Template Name: Knowledge Base Full Width
  * Description: Template for displaying Categories and Posts.
  */
 ?>

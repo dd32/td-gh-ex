@@ -1,11 +1,11 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 5.2
+Version: 5.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
-Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: myknowledgebase
@@ -73,7 +73,6 @@ body {background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-siz
 
 /* MAIN CONTENT AREA */
 #content {width:65%; float:left; padding:20px 0;}
-#content-right {width:65%; float:right; padding:20px 0;}
 #content-full {width:100%; float:left; padding:20px 0;}
 
 
@@ -197,17 +196,17 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER THIRD */
-#header-third {width:96%; clear:both; float:left; padding:0 2%; background:#08a0ff; color:#fff;}
+#header-third {width:96%; clear:both; float:left; padding:10px 2%; background:#08a0ff; color:#fff;}
 
 
 /* HEADER THIRD SEARCH BAR */
-#header-third .search-form {width:50%; float:right; text-align:right;} 
-#header-third .searchbar-title {width:50%; float:left; margin:8px 0 0;}
+#header-third .searchbar-title {width:49%; float:left;}
+#header-third .search-form {width:49%; float:right; padding:0; text-align:right;} 
 
 
 /* KNOWLEDGE BASE TEMPLATE */
-#categories-three {width:100%; clear:both; float:left;}
-#categories-four {width:100%; clear:both; float:left;}
+#categories-three {width:100%; clear:both; float:left; padding:10px 0 0;}
+#categories-four {width:100%; clear:both; float:left; padding:10px 0 0;}
 
 #categories-three .cat-list {width:30%; margin:0 2% 20px 0; padding:10px 1%; float:left; background:#f8f8f8;}
 #categories-four .cat-list {width:21.5%; margin:0 2% 20px 0; padding:10px 1%; float:left; background:#f8f8f8;}
@@ -268,7 +267,6 @@ img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
-.single-image-right {float:right; margin:0.4em 0 0.4em 1em;}
 
 .wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
@@ -314,7 +312,6 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:33%; float:right; padding:20px 0 0;}
-#sidebar-left {width:33%; float:left; padding:20px 0 0;}
 .widget {padding:0 0 10px; margin:0 0 20px; border-bottom:1px solid #eee;}
 .widgettitle {clear:both; margin:0 0 10px;}
 
@@ -343,7 +340,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; padding:10px 1% 0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
 
 	/* HEADER FIRST */
 	#header-first {padding:0;}
@@ -367,34 +364,33 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second .widgettitle {padding:0; background:none;}
 
 	/* HEADER THIRD */
-	#header-third {width:94%; padding:0 3%; margin:0 0 20px;}
+	#header-third {width:94%; padding:5px 3% 10px; margin:0 0 20px;}
 
 	/* HEADER THIRD SEARCH BAR */
-	#header-third .search-form {width:100%; float:left; text-align:left;} 
-	#header-third .searchbar-title {width:100%; margin:0;}
+	#header-third .searchbar-title {width:100%; clear:both; text-align:center;}
+	#header-third .search-form {width:100%; clear:both; float:left; padding:5px 0 0; text-align:center;} 
 
 	/* KNOWLEDGE BASE TEMPLATE */
-	#categories-three {margin:0;}
+	#categories-three .cat-list {width:47%; margin:0 2% 20px 0; padding:10px 1%;}
+	#categories-four .cat-list {width:47%; margin:0 2% 20px 0; padding:10px 1%;}
 	#categories-three ul:nth-of-type(3n+1) {clear:none;}
-	#categories-three ul:nth-of-type(3n+3) {margin:0 2% 10px 0;}
+	#categories-three ul:nth-of-type(3n+3) {margin:0 2% 20px 0;}
 	#categories-four ul:nth-of-type(4n+1) {clear:none;}
-	#categories-four ul:nth-of-type(4n+4) {margin:0 2% 10px 0;}
+	#categories-four ul:nth-of-type(4n+4) {margin:0 2% 20px 0;}
 	#categories-three ul:nth-of-type(2n+1) {clear:left;}
-	#categories-three ul:nth-of-type(2n+2) {margin:0 0 10px 0;}
+	#categories-three ul:nth-of-type(2n+2) {margin:0 0 20px 0;}
 	#categories-four ul:nth-of-type(2n+1) {clear:left;}
-	#categories-four ul:nth-of-type(2n+2) {margin:0 0 10px 0;}
-	#categories-three .cat-list {width:47%; margin:0 2% 10px 0; padding:10px 1%;}
-	#categories-four .cat-list {width:47%; margin:0 2% 10px 0; padding:10px 1%;}
+	#categories-four ul:nth-of-type(2n+2) {margin:0 0 20px 0;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}
 	.widgettitle, .searchbar-title, .comments-title, .comment-reply-title, .no-comments {font-size:1.45em;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
+	.wp-post-image, .single-image {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
+	#sidebar {width:100%; clear:both; float:left; padding:0;}
 	.widgettitle {padding:5px 3%; background:#08a0ff; color:#fff;}
 
 	/* FOOTER */

@@ -1,12 +1,12 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.2
+Version: 5.3
 Requires at least: 4.2
 Tested up to: 4.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 
 
 == Description ==
@@ -57,7 +57,7 @@ While creating a post you can add the URL (website) of your choice.
 
 When you click the post link in frontend it will redirect you to this URL (so the post will not open).
 
-= Seach bar title =
+= Search bar title =
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
 = Browser support =
