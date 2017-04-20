@@ -54,7 +54,7 @@
 			} else {
 				$slideheight = $slidewidth;
 			}
-			$showexcerpt = 'false'; 
+			$portfolio_excerpt = 'false'; 
 			$portfolio_lightbox = 'false'; 
 			$portfolio_item_types = 'true';
 
