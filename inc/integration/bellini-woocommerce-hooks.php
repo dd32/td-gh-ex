@@ -108,6 +108,7 @@ if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
 	add_action( 'woocommerce_single_product_summary', 'bellini_woo_close_div', 						60 );
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_column_twelve', 				5 );
 	add_action( 'woocommerce_after_single_product_summary', 'bellini_woo_close_div', 				25 );
+
 endif;
 
 
@@ -126,3 +127,17 @@ endif;
 --------------------------------------------------------------*/
 
 add_action( 'woocommerce_checkout_order_review', 'bellini_woo_order_heading', 5 );
+
+
+/*--------------------------------------------------------------
+## Extension: WooCommerce Dynamic Gallery
+--------------------------------------------------------------*/
+
+if ( class_exists( 'WC_Gallery_Display_Class' )):
+
+	if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
+		remove_action( 'woocommerce_before_single_product_summary', 'wc_dynamic_gallery_show', 30);
+		add_action( 'woocommerce_before_single_product_summary', 'wc_dynamic_gallery_show', 20);
+	endif;
+
+endif;

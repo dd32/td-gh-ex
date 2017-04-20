@@ -16,18 +16,18 @@ $bellini_footer_section_pro_conversion 					= esc_html__( '3 more footer layouts
 $bellini_integration_pro_conversion 					= esc_html__( 'Google Analytics, Hotjar, Facebook Conversion Pixel, Heap Analytics, SumoMe and many more integrations.', 'bellini' );
 $bellini_woocommerce_pro_conversion 					= esc_html__( '3 More Shop page & 3 More Single Product Layouts.', 'bellini');
 $bellini_frontpage_section_pro_conversion 				= sprintf( __( 'You are missing out on</br>
-<ul class="bellini__pro--features">
-<li>MailChimp Newsletter Inegration</li>
-<li>Google Map Section</li>
-<li>More Frontpage Sections</li>
-<li>Better Typography</li>
-<li>Premium Email Support</li>
-<li>Advanced Customization</li>
-<li>Full WooCommerce Compatibility</li>
-<li>Shortcodes &amp; Widgets</li>
-</ul><a target="_blank" href="%s">Upgrade To Pro</a> to unlock all features.', 'bellini' ), esc_url( 'https://atlantisthemes.com/' ));
+																			<ul class="bellini__pro--features">
+																			<li>MailChimp Newsletter Inegration</li>
+																			<li>Google Map Section</li>
+																			<li>More Frontpage Sections</li>
+																			<li>Better Typography</li>
+																			<li>Premium Email Support</li>
+																			<li>Advanced Customization</li>
+																			<li>Full WooCommerce Compatibility</li>
+																			<li>Shortcodes &amp; Widgets</li>
+																			</ul><a target="_blank" href="%s" class="bellini__pro--features--button">Upgrade To Pro</a>- 30-day money back guarantee', 'bellini' ), esc_url( 'https://atlantisthemes.com/' ));
 
-$bellini_frontpage_section_pro_conversion_one 				= sprintf( __( '</br><a target="_blank" href="%s" class="lite__pro--customizer">Upgrade To Pro</a>', 'bellini' ), esc_url( 'https://atlantisthemes.com' ));
+
 /*--------------------------------------------------------------
 ## Frontpage Sections
 --------------------------------------------------------------*/
@@ -51,11 +51,11 @@ $wp_customize->add_section('bellini_lite_go_premium_section_one',array(
 			$wp_customize->add_control( new Bellini_Pro_Conversion ( $wp_customize, 'bellini_frontpage_section_conversion_one', array(
 					'type' => 'info',
 					'label' => esc_html__('Hey, you are using Basic version. Unlock More possibilities and features.','bellini'),
-					'description' => $bellini_frontpage_section_pro_conversion_one,
 					'section' => 'bellini_lite_go_premium_section_one',
 					'settings'    => 'bellini[bellini_frontpage_section_conversion_one]',
 					'priority'   => 80,
 			)) );
+
 
 	$wp_customize->add_setting( 'bellini[bellini_frontpage_section_conversion]',
 		array(

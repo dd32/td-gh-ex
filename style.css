@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce (WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.43
+Version: 1.43.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -173,41 +173,67 @@ big {
 # Icon Font
 --------------------------------------------------------------*/
 
-/* Icon Font Declaration */
-.bellini__pagination--np__next:after,
-.bellini__pagination--np__previous:before,
-.comment-reply-link:before,
-.comments-title:before,
-.comments-link a:before,
-.hamburger__menu__middle .sub-menu .menu-item:before,
-.menu-toggle:after,
-.nav-previous a:before,
-.nav-next a:after,
-.nav-menu li > a:after,
-.nav-menu li > a:hover:after,
-.post-edit-link:before,
-.post-meta__time:before,
-.post-meta__author__link:before,
-.post-meta__tag__item:before,
-.site-cart__icon:before,
-.site-search__icon:before {
-    font-family: 'FontAwesome';
+/* Icon Assign */
+
+
+.post-meta__author__link:before {
+  font-family: "Ionicons";
+  content: "\f213";
 }
 
-/* Icon Assign */
-.nav-previous a:before {content: '\f104';}
-.post-meta__author__link:before{content: '\f2c0';}
-.post-meta__time:before{content: '\F017';}
-.comments-link a:before{content: '\F27b';}
-.menu-toggle:after {content: '\f13a';}
+.post-meta__time:before {
+  font-family: "Ionicons";
+  content: "\f4be";
+}
+
+.post-meta__tag__item:before {
+    font-family: "Ionicons";
+    content: "\f2aa";
+}
+
+.comments-link a:before {
+  font-family: "Ionicons";
+  content: "\f3b2";
+}
+
+.menu-toggle:after {
+    font-family: "Ionicons";
+    content: "\f35e";
+}
+
+.comment-reply-link:before {
+  font-family: "Ionicons";
+  content: "\f21e";
+}
+
+.comments-title:before {
+  font-family: "Ionicons";
+  content: "\f2d4";
+}
+
+.post-edit-link:before {
+  font-family: "Ionicons";
+  content: "\f2ba";
+}
+
+.nav-previous a:before{
+    font-family: "Ionicons";
+    content: "\f124";
+}
+
+.bellini__pagination--np__next:after,
 .nav-next a:after,
-.hamburger__menu__middle .sub-menu .menu-item:before{content:"\f105";}
-.post-meta__tag__item:before {content: '\f02b';}
-.post-edit-link:before {content: '\f0ad';}
-.comments-title:before {content: '\f086';}
-.comment-reply-link:before {content: '\f112';}
-.bellini__pagination--np__next:after {content:"\f054";}
-.bellini__pagination--np__previous:before {content:"\f053";}
+.hamburger__menu__middle .sub-menu .menu-item:before{
+    font-family: "Ionicons";
+    content: "\f125";
+}
+
+
+.bellini__pagination--np__previous:before,
+.nav-previous a:before{
+    font-family: "Ionicons";
+    content: "\f124";
+}
 
 
 /*--------------------------------------------------------------
@@ -1547,6 +1573,11 @@ a:hover.page-numbers {
     box-shadow: 0px 2px 4px rgba(0,0,0,0.24);
 }
 
+.text-center.header--three__menu,
+.header--three__other {
+    margin-top:1em;
+}
+
 /*--------------------------------------------------------------
 ## 10.2 - Pages
 --------------------------------------------------------------*/
@@ -2365,7 +2396,6 @@ object {
     margin-left: 2%;
     text-decoration: none;
     color: inherit;
-    opacity: .6;
 }
 
 .comment__meta,
@@ -2436,10 +2466,22 @@ object {
 
 
 .comment-body__left .comment__author {padding-top:.5em;}
+
+.comment-body__right{
+    background-color: white;
+    border-radius:2px;
+    box-shadow: 0 1px 1.5px rgba(0,0,0,.12), 0 1px 1px rgba(0,0,0,.24);
+    padding:.5em 1.5em;
+    margin-top:.6em;
+}
+
 .comment-body__right .button--reply,
-.comment-body__right .comment__meta {font-size:.85em}
-
-
+.comment-body__right .comment__meta,
+.comment__edit {
+    font-size: .8em;
+    opacity: .75;
+    line-height: 1.4;
+}
 
 /*--------------------------------------------------------------
 # 16.0 - Widgets
