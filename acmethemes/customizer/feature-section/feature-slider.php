@@ -18,8 +18,7 @@ $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-feature-page]', a
 
 $wp_customize->add_control( 'acmephoto_theme_options[acmephoto-feature-page]', array(
     'label'		    => __( 'Select a Page', 'acmephoto' ),
-    'description'	=> sprintf( __( 'Recommended to write short title, short content/excerpt and use featured image 1280*610 for the selected page below. If you want to show slider, the page you selected should have %s child pages %s', 'acmephoto' ), '<a href="https://www.acmethemes.com/blog/2016/04/how-to-create-child-pages-sub-pages/" target="_blank">','</a>' ),
-    __( '', 'acmephoto' ),
+    'description'	=> sprintf( __( 'Recommended to write short title, short content/excerpt and use featured image 1280*610 for the selected page below. If you want to show slider, the page you selected should have %1$s child pages %2$s', 'acmephoto' ), '<a href="https://www.acmethemes.com/blog/2016/04/how-to-create-child-pages-sub-pages/" target="_blank">','</a>' ),
     'section'       => 'acmephoto-feature-page',
     'settings'      => 'acmephoto_theme_options[acmephoto-feature-page]',
     'type'	  	    => 'dropdown-pages',

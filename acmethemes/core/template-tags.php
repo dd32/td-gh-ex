@@ -29,7 +29,7 @@ if ( ! function_exists( 'acmephoto_posted_on' ) ) :
 			);
 
 			$posted_on = sprintf(
-				esc_html_x( '%s', 'post date', 'acmephoto' ),
+				'%s',
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="fa fa-calendar"></i>' . $time_string . '</a>'
 			);
 			echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -38,7 +38,7 @@ if ( ! function_exists( 'acmephoto_posted_on' ) ) :
 		if( 1== $show_author ){
 
 			$byline = sprintf(
-				esc_html_x( '%s', 'post author', 'acmephoto' ),
+				'%s',
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i>' . esc_html( get_the_author() ) . '</a></span>'
 			);
 
@@ -59,7 +59,7 @@ function acmephoto_entry_footer( $show_cat = 1, $show_tag = 1 , $show_comment = 
 		if( 1 == $show_cat ){
 			$categories_list = get_the_category_list( esc_html__( ', ', 'acmephoto' ) );
 			if ( $categories_list && acmephoto_categorized_blog() ) {
-				printf( '<span class="cat-links"><i class="fa fa-folder-o"></i>' . esc_html__( '%1$s', 'acmephoto' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links"><i class="fa fa-folder-o"></i>%1$s</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -67,7 +67,7 @@ function acmephoto_entry_footer( $show_cat = 1, $show_tag = 1 , $show_comment = 
 		if( 1 == $show_tag ){
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'acmephoto' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links"><i class="fa fa-tags"></i>' . esc_html__( '%1$s', 'acmephoto' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links"><i class="fa fa-tags"></i>%1$s</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 	}

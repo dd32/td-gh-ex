@@ -89,7 +89,7 @@ if ( ! function_exists( 'acmephoto_footer' ) ) :
                         <div class="site-info">
                             <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acmephoto' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acmephoto' ), 'WordPress' ); ?></a>
                             <span class="sep"> | </span>
-                            <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'acmephoto' ), 'AcmePhoto', '<a href="https://www.acmethemes.com/" rel="designer">Acme Themes</a>' ); ?>
+                            <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'acmephoto' ), 'AcmePhoto', '<a href="https://www.acmethemes.com/" rel="designer">Acme Themes</a>' ); ?>
                         </div><!-- .site-info -->
                     </div>
                 </div>

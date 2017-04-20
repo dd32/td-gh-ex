@@ -19,8 +19,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'single' );
 
 				the_post_navigation( array(
-					'prev_text'                  => __( '<span class="nav-title prev">'.__('Previous','acmephoto').'</span>' ),
-					'next_text'                  => __( '<span class="nav-title next">'.__('Next','acmephoto').'</span>' )
+					'prev_text'                  => '<span class="nav-title prev">'.__('Previous','acmephoto').'</span>',
+					'next_text'                  => '<span class="nav-title next">'.__('Next','acmephoto').'</span>'
 				) );
 
 				/**

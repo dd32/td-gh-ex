@@ -13,7 +13,6 @@
 if ( !function_exists('acmephoto_commment_list') ) :
 
     function acmephoto_commment_list($comment, $args, $depth) {
-        $GLOBALS['comment'] = $comment;
         extract($args, EXTR_SKIP);
         if ('div' == $args['style']) {
             $tag = 'div';
@@ -31,7 +30,7 @@ if ( !function_exists('acmephoto_commment_list') ) :
         <?php endif; ?>
         <div class="comment-author vcard">
             <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, '64'); ?>
-            <?php printf(__('<cite class="fn">%s</cite>', 'acmephoto' ), get_comment_author_link()); ?>
+            <?php echo '<cite class="fn">'.get_comment_author_link().'</cite>'; ?>
         </div>
         <?php if ($comment->comment_approved == '0') : ?>
             <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'acmephoto'); ?></em>

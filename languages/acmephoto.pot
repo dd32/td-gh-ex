@@ -1,12 +1,12 @@
-# Copyright (C) 2016 the Acme Themes
+# Copyright (C) 2017 the Acme Themes
 # This file is distributed under the GNU General Public License v2 or later.
 
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AcmePhoto\n"
-"POT-Creation-Date: 2016-08-25 18:56+0545\n"
-"PO-Revision-Date: 2016-08-25 18:56+0545\n"
+"POT-Creation-Date: 2017-04-20 11:57+0545\n"
+"PO-Revision-Date: 2017-04-20 11:57+0545\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: acmethemes/core.php:50
+#: acmethemes/core.php:53
 msgid "Primary Menu"
 msgstr ""
 
@@ -44,25 +44,8 @@ msgstr ""
 msgid "No More"
 msgstr ""
 
-#: acmethemes/core/template-tags.php:32
-#, php-format
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#: acmethemes/core/template-tags.php:41
-#, php-format
-msgctxt "post author"
-msgid "%s"
-msgstr ""
-
 #: acmethemes/core/template-tags.php:60 acmethemes/core/template-tags.php:68
 msgid ", "
-msgstr ""
-
-#: acmethemes/core/template-tags.php:62 acmethemes/core/template-tags.php:70
-#, php-format
-msgid "%1$s"
 msgstr ""
 
 #: acmethemes/core/template-tags.php:77
@@ -138,25 +121,45 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
+#: acmethemes/customizer/customizer-core.php:113
+msgid "Top Normal"
+msgstr ""
+
 #: acmethemes/customizer/customizer-core.php:114
-msgid "Do Not Reset"
+msgid "Top Fixed"
 msgstr ""
 
 #: acmethemes/customizer/customizer-core.php:115
+msgid "Below Feature"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:134
+msgid "Do Not Reset"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:135
 msgid "Reset Colors Options"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:116
+#: acmethemes/customizer/customizer-core.php:136
 msgid "Reset All"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:150
+#: acmethemes/customizer/customizer-core.php:173
 msgid "&copy; All Right Reserved 2016"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:175
+#: acmethemes/customizer/customizer-core.php:198
 #: acmethemes/customizer/options/search.php:7
 msgid "Search"
+msgstr ""
+
+#: acmethemes/customizer/customizer-pro/class-customize.php:76
+msgid "AcmePhotoPro"
+msgstr ""
+
+#: acmethemes/customizer/customizer-pro/class-customize.php:77
+msgid "Upgrade To Pro"
 msgstr ""
 
 #: acmethemes/customizer/design-options/background-image.php:7
@@ -251,22 +254,41 @@ msgid "Select a Page"
 msgstr ""
 
 #: acmethemes/customizer/feature-section/feature-slider.php:21
+#, php-format
 msgid ""
 "Recommended to write short title, short content/excerpt and use featured "
-"image 1280*610 for the selected page below"
+"image 1280*610 for the selected page below. If you want to show slider, the "
+"page you selected should have %1$s child pages %2$s"
 msgstr ""
 
-#: acmethemes/customizer/feature-section/feature-slider.php:37
+#: acmethemes/customizer/feature-section/feature-slider.php:39
+msgid "Feature Section Height"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-slider.php:40
+#, php-format
+msgid ""
+"Control the height of feature section according to the height of device. The "
+"minimum height is 50% of current screens size."
+msgstr ""
+
+#: acmethemes/customizer/feature-section/feature-slider.php:58
 msgid "Feature Button Options"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/social-options.php:7
+#: acmethemes/customizer/header-options/social-options.php:7
+msgid "Social Options"
+msgstr ""
+
+#: acmethemes/customizer/feature-section/social-options.php:18
+#: acmethemes/customizer/footer-section/footer-section.php:17
+#: acmethemes/customizer/header-options/social-options.php:60
+msgid "Enable social"
 msgstr ""
 
 #: acmethemes/customizer/footer-section/footer-section.php:7
 msgid "Footer Option"
-msgstr ""
-
-#: acmethemes/customizer/footer-section/footer-section.php:17
-#: acmethemes/customizer/header-options/social-options.php:60
-msgid "Enable social"
 msgstr ""
 
 #: acmethemes/customizer/footer-section/footer-section.php:31
@@ -289,8 +311,12 @@ msgstr ""
 msgid "Customize your awesome site header "
 msgstr ""
 
-#: acmethemes/customizer/header-options/social-options.php:7
-msgid "Social Options"
+#: acmethemes/customizer/header-options/menu-option.php:7
+msgid "Menu Options"
+msgstr ""
+
+#: acmethemes/customizer/header-options/menu-option.php:20
+msgid "Menu Position"
 msgstr ""
 
 #: acmethemes/customizer/header-options/social-options.php:18
@@ -353,45 +379,40 @@ msgstr ""
 msgid "Show Related Images In Single Post"
 msgstr ""
 
-#: acmethemes/functions.php:34
-#, php-format
-msgid "<cite class=\"fn\">%s</cite>"
-msgstr ""
-
-#: acmethemes/functions.php:37
+#: acmethemes/functions.php:36
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: acmethemes/functions.php:45
+#: acmethemes/functions.php:44
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: acmethemes/functions.php:47
+#: acmethemes/functions.php:46
 msgid "(Edit)"
 msgstr ""
 
-#: acmethemes/functions.php:120
+#: acmethemes/functions.php:119
 msgid "Home"
 msgstr ""
 
-#: acmethemes/functions.php:121
+#: acmethemes/functions.php:120
 msgid "Search Results for "
 msgstr ""
 
-#: acmethemes/functions.php:216
+#: acmethemes/functions.php:215
 msgid "Posts tagged : "
 msgstr ""
 
-#: acmethemes/functions.php:221
+#: acmethemes/functions.php:220
 msgid "Author: "
 msgstr ""
 
-#: acmethemes/functions.php:224
+#: acmethemes/functions.php:223
 msgid "Error 404"
 msgstr ""
 
-#: acmethemes/functions.php:231
+#: acmethemes/functions.php:230
 msgid "Page"
 msgstr ""
 
@@ -434,7 +455,7 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: acmethemes/hooks/header.php:172
+#: acmethemes/hooks/header.php:219
 msgid "Skip to content"
 msgstr ""
 
@@ -442,15 +463,15 @@ msgstr ""
 msgid "Related Images"
 msgstr ""
 
-#: acmethemes/hooks/slider-selection.php:22
+#: acmethemes/hooks/slider-selection.php:23
 msgid "Life Is Beautiful"
 msgstr ""
 
-#: acmethemes/hooks/slider-selection.php:27
+#: acmethemes/hooks/slider-selection.php:26
 msgid "Don't miss anything"
 msgstr ""
 
-#: acmethemes/hooks/slider-selection.php:90
+#: acmethemes/hooks/slider-selection.php:93
 msgid "Read More"
 msgstr ""
 
@@ -541,27 +562,33 @@ msgstr ""
 msgid "Footer Column Three"
 msgstr ""
 
-#: comments.php:32
+#: comments.php:34
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:39
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:41 comments.php:63
+#: comments.php:55 comments.php:77
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:44 comments.php:66
+#: comments.php:58 comments.php:80
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:45 comments.php:67
+#: comments.php:59 comments.php:81
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:80
+#: comments.php:94
 msgid "Comments are closed."
 msgstr ""
 
@@ -574,16 +601,8 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: single.php:22
-msgid "<span class=\"nav-title prev\">"
-msgstr ""
-
 #: single.php:23
 msgid "Next"
-msgstr ""
-
-#: single.php:23
-msgid "<span class=\"nav-title next\">"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -608,7 +627,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:23 template-parts/content-single.php:71
+#: template-parts/content-page.php:23 template-parts/content-single.php:73
 msgid "Pages:"
 msgstr ""
 
@@ -618,20 +637,6 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://www.acmethemes.com/themes/acmephoto/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"AcmePhoto is a fully Responsive WordPress Theme based masonry layout, a "
-"perfect theme for a website or blog about photography, photographer, as well "
-"as photo shooting. An elegant theme with quality code and customizer based. "
-"A translation ready theme with major browser supportive. AcmePhoto comes "
-"with lots of features including logo options, site layout options, header "
-"options, footer options, sidebar options as well as color options too. "
-"Related posts, breadcrumb, search options, social icons, custom widgets are "
-"the added features on this theme. This theme packs lots of premium features  "
-"which helps you to make your site awesome and well organized. Demo: http://"
-"demo.acmethemes.com/acmephoto Supports : https://www.acmethemes.com/supports/"
 msgstr ""
 
 #. Author of the plugin/theme
