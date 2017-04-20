@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.8 | 20th April 2017 = 
+* Fix: Issue with wc notice
+* Fix: Missing icon in admin.
+
 = Version 2.9.7 | 18th April 2017 = 
 * Fix: Issue with cart reload and quantity.
 * Update: Icon font to include vimeo.
