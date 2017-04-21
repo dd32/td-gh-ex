@@ -53,7 +53,7 @@ MachoThemes.initMainSlider = function ($) {
 			dots           : false,
 			mouseDrag      : true,
 			navText        : '',
-			// navText     : [ "<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ],
+			// navText     : [ "<i class='nmicon-angle-left'></i>", "<i class='nmicon-angle-right'></i>" ],
 			navClass       : [ "main-slider-previous", "main-slider-next" ],
 			autoplay       : true,
 			autoplayTimeout: 17000,
@@ -107,6 +107,12 @@ MachoThemes.initMTNavigation = function ($) {
 	var MTcalcWidth = function (element) {
 		return element.width();
 	};
+
+	/**
+	 *
+	 * @type {number}
+	 */
+	var toggled = 0;
 
 	/**
 	 * Check the resize direction ( LEFT OR RIGHT )
@@ -249,6 +255,23 @@ MachoThemes.initMTNavigation = function ($) {
 		});
 	});
 
+	/**
+	 * Close menu on click
+	 */
+	$(document).on('click', function (e) {
+		var menuToggled = $('.mt-navigation-opener').next('ul');
+
+		if ( menuToggled.hasClass('opened') ) {
+			toggled++;
+		}
+
+		if ( !menuToggled.is(e.target) ) {
+			if ( toggled > 1 ) {
+				menuToggled.removeClass('opened');
+				toggled = 0;
+			}
+		}
+	});
 
 	/**
 	 * Window resize handling
@@ -328,16 +351,19 @@ MachoThemes.initSearchForm = function ($) {
 		e.preventDefault();
 		trigger.toggleClass('hide');
 		element.toggleClass('opened');
+		setTimeout(function () {
+			input.focus();
+		}, 300);
 		if ( input.val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
-			inputSubmit.html('<span class="fa fa-search"></span>');
+			inputSubmit.html('<span class="nmicon-search"></span>');
 		}
 	});
 
 	input.on('keyup', function () {
 		if ( $(this).val() !== '' ) {
 			inputSubmit.addClass('submit-button').removeClass('close-button');
-			inputSubmit.html('<span class="fa fa-search"></span>');
+			inputSubmit.html('<span class="nmicon-search"></span>');
 		} else {
 			inputSubmit.addClass('close-button').removeClass('submit-button');
 			inputSubmit.html('<span class="first-bar"></span><span class="second-bar"></span>');
@@ -353,6 +379,7 @@ MachoThemes.initSearchForm = function ($) {
 		}
 	});
 };
+
 MachoThemes.initStickyMenu = function ($) {
 	var selector = $('.stick-menu'),
 			container = selector.find('.stick-menu-logo'),

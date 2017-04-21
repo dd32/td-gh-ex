@@ -22,14 +22,12 @@ class Epsilon_Autoloader {
 		$bind  = implode( '-', $parts );
 
 		$directories = array(
-			get_template_directory(),
-			get_template_directory() . '/controls/',
-			get_template_directory() . '/sections/',
+			get_template_directory() . '/inc/libraries/epsilon-framework/',
 		);
 
 		foreach ( $directories as $directory ) {
-			if ( file_exists( $directory . '/class-' . strtolower( $bind ) . '.php' ) ) {
-				require_once $directory . '/class-' . strtolower( $bind ) . '.php';
+			if ( file_exists( $directory . 'class-' . strtolower( $bind ) . '.php' ) ) {
+				require_once $directory . 'class-' . strtolower( $bind ) . '.php';
 
 				return;
 			}
