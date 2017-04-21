@@ -3,9 +3,9 @@
 Contributors: smartcat,automattic
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
-Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.0.9
+Requires at least: 4.6
+Tested up to: 4.7.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ Bug fixes
 = 1.0.9 - 
 Remove Customizer custom CSS
 Update tags
+
+= 1.1.0 =
+updated TGM to latest version
+Bug fix for sidebar on Shop page
 
 
 == Credits ==
