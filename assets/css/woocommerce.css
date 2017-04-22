@@ -765,6 +765,19 @@ body.archive.woocommerce .product-category mark.count {
     position: relative;
 }
 
+.product-thumbnail img {
+	width:100%
+}
+
+.product-thumbnail {
+	overflow:hidden;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+    margin-top: 1em;
+    margin-right: 3.8%;
+}
+
 .woocommerce .col-md-8.product-wrapper .product-container.col-md-4 .product-content ,
 .woocommerce .col-md-8.product-wrapper .product-container.col-md-3 .product-content {
     padding: 30px 20px;

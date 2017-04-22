@@ -10,10 +10,10 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.6.1
+ * @version 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +59,6 @@ $woocommerce_loop['loop']++;
  			<h3 class="product-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h3>
                 
 			<?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
-        
         
 		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 	
