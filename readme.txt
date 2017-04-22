@@ -3,7 +3,7 @@
 Contributors: (rubel_miah)
 Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, responsive-layout custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, translation-ready
 Requires at least: 4.0
-Tested up to: 4.4
+Tested up to: 4.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,8 @@ Aster is one of the most Elegant, Trendy, Clean and Creative high-performance Re
 
 == Changelog ==
 
+= 1.5.1 =
+* Add pre-loader on/off option
 
 
 == Upgrade Notice ==

@@ -10,12 +10,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php if(!get_theme_mod('aster_pre_loader') ): ?>
 <div id="st-preloader">
 	<div id="pre-status">
 		<div class="preload-placeholder"></div>
 	</div>
 </div>
+<?php endif; ?>
 
 <header class="header">
 	<div class="header-top text-center">

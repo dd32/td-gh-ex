@@ -48,6 +48,8 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		add_theme_support( 'woocommerce' );
+
 		// Post thumbnails
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'aster-post-thumbnails', 750, 450, true );
@@ -57,7 +59,6 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 endif; // aster_theme_setup
 
 add_action( 'after_setup_theme', 'aster_theme_setup' );
-
 
 
 //////////////////////////////////////////////////////////////////
@@ -132,19 +133,8 @@ add_action( 'wp_enqueue_scripts', 'aster_all_scripts_and_css' );
 
 
 //////////////////////////////////////////////////////////////////
-// WooCommerce support
-//////////////////////////////////////////////////////////////////
-
-add_action( 'after_setup_theme', 'aster_woocommerce_support' );
-function aster_woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-}
-
-
-//////////////////////////////////////////////////////////////////
 // Widget categories post counter
 //////////////////////////////////////////////////////////////////
-
 function aster_categories_post_count_filter( $cat_post_count ) {
 	$cat_post_count = str_replace( '(', '<span class="post_count pull-right"> (', $cat_post_count );
 	$cat_post_count = str_replace( ')', ' )</span>', $cat_post_count );
@@ -243,6 +233,7 @@ endif;
 //////////////////////////////////////////////////////////////////
 // Include files
 //////////////////////////////////////////////////////////////////
+require_once get_template_directory() . '/inc/customizer/customizer-settings.php';
 
 //Custom Widgets 
 require_once get_template_directory() . '/inc/widgets/blog-posts.php';
