@@ -1798,9 +1798,11 @@ tr:nth-child(2n+2) {
 	height:24px;
 	width:24px;
 	background:#454545;
+	color:#fff;
 	filter: none !important;
 	text-align:center;
 	line-height:24px;
+	margin-bottom:5px
 }
 
 #footer .socials a i {
