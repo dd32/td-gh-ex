@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,8 +24,7 @@ global $post, $product;
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-$thumbnail_post    = get_post( $post_thumbnail_id );
-$image_title       = $thumbnail_post->post_content;
+$image_title       = get_post_field( 'post_excerpt', $post_thumbnail_id );
 $placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
@@ -50,6 +49,7 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 			$html .= '<a data-rel="prettyPhoto[product-gallery]" href="' . esc_url( $full_size_image[0] ) . '">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
 			$html .= '</a></div>';
+			
 		} else {
 			$html  = '<div class="product-thumbnail woocommerce-product-gallery__image--placeholder">';
 			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'suevafree' ) );

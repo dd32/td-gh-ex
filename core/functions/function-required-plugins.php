@@ -30,14 +30,14 @@ if (!function_exists('suevafree_required_plugins')) {
 			),
 			
 			array(
-				'name'      => 'Contact Form 7',
-				'slug'      => 'contact-form-7',
+				'name'      => 'WIP Custom Login',
+				'slug'      => 'wip-custom-login',
 				'required'  => false,
 			),
-	
+
 			array(
-				'name'      => 'WooCommerce',
-				'slug'      => 'woocommerce',
+				'name'      => 'WIP WooCarousel Lite',
+				'slug'      => 'wip-woocarousel-lite',
 				'required'  => false,
 			),
 	
@@ -56,18 +56,6 @@ if (!function_exists('suevafree_required_plugins')) {
 			array(
 				'name'      => 'Instagram Slider Widget',
 				'slug'      => 'instagram-slider-widget',
-				'required'  => false,
-			),
-
-			array(
-				'name'      => 'WIP Custom Login',
-				'slug'      => 'wip-custom-login',
-				'required'  => false,
-			),
-
-			array(
-				'name'      => 'WIP WooCarousel Lite',
-				'slug'      => 'wip-woocarousel-lite',
 				'required'  => false,
 			),
 
