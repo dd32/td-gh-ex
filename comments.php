@@ -14,21 +14,17 @@ display the comments for the theme.
 */
 ?>
 <?php
-if ( post_password_required() ) {
-	return;
-}
-?>
+if (post_password_required()) { return; } ?>
 
 <div id="comments" class="comments-area">
-
-<?php // You can start editing here -- including this comment! ?>
-
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
-            <?php
-                    printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'silver-quantum' ),
-                            number_format_i18n( get_comments_number() ));
-            ?>
+        <?php $count = get_comments_number(); ?>
+        <?php if ('1' === $count) {
+            printf(_x('One Comment on %s', 'comments title', 'silver-quantum'), get_the_title());
+        } else {
+            printf(_nx('%1$s Comment on %2$s', '%1$s Comments on %2$s', $count, 'comments title', 'silver-quantum'), number_format_i18n($count), get_the_title());
+        } ?>
     </h2>
 
     <ol class="comment-list">

@@ -14,13 +14,15 @@ content. This content.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="post-thumbniail-banner">
-        <?php the_post_thumbnail('silver-quantum-banner'); ?>
-    </div>
+    <?php if (has_post_thumbnail()) { ?>
+        <div class="entry-post-thumbnail">
+            <?php the_post_thumbnail('silver-quantum-banner'); ?>
+        </div>
+    <?php } ?>
     <header class="entry-header">
         <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
+        <span class="post-index-metadata"><?php silver_quantum_index_entry_posted_on(); ?></span>
     </header>
-    <span class="post-index-metadata"><?php silver_quantum_index_entry_posted_on(); ?></span>
     <div class="entry-excerpt">
         <?php the_excerpt(); ?>
         <?php if (!is_singular() || is_front_page()) { ?>

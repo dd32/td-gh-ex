@@ -6,8 +6,8 @@ Author URI: https://www.lumiathemes.com/
 Description: This Silver Quantum is converted into a responsive theme with the same features such as a fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-Version: 0.3.5
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready
+Version: 0.3.6
 Text Domain: silver-quantum
 
 This theme, like WordPress, is licensed under the GPL.
@@ -57,39 +57,32 @@ Table of Content
  1.0 - Normalize (Reset)
 ================================================================================================
 */
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
+/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
 
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
 html {
-  font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers (opinionated).
- */
-
-body {
-  margin: 0;
-}
-
-/**
  * Add the correct display in IE 9-.
  */
+body {
+    margin: 0;
+}
 
 article,
 aside,
@@ -167,17 +160,7 @@ a {
 }
 
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-
-a:active,
-a:hover {
-  outline-width: 0;
-}
-
-/**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -304,8 +287,7 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * 1. Change the font styles in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
+ * Remove the margin in Firefox and Safari.
  */
 
 button,
@@ -313,10 +295,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  margin: 0;
 }
 
 /**
@@ -373,16 +352,6 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
-}
-
-/**
- * Change the border, margin, and padding in all browsers (opinionated).
- */
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -631,7 +600,8 @@ img {
 ================================================================================================
 */
 body {
-    font-family: 'Merriweather Sans', sans-serif;
+    background: #cccccc;
+    font-family: 'Merriweather', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -639,6 +609,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+    line-height: 1.5em;
 	margin-bottom: 1.5em;
 }
 
@@ -699,68 +670,22 @@ big {
  5.0 - Forms
 ================================================================================================
 */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+.comment-form input[type="submit"] {
+    background: #ffffff;
     border: 1px solid #000000;
-	border-radius: 0;
-	background: #fff;
-	color: #000000;
-	font-family: 'Sanchez', serif;
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: 0.6em;
+    display: inline-block;
+    font-family: 'Sanchez', serif;
+    padding: 10px 15px;
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #000;
-	color: #fff;
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #000;
-	color: #fff;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 0.8em;
-    width: 99%;
+.comment-form input[type="submit"]:hover {
+    background: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Sanchez', serif;
+    padding: 10px 15px;
 }
 
 textarea {
@@ -768,6 +693,7 @@ textarea {
 	width: 97%;
     height: 20em;
 }
+
 
 /*
 ================================================================================================
@@ -847,22 +773,18 @@ a:hover {
 .top-nav {
     background: #666666;
     border-bottom: 2px solid #ffffff;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
 }
 
 .primary-navigation {
 	clear: both;
 	display: block;
-    font-family: 'Sanchez', serif;
 	width: 100%;
 }
 
 .primary-navigation ul {
 	display: block;
 	list-style: none;
-	margin: 0.2em 0 0 0;
+	margin: 0;
 }
 
 .primary-navigation li {
@@ -877,11 +799,13 @@ a:hover {
 .primary-navigation a {
 	position: relative;
 	display: block;
-	padding: 0.7em 1em;
+	padding: 0.5em 1em;
+    font-family: 'Sanchez', serif;
+    font-weight: 0.875em;
 	font-weight: 400;
 	text-decoration: none;
 	line-height: 1.6em;
-	color: white;
+	color: #ffffff;
 }
 
 .primary-navigation a:hover,
@@ -934,8 +858,8 @@ a:hover {
 	position: absolute;
 	height: 27px;
 	width: 27px;
-	top: 10px;
-	right: 8px;
+	top: 6px;
+	right: 6px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -974,8 +898,9 @@ a:hover {
 	bottom: 1em;
 	left: 1em;
     display: none;
+    padding: 0.4em;
 	font-size: 1em;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Sanchez', serif;
 	background-color: #000;
 	color: #fff;
 	border: solid 2px #fff;
@@ -1023,6 +948,45 @@ a:hover {
 	display: block;
 }
 
+.site-logo {
+    float: left;
+    margin: 0;
+	position: relative;
+}
+
+.site-logo a {
+    background: #000000;
+    color: #ffffff;
+    height: 2.2em;
+    margin: 0.6em;
+    padding: 0.2em;
+    position: absolute;
+    text-decoration: none;
+    width: 2.2em;
+    z-index: 10;
+    
+}
+
+.site-logo a:hover,
+.site-logo a:focus {
+	outline: 4px solid #ffffff;
+}
+
+.site-firstletter {
+	font-family: 'Sanchez', serif;
+    font-size: 1.7em;
+	font-weight: 700;
+	text-align: center;
+    text-transform: uppercase;
+}
+
+.site-logo a:hover .site-firstletter,
+.site-logo a:focus .site-firstletter {
+	background: white;
+	color: black;
+    height: 1.063em;
+}
+
 /*
 ================================================================================================
 10.0 - Navigation (Footer Navigation)
@@ -1040,34 +1004,107 @@ a:hover {
 12.0 - Navigation (Pagination Navigation)
 ================================================================================================
 */
-.paging-navigation {
-    margin: 1.563em 0;
+.post-navigation {
+    margin: 0.5em 0;
+}
+.pagination {
     text-align: center;
 }
 
-.paging-navigation .nav-links {
-    margin: 0.625em 0;
-}
-
-
-.pagination span,
-.pagination a {
-	border: 1px solid #cccccc;
-	padding: 3px 9px;
+.page-numbers {
+	display: inline-block;
+	padding: .4em 1.2em;
+	color: #333;
+	line-height: 1.3em;
+    margin: 1em 0;
 	text-decoration: none;
+	border: 1px solid #c3c3c3;
 }
 
-.pagination a:hover,
-.pagination a:focus {
+.page-numbers:hover {
+	background: #000;
 	color: #fff;
-	background-color: #777;
-	border-color: #777;
+	border-color: #000;
 }
-.pagination .current{
-	padding: 3px 9px;
-	color: #fff;
-	background-color: #777;
-	border: 1px #777 solid;
+
+.page-number:hover a {
+    color: #ffffff;
+}
+
+.page-numbers.current {
+    font-weight: 700;
+}
+
+.page-numbers.current::after {
+    border: 0.063em solid #000000;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0.625em;
+}
+
+.page-numbers.current:hover::after {
+    border: 0.063em solid #ffffff;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0.625em;
+}
+
+.nav-previous {
+    float: left;
+}
+
+.nav-next {
+    float: right;
+}
+
+.nav-links .nav-previous {
+	display: inline-block;
+	padding: .5em 1.2em;
+	color: #333;
+    float: left;
+	line-height: 1.3em;
+    margin: 1em 0;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.nav-links .nav-next {
+	display: inline-block;
+	padding: .5em 1.2em;
+	color: #333;
+    float: right;
+	line-height: 1.3em;
+    margin: 1em 0;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.nav-links .nav-previous a:hover {
+
+}
+
+.nav-links .nav-next a:hover {
+
+}
+
+.post-next {
+    display: block;
+    font-size: 0.813em;
+    font-weight: 700;
+    text-align: right
+}
+
+.post-previous {
+    display: block;
+    font-size: 0.813em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.post-title:hover {
+    text-decoration: underline;
 }
 
 /*
@@ -1081,14 +1118,13 @@ a:hover {
 14.0 - Basic Structure
 ================================================================================================
 */
-.height {
-    height: 5em;
+.align-center {
+    margin: 0 auto;
+    max-width: 64em;
 }
 
 .site-container {
     background: #ffffff;
-    border: 1px solid #999999;
-    box-shadow: 0 0 10px 0;
     margin: 0 auto;
     max-width: 64em;
 }
@@ -1139,28 +1175,18 @@ a:hover {
 16.0 - Content Area (Posts and Pages)
 ================================================================================================
 */
-.content-area {
-    margin: 0 auto;
-    width: 100%;
-    /* width: 65.4296875%; */
-}
-
-.sidebar-left .content-area {
+.left-sidebar .content-area {
     float: right;
     width: 65.4296875%
 }
 
-.sidebar-right .content-area {
+.right-sidebar .content-area {
     float: left;
-    width: 65.4296875%
-}
-
-.post {
-    margin: 0 0 6em 0;
+    width: 68.41046277665996%
 }
 
 .entry-header {
-
+    text-align: center;
 }
 
 .entry-title {
@@ -1199,8 +1225,6 @@ a:hover {
     font-size: 1.188em;
 }
 
-
-
 .post-index-metadata {
     font-size: 0.813em;
 }
@@ -1209,31 +1233,24 @@ a:hover {
 	text-align: center;
 }
 
-.continue-reading a,
-.entry-content .continue-reading a {
+.continue-reading::after {
+    border: 1px solid #eeeeee;
+    content: "";
+    display: block;
+    margin: 1.5em auto 3em auto;
+    width: 50px;
+}
+
+.continue-reading a {
 	display: inline-block;
-	margin: 1em auto;
-	padding: 16px 20px;
-	font-family: "Open Sans", sans-serif;
+	padding: 10px 15px;
 	text-decoration: none;
 	border: 1px solid #c3c3c3;
 }
 
-.continue-reading a:hover,
-.continue-reading a:focus,
-.entry-content .continue-reading a:hover,
-.entry-content .continue-reading a:focus {
-	border-color: #000;
-	border-width: 1px;
-	box-shadow: none;
-}
-
-.continue-reading::after {
-	display: block;
-    content: "";
-    width: 7em;
-    border-bottom: 1px solid #c3c3c3;
-    margin: 40px auto 0;
+.continue-reading a:hover {
+    background: #000000;
+    color: #ffffff;
 }
 
 .cat-link,
@@ -1252,13 +1269,13 @@ a:hover {
     font-size: 12px;
 }
 
-.sticky::before {
-    content: "Featured Post";
-    display: block;
+.entry-post-thumbnail {
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
-.post-thumbniail-banner {
-    margin-bottom: 0.5em;
+.sticky {
+    
 }
 
 /*
@@ -1266,7 +1283,9 @@ a:hover {
 17.0 - Content Area (Archives)
 ================================================================================================
 */
-
+.archive-header {
+    text-align: center;
+}
 /*
 ================================================================================================
 18.0 - Content Area (Comments)
@@ -1462,14 +1481,17 @@ ol.children {
 23.0 - Widget Area
 ================================================================================================
 */
+.widget-area {
+    line-height: 1.5em;
+}
 .sidebar-left .widget-area {
     float: left;
-    width: 29.296875%;
+    width: 30.18108651911469%;
 }
 
-.sidebar-right .widget-area {
+.right-sidebar .widget-area {
     float: right;
-    width: 29.296875%;
+    width: 30.18108651911469%;
 }
 
 .widget-area .search-submit,
@@ -1477,7 +1499,7 @@ ol.children {
     display: none;
 }
 
-input[type = "search"] {
+input[type="search"] {
     box-sizing: border-box;
     width: 100%;
 }
@@ -1515,8 +1537,7 @@ input[type = "search"] {
 }
 
 .widget-title {
-    font-weight: 400;
-    margin: 0;
+    margin: 0 0 0.5em 0;
     padding: 0;
 }
 
@@ -1772,27 +1793,14 @@ input[type = "search"] {
 31.0 - Media Queries (Tablet Large 64em (1024px))
 ================================================================================================
 */
-@media screen and (min-width: 769px) and (max-width: 1024px) {  
-    .site-container {
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        max-width: 100%;
-    }
-
+@media screen and (min-width: 769px) {
     .primary-navigation {
         clear: none;
     }
-    
-    .height {
-        height: 3.750em;
-    }
-	
-	/* Position the menu in the header */
+
 	.primary-navigation,
 	.primary-navigation.toggled {
 		position: relative;
-		min-height: 3.5em;
 		max-width: 100%;
 		margin: 0 auto;
 		padding: 0;
@@ -1800,7 +1808,7 @@ input[type = "search"] {
     
 	.nav-menu {
 		padding: .4em;
-		background: transparent;
+		background-color: transparent;
         margin: 0;
     }
     
@@ -1840,6 +1848,10 @@ input[type = "search"] {
 		display: block;
 		text-align: left;
 	}
+    
+    .primary-navigation a {
+        padding: 0.5em 1em;
+    }
 	
 	.primary-navigation a,
 	.primary-navigation ul ul li:last-child a {
@@ -1848,14 +1860,6 @@ input[type = "search"] {
     
     .primary-navigation ul ul li a {
         color: #ffffff;
-    }
-    
-    .primary-navigation a {
-        position: relative;
-        display: block;
-        padding: 0.5em 1em;
-        text-decoration: none;
-        line-height: 1.5em;
     }
 	
 	/* Add an outline on hovered and focused menu items */
@@ -1899,134 +1903,9 @@ input[type = "search"] {
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-        right: 6px;
-        top: 5px;
-	}
-	
-	.dropdown-toggle::after {
-		line-height: 27px;
-		width: 27px;
-	}
-}
+		top: 7px;
+		right: 8px;
 
-@media screen and (min-width: 1025px) {    
-    .primary-navigation {
-        clear: none;
-    }
-	
-	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation.toggled {
-		position: relative;
-		min-height: 3.5em;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-    
-	.nav-menu {
-		padding: .4em;
-		background: transparent;
-        margin: 0;
-    }
-    
-    .nav-menu a {
-        color: #ffffff;
-    }
-    
-    .nav-menu a:hover {
-        color: #ffffff;
-    }
-	
-	.primary-navigation ul,
-	.primary-navigation.toggled ul {
-		max-height: none;
-		padding-left: 0;
-		text-align: center;
-        
-	}
-	
-	.primary-navigation.toggled ul {
-		overflow-y: visible;
-	}
-	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
-		display: inline-block;
-		border: none;
-	}
-	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
-	
-	/* Left-align drop-down menu items */
-	.primary-navigation li li {
-		display: block;
-		text-align: left;
-	}
-	
-	.primary-navigation a,
-	.primary-navigation ul ul li:last-child a {
-		border-bottom: none;
-	}
-    
-    .primary-navigation ul ul li a {
-        color: #ffffff;
-    }
-    
-    .primary-navigation a {
-        position: relative;
-        display: block;
-        padding: 0.5em 1em;
-        text-decoration: none;
-        line-height: 1.5em;
-    }
-	
-	/* Add an outline on hovered and focused menu items */
-	.primary-navigation a:hover,
-	.primary-navigation a:focus {
-		background: transparent;
-		color: #ffffff;
-		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
-	}
-	
-	/* Create hover and focus contrast on drop-down items */
-	.primary-navigation li li a:hover,
-	.primary-navigation li li a:focus {
-		background: #eee;
-		color: #000;
-		text-decoration: none;
-	}
-	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.toggled-on {
-		position: absolute;
-		width: 17em;
-		display: block;
-		z-index: 10;
-        right: 0;
-		margin-left: 0;
-		background: #000;
-	}
-	
-	.primary-navigation ul ul ul.toggled-on {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
-	}
-	
-	/* Indent 3rd level drop-down menus */
-	.primary-navigation ul ul ul a {
-		padding-left: 2em;
-	}
-	
-	/* Simplify the drop-down toggle */
-	.dropdown-toggle {
-        right: 6px;
-        top: 5px;
 	}
 	
 	.dropdown-toggle::after {

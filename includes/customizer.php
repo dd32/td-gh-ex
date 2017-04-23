@@ -41,49 +41,35 @@ function silver_quantum_custom_classes_setup($wp_customize) {
 
         public function enqueue() {
             wp_enqueue_script('silver-quantum-customize-controls', get_template_directory_uri() . '/js/customize-controls.js', array('jquery'));
-             wp_enqueue_style('silver-quantum-customize-controls', get_template_directory_uri() . '/css/customize-controls.css');
+            wp_enqueue_style('silver-quantum-customize-controls', get_template_directory_uri() . '/css/customize-controls.css');
         }
 
-        public function to_json() {
-            parent::to_json();
+		public function render_content() {
+			if ( empty( $this->choices ) ) {
+				return;
+			}			
+			
+			$name = '_customize-radio-' . $this->id;
+			?>
+			<span class="customize-control-title">
+				<?php echo esc_attr( $this->label ); ?>
+			</span>
+			<?php if ( ! empty( $this->description ) ) : ?>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+			<?php endif; ?>
 
-            // We need to make sure we have the correct image URL.
-            foreach ( $this->choices as $value => $args )
-                $this->choices[ $value ]['url'] = esc_url( sprintf( $args['url'], get_template_directory_uri(), get_stylesheet_directory_uri() ) );
-
-            $this->json['choices'] = $this->choices;
-            $this->json['link']    = $this->get_link();
-            $this->json['value']   = $this->value();
-            $this->json['id']      = $this->id;
-        }
-
-        public function content_template() { ?>
-
-            <# if ( ! data.choices ) {
-                return;
-            } #>
-
-            <# if ( data.label ) { #>
-                <span class="customize-control-title">{{ data.label }}</span>
-            <# } #>
-
-            <# if ( data.description ) { #>
-                <span class="description customize-control-description">{{{ data.description }}}</span>
-            <# } #>
-
-            <# _.each( data.choices, function( args, choice ) { #>
-                <label>
-                    <input type="radio" value="{{ choice }}" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( choice === data.value ) { #> checked="checked" <# } #> />
-
-                    <span class="screen-reader-text">{{ args.label }}</span>
-
-                    <img src="{{ args.url }}" alt="{{ args.label }}" />
-                </label>
-            <# } ) #>
-        <?php }
+			<div id="input_<?php echo esc_attr( $this->id ); ?>" class="image">
+				<?php foreach ( $this->choices as $value => $label ) : ?>
+						<label for="<?php echo esc_attr( $this->id . $value ); ?>">
+							<input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo esc_attr( $this->id . $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php esc_attr( $this->link() ); checked( $this->value(), esc_attr( $value ) ); ?>>
+							<img src="<?php echo esc_url( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
+						</label>
+					</input>
+				<?php endforeach; ?>
+			</div>
+			<?php
+		}
     }
-    
-    $wp_customize->register_control_type('Silver_Quantum_Control_Radio_Image');
 }
 add_action('customize_register', 'silver_quantum_custom_classes_setup');
 
@@ -104,70 +90,28 @@ function silver_quantum_customize_register_setup($wp_customize) {
         'priority'  => 5
     ));
     
-    $wp_customize->add_section('post_layout', array(
-        'title'     => esc_html__('Post Layout', 'silver-quantum'),
+    $wp_customize->add_section('global_layout', array(
+        'title'     => esc_html__('Global Layout', 'silver-quantum'),
         'panel'     => 'general_layouts',
         'priority'  => 5
     ));
     
-    $wp_customize->add_setting('post_layout', array(
-        'default'           => 'default',
+    $wp_customize->add_setting('global_layout', array(
+        'default'           => 'right-sidebar',
         'sanitize_callback' => 'silver_quantum_sanitize_layout',
         'transport'         => 'refresh'
     ));
     
-    $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'post_layout', array(
-        'label'     => __('Post Layout', 'silver-quantum'),
-        'section'   => 'post_layout',
-        'settings'  => 'post_layout',
+    $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'global_layout', array(
+        'label'     => __('General Layout', 'silver-quantum'),
+        'description'   => __('General Layout applies to all layouts that supports in this theme.', 'silver-quantum'),
+        'section'   => 'global_layout',
+        'settings'  => 'global_layout',
         'type'      => 'radio-image',
         'choices'  => array(
-            'default' => array(
-                'label' => esc_html__('Default (No Sidebar)', 'silver-quantum'),
-                'url'   => '%s/images/1col.png',
-            ),
-            'sidebar-right' => array(
-                'label' => esc_html__('Right Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cr.png',
-            ),
-            'sidebar-left' => array(
-                'label' => esc_html__('Left Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cl.png',
-            ),
-        ),
-    )));
-    
-    // Enable and activate Page Layout for Silver Quantum.
-    $wp_customize->add_section('page_layout', array(
-        'title'     => esc_html__('Page Layout', 'silver-quantum'),
-        'panel'     => 'general_layouts',
-        'priority'  => 5
-    ));
-    
-    $wp_customize->add_setting('page_layout', array(
-        'default'           => 'default',
-        'sanitize_callback' => 'silver_quantum_sanitize_layout',
-        'transport'         => 'refresh'
-    ));
-    
-    $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'page_layout', array(
-        'label'     => __('Page Layout', 'silver-quantum'),
-        'section'   => 'page_layout',
-        'settings'  => 'page_layout',
-        'type'      => 'radio-image',
-        'choices'  => array(
-            'default' => array(
-                'label' => esc_html__('Default (No Sidebar)', 'silver-quantum'),
-                'url'   => '%s/images/1col.png',
-            ),
-            'sidebar-right' => array(
-                'label' => esc_html__('Right Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cr.png',
-            ),
-            'sidebar-left' => array(
-                'label' => esc_html__('Left Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cl.png',
-            ),
+			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
+			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
         ),
     )));
     
@@ -179,29 +123,21 @@ function silver_quantum_customize_register_setup($wp_customize) {
     ));
     
     $wp_customize->add_setting('custom_layout', array(
-        'default'           => 'default',
+        'default'           => 'right-sidebar',
         'sanitize_callback' => 'silver_quantum_sanitize_layout',
         'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'custom_layout', array(
         'label'     => __('Custom Layout', 'silver-quantum'),
+        'description'   => __('Custom Layout applies to all layouts that supports in this theme.', 'silver-quantum'),
         'section'   => 'custom_layout',
         'settings'  => 'custom_layout',
         'type'      => 'radio-image',
         'choices'  => array(
-            'default' => array(
-                'label' => esc_html__('Default (No Sidebar)', 'silver-quantum'),
-                'url'   => '%s/images/1col.png',
-            ),
-            'sidebar-right' => array(
-                'label' => esc_html__('Right Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cr.png',
-            ),
-            'sidebar-left' => array(
-                'label' => esc_html__('Left Sidebar', 'silver-quantum'),
-                'url'   => '%s/images/2cl.png',
-            ),
+			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
+			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
         ),
     )));
     
@@ -257,8 +193,8 @@ function silver_quantum_sanitize_checkbox($checked) {
 }
 
 function silver_quantum_sanitize_layout($value) {
-    if (!in_array($value, array('default','sidebar-right', 'sidebar-left'))) {
-        $value = 'default';
+    if (!in_array($value, array('right-sidebar','left-sidebar', 'no-sidebar'))) {
+        $value = 'right-sidebar';
     }
     return $value;
 }

@@ -20,23 +20,25 @@ of this theme. This also displays the navigation menu as well or any extra featu
         <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="http://gmpg.org/xfn/11" rel="profile" />
-        <link href="<?php bloginfo('pingback_url'); ?>" rel="pingback" />
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>
-    <section id="top-nav" class="top-nav">
-        <nav id="site-navigation" class="primary-navigation">
-            <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'silver-quantum'); ?></button>
-            <?php
-                wp_nav_menu(array(
-                    'theme_location'    => 'primary-navigation',
-                    'menu_id'           => 'primary-menu',
-                    'menu_class'        => 'nav-menu'   
-                )); 
-            ?>
-        </nav>
-    </section>
-    <div id="height" class="height"></div>
+    <div id="top-nav" class="top-nav">
+        <div id="align-center" class="align-center">
+
+            <?php if (has_nav_menu('primary-navigation')) { ?>
+                <nav id="site-navigation" class="primary-navigation">
+                    <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'silver-quantum'); ?></button>
+                    <?php wp_nav_menu(array(
+                        'theme_location'    => 'primary-navigation',
+                        'menu_id'           => 'primary-menu',
+                        'menu_class'        => 'nav-menu'   
+                    )); 
+                    ?>
+                </nav>            
+            <?php } ?>
+        </div>
+    </div>
     <section id="site-container" class="site-container cf">
         <?php if (get_header_image()) : ?>
             <div id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">

@@ -15,9 +15,12 @@ of this theme. This also displays the navigation menu as well or any extra featu
 */
 ?>
 <?php get_header(); ?>
-    <div class="<?php echo esc_attr(get_theme_mod('post_layout', 'sidebar-right')); ?>">
+    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'right-sidebar')); ?>">
         <div id="content-area" class="content-area">
             <?php if (have_posts()) : ?>
+                    <div class="archive-header">
+                        <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
+                    </div>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('template-parts/content', 'archive'); ?>
             <?php endwhile; ?>
@@ -28,10 +31,10 @@ of this theme. This also displays the navigation menu as well or any extra featu
                     <?php get_template_part('template-parts/content', 'none'); ?>
             <?php endif; ?>
         </div>
-        <?php if ('sidebar-left' == get_theme_mod('post_layout')) { ?>
+        <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
             <?php get_sidebar(); ?>
         <?php } ?>
-        <?php if ('sidebar-right' == get_theme_mod('post_layout')) { ?>
+        <?php if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
             <?php get_sidebar(); ?>
         <?php } ?>
     </div>

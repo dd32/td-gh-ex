@@ -18,24 +18,17 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div id="page-layout" class="<?php echo esc_attr(get_theme_mod('page_layout', 'default')); ?>">
+    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'right-sidebar')); ?>">
         <div id="content-area" class="content-area">
-            <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('template-parts/content', 'page'); ?>
             <?php endwhile; ?>
-                <div class="paging-navigation">
-                    <?php the_posts_pagination(); ?>
-                </div>
-            <?php else : ?>
-                    <?php get_template_part('template-parts/content', 'none'); ?>
-            <?php endif; ?>
         </div>
-        <?php if ('sidebar-left' == get_theme_mod('page_layout')) { ?>
-            <?php get_sidebar('page'); ?>
+        <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
+            <?php get_sidebar(); ?>
         <?php } ?>
-        <?php if ('sidebar-right' == get_theme_mod('page_layout')) { ?>
-            <?php get_sidebar('page'); ?>
+        <?php if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
+            <?php get_sidebar(); ?>
         <?php } ?>
     </div>
 <?php get_footer(); ?>

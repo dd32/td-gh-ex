@@ -11,27 +11,40 @@ custom header image and styling for the header.
 @author         Benjamin Lu (http://luminathemes.com/)
 ================================================================================================
 */
-.customize-control-radio-image input[type="radio"] {
-	clip:     rect(1px, 1px, 1px, 1px);
-	height:   1px;
-	overflow: hidden;
-	position: absolute !important;
-	width:    1px;
+li.customize-control-radio-image input[type="radio"] {
+    display: none;
 }
 
-.customize-control-radio-image img {
+li.customize-control-radio-image label,
+li.customize-control-radio-image input,
+li.customize-control-radio-image img {
+	outline: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-o-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+li.customize-control-radio-image label {
+	display: inline-block;
+}
+
+li.customize-control-radio-image img {
+	width: 100%;
+	height: auto;
+	border: 4px solid transparent;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	box-sizing: border-box;
-	max-width:  100%;
-	height:     auto;
-	padding:    1px;
-	border:     4px solid transparent;
 }
 
-	.customize-control-radio-image img:hover,
-	.customize-control-radio-image img:focus {
-		border-color: #ccc;
-	}
+li.customize-control-radio-image img:hover,
+li.customize-control-radio-image img:focus {
+	border-color: #ccc;
+}
 
-	.customize-control-radio-image input:checked + span + img {
-		border-color: #00a0d2;
+li.customize-control-radio-image input:checked + img {
+	border-color: #00a0d2;
 }

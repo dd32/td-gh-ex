@@ -18,23 +18,24 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div class="<?php echo esc_attr(get_theme_mod('post_layout', 'sidebar-right')); ?>">
+    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'right-sidebar')); ?>">
         <div id="content-area" class="content-area">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/content', 'single'); ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content', 'single'); ?>
             <?php endwhile; ?>
-                <div class="paging-navigation">
-                    <?php the_posts_pagination(); ?>
-                </div>
-            <?php else : ?>
-                    <?php get_template_part('template-parts/content', 'none'); ?>
-            <?php endif; ?>
+            <div class="post-navigation cf">
+                <?php 
+                    the_post_navigation(array(
+                        'next_text' => '<span class="post-next" aria-hiddent="true">' . __('Next', 'silver-quantum') . '</span>' . '<span class="post-title">%title</span>',
+                        'prev_text' => '<span class="post-previous" aria-hidden="true">' . __( 'Previous', 'silver-quantum' ) . '</span> ' . '<span class="post-title">%title</span>',
+                    ));
+                ?>
+            </div>
         </div>
-        <?php if ('sidebar-left' == get_theme_mod('post_layout')) { ?>
+        <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
             <?php get_sidebar(); ?>
         <?php } ?>
-        <?php if ('sidebar-right' == get_theme_mod('post_layout')) { ?>
+        <?php if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
             <?php get_sidebar(); ?>
         <?php } ?>
     </div>
