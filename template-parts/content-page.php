@@ -10,11 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
+	<?php
 	$header_image_meta = academic_header_image_meta_option();
 	if ( is_array( $header_image_meta ) ) {
 		$header_image_meta = $header_image_meta[1];
-	} 
+	}
 	if ( 'show-both' == $header_image_meta ) { ?>
 		<div class="post-thumbnail">
 			<?php the_post_thumbnail();?>

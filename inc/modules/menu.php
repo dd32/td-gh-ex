@@ -36,13 +36,17 @@ if ( ! function_exists( 'academic_mobile_menu' ) ) :
 
 	function academic_mobile_menu() { ?>
 		<!-- Mobile Menu -->
-        <nav id="sidr-left-top" class="mobile-menu sidr left">
-          <?php academic_site_logo();?>
-          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'ul' ) ); ?>
-        </nav><!-- end left-menu -->
+        <?php if ( has_nav_menu( 'primary' ) ) : ?>
+	        <nav id="sidr-left-top" class="mobile-menu sidr left">
+	          <div class="site-branding text-center">
+	          	<?php academic_site_logo();?>
+	          	<?php academic_site_header(); ?>
+	          </div>
+	          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'ul' ) ); ?>
+	        </nav><!-- end left-menu -->
 
-        <a id="sidr-left-top-button" class="menu-button right" href="#sidr-left-top"><i class="fa fa-bars"></i></a>
-	<?php
+	        <a id="sidr-left-top-button" class="menu-button right" href="#sidr-left-top"><i class="fa fa-bars"></i></a>
+	    <?php endif; 
 	}
 endif;
-add_filter( 'academic_mobile_menu','academic_mobile_menu', 70 );
+add_action( 'academic_mobile_menu','academic_mobile_menu', 70 );

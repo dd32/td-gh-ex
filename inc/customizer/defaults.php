@@ -27,11 +27,16 @@ function academic_get_default_theme_options() {
 		'read_more_text'		        => esc_html__( 'Read More', 'academic' ),
 		'breadcrumb_enable'         	=> false,
 		'breadcrumb_separator'         	=> '/',
-		'pagination_enable'         	=> false,
+		'pagination_enable'         	=> true,
 		'pagination_type'         		=> 'default',
 		'scroll_top_visible'        	=> true,
 		'reset_options'      			=> false,
 		'enable_frontpage_content' 		=> true,
+
+		// Top bar options
+		'top_bar_content_type'   		=> 'custom',
+		'top_bar_show'           		=> false,
+		'top_bar_field_number'   		=> 3,
 
 		// slider
 		'slider_enable'                 => 'disabled',

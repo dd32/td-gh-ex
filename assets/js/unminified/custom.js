@@ -311,8 +311,6 @@ var $container = $('.portfolio'),
         return columnWidth;
     }
 
-$('.gallery .gallery-item .gallery-icon a').attr('data-lightbox', 'masonry');
-
 /*------------------------------------------------
                 END GALLERY PORTFOLIO
 ------------------------------------------------*/
@@ -333,7 +331,15 @@ $('ul.tabs li').click(function() {
 /*------------------------------------------------
                 END TABS
 ------------------------------------------------*/
+/*------------------------------------------------
+                BUTTON EFFECT
+------------------------------------------------*/
 
+$('.btn-js').each( function() {
+  var btnText = $(this).html();
+  $(this).append( '<span class="btn-show"><span class="btn-text">' + btnText + '</span></span>\
+  <span class="btn-hide"><span class="btn-text">' + btnText + '</span></span>' );
+});
 });
 
 /*------------------------------------------------

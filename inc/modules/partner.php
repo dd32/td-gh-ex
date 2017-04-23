@@ -64,9 +64,10 @@ if ( ! function_exists( 'academic_get_partner_details' ) ) :
     }
     $args = array(
         'no_found_rows'  => true,
-        'orderby'        => 'post__in',
         'post_type'      => 'page',
         'post__in'       => $ids,
+        'orderby'        => 'post__in',
+        'posts_per_page' => $no_of_partner,
     );
     $posts = get_posts( $args );
     $i = 1;
@@ -107,7 +108,6 @@ if ( ! function_exists( 'academic_render_partner' ) ) :
    function academic_render_partner( $content_details = array() ) {
         $options = academic_get_theme_options();  
         $partner_title      = ! empty( $options['partner_title'] ) ? $options['partner_title'] : '';
-        $partner_layout     = ! empty( $options['partner_layout'] ) ? $options['partner_layout'] : 6;
         $partner_dragable   = ( $options['partner_dragable'] == true ) ? 'true' : 'false';
         $partner_autoplay   = ( $options['partner_autoplay'] == true ) ? 'true' : 'false';
         ?>  
@@ -119,7 +119,7 @@ if ( ! function_exists( 'academic_render_partner' ) ) :
                         <?php endif; ?>
                 </header><!-- end .entry-header -->
 
-                <div class="entry-content regular" data-slick='{"slidesToShow": <?php echo absint( $partner_layout ); ?>, "slidesToScroll": 1, "infinite": true, "speed": 800, "dots": false, "arrows":true, "draggable": <?php echo esc_attr( $partner_dragable ); ?>, "autoplay": <?php echo esc_attr( $partner_autoplay ); ?> }'>
+                <div class="entry-content regular" data-slick='{"slidesToShow": 6, "slidesToScroll": 1, "infinite": true, "speed": 800, "dots": false, "arrows":true, "draggable": <?php echo esc_attr( $partner_dragable ); ?>, "autoplay": <?php echo esc_attr( $partner_autoplay ); ?> }'>
                     <?php foreach( $content_details as $content ) : 
                         if( ! empty( $content['img_array'][0] ) ) : ?>
                             <div class="slider-item">

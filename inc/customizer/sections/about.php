@@ -33,6 +33,7 @@ $wp_customize->add_setting( 'academic_theme_options[about_content_page]', array(
 
 $wp_customize->add_control( 'academic_theme_options[about_content_page]', array(
 	'label'           	=> esc_html__( 'Select Page', 'academic' ),
+	'description'		=> esc_html__( 'Set the image size of selected page to 1200px by 800px.','academic' ),
 	'section'         	=> 'academic_about_section',
 	'type'            	=> 'dropdown-pages',
 	'active_callback' 	=> 'academic_is_about_active',

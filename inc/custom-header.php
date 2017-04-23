@@ -68,4 +68,41 @@ if ( ! function_exists( 'academic_custom_header' ) ) :
 		<?php
 	}
 endif;
-add_action( 'academic_content_start', 'academic_custom_header', 20 );
+add_action( 'academic_banner_image_action', 'academic_custom_header', 10 );
+
+if ( ! function_exists( 'academic_header_inline_css' ) ) :
+	// Add Custom Css
+	function academic_header_inline_css() {
+		$options = academic_get_theme_options();
+		
+		$css = '';
+		global $wp_query, $post;
+		
+		// Get front page ID
+		$page_on_front	  = get_option('page_on_front');
+		$page_for_posts   = get_option('page_for_posts');
+		// Get Page ID outside Loop
+		$page_id          = $wp_query->get_queried_object_id( $post );
+
+		if( ( is_home() && $page_on_front == $page_id ) ) {
+			return;
+		}
+		else {
+			// Set header image by comparing the meta values
+			$header_image = academic_header_image_meta_option();
+
+			if ( is_array( $header_image ) ) {
+				$header_image = $header_image[0];
+			} else {
+				$header_image = $header_image;
+			}
+
+			$css .= '
+			#banner-image {
+				background-image: url("'.esc_url( $header_image ).'");
+			}';
+		}
+	wp_add_inline_style( 'academic-style', $css );
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'academic_header_inline_css', 10 );

@@ -33,7 +33,7 @@ if ( ! function_exists( 'academic_add_about_section' ) ) :
     academic_render_about_section( $section_details );
   }
 endif;
-add_action( 'academic_primary_content', 'academic_add_about_section', 60 );
+add_action( 'academic_primary_content', 'academic_add_about_section', 20 );
 
 
 if ( ! function_exists( 'academic_get_about_section_details' ) ) :
@@ -61,11 +61,18 @@ if ( ! function_exists( 'academic_get_about_section_details' ) ) :
             $page_id = $post->ID;
             $content[0]['sub_title']    = '';
             $content[0]['title']        = get_the_title( $page_id );
-            $content[0]['excerpt']      = academic_trim_content( 100, $post );
+            $content[0]['excerpt']      = academic_trim_content( 110, $post );
             $content[0]['alt']          = get_the_title( $page_id );
             $content[0]['url']          = get_permalink( $page_id );
             $content[0]['btn_label']    = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] : esc_html__( 'Read More', 'academic' );
             $content[0]['btn_target']   = '';
+
+            if ( has_post_thumbnail( $page_id ) ) {
+                $img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+            } 
+            if ( isset( $img_array ) ) {
+                $content[0]['img_array'] = $img_array[0];
+            }
         }
     }
 
@@ -97,7 +104,7 @@ if ( ! function_exists( 'academic_render_about_section' ) ) :
         if ( empty( $content_details ) ) {
           return;
         } ?>
-        <section id="welcome-section" class="page-section one-col os-animation">
+        <section id="welcome-section" class="page-section two-col os-animation">
             <?php foreach ( $content_details as $content ): ?>
                 <div class="container">
                     <div class="column-wrapper">
@@ -121,6 +128,9 @@ if ( ! function_exists( 'academic_render_about_section' ) ) :
                             <?php endif; ?>
                         </div><!-- end .entry-content -->
                     </div><!-- end .column-wrapper -->
+                    <div class="column-wrapper">
+                      <a href="<?php echo esc_url( $content['url'] ); ?>"><img src="<?php echo esc_url( $content['img_array'] ); ?>"></a>
+                    </div>
                 </div><!-- end .container -->
             <?php endforeach; ?>
         </section><!-- end #welcome-section-->         

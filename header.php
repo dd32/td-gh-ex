@@ -80,7 +80,14 @@
 	 */
 	do_action( 'academic_content_start' );
 
-
+	if( is_home() || !is_front_page() ) { 
+		/**
+		 * academic_banner_image_action hook
+		 *
+		 * @hooked academic_custom_header -  10
+		 */
+		do_action( 'academic_banner_image_action' );
+	}
 	/**
 	 * academic_modules hook
 	 *
@@ -104,7 +111,6 @@
 	 *
 	 */
 	do_action( 'academic_breadcrumb_action' );
-
 	/**
 	* academic_primary_content hook
 	*

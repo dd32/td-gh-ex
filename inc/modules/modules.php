@@ -12,6 +12,9 @@
 // Add menu
 require get_template_directory() . '/inc/modules/menu.php';
 
+// Add top-bar
+require get_template_directory() . '/inc/modules/top-bar.php';
+
 // Add slider section
 require get_template_directory() . '/inc/modules/slider.php';
 

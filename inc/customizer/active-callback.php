@@ -42,7 +42,16 @@ function academic_is_pagination_enable( $control ) {
 	return $control->manager->get_setting( 'academic_theme_options[pagination_enable]' )->value();
 }
 
-
+/**
+ * Check if top bar is enabled.
+ *
+ * @since Academic 0.6
+ * @param WP_Customize_Control $control WP_Customize_Control instance.
+ * @return bool Whether the control is active to the current preview.
+ */
+function academic_is_top_bar_enable( $control ) {
+	return $control->manager->get_setting( 'academic_theme_options[top_bar_show]' )->value();
+}
 /**
  * Check if slider is enabled.
  *

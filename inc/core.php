@@ -80,3 +80,7 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Load woocommerce compatibility file.
  */
 require get_template_directory() . '/inc/woocommerce.php';
+/**
+ * Load tgmpa
+ */
+require get_template_directory() . '/inc/tgmpa/tgm-hook.php';

@@ -1,12 +1,12 @@
 === Academic ===
 
 By Theme Palace
-Tags: education, translation-ready, e-commerce, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-menu, custom-logo, footer-widgets, blog
+Tags: education, translation-ready, e-commerce, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, footer-widgets, blog
 
 Contributors: Theme Palace
 Requires at least: 4.4
-Tested up to: 4.7
-Stable tag: 0.5
+Tested up to: 4.7.3
+Stable tag: 0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ A clean, modern, engaging and responsive WordPress education theme ideal for edu
 
 == Copyright ==
 
-Academic WordPress Theme, Copyright 2014-2015 Theme Palace
+Academic WordPress Theme, Copyright 2016-2017 Theme Palace
 Academic is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -104,6 +104,7 @@ License: GPLv2 or later
 
 == Images Screenshot ==
 https://unsplash.com/photos/-Xv7k95vOFA
+https://pixabay.com/en/samford-hall-auburn-university-1614183/
 
 
 == Frequently Asked Questions ==
@@ -121,6 +122,13 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 0.6 =
+* Added topbar section.
+* Added featured image option in About section
+* Solved the link issue in comment date
+* Changed default image
+* Solved menu issue in responsive
 
 = 0.5 =
 * Fix active pager issue in testimonial

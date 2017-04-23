@@ -78,7 +78,7 @@ if ( ! function_exists( 'academic_get_slider_section_details' ) ) :
             $page_id = $post->ID;
             $img_array = null;
             if ( has_post_thumbnail( $page_id ) ) {
-                $img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+                $img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
             } else {
                 $img_array[0] =  get_template_directory_uri().'/assets/uploads/no-featured-image-1170x500.png';
             }
@@ -129,11 +129,8 @@ if ( ! function_exists( 'academic_render_slider_section' ) ) :
         <section id="main-slider">
             <div class="regular" data-effect="<?php echo esc_attr( $slider_effect ); ?>" data-slick='{ "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "speed": 1000, "pauseOnHover": false, "dots": <?php echo esc_attr( $slider_pager ); ?>, "arrows": <?php echo esc_attr( $slider_control ); ?>, "autoplay": true, "fade": <?php echo esc_attr( $slider_fade ); ?>, "draggable": <?php echo esc_attr( $slider_dragable ); ?> }'>
                 <?php foreach ( $content_details as $content ): ?>
-                    <div class="slider-item">
-                        <a href="<?php echo esc_url( $content['url'] ); ?>">
-                            <img src="<?php echo esc_url( $content['img_array'][0] ); ?>" alt="<?php echo esc_html( $content['title'] ); ?>">
-                            <div class="black-overlay"></div>
-                        </a>
+                    <div class="slider-item" style="background-image: url('<?php echo esc_url( $content['img_array'][0] ); ?>')">
+                        <div class="black-overlay"></div>
                         <div class="container">
                             <div class="main-slider-contents">
                                 <a href="<?php echo esc_url( $content['url'] ); ?>"><h2 class="title"><?php echo esc_html( $content['title'] ); ?></h2></a>
@@ -151,7 +148,7 @@ if ( ! function_exists( 'academic_render_slider_section' ) ) :
                     </div><!-- end .slider-item -->
                 <?php endforeach; ?>
             </div><!-- end .regular -->
-        </section><!-- end #main-slider -->           
-<?php 
+        </section><!-- end #main-slider -->
+<?php
     }
 endif;

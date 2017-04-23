@@ -46,6 +46,7 @@ function academic_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'academic' ),
+		'login'   => esc_html__( 'Login', 'academic' ),
 	) );
 
 	/*
@@ -83,6 +84,18 @@ function academic_setup() {
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Make theme woocommerce ready
+	add_theme_support( 'woocommerce' );
+	if ( class_exists( 'WooCommerce' ) ) {
+    	global $woocommerce;
+
+    	if( version_compare( $woocommerce->version, '3.0.0', ">=" ) ) {
+      		add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
+  	}
 }
 endif;
 add_action( 'after_setup_theme', 'academic_setup' );
@@ -170,9 +183,6 @@ function academic_scripts() {
 	// Add sidr light css
 	wp_enqueue_style( 'jquery-sidr-light', get_template_directory_uri() . '/assets/plugins/css/jquery-sidr-light.min.css', array(), '' );
 
-	// Add lightbox css
-	wp_enqueue_style( 'lightbox', get_template_directory_uri() . '/assets/plugins/css/lightbox.min.css', array(), '2.7.1' );
-	
 	// Theme stylesheet.
 	wp_enqueue_style( 'academic-style', get_stylesheet_uri() );
 

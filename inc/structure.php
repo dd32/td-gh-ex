@@ -8,9 +8,6 @@
  * @since Academic 0.3
  */
 
-$options = academic_get_theme_options();
-
-
 if ( ! function_exists( 'academic_doctype' ) ) :
 	/**
 	 * Doctype Declaration.
@@ -43,8 +40,6 @@ if ( ! function_exists( 'academic_head' ) ) :
 		<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php endif;
-		$options = academic_get_theme_options(); ?>
-		<?php
 	}
 endif;
 add_action( 'academic_before_wp_head', 'academic_head', 10 );
