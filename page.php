@@ -6,10 +6,6 @@
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 
  get_header(); ?>

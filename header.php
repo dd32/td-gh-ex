@@ -4,10 +4,6 @@
  *
  * Displays all of the head element and everything up until the "body-content-wrapper" div.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

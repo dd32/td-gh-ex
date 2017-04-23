@@ -18,6 +18,16 @@ along with this program.  If not, see license.txt.
 
 AyaFreelance WordPress Theme bundles the following third-party resources:
 
+* "Pro" theme section examples for the customizer
+* Author: Justin Tadlock (justintadlock)
+* License: GNU General Public License, version 2, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*
+* functions.php -> final class ayafreelance_Customize
+* functions.php -> class ayafreelance_Customize_Section_Pro
+* js/customize-controls.js
+* css/customize-controls.css
+*
+*
 * Fontawesome is licensed under the terms of The MIT License
 * Source: https://opensource.org/licenses/mit-license.html
 *
@@ -28,6 +38,7 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+*
 *
 * Hind (default theme font), Released under Apache License, version 2.0 license - http://www.apache.org/licenses/LICENSE-2.0.html
 *

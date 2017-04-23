@@ -4,10 +4,6 @@
  *
  * Used for single, index, archive, and search contents.
  *
- * @subpackage ayafreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 ?>
 
@@ -22,7 +18,7 @@
 	<?php else : ?>
 	
 			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 			</h1>
 	
 	<?php endif; ?>
@@ -32,7 +28,7 @@
 		<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
 				<span class="clock-icon">
-					<a href="<?php the_permalink(); ?>" rel="bookmark">
+					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 						<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
 					</a>
 				</span><!-- .clock-icon -->
@@ -85,7 +81,7 @@
 				<div class="content">
 					<?php if ( has_post_thumbnail() ) : ?>
 								
-								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
 								

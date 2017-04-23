@@ -4,10 +4,6 @@
  *
  * Contains the closing of the "body-content-wrapper" div and all content after.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 ?>
 			<a href="#" class="scrollup"></a>
@@ -24,9 +20,14 @@
 					<div id="copyright">
 
 						<p>
-						 <?php ayafreelance_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://ayatemplates.com/product/ayafreelance' ); ?>" title="<?php esc_attr( esc_html_e( 'ayafreelance Theme', 'ayafreelance' ) ); ?>">
-							<?php esc_html_e('AyaFreelance Theme', 'ayafreelance'); ?></a> <?php esc_attr (esc_html_e( 'powered by', 'ayafreelance' ) ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr( esc_html_e( 'WordPress', 'ayafreelance' ) ); ?>">
-							<?php esc_html_e('WordPress', 'ayafreelance'); ?></a>
+							<?php ayafreelance_show_copyright_text(); ?>
+						 	<a href="<?php echo esc_url( 'https://ayatemplates.com/product/ayafreelance' ); ?>"
+						 		title="<?php esc_attr_e( 'AyaFreelance Theme', 'ayafreelance' ); ?>">
+								<?php esc_html_e('AyaFreelance Theme', 'ayafreelance'); ?>
+							</a> 
+							<?php
+								/* translators: %s: WordPress name */
+								printf( __( 'Powered by %s', 'ayafreelance' ), 'WordPress' ); ?>
 						</p>
 						
 					</div><!-- #copyright -->

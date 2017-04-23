@@ -2,10 +2,6 @@
 /**
  * The sidebar containing the main footer columns widget areas
  *
- * @subpackage fBachFlowers
- * @author ayatemplates
- * @since fBachFlowers 1.0.0
- *
  */
 ?>
 

@@ -5,18 +5,13 @@
  * Used in Search Results and for Recent Posts in Front Page panels.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @subpackage ayafreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.4
- *
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<h1 class="entry-title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 	</h1>
 
 	<div class="before-content">
@@ -26,7 +21,7 @@
 				<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
 						<span class="clock-icon">
-							<a href="<?php the_permalink(); ?>" rel="bookmark">
+							<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 								<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
 							</a>
 						</span><!-- .clock-icon -->

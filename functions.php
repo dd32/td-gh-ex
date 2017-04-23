@@ -19,11 +19,6 @@
  *
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
- *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 
 if ( ! function_exists( 'ayafreelance_setup' ) ) :
@@ -597,5 +592,3 @@ if ( ! function_exists( 'ayafreelance_sanitize_checkbox' ) ) :
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 endif; // ayafreelance_sanitize_checkbox
-
-?>

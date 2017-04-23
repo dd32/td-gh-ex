@@ -1,3 +1,10 @@
+AyaFreelance 1.0.1, 2017-04-23
+------------------------
+- fix issues with data escaping
+- update 3rd party licenses in readme.txt file
+- remove unused @since and @author tags
+- other small bug fixes
+
 AyaFreelance 1.0.0, 2017-04-16
 ------------------------
 - Initial release

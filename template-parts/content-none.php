@@ -2,9 +2,6 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  */

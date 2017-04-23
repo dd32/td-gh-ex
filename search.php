@@ -2,10 +2,6 @@
 /**
  * The template for displaying search results pages.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 
  get_header(); ?>

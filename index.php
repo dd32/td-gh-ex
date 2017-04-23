@@ -7,9 +7,6 @@
  * It is used to display a page when nothing more specific matches a query.
  * e.g., it puts together the home page when no home.php file exists.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  */
@@ -40,7 +37,7 @@
 					/*
 					 * Include the post format-specific template for the content.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+					get_template_part( 'template-parts/content' );
 
 				endwhile;
 

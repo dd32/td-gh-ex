@@ -2,10 +2,6 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @subpackage ayafreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 
  get_header(); ?>
@@ -17,7 +13,7 @@
 
 	<div id="main-content">
 
-		<h1><?php esc_htmlesc_html_e( 'Oops! That page can&rsquo;t be found.', 'ayafreelance' ); ?></h1>
+		<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ayafreelance' ); ?></h1>
 
 		<div class="content">
 			<p>

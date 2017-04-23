@@ -2,10 +2,6 @@
 /**
  * The template used for displaying page content
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 ?>
 

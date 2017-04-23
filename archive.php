@@ -9,11 +9,6 @@
  * new template file for each one. For example, tag.php (Tag archives),
  * category.php (Category archives), author.php (Author archives), etc.
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @link https://codex.wordpress.org/Template_Hierarchy
- * @since AyaFreelance 1.0.0
- *
  */
 
 get_header(); ?>
@@ -37,7 +32,7 @@ get_header(); ?>
 					/*
 					 * Include the post format-specific template for the content.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+					get_template_part( 'template-parts/content' );
 
 				endwhile;
 

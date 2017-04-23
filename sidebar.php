@@ -2,10 +2,6 @@
 /**
  * The sidebar containing the main widget area
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
- *
  */
 ?>
 

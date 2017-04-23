@@ -6,9 +6,6 @@
  * the search form should do a GET to the homepage of your blog. The input text field 
  * should be named s and you should always include a label. 
  *
- * @subpackage AyaFreelance
- * @author ayatemplates
- * @since AyaFreelance 1.0.0
  * @link https://codex.wordpress.org/Function_Reference/get_search_form
  *
  */
