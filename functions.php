@@ -328,9 +328,9 @@ function fgymm_show_website_logo_image_and_title() {
     
         echo '<div id="site-identity">';
         echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-        echo '<h1>'.get_bloginfo('name').'</h1>';
+        echo '<h1 class="entry-title">' . esc_html( get_bloginfo('name') ) . '</h1>';
         echo '</a>';
-        echo '<strong>'.get_bloginfo('description').'</strong>';
+        echo '<strong>' . esc_html( get_bloginfo('description') ) . '</strong>';
         echo '</div>';
     }
 }
@@ -386,7 +386,7 @@ function fgymm_the_content() {
 	if ( has_post_thumbnail() ) {
 ?>
 
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
 			<?php the_post_thumbnail(); ?>
 		</a>
 								
@@ -441,7 +441,7 @@ function fgymm_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
 									array(
-										'label'          => sprintf( __( 'Slide #%s Content', 'fgymm' ), $i ),
+										'label'          => sprintf( esc_html__( 'Slide #%s Content', 'fgymm' ), $i ),
 										'section'        => 'fgymm_slider_section',
 										'settings'       => $slideContentId,
 										'type'           => 'textarea',
@@ -459,7 +459,7 @@ function fgymm_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
 				array(
-					'label'   	 => sprintf( __( 'Slide #%s Image', 'fgymm' ), $i ),
+					'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'fgymm' ), $i ),
 					'section' 	 => 'fgymm_slider_section',
 					'settings'   => $slideImageId,
 				) 
@@ -782,7 +782,7 @@ function fgymm_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main-fixed {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>

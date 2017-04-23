@@ -24,27 +24,6 @@ jQuery( document ).ready(function() {
 			}
 		}
 	});
-
-	jQuery("#navmain > div > ul li").mouseleave( function(event) {
-    event.preventDefault();
-		if (fgymm_IsLargeResolution()) {
-			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
-		}
-	});
-	
-	jQuery("#navmain > div > ul li").mouseenter( function(event) {
-
-    event.preventDefault();
-		if (fgymm_IsLargeResolution()) {
-
-			var curMenuLi = jQuery(this);
-			if ( curMenuLi.attr('id') ) {
-         jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
-      }
-		
-			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
-		}
-	});
 	
 	jQuery('#header-spacer').height(jQuery('#header-main-fixed').height());
 	
@@ -56,7 +35,7 @@ jQuery( document ).ready(function() {
 
 	jQuery(function(){
 		jQuery('#camera_wrap').camera({
-			height: '300px',
+			height: '650px',
 			loader: 'bar',
 			pagination: true,
 			thumbnails: false,

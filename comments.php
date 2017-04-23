@@ -13,7 +13,7 @@
 		die (__( 'Please do not load this page directly. Thanks!', 'fgymm' ));
      
     if ( post_password_required() ) : ?>
-		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'fgymm' ); ?></p>
+		<p class="nocomments"><?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'fgymm' ); ?></p>
 		<?php
 		return;
     endif;
@@ -21,7 +21,7 @@
     <?php if ( have_comments() ) : ?>
     <h3 id="comments"><?php comments_number(__( 'No Comments', 'fgymm' ),
 											__( 'One Response', 'fgymm' ),
-											__( '% Responses', 'fgymm' ));?> <?php _e( 'to', 'fgymm' ); ?> &#8220;<?php the_title(); ?>&#8221;
+											__( '% Responses', 'fgymm' ));?> <?php esc_html_e( 'to', 'fgymm' ); ?> &#8220;<?php the_title(); ?>&#8221;
 	</h3>
     <ol class="commentlist">
 		<?php wp_list_comments( 'avatar_size=48' ); ?>
@@ -34,7 +34,7 @@
     </div>
     <?php else : // this is displayed if there are no comments so far ?> 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.', 'fgymm' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fgymm' ); ?></p>
 		<?php endif; ?>
     <?php endif; ?>
      

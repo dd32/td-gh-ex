@@ -1,3 +1,10 @@
+fGymm 1.6.2, 2017-04-23
+------------------------
+- update slider height
+- change default slider images
+- update section pro: remove require_once include
+- bug fixes
+
 fGymm 1.6.1, 2017-01-07
 ------------------------
 - add full-width page template

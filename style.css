@@ -5,8 +5,8 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.6.1
-Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, full-width-template, front-page-post-form
+Version: 1.6.2
+Tags: blog, entertainment, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -785,6 +785,7 @@ blockquote, figure {
 
 .nav-links .nav-previous {
 	float:left;
+	width:45%;
 }
 
 .nav-links .nav-previous:before {
@@ -795,6 +796,7 @@ blockquote, figure {
 
 .nav-links .nav-next {
 	float:right;
+	width:45%;
 }
 
 .nav-links .nav-next:after {
@@ -1057,6 +1059,7 @@ blockquote, figure {
 .page-after-content {
 	padding-top:5px;
 	padding-bottom:5px;
+	clear:both;
 }
 
 .after-content,
@@ -1458,23 +1461,23 @@ img.wp-post-image {
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 16.66%;
+	max-width: 15%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 14.28%;
+	max-width: 13%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 12.5%;
+	max-width: 11%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 11.11%;
+	max-width: 10%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 10.11%;
+	max-width: 9%;
 }
 
 .gallery-icon img {
@@ -1506,6 +1509,11 @@ img.wp-post-image {
 #home-cols {
 	clear:both;
 	padding:20px 2%;
+}
+
+.post-links .left,
+.post-links .right {
+    width: 40%;
 }
 
 /* Large Resolution */
@@ -1641,6 +1649,41 @@ img.wp-post-image {
 		display:none;
 		background-color:#555555;
 	}
+
+	#navmain ul ul:not(.cart_list) {
+        opacity:0;
+    }
+
+	#navmain ul li:hover > ul {
+       display:block;
+       opacity:1;
+       animation: opacity 700ms ease-in-out normal;
+       -moz-animation: opacity 700ms ease-in-out normal;
+       -ms-animation: opacity 700ms ease-in-out normal;
+       -o-animation: opacity 700ms ease-in-out normal;
+       -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    @keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
+    @-moz-keyframes opacity {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @-ms-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-o-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-webkit-keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
 
 	#navmain ul li ul a {
 		display:block;
@@ -2317,7 +2360,7 @@ img.wp-post-image {
 }
 .camera_wrap {
 	width: 100%;
-	height: 300px;
+	height: 650px;
 }
 .camera_src {
 	display: none;

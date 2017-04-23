@@ -55,17 +55,19 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/active-activity-ball-exercise-19413/
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/bodybuilder-muscles-fitness-925770/
 *
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/dumbbells-rack-weights-iron-gym-32815/
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/man-person-power-strength-strong-1282232/
 *
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/active-activity-ball-exercise-18975/
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/
 *
-* screenshot.png (column image 1) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/jeans-with-high-waist-buy-moscow-1741465/
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/bodybuilder-muscles-fitness-925770/
 *
-* screenshot.png (column image 2) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-fitness-strength-1758622/
+* screenshot.png (column image 1) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
 *
-* screenshot.png (column image 3) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/weights-lifting-power-female-gym-869225/
+* screenshot.png (column image 2) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
+*
+* screenshot.png (column image 3) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
 *
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
