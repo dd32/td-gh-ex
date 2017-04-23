@@ -70,6 +70,12 @@
 	if ($navstyle)
 		echo 'nav#mainmenu ul li a { '.$navstyle.' } ';
 
+	if ( alhenalite_setting('wip_menu_font_weight') )
+		echo "nav#mainmenu ul li a { font-weight:" . esc_html(alhenalite_setting('wip_menu_font_weight')) . ";}"; 
+		
+	if ( alhenalite_setting('wip_menu_text_transform') )
+		echo "nav#mainmenu ul li a { text-transform:" . esc_html(alhenalite_setting('wip_menu_text_transform')) . ";}"; 
+
 /* =================== END NAV STYLE =================== */
 
 /* =================== BEGIN CONTENT STYLE =================== */
@@ -80,14 +86,6 @@
 /* =================== END NAV STYLE =================== */
 
 /* =================== START TITLE STYLE =================== */
-
-	$titlestyle = '';
-
-	if (alhenalite_setting('wip_titles_font')) 
-		$titlestyle .= "font-family:'".alhenalite_setting('wip_titles_font')."',Verdana, Geneva, sans-serif;"; 
-	
-	if ($titlestyle)
-		echo 'h1.title, h2.title, h3.title, h4.title, h5.title, h6.title, h1, h2, h3, h4, h5, h6  { '.$titlestyle.' } ';
 
 	if (alhenalite_setting('wip_h1_font_size')) 
 		echo "h1 {font-size:".alhenalite_setting('wip_h1_font_size')." !important; }"; 
@@ -102,6 +100,11 @@
 	if (alhenalite_setting('wip_h6_font_size')) 
 		echo "h6 { font-size:".alhenalite_setting('wip_h6_font_size')." !important; }"; 
 
+	if (alhenalite_setting('wip_titles_font_weight')) 
+		echo ".title a, h1.title, h2.title, h3.title, h4.title, h5.title, h6.title, h1, h2, h3, h4, h5, h6  { font-weight:".alhenalite_setting('wip_titles_font_weight').";}"; 
+	
+	if (alhenalite_setting('wip_titles_text_transform')) 
+		echo ".title a, h1.title, h2.title, h3.title, h4.title, h5.title, h6.title, h1, h2, h3, h4, h5, h6  { text-transform:".alhenalite_setting('wip_titles_text_transform').";}"; 
 
 /* =================== END TITLE STYLE =================== */
 

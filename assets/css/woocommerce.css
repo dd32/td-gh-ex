@@ -785,9 +785,11 @@ body.minimal-layout .woocommerce-info {
 	margin:0 0 5px 0;
 }
 
+/*
 .woocommerce_cart_page.post-container {
 	margin-bottom:0;
 }
+*/
 
 .woocommerce_cart_page .post-article {
     background: none;

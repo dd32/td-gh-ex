@@ -556,6 +556,41 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			),
 
+			array(
+				
+				"label" => esc_html__("Menu weight","suevafree"),
+				"description" => esc_html__("Choose a font weight for the menu.","alhena-lite"),
+				"id" => "wip_menu_font_weight",
+				"type" => "select",
+				"section" => "menu_section",
+				"options" => array(
+					"400" => esc_html__( "400","alhena-lite"),
+					"500" => esc_html__( "500","alhena-lite"),
+					"600" => esc_html__( "600","alhena-lite"),
+					"700" => esc_html__( "700","alhena-lite"),
+					"800" => esc_html__( "800","alhena-lite"),
+				),
+
+				"std" => "500",
+			
+			),
+			
+			array(
+				
+				"label" => esc_html__("Text transform","alhena-lite"),
+				"description" => esc_html__("Do you want to display an uppercase menu?.","alhena-lite"),
+				"id" => "wip_menu_text_transform",
+				"type" => "select",
+				"section" => "menu_section",
+				"options" => array(
+					"none" => esc_html__( "None","alhena-lite"),
+					"uppercase" => esc_html__( "Uppercase","alhena-lite"),
+				),
+
+				"std" => "uppercase",
+			
+			),
+
 			/* CONTENT */ 
 
 			array( 
@@ -657,6 +692,42 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"std" => "14px",
 
 			),
+
+			array(
+				
+				"label" => esc_html__("Titles weight","alhena-lite"),
+				"description" => esc_html__("Choose a font weight for the titles.","alhena-lite"),
+				"id" => "wip_titles_font_weight",
+				"type" => "select",
+				"section" => "headlines_section",
+				"options" => array(
+					"400" => esc_html__( "400","alhena-lite"),
+					"500" => esc_html__( "500","alhena-lite"),
+					"600" => esc_html__( "600","alhena-lite"),
+					"700" => esc_html__( "700","alhena-lite"),
+					"800" => esc_html__( "800","alhena-lite"),
+				),
+
+				"std" => "400",
+			
+			),
+			
+			array(
+				
+				"label" => esc_html__("Text transform","alhena-lite"),
+				"description" => esc_html__("Do you want to display an uppercase title?.","alhena-lite"),
+				"id" => "wip_titles_text_transform",
+				"type" => "select",
+				"section" => "headlines_section",
+				"options" => array(
+					"none" => esc_html__( "None","alhena-lite"),
+					"uppercase" => esc_html__( "Uppercase","alhena-lite"),
+				),
+
+				"std" => "none",
+			
+			),
+			
 		);
 		
 		new alhenalite_customize($theme_panel);

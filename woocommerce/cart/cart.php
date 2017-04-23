@@ -34,7 +34,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         
         	<div class="woocommerce_cart_details">
         
-                <h2 class="title"> <?php esc_html_e('Cart','alhena-lite');?> </h2>
+                <header class="title"><div class="line"><h2 class="title"><?php _e('Cart','alhena-lite');?></h2></div></header>
                 
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
                 
