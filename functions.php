@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', '1.5.9');
+define('SITEORIGIN_THEME_VERSION', '1.6.0');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 // Load the new settings framework
@@ -83,7 +83,9 @@ function vantage_setup() {
 
 	// Add support for WooCommerce
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	set_post_thumbnail_size( 720, 380, true );
 	add_image_size( 'vantage-thumbnail-no-sidebar', 1080, 380, true );
