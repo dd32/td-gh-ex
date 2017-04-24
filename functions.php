@@ -199,15 +199,6 @@ function silver_quantum_register_sidebars_setup() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));    
-
-    register_sidebar(array(
-        'name'          => __('Secondary Sidebar', 'silver-quantum'),
-        'id'            => 'secondary',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));  
     
     register_sidebar(array(
         'name'          => __('Custom Sidebar', 'silver-quantum'),
