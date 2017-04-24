@@ -13,7 +13,7 @@ called in the functions.php.
 @package        Silver Quantum WordPress Theme
 @copyright      Copyright (C) 2014-2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.lumiathemes.com/)
+@author         Benjamin Lu (https://www.benjaminlu.net/)
 ================================================================================================
 */
 

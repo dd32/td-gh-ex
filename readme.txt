@@ -60,6 +60,15 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.3.7 
+- Minor Fixes
+
+Version: 0.3.6
+- Minor Fixes
+
+Version: 0.3.5
+- Minor Fixes
+
 Version: 0.3.4
 - Render CSS Change
 - Fixed Navigation CSS

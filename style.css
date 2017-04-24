@@ -1,13 +1,13 @@
 /*
 Theme Name: Silver Quantum
-Theme URI: https://www.lumiathemes.com/portfolio/silver-quantum/
+Theme URI: https://www.benjaminlu.net/portfolio/silver-quantum/
 Author: Benjamin Lu
-Author URI: https://www.lumiathemes.com/
+Author URI: https://www.benjaminlu.net/
 Description: This Silver Quantum is converted into a responsive theme with the same features such as a fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready
-Version: 0.3.7
+Version: 0.3.8
 Text Domain: silver-quantum
 
 This theme, like WordPress, is licensed under the GPL.
@@ -1484,7 +1484,7 @@ ol.children {
 .widget-area {
     line-height: 1.5em;
 }
-.sidebar-left .widget-area {
+.left-sidebar .widget-area {
     float: left;
     width: 30.18108651911469%;
 }
@@ -1696,22 +1696,22 @@ input[type="search"] {
         margin: 1em 1em 3.6em 1em;
     }
 
-    .sidebar-right .content-area {
+    .right-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-left .content-area {
+    .left-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-right .widget-area {
+    .right-sidebar .widget-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-left .widget-area {
+    .left-sidebar .widget-area {
         float: none;
         width: 100%;
     }
@@ -1767,22 +1767,22 @@ input[type="search"] {
         margin: 1em 1em 3.6em 1em;
     }
 
-    .sidebar-right .content-area {
+    .right-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-left .content-area {
+    .left-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-right .widget-area {
+    .right-sidebar .widget-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-left .widget-area {
+    .left-sidebar .widget-area {
         float: none;
         width: 100%;
     }

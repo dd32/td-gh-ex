@@ -11,9 +11,9 @@ If you do not provide other template files, WordPress may have default files or 
 perform their jobs.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2014. Benjamin Lu
+@copyright      Copyright (C) 2014-2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.lumiathemes.com/)
+@author         Benjamin Lu (https://www.benjaminlu.net/)
 ================================================================================================
 */
 
@@ -109,9 +109,9 @@ function silver_quantum_customize_register_setup($wp_customize) {
         'settings'  => 'global_layout',
         'type'      => 'radio-image',
         'choices'  => array(
-			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
-			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
-			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
+			'right-sidebar' => get_template_directory_uri() . '/images/2cr.png',
+			'left-sidebar'  => get_template_directory_uri() . '/images/2cl.png',
+			'no-sidebar'    => get_template_directory_uri() . '/images/1col.png',
         ),
     )));
     
@@ -135,9 +135,9 @@ function silver_quantum_customize_register_setup($wp_customize) {
         'settings'  => 'custom_layout',
         'type'      => 'radio-image',
         'choices'  => array(
-			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
-			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
-			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
+			'right-sidebar' => get_template_directory_uri() . '/images/2cr.png',
+			'left-sidebar'  => get_template_directory_uri() . '/images/2cl.png',
+			'no-sidebar'    => get_template_directory_uri() . '/images/1col.png',
         ),
     )));
     

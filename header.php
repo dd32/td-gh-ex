@@ -8,9 +8,9 @@ for a theme (the other footer.php). The header.php template file only displays t
 of this theme. This also displays the navigation menu as well or any extra features.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2014. Benjamin Lu
+@copyright      Copyright (C) 2014-2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.lumiathemes.com/)
+@author         Benjamin Lu (https://www.benjaminlu.net/)
 ================================================================================================
 */
 ?>
