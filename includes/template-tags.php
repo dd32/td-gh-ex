@@ -880,7 +880,11 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 		$tile_background .= 'style=background-image:url("'.$tile_image.'")';
 		if ( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) != '' ) {
 			if ( get_post_meta( $bento_parent_page_id, 'bento_hide_tile_overlays', true) != 'on' ) {
-				$tile_opacity = 'opacity:'.esc_html( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) ).';';
+				$tile_opacity_raw = esc_html( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) );
+				if ( $tile_opacity_raw > 1 ) {
+					$tile_opacity_raw = $tile_opacity_raw / 10;
+				}
+				$tile_opacity = 'opacity:'.$tile_opacity_raw.';';
 			} else {
 				$tile_opacity = 'opacity: 0.0';
 			}

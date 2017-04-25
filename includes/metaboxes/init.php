@@ -17,7 +17,7 @@
  *               Bill Erickson (@billerickson / billerickson.net)
  *               Andrew Norcross (@norcross / andrewnorcross.com)
  *
- * Version:      2.2.3.1
+ * Version:      2.2.4
  *
  * Text Domain:  cmb2
  * Domain Path:  languages
@@ -48,7 +48,7 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'CMB2_Bootstrap_2231', false ) ) {
+if ( ! class_exists( 'CMB2_Bootstrap_224', false ) ) {
 
 	/**
 	 * Handles checking for and loading the newest version of CMB2
@@ -61,14 +61,14 @@ if ( ! class_exists( 'CMB2_Bootstrap_2231', false ) ) {
 	 * @license   GPL-2.0+
 	 * @link      http://webdevstudios.com
 	 */
-	class CMB2_Bootstrap_2231 {
+	class CMB2_Bootstrap_224 {
 
 		/**
 		 * Current version number
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		const VERSION = '2.2.3.1';
+		const VERSION = '2.2.4';
 
 		/**
 		 * Current version hook priority.
@@ -77,20 +77,20 @@ if ( ! class_exists( 'CMB2_Bootstrap_2231', false ) ) {
 		 * @var   int
 		 * @since 2.0.0
 		 */
-		const PRIORITY = 9978;
+		const PRIORITY = 9977;
 
 		/**
-		 * Single instance of the CMB2_Bootstrap_2231 object
+		 * Single instance of the CMB2_Bootstrap_224 object
 		 *
-		 * @var CMB2_Bootstrap_2231
+		 * @var CMB2_Bootstrap_224
 		 */
 		public static $single_instance = null;
 
 		/**
-		 * Creates/returns the single instance CMB2_Bootstrap_2231 object
+		 * Creates/returns the single instance CMB2_Bootstrap_224 object
 		 *
 		 * @since  2.0.0
-		 * @return CMB2_Bootstrap_2231 Single instance object
+		 * @return CMB2_Bootstrap_224 Single instance object
 		 */
 		public static function initiate() {
 			if ( null === self::$single_instance ) {
@@ -139,6 +139,8 @@ if ( ! class_exists( 'CMB2_Bootstrap_2231', false ) ) {
 				define( 'CMB2_DIR', trailingslashit( dirname( __FILE__ ) ) );
 			}
 
+			$this->l10ni18n();
+
 			// Include helper functions
 			require_once 'includes/CMB2_Base.php';
 			require_once 'includes/CMB2.php';
@@ -152,9 +154,33 @@ if ( ! class_exists( 'CMB2_Bootstrap_2231', false ) ) {
 			cmb2_bootstrap();
 		}
 
+		/**
+		 * Registers CMB2 text domain path
+		 * @since  2.0.0
+		 */
+		public function l10ni18n() {
+
+			$loaded = load_plugin_textdomain( 'cmb2', false, '/languages/' );
+
+			if ( ! $loaded ) {
+				$loaded = load_muplugin_textdomain( 'cmb2', '/languages/' );
+			}
+
+			if ( ! $loaded ) {
+				$loaded = load_theme_textdomain( 'cmb2', get_stylesheet_directory() . '/languages/' );
+			}
+
+			if ( ! $loaded ) {
+				$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
+				$mofile = dirname( __FILE__ ) . '/languages/cmb2-' . $locale . '.mo';
+				load_textdomain( 'cmb2', $mofile );
+			}
+
+		}
+
 	}
 
 	// Make it so...
-	CMB2_Bootstrap_2231::initiate();
+	CMB2_Bootstrap_224::initiate();
 
 }

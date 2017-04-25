@@ -454,10 +454,14 @@ function bento_insert_custom_styles() {
 			';
 		}
 		if ( get_post_meta( $postid, 'bento_activate_header', true ) != '' ) {
+			$tile_opacity_raw = esc_html( get_post_meta( $postid, 'bento_header_overlay_opacity', true ) );
+			if ( $tile_opacity_raw > 1 ) {
+				$tile_opacity_raw = $tile_opacity_raw / 10;
+			}
 			$custom_css .= '
 				.post-header-overlay {
 					background-color: '.esc_html( get_post_meta( $postid, 'bento_header_overlay', true ) ).';
-					opacity: '.esc_html( get_post_meta( $postid, 'bento_header_overlay_opacity', true ) ).';
+					opacity: '.$tile_opacity_raw.';
 				}
 				.post-header-subtitle {
 					margin-bottom: 0;
@@ -694,7 +698,7 @@ function bento_comment_form_fields( $fields ) {
 
 
 // Initialize the metabox class
-if ( ! class_exists( 'CMB2_Bootstrap_2231' ) ) {
+if ( ! class_exists( 'CMB2_Bootstrap_224' ) ) {
 	if ( file_exists( get_template_directory() . '/includes/metaboxes/init.php' ) ) {
 		require_once ( get_template_directory().'/includes/metaboxes/init.php' );
 	}
@@ -1213,20 +1217,20 @@ function bento_metaboxes() {
 			'id' => $bento_prefix . 'header_overlay_opacity',
 			'type' => 'select',
 			'options' => array(
-				'' => esc_html__( 'Choose value', 'bento' ),
-				'0.0' => '0.0',
-				'0.1' => '0.1',
-				'0.2' => '0.2',
-				'0.3' => esc_html__( '0.3 (default)', 'bento' ),
-				'0.4' => '0.4',
-				'0.5' => '0.5',
-				'0.6' => '0.6',
-				'0.7' => '0.7',
-				'0.8' => '0.8',
-				'0.9' => '0.9',
-				'1.0' => '1.0',
+				'0' => '0.0',
+				'1' => '0.1',
+				'2' => '0.2',
+				'3' => esc_html__( '0.3 (default)', 'bento' ),
+				'4' => '0.4',
+				'5' => '0.5',
+				'6' => '0.6',
+				'7' => '0.7',
+				'8' => '0.8',
+				'9' => '0.9',
+				'10' => '1.0',
 			),
 			'default' => '0.3',
+			'show_option_none' => esc_html__( 'Choose value', 'bento' ),
 		)
 	);
 	$bento_header_settings->add_field(
@@ -1405,20 +1409,20 @@ function bento_metaboxes() {
 			'id' => $bento_prefix . 'tile_overlay_opacity',
 			'type' => 'select',
 			'options' => array(
-				'' => esc_html__( 'Choose value', 'bento' ),
-				'0.0' => '0.0',
-				'0.1' => '0.1',
-				'0.2' => '0.2',
-				'0.3' => '0.3',
-				'0.4' => '0.4',
-				'0.5' => '0.5',
-				'0.6' => esc_html__( '0.6 (default)', 'bento' ),
-				'0.7' => '0.7',
-				'0.8' => '0.8',
-				'0.9' => '0.9',
-				'1.0' => '1.0',
+				'0' => '0.0',
+				'1' => '0.1',
+				'2' => '0.2',
+				'3' => '0.3',
+				'4' => '0.4',
+				'5' => '0.5',
+				'6' => esc_html__( '0.6 (default)', 'bento' ),
+				'7' => '0.7',
+				'8' => '0.8',
+				'9' => '0.9',
+				'10' => '1.0',
 			),
 			'default' => '0.6',
+			'show_option_none' => esc_html__( 'Choose value', 'bento' ),
 		)
 	);
 	$bento_tile_settings->add_field(

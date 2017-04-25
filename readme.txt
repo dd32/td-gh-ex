@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 1.6.6
+Stable tag: 1.6.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.6.7 / 25 April 2017
+Updated the included CMB2 library.
+Fixed header overlay and tile overlay opacity setting saving.
+Removed hyphenation from the stylesheet.
 
 * 1.6.6 / 12 April 2017
 Fixed submenu behaviour with active sticky header given that a page is loaded in the middle.
