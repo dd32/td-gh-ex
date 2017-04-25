@@ -37,10 +37,8 @@ Customizer
    - Add Header Image
    - Remove Header Image (When removing a header image, the default image will display).
 5. Layouts Supports
-   - Post Layouts
-   - Page layouts
+   - Global Layout Layouts
    - Custom Layouts
-   - Archive Layouts
    The Layout Supports gives the user the ability to change their layouts if they choose to do so.
 5. Static Front Page
    - Front Page
@@ -49,8 +47,10 @@ Customizer
 
 Description
 ================================================================================================
-Silver Quantum is a responsive WordPress theme that allows you to change diffrent layouts with live experiences
-through the customizer.
+Silver Quantum has been converted into a responsive theme that looks great on smartphones and tablets. 
+This theme offers several features such as custom header, left and right sidebars, featured images and more. 
+The Mobile Menu is slightly different from other themes. The mobile menu has been created at the bottom left 
+corner that helps users to navigation easier.
 
 
 Frequently Asked Questions
@@ -60,6 +60,12 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.3.9
+- Changed Description
+
+Version: 0.3.8
+- Fixed Bugs
+
 Version: 0.3.7 
 - Minor Fixes
 
