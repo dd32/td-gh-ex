@@ -14,8 +14,8 @@ get_header(); ?>
                 <?php if ( have_posts() ) : ?>
                     <h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'bb-ecommerce-store' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                     <?php while ( have_posts() ) : the_post(); ?>
-                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        <?php the_content(); ?>
+                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                        <?php the_excerpt(); ?>
                     <?php endwhile; ?>
                     <div class="clearfix"></div>
                     <?php
@@ -32,7 +32,7 @@ get_header(); ?>
             </div>
             <div class="clear"></div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" id="sidebar">
             <?php dynamic_sidebar('sidebar-1'); ?>
         </div>
     </div>

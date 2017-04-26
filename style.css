@@ -4,11 +4,11 @@ Theme URI: http://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: http://www.themeshopy.com
 Description: eCommerce Store is a BB WooCommerce Free WordPress theme. eCommerce Store is elegant multipurpose eCommerce/WooCommerce WordPress theme suitable for eCommerce websites of any store type: such as online book store, mobile & tablet store, laptop store, apparel store, fashion store, sport store, digital shop, handbags store, cosmetics shop, jewelry store and for multipurpose online stores. Its modern design is perfect to create a website for your business. eSotre includes plenty of customization options that are easy to use. Main features of ecommerce-store: Customizer theme options, background image and color, wishlist support, grid homepage block, product search with category select, SEO optimized, fully responsive, configurable home page, slider, fast loading.  check the demo at http://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, threaded-comments, translation-ready,food-and-drink,blog,entertainment,e-commerce,news,photography,portfolio
+Tags: one-column,two-columns,right-sidebar,custom-background,custom-menu,featured-images,theme-options, threaded-comments, translation-ready,food-and-drink,blog,e-commerce
 
 BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2016.
 BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
@@ -60,7 +60,7 @@ p{
 
 a{ 
   text-decoration:none;
-  color:#00A885;
+  color:#a94442;
 }
 
 a:hover{ 
@@ -153,7 +153,7 @@ select{
 img.alignleft {
   display: inline;
   float: left;
-  margin-right:45px;
+  margin-right:25px;
   margin-top:4px;
   margin-bottom:20px;
   padding:0;
@@ -163,6 +163,10 @@ img.alignleft {
 img.alignright { 
   display: inline;
   float: right;
+  margin-left:25px;
+  margin-top:4px;
+  margin-bottom:20px;
+  padding:0;
 }
 
 .aligncenter,
@@ -216,6 +220,9 @@ h2.section-title {
   text-align:center;
   display:table;
   margin-bottom:50px;
+}
+table{
+  width:100%;	
 }
 
 /* --------- SLIDER--------- */
@@ -377,11 +384,24 @@ a.blog-more{
   color:#000;
 }
 
+@media print
+{    
+    .nav *,#sidebar *
+    {
+        display: none !important;
+    }
+
+}
+
 @media screen and (min-width:720px){
   .header .nav ul li ul{
     display:none;
     z-index:2;
   }
+  
+
+ 
+
   .header .nav ul li:hover > ul{
     display:block;
     background:#222222;
@@ -436,7 +456,7 @@ a.blog-more{
 
 /* --------- Homepage --------- */
 #our-services{
-	padding:20px 0 0 0;
+	padding:20px 15px 0 15px;
 }
 section { 
   width:100%;
@@ -881,6 +901,7 @@ section#blog{
   font-size:12px;
 }
 
+
 #content-tc #comments ol li{
   width:100%;
   background:none;
@@ -1037,7 +1058,6 @@ section#blog{
 }
 
 #content-tc p{
-  text-align:justify;
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
@@ -1051,16 +1071,17 @@ section#blog{
 }
 
 #content-tc h1{
-  font-size:51px;
+  font-size:35px;
+  margin:20px 0 0 0;
 }
 
 #content-tc h2{
-  font-size:44px;
+  font-size:30px;
   font-weight:normal;
   margin:0;
   padding:0;
   color:#000;
-  margin:0 0 25px;
+  margin:0 0 15px;
   font-family:Roboto;
 }
 
@@ -1080,7 +1101,7 @@ section#blog{
   margin:0;
   padding:0;
   color:#333;
-  margin:0 0 25px;
+  margin:0 0 10px;
   font-family:Roboto;
 }
 
@@ -1124,25 +1145,13 @@ section#blog{
 
 #content-tc ol li{
   padding:0 0 0 0;
-  margin:0 0 20px 0;
+  margin:0 0 15px 5px;
+  list-style:decimal;
 }
 
 #content-tc ol li ol li{
-  margin:0 0 20px 0;
+  margin:0 0 15px 0;
   padding:0 0 0 35px;
-}
-#content-tc ol li:before {
-  counter-increment: myCounter;
-  content:counter(myCounter);
-  color: #fff;
-  background: #0c1f34;
-  display: inline-block;
-  text-align: center;
-  margin: 5px 10px;
-  line-height: 40px;
-  width: 40px;
-  height: 40px;
-  font-weight:bold;
 }
 
 #content-tc  h5{

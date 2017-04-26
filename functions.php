@@ -136,8 +136,8 @@ function bb_ecommerce_store_font_url(){
 /* Theme enqueue scripts */
 function bb_ecommerce_store_scripts() {
 	wp_enqueue_style( 'bb-ecommerce-store-font', bb_ecommerce_store_font_url(), array() );
-	wp_enqueue_style( 'bb-ecommerce-store-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style( 'bb-ecommerce-store-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'bb-ecommerce-store-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

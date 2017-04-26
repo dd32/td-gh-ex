@@ -4,10 +4,27 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.0
+Version         :   1.1
 Tested up to    :   WP 5.1+
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
+
+
+== Copyright ==
+
+BB Ecommerce Store WordPress Theme, Copyright 2017 WordPress.org
+BB Ecommerce Store is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
 
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
@@ -34,7 +51,7 @@ Theme is Built using the following resource bundles.
 	Screenshot Image: https://pixabay.com/en/child-person-human-girl-teddy-830725/
 
 3 - CSS bootstrap.css
-		Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+	Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
