@@ -1,7 +1,7 @@
 ( function( api ) {
 
-	// Extends our custom "thinkup-button-link" section.
-	api.sectionConstructor['thinkup-button-link'] = api.Section.extend( {
+	// Extends our custom "upgrade-top" section.
+	api.sectionConstructor['upgrade-top'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

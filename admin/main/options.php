@@ -17,30 +17,14 @@ function alante_thinkup_customizer_theme_options( $wp_customize ) {
 
 	// Add Upgrade Section
 	$wp_customize->add_section(
-		new alante_thinkup_customizer_customswitch_button_link(
+		new alante_thinkup_customizer_customswitch_upgrade(
 			$wp_customize,
 			$prefix_name . 'thinkup_customizer_section_upgrade_top',
 			array(
 				'title'        => __( 'Alante Pro', 'alante' ),
 				'priority'     => 1,
-				'button_text' => __( 'Upgrade Now', 'alante' ),
-				'button_url'  => '//www.thinkupthemes.com/themes/alante/',
-				'button_class' => 'button-primary',
-			)
-		)
-	);
-
-	// Add Documentation Section
-	$wp_customize->add_section(
-		new alante_thinkup_customizer_customswitch_button_link(
-			$wp_customize,
-			$prefix_name . 'thinkup_customizer_section_docs',
-			array(
-				'title'        => __( 'Documentation', 'alante' ),
-				'priority'     => 1,
-				'button_text' => __( 'View Docs', 'alante' ),
-				'button_url'  => admin_url( 'themes.php?page=thinkup-welcome&tab=documentation' ),
-				'button_class' => 'button-secondary',
+				'upgrade_text' => __( 'Upgrade Now', 'alante' ),
+				'upgrade_url'  => '//www.thinkupthemes.com/themes/alante/',
 			)
 		)
 	);

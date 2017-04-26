@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	4.0.0
-Tested up to:		4.9.1
+Tested up to:		4.7.2
 
 Alante is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
 
@@ -102,47 +102,6 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
-
-Version 1.0.15
-- Updated: Improved checks for 'edit_theme_options' capability to ensure demo content only displays to site admins.
-
-Version 1.0.14
-- Updated: Sidebar layouts now applied using css classes instead of loading separate stylesheets.
-
-Version 1.0.13
-- Updated: Improved escaping in function alante_thinkup_title_select() to ensure page title displays correctly.
-
-Version 1.0.12
-- Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
-
-Version 1.0.11
-- Updated: Various styling improvements in style.css
-
-Version 1.0.10
-- Updated: Support added for EDD to ensure purchase buttons display correctly on downloads page.
-
-Version 1.0.9
-- Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
-
-Version 1.0.8
-- Updated: Customizer theme option styling updated.
-
-Version 1.0.7
-- Updated: Slider updated to ensure full compatibility with child themes.
-
-Version 1.0.6
-- Fixed:   Documentation display fixed to ensure compatibilty with WordPress v4.8.
-- Updated: Homepage (Featured) section customizer options display regardless of if switch is on or off.
-
-Version 1.0.5
-- New:     Documentation link added to customizer.
-
-Version 1.0.4
-- Fixed:   Notification for theme information page can now be dismissed permanently.
-- Updated: Global variables removed from 05.blog.php and function "alante_thinkup_var()" used to get option values.
-
-Version 1.0.3
-- New:     Theme information page added under Appearance in admin area.
 
 Version 1.0.2
 - New:     column1-1/3 image size added.

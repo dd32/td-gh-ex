@@ -32,19 +32,17 @@ function alante_thinkup_title_select() {
 	} elseif ( is_attachment() ) {
 		printf( '<span>' . __( 'Blog Post Image: ', 'alante' ) . '</span>' . '%s', esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( '<span>%s</span>', html_entity_decode( esc_html( get_the_title() ) ) );
+		printf( '<span>%s</span>', esc_html( get_the_title() ) );
 	} else if ( is_search() ) {
 		printf( '<span>' . __( 'Search Results: ', 'alante' ) . '</span>' . '%s', esc_html( get_search_query() ) );
 	} else if ( is_404() ) {
 		printf( '<span>' . __( 'Page Not Found', 'alante' ) . '</span>' );
 	} elseif ( is_archive() ) {
-		printf( get_the_archive_title() );
-	} elseif ( is_tax() ) {
-		printf( get_queried_object()->name );
+		echo get_the_archive_title();
 	} elseif ( alante_thinkup_check_isblog() ) {
 		printf( '<span>' . __( 'Blog', 'alante' ) . '</span>' );
 	} else {
-		printf( '<span>%s</span>', html_entity_decode( esc_html( get_the_title() ) ) );
+		printf( '<span>%s</span>', esc_html( get_the_title() ) );
 	}
 }
 
