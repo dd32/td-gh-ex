@@ -1000,7 +1000,7 @@ function weaverx_auto_excerpt_more( $more ) {
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  */
-	return ' &hellip;' . weaverx_continue_reading_link();
+	return ' <span class="excerpt-dots">&hellip;</span>' . weaverx_continue_reading_link();
 }
 
 add_filter( 'excerpt_more', 'weaverx_auto_excerpt_more' );

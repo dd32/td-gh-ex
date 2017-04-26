@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.1.4
+Stable tag: 3.1.5
 
 == Description ==
 
@@ -404,3 +404,7 @@ with testing and feature suggestions.
 * Fix: Menu not closing for link to anchor on same page. Fixed so now better supports one page websites.
 * Fix: z-index for fixed top primary vs secondary menus and fixed top header widget area
 * Fix: WooCommerce: Single Product Page uses Page Sidebar Layout, Multi-Product List page uses Archive Sidebar Layout
+
+= Version 3.1.5 =
+* New: add Woocommerce support for product gallery zoom, lightbox, slider
+* Tweak: wrapped excerpt ... in span with excerpt-dots class.
