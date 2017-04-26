@@ -1,0 +1,20 @@
+#customize-controls .control-section-aquarella .accordion-section-title:hover,
+#customize-controls .control-section-aquarella .accordion-section-title:focus {
+	background-color: #fff;
+}
+
+.control-section-aquarella .accordion-section-title .button {
+	margin-top:  -4px;
+	font-weight: 400;
+	margin-left: 8px;
+	background: #1dc2c2;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+}
+
+	.rtl .control-section-aquarella .accordion-section-title .button {
+		margin-left:  0;
+		margin-right: 8px;
+	}

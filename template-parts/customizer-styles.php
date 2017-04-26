@@ -28,11 +28,11 @@ a,
 .tbpw-profile-name,
 .navigation a:hover,
 .comment-reply-link {
-	color: <?php echo $color_one; ?>;
+	color: <?php echo esc_attr($color_one); ?>;
 }
 
 .color2 {
-	color: <?php echo $color_two; ?>;
+	color: <?php echo esc_attr($color_two); ?>;
 }
 
 .color3,
@@ -41,7 +41,7 @@ a:hover,
 .sidebar-area .widget ul li a:hover,
 .entry-footer .cat-links a,
 .navigation a {
-	color: <?php echo $color_three; ?>;;
+	color: <?php echo esc_attr($color_three); ?>;
 }
 
 html,
@@ -70,7 +70,7 @@ body,
 .social-icons a,
 .navbar .nav  li  a:hover, .navbar .nav  li  a:focus, .navbar .nav  li  a:active,
 .wpcf7-form input[type=submit], .mc4wp-form input[type=submit] {
-	background-color: <?php echo $color_one; ?>;
+	background-color: <?php echo esc_attr($color_one); ?>;
 }
 
 .bdw-wrapper-negative:before,
@@ -122,18 +122,18 @@ body .hero-slideshow {
 }
 
 body .btn-stroke {
-	border-color: <?php echo $color_one; ?>;
+	border-color: <?php echo esc_attr($color_one); ?>;
 }
 
 body .btn-stroke:before,
 body .navbar .nav li a,
 body .post-element-header,
 body .owl-carousel .owl-dot.active span {
-	background-color: <?php echo $color_three; ?>;
+	background-color: <?php echo esc_attr($color_three); ?>;
 }
 
 body .btn-stroke:hover {
-	border-color: <?php echo $color_three; ?>; 
+	border-color: <?php echo esc_attr($color_three); ?>; 
 }
 
 body .btn-stroke:hover {
@@ -158,15 +158,15 @@ body .btn-stroke-negative {
 
 .navbar-bottom,
 .social-icons a:hover {
-	background-color: <?php echo $color_two; ?>;
+	background-color: <?php echo esc_attr($color_two); ?>;
 }
 
 body .header-social-icons ul a {
-	color: <?php echo $color_three; ?>;
+	color: <?php echo esc_attr($color_three); ?>;
 }
 
 body .header-social-icons ul a:hover {
-	color: <?php echo $color_one; ?>;
+	color: <?php echo esc_attr($color_one); ?>;
 }
 
 #colophon {
@@ -178,7 +178,7 @@ body .header-social-icons ul a:hover {
 .entry-footer .comments-link a,
 .entry-footer .comments-link a:hover,
 .entry-meta {
-	background-color: <?php echo $color_three; ?>;;
+	background-color: <?php echo esc_attr($color_three); ?>;
 }
 
 .contrast,
@@ -206,7 +206,7 @@ body .sidebar-area .widget_search #s {
 }
 
 .entry-footer .cat-links a {
-	border-color: <?php echo $color_three; ?>;;
+	border-color: <?php echo esc_attr($color_three); ?>;
 }
 
 .comments-area input[type=text],
@@ -216,7 +216,7 @@ body .sidebar-area .widget_search #s {
 .wpcf7-form input[type=text],
 .wpcf7-form input[type=email],
 .wpcf7-form textarea {
-	border-color: <?php echo $color_two; ?>;
+	border-color: <?php echo esc_attr($color_two); ?>;
 }
 
 .comment-author .fn a {
@@ -229,7 +229,7 @@ body .sidebar-area .widget_search #s {
 /*Body*/
 #body {
 	background-image: url('<?php echo esc_url( $bg_image ); ?>'); 
-	background-color: <?php echo get_theme_mod( 'bg_color', '#eeeeee' ); ?>;
+	background-color: <?php echo esc_attr( get_theme_mod( 'bg_color', '#eeeeee' ) ); ?>;
 }
 
 </style>

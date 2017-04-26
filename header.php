@@ -95,8 +95,8 @@
 					                'container_class'   => '',
 					                'container_id'      => '',
 					                'menu_class'        => 'nav navbar-nav',
-					                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-					                'walker'            => new wp_bootstrap_navwalker())
+					                'fallback_cb'       => 'aquarella_bootstrap_navwalker::fallback',
+					                'walker'            => new aquarella_bootstrap_navwalker())
 					            );
 						        ?>
 							</div>

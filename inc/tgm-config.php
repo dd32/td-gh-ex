@@ -13,7 +13,7 @@ function aquarella_require_plugins() {
     	array(
 			'name'     				=> esc_html( 'Kirki', 'aquarella-lite' ),
 			'slug'     				=> 'kirki',
-			'required' 				=> true,
+			'required' 				=> false,
 			'version' 				=> '',
 			'force_activation' 		=> false,
 			'force_deactivation' 	=> false,

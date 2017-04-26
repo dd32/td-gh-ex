@@ -124,16 +124,14 @@ function aquarella_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	//jQuery
-	wp_enqueue_script( 'jquery' );
 	
 	//bootstrap
-	wp_enqueue_style( 'aquarella-bootstrap-styles', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css' );
-	wp_enqueue_script( 'aquarella-bootstrap-js', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array(), '20151215', true );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array('jquery'), '20151215', true );
 
 	//Google Web Fonts
-	wp_enqueue_style( 'aquarella-googlewebfonts-styles', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' );
-	wp_enqueue_style( 'aquarella-googlewebfonts2-styles', 'https://fonts.googleapis.com/css?family=Roboto:400,700,300' );
+	wp_enqueue_style( 'aquarella-googlewebfonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' );
+	wp_enqueue_style( 'aquarella-googlewebfonts2', 'https://fonts.googleapis.com/css?family=Roboto:400,700,300' );
 
 	//theme files
 	wp_enqueue_style( 'aquarella-theme-style', get_template_directory_uri() . '/css/styles.css' );
@@ -163,7 +161,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * navigation bootstrap
  */
-require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+require get_template_directory() . '/inc/aquarella_bootstrap_navwalker.php';
 
 /**
  * Custom Widgets
@@ -177,6 +175,12 @@ require get_template_directory() . '/inc/tgm-config.php';
 /**
  * Kirki
  */
-require_once get_template_directory() . '/inc/tmb-aquarella-kirki.php';
-require get_template_directory() . '/inc/include-kirki.php';
-require get_template_directory() . '/inc/kirki-config.php';
+if ( class_exists( 'Kirki' ) ) {
+  require_once get_template_directory() . '/inc/tmb-aquarella-kirki.php';
+  require get_template_directory() . '/inc/include-kirki.php';
+  require get_template_directory() . '/inc/kirki-config.php';
+} 
+/**
+ * Customizer PRO Version
+ */
+require_once( trailingslashit( get_template_directory() ) . 'trt-customize-pro/aquarella/class-customize.php' );
