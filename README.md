@@ -19,9 +19,35 @@ Tested up to: WP 4.6.2<br>
 Unless otherwise specified, all the theme files, scripts and images are licensed under GPLv3 license <br />
 
 Ascendant theme uses:
-* FontAwesome (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL) <br />
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE) <br />
-* Unless otherwise specified, all images are created by CPOthemes <br />
+Font Awesome - http://fortawesome.github.io/Font-Awesome/
+License: http://fortawesome.github.io/Font-Awesome/license/
+Copyright: Dave Gandy
+
+Jquery Cycle2 - http://jquery.malsup.com/cycle2/
+License: Dual licensed under the MIT and GPL licenses.
+Copyright: M. Alsup
+
+HTML5 Shiv - https://github.com/aFarkas/html5shiv
+License: Dual licensed under the MIT and GPL licenses.
+Copyright: @afarkas @jdalton @jon_neal @rem
+
+Magnific Popup - http://dimsemenov.com/plugins/magnific-popup/
+License: MIT License
+Copyright: Stephane Caron
+
+All Image Resources
+License: GPLv2 General Public License
+Copyright: Manuel Vicedo
+
+Background Image - https://pixabay.com/en/mountain-waterfall-clouds-stream-801776/
+License: CC0 Public Domain
+Copyright: Pixabay
+
+Screenshot Image - https://pixabay.com/en/fog-forest-mountain-world-clouds-1535201/
+License: CC0 Public Domain
+Copyright: Pixabay
+
+Any other image included & distributed with the theme has been licensed under the GPL and is the creative work of CPOThemes.com.
 
 # Description
 
@@ -60,6 +86,9 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on https://cpothemes.com/documentation
 
 # Changelog
+
+## v0.5
+* wp.org review
 
 ## v0.2 
 * Initial release.

@@ -5,7 +5,7 @@
  Tags: one-column, two-columns, right-sidebar, full-width-template, sticky-post, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
  Author:CPOThemes
  Author URI: https://cpothemes.com/
- Version: 0.5
+ Version: 0.6
  License: GNU General Public License 3.0 or later
  License URI: license.md
  Template: allegiant
@@ -45,7 +45,7 @@ a,
 /* Header */
 .header { position:relative; background:#fff; border-bottom:1px solid #e1e1e1; width:100%;padding: 0; }
 .header.header-with-slider {position: absolute;width: 100%;top: 0; left: 0; background-color: transparent;z-index: 999;}
-.header.with-top-menu{top:34px;}
+.header.with-top-menu.header-with-slider{top:34px;}
 .header .logo { float:left; padding-top:10px;padding-bottom:10px; }
 .header .header-content { float:right; padding:0 0 0 20px; }
 
@@ -270,7 +270,7 @@ html body .button:link,
 html body .button:visited, 
 input[type=submit] {
 	border: 0 none;
-	background-color: #70b85d;
+	background: #70b85d;
 	color: #fff;
 	padding: 15px 40px;
 	font-size: 15px;
@@ -320,6 +320,9 @@ body #subfooter {
 }
 .ctwg-tweets .ctwg-tweet {
 	font-size: 15px;
+}
+.post-title > a > span {
+    padding-right: 10px;
 }
 
 /* Sections */
