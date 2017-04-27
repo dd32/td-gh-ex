@@ -2,6 +2,7 @@
 /** Theme Name	: Enigma
 * Theme Core Functions and Codes
 */
+
 	/**Includes required resources here**/
 	define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 	define('WL_TEMPLATE_DIR', get_template_directory());
@@ -91,7 +92,9 @@
 			'service_3_icons'=>"fa fa-wordpress",
 			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_3_link'=>"#",			
-
+			'product_title'=>'',
+			
+			
 			//Portfolio Settings:
 			'portfolio_home'=>'1',
 			'port_heading' => __('Recent Works', 'enigma' ),
@@ -508,4 +511,5 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
+
 ?>

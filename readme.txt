@@ -5,6 +5,12 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.9 [27-04-2017]
+1. Extra Section for Child-Theme.
+2. Coupon Code added.
+
+
+
 @Version: 2.8.6 [06-04-2017]
 1. Appointment Schedular plugin added in plugin recommendation.
 2. Logo/Site Title Center feature added.
