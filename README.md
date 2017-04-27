@@ -2,8 +2,8 @@
 
 Theme Name: Ascendant<br>
 Theme URI: https://cpothemes.com/theme/Ascendant<br>
-Version: 0.2<br>
-Tested up to: WP 4.6.2<br>
+Version: 0.7<br>
+Tested up to: WP 4.7.4<br>
 
 ### Author: CPOThemes<br>
 ### Author URI: https://cpothemes.com/<br>
@@ -19,6 +19,11 @@ Tested up to: WP 4.6.2<br>
 Unless otherwise specified, all the theme files, scripts and images are licensed under GPLv3 license <br />
 
 Ascendant theme uses:
+
+Allegiant Lite - https://cpothemes.com/theme/allegiant
+License: GNU General Public License 2.0 or later
+Copyright: CPOThemes
+
 Font Awesome - http://fortawesome.github.io/Font-Awesome/
 License: http://fortawesome.github.io/Font-Awesome/license/
 Copyright: Dave Gandy
@@ -86,6 +91,9 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on https://cpothemes.com/documentation
 
 # Changelog
+
+## v0.7
+* second wp.org review
 
 ## v0.5
 * wp.org review
