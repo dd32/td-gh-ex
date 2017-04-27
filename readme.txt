@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.3
+- New:     Theme information page added under Appearance in admin area.
+
 Version 1.0.2
 - New:     column1-1/3 image size added.
 - Updated: Class blog-style1 changed to blog-article.
