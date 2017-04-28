@@ -46,7 +46,7 @@
 				</a></h1>
 				<?php } ?>	
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"><?php _e('Toggle navigation','appointment-green'); ?></span>
+				<span class="sr-only"><?php echo 'Toggle navigation'; ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
