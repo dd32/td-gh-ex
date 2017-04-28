@@ -450,7 +450,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
       <div class="pro-box">
-		<a href="<?php echo 'http://webriti.com/appointment/';?>" target="_blank" class="button button-primary" id="review_pro"><?php _e('Add more service get the pro','appointment' ); ?></a>
+		<a href="<?php echo 'http://webriti.com/appointment/';?>" target="_blank" class="button button-primary" id="review_pro"><?php _e('Add more services. Get Pro.','appointment' ); ?></a>
 	 
 	<div>
     <?php
@@ -458,7 +458,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
 }
 //Pro service section
 $wp_customize->add_section( 'service_section_pro' , array(
-		'title'      => __('Add more service', 'appointment'),
+		'title'      => __('Add more services', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 700,
    	) );

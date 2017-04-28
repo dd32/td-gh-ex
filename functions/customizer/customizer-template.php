@@ -4,7 +4,7 @@ function appointment_template_customizer( $wp_customize ) {
 //About Us Template
 class appointment_Customize_about_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf (__("Want to add company about us, team, client, footer callout in about template then <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro",'appointment')); ?> </a> </h3>
+        <h3><?php echo sprintf (__("Want to add a company About Us, Team, Client, footer, callout with the About template? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?> </h3>
 		<?php
 		}
 	}
@@ -12,8 +12,8 @@ class appointment_Customize_about_upgrade extends WP_Customize_Control {
 //Service Template
 class appointment_Customize_service_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf (__("Want to add more service, testimonial, client, footer callout in service template then <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro",'appointment')); ?>
-		</a></h3> 
+        <h3><?php echo sprintf (__("Want to add more services, testimonials, clients, footer callouts in the Service template? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?>
+		</h3> 
 		<?php
 		}
 	}
@@ -21,14 +21,14 @@ class appointment_Customize_service_upgrade extends WP_Customize_Control {
 //Blog Template
 class appointment_Customize_blog_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-<h3><?php echo sprintf (__("Want to use blog meta setting then<a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to pro",'appointment')); ?></a></h3>
+<h3><?php echo sprintf (__("Want to use the blog meta settings? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?></h3>
 		<?php
 		}
 	}
 //Contact Form 
 class appointment_Customize_form_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-<h3><?php echo sprintf (__("Want to add contact form information and contact map in contact template then <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro",'appointment')); ?></a> </h3> 
+<h3><?php echo sprintf (__("Want to add contact form information and a contact map in the Contact template? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?></h3> 
 		<?php
 		}
 	}
@@ -36,7 +36,7 @@ class appointment_Customize_form_upgrade extends WP_Customize_Control {
 //Contact Information 
 class appointment_Customize_information_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf (__("Want to add contact address infromation in contact template then <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro",'appointment')); ?> </a></h3>
+        <h3><?php echo sprintf (__("Want to add contact address information in the Contact template? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?> </h3>
 		<?php
 		}
 	}
@@ -44,7 +44,7 @@ class appointment_Customize_information_upgrade extends WP_Customize_Control {
 //Contact Callout 
 class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-       <h3><?php echo sprintf (__("Want to add contact callout information in conatct template than <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro",'appointment')); ?> </a></h3>
+       <h3><?php echo sprintf (__("Want to add contact callout information in the Contact template? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>",'appointment')); ?> </h3>
 		
 		<?php
 		}
@@ -63,7 +63,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	$wp_customize->add_section(
         'about_section_settings',
         array(
-            'title' => __('About us page setting','appointment'),
+            'title' => __('About Us page settings','appointment'),
 			'panel'  => 'appointment_template',
 			'priority'   => 100,
 			
@@ -89,7 +89,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	
 	  //enable/disable blog post meta content
 	$wp_customize->add_section( 'blog_template' , array(
-		'title'      => __('Blog page setting', 'appointment'),
+		'title'      => __('Blog page settings', 'appointment'),
 		'panel'  => 'appointment_template',
 		'priority'   => 150,
    	) );
@@ -124,7 +124,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	$wp_customize->add_control(
     'appointment_options[blog_meta_section_settings]',
     array(
-        'label' => __('Hide post meta from blog pages, archive pages, categories, author etc.','appointment'),
+        'label' => __('Hide post meta from blog pages, archive pages, categories, authors, etc.','appointment'),
         'section' => 'blog_template',
         'type' => 'checkbox',
     )
@@ -136,7 +136,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	$wp_customize->add_section(
         'setting_section_settings',
         array(
-            'title' => __('Service page setting','appointment'),
+            'title' => __('Service page settings','appointment'),
 			'panel'  => 'appointment_template',
 			'priority'   => 100,
 			
@@ -217,7 +217,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 		'appointment_options[contact_google_map_enabled]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Google map','appointment'),
+			'label' => __('Hide Google Map','appointment'),
 			'section' => 'contact_section_settings',
 		)
 	);
@@ -234,7 +234,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[contact_google_title]',array(
-    'label'   => __('Contact Google map title','appointment'),
+    'label'   => __('Contact Google Map title','appointment'),
     'section' => 'contact_section_settings',
 	 'type' => 'text','input_attrs'=> array('disabled'=>'disabled'))  );	
 	 
@@ -250,7 +250,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[contact_google_map_url]',array(
-    'label'   => __('Google map URL','appointment'),
+    'label'   => __('Google Map URL','appointment'),
     'section' => 'contact_section_settings',
 	 'type' => 'textarea','textarea_attrs'=> array('disabled'=>'disabled'))  );
 	 
@@ -264,7 +264,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
     */
     public function render_content() {
     ?>
-    <a href="#" class="button"><?php _e( 'Click here to add Google map', 'appointment' ); ?></a>
+    <a href="#" class="button"><?php _e( 'Click here to add Google Map', 'appointment' ); ?></a>
     <?php
     }
 }
@@ -287,7 +287,7 @@ $wp_customize->add_control( new WP_map_Customize_Control( $wp_customize, 'map', 
 	$wp_customize->add_section(
         'contact_info_settings',
         array(
-            'title' => __('Contact information setting','appointment'),
+            'title' => __('Contact information settings','appointment'),
             'description' => '',
 			'panel'  => 'appointment_template',)
     );
@@ -322,7 +322,7 @@ $wp_customize->add_control( new WP_map_Customize_Control( $wp_customize, 'map', 
 		'appointment_options[contact-callout-enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide contact info section from contact page','appointment'),
+			'label' => __('Hide contact info section from Contact page','appointment'),
 			'section' => 'contact_info_settings',
 			'input_attrs'=> array('disabled'=>'disabled')
 		)
@@ -347,7 +347,7 @@ $wp_customize->add_control( new WP_map_Customize_Control( $wp_customize, 'map', 
 	 $wp_customize->add_setting(
     'appointment_options[contact_description]',
     array(
-        'default' => __('Read what customers are saying','appointment'),
+        'default' => __('Read what customers are saying:','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -566,7 +566,7 @@ $wp_customize->add_control( new WP_map_Customize_Control( $wp_customize, 'map', 
 		'appointment_options[check_contact_callout]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide contact callout from contact page','appointment'),
+			'label' => __('Hide contact callout from Contact page','appointment'),
 			'section' => 'contact_callout_settings',
 			'input_attrs'=> array('disabled'=>'disabled')
 		)

@@ -17,15 +17,15 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<div class="row">
 			<div class="col-md-6">
 				<div class="appointment-tab-pane-half appointment-tab-pane-first-half">
-				<p><?php esc_html_e( 'Business theme which is ideal for creating a corporate, business, fashion and sports websites.The premium version have tons of features. Hompage have number of sections for showing slider, your  portfolio, users reviews, latest news,  services, call to action and many more. Each section in the HomePage Template is well designed according to the business requirements.','appointment');?></p>
+				<p><?php esc_html_e( 'This is a Business theme which is ideal for creating corporate, business, fashion and sports websites. The premium version has tons of features. The Homepage has a number of sections for showing sliders, your portfolio, user reviews, latest news, services, call to action and much more. Each section in the HomePage Template is well designed according to business requirements.','appointment');?></p>
 				<p>
-				<?php esc_html_e( 'You can use this theme for any business type. Compatible with popular plugins like Contact Form 7, WPML, Polylang etc. Theme have their predefined version of contact page, service page, portfolio column layout pages, about us and blog layout pages helping you in creating an effective web presence.', 'appointment' ); ?>
+				<?php esc_html_e( 'You can use this theme for any type of business. It is compatible with popular plugins like Contact Form 7, WPML, Polylang, etc. The theme has a predefined version of a Contact page, Services page, Portfolio, column layout pages, About Us and Blog layout pages, helping you to create an effective web presence.', 'appointment' ); ?>
 				</p>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="appointment-tab-pane-half appointment-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/appointment-info/img/appointment.png'; ?>" alt="<?php esc_html_e( 'appointment Blue Child Theme', 'appointment' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/appointment-info/img/appointment.png'; ?>" alt="<?php esc_html_e( 'Appointment Blue Child Theme', 'appointment' ); ?>" />
 				</div>
 			</div>	
 		</div>

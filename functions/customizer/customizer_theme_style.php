@@ -9,7 +9,7 @@ public $type = 'new_menu';
        
 	   {
 	   ?>
-	   <h3><?php _e('Want to use below predefined themes colors then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to pro','appointment'); ?> </a>
+	   <h3><?php _e('Want to use the predefined theme colors seen below?','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to Pro','appointment'); ?> </a>
 	   <h3><?php _e('Predefined colors','appointment'); ?></h3>
 		<?php
 		  $name = '_customize-color-radio-' . $this->id; 

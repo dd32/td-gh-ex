@@ -2,7 +2,7 @@
 function appointment_testimonial_customizer( $wp_customize ) {
 class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf(__("Want to add testimonial than <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro</a>","appointment"));
+        <h3><?php echo sprintf(__("Want to add testimonials? <a href='http://www.webriti.com/appointment' target='_blank'>Upgrade to Pro</a>","appointment"));
 		}
 	}
 
@@ -32,7 +32,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 		$wp_customize,
 		'appointment_options[testimonial_upgrade]',
 			array(
-				'label'					=> __('Appointement upgrade','appointment'),
+				'label'					=> __('Appointment upgrade','appointment'),
 				'section'				=> 'test_section_settings',
 				'settings'				=> 'appointment_options[testimonial_upgrade]',
 			)
@@ -43,7 +43,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[testimonial_title]',
     array(
-        'default' => __('What our clients says','appointment'),
+        'default' => __('What our clients say:','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -58,7 +58,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	 $wp_customize->add_setting(
     'appointment_options[testimonial_description]',
     array(
-        'default' => __('Read what customers are saying','appointment'),
+        'default' => __('Read what customers are saying:','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

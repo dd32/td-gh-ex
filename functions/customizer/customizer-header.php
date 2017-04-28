@@ -61,7 +61,7 @@ $wp_customize->remove_control('header_textcolor');
 			   $wp_customize,
 			   'appointment_options[upload_image_logo]',
 			   array(
-				   'label'          => __( 'Upload a 150x150 for Logo Image', 'appointment' ),
+				   'label'          => __( 'Upload a 150x150 Logo Image', 'appointment' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -150,7 +150,7 @@ $wp_customize->remove_control('header_textcolor');
 	
 	/* favicon option */
     $wp_customize->add_section( 'appoointment_favicon' , array(
-      'title'       => __( 'Site favicon', 'appointment' ),
+      'title'       => __( 'Site Favicon', 'appointment' ),
       'priority'    => 500,
       'description' => __( 'Upload a favicon', 'appointment' ),
 	  'panel'  => 'header_options',

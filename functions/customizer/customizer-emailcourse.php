@@ -17,12 +17,12 @@ class WP_course_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
 	   <div class="pro-vesrion">
-	   <p><?php _e('A website exists for one and ONLY one reason.','appointment');?>
-	   <b><?php _e('To bring you more business','appointment'); ?></b></p>
+	   <p><?php _e('A website exists for one and ONLY one reason:','appointment');?>
+	   <b><?php _e('To bring you more business.','appointment'); ?></b></p>
 	   <p>
-	   <?php _e('Think of your website as a hardworking salesman who works 24 by 7 and never asks for a raise!','appointment');?>
+	   <?php _e('Think of your website as a hardworking salesman who works 24/7 and never asks for a raise!','appointment');?>
 	   </p>
-	   <?php _e('In this email course, I will deliver 4 highly actionable tips on how you can build a website which is trustworthy and which in turn brings more business for you.','appointment'); ?>
+	   <?php _e('In this email course I deliver 4 highly actionable tips on how you can build a website which is trustworthy and which, in turn, brings more business to you.','appointment'); ?>
 	</div>
 	  </br>
 	  <div class="pro-box">

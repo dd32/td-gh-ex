@@ -2,7 +2,7 @@
 function appointment_client_customizer( $wp_customize ) {
 class appointment_Customize_client_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add client image and link than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to pro','appointment'); ?> </a>  
+        <h3><?php _e('Want to add a client image and link?','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to Pro','appointment'); ?> </a>  
 		<?php
 		}
 	}

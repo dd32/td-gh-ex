@@ -54,7 +54,7 @@
 		<?php endif; } ?>
 	<?php if ('open' == $post->comment_status) { ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
-	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','appointment' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
+	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.','appointment' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
 <?php } else { 
 ?>
 <div class="comment-form-section">

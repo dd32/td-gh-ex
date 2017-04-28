@@ -53,8 +53,8 @@ class appointment_screen {
 	public function appointment_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing appointment Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'appointment' ), '<a href="' . esc_url( admin_url( 'themes.php?page=appointment-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=appointment-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with appointment lite', 'appointment' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Appointment Lite! To take full advantage of the best our theme can offer, please make sure you visit our %swelcome page%s.', 'appointment' ), '<a href="' . esc_url( admin_url( 'themes.php?page=appointment-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=appointment-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Appointment Lite', 'appointment' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -206,8 +206,8 @@ class appointment_screen {
 		<ul class="appointment-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','appointment'); ?></a></li>
 			<li role="presentation"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions Required','appointment'); ?></a></li>
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','appointment'); ?></a></li>
-			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','appointment'); ?></a></li>
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to Pro?','appointment'); ?></a></li>
+			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free vs PRO','appointment'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','appointment'); ?></a></li>
 			
 		</ul>

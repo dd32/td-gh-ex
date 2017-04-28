@@ -17,7 +17,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'appointment_pro_section' , array(
-		'title'      => __('Upgrade to pro','appointment'),
+		'title'      => __('Upgrade to Pro','appointment'),
 		'priority'   => 1000,
    	) );
 
@@ -74,7 +74,7 @@ class WP_document_Customize_Control extends WP_Customize_Control {
 	 
 	 <div>
 	 <div class="pro-vesrion">
-	 <?php _e('The Pro Version gives you more opportunities to enhance your site and business. In order to create effective online presence one have to showcase their wide range of products, have to use contact us enquiry form, have to make effective about us page, have to introduce team members, etc etc . The pro version will give it all. Buy the pro version and give us a chance to serve you better.','appointment');?>
+	 <?php _e('The Pro version gives you more opportunities to enhance your site and business. In order to create an effective online presence, one must showcase their wide range of products, use a Contact Us enquiry form, create an effective About Us page, introduce the Team Members, etc. The Pro version offers all this. Buy the Pro version today and give us the chance to serve you better.','appointment');?>
 	 </div>
     <?php
     }

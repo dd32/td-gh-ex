@@ -94,6 +94,10 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.6.4
+1. Updated Theme Description
+@Version 2.6.3
+1. Child Theme URL changed in Admin Page
 @Version 2.6.2
 1. Fixed section spacing issue.
 @Version 2.6.1

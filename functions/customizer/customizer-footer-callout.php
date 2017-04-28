@@ -2,7 +2,7 @@
 function appointment_footer_callout_customizer( $wp_customize ) {
 class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf (__("Want to add footer callout content than <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro</a>","appointment"));  
+        <h3><?php echo sprintf (__("Want to add footer callout content?<a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to Pro</a>.","appointment"));  
 		}
 	}
 
@@ -131,7 +131,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact2_title]',
     array(
-        'default' => __('We are open Mon-Fri','appointment'),
+        'default' => __('We are open Mon - Fri','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -151,7 +151,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact2_val]',
     array(
-        'default' => __('Mon - Fri 08.00 - 18.00','appointment'),
+        'default' => __('Mon - Fri : 08.00 - 18.00','appointment'),
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',

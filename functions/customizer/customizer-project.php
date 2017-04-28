@@ -3,7 +3,7 @@ function appointment_project_customizer( $wp_customize ) {
 
 class appointment_Customize_project_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add projects and categorization than','appointment'); ?><a href="<?php echo 'http://www.webriti.com/appointment'; ?>" target="_blank"><?php _e('Upgrade to pro','appointment'); ?> </a>  
+        <h3><?php _e('Want to add projects and categorization?','appointment'); ?><a href="<?php echo 'http://www.webriti.com/appointment'; ?>" target="_blank"><?php _e('Upgrade to Pro','appointment'); ?> </a>  
 		<?php
 		}
 	}

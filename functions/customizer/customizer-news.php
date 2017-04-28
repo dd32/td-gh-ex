@@ -5,13 +5,13 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'appointment_news_setting', array(
 		'priority'       => 600,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Latest news settings', 'appointment'),
+		'title'      => __('Latest News settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'news_section_settings',
         array(
-            'title' => __('Latest news settings','appointment'),
+            'title' => __('Latest News settings','appointment'),
             'description' => '',
 			'panel'  => 'appointment_news_setting',)
     );
@@ -31,7 +31,7 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'appointment_options[home_blog_enabled]',
     array(
-        'label' => __('Hide news section from homepage','appointment'),
+        'label' => __('Hide News section from Homepage','appointment'),
         'section' => 'news_section_settings',
         'type' => 'checkbox',
     )
@@ -50,7 +50,7 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'appointment_options[home_meta_section_settings]',
     array(
-        'label' => __('Hide post meta from news section','appointment'),
+        'label' => __('Hide post meta from News section','appointment'),
         'section' => 'news_section_settings',
         'type' => 'checkbox',
     )
@@ -99,7 +99,7 @@ function appointment_news_customizer( $wp_customize ) {
 		)
 	);	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control( $wp_customize, 'appointment_options[blog_selected_category_id]', array(
-    'label'   => __('Select category for latest news','appointment'),
+    'label'   => __('Select category for Latest News','appointment'),
     'section' => 'news_section_settings',
     'settings'   => 'appointment_options[blog_selected_category_id]',
 	) ) );
@@ -119,7 +119,7 @@ function appointment_news_customizer( $wp_customize ) {
     'appointment_options[post_display_count]',
     array(
         'type' => 'select',
-        'label' => __('Select Number of Post','appointment'),
+        'label' => __('Select number of Posts','appointment'),
         'section' => 'news_section_settings',
 		 'choices' => array(2=>2, 4=>4, 6=>6, 8=>8, 10=>10, 12=>12, 14=>14, 16=>16),
 		));
