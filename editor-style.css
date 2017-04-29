@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* CSS Document */
 body#tinymce.wp-editor { 
 	color: #404040;
   	font-family: 'Open Sans', sans-serif;
@@ -16,3 +15,5 @@ body#tinymce.wp-editor h5,
 body#tinymce.wp-editor h6 {
   font-family: 'Merriweather Sans', sans-serif;
 }
+
+

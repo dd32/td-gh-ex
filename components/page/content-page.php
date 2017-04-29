@@ -39,8 +39,8 @@
 					esc_html__( 'Edit %s', 'authorize' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
-				'<span class="edit-link">',
-				'</span>'
+				'<div class="edit-link">',
+				'</div>'
 			);
 		?>
 	</footer>

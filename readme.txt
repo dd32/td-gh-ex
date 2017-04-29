@@ -1,9 +1,11 @@
-=== Authorize ===Contributors: Lisa Armstrong (Working Websites)
+=== Authorize ===
+
+Contributors: Lisa Armstrong (Working Websites)
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-logo, editor-style, featured-images, theme-options, footer-widgets, threaded-comments, blog, news
 
 Requires at least:
 Tested up to:
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,25 +56,48 @@ This sidebar (widget area) appears on ALL pages EXCEPT the front page.
 Note:  if you want widgets on the front page and all the other pages, add the same widget to both sidebars.
 
 Footers:
-There are 3 footer areas -- each a sidebars/widget area.
+There are 3 footer areas -- each a sidebars/widget area. 
 They are the same for all pages and posts -- home page and other pages.
 
 = How do I get the icons beside 'Recent Posts' & What's does 'Entry Type' mean on posts?  =
-With authorize, you can select what kind of post it is, it's used to improve the look of the 'Recent Posts' widget.
+With authorize, you can select what kind of post it is, it's used to improve the look of the 'Recent Posts' widget.  
 
 When a post is displayed, it will try and display the featured image as a thumbnail beside it.  If there is no featured image, it will display the icon based on the 'Entry Type.
 
-Note:  Changing the 'Entry Type' does not affect the Format of the post.  You need to set that separately.
+Note:  Changing the 'Entry Type' does not affect the Format of the post.  You need to set that separately.
+
 == Changelog ==
 
-= 1.0.0 - [Date] = 2017-01-23
+= 1.0 - [Date] = 2017-01-23
 * Initial release
 
-= 1.0.1 - [Date] = 2017-02-02
-* Corrected domain name issue and removed un-needed comments.
+= 1.0.2 - [Date] = 2017-05-01
+* Updated release
+Fixed:
+- Small screen menus don't have drop-downs.  All items displayed
+- Sidebar Front Page showing only on front page, not inside blog page
+- Removed numbers on comments ul
+- Made sure page 404 is working and formatted properly
+- Dates now displayable on recent posts in widget area
+- Removed blank lines in code
+- Added license information for Font Awesome & Pixbay
+- Removed un-used files
+- Removed code for custom header background.  Not needed.
 
 == Credits ==
 
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Uses FontAwesome Font Awesome by Dave Gandy - http://fontawesome.io
+
+* Uses FontAwesome Font Awesome by Dave Gandy - http://fontawesome.io 
+Font Awesome licensed under SIL OFL 1.1 
+Code licensed under [MIT] License 
+Documentation licensed under [CC BY 3.0]
+For copyright and license information, see: http://fontawesome.io/license/
+
+* Images supplied by Pixabay - https://pixabay.com/
+Licensed:  Creative Commons CC0
+For copyright and license information, see: https://pixabay.com/en/service/terms/
+
+
