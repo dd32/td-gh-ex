@@ -129,7 +129,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
     function hu_augment_customizer( $manager ) {
       $_classes = array(
         'controls/class-base-control.php',
-        //'controls/class-background-control.php',
         'controls/class-cropped-image-control.php',
 
         'controls/class-layout-control.php',
@@ -141,11 +140,12 @@ if ( ! class_exists( 'HU_customize' ) ) :
         'panels/class-panels.php',
 
         'sections/class-widgets-section.php',
+        'sections/class-pro-section.php',
 
         'settings/class-settings.php'
       );
       foreach ($_classes as $_path) {
-        locate_template( 'functions/czr/' . $_path , $load = true, $require_once = true );
+          locate_template( 'functions/czr/' . $_path , $load = true, $require_once = true );
       }
 
       //Registered types are eligible to be rendered via JS and created dynamically.
@@ -154,6 +154,10 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
       if ( class_exists('HU_Customize_Panels') )
         $manager -> register_panel_type( 'HU_Customize_Panels');
+
+      if ( ! HU_IS_PRO && class_exists('HU_Customize_Section_Pro') ) {
+        $manager -> register_section_type( 'HU_Customize_Section_Pro');
+      }
     }
 
 
@@ -173,27 +177,23 @@ if ( ! class_exists( 'HU_customize' ) ) :
             'selector' => '.social-links',
             'settings' => array( 'hu_theme_options[social-links]' ),
             'render_callback' => 'hu_print_social_links',
-            //'type' => 'my_partial'
         ) );
 
         $wp_customize->selective_refresh->add_partial( 'header_image', array(
             'selector' => '#header-image-wrap',
             'settings' => array( 'header_image' ),
             'render_callback' => 'hu_render_header_image',
-            //'type' => 'my_partial'
         ) );
 
         $wp_customize->selective_refresh->add_partial( 'site_title', array(
             'selector' => '.site-title',
             'settings' => array( 'blogname' ),
             'render_callback' => 'hu_do_render_logo_site_tite',
-            //'type' => 'my_partial'
         ) );
         $wp_customize->selective_refresh->add_partial( 'site_description', array(
             'selector' => '.site-description',
-            'settings' => array( 'blodescription' ),
+            'settings' => array( 'blogdescription' ),
             'render_callback' => 'hu_render_blog_description',
-            //'type' => 'my_partial'
         ) );
     }
 
@@ -355,7 +355,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
       //MOVE THE HEADER IMAGE CONTROL INTO THE HEADER DESIGN SECTION
       if ( is_object( $wp_customize -> get_control( 'header_image' ) ) ) {
-        $wp_customize -> get_control( 'header_image' ) -> section = 'header_design_sec';
+        $wp_customize -> get_control( 'header_image' ) -> section = 'header_image_sec';
         $wp_customize -> get_control( 'header_image' ) -> priority = 100;
       }
 
@@ -567,7 +567,9 @@ if ( ! class_exists( 'HU_customize' ) ) :
                 'panel',
                 'theme_supports',
                 'type',
-                'active_callback'
+                'active_callback',
+                'pro_text',
+                'pro_url'
           ),
           'settings' => array(
                 'default'     =>  null,
@@ -610,7 +612,9 @@ if ( ! class_exists( 'HU_customize' ) ) :
                 'flex_width',
                 'flex_height',
                 'dst_width',
-                'dst_height'
+                'dst_height',
+
+                'ubq_section'
           )
       );
       return apply_filters( 'hu_customizer_arguments', $args );
@@ -796,6 +800,11 @@ if ( ! class_exists( 'HU_customize' ) ) :
             'sub_set_wrapper'     => 'czr-sub-set',
             'sub_set_input'       => 'czr-input',
             'img_upload_container' => 'czr-imgup-container',
+
+            'edit_modopt_icon'    => 'czr-toggle-modopt',
+            'close_modopt_icon'   => 'czr-close-modopt',
+            'mod_opt_wrapper'     => 'czr-mod-opt-wrapper',
+
 
             'items_wrapper'     => 'czr-items-wrapper',
             'single_item'        => 'czr-single-item',

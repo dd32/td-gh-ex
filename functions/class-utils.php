@@ -59,22 +59,26 @@ if ( ! class_exists( 'HU_utils' ) ) :
     function hu_init_properties() {
       //all theme options start by "hu_" by convention
       //$this -> hu_options_prefixes = apply_filters('hu_options_prefixes', array('hu_') );
-
       $this -> is_customizing   = hu_is_customizing();
       $this -> db_options       = false === get_option( HU_THEME_OPTIONS ) ? array() : (array)get_option( HU_THEME_OPTIONS );
       $this -> default_options  = $this -> hu_get_default_options();
-      $_trans                   = 'started_using_hueman';
+      $_trans                   = HU_IS_PRO ? 'started_using_hueman_pro' : 'started_using_hueman';
 
       //What was the theme version when the user started to use Hueman?
       //new install = no options yet
       //very high duration transient, this transient could actually be an option but as per the wordpress.org themes guidelines, only one option is allowed for the theme settings
-      if ( 1 >= count( $this -> db_options ) || ! esc_attr( get_transient( $_trans ) ) ) {
-        set_transient(
-          $_trans,
-          sprintf('%s|%s' , 1 >= count( $this -> db_options ) ? 'with' : 'before', HUEMAN_VER ),
-          60*60*24*3650
-        );
+      if ( ! hu_isprevdem() ) {
+            if ( ! esc_attr( get_transient( $_trans ) ) ) {
+                set_transient(
+                    $_trans,
+                    sprintf('%s|%s' , count( $this -> db_options ) >= 1 ? 'before' : 'with' , HUEMAN_VER ),
+                    60*60*24*3650
+                );
+            }
       }
+      //the db updates for retro compat can be done now.
+      //=> @see functions/init-retro-compat.php
+      do_action('hu_init_options_done');
     }
 
 
@@ -123,7 +127,27 @@ if ( ! class_exists( 'HU_utils' ) ) :
       if ( apply_filters( 'hu_disable_img_smart_load', $_bool, current_filter() ) )
         return $_html;
 
-      return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', array( $this , 'hu_regex_callback' ) , $_html);
+      $allowed_image_extentions = apply_filters( 'hu_smartload_allowed_img_extensions', array(
+          'bmp',
+          'gif',
+          'jpeg',
+          'jpg',
+          'jpe',
+          'tif',
+          'tiff',
+          'ico',
+          'png',
+          'svg',
+          'svgz'
+      ) );
+
+      if ( empty( $allowed_image_extentions ) || ! is_array( $allowed_image_extentions ) ) {
+        return $_html;
+      }
+
+      $img_extensions_pattern = sprintf( "[%s]", implode( '|', $allowed_image_extentions ) );
+
+      return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+.'.$img_extensions_pattern.'[^\'"\s>]*)[\'"]?([^>]*)>#i', array( $this , 'hu_regex_callback' ) , $_html);
     }
 
 
@@ -136,12 +160,11 @@ if ( ! class_exists( 'HU_utils' ) ) :
     private function hu_regex_callback( $matches ) {
       $_placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-      if ( false !== strpos( $matches[0], 'data-src' ) ||
-          preg_match('/ data-smartload *= *"false" */', $matches[0]) )
+      if ( false !== strpos( $matches[0], 'data-src' ) || preg_match('/ data-smartload *= *"false" */', $matches[0]) ) {
         return $matches[0];
-      else
+      } else {
         return apply_filters( 'hu_img_smartloaded',
-          str_replace( 'srcset=', 'data-srcset=',
+          str_replace( array('srcset=', 'sizes='), array('data-srcset=', 'data-sizes='),
               sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
                   $matches[1],
                   $_placeholder,
@@ -150,6 +173,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
               )
           )
         );
+      }
     }
 
 

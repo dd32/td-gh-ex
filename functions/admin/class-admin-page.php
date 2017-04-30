@@ -20,7 +20,8 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
       add_action( '__after_welcome_panel'  , array( $this , 'hu_print_changelog' ), 20);
 
       //build the support url
-      $this -> support_url = esc_url('wordpress.org/support/theme/hueman');
+      //build the support url
+      $this -> support_url = HU_IS_PRO ? esc_url( sprintf( '%ssupport' , 'presscustomizr.com/' ) ) : esc_url('wordpress.org/support/theme/hueman');
       //fix #wpfooter absolute positioning in the welcome and about pages
       add_action( 'admin_print_styles'      , array( $this, 'hu_fix_wp_footer_link_style') );
     }
@@ -52,6 +53,7 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
    */
     function hu_add_welcome_page() {
         $_name = __( 'About Hueman' , 'hueman' );
+        $_name = HU_IS_PRO ? sprintf( '%s Pro', $_name ) : $_name;
 
         $theme_page = add_theme_page(
             $_name,   // Name of page
@@ -70,7 +72,7 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
       function hu_welcome_panel() {
         $is_help        = isset($_GET['help'])  ?  true : false;
         $_support_url   = $this -> support_url;
-        $_theme_name    = 'Hueman';
+        $_theme_name    = HU_IS_PRO ? 'Hueman Pro' : 'Hueman';
 
         do_action('__before_welcome_panel');
 
@@ -100,12 +102,9 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
 
             <div class="about-text tc-welcome">
               <?php
-                printf( '<p>%1$s %2$s</p> <p>%3$s</p><p>%4$s. <strong>%5$s</strong></p>',
+                printf( '<p>%1$s %2$s</p> <p>%3$s. <strong>%4$s</strong></p>',
                   __( "Thank you for using the Hueman WordPress theme for your website.", 'hueman' ),
                   sprintf( __( "Hueman %s has more features, is safer and more stable than ever to help you designing an awesome webdesign.", 'hueman' ), HUEMAN_VER ),
-                  sprintf( __( "Since version 3.0+, all the options have been moved to the %s, allowing you to design your website safely and in live preview before publishing the changes. If you just upgraded from a lower version, you'll be able to find all your previous settings in the customizer." , "hueman" ),
-                    sprintf('<a href="%1$s">%2$s</a>', admin_url('customize.php'), __('customizer panel', 'hueman') )
-                  ),
                   sprintf( __( "For more informations about this new version of the theme, %s or check the changelog below", "hueman" ),
                     sprintf('<a href="%1$s" target="_blank">%2$s</a>', HU_WEBSITE . "/category/hueman-releases/", __( "read the latest release notes" , "hueman" ) )
                   ),
@@ -162,25 +161,22 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
             <?php
               printf( '<p>%1$s</p>',
                 sprintf( __( "The best way to start is to read the %s." , 'hueman' ),
-                  sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('docs.presscustomizr.com/article/236-first-steps-with-the-hueman-wordpress-theme'), __("documentation" , 'hueman') )
+                  sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('docs.presscustomizr.com/article/236-first-steps-with-the-hueman-wordpress-theme'), __("knowledge base" , 'hueman') )
                 )
               );
-              printf( '<p>%1$s <a href="%2$s" title="support forum" target="_blank">%3$s</a>.</p>',
-                  __( "If you don't find an answer to your question in the documentation, don't panic :) ! The Hueman theme is used by a large number of webmasters constantly reporting bugs and potential issues. If you encounter a problem with the theme, chances are that it's already been reported and fixed in the", 'hueman' ),
-                  $this -> support_url,
-                  __('support forum', 'hueman')
-                );//printf
+              if ( ! HU_IS_PRO ) {
+                  printf( '<p>%1$s <a href="%2$s" title="support forum" target="_blank">%3$s</a>.</p>',
+                      __( "If you don't find an answer to your question in the documentation, don't panic :) ! The Hueman theme is used by a large number of webmasters constantly reporting bugs and potential issues. If you encounter a problem with the theme, chances are that it's already been reported and fixed in the", 'hueman' ),
+                      $this -> support_url,
+                      __('support forum', 'hueman')
+                    );//printf
+              }
               ?>
             </div>
             <div class="feature-section col two-col">
               <div class="col">
-                  <a class="button-secondary hueman-help" title="documentation" href="<?php echo esc_url('docs.presscustomizr.com/article/236-first-steps-with-the-hueman-wordpress-theme') ?>" target="_blank"><?php _e( 'Read the documentation','hueman' ); ?></a>
+                  <a class="button-secondary hueman-help" title="documentation" href="<?php echo esc_url('docs.presscustomizr.com/article/236-first-steps-with-the-hueman-wordpress-theme') ?>" target="_blank"><?php _e( 'Open the knowledge base','hueman' ); ?></a>
               </div>
-               <div class="last-feature col">
-                  <a class="button-secondary hueman-help" title="help" href="<?php echo $this -> support_url; ?>" target="_blank">
-                    <?php _e( 'Get help in the support forum','hueman' ); ?>
-                  </a>
-               </div>
             </div><!-- .two-col -->
           </div><!-- .changelog -->
         <?php

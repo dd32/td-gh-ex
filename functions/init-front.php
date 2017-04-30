@@ -4,51 +4,141 @@
  *  https://codex.wordpress.org/Pluggable_Functions
 /* ------------------------------------------------------------------------- */
 
+/*  Print the wp content
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_get_content') ) {
+  //@return void()
+  //Print the content based on the template string
+  function hu_get_content( $tmpl = 'tmpl/index-tmpl', $print = true ) {
+    $tmpl = hu_is_authorized_tmpl( $tmpl ) ? $tmpl : 'tmpl/index-tmpl';
+    $seks = apply_filters(  'hu_content_sektions', array( 'wp' ) );
+    //Are we good after filtering ?
+    if ( ! is_array( $seks ) )
+      return;
+    ob_start();
+    ?>
+      <?php do_action( '__before_content_section', $tmpl ); ?>
+        <section class="content">
+          <?php hu_get_template_part('parts/page-title'); ?>
+          <div class="pad group">
+            <?php
+              foreach ( $seks as $_id ) {
+                  if ( 'wp' == $_id )
+                    hu_get_template_part( $tmpl );
+                  else
+                    hu_print_sek( $_id );
+              }
+            ?>
+          </div><!--/.pad-->
+        </section><!--/.content-->
+      <?php do_action( '__after_content_section', $tmpl ); ?>
+    <?php
+    $html = ob_get_contents();
+    if ($html) ob_end_clean();
+    if ( $print )
+      echo $html;
+    else
+      return $html;
+  }
+}
+
+//helper
+//@return bool
+function hu_is_authorized_tmpl( $tmpl ) {
+    $ct_map = apply_filters(
+        'hu_content_map',
+        array( 'tmpl/index-tmpl', 'tmpl/archive-tmpl', 'tmpl/page-tmpl', 'tmpl/single-tmpl', 'tmpl/search-tmpl', 'tmpl/404-tmpl' )
+    );
+    //Are we good after filtering ?
+    if ( ! is_array( $ct_map ) || ! is_string( $tmpl ) )
+      return;
+    return in_array( $tmpl, $ct_map );
+}
+
+
+if ( ! function_exists( 'hu_print_sek') ) {
+  //@return void
+  function hu_print_sek( $sek_id ) {
+      do_action( "hu_sek_{$sek_id}" );
+  }
+}
+
+
+/*  Mobile Button
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_print_mobile_btn' ) ) {
+    function hu_print_mobile_btn() {
+      ?>
+      <?php if ( apply_filters( 'hu_is_simple_mobile_menu_btn', 'simple' == hu_get_option( 'header_mobile_btn' ) ) ) : ?>
+        <div class="nav-toggle"><i class="fa fa-bars"></i></div>
+      <?php else : ?>
+        <!-- <div class="ham__navbar-toggler collapsed" aria-expanded="false">
+          <div class="ham__navbar-span-wrapper">
+            <span class="ham-toggler-menu__span"></span>
+          </div>
+        </div> -->
+        <div class="ham__navbar-toggler-two collapsed" title="Menu" aria-expanded="false">
+          <div class="ham__navbar-span-wrapper">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+      <?php endif; ?>
+      <?php
+    }
+}
+
+
 /*  Layout class
 /* ------------------------------------ */
-if ( ! function_exists( 'hu_layout_class' ) ) {
+if ( ! function_exists( 'hu_get_layout_class' ) ) {
 
   //$default = 'col-3cm' set in setting map
-  function hu_layout_class() {
+  function hu_get_layout_class() {
     // Default layout
     $layout = 'col-3cm';
     $has_post_meta = false;
+        /* if ( is_array(hu_is_real_home()) )
+      array_walk_recursive(hu_is_real_home(), function(&$v) { $v = htmlspecialchars($v); }); */
 
     // Check for page/post specific layout
-    if ( is_page() || is_single() ) {
-      // Reset post data
-      wp_reset_postdata();
-      global $post;
-      // Get meta
-      $meta = get_post_meta($post->ID,'_layout',true);
-      // Get if set and not set to inherit
-      if ( isset($meta) && !empty($meta) && $meta != 'inherit' ) {
-        $layout = $meta;
-        $has_post_meta = true;
-      }
-      // Else check for page-global / single-global
-      elseif ( is_single() && ( hu_get_option('layout-single') !='inherit' ) ) $layout = hu_get_option( 'layout-single' );
-      elseif ( is_page() && ( hu_get_option('layout-page') !='inherit' ) ) $layout = hu_get_option( 'layout-page' );
-      // Else get global option
-      else $layout = hu_get_option( 'layout-global' );
+    if ( ! hu_is_real_home() && ( is_page() || is_single() ) ) {
+        // Reset post data
+        wp_reset_postdata();
+        global $post;
+        // Get meta
+        $meta = get_post_meta($post->ID,'_layout',true);
+        // Get if set and not set to inherit
+        if ( isset($meta) && !empty($meta) && $meta != 'inherit' ) {
+          $layout = $meta;
+          $has_post_meta = true;
+        }
+        // Else check for page-global / single-global
+        elseif ( is_single() && ( hu_get_option('layout-single') !='inherit' ) ) $layout = hu_get_option( 'layout-single' );
+        elseif ( is_page() && ( hu_get_option('layout-page') !='inherit' ) ) $layout = hu_get_option( 'layout-page' );
+        // Else get global option
+        else $layout = hu_get_option( 'layout-global' );
     }
-
     // Set layout based on page
-    elseif ( is_home() && ( hu_get_option('layout-home') !='inherit' ) ) $layout = hu_get_option( 'layout-home' );
-    elseif ( is_category() && ( hu_get_option('layout-archive-category') !='inherit' ) ) $layout = hu_get_option( 'layout-archive-category' );
-    elseif ( is_archive() && ( hu_get_option('layout-archive') !='inherit' ) ) $layout = hu_get_option( 'layout-archive' );
-    elseif ( is_search() && ( hu_get_option('layout-search') !='inherit' ) ) $layout = hu_get_option( 'layout-search' );
-    elseif ( is_404() && ( hu_get_option('layout-404') !='inherit' ) ) $layout = hu_get_option( 'layout-404' );
+    elseif ( hu_is_real_home() && ( hu_get_option('layout-home') != 'inherit' ) ) $layout = hu_get_option( 'layout-home' );
+    elseif ( is_category() && ( hu_get_option('layout-archive-category') != 'inherit' ) ) $layout = hu_get_option( 'layout-archive-category' );
+    elseif ( is_archive() && ( hu_get_option('layout-archive') != 'inherit' ) ) $layout = hu_get_option( 'layout-archive' );
+    elseif ( is_search() && ( hu_get_option('layout-search') != 'inherit' ) ) $layout = hu_get_option( 'layout-search' );
+    elseif ( is_404() && ( hu_get_option('layout-404') != 'inherit' ) ) $layout = hu_get_option( 'layout-404' );
 
     // Global option
     else $layout = hu_get_option('layout-global' );
-
     // Return layout class
     return apply_filters( 'hu_layout_class', $layout, $has_post_meta );
   }
 
 }
 
+//for retro compat
+function hu_layout_class() {
+  return hu_get_layout_class();
+}
 
 
 
@@ -153,26 +243,62 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_print_social_links' ) ) {
   function hu_print_social_links() {
-    $_socials = hu_get_option('social-links');
-    if ( empty( $_socials ) )
-      return;
+    $_raw_socials     = hu_get_option('social-links');
+    $_default_color   = array('rgb(90,90,90)', '#5a5a5a'); //both notations
+    $_default_size    = '14'; //px
+    $_social_opts     = array( 'social-size' => $_default_size );
+    $_social_items    = array();
+
+    //get the social mod opts and the items
+    foreach( $_raw_socials as $key => $item ) {
+      if ( ! array_key_exists( 'is_mod_opt', $item ) ) {
+          $_social_items[] =  $item;
+      } else {
+          $_social_opts = wp_parse_args( $item, $_social_opts );
+      }
+    }
+
+    if ( empty( $_social_items ) ) {
+        if ( hu_is_customizing() ) {
+            printf( '<ul class="social-links"><li style="font-size:0.9em;color:white"><span><i>%1$s</i></span></li></ul>',
+                __('You can set your social links here from the live customizer', 'hueman')
+            );
+        }
+        return;
+    }
+
+    $font_size_value = $_social_opts['social-size'];
+    //if the size is the default one, do not add the inline style css
+    $social_size_css  = empty( $font_size_value ) || $_default_size == $font_size_value ? '' : "font-size:{$font_size_value}px";
 
     echo '<ul class="social-links">';
-    foreach( $_socials as $key => $item ) {
-      //do we have an id set ?
-      //Typically not if the user still uses the old options value.
-      //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
+      foreach( $_social_items as $key => $item ) {
+        //skip if mod_opt
+        if ( array_key_exists( 'is_mod_opt', $item ) )
+          continue;
 
-      // Put them together
-      printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" href="%3$s" %4$s style="color:%5$s"><i class="fa %6$s"></i></a></li>',
-        ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
-        isset($item['title']) ? esc_attr( $item['title'] ) : '',
-        ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
-        ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
-        isset($item['social-color']) ? esc_attr($item['social-color']) : '#000',
-        isset($item['social-icon']) ? esc_attr($item['social-icon']) : ''
-      );
-    }
+         /* Maybe build inline style */
+        $social_color_css      = isset($item['social-color']) ? esc_attr($item['social-color']) : $_default_color[0];
+        //if the color is the default one, do not print the inline style css
+        $social_color_css      = in_array( $social_color_css, $_default_color ) ? '' : "color:{$social_color_css}";
+        $style_props           = implode( ';', array_filter( array( $social_color_css, $social_size_css ) ) );
+
+        $style_attr            = $style_props ? sprintf(' style="%1$s"', $style_props ) : '';
+
+        //do we have an id set ?
+        //Typically not if the user still uses the old options value.
+        //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
+
+        // Put them together
+        printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" href="%3$s" %4$s %5$s><i class="fa %6$s"></i></a></li>',
+            ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
+            isset($item['title']) ? esc_attr( $item['title'] ) : '',
+            ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
+            ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
+            $style_attr,
+            isset($item['social-icon']) ? esc_attr($item['social-icon']) : ''
+        );
+      }
     echo '</ul>';
   }
 }
@@ -192,48 +318,66 @@ if ( ! function_exists( 'hu_render_header_image' ) ) {
 /*  Site name/logo and tagline callbacks
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_print_logo_or_title' ) ) {
-  function hu_print_logo_or_title( $echo = true ) {
-    ob_start();
-    if ( hu_is_home() ) {
-      ?>
-        <h1 class="site-title"><?php hu_do_render_logo_site_tite() ?></h1>
-      <?php
-    } else {
-      ?>
-        <p class="site-title"><?php hu_do_render_logo_site_tite() ?></p>
-      <?php
+    function hu_print_logo_or_title( $echo = true ) {
+        // Text or image?
+        // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
+        $is_image = false;
+        if ( false != hu_get_img_src_from_option( 'custom-logo' ) && apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') ) ) {
+            $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
+            $logo_or_title = '<img src="'. $logo_src . '" alt="' . get_bloginfo('name'). '">';
+            $is_image = true;
+        } else {
+            $logo_or_title = get_bloginfo( 'name' );
+        }
+
+        ob_start();
+          ?>
+            <p class="site-title"><?php hu_do_render_logo_site_tite( $logo_or_title ) ?></p>
+          <?php
+        $html = ob_get_contents();
+        if ($html) ob_end_clean();
+        if ( $echo )
+          echo apply_filters('hu_logo_title', $html );
+        else
+          return apply_filters('hu_logo_title', $html );
     }
-    $html = ob_get_contents();
-    if ($html) ob_end_clean();
-    if ( $echo )
-      echo apply_filters('hu_logo_title', $html );
-    else
-      return apply_filters('hu_logo_title', $html );
-  }
 }
+
 
 if ( ! function_exists( 'hu_do_render_logo_site_tite' ) ) {
-  function hu_do_render_logo_site_tite() {
-      // Text or image?
-      // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
-      if ( apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) ) {
-          $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
-          $logo_title = '<img src="'. $logo_src . '" alt="' .get_bloginfo('name'). '">';
-      } else {
-          $logo_title = get_bloginfo('name');
-      }
-
-      printf( '<a class="custom-logo-link" href="%1$s" rel="home">%2$s</a>',
-          home_url('/'),
-          $logo_title
-      );
-  }
+    function hu_do_render_logo_site_tite( $logo_or_title = null, $echo = true ) {
+        //typically, logo_or_title is not provided when partially refreshed from the customizer
+        if ( is_null( $logo_or_title ) || hu_is_ajax() ) {
+            // Text or image?
+            // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
+            if ( false != hu_get_img_src_from_option( 'custom-logo' ) && apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') ) ) {
+                $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
+                $logo_or_title = '<img src="'. $logo_src . '" alt="' . get_bloginfo('name'). '">';
+            } else {
+                $logo_or_title = get_bloginfo('name');
+            }
+        }
+        if ( $echo ) {
+            printf( '<a class="custom-logo-link" href="%1$s" rel="home" title="%3$s">%2$s</a>',
+                home_url('/'),
+                $logo_or_title,
+                sprintf( '%1$s | %2$s', get_bloginfo('name') , __('Home page', 'hueman') )
+            );
+        } else {
+            return sprintf( '<a class="custom-logo-link" href="%1$s" rel="home" title="%3$s">%2$s</a>',
+                home_url('/'),
+                $logo_or_title,
+                sprintf( '%1$s | %2$s', get_bloginfo('name') , __('Home page', 'hueman') )
+            );
+        }
+    }
 }
 
+
 if ( ! function_exists( 'hu_render_blog_description' ) ) {
-  function hu_render_blog_description() {
-      echo bloginfo( 'description' );
-  }
+    function hu_render_blog_description() {
+        echo get_bloginfo( 'description' );
+    }
 }
 
 /*  Retro compat function for child theme users
@@ -268,16 +412,15 @@ if ( ! function_exists( 'hu_get_page_title' ) ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_get_search_title' ) ) {
   function hu_get_search_title() {
-    global $wp_query;
-    ?>
-      <?php if ( have_posts() ): ?><i class="fa fa-search"></i><?php endif; ?>
-      <?php if ( ! have_posts() ): ?><i class="fa fa-exclamation-circle"></i><?php endif; ?>
-    <?php
+      global $wp_query;
+
       $search_results = $wp_query -> found_posts;
+      $icon           = have_posts() ? '<i class="fa fa-search"></i> ' : '<i class="fa fa-exclamation-circle"></i> ';
+
       if ( 1 == $search_results ) {
-          return sprintf( '%1$s %2$s', $search_results, __('Search result','hueman') );
+          return sprintf( '%1$s%2$s %3$s', $icon, $search_results, __('Search result','hueman') );
       } else {
-          return sprintf( '%1$s %2$s', $search_results, __('Search results','hueman') );
+          return sprintf( '%1$s%2$s %3$s', $icon, $search_results, __('Search results','hueman') );
       }
   }
 }
@@ -534,12 +677,22 @@ if ( ! function_exists( 'hu_get_placeholder_thumb' ) ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_body_class' ) ) {
   function hu_body_class( $classes ) {
-    $classes[] = hu_layout_class();
+    $classes[] = hu_get_layout_class();
     $classes[] = hu_is_checked( 'boxed' ) ? 'boxed' : 'full-width';
     if ( hu_has_nav_menu('topbar') ) { $classes[] = 'topbar-enabled'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
+    if ( wp_is_mobile() ) { $classes[] = 'wp-is-mobile'; };
+
+    //Stickyness of menus
+    //=> hu_normalize_stick_menu_opt() is used to ensure retro compat with the previously boolean option type
+    $desktop_sticky = hu_normalize_stick_menu_opt( hu_get_option('header-desktop-sticky') );
+    $mobile_sticky = hu_normalize_stick_menu_opt( hu_get_option('header-mobile-sticky') );
+
+    if ( 'no_stick' != $desktop_sticky ) { $classes[] = 'header-desktop-sticky'; }
+    if ( 'no_stick' != $mobile_sticky ) { $classes[] = 'header-mobile-sticky'; }
+
     return $classes;
   }
 }
@@ -739,32 +892,47 @@ if ( ! function_exists( 'hu_scripts' ) ) {
               )),
               'goldenRatio'         => apply_filters( 'hu_grid_golden_ratio' , 1.618 ),
               'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350),
-              'vivusSvgSpeed' => apply_filters( 'hu_vivus_svg_duration' , 300),
-              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV )
+              'sbStickyUserSettings' => array( 'desktop' => hu_is_checked('desktop-sticky-sb'), 'mobile' => hu_is_checked('mobile-sticky-sb') && wp_is_mobile() ),
+              'menuStickyUserSettings' => array(
+                  'desktop' => hu_normalize_stick_menu_opt( hu_get_option('header-desktop-sticky') ),
+                  'mobile'  => hu_normalize_stick_menu_opt( hu_get_option('header-mobile-sticky') )
+              ),
+              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('CZR_DEV') && true === CZR_DEV )
             )
         )//end of filter
-       );
-
-
+       );//wp_localize_script()
   }//function
 }
 add_action( 'wp_enqueue_scripts', 'hu_scripts' );
+
+/* ------------------------------------------------------------------------- *
+ *  Helper for header and mobile sticky setting
+ *  => previously set with a checkbox. Since v3.3.10 the option is a string set with a select input type
+/* ------------------------------------------------------------------------- */
+function hu_normalize_stick_menu_opt( $opt_val = 'stick_up' ) {
+    //since v3.3.10, the option should be a string among those : 'no_stick', 'stick_up', 'stick_always'
+    //before, the option could be : booleans : true, false, numeric : 1, 0, or strings '1', '0'
+    //if the current value is a string longer than 1, then nothing to worry about.
+    //if not, then we have to apply the following correspondance mapping :
+    // [ true or 1 or '1' <=> hu_is_checked( $opt_val ) ] => 'stick_up'
+    //else
+    //'no_stick'
+    if ( is_string( $opt_val ) && 1 < strlen( $opt_val ) ) {
+        return $opt_val;
+    } else {
+        return hu_booleanize_checkbox_val( $opt_val ) ? 'stick_up' : 'no_stick';
+    }
+}
 
 
 /*  Enqueue css
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_styles' ) ) {
   function hu_styles() {
-    $_main_style = hu_is_checked('responsive') ? 'main' : 'main-not-responsive';
-
     //registered only, will be loaded as a dependency of the wp style.css
     wp_register_style(
         'hueman-main-style',
-        sprintf('%1$s/assets/front/css/%2$s%3$s.css',
-            get_template_directory_uri(),
-            $_main_style,
-            hu_is_checked('minified-css') ? '.min' : ''
-        ),
+        hu_get_front_style_url(),//defined in init-core
         array(),
         ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
         'all'
@@ -793,6 +961,7 @@ if ( ! function_exists( 'hu_styles' ) ) {
         ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
         'all'
     );
+    wp_add_inline_style( 'theme-stylesheet', apply_filters( 'ha_user_options_style' , '' ) );
   }
 }
 add_action( 'wp_enqueue_scripts', 'hu_styles' );
@@ -880,32 +1049,6 @@ if ( ! function_exists( 'hu_ie_js_footer' ) ) {
 
 }
 add_action( 'wp_footer', 'hu_ie_js_footer', 20 );
-
-
-
-/*  WooCommerce basic support
-/* ------------------------------------ */
-function hu_wc_wrapper_start() {
-  echo '<section class="content">';
-  echo '<div class="pad">';
-}
-function hu_wc_wrapper_end() {
-  echo '</div>';
-  echo '</section>';
-}
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', 'hu_wc_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'hu_wc_wrapper_end', 10);
-
-
-/*  WP-PageNavi support - @devinsays (via GitHub)
-/* ------------------------------------ */
-function hu_deregister_styles() {
-  wp_deregister_style( 'wp-pagenavi' );
-}
-add_action( 'wp_print_styles', 'hu_deregister_styles', 100 );
-
 
 
 

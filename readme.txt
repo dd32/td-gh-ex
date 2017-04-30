@@ -1,4 +1,4 @@
-# Hueman v3.3.1
+# Hueman v3.3.10
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites. It's been designed to beautifully display pictures and text content, and engineered to be easy to use and fast. The Hueman theme helps you attract and retain more visitors, that's why it's already used by 70K+ active websites in the world and has received hundreds of five stars ratings.
@@ -73,6 +73,93 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
+= 3.3.10 April 28th 2017 =
+* fixed : blog description rendering and blogdescription partial refresh fixes #450
+* fixed : hu_get_search_title printing icons fixes #456
+* fixed : fix IE11 js compatibility fixes #435
+* fixed : Sticky sidebar, disabling on mobile should be consistent with wp_is_mobile()
+* fixed : header title or logo is not anymore wrapped in a h1 tag
+* added : desktop menus search field options. Users can now add the search field in top menu or in the header menu. Implemented for desktop and mobile devices.
+* added : hu_get_id() utility
+* added : HU_IS_PRO_ADDONS constant
+* added : implemented pro link
+* added : implemented a better sticky menu options. Users can now choose between : don't show on scroll, always visible, reveal on scroll up. Implemented for desktop and mobile devices.
+* improved : front end javascript framework performances
+* improved : sidebars are not sticky by default
+* improved : style.css comments
+* improved : WooCommerce compatibility
+
+= 3.3.9 April 6th 2017 =
+* fixed : update flexslider to the latest version #427
+* fixed : topbar width when global layout is boxed
+* fixed : the topbar menu should be the page menu if not set in preview demo mode
+* added : a new section header menus in the customizer
+* added : 2 new options to enable sticky menu on desktop and on mobile
+* added : 2 utility boolean functions hu_is_topbar_displayed() and hu_is_header_nav_displayed()
+* added : 2 new options to control the visibility of the header widget zone
+* added : a search bar in the mobile menu
+* Imp: avoid woocommerce3.0 warnings on use of deprecated functions
+
+= 3.3.8 April 5th 2017 =
+* fixed : home layout not applied if static home page choosen
+* fixed : prevdem mode should be turned off when user starts customizing
+* fixed : user defined WP core settings like show_on_front should be preserved if customizing in prevdem mode
+* fixed : don't wrap logo in h1 tag
+* added match Media polyfill
+* updated the parallax jquery plugin => added a matchMedia option set to 'only screen and (max-width: 768px)' by default
+* added tmpl parts/header-nav-main.php
+* added new hamburger menu markup, css + js
+* improved : mobile menu slide up down using jQuery built-in methods
+* improved : display a default page menu for topbar in prevdem mode
+* improved : use the real template path in function hu_get_content()
+* improved : only dispay the social link notice if user is_super_admin()
+* added : utility hu_print_mobile_btn() used to render the mobile buttons in the header
+* added : animated mobile menu button
+* added : mobile menu style customizer option
+* removed : dynamic style option. Dynamic style is now applied for each option as soon as the user change the option to a value different than default.
+
+= 3.3.7 March 8th 2017 =
+* fixed : drag resize image inserted into visual editor #415 
+
+= 3.3.6 March 1st 2017 =
+* fixed : bug on threaded comments font-size getting too small since latest update
+
+= 3.3.5 February 25th 2017 =
+* Fixed : array to string error with hu_is_checked()
+* Fixed : selective refresh disabled when link widget enabled. cf WP core ticket #39451
+* Fixed : correctly handle sizes attribute when smartloading resp imgs ( fixes #316 )
+* Improved : img to smartload must have an src which matches an allowed ext. Fixes issues with Ultimate Membership Pro
+* Improved : add hueman specific widgets panel icon as inline customizer js
+* Improved : front end jQuery plugins, rightly handle sizes/data-sizes attribute replacement in php
+* Improved: customizer social links module user interface
+* Improved : introduced hu_get_content( $tmpl ) which takes care of all content rendering inside section > .pad accross the theme
+* Improved : post messaging for the social links customization
+* Improved : customizer font option set to postMessage
+* Improved : body font size set to 1rem == 16px in all browsers
+* Improved : font sizes set in relative em instead of px unit
+* Improved : the font list is now defined in one place in init-core.php
+* Added : utility hu_is_real_home() => handles the case when the user want to display a page on home but did not pick a page yet
+* Added : Gitlab icon to social links
+* Added : wp_add_inline_style() on front allowing to add user option based css
+* Added : a new template for the WordPress loop named post-list-articles.php for index.php, search.php and archive.php
+* Added : 6 content templates in tmpl/ use to render the various contextual content : single, page, archive, search, 404, index
+* Added : website font-size option in the customizer
+* Added : icon size option for the social links
+* Added : better support for WooCommerce
+* Added : user font family to the wordpress editor
+* Removed ru_RU translation files because it is not completed online
+
+= 3.3.4 January 4th 2017 =
+* fixed : customizer not loading when deprecated link widget is enabled
+
+= 3.3.3 December 28th 2016 =
+* fixed : customizer freezing on Safari 10.0.2, when Hueman Addons enabled with WP 4.7+ (#375)
+* fixed : some widget area could not be controllable for specific pages (#374)
+* improved : code : better syntax for boolean utility hu_is_customizing()
+
+= 3.3.2 December 21st 2016 =
+* fixed : quotes not being properly escaped in the customizer, leading to issues with some languages
+
 = 3.3.1 December 19th 2016 =
 * fixed : customizer frozen in an infinite load in some specific cases
 * improved : featured-posts-include is displayed in the customizer only when is_home() context

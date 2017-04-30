@@ -23,11 +23,11 @@
     <?php // footer widgets
     $_footer_columns = 0;
     if ( 0 != intval( hu_get_option( 'footer-widgets' ) ) ) {
-      $_footer_columns = intval( hu_get_option( 'footer-widgets' ) );
-      if( $_footer_columns == 1) $class = 'one-full';
-      if( $_footer_columns == 2) $class = 'one-half';
-      if( $_footer_columns == 3) $class = 'one-third';
-      if( $_footer_columns == 4) $class = 'one-fourth';
+        $_footer_columns = intval( hu_get_option( 'footer-widgets' ) );
+        if( $_footer_columns == 1) $class = 'one-full';
+        if( $_footer_columns == 2) $class = 'one-half';
+        if( $_footer_columns == 3) $class = 'one-third';
+        if( $_footer_columns == 4) $class = 'one-fourth';
     }
 
 
@@ -38,24 +38,24 @@
     //when do we display the widget wrapper when customizing ?
     //- there's at least one column
 
-    $_bool = false;
+    $is_widget_wrapper_on = false;
     if ( hu_is_customizing() ) {
-      $_bool = $_footer_columns > 0;
+        $is_widget_wrapper_on = $_footer_columns > 0;
     } else {
-      $_bool = $_footer_columns > 0;
-      $_one_widget_zone_active = false;
+        $is_widget_wrapper_on = $_footer_columns > 0;
+        $_one_widget_zone_active = false;
 
-      for ( $i = 1; $i <= $_footer_columns; $i++ ) {
-        if ( $_one_widget_zone_active )
-          continue;
-        if ( apply_filters( 'hu_is_active_footer_widget_zone', is_active_sidebar( "footer-{$i}" ), $i, $_footer_columns ) )
-          $_one_widget_zone_active = true;
-      }//for
+        for ( $i = 1; $i <= $_footer_columns; $i++ ) {
+          if ( $_one_widget_zone_active )
+            continue;
+          if ( apply_filters( 'hu_is_active_footer_widget_zone', is_active_sidebar( "footer-{$i}" ), $i, $_footer_columns ) )
+            $_one_widget_zone_active = true;
+        }//for
 
-      $_bool = $_bool && $_one_widget_zone_active;
+        $is_widget_wrapper_on = $is_widget_wrapper_on && $_one_widget_zone_active;
     }
 
-    if ( $_bool ) : ?>
+    if ( $is_widget_wrapper_on ) : ?>
 
         <section class="container" id="footer-widgets">
           <div class="container-inner">
@@ -73,13 +73,25 @@
           </div><!--/.container-inner-->
         </section><!--/.container-->
 
-    <?php endif; //$_bool ?>
+    <?php endif; //$is_widget_wrapper_on ?>
 
     <?php if ( hu_has_nav_menu( 'footer' ) ): ?>
-      <nav class="nav-container group" id="nav-footer">
-        <div class="nav-toggle"><i class="fa fa-bars"></i></div>
-        <div class="nav-text"><!-- put your mobile menu text here --></div>
-        <div class="nav-wrap"><?php wp_nav_menu( array('theme_location'=>'footer','menu_class'=>'nav container group','container'=>'','menu_id'=>'','fallback_cb'=> 'hu_page_menu' ) ); ?></div>
+      <nav class="nav-container group" id="nav-footer" data-menu-id="<?php echo hu_get_menu_id( 'footer'); ?>" data-menu-scrollable="false">
+        <?php hu_print_mobile_btn(); ?>
+        <div class="nav-text"><?php apply_filters( 'hu_mobile_menu_text', '' );//put your mobile menu text here ?></div>
+        <div class="nav-wrap">
+          <?php
+            wp_nav_menu(
+                array(
+                  'theme_location'=>'footer',
+                  'menu_class'=>'nav container group',
+                  'container'=>'',
+                  'menu_id'=>'',
+                  'fallback_cb'=> 'hu_page_menu'
+              )
+            );
+          ?>
+        </div>
       </nav><!--/#nav-footer-->
     <?php endif; ?>
 
@@ -113,7 +125,19 @@
           </div>
 
           <div class="grid one-half last">
-            <?php hu_print_social_links(); ?>
+            <?php if ( hu_has_social_links() ) : ?>
+              <?php hu_print_social_links(); ?>
+            <?php else : //if not customizing, display an empty p for design purposes ?>
+                <?php if ( ! hu_is_customizing() && is_user_logged_in() && current_user_can( 'edit_theme_options' ) && is_super_admin() ) : ?>
+                    <?php
+                      printf( '<p style="text-transform:none;text-align: right;">%1$s. <br/><a style="color: white;text-decoration:underline;" href="%2$s" title="%3$s">%3$s &raquo;</a></p>',
+                          __('You can set your social links here from the live customizer', 'hueman'),
+                          admin_url( 'customize.php?autofocus[section]=social_links_sec' ),
+                          __('Customize now', 'hueman')
+                      );
+                    ?>
+                <?php endif; ?>
+            <?php endif; ?>
           </div>
 
         </div><!--/.pad-->
