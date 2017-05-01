@@ -14,7 +14,7 @@
     
         <header class="entry-header">
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'audio' ); ?>" title="<?php _e( 'All Audio Posts', 'catch-everest' ); ?>"><?php _e( 'Audio', 'catch-everest' ); ?></a></h2>
+            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'audio' ) ); ?>" title="<?php esc_attr_e( 'All Audio Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Audio', 'catch-everest' ); ?></a></h2>
     	</header><!-- .entry-header -->  
     
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

@@ -153,7 +153,6 @@ if ( ! function_exists( 'catcheverest_comment' ) ) :
  * @since Catch Everest 1.0
  */
 function catcheverest_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :

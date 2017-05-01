@@ -114,8 +114,8 @@ if ( ! function_exists( 'catcheverest_header_style' ) ) :
 function catcheverest_header_style() {
 
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// get_header_textcolor() options: get_theme_support( 'custom-header', 'default-text-color' ) is default, hide text (returns 'blank') or any hex value
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -222,7 +222,7 @@ function catcheverest_featured_image() {
 	// Getting Data from Theme Options Panel
 	global $catcheverest_options_settings, $catcheverest_options_defaults;
    	$options = $catcheverest_options_settings;
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
+	$enableheaderimage =  $options['enable_featured_header_image'];
 
 	if ( 'allpage' == $enableheaderimage || ( 'homepage' == $enableheaderimage && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
 		$header_image = get_header_image();
@@ -231,22 +231,22 @@ function catcheverest_featured_image() {
 			$catcheverest_featured_image = '<div id="header-image">';
 
 			// Header Image Link Target
-			if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
+			if ( !empty( $options['featured_header_image_base'] ) ) :
 				$base = '_blank';
 			else:
 				$base = '_self';
 			endif;
 
 			// Header Image Title/Alt
-			if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-				$title = $options[ 'featured_header_image_alt' ];
+			if ( !empty( $options['featured_header_image_alt'] ) ) :
+				$title = $options['featured_header_image_alt'];
 			else:
 				$title = '';
 			endif;
 
 			// Header Image Link
-			if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
-				$catcheverest_featured_image .= '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $options[ 'featured_header_image_url' ] ) .'" target="' . $base . '"><img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . ' " /></a>';
+			if ( !empty( $options['featured_header_image_url'] ) ) :
+				$catcheverest_featured_image .= '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $options['featured_header_image_url'] ) .'" target="' . $base . '"><img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . ' " /></a>';
 			else:
 				// if empty featured_header_image on theme options, display default
 				$catcheverest_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . '" />';

@@ -38,7 +38,7 @@ function catcheverest_scripts() {
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
-	$disable_responsive = $options[ 'disable_responsive' ];
+	$disable_responsive = $options['disable_responsive'];
 
 	if ( $disable_responsive == "0" ) {
 		wp_enqueue_style( 'catcheverest-responsive', get_template_directory_uri() . '/css/responsive.css' );
@@ -65,7 +65,7 @@ function catcheverest_scripts() {
 	/**
 	 * Loads up catcheverest-slider and jquery-cycle set up as dependent on catcheverest-slider
 	 */
-	$enableslider = $options[ 'enable_slider' ];
+	$enableslider = $options['enable_slider'];
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_enqueue_script( 'catcheverest-slider', get_template_directory_uri() . '/js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
 	}
@@ -94,7 +94,7 @@ function catcheverest_responsive() {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	$disable_responsive = $options[ 'disable_responsive' ];
+	$disable_responsive = $options['disable_responsive'];
 
 	if ( $disable_responsive == "0" ) {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">';
@@ -124,7 +124,7 @@ function catcheverest_inline_css() {
    		$options = $catcheverest_options_settings;
 
 		echo '<!-- refreshing cache -->' . "\n";
-		if ( !empty( $options[ 'custom_css' ] ) ) {
+		if ( !empty( $options['custom_css'] ) ) {
 			$output	.= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
 	        $output .= '<style type="text/css" media="screen">' . "\n";
 			$output .=  $options['custom_css'] . "\n";
@@ -145,7 +145,7 @@ if ( ! function_exists( 'catcheverest_skip_content' ) ) :
  */
 function catcheverest_skip_content() { ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'catch-everest' ); ?></a>
-<?php 	
+<?php
 } // catcheverest_skip_content
 endif;
 add_action( 'catcheverest_before_header', 'catcheverest_skip_content', 5 );
@@ -190,7 +190,7 @@ function catcheverest_excerpt_length( $length ) {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	return $options[ 'excerpt_length' ];
+	return $options['excerpt_length'];
 }
 add_filter( 'excerpt_length', 'catcheverest_excerpt_length' );
 
@@ -203,9 +203,9 @@ function catcheverest_continue_reading() {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catch-everest' ) , $more_tag_text ) . '</a>';
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
 }
 
 /**
@@ -242,7 +242,7 @@ function catcheverest_more_link( $more_link, $more_link_text ) {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 
 	return str_replace( $more_link_text, $more_tag_text, $more_link );
 }
@@ -306,52 +306,6 @@ function catcheverest_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'catcheverest_enhanced_image_navigation', 10, 2 );
-
-
-/**
- * Get the favicon Image from theme options
- *
- * @uses favicon
- * @get the data value of image from theme options
- * @display favicon
- *
- * @uses default favicon if favicon field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function catcheverest_favicon() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-
-	if ( ( !$catcheverest_favicon = get_transient( 'catcheverest_favicon' ) ) ) {
-		global $catcheverest_options_settings;
-   		$options = $catcheverest_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( empty( $options[ 'remove_favicon' ] ) ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$catcheverest_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$catcheverest_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
-			endif;
-		endif;
-
-		set_transient( 'catcheverest_favicon', $catcheverest_favicon, 86940 );
-	}
-	echo $catcheverest_favicon ;
-} // catcheverest_favicon
-
-//Load Favicon in Header Section
-add_action('wp_head', 'catcheverest_favicon');
-
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'catcheverest_favicon' );
 
 
 if ( ! function_exists( 'catcheverest_header_left' ) ) :
@@ -463,9 +417,9 @@ function catcheverest_pass_slider_value() {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	$transition_effect = $options[ 'transition_effect' ];
-	$transition_delay = $options[ 'transition_delay' ] * 1000;
-	$transition_duration = $options[ 'transition_duration' ] * 1000;
+	$transition_effect = $options['transition_effect'];
+	$transition_delay = $options['transition_delay'] * 1000;
+	$transition_duration = $options['transition_duration'] * 1000;
 	wp_localize_script(
 		'catcheverest-slider',
 		'js_value',
@@ -491,33 +445,33 @@ function catcheverest_post_sliders() {
    	$options = $catcheverest_options_settings;
 
 
-	if ( ( !$catcheverest_post_sliders = get_transient( 'catcheverest_post_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
+	if ( ( !$catcheverest_post_sliders = get_transient( 'catcheverest_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catcheverest_post_sliders = '
 		<div id="main-slider" class="container">
         	<section class="featured-slider">';
-				$get_featured_posts = new WP_Query( array(
-					'posts_per_page' => $options[ 'slider_qty' ],
-					'post__in'		 => $options[ 'featured_slider' ],
+				$loop = new WP_Query( array(
+					'posts_per_page' => $options['slider_qty'],
+					'post__in'		 => $options['featured_slider'],
 					'orderby' 		 => 'post__in',
 					'ignore_sticky_posts' => 1 // ignore sticky posts
 				));
-				$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+					$title_attribute = the_title_attribute( 'echo=0' );
 					$excerpt = get_the_excerpt();
 					if ( $i == 1 ) { $classes = "post hentry slides displayblock"; } else { $classes = "post hentry slides displaynone"; }
 					$catcheverest_post_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+									<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 								</h1>
 							</header>';
 							if ( $excerpt !='') {
@@ -612,8 +566,8 @@ function catcheverest_slider_display() {
    	$options = $catcheverest_options_settings;
 
 	// get data value from theme options
-	$enableslider = $options[ 'enable_slider' ];
-	$featuredslider = $options[ 'featured_slider' ];
+	$enableslider = $options['enable_slider'];
+	$featuredslider = $options['featured_slider'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -657,10 +611,10 @@ function catcheverest_homepage_headline() {
    	$options = $catcheverest_options_settings;
 
 	// Getting data from Theme Options
-	$disable_headline = $options[ 'disable_homepage_headline' ];
-	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
-	$homepage_headline = $options[ 'homepage_headline' ];
-	$homepage_subheadline = $options[ 'homepage_subheadline' ];
+	$disable_headline = $options['disable_homepage_headline'];
+	$disable_subheadline = $options['disable_homepage_subheadline'];
+	$homepage_headline = $options['homepage_headline'];
+	$homepage_subheadline = $options['homepage_subheadline'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -679,10 +633,10 @@ function catcheverest_homepage_headline() {
 			$catcheverest_homepage_headline = '<div id="homepage-message" class="container"><p>';
 
 			if ( $disable_headline == "0" ) {
-				$catcheverest_homepage_headline .= sprintf( __( '%s', 'catch-everest' ) , $homepage_headline );
+				$catcheverest_homepage_headline .= $homepage_headline;
 			}
 			if ( $disable_subheadline == "0" ) {
-				$catcheverest_homepage_headline .= '<span>' . sprintf( __( '%s', 'catch-everest' ) , $homepage_subheadline ) . '</span>';
+				$catcheverest_homepage_headline .= '<span>' . $homepage_subheadline . '</span>';
 			}
 
 			$catcheverest_homepage_headline .= '</p></div>';
@@ -708,7 +662,7 @@ function catcheverest_default_featured_content() {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
+	$disable_homepage_featured = $options['disable_homepage_featured'];
 
 	if ( $disable_homepage_featured == "0" ) {
 		if ( !$catcheverest_default_featured_content = get_transient( 'catcheverest_default_featured_content' ) ) {
@@ -789,13 +743,13 @@ function catcheverest_homepage_featured_content() {
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
-	$quantity = $options [ 'homepage_featured_qty' ];
-	$headline = $options [ 'homepage_featured_headline' ];
+	$disable_homepage_featured = $options['disable_homepage_featured'];
+	$quantity = $options['homepage_featured_qty'];
+	$headline = $options['homepage_featured_headline'];
 
 	if ( $disable_homepage_featured == "0" ) {
 
-		if ( !$catcheverest_homepage_featured_content = get_transient( 'catcheverest_homepage_featured_content' )  && ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) ) {
+		if ( !$catcheverest_homepage_featured_content = get_transient( 'catcheverest_homepage_featured_content' )  && ( !empty( $options['homepage_featured_image'] ) || !empty( $options['homepage_featured_title'] ) || !empty( $options['homepage_featured_content'] ) ) ) {
 
 			echo '<!-- refreshing cache -->';
 
@@ -804,7 +758,7 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post" class="' . $parentclasses . '">';
 
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catch-everest' ) , $headline ) . '</h1>';
+				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
 			}
 
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
@@ -812,7 +766,7 @@ function catcheverest_homepage_featured_content() {
 				for ( $i = 1; $i <= $quantity; $i++ ) {
 
 
-					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
+					if ( !empty ( $options['homepage_featured_base'][ $i ] ) ) {
 						$target = '_blank';
 					} else {
 						$target = '_self';
@@ -827,47 +781,47 @@ function catcheverest_homepage_featured_content() {
 					}
 
 					//Checking Link
-					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
-						$link = $options[ 'homepage_featured_url' ][ $i ];
+					if ( !empty ( $options['homepage_featured_url'][ $i ] ) ) {
+						$link = $options['homepage_featured_url'][ $i ];
 					} else {
 						$link = '#';
 					}
 
 					//Checking Title
-					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
-						$title = sprintf( __( '%s', 'catch-everest' ) , $options[ 'homepage_featured_title' ][ $i ] );
+					if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
+						$title = $options['homepage_featured_title'][ $i ];
 					} else {
 						$title = '';
 					}
 
 
-					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+					if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) || !empty ( $options['homepage_featured_image'][ $i ] ) ) {
 						$catcheverest_homepage_featured_content .= '
 						<article class="'.$classes.'">';
-							if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+							if ( !empty ( $options['homepage_featured_image'][ $i ] ) ) {
 								$catcheverest_homepage_featured_content .= '
 								<figure class="featured-homepage-image">
-									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
-										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
+									<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="' . $target . '">
+										<img src="'.$options['homepage_featured_image'][ $i ].'" class="wp-post-image" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">
 									</a>
 								</figure>';
 							}
-							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
+							if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) ) {
 								$catcheverest_homepage_featured_content .= '
 								<div class="entry-container">';
 
-									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
+									if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
 										$catcheverest_homepage_featured_content .= '
 										<header class="entry-header">
 											<h1 class="entry-title">
-												<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>
+												<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . $target . '">' . $title . '</a>
 											</h1>
 										</header>';
 									}
-									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
+									if ( !empty ( $options['homepage_featured_content'][ $i ] ) ) {
 										$catcheverest_homepage_featured_content .= '
 										<div class="entry-content">
-											' . sprintf( __( '%s', 'catch-everest' ) , $options[ 'homepage_featured_content' ][ $i ] ) . '
+											' . $options['homepage_featured_content'][ $i ] . '
 										</div>';
 									}
 								$catcheverest_homepage_featured_content .= '
@@ -905,7 +859,7 @@ function catcheverest_homepage_featured_display() {
 
 	// Getting data from Theme Options
 	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
+	$disable_homepage_featured = $options['disable_homepage_featured'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -916,7 +870,7 @@ function catcheverest_homepage_featured_display() {
 
 
 	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
-		if ( ( !empty( $options[ 'homepage_featured_image' ] ) && ( array_filter( $options[ 'homepage_featured_image' ] ) ) ) || ( !empty( $options[ 'homepage_featured_title' ] ) && ( array_filter( $options[ 'homepage_featured_title' ] ) ) ) || ( !empty( $options[ 'homepage_featured_content' ] ) && ( array_filter( $options[ 'homepage_featured_content' ] ) ) ) ) {
+		if ( ( !empty( $options['homepage_featured_image'] ) && ( array_filter( $options['homepage_featured_image'] ) ) ) || ( !empty( $options['homepage_featured_title'] ) && ( array_filter( $options['homepage_featured_title'] ) ) ) || ( !empty( $options['homepage_featured_content'] ) && ( array_filter( $options['homepage_featured_content'] ) ) ) ) {
 			catcheverest_homepage_featured_content();
 		} else {
 			catcheverest_default_featured_content();
@@ -985,19 +939,17 @@ add_action( 'catcheverest_site_generator', 'catcheverest_footer_content', 10 );
  * @uses pre_get_posts hook
  */
 function catcheverest_alter_home( $query ){
-	global $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
+	if ( $query->is_main_query() && $query->is_home() ) {
+		global $catcheverest_options_settings;
+	   	$options = $catcheverest_options_settings;
 
-    $cats = $options[ 'front_page_category' ];
+	    $cats = $options['front_page_category'];
 
-    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if ( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
+	    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options['featured_slider'] ) ) {
+			$query->query_vars['post__not_in'] = $options['featured_slider'];
 		}
-	}
-	if ( !in_array( '0', $cats ) ) {
-		if ( $query->is_main_query() && $query->is_home() ) {
-			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+			$query->query_vars['category__in'] = $cats;
 		}
 	}
 }
@@ -1021,35 +973,35 @@ function catcheverest_social_networks() {
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ],
-						$options[ 'social_twitter' ],
-						$options[ 'social_googleplus' ],
-						$options[ 'social_linkedin' ],
-						$options[ 'social_pinterest' ],
-						$options[ 'social_youtube' ],
-						$options[ 'social_vimeo' ],
-						$options[ 'social_slideshare' ],
-						$options[ 'social_foursquare' ],
-						$options[ 'social_flickr' ],
-						$options[ 'social_tumblr' ],
-						$options[ 'social_deviantart' ],
-						$options[ 'social_dribbble' ],
-						$options[ 'social_myspace' ],
-						$options[ 'social_wordpress' ],
-						$options[ 'social_rss' ],
-						$options[ 'social_delicious' ],
-						$options[ 'social_lastfm' ],
-						$options[ 'social_instagram' ],
-						$options[ 'social_github' ],
-						$options[ 'social_vkontakte' ],
-						$options[ 'social_myworld' ],
-						$options[ 'social_odnoklassniki' ],
-						$options[ 'social_goodreads' ],
-						$options[ 'social_skype' ],
-						$options[ 'social_soundcloud' ],
-						$options[ 'social_email' ],
-						$options[ 'social_contact' ],
-						$options[ 'social_xing' ]
+	$elements = array( 	$options['social_facebook'],
+						$options['social_twitter'],
+						$options['social_googleplus'],
+						$options['social_linkedin'],
+						$options['social_pinterest'],
+						$options['social_youtube'],
+						$options['social_vimeo'],
+						$options['social_slideshare'],
+						$options['social_foursquare'],
+						$options['social_flickr'],
+						$options['social_tumblr'],
+						$options['social_deviantart'],
+						$options['social_dribbble'],
+						$options['social_myspace'],
+						$options['social_wordpress'],
+						$options['social_rss'],
+						$options['social_delicious'],
+						$options['social_lastfm'],
+						$options['social_instagram'],
+						$options['social_github'],
+						$options['social_vkontakte'],
+						$options['social_myworld'],
+						$options['social_odnoklassniki'],
+						$options['social_goodreads'],
+						$options['social_skype'],
+						$options['social_soundcloud'],
+						$options['social_email'],
+						$options['social_contact'],
+						$options['social_xing']
 					);
 	$flag = 0;
 	if ( !empty( $elements ) ) {
@@ -1073,149 +1025,149 @@ function catcheverest_social_networks() {
 		<ul class="social-profile">';
 
 			//facebook
-			if ( !empty( $options[ 'social_facebook' ] ) ) {
+			if ( !empty( $options['social_facebook'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'catch-everest' ) .'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options['social_facebook'] ).'" title="'. esc_attr__( 'Facebook', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'catch-everest' ) .'</a></li>';
 			}
 			//Twitter
-			if ( !empty( $options[ 'social_twitter' ] ) ) {
+			if ( !empty( $options['social_twitter'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'catch-everest' ) .'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options['social_twitter'] ).'" title="'. esc_attr__( 'Twitter', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'catch-everest' ) .'</a></li>';
 			}
 			//Google+
-			if ( !empty( $options[ 'social_googleplus' ] ) ) {
+			if ( !empty( $options['social_googleplus'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Google+', 'catch-everest' ) .'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options['social_googleplus'] ).'" title="'. esc_attr__( 'Google+', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Google+', 'catch-everest' ) .'</a></li>';
 			}
 			//Linkedin
-			if ( !empty( $options[ 'social_linkedin' ] ) ) {
+			if ( !empty( $options['social_linkedin'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'LinkedIn', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'catch-everest' ) .'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options['social_linkedin'] ).'" title="'. esc_attr__( 'LinkedIn', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'catch-everest' ) .'</a></li>';
 			}
 			//Pinterest
-			if ( !empty( $options[ 'social_pinterest' ] ) ) {
+			if ( !empty( $options['social_pinterest'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'catch-everest' ) .'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options['social_pinterest'] ).'" title="'. esc_attr__( 'Pinterest', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'catch-everest' ) .'</a></li>';
 			}
 			//Youtube
-			if ( !empty( $options[ 'social_youtube' ] ) ) {
+			if ( !empty( $options['social_youtube'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'catch-everest' ) .'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options['social_youtube'] ).'" title="'. esc_attr__( 'YouTube', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'catch-everest' ) .'</a></li>';
 			}
 			//Vimeo
-			if ( !empty( $options[ 'social_vimeo' ] ) ) {
+			if ( !empty( $options['social_vimeo'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'catch-everest' ) .'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options['social_vimeo'] ).'" title="'. esc_attr__( 'Vimeo', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'catch-everest' ) .'</a></li>';
 			}
 			//Slideshare
-			if ( !empty( $options[ 'social_slideshare' ] ) ) {
+			if ( !empty( $options['social_slideshare'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'SlideShare', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'catch-everest' ) .'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options['social_slideshare'] ).'" title="'. esc_attr__( 'SlideShare', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'catch-everest' ) .'</a></li>';
 			}
 			//Foursquare
-			if ( !empty( $options[ 'social_foursquare' ] ) ) {
+			if ( !empty( $options['social_foursquare'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'. esc_attr__( 'FourSquare', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'catch-everest' ) .'</a></li>';
+					'<li class="foursquare"><a href="'.esc_url( $options['social_foursquare'] ).'" title="'. esc_attr__( 'FourSquare', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'catch-everest' ) .'</a></li>';
 			}
 			//Flickr
-			if ( !empty( $options[ 'social_flickr' ] ) ) {
+			if ( !empty( $options['social_flickr'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'catch-everest' ) .'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options['social_flickr'] ).'" title="'. esc_attr__( 'Flickr', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'catch-everest' ) .'</a></li>';
 			}
 			//Tumblr
-			if ( !empty( $options[ 'social_tumblr' ] ) ) {
+			if ( !empty( $options['social_tumblr'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'catch-everest' ) .'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options['social_tumblr'] ).'" title="'. esc_attr__( 'Tumblr', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'catch-everest' ) .'</a></li>';
 			}
 			//deviantART
-			if ( !empty( $options[ 'social_deviantart' ] ) ) {
+			if ( !empty( $options['social_deviantart'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'catch-everest' ) .'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options['social_deviantart'] ).'" title="'. esc_attr__( 'deviantART', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'catch-everest' ) .'</a></li>';
 			}
 			//Dribbble
-			if ( !empty( $options[ 'social_dribbble' ] ) ) {
+			if ( !empty( $options['social_dribbble'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'catch-everest' ) .'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options['social_dribbble'] ).'" title="'. esc_attr__( 'Dribbble', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'catch-everest' ) .'</a></li>';
 			}
 			//MySpace
-			if ( !empty( $options[ 'social_myspace' ] ) ) {
+			if ( !empty( $options['social_myspace'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'catch-everest' ) .'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options['social_myspace'] ).'" title="'. esc_attr__( 'MySpace', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'catch-everest' ) .'</a></li>';
 			}
 			//WordPress
-			if ( !empty( $options[ 'social_wordpress' ] ) ) {
+			if ( !empty( $options['social_wordpress'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'catch-everest' ) .'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options['social_wordpress'] ).'" title="'. esc_attr__( 'WordPress', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'catch-everest' ) .'</a></li>';
 			}
 			//RSS
-			if ( !empty( $options[ 'social_rss' ] ) ) {
+			if ( !empty( $options['social_rss'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'RSS', 'catch-everest' ) .'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options['social_rss'] ).'" title="'. esc_attr__( 'RSS', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'RSS', 'catch-everest' ) .'</a></li>';
 			}
 			//Delicious
-			if ( !empty( $options[ 'social_delicious' ] ) ) {
+			if ( !empty( $options['social_delicious'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'. esc_attr__( 'Delicious', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'catch-everest' ) .'</a></li>';
+					'<li class="delicious"><a href="'.esc_url( $options['social_delicious'] ).'" title="'. esc_attr__( 'Delicious', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'catch-everest' ) .'</a></li>';
 			}
 			//Last.fm
-			if ( !empty( $options[ 'social_lastfm' ] ) ) {
+			if ( !empty( $options['social_lastfm'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'. esc_attr__( 'Last.fm', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'catch-everest' ) .'</a></li>';
+					'<li class="lastfm"><a href="'.esc_url( $options['social_lastfm'] ).'" title="'. esc_attr__( 'Last.fm', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'catch-everest' ) .'</a></li>';
 			}
 			//Instagram
-			if ( !empty( $options[ 'social_instagram' ] ) ) {
+			if ( !empty( $options['social_instagram'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'catch-everest' ) .'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options['social_instagram'] ).'" title="'. esc_attr__( 'Instagram', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'catch-everest' ) .'</a></li>';
 			}
 			//GitHub
-			if ( !empty( $options[ 'social_github' ] ) ) {
+			if ( !empty( $options['social_github'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'GitHub', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'catch-everest' ) .'</a></li>';
+					'<li class="github"><a href="'.esc_url( $options['social_github'] ).'" title="'. esc_attr__( 'GitHub', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'catch-everest' ) .'</a></li>';
 			}
 			//Vkontakte
-			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
+			if ( !empty( $options['social_vkontakte'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'</a></li>';
+					'<li class="vkontakte"><a href="'.esc_url( $options['social_vkontakte'] ).'" title="'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'catch-everest' ) .'</a></li>';
 			}
 			//My World
-			if ( !empty( $options[ 'social_myworld' ] ) ) {
+			if ( !empty( $options['social_myworld'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'. esc_attr__( 'My World', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'My World', 'catch-everest' ) .'</a></li>';
+					'<li class="myworld"><a href="'.esc_url( $options['social_myworld'] ).'" title="'. esc_attr__( 'My World', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'My World', 'catch-everest' ) .'</a></li>';
 			}
 			//Odnoklassniki
-			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
+			if ( !empty( $options['social_odnoklassniki'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'. esc_attr__( 'Odnoklassniki', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'catch-everest' ) .'</a></li>';
+					'<li class="odnoklassniki"><a href="'.esc_url( $options['social_odnoklassniki'] ).'" title="'. esc_attr__( 'Odnoklassniki', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'catch-everest' ) .'</a></li>';
 			}
 			//Goodreads
-			if ( !empty( $options[ 'social_goodreads' ] ) ) {
+			if ( !empty( $options['social_goodreads'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'. esc_attr__( 'GoodReads', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'catch-everest' ) .'</a></li>';
+					'<li class="goodreads"><a href="'.esc_url( $options['social_goodreads'] ).'" title="'. esc_attr__( 'GoodReads', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'catch-everest' ) .'</a></li>';
 			}
 			//Skype
-			if ( !empty( $options[ 'social_skype' ] ) ) {
+			if ( !empty( $options['social_skype'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Skype', 'catch-everest' ) .'</a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options['social_skype'] ).'" title="'. esc_attr__( 'Skype', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Skype', 'catch-everest' ) .'</a></li>';
 			}
 			//Soundcloud
-			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+			if ( !empty( $options['social_soundcloud'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'SoundCloud', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'catch-everest' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options['social_soundcloud'] ).'" title="'. esc_attr__( 'SoundCloud', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'catch-everest' ) .'</a></li>';
 			}
 			//Email
-			if ( !empty( $options[ 'social_email' ] ) ) {
+			if ( !empty( $options['social_email'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-everest' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options['social_email'] ).'" title="'. esc_attr__( 'Email', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-everest' ) .'</a></li>';
 			}
 			//Contact
-			if ( !empty( $options[ 'social_contact' ] ) ) {
+			if ( !empty( $options['social_contact'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-everest' ) .'">'. esc_attr__( 'Contact', 'catch-everest' ) .'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options['social_contact'] ).'" title="'. esc_attr__( 'Contact', 'catch-everest' ) .'">'. esc_attr__( 'Contact', 'catch-everest' ) .'</a></li>';
 			}
 			//Xing
-			if ( !empty( $options[ 'social_xing' ] ) ) {
+			if ( !empty( $options['social_xing'] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catch-everest' ) .'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options['social_xing'] ).'" title="'. esc_attr__( 'Xing', 'catch-everest' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catch-everest' ) .'</a></li>';
 			}
 
 			$catcheverest_social_networks .='
@@ -1261,7 +1213,7 @@ function catcheverest_webmaster() {
 		}
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_header'] ) ) {
-			$catcheverest_webmaster =  $options[ 'analytic_header' ] ;
+			$catcheverest_webmaster =  $options['analytic_header'] ;
 		}
 
 		set_transient( 'catcheverest_webmaster', $catcheverest_webmaster, 86940 );
@@ -1291,7 +1243,7 @@ function catcheverest_footercode() {
 
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_footer'] ) ) {
-			$catcheverest_footercode =  $options[ 'analytic_footer' ] ;
+			$catcheverest_footercode =  $options['analytic_footer'] ;
 		}
 
 		set_transient( 'catcheverest_footercode', $catcheverest_footercode, 86940 );
@@ -1384,51 +1336,6 @@ function catcheverest_pagemenu_filter( $text ) {
 endif; // catcheverest_pagemenu_filter
 
 add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');
-
-
-/**
- * Get the Web Clip Icon Image from theme options
- *
- * @uses web_clip and remove_web_clip
- * @get the data value of image from theme options
- * @display webclip icon
- *
- * @uses default Web Click Icon if web_clip field on theme options is empty
- *
- * @uses set_transient and delete_transient
- *
- * @remove Remove this function when WordPress 4.8 is released
- */
-function catcheverest_web_clip() {
-	if ( function_exists( 'has_site_icon' ) ) {
-		//Bail Early if Core Site Icon Feature is Present
-		return;
-	}
-
-	if ( ( !$catcheverest_web_clip = get_transient( 'catcheverest_web_clip' ) ) ) {
-
-		// get the data value from theme options
-		global $catcheverest_options_settings;
-   		$options = $catcheverest_options_settings;
-
-		echo '<!-- refreshing cache -->';
-		if ( empty( $options[ 'remove_web_clip' ] ) ) :
-			// if not empty web_clip on theme options
-			if ( !empty( $options[ 'web_clip' ] ) ) :
-				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			else:
-				// if empty web_clip on theme options, display default webclip icon
-				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
-			endif;
-		endif;
-
-		set_transient( 'catcheverest_web_clip', $catcheverest_web_clip, 86940 );
-	}
-	echo $catcheverest_web_clip ;
-} // catcheverest_web_clip
-
-//Load webclip icon in Header Section
-add_action( 'wp_head', 'catcheverest_web_clip' );
 
 
 /**

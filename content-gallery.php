@@ -14,7 +14,7 @@
     
         <header class="entry-header">
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'Gallery' ); ?>" title="<?php _e( 'All Gallery Posts', 'catch-everest' ); ?>"><?php _e( 'Gallery', 'catch-everest' ); ?></a></h2>
+            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'Gallery' ) ); ?>" title="<?php esc_attr_e( 'All Gallery Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Gallery', 'catch-everest' ); ?></a></h2>
         </header><!-- .entry-header -->  
     
     	<div class="entry-content">    

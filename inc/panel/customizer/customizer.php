@@ -38,16 +38,6 @@ function catcheverest_customize_register( $wp_customize ) {
 					'title' 		=> __( 'Responsive Design', 'catch-everest' ),
 					'description' 	=> '',
 				),
-				'favicon' => array(
-					'id' 			=> 'favicon',
-					'title' 		=> __( 'Favicon', 'catch-everest' ),
-					'description' 	=> '',
-				),
-				'web_clip_icon_options' => array(
-					'id' 			=> 'web_clip_icon_options',
-					'title' 		=> __( 'Webclip Icon Options', 'catch-everest' ),
-					'description' 	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina', 'catch-everest' )
-				),
 				'header_right_section' => array(
 					'id' 			=> 'header_right_section',
 					'title' 		=> __( 'Header Right Section', 'catch-everest' ),
@@ -888,60 +878,6 @@ function catcheverest_customize_register( $wp_customize ) {
 	);
 
 
-	//@remove Remove if block when WordPress 4.8 is released
-	if( !function_exists( 'has_site_icon' ) ) {
-		$settings_site_icon = array(
-			//Favicon
-			'remove_favicon' => array(
-				'id' 				=> 'remove_favicon',
-				'title' 			=> __( 'Check to Disable Favicon', 'catch-everest' ),
-				'description'		=> '',
-				'field_type' 		=> 'checkbox',
-				'sanitize' 			=> 'catcheverest_sanitize_checkbox',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'favicon',
-				'default' 			=> $defaults['remove_favicon'],
-				'active_callback'	=> 'catcheverest_is_site_icon_active'
-			),
-			'fav_icon' => array(
-				'id' 				=> 'fav_icon',
-				'title' 			=> __( 'Fav Icon', 'catch-everest' ),
-				'description'		=> '',
-				'field_type' 		=> 'image',
-				'sanitize' 			=> 'catcheverest_sanitize_image',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'favicon',
-				'default' 			=> $defaults['fav_icon'],
-				'active_callback'	=> 'catcheverest_is_site_icon_active'
-			),
-
-			//Web Clip Icon
-			'remove_web_clip' => array(
-				'id' 				=> 'remove_web_clip',
-				'title' 			=> __( 'Check to Disable Web Clip Icon', 'catch-everest' ),
-				'description'		=> '',
-				'field_type' 		=> 'checkbox',
-				'sanitize' 			=> 'catcheverest_sanitize_checkbox',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'web_clip_icon_options',
-				'default' 			=> $defaults['remove_web_clip'],
-				'active_callback'	=> 'catcheverest_is_site_icon_active'
-			),
-			'web_clip' => array(
-				'id' 				=> 'web_clip',
-				'title' 			=> __( 'Web Clip Icon', 'catch-everest' ),
-				'description'		=> '',
-				'field_type' 		=> 'image',
-				'sanitize' 			=> 'catcheverest_sanitize_image',
-				'panel' 			=> 'theme_options',
-				'section' 			=> 'web_clip_icon_options',
-				'default' 			=> $defaults['web_clip'],
-				'active_callback'	=> 'catcheverest_is_site_icon_active'
-			),
-		);
-		$settings_parameters = array_merge( $settings_parameters, $settings_site_icon);
-	}
-
 	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
 	if( function_exists( 'wp_update_custom_css_post' ) ) {
 		unset( $settings_parameters['custom_css'] );
@@ -1100,7 +1036,7 @@ function catcheverest_customize_register( $wp_customize ) {
 	}
 
 	//Add featured content elements with respect to no of featured content
-	for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
@@ -1227,7 +1163,7 @@ function catcheverest_customize_register( $wp_customize ) {
 	}
 
 	//Add featured post elements with respect to no of featured sliders
-	for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['slider_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[featured_slider][' . $i . ']',

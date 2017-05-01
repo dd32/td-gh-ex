@@ -13,7 +13,7 @@ get_header();
 
 	// Getting data from Theme Options
 	$options = $catcheverest_options_settings;
-	$enable_post = $options[ 'enable_posts_home' ];
+	$enable_post = $options['enable_posts_home'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;

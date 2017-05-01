@@ -13,7 +13,7 @@
 	<div class="entry-container post-format">
     
         <header class="entry-format">
-        	<a href="<?php echo get_post_format_link( 'link' ); ?>" title="<?php _e( 'All Link Posts', 'catch-everest' ); ?>"><?php _e( 'Link', 'catch-everest' ); ?></a>
+        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Link', 'catch-everest' ); ?></a>
         </header>
         
         <div class="entry-content">

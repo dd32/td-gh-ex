@@ -16,7 +16,7 @@ do_action( 'catcheverest_before_header_right' ); ?>
 global $catcheverest_options_settings;
 $options = $catcheverest_options_settings;
 
-if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
+if ( $options['disable_header_right_sidebar'] == "0" ) {	?>
     <div id="header-right" class="widget-area">
     	<?php if ( function_exists( 'catcheverest_social_networks' ) ) { ?>
 			<aside class="widget widget_catcheverest_social_widget">

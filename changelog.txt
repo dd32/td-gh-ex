@@ -1,5 +1,10 @@
 == Change Log ==
 
+Version 3.0.2
+* Added: Option to Display all Categories in Customizer
+* Code Optimization
+* Removed: Backward compatibility functions
+
 Version 3.0.1
 * Bug Fixed: Background color issue in WordPress 4.7 
 * Updated: Screenshot size to 1200x900, to account for HiDPI display

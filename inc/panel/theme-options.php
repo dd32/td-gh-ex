@@ -177,8 +177,8 @@ function catcheverest_theme_options_do_page() {
                                         </tr>
                                         <tr>
                                             <th scope="row"><?php _e( 'Fav Icon URL:', 'catch-everest' ); ?></th>
-                                            <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
+                                            <td><?php if ( !empty ( $options['fav_icon'] ) ) { ?>
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo esc_url( $options['fav_icon'] ); ?>" />
                                                 <?php } else { ?>
                                                     <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                                 <?php }  ?>
@@ -190,8 +190,8 @@ function catcheverest_theme_options_do_page() {
                                             <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
                                             <td>
                                                 <?php
-                                                    if ( !empty( $options[ 'fav_icon' ] ) ) {
-                                                        echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
+                                                    if ( !empty( $options['fav_icon'] ) ) {
+                                                        echo '<img src="'.esc_url( $options['fav_icon'] ).'" alt="fav" />';
                                                     } else {
                                                         echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
                                                     }
@@ -216,8 +216,8 @@ function catcheverest_theme_options_do_page() {
                                         </tr>
                                         <tr>
                                             <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catch-everest' ); ?></th>
-                                            <td><?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
-                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                            <td><?php if ( !empty ( $options['web_clip'] ) ) { ?>
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options['web_clip'] ); ?>" class="upload" />
                                                 <?php } else { ?>
                                                     <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                                 <?php }  ?>
@@ -229,8 +229,8 @@ function catcheverest_theme_options_do_page() {
                                             <th scope="row"><?php _e( 'Preview: ', 'catch-everest' ); ?></th>
                                             <td>
                                                 <?php
-                                                    if ( !empty( $options[ 'web_clip' ] ) ) {
-                                                        echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
+                                                    if ( !empty( $options['web_clip'] ) ) {
+                                                        echo '<img src="'.esc_url( $options['web_clip'] ).'" alt="fav" />';
                                                     } else {
                                                         echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
                                                     }
@@ -293,12 +293,12 @@ function catcheverest_theme_options_do_page() {
                                 <tbody>
                                     <tr>
                                         <th scope="row"><label><?php _e( 'More Tag Text', 'catch-everest' ); ?></label></th>
-                                        <td><input type="text" size="45" name="catcheverest_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
+                                        <td><input type="text" size="45" name="catcheverest_options[more_tag_text]" value="<?php echo esc_attr( $options['more_tag_text'] ); ?>" />
                                         </td>
                                     </tr>
                                      <tr>
                                         <th scope="row"><?php _e( 'Excerpt length(words)', 'catch-everest' ); ?></th>
-                                        <td><input type="text" size="3" name="catcheverest_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
+                                        <td><input type="text" size="3" name="catcheverest_options[excerpt_length]" value="<?php echo intval( $options['excerpt_length'] ); ?>" /></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -313,7 +313,7 @@ function catcheverest_theme_options_do_page() {
                                 <tbody>
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catch-everest' ); ?></label></th>
-                                        <td><input type="text" size="70" name="catcheverest_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catch-everest' ); ?>
+                                        <td><input type="text" size="70" name="catcheverest_options[feed_url]" value="<?php echo esc_attr( $options['feed_url'] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catch-everest' ); ?>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -363,7 +363,7 @@ function catcheverest_theme_options_do_page() {
                                             </label>
                                         </td>
                                     </tr>
-                                    <?php if( $options[ 'reset_layout' ] == "1" ) { $options[ 'reset_layout' ] = "0"; } ?>
+                                    <?php if( $options['reset_layout'] == "1" ) { $options['reset_layout'] = "0"; } ?>
                                     <tr>
                                         <th scope="row"><?php _e( 'Reset Layout?', 'catch-everest' ); ?></th>
                                         <input type='hidden' value='0' name='catcheverest_options[reset_layout]'>
@@ -389,7 +389,7 @@ function catcheverest_theme_options_do_page() {
                                         <tr>
                                             <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-everest' ); ?></th>
                                             <td>
-                                                <textarea name="catcheverest_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                                <textarea name="catcheverest_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options['custom_css'] ); ?></textarea>
                                             </td>
                                         </tr>
 
@@ -439,7 +439,7 @@ function catcheverest_theme_options_do_page() {
                                             <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catch-everest' ); ?></small></p>
                                         </th>
                                         <td>
-                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_headline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_headline]" cols="65" rows="3"><?php echo esc_textarea( $options['homepage_headline'] ); ?></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -447,7 +447,7 @@ function catcheverest_theme_options_do_page() {
                                             <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catch-everest' ); ?></small></p>
                                         </th>
                                         <td>
-                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_subheadline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_subheadline]" cols="65" rows="3"><?php echo esc_textarea( $options['homepage_subheadline'] ); ?></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -481,16 +481,16 @@ function catcheverest_theme_options_do_page() {
                                             <?php _e( 'Headline', 'catch-everest' ); ?>
                                         </th>
                                         <td>
-                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-everest' ); ?>
+                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_headline]" value="<?php echo esc_attr( $options['homepage_featured_headline'] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-everest' ); ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><?php _e( 'Number of Featured Content', 'catch-everest' ); ?></th>
                                         <td>
-                                            <input type="text" size="2" name="catcheverest_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
+                                            <input type="text" size="2" name="catcheverest_options[homepage_featured_qty]" value="<?php echo intval( $options['homepage_featured_qty'] ); ?>" size="2" />
                                         </td>
                                     </tr>
-                                    <?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?>
+                                    <?php for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ): ?>
                                     <tr>
                                         <th scope="row">
                                             <strong><?php printf( esc_attr__( 'Featured Content #%s', 'catch-everest' ), $i ); ?></strong>
@@ -501,19 +501,19 @@ function catcheverest_theme_options_do_page() {
                                             <?php _e( 'Image', 'catch-everest' ); ?>
                                         </th>
                                         <td>
-                                            <input class="upload-url" size="65" type="text" name="catcheverest_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catch-everest' ), $i ); ?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catch-everest' ); } else { esc_attr_e( 'Add Image','catch-everest' ); } ?>" />
+                                            <input class="upload-url" size="65" type="text" name="catcheverest_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options['homepage_featured_image'] ) ) echo esc_url( $options['homepage_featured_image'][ $i ] ); ?>" />
+                                            <input ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catch-everest' ), $i ); ?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options['homepage_featured_image'] ) ) { esc_attr_e( 'Change Image','catch-everest' ); } else { esc_attr_e( 'Add Image','catch-everest' ); } ?>" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Link URL', 'catch-everest' ); ?></label></th>
-                                        <td><input type="text" size="65" name="catcheverest_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options[ 'homepage_featured_url' ] ) ) echo esc_url( $options[ 'homepage_featured_url' ][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catch-everest' ); ?>
+                                        <td><input type="text" size="65" name="catcheverest_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options['homepage_featured_url'] ) ) echo esc_url( $options['homepage_featured_url'][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catch-everest' ); ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Target. Open Link in New Window?', 'catch-everest' ); ?></label></th>
                                         <input type='hidden' value='0' name='catcheverest_options[homepage_featured_base][<?php echo absint( $i ); ?>]'>
-                                        <td><input type="checkbox" name="catcheverest_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options[ 'homepage_featured_base' ] ) ) checked( '1', $options[ 'homepage_featured_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catch-everest' ); ?>
+                                        <td><input type="checkbox" name="catcheverest_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options['homepage_featured_base'] ) ) checked( '1', $options['homepage_featured_base'][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catch-everest' ); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -521,7 +521,7 @@ function catcheverest_theme_options_do_page() {
                                             <?php _e( 'Title', 'catch-everest' ); ?>
                                         </th>
                                         <td>
-                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catch-everest' ); ?>
+                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options['homepage_featured_title'] ) ) echo esc_attr( $options['homepage_featured_title'][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catch-everest' ); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -529,7 +529,7 @@ function catcheverest_theme_options_do_page() {
                                             <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'catch-everest' ); ?></small></p>
                                         </th>
                                         <td>
-                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="80" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="80" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options['homepage_featured_content'] ) ) echo esc_html( $options['homepage_featured_content'][ $i ] ); ?></textarea>
                                         </td>
                                     </tr>
                                     <?php endfor; ?>
@@ -565,8 +565,8 @@ function catcheverest_theme_options_do_page() {
                                                 <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catch-everest' ); ?></option>
                                                 <?php /* Get the list of categories */
                                                     $categories = get_categories();
-                                                    if( empty( $options[ 'front_page_category' ] ) ) {
-                                                        $options[ 'front_page_category' ] = array();
+                                                    if( empty( $options['front_page_category'] ) ) {
+                                                        $options['front_page_category'] = array();
                                                     }
                                                     foreach ( $categories as $category) :
                                                 ?>
@@ -608,7 +608,7 @@ function catcheverest_theme_options_do_page() {
                                 </tr>
                                 <tr>
                                     <th scope="row"><?php _e( 'Number of Slides', 'catch-everest' ); ?></th>
-                                    <td><input type="text" name="catcheverest_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" size="2" /></td>
+                                    <td><input type="text" name="catcheverest_options[slider_qty]" value="<?php echo intval( $options['slider_qty'] ); ?>" size="2" /></td>
                                 </tr>
                                 <tr>
                                     <th>
@@ -633,14 +633,14 @@ function catcheverest_theme_options_do_page() {
                                 <tr>
                                     <th scope="row"><?php _e( 'Transition Delay', 'catch-everest' ); ?></th>
                                     <td>
-                                        <input type="text" name="catcheverest_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
+                                        <input type="text" name="catcheverest_options[transition_delay]" value="<?php echo $options['transition_delay']; ?>" size="2" />
                                        <span class="description"><?php _e( 'second(s)', 'catch-everest' ); ?></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><?php _e( 'Transition Length', 'catch-everest' ); ?></th>
                                     <td>
-                                        <input type="text" name="catcheverest_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
+                                        <input type="text" name="catcheverest_options[transition_duration]" value="<?php echo $options['transition_duration']; ?>" size="2" />
                                         <span class="description"><?php _e( 'second(s)', 'catch-everest' ); ?></span>
                                     </td>
                                 </tr>
@@ -661,11 +661,11 @@ function catcheverest_theme_options_do_page() {
                                     <td><input type="checkbox" id="headerlogo" name="catcheverest_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'catch-everest'); ?></td>
                                 </tr>
                                 <tbody class="sortable">
-                                    <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
+                                    <?php for ( $i = 1; $i <= $options['slider_qty']; $i++ ): ?>
                                     <tr>
                                         <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'catch-everest' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
-                                        <td><input type="text" name="catcheverest_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'wpurl' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e( 'Click Here To Edit', 'catch-everest' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-everest' ); ?></a>
+                                        <td><input type="text" name="catcheverest_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>" />
+                                        <a href="<?php bloginfo ( 'wpurl' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e( 'Click Here To Edit', 'catch-everest' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-everest' ); ?></a>
                                         </td>
                                     </tr>
                                     <?php endfor; ?>
@@ -685,7 +685,7 @@ function catcheverest_theme_options_do_page() {
                             <tbody>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Facebook', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_facebook]" value="<?php echo esc_url( $options['social_facebook'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -705,12 +705,12 @@ function catcheverest_theme_options_do_page() {
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Youtube', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_youtube]" value="<?php echo esc_url( $options['social_youtube'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Vimeo', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_vimeo]" value="<?php echo esc_url( $options['social_vimeo'] ); ?>" />
                                     </td>
                                 </tr>
 
@@ -726,62 +726,62 @@ function catcheverest_theme_options_do_page() {
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Foursquare', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_foursquare]" value="<?php echo esc_url( $options[ 'social_foursquare' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_foursquare]" value="<?php echo esc_url( $options['social_foursquare'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Flickr', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_flickr]" value="<?php echo esc_url( $options['social_flickr'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Tumblr', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_tumblr]" value="<?php echo esc_url( $options['social_tumblr'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'deviantART', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_deviantart]" value="<?php echo esc_url( $options['social_deviantart'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Dribbble', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_dribbble]" value="<?php echo esc_url( $options['social_dribbble'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'MySpace', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_myspace]" value="<?php echo esc_url( $options['social_myspace'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'WordPress', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_wordpress]" value="<?php echo esc_url( $options['social_wordpress'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'RSS', 'catch-everest' ); ?> </h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_rss]" value="<?php echo esc_url( $options['social_rss'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Delicious', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_delicious]" value="<?php echo esc_url( $options[ 'social_delicious' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_delicious]" value="<?php echo esc_url( $options['social_delicious'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Last.fm', 'catch-everest' ); ?> </h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_lastfm]" value="<?php echo esc_url( $options['social_lastfm'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Instagram', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_instagram]" value="<?php echo esc_url( $options['social_instagram'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'GitHub', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_github]" value="<?php echo esc_url( $options['social_github'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -791,42 +791,42 @@ function catcheverest_theme_options_do_page() {
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'My World', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_myworld]" value="<?php echo esc_url( $options['social_myworld'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Odnoklassniki', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_odnoklassniki]" value="<?php echo esc_url( $options['social_odnoklassniki'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Goodreads', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_goodreads]" value="<?php echo esc_url( $options['social_goodreads'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Skype', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_skype]" value="<?php echo esc_attr( $options['social_skype'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Soundcloud', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_soundcloud]" value="<?php echo esc_url( $options['social_soundcloud'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Email', 'catch-everest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_email]" value="<?php echo sanitize_email( $options['social_email'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><?php _e( 'Contact', 'catch-everest' ); ?></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_contact]" value="<?php echo esc_url( $options['social_contact'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><?php _e( 'Xing', 'catch-everest' ); ?></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_xing]" value="<?php echo esc_attr( $options[ 'social_xing' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_xing]" value="<?php echo esc_attr( $options['social_xing'] ); ?>" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -847,7 +847,7 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><?php _e( 'Code to display on Header', 'catch-everest' ); ?></th>
                                         <td>
-                                        <textarea name="catcheverest_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
+                                        <textarea name="catcheverest_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options['analytic_header'] ); ?></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -856,7 +856,7 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><?php _e('Code to display on Footer', 'catch-everest' ); ?></th>
                                         <td>
-                                         <textarea name="catcheverest_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
+                                         <textarea name="catcheverest_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options['analytic_footer'] ); ?></textarea>
 
                                         </td>
                                     </tr>
@@ -897,7 +897,6 @@ function catcheverest_theme_options_validate( $options ) {
 
     $input = array();
     $input = $options;
-
 
     // Data validation for Large Header Image
     if ( isset( $input[ 'featured_header_image_alt' ] ) ) {
@@ -1027,7 +1026,12 @@ function catcheverest_theme_options_validate( $options ) {
     }
     // Front page posts categories
     if( isset( $input['front_page_category' ] ) ) {
-        $input_validated['front_page_category'] = $input['front_page_category'];
+        if( in_array( 0, $input['front_page_category' ] ) ) {
+            $input_validated['front_page_category'] = '0';
+        }
+        else{
+            $input_validated['front_page_category'] = $input['front_page_category'];
+        }
     }
 
 
@@ -1223,8 +1227,6 @@ function catcheverest_theme_options_validate( $options ) {
  * Clearing the cache if any changes in Admin Theme Option
  */
 function catcheverest_themeoption_invalidate_caches(){
-    delete_transient( 'catcheverest_favicon' );   // favicon on cpanel/ backend and frontend
-    delete_transient( 'catcheverest_web_clip' ); // web clip icons
     delete_transient( 'catcheverest_post_sliders' ); // featured post slider
     delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
     delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
