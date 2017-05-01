@@ -20,27 +20,27 @@
 			</div>	
 		<?php endif; ?>
 
-		<?php if ( function_exists('cfs') && $cfs->get('display_game_info') == 1 ) : ?>
+		<?php if ( function_exists('cfs') && CFS()->get('display_game_info') == 1 ) : ?>
 			
 			<?php
 				echo '<table class="col-md-6 col-sm-6 col-xs-6 game-table">';
-				if ($cfs->get('game_genre') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Genre: ', 'areview') . '</td><td>' . esc_html($cfs->get('game_genre')) . '</td></tr>';
+				if (CFS()->get('game_genre') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Genre: ', 'areview') . '</td><td>' . esc_html(CFS()->get('game_genre')) . '</td></tr>';
 				}
-				if ($cfs->get('game_platforms') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Platform: ', 'areview') . '</td><td>' . esc_html($cfs->get('game_platforms')) . '</td></tr>';
+				if (CFS()->get('game_platforms') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Platform: ', 'areview') . '</td><td>' . esc_html(CFS()->get('game_platforms')) . '</td></tr>';
 				}
-				if ($cfs->get('game_publisher') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Publisher: ', 'areview') . '</td><td>' . esc_html($cfs->get('game_publisher')) . '</td></tr>';
+				if (CFS()->get('game_publisher') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Publisher: ', 'areview') . '</td><td>' . esc_html(CFS()->get('game_publisher')) . '</td></tr>';
 				}
-				if ($cfs->get('game_developer') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Developer: ', 'areview') . '</td><td>' . esc_html($cfs->get('game_developer')) . '</td></tr>';
+				if (CFS()->get('game_developer') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Developer: ', 'areview') . '</td><td>' . esc_html(CFS()->get('game_developer')) . '</td></tr>';
 				}
-				if ($cfs->get('game_release_date') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Release date: ', 'areview') . '</td><td>' . esc_attr($cfs->get('game_release_date')) . '</td></tr>';
+				if (CFS()->get('game_release_date') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Release date: ', 'areview') . '</td><td>' . esc_attr(CFS()->get('game_release_date')) . '</td></tr>';
 				}
-				if ($cfs->get('game_summary') !='') {
-					echo '<tr><td class="game-left-cell">' . __('Summary: ', 'areview') . '</td><td>' . esc_textarea($cfs->get('game_summary')) . '</td></tr>';
+				if (CFS()->get('game_summary') !='') {
+					echo '<tr><td class="game-left-cell">' . __('Summary: ', 'areview') . '</td><td>' . esc_textarea(CFS()->get('game_summary')) . '</td></tr>';
 				}											
 				echo '</table>';	
 			?>

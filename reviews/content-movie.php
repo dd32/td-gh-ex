@@ -20,33 +20,33 @@
 			</div>	
 		<?php endif; ?>
 
-		<?php if ( function_exists('cfs') && $cfs->get('display_movie_info') == 1 ) : ?>
+		<?php if ( function_exists('cfs') && CFS()->get('display_movie_info') == 1 ) : ?>
 			
 			<?php
 				echo '<table class="col-md-6 col-sm-6 col-xs-6 movie-table">';
-				if ($cfs->get('movie_genre') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Genre: ', 'areview') . '</td><td>' . esc_html($cfs->get('movie_genre')) . '</td></tr>';
+				if (CFS()->get('movie_genre') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Genre: ', 'areview') . '</td><td>' . esc_html(CFS()->get('movie_genre')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_director') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Director: ', 'areview') . '</td><td>' . esc_html($cfs->get('movie_director')) . '</td></tr>';
+				if (CFS()->get('movie_director') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Director: ', 'areview') . '</td><td>' . esc_html(CFS()->get('movie_director')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_writer') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Writer: ', 'areview') . '</td><td>' . esc_html($cfs->get('movie_writer')) . '</td></tr>';
+				if (CFS()->get('movie_writer') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Writer: ', 'areview') . '</td><td>' . esc_html(CFS()->get('movie_writer')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_release_date') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Release date: ', 'areview') . '</td><td>' . esc_attr($cfs->get('movie_release_date')) . '</td></tr>';
+				if (CFS()->get('movie_release_date') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Release date: ', 'areview') . '</td><td>' . esc_attr(CFS()->get('movie_release_date')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_runtime') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Runtime: ', 'areview') . '</td><td>' . esc_attr($cfs->get('movie_runtime')) . '</td></tr>';
+				if (CFS()->get('movie_runtime') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Runtime: ', 'areview') . '</td><td>' . esc_attr(CFS()->get('movie_runtime')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_language') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Language: ', 'areview') . '</td><td>' . esc_html($cfs->get('movie_language')) . '</td></tr>';
+				if (CFS()->get('movie_language') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Language: ', 'areview') . '</td><td>' . esc_html(CFS()->get('movie_language')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_plot') !='') {
-					echo '<tr><td class="movie-left-cell">' . __('Plot: ', 'areview') . '</td><td>' . esc_textarea($cfs->get('movie_plot')) . '</td></tr>';
+				if (CFS()->get('movie_plot') !='') {
+					echo '<tr><td class="movie-left-cell">' . __('Plot: ', 'areview') . '</td><td>' . esc_textarea(CFS()->get('movie_plot')) . '</td></tr>';
 				}
-				if ($cfs->get('movie_cast') !='') {
-					$actors = $cfs->get('movie_cast');
+				if (CFS()->get('movie_cast') !='') {
+					$actors = CFS()->get('movie_cast');
 					echo '<tr class="actors"><td colspan="2">' . __('Cast', 'areview') . '</td></tr>';
 					foreach ($actors as $actor) {
 						echo '<tr><td class="actor-name" colspan="2">' . esc_html($actor['actor_name']) . '</td></tr>';

@@ -20,9 +20,9 @@
 			</div>	
 		<?php endif; ?>
 
-		<?php if ( function_exists('cfs') && ($cfs->get('button_link') !='' ) && ($cfs->get('button_title') !='') ) : ?>
+		<?php if ( function_exists('cfs') && (CFS()->get('button_link') !='' ) && (CFS()->get('button_title') !='') ) : ?>
 			<div class="button-container col-md-6">
-				<a href="<?php echo esc_url($cfs->get('button_link')); ?>" class="buy-button" target="_blank"><?php echo esc_html($cfs->get('button_title')); ?></a>
+				<a href="<?php echo esc_url(CFS()->get('button_link')); ?>" class="buy-button" target="_blank"><?php echo esc_html(CFS()->get('button_title')); ?></a>
 			</div>
 		<?php endif; ?>
 	</div>
@@ -39,7 +39,7 @@
 
 	<?php
 		if ( function_exists('cfs') ) {
-			$pros = $cfs->get('pros');
+			$pros = CFS()->get('pros');
 			if ($pros != '') {
 				echo '<table class="col-md-6 table-pros">';
 				foreach ($pros as $pro) {
@@ -47,7 +47,7 @@
 				}
 				echo '</table>';
 			}
-			$cons = $cfs->get('cons');
+			$cons = CFS()->get('cons');
 			if ($cons != '') {
 				echo '<table class="col-md-6 table-cons">';
 				foreach ($cons as $con) {

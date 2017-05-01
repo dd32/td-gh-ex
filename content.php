@@ -33,7 +33,7 @@
 					}
 				?>
 			</span>				
-			<?php if(function_exists('yasr_get_overall_rating') && function_exists('cfs') && ($cfs->get('show_stars') == 1)) { 
+			<?php if(function_exists('yasr_get_overall_rating') && function_exists('cfs') && (CFS()->get('show_stars') == 1)) { 
 				echo do_shortcode('[yasr_overall_rating]');
 			} ?>
 		</div>		
@@ -41,8 +41,8 @@
 	</div><!-- .entry-content -->
 
 	<div class="buttons-area">
-		<?php if ( function_exists('cfs') && ($cfs->get('button_link') !='' ) && ($cfs->get('button_title') !='') && ($cfs->get('button_index') == 1) ) : ?>
-			<a href="<?php echo esc_url($cfs->get('button_link')); ?>" class="buy-button" target="_blank"><?php echo esc_html($cfs->get('button_title')); ?></a>
+		<?php if ( function_exists('cfs') && (CFS()->get('button_link') !='' ) && (CFS()->get('button_title') !='') && (CFS()->get('button_index') == 1) ) : ?>
+			<a href="<?php echo esc_url(CFS()->get('button_link')); ?>" class="buy-button" target="_blank"><?php echo esc_html(CFS()->get('button_title')); ?></a>
 		<?php endif; ?>
 		<a href="<?php the_permalink(); ?>" class="read-more"><?php echo __('Read more', 'areview'); ?></a>
 	</div>
