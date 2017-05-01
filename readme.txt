@@ -93,6 +93,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.6
+- New:     Theme information page added under Appearance in admin area.
+- Removed: Migration notice informing users that theme options have moved to customizer no longer needed.
+
 Version 1.3.5
 - Updated: Custom image size names now translation ready.
 - Updated: Improved escaping of outputs in thinkup_input_breadcrumb() function in 00.theme-setup.php.
