@@ -1,4 +1,9 @@
 == CHANGE LOG ==
+= 2.1.2.9 =
+	- New - Compatible with Product Zoom, Gallery Lightbox and Slider
+	- Removed - TGM Plugin activation removed
+	- Update - POT file updated
+
 = 2.1.2.8 =
 	- Fix - Fixed Ticket link
 			- Fix an issue and used a latest version of TGM Plugin

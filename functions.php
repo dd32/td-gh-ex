@@ -83,6 +83,9 @@ function arise_setup() {
 	*/
 
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // arise_setup
 add_action( 'after_setup_theme', 'arise_setup' );
@@ -109,9 +112,6 @@ require( get_template_directory() . '/inc/settings/arise-functions.php' );
 require( get_template_directory() . '/inc/settings/arise-common-functions.php' );
 require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/footer-details.php';
-
-require get_template_directory() . '/tgm/class-tgm-plugin-activation.php';
-require get_template_directory() . '/tgm/tgm.php';
 
 /************************ Arise Widgets  *****************************/
 require get_template_directory() . '/inc/widgets/widgets-functions/contactus-widgets.php';
