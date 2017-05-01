@@ -4,8 +4,9 @@
  *
  * This is the template for the content of about section
  *
- * @package Academic
- * @since Academic 0.3
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 if ( ! function_exists( 'academic_add_about_section' ) ) :
   /**

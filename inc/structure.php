@@ -4,8 +4,9 @@
  *
  * This file contains structural hooks.
  *
- * @package Academic
- * @since Academic 0.3
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 if ( ! function_exists( 'academic_doctype' ) ) :
@@ -333,22 +334,16 @@ if ( ! function_exists( 'academic_add_breadcrumb' ) ) :
 		if ( false === $breadcrumb ) {
 			return;
 		}
-		// Bail if Home Page.
-		if ( is_front_page() || is_home() ) {
-			return;
-		}
-
-		echo '<section id="breadcrumb-list" class="os-animation">
-	            <div class="container">';
-		        $breadcrumb_separator = $options['breadcrumb_separator'];
-				$args = array(
-				'separator'     => $breadcrumb_separator,
-				);
-				academic_simple_breadcrumb( $args );      
-		echo '</div><!-- .container -->
-          		</section><!-- end #breadcrumb-list -->';
+		$args = array(
+			'show_on_front'   => false,
+			'show_title'      => true,
+			'show_browse'     => false,
+		);
+		echo '<div class="container">';
+		breadcrumb_trail( $args );
+		echo '</div>';
+		
 		return;
-
 	}
 endif;
 add_action( 'academic_breadcrumb_action', 'academic_add_breadcrumb' , 10 );

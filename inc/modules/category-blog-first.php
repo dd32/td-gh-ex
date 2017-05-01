@@ -4,7 +4,8 @@
  *
  * This is the template for the content of Category blog three
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
  * @since Academic 0.3
  */
 if ( ! function_exists( 'academic_add_category_blog_three' ) ) :

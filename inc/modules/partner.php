@@ -4,7 +4,8 @@
  *
  * This is the template for the content of Partners
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
  * @since Academic 0.3
  */
 if ( ! function_exists( 'academic_add_partner' ) ) :

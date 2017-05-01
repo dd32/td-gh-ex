@@ -2,14 +2,16 @@
 /**
  * All codes related to custom header
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /*
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Academic
+ * @package Theme Palace
  */
 
 /**

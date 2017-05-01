@@ -3,8 +3,8 @@
  * Social Link Widget
  *
  * @package Theme Palace
- * @subpackage @since Academic
- * @since @since Academic 0.3
+ * @subpackage Academic
+ * @since 0.3
  */
 
 
@@ -40,6 +40,8 @@ class Academic_Social_Link extends WP_Widget {
 		}
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Stay Connected', 'academic' );
+		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+
 
 		echo $args['before_widget'];
 			if ( ! empty( $title ) ) {

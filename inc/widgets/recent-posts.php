@@ -2,8 +2,8 @@
 /**
  * Widget API: WP_Widget_Recent_Posts class
  *
- * @package WordPress
- * @subpackage Widgets
+ * @package Theme Palace
+ * @subpackage Academic
  * @since 0.3
  */
 

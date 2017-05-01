@@ -4,7 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

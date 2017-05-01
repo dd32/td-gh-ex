@@ -4,7 +4,9 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 if ( ! function_exists( 'academic_posted_on' ) ) :

@@ -9,7 +9,9 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 get_header(); 

@@ -4,7 +4,9 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 get_header(); ?>

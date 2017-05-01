@@ -5,7 +5,8 @@
  * This is the template that includes all hooks related to woocommerce
  * 
  * @package Theme Palace
- * @since Academic 0.3
+ * @subpackage Academic
+ * @since 0.3
  */
 
 

@@ -5,7 +5,8 @@
  * This is the template that includes all the other files for core featured of Theme Palace
  *
  * @package Theme Palace
- * @since Academic 0.3
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /**
@@ -46,6 +47,10 @@ function academic_slider_image_instruction( $content, $post_id ) {
 }
 add_filter( 'admin_post_thumbnail_html', 'academic_slider_image_instruction', 10, 2);
 
+/**
+ * Add breadcrumb functions.
+ */
+require get_template_directory() . '/inc/breadcrumb-class.php';
 /**
  * Add helper functions.
  */

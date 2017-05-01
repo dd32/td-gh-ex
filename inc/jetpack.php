@@ -4,7 +4,9 @@
  *
  * @link https://jetpack.com/
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /**

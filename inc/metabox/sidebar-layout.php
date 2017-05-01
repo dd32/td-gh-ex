@@ -1,5 +1,10 @@
 <?php
+
 /**
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
+ *
  * Outputs the content of the sidebar position
  */
 function academic_sidebar_position_callback( $post ) {

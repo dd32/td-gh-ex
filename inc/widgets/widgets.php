@@ -6,7 +6,7 @@
  *
  * @package Theme Palace
  * @subpackage academic
- * @since Academic 0.3
+ * @since 0.3
  */
 
 /**
@@ -24,8 +24,8 @@ function academic_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
-	for ($i=1; $i < 4; $i++) { 
+
+	for ($i=1; $i < 4; $i++) {
 		register_sidebar( array(
 			'name'          => esc_html__( 'Footer ', 'academic' ).$i,
 			'id'            => 'footer-'.$i,
@@ -52,12 +52,11 @@ require get_template_directory() . '/inc/widgets/social-link.php';
 /**
  * Register widgets
  */
-add_action( 'widgets_init', function() {
-
+function academic_register_widget() {
 	// Register Recent Post widget
 	register_widget( 'Academic_Recent_Posts' );
 
 	// Register Social Link widget
 	register_widget( 'Academic_Social_Link' );
-
-});
+}
+add_action( 'widgets_init', 'academic_register_widget' );

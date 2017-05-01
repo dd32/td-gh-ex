@@ -4,7 +4,7 @@
  *
  * @package Theme Palace
  * @subpackage Academic
- * @since Academic 0.6
+ * @since 0.6
  */
 
 

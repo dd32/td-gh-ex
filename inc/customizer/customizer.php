@@ -2,7 +2,9 @@
 /**
  * Academic Theme Customizer.
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /**

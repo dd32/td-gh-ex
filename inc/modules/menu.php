@@ -6,7 +6,7 @@
  *
  * @package Theme Palace
  * @subpackage academic
- * @since Academic 0.3
+ * @since 0.3
  */
 
 if ( ! function_exists( 'academic_navigation' ) ) :

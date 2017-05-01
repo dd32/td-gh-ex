@@ -6,7 +6,7 @@
  *
  * @package Theme Palace
  * @subpackage Academic
- * @since Academic 0.6
+ * @since 0.6
  */
 
 if ( ! function_exists( 'academic_add_top_bar' ) ) :

@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/academic/
 Author: Theme Palace
 Author URI: https://themepalace.com/
 Description: A clean, modern, engaging and responsive WordPress education theme ideal for educational institutions and agencies. Features including full width and boxed layout with slider, focused content, slick effects, posts/features/courses showcasing.  It is loaded with theme options and provides several features to make user-friendly, interactive and visually stunning website with implementation of all features of latest WordPress like partial refresh and validation. It is compatible with top WordPress plugins such as JetPack and Contact Form 7. A special accent is made on its cross-browser compatibility, mobile friendly design and responsive features.
-Version: 0.6
+Version: 0.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: academic
@@ -2853,22 +2853,6 @@ header.entry-header {
     -o-box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5);
 }
 /*--------------------------------------------------------------
-## Background Image Section
---------------------------------------------------------------*/
-#background-image-section {
-	background-image: url("assets/uploads/background-01.jpg");
-	background-size: cover;
-	text-align: center;
-    padding: 100px 0;
-}
-#background-image-section .content-wrapper {
-    position: relative;
-}
-#background-image-section .content-wrapper .color-white {
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-/*--------------------------------------------------------------
 ## Overlay
 --------------------------------------------------------------*/
 .blue-overlay {
@@ -3595,22 +3579,36 @@ ul.tabs li.active .fa {
 /*--------------------------------------------------------------
 ## Breadcrumb
 --------------------------------------------------------------*/
-#breadcrumb-list .container {
+ul.trail-items {
     border-bottom: 1px solid #ddd;
     padding: 20px 0;
 }
-#breadcrumb-list span {
+ul.trail-items span {
     text-transform: capitalize;
     font-size: 16px;
 }
-#breadcrumb-list .fa {
+ul.trail-items .fa {
     margin-left: 15px;
     margin-right: 10px;
 }
-.breadcrumb-current,
-#breadcrumb-list a:hover,
-#breadcrumb-list a:focus {
+ul.trail-items a {
+	color: #333;
+}
+ul.trail-items a:hover,
+ul.trail-items a:focus,
+ul.trail-items li.trail-item.trail-end span {
     color: #347FE1;
+}
+ul.trail-items li {
+    display: inline-block;
+    margin-right: 15px;
+}
+ul.trail-items li:after {
+    content: "/";
+    margin-left: 15px;
+}
+ul.trail-items li:last-child:after {
+    display: none;
 }
 
 /*--------------------------------------------------------------

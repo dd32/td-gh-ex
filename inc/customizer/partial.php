@@ -3,7 +3,8 @@
  * Customizer Partial Functions
  *
  * @package Theme_Palace
- * @since Academic 0.3
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /**

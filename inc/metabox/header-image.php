@@ -1,5 +1,12 @@
 <?php
 /**
+ * Header Image Metabox
+ *
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
+ */
+/**
  * Outputs the content of the sidebar position
  */
 function academic_header_image_callback( $post ) {

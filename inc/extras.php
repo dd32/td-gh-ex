@@ -4,7 +4,9 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Academic
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 /**
@@ -59,10 +61,10 @@ add_filter( 'body_class', 'academic_body_classes' );
  */
 function academic_custom_search_form( $form ) {
     $form = '<form action="'. esc_url( home_url( '/' ) ) .'" method="get">
-			  <input type="text" name="s" placeholder="' . esc_html__( 'Search...', 'academic' ) . '">
+			  <input type="text" name="s" placeholder="' . esc_attr__( 'Search&hellip;', 'academic' ) . '">
 			  <button type="submit"><i class="fa fa-search"></i></button>
 			</form>';
- 
+
     return $form;
 }
 add_filter( 'get_search_form', 'academic_custom_search_form' );

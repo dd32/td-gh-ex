@@ -3,9 +3,9 @@
  * Academic metabox file.
  *
  * This is the template that includes all the other files for metaboxes of Academic theme
- *
  * @package Theme Palace
- * @since Academic 0.3
+ * @subpackage Academic
+ * @since 0.3
  */
 
 // Include slider layout meta

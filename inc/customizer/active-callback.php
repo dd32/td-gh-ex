@@ -2,8 +2,9 @@
 /**
  * Customizer active callbacks
  *
- * @package Academic
- * @since Academic 0.3
+ * @package Theme Palace
+ * @subpackage Academic
+ * @since 0.3
  */
 
 
