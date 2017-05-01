@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	4.0.0
-Tested up to:		4.3.1
+Tested up to:		4.7.2
 
 Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -34,7 +34,7 @@ Engrave Lite is the free version of the multi-purpose professional theme ideal f
 	Copyright, Sources, Credits & Licenses
 -----------------------------------------------------------------------------
 
-Engrave Lite WordPress Theme, Copyright 2011 Think Up Themes Ltd
+Engrave Lite WordPress Theme, Copyright 2017 Think Up Themes Ltd
 Engrave Lite is distributed under the terms of the GNU GPL
 
 Demo images are licensed under CC0 1.0 Universal (CC0 1.0) and available from http://pixabay.com/
@@ -97,6 +97,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.8.6
+- New:     Theme information page added under Appearance in admin area.
+- Removed: Migration notice informing users that theme options have moved to customizer no longer needed.
 
 Version 1.8.5
 - Updated: Custom image size names now translation ready.
