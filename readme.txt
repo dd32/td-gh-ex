@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.6
+- New:     Theme information page added under Appearance in admin area.
+- Removed: Migration notice informing users that theme options have moved to customizer no longer needed.
+
 Version 1.4.5
 - Updated: Custom image size names now translation ready.
 - Updated: Function thinkup_check_isblog() updated to no longer trigger on single posts.
