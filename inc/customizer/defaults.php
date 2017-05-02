@@ -18,7 +18,7 @@ function academic_get_default_theme_options() {
 	$academic_default_options = array(
 		// Color layout options
 		'color_layout'           => '#347fe1',
-
+		
 		// Theme Options
 		'loader_enable'         		=> false,
 		'loader_icon'         			=> 'fa-spinner',
@@ -27,6 +27,7 @@ function academic_get_default_theme_options() {
 		'long_excerpt_length'           => 50,
 		'read_more_text'		        => esc_html__( 'Read More', 'academic' ),
 		'breadcrumb_enable'         	=> false,
+		'breadcrumb_separator'         	=> '/',
 		'pagination_enable'         	=> true,
 		'pagination_type'         		=> 'default',
 		'scroll_top_visible'        	=> true,
@@ -48,7 +49,7 @@ function academic_get_default_theme_options() {
 		'enable_slider_dragable'        => true,
 		'slider_call_to_action'         => false,
 		'slider_call_to_action_new_tab' => true,
-
+		
 		// about
 		'about_section_enable'			=> 'disabled',
 
@@ -95,7 +96,7 @@ function academic_get_default_theme_options() {
 		'contact_us_map_shortcode'=>'[gmap latitude="23.2012841" longitude="90.01247147" width="80%" map_type="ROADMAP" ]',
 		'contact_us_form_shortcode'=>'[contact-form-7 id="1880" title="Contact form 1"]',
 
-		// Schedule
+		// Schedule 
 		'schedule_post_num'			=> 8,
 	);
 

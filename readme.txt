@@ -5,8 +5,8 @@ Tags: education, translation-ready, e-commerce, custom-background, theme-options
 
 Contributors: Theme Palace
 Requires at least: 4.4
-Tested up to: 4.7.3
-Stable tag: 0.7
+Tested up to: 4.7.4
+Stable tag: 0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,9 +45,9 @@ sidr - v2.2.1 - 2016-02-17, Copyright (c) 2013-2016 by Alberto Varela
 License: MIT ( https://github.com/artberri/sidr/blob/master/LICENSE )
 Source: https://github.com/artberri/sidr
 
-Lightbox - v2.8.2, Copyright (c) 2007, 2015 by Lokesh Dhakar
-License: MIT ( https://github.com/lokesh/lightbox2/blob/master/LICENSE )
-Source: http://lokeshdhakar.com/projects/lightbox2/
+Breadcrumb Trail - 1.0.0, Copyright (c) 2008 - 2015 by Justin Tadlock
+License: GPL v2 ( http://www.gnu.org/licenses/old-licenses/gpl-2.0.html )
+Source: https://github.com/justintadlock/breadcrumb-trail
 
 jQuery Smooth Scroll - v1.7.2 - 2016-01-23, Copyright (c) 2016 by Karl Swedberg
 License: MIT
@@ -123,7 +123,10 @@ Whereas in Category blog second, you can choose what to display either the categ
 
 == Changelog ==
 
-= 0.7 =
+= 0.8 =
+* Provide breadcrumb library license.
+
+= 0.8 =
 * Update breadcrumb library.
 * Fix escaping, search, functions minor issues.
 

@@ -55,7 +55,7 @@ class Academic_Social_Link extends WP_Widget {
 				<?php
 				for ( $i=1; $i <= $number ; $i++ ) {
 					if ( ! empty( $instance['link' . '-' . $i] ) ) : ?>
-			        <li><a class="btn-js" href="<?php echo esc_url( $instance['link' . '-' . $i] );?>" class="icon-animation icon-hover-effect"></a></li>
+			        <li><a href="<?php echo esc_url( $instance['link' . '-' . $i] );?>" class="btn-js icon-animation icon-hover-effect"></a></li>
 				<?php endif; ?>
 				<?php } ?>
      		</ul>

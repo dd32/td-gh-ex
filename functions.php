@@ -196,9 +196,6 @@ function academic_scripts() {
 	// Load smoothscroll
 	wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/assets/plugins/js/smoothscroll.min.js', array(), '0.9.9', true );
 
-	// Load lightbox
-	wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/assets/plugins/js/lightbox.min.js', array(), '2.8.2', true );
-
 	// Load waypoints
 	wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/assets/plugins/js/waypoints.min.js', array(), '4.0.0',true );
 

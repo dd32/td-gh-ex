@@ -178,7 +178,7 @@ function academic_excerpt_more( $more ){
 	if ( is_admin() ) {
 		return $more;
 	}
-	return '...';
+	return  '&hellip;';
 }
 add_filter( 'excerpt_more', 'academic_excerpt_more' );
 
@@ -205,7 +205,7 @@ function academic_trim_content( $length = 40, $post_obj = null ) {
 	}
 
 	$source_content = preg_replace( '`\[[^\]]*\]`', '', $source_content );
-	$trimmed_content = wp_trim_words( $source_content, $length, '...' );
+	$trimmed_content = wp_trim_words( $source_content, $length, '&hellip;' );
 
    return apply_filters( 'academic_trim_content', $trimmed_content );
 }

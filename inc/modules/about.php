@@ -70,7 +70,8 @@ if ( ! function_exists( 'academic_get_about_section_details' ) ) :
 
             if ( has_post_thumbnail( $page_id ) ) {
                 $img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-            } 
+            }
+            $content[0]['img_array'] = '';
             if ( isset( $img_array ) ) {
                 $content[0]['img_array'] = $img_array[0];
             }
@@ -93,7 +94,7 @@ add_filter( 'academic_filter_about_section_details', 'academic_get_about_section
 
 if ( ! function_exists( 'academic_render_about_section' ) ) :
   /**
-   * Start about section 
+   * Start about section
    *
    * @return string about content
    * @since Academic 0.3
@@ -101,18 +102,25 @@ if ( ! function_exists( 'academic_render_about_section' ) ) :
    */
    function academic_render_about_section( $content_details = array() ) {
         $options          = academic_get_theme_options();
-        
+
         if ( empty( $content_details ) ) {
           return;
-        } ?>
-        <section id="welcome-section" class="page-section two-col os-animation">
+        }
+
+        if ( $content_details[0]['img_array'] ) {
+          $class = 'two';
+        } else {
+          $class = 'one';
+        }
+        ?>
+        <section id="welcome-section" class="page-section <?php echo esc_attr( $class );?>-col os-animation">
             <?php foreach ( $content_details as $content ): ?>
                 <div class="container">
                     <div class="column-wrapper">
                         <header class="entry-header">
                             <?php if ( ! empty( $content['title'] ) ) : ?>
-                                <h2 class="entry-title"><?php echo esc_html( $content['title'] ); ?></h2>  
-                            <?php endif; 
+                                <h2 class="entry-title"><?php echo esc_html( $content['title'] ); ?></h2>
+                            <?php endif;
                             if ( ! empty( $content['sub_title'] ) ) : ?>
                                 <h6 class="entry-subtitle"><?php echo esc_html( $content['sub_title'] ); ?></h6>
                             <?php endif; ?>
@@ -129,12 +137,14 @@ if ( ! function_exists( 'academic_render_about_section' ) ) :
                             <?php endif; ?>
                         </div><!-- end .entry-content -->
                     </div><!-- end .column-wrapper -->
-                    <div class="column-wrapper">
-                      <a href="<?php echo esc_url( $content['url'] ); ?>"><img src="<?php echo esc_url( $content['img_array'] ); ?>"></a>
-                    </div>
+                    <?php if ( $content['img_array'] ) { ?>
+                      <div class="column-wrapper">
+                        <a href="<?php echo esc_url( $content['url'] ); ?>"><img src="<?php echo esc_url( $content['img_array'] ); ?>"></a>
+                      </div>
+                    <?php } ?>
                 </div><!-- end .container -->
             <?php endforeach; ?>
-        </section><!-- end #welcome-section-->         
-    <?php 
+        </section><!-- end #welcome-section-->
+    <?php
     }
 endif;
