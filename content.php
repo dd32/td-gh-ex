@@ -22,7 +22,7 @@
  														 $output = '';
 											if ( ! empty( $categories ) ) {
     												foreach( $categories as $category ) {
-        												$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr(sprintf( __( 'View all posts in %s','auction ' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;			}
+        												$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr(sprintf( __( 'View all posts in %s','auction' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;			}
    														 echo trim( $output, $separator );
 														} ?><?php } ?>
 
@@ -36,7 +36,7 @@
 
                             </div>
                             <div class="blog-one-footer">
-                                <a href="<?php echo esc_url(get_permalink());?>"><?php echo esc_attr__('Read more','everything');?></a>
+                                <a href="<?php echo esc_url(get_permalink());?>"><?php echo esc_attr__('Read more','auction');?></a>
 
                                 <i class="fa fa-comments"></i><a href="<?php echo esc_url(get_permalink());?>"><?php comments_popup_link( __('0 Comment', 'auction'), __('1 Comment', 'auction'), __('% Comments', 'auction'), '', __('Off' , 'auction')); ?></a>
                             </div>
