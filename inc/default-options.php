@@ -38,7 +38,7 @@ function create_get_default_theme_options( $parameter = null ) {
 		'search_text'                      => __( 'Search...', 'create' ),
 
 		//Homepage / Frontpage Settings
-		'front_page_category'								=> array(),
+		'front_page_category'			   => '0',
 
 		//Featured Slider Options
 		'featured_slider_option'           => 'disabled',

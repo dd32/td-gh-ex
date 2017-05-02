@@ -46,28 +46,6 @@ function create_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'create_body_classes' );
 
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-if ( ! function_exists( 'create_setup_author' ) ) :
-	function create_setup_author() {
-		global $wp_query;
-
-		if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-			$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-		}
-	}
-endif;
-add_action( 'wp', 'create_setup_author' );
 
 if ( ! function_exists( 'create_excerpt_length' ) ) :
 	/**
@@ -97,7 +75,7 @@ if ( ! function_exists( 'create_continue_reading' ) ) :
 		// Getting data from Customizer Options
 		$more_tag_text	= get_theme_mod( 'excerpt_more_text', create_get_default_theme_options( 'excerpt_more_text' ) );
 
-		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'create' ) , $more_tag_text ) . '</a>';
+		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
 	}
 endif; //create_continue_reading
 add_filter( 'excerpt_more', 'create_continue_reading' );
@@ -334,8 +312,8 @@ add_action( 'create_footer', 'create_scrollup', 110 );
 function create_alter_home( $query ){
 	if( $query->is_main_query() && $query->is_home() ) {
 		$cats = get_theme_mod( 'front_page_category', create_get_default_theme_options( 'front_page_category' ) );
-
-	    if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+		
+		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
 			$query->query_vars['category__in'] =  $cats;
 		}
 	}

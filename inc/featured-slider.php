@@ -153,7 +153,7 @@ function create_page_slider() {
 	}
 
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
 			'posts_per_page'	=> $quantity,
 			'post_type'			=> 'page',
 			'post__in'			=> $page_list,
@@ -161,16 +161,16 @@ function create_page_slider() {
 		));
 		$i=0;
 
-		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'create' ), 'echo' => false ) );
+		while ( $loop->have_posts()) : $loop->the_post(); $i++;
+			$title_attribute = the_title_attribute( 'echo=0' );
 			$excerpt = get_the_excerpt();
 			if ( $i == 1 ) { $classes = 'page post-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'page post-'.$post->ID.' hentry slides displaynone'; }
 			$create_page_slider .= '
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$create_page_slider .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-						'. get_the_post_thumbnail( $post->ID, 'create_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'attached-page-image' ) ).'
+					$create_page_slider .= '<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+						'. get_the_post_thumbnail( $post->ID, 'create_slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'attached-page-image' ) ).'
 					</a>';
 				}
 				else {
@@ -178,14 +178,14 @@ function create_page_slider() {
 					$create_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
 
 					//Get the first image in page, returns false if there is no image
-					$create_first_image = create_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'attached-page-image' ) );
+					$create_first_image = create_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'attached-page-image' ) );
 
 					//Set value of image as first image if there is an image present in the page
 					if ( '' != $create_first_image ) {
 						$create_image =	$create_first_image;
 					}
 
-					$create_page_slider .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
+					$create_page_slider .= '<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
 						'. $create_image .'
 					</a>';
 				}
@@ -195,7 +195,7 @@ function create_page_slider() {
 				<div class="entry-container">
 					<header class="entry-header">
 						<h2 class="entry-title">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 						</h2>
 						<div class="screen-reader-text">'.create_page_post_meta().'</div>
 					</header>';

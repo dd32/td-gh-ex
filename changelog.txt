@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.4.1 =
+* Added: Option to Display all Categories in Customizer
+* Code Optimization
+
 = 2.4 =
 * Bug Fixed: Reset Options in customizer updated
 * Updated: Upgrade Button in customizer with respect to trt decision
