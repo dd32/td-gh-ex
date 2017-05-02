@@ -10,7 +10,7 @@ widget area in the customizer and widget area.
 @package        Silver Quantum WordPress Theme
 @copyright      Copyright (C) 2014-2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.benjaminlu.net/)
+@author         Benjamin Lu (https://www.lumiathemes.com/)
 ================================================================================================
 */
 ?>
