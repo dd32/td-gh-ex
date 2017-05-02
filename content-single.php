@@ -6,7 +6,6 @@ global $boxy;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( get_theme_mod('enable_single_post_top_meta',true ) ): ?>
 		    <div class="entry-meta">
 		    <?php if(function_exists('boxy_entry_top_meta') ) {

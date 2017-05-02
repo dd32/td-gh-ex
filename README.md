@@ -40,7 +40,9 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
-
+v. 1.3.1
+ * Blog Single Title issue fixed.
+ 
 v. 1.3.0
  * Site URL's changed.
  * .po file updated.
