@@ -43,6 +43,7 @@ class rambo_screen {
 
 		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'rambo_admin_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'rambo_admin_video_notice' ), 99 );
 		}
 	}
 
@@ -53,8 +54,16 @@ class rambo_screen {
 	public function rambo_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing health Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'rambo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rambo-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Rambo Theme', 'rambo' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__('Welcome! Thank you for choosing Rambo! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'rambo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
+			</div>
+		<?php
+	}
+	
+	public function rambo_admin_video_notice() {
+		?>
+			<div class="updated notice is-dismissible">
+				<p><?php echo sprintf( esc_html__('Walkthrough our step by step video series for setting front page sections. %sClick here to watch%s', 'rambo' ), 
+				'<a href="' . esc_url( 'http://webriti.com/rambo-theme-video-documentation/' ). '">', '</a>' ); ?></p>
 			</div>
 		<?php
 	}

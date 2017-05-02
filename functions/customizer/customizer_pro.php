@@ -10,7 +10,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-box">
-       <a href="<?php echo 'http://webriti.com/rambo/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'UPGRADE  TO PRO','rambo' ); ?></a>
+       <a href="<?php echo esc_url('http://webriti.com/rambo/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'UPGRADE  TO PRO','rambo' ); ?></a>
 		
 	</div>
     <?php
@@ -18,7 +18,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
 }
 $wp_customize->add_section( 'rambo_pro_section' , array(
 		'title'      => __('UPGRADE  TO PRO', 'rambo'),
-		'priority'   => 1100,
+		'priority'   => 1200,
    	) );
 
 $wp_customize->add_setting(
@@ -43,7 +43,7 @@ class WP_Review_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
 	  <div class="pro-box">
-     <a href="<?php echo 'https://wordpress.org/support/view/theme-reviews/rambo#new-post/';?>" target="_blank" class="review" id="review_pro"><?php _e( 'ADD YOUR REVIEW','rambo' ); ?></a>
+     <a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/rambo#new-post/');?>" target="_blank" class="review" id="review_pro"><?php _e('ADD YOUR REVIEW','rambo' ); ?></a>
 	 </div>
     <?php
     }
@@ -52,8 +52,7 @@ class WP_Review_Customize_Control extends WP_Customize_Control {
 $wp_customize->add_setting(
     'pro_Review',
     array(
-        'default' => '',
-		'capability'     => 'edit_theme_options',
+        'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
@@ -64,9 +63,6 @@ $wp_customize->add_control( new WP_Review_Customize_Control( $wp_customize, 'pro
 );
 
 
-
-
-
 class WP_document_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**
@@ -75,7 +71,8 @@ class WP_document_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
       <div class="pro-box">
-	 <a href="<?php echo 'http://webriti.com/help/';?>" target="_blank" class="document" id="review_pro"><?php _e( 'DOCUMENTATION','rambo' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/help/themes/rambo/rambo-wordpress-theme/');?>" target="_blank" class="document" id="review_pro">
+	 <?php _e( 'PRO DOCUMENTATION','rambo' ); ?></a>
 	 
 	 <div>
 	 <div class="pro-vesrion">
@@ -88,7 +85,6 @@ class WP_document_Customize_Control extends WP_Customize_Control {
 $wp_customize->add_setting(
     'doc_Review',
     array(
-        'default' => '',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
     )	

@@ -9,7 +9,7 @@
    margin-bottom: 0px;
   padding: 13px 30px 14px 29px;
   text-transform: uppercase;
-  width: 54%;
+  width: 65%;
   border-radius:2px;
   text-decoration:none;
 }
@@ -43,7 +43,7 @@ background-color: #1d4467;
   font-weight: bold;
   padding: 13px 30px 14px 29px;
   text-transform: uppercase;
-  width: 54%;
+  width: 65%;
   border-radius:2px;
   text-decoration:none;
 }
@@ -58,7 +58,7 @@ background-color: #1d4467;
   margin-bottom: 0px;
   padding: 13px 30px 14px 29px;
   text-transform: uppercase;
-  width: 54%;
+  width: 65%;
   border-radius:2px;
   text-decoration:none;
 }
@@ -121,3 +121,12 @@ list-style-type: none;
  
 .customize-control-checkbox label, .customize-control-nav_menu_auto_add label, .customize-control-radio label{display:inline !important;margin-left: 0px !important;}
 .customize-control-checkbox input, .customize-control-nav_menu_auto_add input, .customize-control-radio input{margin-left: 0px !important;}
+
+#accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
+
+#accordion-section-rambo_help_section .accordion-section-title:after, #accordion-section-rambo_pro_section .accordion-section-title:after {color:#fff !important; }
+
+
+
+
+#accordion-section-rambo_pro_section .accordion-section-title, #accordion-section-rambo_pro_section .accordion-section-title:hover { background: #7aa228 !important; color:#fff !important; }

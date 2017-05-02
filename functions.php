@@ -43,6 +43,9 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recent_news.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_copyright.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_help.php');
+	
+	
 	
 	
 	

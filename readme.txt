@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.5.7
+1. Add help tab in Customize setting.
 @version 1.5.6
 1. Remove front-page setting.
 @version 1.5.5
