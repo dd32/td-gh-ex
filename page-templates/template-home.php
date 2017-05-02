@@ -3,10 +3,11 @@
 Template Name: Home Page
 */
 get_header(); 
-  if(get_theme_mod('choose_slider',false)) {
+$choose_slider=get_theme_mod('choose_slider');
+  if($choose_slider=='1') {
    get_template_part('template-parts/home/home', 'slider');
   }
- ?>   
+ ?> 
 <section id="content">
  <section class="container paddingtop">
       <div class="row">

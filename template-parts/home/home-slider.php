@@ -7,7 +7,7 @@
 		'post_type'=>'post',
 		'cat' =>$slider_cat,
 		'posts_per_page'=>-1,
-		'orderby'=>'post__in');
+		'orderby'=>'post__in');		
 		$wp_query=new WP_Query($args);
               if ($wp_query->have_posts()) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
                       if (has_post_thumbnail( $post->ID ) ) {

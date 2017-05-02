@@ -13,7 +13,6 @@ comments_template();
 endif;
 // Previous/next post navigation.
 the_post_navigation(array(
-
 	'next_text' => '<span class="meta-nav alignright" aria-hidden="true">' . __('&nbsp;', 'backyard') . '</span> ' .
         '<span class="screen-reader-text alignright">'.__('Next post:', 'backyard' ) . '</span> ' .
         '<span class="post-title alignright">'.__('Next &raquo', 'backyard').'</span>',

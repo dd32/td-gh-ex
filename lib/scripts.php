@@ -8,7 +8,7 @@ function backyard_google_web_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = array( 'latin', 'latin-ext' );
-	$fonts = apply_filters( 'pre_google_web_fonts', $fonts );
+	$fonts = apply_filters( 'backyard_pre_google_web_fonts', $fonts );
 	foreach ( $fonts as $key => $value ) {
 		$fonts[ $key ] = $key . ':' . implode( ',', $value );
 	}
@@ -33,7 +33,7 @@ function backyard_google_web_fonts_url() {
 			'//fonts.googleapis.com/css'
 		);
 	}
-	return apply_filters( 'google_web_fonts_url', $fonts_url );
+	return apply_filters( 'backyard_google_web_fonts_url', $fonts_url );
 }
 /**
  * Return Google fonts and sizes
@@ -51,7 +51,7 @@ function backyard_additional_fonts( $fonts ) {
 	}
 	return $fonts;
 }
-add_filter('pre_google_web_fonts', 'backyard_additional_fonts');
+add_filter('backyard_pre_google_web_fonts', 'backyard_additional_fonts');
 
 
 /**

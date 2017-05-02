@@ -12,7 +12,6 @@ function backyard_widgets_init() {
     'after_title'=> '</h4>',
   ));
   
-    if ( function_exists('register_sidebar') )
       register_sidebar(array(
         'name' => __('Footer Column One', 'backyard'),
         'id' => 'footer_1',
@@ -22,7 +21,6 @@ function backyard_widgets_init() {
         'after_title' => '</h4>',
       )
     );
-    if ( function_exists('register_sidebar') )
       register_sidebar(array(
         'name' => __('Footer Column Two', 'backyard'),
         'id' => 'footer_2',
@@ -32,7 +30,6 @@ function backyard_widgets_init() {
         'after_title' => '</h4>',
       )
     );
-    if ( function_exists('register_sidebar') )
       register_sidebar(array(
         'name' => __('Footer Column Three', 'backyard'),
         'id' => 'footer_3',
@@ -42,7 +39,6 @@ function backyard_widgets_init() {
         'after_title' => '</h4>',
       )
     );
-    if ( function_exists('register_sidebar') )
       register_sidebar(array(
         'name' => __('Footer Column Four', 'backyard'),
         'id' => 'footer_4',
@@ -53,7 +49,5 @@ function backyard_widgets_init() {
       )
     );
   // Widgets
- 
 }
 add_action('widgets_init', 'backyard_widgets_init');
-?>

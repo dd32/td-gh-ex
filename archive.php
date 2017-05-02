@@ -13,6 +13,10 @@
                <div class="alignleft pull-left"> <?php previous_posts_link(__('&laquo; Older Posts','backyard')); // display newer posts link ?></div>
                <div class="alignright pull-right"> <?php next_posts_link(__('New Posts &raquo;','backyard'));?></div>
              </nav>
+             <?php
+             else :
+			get_template_part( 'template-parts/content', 'none' );
+			 ?>
           <?php endif; ?>
           </main>
         </div>
