@@ -45,6 +45,7 @@
 			$pinterestURL = get_theme_mod('semplicemente_theme_options_pinteresturl', '#');
 			$tumblrURL = get_theme_mod('semplicemente_theme_options_tumblrurl', '#');
 			$vkURL = get_theme_mod('semplicemente_theme_options_vkurl', '#');
+			$xingURL = get_theme_mod('semplicemente_theme_options_xingurl', '');
 		?>
 
 		<div class="site-social">
@@ -84,6 +85,10 @@
 						
 				<?php if (!empty($vkURL)) : ?>
 					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'semplicemente' ); ?>"><i class="fa fa-vk spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($xingURL )) : ?>
+					<a href="<?php echo esc_url($xingURL ); ?>" title="<?php esc_attr_e( 'Xing', 'semplicemente' ); ?>"><i class="fa fa-xing spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>

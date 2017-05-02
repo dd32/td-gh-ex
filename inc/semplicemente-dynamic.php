@@ -112,6 +112,11 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'semplicemente')
 	);
+	$socialmedia[] = array(
+	'slug'=>'xingurl', 
+	'default' => '',
+	'label' => __('Xing URL', 'semplicemente')
+	);
 	
 	foreach( $socialmedia as $semplicemente_theme_options ) {
 		// SETTINGS
