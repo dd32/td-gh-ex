@@ -10,7 +10,7 @@
 <div class="comments comment-form-container">
 	<?php if ( ! comments_open() & is_single() )  : ?><p><?php _e( 'Comments are currently closed.', 'avvocato' ); ?></p><?php endif; ?>
 	<?php if ($comments) : ?>
-		<h3><?php printf( esc_html( _n( 'We deleted %d spam message.', 'We deleted %d spam messages.', $count, 'my-text-domain'  ) ), $count ); ?></h3>
+		<h3><?php printf( esc_html( _n( 'We deleted %d spam message.', 'We deleted %d spam messages.', $count, 'avvocato'  ) ), $count ); ?></h3>
 		<ul class="commentlist">
 		    <?php wp_list_comments(); ?>
 		</ul>

@@ -4,7 +4,7 @@ Author: Stefan C.
 Theme URI: http://www.pwtthemes.com/theme/avvocato-free-responsive-wordpress-theme
 Author URI: http://www.stefanciobanu.com
 Description: Avvocato is a attorney wordpress theme with awesome responsive theme with number of amazing features, can be useful for multiple industries corporate, builders, photography,  magazine, corporate.. This theme is very easy to use for non coders also.
-Version: 1.0.5
+Version: 1.0.6
 Tags: entertainment, one-column, two-columns, right-sidebar, grid-layout, footer-widgets, custom-menu, custom-background, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
