@@ -25,7 +25,7 @@
 							<div class="gutter">
 								<ul class="top-bar-contact">
 								    <?php if(get_theme_mod('avvocato_header_phone')) { ?><li><i class="fa fa-phone"></i><a href="phone:<?php echo esc_attr(get_theme_mod('avvocato_header_phone')); ?>"><?php echo esc_attr(get_theme_mod('avvocato_header_phone')); ?></a></li><?php } ?>
-									<?php if(get_theme_mod('avvocato_header_email')) { ?><li><i class="fa fa-envelope"></i><a href="href="<?php echo esc_url( 'mailto:' . antispambot( get_theme_mod( 'avvocato_header_email' ) ) ); ?>"><?php echo antispambot(sanitize_email(get_theme_mod('avvocato_header_email'))); ?></a></li><?php } ?>
+									<?php if(get_theme_mod('avvocato_header_email')) { ?><li><i class="fa fa-envelope"></i><a href="<?php echo esc_url( 'mailto:' . antispambot( get_theme_mod( 'avvocato_header_email' ) ) ); ?>"><?php echo antispambot(sanitize_email(get_theme_mod('avvocato_header_email'))); ?></a></li><?php } ?>
 								</ul>
 							</div>
 						</div>
