@@ -6,7 +6,7 @@ Tags: education, translation-ready, e-commerce, custom-background, theme-options
 Contributors: Theme Palace
 Requires at least: 4.4
 Tested up to: 4.7.4
-Stable tag: 0.8
+Stable tag: 0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -123,10 +123,13 @@ Whereas in Category blog second, you can choose what to display either the categ
 
 == Changelog ==
 
+= 0.9 =
+* Manged the unminified css and js files with condition.
+
 = 0.8 =
 * Provide breadcrumb library license.
 
-= 0.8 =
+= 0.7 =
 * Update breadcrumb library.
 * Fix escaping, search, functions minor issues.
 

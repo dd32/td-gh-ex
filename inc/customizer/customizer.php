@@ -60,7 +60,7 @@ function academic_customize_register( $wp_customize ) {
 
 	// About
 	require get_template_directory() . '/inc/customizer/sections/about.php';
-	
+
 	// category blog one
 	require get_template_directory() . '/inc/customizer/sections/category-blog-first.php';
 
@@ -114,7 +114,8 @@ require get_template_directory() . '/inc/customizer/upgrade-to-pro/class-customi
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function academic_customize_preview_js() {
-	wp_enqueue_script( 'academic_customizer', get_template_directory_uri() . '/assets/js/customizer.min.js', array( 'customize-preview' ), '20151215', true );
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	wp_enqueue_script( 'academic_customizer', get_template_directory_uri() . '/assets/js/customizer' . $min . '.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'academic_customize_preview_js' );
 
@@ -149,7 +150,7 @@ add_action( 'customize_save_after', 'academic_reset_options' );
 
 if ( ! function_exists( 'academic_inline_css' ) ) :
 	/*
-	 * Add inline css from customizer 
+	 * Add inline css from customizer
 	 */
 	function academic_inline_css() {
 		$options = academic_get_theme_options();
@@ -166,7 +167,7 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 			// If we get this far, we have custom styles. Let's do this.
 				// Has the text been hidden?
 			if ( ! display_header_text() ) :
-			$css .='	
+			$css .='
 			.site-title,
 			.site-description {
 				position: absolute;
@@ -175,13 +176,13 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 
 			// If the user has set a custom color for the text use that.
 			else :
-			$css .='	
+			$css .='
 			.site-title a,
 			#site-header .site-title a,
 			.site-description {
 				color: #'.esc_attr( $header_text_color ).';
 			}';
-			endif; 
+			endif;
 		}
 		wp_add_inline_style( 'academic-style', $css );
 	}
