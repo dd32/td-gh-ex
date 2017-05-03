@@ -6,6 +6,7 @@
  *
  * @package Bakes_And_Cakes
  */
+$ed_full_content = get_theme_mod( 'bakes_and_cakes_ed_full_content' );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -43,7 +44,7 @@
     				the_title( '<span class="screen-reader-text">"', '"</span>', false )
     			) );
             }else{
-                if( false === get_post_format() ){
+                if( false === get_post_format() && !$ed_full_content  ){
                     the_excerpt();
                 }else{
                     the_content( sprintf(
@@ -65,7 +66,7 @@
 		
 	    <footer class="entry-footer">
 			<?php 
-			if( !is_single() ){ ?>
+			if( !is_single()  && !$ed_full_content  ){ ?>
 			   <a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'bakes-and-cakes' ); ?></a>
 			<?php
 			}

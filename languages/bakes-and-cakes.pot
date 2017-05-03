@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-20 12:30+0000\n"
+"POT-Creation-Date: 2017-03-15 11:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -449,6 +449,14 @@ msgstr ""
 msgid "Choose Slider Category"
 msgstr ""
 
+#: inc/customizer.php:1153
+msgid "Blog Page Settings"
+msgstr ""
+
+#: inc/customizer.php:1171
+msgid "Enable Full content"
+msgstr ""
+
 #: inc/info.php:11
 msgid "Information Links"
 msgstr ""
@@ -550,99 +558,99 @@ msgid "Edit %s"
 msgstr ""
 
 #. Base ID
-#: inc/widget-popular-post.php:25
+#: inc/widget-popular-post.php:26
 msgid "RARA: Popular Post"
 msgstr ""
 
-#: inc/widget-popular-post.php:26
+#: inc/widget-popular-post.php:27
 msgid "A Popular Post Widget"
 msgstr ""
 
-#: inc/widget-popular-post.php:40 inc/widget-popular-post.php:96
-#: inc/widget-popular-post.php:139
+#: inc/widget-popular-post.php:41 inc/widget-popular-post.php:97
+#: inc/widget-popular-post.php:140
 msgid "Most Viewed"
 msgstr ""
 
-#: inc/widget-popular-post.php:71 inc/widget-popular-post.php:72
-#: inc/widget-recent-post.php:74 inc/widget-recent-post.php:75
+#: inc/widget-popular-post.php:72 inc/widget-popular-post.php:73
+#: inc/widget-recent-post.php:75 inc/widget-recent-post.php:76
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: inc/widget-popular-post.php:104 inc/widget-recent-post.php:109
-#: inc/widget-social-links.php:97
+#: inc/widget-popular-post.php:105 inc/widget-recent-post.php:110
+#: inc/widget-social-links.php:98
 msgid "Title"
 msgstr ""
 
-#: inc/widget-popular-post.php:109 inc/widget-recent-post.php:114
+#: inc/widget-popular-post.php:110 inc/widget-recent-post.php:115
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/widget-popular-post.php:115 inc/widget-recent-post.php:120
+#: inc/widget-popular-post.php:116 inc/widget-recent-post.php:121
 msgid "Show Post Thumbnail"
 msgstr ""
 
-#: inc/widget-popular-post.php:120 inc/widget-recent-post.php:125
+#: inc/widget-popular-post.php:121 inc/widget-recent-post.php:126
 msgid "Show Post Date"
 msgstr ""
 
 #. Base ID
-#: inc/widget-recent-post.php:25
+#: inc/widget-recent-post.php:26
 msgid "RARA: Recent Post"
 msgstr ""
 
-#: inc/widget-recent-post.php:26
+#: inc/widget-recent-post.php:27
 msgid "A Recent Post Widget"
 msgstr ""
 
-#: inc/widget-recent-post.php:40 inc/widget-recent-post.php:101
-#: inc/widget-recent-post.php:143
+#: inc/widget-recent-post.php:41 inc/widget-recent-post.php:102
+#: inc/widget-recent-post.php:144
 msgid "Recent Posts"
 msgstr ""
 
 #. Base ID
-#: inc/widget-social-links.php:24
+#: inc/widget-social-links.php:25
 msgid "RARA: Social Links"
 msgstr ""
 
-#: inc/widget-social-links.php:25
+#: inc/widget-social-links.php:26
 msgid "A Social Links Widget"
 msgstr ""
 
-#: inc/widget-social-links.php:39 inc/widget-social-links.php:85
-#: inc/widget-social-links.php:151
+#: inc/widget-social-links.php:40 inc/widget-social-links.php:86
+#: inc/widget-social-links.php:152
 msgid "Social Media"
 msgstr ""
 
-#: inc/widget-social-links.php:56 inc/widget-social-links.php:102
+#: inc/widget-social-links.php:57 inc/widget-social-links.php:103
 msgid "Facebook"
 msgstr ""
 
-#: inc/widget-social-links.php:58 inc/widget-social-links.php:107
+#: inc/widget-social-links.php:59 inc/widget-social-links.php:108
 msgid "Twitter"
 msgstr ""
 
-#: inc/widget-social-links.php:60
+#: inc/widget-social-links.php:61
 msgid "Linkedin"
 msgstr ""
 
-#: inc/widget-social-links.php:62 inc/widget-social-links.php:117
+#: inc/widget-social-links.php:63 inc/widget-social-links.php:118
 msgid "Instagram"
 msgstr ""
 
-#: inc/widget-social-links.php:64 inc/widget-social-links.php:122
+#: inc/widget-social-links.php:65 inc/widget-social-links.php:123
 msgid "Google Plus"
 msgstr ""
 
-#: inc/widget-social-links.php:66 inc/widget-social-links.php:127
+#: inc/widget-social-links.php:67 inc/widget-social-links.php:128
 msgid "Pinterest"
 msgstr ""
 
-#: inc/widget-social-links.php:68 inc/widget-social-links.php:132
+#: inc/widget-social-links.php:69 inc/widget-social-links.php:133
 msgid "YouTube"
 msgstr ""
 
-#: inc/widget-social-links.php:112
+#: inc/widget-social-links.php:113
 msgid "LinkedIn"
 msgstr ""
 
@@ -654,7 +662,7 @@ msgstr ""
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
-#: sections/section-about.php:28 template-parts/content.php:69
+#: sections/section-about.php:28 template-parts/content.php:70
 msgid "Read More"
 msgstr ""
 
@@ -684,12 +692,12 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:29 template-parts/content.php:58
+#: template-parts/content-page.php:29 template-parts/content.php:59
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: template-parts/content.php:42 template-parts/content.php:51
+#: template-parts/content.php:43 template-parts/content.php:52
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""

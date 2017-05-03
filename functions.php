@@ -94,7 +94,6 @@ if (!function_exists('bakes_and_cakes_setup')):
 		add_image_size('bakes-and-cakes-post-thumb', 60, 60, true);
 		add_image_size('bakes-and-cakes-about-thumb', 600, 400, true);
 		add_image_size('bakes-and-cakes-product-thumb', 235, 235, true);
-		add_image_size('bakes-and-cakes-feature-thumb', 300, 220, true);
 		add_image_size('bakes-and-cakes-slider', 1920, 500, true);
 		add_image_size('bakes-and-cakes-image-full', 1139, 498, true);
 		add_image_size('bakes-and-cakes-image', 750, 400, true);

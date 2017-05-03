@@ -6,7 +6,6 @@
  *
  * @package Bakes_And_Cakes
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

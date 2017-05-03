@@ -258,7 +258,7 @@ function bakes_and_cakes_slider_cb(){
                     <?php
                     while( $bakes_and_cakes_qry->have_posts() ){
                         $bakes_and_cakes_qry->the_post();
-                        $bakes_and_cakes_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'bakes_and_cakes-slider' );
+                        $bakes_and_cakes_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'bakes-and-cakes-slider' );
                     ?>
                         <?php if( has_post_thumbnail() ){?>
                         <li>
@@ -386,13 +386,12 @@ function bakes_and_cakes_footer_top(){
                 </div>
                 <div class="col center">   
                     <section class="widget widget_contact_form">    
-                        <div class="form-holder"> 
-                            <?php     
-                                if (is_active_sidebar('footer-second')) {
-                                    dynamic_sidebar('footer-second');
-                                }
-                            ?>
-                        </div>
+                    <?php   
+                        if (is_active_sidebar('footer-second')) { ?>
+                            <div class="form-holder"> 
+                                <?php dynamic_sidebar('footer-second'); ?>
+                            </div>
+                    <?php } ?>
                     </section>
                 </div>
                 <div class="col">
