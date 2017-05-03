@@ -150,6 +150,11 @@ function annina_color_primary_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'annina')
 	);
+	$socialmedia[] = array(
+	'slug'=>'soundcloudurl',
+	'default' => '',
+	'label' => __('SoundCloud URL', 'annina')
+	);
 	
 	foreach( $socialmedia as $annina_theme_options ) {
 		// SETTINGS

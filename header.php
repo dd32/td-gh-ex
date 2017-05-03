@@ -27,6 +27,7 @@
 	$youtubeURL = get_theme_mod('annina_theme_options_youtubeurl', '#');
 	$pinterestURL = get_theme_mod('annina_theme_options_pinteresturl', '#');
 	$vkURL = get_theme_mod('annina_theme_options_vkurl', '#');
+	$soundcloudURL = get_theme_mod('annina_theme_options_soundcloudurl', '');
 	$emailURL = get_theme_mod('annina_theme_options_emailurl', '#');
 ?>
 <?php if ( $hideSearch == 1 ) : ?>
@@ -99,6 +100,10 @@
 						
 				<?php if (!empty($vkURL)) : ?>
 					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'annina' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($soundcloudURL)) : ?>
+					<a href="<?php echo esc_url($soundcloudURL); ?>" title="<?php esc_attr_e( 'SoundCloud', 'annina' ); ?>"><i class="fa fa-soundcloud spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'SoundCloud', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
