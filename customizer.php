@@ -458,8 +458,3 @@ add_action( 'customize_register', 'avvocato_customize_register' );
 function avvocato_sanitize_integer( $input ) {
     return intval( $input );
 }
-
-function avvocato_custom_customize_enqueue() {
-	wp_enqueue_script( 'avvocato-custom-customize', get_template_directory_uri() . '/assets/js/custom-customize.js', array( 'jquery', 'customize-controls' ), false, true );
-}
-add_action( 'customize_controls_enqueue_scripts', 'avvocato_custom_customize_enqueue' );

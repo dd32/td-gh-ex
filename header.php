@@ -25,7 +25,7 @@
 							<div class="gutter">
 								<ul class="top-bar-contact">
 								    <?php if(get_theme_mod('avvocato_header_phone')) { ?><li><i class="fa fa-phone"></i><a href="phone:<?php echo esc_attr(get_theme_mod('avvocato_header_phone')); ?>"><?php echo esc_attr(get_theme_mod('avvocato_header_phone')); ?></a></li><?php } ?>
-									<?php if(get_theme_mod('avvocato_header_email')) { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo antispambot(sanitize_email(get_theme_mod('avvocato_header_email'))); ?>"><?php echo antispambot(sanitize_email(get_theme_mod('avvocato_header_email'))); ?></a></li><?php } ?>
+									<?php if(get_theme_mod('avvocato_header_email')) { ?><li><i class="fa fa-envelope"></i><a href="href="<?php echo esc_url( 'mailto:' . antispambot( get_theme_mod( 'avvocato_header_email' ) ) ); ?>"><?php echo antispambot(sanitize_email(get_theme_mod('avvocato_header_email'))); ?></a></li><?php } ?>
 								</ul>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 							<?php if ( has_nav_menu( 'avvocato-menu' ) ) { ?>
 							   <?php wp_nav_menu( array('container'=> '', 'theme_location' => 'avvocato-menu', 'items_wrap'  => '<ul class="menu-top">%3$s</ul>'  ) ); ?>
 							<?php } else { ?>
-								<?php wp_nav_menu(  array('container'=> '', 'menu_class'  => 'menu-top', 'items_wrap'  => '<ul class="menu-top">%3$s</ul>' ) ); ?>									
+								<?php wp_nav_menu(  array('container'=> '', 'theme_location' => 'avvocato-menu', 'menu_class'  => 'menu-top', 'items_wrap'  => '<ul class="menu-top">%3$s</ul>' ) ); ?>									
 							<?php } ?>	
 						</nav>
 						<nav class="menu-top-mob-container">
@@ -65,7 +65,7 @@
 							<?php if ( has_nav_menu( 'avvocato-menu' ) ) { ?>
 							   <?php wp_nav_menu( array('container'=> '', 'theme_location' => 'avvocato-menu', 'items_wrap'  => '<ul class="menu-top-mob">%3$s</ul>'  ) ); ?>
 							<?php } else { ?>
-								<?php wp_nav_menu(  array('container'=> '', 'menu_class'  => 'menu-top-mob', 'items_wrap'  => '<ul class="menu-top-mob">%3$s</ul>' ) ); ?>									
+								<?php wp_nav_menu(  array('container'=> '', 'theme_location' => 'avvocato-menu', 'menu_class'  => 'menu-top-mob', 'items_wrap'  => '<ul class="menu-top-mob">%3$s</ul>' ) ); ?>									
 							<?php } ?>	
 						</nav>
 					</div>

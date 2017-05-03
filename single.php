@@ -10,7 +10,7 @@
 			<div class="container">
 				<div class="gutter">
 					<p class="page-title"><?php echo esc_html(get_theme_mod('avvocato_blog_page_title',__( 'Our Blog', 'avvocato' ))); ?></p>
-					<p><?php echo esc_html(get_theme_mod('avvocato_blog_subtitle',__( '', 'avvocato' ))); ?></p>
+					<p><?php echo esc_html(get_theme_mod('avvocato_blog_subtitle')); ?></p>
 				</div>
 			</div> <!--  END container  -->
 		</div> <!--  END overlay  -->
@@ -29,11 +29,11 @@
 								<?php endif; ?>		
 								<div class="article-text">
 									<h2><?php the_title(); ?></h2>
-									<p class="meta"><i class="fa fa-calendar"></i><?php the_time(get_option( 'date_format' )); ?> <i class="fa fa-user"></i><?php the_author(', '); ?> <i class="fa fa-comment"></i><?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are off'); ?></p>
+									<p class="meta"><i class="fa fa-calendar"></i><?php the_time(get_option( 'date_format' )); ?> <i class="fa fa-user"></i><?php the_author(); ?> <i class="fa fa-comment"></i><?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are off'); ?></p>
 									<?php the_content(); ?>
 									<p class="tags"><span></span> <?php the_tags(); ?></p>
 								</div>
-								<p><?php posts_nav_link(); ?></p>
+								<p><?php the_post_navigation(); ?></p>
 								<div class="padinate-page"><?php wp_link_pages(); ?></div> 	
 								<div class="comments">
 									<?php comments_template(); ?>

@@ -224,34 +224,13 @@ function avvocato_sidebars() {
 
 add_action( 'widgets_init', 'avvocato_sidebars' );
 
-// Create List Post
-
-if ( ! function_exists( 'avvocato_get_list_posts' ) ) :
-	function avvocato_get_list_posts($n) {
-	
-		global $wp_query;
-		
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		
-		$args = array(
-			'post_type' => 'post',
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'posts_per_page' => $n
-		);
-		
-		$wp_query->query( $args );
-		
-		return new WP_Query( $args );
-	}
-endif; 
 
 // Create Function Credits
 
 if ( ! function_exists( 'avvocato_credits' ) ) :
 	function avvocato_credits() {
 		
-		$text = sprintf( __('Theme created by <a href="%s">PWT</a>. Powered by <a href="%s">WordPress.org</a>', 'avvocato'), esc_url('https://www.pwtthemes.com/'), esc_url('http://wordpress.org/'));
+		$text = sprintf( __('Theme created by <a href="%1$s">PWT</a>. Powered by <a href="%2$s">WordPress.org</a>', 'avvocato'), esc_url('http://www.pwtthemes.com/theme/avvocato-free-responsive-wordpress-theme'), esc_url('http://wordpress.org/'));
 		
 		echo apply_filters( 'avvocato_credits_text', $text) ;
 	}

@@ -20,7 +20,7 @@
 								<?php endif; ?>
 								<div class="article-text">
 									<h2><a href="<?php the_permalink() ?>"><?php if(get_the_title(get_the_ID())) { the_title(); } else { the_time( get_option( 'date_format' ) ); } ?></a></h2>
-									<p class="meta"><i class="fa fa-calendar"></i><?php the_time(get_option( 'date_format' )); ?> <i class="fa fa-user"></i><?php the_author(', '); ?> <i class="fa fa-comment"></i><?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are off'); ?></p>
+									<p class="meta"><i class="fa fa-calendar"></i><?php the_time(get_option( 'date_format' )); ?> <i class="fa fa-user"></i><?php the_author(); ?> <i class="fa fa-comment"></i><?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are off'); ?></p>
 									<?php the_excerpt(); ?>
 								</div>
 								<div class="button-container">

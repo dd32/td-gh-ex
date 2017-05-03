@@ -27,7 +27,6 @@
 									<?php the_content(); ?>
 									<div class="clear"></div>
 								</div>
-								<p><?php posts_nav_link(); ?></p>
 								<div class="padinate-page"><?php wp_link_pages(); ?></div> 	
 								<div class="comments">
 									<?php comments_template(); ?>
