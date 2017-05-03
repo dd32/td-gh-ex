@@ -3,7 +3,7 @@ Contributors: xylus
 Tags: black,blue, gray, green, red, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu,  custom-header, featured-images, sticky-post, post-formats, full-width-template, threaded-comments, translation-ready, theme-options
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,7 +59,7 @@ Adney WordPress Theme bundles the following third-party resources:
 
 Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
-Design Based on AKAD: HTML website template for agencies http://freebiesbug.com/code-stuff/akad-html-website-template-for-agencies/,(C) 2016 Amine Akhouad, [GNU GPL license v2](https://www.gnu.org/licenses/gpl-2.0.html)
+Design Based on AKAD HTML template, (C) 2016 Amine Akhouad, Licensed under GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 site-hero2.jpg: A photo by Pixapopz (https://pixabay.com/en/mountain-morning-mist-nepal-valley-1542114/), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
