@@ -7,6 +7,37 @@
  * @package aquarella
  */
 
+/**
+ * Freemiums.
+ */
+// Create a helper function for easy SDK access.
+function aquarella_fs() {
+    global $aquarella_fs;
+
+    if ( ! isset( $aquarella_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $aquarella_fs = fs_dynamic_init( array(
+            'id'                  => '1030',
+            'slug'                => 'aquarella-lite',
+            'type'                => 'theme',
+            'public_key'          => 'pk_1dab805943b3510337757bda039b1',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+        ) );
+    }
+
+    return $aquarella_fs;
+}
+
+// Init Freemius.
+aquarella_fs();
+// Signal that SDK was initiated.
+do_action( 'aquarella_fs_loaded' );
+
+
 if ( ! function_exists( 'aquarella_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
