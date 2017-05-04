@@ -48,6 +48,7 @@
 			$tumblrURL = get_theme_mod('blogghiamo_theme_options_tumblrurl', '#');
 			$githubURL = get_theme_mod('blogghiamo_theme_options_githuburl', '');
 			$vineURL = get_theme_mod('blogghiamo_theme_options_vineurl', '');
+			$xingURL = get_theme_mod('blogghiamo_theme_options_xingurl', '');
 			$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 		?>
 
@@ -96,8 +97,12 @@
 					<a href="<?php echo esc_url($vineURL); ?>" title="<?php esc_attr_e( 'Vine', 'blogghiamo' ); ?>"><i class="fa fa-vine spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Vine', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
+				<?php if (!empty($xingURL)) : ?>
+					<a href="<?php echo esc_url($xingURL); ?>" title="<?php esc_attr_e( 'Xing', 'blogghiamo' ); ?>"><i class="fa fa-xing spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+				
 				<?php if (!empty($emailURL)) : ?>
-					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'blogghiamo' ); ?></span></i></a>
+					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'blogghiamo' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Email', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideRss == 1 ) : ?>

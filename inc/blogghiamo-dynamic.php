@@ -141,6 +141,11 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Vine URL', 'blogghiamo')
 	);
+	$socialmedia[] = array(
+	'slug'=>'xingurl', 
+	'default' => '',
+	'label' => __('Xing URL', 'blogghiamo')
+	);
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS
