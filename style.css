@@ -12,7 +12,7 @@ Domain Path: /languages/
 
 Description: Auction super flat design and responsive landing page and multipurpose theme. you will be amazed by the real time customizer,lots of smart options that will help you build your website with ease.Auction   is a child theme of advance.
 
-Version: 1.0.1
+Version: 1.0.2
 
 Tags:  featured-images, threaded-comments,blog,photography,education
 
@@ -72,10 +72,8 @@ NEWS
 .blog-one .blog-one-attrib .blog-author-name {
     font-size: 12px;
     font-weight: 600;
-    margin-right: 20px;
     display: block;
     float: left;
-    margin-top: 5px;
 }
 .blog-one .blog-one-attrib .blog-date {
     color: #bbb;
@@ -95,6 +93,7 @@ NEWS
        -moz-border-radius: 2px;
             border-radius: 2px;
 }
+.blog-author-name a{padding-top:10px;padding-bottom: 10px}
 .blog-one .blog-one-attrib .blog-category  a {
     color: #fff;
     font-size: 10px;

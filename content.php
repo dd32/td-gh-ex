@@ -1,31 +1,24 @@
-<div class=" post_warp matchhe large-4 medium-6 columns  wow fadeInLeft page-delay">
-                        <div class="blog-one">
-                            <div class="blog-one-header">
 
-                                <?php  if ( get_the_post_thumbnail() != '' ) {
-						        				echo '<a href="';esc_url( the_permalink()); echo '" >';
-							         			the_post_thumbnail();
-									  			echo '</a>';
-                               					 } else {
-    							 				echo '<a href="';esc_url( the_permalink()); echo '" >';
-                         						echo '<img  src="';
-     											echo  esc_url (advance_catch_that_image());
-     											echo '" alt="" />';
-								 				echo '</a>';
-     									};?>
-                            </div>
-                            <div class="blog-one-attrib">
-
+      <div class=" post_warp matchhe large-4 medium-6 columns  wow fadeInLeft page-delay">
+        <div class="blog-one">
+          <?php  if ( get_the_post_thumbnail() != '' ) {
+                      echo '<div class="blog-one-header">';
+						        	echo '<a href="';esc_url( the_permalink()); echo '" >';
+							         		  the_post_thumbnail();
+									  	echo '</a>';
+                      echo '</div>';
+          };?>
+            <div class="blog-one-attrib">
                                 <span class="blog-author-name">
-                                <?php if( has_category() ) { ?><?php $categories = get_the_category();
-                                                         $separator = ', ';
- 														 $output = '';
-											if ( ! empty( $categories ) ) {
-    												foreach( $categories as $category ) {
-        												$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr(sprintf( __( 'View all posts in %s','auction' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;			}
-   														 echo trim( $output, $separator );
-														} ?><?php } ?>
-
+                                <?php if( has_category() ) { ?>
+                                  <?php $categories = get_the_category();
+                                        $separator = ', ';
+ 														            $output = '';
+											                  if ( ! empty( $categories ) ) {
+    												            foreach( $categories as $category ) {
+        												        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr(sprintf( __( 'View all posts in %s','auction' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;			}
+   														          echo trim( $output, $separator );
+														      } ?><?php } ?>
                                 </span>
                                 <span class="blog-date"><?php the_time( get_option('date_format') ); ?></span>
                             </div>
