@@ -11,6 +11,15 @@ define('CPOTHEME_USE_TESTIMONIALS', true);
 define('CPOTHEME_PREMIUM_NAME', 'Affluent Pro');
 define('CPOTHEME_PREMIUM_URL', '//cpothemes.com/theme/affluent');
 
+// Add epsilon framework
+require get_template_directory() . '/includes/libraries/epsilon-framework/class-epsilon-autoloader.php';
+$epsilon_framework_settings = array(
+		'controls' => array( 'toggle', 'upsell' ), // array of controls to load
+		'sections' => array( 'recommended-actions', 'pro' ), // array of sections to load
+		'path'     => '/includes/libraries'
+	);
+new Epsilon_Framework( $epsilon_framework_settings );
+
 //Load Core; check existing core or load development core
 $core_path = get_template_directory().'/core/';
 if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;

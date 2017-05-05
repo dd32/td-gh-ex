@@ -14,7 +14,26 @@ function cpotheme_customizer($customize){
 	//Add sections to the customizer
 	$settings = cpotheme_metadata_sections();
 	foreach($settings as $setting_id => $setting_data){
-		$customize->add_section($setting_id, $setting_data);
+		if ( isset($setting_data['type']) ) {
+			switch ( $setting_data['type'] ) {
+				case 'epsilon-section-pro':
+					$customize->add_section(
+						new Epsilon_Section_Pro(
+							$customize,
+							$setting_id,
+							$setting_data
+						)
+					);
+					break;
+				
+				default:
+					$customize->add_section($setting_id, $setting_data);
+					break;
+			}
+			
+		}else{
+			$customize->add_section($setting_id, $setting_data);
+		}
 	}
 	
 	//Add settings & controls
@@ -24,13 +43,26 @@ function cpotheme_customizer($customize){
 		$default = isset($setting_data['default']) ? $setting_data['default'] : '';
 		
 		$optionsets = array('default' => 'default');
-		if($multilingual && function_exists('icl_get_languages')){
-			$languages = icl_get_languages();
-			global $sitepress;
-			$default_language = $sitepress->get_default_language();
-			foreach($languages as $current_language){
-				if($current_language['language_code'] != $default_language){
-					$optionsets[$current_language['language_code']] = $current_language['translated_name'];
+		if($multilingual ){
+			if ( function_exists('icl_object_id') && class_exists('SitePress') ) {
+				$languages = icl_get_languages();
+				global $sitepress;
+				$default_language = $sitepress->get_default_language();
+				foreach($languages as $current_language){
+					if($current_language['language_code'] != $default_language){
+						$optionsets[$current_language['language_code']] = $current_language['translated_name'];
+					}
+				}
+			}elseif ( function_exists('pll_languages_list') ) {
+				$languages = pll_languages_list(array('hide_if_empty' => 0));
+				$default_language = pll_default_language();
+				if ( !empty( $languages ) ) {
+					foreach($languages as $current_language){
+						if($current_language != $default_language){
+							$optionsets[$current_language] = strtoupper( $current_language );
+						}
+					}
+
 				}
 			}
 		}
@@ -65,10 +97,9 @@ function cpotheme_customizer($customize){
 			if(!isset($args['type'])) $args['type'] = 'text';
 			
 			switch($args['type']){
-				case 'text': 
-				case 'textarea': 
-				case 'checkbox': 
-				case 'select': 
+				case 'text':
+				case 'textarea':
+				case 'select':
 				$customize->add_control('cpotheme_'.$control_id, $args); break;
 				case 'color': 
 				$customize->add_control(new WP_Customize_Color_Control($customize, 'cpotheme_'.$control_id, $args)); break;
@@ -76,6 +107,11 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new WP_Customize_Image_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'epsilon-upsell' :
+				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'checkbox' :
+				$args['type'] = 'epsilon-toggle';
+				$customize->add_control(new Epsilon_Control_Toggle($customize, 'cpotheme_'.$control_id, $args)); break;
 			}
 		}		
 	}

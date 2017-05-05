@@ -145,7 +145,7 @@ class Affluent_Welcome {
 
 		$screen = get_current_screen();
 
-		wp_enqueue_style( 'cpotheme-welcome-screen-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome.css' );
+		wp_enqueue_style( 'cpotheme-welcome-screen-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome.css', array(), '1.0.2' );
 
 		if ( $screen->base != 'customize' ) {
 			wp_enqueue_script( 'cpotheme-welcome-screen-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome.js', array( 'jquery' ), '1.0', true );
@@ -383,6 +383,8 @@ class Affluent_Welcome {
 				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'affluent' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=support' ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'affluent' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=features' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'affluent' ); ?></a>
 			</h2>
 
 			<?php
@@ -398,6 +400,9 @@ class Affluent_Welcome {
 					break;
 				case 'support':
 					require_once get_template_directory() . '/core/welcome-screen/sections/support.php';
+					break;
+				case 'features':
+					require_once get_template_directory() . '/core/welcome-screen/sections/features.php';
 					break;
 				default:
 					require_once get_template_directory() . '/core/welcome-screen/sections/getting-started.php';
