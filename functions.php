@@ -1,4 +1,4 @@
-<?php	
+<?php
 
 /**
  * advance functions and definitions
@@ -37,8 +37,8 @@ function advance_setup() {
 		 * provide it for us.
 		 */
 add_theme_support( 'title-tag' );
-		
-		
+
+
 // Add default posts and comments RSS feed links to head.
 add_theme_support('automatic-feed-links');
 
@@ -49,7 +49,7 @@ add_theme_support( 'woocommerce' );
 //Custom Background
 add_theme_support( 'custom-background', array(
 	'default-color' => 'FFF',
-	
+
 ) );
 
 /*
@@ -66,13 +66,13 @@ add_theme_support( 'custom-background', array(
 
 
 
-//Post Thumbnail	
+//Post Thumbnail
 add_theme_support( 'post-thumbnails' );
 
 //Register Menus
 register_nav_menus( array(
 		'primary' => __( 'Primary Navigation(Header)', 'advance' ),
-		
+
 	) );
 
 // Enables post and comment RSS feed links to head
@@ -96,7 +96,7 @@ add_theme_support('automatic-feed-links');
 
 
 
-	
+
 // Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 /*
@@ -105,9 +105,9 @@ add_theme_support('automatic-feed-links');
 		 * If you're building a theme based on advance, use a find and replace
 		 * to change 'advance' to the name of your theme in all the template files
 		 */
-		 
-load_theme_textdomain('advance', get_template_directory() . '/languages');  
- 
+
+load_theme_textdomain('advance', get_template_directory() . '/languages');
+
 add_theme_support( 'starter-content', array(
 
 
@@ -146,7 +146,7 @@ add_theme_support( 'starter-content', array(
 		),
 
 	),
-) ); 
+) );
 }
 endif; // advance_setup
 add_action( 'after_setup_theme', 'advance_setup' );
@@ -177,7 +177,7 @@ $advancefirst_img = $matches [1] [0];
 return $advancefirst_img;
 }
 $advance_latest_nopic = get_theme_mod('advance_latest_nopic',0);
-if( isset($advance_latest_nopic) && $advance_latest_nopic == 1 ){	
+if( isset($advance_latest_nopic) && $advance_latest_nopic == 1 ){
 
 
 $advancefirst_img = esc_url(get_template_directory_uri()."/images/blank1.jpg");
@@ -216,7 +216,7 @@ function advance_sanitize_hex( $color = '#FFFFFF', $hash = true ) {
 function advance_custom_excerpt_length( $length ) {
     return 40;
 }
-add_filter( 'excerpt_length', 'advance_custom_excerpt_length', 999 ); 
+add_filter( 'excerpt_length', 'advance_custom_excerpt_length', 999 );
 
 /**
  * Filter the excerpt "read more" string.
@@ -238,18 +238,18 @@ function advance_exclude_post( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
 		$advance_num_post =  esc_attr(get_theme_mod ('Staticimage_post',esc_attr('Hello world!')));
 		$excluded = array( -$advance_num_post );
-		
+
 		 $query->set('post__not_in', $excluded);
     }
 }
-add_action( 'pre_get_posts', 'advance_exclude_post' ); 
+add_action( 'pre_get_posts', 'advance_exclude_post' );
 
 //Load CSS files
 
 function advance_scripts() {
-wp_enqueue_style( 'advance-style', get_stylesheet_uri() );	
-wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css','font_awesome', true );
 wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css','foundation_css', true );
+wp_enqueue_style( 'advance-style', get_stylesheet_uri() );
+wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css','font_awesome', true );
 wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css','animate_css', true );
 wp_enqueue_style( 'advance_mobile', get_template_directory_uri() . '/css/advance-mobile.css' ,'advancemobile_css', true);
 
@@ -280,9 +280,9 @@ $advance_mobile_sidebar = get_theme_mod('advance_mobile_sidebar',1);
 if( isset($advance_mobile_sidebar) && $advance_mobile_sidebar == 0 ){
 wp_enqueue_style( 'advance_mobilesidebar_check', get_template_directory_uri() . '/css/customcss/mobile_sidebar.css' ,'mobile_sidebar', true);
 
-} 
+}
  }
- 
+
  add_action( 'wp_enqueue_scripts', 'advance_scripts' );
 
 
@@ -331,13 +331,13 @@ function advance_fonts_url() {
 
 
 
-//Load Java Scripts 
-function advance_head_js() { 
+//Load Java Scripts
+function advance_head_js() {
 if ( !is_admin() ) {
 wp_enqueue_script('jquery');
 wp_enqueue_script('advance_js',get_template_directory_uri().'/js/advance.js' ,array('jquery'), true);
 wp_enqueue_script('advance_other',get_template_directory_uri().'/js/advance_other.js',array('jquery'), true);
- 
+
         # Let's make sure we don't load our pre-loader script in the customizer
         global $wp_customize;
 
@@ -347,7 +347,7 @@ wp_enqueue_script('advance_other',get_template_directory_uri().'/js/advance_othe
         if ( !isset( $wp_customize ) && $advance_body_preloder == '1' ) {
             wp_enqueue_script('advance_preloder',get_template_directory_uri().'/js/advance-preloder.js',array('jquery'), true);
         } else {
-          wp_enqueue_style( 'advance_preloder', get_template_directory_uri() . '/css/preloder.css' ,'advance_preloder', true); 
+          wp_enqueue_style( 'advance_preloder', get_template_directory_uri() . '/css/preloder.css' ,'advance_preloder', true);
         }
 		wp_enqueue_script('wow',get_template_directory_uri().'/js/wow.js',array('jquery'), true);
 $advance_Static_Sliderpara = get_theme_mod('advance_Static_Sliderpara',0);
@@ -366,19 +366,19 @@ add_action('wp_enqueue_scripts', 'advance_head_js');
 /**
  * Register admin style
  *
- * 
+ *
  */
 
 if ( is_admin() ) {
 add_action('admin_enqueue_scripts', 'advance_welcome_scripts');
 
-function advance_welcome_scripts() {    
+function advance_welcome_scripts() {
 
-	
+
     wp_enqueue_script('advance_welcome-page', get_template_directory_uri() . '/js/welcome-page.js', false, '1.0', true);
-	
+
 	wp_enqueue_style( 'welcome-page_css', get_template_directory_uri() . '/css/welcome-page.css' );
-	
+
 
 }
 }
@@ -399,7 +399,7 @@ function advance_widgets_init(){
 	'before_title'  => '<h3 class="widgettitle">',
 	'after_title'   => '</h3>'
 	));
-	
+
 	register_sidebar(array(
 	'name'          => __('Footer Widgets', 'advance'),
 	'id'            => 'foot_sidebar',
@@ -409,7 +409,7 @@ function advance_widgets_init(){
 	'before_title'  => '<h3 class="widgettitle">',
 	'after_title'   => '</h3>'
 	));
-	
+
 	register_sidebar(array(
 	'name'          => __('Frontpage widget area ', 'advance'),
 	'id'            => 'sidebar_frontpage',
@@ -419,10 +419,10 @@ function advance_widgets_init(){
 	'before_title'  => '<h3 class="widgettitle">',
 	'after_title'   => '</h3>'
 		));
-		
-		
 
-	
+
+
+
 }
 
 add_action( 'widgets_init', 'advance_widgets_init' );
