@@ -27,9 +27,9 @@
                             $custom_logo_id = get_theme_mod( 'custom_logo' );
                             $image = wp_get_attachment_url( $custom_logo_id );
                             if (!has_custom_logo()) { ?>
-                                <a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+                                <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo( 'name' ); ?></a>
                             <?php } 
-                            else { ?> <a href="<?php echo home_url(); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
+                            else { ?> <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
                         </div>
                         <div id="box-top-mobile"></div>
                         <div class="menu">

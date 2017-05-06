@@ -42,3 +42,6 @@ ii) Fixed menu issue.
 
 Version 1.0.10 (10-03-2017)
 i) Fixed default menu issue.
+
+Version 1.0.11 (06-05-2017)
+i) Fixed escaping issues.

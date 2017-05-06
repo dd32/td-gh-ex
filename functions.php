@@ -70,10 +70,10 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
       $config = array(
         'default_path' => '',
         'menu'         => 'astrology-install-plugins',
-        'has_notices'  => false,
+        'has_notices'  => true,
         'dismissable'  => true,
         'dismiss_msg'  => '',
-        'is_automatic' => false,
+        'is_automatic' => true,
         'message'      => '',
         'strings'      => array(
            'page_title'                      => __( 'Install Recommended Plugins', 'astrology' ),
@@ -96,7 +96,7 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
            'nag_type'                        => 'updated'
         )
       );
-      astrology( $plugins, $config );
+      tgmpa( $plugins, $config );
     }
 }
 /**

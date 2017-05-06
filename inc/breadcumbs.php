@@ -18,7 +18,7 @@ function astrology_custom_breadcrumbs() {
         echo '<ul id="' . $astrology_breadcrums_id . '" class="' . $astrology_breadcrums_class . '">';
            
         // Home page
-        echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $astrology_home_title . '">' . $astrology_home_title . '</a></li>';
+        echo '<li class="item-home"><a class="bread-link bread-home" href="' . esc_url(get_home_url()) . '" title="' . $astrology_home_title . '">' . $astrology_home_title . '</a></li>';
         echo '<li class="separator separator-home"> ' . $astrology_separator . ' </li>';
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
