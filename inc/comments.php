@@ -9,7 +9,6 @@ function bellini_comment( $comment, $args, $depth ) {
         case 'pingback' :
         case 'trackback' : ?>
             <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
-            <div class="back-link"><?php comment_author_link(); ?></div>
             <p><?php _e( 'Pingback:', 'bellini' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'bellini' ), ' ' ); ?></p>
         <?php break;
         default : ?>

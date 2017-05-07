@@ -23,7 +23,7 @@ $bellini = bellini_option_defaults();
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bellini' ); ?></a>
 	<header id="masthead" class="site-header <?php echo $header_orientation; ?>" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
 	<div class="header-inner bellini__canvas">
-	<div class="row">
+	<div class="row flexify--center">
 		<?php do_action( 'bellini_header' ); ?>
 	</div>
 	</div>

@@ -374,6 +374,10 @@ if ( is_woocommerce_activated() ):
     	background-color: <?php echo $product_card_button_color;?> !important ;
 	}
 
+	.woocommerce .widget_price_filter .ui-slider .ui-slider-range{
+		background-color: <?php echo $product_card_button_color;?>;
+	}
+
 	</style>
 	<?php }
 
