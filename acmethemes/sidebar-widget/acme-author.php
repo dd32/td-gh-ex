@@ -2,14 +2,14 @@
 /**
  * Custom author
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 if ( ! class_exists( 'acmeblog_author_widget' ) ) :
     /**
      * Class for adding author widget
      * A new way to add author
-     * @package AcmeThemes
+     * @package Acme Themes
      * @subpackage AcmeBlog
      * @since 1.1.0
      */

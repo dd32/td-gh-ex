@@ -119,20 +119,82 @@ endif;
  * @return string
  *
  */
+
 if ( !function_exists('acmeblog_sidebar_selection') ) :
-    function acmeblog_sidebar_selection( ) {
-        global $acmeblog_customizer_all_values;
-        if(
-            'left-sidebar' == $acmeblog_customizer_all_values['acmeblog-sidebar-layout'] ||
-            'no-sidebar' == $acmeblog_customizer_all_values['acmeblog-sidebar-layout']
-        ){
-            $acmeblogbody_global_class = $acmeblog_customizer_all_values['acmeblog-sidebar-layout'];
-        }
-        else{
-            $acmeblogbody_global_class= 'right-sidebar';
-        }
-        return $acmeblogbody_global_class;
-    }
+	function acmeblog_sidebar_selection( ) {
+		wp_reset_postdata();
+		global $acmeblog_customizer_all_values;
+		global $post;
+		if(
+			isset( $acmeblog_customizer_all_values['acmeblog-sidebar-layout'] ) &&
+			(
+				'left-sidebar' == $acmeblog_customizer_all_values['acmeblog-sidebar-layout'] ||
+				'both-sidebar' == $acmeblog_customizer_all_values['acmeblog-sidebar-layout'] ||
+				'no-sidebar' == $acmeblog_customizer_all_values['acmeblog-sidebar-layout']
+			)
+		){
+			$acmeblog_body_global_class = $acmeblog_customizer_all_values['acmeblog-sidebar-layout'];
+		}
+		else{
+			$acmeblog_body_global_class= 'right-sidebar';
+		}
+
+		if( is_front_page() ){
+			if( isset( $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout'] ) ){
+				if(
+					'right-sidebar' == $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout'] ||
+					'left-sidebar' == $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout'] ||
+					'both-sidebar' == $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout'] ||
+					'no-sidebar' == $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout']
+				){
+					$acmeblog_body_classes = $acmeblog_customizer_all_values['acmeblog-front-page-sidebar-layout'];
+				}
+				else{
+					$acmeblog_body_classes = $acmeblog_body_global_class;
+				}
+			}
+			else{
+				$acmeblog_body_classes= $acmeblog_body_global_class;
+			}
+		}
+        elseif (is_singular() && isset( $post->ID )) {
+			$post_class = get_post_meta( $post->ID, 'acmeblog_sidebar_layout', true );
+			if ( 'default-sidebar' != $post_class ){
+				if ( $post_class ) {
+					$acmeblog_body_classes = $post_class;
+				} else {
+					$acmeblog_body_classes = $acmeblog_body_global_class;
+				}
+			}
+			else{
+				$acmeblog_body_classes = $acmeblog_body_global_class;
+			}
+
+		}
+        elseif ( is_archive() ) {
+			if( isset( $acmeblog_customizer_all_values['acmeblog-archive-sidebar-layout'] ) ){
+				$acmeblog_archive_sidebar_layout = $acmeblog_customizer_all_values['acmeblog-archive-sidebar-layout'];
+				if(
+					'right-sidebar' == $acmeblog_archive_sidebar_layout ||
+					'left-sidebar' == $acmeblog_archive_sidebar_layout ||
+					'both-sidebar' == $acmeblog_archive_sidebar_layout ||
+					'no-sidebar' == $acmeblog_archive_sidebar_layout
+				){
+					$acmeblog_body_classes = $acmeblog_archive_sidebar_layout;
+				}
+				else{
+					$acmeblog_body_classes = $acmeblog_body_global_class;
+				}
+			}
+			else{
+				$acmeblog_body_classes= $acmeblog_body_global_class;
+			}
+		}
+		else {
+			$acmeblog_body_classes = $acmeblog_body_global_class;
+		}
+		return $acmeblog_body_classes;
+	}
 endif;
 
 /**

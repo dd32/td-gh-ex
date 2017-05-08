@@ -1,7 +1,7 @@
 <?php
 /*adding sections for feature side for front page */
 $wp_customize->add_section( 'acmeblog-feature-side', array(
-    'priority'       => 20,
+    'priority'       => 30,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Slider Right Section', 'acmeblog' ),

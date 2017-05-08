@@ -2,7 +2,7 @@
 /**
  * Feature slider side posts and ads
  *
- * @since acmeblog 1.1.0
+ * @since AcmeBlog 1.1.0
  *
  * @param null
  * @return void

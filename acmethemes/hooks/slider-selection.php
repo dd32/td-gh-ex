@@ -2,7 +2,7 @@
 /**
  * Display featured slider
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param int $post_id
  * @return void
@@ -64,12 +64,15 @@ if ( ! function_exists( 'acmeblog_display_feature_slider' ) ) :
 
         global $acmeblog_customizer_all_values;
         $acmeblog_feature_cat = $acmeblog_customizer_all_values['acmeblog-feature-cat'];
+	    $acmeblog_slider_number = absint( $acmeblog_customizer_all_values['acmeblog-feature-slider-post-number']);
+	    $sticky = get_option( 'sticky_posts' );
         if ( 0 != $acmeblog_feature_cat ) {
             $acmeblog_cat_post_args = array(
                 'cat'                 => $acmeblog_feature_cat,
-                'posts_per_page'      => 5,
+                'posts_per_page'      => $acmeblog_slider_number,
                 'no_found_rows'       => true,
                 'post_status'         => 'publish',
+                'post__not_in' => $sticky,
                 'ignore_sticky_posts' => true
             );
             $slider_query = new WP_Query($acmeblog_cat_post_args);
@@ -109,9 +112,16 @@ if ( ! function_exists( 'acmeblog_display_feature_slider' ) ) :
                                 <div class="slide-title">
                                     <?php the_title(); ?>
                                 </div>
-                                <a href="<?php the_permalink()?>" class="read-more">
-                                    <?php _e( 'Read More', 'acmeblog' );?>
-                                </a>
+                                <?php
+                                $read_more = $acmeblog_customizer_all_values['acmeblog-feature-slider-read-more'];
+                                if( !empty( $read_more )){
+	                                ?>
+                                    <a href="<?php the_permalink()?>" class="read-more">
+		                                <?php echo  esc_html( $read_more );?>
+                                    </a>
+	                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </li>

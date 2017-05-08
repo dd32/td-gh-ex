@@ -53,7 +53,6 @@ if ( !function_exists('acmeblog_social_links') ) :
         </div>
         <?php
     }
-
 endif;
 
 add_filter( 'acmeblog_action_social_links', 'acmeblog_social_links', 10 );

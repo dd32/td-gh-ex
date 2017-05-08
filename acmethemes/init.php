@@ -17,8 +17,23 @@ if( !function_exists('acmeblog_file_directory') ){
         }
         return false;
     }
-
 }
+
+/**
+ * Check empty or null
+ *
+ * @since acmeblog 1.0.0
+ *
+ * @param string $str, string
+ * @return boolean
+ *
+ */
+if( !function_exists('acmeblog_is_null_or_empty') ){
+	function acmeblog_is_null_or_empty( $str ){
+		return ( !isset($str) || trim($str)==='' );
+	}
+}
+
 /*
 * file for customizer theme options
 */
@@ -62,6 +77,9 @@ require $acmeblog_excerpts_form_file_path;
 $acmeblog_related_posts_file_path = acmeblog_file_directory('acmethemes/hooks/related-posts.php');
 require $acmeblog_related_posts_file_path;
 
+require acmeblog_file_directory('acmethemes/hooks/acme-demo-setup.php');
+
+
 /*
 * file for sidebar and widgets
 */
@@ -76,3 +94,12 @@ require $acmeblog_sidebar;
 */
 $acmeblog_sidebar = acmeblog_file_directory('acmethemes/core.php');
 require $acmeblog_sidebar;
+
+/**
+ * Implement Custom Metaboxes
+ */
+$acmeblog_metabox_file_path = acmeblog_file_directory('acmethemes/metabox/metabox.php');
+require $acmeblog_metabox_file_path;
+
+/*themes info*/
+require acmeblog_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');

@@ -80,6 +80,26 @@ if ( !function_exists('acmeblog_blog_layout') ) :
 endif;
 
 /**
+ * Blog layout options
+ *
+ * @since acmeblog 1.0.0
+ *
+ * @param null
+ * @return array $acmeblog_blog_single_image_layout
+ *
+ */
+if ( !function_exists('acmeblog_blog_single_image_layout') ) :
+	function acmeblog_blog_single_image_layout() {
+		$acmeblog_blog_single_image_layout =  array(
+			'large-image' => __( 'Full Image', 'acmeblog' ),
+			'left-image' => __( 'Left Image', 'acmeblog' ),
+			'no-image'   => __( 'No Image', 'acmeblog' )
+		);
+		return apply_filters( 'acmeblog_blog_single_image_layout', $acmeblog_blog_single_image_layout );
+	}
+endif;
+
+/**
  * Related posts layout options
  *
  * @since acmeblog 1.1.0
@@ -100,6 +120,39 @@ if ( !function_exists('acmeblog_reset_options') ) :
 endif;
 
 /**
+ * Blog layout options
+ *
+ * @since AcmeBlog 1.4.0
+ *
+ * @param null
+ * @return array $acmeblog_get_image_sizes_options
+ *
+ */
+if ( !function_exists('acmeblog_get_image_sizes_options') ) :
+	function acmeblog_get_image_sizes_options( $add_disable = false ) {
+		global $_wp_additional_image_sizes;
+		$choices = array();
+		if ( true == $add_disable ) {
+			$choices['disable'] = __( 'No Image', 'acmeblog' );
+		}
+		foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $_size ) {
+			$choices[ $_size ] = $_size . ' ('. get_option( $_size . '_size_w' ) . 'x' . get_option( $_size . '_size_h' ) . ')';
+		}
+		$choices['full'] = __( 'full (original)', 'acmeblog' );
+		if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
+
+			foreach ($_wp_additional_image_sizes as $key => $size ) {
+				$choices[ $key ] = $key . ' ('. $size['width'] . 'x' . $size['height'] . ')';
+			}
+
+		}
+
+		return apply_filters( 'acmeblog_get_image_sizes_options', $choices );
+	}
+endif;
+
+
+/**
  *  Default Theme layout options
  *
  * @since acmeblog 1.0.0
@@ -117,6 +170,8 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
             'acmeblog-feature-post-one'     => -1,
             'acmeblog-feature-post-two'     => -1,
             'acmeblog-enable-feature'       => '',
+            'acmeblog-feature-slider-read-more'  => __('Read More','acmeblog'),
+            'acmeblog-feature-slider-post-number'  => 5,
 
             /*header options*/
             'acmeblog-header-logo'          => '',
@@ -136,20 +191,26 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
 
             /*layout/design options*/
             'acmeblog-default-layout'       => 'boxed',
+
             'acmeblog-sidebar-layout'       => 'right-sidebar',
-            'acmeblog-blog-archive-layout'  => 'full-image',
+            'acmeblog-front-page-sidebar-layout'       => 'right-sidebar',
+            'acmeblog-archive-sidebar-layout'       => 'right-sidebar',
+
+            'acmeblog-enable-sticky-sidebar'       => '',
+            'acmeblog-blog-archive-layout'  => 'large-image',
+            'acmeblog-blog-archive-image-size' => 'full',
             'acmeblog-primary-color'        => '#66CCFF',
             'acmeblog-custom-css'           => '',
 
             /*single related post options*/
             'acmeblog-show-related'         => 1,
+            'acmeblog-related-title'  => __( 'Related posts', 'acmeblog' ),
+            'acmeblog-single-post-layout'  => 'large-image',
+            'acmeblog-single-image-size'  => 'full',
 
             /*theme options*/
             'acmeblog-search-placholder'    => __( 'Search', 'acmeblog' ),
             'acmeblog-show-breadcrumb'      => '',
-
-            /*Reset*/
-            'acmeblog-reset-options'        => '0'
 
         );
 

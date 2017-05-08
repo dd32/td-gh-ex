@@ -2,7 +2,7 @@
 /**
  * Display related posts from same category
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param int $post_id
  * @return void
@@ -22,10 +22,15 @@ if ( !function_exists('acmeblog_related_post_below') ) :
             foreach ($categories as $category) {
                 $category_ids[] = $category->term_id;
             }
+	        $acmeblog_related_title = esc_html( $acmeblog_customizer_all_values['acmeblog-related-title'] );
+            if( !empty( $acmeblog_related_title ) ){
+              ?>
+                <h2 class="widget-title">
+		            <?php echo esc_html( $acmeblog_related_title ); ?>
+                </h2>
+                <?php
+            }
             ?>
-            <h2 class="widget-title">
-                <?php _e('Related posts', 'acmeblog'); ?>
-            </h2>
             <ul class="featured-entries-col featured-entries featured-col-posts featured-related-posts">
                 <?php
                 $acmeblog_cat_post_args = array(
@@ -39,22 +44,19 @@ if ( !function_exists('acmeblog_related_post_below') ) :
                 $acmeblog_featured_query = new WP_Query( $acmeblog_cat_post_args );
 
                 while ( $acmeblog_featured_query->have_posts() ) : $acmeblog_featured_query->the_post();
-
-                    $acmeblog_sidebar_no_thumbnail = 'no-image-500-280.jpg';
                     ?>
                     <li class="acme-col-3">
-                        <figure class="widget-image">
-                            <?php
-                            if ( has_post_thumbnail() ):
-                                $post_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');
-                            else:
-                                $post_thumb[0] = get_template_directory_uri() . '/assets/img/'.$acmeblog_sidebar_no_thumbnail;
-                            endif;
+	                    <?php
+	                    if ( has_post_thumbnail() ):
                             ?>
-                            <a href="<?php the_permalink()?>">
-                                <img src="<?php echo esc_url( $post_thumb[0] ); ?>" alt="<?php esc_attr( the_title_attribute() ); ?>" title="<?php esc_attr(the_title_attribute()); ?>" />
-                            </a>
-                        </figure>
+                            <figure class="widget-image">
+                                <a href="<?php the_permalink()?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </a>
+                            </figure>
+                            <?php
+                        endif;
+	                    ?>
                         <div class="featured-desc">
                             <div class="above-entry-meta">
                                 <?php
@@ -91,7 +93,7 @@ if ( !function_exists('acmeblog_related_post_below') ) :
                     </li>
                     <?php
                 endwhile;
-                wp_reset_query();
+                wp_reset_postdata();
                 ?>
             </ul>
             <div class="clearfix"></div>

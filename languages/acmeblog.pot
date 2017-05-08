@@ -1,5 +1,6 @@
-# Copyright (C) 2015 AcmeThemes
+# Copyright (C) 2015-2017 AcmeThemes
 # This file is distributed under the GNU General Public License v2 or later.
+
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"

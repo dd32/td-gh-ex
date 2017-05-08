@@ -76,12 +76,6 @@ function acmeblog_customize_register( $wp_customize ) {
     $acmeblog_customizer_options_panel_file_path = acmeblog_file_directory('acmethemes/customizer/options/options-panel.php');
     require $acmeblog_customizer_options_panel_file_path;
 
-    /*
-  * file for options reset
-  */
-    $acmeblog_customizer_options_reset_file_path = acmeblog_file_directory('acmethemes/customizer/options/options-reset.php');
-    require $acmeblog_customizer_options_reset_file_path;
-
     /*removing*/
     $wp_customize->remove_panel('header_image');
     $wp_customize->remove_control('header_textcolor');

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 
@@ -43,6 +43,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-<?php get_sidebar( 'left' ); ?>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar( 'left' );
+get_sidebar();
+get_footer();

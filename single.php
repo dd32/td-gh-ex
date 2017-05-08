@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 global $acmeblog_customizer_all_values;
@@ -38,6 +38,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_sidebar( 'left' ); ?>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar( 'left' );
+get_sidebar();
+get_footer();

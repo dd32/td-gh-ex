@@ -2,7 +2,7 @@
 /**
  * Setting global variables for all theme options db saved values
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -22,7 +22,7 @@ add_action( 'acmeblog_action_before_head', 'acmeblog_set_global', 0 );
 /**
  * Doctype Declaration
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -40,7 +40,7 @@ add_action( 'acmeblog_action_before_head', 'acmeblog_doctype', 10 );
 /**
  * Code inside head tage but before wp_head funtion
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -62,7 +62,7 @@ add_action( 'acmeblog_action_before_wp_head', 'acmeblog_before_wp_head', 10 );
 /**
  * Add body class
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -78,6 +78,15 @@ if ( ! function_exists( 'acmeblog_body_class' ) ) :
         if ( 'no-image' == $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] ) {
             $acmeblogbody_classes[] = 'blog-no-image';
         }
+	    if ( $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] == 'large-image') {
+		    $acmeblogbody_classes[] = 'blog-large-image';
+	    }
+	    if( 1 == $acmeblog_customizer_all_values['acmeblog-enable-sticky-sidebar'] ){
+		    $acmeblogbody_classes[] = 'at-sticky-sidebar';
+	    }
+	    if ( $acmeblog_customizer_all_values['acmeblog-single-post-layout'] == 'large-image') {
+		    $acmeblogbody_classes[] = 'single-large-image';
+	    }
         $acmeblogbody_classes[] = acmeblog_sidebar_selection();
 
         return $acmeblogbody_classes;
@@ -89,7 +98,7 @@ add_action( 'body_class', 'acmeblog_body_class', 10, 1);
 /**
  * Page start
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -108,7 +117,7 @@ add_action( 'acmeblog_action_before', 'acmeblog_page_start', 15 );
 /**
  * Skip to content
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -128,7 +137,7 @@ add_action( 'acmeblog_action_before_header', 'acmeblog_skip_to_content', 10 );
 /**
  * Main header
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -198,7 +207,7 @@ if ( ! function_exists( 'acmeblog_header' ) ) :
                                 /**
                                  * Social Sharing
                                  * acmeblog_action_social_links
-                                 * @since acmeblog 1.1.0
+                                 * @since AcmeBlog 1.1.0
                                  *
                                  * @hooked acmeblog_social_links -  10
                                  */
@@ -215,7 +224,8 @@ if ( ! function_exists( 'acmeblog_header' ) ) :
                                 <?php wp_nav_menu(array('theme_location' => 'primary','container' => 'div', 'container_class' => 'acmethemes-nav')); ?>
                                 <?php
                             }
-                            else{
+                            elseif( is_customize_preview() ){
+
                                 ?>
                                 <div style="color: #ffffff;padding: 10px">
                                     <?php _e('Goto Appearance > Menus -: for setting up menu ','acmeblog'); ?>

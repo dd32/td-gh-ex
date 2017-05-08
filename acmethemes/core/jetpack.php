@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 

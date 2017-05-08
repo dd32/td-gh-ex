@@ -8,6 +8,8 @@
  * @subpackage AcmeBlog
  */
 global $acmeblog_customizer_all_values;
+$acmeblog_get_image_sizes_options = $acmeblog_customizer_all_values['acmeblog-blog-archive-image-size'];
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -22,18 +24,17 @@ global $acmeblog_customizer_all_values;
 	</header><!-- .entry-header -->
 
 	<?php
-	if ( $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] == 'full-image') {
+	if (
+		has_post_thumbnail() &&
+		( $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] == 'left-image' ||
+		  $acmeblog_customizer_all_values['acmeblog-blog-archive-layout'] == 'large-image' )
+	) {
 		?>
 		<!--post thumbnal options-->
 		<div class="post-thumb">
-			<?php
-			if( has_post_thumbnail() ):
-				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-			else:
-				$image_url[0] = get_template_directory_uri().'/assets/img/no-image-840-480.jpg';
-			endif;
-			?>
-			<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $image_url[0] ); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" /></a>
+			<a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail( $acmeblog_get_image_sizes_options );?>
+            </a>
 		</div><!-- .post-thumb-->
 	<?php
 	}

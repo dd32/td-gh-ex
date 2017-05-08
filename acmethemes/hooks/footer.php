@@ -2,7 +2,7 @@
 /**
  * Content and content wrapper end
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -22,7 +22,7 @@ add_action( 'acmeblog_action_after_content', 'acmeblog_after_content', 10 );
 /**
  * Footer content
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return null
@@ -57,7 +57,7 @@ add_action( 'acmeblog_action_footer', 'acmeblog_footer', 10 );
 /**
  * Page end
  *
- * @since acmeblog 1.1.0
+ * @since AcmeBlog 1.1.0
  *
  * @param null
  * @return null

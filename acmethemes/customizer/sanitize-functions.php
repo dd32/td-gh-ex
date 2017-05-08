@@ -70,7 +70,7 @@ if ( !function_exists('acmeblog_sanitize_select') ) :
 	function acmeblog_sanitize_select( $input, $setting ) {
 
 		/*Ensure input is a slug.*/
-		$input = sanitize_key( $input );
+		$input = sanitize_text_field( $input );
 
 		/*Get list of choices from the control associated with the setting.*/
 		$choices = $setting->manager->get_control( $setting->id )->choices;

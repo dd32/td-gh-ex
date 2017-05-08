@@ -1,24 +1,42 @@
 <?php
 /*adding theme options panel*/
 $wp_customize->add_panel( 'acmeblog-design-panel', array(
-    'priority'       => 190,
+    'priority'       => 80,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Layout/Design Option', 'acmeblog' )
 ) );
+
+
+$wp_customize->get_section( 'background_image' )->panel = 'acmeblog-design-panel';
+$wp_customize->get_section( 'background_image' )->priority = 50;
+
 
 /*
 * file for default layout
 */
 $acmeblog_customizer_default_layout_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/default-layout.php');
 require $acmeblog_customizer_default_layout_file_path;
-
 /*
 * file for sidebar layout
 */
-$acmeblog_customizer_sidebar_layout_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/sidebar-layout.php');
-require $acmeblog_customizer_sidebar_layout_file_path;
+require acmeblog_file_directory('acmethemes/customizer/design-options/sidebar-layout.php');
 
+/*
+* file for front page sidebar layout options
+*/
+require acmeblog_file_directory('acmethemes/customizer/design-options/front-page-sidebar-layout.php');
+
+/*
+* file for front archive sidebar layout options
+*/
+require acmeblog_file_directory('acmethemes/customizer/design-options/archive-sidebar-layout.php');
+
+/*
+* file for sticky sidebar
+*/
+$acmeblog_customizer_sticky_sidebar_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/sticky-sidebar.php');
+require $acmeblog_customizer_sticky_sidebar_file_path;
 /*
 * file for blog layout
 */
@@ -30,12 +48,6 @@ require $acmeblog_customizer_blog_layout_file_path;
 */
 $acmeblog_customizer_colors_options_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/colors-options.php');
 require $acmeblog_customizer_colors_options_file_path;
-
-/*
-* file for background image layout
-*/
-$acmeblog_customizer_background_image_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/background-image.php');
-require $acmeblog_customizer_background_image_file_path;
 
 /*
 * file for custom css

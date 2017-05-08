@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 
@@ -50,7 +50,7 @@ do_action( 'acmeblog_action_after_footer' );
  * @hooked acmeblog_page_end - 10
  */
 do_action( 'acmeblog_action_after' );
-?>
-<?php wp_footer(); ?>
+
+wp_footer(); ?>
 </body>
 </html>

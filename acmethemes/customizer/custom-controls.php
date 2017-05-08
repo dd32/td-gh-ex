@@ -47,7 +47,8 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customi
             );
         }
     }
-    endif;
+endif;
+
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customize_Post_Dropdown_Control' )):
 
     /**
@@ -78,7 +79,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customi
          */
         public function render_content() {
             $acmeblog_customizer_post_args = array(
-                'posts_per_page'   => -1,
+                'posts_per_page'   => 100,
             );
             $acmeblog_posts = get_posts( $acmeblog_customizer_post_args );
             if(!empty($acmeblog_posts))  {

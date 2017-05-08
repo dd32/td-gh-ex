@@ -1,7 +1,7 @@
 <?php
 /*adding feature options panel*/
 $wp_customize->add_panel( 'acmeblog-feature-panel', array(
-    'priority'       => 105,
+    'priority'       => 40,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Featured Section Options', 'acmeblog' ),

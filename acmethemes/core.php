@@ -57,9 +57,6 @@ if ( ! function_exists( 'acmeblog_setup' ) ) :
          * to output valid HTML5.
          */
         add_theme_support( 'html5', array(
-            'search-form',
-            'comment-form',
-            'comment-list',
             'gallery',
             'caption',
         ) );
@@ -69,6 +66,9 @@ if ( ! function_exists( 'acmeblog_setup' ) ) :
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );
+
+	    /*woocommerce support*/
+	    add_theme_support( 'woocommerce' );
     }
 endif; // acmeblog_setup
 add_action( 'after_setup_theme', 'acmeblog_setup' );
@@ -89,29 +89,35 @@ add_action( 'after_setup_theme', 'acmeblog_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function acmeblog_scripts() {
+	global $acmeblog_customizer_all_values;
+
     /*bxslider css*/
-    wp_enqueue_style( 'acmeblog-bxslider-css', get_template_directory_uri() . '/assets/library/bxslider/css/jquery.bxslider.min.css', array(), '4.2.5' );
+    wp_enqueue_style( 'bxslider', get_template_directory_uri() . '/assets/library/bxslider/css/jquery.bxslider.min.css', array(), '4.2.5' );
 
     /*google font*/
     wp_enqueue_style( 'acmeblog-googleapis', '//fonts.googleapis.com/css?family=Oswald:300,400,700|Lato:400,700', array(), '1.0.1' );
 
     /*Font-Awesome-master*/
-    wp_enqueue_style( 'acmeblog-fontawesome', get_template_directory_uri() . '/assets/library/Font-Awesome/css/font-awesome.min.css', array(), '4.5.0' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/library/Font-Awesome/css/font-awesome.min.css', array(), '4.5.0' );
 
     /*custom-css*/
     wp_enqueue_style( 'acmeblog-style', get_stylesheet_uri() );
 
     /*jquery start*/
     /*html5shiv*/
-    wp_enqueue_script('acmeblog-html5shiv', get_template_directory_uri() . '/assets/library/html5shiv/html5shiv.min.js', array('jquery'), '3.7.3', false);
-    wp_script_add_data( 'acmeblog-html5shiv', 'conditional', 'lt IE 9' );
+    wp_enqueue_script('html5shiv', get_template_directory_uri() . '/assets/library/html5shiv/html5shiv.min.js', array('jquery'), '3.7.3', false);
+    wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
     /*respond js*/
-    wp_enqueue_script('acmeblog-respond', get_template_directory_uri() . '/assets/library/respond/respond.min.js', array('jquery'), '1.1.2', false);
-    wp_script_add_data( 'acmeblog-respond', 'conditional', 'lt IE 9' );
+    wp_enqueue_script('respond', get_template_directory_uri() . '/assets/library/respond/respond.min.js', array('jquery'), '1.1.2', false);
+    wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
+
+	if( 1 == $acmeblog_customizer_all_values['acmeblog-enable-sticky-sidebar'] ){
+		wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/assets/library/theia-sticky-sidebar/theia-sticky-sidebar.js', array('jquery'), '1.4.0', 1);
+	}
 
     /*bxslider js*/
-    wp_enqueue_script('acmeblog-bxslider-js', get_template_directory_uri() . '/assets/library/bxslider/js/jquery.bxslider.min.js', array('jquery'), '4.2.5', 1);
+    wp_enqueue_script('bxslider', get_template_directory_uri() . '/assets/library/bxslider/js/jquery.bxslider.min.js', array('jquery'), '4.2.5', 1);
 
     /*custom-js*/
     wp_enqueue_script('acmeblog-custom', get_template_directory_uri() . '/assets/js/acmeblog-custom.js', array('jquery'), '1.0.1', 1);
@@ -127,10 +133,9 @@ add_action( 'wp_enqueue_scripts', 'acmeblog_scripts' );
  */
 function acmeblog_admin_scripts( $hook ) {
 
-    if ( 'widgets.php' == $hook ) {
-        wp_enqueue_media();
-        wp_enqueue_script( 'acmeblog-widgets-script', get_template_directory_uri() . '/assets/js/acme-widget.js', array( 'jquery' ), '1.0.0' );
-    }
+	wp_enqueue_media();
+	wp_enqueue_script( 'acmeblog-widgets-script', get_template_directory_uri() . '/assets/js/acme-widget.js', array( 'jquery' ), '1.0.0' );
+
 
 }
 add_action( 'admin_enqueue_scripts', 'acmeblog_admin_scripts' );
