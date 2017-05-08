@@ -43,7 +43,7 @@
                                             <div class="grid-titles-info-post">
                                                 <div class="grid-blogs-titles">
                                                     <div class="blog-date">
-                                                        <span class="date"><?php echo esc_attr(get_the_date('d M Y')); ?></span>
+                                                        <span class="date"><?php echo esc_attr(get_the_date(get_option('date_format'))); ?></span>
                                                     </div>
                                                     <?php if(get_the_title()){ ?>
                                                         <div class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>

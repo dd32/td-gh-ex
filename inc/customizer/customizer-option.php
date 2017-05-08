@@ -94,7 +94,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'primary_menu_search_option',
 	        array(
-	            'default' => 'show',
+	            'default' => 'hide',
 	            'transport' => 'postMessage',
 	            'sanitize_callback' => 'beetech_sanitize_switch_option',
 	            )
@@ -221,7 +221,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_service_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -362,7 +362,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_team_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -473,7 +473,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_about_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -667,7 +667,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_testimonials_option',
 	        	array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -740,7 +740,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_fact_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -917,7 +917,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_portfolio_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 		        )
@@ -1008,7 +1008,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_blog_option',
 	        array(
-	            'default' => 'show',
+	            'default' => 'hide',
 	            'transport' => 'postMessage',
 	            'sanitize_callback' => 'beetech_sanitize_switch_option',
 	            )
@@ -1100,7 +1100,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_clients_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 	            )
@@ -1210,7 +1210,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'homepage_contact_option',
 		        array(
-		            'default' => 'show',
+		            'default' => 'hide',
 		            'transport' => 'postMessage',
 		            'sanitize_callback' => 'beetech_sanitize_switch_option',
 	            )

@@ -171,14 +171,6 @@ function beetech_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'beetech_scripts' );
 
-/** admin enqueue **/
-if( ! function_exists( 'beetech_admin_enqueue' ) ):
-	function beetech_admin_enqueue() {
-		wp_enqueue_style( 'beetech-admin-style', get_template_directory_uri() . '/css/admin-styles.css' );
-	}
-endif;
-
-add_action( 'admin_enqueue_scripts', 'beetech_admin_enqueue' );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

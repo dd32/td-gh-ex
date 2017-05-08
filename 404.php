@@ -14,13 +14,13 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<span class="404-style"><?php esc_html_e( '400', 'beetech' ); ?></span>
+				<span class="404-style"><?php esc_html_e( '404', 'beetech' ); ?></span>
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'beetech' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'beetech' ); ?></p>
+					<p><?php esc_html_e( 'Nothing Found Please Try Again With Another Link', 'beetech' ); ?></p>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 

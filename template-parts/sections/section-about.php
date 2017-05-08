@@ -118,7 +118,7 @@
                 						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
                 					</p>
                                     <?php } ?>
-                					<a href="<?php the_permalink() ?>" class="learn-more"><?php _e('Learn more','beetech'); ?></a>
+                					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
                 				</div>
                 			</div>
                         <?php 
@@ -146,7 +146,7 @@
                 						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
                 					</p>
                                     <?php } ?>
-                					<a href="<?php the_permalink() ?>" class="learn-more"><?php _e('Learn more','beetech'); ?></a>
+                					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
                 				</div>
                 			</div>
                         <?php 
@@ -174,7 +174,7 @@
                 						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
                 					</p>
                                     <?php } ?>
-                					<a href="<?php the_permalink() ?>" class="learn-more"><?php _e('Learn more','beetech'); ?></a>
+                					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
                 				</div>
                 			</div>
                         <?php 
@@ -202,7 +202,7 @@
                 						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
                 					</p>
                                     <?php } ?>
-                					<a href="<?php the_permalink() ?>" class="learn-more"><?php _e('Learn more','beetech'); ?></a>
+                					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
                 				</div>
                 			</div>
                         <?php 

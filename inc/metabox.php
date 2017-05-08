@@ -63,33 +63,30 @@ if( ! function_exists( 'beetech_post_meta_callback' ) ):
 		global $post, $beetech_post_sidebar_options;
 		wp_nonce_field( basename( __FILE__ ), 'beetech_post_meta_nonce' );
 ?>
-		<div class="bt-meta-container clearfix"> 
-			<div class="bt-metabox-content-wrapper">
+		<table class="form-table">
+<tr>
+    <td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','beetech'); ?></em></td>
+</tr>
 
-				<!-- Sidebar tab content -->
-				<div class="bt-single-meta" id="bt-sidebar-content">
-					<div class="content-header">
-						<span class="section-desc"><em><?php esc_html_e( 'Please Choose Sidebar. Default Sidebar Is Right Sidebar.', 'beetech' ); ?></em></span>
-					</div><!-- .content-header -->
-					<div class="bt-meta-options-wrap">
-						<div class="buttonset">
-							<?php
-			                   	foreach ( $beetech_post_sidebar_options as $field ) {
-			                    	$beetech_post_sidebar = get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true );
-			                ?>
-			                    	<input type="radio" id="<?php echo esc_attr( $field['id'] ); ?>" value="<?php echo esc_attr($field['value']); ?>" name="beetech_post_sidebar_layout" <?php checked( $field['value'], $beetech_post_sidebar ); if( empty( $beetech_post_sidebar ) && $field['value'] == 'default_layout' ){ echo "checked='checked'";}  ?> />
-			                    	<label for="<?php echo esc_attr( $field['id'] ); ?>">
-			                    		<span class="screen-reader-text"><?php echo esc_html( $field['label'] ); ?></span>
-			                    		<img src="<?php echo esc_url( $field['thumbnail'] ); ?>" title="<?php echo esc_attr( $field['label'] ); ?>" alt="<?php echo esc_attr( $field['label'] ); ?>" />
-			                    	</label>
-			                    
-			                <?php } ?>
-						</div><!-- .buttonset -->
-					</div><!-- .meta-options-wrap  -->
-				</div><!-- #bt-sidebar-content -->
-
-			</div><!-- .bt-metabox-content-wrapper -->
-			</div><!-- .bt-meta-container -->
+<tr>
+    <td>
+    <?php  
+       foreach ($beetech_post_sidebar_options as $beetech_post_sidebar_option) {
+        
+                    $beetech_post_sidebar = get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true ); ?>
+    
+                    <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
+                        <label class="description">
+                            <span><img src="<?php echo esc_url( $beetech_post_sidebar_option['thumbnail'] ); ?>" alt="" /></span></br>
+                            <input type="radio" name="beetech_post_sidebar_layout" value="<?php echo esc_html($beetech_post_sidebar_option['value']); ?>" <?php checked( $beetech_post_sidebar_option['value'], $beetech_post_sidebar ); if(empty($beetech_post_sidebar) && $beetech_post_sidebar_option['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo esc_html($beetech_post_sidebar_option['label']); ?>
+                        </label>
+                    </div>
+                    <?php } // end foreach 
+                    ?>
+                    <div class="clear"></div>
+    </td>
+</tr>
+</table>
 <?php		
 	}
 endif;
