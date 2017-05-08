@@ -10,6 +10,16 @@
  */
 
 /*
+ * Theme constants
+ */
+define( "THEME_DIR", get_template_directory() );
+define( "THEME_DIR_URI", get_template_directory_uri() );
+define( "STYLESHEET_DIR", get_stylesheet_directory() );
+define( "STYLESHEET_DIR_URI", get_stylesheet_directory_uri() );
+$the_theme = wp_get_theme();
+define( "THEME_VERSION", $the_theme->get( 'Version' ) );
+
+/*
  * Setup and registration functions
  */
 function boldr_setup(){
@@ -22,7 +32,7 @@ function boldr_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('boldr-lite', get_template_directory() . '/languages');
+	load_theme_textdomain('boldr-lite', THEME_DIR . '/languages');
 
 	/* Feed links support */
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +60,7 @@ function boldr_setup(){
 	/* Custom background support */
 	add_theme_support( 'custom-background',
 						array(	'default-color' => '333333',
-								'default-image' => get_template_directory_uri() . '/img/black-leather.png',
+								'default-image' => THEME_DIR_URI . '/img/black-leather.png',
 								)
 					);
 
@@ -150,28 +160,24 @@ function boldr_styles() {
 		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 		 * or the parent theme's version otherwise
 		 */
-		wp_register_style( 'boldr', get_theme_file_uri( $stylesheet ) );
+		wp_register_style( 'boldr', get_theme_file_uri( $stylesheet ), array(), THEME_VERSION );
 
 		// Enqueue style.css from the current theme
-		wp_register_style( 'boldr-style', get_theme_file_uri( '/style.css' ) );
+		wp_register_style( 'boldr-style', get_theme_file_uri( '/style.css' ), array(), THEME_VERSION );
 
 	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-
-		$template_directory_uri = get_template_directory_uri(); // Parent theme URI
-		$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
-		$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
 		/* Child theme support:
 		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 		 * or the parent theme's version otherwise
 		 */
-		if ( @file_exists( $stylesheet_directory . $stylesheet ) )
-			wp_register_style( 'boldr', $stylesheet_directory_uri . $stylesheet );
+		if ( @file_exists( STYLESHEET_DIR . $stylesheet ) )
+			wp_register_style( 'boldr', STYLESHEET_DIR_URI . $stylesheet, array(), THEME_VERSION );
 		else
-			wp_register_style( 'boldr', $template_directory_uri . $stylesheet );
+			wp_register_style( 'boldr', THEME_DIR_URI . $stylesheet, array(), THEME_VERSION );
 
 		// Always enqueue style.css from the current theme
-		wp_register_style( 'boldr-style', $stylesheet_directory_uri . '/style.css');
+		wp_register_style( 'boldr-style', STYLESHEET_DIR_URI . '/style.css', array(), THEME_VERSION );
 
 	endif;
 
@@ -199,9 +205,9 @@ add_action( 'init', 'boldr_editor_styles' );
 function boldr_scripts() {
 
 	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
-		wp_enqueue_script('boldr', get_theme_file_uri( '/js/boldr.min.js' ), array('jquery','hoverIntent'));
+		wp_enqueue_script('boldr', get_theme_file_uri( '/js/boldr.min.js' ), array('jquery','hoverIntent'), THEME_VERSION );
 	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery','hoverIntent'));
+		wp_enqueue_script('boldr', THEME_DIR_URI . '/js/boldr.min.js', array('jquery','hoverIntent'), THEME_VERSION );
 	endif;
   /* Threaded comments support */
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
@@ -224,7 +230,7 @@ add_filter('post_class','boldr_remove_hentry');
  * Remove "rel" tags in category links (HTML5 invalid)
  */
 function boldr_remove_rel_cat( $text ) {
-	$text = str_replace(' rel="category"', "", $text); 
+	$text = str_replace(' rel="category"', "", $text);
   $text = str_replace(' rel="category tag"', ' rel="tag"', $text);
   return $text;
 }
