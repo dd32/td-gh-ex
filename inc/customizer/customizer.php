@@ -278,13 +278,13 @@ class Wortex_Customizer {
 	public static function customize_controls_scripts(){
 		wp_enqueue_style(
 			'wortex-customizer-controls-style',
-			get_template_directory_uri() . '/inc/customizer/css/customizer-controls.css',
+			THEME_DIR_URI . '/inc/customizer/css/customizer-controls.css',
 			array( 'customize-controls' )
 		);
 
 		wp_register_script(
 			  'wortex-customizer-section',
-			  get_template_directory_uri() . '/inc/customizer/js/wortex-customizer-section.js',
+			  THEME_DIR_URI . '/inc/customizer/js/wortex-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
 			  '',
 			  true
