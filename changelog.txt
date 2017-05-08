@@ -48,3 +48,6 @@ i) Fixed escaping issues.
 
 Version 1.0.12 (08-05-2017)
 i) add feature image menu option and documentation link
+
+Version 1.0.13 (08-05-2017)
+i) misc chages

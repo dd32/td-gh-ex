@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2017-05-08 15:18+0530\n"
+"POT-Creation-Date: 2017-05-06 11:32+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,42 +54,38 @@ msgstr ""
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:70
-msgid "Contact Form 7"
-msgstr ""
-
-#: functions.php:84
+#: functions.php:79
 msgid "Install Recommended Plugins"
 msgstr ""
 
-#: functions.php:85 inc/class-tgm-plugin-activation.php:328
+#: functions.php:80 inc/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr ""
 
-#: functions.php:86 inc/class-tgm-plugin-activation.php:330
+#: functions.php:81 inc/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions.php:87 inc/class-tgm-plugin-activation.php:333
+#: functions.php:82 inc/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions.php:88 inc/class-tgm-plugin-activation.php:336
+#: functions.php:83 inc/class-tgm-plugin-activation.php:336
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:89 inc/class-tgm-plugin-activation.php:342
+#: functions.php:84 inc/class-tgm-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:90
+#: functions.php:85
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -102,21 +98,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:91 inc/class-tgm-plugin-activation.php:360
+#: functions.php:86 inc/class-tgm-plugin-activation.php:360
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:92 inc/class-tgm-plugin-activation.php:366
+#: functions.php:87 inc/class-tgm-plugin-activation.php:366
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:93
+#: functions.php:88
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -129,7 +125,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:94 inc/class-tgm-plugin-activation.php:348
+#: functions.php:89 inc/class-tgm-plugin-activation.php:348
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -140,7 +136,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:95
+#: functions.php:90
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -153,34 +149,30 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:96 inc/class-tgm-plugin-activation.php:371
+#: functions.php:91 inc/class-tgm-plugin-activation.php:371
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:97 inc/class-tgm-plugin-activation.php:381
+#: functions.php:92 inc/class-tgm-plugin-activation.php:381
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:98
+#: functions.php:93
 msgid "Return to Recommended Plugins Installer"
 msgstr ""
 
-#: functions.php:99 inc/class-tgm-plugin-activation.php:387
+#: functions.php:94 inc/class-tgm-plugin-activation.php:387
 #: inc/class-tgm-plugin-activation.php:3159
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions.php:100
+#: functions.php:95
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: functions.php:110 functions.php:111
-msgid "Astrology Pro Features"
 msgstr ""
 
 #: inc/breadcumbs.php:9
@@ -637,7 +629,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:29
+#: single.php:29 template-parts/content-full.php:15
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -705,15 +697,13 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Astrology Pro is a premium quality WordPress theme for astrologers, pandit, "
-"and religious gurus. It is a modern looking classy WordPress theme which can "
+"Astrology is a premium quality WordPress theme for astrologers , pudits and "
+"religious gurus. It is a modern looking classy WordPress theme which can "
 "also be used for almost all kinds of individual consultants as it is easily "
 "customizable through WordPress Customizer options. It is mobile friendly as "
-"it is built on top of the Twitter bootstrap framework. It is search engine "
+"it is built on top of Twitter bootstrap framework. It is search engine "
 "friendly too. The theme is supported by our professional team of designers "
-"and developers so feel free to use it and enjoy its awesome features You can "
-"check the theme documentation here: https://vaultthemes.com/documentation/"
-"astrology/ To check how powerful the theme is."
+"and developers so feel free to use it and enjoy its awesome features."
 msgstr ""
 
 #. Author of the plugin/theme

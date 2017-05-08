@@ -3,7 +3,7 @@
 Astrology Theme by VaultThemes http://vaultthemes.com/
 
 === About Astrology ===
-Astrology Pro is a premium quality WordPress theme for astrologers, pandit, and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of the Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
+Astrology is a premium quality WordPress theme for astrologers, pandit, and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of the Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
 
 === Tags ===
 one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-background,custom-menu,featured-images,translation-ready,blog,footer-widgets,full-width-template,theme-options,threaded-comments
