@@ -45,3 +45,6 @@ i) Fixed default menu issue.
 
 Version 1.0.11 (06-05-2017)
 i) Fixed escaping issues.
+
+Version 1.0.12 (08-05-2017)
+i) add feature image menu option and documentation link

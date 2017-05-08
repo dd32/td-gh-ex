@@ -65,6 +65,11 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
            'name'      => __('SiteOrigin Widgets Bundle','astrology'),
            'slug'      => 'so-widgets-bundle',
            'required'  => false,
+        ),
+        array(
+           'name'      => __('Contact Form 7','astrology'),
+           'slug'      => 'contact-form-7',
+           'required'  => true,
         )
       );
       $config = array(
@@ -99,6 +104,40 @@ function astrology_action_tgm_plugin_active_register_required_plugins() {
       tgmpa( $plugins, $config );
     }
 }
+
+function astrology_menu_settings() {
+    $astrology_menu = array(
+        'page_title' => __('Astrology Pro Features', 'astrology'),
+        'menu_title' => __('Astrology Pro Features', 'astrology'),
+        'capability' => 'edit_theme_options',
+        'menu_slug' => 'astrology',
+        'callback' => 'astrologypro_page'
+    );
+    return apply_filters('astrology_menu', $astrology_menu);
+}
+
+add_action('admin_menu', 'astrology_options_add_page');
+
+function astrology_options_add_page() {
+  $astrology_menu = astrology_menu_settings();
+  add_theme_page($astrology_menu['page_title'], $astrology_menu['menu_title'], $astrology_menu['capability'], $astrology_menu['menu_slug'], $astrology_menu['callback']);
+  add_theme_page( 'Astrology Documentation', 'Astrology Documentation', 'manage_options', 'astrology-documentation', 'astrology_documentation', 400 );
+}
+
+function astrologypro_page(){?>
+<div class="astrologypro_version">
+  <a href="<?php echo esc_url('https://vaultthemes.com/wordpress-themes/astrology-pro/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url('https://vaultthemes.com/featured-images/astrology.jpg') ?>" width="100%" height="auto" />
+  </a>
+</div>
+
+<?php
+}
+function astrology_documentation(){ ?>
+  <script>
+    window.location = "https://vaultthemes.com/documentation/astrology/";
+  </script>
+<?php }
 /**
  * wp enqueue style and script.
  */

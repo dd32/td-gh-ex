@@ -26,7 +26,7 @@
                 }
             });
             cssmenu.find('li ul').parent().addClass('has-sub');
-            var multiTg = function () {
+            multiTg = function () {
                 cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
                 cssmenu.find('.submenu-button').on('click', function () {
                     jQuery(this).toggleClass('submenu-opened');
@@ -40,7 +40,7 @@
             if (settings.format === 'multitoggle') multiTg();
             else cssmenu.addClass('dropdown');
             if (settings.sticky === true) cssmenu.css('position', 'fixed');
-            var resizeFix = function () {
+            resizeFix = function () {
                 var mediasize = 1024;
                 if (jQuery(window).width() > mediasize) {
                     cssmenu.find('ul').show();

@@ -383,9 +383,8 @@ a.btn-effect:hover {
     position: relative;
     font: 24px verdana;
     float: left;
-    line-height: 1.4;
+    line-height: 70px;
     max-width: 250px;
-    margin: 15px 0 0;
 }
 .logo a {
     color: #ad2737;
@@ -720,7 +719,7 @@ a {
 }
 .bloginner-content-part,.fullwidth-content-part{
     clear: both;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .bloginner-content-part .blog-img {
     margin: 0px 0 20px

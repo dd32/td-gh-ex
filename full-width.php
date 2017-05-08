@@ -3,7 +3,8 @@
  * Template Name: Full Width
  * @package astrology
  */
-get_header(); ?>
+get_header(); 
+if(!is_front_page()){ ?>
 <section id="blog-title-top">
     <div class="container">
         <div class="blog-title">
@@ -12,6 +13,7 @@ get_header(); ?>
         </div>
     </div>
 </section>
+<?php } ?>
 <section>
     <div class="container">
         <div class="row">               
