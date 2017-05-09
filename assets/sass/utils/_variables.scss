@@ -1,0 +1,21 @@
+$base-font: 		"Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$header-font: 		$base-font;
+$ms-base:           1em, .875em;
+$ms-ratio:          1.618;
+
+// layout sizes
+$desktop:			768px;
+$handheld:			568px;
+$container-width:	1074px;
+
+$susy: (
+	columns: 12,
+	gutters: 1,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+
+	use-custom: (
+		box-sizing: false
+	)
+);

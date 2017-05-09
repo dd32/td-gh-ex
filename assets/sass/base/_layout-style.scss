@@ -1,0 +1,102 @@
+@include susy-media($desktop) {
+
+	.container {
+			@include clearfix;
+			@include container($container-width);
+			padding: 0 ms(5);
+			box-sizing: content-box;
+	}
+
+	.site-branding {
+
+		@include span(4 of 12);
+
+		.custom-logo {
+			max-width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+		
+	}
+
+	.main-navigation {
+		@include span(last 8 of 12);
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		.main-navigation-menu {
+
+			margin: 0;
+			padding: 0;
+			float: right;
+		}
+	}
+	
+	.content-area {
+
+		@include span(8 of 12);
+	}
+	.sidebar {
+
+		@include span(last 4 of 12);
+
+	}
+
+	/**
+	 * Footer Widgets
+	 */
+	.footer-widgets {
+		@include clearfix;
+		padding-top: ms(5);
+		border-bottom: 1px solid #f5f5f5;
+		
+
+		&.col-2 {
+			.block {
+				@include span(6 of 12);
+
+				&.footer-widget-2 {
+					@include last;
+				}
+			}
+		}
+
+		&.col-3 {
+			.block {
+				@include span(4 of 12);
+
+				&.footer-widget-3 {
+					@include last;
+				}
+			}
+		}
+
+		&.col-4 {
+			.block {
+				@include span(3 of 12);
+
+				&.footer-widget-4 {
+					@include last;
+				}
+			}
+		}
+	}
+	
+
+}
+
+@include susy-media (max-width $container-width) {
+	.container {
+		margin-left: ms(5);
+		margin-right: ms(5);
+		padding: 0;
+	}
+}
+
+@include susy-media (max-width $handheld) {
+	.container {
+		margin-left: ms(2);
+		margin-right: ms(2);
+		padding: 0;
+	}
+}

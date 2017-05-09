@@ -1,0 +1,22 @@
+/*--------------------
+* Theme Option Style
+----------------------*/
+.wrap-featured-layout {
+	width: 100%;
+	float: left;
+}
+.featured-layout-style {
+	width: 32%;
+	height: 44px;
+	float: left;
+	vertical-align: top;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.position-left {
+	text-align: left;
+}
+.wp-admin label.featured-layout-style input[type=radio] {
+	float: left;
+	margin-top: 14px;
+}
