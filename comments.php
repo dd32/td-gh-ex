@@ -1,8 +1,8 @@
 <div id="comments" class="comments">
 	<?php if (post_password_required()) : ?>
 	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'quickchic' ); ?></p>
-</div>
 	<?php return; endif; ?>
+</div>
 
 <?php if (have_comments()) : ?>
 <h3 id="comments">
