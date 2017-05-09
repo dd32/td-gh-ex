@@ -1,7 +1,7 @@
 === QuickPress Theme ===
 
 Theme Name: QuickPress 
-Theme URI: http://www.quickonlinethemes.com/wordpress/quickpress/
+Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme.
 
 Author: QuickOnlineTips
