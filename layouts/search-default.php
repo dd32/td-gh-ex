@@ -41,7 +41,7 @@
 			<article class="post-article">
                     
 				<h1><?php esc_html_e( 'Not found.',"suevafree" ) ?></h1>
-				<h1><?php esc_html_e( 'Sorry, no posts matched your criteria',"suevafree" ) ?> <strong>: <?php echo esc_attr($s); ?> </strong></h1>
+				<h2><?php esc_html_e( 'Sorry, no posts matched your criteria',"suevafree" ) ?> <strong>: <?php echo esc_attr($s); ?> </strong></h2>
      
 			</article>
     

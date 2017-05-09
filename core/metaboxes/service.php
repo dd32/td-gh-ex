@@ -61,7 +61,7 @@ array(  "type" => "begintab",
 		),
 		
 		array(  "name" => esc_html__( "Font Awesome Icon","suevafree"),
-				"desc" => esc_attr__( "Insert the name of a Font Awesome icon for this service.","suevafree"),
+				"desc" => esc_html__( "Insert the name of a Font Awesome icon for this service.","suevafree"),
 				"id" => "suevafree_service_icon",
 				"type" => "text",
 				"std" => "fa-heart",

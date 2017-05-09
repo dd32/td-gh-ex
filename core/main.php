@@ -673,7 +673,7 @@ if (!function_exists('suevafree_customize_excerpt_more')) {
 	
 			endif;
 	
-			return $content. '<a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','suevafree').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a>';
+			return $content. '<a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_attr__('Read More','suevafree').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a>';
 
 		endif;
 		

@@ -74,10 +74,10 @@ if( !class_exists( 'suevafree_customize' ) ) {
 	
 			$suevafree_details = array(
 			
-				'label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
-				'url' => esc_url('https://www.themeinprogress.com/sueva/?aff=panel'),
-				'demotitle' => esc_html__( 'Live Demo', 'suevafree' ),
-				'demourl' => esc_url('http://demo.themeinprogress.com/?theme=Suevafree')
+				'sueva_label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
+				'sueva_url' => esc_url('https://www.themeinprogress.com/sueva/?aff=panel'),
+				'avana_label' => esc_html__( 'Upgrade to Avana Premium', 'suevafree' ),
+				'avana_url' => esc_url('https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?aff=panel')
 			
 			);
 		
@@ -354,8 +354,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/'.get_stylesheet() ); ?>" title="<?php esc_html_e('Open a new ticket','suevafree');?>" target="_blank"><?php esc_html_e('Open a new ticket','suevafree');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php esc_html_e('Send a reminder','suevafree');?>" target="_blank"><?php esc_html_e('Send a reminder','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/'.get_stylesheet() ); ?>" title="<?php esc_attr_e('Open a new ticket','suevafree');?>" target="_blank"><?php esc_html_e('Open a new ticket','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php esc_attr_e('Send a reminder','suevafree');?>" target="_blank"><?php esc_html_e('Send a reminder','suevafree');?></a></li>
                 
                 </ul>
     
@@ -364,10 +364,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_html_e('Rate this Theme','suevafree');?>" target="_blank"><?php esc_html_e('Rate this Theme','suevafree');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php esc_html_e('Like on Facebook','suevafree');?>" target="_blank"><?php esc_html_e('Like on Facebook','suevafree');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php esc_html_e('Subscribe our newsletter','suevafree');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','suevafree');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_html_e('Download our free WordPress themes','suevafree');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','suevafree');?>" target="_blank"><?php esc_html_e('Rate this Theme','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php esc_attr_e('Like on Facebook','suevafree');?>" target="_blank"><?php esc_html_e('Like on Facebook','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','suevafree');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','suevafree');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_attr_e('Download our free WordPress themes','suevafree');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','suevafree');?></a></li>
                 
                 </ul>
     

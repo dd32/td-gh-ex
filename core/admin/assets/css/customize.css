@@ -12,8 +12,8 @@ li#accordion-section-suevafree-customize-info h3.accordion-section-title:after {
 	color: #fff !important;
 }
 
-a.getpremium ,
-a.demobutton {
+a.getsueva ,
+a.getavana {
 	width:90%;
 	content:"plus";
 	position: relative;
@@ -35,32 +35,27 @@ a.demobutton {
 	text-decoration:none
 }
 
-a.getpremium {
+a.getsueva {
 	background-color: #ec7063 !important;
 }
 
-a.getpremium:hover {
+a.getavana {
+	background-color: #2D3032 !important;
+	margin-top:5px
+}
+a.getsueva:hover ,
+a.getavana:hover {
 	color: #fff !important;
 	background-color: #d54e21 !important;
 }
 
-a.demobutton {
-	background-color: #2D3032 !important;
-	margin-top:5px
-}
-
-a.demobutton:hover {
-	color: #fff !important;
-	background-color: #5C97BF !important;
-}
-
-a.getpremium:hover ,
-a.getpremium:focus ,
-a.getpremium:active ,
-a.demobutton:hover ,
-a.demobutton:focus ,
+a.getsueva:hover ,
+a.getsueva:focus ,
+a.getsueva:active ,
+a.getavana:hover ,
+a.getavana:focus ,
 a.demobutton:active {
-	border: none !important;
+	getavana: none !important;
 	outline: none !important;
 	box-shadow: none;
 	-moz-box-shadow: none;
