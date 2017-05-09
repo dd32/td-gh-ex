@@ -71,7 +71,7 @@ function quickpic_excerpt_more( $more ) {
 // credits
 function quickpic_credits() {
     echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickpic/" title="QuickPic Theme">QuickPic Theme</a>' 
+	<a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic Theme" rel="nofollow" target="_blank">QuickPic Theme</a>' 
  	. __(' powered by ', 'quickpic') . 
 	'<a href="http://wordpress.org">WordPress</a>
 	</p>';

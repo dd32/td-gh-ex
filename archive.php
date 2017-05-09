@@ -1,16 +1,18 @@
 <?php get_header(); ?>
-	<div id="content" class="narrowcolumn">
+<div id="content" class="narrowcolumn">
 
-<main>
-<section>
+    <main>
+        <section>
 
-<h1><?php _e( 'Archives: ', 'quickpic' ); single_cat_title(); ?></h1>
-<?php get_template_part('loop'); ?>
-<?php get_template_part('pagination'); ?>
+            <h1>
+                <?php _e( 'Archives: ', 'quickpic' ); single_cat_title(); ?>
+            </h1>
+            <?php get_template_part('loop'); ?>
+            <?php get_template_part('pagination'); ?>
 
-</section>
-</main>
+        </section>
+    </main>
 
 </div>
- 
+
 <?php get_footer(); ?>
