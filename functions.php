@@ -76,6 +76,9 @@ function radiate_setup() {
 
    // Enable support for WooCommerce
    add_theme_support( 'woocommerce' );
+   add_theme_support( 'wc-product-gallery-zoom' );
+   add_theme_support( 'wc-product-gallery-lightbox' );
+   add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // radiate_setup
 add_action( 'after_setup_theme', 'radiate_setup' );
@@ -150,5 +153,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Demo Importer Configs.
+ */
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}
 
 ?>
