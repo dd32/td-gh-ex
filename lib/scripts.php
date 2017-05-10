@@ -23,8 +23,8 @@ function kadence_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('kadence_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', false, '298', true);
-  wp_register_script('kadence_main', get_template_directory_uri() . '/assets/js/main.js', false, '298', true);
+  wp_register_script('kadence_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', false, '299', true);
+  wp_register_script('kadence_main', get_template_directory_uri() . '/assets/js/main.js', false, '299', true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('masonry');
   wp_enqueue_script('kadence_plugins');

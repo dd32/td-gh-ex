@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.9.9 | 9th April 2017 = 
+* Update: Woo Template
+
 = Version 2.9.8 | 20th April 2017 = 
 * Fix: Issue with wc notice
 * Fix: Missing icon in admin.
