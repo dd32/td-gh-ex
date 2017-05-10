@@ -80,22 +80,20 @@ foreach ($mantra_options as $key => $value) {
 
 <script type="text/javascript">
 
-	// Flash animation for columns
+jQuery(document).ready(function() {
+	<?php if ($mantra_slideType!="Slider Shortcode") { ?> 
+	/* Slider */
+    jQuery('#slider').nivoSlider({
+		effect: '<?php  echo $mantra_fpslideranim; ?>',
+		animSpeed: <?php echo $mantra_fpslidertime ?>,
+		<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
+		if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNav: true, <?php } ?>
+		pauseTime: <?php echo $mantra_fpsliderpause ?>
+	});
+	<?php } ?>
 
-
-    jQuery(document).ready(function() {
-	// Slider creation
-        jQuery('#slider').nivoSlider({
-
-			effect: '<?php  echo $mantra_fpslideranim; ?>',
-       		animSpeed: <?php echo $mantra_fpslidertime ?>,
-			<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
-   			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNav: true, <?php } ?>
-			pauseTime: <?php echo $mantra_fpsliderpause ?>
-
-						});
-
-    jQuery('#front-columns > div img').hover( function() {
+	/* Flash animation for columns */
+	jQuery('#front-columns > div img').hover( function() {
 	      jQuery(this)
 			 .stop()
              .animate({opacity: 0.5}, 100)
@@ -104,133 +102,147 @@ foreach ($mantra_options as $key => $value) {
              .animate({opacity: 0.999}, 100) ;
 	}, function() {jQuery(this).stop();} )
 
-		});
-	</script>
+});
+</script>
 
 <div id="frontpage">
-<?php
-
-// First FrontPage Title
-if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo esc_attr($mantra_fronttext1) ?> </h1></div><?php }
-
-// When a post query has been selected from the Slider type in the admin area
-if ($mantra_slideType != 'Custom Slides') {
-global $post;
-// Initiating query
-$custom_query = new WP_query();
-
-// Switch for Query type
-switch ($mantra_slideType) {
-
- case 'Latest Posts' :
-$custom_query->query('showposts='.$mantra_slideNumber.'&ignore_sticky_posts=1');
-break;
-
- case 'Random Posts' :
-$custom_query->query('showposts='.$mantra_slideNumber.'&orderby=rand&ignore_sticky_posts=1');
-break;
-
- case 'Latest Posts from Category' :
-$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&ignore_sticky_posts=1');
-break;
-
- case 'Random Posts from Category' :
-$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&orderby=rand&ignore_sticky_posts=1');
-break;
-
- case 'Sticky Posts' :
-$custom_query->query(array('post__in'  => get_option( 'sticky_posts' ), 'showposts' =>$mantra_slideNumber,'ignore_sticky_posts' => 1));
-break;
-
- case 'Specific Posts' :
- // Transofm string separated by commas into array
-$pieces_array = explode(",", $mantra_slideSpecific);
-$custom_query->query(array( 'post_type' => 'any', 'showposts' => -1, 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1, 'orderby' => 'post__in' ));
-break;
-
-}
- // Variables i and j for matching slider number with caption number
-$i=0;	$j=0;?>
- <div class="slider-wrapper theme-default">
-            <div class="ribbon"></div>
-  <div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
-
 	<?php
-	 // Loop for creating the slides
-	if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : $custom_query->the_post();
 
- 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider');
-		 $i++; ?>
-         <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $i;?>"  /></a>
+	// First FrontPage Title
+	if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo esc_attr($mantra_fronttext1) ?> </h1></div><?php }
+	
+	// Slider 
+ 	if ($mantra_slideType=="Slider Shortcode") { ?> 
+ 	    <div class="slider-wrapper"> 
+ 	    <?php echo do_shortcode( $mantra_slideShortcode ); ?> 
+ 	    </div> <?php 
+ 	} else { 
+		// The built-in slider
+		
+		// When a post query has been selected from the Slider type in the admin area
+		if ($mantra_slideType != 'Custom Slides') {
+			global $post;
+			// Initiating query
+			$custom_query = new WP_query();
 
-	<?php endwhile; // end of the loop.
-?>
-</div>
-	<?php
-	// Loop for creating the captions
-	if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : $custom_query->the_post();
-					$j++; ?>
+			// Switch for Query type
+			switch ($mantra_slideType) {
 
-            <div id="caption<?php echo $j;?>" class="nivo-html-caption">
-                <?php the_title("<h2>","</h2>");the_excerpt(); ?>
-            </div>
+				case 'Latest Posts':
+					$custom_query->query('showposts='.$mantra_slideNumber.'&ignore_sticky_posts=1');
+					break;
 
-	<?php endwhile; // end of the loop. ?>
+				case 'Random Posts':
+					$custom_query->query('showposts='.$mantra_slideNumber.'&orderby=rand&ignore_sticky_posts=1');
+					break;
 
-        </div>
+				case 'Latest Posts from Category':
+					$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&ignore_sticky_posts=1');
+					break;
 
-<?php } else {
+				case 'Random Posts from Category':
+					$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&orderby=rand&ignore_sticky_posts=1');
+					break;
 
-// If Custom Slides have been selected
-?>
- <div class="slider-wrapper theme-default">
-            <div class="ribbon"></div>
-            <div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
-				<?php  for ($i=1;$i<=5;$i++)
-					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo esc_url(${"mantra_sliderlink$i"}) ?>'><img  src='<?php echo esc_url(${"mantra_sliderimg$i"}) ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?>
-            </div>
-			<?php for ($i=1;$i<=5;$i++) { ?>
-            <div id="caption<?php echo $i;?>" class="nivo-html-caption">
-                <?php echo '<h2>'.${"mantra_slidertitle$i"}.'</h2>'.${"mantra_slidertext$i"} ?>
-            </div>
+				case 'Sticky Posts':
+					$custom_query->query(array('post__in'  => get_option( 'sticky_posts' ), 'showposts' =>$mantra_slideNumber,'ignore_sticky_posts' => 1));
+					break;
+
+				case 'Specific Posts':
+					// Transform string separated by commas into array
+					$pieces_array = explode(",", $mantra_slideSpecific);
+					$custom_query->query(array( 'post_type' => 'any', 'showposts' => -1, 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1, 'orderby' => 'post__in' ));
+					break;
+				
+			} // switch 
+			
+			// Variables for matching slider number with caption number
+			$mantra_cycle1=0;
+			$mantra_cycle2=0; ?> 
+			<div class="slider-wrapper theme-default">
+					<div class="ribbon"></div>
+					<div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
+						<?php 
+						// Loop for creating the slides
+						if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : 
+							$custom_query->the_post();
+
+							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider');
+							$mantra_cycle1++; ?>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $mantra_cycle1;?>"  /></a> <?php
+						
+						endwhile; // end of the loop. 
+						?>
+					</div>
+					<?php
+					// Loop for creating the captions
+					if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : 
+						$custom_query->the_post();
+						$mantra_cycle2++; ?>
+
+						<div id="caption<?php echo $mantra_cycle2;?>" class="nivo-html-caption">
+							<?php the_title("<h2>","</h2>"); the_excerpt(); ?>
+						</div> 
+						<?php 
+					endwhile; // end of the loop. ?>
+
+			</div>
+		<?php } else {
+
+		// If Custom Slides have been selected
+		?>
+		<div class="slider-wrapper theme-default">
+			<div class="ribbon"></div>
+			<div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
+				<?php  
+				for ( $mantra_cycle1=1; $mantra_cycle1<=5; $mantra_cycle1++ )
+					if(${"mantra_sliderimg$mantra_cycle1"}) { ?>
+						<a href='<?php echo esc_url(${"mantra_sliderlink$mantra_cycle1"}) ?>'>
+							<img src='<?php echo esc_url(${"mantra_sliderimg$mantra_cycle1"}) ?>' alt="" <?php if (${"mantra_slidertitle$mantra_cycle1"} || ${"mantra_slidertext$mantra_cycle1"} ) { ?>title="#caption<?php echo $mantra_cycle1;?>" <?php }?> />
+						</a>
+					<?php } ?>
+			</div>
+			<?php 
+			for ( $mantra_cycle1=1; $mantra_cycle1<=5; $mantra_cycle1++ ) { ?>
+				<div id="caption<?php echo $mantra_cycle1;?>" class="nivo-html-caption">
+					<?php echo '<h2>'.${"mantra_slidertitle$mantra_cycle1"}.'</h2>'.${"mantra_slidertext$mantra_cycle1"} ?>
+				</div>
 			<?php } ?>
-</div>
-<?php }
+		</div> <?php 
+		} // if custom slides
+		
+	} // if built-in slider
 
-// Second FrontPage title
- if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php }
+	// Second FrontPage title
+	 if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php }
 
-// Frontpage columns
-  if($mantra_nrcolumns) { ?>
-<div id="front-columns">
-	<div id="column1">
-	<a  href="<?php echo esc_url($mantra_columnlink1) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg1) ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo do_shortcode ($mantra_columntext1 ); ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink1) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
-	</div>
-<?php  if($mantra_nrcolumns != '1') { ?>
-	<div id="column2">
-		<a  href="<?php echo esc_url($mantra_columnlink2) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg2) ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext2 );?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink2) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
-	</div>
-<?php  if($mantra_nrcolumns != '2') { ?>
-	<div id="column3">
-		<a  href="<?php echo esc_url($mantra_columnlink3) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg3) ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext3 );?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink3) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
-	</div>
-<?php  if($mantra_nrcolumns == '4') { ?>
-	<div id="column4">
-		<a  href="<?php echo esc_url($mantra_columnlink4) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg4) ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext4 ); ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink4) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
-	</div>
-<?php } } }?>
-</div>
-<?php }
+	// Frontpage columns
+	if($mantra_nrcolumns) { ?>
+		<div id="front-columns">
+			<?php for ($mantra_cycle = 1; $mantra_cycle <= $mantra_nrcolumns; $mantra_cycle++ ) { ?>
+					<div id="column<?php echo $mantra_cycle ?>">
+					<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>">
+						<div class="column-image">
+							<img src="<?php echo esc_url(${'mantra_columnimg'.$mantra_cycle}) ?>" id="columnImage<?php echo $mantra_cycle ?>" alt="" /> 
+						</div>
+						<h3><?php echo ${'mantra_columntitle'.$mantra_cycle} ?></h3>
+					</a>
+					<div class="column-text"><?php echo do_shortcode (${'mantra_columntext'.$mantra_cycle} ); ?></div>
+					<?php if($mantra_columnreadmore) {?>	
+						<div class="columnmore"> 
+							<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a>
+						</div>
+					<?php } // if ?>
+					</div>				
+			<?php } // for ?>			
+		</div>
+	<?php }
 
- // Frontpage text areas
-  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php }
-  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php }
+	 // Frontpage text areas
+	  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php }
+	  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php }
 
- ?>
+	 ?>
 </div> <!-- frontpage -->
  <?php  } // End of mantra_frontpage_generator
 endif;

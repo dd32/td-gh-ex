@@ -1,11 +1,11 @@
 =============
 Mantra WordPress Theme
-Copyright 2011-16 Cryout Creations
+Copyright 2011-17 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 2.6.0
+Tested up to: 4.7.4
+Stable tag: 2.6.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -79,6 +79,18 @@ Turkish - Emre Dalkiliç
 
 
 == Changelog ==
+
+= 2.6.1 =
+* Added support for external sliders in the presentation page using shortcodes
+* Updated header image support to allow crop skipping
+* Fixed search double slash causing issues on some servers
+* Updated to TGM-PA v2.6.1
+* Removed fixed height from textareas styling
+* Applied general font option to textareas
+* Fixed automatically generated menu dropdowns inaccessible on mobile devices with WordPress 4.7+
+* Added styling to disable Chrome's built-in blue border on focused form elements
+* Fixed frontend.js being unminifiable due to single line comments
+* Removed obsolete relative layout option from new theme installs
 
 = 2.6.0 =
 * Optimized CSS layout and updated for latest browser versions

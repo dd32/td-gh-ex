@@ -8,26 +8,26 @@
 
 jQuery(document).ready(function() {
 
-// standard menu touch support for tablets
-	var isTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch; // check touch support
+/* standard menu touch support for tablets */
+	var isTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch; /* check touch support */
 	jQuery('#access .menu > ul > li a').click(function(e){
 		var $link_id = jQuery(this).attr('href');
-		if (jQuery(this).parent().data('clicked') == $link_id) { // second touch
+		if (jQuery(this).parent().data('clicked') == $link_id) { /* second touch */
 			jQuery(this).parent().data('clicked', null);
 			return true;
 		}
-		else { // first touch
-			if (isTouch && (jQuery(this).parent().children('.sub-menu').length >0)) e.preventDefault();
+		else { /* first touch */
+			if (isTouch && (jQuery(this).parent().children('ul').length >0)) e.preventDefault();
 			jQuery(this).parent().data('clicked', $link_id);
 		}
     });
 
-// Back to top button animation
+/* Back to top button animation */
 jQuery(function() {
 	jQuery(window).scroll(function() {
 		var x=jQuery(this).scrollTop();
 		 var ver = getInternetExplorerVersion();
-		// no fade animation (transparency) if IE8 or below
+		/* no fade animation (transparency) if IE8 or below */
 		if ( ver > -1 && ver <= 8 ) {
 			if(x != 0) {
 					jQuery('#toTop').show();
@@ -35,7 +35,7 @@ jQuery(function() {
 					jQuery('#toTop').hide();
 						}
 		}
-		// fade animation if not IE8 or below
+		/* fade animation if not IE8 or below */
 		else {
 		if(x != 0) {
 				jQuery('#toTop').fadeIn(3000);
@@ -48,9 +48,9 @@ jQuery(function() {
 });
 
 
-// Menu animation
-jQuery("#access ul ul").css({display: "none"}); // Opera Fix
-jQuery("#access").removeClass("jssafe"); // JS failsafe
+/* Menu animation */
+jQuery("#access ul ul").css({display: "none"}); /* Opera Fix */
+jQuery("#access").removeClass("jssafe"); /* JS failsafe */
 jQuery("#access .menu ul li").hoverIntent({
 	over: function(){jQuery(this).children("ul").show(400);},
 	out: function(){ jQuery(this).children('ul').hide();},
@@ -58,7 +58,7 @@ jQuery("#access .menu ul li").hoverIntent({
 );
 
 
-// Social Icons Animation
+/* Social Icons Animation */
 jQuery(".socialicons").hover(
 	function(){  jQuery(this).animate({"top": "-3px" },{ queue: false, duration:125}); },
 	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:125 });
@@ -70,18 +70,18 @@ jQuery(".socialicons").hover(
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
 
-    // Default settings
+    /* Default settings */
     var settings = $.extend({
-      'active' : 'selected', // String: Set the "active" class
-      'header' : '' // Show header instead of the active item
+      'active' : 'selected', /* String: Set the "active" class */
+      'header' : '' /* Show header instead of the active item */
     }, options);
 
     return this.each(function () {
 
-      i++; // Used for namespacing
+      i++; /* Used for namespacing */
 
       var $nav = $(this),
-        // Namespacing
+        /* Namespacing */
         namespace = 'tinynav',
         namespace_i = namespace + i,
         l_namespace_i = '.l_' + namespace_i,
@@ -93,7 +93,7 @@ jQuery(".socialicons").hover(
           $select.append( $('<option/>').text(settings.header) );
         }
 
-        // Build options
+        /* Build options */
         var options = '';
 		var indent = 0;
 		var indented = ["&nbsp;"];
@@ -111,10 +111,10 @@ jQuery(".socialicons").hover(
               indent--;
           });
 
-        // Append options into a select
+        /* Append options into a select */
         $select.append(options);
 
-        // Select the active item
+        /* Select the active item */
         if (!settings.header) {
           $select
             .find(':eq(' + $(l_namespace_i + ' li')
@@ -122,14 +122,14 @@ jQuery(".socialicons").hover(
             .attr('selected', true);
         }
 
-        // Change window location
+        /* Change window location */
         $select.change(function () {
 		var loc = $(this).val(); loc = loc.replace(/[\s\t]/gi,'');
 		var menu = settings.header; menu = menu.replace(/[\s\t]/gi,'');
           if ((loc!==menu)) { window.location.href = $(this).val(); } else return false;
         });
 
-        // Inject select
+        /* Inject select */
         $(l_namespace_i).after($select);
 
       }
@@ -141,20 +141,20 @@ jQuery(".socialicons").hover(
 
   };
 })(jQuery, this, 0);
-// end tinynav
+/* end tinynav */
 
 
-// detect and apply custom class for safari
+/* detect and apply custom class for safari */
 if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 	jQuery('body').addClass('safari');
 }
 
 
 });
-// end document.ready
+/* end document.ready */
 
 
-// Columns equalizer, used if at least one sidebar has a bg color
+/* Columns equalizer, used if at least one sidebar has a bg color */
 function equalizeHeights(){
     var h1 = jQuery("#primary").height();
 	var h2 = jQuery("#secondary").height();
@@ -237,11 +237,12 @@ function equalizeHeights(){
 (function(e){e.fn.hoverIntent=function(t,n,r){var i={interval:100,sensitivity:7,timeout:0};if(typeof t==="object"){i=e.extend(i,t)}else if(e.isFunction(n)){i=e.extend(i,{over:t,out:n,selector:r})}else{i=e.extend(i,{over:t,out:t,selector:n})}var s,o,u,a;var f=function(e){s=e.pageX;o=e.pageY};var l=function(t,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);if(Math.abs(u-s)+Math.abs(a-o)<i.sensitivity){e(n).off("mousemove.hoverIntent",f);n.hoverIntent_s=1;return i.over.apply(n,[t])}else{u=s;a=o;n.hoverIntent_t=setTimeout(function(){l(t,n)},i.interval)}};var c=function(e,t){t.hoverIntent_t=clearTimeout(t.hoverIntent_t);t.hoverIntent_s=0;return i.out.apply(t,[e])};var h=function(t){var n=jQuery.extend({},t);var r=this;if(r.hoverIntent_t){r.hoverIntent_t=clearTimeout(r.hoverIntent_t)}if(t.type=="mouseenter"){u=n.pageX;a=n.pageY;e(r).on("mousemove.hoverIntent",f);if(r.hoverIntent_s!=1){r.hoverIntent_t=setTimeout(function(){l(n,r)},i.interval)}}else{e(r).off("mousemove.hoverIntent",f);if(r.hoverIntent_s==1){r.hoverIntent_t=setTimeout(function(){c(n,r)},i.timeout)}}};return this.on({"mouseenter.hoverIntent":h,"mouseleave.hoverIntent":h},i.selector)}})(jQuery)
 
 
-// Returns the version of Internet Explorer or a -1
-// (indicating the use of another browser).
+/* Returns the version of Internet Explorer or a -1
+ * (indicating the use of another browser). 
+ */
 function getInternetExplorerVersion()
 {
-  var rv = -1; // Return value assumes failure.
+  var rv = -1; /* Return value assumes failure. */
   if (navigator.appName == 'Microsoft Internet Explorer')
   {
     var ua = navigator.userAgent;

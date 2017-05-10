@@ -4,7 +4,7 @@ Theme URI: https://www.cryoutcreations.eu/wordpress-themes/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: https://www.cryoutcreations.eu
-Version: 2.6.0
+Version: 2.6.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, grid-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, news
@@ -292,7 +292,6 @@ textarea {
 	color: #666;
 	font-size: 12px;
 	line-height: 18px;
-
 }
 hr {
 	clear: both;
@@ -385,12 +384,15 @@ sup {
 sub {
 	top: .5ex;
 }
+input:focus,
+textarea:focus {
+	outline: none;
+}
 input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
 	box-sizing: border-box;
-	height: 32px;
 	padding-left: 5px;
 	border: 1px solid #DDD;
 	background: #fff;
@@ -398,12 +400,17 @@ textarea {
 	-webkit-transition: .2s border ease;
 	transition: .2s border ease;
 }
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	height: 32px;
+}
 
 input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="email"]:hover,
 textarea:hover {
-	border: 1px solid #CCC !important;
+	border: 1px solid #CCC;
 }
 a:link {
     color: #0D85CC;
@@ -590,15 +597,15 @@ div.menu {
 }
 #access ul li.current_page_item > a,
 #access ul li.current-menu-item > a{
-	color: #000 !important;
+	color: #000;
 }
 
-#access ul ul li.current_page_item ,
+#access ul ul li.current_page_item,
 #access ul ul li.current-menu-ancestor,
-#access ul ul li.current-menu-item ,
+#access ul ul li.current-menu-item,
 #access ul ul li.current-menu-parent {
-	color: #000 !important;
-	background: #FFF !important;
+	color: #000;
+	background: #FFF;
 }
 
 
@@ -682,7 +689,7 @@ div.menu {
 .entry-content tt,
 .entry-content var {
 	overflow: auto;
-	font-family: "Courier New",Courier,monospace !important;
+	font-family: "Courier New",Courier,monospace;
 }
 
 .entry-content dt,
@@ -834,7 +841,7 @@ div.menu {
 	padding-left: 4px;
 	font-size: 14px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #666 !important;
+	color: #666;
 	text-decoration: underline;
 	text-transform: uppercase;
    	text-shadow: none;
@@ -1174,15 +1181,15 @@ article.format-aside h3.entry-format {
 /* =Chat
 -------------------------------------------------------------- */
 .format-chat p {
-	font-family: Monaco, "Courier New", monospace !important;
+	font-family: Monaco, "Courier New", monospace;
 }
 
 /* =Quote
 -------------------------------------------------------------- */
 .format-quote blockquote,
 .format-quote blockquote p {
-	font-family: Georgia, "Bitstream Charter", serif !important;
-	font-size: 1.1em !important;
+	font-family: Georgia, "Bitstream Charter", serif;
+	font-size: 1.1em;
 }
 
 
@@ -1295,9 +1302,9 @@ article.format-aside h3.entry-format {
 	width: 100%;
 	margin: 5px 0 0;
 	padding: 0;
-	border: none !important;
+	border: none;
 	border-radius:4px;
-    box-shadow: none !important;
+    box-shadow: none;
 }
 
 #content .wp-caption p.wp-caption-text {
@@ -1522,9 +1529,9 @@ a.comment-edit-link:hover {
 }
 .commentlist .children li {
 	border: none;
-	background-image:none !important;
+	background-image: none;
 	margin: 0;
-	text-indent:0px !important;
+	text-indent: 0;
 }
 
 .nopassword,
@@ -1704,12 +1711,12 @@ h3#reply-title {
 
 .widget-area ul {
 	margin-left: 0;
-	list-style: none !important;
+	list-style: none;
 	list-style-image: none;
 }
 
 .widget-area ul ul {
-	list-style: none !important;
+	list-style: none;
 	margin-left: 0;
 }
 
@@ -1787,7 +1794,7 @@ h3#reply-title {
 	width: 100%;
 	margin: 0;
 	padding-left: 10px;
-	font-family: Arial !important;
+	font-family: Arial;
 	font-size: 14px;
 	border-radius: 0 6px 6px 0;
 }
@@ -1942,10 +1949,10 @@ h3#reply-title {
 }
 
 #wp-calendar tbody td a{
-	box-shadow:none;
+	box-shadow: none;
 	color: #0D85CC;
-	border: none !important;
-	background: none !important;
+	border: none;
+	background: none;
 	padding: 0;
 	margin: 0;
 }
@@ -2163,7 +2170,7 @@ article.sticky {
 	border: 1px solid #DDD !important;
 }
 
-.imageTwo{
+.imageTwo {
     padding: 3px;
 	border: 1px solid #EEE;
 	background-color: #FFFFFF;
@@ -2171,28 +2178,28 @@ article.sticky {
 	box-shadow: 0 0 4px #CCC;
 }
 
-.imageThree{
+.imageThree {
 	padding: 3px;
     border: 6px solid #EEEEEE;
     border-radius: 5px;
 	background-color: #FFFFFF;
 }
 
-.imageFour{
+.imageFour {
 	border: 1px solid #666 !important;
 	box-shadow: 0 3px 4px #999;
 }
 
-.imageFive{
+.imageFive {
 	border: 3px solid #DDD !important;
 }
 
-.imageSix{
+.imageSix {
 	border: 8px solid #BBB !important;
 	box-shadow: 0 0 5px #333;
 }
 
-.imageSeven{
+.imageSeven {
 	padding: 7px;
 	border: 1px solid #CCC;
     background-color: #FFFFFF;
@@ -2388,6 +2395,10 @@ article.sticky {
 	opacity: 0.9;
 }
 
+.slider-wrapper {
+	padding-bottom: 20px;
+}
+
 /*
 Skin Name: Nivo Slider Default Theme
 */
@@ -2411,7 +2422,7 @@ Skin Name: Nivo Slider Default Theme
 }
 
 .theme-default .nivo-controlNav {
-	padding: 0 0 20px 0;
+	padding: 0;
 	text-align: center;
 }
 

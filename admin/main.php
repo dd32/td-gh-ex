@@ -18,7 +18,7 @@ function mantra_get_theme_options() {
 return $optionsMantra;
 }
 
-$mantra_options= mantra_get_theme_options();
+$mantra_options = mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
@@ -313,13 +313,11 @@ The Parabola Settings page cannot function without jQuery. </em></div>
                 	<?php wp_nonce_field('mantra-export', 'mantra-export'); ?>
                     <input type="hidden" name="mantra_export" value="true" />
                     <input type="submit" class="button" value="<?php _e('Export Theme options', 'mantra'); ?>" />
-					<p style="display:block;float:left;clear:left;margin-top:0;"><?php _e("It's that easy: a mouse click away - the ability to export your Mantra settings and save them on your computer. Feeling safer? You should!","mantra"); ?></p>
                 </form>
-				<br />
+				<br>
                 <form action="" method="post">
                     <input type="hidden" name="mantra_import" value="true" />
                     <input type="submit" class="button" value="<?php _e('Import Theme options', 'mantra'); ?>" />
-					<p style="display:block;float:left;clear:left;margin-top:0;"><?php _e(" Without the import, the export would just be a fool's exercise. Make sure you have the exported file ready and see you after the mouse click.","mantra"); ?></p>
                 </form>
 		</div><!-- inside -->
 	</div><!-- export -->
@@ -356,124 +354,8 @@ The Parabola Settings page cannot function without jQuery. </em></div>
 </div><!--  wrap -->
 
 <script>
-
-function startfarb(a,b) {
-	jQuery(b).css('display','none');
-	jQuery(b).farbtastic(a);
-
-	jQuery(a).click(function() {
-			if(jQuery(b).css('display') == 'none')	{
-                                        			jQuery(b).parents('div:eq(0)').addClass('ui-accordion-content-overflow');
-                                                       jQuery(b).css('display','inline-block').hide().show(300);
-                                                       }
-		});
-
-	jQuery(document).mousedown( function() {
-			jQuery(b).hide(700, function(){ jQuery(b).parents('div:eq(0)').removeClass('ui-accordion-content-overflow'); });
-			// todo: find a better way to remove class after the fade on IEs
-		});
-}
-
-function tooltip_terain() {
-jQuery('#accordion small').parent('div').append('<a class="tooltip"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-tooltip.png" /></a>').
-	each(function() {
-	//jQuery(this).children('a.tooltip').attr('title',jQuery(this).children('small').html() );
-	var tooltip_info = jQuery(this).children('small').html();
-	jQuery(this).children('.tooltip').tooltip({content : tooltip_info});
-     jQuery(this).children('.tooltip').tooltip( "option", "items", "a" );
-	//jQuery(this).children('.tooltip').tooltip( "option", "show", "false");
-	jQuery(this).children('.tooltip').tooltip( "option", "hide", "false");
-	jQuery(this).children('small').remove();
-	if (!jQuery(this).hasClass('slmini') && !jQuery(this).hasClass('slidercontent') && !jQuery(this).hasClass('slideDivs')) jQuery(this).addClass('tooltip_div');
-	});
-}
-
-function coloursel(el){
-	var id = "#"+jQuery(el).attr('id');
-	jQuery(id+"2").hide();
-	var bgcolor = jQuery(id).val();
-	if (bgcolor <= "#666666") { jQuery(id).css('color','#ffffff'); } else { jQuery(id).css('color','#000000'); };
-	jQuery(id).css('background-color',jQuery(id).val());
-}
-
-function vercomp(ver, req) {
-    var v = ver.split('.');
-    var q = req.split('.');
-    for (var i = 0; i < v.length; ++i) {
-        if (q.length == i) { return true; } // v is bigger
-        if (parseInt(v[i]) == parseInt(q[i])) { continue; } // nothing to do here, move along
-        else if (parseInt(v[i]) > parseInt(q[i])) { return true; } // v is bigger
-        else { return false; } // q is bigger
-    }
-    if (v.length != q.length) { return false; } // q is bigger
-    return true; // v = q;
-}
-
-jQuery(document).ready(function(){
-	//var _jQueryVer = parseFloat('.'+jQuery().jquery.replace(/\./g, ''));  // jQuery version as float, eg: 0.183
-	//var _jQueryUIVer = parseFloat('.'+jQuery.ui.version.replace(/\./g, '')); // jQuery UI version as float, eg: 0.192
-	//if (_jQueryUIVer >= 0.190) {
-	if (vercomp(jQuery.ui.version,"1.9.0")) {
-		// tooltip function is included since jQuery UI 1.9.0
-		tooltip_terain();
-		startfarb("#mantra_backcolor","#mantra_backcolor2");
-		startfarb("#mantra_headercolor","#mantra_headercolor2");
-		startfarb("#mantra_contentbg","#mantra_contentbg2");
-		startfarb("#mantra_menubg","#mantra_menubg2");
-		startfarb("#mantra_s1bg","#mantra_s1bg2");
-		startfarb("#mantra_s2bg","#mantra_s2bg2");
-		startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
-		startfarb("#mantra_footercolor","#mantra_footercolor2");
-		startfarb("#mantra_titlecolor","#mantra_titlecolor2");
-		startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
-		startfarb("#mantra_contentcolor","#mantra_contentcolor2");
-		startfarb("#mantra_linkscolor","#mantra_linkscolor2");
-		startfarb("#mantra_hovercolor","#mantra_hovercolor2");
-		startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
-		startfarb("#mantra_headtexthover","#mantra_headtexthover2");
-		startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
-		startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
-		startfarb("#mantra_footerheader","#mantra_footerheader2");
-		startfarb("#mantra_footertext","#mantra_footertext2");
-		startfarb("#mantra_footerhover","#mantra_footerhover2");
-		startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
-		startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
-	} else {
-		jQuery("#mantra_backcolor").addClass('colorthingy');
-		jQuery("#mantra_headercolor").addClass('colorthingy');
-		jQuery("#mantra_contentbg").addClass('colorthingy');
-		jQuery("#mantra_menubg").addClass('colorthingy');
-		jQuery("#mantra_s1bg").addClass('colorthingy');
-		jQuery("#mantra_s2bg").addClass('colorthingy');
-		jQuery("#mantra_prefootercolor").addClass('colorthingy');
-		jQuery("#mantra_footercolor").addClass('colorthingy');
-		jQuery("#mantra_titlecolor").addClass('colorthingy');
-		jQuery("#mantra_descriptioncolor").addClass('colorthingy');
-		jQuery("#mantra_contentcolor").addClass('colorthingy');
-		jQuery("#mantra_linkscolor").addClass('colorthingy');
-		jQuery("#mantra_hovercolor").addClass('colorthingy');
-		jQuery("#mantra_headtextcolor").addClass('colorthingy');
-		jQuery("#mantra_sideheadbackcolor").addClass('colorthingy');
-		jQuery("#mantra_sideheadtextcolor").addClass('colorthingy');
-		jQuery("#mantra_footerheader").addClass('colorthingy');
-		jQuery("#mantra_footertext").addClass('colorthingy');
-		jQuery("#mantra_headtexthover").addClass('colorthingy');
-		jQuery("#mantra_footerhover").addClass('colorthingy');
-		jQuery("#mantra_fpsliderbordercolor").addClass('colorthingy');
-		jQuery("#mantra_fronttitlecolor").addClass('colorthingy');
-		jQuery('.colorthingy').each(function(){
-			id = "#"+jQuery(this).attr('id');
-			jQuery(this).on('keyup',function(){coloursel(this)});
-			coloursel(this);
-		});
-		// inform the user about the old partially unsupported version
-		jQuery("#jsAlert").after("<div class='updated fade' style='clear:left; font-size: 16px;'><p>Mantra has detected you are running an old version of Wordpress (jQuery) and will be running in compatibility mode. Some features may not work correctly. Consider updating your Wordpress to the latest version.</p></div>");
-	}
-
-});
-
-jQuery('#jsAlert').hide();
+var mantra_tooltip_icon_url = '<?php echo get_template_directory_uri(); ?>/images/icon-tooltip.png'
 </script>
 
 <?php } // mantra_page_fn()
-?>
+// FIN

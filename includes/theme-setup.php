@@ -70,24 +70,17 @@ function mantra_setup() {
 	set_post_thumbnail_size( 150, 150 ); // default Post Thumbnail dimensions (cropped)
 
 	// Add default posts and comments RSS feed links to head
-
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support('post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status'));
+	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status') );
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-/**
- * Make theme available for translation
- * Translations can be filed in the /languages/ directory
- */
-load_theme_textdomain( 'mantra', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mantra', get_template_directory() . '/languages' );
 
-$locale = get_locale();
-$locale_file = get_template_directory() . "/languages/$locale.php";
+	$locale = get_locale();
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
-
-
 
 	// This theme uses wp_nav_menu() in 3 locations.
 	register_nav_menus( array(
@@ -105,23 +98,25 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	global $mantra_hheight;
 	$mantra_hheight=(int)$mantra_hheight;
 	global $mantra_totalSize;
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $mantra_totalSize ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
-	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-	add_image_size('header',HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT,true);	
+	add_image_size('header', apply_filters( 'mantra_header_image_width', $mantra_totalSize ), apply_filters( 'mantra_header_image_height', $mantra_hheight), true );	
 
 	global $mantra_fpsliderwidth;
 	global $mantra_fpsliderheight;
-	add_image_size('slider',$mantra_fpsliderwidth,$mantra_fpsliderheight,true);
+	add_image_size( 'slider', $mantra_fpsliderwidth, $mantra_fpsliderheight, true );
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See mantra_admin_header_style(), below.
 	define( 'NO_HEADER_TEXT', true );
-	add_theme_support( 'custom-header' );
-
-	// ... and thus ends the changeable header business.
-
-
-// Backwards compatibility with pre 3.4 versions for custom background and header 
+	// Add support for flexible headers
+	$header_args = array(
+		'flex-height' => true,
+		'height' => $mantra_hheight,
+		'flex-width' => true,
+		'width' => $mantra_totalSize,
+		'max-width' => 1920,
+		'default-image' => '',
+		'admin-head-callback' => 'mantra_admin_header_style',
+	);
+	add_theme_support( 'custom-header', $header_args );
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(

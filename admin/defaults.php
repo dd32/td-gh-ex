@@ -31,6 +31,7 @@ $mantra_defaults = array(
 "mantra_fpslidernav" => "Bullets",
 "mantra_fpsliderarrows" => "Visible on Hover",
 
+"mantra_slideShortcode" => "",
 "mantra_slideType" => "Custom Slides",
 "mantra_slideCateg" => "",
 "mantra_slideNumber" => "5",

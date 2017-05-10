@@ -195,9 +195,9 @@ $mantra_googlefonttitle = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_g
 $mantra_googlefontside = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefontside));
 $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefontsubheader));
 
-?><?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> body, .widget-title {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo "\"$mantra_googlefont\"";  ?> ; }<?php }
+?><?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> body, input, textarea {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo "\"$mantra_googlefont\"";  ?> ; }<?php }
 ?><?php if ($mantra_fonttitle != "Default" || $mantra_googlefonttitle) { ?> #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title {font-family:<?php if (!$mantra_googlefonttitle) echo $mantra_fonttitle; else echo "\"$mantra_googlefonttitle\"";  ?> ; }<?php }
-?><?php if ($mantra_fontside != "Default" || $mantra_googlefontside) { ?> .widget-area *  {font-family:<?php if (!$mantra_googlefontside) echo $mantra_fontside; else echo "\"$mantra_googlefontside\"";  ?> ; }<?php }
+?><?php if ($mantra_fontside != "Default" || $mantra_googlefontside) { ?> .widget-area {font-family:<?php if (!$mantra_googlefontside) echo $mantra_fontside; else echo "\"$mantra_googlefontside\"";  ?> ; }<?php }
 ?><?php if ($mantra_fontsubheader != "Default"  || $mantra_googlefontsubheader ) { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6  {font-family:<?php if (!$mantra_googlefontsubheader) echo $mantra_fontsubheader; else echo "\"$mantra_googlefontsubheader\"";  ?> ; }<?php }
 ?><?php if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php }
 ?><?php if ($mantra_caption == "White") { ?> background-color:#FFF;}

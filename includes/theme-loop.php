@@ -159,7 +159,7 @@ foreach ($mantra_options as $key => $value) {
 }
 
 
-$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s <span class="bl_sep">|</span> </time>';
+$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s </time><span class="bl_sep">|</span>';
 $date_string .= '<time class="updated"  datetime="' . get_the_modified_date( 'c' ) . '">' . get_the_modified_date() . '</time>';
 
 // If author is hidden don't give it a value
@@ -167,8 +167,7 @@ $author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' 
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
 			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
 			get_the_author()
-		) ;
-if ($mantra_postauthor == "Hide")  $author_string='';
+		);
 
 // Print the meta data
 	printf( '&nbsp; %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',

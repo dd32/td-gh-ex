@@ -2,57 +2,17 @@
 // Callback functions
 
 // General suboptions description
-
-function  cryout_section_layout_fn() {
-
-//	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
-}
-
-function   cryout_section_presentation_fn() {
-
-//	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
-}
-
-function   cryout_section_header_fn() {
-
-//	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
-}
-
-
-function   cryout_section_text_fn() {
-	//echo "<p>".__("All text related customization options.", "mantra")."</p>";
-}
-
-function   cryout_section_graphics_fn() {
-//	echo "<p>".__("Settings for hiding or showing different graphics.", "mantra")."</p>";
-}
-
-function   cryout_section_post_fn() {
-	//echo "<p>".__("Settings for hiding or showing different post tags.", "mantra")."</p>";
-}
-
-function   cryout_section_excerpt_fn() {
-//	echo "<p>".__("Settings for post excerpts", "mantra")."</p>";
-}
-
-function   cryout_section_appereance_fn() {
-//	echo "<p>".__("Set text and background colors.", "mantra")."</p>";
-}
-
-
-function   cryout_section_featured_fn() {
-//	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
-//	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
-}
-
-function   cryout_section_social_fn() {
-//	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
-//	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
-}
-
-function   cryout_section_misc_fn() {
-
-}
+function cryout_section_layout_fn() { }
+function cryout_section_presentation_fn() { }
+function cryout_section_header_fn() { }
+function cryout_section_text_fn() { }
+function cryout_section_graphics_fn() { }
+function cryout_section_post_fn() { }
+function cryout_section_excerpt_fn() { }
+function cryout_section_appereance_fn() { }
+function cryout_section_featured_fn() { }
+function cryout_section_social_fn() { }
+function cryout_section_misc_fn() { }
 
 ////////////////////////////////
 //// LAYOUT SETTINGS ///////////
@@ -77,29 +37,33 @@ global $mantra_options;
 
 
 	foreach($items as $item) {
-
 		$checkedClass = ($mantra_options['mantra_side']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='layouts  $checkedClass'><input ";
 		checked($mantra_options['mantra_side'],$item);
 		echo " value='$item' onClick=\"changeBorder('$item','layouts');\" name='ma_options[mantra_side]' type='radio' /><img title='$layout_text[$item]' src='".get_template_directory_uri()."/admin/images/".$item.".png'/></label>";
 	}
-		echo "<div><small>".__("Choose your layout. Possible options are: <br> No sidebar, a single sidebar on either left of right, two sidebars on either left or
+	echo "<div><small>".__("Choose your layout. Possible options are: <br> No sidebar, a single sidebar on either left of right, two sidebars on either left or
 		right and two sidebars on each side.","mantra")."</small></div>";
 }
 
  //SLIDER - Name: ma_options[sidewidth]
-function cryout_setting_sidewidth_fn()
-   {
-global $mantra_options;
+function cryout_setting_sidewidth_fn() { 
+	global $mantra_options;
 	$items = array ("Absolute" , "Relative");
-	$itemsare = array( __("Absolute","mantra"), __("Relative *DEPRECATED","mantra"));
+	$itemsare = array( __("Absolute","mantra"), __("Relative *NO LONGER SUPPORTED","mantra"));
+	if ( "Relative" != $mantra_options['mantra_dimselect'] ) {
+		// relative dimmensions are no longer supported by the theme; only display them to existing sites that use them
+		unset($items[1]);
+		unset($itemsare[1]);		
+	}
 	echo __("Dimensions to use: ","mantra")." <select id='mantra_dimselect' name='ma_options[mantra_dimselect]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_dimselect'],$item);
-	echo ">$itemsare[$id]</option>";
-}
-echo "</select>";
+	foreach($items as $id=>$item) {
+		echo "<option value='$item'";
+		selected($mantra_options['mantra_dimselect'],$item);
+		if ( 'Relative' == $item ) echo ' disabled="disabled"';
+		echo ">$itemsare[$id]</option>";
+	}
+	echo "</select>";
 ?>
 <script>
 
@@ -168,9 +132,8 @@ jQuery(function() {
 		jQuery( "#barbRel" ).css('left',-18+leftwidthRel+percentageRel/2+"%");
 		jQuery( "#contentbRel" ).css('left',-8+leftwidthRel/2+"%");
 		jQuery( "#totalbRel" ).css('left',-20+(percentageRel+leftwidthRel)/2+"%");
+		
 });
-
-
 </script>
 
 <div id="absolutedim">
@@ -405,8 +368,8 @@ function cryout_setting_frontslider2_fn() {
 ?>
 
 <?php
-$items = array("Custom Slides", "Latest Posts", "Random Posts", "Sticky Posts", "Latest Posts from Category" , "Random Posts from Category", "Specific Posts");
-	$itemsare = array( __("Custom Slides","mantra"), __("Latest Posts","mantra"), __("Random Posts","mantra"),__("Sticky Posts","mantra"), __("Latest Posts from Category","mantra"), __("Random Posts from Category","mantra"), __("Specific Posts","mantra"));
+$items = array("Slider Shortcode", "Custom Slides", "Latest Posts", "Random Posts", "Sticky Posts", "Latest Posts from Category" , "Random Posts from Category", "Specific Posts");
+	$itemsare = array(__("Slider Shortcode","mantra"), __("Custom Slides","mantra"), __("Latest Posts","mantra"), __("Random Posts","mantra"),__("Sticky Posts","mantra"), __("Latest Posts from Category","mantra"), __("Random Posts from Category","mantra"), __("Specific Posts","mantra"));
 	echo "<em>".__("Select the content you want to load in your slides:","mantra")." </em> ";
 	echo "<select id='mantra_slideType' name='ma_options[mantra_slideType]'>";
 foreach($items as $id=>$item) {
@@ -418,6 +381,11 @@ foreach($items as $id=>$item) {
 	echo "<div><small>".__("Your slides' content. Only the image is required, all other fields are optional. Only the slides with an image selected will become acitve and visible in the live slider.","mantra")."</small></div>";
 
 ?>
+
+<div id="sliderShortcode" class="slideDivs"> 
+<span><?php _e('Enter the desired slider plugin shortcode below:','mantra'); ?> </span> 
+<input id='mantra_slideShortcode' name='ma_options[mantra_slideShortcode]' size='44' type='text' value='<?php echo esc_attr($mantra_options['mantra_slideShortcode'] ) ?>' /> 
+</div>
 
 <div id="sliderLatestPosts" class="slideDivs">
 <span><?php _e('Latest posts will be loaded into the slider.','mantra'); ?> </span>
@@ -469,6 +437,7 @@ foreach($items as $id=>$item) {
 
 
 <div id="sliderCustomSlides" class="slideDivs">
+<span><?php _e('Custom slides are limited to a maximum of 5.','mantra'); ?> </span>
 <div class="slidebox">
 <h4 class="slidetitle" ><?php _e("Slide 1","mantra");?> </h4>
 <div class="slidercontent">
