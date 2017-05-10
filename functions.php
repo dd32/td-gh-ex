@@ -71,8 +71,11 @@ function esteem_setup() {
 	   	)
 	);
 
-   // Added WooCommerce support.
-   add_theme_support( 'woocommerce' );
+	// Added WooCommerce support.
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	// Switches default core markup for comment form, and comments
 	// to output valid HTML5.
@@ -240,6 +243,12 @@ function esteem_include_files() {
 }
 do_action( 'esteem_init' );
 
+/**
+ * Load Demo Importer Configs.
+ */
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}
 
 /**
  * Assign the Esteem version to a variable.
@@ -252,4 +261,9 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-esteem-admin.php';
 }
 
+/**
+ * Load TGMPA Configs.
+ */
+require_once( ESTEEM_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php' );
+require_once( ESTEEM_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-esteem.php' );
 ?>
