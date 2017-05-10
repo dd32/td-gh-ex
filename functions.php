@@ -88,7 +88,10 @@ function freedom_setup() {
 	add_post_type_support( 'page', 'excerpt' );
 
 	// Added WooCommerce support.
-   	add_theme_support( 'woocommerce' );
+  add_theme_support( 'woocommerce' );
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
 
    /*
     * Switch default core markup for search form, comment form, and comments
@@ -183,6 +186,13 @@ require_once( FREEDOM_ADMIN_DIR . '/meta-boxes.php' );
 require_once( FREEDOM_WIDGETS_DIR . '/widgets.php' );
 
 /**
+ * Load Demo Importer Configs.
+ */
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}
+
+/**
  * Assign the Esteem version to a variable.
  */
 $theme            = wp_get_theme( 'freedom' );
@@ -192,4 +202,10 @@ $freedom_version = $theme['Version'];
 if ( is_admin() ) {
   require get_template_directory() . '/inc/admin/class-freedom-admin.php';
 }
+
+/**
+ * Load TGMPA Configs.
+ */
+require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-freedom.php';
 ?>

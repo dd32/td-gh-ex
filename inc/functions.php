@@ -466,7 +466,7 @@ add_action( 'freedom_footer_copyright', 'freedom_footer_copyright', 10 );
 function freedom_footer_copyright() {
 	$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 	$wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'freedom' ) . '"><span>' . __( 'WordPress', 'freedom' ) . '</span></a>';
-	$tg_link =  '<a href="'.esc_url( 'http://themegrill.com/themes/freedom' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'freedom' ).'" ><span>'.__( 'ThemeGrill', 'freedom') .'</span></a>';
+	$tg_link =  '<a href="'.esc_url( 'https://themegrill.com/themes/freedom' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'freedom' ).'" ><span>'.__( 'ThemeGrill', 'freedom') .'</span></a>';
 
 	$default_footer_value = __( 'Copyright &copy; ', 'freedom' ). date( 'Y' ).'&nbsp'.$site_link.__( '.&nbsp;Powered by&nbsp;', 'freedom' ).$wp_link.'&nbsp;and&nbsp;'.$tg_link.__( '.', 'freedom' );
 	$freedom_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
@@ -497,17 +497,24 @@ function freedom_sanitize_textarea_custom( $input,$option ) {
    return $output;
 }
 
-// Displays the site logo
-if ( ! function_exists( 'freedom_the_custom_logo' ) ) {
-  /**
-   * Displays the optional custom logo.
-   */
-  function freedom_the_custom_logo() {
-    if ( function_exists( 'the_custom_logo' )  && ( get_theme_mod( 'freedom_header_logo_image','' ) == '') ) {
-      the_custom_logo();
-    }
-  }
+/**
+ * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
+ */
+function freedom_site_logo_migrate() {
+	if ( function_exists( 'the_custom_logo' ) && ! has_custom_logo( $blog_id = 0 ) ) {
+		$logo_url = get_theme_mod( 'freedom_header_logo_image' );
+
+		if ( $logo_url ) {
+			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
+			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
+
+			// Delete the old Site Logo theme_mod option.
+			remove_theme_mod( 'freedom_header_logo_image' );
+		}
+	}
 }
+
+add_action( 'after_setup_theme', 'freedom_site_logo_migrate' );
 
 /**************************************************************************************/
 

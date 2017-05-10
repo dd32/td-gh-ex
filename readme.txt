@@ -22,6 +22,7 @@ Resources packed within the theme.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
 * Other custom js files are our own creation and is licensed under the same license as this theme.
+* TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
@@ -33,10 +34,10 @@ Freedom is distributed under the terms of the GNU GPL
 == THEME USAGE ==
 
 = Theme Instruction =
-Get theme instruction at http://themegrill.com/theme-instruction/freedom
+Get theme instruction at https://themegrill.com/theme-instruction/freedom
 
 = Free Support =
-Get free support at http://themegrill.com/support-forum
+Get free support at https://themegrill.com/support-forum
 
 = Theme Features Usage =
 All available options can be used from Appearance->Theme Options
@@ -50,6 +51,14 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+=Version 1.1.3 2017-05-10 =
+ * Tweaks - Add TGMPA to recommend ThemeGrill Demo Importer plugin
+
+= Version 1.1.2 2017-05-01 =
+* Added - Support for Video Headers introduced in WordPress 4.7.
+* Tweaks - Remove the older header logo data.
+* Feature - Added compatibility for ThemeGrill Demo Importer plugin
+* Feature - Added support for WooCommerce product gallery introduced in version 3.0
 
 = Version 1.1.1 2016-12-26 =
 * Feature - Added the Custom Site Logo feature introduced in WordPress 4.5
