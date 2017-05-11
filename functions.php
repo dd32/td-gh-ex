@@ -509,7 +509,6 @@ function bento_insert_custom_styles() {
 						position: absolute;
 						top: 0;
 						width: 100%;
-						z-index: 1;
 					}
 					.primary-menu > li > .sub-menu {
 						border-top-color: transparent;

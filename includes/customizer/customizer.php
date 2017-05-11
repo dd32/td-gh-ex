@@ -209,6 +209,34 @@ function bento_customize_register( $wp_customize ) {
 		) 
 	);
 	
+	$wp_customize->add_setting( 
+		'bento_logo_padding', 
+		array(
+			'type' => 'theme_mod',
+			'default' => 30,
+			'sanitize_callback' => 'bento_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control( 
+		'bento_logo_padding', 
+		array(
+			'section' => 'title_tagline',
+			'priority' => 9,
+			'type' => 'select',
+			'choices' => array( 
+				0 => '0',
+				10 => '10', 
+				20 => '20',
+				30 => esc_html__( '30 (default)', 'bento' ),
+				40 => '40',
+				50 => '50',
+				60 => '60',
+			),
+			'label' => esc_html__( 'Logo padding', 'bento' ),
+			'description' => esc_html__( 'Set the top and bottom padding (extra space) for the logo, in pixels; default is 30.', 'bento' ),
+		)
+	);
+	
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$wp_customize->add_setting( 
 			'bento_footer_copyright', 
@@ -1632,6 +1660,15 @@ function bento_customizer_css() {
 	
 	$customizer_css = '';
 	
+	// Theme Options: Site Identity tab
+	$bento_logo_padding_rem = esc_html( get_theme_mod( 'bento_logo_padding', 30 ) ) / 10;
+	$customizer_css .= '
+		.logo {
+			padding: '.esc_html( get_theme_mod( 'bento_logo_padding', 30 ) ).'px 0;
+			padding: '.$bento_logo_padding_rem.'rem 0;
+		}
+	';
+	
 	// Theme Options: Layout and Background tab
 	$bento_content_width_med_px = esc_html( get_theme_mod( 'bento_content_width', 1080 ) );
 	$bento_content_width_med_rem = $bento_content_width_med_px / 10;
@@ -1642,11 +1679,17 @@ function bento_customizer_css() {
 	$bento_box_width_med_rem = $bento_box_width_med_px / 10;
 	$bento_box_width_hi_px = $bento_content_width_hi_px + 120;
 	$bento_box_width_hi_rem = $bento_box_width_hi_px / 10;
+	$bento_media_breakpoint = ( $bento_content_width_med_px * 1.1 ) / 16;
 	$customizer_css .= '
-		@media screen and (min-width: 80em) {
+		@media screen and (min-width: 64em) {
 			.bnt-container {
 				max-width: '.$bento_content_width_med_px.'px;
 				max-width: '.$bento_content_width_med_rem.'rem;
+			}
+		}
+		@media screen and (min-width: '.$bento_media_breakpoint.'em) {
+			.bnt-container {
+				padding: 0;
 			}
 		}
 		@media screen and (min-width: 120em) {
@@ -1658,7 +1701,7 @@ function bento_customizer_css() {
 	';
 	if ( get_theme_mod( 'bento_website_layout', 0 ) == 1 ) {
 		$customizer_css .= '
-			@media screen and (min-width: 80em) {
+			@media screen and (min-width: 64em) {
 				.site-wrapper {
 					max-width: '.$bento_box_width_med_px.'px;
 					max-width: '.$bento_box_width_med_rem.'rem;

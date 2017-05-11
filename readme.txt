@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 1.6.7
+Stable tag: 1.6.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7 / 11 May 2017
+Moved the mobile styles breakpoint to a smaller width (1024px).
+Added a control to change the logo padding.
+Fixed mobile menu z-index order for cases with transparent header.
 
 * 1.6.7 / 25 April 2017
 Updated the included CMB2 library.

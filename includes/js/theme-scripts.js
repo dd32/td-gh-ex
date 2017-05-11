@@ -68,7 +68,7 @@ $str(document).ready(function() {
 	
 	
 	// Fixed header
-	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(80) ) {
+	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(64) ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone();

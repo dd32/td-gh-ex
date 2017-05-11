@@ -386,7 +386,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 		if ( $add_handle ) {
 
 			echo '<button type="button" class="handlediv button-link" aria-expanded="true">';
-				echo '<span class="screen-reader-text">' . sprintf( __( 'Toggle panel: %s' ), $title ) . '</span>';
+				echo '<span class="screen-reader-text">' . sprintf( __( 'Toggle panel: %s', 'cmb2' ), $title ) . '</span>';
 				echo '<span class="toggle-indicator" aria-hidden="true"></span>';
 			echo '</button>';
 
