@@ -1,4 +1,4 @@
-<h4><?php _e('Popular post', 'digital'); ?></h4>
+<h4><?php esc_attr('Popular post', 'digital'); ?></h4>
 <?php 
 $args = array( 
  'ignore_sticky_posts' => true,

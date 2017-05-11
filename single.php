@@ -28,7 +28,7 @@ $after = ''; the_tags("",$before, $seperator, $after );
 			<?php endwhile; ?>
 			<?php else : ?>
 				<div class="post">
-					<h3><?php _e('404 Error&#58; Not Found', 'digital' ); ?></h3>
+					<h3><?php esc_attr('404 Error&#58; Not Found', 'digital' ); ?></h3>
 				</div>
 			<?php endif; ?>
 		</div> <!-- end div #content -->

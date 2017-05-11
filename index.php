@@ -10,13 +10,13 @@
 					<?php else : ?>
 							<div class="post">
 								<div class="posttitle">
-									<h2><?php _e('404 Error&#58; Not Found', 'digital' ); ?></h2>
+									<h2><?php esc_attr('404 Error&#58; Not Found', 'digital' ); ?></h2>
 									<span class="posttime"></span>
 								</div>
 						</div>
 					<?php endif; ?>
 					<div class="proclear"><?php get_template_part('/includes/ltposts'); ?></div>
-					<?php load_template (get_template_directory() . '/includes/pagenav.php'); ?>	
+					<?php get_template_part('includes/pagenav'); ?>	
 				</div> 
 				<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -15,7 +15,7 @@
 								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'digital' ), 'after' => '</div>' ) ); ?>
 							</div> <!-- end div .entry -->
 							
-			<div class="gap"></div><?php if (of_get_option('digital_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+			<div class="gap"></div><?php if (of_get_option('digital_author' ) =='1' ) {get_template_part('includes/author'); } ?>				
  <?php if (!dynamic_sidebar('belowpagecontent') ) : endif; ?>
 									<div class="comments">
 								<?php comments_template(); ?>
@@ -25,7 +25,7 @@
 			<?php endwhile; ?>
 			<?php else : ?>
 				<div class="post">
-					<h3><?php _e('404 Error&#58; Not Found', 'digital'); ?></h3>
+					<h3><?php esc_attr('404 Error&#58; Not Found', 'digital'); ?></h3>
 				</div>
 			<?php endif; ?>
 			  <div id="footerads">

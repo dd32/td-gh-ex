@@ -10,7 +10,7 @@
 				<?php digital_breadcrumbs(); ?>
 				<?php /* If this is a tag archive */  } elseif( is_tag() ) { ?>
 				<?php digital_breadcrumbs(); ?>
-				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php _e('Archive for', 'digital'); ?> <?php the_time('F jS, Y'); ?>
+				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php esc_attr('Archive for', 'digital'); ?> <?php the_time('F jS, Y'); ?>
 				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
 				<?php digital_breadcrumbs(); ?>
 				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
@@ -19,7 +19,7 @@
 				<?php digital_breadcrumbs(); ?>
 				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
 				<?php digital_breadcrumbs(); ?>
-				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php _e('Blog Archives', 'digital'); ?> <?php } ?>
+				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php esc_attr('Blog Archives', 'digital'); ?> <?php } ?>
 				<?php
 				
 					 the_archive_description( '<div class="taxonomy-description panel">', '</div>' ); 
@@ -30,12 +30,12 @@
 					<?php else : ?>
 					<div class="post">
 					<div class="posttitle">
-					<h2><?php _e('404 Error&#58; Not Found', 'digital'); ?></h2>
+					<h2><?php esc_attr('404 Error&#58; Not Found', 'digital'); ?></h2>
 					<span class="posttime"></span>
 					</div>
 					</div>
 					<?php endif; ?>
-					<?php load_template(get_template_directory() . '/includes/pagenav.php'); ?>
+					<?php get_template_part('includes/pagenav'); ?>
 					</div> <!-- end div #content -->
 					<?php get_sidebar(); ?>
 			<?php get_footer(); ?>
