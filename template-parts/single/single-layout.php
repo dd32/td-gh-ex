@@ -3,33 +3,39 @@
  * Template for Single post
  *
  * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2017, Astra
- * @link        http://wpastra.com/
+ * @author      Brainstorm Force
+ * @copyright   Copyright (c) 2015, Brainstorm Force
+ * @link        http://www.brainstormforce.com
  * @since       Astra 1.0.0
  */
 
 ?>
 
-<div <?php astra_blog_layout_class( 'single-layout-1' ); ?>>
+<div <?php ast_blog_layout_class( 'single-layout-1' ); ?>>
 
-	<?php astra_single_header_before(); ?>
+	<?php ast_single_header_before(); ?>
 
-	<header class="entry-header <?php astra_entry_header_class(); ?>">
+	<header class="entry-header">
 
-		<?php astra_single_header_top(); ?>
+		<?php ast_single_header_top(); ?>
 
-		<?php astra_blog_post_thumbnai_and_title_order(); ?>
+		<?php if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) : ?>
+			<div class="post-thumb">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
 
-		<?php astra_single_header_bottom(); ?>
+		<?php ast_the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
+		
+		<?php ast_single_header_bottom(); ?>
 
 	</header><!-- .entry-header -->
-
-	<?php astra_single_header_after(); ?>
+	
+	<?php ast_single_header_after(); ?>
 
 	<div class="entry-content clear" itemprop="text">
 
-		<?php astra_entry_content_before(); ?>
+		<?php ast_entry_content_before(); ?>
 
 		<?php the_content(); ?>
 
@@ -46,17 +52,15 @@
 			);
 		?>
 
-		<?php astra_entry_content_after(); ?>
+		<?php ast_entry_content_after(); ?>
 
 		<?php
-			wp_link_pages(
-				array(
-					'before'      => '<div class="page-links">' . esc_html( astra_default_strings( 'string-single-page-links-before', false ) ),
-					'after'       => '</div>',
-					'link_before' => '<span class="page-link">',
-					'link_after'  => '</span>',
-				)
-			);
+			wp_link_pages( array(
+				'before'      => '<div class="page-links">' . ast_default_strings( 'string-single-page-links-before', false ),
+				'after'       => '</div>',
+				'link_before' => '<span class="page-link">',
+				'link_after'  => '</span>',
+			) );
 		?>
 	</div><!-- .entry-content .clear -->
 </div>

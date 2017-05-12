@@ -8,9 +8,9 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2017, Astra
- * @link        http://wpastra.com/
+ * @author      Brainstorm Force
+ * @copyright   Copyright (c) 2015, Brainstorm Force
+ * @link        http://www.brainstormforce.com
  * @since       Astra 1.0.0
  */
 
@@ -18,15 +18,15 @@
 
 <div class="main-header-bar-wrap">
 	<div class="main-header-bar">
-		<?php astra_main_header_bar_top(); ?>
+		<?php ast_main_header_bar_top(); ?>
 		<div class="ast-container">
 
 			<div class="ast-flex main-header-container">
 				
-				<?php astra_masthead_content(); ?>
+				<?php ast_masthead_content(); ?>
 				
 			</div><!-- Main Header Container -->
 		</div><!-- ast-row -->
-		<?php astra_main_header_bar_bottom(); ?>
+		<?php ast_main_header_bar_bottom(); ?>
 	</div> <!-- Main Header Bar -->
 </div> <!-- Main Header Bar Wrap -->
