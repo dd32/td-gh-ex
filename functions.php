@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  *
@@ -732,7 +731,7 @@ foreach ( $raindrops_base_setting as $setting ) {
 
 	if ( !function_exists( $function_name ) ) {
 
-		$message = sprintf( esc_html__( 'If you add  %s when you must create function %s for data validation', 'raindrops' ), $setting[ 'option_name' ], $function_name );
+		$message = sprintf( esc_html__( 'If you add  %1$s when you must create function %2$s for data validation', 'raindrops' ), $setting[ 'option_name' ], $function_name );
 		printf( '<script type="text/javascript">alert( \'%s\' );</script>', $message );
 		return;
 	}
@@ -985,7 +984,7 @@ if ( !function_exists( 'raindrops_comment' ) ) {
 
 	function raindrops_comment( $comment, $args, $depth ) {
 
-		$GLOBALS[ 'comment' ] = $comment;
+		//@1.472 $GLOBALS[ 'comment' ] = $comment;
 
 		if ( '' == $comment->comment_type ) {
 			?>
@@ -2365,13 +2364,13 @@ if ( !function_exists( "raindrops_embed_css" ) ) {
 			$css .= "\n.widgettitle,.archive .title-wrapper,.date .page-title{text-transform: uppercase;}";
 		}
 		/* @sice 1.458 fallback menu background color */
-		
+
 		$raindrops_base_color = raindrops_warehouse_clone( 'raindrops_base_color' );
 
 		if ( !empty( $raindrops_base_color ) ) {
 /* @1.470
 			$css .= "\n.rd-type-dark .raindrops-menu-fixed{    background:{$raindrops_base_color};}";
- * 
+ *
  */
 		}
 		//#header-image
@@ -2445,7 +2444,7 @@ if ( !function_exists( "raindrops_embed_css" ) ) {
 
 			$css .= ' .rsidebar{display:block;} ';
 		} else {
-			
+
 			if( 3 !== ( int ) $raindrops_current_column ){
 				/**
 				 * @since 1.471
@@ -3946,7 +3945,9 @@ if ( !function_exists( "raindrops_yui_class_modify" ) ) {
 			$yui_inner_layout = 'yui-ge';
 		}
 
-		return apply_filters( 'raindrops_yui_class_modify', $yui_inner_layout );
+		$yui_inner_layout = apply_filters( 'raindrops_yui_class_modify', $yui_inner_layout );
+
+		return sanitize_html_class( $yui_inner_layout );
 	}
 
 }
@@ -10546,7 +10547,7 @@ if ( !function_exists( 'raindrops_excerpt_after_link' ) ) {
 	function raindrops_excerpt_after_link( $content, $function ) {
 		global $post;
 		$raindrops_excerpt_more = raindrops_warehouse_clone( 'raindrops_read_more_after_excerpt' );
-		
+
 		if( strpos( get_the_content(), 'more-link' ) !== false ) {
 			/**
 			 * @since 1.470
@@ -13243,7 +13244,7 @@ box-sizing:border-box;
 }
 .rd-col-1.rd-grid #doc4 ul.{$archive_type} > li,
 .rd-col-1.rd-grid #doc2 ul.{$archive_type} > li{
-	flex-basis:31.6%;	
+	flex-basis:31.6%;
 	margin:5px;
 }
 .rd-col-3.rd-grid #doc4 ul.{$archive_type} > li,
@@ -13306,6 +13307,7 @@ box-sizing:border-box;
 		flex-basis:31.6%;
 		margin:5px;
 	}
+
 	.rd-col-1.rd-grid.rd-content-width-keep ul.{$archive_type} > li,
 	.rd-col-3.rd-grid.rd-content-width-fit ul.{$archive_type} > li,
 	.rd-col-3.rd-grid ul.{$archive_type} .title-wrapper,
@@ -13315,21 +13317,23 @@ box-sizing:border-box;
 	}
 }
 @media screen  and (min-width:{$break_point_large_min}px){
+
 	.rd-col-1.rd-grid.rd-content-width-fit ul.{$archive_type} > li,
 	.rd-col-1.rd-grid ul.{$archive_type} .title-wrapper,
 	.rd-col-1.rd-grid ul.{$archive_type} > li{
 			flex-basis:23%;
 			margin:5px;
 	}
+
 	.rd-col-1.rd-grid.rd-content-width-keep ul.{$archive_type} > li{
 			flex-basis:31.6%;
 		    margin:5px;
 	}
 }
 GRID_CSS;
-	
-if ( true ==  $raindrops_grid_posted_in ) {	
-	
+
+if ( true ==  $raindrops_grid_posted_in ) {
+
 $result .=<<<GRID_POSTED_IN
 .rd-grid .posted-on-after{
     margin-right:72px;
@@ -13359,9 +13363,9 @@ $result .=<<<GRID_POSTED_IN
 .rd-grid ul.archives .click-drawing-container .drawing-content:empty{
 	display:none;
 }
-.rd-grid ul.search-results .click-drawing-container:active .drawing-content, 
+.rd-grid ul.search-results .click-drawing-container:active .drawing-content,
 .rd-grid ul.search-results .click-drawing-container:focus .drawing-content,
-.rd-grid ul.archives .click-drawing-container:active .drawing-content, 
+.rd-grid ul.archives .click-drawing-container:active .drawing-content,
 .rd-grid ul.archives .click-drawing-container:focus .drawing-content {
     visibility:visible;
     outline:none;
@@ -13380,9 +13384,9 @@ $result .=<<<GRID_POSTED_IN
     border-top:1px solid rgba(127,127,127,.3);
     max-width:none;
     width:100%;
-    height:200px;	
+    height:200px;
     transition:visibility 1s;
-    overflow:hidden;  
+    overflow:hidden;
 }
 @media screen and (max-width : {$break_point_small_max}px){
 	.rd-grid ul.search-results .click-drawing-container,
@@ -13396,9 +13400,9 @@ $result .=<<<GRID_POSTED_IN
 		text-align:center;
 		border:none;
 	}
-	.rd-grid ul.search-results .click-drawing-container:active .drawing-content, 
+	.rd-grid ul.search-results .click-drawing-container:active .drawing-content,
 	.rd-grid ul.search-results .click-drawing-container:focus .drawing-content,
-	.rd-grid ul.archives .click-drawing-container:active .drawing-content, 
+	.rd-grid ul.archives .click-drawing-container:active .drawing-content,
 	.rd-grid ul.archives .click-drawing-container:focus .drawing-content {
 		height:200px;
 		top:1em;
