@@ -1,5 +1,5 @@
 == Description ==
-Beetheme is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
+Beetech is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
 
 beetech WordPress Theme, Copyright 2017 BeeTech
 beetech is distributed under the terms of the GNU GPL v3

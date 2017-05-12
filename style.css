@@ -1,14 +1,14 @@
 /*
-Theme Name: beetech
-Theme URI: http://buzthemes.com/demo/beetech/
+Theme Name: Beetech
+Theme URI: http://buzthemes.com/wordpress_themes/beetech/
 Author: Buzthemes
 Author URI: http://buzthemes.com
-Description:  Beetheme is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
-Version: 1.0.1
+Description:  Beetech is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beetech
-Tags: one-column, featured-images, threaded-comments, translation-ready, flexible-header, footer-widgets, right-sidebar, left-sidebar
+Tags: one-column, featured-images, threaded-comments, translation-ready, flexible-header, right-sidebar, left-sidebar, custom-header, custom-logo
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1464,7 +1464,7 @@ Blog
 }
 .bt-blog .grid-titles-info-post .blogs-grid-author i,
 .bt-blog .grid-titles-info-post .blogs-grid-author a {
-    display: inline-block;,
+    display: inline-block;
     vertical-align: middle;
 }
 .bt-blog .grid-titles-info-post .blogs-grid-author i {

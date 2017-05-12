@@ -30,7 +30,7 @@ add_action( 'customize_preview_init', 'beetech_customize_preview_js' );
  */
 function beetech_customize_backend_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/font-awesome/css/font-awesome.min.css', array(), '4.6.3' );
-	wp_enqueue_style( 'beetech_admin_customizer_style', get_template_directory_uri() . '/inc/customizer/css/customizer-style.css' );
-	wp_enqueue_script( 'beetech_admin_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer-scripts.js', array( 'jquery', 'customize-controls' ), '20160714', true );
+	wp_enqueue_style( 'beetech-customizer-style', get_template_directory_uri() . '/inc/customizer/css/customizer-style.css' );
+	wp_enqueue_script( 'beetech-customizer-scripts', get_template_directory_uri() . '/inc/customizer/js/customizer-scripts.js', array( 'jquery', 'customize-controls' ), '20160714', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'beetech_customize_backend_scripts', 10 );

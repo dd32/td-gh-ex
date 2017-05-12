@@ -9,7 +9,7 @@
 ?>
 <?php
 	$section_option = get_theme_mod( 'homepage_service_option', 'show' );
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'service_section_title', esc_html__( 'service', 'beetech' ) );
 		$section_desc_title = get_theme_mod( 'service_section_sub_title', esc_html__( 'Who We Are', 'beetech' ) );
         $service_icon_1 = get_theme_mod('service_icon_1');
@@ -34,7 +34,7 @@
 			<div class="row clearfix">
             
                 <?php if($service_page_id_0){
-                    $service_page_0_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_1)));
+                    $service_page_0_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_0)));
                     if($service_page_0_query->have_posts()):
                         while($service_page_0_query->have_posts()): $service_page_0_query->the_post();
                         ?>
@@ -90,7 +90,7 @@
                 ?>
                 
 				<?php if($service_page_id_2){
-                    $service_page_2_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_1)));
+                    $service_page_2_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_2)));
                     if($service_page_2_query->have_posts()):
                         while($service_page_2_query->have_posts()): $service_page_2_query->the_post();
                         ?>

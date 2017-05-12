@@ -10,7 +10,7 @@
 
 <?php
 	$section_option = get_theme_mod( 'homepage_blog_option', 'show' );
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'blog_section_title');
 		$blog_section_desc = get_theme_mod( 'blog_section_desc');
         $bt_blog_categories = get_theme_mod('blog_cat_id');
@@ -56,7 +56,7 @@
                                             <?php } ?>
                                             <div class="bottom-blog clearfix">
                                                 <span class="blogs-grid-author"><i class="fa fa-user" aria-hidden="true"></i><?php echo esc_url(the_author_posts_link()); ?> </span>
-                                                <span class="blog-grid-comnment"><a href="<?php comments_link(); ?>"><i class="fa fa-comments" aria-hidden="true"></i><?php echo get_comments_number(); _e(' comment','beetech'); ?></a></span>
+                                                <span class="blog-grid-comnment"><a href="<?php comments_link(); ?>"><i class="fa fa-comments" aria-hidden="true"></i><?php echo absint(get_comments_number()); esc_html_e(' Comment','beetech'); ?></a></span>
                                             </div>
                                             </div>
                                         </div>

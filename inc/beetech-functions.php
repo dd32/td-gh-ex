@@ -72,10 +72,10 @@ if( ! function_exists( 'beetech_parallax_menu_cb' ) ):
 				$beetech_menu_tab = '';
                 $beetech_menu_tab .= '<li class="bt-menu-tab">';
                 if( $parallax_menu_type == 'float' ) {
-                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.$section_id.'"><span></span></a>';
+                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.esc_html($section_id).'"><span></span></a>';
                 	$beetech_menu_tab .= '<div class="px-tooltip">'. esc_attr( $beetech_menu_title ) .'</div>';
                 } else {
-                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.$section_id.'">'. esc_attr( $beetech_menu_title ) .'</a>';
+                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.esc_html($section_id).'">'. esc_html( $beetech_menu_title ) .'</a>';
                 }                
                 $beetech_menu_tab .= '</li>';
                 echo  $beetech_menu_tab;
@@ -210,7 +210,7 @@ if( ! function_exists( 'beetech_innerpage_header_cb' ) ):
 					} elseif( is_single() && 'post' === get_post_type() ) {
 						$post_category = get_the_category();
 						$first_cat_name = $post_category[0]->name;
-						echo '<h1 class="page-title">'. $first_cat_name .'</h1>';
+						echo '<h1 class="page-title">'. esc_attr($first_cat_name) .'</h1>';
 					} elseif( is_page() ) {
 						the_title( '<h1 class="entry-title">', '</h1>' );
 					} elseif( is_search() ) {

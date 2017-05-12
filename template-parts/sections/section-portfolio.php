@@ -9,8 +9,8 @@
 ?>
 
 <?php
-$section_option = get_theme_mod( 'homepage_portfolio_option', 'show' );
-if( $section_option != 'hide' ) {
+$section_option = get_theme_mod( 'homepage_portfolio_option' );
+if( $section_option == 'show' ) {
 $section_title = get_theme_mod( 'portfolio_section_title');
 $section_description = get_theme_mod( 'portfolio_section_description');
 $portfolio_cat_id = get_theme_mod('portfolio_cat_id');
@@ -27,7 +27,7 @@ $portfolio_cat_id = get_theme_mod('portfolio_cat_id');
                     <?php } ?>
     			</div>
             <?php } 
-            
+            if($portfolio_cat_id){
             $portfolio_cat_query = new WP_Query(array('post_type'=>'post','cat'=>$portfolio_cat_id,'posts_per_page'=>6));
             if($portfolio_cat_query->have_posts()):?>
         		<div class="row clearfix">
@@ -47,7 +47,8 @@ $portfolio_cat_id = get_theme_mod('portfolio_cat_id');
         			</div>
                  <?php endwhile; ?>   
     		</div>
-            <?php endif; ?>   
+            <?php endif;
+            } ?>   
     	</div>
     </section>
 <?php } ?>

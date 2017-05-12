@@ -7,7 +7,7 @@
 
 <?php
 	$section_option = get_theme_mod( 'homepage_team_option');
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'team_section_title');
 		$section_description = get_theme_mod( 'team_section_description');
         $team_cat_id = get_theme_mod('team_cat_id');
@@ -24,8 +24,9 @@
         				</p>
                         <?php } ?>
         			</div>
-                <?php } ?>
-                <?php $team_cat_query = new WP_Query(array('post_type' => 'post','cat' => $team_cat_id,'posts_per_page'=>'6'));
+                <?php }
+                if($team_cat_id){
+                $team_cat_query = new WP_Query(array('post_type' => 'post','cat' => $team_cat_id,'posts_per_page'=>'6'));
                 if($team_cat_query->have_posts()):
                 ?>
     			<div class="row clearfix">
@@ -52,7 +53,8 @@
     				</div>
    				<?php endwhile; ?>
     			</div>
-                <?php endif; ?>
+                <?php endif;
+                } ?>
     		</div>
     	</section>
 <?php } ?>

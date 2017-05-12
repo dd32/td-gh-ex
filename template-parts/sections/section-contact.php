@@ -10,7 +10,7 @@
 
 <?php
 	$section_option = get_theme_mod( 'homepage_contact_option');
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'contact_section_title');
 		$bt_contact_number = get_theme_mod( 'contact_section_phone');		
 		$bt_phone_num = preg_replace( "/[^0-9]/","",$bt_contact_number );

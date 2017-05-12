@@ -4,7 +4,7 @@
 */
  
 	$section_option = get_theme_mod( 'homepage_about_option');
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 	$section_title = get_theme_mod( 'about_section_title');
 	$about_section_description = get_theme_mod( 'about_section_description');
     

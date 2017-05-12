@@ -7,7 +7,7 @@
 
 <?php
 	$section_option = get_theme_mod( 'homepage_testimonials_option');
-	if( $section_option != 'hide' ) {
+	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'testimonials_section_title');
         $testimonials_cat_id = get_theme_mod('testimonials_cat_id');
 ?>
