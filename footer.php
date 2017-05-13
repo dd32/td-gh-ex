@@ -1,4 +1,19 @@
-<footer class="footer">
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains footer content and the closing of the
+ * #main div element.
+ *
+ * @package Odin
+ * @since 2.2.0
+ */
+?>
+
+		</div><!-- .row -->
+	</div><!-- #wrapper -->
+
+	<footer class="footer">
   <div class="container wrap">
 
     <div class="row">
@@ -49,7 +64,7 @@
 
             if ( get_theme_mod( $setting_slug ) ) {
             ?>
-              <a href="<?php echo $setting_slug ?>" target="_blank">
+              <a href="<?php echo get_theme_mod( $setting_slug ) ?>" target="_blank">
                 <i class="fa <?php echo $icon ?> fa-2x" aria-hidden="true"></i>
               </a>
             <?php  
@@ -67,6 +82,6 @@
     </p>
   </div>
 </footer>
-<?php wp_footer()?>
+<?php wp_footer(); ?>
 </body>
 </html>
