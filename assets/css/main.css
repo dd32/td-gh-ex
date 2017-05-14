@@ -488,7 +488,7 @@ address a{ color:#838383;}
 .mosaic-col:hover img{filter: grayscale(100%);-webkit-filter: grayscale(100%);filter: gray;}
 .Image_Wrapper{ opacity:0;  }
 .header-main{background:#fff;position:relative;display:block;padding: 18px 0px;-moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -webkit-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}
-.fixed{ position:fixed;top: 0px;}
+.fixed{ position:fixed;}
 #header.fixed .header-main{padding: 10px 0px;}
 #header.fixed #logo a{font-size: 30px;line-height: 31px;}
 #header.fixed #logo a p{font-size: 11px;padding-left: 3px;}
