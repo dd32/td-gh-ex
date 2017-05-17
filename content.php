@@ -2,6 +2,25 @@
 /**
  * @package activello
  */
+
+
+global $wp_query;
+$index = $wp_query->current_post + 1;
+$layout = get_theme_mod( 'activello_sidebar_position' );
+
+$image_size = 'activello-big';
+if ( $index > 2 ) {
+	if ( $layout == "full-width" ) {
+		$image_size = 'activello-medium';
+	}else{
+		$image_size = 'activello-thumbnail';
+	}
+	
+}else if ( $layout == "full-width" ) {
+	$image_size = 'activello-featured';
+}
+
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -32,7 +51,7 @@
 			</header><!-- .entry-header -->
 
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail( 'activello-featured', array( 'class' => 'single-featured' )); ?>
+                    <?php the_post_thumbnail( $image_size, array( 'class' => 'single-featured' )); ?>
             </a>
 
 			<?php if ( is_search() ) : // Only display Excerpts for Search ?>

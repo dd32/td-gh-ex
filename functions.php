@@ -69,6 +69,7 @@ function activello_setup() {
   add_image_size( 'activello-slider', 1920, 550, true );
   add_image_size( 'activello-thumbnail', 330, 220, true );
   add_image_size( 'activello-medium', 640, 480, true );
+  add_image_size( 'activello-big', 710, 335, true );
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
@@ -249,11 +250,6 @@ require get_template_directory() . '/inc/navwalker.php';
  */
 require get_template_directory() . '/inc/metaboxes.php';
 
-// /**
-//  * TGMPA
-//  */
-// require get_template_directory() . '/inc/tgmpa/tgm-plugin-activation.php';
-
 /**
  * Social Nav Menu
  */
@@ -295,6 +291,13 @@ function activello_woo_setup() {
 	*/
 	add_theme_support( 'woocommerce' );
 
+  /*
+   * Enable support for WooCemmerce Lightbox & Zoom.
+  */
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
+
 }
 endif; // activello_woo_setup
 add_action( 'after_setup_theme', 'activello_woo_setup' );
@@ -308,6 +311,15 @@ if ( ! function_exists( 'activello_header_search_filter' ) ) {
       return $form;
   }
 }
+
+// Include Epsilon Framework
+require_once 'inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
+$args = array(
+  'controls' => array( 'toggle' ), // array of controls to load
+  'sections' => array( 'recommended-actions', 'pro' ), // array of sections to load
+);
+
+new Epsilon_Framework( $args );
 
 // Add welcome screen
 require get_template_directory() . '/inc/welcome-screen/welcome-page-setup.php';
