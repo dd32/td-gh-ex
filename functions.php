@@ -147,7 +147,7 @@ if ( ! function_exists( 'unlimited_remove_comments_notes_after' ) ) {
 add_action( 'comment_form_defaults', 'unlimited_remove_comments_notes_after' );
 
 if ( ! function_exists( 'ct_unlimited_filter_read_more_link' ) ) {
-	function ct_unlimited_filter_read_more_link() {
+	function ct_unlimited_filter_read_more_link( $custom = false ) {
 		global $post;
 		$ismore             = strpos( $post->post_content, '<!--more-->' );
 		$read_more_text     = get_theme_mod( 'read_more_text' );
@@ -156,7 +156,7 @@ if ( ! function_exists( 'ct_unlimited_filter_read_more_link' ) ) {
 		$output = '';
 
 		// add ellipsis for automatic excerpts
-		if ( empty( $ismore ) ) {
+		if ( empty( $ismore ) && $custom !== true  ) {
 			$output .= $excerpt_more;
 		}
 		// Because i18n text cannot be stored in a variable
@@ -176,7 +176,7 @@ if ( ! function_exists( 'ct_unlimited_filter_manual_excerpts' ) ) {
 	function ct_unlimited_filter_manual_excerpts( $excerpt ) {
 		$excerpt_more = '';
 		if ( has_excerpt() ) {
-			$excerpt_more = ct_unlimited_filter_read_more_link();
+			$excerpt_more = ct_unlimited_filter_read_more_link( true );
 		}
 		return $excerpt . $excerpt_more;
 	}
@@ -278,6 +278,10 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'etsy'          => 'unlimited_etsy_profile',
 			'quora'         => 'unlimited_quora_profile',
 			'ravelry'       => 'unlimited_ravelry_profile',
+			'yelp'          => 'unlimited_yelp_profile',
+			'amazon'        => 'unlimited_amazon_profile',
+			'google-wallet' => 'unlimited_google-wallet_profile',
+			'twitch'        => 'unlimited_twitch_profile',
 			'meetup'        => 'unlimited_meetup_profile',
 			'telegram'      => 'unlimited_telegram_profile',
 			'podcast'       => 'unlimited_podcast_profile',
@@ -590,24 +594,10 @@ if ( ! function_exists( 'unlimited_infinite_scroll_render' ) ) {
 if ( ! function_exists( 'unlimited_get_content_template' ) ) {
 	function unlimited_get_content_template() {
 
-		/* Blog */
-		if ( is_home() ) {
-			get_template_part( 'content', 'archive' );
-		} /* Post */
-		elseif ( is_singular( 'post' ) ) {
-			get_template_part( 'content' );
-		} /* Page */
-		elseif ( is_page() ) {
-			get_template_part( 'content', 'page' );
-		} /* Attachment */
-		elseif ( is_attachment() ) {
-			get_template_part( 'content', 'attachment' );
-		} /* Archive */
-		elseif ( is_archive() ) {
-			get_template_part( 'content', 'archive' );
-		} /* Custom Post Type */
-		else {
-			get_template_part( 'content' );
+		if ( is_home() || is_archive() ) {
+			get_template_part( 'content-archive', get_post_type() );
+		} else {
+			get_template_part( 'content', get_post_type() );
 		}
 	}
 }
