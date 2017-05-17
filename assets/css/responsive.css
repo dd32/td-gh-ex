@@ -1,0 +1,222 @@
+/* ----------- iPad mini ----------- */
+@media (max-width: 1024px) 
+ {
+  .comment-form input[type="text"] {
+      width: 59%;
+  }
+}
+@media (max-width: 768px) 
+ {
+
+ .aqa-logo .aqa-logo-txt {text-align: left;width: 50%;display: inline-block;}
+ .expSearchBox {float: right;text-align: right;}
+ .aqa-service-inner h2{border: none;}
+ .aqa-footer-section {
+    text-align: center;
+  }
+  .aqa-footer-section .widget_search input#s {width: 50%;}
+  .aqa-footer-section .widget_search input#searchsubmit{right: 198px;top: 51px;}
+/*Blog sidebar*/
+table#wp-calendar {width: auto;}
+.aqa-blog-section .widget_search input[type="text"]{width: 50%;}
+.aqa-blog-section .widget_search input[type="text"]:focus{width: 55%;}
+#huge_it_portfolio_content_1 #huge_it_portfolio_container_1{margin-left: 90px;}
+.aqa-top-banner {padding: 120px 0px;}
+.blog-img-auther.img-responsive img {
+    margin-top: 21px;
+    width: 15%;
+    height: auto;
+    border-radius: 60px;
+    float: left;
+    margin-right: 20px;
+}
+ul.main-menu.nav.nav-bar li a{
+  color: #fff;
+}
+/*Comment form*/
+.comment-form input[type="text"] {
+  width: 100%;
+  border: none;
+}
+textarea#comment {
+    width: 100%;
+    border: none;
+}
+.comment-form label {
+    width: 100%;
+    float: left;
+}
+
+/*nothing found*/
+  section.no-results.not-found {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 120px;
+  }
+  section.no-results.not-found p {
+      text-align: center;
+  }
+  span.aqa-blog-cat {
+    padding-left: 3px;
+}
+
+}
+
+/* Landscape */
+@media (max-width: 1024px)  {
+  .aqa-logo-txt {text-align: center;}
+  #huge_it_portfolio_content_1 #huge_it_portfolio_container_1{width: 96% !important;margin-left: 65px;}
+}
+/*@media only screen (max-width: 768px){
+  .aqa-logo .aqa-logo-txt {text-align: center;display: none;}
+}*/
+
+/* ----------- iPhone 6 ----------- */
+
+
+
+/* Landscape */
+@media (max-width: 667px) 
+ { 
+  .aqa-top-banner {padding: 120px 0px;}
+  #huge_it_portfolio_content_1 #huge_it_portfolio_container_1{margin-left: 90px;}
+  .aqa-footer-section {text-align: center;}
+  .aqa-footer-section .widget_search input#s {width: 100%;}
+  .aqa-footer-section .widget_search input#searchsubmit{right: 17px;top: 51px;}
+  .aqa-top-banner { padding: 90px 0px 0px;}
+  .aqa-service-inner h2{border: none;}
+  .blog-img-auther.img-responsive img {
+    margin-top: 21px;
+    width: 15%;
+    height: auto;
+    border-radius: 60px;
+    float: left;
+    margin-right: 20px;
+}
+/*blog sidebar*/
+.aqa-blog-section .widget_search input[type="text"]{width: 100%;}
+.aqa-blog-section .widget_search input[type="text"]:focus{width: 55%;}
+.blog-maonary .sample-maso:nth-child(even) .single-masonary-post {
+    float: none !important;
+}
+.aqa-blog-meta span{margin-bottom: 15px;min-width: 100px;}
+
+
+}
+@media(max-width: 568px) {
+
+}
+/* Portrait */
+@media (max-width: 375px) 
+ { 
+ .aqa-top-banner a {
+    margin: 6px 10px;
+    min-width: 190px;
+ }
+ .comment-list ol.children {
+    margin-left: 0;
+}
+.blog-maonary .sample-maso:nth-child(even) .single-masonary-post {
+    float: none !important;
+}
+  #huge_it_portfolio_content_1 #huge_it_portfolio_container_1{margin-left: 88px;}
+ .aqa-footer-section {
+    text-align: center;
+  }
+  .aqa-footer-section .widget_search input#s {width: 100%;}
+  .aqa-footer-section .widget_search input#searchsubmit{    right: 20px;top: 51px;}
+  .aqa-top-banner {padding: 135px 0px;}
+  .blog-img-auther.img-responsive img {
+    margin-top: 21px;
+    width: 30%;
+    height: auto;
+    border-radius: 60px;
+    float: none;
+    margin-right: 0;
+}
+h2.aqa-p-auth-title {
+	text-align: center !important;
+}
+p.written-auther-txt {
+	text-align: center;
+}
+.blog-writen{text-align: center;width: 100%;}
+.aqa-blog-meta span {
+    padding-right: 10px;
+    width: 50%;
+    float: left;
+    margin: 0px 0 10px 0;
+}
+/*blog sidebar*/
+.aqa-blog-section .widget_search input[type="text"]{width: 100%;}
+.aqa-blog-section .widget_search input[type="text"]:focus{width: 55%;}
+img.blog-manso-one {
+    height: auto;
+    width: 100%;
+}
+.blog-maonary .sample-maso:nth-child(even) img {
+    height: auto;
+    width: 100%;
+}
+
+/*B come*/
+.aqa-page-breadcrum-title {
+    text-align: center;
+    width: 100%;
+}
+.aqa-breadcrumb {
+    width: 100%;
+    text-align: center;
+}
+
+
+}
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait */
+@media (max-width: 320px)
+ {
+  .port_spacing #huge_it_portfolio_content_1 #huge_it_portfolio_options_1 ul li {
+      border: none;
+      float: none;
+      width: 100%;
+      text-align: center;
+  }
+  
+  #huge_it_portfolio_content_1 #huge_it_portfolio_container_1{margin-left: 24px;}
+ .aqa-footer-section {
+    text-align: center;
+  }
+  .aqa-service-inner h2{border: none;}
+.aqa-read-btn {margin-top: 25px;float: none;text-align: center;}
+.blog-maonary .sample-maso:nth-child(even) .single-masonary-post {
+    float: none !important;
+}
+.aqa-blog-meta span{width: 100%;}
+
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait */
+@media only screen (max-width: 480px) {
+
+  #huge_it_portfolio_content_1 #huge_it_portfolio_container_1{margin-left: 88px;}
+ .aqa-footer-section {
+    text-align: center;
+  }
+  .aqa-footer-section .widget_search input#s {width: 50%;}
+  .aqa-footer-section .widget_search input#searchsubmit{right: 198px;top: 51px;}
+  .aqa-top-banner {padding: 135px 0px;}
+  .aqa-service-inner h2{border: none;}
+  .blog-maonary .sample-maso:nth-child(even) img {
+  height: auto;
+}
+.blog-maonary .sample-maso:nth-child(even) .single-masonary-post {
+    float: none !important;
+}
+.blog-maonary .sample-maso:nth-child(even) .aqa-single-blog {
+    min-height: auto;
+}
+ 
+}
