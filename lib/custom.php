@@ -75,7 +75,19 @@ add_filter( 'max_srcset_image_width','kt_srcset_max');
 function kt_srcset_max($string) {
   return 2000;
 }
-
+function virtue_template_override_init() {
+	if(class_exists('EventOrganiser_Admin_Page')) {
+	    add_filter('template_include', 'virtue_evento_venue_overide', 20);
+	    function virtue_evento_venue_overide($template) {
+	          if(is_tax( 'event-venue' ) ) {
+	            remove_filter('template_include', array('Kadence_Wrapping', 'wrap'), 101);
+	            add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 99999);
+	          }
+	          return $template;
+	    }
+	}
+}
+add_action('init', 'virtue_template_override_init');
 function kt_get_srcset($width,$height,$url,$id) {
   if(empty($id) || empty($url)) {
     return;
