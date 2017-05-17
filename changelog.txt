@@ -1,3 +1,13 @@
+= 1.0.7 =
+* WP 4.7.4 compatible.
+* Removed required plugins.
+
+= 1.0.6 =
+* Added upsell link.
+
+= 1.0.5 =
+* WP 4.6 compatible.
+
 = 1.0.4 =
 * WP 4.6 compatible.
 * Updated Font Awesome Icons.

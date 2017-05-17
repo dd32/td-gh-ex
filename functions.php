@@ -150,16 +150,7 @@ require get_template_directory() . '/includes/customizer.php';
  */
 require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php');
 
-
 //---------------------------------------------------------------------
-//---------------------------------------------------------------------
-/* Theme Required Plugins
+/* Upsell Pro Theme
 /*---------------------------------------------------------------------------*/
-if ( !defined( 'AVIS_REQUIRED_PLUGINS' ) ) {
-	define( 'AVIS_REQUIRED_PLUGINS', trailingslashit(get_theme_root()) . 'avis-lite/includes/plugins' );
-}
-include_once('includes/skt-required-plugins.php');
-//---------------------------------------------------------------------
-/* Upshell Pro Theme
-/*---------------------------------------------------------------------------*/
-require_once( trailingslashit( get_template_directory() ) . 'sketchthemes-upsell/class-customize.php' );
+require_once( get_template_directory() . '/sketchthemes-upsell/class-customize.php' );
