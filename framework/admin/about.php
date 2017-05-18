@@ -74,19 +74,8 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* Added slider particles js feature.</p>';
-						echo '<p>* Added header image particle js feature.</p>';
-						echo '<p>* Added frontpage boxes global enable / disable feature.</p>';
-						echo '<p>* Added WooCommece 3.x support & fixed minor bugs.</p>';
-						echo '<p>* Updated blog layouts template files.</p>';
-						echo '<p>* Updated theme translation files.</p>';
-						echo '<p>* Updated frontpage boxes code.</p>';
-						echo '<p>* Updated customizer frontpage boxes icon color (transport = postMessage).</p>';
-						echo '<p>* Updated footer widgets area dynamic bootstrap class per active widgets.</p>';
-						echo '<p>* Fixed mobile menu child styling issues.</p>';
-						echo '<p>* Fixed frontpage boxes animated effect minor bugs.</p>';
-						echo '<p>* Fixed posts animated effect minor bugs.</p>';
-						echo '<p>* Fixed minor WooCommerce styling issues.</p>';
+					echo '<p>* Added Agama Blue contents hook.</p>';
+					echo '<p>* Fixed minor header menu styling issues.</p>';
 				echo '</div>';
 				
 			echo '</div>';

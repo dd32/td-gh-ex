@@ -167,4 +167,13 @@ class Agama_Helper {
 		return $output;
 	}
 	
+	/**
+	 * Get Agama Blue Contents
+	 *
+	 * @since 1.2.9.1
+	 */
+	public static function get_agama_blue_contents() {
+		if( has_action( 'agama_blue_contents' ) )
+			do_action( 'agama_blue_contents' );
+	}
 }

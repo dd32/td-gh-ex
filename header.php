@@ -53,3 +53,5 @@
 				
 				<?php Agama_Helper::get_front_page_boxes(); ?>
 				
+				<?php Agama_Helper::get_agama_blue_contents(); ?>
+				

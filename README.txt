@@ -3,6 +3,10 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.2.9.1 unreleased =
+* Added Agama Blue contents hook.
+* Fixed minor header menu styling issues.
+
 = 1.2.9 May 18 2017 =
 * Added slider particles js feature.
 * Added header image particle js feature.

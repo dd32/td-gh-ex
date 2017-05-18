@@ -1745,7 +1745,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'background-color'
 			),
 			array(
-				'element'	=> '.top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) > ul > li.current-menu-item, header#masthead nav > ul > li.current_page_item, header#masthead nav ul li ul.sub-menu',
+				'element'	=> '.top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) > ul > li.current-menu-item, header#masthead nav:not(.mobile-menu) > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) ul li ul.sub-menu',
 				'property'	=> 'border-color'
 			),
 			array(
@@ -1753,11 +1753,11 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'border-top-color'
 			),
 			array(
-				'element'	=> 'header#masthead nav ul li ul.sub-menu li:hover',
+				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li:hover',
 				'property'	=> 'border-left-color'
 			),
 			array(
-				'element'	=> 'header#masthead nav ul li ul.sub-menu li ul.sub-menu li:hover',
+				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li ul.sub-menu li:hover',
 				'property'	=> 'border-right-color'
 			)
 		),
@@ -1774,7 +1774,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'background-color'
 			),
 			array(
-				'element'	=> '.top-nav-wrapper, .top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) > ul > li.current-menu-item, header#masthead nav > ul > li.current_page_item, header#masthead nav ul li ul.sub-menu',
+				'element'	=> '.top-nav-wrapper, .top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) > ul > li.current-menu-item, header#masthead nav:not(.mobile-menu) > ul > li.current_page_item, header#masthead nav:not(.mobile-menu) ul li ul.sub-menu',
 				'function'	=> 'css',
 				'property'	=> 'border-color'
 			),
@@ -1784,12 +1784,12 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'border-top-color'
 			),
 			array(
-				'element'	=> 'header#masthead nav ul li ul.sub-menu li:hover',
+				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li:hover',
 				'function'	=> 'css',
 				'property'	=> 'border-left-color'
 			),
 			array(
-				'element'	=> 'header#masthead nav ul li ul.sub-menu li ul.sub-menu li:hover',
+				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li ul.sub-menu li:hover',
 				'function'	=> 'css',
 				'property'	=> 'border-right-color'
 			),
@@ -1839,7 +1839,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'transport'		=> 'postMessage',
 		'js_vars'		=> array(
 			array(
-				'element'	=> 'header#masthead, header#masthead nav ul li ul',
+				'element'	=> 'header#masthead, header#masthead nav:not(.mobile-menu) ul li ul',
 				'function'	=> 'css',
 				'property'	=> 'background-color'
 			)
