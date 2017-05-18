@@ -5,8 +5,7 @@
 	* This functions file contains the the mainly used features of a WordPress theme
 	* Uncomment or delete lines as needed
 	*
-	* @package KniffTech
-	* @subpackage Bidnis
+	* @package Bidnis
 	* @since Bidnis 1.0
 	*/
 

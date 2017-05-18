@@ -2,8 +2,7 @@
 /**
  * Template for displaying a widget area and additional content in the footer
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 

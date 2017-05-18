@@ -2,8 +2,7 @@
 /**
  * The template part for displaying an Author biography
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 if( get_theme_mod( 'author_bio', true ) ): ?>

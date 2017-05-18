@@ -2,8 +2,7 @@
 /**
  * Content loop
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 if( have_posts() ):

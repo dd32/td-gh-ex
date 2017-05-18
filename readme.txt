@@ -1,10 +1,10 @@
 # Theme
 Name: Bidnis
-Author: Kniffen Technologies (http://knifftech.net)
+Author: Kniffen (http://kniff.xyz)
 License: GNU General Public License v3
 
 # Copyright
-Bidnis WordPress Theme, Copyright (C) 2016, Kniffen Technologies
+Bidnis WordPress Theme, Copyright (C) 2017, Kniffen
 Bidnis is distributed under the terms of the GNU GPL v3
 
 This program is free software: you can redistribute it and/or modify
@@ -79,3 +79,8 @@ https://www.pexels.com/photo/mock-up-technology-laptop-apple-51171/
 
 1.1.3 - 2016.11.30
 - Fixed e-mail in header not linked properly
+
+1.1.4 - 2017.05.18
+- Updated theme information for author rebranding
+- Added table of contents to style.css
+Simplified js/functions.js

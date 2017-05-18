@@ -4,8 +4,7 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 ?><!DOCTYPE html>

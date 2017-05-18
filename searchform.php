@@ -2,8 +2,7 @@
 /**
  * Template for displaying the search form
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 ?>

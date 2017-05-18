@@ -2,8 +2,7 @@
 /**
  * Template for displaying comments
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 if ( post_password_required() ) {

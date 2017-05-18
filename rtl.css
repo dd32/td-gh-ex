@@ -35,8 +35,6 @@ ol ol {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   -webkit-flex-direction: row-reverse;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }

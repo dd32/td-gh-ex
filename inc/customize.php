@@ -5,8 +5,7 @@
 	* Adds various theme options to...
 	*
 	* 
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
 	*/
 	function bidnis_customize_register( $wp_customize ){

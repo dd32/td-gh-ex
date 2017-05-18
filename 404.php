@@ -2,8 +2,7 @@
 /**
  * Template for displaying 404 pages (not found)
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 get_header(); ?>

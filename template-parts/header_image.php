@@ -2,8 +2,7 @@
 /**
  * The template part for displaying the header image, text and call-to-action
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 if( !is_home() && !is_front_page() ){

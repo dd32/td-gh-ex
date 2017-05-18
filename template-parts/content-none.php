@@ -2,8 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 ?>

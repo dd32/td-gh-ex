@@ -2,8 +2,7 @@
 /**
  * Template for displaying a search query
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 get_header(); ?>

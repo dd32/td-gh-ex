@@ -2,8 +2,7 @@
 /**
  * Custom theme functions
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 

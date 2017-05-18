@@ -2,8 +2,7 @@
 /**
  * The template part for displaying content header
  *
- * @package KniffTech
- * @subpackage Bidnis
+ * @package Bidnis
  * @since Bidnis 1.0
  */
 ?>

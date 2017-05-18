@@ -1,95 +1,65 @@
 (function($){
 
-	var bidnis = {
-		sizes: {
-			'desktop': 1280,
-			'tablet': 640,
-			'phone': 320
-		},
+	const $window = $(window)
+	const $document = $(document)
+	const $htmlAndBody = $document.find('html, body')
+	const $html = $document.find('html')
+	const $scrollToTop = $document.find('.scroll-to-top')
+	const $menuHeaderToggle = $document.find('.menu-toggle')
+	const $menuHeaderContainer = $document.find('.header-menu-container')
+	const $videoPosts = $document.find('.single-format-video .post')
+	const $archiveTitle = $document.find('.archive .content-title')
 
-		init: function(){
-			this.cacheDom();
-			this.bindEvents();
+	// Adds JS class to header
+	$html.removeClass('no-js').addClass('js')
 
-			this.$html.removeClass('no-js').addClass('js');
+	// Remove prefix from archive titles
+	if ($archiveTitle.length) {
+		const archiveTitle = $archiveTitle.html().split(': ')
+		
+		if (archiveTitle.length > 1) {
+			archiveTitle.shift()
+			$archiveTitle.html(archiveTitle.join(': '))
+		}
+	}
 
-			this.resizeHandler();
-			this.archiveTitlesFix();
-			this.fullWidthVideoEmbeds();
-		},
-
-		cacheDom: function(){
-			this.$window = $(window);
-			this.$document = $(document);
-			this.$htmlAndBody = this.$document.find('html, body');
-			this.$html = this.$document.find('html');
-			this.$scrollToTop = this.$document.find('.scroll-to-top');
-			this.$menuHeaderToggle = this.$document.find('.menu-toggle');
-			this.$menuHeaderContainer = this.$document.find('.header-menu-container');
-			this.$videoPosts = this.$document.find('.single-format-video .post');
-			this.$videoEmbeds = this.$videoPosts.find('iframe, video, embed, object, .video-player, .videopress-placeholder');
-			this.$archiveTitle = this.$document.find('.archive .content-title');
-		},
-
-		bindEvents: function(){
-			this.$window.resize( this.resizeHandler.bind(this) );
-			this.$scrollToTop.on( 'click', this.scrollToTop.bind(this) );
-			this.$menuHeaderToggle.on( 'click', this.toggleMenu.bind(this) );
-			this.$document.on( 'scroll', this.scrollHandler.bind(this) );
-		},
-
-		toggleMenu: function(){
-			this.$menuHeaderContainer.toggle()
-		},
-
-		scrollToTop: function(){
-			this.$htmlAndBody.animate({scrollTop:0}, 'slow');
-			return false;
-		},
-
-		resizeHandler: function(){
-			var mm = window.matchMedia( '(max-width: '+this.sizes.tablet+'px)' );
-
-			if( mm.matches ){
-				this.$menuHeaderContainer.hide();
-			}else{
-				this.$menuHeaderContainer.show();
-			}
-
-			this.fullWidthVideoEmbeds();
-		},
-
-		fullWidthVideoEmbeds: function(){
-			if( this.$videoEmbeds.length ){
-				for( var x=0; x<this.$videoEmbeds.length; x++){
-					var $video = $( this.$videoEmbeds[x] );
-
-					$video.width('100%');
-					$video.height( ($video.width()/16) * 9 );
-				}
-			}
-		},
-
-		scrollHandler: function(){
-			if( this.$document.scrollTop() >= 500 ){
-				this.$scrollToTop.show(500)
-			}else{
-				this.$scrollToTop.hide(500);
-			}
-		},
-
-		archiveTitlesFix: function(){
-			if( this.$archiveTitle.length ){
-				var archiveTitle = this.$archiveTitle.html().split(': ');
-
-				if( archiveTitle.length > 1 ){
-					archiveTitle.shift();
-					this.$archiveTitle.html( archiveTitle.join(': ') );
-				}
+	// Make sure video embeds are full width and 16:9
+	function fullWidthVideoEmbeds() {
+		const $videoEmbeds = 
+			$videoPosts.find('iframe, video, embed, object, .video-player, .videopress-placeholder')
+	
+		if ($videoEmbeds.length) {
+			for (let x=0; x<$videoEmbeds.length; x++) {
+				const $video = $($videoEmbeds[x])
+				$video.width('100%')
+				$video.height(($video.width()/16) * 9)
 			}
 		}
 	}
 
-	$(document).ready( bidnis.init.bind(bidnis) );
+	if ($videoPosts.length) fullWidthVideoEmbeds()
+	
+	$window.resize(() => {
+		if ($videoPosts.length) fullWidthVideoEmbeds()
+	})
+
+	// Scroll to top button
+	$document.on('scroll', () => {
+		$document.scrollTop() > 500 ? $scrollToTop.fadeIn(500) : $scrollToTop.fadeOut(500)
+	})
+	
+	$scrollToTop.on('click', () => {
+		$htmlAndBody.animate({scrollTop:0}, 500)
+		return false;
+	})
+
+	// Menu
+	$window.resize(() => {
+		const mm = window.matchMedia( '(max-width: 640px)' );
+		
+		mm.matches ? $menuHeaderContainer.hide() : $menuHeaderContainer.show()
+	})
+
+	$menuHeaderToggle.on('click', () => $menuHeaderContainer.toggle())
 
 })(jQuery);
