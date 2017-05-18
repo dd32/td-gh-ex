@@ -55,48 +55,50 @@ if( ! class_exists( 'Agama' ) ) {
 		 * @return array Filtered class values.
 		 */
 		function body_class( $classes ) {
-			$background_color 	= get_background_color();
-			$background_image 	= get_background_image();
-			$header 			= get_theme_mod('agama_header_style', 'transparent');
-			$sidebar_position	= get_theme_mod('agama_sidebar_position', 'right');
-			$blog_layout 		= get_theme_mod('agama_blog_layout', 'list');
+			$background_color 	= esc_attr( get_background_color() );
+			$background_image 	= esc_url( get_background_image() );
+			$header 			= esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
+			$sidebar_position	= esc_attr( get_theme_mod( 'agama_sidebar_position', 'right' ) );
+			$blog_layout 		= esc_attr( get_theme_mod('agama_blog_layout', 'list') );
 			
-			if( $header == 'transparent' ) {
-				$classes[] = 'header_v1';
+			// Apply header style class.
+			switch( $header ) {
+				case 'transparent':
+					$classes[] = 'header_v1';
+				break;
+				case 'sticky':
+					$classes[] = 'sticky_header';
+				break;
 			}
 			
-			if(  $header == 'sticky' ) {
-				$classes[] = 'sticky_header';
-			}
-			
-			// If sidebar position "left"
+			// Apply sidebar position class.
 			if( $sidebar_position == 'left' ) {
-				$classes[] = 'sidebar_left';
+				$classes[] = 'sidebar-left';
 			}
 			
-			// If blog layout "small_thumbs"
-			if( $blog_layout == 'small_thumbs' ) {
-				$classes[] = 'blog_small_thumbs';
+			// Apply blog layout class.
+			switch( $blog_layout ) {
+				case 'small_thumbs':
+					$classes[] = 'blog-small-thumbs';
+				break;
+				case 'grid':
+					$classes[] = 'blog-grid';
+				break;
 			}
 			
-			// If blog layout "grid"
-			if( $blog_layout == 'grid' ) {
-				$classes[] = 'blog_grid';
-			}
-			
-			// If page template "full-width"
+			// Apply template full-width class.
 			if ( is_page_template( 'page-templates/full-width.php' ) ) { 
 				$classes[] = 'full-width'; 
 			}
 			
-			// If page template "front-page"
+			// Apply front page class.
 			if ( is_page_template( 'page-templates/front-page.php' ) ) {
 				$classes[] = 'template-front-page';
 				if ( has_post_thumbnail() )
 					$classes[] = 'has-post-thumbnail';
 			}
 			
-			// If empty background
+			// Apply empty background class.
 			if ( empty( $background_image ) ) {
 				if ( empty( $background_color ) )
 					$classes[] = 'custom-background-empty';
@@ -104,11 +106,11 @@ if( ! class_exists( 'Agama' ) ) {
 					$classes[] = 'custom-background-white';
 			}
 
-			// Enable custom font class only if the font CSS is queued to load.
+			// Apply custom font enabled class.
 			if ( wp_style_is( 'PTSans', 'queue' ) )
 				$classes[] = 'custom-font-enabled';
 			
-			// Single Author
+			// Apply single author class.
 			if ( ! is_multi_author() )
 				$classes[] = 'single-author';
 
@@ -148,20 +150,6 @@ if( ! class_exists( 'Agama' ) ) {
 				$class = 'col-md-12';
 			}
 			return esc_attr( $class );
-		}
-		
-		/**
-		 * Blog Posts Loading Animation
-		 *
-		 * @since 1.2.8
-		 */
-		static function posts_AnimateOnScroll() {
-			$posts['animated']  = esc_attr( get_theme_mod( 'agama_blog_posts_load_animated', true ) );
-			$posts['animation'] = esc_attr( get_theme_mod( 'agama_blog_posts_load_animation', 'bounceInUp' ) );
-			
-			if( $posts['animated'] && ! is_single() ) {
-				echo ' data-animonscroll="'. $posts['animation'] .'" data-delay="1000"';
-			}
 		}
 		
 		/**

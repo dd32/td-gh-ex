@@ -1,8 +1,8 @@
 <?php
 if( ! defined( 'ABSPATH' ) ) exit;
 
-// Custom header support
-get_template_part('includes/custom-header');
+// Include Agama Custom Header Function File
+get_template_part('includes/agama-custom-header');
 
 if ( ! isset( $content_width ) ) 
 	$content_width = 1200;
@@ -58,6 +58,9 @@ function agama_setup() {
 	 * Declare WooCommerce Support
 	 */
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'agama_setup' );
 

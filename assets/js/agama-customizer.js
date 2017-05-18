@@ -9,7 +9,7 @@
             .text(themevision.Label)
             .css({
                 'display': 'inline-block',
-                'background-color': 'rgb(162, 198, 5)',
+                'background-color': 'rgb(254, 102, 99)',
                 'color': '#fff',
                 'text-transform': 'uppercase',
                 'margin-top': '6px',

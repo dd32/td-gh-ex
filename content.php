@@ -8,43 +8,27 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
- $blog_layout = get_theme_mod('agama_blog_layout', 'list');
- ?>
+ $blog_layout = esc_attr( get_theme_mod('agama_blog_layout', 'list') ); ?>
 
-<div class="article-wrapper <?php agama_article_wrapper_class(); ?> clearfix"<?php Agama::posts_AnimateOnScroll(); ?>>
+<div class="article-wrapper <?php agama_article_wrapper_class(); ?> clearfix"<?php Agama_Helper::get_data_animated(); ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
 	 * Select Blog Layout
 	 *
 	 * @since 1.1.1
+	 * @updated 1.3.0
 	 */
 	switch( $blog_layout ):
-	
-		case $blog_layout == 'list' && ! is_single():
-			get_template_part('framework/blog/list/loop');
+		case 'list':
+			get_template_part('framework/blog/list');
 		break;
-		
-		case $blog_layout == 'list' && is_single():
-			get_template_part('framework/blog/list/single');
+		case 'grid':
+			get_template_part('framework/blog/grid');
 		break;
-		
-		case $blog_layout == 'grid' && ! is_single():
-			get_template_part('framework/blog/grid/loop');
+		case 'small_thumbs':
+			get_template_part('framework/blog/small_thumbs');
 		break;
-		
-		case $blog_layout == 'grid' && is_single():
-			get_template_part('framework/blog/grid/single');
-		break;
-		
-		case $blog_layout == 'small_thumbs' && ! is_single():
-			get_template_part('framework/blog/small_thumbs/loop');
-		break;
-		
-		case $blog_layout == 'small_thumbs' && is_single():
-			get_template_part('framework/blog/small_thumbs/single');
-		break;
-	
 	endswitch; ?>
-	</article><!-- #post -->
-</div><!-- .article-wrapper -->
+	</article>
+</div>

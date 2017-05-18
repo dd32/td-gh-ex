@@ -37,41 +37,19 @@
 	<!-- Header Start -->
 	<header id="masthead" class="site-header clearfix <?php Agama::header_class(); ?>" role="banner">
 		
-		<?php get_template_part( 'framework/headers' ); // Get headers ?>
+		<?php Agama_Helper::get_header(); ?>
 		
-		<!-- Header Image Start -->
-		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="<?php esc_url( header_image() ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-		</a>
-		<?php endif; ?><!-- Header Image End -->
+		<?php Agama_Helper::get_header_image(); ?>
 		
 	</header><!-- Header End -->
 	
-	<?php
-	#############################################################
-	# SLIDER ACTION
-	#############################################################
-	do_action( 'agama_slider_action' );
-	#############################################################
-	# BREADCRUMB ACTION
-	#############################################################
-	if( get_theme_mod( 'agama_breadcrumb', true ) ):
-		// If breadcrumb is disabled on homepage do not show anything
-		if( get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_home() || 
-		    get_theme_mod( 'agama_breadcrumb_homepage', '' ) && is_front_page() ): else:
-			
-			do_action( 'agama_breadcrumbs_action' );
-			
-		endif;
-	endif; ?>
+	<?php Agama_Helper::get_slider(); ?>
+	
+	<?php Agama_Helper::get_breadcrumb(); ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">
 			<div class="vision-row clearfix">
 				
-				<?php 
-				#############################################################
-				# FRONTPAGE BOXES ACTION
-				#############################################################
-				do_action( 'agama_frontpage_boxes_action' ); ?>
+				<?php Agama_Helper::get_front_page_boxes(); ?>
+				

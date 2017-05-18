@@ -18,12 +18,19 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		private static $instance = null;
 		
 		/**
-		 * Theme Version
+		 * Agama Version
 		 *
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.2.8.10';
+		static private $version = '1.2.9';
+		
+		/**
+		 * Development Mode
+		 *
+		 * @since 1.2.9
+		 */
+		static private $development = false;
 		
 		/**
 		 * Class Constructor
@@ -31,6 +38,16 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @since 1.0.1
 		 */
 		function __construct() {
+			
+			/**
+			 * If development mode is "On" generate -
+			 * unique id for scripts 'n styles version.
+			 *
+			 * @since 1.2.9
+			 */
+			if( self::$development ) {
+				self::$version = esc_attr( uniqid() );
+			}
 			
 			$this->defines();
 			
@@ -166,6 +183,12 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			wp_register_style( 'agama-animate', AGAMA_CSS . 'animate.min.css', array(), '3.5.1' );
 			wp_enqueue_style( 'agama-animate' );
 			
+			// Particles JS
+			if( get_theme_mod( 'agama_slider_particles', true ) || get_theme_mod( 'agama_header_image_particles', true ) ) {
+				wp_register_script( 'agama-particles', AGAMA_JS . 'min/particles.min.js', array(), self::$version );
+				wp_enqueue_script( 'agama-particles' );
+			}
+			
 			// Load all jquery plugins
 			wp_register_script( 'agama-plugins', AGAMA_JS . 'plugins.js', array('jquery'), self::$version );
 			wp_enqueue_script( 'agama-plugins' );
@@ -173,18 +196,24 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// Load Agama jQuery Functions
 			wp_register_script( 'agama-functions', AGAMA_JS . 'functions.js', array(), self::$version, true );
 			$translation_array = array(
-				'is_admin_bar_showing'	=> esc_attr( is_admin_bar_showing() ),
-				'is_home'				=> is_home(),
-				'is_front_page'			=> is_front_page(),
-				'headerStyle'			=> esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) ),
-				'headerImage'			=> esc_attr( get_header_image() ),
-				'top_navigation'		=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
-				'background_image'		=> esc_attr( get_header_image() ),
-				'primaryColor' 			=> esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ),
-				'header_top_margin'		=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0' ) ),
-				'slider_enable'			=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
-				'slider_height'			=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
-				'slider_time'			=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) )
+				'is_admin_bar_showing'			=> esc_attr( is_admin_bar_showing() ),
+				'is_home'						=> is_home(),
+				'is_front_page'					=> is_front_page(),
+				'headerStyle'					=> esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) ),
+				'headerImage'					=> esc_attr( get_header_image() ),
+				'top_navigation'				=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
+				'background_image'				=> esc_attr( get_header_image() ),
+				'primaryColor' 					=> esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ),
+				'header_top_margin'				=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0' ) ),
+				'slider_particles'				=> esc_attr( get_theme_mod( 'agama_slider_particles', true ) ),
+				'slider_enable'					=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
+				'slider_height'					=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
+				'slider_time'					=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) ),
+				'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#FE6663' ) ),
+				'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#FE6663' ) ),
+				'header_image_particles'		=> esc_attr( get_theme_mod( 'agama_header_image_particles', true ) ),
+				'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#FE6663' ) ),
+				'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#FE6663' ) )
 			);
 			wp_localize_script( 'agama-functions', 'agama', $translation_array );
 			wp_enqueue_script( 'agama-functions' );

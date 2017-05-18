@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2017-01-26 01:39+0100\n"
+"POT-Creation-Date: 2017-05-18 10:45+0200\n"
 "PO-Revision-Date: 2015-08-29 23:03+0200\n"
 "Last-Translator: Jaroslav Svetlik <kdonet@gmail.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:21 archive.php:43 framework/breadcrumbs.php:28
+#: archive.php:21 archive.php:43 framework/class-agama-breadcrumb.php:147
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
@@ -50,13 +50,13 @@ msgstr ""
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: archive.php:23 archive.php:45 framework/breadcrumbs.php:31
+#: archive.php:23 archive.php:45 framework/class-agama-breadcrumb.php:150
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: archive.php:25 archive.php:47 framework/breadcrumbs.php:34
-#: framework/breadcrumbs.php:35
+#: archive.php:25 archive.php:47 framework/class-agama-breadcrumb.php:153
+#: framework/class-agama-breadcrumb.php:154
 msgid "Archives"
 msgstr ""
 
@@ -65,14 +65,13 @@ msgstr ""
 msgid "Author Archives: %s"
 msgstr ""
 
-#: author.php:61 author.php:114 framework/classes/agama.php:389
+#: author.php:61 author.php:114 framework/class-agama.php:391
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: bbpress.php:17 content-page.php:23 framework/blog/grid/loop.php:59
-#: framework/blog/grid/single.php:53 framework/blog/list/loop.php:62
-#: framework/blog/list/single.php:59 image.php:100
+#: bbpress.php:17 content-page.php:23 framework/blog/grid.php:59
+#: framework/blog/list.php:62 image.php:100 single.php:73
 msgid "Pages:"
 msgstr ""
 
@@ -104,8 +103,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:26 framework/blog/grid/loop.php:64
-#: framework/blog/grid/single.php:59 image.php:35
+#: content-page.php:26 framework/blog/grid.php:64 image.php:35
 msgid "Edit"
 msgstr ""
 
@@ -451,8 +449,8 @@ msgid "Roll Out"
 msgstr ""
 
 #: framework/admin/customizer.php:28 framework/admin/customizer.php:117
-#: framework/admin/customizer.php:234 framework/admin/customizer.php:694
-#: framework/admin/customizer.php:1350
+#: framework/admin/customizer.php:270 framework/admin/customizer.php:836
+#: framework/admin/customizer.php:1709
 msgid "General"
 msgstr ""
 
@@ -484,7 +482,7 @@ msgstr ""
 msgid "Enable back to top button ?"
 msgstr ""
 
-#: framework/admin/customizer.php:70 framework/admin/customizer.php:1117
+#: framework/admin/customizer.php:70 framework/admin/customizer.php:1446
 msgid "Layout"
 msgstr ""
 
@@ -526,7 +524,7 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: framework/admin/customizer.php:109 framework/admin/customizer.php:1445
+#: framework/admin/customizer.php:109 framework/admin/customizer.php:1813
 msgid "Header"
 msgstr ""
 
@@ -534,7 +532,7 @@ msgstr ""
 msgid "Header section."
 msgstr ""
 
-#: framework/admin/customizer.php:118 framework/admin/customizer.php:1446
+#: framework/admin/customizer.php:118 framework/admin/customizer.php:1814
 msgid "Header general section."
 msgstr ""
 
@@ -558,7 +556,7 @@ msgstr ""
 msgid "Header V3"
 msgstr ""
 
-#: framework/admin/customizer.php:142 framework/admin/customizer.php:1774
+#: framework/admin/customizer.php:142 framework/admin/customizer.php:2142
 msgid "Top Navigation"
 msgstr ""
 
@@ -595,11 +593,11 @@ msgid "This feature works with header V2 & V3."
 msgstr ""
 
 #: framework/admin/customizer.php:183 framework/admin/customizer.php:192
-#: framework/admin/customizer.php:1560
+#: framework/admin/customizer.php:1928
 msgid "Logo"
 msgstr ""
 
-#: framework/admin/customizer.php:184 framework/admin/customizer.php:1561
+#: framework/admin/customizer.php:184 framework/admin/customizer.php:1929
 msgid "Header logo section."
 msgstr ""
 
@@ -623,1154 +621,1247 @@ msgstr ""
 msgid "Header image section."
 msgstr ""
 
-#: framework/admin/customizer.php:226
-msgid "Slider"
+#: framework/admin/customizer.php:226 framework/admin/customizer.php:375
+#: framework/admin/customizer.php:384
+msgid "Particles"
 msgstr ""
 
 #: framework/admin/customizer.php:227
+msgid "Enable particles ?"
+msgstr ""
+
+#: framework/admin/customizer.php:238 framework/admin/customizer.php:395
+msgid "Particle Circles Color"
+msgstr ""
+
+#: framework/admin/customizer.php:239 framework/admin/customizer.php:396
+msgid "Set particles custom circles color ?"
+msgstr ""
+
+#: framework/admin/customizer.php:250 framework/admin/customizer.php:406
+msgid "Particles Lines Color"
+msgstr ""
+
+#: framework/admin/customizer.php:251 framework/admin/customizer.php:407
+msgid "Set particles custom lines color"
+msgstr ""
+
+#: framework/admin/customizer.php:262
+msgid "Slider"
+msgstr ""
+
+#: framework/admin/customizer.php:263
 msgid "Slider settings."
 msgstr ""
 
-#: framework/admin/customizer.php:235
+#: framework/admin/customizer.php:271
 msgid "Slider general section."
 msgstr ""
 
-#: framework/admin/customizer.php:243
+#: framework/admin/customizer.php:279
 msgid "Enable"
 msgstr ""
 
-#: framework/admin/customizer.php:244
+#: framework/admin/customizer.php:280
 msgid "Enable slider ?"
 msgstr ""
 
-#: framework/admin/customizer.php:254
+#: framework/admin/customizer.php:290
+msgid "Overlay"
+msgstr ""
+
+#: framework/admin/customizer.php:291
+msgid "Enable slider overlay ?"
+msgstr ""
+
+#: framework/admin/customizer.php:301
+msgid "Overlay BG Color"
+msgstr ""
+
+#: framework/admin/customizer.php:302
+msgid "Set custom overlay background color."
+msgstr ""
+
+#: framework/admin/customizer.php:326
 #: framework/admin/kirki/includes/class-kirki-l10n.php:175
 msgid "Height"
 msgstr ""
 
-#: framework/admin/customizer.php:255
+#: framework/admin/customizer.php:327
 msgid "Set slider height in pixels (px)."
 msgstr ""
 
-#: framework/admin/customizer.php:256
+#: framework/admin/customizer.php:328
 msgid "Set 0 for full-screen slider."
 msgstr ""
 
-#: framework/admin/customizer.php:271
+#: framework/admin/customizer.php:343
 msgid "Time"
 msgstr ""
 
-#: framework/admin/customizer.php:272
+#: framework/admin/customizer.php:344
 msgid ""
 "Milliseconds between the end of the sliding effect and the start of the nex "
 "one."
 msgstr ""
 
-#: framework/admin/customizer.php:273
+#: framework/admin/customizer.php:345
 msgid "1000ms = 1sec."
 msgstr ""
 
-#: framework/admin/customizer.php:288 framework/admin/customizer.php:704
+#: framework/admin/customizer.php:360 framework/admin/customizer.php:857
 msgid "Visibility"
 msgstr ""
 
-#: framework/admin/customizer.php:289
+#: framework/admin/customizer.php:361
 msgid "Select where the slider should be visible."
 msgstr ""
 
-#: framework/admin/customizer.php:294 framework/admin/customizer.php:710
-#: framework/breadcrumbs.php:80
+#: framework/admin/customizer.php:366 framework/admin/customizer.php:863
+#: framework/class-agama-breadcrumb.php:60
 msgid "Homepage"
 msgstr ""
 
-#: framework/admin/customizer.php:295 framework/admin/customizer.php:711
+#: framework/admin/customizer.php:367 framework/admin/customizer.php:864
 msgid "Front Page"
 msgstr ""
 
-#: framework/admin/customizer.php:303
+#: framework/admin/customizer.php:376
+msgid "Particles section."
+msgstr ""
+
+#: framework/admin/customizer.php:385
+msgid "Enable particles on slider ?"
+msgstr ""
+
+#: framework/admin/customizer.php:417
 msgid "Slide #1"
 msgstr ""
 
-#: framework/admin/customizer.php:304 framework/admin/customizer.php:420
+#: framework/admin/customizer.php:418 framework/admin/customizer.php:548
 msgid "Upload slider image."
 msgstr ""
 
-#: framework/admin/customizer.php:312 framework/admin/customizer.php:428
-#: framework/admin/customizer.php:774 framework/admin/customizer.php:859
-#: framework/admin/customizer.php:944 framework/admin/customizer.php:1029
+#: framework/admin/customizer.php:426 framework/admin/customizer.php:556
+#: framework/admin/customizer.php:941 framework/admin/customizer.php:1070
+#: framework/admin/customizer.php:1199 framework/admin/customizer.php:1328
 msgid "Image"
 msgstr ""
 
-#: framework/admin/customizer.php:322 framework/admin/customizer.php:438
-#: framework/admin/customizer.php:741 framework/admin/customizer.php:826
-#: framework/admin/customizer.php:911 framework/admin/customizer.php:996
+#: framework/admin/customizer.php:436 framework/admin/customizer.php:566
+#: framework/admin/customizer.php:894 framework/admin/customizer.php:1023
+#: framework/admin/customizer.php:1152 framework/admin/customizer.php:1281
 msgid "Title"
 msgstr ""
 
-#: framework/admin/customizer.php:323 framework/admin/customizer.php:439
+#: framework/admin/customizer.php:437 framework/admin/customizer.php:567
 msgid "Add custom slide title."
 msgstr ""
 
-#: framework/admin/customizer.php:324 framework/admin/customizer.php:440
+#: framework/admin/customizer.php:438 framework/admin/customizer.php:568
 msgid "If empty the title will be hidden."
 msgstr ""
 
-#: framework/admin/customizer.php:328 framework/admin/customizer.php:444
+#: framework/admin/customizer.php:442 framework/admin/customizer.php:572
 msgid "Welcome to Agama"
 msgstr ""
 
-#: framework/admin/customizer.php:334 framework/admin/customizer.php:450
+#: framework/admin/customizer.php:448 framework/admin/customizer.php:578
 msgid "Title Animation"
 msgstr ""
 
-#: framework/admin/customizer.php:335 framework/admin/customizer.php:451
+#: framework/admin/customizer.php:449 framework/admin/customizer.php:579
 msgid "Select title slide animation."
 msgstr ""
 
-#: framework/admin/customizer.php:346 framework/admin/customizer.php:462
+#: framework/admin/customizer.php:460 framework/admin/customizer.php:590
 msgid "Title Color"
 msgstr ""
 
-#: framework/admin/customizer.php:347 framework/admin/customizer.php:463
+#: framework/admin/customizer.php:461 framework/admin/customizer.php:591
 msgid "Select slide title color."
 msgstr ""
 
-#: framework/admin/customizer.php:357 framework/admin/customizer.php:473
+#: framework/admin/customizer.php:471 framework/admin/customizer.php:601
 msgid "Slider Content Top Distance"
 msgstr ""
 
-#: framework/admin/customizer.php:358 framework/admin/customizer.php:474
+#: framework/admin/customizer.php:472 framework/admin/customizer.php:602
 msgid "Set slider content top distance in %."
 msgstr ""
 
-#: framework/admin/customizer.php:373 framework/admin/customizer.php:489
+#: framework/admin/customizer.php:487 framework/admin/customizer.php:617
 msgid "Button Title"
 msgstr ""
 
-#: framework/admin/customizer.php:374 framework/admin/customizer.php:490
+#: framework/admin/customizer.php:488 framework/admin/customizer.php:618
 msgid "Set custom button title."
 msgstr ""
 
-#: framework/admin/customizer.php:375 framework/admin/customizer.php:491
+#: framework/admin/customizer.php:489 framework/admin/customizer.php:619
 msgid "If field empty the button will be hidden."
 msgstr ""
 
-#: framework/admin/customizer.php:379 framework/admin/customizer.php:495
+#: framework/admin/customizer.php:493 framework/admin/customizer.php:623
 msgid "Learn More"
 msgstr ""
 
-#: framework/admin/customizer.php:385 framework/admin/customizer.php:501
+#: framework/admin/customizer.php:499 framework/admin/customizer.php:629
 msgid "Button Animation"
 msgstr ""
 
-#: framework/admin/customizer.php:386 framework/admin/customizer.php:502
+#: framework/admin/customizer.php:500 framework/admin/customizer.php:630
 msgid "Select button slide animation."
 msgstr ""
 
-#: framework/admin/customizer.php:397 framework/admin/customizer.php:513
+#: framework/admin/customizer.php:511 framework/admin/customizer.php:641
 msgid "Button URL"
 msgstr ""
 
-#: framework/admin/customizer.php:398 framework/admin/customizer.php:514
+#: framework/admin/customizer.php:512 framework/admin/customizer.php:642
 msgid "Set button url."
 msgstr ""
 
-#: framework/admin/customizer.php:408 framework/admin/customizer.php:524
+#: framework/admin/customizer.php:522 framework/admin/customizer.php:652
 msgid "Button BG Color"
 msgstr ""
 
-#: framework/admin/customizer.php:409 framework/admin/customizer.php:525
+#: framework/admin/customizer.php:523 framework/admin/customizer.php:653
 msgid "Select button background color."
 msgstr ""
 
-#: framework/admin/customizer.php:419
+#: framework/admin/customizer.php:547
 msgid "Slide #2"
 msgstr ""
 
-#: framework/admin/customizer.php:535 framework/admin/customizer.php:2374
-#: framework/admin/customizer.php:2375
+#: framework/admin/customizer.php:677 framework/admin/customizer.php:2753
+#: framework/admin/customizer.php:2754
 msgid "Slide #3"
 msgstr ""
 
-#: framework/admin/customizer.php:536
+#: framework/admin/customizer.php:678
 msgid "Slide #3 section."
 msgstr ""
 
-#: framework/admin/customizer.php:544 framework/admin/customizer.php:2392
-#: framework/admin/customizer.php:2393
+#: framework/admin/customizer.php:686 framework/admin/customizer.php:2771
+#: framework/admin/customizer.php:2772
 msgid "Slide #4"
 msgstr ""
 
-#: framework/admin/customizer.php:545
+#: framework/admin/customizer.php:687
 msgid "Slide #4 section."
 msgstr ""
 
-#: framework/admin/customizer.php:553 framework/admin/customizer.php:2410
-#: framework/admin/customizer.php:2411
+#: framework/admin/customizer.php:695 framework/admin/customizer.php:2789
+#: framework/admin/customizer.php:2790
 msgid "Slide #5"
 msgstr ""
 
-#: framework/admin/customizer.php:554
+#: framework/admin/customizer.php:696
 msgid "Slide #5 section."
 msgstr ""
 
-#: framework/admin/customizer.php:562 framework/admin/customizer.php:2428
-#: framework/admin/customizer.php:2429
+#: framework/admin/customizer.php:704 framework/admin/customizer.php:2807
+#: framework/admin/customizer.php:2808
 msgid "Slide #6"
 msgstr ""
 
-#: framework/admin/customizer.php:563
+#: framework/admin/customizer.php:705
 msgid "Slide #6 section."
 msgstr ""
 
-#: framework/admin/customizer.php:571 framework/admin/customizer.php:2446
-#: framework/admin/customizer.php:2447
+#: framework/admin/customizer.php:713 framework/admin/customizer.php:2825
+#: framework/admin/customizer.php:2826
 msgid "Slide #7"
 msgstr ""
 
-#: framework/admin/customizer.php:572
+#: framework/admin/customizer.php:714
 msgid "Slide #7 section."
 msgstr ""
 
-#: framework/admin/customizer.php:580 framework/admin/customizer.php:2464
-#: framework/admin/customizer.php:2465
+#: framework/admin/customizer.php:722 framework/admin/customizer.php:2843
+#: framework/admin/customizer.php:2844
 msgid "Slide #8"
 msgstr ""
 
-#: framework/admin/customizer.php:581
+#: framework/admin/customizer.php:723
 msgid "Slide #8 section."
 msgstr ""
 
-#: framework/admin/customizer.php:589 framework/admin/customizer.php:2482
-#: framework/admin/customizer.php:2483
+#: framework/admin/customizer.php:731 framework/admin/customizer.php:2861
+#: framework/admin/customizer.php:2862
 msgid "Slide #9"
 msgstr ""
 
-#: framework/admin/customizer.php:590
+#: framework/admin/customizer.php:732
 msgid "Slide #9 section."
 msgstr ""
 
-#: framework/admin/customizer.php:598 framework/admin/customizer.php:2500
-#: framework/admin/customizer.php:2501
+#: framework/admin/customizer.php:740 framework/admin/customizer.php:2879
+#: framework/admin/customizer.php:2880
 msgid "Slide #10"
 msgstr ""
 
-#: framework/admin/customizer.php:599
+#: framework/admin/customizer.php:741
 msgid "Slide #10 section."
 msgstr ""
 
-#: framework/admin/customizer.php:607 framework/admin/customizer.php:616
+#: framework/admin/customizer.php:749 framework/admin/customizer.php:758
 msgid "Breadcrumb"
 msgstr ""
 
-#: framework/admin/customizer.php:608
+#: framework/admin/customizer.php:750
 msgid "Breadcrumb settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:617
+#: framework/admin/customizer.php:759
 msgid "Enable breadcrumb ?"
 msgstr ""
 
-#: framework/admin/customizer.php:627
+#: framework/admin/customizer.php:769
 msgid "Breadcrumb on Homepage"
 msgstr ""
 
-#: framework/admin/customizer.php:628
-msgid "Disable breadcrumb on homepage ?"
+#: framework/admin/customizer.php:770
+msgid "Enable breadcrumb on homepage ?"
 msgstr ""
 
-#: framework/admin/customizer.php:638
+#: framework/admin/customizer.php:780
 msgid "Breadcrumb Style"
 msgstr ""
 
-#: framework/admin/customizer.php:639
+#: framework/admin/customizer.php:781
 msgid "Select breadcrumb style."
 msgstr ""
 
-#: framework/admin/customizer.php:644
+#: framework/admin/customizer.php:786
 msgid "Mini"
 msgstr ""
 
-#: framework/admin/customizer.php:645
+#: framework/admin/customizer.php:787
 msgid "Normal"
 msgstr ""
 
-#: framework/admin/customizer.php:653
+#: framework/admin/customizer.php:795
 #: framework/admin/kirki/includes/class-kirki-l10n.php:104
 msgid "Background Color"
 msgstr ""
 
-#: framework/admin/customizer.php:654
+#: framework/admin/customizer.php:796
 msgid "Select breadcrumb background color."
 msgstr ""
 
-#: framework/admin/customizer.php:664
+#: framework/admin/customizer.php:806
 msgid "Font Color"
 msgstr ""
 
-#: framework/admin/customizer.php:665
+#: framework/admin/customizer.php:807
 msgid "Select breadcrumb font color."
 msgstr ""
 
-#: framework/admin/customizer.php:675
+#: framework/admin/customizer.php:817
 msgid "Links Color"
 msgstr ""
 
-#: framework/admin/customizer.php:676
+#: framework/admin/customizer.php:818
 msgid "Select breadcrumb links color."
 msgstr ""
 
-#: framework/admin/customizer.php:686
+#: framework/admin/customizer.php:828
 msgid "Frontpage Boxes"
 msgstr ""
 
-#: framework/admin/customizer.php:687
+#: framework/admin/customizer.php:829
 msgid "Frontpage boxes section."
 msgstr ""
 
-#: framework/admin/customizer.php:695
+#: framework/admin/customizer.php:837
 msgid "Frontpage boxes general section."
 msgstr ""
 
-#: framework/admin/customizer.php:705
+#: framework/admin/customizer.php:846
+msgid "Enable ?"
+msgstr ""
+
+#: framework/admin/customizer.php:847
+msgid "Global enable | disable."
+msgstr ""
+
+#: framework/admin/customizer.php:858
 msgid "Select where you want frontpage boxes to be visible."
 msgstr ""
 
-#: framework/admin/customizer.php:712
+#: framework/admin/customizer.php:865
 msgid "All Pages"
 msgstr ""
 
-#: framework/admin/customizer.php:720
+#: framework/admin/customizer.php:873
 msgid "Frontpage Box #1"
 msgstr ""
 
-#: framework/admin/customizer.php:721 framework/admin/customizer.php:806
-#: framework/admin/customizer.php:891 framework/admin/customizer.php:976
-#: framework/admin/customizer.php:1061 framework/admin/customizer.php:1071
-#: framework/admin/customizer.php:1081 framework/admin/customizer.php:1091
+#: framework/admin/customizer.php:874 framework/admin/customizer.php:1003
+#: framework/admin/customizer.php:1132 framework/admin/customizer.php:1261
+#: framework/admin/customizer.php:1390 framework/admin/customizer.php:1400
+#: framework/admin/customizer.php:1410 framework/admin/customizer.php:1420
 msgid "Frontpage boxes settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:730
+#: framework/admin/customizer.php:883
 msgid "Box 1"
 msgstr ""
 
-#: framework/admin/customizer.php:731
+#: framework/admin/customizer.php:884
 msgid "Enable box 1."
 msgstr ""
 
-#: framework/admin/customizer.php:742 framework/admin/customizer.php:827
-#: framework/admin/customizer.php:912 framework/admin/customizer.php:997
+#: framework/admin/customizer.php:895 framework/admin/customizer.php:1024
+#: framework/admin/customizer.php:1153 framework/admin/customizer.php:1282
 msgid "Set box title."
 msgstr ""
 
-#: framework/admin/customizer.php:752 framework/admin/customizer.php:837
-#: framework/admin/customizer.php:922 framework/admin/customizer.php:1007
+#: framework/admin/customizer.php:905 framework/admin/customizer.php:1034
+#: framework/admin/customizer.php:1163 framework/admin/customizer.php:1292
 msgid "FontAwesome Icon"
 msgstr ""
 
-#: framework/admin/customizer.php:753 framework/admin/customizer.php:838
-#: framework/admin/customizer.php:923 framework/admin/customizer.php:1008
+#: framework/admin/customizer.php:906 framework/admin/customizer.php:1035
+#: framework/admin/customizer.php:1164 framework/admin/customizer.php:1293
 msgid "Accepted inputs is \"fa-*\" ex: fa-tablet, check"
 msgstr ""
 
-#: framework/admin/customizer.php:753 framework/admin/customizer.php:838
-#: framework/admin/customizer.php:923 framework/admin/customizer.php:1008
+#: framework/admin/customizer.php:906 framework/admin/customizer.php:1035
+#: framework/admin/customizer.php:1164 framework/admin/customizer.php:1293
 msgid "for all FontAwesome icon classes."
 msgstr ""
 
-#: framework/admin/customizer.php:763 framework/admin/customizer.php:848
-#: framework/admin/customizer.php:933 framework/admin/customizer.php:1018
+#: framework/admin/customizer.php:916 framework/admin/customizer.php:1045
+#: framework/admin/customizer.php:1174 framework/admin/customizer.php:1303
 msgid "Icon Color"
 msgstr ""
 
-#: framework/admin/customizer.php:764 framework/admin/customizer.php:849
-#: framework/admin/customizer.php:934 framework/admin/customizer.php:1019
+#: framework/admin/customizer.php:917 framework/admin/customizer.php:1046
+#: framework/admin/customizer.php:1175 framework/admin/customizer.php:1304
 msgid "Set icon color."
 msgstr ""
 
-#: framework/admin/customizer.php:775 framework/admin/customizer.php:860
-#: framework/admin/customizer.php:945 framework/admin/customizer.php:1030
+#: framework/admin/customizer.php:942 framework/admin/customizer.php:1071
+#: framework/admin/customizer.php:1200 framework/admin/customizer.php:1329
 msgid "You can use image instead of FontAwesome icon, just upload it here."
 msgstr ""
 
-#: framework/admin/customizer.php:784 framework/admin/customizer.php:869
-#: framework/admin/customizer.php:954 framework/admin/customizer.php:1039
+#: framework/admin/customizer.php:951 framework/admin/customizer.php:1080
+#: framework/admin/customizer.php:1209 framework/admin/customizer.php:1338
 msgid "Box Icon / Image URL"
 msgstr ""
 
-#: framework/admin/customizer.php:785 framework/admin/customizer.php:870
-#: framework/admin/customizer.php:955 framework/admin/customizer.php:1040
+#: framework/admin/customizer.php:952 framework/admin/customizer.php:1081
+#: framework/admin/customizer.php:1210 framework/admin/customizer.php:1339
 msgid "Starting with: http://"
 msgstr ""
 
-#: framework/admin/customizer.php:794 framework/admin/customizer.php:879
-#: framework/admin/customizer.php:964 framework/admin/customizer.php:1049
+#: framework/admin/customizer.php:961 framework/admin/customizer.php:1090
+#: framework/admin/customizer.php:1219 framework/admin/customizer.php:1348
 msgid "Box Text"
 msgstr ""
 
-#: framework/admin/customizer.php:795 framework/admin/customizer.php:880
-#: framework/admin/customizer.php:965 framework/admin/customizer.php:1050
+#: framework/admin/customizer.php:962 framework/admin/customizer.php:1091
+#: framework/admin/customizer.php:1220 framework/admin/customizer.php:1349
 msgid "Add custom text."
 msgstr ""
 
-#: framework/admin/customizer.php:805
+#: framework/admin/customizer.php:972 framework/admin/customizer.php:1101
+#: framework/admin/customizer.php:1230 framework/admin/customizer.php:1359
+msgid "Box Animated"
+msgstr ""
+
+#: framework/admin/customizer.php:973 framework/admin/customizer.php:1102
+#: framework/admin/customizer.php:1231 framework/admin/customizer.php:1360
+msgid "Enable box loading animation ?"
+msgstr ""
+
+#: framework/admin/customizer.php:983 framework/admin/customizer.php:1112
+#: framework/admin/customizer.php:1241 framework/admin/customizer.php:1370
+msgid "Box Animation"
+msgstr ""
+
+#: framework/admin/customizer.php:984 framework/admin/customizer.php:1113
+#: framework/admin/customizer.php:1242 framework/admin/customizer.php:1371
+msgid "Select box loading animation."
+msgstr ""
+
+#: framework/admin/customizer.php:1002
 msgid "Frontpage Box #2"
 msgstr ""
 
-#: framework/admin/customizer.php:815
+#: framework/admin/customizer.php:1012
 msgid "Box 2"
 msgstr ""
 
-#: framework/admin/customizer.php:816
+#: framework/admin/customizer.php:1013
 msgid "Enable box 2."
 msgstr ""
 
-#: framework/admin/customizer.php:890
+#: framework/admin/customizer.php:1131
 msgid "Frontpage Box #3"
 msgstr ""
 
-#: framework/admin/customizer.php:900
+#: framework/admin/customizer.php:1141
 msgid "Box 3"
 msgstr ""
 
-#: framework/admin/customizer.php:901
+#: framework/admin/customizer.php:1142
 msgid "Enable box 3."
 msgstr ""
 
-#: framework/admin/customizer.php:975
+#: framework/admin/customizer.php:1260
 msgid "Frontpage Box #4"
 msgstr ""
 
-#: framework/admin/customizer.php:985
+#: framework/admin/customizer.php:1270
 msgid "Box 4"
 msgstr ""
 
-#: framework/admin/customizer.php:986
+#: framework/admin/customizer.php:1271
 msgid "Enable box 4."
 msgstr ""
 
-#: framework/admin/customizer.php:1060 framework/admin/customizer.php:2302
-#: framework/admin/customizer.php:2303
+#: framework/admin/customizer.php:1389 framework/admin/customizer.php:2681
+#: framework/admin/customizer.php:2682
 msgid "Frontpage Box #5"
 msgstr ""
 
-#: framework/admin/customizer.php:1070 framework/admin/customizer.php:2320
-#: framework/admin/customizer.php:2321
+#: framework/admin/customizer.php:1399 framework/admin/customizer.php:2699
+#: framework/admin/customizer.php:2700
 msgid "Frontpage Box #6"
 msgstr ""
 
-#: framework/admin/customizer.php:1080 framework/admin/customizer.php:2338
-#: framework/admin/customizer.php:2339
+#: framework/admin/customizer.php:1409 framework/admin/customizer.php:2717
+#: framework/admin/customizer.php:2718
 msgid "Frontpage Box #7"
 msgstr ""
 
-#: framework/admin/customizer.php:1090 framework/admin/customizer.php:2356
-#: framework/admin/customizer.php:2357
+#: framework/admin/customizer.php:1419 framework/admin/customizer.php:2735
+#: framework/admin/customizer.php:2736
 msgid "Frontpage Box #8"
 msgstr ""
 
-#: framework/admin/customizer.php:1100
+#: framework/admin/customizer.php:1429
 msgid "Blog"
 msgstr ""
 
-#: framework/admin/customizer.php:1101
+#: framework/admin/customizer.php:1430
 msgid "Blog panel."
 msgstr ""
 
-#: framework/admin/customizer.php:1108
+#: framework/admin/customizer.php:1437
 msgid "Blog General"
 msgstr ""
 
-#: framework/admin/customizer.php:1109
+#: framework/admin/customizer.php:1438
 msgid "Blog general section."
 msgstr ""
 
-#: framework/admin/customizer.php:1118
+#: framework/admin/customizer.php:1447
 msgid "Select blog layout."
 msgstr ""
 
-#: framework/admin/customizer.php:1123
+#: framework/admin/customizer.php:1452
 msgid "List Layout"
 msgstr ""
 
-#: framework/admin/customizer.php:1124
+#: framework/admin/customizer.php:1453
 msgid "Grid Layout"
 msgstr ""
 
-#: framework/admin/customizer.php:1125
+#: framework/admin/customizer.php:1454
 msgid "Small Thumbs Layout"
 msgstr ""
 
-#: framework/admin/customizer.php:1133
+#: framework/admin/customizer.php:1462
+msgid "Posts Animated"
+msgstr ""
+
+#: framework/admin/customizer.php:1463
+msgid "Enable posts loading animation ?"
+msgstr ""
+
+#: framework/admin/customizer.php:1473
+msgid "Posts Animation"
+msgstr ""
+
+#: framework/admin/customizer.php:1474
+msgid "Select posts loading animation."
+msgstr ""
+
+#: framework/admin/customizer.php:1492
 msgid "Featured Image Permalink"
 msgstr ""
 
-#: framework/admin/customizer.php:1134
+#: framework/admin/customizer.php:1493
 msgid "Enable post featured image permalink ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1135
+#: framework/admin/customizer.php:1494
 msgid "If enabled the post featured images will become clickable links."
 msgstr ""
 
-#: framework/admin/customizer.php:1145
+#: framework/admin/customizer.php:1504
 msgid "Excerpt"
 msgstr ""
 
-#: framework/admin/customizer.php:1146
+#: framework/admin/customizer.php:1505
 msgid "Set posts lenght on blog loop page."
 msgstr ""
 
-#: framework/admin/customizer.php:1161 framework/classes/agama.php:170
+#: framework/admin/customizer.php:1520 framework/class-agama.php:172
 msgid "Read More"
 msgstr ""
 
-#: framework/admin/customizer.php:1162
+#: framework/admin/customizer.php:1521
 msgid "Enable read more url on blog excerpt ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1172
+#: framework/admin/customizer.php:1531
 msgid "About Author"
 msgstr ""
 
-#: framework/admin/customizer.php:1173
+#: framework/admin/customizer.php:1532
 msgid "Enable about author section below single post content ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1183
+#: framework/admin/customizer.php:1542
 msgid "Infinite Scroll"
 msgstr ""
 
-#: framework/admin/customizer.php:1184
+#: framework/admin/customizer.php:1543
 msgid "Enable infinite scroll ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1194
+#: framework/admin/customizer.php:1553
 msgid "Infinite Trigger"
 msgstr ""
 
-#: framework/admin/customizer.php:1195
+#: framework/admin/customizer.php:1554
 msgid "Select infinite scroll trigger."
 msgstr ""
 
-#: framework/admin/customizer.php:1196
+#: framework/admin/customizer.php:1555
 msgid ""
 "Select how blog posts will be loading. Automaticaly or on Button click. "
 "NOTICE: Infinite scroll must be enabled first."
 msgstr ""
 
-#: framework/admin/customizer.php:1201
+#: framework/admin/customizer.php:1560
 msgid "Automatic"
 msgstr ""
 
-#: framework/admin/customizer.php:1202
+#: framework/admin/customizer.php:1561
 msgid "Button"
 msgstr ""
 
-#: framework/admin/customizer.php:1217
+#: framework/admin/customizer.php:1576
 msgid "Blog Single Post"
 msgstr ""
 
-#: framework/admin/customizer.php:1218
+#: framework/admin/customizer.php:1577
 msgid "Blog single post section."
 msgstr ""
 
-#: framework/admin/customizer.php:1226
+#: framework/admin/customizer.php:1585
 msgid "Featured Image on Single Post"
 msgstr ""
 
-#: framework/admin/customizer.php:1227
+#: framework/admin/customizer.php:1586
 msgid "Turn on to display featured images on single blog posts."
 msgstr ""
 
-#: framework/admin/customizer.php:1237
+#: framework/admin/customizer.php:1596
 msgid "Blog Post Meta"
 msgstr ""
 
-#: framework/admin/customizer.php:1238
+#: framework/admin/customizer.php:1597
 msgid "Blog post meta section."
 msgstr ""
 
-#: framework/admin/customizer.php:1246
+#: framework/admin/customizer.php:1605
 msgid "Post Meta"
 msgstr ""
 
-#: framework/admin/customizer.php:1247
+#: framework/admin/customizer.php:1606
 msgid "Enable blog post meta ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1248
+#: framework/admin/customizer.php:1607
 msgid ""
 "Turn on to display post meta on blog posts. If set to \"On\", you can also "
 "control individual meta items below. If set to \"Off\" all meta items will "
 "be disabled."
 msgstr ""
 
-#: framework/admin/customizer.php:1258
+#: framework/admin/customizer.php:1617
 msgid "Post Meta Author"
 msgstr ""
 
-#: framework/admin/customizer.php:1259
+#: framework/admin/customizer.php:1618
 msgid "Enable post author ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1260
+#: framework/admin/customizer.php:1619
 msgid "If enabled the post author will be displayed in post meta."
 msgstr ""
 
-#: framework/admin/customizer.php:1277
+#: framework/admin/customizer.php:1636
 msgid "Post Meta Date"
 msgstr ""
 
-#: framework/admin/customizer.php:1278
+#: framework/admin/customizer.php:1637
 msgid "Enable post publish date ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1279
+#: framework/admin/customizer.php:1638
 msgid "If enabled the post publish date will be displayed in post meta."
 msgstr ""
 
-#: framework/admin/customizer.php:1296
+#: framework/admin/customizer.php:1655
 msgid "Post Meta Category"
 msgstr ""
 
-#: framework/admin/customizer.php:1297
+#: framework/admin/customizer.php:1656
 msgid "Enable post category ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1298
+#: framework/admin/customizer.php:1657
 msgid "If enabled the post category will be displayed in post meta."
 msgstr ""
 
-#: framework/admin/customizer.php:1315
+#: framework/admin/customizer.php:1674
 msgid "Post Meta Comments"
 msgstr ""
 
-#: framework/admin/customizer.php:1316
+#: framework/admin/customizer.php:1675
 msgid "Enable post meta comments counter ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1317
+#: framework/admin/customizer.php:1676
 msgid "If enabled the post comments count will be displayed in post meta."
 msgstr ""
 
-#: framework/admin/customizer.php:1334
+#: framework/admin/customizer.php:1693
 msgid "Styling"
 msgstr ""
 
-#: framework/admin/customizer.php:1335
+#: framework/admin/customizer.php:1694
 msgid "Styling section."
 msgstr ""
 
-#: framework/admin/customizer.php:1342
+#: framework/admin/customizer.php:1701
 #: framework/admin/kirki/includes/class-kirki-l10n.php:105
 msgid "Background Image"
 msgstr ""
 
-#: framework/admin/customizer.php:1343
+#: framework/admin/customizer.php:1702
 msgid "Body background image."
 msgstr ""
 
-#: framework/admin/customizer.php:1351
+#: framework/admin/customizer.php:1710
 msgid "General styling section."
 msgstr ""
 
-#: framework/admin/customizer.php:1359
+#: framework/admin/customizer.php:1718
 msgid "Skin"
 msgstr ""
 
-#: framework/admin/customizer.php:1360
+#: framework/admin/customizer.php:1719
 msgid "Select theme skin."
 msgstr ""
 
-#: framework/admin/customizer.php:1365
+#: framework/admin/customizer.php:1724
 msgid "Light"
 msgstr ""
 
-#: framework/admin/customizer.php:1366
+#: framework/admin/customizer.php:1725
 msgid "Dark"
 msgstr ""
 
-#: framework/admin/customizer.php:1374
+#: framework/admin/customizer.php:1733
 msgid "Primary Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1375
+#: framework/admin/customizer.php:1734
 msgid "Set theme primary color."
 msgstr ""
 
-#: framework/admin/customizer.php:1454
+#: framework/admin/customizer.php:1822
 msgid "Header Background Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1455
+#: framework/admin/customizer.php:1823
 msgid "Select header background color."
 msgstr ""
 
-#: framework/admin/customizer.php:1456
+#: framework/admin/customizer.php:1824
 msgid "Doesn't work with header V1 style."
 msgstr ""
 
-#: framework/admin/customizer.php:1485
+#: framework/admin/customizer.php:1853
 msgid "Header Shrinked BG Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1486
+#: framework/admin/customizer.php:1854
 msgid "Select header shrinked background color."
 msgstr ""
 
-#: framework/admin/customizer.php:1487
+#: framework/admin/customizer.php:1855
 msgid "Work's only with header V1 & V3."
 msgstr ""
 
-#: framework/admin/customizer.php:1517
+#: framework/admin/customizer.php:1885
 msgid "Header Borders Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1518
+#: framework/admin/customizer.php:1886
 msgid "Select header borders color."
 msgstr ""
 
-#: framework/admin/customizer.php:1569
+#: framework/admin/customizer.php:1937
 msgid "Logo Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1570
+#: framework/admin/customizer.php:1938
 msgid "Select logo color."
 msgstr ""
 
-#: framework/admin/customizer.php:1571 framework/admin/customizer.php:1597
+#: framework/admin/customizer.php:1939 framework/admin/customizer.php:1965
 msgid "Work's only with textual logo."
 msgstr ""
 
-#: framework/admin/customizer.php:1595
+#: framework/admin/customizer.php:1963
 msgid "Logo Hover Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1596
+#: framework/admin/customizer.php:1964
 msgid "Select logo hover color."
 msgstr ""
 
-#: framework/admin/customizer.php:1621
+#: framework/admin/customizer.php:1989
 msgid "Navigation"
 msgstr ""
 
-#: framework/admin/customizer.php:1622
+#: framework/admin/customizer.php:1990
 msgid "Navigation styling section."
 msgstr ""
 
-#: framework/admin/customizer.php:1630
+#: framework/admin/customizer.php:1998
 msgid "Navigation Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1631
+#: framework/admin/customizer.php:1999
 msgid "Set headers navigation color."
 msgstr ""
 
-#: framework/admin/customizer.php:1655
+#: framework/admin/customizer.php:2023
 msgid "Navigation Hover Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1656
+#: framework/admin/customizer.php:2024
 msgid "Set headers navigation hover color."
 msgstr ""
 
-#: framework/admin/customizer.php:1680 framework/admin/customizer.php:1786
-#: framework/admin/customizer.php:2088
+#: framework/admin/customizer.php:2048 framework/admin/customizer.php:2154
+#: framework/admin/customizer.php:2456
 msgid "Footer"
 msgstr ""
 
-#: framework/admin/customizer.php:1681
+#: framework/admin/customizer.php:2049
 msgid "Footer styling section."
 msgstr ""
 
-#: framework/admin/customizer.php:1689
+#: framework/admin/customizer.php:2057
 msgid "Widget Area BG Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1690
+#: framework/admin/customizer.php:2058
 msgid "Set footer widget area background color."
 msgstr ""
 
-#: framework/admin/customizer.php:1691
+#: framework/admin/customizer.php:2059
 msgid "Widget area is area above footer."
 msgstr ""
 
-#: framework/admin/customizer.php:1715
+#: framework/admin/customizer.php:2083
 msgid "Footer Area BG Color"
 msgstr ""
 
-#: framework/admin/customizer.php:1716
+#: framework/admin/customizer.php:2084
 msgid "Set footer area background color."
 msgstr ""
 
-#: framework/admin/customizer.php:1740 framework/admin/customizer.php:1749
+#: framework/admin/customizer.php:2108 framework/admin/customizer.php:2117
 msgid "Custom CSS"
 msgstr ""
 
-#: framework/admin/customizer.php:1741
+#: framework/admin/customizer.php:2109
 msgid "Custom css settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:1750
+#: framework/admin/customizer.php:2118
 msgid "Add own custom css."
 msgstr ""
 
-#: framework/admin/customizer.php:1765
+#: framework/admin/customizer.php:2133
 msgid "Social Icons"
 msgstr ""
 
-#: framework/admin/customizer.php:1766
+#: framework/admin/customizer.php:2134
 msgid "Social icons settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:1775
+#: framework/admin/customizer.php:2143
 msgid "Enable social icons on top navigation ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1776
+#: framework/admin/customizer.php:2144
 msgid "Works with header V2 & V3."
 msgstr ""
 
-#: framework/admin/customizer.php:1787
+#: framework/admin/customizer.php:2155
 msgid "Enable social icons on footer ?"
 msgstr ""
 
-#: framework/admin/customizer.php:1797
+#: framework/admin/customizer.php:2165
 msgid "URL Target"
 msgstr ""
 
-#: framework/admin/customizer.php:1798
+#: framework/admin/customizer.php:2166
 msgid "Set social icons url target."
 msgstr ""
 
-#: framework/admin/customizer.php:1799
+#: framework/admin/customizer.php:2167
 msgid "If \"blank\" selected all urls will be open in new tab."
 msgstr ""
 
-#: framework/admin/customizer.php:1813
+#: framework/admin/customizer.php:2181
 msgid "Facebook URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1814
+#: framework/admin/customizer.php:2182
 msgid "Set your facebook page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1824
+#: framework/admin/customizer.php:2192
 msgid "Twitter URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1825
+#: framework/admin/customizer.php:2193
 msgid "Set your twitter page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1835
+#: framework/admin/customizer.php:2203
 msgid "Flickr URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1836
+#: framework/admin/customizer.php:2204
 msgid "Set your flickr page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1846
+#: framework/admin/customizer.php:2214
 msgid "RSS URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1847
+#: framework/admin/customizer.php:2215
 msgid "Set your rss page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1857
+#: framework/admin/customizer.php:2225
 msgid "Vimeo URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1858
+#: framework/admin/customizer.php:2226
 msgid "Set your vimeo page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1868
+#: framework/admin/customizer.php:2236
 msgid "Youtube URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1869
+#: framework/admin/customizer.php:2237
 msgid "Set your youtube page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1879
+#: framework/admin/customizer.php:2247
 msgid "Instagram URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1880
+#: framework/admin/customizer.php:2248
 msgid "Set your instagram page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1890
+#: framework/admin/customizer.php:2258
 msgid "Pinterest URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1891
+#: framework/admin/customizer.php:2259
 msgid "Set your pinterest page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1901
+#: framework/admin/customizer.php:2269
 msgid "Tumblr URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1902
+#: framework/admin/customizer.php:2270
 msgid "Set your tumblr page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1912
+#: framework/admin/customizer.php:2280
 msgid "Google+ URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1913
+#: framework/admin/customizer.php:2281
 msgid "Set your google+ page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1923
+#: framework/admin/customizer.php:2291
 msgid "Dribbble URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1924
+#: framework/admin/customizer.php:2292
 msgid "Set your dribbble page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1934
+#: framework/admin/customizer.php:2302
 msgid "Digg URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1935
+#: framework/admin/customizer.php:2303
 msgid "Set your digg page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1945
+#: framework/admin/customizer.php:2313
 msgid "LinkedIn URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1946
+#: framework/admin/customizer.php:2314
 msgid "Set your linkedin page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1956
+#: framework/admin/customizer.php:2324
 msgid "Blogger URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1957
+#: framework/admin/customizer.php:2325
 msgid "Set your blogger page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1967
+#: framework/admin/customizer.php:2335
 msgid "Skype URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1968
+#: framework/admin/customizer.php:2336
 msgid "Set your skype page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1978
+#: framework/admin/customizer.php:2346
 msgid "Forrst URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1979
+#: framework/admin/customizer.php:2347
 msgid "Set your forrst page url."
 msgstr ""
 
-#: framework/admin/customizer.php:1989
+#: framework/admin/customizer.php:2357
 msgid "MySpace URL"
 msgstr ""
 
-#: framework/admin/customizer.php:1990
+#: framework/admin/customizer.php:2358
 msgid "Set your myspace page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2000
+#: framework/admin/customizer.php:2368
 msgid "Deviantart URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2001
+#: framework/admin/customizer.php:2369
 msgid "Set your deviantart page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2011
+#: framework/admin/customizer.php:2379
 msgid "Yahoo URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2012
+#: framework/admin/customizer.php:2380
 msgid "Set your yahoo page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2022
+#: framework/admin/customizer.php:2390
 msgid "Reddit URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2023
+#: framework/admin/customizer.php:2391
 msgid "Set your reddit page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2033
+#: framework/admin/customizer.php:2401
 msgid "PayPal URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2034
+#: framework/admin/customizer.php:2402
 msgid "Set your paypal page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2044
+#: framework/admin/customizer.php:2412
 msgid "Dropbox URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2045
+#: framework/admin/customizer.php:2413
 msgid "Set your dropbox page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2055
+#: framework/admin/customizer.php:2423
 msgid "SoundCloud URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2056
+#: framework/admin/customizer.php:2424
 msgid "Set your soundcloud page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2066
+#: framework/admin/customizer.php:2434
 msgid "VK URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2067
+#: framework/admin/customizer.php:2435
 msgid "Set your vk page url."
 msgstr ""
 
-#: framework/admin/customizer.php:2077
+#: framework/admin/customizer.php:2445
 msgid "E-mail URL"
 msgstr ""
 
-#: framework/admin/customizer.php:2078
+#: framework/admin/customizer.php:2446
 msgid "Set your e-mail contact url."
 msgstr ""
 
-#: framework/admin/customizer.php:2089
+#: framework/admin/customizer.php:2457
 msgid "Footer settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2097
+#: framework/admin/customizer.php:2465
 msgid "Copyright"
 msgstr ""
 
-#: framework/admin/customizer.php:2098
+#: framework/admin/customizer.php:2466
 msgid "Add custom footer copyright."
 msgstr ""
 
-#: framework/admin/customizer.php:2113
+#: framework/admin/customizer.php:2481
 msgid "Agama Support"
 msgstr ""
 
-#: framework/admin/customizer.php:2114
+#: framework/admin/customizer.php:2482
 msgid "Hey! Buy us a cofee and we shall come with new features and updates."
 msgstr ""
 
-#: framework/admin/customizer.php:2122
+#: framework/admin/customizer.php:2490
 msgid "Agama PRO Features"
 msgstr ""
 
-#: framework/admin/customizer.php:2123
+#: framework/admin/customizer.php:2491
 msgid "Agama PRO features."
 msgstr ""
 
-#: framework/admin/customizer.php:2127 framework/admin/customizer.php:2519
-#: framework/admin/customizer.php:2520
+#: framework/admin/customizer.php:2495 framework/admin/customizer.php:2898
+#: framework/admin/customizer.php:2899
 msgid "Share Box"
 msgstr ""
 
-#: framework/admin/customizer.php:2128
+#: framework/admin/customizer.php:2496
 msgid "Share box settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2133 framework/admin/customizer.php:2538
-#: framework/admin/customizer.php:2539
+#: framework/admin/customizer.php:2501 framework/admin/customizer.php:2917
+#: framework/admin/customizer.php:2918
 msgid "Typography"
 msgstr ""
 
-#: framework/admin/customizer.php:2134
+#: framework/admin/customizer.php:2502
 msgid "Typography settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2139 framework/admin/customizer.php:2557
-#: framework/admin/customizer.php:2558
+#: framework/admin/customizer.php:2507 framework/admin/customizer.php:2936
+#: framework/admin/customizer.php:2937
 msgid "Lightbox"
 msgstr ""
 
-#: framework/admin/customizer.php:2140
+#: framework/admin/customizer.php:2508
 msgid "Lightbox settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2145 framework/admin/customizer.php:2595
-#: framework/admin/customizer.php:2596
+#: framework/admin/customizer.php:2513 framework/admin/customizer.php:2974
+#: framework/admin/customizer.php:2975
 msgid "WooCommerce"
 msgstr ""
 
-#: framework/admin/customizer.php:2146
+#: framework/admin/customizer.php:2514
 msgid "WooCommerce settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2151 framework/admin/customizer.php:2576
-#: framework/admin/customizer.php:2577
+#: framework/admin/customizer.php:2519 framework/admin/customizer.php:2955
+#: framework/admin/customizer.php:2956
 msgid "Contact"
 msgstr ""
 
-#: framework/admin/customizer.php:2152
+#: framework/admin/customizer.php:2520
 msgid "Contact settings section."
 msgstr ""
 
-#: framework/admin/customizer.php:2160
+#: framework/admin/customizer.php:2528
 msgid "Site Identity"
 msgstr ""
 
-#: framework/admin/customizer.php:2165
+#: framework/admin/customizer.php:2533
 msgid "Additional CSS"
 msgstr ""
 
-#: framework/admin/customizer.php:2170
+#: framework/admin/customizer.php:2538
 msgid "Menus"
 msgstr ""
 
-#: framework/admin/customizer.php:2174
+#: framework/admin/customizer.php:2542
 msgid "Static Front Page"
 msgstr ""
 
-#: framework/admin/customizer.php:2179
+#: framework/admin/customizer.php:2547
 msgid "Widgets"
 msgstr ""
 
-#: framework/admin/customizer.php:2195 framework/admin/customizer.php:2196
-msgid "Donate"
-msgstr ""
-
-#: framework/admin/customizer.php:2198
+#: framework/admin/customizer.php:2564
 msgid "Review Agama"
 msgstr ""
 
-#: framework/admin/customizer.php:2199
+#: framework/admin/customizer.php:2565
 msgid "Rate Agama"
 msgstr ""
 
-#: framework/admin/customizer.php:2201 framework/admin/customizer.php:2202
+#: framework/admin/customizer.php:2569 framework/admin/customizer.php:2570
 msgid "Support Forum"
 msgstr ""
 
-#: framework/admin/customizer.php:2204 framework/admin/customizer.php:2205
+#: framework/admin/customizer.php:2574 framework/admin/customizer.php:2575
 msgid "Agama PRO Demo"
 msgstr ""
 
-#: framework/admin/customizer.php:2207 framework/admin/customizer.php:2208
+#: framework/admin/customizer.php:2579 framework/admin/customizer.php:2580
 msgid "Agama PRO Buy"
 msgstr ""
 
-#: framework/admin/customizer.php:2284 framework/admin/customizer.php:2285
+#: framework/admin/customizer.php:2584 framework/admin/customizer.php:2585
+msgid "Support Theme Development"
+msgstr ""
+
+#: framework/admin/customizer.php:2663 framework/admin/customizer.php:2664
 msgid "Agama Upgrade"
 msgstr ""
 
-#: framework/admin/customizer.php:2633
+#: framework/admin/customizer.php:3012
 msgid "Upgrade to PRO"
 msgstr ""
 
@@ -2201,67 +2292,186 @@ msgstr ""
 msgid "Hex Value"
 msgstr ""
 
-#: framework/blog/grid/loop.php:52 framework/blog/grid/single.php:40
-#: framework/blog/list/loop.php:27 framework/blog/list/single.php:20
-msgid "Featured post"
+#: framework/agama-functions.php:34
+msgid "Top Menu"
 msgstr ""
 
-#: framework/blog/list/loop.php:67 framework/blog/list/single.php:66
-#: framework/blog/small_thumbs/single.php:69
-msgid "<i class=\"fa fa-edit\"></i> Edit"
+#: framework/agama-functions.php:36
+msgid "Primary Menu"
 msgstr ""
 
-#: framework/breadcrumbs.php:25 framework/breadcrumbs.php:26
-msgid "Daily Archives"
-msgstr ""
-
-#: framework/breadcrumbs.php:28 framework/breadcrumbs.php:29
-msgid "Monthly Archives"
-msgstr ""
-
-#: framework/breadcrumbs.php:31 framework/breadcrumbs.php:32
-msgid "Yearly Archives"
-msgstr ""
-
-#: framework/breadcrumbs.php:55
-msgid "Tag"
-msgstr ""
-
-#: framework/breadcrumbs.php:60 framework/breadcrumbs.php:61
-msgid "Page not Found"
-msgstr ""
-
-#: framework/breadcrumbs.php:65 framework/breadcrumbs.php:66 searchform.php:5
-msgid "Search"
-msgstr ""
-
-#: framework/breadcrumbs.php:73 framework/breadcrumbs.php:74
-msgid "Shop"
-msgstr ""
-
-#: framework/breadcrumbs.php:92
-msgid "Home"
-msgstr ""
-
-#: framework/classes/agama.php:344 includes/agama-functions.php:411
-msgid " comments"
-msgstr ""
-
-#: framework/classes/agama.php:359 includes/agama-functions.php:149
+#: framework/agama-functions.php:152 framework/class-agama.php:361
 msgid "Post navigation"
 msgstr ""
 
-#: framework/classes/agama.php:360
+#: framework/agama-functions.php:153
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: framework/agama-functions.php:154
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: framework/agama-functions.php:179
+msgid "Pingback:"
+msgstr ""
+
+#: framework/agama-functions.php:179
+msgid "(Edit)"
+msgstr ""
+
+#: framework/agama-functions.php:202
+msgid "author"
+msgstr ""
+
+#: framework/agama-functions.php:208
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: framework/agama-functions.php:218
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: framework/agama-functions.php:244
+msgid "Name"
+msgstr ""
+
+#: framework/agama-functions.php:245
+msgid "Email"
+msgstr ""
+
+#: framework/agama-functions.php:246
+msgid "Website"
+msgstr ""
+
+#: framework/agama-functions.php:260
+msgid "Logged in as"
+msgstr ""
+
+#: framework/agama-functions.php:260
+msgid "Log out of this account"
+msgstr ""
+
+#: framework/agama-functions.php:260
+msgid "Log out?"
+msgstr ""
+
+#: framework/agama-functions.php:261 framework/agama-functions.php:263
+msgid "Comment"
+msgstr ""
+
+#: framework/agama-functions.php:262
+msgid "You may use these"
+msgstr ""
+
+#: framework/agama-functions.php:262
+msgid "tags and attributes"
+msgstr ""
+
+#: framework/agama-functions.php:263
+msgid "Leave a"
+msgstr ""
+
+#: framework/agama-functions.php:281 framework/agama-functions.php:284
+msgid ", "
+msgstr ""
+
+#: framework/agama-functions.php:295
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: framework/agama-functions.php:301
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
+msgstr ""
+
+#: framework/agama-functions.php:303
+#, php-format
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
+msgstr ""
+
+#: framework/agama-functions.php:305
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: framework/agama-functions.php:414 framework/class-agama.php:346
+msgid " comments"
+msgstr ""
+
+#: framework/agama-functions.php:442 framework/agama-functions.php:447
+#: framework/agama-functions.php:478
+msgid "No more posts to load."
+msgstr ""
+
+#: framework/agama-functions.php:510
+#, php-format
+msgid "2015 &copy; Powered by %s."
+msgstr ""
+
+#: framework/blog/grid.php:52 framework/blog/list.php:27 single.php:34
+msgid "Featured post"
+msgstr ""
+
+#: framework/blog/list.php:67 single.php:80
+msgid "<i class=\"fa fa-edit\"></i> Edit"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:106
+msgid "Tag"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:118
+#: framework/class-agama-breadcrumb.php:119 searchform.php:5
+msgid "Search"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:130
+#: framework/class-agama-breadcrumb.php:131
+msgid "Shop"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:144
+#: framework/class-agama-breadcrumb.php:145
+msgid "Daily Archives"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:147
+#: framework/class-agama-breadcrumb.php:148
+msgid "Monthly Archives"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:150
+#: framework/class-agama-breadcrumb.php:151
+msgid "Yearly Archives"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:166
+#: framework/class-agama-breadcrumb.php:167
+msgid "Page not Found"
+msgstr ""
+
+#: framework/class-agama-breadcrumb.php:192
+msgid "Home"
+msgstr ""
+
+#: framework/class-agama.php:362
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: framework/classes/agama.php:361
+#: framework/class-agama.php:363
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: framework/classes/agama.php:393
+#: framework/class-agama.php:395
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -2317,121 +2527,6 @@ msgstr ""
 
 #: image.php:40
 msgid "Next &rarr;"
-msgstr ""
-
-#: includes/agama-functions.php:34
-msgid "Top Menu"
-msgstr ""
-
-#: includes/agama-functions.php:36
-msgid "Primary Menu"
-msgstr ""
-
-#: includes/agama-functions.php:150
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: includes/agama-functions.php:151
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: includes/agama-functions.php:176
-msgid "Pingback:"
-msgstr ""
-
-#: includes/agama-functions.php:176
-msgid "(Edit)"
-msgstr ""
-
-#: includes/agama-functions.php:199
-msgid "author"
-msgstr ""
-
-#: includes/agama-functions.php:205
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: includes/agama-functions.php:215
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: includes/agama-functions.php:241
-msgid "Name"
-msgstr ""
-
-#: includes/agama-functions.php:242
-msgid "Email"
-msgstr ""
-
-#: includes/agama-functions.php:243
-msgid "Website"
-msgstr ""
-
-#: includes/agama-functions.php:257
-msgid "Logged in as"
-msgstr ""
-
-#: includes/agama-functions.php:257
-msgid "Log out of this account"
-msgstr ""
-
-#: includes/agama-functions.php:257
-msgid "Log out?"
-msgstr ""
-
-#: includes/agama-functions.php:258 includes/agama-functions.php:260
-msgid "Comment"
-msgstr ""
-
-#: includes/agama-functions.php:259
-msgid "You may use these"
-msgstr ""
-
-#: includes/agama-functions.php:259
-msgid "tags and attributes"
-msgstr ""
-
-#: includes/agama-functions.php:260
-msgid "Leave a"
-msgstr ""
-
-#: includes/agama-functions.php:278 includes/agama-functions.php:281
-msgid ", "
-msgstr ""
-
-#: includes/agama-functions.php:292
-#, php-format
-msgid "View all posts by %s"
-msgstr ""
-
-#: includes/agama-functions.php:298
-#, php-format
-msgid ""
-"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
-"\"> by %4$s</span>."
-msgstr ""
-
-#: includes/agama-functions.php:300
-#, php-format
-msgid ""
-"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
-"span>."
-msgstr ""
-
-#: includes/agama-functions.php:302
-#, php-format
-msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
-msgstr ""
-
-#: includes/agama-functions.php:439 includes/agama-functions.php:444
-#: includes/agama-functions.php:475
-msgid "No more posts to load."
-msgstr ""
-
-#: includes/agama-functions.php:507
-#, php-format
-msgid "2015 &copy; Powered by %s."
 msgstr ""
 
 #: index.php:29

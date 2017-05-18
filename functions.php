@@ -1,22 +1,24 @@
 <?php
+	
+// Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Fire Agama Framework
+ * Initialize Agama Framework
  *
- * @since Agama v1.0.1
+ * @since 1.0.1
  */
-get_template_part( 'framework/framework-init' );
+get_template_part( 'framework/class-agama-framework' );
+new Agama_Framework();
 
 /**
- * Fire Agama Functions
+ * Include Agama Functions File
  *
- * @since Agama v1.0.1
+ * @since 1.0.1
  */
-get_template_part( 'includes/agama-functions' );
+get_template_part( 'framework/agama-functions' );
 
 /**
  * Note: Do not add any custom code here. Please use a child theme so that your customizations aren't lost during updates.
  * http://codex.wordpress.org/Child_Themes
  */
- 

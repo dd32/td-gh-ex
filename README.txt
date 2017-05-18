@@ -2,6 +2,22 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+
+= 1.2.9 May 18 2017 =
+* Added slider particles js feature.
+* Added header image particle js feature.
+* Added frontpage boxes global enable / disable feature.
+* Added WooCommece 3.x support & fixed minor bugs.
+* Updated blog layouts template files.
+* Updated theme translation files.
+* Updated frontpage boxes code.
+* Updated customizer frontpage boxes icon color (transport = postMessage).
+* Updated footer widgets area dynamic bootstrap class per active widgets.
+* Fixed mobile menu child styling issues.
+* Fixed frontpage boxes animated effect minor bugs.
+* Fixed posts animated effect minor bugs.
+* Fixed minor WooCommerce styling issues.
+
 = 1.2.8.10 January 30 2017 =
 * Fixed blog posts animated minor bugs.
 
@@ -211,11 +227,12 @@ Agama is distributed under the terms of the GNU GPL2
  * Animate - http://daneden.github.io/animate.css/ - MIT License
  * Easing - http://gsgd.co.uk/sandbox/jquery/easing/ - BSD License
  * Camera - http://www.pixedelic.com/plugins/camera/ - MIT License
- * AnimOnScroll http://www.codrops.com - MIT Lcense
+ * AnimOnScroll - http://www.codrops.com - MIT Lcense
+ * Particles - https://github.com/VincentGarreau/particles.js/ - MIT License
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Philipp Henzler - https://unsplash.com/@philipphenzler - https://unsplash.com/photos/dgE3lWVyDh8 - CC0 1.0 License
+ * Luis Llerena - https://unsplash.com/@albertosaure - https://unsplash.com/@albertosaure?photo=6g0KJWnBhxg - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

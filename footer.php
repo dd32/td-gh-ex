@@ -25,25 +25,25 @@
 		<div class="container">
 			
 			<?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
-			<div class="col-md-3">
+			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
 				<?php dynamic_sidebar( 'footer-widget-1' ); ?>
 			</div>
 			<?php endif; ?>
 			
 			<?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
-			<div class="col-md-3">
+			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
 				<?php dynamic_sidebar( 'footer-widget-2' ); ?>
 			</div>
 			<?php endif; ?>
 			
 			<?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
-			<div class="col-md-3">
+			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
 				<?php dynamic_sidebar( 'footer-widget-3' ); ?>
 			</div>
 			<?php endif; ?>
 			
 			<?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
-			<div class="col-md-3">
+			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
 				<?php dynamic_sidebar( 'footer-widget-4' ); ?>
 			</div>
 			<?php endif; ?>
