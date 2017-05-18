@@ -93,33 +93,33 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     function hu_popul_setting_control_map( $_map, $get_default = null ) {
       $_new_map = array();
       $_settings_sections = array(
-        //GENERAL
-        'hu_site_identity_sec',
-        'hu_general_design_sec',
-        'hu_comments_sec',
-        'hu_smoothscroll_sec',
-        'hu_mobiles_sec',
-        'hu_social_links_sec',
-        'hu_performance_sec',
-        'hu_admin_sec',
+          //GENERAL
+          'hu_site_identity_sec',
+          'hu_general_design_sec',
+          'hu_comments_sec',
+          'hu_smoothscroll_sec',
+          'hu_mobiles_sec',
+          'hu_search_sec',
+          'hu_social_links_sec',
+          'hu_performance_sec',
+          'hu_admin_sec',
 
-        //HEADER
-        'hu_header_design_sec',
-        'hu_header_image_sec',
-        'hu_header_widget_sec',
-        'hu_header_menus_sec',
+          //HEADER
+          'hu_header_design_sec',
+          'hu_header_image_sec',
+          'hu_header_widget_sec',
+          'hu_header_menus_sec',
 
-        //CONTENT
-        //'hu_content_home_sec',
-        'hu_content_blog_sec',
-        'hu_content_single_sec',
-        'hu_content_thumbnail_sec',
-        'hu_content_layout_sec',
-        'hu_sidebars_design_sec',
+          //CONTENT
+          //'hu_content_home_sec',
+          'hu_content_blog_sec',
+          'hu_content_single_sec',
+          'hu_content_thumbnail_sec',
+          'hu_content_layout_sec',
+          'hu_sidebars_design_sec',
 
-        //FOOTER
-        'hu_footer_design_sec'
-
+          //FOOTER
+          'hu_footer_design_sec'
       );
 
       foreach ( $_settings_sections as $_section_cb ) {
@@ -157,6 +157,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     //IF WP VERSION >= 4.3 AND SITE_ICON SETTING EXISTS
     //=> The following FAV ICON CONTROL is removed (@see class-czr-init.php)
     function hu_site_identity_sec() {
+      global $wp_version;
       return array(
           'favicon'  => array(
                 'control'   =>  'HU_Customize_Upload_Control' ,
@@ -166,11 +167,23 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'czr_upload',
                 'sanitize_callback' => array( $this , 'hu_sanitize_number' )
           ),
+          'display-header-title' => array(
+                'default'   => 1,
+                'priority'  => 4,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Display the site title in the header' , 'hueman' ),
+                'section'   => 'title_tagline',
+                'type'      => 'checkbox',
+                'ubq_section'   => array(
+                    'section' => 'header_design_sec',
+                    'priority' => '0'
+                )
+          ),
           'display-header-logo' => array(
                 'default'   => 0,
                 'priority'  => 5,
                 'control'   => 'HU_controls',
-                'label'     => __( 'Display a logo in your header' , 'hueman' ),
+                'label'     => __( 'Display a logo in the header' , 'hueman' ),
                 'section'   => 'title_tagline',
                 'type'      => 'checkbox',
                 'notice'    => sprintf( '%3$s <strong><a href="%1$s" title="%3$s">%2$s</a><strong>',
@@ -183,18 +196,35 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                     'priority' => '0'
                 )
           ),
+          'mobile-header-logo'  => array(
+                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
+                'label'     =>  __( 'Use a specific logo for mobile devices' , 'hueman' ),
+                'title'     => __( 'Logo for mobiles', 'hueman' ),
+                'section'   => 'title_tagline' ,
+                'priority'  => 50,
+                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
+                //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
+                'width'     => 120,
+                'height'    => 45,
+                'flex_width' => true,
+                'flex_height' => true,
+                //to keep the selected cropped size
+                'dst_width'  => false,
+                'dst_height'  => false,
+                'notice'    => __('Upload your custom logo image. Supported formats : .jpg, .png, .gif, svg, svgz' , 'hueman')
+          ),
           'logo-max-height'  =>  array(
                 'default'       => 60,
-                'priority'      => 9,
+                'priority'      => 7,
                 'control'       => 'HU_controls' ,
                 'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
-                'label'         => __( "Header Logo Image Max-height" , 'hueman' ),
+                'label'         => sprintf( '%1$s : %2$s %3$s' , __('Desktop devices', 'hueman' ), __( "Header Logo Image Max-height" , 'hueman' ) , __('(in pixels)', 'hueman') ),
                 'section'       => 'title_tagline',
                 'type'          => 'number' ,
                 'step'          => 1,
                 'min'           => 20,
                 'transport'     => 'postMessage'
-          )
+          ),
       );
     }
 
@@ -236,6 +266,14 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'min'           => 1024,
                 //'transport'     => 'postMessage',
                 'notice'        => __('Max-width of the container. If you use 2 sidebars, your container should be at least 1200px.<br /><i>Note: For 720px content (default) use <strong>1380px</strong> for 2 sidebars and <strong>1120px</strong> for 1 sidebar. If you use a combination of both, try something inbetween.</i>', 'hueman')//@todo sprintf and split translations
+          ),
+          'boxed' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __('Boxed Layout', 'hueman'),
+                'section'   => 'general_design_sec',
+                'type'      => 'checkbox',
+                'notice'    => __( 'Use a boxed layout' , 'hueman' )
           ),
           'sidebar-padding' => array(
                 'default'   => '30',
@@ -318,14 +356,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'          => 'checkbox' ,
                 'notice'    => __( 'This will be applied to the links included in post or page content only.' , 'hueman' ),
                 //'transport'     => 'postMessage'
-          ),
-          'boxed' => array(
-                'default'   => 0,
-                'control'   => 'HU_controls',
-                'label'     => __('Boxed Layout', 'hueman'),
-                'section'   => 'general_design_sec',
-                'type'      => 'checkbox',
-                'notice'    => __( 'Use a boxed layout' , 'hueman' )
           )
       );
     }
@@ -417,6 +447,20 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       );
     }
 
+    /*-----------------------------------------------------------------------------------------------------
+                                   SEARCH RESULTS SECTION
+    ------------------------------------------------------------------------------------------------------*/
+    function hu_search_sec() {
+      return array(
+          'attachments-in-search' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __('Include images in search results', 'hueman'),
+                'section'   => 'search_sec',
+                'type'      => 'checkbox'
+          )
+      );
+    }
 
     /*-----------------------------------------------------------------------------------------------------
                                    PERFORMANCE SECTION
@@ -518,7 +562,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'        =>  'color' ,
                 'sanitize_callback'    => array( $this, 'hu_sanitize_hex_color' ),
                 'sanitize_js_callback' => 'maybe_hash_hex_color',
-                'transport'   => 'postMessage'
+                'transport'   => ( ( defined( 'HU_IS_PRO_ADDONS' ) && HU_IS_PRO_ADDONS ) || ( defined('HU_IS_PRO') && HU_IS_PRO  ) ) ? 'refresh' : 'postMessage'
           ),
           'color-header-menu' => array(
                 'default'     => hu_user_started_before_version( '3.3.8' ) ? '#33363b' : '#454e5c',
@@ -528,7 +572,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'        =>  'color' ,
                 'sanitize_callback'    => array( $this, 'hu_sanitize_hex_color' ),
                 'sanitize_js_callback' => 'maybe_hash_hex_color',
-                'transport'   => 'postMessage'
+                'transport'   => ( ( defined( 'HU_IS_PRO_ADDONS' ) && HU_IS_PRO_ADDONS ) || ( defined('HU_IS_PRO') && HU_IS_PRO  ) ) ? 'refresh' : 'postMessage'
           ),
           'color-mobile-menu' => array(
                 'default'     => hu_user_started_before_version( '3.3.8' ) ? '#33363b' : '#454e5c',
@@ -539,7 +583,14 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'sanitize_callback'    => array( $this, 'hu_sanitize_hex_color' ),
                 'sanitize_js_callback' => 'maybe_hash_hex_color',
                 //'transport'   => 'postMessage'
-          )
+          ),
+          'transparent-fixed-topnav' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Apply a semi-transparent filter to the topbar and mobile menu on scroll' , 'hueman' ),
+                'section'   => 'header_design_sec',
+                'type'      => 'checkbox',
+          ),
         );
     }
 
@@ -555,7 +606,19 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'header_image_sec',
                 'type'      => 'checkbox',
                 'notice'    => __('Upload a header image (supported formats : .jpg, .png, .gif, svg, svgz). This will disable header title/logo, site description, header ads widget' , 'hueman')
-          )
+          ),
+          'logo-title-on-header-image' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Display your logo or site title, and tagline on top of the header image' , 'hueman' ),
+                'section'   => 'header_image_sec',
+                'type'      => 'checkbox',
+                'notice'    => sprintf( '%3$s <strong><a href="%1$s" title="%3$s">%2$s</a><strong>',
+                    "javascript:wp.customize.section('title_tagline').focus();",
+                    __("here" , "hueman"),
+                    __("Set your logo, title and tagline", "hueman")
+                ),
+          ),
       );
     }
 
@@ -660,11 +723,32 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                     'priority' => '120'
                 )
           ),
-
+          'header_mobile_menu_layout' => array(
+                'default'   => hu_user_started_before_version( '3.3.8' ) ? 'main_menu' : 'top_menu',
+                'control'   => 'HU_controls',
+                'title'     => sprintf( '%1$s %2$s', __( 'Menus settings for', 'hueman' ) , __('Mobile devices', 'hueman' ) ),
+                'label'     => __( 'Select the menu(s) to use for mobile devices', 'hueman'),
+                'section'   => 'header_menus_sec',
+                'type'      => 'select',
+                'choices'   => array(
+                    'main_menu' => __('Header Menu', 'hueman'),
+                    'top_menu'  => __('Topbar Menu', 'hueman'),
+                    'mobile_menu' => __('Specific Mobile Menu', 'hueman'),
+                    'both_menus' => __( 'Topbar and header menus, logo centered', 'hueman')
+                ),
+                'notice'    => sprintf( '%1$s<br/>%2$s <br/>%3$s',
+                    __( 'When your visitors are using a smartphone or a tablet, the header becomes a thin bar on top, where the menu is revealed when clicking on the hamburger button. This option let you choose which menu will be displayed.' , 'hueman' ),
+                    __( 'If the selected menu location has no menu assigned, the theme will try to assign another menu in this order : topbar, mobile, header.' , 'hueman' ),
+                    $nav_section_desc
+                ),
+                'ubq_section'   => array(
+                    'section' => 'menu_locations',
+                    'priority' => '100'
+                )
+          ),
           'header-mobile-sticky' => array(
                 'default'   => 'stick_up',
                 'control'   => 'HU_controls',
-                'title'     => sprintf( '%1$s %2$s', __( 'Menus settings for', 'hueman' ) , __('Mobile devices', 'hueman' ) ),
                 'label'     => sprintf( '%1$s : %2$s', __('Mobile devices', 'hueman' ) , __('top menu visibility on scroll', 'hueman') ),
                 'section'   => 'header_menus_sec',
                 'type'      => 'select',
@@ -676,26 +760,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'ubq_section'   => array(
                     'section' => 'menu_locations',
                     'priority' => '130'
-                )
-          ),
-          'header_mobile_menu_layout' => array(
-                'default'   => hu_user_started_before_version( '3.3.8' ) ? 'main_menu' : 'top_menu',
-                'control'   => 'HU_controls',
-                'label'     => __( 'Select the menu(s) to use for mobile devices', 'hueman'),
-                'section'   => 'header_menus_sec',
-                'type'      => 'select',
-                'choices'   => array(
-                    'main_menu' => __('Header Menu', 'hueman'),
-                    'top_menu'  => __('Topbar Menu', 'hueman'),
-                    'both_menus' => __( 'Topbar and header menus, logo centered', 'hueman')
-                ),
-                'notice'    => sprintf( '%1$s %2$s',
-                    __( 'When your visitors are using a smartphone or a tablet, the header becomes a top bar, where menu(s) are revealed when clicking on the hamburger button. This option let you choose which menu(s) will be displayed.' , 'hueman' ),
-                    $nav_section_desc
-                ),
-                'ubq_section'   => array(
-                    'section' => 'menu_locations',
-                    'priority' => '100'
                 )
           ),
           'header_mobile_btn' => array(
@@ -1050,15 +1114,18 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Single - Author Bio", 'hueman'),
                 'section'   => 'content_single_sec',
                 'type'      => 'checkbox',
+                'priority'  => 10,
                 'notice'    => __( 'Display post author description, if it exists' , 'hueman'),
                 'active_callback' => function_exists('HU_AD') ? 'hu_is_single' : ''//enabled when hueman-addons is enabled
           ),
           'related-posts' => array(
                 'default'   => 'categories',
                 'control'   => 'HU_controls',
+                'title'     => __("Related posts", 'hueman'),
                 'label'     => __("Single - Related Posts", 'hueman'),
                 'section'   => 'content_single_sec',
                 'type'      => 'select',
+                'priority'  => 20,
                 'choices' => array(
                   '1'           => __( 'Disable' , 'hueman' ),
                   'categories'  => __( 'Related by categories' , 'hueman' ),
@@ -1070,9 +1137,11 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           'post-nav' => array(
                 'default'   => 's1',
                 'control'   => 'HU_controls',
+                'title'     => __("Post navigation", 'hueman'),
                 'label'     => __("Post navigation in single posts", 'hueman'),
                 'section'   => 'content_single_sec',
                 'type'      => 'select',
+                'priority'  => 30,
                 'choices' => array(
                   '1'           => __( 'Disable' , 'hueman' ),
                   's1'          => __( 'Left Sidebar' , 'hueman' ),
@@ -1150,7 +1219,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => sprintf( '%1$s : %2$s', __('Mobile devices', 'hueman' ) , __('make sidebars sticky on scroll', 'hueman') ),
                 'section'   => 'sidebars_design_sec',
                 'type'      => 'checkbox',
-                //'notice'    => __("Glues your website's sidebars on top of the page, making them permanently visible when scrolling up and down. Useful when a sidebar is too tall or too short compared to the rest of the content." , 'hueman')
+                'notice'    => __( "Decide if your sidebars should be sticky on tablets and smartphones devices." , 'hueman' )
           ),
           'mobile-sidebar-hide' => array(
                 'default'   => '1',
@@ -1510,8 +1579,13 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
               'panel'   => 'hu-advanced-panel'
         ),
         'mobiles_sec'         => array(
-              'title'    => __( 'Mobile devices', 'hueman' ),
+              'title'    => __( 'Mobile Devices', 'hueman' ),
               'priority' => 20,
+              'panel'   => 'hu-advanced-panel'
+        ),
+        'search_sec'         => array(
+              'title'    => __( 'Search Results', 'hueman' ),
+              'priority' => 25,
               'panel'   => 'hu-advanced-panel'
         ),
         'performance_sec'         => array(

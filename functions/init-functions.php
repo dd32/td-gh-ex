@@ -18,6 +18,8 @@ function hu_isprevdem() {
     return apply_filters( 'hu_isprevdem', ! $is_dirty && hu_get_raw_option( 'template', null, false ) != get_stylesheet() && ! is_child_theme() && ! HU_IS_PRO  );
 }
 
+
+
 /****************************************************************************
 ****************************** HELPERS **************************************
 *****************************************************************************/
@@ -120,6 +122,13 @@ function hu_is_customizing() {
     return hu_is_customize_left_panel() || hu_is_customize_preview_frame() || hu_doing_customizer_ajax();
 }
 
+//@return boolean
+//Is used to check if we can display specific notes including deep links to the customizer
+function hu_user_can_see_customize_notices_on_front() {
+    return ! hu_is_customizing() && is_user_logged_in() && current_user_can( 'edit_theme_options' ) && is_super_admin();
+}
+
+
 
 //@return boolean
 function hu_is_partial_refreshed_on() {
@@ -140,12 +149,16 @@ function hu_is_checked( $opt_name = '') {
 function hu_booleanize_checkbox_val( $val ) {
     if ( ! $val )
       return false;
+    if ( is_bool( $val ) && $val )
+      return true;
     switch ( (string) $val ) {
       case 'off':
       case '' :
+      case 'false' :
         return false;
       case 'on':
       case '1' :
+      case 'true' :
         return true;
       default : return false;
     }
@@ -177,7 +190,7 @@ function hu_user_started_before_version( $_ver, $_pro_ver = null ) {
 
     $_start_version_infos = explode( '|', esc_attr( get_transient( $_trans ) ) );
 
-    if ( ! is_array( $_start_version_infos ) )
+    if ( ! is_array( $_start_version_infos ) || count( $_start_version_infos ) < 2 )
       return false;
 
     switch ( $_start_version_infos[0] ) {
@@ -197,9 +210,29 @@ function hu_user_started_before_version( $_ver, $_pro_ver = null ) {
     }
 }
 
+//@return bool
+function hu_user_started_with_current_version() {
+    if ( HU_IS_PRO )
+      return;
+
+    $_trans = 'started_using_hueman';
+    //the transient is set in HU_utils::hu_init_properties()
+    if ( ! get_transient( $_trans ) )
+      return false;
+
+    $_start_version_infos = explode( '|', esc_attr( get_transient( $_trans ) ) );
+
+    //make sure we're good at this point
+    if ( ! is_string( HUEMAN_VER ) || ! is_array( $_start_version_infos ) || count( $_start_version_infos ) < 2 )
+      return false;
+
+    return 'with' == $_start_version_infos[0] && version_compare( $_start_version_infos[1] , HUEMAN_VER, '==' );
+}
+
 
 /**
 * Is there a menu assigned to a given location ?
+* If not, are we in the case where a default page menu can be used has fallback ?
 * @param $location string can be header, footer, topbar
 * @return bool
 */
@@ -249,6 +282,8 @@ function hu_get_raw_option( $opt_name = null, $opt_group = null, $from_cache = t
         return $opt_value;
     }
 }
+
+
 
 
 
@@ -387,7 +422,7 @@ function hu_is_ajax() {
 * helper ensuring backward compatibility with the previous option system
 * @return img src string
 */
-  function hu_get_img_src( $img ) {
+function hu_get_img_src( $img ) {
     if ( ! $img )
       return;
 
@@ -397,17 +432,17 @@ function hu_is_ajax() {
     $_attachment_id = '';
 
     //Get the img src
-    if ( is_numeric($img) ) {
-      $_attachment_id     = $img;
-      $_attachment_data   = apply_filters( "hu_attachment_img" , wp_get_attachment_image_src( $_attachment_id, 'full' ), $_attachment_id );
-      $_img_src           = $_attachment_data[0];
-      $_width             = ( isset($_attachment_data[1]) && $_attachment_data[1] > 1 ) ? $_attachment_data[1] : $_width;
-      $_height            = ( isset($_attachment_data[2]) && $_attachment_data[2] > 1 ) ? $_attachment_data[2] : $_height;
+    if ( is_numeric( $img ) ) {
+        $_attachment_id     = $img;
+        $_attachment_data   = apply_filters( "hu_attachment_img" , wp_get_attachment_image_src( $_attachment_id, 'full' ), $_attachment_id );
+        $_img_src           = $_attachment_data[0];
+        $_width             = ( isset($_attachment_data[1]) && $_attachment_data[1] > 1 ) ? $_attachment_data[1] : $_width;
+        $_height            = ( isset($_attachment_data[2]) && $_attachment_data[2] > 1 ) ? $_attachment_data[2] : $_height;
     } else { //old treatment
-      //rebuild the img path : check if the full path is already saved in DB. If not, then rebuild it.
-      $upload_dir         = wp_upload_dir();
-      $_saved_path        = esc_url ( $img );
-      $_img_src           = ( false !== strpos( $_saved_path , '/wp-content/' ) ) ? $_saved_path : $upload_dir['baseurl'] . $_saved_path;
+        //rebuild the img path : check if the full path is already saved in DB. If not, then rebuild it.
+        $upload_dir         = wp_upload_dir();
+        $_saved_path        = esc_url ( $img );
+        $_img_src           = ( false !== strpos( $_saved_path , '/wp-content/' ) ) ? $_saved_path : $upload_dir['baseurl'] . $_saved_path;
     }
 
     //return img source + make ssl compliant
@@ -441,12 +476,15 @@ function hu_get_img_src_from_option( $option_name ) {
 function hu_the_post_thumbnail( $size = 'post-thumbnail', $attr = '', $placeholder = true ) {
     $html = '';
     $post = get_post();
-    if ( ! $post || ! has_post_thumbnail() ) {
-      if ( hu_is_checked('placeholder') && (bool)$placeholder ) {
-        $html = hu_get_placeholder_thumb( $size );
-      }
+    $is_attachment = is_object( $post ) && isset( $post -> post_type ) && 'attachment' == $post -> post_type;
+    if ( ! $post || ( ! $is_attachment && ! has_post_thumbnail() ) ) {
+        if ( hu_is_checked('placeholder') && (bool)$placeholder ) {
+            $html = hu_get_placeholder_thumb( $size );
+        }
+    } else if ( $is_attachment ) {//typically : the case when attachment are included in search results
+        $html = wp_get_attachment_image( $post -> ID, $size, false, $attr );
     } else {
-      $html = get_the_post_thumbnail( null, $size, $attr );
+        $html = get_the_post_thumbnail( null, $size, $attr );
     }
 
     echo apply_filters( 'hu_post_thumbnail_html', $html, $size, $attr );
