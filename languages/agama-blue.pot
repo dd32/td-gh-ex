@@ -3,22 +3,106 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Agama Blue\n"
-"POT-Creation-Date: 2015-11-28 23:03+0100\n"
+"POT-Creation-Date: 2017-05-18 11:19+0200\n"
 "PO-Revision-Date: 2015-11-28 23:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/customizer.php:12
+msgid "Agama Blue Options"
+msgstr ""
+
+#: includes/customizer.php:13
+msgid "Agama blue theme options."
+msgstr ""
+
+#: includes/customizer.php:18
+msgid "Blog"
+msgstr ""
+
+#: includes/customizer.php:19
+msgid "Blog settings."
+msgstr ""
+
+#: includes/customizer.php:31
+msgid "Enable blog feature ?"
+msgstr ""
+
+#: includes/customizer.php:32
+msgid "Enable blog feature on homepage."
+msgstr ""
+
+#: includes/customizer.php:48
+msgid "Blog Heading"
+msgstr ""
+
+#: includes/customizer.php:49
+msgid "Set custom blog section heading title."
+msgstr ""
+
+#: includes/customizer.php:65
+msgid "Blog Posts"
+msgstr ""
+
+#: includes/customizer.php:66
+msgid "Enter how many blog posts should appear on blog section on homepage."
+msgstr ""
+
+#: includes/frontpage-blog.php:6
+msgid "Latest from the Blog"
+msgstr ""
+
+#: includes/frontpage-boxes.php:80
+msgid "Responsive Layout"
+msgstr ""
+
+#: includes/frontpage-boxes.php:81
+msgid "Endless Possibilities"
+msgstr ""
+
+#: includes/frontpage-boxes.php:82
+msgid "Boxed & Wide Layouts"
+msgstr ""
+
+#: includes/frontpage-boxes.php:83
+msgid "Powerful Performance"
+msgstr ""
+
+#: includes/frontpage-boxes.php:104
+msgid ""
+"Powerful Layout with Responsive functionality that can be adapted to any "
+"screen size."
+msgstr ""
+
+#: includes/frontpage-boxes.php:105
+msgid ""
+"Complete control on each & every element that provides endless "
+"customization possibilities."
+msgstr ""
+
+#: includes/frontpage-boxes.php:106
+msgid ""
+"Stretch your Website to the Full Width or make it boxed to surprise your "
+"visitors."
+msgstr ""
+
+#: includes/frontpage-boxes.php:107
+msgid ""
+"Optimized code that are completely customizable and deliver unmatched fast "
+"performance."
+msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Agama Blue"
@@ -29,7 +113,9 @@ msgid "http://www.theme-vision.com/agama-blue/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Agama Blue child theme."
+msgid ""
+"Agama Blue is child theme of Agama. Check demo: http://demo.theme-vision."
+"com/"
 msgstr ""
 
 #. Author of the plugin/theme

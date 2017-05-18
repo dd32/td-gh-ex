@@ -103,8 +103,10 @@ function agama_blue_customize_css() { ?>
 	.fbox-2 i { color: <?php echo esc_attr( get_theme_mod( 'agama_frontpage_box_2_icon_color', '#00a4d0' ) ); ?>;}
 	.fbox-3 i { color: <?php echo esc_attr( get_theme_mod( 'agama_frontpage_box_3_icon_color', '#00a4d0' ) ); ?>;}
 	.fbox-4 i { color: <?php echo esc_attr( get_theme_mod( 'agama_frontpage_box_4_icon_color', '#00a4d0' ) ); ?>;}
-	#agama_slider .slide-content a.button,
-	#toTop:hover { background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#00a4d0' ) ); ?> !important; }
+	#agama_slider .slide-content a.button {
+		color: <?php echo esc_attr( get_theme_mod( 'agama_frontpage_box_1_icon_color', '#00a4d0' ) ); ?>;
+		border-color: <?php echo esc_attr( get_theme_mod( 'agama_frontpage_box_1_icon_color', '#00a4d0' ) ); ?>;
+	}
 	<?php if( get_theme_mod( 'agama_layout_style', 'boxed' ) == 'boxed' ): ?>
 	#main-wrapper { position: relative; }
 	@media only screen and (min-width: 1100px) {

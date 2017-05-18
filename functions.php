@@ -9,13 +9,14 @@ get_template_part( 'includes/customizer' );
  *
  * @since 1.0
  */
- add_action( 'after_setup_theme', 'agama_blue_after_setup_theme' );
- function agama_blue_after_setup_theme() {
-
-	remove_action( 'agama_frontpage_boxes_action', 'agama_frontpage_boxes', 10 );
-	add_action( 'agama_frontpage_boxes_action', 'agama_blue_frontpage_features', 10 );
+add_action( 'after_setup_theme', 'agama_blue_after_setup_theme' );
+function agama_blue_after_setup_theme() {
 	
- }
+	/**
+	 * THEME SETUP
+	 */
+	
+}
  
 /**
  * Enqueue Agama && Agama Blue Stylesheets
@@ -49,18 +50,9 @@ function agamablue_setup_options() {
  *
  * @since 1.0.1
  */
- function agama_blue_frontpage_features() { ?>
-	
-	<?php if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ): ?>
-		<!-- Frontpage Boxes Section -->
-		<?php get_template_part( 'includes/frontpage-boxes'); ?>
-		<!-- / /Frontpage Boxes Section -->
-	<?php endif; ?>
-	
-	<?php if( get_theme_mod('agama_blue_blog', true) && is_home() ): ?>
-		<!-- Frontpage Blog Section -->
-		<?php get_template_part( 'includes/frontpage-blog' ); ?>
-		<!-- / Frontpage Blog Section -->
-	<?php endif; ?>
-	
- <?php } ?>
+add_action( 'agama_blue_contents', 'agama_blue_contents' );
+function agama_blue_contents() {
+	if( get_theme_mod( 'agama_blue_blog', true ) && is_home() ) {
+		get_template_part( 'includes/frontpage-blog' ); 
+	}
+}

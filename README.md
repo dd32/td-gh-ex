@@ -20,6 +20,11 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.0.6 18 May 2017 =
+* Updated theme translation file.
+* Fixed contents display bug.
+* Fixed minor styling issues.
+
 = 1.0.5 30 January 2017 =
 * Rewritten frontpage boxes code.
 * Fixed frontpage boxes image / icon url bug.
