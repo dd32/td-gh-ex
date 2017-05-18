@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
     
-	<header class="title"><div class="line"><h2 class="title"><?php _e('Cart Totals','alhena-lite');?></h2></div></header>
+	<header class="title"><div class="line"><h2 class="title"><?php esc_html_e('Cart Totals','alhena-lite');?></h2></div></header>
 
 	<table cellspacing="0">
 
 		<tr class="cart-subtotal">
-			<th><?php _e( 'Subtotal', 'alhena-lite' ); ?></th>
+			<th><?php esc_html_e( 'Subtotal', 'alhena-lite' ); ?></th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php elseif ( WC()->cart->needs_shipping() ) : ?>
 
 			<tr class="shipping">
-				<th><?php _e( 'Shipping', 'alhena-lite' ); ?></th>
+				<th><?php esc_html_e( 'Shipping', 'alhena-lite' ); ?></th>
 				<td><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
 
@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php _e( 'Total', 'alhena-lite' ); ?></th>
+			<th><?php esc_html_e( 'Total', 'alhena-lite' ); ?></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
@@ -87,10 +87,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p><small><?php
 
 			$estimated_text = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
-				? sprintf( ' ' . __( ' (taxes estimated for %s)', 'alhena-lite' ), '' . WC()->countries->estimated_for_prefix() . __( WC()->countries->countries[ WC()->countries->get_base_country() ] . '', 'alhena-lite' ) )
+				? sprintf( ' ' . esc_html__( ' (taxes estimated for %s)', 'alhena-lite' ), '' . WC()->countries->estimated_for_prefix() . esc_html__( WC()->countries->countries[ WC()->countries->get_base_country() ] . '', 'alhena-lite' ) )
 				: '';
 
-			printf( __( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'alhena-lite' ), $estimated_text );
+			printf( esc_html__( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'alhena-lite' ), $estimated_text );
 
 		?></small></p>
 	
@@ -98,8 +98,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="wc-proceed-to-checkout">
        
-        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php _e( 'Update Shopping Cart', 'alhena-lite' ); ?>" />
-        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php _e( 'Proceed to Checkout', 'alhena-lite' ); ?>" />
+        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php esc_attr_e( 'Update Shopping Cart', 'alhena-lite' ); ?>" />
+        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php esc_attr_e( 'Proceed to Checkout', 'alhena-lite' ); ?>" />
 
 	</div>
 

@@ -39,7 +39,19 @@ if (!function_exists('alhenalite_required_plugins')) {
 				'slug'      => 'regenerate-thumbnails',
 				'required'  => false,
 			),
-	
+
+			array(
+				'name'      => 'Inline Related Posts',
+				'slug'      => 'intelly-related-posts',
+				'required'  => false,
+			),
+
+			array(
+				'name'      => 'Tracking Code Manager',
+				'slug'      => 'tracking-code-manager',
+				'required'  => false,
+			),
+
 		);
 
 		$config = array(

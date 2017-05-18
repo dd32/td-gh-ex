@@ -34,7 +34,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         
         	<div class="woocommerce_cart_details">
         
-                <header class="title"><div class="line"><h2 class="title"><?php _e('Cart','alhena-lite');?></h2></div></header>
+                <header class="title"><div class="line"><h2 class="title"><?php esc_attr_e('Cart','alhena-lite');?></h2></div></header>
                 
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
                 
@@ -43,10 +43,10 @@ do_action( 'woocommerce_before_cart' ); ?>
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-thumbnail">&nbsp;</th>
-                            <th class="product-name"><?php _e( 'Product', 'alhena-lite' ); ?></th>
-                            <th class="product-price"><?php _e( 'Price', 'alhena-lite' ); ?></th>
-                            <th class="product-quantity"><?php _e( 'Quantity', 'alhena-lite' ); ?></th>
-                            <th class="product-subtotal"><?php _e( 'Total', 'alhena-lite' ); ?></th>
+                            <th class="product-name"><?php esc_html_e( 'Product', 'alhena-lite' ); ?></th>
+                            <th class="product-price"><?php esc_html_e( 'Price', 'alhena-lite' ); ?></th>
+                            <th class="product-quantity"><?php esc_html_e( 'Quantity', 'alhena-lite' ); ?></th>
+                            <th class="product-subtotal"><?php esc_html_e( 'Total', 'alhena-lite' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                             echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
                                                 '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
                                                 esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-                                                __( 'Remove this item', 'alhena-lite' ),
+                                                esc_html__( 'Remove this item', 'alhena-lite' ),
                                                 esc_attr( $product_id ),
                                                 esc_attr( $_product->get_sku() )
                                             ), $cart_item_key );
@@ -145,7 +145,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             
                                 <?php if ( wc_coupons_enabled() ) { ?>
                                     <div class="coupon">
-                                        <label for="coupon_code"><?php _e( 'Coupon:', 'alhena-lite' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'alhena-lite' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'alhena-lite' ); ?>" />
+                                        <label for="coupon_code"><?php esc_html_e( 'Coupon:', 'alhena-lite' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'alhena-lite' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'alhena-lite' ); ?>" />
                                         <?php do_action( 'woocommerce_cart_coupon' ); ?>
                                     </div>
                                 <?php } ?>

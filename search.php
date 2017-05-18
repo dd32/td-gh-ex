@@ -8,7 +8,7 @@
                     
 				<div class="col-md-12">
         
-					<h1><?php _e( '<span>Search </span> results for', "alhena-lite" ) ?> <strong><?php echo $s; ?> </strong></h1>
+					<h1><?php esc_html_e( '<span>Search </span> results for', "alhena-lite" ) ?> <strong><?php echo $s; ?> </strong></h1>
                     
 				</div>
         
@@ -40,18 +40,18 @@
     
                     <header class="title">
                         
-                        <div class="line"><h1><?php _e( 'Not Found',"alhena-lite" ) ?></h1></div>
+                        <div class="line"><h1><?php esc_html_e( 'Not Found',"alhena-lite" ) ?></h1></div>
                     
                     </header>
                                     
-                    <p> <?php _e( 'You can repeat your search with the following form.',"alhena-lite" ) ?> </p>
+                    <p> <?php esc_html_e( 'You can repeat your search with the following form.',"alhena-lite" ) ?> </p>
                             
                     <section class="contact-form searchform">
                         
                         <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
                             <div>
-                                <input type="text" placeholder="<?php _e( 'Search here', "alhena-lite" ) ?>"  name="s" id="s" class="input-search"/>
-                                <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "alhena-lite" ) ?>" />
+                                <input type="text" placeholder="<?php esc_attr_e( 'Search here', "alhena-lite" ) ?>"  name="s" id="s" class="input-search"/>
+                                <input type="submit" id="searchsubmit" class="button-search" value="<?php esc_attr_e( 'Search', "alhena-lite" ) ?>" />
                             </div>
                         </form>
                         

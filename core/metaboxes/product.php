@@ -12,7 +12,7 @@
 $wip_new_metaboxes = new alhenalite_metaboxes ('product', array (
 
 array( "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","alhena-lite")),   
+       "item" => array( "setting" => esc_html__( "Setting","alhena-lite")),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -20,24 +20,24 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","alhena-lite"),
+		array( "name" => esc_html__( "Setting","alhena-lite"),
 			   "type" => "title",
 			  ),
 
-		array( "name" => __( "Slogan","alhena-lite"),
-			   "desc" => __( "Insert the slogan of page","alhena-lite"),
+		array( "name" => esc_html__( "Slogan","alhena-lite"),
+			   "desc" => esc_html__( "Insert the slogan of page","alhena-lite"),
 			   "id" => "wip_slogan",
 			   "type" => "text",
 			  ),
 
-		array( "name" => __( "Template","alhena-lite"),
-			   "desc" => __( "Select a template for this page","alhena-lite"),
+		array( "name" => esc_html__( "Template","alhena-lite"),
+			   "desc" => esc_html__( "Select a template for this page","alhena-lite"),
 			   "id" => "wip_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => __( "Full Width","alhena-lite"),
-				   "left-sidebar" =>  __( "Left Sidebar","alhena-lite"),
-				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
+				   "full" => esc_html__( "Full Width","alhena-lite"),
+				   "left-sidebar" =>  esc_html__( "Left Sidebar","alhena-lite"),
+				   "right-sidebar" => esc_html__( "Right Sidebar","alhena-lite"),
 			  ),
 			   "std" => "right-sidebar",
 		),

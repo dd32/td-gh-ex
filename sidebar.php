@@ -15,7 +15,7 @@
                     } else { 
                         
                         the_widget( 'WP_Widget_Calendar',
-                        array("title"=> __('Calendar',"alhena-lite")),
+                        array("title"=> esc_html__('Calendar',"alhena-lite")),
                         array('before_widget' => '<div class="widget-box">',
                               'after_widget'  => '</div>',
                               'before_title'  => '<header class="title"><div class="line"><h3>',

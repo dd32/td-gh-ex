@@ -283,7 +283,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			$title = "$title $sep $site_description";
 	
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', "alhena-lite" ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( esc_html__( 'Page %s', "alhena-lite" ), max( $paged, $page ) );
 	
 		return $title;
 		
@@ -333,7 +333,7 @@ if (!function_exists('alhenalite_posticon')) {
 		
 		} else {
 		
-			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.__( "Article","alhena-lite").'</span>'; 
+			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.esc_html__( "Article","alhena-lite").'</span>'; 
 		
 		}
 	
@@ -426,7 +426,7 @@ if (!function_exists('alhenalite_customize_excerpt_more')) {
 
 		endif;
 
-		return $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . __( "Read More", "alhena-lite") . ' </span> </a>';
+		return $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . esc_html__( "Read More", "alhena-lite") . ' </span> </a>';
 
 	}
 	

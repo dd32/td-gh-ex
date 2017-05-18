@@ -23,7 +23,7 @@ if ( ! comments_open() ) {
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
 				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'alhena-lite' ), $count, get_the_title() );
 			else
-				_e( 'Reviews', 'alhena-lite' );
+				esc_html_e( 'Reviews', 'alhena-lite' );
 		?></h2>
 
 		<?php if ( have_comments() ) : ?>
@@ -44,7 +44,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'alhena-lite' ); ?></p>
+			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'alhena-lite' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -58,33 +58,33 @@ if ( ! comments_open() ) {
 
 					$comment_form = array(
 						
-						'title_reply' =>  '<span>' . __( 'Add a review', 'alhena-lite' ) . '</span>' ,
-						'title_reply_to' =>  '<span>' . __( 'Leave a Reply to %s', 'alhena-lite' ). '</span>',
+						'title_reply' =>  '<span>' . esc_html__( 'Add a review', 'alhena-lite' ) . '</span>' ,
+						'title_reply_to' =>  '<span>' . esc_html__( 'Leave a Reply to %s', 'alhena-lite' ). '</span>',
 						'comment_notes_before' => '',
 						'comment_notes_after'  => '',
 						'fields'               => array(
-							'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'alhena-lite' ) . ' <span class="required">*</span></label> ' .
+							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'alhena-lite' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" /></p>',
-							'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'alhena-lite' ) . ' <span class="required">*</span></label> ' .
+							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'alhena-lite' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true" /></p>',
 						),
-						'label_submit'  => __( 'Submit', 'alhena-lite' ),
+						'label_submit'  => esc_html__( 'Submit', 'alhena-lite' ),
 						'logged_in_as'  => '',
 						'comment_field' => ''
 					);
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . __( 'Your Rating', 'alhena-lite' ) .'</label><select name="rating" id="rating">
-							<option value="">' . __( 'Rate&hellip;', 'alhena-lite' ) . '</option>
-							<option value="5">' . __( 'Perfect', 'alhena-lite' ) . '</option>
-							<option value="4">' . __( 'Good', 'alhena-lite' ) . '</option>
-							<option value="3">' . __( 'Average', 'alhena-lite' ) . '</option>
-							<option value="2">' . __( 'Not that bad', 'alhena-lite' ) . '</option>
-							<option value="1">' . __( 'Very Poor', 'alhena-lite' ) . '</option>
+						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . esc_html__( 'Your Rating', 'alhena-lite' ) .'</label><select name="rating" id="rating">
+							<option value="">' . esc_html__( 'Rate&hellip;', 'alhena-lite' ) . '</option>
+							<option value="5">' . esc_html__( 'Perfect', 'alhena-lite' ) . '</option>
+							<option value="4">' . esc_html__( 'Good', 'alhena-lite' ) . '</option>
+							<option value="3">' . esc_html__( 'Average', 'alhena-lite' ) . '</option>
+							<option value="2">' . esc_html__( 'Not that bad', 'alhena-lite' ) . '</option>
+							<option value="1">' . esc_html__( 'Very Poor', 'alhena-lite' ) . '</option>
 						</select></p>';
 					}
 
-					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . __( 'Your Review', 'alhena-lite' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'alhena-lite' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
 
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
@@ -93,7 +93,7 @@ if ( ! comments_open() ) {
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'alhena-lite' ); ?></p>
+		<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'alhena-lite' ); ?></p>
 
 	<?php endif; ?>
 
