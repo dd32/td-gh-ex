@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.1.6 - Released: 19.05.2017
+
+-- Fixed : Double border using the minimal layout
+-- Edit  : Code optimized.
+
 - Version 3.1.5 - Released: 09.05.2017
 
 -- Fixed : WooCommerce add to cart button for grouped products.

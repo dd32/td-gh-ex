@@ -75,9 +75,9 @@ if( !class_exists( 'suevafree_customize' ) ) {
 			$suevafree_details = array(
 			
 				'sueva_label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
-				'sueva_url' => esc_url('https://www.themeinprogress.com/sueva/?aff=panel'),
+				'sueva_url' => esc_url('https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel'),
 				'avana_label' => esc_html__( 'Upgrade to Avana Premium', 'suevafree' ),
-				'avana_url' => esc_url('https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?aff=panel')
+				'avana_url' => esc_url('https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?ref=2&campaign=avana-panel')
 			
 			);
 		
