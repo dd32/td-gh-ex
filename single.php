@@ -9,12 +9,7 @@
 
 get_header();
 
-
-// Get Theme Options from Database.
-$theme_options = basepress_theme_options();
 ?>
-
-	<?php if ( $theme_options['breadscrumb'] == 1 ) {  basepress_tc_breadcrumb(); } ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

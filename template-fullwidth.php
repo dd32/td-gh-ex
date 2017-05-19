@@ -1,13 +1,8 @@
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Full Width Page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Description: A custom page template for displaying a fullwidth page with no sidebar.
  *
  * @package  basepress
  */
@@ -40,7 +35,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-
-do_action( 'basepress_sidebar' );
 
 get_footer();

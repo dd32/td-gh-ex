@@ -4,15 +4,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package  basepress
+ * @package Basepress
  */
-
-// Get Theme Options from Database.
-$theme_options = basepress_theme_options();
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-item clearfix'); ?>>
+
 	<?php
 	/**
 	 * Functions hooked in to basepress_loop_post action.
@@ -25,4 +23,5 @@ $theme_options = basepress_theme_options();
 	do_action( 'basepress_loop_post' );
 
 	?>	
+	
 </article><!-- #post-## -->

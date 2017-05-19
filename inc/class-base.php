@@ -42,13 +42,15 @@ if ( ! class_exists( 'basepress' ) ) :
 		 * Note that this function is hooked into the after_setup_theme hook, which
 		 * runs before the init hook. The init hook is too late for some features, such
 		 * as indicating support for post thumbnails.
+		 *
+		 * @since 1.0.0
 		 */
 		public function setup() {
 
 			/*
 			 * Make theme available for translation.
 			 * Translations can be filed in the /languages/ directory.
-			 * If you're building a theme based on base, use a find and replace
+			 * If you're building a theme based on basepress, use a find and replace
 			 * to change 'basepress' to the name of your theme in all the template files.
 			 */
 
@@ -109,12 +111,7 @@ if ( ! class_exists( 'basepress' ) ) :
 				'caption',
 			) );
 
-			// Set up the WordPress core custom background feature.
-			add_theme_support( 'custom-background', apply_filters( 'basepress_custom_background_args', array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			) ) );
-
+			
 			/**
 			 *  Add support for the Site Logo plugin and the site logo functionality in JetPack
 			 *  https://github.com/automattic/site-logo
@@ -224,7 +221,7 @@ if ( ! class_exists( 'basepress' ) ) :
 			 * Fonts
 			 */
 			$google_fonts = apply_filters( 'basepress_google_font_families', array(
-				'lato' => 'Open+Sans:300,400,700|Raleway:300,400,500,600,700',
+				'open-sanse' 	=> 'Open+Sans:300,400,700',
 			) );
 
 			$query_args = array(
@@ -284,7 +281,6 @@ if ( ! class_exists( 'basepress' ) ) :
 
 			// Header Image Size.
 			add_image_size( 'basepress-header-image', 1640, 480, true );
-			add_image_size( 'basepress-widget-thumbnails', 100, 100, true );
 		
 
 			// Default thumbnail sizes for widgets, posts and posts.
@@ -332,6 +328,7 @@ if ( ! class_exists( 'basepress' ) ) :
 		 * Sets `self::structured_data`.
 		 *
 		 * @param array $json
+		 * @since 1.0.0
 		 */
 		public static function set_structured_data( $json ) {
 			if ( ! is_array( $json ) ) {
@@ -345,6 +342,8 @@ if ( ! class_exists( 'basepress' ) ) :
 		 * Outputs structured data.
 		 *
 		 * Hooked into `wp_footer` action hook.
+		 *
+		 * @since 1.0.0
 		 */
 		public function get_structured_data() {
 			if ( ! self::$structured_data ) {
@@ -367,6 +366,7 @@ if ( ! class_exists( 'basepress' ) ) :
 		 *
 		 * @param  array $data
 		 * @return array
+		 * @since 1.0.0
 		 */
 		public function sanitize_structured_data( $data ) {
 			$sanitized = array();

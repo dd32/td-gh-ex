@@ -47,8 +47,8 @@ jQuery.fn.exists = function(callback) {
 
 		},
 		mobileMenu: function() {
-			var $primary_menu = $('#primary-navigation');
-			var $secondary_menu = $('#category-navigation');
+			var $primary_menu = $('#secondary-menu .container');
+			var $secondary_menu = $('#primary-navigation');
 			var $first_menu = '';
 			var $second_menu = '';
 

@@ -10,20 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title page-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'basepress' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	<?php
+	/**
+	 * Functions hooked in to basepress_page add_action
+	 *
+	 * @hooked basepress_page_header          - 10
+	 * @hooked basepress_page_content         - 20
+	 * @hooked basepress_init_structured_data - 30
+	 */
+	do_action( 'basepress_page' );
+	?>
 
 	<?php if ( get_edit_post_link() ) : ?>
 			<?php

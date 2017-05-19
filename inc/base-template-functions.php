@@ -124,7 +124,12 @@ if ( ! function_exists( 'basepress_header_image' ) ) {
 	function basepress_header_image() {
 		
 		// Get theme options from database
-		$theme_options = basepress_theme_options();	
+		$theme_options = apply_filters('basepress_header_image', array(
+				'post_layout_single' => 'none',
+				'custom_header_hide' => false,
+				'custom_header_link' => ''
+
+			));
 		
 		// Display featured image as header image on static pages
 		if( is_page() && has_post_thumbnail() ) : ?>
@@ -181,32 +186,22 @@ if ( ! function_exists( 'basepress_paging_nav' ) ) :
  * Display navigation to next/previous set of posts when applicable.
  */
 function basepress_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
+	
+	$theme_options = apply_filters('basepress_paging_nav', array(
 
-	$theme_options = basepress_theme_options();
+			'paging' => 'paging-numberal'
+	));
 
 	$nav_style =  $theme_options['paging'];
 
-	if  ( $nav_style == 'paging-numberal') :
+	if  ( $nav_style == 'paging-numberal') {
 		// Previous/next page navigation.
 			the_posts_pagination( array(
 				'prev_text'          => __( '<i class="fa fa-angle-left"></i>', 'basepress' ),
 				'next_text'          => __( '<i class="fa fa-angle-right"></i>', 'basepress' ),
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'basepress' ) . ' </span>',
 			) );
-
-	elseif ( $nav_style == 'paging-loading' ) :
-
-		basepress_infinite_loading();
-
-	elseif ( $nav_style == 'paging-infinite' ) : 
-
-		basepress_infinite_loading('infinite');
-
-	else :
+	} else {
 
 		$args = array(
 	            'prev_text'          =>  __( '<i class="fa fa-angle-left"></i> Older Posts', 'basepress' ),
@@ -215,7 +210,7 @@ function basepress_paging_nav() {
 
 		the_posts_navigation($args);
 
-	endif;
+	}
 }
 endif;
 
@@ -227,6 +222,8 @@ if ( ! function_exists( 'basepress_post_header' ) ) {
 	 */
 	function basepress_post_header() {
 
+		do_action( 'basepress_before_post_title');
+
 		if ( is_single() ) {
 			
 			the_title( '<h1 class="entry-title single-title">', '</h1>' );
@@ -235,6 +232,8 @@ if ( ! function_exists( 'basepress_post_header' ) ) {
 			
 			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		}
+
+		do_action( 'basepress_after_post_title');
 		
 	}
 }
@@ -255,6 +254,23 @@ if ( ! function_exists('basepress_post_header_wrapper_close') ) {
 
 		echo '</header> <!-- .entry-header -->';
 
+	}
+}
+if ( ! function_exists( 'basepress_homepage_content' ) ) {
+	/**
+	 * Display homepage content
+	 * Hooked into the `homepage` action in the homepage template
+	 *
+	 * @since  1.0.0
+	 * @return  void
+	 */
+	function basepress_homepage_content() {
+		while ( have_posts() ) {
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+		} // end of the loop.
 	}
 }
 
@@ -280,6 +296,11 @@ if ( ! function_exists( 'basepress_post_content' ) ) {
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		) );
 
+		/**
+		 * Functions hooked in basepress_post_content_after
+		 *
+		 * @hooked basepress_entry_meta_footer - 10
+		 */
 		do_action( 'basepress_post_content_after' );
 
 
@@ -330,16 +351,9 @@ if ( ! function_exists( 'basepress_post_single_content' ) ) {
 if ( ! function_exists( 'basepress_post_header_meta' ) ) {
 
 	function basepress_post_header_meta() {
-		if ( 'post' === get_post_type() ) { ?>
-			<footer class="entry-meta">
-				<?php
+		
+		basepress_post_metadata();
 
-					basepress_posted_on(); 
-					basepress_entry_footer(); 
-				?>
-			</footer><!-- .entry-footer -->
-		<?php
-		}
 	}
 }
 
@@ -363,23 +377,18 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 	 */
 	function basepress_post_tags() {
 
-		// Get theme options from database.
-		$theme_options = basepress_theme_options();
-
-		$meta_items = array_flip($theme_options['post_meta_info']);
-
 		// Get tags.
-		$tag_list = get_the_tag_list( '', '' );
+		$tag_list = get_the_tag_list( '', __(', ', 'basepress') );
 
 		// Display tags.
-		if ( $tag_list && isset( $meta_items['meta-tag'] ) ) : ?>
+		if ( $tag_list ) : ?>
 
 		<footer class="entry-footer">
 
-			<div class="entry-tags clearfix">
-				<span class="meta-tags">
-					<?php echo $tag_list; ?>
-				</span>
+			<div class="entry-tags">
+				
+					<?php echo __('Tags: ', 'basepress') . wp_kses_post($tag_list); ?>
+				
 			</div><!-- .entry-tags -->
 
 		</footer>
@@ -387,6 +396,7 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 		<?php
 		endif;
 	}
+
 endif;
 
 if ( ! function_exists( 'basepress_post_nav' ) ) {
@@ -522,52 +532,49 @@ add_action( 'save_post',     'basepress_category_transient_flusher' );
 if ( ! function_exists ( 'basepress_post_metadata' ) ) :
 /**
  * Render post metat data
- * 
+ *
+ * @since 1.0.0
  */
 function basepress_post_metadata() {
 
-	// Get theme options from database.
-	$theme_options = basepress_theme_options();
-
-	$meta_items = array_flip($theme_options['post_meta_info']);
-
+	/**
+	 * Prefix all post meta
+	 * 
+	 * @var array
+	 */
 	$prefix = apply_filters('basepress_prefix_post_metadata', array(
 
 		'date'		=> '',
-		'author'	=> '',
+		'author'	=> __('By ', 'basepress'),
 		'category'	=> '',
 		'comment'	=> '',
+		'tag'		=> '',
 
 	));
 
 	$postmeta = '';
 
-	// Display date unless user has deactivated it via settings.
-	if ( isset( $meta_items['meta-date'] ) ) {
+	/**
+	 * Allow theme author enable or disable post meta data
+	 * 
+	 * @var [type]
+	 */
+	$metadata = apply_filters('basepress_enable_post_metadata', array(
+		'date',
+		'author',
+		'category',
+		'tag',
+		'comment'
+	));
 
-		$postmeta .= $prefix['date'] . basepress_meta_date();
+	$metadata = array_flip($metadata);
 
-	}
+	$postmeta .= isset($metadata['date']) ? $prefix['date'] . basepress_meta_date() : '';
+	$postmeta .= isset($metadata['author']) ? $prefix['author'] . basepress_meta_author() : '';
+	$postmeta .= isset($metadata['category']) ? $prefix['category'] . basepress_meta_category() : '';
+	$postmeta .=  isset($metadata['tag']) ? $prefix['tag'] . basepress_meta_tag() : '';
+	$postmeta .=  isset($metadata['comment']) ? $prefix['comment'] . basepress_meta_comments() : '';
 
-	// Display author unless user has deactivated it via settings.
-	if ( isset( $meta_items['meta-au'] ) ) {
-
-		$postmeta .= $prefix['author'] . basepress_meta_author();
-
-	}
-
-	// Display categories unless user has deactivated it via settings.
-	if ( isset( $meta_items['meta-cat'] ) )  {
-
-		$postmeta .= $prefix['category'] . basepress_meta_category();
-
-	}
-
-	if ( isset( $meta_items['meta-com'] ) ) {
-
-		$postmeta .=  $prefix['comment'] . basepress_meta_comments();
-
-	}
 
 	if ( $postmeta ) { ?>
 
@@ -618,7 +625,7 @@ if ( ! function_exists( 'basepress_meta_author' ) ) :
 			esc_html( get_the_author() )
 		);
 
-		return '<span class="meta-author byline">' . $author_string . '</span>';
+		return '<span class="meta-author byline">' . wp_kses_post($author_string) . '</span>';
 	}
 endif;
 
@@ -627,6 +634,57 @@ if ( ! function_exists( 'basepress_meta_category' ) ) :
 	 * Displays the category of posts
 	 */
 	function basepress_meta_category() {
+
+		$categories_list = get_the_category_list( ', ' );
+
+		if ( $categories_list ) {
+
+			return '<span class="meta-category"> ' . wp_kses_post($categories_list) . '</span>';
+		}
+		
+	}
+endif;
+
+if ( ! function_exists( 'basepress_meta_tag' ) ) :
+	/**
+	 * Displays the category of posts
+	 */
+	function basepress_meta_tag() {
+
+		$tags_list = get_the_tag_list( '', __( ', ', 'basepress' ) );
+
+		if ( $tags_list ) {
+
+			return '<span class="meta-tag"> ' . wp_kses_post( $tags_list ) . '</span>';
+		}
+		
+
+	}
+endif;
+
+if ( ! function_exists( 'basepress_meta_comments' ) ) :
+	/**
+	 * Displays the category of posts
+	 */
+	function basepress_meta_comments() {
+
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+
+
+    		$txt_comment = '<a href="'. esc_url ( get_comments_link() ) .'">'.get_comments_number_text( __('Leave a Comment', 'basepress'), __('One Comment', 'basepress'), __('% Comments', 'basepress')) . '</a>';
+
+				return '<span class="comments-link">' . $txt_comment . '</span>';				
+
+		}
+
+	}
+endif;
+
+if ( ! function_exists( 'basepress_meta_edit_link' ) ) :
+	/**
+	 * Displays the category of posts
+	 */
+	function basepress_meta_edit_link() {
 
 		return '<span class="meta-category"> ' . get_the_category_list( ', ' ) . '</span>';
 
@@ -790,6 +848,45 @@ if ( ! function_exists( 'basepress_footer_back_top' ) ) {
 	}
 }
 
+if ( ! function_exists( 'basepress_page_header' ) ) {
+	/**
+	 * Display the post header with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function basepress_page_header() {
+		?>
+		<header class="entry-header">
+			<?php
+			basepress_post_thumbnail( 'full' );
+			the_title( '<h1 class="entry-title">', '</h1>' );
+			?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'basepress_page_content' ) ) {
+	/**
+	 * Display the post content with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function basepress_page_content() {
+		?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'basepress' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</div><!-- .entry-content -->
+		<?php
+	}
+}
+
 if ( ! function_exists( 'basepress_init_structured_data' ) ) {
 	/**
 	 * Generates structured data.
@@ -869,9 +966,11 @@ if ( ! function_exists( 'basepress_posted_on' ) ) :
  */
 function basepress_posted_on() {
 
-	$theme_options = basepress_theme_options();
 
-	$meta_items = array_flip($theme_options['post_meta_info']);
+	$meta_items = apply_filters('basepress_posted_metadata', array(
+		'meta-date' => true,
+		'meta-au' => true,
+	));
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -918,9 +1017,10 @@ if ( ! function_exists( 'basepress_entry_footer' ) ) :
  */
 function basepress_entry_footer() {
 
-	$theme_options = basepress_theme_options();
-
-	$meta_items = array_flip($theme_options['post_meta_info']);
+	$meta_items = apply_filters('basepress_posted_metadata_footer', array(
+		'meta-cat' => true,
+		'meta-com' => true,
+	));
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {

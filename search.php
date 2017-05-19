@@ -19,6 +19,15 @@ $theme_options = basepress_theme_options();
 			<?php
 			if ( have_posts() ) :
 
+			?>
+			<header class="page-header">
+
+				<h1 class="page-title"><?php printf( esc_attr__( 'Search Results for: %s', 'basepress' ), '<em>' . get_search_query() . '</em>' ); ?></h1>
+
+			</header><!-- .page-header -->
+
+			<?php 
+
 				get_template_part( 'loop' );
 				
 			else :
@@ -31,5 +40,6 @@ $theme_options = basepress_theme_options();
 	</section><!-- #primary -->
 
 <?php
-do_action( 'shopper_sidebar' );
+do_action( 'basepress_sidebar' );
+
 get_footer();

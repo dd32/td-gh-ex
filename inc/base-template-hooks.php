@@ -2,7 +2,8 @@
 /**
  * BasePress hooks
  *
- * @package basepress
+ * @author   ThemeCountry
+ * @package  basepress
  */
 
 /**
@@ -41,7 +42,10 @@ add_action( 'basepress_footer', 			'basepress_footer_nav',         		30 );
 add_action( 'basepress_footer', 			'basepress_credit',         			40 );
 add_action( 'basepress_footer', 			'basepress_credit_wrapper_close',    	50 );
 add_action( 'basepress_after_footer', 		'basepress_footer_back_top', 			10 );
-
+/**
+ * Homepage - Hooks
+ */
+add_action( 'basepress_homepage',  		'basepress_homepage_content', 			10);
 
 /**
  * Posts - Hooks
@@ -64,7 +68,7 @@ add_action( 'basepress_loop_post',           	'basepress_post_content',         
 add_action( 'basepress_loop_post',           	'basepress_init_structured_data', 		40 );
 add_action( 'basepress_loop_after',          	'basepress_paging_nav',           		10 );
 add_action( 'basepress_post_content_before', 	'basepress_post_thumbnail',       		10 );
-add_action( 'basepress_post_content_after', 		'basepress_entry_meta_footer',    	10 );
+add_action( 'basepress_post_content_after', 	'basepress_entry_meta_footer',    		10 );
 
 add_action( 'basepress_single_post',  			'basepress_post_header_wrapper',  		 5 );
 add_action( 'basepress_single_post',  			'basepress_post_header',  		 		10 );
@@ -73,6 +77,21 @@ add_action( 'basepress_single_post',  			'basepress_post_header_wrapper_close', 
 add_action( 'basepress_single_post',  			'basepress_post_content_wrapper',  		30 );
 add_action( 'basepress_single_post',  			'basepress_post_single_content',  		35 );
 add_action( 'basepress_single_post',  			'basepress_post_content_wrapper_close',	40 );
+add_action( 'basepress_single_post',           	'basepress_init_structured_data', 		50 );
 add_action( 'basepress_single_post_bottom',  	'basepress_post_tags', 					10 );
 add_action( 'basepress_single_post_bottom',  	'basepress_post_nav', 					20 );
 add_action( 'basepress_single_post_bottom',  	'basepress_display_comments', 			30 );
+
+/**
+ * Page - Hooks
+ *
+ * @see  basepress_page_header()
+ * @see  basepress_page_content
+ * @see  basepress_init_structured_data()
+ * @see  basepress_display_comments()
+ */
+
+add_action( 'basepress_page',       'basepress_page_header',          10 );
+add_action( 'basepress_page',       'basepress_page_content',         20 );
+add_action( 'basepress_page',       'basepress_init_structured_data', 30 );
+add_action( 'basepress_page_after', 'basepress_display_comments',     10 );
