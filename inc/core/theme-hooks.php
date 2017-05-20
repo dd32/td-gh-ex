@@ -5,62 +5,60 @@
  * @see  https://github.com/zamoose/themehookalliance
  *
  * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2017, Astra
- * @link        http://wpastra.com/
+ * @author      Brainstorm Force
+ * @copyright   Copyright (c) 2015, Brainstorm Force
+ * @link        http://www.brainstormforce.com
  * @since       Astra 1.0.0
  */
 
 /**
- * Themes and Plugins can check for astra_hooks using current_theme_supports( 'astra_hooks', $hook )
+ * Themes and Plugins can check for ast_hooks using current_theme_supports( 'ast_hooks', $hook )
  * to determine whether a theme declares itself to support this specific hook type.
  *
  * Example:
  * <code>
- *      // Declare support for all hook types
- *      add_theme_support( 'astra_hooks', array( 'all' ) );
+ * 		// Declare support for all hook types
+ * 		add_theme_support( 'ast_hooks', array( 'all' ) );
  *
- *      // Declare support for certain hook types only
- *      add_theme_support( 'astra_hooks', array( 'header', 'content', 'footer' ) );
+ * 		// Declare support for certain hook types only
+ * 		add_theme_support( 'ast_hooks', array( 'header', 'content', 'footer' ) );
  * </code>
  */
-add_theme_support(
-	'astra_hooks', array(
+add_theme_support( 'ast_hooks', array(
 
-		/**
-		 * As a Theme developer, use the 'all' parameter, to declare support for all
-		 * hook types.
-		 * Please make sure you then actually reference all the hooks in this file,
-		 * Plugin developers depend on it!
-		 */
-		'all',
+	/**
+	 * As a Theme developer, use the 'all' parameter, to declare support for all
+	 * hook types.
+	 * Please make sure you then actually reference all the hooks in this file,
+	 * Plugin developers depend on it!
+	 */
+	'all',
 
-		/**
-		 * Themes can also choose to only support certain hook types.
-		 * Please make sure you then actually reference all the hooks in this type
-		 * family.
-		 *
-		 * When the 'all' parameter was set, specific hook types do not need to be
-		 * added explicitly.
-		 */
-		'html',
-		'body',
-		'head',
-		'header',
-		'content',
-		'entry',
-		'comments',
-		'sidebars',
-		'sidebar',
-		'footer',
+	/**
+	 * Themes can also choose to only support certain hook types.
+	 * Please make sure you then actually reference all the hooks in this type
+	 * family.
+	 *
+	 * When the 'all' parameter was set, specific hook types do not need to be
+	 * added explicitly.
+	 */
+	'html',
+	'body',
+	'head',
+	'header',
+	'content',
+	'entry',
+	'comments',
+	'sidebars',
+	'sidebar',
+	'footer',
 
 	/**
 	 * If/when WordPress Core implements similar methodology, Themes and Plugins
 	 * will be able to check whether the version of THA supplied by the theme
 	 * supports Core hooks.
 	 */
-	)
-);
+) );
 
 /**
  * Determines, whether the specific hook type is actually supported.
@@ -70,8 +68,8 @@ add_theme_support(
  *
  * Example:
  * <code>
- *      if ( current_theme_supports( 'astra_hooks', 'header' ) )
- *          add_action( 'astra_head_top', 'prefix_header_top' );
+ * 		if ( current_theme_supports( 'ast_hooks', 'header' ) )
+ * 	  		add_action( 'ast_head_top', 'prefix_header_top' );
  * </code>
  *
  * @param bool  $bool true.
@@ -80,379 +78,379 @@ add_theme_support(
  *
  * @return bool
  */
-function astra_current_theme_supports( $bool, $args, $registered ) {
+function ast_current_theme_supports( $bool, $args, $registered ) {
 	return in_array( $args[0], $registered[0] ) || in_array( 'all', $registered[0] );
 }
-add_filter( 'current_theme_supports-astra_hooks', 'astra_current_theme_supports', 10, 3 );
+add_filter( 'current_theme_supports-ast_hooks', 'ast_current_theme_supports', 10, 3 );
 
 /**
  * HTML <html> hook
  * Special case, useful for <DOCTYPE>, etc.
- * $astra_supports[] = 'html;
+ * $ast_supports[] = 'html;
  */
-function astra_html_before() {
-	do_action( 'astra_html_before' );
+function ast_html_before() {
+	do_action( 'ast_html_before' );
 }
 /**
  * HTML <body> hooks
- * $astra_supports[] = 'body';
+ * $ast_supports[] = 'body';
  */
-function astra_body_top() {
-	do_action( 'astra_body_top' );
+function ast_body_top() {
+	do_action( 'ast_body_top' );
 }
 
 /**
  * Body Bottom
  */
-function astra_body_bottom() {
-	do_action( 'astra_body_bottom' );
+function ast_body_bottom() {
+	do_action( 'ast_body_bottom' );
 }
 
 /**
  * HTML <head> hooks
  *
- * $astra_supports[] = 'head';
+ * $ast_supports[] = 'head';
  */
-function astra_head_top() {
-	do_action( 'astra_head_top' );
+function ast_head_top() {
+	do_action( 'ast_head_top' );
 }
 
 /**
  * Head Bottom
  */
-function astra_head_bottom() {
-	do_action( 'astra_head_bottom' );
+function ast_head_bottom() {
+	do_action( 'ast_head_bottom' );
 }
 
 /**
  * Semantic <header> hooks
  *
- * $astra_supports[] = 'header';
+ * $ast_supports[] = 'header';
  */
-function astra_header_before() {
-	do_action( 'astra_header_before' );
+function ast_header_before() {
+	do_action( 'ast_header_before' );
 }
 
 /**
  * Site Header
  */
-function astra_header() {
-	do_action( 'astra_header' );
+function ast_header() {
+	do_action( 'ast_header' );
 }
 
 /**
  * Masthead Top
  */
-function astra_masthead_top() {
-	do_action( 'astra_masthead_top' );
+function ast_masthead_top() {
+	do_action( 'ast_masthead_top' );
 }
 
 /**
  * Masthead
  */
-function astra_masthead() {
-	do_action( 'astra_masthead' );
+function ast_masthead() {
+	do_action( 'ast_masthead' );
 }
 
 /**
  * Masthead Bottom
  */
-function astra_masthead_bottom() {
-	do_action( 'astra_masthead_bottom' );
+function ast_masthead_bottom() {
+	do_action( 'ast_masthead_bottom' );
 }
 
 /**
  * Header After
  */
-function astra_header_after() {
-	do_action( 'astra_header_after' );
+function ast_header_after() {
+	do_action( 'ast_header_after' );
 }
 
 /**
  * Main Header bar top
  */
-function astra_main_header_bar_top() {
-	do_action( 'astra_main_header_bar_top' );
+function ast_main_header_bar_top() {
+	do_action( 'ast_main_header_bar_top' );
 }
 
 /**
  * Main Header bar bottom
  */
-function astra_main_header_bar_bottom() {
-	do_action( 'astra_main_header_bar_bottom' );
+function ast_main_header_bar_bottom() {
+	do_action( 'ast_main_header_bar_bottom' );
 }
 
 /**
  * Main Header Content
  */
-function astra_masthead_content() {
-	do_action( 'astra_masthead_content' );
+function ast_masthead_content() {
+	do_action( 'ast_masthead_content' );
 }
 /**
  * Main toggle button before
  */
-function astra_masthead_toggle_buttons_before() {
-	do_action( 'astra_masthead_toggle_buttons_before' );
+function ast_masthead_toggle_buttons_before() {
+	do_action( 'ast_masthead_toggle_buttons_before' );
 }
 
 /**
  * Main toggle buttons
  */
-function astra_masthead_toggle_buttons() {
-	do_action( 'astra_masthead_toggle_buttons' );
+function ast_masthead_toggle_buttons() {
+	do_action( 'ast_masthead_toggle_buttons' );
 }
 
 /**
  * Main toggle button after
  */
-function astra_masthead_toggle_buttons_after() {
-	do_action( 'astra_masthead_toggle_buttons_after' );
+function ast_masthead_toggle_buttons_after() {
+	do_action( 'ast_masthead_toggle_buttons_after' );
 }
 
 /**
  * Semantic <content> hooks
  *
- * $astra_supports[] = 'content';
+ * $ast_supports[] = 'content';
  */
-function astra_content_before() {
-	do_action( 'astra_content_before' );
+function ast_content_before() {
+	do_action( 'ast_content_before' );
 }
 
 /**
  * Content after
  */
-function astra_content_after() {
-	do_action( 'astra_content_after' );
+function ast_content_after() {
+	do_action( 'ast_content_after' );
 }
 
 /**
  * Content top
  */
-function astra_content_top() {
-	do_action( 'astra_content_top' );
+function ast_content_top() {
+	do_action( 'ast_content_top' );
 }
 
 /**
  * Content bottom
  */
-function astra_content_bottom() {
-	do_action( 'astra_content_bottom' );
+function ast_content_bottom() {
+	do_action( 'ast_content_bottom' );
 }
 
 /**
  * Content while before
  */
-function astra_content_while_before() {
-	do_action( 'astra_content_while_before' );
+function ast_content_while_before() {
+	do_action( 'ast_content_while_before' );
 }
 
 /**
  * Content while after
  */
-function astra_content_while_after() {
-	do_action( 'astra_content_while_after' );
+function ast_content_while_after() {
+	do_action( 'ast_content_while_after' );
 }
 
 /**
  * Semantic <entry> hooks
  *
- * $astra_supports[] = 'entry';
+ * $ast_supports[] = 'entry';
  */
-function astra_entry_before() {
-	do_action( 'astra_entry_before' );
+function ast_entry_before() {
+	do_action( 'ast_entry_before' );
 }
 
 /**
  * Entry after
  */
-function astra_entry_after() {
-	do_action( 'astra_entry_after' );
+function ast_entry_after() {
+	do_action( 'ast_entry_after' );
 }
 
 /**
  * Entry content before
  */
-function astra_entry_content_before() {
-	do_action( 'astra_entry_content_before' );
+function ast_entry_content_before() {
+	do_action( 'ast_entry_content_before' );
 }
 
 /**
  * Entry content after
  */
-function astra_entry_content_after() {
-	do_action( 'astra_entry_content_after' );
+function ast_entry_content_after() {
+	do_action( 'ast_entry_content_after' );
 }
 
 /**
  * Entry Top
  */
-function astra_entry_top() {
-	do_action( 'astra_entry_top' );
+function ast_entry_top() {
+	do_action( 'ast_entry_top' );
 }
 
 /**
  * Entry bottom
  */
-function astra_entry_bottom() {
-	do_action( 'astra_entry_bottom' );
+function ast_entry_bottom() {
+	do_action( 'ast_entry_bottom' );
 }
 
 /**
  * Single Post Header Before
  */
-function astra_single_header_before() {
-	do_action( 'astra_single_header_before' );
+function ast_single_header_before() {
+	do_action( 'ast_single_header_before' );
 }
 
 /**
  * Single Post Header After
  */
-function astra_single_header_after() {
-	do_action( 'astra_single_header_after' );
+function ast_single_header_after() {
+	do_action( 'ast_single_header_after' );
 }
 
 /**
  * Single Post Header Top
  */
-function astra_single_header_top() {
-	do_action( 'astra_single_header_top' );
+function ast_single_header_top() {
+	do_action( 'ast_single_header_top' );
 }
 
 /**
  * Single Post Header Bottom
  */
-function astra_single_header_bottom() {
-	do_action( 'astra_single_header_bottom' );
+function ast_single_header_bottom() {
+	do_action( 'ast_single_header_bottom' );
 }
 
 /**
  * Comments block hooks
  *
- * $astra_supports[] = 'comments';
+ * $ast_supports[] = 'comments';
  */
-function astra_comments_before() {
-	do_action( 'astra_comments_before' );
+function ast_comments_before() {
+	do_action( 'ast_comments_before' );
 }
 
 /**
  * Comments after.
  */
-function astra_comments_after() {
-	do_action( 'astra_comments_after' );
+function ast_comments_after() {
+	do_action( 'ast_comments_after' );
 }
 
 /**
  * Semantic <sidebar> hooks
  *
- * $astra_supports[] = 'sidebar';
+ * $ast_supports[] = 'sidebar';
  */
-function astra_sidebars_before() {
-	do_action( 'astra_sidebars_before' );
+function ast_sidebars_before() {
+	do_action( 'ast_sidebars_before' );
 }
 
 /**
  * Sidebars after
  */
-function astra_sidebars_after() {
-	do_action( 'astra_sidebars_after' );
+function ast_sidebars_after() {
+	do_action( 'ast_sidebars_after' );
 }
 
 /**
  * Semantic <footer> hooks
  *
- * $astra_supports[] = 'footer';
+ * $ast_supports[] = 'footer';
  */
-function astra_footer() {
-	do_action( 'astra_footer' );
+function ast_footer() {
+	do_action( 'ast_footer' );
 }
 
 /**
  * Footer before
  */
-function astra_footer_before() {
-	do_action( 'astra_footer_before' );
+function ast_footer_before() {
+	do_action( 'ast_footer_before' );
 }
 
 /**
  * Footer after
  */
-function astra_footer_after() {
-	do_action( 'astra_footer_after' );
+function ast_footer_after() {
+	do_action( 'ast_footer_after' );
 }
 
 /**
  * Footer top
  */
-function astra_footer_content_top() {
-	do_action( 'astra_footer_content_top' );
+function ast_footer_content_top() {
+	do_action( 'ast_footer_content_top' );
 }
 
 /**
  * Footer
  */
-function astra_footer_content() {
-	do_action( 'astra_footer_content' );
+function ast_footer_content() {
+	do_action( 'ast_footer_content' );
 }
 
 /**
  * Footer bottom
  */
-function astra_footer_content_bottom() {
-	do_action( 'astra_footer_content_bottom' );
+function ast_footer_content_bottom() {
+	do_action( 'ast_footer_content_bottom' );
 }
 
 /**
  * Archive header
  */
-function astra_archive_header() {
-	do_action( 'astra_archive_header' );
+function ast_archive_header() {
+	do_action( 'ast_archive_header' );
 }
 
 /**
  * Pagination
  */
-function astra_pagination() {
-	do_action( 'astra_pagination' );
+function ast_pagination() {
+	do_action( 'ast_pagination' );
 }
 
 /**
  * Entry content single
  */
-function astra_entry_content_single() {
-	do_action( 'astra_entry_content_single' );
+function ast_entry_content_single() {
+	do_action( 'ast_entry_content_single' );
 }
 
 /**
  * 404
  */
-function astra_entry_content_404_page() {
-	do_action( 'astra_entry_content_404_page' );
+function ast_entry_content_404_page() {
+	do_action( 'ast_entry_content_404_page' );
 }
 
 /**
  * Entry content blog
  */
-function astra_entry_content_blog() {
-	do_action( 'astra_entry_content_blog' );
+function ast_entry_content_blog() {
+	do_action( 'ast_entry_content_blog' );
 }
 
 /**
  * Blog featured post section
  */
-function astra_blog_post_featured_format() {
-	do_action( 'astra_blog_post_featured_format' );
+function ast_blog_post_featured_format() {
+	do_action( 'ast_blog_post_featured_format' );
 }
 
 /**
  * Primary Content Top
  */
-function astra_primary_content_top() {
-	do_action( 'astra_primary_content_top' );
+function ast_primary_content_top() {
+	do_action( 'ast_primary_content_top' );
 }
 
 /**
  * Primary Content Bottom
  */
-function astra_primary_content_bottom() {
-	do_action( 'astra_primary_content_bottom' );
+function ast_primary_content_bottom() {
+	do_action( 'ast_primary_content_bottom' );
 }

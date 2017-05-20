@@ -11,23 +11,23 @@
  */
 
 ?>
-			<?php astra_content_bottom(); ?>
+			<?php ast_content_bottom(); ?>
 
 			</div> <!-- ast-container -->
 
 		</div><!-- #content -->
 
-		<?php astra_content_after(); ?>
+		<?php ast_content_after(); ?>
 
-		<?php astra_footer_before(); ?>
+		<?php ast_footer_before(); ?>
 
-		<?php astra_footer(); ?>
+		<?php ast_footer(); ?>
 
-		<?php astra_footer_after(); ?>
+		<?php ast_footer_after(); ?>
 
 	</div><!-- #page -->
 
-	<?php astra_body_bottom(); ?>
+	<?php ast_body_bottom(); ?>
 
 	<?php wp_footer(); ?>
 
