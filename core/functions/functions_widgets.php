@@ -6,9 +6,9 @@ if (!function_exists('bazaarlite_loadwidgets')) {
 
 		register_sidebar(array(
 		
-			'name' => __('Sidebar','bazaar-lite'),
+			'name' => esc_html__('Sidebar','bazaar-lite'),
 			'id'   => 'side_sidebar_area',
-			'description'   => __('This sidebar will be shown at the side of content','bazaar-lite'),
+			'description'   => esc_html__('This sidebar will be shown at the side of content','bazaar-lite'),
 			'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<div class="title-container"><h3 class="title">',
@@ -18,8 +18,8 @@ if (!function_exists('bazaarlite_loadwidgets')) {
 
 		register_sidebar(array(
 
-			'name' => __('Header Sidebar','bazaar-lite'),
-			'description'   => __('This sidebar will be shown before the content','bazaar-lite'),
+			'name' => esc_html__('Header Sidebar','bazaar-lite'),
+			'description'   => esc_html__('This sidebar will be shown before the content','bazaar-lite'),
 			'id'   => 'header_sidebar_area',
 			'before_widget' => '<div id="%1$s" class="post-container"><div class="post-article widget-box %2$s">',
 			'after_widget'  => '</div></div>',
@@ -30,8 +30,8 @@ if (!function_exists('bazaarlite_loadwidgets')) {
 	
 		register_sidebar(array(
 
-			'name' => __('Bottom Sidebar','bazaar-lite'),
-			'description'   => __('This sidebar will be shown after the content','bazaar-lite'),
+			'name' => esc_html__('Bottom Sidebar','bazaar-lite'),
+			'description'   => esc_html__('This sidebar will be shown after the content','bazaar-lite'),
 			'id'   => 'bottom_sidebar_area',
 			'before_widget' => '<div class="col-md-4"><div id="%1$s" class="post-container"><div class="post-article widget-box %2$s">',
 			'after_widget'  => '</div></div></div>',
@@ -42,8 +42,8 @@ if (!function_exists('bazaarlite_loadwidgets')) {
 		
 		register_sidebar(array(
 
-			'name' => __('Footer Sidebar','bazaar-lite'),
-			'description'   => __('This sidebar will be shown at the bottom of page','bazaar-lite'),
+			'name' => esc_html__('Footer Sidebar','bazaar-lite'),
+			'description'   => esc_html__('This sidebar will be shown at the bottom of page','bazaar-lite'),
 			'id'   => 'footer_sidebar_area',
 			'before_widget' => '<div id="%1$s" class="col-md-4 widget-box %2$s">',
 			'after_widget'  => '</div>',

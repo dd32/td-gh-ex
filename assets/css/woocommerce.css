@@ -905,6 +905,12 @@ body.search .product-content .price,
     -moz-transition: all 0.3s ease-out;
 }
 
+.woocommerce div.product form.cart .group_table td {
+    margin-top: 0 !important;
+	text-align:right;
+	padding-right: 1em;
+}
+
 /* ===============================================
    Woocommerce pagination
    ============================================= */

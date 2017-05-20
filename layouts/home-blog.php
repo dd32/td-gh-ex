@@ -42,15 +42,15 @@
                         
                     <div class="post-article">
         
-                        <h1><?php _e( 'Content not found',"bazaar-lite" ) ?></h1>           
+                        <h1><?php esc_html_e( 'Content not found',"bazaar-lite" ) ?></h1>           
                         
-                        <p> <?php _e( 'No article found in this blog.','bazaar-lite'); ?> </p>
+                        <p> <?php esc_html_e( 'No article found in this blog.','bazaar-lite'); ?> </p>
         
-                        <h2> <?php _e( 'What can i do?',"bazaar-lite" ) ?> </h2>           
+                        <h2> <?php esc_html_e( 'What can i do?',"bazaar-lite" ) ?> </h2>           
         
-                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo('name')) ?>"> <?php _e( 'Back to the homepage','bazaar-lite'); ?> </a> </p>
+                        <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo('name')) ?>"> <?php esc_html_e( 'Back to the homepage','bazaar-lite'); ?> </a> </p>
                       
-                        <p> <?php _e( 'Make a search, from the below form:','bazaar-lite'); ?> </p>
+                        <p> <?php esc_html_e( 'Make a search, from the below form:','bazaar-lite'); ?> </p>
                         
 						<?php get_search_form(); ?>
         

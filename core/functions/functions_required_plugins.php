@@ -33,7 +33,19 @@ if (!function_exists('bazaarlite_required_plugins')) {
 				'slug'      => 'wip-custom-login',
 				'required'  => false,
 			),
-	
+
+			array(
+				'name'      => 'Inline Related Posts',
+				'slug'      => 'intelly-related-posts',
+				'required'  => false,
+			),
+
+			array(
+				'name'      => 'Tracking Code Manager',
+				'slug'      => 'tracking-code-manager',
+				'required'  => false,
+			),
+
 			array(
 				'name'      => 'Regenerate Thumbnails',
 				'slug'      => 'regenerate-thumbnails',

@@ -355,7 +355,7 @@ if (!function_exists('bazaarlite_breadcrumb')) {
 		
 		if ( !bazaarlite_is_woocommerce_active('is_woocommerce') ) {
 			
-			echo '<li><a href="' . esc_url(home_url()) . '">' . __("Home","bazaar-lite") . "</a></li> / ";
+			echo '<li><a href="' . esc_url(home_url()) . '">' . esc_html__("Home","bazaar-lite") . "</a></li> / ";
 			
 			if ( is_category() ) {
 				
@@ -375,15 +375,15 @@ if (!function_exists('bazaarlite_breadcrumb')) {
 			
 			} else if ( is_search() ) {
 
-				echo "<li>" . __( '<span>Search </span> results for ', 'bazaar-lite' ) . $s . "</li>";
+				echo "<li>" . esc_html__( '<span>Search </span> results for ', 'bazaar-lite' ) . $s . "</li>";
 			
 			} else if ( is_404() ) {
 
-				echo "<li>" . __( 'Page 404', 'bazaar-lite' ) . $s . "</li>";
+				echo "<li>" . esc_html__( 'Page 404', 'bazaar-lite' ) . $s . "</li>";
 			
 			} else if ( is_attachment() ) {
 
-				echo "<li>" . __( 'Attachment: ', 'bazaar-lite' ) . get_the_title() . "</li>";
+				echo "<li>" . esc_html__( 'Attachment: ', 'bazaar-lite' ) . get_the_title() . "</li>";
 			
 			} 
 	
@@ -464,7 +464,7 @@ if (!function_exists('bazaarlite_manual_excerpt_more')) {
 		global $post;
 		
 		$class = 'button';
-		$button = __('Read more','bazaar-lite');
+		$button = esc_html__('Read more','bazaar-lite');
 
 		if ( bazaarlite_setting('wip_readmore_button') == "off" ): 
 	

@@ -39,7 +39,7 @@ if (!function_exists('bazaarlite_side_sidebar_function')) {
 							));
 			
 							the_widget( 'WP_Widget_Calendar',
-							array("title"=> __('Calendar',"bazaar-lite")),
+							array("title"=> esc_html__('Calendar',"bazaar-lite")),
 							array('before_widget' => '<div class="post-article widget-box">',
 								  'after_widget'  => '</div>',
 								  'before_title'  => '<div class="title-container"><h3 class="title">',

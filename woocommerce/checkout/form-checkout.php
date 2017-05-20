@@ -17,7 +17,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'bazaar-lite' ) );
+	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', esc_html__( 'You must be logged in to checkout.', 'bazaar-lite' ) );
 	return;
 }
 
@@ -49,7 +49,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
     	<div class="col-md-6">
 
-            <h3 id="order_review_heading"><?php _e( 'Your order', 'bazaar-lite' ); ?></h3>
+            <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'bazaar-lite' ); ?></h3>
     
             <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
         

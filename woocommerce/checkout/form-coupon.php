@@ -21,18 +21,18 @@ if ( ! WC()->cart->coupons_enabled() ) {
 
     <p class="coupon_link">
    
-        <?php echo apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon? ', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ); ?>
+        <?php echo apply_filters( 'woocommerce_checkout_coupon_message', esc_html__( 'Have a coupon? ', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . esc_html__( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ); ?>
    
     </p>
 
     <form class="checkout_coupon" method="post" style="display:none">
 
         <p class="form-row form-row-wide">
-            <input type="text" name="coupon_code" class="input-text" placeholder="<?php _e( 'Coupon code', 'bazaar-lite' ); ?>" id="coupon_code" value="" />
+            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'bazaar-lite' ); ?>" id="coupon_code" value="" />
         </p>
 
         <p class="form-row form-row-wide input-button">
-            <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'bazaar-lite' ); ?>" />
+            <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'bazaar-lite' ); ?>" />
         </p>
 
         <div class="clear"></div>
