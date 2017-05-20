@@ -1,3 +1,9 @@
+AyaFreelance 1.0.2, 2017-05-20
+------------------------
+- remove FontAseme css added into style.css
+- add style for print
+- fix style font display issues with Calendar widget
+
 AyaFreelance 1.0.1, 2017-04-23
 ------------------------
 - fix issues with data escaping
