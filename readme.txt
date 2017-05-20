@@ -1,12 +1,12 @@
 ﻿== ABOUT THEME == 
 
 Theme Name : Asterion
-Version    : 1.0.7
-Theme URL  : https://www.orange-themes.com/asterion/
-Theme Documentation  : https://www.orange-themes.com/asterion-documentation/
+Version    : 1.0.8
+Theme URL  : https://www.moozthemes.com/asterion-wordpress-theme/
+Theme Documentation  : https://www.moozthemes.com/asterion-documentation/
 
-Author:     Orange Themes
-Author URL: https://www.orange-themes.com/
+Author:     MOOZ Themes
+Author URL: https://www.moozthemes.com/
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -33,8 +33,7 @@ Asterion WordPress Theme bundles the following third-party resources:
   Slick Slider is Licensed under the MIT license. https://github.com/kenwheeler/slick/blob/master/LICENSE
 * All other custom js files are our own creation and is licensed under the same license as this theme. 
 * Images on screenshot.
-  - by Valentin Gautier
-    from: https://unsplash.com/photos/Lr9edXqJeVk
+  - from: https://pixabay.com/en/brick-wall-chairs-furniture-1834784/
     license: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl.html), version 3 or later.
@@ -61,6 +60,8 @@ After Creating the menu select the Theme Location of the menu.(It’s under the 
 Hit Save.
 
 ==== THEME CHANGELOG ====
+= 1.0.8 =
+* Fixed multiple issues
 = 1.0.7 =
 * Improved CSS
 = 1.0.6 =

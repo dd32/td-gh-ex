@@ -91,20 +91,20 @@
 					<!-- Site navigation -->
 					<div class="asterion-primary-nav">
 						<?php 
+							$args =	array(
+										'menu'              => 'main-menu',
+										'theme_location'    => 'main-menu',
+										'depth'             => 3,
+										'container'         => 'nav',
+										'container_class'   => 'asterion-navigation nav',
+										'menu_class'        => 'menu menu-right',
+										'walker'            => new Asterion_Nav_Walker()
+									);
+
 							/* display the WordPress Main Menu if available */
 							if ( has_nav_menu( 'main-menu' ) ) : 
-								$args =	array(
-											'menu'              => 'main-menu',
-											'theme_location'    => 'main-menu',
-											'depth'             => 3,
-											'container'         => 'nav',
-											'container_class'   => 'asterion-navigation nav',
-											'menu_class'        => 'menu menu-right',
-											'walker'            => new Asterion_Nav_Walker()
-										);
-
 								wp_nav_menu($args);
-							else:
+							elseif( is_admin() ):
 								?>
 									<nav class="asterion-navigation nav">
 										<ul class="menu menu-right">
@@ -112,6 +112,9 @@
 										</ul>
 									</div> 
 								<?php
+							else :
+								wp_nav_menu($args);
+							
 							endif;
 						?>
 					</div>

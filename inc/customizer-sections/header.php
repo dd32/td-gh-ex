@@ -102,7 +102,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting( $prefix .'_header_title_1',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_html' ),
-        'default'           => esc_html__( 'Welcome To Orange Themes!', 'asterion' ),
+        'default'           => esc_html__( 'Welcome To MOOZ Themes!', 'asterion' ),
         'transport'         => 'postMessage'
     )
 );

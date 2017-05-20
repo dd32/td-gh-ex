@@ -7,7 +7,7 @@
  */
 
 	if( is_customize_preview() ) {
-		$title_1 = get_theme_mod('asterion_header_title_1',esc_html__( 'Welcome To Orange Themes!', 'asterion' ));
+		$title_1 = get_theme_mod('asterion_header_title_1',esc_html__( 'Welcome To MOOZ Themes!', 'asterion' ));
 		$title_2 = get_theme_mod('asterion_header_title_2',esc_html__( 'YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES', 'asterion' ));
 		$button_title = get_theme_mod('asterion_header_button_title',esc_html__('Tell me more','asterion'));
 	} else {

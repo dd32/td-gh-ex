@@ -24,7 +24,9 @@
 		<div class="ot-footer">
 			<div class="ot-container text-center">
 				<div class="ot-copyright"><?php echo asterion()->customizer->sanitize_html( $copyright ); ?></div>
-				<?php printf( '%s <a href="%s" title="%s" target="_blank">%s</a> %s.', esc_html__( 'Theme:', 'asterion' ), esc_url( 'http://www.orange-themes.com/asterion-wordpress-theme/' ), esc_attr__( 'Asterion', 'asterion' ), esc_html__( 'Asterion', 'asterion' ), esc_html__( 'by Orange Themes', 'asterion' ) ); ?>
+				<?php
+					printf( esc_html__( '%s %s %s %s', 'asterion' ) , esc_html__( 'Theme by', 'asterion' ), '<a href="https://moozthemes.com/" title="MOOZ Themes" target="_blank">MOOZ Themes</a>', esc_html__( 'Powered by', 'asterion' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
+				?>
 			</div>
 		</div>
 

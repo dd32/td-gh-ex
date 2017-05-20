@@ -22,8 +22,22 @@ if ( post_password_required() ) {
 
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( '1 Comment', '%1$s Comment', get_comments_number(), 'comments title', 'asterion' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					printf( _x( '1 Comment', 'comments title', 'asterion' ) );
+				} else {
+					printf(
+						/* translators: 1: number of comments */
+						_nx(
+							'%1$s Comment',
+							'%1$s Comment',
+							$comments_number,
+							'comments title',
+							'asterion'
+						),
+						number_format_i18n( $comments_number )
+					);
+				}
 			?>
 		</h2>
 

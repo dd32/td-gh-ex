@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Asterion\n"
-"POT-Creation-Date: 2017-03-13 15:35+0200\n"
-"PO-Revision-Date: 2017-03-13 15:35+0200\n"
+"POT-Creation-Date: 2017-05-17 20:09+0200\n"
+"PO-Revision-Date: 2017-05-17 20:09+0200\n"
 "Last-Translator: Orange Themes <support@orange-themes.com>\n"
 "Language-Team: Orange Themes <support@orange-themes.com>\n"
 "Language: en\n"
@@ -27,19 +27,19 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: ../comments.php:32 ../comments.php:50
+#: ../comments.php:46 ../comments.php:64
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:33 ../comments.php:51
+#: ../comments.php:47 ../comments.php:65
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:34 ../comments.php:52
+#: ../comments.php:48 ../comments.php:66
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:57
+#: ../comments.php:71
 msgid "Comments are closed."
 msgstr ""
 

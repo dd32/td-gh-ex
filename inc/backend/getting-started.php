@@ -17,7 +17,7 @@
 		<h1><?php esc_html_e("Getting started", 'asterion');?></h1>
 
 		<p><?php esc_html_e("You need help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.", 'asterion');?></p>
-		<p><a href="<?php echo esc_url('//www.orange-themes.com/asterion-documentation/');?>" class="button button-primary" target="_blank"><?php esc_html_e("View Documentation", 'asterion');?></a></p>
+		<p><a href="<?php echo esc_url('//www.moozthemes.com/asterion-documentation/');?>" class="button button-primary" target="_blank"><?php esc_html_e("View Documentation", 'asterion');?></a></p>
 
 		<h4><?php esc_html_e("Customize everything in a single place.", 'asterion');?></h4>
 		<p><?php esc_html_e("Using the WordPress Customizer you can easily customize every aspect of the theme.", 'asterion');?></p>

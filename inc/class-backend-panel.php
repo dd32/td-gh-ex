@@ -142,21 +142,21 @@
 			<div class="ot-control-header">
 				<div class="ot-control-container">
 					<div class="ot-logo">
-						<img src="<?php echo esc_url(get_template_directory_uri()."/images/backend/ot-logo.png");?>">
+						<img src="<?php echo esc_url(get_template_directory_uri()."/images/backend/mooz-logo.png");?>">
 					</div>
 					<div class="ot-submenu">
 						<span>
-							<a href="https://www.orange-themes.com/support/" target="_blank">
+							<a href="https://moozthemes.com/asterion-wordpress-theme/" target="_blank">
 								<?php esc_html_e("Need Help?", "asterion");?>
 							</a>
 						</span>
 						<span>
-							<a href="https://www.orange-themes.net/demo/asterion?ref=asterion-panel" target="_blank">
+							<a href="http://mozthemes.com/asterion/" target="_blank">
 								<?php esc_html_e("Theme Demo", "asterion");?>
 							</a>
 						</span>
 						<span>
-							<a href="https://www.orange-themes.com/feedback/" target="_blank">
+							<a href="https://moozthemes.com/contact/" target="_blank">
 								<?php esc_html_e("Send us Feedback", "asterion");?>
 							</a>
 						</span>
