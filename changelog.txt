@@ -1,3 +1,13 @@
+AyaFreelance 1.0.3, 2017-05-22
+------------------------
+- add dd and dt style
+- add paragraph margin
+- update link colors
+- fix issue with comments small font size
+- hide edit links for print style
+- fix issue with calendar next link font size
+
+
 AyaFreelance 1.0.2, 2017-05-20
 ------------------------
 - remove FontAseme css added into style.css

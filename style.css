@@ -4,7 +4,7 @@ Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features
 Theme URI: https://ayatemplates.com/product/ayafreelance
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.2
+Version: 1.0.3
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -42,11 +42,11 @@ body:before {
 a {
 	text-decoration:none;
 	outline:none;
-	color:#333333;
+	color:#ffc801;
 }
 
 a:hover {
-	color:#ffc801;
+	color:#333333;
 }
 
 a img{
@@ -54,7 +54,7 @@ a img{
 }
 
 p {
-	margin:0;
+	margin:0 0 1.5em;
 	line-height:1.7;
 }
 
@@ -221,6 +221,14 @@ ul {
 .col > ul,
 #sidebar > ul {
 	padding-left:0;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
 }
 
 /* header */
@@ -532,21 +540,17 @@ button:hover,
 	white-space:pre;
 }
 
-blockquote:before,
-q:before {
+blockquote:before {
 	font-family:'FontAwesome';
 	content: "\f10d";
 	color:#DEDEDE;
 	float:left;
 	margin:0 1% 0 0;
-}
-
-blockquote:before {
 	font-size:20px; 
 }
 
-q:before {
-	font-size:12px; 
+q {
+	quotes: "“" "”" "‘" "’";
 }
 
 blockquote, figure {
@@ -735,15 +739,13 @@ pre {
 
 .commentlist li p {
 	font-weight:normal;
-	font-size:0.750em;
-	line-height:1em;
+	line-height:1.2;
 	margin:5px 0 12px;
 }
 
 .commentlist li ul {
 	font-weight:normal;
-	font-size:0.750em;
-	line-height:1em;
+	line-height:1.2;
 	list-style:square;
 	margin:0 0 12px;
 	padding:0;
@@ -847,6 +849,11 @@ pre {
 .page-after-content {
 	border-top:1px solid #CCCCCC;
 	margin-top:5px;
+}
+
+.tags-wrapper,
+.categories-wrapper {
+	margin:0;
 }
 
 .comments-icon,
@@ -999,7 +1006,6 @@ img.wp-post-image {
 }
 
 #wp-calendar tfoot #next {
-	font-size:0.625em;
 	text-transform:uppercase;
 	text-align:right;
 }
@@ -2616,7 +2622,9 @@ p.info {
 	#sidebar,
 	#footer-main,
 	#respond,
-	.navigation {
+	.navigation,
+	.edit-icon,
+	a.comment-edit-link {
 		display:none !important;
 	}
 }
