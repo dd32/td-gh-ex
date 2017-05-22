@@ -133,8 +133,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.5.8
+1. Added dummy data import setting.
 @version 1.5.7
-1. Add help tab in Customize setting.
+1. Add help tab in customzie setting.
 @version 1.5.6
 1. Remove front-page setting.
 @version 1.5.5

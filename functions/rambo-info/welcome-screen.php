@@ -24,9 +24,10 @@ class rambo_screen {
 		/* load welcome screen */
 		add_action( 'rambo_info_screen', array( $this, 'rambo_getting_started' ), 	    10 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_action_required' ), 	    20 );
-		add_action( 'rambo_info_screen', array( $this, 'rambo_child_themes' ), 		    30 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_upgrade' ), 		        40 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_welcome_free_pro' ), 		50 );
+		add_action( 'rambo_info_screen', array( $this, 'rambo_child_themes' ), 		    50 );
+		add_action( 'rambo_info_screen', array( $this, 'rambo_import_data' ), 			60 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_rambo_dismiss_required_action', array( $this, 'rambo_dismiss_required_action_callback') );
@@ -44,6 +45,8 @@ class rambo_screen {
 		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'rambo_admin_notice' ), 99 );
 			add_action( 'admin_notices', array( $this, 'rambo_admin_video_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'rambo_admin_import_notice' ), 99 );
+			
 		}
 	}
 
@@ -53,20 +56,28 @@ class rambo_screen {
 	 */
 	public function rambo_admin_notice() {
 		?>
-			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__('Welcome! Thank you for choosing Rambo! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'rambo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
+			<div class="updated notice notice-success notice-alt is-dismissible">
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Rambo Theme! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'rambo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
 			</div>
 		<?php
 	}
 	
-	public function rambo_admin_video_notice() {
+	function rambo_admin_import_notice(){
+    ?>
+    <div class="updated notice notice-success notice-alt is-dismissible">
+        <p><?php printf( esc_html__( 'Save time by import our demo data, your website will be set up and ready to customize in minutes. %s', 'rambo' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'rambo-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'rambo' ).'</a>'  ); ?></p>
+    </div>
+    <?php
+}
+
+public function rambo_admin_video_notice() {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__('Walkthrough our step by step video series for setting front page sections. %sClick here to watch%s', 'rambo' ), 
 				'<a href="' . esc_url( 'http://webriti.com/rambo-theme-video-documentation/' ). '">', '</a>' ); ?></p>
 			</div>
 		<?php
-	}
+}
 
 	/**
 	 * Load welcome screen css and javascript
@@ -218,6 +229,8 @@ class rambo_screen {
 			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','rambo'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','rambo'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','rambo'); ?></a></li>
+			<li role="presentation"><a href="#demo_import" aria-controls="demo_import" role="tab" data-toggle="tab"><?php esc_html_e( 'One Click Demo Import','rambo'); ?></a></li>
+			
 			
 		</ul>
 		</div>
@@ -249,14 +262,7 @@ class rambo_screen {
 		require_once( get_template_directory() . '/functions/rambo-info/sections/actions-required.php' );
 	}
 	
-	/**
-	 * Child themes
-	 *
-	 */
-	public function rambo_child_themes() {
-		require_once( get_template_directory() . '/functions/rambo-info/sections/child-themes.php' );
-	}
-
+	
 	/**
 	 * Contribute
 	 *
@@ -264,8 +270,6 @@ class rambo_screen {
 	public function rambo_upgrade() {
 		require_once( get_template_directory() . '/functions/rambo-info/sections/upgrade.php' );
 	}
-
-
 	/**
 	 * Free vs PRO
 	 * 
@@ -273,6 +277,27 @@ class rambo_screen {
 	public function rambo_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/rambo-info/sections/free_pro.php' );
 	}
+	
+	/**
+	 * Child themes
+	 *
+	 */
+	 
+	 public function rambo_child_themes() {
+		require_once( get_template_directory() . '/functions/rambo-info/sections/child-themes.php' );
+	}
+	 
+	
+	/**
+	 * Import Data
+	 *
+	 */
+	public function rambo_import_data() {
+		require_once( get_template_directory() . '/functions/rambo-info/sections/import-data.php' );
+	}
+	
+	
+	
 }
 
 $GLOBALS['rambo_screen'] = new rambo_screen();

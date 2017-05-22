@@ -47,8 +47,6 @@
 	
 	
 	
-	
-	
 	// Rambo Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
 	
@@ -111,11 +109,46 @@
 		$rambo_pro_theme=theme_data_setup();
 	}
 	
-	// change custom logo link class
+// change custom logo link class
 	add_filter('get_custom_logo','change_logo_class');
 	function change_logo_class($html)
 	{
 		$html = str_replace('class="custom-logo-link"', 'class="brand"', $html);
 		return $html;
 	}
+
+function rambo_import_files() {
+  return array(
+    array(
+      'import_file_name'           => 'Demo Import 1',
+      'categories'                 => array( 'Category 1', 'Category 2' ),
+      'import_file_url'            => 'https://webriti.com/themes/dummydata/lite/import/rambo-content.xml',
+      'import_widget_file_url'     => 'https://webriti.com/themes/dummydata/lite/import/rambo-widget.json',
+      'import_customizer_file_url' => 'https://webriti.com/themes/dummydata/lite/import/rambo-customize.dat',
+	  'import_preview_image_url'   => 'https://preview.c9users.io/imranali_13/rambo-import/screenshot.png',
+      'import_notice'              => sprintf(__( 'Click the big blue button to start the dummy data import process.</br></br>Please be patient while WordPress imports all the content.</br></br>
+			<h3> Recommend Plugins</h3>Rambo theme supports following plugins.</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br> <li> <a href="https://wordpress.org/plugins/woocommerce/"> WooCommerce </a> </li><li> <a href="https://wordpress.org/plugins/spoontalk-social-media-icons-widget/"> Spoon talk social media icon </a></li>', 'rambo' )),
+			),
+    	
+    	
+    	
+	);
+}
+add_filter( 'pt-ocdi/import_files', 'rambo_import_files' );
+
+
+function rambo_after_import_setup() {
+
+	// Menus to assign after import.
+	$main_menu   = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+
+	set_theme_mod( 'nav_menu_locations', array(
+		'primary'   => $main_menu->term_id,
+	));
+	
+	
+	
+}
+add_action( 'pt-ocdi/after_import', 'rambo_after_import_setup' );
+
 ?>
