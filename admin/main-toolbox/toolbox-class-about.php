@@ -4,15 +4,15 @@
  * @subpackage Admin
  * @since 1.0.0
  */
-if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
+if ( ! class_exists( 'engrave_thinkup_toolbox_about_page' ) ) {
 	/**
 	 * Singleton class used for generating the about page of the theme.
 	 */
-	class engrave_thinkup_about_page {
+	class engrave_thinkup_toolbox_about_page {
 		/**
 		 * Define the version of the class.
 		 *
-		 * @var string $version The engrave_thinkup_about_page class version.
+		 * @var string $version The engrave_thinkup_toolbox_about_page class version.
 		 */
 		private $version = '1.0.0';
 		/**
@@ -70,22 +70,22 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 		 */
 		private $notification;
 		/**
-		 * The single instance of engrave_thinkup_about_page
+		 * The single instance of engrave_thinkup_toolbox_about_page
 		 *
-		 * @var engrave_thinkup_about_page $instance The  engrave_thinkup_about_page instance.
+		 * @var engrave_thinkup_toolbox_about_page $instance The  engrave_thinkup_toolbox_about_page instance.
 		 */
 		private static $instance;
 
 		/**
-		 * The Main engrave_thinkup_about_page instance.
+		 * The Main engrave_thinkup_toolbox_about_page instance.
 		 *
-		 * We make sure that only one instance of engrave_thinkup_about_page exists in the memory at one time.
+		 * We make sure that only one instance of engrave_thinkup_toolbox_about_page exists in the memory at one time.
 		 *
 		 * @param array $config The configuration array.
 		 */
 		public static function init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof engrave_thinkup_about_page ) ) {
-				self::$instance = new engrave_thinkup_about_page;
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof engrave_thinkup_toolbox_about_page ) ) {
+				self::$instance = new engrave_thinkup_toolbox_about_page;
 				if ( ! empty( $config ) && is_array( $config ) ) {
 					self::$instance->config = $config;
 					self::$instance->setup_config();
@@ -122,6 +122,8 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 		public function setup_actions() {
 
 			add_action( 'admin_menu', array( $this, 'register' ) );
+			add_action( 'wp_loaded', array( $this, 'hide_notice' ) );
+
 			/* activation notice */
 			add_action( 'admin_notices', array( $this, 'activation_admin_notice' ) );
 			/* enqueue script and style for about page */
@@ -135,7 +137,7 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 			if ( ! empty( $this->menu_name ) && ! empty( $this->page_name ) ) {
 				add_theme_page( $this->menu_name, $this->page_name, 'activate_plugins', 'thinkup-welcome', array(
 					$this,
-					'engrave_thinkup_about_page_render',
+					'page_render',
 				) );
 			}
 		}
@@ -146,20 +148,20 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 		public function activation_admin_notice() {
 			global $pagenow;
 
-			add_action( 'admin_notices', array( $this, 'engrave_thinkup_about_page_welcome_admin_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'welcome_admin_notice' ), 99 );
 		}
 
 		/**
 		 * Display an admin notice linking to the about page
 		 */
-		public function engrave_thinkup_about_page_welcome_admin_notice() {
+		public function welcome_admin_notice() {
 			if ( ! empty( $this->notification ) ) {
 
 				// display notice if not previously dismissed
 				if ( current_user_can( 'edit_theme_options' ) && !get_option( 'engrave_thinkup_notice_welcome' ) ) {
 
 					echo '<div class="thinkup-toolbox-about updated notice is-dismissible">';
-					echo '<a class="notice-dismiss" href="' . esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('engrave-thinkup-hide-notice', 'welcome')), 'engrave_thinkup_hide_notices_nonce', '_engrave_thinkup_notice_nonce')) . '" style="z-index: 9;padding: 10px;text-decoration: none;" >';
+					echo '<a class="notice-dismiss" href="' . esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('engrave-thinkup-hide-notice', 'welcome')), 'engrave_thinkup_hide_notices_nonce', '_engrave_thinkup_notice_nonce')) . '" style="z-index: 0;padding: 10px;text-decoration: none;" >';
 					echo '<span class="screen-reader-text">' . esc_html__('Dismiss this notice.', 'lan-thinkupthemes'). '</span>';
 					echo '</a>';
 					echo wp_kses_post( $this->notification );
@@ -172,7 +174,7 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 		/**
 		 * Render the main content page.
 		 */
-		public function engrave_thinkup_about_page_render() {
+		public function page_render() {
 
 			if ( ! empty( $this->config['welcome_title'] ) ) {
 				$welcome_title = $this->config['welcome_title'];
@@ -288,6 +290,94 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 				}
 
 			}
+		}
+
+		/**
+		 * Documentation
+		 */
+		public function documentation() {
+			echo '<div id="thinkup-documentation" class="feature-section one-col">';
+
+			if ( ! empty( $this->config['documentation'] ) ) {
+
+				$documentation_steps = $this->config['documentation'];
+
+				if ( ! empty( $documentation_steps ) ) {
+
+					$section_name = NULL;
+
+					echo '<div class="thinkup-documentation-info">';
+					echo '<h3>' . $documentation_steps['intro']['title'] . '</h3>';
+					echo wpautop( $documentation_steps['intro']['text_main'] );
+					echo '</div>';
+
+					foreach ( $documentation_steps as $documentation_step ) {
+
+						/* Hide feature is needed */
+						if ( $documentation_step['hidden'] == 'true' ) {
+							$documentation_step['hidden'] = ' hidden';
+						}
+						
+						/* Determine if side text should be added */
+						if( ! empty( $documentation_step['text_side'] ) ) {
+							$class_main = ' menu-item-main-hasside';
+						} else {
+							$class_main = NULL;
+						}
+
+						echo '<div class="menu-item menu-item-edit-inactive' . $documentation_step['hidden'] .'">';
+						echo '<div class="menu-item-bar">';
+						echo '<div class="menu-item-handle">';
+						echo '<span class="item-title">' . $documentation_step['title'] . '</span>';
+						echo '</div>';
+						echo '</div>';
+						echo '<div class="menu-item-settings wp-clearfix">';
+
+						// Add information for documentation
+						echo '<div class="menu-item-main two_third' . $class_main . '">';
+						echo wpautop( $documentation_step['text_main'] );
+						echo '</div><!-- .menu-item-main-->';
+
+						// Add pro info for documentation
+						if( ! empty( $documentation_step['text_side'] ) ) {
+
+							echo '<div class="menu-item-side one_third last">';
+							echo wpautop( $documentation_step['text_side'] );
+
+							if ( ! empty( $documentation_step['button_link'] ) && ! empty( $documentation_step['button_label'] ) ) {
+
+								echo '<p>';
+								$button_class = '';
+								if ( $documentation_step['is_button'] ) {
+									$button_class = 'button button-primary';
+								}
+
+								$button_new_tab = '_self';
+								if ( isset( $documentation_step['is_new_tab'] ) ) {
+									if ( $documentation_step['is_new_tab'] ) {
+										$button_new_tab = '_blank';
+									}
+								}
+								echo '<a target="' . $button_new_tab . '" href="' . $documentation_step['button_link'] . '"class="' . $button_class . '">' . $documentation_step['button_label'] . '</a>';
+								echo '</p>';
+							}
+							echo '</div><!-- .menu-item-side-->';
+						
+						}
+
+						echo '</div><!-- .menu-item-settings-->';
+						echo '</div>';
+
+						$section_name = $documentation_step['section'];
+
+					}
+
+				}
+
+			}
+
+			echo '</div>';
+
 		}
 
 		/**
@@ -428,32 +518,33 @@ if ( ! class_exists( 'engrave_thinkup_about_page' ) ) {
 
 			global $pagenow;
 
+			// enqueue css files
 			if ( 'themes.php' === $pagenow || 'appearance_page_thinkup-welcome' == $hook_suffix ) {
+				wp_enqueue_style( 'engrave-thinkup-about-page-css', get_template_directory_uri() . '/admin/main-toolbox/assets/css/toolbox-backend.css' );
+			}
 
-				// this is needed on all admin pages, not just the about page, for the badge action count in the wordpress main sidebar
-				wp_enqueue_style( 'engrave-thinkup-about-page-css', get_template_directory_uri() . '/admin/main-toolbox/assets/css/thinkup-toolbox-backend.css' );
+			// enqueue js files
+			if ( 'appearance_page_thinkup-welcome' == $hook_suffix ) {
+				wp_enqueue_script( 'engrave-thinkup-about-page-js', ( get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend.js' ), array( 'jquery' ), '', 'true' );
+			}
 
+		}
+
+		/**
+		 * Hide welcome notice when dismissed.
+		 */
+		public function hide_notice() {
+			if (isset($_GET['engrave-thinkup-hide-notice']) && isset($_GET['_engrave_thinkup_notice_nonce'])) {
+				if (!wp_verify_nonce($_GET['_engrave_thinkup_notice_nonce'], 'engrave_thinkup_hide_notices_nonce')) {
+					wp_die(esc_html__('Action failed. Please refresh the page and retry.', 'lan-thinkupthemes'));
+				}
+				if (!current_user_can('edit_theme_options')) {
+					wp_die(esc_html__('You do not have the necessary permission to perform this action.', 'lan-thinkupthemes'));
+				}
+				$hide_notice = sanitize_text_field($_GET['engrave-thinkup-hide-notice']);
+				update_option('engrave_thinkup_notice_' . $hide_notice, 1);
 			}
 		}
 
 	}
 }
-
-/**
- * Hide welcome notice when dismissed.
- */
-if (!function_exists('engrave_thinkup_hide_notice')) {
-	function engrave_thinkup_hide_notice() {
-		if (isset($_GET['engrave-thinkup-hide-notice']) && isset($_GET['_engrave_thinkup_notice_nonce'])) {
-			if (!wp_verify_nonce($_GET['_engrave_thinkup_notice_nonce'], 'engrave_thinkup_hide_notices_nonce')) {
-				wp_die(esc_html__('Action failed. Please refresh the page and retry.', 'lan-thinkupthemes'));
-			}
-			if (!current_user_can('edit_theme_options')) {
-				wp_die(esc_html__('You do not have the necessary permission to perform this action.', 'lan-thinkupthemes'));
-			}
-			$hide_notice = sanitize_text_field($_GET['engrave-thinkup-hide-notice']);
-			update_option('engrave_thinkup_notice_' . $hide_notice, 1);
-		}
-	}
-}
-add_action('wp_loaded', 'engrave_thinkup_hide_notice');
