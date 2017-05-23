@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.7
+- New:     Documentation link added to customizer.
+- New:     Theme information page added under Appearance in admin area.
+- Updated: Text domain changed from 'redux-framework' to 'renden' in options.php.
+
 Version 1.3.6
 - New:     Theme information page added under Appearance in admin area.
 - Removed: Migration notice informing users that theme options have moved to customizer no longer needed.

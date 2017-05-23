@@ -19,7 +19,7 @@ if ( ! isset( $content_width ) )
 	require_once( get_template_directory() . '/admin/main-extensions/extensions-init.php' );
 
 	// Add Toolbox Framework
-	require_once( get_template_directory() . '/admin/main-toolbox/thinkup-toolbox.php' );
+	require_once( get_template_directory() . '/admin/main-toolbox/toolbox.php' );
 
 	// Load Theme Variables.
 	require_once( get_template_directory() . '/admin/main/options/00.variables.php' ); 
@@ -90,7 +90,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.css', '', '2.3.2' );
 	wp_enqueue_style( 'thinkup-prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.6' );
 	wp_enqueue_style( 'thinkup-shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
-	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.3.6' );
+	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.3.7' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'dashicons' );
