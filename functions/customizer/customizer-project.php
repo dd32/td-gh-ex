@@ -31,7 +31,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[portfolio_section_enabled]',
     array(
-        'label' => __('Enable portfolio section on home page(project section).','wallstreet'),
+        'label' => __('Enable portfolio section on homepage (project section)','wallstreet'),
         'section' => 'project_section_settings',
         'type' => 'checkbox',
     )
@@ -77,7 +77,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_one_section_settings',
         array(
-            'title' => __('Home portfolio one','wallstreet'),
+            'title' => __('Homepage portfolio one','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -103,7 +103,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_two_section_settings',
         array(
-            'title' => __('Home portfolio two','wallstreet'),
+            'title' => __('Homepage portfolio two','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -161,7 +161,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_three_section_settings',
         array(
-            'title' => __('Home portfolio three','wallstreet'),
+            'title' => __('Homepage portfolio three','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -223,7 +223,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_four_section_settings',
         array(
-            'title' => __('Home portfolio Four','wallstreet'),
+            'title' => __('Homepage portfolio four','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -293,10 +293,10 @@ function wallstreet_project_customizer( $wp_customize ) {
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add more projects and categorization than upgrade to pro','wallstreet');?></P>
+	 <P><?php _e('Want to add more projects and categorizations? Then upgrade to Pro.','wallstreet');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','wallstreet' ); ?></a>
+	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to Pro','wallstreet' ); ?></a>
 	 <div>
     <?php
     }

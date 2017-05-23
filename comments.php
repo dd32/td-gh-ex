@@ -28,7 +28,7 @@
 	<?php } ?>
 	<?php if ('open' == $post->comment_status) { ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
-	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','wallstreet' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
+	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.','wallstreet' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
 <?php } else { 
 ?>
 <div class="comment-form-section">
@@ -45,7 +45,7 @@
 			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
 			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Leave your message','wallstreet').'"></textarea></div>',		
-			'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as",'wallstreet' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Logout from this Account','wallstreet').'">'.__("Logout",'wallstreet').'</a>' . '</p>',
+			'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as",'wallstreet' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Log out from this Account','wallstreet').'">'.__("Logout",'wallstreet').'</a>' . '</p>',
 			'id_submit'=> 'blogdetail_btn',
 			'label_submit'=>__('Send Message','wallstreet'),
 			'comment_notes_after'=> '',

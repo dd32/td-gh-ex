@@ -4,8 +4,8 @@ function wallstreet_typography_customizer( $wp_customize ) {
 
 class wallstreet_genral_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add genral typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add general typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -13,64 +13,64 @@ class wallstreet_genral_typo_upgrade extends WP_Customize_Control {
 
 class wallstreet_menu_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add menus typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add menu typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
 	
 class wallstreet_post_page_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add post/page typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add post/page typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
 	
 class wallstreet_service_page_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add service title typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add service title typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
 	
 class wallstreet_portfolio_page_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add portfolio title typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add portfolio title typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
 	
 class wallstreet_widget_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add widget title typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add widget title typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
 
 class wallstreet_intro_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add callout area title typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add callout area title typography in the theme? Then upgrade to Pro..','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
 	
 class wallstreet_callout_dec_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add callout area description typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo  'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add callout area description typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo  'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
 
 class wallstreet_callout_btn_typo_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add callout button title typography in theme then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add callout button title typography in the theme? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
@@ -95,7 +95,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 // General Paragraph typography section
 $wp_customize->add_section( 'wallstreet_general_typography' , array(
-		'title'      => __('General Paragraph', 'wallstreet'),
+		'title'      => __('General paragraph', 'wallstreet'),
 		'panel' => 'wallstreet_typography_setting',
 		'priority'       => 1,
    	) );
@@ -110,7 +110,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[genral_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[genral_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_general_typography',
 				'settings'				=> 'wallstreet_pro_options[genral_typo]',
 			)
@@ -185,7 +185,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[menu_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[menu_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_menus_typography',
 				'settings'				=> 'wallstreet_pro_options[menu_typo]',
 			)
@@ -260,7 +260,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[post_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[post_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_post_page_title_typography',
 				'settings'				=> 'wallstreet_pro_options[post_typo]',
 			)
@@ -393,7 +393,7 @@ $wp_customize->add_control('wallstreet_pro_options[service_title_fontstyle]', ar
 
 // Portfolio title typography section
 $wp_customize->add_section( 'wallstreet_portfolio_typography' , array(
-		'title'      => __('Portfolio title', 'wallstreet'),
+		'title'      => __('Portfolio Title', 'wallstreet'),
 		'panel' => 'wallstreet_typography_setting',
 		'priority'       => 5,
    	) );	
@@ -408,7 +408,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[portfolio_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[portfolio_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_portfolio_typography',
 				'settings'				=> 'wallstreet_pro_options[portfolio_typo]',
 			)
@@ -483,7 +483,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'wallstreet_pro_options[widget_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_widget_title_typography',
 				'settings'				=> 'wallstreet_pro_options[widget_typo]',
 			)
@@ -556,7 +556,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[intro_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[intro_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_site_intro_typography',
 				'settings'				=> 'wallstreet_pro_options[intro_typo]',
 			)
@@ -630,7 +630,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[call_dsc_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[call_dsc_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_callout_desc_typography',
 				'settings'				=> 'wallstreet_pro_options[call_dsc_typo]',
 			)
@@ -703,7 +703,7 @@ $wp_customize->add_setting( 'wallstreet_pro_options[call_btn_typo]', array(
 		$wp_customize,
 		'wallstreet_pro_options[call_btn_typo]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'wallstreet_callout_button_typography',
 				'settings'				=> 'wallstreet_pro_options[call_btn_typo]',
 			)

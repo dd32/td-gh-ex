@@ -4,7 +4,7 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Home blog settings','wallstreet'),
+            'title' => __('Homepage blog settings','wallstreet'),
 			'priority'   => 700,
 			
 			)
@@ -24,7 +24,7 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[blog_section_enabled]',
     array(
-        'label' => __('Enable Home Blog Section','wallstreet'),
+        'label' => __('Enable Homepage Blog Section','wallstreet'),
         'section' => 'blog_setting',
         'type' => 'checkbox',
     )

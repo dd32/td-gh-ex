@@ -22,15 +22,15 @@ function theme_data_setup()
 			//Featured Image Setting
 			'home_banner_enabled'=>'on',
 			'slider_title_one' => __('Clean & fresh theme','wallstreet'),
-			'slider_title_two' => __('Welcome to wallstreet','wallstreet'),
-			'slider_description' => __('The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile.','wallstreet'),
+			'slider_title_two' => __('Welcome to WallStreet','wallstreet'),
+			'slider_description' => __('State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly on any modern mobile device.','wallstreet'),
 			'slider_image' => $slider_image,
 			
 			// service
 			'service_section_enabled' => true,
 			
 			'service_image_one' => $service_image1, 
-			'service_title_one'=> __('Product Designing','wallstreet'),
+			'service_title_one'=> __('Product Design','wallstreet'),
 			'service_description_one' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
 			
 			'service_image_two' => $service_image2, 
@@ -68,11 +68,11 @@ function theme_data_setup()
 			'contact_phone_number' => '1-800-123-789',
 			'contact_email' => 'info@webriti.com',
 			'service_title' => __('Our services','wallstreet'),
-			'service_description' => __('We offer great services to our clients ','wallstreet'),
+			'service_description' => __('We offer great services to our clients.','wallstreet'),
 			'portfolio_title' => __('Featured portfolio project','wallstreet'),
-			'portfolio_description' => __('Most popular of our works.','wallstreet'),
+			'portfolio_description' => __('Our most popular work','wallstreet'),
 			'home_blog_heading'=> __('Our latest blog post','wallstreet'),
-			'home_blog_description' => __('We work with new customers and grow their businesses','wallstreet'),
+			'home_blog_description' => __('We work with new customers and grow their business.','wallstreet'),
 			
 			/** Social media links **/
 			'header_social_media_enabled'=>'on',			
@@ -84,7 +84,7 @@ function theme_data_setup()
 			'social_media_youtube_link' =>"#",
 			
 			/** footer customization **/
-			'footer_copyright' =>sprintf (__('Copyright @ 2014 - WALL STREET. Designed by,wallstreet <a href="%1$s" target="_blank">Webriti</a>','wallstreet'),'http://www.webriti.com'),
+			'footer_copyright' =>sprintf (__('Copyright @ 2017 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'http://www.webriti.com'),
 		
 		);
 }

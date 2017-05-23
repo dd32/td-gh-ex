@@ -9,14 +9,14 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-box">
-       <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e('Upgrade to pro','wallstreet' ); ?></a>
+       <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e('Upgrade to Pro','wallstreet' ); ?></a>
 		
 	</div>
     <?php
     }
 }
 $wp_customize->add_section( 'wallstreet_pro_section' , array(
-		'title'      => __('Upgrade to pro', 'wallstreet'),
+		'title'      => __('Upgrade to Pro', 'wallstreet'),
 		'priority'   => 1000,
    	) );
 
@@ -75,7 +75,7 @@ class WP_document_Customize_Control extends WP_Customize_Control {
 	 
 	 <div>
 	 <div class="pro-vesrion">
-	 <?php _e('The Pro Version gives you more opportunities to enhance your site and business. In order to create effective online presence one have to showcase their wide range of products, have to use contact us enquiry form, have to make effective about us page, have to introduce team members, etc etc . The pro version will give it all. Buy the pro version and give us a chance to serve you better.','wallstreet');?>
+	 <?php _e('The Pro version gives you more opportunities to enhance your site and business. In order to create an effective online presence one must showcase their wide range of products, use a Contact Us enquiry form, create an effective About Us page, and introduce the team members, etc. The Pro version offers it all. Buy the Pro version today and give us the chance to serve you better.','wallstreet');?>
 	 </div>
     <?php
     }

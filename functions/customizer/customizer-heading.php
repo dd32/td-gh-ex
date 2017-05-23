@@ -92,7 +92,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[service_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('We offer great services to our clients','wallstreet'), 
+		'default' => __('We offer great services to our clients.','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -119,7 +119,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[portfolio_title]',
 		array(
 			'type' => 'text',
-			'label' => __('Portfolio title','wallstreet'),
+			'label' => __('Portfolio Title','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);
@@ -129,7 +129,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[portfolio_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Most popular of our works.','wallstreet'), 
+		'default' => __('Our most popular work','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -167,7 +167,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[home_blog_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('We work with new customers and grow their businesses','wallstreet'), 
+		'default' => __('We work with new customers and grow their business.','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));

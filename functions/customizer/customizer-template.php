@@ -2,8 +2,8 @@
 function wallstreet_pro_template_customizer( $wp_customize ) {
 class wallstreet_Customize_about_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add about us template heading and add team section then upgrade to pro','wallstreet'); ?> 
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add an About Us template heading and a Team section? Then upgrade to Pro.','wallstreet'); ?> 
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -11,8 +11,8 @@ class wallstreet_Customize_about_section_upgrade extends WP_Customize_Control {
 //Contact Address
 class wallstreet_Customize_phone_contact_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add contact address in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a contact address in the Contact template? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -20,16 +20,16 @@ class wallstreet_Customize_phone_contact_section_upgrade extends WP_Customize_Co
 //Contact Phone
 class wallstreet_Customize_contact_phone_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add contact phone number in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a contact phone number in the Contact template? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
 //Conact mail	
 class wallstreet_Customize_contact_mail_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add email in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add an email in the Contact template? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
@@ -37,8 +37,8 @@ class wallstreet_Customize_contact_mail_section_upgrade extends WP_Customize_Con
 //Conact form	
 class wallstreet_Customize_contact_form_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add contact form title & description in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a contact form title and description in the Contact template? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
@@ -47,8 +47,8 @@ class wallstreet_Customize_contact_form_section_upgrade extends WP_Customize_Con
 //Conact form	
 class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add map in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet' ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a map in the Contact template? Then upgrade to Pro.','wallstreet'); ?>
+		<a href="<?php echo 'http://www.webriti.com/wallstreet' ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
@@ -66,7 +66,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'pro_template_section_heading',
         array(
-            'title' => __('About page setting','wallstreet'),
+            'title' => __('About page settings','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 100,
 			)
@@ -82,7 +82,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[about_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'pro_template_section_heading',
 				'settings'				=> 'wallstreet_pro_options[about_upgrade]',
 			)
@@ -113,7 +113,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[about_team_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('We offer great services to our clients','wallstreet'), 
+		'default' => __('We offer great services to our clients.','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -133,7 +133,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'conatact_page',
         array(
-            'title' => __('Contact page address setting','wallstreet'),
+            'title' => __('Contact page address settings','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 100,
 			
@@ -150,7 +150,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[contact_add_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'conatact_page',
 				'settings'				=> 'wallstreet_pro_options[contact_add_upgrade]',
 			)
@@ -171,7 +171,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		'wallstreet_pro_options[contact_address_settings]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Enable contact page address section','wallstreet'),
+			'label' => __('Enable Contact page address section','wallstreet'),
 			'section' => 'conatact_page',
 		)
 	);
@@ -260,7 +260,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'conatact_phone',
         array(
-            'title' => __('Contact page phone setting','wallstreet'),
+            'title' => __('Contact page phone settings','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 200,
 			
@@ -277,7 +277,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[contact_phone_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'conatact_phone',
 				'settings'				=> 'wallstreet_pro_options[contact_phone_upgrade]',
 			)
@@ -298,7 +298,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		'wallstreet_pro_options[contact_phone_settings]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Enable contact page phone section','wallstreet'),
+			'label' => __('Enable Contact page phone section','wallstreet'),
 			'section' => 'conatact_phone',
 			'input_attrs' => array('disabled' => 'disabled')
 		)
@@ -393,7 +393,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'conatact_mail',
         array(
-            'title' => __('Contact page email setting','wallstreet'),
+            'title' => __('Contact page email settings','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 200,
 			
@@ -433,7 +433,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		'wallstreet_pro_options[contact_email_settings]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Enable contact page email section','wallstreet'),
+			'label' => __('Enable Contact page email section','wallstreet'),
 			'section' => 'conatact_mail',
 			'input_attrs' => array('disabled' => 'disabled')
 		)
@@ -544,7 +544,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'conatact_form',
         array(
-            'title' => __('Contact page form setting','wallstreet'),
+            'title' => __('Contact page form settings','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 200,
 			
@@ -561,7 +561,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[contact_form_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'conatact_form',
 				'settings'				=> 'wallstreet_pro_options[contact_form_upgrade]',
 			)
@@ -613,7 +613,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'conatact_page_map',
         array(
-            'title' => __('Contact page Google maps','wallstreet'),
+            'title' => __('Contact page Google Maps','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 400,
 			
@@ -630,7 +630,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[conatact_map]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'conatact_page_map',
 				'settings'				=> 'wallstreet_pro_options[conatact_map]',
 			)
@@ -650,7 +650,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 		'wallstreet_pro_options[contact_google_map_enabled]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Enable Google map in contact page','wallstreet'),
+			'label' => __('Enable Google Map on the Contact page','wallstreet'),
 			'section' => 'conatact_page_map',
 			'input_attrs' => array('disabled' => 'disabled')
 		)

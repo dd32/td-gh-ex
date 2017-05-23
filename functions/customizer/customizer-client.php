@@ -2,7 +2,7 @@
 function wallstreet_client_customizer( $wp_customize ) {
 class wallstreet_Customize_client_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add client section then upgrade to Pro','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a client section? Then upgrade to Pro.','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -27,7 +27,7 @@ class wallstreet_Customize_client_upgrade extends WP_Customize_Control {
 		$wp_customize,
 		'wallstreet_pro_options[client_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'client_section_settings',
 				'settings'				=> 'wallstreet_pro_options[client_upgrade]',
 				'input_attrs' => array('disabled' => 'disabled')
@@ -58,7 +58,7 @@ class wallstreet_Customize_client_upgrade extends WP_Customize_Control {
 	$wp_customize ->add_setting (
 	'wallstreet_pro_options[home_client_description]',
 	array( 
-	'default' => __('Have a look at our client we are growing their business and they are going up in the market by beating their competitors.','wallstreet'),
+	'default' => __('Have a look at our client base. We are growing their business and they are moving up in the market by beating their competitors.','wallstreet'),
 	'capability'     => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option'

@@ -351,7 +351,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'There is an update available for: %1$s.',
+					'There is an update available for %1$s.',
 					'There are updates available for the following plugins: %1$s.',
 					'wallstreet'
 				),
@@ -2324,7 +2324,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Required Update not Available', 'wallstreet' );
+				$update_status = __( 'Required Update Not Available', 'wallstreet' );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
 				$update_status = __( 'Requires Update', 'wallstreet' );
@@ -2393,7 +2393,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 						break;
 					case 'update':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'wallstreet' );
+						$text = _n( 'Updates Available <span class="count">(%s)</span>', 'Updates Available <span class="count">(%s)</span>', $count, 'wallstreet' );
 						break;
 					case 'activate':
 						/* translators: 1: number of plugins. */

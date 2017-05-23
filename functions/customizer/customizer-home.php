@@ -61,7 +61,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'wallstreet_pro_options[upload_image_logo]',
 			   array(
-				   'label'          => __('Upload a 150x150 for Logo Image', 'wallstreet' ),
+				   'label'          => __('Upload a 150x150 Logo Image', 'wallstreet' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -142,7 +142,7 @@ function wallstreet_header_customizer( $wp_customize ) {
     'wallstreet_pro_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Show Logo text','wallstreet'),
+        'label' => __('Show Logo Text','wallstreet'),
         'section' => 'header_logo',
 		'priority'   => 200,
     )

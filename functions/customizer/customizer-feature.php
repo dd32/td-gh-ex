@@ -3,7 +3,7 @@ function wallstreet_features_customizer( $wp_customize ) {
 
 class wallstreet_Customize_feature_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add theme feature section then upgrade to pro','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a theme feature section? Then upgrade to Pro.','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -33,7 +33,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 		$wp_customize,
 		'wallstreet_pro_options[theme_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'features_section',
 				'settings'				=> 'wallstreet_pro_options[theme_upgrade]',
 			)
@@ -57,7 +57,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
     'wallstreet_pro_options[theme_feature_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Check to enable theme featured section on homepage','wallstreet'),
+        'label' => __('Check to enable a theme-featured section on the homepage.','wallstreet'),
         'section' => 'features_section',
 		
 		));

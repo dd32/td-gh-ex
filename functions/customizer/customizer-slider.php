@@ -44,7 +44,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider sub title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_title_two]', array(
-        'default'        => __('Welcome to wallstreet','wallstreet'),
+        'default'        => __('Welcome to WallStreet','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -59,7 +59,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider Banner discription
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_description]', array(
-        'default'        => __('The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile.','wallstreet'),
+        'default'        => __('State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly on any modern mobile device.','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

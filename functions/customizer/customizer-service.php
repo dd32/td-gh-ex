@@ -9,7 +9,7 @@ $wp_customize->add_panel( 'wallstreet_service_options', array(
 
 	
 	$wp_customize->add_section( 'service_section_head' , array(
-		'title'      => __('Enable service section', 'wallstreet'),
+		'title'      => __('Enable Service section', 'wallstreet'),
 		'panel'  => 'wallstreet_service_options',
 		'priority'   => 50,
    	) );
@@ -29,7 +29,7 @@ $wp_customize->add_panel( 'wallstreet_service_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[service_section_enabled]',
     array(
-        'label' => __('Enable service section','wallstreet'),
+        'label' => __('Enable Service section','wallstreet'),
         'section' => 'service_section_head',
         'type' => 'checkbox',
     )
@@ -63,7 +63,7 @@ $wp_customize->add_panel( 'wallstreet_service_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[service_title_one]',
     array(
-        'default' => __('Product Designing','wallstreet'),
+        'default' => __('Product Design','wallstreet'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -215,7 +215,7 @@ $wp_customize->add_control(
     )
 );
 $wp_customize->add_section( 'more_service' , array(
-		'title'      => __('Add more service', 'wallstreet'),
+		'title'      => __('Add more services', 'wallstreet'),
 		'panel'  => 'wallstreet_service_options',
 		'priority'   => 400,
    	) );	
@@ -228,10 +228,10 @@ class WP_service_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add more services, than upgrade to pro version','wallstreet');?></P>
+	 <P><?php _e('Want to add more services? Then upgrade to Pro.','wallstreet');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','wallstreet' ); ?></a>
+	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to Pro','wallstreet' ); ?></a>
 	 <div>
     <?php
     }

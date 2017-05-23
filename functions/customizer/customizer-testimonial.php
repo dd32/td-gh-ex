@@ -2,7 +2,7 @@
 function wallstreet_testimonial_customizer( $wp_customize ) {
 class wallstreet_Customize_testimonial_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add testimonial than upgrade to pro','wallstreet'); ?><a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add a testimonial? Then upgrade to Pro.','wallstreet'); ?><a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to Pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -32,7 +32,7 @@ class wallstreet_Customize_testimonial_section_upgrade extends WP_Customize_Cont
 		$wp_customize,
 		'wallstreet_pro_options[testimonial_upgrade]',
 			array(
-				'label'					=> __('Wallstreet upgrade','wallstreet'),
+				'label'					=> __('WallStreet upgrade','wallstreet'),
 				'section'				=> 'test_section_settings',
 				'settings'				=> 'wallstreet_pro_options[testimonial_upgrade]',
 			)
@@ -56,7 +56,7 @@ class wallstreet_Customize_testimonial_section_upgrade extends WP_Customize_Cont
         'type' => 'select',
         'label' => __('Slide type variations','wallstreet'),
         'section' => 'test_section_settings',
-		 'choices' => array('scroll'=>__('scroll', 'wallstreet'), 'fade'=>__('fade', 'wallstreet') ,'crossfade'=>__('crossfade','wallstreet'),'cover-fade' =>__('cover-fade','wallstreet')),
+		 'choices' => array('scroll'=>__('scroll', 'wallstreet'), 'fade'=>__('fade', 'wallstreet') ,'crossfade'=>__('cross-fade','wallstreet'),'cover-fade' =>__('cover-fade','wallstreet')),
 		));
 		
 	
@@ -115,7 +115,7 @@ class wallstreet_Customize_testimonial_section_upgrade extends WP_Customize_Cont
     'wallstreet_pro_options[testi_timeout_dura]',
     array(
         'type' => 'select',
-        'label' => __('Time out duration','wallstreet'),
+        'label' => __('Time-out duration','wallstreet'),
         'section' => 'test_section_settings',
 		'priority'   => 300,
 		 'choices' => array('500'=>'0.5','1000'=>'1.0','1500'=>'1.5','2000' => '2.0','2500' => '2.5' ,'3000' =>'3.0' , '3500' => '3.5', '4000' => '4.0','4500' => '4.5' ,'5000' => '5.0' , '5500' => '5.5' )));	
