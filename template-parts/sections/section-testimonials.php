@@ -15,7 +15,7 @@
     		<div class="bt-wrapper">
                 <?php if($section_title){ ?>
         			<div class="bt-section-header">
-        				<h2><?php echo esc_attr($section_title); ?></h2>
+        				<h2><?php echo esc_html($section_title); ?></h2>
         			</div>
                 <?php } ?>
                 <?php

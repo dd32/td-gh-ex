@@ -24,21 +24,27 @@
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
-				} );
+				$( '.site-title, .site-description' ).css({
+					clip: 'rect(1px, 1px, 1px, 1px)',
+					position: 'absolute'
+				});
+				// Add class for different logo styles if title and description are hidden.
+				$( 'body' ).addClass( 'title-tagline-hidden' );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'auto',
-					'position': 'relative'
-				} );
-				$( '.site-title a, .site-description' ).css( {
-					'color': to
-				} );
+
+				$( '.site-title, .site-description' ).css({
+					clip: 'auto',
+					position: 'relative'
+				});
+				$( '.site-branding, .site-branding a, .site-description, .site-description a' ).css({
+					color: to
+				});
+				// Add class for different logo styles if title and description are visible.
+				$( 'body' ).removeClass( 'title-tagline-hidden' );
 			}
-		} );
-	} );
+		});
+	});
+
     
     wp.customize( 'beetech_copyright_text', function( value ) {
 		value.bind( function( to ) {

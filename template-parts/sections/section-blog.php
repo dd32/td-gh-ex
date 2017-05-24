@@ -19,10 +19,10 @@
     		<div class="bt-wrapper">
                 <?php if($section_title || $blog_section_desc){ ?>
     			<div class="bt-section-header">
-    				<?php if($section_title){ ?><h2><?php echo esc_attr($section_title); ?></h2><?php } ?>
+    				<?php if($section_title){ ?><h2><?php echo esc_html($section_title); ?></h2><?php } ?>
     				<?php if($blog_section_desc){ ?>
                         <p>
-        				    <?php echo esc_attr($blog_section_desc); ?>
+        				    <?php echo esc_html($blog_section_desc); ?>
         				</p>
                     <?php } ?>
     			</div>

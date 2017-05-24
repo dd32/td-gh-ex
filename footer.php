@@ -20,7 +20,6 @@
     			<span class="copyright-text"><?php echo wp_kses_post( get_theme_mod( 'beetech_copyright_text'));?></span>
     			<span class="sep"> | </span>
     			<?php 
-    				$theme_author_url = esc_url( '' );
     				printf( esc_html__( 'beetech by %1$s.', 'beetech' ), '<a href="'.esc_url( 'http://buzthemes.com' ).'" rel="designer">'.esc_html__('Buzthemes', 'beetech').'</a>' ); ?>
     			</div><!-- bt-section-container -->
     		</div><!-- .site-info -->

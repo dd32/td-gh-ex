@@ -4,11 +4,11 @@ Theme URI: http://buzthemes.com/wordpress_themes/beetech/
 Author: Buzthemes
 Author URI: http://buzthemes.com
 Description:  Beetech is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beetech
-Tags: one-column, featured-images, threaded-comments, translation-ready, flexible-header, right-sidebar, left-sidebar, custom-header, custom-logo
+Tags: one-column, featured-images, threaded-comments, translation-ready, flexible-header, right-sidebar, left-sidebar, custom-header, custom-logo, custom-background
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -582,7 +582,7 @@ a:active {
 .comment-navigation a:hover:before, 
 .posts-navigation a:hover:before,
 .post-navigation a:hover:before {
-    color:#e23815;
+    color:#ffb900;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -2119,8 +2119,8 @@ footer.entry-footer span a:hover {
     margin-bottom: 25px;
 }
 .comments-area .form-submit input[type=submit] {
-    background-color: #e23815;
-    border: 2px solid #e23815;
+    background-color: #ffb900;
+    border: 2px solid #ffb900;
     color: #fff;
     padding: 15px 20px;
     box-shadow: none;
@@ -2136,7 +2136,7 @@ footer.entry-footer span a:hover {
 }
 .comments-area .form-submit input[type=submit]:hover {
     background: transparent;;
-    color: #e23815;
+    color: #ffb900;
 }
 .archive #content.site-content {
     padding: 60px 0 80px 0;

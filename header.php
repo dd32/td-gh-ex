@@ -29,33 +29,28 @@
 			<div class="bt-wrapper">
 				<div class="bt-header-wrapper clearfix">
 					<div class="site-branding">
-						<?php 
-                            if(get_theme_mod('custom_logo')){
-    							if ( function_exists( 'the_custom_logo' ) ) {
-    								the_custom_logo();
-    							}
-                            }
-                            else{
+						  <?php 
+							if ( function_exists( 'the_custom_logo' ) ) {
+								the_custom_logo();
+							}
     						?>
-        						<div class="site-title-wrapper">
-        							<?php
-        								if ( is_front_page() && is_home() ) : ?>
-        									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        							<?php else : ?>
-        									<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-        							<?php
-        								endif;
-        
-        								$description = get_bloginfo( 'description', 'display' );
-        								if ( $description || is_customize_preview() ) : ?>
-        									<p class="site-description"><?php echo esc_html($description); /* WPCS: xss ok. */ ?></p>
-        							<?php
-        								endif; 
-        							?>
-        						</div><!-- .site-title-wrapper -->
-                            <?php
-                            }
-                        ?>
+    						<div class="site-title-wrapper">
+    							<?php
+    								if ( is_front_page() && is_home() ) : ?>
+    									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    							<?php else : ?>
+    									<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+    							<?php
+    								endif;
+    
+    								$description = get_bloginfo( 'description', 'display' );
+    								if ( $description || is_customize_preview() ) : ?>
+    									<p class="site-description"><?php echo esc_html($description); /* WPCS: xss ok. */ ?></p>
+    							<?php
+    								endif; 
+    							?>
+    						</div><!-- .site-title-wrapper -->
+                            
 					</div><!-- .site-branding -->
 
 					<?php do_action( 'beetech_main_menu' ); ?>

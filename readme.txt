@@ -25,33 +25,60 @@ Third Party scripts and styles under public license.
 	http://fontawesome.io
 
 = Scripts =
+
+    Bx Slider
 	BxSlider v4.1.2 by Steven Wanderski under MIT License
 	http://bxslider.com
-
+    
+    Counter Up
 	jQuery counterup v1.0 by Benjamin Intal under GPL v2 License
 	https://github.com/bfintal/Counter-Up
-
+    
+    One Page Nav
 	jQuery One Page Nav Plugin v2.2.0 by Trevor Davis under MIT and GPL licenses
 	http://github.com/davist11/jQuery-One-Page-Nav
-
+    
+    Sticky Js
 	jQuery Sticky Plugin v1.0.2 by Anthony Garand under GPL License 
 	https://github.com/garand/sticky/
 	https://github.com/garand/sticky/blob/master/LICENSE.md
-
+    
+    Light Slider
 	lightslider v1.1.3 by Sachin N under MIT License
 	https://github.com/sachinchoolur/lightslider
     
+    Waypoint
     jQuery Waypoints v2.0.5 by Caleb Troughton under MIT License
 	https://github.com/imakewebthings/waypoints
     
+    Parallax
 	parallax.js v1.4.2 by PixelCog Inc under MIT License
 	https://github.com/pixelcog/parallax.js
-
+    
+    Scroll To
 	jQuery ScrollTo v2.1.1 by Ariel Flesler under MIT License
 	https://github.com/flesler/jquery.scrollTo
+    
+    WOW
+    https://github.com/matthieua/WOW
+    Copyright (c) 2016 Matthieu Aussaguel
 
 
 == Changelog ==
 
 = 1.0.0 =
 	* Submit theme on wordpress.org
+    
+= 1.0.1 =
+	* Designing issue fix
+    * Escaping Issue Fix
+    
+= 1.0.2 =
+	* Escaping issue fix
+    * Add Theme Tag
+    
+= 1.0.3 =
+	* Solve all issue listed by reviewer on 1.0.2 version 
+    
+= 1.0.4 =
+	* Solve all issue listed by reviewer on 1.0.3 version

@@ -33,7 +33,7 @@
     	<div class="bt-wrapper">
     		<?php if($section_title || $about_section_description){ ?>
 			<div class="bt-section-header">
-				<?php if($section_title){ ?><h2><?php echo esc_attr($section_title); ?></h2><?php } ?>
+				<?php if($section_title){ ?><h2><?php echo esc_html($section_title); ?></h2><?php } ?>
                 <?php if($about_section_description){ ?>
 				<p>
                     <?php echo esc_html($about_section_description); ?> 
