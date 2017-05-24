@@ -42,4 +42,3 @@ $basepress = (object) array(
 require 'inc/base-functions.php';
 require 'inc/base-template-hooks.php';
 require 'inc/base-template-functions.php';
-

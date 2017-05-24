@@ -290,12 +290,13 @@ if ( ! function_exists( 'basepress_post_content' ) ) {
 		 */
 		do_action( 'basepress_post_content_before');
 
+		echo '<div class="entry-content">';
 		the_content( sprintf(
 			/* translators: %s: Name of current post. */
 			wp_kses( __( 'Continue Reading %s <span class="meta-nav">&rarr;</span>', 'basepress' ), array( 'span' => array( 'class' => array() ) ) ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		) );
-
+		echo '</div>';
 		/**
 		 * Functions hooked in basepress_post_content_after
 		 *

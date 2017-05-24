@@ -80,7 +80,7 @@ if ( ! class_exists( 'basepress' ) ) :
 			 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 			 */
 
-			$this->basepress_add_image_sizes();
+			add_theme_support( 'post-thumbnails' );
 
 			/**
 			 * Enable support for site logo
@@ -132,14 +132,26 @@ if ( ! class_exists( 'basepress' ) ) :
 				'flex-height'			=> true,
 			) ) );
 
-			// Declare WooCommerce support.
-			add_theme_support( 'woocommerce' );
-			add_theme_support( 'wc-product-gallery-zoom' );
-			add_theme_support( 'wc-product-gallery-lightbox' );
-			add_theme_support( 'wc-product-gallery-slider' );
+			// Add thirt party plugin
+			$this->_addons_support();
 
 			// Add theme support for selective refresh for widgets.
 			add_theme_support( 'customize-selective-refresh-widgets' );
+		}
+
+		private function _addons_support() {
+
+			// TODO: will be support on version: 1.2.0
+			// Declare WooCommerce support.
+			/*add_theme_support( 'woocommerce' );
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );*/
+
+			// Add theme support for BasePress Pro plugin.
+			add_theme_support( 'basepress-pro' );
+
+
 		}
 
 		/**
@@ -272,24 +284,6 @@ if ( ! class_exists( 'basepress' ) ) :
 			return $args;
 		}
 
-		/**
-		 * Base custom sizes for featured images
-		 */
-		function basepress_add_image_sizes() {
-
-			add_theme_support( 'post-thumbnails' );
-
-			// Header Image Size.
-			add_image_size( 'basepress-header-image', 1640, 480, true );
-		
-
-			// Default thumbnail sizes for widgets, posts and posts.
-			add_image_size( 'basepress-thumbnail-list', 300, 200, true ); //post thumbnails List
-			add_image_size( 'basepress-thumbnail-small', 200, 160, true ); // Related Posts
-			add_image_size( 'basepress-thumbnail-medium', 360, 240, true ); // Big Verticle Boxed
-			add_image_size( 'basepress-thumbnail-large', 668, 358, true ); // Posts Lists
-
-		}
 
 		/**
 		 * Adds custom classes to the array of body classes.

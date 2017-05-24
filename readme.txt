@@ -64,7 +64,13 @@ License: CC0 License
 License http://www.pexels.com/photo-license/
 
 == Changelog ==
-= 1.0.1 - May 19 2019
+= 1.0.2 - May 24 2017
+* Update postmeta info
+* Add color customize
+* Add BasePress Support Addon
+
+== Changelog ==
+= 1.0.1 - May 19 2017
 * Update readme.txt
 * Add Customize option
 * Check Responsive
@@ -72,7 +78,7 @@ License http://www.pexels.com/photo-license/
 = 1.0.0 - May 12 2017 =
 * Initial release
 
-== Credits ==
+== Underscores ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)

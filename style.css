@@ -5,7 +5,7 @@ Theme URI: https://themecountry.com/basepress
 Author: ThemeCountry
 Author URI: https://themecountry.com
 Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basepress
@@ -2665,7 +2665,7 @@ form + h2,
 form + header h2,
 form + h3,
 form + h4 {
-  margin-top: 2.2906835em; }
+  margin-top: 1em; }
 
 hr {
   background-color: #ccc;
@@ -3210,7 +3210,7 @@ li > ul, li > ol {
   margin-bottom: 0; }
 
 .more-link {
-  font-size: 18px;
+  font-size: 16px;
   color: #cb2027;
   margin-top: 10px;
   float: left; }
@@ -3258,6 +3258,7 @@ li > ul, li > ol {
 --------------------------------------------------------------*/
 .entry-footer {
   width: 100%;
+  font-size: 0.875em;
   padding-top: 30px;
   border-top: 1px solid #eaeaea;
   clear: both; }
@@ -3269,7 +3270,6 @@ li > ul, li > ol {
 .entry-footer > span {
   position: relative;
   display: inline-block;
-  font-size: 16px;
   margin-right: 16px; }
 
 .entry-footer > span:last-child {
@@ -3293,6 +3293,7 @@ li > ul, li > ol {
   content: ''; }
 
 .entry-footer span a {
+  color: #979797;
   text-decoration: underline; }
 
 .entry-footer span a:hover {
@@ -4011,6 +4012,7 @@ object {
   width: 100%;
   box-sizing: border-box;
   border-bottom: 1px solid #eaeaea;
+  margin-bottom: 20px;
   display: inline-block; }
 
 .post-navigation .nav-links {
