@@ -7,9 +7,6 @@
  * @package Astra
  */
 
-var isIE = false;
-var isEdge = false;
-
 /**
  * Get all of an element's parent elements up the DOM tree
  *
@@ -69,35 +66,47 @@ var toggleClass = function ( el, className ) {
 	}
 };
 
-// CustomEvent() constructor functionality in Internet Explorer 9 and higher.
-(function () {
-
-	
-    // Internet Explorer 6-11
-    isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-    // Edge 20+
-    isEdge = !isIE && !!window.StyleMedia;
-
-
-	if ( typeof window.CustomEvent === "function" ) return false;
-
-	function CustomEvent ( event, params ) {
-		params = params || { bubbles: false, cancelable: false, detail: undefined };
-		var evt = document.createEvent( 'CustomEvent' );
-		evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
-		return evt;
-	}
-
-	CustomEvent.prototype = window.Event.prototype;
-
-	window.CustomEvent = CustomEvent;
-
-})();
-
 ( function() {
 
-	AstraNavigationMenu = function( parentList ) {
+	var __main_header = document.querySelector( '.main-header-bar-navigation' );
+
+	var menu_toggle = document.querySelector( '.main-header-menu-toggle' );
+
+
+	/* Main Menu toggle click */
+	if ( null != menu_toggle ) {
+
+		menu_toggle.addEventListener( 'click', function( event ) {
+	    	event.preventDefault();
+
+	    	var menuHasChildren = document.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+			for ( var i = 0; i < menuHasChildren.length; i++ ) {
+				menuHasChildren[i].classList.remove( 'ast-submenu-expanded' );
+				var menuHasChildrenSubMenu = menuHasChildren[i].querySelectorAll( '.sub-menu, .children' );		
+				for (var j = 0; j < menuHasChildrenSubMenu.length; j++) {		
+					menuHasChildrenSubMenu[j].style.display = 'none';		
+				};
+			}
+
+			var rel = this.getAttribute( 'rel' ) || '';
+
+			switch ( rel ) {
+				case 'main-menu':
+						toggleClass( __main_header, 'toggle-on' );
+						toggleClass( menu_toggle, 'toggled' );
+						if ( __main_header.classList.contains( 'toggle-on' ) ) {		
+							__main_header.style.display = 'block';		
+						} else {		
+							__main_header.style.display = '';		
+						}
+					break;
+			}
+	    }, false);
+	}
+
+	AstraNavigationMenu = function( selector ) {
+
+		var parentList = document.querySelectorAll( selector );
 
 		for (var i = 0; i < parentList.length; i++) {
 
@@ -108,7 +117,6 @@ var toggleClass = function ( el, className ) {
 					toggleButton.setAttribute("role", "button");
 					toggleButton.setAttribute("class", "ast-menu-toggle");
 					toggleButton.setAttribute("aria-expanded", "false");
-					toggleButton.innerHTML="<span class='screen-reader-text'>Menu Toggle</span>";
 				parentList[i].insertBefore( toggleButton, parentList[i].childNodes[1] );
 
 				var menuLeft         = parentList[i].getBoundingClientRect().left,
@@ -139,12 +147,14 @@ var toggleClass = function ( el, className ) {
 		};
 	};
 
-	AstraToggleMenu = function( astra_menu_toggle ) {
-		
-		/* Submenu button click */
-		for (var i = 0; i < astra_menu_toggle.length; i++) {
+	AstraNavigationMenu( 'ul.main-header-menu li' );
 
-			astra_menu_toggle[i].addEventListener( 'click', function ( event ) {
+	AstraToggleMenu = function( selector ) {
+		var ast_menu_toggle = document.querySelectorAll( selector );
+		/* Submenu button click */
+		for (var i = 0; i < ast_menu_toggle.length; i++) {
+
+			ast_menu_toggle[i].addEventListener( 'click', function ( event ) {
 				event.preventDefault();
 
 				var parent_li = this.parentNode;
@@ -181,103 +191,45 @@ var toggleClass = function ( el, className ) {
 			}, false);
 		};
 	};
+ 
+	AstraToggleMenu('ul.main-header-menu .ast-menu-toggle');
 
-	var __main_header_all 	= document.querySelectorAll( '.main-header-bar-navigation' );
-	var menu_toggle_all 	= document.querySelectorAll( '.main-header-menu-toggle' );
-
-	if ( menu_toggle_all.length > 0 ) {
-
-		for (var i = 0; i < menu_toggle_all.length; i++) {
-			
-			menu_toggle_all[i].setAttribute('data-index', i);
-
-			menu_toggle_all[i].addEventListener( 'click', function( event ) {
-		    	event.preventDefault();
-
-		    	var event_index = this.getAttribute( 'data-index' );
-
-		    	var menuHasChildren = __main_header_all[event_index].querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
-				for ( var i = 0; i < menuHasChildren.length; i++ ) {
-					menuHasChildren[i].classList.remove( 'ast-submenu-expanded' );
-					var menuHasChildrenSubMenu = menuHasChildren[i].querySelectorAll( '.sub-menu, .children' );		
-					for (var j = 0; j < menuHasChildrenSubMenu.length; j++) {		
-						menuHasChildrenSubMenu[j].style.display = 'none';		
-					};
-				}
-
-				var rel = this.getAttribute( 'rel' ) || '';
-
-				switch ( rel ) {
-					case 'main-menu':
-							toggleClass( __main_header_all[event_index], 'toggle-on' );
-							toggleClass( menu_toggle_all[event_index], 'toggled' );
-							if ( __main_header_all[event_index].classList.contains( 'toggle-on' ) ) {		
-								__main_header_all[event_index].style.display = 'block';		
-							} else {		
-								__main_header_all[event_index].style.display = '';		
-							}
-						break;
-				}
-		    }, false);
-			
-			var parentList = __main_header_all[i].querySelectorAll( 'ul.main-header-menu li' );
-			AstraNavigationMenu( parentList );
-		 	
-		 	var astra_menu_toggle = __main_header_all[i].querySelectorAll( 'ul.main-header-menu .ast-menu-toggle' );
-			AstraToggleMenu( astra_menu_toggle );
-
-
-		};
-
-	}
-	
 	document.body.addEventListener("astra-header-responsive-enabled", function() {
 
-		if ( __main_header_all.length > 0 ) {
+		if( null != __main_header ) {
+			__main_header.classList.remove( 'toggle-on' );
+			__main_header.style.display = '';
+		}
 
-			for (var i = 0; i < __main_header_all.length; i++) {
-				if( null != __main_header_all[i] ) {
-					__main_header_all[i].classList.remove( 'toggle-on' );
-					__main_header_all[i].style.display = '';
-				}
+		var sub_menu = document.getElementsByClassName( 'sub-menu' );
+		for ( var i = 0; i < sub_menu.length; i++ ) {
+			sub_menu[i].style.display = '';
+		}
+		var child_menu = document.getElementsByClassName( 'children' );
+		for ( var i = 0; i < child_menu.length; i++ ) {
+			child_menu[i].style.display = '';
+		}
 
-				var sub_menu = __main_header_all[i].getElementsByClassName( 'sub-menu' );
-				for ( var j = 0; j < sub_menu.length; j++ ) {
-					sub_menu[j].style.display = '';
-				}
-				var child_menu = __main_header_all[i].getElementsByClassName( 'children' );
-				for ( var k = 0; k < child_menu.length; k++ ) {
-					child_menu[k].style.display = '';
-				}
-
-				var searchIcons = __main_header_all[i].getElementsByClassName( 'ast-search-menu-icon' );
-				for ( var l = 0; l < searchIcons.length; l++ ) {
-					searchIcons[l].classList.remove( 'ast-dropdown-active' );
-					searchIcons[l].style.display = '';
-				}
-			}
+		var searchIcons = document.getElementsByClassName( 'ast-search-menu-icon' );
+		for ( var i = 0; i < searchIcons.length; i++ ) {
+			searchIcons[i].classList.remove( 'ast-dropdown-active' );
+			searchIcons[i].style.display = '';
 		}
 	}, false);
-	
+
 	/* Add break point Class and related trigger */
 	var updateHeaderBreakPoint = function () {
 
-		var break_point = astra.break_point,
-			headerWrap = document.querySelectorAll( '.main-header-bar-wrap' );
+		if( null != document.getElementById( 'masthead' ) ) {
 
-		if ( headerWrap.length > 0  ) {
+			var break_point = ast.break_point,
+				headerWrap = document.getElementById( 'masthead' ).childNodes;
+
 			for ( var i = 0; i < headerWrap.length; i++ ) {
 
 				if ( headerWrap[i].tagName == 'DIV' && headerWrap[i].classList.contains( 'main-header-bar-wrap' ) ) {
 
 					var header_content_bp = window.getComputedStyle( headerWrap[i] ).content;
-
-					// Edge/Explorer header break point.
-					if( isEdge || isIE || header_content_bp === 'normal' ) {
-						if( window.innerWidth <= break_point ) {
-							header_content_bp = break_point;
-						}
-					}
 
 					header_content_bp = header_content_bp.replace( /[^0-9]/g, '' );
 					header_content_bp = parseInt( header_content_bp );
@@ -285,8 +237,8 @@ var toggleClass = function ( el, className ) {
 					// `ast-header-break-point` class will use for Responsive Style of Header.
 					if ( header_content_bp != break_point ) {
 						//remove menu toggled class.
-						if ( null != menu_toggle_all[i] ) {
-							menu_toggle_all[i].classList.remove( 'toggled' );
+						if ( null != menu_toggle ) {
+							menu_toggle.classList.remove( 'toggled' );
 						}
 						document.body.classList.remove( "ast-header-break-point" );
 						var responsive_enabled = new CustomEvent( "astra-header-responsive-enabled" );
@@ -308,7 +260,7 @@ var toggleClass = function ( el, className ) {
 	});
 
 	updateHeaderBreakPoint();
-	
+
 	/* Search Script */
 	var SearchIcons = document.getElementsByClassName( 'astra-search-icon' );
 	for (var i = 0; i < SearchIcons.length; i++) {
@@ -342,6 +294,7 @@ var toggleClass = function ( el, className ) {
 			}
 		}
 	}
+
 	/**
 	 * Navigation Keyboard Navigation.
 	 */

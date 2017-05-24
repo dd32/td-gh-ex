@@ -5,11 +5,11 @@
 
 .ast-responsive-btns {
 	float:right;
-	line-height: 1;
-	margin-top: 5px;
+	vertical-align: middle;
 
 	> li {
 		margin-bottom: 0;
+		vertical-align: middle;
 		display: none;
 
 		&.active {
@@ -19,7 +19,9 @@
 
 	button[type="button"] {
 		padding: 0;
+		height: 15px;
 		cursor: pointer;
+		vertical-align: middle;
 		background: none;
 		border: none;
 		opacity: .75;
