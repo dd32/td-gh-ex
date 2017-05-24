@@ -2,8 +2,7 @@
 Contributors: Kaira
 Donate link: 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, holiday, news, photography
-Tested up to: 3.9
-Stable tag: 3.7
+Requires at least: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +69,17 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.3.07
+* Neatened up Customizer Settings
+* Added setting to set max-width for Site Logo
+* Updated language .pot file
+Premium: Added setting to change Slider scroll effect
+Premium: Option to add an Author block on Blog single pages
+Premium: Added a bunch of extra settings for Blog List & Single Pages
+Premium: Added setting to remove pre text from Archive/Category list
+Premium: Added setting to select how many WooCommerce products to show per row
+Premium: Added setting to remove WooCommerce product borders
 
 #### 1.3.06
 * Updated/fixed compatibility with new WooCommerce Gallery

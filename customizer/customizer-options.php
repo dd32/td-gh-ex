@@ -26,6 +26,21 @@ function customizer_library_topshop_options() {
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
     
+    $section = 'header_image';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Site Logo', 'topshop' ),
+        'priority' => '25'
+    );
+    $options['topshop-header-image-logo-max-width'] = array(
+        'id' => 'topshop-header-image-logo-max-width',
+        'label'   => __( 'Set a max-width for the logo', 'topshop' ),
+        'section' => $section,
+        'type'    => 'number',
+        'description' => __( 'This only applies if a logo image is uploaded', 'topshop' )
+    );
+    
     
     $panel = 'topshop-panel-layout';
     
@@ -85,7 +100,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-upsell-layout',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Set custom website width<br />- Set custom width of sidebar<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change cart icon', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon', 'topshop' )
     );
     
     
@@ -131,7 +146,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-upsell-slider',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Slider scroll effect<br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
     );
     
     // Slider Settings
@@ -144,13 +159,6 @@ function customizer_library_topshop_options() {
         'panel' => $panel
     );
     
-    $options['topshop-blog-title'] = array(
-        'id' => 'topshop-blog-title',
-        'label'   => __( 'Blog Page Title', 'topshop' ),
-        'section' => $section,
-        'type'    => 'text',
-        'default' => 'Blog'
-    );
     $options['topshop-blog-cats'] = array(
         'id' => 'topshop-blog-cats',
         'label'   => __( 'Exclude Blog Categories', 'topshop' ),
