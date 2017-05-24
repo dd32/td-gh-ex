@@ -6,13 +6,13 @@
  */
 
 function customizer_library_conica_options() {
-	
+
 	$primary_color = '#d80000';
 	$secondary_color = '#e54814';
-	
+
 	$body_font_color = '#3C3C3C';
 	$heading_font_color = '#1d1d1d';
-    
+
     $slider_bg_color = '#1d1d1d';
 
 	// Stores all the controls that will be added
@@ -26,25 +26,25 @@ function customizer_library_conica_options() {
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
-    
-    
+
+
     $panel = 'conica-panel-website';
-    
+
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Theme Settings', 'conica' ),
         'priority' => '10'
     );
-    
+
     $section = 'conica-panel-website-section-website'; // --------------------------------- Website Layout Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Layout Settings', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $choices = array(
         'conica-skin-light' => __( 'Light', 'conica' ),
         'conica-skin-dark' => __( 'Dark', 'conica' )
@@ -69,7 +69,7 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-site-full-width'
     );
-    
+
     $options['conica-upsell-layout'] = array(
         'id' => 'conica-upsell-layout',
         'section' => $section,
@@ -77,16 +77,16 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Set website container width<br />- Change sidebar width<br />- Change content area padding', 'conica' )
     );
     // ---------------------------------------------------------------------------- Website Layout Settings
-    
+
     $section = 'conica-panel-website-section-header'; // ---------------------------------- Header Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Header', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-set-header-remove-topline'] = array(
         'id' => 'conica-set-header-remove-topline',
         'label'   => __( 'Remove Top Line', 'conica' ),
@@ -164,7 +164,7 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-search-icon-angle'
     );
-    
+
     $options['conica-upsell-header'] = array(
         'id' => 'conica-upsell-header',
         'section' => $section,
@@ -172,16 +172,16 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
-    
+
     $section = 'conica-panel-website-section-navigation'; // ----------------------------- Navigation Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Navigation', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $choices = array(
         'conica-navigation-style-blocks' => __( 'Navigation Style Blocks', 'conica' ),
         'conica-navigation-style-underline' => __( 'Navigation Style Underline', 'conica' ),
@@ -195,7 +195,7 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-navigation-style-blocks'
     );
-    
+
     $options['conica-upsell-nav'] = array(
         'id' => 'conica-upsell-nav',
         'section' => $section,
@@ -203,16 +203,16 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Change dropdown animation<br />- Fade / Slide Down / Fold Out', 'conica' )
     );
     // ----------------------------------------------------------------------------------- Navigation Settings
-    
+
     $section = 'conica-panel-website-section-slider'; // ------------------------------------- Slider Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Home Page Slider', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $choices = array(
         'conica-slider-default' => __( 'Default Slider', 'conica' ),
         'conica-shortcode-slider' => __( 'Slider Shortcode', 'conica' ),
@@ -267,17 +267,17 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Set each slide to have custom url link<br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Slider Settings
-    
-    
+
+
     $section = 'conica-panel-website-section-single-page'; // -------------------------- Single Pages Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Pages', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $choices = array(
         'conica-page-fimage-layout-none' => __( 'None', 'conica' ),
         'conica-page-fimage-layout-standard' => __( 'Standard', 'conica' )
@@ -290,7 +290,7 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-page-fimage-layout-none'
     );
-    
+
     $options['conica-upsell-pages'] = array(
         'id' => 'conica-upsell-pages',
         'section' => $section,
@@ -298,16 +298,16 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Select Featured Image to display as a page banner<br />- Change banner size and width', 'conica' )
     );
     // --------------------------------------------------------------------------------- Single Pages Settings
-    
+
     $section = 'conica-panel-website-section-blog-list'; // ------------------------------- Blog List Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Blog List', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $choices = array(
         'blog-left-layout' => __( 'Left Layout', 'conica' ),
         'blog-right-layout' => __( 'Right Layout', 'conica' ),
@@ -330,17 +330,17 @@ function customizer_library_conica_options() {
         'type'    => 'text',
         'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'conica' )
     );
-    
+
     $options['conica-upsell-blog'] = array(
         'id' => 'conica-upsell-blog',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Show blog post summary<br />- Adjust text and amount of words shown<br />- Remove meta/categories/tags info<br />- Set blog to left sidebar or full width<br />- Set archive / search to full width', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Show blog post summary<br />- Adjust text and amount of words shown<br />- Remove meta/categories/tags info<br />- Set blog to left sidebar or full width<br />- Set archive / search to full width<br />- Remove "Category:" text from Archives/Categories list', 'conica' )
     );
     // ----------------------------------------------------------------------------------- Blog List Settings
-    
+
     $section = 'conica-panel-website-section-blog-single'; // -------------------------- Blog Single Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Blog Single Page', 'conica' ),
@@ -359,28 +359,28 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-single-page-fimage-layout-none'
     );
-    
+
     $options['conica-upsell-posts'] = array(
         'id' => 'conica-upsell-posts',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Remove meta/categories/tags info<br />- Set posts to left sidebar or full width<br />- Select Featured Image to display as a page banner<br />- Change banner size and width', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Remove meta/categories/tags info<br />- Set posts to left sidebar or full width<br />- Select Featured Image to display as a page banner<br />- Change banner size and width<br />- Add Author block to single posts', 'conica' )
     );
     // ---------------------------------------------------------------------------------- Blog Single Settings
-    
-    
+
+
     // WooCommerce style Layout
     if ( conica_is_woocommerce_activated() ) :
-        
+
         $section = 'conica-panel-woocommerce-section-website'; // ---------------- WooCommerce Layout Settings
-        
+
         $sections[] = array(
             'id' => $section,
             'title' => __( 'WooCommerce', 'conica' ),
             'priority' => '15',
             'panel' => $panel
         );
-        
+
         $choices = array(
             'fa-shopping-cart' => __( 'Shopping Cart', 'conica' ),
             'fa-shopping-basket' => __( 'Shopping Basket', 'conica' ),
@@ -395,26 +395,26 @@ function customizer_library_conica_options() {
             'choices' => $choices,
             'default' => 'fa-shopping-cart'
         );
-        
+
         $options['conica-upsell-woocommerce'] = array(
             'id' => 'conica-upsell-woocommerce',
             'section' => $section,
             'type'    => 'upsell',
-            'description' => __( '<b>Premium Extra Features:</b><br />- Set Shop/Archive/Single pages to left sidebar<br />- Set Shop/Archive/Single pages to full width', 'conica' )
+            'description' => __( '<b>Premium Extra Features:</b><br />- Change amount of products per row<br />- Remove products hover border<br />- Set Shop/Archive/Single pages left sidebar<br />- Set Shop/Archive/Single pages full width', 'conica' )
         );
-        
+
     endif;
     // -------------------------------------------------------------------------- WooCommerce Layout Settings
-    
+
     $section = 'conica-panel-website-section-footer'; // ------------------------------------ Footer Settings
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Footer Options', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-footer-hide-social'] = array(
         'id' => 'conica-footer-hide-social',
         'label'   => __( 'Remove Social Links', 'conica' ),
@@ -435,7 +435,7 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-footer-layout-standard'
     );
-    
+
     $options['conica-upsell-footer'] = array(
         'id' => 'conica-upsell-footer',
         'section' => $section,
@@ -443,24 +443,24 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Remove footer bottom bar<br />- Extra advanced footer layout<br />- Set advanced footer column widths<br /><br />- Change attribution text to your own<br />- Extra custom text blocks can be added to the footer', 'conica' )
     );
     // -------------------------------------------------------------------------------------- Footer Settings
-    
+
     $panel = 'conica-panel-text';
-    
+
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Text Settings', 'conica' ),
         'priority' => '10'
     );
-    
+
     $section = 'conica-panel-text-section-header'; // ------------------------------------------- Header Text
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Header', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-set-text-header-phone'] = array(
         'id' => 'conica-set-text-header-phone',
         'label'   => __( 'Phone Number', 'conica' ),
@@ -489,16 +489,16 @@ function customizer_library_conica_options() {
         'description' => __( 'You can select any icon to add from <a href="http://fontawesome.io/cheatsheet/" target="_blank">Font Awesome</a>, add only the text next to the icon. Eg: fa-link', 'conica' )
     );
     // ----------------------------------------------------------------------------------------- Header Text
-    
+
     $section = 'conica-panel-text-section-navigation'; // ---------------------------------- Navigation Text
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Navigation', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     // Navigation Text
     $options['conica-set-text-mobile-nav'] = array(
         'id' => 'conica-set-text-mobile-nav',
@@ -508,16 +508,16 @@ function customizer_library_conica_options() {
         'default' => __( 'MENU', 'conica' )
     );
     // ------------------------------------------------------------------------------------ Navigation Text
-    
+
     $section = 'conica-panel-text-section-error'; // ---------------------------------- Navigation Text
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Error 404/No Results', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-website-error-head'] = array(
         'id' => 'conica-website-error-head',
         'label'   => __( '404 Error Page Heading', 'conica' ),
@@ -534,7 +534,7 @@ function customizer_library_conica_options() {
         'default' => __( 'It looks like that page does not exist. <br />Return home or try a search', 'conica'),
         'description' => __( 'Enter the default text on the 404 error page (Page not found)', 'conica' )
     );
-    
+
     $options['conica-website-nosearch-head'] = array(
         'id' => 'conica-website-nosearch-head',
         'label'   => __( 'No Search Results Heading', 'conica' ),
@@ -552,25 +552,25 @@ function customizer_library_conica_options() {
         'description' => __( 'Enter the default text for when no search results are found', 'conica' )
     );
     // ------------------------------------------------------------------------------------ Navigation Text
-    
+
     $panel = 'conica-panel-font-options';
-    
+
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Font Options', 'conica' ),
         'priority' => '10'
     );
-    
+
     $section = 'conica-panel-font-section-site'; // ----------------------------------------- Default Fonts
     $font_choices = customizer_library_get_font_choices();
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Theme Fonts', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-body-font'] = array(
         'id' => 'conica-body-font',
         'label'   => __( 'Body Font', 'conica' ),
@@ -602,17 +602,17 @@ function customizer_library_conica_options() {
         'default' => $heading_font_color,
     );
     // -------------------------------------------------------------------------------------- Default Fonts
-    
+
     $section = 'conica-panel-font-section-titles'; // ----------------------------------------- Title Fonts
     $font_choices = customizer_library_get_font_choices();
-    
+
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Site Title & Description', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
-    
+
     $options['conica-title-font'] = array(
         'id' => 'conica-title-font',
         'label'   => __( 'Site Title Font', 'conica' ),
@@ -621,7 +621,7 @@ function customizer_library_conica_options() {
         'choices' => $font_choices,
         'default' => 'Poppins'
     );
-    
+
     $options['conica-upsell-fonts'] = array(
         'id' => 'conica-upsell-fonts',
         'section' => $section,
@@ -629,7 +629,7 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Change site title font size<br />- Select custom tagline font<br />- Change tagline font size<br />- Change title / tagline spacing', 'conica' )
     );
     // ---------------------------------------------------------------------------------------- Title Fonts
-    
+
     // ------------------------------------------------------- Social Options
     $section = 'conica-section-social';
 
@@ -638,7 +638,7 @@ function customizer_library_conica_options() {
         'title' => __( 'Social Links', 'conica' ),
         'priority' => '80'
     );
-    
+
     $options['conica-social-email'] = array(
         'id' => 'conica-social-email',
         'label'   => __( 'Email Address', 'conica' ),
@@ -663,7 +663,7 @@ function customizer_library_conica_options() {
         'section' => $section,
         'type'    => 'text',
     );
-    
+
     $options['conica-upsell-social'] = array(
         'id' => 'conica-upsell-social',
         'section' => $section,
@@ -671,7 +671,7 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Over 18 different social profile links available<br />- Custom setting to add any needed link<br />- Let us know which links you need and we\'ll add it!', 'conica' )
     );
     // ------------------------------------------------------- Social Options
-    
+
     // --------------------------------------------------------------- Colors
     $section = 'colors';
 
@@ -680,7 +680,7 @@ function customizer_library_conica_options() {
         'title' => __( 'Colors', 'conica' ),
         'priority' => '40'
     );
-    
+
     $options['conica-primary-color'] = array(
         'id' => 'conica-primary-color',
         'label'   => __( 'Primary Color', 'conica' ),

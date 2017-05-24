@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2017-03-14 12:54+0200\n"
+"POT-Creation-Date: 2017-05-24 17:39+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -379,7 +379,7 @@ msgid ""
 "<b>Premium Extra Features:</b><br />- Show blog post summary<br />- Adjust "
 "text and amount of words shown<br />- Remove meta/categories/tags info<br /"
 ">- Set blog to left sidebar or full width<br />- Set archive / search to "
-"full width"
+"full width<br />- Remove \"Category:\" text from Archives/Categories list"
 msgstr ""
 
 #: customizer/customizer-options.php:346
@@ -390,10 +390,11 @@ msgstr ""
 msgid ""
 "<b>Premium Extra Features:</b><br />- Remove meta/categories/tags info<br /"
 ">- Set posts to left sidebar or full width<br />- Select Featured Image to "
-"display as a page banner<br />- Change banner size and width"
+"display as a page banner<br />- Change banner size and width<br />- Add "
+"Author block to single posts"
 msgstr ""
 
-#: customizer/customizer-options.php:379 functions.php:290
+#: customizer/customizer-options.php:379 functions.php:295
 msgid "WooCommerce"
 msgstr ""
 
@@ -421,8 +422,9 @@ msgstr ""
 
 #: customizer/customizer-options.php:403
 msgid ""
-"<b>Premium Extra Features:</b><br />- Set Shop/Archive/Single pages to left "
-"sidebar<br />- Set Shop/Archive/Single pages to full width"
+"<b>Premium Extra Features:</b><br />- Change amount of products per row<br /"
+">- Remove products hover border<br />- Set Shop/Archive/Single pages left "
+"sidebar<br />- Set Shop/Archive/Single pages full width"
 msgstr ""
 
 #: customizer/customizer-options.php:413
@@ -642,31 +644,31 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:103
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:112
 msgid "Conica Standard Footer"
 msgstr ""
 
-#: functions.php:285
+#: functions.php:290
 msgid "Page Builder"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:300
 msgid "Widgets Bundle"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:305
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:310
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:315
 msgid "Meta Slider"
 msgstr ""
 

@@ -1,8 +1,7 @@
 === Conica ===
 Contributors: Kaira
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, holiday, portfolio
-Requires at least: 4.0
-Tested up to: 4.7
+Requires at least: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +78,15 @@ View the theme settings under "Appearance" -> Customize.
 2. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.02
+* Styling fixes/tweaks
+* Updated the language.pot file
+Premium: Setting to remove "Category:" text from archives list
+Premium: Added setting to add Author block to blog single pages
+Premium: Fixed custom Footer layout responsiveness
+Premium: Added settings to change WooCommerce product per row
+Premium: Added setting to remove Product hover border
 
 #### 1.3.01
 * Updated/fixed compatibility with new WooCommerce Gallery
