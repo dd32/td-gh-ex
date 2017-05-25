@@ -142,8 +142,8 @@ class ascend_social_widget extends WP_Widget {
 	    $instance['snapchat'] 		= esc_url_raw($new_instance['snapchat']);
 	    $instance['behance'] 		= esc_url_raw($new_instance['behance']);
 	    $instance['rss'] 			= esc_url_raw($new_instance['rss']);
-	    $instance['tooltip'] 		= esc_url_raw($new_instance['tooltip']);
-	    $instance['tooltip_dir'] 	= esc_url_raw($new_instance['tooltip_dir']);
+	    $instance['tooltip'] 		= sanitize_text_field($new_instance['tooltip']);
+	    $instance['tooltip_dir'] 	= sanitize_text_field($new_instance['tooltip_dir']);
 
 	    return $instance;
   	}

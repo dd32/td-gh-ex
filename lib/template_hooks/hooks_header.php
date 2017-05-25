@@ -11,7 +11,15 @@ function ascend_the_custom_logo() {
 	echo '<div id="logo" class="logocase kad-header-height">';
 		echo '<a class="brand logofont" href="'.esc_url(apply_filters('ascend_logo_link', home_url())).'">';
 		$liu = '';
-		$ascend['logo']['id'] = get_theme_mod( 'custom_logo' );
+		$logo = get_theme_mod( 'custom_logo' );
+		if(isset($logo) && !empty($logo) ) {
+			$ascend['logo']['id'] = $logo;
+		} else {
+			if(isset($ascend['logo']['id']) && !empty($ascend['logo']['id'])){
+				set_theme_mod( 'custom_logo', $ascend['logo']['id']);
+			}
+		}
+		//$ascend['logo']['id'] = get_theme_mod( 'custom_logo' );
 		if(isset($ascend['logo']['id']) && !empty($ascend['logo']['id'])) {
 			if(isset($ascend['logo_width']) && !empty($ascend['logo_width'])) {
 				$width = $ascend['logo_width'];

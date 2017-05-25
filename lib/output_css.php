@@ -292,7 +292,7 @@ function ascend_custom_css() {
 	  	$notavailable_placeholder_text = '';
 	}
 	if (!empty($ascend['custom_css'])) {
-	  	$custom_css = esc_attr($ascend['custom_css']);
+	  	$custom_css = wp_kses_post($ascend['custom_css']);
 	} else {
 	  	$custom_css = '';
 	}

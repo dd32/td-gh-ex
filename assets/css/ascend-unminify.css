@@ -10303,6 +10303,15 @@ input.kt-error {
   z-index: 2;
   position: relative;
 }
+.p-outer-pgrid-no-margin .portfolio_item {
+  margin-right: -1px;
+}
+@media (max-width: 544px) {
+  .kad-grid-link {
+    clear: both;
+    position: relative;
+  }
+}
 @media (max-width: 1200px) {
   article.kad_blog_item {
     margin-bottom: 30px;

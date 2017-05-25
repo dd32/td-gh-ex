@@ -28,6 +28,18 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.2 | 25th May 2017 =
+* Update: Fix tooltip for social widget.
+
+= Version 1.1.1 | 1st May 2017 =
+* Update: Sanitize for custom css box.
+* Update: Portfolio CSS
+
+= Version 1.1.0 | 13th April 2017 =
+* Update: WC Notice
+* Update: Schema
+* Fix: Video output issue.
+
 = Version 1.0.9 | 8th April 2017 =
 * Fix: Issue home full portfolio settings.
 * Fix: Issue with sidebar on portfolio/blog templates pagination.

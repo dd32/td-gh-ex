@@ -142,6 +142,11 @@ add_action( 'ascend_single_post_footer', 'ascend_post_footer_meta', 30 );
 function ascend_post_footer_meta() {
 	get_template_part('templates/entry', 'footer-meta');
 }
+add_action( 'ascend_single_loop_post_footer', 'ascend_post_footer_image_meta', 35 );
+add_action( 'ascend_single_post_footer', 'ascend_post_footer_image_meta', 35 );
+function ascend_post_footer_image_meta() {
+	get_template_part('templates/entry', 'footer-image-meta');
+}
 
 add_action( 'ascend_single_post_footer', 'ascend_post_nav', 40 );
 function ascend_post_nav() {

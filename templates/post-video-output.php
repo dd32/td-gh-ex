@@ -10,7 +10,7 @@ global $post;
             <?php } ?>
             <meta itemprop="contentURL" content="<?php echo esc_attr($video);?>" />
             <div id="schema-videoobject" class="videofit video-container">
-            <?php echo wp_kses_post(do_shortcode(wp_oembed_get($video)));?>
+            <?php echo do_shortcode(wp_oembed_get(wp_kses_post($video)));?>
             </div>
         </div>
     <?php 
@@ -30,7 +30,7 @@ global $post;
             ?>
             <meta itemprop="embedURL" content="<?php echo esc_attr($url);?>" />
             <div id="schema-videoobject" class="videofit video-container">
-            <?php echo wp_kses_post(do_shortcode($video)); ?>
+            <?php echo do_shortcode(wp_kses_post($video)); ?>
             </div>
         </div>
 <?php }  
