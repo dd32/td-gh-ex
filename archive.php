@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <!-- Page Title Section -->
 <div class="page-mycarousel">
-	<div class="page-title-col">
-		<div class="container">
-			<div class="row">
-				<div class="page-header-title">
-					<h1>
+	<img src="<?php echo get_template_directory_uri(); ?>/images/page-header-bg.jpg"  class="img-responsive">
+	<div class="container page-title-col">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h1>
 						<?php if ( is_day() ) : ?>
 						<?php  _e( "Daily Archive","wallstreet"); echo (get_the_date()); ?>
 						<?php elseif ( is_month() ) : ?>
@@ -16,11 +16,20 @@
 						<?php _e( "Blog Archive","wallstreet"); ?>
 						<?php endif; ?>
 					</h1>		
+			</div>	
+		</div>
+	</div>
+	<div class="page-breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ol class="breadcrumbs">
+						<?php if (function_exists('webriti_custom_breadcrumbs')) webriti_custom_breadcrumbs();?>
+					</ol>
 				</div>
 			</div>	
 		</div>
-		<?php get_template_part('index', 'breadcrumb'); ?>
-	</div>	
+	</div>
 </div>
 <!-- /Page Title Section -->
 

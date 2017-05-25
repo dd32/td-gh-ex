@@ -1,17 +1,6 @@
 <?php get_header(); ?>
 <!-- Page Title Section -->
-<div class="page-mycarousel">
-	<div class="page-title-col">
-		<div class="container">
-			<div class="row">
-				<div class="page-header-title">
-					<h1><?php the_title(); ?></h1>		
-				</div>
-			</div>	
-		</div>
-		<?php get_template_part('index', 'breadcrumb'); ?>
-	</div>	
-</div>
+<?php get_template_part('index', 'breadcrumb'); ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
 <div class="container">

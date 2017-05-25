@@ -1,16 +1,26 @@
 <?php get_header(); ?>
+<!-- Page Title Section -->
 <div class="page-mycarousel">
-	<div class="page-title-col">
-		<div class="container">
-			<div class="row">
-			<?php if( is_home() && get_option('page_for_posts') ) : ?>
-		<div class="page-header-title">
-			<h1><?php echo apply_filters('the_title',get_page( get_option('page_for_posts') )->post_title); ?></h1>
-		</div>
-		<?php endif; ?>				
+	<img src="<?php echo get_template_directory_uri(); ?>/images/page-header-bg.jpg"  class="img-responsive">
+	<div class="container page-title-col">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<?php if( is_home() && get_option('page_for_posts') ) : ?>
+				<h1><?php echo apply_filters('the_title',get_page( get_option('page_for_posts') )->post_title); ?></h1>	
+				<?php endif; ?>				
 			</div>	
 		</div>
-		<?php get_template_part('index', 'breadcrumb'); ?>
+	</div>
+	<div class="page-breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ol class="breadcrumbs">
+						<?php if (function_exists('webriti_custom_breadcrumbs')) webriti_custom_breadcrumbs();?>
+					</ol>
+				</div>
+			</div>	
+		</div>
 	</div>
 </div>
 <!-- /Page Title Section -->

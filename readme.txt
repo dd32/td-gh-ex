@@ -51,6 +51,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.7.2
+1. Fixed header image responsive issue.
 @Version 1.7.7.1
 1. Updated style.css file.
 @Version 1.7.7

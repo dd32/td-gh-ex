@@ -2,15 +2,24 @@
 
 <!-- Page Title Section -->
 <div class="page-mycarousel">
-	<div class="page-title-col">
+	<img src="<?php echo get_template_directory_uri(); ?>/images/page-header-bg.jpg"  class="img-responsive">
+	<div class="container page-title-col">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h1><?php echo single_cat_title("Category Archive", false); ?></h1>		
+			</div>	
+		</div>
+	</div>
+	<div class="page-breadcrumbs">
 		<div class="container">
 			<div class="row">
-				<div class="page-header-title">
-					<h1><?php echo single_cat_title("Category Archive", false); ?></h1>		
+				<div class="col-md-12">
+					<ol class="breadcrumbs">
+						<?php if (function_exists('webriti_custom_breadcrumbs')) webriti_custom_breadcrumbs();?>
+					</ol>
 				</div>
 			</div>	
 		</div>
-		<?php get_template_part('index', 'breadcrumb'); ?>
 	</div>
 </div>
 <!-- /Page Title Section -->

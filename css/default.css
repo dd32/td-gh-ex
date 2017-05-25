@@ -234,7 +234,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, 
 .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
 	background-color: transparent;
-	color: #00c2a9;
+	color: #00c2a9 !important;
 }
 
 
