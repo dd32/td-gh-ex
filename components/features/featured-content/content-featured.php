@@ -23,7 +23,8 @@
             
         	<?php the_excerpt() ?>
             <div class="widgetLink moreinfo_link">
-                <a href="<?php echo the_permalink()?>">More &hellip;</a>
+                <a href="<?php echo the_permalink()?>">
+                <?php echo __( 'More &hellip;', 'authorize' ); ?></a>
             </div>
 		</div>
 </article>

@@ -80,7 +80,7 @@ get_header(); ?>
 	<!-- end home page feature -->
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main"> 
 			<?php  get_template_part( 'components/features/featured-content/display', 'featured' );?>
 			
 			<?php

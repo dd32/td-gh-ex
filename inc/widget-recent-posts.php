@@ -21,7 +21,16 @@
  * Adds different formatting to the default WordPress Recent Posts Widget
  */
 
-Class authorize_recent_posts_widget extends WP_Widget_Recent_Posts {
+//Class authorize_recent_posts_widget extends WP_Widget_Recent_Posts {
+Class authorize_recent_posts_widget extends WP_Widget {	
+		
+		function __construct() {
+			parent::__construct(
+				'authorize_recent_posts',
+				esc_html__( 'Authorize - Recent Posts', 'authorize' ), // Name
+				array( 'description' => esc_html__( 'Displays recent posts with Authorize formatting.', 'authorize' ), ) // Args
+			);
+		}
 
         function widget($args, $instance) {
 
@@ -36,7 +45,7 @@ Class authorize_recent_posts_widget extends WP_Widget_Recent_Posts {
 
             $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
             if ( ! $number )
-                $number = 5;
+                $number = 2;
             $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
             /**
@@ -92,7 +101,7 @@ Class authorize_recent_posts_widget extends WP_Widget_Recent_Posts {
                             </div>
 
                             <div class="widgetLink">
-                            	<a href="<?php the_permalink(); ?>">More&hellip;</a>
+                            	<a href="<?php the_permalink(); ?>"><?php echo __( 'More &hellip;', 'authorize' ); ?></a>
 							</div>
                         </div>
 					</a>
@@ -109,7 +118,7 @@ Class authorize_recent_posts_widget extends WP_Widget_Recent_Posts {
 }
 
 function authorize_recent_widget_registration() {
-  unregister_widget('WP_Widget_Recent_Posts');
+  //unregister_widget('WP_Widget_Recent_Posts');
   register_widget('authorize_recent_posts_widget');
 }
 

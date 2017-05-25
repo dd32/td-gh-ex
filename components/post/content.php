@@ -51,6 +51,7 @@
     <?php
 		if ( !is_archive() ) : ?>
 			<?php get_template_part( 'components/post/content', 'footer' ); ?>
+            
 	<?php
 	endif; ?>
 </article><!-- #post-## -->

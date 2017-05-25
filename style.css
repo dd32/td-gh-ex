@@ -5,7 +5,7 @@ Author: Working Websites
 Author URI: http://workingwebsites.ca
 Description: Authorize is a responsive clean crisp flat design for text based sites.  Ideal for news and other information portal sites.  The layout features three panels on the home page to highlight pages as well as featured posts and pages.  There are two sidebars, one for the home page and another for inside pages, as well as three footer widget areas.
 
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: authorize
@@ -719,11 +719,6 @@ table {
 	color: #989a9e;
 }
 
-/*.main-navigation .children li a{
-	color: #989a9e;
-}
-*/
-
 .main-navigation .current_page_item > a,
 .main-navigation .current_page_parent > a,
 .main-navigation .current_page_ancestor > a,
@@ -877,20 +872,6 @@ table {
 		box-shadow: 2px 2px 2px #f1f1f1;
 	}
 	
-	/*
-	.menu ul.children {
-		float: none;
-		position: relative;
-		left: 0;
-		background: none;
-		border: none;
-		box-shadow: none;
-		display: none;
-		top: 0;
-		padding: 0 .5em 1em;
-	}
-	*/
-	
 	.page_item_has_children:hover > ul.children{
 		display:block;
 	}
@@ -961,6 +942,12 @@ table {
     min-height: 1.5em;
     text-align: right;
     margin-right: 2em;
+}
+
+
+nav.navigation.pagination {
+    text-align: center;
+	font-size: .85em;
 }
 
 /*--------------------------------------------------------------
@@ -1441,6 +1428,7 @@ img.custom-logo {
 --------------------------------------------------------------*/
 .widget-title {
     color: #2d3e5d;
+	line-height: 1em;
 }
 
 .widget-title a{
@@ -1469,11 +1457,11 @@ img.custom-logo {
 
 
 
-.widget_recent_entries{
+.widget_authorize_recent_posts{
 	font-size: .9em;
 }
 
-.widget_recent_entries a{
+.widget_authorize_recent_posts a{
 	color: #152438;
 }
 
@@ -1481,7 +1469,7 @@ img.custom-logo {
 	text-decoration:none;
 }
 
-.widget_recent_entries .widgetImage {
+.widget_authorize_recent_posts .widgetImage{
     width: 34%;
     display: inline-block;
     vertical-align:top;
@@ -1490,14 +1478,14 @@ img.custom-logo {
 	text-align: center;
 }
 
-.widget_recent_entries .widgetContent {
+.widget_authorize_recent_posts .widgetContent {
     display: inline-block;
     width: 64%;
     vertical-align: top;
     padding-left: .75em;
 }
 
-.widget_recent_entries .widgetContent h3 {
+.widget_authorize_recent_posts .widgetContent h3 {
     margin: 0;
     padding: 0;
 	color: #395a88;
@@ -1505,24 +1493,24 @@ img.custom-logo {
 	text-transform: uppercase;
 }
 
-.widget_recent_entries .widgetContent h3 a {
+.widget_authorize_recent_posts .widgetContent h3 a {
     text-decoration:none;
     color: #395a88;
 }
 
-.widget_recent_entries .widgetContent h3 a:hover {
+.widget_authorize_recent_posts .widgetContent h3 a:hover {
     text-decoration:none;
     color: #17273e;
 }
 
-.widget_recent_entries .widgetExcerpt {
+.widget_authorize_recent_posts .widgetExcerpt {
     font-size: 1.em;
     line-height: 1.3em;
     margin-top: 0;
     padding: 0;
 }
 
-.widget_recent_entries .widgetExcerpt p{
+.widget_authorize_recent_posts .widgetExcerpt p{
     margin-top: .25em;
 	margin-bottom: .25em;	
 }
@@ -1915,4 +1903,12 @@ object {
     border-right: 1px solid #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
     box-shadow: 2px 2px 2px #f1f1f1;
+}
+
+/*--------------------------------------------------------------
+# Misc
+--------------------------------------------------------------*/
+.admin_notice{
+	color: #cccccc;	
+	
 }

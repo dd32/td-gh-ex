@@ -286,22 +286,22 @@ function authorize_entrytype_meta_html($object){
               
               	<div>
                 	<input type="radio" name="authorize_entry_type" id="entry_type_write" value="write" <?php echo $Radio1_Checked ?> />
-                	<label for="entry_type_write"><span class="dashicons dashicons-media-document"></span> Article</label>
+                	<label for="entry_type_write"><span class="dashicons dashicons-media-document"></span> <?php echo __( 'Article', 'authorize' ); ?></label>
              	</div>
               
                 <div>
                 	<input type="radio" name="authorize_entry_type" id="entry_type_event" value="event" <?php echo $Radio2_Checked ?> />
-                	<label for="entry_type_event"><span class="dashicons dashicons-calendar-alt"></span> Event</label>
+                	<label for="entry_type_event"><span class="dashicons dashicons-calendar-alt"></span> <?php echo __( 'Event', 'authorize' ); ?></label>
 				</div>
              
                 <div>
                 	<input type="radio" name="authorize_entry_type" id="entry_type_video" value="video" <?php echo $Radio3_Checked ?> />
-                	<label for="entry_type_video"><span class="dashicons dashicons-video-alt2"></span> Video</label>
+                	<label for="entry_type_video"><span class="dashicons dashicons-video-alt2"></span> <?php echo __( 'Video', 'authorize' ); ?></label>
                 </div>
 
                 <div>
                 	<input type="radio" name="authorize_entry_type" id="entry_type_podcast" value="podcast" <?php echo $Radio4_Checked ?> />
-					<label for="entry_type_podcast"><span class="dashicons dashicons-controls-volumeon"></span> Podcast</label>
+					<label for="entry_type_podcast"><span class="dashicons dashicons-controls-volumeon"></span> <?php echo __( 'Podcast', 'authorize' ); ?></label>
                 </div>
 
         </div>
@@ -392,7 +392,7 @@ function authorize_get_homepage_box($ThemeMod = NULL){
 		$arBox['content'] = wpautop($objPost->post_excerpt);
 		$arBox['image'] = get_the_post_thumbnail($ID, 'authorize-home-feature');
 		
-		$arBox['link'] = '<a href="'.get_permalink($ID).'">More</a>';
+		$arBox['link'] = '<a href="'.get_permalink($ID).'">'.__( 'More', 'authorize' ).'</a>';
 	}
 	
 	return $arBox;

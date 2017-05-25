@@ -11,7 +11,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -34,10 +33,8 @@ get_header(); ?>
 				<div class="post-archive shadow-border-grey">
 					<?php get_template_part( 'components/post/content', get_post_format() ); ?>
 				</div>
-
 			<?php endwhile;
 				
-				//get_template_part( 'components/navigation/navigation', 'post' );
 			the_posts_pagination( array(
 				'mid_size' => 2,
 				'prev_text' => __( '&laquo;', 'authorize' ),
@@ -50,7 +47,6 @@ get_header(); ?>
 
         	endif; 
 			?>
-
 		</main>
 	</div>
 <?php

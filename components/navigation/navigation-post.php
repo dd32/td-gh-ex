@@ -1,3 +1,6 @@
-	<?php the_post_navigation(array('prev_text'=> '&laquo; <span class="postnav_title"> %title</span>', 'next_text'=> '<span class="postnav_title">%title</span> &raquo;'));
-?>
+<?php the_posts_pagination( array(
+				'mid_size' => 2,
+				'prev_text' => __( '&laquo;', 'authorize' ),
+				'next_text' => __( '&raquo;', 'authorize' ),
+			) );?> 
 
