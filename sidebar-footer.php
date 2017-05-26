@@ -3,7 +3,7 @@
  * The Footer widget areas
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 ?>
 
@@ -16,12 +16,15 @@
 	 */
 	if (   ! is_active_sidebar( 'footer-1' )
 		&& ! is_active_sidebar( 'footer-2' )
+		&& ! is_active_sidebar( 'footer-3' )
 	)
 		return;
 	// If we get this far, we have widgets. Let do this.
 ?>
 <div id="footer-widget-area" role="complementary">
-	<div class="inner">		
+
+	<div class="inner">
+		
 		
 		<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 			
@@ -37,7 +40,17 @@
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				</div><!-- #second .widget-area -->
 			
-		<?php endif; ?>	
+		<?php endif; ?>
+
+		<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
+			
+				<div id="third-footer-widget" class="widget-area footer-widget">
+					<?php dynamic_sidebar( 'footer-3' ); ?>
+				</div><!-- #third .widget-area -->
+			
+		<?php endif; ?>
+		
+
+	</div><!-- .inner -->
 	
-	</div><!-- #footer-widget-area -->
-</div><!-- .inner -->
+</div><!-- #footer-widget-area -->

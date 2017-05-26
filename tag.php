@@ -5,20 +5,17 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 
-// $aguafuerte_theme_options = aguafuerte_get_options( 'aguafuerte_theme_options' );
 get_header(); ?>
 
 <div class="inner">
     <div id="main-content">
-        <div id="posts" class="posts">
        <?php if ( have_posts() ) : ?>
 
             <header class="archive-header">
-                <?php // Translators: there is a space after "about".?>
-                <h1 class="archive-title"><?php printf( __( 'All articles about %s', 'aguafuerte' ), ucfirst( single_tag_title( '', false )) ); ?></h1>
+                <h1 class="archive-title"><?php printf( __( 'All articles about', 'aguafuerte' ).' %s', ucfirst( single_tag_title( '', false )) ); ?></h1>
 
                 <?php
                     // Show an optional term description.
@@ -42,7 +39,7 @@ get_header(); ?>
 
                     endwhile;
                     // Previous/next page navigation.
-                    //aguafuerte_paging_nav();
+                    aguafuerte_blog_navigation();
 
                 else :
                     // If no content, include the "No posts found" template.
@@ -50,15 +47,12 @@ get_header(); ?>
 
                 endif;
             ?>
-        <div class="clearfix"></div>
-        
-        </div><!--/posts-->
+
     </div><!--/main-content-->
     <?php get_sidebar('sidebar'); ?>  
     
 
 </div><!--/inner-->
 
-<div class="clearfix"></div>
 <?php get_footer(); ?>
 

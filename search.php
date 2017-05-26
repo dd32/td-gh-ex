@@ -5,19 +5,17 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 
-// $aguafuerte_theme_options = aguafuerte_get_options( 'aguafuerte_theme_options' );
 get_header(); ?>
 
 <div class="inner">
     <div id="main-content">
-        <div id="posts" class="posts">
         <?php if ( have_posts() ) : ?>
 
             <header class="page-header">
-                <h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'aguafuerte' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+                <h2 class="page-title"><?php printf( __( 'Search Results for:', 'aguafuerte' ).' %s', '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
             </header><!-- .page-header -->
 
             <?php
@@ -35,28 +33,18 @@ get_header(); ?>
             endwhile;
 
             // Previous/next page navigation.
-            the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'aguafuerte' ),
-                'next_text'          => __( 'Next page', 'aguafuerte' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aguafuerte' ) . ' </span>',
-            ) );
+            aguafuerte_blog_navigation();
 
         // If no content, include the "No posts found" template.
         else :
             get_template_part( 'template-parts/content', 'none' );
 
-        endif;
-        ?>
-        <div class="clearfix"></div>
-        
-        </div><!--/posts-->
-    </div><!--/main-content-->
+        endif; ?>
+        </div><!--/main-content-->
     <?php get_sidebar('sidebar'); ?>  
     
 
 </div><!--/inner-->
 
-
-<div class="clearfix"></div>
 <?php get_footer(); ?>
 

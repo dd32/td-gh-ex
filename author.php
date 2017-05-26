@@ -5,14 +5,13 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 
 get_header(); ?>
 
 <div class="inner" >
-	<div id="main-content" >
-		
+	<div id="main-content" >		
 
 			<?php
 			if ( '' != get_the_author_meta( 'description' ) ) {
@@ -33,9 +32,7 @@ get_header(); ?>
 				the_post();
 			?>
 
-		<h3><?php printf( __( 'All articles by %s', 'aguafuerte' ), get_the_author() ); ?></h3>
-
-		<div id="posts" class="posts">
+		<h1 class"archive-title"><?php printf( __( 'All articles by', 'aguafuerte' ).' %s', get_the_author() ); ?></h1>
 
 		<?php
 			/*
@@ -47,17 +44,20 @@ get_header(); ?>
 
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
-
 				/*
 				 * Include the post format-specific template for the content. If you want to
 				 * use this in a child theme, then include a file called called content-___.php
 				 * (where ___ is the post format) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				if ( ! get_post_format() ):
+					get_template_part( 'template-parts/content', 'article-1-left' );
+				else:
+					get_template_part( 'template-parts/content', get_post_format() );
+				endif;
 
 			endwhile;
 			// Previous/next page navigation.
-			//aguafuerte_paging_nav();
+			aguafuerte_blog_navigation();
 
 		else :
 			// If no content, include the "No posts found" template.
@@ -66,11 +66,8 @@ get_header(); ?>
 		endif;
 		?>		
 
-		<div class="clearfix"></div>
-		</div><!--/posts-->
 	</div><!--/main-content-->
     	<?php get_sidebar('sidebar'); ?>  
 </div><!--/inner-->
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>

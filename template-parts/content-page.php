@@ -3,20 +3,22 @@
  * The template used for displaying page content
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.6
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Post thumbnail.
-		//aguafuerte_post_thumbnail();
-	?>
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php edit_post_link( __( 'Edit', 'aguafuerte' ), '<span class="entry-meta"><span class="edit-link">', '</span></span>' ); ?>
+		<?php edit_post_link('<span class="genericon genericon-edit" aria-hidden="true"></span>'. __('Edit', 'aguafuerte'), '<span class="entry-meta">', '</span>' ); ?>
 	</header><!-- .entry-header -->
+
+<?php if ( has_post_thumbnail() ) : ?>
+		<div class="page-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- .page-thumbnail -->
+<?php endif; ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -30,8 +32,8 @@
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'aguafuerte' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
+
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

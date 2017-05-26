@@ -26,12 +26,12 @@
 			endif;
 
 		endif; ?>
+
 	<div class="post-format-inner">
 	<?php aguafuerte_entry_header(); ?>
 		<div class="entry-content">
-		<?php the_content(); ?>
+			<?php the_content(); ?>
 		</div><!-- .entry-content -->
-	<?php aguafuerte_entry_footer(); ?>	
-	</div><!-- post-format-inner -->
-
+	<?php aguafuerte_entry_footer(); ?>
+	</div>	
 </article><!-- #post-## -->

@@ -5,7 +5,7 @@
  * Description: A page template without sidebar. It has full width if there is not a sidebar, but only a third of the width if there are sidebars.
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 
 get_header(); ?>
@@ -29,6 +29,5 @@ get_header(); ?>
 	        
 	</div><!--/inner-->
 
-<div class="clearfix"></div>
 <?php //get_sidebar( 'front' ); ?>
 <?php get_footer(); ?>

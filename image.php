@@ -5,12 +5,10 @@
 * @link https://codex.wordpress.org/Template_Hierarchy
 *
 * @package Aguafuerte
-* @since Aguafuerte 1.0.1
+* @since Aguafuerte 1.0.6
 */
 
-// $aguafuerte_theme_options = aguafuerte_get_options( 'aguafuerte_theme_options' );
 get_header(); ?>
-
 <div class="inner">
     <div id="main-content">
 
@@ -19,53 +17,53 @@ get_header(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
             <header class="entry-header">
-                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>            
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>  
 
                 <div class="entry-meta">
-                    <span class="attachment-meta">
+                    <?php 
+                    $post_title = get_the_title( $post->post_parent );
 
-                        <?php 
-                        $post_title = get_the_title( $post->post_parent );
+                    if ( empty( $post_title ) || 0 == $post->post_parent )
+                        printf('<span class="genericon genericon-time" aria-hidden="true"></span><time class="entry-date" datetime="%1$s">%2$s</time>', esc_attr( get_the_date('c')), esc_html(get_the_date()));
 
-                        if ( empty( $post_title ) || 0 == $post->post_parent )
-                            printf('<time class="entry-date" datetime="%1$s">%2$s</time>', esc_attr( get_the_date('c')), esc_html(get_the_date()));
+                    else {
 
-                        else {
+                    // Translators: There is a space after "on".
+                    _e('Published on ','aguafuerte');
+                    printf('<a href="%1$s" class="entry-date" rel="bookmark"><span class="genericon genericon-time" aria-hidden="true"></span><time datetime="%2$s">%3$s</time></a>',
+                        esc_url( get_day_link(get_the_date('Y', $post->ID),get_the_date('m', $post->ID),get_the_date('d', $post->ID)) ),
+                        esc_attr( get_the_date('c')),
+                        esc_html(get_the_date()));
 
-                        // Translators: There is a space after "on".
-                        _e('Published on ','aguafuerte');
-                        printf('<time class="entry-date" datetime="%1$s">%2$s</time>', esc_attr( get_the_date('c')), esc_html(get_the_date()));
+                    // Translators: There is a space before and after "in".
+                    _e( ' in ', 'aguafuerte');
 
-                        // Translators: There is a space before and after "in".
-                        _e( ' in ', 'aguafuerte');
+                    printf('<a href="%1$s" class="parent-post-link" title="'.__('Return to:', 'aguafuerte').' %2$s" rel="gallery"><span class="genericon genericon-image" aria-hidden="true"></span>%3$s</a>',
+                        esc_url(get_permalink($post->post_parent)),
+                        esc_attr( strip_tags($post_title)),
+                        $post_title
+                        );
+                    }
 
-                        printf('<a href="%1$s" title="'.__('Return to:', 'aguafuerte').' %2$s" rel="gallery">%3$s</a>',
-                            esc_url(get_permalink($post->post_parent)),
-                            esc_attr( strip_tags($post_title)),
-                            $post_title
-                            );
-                        }                            
+                    $metadata = wp_get_attachment_metadata();
+                    printf( '<a href="%1$s" class="full-size-link" title="%2$s"><span class="genericon genericon-zoom" aria-hidden="true"></span>%3$s (%4$s &times; %5$s)</a>',
+                        esc_url( wp_get_attachment_url() ),
+                        esc_attr__( 'Link to full-size image', 'aguafuerte' ),
+                        __( 'Full resolution', 'aguafuerte' ),
+                        $metadata['width'],
+                        $metadata['height']
+                    );
 
-                            $metadata = wp_get_attachment_metadata();
-                            printf( '<span class="attachment-meta full-size-link"><a href="%1$s" title="%2$s">%3$s (%4$s &times; %5$s)</a></span>',
-                                esc_url( wp_get_attachment_url() ),
-                                esc_attr__( 'Link to full-size image', 'aguafuerte' ),
-                                __( 'Full resolution', 'aguafuerte' ),
-                                $metadata['width'],
-                                $metadata['height']
-                            );
-
-                            edit_post_link( __( 'Edit', 'aguafuerte' ), '<span class="edit-link">', '</span>' );
-                        ?>
-                    </span>
+                        edit_post_link('<span class="genericon genericon-edit" aria-hidden="true"></span>'. __('Edit', 'aguafuerte') );
+                    ?>
                 </div><!-- .entry-meta -->
             </header><!-- .entry-header -->                               
 
             <div class="entry-content">
                 <nav id="image-navigation" class="navigation image-navigation">
                     <div class="nav-links">
-                        <div class="nav-previous"><?php previous_image_link(false, '&larr;&nbsp; '.__('Previous', 'aguafuerte' ) ); ?></div>
-                        <div class="nav-next"><?php next_image_link( false, __( 'Next', 'aguafuerte' ).' &nbsp; &rarr;' ); ?></div>
+                        <div class="nav-previous"><?php previous_image_link(false, '<span class="genericon genericon-previous"></span> '.__('Previous', 'aguafuerte' ) ); ?></div>
+                        <div class="nav-next"><?php next_image_link( false, __( 'Next', 'aguafuerte' ).' <span class="genericon genericon-next"></span>' ); ?></div>
                     </div><!-- .nav-links -->
                 </nav><!-- .image-navigation -->
 
@@ -73,7 +71,7 @@ get_header(); ?>
                     <?php
                         /**
                          * Filter the default Aguafuerte image attachment size.
-                         * @since Aguafuerte 1.01
+                         * @since Aguafuerte
                          * @param string $image_size Image size. Default 'large'.
                          */
                         $image_size = apply_filters( 'aguafuerte_attachment_size', 'large');
@@ -97,13 +95,11 @@ get_header(); ?>
                         'link_after'  => '</span>',
                         'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'aguafuerte' ) . ' </span>%',
                         'separator'   => '<span class="screen-reader-text">, </span>',
-                    ) );
-                ?>
+                    ) ); ?>
         
             </div><!-- .entry-content -->
 
         </article><!-- #post-## -->
-
         
         <?php endwhile; ?>   
     </div><!--/main-content-->

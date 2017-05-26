@@ -5,7 +5,7 @@
  * Description: This template can be used as blog posts page when using a static front page if a blog page without sidebars is preferred.
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 
 get_header(); ?>
@@ -43,15 +43,10 @@ get_header(); ?>
 
             endif;
         ?>
-
-       
-        <div class="clearfix"></div>
-        
+            
     </div><!--/main-content-->    
 
 </div><!--/inner-->
-
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>
 

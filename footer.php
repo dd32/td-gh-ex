@@ -5,7 +5,7 @@
  * Contains footer content and the closing of the #main and #container div elements.
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 ?>
 
@@ -17,8 +17,8 @@
 <footer id="page-footer">
     <div class="inner">
         <div id="site-info">
-        <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-        <a href="<?php echo esc_url('https://wordpress.org/' ); ?>"><?php printf( __( 'Proudly powered by %s', 'aguafuerte' ), 'WordPress' ); ?></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <a href="<?php echo esc_url('https://wordpress.org/' ); ?>"><?php echo __( 'Proudly powered by WordPress', 'aguafuerte' ) ; ?></a>
         </div><!--/site-info--> 
         <?php if (has_nav_menu('social')): ?>
             <div id="social" class="social-navigation">
@@ -26,6 +26,7 @@
                                 'theme_location' => 'social',
                                 'container' => 'false',
                                 'menu_id' => 'social-menu',
+                                'depth'          => 1,
                                 'link_before'    => '<span class="screen-reader-text">',
                                 'link_after'     => '</span>', )); ?>
             </div> <!--/social--> 

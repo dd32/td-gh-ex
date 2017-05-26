@@ -3,7 +3,7 @@
  * The template part for displaying a message that posts cannot be found
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 ?>
 

@@ -21,24 +21,16 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package Aguafuerte
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
 *
  * @uses aguafuerte_header_style() to style front-end.
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since Aguafuerte 1.0.1
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 660;
-}
 
 /**
- * Aguafuerte only works in WordPress 4.4 or later.
+ * Aguafuerte only works in WordPress 4.6 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.4', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
@@ -50,7 +42,7 @@ if ( ! function_exists( 'aguafuerte_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 function aguafuerte_setup() {
 	/*
@@ -61,10 +53,26 @@ function aguafuerte_setup() {
 	 */
 	load_theme_textdomain( 'aguafuerte', get_template_directory() . '/languages' );
 
-	// Add theme support for Custom Header
-	add_theme_support( 'custom-header', array ('default-text-color' => '220e10','width' => 1920, 'height' => 300, 'wp-head-callback' => 'aguafuerte_header_style',) );
+	// Add theme support for Custom Header.
+	add_theme_support( 'custom-header', array(
+		'default-text-color' => '9f0000',
+		'width' => 1920,
+		'height' => 300,
+		'wp-head-callback' => 'aguafuerte_header_style',
+		) );
+
 	// Add theme support for Custom Background
-	add_theme_support( 'custom-background' );
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'fdffff',
+		) );
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 100,
+		'height'      => 25,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array ( 'site-title', 'site-description' ),
+		) );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -83,12 +91,12 @@ function aguafuerte_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 825, 510, true );
+	set_post_thumbnail_size( 960, 540, true );
+	
 
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu',      'aguafuerte' ),
-		'secondary' => __( 'Secondary Menu',   'aguafuerte' ),
 		'social'  => __( 'Social Links Menu', 'aguafuerte' ),
 	) );
 
@@ -100,7 +108,6 @@ function aguafuerte_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
-
 	/*
 	 * Enable support for Post Formats.
 	 *
@@ -111,6 +118,11 @@ function aguafuerte_setup() {
 	) );
 
 	/*
+	 * Add support for selective refresh of widget sidebars in the Customizer.
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
@@ -119,93 +131,32 @@ function aguafuerte_setup() {
 endif; // aguafuerte_setup
 add_action( 'after_setup_theme', 'aguafuerte_setup' );
 
-
-function aguafuerte_header_style() {
-	$header_image = get_header_image();
-	$text_color   = get_header_textcolor();
-
-	// If no custom options for text are set, let's bail.
-	if ( empty( $header_image ) && $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
-		return;
-
-	// If we get this far, we have custom styles.
-	?>
-	<style type="text/css" id="aguafuerte-header-css">
-	<?php
-		if ( ! empty( $header_image ) ) :
-	?>
-		.site-header {
-			background: url(<?php header_image(); ?>) no-repeat scroll top;
-			background-size: 1920px auto;
-		}
-		@media (max-width: 767px) {
-			.site-header {
-				background-size: 768px auto;
-			}
-		}
-		@media (max-width: 359px) {
-			.site-header {
-				background-size: 360px auto;
-			}
-		}
-	<?php
-		endif;
-
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px 1px 1px 1px); /* IE7 */
-			clip: rect(1px, 1px, 1px, 1px);
-		}
-	<?php
-			if ( empty( $header_image ) ) :
-	?>
-		.site-header .home-link {
-			min-height: 0;
-		}
-	<?php
-			endif;
-
-		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
-		.site-title,
-		.site-description {
-			color: #<?php echo esc_attr( $text_color ); ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php
+/**
+ * Sets the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ *
+ * @since Aguafuerte 1.0.2
+ */
+function aguafuerte_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aguafuerte_content_width', 825 );
 }
-
+add_action( 'after_setup_theme', 'aguafuerte_content_width', 0 );
 
 /**
  * Register widget area.
  *
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function aguafuerte_widgets_init() {
-	require get_template_directory() . '/inc/widgets.php';
-	register_widget( 'Aguafuerte_Image_Widget' );
-
 	register_sidebar( array(
-		'name'          => __( 'First Sidebar Area', 'aguafuerte' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Sidebar Area', 'aguafuerte' ),
+		'id'            => 'sidebar',
 		'description'   => __( 'Add widgets here to appear in your first sidebar.', 'aguafuerte' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Second Sidebar Area', 'aguafuerte' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Add widgets here to appear in your second sidebar.', 'aguafuerte' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -214,7 +165,7 @@ function aguafuerte_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'First Footer Area', 'aguafuerte' ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your first footer.', 'aguafuerte' ),
+		'description'   => __( 'Add widgets here to appear in your first footer area.', 'aguafuerte' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -223,7 +174,16 @@ function aguafuerte_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Second Footer Area', 'aguafuerte' ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your second footer.', 'aguafuerte' ),
+		'description'   => __( 'Add widgets here to appear in your second footer area.', 'aguafuerte' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Third Footer Area', 'aguafuerte' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Add widgets here to appear in your third footer area.', 'aguafuerte' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -236,7 +196,7 @@ if ( ! function_exists( 'aguafuerte_fonts_url' ) ) :
 /**
  * Register Google fonts for Aguafuerte.
  *
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  *
  * @return string Google fonts URL for the theme.
  */
@@ -295,14 +255,6 @@ function aguafuerte_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Lobster Two, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Lobster Two font: on or off', 'aguafuerte' ) ) {
-		$fonts[] = 'Lobster Two:400';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
 	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'aguafuerte' ) ) {
@@ -339,7 +291,7 @@ endif;
 /**
  * Enqueue scripts and styles for the front end.
  *
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  */
 function aguafuerte_scripts() {
 	// Add custom fonts, used in the main stylesheet.
@@ -369,7 +321,7 @@ add_action( 'wp_enqueue_scripts', 'aguafuerte_scripts' );
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since Aguafuerte 1.0.1
+ * @since Aguafuerte 1.0.2
  *
  * @param array $classes Classes for the body element.
  * @return array (Maybe) filtered body classes.
@@ -386,7 +338,7 @@ function aguafuerte_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar to sites without active sidebar.
-	if ( ! is_active_sidebar( 'sidebar-1' )  && ! is_active_sidebar( 'sidebar-2') ) {
+	if ( ! is_active_sidebar( 'sidebar' ) ) {
 		$classes[] = 'no-sidebar';
 	}
 
@@ -395,23 +347,34 @@ function aguafuerte_body_classes( $classes ) {
 add_filter( 'body_class', 'aguafuerte_body_classes' );
 
 /**
-* Adds custom images sizes to the selection of image sizes.
-*/
-add_image_size('logo-size', 100, 40, true);
+ * Adds custom classes to the array of post classes.
+ *
+ * @since Aguafuerte 1.0.2
+ *
+ * @param array $classes Classes for the post element.
+ * @return array (Maybe) filtered post classes.
+ */
+function aguafuerte_post_classes( $classes ) {
+	// Adds a class of post-format to post with special formats (chat, aside, etc).
+	if ( get_post_format() ) {
+		$classes[] = 'post-format';
+	}
 
-function my_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'logo-size' => __( 'Logo Size', 'aguafuerte' ),
-    ) );
+	if ( post_password_required() ) {
+		$classes[] = 'has-post-thumbnail';
+	}
+
+	return $classes;
 }
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
-
-
-	
+add_filter( 'post_class', 'aguafuerte_post_classes' );	
 
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/aguafuerte-customizer.php';
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/custom-header.php';
 
