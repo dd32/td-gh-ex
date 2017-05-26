@@ -5,6 +5,11 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+
+@Version: 3.0 [26-05-2017]
+Minor changes
+
+
 @Version: 2.9 [27-04-2017]
 1. Extra Section for Child-Theme.
 2. Coupon Code added.
