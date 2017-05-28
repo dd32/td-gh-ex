@@ -5,7 +5,7 @@ Author: Webempresa
 Author URI: https://webempresa.com
 Description: Blog WordPress Theme
 Adaptativo a beautiful responsive themes. It's a simple and elegant theme built on HTML5 & CSS3. It incorporates custom Theme Options that are easy to modify, Font Awesome icons font and grid columns.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adaptativo
@@ -19,6 +19,28 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Normalize
@@ -952,43 +974,59 @@ body {
   font-family: "Raleway", sans-serif;
   background-color: #F2F2F2; }
 
+h1 {
+  font-size: 2.4em; }
+
+h2 {
+  font-size: 2.2em; }
+
+h3 {
+  font-size: 2em;
+  margin: 0; }
+
+h4 {
+  font-size: 1.8em;
+  margin: 0; }
+
+h5 {
+  font-size: 1.6em;
+  margin: 0; }
+
+h6 {
+  font-size: 1.4em;
+  margin: 0; }
+
 .container {
   max-width: 1240px;
   min-width: 360px; }
 
 a, a:visited {
-  color: #ffcc00; }
+  color: #cca300; }
 
 .rounded {
   border-radius: 50%; }
 
+blockquote, q {
+  font-family: Georgia, serif; }
+
 blockquote {
-  font-family: Georgia, serif;
-  font-size: 1.2em;
-  font-style: italic;
+  position: relative;
   margin: 0.25em 0;
-  padding: 0.35em 40px;
-  line-height: 1.45;
-  position: relative; }
+  padding-left: 10px; }
 
 blockquote:before {
   display: block;
   padding-left: 10px;
   content: "\201C";
-  font-size: 80px;
+  font-size: 40px;
   position: absolute;
   left: -20px;
   top: -20px;
   color: #7a7a7a; }
 
-blockquote cite {
-  color: #999;
-  font-size: 14px;
-  display: block;
-  margin-top: 5px; }
-
-blockquote cite:before {
-  content: "\2014 \2009"; }
+cite {
+  font-size: .9em;
+  color: #999; }
 
 input[type="button"],
 input[type="reset"],
@@ -1054,7 +1092,8 @@ textarea {
     width: 100%;
     display: block;
     color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #555; }
 
 .site-description {
   margin: auto;
@@ -1062,7 +1101,8 @@ textarea {
   text-align: center;
   font-weight: 300;
   font-size: 1em;
-  color: white; }
+  color: white;
+  text-shadow: 1px 1px 2px #555; }
 
 header.site-header {
   padding-bottom: 80px;
@@ -1082,7 +1122,8 @@ header.site-header {
   .home-header-bottom h3,
   .home-header-bottom h4 {
     font-family: "Raleway", sans-serif;
-    font-size: 1.8em; }
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px #555; }
   .header-bottom h3, .header-bottom h4,
   .home-header-bottom h3,
   .home-header-bottom h4 {
@@ -1203,7 +1244,8 @@ aside .textwidget a {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1em;
-    color: white; }
+    color: white;
+    text-shadow: 1px 1px 2px #555; }
     .main-navigation .nav-menu > li > a:hover {
       color: #ffcc00; }
 
@@ -1224,6 +1266,17 @@ aside .textwidget a {
   clear: both;
   background-color: #EAEAEA;
   color: #5c5c5c; }
+  .content-top a,
+  .home-content-top a,
+  .content-bottom a,
+  .home-content-bottom a {
+    color: #5c5c5c;
+    text-decoration: underline; }
+    .content-top a:hover,
+    .home-content-top a:hover,
+    .content-bottom a:hover,
+    .home-content-bottom a:hover {
+      color: #1D1D1D; }
   .content-top section,
   .home-content-top section,
   .content-bottom section,
@@ -1270,6 +1323,13 @@ aside .textwidget a {
 .comments-area {
   padding: 20px;
   border: 1px solid #e3e3e3; }
+  .comments-area .comment-respond {
+    margin-top: 20px; }
+  .comments-area .comments-title,
+  .comments-area .comment-reply-title {
+    font-size: 1.6em; }
+  .comments-area .comment-reply-title {
+    margin-bottom: 10px; }
   .comments-area ul.comment-list,
   .comments-area ul.children {
     margin-left: 0;
@@ -1302,7 +1362,8 @@ aside .textwidget a {
           color: #ffcc00; }
       .comments-area .comment-body .reply .fa-reply,
       .comments-area .comment-body .commentmetadata .fa-reply {
-        color: #999; }
+        color: #999;
+        font-size: 12px; }
   .comments-area .comment-form {
     padding: 20px;
     background-color: #f0f0f0; }
@@ -1326,20 +1387,24 @@ aside .textwidget a {
     padding: 8px;
     display: inline-block;
     width: 40px;
-    text-decoration: none;
-    border: 1px solid #f0f0f0; }
+    border: 1px solid #f0f0f0;
+    color: #5c5c5c;
+    text-decoration: none; }
+    .navigation .page-numbers.current {
+      color: #999;
+      background-color: #f0f0f0; }
   .navigation a.page-numbers:hover {
     color: white;
     background-color: #ffcc00; }
 
+.site-main h1.page-title,
 .site-main h1.entry-title {
-  font-size: 2.6em;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  margin: 0.67em 0; }
 
 .site-main .entry-title a {
   text-decoration: none;
   color: #5c5c5c;
-  font-size: 1.8em;
   line-height: 1.2em; }
   .site-main .entry-title a:hover {
     color: #ffcc00; }
@@ -1383,12 +1448,7 @@ aside .textwidget a {
   text-decoration: none;
   text-transform: uppercase;
   font-family: "Helvetica", sans-serif;
-  font-size: .8em;
-  border: 1px solid #bfbfbf;
-  color: #b3b3b3; }
-  .site-main .more-link:hover {
-    background-color: #5c5c5c;
-    color: white; }
+  font-size: .8em; }
 
 .site-main .edit-link {
   display: block; }
@@ -1431,9 +1491,6 @@ aside .textwidget a {
   min-height: 400px; }
   .site-main.home-site article:nth-child(3n) {
     margin-right: 0; }
-  .site-main.home-site article:hover .wrap-article-home .entry-content {
-    max-height: 200px;
-    transition: max-height 0.25s ease-in; }
   .site-main.home-site article .wrap-article-home {
     display: block;
     position: absolute;
@@ -1446,15 +1503,23 @@ aside .textwidget a {
     overflow: hidden; }
     .site-main.home-site article .wrap-article-home .entry-content {
       overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.15s ease-out; }
-  .site-main.home-site article .entry-title {
-    margin-top: 0;
-    margin-bottom: 5px;
-    line-height: 1.2em; }
-    .site-main.home-site article .entry-title a {
-      font-size: 1.2em;
-      color: white; }
+      max-height: 0; }
+  .site-main.home-site article .wrap-article-home-text {
+    display: block;
+    padding: 15px;
+    background-color: #eeb120;
+    text-decoration: none;
+    color: white; }
+  .site-main.home-site article a {
+    color: white;
+    text-decoration: none; }
+    .site-main.home-site article a .entry-title {
+      margin-top: 0;
+      margin-bottom: 12px;
+      line-height: 1.2em;
+      font-size: 24px; }
+    .site-main.home-site article a:hover {
+      text-decoration: underline; }
   .site-main.home-site article .entry-content {
     margin-top: 12px;
     color: #5c5c5c; }
@@ -1541,9 +1606,10 @@ aside.widget-area {
 footer.site-footer {
   background-color: #1D1D1D;
   padding: 100px 20px 20px;
-  font-size: .9em; }
+  font-size: .9em;
+  color: #f0f0f0; }
   footer.site-footer a {
-    color: #5c5c5c;
+    color: #f0f0f0;
     text-decoration: none; }
     footer.site-footer a:hover {
       color: #ffcc00; }
@@ -1554,7 +1620,7 @@ footer.site-footer {
     footer.site-footer .menu li {
       display: inline-block; }
       footer.site-footer .menu li a {
-        color: #999; }
+        color: #f0f0f0; }
         footer.site-footer .menu li a:hover {
           color: #ffcc00; }
       footer.site-footer .menu li ul {
@@ -1636,7 +1702,8 @@ footer.site-footer {
       border: none; }
     .main-navigation .nav-menu > li > a {
       display: block;
-      color: #999; }
+      color: #999;
+      text-shadow: none; }
   .main-navigation li ul {
     position: static;
     box-shadow: none;

@@ -16,45 +16,66 @@ $img_background = "";
 if ( has_post_thumbnail()  ){
   $thumbnail = get_the_post_thumbnail_url( null, 'adaptativo_img_home' );
   $img_background = ' style="background-image:url('.$thumbnail.')"';
+  $img_linkclass = 'wrap-article-home';
+}
+else{
+  $img_linkclass = 'wrap-article-home-text';
 }
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo $img_background; ?> >
 
-  <a class="wrap-article-home" href="<?php echo esc_url( get_permalink() ); ?>"  >
-
+  <div class="<?php echo $img_linkclass; ?>" >
 
 
     	<header class="entry-header">
-    		<?php
-    		if ( is_single() ) :
-    			the_title( '<h1 class="entry-title">', '</h1>' );
-    		else :
-    			the_title( '<h2 class="entry-title">', '</h2>' );
-    		endif;
 
-    		if ( 'post' === get_post_type() ) : ?>
-    		<div class="entry-meta">
-    			<?php adaptativo_posted_on_home(); ?>
-    		</div><!-- .entry-meta -->
-    		<?php
-    		endif; ?>
+        <a href="<?php echo esc_url( get_permalink() ); ?>" >
+      		<?php
+        		if ( is_single() ) :
+        			the_title( '<h1 class="entry-title">', '</h1>' );
+        		else :
+        			the_title( '<h2 class="entry-title">', '</h2>' );
+        		endif;
+          ?>
+        </a>
+
+        <?php
+      		if ( 'post' === get_post_type() ) : ?>
+      		<div class="entry-meta">
+      			<?php adaptativo_posted_on_home(); ?>
+      		</div><!-- .entry-meta -->
+      		<?php
+      		endif;
+        ?>
+
     	</header><!-- .entry-header -->
 
-    	<div class="entry-content">
-    		<?php
+      <?php if ( empty($img_background) ): // only text?>
 
-          the_excerpt_max_charlength(140);
+         <div class="entry-content">
+    		 <?php
 
-    			wp_link_pages( array(
-    				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'adaptativo' ),
-    				'after'  => '</div>',
-    			) );
+
+         if( strpos( $post->post_content, '<!--more-->' ) ) {
+             echo get_the_excerpt().' [...]';
+         }
+         else {
+             the_excerpt();
+         }
+
+      			// wp_link_pages( array(
+      			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'adaptativo' ),
+      			// 	'after'  => '</div>',
+      			// ) );
+
     		?>
     	</div><!-- .entry-content -->
 
+    <?php endif; //only text ?>
 
-  </a><!-- wrap-article-home -->
+
+  </div><!-- wrap-article-home -->
 
 </article><!-- #post-## -->

@@ -19,7 +19,7 @@
 function adaptativo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'adaptativo_custom_header_args', array(
 		'default-image'          => get_template_directory_uri().'/img/background-header.jpg',
-		'default-text-color'     => '#ff0000',
+		'default-text-color'     => '#fff',
 		'wp-head-callback'       => 'adaptativo_header_style',
 	) ) );
 }
