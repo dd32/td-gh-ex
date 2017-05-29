@@ -20,10 +20,12 @@
         // the element we really care about
         // is the dropdown-toggle's parent
         $allDropdowns = $allDropdowns.add(this.parent());
-		jQuery('ul.nav li.dropdown a').click(function(e) {
+		if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			jQuery('ul.nav li.dropdown a').click(function(e) {
 				e.preventDefault();
 				window.location.href = jQuery(this).attr('href');
-		 });
+			});
+		}
         return this.each(function () {
             var $this = $(this),
                 $parent = $this.parent(),

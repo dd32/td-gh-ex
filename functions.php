@@ -263,7 +263,11 @@ function awada_breadcrumbs()
     echo '<ul class="breadcrumb pull-right">';
     global $post;
     $homeLink = home_url();
-    echo '<li><a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
+    if(is_front_page()){
+    echo '<li><a href="' . $homeLink . '">' . $home . '</a>';	
+	} else {
+	echo '<li><a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;	
+	}
     if (is_category()) {
         global $wp_query;
         $cat_obj = $wp_query->get_queried_object();
@@ -334,6 +338,8 @@ function awada_breadcrumbs()
         echo $before . _e("Articles posted by: ", 'awada') . $userdata->display_name . $after;
     } elseif (is_404()) {
         echo $before . _e("Error 404 ", 'awada') . $after;
+    } elseif (single_post_title()) {
+        echo $before . single_post_title() . $after;
     }
     echo '</ul>';
 }
@@ -389,7 +395,6 @@ function awada_enqueue_style()
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl-carousel.css');
 	wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
-	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.css');
 	//Slider
 	wp_enqueue_style('slider-style', get_template_directory_uri() . '/css/slider/slider-style.css');
 	wp_enqueue_style('custom.css', get_template_directory_uri() . '/css/slider/custom.css');
@@ -403,6 +408,7 @@ add_action('wp_footer', 'awada_enqueue_in_footer');
 function awada_enqueue_in_footer()
 {	
 	$awada_theme_options = awada_theme_options();
+	wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.js');
     wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js');
 	wp_enqueue_script('owl.carousel.min', get_template_directory_uri() . '/js/owl.carousel.js');
@@ -414,6 +420,7 @@ function awada_enqueue_in_footer()
 	
 	wp_enqueue_script('jquery.prettyPhoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js');
 	wp_enqueue_script('jquery.fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js');
+	wp_enqueue_script('jquery.mb.YTPlayer', get_template_directory_uri() . '/js/jquery.mb.YTPlayer.js', array('jquery'));
 	wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js');
 	if(class_exists('WooCommerce')){
 		if(is_shop() || is_cart() || is_product() || is_checkout() || is_product_category()){

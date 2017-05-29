@@ -1,8 +1,12 @@
 (function($) {
  "use strict"
 	$("body").fitVids();
+
+	jQuery(function(){
+		jQuery("#P1").YTPlayer();
+	});
 	
-	$("#services").owlCarousel({
+	jQuery("#services").owlCarousel({
 		items : 3,
 		lazyLoad : true,
 		navigation : false,

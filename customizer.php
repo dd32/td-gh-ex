@@ -1,4 +1,5 @@
 <?php
+$banner_img = get_template_directory_uri() . '/images/banner.jpg';
 function awada_customizer_preview_js()
 {
     wp_enqueue_script('custom_css_preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview', 'jquery'));
@@ -814,7 +815,52 @@ Kirki::add_section('callout_sec', array(
     'priority'   => 160,
     'capability' => 'edit_theme_options',
 ));
-
+Kirki::add_field('awada_theme', array(
+    'settings' => 'callout_bg_image',
+    'label' => __('Banner Background Image', 'awada'),
+    'section' => 'callout_sec',
+    'type' => 'image',
+    'priority' => 10,
+    'transport' => 'postMessage',
+    'default' => $banner_img,
+    'sanitize_callback' => 'esc_url_raw',
+	'partial_refresh' => array(
+		'callout_bg_image' => array(
+			'selector'        => '#awada_video',
+			'container_inclusive' => true,
+			'render_callback' => function(){
+				get_template_part('home-callout');
+			}
+		)
+	),
+));
+Kirki::add_field('awada_theme', array(
+    'settings' => 'callout_external_bg_video',
+    'label' => __('Or, enter a YouTube URL:', 'awada'),
+    'section' => 'callout_sec',
+    'type' => 'text',
+    'priority' => 10,
+    'transport' => 'postMessage',
+    'default' => esc_url('https://www.youtube.com/watch?v=jnLSYfObARA'),
+    'sanitize_callback' => 'esc_url_raw',
+	'partial_refresh' => array(
+		'callout_external_bg_video' => array(
+			'selector'        => '#awada_video',
+			'container_inclusive' => true,
+			'render_callback' => function(){
+				get_template_part('home-callout');
+			}
+		)
+	),
+));
+Kirki::add_field('awada_theme', array(
+    'settings' => 'callout_bg_video_opt',
+    'section' => 'callout_sec',
+    'type' => 'custom',
+    'priority' => 10,
+    'default'     => '<div style="padding: 30px;background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'In Pro Version you can control auto play, audio, and video overlay effect like opacity, brightness, contrast, blur, sepia, gray scale etc.', 'awada' ) . '</div>',
+    'sanitize_callback' => 'esc_url_raw',
+));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_callout_title',
     'label'             => __('Callout Title', 'awada'),

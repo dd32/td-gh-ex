@@ -2,6 +2,7 @@
 /* General Options */
 function awada_theme_options()
 {
+	$banner_img = get_template_directory_uri() . '/images/banner.jpg';
     $awada_theme_options = array(
         '_frontpage' => 1,
         'site_layout' => '',
@@ -12,7 +13,7 @@ function awada_theme_options()
 		'page_layout' => 'rightsidebar',
 		// Topbar
         'topbar' => 1,
-        'headersticky' => 1,
+        'headersticky' => 0,
         'custom_css' => '',
 		'color_scheme' => 'green.css',
 		//Slider Settings:
@@ -48,6 +49,8 @@ function awada_theme_options()
         'blog_post_count' => 3,
 		'home_post_cat' => '',
 		/* footer callout */
+		'callout_bg_image' => $banner_img,
+		'callout_external_bg_video'=>esc_url('https://www.youtube.com/watch?v=jnLSYfObARA'),
         'home_callout_title' => __('Best Wordpress Resposnive Theme Ever!', 'awada'),
         'home_callout_description' => __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don\'t look even slightly believable If you are going to use a passage of Lorem Ipsum.', 'awada'),
         'callout_btn_text' => __('Purchase Now', 'awada'),

@@ -1,3 +1,8 @@
+###Version 1.6.2 [29-May-2017]
+* Backgroung image and video background support added.
+* Minor issue fixed.
+* Font awesome library update.
+* Bootstrap library update.
 ###Version 1.6.1 [02-Feb-2017]
 * Text logo issue fixed.
 ###Version 1.6 [02-Jan-2017]
