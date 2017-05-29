@@ -2,8 +2,19 @@
 // functions for theme Appeal
 // @since 1.0.2
 
-// Declaration of theme supported features
-function appeal_theme_support() {
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function appeal_theme_setup() {
+    /*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
     add_theme_support( 'html5', array(
         'search-form',
         'comment-form',
@@ -11,13 +22,24 @@ function appeal_theme_support() {
         'gallery',
         'caption',
     ));
-
+    /**
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
     add_theme_support( 'title-tag' );
     add_theme_support( 'automatic-feed-links' ); // rss feederz
-    add_theme_support( 'post-thumbnails' );      // wp thumbnails (sizes handled below)
+    /**
+	 * Enable support for Post Thumbnails on posts and pages.
+	 * wp thumbnails (sizes handled below)
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+    add_theme_support( 'post-thumbnails' );
 
     set_post_thumbnail_size( 180, 180, true );   // default thumb size
 
+    add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
     //page background image and color support
     $defaults = array(
 	   'default-color'      => '#fcfcfc',
@@ -29,7 +51,7 @@ function appeal_theme_support() {
     add_theme_support( 'custom-background', $defaults );
     add_theme_support( 'custom-logo' );
 
-    // main nav in header (not sticky)
+    // main nav in header (not sticky) also nav menu in footer and modal are same
     register_nav_menus(
         array(
             'primary' => __('Main Menu Top', 'appeal'),
@@ -38,38 +60,102 @@ function appeal_theme_support() {
     );
 
     load_theme_textdomain( 'appeal', get_template_directory_uri() . '/languages' );
+
+    //comments thread support
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
-add_action('after_setup_theme','appeal_theme_support');
+add_action('after_setup_theme','appeal_theme_setup');
 
+   /**
+    * Enqueue scripts and styles.
+    */
+    function appeal_theme_scripts() {
 
-//include (enqueue) scripts and stylesheets
-function appeal_theme_scripts() {
-
-    // register all scripts with WP
-    wp_register_style( 'appeal-google-fonts',
-                       'http://fonts.googleapis.com/css?family=Raleway',
-                       false );
     // For use of child themes
     wp_register_style( 'appeal-style',
                         get_stylesheet_directory_uri() . '/style.css',
                         array(),
                         null,
                         'all' );
-
-    //enqueue (sane and include) scripts into WP
-    wp_enqueue_style( 'appeal-google-fonts');
-    wp_enqueue_style( 'appeal-style' );
-    wp_enqueue_script( 'bootstrap-script',
+    wp_register_script( 'bootstrap-script',
                         get_template_directory_uri() . '/assets/bootstrap.js',
                         array ( 'jquery' ),
                         '3.3.7',
                         true);
-
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
+    //enqueue (sane and include) scripts into WP
+    wp_enqueue_style( 'appeal-google-fonts');
+    wp_enqueue_style( 'appeal-style' );
+    wp_enqueue_script( 'bootstrap-script' );
     }
+    add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+
+function appeal_fonts_url() {
+    $fonts_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Raleway, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+    $Raleway = _x( 'on', 'Raleway font: on or off', 'appeal' );
+	if ( 'off' !== $Raleway  ) {
+		$font_families = array();
+		if ( 'off' !== $Raleway ) {
+			$font_families[] = rawurlencode( 'Raleway' );
+		}
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+	}
+	return $fonts_url;
 }
-add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+/**
+ * Loads custom font CSS file.
+ *
+ * To disable in a child theme, use wp_dequeue_style()
+ * function mytheme_dequeue_fonts() {
+ *     wp_dequeue_style( 'appeal-fonts' );
+ * }
+ * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+ *
+ * @return void
+ */
+function appeal_fonts() {
+	$fonts_url = appeal_fonts_url();
+	if ( ! empty( $fonts_url ) ) {
+        wp_enqueue_style( 'appeal-fonts', esc_url_raw( $fonts_url ), array(), null );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'appeal_fonts' );
+
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function appeal_content_width() {
+$GLOBALS['content_width'] = 750;
+}
+add_action( 'after_setup_theme', 'appeal_content_width', 0 );
+
+
+/**
+ * page excerpt support
+ * @init
+ * @add_post_type_support
+  */
+function appeal_theme_excerpt_support()
+{
+    add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'appeal_theme_excerpt_support' );
 
 
 /**
@@ -93,21 +179,44 @@ function appeal_theme_custom_logo() {
 }
 
 
-/**
- * page excerpt support
- * @init
- * add_post__support
- */
-function appeal_theme_excerpt_support()
-{
-    add_post_type_support( 'page', 'excerpt' );
+/** Custom usage of more_tag to split content in two.
+ * @only works on template Two Part Content
+ * @uses more tag to split content "<!--more-->"
+ * @only works for two columns
+  */
+function appeal_split_content() {
+if( is_page()) {
+    global $more;
+    $more = true;
+    $content = preg_split('/<span id="more-\d+"><\/span>/i', get_the_content('more'));
+    for($c = 0, $csize = count($content); $c < $csize; $c++) {
+        $content[$c] = apply_filters('the_content', $content[$c]);
+    }
+    return $content;
+    }
 }
-add_action( 'init', 'appeal_theme_excerpt_support' );
 
+
+//modify the read more tag
 function appeal_theme_modify_read_more_link() {
     return '<a class="more-link" href="' . get_permalink() . '">[ + ]</a>';
 }
 add_filter( 'the_content_more_link', 'appeal_theme_modify_read_more_link' );
+
+
+//remove ellipsis
+function appeal_custom_excerpt_more() {
+
+    $post = get_post();
+        return ' <a class="more-link" href="'. get_permalink($post->ID)
+                . '">'. __('Read Article', 'appeal') .'</a>';
+
+}
+add_filter('excerpt_more', 'appeal_custom_excerpt_more');
+
+
+//check keyboard for compatibility
+remove_filter( 'the_content', 'wptexturize' );
 
 
 /**
@@ -122,7 +231,7 @@ function appeal_custom_header_setup()
     add_theme_support( 'custom-header',
         apply_filters( 'appeal_custom_header_args', array(
             'default-image'          => get_template_directory_uri()
-                                        . '/assets/default-header-img.jpg',
+                                        . '/assets/appeal-default-header-img.png',
             'default-text-color'    => '0000a0',
             'width'                => 1000,
             'height'              => 250,
@@ -133,7 +242,8 @@ function appeal_custom_header_setup()
 }
 add_action( 'after_setup_theme', 'appeal_custom_header_setup' );
 
-if ( ! function_exists( 'appeal_theme_header_style' ) ) :
+
+//create header styles
 function appeal_theme_header_style()
 {
     $header_text_color = get_header_textcolor();
@@ -141,22 +251,7 @@ function appeal_theme_header_style()
 
     if ( $header_image )
     { ?>
-        <style type="text/css">
-            .site-head {
-                position: relative;
-                background-image: url( <?php echo esc_url( $header_image ); ?>);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                content: "";
-                display: block;
-                height: 220px;
-                left: 0;
-                top: 0;
-                width: auto;
-                z-index: -1;
-            }
-        </style>
+        <style type="text/css">.site-head {position: relative;background-image: url( <?php echo esc_url( $header_image ); ?>);background-position: center;background-repeat: no-repeat;background-size: cover;content: "";display: block;height: 220px;left: 0;top: 0;   width: auto;z-index: -1;}</style>
     <?php
     }
 
@@ -170,26 +265,14 @@ function appeal_theme_header_style()
 
         if ( ! display_header_text() )
         {
-        echo '
-        .site-title,
-        .site-description {
-            position: absolute;
-            clip: rect(1px, 1px, 1px, 1px);';
-        }
-            else
-            {
-            echo '
-            #inner-footer li a, #inner-footer h4, .site-title a, .site-description {
-            color: '; ?> #<?php echo esc_attr( $header_text_color ); ?>;
+        echo '.site-title,.site-description{position: absolute;clip: rect(1px, 1px, 1px, 1px);';
+        } else {
+        echo '#inner-footer h4,.site-title a,.site-description{color:'; ?> #<?php echo esc_attr( $header_text_color ); ?>;}
             <?php
             }
      echo '</style>';
 }
-endif;
 
-
-// Set unknown media content width
-$GLOBALS['content_width'] = 750;
 
 // Sidebar and Footer declarations
 function appeal_register_sidebars() {
@@ -210,6 +293,25 @@ function appeal_register_sidebars() {
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+      'id' => 'sidebar-top',
+      'name' => __('Top Above Content', 'appeal'),
+      'description' => __( 'Only works on Top Advert and Page templates', 'appeal' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h4 class="widgettitle">',
+      'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+      'id' => 'sidebar-bottom',
+      'name' => __('Bottom Below Content', 'appeal'),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h4 class="widgettitle">',
+      'after_title' => '</h4>',
     ));
 
     register_sidebar(array(
@@ -243,54 +345,6 @@ function appeal_register_sidebars() {
 add_action( 'widgets_init', 'appeal_register_sidebars' );
 
 
-
-/**
- * Add Photographer Name and URL fields to media uploader
- *
- * @param $form_fields array, fields to include in attachment form
- * @param $post object, attachment record in database
- * @return $form_fields, modified form fields
- */
-function appeal_attachment_field_credit( $form_fields, $post ) {
-	$form_fields['appeal-photographer-name'] = array(
-		'label' => __( 'Photographer Name', 'appeal' ),
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'appeal_photographer_name', true ),
-		'helps' => __( 'If provided, photo credit will be displayed', 'appeal' ),
-	);
-
-	$form_fields['appeal-photographer-url'] = array(
-		'label' => __( 'Photographer URL', 'appeal' ),
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'appeal_photographer_url', true ),
-		'helps' => __( 'Add Photographer URL', 'appeal' ),
-	);
-
-	return $form_fields;
-}
-add_filter( 'attachment_fields_to_edit', 'appeal_attachment_field_credit', 10, 2 );
-
-/**
- * Save values of Photographer Name and URL in media uploader
- *
- * @param $post array, the post data for database
- * @param $attachment array, attachment fields from $_POST form
- * @return $post array, modified post data
- */
-
-function appeal_attachment_field_credit_save( $post, $attachment ) {
-	if( isset( $attachment['appeal-photographer-name'] ) )
-		update_post_meta( $post['ID'], 'appeal_photographer_name', $attachment['appeal-photographer-name'] );
-
-	if( isset( $attachment['appeal-photographer-url'] ) )
-update_post_meta( $post['ID'], 'appeal_photographer_url', esc_url( $attachment['appeal-photographer-url'] ) );
-
-	return $post;
-}
-add_filter( 'attachment_fields_to_save', 'appeal_attachment_field_credit_save', 10, 2 );
-
-
-
 /**
  * Header for singular articles
  * Add pingback url auto-discovery header for singular articles.
@@ -304,6 +358,33 @@ function appeal_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'appeal_pingback_header' );
+
+
+/**woo weady
+ * Removes woo wrappers and replace with this theme's content
+ * wrappers so that woo content fits in this theme.
+ * @https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+*/
+add_action( 'after_setup_theme', 'appeal_woocommerce_support' );
+function appeal_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+remove_action( 'woocommerce_before_main_content',
+               'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content',
+               'woocommerce_output_content_wrapper_end', 10);
+add_action(    'woocommerce_before_main_content',
+               'appeal_theme_wrapper_start', 10);
+add_action(    'woocommerce_after_main_content',
+               'appeal_theme_wrapper_end', 10);
+
+function appeal_theme_wrapper_start() {
+    echo '<div id="content-woo">';
+}
+
+function appeal_theme_wrapper_end() {
+    echo '</div>';
+}
 
 
 // Register Custom Navigation Walker

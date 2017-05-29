@@ -1,36 +1,23 @@
-<?php
-/**
- * The template for displaying the header
- *
- * Displays all of the head element and everything up until the "site-content" div.
- *
- * @package WordPress
- * @subpackage appeal
- * @since appeal 1.0.1
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
-
 	<?php wp_head(); ?>
-</head>
 
+
+</head>
 <body <?php body_class(); ?>>
 <a class="skip-link screen-reader-text" href="#content">
-<?php _e( 'Skip to content', 'appeal' ); ?></a>
-
-<div id="content-wrapper"><!-- ends in footer -->
+<?php esc_attr_e( 'Skip to content', 'appeal' ); ?></a>
+<div id="content-wrapper">
     <div class="site-head">
 
-        <?php appeal_theme_custom_logo() ?>
+
 
         <div class="hgroup">
+ <?php appeal_theme_custom_logo(); ?>
             <p class="list-inline">
             <span class="site-title"><a
                   href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -50,7 +37,7 @@
 						<button type="button" class="navbar-toggle collapsed"
                                 data-toggle="collapse"
                                 data-target="#navbar-responsive-collapse">
-		    				<span class="sr-only"><?php _e('Navigation',
+		    				<span class="sr-only"><?php esc_html_e('Navigation',
                                                            'appeal'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -60,9 +47,9 @@
 						<a class="navbar-brand"
                            title="<?php bloginfo('description'); ?>"
                            href="<?php echo esc_url(home_url('/')); ?>">
-                           <img src="<?php echo get_template_directory_uri()
-                                            . '/assets/homepng.png'; ?>"
-                                alt="<?php _e( 'Home', 'appeal' ); ?>"
+                           <img src="<?php echo esc_url(get_template_directory_uri()
+                                            . '/assets/homepng.png'); ?>"
+                                alt="<?php esc_attr_e( 'Home', 'appeal' ); ?>"
                                 height="45" /></a>
 					</div>
 
@@ -71,13 +58,12 @@
 	    <?php wp_nav_menu( array(
                 'menu'             => 'primary',
                 'theme_location'  => 'primary',
-                'depth'          => 2,
-                'container_id'  => 'bs-example-navbar-collapse-1',
+                'depth'          => 8,
+                'container_id'  => 'navbar-collapse-top',
                 'menu_class'   => 'nav navbar-nav',
-                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                'fallback_cb' => 'wp_nav_menus',
                 'walker'     =>  new wp_bootstrap_navwalker()
-            ));
-/*new wp_bootstrap_navwalker())*/ ?>
+            )); ?>
 
 					</div>
 				</div>
@@ -86,5 +72,14 @@
 		</header>
 
    <div class="clearfix"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbox">
+
+                <?php get_sidebar( 'top' ); ?>
+                
+            </div>
+        </div>
+    </div>
 		<div id="page-content"><!-- ends in footer -->
 			<div class="container"><!-- ends in footer -->

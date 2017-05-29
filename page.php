@@ -14,12 +14,7 @@
 
 		<?php else : ?>
 
-		        <article id="post-not-found" class="block">
-		            <p><?php _e( "No posts found.", "appeal" ); ?></p>
-
-                    <?php get_search_form(); ?>
-
-        		</article>
+		        <?php get_template_part( 'nothing' ); ?>
 
 		<?php endif; ?>
 

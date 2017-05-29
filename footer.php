@@ -1,6 +1,14 @@
- 
+
             </div><!-- ends from tag #page-content (below nav/header) -->
         </div><!-- .container -->
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottombox">
+<?php get_sidebar( 'bottom' ); ?>
+</div></div>
+</div>
+
     </div><!-- .content-wrapper -->
             <footer class="footer-footer container-fluid">
         <nav class="social-footer">
@@ -56,7 +64,7 @@
                         <nav class="text-center copyright">
 
                             <div class="col-sx-12 col-md-4">
-                                <p><?php _e('Design by ', 'appeal' ); ?>
+                                <p><?php esc_html_e('Design by ', 'appeal' ); ?>
                                 <a href="http://tradesouthwest.com"
                                    title="Tradesouthwest"> TSW=|=</a></p>
                             </div>
@@ -64,15 +72,15 @@
                             <div class="col-sx-12 col-md-4">
                                 <p class="text-muted"><?php
                                 $year   = esc_attr( date( 'Y' ) );
-                                printf( __( 'Copyright %s ', 'appeal' ), $year );
-                                esc_attr( bloginfo( 'name' ) ); ?></p>
+                                printf( esc_attr__( 'Copyright %s ', 'appeal' ), $year );
+                                printf( bloginfo( 'name' ) ); ?></p>
                             </div>
 
                             <div class="col-sx-12 col-md-4">
                                 <p><a href="#"
                                       title="^"
                                       class="btn btn-default">
-                                      <?php _e("Top/Pg.", "appeal"); ?></a></p>
+                                      <?php esc_attr_e("Top/Pg.", "appeal"); ?></a></p>
                             </div>
 
                         </nav>

@@ -1,6 +1,6 @@
 		        <article id="post-not-found" class="block">
-		            <h2><?php _e( "No posts found.", "appeal" ); ?></h2>
+		            <h2><?php esc_html_e( "No posts found.", "appeal" ); ?></h2>
 
-                    <?php get_search_form(); ?>
+                    <p><?php get_search_form(); ?></p>
 
         		</article>

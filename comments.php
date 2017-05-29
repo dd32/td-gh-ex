@@ -56,10 +56,10 @@ if ( post_password_required() )
         // Redefine default textarea (the comment body).
         'comment_field' => '<p class="comment-form-comment">
                             <label for="comment">'
-                            . __( '', 'appeal' )
-                            . '</label><br /><textarea id="comment"
-                                                       name="comment"
-                                                       aria-required="true">
+                            . __( 'Respond', 'appeal' )
+                            . '<span class="screen-reader-text">'
+                            . __( 'Comment textarea box', 'appeal' ) . '</label>
+                            <br /><textarea id="comment" name="comment" aria-required="true">
                             </textarea></p>',
 
         //logged in check

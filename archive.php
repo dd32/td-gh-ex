@@ -14,14 +14,17 @@
                 href="<?php the_permalink(); ?>"
                 title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
             <section class="post_content">
-            <?php
-            // only showing excerpts on author page
-            appeal_theme_excerpt_length( '108' );
-            ?>
-                    <nav class="pagination"><?php // more tag display
-                    wp_link_pages();
-                    ?></nav>
 
+            <?php
+            $length          = appeal_custom_posts_excerpt_length();
+            $appealmore      = appeal_custom_excerpt_more();
+            $content         = get_the_content();
+            $trimmed_content = wp_trim_words( $content, $length, $appealmore );
+
+            echo '<p>'.$trimmed_content.'</p>'; ?>
+
+
+                
             </section>
                 <footer class="meta-footer">
 

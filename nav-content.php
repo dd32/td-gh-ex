@@ -20,7 +20,7 @@
 
 <?php if( is_page() || is_single() ) {
 ?>
-<p class="pagination">
+<div class="pagination">
 <?php
 the_post_navigation( array(
 	'prev_text' => '<span class="screen-reader-text">'
@@ -36,7 +36,7 @@ the_post_navigation( array(
     <span class="nav-pills">%title</span><span class="nav-subtitle"> &raquo;</span>',
 	) );
 ?>
-</p>
+</div>
 <?php
 }
 ?> 
