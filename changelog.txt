@@ -1,4 +1,36 @@
 Changelog -----------------------------------
+version:1.476
+
+Overview of Changes
+
+	Added
+		Style added WordPress4.8 widget_media_image, widget_media_video, new text widget
+	Fixed
+		Since it turned out that countermeasure (1.473) of the faint character problem has a side effect,
+		I decided to lower the priority of YuGothic font.
+		priority of font Meiryo (only lang ja and color type minimal)
+	Fixed
+		meta slider plugin in post content
+			display improperly ( position )
+	Fixed
+		raindrops_img_caption_shortcode_filter()
+			wrong id and  aria-labelledby attribute
+	Removed
+		add_action( 'load-themes.php', 'raindrops_install_navigation' );
+		add_action( 'admin_init', 'raindrops_options_init' );
+
+Files Modified
+	modified:   functions.php
+	modified:   languages/css/ja.css
+	modified:   lib/hooks.php
+	modified:   rtl.css
+	modified:   style.css
+	modified:   raindrops.js
+	modified:   plugins/plugins-presentation.php
+Description of Code Changes
+	please see https://themes.trac.wordpress.org/changeset?old_path=raindrops/1.473&new_path=raindrops/1.476
+-----------------------------------------------Changelog -----------------------------------
+Changelog -----------------------------------
 version:1.473
 
 Overview of Changes
