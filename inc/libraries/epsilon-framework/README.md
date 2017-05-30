@@ -56,6 +56,8 @@
       )
     );
 
+> Themes can disable the Upsell Pro section by adding `add_filter ('epsilon_upsell_section_display', '__return_false');` in functions.php
+
 #### Recommended action section
 
     $wp_customize->add_section(
@@ -304,3 +306,5 @@ Collect all the options ID and get an instance of the Typography class (this is 
                                   )
                                 )
                               );
+                              
+> Themes can disable the Upsell Pro Control by adding `add_filter ('epsilon_upsell_control_display', '__return_false');` in functions.php
