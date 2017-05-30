@@ -26,7 +26,7 @@ get_header(); ?>
 
 						<?php if ( Kirki::get_option( 'front_page_text_slider_btn_text' ) != '' ) : ?>
 							<div class="slider-btn">
-								<a href="<?php echo Kirki::get_option( 'front_page_text_slider_btn_url' ); ?>" class="btn btn-light"><?php echo Kirki::get_option( 'front_page_text_slider_btn_text' ); ?></a>
+								<a href="<?php echo esc_url(Kirki::get_option( 'front_page_text_slider_btn_url' )); ?>" class="btn btn-light"><?php echo esc_html(Kirki::get_option( 'front_page_text_slider_btn_text' )); ?></a>
 							</div><!-- .slider-btn -->
 						<?php endif; ?>
 					</div><!-- .container -->
@@ -37,7 +37,7 @@ get_header(); ?>
 				<?php endif; ?>
 			</section><!-- #slider -->
 
-			<section id="<?php echo Kirki::get_option( 'front_page_icon_service_module_id' ); ?>" class="module icon-service-module clearfix">
+			<section id="<?php echo esc_attr(Kirki::get_option( 'front_page_icon_service_module_id' )); ?>" class="module icon-service-module clearfix">
 				<div class="<?php echo Kirki::get_option( 'front_page_icon_service_module_layout' ) == 'fixed' ? 'container' : 'container-fluid'; ?>">
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_icon_service_module_title' ) != '' ) : ?>
@@ -45,7 +45,7 @@ get_header(); ?>
 								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_icon_service_module_title' ) ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_icon_service_module_subtitle' ) != '' ) : ?>
-									<p><?php echo Kirki::get_option( 'front_page_icon_service_module_subtitle' ); ?></p>
+									<p><?php echo esc_html(Kirki::get_option( 'front_page_icon_service_module_subtitle' )); ?></p>
 								<?php endif; ?>
 
 								<div class="separator">
@@ -70,19 +70,19 @@ get_header(); ?>
 
 								<div class="icon-service-box <?php echo $width; ?> text-center">
 									<?php if ( isset( $icon_service_box['url'] ) && $icon_service_box['url'] != '' ) : ?>
-										<a href="<?php echo $icon_service_box['url']; ?>">
+										<a href="<?php echo esc_url($icon_service_box['url']); ?>">
 									<?php endif; ?>
 
 									<div class="service-icon">
-										<i class="fa fa-<?php echo $icon_service_box['icon']; ?>"></i>
+										<i class="fa fa-<?php echo esc_attr($icon_service_box['icon']); ?>"></i>
 									</div><!-- .service-icon -->
 
 									<?php if ( isset( $icon_service_box['title'] ) && $icon_service_box['title'] != '' ) : ?>
-										<h3 class="service-title"><?php echo $icon_service_box['title']; ?></h3>
+										<h3 class="service-title"><?php echo esc_html($icon_service_box['title']); ?></h3>
 									<?php endif; ?>
 
 									<?php if ( isset( $icon_service_box['description'] ) && $icon_service_box['description'] != '' ) : ?>
-										<p class="service-content"><?php echo $icon_service_box['description']; ?></p>
+										<p class="service-content"><?php echo esc_html($icon_service_box['description']); ?></p>
 									<?php endif; ?>
 
 									<?php if ( isset( $icon_service_box['url'] ) && $icon_service_box['url'] != '' ) : ?>
@@ -97,7 +97,7 @@ get_header(); ?>
 				</div><!-- .container -->
 			</section><!-- #service -->
 
-			<section id="<?php echo Kirki::get_option( 'front_page_portfolio_module_id' ); ?>" class="module portfolio-module clearfix">
+			<section id="<?php echo esc_attr(Kirki::get_option( 'front_page_portfolio_module_id' )); ?>" class="module portfolio-module clearfix">
 				<div class="container-fluid">
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_portfolio_module_title' ) != '' ) : ?>
@@ -105,7 +105,7 @@ get_header(); ?>
 								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_portfolio_module_title' ) ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_portfolio_module_subtitle' ) != '' ) : ?>
-									<p><?php echo Kirki::get_option( 'front_page_portfolio_module_subtitle' ); ?></p>
+									<p><?php echo esc_html(Kirki::get_option( 'front_page_portfolio_module_subtitle' )); ?></p>
 								<?php endif; ?>
 
 								<div class="separator">
@@ -123,7 +123,7 @@ get_header(); ?>
 
 						<?php if ( ! is_wp_error( $tags ) && $count > 0 && Kirki::get_option( 'front_page_portfolio_module_filter' ) == '1'  ) : ?>
 							<div id="portfolio-filter" class="col-md-12 text-center">
-								<a href="#" class="active" data-filter="*"><?php echo Kirki::get_option( 'front_page_portfolio_module_all' ); ?></a>
+								<a href="#" class="active" data-filter="*"><?php echo esc_attr(Kirki::get_option( 'front_page_portfolio_module_all' )); ?></a>
 
 								<?php
 									foreach ( $tags as $tag ) {
@@ -170,7 +170,7 @@ get_header(); ?>
 				</div><!-- .container-fluid -->
 			</section><!-- #portfolio -->
 
-			<section id="<?php echo Kirki::get_option( 'front_page_ver_promo_module_id' ); ?>" class="module promo-box-ver-module clearfix">
+			<section id="<?php echo esc_attr(Kirki::get_option( 'front_page_ver_promo_module_id' )); ?>" class="module promo-box-ver-module clearfix">
 				<div class="container">
                     <div class="row">
 						<div class="promo-box-ver col-md-10 col-md-offset-1 text-center">
@@ -196,7 +196,7 @@ get_header(); ?>
 				</div><!-- .container -->
 			</section><!-- #promo-box-ver -->
 
-			<section id="<?php echo Kirki::get_option( 'front_page_blog_module_id' ); ?>" class="module blog-module clearfix">
+			<section id="<?php echo esc_attr(Kirki::get_option( 'front_page_blog_module_id' )); ?>" class="module blog-module clearfix">
 				<div class="container-fluid">
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_blog_module_title' ) != '' ) : ?>
@@ -204,7 +204,7 @@ get_header(); ?>
 								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_blog_module_title' ) ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_blog_module_subtitle' ) != '' ) : ?>
-									<p><?php echo Kirki::get_option( 'front_page_blog_module_subtitle' ); ?></p>
+									<p><?php echo esc_html(Kirki::get_option( 'front_page_blog_module_subtitle' )); ?></p>
 								<?php endif; ?>
 
 								<div class="separator">
@@ -243,7 +243,7 @@ get_header(); ?>
 									<div class="see-more-wrap">
 										<div class="sm-container">
 											<div class="sm-icon"><i class="fa fa-external-link"></i></div>
-											<div class="sm-text"><?php echo Kirki::get_option( 'front_page_blog_module_view_more' ); ?></div>
+											<div class="sm-text"><?php echo esc_html(Kirki::get_option( 'front_page_blog_module_view_more' )); ?></div>
 										</div>
 									</div><!-- .see-more-wrap -->
 								</a><!-- .blog-item -->
@@ -264,7 +264,7 @@ get_header(); ?>
 				</div><!-- .container-fluid -->
 			</section><!-- #blog -->
 
-			<section id="<?php echo Kirki::get_option( 'front_page_contact_module_id' ); ?>" class="module contact-module clearfix">
+			<section id="<?php echo esc_attr(Kirki::get_option( 'front_page_contact_module_id' )); ?>" class="module contact-module clearfix">
 				<div class="container">
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_contact_module_title' ) != '' ) : ?>
@@ -272,7 +272,7 @@ get_header(); ?>
 								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_contact_module_title' ) ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_contact_module_subtitle' ) != '' ) : ?>
-									<p><?php echo Kirki::get_option( 'front_page_contact_module_subtitle' ); ?></p>
+									<p><?php echo esc_html(Kirki::get_option( 'front_page_contact_module_subtitle' )); ?></p>
 								<?php endif; ?>
 
 								<div class="separator">
@@ -290,18 +290,18 @@ get_header(); ?>
 								<?php foreach ( $contact_boxes as $contact_box ) : ?>
 									<div class="contact-item">
 										<?php if ( isset( $contact_box['icon'] ) && $contact_box['icon'] != '' ) : ?>
-											<div class="ci-icon"><i class="fa fa-<?php echo $contact_box['icon']; ?>"></i></div>
+											<div class="ci-icon"><i class="fa fa-<?php echo esc_attr($contact_box['icon']); ?>"></i></div>
 										<?php endif; ?>
 
 										<?php if ( isset( $contact_box['label'] ) && $contact_box['label'] != '' ) : ?>
-											<div class="ci-title"><?php echo $contact_box['label']; ?></div>
+											<div class="ci-title"><?php echo esc_html($contact_box['label']); ?></div>
 										<?php endif; ?>
 
 										<?php if ( isset( $contact_box['description'] ) && $contact_box['description'] != '' ) : ?>
 											<?php if ( isset( $contact_box['url'] ) && $contact_box['url'] != '' ) : ?>
-												<div class="ci-content"><a href="<?php echo $contact_box['url']; ?>"><?php echo $contact_box['description']; ?></a></div>
+												<div class="ci-content"><a href="<?php echo esc_url($contact_box['url']); ?>"><?php echo wp_kses_post( $contact_box['description']); ?></a></div>
 											<?php else : ?>
-												<div class="ci-content"><?php echo $contact_box['description']; ?></div>
+												<div class="ci-content"><?php echo wp_kses_post( $contact_box['description']); ?></div>
 											<?php endif; ?>
 										<?php endif; ?>
 									</div><!-- .contact-info -->
@@ -355,7 +355,7 @@ get_header(); ?>
 
 									<?php wp_nonce_field( 'ajax_contact_form', 'ajax_contact_form_nonce' ); ?>
 
-									<button class="btn btn-light" type="submit" id="contact-form-submit" name="submit" value="submit"><?php echo Kirki::get_option( 'front_page_contact_module_send' ); ?></button>
+									<button class="btn btn-light" type="submit" id="contact-form-submit" name="submit" value="submit"><?php echo esc_html(Kirki::get_option( 'front_page_contact_module_send' )); ?></button>
 								</fieldset><!-- .submit -->
 							</form>
                         </div><!-- .contact-form -->

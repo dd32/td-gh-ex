@@ -109,46 +109,46 @@ add_action( 'widgets_init', 'beonepage_widgets_init' );
  * Enqueue scripts and styles.
  */
 function beonepage_scripts() {
-	wp_enqueue_style( 'beonepage-bootstrap-style', get_template_directory_uri() . '/layouts/bootstrap.min.css', array(), '3.3.6' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/layouts/bootstrap.min.css', array(), '3.3.6' );
 
-	wp_enqueue_style( 'beonepage-font-awesome-style', get_template_directory_uri() . '/layouts/font.awesome.min.css', array(), '4.5.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/layouts/font.awesome.min.css', array(), '4.5.0' );
 
-	wp_enqueue_style( 'beonepage-magnific-popup-style', get_template_directory_uri() . '/layouts/magnific.popup.css', array(), '1.0.1' );
+	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/layouts/magnific.popup.css', array(), '1.0.1' );
 
-	wp_enqueue_style( 'beonepage-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'beonepage', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'beonepage-responsive-style', get_template_directory_uri() . '/layouts/responsive.css', array(), beonepage_get_version() );
+	wp_enqueue_style( 'beonepage-responsive', get_template_directory_uri() . '/layouts/responsive.css', array(), beonepage_get_version() );
 
-	wp_enqueue_script( 'beonepage-jRespond-script', get_template_directory_uri() . '/js/jrespond.min.js', array(), '0.10', true );
+	wp_enqueue_script( 'jRespond', get_template_directory_uri() . '/js/jrespond.min.js', array(), '0.10', true ); 
 
-	wp_enqueue_script( 'beonepage-smoothscroll-script', get_template_directory_uri() . '/js/smooth.scroll.js', array(), '1.4.1', true );
+	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth.scroll.js', array(), '1.4.1', true );
 
-	wp_enqueue_script( 'beonepage-transit-script', get_template_directory_uri() . '/js/jquery.transit.js', array(), '0.9.12', true );
+	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit.js', array(), '0.9.12', true );
 
-	wp_enqueue_script( 'beonepage-easing-script', get_template_directory_uri() . '/js/jquery.easing.min.js', array(), '1.3.2', true );
+	wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array(), '1.3.2', true );
 
-	wp_enqueue_script( 'beonepage-imagesloaded-script', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '4.0.0', true );
+	wp_enqueue_script( 'imagesloaded-pkgd', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '4.0.0', true );
 
-	wp_enqueue_script( 'beonepage-isotope-script', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array(), '2.2.2', true );
+	wp_enqueue_script( 'isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array(), '2.2.2', true );
 
-	wp_enqueue_script( 'beonepage-nicescroll-script', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array(), '3.6.6', true );
+	wp_enqueue_script( 'jquery-nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array(), '3.6.6', true );
 
-	wp_enqueue_script( 'beonepage-smooth-scroll-script', get_template_directory_uri() . '/js/jquery.smooth.scroll.min.js', array(), '1.6.1', true );
+	wp_enqueue_script( 'jquery-smooth-scroll', get_template_directory_uri() . '/js/jquery.smooth.scroll.min.js', array(), '1.6.1', true );
 
-	wp_enqueue_script( 'beonepage-magnific-popup-script', get_template_directory_uri() . '/js/jquery.magnific.popup.min.js', array(), '1.0.1', true );
+	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific.popup.min.js', array(), '1.0.1', true );
 
-	wp_enqueue_script( 'beonepage-validate-script', get_template_directory_uri() . '/js/jquery.validate.min.js', array(), '1.14.0', true );
-
-	wp_enqueue_script( 'beonepage-app-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), beonepage_get_version(), true );
+	wp_enqueue_script( 'jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array(), '1.14.0', true );
+ 
+	wp_enqueue_script( 'beonepage-app', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), beonepage_get_version(), true );
 
 	// Localize the script with new data.
-	wp_localize_script( 'beonepage-app-script', 'app_vars', array(
+	wp_localize_script( 'beonepage-app', 'app_vars', array(
 		'ajax_url'         => admin_url( 'admin-ajax.php' ),
 		'home_url'         => esc_url( home_url( '/' ) ),
 		'current_page_url' => beonepage_get_current_url(),
 		'accent_color'     => '#ffcc00'
 	) );
-
+  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -163,14 +163,14 @@ require_once get_template_directory() . '/inc/tgmpa/tgm-plugin-activation.php';
 /**
  * Load Kirki Customizer Toolkit.
  */
-require_once get_template_directory() . '/inc/kirki/kirki.php';
+ require_once get_template_directory() . '/inc/kirki/kirki.php'; 
 
 /**
  * Load Customizer configuration.
  */
 require_once get_template_directory() . '/inc/kirki/config.php';
 
-/**
+/** 
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
