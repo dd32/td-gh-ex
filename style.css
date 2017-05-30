@@ -5,7 +5,7 @@ Author: Webriti
 Author URI: http://webriti.com/
 Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, portfolio, photography, food-and-drink, entertainment, education, blog, footer-widgets
 Description: Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
-Version: 1.5.8
+Version: 1.5.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: 'rambo'
@@ -2590,3 +2590,58 @@ overflow:hidden;
 .flex_btn:hover {
     padding: 10px 30px;
 }
+
+/*===================================================================================*/
+/*  TEMPLATE SWITCHER COLOR SCHEME CSS
+/*===================================================================================*/
+
+#style-switcher h3 { color: #BDBDBD; font-family: 'Roboto'; font-size: 14px; font-weight: 600; margin: 10px 0 10px 1px; border-bottom: 1px solid #434242; }
+#style-switcher {
+	background-color: #2c2c2c;
+	width: 205px;
+	position:fixed;
+	top: 140px;
+	z-index: 999;
+	border-radius: 0 0 3px 0;
+	left: -206px;
+	border: 0px;
+	border-left: 0;
+	border-top: 0;
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.8);
+	padding-top: 0px;
+}
+#style-switcher div { padding: 3px 18px 15px; }
+#style-switcher h2 {
+	background-color: #2C2C2C;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 0 0 20px;
+	margin:0;
+	line-height:40px;
+	font-family: 'Roboto';
+	font-weight:400;
+}
+#style-switcher h2 a {	
+	background-color: #2c2c2c;
+	display: block;
+	height: 40px;
+	position: absolute;
+	right: -43px;
+	font-size:16px;
+	text-align:center;
+	color:#fff;
+	top: 0;
+	width: 43px;
+	text-decoration:none;
+	border-radius: 0 3px 3px 0;
+}	
+.colors { list-style:none; margin: 0 0px 10px 0; padding: 0; overflow: hidden; }
+.colors li { float:left; margin: 4px 2px 0 2px; }
+.colors li a { display: block; width: 29px; height: 29px; cursor: pointer; border-radius: 1px; } 
+.layout-style select, .header-style select { width: 164px; padding: 2px 5px; color: #888; cursor: pointer; border-radius: 2px; font-size: 13px; margin: 2px 0 2px 2px; }	
+.layout-style, .header-style { padding: 0 !important; }
+.onclick_blue { background-color: #46B1E1; }
+.onclick_green { background-color: #6EBB25; }
+.onclick_orange { background-color: #ff4c2f; }
+.onclick_pink { background-color: #eb2071; }

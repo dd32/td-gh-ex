@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.5.9
+1. Change dummy data folder priority. 
 @version 1.5.8
 1. Added dummy data import setting.
 @version 1.5.7

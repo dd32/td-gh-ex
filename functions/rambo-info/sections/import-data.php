@@ -47,24 +47,16 @@
                         );
 
                         ?>
-                        <h3>Importing Dummy Content<h3>
-                        <p><strong>One Click Demo Import</strong> is the WordPress Plugin which helps in creating the exact replica of our demo site. Just click the button to proceed further.</p>
-                        <h4>Key Notes:</h4>
+                        <h3><?php _e('Importing Dummy Content','rambo'); ?><h3>
+                        <?php echo sprintf(__('<p><strong>One Click Demo Import</strong> is the WordPress Plugin which helps in creating the exact replica of our demo site. Just click the button to proceed further.</p>','rambo')); ?>
+                        <h4><?php _e('Key Notes:','rambo'); ?></h4>
                     
-                            <li>Click the button to install the plugin. Ignore if already installed.</li>
-                            <li>Activate the plugin so that they can read the dummy data files from the theme folder and import the content for you.</li>
-                            <li>After activation go to Appreance >> Import Demo Data.</li>
+                            <li><?php _e('Click the button to install the plugin. Ignore if already installed.','rambo'); ?></li>
+                            <li><?php _e('Activate the plugin so that they can read the dummy data files from the theme folder and import the content for you.','rambo'); ?></li>
+                            <li><?php _e('After activation go to Appreance >> Import Demo Data.','rambo'); ?></li>
                         
                         <?php
-                        echo '<p>';
-                        printf( esc_html__(
-                            '%1$s you will need to install and activate the %2$s plugin first.', 'rambo' ),
-                            '<b>'.esc_html__( 'Hey.', 'rambo' ).'</b>',
-                            '<a class="thickbox open-plugin-details-modal" href="'.esc_url( $detail_link ).'">'.esc_html__( 'One Click Demo Installer', 'rambo' ).'</a>'
-                        );
-                        echo '</p>';
-
-                        echo '<p class="plugin-card-'.esc_attr( $plugin_name ).'"><a href="'.esc_url( $install_url ).'" data-slug="'.esc_attr( $plugin_name ).'" class="'.esc_attr( $button_class ).'">'.$button_txt.'</a></p>';
+						echo '<p class="plugin-card-'.esc_attr( $plugin_name ).'"><a href="'.esc_url( $install_url ).'" data-slug="'.esc_attr( $plugin_name ).'" class="'.esc_attr( $button_class ).'">'.$button_txt.'</a></p>';
                         ?> 
                          
                         

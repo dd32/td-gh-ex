@@ -23,6 +23,7 @@ function rambo_scripts()
 	wp_enqueue_script('Bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
 	/*Color Schemes*/
 	
+	
 	/******* webriti tab js*********/
 	}
 	add_action( 'wp_enqueue_scripts', 'rambo_scripts' );
