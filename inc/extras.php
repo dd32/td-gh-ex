@@ -30,7 +30,7 @@ function arouse_body_classes( $classes ) {
 	
 	if ( $display_slider == true && is_home() && ! is_paged() ) { $classes[] = 'slider-active'; }
 	
-	if ( $display_slider == true && is_page_template( 'template-slider.php' ) ) { $classes[] = 'slider-active'; }
+	if ( is_page_template( 'template-slider.php' ) ) { $classes[] = 'slider-active'; }
 
 	return $classes;
 }
