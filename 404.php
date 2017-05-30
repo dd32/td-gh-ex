@@ -19,13 +19,13 @@ get_header(); ?>
               <div id="content" class="site-404-content" role="main">
  
                     <header class="page-header">
-                        <h1 class="page-title"><?php _e( '404', 'aquaparallax' ); ?></h1>
+                        <h1 class="page-title"><?php esc_html_e( '404', 'aquaparallax' ); ?></h1>
                     </header>
          
                     <div class="page-wrapper">
                         <div class="page-content">
-                            <h2><?php _e( 'This is somewhat embarrassing, isnot it?', 'aquaparallax' ); ?></h2>
-                            <p class="aqa-pagenot"><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'aquaparallax' ); ?></p>
+                            <h2><?php esc_html_e( 'This is somewhat embarrassing, isnot it?', 'aquaparallax' ); ?></h2>
+                            <p class="aqa-pag-search"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'aquaparallax' ); ?></p>
                                   <?php get_search_form(); ?>
                         </div>
                    </div>     

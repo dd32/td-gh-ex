@@ -21,7 +21,7 @@ get_header();
 
 <div class="col-md-8">
 <?php
-global $wp_query, $paged;
+
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 $args = array( 
@@ -56,23 +56,18 @@ $the_query = new WP_Query( $args );
     ?>
 
 </ul>
-
+<?php wp_reset_postdata(); ?>
 
 <?php else:  ?>
  
    	<?php get_template_part( 'template-parts/content', 'none' ); ?>
  
 <?php endif; ?>
-<?php wp_reset_postdata(); ?>
-</div>
 
 </div>
 
-
-
 </div>
-
-
+</div>
 
 <div class="col-md-4">
 

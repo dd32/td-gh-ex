@@ -20,40 +20,10 @@ $wp_customize->add_section(
             'priority' => 33,
         )
     );
-	$wp_customize->add_setting( 'aqua_header_logo', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
-	) );
-    $wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'aqua_header_logo',
-        array(
-            'label' => esc_html( 'Header-logo:', 'aquaparallax' ),
-            'section' => 'aqua_header_section',
-            'settings' => 'aqua_header_logo'
-        )
-    )
-    );
-	
-	// Favicon
-	$wp_customize->add_setting( 'aqua_favicon', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
-	) );
-    $wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'aqua_favicon',
-        array(
-            'label' => esc_html( 'Favicon:', 'aquaparallax' ),
-            'section' => 'aqua_header_section',
-            'settings' => 'aqua_favicon'
-        )
-    )
-    );
 	
     // Search box
     $wp_customize->add_setting('aqua_search_box', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
     $wp_customize->add_control(
     'aqua_search_box',
@@ -75,8 +45,8 @@ $wp_customize->add_section(
     );
 	// Banner image
     $wp_customize->add_setting('aqua_banner_image', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
-	) );
+        'sanitize_callback' => 'aquaparallax_sanitize_image'
+        	) );
     $wp_customize->add_control(
     new WP_Customize_Image_Control(
         $wp_customize,
@@ -90,7 +60,7 @@ $wp_customize->add_section(
     );
 	// Banner title
 	$wp_customize->add_setting('aqua_banner_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_banner_title',
@@ -103,7 +73,7 @@ $wp_customize->add_section(
     );	
 	// Banner content
 	$wp_customize->add_setting('aqua_banner_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_banner_content',
@@ -116,7 +86,7 @@ $wp_customize->add_section(
     );	
 	// Read more link content
 	$wp_customize->add_setting('aqua_read_link', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
     $wp_customize->add_control(
     'aqua_read_link',
@@ -129,7 +99,7 @@ $wp_customize->add_section(
     );	
 	// Download link content
 	$wp_customize->add_setting('aqua_download_link', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
     $wp_customize->add_control(
     'aqua_download_link',
@@ -152,7 +122,7 @@ $wp_customize->add_section(
     );
 	// Feature title
 	$wp_customize->add_setting('aqua_feature_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_title',
@@ -165,7 +135,7 @@ $wp_customize->add_section(
     );	
 	// Feature content
 	$wp_customize->add_setting('aqua_feature_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_content',
@@ -178,7 +148,7 @@ $wp_customize->add_section(
     );	
 	// section one icon
 	$wp_customize->add_setting('aqua_feature_one_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_one_icon',
@@ -191,7 +161,7 @@ $wp_customize->add_section(
     );
 	// Section one title
 	$wp_customize->add_setting('aqua_feature_one_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_one_title',
@@ -204,7 +174,7 @@ $wp_customize->add_section(
     );	
 	// section one content
 	$wp_customize->add_setting('aqua_feature_one_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_one_content',
@@ -217,7 +187,7 @@ $wp_customize->add_section(
     );
     // section two icon
 	$wp_customize->add_setting('aqua_feature_two_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_two_icon',
@@ -230,7 +200,7 @@ $wp_customize->add_section(
     );
 	// Section two title
 	$wp_customize->add_setting('aqua_feature_two_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_two_title',
@@ -243,7 +213,7 @@ $wp_customize->add_section(
     );	
 	// Section two content
 	$wp_customize->add_setting('aqua_feature_two_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_two_content',
@@ -256,7 +226,7 @@ $wp_customize->add_section(
     );		
 	// section three icon
 	$wp_customize->add_setting('aqua_feature_three_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_three_icon',
@@ -269,7 +239,7 @@ $wp_customize->add_section(
     );
 	// Section three title
 	$wp_customize->add_setting('aqua_feature_three_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_three_title',
@@ -282,7 +252,7 @@ $wp_customize->add_section(
     );	
 	// Section three content
 	$wp_customize->add_setting('aqua_feature_three_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_three_content',
@@ -295,7 +265,7 @@ $wp_customize->add_section(
     );	
 	// section four icon
 	$wp_customize->add_setting('aqua_feature_four_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_four_icon',
@@ -308,7 +278,7 @@ $wp_customize->add_section(
     );
 	// Section four title
 	$wp_customize->add_setting('aqua_feature_four_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_four_title',
@@ -321,7 +291,7 @@ $wp_customize->add_section(
     );	
 	// Section four content
 	$wp_customize->add_setting('aqua_feature_four_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_feature_four_content',
@@ -344,7 +314,7 @@ $wp_customize->add_section(
     );
 	// Parallax image
     $wp_customize->add_setting('aqua_parallax_image', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_image'
 	) );
     $wp_customize->add_control(
     new WP_Customize_Image_Control(
@@ -359,7 +329,7 @@ $wp_customize->add_section(
     );
 	// Parallax title
 	$wp_customize->add_setting('aqua_parallax_title', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_parallax_title',
@@ -372,7 +342,7 @@ $wp_customize->add_section(
     );	
 	// Parallax content
 	$wp_customize->add_setting('aqua_parallax_content', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_parallax_content',
@@ -385,7 +355,7 @@ $wp_customize->add_section(
     );	
 	// Parallax link content
 	$wp_customize->add_setting('aqua_parallax_link', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
     $wp_customize->add_control(
     'aqua_parallax_link',
@@ -401,14 +371,14 @@ $wp_customize->add_section(
 $wp_customize->add_section(
         'aqua_blog_section',
         array(
-            'title' => esc_html( 'Enable Blog, Portfolio and Testimonial', 'aquaparallax' ),
-            'description' => esc_html( 'Blog, Portfolio and Testimonial section.', 'aquaparallax' ),
+            'title' => esc_html( 'Enable Blog and Portfolio', 'aquaparallax' ),
+            'description' => esc_html( 'Blog and Portfolio section.', 'aquaparallax' ),
             'priority' => 37,
         )
     );
 	// Blog section
     $wp_customize->add_setting('aqua_blogpost_section', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
     $wp_customize->add_control(
     'aqua_blogpost_section',
@@ -418,21 +388,9 @@ $wp_customize->add_section(
         'section' => 'aqua_blog_section',
     )
     );	
-    // Testimonial section	
-    $wp_customize->add_setting('aqua_testimonial_section', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
-	) );
-    $wp_customize->add_control(
-    'aqua_testimonial_section',
-    array(
-        'type' => 'checkbox',
-        'label' => esc_html( 'Include testimonial section', 'aquaparallax' ),
-        'section' => 'aqua_blog_section',
-    )
-    );
     // Portfolio section  
     $wp_customize->add_setting('aqua_portfolio_section', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
     ) );
     $wp_customize->add_control(
     'aqua_portfolio_section',
@@ -442,19 +400,202 @@ $wp_customize->add_section(
         'section' => 'aqua_blog_section',
     )
     );
-	
+// Testimonial section
+$wp_customize->add_section(
+        'aqua_testimonial_section',
+        array(
+            'title' => esc_html( 'Testimonial section', 'aquaparallax' ),
+            'description' => esc_html( 'Testimonial section.', 'aquaparallax' ),
+            'priority' => 45,
+        )
+    );
+    
+    $wp_customize->add_setting('aqua_testimonial_section', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
+    ) );
+    $wp_customize->add_control(
+    'aqua_testimonial_section',
+    array(
+        'type' => 'checkbox',
+        'label' => esc_html( 'Include testimonial section', 'aquaparallax' ),
+        'section' => 'aqua_testimonial_section',
+    )
+    );
+    /* Testimonial one image*/
+     $wp_customize->add_setting('aqua_testimonial1_image', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_image'
+    ) );
+    $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'aqua_testimonial1_image',
+        array(
+            'label' => esc_html( 'Testimonial one image:', 'aquaparallax' ),
+            'section' => 'aqua_testimonial_section',
+            'settings' => 'aqua_testimonial1_image'
+        )
+    )
+    );
+    /* Testimonial one content */
+    $wp_customize->add_setting( 'aqua_testimonial1_content', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial1_content', array(
+                'label'    => esc_html( 'Testimonial one content:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial1_content',
+                'type' => 'textarea',
+            )
+    );
+    /* Testimonial one client name */
+    $wp_customize->add_setting( 'aqua_testimonial1_client', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial1_client', array(
+                'label'    => esc_html( 'Testimonial one client name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial1_client',
+                'type' => 'text',
+            )
+    );
+    /* Testimonial one company name */
+    $wp_customize->add_setting( 'aqua_testimonial1_company', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial1_company', array(
+                'label'    => esc_html( 'Testimonial one company name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial1_company',
+                'type' => 'text',
+            )
+    );
+    /* Testimonial two image*/
+     $wp_customize->add_setting('aqua_testimonial2_image', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_image'
+    ) );
+    $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'aqua_testimonial2_image',
+        array(
+            'label' => esc_html( 'Testimonial two image:', 'aquaparallax' ),
+            'section' => 'aqua_testimonial_section',
+            'settings' => 'aqua_testimonial2_image'
+        )
+    )
+    );
+    /* Testimonial two content */
+    $wp_customize->add_setting( 'aqua_testimonial2_content', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial2_content', array(
+                'label'    => esc_html( 'Testimonial two content:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial2_content',
+                'type' => 'textarea',
+            )
+    );
+    /* Testimonial two client name */
+    $wp_customize->add_setting( 'aqua_testimonial2_client', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial2_client', array(
+                'label'    => esc_html( 'Testimonial two client name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial2_client',
+                'type' => 'text',
+            )
+    );
+    /* Testimonial two company name */
+    $wp_customize->add_setting( 'aqua_testimonial2_company', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial2_company', array(
+                'label'    => esc_html( 'Testimonial two company name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial2_company',
+                'type' => 'text',
+            )
+    );
+    /* Testimonial three image*/
+     $wp_customize->add_setting('aqua_testimonial3_image', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_image'
+    ) );
+    $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'aqua_testimonial3_image',
+        array(
+            'label' => esc_html( 'Testimonial three image:', 'aquaparallax' ),
+            'section' => 'aqua_testimonial_section',
+            'settings' => 'aqua_testimonial3_image'
+        )
+    )
+    );
+    /* Testimonial three content */
+    $wp_customize->add_setting( 'aqua_testimonial3_content', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial3_content', array(
+                'label'    => esc_html( 'Testimonial three content:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial3_content',
+                'type' => 'textarea',
+            )
+    );
+    /* Testimonial three client name */
+    $wp_customize->add_setting( 'aqua_testimonial3_client', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial3_client', array(
+                'label'    => esc_html( 'Testimonial three client name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial3_client',
+                'type' => 'text',
+            )
+    );
+    /* Testimonial three company name */
+    $wp_customize->add_setting( 'aqua_testimonial3_company', array(
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
+    ) );
+    $wp_customize->add_control(
+
+             'aqua_testimonial3_company', array(
+                'label'    => esc_html( 'Testimonial three company name:', 'aquaparallax' ),
+                'section'  => 'aqua_testimonial_section',
+                'settings' => 'aqua_testimonial3_company',
+                'type' => 'text',
+            )
+    );
+
 // Social icon section
 $wp_customize->add_section(
         'aqua_social_section',
         array(
             'title' => esc_html( 'Social icon section', 'aquaparallax' ),
             'description' => esc_html( 'Social section.', 'aquaparallax' ),
-            'priority' => 45,
+            'priority' => 46,
         )
     );
 	/* Facebook icon*/
 	$wp_customize->add_setting('aqua_facebook_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control(
@@ -469,7 +610,7 @@ $wp_customize->add_section(
      /* Facebook link setting */
 
 	$wp_customize->add_setting( 'aqua_facebook_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 	$wp_customize->add_control(
 
@@ -484,7 +625,7 @@ $wp_customize->add_section(
 	
 	/* Twitter icon */
 	$wp_customize->add_setting('aqua_twitter_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 	$wp_customize->add_control(
 		'aqua_twitter_icon',
@@ -496,7 +637,7 @@ $wp_customize->add_section(
 	);
    /* Twitter link setting */
 	$wp_customize->add_setting( 'aqua_twitter_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 	$wp_customize->add_control(
 
@@ -510,7 +651,7 @@ $wp_customize->add_section(
 
 	/* Google plus */
 	$wp_customize->add_setting('aqua_google_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control(
@@ -525,7 +666,7 @@ $wp_customize->add_section(
     /* Google plus link setting */
 
 	$wp_customize->add_setting( 'aqua_google_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 
 	$wp_customize->add_control(
@@ -539,7 +680,7 @@ $wp_customize->add_section(
 	
 	/* Instagram */
 	$wp_customize->add_setting('aqua_instagram_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control(
@@ -554,7 +695,7 @@ $wp_customize->add_section(
     /* Instagram setting */
 
 	$wp_customize->add_setting( 'aqua_instagram_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 
 	$wp_customize->add_control(
@@ -569,7 +710,7 @@ $wp_customize->add_section(
    	
 	/* Linkedin */
 	$wp_customize->add_setting('aqua_linked_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control(
@@ -583,7 +724,7 @@ $wp_customize->add_section(
 	
 	/* Linkedin link setting */
 	$wp_customize->add_setting( 'aqua_linked_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 
 	$wp_customize->add_control(
@@ -598,7 +739,7 @@ $wp_customize->add_section(
 	
 	/* Youtube */
 	$wp_customize->add_setting('aqua_youtube_icon', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control(
@@ -612,7 +753,7 @@ $wp_customize->add_section(
 	
 	/* Linkedin link setting */
 	$wp_customize->add_setting( 'aqua_youtube_link', array(
-		'sanitize_callback' => 'aqua_sanitize_text'
+		'sanitize_callback' => 'aquaparallax_sanitize_url'
 	) );
 
 	$wp_customize->add_control(
@@ -636,7 +777,7 @@ $wp_customize->add_section(
     );
 	// Copyright text
 	$wp_customize->add_setting('aqua_copyright_text', array(
-        'sanitize_callback' => 'aqua_sanitize_text'
+        'sanitize_callback' => 'aquaparallax_sanitize_html'
 	) );
     $wp_customize->add_control(
     'aqua_copyright_text',
@@ -651,11 +792,32 @@ $wp_customize->add_section(
 }
 add_action( 'customize_register', 'aqua_customize_register' );
 
-function aqua_sanitize_text( $input ) {
 
-    return wp_kses_post( force_balance_tags( $input ) );
+function aquaparallax_sanitize_html( $html ) {
+    return wp_filter_post_kses( $html );
 }
-
+function aquaparallax_sanitize_checkbox( $checked ) {
+  
+    return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+function aquaparallax_sanitize_image( $image, $setting ) {
+   
+    $mimes = array(
+        'jpg|jpeg|jpe' => 'image/jpg',
+        'gif'          => 'image/gif',
+        'png'          => 'image/png',
+        'bmp'          => 'image/bmp',
+        'tif|tiff'     => 'image/tiff',
+        'ico'          => 'image/x-icon'
+    );
+   
+    $file = wp_check_filetype( $image, $mimes );
+   
+    return ( $file['ext'] ? $image : $setting->default );
+}
+function aquaparallax_sanitize_url( $url ) {
+    return esc_url_raw( $url );
+}
 function aqua_customize_preview_js() {
 	wp_enqueue_script( 'aqua_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }

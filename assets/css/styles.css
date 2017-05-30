@@ -1735,11 +1735,11 @@ outline: none !important;
 }.site-404-content {
     text-align: center;
 }
+p.aqa-pag-search {
+    text-align: center;
+}
 .site-404-content .page-content input#searchsubmit{
   top: 70px;
-}
-p.aqa-pagenot {
-    text-align: center;
 }
 /*Mean Menu*/
 .mean-container a.meanmenu-reveal {

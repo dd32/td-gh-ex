@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Aquaparallax
- * @version 1.1
+ * @version 1.2
  */
 
 if ( ! is_active_sidebar( 'aqua_right_sidebar' ) ) {

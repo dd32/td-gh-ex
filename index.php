@@ -11,7 +11,7 @@
  *
  * @package WordPress
  * @subpackage Aquaparallax
- * @version 1.1
+ * @version 1.2
  */
 
 get_header(); ?>
@@ -50,13 +50,13 @@ get_header(); ?>
     ?>
 </ul>
 
-
+<?php wp_reset_postdata(); ?>
 <?php else:  ?>
  
    	<?php get_template_part( 'template-parts/content', 'none' ); ?>
  
 <?php endif; ?>
-<?php wp_reset_postdata(); ?>
+
 </div>
 
 </div>
@@ -71,13 +71,9 @@ get_header(); ?>
 <?php dynamic_sidebar('aqua_right_sidebar');  ?>
 
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
 </div>
 

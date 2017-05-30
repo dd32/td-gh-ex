@@ -19,7 +19,7 @@ get_header();
 				<div class="col-md-12">
 					<h2><?php echo esc_html( get_theme_mod( 'aqua_banner_title' ), 'aquaparallax' ); ?></h2>
 					<p><?php echo esc_html( get_theme_mod( 'aqua_banner_content' ), 'aquaparallax' ); ?></p>
-					<p><a href="<?php echo esc_url( get_theme_mod( 'aqua_read_link' ), 'No link has been saved yet.' ); ?>">Read More</a> <a class="banner-btn" href="<?php echo esc_url( get_theme_mod( 'aqua_download_link' ), 'aqua' ); ?>">Download Now</a></p>
+					<p><a href="<?php echo esc_url( get_theme_mod( 'aqua_read_link' ), 'No link has been saved yet.' ); ?>"><?php echo esc_html_e( 'Read More', 'aquaparallax' ); ?></a> <a class="banner-btn" href="<?php echo esc_url( get_theme_mod( 'aqua_download_link' ), 'aqua' ); ?>"><?php echo esc_html_e( 'Download Now', 'aquaparallax' ); ?></a></p>
 				</div>
 			</div>
 		</div>
@@ -30,9 +30,9 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2><?php echo esc_html( 'Simple Parallax Theme Just for You', 'aquaparallax' ); ?></h2>
-					<p><?php echo esc_html( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'aquaparallax' ); ?></p>
-					<p><a href="<?php echo esc_url( get_theme_mod( 'aqua_read_link' ), 'No link has been saved yet.' ); ?>"><?php echo esc_html( 'Read More', 'aquaparallax' ); ?></a> <a class="banner-btn" href="<?php echo esc_url( get_theme_mod( 'aqua_download_link' ), 'aquaparallax' ); ?>"> <?php echo esc_html( 'Download Now', 'aquaparallax' ); ?></a></p>
+					<h2><?php echo esc_html_e( 'Simple Parallax Theme Just for You', 'aquaparallax' ); ?></h2>
+					<p><?php echo esc_html_e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'aquaparallax' ); ?></p>
+					<p><a href="<?php echo esc_url( get_theme_mod( 'aqua_read_link' ), 'No link has been saved yet.' ); ?>"><?php echo esc_html_e( 'Read More', 'aquaparallax' ); ?></a> <a class="banner-btn" href="<?php echo esc_url( get_theme_mod( 'aqua_download_link' ), 'aquaparallax' ); ?>"> <?php echo esc_html_e( 'Download Now', 'aquaparallax' ); ?></a></p>
 				</div>
 			</div>
 		</div>
@@ -92,7 +92,7 @@ get_header();
 <div class="col-md-12">
 <h2><?php echo esc_html( get_theme_mod( 'aqua_parallax_title' ), 'aquaparallax' ); ?></h2>
 <p><?php echo esc_html( get_theme_mod( 'aqua_parallax_content' ), 'aquaparallax' ); ?></p>
-<p class="parllex-btn"><a href="<?php echo esc_url( get_theme_mod( 'aqua_parallax_link' ), 'No link has been saved yet' ); ?>"> More info </a></p>
+<p class="parllex-btn"><a href="<?php echo esc_url( get_theme_mod( 'aqua_parallax_link' ), 'No link has been saved yet' ); ?>"> <?php echo esc_html_e( 'More info', 'aquaparallax' ); ?></a></p>
 </div>
 
 </div>
@@ -103,8 +103,8 @@ get_header();
 <div class="container">
 <div class="row">
 <div class="aqa-home-blog-header">
-<h2 class="aqa-main-title"><?php echo esc_html( 'Blog', 'aquaparallax' ); ?></h2>
-<p><?php echo esc_html( 'Your Latest Blog Posts', 'aquaparallax' ); ?></p>
+<h2 class="aqa-main-title"><?php echo esc_html_e( 'Blog', 'aquaparallax' ); ?></h2>
+<p><?php echo esc_html_e( 'Your Latest Blog Posts', 'aquaparallax' ); ?></p>
 </div>
 <?php $args = array(
 		      'post_type' => 'post',
@@ -121,12 +121,13 @@ get_header();
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	<p class="blog-user-cmd"><span class="aqa-blog-date"><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span></p>
 	<p><?php the_excerpt(); ?></p>
-	<div class="aqa-read-btn"><a href="<?php the_permalink(); ?>" class="read-more-btn">Continue Reading</a></div>
+	<div class="aqa-read-btn"><a href="<?php the_permalink(); ?>" class="read-more-btn"><?php echo esc_html_e( 'Continue Reading', 'aquaparallax' ); ?></a></div>
 </div>
 </div>
 </div><?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
 <?php $url = site_url( '/blog/', 'http');  ?>
-	<div class="aqa-view-more-btn"><a href="<?php echo esc_url( $url ); ?>"><class="view-more-btn">View More</a></div>
+	<div class="aqa-view-more-btn"><a href="<?php echo esc_url( $url ); ?>"><class="view-more-btn"><?php echo esc_html_e( 'View More', 'aquaparallax' ); ?></a></div>
 
 </div>
 </div>
@@ -136,11 +137,16 @@ get_header();
 <?php if( get_theme_mod( 'aqua_portfolio_section' ) == '1') { ?>
 <div class="aqa-portfolio-section" id="aqa-portfolio-sec">
 <div class="container">
-<h2 class="aqa-main-title"><?php echo esc_html( 'Portfolio', 'aquaparallax' ); ?></h2>
+<h2 class="aqa-main-title"><?php echo esc_html_e( 'Portfolio', 'aquaparallax' ); ?></h2>
 </div>
 <div class="container">
 <div class="row port_spacing">
-	<?php echo do_shortcode('[wonderplugin_gridgallery id=1]'); ?>
+	<?php
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if( is_plugin_active( 'portfolio-gallery/portfolio-gallery.php' ) ) {
+		echo do_shortcode("[huge_it_portfolio id='1']"); 
+	}
+	?> 
 </div>
 </div>
 </div>
@@ -150,26 +156,46 @@ get_header();
 <div class="aqa-testimonial-section" id="aqa-testimonial-sec"> 
 <div class="container">
 
-<h2 class="aqa-main-title"><?php echo esc_html( 'TESTIMONIALS', 'aquaparallax' ); ?></h2>
+<h2 class="aqa-main-title"><?php echo esc_html_e( 'TESTIMONIALS', 'aquaparallax' ); ?></h2>
 <div class="cd-testimonials-wrapper cd-container">
 
     <ul class="cd-testimonials">
-    <?php $args = array(
-	'post_type' => 'testimonial',
-	);
-	$the_query = new WP_Query( $args );
-	while ( $the_query->have_posts() ) : $the_query->the_post();    ?>
-        <li>
-            <p><?php the_content(); ?></p>
+    	<?php if( get_theme_mod( 'aqua_testimonial1_image' ) ) { ?> 
+           <li>
+            <p><?php echo esc_html( get_theme_mod( 'aqua_testimonial1_content' ), 'aquaparallax' ); ?></p>
             <div class="cd-author">
-              	<?php the_post_thumbnail( array(100, 100) ); ?>
+              	<img  width="100" height="100" src="<?php echo esc_url( get_theme_mod( 'aqua_testimonial1_image' ), 'No image has been saved yet.' ); ?>" alt="Author image" >
                 <ul class="cd-author-info">
-                    <li><?php $client_name = get_post_meta($post->ID, 'Client Name'); ?><?php if($client_name) { echo $client_name[0]; }?></li>
-                    <li><?php $client_company = get_post_meta($post->ID, 'Client Company'); ?><?php if($client_company) { echo $client_company[0]; }?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial1_client' ), 'aquaparallax' ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial1_company' ), 'aquaparallax' ); ?></li>
                 </ul>
             </div>
         </li>
-      <?php endwhile; ?>
+        <?php } ?>
+        <?php if( get_theme_mod( 'aqua_testimonial2_image' ) ) { ?> 
+        <li>
+            <p><?php echo esc_html( get_theme_mod( 'aqua_testimonial2_content' ), 'aquaparallax' ); ?></p>
+            <div class="cd-author">
+              	<img  width="100" height="100" src="<?php echo esc_url( get_theme_mod( 'aqua_testimonial2_image' ), 'No image has been saved yet.' ); ?>" alt="Author image" >
+                <ul class="cd-author-info">
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial2_client' ), 'aquaparallax' ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial2_company' ), 'aquaparallax' ); ?></li>
+                </ul>
+            </div>
+        </li>
+        <?php } ?>
+        <?php if( get_theme_mod( 'aqua_testimonial3_image' ) ) { ?> 
+        <li>
+            <p><?php echo esc_html( get_theme_mod( 'aqua_testimonial3_content' ), 'aquaparallax' ); ?></p>
+            <div class="cd-author">
+              	<img  width="100" height="100" src="<?php echo esc_url( get_theme_mod( 'aqua_testimonial3_image' ), 'No image has been saved yet.' ); ?>" alt="Author image" >
+                <ul class="cd-author-info">
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial3_client' ), 'aquaparallax' ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'aqua_testimonial3_company' ), 'aquaparallax' ); ?></li>
+                </ul>
+            </div>
+        </li>
+    <?php } ?>
     </ul> 
 </div> 
 </div>

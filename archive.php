@@ -31,23 +31,7 @@ get_header(); ?>
       <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 <?php endwhile; ?>
-
-<!-- Aquaparallax pagination -->
-
-<div class="row">
-
-<div class="col-md-12">
-
-<ul class="blog-page-nation">
-
-<?php
-      if (function_exists('aqua_pagination')) {
-        aqua_pagination();
-      }
-    ?>
-
-</ul>
-
+<?php wp_reset_postdata(); ?>
 
 <?php else:  ?>
  
@@ -55,9 +39,7 @@ get_header(); ?>
  
 <?php endif; ?>
 
-</div>
 
-</div>
 
 </div>
 

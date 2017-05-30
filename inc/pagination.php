@@ -8,18 +8,16 @@ function aqua_pagination($numpages = '', $pagerange = '', $paged='') {
   /**
    * This first part of our function is a fallback
    * for aquaparallax pagination inside a regular loop that
-   * uses the global $paged and global $wp_query variables.
-   * 
    * It's good because we can now override default pagination
    * in our theme, and use this function in default quries
    * and aquaparallax queries.
    */
-  global $paged;
+ 
   if (empty($paged)) {
     $paged = 1;
   }
   if ($numpages == '') {
-    global $wp_query;
+   
     $numpages = $wp_query->max_num_pages;
     if(!$numpages) {
         $numpages = 1;
@@ -50,7 +48,7 @@ function aqua_pagination($numpages = '', $pagerange = '', $paged='') {
 
   if ($paginate_links) {
     echo "<nav class='aqua-pagination'>";
-      echo "<span class='page-numbers page-num'>Page " . $paged . " of " . $numpages . "</span> ";
+       echo "<span class='page-numbers page-num'>Page " . $paged . " of " . $numpages . "</span> ";
       echo $paginate_links;
     echo "</nav>";
   }

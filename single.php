@@ -42,7 +42,8 @@ get_header();
 	</li>
 </ul>
 
-<?php endwhile; ?>
+<?php endwhile; 
+wp_reset_postdata(); ?>
 
 <div class="row">
 <div class="col-md-12">
@@ -53,7 +54,7 @@ get_header();
 <?php  $related = get_posts( array( 
 		   'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
 		   if( $related ) { ?>
-<h3 class="you-may-like">You May Also Like..</h3>
+<h3 class="you-may-like"><?php echo esc_html_e( 'You May Also Like..', 'aquaparallax' ); ?></h3>
           <?php } ?>
 		  
 <div class="row">

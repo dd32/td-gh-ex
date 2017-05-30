@@ -1,7 +1,7 @@
 === Aquaparallax ===
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.7.4
-Version: 1.1
+Version: 1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -22,6 +22,10 @@ Aquaparallax WordPress Theme, Copyright 2017 wordpress themes Aquablog is distri
 
 = 1.1 =
 * Initial release
+
+= 1.2 =
+* fixed translation issues
+* fixed unescape data
 
 == Resources ==
 *   TGM Plugin Activation library, Copyright Thomas Griffin, Gary Jones, Juliette Reinders Folmer, 

@@ -16,18 +16,9 @@ function aqua_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'         => 'Aqua Testimonial', // The plugin name.
-			'slug'         => 'aqua-testimonial', // The plugin slug (typically the folder name).
-			'source'       => 'http://dev.vegamsoft.com/blogtheme/plugin/aqua-testimonial.zip', // The plugin source.
-			'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-		),
-	
-
-	    array(
-			'name'         => 'Wonderplugin Grid Gallery', // The plugin name.
-			'slug'         => 'wonderplugin-grid-gallery', // The plugin slug (typically the folder name).
-			'source'       => 'https://www.wonderplugin.com/download/wonderplugin-gridgallery-free.zip', // The plugin source.
-			'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+			'name'      => 'Huge IT Portfolio',
+			'slug'      => 'portfolio-gallery',
+			'required'  => false,
 		),
 	 
 	);
@@ -44,13 +35,13 @@ function aqua_register_required_plugins() {
 
 		
 		'strings'      => array(
-			'page_title'                      => esc_html( 'Install Required Plugins', 'aquaparallax' ),
-			'menu_title'                      => esc_html( 'Install Plugins', 'aquaparallax' ),
+			'page_title'                      => __( 'Install Required Plugins', 'aquaparallax' ),
+			'menu_title'                      => __( 'Install Plugins', 'aquaparallax' ),
 			/* translators: %s: plugin name. */
-			'installing'                      => esc_html( 'Installing Plugin: %s', 'aquaparallax' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'aquaparallax' ),
 			/* translators: %s: plugin name. */
-			'updating'                        => esc_html( 'Updating Plugin: %s', 'aquaparallax' ),
-			'oops'                            => esc_html( 'Something went wrong with the plugin API.', 'aquaparallax' ),
+			'updating'                        => __( 'Updating Plugin: %s', 'aquaparallax' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'aquaparallax' ),
 			'notice_can_install_required'     => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'This theme requires the following plugin: %1$s.',
@@ -102,18 +93,18 @@ function aqua_register_required_plugins() {
 				'Begin activating plugins',
 				'aquaparallax'
 			),
-			'return'                          => esc_html( 'Return to Required Plugins Installer', 'aquaparallax' ),
-			'plugin_activated'                => esc_html( 'Plugin activated successfully.', 'aquaparallax' ),
-			'activated_successfully'          => esc_html( 'The following plugin was activated successfully:', 'aquaparallax' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'aquaparallax' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'aquaparallax' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'aquaparallax' ),
 			/* translators: 1: plugin name.  */
-			'plugin_already_active'           => esc_html( 'No action taken. Plugin %1$s was already active.', 'aquaparallax' ),  
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'aquaparallax' ),  
 			/* translators: 1: plugin name. */
-			'plugin_needs_higher_version'     => esc_html( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'aquaparallax' ),
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'aquaparallax' ),
 			/* translators: 1: dashboard link. */
-			'complete'                        => esc_html( 'All plugins installed and activated successfully. %1$s', 'aquaparallax' ),
-			'dismiss'                         => esc_html( 'Dismiss this notice', 'aquaparallax' ),
-			'notice_cannot_install_activate'  => esc_html( 'There are one or more required or recommended plugins to install, update or activate.', 'aquaparallax' ),
-			'contact_admin'                   => esc_html( 'Please contact the administrator of this site for help.', 'aquaparallax' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'aquaparallax' ),
+			'dismiss'                         => __( 'Dismiss this notice', 'aquaparallax' ),
+			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'aquaparallax' ),
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'aquaparallax' ),
 
 			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
 		),

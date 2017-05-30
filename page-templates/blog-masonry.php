@@ -26,7 +26,7 @@ get_header();
 
 <div class="row">
 <?php
-global $wp_query, $paged;
+
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 $args = array( 
@@ -55,7 +55,7 @@ $the_query = new WP_Query( $args );
       }
     ?>
 </ul>
-
+<?php wp_reset_postdata(); ?>
 </div>
 
 <div class="col-md-4 col-sm-8 blog-right-sidebar">

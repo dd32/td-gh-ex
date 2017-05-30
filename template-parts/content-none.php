@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php echo esc_html( 'Nothing Found', 'aquaparallax' ); ?></h1>
+		<h1 class="page-title"><?php echo esc_html_e( 'Nothing Found', 'aquaparallax' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -22,13 +22,13 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p class="aqa-pagenot"><?php echo esc_html( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aquaparallax' ); ?></p>
+			<p class="aqa-pag-search"><?php echo esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aquaparallax' ); ?></p>
 			<?php
 				get_search_form();
 
 		else : ?>
 
-			<p><?php echo esc_html( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'aquaparallax' ); ?></p>
+			<p><?php echo esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'aquaparallax' ); ?></p>
 			<?php
 				get_search_form();
 

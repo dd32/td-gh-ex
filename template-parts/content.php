@@ -31,19 +31,19 @@
 <div class="aqa-blog-meta">
 
 <span class="aqa-blog-user"><i class="fa fa-user"></i><?php $username = get_userdata( $post->post_author ); ?>    
-<a href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->user_nicename; ?></a></span>
+<a href="<?php echo esc_url( get_author_posts_url( $post->post_author ) ); ?>"><?php echo esc_html( $username->user_nicename ); ?></a></span>
 
 <span class="aqa-blog-date"><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
 
 <span class="aqa-blog-cat"><i class="fa fa-folder"></i><?php the_category(', '); ?>
 </span>
 
-<span class="aqa-blog-cmnt"><i class="fa fa-comment"></i><a href="<?php comments_link(); ?>" target="_blank"><?php echo esc_html( 'Leave a Comment', 'aquaparallax' ); ?>
+<span class="aqa-blog-cmnt"><i class="fa fa-comment"></i><a href="<?php comments_link(); ?>" target="_blank"><?php echo esc_html_e( 'Leave a Comment', 'aquaparallax' ); ?>
 </a></span>
 
 </div>
 
-<p class="blog-single-btn"><a href="<?php the_permalink(); ?>"> Read More</a></p>
+<p class="blog-single-btn"><a href="<?php the_permalink(); ?>"><?php echo esc_html_e( 'Read More', 'aquaparallax' ); ?></a></p>
 
 
 </div>

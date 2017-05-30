@@ -20,13 +20,14 @@
 
 <?php if (have_posts() ) : ?>
 
- <h1><?php echo esc_html( 'Search Results:', 'aquaparallax' ); ?> </h1>
+ <h1><?php echo esc_html_e( 'Search Results:', 'aquaparallax' ); ?> </h1>
     
     <?php while ( have_posts() ) : the_post(); ?>
 	
 	      <?php get_template_part( 'template-parts/content', 'search' ); ?>
 
 <?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
 
 <?php else:  ?>
  

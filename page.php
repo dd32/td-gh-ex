@@ -10,7 +10,8 @@
          <div>
            <?php the_content(); ?>
          </div>
-  <?php endwhile; endif; ?>
+  <?php endwhile;  wp_reset_postdata(); ?>
+  <?php endif; ?>
  </div>
 </div>
 </div>

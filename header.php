@@ -6,14 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
-	<?php if ( get_theme_mod( 'aqua_favicon') ) { ?>
-	<link rel="shortcut icon" href="<?php echo get_theme_mod( 'aqua_favicon', 'No image has been saved yet.' ); ?>" />
-	<?php }
-	else {
-	?>
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/aqa-fav.png" />
-	<?php } ?>
-	<title><?php  wp_title( '|', true, 'right'); ?></title>
+
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <?php wp_head(); ?>
@@ -37,25 +30,17 @@
 <div class="col-md-3 col-xs-6">
 
 <div class="aqa-logo">
-
-	<?php if ( get_theme_mod( 'aqua_header_logo') ) { ?>
-
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo_position" src="<?php echo get_theme_mod( 'aqua_header_logo', 'No image has been saved yet.' ); ?>"></a>
-
-	<?php 
-
+    
+<?php 
+    
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	if ( has_custom_logo() ) {
+	        echo '<a href="'. esc_url( home_url() ) .'"><img src="'. esc_url( $logo[0] ) .'"></a>';
+	} else {
+	        echo '<a href="'. esc_url( home_url() ) .'"><h1>'. get_bloginfo( 'name' ) .'</h1></a>';
 	}
-
-	else
-
-	{
-
 	?>
-	<!-- <img src=""> -->
-
-	<p class="aqa-logo-txt"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/aqa-logo.png"></a></p>
-
-	<?php } ?>
 
 </div>
 

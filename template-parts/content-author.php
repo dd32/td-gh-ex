@@ -18,7 +18,7 @@ $author_avatar      = get_avatar( get_the_author_meta( 'user_email' ), apply_fil
 // Only display if author has a description
 if ( $author_description && get_theme_mod( 'aqua_remove_single_bio', '') != '1' ) : ?>
 
-<h2 class="aqa-writter-title">Written By</h2>
+<h2 class="aqa-writter-title"><?php echo esc_html_e( 'Written By', 'aquaparallax' ); ?></h2>
 <div class="blog-writen">
 <div class="col-md-3">
 

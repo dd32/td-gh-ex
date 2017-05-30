@@ -180,23 +180,12 @@ function aqua_post_formats_setup() {
 }
 add_action( 'after_setup_theme', 'aqua_post_formats_setup' );
 
-// Aquaparallax register custom fields 
-add_action('wp_insert_post', 'aqua_custom_fields');
-function aqua_custom_fields($post_id){
-if ( 'post_type' == 'testimonial' ) {
- 
-add_post_meta($post_id, 'Client Name', '', true);
-add_post_meta($post_id, 'Client Company', '', true);
-}
-return true;
-}
-
 // Aquaparallax register pagination
 require_once('inc/pagination.php');
 
 // Generate breadcrumbs
 function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+    echo '<a href="'. esc_url( home_url() ) .'" rel="nofollow">'. esc_html('Home', 'aquaparallax') .'</a>';
     if (is_category() || is_single()) {
         echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
         the_category(' &bull; ');
@@ -223,24 +212,6 @@ function theme_slug_setup() {
 	add_theme_support( 'title-tag' );
 }
 
-function aqua_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	$title .= get_bloginfo( 'name' );
-
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( esc_html( 'Page %s', 'aquaparallax' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'aqua_wp_title', 10, 2 );
  
  // Aquaparallax content width
 if ( ! isset( $content_width ) ) {
