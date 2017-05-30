@@ -143,7 +143,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 							</div>
 							<div class="ams-details">
 								<?php the_title( sprintf( '<h3 class="ams-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-								<p class="ams-meta"><?php the_time('F j, Y'); ?></p>
+								<p class="ams-meta"><?php echo awaken_posted_datetime(); ?></p>
 							</div>
 						</div>
 					<?php } ?>

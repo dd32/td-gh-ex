@@ -83,11 +83,11 @@ function awaken_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'awaken_posted_on' ) ) :
+if ( ! function_exists( 'awaken_posted_datetime ') ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Returns the posted datetime.
  */
-function awaken_posted_on() {
+function awaken_posted_datetime() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -99,6 +99,20 @@ function awaken_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+
+	return $time_string;
+}
+
+endif;
+
+
+if ( ! function_exists( 'awaken_posted_on' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function awaken_posted_on() {
+	
+	$time_string = awaken_posted_datetime();
 
 	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 

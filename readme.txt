@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.3
+Version    : 2.1.4
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -211,3 +211,6 @@ Added awaken.pot file in addition to default.po file.
 
 - Version 2.1.3
 Added woocommerce 3.0 support.
+
+- Version 2.1.4
+Added the WordPress default date formatting support for posts widgets.

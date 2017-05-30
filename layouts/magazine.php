@@ -2,7 +2,7 @@
 /**
  * Template Name: Magazine Template
  *
- * Displays the Business Template of the theme.
+ * Displays the Magazine Template of the theme.
  *
  * @package awaken
  */
