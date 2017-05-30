@@ -857,6 +857,27 @@ if (!function_exists('suevafree_widget_class')) {
 
 }
 
+/*-----------------------------------------------------------------------------------*/
+/* THUMBNAIL SIZE */
+/*-----------------------------------------------------------------------------------*/         
+
+if (!function_exists('suevafree_thumb_size')) {
+
+	function suevafree_thumb_size($section, $span) {
+
+		$thumbnails = array(
+
+			'single_col-md-12' => 'suevafree_thumbnail',
+			'single_col-md-8' => 'suevafree_thumbnail_l',
+			
+		);
+		
+		return $thumbnails[$section . '_' . $span];
+	
+	}
+
+}
+
 /*-----------------------------------------------------------------------------------*/ 
 /* STYLES AND SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
@@ -951,7 +972,10 @@ if (!function_exists('suevafree_setup')) {
 		
 		);
 		
-		add_image_size( 'suevafree_blog_thumbnail', suevafree_get_width(), suevafree_get_thumbs('blog'), TRUE ); 
+		add_image_size( 'suevafree_thumbnail_s',  suevafree_setting('suevafree_thumbnail_s_width', '360'),  suevafree_setting('suevafree_thumbnail_s_height', '182'), TRUE ); 
+		add_image_size( 'suevafree_thumbnail_l',  suevafree_setting('suevafree_thumbnail_l_width', '750'),  suevafree_setting('suevafree_thumbnail_l_height', '379'), TRUE ); 
+		add_image_size( 'suevafree_thumbnail',    suevafree_setting('suevafree_thumbnail_width', '1170'),   suevafree_setting('suevafree_thumbnail_height', '690'), TRUE ); 
+
 		add_image_size( 'suevafree_large', 449,304, TRUE ); 
 		add_image_size( 'suevafree_medium', 290,220, TRUE ); 
 		add_image_size( 'suevafree_small', 211,150, TRUE ); 

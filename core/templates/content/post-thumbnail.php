@@ -42,7 +42,7 @@ if (!function_exists('suevafree_thumbnail_function')) {
 	
 		} else if ( $params['type'] == "overlay" ) {
 		
-			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'suevafree_blog_thumbnail');
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), $params['id']);
 			
 			if (!empty($thumb)) :
 			
@@ -67,7 +67,7 @@ if (!function_exists('suevafree_thumbnail_function')) {
 	
 	}
 
-	add_action( 'suevafree_thumbnail', 'suevafree_thumbnail_function', 10, 2 );
+	add_action( 'suevafree_thumbnail', 'suevafree_thumbnail_function', 10, 3 );
 
 }
 

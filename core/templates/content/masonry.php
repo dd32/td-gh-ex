@@ -22,7 +22,7 @@ if (!function_exists('suevafree_masonry_function')) {
            
                 <div <?php post_class(); ?>>
             
-                    <?php do_action('suevafree_postformat'); ?>
+                    <?php do_action('suevafree_postformat', 'suevafree_thumbnail_s'); ?>
             
                 </div>
         
@@ -32,9 +32,8 @@ if (!function_exists('suevafree_masonry_function')) {
             
                     <article class="post-article">
                             
-                        <h1> <?php esc_html_e( 'Not found.',"suevafree" ) ?> </h1>
-                        
-                        <p> <?php esc_html_e( 'Sorry, no items found, in this section.',"suevafree" ) ?> </p>
+                        <h1> <?php esc_html_e( 'Not found.','suevafree' ) ?> </h1>
+                        <p> <?php esc_html_e( 'Sorry, no items found, in this section.','suevafree' ) ?> </p>
              
                     </article>
             

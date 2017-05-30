@@ -6,12 +6,6 @@ if (!function_exists('suevafree_css_custom')) {
 
 		$css = '<style type="text/css">';
 
-			/* =================== BODY STYLE =================== */
-		
-			if ( get_theme_mod('suevafree_full_image_background') == "on" )
-				
-				$css .=  "body { -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}"; 
-	
 			/* =================== HEADER STYLE =================== */
 		
 			if ( get_header_image() )

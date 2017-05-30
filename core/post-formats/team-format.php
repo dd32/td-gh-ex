@@ -12,12 +12,12 @@
 
 if ( !function_exists('suevafree_team_format_function')) {
 
-	function suevafree_team_format_function() {
+	function suevafree_team_format_function($post_thumbnail = 'suevafree_thumbnail') {
 
 		do_action('suevafree_thumbnail', 
 			
-			array(	'id' =>'suevafree_blog_thumbnail', 
-					'type' =>'default', 
+			array(	'id' => $post_thumbnail, 
+					'type' => 'default', 
 					'icon' => esc_attr(suevafree_setting( 'suevafree_display_icon', 'off' )) 
 			) 
 			

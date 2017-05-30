@@ -12,13 +12,13 @@
 
 if (!function_exists('suevafree_image_format_function')) {
 
-	function suevafree_image_format_function() {
+	function suevafree_image_format_function($post_thumbnail = 'suevafree_thumbnail') {
 
 		if ( ! suevafree_is_single() ) :
 		
 			do_action('suevafree_thumbnail', 
 				
-				array(	'id' =>'suevafree_blog_thumbnail', 
+				array(	'id' => $post_thumbnail, 
 						'type' =>'overlay', 
 						'icon' => esc_attr(suevafree_setting( 'suevafree_display_icon','off' )) 
 				) 
@@ -29,8 +29,8 @@ if (!function_exists('suevafree_image_format_function')) {
 
 			do_action('suevafree_thumbnail', 
 				
-				array(	'id' =>'suevafree_blog_thumbnail', 
-						'type' =>'default', 
+				array(	'id' => $post_thumbnail, 
+						'type' => 'default', 
 						'icon' => esc_attr(suevafree_setting( 'suevafree_display_icon','off' )) 
 				) 
 				

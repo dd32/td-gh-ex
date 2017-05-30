@@ -22,7 +22,7 @@
 					
 						while ( have_posts() ) : the_post();
 						
-							do_action('suevafree_postformat');
+							do_action('suevafree_postformat', 'suevafree_thumbnail_l');
 							wp_link_pages(array('before' => '<div class="suevafree-pagination">', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') );
 						
 						endwhile;

@@ -1055,7 +1055,8 @@ body.thumb_hover_off .wp-post-image:hover ,
 #top_sidebar .title ,
 #header_sidebar .title , 
 #bottom_sidebar .title,
-#onepage_sidebar .title { 
+#onepage_sidebar .title,
+#masonry .col-md-4 .page-details-4 .title {
 	margin-bottom:35px;
 }
 
@@ -1123,8 +1124,10 @@ body.thumb_hover_off .wp-post-image:hover ,
 	top:11px
 }
 
-#masonry .col-md-4 .line {
+#masonry .col-md-4 .page-details-4 .line {
 	border:none;
+	display:none;
+	visibility:hidden
 }
 
 footer.line {

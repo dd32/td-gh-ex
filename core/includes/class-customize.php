@@ -46,10 +46,8 @@ if( !class_exists( 'suevafree_customize' ) ) {
 
 			wp_enqueue_style ( 'suevafree-panel',  $file_dir . 'css/panel.css' ); 
 			wp_enqueue_script( 'suevafree-script', $file_dir . 'js/panel.js', array('jquery', 'wp-color-picker'),'1.0.0',TRUE ); 
-	
 			wp_enqueue_style ( 'suevafree-on_off', $file_dir . 'css/on_off.css' ); 
 			wp_enqueue_script( 'suevafree-on_off', $file_dir . 'js/on_off.js', array('jquery'),'1.0.0',TRUE ); 
-	
 			wp_enqueue_script( "jquery-ui-core", array('jquery'));
 			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		  
@@ -114,8 +112,9 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'title' => $element['title'],
 							'panel' => $element['panel'],
 							'priority' => $element['priority'],
-						
-						) );
+							'description' => $element['description'],
+
+						));
 						
 					break;
 	

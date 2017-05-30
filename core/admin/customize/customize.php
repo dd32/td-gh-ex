@@ -6,22 +6,6 @@ if (!function_exists('suevafree_customize_panel_function')) {
 		
 		$theme_panel = array ( 
 
-			array(
-				
-				"label" => esc_html__( "Full Image Background","suevafree"),
-				"description" => esc_html__( "Do you want to set a full background image? (After the upload, check 'Fixed', from the Background Attachment section)","suevafree"),
-				"id" => "suevafree_full_image_background",
-				"type" => "select",
-				"section" => "background_image",
-				"options" => array (
-				   "off" => esc_html__( "No","suevafree"),
-				   "on" => esc_html__( "Yes","suevafree"),
-				),
-				
-				"std" => "off",
-			
-			),
-
 			/* START SUPPORT SECTION */ 
 
 			array(
@@ -31,6 +15,126 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"type" => "suevafree-customize-info",
 				"section" => "suevafree-customize-info",
 				"priority" => "08",
+
+			),
+
+			/* THUMBNAILS PANEL */ 
+
+			array( 
+				
+				"title" => esc_html__( "Thumbnails","suevafree"),
+				"description" => esc_html__( "Thumbnails","suevafree"),
+				"type" => "panel",
+				"id" => "thumbnails_panel",
+				"priority" => "11",
+				
+			),
+
+			/* FULL WIDTH SECTION */ 
+
+			array( 
+
+				"title" => esc_html__( "Full Width Section","suevafree"),
+				"description" => esc_html__( "Insert the size of thumbnails for all contents without a sidebar, then use a free plugin like Regenerate Thumbnails, to regenerate all featured images.","suevafree"),
+				"type" => "section",
+				"id" => "full_width_section",
+				"panel" => "thumbnails_panel",
+				"priority" => "10",
+
+			),
+
+			array( 
+
+				"label" => esc_html__( "Width","suevafree"),
+				"description" => esc_html__( "Insert the width of this thumbnail, for example 1170 and not 1170px.","suevafree"),
+				"id" => "suevafree_thumbnail_width",
+				"type" => "text",
+				"section" => "full_width_section",
+				"std" => "1170",
+
+			),
+
+
+			array( 
+
+				"label" => esc_html__( "Height","suevafree"),
+				"description" => esc_html__( "Insert the height of this thumbnail, for example 690 and not 690px.","suevafree"),
+				"id" => "suevafree_thumbnail_height",
+				"type" => "text",
+				"section" => "full_width_section",
+				"std" => "690",
+
+			),
+
+			/* SIDEBAR SECTION */ 
+
+			array( 
+
+				"title" => esc_html__( "Sidebar Section","suevafree"),
+				"description" => esc_html__( "Insert the size of thumbnails for all contents with a sidebar, then use a free plugin like Regenerate Thumbnails, to regenerate all featured images.","suevafree"),
+				"type" => "section",
+				"id" => "sidebar_section",
+				"panel" => "thumbnails_panel",
+				"priority" => "11",
+
+			),
+
+			array( 
+
+				"label" => esc_html__( "Width","suevafree"),
+				"description" => esc_html__( "Insert the width of this thumbnail, for example 750 and not 750px.","suevafree"),
+				"id" => "suevafree_thumbnail_l_width",
+				"type" => "text",
+				"section" => "sidebar_section",
+				"std" => "750",
+
+			),
+
+
+			array( 
+
+				"label" => esc_html__( "Height","suevafree"),
+				"description" => esc_html__( "Insert the height of this thumbnail, for example 379 and not 379px.","suevafree"),
+				"id" => "suevafree_thumbnail_l_height",
+				"type" => "text",
+				"section" => "sidebar_section",
+				"std" => "379",
+
+			),
+
+			/* MASONRY SECTION */ 
+
+			array( 
+
+				"title" => esc_html__( "Masonry Section","suevafree"),
+				"description" => esc_html__( "Insert the size of thumbnails for the masonry layout, then use a free plugin like Regenerate Thumbnails, to regenerate all featured images.","suevafree"),
+				"type" => "section",
+				"id" => "masonry_section",
+				"panel" => "thumbnails_panel",
+				"priority" => "12",
+
+			),
+
+			array( 
+
+				"label" => esc_html__( "Width","suevafree"),
+				"description" => esc_html__( "Insert the width of this thumbnail, for example 360 and not 360px.","suevafree"),
+				"id" => "suevafree_thumbnail_s_width",
+				"type" => "text",
+				"section" => "masonry_section",
+				"std" => "360",
+
+			),
+
+
+			array( 
+
+				"label" => esc_html__( "Height","suevafree"),
+				"description" => esc_html__( "Insert the height of this thumbnail, for example 182 and not 182px.","suevafree"),
+				"id" => "suevafree_thumbnail_s_height",
+				"type" => "text",
+				"section" => "masonry_section",
+				"std" => "182",
 
 			),
 
@@ -595,30 +699,6 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"std" => "suevafree_before_content_4",
 			
 			),
-
-			/* THUMBNAILS SECTION */ 
-
-			array( 
-
-				"title" => esc_html__( "Thumbnails","suevafree"),
-				"type" => "section",
-				"id" => "thumbnails_section",
-				"panel" => "general_panel",
-				"priority" => "15",
-
-			),
-
-			array( 
-
-				"label" => esc_html__( "Blog Thumbnail","suevafree"),
-				"description" => esc_html__( "Insert the height for blog thumbnail (Use a plugin like Regenerate Thumbnails, to regenerate each thumbnail)","suevafree"),
-				"id" => "suevafree_blog_thumbinal",
-				"type" => "text",
-				"section" => "thumbnails_section",
-				"std" => "429",
-
-			),
-
 
 			/* HEADER AREA SECTION */ 
 

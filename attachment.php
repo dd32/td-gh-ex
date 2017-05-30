@@ -15,10 +15,12 @@
     
                     <p> 
                     
-                        <?php if (wp_attachment_is_image($post->id)) {  $att_image = wp_get_attachment_image_src( $post->id, "suevafree_blog_thumbnail");  ?>
-                        
-                            <a href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php the_title(); ?>"><img src="<?php echo esc_url($att_image[0]);?>" width="<?php echo esc_html($att_image[1]);?>" height="<?php echo esc_html($att_image[2]);?>"  class="attachment-medium" alt="<?php $post->post_excerpt; ?>" /></a>
-                        
+                        <?php if (wp_attachment_is_image($post->id)) { ?>
+
+                            <a data-rel="prettyPhoto" href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php echo the_title_attribute(); ?>">
+                                <?php echo wp_get_attachment_image($post->id, 'suevafree_thumbnail'); ?>
+                            </a>
+
                         <?php } else { ?>
                         
                             <a href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>

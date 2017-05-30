@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.1.7 - Released: 30.05.2017
+
+-- Added : Option to manage the resolution of each thumbnail. (You need to regenerate all featured images using a free plugin like Regenerate Thumbnails)
+-- Optimized : Display all thumbnails and all slides with the correct resolution instead of the full resolution on each section, like the homepage, single page or categories.
+-- Edit  : Code optimized.
+
 - Version 3.1.6 - Released: 19.05.2017
 
 -- Fixed : Double border using the minimal layout
