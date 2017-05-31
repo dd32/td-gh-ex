@@ -26,9 +26,9 @@
 					<?php bestore_posted_on(); ?>
 					<?php bestore_entry_footer(); ?>
 				</div><!-- .post-meta -->
-				<div class="entry-summary col-md-8">
+				<div class="content-entry-summary col-md-8">
 					<?php the_excerpt(); ?> 
-				</div><!-- .entry-summary -->
+				</div><!-- .content-entry-summary -->
 			</div>                                                             
 		</div>                   
 	</div>

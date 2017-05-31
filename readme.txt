@@ -3,7 +3,7 @@ Contributors: Themes4WP
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, theme-options, translation-ready
 Requires at least: 4.4
 Tested up to: 4.7
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,12 +24,12 @@ All available options can be used from Appearance->Customize
 
 == Copyright ==
 
-Bestore WordPress Theme, Copyright 2016 WordPress.org
+Bestore WordPress Theme, Copyright 2017 themes4wp.com
 Bestore is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
@@ -58,6 +58,10 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 Bestore is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+
+= Version 1.0.1 =
+* Improvements based on WP requirements
+* CSS improvements
 
 = Version 1.0 =
 * Initial release

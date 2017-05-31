@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bestore\n"
-"POT-Creation-Date: 2017-04-25 12:52+0200\n"
+"POT-Creation-Date: 2017-05-31 12:03+0200\n"
 "PO-Revision-Date: 2015-12-08 20:48+0100\n"
 "Last-Translator: themes4wp <info@themes4wp.com>\n"
 "Language-Team: themes4wp <info@themes4wp.com>\n"
@@ -21,31 +21,27 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: lib/kirki\n"
 
 #: 404.php:8
-msgid "Oops!"
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:9
-msgid "404 Not Found"
+#: 404.php:10
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: 404.php:11
-msgid "Sorry, an error has occured, Requested page not found!"
-msgstr ""
-
-#: 404.php:14
-msgid "Take Me Home"
-msgstr ""
-
-#: comments.php:4 functions.php:280
+#: comments.php:14 functions.php:278
 msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:4 functions.php:280
+#: comments.php:14 functions.php:278
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:4
+#: comments.php:14
 msgid " Comments"
+msgstr ""
+
+#: comments.php:35
+msgid "Comments are closed."
 msgstr ""
 
 #: content-none.php:2
@@ -88,41 +84,41 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:178
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:211
+#: functions.php:209
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:236
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:250
 msgid ", "
 msgstr ""
 
-#: functions.php:270
+#: functions.php:268
 msgid "Category:"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:272
 msgid "Tagged"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:278
 msgid "% Comments"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:278
 msgid "Comments are off for this post"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:295
 msgid "View your shopping cart"
 msgstr ""
 

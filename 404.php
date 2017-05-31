@@ -5,13 +5,12 @@
 	<div class="col-md-<?php bestore_main_content_width_columns(); ?>">
 		<div class="main-content-page">
 			<div class="error-template text-center">
-				<h1><?php esc_html_e( 'Oops!', 'bestore' ); ?></h1>
-				<h2><?php esc_html_e( '404 Not Found', 'bestore' ); ?></h2>
+				<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bestore' ); ?></h1>
 				<p class="error-details">
-					<?php esc_html_e( 'Sorry, an error has occured, Requested page not found!', 'bestore' ); ?>
+					<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'bestore' ); ?>
 				</p>
 				<div class="error-actions">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-default"><?php esc_html_e( 'Take Me Home', 'bestore' ); ?></a>    
+					<?php get_search_form(); ?>    
 				</div>
 			</div>
 		</div>

@@ -19,7 +19,7 @@
 			<?php endif; ?>
 		</div><!-- .site-branding-text -->
 	</div>
-	<?php if ( has_nav_menu( 'main_menu' ) ) : ?>
+	<?php if ( has_nav_menu( 'main_menu' ) || current_user_can('edit_theme_options') ) : ?>
 		<div class="main-menu" >
 			<nav id="site-navigation" class="navbar">     
 				<div class="container">   
@@ -48,4 +48,4 @@
 		</div>
 	<?php endif; ?>
 </div>
-<div class="container" role="main">
+<div class="container content-container" role="main">

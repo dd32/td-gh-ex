@@ -19,11 +19,11 @@
 								<?php bestore_time_link(); ?>
 								<?php bestore_posted_on(); ?>
 								<?php bestore_entry_footer(); ?>
-							</div><!-- .entry-summary -->
+							</div><!-- .content-entry-summary -->
 						</header>
-						<div class="entry-summary">
+						<div class="content-entry-summary">
 							<?php the_content(); ?> 
-						</div><!-- .entry-summary -->
+						</div><!-- .content-entry-summary -->
 						<?php wp_link_pages(); ?>                                                           
 					</div>
 					<div class="single-footer row">

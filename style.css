@@ -4,7 +4,7 @@ Theme URI: https://themes4wp.com/theme/bestore/
 Author: Themes4WP
 Author URI: https://themes4wp.com/
 Description: Bestore is lightweight, very fast, clean responsive WooCommerce WordPress theme. Bestore is the perfect free theme for e-commerce shop. Theme is Search Engine Optimized (SEO) friendly. Theme is perfect suitable for clothing, electronics, mobile, fashion, affiliate and almost any type of store.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, theme-options, translation-ready, custom-header, custom-logo, full-width-template, e-commerce	
@@ -64,7 +64,6 @@ a img.aligncenter {
 img.alignnone {
     max-width: 96%;
     height: auto;
-    width: auto;
 }
 .wp-caption.alignnone {
     margin: 5px 20px 20px 0;
@@ -81,13 +80,12 @@ img.alignnone {
     margin: 0;
     max-width: 98.5%;
     padding: 0;
-    width: auto;
 }
 .wp-caption p.wp-caption-text {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 17px;
     margin: 0;
-    padding: 0 4px 5px;
+    padding: 10px 10px 0;
 }
 /* Recommended CSS from WP for defined content width support */
 .size-auto,
@@ -108,7 +106,16 @@ img {
 }
 .sticky,
 .bypostauthor {}
-
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+th { 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 4px; 
+}
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
@@ -292,11 +299,17 @@ a, a:active, a:hover, a:focus {
 .container-fluid.header-container {
     padding: 0;
 }
+.content-container, .main-menu, .site-header {
+    background-color: #fff;
+}
 article {
     clear: both;
     float: left;
     margin-bottom: 60px;
     width: 100%;
+}
+.single-footer {
+    clear: both;
 }
 .updated:not(.published) {
     display: none;
@@ -313,11 +326,11 @@ article {
 .page-header a {
     color: #000;
 }
-.entry-summary {
+.content-entry-summary {
     padding-bottom: 9px;
     margin: 0 0 20px;
 }
-.single-content.row {
+.single-content {
     margin-bottom: 60px;
 }
 label {
@@ -574,6 +587,12 @@ li.product-category.product {
 .woocommerce #reviews #comments ol.commentlist {
     padding-left: 0;
 }
+.woocommerce-checkout label {
+    display: initial;
+}
+.woocommerce-checkout input, textarea {
+    display: initial;
+}
 .widget.widget_shopping_cart .buttons {
     text-align: center;
 }
@@ -586,6 +605,8 @@ li.product-category.product {
     float: left;
     clear: both;
     overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 .top-grid-cat {
     position: relative;
