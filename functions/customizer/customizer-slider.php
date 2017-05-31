@@ -59,7 +59,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider Banner discription
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_description]', array(
-        'default'        => __('State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly on any modern mobile device.','wallstreet'),
+        'default'        => __('A state-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly in any modern mobile.','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

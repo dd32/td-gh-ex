@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2017-05-25 17:05+0530\n"
-"PO-Revision-Date: 2017-05-25 17:03+0530\n"
+"POT-Creation-Date: 2017-05-30 11:30+0530\n"
+"PO-Revision-Date: 2017-05-30 11:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -999,10 +999,10 @@ msgstr ""
 msgid "Sub title"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:62 theme_setup_data.php:26
+#: functions/customizer/customizer-slider.php:62
 msgid ""
-"State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 "
-"transition effects. Works perfectly on any modern mobile device."
+"A state-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 "
+"transition effects. Works perfectly in any modern mobile."
 msgstr ""
 
 #: functions/customizer/customizer-social.php:7
@@ -1366,6 +1366,12 @@ msgstr ""
 #: tag.php:8
 #, php-format
 msgid "Tag Archive %s"
+msgstr ""
+
+#: theme_setup_data.php:26
+msgid ""
+"State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 "
+"transition effects. Works perfectly on any modern mobile device."
 msgstr ""
 
 #: theme_setup_data.php:41
