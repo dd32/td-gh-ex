@@ -118,13 +118,9 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/custom-metabox.php';
 
-/**
- * Implement the TGM PLugin Activation Class
- */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+add_filter('widget_text', 'do_shortcode');
 
 /**
- * Implement the More Theme Page
+ * Add Welcome Page to the theme
  */
-require get_template_directory() . '/inc/more-themes.php';
-add_filter('widget_text', 'do_shortcode');
+require get_template_directory() . '/welcome/welcome.php';

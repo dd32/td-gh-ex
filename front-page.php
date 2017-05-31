@@ -12,7 +12,7 @@ get_header(); ?>
         $home_template = $accesspresslite_settings['accesspresslite_home_template'];
 
 		if ( 'page' == get_option( 'show_on_front' ) ) {
-		    include( get_page_template() );
+		    include get_page_template();
 		}
         elseif($home_template == 'template_one'){
             
