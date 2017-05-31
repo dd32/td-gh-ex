@@ -60,7 +60,7 @@
 		
 	</div><!-- .bt-whole-header -->
 	<?php 
-		if( is_front_page() ) {
+		if( is_front_page() || is_home()) {
 			do_action( 'beetech_homepage_slider' );	
 		} else {
 			do_action( 'beetech_innerpage_header' );

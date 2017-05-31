@@ -64,6 +64,10 @@ Third Party scripts and styles under public license.
     Copyright (c) 2016 Matthieu Aussaguel
 
 
+== Images == 
+
+All images used in the theme designed by buzthemes
+
 == Changelog ==
 
 = 1.0.0 =
@@ -78,7 +82,18 @@ Third Party scripts and styles under public license.
     * Add Theme Tag
     
 = 1.0.3 =
-	* Solve all issue listed by reviewer on 1.0.2 version 
+	* Fix theme tag
+    * Add css
     
 = 1.0.4 =
-	* Solve all issue listed by reviewer on 1.0.3 version
+    * Fix escaping
+    * Fix coustomizer live preview issue
+    * Add license for third party js plugin
+    * Remove unused variable
+    
+= 1.0.5 =
+    * Fix escaping
+    * Add wp_link_pages() on page
+    * Remove unused option on customizer
+    * Solve blog section issue
+    * Solve menue issue

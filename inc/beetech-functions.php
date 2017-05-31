@@ -90,7 +90,7 @@ add_action( 'beetech_parallax_menu', 'beetech_parallax_menu_cb', 10 );
 /** Primary menu section **/
 if( ! function_exists( 'beetech_primary_menu_cb' ) ):
 	function beetech_primary_menu_cb() {
-		$beetech_menu_style = get_theme_mod( 'primary_menu_type', 'parallax' );
+		$beetech_menu_style = get_theme_mod( 'primary_menu_type');
 ?>
 		<nav id="site-navigation" class="main-navigation bt-nav bt-parallax-menu" role="navigation">
 			<div class="nav-wrapper">
@@ -101,17 +101,16 @@ if( ! function_exists( 'beetech_primary_menu_cb' ) ):
 		        </div>
 
                 <?php
-                if ( has_nav_menu( 'beetech_primary_menu' ) ) {
-                     wp_nav_menu( array( 'theme_location' => 'beetech_primary_menu', 'menu_id' => 'primary-menu' ) );
-                }else{
+                
                     if( $beetech_menu_style == 'parallax' ) { ?>
 					<div class="menu-main-menu-container">
 						<ul id="primary-parallax-menu" class="menu parallax-menu">
 							<?php do_action( 'beetech_parallax_menu' ); ?>
 						</ul>
 					</div>
-				<?php }
-                } ?> 
+				<?php }else{
+				    wp_nav_menu( array( 'theme_location' => 'beetech_primary_menu', 'menu_id' => 'primary-menu' ) );
+				}?> 
 			</div><!-- .nav-wrapper -->
 		</nav><!-- #site-navigation -->
 		<div class="bt-head-search">
@@ -154,7 +153,7 @@ function beetech_homepage_slider_cb() {
 		<div id="section-slider" class="bt-front-slider-wrapper">
 			<?php
 				$beetech_slider_args = array(
-									'category__in' => $beetech_slider_cat_id,
+									'category__in' => absint($beetech_slider_cat_id),
 									'posts_per_page' => 5
 									);
 				$beetech_slider_query = new WP_Query( $beetech_slider_args );

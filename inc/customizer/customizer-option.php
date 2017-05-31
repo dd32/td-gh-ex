@@ -47,7 +47,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'primary_menu_type',
 	        array(
-	            'default' => 'parallax',
+	            'default' => 'default',
 	            'sanitize_callback' => 'beetech_sanitize_menu_switch_option',
 	            )
 	    );
@@ -243,7 +243,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'service_section_title', 
 	            array(
-	                'default' => esc_html__( 'Service', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -261,7 +261,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'service_section_sub_title', 
 	            array(
-	                'default' => esc_html__( 'Who We Are', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -383,7 +383,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'team_section_title', 
 	            array(
-	                'default' => esc_html__( 'Our Team', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -475,7 +475,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'about_section_title', 
 	            array(
-	                'default' => esc_html__( 'About Section', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -507,26 +507,6 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 		            'priority' => 20
 	            )
 	    );
-
-	    $wp_customize->add_setting(
-	        'about_bg_image',
-		        array(
-		            'default' => '',
-		            'capability' => 'edit_theme_options',
-		            'sanitize_callback' => 'esc_url_raw'
-		        )
-	    );
-
-	    $wp_customize->add_control( new WP_Customize_Image_Control(
-	        $wp_customize,
-	        'about_bg_image',
-	        	array(
-	            	'label'      => esc_html__( 'Section Background Image', 'beetech' ),
-	               	'section'    => 'beetech_about_section',
-	               	'priority' => 200
-	           	)
-	       	)
-	   	);
 
     	$about_priority = 300;
         $beetech_default_about_icon = array( 'fa-flag', 'fa-database', 'fa-codepen', 'fa-hand-o-left');
@@ -670,7 +650,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'testimonials_section_title', 
 	            array(
-	                'default' => esc_html__( 'Clients Say', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -742,7 +722,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'fact_section_title', 
 	            array(
-	                'default' => esc_html__( 'Fact About Us', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -918,7 +898,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'portfolio_section_title', 
 	            array(
-	                'default' => esc_html__( 'Portfolio', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -1008,7 +988,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'blog_section_title', 
 	            array(
-	                'default' => esc_html__( 'Our Blog', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       )
@@ -1099,7 +1079,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'clients_section_title', 
 	            array(
-	                'default' => esc_html__( 'Our Clients', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -1221,7 +1201,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'contact_section_title', 
 	            array(
-	                'default' => esc_html__( 'Contact Us', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -1252,7 +1232,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'contact_section_phone', 
 	            array(
-	                'default' =>'Visit Us',
+	                'default' =>'',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -1270,7 +1250,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'contact_section_address',
 	            array(
-	                'default' => esc_html__( 'Alaxender Avenue, Harrow, Middlesex, UK', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'sanitize_text_field',
 	                'transport' => 'postMessage'
 		       	)
@@ -1309,7 +1289,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_setting(
 	        'beetech_copyright_text', 
 	            array(
-	                'default' => esc_html__( '2016 beetech', 'beetech' ),
+	                'default' => '',
 	                'sanitize_callback' => 'wp_kses_post',
 	                'transport' => 'postMessage'
 		       	)

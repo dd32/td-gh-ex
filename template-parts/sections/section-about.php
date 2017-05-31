@@ -115,7 +115,7 @@
                 					<?php if(get_the_title()){ ?><h6><?php the_title(); ?></h6><?php } ?>
                 					<?php if(get_the_content()){ ?>
                                     <p>
-                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
+                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'&hellip;')); ?>
                 					</p>
                                     <?php } ?>
                 					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
@@ -143,7 +143,7 @@
                 					<?php if(get_the_title()){ ?><h6><?php the_title(); ?></h6><?php } ?>
                 					<?php if(get_the_content()){ ?>
                                     <p>
-                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
+                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'&hellip;')); ?>
                 					</p>
                                     <?php } ?>
                 					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
@@ -171,7 +171,7 @@
                 					<?php if(get_the_title()){ ?><h6><?php the_title(); ?></h6><?php } ?>
                 					<?php if(get_the_content()){ ?>
                                     <p>
-                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
+                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'&hellip;')); ?>
                 					</p>
                                     <?php } ?>
                 					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>
@@ -199,7 +199,7 @@
                 					<?php if(get_the_title()){ ?><h6><?php the_title(); ?></h6><?php } ?>
                 					<?php if(get_the_content()){ ?>
                                     <p>
-                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'...')); ?>
+                						<?php echo esc_attr(wp_trim_words(get_the_content(),60,'&hellip;')); ?>
                 					</p>
                                     <?php } ?>
                 					<a href="<?php the_permalink() ?>" class="learn-more"><?php esc_html_e('Learn more','beetech'); ?></a>

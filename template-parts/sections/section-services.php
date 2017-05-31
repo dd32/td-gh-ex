@@ -8,7 +8,7 @@
  */
 ?>
 <?php
-	$section_option = get_theme_mod( 'homepage_service_option', 'show' );
+	$section_option = get_theme_mod( 'homepage_service_option', 'hide' );
 	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'service_section_title', esc_html__( 'service', 'beetech' ) );
 		$section_desc_title = get_theme_mod( 'service_section_sub_title', esc_html__( 'Who We Are', 'beetech' ) );
