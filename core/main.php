@@ -768,50 +768,6 @@ if (!function_exists('suevafree_posticon')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* THUMBNAIL WIDTH */
-/*-----------------------------------------------------------------------------------*/         
-
-if (!function_exists('suevafree_get_width')) {
-
-	function suevafree_get_width() {
-		
-		if (suevafree_setting('suevafree_screen3')):
-		
-			return esc_attr(suevafree_setting('suevafree_screen3'));
-		
-		else:
-		
-			return "1170";
-		
-		endif;
-	
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* THUMBNAIL HEIGHT */
-/*-----------------------------------------------------------------------------------*/         
-
-if (!function_exists('suevafree_get_thumbs')) {
-
-	function suevafree_get_thumbs($type) {
-		
-		if (suevafree_setting('suevafree_'.$type.'_thumbinal')):
-		
-			return esc_attr(suevafree_setting('suevafree_'.$type.'_thumbinal'));
-		
-		else:
-		
-			return "600";
-		
-		endif;
-	
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* WIDGETS WITHOUT PADDING */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -935,8 +891,8 @@ if (!function_exists('suevafree_setup')) {
 		
 		global $content_width;
 
-		if ( ! isset( $content_width ) )
-			$content_width = suevafree_get_width();
+		if ( !isset($content_width) )
+			$content_width = esc_attr(suevafree_setting('suevafree_screen3', '1170'));
 		
 		load_theme_textdomain( 'suevafree', get_template_directory() . '/languages');
 	
@@ -980,8 +936,8 @@ if (!function_exists('suevafree_setup')) {
 		add_image_size( 'suevafree_medium', 290,220, TRUE ); 
 		add_image_size( 'suevafree_small', 211,150, TRUE ); 
 
-		register_nav_menu( 'main-menu', 'Main menu' );
-		register_nav_menu( 'one-page-menu', 'One Page menu' );
+		register_nav_menu('main-menu', 'Main menu' );
+		register_nav_menu('one-page-menu', 'One Page menu' );
 
 		suevafree_require('/core/post-formats/');
 		suevafree_require('/core/templates/header/');
