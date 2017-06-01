@@ -20,8 +20,10 @@ function alante_thinkup_input_stylelayout() {
 
 function alante_thinkup_input_stylelayout_class1() {
 global $post;
-global $thinkup_blog_postswitch;
-global $thinkup_blog_style1layout;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style1layout = alante_thinkup_var ( 'thinkup_blog_style1layout' );
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
 		if ( $thinkup_blog_style1layout !== 'option2' ) {
@@ -32,8 +34,10 @@ global $thinkup_blog_style1layout;
 
 function alante_thinkup_input_stylelayout_class2() {
 global $post;
-global $thinkup_blog_postswitch;
-global $thinkup_blog_style1layout;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style1layout = alante_thinkup_var ( 'thinkup_blog_style1layout' );
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
 		if ( $thinkup_blog_style1layout !== 'option2' ) {
@@ -227,7 +231,9 @@ add_filter( 'the_content_more_link', 'alante_thinkup_input_readmore' );
 // Add format-media class to post article for featured image, gallery and video
 function alante_thinkup_input_blogmediaclass($classes) {
 global $post;
-global $thinkup_blog_postswitch;
+
+// Get theme options values.
+$thinkup_blog_postswitch = alante_thinkup_var ( 'thinkup_blog_postswitch' );
 
 	$featured_id = get_post_thumbnail_id( $post->ID );
 

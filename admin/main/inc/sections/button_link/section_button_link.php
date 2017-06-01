@@ -1,28 +1,32 @@
 <?php
 /**
- * Section - Upgrade (Top Level).
+ * Section - Button Link.
  *
  * @package ThinkUpThemes
  */
 
 if( class_exists( 'WP_Customize_Control' ) ) {
-	class alante_thinkup_customizer_customswitch_upgrade extends WP_Customize_Section {
+	class alante_thinkup_customizer_customswitch_button_link extends WP_Customize_Section {
 
 		// The type of customize section being rendered.
-		public $type = 'upgrade-top';
+		public $type = 'thinkup-button-link';
 
 		// Custom button text to output.
-		public $upgrade_text = '';
+		public $button_text = '';
 
 		// Custom pro button URL.
-		public $upgrade_url = '';
+		public $button_url = '';
+
+		// Custom pro button class.
+		public $button_class = '';
 
 		// Add custom parameters to pass to the JS via JSON.
 		public function json() {
 			$json = parent::json();
 
-			$json['upgrade_text'] = esc_html( $this->upgrade_text );
-			$json['upgrade_url']  = esc_url( $this->upgrade_url );
+			$json['button_text'] = esc_html( $this->button_text );
+			$json['button_url']  = html_entity_decode( esc_url( $this->button_url ) );
+			$json['button_class'] = esc_attr( $this->button_class );
 
 			return $json;
 		}
@@ -35,8 +39,8 @@ if( class_exists( 'WP_Customize_Control' ) ) {
 				<h3 class="accordion-section-title">
 					{{ data.title }}
 
-					<# if ( data.upgrade_text && data.upgrade_url ) { #>
-						<a href="{{ data.upgrade_url }}" class="button button-secondary alignright" target="_blank">{{ data.upgrade_text }}</a>
+					<# if ( data.button_text && data.button_url ) { #>
+						<a href="{{ data.button_url }}" class="button {{ data.button_class }} alignright" target="_blank">{{ data.button_text }}</a>
 					<# } #>
 				</h3>
 			</li>

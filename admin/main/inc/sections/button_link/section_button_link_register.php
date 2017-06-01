@@ -6,7 +6,7 @@
  */
 
 if( class_exists( 'WP_Customize_Control' ) ) {
-	final class alante_thinkup_customizer_customswitch_upgrade_final {
+	final class alante_thinkup_customizer_customswitch_button_link_final {
 
 		// Returns the instance.
 		public static function get_instance() {
@@ -38,20 +38,20 @@ if( class_exists( 'WP_Customize_Control' ) ) {
 		public function sections( $manager ) {
 
 			// Register custom section types.
-			$manager->register_section_type( 'alante_thinkup_customizer_customswitch_upgrade' );
+			$manager->register_section_type( 'alante_thinkup_customizer_customswitch_button_link' );
 
 		}
 
 		// Loads theme customizer CSS.
 		public function enqueue_control_scripts() {
 
-			wp_enqueue_script( 'alante-thinkup-section-upgrade', trailingslashit( get_template_directory_uri() ) . 'admin/main/inc/sections/upgrade/section_upgrade.js', array( 'customize-controls' ) );
+			wp_enqueue_script( 'alante-thinkup-section-button-link', trailingslashit( get_template_directory_uri() ) . 'admin/main/inc/sections/button_link/section_button_link.js', array( 'customize-controls' ), time() );
 
-			wp_enqueue_style( 'alante-thinkup-section-upgrade', trailingslashit( get_template_directory_uri() ) . 'admin/main/inc/sections/upgrade/section_upgrade.css', '', time() );
+			wp_enqueue_style( 'alante-thinkup-section-button-link', trailingslashit( get_template_directory_uri() ) . 'admin/main/inc/sections/button_link/section_button_link.css', '', time() );
 
 		}
 	}
 
 	// Output for use
-	alante_thinkup_customizer_customswitch_upgrade_final::get_instance();
+	alante_thinkup_customizer_customswitch_button_link_final::get_instance();
 }

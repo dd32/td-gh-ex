@@ -103,6 +103,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.5
+- New:     Documentation link added to customizer.
+
+Version 1.0.4
+- Fixed:   Notification for theme information page can now be dismissed permanently.
+- Updated: Global variables removed from 05.blog.php and function "alante_thinkup_var()" used to get option values.
+
 Version 1.0.3
 - New:     Theme information page added under Appearance in admin area.
 
