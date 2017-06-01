@@ -1,9 +1,9 @@
-White Spektrum WordPress Theme
+﻿White Spektrum WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.7
+Tested up to: 4.7.5
 Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,13 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 0.2.2
+- Changed Theme URI
+- Changed Author URI
+
+Verson: 0.2.1
+- Minor Changes
+
 Version: 0.2.0
 - Render and Fix Navigtion CSS for Smartphone and Tablet and Desktop Mode.
 
