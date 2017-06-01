@@ -1,4 +1,4 @@
-// out: ../css/theme.css, sourcemap: false, compress: true
+// out: ../css/theme.css, sourcemap: false, compress: false
 
 
 /**
@@ -250,6 +250,10 @@ form.search-form {
 
         .comment-content {
           margin-bottom: @line-height-computed/2;
+
+          img {
+            .img-responsive;
+          }
         }
 
         .reply {
@@ -272,6 +276,11 @@ form.search-form {
         border-color: @brand-primary;
       }
 
+    }
+
+    .children {
+      list-style: none;
+      padding-right: 40px;
     }
 
   }
@@ -476,11 +485,28 @@ form.search-form {
 
 // if admin bar is enabled
 body.admin-bar {
-  padding-top: @navbar-height+32;
 
   #site-header {
     .navbar-fixed-top {
       top: 32px;
     }
+  }
+}
+
+
+// Password protected form
+.post-password-form {
+  .form-inline;
+
+  label {
+    margin-bottom: 4px;
+  }
+
+  input[type="password"] {
+    .form-control
+  }
+  input[type="submit"] {
+    .btn;
+    .btn-primary;
   }
 }

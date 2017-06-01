@@ -5,7 +5,7 @@ Tested up to: WordPress 4.7
 Version: 1.0
 License: GPLv2 or later
 License URI: LICENSE
-Tags: one-column, two-columns, right-sidebar, accessibility-ready, editor-style, featured-images, footer-widgets, translation-ready
+Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
 
 
 Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store today!
@@ -32,13 +32,26 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.2.0 - Jun 01 2017 =
+- Less folder moved accidentally
+- Sticky post styling
+- WP default gallery styling
+- Table styling without .table class needed
+- Post images adjusted with alignments classes and made responsive
+- Styled page links
+- Title with long words. added word-wrap css property to post
+- Styled nav links
+- Styled post password form
+- Fixed some bugs on comment styling
+- Fixed missing jQuery script, added as dependency on the Bootstrap script
+
 = 1.1.0 - Jun 01 2017 =
 - The site header is covered by the admin bar.
 - PHP NOTICE: wp-content/themes/basicstore/inc/woocommerce.php:180 - Trying to get property of non-object
-- basicstore/woocommerce/single-product/add-to-cart/grouped.php version 3.0.3 is out of date. The core version is 3.0.7,
+- woocommerce/single-product/add-to-cart/grouped.php version 3.0.3 is out of date. The core version is 3.0.7,
 - fixed layout issue on archive page
 - archive page - Fatal error: Call to a member function get_cart_url() on a non-object in wp-content/themes/basicstore/inc/woocommerce.php on line 89
-- Text domain changed from "basicstore" to "basicstore"
+- Text domain changed from "basicstore" to "basic-store"
 - Theme URI is redirected, this is not allowed.
 - Missing singular placeholder, needed for some languages.
 - payments-methods.php Translation issue

@@ -90,7 +90,7 @@ add_action( 'after_setup_theme', 'basic_store_setup' );
  * @global int $content_width
  */
 function basic_store_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'basic_store_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'basic_store_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'basic_store_content_width', 0 );
 
@@ -134,12 +134,12 @@ function basic_store_widgets_init() {
 add_action( 'widgets_init', 'basic_store_widgets_init' );
 
 
-// Bootstrap row-count for some widgets
+// Add Bootstrap column class to widgets
 function basic_store_widgets_count($params) {
 
   $sidebar_id = $params[0]['id'];
 
-	/* Footer */
+	/* Footer widgets */
 	if ( $sidebar_id == 'sidebar-footer' ) {
     $total_widgets = wp_get_sidebars_widgets();
     $sidebar_widgets = count($total_widgets[$sidebar_id]);
@@ -147,7 +147,6 @@ function basic_store_widgets_count($params) {
   }
   return $params;
 }
-
 add_filter('dynamic_sidebar_params','basic_store_widgets_count');
 
 
@@ -158,7 +157,7 @@ function basic_store_scripts() {
 
 	wp_enqueue_style( 'basicstore-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'basicstore-bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array(), '', true );
+	wp_enqueue_script( 'basicstore-bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'basicstore-bootstrap-tabcollapse', get_template_directory_uri() . '/assets/js/bootstrap-tabcollapse.js', array(), '', true );
 

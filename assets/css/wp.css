@@ -19,6 +19,7 @@
 # Media
 	## Captions
 	## Galleries
+# Typography
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -81,6 +82,15 @@
 	margin-right: auto;
 }
 
+ img[class*="wp-image-"] {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1.25em;
+}
+
+
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -115,6 +125,7 @@
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
+	word-wrap: break-word;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -203,11 +214,17 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
+.sticky,
+.category-sticky {
 	display: block;
+	border:1px solid #ddd;
+	border-radius:4px;
+	padding: 20px;
+	padding-top: 5px;
 }
 
 .hentry {
+	word-wrap: break-word;
 	margin: 0 0 3em;
 }
 
@@ -314,6 +331,7 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+	color: #999;
 }
 
 /*--------------------------------------------------------------
@@ -328,6 +346,8 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -364,4 +384,80 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+/* Tables */
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+table>thead>tr>th,
+table>tbody>tr>th,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>tbody>tr>td,
+table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+table>thead>tr>th,
+table>tbody>tr>th,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>tbody>tr>td,
+table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+/* Page links */
+.page-links {
+}
+
+.page-links a {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 3px 6px;
+}
+
+.page-links a:hover {
+	background: #eee;
+	text-decoration: none;
+}
+
+/* Nav Link */
+.nav-links {
+}
+
+.nav-links .nav-previous a,
+.nav-links .nav-next a{
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px 8px;
+}
+
+.nav-links .nav-previous a:hover,
+.nav-links .nav-next a:hover {
+	background: #eee;
+	text-decoration: none;
+}
+
+.nav-links .nav-previous {
+	float: right;
+}
+
+.nav-links .nav-next {
+	float: left;
 }

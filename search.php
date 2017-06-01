@@ -7,9 +7,14 @@
  * @package basicstore
  */
 
+ // check to see if Site Sidebar is published to adjust bootstrap column size
+ $bootstrap_col_size = is_active_sidebar( 'sidebar-site' ) ? "col-md-9" : "col-md-12";
+
+
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area <?php echo esc_attr($bootstrap_col_size); ?>">
+
 		<main id="main" class="site-main" >
 
 		<?php

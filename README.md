@@ -9,7 +9,7 @@ Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store
 
 Installation
 ------------
-1. Download the latest stable version [Download](http://)
+1. Download the latest stable version from Wordpress Theme directory [Download](http://)
 2. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 3. Click on the "Upload Theme" button on the top to toggle the upload theme area.
 4. Install our Theme ZIP file that you just downloaded.
