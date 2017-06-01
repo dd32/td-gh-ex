@@ -88,7 +88,7 @@ function mp_artwork_register_required_plugins() {
         'message' => '', // Message to output right before the plugins table.
     );
 
-    tgmpa($plugins, $config);
+	mp_artwork_tgmpa($plugins, $config);
 }
 
 add_action('admin_head', 'mp_artwork_admin_style');

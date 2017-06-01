@@ -395,9 +395,10 @@ a:hover, a:focus {
 .button,
 button,
 input[type="button"],
-input[type="submit"] {
+input[type="submit"],
+.added_to_cart {
   padding: 0.500em 1.500em;
-  background: #171717;
+  background-color: #171717;
   color: #ffffff;
   font-family: inherit;
   font-size: 0.875em;
@@ -416,15 +417,18 @@ button:focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="submit"]:hover,
-input[type="submit"]:focus {
-  background: #ef953e;
+input[type="submit"]:focus,
+.added_to_cart:hover,
+.added_to_cart:focus {
+  background-color: #ef953e;
   color: #ffffff;
   text-decoration: none;
 }
 .button.button-md,
 button.button-md,
 input[type="button"].button-md,
-input[type="submit"].button-md {
+input[type="submit"].button-md,
+.added_to_cart.button-md {
   padding: 0.929em 2.500em;
 }
 
@@ -635,6 +639,18 @@ legend {
 
 .fa {
   font-size: 0.875em;
+}
+
+input[type="radio"], input[type="checkbox"],
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  margin: 0px 6px 3px 1px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox label, .radio label {
+  padding-left: 0px;
 }
 
 a, .share-buttons .fa {
