@@ -432,14 +432,17 @@ ul.product_list_widget {
 	.kad-logo-used {
 		padding-left: 10px;
 	}
-	#logo a {
-	.flex-display(flex);
-	.align-items(center);
-	.justify-content(center);
-	position: relative;
-		.ascend-logo {
-		    width: auto;
-		    height: 100%;
+	#logo {
+		a {
+			.flex-display(flex);
+			.align-items(center);
+			.justify-content(center);
+			position: relative;
+			.ascend-logo, .ascend-trans-logo{
+			    width: auto;
+			    height: 100%;
+			    flex: 0 0 auto;
+			}
 		}
 	}
 }

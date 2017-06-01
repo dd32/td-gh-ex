@@ -47,6 +47,7 @@
         'show_options_object'  => false,
         'default_show'         => false,
         'default_mark'         => '',
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/ascend-premium-theme/" target="_blank" >Ascend Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, custom post types and much much more!',       
         'footer_credit' 		=> __('Thank you for using the Ascend Theme by <a href="https://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'ascend'),
         'hints'                => array(
             'icon'          => 'kt-icon-question',

@@ -28,6 +28,12 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.3 | 25th May 2017 =
+* Update: Css for product variations.
+* Update: Custom css output to allow >
+* Update: CSS for polylang flags in header widget area.
+* Fix: IE issue with logo shrink.
+
 = Version 1.1.2 | 25th May 2017 =
 * Update: Fix tooltip for social widget.
 

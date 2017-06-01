@@ -1116,6 +1116,8 @@ p.stars.selected a:not(.active):before {
 }
 table.variations {
   min-width: 300px;
+  margin-bottom: 24px;
+  position: relative;
 }
 table.variations td.product_label {
   padding: 0 8px 0 0;
@@ -1129,6 +1131,9 @@ table.variations td.product_value {
 table.variations a.reset_variations {
   font-size: 11px;
   display: block;
+  position: absolute;
+  bottom: -15px;
+  line-height: 15px;
 }
 .single_variation .woocommerce-variation-price {
   margin: 10px 0;

@@ -293,6 +293,7 @@ function ascend_custom_css() {
 	}
 	if (!empty($ascend['custom_css'])) {
 	  	$custom_css = wp_kses_post($ascend['custom_css']);
+	  	$custom_css = str_replace('&gt;','>',$custom_css);
 	} else {
 	  	$custom_css = '';
 	}
