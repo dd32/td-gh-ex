@@ -43,5 +43,8 @@ Alante Grid is a child theme or Alante and as such uses the same opensource proj
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.1
+- N/A:     Version bump for .org upload.
+
 Version 1.0.0
 - New:     Initial release.
