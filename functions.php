@@ -49,6 +49,7 @@ function wp_barrister_setup() {
 	);
 	add_theme_support('custom-background', $barrister_custom_background );
 
+	add_theme_support( 'title-tag' );
 	
 	// adding post format support
 	add_theme_support( 'post-formats', 
@@ -734,18 +735,6 @@ if ( ! function_exists( 'wp_barrister_pagination' ) ) :
 	
 	}
 endif;
-
-/**
- * Add "Untitled" for posts without title, 
- */
-function wp_barrister_post_title($title) {
-	if ($title == '') {
-		return __('Untitled', 'wp-barrister');
-	} else {
-		return $title;
-	}
-}
-add_filter('the_title', 'wp_barrister_post_title');
 
 /**
  * Fix for W3C validation
