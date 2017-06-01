@@ -149,7 +149,7 @@
                       <?php } ?>
                       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                   </header>
-                  <div class="entry-content clearfix" itemprop="description articleBody">
+                  <div class="entry-content clearfix" itemprop="articleBody">
                     <?php the_content(); ?>
                     <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'pinnacle'), 'after' => '</p></nav>')); ?>
                   </div>

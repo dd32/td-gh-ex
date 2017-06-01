@@ -47,7 +47,7 @@ function kt_get_srcset($width,$height,$url,$id) {
           'file'=> $flyfilename,
           'width' => $width,
           'height' => $height,
-          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          'mime-type' => isset($image_meta['sizes']['thumbnail']) ? $image_meta['sizes']['thumbnail']['mime-type'] : '',
           )
       );
       $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize);
@@ -58,7 +58,7 @@ function kt_get_srcset($width,$height,$url,$id) {
           'file'=> $retinaflyfilename,
           'width' => 2 * $width,
           'height' => 2 * $height,
-          'mime-type' => $image_meta['sizes']['thumbnail']['mime-type'] 
+          'mime-type' => isset($image_meta['sizes']['thumbnail']) ? $image_meta['sizes']['thumbnail']['mime-type'] : '',
           )
         );
         $image_meta['sizes'] = array_merge($image_meta['sizes'], $kt_add_imagesize_retina);

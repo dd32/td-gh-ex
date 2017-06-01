@@ -33,7 +33,7 @@
                               </a>
                               <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                           </header>
-                          <div class="entry-content color_body" itemprop="articleBody">
+                          <div class="entry-content color_body" itemprop="description">
                                 <p>
                                   <?php echo pinnacle_excerpt(16); ?> 
                                   <a href="<?php the_permalink() ?>"><?php echo __('Read More', 'pinnacle');?></a>

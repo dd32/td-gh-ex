@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.5.6 | 1st June 2017 = 
+* Update: Schema
+
 = 1.5.5 | 20th April 2017 = 
 * Fix: Issue with woocommerce notice.
 * Update: archive title.

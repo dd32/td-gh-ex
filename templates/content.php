@@ -206,7 +206,7 @@
                                 <a href="<?php the_permalink() ?>"><h3 class="entry-title" itemprop="name headline"><?php the_title(); ?></h3></a>
                                   <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                             </header>
-                            <div class="entry-content" itemprop="articleBody">
+                            <div class="entry-content" itemprop="description">
                                 <?php the_excerpt(); ?>
                             </div>
                       </div><!-- Text size -->
