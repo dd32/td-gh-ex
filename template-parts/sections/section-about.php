@@ -100,7 +100,7 @@
     				</li>
     			</ul>
                 <?php if($about_page_id_0){ 
-                    $about_page_0_query = new WP_Query(array('post_type'=>'page','post__in' => array($about_page_id_0)));
+                    $about_page_0_query = new WP_Query(array('post_type'=>'page','post__in' => array(absint($about_page_id_0))));
                     if($about_page_0_query->have_posts()):
                         while($about_page_0_query->have_posts()): $about_page_0_query->the_post();
                         $image_about = wp_get_attachment_image_src(get_post_thumbnail_id(),'');
@@ -128,7 +128,7 @@
                 } ?>
                 
                 <?php if($about_page_id_1){ 
-                    $about_page_1_query = new WP_Query(array('post_type'=>'page','post__in' => array($about_page_id_1)));
+                    $about_page_1_query = new WP_Query(array('post_type'=>'page','post__in' => array(absint($about_page_id_1))));
                     if($about_page_1_query->have_posts()):
                         while($about_page_1_query->have_posts()): $about_page_1_query->the_post();
                         $image_about = wp_get_attachment_image_src(get_post_thumbnail_id(),'');
@@ -156,7 +156,7 @@
                 } ?>
                 
                 <?php if($about_page_id_2){ 
-                    $about_page_2_query = new WP_Query(array('post_type'=>'page','post__in' => array($about_page_id_2)));
+                    $about_page_2_query = new WP_Query(array('post_type'=>'page','post__in' => array(absint($about_page_id_2))));
                     if($about_page_2_query->have_posts()):
                         while($about_page_2_query->have_posts()): $about_page_2_query->the_post();
                         $image_about = wp_get_attachment_image_src(get_post_thumbnail_id(),'');
@@ -184,7 +184,7 @@
                 } ?>
                 
                 <?php if($about_page_id_3){ 
-                    $about_page_3_query = new WP_Query(array('post_type'=>'page','post__in' => array($about_page_id_3)));
+                    $about_page_3_query = new WP_Query(array('post_type'=>'page','post__in' => array(absint($about_page_id_3))));
                     if($about_page_3_query->have_posts()):
                         while($about_page_3_query->have_posts()): $about_page_3_query->the_post();
                         $image_about = wp_get_attachment_image_src(get_post_thumbnail_id(),'');

@@ -29,7 +29,7 @@
         			</div>
                 <?php } 
                 if($clients_cat_id){
-                    $bt_client_query = new WP_Query(array('post_type'=>'post','cat'=>$clients_cat_id));
+                    $bt_client_query = new WP_Query(array('post_type'=>'post','cat'=>absint($clients_cat_id)));
                     if($bt_client_query->have_posts()): ?>
         			<div class="col-holder">
                         <?php 

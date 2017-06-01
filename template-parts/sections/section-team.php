@@ -26,7 +26,7 @@
         			</div>
                 <?php }
                 if($team_cat_id){
-                $team_cat_query = new WP_Query(array('post_type' => 'post','cat' => $team_cat_id,'posts_per_page'=>'6'));
+                $team_cat_query = new WP_Query(array('post_type' => 'post','cat' => absint($team_cat_id),'posts_per_page'=>'6'));
                 if($team_cat_query->have_posts()):
                 ?>
     			<div class="row clearfix">
@@ -46,7 +46,7 @@
                             <?php } ?>
                             <?php if(get_the_content()){ ?>
         						<p>
-        							<?php echo esc_attr(wp_trim_words(get_the_content(),20,'...')); ?>
+        							<?php echo esc_attr(wp_trim_words(get_the_content(),20,'&hellip;')); ?>
         						</p>
                             <?php } ?>
     					</div>

@@ -19,7 +19,7 @@
         			</div>
                 <?php } ?>
                 <?php
-                $testimonials_cat_query = new WP_Query(array('post_type'=>'post','cat'=>$testimonials_cat_id,'posts_per_page'=>-1));
+                $testimonials_cat_query = new WP_Query(array('post_type'=>'post','cat'=>absint($testimonials_cat_id),'posts_per_page'=>-1));
                 if($testimonials_cat_query->have_posts()):
                 ?>
     			<div class="testimonial">
@@ -31,7 +31,7 @@
             				<div class="slide">
             					<?php if(get_the_content()){ ?>
                                 <p>
-            						<?php echo esc_attr(wp_trim_words(get_the_content(),30,'...')); ?> 
+            						<?php echo esc_attr(wp_trim_words(get_the_content(),30,'&hellip;')); ?> 
             					</p>
                                 <?php } ?>
             					<div class="img-holder">

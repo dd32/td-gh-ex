@@ -66,7 +66,7 @@ Third Party scripts and styles under public license.
 
 == Images == 
 
-All images used in the theme designed by buzthemes
+All images used in the theme designed by buzthemes under GPL License 
 
 == Changelog ==
 
@@ -97,3 +97,7 @@ All images used in the theme designed by buzthemes
     * Remove unused option on customizer
     * Solve blog section issue
     * Solve menue issue
+    
+= 1.0.6 =
+    * Fix escaping
+    * Blog section image issue fix

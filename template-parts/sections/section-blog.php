@@ -28,7 +28,7 @@
     			</div>
                 <?php } ?>
                 <?php if($bt_blog_categories){
-                    $bt_blog_query = new WP_Query(array('post_type'=>'post','cat'=>$bt_blog_categories,'posts_per_page'=>6));
+                    $bt_blog_query = new WP_Query(array('post_type'=>'post','cat'=>absint($bt_blog_categories),'posts_per_page'=>6));
                     if($bt_blog_query->have_posts()):?>
             			<div class="row">
                             <?php while($bt_blog_query->have_posts()): $bt_blog_query->the_post();
@@ -36,9 +36,12 @@
                                 <div class="col">
                                     <div class="blog-contents-wrap-">
                                         <div class="blog-contents">
-                                        <?php $blog_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'beetech_blog_thumb'); 
-                                              $blogs_image_src = $blog_image_url[0];  ?>
+                                        <?php
+                                        if( has_post_thumbnail() ){
+                                             $blog_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'beetech_blog_thumb'); 
+                                             $blogs_image_src = $blog_image_url[0];  ?>
                                             <div class="blogs-grid-image"><a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($blogs_image_src); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>"  /></a></div>
+                                        <?php } ?>
                                             <?php if(get_the_title() || get_the_content()){ ?>
                                             <div class="grid-titles-info-post">
                                                 <div class="grid-blogs-titles">
@@ -49,7 +52,7 @@
                                                         <div class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                                     <?php } ?>
                                                     <?php if(get_the_title()){ ?>
-                                                        <div class="desc-blog"><?php echo wp_kses_post(wp_trim_words(get_the_content(),'20','...')); ?></div>
+                                                        <div class="desc-blog"><?php echo wp_kses_post(wp_trim_words(get_the_content(),'20','&hellip;')); ?></div>
                                                     <?php } ?>
                                                     <a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html__('Read more','beetech'); ?></a>
                                                 </div>

@@ -269,7 +269,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'service_section_sub_title',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_service_section',
 		            'priority' => 15
@@ -410,7 +410,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'team_section_description',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_team_section',
 		            'priority' => 20
@@ -501,7 +501,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'about_section_description',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_about_section',
 		            'priority' => 20
@@ -748,7 +748,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'fact_section_description',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_fact_section',
 		            'priority' => 20
@@ -924,7 +924,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'portfolio_section_description',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_portfolio_section',
 		            'priority' => 20
@@ -1014,7 +1014,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'blog_section_desc',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_blog_section',
 		            'priority' => 15
@@ -1105,7 +1105,7 @@ if( ! function_exists( 'beetech_customizer_option_register' ) ):
 	    $wp_customize->add_control(
 	        'clients_section_description',
 	            array(
-		            'type' => 'textarea',
+		            'type' => 'text',
 		            'label' => esc_html__( 'Section Description', 'beetech' ),
 		            'section' => 'beetech_client_section',
 		            'priority' => 15

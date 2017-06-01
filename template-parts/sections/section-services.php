@@ -34,7 +34,7 @@
 			<div class="row clearfix">
             
                 <?php if($service_page_id_0){
-                    $service_page_0_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_0)));
+                    $service_page_0_query = new WP_Query(array('post_type' => 'page','post__in'=>array(absint($service_page_id_0))));
                     if($service_page_0_query->have_posts()):
                         while($service_page_0_query->have_posts()): $service_page_0_query->the_post();
                         ?>
@@ -50,7 +50,7 @@
                                 
                                 <?php if(get_the_content()){ ?>
                 					<p>
-                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'...')); ?>
+                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'&hellip;')); ?>
                 					</p>
                                 <?php } ?>
                                 
@@ -62,7 +62,7 @@
                 ?>
                 
                 <?php if($service_page_id_1){
-                    $service_page_1_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_1)));
+                    $service_page_1_query = new WP_Query(array('post_type' => 'page','post__in'=>array(absint($service_page_id_1))));
                     if($service_page_1_query->have_posts()):
                         while($service_page_1_query->have_posts()): $service_page_1_query->the_post();
                         ?>
@@ -78,7 +78,7 @@
                                 
                                 <?php if(get_the_content()){ ?>
                 					<p>
-                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'...')); ?>
+                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'&hellip;')); ?>
                 					</p>
                                 <?php } ?>
                                 
@@ -90,7 +90,7 @@
                 ?>
                 
 				<?php if($service_page_id_2){
-                    $service_page_2_query = new WP_Query(array('post_type' => 'page','post__in'=>array($service_page_id_2)));
+                    $service_page_2_query = new WP_Query(array('post_type' => 'page','post__in'=>array(absint($service_page_id_2))));
                     if($service_page_2_query->have_posts()):
                         while($service_page_2_query->have_posts()): $service_page_2_query->the_post();
                         ?>
@@ -106,7 +106,7 @@
                                 
                                 <?php if(get_the_content()){ ?>
                 					<p>
-                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'...')); ?>
+                					   <?php echo esc_attr(wp_trim_words(get_the_content(),20,'&hellip;')); ?>
                 					</p>
                                 <?php } ?>
                                 
