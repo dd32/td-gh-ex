@@ -1,4 +1,4 @@
-=== BasicStore ===
+=== Basic Store ===
 Contributors: Theme.al
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.7
@@ -13,13 +13,13 @@ Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store
 
 == Description ==
 
-BasicStore theme is made for developers to easily built an WordPress theme using Bootstrap framework. Plus, it fully support WooCommerce plugin, which is also ready with Bootstrap. Create your own amazing store today.
+Basic Store theme is made for developers to easily built an WordPress theme using Bootstrap framework. Plus, it fully support WooCommerce plugin, which is also ready with Bootstrap. Create your own amazing store today.
 
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in BasicStore in the search form and press the 'Enter' key on your keyboard.
+2. Type in Basic Store in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 
 
@@ -27,12 +27,23 @@ BasicStore theme is made for developers to easily built an WordPress theme using
 
 = Does this theme support any plugins? =
 
-BasicStore is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
+Basic Store is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
 
 == Changelog ==
 
-= 1.0 - Apr 18 2017 =
+= 1.1.0 - Jun 01 2017 =
+- The site header is covered by the admin bar.
+- PHP NOTICE: wp-content/themes/basicstore/inc/woocommerce.php:180 - Trying to get property of non-object
+- basicstore/woocommerce/single-product/add-to-cart/grouped.php version 3.0.3 is out of date. The core version is 3.0.7,
+- fixed layout issue on archive page
+- archive page - Fatal error: Call to a member function get_cart_url() on a non-object in wp-content/themes/basicstore/inc/woocommerce.php on line 89
+- Text domain changed from "basicstore" to "basicstore"
+- Theme URI is redirected, this is not allowed.
+- Missing singular placeholder, needed for some languages.
+- payments-methods.php Translation issue
+
+= 1.0.0 - Apr 18 2017 =
 * Initial release
 
 

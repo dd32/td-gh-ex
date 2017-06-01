@@ -7,11 +7,11 @@
  * @package basicstore
  */
 
-if ( ! function_exists( 'basicstore_posted_on' ) ) :
+if ( ! function_exists( 'basic_store_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function basicstore_posted_on() {
+function basic_store_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -39,16 +39,16 @@ function basicstore_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'basicstore_entry_footer' ) ) :
+if ( ! function_exists( 'basic_store_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function basicstore_entry_footer() {
+function basic_store_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'basicstore' ) );
-		if ( $categories_list && basicstore_categorized_blog() ) {
+		if ( $categories_list && basic_store_categorized_blog() ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'basicstore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
@@ -83,8 +83,8 @@ endif;
  *
  * @return bool
  */
-function basicstore_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'basicstore_categories' ) ) ) {
+function basic_store_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'basic_store_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -96,27 +96,27 @@ function basicstore_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'basicstore_categories', $all_the_cool_cats );
+		set_transient( 'basic_store_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so basicstore_categorized_blog should return true.
+		// This blog has more than 1 category so basic_store_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so basicstore_categorized_blog should return false.
+		// This blog has only 1 category so basic_store_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in basicstore_categorized_blog.
+ * Flush out the transients used in basic_store_categorized_blog.
  */
-function basicstore_category_transient_flusher() {
+function basic_store_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'basicstore_categories' );
+	delete_transient( 'basic_store_categories' );
 }
-add_action( 'edit_category', 'basicstore_category_transient_flusher' );
-add_action( 'save_post',     'basicstore_category_transient_flusher' );
+add_action( 'edit_category', 'basic_store_category_transient_flusher' );
+add_action( 'save_post',     'basic_store_category_transient_flusher' );

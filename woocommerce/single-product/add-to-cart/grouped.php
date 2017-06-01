@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.3
+ * @version     3.0.7
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,6 +29,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 			<?php
 				$quantites_required = false;
+				$previous_post      = $post;
 
 				foreach ( $grouped_products as $grouped_product ) {
 					$post_object        = get_post( $grouped_product->get_id() );
@@ -85,7 +86,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 					<?php
 				}
-				wp_reset_postdata();
+				// Return data to original post.
+				setup_postdata( $post =& $previous_post );
 			?>
 
 		</div>

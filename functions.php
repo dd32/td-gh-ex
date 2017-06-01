@@ -7,7 +7,7 @@
  * @package basicstore
  */
 
-if ( ! function_exists( 'basicstore_setup' ) ) :
+if ( ! function_exists( 'basic_store_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,12 +15,12 @@ if ( ! function_exists( 'basicstore_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function basicstore_setup() {
+function basic_store_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on basicstore, use a find and replace
-	 * to change 'basicstore' to the name of your theme in all the template files.
+	 * If you're building a theme based on basic_store, use a find and replace
+	 * to change 'basic_store' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'basicstore', get_template_directory() . '/languages' );
 
@@ -80,7 +80,7 @@ function basicstore_setup() {
 
 }
 endif;
-add_action( 'after_setup_theme', 'basicstore_setup' );
+add_action( 'after_setup_theme', 'basic_store_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -89,17 +89,17 @@ add_action( 'after_setup_theme', 'basicstore_setup' );
  *
  * @global int $content_width
  */
-function basicstore_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'basicstore_content_width', 640 );
+function basic_store_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'basic_store_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'basicstore_content_width', 0 );
+add_action( 'after_setup_theme', 'basic_store_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function basicstore_widgets_init() {
+function basic_store_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Blog Sidebar', 'basicstore' ),
@@ -131,11 +131,11 @@ function basicstore_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'basicstore_widgets_init' );
+add_action( 'widgets_init', 'basic_store_widgets_init' );
 
 
 // Bootstrap row-count for some widgets
-function basicstore_widgets_count($params) {
+function basic_store_widgets_count($params) {
 
   $sidebar_id = $params[0]['id'];
 
@@ -148,13 +148,13 @@ function basicstore_widgets_count($params) {
   return $params;
 }
 
-add_filter('dynamic_sidebar_params','basicstore_widgets_count');
+add_filter('dynamic_sidebar_params','basic_store_widgets_count');
 
 
 /**
  * Enqueue scripts and styles.
  */
-function basicstore_scripts() {
+function basic_store_scripts() {
 
 	wp_enqueue_style( 'basicstore-style', get_stylesheet_uri() );
 
@@ -168,7 +168,7 @@ function basicstore_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'basicstore_scripts' );
+add_action( 'wp_enqueue_scripts', 'basic_store_scripts' );
 
 
 /**

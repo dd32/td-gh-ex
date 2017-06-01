@@ -1,5 +1,5 @@
 
-BasicStore
+Basic Store
 ===
 
 Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store today!

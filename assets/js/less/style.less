@@ -1,4 +1,4 @@
-// out: ../css/theme.css, sourcemap: true, compress: false
+// out: ../css/theme.css, sourcemap: false, compress: true
 
 
 /**
@@ -471,4 +471,16 @@ form.search-form {
 .vert-align-middle > tbody > tr > td,
 .vert-align-middle > tfoot > tr > td {
     vertical-align: middle;
+}
+
+
+// if admin bar is enabled
+body.admin-bar {
+  padding-top: @navbar-height+32;
+
+  #site-header {
+    .navbar-fixed-top {
+      top: 32px;
+    }
+  }
 }
