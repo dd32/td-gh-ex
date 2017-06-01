@@ -19,7 +19,7 @@ if ( ! isset( $content_width ) )
 	require_once( get_template_directory() . '/admin/main-extensions/extensions-init.php' );
 
 	// Add Toolbox Framework
-	require_once( get_template_directory() . '/admin/main-toolbox/thinkup-toolbox.php' );
+	require_once( get_template_directory() . '/admin/main-toolbox/toolbox.php' );
 
 	// Add Theme Options Features.
 	require_once( get_template_directory() . '/admin/main/options/00.theme-setup.php' ); 
@@ -87,7 +87,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	// Register theme stylesheets.
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.4.6' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.4.7' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
@@ -145,6 +145,7 @@ function thinkup_adminscripts() {
 
 		// Add theme stylesheets
 		wp_enqueue_style( 'backend' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '4.7.0' );
 
 		// Add theme scripts
 		wp_enqueue_script( 'backend' );

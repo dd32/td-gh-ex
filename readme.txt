@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.7
+- New:     Documentation link added to customizer.
+- Updated: Text domain changed from 'redux-framework' to 'lan-thinkupthemes' in options.php.
+
 Version 1.4.6
 - New:     Theme information page added under Appearance in admin area.
 - Removed: Migration notice informing users that theme options have moved to customizer no longer needed.

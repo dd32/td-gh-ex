@@ -138,7 +138,11 @@
 background: #fff;
     border: 1px solid #ddd;
     padding: 0 20px 10px;
-    box-sizing: border-box
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
  #thinkup-support-content > .col:nth-child(3) > h3 {
@@ -230,4 +234,132 @@ background: #fff;
 /* ----------------------------------------------------------------------------------------------------------
 	5. MISC
 ---------------------------------------------------------------------------------------------------------- */
+
+.one_half     {width: 48.7%; }
+.one_third    {width: 31.6%; }
+.two_third    {width: 65.8%; }
+.one_fourth   {width: 23.05%; }
+.three_fourth {width: 74.35%; }
+.one_fifth    {width: 17.92%; }
+.two_fifth    {width: 38.44%; }
+.three_fifth  {width: 58.96%; }
+.four_fifth   {width: 79.48%; }
+.one_sixth    {width: 14.5%; }
+.five_sixth   {width: 82.9%; }
+.last         {clear: right; margin-right: 0px !important; }
+
+.one_half,
+.one_third,
+.two_third,
+.one_fourth,
+.three_fourth,
+.one_fifth,
+.two_fifth,
+.three_fifth,
+.four_fifth,
+.one_sixth,
+.five_sixth {
+	margin-right: 2.6%;
+	margin-bottom: 20px;
+	position: relative;
+	float: left;
+}
+#thinkup-documentation ul {
+	font-size: 14px;
+	list-style: disc;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#thinkup-documentation .thinkup-documentation-info {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 19px 15px 20px;
+	margin: 0 0 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#thinkup-documentation .thinkup-documentation-info h3 {
+	font-size: 15px;
+	margin: 0 0 15px;
+}
+#thinkup-documentation .thinkup-documentation-info p {
+	margin-bottom: 15px !important;
+}
+#thinkup-documentation .thinkup-documentation-info p:last-child {
+	margin-bottom: 0 !important;
+}
+#thinkup-documentation .menu-item-handle,
+#thinkup-documentation .menu-item-settings,
+#thinkup-documentation.feature-section p {
+	width: 100% !important;
+	max-width: 100% !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#thinkup-documentation .menu-item-settings {
+	display: none;
+	padding: 15px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-top: none;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-ms-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-o-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+#thinkup-documentation .menu-item-main.two_third {
+	padding: 20px 20px 0 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#thinkup-documentation .menu-item-main.menu-item-main-hasside {
+	border-right: 1px solid #ddd;
+}
+#thinkup-documentation .menu-item-main,
+#thinkup-documentation .menu-item-side {
+	padding-top: 20px;
+	margin-top: 15px;
+}
+#thinkup-documentation.feature-section p {
+	margin: 0 0 20px;
+}
+#thinkup-documentation.feature-section p:last-child {
+}
+#thinkup-documentation .menu-item-handle {
+	cursor: pointer;
+}
+#thinkup-documentation .menu-item .item-title:before {
+	position: absolute;
+	right: 10px;
+	top: 9px;
+	border: none;
+	background: 0 0;
+	font: 400 20px/1 dashicons;
+	speak: none;
+	display: block;
+	padding: 0;
+	text-indent: 0;
+	text-align: center;
+	/* position: relative; */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none!important;
+}
+#thinkup-documentation .menu-item-edit-active .item-title:before {
+	content: "\f142";
+}
+#thinkup-documentation .menu-item-edit-inactive .item-title:before {
+	content: "\f140";
+}
+
 
