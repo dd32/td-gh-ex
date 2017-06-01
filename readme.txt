@@ -1,14 +1,14 @@
-Silver Quantum WordPress Theme
+﻿Silver Quantum WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.7
+Tested up to: 4.7.5
 Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Silver Quantum WordPress Theme, Copyright (C) 2014, Benjamin Lu
+Silver Quantum WordPress Theme, Copyright (C) 2014-2017, Benjamin Lu
 Silver Quantum is distributed under the terms of the GNU GPL
 
 Silver Quantum is a standard design with responsive capability.
@@ -60,6 +60,10 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.4.1 
+- Changed Author URI
+- Changed Theme URI
+
 Version: 0.4.0
 - Changed Links
 
