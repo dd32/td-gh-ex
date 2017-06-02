@@ -16,7 +16,7 @@
 		</div><!-- .entry-publish-date -->
 
 		<div class="read-more">
-			<?php echo Kirki::get_option( 'front_page_blog_module_read_more' ); ?>
+			<?php echo esc_html(Kirki::get_option( 'front_page_blog_module_read_more' )); ?>
 		</div><!-- .read-more -->
 	</div><!-- .entry-image -->
 

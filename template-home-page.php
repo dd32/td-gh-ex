@@ -14,13 +14,13 @@ get_header(); ?>
 					<div class="container slider-caption text-center clearfix">
 						<?php
 							if ( Kirki::get_option( 'front_page_text_slider_title' ) != '' ) {
-								echo '<h1>' . strip_tags( html_entity_decode( Kirki::get_option( 'front_page_text_slider_title' ) ), '<span>' ) . '</h1>';
+								echo '<h1>' . wp_kses( Kirki::get_option( 'front_page_text_slider_title' ), '<span>' ) . '</h1>';
 							}
 						?>
 
 						<?php
 							if ( Kirki::get_option( 'front_page_text_slider_content' ) != '' ) {
-								echo '<p>' . strip_tags( html_entity_decode( Kirki::get_option( 'front_page_text_slider_content' ) ), '<span>' ) . '</p>';
+								echo '<p>' . wp_kses( Kirki::get_option( 'front_page_text_slider_content' ), '<span>' ) . '</p>';
 							}
 						?>
 
@@ -42,7 +42,7 @@ get_header(); ?>
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_icon_service_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_icon_service_module_title' ) ), '<span>' ); ?></h2>
+								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_icon_service_module_title' ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_icon_service_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_icon_service_module_subtitle' )); ?></p>
@@ -102,7 +102,7 @@ get_header(); ?>
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_portfolio_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_portfolio_module_title' ) ), '<span>' ); ?></h2>
+								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_portfolio_module_title' ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_portfolio_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_portfolio_module_subtitle' )); ?></p>
@@ -176,19 +176,19 @@ get_header(); ?>
 						<div class="promo-box-ver col-md-10 col-md-offset-1 text-center">
 							<?php
 								if ( Kirki::get_option( 'front_page_ver_promo_title' ) != '' ) {
-									echo '<h2>' . strip_tags( html_entity_decode( Kirki::get_option( 'front_page_ver_promo_title' ) ), '<span>' ) . '</h2>';
+									echo '<h2>' . wp_kses( Kirki::get_option( 'front_page_ver_promo_title' ), '<span>' ) . '</h2>';
 								}
 							?>
 
 							<?php
 								if ( Kirki::get_option( 'front_page_ver_promo_content' ) != '' ) {
-									echo '<p>' . strip_tags( html_entity_decode( Kirki::get_option( 'front_page_ver_promo_content' ) ), '<span>' ) . '</p>';
+									echo '<p>' . wp_kses( Kirki::get_option( 'front_page_ver_promo_content' ), '<span>' ) . '</p>';
 								}
 							?>
 
 							<?php if ( Kirki::get_option( 'front_page_ver_promo_btn_text' ) != '' ) : ?>
 								<div class="promo-btn">
-									<a href="<?php echo Kirki::get_option( 'front_page_ver_promo_btn_url' ); ?>" class="btn btn-light"><?php echo Kirki::get_option( 'front_page_ver_promo_btn_text' ); ?></a>
+									<a href="<?php echo esc_url(Kirki::get_option( 'front_page_ver_promo_btn_url' )); ?>" class="btn btn-light"><?php echo esc_html(Kirki::get_option( 'front_page_ver_promo_btn_text' )); ?></a>
 								</div><!-- .promo-btn -->
 							<?php endif; ?>
 						</div><!-- .promo-box-ver -->
@@ -201,7 +201,7 @@ get_header(); ?>
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_blog_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_blog_module_title' ) ), '<span>' ); ?></h2>
+								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_blog_module_title' ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_blog_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_blog_module_subtitle' )); ?></p>
@@ -269,7 +269,7 @@ get_header(); ?>
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_contact_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo strip_tags( html_entity_decode( Kirki::get_option( 'front_page_contact_module_title' ) ), '<span>' ); ?></h2>
+								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_contact_module_title' ), '<span>' ); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_contact_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_contact_module_subtitle' )); ?></p>
@@ -326,28 +326,28 @@ get_header(); ?>
 								<div id="contact-form-result"><span></span></div>
 
 								<fieldset class="col-sm-4">
-									<input type="text" id="contact-form-name" name="name" placeholder="<?php echo esc_html__( 'Name', 'beonepage' ); ?>" value="<?php if( isset( $_POST['name'] ) ) { echo esc_attr( $_POST['name'] ); } ?>" class="cf-form-control required" data-msg-required="<?php echo $required; ?>" />
+									<input type="text" id="contact-form-name" name="name" placeholder="<?php esc_attr_e( 'Name', 'beonepage' ); ?>" value="<?php if( isset( $_POST['name'] ) ) { echo esc_attr( $_POST['name'] ); } ?>" class="cf-form-control required" data-msg-required="<?php echo $required; ?>" />
 								</fieldset>
 
 								<fieldset class="col-sm-4">
-									<input type="email" id="contact-form-email" name="email" placeholder="<?php esc_html_e( 'Email', 'beonepage' ); ?>" value="<?php if( isset( $_POST['email'] ) ) { echo esc_attr( $_POST['email'] ); } ?>" class="required email cf-form-control" data-msg-required="<?php echo $required; ?>" data-msg-email="<?php echo $email; ?>" />
+									<input type="email" id="contact-form-email" name="email" placeholder="<?php esc_attr_e( 'Email', 'beonepage' ); ?>" value="<?php if( isset( $_POST['email'] ) ) { echo esc_attr( $_POST['email'] ); } ?>" class="required email cf-form-control" data-msg-required="<?php echo $required; ?>" data-msg-email="<?php echo $email; ?>" />
 								</fieldset>
 
 								<fieldset class="col-sm-4">
-									<input type="text" id="contact-form-phone" name="phone" placeholder="<?php esc_html_e( 'Phone', 'beonepage' ); ?>" value="<?php if( isset( $_POST['phone'] ) ) { echo esc_attr( $_POST['phone'] ); } ?>" class="cf-form-control" />
+									<input type="text" id="contact-form-phone" name="phone" placeholder="<?php esc_attr_e( 'Phone', 'beonepage' ); ?>" value="<?php if( isset( $_POST['phone'] ) ) { echo esc_attr( $_POST['phone'] ); } ?>" class="cf-form-control" />
 								</fieldset>
 
 								<fieldset class="col-sm-12">
-									<input type="text" id="contact-form-subject" name="subject" placeholder="<?php esc_html_e( 'Subject', 'beonepage' ); ?>" value="<?php if( isset( $_POST['subject'] ) ) { echo esc_attr( $_POST['subject'] ); } ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>" />
+									<input type="text" id="contact-form-subject" name="subject" placeholder="<?php esc_attr_e( 'Subject', 'beonepage' ); ?>" value="<?php if( isset( $_POST['subject'] ) ) { echo esc_attr( $_POST['subject'] ); } ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>" />
 								</fieldset>
 
 								<fieldset class="col-sm-12">
-									<textarea rows="3" id="contact-form-message" name="message" placeholder="<?php esc_html_e( 'Message', 'beonepage' ); ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>"><?php if( isset( $_POST['message'] ) ) { echo esc_attr( $_POST['message'] ); } ?></textarea>
+									<textarea rows="3" id="contact-form-message" name="message" placeholder="<?php esc_attr_e( 'Message', 'beonepage' ); ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>"><?php if( isset( $_POST['message'] ) ) { echo esc_attr( $_POST['message'] ); } ?></textarea>
 								</fieldset>
 
 								<fieldset class="captcha col-sm-6">
-									<input type="text" id="contact-form-captcha" name="captcha" placeholder="<?php echo $a . ' + ' . $b . ' = ?'; ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>" data-rule-equalto="#captcha-value" data-msg-equalto="<?php echo $equalto; ?>" />
-									<input type="hidden" id="captcha-value" value="<?php echo $a + $b; ?>">
+									<input type="text" id="contact-form-captcha" name="captcha" placeholder="<?php echo esc_attr($a) . ' + ' . esc_attr($b) . ' = ?'; ?>" class="required cf-form-control" data-msg-required="<?php echo $required; ?>" data-rule-equalto="#captcha-value" data-msg-equalto="<?php echo $equalto; ?>" />
+									<input type="hidden" id="captcha-value" value="<?php echo esc_attr($a) + esc_attr($b); ?>">
 								</fieldset><!-- .captcha -->
 
 								<fieldset class="submit col-sm-6">
