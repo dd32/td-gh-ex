@@ -101,3 +101,7 @@ All images used in the theme designed by buzthemes under GPL License
 = 1.0.6 =
     * Fix escaping
     * Blog section image issue fix
+    
+= 1.0.7 =
+    * Fix escaping
+    * Remove unnecessary filters

@@ -238,15 +238,6 @@ foreach ( $beetech_raw_categories  as $categories ) {
 	$beetech_categories[$categories->slug] = $categories->name;
 }
 
-/** Excerpt Contant Filter **/
-add_filter( 'excerpt_more', 'beetech_custom_excerpt_more' );
-
-if( ! function_exists( 'beetech_custom_excerpt_more' ) ):
-	function beetech_custom_excerpt_more( $more ) {
-		return ' ';
-	}
-endif;
-
 /** Sidebar **/
 if( ! function_exists( 'beetech_get_sidebar' ) ):
 function beetech_get_sidebar() {
@@ -289,21 +280,7 @@ function beetech_get_sidebar() {
 }
 endif;
 
-/**
- * Remove the title prefix from archive pages
- *
- * @since 1.0.0
- */
-add_filter( 'get_the_archive_title', function ($title) {
-    if ( is_category() ) {
-            $title = single_cat_title( '', false );
-        } elseif ( is_tag() ) {
-            $title = single_tag_title( '', false );
-        } elseif ( is_author() ) {
-            $title = '<span class="vcard bt-admin">' . get_the_author() . '</span>' ;
-        }
-    return $title;
-});
+
 
 function beetech_sanitize_bradcrumb($input){
     $all_tags = array(

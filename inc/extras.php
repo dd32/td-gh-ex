@@ -29,8 +29,8 @@ function beetech_body_classes( $classes ) {
 	}
 
     //Adds extra class while slider is not active
-    $beetech_slider_option = get_theme_mod( 'homepage_slider_option', 'hide' );
-    $beetech_slider_cat_id = get_theme_mod( 'slider_cat_id', '0' );
+    $beetech_slider_option = esc_attr(get_theme_mod( 'homepage_slider_option', 'hide' ));
+    $beetech_slider_cat_id = absint(get_theme_mod( 'slider_cat_id', '0' ));
     if( $beetech_slider_option != 'hide' || !empty( $beetech_slider_cat_id ) ) {
         $classes[] = 'no-front-slider';
     }
@@ -40,31 +40,31 @@ function beetech_body_classes( $classes ) {
     }}
 
     // adds a class of header-sticky for parallax menu
-    $beetech_menu_type = get_theme_mod( 'primary_menu_type', 'parallax' );
-    $beetech_header_sticky_opiton = get_theme_mod( 'sticky_header_option', 'enable' );
+    $beetech_menu_type = esc_attr(get_theme_mod( 'primary_menu_type', 'parallax' ));
+    $beetech_header_sticky_opiton = esc_attr(get_theme_mod( 'sticky_header_option', 'enable' ));
     if( $beetech_menu_type == 'parallax' && $beetech_header_sticky_opiton == 'enable' ) {
         $classes[] = 'header-sticky';
     }
     
     $sidebar_meta_option = 'right_sidebar';
     if(is_archive()) {
-    $sidebar_meta_option = get_theme_mod( 'beetech_archive_sidebar_layout', 'right_sidebar' );
+    $sidebar_meta_option = esc_attr(get_theme_mod( 'beetech_archive_sidebar_layout', 'right_sidebar' ));
     $classes[] = $sidebar_meta_option;
     }else{
         
         if( 'post' === get_post_type() ) {
-            $sidebar_meta_option = get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true );
+            $sidebar_meta_option = esc_attr(get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true ));
             $classes[] = $sidebar_meta_option;
         }
     
         if( 'page' === get_post_type() ) {
-        	$sidebar_meta_option = get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true );
+        	$sidebar_meta_option = esc_attr(get_post_meta( $post->ID, 'beetech_post_sidebar_layout', true ));
             $classes[] = $sidebar_meta_option;
         }
          
         if( is_home() ) {
             $set_id = get_option( 'page_for_posts' );
-    		$sidebar_meta_option = get_post_meta( $set_id, 'beetech_post_sidebar_layout', true );
+    		$sidebar_meta_option = esc_attr(get_post_meta( $set_id, 'beetech_post_sidebar_layout', true ));
             $classes[] = $sidebar_meta_option;
         }
         
