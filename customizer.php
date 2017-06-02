@@ -63,25 +63,6 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[title_position]',
 	) );
 	
-	$wp_customize->add_setting(
-		'enigma_options[upload__header_image]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['upload__header_image'],
-			'sanitize_callback'=>'esc_url_raw',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'enigma_options[upload_image_logo]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['upload_image_logo'],
-			'sanitize_callback'=>'esc_url_raw',
-			'capability'        => 'edit_theme_options',
-		)
-	);
 	
 	// site title and logo position : left and center //
 	$wp_customize->add_setting(
@@ -95,66 +76,6 @@ $wp_customize->add_section(
 	);
 	// site title and logo position : left and center //
 	
-	$wp_customize->add_setting(
-		'enigma_options[height]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['height'],
-			'sanitize_callback'=>'enigma_sanitize_integer',
-			'capability'        => 'edit_theme_options'
-		)
-	);
-	
-	
-	
-	$wp_customize->add_setting(
-		'enigma_options[width]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['width'],
-			'sanitize_callback'=>'enigma_sanitize_integer',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_upload_image', array(
-		'label'        => __( 'Header Image', 'enigma' ),
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[upload__header_image]',
-	) ) );
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_upload_image_logo', array(
-		'label'        => __( 'Website Logo', 'enigma' ),
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[upload_image_logo]',
-	) ) );
-	$wp_customize->add_control( 'enigma_logo_height', array(
-		'label'        => __( 'Logo Height', 'enigma' ),
-		'type'=>'number',
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[height]',
-	) );
-	$wp_customize->add_control( 'enigma_logo_width', array(
-		'label'        => __( 'Logo Width', 'enigma' ),
-		'type'=>'number',
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[width]',
-	) );
-	
-	$wp_customize->add_setting(
-		'enigma_options[upload_image_favicon]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['upload_image_favicon'],
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback'=>'esc_url_raw',
-		)
-	);
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_upload_image_favicon', array(
-		'label'        => __( 'Custom favicon', 'enigma' ),
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[upload_image_favicon]',
-	) ) );
 	$wp_customize->add_setting(
 	'enigma_options[custom_css]',
 		array(
@@ -182,8 +103,6 @@ $wp_customize->add_section(
 			'active_callback' => 'is_front_page',
         )
     );
-
-
 
     //
 

@@ -12,6 +12,7 @@
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
+	require get_template_directory() . '/core/custom-header.php';
 		require( get_template_directory() . '/class-tgm-plugin-activation.php' );
 	//Sane Defaults
 	function weblizar_default_settings()
@@ -31,8 +32,7 @@
 			'height'=>'55',
 			'width'=>'150',
 			'_frontpage' => '1',
-			'blog_count'=>'3',
-			'upload_image_favicon'=>'',			
+			'blog_count'=>'3',			
 			'custom_css'=>'',
 
 			'slider_image_speed' => '',
@@ -158,6 +158,9 @@ add_theme_support( 'custom-header', $args );
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
 		
+		// Logo
+		add_theme_support( 'custom-logo', array());
+		
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
@@ -165,7 +168,7 @@ add_theme_support( 'custom-header', $args );
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'enigma' ) );
 		// theme support 	
-		$args = array('default-color' => '000000',);
+		$args = array('default-color' => 'ffffff',);
 		add_theme_support( 'custom-background', $args); 
 		add_theme_support( 'automatic-feed-links');
 		$defaults = array(

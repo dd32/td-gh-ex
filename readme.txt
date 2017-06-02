@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.1 [02-06-2017]
+Minor changes in header
+
 @Version: 3.0 [26-05-2017]
 Minor changes
 
