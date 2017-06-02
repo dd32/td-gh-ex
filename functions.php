@@ -166,7 +166,7 @@ define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com','bb-ecommerce-st
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-			return "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>Design By themeshopy</a>";
+			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>Design By themeshopy</a>";
 	}
 }
 

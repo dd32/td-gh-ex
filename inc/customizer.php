@@ -169,7 +169,7 @@ final class bb_ecommerce_store_customize {
 				array(
 					'title'    => esc_html__( 'BB Ecommerce Store Pro', 'bb-ecommerce-store' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-ecommerce-store' ),
-					'pro_url'  => 'http://www.themeshopy.com/premium/ecommerce-store-wordpress-theme'
+					'pro_url'  => 'http://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/'
 				)
 			)
 		);

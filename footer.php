@@ -11,7 +11,7 @@
             	<div class="inner">
                     <div class="copyright">
                         <p><?php echo esc_html( get_theme_mod('bb_ecommerce_store_footer_copy','') ); ?></p>
-                        <?php echo bb_ecommerce_store_credit(); ?>
+                        <?php echo esc_html(bb_ecommerce_store_credit()); ?>
                     </div><!-- copyright -->
                     <div class="clear"></div>
                 </div><!-- inner -->

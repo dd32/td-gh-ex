@@ -4,17 +4,13 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2
-Tested up to    :   WP 5.1+
+Version         :   1.2.1
+Tested up to    :   WP 4.7+
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
 
 
 == Copyright ==
-
-BB Ecommerce Store WordPress Theme, Copyright 2017 WordPress.org
-BB Ecommerce Store is distributed under the terms of the GNU GPL
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
@@ -26,14 +22,17 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+license         :   License: GNU General Public License v2 or later
+License URI     :   http://www.gnu.org/licenses/gpl-2.0.html
+
+BB Ecommerce Store WordPress Theme, Copyright (C) 2017, ThemeShopy
+BB Ecommerce Store is distributed under the terms of the GNU GPL
 
 /*----------------------------------------------------------------------------*/
 /* About Author - Contact Details */
 /*----------------------------------------------------------------------------*/
 
-email       :   support@themeshopy.com
+Email       :   support@themeshopy.com
 
 /*----------------------------------------------------------------------------*/
 /* Theme Resources */

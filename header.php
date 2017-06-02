@@ -16,7 +16,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="toggle"><a class="toggleMenu" href="#"><?php _e('Menu','bb-ecommerce-store'); ?></a></div>
+  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-ecommerce-store'); ?></a></div>
 
 <div class="header">
 <div class="container">

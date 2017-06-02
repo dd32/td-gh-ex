@@ -4,13 +4,13 @@ Theme URI: http://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: http://www.themeshopy.com
 Description: eCommerce Store is a BB WooCommerce Free WordPress theme. eCommerce Store is elegant multipurpose eCommerce/WooCommerce WordPress theme suitable for eCommerce websites of any store type: such as online book store, mobile & tablet store, laptop store, apparel store, fashion store, sport store, digital shop, handbags store, cosmetics shop, jewelry store and for multipurpose online stores. Its modern design is perfect to create a website for your business. eSotre includes plenty of customization options that are easy to use. Main features of ecommerce-store: Customizer theme options, background image and color, wishlist support, grid homepage block, product search with category select, SEO optimized, fully responsive, configurable home page, slider, fast loading.  check the demo at http://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
 Tags: one-column,two-columns,right-sidebar,custom-background,custom-menu,featured-images,theme-options, threaded-comments, translation-ready,food-and-drink,blog,e-commerce
 
-BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2016.
+BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2017.
 BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
 */
 
@@ -944,10 +944,6 @@ section#blog{
 
 /* Sidebar */
 
-#sidebar{
-  font-family:Helvetica;
-}
-
 #sidebar form{
   display: table;
   width: 100%;
@@ -1021,6 +1017,21 @@ section#blog{
 #sidebar .tagcloud a:hover{
   background:#ffd34e;
 }
+
+
+/* woocommerce */
+
+.woocommerce #sidebar{
+  width: 28%;
+  float: left;
+  margin-left: 2%;
+}
+
+.woocommerce-checkout #content-tc ul li{
+  list-style-type: none;
+  padding: 1em 2em 1em 3.5em;
+}
+
 
 /* Page */
 .title-box{

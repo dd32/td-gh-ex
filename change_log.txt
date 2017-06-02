@@ -6,3 +6,6 @@ i) Bug fixes
 
 Version 1.2
 i) Fixed CSS Issue
+
+Version 1.2.1
+i) Licence updated

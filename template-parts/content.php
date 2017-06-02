@@ -24,7 +24,7 @@
     </div>
 	
 	<div class="cat-box">
-	 <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?>
+	 <?php foreach((get_the_category()) as $category) { echo esc_html($category->cat_name) . ' '; } ?>
 	</div>
 	
     <div class="clearfix"></div>     

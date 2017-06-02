@@ -50,7 +50,7 @@ get_header(); ?>
                                 $class_col = '12';                              
                             }
                         ?>
-                        <div class="col-md-<?php echo $class_col; ?> wow bounceInUp">
+                        <div class="col-md-<?php echo esc_html($class_col); ?> wow bounceInUp">
                             <h4><?php the_title();?></h4>           
                             <p><?php the_excerpt(); ?></p>
                             <div class="metabox">
@@ -58,7 +58,7 @@ get_header(); ?>
                                 <span class="entry-author"> <?php the_author(); ?></span>
                                 <span class="entry-comments"> <?php comments_number( '0 Comments', '0 Comments', '% Comments' ); ?></span>
                             </div>
-                            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php _e( 'Read Full', 'bb-ecommerce-store' ); ?>"><?php _e('Read Full','bb-ecommerce-store'); ?></a>
+                            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_html_e( 'Read Full', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read Full','bb-ecommerce-store'); ?></a>
                         </div>
                         <div class="clearfix"></div> 
                     </div>

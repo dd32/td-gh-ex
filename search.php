@@ -12,7 +12,7 @@ get_header(); ?>
         <div class="col-md-9" id="content-tc">
             <div class="site-main" id="sitemain">
                 <?php if ( have_posts() ) : ?>
-                    <h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'bb-ecommerce-store' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                   <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
                     <?php while ( have_posts() ) : the_post(); ?>
                         <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                         <?php the_excerpt(); ?>
