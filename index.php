@@ -5,7 +5,11 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-full">
+<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 0) { ?> 
+	<div id="content">
+<?php } else { ?>
+	<div id="content-full">
+<?php } ?>
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -22,4 +26,7 @@
 
 	<?php endif; ?>
 </div>
+<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 0) { ?> 
+	<?php get_sidebar(); ?>
+<?php } ?>
 <?php get_footer(); ?>

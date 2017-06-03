@@ -196,10 +196,30 @@
 			'section' => 'gridbulletin_logo_section', 
 			'settings' => 'gridbulletin_logo', 
 		) ) );
+		$wp_customize->add_section( 'gridbulletin_homepage_section' , array( 
+			'title' => __( 'Homepage', 'gridbulletin' ), 
+			'priority' => 31, 
+			'description' => __( 'Settings for homepage that contains posts.', 'gridbulletin' ),
+		) );
+		$wp_customize->add_setting( 'gridbulletin_homepage_sidebar', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => '1', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_homepage_sidebar', array( 
+			'label' => __( 'Sidebar', 'gridbulletin' ), 
+			'section' => 'gridbulletin_homepage_section', 
+			'settings' => 'gridbulletin_homepage_sidebar', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'0' => __('Yes', 'gridbulletin'), 
+				'1' => __('No', 'gridbulletin'), 
+			), 
+		) ) );
 		$wp_customize->add_section( 'gridbulletin_archive_section' , array( 
 			'title' => __( 'Archive Page', 'gridbulletin' ), 
-			'priority' => 31, 
-			'description' => __( 'Settings for the archive page.', 'gridbulletin' ),
+			'priority' => 32, 
+			'description' => __( 'Settings for archive pages.', 'gridbulletin' ),
 		) );
 		$wp_customize->add_setting( 'gridbulletin_sidebar', array( 
 			'capability' => 'edit_theme_options', 

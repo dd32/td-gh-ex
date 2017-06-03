@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+GridBulletin version 5.2 - june 2017
+- customizer: added homepage settings
+- updated files content-list and index
+
 GridBulletin version 5.1 - april 2017
 - file single: added post class .post-single
 - file style: changed margin and padding of several elements (layout improvement)
@@ -41,7 +45,7 @@ GridBulletin version 4.4 - august 2016
 - bugfix in file content-list: added conditional tag is_archive()
 
 GridBulletin version 4.3 - august 2016
-- customizer: added settings for the archive page
+- customizer: added archive page settings
 - updated file archive
 - files content-list and style: changed post-archive and post-home class into post-three and post-four
 - file style: changed width and padding of postmetadata class

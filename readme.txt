@@ -1,7 +1,7 @@
 === GridBulletin ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.1
+Version: 5.2
 Requires at least: 4.2
 Tested up to: 4.7
 License: GNU General Public License v3 or later
@@ -38,6 +38,9 @@ You can add your own background(image) via WordPress Dashboard > Appearance > Cu
 You can create and set a menu via WordPress Dashboard > Appearance > Menus.
 
 The mobile menu supports 2 levels of subpages.
+
+= Homepage =
+Display your homepage (that contains posts) with or without sidebar via WordPress Dashboard > Appearance > Customize. 
 
 = Archive page =
 Display your archive page with or without sidebar and archive title via WordPress Dashboard > Appearance > Customize. 
