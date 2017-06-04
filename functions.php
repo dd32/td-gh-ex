@@ -204,7 +204,7 @@
 		$wp_customize->add_setting( 'gridbulletin_homepage_sidebar', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
-			'default' => '1', 
+			'default' => 'no', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_homepage_sidebar', array( 
 			'label' => __( 'Sidebar', 'gridbulletin' ), 
@@ -212,8 +212,8 @@
 			'settings' => 'gridbulletin_homepage_sidebar', 
 			'type' => 'radio', 
 			'choices' => array( 
-				'0' => __('Yes', 'gridbulletin'), 
-				'1' => __('No', 'gridbulletin'), 
+				'yes' => __('Yes', 'gridbulletin'), 
+				'no' => __('No', 'gridbulletin'), 
 			), 
 		) ) );
 		$wp_customize->add_section( 'gridbulletin_archive_section' , array( 
@@ -224,7 +224,7 @@
 		$wp_customize->add_setting( 'gridbulletin_sidebar', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
-			'default' => '0', 
+			'default' => 'yes', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_sidebar', array( 
 			'label' => __( 'Sidebar', 'gridbulletin' ), 
@@ -232,14 +232,14 @@
 			'settings' => 'gridbulletin_sidebar', 
 			'type' => 'radio', 
 			'choices' => array( 
-				'0' => __('Yes', 'gridbulletin'), 
-				'1' => __('No', 'gridbulletin'), 
+				'yes' => __('Yes', 'gridbulletin'), 
+				'no' => __('No', 'gridbulletin'), 
 			), 
 		) ) );
 		$wp_customize->add_setting( 'gridbulletin_archive_title', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '0', 
+			'default' => 'yes', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_archive_title', array( 
 			'label' => __( 'Archive title', 'gridbulletin' ), 
@@ -247,8 +247,8 @@
 			'settings' => 'gridbulletin_archive_title', 
 			'type' => 'radio', 
 			'choices' => array( 
-				'0' => __('Yes', 'gridbulletin'), 
-				'1' => __('No', 'gridbulletin'), 
+				'yes' => __('Yes', 'gridbulletin'), 
+				'no' => __('No', 'gridbulletin'), 
 			), 
 		) ) );
 	} 

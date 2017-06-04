@@ -5,7 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 0) { ?> 
+<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 'yes') { ?> 
 	<div id="content">
 <?php } else { ?>
 	<div id="content-full">
@@ -26,7 +26,7 @@
 
 	<?php endif; ?>
 </div>
-<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 0) { ?> 
+<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 'yes') { ?> 
 	<?php get_sidebar(); ?>
 <?php } ?>
 <?php get_footer(); ?>

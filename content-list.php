@@ -4,7 +4,15 @@
  */
 ?>
 
-<?php if( ( is_home() && get_theme_mod('gridbulletin_homepage_sidebar') == 1 ) || ( is_archive() && get_theme_mod('gridbulletin_sidebar') == 1 ) ) { ?>
+<?php if( is_home() && (get_theme_mod('gridbulletin_homepage_sidebar') != 'yes') ) { ?>
+	<?php if( $wp_query->current_post%4 == 0 ) : ?> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>> 
+	<?php elseif( $wp_query->current_post%4 == 3 ) : ?> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four right'); ?>>
+	<?php else : ?> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four'); ?>> 
+	<?php endif; ?> 
+<?php } elseif( is_archive() && (get_theme_mod('gridbulletin_sidebar') == 'no') ) { ?>
 	<?php if( $wp_query->current_post%4 == 0 ) : ?> 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>> 
 	<?php elseif( $wp_query->current_post%4 == 3 ) : ?> 

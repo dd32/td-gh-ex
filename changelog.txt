@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+GridBulletin version 5.3 - june 2017
+- fixed mistake with sidebar on homepage
+- you might have to reset sidebar on homepage and archive page
+- updated files functions, content-list, archive and index
+
 GridBulletin version 5.2 - june 2017
 - customizer: added homepage settings
 - updated files content-list and index

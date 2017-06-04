@@ -5,14 +5,14 @@
 ?>
 
 <?php get_header(); ?>
-<?php if(get_theme_mod('gridbulletin_sidebar') != 1) { ?> 
+<?php if(get_theme_mod('gridbulletin_sidebar') != 'no') { ?> 
 	<div id="content">
 <?php } else { ?>
 	<div id="content-full">
 <?php } ?>
 	<?php if ( have_posts() ) : ?>
 
-		<?php if(get_theme_mod('gridbulletin_archive_title') != 1) { ?> 
+		<?php if(get_theme_mod('gridbulletin_archive_title') != 'no') { ?> 
 		<?php
 			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
@@ -33,7 +33,7 @@
 
 	<?php endif; ?>
 </div>
-<?php if(get_theme_mod('gridbulletin_sidebar') != 1) { ?> 
+<?php if(get_theme_mod('gridbulletin_sidebar') != 'no') { ?> 
 	<?php get_sidebar(); ?>
 <?php } ?>
 <?php get_footer(); ?>
