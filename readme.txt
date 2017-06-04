@@ -54,65 +54,24 @@ Images
 
 == Changelog ==
 
-Version 1.0
+Version 3.0.9
 ===============
-* Submitted theme for review in http://wordpress.org
+* Added Welcome Page with demo import functionality
 
-Version 1.1.9
+Version 3.0.7
 ===============
-* Fixed Gallery Page Column Layout Issues
-* Fixed Span and H2 tags for slider caption title and descriptions. 
+* Updated the fontawesome files.
+* Fixed Toggle Content not displaying the HTML markups.
 
-Version 2.0.0
+Version 3.0.6
 ===============
-* Slider displaying in blog page (assigned from settings > Reading) (Fixed)
-* Added Navigation feature in Post pages.
-* Prevented woocommerce incompatibility message from showing up (Fixed)
+* Fixed some escaping issues.
+* Updated Latest Font awesome
 
-Version 2.0.1
+Version 3.0.5
 ===============
-* Fixed the wrong page title showing up in blog page.
-
-Version 2.0.2
-===============
-* Fixed the option of unable to set the sidebar layout for the blog page.
-
-Version 2.0.3
-===============
-* Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
-
-Version 2.0.4
-===============
-* Translation errors fixed.
-
-Version 2.0.5
-===============
-* Fixed Woocommerce Product Image not displaying problem.
-
-Version 2.0.6
-===============
-* Added the feature to open the slider links in same widow or in new tab.
-
-Version 2.0.7
-===============
-* Fixed the Responsive menu displaying in window resize issue.
-
-Verion 2.0.9
-===============
-* Added Editor Style for editing TinyMCE visual editor styles.
-
-Version 3.0.1
-===============
-* Fixed Some theme tranlation issues
-
-Version 3.0.2
-===============
-* Fixed issue of appearing shortcode tags in feature section in home page.
-* Fixed issue of appearing shortcode tags in service section in home page.
-
-Version 3.0.3
-===============
-* Fixed issue of appearing shortcode tags in feature section in home page.
+* Fixed Sidebar width issues in both sidebar layout
+* Used updated version of tgmpa plugin
 
 Version 3.0.4
 ===============
@@ -120,17 +79,62 @@ Version 3.0.4
 * Fixed formatting of html tags in toggle widget.
 * Fixed navigation text overflow in single post page.
 
-Version 3.0.5
+Version 3.0.3
 ===============
-* Fixed Sidebar width issues in both sidebar layout
-* Used updated version of tgmpa plugin
+* Fixed issue of appearing shortcode tags in feature section in home page.
 
-Version 3.0.6
+Version 3.0.2
 ===============
-* Fixed some escaping issues.
-* Updated Latest Font awesome
+* Fixed issue of appearing shortcode tags in feature section in home page.
+* Fixed issue of appearing shortcode tags in service section in home page.
 
-Version 3.0.7
+Version 3.0.1
 ===============
-* Updated the fontawesome files.
-* Fixed Toggle Content not displaying the HTML markups.
+* Fixed Some theme tranlation issues
+
+Verion 2.0.9
+===============
+* Added Editor Style for editing TinyMCE visual editor styles.
+
+Version 2.0.7
+===============
+* Fixed the Responsive menu displaying in window resize issue.
+
+Version 2.0.6
+===============
+* Added the feature to open the slider links in same widow or in new tab.
+
+Version 2.0.5
+===============
+* Fixed Woocommerce Product Image not displaying problem.
+
+Version 2.0.4
+===============
+* Translation errors fixed.
+
+Version 2.0.3
+===============
+* Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
+
+Version 2.0.2
+===============
+* Fixed the option of unable to set the sidebar layout for the blog page.
+
+Version 2.0.1
+===============
+* Fixed the wrong page title showing up in blog page.
+
+Version 2.0.0
+===============
+* Slider displaying in blog page (assigned from settings > Reading) (Fixed)
+* Added Navigation feature in Post pages.
+* Prevented woocommerce incompatibility message from showing up (Fixed)
+
+Version 1.1.9
+===============
+* Fixed Gallery Page Column Layout Issues
+* Fixed Span and H2 tags for slider caption title and descriptions. 
+
+Version 1.0
+===============
+* Submitted theme for review in http://wordpress.org

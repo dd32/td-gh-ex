@@ -84,6 +84,9 @@ function accesspress_basic_setup() {
 
 	// Woocommerce Compatibility
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // accesspress_basic_setup
 add_action( 'after_setup_theme', 'accesspress_basic_setup' );
@@ -172,11 +175,6 @@ require get_template_directory() . '/inc/admin-panel/theme-options.php';
 require get_template_directory() . '/inc/apbasic-widgets.php';
 
 /**
- * Load TGM_Plugin_Activation class.
+ * Load Welcome Page
  */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-/**
- * Load TGM_Plugin_Activation class.
- */
-require get_template_directory() . '/inc/apbasic-more.php';
+require get_template_directory() . '/welcome/welcome.php';
