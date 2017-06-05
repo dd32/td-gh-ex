@@ -57,7 +57,7 @@ function beonepage_register_required_plugins() {
 		array(
 			'name'               => 'BeOnePage Lite Plugin',
 			'slug'               => 'beonepage-lite-plugin',
-			'source'             => 'https://betheme.me/wp-content/uploads/2017/04/beonepage-lite-plugin.zip',
+			'source'             => 'https://downloads.wordpress.org/plugin/beonepage-lite.zip',
 			'required'           => true,
 			'version'            => '1.0.0',
 			'force_activation'   => true,
