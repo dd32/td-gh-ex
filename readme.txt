@@ -104,6 +104,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.8
+1. Added dummy data import setting.
 @Version 1.7.9
 1. Update pot file for theme info.
 @Version 1.7.8

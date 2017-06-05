@@ -1,199 +1,214 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: spasalon\n"
-"POT-Creation-Date: 2017-02-24 14:16+0530\n"
-"PO-Revision-Date: 2017-02-24 14:17+0530\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Spasalon\n"
+"POT-Creation-Date: 2017-06-03 14:50+0530\n"
+"PO-Revision-Date: 2017-06-03 14:50+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html_e\n"
-"X-Poedit-Basepath: D:\\xampp\\htdocs\\wp7\\wp-content\\themes"
-"\\spasalon_lite\n"
-"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wp7\\wp-content\\themes"
-"\\spasalon_lite\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/404.php:20
+#: 404.php:20
 msgid "Oops! Page not found"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/404.php:24
+#: 404.php:24
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/404.php:24
+#: 404.php:24
 msgid "Go Back"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/archive.php:40
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/category.php:40
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/index.php:49
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/search.php:41
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/tag.php:40
+#: archive.php:40 category.php:40 index.php:49 search.php:41 tag.php:40
 msgid "Previous"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/archive.php:41
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/category.php:41
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/index.php:50
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/search.php:42
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/tag.php:41
+#: archive.php:41 category.php:41 index.php:50 search.php:42 tag.php:41
 msgid "Next"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:17
+#: comments.php:17
 msgid "Reply"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:32
+#: comments.php:32
 msgid "at"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:84
+#: comments.php:62
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:67
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:84
 msgid "Comment navigation"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:85
+#: comments.php:85
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:86
+#: comments.php:86
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/comments.php:91
+#: comments.php:91
 msgid "Comments are closed."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content-none.php:6
+#: content-none.php:6
 msgid "Nothing Found"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content-none.php:12
+#: content-none.php:12
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content-none.php:17
+#: content-none.php:17
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content-none.php:23
+#: content-none.php:23
 msgid ""
 "It seems we can not find what you are looking for. Perhaps searching can "
 "help."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content.php:24
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions.php:163
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions.php:181
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/index-news.php:92
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:108
+#: content.php:24 functions.php:163 functions.php:181
+#: functions/widget/wbr-news-widget.php:108 index-news.php:92
 msgid "Read More"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/content.php:27
+#: content.php:27
 msgid "Page"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions.php:91
+#: functions.php:91
 msgid "Primary Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions.php:93
+#: functions.php:93
 msgid "Footer Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/search.php:26
-#, php-format
-msgid "Search results for %s"
+#: functions.php:320
+msgid ""
+"Click the large blue button to start the dummy data import process.</br></"
+"br>Please be patient while WordPress imports all the content.</br></br>\n"
+"\t\t\t<h3>Recommended Plugins</h3>Spasalon theme supports the following "
+"plugins:</br> </br><li> <a href=\"https://wordpress.org/plugins/contact-"
+"form-7/\"> Contact form 7</a> </l1> </br> <li> <a href=\"https://wordpress."
+"org/plugins/woocommerce/\"> WooCommerce </a> </li><li> <a href=\"https://"
+"wordpress.org/plugins/spoontalk-social-media-icons-widget/\"> Spoon talk "
+"social media icon </a></li>"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:9
+#: functions/customizer/banner-settings.php:9
 msgid "Banner settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:14
+#: functions/customizer/banner-settings.php:14
 msgid "Category"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:24
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:63
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:102
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:141
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:180
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:219
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:240
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:311
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:395
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/post-widget.php:60
+#: functions/customizer/banner-settings.php:24
+#: functions/customizer/banner-settings.php:63
+#: functions/customizer/banner-settings.php:102
+#: functions/customizer/banner-settings.php:141
+#: functions/customizer/banner-settings.php:180
+#: functions/customizer/banner-settings.php:219
+#: functions/customizer/home-page.php:240
+#: functions/customizer/home-page.php:311
+#: functions/customizer/home-page.php:395 functions/widget/post-widget.php:60
 msgid "Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:35
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:74
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:113
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:152
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:191
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:230
+#: functions/customizer/banner-settings.php:35
+#: functions/customizer/banner-settings.php:74
+#: functions/customizer/banner-settings.php:113
+#: functions/customizer/banner-settings.php:152
+#: functions/customizer/banner-settings.php:191
+#: functions/customizer/banner-settings.php:230
 msgid "Subtitle"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:46
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:85
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:124
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:163
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:202
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:241
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:251
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:324
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:407
+#: functions/customizer/banner-settings.php:46
+#: functions/customizer/banner-settings.php:85
+#: functions/customizer/banner-settings.php:124
+#: functions/customizer/banner-settings.php:163
+#: functions/customizer/banner-settings.php:202
+#: functions/customizer/banner-settings.php:241
+#: functions/customizer/home-page.php:251
+#: functions/customizer/home-page.php:324
+#: functions/customizer/home-page.php:407
 msgid "Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:53
+#: functions/customizer/banner-settings.php:53
 msgid "Archive"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:92
+#: functions/customizer/banner-settings.php:92
 msgid "Tag"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:131
+#: functions/customizer/banner-settings.php:131
 msgid "Search"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:170
+#: functions/customizer/banner-settings.php:170
 msgid "404"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/banner-settings.php:209
+#: functions/customizer/banner-settings.php:209
 msgid "Woocommerce"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:15
+#: functions/customizer/customizer-pro.php:15
 msgid "View Demo"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:44
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:51
+#: functions/customizer/customizer-pro.php:44
+#: functions/customizer/customizer-pro.php:51
 msgid "Upgrade to pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:77
+#: functions/customizer/customizer-pro.php:77
 msgid "ADD YOUR REVIEW"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:106
+#: functions/customizer/customizer-pro.php:106
 msgid "DOCUMENTATION"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/customizer-pro.php:110
+#: functions/customizer/customizer-pro.php:110
 msgid ""
 "The Pro Version gives you more opportunities to enhance your site and "
 "business. In order to create effective online presence one have to showcase "
@@ -203,165 +218,131 @@ msgid ""
 "serve you better."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:10
+#: functions/customizer/general-settings.php:10
 msgid "General settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:15
+#: functions/customizer/general-settings.php:15
 msgid "Banner setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:26
+#: functions/customizer/general-settings.php:26
 msgid "Banner strip"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:40
+#: functions/customizer/general-settings.php:40
 msgid "Call us on"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:51
+#: functions/customizer/general-settings.php:51
 msgid "Call us text"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:58
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:69
+#: functions/customizer/general-settings.php:58
+#: functions/customizer/general-settings.php:69
 msgid "Custom CSS"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:76
+#: functions/customizer/general-settings.php:76
 msgid "Footer copyright settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/general-settings.php:87
+#: functions/customizer/general-settings.php:87
 msgid "Copyright text"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:12
+#: functions/customizer/home-page.php:12
 msgid "Slider section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:19
+#: functions/customizer/home-page.php:19
 msgid "Choose Post"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:26
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:194
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:278
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:347
+#: functions/customizer/home-page.php:26 functions/customizer/home-page.php:194
+#: functions/customizer/home-page.php:278
+#: functions/customizer/home-page.php:347
 msgid "Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:37
+#: functions/customizer/home-page.php:37
 msgid "Slider banner enable in home page"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:52
+#: functions/customizer/home-page.php:52
 msgid "Banner title"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:63
+#: functions/customizer/home-page.php:63
 msgid "Banner subtitle"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:74
+#: functions/customizer/home-page.php:74
 msgid "Banner description"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:88
+#: functions/customizer/home-page.php:88
 msgid "Select post"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:102
+#: functions/customizer/home-page.php:102
 msgid "Slider thumbnails enable in home page"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:119
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:133
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:147
+#: functions/customizer/home-page.php:119
+#: functions/customizer/home-page.php:133
+#: functions/customizer/home-page.php:147
 msgid "Select thumbnail post"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:160
+#: functions/customizer/home-page.php:160
 msgid "Click here to add slides"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:189
+#: functions/customizer/home-page.php:189
 msgid "Service section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:206
+#: functions/customizer/home-page.php:206
 msgid "Hide service section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:218
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:372
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:179
+#: functions/customizer/home-page.php:218
+#: functions/customizer/home-page.php:372
+#: functions/widget/wbr-news-widget.php:179
 msgid "Select column layout"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:229
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:299
+#: functions/customizer/home-page.php:229
+#: functions/customizer/home-page.php:299
 msgid "Section Header"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:273
+#: functions/customizer/home-page.php:273
 msgid "Product section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:291
+#: functions/customizer/home-page.php:291
 msgid "Hide Product section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:342
+#: functions/customizer/home-page.php:342
 msgid "News section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:360
+#: functions/customizer/home-page.php:360
 msgid "Enable News Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/customizer/home-page.php:384
+#: functions/customizer/home-page.php:384
 msgid "News Header"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:57
-msgid "Get started with Spasalon"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:100
-msgid "Hooray! There are no required actions for you right now."
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:137
-msgid "View Theme Info"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:207
-msgid "Getting Started"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:208
-msgid "Actions Required"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:209
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:11
-msgid "Why Upgrade Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:210
-msgid "Free VS PRO"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/welcome-screen.php:211
-msgid "Child Themes"
-msgstr ""
-
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:13
+#: functions/spasalon-info/sections/actions-required.php:13
 msgid "1. Creating Homepage using Home Page Template."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:14
+#: functions/spasalon-info/sections/actions-required.php:14
 msgid ""
 "To setup exact replica of home page as shown in our demo, you have to create "
 "a WordPress page using a template \"Business Template\". Business Template "
@@ -369,11 +350,11 @@ msgid ""
 "Footer etc which is ideal for any business site. Kindly refer the snapshot."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:21
+#: functions/spasalon-info/sections/actions-required.php:21
 msgid "2. Assign Homepage as Front Page Displays."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:22
+#: functions/spasalon-info/sections/actions-required.php:22
 msgid ""
 "If you want to show Homepage as Front Page? You need to set the Homepage as "
 "static page as shown in the snapshot below. Now go to custmizer and start "
@@ -381,286 +362,286 @@ msgid ""
 "theme useful."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:30
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/actions-required.php:37
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:36
+#: functions/spasalon-info/sections/actions-required.php:30
+#: functions/spasalon-info/sections/actions-required.php:37
+#: functions/spasalon-info/sections/getting-started.php:36
 msgid "spasalon Blue Child Theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:16
+#: functions/spasalon-info/sections/child-themes.php:16
 msgid "Install & Use Spasalon Child Themes"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:18
+#: functions/spasalon-info/sections/child-themes.php:18
 msgid ""
 "Below you will find a selection of spasalon center lite child themes that "
 "will totally transform the look of your site."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:27
+#: functions/spasalon-info/sections/child-themes.php:27
 msgid "Dream Spa Child Theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:29
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:35
+#: functions/spasalon-info/sections/child-themes.php:29
+#: functions/spasalon-info/sections/child-themes.php:35
 msgid "Dream Spa"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:37
+#: functions/spasalon-info/sections/child-themes.php:37
 #, php-format
 msgid "Install %s now"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:38
+#: functions/spasalon-info/sections/child-themes.php:38
 msgid "Live Preview"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:44
+#: functions/spasalon-info/sections/child-themes.php:44
 msgid "dream-spa - Current theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/child-themes.php:45
+#: functions/spasalon-info/sections/child-themes.php:45
 msgid "Customize"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:14
+#: functions/spasalon-info/sections/free_pro.php:14
 msgid "Features"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:19
+#: functions/spasalon-info/sections/free_pro.php:19
 msgid "Frontpage Sections"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:20
+#: functions/spasalon-info/sections/free_pro.php:20
 msgid "You will find number of sections on front-page"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:24
+#: functions/spasalon-info/sections/free_pro.php:24
 msgid "Page Templates Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:25
+#: functions/spasalon-info/sections/free_pro.php:25
 msgid "Various Page Template included in Spasalon Premium Theme."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:30
+#: functions/spasalon-info/sections/free_pro.php:30
 msgid "No of  sidebar on Homepage"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:31
+#: functions/spasalon-info/sections/free_pro.php:31
 msgid "Theme have many sidebar on Front page."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:35
+#: functions/spasalon-info/sections/free_pro.php:35
 msgid "Custom Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:36
+#: functions/spasalon-info/sections/free_pro.php:36
 msgid "Theme Have number of beautifuly designed Custom Widgets"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:40
+#: functions/spasalon-info/sections/free_pro.php:40
 msgid "Service Content type Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:41
+#: functions/spasalon-info/sections/free_pro.php:41
 msgid "Add Services by using widget Spasalon: Page / Service Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:45
+#: functions/spasalon-info/sections/free_pro.php:45
 msgid "Homepage Section / Sidebar Layout"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:46
+#: functions/spasalon-info/sections/free_pro.php:46
 msgid "Customize Home page Sections Layout"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:50
+#: functions/spasalon-info/sections/free_pro.php:50
 msgid "Jetpack Gallery Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:51
+#: functions/spasalon-info/sections/free_pro.php:51
 msgid "Create Awesome Gallery with Overlay"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:55
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:24
+#: functions/spasalon-info/sections/free_pro.php:55
+#: functions/spasalon-info/sections/upgrade.php:24
 msgid "WooCommerce Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:56
+#: functions/spasalon-info/sections/free_pro.php:56
 msgid "Create your online shop with Spasalon Theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:60
+#: functions/spasalon-info/sections/free_pro.php:60
 msgid "Mobile Friendly"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:61
+#: functions/spasalon-info/sections/free_pro.php:61
 msgid "Responsive  layout in all devices."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:65
+#: functions/spasalon-info/sections/free_pro.php:65
 msgid "Products"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:66
+#: functions/spasalon-info/sections/free_pro.php:66
 msgid ""
 "Create Categorized Products by using product templates. Also show Diffrent "
 "set of product on diffrent page. "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:70
+#: functions/spasalon-info/sections/free_pro.php:70
 msgid "Contact Form Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:71
+#: functions/spasalon-info/sections/free_pro.php:71
 msgid ""
 "Default WordPress Contact Form and Contact Form 7 support. Add the forms "
 "using predefined Contact Page Templates"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:75
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:16
+#: functions/spasalon-info/sections/free_pro.php:75
+#: functions/spasalon-info/sections/upgrade.php:16
 msgid "SEO Friendly URL"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:76
+#: functions/spasalon-info/sections/free_pro.php:76
 msgid ""
 "This feature allow you to change custom post type slug names in the url."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:80
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:88
+#: functions/spasalon-info/sections/free_pro.php:80
+#: functions/spasalon-info/sections/upgrade.php:88
 msgid "Mulitple Color Schemes"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:81
+#: functions/spasalon-info/sections/free_pro.php:81
 msgid ""
 "Enjoy with 9 preset color schemes. You can also create custom skin without "
 "adding any code."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:85
+#: functions/spasalon-info/sections/free_pro.php:85
 msgid "Google Map"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:86
+#: functions/spasalon-info/sections/free_pro.php:86
 msgid ""
 "Display your Shop and Business location on your website. Support for all the "
 "Google Map plugins which generates shortcode.  "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:91
+#: functions/spasalon-info/sections/free_pro.php:91
 msgid "WPML Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:92
+#: functions/spasalon-info/sections/free_pro.php:92
 msgid ""
 "Create Multilingual Website. Support for famous plugin like: WPML / Polylang "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:96
+#: functions/spasalon-info/sections/free_pro.php:96
 msgid "Access to Dummy Data File"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:97
+#: functions/spasalon-info/sections/free_pro.php:97
 msgid "Create exact replica of our demo site by importing the dummy data file."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:101
+#: functions/spasalon-info/sections/free_pro.php:101
 msgid "Support Forum"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:102
+#: functions/spasalon-info/sections/free_pro.php:102
 msgid "Get instant 24x7 support on Our Support Forum."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:113
+#: functions/spasalon-info/sections/free_pro.php:113
 msgid "Spasalon Lite"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:117
+#: functions/spasalon-info/sections/free_pro.php:117
 msgid ""
 "Banner Image, Service, Static Product, Latest News, 4 Column Footer "
 "Widgetizeds area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:118
+#: functions/spasalon-info/sections/free_pro.php:118
 msgid "Business Template, Full Width Template"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:120
+#: functions/spasalon-info/sections/free_pro.php:120
 msgid "Spasalon: Page Widget [Service, Product], Spasalon: Latest News Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:121
+#: functions/spasalon-info/sections/free_pro.php:121
 msgid "Support For Featured Image"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:122
+#: functions/spasalon-info/sections/free_pro.php:122
 msgid "Not Customizable"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:123
+#: functions/spasalon-info/sections/free_pro.php:123
 msgid "Simple Thumbnail Gallery"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:133
+#: functions/spasalon-info/sections/free_pro.php:133
 msgid "On WordPress.org Support Forum"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:145
+#: functions/spasalon-info/sections/free_pro.php:145
 msgid "Spasalon Pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:149
+#: functions/spasalon-info/sections/free_pro.php:149
 msgid ""
 "Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited "
 "Products], Latest News, Additional Section and 4 Column Footer Widgetizeds "
 "area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:150
+#: functions/spasalon-info/sections/free_pro.php:150
 msgid ""
 "Homepage, Homepage 2, About us, Blog Left Sidebar, Blog Right Sidebar, Blog "
 "Full Width, Page Full Width, Product Page and Contact Page."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:152
+#: functions/spasalon-info/sections/free_pro.php:152
 msgid ""
 "Spasalon: Page / Service Widget, Spasalon: Product Category Widget, "
 "Spasalon: Recent Products Widget, Spasalon: Team Widget, Spasalon: Latest "
 "News Widget, Spasalon: Latest Post and Spasalon: Contact Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:153
+#: functions/spasalon-info/sections/free_pro.php:153
 msgid ""
 "Support for thousands of Font-Awesome Icon , Featured Images and Read More "
 "Button / Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:154
+#: functions/spasalon-info/sections/free_pro.php:154
 msgid "Customizable"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:155
+#: functions/spasalon-info/sections/free_pro.php:155
 msgid "Overlay Effects Gallery"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:165
+#: functions/spasalon-info/sections/free_pro.php:165
 msgid "Premium Support Forum"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/free_pro.php:176
+#: functions/spasalon-info/sections/free_pro.php:176
 msgid "Get Spasalon PRO Now!"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:14
+#: functions/spasalon-info/sections/getting-started.php:14
 msgid "About Spasalon Lite Theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:20
+#: functions/spasalon-info/sections/getting-started.php:20
 msgid ""
 "SpaSalon is a responsive multipurpose WordPress theme best suitable for "
 "beauty industry like Cosmetology, Hair Styling, Spa, Beauty Salon, Massage & "
@@ -668,7 +649,7 @@ msgid ""
 "sector rather you can use it for any type of business."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:22
+#: functions/spasalon-info/sections/getting-started.php:22
 msgid ""
 "Packed with everything you need to launch your site hassle free! Powerful "
 "and user friendly Customize Theme Options, Sidebar enabled HomePage Sections "
@@ -677,7 +658,7 @@ msgid ""
 "Latest News Widget and Contact Widget etc "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:25
+#: functions/spasalon-info/sections/getting-started.php:25
 msgid ""
 "Premium version even allows you to configure the layout of sidebars, for "
 "example if you want to show Services, Products, Latest News and Team than "
@@ -686,76 +667,118 @@ msgid ""
 "since number of widgets are built in. "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:29
+#: functions/spasalon-info/sections/getting-started.php:29
 msgid ""
 "Note: Intresting fact about this theme is, after upgrade you can start from "
 "where you have left in the lite version. You have to install the premium "
 "version as a separate package like any other WordPress Theme."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:46
+#: functions/spasalon-info/sections/getting-started.php:46
 msgid "Useful Links"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:54
+#: functions/spasalon-info/sections/getting-started.php:54
 msgid "Lite Demo"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:58
+#: functions/spasalon-info/sections/getting-started.php:58
 msgid "View Pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:61
+#: functions/spasalon-info/sections/getting-started.php:61
 msgid "Premium Theme Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:70
+#: functions/spasalon-info/sections/getting-started.php:70
 msgid "Rate This Theme"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/getting-started.php:73
+#: functions/spasalon-info/sections/getting-started.php:73
 msgid "Support"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:17
+#: functions/spasalon-info/sections/import-data.php:11
+msgid "Install Now"
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:34
+msgid "Active Now"
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:50
+msgid "Importing Dummy Content"
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:51
+msgid ""
+"<p><strong>One Click Demo Import</strong> is the WordPress Plugin which "
+"helps in creating the exact replica of our demo site. Just click the button "
+"to proceed further.</p>"
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:52
+msgid "Key Notes:"
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:54
+msgid "Click the button to install the plugin. Ignore if already installed."
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:55
+msgid ""
+"Activate the plugin so that they can read the dummy data files from the "
+"theme folder and import the content for you."
+msgstr ""
+
+#: functions/spasalon-info/sections/import-data.php:56
+msgid "After activation go to Appreance >> Import Demo Data."
+msgstr ""
+
+#: functions/spasalon-info/sections/upgrade.php:11
+#: functions/spasalon-info/welcome-screen.php:219
+msgid "Why Upgrade Pro"
+msgstr ""
+
+#: functions/spasalon-info/sections/upgrade.php:17
 msgid ""
 "This feature helps you to rename the slug names from the URL allowing you to "
 "make it SEO friendly."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:25
+#: functions/spasalon-info/sections/upgrade.php:25
 msgid ""
 "Want to create online store, Its really easy using our theme, It transform "
 "your website in a online store. Spasalon Pro has given special attention to "
 "its WooCommerce integration."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:33
+#: functions/spasalon-info/sections/upgrade.php:33
 msgid "Multi Level Navigation"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:34
+#: functions/spasalon-info/sections/upgrade.php:34
 msgid ""
 "Beautifully style navigation/menu in spasalon Theme. You can make multi "
 "level menu. Multi Level menu means that you can create sub menu."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:42
+#: functions/spasalon-info/sections/upgrade.php:42
 msgid "Front Page Slider"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:43
+#: functions/spasalon-info/sections/upgrade.php:43
 msgid ""
 "Premium theme have 2 type of sliders each can be shown usign different "
 "homepage templates. Add any number of slides having title, subtitle and "
 "custom read more button."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:51
+#: functions/spasalon-info/sections/upgrade.php:51
 msgid "Service Features"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:53
+#: functions/spasalon-info/sections/upgrade.php:53
 msgid ""
 "HomePage Service section is created via Service Sidebar. Use the Spasalon: "
 "Page Widget, Featured Page for adding service type content. You can display "
@@ -765,11 +788,11 @@ msgid ""
 "allow you to select column layout for service section sidebar. "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:61
+#: functions/spasalon-info/sections/upgrade.php:61
 msgid "Product Features"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:62
+#: functions/spasalon-info/sections/upgrade.php:62
 msgid ""
 "Showcase any number of product. Theme will provide you an option for "
 "creating product by using product page template. If you have number of "
@@ -780,11 +803,11 @@ msgid ""
 "number of different set of products."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:70
+#: functions/spasalon-info/sections/upgrade.php:70
 msgid "Latest News Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:71
+#: functions/spasalon-info/sections/upgrade.php:71
 msgid ""
 "Commonly this section is used to display  Latest News, Announcement and "
 "Events type of content. Since this section is created via News Sidebar you "
@@ -792,47 +815,47 @@ msgid ""
 "areas on HomePage makes this theme very flexible. "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:78
+#: functions/spasalon-info/sections/upgrade.php:78
 msgid "Team Feature"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:79
+#: functions/spasalon-info/sections/upgrade.php:79
 msgid ""
 "Team features are a powerful way to display your team member via Homepage "
 "Additional Sidebar. Use the Spasalon: Team Widget for showig team member."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:89
+#: functions/spasalon-info/sections/upgrade.php:89
 msgid ""
 "You will get 9 predefined color skins and you can even make yours favorite "
 "color schemes using Custom Color Setting in the Customizer."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:97
+#: functions/spasalon-info/sections/upgrade.php:97
 msgid "Well Documented"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:98
+#: functions/spasalon-info/sections/upgrade.php:98
 msgid ""
 "We provide good  knowledge base articles which helps you to create an "
 "effective wesbite. You can visit these articles on our  "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:99
+#: functions/spasalon-info/sections/upgrade.php:99
 msgid "Help Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:107
+#: functions/spasalon-info/sections/upgrade.php:107
 msgid "Custom widget "
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:108
+#: functions/spasalon-info/sections/upgrade.php:108
 msgid ""
 "Building website with our custom widgets is very simple. Just place them in "
 "inside the available Sidebar or even in the content"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:117
+#: functions/spasalon-info/sections/upgrade.php:117
 msgid ""
 "<p><strong> Jetpack Gallery Support</strong></p><p>The native WordPress "
 "image gallery displays as a grid of image thumbnails. If you want to show "
@@ -844,105 +867,167 @@ msgid ""
 "Click Here</a></p>"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:127
+#: functions/spasalon-info/sections/upgrade.php:127
 msgid "Translation Ready"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/spasalon-info/sections/upgrade.php:128
+#: functions/spasalon-info/sections/upgrade.php:128
 msgid ""
 "Theme supports  yet another famous plugin WPML / Polylang. With the help of "
 "this support you can create website in multiple languages."
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/post-widget.php:13
+#: functions/spasalon-info/welcome-screen.php:58
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Spasalon! To fully take advantage of the "
+"best our theme can offer please make sure you visit our %swelcome page%s."
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:59
+msgid "Get started with Spasalon"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:67
+#, php-format
+msgid ""
+"Save time by import our demo data, your website will be set up and ready to "
+"customize in minutes. %s"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:67
+msgid "Import Demo Data"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:110
+msgid "Hooray! There are no required actions for you right now."
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:147
+msgid "View Theme Info"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:217
+msgid "Getting Started"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:218
+msgid "Actions Required"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:220
+msgid "Free VS PRO"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:221
+msgid "Child Themes"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:222
+msgid "One Click Demo Import"
+msgstr ""
+
+#: functions/widget/post-widget.php:13
 msgid "WBR : Latest Posts"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/post-widget.php:14
+#: functions/widget/post-widget.php:14
 msgid "Latest Post Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/post-widget.php:65
+#: functions/widget/post-widget.php:65
 msgid "No posts to show"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:11
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:13
+#: functions/widget/sidebars.php:11 functions/widget/sidebars.php:13
 msgid "Sidebar widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:21
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:23
+#: functions/widget/sidebars.php:21 functions/widget/sidebars.php:23
 msgid "Service content widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:31
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:33
+#: functions/widget/sidebars.php:31 functions/widget/sidebars.php:33
 msgid "Project content widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:41
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:43
+#: functions/widget/sidebars.php:41 functions/widget/sidebars.php:43
 msgid "News section widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:51
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:53
+#: functions/widget/sidebars.php:51 functions/widget/sidebars.php:53
 msgid "Footer sidebar one"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:61
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:63
+#: functions/widget/sidebars.php:61 functions/widget/sidebars.php:63
 msgid "Footer sidebar two"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:71
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:73
+#: functions/widget/sidebars.php:71 functions/widget/sidebars.php:73
 msgid "Footer sidebar three"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:81
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:83
+#: functions/widget/sidebars.php:81 functions/widget/sidebars.php:83
 msgid "Footer sidebar four"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:91
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/sidebars.php:93
+#: functions/widget/sidebars.php:91 functions/widget/sidebars.php:93
 msgid "Woocommerce sidebar widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:24
+#: functions/widget/wbr-news-widget.php:24
 msgid "WBR : Recent News Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:26
+#: functions/widget/wbr-news-widget.php:26
 msgid "To display your recent post"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:146
+#: functions/widget/wbr-news-widget.php:146
 msgid "Select posts category"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-news-widget.php:199
+#: functions/widget/wbr-news-widget.php:199
 msgid "Exclude post id ( like : 1,2,3 )"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-register-page-widget.php:22
+#: functions/widget/wbr-register-page-widget.php:22
 msgid "WBR : Page Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-register-page-widget.php:24
+#: functions/widget/wbr-register-page-widget.php:24
 msgid "Feature Page Item Widget"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-register-page-widget.php:125
+#: functions/widget/wbr-register-page-widget.php:125
 msgid "Select Pages"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-register-page-widget.php:165
+#: functions/widget/wbr-register-page-widget.php:165
 msgid "Hide featured image"
 msgstr ""
 
-#: D:\xampp\htdocs\wp7\wp-content\themes\spasalon_lite/functions/widget/wbr-register-page-widget.php:175
+#: functions/widget/wbr-register-page-widget.php:175
 msgid "Display image below title"
+msgstr ""
+
+#: search.php:26
+#, php-format
+msgid "Search results for %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Spasalon"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://webriti.com/spasalon-lite-description/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "webriti"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.webriti.com"
 msgstr ""

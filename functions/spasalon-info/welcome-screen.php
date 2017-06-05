@@ -27,6 +27,7 @@ class spasalon_screen {
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_child_themes' ), 		    30 );
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_upgrade' ), 		        40 );
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_welcome_free_pro' ), 		50 );
+		add_action( 'spasalon_info_screen', array( $this, 'spasalon_import_data' ), 			60 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_spasalon_dismiss_required_action', array( $this, 'spasalon_dismiss_required_action_callback') );
@@ -43,6 +44,7 @@ class spasalon_screen {
 
 		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'spasalon_admin_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'spasalon_admin_import_notice' ), 99 );
 		}
 	}
 
@@ -58,6 +60,14 @@ class spasalon_screen {
 			</div>
 		<?php
 	}
+	
+	function spasalon_admin_import_notice(){
+    ?>
+    <div class="updated notice notice-success notice-alt is-dismissible">
+        <p><?php printf( esc_html__( 'Save time by import our demo data, your website will be set up and ready to customize in minutes. %s', 'spasalon' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'spasalon-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'spasalon' ).'</a>'  ); ?></p>
+    </div>
+    <?php
+}
 
 	/**
 	 * Load welcome screen css and javascript
@@ -209,6 +219,7 @@ class spasalon_screen {
 			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','spasalon'); ?></a></li>
+			<li role="presentation"><a href="#demo_import" aria-controls="demo_import" role="tab" data-toggle="tab"><?php esc_html_e( 'One Click Demo Import','spasalon'); ?></a></li>
 			
 		</ul>
 		</div>
@@ -264,6 +275,15 @@ class spasalon_screen {
 	public function spasalon_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/spasalon-info/sections/free_pro.php' );
 	}
+	
+	/**
+	 * Import Data
+	 *
+	 */
+	public function spasalon_import_data() {
+		require_once( get_template_directory() . '/functions/spasalon-info/sections/import-data.php' );
+	}
+	
 }
 
 $GLOBALS['spasalon_screen'] = new spasalon_screen();
