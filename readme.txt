@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.8
+- Fixed:   Improved escaping in background and gallery options fields.
+
 Version 1.8.7
 - New:     Documentation link added to customizer.
 - New:     Theme information page added under Appearance in admin area.
