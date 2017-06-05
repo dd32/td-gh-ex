@@ -302,8 +302,8 @@
                     }
 
                     echo '<div class="' . $hide . 'screenshot">';
-                    echo '<a class="of-uploaded-image" href="' . $this->value['background-image'] . '" target="_blank">';
-                    echo '<img class="redux-option-image" id="image_' . $this->value['media']['id'] . '" src="' . $this->value['media']['thumbnail'] . '" alt="" target="_blank" rel="external" />';
+                    echo '<a class="of-uploaded-image" href="' . esc_url( $this->value['background-image'] ) . '" target="_blank">';
+                    echo '<img class="redux-option-image" id="image_' . $this->value['media']['id'] . '" src="' . esc_url( $this->value['media']['thumbnail'] ) . '" alt="" target="_blank" rel="external" />';
                     echo '</a>';
                     echo '</div>';
 
