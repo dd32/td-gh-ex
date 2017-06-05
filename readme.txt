@@ -96,6 +96,10 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+
+Version 1.25
+ * Added Welcome Page with demo import functionality
+
 Version 1.25
  * Testing on WordPress v4.6
  * Fixed the text domain on tgmpa file

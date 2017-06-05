@@ -47,6 +47,12 @@ function accesspress_root_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/** Woocommerce Compatibility **/
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -202,14 +208,14 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/panel/options-framework.php';
 
 /**
- * Load TGM_Plugin_Activation class.
+ * Woocommerce Functions
  */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() .'/woocommerce/woocommerce-function.php';
 
 /**
- * Load More Theme Page
+ *
+ * Add Welcome Page
  */
-require get_template_directory() . '/inc/more-themes.php';
-require get_template_directory() .'/woocommerce/woocommerce-function.php';
+require get_template_directory() .'/welcome/welcome.php';
 
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
