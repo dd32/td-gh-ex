@@ -1,4 +1,27 @@
 Changelog -----------------------------------
+version:1.479
+
+Overview of Changes
+	Fixed When using Featured Image Position  (In front of Title) of Customizer Featured Image Settings
+		paged entry title display imploperly
+	Fixed When using size custom and caption, in WordPress4.8 image media widget
+		figure size broken
+	Modfied cleaning style.css
+
+Files Modified
+	modified:   fonts.css
+	modified:   functions.php
+	modified:   lib/csscolor.css.php
+	modified:   lib/featured-image.php
+	modified:   raindrops.js
+	modified:   reset-fonts-grids.css
+	modified:   responsiveness.css
+	modified:   style.css
+
+Description of Code Changes
+	please see https://themes.trac.wordpress.org/changeset?old_path=raindrops/1.476&new_path=raindrops/1.479
+-----------------------------------------------Changelog -----------------------------------
+Changelog -----------------------------------
 version:1.476
 
 Overview of Changes
