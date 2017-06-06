@@ -8,12 +8,13 @@ This template is used to display a sidenav for l o n g content
 
 get_header();
 
-$template = uswds_template_settings('template');
+$template = benjamin_template_settings('template');
 $sidebar_position = get_theme_mod($template . '_sidebar_position_setting');
-$sidebar_position = $sidebar_position ? : 'left';
-$main_width = ($sidebar_position == 'none' || !$sidebar_position)
-    ? 'usa-width-one-whole' : 'usa-width-two-thirds';
 
+$main_width = benjamin_get_main_width($sidebar_position);
+$main_width .= ' ' . benjamin_get_width_visibility($template, $sidebar_position);
+
+if( !benjamin_hide_layout_part('page-content', $template) ):
 ?>
 
 
@@ -21,7 +22,7 @@ $main_width = ($sidebar_position == 'none' || !$sidebar_position)
 
     <?php
     if($sidebar_position == 'left'):
-        uswds_sticky_sidenav($post->ID);
+        benjamin_sticky_sidenav($post->ID);
     endif;
     ?>
     <div class="usa-width-two-thirds">
@@ -42,11 +43,12 @@ $main_width = ($sidebar_position == 'none' || !$sidebar_position)
     </div>
     <?php
     if($sidebar_position == 'right'):
-        uswds_sticky_sidenav($post->ID);
+        benjamin_sticky_sidenav($post->ID);
     endif;
     ?>
 
 </section>
 
 <?php
+endif;
 get_footer();

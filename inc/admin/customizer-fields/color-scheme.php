@@ -3,9 +3,10 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return null;
 
-class Color_Scheme_Custom_Control extends WP_Customize_Control
+class Benjamin_Color_Scheme_Custom_Control extends WP_Customize_Control
 {
-
+    public $type = 'color-scheme';
+    
     public function __construct($manager, $id, $args = array(), $options = array())
     {
 

@@ -9,66 +9,53 @@
 
 get_header();
 
-$template = uswds_template_settings('template');
+$template = benjamin_template_settings('template');
 $sidebar_position = get_theme_mod($template . '_sidebar_position_setting');
 
-$main_width = ($sidebar_position == 'none' || !$sidebar_position)
-        ? FULL_WIDTH : TWO_THIRDS;
-$main_width .= ' ' . uswds_get_width_visibility($template, $sidebar_position);
+$main_width = benjamin_get_main_width($sidebar_position);
+$main_width .= ' ' . benjamin_get_width_visibility($template, $sidebar_position);
 
+$content = get_theme_mod('404_page_content_setting', 'default');
+
+
+if( !benjamin_hide_layout_part('page-content', $template) ):
 ?>
 
 <section id="primary" class="usa-grid usa-section">
     <?php
     if($sidebar_position == 'left'):
-        uswds_get_sidebar($template, $sidebar_position);
+        benjamin_get_sidebar($template, $sidebar_position);
     endif;
     ?>
+
   <div class="<?php echo $main_width; ?>">
-		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'uswds' ); ?></p>
+        <?php
 
-		<?php
-			get_search_form();
+            if($content == 'page' && $pid = get_theme_mod('404_page_select_setting') ):
 
-			the_widget( 'WP_Widget_Recent_Posts' );
+                $page = get_page($pid);
+                echo $page->post_content;
+            else :
+                echo '<p>' . esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'benjamin' ) . '</p>';
 
-			// Only show the widget if site has multiple categories.
-			if ( uswds_categorized_blog() ) :
-		?>
+                get_search_form();
 
-		<div class="widget widget_categories">
-			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'uswds' ); ?></h2>
-			<ul>
-			<?php
-				wp_list_categories( array(
-					'orderby'    => 'count',
-					'order'      => 'DESC',
-					'show_count' => 1,
-					'title_li'   => '',
-					'number'     => 10,
-				) );
-			?>
-			</ul>
-		</div><!-- .widget -->
+                echo '<br>';
+                echo '<br>';
+                echo '<br>';
 
-		<?php
-			endif;
-
-			/* translators: %1$s: smiley */
-			$archive_content = '<p>' .
-            sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'uswds' ), convert_smilies( ':)' ) ) . '</p>';
-			the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-			the_widget( 'WP_Widget_Tag_Cloud' );
+    			the_widget( 'Benjamin_Widget_Pages', array('title'=>'Pages') );
+            endif;
 		?>
   </div>
 
   <?php
-  if($sidebar_position == 'left'):
-      uswds_get_sidebar($template, $sidebar_position);
+  if($sidebar_position == 'right'):
+      benjamin_get_sidebar($template, $sidebar_position);
   endif;
   ?>
 </section>
 
 <?php
+endif;
 get_footer();

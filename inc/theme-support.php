@@ -1,7 +1,8 @@
 <?php
 
 
-if ( ! function_exists( 'uswds_setup' ) ) :
+if ( !function_exists( 'benjamin_setup' ) ):
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -9,14 +10,14 @@ if ( ! function_exists( 'uswds_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function uswds_setup() {
+function benjamin_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on The Amendment, use a find and replace
-	 * to change 'uswds' to the name of your theme in all the template files.
+	 * to change 'benjamin' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'uswds', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'benjamin', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -38,8 +39,8 @@ function uswds_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'uswds' ),
-        'footer-top' => esc_html__('Footer Top', 'uswds')
+		'primary' => esc_html__( 'Primary', 'benjamin' ),
+        'footer' => esc_html__('Footer', 'benjamin')
 	) );
 
 	/*
@@ -47,7 +48,6 @@ function uswds_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -62,14 +62,9 @@ function uswds_setup() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'uswds_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
-add_action( 'after_setup_theme', 'uswds_setup' );
+add_action( 'after_setup_theme', 'benjamin_setup' );

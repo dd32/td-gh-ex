@@ -1,6 +1,6 @@
 <?php
 
-uswds_template_settings();
+benjamin_template_settings();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,7 +16,7 @@ uswds_template_settings();
 
 
 <a class="usa-skipnav" href="#primary">
-    <?php esc_html_e( 'Skip to main content', 'uswds' ); ?>
+    <?php esc_html_e( 'Skip to main content', 'benjamin' ); ?>
 </a>
 
 
@@ -25,11 +25,17 @@ uswds_template_settings();
 <main id="main-content" role="main">
 
 <?php
-    $order = json_decode(get_theme_mod('header_order_setting'));
+    $template = benjamin_template_settings('template');
 
-    $order = $order ? $order : uswds_default_header_order();
+    $layout_settings = get_theme_mod($template.'_page_layout_setting', '[]');
+    $layout_settings = json_decode($layout_settings);
+
+    $order = json_decode(get_theme_mod('header_order_setting'));
+    $order = $order ? $order : benjamin_default_header_order();
 
     foreach($order as $component):
+        if($layout_settings && in_array($component->name, $layout_settings))
+            continue;
         switch($component->name):
             case 'banner':
                 get_template_part('components/section', 'banner');

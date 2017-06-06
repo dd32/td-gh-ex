@@ -3,9 +3,10 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return null;
 
-class Activated_Sortable_Custom_Control extends WP_Customize_Control
+class Benjamin_Activated_Sortable_Custom_Control extends WP_Customize_Control
 {
-
+    public $type = 'optiona-sortable';
+    
     public function __construct($manager, $id, $args = array(), $options = array())
     {
         $this->visibility_settings = $args['visibility_settings'] ? $args['visibility_settings'] : false;
@@ -93,7 +94,7 @@ class Activated_Sortable_Custom_Control extends WP_Customize_Control
     */
     public function render_content()
     {
-    $target = str_replace('_section_control', '', $this->id);
+    $target = str_replace('_sortables_control', '', $this->id);
     ?>
         <label>
             <span class="customize-control-title">

@@ -7,33 +7,21 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function uswds_widgets_init() {
-    $templates = array(
-        'frontpage' => 'Front Page',
-        'archive' => 'Feed',
-        'single' => 'Single Post',
-        'page' => 'Single Page',
-        'widgetized' => 'Widgetized Page',
-        'frontpage-widget-area-1' => 'Frontpage Widget Area 1',
-        'frontpage-widget-area-2' => 'Frontpage Widget Area 2',
-        'frontpage-widget-area-3' => 'Frontpage Widget Area 3',
-        'widgetized-widget-area-1' => 'Widgetized Page Area 1',
-        'widgetized-widget-area-2' => 'Widgetized Page Area 2',
-        'widgetized-widget-area-3' => 'Widgetized Page Area 3',
-        'footer' => 'Footer',
-        'footer-below' => 'Footer Below'
+function benjamin_widgets_init() {
+    $templates = benjamin_the_template_list(true);
+
+    $args = array(
+       'public'   => true,
+       'publicly_queryable' => true,
+       '_builtin' => false
     );
+    $cpts = get_post_types($args);
 
     $advanced_templates = array(
-        '404' => 'Page Not Found',
         'search' => 'Search Results',
         'date' => 'Filtered by Date',
         'category' => 'Filtered by Category',
         'tag' => 'Filtered by Tag',
-        'template_1' => 'Page Template 1',
-        'template_2' => 'Page Template 2',
-        'template_3' => 'Page Template 3',
-        'template_4' => 'Page Template 4',
     );
 
     foreach($templates as $name => $label){
@@ -52,29 +40,26 @@ function uswds_widgets_init() {
             'frontpage-widget-area-1',
             'frontpage-widget-area-2',
             'frontpage-widget-area-3',
+            'footer-widgets-1',
+            'footer-widgets-2',
         );
 
-
-        // $sidebar_size = uswds_determine_widget_width_rules($pos, $name);
+        // $sidebar_size = benjamin_determine_widget_width_rules($pos, $name);
         // determine whether or not to apply withs to the widgets
         if ( in_array($name, $horizontals) ){
             $sidebar_size = 'full';
         }
 
-
-
-
-
         // figure out which width rules to use
         if($sidebar_size == 'full')
-            $width = uswds_calculate_widget_width($count);
+            $width = benjamin_calculate_widget_width($count);
         else
             $width = '';
 
         register_sidebar( array(
-    		'name'          => $label,
+    		'name'          => ucfirst($label),
     		'id'            => $name,
-    		'description'   => esc_html__( 'Add widgets here.', 'uswds' ),
+    		'description'   => esc_html__( 'Add widgets here.', 'benjamin' ),
     		'before_widget' => '<div id="%1$s" class="widget '.$width.'">',
     		'after_widget'  => '</div>',
     		'before_title'  => '<h3 class="widget-title">',
@@ -84,10 +69,10 @@ function uswds_widgets_init() {
 
 
 }
-add_action( 'widgets_init', 'uswds_widgets_init' );
+add_action( 'init', 'benjamin_widgets_init' );
 
 
-function uswds_calculate_widget_width($count){
+function benjamin_calculate_widget_width($count){
 
 
     switch($count):

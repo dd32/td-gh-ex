@@ -1,6 +1,6 @@
 <?php
 
-class FeaturedPost {
+class BenjaminFeaturedPost {
     public $id;
     public $post_type;
     public $format;
@@ -36,7 +36,7 @@ class FeaturedPost {
         $output = '';
 
         $output .= '<span class="post-title">';
-            $output .= $pre_title;
+            $output .= 'Featured Post';
         $output .= '</span>';
 
         $output .= '<h1>';
@@ -82,7 +82,7 @@ class FeaturedPost {
     }
 
 
-    function getMeta(){
+    public function getMeta(){
 
 
         $id = $this->ID;
@@ -100,14 +100,22 @@ class FeaturedPost {
 
 
         $author = '<span class="author vcard">';
+        if ( function_exists( 'coauthors_posts_links' ) ) {
+            $author .= coauthors_posts_links(null, null, null, null, false);
+        } else {
             $author .= '<a class="url fn n"
                 href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">';
                 $author .= get_the_author_meta('display_name', $aid);
             $author .= '</a>';
+        }
         $author .= '</span>';
 
+        if ( $categories_list = benjamin_get_the_category_list($this->id) ) {
+			$cats = '<span class="cat-links">' . __('Posted in&nbsp;', 'benjamin') . $categories_list . '</span>';
+		}
+
         return '<span class="posted-on">' . $date . '</span>
-            <span class="byline"> - ' . $author . '</span>';
+            <span class="byline"> - ' . $author . '</span> <br > ' .$cats;
     }
 
 

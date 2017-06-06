@@ -3,8 +3,9 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return null;
 
-class Activate_Layout_Custom_Control extends WP_Customize_Control
+class Benjamin_Activate_Layout_Custom_Control extends WP_Customize_Control
 {
+    public $type = 'layout-toggle';
 
     public function __construct($manager, $id, $args = array(), $options = array())
     {

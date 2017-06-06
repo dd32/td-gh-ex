@@ -8,9 +8,9 @@
 */
 
 // use this to examine objects and arrays
-if(!function_exists('examine')){
+if(!function_exists('benjamin_examine')){
 
-    function examine($object, $examine_type = 'print_r', $die = 'hard'){
+    function benjamin_examine($object, $examine_type = 'print_r', $die = 'hard'){
         if(empty($object))
             return;
         echo '<pre>';
@@ -25,30 +25,32 @@ if(!function_exists('examine')){
 
 // Define some constants
 
-define('FULL_WIDTH' , 'usa-width-one-whole');
-define('FULL_WIDTH_MEDIUM_UP' , 'usa-width-full-medium-up');
-define('FULL_WIDTH_LARGE_UP' , 'usa-width-full-large-up');
+define('BENJAMIN_FULL_WIDTH' , 'usa-width-one-whole');
+define('BENJAMIN_FULL_WIDTH_MEDIUM_UP' , 'usa-width-full-medium-up');
+define('BENJAMIN_FULL_WIDTH_LARGE_UP' , 'usa-width-full-large-up');
 
 // wide sidebar
-define('TWO_THIRDS' , 'usa-width-two-thirds');
-define('ONE_THIRD' , 'usa-width-one-third');
+define('BENJAMIN_TWO_THIRDS' , 'usa-width-two-thirds');
+define('BENJAMIN_ONE_THIRD' , 'usa-width-one-third');
 
 // narrow sidebar
-define('ONE_FOURTH' , 'usa-width-one-fourth');
-define('THREE_FOURTHS' , 'usa-width-three-fourths');
-define('ONE_HALF' , 'usa-width-one-half');
+define('BENJAMIN_ONE_FOURTH' , 'usa-width-one-fourth');
+define('BENJAMIN_THREE_FOURTHS' , 'usa-width-three-fourths');
+define('BENJAMIN_ONE_HALF' , 'usa-width-one-half');
 
-// set the sidebar width
+
 $sidebar_width = get_theme_mod('sidebar_size_setting');
-$main_width = ($sidebar_width == ONE_THIRD) ? TWO_THIRDS : THREE_FOURTHS;
-$sidebar_width = $sidebar_width ? constant($sidebar_width) : ONE_THIRD;
+
+$sidebar_width = $sidebar_width ? constant($sidebar_width) : BENJAMIN_ONE_THIRD;
+$main_width = ($sidebar_width == BENJAMIN_ONE_THIRD) ? BENJAMIN_TWO_THIRDS : BENJAMIN_THREE_FOURTHS;
 
 // sidebar and main column constants
-define('SIDEBAR_WIDTH', $sidebar_width);
-define('MAIN_WIDTH', $main_width);
+define('BENJAMIN_SIDEBAR_WIDTH', $sidebar_width);
+define('BENJAMIN_MAIN_WIDTH', $main_width);
 
 
-function uswds_is_dot_gov() {
+
+function benjamin_is_dot_gov() {
     $domain = $_SERVER['SERVER_NAME'];
     $parts = explode('.', $domain);
     $len = count($parts);
@@ -58,7 +60,7 @@ function uswds_is_dot_gov() {
     $domains = array('gov', 'mil');
 
     if( in_array($tld, $domains)
-        || (defined('USWDS_FORCE_BANNER') && USWDS_FORCE_BANNER == true)
+        || (defined('BENJAMIN_FORCE_BANNER') && BENJAMIN_FORCE_BANNER == true)
     ){
         $is_dot_gov = true;
     }
@@ -67,7 +69,7 @@ function uswds_is_dot_gov() {
 }
 
 
-function uswds_clean_string($string){
+function benjamin_clean_string($string){
     $find = array('-','_');
     $replace = ' ';
     $string = str_replace($find, $replace, $string);
@@ -77,18 +79,15 @@ function uswds_clean_string($string){
 
 
 
-/**
-* Assets
-*/
+
+require get_template_directory() . '/inc/template-list.php';
 require get_template_directory() . '/inc/theme-support.php';
 require get_template_directory() . '/inc/admin/customizer.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/jetpack.php';
-require get_template_directory() . '/inc/excerpts.php';
-
-// sidebars
 require get_template_directory() . '/inc/register-sidebars.php';
 require get_template_directory() . '/inc/widgets.php';
+
 
 
 /**
@@ -98,17 +97,16 @@ require get_template_directory() . '/inc/widgets.php';
 *
 * @global int $content_width
 */
-function uswds_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'uswds_content_width', 640 );
+function benjamin_content_width() {
+    $GLOBALS['content_width'] = apply_filters( 'benjamin_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'uswds_content_width', 0 );
+add_action( 'after_setup_theme', 'benjamin_content_width', 0 );
 
 // only load these in the admin section
 if (is_admin()) {
     $files = array(
         '/inc/admin/assets.php',
         '/inc/admin/widgets.php',
-        '/inc/admin/contact-settings.php',
         '/inc/admin/metabox-featured-post.php',
         '/inc/admin/set-default-settings.php',
     );
@@ -116,11 +114,15 @@ if (is_admin()) {
         require get_template_directory() . $file;
 }
 
+
 // only load these on the frontend
 if( !is_admin() ){
 
     $files = array(
         '/inc/frontend/assets.php',
+        '/inc/frontend/filters.php',
+        '/inc/frontend/footer.php',
+        '/inc/frontend/excerpts.php',
         '/inc/frontend/template-tags.php',
         '/inc/frontend/class-FeaturedPost.php',
         '/inc/frontend/hero-settings.php',
@@ -134,9 +136,9 @@ if( !is_admin() ){
         '/inc/frontend/nav-settings.php',
         '/inc/frontend/navs/default-menus.php',
         '/inc/frontend/navs/navbar-walker.php',
-        '/inc/frontend/navs/footer-nav-walker.php',
         '/inc/frontend/navs/sidenav-walker.php',
         '/inc/frontend/navs/navlist-walker.php',
+        '/inc/frontend/navs/footer-nav-walker.php',
     );
     foreach($files as $file)
         require get_template_directory() . $file;

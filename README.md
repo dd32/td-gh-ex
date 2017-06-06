@@ -29,13 +29,14 @@ As mentioned, both the frontpage and widgetized pages are sortable, so you have 
 
 <br>
 
-
+#### 4 extra page templates for more customized one off pages
 #### Template settings include:  
 * Hero background image (select the default image if a "featured image" is not set)
 * Hero Size (slim, medium, big, and full page)
 * Sidebar position (left or right)
 * Sidebar visibility (hide or show on different screen sizes)
 * Each template gets its own widget area
+* Parts of a page (such as the navbar or footer) can be hidden on each template
 
 ![template-settings](_dev/screenshots/template-settings.png#right)
 
@@ -44,12 +45,16 @@ As mentioned, both the frontpage and widgetized pages are sortable, so you have 
 #### Feed Featured Posts
 * a post can be marked as "featured" and displayed promptly in the feed page hero
 
+### Custom post type support
+### Co-authors Plus support
+### Sortable footer
+
 #### Template settings use a "fallback" system
 * Allows setting things once for all templates
 * Or lets you override settings on specific templates
 * The "Feed" settings are used by default, all other templates must be activated
 
-#### Shortcodes and Components!
+#### Shortcodes and Components
 These shortcodes are NOT included in the theme by default, but are available in the companion plugin, [Franklin](https://github.com/kyle-jennings/Franklin).
 
 
@@ -102,22 +107,3 @@ Here are a list of the currently available shortcodes in [Franklin](https://gith
 * Choose what's displayed in the "top" footer (available in the medium and big sizes)
 
 #### Contact Form 7 checkbox/radio support
-
-
-## The Future
-
-#### Widgets
-* Provides intuitive UI for the shortcode components
-
-#### A Page builder
-* To make embedding the aforementioned components a breeze
-
-#### Support for more popular form plugins
-* Gravity Forms
-* Ninja Forms
-
-#### Misc
-* Videos for Hero backgrounds
-* Hero content options for feeds
-* Settings for every template type WordPress offers (with a smart fallback system)
-* More color schemes

@@ -6,12 +6,14 @@ $files = array(
     'customizer-fields/activated-sortable.php',
     'customizer-fields/color-scheme.php',
     'customizer-fields/menu-dropdown.php',
+    'customizer-fields/checkbox-group.php',
     'customizer/identity.php',
     'customizer/header.php',
-    'customizer/footer.php',
-    'customizer/frontpage.php',
     'customizer/template-settings.php',
+    'customizer/frontpage.php',
     'customizer/widgetized.php',
+    'customizer/footer.php',
+    'customizer/404.php',
 );
 
 foreach($files as $file)
@@ -24,10 +26,7 @@ foreach($files as $file)
  * Remove some default settings from the customizer
  * @param  object $wp_customize
  */
-function uswds_remove_default($wp_customize){
-    $wp_customize->remove_section('colors');
-    $wp_customize->remove_section('header_image');
-    $wp_customize->remove_section('background_image');
-    $wp_customize->remove_section('custom_css');
+function benjamin_customizer_settings($wp_customize){
+    // placeholder for near future updates
 }
-add_action('customize_register', 'uswds_remove_default');
+add_action('customize_register', 'benjamin_customizer_settings');
