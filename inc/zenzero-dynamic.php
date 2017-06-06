@@ -23,10 +23,10 @@ add_filter('excerpt_more', 'zenzero_new_excerpt_more');
  */
 if ( ! function_exists( 'zenzero_fix_tag_cloud' ) ) {
 	function zenzero_fix_tag_cloud($tag_string){
-	   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+	   return preg_replace('/ style=("|\')(.*?)("|\')/','',$tag_string);
 	}
 }
-add_filter('wp_generate_tag_cloud', 'zenzero_fix_tag_cloud',10,3);
+add_filter('wp_generate_tag_cloud', 'zenzero_fix_tag_cloud',10,1);
 
 /**
  * Social Buttons
