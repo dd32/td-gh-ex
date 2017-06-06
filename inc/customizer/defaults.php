@@ -58,21 +58,19 @@ function academic_get_default_theme_options() {
 		'category_blog_two_enable'		=> 'disabled',
 		'category_blog_two_dragable'	=> true,
 		'category_blog_two_autoplay'	=> true,
-		'category_blog_two_title'		=> esc_html__( 'First Category Blog', 'academic' ),
+		'category_blog_two_title'		=> esc_html__( 'Second Category Blog', 'academic' ),
 		'category_blog_two_count'		=> 8,
 		'category_blog_two_type'		=> 'recent-posts',
 		'category_blog_two_layout'		=> 4,
 
-		// category blog three
-		'category_blog_three_enable'	=> 'disabled',
-		'category_blog_three_dragable'	=> true,
-		'category_blog_three_autoplay'	=> true,
-		'category_blog_three_count'		=> 7,
-		'category_blog_three_layout'	=> 6,
-		'category_blog_three_title'		=> esc_html__( 'Second Category Blog', 'academic' ),
-		'category_blog_three_sub_title'	=> esc_html__( 'How can we help you', 'academic' ),
-		'category_blog_three_type'		=> 'category',
-		'category_blog_three_icon'		=> 'fa-snapchat-ghost',
+		// category blog one
+		'category_blog_one_enable'	=> 'disabled',
+		'category_blog_one_dragable'	=> true,
+		'category_blog_one_autoplay'	=> true,
+		'category_blog_one_layout'	=> 6,
+		'category_blog_one_title'		=> esc_html__( 'First Category Blog', 'academic' ),
+		'category_blog_one_type'		=> 'category',
+		'category_blog_one_icon'		=> 'fa-snapchat-ghost',
 
 		// Partners
 		'partner_enable'				=> 'disabled',
@@ -81,23 +79,6 @@ function academic_get_default_theme_options() {
 		'partner_layout'				=> 6,
 		'partner_dragable'				=> true,
 		'partner_autoplay'				=> true,
-
-		// news letter
-		'news_letter_enable'			=> 'disabled',
-		'news_letter_title'				=> esc_html__( 'Stay Updated With University', 'academic' ),
-		'news_letter_sub_title'			=> esc_html__( 'Lorem Ipsum roin gravida nibh vel', 'academic' ),
-
-		// Contact info
-		'contact_us_contact_info_title'			=> esc_html__( 'Contact Info', 'academic' ),
-		'contact_us_contact_info_phone'			=> '+977-123456789',
-		'contact_us_contact_info_address'		=> esc_html__( '28 Jackson Blvd Ste 1020 Chicago IL 60604-2340', 'academic' ),
-		'contact_us_contact_info_email'			=> 'info@university.com',
-		'contact_us_contact_map_title'			=> esc_html__( 'Location Map', 'academic' ),
-		'contact_us_map_shortcode'=>'[gmap latitude="23.2012841" longitude="90.01247147" width="80%" map_type="ROADMAP" ]',
-		'contact_us_form_shortcode'=>'[contact-form-7 id="1880" title="Contact form 1"]',
-
-		// Schedule 
-		'schedule_post_num'			=> 8,
 	);
 
 	$output = apply_filters( 'academic_default_theme_options', $academic_default_options );

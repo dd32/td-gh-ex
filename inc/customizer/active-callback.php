@@ -161,8 +161,8 @@ function academic_category_blog_two_multiple_category( $control ) {
  * @param WP_Customize_Control $control WP_Customize_Control instance.
  * @return bool Whether the control is active to the current preview.
  */
-function academic_category_blog_three_active( $control ) {
-	if ( 'disabled' != $control->manager->get_setting( 'academic_theme_options[category_blog_three_enable]' )->value() )
+function academic_category_blog_first_active( $control ) {
+	if ( 'disabled' != $control->manager->get_setting( 'academic_theme_options[category_blog_one_enable]' )->value() )
 		return true;
 
 	return false;
@@ -175,8 +175,8 @@ function academic_category_blog_three_active( $control ) {
  * @param WP_Customize_Control $control WP_Customize_Control instance.
  * @return bool Whether the control is active to the current preview.
  */
-function academic_category_blog_three_sub_category( $control ) {
-	if ( 'disabled' != $control->manager->get_setting( 'academic_theme_options[category_blog_three_enable]' )->value() && 'sub-category' == $control->manager->get_setting( 'academic_theme_options[category_blog_three_type]' )->value() )
+function academic_category_blog_first_sub_category( $control ) {
+	if ( 'disabled' != $control->manager->get_setting( 'academic_theme_options[category_blog_one_enable]' )->value() && 'sub-category' == $control->manager->get_setting( 'academic_theme_options[category_blog_one_type]' )->value() )
 		return true;
 
 	return false;

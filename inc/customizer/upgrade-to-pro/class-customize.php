@@ -75,7 +75,7 @@ final class Academic_Customize {
 				array(
 					'title'    => esc_html__( 'Academic Pro', 'academic' ),
 					'pro_text' => esc_html__( 'Go Pro',         'academic' ),
-					'pro_url'  => 'https://themepalace.com/downloads/academic-pro/'
+					'pro_url'  => esc_url( 'https://themepalace.com/downloads/academic-pro/' )
 				)
 			)
 		);

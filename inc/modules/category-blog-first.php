@@ -17,8 +17,8 @@ if ( ! function_exists( 'academic_add_category_blog_three' ) ) :
   function academic_add_category_blog_three() {
 
     // Check if cat blog three is enabled on frontpage
-    $category_blog_three_enable = apply_filters( 'academic_section_status', true, 'category_blog_three_enable' );
-    if ( true !== $category_blog_three_enable ) {
+    $category_blog_one_enable = apply_filters( 'academic_section_status', true, 'category_blog_one_enable' );
+    if ( true !== $category_blog_one_enable ) {
       return false;
     }
 
@@ -48,12 +48,12 @@ if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :
     $options = academic_get_theme_options();
 
     // Category Blog three Type
-    $category_blog_three_type  = $options['category_blog_three_type'];
-    $category_blog_three_icon  = ! empty( $options['category_blog_three_icon'] ) ? $options['category_blog_three_icon'] : 'fa-snapchat-ghost';
+    $category_blog_one_type  = $options['category_blog_one_type'];
+    $category_blog_one_icon  = ! empty( $options['category_blog_one_icon'] ) ? $options['category_blog_one_icon'] : 'fa-snapchat-ghost';
 
     $content = array();
     $color = array( '#357DF5', '#1483BA', '#9253C8', '#F4BD18', '#14B745', '#FC3E1E' );
-    switch ( $category_blog_three_type ) {
+    switch ( $category_blog_one_type ) {
 
         case 'category':
             $taxonomy   = 'category';
@@ -63,8 +63,8 @@ if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :
         case 'sub-category':
             $taxonomy   = 'category';
             $term       = '';
-            if ( isset( $options['category_blog_three_parent_category'] ) ) {
-              $term       = absint( $options['category_blog_three_parent_category'] );
+            if ( isset( $options['category_blog_one_parent_category'] ) ) {
+              $term       = absint( $options['category_blog_one_parent_category'] );
             }
             $categories = get_term_children( $term, $taxonomy );
             $i = 1;
@@ -84,7 +84,7 @@ if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :
         break;
     }
 
-    if ( 'sub-category' != $category_blog_three_type ) {
+    if ( 'sub-category' != $category_blog_one_type ) {
         $i = 1;
         $color_count = 0;
         if ( ! empty( $categories ) ) {
@@ -92,7 +92,7 @@ if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :
               if ( $color_count == 6 ) $color_count =1;
               $content[$i]['url']     = get_term_link( $category->slug, $taxonomy );
               $content[$i]['title']   = $category->name;
-              $content[$i]['icon']    = $category_blog_three_icon;
+              $content[$i]['icon']    = $category_blog_one_icon;
               $content[$i]['color']   = $color[$color_count];
               $i++; $color_count++;
           }
@@ -120,20 +120,20 @@ if ( ! function_exists( 'academic_render_category_blog_three' ) ) :
    */
    function academic_render_category_blog_three( $content_details = array() ) {
         $options                        = academic_get_theme_options();
-        $category_blog_three_title        = ! empty( $options['category_blog_three_title'] ) ? $options['category_blog_three_title'] : '';
-        $category_blog_three_layout       = ! empty( $options['category_blog_three_layout'] ) ? $options['category_blog_three_layout'] : 6;
-        $category_blog_three_dragable     = ( $options['category_blog_three_dragable'] == true ) ? 'true' : 'false';
-        $category_blog_three_autoplay     = ( $options['category_blog_three_autoplay'] == true ) ? 'true' : 'false';
+        $category_blog_one_title        = ! empty( $options['category_blog_one_title'] ) ? $options['category_blog_one_title'] : '';
+        $category_blog_one_layout       = ! empty( $options['category_blog_one_layout'] ) ? $options['category_blog_one_layout'] : 6;
+        $category_blog_one_dragable     = ( $options['category_blog_one_dragable'] == true ) ? 'true' : 'false';
+        $category_blog_one_autoplay     = ( $options['category_blog_one_autoplay'] == true ) ? 'true' : 'false';
         ?>  
         <section id="popular-courses" class="page-section no-padding-bottom slider os-animation">
             <div class="container">
                 <header class="entry-header">
-                    <?php if ( ! empty( $category_blog_three_title ) ) : ?>
-                        <h2 class="entry-title"><?php echo esc_html( $category_blog_three_title ); ?></h2>  
+                    <?php if ( ! empty( $category_blog_one_title ) ) : ?>
+                        <h2 class="entry-title"><?php echo esc_html( $category_blog_one_title ); ?></h2>  
                     <?php endif; ?>
                 </header><!-- end .entry-header -->
 
-                <div class="entry-content regular statistics" data-slick='{"slidesToShow": <?php echo absint( $category_blog_three_layout ); ?>, "slidesToScroll": 1, "infinite": true, "speed": 800, "dots": false, "arrows":true, "draggable": <?php echo esc_attr( $category_blog_three_dragable ); ?>, "autoplay": <?php echo esc_attr( $category_blog_three_autoplay ); ?> }'>
+                <div class="entry-content regular statistics" data-slick='{"slidesToShow": <?php echo absint( $category_blog_one_layout ); ?>, "slidesToScroll": 1, "infinite": true, "speed": 800, "dots": false, "arrows":true, "draggable": <?php echo esc_attr( $category_blog_one_dragable ); ?>, "autoplay": <?php echo esc_attr( $category_blog_one_autoplay ); ?> }'>
 
                     <?php foreach( $content_details as $content ) : ?>
                         <div class="slider-item">

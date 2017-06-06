@@ -46,9 +46,9 @@ function academic_partial_category_blog_two_title() {
  * @since Academic 0.3
  * @return string
  */
-function academic_partial_category_blog_three_title() {
+function academic_partial_category_blog_one_title() {
 	$options = academic_get_theme_options();
-	return $options['category_blog_three_title'];
+	return $options['category_blog_one_title'];
 }
 
 

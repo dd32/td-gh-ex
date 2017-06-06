@@ -1,12 +1,12 @@
 === Academic ===
 
 By Theme Palace
-Tags: education, translation-ready, e-commerce, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, footer-widgets, blog
+Tags: education, translation-ready, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, custom-header, footer-widgets, blog
 
 Contributors: Theme Palace
 Requires at least: 4.4
-Tested up to: 4.7.4
-Stable tag: 0.9
+Tested up to: 4.7.5
+Stable tag: 1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -103,9 +103,13 @@ License: GPLv2 or later
 3. Click Activate to use your new theme right away.
 
 == Images Screenshot ==
-https://unsplash.com/photos/-Xv7k95vOFA
-https://pixabay.com/en/samford-hall-auburn-university-1614183/
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://unsplash.com/photos/-Xv7k95vOFA
 
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pixabay.com/en/samford-hall-auburn-university-1614183/
+
+Unless otherwise specified, all the theme images are created by us and licensed under the same license as the theme is.
 
 == Frequently Asked Questions ==
 
@@ -122,6 +126,12 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 1.0 =
+* Added custom-header tag.
+* Change the category blogs' default values.
+* Remove unwanted default values.
+* Added escaping for pro URL.
 
 = 0.9 =
 * Manged the unminified css and js files with condition.

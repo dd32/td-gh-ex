@@ -171,14 +171,14 @@ function academic_category_blog_two_layout() {
  * Category blog three content layout
  * @return array Category blog three content type options
  */
-function academic_category_blog_three_layout() {
-  $academic_category_blog_three_layout = array(
+function academic_category_blog_first_layout() {
+  $academic_category_blog_first_layout = array(
     4  => esc_html__( '4 Column', 'academic' ),
     5  => esc_html__( '5 Column', 'academic' ),
     6  => esc_html__( '6 Column', 'academic' ),
   );
 
-  $output = apply_filters( 'academic_category_blog_three_layout', $academic_category_blog_three_layout );
+  $output = apply_filters( 'academic_category_blog_first_layout', $academic_category_blog_first_layout );
 
   return $output;
 }
@@ -187,13 +187,13 @@ function academic_category_blog_three_layout() {
  * Category blog three content type
  * @return array Category blog three content type options
  */
-function academic_category_blog_three_type() {
-  $academic_category_blog_three_type = array(
+function academic_category_blog_first_type() {
+  $academic_category_blog_first_type = array(
     'category'          => esc_html__( 'Categories', 'academic' ),
     'sub-category'      => esc_html__( 'Sub Categories', 'academic' ),
   );
 
-  $output = apply_filters( 'academic_category_blog_three_type', $academic_category_blog_three_type );
+  $output = apply_filters( 'academic_category_blog_first_type', $academic_category_blog_first_type );
 
   return $output;
 }
