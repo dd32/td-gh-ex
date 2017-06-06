@@ -260,6 +260,8 @@ function hu_has_nav_menu( $_location ) {
 function hu_get_raw_option( $opt_name = null, $opt_group = null, $from_cache = true ) {
     $alloptions = wp_cache_get( 'alloptions', 'options' );
     $alloptions = maybe_unserialize( $alloptions );
+    $alloptions = ! is_array( $alloptions ) ? array() : $alloptions;//prevent issue https://github.com/presscustomizr/hueman/issues/492
+
     //is there any option group requested ?
     if ( ! is_null( $opt_group ) && array_key_exists( $opt_group, $alloptions ) ) {
       $alloptions = maybe_unserialize( $alloptions[ $opt_group ] );
@@ -479,7 +481,7 @@ function hu_the_post_thumbnail( $size = 'post-thumbnail', $attr = '', $placehold
     $is_attachment = is_object( $post ) && isset( $post -> post_type ) && 'attachment' == $post -> post_type;
     if ( ! $post || ( ! $is_attachment && ! has_post_thumbnail() ) ) {
         if ( hu_is_checked('placeholder') && (bool)$placeholder ) {
-            $html = hu_get_placeholder_thumb( $size );
+            $html = hu_print_placeholder_thumb( $size );
         }
     } else if ( $is_attachment ) {//typically : the case when attachment are included in search results
         $html = wp_get_attachment_image( $post -> ID, $size, false, $attr );

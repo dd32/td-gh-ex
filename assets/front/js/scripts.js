@@ -181,16 +181,23 @@ if (!Array.from) {
           defaults = {
                 load_all_images_on_first_scroll : false,
                 attribute : [ 'data-src', 'data-srcset', 'data-sizes' ],
-                excludeImg : '',
+                excludeImg : [''],
                 threshold : 200,
                 fadeIn_options : { duration : 400 },
-                delaySmartLoadEvent : 0
-          };
+                delaySmartLoadEvent : 0,
+
+          },
+          skipImgClass = 'tc-smart-load-skip';
 
 
       function Plugin( element, options ) {
             this.element = element;
             this.options = $.extend( {}, defaults, options) ;
+            if ( _.isArray( this.options.excludeImg ) )
+              this.options.excludeImg.push( '.'+skipImgClass );
+            else
+              this.options.excludeImg = [ '.'+skipImgClass ];
+
             this._defaults = defaults;
             this._name = pluginName;
             this.init();
@@ -201,7 +208,11 @@ if (!Array.from) {
 
             this.increment  = 1;//used to wait a little bit after the first user scroll actions to trigger the timer
             this.timer      = 0;
-            $_imgs.bind( 'load_img', {}, function() { self._load_img(this); });
+
+
+            $_imgs
+                  .addClass( skipImgClass )
+                  .bind( 'load_img', {}, function() { self._load_img(this); });
             $(window).scroll( function( _evt ) { self._better_scroll_event_handler( $_imgs, _evt ); } );
             $(window).resize( _.debounce( function( _evt ) { self._maybe_trigger_load( $_imgs, _evt ); }, 100 ) );
             this._maybe_trigger_load( $_imgs );
@@ -2470,22 +2481,31 @@ var czrapp = czrapp || {};
                   });
             },
             isResponsive : function() {
-                  return $(window).width() <= 979 - 15;
+                  return this.matchMedia(979);
             },
             getDevice : function() {
                   var _devices = {
-                        desktop : 979 - 15,
-                        tablet : 767 - 15,
-                        smartphone : 480 - 15
+                        desktop : 979,
+                        tablet : 767,
+                        smartphone : 480
                       },
                       _current_device = 'desktop',
-                      $_window = czrapp.$_window || $(window);
+                      that = this;
+
 
                   _.map( _devices, function( max_width, _dev ){
-                    if ( $_window.width() <= max_width )
-                      _current_device = _dev;
+                        if ( that.matchMedia( max_width ) )
+                          _current_device = _dev;
                   } );
+
                   return _current_device;
+            },
+
+            matchMedia : function( _maxWidth ) {
+                  if ( window.matchMedia )
+                    return ( window.matchMedia("(max-width: "+_maxWidth+"px)").matches );
+                  $_window = czrapp.$_window || $(window);
+                  return $_window.width() <= ( _maxWidth - 15 );
             },
 
             emit : function( cbs, args ) {
@@ -2836,16 +2856,21 @@ var czrapp = czrapp || {};
                           self.stickyMenuWrapper = false;
                           self.hasStickyCandidate( false );
                     };
-
                     if ( ! _.isEmpty( to ) ) {
                           self.hasStickyCandidate( 1 == czrapp.$_header.find( to ).length );
                           if ( ! self.hasStickyCandidate() ) {
                                 _reset();
                           } else {
                                 self.stickyMenuWrapper = czrapp.$_header.find( to );
-                                czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
+                                if ( 1 == $('#header-image-wrap').find('.site-image').length ) {
+                                      $('#header-image-wrap').find('img.site-image').load( function( img ) {
+                                            czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
+                                      } );
+                                } else {
+                                      czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
+                                }
                           }
-                    } else {
+                    } else {//we don't have a candidate
                           _reset();
                     }
               });

@@ -152,9 +152,10 @@ if ( ! class_exists( 'HU_utils' ) ) :
           return $_html;
         }
 
-        $img_extensions_pattern = sprintf( "[%s]", implode( '|', $allowed_image_extentions ) );
+        $img_extensions_pattern = sprintf( "(?:%s)", implode( '|', $allowed_image_extentions ) );
+        $pattern                = '#<img([^>]+?)src=[\'"]?([^\'"\s>]+\.'.$img_extensions_pattern.'[^\'"\s>]*)[\'"]?([^>]*)>#i';
 
-        return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+.'.$img_extensions_pattern.'[^\'"\s>]*)[\'"]?([^>]*)>#i', array( $this , 'hu_regex_callback' ) , $_html);
+        return preg_replace_callback( $pattern, array( $this , 'hu_regex_callback' ) , $_html);
     }
 
 
@@ -340,7 +341,6 @@ if ( ! class_exists( 'HU_utils' ) ) :
     */
     function hu_set_option( $option_name , $option_value, $option_group = null ) {
         $option_group           = is_null($option_group) ? HU_THEME_OPTIONS : $option_group;
-        $_options               = $this -> hu_get_theme_options( $option_group );
 
         //Get raw to :
         //avoid filtering
