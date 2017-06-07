@@ -139,3 +139,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.4.7 =
 * Fixed some strings with escaping
+
+= Version 1.4.8 =
+* Added compatibility with WordPress 4.8
+* Minor bug fixes
