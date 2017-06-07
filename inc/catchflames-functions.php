@@ -10,7 +10,7 @@ function catchflames_scripts_method() {
 
 	// Get value from Theme Options panel
 	$options = $catchflames_options_settings;
-	$enableslider = $options[ 'enable_slider' ];
+	$enableslider = $options['enable_slider'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -167,21 +167,21 @@ function catchflames_inline_css() {
 		/*
 		 * Promotion Headline Widget left and right width
 		 */
-		if ( $defaults[ 'promotion_headline_left_width' ] != $options[ 'promotion_headline_left_width' ] ) {
+		if ( $defaults[ 'promotion_headline_left_width' ] != $options['promotion_headline_left_width'] ) {
 			$catchflames_inline_css	.= "@media screen and (min-width: 481px) {". "\n";
-			if ( 100 == $options[ 'promotion_headline_left_width' ] ) {
+			if ( 100 == $options['promotion_headline_left_width'] ) {
 				$catchflames_inline_css	.=  "#promotion-message .left-section, #promotion-message .right-section { max-width: 100%; width: 100%; }". "\n";
 				$catchflames_inline_css	.=  "#promotion-message .promotion-button { margin-top: 0; }". "\n";
 			}
 			else {
-				$catchflames_inline_css	.=  "#promotion-message .left-section { max-width: ". $options[ 'promotion_headline_left_width' ] ."%; }". "\n";
-				$catchflames_inline_css	.=  "#promotion-message .right-section { max-width: ". absint( 100 - $options[ 'promotion_headline_left_width' ] ) ."%; }". "\n";
+				$catchflames_inline_css	.=  "#promotion-message .left-section { max-width: ". $options['promotion_headline_left_width'] ."%; }". "\n";
+				$catchflames_inline_css	.=  "#promotion-message .right-section { max-width: ". absint( 100 - $options['promotion_headline_left_width'] ) ."%; }". "\n";
 			}
 			$catchflames_inline_css	.= "}". "\n";
 		}
 
 		//Custom CSS Option
-		if ( !empty( $options[ 'custom_css' ] ) ) {
+		if ( !empty( $options['custom_css'] ) ) {
 			$catchflames_inline_css	.=  $options['custom_css'] . "\n";
 		}
 
@@ -227,7 +227,7 @@ add_filter( 'excerpt_length', 'catchflames_excerpt_length' );
 function catchflames_continue_reading_link() {
 	global $catchflames_options_settings;
     $options = $catchflames_options_settings;
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . esc_attr( $more_tag_text ) . '</a>';
 }
@@ -660,33 +660,33 @@ function catchflames_social_networks() {
 
     $elements = array();
 
-	$elements = array( 	$options[ 'social_facebook' ],
-						$options[ 'social_twitter' ],
-						$options[ 'social_googleplus' ],
-						$options[ 'social_linkedin' ],
-						$options[ 'social_pinterest' ],
-						$options[ 'social_youtube' ],
-						$options[ 'social_vimeo' ],
-						$options[ 'social_aim' ],
-						$options[ 'social_myspace' ],
-						$options[ 'social_flickr' ],
-						$options[ 'social_tumblr' ],
-						$options[ 'social_deviantart' ],
-						$options[ 'social_dribbble' ],
-						$options[ 'social_myspace' ],
-						$options[ 'social_wordpress' ],
-						$options[ 'social_rss' ],
-						$options[ 'social_slideshare' ],
-						$options[ 'social_instagram' ],
-						$options[ 'social_skype' ],
-						$options[ 'social_soundcloud' ],
-						$options[ 'social_email' ],
-						$options[ 'social_contact' ],
-						$options[ 'social_xing' ],
-						$options[ 'enable_specificfeeds' ],
-						$options[ 'social_meetup' ],
-						$options[ 'social_goodreads' ],
-						$options[ 'social_github' ]
+	$elements = array( 	$options['social_facebook'],
+						$options['social_twitter'],
+						$options['social_googleplus'],
+						$options['social_linkedin'],
+						$options['social_pinterest'],
+						$options['social_youtube'],
+						$options['social_vimeo'],
+						$options['social_aim'],
+						$options['social_myspace'],
+						$options['social_flickr'],
+						$options['social_tumblr'],
+						$options['social_deviantart'],
+						$options['social_dribbble'],
+						$options['social_myspace'],
+						$options['social_wordpress'],
+						$options['social_rss'],
+						$options['social_slideshare'],
+						$options['social_instagram'],
+						$options['social_skype'],
+						$options['social_soundcloud'],
+						$options['social_email'],
+						$options['social_contact'],
+						$options['social_xing'],
+						$options['enable_specificfeeds'],
+						$options['social_meetup'],
+						$options['social_goodreads'],
+						$options['social_github']
 					);
 	$flag = 0;
 	if ( !empty( $elements ) ) {
@@ -709,134 +709,134 @@ function catchflames_social_networks() {
 		$catchflames_social_networks .='
 		<div class="social-profile"><ul>';
 			//facebook
-			if ( !empty( $options[ 'social_facebook' ] ) ) {
+			if ( !empty( $options['social_facebook'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catch-flames' ).'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options['social_facebook'] ).'" title="'. esc_attr__( 'Facebook', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catch-flames' ).'</a></li>';
 			}
 			//Twitter
-			if ( !empty( $options[ 'social_twitter' ] ) ) {
+			if ( !empty( $options['social_twitter'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catch-flames' ).'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options['social_twitter'] ).'" title="'. esc_attr__( 'Twitter', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catch-flames' ).'</a></li>';
 			}
 			//Google+
-			if ( !empty( $options[ 'social_googleplus' ] ) ) {
+			if ( !empty( $options['social_googleplus'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catch-flames' ).'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options['social_googleplus'] ).'" title="'. esc_attr__( 'Google+', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catch-flames' ).'</a></li>';
 			}
 			//Linkedin
-			if ( !empty( $options[ 'social_linkedin' ] ) ) {
+			if ( !empty( $options['social_linkedin'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catch-flames' ).'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options['social_linkedin'] ).'" title="'. esc_attr__( 'Linkedin', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catch-flames' ).'</a></li>';
 			}
 			//Pinterest
-			if ( !empty( $options[ 'social_pinterest' ] ) ) {
+			if ( !empty( $options['social_pinterest'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-flames' ).'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options['social_pinterest'] ).'" title="'. esc_attr__( 'Pinterest', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-flames' ).'</a></li>';
 			}
 			//Youtube
-			if ( !empty( $options[ 'social_youtube' ] ) ) {
+			if ( !empty( $options['social_youtube'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catch-flames' ).'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options['social_youtube'] ).'" title="'. esc_attr__( 'YouTube', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catch-flames' ).'</a></li>';
 			}
 			//Vimeo
-			if ( !empty( $options[ 'social_vimeo' ] ) ) {
+			if ( !empty( $options['social_vimeo'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-flames' ).'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options['social_vimeo'] ).'" title="'. esc_attr__( 'Vimeo', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-flames' ).'</a></li>';
 			}
 			//Slideshare
-			if ( !empty( $options[ 'social_aim' ] ) ) {
+			if ( !empty( $options['social_aim'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-flames' ).'</a></li>';
+					'<li class="aim"><a href="'.esc_url( $options['social_aim'] ).'" title="'. esc_attr__( 'AIM', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-flames' ).'</a></li>';
 			}
 			//MySpace
-			if ( !empty( $options[ 'social_myspace' ] ) ) {
+			if ( !empty( $options['social_myspace'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catch-flames' ).'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options['social_myspace'] ).'" title="'. esc_attr__( 'MySpace', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catch-flames' ).'</a></li>';
 			}
 			//Flickr
-			if ( !empty( $options[ 'social_flickr' ] ) ) {
+			if ( !empty( $options['social_flickr'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catch-flames' ).'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options['social_flickr'] ).'" title="'. esc_attr__( 'Flickr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catch-flames' ).'</a></li>';
 			}
 			//Tumblr
-			if ( !empty( $options[ 'social_tumblr' ] ) ) {
+			if ( !empty( $options['social_tumblr'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catch-flames' ).'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options['social_tumblr'] ).'" title="'. esc_attr__( 'Tumblr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catch-flames' ).'</a></li>';
 			}
 			//deviantART
-			if ( !empty( $options[ 'social_deviantart' ] ) ) {
+			if ( !empty( $options['social_deviantart'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catch-flames' ).'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options['social_deviantart'] ).'" title="'. esc_attr__( 'deviantART', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catch-flames' ).'</a></li>';
 			}
 			//Dribbble
-			if ( !empty( $options[ 'social_dribbble' ] ) ) {
+			if ( !empty( $options['social_dribbble'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catch-flames' ).'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options['social_dribbble'] ).'" title="'. esc_attr__( 'Dribbble', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catch-flames' ).'</a></li>';
 			}
 			//WordPress
-			if ( !empty( $options[ 'social_wordpress' ] ) ) {
+			if ( !empty( $options['social_wordpress'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-flames' ).'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options['social_wordpress'] ).'" title="'. esc_attr__( 'WordPress', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-flames' ).'</a></li>';
 			}
 			//RSS
-			if ( !empty( $options[ 'social_rss' ] ) ) {
+			if ( !empty( $options['social_rss'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-flames' ).'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options['social_rss'] ).'" title="'. esc_attr__( 'RSS', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-flames' ).'</a></li>';
 			}
 			//Slideshare
-			if ( !empty( $options[ 'social_slideshare' ] ) ) {
+			if ( !empty( $options['social_slideshare'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catch-flames' ).'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options['social_slideshare'] ).'" title="'. esc_attr__( 'Slideshare', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catch-flames' ).'</a></li>';
 			}
 			//Instagram
-			if ( !empty( $options[ 'social_instagram' ] ) ) {
+			if ( !empty( $options['social_instagram'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-flames' ).'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options['social_instagram'] ).'" title="'. esc_attr__( 'Instagram', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-flames' ).'</a></li>';
 			}
 			//Skype
-			if ( !empty( $options[ 'social_skype' ] ) ) {
+			if ( !empty( $options['social_skype'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catch-flames' ).'</a></li>';
+					'<li class="skype"><a href="'.esc_url( $options['social_skype'] ).'" title="'. esc_attr__( 'Skype', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catch-flames' ).'</a></li>';
 			}
 			//Soundcloud
-			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+			if ( !empty( $options['social_soundcloud'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options['social_soundcloud'] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'</a></li>';
 			}
 			//Email
-			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
+			if ( !empty( $options['social_email'] )  && is_email( $options['social_email'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-flames' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options['social_email'] ).'" title="'. esc_attr__( 'Email', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-flames' ) .'</a></li>';
 			}
 			//Contact
-			if ( !empty( $options[ 'social_contact' ] ) ) {
+			if ( !empty( $options['social_contact'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-flames' ) .'">'.esc_attr__( 'Contact', 'catch-flames' ).'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options['social_contact'] ).'" title="'. esc_attr__( 'Contact', 'catch-flames' ) .'">'.esc_attr__( 'Contact', 'catch-flames' ).'</a></li>';
 			}
 			//Xing
-			if ( !empty( $options[ 'social_xing' ] ) ) {
+			if ( !empty( $options['social_xing'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-flames' ).'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options['social_xing'] ).'" title="'. esc_attr__( 'Xing', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-flames' ).'</a></li>';
 			}
 			//SpecificFeeds
-			if ( !empty( $options[ 'enable_specificfeeds' ] ) ) {
+			if ( !empty( $options['enable_specificfeeds'] ) ) {
 				$catchflames_social_networks .=
 					'<li class="specificfeeds"><a href="'.esc_url( 'http://www.specificfeeds.com/follow' ).'" title="'. esc_attr__( 'SpecificFeeds', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'SpecificFeeds', 'catch-flames' ) .'</a></li>';
 			}
 			//Meetup
-			if ( !empty( $options[ 'social_meetup' ] ) ) {
+			if ( !empty( $options['social_meetup'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catch-flames' ).'</a></li>';
+					'<li class="meetup"><a href="'.esc_url( $options['social_meetup'] ).'" title="'. esc_attr__( 'Meetup', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catch-flames' ).'</a></li>';
 			}
 			//Goodreads
-			if ( !empty( $options[ 'social_goodreads' ] ) ) {
+			if ( !empty( $options['social_goodreads'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'. esc_attr__( 'Goodreads', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Goodreads', 'catch-flames' ).'</a></li>';
+					'<li class="goodreads"><a href="'.esc_url( $options['social_goodreads'] ).'" title="'. esc_attr__( 'Goodreads', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Goodreads', 'catch-flames' ).'</a></li>';
 			}
 			//github
-			if ( !empty( $options[ 'social_github' ] ) ) {
+			if ( !empty( $options['social_github'] ) ) {
 				$catchflames_social_networks .=
-					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'github', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'github', 'catch-flames' ).'</a></li>';
+					'<li class="github"><a href="'.esc_url( $options['social_github'] ).'" title="'. esc_attr__( 'github', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'github', 'catch-flames' ).'</a></li>';
 			}
 			$catchflames_social_networks .='
 		</ul></div>';
@@ -966,7 +966,7 @@ function catchflames_footer_social() {
 	$options = $catchflames_options_settings;
 
 	echo '<!-- refreshing cache -->';
-	if ( !empty( $options[ 'disable_footer_social' ] ) ) :
+	if ( !empty( $options['disable_footer_social'] ) ) :
 		return catchflames_social_networks();
 	endif;
 }
@@ -1040,18 +1040,18 @@ function catchflames_promotion_headline() {
    	$options = $catchflames_options_settings;
 
 	// Getting data from Theme Options
-	$display_promotion_headline		= $options[ 'promotion_headline_option' ];
-	$promotion_headline 			= $options[ 'promotion_headline' ];
-	$promotion_subheadline 			= $options[ 'promotion_subheadline' ];
-	$promotion_headline_button 		= $options[ 'promotion_headline_button' ];
-	$promotion_headline_target 		= $options[ 'promotion_headline_target' ];
+	$display_promotion_headline		= $options['promotion_headline_option'];
+	$promotion_headline 			= $options['promotion_headline'];
+	$promotion_subheadline 			= $options['promotion_subheadline'];
+	$promotion_headline_button 		= $options['promotion_headline_button'];
+	$promotion_headline_target 		= $options['promotion_headline_target'];
 
 	//support qTranslate plugin
 	if ( function_exists( 'qtrans_convertURL' ) ) {
-		$promotion_headline_url = qtrans_convertURL($options[ 'promotion_headline_url' ]);
+		$promotion_headline_url = qtrans_convertURL($options['promotion_headline_url']);
 	}
 	else {
-		$promotion_headline_url = $options[ 'promotion_headline_url' ];
+		$promotion_headline_url = $options['promotion_headline_url'];
 	}
 
 	// Front page displays in Reading Settings
@@ -1083,7 +1083,7 @@ function catchflames_promotion_headline() {
 						$headlinetarget = '_self';
 					}
 
-					$catchflames_promotion_headline .= '<div class="right-section"><a class="promotion-button" href="' . $promotion_headline_url . '" target="' . $headlinetarget . '">' . $promotion_headline_button . '</a></div><!-- .right-section -->';
+					$catchflames_promotion_headline .= '<div class="right-section"><a class="promotion-button" href="' . esc_url( $promotion_headline_url ) . '" target="' . $headlinetarget . '">' . $promotion_headline_button . '</a></div><!-- .right-section -->';
 				}
 
 				$catchflames_promotion_headline .= '</div><!-- .wrapper --></div><!-- #promotion-message -->';

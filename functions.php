@@ -352,43 +352,6 @@ add_action( 'after_setup_theme', 'catchflames_logo_migrate' );
 
 
 /**
- * Migrate Custom Favicon to WordPress core Site Icon
- *
- * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
- */
-function catchflames_site_icon_migrate() {
-	$ver = get_theme_mod( 'site_icon_version', false );
-
-	//Return if update has already been run
-	if ( version_compare( $ver, '2.9' ) >= 0 ) {
-		return;
-	}
-
-	/**
-	 * Get Theme Options Values
-	 */
-	global $catchflames_options_settings;
-   	$options = $catchflames_options_settings;
-
-   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'has_site_icon' ) ) {
-		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
-
-			if ( is_int( $site_icon ) ) {
-				update_option( 'site_icon', $site_icon );
-			}
-		}
-
-	  	// Update to match site_icon_version so that script is not executed continously
-		set_theme_mod( 'site_icon_version', '2.9' );
-	}
-}
-add_action( 'after_setup_theme', 'catchflames_site_icon_migrate' );
-
-
-/**
  * Migrate Custom CSS to WordPress core Custom CSS
  *
  * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.

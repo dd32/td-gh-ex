@@ -10,7 +10,7 @@
 global $catchflames_options_settings;
 $options = $catchflames_options_settings;
 
-$catchflames_search_display_text = $options[ 'search_display_text' ];
+$catchflames_search_display_text = $options['search_display_text'];
 
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">

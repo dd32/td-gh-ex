@@ -1124,7 +1124,7 @@ function catchflames_customize_register( $wp_customize ) {
 	}
 
 	//Add featured post elements with respect to no of featured sliders
-	for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['slider_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[featured_slider_page][' . $i . ']',
@@ -1151,7 +1151,7 @@ function catchflames_customize_register( $wp_customize ) {
 	}
 
 	//Add featured page elements with respect to no of featured content
-	for ( $i = 1; $i <= $options[ 'featured_content_number' ]; $i++ ) {
+	for ( $i = 1; $i <= $options['featured_content_number']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
 			$theme_slug . 'options[featured_content_page][' . $i . ']',

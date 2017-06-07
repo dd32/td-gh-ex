@@ -19,7 +19,7 @@ function catchflames_header_top_menu() {
 	if ( empty( $options['disable_top_menu_logo'] ) ) :
 
 		$catchflames_fixed_logo = '';
-		if ( !empty( $options[ 'top_menu_logo' ] ) ) :
+		if ( !empty( $options['top_menu_logo'] ) ) :
 			$catchflames_fixed_logo .= '<img src="' . esc_url( $options['top_menu_logo'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
 		else :
 			// if empty featured_logo_header on theme options, display default logo

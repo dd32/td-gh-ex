@@ -37,9 +37,9 @@ function catchflames_featured_content_display() {
 		}
 		else {
 			if ( ( !$catchflames_featured_content = get_transient( 'catchflames_featured_content' ) ) ) {
-				$layouts 	 = $options ['featured_content_layout'];
-				$headline 	 = $options ['featured_content_headline'];
-				$subheadline = $options ['featured_content_subheadline'];
+				$layouts 	 = $options['featured_content_layout'];
+				$headline 	 = $options['featured_content_headline'];
+				$subheadline = $options['featured_content_subheadline'];
 
 				echo '<!-- refreshing cache -->';
 
@@ -56,7 +56,7 @@ function catchflames_featured_content_display() {
 					$classes .= ' featured-page-content' ;
 				}
 
-				$featured_content_position = $options [ 'featured_content_position' ];
+				$featured_content_position = $options['featured_content_position'];
 
 				if ( '1' == $featured_content_position ) {
 					$classes .= ' border-top' ;
@@ -113,7 +113,7 @@ function catchflames_featured_content_display_position() {
 	global $catchflames_options_settings;
 	$options = $catchflames_options_settings;
 
-	$featured_content_position = $options [ 'featured_content_position' ];
+	$featured_content_position = $options['featured_content_position'];
 
 	if ( '1' != $featured_content_position ) {
 		add_action( 'catchflames_before_main', 'catchflames_featured_content_display', 50 );
@@ -176,7 +176,7 @@ function catchflames_demo_content( $options ) {
 			</div><!-- .entry-container -->
 		</article>';
 
-	if ( 'layout-four' == $options ['featured_content_layout'] || 'layout-two' == $options ['featured_content_layout'] ) {
+	if ( 'layout-four' == $options['featured_content_layout'] || 'layout-two' == $options['featured_content_layout'] ) {
 		$catchflames_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
@@ -207,7 +207,7 @@ if ( ! function_exists( 'catchflames_page_content' ) ) :
 function catchflames_page_content( $options ) {
 	global $post;
 
-	$quantity 		= $options [ 'featured_content_number' ];
+	$quantity 		= $options['featured_content_number'];
 
 	$show_content	= $options['featured_content_show'];
 
@@ -283,7 +283,7 @@ function catchflames_page_content( $options ) {
 				</article><!-- .featured-post-'. $i .' -->';
 		endwhile;
 
-		wp_reset_query();
+		wp_reset_postdata();
 	}
 
 	return $catchflames_page_content;

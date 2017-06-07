@@ -1,5 +1,12 @@
 == Change log ==
 
+Version 3.3.2
+* Code Optimization
+* Compatible with WordPress 4.8
+* Internationalized date() to date_i18n()
+* Optimization: Replaced wp_reset_query with wp_reset_postdata
+* Remove: Backward compatibility functions
+
 Version 3.3.1
 * Code Optimization
 

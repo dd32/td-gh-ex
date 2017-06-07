@@ -138,7 +138,7 @@ function catchflames_logo() {
 				<div id="site-logo" class="' . esc_attr( $classses ) . '">' . get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		elseif ( empty( $options[ 'remove_header_logo' ] ) ) {
+		elseif ( empty( $options['remove_header_logo'] ) ) {
 			//@remove elseif block when WP v4.8 is released
 			$text_color   = get_header_textcolor();
 
@@ -159,7 +159,7 @@ function catchflames_logo() {
 
 			$catchflames_logo .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
-			if ( !empty( $options[ 'featured_logo_header' ] ) ) {
+			if ( !empty( $options['featured_logo_header'] ) ) {
 
 				$catchflames_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
 
@@ -267,27 +267,27 @@ function catchflames_featured_image() {
    	$options = $catchflames_options_settings;
 	$header_image = get_header_image();
 
-	$enableheaderimage = $options[ 'enable_featured_header_image' ];
+	$enableheaderimage = $options['enable_featured_header_image'];
 
 	if ( !empty( $header_image ) ) {
 
 		// Header Image Title/Alt
-		if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-			$title = esc_attr($options[ 'featured_header_image_alt' ]);
+		if ( !empty( $options['featured_header_image_alt'] ) ) :
+			$title = esc_attr($options['featured_header_image_alt']);
 		else:
 			$title = '';
 		endif;
 
 		// Header Image Link
-		if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
+		if ( !empty( $options['featured_header_image_url'] ) ) :
 			//support for qtranslate custom link
 			if ( function_exists( 'qtrans_convertURL' ) ) {
-				$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+				$link = qtrans_convertURL($options['featured_header_image_url']);
 			}
 			else {
-				$link = esc_url($options[ 'featured_header_image_url' ]);
+				$link = esc_url($options['featured_header_image_url']);
 			}
-			$linkopen = '<a title="'.$title.'" href="'.$link.'">';
+			$linkopen = '<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '">';
 			$linkclose = '</a>';
 		else:
 			$link = '';
@@ -296,7 +296,7 @@ function catchflames_featured_image() {
 			$linkclose = '';
 		endif;
 
-		echo '<div id="header-image">' . $linkopen . '<img id="main-feat-img" alt="' . $title . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-image -->';
+		echo '<div id="header-image">' . $linkopen . '<img id="main-feat-img" alt="' . esc_attr( $title ) . '" src="' . esc_url( $header_image ) . '" />' . $linkclose . '</div><!-- #header-image -->';
 	}
 
 } // catchflames_featured_image
@@ -318,7 +318,7 @@ function catchflames_featured_page_post_image() {
 
    	$options = $catchflames_options_settings;
 	$defaults = $catchflames_options_defaults;
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
+	$enableheaderimage =  $options['enable_featured_header_image'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -364,7 +364,7 @@ function catchflames_featured_overall_image() {
 
 	global $post, $wp_query, $catchflames_options_settings, $catchflames_options_defaults;
    	$options = $catchflames_options_settings;
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
+	$enableheaderimage =  $options['enable_featured_header_image'];
 
 	// Front page displays in Reading Settings
 	$page_for_posts = get_option('page_for_posts');

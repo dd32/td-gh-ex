@@ -76,7 +76,7 @@ function catchflames_page_sliders() {
    	$options = $catchflames_options_settings;
 
 
-	if ( ( !$catchflames_page_sliders = get_transient( 'catchflames_page_sliders' ) ) && !empty( $options[ 'featured_slider_page' ] ) ) {
+	if ( ( !$catchflames_page_sliders = get_transient( 'catchflames_page_sliders' ) ) && !empty( $options['featured_slider_page'] ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$imagesize = 'featured-slider-normal';
@@ -102,9 +102,9 @@ function catchflames_page_sliders() {
 	    		<div id="controllers" class="cycle-pager"></div>';
 
 				$loop = new WP_Query( array(
-					'posts_per_page'	=> $options[ 'slider_qty' ],
+					'posts_per_page'	=> $options['slider_qty'],
 					'post_type'			=> 'page',
-					'post__in'			=> $options[ 'featured_slider_page' ],
+					'post__in'			=> $options['featured_slider_page'],
 					'orderby' 			=> 'post__in'
 				));
 
@@ -120,7 +120,7 @@ function catchflames_page_sliders() {
 								'. get_the_post_thumbnail( $post->ID, $imagesize, array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 							</a>
 						</figure>';
-						if ( empty ( $options[ 'disable_slider_text' ] ) ) {
+						if ( empty ( $options['disable_slider_text'] ) ) {
 							$catchflames_page_sliders .= '
 							<div class="entry-container">
 								<header class="entry-header">
@@ -136,7 +136,7 @@ function catchflames_page_sliders() {
 						}
 					$catchflames_page_sliders .= '</article><!-- .slides -->';
 
-				endwhile; wp_reset_query();
+				endwhile; wp_reset_postdata();
 				$catchflames_page_sliders .= '
 			</section>
   		</div><!-- #main-slider -->';
@@ -157,8 +157,8 @@ function catchflames_slider_display() {
    	$options = $catchflames_options_settings;
 
 	// get data value from theme options
-	$enableslider = $options[ 'enable_slider' ];
-	$slidertype = $options[ 'select_slider_type' ];
+	$enableslider = $options['enable_slider'];
+	$slidertype = $options['select_slider_type'];
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -169,7 +169,7 @@ function catchflames_slider_display() {
 
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) :
 		if (  'page-slider' == $slidertype ) {
-			if ( !empty( $options[ 'featured_slider_page' ] ) && function_exists( 'catchflames_page_sliders' ) ) {
+			if ( !empty( $options['featured_slider_page'] ) && function_exists( 'catchflames_page_sliders' ) ) {
 				catchflames_page_sliders();
 			}
 			else {

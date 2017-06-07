@@ -12,7 +12,7 @@
 	global $catchflames_options_settings;
     $options = $catchflames_options_settings;
 	$current_content_layout = $options['content_layout'];
-	$more_tag_text = $options[ 'more_tag_text' ];
+	$more_tag_text = $options['more_tag_text'];
 
 	// Get the Excerpt
 	$catchflames_excerpt = get_the_excerpt();
