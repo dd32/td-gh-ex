@@ -23,4 +23,4 @@ add_action( 'customize_register', 'basic_store_customize_register' );
 function basic_store_customize_preview_js() {
 	wp_enqueue_script( 'basic_store_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'basic_customize_preview_js' );
+add_action( 'customize_preview_init', 'basic_store_customize_preview_js' );

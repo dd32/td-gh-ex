@@ -32,6 +32,12 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.2.1 - Jun 07 2017 =
+- Warning call_user_func_array() expects parameter 1 to be a valid callback, function 'basic_customize_preview_js' not found or invalid function name
+- Css breaks in sidebar panel when Large image: linked in a caption and Large image: Hand Coded
+- Removed readme.md
+- Added license info for bootstrap tab collapse
+
 = 1.2.0 - Jun 01 2017 =
 - Less folder moved accidentally
 - Sticky post styling
@@ -61,9 +67,9 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 
 == Credits ==
-
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * WooCommerce plugin [GNUv3](https://github.com/woocommerce/woocommerce/blob/master/license.txt)
 * Bootstrap framework [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * WP Bootstrap Nav Walker [GNUv3](https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 * WP Bootstrap pagination [GNUv2](https://github.com/talentedaamer/Bootstrap-wordpress-pagination/blob/master/LICENSE)
+* Bootstrap Tab Collapse [GNUv2](https://github.com/flatlogic/bootstrap-tabcollapse)

@@ -82,7 +82,8 @@
 	margin-right: auto;
 }
 
- img[class*="wp-image-"] {
+ img[class*="wp-image-"],
+ .widget img {
 	display: block;
 	max-width: 100%;
 	height: auto;
