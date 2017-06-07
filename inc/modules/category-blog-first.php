@@ -63,6 +63,7 @@ if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :
         case 'sub-category':
             $taxonomy   = 'category';
             $term       = '';
+
             if ( isset( $options['category_blog_one_parent_category'] ) ) {
               $term       = absint( $options['category_blog_one_parent_category'] );
             }

@@ -53,7 +53,7 @@ $wp_customize->add_setting( 'academic_theme_options[top_bar_field_number]', arra
 $wp_customize->add_control( 'academic_theme_options[top_bar_field_number]', array(
 	'active_callback'=> 'academic_is_top_bar_enable',
 	'label'          => esc_html__( 'Number of fields', 'academic' ),
-	'description'    => sprintf( esc_html__( '%1$sNote%2$s: Refresh after changing this field value.', 'academic' ), '<b>', '</b>' ),
+	'description'    => sprintf( esc_html__( '%1$sNote%2$s: Max: 3 Refresh after changing this field value.', 'academic' ), '<b>', '</b>' ),
 	'section'        => 'academic_top_bar_options',
 	'type'           => 'number',
 	'input_attrs'    => array(

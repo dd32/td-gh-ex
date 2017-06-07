@@ -17,7 +17,8 @@
 function academic_get_default_theme_options() {
 	$academic_default_options = array(
 		// Color layout options
-		'color_layout'           => '#347fe1',
+		'header_title_color'           	=> '#ffffff',
+		'header_tagline_color'          => '#ffffff',
 		
 		// Theme Options
 		'loader_enable'         		=> false,
@@ -33,6 +34,9 @@ function academic_get_default_theme_options() {
 		'scroll_top_visible'        	=> true,
 		'reset_options'      			=> false,
 		'enable_frontpage_content' 		=> true,
+		'archive_content_type' 			=> 'excerpt',
+		'archive_image' 				=> false,
+		'archive_meta' 					=> false,
 
 		// Top bar options
 		'top_bar_content_type'   		=> 'custom',
@@ -49,6 +53,7 @@ function academic_get_default_theme_options() {
 		'enable_slider_dragable'        => true,
 		'slider_call_to_action'         => false,
 		'slider_call_to_action_new_tab' => true,
+		'enable_slider_caption' 		=> true,
 		
 		// about
 		'about_section_enable'			=> 'disabled',

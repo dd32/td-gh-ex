@@ -191,15 +191,15 @@ msgstr ""
 msgid "Next Posts"
 msgstr ""
 
-#: inc/helpers.php:369
+#: inc/helpers.php:352
 msgid "404 Page"
 msgstr ""
 
-#: inc/helpers.php:371
+#: inc/helpers.php:354
 msgid "Search Page"
 msgstr ""
 
-#: inc/helpers.php:375
+#: inc/helpers.php:358
 msgid "Blog Page"
 msgstr ""
 
@@ -361,11 +361,11 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:37, template-parts/content-single.php:55, template-parts/content.php:48
+#: template-parts/content-page.php:37, template-parts/content-single.php:55
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-single.php:50, template-parts/content.php:43
+#: template-parts/content-single.php:50
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -373,19 +373,19 @@ msgstr ""
 msgid "--None--"
 msgstr ""
 
-#: inc/customizer/defaults.php:28, inc/modules/about.php:68
+#: inc/customizer/defaults.php:29, inc/modules/about.php:68
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer/defaults.php:61
+#: inc/customizer/defaults.php:66
 msgid "Second Category Blog"
 msgstr ""
 
-#: inc/customizer/defaults.php:71
+#: inc/customizer/defaults.php:76
 msgid "First Category Blog"
 msgstr ""
 
-#: inc/customizer/defaults.php:77
+#: inc/customizer/defaults.php:82
 msgid "Our Partners"
 msgstr ""
 
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Default ( to customizer option )"
 msgstr ""
 
-#: inc/modules/category-blog-first.php:77
+#: inc/modules/category-blog-first.php:78
 msgid "fa-snapchat-ghost"
 msgstr ""
 

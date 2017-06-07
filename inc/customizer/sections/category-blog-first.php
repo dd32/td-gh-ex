@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
 * Category Blog one options
+=======
+* Category Blog Three options
+>>>>>>> 7489da0054be6c4ea1ff2a2379700a7f28a0146e
 *
 * @package Theme Palace
 * @subpackage Academic

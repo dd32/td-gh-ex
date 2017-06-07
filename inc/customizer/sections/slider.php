@@ -80,6 +80,19 @@ $wp_customize->add_control( 'academic_theme_options[enable_slider_dragable]', ar
 	'active_callback' => 'academic_is_slider_active',
 ) );
 
+// Add enable slider caption setting and control.
+$wp_customize->add_setting( 'academic_theme_options[enable_slider_caption]', array(
+	'default'           => $options['enable_slider_caption'],
+	'sanitize_callback' => 'academic_sanitize_checkbox'
+) );
+
+$wp_customize->add_control( 'academic_theme_options[enable_slider_caption]', array(
+	'label'           => esc_html__( 'Enable Caption.', 'academic' ),
+	'section'         => 'academic_slider_section',
+	'type'            => 'checkbox',
+	'active_callback' => 'academic_is_slider_active',
+) );
+
 // Add slider number setting and control.
 $wp_customize->add_setting( 'academic_theme_options[no_of_slider]', array(
 	'default'           => $options['no_of_slider'],

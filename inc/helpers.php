@@ -156,23 +156,6 @@ function academic_excerpt_length( $length ){
 }
 add_filter( 'excerpt_length', 'academic_excerpt_length' );
 
-/**
- * create the custom excerpts callback
- *
- * @since Academic 0.3
- * @return  custom excerpts callback
- */
-function academic_custom_excerpt( $length_callback = '', $more_callback = '' ){
-	if ( function_exists( $length_callback ) ){
-		add_filter( 'excerpt_length', $length_callback );
-	}
-	$output = get_the_excerpt();
-	$output = apply_filters( 'wptexturize', $output );
-	$output = apply_filters( 'convert_chars', $output );
-	$output = $output;
-	echo esc_html( $output );
-}
-
 // read more
 function academic_excerpt_more( $more ){
 	if ( is_admin() ) {

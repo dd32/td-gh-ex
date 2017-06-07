@@ -27,10 +27,11 @@ function academic_customize_register( $wp_customize ) {
 	// Load customize partial functions.
 	require get_template_directory() . '/inc/customizer/partial.php';
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->default = '#fff';
+	$wp_customize->get_setting( 'blogname' )->transport            = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport     = 'postMessage';
+
+	// Remove the core header textcolor control, as it shares the main text color.
+	$wp_customize->remove_control( 'header_textcolor' );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -44,6 +45,32 @@ function academic_customize_register( $wp_customize ) {
 			'render_callback'     => 'academic_customize_partial_blogdescription',
 		) );
 	}
+
+	// Header title color setting and control.
+	$wp_customize->add_setting( 'academic_theme_options[header_title_color]', array(
+		'default'           => $options['header_title_color'],
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'			=> 'postMessage'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_theme_options[header_title_color]', array(
+		'priority'			=> 5,
+		'label'             => esc_html__( 'Header Title Color', 'academic' ),
+		'section'           => 'colors',
+	) ) );
+
+	// Header tagline color setting and control.
+	$wp_customize->add_setting( 'academic_theme_options[header_tagline_color]', array(
+		'default'           => $options['header_tagline_color'],
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'			=> 'postMessage'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_theme_options[header_tagline_color]', array(
+		'priority'			=> 6,
+		'label'             => esc_html__( 'Header Tagline Color', 'academic' ),
+		'section'           => 'colors',
+	) ) );
 
 	// Add panel for sections
 	$wp_customize->add_panel( 'academic_sections_panel' , array(
@@ -98,6 +125,9 @@ function academic_customize_register( $wp_customize ) {
 
 	// load reset option
 	require get_template_directory() . '/inc/customizer/theme-options/reset.php';
+
+	// load archive option
+	require get_template_directory() . '/inc/customizer/theme-options/archive.php';
 
 }
 add_action( 'customize_register', 'academic_customize_register' );
@@ -156,16 +186,18 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 		$options = academic_get_theme_options();
 
 		$css = '';
-		$header_text_color = get_header_textcolor();
+		$header_title_color = $options['header_title_color'];
+		$header_tagline_color = $options['header_tagline_color'];
+
 
 		/*
 		 * If no custom options for text are set, let's bail.
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color ) {
+		if ( $header_title_color && $header_tagline_color ) {
 
 			// If we get this far, we have custom styles. Let's do this.
-				// Has the text been hidden?
+			// Has the text been hidden?
 			if ( ! display_header_text() ) :
 			$css .='
 			.site-title,
@@ -178,9 +210,11 @@ if ( ! function_exists( 'academic_inline_css' ) ) :
 			else :
 			$css .='
 			.site-title a,
-			#site-header .site-title a,
+			#site-header .site-title a {
+				color: '.esc_attr( $header_title_color ).';
+			}
 			.site-description {
-				color: #'.esc_attr( $header_text_color ).';
+				color: '.esc_attr( $header_tagline_color ).';
 			}';
 			endif;
 		}

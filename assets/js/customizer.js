@@ -20,20 +20,40 @@
 		} );
 	} );
 
-	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
+	// Header title text color.
+	wp.customize( 'academic_theme_options[header_title_color]', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
+					'color': to
+				} );
+			}
+		} );
+	} );
+
+	// Header tagline text color.
+	wp.customize( 'academic_theme_options[header_tagline_color]', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( '.site-description' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( '.site-description' ).css( {
+					'clip': 'auto',
+					'position': 'relative'
+				} );
+				$( '.site-description' ).css( {
 					'color': to
 				} );
 			}

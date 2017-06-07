@@ -9,11 +9,14 @@
  * @since 0.3
  */
 
+$options = academic_get_theme_options(); 
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'os-animation' ); ?>>
 	<?php  
-	if ( has_post_thumbnail() ) :
+	$archive_image = $options['archive_image']; 
+	if ( has_post_thumbnail() && ! $archive_image ) :
 		echo '<a class="post-thumbnail" href="' . esc_url( get_permalink() ) . '">';
 		the_post_thumbnail( $size = 'large', array( 'alt' => get_the_title() ) );
 		echo "</a>";
@@ -21,7 +24,8 @@
 	?>
 	<header class="entry-header">
 		<?php
-		if ( 'post' === get_post_type() ) : ?>
+		$archive_meta = $options['archive_meta']; 
+		if ( 'post' === get_post_type() && ! $archive_meta ) : ?>
 			<div class="entry-meta">
 				<?php academic_posted_on(); ?>
 			</div><!-- .entry-meta -->
@@ -36,22 +40,16 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<p>
-			<?php
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'academic' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
+		<?php
+		$archive_content_type = $options['archive_content_type']; 
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'academic' ),
-					'after'  => '</div>',
-				) );
-			?>
-		</p>
+		if ( 'excerpt' === $archive_content_type ) {
+			the_excerpt();
+		} else {
+			the_content();
+		}
+		?>
 		<div class="buttons">
-			<?php  $options = academic_get_theme_options(); ?>
 			<a href="<?php the_permalink(); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?></a>
 		</div>
 	</div><!-- .entry-content -->

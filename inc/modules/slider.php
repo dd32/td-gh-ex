@@ -132,20 +132,24 @@ if ( ! function_exists( 'academic_render_slider_section' ) ) :
                 <?php foreach ( $content_details as $content ): ?>
                     <div class="slider-item" style="background-image: url('<?php echo esc_url( $content['img_array'][0] ); ?>')">
                         <div class="black-overlay"></div>
-                        <div class="container">
-                            <div class="main-slider-contents">
-                                <a href="<?php echo esc_url( $content['url'] ); ?>"><h2 class="title"><?php echo esc_html( $content['title'] ); ?></h2></a>
+                        <?php  
+                        $enable_slider_caption = $options['enable_slider_caption'];
+                        if ( $enable_slider_caption ) : ?>
+                          <div class="container">
+                              <div class="main-slider-contents">
+                                  <a href="<?php echo esc_url( $content['url'] ); ?>"><h2 class="title"><?php echo esc_html( $content['title'] ); ?></h2></a>
 
-                                <?php if ( $content['excerpt'] ) : ?>
-                                  <p class="desc"><?php echo esc_html( $content['excerpt'] ); ?></p>
-                                <?php endif;?>
-                                <div class="buttons">
-                                    <?php if ( ! empty( $options['read_more_text'] ) ) : ?>
-                                        <a href="<?php echo esc_url( $content['url'] ); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?><i class="fa fa-angle-right"></i></a>
-                                    <?php endif; ?>
-                                </div>
-                            </div><!-- end .main-slider-contents -->
-                        </div><!-- end .container -->
+                                  <?php if ( $content['excerpt'] ) : ?>
+                                    <p class="desc"><?php echo esc_html( $content['excerpt'] ); ?></p>
+                                  <?php endif;?>
+                                  <div class="buttons">
+                                      <?php if ( ! empty( $options['read_more_text'] ) ) : ?>
+                                          <a href="<?php echo esc_url( $content['url'] ); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?><i class="fa fa-angle-right"></i></a>
+                                      <?php endif; ?>
+                                  </div>
+                              </div><!-- end .main-slider-contents -->
+                          </div><!-- end .container -->
+                        <?php endif; ?>
                     </div><!-- end .slider-item -->
                 <?php endforeach; ?>
             </div><!-- end .regular -->
