@@ -1,5 +1,10 @@
 == Change Log ==
 
+Version 3.0.3
+* Compatible with WordPress 4.8
+* Internationalized date() to date_i18n()
+* Optimization: Replaced wp_reset_query with wp_reset_postdata
+
 Version 3.0.2
 * Added: Option to Display all Categories in Customizer
 * Code Optimization

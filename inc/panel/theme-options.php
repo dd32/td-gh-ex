@@ -1256,7 +1256,7 @@ add_action( 'save_post', 'catcheverest_post_invalidate_caches' );
  * @return string
  */
 function catcheverest_the_year() {
-    return date( __( 'Y', 'catch-everest' ) );
+    return esc_attr( date_i18n( __( 'Y', 'catch-everest' ) ) );
 }
 
 

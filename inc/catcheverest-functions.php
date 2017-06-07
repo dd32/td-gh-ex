@@ -480,7 +480,7 @@ function catcheverest_post_sliders() {
 							$catcheverest_post_sliders .= '
 						</div>
 					</article><!-- .slides -->';
-				endwhile; wp_reset_query();
+				endwhile; wp_reset_postdata();
 				$catcheverest_post_sliders .= '
 			</section>
         	<div id="slider-nav">
