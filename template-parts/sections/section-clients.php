@@ -43,7 +43,8 @@
                                 <?php } ?>
                         <?php endwhile; ?>
         			</div>
-                    <?php endif; 
+                    <?php  wp_reset_postdata();
+                    endif; 
                 }?>
     		</div>
     	</section>

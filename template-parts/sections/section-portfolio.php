@@ -47,7 +47,8 @@ $portfolio_cat_id = get_theme_mod('portfolio_cat_id');
             			</div>
                      <?php endwhile; ?>   
         		</div>
-                <?php endif;
+                <?php wp_reset_postdata();
+                endif;
             } ?>   
     	</div>
     </section>

@@ -31,7 +31,8 @@
                                 }
                             ?>
                         </div>
-                <?php } ?>
+                <?php wp_reset_postdata(); 
+                } ?>
                 <div class="bt-wrapper">
                     <?php if($section_title){ ?>
             			<div class="bt-section-header">
@@ -49,7 +50,8 @@
                                     }
                                 ?>
                             </div>
-                        <?php } ?>
+                        <?php  wp_reset_postdata();
+                        } ?>
                         <?php if($bt_section_address || $bt_section_address){ ?>
                         <div class="detail-contact">
                             <?php if($bt_phone_num){ ?><div class="number"><?php echo esc_html__('Call US: ','beetech'); ?><span><?php echo esc_attr($bt_phone_num); ?></span></div><?php } ?>

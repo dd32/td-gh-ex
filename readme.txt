@@ -66,7 +66,10 @@ Third Party scripts and styles under public license.
 
 == Images == 
 
-All images used in the theme designed by buzthemes under GPL License 
+All images used in the theme designed by buzthemes under GPL License
+
+In the theme screenshot image used that is taken from pixabay
+https://pixabay.com/en/shaft-architecture-tunnel-3d-1745933/
 
 == Changelog ==
 
@@ -105,3 +108,7 @@ All images used in the theme designed by buzthemes under GPL License
 = 1.0.7 =
     * Fix escaping
     * Remove unnecessary filters
+    
+= 1.0.8 =
+    * Reset all query
+    * Change screenshot
