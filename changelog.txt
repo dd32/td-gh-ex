@@ -1,5 +1,9 @@
 = Changelog ==
 
+Version 2.2.2
+* Compatible with WordPress 4.8
+* Corrected: Typo in Promotional Headline button's default text
+
 Version 2.2.1
 * Bug Fixed: Featured Post Slider not showing ( Reported By: khgeorge, francesca78 and mdani76 )
 

@@ -17,7 +17,7 @@ function adventurous_get_defaults( $parameter = null ) {
 		'enable_promotion'              => 'homepage',
 		'homepage_headline'             => esc_html__( 'Adventurous is a Simple, Clean and Responsive WordPress Theme', 'adventurous' ),
 		'homepage_subheadline'          => esc_html__( 'This is Promotion Headline. You can edit this from "Appearance => Theme Options => Promotion Headline Options"', 'adventurous' ),
-		'homepage_headline_button'      => esc_html__( 'But Now', 'adventurous' ),
+		'homepage_headline_button'      => esc_html__( 'Buy Now', 'adventurous' ),
 		'homepage_headline_url'         => '#',
 		'homepage_headline_target'      => '1',
 		'reset_featured_image'          => 0,
