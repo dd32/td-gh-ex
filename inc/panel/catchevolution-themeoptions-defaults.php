@@ -11,10 +11,6 @@
  */
 global $catchevolution_options_defaults;
 $catchevolution_options_defaults = array(
-	'fav_icon'							=> get_template_directory_uri().'/images/favicon.ico',
- 	'remove_favicon'					=> '1',	
-	'web_clip'							=> get_template_directory_uri().'/images/apple-touch-icon.png',
- 	'remove_web_clip'					=> '1',
 	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
 	'disable_header'					=> '0',
  	'remove_header_logo'				=> '1',
@@ -28,7 +24,7 @@ $catchevolution_options_defaults = array(
 	'sidebar_layout'					=> 'right-sidebar',
 	'content_layout'					=> 'excerpt',
 	'reset_sidebar_layout'				=> '2',
- 	'front_page_category'				=> array(),
+ 	'front_page_category'				=> '0',
 	'exclude_slider_post'				=> '0',
  	'slider_qty'						=> 4,
 	'enable_slider'						=> 'enable-slider-homepage',

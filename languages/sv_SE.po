@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 14:43-0500\n"
-"PO-Revision-Date: 2016-12-07 14:43-0500\n"
+"POT-Creation-Date: 2017-06-07 22:59+0545\n"
+"PO-Revision-Date: 2017-06-07 22:59+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -86,34 +86,35 @@ msgid ""
 msgstr ""
 "Den här posten är lösenordsskyddad. Skriv lösenord för att se kommentarer."
 
-#: ../comments.php:33
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s tankar om &ldquo;%2$s&rdquo;"
+#: ../comments.php:36
+#, fuzzy, php-format
+#| msgid "One thought on &ldquo;%2$s&rdquo;"
+#| msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "En tanke om &ldquo;%2$s&rdquo;"
 
-#: ../comments.php:40 ../comments.php:60
+#: ../comments.php:56 ../comments.php:76
 msgid "Comment navigation"
 msgstr "Kommentar navigering"
 
-#: ../comments.php:41 ../comments.php:61
+#: ../comments.php:57 ../comments.php:77
 msgid "&larr; Older Comments"
 msgstr "&larr; Äldre kommentarer"
 
-#: ../comments.php:42 ../comments.php:62
+#: ../comments.php:58 ../comments.php:78
 msgid "Newer Comments &rarr;"
 msgstr "Nyare kommentarer &rarr;"
 
-#: ../comments.php:72
+#: ../comments.php:88
 msgid "Comments are closed."
 msgstr "Kommentarer är avstängda."
 
-#: ../content-aside.php:16 ../content-featured.php:14
-#: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
-#: ../content-link.php:16 ../content-page.php:13 ../content-quote.php:14
-#: ../content-status.php:15 ../content.php:27 ../content.php:31
-#: ../content.php:63 ../inc/catchevolution-functions.php:607
+#: ../content-aside.php:16 ../content-featured.php:14 ../content-gallery.php:16
+#: ../content-gallery.php:48 ../content-image.php:15 ../content-link.php:16
+#: ../content-page.php:13 ../content-quote.php:14 ../content-status.php:15
+#: ../content.php:27 ../content.php:31 ../content.php:63
+#: ../inc/catchevolution-functions.php:567
 #, php-format
 msgid "Permalink to %s"
 msgstr "Direktlänk till %s"
@@ -151,23 +152,21 @@ msgstr "% Kommentarer &darr;"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Läs vidare <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../content-aside.php:35 ../content-featured.php:24
-#: ../content-gallery.php:55 ../content-image.php:28 ../content-link.php:35
-#: ../content-page.php:19 ../content-quote.php:38 ../content-single.php:31
-#: ../content-status.php:36 ../content.php:77 ../image.php:87
+#: ../content-aside.php:35 ../content-featured.php:24 ../content-gallery.php:55
+#: ../content-image.php:28 ../content-link.php:35 ../content-page.php:19
+#: ../content-quote.php:38 ../content-single.php:31 ../content-status.php:36
+#: ../content.php:77 ../image.php:87
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-aside.php:50 ../content-featured.php:51
-#: ../content-gallery.php:96 ../content-image.php:73 ../content-link.php:50
-#: ../content-page.php:27 ../content-quote.php:79 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:120 ../image.php:97
-#: ../inc/catchevolution-functions.php:360
-#: ../inc/catchevolution-functions.php:388
+#: ../content-aside.php:50 ../content-featured.php:51 ../content-gallery.php:96
+#: ../content-image.php:73 ../content-link.php:50 ../content-page.php:27
+#: ../content-quote.php:79 ../content-single.php:64 ../content-status.php:51
+#: ../content.php:120 ../image.php:97 ../inc/catchevolution-functions.php:320
+#: ../inc/catchevolution-functions.php:348
 msgid "Edit"
 msgstr "Redigera"
 
-#. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:68 ../content-gallery.php:78 ../content-image.php:52
 #: ../content-image.php:61 ../content-quote.php:51 ../content-quote.php:61
@@ -221,12 +220,6 @@ msgstr "<span class=\"%1$s\">Taggad</span> %2$s"
 msgid "Image"
 msgstr "Bild"
 
-#: ../content-image.php:26 ../content.php:75
-#: ../inc/catchevolution-functions.php:218
-#, php-format
-msgid "%s"
-msgstr "%s"
-
 #: ../content-image.php:39
 #, php-format
 msgid ""
@@ -240,7 +233,7 @@ msgstr ""
 "class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
 "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:44 ../inc/catchevolution-functions.php:437
+#: ../content-image.php:44 ../inc/catchevolution-functions.php:397
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visa alla poster av %s"
@@ -337,43 +330,41 @@ msgstr ""
 "%5$s</a> in <a href=\"%6$s\" title=\"Återgå till %7$s\" rel=\"gallery\">"
 "%8$s</a>"
 
-#: ../inc/catchevolution-functions.php:273 ../single.php:15
+#: ../inc/catchevolution-functions.php:234 ../single.php:15
 msgid "Post navigation"
 msgstr "Inläggsnavigering"
 
-#: ../inc/catchevolution-functions.php:281
+#: ../inc/catchevolution-functions.php:242
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre poster"
 
-#: ../inc/catchevolution-functions.php:282
+#: ../inc/catchevolution-functions.php:243
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare poster <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchevolution-functions.php:360
+#: ../inc/catchevolution-functions.php:320
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#. translators: 1: comment author, 2: date and time
-#: ../inc/catchevolution-functions.php:377
+#: ../inc/catchevolution-functions.php:337
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s on %2$s <span class=\"säger\">sade:</span>"
 
-#. translators: 1: date, 2: time
-#: ../inc/catchevolution-functions.php:383
+#: ../inc/catchevolution-functions.php:343
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: ../inc/catchevolution-functions.php:392
+#: ../inc/catchevolution-functions.php:352
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar väntar på moderering."
 
-#: ../inc/catchevolution-functions.php:401
+#: ../inc/catchevolution-functions.php:361
 msgid "Reply <span>&darr;</span>"
 msgstr "Svara <span>&darr;</span>"
 
-#: ../inc/catchevolution-functions.php:431
+#: ../inc/catchevolution-functions.php:391
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -388,173 +379,173 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchevolution-functions.php:503
+#: ../inc/catchevolution-functions.php:463
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchevolution-functions.php:781
+#: ../inc/catchevolution-functions.php:737
 msgid "Name"
 msgstr "Namn"
 
-#: ../inc/catchevolution-functions.php:783
-#: ../inc/catchevolution-functions.php:992
-#: ../inc/catchevolution-functions.php:1196
-#: ../inc/panel/customizer/customizer.php:653
+#: ../inc/catchevolution-functions.php:739
+#: ../inc/catchevolution-functions.php:948
+#: ../inc/catchevolution-functions.php:1152
+#: ../inc/panel/customizer/customizer.php:641
 #: ../inc/panel/theme-options.php:797
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchevolution-functions.php:897
-#: ../inc/catchevolution-functions.php:1101
-#: ../inc/panel/customizer/customizer.php:463
+#: ../inc/catchevolution-functions.php:853
+#: ../inc/catchevolution-functions.php:1057
+#: ../inc/panel/customizer/customizer.php:451
 #: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:701
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchevolution-functions.php:902
-#: ../inc/catchevolution-functions.php:1106
-#: ../inc/panel/customizer/customizer.php:473
+#: ../inc/catchevolution-functions.php:858
+#: ../inc/catchevolution-functions.php:1062
+#: ../inc/panel/customizer/customizer.php:461
 #: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:706
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchevolution-functions.php:907
-#: ../inc/catchevolution-functions.php:1111
-#: ../inc/panel/customizer/customizer.php:483
+#: ../inc/catchevolution-functions.php:863
+#: ../inc/catchevolution-functions.php:1067
+#: ../inc/panel/customizer/customizer.php:471
 #: ../inc/panel/theme-options.php:711
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchevolution-functions.php:912
-#: ../inc/catchevolution-functions.php:1116 ../inc/panel/theme-options.php:732
+#: ../inc/catchevolution-functions.php:868
+#: ../inc/catchevolution-functions.php:1072 ../inc/panel/theme-options.php:732
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchevolution-functions.php:917
-#: ../inc/catchevolution-functions.php:1121
-#: ../inc/panel/customizer/customizer.php:493
+#: ../inc/catchevolution-functions.php:873
+#: ../inc/catchevolution-functions.php:1077
+#: ../inc/panel/customizer/customizer.php:481
 #: ../inc/panel/theme-options.php:716
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchevolution-functions.php:922
-#: ../inc/catchevolution-functions.php:1126
+#: ../inc/catchevolution-functions.php:878
+#: ../inc/catchevolution-functions.php:1082
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchevolution-functions.php:927
-#: ../inc/catchevolution-functions.php:1131
-#: ../inc/panel/customizer/customizer.php:513
+#: ../inc/catchevolution-functions.php:883
+#: ../inc/catchevolution-functions.php:1087
+#: ../inc/panel/customizer/customizer.php:501
 #: ../inc/panel/theme-options.php:726
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchevolution-functions.php:932
-#: ../inc/catchevolution-functions.php:1136
-#: ../inc/panel/customizer/customizer.php:533
+#: ../inc/catchevolution-functions.php:888
+#: ../inc/catchevolution-functions.php:1092
+#: ../inc/panel/customizer/customizer.php:521
 #: ../inc/panel/theme-options.php:737
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchevolution-functions.php:937
-#: ../inc/catchevolution-functions.php:1141
-#: ../inc/panel/customizer/customizer.php:543
+#: ../inc/catchevolution-functions.php:893
+#: ../inc/catchevolution-functions.php:1097
+#: ../inc/panel/customizer/customizer.php:531
 #: ../inc/panel/theme-options.php:742
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchevolution-functions.php:942
-#: ../inc/catchevolution-functions.php:1146
-#: ../inc/panel/customizer/customizer.php:553
+#: ../inc/catchevolution-functions.php:898
+#: ../inc/catchevolution-functions.php:1102
+#: ../inc/panel/customizer/customizer.php:541
 #: ../inc/panel/theme-options.php:747
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchevolution-functions.php:947
-#: ../inc/catchevolution-functions.php:1151
-#: ../inc/panel/customizer/customizer.php:563
+#: ../inc/catchevolution-functions.php:903
+#: ../inc/catchevolution-functions.php:1107
+#: ../inc/panel/customizer/customizer.php:551
 #: ../inc/panel/theme-options.php:752
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchevolution-functions.php:952
-#: ../inc/catchevolution-functions.php:1156
-#: ../inc/panel/customizer/customizer.php:573
+#: ../inc/catchevolution-functions.php:908
+#: ../inc/catchevolution-functions.php:1112
+#: ../inc/panel/customizer/customizer.php:561
 #: ../inc/panel/theme-options.php:757
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchevolution-functions.php:957
-#: ../inc/catchevolution-functions.php:1161
-#: ../inc/panel/customizer/customizer.php:583
+#: ../inc/catchevolution-functions.php:913
+#: ../inc/catchevolution-functions.php:1117
+#: ../inc/panel/customizer/customizer.php:571
 #: ../inc/panel/theme-options.php:762
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchevolution-functions.php:962
-#: ../inc/catchevolution-functions.php:1166
-#: ../inc/panel/customizer/customizer.php:593
+#: ../inc/catchevolution-functions.php:918
+#: ../inc/catchevolution-functions.php:1122
+#: ../inc/panel/customizer/customizer.php:581
 #: ../inc/panel/theme-options.php:767
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchevolution-functions.php:967
-#: ../inc/catchevolution-functions.php:1171
-#: ../inc/panel/customizer/customizer.php:603
+#: ../inc/catchevolution-functions.php:923
+#: ../inc/catchevolution-functions.php:1127
+#: ../inc/panel/customizer/customizer.php:591
 #: ../inc/panel/theme-options.php:772
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchevolution-functions.php:972
-#: ../inc/catchevolution-functions.php:1176
-#: ../inc/panel/customizer/customizer.php:613
+#: ../inc/catchevolution-functions.php:928
+#: ../inc/catchevolution-functions.php:1132
+#: ../inc/panel/customizer/customizer.php:601
 #: ../inc/panel/theme-options.php:777
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchevolution-functions.php:977
-#: ../inc/catchevolution-functions.php:1181
-#: ../inc/panel/customizer/customizer.php:623
+#: ../inc/catchevolution-functions.php:933
+#: ../inc/catchevolution-functions.php:1137
+#: ../inc/panel/customizer/customizer.php:611
 #: ../inc/panel/theme-options.php:782
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchevolution-functions.php:982
-#: ../inc/catchevolution-functions.php:1186
-#: ../inc/panel/customizer/customizer.php:633
+#: ../inc/catchevolution-functions.php:938
+#: ../inc/catchevolution-functions.php:1142
+#: ../inc/panel/customizer/customizer.php:621
 #: ../inc/panel/theme-options.php:787
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchevolution-functions.php:987
-#: ../inc/catchevolution-functions.php:1191
-#: ../inc/panel/customizer/customizer.php:643
+#: ../inc/catchevolution-functions.php:943
+#: ../inc/catchevolution-functions.php:1147
+#: ../inc/panel/customizer/customizer.php:631
 #: ../inc/panel/theme-options.php:792
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchevolution-functions.php:997
-#: ../inc/catchevolution-functions.php:1201
-#: ../inc/panel/customizer/customizer.php:663
+#: ../inc/catchevolution-functions.php:953
+#: ../inc/catchevolution-functions.php:1157
+#: ../inc/panel/customizer/customizer.php:651
 #: ../inc/panel/theme-options.php:802
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchevolution-functions.php:1002
-#: ../inc/catchevolution-functions.php:1206
-#: ../inc/panel/customizer/customizer.php:673
+#: ../inc/catchevolution-functions.php:958
+#: ../inc/catchevolution-functions.php:1162
+#: ../inc/panel/customizer/customizer.php:661
 #: ../inc/panel/theme-options.php:807
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchevolution-functions.php:1007
-#: ../inc/catchevolution-functions.php:1211
-#: ../inc/panel/customizer/customizer.php:683
+#: ../inc/catchevolution-functions.php:963
+#: ../inc/catchevolution-functions.php:1167
+#: ../inc/panel/customizer/customizer.php:671
 #: ../inc/panel/theme-options.php:812
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchevolution-functions.php:1340
+#: ../inc/catchevolution-functions.php:1256
 msgid "Footer menu"
 msgstr "Sidfot Meny"
 
@@ -580,13 +571,13 @@ msgid "No sidebar"
 msgstr "Inget sidofält"
 
 #: ../inc/catchevolution-metabox.php:58
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:106
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:102
 #: ../inc/panel/theme-options.php:442
 msgid "Three Columns"
 msgstr "Tre kolumner"
 
 #: ../inc/catchevolution-metabox.php:74
-#: ../inc/panel/customizer/customizer.php:261
+#: ../inc/panel/customizer/customizer.php:249
 msgid "Sidebar Layout Options"
 msgstr "Sidofält layoutalternativ"
 
@@ -687,137 +678,141 @@ msgstr "Hoppa till sekundärt innehåll"
 msgid "Secondary menu"
 msgstr "Sekundär meny"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:88
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:84
 #: ../inc/panel/theme-options.php:377
 msgid "Light"
 msgstr "Ljus"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:89
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:85
 #: ../inc/panel/theme-options.php:381
 msgid "Dark"
 msgstr "Mörk"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:103
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:99
 #: ../inc/panel/theme-options.php:427
 msgid "Right Sidebar"
 msgstr "Höger Sidopanel"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:104
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:100
 #: ../inc/panel/theme-options.php:432
 msgid "Left Sidebar"
 msgstr "Vänster Sidopanel"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:105
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:101
 #: ../inc/panel/theme-options.php:437
 msgid "No Sidebar"
 msgstr "Ingen Sidopanel"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:120
-#: ../inc/panel/customizer/customizer.php:272
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:116
+#: ../inc/panel/customizer/customizer.php:260
 #: ../inc/panel/theme-options.php:456
 msgid "Full Content Display"
 msgstr "Visa Hela Blogginlägg "
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:121
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:117
 #: ../inc/panel/theme-options.php:452
 msgid "Excerpt/Blog Display"
 msgstr "Visa Utdrag Blogginlägg "
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:134
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:130
 msgid "Homepage"
 msgstr ""
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:135
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:131
 #: ../inc/panel/theme-options.php:599
 msgid "Entire Site"
 msgstr "Hela Sidan"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:136
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:132
 #: ../inc/panel/theme-options.php:603
 msgid "Disable"
 msgstr "Avaktivera"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:150
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:146
 #: ../inc/panel/theme-options.php:618
 msgid "fade"
 msgstr "tona"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:151
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:147
 #: ../inc/panel/theme-options.php:619
 msgid "wipe"
 msgstr "sudda"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:152
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:154
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:148
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:150
 #: ../inc/panel/theme-options.php:620
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:153
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:149
 #: ../inc/panel/theme-options.php:621
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:155
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:151
 #: ../inc/panel/theme-options.php:622
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:156
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:152
 #: ../inc/panel/theme-options.php:623
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:157
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:153
 #: ../inc/panel/theme-options.php:624
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:158
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:154
 #: ../inc/panel/theme-options.php:625
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:159
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:155
 #: ../inc/panel/theme-options.php:626
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:160
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:156
 #: ../inc/panel/theme-options.php:627
 msgid "cover"
 msgstr "täcka"
 
-#: ../inc/panel/catchevolution-themeoptions-defaults.php:161
+#: ../inc/panel/catchevolution-themeoptions-defaults.php:157
 #: ../inc/panel/theme-options.php:628
 msgid "shuffle"
 msgstr "blanda"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:47
+#: ../inc/panel/customizer/customizer-custom-controls.php:34
+msgid "All Categories"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer-custom-controls.php:48
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:60
+#: ../inc/panel/customizer/customizer-custom-controls.php:61
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:64
+#: ../inc/panel/customizer/customizer-custom-controls.php:65
 #: ../inc/panel/theme-options.php:106
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:68
+#: ../inc/panel/customizer/customizer-custom-controls.php:69
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:72
+#: ../inc/panel/customizer/customizer-custom-controls.php:73
 #: ../inc/panel/theme-options.php:104
 msgid "Donate Now"
 msgstr "Donera Nu"
 
-#: ../inc/panel/customizer/customizer-custom-controls.php:76
+#: ../inc/panel/customizer/customizer-custom-controls.php:77
 msgid "Review"
 msgstr ""
 
@@ -830,83 +825,60 @@ msgstr "Tema Inställningar"
 msgid "Basic theme Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:38
-msgid "Favicon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:44
-msgid "Webclip Icon Options"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:45
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
-"144px height, which will support High Resolution Devices like iPad Retina"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:50
-#: ../inc/panel/theme-options.php:222
+#: ../inc/panel/customizer/customizer.php:38 ../inc/panel/theme-options.php:222
 msgid "Header Options"
 msgstr "Header Inställningar"
 
-#: ../inc/panel/customizer/customizer.php:55
+#: ../inc/panel/customizer/customizer.php:43
 msgid "Search Text Settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:60
-#: ../inc/panel/theme-options.php:418
+#: ../inc/panel/customizer/customizer.php:48 ../inc/panel/theme-options.php:418
 msgid "Layout Options"
 msgstr "Layout Inställningar"
 
-#: ../inc/panel/customizer/customizer.php:65
-#: ../inc/panel/theme-options.php:474
+#: ../inc/panel/customizer/customizer.php:53 ../inc/panel/theme-options.php:474
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Hemsida / Framsida Kategori Inställningar"
 
-#: ../inc/panel/customizer/customizer.php:70
-#: ../inc/panel/theme-options.php:508
+#: ../inc/panel/customizer/customizer.php:58 ../inc/panel/theme-options.php:508
 msgid "Excerpt / More Tag Settings"
 msgstr "Utdrag / Mer Etikett Inställningar"
 
-#: ../inc/panel/customizer/customizer.php:75
-#: ../inc/panel/theme-options.php:534
+#: ../inc/panel/customizer/customizer.php:63 ../inc/panel/theme-options.php:534
 msgid "Feed Redirect"
 msgstr "Feed Omdirigering"
 
-#: ../inc/panel/customizer/customizer.php:80
-#: ../inc/panel/theme-options.php:556
+#: ../inc/panel/customizer/customizer.php:68 ../inc/panel/theme-options.php:556
 msgid "Custom CSS"
 msgstr "Anpassad CSS"
 
-#: ../inc/panel/customizer/customizer.php:88
-#: ../inc/panel/customizer/customizer.php:89
-#: ../inc/panel/theme-options.php:125
+#: ../inc/panel/customizer/customizer.php:76
+#: ../inc/panel/customizer/customizer.php:77 ../inc/panel/theme-options.php:125
 msgid "Featured Post Slider"
 msgstr "Framhävda Inlägg Bildspel"
 
-#: ../inc/panel/customizer/customizer.php:93
-#: ../inc/panel/theme-options.php:587
+#: ../inc/panel/customizer/customizer.php:81 ../inc/panel/theme-options.php:587
 msgid "Slider Options"
 msgstr "Inställningar Bildspel"
 
-#: ../inc/panel/customizer/customizer.php:101
-#: ../inc/panel/customizer/customizer.php:106
-#: ../inc/panel/theme-options.php:126
+#: ../inc/panel/customizer/customizer.php:89
+#: ../inc/panel/customizer/customizer.php:94 ../inc/panel/theme-options.php:126
 msgid "Social Links"
 msgstr "Sociala Länkar"
 
-#: ../inc/panel/customizer/customizer.php:102
+#: ../inc/panel/customizer/customizer.php:90
 msgid "Add your social links here"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:113
-#: ../inc/panel/customizer/customizer.php:118
+#: ../inc/panel/customizer/customizer.php:101
+#: ../inc/panel/customizer/customizer.php:106
 #: ../inc/panel/theme-options.php:128
 msgid "Tools"
 msgstr "Webmaster Verktyg"
 
-#: ../inc/panel/customizer/customizer.php:114
-#: ../inc/panel/customizer/customizer.php:119
+#: ../inc/panel/customizer/customizer.php:102
+#: ../inc/panel/customizer/customizer.php:107
 #, php-format
 msgid ""
 "Tools falls under Plugins Territory according to Theme Review Guidelines in "
@@ -915,203 +887,187 @@ msgid ""
 "target=\"_blank\" href=\"%s\">Catch Web Tools</a>  plugin."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:163
+#: ../inc/panel/customizer/customizer.php:151
 msgid "Extra Menu Options specific to this theme"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:165
+#: ../inc/panel/customizer/customizer.php:153
 #: ../inc/panel/theme-options.php:309
 msgid "Menu Options"
 msgstr "Meny Inställningar"
 
-#: ../inc/panel/customizer/customizer.php:173
+#: ../inc/panel/customizer/customizer.php:161
 #: ../inc/panel/theme-options.php:373
 msgid "Default Color Scheme"
 msgstr "Standardfärgschema"
 
-#: ../inc/panel/customizer/customizer.php:185
+#: ../inc/panel/customizer/customizer.php:173
 msgid "Check to Disable Primary & Secondary Menu"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:197
+#: ../inc/panel/customizer/customizer.php:185
 msgid "Check to Disable Header"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:207
-#: ../inc/panel/customizer/customizer.php:217
+#: ../inc/panel/customizer/customizer.php:195
+#: ../inc/panel/customizer/customizer.php:205
 msgid "Check to Disable Site Title"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:227
+#: ../inc/panel/customizer/customizer.php:215
 msgid "Check to Move Site Title and Tagline before the logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:237
+#: ../inc/panel/customizer/customizer.php:225
 msgid "Check to Separate Logo and Site Details"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:249
+#: ../inc/panel/customizer/customizer.php:237
 #: ../inc/panel/theme-options.php:355
 msgid "Default Display Text in Search"
 msgstr "Standardtext i Sök"
 
-#: ../inc/panel/customizer/customizer.php:283
+#: ../inc/panel/customizer/customizer.php:271
 msgid "Check to Reset Layout"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:284
-#: ../inc/panel/customizer/customizer.php:335
+#: ../inc/panel/customizer/customizer.php:272
+#: ../inc/panel/customizer/customizer.php:323
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:296
+#: ../inc/panel/customizer/customizer.php:284
 #: ../inc/panel/theme-options.php:480
 msgid "Front page posts categories:"
 msgstr "Framsida Inlägg Kategorier"
 
-#: ../inc/panel/customizer/customizer.php:297
+#: ../inc/panel/customizer/customizer.php:285
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:308
+#: ../inc/panel/customizer/customizer.php:296
 #: ../inc/panel/theme-options.php:513
 msgid "More Tag Text"
 msgstr "Mera Ettikett Text"
 
-#: ../inc/panel/customizer/customizer.php:318
+#: ../inc/panel/customizer/customizer.php:306
 #: ../inc/panel/theme-options.php:518
 msgid "Excerpt length(words)"
 msgstr "Utdragets längd (ord)"
 
-#: ../inc/panel/customizer/customizer.php:334
+#: ../inc/panel/customizer/customizer.php:322
 msgid "Check to Reset Excerpt"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:346
+#: ../inc/panel/customizer/customizer.php:334
 msgid "Feed Redirect url"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:347
+#: ../inc/panel/customizer/customizer.php:335
 msgid " Add in the Feedburner URL"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:359
+#: ../inc/panel/customizer/customizer.php:347
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:371
+#: ../inc/panel/customizer/customizer.php:359
 msgid "Enable Slider"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:382
+#: ../inc/panel/customizer/customizer.php:370
 #: ../inc/panel/theme-options.php:608
 msgid "Number of Slides"
 msgstr "Antal i Bildspel"
 
-#: ../inc/panel/customizer/customizer.php:383
+#: ../inc/panel/customizer/customizer.php:371
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:398
+#: ../inc/panel/customizer/customizer.php:386
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:409
+#: ../inc/panel/customizer/customizer.php:397
 #: ../inc/panel/theme-options.php:633
 msgid "Transition Delay"
 msgstr "Övergång Fördröjning"
 
-#: ../inc/panel/customizer/customizer.php:425
+#: ../inc/panel/customizer/customizer.php:413
 #: ../inc/panel/theme-options.php:640
 msgid "Transition Length"
 msgstr "Övergång Tid"
 
-#: ../inc/panel/customizer/customizer.php:443
+#: ../inc/panel/customizer/customizer.php:431
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:454
+#: ../inc/panel/customizer/customizer.php:442
 msgid "Check to Enable Social Icons in Footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:503
+#: ../inc/panel/customizer/customizer.php:491
 #: ../inc/panel/theme-options.php:721
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/customizer/customizer.php:523
+#: ../inc/panel/customizer/customizer.php:511
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:695
+#: ../inc/panel/customizer/customizer.php:683
 #: ../inc/panel/theme-options.php:830
 msgid "Code to display on Header"
 msgstr "Kod att lägga in i Sidhuvud"
 
-#: ../inc/panel/customizer/customizer.php:696
+#: ../inc/panel/customizer/customizer.php:684
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:706
+#: ../inc/panel/customizer/customizer.php:694
 #: ../inc/panel/theme-options.php:839
 msgid "Code to display on Footer"
 msgstr "Kod att lägga in i sidfot"
 
-#: ../inc/panel/customizer/customizer.php:707
+#: ../inc/panel/customizer/customizer.php:695
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:723
-msgid "Check to Disable Favicon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:733
-msgid "Fav Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:745
-msgid "Check to Disable Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:755
-msgid "Web Clip Icon"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:773
+#: ../inc/panel/customizer/customizer.php:711
 msgid "Check to Disable Header Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:783
+#: ../inc/panel/customizer/customizer.php:721
 msgid "Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:960
+#: ../inc/panel/customizer/customizer.php:898
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:974
+#: ../inc/panel/customizer/customizer.php:912
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:976
+#: ../inc/panel/customizer/customizer.php:914
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:987
+#: ../inc/panel/customizer/customizer.php:925
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:997
-#: ../inc/panel/customizer/customizer.php:1008
+#: ../inc/panel/customizer/customizer.php:935
+#: ../inc/panel/customizer/customizer.php:946
 msgid "Important Links"
 msgstr ""
 
@@ -1128,7 +1084,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:92 ../inc/panel/theme-options.php:93
-#: ../inc/panel/theme-options.php:1210
+#: ../inc/panel/theme-options.php:1213
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1563,19 +1519,19 @@ msgstr ""
 "Notera: Här kan du lägga skript från Google, Facebook etc som laddas i "
 "sidfoten"
 
-#: ../inc/panel/theme-options.php:1178
+#: ../inc/panel/theme-options.php:1181
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1199
+#: ../inc/panel/theme-options.php:1202
 msgid "Theme: Catch Evolution by "
 msgstr "Theme: Catch Evolution by "
 
-#: ../inc/panel/theme-options.php:1221
+#: ../inc/panel/theme-options.php:1224
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1221
+#: ../inc/panel/theme-options.php:1224
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
@@ -1608,6 +1564,9 @@ msgstr "Nästa <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Tagg Arkiv: %s"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #, fuzzy
 #~ msgid "Catch Evolution Pro"

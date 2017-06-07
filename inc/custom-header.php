@@ -66,7 +66,7 @@ function catchevolution_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
-	if ( $text_color == HEADER_TEXTCOLOR )
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color )
 		return;
 
 	// If we get this far, we have custom styles. Let's do this.
@@ -141,7 +141,7 @@ function catchevolution_admin_header_style() {
 	}
 	<?php
 		// If the user has set a custom color for the text use that
-		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) !== get_header_textcolor() ) :
 	?>
 		#site-title a,
 		#site-description {
@@ -280,7 +280,7 @@ function catchevolution_logo() {
 				<div id="site-logo" class="' . esc_attr( $classses ) . '">' . get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		elseif ( empty( $options[ 'remove_header_logo' ] ) ) {
+		elseif ( empty( $options['remove_header_logo'] ) ) {
 			//@remove elseif block when WP v4.8 is released
 			echo '<!-- refreshing cache -->';
 
@@ -303,7 +303,7 @@ function catchevolution_logo() {
 
 			$catchevolution_logo .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
-			if ( !empty( $options[ 'featured_logo_header' ] ) ) {
+			if ( !empty( $options['featured_logo_header'] ) ) {
 
 				$catchevolution_logo .= '<img src="' . esc_url( $options['featured_logo_header'] ) . '" alt="' . get_bloginfo( 'name' ) . '" />';
 
@@ -499,7 +499,7 @@ function catchevolution_header_menu() {
         <?php if ( has_nav_menu( 'secondary', 'catch-evolution' ) ) {
 			// Check is footer menu is enable or not
 			$options = get_option( 'catchevolution_options' );
-			if ( !empty ($options ['enable_menus'] ) ) :
+			if ( !empty ($options['enable_menus'] ) ) :
 				$menuclass = "mobile-enable";
 			else :
 				$menuclass = "mobile-disable";

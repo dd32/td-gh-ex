@@ -11,7 +11,7 @@
 	// get data value from theme options
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
-	$layout = $options[ 'sidebar_layout' ];
+	$layout = $options['sidebar_layout'];
 	if ( 'no-sidebar-full-width' == $layout ) {
 		$imagesize = "featured-slider-larger";
 	}
@@ -71,8 +71,8 @@
 			<?php
 			global $catchevolution_options_settings;
 			$options = $catchevolution_options_settings;
-			$more_tag_text = $options[ 'more_tag_text' ];
-			the_content( sprintf( __( '%s', 'catch-evolution' ), esc_attr( $more_tag_text ) ) ); ?>
+			$more_tag_text = $options['more_tag_text'];
+			the_content( $more_tag_text ); ?>
 			<?php wp_link_pages( array(
                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-evolution' ) . '</span>',
                 'after'			=> '</div>',

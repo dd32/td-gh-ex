@@ -10,7 +10,7 @@
 global $catchevolution_options_settings;
 $options = $catchevolution_options_settings;
 
-$catchevolution_search_display_text = $options[ 'search_display_text' ];
+$catchevolution_search_display_text = $options['search_display_text'];
 
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">

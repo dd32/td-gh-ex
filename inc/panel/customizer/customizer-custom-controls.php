@@ -31,6 +31,7 @@ class Catchevolution_Customize_Dropdown_Categories_Control extends WP_Customize_
 				'hide_empty'       => false,
 				'show_option_none' => false,
 				'hide_if_empty'    => false,
+				'show_option_all'  => __( 'All Categories', 'catch-evolution' )
 			)
 		);
 

@@ -5,25 +5,6 @@
  * @since Catch Evolution 2.6
  */
 
-//@remove Remove block when WP v4.8	 is released
-if( ! function_exists( 'catchevolution_is_favicon_active' ) ) :
-	/**
-	* Return true if no core site icon is present
-	*
-	* @since Catch Evolution 2.6
-	*/
-	function catchevolution_is_site_icon_active( $control ) {
-		//Check if has_site_icon function exists. If it does not, WP version is less than 4.3
-		if ( function_exists( 'has_site_icon' ) ) {
-			//Return true if core site icon is not present, else return false
-			return !has_site_icon();
-		}
-		else {
-			return true;
-		}
-	}
-endif;
-
 
 if( ! function_exists( 'catchevolution_is_feed_url_present' ) ) :
 	/**
