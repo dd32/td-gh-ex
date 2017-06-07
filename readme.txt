@@ -206,3 +206,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 = Version 1.5.8 =
 * Added Xing social button
 * Minor bug fixes
+
+= Version 1.5.9 =
+* Added compatibility with WordPress 4.8
+* Minor bug fixes

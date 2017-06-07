@@ -10,16 +10,19 @@
  */
 if ( ! function_exists( 'blogghiamo_fix_tag_cloud' ) ) {
 	function blogghiamo_fix_tag_cloud($tag_string){
-	   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+	   return preg_replace('/ style=("|\')(.*?)("|\')/','',$tag_string);
 	}
 }
-add_filter('wp_generate_tag_cloud', 'blogghiamo_fix_tag_cloud',10,3);
+add_filter('wp_generate_tag_cloud', 'blogghiamo_fix_tag_cloud',10,1);
 
 /**
  * Replace more Excerpt
  */
 if ( ! function_exists( 'blogghiamo_new_excerpt_more' ) ) {
 	function blogghiamo_new_excerpt_more($more) {
+		if ( is_admin() ) {
+			return $more;
+		}
 		return '&hellip;';
 	}
 }
