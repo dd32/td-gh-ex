@@ -16,7 +16,7 @@ do_action( 'catchkathmandu_before_header_right' ); ?>
 global $catchkathmandu_options_settings;
 $options = $catchkathmandu_options_settings;
 
-if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
+if ( $options['disable_header_right_sidebar'] == "0" ) {	?>
     <div id="header-right" class="header-sidebar widget-area">
     	<?php if ( is_active_sidebar( 'sidebar-header-right' ) ) :
         	dynamic_sidebar( 'sidebar-header-right' );

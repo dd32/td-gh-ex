@@ -11,7 +11,7 @@ global $catchkathmandu_options_settings;
 $options = $catchkathmandu_options_settings; 
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ]; 
+$moretag = $options['more_tag_text']; 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +21,7 @@ $moretag = $options[ 'more_tag_text' ];
 	<div class="entry-container post-format">
     
         <header class="entry-format">
-        	<a href="<?php echo get_post_format_link( 'link' ); ?>" title="<?php _e( 'All Link Posts', 'catch-kathmandu' ); ?>"><?php _e( 'Link', 'catch-kathmandu' ); ?></a>
+        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'catch-kathmandu' ); ?>"><?php esc_attr_e( 'Link', 'catch-kathmandu' ); ?></a>
         </header>
         
         <div class="entry-content">

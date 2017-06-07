@@ -142,7 +142,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catch-kathmandu' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
+                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_headline'] ); ?></textarea>
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -151,7 +151,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 15 words.', 'catch-kathmandu' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
+                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_subheadline'] ); ?></textarea>
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -160,7 +160,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 3 words.', 'catch-kathmandu' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[homepage_headline_button]" value="<?php echo esc_attr( $options[ 'homepage_headline_button' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[homepage_headline_button]" value="<?php echo esc_attr( $options['homepage_headline_button'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -168,7 +168,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Headine Link', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="70" name="catchkathmandu_options[homepage_headline_url]" value="<?php echo esc_url( $options[ 'homepage_headline_url' ] ); ?>" />
+                                    <input type="text" size="70" name="catchkathmandu_options[homepage_headline_url]" value="<?php echo esc_url( $options['homepage_headline_url'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -221,7 +221,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Headline', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="65" name="catchkathmandu_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-kathmandu' ); ?>
+                                    <input type="text" size="65" name="catchkathmandu_options[homepage_featured_headline]" value="<?php echo esc_attr( $options['homepage_featured_headline'] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-kathmandu' ); ?>
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -229,7 +229,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Number of Featured Content', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="2" name="catchkathmandu_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
+                                    <input type="text" size="2" name="catchkathmandu_options[homepage_featured_qty]" value="<?php echo intval( $options['homepage_featured_qty'] ); ?>" size="2" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -250,7 +250,7 @@ function catchkathmandu_theme_options_do_page() {
                                 </div>
                             </div><!-- .row -->
 
-                            <?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?>
+                            <?php for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ): ?>
                                 <div class="repeat-content-wrap">
                                     <h2 class="title"><?php printf( esc_attr__( 'Featured Content #%s', 'catch-kathmandu' ), $i ); ?></h2>
                                     <div class="row">
@@ -258,8 +258,8 @@ function catchkathmandu_theme_options_do_page() {
                                             <?php _e( 'Image', 'catch-kathmandu' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input class="upload-url" size="70" type="text" name="catchkathmandu_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input  ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catch-kathmandu' ), $i ); ?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catch-kathmandu' ); } else { esc_attr_e( 'Add Image','catch-kathmandu' ); } ?>" />
+                                            <input class="upload-url" size="70" type="text" name="catchkathmandu_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options['homepage_featured_image'] ) ) echo esc_url( $options['homepage_featured_image'][ $i ] ); ?>" />
+                                            <input  ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catch-kathmandu' ), $i ); ?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options['homepage_featured_image'] ) ) { esc_attr_e( 'Change Image','catch-kathmandu' ); } else { esc_attr_e( 'Add Image','catch-kathmandu' ); } ?>" />
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -267,7 +267,7 @@ function catchkathmandu_theme_options_do_page() {
                                             <?php _e( 'Link URL', 'catch-kathmandu' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options[ 'homepage_featured_url' ] ) ) echo esc_url( $options[ 'homepage_featured_url' ][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catch-kathmandu' ); ?>
+                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options['homepage_featured_url'] ) ) echo esc_url( $options['homepage_featured_url'][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catch-kathmandu' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -276,7 +276,7 @@ function catchkathmandu_theme_options_do_page() {
                                         </div>
                                         <div class="col col-2">
                                             <input type='hidden' value='0' name='catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]'>
-                                            <input type="checkbox" name="catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options[ 'homepage_featured_base' ] ) ) checked( '1', $options[ 'homepage_featured_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catch-kathmandu' ); ?>
+                                            <input type="checkbox" name="catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options['homepage_featured_base'] ) ) checked( '1', $options['homepage_featured_base'][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catch-kathmandu' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -284,7 +284,7 @@ function catchkathmandu_theme_options_do_page() {
                                             <?php _e( 'Title', 'catch-kathmandu' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catch-kathmandu' ); ?>
+                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options['homepage_featured_title'] ) ) echo esc_attr( $options['homepage_featured_title'][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catch-kathmandu' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -293,7 +293,7 @@ function catchkathmandu_theme_options_do_page() {
                                              <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'catch-kathmandu' ); ?></small></p>
                                         </div>
                                         <div class="col col-2">
-                                            <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
+                                            <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options['homepage_featured_content'] ) ) echo esc_html( $options['homepage_featured_content'][ $i ] ); ?></textarea>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->
@@ -334,8 +334,8 @@ function catchkathmandu_theme_options_do_page() {
                                         <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catch-kathmandu' ); ?></option>
                                         <?php /* Get the list of categories */
                                             $categories = get_categories();
-                                            if( empty( $options[ 'front_page_category' ] ) ) {
-                                                $options[ 'front_page_category' ] = array();
+                                            if( empty( $options['front_page_category'] ) ) {
+                                                $options['front_page_category'] = array();
                                             }
                                             foreach ( $categories as $category) :
                                         ?>
@@ -498,7 +498,7 @@ function catchkathmandu_theme_options_do_page() {
                                     	<?php _e( 'Featured Header Image URL', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options [ 'featured_header_image' ] ); ?>" /> <input ref="<?php esc_attr_e( 'Insert as Featured Header Image','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Image','catch-kathmandu' );?>" />
+                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options['featured_header_image'] ); ?>" /> <input ref="<?php esc_attr_e( 'Insert as Featured Header Image','catch-kathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Image','catch-kathmandu' );?>" />
                                   	</div>
                               	</div><!-- .row -->
                                 <div class="row">
@@ -506,7 +506,7 @@ function catchkathmandu_theme_options_do_page() {
                                     	<?php _e( 'Featured Header Image Alt/Title Tag', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
+                                    	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image_alt]" value="<?php echo esc_attr( $options['featured_header_image_alt'] ); ?>" />
                                   	</div>
                               	</div><!-- .row -->
                                 <div class="row">
@@ -514,7 +514,7 @@ function catchkathmandu_theme_options_do_page() {
                                     	<?php _e( 'Featured Header Image Link URL', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<input type="text" size="65" name="catchkathmandu_options[featured_header_image_url]" value="<?php echo esc_url( $options [ 'featured_header_image_url' ] ); ?>" />
+                                    	<input type="text" size="65" name="catchkathmandu_options[featured_header_image_url]" value="<?php echo esc_url( $options['featured_header_image_url'] ); ?>" />
                                   	</div>
                               	</div><!-- .row -->
                                 <div class="row">
@@ -528,7 +528,7 @@ function catchkathmandu_theme_options_do_page() {
                               	</div><!-- .row -->
                                 <div class="row">
                                 	<div class="col col-1">
-                                    	<?php if( $options[ 'reset_featured_image' ] == "1" ) { $options[ 'reset_featured_image' ] = "0"; } ?>
+                                    	<?php if( $options['reset_featured_image'] == "1" ) { $options['reset_featured_image'] = "0"; } ?>
                                     	<?php _e( 'Reset Header Featured Image Options?', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
@@ -616,7 +616,7 @@ function catchkathmandu_theme_options_do_page() {
                             </div><!-- .row -->
                             <div class="row">
                             	<div class="col col-header">
-                                	<?php if( $options[ 'reset_layout' ] == "1" ) { $options[ 'reset_layout' ] = "0"; } ?>
+                                	<?php if( $options['reset_layout'] == "1" ) { $options['reset_layout'] = "0"; } ?>
                                 	<?php _e( 'Reset Layout?', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-options">
@@ -703,7 +703,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'More Tag Text', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="45" name="catchkathmandu_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
+                                	<input type="text" size="45" name="catchkathmandu_options[more_tag_text]" value="<?php echo esc_attr( $options['more_tag_text'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -711,12 +711,12 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Excerpt length(words)', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="3" name="catchkathmandu_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" />
+                                	<input type="text" size="3" name="catchkathmandu_options[excerpt_length]" value="<?php echo intval( $options['excerpt_length'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php if( $options[ 'reset_moretag' ] == "1" ) { $options[ 'reset_moretag' ] = "0"; } ?>
+                                	<?php if( $options['reset_moretag'] == "1" ) { $options['reset_moretag'] = "0"; } ?>
                                 	<?php _e( 'Reset Excerpt?', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
@@ -738,7 +738,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Feed Redirect URL', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="70" name="catchkathmandu_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catch-kathmandu' ); ?>
+                                	<input type="text" size="70" name="catchkathmandu_options[feed_url]" value="<?php echo esc_attr( $options['feed_url'] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catch-kathmandu' ); ?>
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -759,7 +759,7 @@ function catchkathmandu_theme_options_do_page() {
                                     	<?php _e( 'Enter your custom CSS styles.', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<textarea name="catchkathmandu_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                    	<textarea name="catchkathmandu_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options['custom_css'] ); ?></textarea>
                                 	</div>
                               	</div><!-- .row -->
                             	<div class="row">
@@ -844,7 +844,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Number of Slides', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="catchkathmandu_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" size="2" />
+                                	<input type="text" name="catchkathmandu_options[slider_qty]" value="<?php echo intval( $options['slider_qty'] ); ?>" size="2" />
                              	</div>
                           	</div><!-- .row -->
                          	<div class="row">
@@ -872,7 +872,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Transition Delay', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="catchkathmandu_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
+                                	<input type="text" name="catchkathmandu_options[transition_delay]" value="<?php echo $options['transition_delay']; ?>" size="2" />
                          			<span class="description"><?php _e( 'second(s)', 'catch-kathmandu' ); ?></span>
                              	</div>
                           	</div><!-- .row -->
@@ -881,7 +881,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Transition Length', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="catchkathmandu_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
+                                	<input type="text" name="catchkathmandu_options[transition_duration]" value="<?php echo $options['transition_duration']; ?>" size="2" />
                                  	<span class="description"><?php _e( 'second(s)', 'catch-kathmandu' ); ?></span>
                              	</div>
                           	</div><!-- .row -->
@@ -903,15 +903,15 @@ function catchkathmandu_theme_options_do_page() {
                                     <input type="checkbox" id="headerlogo" name="catchkathmandu_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'catch-kathmandu'); ?>
                              	</div>
                           	</div><!-- .row -->
-                            <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
+                            <?php for ( $i = 1; $i <= $options['slider_qty']; $i++ ): ?>
                                 <div class="repeat-content-wrap">
                                     <div class="row">
                                         <div class="col col-1">
                                             <?php printf( esc_attr__( 'Featured Post Slider #%s', 'catch-kathmandu' ), $i ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" name="catchkathmandu_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'catch-kathmandu' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-kathmandu' ); ?></a>
+                                            <input type="text" name="catchkathmandu_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>" />
+                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'catch-kathmandu' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-kathmandu' ); ?></a>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->
@@ -937,8 +937,8 @@ function catchkathmandu_theme_options_do_page() {
                                     <select name="catchkathmandu_options[slider_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
                                         <option value="0" <?php if ( empty( $options['slider_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'catch-kathmandu' ); ?></option>
                                         <?php /* Get the list of categories */
-                                            if( empty( $options[ 'slider_category' ] ) ) {
-                                                $options[ 'slider_category' ] = array();
+                                            if( empty( $options['slider_category'] ) ) {
+                                                $options['slider_category'] = array();
                                             }
                                             $categories = get_categories();
                                             foreach ( $categories as $category) :
@@ -970,7 +970,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Facebook', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_facebook]" value="<?php echo esc_url( $options['social_facebook'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1002,7 +1002,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Youtube', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_youtube]" value="<?php echo esc_url( $options['social_youtube'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1010,7 +1010,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Vimeo', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_vimeo]" value="<?php echo esc_url( $options['social_vimeo'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
 							<div class="row">
@@ -1034,7 +1034,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Foursquare', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_foursquare]" value="<?php echo esc_url( $options[ 'social_foursquare' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_foursquare]" value="<?php echo esc_url( $options['social_foursquare'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1042,7 +1042,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Flickr', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_flickr]" value="<?php echo esc_url( $options['social_flickr'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1050,7 +1050,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Tumblr', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_tumblr]" value="<?php echo esc_url( $options['social_tumblr'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1058,7 +1058,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'deviantART', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_deviantart]" value="<?php echo esc_url( $options['social_deviantart'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1066,7 +1066,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Dribbble', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_dribbble]" value="<?php echo esc_url( $options['social_dribbble'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1074,7 +1074,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'MySpace', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_myspace]" value="<?php echo esc_url( $options['social_myspace'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1082,7 +1082,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'WordPress', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_wordpress]" value="<?php echo esc_url( $options['social_wordpress'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1090,7 +1090,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'RSS', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_rss]" value="<?php echo esc_url( $options['social_rss'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1098,7 +1098,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Delicious', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_delicious]" value="<?php echo esc_url( $options[ 'social_delicious' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_delicious]" value="<?php echo esc_url( $options['social_delicious'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1106,7 +1106,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Last.fm', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_lastfm]" value="<?php echo esc_url( $options['social_lastfm'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1114,7 +1114,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Instagram', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_instagram]" value="<?php echo esc_url( $options['social_instagram'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1122,7 +1122,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'GitHub', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_github]" value="<?php echo esc_url( $options['social_github'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1138,7 +1138,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'My World', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_myworld]" value="<?php echo esc_url( $options['social_myworld'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1146,7 +1146,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Odnoklassniki', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_odnoklassniki]" value="<?php echo esc_url( $options['social_odnoklassniki'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1154,7 +1154,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Goodreads', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_goodreads]" value="<?php echo esc_url( $options['social_goodreads'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1162,7 +1162,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Skype', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_skype]" value="<?php echo esc_attr( $options['social_skype'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1170,7 +1170,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Soundcloud', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_soundcloud]" value="<?php echo esc_url( $options['social_soundcloud'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1178,7 +1178,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Email', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_email]" value="<?php echo sanitize_email( $options['social_email'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1186,7 +1186,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Contact', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_contact]" value="<?php echo esc_url( $options['social_contact'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1194,7 +1194,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Xing', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_xing]" value="<?php echo esc_url( $options['social_xing'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1202,7 +1202,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php _e( 'Meetup', 'catch-kathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="catchkathmandu_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
+                                    <input type="text" size="45" name="catchkathmandu_options[social_meetup]" value="<?php echo esc_url( $options['social_meetup'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1224,7 +1224,7 @@ function catchkathmandu_theme_options_do_page() {
                                         <?php _e( 'Code to display on Header', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                         <textarea name="catchkathmandu_options[analytic_header]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea><br /><span class="description"><?php _e('Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catch-kathmandu' ); ?></span>
+                                         <textarea name="catchkathmandu_options[analytic_header]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options['analytic_header'] ); ?></textarea><br /><span class="description"><?php _e('Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catch-kathmandu' ); ?></span>
                                     </div>
                                 </div><!-- .row -->
                                 <div class="row">
@@ -1232,7 +1232,7 @@ function catchkathmandu_theme_options_do_page() {
                                         <?php _e('Code to display on Footer', 'catch-kathmandu' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                         <textarea name="catchkathmandu_options[analytic_footer]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea><br /><span class="description"><?php _e( 'Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catch-kathmandu' ); ?></span>
+                                         <textarea name="catchkathmandu_options[analytic_footer]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options['analytic_footer'] ); ?></textarea><br /><span class="description"><?php _e( 'Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catch-kathmandu' ); ?></span>
                                     </div>
                                 </div><!-- .row -->
                                 <div class="row">

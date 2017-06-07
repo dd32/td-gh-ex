@@ -11,7 +11,7 @@ global $catchkathmandu_options_settings;
 $options = $catchkathmandu_options_settings; 
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ];
+$moretag = $options['more_tag_text'];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

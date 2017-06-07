@@ -118,7 +118,7 @@ function catchkathmandu_options_set_defaults( $catchkathmandu_options_defaults )
  * @return string
  */
 function catchkathmandu_the_year() {
-	return date( __( 'Y', 'catch-kathmandu' ) );
+	return esc_attr( date_i18n( __( 'Y', 'catch-kathmandu' ) ) );
 }
 
 

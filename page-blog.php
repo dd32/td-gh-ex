@@ -25,14 +25,14 @@ $options = $catchkathmandu_options_settings;
 $current_content_layout = $options['content_layout'];
 
 //More Tag
-$moretag = $options[ 'more_tag_text' ];
+$moretag = $options['more_tag_text'];
 ?>
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
             
             	<?php 
-				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				$paged = intval( ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
 				
 				$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 

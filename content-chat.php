@@ -11,7 +11,7 @@
 global $catchkathmandu_options_settings;
 $options = $catchkathmandu_options_settings; 
 //More Tag
-$moretag = $options[ 'more_tag_text' ];  
+$moretag = $options['more_tag_text'];  
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>  
@@ -20,7 +20,7 @@ $moretag = $options[ 'more_tag_text' ];
     
         <header class="entry-header">
             <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-kathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'chat' ); ?>" title="<?php _e( 'All Chat Posts', 'catch-kathmandu' ); ?>"><?php _e( 'Chat', 'catch-kathmandu' ); ?></a></h2>
+            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'chat' ) ); ?>" title="<?php esc_attr_e( 'All Chat Posts', 'catch-kathmandu' ); ?>"><?php esc_attr_e( 'Chat', 'catch-kathmandu' ); ?></a></h2>
     	</header><!-- .entry-header -->  
     
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

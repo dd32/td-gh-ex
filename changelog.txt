@@ -1,5 +1,10 @@
 == Change log ==
 
+Version 3.9.2
+* Code Optimization
+* Compatible with WordPress 4.8
+* Remove: Backward compatibility functions
+
 Version 3.9.1
 * Added: Option to Display all Categories in Customizer
 * Changed: Text in Customizer (Homepage Featured Content to Featured Content)
