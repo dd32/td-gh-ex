@@ -37,10 +37,10 @@ add_filter('excerpt_more', 'annina_new_excerpt_more');
  */
 if ( ! function_exists( 'annina_fix_tag_cloud' ) ) {
 	function annina_fix_tag_cloud($tag_string){
-	   return preg_replace("/style='font-size:.+pt;'/", '', $tag_string);
+	   return preg_replace('/ style=("|\')(.*?)("|\')/','',$tag_string);
 	}
 }
-add_filter('wp_generate_tag_cloud', 'annina_fix_tag_cloud',10,3);
+add_filter('wp_generate_tag_cloud', 'annina_fix_tag_cloud',10,1);
 
  /**
  * Register All Colors and Section
