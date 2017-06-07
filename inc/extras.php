@@ -32,8 +32,8 @@ function create_body_classes( $classes ) {
 
 	$classes[] = $layout;
 
-	//Masonry and default layout for archive only
-    if ( ( ( is_archive() && !is_home() )|| ( is_home() && is_front_page() ) ) && 'no-sidebar-full-width' == $layout  ) {
+	//Masonry and default layout for all pages other than singular
+    if ( 'no-sidebar-full-width' == $layout && ! is_singular() && ! is_404() ) {
 		$classes[] = 'create-masonry';
     }
 
@@ -186,15 +186,11 @@ if ( ! function_exists( 'create_get_theme_layout' ) ) :
 			$layout = 'default';
 		}
 
-		if ( is_archive() && !is_home() ) {
-			$layout 	= get_theme_mod( 'theme_layout', create_get_default_theme_options( 'theme_layout' ) );
-		}
-
 		if ( is_home() && is_front_page() ) {
 			$layout 	= get_theme_mod( 'homepage_layout', create_get_default_theme_options( 'homepage_layout' ) );
 		}
 
-		if( 'default' == $layout ) {
+		else{
 			//if layout is default, them the theme layour is the main layout
 			$layout = get_theme_mod( 'theme_layout', create_get_default_theme_options( 'theme_layout' ) );
 		}
@@ -312,7 +308,7 @@ add_action( 'create_footer', 'create_scrollup', 110 );
 function create_alter_home( $query ){
 	if( $query->is_main_query() && $query->is_home() ) {
 		$cats = get_theme_mod( 'front_page_category', create_get_default_theme_options( 'front_page_category' ) );
-		
+
 		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
 			$query->query_vars['category__in'] =  $cats;
 		}

@@ -371,7 +371,7 @@ if ( ! function_exists( 'create_copyright' ) ) :
 	function create_copyright() { ?>
 		<span class="site-copyright">
 			<?php
-			printf( _x( '&copy; %1$s %2$s' , '1: Year, 2: Site Title with home URL', 'create' ), date( 'Y' ), '<a href="' . esc_url( home_url( '/' ) ) . '"> ' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+			printf( _x( '&copy; %1$s %2$s' , '1: Year, 2: Site Title with home URL', 'create' ), esc_attr( date_i18n( __( 'Y', 'create' ) ) ), '<a href="' . esc_url( home_url( '/' ) ) . '"> ' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
 			?>
 		</span>
 	<?php

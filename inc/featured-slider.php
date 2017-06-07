@@ -207,7 +207,7 @@ function create_page_slider() {
 			</article><!-- .slides -->';
 		endwhile;
 
-		wp_reset_query();
+		wp_reset_postdata();
   	}
 	return $create_page_slider;
 }

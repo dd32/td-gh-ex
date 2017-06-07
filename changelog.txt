@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.4.2 =
+* Bug Fixed: Archive page title and description overlapping issue
+* Bug Fixed: Layout issue in blog page when static page is selected (Reported by lizzie)
+
 = 2.4.1 =
 * Added: Option to Display all Categories in Customizer
 * Code Optimization
