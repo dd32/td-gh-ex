@@ -89,7 +89,7 @@ function arise_layout_options() {
 	wp_nonce_field( basename( __FILE__ ), 'arise_custom_meta_box_nonce' ); // for security purpose ?>
 	<?php
 				foreach ($arise_layout_options as $field) {  
-					$arise_layout_meta = get_post_meta( $post->ID, $field['id'], true );
+					$arise_layout_meta = get_post_meta( get_the_ID(), $field['id'], true );
 					if(empty( $arise_layout_meta ) ){
 						$arise_layout_meta='default';
 					} ?>

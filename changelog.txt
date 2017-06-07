@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 2.1.3.0 =
+	- Fix - Undefined variable: post in freesia-empire/inc/settings/arise-common-functions.php on line 92
+
 = 2.1.2.9 =
 	- New - Compatible with Product Zoom, Gallery Lightbox and Slider
 	- Removed - TGM Plugin activation removed
