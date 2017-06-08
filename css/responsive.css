@@ -729,6 +729,16 @@ Responsive Style
 		width: 520px;
 	}
 
+	.admin-bar #fixed-header {
+		-moz-transition:    all 0.2s ease-in-out;
+	    -webkit-transition: all 0.2s ease-in-out;
+	    transition:         all 0.2s ease-in-out;
+	}
+	
+	.admin-bar #fixed-header.is-sticky {
+		top: 0;
+	}	
+
 	#logo-icon {
 	    width: 392px;
 	}

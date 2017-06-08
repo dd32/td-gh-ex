@@ -44,7 +44,7 @@ function fullframe_primary_menu() {
 
                 $logo_alt = ( '' != $options['logo_alt_text'] ) ? $options['logo_alt_text'] : get_bloginfo( 'name', 'display' );
 
-                if ( isset( $options[ 'logo_icon' ] ) &&  $options[ 'logo_icon' ] != '' &&  !empty( $options[ 'logo_icon' ] ) ){
+                if ( isset( $options['logo_icon'] ) &&  $options['logo_icon'] != '' &&  !empty( $options['logo_icon'] ) ){
                      echo '<div id="logo-icon"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">
                         <img src="' . esc_url( $options['logo_icon'] ) . '" alt="' . esc_attr(  $logo_alt ) . '">
                     </a></div>';

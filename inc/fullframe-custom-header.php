@@ -287,16 +287,16 @@ if ( ! function_exists( 'fullframe_featured_image' ) ) :
 			if ( '' != $header_image  ) {
 
 				// Header Image Link and Target
-				if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+				if ( !empty( $options['featured_header_image_url'] ) ) {
 					//support for qtranslate custom link
 					if ( function_exists( 'qtrans_convertURL' ) ) {
-						$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+						$link = qtrans_convertURL($options['featured_header_image_url']);
 					}
 					else {
-						$link = esc_url( $options[ 'featured_header_image_url' ] );
+						$link = esc_url( $options['featured_header_image_url'] );
 					}
 					//Checking Link Target
-					if ( !empty( $options[ 'featured_header_image_base' ] ) )  {
+					if ( !empty( $options['featured_header_image_base'] ) )  {
 						$target = '_blank';
 					}
 					else {
@@ -309,21 +309,21 @@ if ( ! function_exists( 'fullframe_featured_image' ) ) :
 				}
 
 				// Header Image Title/Alt
-				if ( !empty( $options[ 'featured_header_image_alt' ] ) ) {
-					$title = esc_attr( $options[ 'featured_header_image_alt' ] );
+				if ( !empty( $options['featured_header_image_alt'] ) ) {
+					$title = esc_attr( $options['featured_header_image_alt'] );
 				}
 				else {
 					$title = '';
 				}
 
 				// Header Image
-				$feat_image = '<img class="wp-post-image" alt="'.$title.'" src="'.esc_url(  $header_image ).'" />';
+				$feat_image = '<img class="wp-post-image" alt="' . esc_attr( $title ) . '" src="'.esc_url(  $header_image ).'" />';
 
 				$fullframe_featured_image = '<div id="header-featured-image">
 					<div class="wrapper">';
 					// Header Image Link
-					if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
-						$fullframe_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="'.$target.'">' . $feat_image . '</a>';
+					if ( !empty( $options['featured_header_image_url'] ) ) :
+						$fullframe_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="' . $target . '">' . $feat_image . '</a>';
 					else:
 						// if empty featured_header_image on theme options, display default
 						$fullframe_featured_image .= $feat_image;
@@ -414,7 +414,7 @@ if ( ! function_exists( 'fullframe_featured_page_post_image' ) ) :
 			$fullframe_featured_image = '<div id="header-featured-image" class =' . $featured_image_size . '>';
 				// Header Image Link
 				if ( '' != $featured_header_image_url ) :
-					$fullframe_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="'.$target.'">' . $feat_image . '</a>';
+					$fullframe_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="' . $target . '">' . $feat_image . '</a>';
 				else:
 					// if empty featured_header_image on theme options, display default
 					$fullframe_featured_image .= $feat_image;

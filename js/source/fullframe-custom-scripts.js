@@ -6,6 +6,7 @@
 jQuery(document).ready(function() {
 	var jQueryheader_search = jQuery( '#header-toggle' );
 	jQueryheader_search.click( function() {
+
 		var jQueryform_search = jQuery("div").find( '#masthead' );	
 			
 		if ( jQueryform_search.hasClass( 'displaynone' ) ) {
@@ -26,5 +27,20 @@ jQuery(document).ready(function() {
 		   name: 'mobile-header-left-nav',
 		   side: 'left' // By default
 		});
+		jQuery('#mobile-secondary-menu').sidr({
+		   name: 'mobile-secondary-nav',
+		   side: 'left' // By default
+		});
 	}
+
+	//Sticky Header
+    jQuery(window).scroll(function () {
+		if (jQuery(this).scrollTop() > 40) {
+			jQuery('#fixed-header').addClass("is-sticky");
+		} else {
+			jQuery('#fixed-header').removeClass("is-sticky");
+		}
+	});
+
+
 });

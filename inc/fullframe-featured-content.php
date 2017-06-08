@@ -42,9 +42,9 @@ function fullframe_featured_content_display() {
 	$page_id = $wp_query->get_queried_object_id();
 	if ( 'entire-site' == $enablecontent  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablecontent  ) ) {
 		if( ( !$fullframe_featured_content = get_transient( 'fullframe_featured_content_display' ) ) ) {
-			$layouts 	 = $options ['featured_content_layout'];
-			$headline 	 = $options ['featured_content_headline'];
-			$subheadline = $options ['featured_content_subheadline'];
+			$layouts 	 = $options['featured_content_layout'];
+			$headline 	 = $options['featured_content_headline'];
+			$subheadline = $options['featured_content_subheadline'];
 
 			echo '<!-- refreshing cache -->';
 
@@ -62,12 +62,12 @@ function fullframe_featured_content_display() {
 			}
 
 			//Check Featured Content Position
-			if ( isset( $options [ 'featured_content_position' ] ) ) {
-				$featured_content_position = $options [ 'featured_content_position' ];
+			if ( isset( $options['featured_content_position'] ) ) {
+				$featured_content_position = $options['featured_content_position'];
 			}
 			// Providing Backward Compatible with Version 1.0
 			else {
-				$featured_content_position =  $options [ 'move_posts_home' ];
+				$featured_content_position =  $options['move_posts_home'];
 			}
 
 			if ( '1' == $featured_content_position ) {
@@ -147,12 +147,12 @@ function fullframe_featured_content_display_position() {
 	$options 		= fullframe_get_theme_options();
 
 	//Check Featured Content Position
-	if ( isset( $options [ 'featured_content_position' ] ) ) {
-		$featured_content_position = $options [ 'featured_content_position' ];
+	if ( isset( $options['featured_content_position'] ) ) {
+		$featured_content_position = $options['featured_content_position'];
 	}
 	// Providing Backward Compatible with Version 1.0
 	else {
-		$featured_content_position =  $options [ 'move_posts_home' ];
+		$featured_content_position =  $options['move_posts_home'];
 	}
 
 	if ( '1' != $featured_content_position ) {
@@ -226,7 +226,7 @@ function fullframe_demo_content( $options ) {
 			</div><!-- .entry-container -->
 		</article>';
 
-	if( 'layout-four' == $options ['featured_content_layout']) {
+	if( 'layout-four' == $options['featured_content_layout']) {
 		$fullframe_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
@@ -259,7 +259,7 @@ if ( ! function_exists( 'fullframe_page_content' ) ) :
 function fullframe_page_content( $options ) {
 	global $post;
 
-	$quantity 					= $options [ 'featured_content_number' ];
+	$quantity 					= $options['featured_content_number'];
 
 	$more_link_text				= $options['excerpt_more_text'];
 
@@ -269,7 +269,7 @@ function fullframe_page_content( $options ) {
 
 	$page_list					= array();	// list of valid pages ids
 
-	if( 'layout-four' == $options ['featured_content_layout']) {
+	if( 'layout-four' == $options['featured_content_layout']) {
 		$layouts = 4;
 	}
 	else{

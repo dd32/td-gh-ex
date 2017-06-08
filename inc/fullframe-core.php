@@ -453,12 +453,12 @@ if ( ! function_exists( 'fullframe_custom_css' ) ) :
 			// Featured Content Background Image Options
 			if( $defaults['featured_content_background_image'] != $options['featured_content_background_image'] ) {
 				$fullframe_custom_css .= "#featured-content {". "\n";
-				$fullframe_custom_css .=  "background-image: url(\"". esc_url( $options[ 'featured_content_background_image' ] ) ."\");". "\n";
+				$fullframe_custom_css .=  "background-image: url(\"". esc_url( $options['featured_content_background_image'] ) ."\");". "\n";
 				$fullframe_custom_css .= "}";
 			}
 
 			//Custom CSS Option
-			if( !empty( $options[ 'custom_css' ] ) ) {
+			if( !empty( $options['custom_css'] ) ) {
 				$fullframe_custom_css	.=  $options['custom_css'] . "\n";
 			}
 
@@ -1186,10 +1186,10 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 
 		//support qTranslate plugin
 		if ( function_exists( 'qtrans_convertURL' ) ) {
-			$promotion_headline_url = qtrans_convertURL($options[ 'promotion_headline_url' ]);
+			$promotion_headline_url = qtrans_convertURL($options['promotion_headline_url']);
 		}
 		else {
-			$promotion_headline_url = $options[ 'promotion_headline_url' ];
+			$promotion_headline_url = $options['promotion_headline_url'];
 		}
 
 		// Front page displays in Reading Settings

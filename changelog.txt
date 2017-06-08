@@ -1,5 +1,9 @@
 == Change log ==
 
+= 2.5.2 =
+* Updated: Mobile fixed header script
+* Compatible with WordPress 4.8
+
 = 2.5.1 =
 * Added: Option to Display all Categories in Customizer
 * Code Optimization
