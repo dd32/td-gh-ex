@@ -32,6 +32,9 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.2.2 - Jun 08 2017 =
+- Calendar widget layout issue on small screens
+
 = 1.2.1 - Jun 07 2017 =
 - Warning call_user_func_array() expects parameter 1 to be a valid callback, function 'basic_customize_preview_js' not found or invalid function name
 - Css breaks in sidebar panel when Large image: linked in a caption and Large image: Hand Coded

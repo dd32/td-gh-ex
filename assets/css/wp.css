@@ -136,6 +136,11 @@
 
 
 /* Calendar widget */
+.calendar_wrap {
+	overflow-x: auto;
+	min-height: 0.01%;
+}
+
 #wp-calendar {
 	width:100%;
 	/*font-size:12px;*/
