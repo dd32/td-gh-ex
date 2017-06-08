@@ -2352,6 +2352,9 @@ body.trans-header div:not(.is-sticky) > .mobile-headerclass #mobile-logo .kad-mo
 body.trans-header div:not(.is-sticky) > .mobile-headerclass .kad-mobile-site-tagline {
   color: #fff;
 }
+body.trans-header div:not(.is-sticky) > .headerclass-outer div:not(.is-sticky) > .kad-header-topbar-primary-outer div:not(.is-sticky) > .headerclass .kt-header-extras .kadence_social_widget a:hover {
+  color: #fff;
+}
 body.trans-header div:not(.is-sticky) > .mobile-headerclass .kt-mnt span {
   background: #fff;
 }
@@ -6388,6 +6391,18 @@ span.kad-site-tagline {
 li.kt-mini-cart-refreash ul {
   display: block !important;
   top: 0px !important;
+}
+.kt-header-position-right .sf-vertical ul {
+  left: auto !important;
+}
+.kt-show-vertsub-indicator .kt-header-position-right .sf-vertical .sf-dropdown > a:after {
+  left: 10px;
+  right: auto;
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Safari */
+  transform: rotate(180deg);
 }
 .topbar-flex {
   display: -webkit-flex;

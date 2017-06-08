@@ -27,12 +27,12 @@ function ascend_header_extras_login_modal() {
 add_action('wp_footer', 'ascend_header_extras_search_modal', 20);
 function ascend_header_extras_search_modal() {
 	$ascend = ascend_get_options();
-		if(isset($ascend['header_extras']['search']) && $ascend['header_extras']['search'] == '1' || isset($ascend['mobile_header_search']) && $ascend['mobile_header_search'] != 'none') { ?>
+		if((isset($ascend['header_extras']['search']) && $ascend['header_extras']['search'] == '1') || (isset($ascend['mobile_header_search']) && $ascend['mobile_header_search'] != 'none') || (isset($ascend['topbar_search']) && $ascend['topbar_search'] != 'none')) { ?>
     		<div class="mag-pop-modal mfp-hide mfp-with-anim kt-search-modal" id="kt-extras-modal-search" tabindex="-1" role="dialog" aria-hidden="true">
 	            <div class="pop-modal-content">
 	                <div class="pop-modal-body">
                         <?php
-                        if(isset($ascend['header_extras_search_woo']) && $ascend['header_extras_search_woo'] == '1') { 
+                        if(class_exists('woocommerce') && isset($ascend['header_extras_search_woo']) && $ascend['header_extras_search_woo'] == '1') { 
 							get_product_search_form();
 			        	} else { 
 			              	get_search_form();
@@ -57,7 +57,7 @@ function ascend_mobile_menu_sldr() {
                   		$menu_location = 'primary_navigation';
                   	}
                   	if(isset($ascend['mobile_menu_search']) && $ascend['mobile_menu_search'] == '1') { 
-	                  	if(isset($ascend['mobile_menu_search_woo']) && $ascend['mobile_menu_search_woo'] == '1') { 
+	                  	if(class_exists('woocommerce') && isset($ascend['mobile_menu_search_woo']) && $ascend['mobile_menu_search_woo'] == '1') { 
 	            			get_product_search_form();
 			          	} else { 
 			              	get_search_form();

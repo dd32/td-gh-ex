@@ -193,12 +193,6 @@ function ascend_sidebar_side() {
         } else {
             $side = 'right';
         }
-  	} else if( class_exists('woocommerce') && is_product() ) {
-        if(isset($ascend['product_sidebar_side']) && $ascend['product_sidebar_side'] == 'left') {
-            $side = 'left';
-        } else {
-            $side = 'right';
-        }
   	} else {
         if(isset($ascend['sidebar_side']) && $ascend['sidebar_side'] == 'left') {
             $side = 'left';

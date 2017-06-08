@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.4 | 6th June 2017 =
+* Update: Single product side issue.
+* Update: Mobile search issue. 
+
 = Version 1.1.3 | 25th May 2017 =
 * Update: Css for product variations.
 * Update: Custom css output to allow >
