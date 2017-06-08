@@ -41,9 +41,9 @@ function catchbase_featured_content_display() {
 	$page_id = $wp_query->get_queried_object_id();
 	if ( 'entire-site' == $enablecontent || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablecontent ) ) {
 		if ( ( !$catchbase_featured_content = get_transient( 'catchbase_featured_content_display' ) ) ) {
-			$layouts 	 = $options ['featured_content_layout'];
-			$headline 	 = $options ['featured_content_headline'];
-			$subheadline = $options ['featured_content_subheadline'];
+			$layouts 	 = $options['featured_content_layout'];
+			$headline 	 = $options['featured_content_headline'];
+			$subheadline = $options['featured_content_subheadline'];
 
 			echo '<!-- refreshing cache -->';
 
@@ -61,12 +61,12 @@ function catchbase_featured_content_display() {
 			}
 
 			//Check Featured Content Position
-			if ( isset( $options [ 'featured_content_position' ] ) ) {
-				$featured_content_position = $options [ 'featured_content_position' ];
+			if ( isset( $options['featured_content_position'] ) ) {
+				$featured_content_position = $options['featured_content_position'];
 			}
 			// Providing Backward Compatible with Version 1.0
 			else {
-				$featured_content_position =  $options [ 'move_posts_home' ];
+				$featured_content_position =  $options['move_posts_home'];
 			}
 
 			if ( '1' == $featured_content_position ) {
@@ -122,12 +122,12 @@ function catchbase_featured_content_display_position() {
 	$options 		= catchbase_get_theme_options();
 
 	//Check Featured Content Position
-	if ( isset( $options [ 'featured_content_position' ] ) ) {
-		$featured_content_position = $options [ 'featured_content_position' ];
+	if ( isset( $options['featured_content_position'] ) ) {
+		$featured_content_position = $options['featured_content_position'];
 	}
 	// Providing Backward Compatible with Version 1.0
 	else {
-		$featured_content_position =  $options [ 'move_posts_home' ];
+		$featured_content_position =  $options['move_posts_home'];
 	}
 
 	if ( '1' != $featured_content_position ) {
@@ -200,7 +200,7 @@ function catchbase_demo_content( $options ) {
 			</div><!-- .entry-container -->
 		</article>';
 
-	if ( 'layout-four' == $options ['featured_content_layout']) {
+	if ( 'layout-four' == $options['featured_content_layout']) {
 		$catchbase_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
@@ -235,7 +235,7 @@ if ( ! function_exists( 'catchbase_page_content' ) ) :
 function catchbase_page_content( $options ) {
 	global $post;
 
-	$quantity 					= $options [ 'featured_content_number' ];
+	$quantity 					= $options['featured_content_number'];
 
 	$more_link_text				= $options['excerpt_more_text'];
 
@@ -257,7 +257,7 @@ function catchbase_page_content( $options ) {
 
 	}
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
                     'posts_per_page' 		=> $number_of_page,
                     'post__in'       		=> $page_list,
                     'orderby'        		=> 'post__in',
@@ -265,8 +265,8 @@ function catchbase_page_content( $options ) {
                 ));
 
 		$i=0;
-		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
+		while ( $loop->have_posts()) : $loop->the_post(); $i++;
+			$title_attribute = the_title_attribute( 'echo=0' );
 
 			$excerpt = get_the_excerpt();
 
@@ -275,18 +275,18 @@ function catchbase_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$catchbase_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
-						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
+						<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
+						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
 				}
 				else {
-					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );
 
 					if ( '' != $catchbase_first_image ) {
 						$catchbase_page_content .= '
 						<figure class="featured-homepage-image">
-							<a href="' . get_permalink() . '" title=""' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
+							<a href="' . esc_url( get_permalink() ) . '" title=""' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 								'. $catchbase_first_image .'
 							</a>
 						</figure>';
@@ -297,7 +297,7 @@ function catchbase_page_content( $options ) {
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
-								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+								<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 							</h1>
 						</header>';
 						if ( 'excerpt' == $show_content ) {
@@ -313,7 +313,7 @@ function catchbase_page_content( $options ) {
 				</article><!-- .featured-post-'. $i .' -->';
 		endwhile;
 
-		wp_reset_query();
+		wp_reset_postdata();
 	}
 
 	return $catchbase_page_content;

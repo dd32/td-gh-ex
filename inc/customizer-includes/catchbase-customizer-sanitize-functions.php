@@ -111,6 +111,10 @@ function catchbase_sanitize_page( $input ) {
  */
 function catchbase_sanitize_category_list( $input ) {
 	if ( '' != $input ) {
+		if( in_array( 0, $input ) ) {
+			return '0';
+		}
+		
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,

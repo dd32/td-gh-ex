@@ -165,7 +165,7 @@ function catchbase_page_slider( $options ) {
 	}
 
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
 			'posts_per_page'	=> $quantity,
 			'post_type'			=> 'page',
 			'post__in'			=> $page_list,
@@ -173,8 +173,8 @@ function catchbase_page_slider( $options ) {
 		));
 		$i=0;
 
-		while ( $get_featured_posts->have_posts()) {
-			$get_featured_posts->the_post();
+		while ( $loop->have_posts()) {
+			$loop->the_post();
 
 			$i++;
 
@@ -187,8 +187,8 @@ function catchbase_page_slider( $options ) {
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
-						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'attached-page-image' ) ).'
+					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
+						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'attached-page-image' ) ).'
 					</a>';
 				}
 				else {
@@ -196,14 +196,14 @@ function catchbase_page_slider( $options ) {
 					$catchbase_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
 
 					//Get the first image in page, returns false if there is no image
-					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'attached-page-image' ) );
+					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'attached-page-image' ) );
 
 					//Set value of image as first image if there is an image present in the page
 					if ( '' != $catchbase_first_image ) {
 						$catchbase_image =	$catchbase_first_image;
 					}
 
-					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
 						'. $catchbase_image .'
 					</a>';
 				}
@@ -213,7 +213,7 @@ function catchbase_page_slider( $options ) {
 				<div class="entry-container">
 					<header class="entry-header">
 						<h1 class="entry-title">
-							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 						</h1>
 						<div class="assistive-text">'.catchbase_page_post_meta().'</div>
 					</header>';
@@ -225,7 +225,7 @@ function catchbase_page_slider( $options ) {
 			</article><!-- .slides -->';
 		}
 
-		wp_reset_query();
+		wp_reset_postdata();
   	}
 	return $output;
 }

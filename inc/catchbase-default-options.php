@@ -56,7 +56,7 @@ function catchbase_get_default_theme_options() {
 		'excerpt_more_text'									=> __( 'Read More ...', 'catch-base' ),
 
 		//Homepage / Frontpage Settings
-		'front_page_category'								=> array(),
+		'front_page_category'								=> '0',
 
 		//Pagination Options
 		'pagination_type'									=> 'default',
@@ -744,7 +744,7 @@ function catchbase_metabox_featured_image_options() {
 function catchbase_get_content() {
 	$theme_data = wp_get_theme();
 
-	$catchbase_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'catch-base' ), date( 'Y' ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+	$catchbase_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'catch-base' ), date_i18n( __( 'Y', 'catch-base' ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
 
 	$catchbase_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . __( 'by', 'catch-base' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
 

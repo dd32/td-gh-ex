@@ -391,12 +391,6 @@ function catchbase_flush_transients(){
 
 	delete_transient( 'catchbase_featured_slider' );
 
-	//@remove Remove this when WordPress 4.8 is released
-	delete_transient( 'catchbase_favicon' );
-
-	//@remove Remove this when WordPress 4.8 is released
-	delete_transient( 'catchbase_webclip' );
-
 	delete_transient( 'catchbase_custom_css' );
 
 	delete_transient( 'catchbase_footer_content' );
@@ -454,90 +448,6 @@ function catchbase_flush_post_transients(){
 add_action( 'save_post', 'catchbase_flush_post_transients' );
 
 
-if ( ! function_exists( 'catchbase_favicon' ) ) :
-	/**
-	 * Get the favicon Image options
-	 *
-	 * @uses favicon
-	 * @get the data value of image from options
-	 * @display favicon
-	 *
-	 * @uses set_transient
-	 *
-	 * @action wp_head, admin_head
-	 *
-	 * @since Catch Base 1.0
-	 *
-	 * @remove Remove this function when WordPress 4.8 is released
-	 */
-	function catchbase_favicon() {
-		if ( function_exists( 'has_site_icon' ) ) {
-			//Bail Early if Core Site Icon Feature is Present
-			return;
-		}
-
-		if ( ( !$catchbase_favicon = get_transient( 'catchbase_favicon' ) ) ) {
-			$options 	= catchbase_get_theme_options();
-
-			echo '<!-- refreshing cache -->';
-
-			if ( isset( $options[ 'favicon' ] ) &&  $options[ 'favicon' ] != '' &&  !empty( $options[ 'favicon' ] ) ) {
-				// if not empty fav_icon on options
-				$catchbase_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
-			}
-
-			set_transient( 'catchbase_favicon', $catchbase_favicon, 86940 );
-		}
-		echo $catchbase_favicon ;
-	}
-endif; //catchbase_favicon
-//Load Favicon in Header Section
-add_action( 'wp_head', 'catchbase_favicon' );
-//Load Favicon in Admin Section
-add_action( 'admin_head', 'catchbase_favicon' );
-
-
-if ( ! function_exists( 'catchbase_web_clip' ) ) :
-	/**
-	 * Get the Web Clip Icon Image from options
-	 *
-	 * @uses web_clip and remove_web_clip
-	 * @get the data value of image from theme options
-	 * @display web clip
-	 *
-	 * @uses default Web Click Icon if web_clip field on theme options is empty
-	 *
-	 * @uses set_transient and delete_transient
-	 *
-	 * @action wp_head
-	 *
-	 * @since Catch Base 1.0
-	 *
-	 * @remove Remove this function when WordPress 4.8 is released
-	 */
-	function catchbase_web_clip() {
-		if ( function_exists( 'has_site_icon' ) ) {
-			//Bail Early if Core Site Icon Feature is Present
-			return;
-		}
-
-		if ( ( !$catchbase_web_clip = get_transient( 'catchbase_web_clip' ) ) ) {
-			$options 	= catchbase_get_theme_options();
-
-			echo '<!-- refreshing cache -->';
-
-			if ( isset( $options[ 'web_clip' ] ) &&  $options[ 'web_clip' ] != '' &&  !empty( $options[ 'web_clip' ] ) ){
-				$catchbase_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';
-			}
-
-			set_transient( 'catchbase_web_clip', $catchbase_web_clip, 86940 );
-		}
-		echo $catchbase_web_clip ;
-	} // catchbase_web_clips
-endif; //catchbase_web_clip
-//Load Catchbase Icon in Header Section
-add_action('wp_head', 'catchbase_web_clip');
-
 if ( ! function_exists( 'catchbase_custom_css' ) ) :
 	/**
 	 * Enqueue Custon CSS
@@ -563,7 +473,7 @@ if ( ! function_exists( 'catchbase_custom_css' ) ) :
 			}
 
 			//Custom CSS Option
-			if ( !empty( $options[ 'custom_css' ] ) ) {
+			if ( !empty( $options['custom_css'] ) ) {
 				$catchbase_custom_css	.=  $options['custom_css'] . "\n";
 			}
 
@@ -652,8 +562,6 @@ if ( ! function_exists( 'catchbase_comment' ) ) :
 	 * @since Catch Base 1.0
 	 */
 	function catchbase_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
-
 		if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -754,7 +662,7 @@ if ( ! function_exists( 'catchbase_the_attached_image' ) ) :
 
 		printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
 			esc_url( $next_attachment_url ),
-			the_title_attribute( array( 'echo' => false ) ),
+			the_title_attribute( 'echo=0' ),
 			wp_get_attachment_image( $post->ID, $attachment_size )
 		);
 	}
@@ -974,7 +882,7 @@ if ( ! function_exists( 'catchbase_continue_reading' ) ) :
 		$options		=	catchbase_get_theme_options();
 		$more_tag_text	= $options['excerpt_more_text'];
 
-		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catch-base' ) , $more_tag_text ) . '</a>';
+		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
 	}
 endif; //catchbase_continue_reading
 add_filter( 'excerpt_more', 'catchbase_continue_reading' );
@@ -1348,10 +1256,10 @@ if ( ! function_exists( 'catchbase_promotion_headline' ) ) :
 
 		//support qTranslate plugin
 		if ( function_exists( 'qtrans_convertURL' ) ) {
-			$promotion_headline_url = qtrans_convertURL($options[ 'promotion_headline_url' ]);
+			$promotion_headline_url = qtrans_convertURL($options['promotion_headline_url']);
 		}
 		else {
-			$promotion_headline_url = $options[ 'promotion_headline_url' ];
+			$promotion_headline_url = $options['promotion_headline_url'];
 		}
 
 		// Front page displays in Reading Settings
@@ -1525,13 +1433,13 @@ if ( ! function_exists( 'catchbase_alter_home' ) ) :
 	 * @action pre_get_posts action
 	 */
 	function catchbase_alter_home( $query ){
-		$options = catchbase_get_theme_options();
+		if ( $query->is_main_query() && $query->is_home() ) {
+			$options = catchbase_get_theme_options();
 
-	    $cats = $options[ 'front_page_category' ];
+		    $cats = $options['front_page_category'];
 
-		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
-			if ( $query->is_main_query() && $query->is_home() ) {
-				$query->query_vars['category__in'] = $options[ 'front_page_category' ];
+			if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
+				$query->query_vars['category__in'] = $options['front_page_category'];
 			}
 		}
 	}
@@ -1601,42 +1509,6 @@ function catchbase_logo_migrate() {
 
 }
 add_action( 'after_setup_theme', 'catchbase_logo_migrate' );
-
-
-/**
- * Migrate Custom Favicon to WordPress core Site Icon
- *
- * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
- */
-function catchbase_site_icon_migrate() {
-	$ver = get_theme_mod( 'site_icon_version', false );
-
-	// Return if update has already been run
-	if ( version_compare( $ver, '2.8' ) >= 0 ) {
-		return;
-	}
-
-	/**
-	 * Get Theme Options Values
-	 */
-	$options 	= catchbase_get_theme_options();
-
-	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'has_site_icon' ) ) {
-		if ( isset( $options['favicon'] ) && '' != $options['favicon'] ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$site_icon = attachment_url_to_postid( $options['favicon'] );
-
-			if ( is_int( $site_icon ) ) {
-				update_option( 'site_icon', $site_icon );
-			}
-		}
-
-	  	// Update to match site_icon_version so that script is not executed continously
-		set_theme_mod( 'site_icon_version', '2.8' );
-	}
-}
-add_action( 'after_setup_theme', 'catchbase_site_icon_migrate' );
 
 
 /**

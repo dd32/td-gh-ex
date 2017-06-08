@@ -1,10 +1,11 @@
-# Copyright (C) 2016 Catch Themes
+# Copyright (C) 2017 Catch Themes
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base 2.8.4\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 14:27-0500\n"
+"POT-Creation-Date: 2017-06-08 10:07+0545\n"
 "PO-Revision-Date: 2016-12-07 14:27-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -12,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -33,27 +34,33 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: ../comments.php:27
+#: ../comments.php:30
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../comments.php:35
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:34 ../comments.php:59
+#: ../comments.php:50 ../comments.php:75
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:35 ../comments.php:60
+#: ../comments.php:51 ../comments.php:76
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:36 ../comments.php:61
+#: ../comments.php:52 ../comments.php:77
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:71
+#: ../comments.php:87
 msgid "Comments are closed."
 msgstr ""
 
@@ -82,8 +89,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:661
-#: ../inc/catchbase-core.php:680 ../inc/catchbase-core.php:806
+#: ../content-page.php:35 ../inc/catchbase-core.php:569
+#: ../inc/catchbase-core.php:588 ../inc/catchbase-core.php:714
 msgid "Edit"
 msgstr ""
 
@@ -128,103 +135,98 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../inc/catchbase-core.php:627
+#: ../inc/catchbase-core.php:537
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/catchbase-core.php:636
+#: ../inc/catchbase-core.php:546
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/catchbase-core.php:637
+#: ../inc/catchbase-core.php:547
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:661
+#: ../inc/catchbase-core.php:569
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/catchbase-core.php:671
+#: ../inc/catchbase-core.php:579
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:677
+#: ../inc/catchbase-core.php:585
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/catchbase-core.php:684
+#: ../inc/catchbase-core.php:592
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/catchbase-core.php:787
+#: ../inc/catchbase-core.php:695
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:794
+#: ../inc/catchbase-core.php:702
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:802
+#: ../inc/catchbase-core.php:710
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:802
+#: ../inc/catchbase-core.php:710
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:802
+#: ../inc/catchbase-core.php:710
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/catchbase-core.php:823 ../inc/catchbase-core.php:831
+#: ../inc/catchbase-core.php:731 ../inc/catchbase-core.php:739
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/catchbase-core.php:826
+#: ../inc/catchbase-core.php:734
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:834
+#: ../inc/catchbase-core.php:742
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:977
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: ../inc/catchbase-core.php:1495
+#: ../inc/catchbase-core.php:1403
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1513
+#: ../inc/catchbase-core.php:1421
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1514
+#: ../inc/catchbase-core.php:1422
 msgid "By"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1555
+#: ../inc/catchbase-core.php:1463
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1556
+#: ../inc/catchbase-core.php:1464
 msgid "Next post:"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1558
+#: ../inc/catchbase-core.php:1466
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1559
+#: ../inc/catchbase-core.php:1467
 msgid "Previous post:"
 msgstr ""
 
@@ -450,12 +452,12 @@ msgid "Slider Image Size"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:503
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
 msgid "Facebook"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:507
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
 msgid "Twitter"
 msgstr ""
 
@@ -484,7 +486,7 @@ msgid "LinkedIn"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:535
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:86
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
 msgid "Pinterest"
 msgstr ""
 
@@ -612,6 +614,10 @@ msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr ""
 
+#: ../inc/catchbase-default-options.php:747
+msgid "Y"
+msgstr ""
+
 #: ../inc/catchbase-default-options.php:749
 msgid "by"
 msgstr ""
@@ -629,7 +635,6 @@ msgid ""
 "Featured Content Options\"."
 msgstr ""
 
-#: ../inc/catchbase-featured-content.php:269
 #: ../inc/catchbase-featured-content.php:278
 #: ../inc/catchbase-featured-content.php:289
 #: ../inc/catchbase-featured-slider.php:181
@@ -652,7 +657,7 @@ msgid "Menu"
 msgstr ""
 
 #: ../inc/catchbase-metabox.php:92
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:213
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:179
 msgid "Layout Options"
 msgstr ""
 
@@ -661,7 +666,7 @@ msgid "Header Featured Image Options"
 msgstr ""
 
 #: ../inc/catchbase-metabox.php:94
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:270
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:236
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
@@ -710,32 +715,36 @@ msgstr ""
 msgid "Title (optional):"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:41
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:30
+msgid "All Categories"
+msgstr ""
+
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
 msgid "Support"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
 msgid "Donate Now"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
 msgid "Review"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
 msgid "Google+"
 msgstr ""
 
@@ -871,7 +880,7 @@ msgid "Featured Header Image Link URL"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:98
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:439
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:405
 msgid "Check to Open Link in New Window/Tab"
 msgstr ""
 
@@ -963,122 +972,100 @@ msgstr ""
 msgid "Select Categories"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:177
-msgid "Remove Icon images to disable."
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:180
-msgid "Icon Options"
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:189
-msgid "Select/Add Favicon"
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:200
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
-"height, which will support High Resolution Devices like iPad Retina."
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:201
-msgid "Select/Add Web Clip Icon"
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:230
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:196
 msgid "Default Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:250
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:216
 msgid "Archive Content Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:281
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:247
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
-"<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
-"Plugin</a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%1$s\">WP-PageNavi Plugin</"
+"a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href=\"%2$s"
+"\">JetPack Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:288
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:254
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:299
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:265
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:310
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:276
 msgid "Pagination Options"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:327
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:293
 msgid "Pagination type"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:336
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:302
 msgid "To disable the fields, simply leave them empty."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:339
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:305
 msgid "Promotion Headline Options"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:356
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:322
 msgid "Enable Promotion Headline on"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:372
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:338
 msgid "Appropriate Words: 10"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:373
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:339
 msgid "Promotion Headline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:389
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:355
 msgid "Appropriate Words: 15"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:390
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:356
 msgid "Promotion Subheadline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:372
 msgid "Appropriate Words: 3"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:407
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:373
 msgid "Promotion Headline Button Text "
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:423
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:389
 msgid "Promotion Headline Link"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:451
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:417
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:461
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:427
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:470
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:436
 msgid "Change default placeholder text in Search."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:473
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:439
 msgid "Search Options"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:484
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:450
 msgid "Default Display Text in Search"
 msgstr ""
 

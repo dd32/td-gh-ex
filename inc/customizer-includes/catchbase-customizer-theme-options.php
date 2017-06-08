@@ -169,41 +169,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
         'type'     	=> 'dropdown-categories',
     ) ) );
 	//Homepage / Frontpage Settings End
-
-	//@remove Remove this block when WordPress 4.8 is released
-	if ( ! function_exists( 'has_site_icon' ) ) {
-		// Icon Options
-		$wp_customize->add_section( 'catchbase_icons', array(
-			'description'	=> __( 'Remove Icon images to disable.', 'catch-base'),
-			'panel'  => 'catchbase_theme_options',
-			'priority' 		=> 210,
-			'title'    		=> __( 'Icon Options', 'catch-base' ),
-		) );
-
-		$wp_customize->add_setting( 'catchbase_theme_options[favicon]', array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'catchbase_sanitize_image',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[favicon]', array(
-			'label'		=> __( 'Select/Add Favicon', 'catch-base' ),
-			'section'    => 'catchbase_icons',
-	        'settings'   => 'catchbase_theme_options[favicon]',
-		) ) );
-
-		$wp_customize->add_setting( 'catchbase_theme_options[web_clip]', array(
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'catchbase_sanitize_image',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[web_clip]', array(
-			'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-base'),
-			'label'		 	=> __( 'Select/Add Web Clip Icon', 'catch-base' ),
-			'section'    	=> 'catchbase_icons',
-	        'settings'   	=> 'catchbase_theme_options[web_clip]',
-		) ) );
-		// Icon Options End
-	}
+	
 
 	// Layout Options
 	$wp_customize->add_section( 'catchbase_layout', array(
@@ -278,7 +244,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	// Pagination Options
 	$pagination_type	= $options['pagination_type'];
 
-	$catchbase_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'catch-base' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
+	$catchbase_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%1$s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%2$s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'catch-base' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
 
 	/**
 	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled

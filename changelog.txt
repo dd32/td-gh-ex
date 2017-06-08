@@ -1,5 +1,12 @@
 == Change log ==
 
+= 2.9.1 =
+* Added: Option to Display all Categories in Customizer
+* Code Optimization
+* Compatible with WordPress 4.8
+* Optimization: Replaced wp_reset_query with wp_reset_postdata
+* Remove: Backward compatibility functions
+
 = 2.9 =
 * Removed: HTML script loading from catchbase_head() function and added it as wp_enqueue_script() in catchbase_head() function
 * Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'

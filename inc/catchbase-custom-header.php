@@ -82,8 +82,8 @@ if ( ! function_exists( 'catchbase_header_style' ) ) :
 function catchbase_header_style() {
 
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// get_header_textcolor() options: get_theme_support( 'custom-header', 'default-text-color' ) is default, hide text (returns 'blank') or any hex value
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -160,7 +160,7 @@ function catchbase_admin_header_style() {
 	}
 	<?php
 	// If the user has set a custom color for the text use that
-	if ( get_header_textcolor() != HEADER_TEXTCOLOR ) {
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) !== get_header_textcolor() ) {
 		echo '
 		#site-branding .site-title a,
 		#site-branding .site-description {
@@ -301,16 +301,16 @@ if ( ! function_exists( 'catchbase_featured_image' ) ) :
 			if ( '' != $header_image ) {
 
 				// Header Image Link and Target
-				if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+				if ( !empty( $options['featured_header_image_url'] ) ) {
 					//support for qtranslate custom link
 					if ( function_exists( 'qtrans_convertURL' ) ) {
-						$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+						$link = qtrans_convertURL($options['featured_header_image_url']);
 					}
 					else {
-						$link = esc_url( $options[ 'featured_header_image_url' ] );
+						$link = esc_url( $options['featured_header_image_url'] );
 					}
 					//Checking Link Target
-					if ( !empty( $options[ 'featured_header_image_base' ] ) )  {
+					if ( !empty( $options['featured_header_image_base'] ) )  {
 						$target = '_blank';
 					}
 					else {
@@ -323,21 +323,21 @@ if ( ! function_exists( 'catchbase_featured_image' ) ) :
 				}
 
 				// Header Image Title/Alt
-				if ( !empty( $options[ 'featured_header_image_alt' ] ) ) {
-					$title = esc_attr( $options[ 'featured_header_image_alt' ] );
+				if ( !empty( $options['featured_header_image_alt'] ) ) {
+					$title = esc_attr( $options['featured_header_image_alt'] );
 				}
 				else {
 					$title = '';
 				}
 
 				// Header Image
-				$feat_image = '<img class="wp-post-image" alt="'.$title.'" src="'.esc_url(  $header_image ).'" />';
+				$feat_image = '<img class="wp-post-image" alt="' . esc_attr( $title ) . '" src="'.esc_url(  $header_image ).'" />';
 
 				$catchbase_featured_image = '<div id="header-featured-image">
 					<div class="wrapper">';
 					// Header Image Link
-					if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
-						$catchbase_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="'.$target.'">' . $feat_image . '</a>';
+					if ( !empty( $options['featured_header_image_url'] ) ) :
+						$catchbase_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="' . $target . '">' . $feat_image . '</a>';
 					else:
 						// if empty featured_header_image on theme options, display default
 						$catchbase_featured_image .= $feat_image;
@@ -428,7 +428,7 @@ if ( ! function_exists( 'catchbase_featured_page_post_image' ) ) :
 			$catchbase_featured_image = '<div id="header-featured-image" class =' . $featured_image_size . '>';
 				// Header Image Link
 				if ( '' != $featured_header_image_url ) :
-					$catchbase_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="'.$target.'">' . $feat_image . '</a>';
+					$catchbase_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="' . $target . '">' . $feat_image . '</a>';
 				else:
 					// if empty featured_header_image on theme options, display default
 					$catchbase_featured_image .= $feat_image;
