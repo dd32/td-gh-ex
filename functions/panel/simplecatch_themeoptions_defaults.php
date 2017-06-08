@@ -221,7 +221,7 @@ function simplecatch_footer_image() {
  * @return string
  */
 function simplecatch_the_year() {
-	return date( __( 'Y', 'simple-catch' ) );
+	return esc_attr( date_i18n( __( 'Y', 'simple-catch' ) ) );
 }
 
 /**

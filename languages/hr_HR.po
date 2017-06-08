@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-03-10 08:20+0545\n"
-"PO-Revision-Date: 2017-03-10 08:20+0545\n"
+"POT-Creation-Date: 2017-06-08 16:04+0545\n"
+"PO-Revision-Date: 2017-06-08 16:04+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: hr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:12
@@ -57,18 +57,18 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 "Ovaj post je zaštićen zaporkom. Unesite zaporku da pogledate komentare."
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
-#: ../image.php:23 ../page-blog.php:56
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
 msgid "No Comments"
 msgstr "Nema komentara"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
-#: ../image.php:23 ../page-blog.php:56
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
 msgid "1 Comment"
 msgstr "1 Komentar"
 
-#: ../comments.php:29 ../content.php:52 ../functions/core.php:998
-#: ../image.php:23 ../page-blog.php:56
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
 msgid "% Comments"
 msgstr "% Komentara"
 
@@ -76,16 +76,16 @@ msgstr "% Komentara"
 msgid "Comments are closed."
 msgstr "Komentari su zatvoreni."
 
-#: ../content.php:50 ../functions/core.php:996 ../image.php:21
-#: ../page-blog.php:54
+#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../page-blog.php:49
 msgid "By"
 msgstr "od"
 
-#: ../content.php:80 ../page-blog.php:101
+#: ../content.php:77 ../page-blog.php:96
 msgid "Not found"
 msgstr "Nije nađeno"
 
-#: ../content.php:83 ../page-blog.php:104
+#: ../content.php:80 ../page-blog.php:99
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -486,11 +486,11 @@ msgstr "Prethodna slika"
 msgid "Next Image"
 msgstr "Slijedeća slika"
 
-#: ../page-blog.php:88 ../search.php:44
+#: ../page-blog.php:83 ../search.php:44
 msgid "Previous"
 msgstr "Prethodno"
 
-#: ../page-blog.php:90 ../search.php:45
+#: ../page-blog.php:85 ../search.php:45
 msgid "Next"
 msgstr "Slijedeće"
 
