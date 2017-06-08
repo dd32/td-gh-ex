@@ -1,4 +1,4 @@
-# Translation of WordPress.com - Themes - Afterlight in Persian
+# Translation of WordPress.com - Themes - Afterlight in Dutch
 # This file is distributed under the same license as the WordPress.com - Themes - Afterlight package.
 msgid ""
 msgstr ""
@@ -6,168 +6,137 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: fa\n"
+"Language: nl\n"
 "Project-Id-Version: WordPress.com - Themes - Afterlight\n"
 
 #: inc/wpcom-colors.php:111
 msgid "Text"
-msgstr "متن"
+msgstr "Tekst"
 
 #: inc/wpcom-colors.php:49
 msgid "Background"
-msgstr "پس‌زمینه"
+msgstr "Achtergrond"
 
 #: inc/template-tags.php:90
 msgid ", "
-msgstr "، "
+msgstr ", "
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:90
 msgid "Tags"
-msgstr "برچسب‌ها"
-
-#: functions.php:264
-msgid "Menu &amp; Widgets"
-msgstr "گزینگان و ابزارک‌ها"
-
-#. Description of the plugin/theme
-#: wp-content/themes/pub/afterlight/style.css
-msgid "Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair."
-msgstr "Afterlight یک پوستهٔ وب‌نویسی تک‌رنگ به همراه گزینه‌ای برای تصویر پس‌زمینهٔ تمام‌صفحه است. برای هرچه شخصی‌تر کردن وب‌نوشتتان تصویر و یا رنگ پس‌زمینهٔ مورد علاقهٔ خود استفاده کنید."
+msgstr "Tags"
 
 #: single.php:31
 msgid "Previous post:"
-msgstr "تصویر پیشین:"
+msgstr "Vorig bericht:"
 
 #: single.php:30
 msgid "Previous"
-msgstr "پیشین"
+msgstr "Voorgaande"
 
 #: single.php:28
 msgid "Next post:"
-msgstr "نوشتۀ پسین:"
+msgstr "Volgend bericht:"
 
 #: single.php:27
 msgid "Next"
-msgstr "بعدی"
+msgstr "Volgende"
 
 #: functions.php:262 sidebar.php:15
 msgid "Menu"
-msgstr "گزینگان"
+msgstr "Menu"
 
 #: search.php:17
 msgid "Search Results for: %s"
-msgstr "نتایج جست‌وجو برای: %s"
+msgstr "Zoekresultaten voor: %s"
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:192
 msgid "Continue reading %s"
-msgstr "به خواندن %s ادامه دهید"
+msgstr "Lees verder %s"
 
 #: inc/template-tags.php:127
 msgid "% Comments"
-msgstr "% دیدگاه"
+msgstr "% reacties"
 
 #: inc/template-tags.php:127
 msgid "1 Comment"
-msgstr "۱ دیدگاه"
+msgstr "1 reactie"
 
 #: inc/template-tags.php:127
 msgid "Leave a comment"
-msgstr "بیان دیدگاه"
+msgstr "Een reactie plaatsen"
 
 #: inc/template-tags.php:118
 msgctxt "Used before full size attachment link."
 msgid "Full size"
-msgstr "اندازه کامل"
-
-#: inc/template-tags.php:107
-msgctxt "Used before project tag names."
-msgid "Project Tags"
-msgstr "برچسب‌های پروژه‌ها"
-
-#: inc/template-tags.php:99
-msgctxt "Used before project type names."
-msgid "Project Types"
-msgstr "انواع پروژه‌ها"
+msgstr "Volledige grootte"
 
 #: inc/template-tags.php:84
 msgctxt "Used before category names."
 msgid "Categories"
-msgstr "دسته‌ها"
+msgstr "Categorieën"
 
 #: inc/template-tags.php:81 inc/template-tags.php:96 inc/template-tags.php:104
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
-msgstr "، "
+msgstr ", "
 
 #: inc/template-tags.php:65
 msgctxt "Used before publish date."
 msgid "Posted on"
-msgstr "ارسال شده در"
+msgstr "Geplaatst op"
 
 #: inc/template-tags.php:47
 msgid "Featured"
-msgstr "ویژه"
+msgstr "Uitgelicht"
 
 #: inc/template-tags.php:28
 msgid "Newer Comments"
-msgstr "دیدگاه‌های تازه‌تر"
+msgstr "Nieuwere reacties"
 
 #: inc/template-tags.php:24
 msgid "Older Comments"
-msgstr "دیدگاه‌های پیشین"
+msgstr "Oudere reacties"
 
 #: inc/template-tags.php:21
 msgid "Comment navigation"
-msgstr "ناوبری دیدگاه"
-
-#: inc/customizer.php:56
-msgid "Scale background image to fit."
-msgstr "مقیاس‌دادن به تصویر پس‌زمینه به شکلی که متناسب شود."
-
-#: inc/customizer.php:40
-msgid "Add an overlay to background."
-msgstr "افزودن لایهٔ رویین به پس‌زمینه."
+msgstr "Reactienavigatie"
 
 #: inc/customizer.php:28
 msgid "Theme"
-msgstr "پوشته"
-
-#: inc/customizer.php:24
-msgid "Tagline is hidden in this theme."
-msgstr "شعار در این پوسته پنهان است."
+msgstr "Thema"
 
 #: image.php:84
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
-msgstr "<span class=\"meta-nav\">منتشره در</span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">Gepubliceerd in</span><span class=\"post-title\">%title</span>"
 
 #: image.php:23
 msgid "Next Image"
-msgstr "تصویر پسین"
+msgstr "Volgende afbeelding"
 
 #: image.php:23
 msgid "Previous Image"
-msgstr "تصویر پیشین"
+msgstr "Vorige afbeelding"
 
 #: functions.php:263
 msgid "Widgets"
-msgstr "ابزارک‌ها"
+msgstr "Widgets"
 
 #: header.php:22
 msgid "Skip to content"
-msgstr "پرش به محتوا"
+msgstr "Spring naar inhoud"
 
 #: functions.php:258
 msgid "collapse child menu"
-msgstr "بستن زیرفهرست"
+msgstr "Alles inklappen"
 
 #: functions.php:257
 msgid "expand child menu"
-msgstr "بازکردن زیرفهرست"
+msgstr "Alles uitklappen"
 
 #. translators: If there are characters in your language that are not supported
 #. by Inconsolata, translate this to 'off'. Do not translate into your own
@@ -175,14 +144,14 @@ msgstr "بازکردن زیرفهرست"
 #: functions.php:202
 msgctxt "Inconsolata font: on or off"
 msgid "on"
-msgstr "off"
+msgstr "on"
 
 #. translators: If there are characters in your language that are not supported
 #. by Lato, translate this to 'off'. Do not translate into your own language.
 #: functions.php:197
 msgctxt "Lato font: on or off"
 msgid "on"
-msgstr "روشن"
+msgstr "on"
 
 #. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
@@ -190,95 +159,88 @@ msgstr "روشن"
 #: functions.php:192
 msgctxt "Playfair Display font: on or off"
 msgid "on"
-msgstr "روشن"
-
-#: functions.php:169
-msgid "Add widgets here to appear in your off-screen panel."
-msgstr "برای نمایش‌یافتن ابزارک‌ها در میزکار پشت‌پرده، ابزارک‌ها را اینجا بیفزایید."
+msgstr "aan"
 
 #: functions.php:167
 msgid "Widget Area"
-msgstr "محدوده ابزارک"
+msgstr "Widgetruimte"
 
 #: functions.php:63
 msgid "Social Links Menu"
-msgstr "گزینگان پیوندهای اجتماعی"
+msgstr "Socialelinksmenu"
 
 #: functions.php:62
 msgid "Primary Menu"
-msgstr "گزینگان اصلی"
+msgstr "Primair menu"
 
 #: footer.php:19
 msgid "Theme: %1$s by %2$s."
-msgstr "پوسته: %1$s کاری از %2$s."
+msgstr "Thema: %1$s door %2$s."
 
 #: footer.php:17
 msgid "Proudly powered by %s"
-msgstr "با افتخار، نیرو گرفته از %s"
+msgstr "Met trots ondersteund door %s"
 
 #: footer.php:17
 msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgstr "http://nl.wordpress.org/"
 
 #: content-page.php:31 content-single.php:40 image.php:71
 msgid "Edit"
-msgstr "ویرایش"
+msgstr "Bewerken"
 
 #: content-page.php:21 content-single.php:23 image.php:59
 msgid "Pages:"
-msgstr "صفحه‌ها:"
+msgstr "Pagina&#39;s:"
 
 #: content-none.php:30
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "به نظر می‌آید ما نمی‌توانیم آنچه به دنبالش هستید بیابیم. احتمالا جست‌وجو می‌تواند کمک کند."
+msgstr "Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien kan zoeken helpen."
 
 #: content-none.php:25
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "بدبختانه جستجوی شما نتیجه‌ای در بر نداشت. با واژگانی دیگر جستجو کنید."
+msgstr "Sorry, maar niets kwam overeen met je zoektermen. Gelieve het opnieuw te proberen met een aantal andere trefwoorden."
 
 #: content-none.php:21
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "آمادهٔ انتشار نخستین نوشتهٔ خود هستید؟ <a href=\"%1$s\">از اینجا بیآغازید</a>."
+msgstr "Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
 
 #: content-none.php:14
 msgid "Nothing Found"
-msgstr "چیزی پیدا نشد"
+msgstr "Niets gevonden"
 
 #: comments.php:52
 msgid "Comments are closed."
-msgstr "دیدگاه‌ها بسته شده‌اند."
+msgstr "Reacties zijn gesloten."
 
 #: comments.php:27
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s نظر برای &ldquo;%2$s&rdquo;"
+msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachtes over &ldquo;%2$s&rdquo;"
 
 #: author-bio.php:32
 msgid "View all posts by %s"
-msgstr "مشاهدهٔ همهٔ نوشته‌ها بر اساس %s"
-
-#: author-bio.php:27
-msgid "Published by:"
-msgstr "منتشرشده به دست:"
+msgstr "Bekijk alle berichten van %s"
 
 #: archive.php:62 content-page.php:25 content-single.php:27 image.php:63
 #: index.php:60 search.php:44
 msgid "Page"
-msgstr "صفحه"
+msgstr "Pagina"
 
 #: archive.php:61 index.php:59 search.php:43
 msgid "Next page"
-msgstr "صفحهٔ پسین"
+msgstr "Volgende pagina"
 
 #: archive.php:60 index.php:58 search.php:42
 msgid "Previous page"
-msgstr "صفحهٔ پیشین"
+msgstr "Vorige pagina"
 
 #: 404.php:20
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "به نظر می‌رسد چیزی اینجا نیست. مایل هستید جستجو کنید؟"
+msgstr "Het lijkt erop dat er niets werd gevonden op deze locatie. Misschien een zoekopdracht  proberen?"
 
 #: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "اوه! امکان یافتن صفحه نیست."
+msgstr "Oeps! Die pagina kon niet worden gevonden."

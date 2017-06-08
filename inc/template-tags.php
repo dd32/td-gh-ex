@@ -86,13 +86,8 @@ function afterlight_entry_meta() {
 			);
 		}
 
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'afterlight' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Tags', 'Used before tag names.', 'afterlight' ),
-				$tags_list
-			);
-		}
+		/* translators: used between list items, there is a space after the comma */
+		the_tags( sprintf( '<span class="tags-links"><span class="screen-reader-text">%s</span>', esc_html__( 'Tags', 'afterlight' ) ), esc_html__( ', ', 'afterlight' ), '</span>' );
 	}
 
 	if ( 'jetpack-portfolio' == get_post_type() ) {

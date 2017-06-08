@@ -1,14 +1,32 @@
-# Translation of Afterlight in Azerbaijani
-# This file is distributed under the same license as the Afterlight package.
+# Translation of WordPress.com - Themes - Afterlight in Azerbaijani
+# This file is distributed under the same license as the WordPress.com - Themes - Afterlight package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-06-24 12:37:53+0000\n"
+"PO-Revision-Date: 2017-03-23 06:01:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Afterlight\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: az\n"
+"Project-Id-Version: WordPress.com - Themes - Afterlight\n"
+
+#: inc/wpcom-colors.php:111
+msgid "Text"
+msgstr "Mətn"
+
+#: inc/wpcom-colors.php:49
+msgid "Background"
+msgstr "Arxa fon"
+
+#: inc/template-tags.php:90
+msgid ", "
+msgstr ","
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:90
+msgid "Tags"
+msgstr "Etiketlər"
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/afterlight/style.css
@@ -40,28 +58,23 @@ msgid "Search Results for: %s"
 msgstr " %s üçün Axtarışın Nəticələri:"
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:197
+#: inc/template-tags.php:192
 msgid "Continue reading %s"
 msgstr "%s oxumağa davam et"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "% Comments"
 msgstr "% Şərh"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "1 Comment"
 msgstr "1 şərh"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "Leave a comment"
 msgstr "Bir şərh yazın"
 
-#: inc/template-tags.php:92
-msgctxt "Used before tag names."
-msgid "Tags"
-msgstr "Etiketlər"
-
-#: inc/template-tags.php:123
+#: inc/template-tags.php:118
 msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr "Tam ölçü"
@@ -71,16 +84,15 @@ msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Kateqoriyalar"
 
+#: inc/template-tags.php:81 inc/template-tags.php:96 inc/template-tags.php:104
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
+
 #: inc/template-tags.php:65
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr "Yayım tarixi"
-
-#: inc/template-tags.php:81 inc/template-tags.php:89 inc/template-tags.php:101
-#: inc/template-tags.php:109
-msgctxt "Used between list items, there is a space after the comma."
-msgid ", "
-msgstr ", "
 
 #: inc/template-tags.php:47
 msgid "Featured"
@@ -102,7 +114,7 @@ msgstr "Şərh naviqasiyası"
 msgid "Theme"
 msgstr "Mövzu"
 
-#: image.php:83
+#: image.php:84
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
 msgstr "<span class=\"meta-nav\">Yayım yeri</span><span class=\"post-title\">%title</span>"
@@ -119,13 +131,13 @@ msgstr "Öncəki təsvir"
 msgid "Widgets"
 msgstr "Vidcetlər"
 
-#: functions.php:258
-msgid "collapse child menu"
-msgstr "uşaq mövzusunu bağla"
-
 #: header.php:22
 msgid "Skip to content"
 msgstr "Mühtəviyyata keç"
+
+#: functions.php:258
+msgid "collapse child menu"
+msgstr "uşaq mövzusunu bağla"
 
 #: functions.php:257
 msgid "expand child menu"
@@ -140,19 +152,19 @@ msgid "on"
 msgstr "açıq"
 
 #. translators: If there are characters in your language that are not supported
+#. by Lato, translate this to 'off'. Do not translate into your own language.
+#: functions.php:197
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr "off"
+
+#. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
 #. language.
 #: functions.php:192
 msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr "açıq"
-
-#. translators: If there are characters in your language that are not supported
-#. by Lato, translate this to 'off'. Do not translate into your own language.
-#: functions.php:197
-msgctxt "Lato font: on or off"
-msgid "on"
-msgstr "off"
 
 #: functions.php:167
 msgid "Widget Area"
@@ -178,11 +190,11 @@ msgstr "%s qürurla təqdim edər"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: content-page.php:31 content-single.php:40 image.php:70
+#: content-page.php:31 content-single.php:40 image.php:71
 msgid "Edit"
 msgstr "Redaktə et"
 
-#: content-page.php:21 content-single.php:23 image.php:58
+#: content-page.php:21 content-single.php:23 image.php:59
 msgid "Pages:"
 msgstr "Səhifələr:"
 
@@ -217,7 +229,7 @@ msgstr[1] "&ldquo;%2$s&rdquo; üzərinə %1$s şərh"
 msgid "View all posts by %s"
 msgstr "%s tərəfindən yazılan bütün yazılara bax"
 
-#: archive.php:62 content-page.php:25 content-single.php:27 image.php:62
+#: archive.php:62 content-page.php:25 content-single.php:27 image.php:63
 #: index.php:60 search.php:44
 msgid "Page"
 msgstr "Səhifə"

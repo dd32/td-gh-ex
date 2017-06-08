@@ -16,7 +16,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'afterlight' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'afterlight' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'afterlight' ), 'Afterlight', '<a href="https://wordpress.com/themes/" rel="designer">WordPress.com</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'afterlight' ), 'Afterlight', '<a href="http://wordpress.com/themes/afterlight/" rel="designer">WordPress.com</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
 </div><!-- .site -->

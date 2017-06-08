@@ -11,7 +11,8 @@
 	    $window       = $( window ),
 	    sidebar       = $( '#sidebar' ),
 	    sidebarToggle = $( '#masthead' ).find( '#sidebar-toggle' ),
-	    menu = $( '#masthead' ).find( '.nav-menu' ),
+	    menu          = $( '#masthead' ).find( '.nav-menu' ),
+	    windowWidth   = window.innerWidth,
 	    resizeTimer;
 
 	// Add dropdown toggle that display child menu items.
@@ -51,6 +52,32 @@
 			$body.toggleClass( 'sidebar-open' ).trigger( 'resize' );
 			$( this ).toggleClass( 'toggled-on' );
 			$( this ).add( sidebar ).attr( 'aria-expanded', $( this ).add( sidebar ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false');
+
+			// Remove mejs players from sidebar
+			$( '#secondary .mejs-container' ).each( function( i, el ) {
+				if ( mejs.players[ el.id ] ) {
+					mejs.players[ el.id ].remove();
+				}
+			} );
+
+			// Re-initialize mediaelement players.
+			setTimeout( function() {
+				if ( window.wp && window.wp.mediaelement ) {
+					window.wp.mediaelement.initialize();
+				}
+			} );
+
+			// Trigger resize event to display VideoPress player.
+			setTimeout( function(){
+				if ( typeof( Event ) === 'function' ) {
+					window.dispatchEvent( new Event( 'resize' ) );
+				} else {
+					var event = window.document.createEvent( 'UIEvents' );
+					event.initUIEvent( 'resize', true, false, window, 0 );
+					window.dispatchEvent( event );
+				}
+			} );
+
 		} );
 	} )();
 
@@ -98,7 +125,7 @@
 
 	// Add body classes to modify layout.
 	function bodyClasses() {
-		if ( 833 <= $window.width() ) {
+		if ( 833 <= windowWidth ) {
 			var siteBranding           = $( '.site-branding' ),
 			    siteBrandingWidth      = siteBranding.width(),
 			    siteBrandingInnerWidth = siteBranding.find( '.site-branding-inner' ).width(),
@@ -141,14 +168,13 @@
 
 	// Make Post Navigation full-width on large screen.
 	function postNavigation() {
-		var postNav       = $( '.post-navigation' ),
-		    windowWidth   = $window.width();
+		var postNav = $( '.post-navigation' );
 
 		if ( ! $body.hasClass( 'single' ) ) {
 			return;
 		} else if ( 833 <= windowWidth ) {
 			postNav.css( {
-				'width': windowWidth + 'px',
+				'width': $( window ).width() + 'px',
 			} );
 		} else {
 			postNav.attr( 'style', '' );
@@ -157,13 +183,14 @@
 
 	// Change the toggle button text.
 	function toggleButtonTxt() {
-		var social  = $( '#sidebar' ).find( '#social-navigation' ),
-		    widgets = $( '#sidebar' ).find( '#secondary' );
+		var social      = sidebar.find( '.social-navigation' ),
+		    sidebarMenu = sidebar.find( '.main-navigation' ),
+		    widgets     = sidebar.find( '#secondary' );
 
-		if ( $window.width() <= 833 ) {
-			if ( ( menu.length || social.length ) && widgets.length ) {
+		if ( 833 >= windowWidth ) {
+			if ( ( sidebarMenu.length || social.length ) && widgets.length ) {
 				sidebarToggle.html( toggleButtonText.both );
-			} else if ( ( menu.length || social.length ) && ! widgets.length ) {
+			} else if ( ( sidebarMenu.length || social.length ) && ! widgets.length ) {
 				sidebarToggle.html( toggleButtonText.menu );
 			} else {
 				sidebarToggle.html( toggleButtonText.widgets );
@@ -184,6 +211,7 @@
 
 	$( document ).ready( function() {
 		$window.on( 'resize.afterlight', function() {
+			windowWidth = window.innerWidth;
 			clearTimeout( resizeTimer );
 			resizeTimer = setTimeout( function() {
 				sidebarSize();
@@ -198,12 +226,5 @@
 		bigImageClass();
 		postNavigation();
 		toggleButtonTxt();
-
-		for ( var i = 1; i < 4; i++ ) {
-			setTimeout( sidebarSize, 100 * i );
-			setTimeout( bodyClasses, 100 * i );
-			setTimeout( postNavigation, 100 * i );
-			setTimeout( toggleButtonTxt, 100 * i );
-		}
 	} );
 } )( jQuery );

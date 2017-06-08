@@ -17,12 +17,13 @@ get_header(); ?>
 			?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+					<?php if ( get_post()->post_parent ) { ?>
 					<nav id="image-navigation" class="navigation image-navigation">
 						<div class="nav-links">
 							<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'afterlight' ) ); ?></div><div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'afterlight' ) ); ?></div>
 						</div><!-- .nav-links -->
 					</nav><!-- .image-navigation -->
+					<?php } ?>
 
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

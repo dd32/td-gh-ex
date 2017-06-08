@@ -1,14 +1,36 @@
-# Translation of Afterlight in Japanese
-# This file is distributed under the same license as the Afterlight package.
+# Translation of WordPress.com - Themes - Afterlight in Japanese
+# This file is distributed under the same license as the WordPress.com - Themes - Afterlight package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-29 22:09:08+0000\n"
+"PO-Revision-Date: 2017-03-23 06:01:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Afterlight\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: WordPress.com - Themes - Afterlight\n"
+
+#: inc/wpcom-colors.php:111
+msgid "Text"
+msgstr "テキスト"
+
+#: inc/wpcom-colors.php:49
+msgid "Background"
+msgstr "背景"
+
+#: inc/template-tags.php:90
+msgid ", "
+msgstr "・"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:90
+msgid "Tags"
+msgstr "タグ"
+
+#: functions.php:264
+msgid "Menu &amp; Widgets"
+msgstr "メニュー・ウィジェット"
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/afterlight/style.css
@@ -40,47 +62,51 @@ msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:197
+#: inc/template-tags.php:192
 msgid "Continue reading %s"
 msgstr "続きを読む: %s"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "% Comments"
 msgstr "%件のコメント"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:127
 msgid "Leave a comment"
 msgstr "コメントをどうぞ"
 
-#: inc/template-tags.php:92
-msgctxt "Used before tag names."
-msgid "Tags"
-msgstr "タグ"
-
-#: inc/template-tags.php:123
+#: inc/template-tags.php:118
 msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr "フルサイズ"
+
+#: inc/template-tags.php:107
+msgctxt "Used before project tag names."
+msgid "Project Tags"
+msgstr "プロジェクトタグ"
+
+#: inc/template-tags.php:99
+msgctxt "Used before project type names."
+msgid "Project Types"
+msgstr "プロジェクトタイプ"
 
 #: inc/template-tags.php:84
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "カテゴリー"
 
+#: inc/template-tags.php:81 inc/template-tags.php:96 inc/template-tags.php:104
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
+
 #: inc/template-tags.php:65
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr "投稿日:"
-
-#: inc/template-tags.php:81 inc/template-tags.php:89 inc/template-tags.php:101
-#: inc/template-tags.php:109
-msgctxt "Used between list items, there is a space after the comma."
-msgid ", "
-msgstr ", "
 
 #: inc/template-tags.php:47
 msgid "Featured"
@@ -98,11 +124,23 @@ msgstr "過去のコメント"
 msgid "Comment navigation"
 msgstr "コメントナビゲーション"
 
+#: inc/customizer.php:56
+msgid "Scale background image to fit."
+msgstr "背景画像が適切に収まるようサイズを調整する。"
+
+#: inc/customizer.php:40
+msgid "Add an overlay to background."
+msgstr "背景にオーバーレイを追加する。"
+
 #: inc/customizer.php:28
 msgid "Theme"
 msgstr "テーマ名"
 
-#: image.php:83
+#: inc/customizer.php:24
+msgid "Tagline is hidden in this theme."
+msgstr "このテーマではタグラインは表示されません。"
+
+#: image.php:84
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
 msgstr "<span class=\"post-title\">%title</span> <span class=\"meta-nav\">内で公開</span>"
@@ -119,13 +157,13 @@ msgstr "前の画像"
 msgid "Widgets"
 msgstr "ウィジェット"
 
-#: functions.php:258
-msgid "collapse child menu"
-msgstr "サブメニューを閉じる"
-
 #: header.php:22
 msgid "Skip to content"
 msgstr "コンテンツへ移動"
+
+#: functions.php:258
+msgid "collapse child menu"
+msgstr "サブメニューを閉じる"
 
 #: functions.php:257
 msgid "expand child menu"
@@ -140,6 +178,13 @@ msgid "on"
 msgstr "on"
 
 #. translators: If there are characters in your language that are not supported
+#. by Lato, translate this to 'off'. Do not translate into your own language.
+#: functions.php:197
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
 #. language.
 #: functions.php:192
@@ -147,12 +192,9 @@ msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr "on"
 
-#. translators: If there are characters in your language that are not supported
-#. by Lato, translate this to 'off'. Do not translate into your own language.
-#: functions.php:197
-msgctxt "Lato font: on or off"
-msgid "on"
-msgstr "on"
+#: functions.php:169
+msgid "Add widgets here to appear in your off-screen panel."
+msgstr "オフスクリーンパネルに表示するウィジェットをここに追加してください。"
 
 #: functions.php:167
 msgid "Widget Area"
@@ -178,11 +220,11 @@ msgstr "Proudly powered by %s"
 msgid "http://wordpress.org/"
 msgstr "http://ja.wordpress.org/"
 
-#: content-page.php:31 content-single.php:40 image.php:70
+#: content-page.php:31 content-single.php:40 image.php:71
 msgid "Edit"
 msgstr "編集"
 
-#: content-page.php:21 content-single.php:23 image.php:58
+#: content-page.php:21 content-single.php:23 image.php:59
 msgid "Pages:"
 msgstr "ページ:"
 
@@ -216,7 +258,11 @@ msgstr[0] "「%2$s」への%1$s件のフィードバック"
 msgid "View all posts by %s"
 msgstr "%s の投稿をすべて表示"
 
-#: archive.php:62 content-page.php:25 content-single.php:27 image.php:62
+#: author-bio.php:27
+msgid "Published by:"
+msgstr "投稿者:"
+
+#: archive.php:62 content-page.php:25 content-single.php:27 image.php:63
 #: index.php:60 search.php:44
 msgid "Page"
 msgstr "固定ページ"

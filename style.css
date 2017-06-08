@@ -1,24 +1,15 @@
 /*
 Theme Name: Afterlight
 Theme URI: https://wordpress.com/themes/afterlight/
+Description: Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair.
+Version: 1.0.3
 Author: Automattic
 Author URI: https://wordpress.com/themes/
-Description: Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair.
-Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: afterlight
-Tags: white, dark, one-column, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Afterlight is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+Tags: accessibility-ready, blog, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, one-column, rtl-language-support, sticky-post, translation-ready
 */
-
 
 /**
  * Table of Contents
@@ -3325,6 +3316,22 @@ div.jp-relatedposts .jp-relatedposts-headline em:after {
 	display: none;
 }
 
+/**
+ * 15.11 Contact Form
+ */
+
+.entry-content .contact-form input[type='text'],
+.entry-content .contact-form input[type='email'],
+.entry-content .contact-form textarea {
+	margin-bottom: 12px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.entry-content .contact-form textarea {
+	margin-bottom: 24px;
+}
+
 
 /**
  * 16.0 Media Queries
@@ -4159,6 +4166,15 @@ div.jp-relatedposts .jp-relatedposts-headline em:after {
 
 	.site-logo {
 		max-height: 96px;
+	}
+
+	.entry-content .contact-form input[type='text'],
+	.entry-content .contact-form input[type='email'] {
+		margin-bottom: 16px;
+	}
+
+	.entry-content .contact-form textarea {
+		margin-bottom: 32px;
 	}
 }
 
