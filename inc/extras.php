@@ -56,9 +56,8 @@ function beonepage_register_required_plugins() {
 	$plugins = array(
 		array(
 			'name'               => 'BeOnePage Lite Plugin',
-			'slug'               => 'beonepage-lite-plugin',
-			'source'             => 'https://downloads.wordpress.org/plugin/beonepage-lite.zip',
-			'required'           => true,
+			'slug'               => 'beonepage-lite',
+			'required'           => false,
 			'version'            => '1.0.0',
 			'force_activation'   => true,
 			'force_deactivation' => true
