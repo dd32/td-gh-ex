@@ -149,7 +149,7 @@ function gridalicious_page_grid_content( $options ) {
 	}
 
 	if ( !empty( $page_list ) && $number_of_page > 0 ) {
-		$get_featured_posts = new WP_Query( array(
+		$loop = new WP_Query( array(
 			'posts_per_page'	=> $quantity,
 			'post_type'			=> 'page',
 			'post__in'			=> $page_list,
@@ -158,11 +158,11 @@ function gridalicious_page_grid_content( $options ) {
 
 		$i=1;
 
-		while ( $get_featured_posts->have_posts() ) {
+		while ( $loop->have_posts() ) {
 
-			$get_featured_posts->the_post();
+			$loop->the_post();
 
-			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) );
+			$title_attribute = the_title_attribute( 'echo=0' );
 
 			$classes = 'page pageid-' . $post->ID;
 
@@ -177,7 +177,7 @@ function gridalicious_page_grid_content( $options ) {
 			'<a class="grid-box '. $classes .'" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">';
 
 			if ( has_post_thumbnail() ) {
-				$gridalicious_page_grid_content .= get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );
+				$gridalicious_page_grid_content .= get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) );
 			}
 			else {
 				//Default value if there is no first image
@@ -185,7 +185,7 @@ function gridalicious_page_grid_content( $options ) {
 					'<img class="no-image pngfix" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" />';
 
 				//Get the first image in page, returns false if there is no image
-				$gridalicious_first_image = gridalicious_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+				$gridalicious_first_image = gridalicious_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );
 
 				//Set value of image as first image if there is an image present in the post
 				if ( '' != $gridalicious_first_image ) {
@@ -214,7 +214,7 @@ function gridalicious_page_grid_content( $options ) {
 			$i++;
 		}
 
-		wp_reset_query();
+		wp_reset_postdata();
 	}
 
 	return $gridalicious_page_grid_content;

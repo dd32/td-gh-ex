@@ -1,5 +1,12 @@
 == Change Log ==
 
+= 1.7.1 =
+* Added: Option to Display all Categories in Customizer
+* Added: Hide meta on archive page option
+* Removed: Support for custom favicon and web clip icon
+* Code Optimization
+* Compatible with WordPress 4.8
+
 = 1.7 =
 * Removed: HTML script loading from catchbase_head() function and added it as wp_enqueue_script() in catchbase_head() function
 * Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-07 17:00-0500\n"
-"PO-Revision-Date: 2016-12-07 17:00-0500\n"
+"POT-Creation-Date: 2017-06-08 14:04+0545\n"
+"PO-Revision-Date: 2017-06-08 14:04+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
@@ -26,32 +26,45 @@ msgstr "Oops! Die Seite konnte nicht gefunden werden."
 
 #: ../404.php:22
 msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links below "
-"or a search?"
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
-"Es wurde nichts gefunden. Versuche es mit einem der folgenden Links oder der Suche."
+"Es wurde nichts gefunden. Versuche es mit einem der folgenden Links oder der "
+"Suche."
 
-#: ../comments.php:27
-#, php-format
+#: ../comments.php:30
+#, fuzzy, php-format
+#| msgctxt "comments title"
+#| msgid "One thought on &ldquo;%2$s&rdquo;"
+#| msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Ein Gedanke zu &bdquo;%2$s&ldquo;"
+
+#: ../comments.php:35
+#, fuzzy, php-format
+#| msgctxt "comments title"
+#| msgid "One thought on &ldquo;%2$s&rdquo;"
+#| msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Ein Gedanke zu &bdquo;%2$s&ldquo;"
 msgstr[1] "%1$s Gedanken zu &bdquo;%2$s&ldquo;"
 
-#: ../comments.php:34 ../comments.php:59
+#: ../comments.php:50 ../comments.php:75
 msgid "Comment navigation"
 msgstr "Kommentar-Navigation"
 
-#: ../comments.php:35 ../comments.php:60
+#: ../comments.php:51 ../comments.php:76
 msgid "&larr; Older Comments"
 msgstr "&larr; Ältere Kommentare"
 
-#: ../comments.php:36 ../comments.php:61
+#: ../comments.php:52 ../comments.php:77
 msgid "Newer Comments &rarr;"
 msgstr "Neuere Kommentare &rarr;"
 
-#: ../comments.php:71
+#: ../comments.php:87
 msgid "Comments are closed."
 msgstr "Kommentare sind geschlossen."
 
@@ -61,33 +74,34 @@ msgstr "Es konnte nichts gefunden werden."
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Bereit, um deinen ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Starte hier</"
-"a>."
+"Bereit, um deinen ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Starte "
+"hier</a>."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some different "
-"keywords."
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
-"Entschuldigung, aber zu deinen Suchbegriffen wurde nichts passendes gefunden. Bitte "
-"versuche es mit anderen Stichworten noch einmal."
+"Entschuldigung, aber zu deinen Suchbegriffen wurde nichts passendes "
+"gefunden. Bitte versuche es mit anderen Stichworten noch einmal."
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can "
-"help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
-"Es sieht so aus, als ob wir nicht das finden konnten, wonach du gesucht hast. "
-"Möglicherweise hilft die Suchfunktion."
+"Es sieht so aus, als ob wir nicht das finden konnten, wonach du gesucht "
+"hast. Möglicherweise hilft die Suchfunktion."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: ../content-page.php:35 ../inc/gridalicious-core.php:603
-#: ../inc/gridalicious-core.php:622 ../inc/gridalicious-core.php:748
+#: ../content-page.php:35 ../inc/gridalicious-core.php:521
+#: ../inc/gridalicious-core.php:540 ../inc/gridalicious-core.php:666
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -105,48 +119,55 @@ msgstr ""
 msgid "Color Scheme"
 msgstr "Farbschema"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:40
-msgid ""
-"Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
-msgstr ""
-"Halten Sie die STRG- (Windows) / bzw. Command Taste (Mac) gedr&uuml;ckt, um mehrere "
-"Kategorien auszuw&auml;hlen."
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:29
+#, fuzzy
+#| msgid "Select Categories"
+msgid "All Categories"
+msgstr "Kategorien ausw&auml;hlen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:53
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:41
+msgid ""
+"Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
+"options."
+msgstr ""
+"Halten Sie die STRG- (Windows) / bzw. Command Taste (Mac) gedr&uuml;ckt, um "
+"mehrere Kategorien auszuw&auml;hlen."
+
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:54
 msgid "Theme Instructions"
 msgstr "Theme Anleitung"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:57
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:58
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:61
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:62
 msgid "Changelog"
 msgstr "Changelog"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:65
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:66
 msgid "Donate Now"
 msgstr "Jetzt spenden"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:69
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:70
 msgid "Review"
 msgstr "Rezension"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:73
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:74
 #: ../inc/gridalicious-default-options.php:410
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:77
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:78
 #: ../inc/gridalicious-default-options.php:414
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:81
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:82
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:85
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:86
 #: ../inc/gridalicious-default-options.php:442
 msgid "Pinterest"
 msgstr "Pinterest"
@@ -199,8 +220,8 @@ msgstr "Subheadline f&uuml;r Ausgew&auml;hlten Inhalt"
 
 #: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:161
 msgid ""
-"Save and refresh the page if No. of Featured Content is changed (Max no of Featured "
-"Content is 20)"
+"Save and refresh the page if No. of Featured Content is changed (Max no of "
+"Featured Content is 20)"
 msgstr ""
 "Speichern und Seite neu laden, wenn die Anzahl der Ausgew&auml;hlten Inhalte "
 "ver&aumlndert wird. (Max. Anzahl 20 Einträge)"
@@ -238,8 +259,8 @@ msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:88
 msgid ""
-"Save and refresh the page if No. of Grid Content is changed (Max no of grid content "
-"is 30). No. of Grid Content in set as a multiple of 3"
+"Save and refresh the page if No. of Grid Content is changed (Max no of grid "
+"content is 30). No. of Grid Content in set as a multiple of 3"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:95
@@ -263,13 +284,14 @@ msgid "Featured Header Image Link URL"
 msgstr "Header-Themenbild: URL-Verweis"
 
 #: ../inc/customizer-includes/gridalicious-customizer-header-options.php:91
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:427
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:386
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Markieren, um Link in neuem Fenster/Tab zu &ouml;ffnen."
 
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
-msgstr "Hinweis: URL f&uuml;r die entsprechende Social Networking Site eingeben."
+msgstr ""
+"Hinweis: URL f&uuml;r die entsprechende Social Networking Site eingeben."
 
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:21
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:27
@@ -278,225 +300,208 @@ msgstr "Verweise auf Soziale Medien"
 
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:40
 msgid ""
-"Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. "
-"More Information in readme file"
+"Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
+"{action}. More Information in readme file"
 msgstr ""
-"Skype links k&ouml;nnen folgende Formate habens:<br>callto://+{number}<br> skype:"
-"{username}?{action}. Mehr Informationen im Readme."
+"Skype links k&ouml;nnen folgende Formate habens:<br>callto://+{number}<br> "
+"skype:{username}?{action}. Mehr Informationen im Readme."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:20
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:13
 msgid "Basic theme Options"
 msgstr "Grunds&auml;tzliche Themen-Einstellungen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:23
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:16
 msgid "Theme Options"
 msgstr "Theme-Einstellungen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:28
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:21
 msgid ""
-"Breadcrumbs are a great way of letting your visitors find out where they are on "
-"your site with just a glance. You can enable/disable them on homepage and entire "
-"site."
+"Breadcrumbs are a great way of letting your visitors find out where they are "
+"on your site with just a glance. You can enable/disable them on homepage and "
+"entire site."
 msgstr ""
-"Breadcrums sind eine gro&szlig;artige M&ouml;glichkeit um dem Besucher mit nur "
-"einem Blick zu zeigen, wo er sich befindet. Breadcrumbs k&ouml;nnen f&uuml;r "
-"bestimmte Bereiche der Website aktiviert oder deaktiviert werden."
+"Breadcrums sind eine gro&szlig;artige M&ouml;glichkeit um dem Besucher mit "
+"nur einem Blick zu zeigen, wo er sich befindet. Breadcrumbs k&ouml;nnen "
+"f&uuml;r bestimmte Bereiche der Website aktiviert oder deaktiviert werden."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:30
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:23
 msgid "Breadcrumb Options"
 msgstr "Breadcrumb-Optionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:41
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:34
 msgid "Check to enable Breadcrumb"
 msgstr "Markieren aktiviert Breadcrumbs"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:54
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:47
 msgid "Check to enable Breadcrumb on Homepage"
 msgstr "Markieren aktiviert Breadcrumbs auf der Homepage"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:70
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:63
 msgid "Seperator between Breadcrumbs"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:85
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:78
 msgid "Custom/Inline CSS"
 msgstr "Benutzerdefiniertes CSS"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:88
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:81
 msgid "Custom CSS Options"
 msgstr "Benutzerdefinierte CSS-Optionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:98
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:91
 msgid "Enter Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:111
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:104
 msgid "Excerpt Options"
 msgstr "Auszug-Optionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:121
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:114
 msgid "Excerpt length. Default is 40 words"
 msgstr "Auszug L&auml;nge. Standard ist 40 W&ouml;rter"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:128
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:121
 msgid "Excerpt Length (words)"
 msgstr "Auszug L&auml;nge (W&ouml;rter)"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:142
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:135
 msgid "Read More Text"
 msgstr "weiterlesen..."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:151
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:144
 msgid ""
-"Only posts that belong to the categories selected here will be displayed on the "
-"front page"
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page"
 msgstr ""
 "Auf der Titelseite erscheinen nur Beitr&auml;ge, der hier ausgew&auml;hlten "
 "Kategorien"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:154
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:147
 msgid "Homepage / Frontpage Options"
 msgstr "Homepage / Frontpage-Optionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:164
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:157
 msgid "Select Categories"
 msgstr "Kategorien ausw&auml;hlen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:177
-msgid "Remove Icon images to disable."
-msgstr "Zum Deaktivieren Icon-Grafiken entfernen."
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:180
-msgid "Icon Options"
-msgstr "Icon Optionen"
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:189
-msgid "Select/Add Favicon"
-msgstr "Favicon ausw&auml;hlen/hinzuf&uuml;gen"
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:200
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
-"height, which will support High Resolution Devices like iPad Retina."
-msgstr ""
-"Web Clip Icon f&uuml;r Apple Ger&auml;te. Empfohlene Gr&ouml;&szlig;e 144x144 Pixel "
-"zur Unterst&uuml;tzung hochaufl&ouml;sender Ger&auml;te mit Retina Display."
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:201
-msgid "Select/Add Web Clip Icon"
-msgstr "Web-Clip-Symbol ausw&auml;hlen/hinzuf&uuml;gen"
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:213
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:172
 #: ../inc/gridalicious-metabox.php:93
 msgid "Layout Options"
 msgstr "Layout-Optionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:230
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:189
 msgid "Default Layout"
 msgstr "Layout"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:250
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:209
 msgid "Archive Content Layout"
 msgstr "Blog Archiv Layout"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:270
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:229
 #: ../inc/gridalicious-metabox.php:95
 msgid "Single Page/Post Image Layout "
 msgstr "Layout f&uuml;r einzelne Seite/Post"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:281
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:240
+#, fuzzy, php-format
+#| msgid ""
+#| "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi "
+#| "Plugin</a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" "
+#| "href=\"%s\">JetPack Plugin</a> with Infinite Scroll module Enabled."
+msgid ""
+"Numeric Option requires <a target=\"_blank\" href=\"%1$s\">WP-PageNavi "
+"Plugin</a>.<br/>Infinite Scroll Options requires <a target=\"_blank\" href="
+"\"%2$s\">JetPack Plugin</a> with Infinite Scroll module Enabled."
+msgstr ""
+"Numerische Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s\">WP-"
+"PageNavi Plugin</a>.<br/>Infinite Scroll Optionen ben&ouml;tigen <a target="
+"\"_blank\" href=\"%s\">JetPack Plugin</a> mit aktiviertem 'Infinite Scroll' "
+"Modul."
+
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:247
 #, php-format
 msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>.<br/"
-">Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack Plugin</"
-"a> with Infinite Scroll module Enabled."
+"Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
+"Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
-"Numerische Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s\">WP-PageNavi "
-"Plugin</a>.<br/>Infinite Scroll Optionen ben&ouml;tigen <a target=\"_blank\" href="
-"\"%s\">JetPack Plugin</a> mit aktiviertem 'Infinite Scroll' Modul."
+"Infinite Scroll Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s"
+"\">JetPack Plugin</a> mit aktiviertem 'Infinite Scroll' Modul."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:288
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:258
 #, php-format
 msgid ""
-"Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack Plugin</"
-"a> with Infinite Scroll module Enabled."
+"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
+"a>."
 msgstr ""
-"Infinite Scroll Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s\">JetPack "
-"Plugin</a> mit aktiviertem 'Infinite Scroll' Modul."
+"Numerische Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s\">WP-"
+"PageNavi Plugin</a>"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:299
-#, php-format
-msgid ""
-"Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
-msgstr ""
-"Numerische Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s\">WP-PageNavi "
-"Plugin</a>"
-
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:310
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:269
 msgid "Pagination Options"
 msgstr "Numerierungsoptionen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:327
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:286
 msgid "Pagination type"
 msgstr "Numerierungsart"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:336
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:295
 msgid "To disable the fields, simply leave them empty."
 msgstr "Um die Felder zu deaktivieren, einfach leer lassen."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:339
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:298
 msgid "Promotion Headline Options"
 msgstr "Optionen für die Themen-Kopfzeile"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:356
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:315
 msgid "Enable Promotion Headline on"
 msgstr "Werbeheadline ein"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:370
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:329
 msgid "Appropriate Words: 10"
 msgstr "Angemessene Wortanzahl: 10"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:371
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:330
 msgid "Promotion Headline Text"
 msgstr "Werbeheadline Text"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:384
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:343
 msgid "Appropriate Words: 15"
 msgstr "Angemessene Wortanzahl: 15"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:385
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:344
 msgid "Promotion Subheadline Text"
 msgstr "Werbe-Untertitel Text"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:398
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:357
 msgid "Appropriate Words: 3"
 msgstr "Angemessene Wortanzahl: 3"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:399
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:358
 msgid "Promotion Headline Button Text "
 msgstr "Werbeheadline Schaltfl&auml;chentext"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:413
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:372
 msgid "Promotion Headline Link"
 msgstr "Werbeheadline Link"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:439
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:398
 msgid "Scrollup Options"
 msgstr "Hochscrollen Einstellungen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:449
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:408
 msgid "Check to disable Scroll Up"
 msgstr "Hochscrollen deaktivieren"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:458
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:417
 msgid "Change default placeholder text in Search."
-msgstr "Hier k&ouml;nnen Sie den Standard Platzhaltertext im Suchfeld &auml;ndern."
+msgstr ""
+"Hier k&ouml;nnen Sie den Standard Platzhaltertext im Suchfeld &auml;ndern."
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:461
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:420
 msgid "Search Options"
 msgstr "Weitere Suchkriterien"
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:471
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:430
 msgid "Default Display Text in Search"
 msgstr "Voreingestellter Anzeigetext im Feld \"Suche\""
 
@@ -518,11 +523,12 @@ msgstr "Markieren, um Website-Titel und Untertitel vor das Logo zu bewegen."
 
 #: ../inc/customizer-includes/gridalicious-customizer.php:145
 msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view full "
-"effects."
+"Caution: Reset all settings to default. Refresh the page after save to view "
+"full effects."
 msgstr ""
 "Achtung: Alle Einstellungen werden auf die Standardwerte zur&uuml;ckgesetzt. "
-"Aktualisieren Sie die Seite nach dem Speichern, um die &Auml;nderungen zu sehen."
+"Aktualisieren Sie die Seite nach dem Speichern, um die &Auml;nderungen zu "
+"sehen."
 
 #: ../inc/customizer-includes/gridalicious-customizer.php:147
 msgid "Reset all settings"
@@ -590,103 +596,98 @@ msgstr "Primäres Menü"
 msgid "Secondary Menu"
 msgstr "Sekundär-Menü"
 
-#: ../inc/gridalicious-core.php:569
+#: ../inc/gridalicious-core.php:489
 msgid "Post navigation"
 msgstr "Artikel-Navigation"
 
-#: ../inc/gridalicious-core.php:578
+#: ../inc/gridalicious-core.php:498
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Artikel"
 
-#: ../inc/gridalicious-core.php:579
+#: ../inc/gridalicious-core.php:499
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Artikel <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/gridalicious-core.php:603
+#: ../inc/gridalicious-core.php:521
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/gridalicious-core.php:613
+#: ../inc/gridalicious-core.php:531
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
-#: ../inc/gridalicious-core.php:619
+#: ../inc/gridalicious-core.php:537
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: ../inc/gridalicious-core.php:626
+#: ../inc/gridalicious-core.php:544
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Freischaltung."
 
-#: ../inc/gridalicious-core.php:729
+#: ../inc/gridalicious-core.php:647
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Ver&ouml;ffentlicht am</span>"
 
-#: ../inc/gridalicious-core.php:736
+#: ../inc/gridalicious-core.php:654
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor</span>"
 
-#: ../inc/gridalicious-core.php:744
+#: ../inc/gridalicious-core.php:662
 msgid "Leave a comment"
 msgstr "Hinterlasse einen Kommentar"
 
-#: ../inc/gridalicious-core.php:744
+#: ../inc/gridalicious-core.php:662
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/gridalicious-core.php:744
+#: ../inc/gridalicious-core.php:662
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../inc/gridalicious-core.php:765 ../inc/gridalicious-core.php:773
+#: ../inc/gridalicious-core.php:683 ../inc/gridalicious-core.php:691
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/gridalicious-core.php:768
+#: ../inc/gridalicious-core.php:686
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorien</span>"
 
-#: ../inc/gridalicious-core.php:776
+#: ../inc/gridalicious-core.php:694
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Schlagworte</span>"
 
-#: ../inc/gridalicious-core.php:919
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: ../inc/gridalicious-core.php:1420
+#: ../inc/gridalicious-core.php:1338
 msgid "Scroll Up"
 msgstr "Nach oben scrollen"
 
-#: ../inc/gridalicious-core.php:1438
+#: ../inc/gridalicious-core.php:1356
 msgid "Posted on"
 msgstr "Ver&ouml;ffentlicht am:"
 
-#: ../inc/gridalicious-core.php:1439
+#: ../inc/gridalicious-core.php:1357
 msgid "By"
 msgstr "nach"
 
-#: ../inc/gridalicious-core.php:1481
+#: ../inc/gridalicious-core.php:1398
 msgid "Next &rarr;"
 msgstr "Weiter &rarr;"
 
-#: ../inc/gridalicious-core.php:1482
+#: ../inc/gridalicious-core.php:1399
 msgid "Next post:"
 msgstr "Nächster Beitrag:"
 
-#: ../inc/gridalicious-core.php:1484
+#: ../inc/gridalicious-core.php:1401
 msgid "&larr; Previous"
 msgstr "&larr; Zurück"
 
-#: ../inc/gridalicious-core.php:1485
+#: ../inc/gridalicious-core.php:1402
 msgid "Previous post:"
 msgstr "Vorheriger Beitrag:"
 
@@ -700,8 +701,8 @@ msgstr "Gridalicious ist ein responsives Premium WordPress Theme"
 
 #: ../inc/gridalicious-default-options.php:67
 msgid ""
-"This is promotion headline. You can edit this from Appearance -> Customize -> Theme "
-"Options -> Promotion Headline Options"
+"This is promotion headline. You can edit this from Appearance -> Customize -"
+"> Theme Options -> Promotion Headline Options"
 msgstr ""
 "Dies ist die Werbeheadline. Sie k&ouml;nnen Sie unter Erscheinungsbild -> "
 "Individualisiern -> Themenoptionen -> Werbeheadline ver&auml;ndern."
@@ -996,24 +997,30 @@ msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright &copy; %1$s %2$s. Alle Rechte vorbehalten."
 
+#: ../inc/gridalicious-default-options.php:644
+#, fuzzy
+#| msgctxt "yearly archives date format"
+#| msgid "Y"
+msgid "Y"
+msgstr "Y"
+
 #: ../inc/gridalicious-default-options.php:646
 msgid "by"
 msgstr "nach"
 
 #: ../inc/gridalicious-featured-content.php:57
 msgid ""
-"Here you can showcase the x number of Featured Content. You can edit this Headline, "
-"Subheadline and Feaured Content from \"Appearance -> Customize -> Featured Content "
-"Options\"."
+"Here you can showcase the x number of Featured Content. You can edit this "
+"Headline, Subheadline and Feaured Content from \"Appearance -> Customize -> "
+"Featured Content Options\"."
 msgstr ""
-"Hier k&ouml;nnen Sie eine Anzahl X an ausgew&auml;hlten Inhalten pr&auml;sentieren. "
-"Sie k&ouml;nnen die Headline, Subheadline und ihre Inhalte unter \"Erscheinungsbild "
-"-> Individualisieren -> Optionen f&uuml;r ausgew&auml;hlten Inhalt\" anpassen."
+"Hier k&ouml;nnen Sie eine Anzahl X an ausgew&auml;hlten Inhalten pr&auml;"
+"sentieren. Sie k&ouml;nnen die Headline, Subheadline und ihre Inhalte unter "
+"\"Erscheinungsbild -> Individualisieren -> Optionen f&uuml;r ausgew&auml;"
+"hlten Inhalt\" anpassen."
 
-#: ../inc/gridalicious-featured-content.php:269
 #: ../inc/gridalicious-featured-content.php:278
 #: ../inc/gridalicious-featured-content.php:289
-#: ../inc/gridalicious-featured-grid-content.php:165
 #: ../inc/gridalicious-featured-grid-content.php:177
 msgid "Permalink to:"
 msgstr "Permalink auf:"
@@ -1043,7 +1050,8 @@ msgid "Primary Sidebar"
 msgstr "Primäre Seitenleiste"
 
 #: ../inc/gridalicious-widgets.php:36
-msgid "This is the primary sidebar if you are using a two column site layout option."
+msgid ""
+"This is the primary sidebar if you are using a two column site layout option."
 msgstr ""
 
 #: ../inc/gridalicious-widgets.php:43
@@ -1063,7 +1071,8 @@ msgstr "CT: Social Icons"
 #: ../inc/gridalicious-widgets.php:70
 msgid "Use this widget to add Social Icons as a widget. "
 msgstr ""
-"﻿Verwenden Sie dieses Widget, um Links zu sozialen Netzwerken hinzuzuf&uuml;gen."
+"﻿Verwenden Sie dieses Widget, um Links zu sozialen Netzwerken hinzuzuf&uuml;"
+"gen."
 
 #: ../inc/gridalicious-widgets.php:111
 msgid "Title (optional):"
@@ -1094,26 +1103,51 @@ msgstr "Prim&auml;rer Seitenleisten Widget-Bereich"
 
 #: ../sidebar.php:83
 msgid ""
-"This is the Primary Sidebar Widget Area if you are using a two column site layout "
-"option."
+"This is the Primary Sidebar Widget Area if you are using a two column site "
+"layout option."
 msgstr ""
-"Das ist der Prim&auml;re Seitenleisten Widget-Bereich wenn du ein zweispaltiges "
-"Layout verwendest."
+"Das ist der Prim&auml;re Seitenleisten Widget-Bereich wenn du ein "
+"zweispaltiges Layout verwendest."
 
 #: ../sidebar.php:84
 #, php-format
 msgid ""
-"By default it will load Search and Archives widgets as shown below. You can add "
-"widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
-"replace default widgets."
+"By default it will load Search and Archives widgets as shown below. You can "
+"add widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> "
+"which will replace default widgets."
 msgstr ""
 "Standardm&auml;&szlig;ig werden die Suchen- und Archiv-Widgets, wie unten "
-"dargestellt angezeigt. Sie k&ouml;nnen im <a href=\"%s\">Widgets Kontrollfeld</a> "
-"Widgets zu diesem Bereich hinzuf&uuml;gen, welche die Standard-Widgets ersetzen."
+"dargestellt angezeigt. Sie k&ouml;nnen im <a href=\"%s\">Widgets "
+"Kontrollfeld</a> Widgets zu diesem Bereich hinzuf&uuml;gen, welche die "
+"Standard-Widgets ersetzen."
 
 #: ../sidebar.php:97
 msgid "Archives"
 msgstr "Archive"
+
+#~ msgid "Remove Icon images to disable."
+#~ msgstr "Zum Deaktivieren Icon-Grafiken entfernen."
+
+#~ msgid "Icon Options"
+#~ msgstr "Icon Optionen"
+
+#~ msgid "Select/Add Favicon"
+#~ msgstr "Favicon ausw&auml;hlen/hinzuf&uuml;gen"
+
+#~ msgid ""
+#~ "Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
+#~ "Height 144px height, which will support High Resolution Devices like iPad "
+#~ "Retina."
+#~ msgstr ""
+#~ "Web Clip Icon f&uuml;r Apple Ger&auml;te. Empfohlene Gr&ouml;&szlig;e "
+#~ "144x144 Pixel zur Unterst&uuml;tzung hochaufl&ouml;sender Ger&auml;te mit "
+#~ "Retina Display."
+
+#~ msgid "Select/Add Web Clip Icon"
+#~ msgstr "Web-Clip-Symbol ausw&auml;hlen/hinzuf&uuml;gen"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #, fuzzy
 #~ msgid "Gridalicious"
@@ -1174,7 +1208,3 @@ msgstr "Archive"
 #~ msgctxt "monthly archives date format"
 #~ msgid "F Y"
 #~ msgstr "F Y"
-
-#~ msgctxt "yearly archives date format"
-#~ msgid "Y"
-#~ msgstr "Y"
