@@ -40,7 +40,9 @@
 
         <div class="<?php echo has_nav_menu('menu-2')?'col-6':''; ?> copyright">
           <span><?php _e( 'Proudly powered by ', 'adaptativo' ) ?></span>	<a href="https://wordpress.org/">WordPress</a>
-    			<br/>©<span> <?php _e('Theme Adaptativo designed by', 'adaptativo'); ?> </span> <a href="https://www.webempresa.com/" rel="designer">Webempresa</a>
+    			<br/>
+          <span>&copy; <?php _e('Theme Adaptativo designed by', 'adaptativo'); ?> </span> <a href="https://www.webempresa.com/" rel="designer">Webempresa</a>
+
         </div><!-- .site-info -->
 
 

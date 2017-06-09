@@ -26,6 +26,12 @@ else{
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo $img_background; ?> >
 
+  <?php
+    if ( is_sticky() ){
+      echo '<i class="fa fa-bookmark" aria-hidden="true"></i>';
+    }
+  ?>
+
   <div class="<?php echo $img_linkclass; ?>" >
 
 

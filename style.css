@@ -5,11 +5,11 @@ Author: Webempresa
 Author URI: https://webempresa.com
 Description: Blog WordPress Theme
 Adaptativo a beautiful responsive themes. It's a simple and elegant theme built on HTML5 & CSS3. It incorporates custom Theme Options that are easy to modify, Font Awesome icons font and grid columns.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adaptativo
-Tags: blog, one-column, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, right-sidebar, custom-background, custom-header, custom-menu, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1081,6 +1081,14 @@ textarea {
 .widget {
   padding: 15px; }
 
+table {
+  width: 100%; }
+  table td, table th {
+    border: 1px solid #f0f0f0;
+    padding: 8px 6px; }
+  table th {
+    background-color: #f0f0f0; }
+
 .site-title {
   margin: auto;
   font-family: "Helvetica", sans-serif;
@@ -1375,6 +1383,8 @@ aside .textwidget a {
       color: #999; }
       .comments-area .comment-form a:hover {
         color: #ffcc00; }
+    .comments-area .comment-form textarea {
+      resize: vertical; }
 
 .navigation {
   width: 100%;
@@ -1491,6 +1501,13 @@ aside .textwidget a {
   min-height: 400px; }
   .site-main.home-site article:nth-child(3n) {
     margin-right: 0; }
+  .site-main.home-site article .fa-bookmark {
+    color: #ffcc00;
+    text-shadow: 1px 1px 2px #999;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: -4px; }
   .site-main.home-site article .wrap-article-home {
     display: block;
     position: absolute;
