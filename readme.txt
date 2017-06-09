@@ -32,6 +32,9 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.2.3 - Jun 09 2017 =
+- Fixed 2 translation issue on result-count.php 
+
 = 1.2.2 - Jun 08 2017 =
 - Calendar widget layout issue on small screens
 
