@@ -31,7 +31,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting('bb_ecommerce_store_our_address',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'wp_kses_post'
+		'sanitize_callback'	=> 'sanitize_textarea_field'
 	));
 	
 	$wp_customize->add_control('bb_ecommerce_store_our_address',array(

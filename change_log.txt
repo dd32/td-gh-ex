@@ -9,3 +9,7 @@ i) Fixed CSS Issue
 
 Version 1.2.1
 i) Licence updated
+
+Version 1.2.2
+i) Fixed licence text
+ii) Fixed code for wp_link_pages and missing trasnlation in function.php

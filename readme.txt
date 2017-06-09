@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2.1
+Version         :   1.2.2
 Tested up to    :   WP 4.7+
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
@@ -47,7 +47,9 @@ Theme is Built using the following resource bundles.
 
 2 - Images used from Pixabay.
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
-	Screenshot Image: https://pixabay.com/en/child-person-human-girl-teddy-830725/
+	Screenshot Image: https://pixabay.com/en/child-person-human-girl-teddy-830725/        
+        https://pixabay.com/en/holiday-shopping-smartphone-phone-1921658/
+        https://pixabay.com/en/shopping-shopping-cart-sale-meadow-2291966/
 
 3 - CSS bootstrap.css
 	Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.

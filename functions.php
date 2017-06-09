@@ -46,6 +46,7 @@ function bb_ecommerce_store_setup() {
 	load_theme_textdomain( 'bb-ecommerce-store', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
@@ -162,11 +163,11 @@ function bb_ecommerce_store_ie_stylesheet(){
 add_action('wp_enqueue_scripts','bb_ecommerce_store_ie_stylesheet');
 
 
-define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com','bb-ecommerce-store');
+define('bb_ecommerce_store_CREDIT','http://www.themeshopy.com','bb-ecommerce-store');
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>Design By themeshopy</a>";
+			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>".__('Design By Themeshopy','bb-ecommerce-store')."</a>";
 	}
 }
 

@@ -25,7 +25,18 @@ get_header(); ?>
 		<div class="col-md-8">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<h1><?php the_title();?></h1>
-                <?php the_content();?>                
+                <?php the_content();
+                
+                wp_link_pages( array(
+                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-ecommerce-store' ) . '</span>',
+                    'after'       => '</div>',
+                    'link_before' => '<span>',
+                    'link_after'  => '</span>',
+                    'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>%',
+                    'separator'   => '<span class="screen-reader-text">, </span>',
+                ) );
+
+				?>                
             <?php endwhile; // end of the loop. ?>          
         </div>        
         <div class="clear"></div>    
