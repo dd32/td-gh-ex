@@ -211,7 +211,16 @@ function responsive_theme_options_do_page() {
 	 */
 	$options = apply_filters( 'responsive_options_filter', array(
 		'theme_elements' => array(
-				array(
+			array(
+				'title'       => __( 'Enable Featured images?', 'responsive' ),
+				'subtitle'    => '',
+				'heading'     => '',
+				'type'        => 'checkbox',
+				'id'          => 'featured_images',
+				'description' => __( 'Check to enable', 'responsive' ),
+				'placeholder' => ''
+			),
+			array(
 				'title'       => __( 'Disable breadcrumb list?', 'responsive' ),
 				'subtitle'    => '',
 				'heading'     => '',
@@ -341,6 +350,17 @@ function responsive_theme_options_do_page() {
 				'description' => __( 'Enter your call to action text', 'responsive' ),
 				'placeholder' => __( 'Call to Action', 'responsive' )
 			),
+                       array(
+                                'title'       => __( 'Call to Action Button Style', 'responsive' ),
+                                'subtitle'    => '',
+                                'heading'     => '',
+                                'id'          => 'button_style',
+                                'type'        => 'select',
+                                'options'     => array(
+                                    'default'  => __( 'Gradient', 'responsive' ),
+			             'flat_style' => __( 'Flat', 'responsive' ) 
+                                    )
+                          ),
 			array(
 				'title'       => __( 'Featured Content', 'responsive' ),
 				'subtitle'    => '<a class="help-links" href="' . esc_url( 'http://cyberchimps.com/guide/responsive/' ) . '" title="' . esc_attr__( 'See Docs', 'responsive' ) . '" target="_blank">' .
@@ -570,6 +590,7 @@ function responsive_theme_options_validate( $input ) {
 		// checkbox value is either 0 or 1
 		foreach( array(
 					'breadcrumb',
+					'featured_images',
 					'cta_button',
 					'front_page'
 				) as $checkbox ) {
@@ -611,7 +632,7 @@ function responsive_theme_options_validate( $input ) {
 		$input['yelp_uid']                    = esc_url_raw( $input['yelp_uid'] );
 		$input['vimeo_uid']                   = esc_url_raw( $input['vimeo_uid'] );
 		$input['foursquare_uid']              = esc_url_raw( $input['foursquare_uid'] );
-		$input['responsive_inline_css']       = wp_kses_stripslashes( $input['responsive_inline_css'] );
+		$input['responsive_inline_css']       = wp_kses_stripslashes( isset($input['responsive_inline_css']) );
 		$input['responsive_inline_js_head']   = wp_kses_stripslashes( $input['responsive_inline_js_head'] );
 		$input['responsive_inline_js_footer'] = wp_kses_stripslashes( $input['responsive_inline_js_footer'] );
 
