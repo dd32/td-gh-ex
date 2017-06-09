@@ -8,7 +8,7 @@
 // No direct access, please
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'GENERATE_VERSION', '1.3.46' );
+define( 'GENERATE_VERSION', '1.3.47' );
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -94,6 +94,9 @@ function generate_setup()
 	 * This theme styles the visual editor to resemble the theme style
 	 */
 	add_editor_style( 'inc/css/editor-style.css' );
+	
+	// Remove image caption padding
+	add_filter( 'img_caption_shortcode_width', '__return_zero' );
 }
 endif; // generate_setup
 
@@ -291,9 +294,6 @@ function generate_scripts()
 	// IE 8
 	wp_enqueue_style( 'generate-ie', get_template_directory_uri() . "/css/ie{$suffix}.css", array( 'generate-style-grid' ), GENERATE_VERSION, 'all' );
 	wp_style_add_data( 'generate-ie', 'conditional', 'lt IE 9' );
-	
-	// Add jQuery
-	wp_enqueue_script( 'jquery' );
 	
 	// Add our mobile navigation
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . "/js/navigation{$suffix}.js", array( 'jquery' ), GENERATE_VERSION, true );
@@ -528,19 +528,6 @@ add_action('wp_head','generate_add_viewport');
 function generate_add_viewport()
 {
 	echo apply_filters( 'generate_meta_viewport', '<meta name="viewport" content="width=device-width, initial-scale=1">' );
-}
-endif;
-
-if ( ! function_exists( 'generate_remove_caption_padding' ) ) :
-/**
- * Remove WordPress's default padding on images with captions
- *
- * @param int $width Default WP .wp-caption width (image width + 10px)
- * @return int Updated width to remove 10px padding
- */
-add_filter( 'img_caption_shortcode_width', 'generate_remove_caption_padding' );
-function generate_remove_caption_padding( $width ) {
-	return $width - 10;
 }
 endif;
 
