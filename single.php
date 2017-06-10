@@ -7,7 +7,7 @@
              <main id="main" class="site-main wow fadeInUp">
               <?php get_template_part('template-parts/content'); ?>
             </main>
-<?php endwhile; wp_reset_query(); ?>
+<?php endwhile;?>
 <?php if (comments_open() || get_comments_number()):
 comments_template();
 endif;

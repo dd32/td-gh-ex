@@ -37,11 +37,11 @@ function backyard_comment( $comment, $args, $depth ) {
                         printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
                             get_comment_author_link(),
                             // If current post author is also comment author, make it known visually.
-                            ( $comment->user_id === $post->post_author ) ? '<span>' .wp_kses_post( esc_html_e('Post author', 'backyard' )) . '</span>' : ''
+                            ( $comment->user_id === $post->post_author ) ? '<span>' .wp_kses_post( esc_html__('Post author', 'backyard' )) . '</span>' : ''
                         );
                         printf( wp_kses_post( esc_html( '%1$s at %2$s', 'backyard' )), get_comment_date(), get_comment_time() ); ?><?php edit_comment_link( wp_kses_post( esc_html_e( 'Edit', 'backyard' )), '  ', '' );
-                        comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses_post( esc_html_e( 'Reply', 'backyard' )), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
-                        edit_comment_link( wp_kses_post( esc_html_e( 'Edit', 'backyard' )), '<span class="edit-link">', '</span>' );
+                        comment_reply_link( array_merge( $args, array( 'reply_text' =>esc_html__( 'Reply', 'backyard' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+                        edit_comment_link( wp_kses_post( esc_html__( 'Edit', 'backyard' )), '<span class="edit-link">', '</span>' );
                     ?>
                 </header><!-- .comment-meta -->
 
