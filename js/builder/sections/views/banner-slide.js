@@ -10,10 +10,7 @@ var oneApp = oneApp || {};
 		events: function() {
 			return _.extend({}, oneApp.views.item.prototype.events, {
 				'click .ttfmake-banner-slide-remove': 'onSlideRemove',
-				'click .ttfmake-banner-slide-toggle': 'toggleSection',
-				'overlayClose': 'onOverlayClose',
-				'color-picker-change': 'onColorPickerChange',
-				'view-ready': 'onViewReady',
+				'overlay-open': 'onOverlayOpen',
 			});
 		},
 
@@ -28,27 +25,12 @@ var oneApp = oneApp || {};
 			return this;
 		},
 
-		onViewReady: function(e) {
-			e.stopPropagation();
-			oneApp.builder.initColorPicker(this);
-		},
-
-		onOverlayClose: function(e, textarea) {
-			e.stopPropagation();
-
-			this.model.set('content', $(textarea).val());
-			this.$el.trigger('model-item-change');
-		},
-
-		onColorPickerChange: function(e, data) {
-			e.stopPropagation();
-
-			this.model.set(data.modelAttr, data.color);
-			this.$el.trigger('model-item-change');
-		},
-
 		onSlideRemove: function (evt) {
 			evt.preventDefault();
+
+			if (!confirm('Are you sure you want to trash this slide permanently?')) {
+				return;
+			}
 
 			var $stage = this.$el.parents('.ttfmake-banner-slides');
 
@@ -62,25 +44,11 @@ var oneApp = oneApp || {};
 			}.bind(this));
 		},
 
-		toggleSection: function (evt) {
-			evt.preventDefault();
+		onOverlayOpen: function (e, $overlay) {
+			e.stopPropagation();
 
-			var $this = $(evt.target),
-				$section = $this.parents('.ttfmake-banner-slide'),
-				$sectionBody = $('.ttfmake-banner-slide-body', $section),
-				$input = $('.ttfmake-banner-slide-state', this.$el);
-
-			if ($section.hasClass('ttfmake-banner-slide-open')) {
-				$sectionBody.slideUp(oneApp.builder.options.closeSpeed, function() {
-					$section.removeClass('ttfmake-banner-slide-open');
-					$input.val('closed');
-				});
-			} else {
-				$sectionBody.slideDown(oneApp.builder.options.openSpeed, function() {
-					$section.addClass('ttfmake-banner-slide-open');
-					$input.val('open');
-				});
-			}
-		}
+			var $button = $('.ttfmake-overlay-close-update', $overlay);
+			$button.text('Update slide');
+		},
 	});
 })(window, Backbone, jQuery, _, oneApp);

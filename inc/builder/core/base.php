@@ -352,11 +352,20 @@ class TTFMAKE_Builder_Base {
 			true
 		);
 
+		// Fetch color palette
+		$color_settings = array( 'color-primary', 'color-secondary', 'color-text', 'color-detail', 'color-primary-link', 'color-button-background', 'background_color', 'main-background-color' );
+
+		$color_values = array_map( array( Make()->thememod(), 'get_value' ), $color_settings );
+		$color_values = array_values( $color_values );
+		$color_values = array_unique( $color_values );
+		$color_values = array_filter( $color_values, 'strlen' );
+
 		// Add data needed for the JS
 		$data = array(
 			'pageID'        => get_the_ID(),
 			'postRefresh'   => true,
-			'confirmString' => esc_html__( 'Delete the section?', 'make' ),
+			'confirmString' => esc_html__( 'Are you sure you want to trash this section permanently?', 'make' ),
+			'palettes'      => $color_values
 		);
 
 		wp_localize_script(
@@ -484,8 +493,8 @@ class TTFMAKE_Builder_Base {
 		ob_start();
 ?>
 	<div class="ttfmake-uploader{{ get('<?php echo $field_name; ?>')<?php echo $field_name_path; ?> && ' ttfmake-has-image-set' || '' }}">
-	<div data-title="<?php echo $title; ?>" class="ttfmake-media-uploader-placeholder ttfmake-media-uploader-add" style="background-image: url({{ get('<?php echo $field_name; ?>')<?php echo $field_name_path; ?> }});"></div>
-		</div>
+		<div data-title="<?php echo $title; ?>" class="ttfmake-media-uploader-placeholder ttfmake-media-uploader-add" style="background-image: url({{ get('<?php echo $field_name; ?>')<?php echo $field_name_path; ?> }});"></div>
+	</div>
 	<?php
 		$output = ob_get_clean();
 		return $output;
@@ -510,6 +519,9 @@ class TTFMAKE_Builder_Base {
 		$textarea_attr_name = 'ttfmake-section[' .$id. '][' .$textarea_name. ']';
 	?>
 		<?php if ( true === $iframe ) : ?>
+		<span class="ttfmake-iframe-content-placeholder{{ (!get('<?php echo $textarea_name; ?>')) ? ' show' : '' }}">
+			<?php esc_html_e( 'Click to edit', 'make' ); ?>
+		</span>
 		<div class="ttfmake-iframe-wrapper">
 			<div class="ttfmake-iframe-overlay">
 				<a href="#" class="edit-content-link" data-textarea="<?php echo esc_attr( $textarea_id ); ?>" data-iframe="<?php echo esc_attr( $iframe_id ); ?>">
@@ -822,8 +834,8 @@ if ( ! function_exists( 'ttfmake_load_section_template' ) ) :
  *
  * @param  string    $slug    The relative path and filename (w/out suffix) required to substitute the template in a child theme.
  * @param  string    $path    An optional path extension to point to the template in the parent theme or a plugin.
+  * @param  boolean   $return  Specifies if the template should be included or returned as string.
  * @return string             The template filename if one is located.
- * @param  boolean   $return  Specifies if the template should be included or returned as string.
  */
 function ttfmake_load_section_template( $slug, $path, $return = false ) {
 	$templates = array(
@@ -975,7 +987,7 @@ function ttfmake_get_image_src( $image_id, $size ) {
 		$image = wp_get_attachment_image_src( $image_id, $size );
 
 		if ( false !== $image && isset( $image[0] ) ) {
-			$src = $image[0];
+			$src = $image;
 		}
 	} else {
 		$image = ttfmake_get_placeholder_image( $image_id );
