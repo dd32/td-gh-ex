@@ -1,0 +1,69 @@
+/* Customizer UI */
+.customize-control {
+	position: relative;
+	margin-bottom: 0;
+	padding: 8px 15px;
+	background: #fff;
+	box-sizing: border-box;
+}
+
+#customize-theme-controls .customize-pane-child.accordion-section-content {
+	padding: 10px;
+}
+
+.customize-section-description-container + .tab-title {
+	margin-top: 0 !important;
+}
+
+.tab-title {
+	width: auto;
+	padding: 10px 15px 10px 15px;
+	margin-top: 30px;
+	border-bottom: 1px solid #eee;
+	color: #333;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.customize-control-checkbox label {
+	padding: 0;
+}
+
+#customize-theme-controls .customize-pane-child.accordion-section-content li:last-of-type {
+	padding-bottom: 20px
+}
+
+.customize-control.customize-control-color,
+.customize-control.customize-control-color .wp-color-result {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+/* Control Lock */
+.control-lock {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.15);
+	cursor: not-allowed;
+}
+
+
+/* Social Media Select */
+li[id*="customize-control-ashe_options-social_media_icon"] select {
+	font-family: "FontAwesome";
+	float: right;
+	width: 80px;
+}
+
+li[id*="customize-control-ashe_options-social_media_icon"] span {
+	float: left;
+}
+
+/* Custom CSS */
+#customize-control-custom_css {
+	padding: 0 !important;
+	background-color: transparent;
+}
