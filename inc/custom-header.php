@@ -30,7 +30,6 @@ function bellini_custom_header_setup() {
 		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'bellini_header_style',
-		'admin-head-callback'    => 'bellini_admin_header_style',
 		'admin-preview-callback' => 'bellini_admin_header_image',
 	) ) );
 }
@@ -67,33 +66,6 @@ function bellini_header_style() {
 }
 endif; /* bellini_header_style */
 
-if ( ! function_exists( 'bellini_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see bellini_custom_header_setup().
- */
-function bellini_admin_header_style() {
-?>
-	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
-	</style>
-<?php
-}
-endif; // bellini_admin_header_style
 
 if ( ! function_exists( 'bellini_admin_header_image' ) ) :
 /**

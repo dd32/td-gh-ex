@@ -3,7 +3,7 @@
 
 .getting-started {
     padding: 50px 20px;
-    max-width: 960px;
+    max-width: 1080px;
     margin: 0 auto;
     line-height: 1.4rem;
 }
@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     transition: all .2s ease-in;
     text-decoration: none;
+    margin-right: .5em;
 }
 
 .theme__cta--download--pro:hover{
@@ -65,10 +66,11 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
 
-.bellini__upgrade-info-box{
-	background-color: #f2f6f8;
-    padding: 25px;
-    margin:5em 0;
+.bellini__upgrade-info-box {
+    background-color: #f2f6f8;
+    padding: 2em 4em;
+    margin: 5em 0;
+    border-radius: 2px;
 }
 
 .block--pro {
@@ -98,5 +100,67 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: .85rem;
 }
 
+.dashboard-upgrade-button {
+    color: #fff;
+    font-size: .875rem;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: .2em;
+    background-color: #0176ff;
+}
 
+.dashboard-upgrade-title{display: inline-block; font-size:1.15rem;}
 
+.dashboard-upgrade-benefit{
+	border-top: 1px solid #e1eef4;
+    padding-top: 1em;
+}
+
+.dashboard-upgrade-right {
+    margin-top: 4em;
+    line-height: 1.2;
+}
+
+.dashboard-upgrade-left {
+    padding-left: 0;
+}
+
+.flexify--center {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dashboard-cta-right {
+    text-align: right;
+}
+
+.text-block {
+    margin-bottom: 4em;
+}
+
+.no-top-margin{margin-top:0;}
+.no-bottom-margin{margin-bottom:0;}
+
+.club-discount {
+    background: #d7f0e3;
+    border: dashed 2px #38bb79;
+    padding: 15px;
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
+.dashboard-upgrade-benefit li:before {
+    content: "\f147";
+    position: relative;
+    padding-right: 4%;
+    text-align: center;
+    text-indent: 0;
+    font: 400 18px/1 dashicons;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color:#13cb6e;
+}

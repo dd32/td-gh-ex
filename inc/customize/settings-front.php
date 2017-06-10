@@ -434,48 +434,9 @@
 		));
 
 
-	$wp_customize->add_setting( 'bellini[hero_section_mobile_title]',
-		array(
-			'type' => 'option',
-			'sanitize_callback'    => 'sanitize_key',
-			'active_callback' 	=> 'is_active_slider_type_bellini_hero',
-			)
-	);
 
-			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'hero_section_mobile_title', array(
-					'type' => 'info',
-					'label' => esc_html__('Slider - Mobile Settings','bellini'),
-					'section' => 'bellini_frontpage_section_slider',
-					'settings'    => 'bellini[hero_section_mobile_title]',
-					'priority'   => 15,
-					'active_callback' 	=> 'is_active_slider_type_bellini_hero',
-			)) );
-
-
-	// Mobile Background Color -- Settings
-	$wp_customize->add_setting( 'bellini[slider_background_color_mobile]' ,
-		array(
-	    'default' => '#eceef1',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	    'transport' => 'postMessage',
-		'active_callback' 	=> 'is_active_slider_type_bellini_hero',
-		'type' => 'option',
-		)
-	);
-
-		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'slider_background_color_mobile',
-			array(
-				'label'      => esc_html__( 'Background Color', 'bellini' ),
-				'section'    => 'bellini_frontpage_section_slider',
-				'settings'   => 'bellini[slider_background_color_mobile]',
-			    'priority'   => 16,
-			    'active_callback' 	=> 'is_active_slider_type_bellini_hero',
-			)
-		));
-
-
-	// Mobile Text Color -- Settings
-	$wp_customize->add_setting( 'bellini[slider_text_color_mobile]' ,
+	// Button 1 Color -- Settings
+	$wp_customize->add_setting( 'bellini[slider_button_1_text_color]' ,
 		array(
 	    'default' => '#333333',
 	    'sanitize_callback' => 'sanitize_hex_color',
@@ -485,11 +446,33 @@
 		)
 	);
 
-		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'slider_text_color_mobile',
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'slider_button_1_text_color',
 			array(
-				'label'      => esc_html__( 'Content Color', 'bellini' ),
+				'label'      => esc_html__( 'Button 1 Text Color', 'bellini' ),
 				'section'    => 'bellini_frontpage_section_slider',
-				'settings'   => 'bellini[slider_text_color_mobile]',
+				'settings'   => 'bellini[slider_button_1_text_color]',
+			    'priority'   => 16,
+			    'active_callback' 	=> 'is_active_slider_type_bellini_hero',
+			)
+		));
+
+
+	// Button 2 Text Color -- Settings
+	$wp_customize->add_setting( 'bellini[slider_button_2_text_color]' ,
+		array(
+	    'default' => '#333333',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	    'transport' => 'postMessage',
+		'active_callback' 	=> 'is_active_slider_type_bellini_hero',
+		'type' => 'option',
+		)
+	);
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'slider_button_2_text_color',
+			array(
+				'label'      => esc_html__( 'Button 2 Text Color', 'bellini' ),
+				'section'    => 'bellini_frontpage_section_slider',
+				'settings'   => 'bellini[slider_button_2_text_color]',
 			    'priority'   => 17,
 			    'active_callback' 	=> 'is_active_slider_type_bellini_hero',
 			)

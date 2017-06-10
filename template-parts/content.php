@@ -16,7 +16,7 @@ global $bellini;
 		<?php echo bellini_post_thumbnail();?>
     </div> <!-- layout left end -->
 
-    <div data-sr="enter right, move 40px" class="col-md-4 layout-golden--one__right">
+    <div class="col-md-4 layout-golden--one__right">
 	    <div class="blog__post__right">
 	    	<div class="blog-post__meta">
 		    	<?php bellini_published_on();?>

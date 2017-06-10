@@ -47,9 +47,8 @@ $wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website B
 $wp_customize->get_section( 'static_front_page' )->priority = 1;
 $wp_customize->get_section(	'static_front_page')->title 	= esc_html__( 'Select Your Frontpage','bellini' );
 $wp_customize->get_section( 'static_front_page' )->panel 	= 'bellini_frontpage_panel';
-$wp_customize->get_control( 'background_image' )->section 	= 'bellini_default_image';
 $wp_customize->remove_section('background_image');
-$wp_customize->get_control( 'header_image' )->section 		= 'bellini_default_image';
+
 
 // Frontpage Panel
 $wp_customize->add_panel( 'bellini_frontpage_panel', array(
@@ -156,6 +155,7 @@ global $bellini;
 
 $website_width 										= esc_attr($bellini['bellini_website_width']);
 $canvas_width 										= esc_attr($bellini['bellini_canvas_width']);
+$bellini_header_width 								= esc_attr($bellini['bellini_header_width']);
 $bellini_menu_position         						= esc_attr($bellini['bellini_menu_position']);
 $page_title_position								= esc_attr($bellini['page_title_position']);
 $bellini_body_font_size								= absint($bellini['bellini_body_font_size']);
@@ -174,8 +174,8 @@ $widget_background_color 							= sanitize_hex_color($bellini['widgets_backgroun
 $header_background_color 							= sanitize_hex_color($bellini['header_background_color']);
 $footer_background_color 							= sanitize_hex_color($bellini['footer_background_color']);
 $button_background_color 							= sanitize_hex_color($bellini['button_background_color']);
-$slider_background_color_mobile 					= sanitize_hex_color($bellini['slider_background_color_mobile']);
-$slider_text_color_mobile 							= sanitize_hex_color($bellini['slider_text_color_mobile']);
+$slider_button_1_text_color 						= sanitize_hex_color($bellini['slider_button_1_text_color']);
+$slider_button_2_text_color 						= sanitize_hex_color($bellini['slider_button_2_text_color']);
 
 $bellini_feature_block_background_color 			= sanitize_hex_color($bellini['bellini_feature_block_background_color']);
 $bellini_static_slider_button_background_one 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_one']);
@@ -195,11 +195,12 @@ $logo_font_select									= bellini_font_logo($logo_font);
 
 $element_title_capitalization						= esc_attr($bellini['bellini_header_title_capitalization']);
 $bellini_widget_title_alignment						= esc_attr($bellini['bellini_widget_title_alignment']);
+$bellini_footer_widget_alignment					= esc_attr($bellini['footer_widget_alignment']);
 
 $bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
-$primary_color_text 			= ".bellini-social__link a span,.scrollToTop";
+$primary_color_text 			= ".bellini-social__link a span,.scrollToTop,.shopping_bag_items_number";
 $primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.product-featured__title h1:after,.product-featured__title--l2 h1:after";
 
 $bellini_meta_color_text 		= ".comments-link a,.post-meta__time,.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
@@ -218,6 +219,8 @@ textarea{
 	font-size:<?php echo $bellini_body_font_size;?>px;
 	color:<?php echo $body_text_color;?>;
 }
+
+h3.block-title{font-family: <?php echo $font_preset_body;?>;}
 
 .site-branding{
 	font-family: <?php echo $logo_font_select;?>;
@@ -249,9 +252,11 @@ h1,h2,h3,h4,h5,h6,
 
 .website-width{width:<?php echo $website_width; ?>%;}
 .bellini__canvas{max-width:<?php echo $canvas_width;?>;}
+.header-inner{max-width:<?php echo $bellini_header_width;?>;}
 
 /* Color */
 <?php echo $primary_color_text;?>{color: <?php echo $bellini_primary_color; ?>;}
+.shopping_bag_items_number{border-color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $primary_color_background;?>{background-color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $bellini_meta_color_text;?>{color: <?php echo $bellini_accent_color; ?>;}
 <?php echo $bellini_meta_color_background;?>{background-color: <?php echo $bellini_accent_color; ?>;}
@@ -274,6 +279,10 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 .single-page__title,
 .woocommerce-breadcrumb,
 .breadcrumbs{text-align:<?php echo $page_title_position; ?>;}
+
+.widget__footer__widget,
+.widget__footer__widget .widget-title{text-align:<?php echo $bellini_footer_widget_alignment; ?>;}
+
 .main-navigation a,.page-numbers a,.page-numbers span,.cart-toggles{font-size:<?php echo $bellini_menu_font_size;?>px;}
 
 
@@ -284,16 +293,11 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 	.front-blog{background-color:<?php echo $bellini_blogposts_background_color;?>;}
 	.front-text-field{background-color:<?php echo $bellini_frontpage_textarea_section_color;?>;}
 	.front-text-field{background-image: url(<?php echo $bellini_frontpage_textarea_section_image; ?>);}
-	.slider__cta--one{background-color: <?php echo $bellini_static_slider_button_background_one; ?>;}
-	.slider__cta--two{background-color: <?php echo $bellini_static_slider_button_background_two; ?>;}
+	.slider__cta--one{background-color: <?php echo $bellini_static_slider_button_background_one; ?>; color: <?php echo $slider_button_1_text_color; ?>;}
+	.slider__cta--one:hover{color: <?php echo $bellini_static_slider_button_background_one; ?>; background-color: <?php echo $slider_button_1_text_color; ?>;}
+	.slider__cta--two{background-color: <?php echo $bellini_static_slider_button_background_two; ?>; color: <?php echo $slider_button_2_text_color; ?>;}
+	.slider__cta--two:hover{color: <?php echo $bellini_static_slider_button_background_two; ?>; background-color: <?php echo $slider_button_2_text_color; ?>;}
 
-
-	@media (max-width:640px){
-		.slider-content__title, .slider-content{
-		background-color:<?php echo $slider_background_color_mobile; ?>;
-		color:<?php echo $slider_text_color_mobile; ?>;
-		}
-	}
 
 <?php
     if ( ! empty( $bellini_custom_code_css ) ) {

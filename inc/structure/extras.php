@@ -4,12 +4,29 @@ $bellini = bellini_option_defaults();
 
 add_filter( 'body_class', 'bellini_body_classes' );
 
-// Add Class to the body
 function bellini_body_classes( $classes ) {
-    global $bellini;
-    if ( is_multi_author() ) { $classes[] = 'group-blog'; }
-    if ( ! is_singular() ) { $classes[] = 'hfeed'; }
-    if ( absint($bellini['bellini_layout_single-post']) === 3 && is_single() ){ $classes[] = 's__post--l3'; }
+global $bellini;
+
+  // Multiple Author
+    if ( is_multi_author() ) {
+    $classes[] = 'group-blog';
+  }
+
+  // Not Singular
+    if ( ! is_singular() ) {
+    $classes[] = 'hfeed';
+  }
+
+  // Add a class if there is a custom header.
+  if ( has_header_image() ) {
+    $classes[] = 'has-header-image';
+  }
+
+  // Single Post Layout 3 Selected
+    if ( absint($bellini['bellini_layout_single-post']) === 3 && is_single() ){
+    $classes[] = 's__post--l3';
+  }
+
     return $classes;
 }
 

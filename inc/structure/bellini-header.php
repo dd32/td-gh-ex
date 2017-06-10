@@ -132,6 +132,9 @@ if ( ! function_exists( 'bellini_header_cart' ) ) {
 			</div>
 		</div>
 		<button class="cart-toggles <?php bellini_header_cart_class();?>">
+		<span class="shopping_bag_items_number">
+			<?php echo WC()->cart->get_cart_contents_count();?>
+		</span>
 		</button><!-- cart toggle ends -->
 		<?php
 		}

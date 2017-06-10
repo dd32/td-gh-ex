@@ -7,7 +7,7 @@ global $product;
 
 if ( empty( $product ) || ! $product->is_visible() ) { return; }
 ?>
-<div data-sr="enter bottom, move 40px, wait 0.2s, over 0.8s, after 0.3s" itemscope itemtype="http://schema.org/Product" class="product <?php echo $bellini['woo_product_new_row'];?>">
+<div itemscope itemtype="http://schema.org/Product" class="product product-holder--l1 <?php echo $bellini['woo_product_new_row'];?>">
 <div class="product-card__inner">
 	<?php woocommerce_template_loop_product_link_open();?>
 	<?php woocommerce_show_product_loop_sale_flash();?>

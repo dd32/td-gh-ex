@@ -4,29 +4,11 @@
 ## Sections
 --------------------------------------------------------------*/
 
-// Default Image
-$wp_customize->add_section('bellini_default_image',array(
-	'title' => esc_html__( 'Page header & Background Image', 'bellini' ),
-	'capability' => 'edit_theme_options',
-	'priority' => 1,
-	'panel' => 'bellini_misc_panel'
-	)
-);
-
-// Default Text
-$wp_customize->add_section('bellini_default_text',array(
-	'title' => esc_html__( 'Change Text Label', 'bellini' ),
-	'capability' => 'edit_theme_options',
-	'priority' => 2,
-	'panel' => 'bellini_misc_panel'
-	)
-);
-
 // Social Accounts
 $wp_customize->add_section('bellini_social_accounts',array(
 	'title' => esc_html__( 'Social Accounts', 'bellini' ),
 	'capability' => 'edit_theme_options',
-	'priority' => 3,
+	'priority' => 1,
 	'panel' => 'bellini_misc_panel'
 	)
 );
@@ -35,7 +17,7 @@ $wp_customize->add_section('bellini_social_accounts',array(
 $wp_customize->add_section('bellini_show_hide_components',array(
 	'title' => esc_html__( 'Show / Hide', 'bellini' ),
 	'capability' => 'edit_theme_options',
-	'priority' => 4,
+	'priority' => 2,
 	'panel' => 'bellini_misc_panel'
 	)
 );
@@ -44,142 +26,11 @@ $wp_customize->add_section('bellini_show_hide_components',array(
 $wp_customize->add_section('bellini_custom_css_section',array(
 	'title' => esc_html__( 'Custom Code', 'bellini' ),
 	'capability' => 'edit_theme_options',
-	'priority' => 5,
+	'priority' => 3,
 	'panel' => 'bellini_misc_panel'
 	)
 );
 
-/*--------------------------------------------------------------
-## Default Image
---------------------------------------------------------------*/
-
-	// Website Background
-	$wp_customize->add_setting( 'bellini[bellini_website_background_helper]',
-		array(
-			'type' 				=> 'option',
-			'sanitize_callback' => 'sanitize_key',
-			)
-	);
-
-			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_website_background_helper', array(
-					'type' => 'info',
-					'label' => esc_html__('Website Background Image','bellini'),
-					'section' => 'bellini_default_image',
-					'settings'    => 'bellini[bellini_website_background_helper]',
-					'priority'   => 1,
-			)) );
-
-	$wp_customize->get_control( 'background_image' )->priority 	= 2;
-
-
-	// Header Image
-	$wp_customize->add_setting( 'bellini[bellini_header_background_helper]',
-		array(
-			'type' 				=> 'option',
-			'sanitize_callback' => 'sanitize_key',
-			)
-	);
-
-			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_header_background_helper', array(
-					'type' => 'info',
-					'label' => esc_html__('Header Image','bellini'),
-					'section' => 'bellini_default_image',
-					'settings'    => 'bellini[bellini_header_background_helper]',
-					'priority'   => 3,
-			)) );
-
-	$wp_customize->get_control( 'header_image' )->priority 	= 4;
-
-
-	// Featured Image
-	$wp_customize->add_setting( 'bellini[bellini_featured_image_helper]',
-		array(
-			'type' 				=> 'option',
-			'sanitize_callback' => 'sanitize_key',
-			)
-	);
-
-			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_featured_image_helper', array(
-					'type' => 'info',
-					'label' => esc_html__('Post Thumbnail Image','bellini'),
-					'section' => 'bellini_default_image',
-					'settings'    => 'bellini[bellini_featured_image_helper]',
-					'priority'   => 5,
-			)) );
-
-	//Default Post Featured Image
-	$wp_customize->add_setting('bellini[bellini_post_featured_image]', array(
-		'type' => 'option',
-		'default'         => get_parent_theme_file_uri('/images/featured-image.jpg'),
-		'sanitize_callback' => 'esc_url_raw',
-		'transport' => 'refresh',
-	) );
-
-			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_post_featured_image',array(
-               'label'      => esc_html__( 'Default Post Featured Image', 'bellini' ),
-               'section'    => 'bellini_default_image',
-               'settings'   => 'bellini[bellini_post_featured_image]',
-				'priority' 	=> 6,
-			   )
-			));
-
-
-/*--------------------------------------------------------------
-## Default Text
---------------------------------------------------------------*/
-
-	//Copyright Text
-	$wp_customize->add_setting('bellini[bellini_copyright_text]', array(
-		'type' => 'option',
-		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'postMessage',
-	) );
-
-			$wp_customize->add_control('bellini_copyright_text',array(
-				'type' 			=>'textarea',
-               'label'      	=> esc_html__( 'Footer Copyright Text', 'bellini' ),
-               'description' 	=> esc_html__( 'Type your own text to replace default footer text.', 'bellini' ),
-               'section'    	=> 'bellini_default_text',
-               'settings'   	=> 'bellini[bellini_copyright_text]',
-			));
-
-			$wp_customize->selective_refresh->add_partial( 'bellini_copyright_text', array(
-				'selector'        => '.site-footer.footer__copyright',
-				'settings'        => 'bellini[bellini_copyright_text]',
-				'render_callback' => function() { return get_option('bellini_copyright_text');},
-				'fallback_refresh' => false,
-			) );
-
-
-	//Hamburger Menu Text
-	$wp_customize->add_setting('bellini[bellini_hamburger_title]', array(
-		'type' => 'option',
-		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'refresh',
-	) );
-
-			$wp_customize->add_control('bellini_hamburger_title',array(
-				'type' 		=>'text',
-               'label'      => esc_html__( 'Hamburger Menu Text', 'bellini' ),
-               'description'      => esc_html__( 'Leave it empty if you do not want to display anything beside hamburger icon' , 'bellini' ),
-               'section'    => 'bellini_default_text',
-               'settings'   => 'bellini[bellini_hamburger_title]',
-			));
-
-	//Read More  Text
-	$wp_customize->add_setting('bellini[bellini_read_more_title]', array(
-		'type' => 'option',
-		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'refresh',
-	) );
-
-			$wp_customize->add_control('bellini_read_more_title',array(
-				'type' 		=>'text',
-               'label'      => esc_html__( 'Post Button Label', 'bellini' ),
-               'description'      => esc_html__( 'example: Read More' , 'bellini' ),
-               'section'    => 'bellini_default_text',
-               'settings'   => 'bellini[bellini_read_more_title]',
-			));
 
 
 /*--------------------------------------------------------------

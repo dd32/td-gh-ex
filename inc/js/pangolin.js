@@ -2,8 +2,23 @@ jQuery.noConflict();
 jQuery(document).ready(function () {
     "use strict";
 
-    // Scroll Reveal
-    new scrollReveal();
+    var topScroll       = {origin: "top", distance: "64px", duration: 900, scale: 1, easing: "ease"},
+        leftScroll      = {origin: "left", distance: '10px', duration: 940, scale: 1, easing: "ease", opacity: 1},
+        rightScroll     = {origin: "right", distance: '100px', duration: 900, scale: 1, easing: "ease", opacity: 1},
+        bottomScroll    = {origin: "bottom", duration: 900, scale: 1, easing: "ease"},
+        stepsScroll     = {origin: "left", duration: 900, scale: 1, easing: "ease"},
+        stillScroll     = {distance: "0px", duration: 900, scale: 1, easing: "ease"}
+
+    // ScrollReveal
+    window.sr = ScrollReveal();
+
+    sr.reveal('.product-holder--l1', bottomScroll, 120);
+    sr.reveal('.layout-golden--one__right', rightScroll);
+    sr.reveal('.blog__post--l5', bottomScroll);
+    sr.reveal('.front-product-category__card', stepsScroll, 250);
+    sr.reveal('.image__pic--left','.image__pic--right', bottomScroll);
+    sr.reveal('.widget__footer__widget', stillScroll);
+    sr.reveal('.front-feature-blocks .feature-block__inner', stepsScroll, 180);
 
     // Featured Product Slick Slider
     jQuery('.single-item--featured').slick({
@@ -12,7 +27,7 @@ jQuery(document).ready(function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows:false,
-        });
+    });
 
 
     jQuery(function($) {
@@ -25,7 +40,7 @@ jQuery(document).ready(function () {
     jQuery(function($) {
         var $container = $('.product__categories');
         $container.imagesLoaded( function() {
-            jQuery('.front-product-category__card').matchHeight({byRow: false});
+            jQuery('.front-product-category__card__inner').matchHeight({byRow: false});
         });
     });
 
@@ -81,5 +96,14 @@ jQuery(document).ready(function () {
      });
 
     jQuery(".woocommerce-ordering select").simpleselect();
+
+    if(jQuery(".type-product").hasClass("has-post-thumbnail")){
+        jQuery(".attachment-shop_single").attr("data-adaptive-background","1");
+    }
+
+    jQuery(document).ready(function(){
+        var opts = { parent: '.product__single--l1 .flex-viewport'}
+            jQuery.adaptiveBackground.run(opts);
+    });
 
 });

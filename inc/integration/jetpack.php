@@ -33,6 +33,7 @@ function bellini_jetpack_setup() {
 	 * See: http://jetpack.me/support/site-logo/
 	 */
 	add_theme_support( 'site-logo', array( 'size' => 'full' ) );
+	add_theme_support( 'jetpack-portfolio' );
 }
 
 add_action( 'after_setup_theme', 'bellini_jetpack_setup' );

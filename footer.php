@@ -25,7 +25,7 @@ global $bellini;
     </aside><!-- #secondary -->
 <?php endif;?>
 
-<div class="bellini__canvas">
+<div class="site-footer--center bellini__canvas">
 <div class="row">
 	<?php bellini_core_footer_layout();?>
 </div>
