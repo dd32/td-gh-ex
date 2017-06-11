@@ -659,15 +659,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /* ----------------------------------------------------------------------------------------------------------
 	1. WIDTH CHANGES
 ---------------------------------------------------------------------------------------------------------- */
@@ -675,6 +666,7 @@
 /* Change sidebar width - Theme Options */
 #customize-controls.thinkup-width-450 {
 	width: 450px !important;
+	max-width: 450px !important;
 }
 #customize-preview.thinkup-width-450 {
 	left: 150px !important;

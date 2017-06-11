@@ -751,11 +751,6 @@
 				'desc'     => __('Choose an icon for the section background.', 'lan-thinkupthemes'),
 				'type'     => 'select',
 				'data'     => 'elusive-icons',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -763,11 +758,6 @@
 				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -775,11 +765,6 @@
 				'desc'     => __('Add a description to the section.', 'lan-thinkupthemes'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -787,11 +772,6 @@
 				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -800,11 +780,6 @@
 				'desc'     => __('Choose an icon for the section background.', 'lan-thinkupthemes'),
 				'type'     => 'select',
 				'data'     => 'elusive-icons',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),    
 
 			array(
@@ -812,11 +787,6 @@
 				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -824,11 +794,6 @@
 				'desc'     => __('Add a description to the section.', 'lan-thinkupthemes'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -836,11 +801,6 @@
 				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -849,11 +809,6 @@
 				'desc'     => __('Choose an icon for the section background.', 'lan-thinkupthemes'),
 				'type'     => 'select',
 				'data'     => 'elusive-icons',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),    
 
 			array(
@@ -861,11 +816,6 @@
 				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -873,11 +823,6 @@
 				'desc'     => __('Add a description to the section.', 'lan-thinkupthemes'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -885,11 +830,6 @@
 				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 		)
 	) );

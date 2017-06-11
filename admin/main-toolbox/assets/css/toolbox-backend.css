@@ -264,6 +264,12 @@ background: #fff;
 	position: relative;
 	float: left;
 }
+#thinkup-documentation,
+#thinkup-documentation .thinkup-documentation-info,
+#thinkup-documentation .menu-item {
+	width: 100% !important;
+	max-width: 100% !important;
+}
 #thinkup-documentation ul {
 	font-size: 14px;
 	list-style: disc;
