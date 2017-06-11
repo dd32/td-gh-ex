@@ -723,11 +723,6 @@
 				'id'       => 'thinkup_homepage_section1_image',
 				'type'     => 'media',
 				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -735,11 +730,6 @@
 				'desc'     => __('Add a title to the section.', 'renden'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -747,11 +737,6 @@
 				'desc'     => __('Add some text to featured section 1.', 'renden'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -759,11 +744,6 @@
 				'desc'     => __('Link to a page', 'renden'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -772,11 +752,6 @@
 				'id'       => 'thinkup_homepage_section2_image',
 				'type'     => 'media',
 				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -784,11 +759,6 @@
 				'desc'     => __('Add a title to the section.', 'renden'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -796,11 +766,6 @@
 				'desc'     => __('Add some text to featured section 2.', 'renden'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -808,11 +773,6 @@
 				'desc'     => __('Link to a page', 'renden'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -821,11 +781,6 @@
 				'id'       => 'thinkup_homepage_section3_image',
 				'type'     => 'media',
 				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -833,11 +788,6 @@
 				'desc'     => __('Add a title to the section.', 'renden'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -845,11 +795,6 @@
 				'desc'     => __('Add some text to featured section 3.', 'renden'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -857,11 +802,6 @@
 				'desc'     => __('Link to a page', 'renden'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -870,11 +810,6 @@
 				'id'       => 'thinkup_homepage_section4_image',
 				'type'     => 'media',
 				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -882,11 +817,6 @@
 				'desc'     => __('Add a title to the section.', 'renden'),
 				'type'     => 'text',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -894,11 +824,6 @@
 				'desc'     => __('Add some text to featured section 4.', 'renden'),
 				'type'     => 'textarea',
 				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 
 			array(
@@ -906,11 +831,6 @@
 				'desc'     => __('Link to a page', 'renden'), 
 				'type'     => 'select',
 				'data'     => 'pages',
-				'required' => array( 
-					array( 'thinkup_homepage_sectionswitch', '=', 
-						array( '1' ),
-					), 
-				)
 			),
 		)
 	) );
