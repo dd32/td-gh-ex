@@ -3,48 +3,56 @@
  * Custom functions that act independently of the theme templates
  *
  * @package Aplos
- * @since Aplos 1.0.0
+ * @since Aplos 1.2.0
  */
- 
+
  /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
- * @since Aplos 1.0.0
+ * @since Aplos 1.2.0
  */
-function aplos_page_menu_args( $args ) {
+function aplos_page_menu_args($args)
+{
     $args['show_home'] = true;
     return $args;
 }
-add_filter( 'wp_page_menu_args', 'aplos_page_menu_args' );
- 
+add_filter('wp_page_menu_args', 'aplos_page_menu_args');
+
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since Aplos 1.0.0
+ * @since Aplos 1.2.0
  */
-function aplos_body_classes( $classes ) {
+function aplos_body_classes($classes)
+{
     // Adds a class of group-blog to blogs with more than 1 published author
-    if ( is_multi_author() ) {
+    if (is_multi_author()) {
         $classes[] = 'group-blog';
     }
- 
+
+    $classes[] = get_theme_mod('layout_choices', 'twocol');
+
     return $classes;
 }
-add_filter( 'body_class', 'aplos_body_classes' );
- 
+add_filter('body_class', 'aplos_body_classes');
+
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
- * @since Aplos 1.0.0
+ * @since Aplos 1.2.0
  */
-function aplos_enhanced_image_navigation( $url, $id ) {
-    if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
+function aplos_enhanced_image_navigation($url, $id)
+{
+    if (! is_attachment() && ! wp_attachment_is_image($id)) {
         return $url;
- 
-    $image = get_post( $id );
-    if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
+    }
+
+    $image = get_post($id);
+    if (! empty($image->post_parent) && $image->post_parent != $id) {
         $url .= '#main';
- 
+    }
+
     return $url;
 }
-add_filter( 'attachment_link', 'aplos_enhanced_image_navigation', 10, 2 );
+add_filter('attachment_link', 'aplos_enhanced_image_navigation', 10, 2);
+
