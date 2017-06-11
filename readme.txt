@@ -103,6 +103,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.6
+- Fixed:   Documentation display fixed to ensure compatibilty with WordPress v4.8.
+- Updated: Homepage (Featured) section customizer options display regardless of if switch is on or off.
+
 Version 1.0.5
 - New:     Documentation link added to customizer.
 
