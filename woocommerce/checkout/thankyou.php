@@ -49,45 +49,29 @@ do_action('ascend_woo_thank_you_start');
 
 				<li class="woocommerce-order-overview__date date">
 					<?php _e( 'Date:', 'ascend' ); ?>
-					<?php if ( version_compare( WC_VERSION, '3.0', '<' ) ) { ?>
-						<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
-					<?php } else { ?>
-						<strong><?php echo date_i18n( get_option( 'date_format' ), $order->get_date_created() ); ?></strong>
-					<?php } ?>
+					<strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
 				</li>
 
 				<li class="woocommerce-order-overview__total total">
 					<?php _e( 'Total:', 'ascend' ); ?>
 					<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 				</li>
-				<?php if ( version_compare( WC_VERSION, '3.0', '<' ) ) { ?>
-					<?php if ( $order->payment_method_title ) : ?>
-					<li class="method">
-						<?php _e( 'Payment Method:', 'ascend' ); ?>
-						<strong><?php echo $order->payment_method_title; ?></strong>
-					</li>
-					<?php endif; 
-				} else {
-					if ( $order->get_payment_method_title() ) : ?>
 
-					<li class="woocommerce-order-overview__payment-method method">
-						<?php _e( 'Payment method:', 'ascend' ); ?>
-							<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
-					</li>
+				<?php if ( $order->get_payment_method_title() ) : ?>
 
-					<?php endif;
-				} ?>
+				<li class="woocommerce-order-overview__payment-method method">
+					<?php _e( 'Payment method:', 'ascend' ); ?>
+					<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
+				</li>
+
+				<?php endif; ?>
 
 			</ul>
 
 		<?php endif; ?>
-		<?php if ( version_compare( WC_VERSION, '3.0', '<' ) ) { ?>
-			<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
-			<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
-		<?php } else { ?>
-			<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
-			<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
-		<?php } ?>
+
+		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
 	<?php else : ?>
 

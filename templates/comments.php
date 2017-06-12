@@ -14,7 +14,6 @@ if ( post_password_required() ) {
 	        	$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
 					printf( esc_html__( 'One Response', 'ascend' ), $comments_number );
-					echo __( 'One Response ', 'ascend');
 				} else {
 					printf( esc_html( _n( '%d Response', '%d Responses', $comments_number, 'ascend' ) ), $comments_number );
 				}

@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.5 | 11th June 2017 =
+* Fix: Comments issue with repeated "one response"
+* Update: Woo template.
+
 = Version 1.1.4 | 6th June 2017 =
 * Update: Single product side issue.
 * Update: Mobile search issue. 
