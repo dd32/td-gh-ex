@@ -44,14 +44,14 @@ $options = academic_get_theme_options();
 		$archive_content_type = $options['archive_content_type']; 
 
 		if ( 'excerpt' === $archive_content_type ) {
-			the_excerpt();
-		} else {
+			the_excerpt(); ?>
+			<div class="buttons">
+				<a href="<?php the_permalink(); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?></a>
+			</div>
+		<?php } else {
 			the_content();
 		}
 		?>
-		<div class="buttons">
-			<a href="<?php the_permalink(); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?></a>
-		</div>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

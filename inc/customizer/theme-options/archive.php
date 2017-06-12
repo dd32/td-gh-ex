@@ -29,10 +29,10 @@ $wp_customize->add_setting( 'academic_theme_options[archive_image]', array(
 ) );
 
 $wp_customize->add_control( 'academic_theme_options[archive_image]', array(
-	'label'             => esc_html__( 'Hide Featured Image', 'academic' ),
-	'description'             => esc_html__( 'Check to hide featured images.', 'academic' ),
-	'section'           => 'academic_archive_option',
-	'type'				=> 'checkbox',
+	'label'       => esc_html__( 'Hide Featured Image', 'academic' ),
+	'description' => esc_html__( 'Check to hide featured images.', 'academic' ),
+	'section'     => 'academic_archive_option',
+	'type'        => 'checkbox',
 ) );
 
 // Show archive meta setting and control.

@@ -1,5 +1,5 @@
 ( function( $ ) {
-  $(window).load(function() {
+$(document).ready(function(){
     $(function() {
         $('.os-animation').css('opacity', 0).waypoint(function(direction) {
             if (direction === 'down') {

@@ -5,9 +5,9 @@ By Theme Palace
 Tags: education, translation-ready, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, custom-header, footer-widgets, blog
 
 Contributors: Theme Palace
-Requires at least: 4.4
-Tested up to: 4.7.5
-Stable tag: 1.1
+Requires at least: 4.5
+Tested up to: 4.8
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -129,13 +129,17 @@ Whereas in Category blog second, you can choose what to display either the categ
 
 == Changelog ==
 
-= 1.1 = June 7, 2017
+= 1.2 - June 12, 2017 =
+* Make compatible to 4.8
+* Fix archive content type issue.
+
+= 1.1 - June 7, 2017
 * Fix excerpt length issue on blog archive page.
 * Remove unused functions.
 * Add archive options.
 * Add title tagline color options.
 
-= 1.0 = June 6, 2017
+= 1.0 - June 6, 2017
 * Added custom-header tag.
 * Change the category blogs' default values.
 * Remove unwanted default values.
