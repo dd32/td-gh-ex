@@ -80,18 +80,6 @@ function basepress_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
-if ( ! function_exists( 'basepress_default_menu' ) ) :
-	/**
-	 * Display default page as navigation if no custom
-	 */
-	function basepress_default_menu() {
-
-		echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">' . wp_list_pages( 'title_li=&echo=0' ) . '</ul>';
-
-}
-	
-endif;
-
 /**
  * Adjust a hex color brightness
  * Allows us to create hover styles for custom link colors

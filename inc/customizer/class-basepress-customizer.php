@@ -34,14 +34,17 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			add_action( 'customize_save_after',     array( $this, 'set_basepress_style_theme_mods' ) );
 
 			/* On the frontend */
-			if ( ! is_admin() ) {
+			//if ( ! is_admin() ) {
 				$layout = get_theme_mod( 'basepress_layout' );
 				if ( $layout === 'none' ) {
 
-					add_action( 'after_setup_theme',       array( $this, 'remove_sidebar' ) );
+					remove_action( 'basepress_sidebar', 'basepress_get_sidebar', 10 );
 					
+				} else {
+					add_action( 'basepress_sidebar', 'basepress_get_sidebar', 10 );
+
 				}
-			}
+			// }
 			
 
 		}
@@ -180,7 +183,7 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			 * Add the typography section
 			 */
 			$wp_customize->add_section( 'basepress_typography' , array(
-				'title'      			=> __( 'Typography', 'basepress' ),
+				'title'      			=> __( 'Color', 'basepress' ),
 				'priority'   			=> 45,
 			) );
 
@@ -324,10 +327,9 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				'label'					=> __( 'General Layout', 'basepress' ),
 				'priority'				=> 1,
 				'choices'				=> array(
-						'right' => get_template_directory_uri() . '/assets/images/customizer/controls/right.png',
-						'none'  => get_template_directory_uri() . '/assets/images/customizer/controls/none.png',
 						'left'  => get_template_directory_uri() . '/assets/images/customizer/controls/left.png',
-						
+						'none'  => get_template_directory_uri() . '/assets/images/customizer/controls/none.png',
+						'right' => get_template_directory_uri() . '/assets/images/customizer/controls/right.png',
 				),
 			) ) );
 
@@ -425,7 +427,6 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				a:hover, .site-info a:hover, .sidebar a:hover, .entry-title a:hover {color: ' . basepress_adjust_color_brightness( $basepress_theme_mods['accent_color'],  $darken_factor ) . '; }
 
 				.site-footer { background: ' . $basepress_theme_mods['footer_background_color'] . '; }
-
 				.site-footer,
 				.site-footer #wp-calendar caption,
 				.site-info {
@@ -451,8 +452,39 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			return apply_filters( 'basepress_customizer_css', $styles );
 		}
 
-		public function remove_sidebar() {
-			remove_action( 'basepress_sidebar', 'basepress_get_sidebar', 10 );
+		/**
+		 * Add CSS for custom controls
+		 *
+		 * This function incorporates CSS from the Kirki Customizer Framework
+		 *
+		 * The Kirki Customizer Framework, Copyright Aristeides Stathopoulos (@aristath),
+		 * is licensed under the terms of the GNU GPL, Version 2 (or later)
+		 *
+		 * @link https://github.com/reduxframework/kirki/
+		 * @since  1.5.0
+		 */
+		public function customizer_custom_control_css() {
+			?>
+			<style>
+			.customize-control-radio-image input[type=radio] {
+				display: none;
+			}
+
+			.customize-control-radio-image label:nth-of-type(2n) {
+				margin-right: 0;
+			}
+
+			.customize-control-radio-image img {
+				opacity: .5;
+			}
+
+			.customize-control-radio-image input[type=radio]:checked + label img,
+			.customize-control-radio-image img:hover {
+				opacity: 1;
+			}
+
+			</style>
+			<?php
 		}
 
 	}

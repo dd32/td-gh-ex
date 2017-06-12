@@ -41,13 +41,13 @@
 
 		</div> <!-- .container -->
 
-		<div id="sticky" class="secondary-menu">
-			<div class="container clearfix">
-				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Main Navigation</span>
-			</div>
-		</div>
-
-		<div id="catcher"></div>
+		<?php
+			/**
+				 * Functions hooked into basepress_header action
+				 *
+				 * @hooked basepress_category_navigation	- 0
+				 */
+				do_action( 'basepress_category_menu' ); ?>
 
 	</header><!-- #masthead -->
 

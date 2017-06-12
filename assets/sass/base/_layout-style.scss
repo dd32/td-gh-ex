@@ -7,6 +7,7 @@
 		.custom-logo {
 			max-width: 100%;
 			height: auto;
+			display: inline;
 			vertical-align: top;
 		}
 		
@@ -135,11 +136,7 @@
 }
 
 @include susy-media (max-width $container-width) {
-/* 	.container {
-		margin-left: ms(5);
-		margin-right: ms(5);
-		padding: 0;
-	} */
+
 	.footer-widgets {
 		padding-top: ms(5);
 	}
@@ -178,16 +175,20 @@
 		text-align: center;
 		width: 100%;
 	}
-
-	/* Menu */
+	h1.logo {
+		display: inline-block;
+		margin-bottom: 0;
+	}
 
 	.main-navigation {
 		display: none;
 	}
 
+	/* Menu */
+
 	span.menu-toggle {
 		position: relative;
-		color: #000;
+		color: #000000;
 		padding: 14px 0;
 		line-height: 24px;
 		font-size: 14px;
@@ -202,7 +203,7 @@
 		right: 0;
 	}
 
-	#mobile-menu-wrapper {
+	.mobile-menu-wrapper {
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -220,32 +221,38 @@
 		overflow-x: hidden;
 		z-index: 9;
 	}
-	#mobile-menu-wrapper ul {
+	.wpadminbar-active {
+		 top: 32px;
+	}
+	.mobile-menu-wrapper ul {
 		margin: 0;
 		padding: 0;
 	}
-	#mobile-menu-wrapper ul li {
+	.mobile-menu-wrapper ul li {
 		width: 100%;
 		display: block;
 		line-height: 24px;
 		position: relative;
 		border-bottom: 1px solid #f0f0f0;
 	}
-	#mobile-menu-wrapper ul li a {
+	.mobile-menu-wrapper ul li a {
 		color: #333;
 		font-size: 16px;
 		display: inline-block;
 		width: 100%;
 		padding: 10px;
 	}
-	#mobile-menu-wrapper ul ul {
+	.mobile-menu-wrapper ul ul {
 		border-top: 1px solid #f0f0f0;
 	}
-	#mobile-menu-wrapper ul ul li a {
+	.mobile-menu-wrapper ul ul li a {
 		padding-left: 15px;
 	}
+	.mobile-menu-wrapper ul ul ul li a {
+		padding-left: 20px;
+	}
 
-	.mobile-menu-active #mobile-menu-wrapper {
+	.mobile-menu-active .mobile-menu-wrapper {
 		-ms-transform: translate(0,0);
 		-webkit-transform: translate(0,0);
 		transform: translate(0,0);
@@ -261,7 +268,7 @@
 	.mobile-only, .arrow-menu {
 		display: block;
 	}
-	#mobile-menu-wrapper .arrow-menu {
+	.mobile-menu-wrapper .arrow-menu {
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -298,13 +305,15 @@
 	}
 
 	/* Post, Page */
-
-	.post-item,
-	.taxonomy-description,
-	.page-header .page-achive,
+	.post-item {
+			padding: 30px;
+	}
+	.page-header .archive-title,
 	.page-header .page-title {
-		padding-left: 22px;
-		padding-right: 22px;
+		padding: 22px 30px;
+	}
+	.taxonomy-description {
+		padding: 0 30px;
 	}
 
 	.single-title,
@@ -340,7 +349,7 @@
 	.sidebar .widget,
 	.page-content,
 	.single_post {
-		padding: 22px;
+		padding: 30px;
 
 	}
 
@@ -352,10 +361,4 @@
 			}
 		}
 	}
-
-	/* Footer */
-
-	// .site-footer {
-	// 	padding-top: 30px;
-	// }
 }

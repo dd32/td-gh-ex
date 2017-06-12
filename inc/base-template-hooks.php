@@ -28,6 +28,15 @@ add_action( 'basepress_header', 			'basepress_site_branding', 				10 );
 add_action( 'basepress_header', 			'basepress_primary_navigation', 		20 );
 add_action( 'basepress_after_header',  		'basepress_header_image',  				10 );
 
+
+/**
+ * Header Menu
+ * 
+ * @see basepress_category_navigation
+ */
+
+add_action( 'basepress_category_menu',  		'basepress_category_navigation', 	0 );
+
 /**
  * Footer
  *
@@ -45,7 +54,7 @@ add_action( 'basepress_after_footer', 		'basepress_footer_back_top', 			10 );
 /**
  * Homepage - Hooks
  */
-add_action( 'basepress_homepage',  		'basepress_homepage_content', 			10);
+add_action( 'basepress_homepage',  		'basepress_homepage_content', 			    10);
 
 /**
  * Posts - Hooks
@@ -80,7 +89,7 @@ add_action( 'basepress_single_post',  			'basepress_post_content_wrapper_close',
 add_action( 'basepress_single_post',           	'basepress_init_structured_data', 		50 );
 add_action( 'basepress_single_post_bottom',  	'basepress_post_tags', 					10 );
 add_action( 'basepress_single_post_bottom',  	'basepress_post_nav', 					20 );
-add_action( 'basepress_single_post_bottom',  	'basepress_display_comments', 			30 );
+add_action( 'basepress_single_post_bottom',  	'basepress_display_comments', 			40 );
 
 /**
  * Page - Hooks

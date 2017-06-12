@@ -9,8 +9,6 @@
 
 get_header();
 
-// Get Theme Options from Database.
-$theme_options = basepress_theme_options();
 ?>
 
 	<section id="primary" class="content-area">
