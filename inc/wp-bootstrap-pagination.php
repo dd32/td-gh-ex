@@ -4,7 +4,7 @@
  * https://github.com/talentedaamer/Bootstrap-wordpress-pagination
  */
 
-function wp_bootstrap_pagination( $args = array() ) {
+function basic_store_wp_bootstrap_pagination( $args = array() ) {
 
     $defaults = array(
         'range'           => 4,

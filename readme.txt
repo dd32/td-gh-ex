@@ -32,8 +32,20 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.3.0 - Jun 13 2017 =
+- Wrong tag in style.css "two column" and "editor-style"
+- Unique prefix for all theme functions
+- Escape get_post_meta in header.php
+- Use "wp_enqueue_style" function to load all theme styles and not "@import"
+- Display "Site Title and "Tagline" option does not work.
+- Overriding WordPress globals is prohibited on grouped.php line 38 and cross-sells.php line 37
+- Removed from "add_theme_support" "search-form" and "comment-form" as we are using custom code
+- Changed to "has_custom_logo" WP function to check whether the site has a custom logo or not on header.php
+- Removed all files that are not being overwritten from WooCommerce plugin
+- Search form on header changed to default WP search if WooCommerce plugin is not enabled
+
 = 1.2.3 - Jun 09 2017 =
-- Fixed 2 translation issue on result-count.php 
+- Fixed 2 translation issue on result-count.php
 
 = 1.2.2 - Jun 08 2017 =
 - Calendar widget layout issue on small screens

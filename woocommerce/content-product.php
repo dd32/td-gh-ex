@@ -30,9 +30,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 // Store column count for displaying the grid
 if ( empty( $woocommerce_loop['columns'] ) )
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4);
-	
+
 // Bootstrap row count
-$bootstrap_row_count = woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
+$bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
 
 ?>
 

@@ -41,7 +41,7 @@ add_action( 'wp_head', 'basic_store_pingback_header' );
 
 // Get theme custom Logo image
 // https://codex.wordpress.org/Theme_Logo
-function display_site_logo () {
+function basic_store_display_site_logo () {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	return esc_url($image[0]);

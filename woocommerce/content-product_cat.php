@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $woocommerce_loop;
 
 // Bootstrap row count
-$bootstrap_row_count = woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
+$bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
 
 ?>
 

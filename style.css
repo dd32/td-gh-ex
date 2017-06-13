@@ -4,15 +4,17 @@ Theme URI: http://www.theme.al/product/basicstore/
 Author: Theme.al
 Author URI: http://www.theme.al
 Description: Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store today!
-Version: 1.2.3
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: basicstore
-Tags: one-column, two-columns, right-sidebar, custom-menu, custom-logo, editor-style, footer-widgets, threaded-comments, translation-ready, e-commerce
+Tags: one-column, right-sidebar, custom-menu, custom-logo, footer-widgets, threaded-comments, translation-ready, e-commerce
 */
 
-/* Include default WP styles */
-@import url("assets/css/wp.css");
+/*
+As we use LESS-CSS to compile our theme styles please check the "assets/css" folder,
+also there is a "less" folder inside the "assets" folder for you to compile your styles.
 
-/* Include Theme styles */
-@import url("assets/css/theme.css");
+Anyway we reccomend that you create a Child Theme to modify our theme. Please follow this guide on how-to
+https://codex.wordpress.org/Child_Themes
+*/

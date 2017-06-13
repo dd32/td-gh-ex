@@ -53,8 +53,6 @@ function basic_store_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
@@ -155,7 +153,9 @@ add_filter('dynamic_sidebar_params','basic_store_widgets_count');
  */
 function basic_store_scripts() {
 
-	wp_enqueue_style( 'basicstore-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'basicstore-wp-style', get_stylesheet_directory_uri() .'/assets/css/wp.css' );
+
+	wp_enqueue_style( 'basicstore-main-style', get_stylesheet_directory_uri() .'/assets/css/theme.css' );
 
 	wp_enqueue_script( 'basicstore-bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'), '', true );
 

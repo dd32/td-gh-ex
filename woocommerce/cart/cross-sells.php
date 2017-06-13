@@ -33,7 +33,7 @@ if ( $cross_sells ) : ?>
 				<?php
 				 	$post_object = get_post( $cross_sell->get_id() );
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+					setup_postdata( $post =& $post_object );
 
 					wc_get_template_part( 'content', 'product' ); ?>
 

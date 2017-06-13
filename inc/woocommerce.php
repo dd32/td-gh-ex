@@ -20,8 +20,8 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * Checkout fields make with Bootstrap classes
  *
  */
-add_filter('woocommerce_checkout_fields', 'addBootstrapToCheckoutFields' );
-function addBootstrapToCheckoutFields($fields) {
+add_filter('woocommerce_checkout_fields', 'basic_store_addBootstrapToCheckoutFields' );
+function basic_store_addBootstrapToCheckoutFields($fields) {
   foreach ($fields as &$fieldset) {
     foreach ($fieldset as &$field) {
       $field['class'][] = 'form-group';
@@ -36,7 +36,7 @@ function addBootstrapToCheckoutFields($fields) {
  * Bootstrap row count for products list
  *
  */
- function woocommerce_bootstrap_row_count($columns) {
+ function basic_store_woocommerce_bootstrap_row_count($columns) {
 
    switch ($columns) {
    	case '2':
@@ -63,17 +63,16 @@ function addBootstrapToCheckoutFields($fields) {
 * https://docs.woocommerce.com/document/change-the-placeholder-image/
 *
 **/
-add_action( 'init', 'custom_fix_thumbnail' );
+function basic_store_custom_fix_thumbnail() {
 
-function custom_fix_thumbnail() {
+  add_filter('woocommerce_placeholder_img_src', 'basic_store_custom_woocommerce_placeholder_img_src');
 
-  add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
-
-	function custom_woocommerce_placeholder_img_src( $src ) {
+	function basic_store_custom_woocommerce_placeholder_img_src( $src ) {
   	return get_template_directory_uri() . '/assets/img/woo-placeholder.png';
 	}
 
 }
+add_action( 'init', 'basic_store_custom_fix_thumbnail' );
 
 
 /**
@@ -81,7 +80,7 @@ function custom_fix_thumbnail() {
 * Replace "Cart" menu item content
 *
 */
-function nav_replace_wpse_189788($item_output, $item) {
+function basic_store_nav_replace_wpse_189788($item_output, $item) {
 
   if ( ! class_exists( 'WooCommerce' ) ) {
     return $item_output;
@@ -119,7 +118,7 @@ function nav_replace_wpse_189788($item_output, $item) {
 
 }
 
-add_filter('walker_nav_menu_start_el','nav_replace_wpse_189788',10,2);
+add_filter('walker_nav_menu_start_el','basic_store_nav_replace_wpse_189788',10,2);
 
 
 /**
@@ -128,7 +127,7 @@ add_filter('walker_nav_menu_start_el','nav_replace_wpse_189788',10,2);
 * Used in conjunction with https://gist.github.com/DanielSantoro/1d0dc206e242239624eb71b2636ab148
 *
 */
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
+function basic_store_woocommerce_header_add_to_cart_fragment( $fragments ) {
 
   if ( ! class_exists( 'WooCommerce' ) ) {
     return;
@@ -152,7 +151,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 }
 
-add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+add_filter('woocommerce_add_to_cart_fragments', 'basic_store_woocommerce_header_add_to_cart_fragment');
 
 
 /**
@@ -160,7 +159,7 @@ add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_
 * Update navbar toggle class if we have items on cart
 *
 */
-function navbar_toggle_check_cart_items_fragment( $fragments ) {
+function basic_store_navbar_toggle_check_cart_items_fragment( $fragments ) {
 
   if ( ! class_exists( 'WooCommerce' ) ) {
     return;
@@ -183,11 +182,11 @@ function navbar_toggle_check_cart_items_fragment( $fragments ) {
 	return $fragments;
 
 }
-add_filter('woocommerce_add_to_cart_fragments', 'navbar_toggle_check_cart_items_fragment');
+add_filter('woocommerce_add_to_cart_fragments', 'basic_store_navbar_toggle_check_cart_items_fragment');
 
 
 // navbar toggle check if cart has items
-function navbar_toggle_check_cart_items() {
+function basic_store_navbar_toggle_check_cart_items() {
 
   if ( ! class_exists( 'WooCommerce' ) ) {
     return;
@@ -204,10 +203,10 @@ function navbar_toggle_check_cart_items() {
 }
 
 // Limit number of products on cross sells display
-if ( ! function_exists( 'cartCrossSellTotal' ) ) :
-  function cartCrossSellTotal($total) {
+if ( ! function_exists( 'basic_store_cartCrossSellTotal' ) ) :
+  function basic_store_cartCrossSellTotal($total) {
   	$total = '2';
   	return $total;
   }
 endif;
-add_filter('woocommerce_cross_sells_total', 'cartCrossSellTotal');
+add_filter('woocommerce_cross_sells_total', 'basic_store_cartCrossSellTotal');

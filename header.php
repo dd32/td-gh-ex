@@ -28,24 +28,25 @@
 
 			<div class="container">
 
-				<div class="navbar-header">
+					<div class="navbar-header">
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only"><?php _e( 'Toggle navigation', 'basicstore' ); ?></span>
-            <span class="icon-bar <?php echo navbar_toggle_check_cart_items(); ?>"></span>
-            <span class="icon-bar <?php echo navbar_toggle_check_cart_items(); ?>"></span>
-            <span class="icon-bar <?php echo navbar_toggle_check_cart_items(); ?>"></span>
-          </button>
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only"><?php _e( 'Toggle navigation', 'basicstore' ); ?></span>
+	            <span class="icon-bar <?php echo basic_store_navbar_toggle_check_cart_items(); ?>"></span>
+	            <span class="icon-bar <?php echo basic_store_navbar_toggle_check_cart_items(); ?>"></span>
+	            <span class="icon-bar <?php echo basic_store_navbar_toggle_check_cart_items(); ?>"></span>
+	          </button>
 
-					<?php	if (get_theme_mod('custom_logo') === "" || get_theme_mod('custom_logo') === false ) : ?>
-          	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-					<?php else: ?>
-						<a class="navbar-brand nav-brand-img" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		          <img src='<?php echo esc_url( display_site_logo() ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-						</a>
-					<?php endif; ?>
+						<?php if (has_custom_logo()) : ?>
+							<a class="navbar-brand nav-brand-img" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			          <img src='<?php echo esc_url( basic_store_display_site_logo() ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+							</a>
+						<?php elseif (get_theme_mod('header_text')) : ?>
+	          	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+						<?php else: ?>
+						<?php endif; ?>
 
-        </div><!-- #navbar-header -->
+	        </div><!-- #navbar-header -->
 
 				<div id="navbar" class="collapse navbar-collapse">
 
@@ -60,17 +61,15 @@
 						);
 		      ?>
 
-					<form role="search" method="get" class="woocommerce-product-search search-form navbar-form navbar-right" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-
-						<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
-						<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field form-control" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-
-						<button class="btn btn-link" type="submit" aria-label="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" title="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>">
-					     <i class="glyphicon glyphicon-search"></i>
-					  </button>
-						<input type="hidden" name="post_type" value="product" />
-
-					</form>
+					<?php if (class_exists( 'WooCommerce' )) : ?>
+						<div class="navbar-form navbar-right">
+							<?php get_product_search_form(); ?>
+						</div>
+					<?php else: ?>
+						<div class="navbar-form navbar-right">
+							<?php get_search_form(); ?>
+						</div>
+					<?php endif; ?>
 
 					<?php
 						wp_nav_menu( array(
@@ -98,8 +97,8 @@
 
 			<div class="container">
 
-				<h1><?php echo get_post_meta(get_the_ID(),'jumbotron-title',true);?></h1>
-				<p><?php echo get_post_meta(get_the_ID(),'jumbotron-subtitle',true);?></p>
+				<h1><?php esc_html_e(get_post_meta(get_the_ID(),'jumbotron-title',true),'basicstore');?></h1>
+				<p><?php esc_html_e(get_post_meta(get_the_ID(),'jumbotron-subtitle',true,'basicstore'));?></p>
 
 			</div><!-- .container -->
 

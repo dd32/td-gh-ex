@@ -43,7 +43,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 		// ) ) );
 
 		//Bootstrap Pagination
-		wp_bootstrap_pagination();
-		
+		basic_store_wp_bootstrap_pagination();
+
 	?>
 </nav>
