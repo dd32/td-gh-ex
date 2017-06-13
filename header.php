@@ -97,8 +97,8 @@
 
 			<div class="container">
 
-				<h1><?php esc_html_e(get_post_meta(get_the_ID(),'jumbotron-title',true),'basicstore');?></h1>
-				<p><?php esc_html_e(get_post_meta(get_the_ID(),'jumbotron-subtitle',true,'basicstore'));?></p>
+				<h1><?php echo esc_html(get_post_meta(get_the_ID(),'jumbotron-title',true));?></h1>
+				<p><?php echo esc_html(get_post_meta(get_the_ID(),'jumbotron-subtitle',true));?></p>
 
 			</div><!-- .container -->
 

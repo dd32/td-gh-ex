@@ -32,6 +32,9 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.3.1 - Jun 13 2017 =
+- Correctly escaped get_post_meta on header.php
+
 = 1.3.0 - Jun 13 2017 =
 - Wrong tag in style.css "two column" and "editor-style"
 - Unique prefix for all theme functions
