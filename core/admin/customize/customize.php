@@ -155,6 +155,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Color Scheme","suevafree"),
+				"description" => esc_html__( "From this section you can manage the color scheme of SuevaFree.","suevafree"),
 				"type" => "section",
 				"panel" => "general_panel",
 				"priority" => "10",
@@ -190,6 +191,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Page width",'suevafree'),
+				"description" => esc_html__( "From this section you can manage the page width of SuevaFree.","suevafree"),
 				"type" => "section",
 				"id" => "pagewidth_section",
 				"panel" => "general_panel",
@@ -246,6 +248,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Settings","suevafree"),
+				"description" => esc_html__( "From this section you can manage the main settings of SuevaFree.","suevafree"),
 				"type" => "section",
 				"id" => "settings_section",
 				"panel" => "general_panel",
@@ -465,6 +468,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Styles","suevafree"),
+				"description" => esc_html__( "From this section you can include a custom css code.","suevafree"),
 				"type" => "section",
 				"id" => "styles_section",
 				"panel" => "general_panel",
@@ -488,6 +492,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Layouts","suevafree"),
+				"description" => esc_html__( "From this section you can manage the layouts of SuevaFree.","suevafree"),
 				"type" => "section",
 				"id" => "layouts_section",
 				"panel" => "general_panel",
@@ -705,6 +710,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Header","suevafree"),
+				"description" => esc_html__( "From this section you can upload a custom logo.","suevafree"),
 				"type" => "section",
 				"id" => "header_section",
 				"panel" => "general_panel",
@@ -728,6 +734,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Footer","suevafree"),
+				"description" => esc_html__( "From this section you can manage the social icons and the copyright text.","suevafree"),
 				"type" => "section",
 				"id" => "footer_section",
 				"panel" => "general_panel",
@@ -1032,6 +1039,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Logo","suevafree"),
+				"description" => esc_html__( "From this section you can manage the typography of the logo.","suevafree"),
 				"type" => "section",
 				"id" => "logo_section",
 				"panel" => "typography_panel",
@@ -1077,6 +1085,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Menu","suevafree"),
+				"description" => esc_html__( "From this section you can manage the typography of the menu.","suevafree"),
 				"type" => "section",
 				"id" => "menu_section",
 				"panel" => "typography_panel",
@@ -1135,6 +1144,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Content","suevafree"),
+				"description" => esc_html__( "From this section you can manage the typography of the content.","suevafree"),
 				"type" => "section",
 				"id" => "content_section",
 				"panel" => "typography_panel",
@@ -1159,6 +1169,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			array( 
 
 				"title" => esc_html__( "Headlines","suevafree"),
+				"description" => esc_html__( "From this section you can manage the typography of the headlines.","suevafree"),
 				"type" => "section",
 				"id" => "headlines_section",
 				"panel" => "typography_panel",
