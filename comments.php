@@ -52,7 +52,6 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
-					'max_depth'  => '3',
 					'reply_text' => '<i class="fa fa-mail-reply"></i> Reply',
 					'avatar_size'=> 100,
 				) );

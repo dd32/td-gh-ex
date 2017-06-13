@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: BasePress 1.0.3\n"
+"Project-Id-Version: BasePress 1.1.0\n"
 "Report-Msgid-Bugs-To: https://my.shopperwp.com/support\n"
-"POT-Creation-Date: 2017-06-12 17:05:08+00:00\n"
+"POT-Creation-Date: 2017-06-13 02:46:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,39 +28,39 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:40 comments.php:64
+#: comments.php:40 comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:67
+#: comments.php:43 comments.php:66
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:68
+#: comments.php:44 comments.php:67
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:81
+#: comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:91 inc/base-template-functions.php:767
+#: comments.php:90 inc/base-template-functions.php:774
 msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:95
+#: comments.php:94
 msgid "Name"
 msgstr ""
 
-#: comments.php:97
+#: comments.php:96
 msgid "Email"
 msgstr ""
 
-#: comments.php:99
+#: comments.php:98
 msgid "Website"
 msgstr ""
 
-#: comments.php:101
+#: comments.php:100
 msgid "Your Comment Here ..."
 msgstr ""
 
@@ -94,51 +94,51 @@ msgid "Continue Reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: inc/base-template-functions.php:327 inc/base-template-functions.php:362
-#: inc/base-template-functions.php:978
+#: inc/base-template-functions.php:985
 msgid "Pages:"
 msgstr ""
 
-#: inc/base-template-functions.php:402 inc/base-template-functions.php:744
-#: inc/base-template-functions.php:1128
+#: inc/base-template-functions.php:402 inc/base-template-functions.php:751
+#: inc/base-template-functions.php:1135
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/base-template-functions.php:416 inc/base-template-functions.php:432
+#: inc/base-template-functions.php:417 inc/base-template-functions.php:437
 msgid "<i class=\"fa fa-tags\" aria-hidden=\"true\"></i>"
 msgstr ""
 
-#: inc/base-template-functions.php:533 inc/base-template-functions.php:1151
+#: inc/base-template-functions.php:540 inc/base-template-functions.php:1158
 #: template-parts/content-page.php:30
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#: inc/base-template-functions.php:603
+#: inc/base-template-functions.php:610
 msgid "By "
 msgstr ""
 
-#: inc/base-template-functions.php:709
+#: inc/base-template-functions.php:716
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/base-template-functions.php:767
+#: inc/base-template-functions.php:774
 msgid "One Comment"
 msgstr ""
 
-#: inc/base-template-functions.php:767
+#: inc/base-template-functions.php:774
 msgid "% Comments"
 msgstr ""
 
-#: inc/base-template-functions.php:928
+#: inc/base-template-functions.php:935
 msgid "%1$s designed by %2$s."
 msgstr ""
 
-#: inc/base-template-functions.php:1130
+#: inc/base-template-functions.php:1137
 msgid "%1$s"
 msgstr ""
 
-#: inc/base-template-functions.php:1142
+#: inc/base-template-functions.php:1149
 #. translators: %s: post title
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
@@ -294,12 +294,12 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/base-template-functions.php:1087
+#: inc/base-template-functions.php:1094
 msgctxt "post date"
 msgid "%s"
 msgstr ""
 
-#: inc/base-template-functions.php:1093
+#: inc/base-template-functions.php:1100
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

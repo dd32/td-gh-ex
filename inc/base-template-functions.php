@@ -408,6 +408,27 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 				if ( isset( $metadata['tag'] ) ) :
 
 				?>
+					<?php if ( $tag_list ) : ?>
+
+							<div class="entry-footer">
+
+								<div class="entry-tags 77">
+									
+									<?php echo __('<i class="fa fa-tags" aria-hidden="true"></i>', 'basepress') . wp_kses_post($tag_list); ?>
+									
+								</div><!-- .entry-tags -->
+
+							</div>
+
+					<?php endif; ?>
+
+				<?php
+			endif;
+
+		else :
+		?>
+
+			<?php if ( $tag_list ) : ?>
 
 				<div class="entry-footer">
 
@@ -419,21 +440,7 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 
 				</div>
 
-				<?php
-			endif;
-
-		else :
-		?>
-
-			<div class="entry-footer">
-
-				<div class="entry-tags">
-					
-					<?php echo __('<i class="fa fa-tags" aria-hidden="true"></i>', 'basepress') . wp_kses_post($tag_list); ?>
-					
-				</div><!-- .entry-tags -->
-
-			</div>
+			<?php endif; ?>
 
 		<?php
 		endif;
