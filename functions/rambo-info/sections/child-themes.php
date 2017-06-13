@@ -116,6 +116,41 @@
 	</div>
 	
 	
+	<div class="col-md-4">
+		<div class="rambo-tab-pane-half rambo-tab-pane-first-half">
+			<!-- rambo Blue -->
+			<div class="rambo-child-theme-container">
+				<div class="rambo-child-theme-image-container">
+					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/rambo-info/img/WorkPress.png'; ?>" alt="<?php esc_html_e( 'WorkPress', 'rambo' ); ?>" />
+					<div class="rambo-child-theme-description">
+						<h2><?php esc_html_e( 'WorkPress', 'rambo' ); ?></h2>
+					</div>
+				</div>
+				<div class="rambo-child-theme-details">
+					<?php if ( 'workpress' != $current_theme['Name'] ) { ?>
+						<div class="theme-details">
+							<span class="theme-name"><?php _e('WorkPress','rambo'); ?></span>
+							<span class="theme-btn">
+							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=workpress' ), 'install-theme_workpress' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'rambo' ), '<span class="screen-reader-text">workpress</span>' ); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/workpress/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
+							</span>
+							<div class="rambo-clear"></div>
+						</div>
+						<?php } else { ?>
+						<div class="theme-details active">
+							<span class="theme-name"><?php echo esc_html_e( 'workPress - Current theme', 'rambo' ); ?></span>
+							<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php esc_html_e('Customize','rambo'); ?></a>
+							<div class="rambo-clear"></div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
 	</div>
 </div>	
 	</div>

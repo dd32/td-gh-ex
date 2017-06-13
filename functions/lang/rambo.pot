@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2017-05-30 19:31+0530\n"
-"PO-Revision-Date: 2017-05-30 19:31+0530\n"
+"POT-Creation-Date: 2017-06-10 14:05+0530\n"
+"PO-Revision-Date: 2017-06-10 14:05+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -363,6 +363,7 @@ msgstr ""
 #: functions/rambo-info/sections/child-themes.php:37
 #: functions/rambo-info/sections/child-themes.php:69
 #: functions/rambo-info/sections/child-themes.php:101
+#: functions/rambo-info/sections/child-themes.php:134
 #, php-format
 msgid "Install %s now"
 msgstr ""
@@ -370,6 +371,7 @@ msgstr ""
 #: functions/rambo-info/sections/child-themes.php:38
 #: functions/rambo-info/sections/child-themes.php:70
 #: functions/rambo-info/sections/child-themes.php:102
+#: functions/rambo-info/sections/child-themes.php:135
 msgid "Live Preview"
 msgstr ""
 
@@ -380,6 +382,7 @@ msgstr ""
 #: functions/rambo-info/sections/child-themes.php:45
 #: functions/rambo-info/sections/child-themes.php:77
 #: functions/rambo-info/sections/child-themes.php:109
+#: functions/rambo-info/sections/child-themes.php:142
 msgid "Customize"
 msgstr ""
 
@@ -407,6 +410,16 @@ msgstr ""
 
 #: functions/rambo-info/sections/child-themes.php:108
 msgid "spicy - Current theme"
+msgstr ""
+
+#: functions/rambo-info/sections/child-themes.php:124
+#: functions/rambo-info/sections/child-themes.php:126
+#: functions/rambo-info/sections/child-themes.php:132
+msgid "WorkPress"
+msgstr ""
+
+#: functions/rambo-info/sections/child-themes.php:141
+msgid "workPress - Current theme"
 msgstr ""
 
 #: functions/rambo-info/sections/free_pro.php:14
