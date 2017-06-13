@@ -16,7 +16,7 @@ Backyard is a clean and modern WordPress blog theme with premium look and feel w
 
 blog, one-column, two-columns, right-sidebar, editor-style, translation-ready, custom-logo, custom-background, custom-menu, custom-header, featured-images, full-width-template, threaded-comments
 
-Theme URI: https://www.ydesignservices.com/product/free-wordpress-themes/backyard-free/
+Theme URI: https://www.ydesignservices.com/product/premium-wordpress-themes/backyard/
 
 
 License
