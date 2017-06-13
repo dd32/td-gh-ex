@@ -24,8 +24,8 @@ $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ),
 		<div class="flex_btn_div_center">
 		<a class="flex_btn" href="<?php echo $current_options['home_image_button_link']; ?>" target="_blank">
 			<?php echo $current_options['home_image_button_text']; ?> <i class="fa fa-chevron-circle-right"></i>
-								</a>
-							</div>
+		</a>
+		</div>
 		<?php }?>
 	</div>
 

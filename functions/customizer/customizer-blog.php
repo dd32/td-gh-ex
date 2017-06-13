@@ -51,10 +51,6 @@ function quality_blog_customizer( $wp_customize ) {
 	function quality_blog_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 	}
-
-	function quality_blog_sanitize_html( $input ) {
-	return force_balance_tags( $input );
-	}
 	}
 	add_action( 'customize_register', 'quality_blog_customizer' );
 	?>

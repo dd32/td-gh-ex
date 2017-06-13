@@ -91,7 +91,7 @@ $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ),
 			<div class="clearfix"></div>
 			
 			<div class="qua_proejct_button">
-			<a href=""> View All Projects </a>
+			<a href="#"> <?php _e('View All Projects','quality'); ?> </a>
 			</div>			
 		</div>
 	</div>

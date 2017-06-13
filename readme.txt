@@ -142,6 +142,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.7.6
+1. Fixed styling issue.
 @Version 1.7.5
 1. Update pot file for theme info.
 @Version 1.7.4

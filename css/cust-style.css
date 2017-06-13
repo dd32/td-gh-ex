@@ -17,6 +17,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 
 .upgrade_pro
@@ -34,6 +35,7 @@ background-color: #1d4467;
     word-wrap: break-word;
     line-height: 25px;
 	text-transform: uppercase;
+	text-decoration:none;
 }
 
 .review {
@@ -49,6 +51,7 @@ background-color: #1d4467;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .document{
   background-color: #ee591f;
@@ -63,6 +66,7 @@ background-color: #1d4467;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .multiple
 {
@@ -79,6 +83,7 @@ background-color: #f8504b;
     word-wrap: break-word;
     line-height: 25px;
 	text-transform: uppercase;
+	text-decoration:none;
 }
 
 
@@ -100,10 +105,11 @@ background-color: #f8504b;
   text-transform: uppercase;
   width: 54%;
   border-radius: 2px;
+  text-decoration:none;
   }
   .pro-vesrion p{line-height:20px;}  
   
-  #accordion-section-front_page_parallex_options .accordion-section-title, .accordion-section-title:after,
-  #accordion-section-quality_pro_section .accordion-section-title, .accordion-section-title:after  {
-  background:#f8504b; color:#fff;}
-  #accordion-section-front_page_parallex_options .accordion-section-title:after, #accordion-section-quality_pro_section .accordion-section-title:after {color:#fff;}
+#accordion-section-front_page_parallex_options .accordion-section-title:after, #accordion-section-quality_pro_section .accordion-section-title:after {color:#fff;}
+	
+#accordion-section-quality_pro_section .accordion-section-title, #accordion-section-quality_pro_section .accordion-section-title:hover {background-color:#f8504b; color:#fff;}
+#accordion-section-quality_pro_section .control-section .accordion-section-title:hover {background-color:#f8504b; color:#fff;}

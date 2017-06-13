@@ -18,7 +18,7 @@ function quality_fonts_url() {
  
         $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
-    return $fonts_url;
+    return esc_url($fonts_url);
 }
 function quality_scripts_styles() {
     wp_enqueue_style( 'quality-fonts', quality_fonts_url(), array(), null );
