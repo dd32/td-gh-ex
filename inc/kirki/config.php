@@ -11,10 +11,6 @@
  * Remover or change default sections for Theme Customizer.
  */
 function beonepage_remove_customize_section( $wp_customize ) {
-	$wp_customize->remove_section( 'colors' );
-	$wp_customize->remove_section( 'title_tagline' );
-	$wp_customize->remove_section( 'static_front_page' );
-
 	$wp_customize->get_panel( 'nav_menus' )->priority = 25;
 	$wp_customize->get_control( 'site_icon' )->priority = 5;
 	$wp_customize->get_control( 'site_icon' )->section = 'site_icon_logo';
@@ -114,42 +110,6 @@ Kirki::add_config( 'beonepage_kirki', array(
  * Create fields using the Kirki API static functions.
  */
 /* General Section Start */
-Kirki::add_field( 'beonepage_kirki', array(
-	'type'      => 'text',
-	'settings'  => 'general_site_title',
-	'label'     => __( 'Site Title', 'beonepage' ),
-	'section'   => 'site_general',
-	'default'   => get_bloginfo( 'name' ),
-	'priority'  => 10,
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-		array(
-			'element'  => '.site-title a',
-			'function' => 'html',
-			'property' => 'text'
-		)
-    )
-) );
-
-Kirki::add_field( 'beonepage_kirki', array(
-	'type'     => 'dropdown-pages',
-	'settings' => 'general_front_page',
-	'label'    => __( 'Front Page', 'beonepage' ),
-	'help'     => __( 'Create a blank page with Home Page template and set it as Front Page.', 'beonepage' ),
-	'section'  => 'site_general',
-	'default'  => get_option( 'page_on_front' ),
-	'priority' => 20
-) );
-
-Kirki::add_field( 'beonepage_kirki', array(
-	'type'     => 'dropdown-pages',
-	'settings' => 'general_posts_page',
-	'label'    => __( 'Posts Page', 'beonepage' ),
-	'help'     => __( 'Create a blank page and set it as Posts Page.', 'beonepage' ),
-	'section'  => 'site_general',
-	'default'  => get_option( 'page_for_posts' ),
-	'priority' => 30
-) );
 
 Kirki::add_field( 'beonepage_kirki', array(
 	'type'     => 'checkbox',
