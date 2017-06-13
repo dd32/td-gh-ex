@@ -178,7 +178,7 @@ if ( ! function_exists( 'ct_tracks_remove_comments_notes_after' ) ) {
 add_action( 'comment_form_defaults', 'ct_tracks_remove_comments_notes_after' );
 
 if ( ! function_exists( 'ct_tracks_filter_read_more_link' ) ) {
-	function ct_tracks_filter_read_more_link() {
+	function ct_tracks_filter_read_more_link( $custom = false ) {
 		global $post;
 		$ismore             = strpos( $post->post_content, '<!--more-->' );
 		$read_more_text     = get_theme_mod( 'read_more_text' );
@@ -187,7 +187,7 @@ if ( ! function_exists( 'ct_tracks_filter_read_more_link' ) ) {
 		$output = '';
 
 		// add ellipsis for automatic excerpts
-		if ( empty( $ismore ) ) {
+		if ( empty( $ismore ) && $custom !== true  ) {
 			$output .= $excerpt_more;
 		}
 		// Because i18n text cannot be stored in a variable
@@ -207,7 +207,7 @@ if ( ! function_exists( 'ct_tracks_filter_manual_excerpts' ) ) {
 	function ct_tracks_filter_manual_excerpts( $excerpt ) {
 		$excerpt_more = '';
 		if ( has_excerpt() ) {
-			$excerpt_more = ct_tracks_filter_read_more_link();
+			$excerpt_more = ct_tracks_filter_read_more_link( true );
 		}
 		return $excerpt . $excerpt_more;
 	}
@@ -500,6 +500,7 @@ if ( ! function_exists( 'ct_tracks_social_site_list' ) ) {
 			'ravelry',
 			'meetup',
 			'telegram',
+			'twitch',
 			'podcast',
 			'yelp',
 			'amazon',
@@ -812,7 +813,7 @@ if ( ! function_exists( ( 'ct_tracks_settings_notice' ) ) ) {
 			if ( $_GET['tracks_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Thanks for activating Tracks!', 'tracks' ); ?></p>
+					<p><?php printf( __( 'Thanks for activating %s!', 'tracks' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
