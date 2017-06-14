@@ -14,6 +14,10 @@
     color: #FFF;
 }
 
+.conica-remove-section {
+    display: none !important;
+}
+
 #accordion-section-conica_premium a.button {
 	background-color: #006CC9;
     color: #FFF;

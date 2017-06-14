@@ -69,6 +69,23 @@
             }
         }
         
+        // Show / Hide footer layout settings
+        var conica_foot_select_value = $( '#customize-control-conica-footer-layout select' ).val();
+        conica_foot_value_check( conica_foot_select_value );
+        
+        $( '#customize-control-conica-footer-layout select' ).on( 'change', function() {
+            var foot_select_value = $( this ).val();
+            conica_foot_value_check( foot_select_value );
+        } );
+        
+        function conica_foot_value_check( foot_select_value ) {
+            if ( foot_select_value == 'conica-footer-layout-social' ) {
+                $( '#accordion-section-conica-panel-text-section-footer' ).removeClass( 'conica-remove-section' );
+            } else {
+                $( '#accordion-section-conica-panel-text-section-footer' ).addClass( 'conica-remove-section' );
+            }
+        }
+        
     } );
     
 } )( jQuery );

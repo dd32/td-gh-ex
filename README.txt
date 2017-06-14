@@ -79,6 +79,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.03
+* Styling fixes/tweaks
+* Re-added footer Address setting - Accidentally removed
+* Added setting to change icon for footer address
+* Updated the language.pot file
+Premium: Added setting to set WooCommerce products amount to display per page
+
 #### 1.3.02
 * Styling fixes/tweaks
 * Updated the language.pot file

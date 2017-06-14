@@ -24,9 +24,9 @@
 			
 			<?php endif; ?>
 			
-			<?php if ( get_theme_mod( 'conica-website-site-add' ) ) : ?>
+			<?php if ( get_theme_mod( 'conica-website-footer-add' ) ) : ?>
 	        	<div class="site-footer-social-ad">
-	        		<i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-website-site-add' ) ) ?>
+                    <i class="fa <?php echo ( get_theme_mod( 'conica-website-footer-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-website-footer-icon' ) ) : sanitize_html_class( 'fa-map-marker' ); ?>"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-website-footer-add' ) ) ?>
 	        	</div>
 			<?php endif; ?>
 			

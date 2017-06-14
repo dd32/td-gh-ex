@@ -410,7 +410,7 @@ function customizer_library_conica_options() {
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Footer Options', 'conica' ),
+        'title' => __( 'Footer', 'conica' ),
         'priority' => '10',
         'panel' => $panel
     );
@@ -551,6 +551,32 @@ function customizer_library_conica_options() {
         'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'conica'),
         'description' => __( 'Enter the default text for when no search results are found', 'conica' )
     );
+    
+    $section = 'conica-panel-text-section-footer'; // ------------------------------------------- Header Text
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Footer', 'conica' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+    
+    $options['conica-website-footer-icon'] = array(
+        'id' => 'conica-website-footer-icon',
+        'label'   => __( 'Custom Icon', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+        'description' => __( 'Change the icon by pasting the corrent <a href="http://fontawesome.io/icons/#brand" target="_blank">Font Awesome</a> class here<br />Eg: "fa-map-marker"', 'conica' ),
+        'default' => __( 'fa-map-marker', 'conica' )
+    );
+    $options['conica-website-footer-add'] = array(
+        'id' => 'conica-website-footer-add',
+        'label'   => __( 'Address', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => __( 'Cape Town, South Africa', 'conica' )
+    );
+    
     // ------------------------------------------------------------------------------------ Navigation Text
 
     $panel = 'conica-panel-font-options';
