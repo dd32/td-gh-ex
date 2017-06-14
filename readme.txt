@@ -1,8 +1,8 @@
 === Keratin ===
 Contributors: ThemeCot.com
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.4
-Tested up to: 4.6
+Requires at least: 4.6
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Keratin is a modern and responsive WordPress theme suitable for magazines, newsp
 
 == How can I setup Keratin WordPress theme? ==
 
-http://themecot.com/keratin-theme-documentation/
+https://themecot.com/keratin-theme-documentation/
 
 == License ==
 
@@ -41,6 +41,11 @@ keratin/fonts
 Images used in the screenshot are licensed - https://unsplash.com/license (Creative Commons Zero License)
 
 == Changelog ==
+
+= 1.0.2.1 =
+Release Date: June 14, 2017
+
+* Updated : Font Awesome library updated to 4.7.0 version.
 
 = 1.0.2 =
 Release Date: August 26, 2016

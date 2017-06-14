@@ -220,7 +220,12 @@ function keratin_site_info() {
 				<div class="designer-info">
 					<?php
 					printf( '<a href="%1$s">%2$s</a> <span class="sep">%3$s</span> %6$s <a href="%4$s">%5$s</a>',
-						'http://themecot.com/wordpress-theme/keratin/', 'Keratin Theme', __( '&middot;', 'keratin' ), 'http://wordpress.org/', 'WordPress', __( 'Powered by', 'keratin' )
+						'https://themecot.com/',
+						'Keratin Theme',
+						__( '&middot;', 'keratin' ),
+						'https://wordpress.org/',
+						'WordPress',
+						__( 'Powered by', 'keratin' )
 					);
 					?>
 				</div>

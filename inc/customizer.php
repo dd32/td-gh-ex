@@ -77,7 +77,7 @@ function keratin_customize_register ( $wp_customize ) {
 				'type'          => 'button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://themecot.com/keratin-theme-documentation/',
+				'button_href'   => 'https://themecot.com/keratin-theme-documentation/',
 				'button_target' => '_blank',
 			)
 		)
@@ -99,7 +99,7 @@ function keratin_customize_register ( $wp_customize ) {
 				'type'          => 'button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://themecot.com/contact/',
+				'button_href'   => 'https://themecot.com/contact/',
 				'button_target' => '_blank',
 			)
 		)
