@@ -663,7 +663,7 @@ function weaverx_single_title( $title = '' ) {
 if ( ! function_exists( 'weaverx_fi' ) ) {
 function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
-	// $who includes: post, page, post_excerpt,post_ful
+	// $who includes: post, page, post_excerpt,post_full
 
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
@@ -782,7 +782,8 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 
 		$size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
 		// weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);
-		if (get_post_thumbnail_id()) {
+
+		if ( get_post_thumbnail_id() ) {
 			if ( ($href = weaverx_get_per_post_value( '_pp_fi_link' )) == '' ) {        // per page link override?
 				if ( $who == 'post_excerpt') {
 					$href = esc_url( get_permalink() );
@@ -792,9 +793,16 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 				}
 			}
 
-			echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
-			the_post_thumbnail( $size, $attr );
-			echo "</a>\n";
+			$fi_img = get_the_post_thumbnail(null, $size, $attr );
+
+			$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>\n";
+
+			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who);  // Added 3.1.5
+
+			//echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
+			//the_post_thumbnail( $size, $attr );
+			//echo "</a>\n";
+
 			if ( $show == 'title-banner' )
 				echo '<div style="clear:both;"></div>';
 			return false;

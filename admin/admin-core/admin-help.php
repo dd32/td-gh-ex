@@ -72,12 +72,7 @@ function weaverx_admin_help() {
 	<?php _e('Release Notes', 'weaver-xtreme' /*adm*/); ?>
 </h3>
 <p>
-	<em>Weaver Xtreme Version 2.0</em> represents a significant upgrade over Version 1.3.
-	The major change is the addition of Customizer based options. All of the options
-	previously handled via the legacy Theme Options interface are now included in
-	the WordPress Customizer. Legacy Theme Options still available with <em>Weaver Xtreme Theme Support</em>
-	plugin. You can now preview your changes live and on the fly.
-	This is a revolutionary change in how you can design your own site.
+	<em>Please scroll to the end of the releasenotes to view latest changes.</em>
 </p>
 <?php
 $notes = weaverx_relative_url('') . 'readme.txt';

@@ -155,17 +155,16 @@ function weaverx_setup() {
 if ( ! function_exists('weaverx_init_opts')) {
 function weaverx_init_opts($who='') {
 	// this sets either the current settings, or the default values.
-		weaverx_clear_opt_cache('weaverx_init_opts');
 
-
+	weaverx_clear_opt_cache('weaverx_init_opts');	// start with a clear cache
 
 	$themename = weaverx_getopt('themename'); // load the theme from the db if there (weaverx_getopt loads the options if there)
+
 	if ($themename === false) {
 		require_once('includes/get-default-settings.php');  // load a set of defaults
 		weaverx_get_default_settings();
 	}
 
-	do_action('weaverx_init_opts');
 
 	// Keep some info for max_input_vars detection. These have to be collected here because the
 	// WP settings API clears $_POST after the after_setup_theme action

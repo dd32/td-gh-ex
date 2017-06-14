@@ -301,6 +301,9 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					),
 				),
 			),
+
+			'page_fi_nolink' => weaverx_cz_checkbox_refresh( __( "Don't add link to FI", 'weaver-xtreme' ),
+			__( 'Do not add link to Featured Image.', 'weaver-xtreme' ), 'plus')
 		),
 	);
 
@@ -330,6 +333,13 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					),
 				),
 			),
+
+			'images-fi-post-h' => weaverx_cz_group_title( __( 'Post Featured Image Options', 'weaver-xtreme' ),
+				__( 'Options for Post Featured Images.', 'weaver-xtreme' )),
+
+			'post_fi_nolink' => weaverx_cz_checkbox_refresh( __( "Don't add link to FI", 'weaver-xtreme' ),
+			__( 'Do not add link to Featured Image for any post layout.', 'weaver-xtreme' ), 'plus'),
+
 
 			'images-extendbg-heading' => weaverx_cz_heading( __( 'Full Width Featured Image BG', 'weaver-xtreme' ),
 				__( 'Check the <em>Extend Width BG Attributes for all Posts</em> option on the <em>Spacing, Width, Alignment : Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),

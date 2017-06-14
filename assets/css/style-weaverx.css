@@ -30,6 +30,7 @@ Table of Contents
 =Font Size Group definitions
 =Print
 =IE
+=Compatibility
 
 --------------------------------------------------------------------------------------------------------------
 *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***
@@ -536,6 +537,11 @@ ul {
 	margin-left:			1.0em;
 }
 
+.textwidget ol, .textwidget ul {		/* fixed: V 3.1.5 */
+	list-style-position:    outside;
+	margin-left:			1.75em;
+}
+
 .widget .wvrx-menu ul {			/* fix the above rule for menus in a widget */
 	margin-left:			0;
 }
@@ -617,7 +623,7 @@ blockquote {
 	border-left:	4px solid rgba(128, 128, 128, 0.4);
 	margin:			1.5em;
 	overflow:		auto;
-	padding:		0 1.5em 1em 1.2em;
+	padding:		0.8em 1.5em 0 1.2em;
 }
 
 blockquote cite {
@@ -1248,7 +1254,7 @@ img.fi-aligncenter-pb {
 	z-index:			1;
 }
 
-xx.wvrx-menu-html {
+.wvrx-menu-html {
 	z-index:		1;				/* fix for hover failure on right html box */
 }
 
@@ -4785,6 +4791,14 @@ html.ie8 .is-desktop .menu-extra:before,
 html.ie8 .is-desktop .menu-secondary:before,
 html.ie8 .is-desktop .menu-primary:before {display:none;}
 /* -- /IE8 */
+
+/* =Compatibility  - compatibility with other plugins */
+
+.container-woocommerce .product .entry-summary {	/* fixed 3.1.5 */
+	clear:		none;
+}
+
+/* -- /Compatibility */
 
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to

@@ -641,6 +641,7 @@ function weaverx_cz_getdefaults() {
 	foreach ($opts as $opt => $val) {
 		$ret[$opt] = $val;
 	}
+	do_action('weaverx_force_plus_inline_css', $ret);
 	return $ret;
 }
 

@@ -125,10 +125,10 @@ function weaverx_setopt_array($opt, $val, $save = true) {
 	weaverx_setopt( $opt, serialize($val), $save );
 }
 
-function weaverx_delete_all_options() {
+function weaverx_delete_all_options( $no_save = false ) {
 	weaverx_clear_opt_cache('weaverx_delete_all_options');
 
-	if (current_user_can( 'manage_options' ))
+	if (!$no_save && current_user_can( 'manage_options' ))
 		delete_option( apply_filters('weaverx_options','weaverx_settings') );
 }
 

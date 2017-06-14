@@ -641,7 +641,6 @@ if ( ! function_exists( 'weaverx_cz_sanitize_text' ) ) :
  */
 function weaverx_cz_sanitize_text( $string ) {
 	$allowedtags = wp_kses_allowed_html();
-	$allowedtags = wp_kses_allowed_html();
 	$allowedtags['a']['target'] = true;
 
 	// span
@@ -1421,13 +1420,19 @@ function weaverx_cz_checkbox($label, $description = '', $plus = '', $transport =
 
 }
 
-function weaverx_cz_checkbox_refresh($label, $description = '') {
+function weaverx_cz_checkbox_refresh( $label, $description = '', $plus = '' ) {
 	/*
 	'checkbox_refresh' => weaverx_cz_checkbox_refresh(
 				label,
 				description
 			),
 	 */
+
+	$cb = null;
+	if ( $plus != '' ) {
+		$label .= WEAVERX_PLUS_ICON;
+		$cb = WEAVERX_PLUS_CHECKBOX_CONTROL;
+	}
 	$label .= WEAVERX_REFRESH_ICON;
 
 	return array(
@@ -1436,6 +1441,7 @@ function weaverx_cz_checkbox_refresh($label, $description = '') {
 			'transport' => 'refresh'
 		),
 		'control' => array(
+			'control_type' => $cb,
 			'label' => $label,
 			'description' => $description,
 			'type'  => 'checkbox',

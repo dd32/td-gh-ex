@@ -6,15 +6,15 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
+Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 3.1.5
+Tested up to: 4.8
+Stable tag: 3.1.6
 
 == Description ==
 
 Weaver Xtreme is an advanced Theme platform that supports extensive customization by the user,
-as well as automatic support for mobile devices.
+as well as full responsive design for mobile devices.
 
 == Licenses ==
 
@@ -408,3 +408,11 @@ with testing and feature suggestions.
 = Version 3.1.5 =
 * New: add Woocommerce support for product gallery zoom, lightbox, slider
 * Tweak: wrapped excerpt ... in span with excerpt-dots class.
+
+= Version 3.1.6 =
+* Fix: Obscure issue with full width and scroll bar width in wvrx end js lib
+* Fix: Menu left/right HTML areas were incorrectly labeled as diamond options - they are not.
+* Tweak: Blockquote styling - fixed padding
+* Tweak: Woocommerce title clear:none rule added to stylesheet
+* Tweak: Font Family for some subthemes
+* Tweaks: WP 4.8 compatibility: list styling for new WP Text Widget, remove Customizer column resize button

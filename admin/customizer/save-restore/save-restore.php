@@ -48,6 +48,10 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 
 		<input type="button" class="button-primary" name="wvrx_save_xplus" value="<?php esc_attr_e( 'Save ALL Settings, including Xtreme Plus', 'weaver-xtreme' ); ?>" />
 <?php
+	echo "<br /><br /><h3>";
+	_e('Save Settings to Site Host Filesystem', 'weaver-xtreme');
+	echo '</h3><p>';
+	_e("You can also save and restore your settings to the Site's Host filesystem. Open the <em>Appearance:Weaver Xtreme Admin:Save/Restore</em> tab to see the options to Save/Restore settings to the host filesystem. (requires free Weaver Theme Support Plugin)" , 'weaver-xtreme');
 	}
 
 	}
