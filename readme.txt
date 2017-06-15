@@ -1,6 +1,6 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.1.7
+Version: 1.1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar,two-columns,custom-menu, right-sidebar,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header,footer-widgets, translation-ready ,rtl-language-support
@@ -102,6 +102,10 @@ Source: https://images.unsplash.com/photo-1440635592348-167b1b30296f
 
 
 == ChangeLog ==
+
+= 1.1.8 =
+Fixed minor bugs
+06/15/2017
 
 = 1.1.7 =
 Added pre footer show hide option in customizer
