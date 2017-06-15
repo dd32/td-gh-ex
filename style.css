@@ -1,0 +1,529 @@
+/*
+Theme Name: 20/16 VCReady
+Theme URI: https:wwww.websitehelper.co.uk
+Author: Website Helper
+Author URI: https://www.websitehelper.co.uk
+Template: twentysixteen
+Description: This Twenty Sixteen child theme uses a very simple and clean design for the blog posts and pages and is Visual Composer friendly.
+Version: 1.0
+License: GNU General Public License v2 or later
+Tags: black, white, custom colors, custom fonts, full width
+Text Domain: twentysixteen
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+body {
+   background:#fff;
+}
+
+body #content .post .entry-content {
+    float: none;
+    width: 100%;
+}
+
+body #content .post .entry-footer {
+    display: none;
+}
+
+body:not(.custom-background-image):before, body:not(.custom-background-image):after {
+    height: 0;
+}
+
+body:not(.search-results) article:not(.type-page) img.below-entry-meta, body:not(.search-results) article:not(.type-page) figure.below-entry-meta {
+    margin-left: 0;
+    max-width: 100%;
+}
+
+body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
+    margin-left: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.site-content {
+    padding: 0.9% 4.5455%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+margin:18px 0 20px 0!important;
+}
+
+.entry-content h4 {
+text-transform: none!important;
+}
+
+h6 {
+    font-style: normal!important;
+}
+
+p {
+    margin: 0 0 1.0em;
+}
+
+/*
+* — Header —
+*/
+
+.site-header {
+    padding: 0 4rem;
+}
+
+.site-branding {
+    height: 5rem;
+}
+
+.social-navigation a {
+    border: 0px solid #d1d1d1;
+}
+
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {
+    font-weight: normal;
+}
+
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {
+    font-weight: normal;
+}
+
+.main-navigation ul ul, .main-navigation ul ul li {
+    border-color: #f9f9f9;
+}
+
+/*
+* — Pages —
+*/
+
+.content-area-full-width {
+    float: left;
+    margin-right: -100%;
+    width: 100%;
+}
+
+/*
+* — Posts —
+*/
+
+.post-meta {
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+
+span.date {
+    margin-right: 8px;
+} 
+
+.entry-title {
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1.225;
+    margin-bottom: 1.10rem!important;
+    font-weight: 300;
+     margin: 0 0 5px 0!important;
+}
+
+.post-thumbnail {
+    margin-bottom: 1rem;
+}
+
+.site-main > article {
+    margin-bottom: 2em;
+}
+
+blockquote {
+    border: 0 solid #333;
+    border-left-width: 4px;
+    color: #333;
+    font-size: 19px;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.8em;
+    margin: 0 0 13px 0;
+    background: #f9f9f9;
+    padding: 23px 20px 25px 20px;
+}
+
+blockquote strong, blockquote b {
+    font-weight: bold;
+}
+
+.comment-body {
+    background: #f9f9f9;
+    padding: 1rem 1rem 2rem 1rem!important;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 0!important;
+}
+
+.comment-reply-link {
+    color: #333;
+}
+
+.comment-list + .comment-respond, .comment-navigation + .comment-respond {
+    padding-top: 1.25em;
+}
+
+.comments-title, .comment-reply-title {
+    padding-top: 0;
+}
+
+.comments-title, .comment-reply-title {
+    border-top: 0px solid #1a1a1a;
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-left: 0.5rem!important;
+    padding: 0px 0 10px 0;
+}
+
+.post-navigation div + div {
+    border-top: 1px solid #1a1a1a;
+}
+
+/*
+* — Sidebar Elements —
+*/
+
+.widget .widget-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.widget {
+    border-top: 0px solid #1a1a1a;
+    font-size: 1rem;
+    line-height: 1.6153846154;
+    margin-bottom: 3.230769231em;
+    padding-top: 1.615384615em;
+    margin-bottom: 15px!important;
+}
+
+.widget li {
+    margin-bottom: 15px;
+}
+
+li.recentcomments {
+    list-style: none;
+}
+
+ul#recentcomments {
+    margin: 0;
+}
+
+span.comment-author-link {
+    font-weight: bold;
+}
+
+/*
+* === FORMS ===
+*/
+
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea {
+    background: #f9f9f9!important;
+    border: 1px solid #d1d1d1!important;
+    border-radius: 5px!important;
+    color: #686868;
+    padding: 0.825em 0.4375em;
+    width: 100%;
+}
+
+textarea {
+    height: 7rem;
+}
+
+.search-field {
+    padding: 11px!important;
+    font-size: 15px!important;
+}
+
+input:focus {
+    border: 1px solid #ccc!important;
+}
+
+textarea:focus {
+    border: 1px solid #ccc!important;
+}
+
+.widget button.search-submit {
+    padding: 0;
+    width: 35px;
+    border-radius: 50px;
+    right: 40px;
+    height: 35px;
+    top: 7px;
+}
+
+button, button[disabled]:hover, button[disabled]:focus, input[type="button"], input[type="button"][disabled]:hover, input[type="button"][disabled]:focus, input[type="reset"], input[type="reset"][disabled]:hover, input[type="reset"][disabled]:focus, input[type="submit"], input[type="submit"][disabled]:hover, input[type="submit"][disabled]:focus{
+    border: 0;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 0.84375em 0.875em 0.78125em;
+}
+
+a.custom-button-read-more {
+    color:#FFFFFF;
+    text-decoration:none!important;
+}
+
+a.custom-button-read-more:hover {
+    color:#FFFFFF!important;
+    text-decoration:none!important;
+}
+
+/*
+* — Misc —
+*/
+
+.custom-button-container {
+    margin: 0.7rem 0;
+    border-radius: 7px;
+    float: right;
+}
+
+.site-description {
+    margin: -1.1rem 0;
+    text-align: center;
+}
+
+.entry-content a, .entry-summary a, .taxonomy-description a, .logged-in-as a, .comment-content a, .pingback .comment-body > a, .textwidget a, .entry-footer a:hover, .site-info a:hover {
+    box-shadow: none!important;
+}
+
+.post-navigation {
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.post-navigation .post-title {
+    font-weight: 300;
+}
+
+code {
+    background-color: #f9f9f9!important;
+    padding: 0!important;
+    width: 100%!important;
+}
+
+::selection {
+  background: #000000; /* WebKit/Blink Browsers */
+  color:#ffffff;
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+  color:#ffffff;
+}
+
+.entry-content ul, .entry-summary ul, .comment-content ul, .entry-content ol, .entry-summary ol, .comment-content ol {
+    margin-left: 35px;
+}
+
+.firstcharacter {
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+/*
+* === THIRD PARTY PLUGINS ===
+*/
+
+/*
+* — Visual Composer Light Text —
+*/
+
+.white-text {
+color:#ffffff;
+}
+
+.white-text h1, h2, h3, h4, h5, h6{
+color:#ffffff;
+}
+
+/*
+* — Mashshare —
+*/
+
+.mashicon-facebook {
+     background: #000000;
+}
+
+.mashicon-facebook:hover {
+    background: #2d5f9a;
+}
+
+.mashicon-twitter {
+    background: #000000;
+}
+
+.mashicon-twitter:hover {
+    background: #00c3f3;
+}
+
+.mashsb-container {
+    margin-bottom: 9px;
+}
+
+.mashsb-count {
+    color: #000;
+    font-size: 62px!important;
+    margin-top: 13px!important;
+}
+
+.mashsb-sharetext {
+    font-size: 11px;
+    font-family: Arial,sans-serif;
+    color: #000;
+}
+
+/*
+* — Recent Post Widget With Thumbnails —
+*/
+
+span.rpwwt-post-title {
+    font-size: 17px;
+}
+
+.rpwwt-widget ul li {
+    overflow: hidden;
+    margin: 0 0 0.5em!important;
+}
+
+/*
+* === RESPONSIVE ===
+*/
+
+@media screen and (min-width: 1024px) {
+
+/*
+* — Header —
+*/
+
+.site-branding, .site-header-menu, .header-image {
+    margin-top: 2.75em;
+    margin-bottom: 1.75em;
+}
+  
+#site-header-menu .social-navigation {
+    display: inline-block;
+    position: absolute;
+    top: -35px;
+    z-index: 10000;
+    right: 56px;
+}
+
+.social-navigation a:before {
+    font-size: 25px!important;
+}
+
+.main-navigation ul ul a {
+    white-space: normal;
+    width: 13.6875em;
+}
+/*
+* — Post —
+*/
+  
+ .entry-content blockquote:not(.alignleft):not(.alignright), .entry-summary blockquote, .comment-content blockquote {
+    margin-left: -3.473684211em;
+}
+
+.avatar {
+    float: right!important;
+}
+
+/*
+* — Forms —
+*/
+
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea {
+    border-radius: 0px;
+}
+}
+
+/*
+* — Fix Portrait Nags —
+*/
+
+@media screen and (max-width: 768px) {
+
+/*
+* — Search Widget —
+*/
+
+.widget button.search-submit {
+    right: 60px;
+    top: 6px;
+ }
+}
+
+/*
+* — Make Sidebar Wider On Ipad Land —
+*/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+
+.content-area {
+    width: 65%;
+}
+
+.sidebar {
+    margin-left: 68%;
+    width: 35%;
+ }
+}
+
+/*
+* — Mobile —
+*/
+
+@media screen and (max-width: 770px) {
+ 
+/*
+* — Post Layout —
+*/
+
+body #content .post .entry-content {
+    width: 84%!important;
+    padding: 1rem 0 0 0;
+}
+
+.entry-title {
+    font-size: 1.5rem!important;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+}
+
+span.comments {
+    display: none;
+}
+
+.site-content {
+    padding: 4% 0;
+}
+
+.post-thumbnail {
+    margin: 0!important;
+}
+
+/*
+* — Header —
+*/
+.site-header {
+    padding: 1rem 4rem;
+}
+.menu-toggle {
+    margin: 5px auto;
+}
+.site-branding {
+    width: 100%;
+    text-align: center;
+    margin: 5px auto 0 0!important;
+   padding-top:3rem:
+ }
+}
