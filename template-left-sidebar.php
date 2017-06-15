@@ -1,3 +1,6 @@
+<?php /* Template Name: Left Sidebar
+*/ ?> 
+
 <?php get_header(); ?>
 
 	<div id="subhead_container">
@@ -15,7 +18,7 @@
 		<!--content-->
 		<div class="row" id="content_container">
 			
-			<!--left col--><div class="eight columns">
+			<!--left col--><div class="eight columns" style="float:right;">
 		
 				<div id="left-col">
 		

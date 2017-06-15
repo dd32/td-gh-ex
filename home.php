@@ -51,7 +51,7 @@
 		</div>	
 
 		<div class="eight columns">
-			<?php get_template_part( 'element-slider', 'index' ); ?>
+			<?php get_template_part( 'element-slider', 'home' ); ?>
 		</div>
 		
 	</div>
@@ -65,7 +65,7 @@
 	
 	<div class="row" id="box_container">
 
-		<?php get_template_part( 'element-boxes', 'index' ); ?>
+		<?php get_template_part( 'element-boxes', 'home' ); ?>
 
 	</div>
 	
@@ -81,7 +81,7 @@
 	
 		<div id="left-col">
 			
-			<?php get_template_part( 'loop', 'index' ); ?>
+			<?php get_template_part( 'loop', 'home' ); ?>
 
 	</div> <!--left-col end-->
 </div> <!--column end-->
