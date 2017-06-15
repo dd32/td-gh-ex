@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.0
+Version: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -55,7 +55,30 @@ Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/sch
 
 == Changelog ==
 
+
 = 1.0 =
-* Released: June 15, 2017
+* Released: June 14, 2017
 
 Initial release
+
+= 1.1 =
+* Fixed: June 15, 2017
+
+Fixed missing stylesheet headers
+
+= 1.2 =
+* Fixed: June 15, 2017
+
+Fixed post archive loop
+
+
+= 1.3 =
+* Fixed: June 15, 2017
+
+Added license URI
+
+
+= 1.4 =
+* Fixed: June 15, 2017
+
+Added sidebar support to archive

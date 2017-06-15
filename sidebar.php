@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' ) && is_front_page() ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) && is_front_page() || is_archive() || is_search()) : ?>
 	
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
