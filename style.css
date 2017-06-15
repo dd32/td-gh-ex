@@ -1,14 +1,15 @@
-/*
+﻿/*
 Theme Name: 20/16 VCReady
-Theme URI: https:wwww.websitehelper.co.uk
+Theme URI: https//:wwww.websitehelper.co.uk
 Author: Website Helper
 Author URI: https://www.websitehelper.co.uk
 Template: twentysixteen
 Description: This Twenty Sixteen child theme uses a very simple and clean design for the blog posts and pages and is Visual Composer friendly.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 Tags: black, white, custom colors, custom fonts, full width
 Text Domain: twentysixteen
+
 This theme, like WordPress, is licensed under the GPL.
 */
 
@@ -34,15 +35,21 @@ body:not(.search-results) article:not(.type-page) img.below-entry-meta, body:not
     max-width: 100%;
 }
 
+body.site-branding:not(.site-tile), body:not(.site-description) {
+    height: 5rem;
+}
+
+
 body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
     margin-left: 0;
     padding-left: 100px;
     padding-right: 100px;
 }
 
-.site-content {
-    padding: 0.9% 4.5455%;
+h1.site-title {
+    margin: 0!important;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
 margin:18px 0 20px 0!important;
@@ -68,10 +75,6 @@ p {
     padding: 0 4rem;
 }
 
-.site-branding {
-    height: 5rem;
-}
-
 .social-navigation a {
     border: 0px solid #d1d1d1;
 }
@@ -92,6 +95,10 @@ p {
 * — Pages —
 */
 
+.site-content {
+    padding: 0.9% 4.5455%;
+}
+
 .content-area-full-width {
     float: left;
     margin-right: -100%;
@@ -101,6 +108,10 @@ p {
 /*
 * — Posts —
 */
+
+.entry-summary p {
+    margin: 2rem 0 0 0;
+}
 
 .post-meta {
     font-size: 0.9rem;
@@ -272,15 +283,15 @@ a.custom-button-read-more:hover {
 * — Misc —
 */
 
+.sticky {
+    background: #F9F9F9;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
 .custom-button-container {
     margin: 0.7rem 0;
     border-radius: 7px;
     float: right;
-}
-
-.site-description {
-    margin: -1.1rem 0;
-    text-align: center;
 }
 
 .entry-content a, .entry-summary a, .taxonomy-description a, .logged-in-as a, .comment-content a, .pingback .comment-body > a, .textwidget a, .entry-footer a:hover, .site-info a:hover {

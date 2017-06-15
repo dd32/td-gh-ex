@@ -19,7 +19,7 @@
 		<div class="post-meta">
 			<span class="author"><?php _e( 'By', 'twentysixteen' ); ?> <?php the_author_posts_link(); ?> - </span>
 			<span class="date"><?php the_time('F j, Y'); ?></span>
-			<span class="comments"> - <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'twentysixteen' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'twentysixteen' )); ?></span>
+			<span class="comments"> <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'twentysixteen' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'twentysixteen' )); ?></span>
 		</div>	
 			<!-- /post details -->
 	</header><!-- .entry-header -->
@@ -27,26 +27,29 @@
 	<?php twentysixteen_excerpt(); ?>
 
 	<?php twentysixteen_post_thumbnail(); ?>
-
+        
+        <!-- .Post Content--> 
+        
 	<div class="entry-content entry-content-home">
-		
-		<?php
-		/* Trim Archive Excerpt */
-			$content = get_the_content();
-            $content = strip_tags($content);
-            echo substr($content, 0, 300);
+	    
+	<?php if( strpos( get_the_content(), 'more-link' ) === false ) { // Strip Content + Add Button
+            $content = get_the_content();
+            $content = strip_tags($content , $allowed_tags);
+            echo substr($content, 0, 350);
             echo '...<br />';
+            echo '<div class="custom-button-container">';
+		    echo '<button>';
+		    echo '<a href="'.get_the_permalink().'" class="custom-button-read-more">' .  __( 'Read More', 'twentysixteen' ) . '</a>';
+		    echo '</button>' .'</div>';
+            }
+        else { // If user adds more tag then add Continue Reading text link
+                the_content(__('Continue reading'));
+            }
         ?>
         
-        <!-- Add Read More Button To Inherit Parent Color Schemes -->
-        
-        <div class="custom-button-container">
-		  <button>
-		      <a class="custom-button-read-more" href="<?php the_permalink(); ?>">Read More</a>
-		  </button>
-		</div>
- 
-		<?php
+         <!-- .Continue-->   
+			
+		<?php 	
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
 				'after'       => '</div>',
