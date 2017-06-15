@@ -19,7 +19,7 @@
 		<div class="post-meta">
 			<span class="author"><?php _e( 'By', 'twentysixteen' ); ?> <?php the_author_posts_link(); ?> - </span>
 			<span class="date"><?php the_time('F j, Y'); ?></span>
-			<span class="comments"> <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'twentysixteen' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'twentysixteen' )); ?></span>
+			<span class="comments"> <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'twentysixteen' ), __( '1 Comment', 'twentysixteen' ), __( '% Comments', 'twentysixteen' )); ?></span>
 		</div>	
 			<!-- /post details -->
 	</header><!-- .entry-header -->

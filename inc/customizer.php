@@ -25,7 +25,7 @@ class Twentysixteen_Child_Kirki_Fields {
 
 		// Add section header color
 		Twentysixteen_Child_Kirki::add_section( 'twentysixteen_child_custom_css', array(
-			'title'          => esc_html__( 'Header Colors', 'twenty-sixteen-child' ),
+			'title'          => esc_html__( 'Header Colors', 'twentysixteen' ),
 			'priority'       => 3,
 			'capability'     => 'edit_theme_options',
 		) );
@@ -34,8 +34,8 @@ class Twentysixteen_Child_Kirki_Fields {
 		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
 			'type'        => 'color',
 			'settings'    => 'site_header',
-			'label'       => esc_html__( 'Header Color', 'twenty-sixteen-child' ),
-			'description' => esc_attr__( 'Change the main color for the header of your site.', 'twenty-sixteen-child' ),
+			'label'       => esc_html__( 'Header Color', 'twentysixteen' ),
+			'description' => esc_attr__( 'Change the main color for the header of your site.', 'twentysixteen' ),
 			'section'     => 'twentysixteen_child_custom_css',
 			'default'     => '#FFFFFF',
 			'priority'    => 1,
@@ -52,8 +52,8 @@ class Twentysixteen_Child_Kirki_Fields {
 		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
 		    'type'        => 'color',
 			'settings'    => 'site_header_icons',
-			'label'       => esc_html__( 'Social Icons Color', 'twenty-sixteen-child' ),
-			'description' => esc_attr__( 'Change the main color for the social icons.', 'twenty-sixteen-child' ),
+			'label'       => esc_html__( 'Social Icons Color', 'twentysixteen' ),
+			'description' => esc_attr__( 'Change the main color for the social icons.', 'twentysixteen' ),
 			'section'     => 'twentysixteen_child_custom_css',
 			'default'     => '#000000',
 			'priority'    => 3,
@@ -70,7 +70,7 @@ class Twentysixteen_Child_Kirki_Fields {
  		* Add the typography section
 	 	*/
 		Twentysixteen_Child_Kirki::add_section( 'typography', array(
-		'title'      => esc_attr__( 'Typography', 'twenty-sixteen-child' ),
+		'title'      => esc_attr__( 'Typography', 'twentysixteen' ),
 		'priority'   => 2,
 		'capability' => 'edit_theme_options',
 		) );
@@ -81,9 +81,9 @@ class Twentysixteen_Child_Kirki_Fields {
 		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
 		'type'        => 'typography',
 		'settings'    => 'body_typography',
-		'label'       => esc_attr__( 'Body Typography', 'twenty-sixteen-child' ),
-		'description' => esc_attr__( 'Select the main typography options for your site.', 'twenty-sixteen-child' ),
-		'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'twenty-sixteen-child' ),
+		'label'       => esc_attr__( 'Body Typography', 'twentysixteen' ),
+		'description' => esc_attr__( 'Select the main typography options for your site.', 'twentysixteen' ),
+		'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'twentysixteen' ),
 		'section'     => 'typography',
 		'priority'    => 10,
 		'default'     => array(
@@ -107,9 +107,9 @@ class Twentysixteen_Child_Kirki_Fields {
 		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
 		'type'        => 'typography',
 		'settings'    => 'headers_typography',
-		'label'       => esc_attr__( 'Headers Typography', 'twenty-sixteen-child' ),
-		'description' => esc_attr__( 'Select the typography options for your headers.', 'twenty-sixteen-child' ),
-		'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', 'twenty-sixteen-child' ),
+		'label'       => esc_attr__( 'Headers Typography', 'twentysixteen' ),
+		'description' => esc_attr__( 'Select the typography options for your headers.', 'twentysixteen' ),
+		'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', 'twentysixteen' ),
 		'section'     => 'typography',
 		'priority'    => 10,
 		'default'     => array(
