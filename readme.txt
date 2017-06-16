@@ -1,9 +1,9 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.3
+Version: 5.4
 Requires at least: 4.2
-Tested up to: 4.7
+Tested up to: 4.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -37,14 +37,17 @@ You can add your own background(image) via WordPress Dashboard > Appearance > Cu
 = Menu = 
 You can create and set a menu via WordPress Dashboard > Appearance > Menus.
 
-The mobile menu supports 2 levels of subpages.
-
 = Create a knowledgebase =
 The knowledgebase uses the default WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
-Show or hide page title and category description, exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize.
+Via WordPress Dashboard > Appearance > Customize you can:
+
+* Show or hide page title and category description
+* Exclude a category
+* Set amount of posts for each category
+* Order posts by date or name
 
 Parent and subcategories are listed the same way.
 
@@ -72,19 +75,19 @@ The knowledgebase might not display 100% in IE8 and older because I have used cs
 * Apache License, version 2.0
 * http://www.apache.org/licenses/LICENSE-2.0.html
 
-= Scripts =
-* Script: nav.js
-* Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
-* Copyright author: John Hartley
-* GNU General Public License v3 or later
-* http://www.gnu.org/licenses/gpl-3.0.html
-
 = Images =
 * Item: boats.jpg
 * Copyright author: Guido van der Leest
 * Author URI: http://www.guidovanderleest.nl
 * GNU General Public License v3 or later
 * http://www.gnu.org/licenses/gpl-3.0.html
+
+= Reset stylesheet =
+* Included in file style.css
+* Source: http://meyerweb.com/eric/tools/css/reset
+* Author: Eric Meyer
+* Author URI: http://meyerweb.com/ 
+* License: none (public domain) 
 
 
 == Notes ==
