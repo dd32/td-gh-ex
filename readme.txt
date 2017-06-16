@@ -1,11 +1,11 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.1.8
+Version: 1.1.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar,two-columns,custom-menu, right-sidebar,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header,footer-widgets, translation-ready ,rtl-language-support
 == Description ==
-Bhumi is an incredibly superfine multipurpose responsive theme with WPML Compatible & designed with a lot of care and love.The Theme has support of "WOOCOMMERCE" You can use it for your business, portfolio, blogging or any type of site.bhumi is Responsive and flexible based on BOOTSTRAP CSS framework that adapts your website to mobile devices and the desktop or any other viewing environment.We focused on usability across various devices, starting with smartphones.bhumi is a Cross-Browser Compatible theme that works on All leading web browsers.bhumi is Retina ready.It has 4 page layouts, 3 page templates, It has five widgets available (one sidebar, four footers), and using the sidebar widget also enables you to make a two-column design. In addition, footer widget display is automatically adjusted depending on how many are used(These widgets are only avalible in pro version - https://codethemes.co/product/bhumi-pro/) . Custom menus to choose the menu in Primary Location that is in Header area of the site. In header area and footer of the theme offers Social Media Links to add your Social Links here. Bhumi  focusing on business template, awesome Caroufredsel slider, Powerful but simple Theme Options for full CMS control option to match your logo & website, wide layout, multiple skin colors, translation ready and many more. You can check the demo at https://demo.codethemes.co/law/
+Bhumi is an incredibly superfine multipurpose responsive theme with WPML Compatible & designed with a lot of care and love.The Theme has support of "WOOCOMMERCE" You can use it for your business, portfolio, blogging or any type of site.bhumi is Responsive and flexible based on BOOTSTRAP CSS framework that adapts your website to mobile devices and the desktop or any other viewing environment.We focused on usability across various devices, starting with smartphones.bhumi is a Cross-Browser Compatible theme that works on All leading web browsers.bhumi is Retina ready.It has 4 page layouts, 3 page templates, It has five widgets available (one sidebar, four footers), and using the sidebar widget also enables you to make a two-column design. In addition, footer widget display is automatically adjusted depending on how many are used(These widgets are only avalible in pro version - https://codethemes.co/product/bhumi-pro/) . Custom menus to choose the menu in Primary Location that is in Header area of the site. In header area and footer of the theme offers Social Media Links to add your Social Links here. Bhumi  focusing on business template, awesome Caroufredsel slider, Powerful but simple Theme Options for full CMS control option to match your logo & website, wide layout, multiple skin colors, translation ready and many more. You can check the demo at https://themepalace.com/theme-demo/?demo=KzZzbGFwbE9tVjRNZzVxajJpYkRyQT09
 
 * Mobile-first, Responsive Layout
 * Dynamic Slider
@@ -102,6 +102,10 @@ Source: https://images.unsplash.com/photo-1440635592348-167b1b30296f
 
 
 == ChangeLog ==
+
+= 1.1.8 =
+Extra spacings removed
+06/16/2017
 
 = 1.1.8 =
 Fixed minor bugs
