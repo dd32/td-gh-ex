@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+Medical version 5.1 - june 2017
+- new jquery navigation for mobile screens
+- replaced select menu with toggle menu 
+- files nav, header and style: added and removed code regarding new navigation
+- files style and custom-editor-style: changed margin of several html tags to avoid margin collapsing
+- in case of a child theme that contains file header: please replace this file
+
 Medical version 5.0 - april 2017
 - file style: minor changes
 
