@@ -576,4 +576,120 @@ function ifeature_css_styles(){
 }
 
 /* END  Added by Swapnil - on 19-Oct 2016 for adding new feature for menu coloer change */
-?>
+
+
+/*=========================== Fonts =====================================================*/
+
+// Adding the default theme font Lobster in the list of fonts available in theme options
+add_filter( 'cyberchimps_typography_faces', 'ifeature_typography_faces_new' );
+function ifeature_typography_faces_new( $orig ) {
+	$new = array(
+		'"Fira Sans", sans-serif' => 'Fira Sans'
+	);
+	$new = array_merge( $new, $orig );
+	return $new;
+}
+
+// Setting defaults - body
+add_filter( 'cyberchimps_typography_defaults', 'ifeature_typography_defaults' );
+function ifeature_typography_defaults() {
+	$default = array(
+		'size' => '14px',
+		'face' => '"Fira Sans", sans-serif',
+		'style' => 'normal',
+		'color' => ''
+	);
+
+	return $default;
+}
+
+// Setting defaults - h1
+add_filter('cyberchimps_heading1_typography_defaults', 'ifeature_typography_h1');
+function ifeature_typography_h1()
+{
+	$default = array(
+		'size' => '26px',
+		'face' => '"Fira Sans", sans-serif',
+		'style' => '',
+		'color' => '',
+	);
+
+	return $default;
+}
+// Setting defaults - h2
+add_filter('cyberchimps_heading2_typography_defaults', 'ifeature_typography_h2');
+function ifeature_typography_h2()
+{
+	$default = array(
+		'size' => '22px',
+		'face' => '"Fira Sans", sans-serif',
+		'style' => '',
+		'color' => '',
+	);
+
+	return $default;
+}
+// Setting defaults - h3
+add_filter('cyberchimps_heading3_typography_defaults', 'ifeature_typography_h3');
+function ifeature_typography_h3()
+{
+	$default = array(
+		'size' => '18px',
+		'face' => '"Fira Sans", sans-serif',
+		'style' => '',
+		'color' => '',
+	);
+
+	return $default;
+}
+
+function ifeature_customize_edit_links( $wp_customize ) {
+   
+   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+   $wp_customize->selective_refresh->add_partial( 'blogname', array(
+'selector' => '.site-title a',
+'render_callback' => 'ifeature_customize_partial_blogname',
+) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.top-head-description',
+		'render_callback' => 'ifeature_customize_partial_blogdescription',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'cyberchimps_options[custom_logo]', array(
+		'selector' => '#logo'
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'cyberchimps_options[theme_backgrounds]', array(
+		'selector' => '#social'
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'cyberchimps_options[searchbar]', array(
+		'selector' => '#navigation #searchform'
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'cyberchimps_options[footer_show_toggle]', array(
+		'selector' => '#footer_wrapper'
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'cyberchimps_options[footer_copyright_text]', array(
+		'selector' => '#copyright'
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'nav_menu_locations[primary]', array(
+		'selector' => '#navigation'
+	) );
+
+}
+function ifeature_customize_partial_blogname() {
+bloginfo( 'name' );
+}
+
+function ifeature_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+add_action( 'customize_register', 'ifeature_customize_edit_links' );
+add_theme_support( 'customize-selective-refresh-widgets' );

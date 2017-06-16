@@ -181,7 +181,7 @@ function cyberchimps_create_layout() {
 
 	}
 	elseif( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {
-		$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
+		$page_sidebar = get_post_meta( wc_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
 		$layout_type  = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 
 	}
@@ -1160,6 +1160,15 @@ function cyberchimps_upgrade_bar() {
 			</div>
 		</div>
 	</div>
+<h4 class="notice notice-info is-dismissible" style="margin-top:15px;">
+<p>
+<?php 
+	$utm_link="https://cyberchimps.com/free-download-50-stock-images-use-please/?utm_source=" . $current_theme_name;
+ 	$utm_text="FREE - Download CyberChimps' Pack of 50 High-Resolution Stock Images Now";
+	printf('<a href="' . $utm_link . '" target="_blank" style="font-size:18px;">' . $utm_text . '</a> ');
+?>	 
+</p>
+</h4>
 <?php
 }
 
@@ -1303,7 +1312,7 @@ add_action( 'wp_head', 'cyberchimps_ie8_responsive' );
 function cyberchimps_woocommerce_shop_style() {
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 		global $pagenow;
-		if( $pagenow == 'post.php' && $_GET['post'] == woocommerce_get_page_id( 'shop' ) ) {
+		if( $pagenow == 'post.php' && $_GET['post'] == wc_get_page_id( 'shop' ) ) {
 			echo '<style type="text/css">.cyberchimps_page_title_toggle, .cyberchimps_page_section_order{display:none}</style>';
 		}
 	}
@@ -1330,14 +1339,8 @@ add_filter( 'cyberchimps_headings_filter', 'cyberchimps_addons_headings', 20, 1 
 // Addon Section
 function cyberchimps_addon_sections( $sections_list ) {
 	$sections_list[] = array(
-		'id'      => 'cyberchimps_eventcal_options',
-		'label'   => __( 'The Events Calendar', 'cyberchimps_core' ),
-		'heading' => 'cyberchimps_addons_heading'
-	);
-
-	$sections_list[] = array(
-		'id'      => 'cyberchimps_digital_downloads_options',
-		'label'   => __( 'Digital Downloads', 'cyberchimps_core' ),
+		'id'      => 'cyberchimps_slidedeck_lite_options',
+		'label'   => __( 'SlideDeck Lite', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
 
@@ -1349,20 +1352,11 @@ add_filter( 'cyberchimps_section_list', 'cyberchimps_addon_sections', 20, 1 );
 // Addon Fields
 function cyberchimps_addon_fields( $fields_list ) {
 	$fields_list[] = array(
-		'name'     => __( 'Events', 'cyberchimps_core' ),
-		'id'       => 'events_info',
+		'name'     => __( 'SlideDeck Lite', 'cyberchimps_core' ),
+		'id'       => 'slidedeck_lite',
 		'type'     => 'info',
-		'callback' => 'cyberchimps_custom_events_callback',
-		'section'  => 'cyberchimps_eventcal_options',
-		'heading'  => 'cyberchimps_addons_heading'
-	);
-
-	$fields_list[] = array(
-		'name'     => __( 'Digital Downloads', 'cyberchimps_core' ),
-		'id'       => 'digital_downloads',
-		'type'     => 'info',
-		'callback' => 'cyberchimps_digital_downloads_callback',
-		'section'  => 'cyberchimps_digital_downloads_options',
+		'callback' => 'cyberchimps_slidedeck_lite_callback',
+		'section'  => 'cyberchimps_slidedeck_lite_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
 
@@ -1371,66 +1365,34 @@ function cyberchimps_addon_fields( $fields_list ) {
 
 add_filter( 'cyberchimps_field_list', 'cyberchimps_addon_fields', 20, 1 );
 
-// The Events Calendar Text
-function cyberchimps_custom_events_callback( $value ) {
+// The SlideDeck text
+function cyberchimps_slidedeck_lite_callback( $value ) {
 	$output   = '';
-	$plugin   = 'the-events-calendar/the-events-calendar.php';
-	$icon     = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/events.png" />';
-	$icon_neg = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/events-neg.png" />';
+	$plugin   = 'slidedeck3/slidedeck2-lite.php';
+	$icon     = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/slidedeck.png" />';
+	$icon_neg = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/slidedeck-neg.png" />';
 
 	$installed_plugins = get_plugins();
 
 	if( isset( $installed_plugins[$plugin] ) ) {
 		if( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=tribe_events&page=tribe-events-calendar' ) . '">' . __( 'Events Plugin Options', 'cyberchimps_core' ) . '</a>';
+			$output .= $icon . '<a href="' . admin_url( 'admin.php?page=slidedeck2-lite.php' ) . '">' . __( 'SlideDeck Settings', 'cyberchimps_core' ) . '</a>';
 		}
 		else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps_core' ) . '</a>';
+			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate the "SlideDeck Lite" plugin', 'cyberchimps_core' ) . '</a>';
 		}
 	}
 	else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_eventcal_install_link() . '">' . __( 'Install Events Calendar Plugin', 'cyberchimps_core' ) . '</a>';
+		$output .= $icon_neg . '<a href="' . cyberchimps_slidedeck_install_link() . '">' . __( 'Install the "SlideDeck Lite" plugin', 'cyberchimps_core' ) . '</a>';
 	}
 
 	echo $output;
 }
 
 // return a nonced installation link for the plugin.
-function cyberchimps_eventcal_install_link() {
+function cyberchimps_slidedeck_install_link() {
 	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-	$slug = 'the-events-calendar';
-
-	return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
-}
-
-// Digital Downloads Text
-function cyberchimps_digital_downloads_callback( $value ) {
-	$output   = '';
-	$plugin   = 'easy-digital-downloads/easy-digital-downloads.php';
-	$icon     = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/easy.png" />';
-	$icon_neg = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/easy-neg.png" />';
-
-	$installed_plugins = get_plugins();
-
-	if( isset( $installed_plugins[$plugin] ) ) {
-		if( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps_core' ) . '</a>';
-		}
-		else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps_core' ) . '</a>';
-		}
-	}
-	else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps_core' ) . '</a>';
-	}
-
-	echo $output;
-}
-
-// return a nonced installation link for the plugin.
-function cyberchimps_digital_downloads_install_link() {
-	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-	$slug = 'easy-digital-downloads';
+	$slug = 'slidedeck3';
 
 	return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
 }
