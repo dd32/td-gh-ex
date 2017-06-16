@@ -83,13 +83,6 @@
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-
-		// mobile nav args
-		$onecolumn_mobile_nav_args = array(
-			'navText' => __( 'Menu', 'onecolumn' )
-		);
-		// localize script with data for mobile nav
-		wp_localize_script( 'onecolumn-nav', 'objectL10n', $onecolumn_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'onecolumn_scripts' );
 

@@ -32,6 +32,10 @@
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'onecolumn' ); ?><?php _e( ' +', 'onecolumn' ); ?></div>
+				<div class="mobile-nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</div>
 			<?php endif; ?>
 
 			<?php if ( is_front_page() ) {?> 
