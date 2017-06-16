@@ -4,8 +4,8 @@ Copyright 2011-17 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.0
-Tested up to: 4.7.4
-Stable tag: 2.6.1
+Tested up to: 4.8.0
+Stable tag: 2.6.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -79,6 +79,9 @@ Turkish - Emre Dalkiliç
 
 
 == Changelog ==
+
+= 2.6.1.1 = 
+* Fixed TinyMCE editor error on WordPress 4.8
 
 = 2.6.1 =
 * Added support for external sliders in the presentation page using shortcodes
