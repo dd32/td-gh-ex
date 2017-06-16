@@ -8,6 +8,7 @@
 	</div><!-- #content-inner -->
 </div><!-- #content -->
 
+<?php do_action( 'beam_before_footer' ); ?>
 <footer id="colophon" class="site-footer">
 
 	<?php if( Kirki::get_option( 'bo', 'opt_fwidget_visibility' ) ) { 
@@ -15,6 +16,7 @@
 	}
 		if ($opt_fwidget_visibility == 'option-1') {
 	?>
+		<?php do_action( 'beam_before_footer_widget' ); ?>
 		<div class="widget-wrap clear">
 			<div class="centeralign-footer">
 				<div id="footer-widget" class="widget-area-footer" role="complementary">
@@ -45,16 +47,14 @@
 				</div>
 			</div>
 		</div>	
-	<?php
+	<?php do_action( 'beam_after_footer_widget' ); 
 		}
-	?>
-	
-	<?php 
 		if( Kirki::get_option( 'bo', 'opt_menu_visibility' ) ) { 
 			$opt_menu_visibility = Kirki::get_option( 'bo', 'opt_menu_visibility' );
-	}
+		}
 		if ($opt_menu_visibility == 'option-1') {
 	?>
+	<?php do_action( 'beam_before_footer_nav' ); ?>
 	<div class="nav-wrap clear">
 		<div class="centeralign-footer">
 			<div class="footer-navigation">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<?php	
+	<?php do_action( 'beam_after_footer_nav' ); 
 		}
 	?>
 	
@@ -90,7 +90,7 @@
 		</div><!-- .site-info -->
 	</div><!-- #info-wrap-->
 </footer><!-- #colophon -->
-
+<?php do_action( 'beam_after_footer' ); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

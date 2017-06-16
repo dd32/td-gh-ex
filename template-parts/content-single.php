@@ -17,7 +17,7 @@
 <?php
 } 
 ?>
-
+<?php do_action( 'beam_before_article' ); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -100,7 +100,7 @@
 		?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
-
+<?php do_action( 'beam_after_article' ); ?>
 <?php if( Kirki::get_option( 'bo', 'opt_show_author' ) ) { 
 	$opt_show_author = Kirki::get_option( 'bo', 'opt_show_author' );
 	if ($opt_show_author == '1') {

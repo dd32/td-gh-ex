@@ -19,13 +19,12 @@
 </head>
 
 <body <?php body_class(); ?>> 
-
 	<div id="page" class="hfeed site">
-
+		<?php do_action( 'beam_before_header' ); ?>
 		<header id="masthead" class="site-header">
 			<div class="centeralign-header">
+				<?php do_action( 'beam_before_branding' ); ?>
 				<div class="site-branding">
-
 				<?php 
 					// No Custom Logo, just display the site's name
 					if (!has_custom_logo()) {
@@ -34,7 +33,6 @@
 						<?php
 							$description = get_bloginfo( 'description', 'display' );
 							if ( $description || is_customize_preview() ) : ?>
-
 							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 						<?php 
 							endif;
@@ -42,23 +40,19 @@
 						// Display the Custom Logo
 						the_custom_logo();
 					}
-
 				?>
 				</div><!-- #site-branding -->
-
+				<?php do_action( 'beam_after_branding' ); ?>
 				<?php 
 				$opt_menu_visibility = get_theme_mod( 'opt_menu_visibility', 'option-1' );
-                
                 if ($opt_menu_visibility !== '') {
-				
-                if ($opt_menu_visibility == 'option-1') {
+                	if ($opt_menu_visibility == 'option-1') {
 				?>
 
 				<button class="menu-toggle menu-button"><?php _e('Responsive Menu', 'beam' ); ?></button>
 
 				<div class="mobile-menu">
 					<?php $args = array(
-							//'theme_location' => 'primary',
 							'container'      => '',
 							'items_wrap'     => '<ul class="menu">%3$s</ul>',
 							); 
@@ -67,9 +61,10 @@
 						<?php wp_nav_menu($args);//extract the content from apperance-> nav menu ?>
 					</nav><!-- #access -->
 				</div>	
-
+				<?php do_action( 'beam_after_nav' ); ?>
 
 				<?php } } ?>
 
 			</div><!-- centeralign-header -->
 		</header><!-- #header-->
+		<?php do_action( 'beam_after_header' ); ?>

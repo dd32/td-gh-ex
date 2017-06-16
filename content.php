@@ -46,7 +46,7 @@
 		?>
 		
 		<span class="cat-links">
-		<i class="fa fa-folder-open"></i> <?php printf( __( '%1$s', 'beam' ), $categories_list ); ?>
+			<i class="fa fa-folder-open"></i> <?php printf( __( '%1$s', 'beam' ), $categories_list ); ?>
 		</span>
 
 		<?php endif; // End if categories 
@@ -56,7 +56,7 @@
 		if ( $tags_list ) :
 		?>
 		<span class="tags-links">
-		<i class="fa fa-tags"></i> <?php printf( __( '%1$s', 'beam' ), $tags_list ); ?>
+			<i class="fa fa-tags"></i> <?php printf( __( '%1$s', 'beam' ), $tags_list ); ?>
 		</span>
 		<?php 
 		endif; // End if $tags_list

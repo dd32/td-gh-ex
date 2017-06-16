@@ -20,8 +20,9 @@
 <body <?php body_class(); ?>> 
 
 	<div id="page" class="hfeed site">
-
+		<?php do_action( 'beam_before_header' ); ?>
 		<header id="masthead" class="site-header">
 			<div class="centeralign-header">
 			</div><!-- centeralign-header -->
 		</header><!-- #header-->
+		<?php do_action( 'beam_after_header' );

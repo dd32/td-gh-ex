@@ -226,3 +226,8 @@ function beam_load_content_one($path) {
  * Plugin Recommendation
  */
 include_once( dirname( __FILE__ ) . '/inc/adm/tgm/install.php' );
+
+/**
+ * Load Hooks
+ */
+require get_template_directory() . '/inc/hooks.php';
