@@ -1,13 +1,20 @@
 CHANGELOG
 =========
 
+GridBulletin version 5.4 - june 2017
+- new jquery navigation for mobile screens
+- replaced select menu with toggle menu 
+- files nav, header and style: added and removed code regarding new navigation
+- files style and custom-editor-style: changed margin of several html tags to avoid margin collapsing
+- in case of a child theme that contains file header: please replace this file
+
 GridBulletin version 5.3 - june 2017
-- fixed mistake with sidebar on homepage
-- you might have to reset sidebar on homepage and archive page
+- fixed mistake with sidebar on blog homepage
+- you might have to reset sidebar on blog homepage and archive page
 - updated files functions, content-list, archive and index
 
 GridBulletin version 5.2 - june 2017
-- customizer: added homepage settings
+- customizer: added blog homepage settings
 - updated files content-list and index
 
 GridBulletin version 5.1 - april 2017

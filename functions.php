@@ -86,13 +86,6 @@
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-
-		// mobile nav args
-		$gridbulletin_mobile_nav_args = array(
-			'navText' => __( 'Menu', 'gridbulletin' )
-		);
-		// localize script with data for mobile nav
-		wp_localize_script( 'gridbulletin-nav', 'objectL10n', $gridbulletin_mobile_nav_args );
 	}
 	add_action( 'wp_enqueue_scripts', 'gridbulletin_scripts' );
 
@@ -197,9 +190,9 @@
 			'settings' => 'gridbulletin_logo', 
 		) ) );
 		$wp_customize->add_section( 'gridbulletin_homepage_section' , array( 
-			'title' => __( 'Homepage', 'gridbulletin' ), 
+			'title' => __( 'Blog Page', 'gridbulletin' ), 
 			'priority' => 31, 
-			'description' => __( 'Settings for homepage that contains posts.', 'gridbulletin' ),
+			'description' => __( 'Settings for blog page (including blog homepage).', 'gridbulletin' ),
 		) );
 		$wp_customize->add_setting( 'gridbulletin_homepage_sidebar', array( 
 			'capability' => 'edit_theme_options', 
