@@ -97,7 +97,7 @@ class Twentysixteen_Child_Kirki_Fields {
 		),
 			'output' => array(
 		array(
-			'element' => 'body',
+			'element' => array( 'body', '.main-navigation'),
 		),
 	),
 ) );

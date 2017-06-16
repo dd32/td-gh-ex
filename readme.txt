@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.5
+Version: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -94,3 +94,10 @@ Fixed .no-sidebar class to accomodate new custom sidebar
 * Fixed: June 15, 2017
 
 Fixed Kirki Google fonts support
+
+= 1.5.2 =
+* Fixed: June 16, 2017
+
+Fixed Kirki Google fonts support for main menu
+Removed body class and added custom body class for new sidebar
+Added new sidebar template

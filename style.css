@@ -5,8 +5,8 @@ Author: Website Helper
 Author URI: https://www.websitehelper.co.uk
 Template: twentysixteen
 Description: This Twenty Sixteen child theme uses a very simple and clean design for the blog posts and pages and is Visual Composer friendly.
-Version: 1.5.1
-License: GNU General Public License v2 or later
+Version: 1.5.2
+License: GNU General Public License v2 or laterno
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-colors, custom-logo, featured-images
 Text Domain: twentysixteen
@@ -40,23 +40,17 @@ body.site-branding:not(.site-tile), body:not(.site-description) {
     height: 5rem;
 }
 
-body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
-    margin-left: 0;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
 h1.site-title {
     margin: 0!important;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-margin:18px 0 20px 0!important;
+    margin:18px 0 20px 0!important;
 }
 
 .entry-content h4 {
-text-transform: none!important;
+    text-transform: none!important;
 }
 
 h6 {
@@ -193,26 +187,12 @@ blockquote strong, blockquote b {
 */
 
 /*
-* — Overiride via functions impossible - force CSS instead  —
-*/
-
-@media screen and (min-width: 1024px) {
-    
-.no-sidebar .content-area {
-    float: left!important;
-    margin-right: -100%!important;
-    width: 70%!important;
-}
-
-.no-sidebar .entry-header, .no-sidebar .entry-content, .no-sidebar .entry-summary, .no-sidebar .entry-footer, .no-sidebar .comments-area, .no-sidebar .image-navigation, .no-sidebar .post-navigation, .no-sidebar .pagination, .no-sidebar .page-header, .no-sidebar .page-content, .no-sidebar .content-bottom-widgets {
-    margin-right: 0!important;
-    margin-left: 0!important;
-}
-}
-
-/*
 * — Sidebar  —
 */
+
+h2.widget-title {
+    margin: 0!important;
+}
 
 .widget .widget-title {
     font-size: 1.6rem;
@@ -305,7 +285,6 @@ a.custom-button-read-more:focus{
     color:#FFFFFF!important;
 }
 
-
 /*
 * — Misc —
 */
@@ -316,7 +295,7 @@ a.custom-button-read-more:focus{
 }
 
 .custom-button-container {
-    margin: 0.7rem 0;
+    margin: 1rem 0;
     border-radius: 7px;
     float: right;
 }
@@ -452,6 +431,79 @@ span.rpwwt-post-title {
 */
 
 @media screen and (min-width: 1024px) {
+    
+/*
+* — Body No-Sidebar-1 —
+*/
+
+.no-sidebar-1 .post .entry-content {
+    float: none;
+    width: 70%!important;
+}
+    
+.no-sidebar-1 .post-thumbnail img {
+	margin: 0 auto;
+}
+
+.no-sidebar-1 .content-area {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+.no-sidebar-1 .entry-header,
+.no-sidebar-1 .entry-content,
+.no-sidebar-1 .entry-summary,
+.no-sidebar-1 .entry-footer,
+.no-sidebar-1 .comments-area,
+.no-sidebar-1 .image-navigation,
+.no-sidebar-1 .post-navigation,
+.no-sidebar-1 .pagination,
+.no-sidebar-1 .page-header,
+.no-sidebar-1 .page-content,
+.no-sidebar-1 .content-bottom-widgets {
+		margin-right: 15%;
+		margin-left: 15%;
+	}
+	
+/*
+* — Body No-Sidebar-2 —
+*/
+
+.no-sidebar-2 .post .entry-content {
+    float: none;
+    width: 70%!important;
+}
+
+.no-sidebar-2 .post-thumbnail img {
+	margin: 0 auto;
+}
+
+.no-sidebar-2 .content-area {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+.no-sidebar-2 .entry-header,
+.no-sidebar-2 .entry-content,
+.no-sidebar-2 .entry-summary,
+.no-sidebar-2 .entry-footer,
+.no-sidebar-2 .comments-area,
+.no-sidebar-2 .image-navigation,
+.no-sidebar-2 .post-navigation,
+.no-sidebar-2 .pagination,
+.no-sidebar-2 .page-header,
+.no-sidebar-2 .page-content,
+.no-sidebar-2 .content-bottom-widgets {
+		margin-right: 15%;
+		margin-left: 15%;
+	}
+
+.no-sidebar-2 .entry-content {
+    float: none;
+    width: 70%;
+}
 
 /*
 * — Header —
@@ -513,16 +565,25 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
     right: 60px;
     top: 6px;
  }
+
+/*
+* — Post Body —
+*/
+
+.entry-header, .post-thumbnail, .entry-content, .entry-summary, .entry-footer, .comments-area, .image-navigation, .post-navigation, .page-header, .page-content, .content-bottom-widgets {
+    margin-right: 2rem;
+}
 }
 
 /*
-* — Make Sidebar Wider On Ipad Land —
+* — Make Sidebar Wider On Tab Land —
 */
 
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) { 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
 
 .content-area {
     width: 65%;
@@ -588,3 +649,4 @@ span.comments {
    padding-top:3rem;
  }
 }
+
