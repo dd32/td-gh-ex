@@ -178,8 +178,6 @@ add_action( 'wp_ajax_nopriv_ajax_portfolio', 'beonepage_ajax_portfolio' );
 function beonepage_numeric_pagination( $pages = '', $range = 2 ) {
      $showitems = ( $range * 2 ) + 1;
 
-     global $paged;
-
      if ( empty( $paged ) ) $paged = 1;
 
      if ( $pages == '' ) {

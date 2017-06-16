@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for parent theme Beonepage for publication on ThemeForest
+ * @version   2.6.1 for parent theme Beonepage for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -259,14 +259,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// Announce that the class is ready, and pass the object (for advanced use).
 			do_action_ref_array( 'tgmpa_init', array( $this ) );
 
-			/*
-			 * Load our text domain and allow for overloading the fall-back file.
-			 *
-			 * {@internal IMPORTANT! If this code changes, review the regex in the custom TGMPA
-			 * generator on the website.}}
-			 */
-			add_action( 'init', array( $this, 'load_textdomain' ), 5 );
-			add_filter( 'load_textdomain_mofile', array( $this, 'overload_textdomain_mofile' ), 10, 2 );
+
 
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
@@ -331,13 +324,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => esc_html__( 'Install Required Plugins', 'beonepage' ),
-				'menu_title'                      => esc_html__( 'Install Plugins', 'beonepage' ),
+				'page_title'                      => __( 'Install Required Plugins', 'beonepage' ),
+				'menu_title'                      => __( 'Install Plugins', 'beonepage' ),
 				/* translators: %s: plugin name. */
-				'installing'                      => esc_html__( 'Installing Plugin: %s', 'beonepage' ),
+				'installing'                      => __( 'Installing Plugin: %s', 'beonepage' ),
 				/* translators: %s: plugin name. */
-				'updating'                        => esc_html__( 'Updating Plugin: %s', 'beonepage' ),
-				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'beonepage' ),
+				'updating'                        => __( 'Updating Plugin: %s', 'beonepage' ),
+				'oops'                            => __( 'Something went wrong with the plugin API.', 'beonepage' ),
 				'notice_can_install_required'     => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
@@ -389,19 +382,19 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					'Begin activating plugins',
 					'beonepage'
 				),
-				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'beonepage' ),
-				'dashboard'                       => esc_html__( 'Return to the Dashboard', 'beonepage' ),
-				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'beonepage' ),
-				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'beonepage' ),
+				'return'                          => __( 'Return to Required Plugins Installer', 'beonepage' ),
+				'dashboard'                       => __( 'Return to the Dashboard', 'beonepage' ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', 'beonepage' ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'beonepage' ),
 				/* translators: 1: plugin name. */
-				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'beonepage' ),
+				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'beonepage' ),
 				/* translators: 1: plugin name. */
-				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'beonepage' ),
+				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'beonepage' ),
 				/* translators: 1: dashboard link. */
-				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'beonepage' ),
-				'dismiss'                         => esc_html__( 'Dismiss this notice', 'beonepage' ),
-				'notice_cannot_install_activate'  => esc_html__( 'There are one or more required or recommended plugins to install, update or activate.', 'beonepage' ),
-				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'beonepage' ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'beonepage' ),
+				'dismiss'                         => __( 'Dismiss this notice', 'beonepage' ),
+				'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'beonepage' ),
+				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'beonepage' ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -453,89 +446,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			}
 		}
 
-		/**
-		 * Load translations.
-		 *
-		 * @since 2.6.0
-		 *
-		 * (@internal Uses `load_theme_textdomain()` rather than `load_plugin_textdomain()` to
-		 * get round the different ways of handling the path and deprecated notices being thrown
-		 * and such. For plugins, the actual file name will be corrected by a filter.}}
-		 *
-		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
-		 * generator on the website.}}
-		 */
-		public function load_textdomain() {
-			if ( is_textdomain_loaded( 'tgmpa' ) ) {
-				return;
-			}
 
-			if ( false !== strpos( __FILE__, WP_PLUGIN_DIR ) || false !== strpos( __FILE__, WPMU_PLUGIN_DIR ) ) {
-				// Plugin, we'll need to adjust the file name.
-				add_action( 'load_textdomain_mofile', array( $this, 'correct_plugin_mofile' ), 10, 2 );
-				load_theme_textdomain( 'tgmpa', dirname( __FILE__ ) . '/languages' );
-				remove_action( 'load_textdomain_mofile', array( $this, 'correct_plugin_mofile' ), 10 );
-			} else {
-				load_theme_textdomain( 'tgmpa', dirname( __FILE__ ) . '/languages' );
-			}
-		}
 
-		/**
-		 * Correct the .mo file name for (must-use) plugins.
-		 *
-		 * Themese use `/path/{locale}.mo` while plugins use `/path/{text-domain}-{locale}.mo`.
-		 *
-		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
-		 * generator on the website.}}
-		 *
-		 * @since 2.6.0
-		 *
-		 * @param string $mofile Full path to the target mofile.
-		 * @param string $domain The domain for which a language file is being loaded.
-		 * @return string $mofile
-		 */
-		public function correct_plugin_mofile( $mofile, $domain ) {
-			// Exit early if not our domain (just in case).
-			if ( 'tgmpa' !== $domain ) {
-				return $mofile;
-			}
-			return preg_replace( '`/([a-z]{2}_[A-Z]{2}.mo)$`', '/tgmpa-$1', $mofile );
-		}
 
-		/**
-		 * Potentially overload the fall-back translation file for the current language.
-		 *
-		 * WP, by default since WP 3.7, will load a local translation first and if none
-		 * can be found, will try and find a translation in the /wp-content/languages/ directory.
-		 * As this library is theme/plugin agnostic, translation files for TGMPA can exist both
-		 * in the WP_LANG_DIR /plugins/ subdirectory as well as in the /themes/ subdirectory.
-		 *
-		 * This method makes sure both directories are checked.
-		 *
-		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
-		 * generator on the website.}}
-		 *
-		 * @since 2.6.0
-		 *
-		 * @param string $mofile Full path to the target mofile.
-		 * @param string $domain The domain for which a language file is being loaded.
-		 * @return string $mofile
-		 */
-		public function overload_textdomain_mofile( $mofile, $domain ) {
-			// Exit early if not our domain, not a WP_LANG_DIR load or if the file exists and is readable.
-			if ( 'tgmpa' !== $domain || false === strpos( $mofile, WP_LANG_DIR ) || @is_readable( $mofile ) ) {
-				return $mofile;
-			}
 
-			// Current fallback file is not valid, let's try the alternative option.
-			if ( false !== strpos( $mofile, '/themes/' ) ) {
-				return str_replace( '/themes/', '/plugins/', $mofile );
-			} elseif ( false !== strpos( $mofile, '/plugins/' ) ) {
-				return str_replace( '/plugins/', '/themes/', $mofile );
-			} else {
-				return $mofile;
-			}
-		}
+
 
 		/**
 		 * Hook in plugin action link filters for the WP native plugins page.

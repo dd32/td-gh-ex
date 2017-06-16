@@ -634,7 +634,7 @@ Kirki::add_field( 'beonepage_kirki', array(
 	'label'    => esc_html__( 'Copyright Information', 'beonepage' ),
 	'help'     => esc_html__( 'Want to remove the theme byline? See section "Upgrade" for more information.', 'beonepage' ),
 	'section'  => 'site_footer',
-	'default'  => esc_html__( 'Copyrights &copy; 2015. All Rights Reserved.', 'beonepage'),
+	'default'  => esc_html__( 'Copyrights &copy; 2017. All Rights Reserved.', 'beonepage'),
 	'priority' => 10
 ) );
 

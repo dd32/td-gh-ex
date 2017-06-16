@@ -8,7 +8,6 @@
  */
 
 function beonepage_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
 
 	if ( 'div' == $args['style'] ) {
