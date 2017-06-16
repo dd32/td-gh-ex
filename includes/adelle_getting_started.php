@@ -24,22 +24,20 @@ function adelle_getting_started() { ?>
 
 	<p>Check out the <a href="https://help.bluchic.com/category/adelle/">theme documentation</a> here to setup your theme now!</p>
 
-	<p>Sweet deal <strong>15% off</strong> when you upgrade to the premium theme.</p>
-
 	<section class="split-columns">
 		<article class="col1">
-			<a href="<?php echo esc_url( 'http://www.bluchic.com/shop/wordpress-themes/jacqueline-theme/' ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-jacqueline.jpg" alt="Jacqueline Theme" /></a>
+			<a href="http://www.bluchic.com/shop/wordpress-themes/victoria-theme/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-victoria.jpg" alt="Victoria Theme" class="browser-img" /></a>
 		</article><!-- .col1 -->
 		<article class="col2">
-			<a href="<?php echo esc_url( 'http://www.bluchic.com/shop/wordpress-themes/isabelle-theme/' ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-isabelle.jpg" alt="Isabelle Theme" /></a>
+			<a href="http://www.bluchic.com/shop/wordpress-themes/isabelle-theme/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-isabelle.jpg" alt="Isabelle Theme" class="browser-img" /></a>
 		</article><!-- .col2 -->
 		<article class="col3">
-			<a href="<?php echo esc_url( 'http://www.bluchic.com/shop/wordpress-themes/samantha-theme/' ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-samantha.jpg" alt="Samantha Theme" /></a>
+			<a href="http://www.bluchic.com/shop/wordpress-themes/samantha-theme/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/screenshot-samantha.jpg" alt="Samantha Theme" class="browser-img" /></a>
 		</article><!-- .col3 -->
 	</section><!-- .split-columns -->
 
-	<p>As a bonus for subscribing, save <strong>15% off</strong> your next Bluchic purchase with coupon code <strong>BCFORYOU</strong> at checkout.</p>
-	<p><a href="http://www.bluchic.com/shop/" style="display:block; width:100%; padding:20px 0; background:#000; color:#fff; text-decoration:none;" target="_blank">REDEEM NOW</a></p>
+	<p>Check out our premium theme</p>
+	<p><a href="http://www.bluchic.com/shop/" style="display:block; width:100%; padding:20px 0; background:#000; color:#fff; text-decoration:none;" target="_blank">SHOP NOW</a></p>
 
 </div>
 

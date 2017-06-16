@@ -8,7 +8,7 @@
 
 		<h1 class="not-found-title shake"><?php _e( 'Oopss! 404 Not Found', 'adelle' ); ?></h1>
 
-        <p class="not-found-text"><?php _e( 'The page you are looking for has not been found. How about search it out?', 'adelle' ); } ?></p>
+        <p class="not-found-text"><?php _e( 'The page you are looking for has not been found. How about search it out?', 'adelle' ); ?></p>
 
         <section class="split-columns">
           <article class="col1">&nbsp;</article>

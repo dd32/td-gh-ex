@@ -18,12 +18,14 @@
   <?php echo adelle_theme_heading(); ?>
 
   <nav class="nav" id="nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <div class="menu-click">&nbsp;</div>
-    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&menu_class=main-menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
-
+	<label for="show-menu"><div class="menu-click">Menu</div></label>
+	<input type="checkbox" id="show-menu" class="checkbox-menu hidden" role="button">
+	<div class="menu-wrap">
+	    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&menu_class=main-menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
+	</div>
     <form role="search" method="get" class="header-form" action="<?php echo esc_url( home_url() ); ?>">
       <fieldset>
-        <input type="text" name="s" class="header-text uniform" size="15" title="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
+        <input type="search" name="s" class="header-text uniform" size="15" placeholder="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
         <input type="submit" class="uniform" value="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
       </fieldset>
     </form>

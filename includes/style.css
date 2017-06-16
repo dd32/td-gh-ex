@@ -8,6 +8,7 @@ a .img-browser {border-color: #ddd; color: #ddd;}
 .text-center {text-align: center;}
 .text-center p {font-size: 1.6em;}
 .bc-welcome-form {background: #fff; padding: 30px 0; margin: 30px 0 50px 0; background: url('http://localhost/bluchic.com/wp-content/uploads/2015/08/flourish-background-3.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+.browser-img {border: 2px solid #ddd; border-top: 15px solid #ddd; border-radius: 5px;}
 
 /********** Shortcodes **********/
 .col1,
