@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.4
+Version: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -82,3 +82,10 @@ Added license URI
 * Fixed: June 15, 2017
 
 Added sidebar support to archive
+
+= 1.5 =
+* Fixed: June 15, 2017
+
+Fixed link focus on loop button
+Remove unnecessary functions
+Fixed .no-sidebar class to accomodate new custom sidebar

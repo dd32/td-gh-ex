@@ -1,11 +1,11 @@
-﻿/*
+/*
 Theme Name: 20/16 VCReady
 Theme URI: http://demos.temas.co.uk/2016
 Author: Website Helper
 Author URI: https://www.websitehelper.co.uk
 Template: twentysixteen
 Description: This Twenty Sixteen child theme uses a very simple and clean design for the blog posts and pages and is Visual Composer friendly.
-Version: 1.4
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-colors, custom-logo, featured-images
@@ -39,7 +39,6 @@ body:not(.search-results) article:not(.type-page) img.below-entry-meta, body:not
 body.site-branding:not(.site-tile), body:not(.site-description) {
     height: 5rem;
 }
-
 
 body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
     margin-left: 0;
@@ -190,7 +189,29 @@ blockquote strong, blockquote b {
 }
 
 /*
-* — Sidebar Elements —
+* === SIDEBAR===
+*/
+
+/*
+* — Overiride via functions impossible - force CSS instead  —
+*/
+
+@media screen and (min-width: 1024px) {
+    
+.no-sidebar .content-area {
+    float: left!important;
+    margin-right: -100%!important;
+    width: 70%!important;
+}
+
+.no-sidebar .entry-header, .no-sidebar .entry-content, .no-sidebar .entry-summary, .no-sidebar .entry-footer, .no-sidebar .comments-area, .no-sidebar .image-navigation, .no-sidebar .post-navigation, .no-sidebar .pagination, .no-sidebar .page-header, .no-sidebar .page-content, .no-sidebar .content-bottom-widgets {
+    margin-right: 0!important;
+    margin-left: 0!important;
+}
+}
+
+/*
+* — Sidebar  —
 */
 
 .widget .widget-title {
@@ -280,6 +301,11 @@ a.custom-button-read-more:hover {
     text-decoration:none!important;
 }
 
+a.custom-button-read-more:focus{
+    color:#FFFFFF!important;
+}
+
+
 /*
 * — Misc —
 */
@@ -348,7 +374,27 @@ code {
 color:#ffffff;
 }
 
-.white-text h1, h2, h3, h4, h5, h6{
+.white-text h1 {
+color:#ffffff;
+}
+
+.white-text h2 {
+color:#ffffff;
+}
+
+.white-text h3 {
+color:#ffffff;
+}
+
+.white-text h4 {
+color:#ffffff;
+}
+
+.white-text h5 {
+color:#ffffff;
+}
+
+.white-text h6 {
 color:#ffffff;
 }
 
@@ -526,16 +572,19 @@ span.comments {
 /*
 * — Header —
 */
+
 .site-header {
     padding: 1rem 4rem;
 }
+
 .menu-toggle {
     margin: 5px auto;
 }
+
 .site-branding {
     width: 100%;
     text-align: center;
     margin: 5px auto 0 0!important;
-   padding-top:3rem:
+   padding-top:3rem;
  }
 }

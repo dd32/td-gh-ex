@@ -30,6 +30,3 @@
 	</aside><!-- .sidebar .widget-area -->
 	
 <?php endif; ?>
-
-
-
