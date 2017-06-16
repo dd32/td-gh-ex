@@ -89,3 +89,8 @@ Added sidebar support to archive
 Fixed link focus on loop button
 Remove unnecessary functions
 Fixed .no-sidebar class to accomodate new custom sidebar
+
+= 1.5.1 =
+* Fixed: June 15, 2017
+
+Fixed Kirki Google fonts support

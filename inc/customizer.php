@@ -26,7 +26,7 @@ class Twentysixteen_Child_Kirki_Fields {
 		// Add section header color
 		Twentysixteen_Child_Kirki::add_section( 'twentysixteen_child_custom_css', array(
 			'title'          => esc_html__( 'Header Colors', 'twentysixteen' ),
-			'priority'       => 3,
+			'priority'       => 40,
 			'capability'     => 'edit_theme_options',
 		) );
 		
@@ -56,7 +56,7 @@ class Twentysixteen_Child_Kirki_Fields {
 			'description' => esc_attr__( 'Change the main color for the social icons.', 'twentysixteen' ),
 			'section'     => 'twentysixteen_child_custom_css',
 			'default'     => '#000000',
-			'priority'    => 3,
+			'priority'    => 7,
 			'alpha'       => true,
 			'output'       => array(
 				array(
@@ -71,7 +71,7 @@ class Twentysixteen_Child_Kirki_Fields {
 	 	*/
 		Twentysixteen_Child_Kirki::add_section( 'typography', array(
 		'title'      => esc_attr__( 'Typography', 'twentysixteen' ),
-		'priority'   => 2,
+		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		) );
 	
@@ -92,6 +92,7 @@ class Twentysixteen_Child_Kirki_Fields {
 	//	'font-size'      => '16px',
 	//	'line-height'    => '1.5',
 	//  'letter-spacing' => '0',
+	    'subsets'        => array( 'latin-ext' ),
 		'color'          => '#333333',
 		),
 			'output' => array(
@@ -115,14 +116,18 @@ class Twentysixteen_Child_Kirki_Fields {
 		'default'     => array(
 		'font-family'    => 'Roboto',
 		'variant'        => '400',
-	//  'font-size'      => '16px',
+    // 'font-size'      => '16px',
 	// 'line-height'    => '1.5',
 	// 'letter-spacing' => '0',
+	    'subsets'        => array( 'latin-ext' ),
 	    'color'          => '#333333',
 		),
 		'output' => array(
 		array(
-			'element' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.h1', '.h2', '.h3', '.h4', '.h5', '.h6' ),
+			'element'   => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
+		),
+		array(
+			'element'  => array( '.entry-title', '.widget .widget-title', '.site-title'),
 		),
 	),
     ) );
@@ -130,6 +135,5 @@ class Twentysixteen_Child_Kirki_Fields {
 	}
 }
 
-			
 // Init class
 new Twentysixteen_Child_Kirki_Fields();
