@@ -35,8 +35,11 @@
 			<?php endif; ?>
 		</div>
 
-		<?php if ( has_nav_menu( 'primary' ) ) {?> 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head-mobile' ) ); ?>
+		<?php if ( has_nav_menu( 'primary' ) ) {?>
+			<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkorange' ); ?><?php _e( ' +', 'darkorange' ); ?></div>
+			<div class="mobile-nav">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</div> 
 		<?php } ?> 
 
 		<?php if ( is_front_page() ) {?> 
