@@ -31,12 +31,20 @@
 		</div>
 		<?php if ( has_nav_menu( 'secondary' ) ) : ?> 
 			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'container_class' => 'nav-head-secondary' ) ); ?>
+			<div class="mobile-nav-secondary-toggle"><?php _e( 'Menu', 'privatebusiness' ); ?><?php _e( ' +', 'privatebusiness' ); ?></div>
+			<div class="mobile-nav-secondary">
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
+			</div>
 		<?php endif; ?>
 	</div>
 
 	<div id="header-second">
 		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head-primary' ) ); ?>
+			<div class="mobile-nav-primary-toggle"><?php _e( 'Menu', 'privatebusiness' ); ?><?php _e( ' +', 'privatebusiness' ); ?></div>
+			<div class="mobile-nav-primary">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( is_front_page() ) {?> 

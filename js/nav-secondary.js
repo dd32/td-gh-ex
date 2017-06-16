@@ -1,50 +1,26 @@
 /*
- * MOBILE NAVIGATION
- * Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
- * Copyright author: John Hartley
- * License: GNU General Public License v3 or later
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * DISPLAY MOBILE NAV SECONDARY
  */
 
-jQuery(document).ready(function() { 
-	// build <select> dropdown
-	jQuery("<select />").appendTo("div.nav-head-secondary");
+jQuery(document).ready(function($) { 
+	// Hide mobile menu by default	
+	$('.mobile-nav-secondary').hide();
 
-	// create option Menu
-	jQuery("<option />", {
-		"selected": "selected",
-		"value": "",
-		"text": objectL10n.navText  
-	}).appendTo(".nav-head-secondary select");
+	// Display mobile menu when clicked	
+	$( ".mobile-nav-secondary-toggle" ).click(function() { 
+		$( ".mobile-nav-secondary" ).toggle(); 
+	}); 
 
-	// populate
-	jQuery(".nav-head-secondary ul li a").each(function() {
-		var el = jQuery(this);
-		if(el.parents(".nav-head-secondary ul ul ul").length) {
-			// if subpage level two
-			jQuery("<option />", {
-				"value": el.attr("href"),
-				"text":  "- - " + el.text()
-			}).appendTo(".nav-head-secondary select");
-		} 
-		else if(el.parents(".nav-head-secondary ul ul").length) {
-			// if subpage level one
-			jQuery("<option />", {
-				"value": el.attr("href"),
-				"text":  "- " + el.text()
-			}).appendTo(".nav-head-secondary select");
-		} 
-		else { 
-			// if no subpage
-			jQuery("<option />", {
-				"value": el.attr("href"),
-				"text": el.text()
-			}).appendTo(".nav-head-secondary select");
-		}
-	});
+	// Hide mobile submenu by default	
+	$('.mobile-nav-secondary .sub-menu').hide();
 
-	// make links work 
-	jQuery(".nav-head-secondary select").change(function() { 
-		window.location = jQuery(this).find("option:selected").val();
-	});
+	// Add toggle that displays mobile submenu
+	var subnavToggle = $( '<button />', { 'class': 'subnav-toggle' })
+		.append( "+" );
+	$( ".mobile-nav-secondary .menu" ).find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( subnavToggle );
+
+	// Display mobile submenu when clicked	
+	$( ".subnav-toggle" ).click(function() { 
+		$(this).next('.mobile-nav-secondary .children, .mobile-nav-secondary .sub-menu').toggle(); 
+	}); 
 });
