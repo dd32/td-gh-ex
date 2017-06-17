@@ -1,7 +1,7 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 4.9
+Version: 5.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: LeftSide is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, sidebar navigation, footer widgets, custom header image, custom background, custom logo to replace site title and tagline. For more info please check readme file. Enjoy.
@@ -310,10 +310,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* SIDEBAR MENU */
 	.nav-primary {display:none;} 
 
-	/* HEADER SECOND MOBILE MENU */
-	.mobile-nav-toggle {clear:both; display:block; margin:0 0 20px; padding:10px 2%; background:#666; color:#ddd; cursor:pointer;}
-	.mobile-nav-toggle:hover {color:#fff;}
-	.mobile-nav {clear:both; padding:10px 20px 10px 0; margin:0 5px 20px; background:#fff; border:2px solid #ccc;}
+	/* SIDEBAR MOBILE MENU */
+	.mobile-nav-toggle {clear:both; display:block; margin:0 0 20px; padding:10px 2%; background:#e77776; color:#fff; border-radius:5px; cursor:pointer;}
+	.mobile-nav-toggle:hover {color:#ddd;}
+	.mobile-nav {clear:both; padding:10px 20px 10px 0; margin:0 5px 20px; background:#fff; border:2px solid #ccc; border-radius:5px;}
 	.mobile-nav .subnav-toggle {float:right; display:block; margin:-45px 0 0; padding:2px 15px;}
 	.mobile-nav ul {list-style:none;}
 	.mobile-nav ul li a {display:block; margin:0 0 10px 0; padding:0 0 12px; border-bottom:2px dotted #ccc; text-decoration:none;}

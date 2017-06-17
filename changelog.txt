@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+LeftSide version 5.0 - june 2017
+- file style: minor changes
+
 LeftSide version 4.9 - june 2017
 - new jquery navigation for mobile screens
 - replaced select menu with toggle menu 
