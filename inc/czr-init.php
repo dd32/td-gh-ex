@@ -18,71 +18,73 @@ if ( ! class_exists( 'CZR___' ) ) :
     public static $tc_option_group;
 
     function __construct () {
+        //following R. Aliberti advise
+        if( ! defined( 'CZR_IS_MODERN_STYLE' ) )            define( 'CZR_IS_MODERN_STYLE' , false );
 
-      //call CZR_BASE constructor
-      parent::__construct();
+        //call CZR_BASE constructor
+        parent::__construct();
 
-      self::$instance =& $this;
+        self::$instance =& $this;
 
-      //this is the structure of the Customizr code : groups => ('path' , 'class_suffix')
-      $this -> tc_core = apply_filters( 'tc_core',
-        array(
-            'fire'      =>   array(
-              array('inc' , 'init'),//defines default values (layout, socials, default slider...) and theme supports (after_setup_theme)
-              array('inc' , 'plugins_compat'),//handles various plugins compatibilty (Jetpack, Bbpress, Qtranslate, Woocommerce, The Event Calendar ...)
-              array('inc' , 'utils_settings_map'),//customizer setting map
-              array('inc' , 'utils'),//helpers used everywhere
-              array('inc' , 'init_retro_compat'),
-              array('inc' , 'resources'),//loads front stylesheets (skins) and javascripts
-              array('inc' , 'widgets'),//widget factory
-              array('inc' , 'placeholders'),//front end placeholders ajax actions for widgets, menus.... Must be fired if is_admin === true to allow ajax actions.
-              array('inc/admin' , 'admin_init'),//loads admin style and javascript ressources. Handles various pure admin actions (no customizer actions)
-              array('inc/admin' , 'admin_page')//creates the welcome/help panel including changelog and system config
-            ),
-            'admin'     => array(
-              array('inc/admin' , 'customize'),//loads customizer actions and resources
-              array('inc/admin' , 'meta_boxes')//loads the meta boxes for pages, posts and attachment : slider and layout settings
-            ),
-            //the following files/classes define the action hooks for front end rendering : header, main content, footer
-            'header'    =>   array(
-              array('inc/parts' , 'header_main'),
-              array('inc/parts' , 'menu'),
-              array('inc/parts' , 'nav_walker')
-            ),
-            'content'   =>  array(
-              array('inc/parts', '404'),
-              array('inc/parts', 'attachment'),
-              array('inc/parts', 'breadcrumb'),
-              array('inc/parts', 'comments'),
-              array('inc/parts', 'featured_pages'),
-              array('inc/parts', 'gallery'),
-              array('inc/parts', 'headings'),
-              array('inc/parts', 'no_results'),
-              array('inc/parts', 'page'),
-              array('inc/parts', 'post_thumbnails'),
-              array('inc/parts', 'post'),
-              array('inc/parts', 'post_list'),
-              array('inc/parts', 'post_list_grid'),
-              array('inc/parts', 'post_metas'),
-              array('inc/parts', 'post_navigation'),
-              array('inc/parts', 'sidebar'),
-              array('inc/parts', 'slider')
-            ),
-            'footer'    => array(
-              array('inc/parts', 'footer_main'),
-            ),
-            'addons'    => apply_filters( 'tc_addons_classes' , array() )
-        )//end of array
-      );//end of filter
+        //this is the structure of the Customizr code : groups => ('path' , 'class_suffix')
+        $this -> tc_core = apply_filters( 'tc_core',
+          array(
+              'fire'      =>   array(
+                  array('inc' , 'init'),//defines default values (layout, socials, default slider...) and theme supports (after_setup_theme)
+                  array('inc' , 'plugins_compat'),//handles various plugins compatibilty (Jetpack, Bbpress, Qtranslate, Woocommerce, The Event Calendar ...)
+                  array('inc' , 'utils_settings_map'),//customizer setting map
+                  array('inc' , 'utils'),//helpers used everywhere
+                  array('inc' , 'init_retro_compat'),
+                  array('inc' , 'resources'),//loads front stylesheets (skins) and javascripts
+                  array('inc' , 'widgets'),//widget factory
+                  array('inc' , 'placeholders'),//front end placeholders ajax actions for widgets, menus.... Must be fired if is_admin === true to allow ajax actions.
+                  array('inc/admin' , 'admin_init'),//loads admin style and javascript ressources. Handles various pure admin actions (no customizer actions)
+                  array('inc/admin' , 'admin_page')//creates the welcome/help panel including changelog and system config
+              ),
+              'admin'     => array(
+                  array('inc/admin' , 'customize'),//loads customizer actions and resources
+                  array('inc/admin' , 'meta_boxes')//loads the meta boxes for pages, posts and attachment : slider and layout settings
+              ),
+              //the following files/classes define the action hooks for front end rendering : header, main content, footer
+              'header'    =>   array(
+                  array('inc/parts' , 'header_main'),
+                  array('inc/parts' , 'menu'),
+                  array('inc/parts' , 'nav_walker')
+              ),
+              'content'   =>  array(
+                  array('inc/parts', '404'),
+                  array('inc/parts', 'attachment'),
+                  array('inc/parts', 'breadcrumb'),
+                  array('inc/parts', 'comments'),
+                  array('inc/parts', 'featured_pages'),
+                  array('inc/parts', 'gallery'),
+                  array('inc/parts', 'headings'),
+                  array('inc/parts', 'no_results'),
+                  array('inc/parts', 'page'),
+                  array('inc/parts', 'post_thumbnails'),
+                  array('inc/parts', 'post'),
+                  array('inc/parts', 'post_list'),
+                  array('inc/parts', 'post_list_grid'),
+                  array('inc/parts', 'post_metas'),
+                  array('inc/parts', 'post_navigation'),
+                  array('inc/parts', 'sidebar'),
+                  array('inc/parts', 'slider')
+              ),
+              'footer'    => array(
+                  array('inc/parts', 'footer_main'),
+              ),
+              'addons'    => apply_filters( 'tc_addons_classes' , array() )
+          )//end of array
+        );//end of filter
 
-      self::$tc_option_group = 'tc_theme_options';
+        self::$tc_option_group = 'tc_theme_options';
 
-      //set files to load according to the context : admin / front / customize
-      add_filter( 'tc_get_files_to_load' , array( $this , 'czr_fn_set_files_to_load' ) );
+        //set files to load according to the context : admin / front / customize
+        add_filter( 'tc_get_files_to_load' , array( $this , 'czr_fn_set_files_to_load' ) );
 
-      //theme class groups instanciation
-      //$this -> czr_fn__();
-      add_action('czr_load', array( $this, 'czr_fn__') );
+        //theme class groups instanciation
+        //$this -> czr_fn__();
+        add_action('czr_load', array( $this, 'czr_fn__') );
 
     }//end of __construct()
 
@@ -100,34 +102,34 @@ if ( ! class_exists( 'CZR___' ) ) :
     * @since Customizr 3.0
     */
     function czr_fn__( $_to_load = array(), $_no_filter = false ) {
-      static $instances;
-      //do we apply a filter ? optional boolean can force no filter
-      $_to_load = $_no_filter ? $_to_load : apply_filters( 'tc_get_files_to_load' , $_to_load );
+        static $instances;
+        //do we apply a filter ? optional boolean can force no filter
+        $_to_load = $_no_filter ? $_to_load : apply_filters( 'tc_get_files_to_load' , $_to_load );
 
-      if ( empty($_to_load) )
-        return;
+        if ( empty($_to_load) )
+          return;
 
-      foreach ( $_to_load as $group => $files ) {
-        foreach ($files as $path_suffix ) {
-          //checks if a child theme is used and if the required file has to be overriden
-          // if ( czr_fn_is_child() && file_exists( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ) {
-          //     require_once ( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
-          // }
-          // else {
-          //     require_once ( TC_BASE . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
-          // }
+        foreach ( $_to_load as $group => $files ) {
+          foreach ($files as $path_suffix ) {
+            //checks if a child theme is used and if the required file has to be overriden
+            // if ( czr_fn_is_child() && file_exists( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ) {
+            //     require_once ( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
+            // }
+            // else {
+            //     require_once ( TC_BASE . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
+            // }
 
-          $classname = 'CZR_' . $path_suffix[1];
-          if( ! isset( $instances[ $classname ] ) )  {
-            //check if the classname can be instantiated here
-            if ( in_array( $classname, apply_filters( 'tc_dont_instantiate_in_init', array( 'CZR_nav_walker') ) ) )
-              continue;
-            //instantiates
-            $instances[ $classname ] = class_exists($classname)  ? new $classname : '';
+            $classname = 'CZR_' . $path_suffix[1];
+            if( ! isset( $instances[ $classname ] ) )  {
+              //check if the classname can be instantiated here
+              if ( in_array( $classname, apply_filters( 'tc_dont_instantiate_in_init', array( 'CZR_nav_walker') ) ) )
+                continue;
+              //instantiates
+              $instances[ $classname ] = class_exists($classname)  ? new $classname : '';
+            }
           }
         }
-      }
-      return $instances[ $classname ];
+        return $instances[ $classname ];
     }
 
 
@@ -157,65 +159,65 @@ if ( ! class_exists( 'CZR___' ) ) :
     * @since  Customizr 3.3+
     */
     function czr_fn_set_files_to_load( $_to_load ) {
-      $_to_load = empty($_to_load) ? $this -> tc_core : $_to_load;
-      //Not customizing
-      //1) IS NOT CUSTOMIZING : czr_fn_is_customize_left_panel() || czr_fn_is_customize_preview_frame() || czr_fn_doing_customizer_ajax()
-      //---1.1) IS ADMIN
-      //-------1.1.a) Doing AJAX
-      //-------1.1.b) Not Doing AJAX
-      //---1.2) IS NOT ADMIN
-      //2) IS CUSTOMIZING
-      //---2.1) IS LEFT PANEL => customizer controls
-      //---2.2) IS RIGHT PANEL => preview
-      if ( ! czr_fn_is_customizing() )
-        {
-          if ( is_admin() ) {
+        $_to_load = empty($_to_load) ? $this -> tc_core : $_to_load;
+        //Not customizing
+        //1) IS NOT CUSTOMIZING : czr_fn_is_customize_left_panel() || czr_fn_is_customize_preview_frame() || czr_fn_doing_customizer_ajax()
+        //---1.1) IS ADMIN
+        //-------1.1.a) Doing AJAX
+        //-------1.1.b) Not Doing AJAX
+        //---1.2) IS NOT ADMIN
+        //2) IS CUSTOMIZING
+        //---2.1) IS LEFT PANEL => customizer controls
+        //---2.2) IS RIGHT PANEL => preview
+        if ( ! czr_fn_is_customizing() )
+          {
+            if ( is_admin() ) {
+              //load
+              $this -> czr_fn_req_once( 'core/czr-admin.php' );
+
+              //if doing ajax, we must not exclude the placeholders
+              //because ajax actions are fired by admin_ajax.php where is_admin===true.
+              if ( defined( 'DOING_AJAX' ) )
+                $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|inc/admin|customize' ) );
+              else
+                $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|inc/admin|customize', 'fire|inc|placeholders' ) );
+            }
+            else {
+              //load
+              $this -> czr_fn_req_once( 'inc/czr-front.php' );
+
+              //Skips all admin classes
+              $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'admin' ), array( 'fire|inc/admin|admin_init', 'fire|inc/admin|admin_page') );
+            }
+          }
+        //Customizing
+        else
+          {
             //load
             $this -> czr_fn_req_once( 'core/czr-admin.php' );
+            $this -> czr_fn_req_once( 'core/czr-customize.php' );
 
-            //if doing ajax, we must not exclude the placeholders
-            //because ajax actions are fired by admin_ajax.php where is_admin===true.
-            if ( defined( 'DOING_AJAX' ) )
-              $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|inc/admin|customize' ) );
-            else
-              $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|inc/admin|customize', 'fire|inc|placeholders' ) );
-          }
-          else {
-            //load
-            $this -> czr_fn_req_once( 'inc/czr-front.php' );
+            //left panel => skip all front end classes
+            if ( czr_fn_is_customize_left_panel() ) {
+              $_to_load = $this -> czr_fn_unset_core_classes(
+                  $_to_load,
+                  array( 'header' , 'content' , 'footer' ),
+                  array( 'fire|inc|resources' , 'fire|inc/admin|admin_page' , 'admin|inc/admin|meta_boxes' )
+              );
+            }
+            if ( czr_fn_is_customize_preview_frame() ) {
+              //load
+              $this -> czr_fn_req_once( 'inc/czr-front.php' );
 
-            //Skips all admin classes
-            $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'admin' ), array( 'fire|inc/admin|admin_init', 'fire|inc/admin|admin_page') );
-          }
-        }
-      //Customizing
-      else
-        {
-          //load
-          $this -> czr_fn_req_once( 'core/czr-admin.php' );
-          $this -> czr_fn_req_once( 'core/czr-customize.php' );
-
-          //left panel => skip all front end classes
-          if ( czr_fn_is_customize_left_panel() ) {
-            $_to_load = $this -> czr_fn_unset_core_classes(
+              $_to_load = $this -> czr_fn_unset_core_classes(
                 $_to_load,
-                array( 'header' , 'content' , 'footer' ),
-                array( 'fire|inc|resources' , 'fire|inc/admin|admin_page' , 'admin|inc/admin|meta_boxes' )
-            );
+                array(),
+                array( 'fire|inc/admin|admin_init', 'fire|inc/admin|admin_page' , 'admin|inc/admin|meta_boxes' )
+              );
+            }
           }
-          if ( czr_fn_is_customize_preview_frame() ) {
-            //load
-            $this -> czr_fn_req_once( 'inc/czr-front.php' );
 
-            $_to_load = $this -> czr_fn_unset_core_classes(
-              $_to_load,
-              array(),
-              array( 'fire|inc/admin|admin_init', 'fire|inc/admin|admin_page' , 'admin|inc/admin|meta_boxes' )
-            );
-          }
-        }
-
-      return $_to_load;
+        return $_to_load;
     }
 
 
@@ -234,89 +236,38 @@ if ( ! class_exists( 'CZR___' ) ) :
     * @since  Customizr 3.0.11
     */
     public function czr_fn_unset_core_classes( $_tree, $_groups = array(), $_files = array() ) {
-      if ( empty($_tree) )
-        return array();
-      if ( ! empty($_groups) ) {
-        foreach ( $_groups as $_group_to_remove ) {
-          unset($_tree[$_group_to_remove]);
+        if ( empty($_tree) )
+          return array();
+        if ( ! empty($_groups) ) {
+          foreach ( $_groups as $_group_to_remove ) {
+            unset($_tree[$_group_to_remove]);
+          }
         }
-      }
-      if ( ! empty($_files) ) {
-        foreach ( $_files as $_concat ) {
-          //$_concat looks like : fire|inc|resources
-          $_exploded = explode( '|', $_concat );
-          //each single file entry must be a string like 'admin|inc/admin|customize'
-          //=> when exploded by |, the array size must be 3 entries
-          if ( count($_exploded) < 3 )
-            continue;
+        if ( ! empty($_files) ) {
+          foreach ( $_files as $_concat ) {
+            //$_concat looks like : fire|inc|resources
+            $_exploded = explode( '|', $_concat );
+            //each single file entry must be a string like 'admin|inc/admin|customize'
+            //=> when exploded by |, the array size must be 3 entries
+            if ( count($_exploded) < 3 )
+              continue;
 
-          $gname = $_exploded[0];
-          $_file_to_remove = $_exploded[2];
-          if ( ! isset($_tree[$gname] ) )
-            continue;
-          foreach ( $_tree[$gname] as $_key => $path_suffix ) {
-            if ( false !== strpos($path_suffix[1], $_file_to_remove ) )
-              unset($_tree[$gname][$_key]);
+            $gname = $_exploded[0];
+            $_file_to_remove = $_exploded[2];
+            if ( ! isset($_tree[$gname] ) )
+              continue;
+            foreach ( $_tree[$gname] as $_key => $path_suffix ) {
+              if ( false !== strpos($path_suffix[1], $_file_to_remove ) )
+                unset($_tree[$gname][$_key]);
+            }//end foreach
           }//end foreach
-        }//end foreach
-      }//end if
-      return $_tree;
+        }//end if
+        return $_tree;
     }//end of fn
 
 
   }//end of class
 endif;
-
-
-
-
-
-
-/* HELPERS */
-
-/**
-* helper
-* Prints the social links
-* @return  void
-*/
-if ( ! function_exists( 'czr_fn_print_social_links' ) ) {
-  function czr_fn_print_social_links() {
-    echo CZR_utils::$inst->czr_fn_get_social_networks();
-  }
-}
-
-/**
-* helper
-* Renders the main header
-* @return  void
-*/
-if ( ! function_exists( 'czr_fn_render_main_header' ) ) {
-  function czr_fn_render_main_header() {
-    CZR_header_main::$instance->czr_fn_set_header_options();
-  ?>
-    <header class="<?php echo implode( " ", apply_filters('tc_header_classes', array('tc-header' ,'clearfix', 'row-fluid') ) ) ?>" role="banner">
-    <?php
-      // The '__header' hook is used with the following callback functions (ordered by priorities) :
-      //CZR_header_main::$instance->tc_logo_title_display(), CZR_header_main::$instance->czr_fn_tagline_display(), CZR_header_main::$instance->czr_fn_navbar_display()
-      do_action( '__header' );
-    ?>
-    </header>
-  <?php
-  }
-}
-/**
-* helper
-* Renders or returns the filtered and escaped tagline
-* @return  void
-*/
-if ( ! function_exists( 'czr_fn_get_tagline_text' ) ) {
-  function czr_fn_get_tagline_text( $echo = true ) {
-    $tagline_text = apply_filters( 'tc_tagline_text', esc_attr__( get_bloginfo( 'description' ) ) );
-    if ( ! $echo )
-      return $tagline_text;
-    echo $tagline_text;
-  }
-}
 
 ?>
 <?php
@@ -338,275 +289,98 @@ if ( ! class_exists( 'CZR_init' ) ) :
   class CZR_init {
       //declares the filtered default settings
       public $global_layout;
-      public $tc_thumb_size;
-      public $slider_full_size;
-      public $slider_size;
-      public $tc_grid_full_size;
-      public $tc_grid_size;
       public $skins;
-      public $skin_color_map;
-      public $font_pairs;
       public $font_selectors;
-      public $fp_ids;
-      public $socials;
-      public $sidebar_widgets;
       public $footer_widgets;
       public $widgets;
       public $post_list_layout;
       public $post_formats_with_no_heading;
       public $content_404;
       public $content_no_results;
-      public $default_slides;
 
       //Access any method or var of the class with classname::$instance -> var or method():
       static $instance;
-
-      public static $comments_rendered = false;
 
       function __construct () {
 
           self::$instance =& $this;
           //Default layout settings
           $this -> global_layout      = array(
-                                        'r' => array(
-                                            'content'       => 'span9',
-                                            'sidebar'       => 'span3',
-                                            'customizer'    => __( 'Right sidebar' , 'customizr' ),
-                                            'metabox'       => __( 'Right sidebar' , 'customizr' ),
-                                        ),
-                                        'l' => array(
-                                            'content'       => 'span9',
-                                            'sidebar'       => 'span3',
-                                            'customizer'    => __( 'Left sidebar' , 'customizr' ),
-                                            'metabox'       => __( 'Left sidebar' , 'customizr' ),
-                                        ),
-                                        'b' => array(
-                                            'content'       => 'span6',
-                                            'sidebar'       => 'span3',
-                                            'customizer'    => __( '2 sidebars : Right and Left' , 'customizr' ),
-                                            'metabox'       => __( '2 sidebars : Right and Left' , 'customizr' ),
-                                        ),
-                                        'f' => array(
-                                            'content'       => 'span12',
-                                            'sidebar'       => false,
-                                            'customizer'    => __( 'No sidebars : full width layout', 'customizr' ),
-                                            'metabox'       => __( 'No sidebars : full width layout' , 'customizr' ),
-                                        ),
+              'r' => array(
+                  'content'       => 'span9',
+                  'sidebar'       => 'span3',
+                  'customizer'    => __( 'Right sidebar' , 'customizr' ),
+                  'metabox'       => __( 'Right sidebar' , 'customizr' ),
+              ),
+              'l' => array(
+                  'content'       => 'span9',
+                  'sidebar'       => 'span3',
+                  'customizer'    => __( 'Left sidebar' , 'customizr' ),
+                  'metabox'       => __( 'Left sidebar' , 'customizr' ),
+              ),
+              'b' => array(
+                  'content'       => 'span6',
+                  'sidebar'       => 'span3',
+                  'customizer'    => __( '2 sidebars : Right and Left' , 'customizr' ),
+                  'metabox'       => __( '2 sidebars : Right and Left' , 'customizr' ),
+              ),
+              'f' => array(
+                  'content'       => 'span12',
+                  'sidebar'       => false,
+                  'customizer'    => __( 'No sidebars : full width layout', 'customizr' ),
+                  'metabox'       => __( 'No sidebars : full width layout' , 'customizr' ),
+              ),
           );
-
-          //Default images sizes
-          $this -> tc_thumb_size      = array( 'width' => 270 , 'height' => 250, 'crop' => true ); //size name : tc-thumb
-          $this -> slider_full_size   = array( 'width' => 9999 , 'height' => 500, 'crop' => true ); //size name : slider-full
-          $this -> slider_size        = array( 'width' => 1170 , 'height' => 500, 'crop' => true ); //size name : slider
-          $this -> tc_grid_full_size  = array( 'width' => 1170 , 'height' => 350, 'crop' => true ); //size name : tc-grid-full
-          $this -> tc_grid_size       = array( 'width' => 570 , 'height' => 350, 'crop' => true ); //size name : tc-grid
-
 
           //Default skins array
           $this -> skins              =  array(
-                'blue.css'        =>  __( 'Blue' , 'customizr' ),
-                'black.css'       =>  __( 'Black' , 'customizr' ),
-                'black2.css'      =>  __( 'Flat black' , 'customizr' ),
-                'grey.css'        =>  __( 'Grey' , 'customizr' ),
-                'grey2.css'       =>  __( 'Light grey' , 'customizr' ),
-                'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
-                'purple.css'      =>  __( 'Purple' , 'customizr' ),
-                'red2.css'        =>  __( 'Flat red' , 'customizr' ),
-                'red.css'         =>  __( 'Red' , 'customizr' ),
-                'orange.css'      =>  __( 'Orange' , 'customizr' ),
-                'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
-                'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
-                'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
-                'green.css'       =>  __( 'Green' , 'customizr' ),
-                'green2.css'      =>  __( 'Light green' , 'customizr'),
-                'blue3.css'       =>  __( 'Green blue' , 'customizr'),
-                'blue2.css'       =>  __( 'Light blue ' , 'customizr' )
+              'blue.css'        =>  __( 'Blue' , 'customizr' ),
+              'black.css'       =>  __( 'Black' , 'customizr' ),
+              'black2.css'      =>  __( 'Flat black' , 'customizr' ),
+              'grey.css'        =>  __( 'Grey' , 'customizr' ),
+              'grey2.css'       =>  __( 'Light grey' , 'customizr' ),
+              'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
+              'purple.css'      =>  __( 'Purple' , 'customizr' ),
+              'red2.css'        =>  __( 'Flat red' , 'customizr' ),
+              'red.css'         =>  __( 'Red' , 'customizr' ),
+              'orange.css'      =>  __( 'Orange' , 'customizr' ),
+              'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
+              'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
+              'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
+              'green.css'       =>  __( 'Green' , 'customizr' ),
+              'green2.css'      =>  __( 'Light green' , 'customizr'),
+              'blue3.css'       =>  __( 'Green blue' , 'customizr'),
+              'blue2.css'       =>  __( 'Light blue ' , 'customizr' )
           );
 
-          //Main skin color array : array( link color, link hover color )
-          $this -> skin_color_map     = apply_filters( 'tc_skin_color_map' , array(
-                'blue.css'        =>  array( '#08c', '#005580' ),
-                'blue2.css'       =>  array( '#27CBCD', '#1b8b8d' ),
-                'blue3.css'       =>  array( '#27CDA5', '#1b8d71' ),
-                'green.css'       =>  array( '#9db668', '#768d44' ),
-                'green2.css'      =>  array( '#26CE61', '#1a8d43' ),
-                'yellow.css'      =>  array( '#e9a825', '#b07b12' ),
-                'yellow2.css'     =>  array( '#d2d62a', '#94971d' ),
-                'orange.css'      =>  array( '#F78C40', '#e16309' ),
-                'orange2.css'     =>  array( '#E79B5D', '#d87220' ),
-                'red.css'         =>  array( '#e10707', '#970505' ),
-                'red2.css'        =>  array( '#e7797a', '#db383a' ),
-                'purple.css'      =>  array( '#e67fb9', '#da3f96' ),
-                'purple2.css'     =>  array( '#8183D8', '#474ac6' ),
-                'grey.css'        =>  array( '#5A5A5A', '#343434' ),
-                'grey2.css'       =>  array( '#E4E4E4', '#bebebe' ),
-                'black.css'       =>  array( '#000', '#000000' ),
-                'black2.css'      =>  array( '#394143', '#16191a' )
-          ) );
-
-          //Default fonts pairs
-          $this -> font_pairs             = array(
-            'gfont' => array(
-              'name'  => __('Google fonts pairs' , 'customizr'),
-              'list'  => apply_filters( 'tc_gfont_pairs' , array(
-                '_g_sintony_poppins'              => array( 'Sintony &amp; Poppins' , 'Sintony|Poppins' ),
-                '_g_fjalla_cantarell'              => array( 'Fjalla One &amp; Cantarell' , 'Fjalla+One:400|Cantarell:400' ),
-                '_g_lobster_raleway'               => array( 'Lobster &amp; Raleway' , 'Lobster:400|Raleway' ),
-                '_g_alegreya_roboto'               => array( 'Alegreya &amp; Roboto' , 'Alegreya:700|Roboto' ),
-                '_g_lato_grand_hotel'              => array( 'Lato &amp; Grand Hotel', 'Lato:400|Grand+Hotel' ),
-                '_g_dosis_opensans'                => array( 'Dosis &amp; Open Sans' , 'Dosis:400|Open+Sans' ),
-                '_g_dancing_script_eb_garamond'    => array( 'Dancing Script &amp; EB Garamond' , 'Dancing+Script:700|EB+Garamond' ),
-                '_g_amatic_josephin'               => array( 'Amatic SC &amp; Josefin Sans' , 'Amatic+SC|Josefin+Sans:700' ),
-                '_g_oswald_droid'                  => array( 'Oswald &amp; Droid Serif' , 'Oswald:700|Droid+Serif:400' ),
-                '_g_playfair_alice'                => array( 'Playfair Display &amp; Alice' , 'Playfair+Display:700|Alice' ),
-                '_g_medula_abel'                   => array( 'Medula One &amp; Abel' , 'Medula+One:400|Abel' ),
-                '_g_coustard_leckerli'             => array( 'Coustard Ultra &amp; Leckerli One' , 'Coustard:900|Leckerli+One' ),
-                '_g_sacramento_alice'              => array( 'Sacramento &amp; Alice' , 'Sacramento:400|Alice' ),
-                '_g_squada_allerta'                => array( 'Squada One &amp; Allerta' , 'Squada+One:400|Allerta' ),
-                '_g_bitter_sourcesanspro'          => array( 'Bitter &amp; Source Sans Pro' , 'Bitter:400|Source+Sans+Pro' ),
-                '_g_montserrat_neuton'             => array( 'Montserrat &amp; Neuton' , 'Montserrat:400|Neuton' )
-              ) )
-            ),
-            'wsfont' => array(
-              'name'  => __('Web safe fonts pairs' , 'customizr'),
-              'list'  => apply_filters( 'tc_wsfont_pairs' , array(
-                'impact_palatino'               => array( 'Impact &amp; Palatino' , 'Impact,Charcoal,sans-serif|Palatino Linotype,Book Antiqua,Palatino,serif'),
-                'georgia_verdana'               => array( 'Georgia &amp; Verdana' , 'Georgia,Georgia,serif|Verdana,Geneva,sans-serif' ),
-                'tahoma_times'                  => array( 'Tahoma &amp; Times' , 'Tahoma,Geneva,sans-serif|Times New Roman,Times,serif'),
-                'lucida_courrier'               => array( 'Lucida &amp; Courrier' , 'Lucida Sans Unicode,Lucida Grande,sans-serif|Courier New,Courier New,Courier,monospace')
-              ) )
-            ),
-           'default' => array(
-            'name'  => __('Single fonts' , 'customizr'),
-            'list'  => apply_filters( 'tc_single_fonts' , array(
-                  '_g_poppins'                    => array( 'Poppins' , 'Poppins|Poppins' ),
-                  '_g_cantarell'                  => array( 'Cantarell' , 'Cantarell:400|Cantarell:400' ),
-                  '_g_raleway'                    => array( 'Raleway' , 'Raleway|Raleway' ),
-                  '_g_roboto'                     => array( 'Roboto' , 'Roboto|Roboto' ),
-                  '_g_grand_hotel'                => array( 'Grand Hotel', 'Grand+Hotel|Grand+Hotel' ),
-                  '_g_opensans'                   => array( 'Open Sans' , 'Open+Sans|Open+Sans' ),
-                  '_g_script_eb_garamond'         => array( 'EB Garamond' , 'EB+Garamond|EB+Garamond' ),
-                  '_g_josephin'                   => array( 'Josefin Sans' , 'Josefin+Sans:700|Josefin+Sans:700' ),
-                  '_g_droid'                      => array( 'Droid Serif' , 'Droid+Serif:400|Droid+Serif:400' ),
-                  '_g_alice'                      => array( 'Alice' , 'Alice|Alice' ),
-                  '_g_abel'                       => array( 'Abel' , 'Abel|Abel' ),
-                  '_g_leckerli'                   => array( 'Leckerli One' , 'Leckerli+One|Leckerli+One' ),
-                  '_g_allerta'                    => array( 'Allerta' , 'Allerta|Allerta' ),
-                  '_g_sourcesanspro'              => array( 'Source Sans Pro' , 'Source+Sans+Pro|Source+Sans+Pro' ),
-                  '_g_neuton'                     => array( 'Neuton' , 'Neuton|Neuton' ),
-                  'helvetica_arial'               => array( 'Helvetica' , 'Helvetica Neue,Helvetica,Arial,sans-serif|Helvetica Neue,Helvetica,Arial,sans-serif' ),
-                  'palatino'                      => array( 'Palatino Linotype' , 'Palatino Linotype,Book Antiqua,Palatino,serif|Palatino Linotype,Book Antiqua,Palatino,serif' ),
-                  'verdana'                       => array( 'Verdana' , 'Verdana,Geneva,sans-serif|Verdana,Geneva,sans-serif' ),
-                  'time_new_roman'                => array( 'Times New Roman' , 'Times New Roman,Times,serif|Times New Roman,Times,serif' ),
-                  'courier_new'                   => array( 'Courier New' , 'Courier New,Courier New,Courier,monospace|Courier New,Courier New,Courier,monospace' )
-                )
-              )
-            )
-          );//end of font pairs
 
           $this -> font_selectors     = array(
-            'titles' => implode(',' , apply_filters( 'tc-titles-font-selectors' , array('.site-title' , '.site-description', 'h1', 'h2', 'h3', '.tc-dropcap' ) ) ),
-            'body'   => implode(',' , apply_filters( 'tc-body-font-selectors' , array('body' , '.navbar .nav>li>a') ) )
+              'titles' => implode(',' , apply_filters( 'tc-titles-font-selectors' , array('.site-title' , '.site-description', 'h1', 'h2', 'h3', '.tc-dropcap' ) ) ),
+              'body'   => implode(',' , apply_filters( 'tc-body-font-selectors' , array('body' , '.navbar .nav>li>a') ) )
           );
-
-
-          //Default featured pages ids
-          $this -> fp_ids             = array( 'one' , 'two' , 'three' );
-
-          //Default social networks
-          $this -> socials            = array(
-            'tc_rss'            => array(
-                                    'link_title'    => __( 'Subscribe to my rss feed' , 'customizr' ),
-                                    'default'       => get_bloginfo( 'rss_url' ) //kept as it's the only one used in the transition
-                                ),
-            'tc_email'          => array(
-                                    'link_title'    => __( 'E-mail' , 'customizr' ),
-                                  ),
-            'tc_twitter'        => array(
-                                    'link_title'    => __( 'Follow me on Twitter' , 'customizr' ),
-                                  ),
-            'tc_facebook'       => array(
-                                    'link_title'    => __( 'Follow me on Facebook' , 'customizr' ),
-                                  ),
-            'tc_google'         => array(
-                                    'link_title'    => __( 'Follow me on Google+' , 'customizr' ),
-                                  ),
-            'tc_instagram'      => array(
-                                    'link_title'    => __( 'Follow me on Instagram' , 'customizr' ),
-                                  ),
-            'tc_tumblr'       => array(
-                                    'link_title'    => __( 'Follow me on Tumblr' , 'customizr' ),
-                                  ),
-            'tc_flickr'       => array(
-                                    'link_title'    => __( 'Follow me on Flickr' , 'customizr' ),
-                                  ),
-            'tc_wordpress'      => array(
-                                    'link_title'    => __( 'Follow me on WordPress' , 'customizr' ),
-                                  ),
-            'tc_youtube'        => array(
-                                    'link_title'    => __( 'Follow me on Youtube' , 'customizr' ),
-                                  ),
-            'tc_pinterest'      => array(
-                                    'link_title'    => __( 'Pin me on Pinterest' , 'customizr' ),
-                                  ),
-            'tc_github'         => array(
-                                    'link_title'    => __( 'Follow me on Github' , 'customizr' ),
-                                  ),
-            'tc_dribbble'       => array(
-                                    'link_title'    => __( 'Follow me on Dribbble' , 'customizr' ),
-                                  ),
-            'tc_linkedin'       => array(
-                                    'link_title'    => __( 'Follow me on LinkedIn' , 'customizr' ),
-                                  ),
-            'tc_vk'             => array(
-                                    'link_title'    => __( 'Follow me on VKontakte' , 'customizr' ),
-                                  ),
-            'tc_yelp'           => array(
-                                    'link_title'    => __( 'Follow me on Yelp' , 'customizr' ),
-                                  ),
-            'tc_xing'           => array(
-                                    'link_title'    => __( 'Follow me on Xing' , 'customizr' ),
-                                  ),
-            'tc_snapchat'       => array(
-                                    'link_title'    => __( 'Contact me on Snapchat' , 'customizr' ),
-                                  )
-          );//end of social array
-
-
-          //Default sidebar widgets
-          $this -> sidebar_widgets    = array(
-            'left'          => array(
-                            'name'                 => __( 'Left Sidebar' , 'customizr' ),
-                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
-            ),
-            'right'         => array(
-                            'name'                 => __( 'Right Sidebar' , 'customizr' ),
-                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
-            )
-          );//end of array
 
           //Default footer widgets
           $this -> footer_widgets     = array(
-            'footer_one'    => array(
-                            'name'                 => __( 'Footer Widget Area One' , 'customizr' ),
-                            'description'          => __( 'Just use it as you want !' , 'customizr' )
-            ),
-            'footer_two'    => array(
-                            'name'                 => __( 'Footer Widget Area Two' , 'customizr' ),
-                            'description'          => __( 'Just use it as you want !' , 'customizr' )
-            ),
-            'footer_three'   => array(
-                            'name'                 => __( 'Footer Widget Area Three' , 'customizr' ),
-                            'description'          => __( 'Just use it as you want !' , 'customizr' )
-            )
+              'footer_one'    => array(
+                              'name'                 => __( 'Footer Widget Area One' , 'customizr' ),
+                              'description'          => __( 'Just use it as you want !' , 'customizr' )
+              ),
+              'footer_two'    => array(
+                              'name'                 => __( 'Footer Widget Area Two' , 'customizr' ),
+                              'description'          => __( 'Just use it as you want !' , 'customizr' )
+              ),
+              'footer_three'   => array(
+                              'name'                 => __( 'Footer Widget Area Three' , 'customizr' ),
+                              'description'          => __( 'Just use it as you want !' , 'customizr' )
+              )
           );//end of array
 
           //Default post list layout
           $this -> post_list_layout   = array(
-            'content'           => 'span8',
-            'thumb'             => 'span4',
-            'show_thumb_first'  => false,
-            'alternate'         => true
+              'content'           => 'span8',
+              'thumb'             => 'span4',
+              'show_thumb_first'  => false,
+              'alternate'         => true
           );
 
           //Defines post formats with no headers
@@ -614,234 +388,21 @@ if ( ! class_exists( 'CZR_init' ) ) :
 
           //Default 404 content
           $this -> content_404        = array(
-            'quote'             => __( 'Speaking the Truth in times of universal deceit is a revolutionary act.' , 'customizr' ),
-            'author'            => __( 'George Orwell' , 'customizr' ),
-            'text'              => __( 'Sorry, but the requested page is not found. You might try a search below.' , 'customizr' )
+              'quote'             => __( 'Speaking the Truth in times of universal deceit is a revolutionary act.' , 'customizr' ),
+              'author'            => __( 'George Orwell' , 'customizr' ),
+              'text'              => __( 'Sorry, but the requested page is not found. You might try a search below.' , 'customizr' )
           );
 
           //Default no search result content
           $this -> content_no_results = array(
-            'quote'             => __( 'Success is the ability to go from one failure to another with no loss of enthusiasm...' , 'customizr' ),
-            'author'            => __( 'Sir Winston Churchill' , 'customizr' ),
-            'text'              => __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.' , 'customizr' )
+              'quote'             => __( 'Success is the ability to go from one failure to another with no loss of enthusiasm...' , 'customizr' ),
+              'author'            => __( 'Sir Winston Churchill' , 'customizr' ),
+              'text'              => __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.' , 'customizr' )
           );
-
-          //Default slides content
-          $this -> default_slides     = array(
-            1 => array(
-              'title'         =>  '',
-              'text'          =>  '',
-              'button_text'   =>  '',
-              'link_id'       =>  null,
-              'link_url'      =>  null,
-              'active'        =>  'active',
-              'color_style'   =>  '',
-              'slide_background'       =>  sprintf('<img width="1910" height="750" src="%1$s" class="" alt="%2$s" />',
-                                          TC_BASE_URL.'assets/front/img/customizr-theme.jpg',
-                                          __( 'Customizr is a clean responsive theme' , 'customizr' )
-                                  )
-            ),
-
-            2 => array(
-              'title'         =>  '',
-              'text'          =>  '',
-              'button_text'   =>  '',
-              'link_id'       =>  null,
-              'link_url'      =>  null,
-              'active'        =>  '',
-              'color_style'   =>  '',
-              'slide_background'       =>  sprintf('<img width="1910" height="750" src="%1$s" class="" alt="%2$s" />',
-                                          TC_BASE_URL.'assets/front/img/demo_slide_2.jpg',
-                                          __( 'Many layout and design options are available from the WordPress customizer screen : see your changes live !' , 'customizr' )
-                                  )
-            )
-          );///end of slides array
-
-          //Set image options set by user @since v3.2.0
-          //! must be included in utils to be available in admin for plugins like regenerate thumbnails
-          add_action( 'after_setup_theme'                      , array( $this, 'czr_fn_set_user_defined_settings'));
-
-          //add the text domain, various theme supports : editor style, automatic-feed-links, post formats, post-thumbnails
-          add_action( 'after_setup_theme'                      , array( $this , 'czr_fn_customizr_setup' ));
-          //registers the menu
-          add_action( 'after_setup_theme'                       , array( $this, 'czr_fn_register_menus'));
-
-          //add retina support for high resolution devices
-          add_filter( 'wp_generate_attachment_metadata'        , array( $this , 'czr_fn_add_retina_support') , 10 , 2 );
-          add_filter( 'delete_attachment'                      , array( $this , 'czr_fn_clean_retina_images') );
 
           //add classes to body tag : fade effect on link hover, is_customizing. Since v3.2.0
           add_filter('body_class'                              , array( $this , 'czr_fn_set_body_classes') );
-
-          //prevent rendering the comments template more than once
-          add_filter( 'tc_render_comments_template'            , array( $this,  'czr_fn_control_coments_template_rendering' ) );
       }//end of constructor
-
-
-
-      /**
-      * Set user defined options for images
-      * Thumbnail's height
-      * Slider's height
-      * hook : after_setup_theme
-      *
-      * @package Customizr
-      * @since Customizr 3.1.23
-      */
-      function czr_fn_set_user_defined_settings() {
-        $_options = get_option('tc_theme_options');
-        //add "rectangular" image size
-        if ( isset ( $_options['tc_post_list_thumb_shape'] ) && false !== strpos(esc_attr( $_options['tc_post_list_thumb_shape'] ), 'rectangular') ) {
-          $_user_height     = isset ( $_options['tc_post_list_thumb_height'] ) ? esc_attr( $_options['tc_post_list_thumb_height'] ) : '250';
-          $_user_height     = ! esc_attr( $_options['tc_post_list_thumb_shape'] ) ? '250' : $_user_height;
-          $_rectangular_size    = apply_filters(
-            'tc_rectangular_size' ,
-            array( 'width' => '1170' , 'height' => $_user_height , 'crop' => true )
-          );
-          add_image_size( 'tc_rectangular_size' , $_rectangular_size['width'] , $_rectangular_size['height'], $_rectangular_size['crop'] );
-        }
-
-        if ( isset ( $_options['tc_slider_change_default_img_size'] ) && 0 != esc_attr( $_options['tc_slider_change_default_img_size'] ) && isset ( $_options['tc_slider_default_height'] ) && 500 != esc_attr( $_options['tc_slider_default_height'] ) ) {
-            add_filter( 'tc_slider_full_size'    , array($this,  'czr_fn_set_slider_img_height') );
-            add_filter( 'tc_slider_size'         , array($this,  'czr_fn_set_slider_img_height') );
-        }
-
-
-        /***********
-        *** GRID ***
-        ***********/
-        if ( isset( $_options['tc_grid_thumb_height'] ) ) {
-            $_user_height  = esc_attr( $_options['tc_grid_thumb_height'] );
-
-        }
-        $tc_grid_full_size     = $this -> tc_grid_full_size;
-        $tc_grid_size          = $this -> tc_grid_size;
-        $_user_grid_height     = isset( $_options['tc_grid_thumb_height'] ) && is_numeric( $_options['tc_grid_thumb_height'] ) ? esc_attr( $_options['tc_grid_thumb_height'] ) : $tc_grid_full_size['height'];
-
-        add_image_size( 'tc-grid-full', $tc_grid_full_size['width'], $_user_grid_height, $tc_grid_full_size['crop'] );
-        add_image_size( 'tc-grid', $tc_grid_size['width'], $_user_grid_height, $tc_grid_size['crop'] );
-
-        if ( $_user_grid_height != $tc_grid_full_size['height'] )
-          add_filter( 'tc_grid_full_size', array( $this,  'czr_fn_set_grid_img_height') );
-        if ( $_user_grid_height != $tc_grid_size['height'] )
-          add_filter( 'tc_grid_size'     , array( $this,  'czr_fn_set_grid_img_height') );
-
-      }
-
-
-
-      /**
-      * Set slider new image sizes
-      * Callback of slider_full_size and slider_size filters
-      * hook : might be called from after_setup_theme
-      * @package Customizr
-      * @since Customizr 3.2.0
-      *
-      */
-      function czr_fn_set_slider_img_height( $_default_size ) {
-        $_options = get_option('tc_theme_options');
-
-        $_default_size['height'] = esc_attr( $_options['tc_slider_default_height'] );
-        return $_default_size;
-      }
-
-
-      /**
-      * Set post list desgin new image sizes
-      * Callback of tc_grid_full_size and tc_grid_size filters
-      *
-      * @package Customizr
-      * @since Customizr 3.1.12
-      *
-      */
-      function czr_fn_set_grid_img_height( $_default_size ) {
-        $_options = get_option('tc_theme_options');
-
-        $_default_size['height'] =  esc_attr( $_options['tc_grid_thumb_height'] ) ;
-        return $_default_size;
-      }
-
-
-
-      /**
-       * Sets up theme defaults and registers the various WordPress features
-       * hook : after_setup_theme | 20
-       *
-       * @package Customizr
-       * @since Customizr 1.0
-       */
-
-      function czr_fn_customizr_setup() {
-          /* Set default content width for post images and media. */
-          global $content_width;
-          if (! isset( $content_width ) )
-            $content_width = apply_filters( 'tc_content_width' , 1170 );
-
-          /*
-           * Makes Customizr available for translation.
-           * Translations can be added to the /inc/lang/ directory.
-           */
-          load_theme_textdomain( 'customizr' , czr_fn_is_pro() ? TC_BASE . '/inc/lang_pro' : TC_BASE . '/inc/lang' );
-
-          /* Adds RSS feed links to <head> for posts and comments. */
-          add_theme_support( 'automatic-feed-links' );
-
-          /*  This theme supports nine post formats. */
-          $post_formats   = apply_filters( 'tc_post_formats', array( 'aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat' ) );
-          add_theme_support( 'post-formats' , $post_formats );
-
-          /* support for page excerpt (added in v3.0.15) */
-          add_post_type_support( 'page', 'excerpt' );
-
-          /* This theme uses a custom image size for featured images, displayed on "standard" posts. */
-          add_theme_support( 'post-thumbnails' );
-            //set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
-
-          /* @since v3.2.3 see : https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/ */
-          add_theme_support( 'title-tag' );
-          //remove theme support => generates notice in admin @todo fix-it!
-           /* remove_theme_support( 'custom-background' );
-            remove_theme_support( 'custom-header' );*/
-
-          //post thumbnails for featured pages and post lists (archive, search, ...)
-          $tc_thumb_size    = apply_filters( 'tc_thumb_size' , $this -> tc_thumb_size );
-          add_image_size( 'tc-thumb' , $tc_thumb_size['width'] , $tc_thumb_size['height'], $tc_thumb_size['crop'] );
-
-          //slider full width
-          $slider_full_size = apply_filters( 'tc_slider_full_size' , $this -> slider_full_size );
-          add_image_size( 'slider-full' , $slider_full_size['width'] , $slider_full_size['height'], $slider_full_size['crop'] );
-
-          //slider boxed
-          $slider_size      = apply_filters( 'tc_slider_size' , $this -> slider_size );
-          add_image_size( 'slider' , $slider_size['width'] , $slider_size['height'], $slider_size['crop'] );
-
-          //add support for svg and svgz format in media upload
-          add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
-
-          //add help button to admin bar
-          add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
-
-          //Javascript detection
-          add_action( 'wp_head'                             , array( $this, 'czr_fn_javascript_detection'), 0 );
-          // Add theme support for selective refresh for widgets.
-          // Only add if the link manager is not enabled
-          // cf WP core ticket #39451
-          if ( ! get_option( 'link_manager_enabled' ) ) {
-            add_theme_support( 'customize-selective-refresh-widgets' );
-          }
-      }
-
-
-
-      /*
-      * hook : after_setup_theme
-      */
-      function czr_fn_register_menus() {
-        /* This theme uses wp_nav_menu() in one location. */
-        register_nav_menu( 'main' , __( 'Main Menu' , 'customizr' ) );
-        register_nav_menu( 'secondary' , __( 'Secondary (horizontal) Menu' , 'customizr' ) );
-      }
-
 
 
 
@@ -852,189 +413,33 @@ if ( ! class_exists( 'CZR_init' ) ) :
       * @since Customizr 3.0.15
       */
       function czr_fn_get_style_src( $_wot = 'skin' ) {
-        $_sheet    = ( 'skin' == $_wot ) ? esc_attr( czr_fn_opt( 'tc_skin' ) ) : 'tc_common.css';
-        $_sheet    = $this -> czr_fn_maybe_use_min_style( $_sheet );
+          $_sheet    = ( 'skin' == $_wot ) ? esc_attr( czr_fn_opt( 'tc_skin' ) ) : 'tc_common.css';
+          $_sheet    = esc_attr( czr_fn_opt( 'tc_minified_skin' ) ) ? str_replace('.css', '.min.css', $_sheet) : $_sheet;
 
-        //Finds the good path : are we in a child theme and is there a skin to override?
-        $remote_path    = ( czr_fn_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/' . $_sheet) ) ? TC_BASE_URL_CHILD .'inc/assets/css/' : false ;
-        $remote_path    = ( ! $remote_path && file_exists(TC_BASE .'inc/assets/css/' . $_sheet) ) ? TC_BASE_URL .'inc/assets/css/' : $remote_path ;
-        //Checks if there is a rtl version of common if needed
-        if ( 'skin' != $_wot && ( is_rtl() || ( defined( 'WPLANG' ) && ( 'ar' == WPLANG || 'he_IL' == WPLANG ) ) ) ){
-          $remote_rtl_path   = ( czr_fn_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/rtl/' . $_sheet) ) ? TC_BASE_URL_CHILD .'inc/assets/css/rtl/' : false ;
-          $remote_rtl_path   = ( ! $remote_rtl_path && file_exists(TC_BASE .'inc/assets/css/rtl/' . $_sheet) ) ? TC_BASE_URL .'inc/assets/css/rtl/' : $remote_rtl_path;
-          $remote_path       = $remote_rtl_path ? $remote_rtl_path : $remote_path;
-        }
-
-        //Defines the active skin and fallback to blue.css if needed
-        if ( 'skin' == $_wot )
-          $tc_get_style_src  = $remote_path ? $remote_path.$_sheet : TC_BASE_URL.'inc/assets/css/grey.css';
-        else
-          $tc_get_style_src  = $remote_path ? $remote_path.$_sheet : TC_BASE_URL.'inc/assets/css/tc_common.css';
-
-        return apply_filters ( 'tc_get_style_src' , $tc_get_style_src , $_wot );
-      }
-
-
-
-      /**
-      * //Move in CZR_utils?
-      *
-      * Returns the min or normal version of the passed css filename (basename.type)
-      * depending on whether or not the minified version should be used
-      *
-      * @param $_sheet string
-      *
-      * @return string
-      *
-      * @package Customizr
-      * @since Customizr 3.4.19
-      */
-      function czr_fn_maybe_use_min_style( $_sheet ) {
-        if ( esc_attr( czr_fn_opt( 'tc_minified_skin' ) ) )
-          $_sheet = ( defined('CZR_NOT_MINIFIED_CSS') && true === CZR_NOT_MINIFIED_CSS ) ? $_sheet : str_replace('.css', '.min.css', $_sheet);
-        return $_sheet;
-      }
-
-
-
-      /**
-      * Returns the $mimes array with svg and svgz entries added
-      *
-      * @package Customizr
-      * @since Customizr 3.1.19
-      */
-      function czr_fn_custom_mtypes( $mimes ) {
-        if (! apply_filters( 'tc_add_svg_mime_type' , true ) )
-          return $mimes;
-
-        $mimes['svg']   = 'image/svg+xml';
-        $mimes['svgz']  = 'image/svg+xml';
-        return $mimes;
-      }
-
-
-
-      /**
-     * This function handles the support for high resolution devices
-     *
-     * @hook wp_generate_attachment_metadata (10 ,2)
-     * @package Customizr
-     * @since Customizr 3.0.15
-     * @credits http://wp.tutsplus.com/author/chrisbavota/
-     */
-      function czr_fn_add_retina_support( $metadata, $attachment_id ) {
-        //checks if retina is enabled in options
-        if ( 0 == czr_fn_opt( 'tc_retina_support' ) )
-          return $metadata;
-
-        if ( ! is_array($metadata) )
-          return $metadata;
-
-        //Create the retina image for the main file
-        if ( is_array($metadata) && isset($metadata['width']) && isset($metadata['height']) )
-          $this -> czr_fn_create_retina_images( get_attached_file( $attachment_id ), $metadata['width'], $metadata['height'] , false, $_is_intermediate = false );
-
-        //Create the retina images for each WP sizes
-        foreach ( $metadata as $key => $data ) {
-            if ( 'sizes' != $key )
-              continue;
-            foreach ( $data as $_size_name => $_attr ) {
-                if ( is_array( $_attr ) && isset($_attr['width']) && isset($_attr['height']) )
-                    $this -> czr_fn_create_retina_images( get_attached_file( $attachment_id ), $_attr['width'], $_attr['height'], true, $_is_intermediate = true );
-            }
-        }
-        return $metadata;
-      }//end of tc_retina_support
-
-
-
-      /**
-      * Creates retina-ready images
-      *
-      * @package Customizr
-      * @since Customizr 3.0.15
-      * @credits http://wp.tutsplus.com/author/chrisbavota/
-      */
-      function czr_fn_create_retina_images( $file, $width, $height, $crop = false , $_is_intermediate = true) {
-          $resized_file = wp_get_image_editor( $file );
-          if ( is_wp_error( $resized_file ) )
-            return false;
-
-          if ( $width || $height ) {
-            $_suffix    = $_is_intermediate ? $width . 'x' . $height . '@2x' : '@2x';
-            $filename   = $resized_file -> generate_filename( $_suffix );
-            // if is not intermediate (main file name) => removes the "-" added by the generate_filename method
-            $filename   = ! $_is_intermediate ? str_replace('-@2x', '@2x', $filename) : $filename;
-
-            $resized_file -> resize( $width * 2, $height * 2, $crop );
-            $resized_file -> save( $filename );
-
-            $info = $resized_file -> get_size();
-
-            /*return array(
-                'file' => wp_basename( $filename ),
-                'width' => $info['width'],
-                'height' => $info['height'],
-            );*/
+          //Finds the good path : are we in a child theme and is there a skin to override?
+          $remote_path    = ( czr_fn_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/' . $_sheet) ) ? TC_BASE_URL_CHILD .'inc/assets/css/' : false ;
+          $remote_path    = ( ! $remote_path && file_exists(TC_BASE .'inc/assets/css/' . $_sheet) ) ? TC_BASE_URL .'inc/assets/css/' : $remote_path ;
+          //Checks if there is a rtl version of common if needed
+          if ( 'skin' != $_wot && ( is_rtl() || ( defined( 'WPLANG' ) && ( 'ar' == WPLANG || 'he_IL' == WPLANG ) ) ) ){
+            $remote_rtl_path   = ( czr_fn_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/rtl/' . $_sheet) ) ? TC_BASE_URL_CHILD .'inc/assets/css/rtl/' : false ;
+            $remote_rtl_path   = ( ! $remote_rtl_path && file_exists(TC_BASE .'inc/assets/css/rtl/' . $_sheet) ) ? TC_BASE_URL .'inc/assets/css/rtl/' : $remote_rtl_path;
+            $remote_path       = $remote_rtl_path ? $remote_rtl_path : $remote_path;
           }
-          //return false;
-      }//end of function
 
+          //Defines the active skin and fallback to blue.css if needed
+          if ( 'skin' == $_wot )
+            $tc_get_style_src  = $remote_path ? $remote_path.$_sheet : TC_BASE_URL.'inc/assets/css/grey.css';
+          else
+            $tc_get_style_src  = $remote_path ? $remote_path.$_sheet : TC_BASE_URL.'inc/assets/css/tc_common.css';
 
-
-
-      /**
-     * This function deletes the generated retina images if they exist
-     *
-     * @hook delete_attachment
-     * @package Customizr
-     * @since Customizr 3.0.15
-     * @credits http://wp.tutsplus.com/author/chrisbavota/
-     */
-      function czr_fn_clean_retina_images( $attachment_id ) {
-        $meta = wp_get_attachment_metadata( $attachment_id );
-        if ( !isset( $meta['file']) )
-          return;
-
-        $upload_dir = wp_upload_dir();
-        $path = pathinfo( $meta['file'] );
-        $sizes = $meta['sizes'];
-        // append to the sizes the original file
-        $sizes['original'] = array( 'file' => $path['basename'] );
-
-        foreach ( $sizes as $size ) {
-          $original_filename = $upload_dir['basedir'] . '/' . $path['dirname'] . '/' . $size['file'];
-          $retina_filename = substr_replace( $original_filename, '@2x.', strrpos( $original_filename, '.' ), strlen( '.' ) );
-
-          if ( file_exists( $retina_filename ) )
-            unlink( $retina_filename );
-        }
-      }//end of function
-
-
-      /**
-      * Add help button
-      * @package Customizr
-      * @since Customizr 1.0
-      */
-      function czr_fn_add_help_button() {
-         if ( current_user_can( 'edit_theme_options' ) ) {
-           global $wp_admin_bar;
-           $wp_admin_bar->add_menu( array(
-             'parent' => 'top-secondary', // Off on the right side
-             'id' => 'tc-customizr-help' ,
-             'title' =>  __( 'Help' , 'customizr' ),
-             'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
-             'meta'   => array(
-                'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
-              ),
-           ));
-         }
+          return apply_filters ( 'tc_get_style_src' , $tc_get_style_src , $_wot );
       }
 
 
 
-      /**
+
+
+      /*
       * Adds various classes on the body element.
       * hook body_class
       *
@@ -1042,60 +447,34 @@ if ( ! class_exists( 'CZR_init' ) ) :
       * @since Customizr 3.2.0
       */
       function czr_fn_set_body_classes( $_classes ) {
-        if ( 0 != esc_attr( czr_fn_opt( 'tc_link_hover_effect' ) ) )
-          array_push( $_classes, 'tc-fade-hover-links' );
-        if ( czr_fn_is_customizing() )
-          array_push( $_classes, 'is-customizing' );
-        if ( wp_is_mobile() )
-          array_push( $_classes, 'tc-is-mobile' );
-        if ( 0 != esc_attr( czr_fn_opt( 'tc_enable_dropcap' ) ) )
-          array_push( $_classes, esc_attr( czr_fn_opt( 'tc_dropcap_design' ) ) );
+          if ( 0 != esc_attr( czr_fn_opt( 'tc_link_hover_effect' ) ) )
+            array_push( $_classes, 'tc-fade-hover-links' );
+          if ( czr_fn_is_customizing() )
+            array_push( $_classes, 'is-customizing' );
+          if ( wp_is_mobile() )
+            array_push( $_classes, 'tc-is-mobile' );
+          if ( 0 != esc_attr( czr_fn_opt( 'tc_enable_dropcap' ) ) )
+            array_push( $_classes, esc_attr( czr_fn_opt( 'tc_dropcap_design' ) ) );
 
-        //adds the layout
-        $_layout = CZR_utils::czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
-        if ( in_array( $_layout, array('b', 'l', 'r' , 'f') ) ) {
-          array_push( $_classes, sprintf( 'tc-%s-sidebar',
-            'f' == $_layout ? 'no' : $_layout
-          ) );
-        }
+          //adds the layout
+          $_layout = CZR_utils::czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
+          if ( in_array( $_layout, array('b', 'l', 'r' , 'f') ) ) {
+            array_push( $_classes, sprintf( 'tc-%s-sidebar',
+              'f' == $_layout ? 'no' : $_layout
+            ) );
+          }
 
-        //IMAGE CENTERED
-        if ( (bool) esc_attr( czr_fn_opt( 'tc_center_img') ) ){
-          $_classes = array_merge( $_classes , array( 'tc-center-images' ) );
-        }
+          //IMAGE CENTERED
+          if ( (bool) esc_attr( czr_fn_opt( 'tc_center_img') ) ){
+            $_classes = array_merge( $_classes , array( 'tc-center-images' ) );
+          }
 
-        //SKIN CLASS
-        $_skin = sprintf( 'skin-%s' , basename( $this -> czr_fn_get_style_src() ) );
-        array_push( $_classes, substr( $_skin , 0 , strpos($_skin, '.') ) );
+          //SKIN CLASS
+          $_skin = sprintf( 'skin-%s' , basename( $this -> czr_fn_get_style_src() ) );
+          array_push( $_classes, substr( $_skin , 0 , strpos($_skin, '.') ) );
 
-        return $_classes;
+          return $_classes;
       }
-
-
-      /**
-      * Controls the rendering of the comments template
-      *
-      * @param bool $bool
-      * @return bool $bool
-      * hook : tc_render_comments_template
-      *
-      */
-      function czr_fn_control_coments_template_rendering( $bool ) {
-        $_to_return = !self::$comments_rendered && $bool;
-        self::$comments_rendered = true;
-        return $_to_return;
-      }
-
-
-      /**
-       * Handles JavaScript detection.
-       * hook : wp_head
-       * Adds a `js` class to the root `<html>` element when JavaScript is detected.
-       */
-      function czr_fn_javascript_detection() {
-          echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-      }
-
   }//end of class
 endif;
 
@@ -2439,7 +1818,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         'tc_social_in_sidebar_title',
       );
       if ( ! apply_filters( 'tc_other_plugins_force_fpu_disable', class_exists('TC_fpu')  ) && ! class_exists('TC_fpc') ) {
-        $fp_areas = CZR_init::$instance -> fp_ids;
+        $fp_areas = CZR___::$instance -> fp_ids;
         foreach ( $fp_areas as $fp_area )
           $string_options[] = 'tc_featured_text_' . $fp_area;
 
@@ -2478,8 +1857,8 @@ class CZR_utils_settings_map {
             $this -> is_wp_version_before_4_0 = ( ! version_compare( $wp_version, '4.0', '>=' ) ) ? true : false;
 
             //require all the files needed by the new settings map - they contain functions used in core/utils/class-fire-utils_settings_map.php
-            if ( file_exists( TC_BASE . 'core/functions.php' ) ) {
-                  require_once( TC_BASE . 'core/functions.php' );
+            if ( file_exists( TC_BASE . 'core/core-settings-map.php' ) ) {
+                  require_once( TC_BASE . 'core/core-settings-map.php' );
             }
 
 
@@ -3557,7 +2936,7 @@ if ( ! class_exists( 'CZR_init_retro_compat' ) ) :
         return array();
       }
 
-      $_old_socials          = CZR_init::$instance -> socials;
+      $_old_socials          = CZR__::$instance -> old_socials;
       $_old_filtered_socials = apply_filters( 'tc_default_socials', $_old_socials );
 
       /*
@@ -3723,7 +3102,7 @@ if ( ! class_exists( 'CZR_utils' ) ) :
         add_filter( '__article_selectors'     , array( $this , 'czr_fn_article_selectors' ) );
 
         //social networks
-        add_filter( '__get_socials'           , array( $this , 'czr_fn_get_social_networks' ), 10, 0 );
+        add_filter( '__get_socials'           , 'czr_fn_get_social_networks', 10, 0 );
       }
 
       /**
@@ -3753,7 +3132,7 @@ if ( ! class_exists( 'CZR_utils' ) ) :
       * @since Customizr 3.1.23
       */
       function czr_fn_get_skin_color( $_what = null ) {
-          $_color_map    = CZR_init::$instance -> skin_color_map;
+          $_color_map    = CZR___::$instance -> skin_classic_color_map;
           $_color_map    = ( is_array($_color_map) ) ? $_color_map : array();
 
           $_active_skin =  str_replace('.min.', '.', basename( CZR_init::$instance -> czr_fn_get_style_src() ) );
@@ -4001,106 +3380,6 @@ if ( ! class_exists( 'CZR_utils' ) ) :
 
 
 
-
-
-      /**
-      * Gets the social networks list defined in customizer options
-      *
-      *
-      *
-      * @package Customizr
-      * @since Customizr 3.0.10
-      *
-      * @since Customizr 3.4.55 Added the ability to retrieve them as array
-      * @param $output_type optional. Return type "string" or "array"
-      */
-      //MODEL LOOKS LIKE THIS
-      //(
-      //     [0] => Array
-      //         (
-      //             [is_mod_opt] => 1
-      //             [module_id] => tc_social_links_czr_module
-      //             [social-size] => 15
-      //         )
-
-      //     [1] => Array
-      //         (
-      //             [id] => czr_social_module_0
-      //             [title] => Follow us on Renren
-      //             [social-icon] => fa-renren
-      //             [social-link] => http://customizr-dev.dev/feed/rss/
-      //             [social-color] => #6d4c8e
-      //             [social-target] => 1
-      //         )
-      // )
-      function czr_fn_get_social_networks( $output_type = 'string' ) {
-
-          $_socials         = czr_fn_opt('tc_social_links');
-          $_default_color   = array('rgb(90,90,90)', '#5a5a5a'); //both notations
-          $_default_size    = '14'; //px
-
-          $_social_opts     = array( 'social-size' => $_default_size );
-
-          if ( empty( $_socials ) )
-            return;
-
-          //get the social mod opts
-          foreach( $_socials as $key => $item ) {
-            if ( ! array_key_exists( 'is_mod_opt', $item ) )
-              continue;
-            $_social_opts = wp_parse_args( $item, $_social_opts );
-          }
-          $font_size_value = $_social_opts['social-size'];
-          //if the size is the default one, do not add the inline style css
-          $social_size_css  = empty( $font_size_value ) || $_default_size == $font_size_value ? '' : "font-size:{$font_size_value}px";
-
-          $_social_links = array();
-          foreach( $_socials as $key => $item ) {
-              //skip if mod_opt
-              if ( array_key_exists( 'is_mod_opt', $item ) )
-                continue;
-
-              //get the social icon suffix for backward compatibility (users custom CSS) we still add the class icon-*
-              $icon_class            = isset($item['social-icon']) ? esc_attr($item['social-icon']) : '';
-              $link_icon_class       = 'fa-' === substr( $icon_class, 0, 3 ) && 3 < strlen( $icon_class ) ?
-                      ' icon-' . str_replace( array('rss', 'envelope'), array('feed', 'mail'), substr( $icon_class, 3, strlen($icon_class) ) ) :
-                      '';
-
-              /* Maybe build inline style */
-              $social_color_css      = isset($item['social-color']) ? esc_attr($item['social-color']) : $_default_color[0];
-              //if the color is the default one, do not print the inline style css
-              $social_color_css      = in_array( $social_color_css, $_default_color ) ? '' : "color:{$social_color_css}";
-              $style_props           = implode( ';', array_filter( array( $social_color_css, $social_size_css ) ) );
-
-              $style_attr            = $style_props ? sprintf(' style="%1$s"', $style_props ) : '';
-
-              array_push( $_social_links, sprintf('<a rel="nofollow" class="social-icon%6$s" %1$s title="%2$s" aria-label="%2$s" href="%3$s" %4$s %7$s><i class="fa %5$s"></i></a>',
-                //do we have an id set ?
-                //Typically not if the user still uses the old options value.
-                //So, if the id is not present, let's build it base on the key, like when added to the collection in the customizer
-
-                // Put them together
-                  ! czr_fn_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'czr_socials_'. $key : $item['id'] ),
-                  isset($item['title']) ? esc_attr( $item['title'] ) : '',
-                  ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
-                  ( isset($item['social-target']) && false != $item['social-target'] ) ? ' target="_blank"' : '',
-                  $icon_class,
-                  $link_icon_class,
-                  $style_attr
-              ) );
-          }
-
-          /*
-          * return
-          */
-          switch ( $output_type ) :
-            case 'array' : return $_social_links;
-            default      : return implode( '', $_social_links );
-          endswitch;
-      }
-
-
-
     /**
     * Returns a boolean
     * check if user started to use the theme before ( strictly < ) the requested version
@@ -4111,16 +3390,6 @@ if ( ! class_exists( 'CZR_utils' ) ) :
     function czr_fn_user_started_before_version( $_czr_ver, $_pro_ver = null ) {
       return czr_fn_user_started_before_version( $_czr_ver, $_pro_ver );
     }
-
-
-    /**
-    * Boolean helper to check if the secondary menu is enabled
-    * since v3.4+
-    */
-    function czr_fn_is_secondary_menu_enabled() {
-      return (bool) esc_attr( czr_fn_opt( 'tc_display_second_menu' ) ) && 'aside' == esc_attr( czr_fn_opt( 'tc_menu_style' ) );
-    }
-
 
   }//end of class
 endif;
@@ -4179,7 +3448,7 @@ if ( ! class_exists( 'CZR_resources' ) ) :
             if ( true == czr_fn_opt( 'tc_font_awesome_icons' ) ) {
               $_path = apply_filters( 'tc_font_icons_path' , TC_BASE_URL . 'assets/shared/fonts/fa/css/' );
               wp_enqueue_style( 'customizr-fa',
-                  $_path . CZR_init::$instance -> czr_fn_maybe_use_min_style( 'font-awesome.css' ),
+                  $_path . 'font-awesome.min.css',
                   array() , CUSTOMIZR_VER, 'all' );
             }
 
@@ -4414,7 +3683,7 @@ if ( ! class_exists( 'CZR_resources' ) ) :
                 'imgSmartLoadOpts'    => $smart_load_opts,
                 'goldenRatio'         => apply_filters( 'tc_grid_golden_ratio' , 1.618 ),
                 'gridGoldenRatioLimit' => esc_attr( czr_fn_opt( 'tc_grid_thumb_height' ) ),
-                'isSecondMenuEnabled'  => CZR_utils::$inst->czr_fn_is_secondary_menu_enabled(),
+                'isSecondMenuEnabled'  => czr_fn_is_secondary_menu_enabled(),
                 'secondMenuRespSet'   => esc_attr( czr_fn_opt( 'tc_second_menu_resp_setting' ) ),
 
                 'isParallaxOn'        => esc_attr( czr_fn_opt( 'tc_slider_parallax') ),
@@ -4529,7 +3798,7 @@ if ( ! class_exists( 'CZR_resources' ) ) :
       */
       function czr_fn_enqueue_gfonts() {
         $_font_pair         = esc_attr( czr_fn_opt( 'tc_fonts' ) );
-        $_all_font_pairs    = CZR_init::$instance -> font_pairs;
+        $_all_font_pairs    = CZR___::$instance -> font_pairs;
         if ( ! $this -> czr_fn_is_gfont( $_font_pair , '_g_') )
           return;
 
@@ -4677,7 +3946,7 @@ if ( ! class_exists( 'CZR_resources' ) ) :
           return $_skin;
 
         //allow custom skins to be taken in account
-        $_skins = apply_filters( 'tc_get_skin_color', CZR_init::$instance -> skin_color_map, 'all' );
+        $_skins = apply_filters( 'tc_get_skin_color', CZR___::$instance -> skin_classic_color_map, 'all' );
 
         //allow users to filter the list of skins they want to randomize
         $_skins = apply_filters( 'tc_skins_to_randomize', $_skins );
@@ -4808,7 +4077,7 @@ if ( ! class_exists( 'CZR_resources' ) ) :
         if ( ! ( class_exists('CZR_featured_pages') && CZR_featured_pages::$instance -> czr_fn_show_featured_pages_img() ) )
           return $bool;
 
-        $fp_ids = apply_filters( 'tc_featured_pages_ids' , CZR_init::$instance -> fp_ids);
+        $fp_ids = apply_filters( 'tc_featured_pages_ids' , CZR___::$instance -> fp_ids);
 
         foreach ( $fp_ids as $fp_single_id ){
           $featured_page_id = czr_fn_opt( 'tc_featured_page_'.$fp_single_id );
@@ -4875,7 +4144,7 @@ if ( ! class_exists( 'CZR_widgets' ) ) :
 
       //gets the filtered default values
       $footer_widgets           = apply_filters( 'tc_footer_widgets'  , CZR_init::$instance -> footer_widgets );
-      $sidebar_widgets          = apply_filters( 'tc_sidebar_widgets' , CZR_init::$instance -> sidebar_widgets );
+      $sidebar_widgets          = apply_filters( 'tc_sidebar_widgets' , CZR___::$instance -> sidebar_widgets );
       $widgets                  = apply_filters( 'tc_default_widgets' , array_merge( $sidebar_widgets , $footer_widgets ) );
 
       //declares the arguments array
@@ -5453,7 +4722,7 @@ if ( ! class_exists( 'CZR_placeholders' ) ) :
     */
     function czr_fn_is_one_fp_set() {
       $_fp_sets = array();
-      $fp_ids = apply_filters( 'tc_featured_pages_ids' , CZR_init::$instance -> fp_ids);
+      $fp_ids = apply_filters( 'tc_featured_pages_ids' , CZR___::$instance -> fp_ids);
       if ( ! is_array($fp_ids) )
         return;
       foreach ($fp_ids as $fp_single_id ) {
@@ -5982,6 +5251,47 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
 endif;
 
 ?><?php
+
+/* HELPERS SPECIFICS FOR CLASSICAL THAT'S WHY DEFINED HERE AND NOT IN THE SHARED FUNCTIONS*/
+
+/**
+* helper
+* Renders the main header
+* @return  void
+*/
+if ( ! function_exists( 'czr_fn_render_main_header' ) ) {
+  function czr_fn_render_main_header() {
+    CZR_header_main::$instance->czr_fn_set_header_options();
+  ?>
+    <header class="<?php echo implode( " ", apply_filters('tc_header_classes', array('tc-header' ,'clearfix', 'row-fluid') ) ) ?>" role="banner">
+    <?php
+      // The '__header' hook is used with the following callback functions (ordered by priorities) :
+      //CZR_header_main::$instance->tc_logo_title_display(), CZR_header_main::$instance->czr_fn_tagline_display(), CZR_header_main::$instance->czr_fn_navbar_display()
+      do_action( '__header' );
+    ?>
+    </header>
+  <?php
+  }
+}
+
+
+/**
+* helper
+* Renders or returns the filtered and escaped tagline
+* @return  void
+*/
+if ( ! function_exists( 'czr_fn_get_tagline_text' ) ) {
+  function czr_fn_get_tagline_text( $echo = true ) {
+    $tagline_text = apply_filters( 'tc_tagline_text', esc_attr__( get_bloginfo( 'description' ) ) );
+    if ( ! $echo )
+      return $tagline_text;
+    echo $tagline_text;
+  }
+}
+
+
+
+
 //Creates a new instance
 new CZR___;
 do_action('czr_load');
