@@ -263,4 +263,3 @@ $ver = get_theme_mod( 'custom_css_version', false );
 	}
 }
 add_action( 'after_setup_theme', 'arise_custom_css_migrate' );
-?>

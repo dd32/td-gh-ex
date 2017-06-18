@@ -117,4 +117,3 @@
 		'small-boxed-layout' => __('Small Boxed Layout','arise'),
 	),
 ));
-?>

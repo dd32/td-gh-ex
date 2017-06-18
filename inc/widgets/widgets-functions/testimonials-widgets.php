@@ -75,4 +75,3 @@ class arise_widget_testimonial extends WP_Widget {
 		echo $after_widget .'<!-- end .widget_testimonial -->';
 	}
 }
-?>

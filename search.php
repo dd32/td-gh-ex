@@ -45,4 +45,4 @@ if( 'default' == $layout ) { //Settings from customizer
 <?php endif;
 }
 get_sidebar();
-get_footer(); ?>
+get_footer();

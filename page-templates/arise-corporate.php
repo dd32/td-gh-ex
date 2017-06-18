@@ -82,4 +82,4 @@ $arise_settings = arise_get_theme_options();
 	} ?>
 </div>
 <!-- end #main -->
-<?php get_footer(); ?>
+<?php get_footer();

@@ -89,4 +89,3 @@ class arise_parallax_widget extends WP_Widget {
 		wp_reset_postdata();
 	}
 }
-?>

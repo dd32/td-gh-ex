@@ -22,4 +22,4 @@ if ( !class_exists( 'Jetpack') || class_exists( 'Jetpack') && !Jetpack::is_modul
 		</ul>
 		<?php  endif;
 	endif; 
-}?>
+}

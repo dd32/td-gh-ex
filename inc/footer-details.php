@@ -20,4 +20,3 @@ if ( is_active_sidebar( 'arise_footer_options' ) ) :
 	<?php endif;
 }
 add_action( 'arise_sitegenerator_footer', 'arise_site_footer');
-?>

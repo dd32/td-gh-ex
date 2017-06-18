@@ -283,4 +283,3 @@ function arise_custom_header_setup() {
 	add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'arise_custom_header_setup' );
-?>

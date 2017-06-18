@@ -60,4 +60,3 @@ function arise_sanitize_page( $input ) {
 		return '';
 	}
 }
-?>

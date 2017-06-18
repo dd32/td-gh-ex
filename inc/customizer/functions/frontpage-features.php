@@ -70,4 +70,3 @@ for ( $i=1; $i <= $arise_settings['arise_total_features'] ; $i++ ) {
 		'type' => 'dropdown-pages',
 	));
 }
-?>

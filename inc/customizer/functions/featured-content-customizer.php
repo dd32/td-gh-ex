@@ -77,4 +77,3 @@ for ( $i=1; $i <= $arise_settings['arise_slider_no'] ; $i++ ) {
 		'type' => 'dropdown-pages',
 	));
 }
-?>

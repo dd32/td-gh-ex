@@ -136,4 +136,4 @@ $arise_settings = arise_get_theme_options(); ?>
 	}else{?>
 <div class="container clearfix">
 <?php }
-	} ?>
+	}

@@ -161,4 +161,3 @@
 		<?php echo $after_widget .'<!-- end .widget_latest_blog -->';
 	}
 }
-?>

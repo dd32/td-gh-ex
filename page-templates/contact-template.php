@@ -84,4 +84,4 @@ if( 'default' == $layout ) { //Settings from customizer
 		} 
 	}
 ?>
-<?php get_footer(); ?>
+<?php get_footer();

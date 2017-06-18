@@ -241,4 +241,3 @@ function arise_header_display(){
 		<?php }
 }
 add_action('arise_site_branding','arise_header_display');
-?>

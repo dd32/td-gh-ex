@@ -59,4 +59,3 @@ function arise_get_option_defaults_values() {
 	return apply_filters( 'arise_get_option_defaults_values', $arise_default_values );
 }
 endif;
-?>

@@ -117,4 +117,3 @@ class arise_parallax_video_widget extends WP_Widget {
 		wp_reset_postdata();
 	}
 }
-?>

@@ -82,4 +82,3 @@ function arise_widgets_init() {
 			'after_title' => '</h2>',
 		));
 }
-?>

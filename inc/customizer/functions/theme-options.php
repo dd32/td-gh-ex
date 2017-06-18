@@ -318,4 +318,3 @@
 	'priority' => 60,
 	'panel' => 'arise_wordpress_default_panel'
 	));
-?>
