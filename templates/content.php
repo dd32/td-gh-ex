@@ -186,7 +186,7 @@
                     </a>
                     <?php get_template_part('templates/entry', 'meta-subhead'); ?>    
                 </header>
-                <div class="entry-content" itemprop="articleBody">
+                <div class="entry-content" itemprop="description">
                     <?php 
                         do_action( 'kadence_post_excerpt_content_before' );
                         

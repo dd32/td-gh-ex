@@ -12,8 +12,6 @@ function kadence_admin_scripts($hook) {
 	if( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' && $hook != 'widgets.php') {
 		return;
   	}
-  //wp_register_script('kad_adminscripts', get_template_directory_uri() . '/assets/js/kad_adminscripts.js', false, null, false);
-  //wp_enqueue_script('kad_adminscripts');
 
 }
 

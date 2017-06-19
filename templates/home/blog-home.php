@@ -141,7 +141,7 @@
 			                        			<?php } ?>
 			                        		</div>
 			                        </header>
-		                        	<div class="entry-content">
+		                        	<div class="entry-content" itemprop="description">
 		                          		<p><?php echo virtue_excerpt(34); ?> <a href="<?php the_permalink() ?>"><?php _e('READ MORE', 'virtue');?></a></p>
 		                        	</div>
 		                      		<footer>

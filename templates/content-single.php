@@ -126,7 +126,7 @@
                     ?>
                 </header>
 
-                <div class="entry-content" itemprop="description articleBody">
+                <div class="entry-content" itemprop="articleBody">
                     <?php
                     do_action( 'kadence_single_post_content_before' );
                         

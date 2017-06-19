@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.1 | 19th June 2017 = 
+* Update: Schema.
+* Update: Small css update.
+
 = Version 3.0.0 | 17th May 2017 = 
 * Update: Woo Template.
 * Update: Schema.
