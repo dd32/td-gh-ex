@@ -313,6 +313,9 @@ $str(window).load(function () {
 		$str('.primary-menu li').removeClass('current-menu-item');
 		$str.each( bento_op_menu, function( ind, val ) {
 			$str('.'+ind+' > a').click(function(e) {
+				if ( $str('body').hasClass('mobile-menu-open') ) {
+					$str('body').removeClass('mobile-menu-open');
+				}
 				e.stopPropagation();
 				e.preventDefault();
 				$str('html, body').animate( { scrollTop: val }, 500 );

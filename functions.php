@@ -409,7 +409,7 @@ function bento_insert_custom_styles() {
 				}
 			';
 		}
-		if ( get_post_meta( $postid, 'bento_title_position', true ) == 'center' || ( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) ) ) {
+		if ( get_post_meta( $postid, 'bento_title_position', true ) == 'center' ) {
 			$custom_css .= '
 				.post-header-title,
 				.post-header-subtitle {
@@ -419,8 +419,12 @@ function bento_insert_custom_styles() {
 				.post-header-title h1,
 				.entry-header h1,
 				.post-header-subtitle,
-				.portfolio-filter {
+				.portfolio-filter,
+				.post-header-cta {
 					text-align: center;
+				}
+				.post-header-cta {
+					margin-left: 0;
 				}
 			';
 		}
@@ -747,15 +751,18 @@ function bento_custom_excerpt_more($more) {
 // Custom logo markup
 function bento_get_custom_logo() {
 	$logo = '<span class="logo-default">'.get_bloginfo( 'name' ).'</span>';
+	$logo_class = 'logo-default-link';
 	if ( get_theme_mod( 'custom_logo' ) ) {
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$logo_full_url = $logo_mobile_url = $logo_image[0];
 		$logo = '<img class="logo-fullsize" src="'.esc_url( $logo_full_url ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />';
+		$logo_class = 'logo-image-link';
 	}
 	if ( get_theme_mod( 'bento_logo_mobile' ) != '' ) {
 		if ( ! get_theme_mod( 'custom_logo' ) ) {
 			$logo = '<span class="logo-default logo-fullsize">'.get_bloginfo( 'name' ).'</span>';
+			$logo_class = 'logo-default-link';
 		}
 		$mobile_logo_id = get_theme_mod( 'bento_logo_mobile' );
 		$mobile_logo_image = wp_get_attachment_image_src( $mobile_logo_id , 'full' );
@@ -764,7 +771,7 @@ function bento_get_custom_logo() {
 	} else if ( get_theme_mod( 'custom_logo' ) ) {
 		$logo .= '<img class="logo-mobile" src="'.esc_url( $logo_full_url ).'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />';
 	}
-	$logo_html = '<a href="'.esc_url( home_url( '/' ) ).'">'.$logo.'</a>';
+	$logo_html = '<a href="'.esc_url( home_url( '/' ) ).'" class="'.$logo_class.'">'.$logo.'</a>';
 	return $logo_html;
 }
 

@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.7.2
-Stable tag: 1.6.8
+Tested up to: 4.8
+Stable tag: 1.7.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,12 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.1 / 19 June 2017
+Fixed call to action button alignment settings with extended header being switched on.
+Fixed the default logo line height for long site titles.
+Fixed mobile menu scroll behaviour for one-page setups.
+Adjusted the fixed header position with active admin bar.
 
 * 1.7 / 11 May 2017
 Moved the mobile styles breakpoint to a smaller width (1024px).
