@@ -1,6 +1,6 @@
 <?php
 
-define('SITEORIGIN_THEME_VERSION', '1.7.3');
+define('SITEORIGIN_THEME_VERSION', '1.7.4');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 include get_template_directory() . '/inc/settings/settings.php';
@@ -14,8 +14,15 @@ include get_template_directory() . '/inc/panels.php';
 include get_template_directory() . '/inc/recommended-plugins.php';
 include get_template_directory() . '/inc/legacy.php';
 
-if( !class_exists('TGM_Plugin_Activation') ) {
+if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	include get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+}
+
+/**
+ * Jetpack compatibility.
+ */
+if ( class_exists( 'Jetpack' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
 }
 
 if(!function_exists('origami_setup')) :
@@ -165,23 +172,24 @@ endif;
 add_filter('wp_title', 'origami_title', 10, 3);
 
 
-if(!function_exists('origami_enqueue_scripts')) :
+if ( ! function_exists( 'origami_enqueue_scripts' ) ) :
 /**
- * Enqueue Origami's scripts
+ * Enqueue Origami's scripts.
  * 
  * @action 
  * @return void
  */
-function origami_enqueue_scripts(){
-	wp_enqueue_style('origami', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION);
+function origami_enqueue_scripts() {
+	wp_enqueue_style( 'origami', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 
-	if( siteorigin_setting('responsive_fitvids') ) {
-		wp_enqueue_script('fitvids', get_template_directory_uri().'/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), '1.0');
+	if ( ! class_exists( 'Jetpack' ) && siteorigin_setting( 'responsive_fitvids' ) ) {
+		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.0' );
 	}
-	wp_enqueue_script('origami', get_template_directory_uri().'/js/origami' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+
+	wp_enqueue_script( 'origami', get_template_directory_uri() . '/js/origami' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	
-	wp_enqueue_script('flexslider', get_template_directory_uri().'/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), '2.1');
-	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '2.0');
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.1' );
+	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css', array(), '2.0' );
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
@@ -358,17 +366,26 @@ function so_setting($name, $default = null){
 }
 endif;
 
-function origami_post_class_columns($classes, $class, $post_id){
-	if(!siteorigin_setting('display_use_columns')) return $classes;
-	if(is_page() && get_post_meta(get_the_ID(), 'panels_data')) return $classes;
-	if(function_exists('siteorigin_panels_is_home') && siteorigin_panels_is_home()) return $classes;
-	
-	
-	$columns = get_post_meta($post_id, 'content_columns', true);
-	if(!empty($columns)) $classes[] = 'content-columns-'.$columns;
+function origami_post_class_filter( $classes ){
+	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482
+	if( is_page() ){
+		$class_key = array_search( 'hentry', $classes );
+		if( $class_key !== false) {
+			unset( $classes[ $class_key ] );
+		}
+	}
+
+	// Set up the post columns
+	if( siteorigin_setting( 'display_use_columns' ) ){
+		if( is_page() && get_post_meta( get_the_ID(), 'panels_data' ) ) return $classes;
+		if( function_exists( 'siteorigin_panels_is_home' ) && siteorigin_panels_is_home() ) return $classes;
+
+		$columns = get_post_meta( get_the_ID(), 'content_columns', true );
+		if( !empty( $columns ) ) $classes[] = 'content-columns-' . $columns;
+	}
 	return $classes;
 }
-add_filter('post_class', 'origami_post_class_columns', 10, 3);
+add_filter( 'post_class', 'origami_post_class_filter', 10 );
 
 /**
  * Update widget classes to use panels built in widgets.

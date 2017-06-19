@@ -1,17 +1,17 @@
 <?php
 return json_decode( '{
-	"36639e6e074b731b093bde5a77305179": {
-		"name": "Braam Genis",
-		"email": "36639e6e074b731b093bde5a77305179",
-		"loc": 3,
-		"score": 0.2551788801804957,
-		"percent": 71.25876484944568
-	},
 	"b7122312e4008f8f2c76911080bca01a": {
 		"name": "Andrew Misplon",
 		"email": "b7122312e4008f8f2c76911080bca01a",
-		"loc": 1,
-		"score": 0.10292286452365874,
-		"percent": 28.741235150554324
+		"loc": 75,
+		"score": 8.68976108673088,
+		"percent": 71.92556633286125
+	},
+	"a885c7bd5442dd2acd8c3e42001332c6": {
+		"name": "Alex S",
+		"email": "a885c7bd5442dd2acd8c3e42001332c6",
+		"loc": 36,
+		"score": 3.39184150575467,
+		"percent": 28.07443366713874
 	}
 }', true );

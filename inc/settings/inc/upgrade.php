@@ -1,10 +1,6 @@
 <?php
 
-/**
- * A legacy upgrade notice that we'll temporarily include for users on Vantage free who have an order number saved.
- *
- * Class SiteOrigin_Settings_Upgrade
- */
+
 class SiteOrigin_Settings_Upgrade {
 
 	function __construct(){

@@ -1,4 +1,4 @@
-# Copyright (C) 2016 origami
+# Copyright (C) 2017 origami
 # This file is distributed under the same license as the origami package.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SiteOrigin <support@siteorigin.com>\n"
 "Language-Team: SiteOrigin <support@siteorigin.com>\n"
 "X-Poedit-Basepath: ..\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:4
 msgid "Not Found"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "You can also read through the %sOrigami documentation%s to get to know it even faster."
 msgstr ""
 
-#: admin/metabox-columns.php:7, functions.php:200, functions.php:201
+#: admin/metabox-columns.php:7, functions.php:208, functions.php:209
 msgid "Columns"
 msgstr ""
 
@@ -137,11 +137,11 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:24, author.php:9, index.php:7, search.php:10
+#: archive.php:26, author.php:9, index.php:6, search.php:10
 msgid "Newer Entries"
 msgstr ""
 
-#: archive.php:24, author.php:9, index.php:7, search.php:10
+#: archive.php:26, author.php:9, index.php:6, search.php:10
 msgid "Older Entries"
 msgstr ""
 
@@ -183,15 +183,15 @@ msgstr ""
 msgid "Comments are Disabled"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:50
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:120, inc/customizer.php:179
+#: functions.php:127, inc/customizer.php:179
 msgid "Footer"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:167
 msgid "Page %s"
 msgstr ""
 
@@ -281,9 +281,11 @@ msgstr ""
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:388
+#: inc/class-tgm-plugin-activation.php:388, inc/class-tgm-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
-msgstr ""
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:390
 msgid "No action taken. Plugin %1$s was already active."
@@ -504,12 +506,6 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:2934
 msgid "No plugins are available to be activated at this time."
 msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
@@ -1051,19 +1047,19 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
-#: page-archive.php:14, template-archive.php:17
+#: page-archive.php:20, template-archive.php:17
 msgid "Recent Posts"
 msgstr ""
 
-#: page-archive.php:24, template-archive.php:27
+#: page-archive.php:30, template-archive.php:27
 msgid "By Year"
 msgstr ""
 
-#: page-archive.php:27, template-archive.php:30
+#: page-archive.php:33, template-archive.php:30
 msgid "By Month"
 msgstr ""
 
-#: page-archive.php:30, template-archive.php:33
+#: page-archive.php:36, template-archive.php:33
 msgid "Categories"
 msgstr ""
 

@@ -5,7 +5,7 @@ Description: Origami is a simple, responsive media blogging theme that places st
 Tags: one-column, fluid-layout, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging, responsive-layout
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
-Version: 1.7.3
+Version: 1.7.4
 License: GPL v2.0
 License URI: license.txt
 Text Domain: origami
@@ -184,7 +184,7 @@ html[xmlns] .clearfix {
       display: block;
       position: absolute;
       background: #F5F5F5;
-      z-index: 10;
+      z-index: 1010;
       top: 100%;
       left: 50%;
       width: 160px;
@@ -989,9 +989,17 @@ h1.archive-title {
 .origami-icon-tag:before {
   content: "\e603"; }
 
-/**
- * #.# Jetpack Infinite Scroll button and spinner
- */
+/*--------------------------------------------------------------
+## - Jetpack Infinite Scroll
+--------------------------------------------------------------*/
+.infinite-scroll #posts-nav,
+.infinite-scroll .woocommerce-pagination,
+.infinite-scroll.neverending #footer-widgets {
+  display: none; }
+
+.infinity-end.neverending #footer-widgets {
+  display: block; }
+
 #infinite-handle {
   text-align: center; }
   #infinite-handle span {
