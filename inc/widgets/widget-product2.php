@@ -137,7 +137,7 @@ class accesspress_store_product2 extends WP_Widget {
                                       $image = wp_get_attachment_image_src($image_id, 'thumbnail', 'true');
                                     ?>
                                     <div class="feature-prod-wrap wow flipInY" data-wow-delay="<?php echo $count ?>s">
-                                        <?php woocommerce_get_template_part( 'content', 'feat-product' ); ?>
+                                        <?php wc_get_template_part( 'content', 'feat-product' ); ?>
                                     </div>
                                     <?php
                                     $count+=0.5;

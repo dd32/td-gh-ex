@@ -48,6 +48,12 @@ Images
 
 == Changelog ==
 
+= 2.1.8 =
+
+** Add Custom Editor Style
+** Added Welcome Page with the demo import functionality
+** Fixed Woocommerce compatibility issue with the latest version of woocommerce
+
 = 2.1.7 =
 
 ** Compalibility with WooCommerce 3.0.0
