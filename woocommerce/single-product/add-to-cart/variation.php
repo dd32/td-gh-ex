@@ -35,5 +35,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 </script>
 
 <script type="text/template" id="tmpl-unavailable-variation-template">
-	<p class="alert alert-warning" role="alert"><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce' ); ?></p>
+	<p class="alert alert-warning" role="alert"><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'basicstore' ); ?></p>
 </script>

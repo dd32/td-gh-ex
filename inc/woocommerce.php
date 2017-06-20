@@ -98,7 +98,7 @@ function basic_store_nav_replace_wpse_189788($item_output, $item) {
     <a href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>">
 
       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-      <span class=""><?php _e('Cart','woocommerce'); ?></span>
+      <span class=""><?php _e('Cart','basicstore'); ?></span>
 
       <span class="cart-badge-wrapper">
         <?php if ($woocommerce->cart->cart_contents_count) : ?>

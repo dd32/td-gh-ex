@@ -25,7 +25,7 @@ wc_print_notices();
 ?>
 
 <p class="cart-empty alert alert-warning" role="alert">
-	<?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?>
+	<?php _e( 'Your cart is currently empty.', 'basicstore' ) ?>
 </p>
 
 <?php do_action( 'woocommerce_cart_is_empty' ); ?>
@@ -34,7 +34,7 @@ wc_print_notices();
 	<p class="return-to-shop">
 		<a class="button wc-backward btn btn-default" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<?php _e( 'Return to shop', 'woocommerce' ) ?>
+			<?php _e( 'Return to shop', 'basicstore' ) ?>
 		</a>
 	</p>
 <?php endif; ?>

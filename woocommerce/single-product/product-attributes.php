@@ -26,12 +26,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <dl class="shop_attributes dl-horizontal">
 
 	<?php if ( $display_dimensions && $product->has_weight() ) : ?>
-		<dt><?php _e( 'Weight', 'woocommerce' ) ?></dt>
+		<dt><?php _e( 'Weight', 'basicstore' ) ?></dt>
 		<dd class="product_weight"><?php echo esc_html( wc_format_weight( $product->get_weight() ) ); ?></dd>
 	<?php endif; ?>
 
 	<?php if ( $display_dimensions && $product->has_dimensions() ) : ?>
-		<dt><?php _e( 'Dimensions', 'woocommerce' ) ?></dt>
+		<dt><?php _e( 'Dimensions', 'basicstore' ) ?></dt>
 		<dd class="product_dimensions"><?php echo esc_html( wc_format_dimensions( $product->get_dimensions( false ) ) ); ?></dd>
 	<?php endif; ?>
 

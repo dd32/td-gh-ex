@@ -61,13 +61,13 @@ do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
 											</a>
 											<?php break;
 										case 'download-remaining' :
-											echo is_numeric( $download['downloads_remaining'] ) ? esc_html( $download['downloads_remaining'] ) : __( '&infin;', 'woocommerce' );
+											echo is_numeric( $download['downloads_remaining'] ) ? esc_html( $download['downloads_remaining'] ) : __( '&infin;', 'basicstore' );
 											break;
 										case 'download-expires' : ?>
 											<?php if ( ! empty( $download['access_expires'] ) ) : ?>
 												<time datetime="<?php echo date( 'Y-m-d', strtotime( $download['access_expires'] ) ); ?>" title="<?php echo esc_attr( strtotime( $download['access_expires'] ) ); ?>"><?php echo date_i18n( get_option( 'date_format' ), strtotime( $download['access_expires'] ) ); ?></time>
 											<?php else : ?>
-												<?php _e( 'Never', 'woocommerce' ); ?>
+												<?php _e( 'Never', 'basicstore' ); ?>
 											<?php endif; ?>
 											<?php break;
 										case 'download-actions' : ?>
@@ -75,7 +75,7 @@ do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
 												$actions = array(
 													'download'  => array(
 														'url'  => $download['download_url'],
-														'name' => __( 'Download', 'woocommerce' ),
+														'name' => __( 'Download', 'basicstore' ),
 													),
 												);
 												if ( $actions = apply_filters( 'woocommerce_account_download_actions', $actions, $download ) ) {
@@ -100,11 +100,11 @@ do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
 <?php else : ?>
 	<div class="woocommerce-Message woocommerce-Message--info woocommerce-info">
 		<p class="alert alert-warning" role="alert">
-			<?php esc_html_e( 'No downloads available yet.', 'woocommerce' ); ?>
+			<?php esc_html_e( 'No downloads available yet.', 'basicstore' ); ?>
 		</p>
 		<p><a class="woocommerce-Button button btn btn-default" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<?php esc_html_e( 'Go Shop', 'woocommerce' ) ?>
+			<?php esc_html_e( 'Go Shop', 'basicstore' ) ?>
 		</a></p>
 
 	</div>

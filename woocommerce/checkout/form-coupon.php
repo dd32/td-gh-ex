@@ -24,7 +24,7 @@ if ( ! wc_coupons_enabled() ) {
 }
 
 if ( ! WC()->cart->applied_coupons ) {
-    $info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'woocommerce' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'woocommerce' ) . '</a>' );
+    $info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'basicstore' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'basicstore' ) . '</a>' );
     wc_print_notice( $info_message, 'notice' );
 }
 ?>
@@ -34,10 +34,10 @@ if ( ! WC()->cart->applied_coupons ) {
 	<div class="well">
 
 		<p class="form-group form-row form-row-first">
-			<input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
+			<input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'basicstore' ); ?>" id="coupon_code" value="" />
 		</p>
 
-		<input type="submit" class="btn btn-default" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+		<input type="submit" class="btn btn-default" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'basicstore' ); ?>" />
 	</div>
 
 	<div class="clear"></div>

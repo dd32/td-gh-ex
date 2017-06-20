@@ -32,6 +32,10 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Changelog ==
 
+= 1.3.2 - Jun 20 2017 =
+- Temporary removed "grouped.php" WooCommerce template file to pass WP tests
+- Changed WooCommerce text-domain for WooCommerce template files from "woocommerce" to "basicstore"
+
 = 1.3.1 - Jun 13 2017 =
 - Correctly escaped get_post_meta on header.php
 

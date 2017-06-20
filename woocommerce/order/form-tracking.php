@@ -25,21 +25,21 @@ global $post;
 
 <form action="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" method="post" class="track_order well">
 
-	<p><?php _e( 'To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.', 'woocommerce' ); ?></p>
+	<p><?php _e( 'To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.', 'basicstore' ); ?></p>
 
 	<div class="form-group form-row-first">
-		<label for="orderid"><?php _e( 'Order ID', 'woocommerce' ); ?></label>
-		<input class="form-control" type="text" name="orderid" id="orderid" placeholder="<?php esc_attr_e( 'Found in your order confirmation email.', 'woocommerce' ); ?>" />
+		<label for="orderid"><?php _e( 'Order ID', 'basicstore' ); ?></label>
+		<input class="form-control" type="text" name="orderid" id="orderid" placeholder="<?php esc_attr_e( 'Found in your order confirmation email.', 'basicstore' ); ?>" />
 	</div>
 
 	<div class="form-group form-row-last">
-		<label for="order_email"><?php _e( 'Billing Email', 'woocommerce' ); ?></label>
-		<input class="form-control" type="text" name="order_email" id="order_email" placeholder="<?php esc_attr_e( 'Email you used during checkout.', 'woocommerce' ); ?>" />
+		<label for="order_email"><?php _e( 'Billing Email', 'basicstore' ); ?></label>
+		<input class="form-control" type="text" name="order_email" id="order_email" placeholder="<?php esc_attr_e( 'Email you used during checkout.', 'basicstore' ); ?>" />
 	</div>
 	<div class="clear"></div>
 
 	<div class="form-row">
-		<input type="submit" class="btn btn-primary" name="track" value="<?php esc_attr_e( 'Track', 'woocommerce' ); ?>" />
+		<input type="submit" class="btn btn-primary" name="track" value="<?php esc_attr_e( 'Track', 'basicstore' ); ?>" />
 	</div>
 	<?php wp_nonce_field( 'woocommerce-order_tracking' ); ?>
 

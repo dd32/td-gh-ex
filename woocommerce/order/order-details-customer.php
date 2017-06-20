@@ -23,29 +23,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section class="woocommerce-customer-details">
 
-	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
+	<h2><?php _e( 'Customer details', 'basicstore' ); ?></h2>
 
 	<div class="table-responsive">
-		
+
 		<table class="table table-bordered woocommerce-table woocommerce-table--customer-details shop_table customer_details">
 
 			<?php if ( $order->get_customer_note() ) : ?>
 				<tr>
-					<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Note:', 'basicstore' ); ?></th>
 					<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
 				</tr>
 			<?php endif; ?>
 
 			<?php if ( $order->get_billing_email() ) : ?>
 				<tr>
-					<th><?php _e( 'Email:', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Email:', 'basicstore' ); ?></th>
 					<td><?php echo esc_html( $order->get_billing_email() ); ?></td>
 				</tr>
 			<?php endif; ?>
 
 			<?php if ( $order->get_billing_phone() ) : ?>
 				<tr>
-					<th><?php _e( 'Phone:', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Phone:', 'basicstore' ); ?></th>
 					<td><?php echo esc_html( $order->get_billing_phone() ); ?></td>
 				</tr>
 			<?php endif; ?>
@@ -68,11 +68,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 				<div class="panel panel-default addresses">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
+				    <h3 class="panel-title"><?php _e( 'Billing Address', 'basicstore' ); ?></h3>
 				  </div>
 				  <div class="panel-body">
 						<address>
-							<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
+							<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
 						</address>
 				  </div>
 				</div>
@@ -81,11 +81,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="col-sm-6">
 				<div class="panel panel-default addresses">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
+				    <h3 class="panel-title"><?php _e( 'Billing Address', 'basicstore' ); ?></h3>
 				  </div>
 				  <div class="panel-body">
 						<address>
-							<?php echo ( $address = $order->get_formatted_shipping_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
+							<?php echo ( $address = $order->get_formatted_shipping_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
 						</address>
 				  </div>
 				</div>

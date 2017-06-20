@@ -51,11 +51,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> <span class="sr-only">%s</span>
 								</a>',
 								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-								__( 'Remove this item', 'woocommerce' ),
+								__( 'Remove this item', 'basicstore' ),
 								esc_attr( $product_id ),
 								esc_attr( $_product->get_sku() ),
-								__( 'Remove this item', 'woocommerce' ),
-								__( 'Remove this item', 'woocommerce' )
+								__( 'Remove this item', 'basicstore' ),
+								__( 'Remove this item', 'basicstore' )
 							), $cart_item_key );
 						?>
 						<?php if ( ! $_product->is_visible() ) : ?>
@@ -81,14 +81,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php else : ?>
 
-	<p class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
+	<p class="empty"><?php _e( 'No products in the cart.', 'basicstore' ); ?></p>
 
 <?php endif; ?>
 
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+	<p class="total"><strong><?php _e( 'Subtotal', 'basicstore' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 

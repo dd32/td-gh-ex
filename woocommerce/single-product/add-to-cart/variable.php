@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
-		<p class="stock out-of-stock text-warning"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
+		<p class="stock out-of-stock text-warning"><?php _e( 'This product is currently out of stock and unavailable.', 'basicstore' ); ?></p>
 	<?php else : ?>
 
 		<div class="variations">
@@ -45,7 +45,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							<?php
 								$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 								wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected, 'class' => 'form-control' ) );
-								echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations btn btn-sm btn-warning" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) : '';
+								echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations btn btn-sm btn-warning" href="#">' . esc_html__( 'Clear', 'basicstore' ) . '</a>' ) : '';
 							?>
 						</div>
 

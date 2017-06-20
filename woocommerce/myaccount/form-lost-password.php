@@ -24,12 +24,12 @@ wc_print_notices(); ?>
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-	<p class="lead"><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); ?></p>
+	<p class="lead"><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'basicstore' ) ); ?></p>
 
 	<div class="well">
 
 		<div class="form-group woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
-			<label for="user_login"><?php _e( 'Username or email', 'woocommerce' ); ?></label>
+			<label for="user_login"><?php _e( 'Username or email', 'basicstore' ); ?></label>
 			<input class="form-control woocommerce-Input woocommerce-Input--text input-text" type="text" name="user_login" id="user_login" />
 		</div>
 
@@ -39,7 +39,7 @@ wc_print_notices(); ?>
 
 		<p class="woocommerce-FormRow form-row">
 			<input type="hidden" name="wc_reset_password" value="true" />
-			<input type="submit" class="btn btn-primary woocommerce-Button button" value="<?php esc_attr_e( 'Reset Password', 'woocommerce' ); ?>" />
+			<input type="submit" class="btn btn-primary woocommerce-Button button" value="<?php esc_attr_e( 'Reset Password', 'basicstore' ); ?>" />
 		</p>
 
 		<?php wp_nonce_field( 'lost_password' ); ?>

@@ -50,7 +50,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 								<?php elseif ( 'order-number' === $column_id ) : ?>
 									<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
-										<?php echo _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number(); ?>
+										<?php echo _x( '#', 'hash before order number', 'basicstore' ) . $order->get_order_number(); ?>
 									</a>
 
 								<?php elseif ( 'order-date' === $column_id ) : ?>
@@ -62,7 +62,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 								<?php elseif ( 'order-total' === $column_id ) : ?>
 									<?php
 									/* translators: 1: formatted order total 2: total order items */
-									printf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count );
+									printf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'basicstore' ), $order->get_formatted_order_total(), $item_count );
 									?>
 
 								<?php elseif ( 'order-actions' === $column_id ) : ?>
@@ -70,18 +70,18 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										$actions = array(
 											'pay'    => array(
 												'url'  => $order->get_checkout_payment_url(),
-												'name' => __( 'Pay', 'woocommerce' ),
+												'name' => __( 'Pay', 'basicstore' ),
 												'btn-class' => 'btn-primary' ,
 
 											),
 											'view'   => array(
 												'url'  => $order->get_view_order_url(),
-												'name' => __( 'View', 'woocommerce' ),
+												'name' => __( 'View', 'basicstore' ),
 												'btn-class' => 'btn-info',
 											),
 											'cancel' => array(
 												'url'  => $order->get_cancel_order_url( wc_get_page_permalink( 'myaccount' ) ),
-												'name' => __( 'Cancel', 'woocommerce' ),
+												'name' => __( 'Cancel', 'basicstore' ),
 												'btn-class' => 'btn-warning',
 											)
 										);
@@ -117,11 +117,11 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 		<ul class="pager woocommerce-pagination woocommerce-pagination--without-numbers woocommerce-Pagination">
 
 			<?php if ( 1 !== $current_page ) : ?>
-				<li class=""><a class="woocommerce-button woocommerce-button--previous woocommerce-Button woocommerce-Button--previous button" href="<?php echo esc_url( wc_get_endpoint_url( 'orders', $current_page - 1 ) ); ?>"><span aria-hidden="true">&larr;</span> <?php _e( 'Previous', 'woocommerce' ); ?></a></li>
+				<li class=""><a class="woocommerce-button woocommerce-button--previous woocommerce-Button woocommerce-Button--previous button" href="<?php echo esc_url( wc_get_endpoint_url( 'orders', $current_page - 1 ) ); ?>"><span aria-hidden="true">&larr;</span> <?php _e( 'Previous', 'basicstore' ); ?></a></li>
 			<?php endif; ?>
 
 			<?php if ( intval( $customer_orders->max_num_pages ) !== $current_page ) : ?>
-				<li class=""><a class="woocommerce-button woocommerce-button--next woocommerce-Button woocommerce-Button--next button" href="<?php echo esc_url( wc_get_endpoint_url( 'orders', $current_page + 1 ) ); ?>"><?php _e( 'Next', 'woocommerce' ); ?> <span aria-hidden="true">&rarr;</span></a></li>
+				<li class=""><a class="woocommerce-button woocommerce-button--next woocommerce-Button woocommerce-Button--next button" href="<?php echo esc_url( wc_get_endpoint_url( 'orders', $current_page + 1 ) ); ?>"><?php _e( 'Next', 'basicstore' ); ?> <span aria-hidden="true">&rarr;</span></a></li>
 			<?php endif; ?>
 
 		</ul>
@@ -130,12 +130,12 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php else : ?>
 	<p class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info alert alert-warning" role="alert">
-		<?php _e( 'No order has been made yet.', 'woocommerce' ); ?>
+		<?php _e( 'No order has been made yet.', 'basicstore' ); ?>
 	</p>
 
 	<p><a class="woocommerce-Button button btn btn-default" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<?php _e( 'Go shop', 'woocommerce' ) ?>
+		<?php _e( 'Go shop', 'basicstore' ) ?>
 	</a></p>
 
 <?php endif; ?>

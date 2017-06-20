@@ -32,19 +32,19 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 				<div class="form-group">
 				</div>
 				<div class="form-group form-row-first">
-					<label for="account_first_name" class="col-sm-4 control-label"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<label for="account_first_name" class="col-sm-4 control-label"><?php _e( 'First name', 'basicstore' ); ?> <span class="required">*</span></label>
 					<div class="col-md-8">
 						<input type="text" class="form-control" name="account_first_name" id="account_first_name" value="<?php echo esc_attr( $user->first_name ); ?>" />
 					</div>
 				</div>
 				<div class="form-group form-row-last">
-					<label for="account_last_name" class="col-sm-4 control-label"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<label for="account_last_name" class="col-sm-4 control-label"><?php _e( 'Last name', 'basicstore' ); ?> <span class="required">*</span></label>
 					<div class="col-md-8">
 						<input type="text" class="form-control" name="account_last_name" id="account_last_name" value="<?php echo esc_attr( $user->last_name ); ?>" />
 					</div>
 				</div>
 				<div class="form-group form-row-wide">
-					<label for="account_email" class="col-sm-4 control-label"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<label for="account_email" class="col-sm-4 control-label"><?php _e( 'Email address', 'basicstore' ); ?> <span class="required">*</span></label>
 					<div class="col-md-8">
 						<input type="email" class="form-control" name="account_email" id="account_email" value="<?php echo esc_attr( $user->user_email ); ?>" />
 					</div>
@@ -57,25 +57,25 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 			<fieldset>
 
 				<div class="col-md-offset-4 col-md-8">
-					<legend><?php _e( 'Password Change', 'woocommerce' ); ?></legend>
+					<legend><?php _e( 'Password Change', 'basicstore' ); ?></legend>
 				</div>
 
 				<div class="form-group form-row-wide">
-					<label for="password_current" class="col-sm-4 control-label"><?php _e( 'Current Password', 'woocommerce' ); ?></label>
+					<label for="password_current" class="col-sm-4 control-label"><?php _e( 'Current Password', 'basicstore' ); ?></label>
 					<div class="col-md-8">
 						<input type="password" class="form-control" name="password_current" id="password_current" />
-						<span class="help-block"><?php _e( 'Leave blank to leave unchanged', 'woocommerce' ); ?></span>
+						<span class="help-block"><?php _e( 'Leave blank to leave unchanged', 'basicstore' ); ?></span>
 					</div>
 				</div>
 				<div class="form-group form-row-wide">
-					<label for="password_1" class="col-sm-4 control-label"><?php _e( 'New Password', 'woocommerce' ); ?></label>
+					<label for="password_1" class="col-sm-4 control-label"><?php _e( 'New Password', 'basicstore' ); ?></label>
 					<div class="col-md-8">
 						<input type="password" class="form-control" name="password_1" id="password_1" />
-						<span class="help-block"><?php _e( 'Leave blank to leave unchanged', 'woocommerce' ); ?></span>
+						<span class="help-block"><?php _e( 'Leave blank to leave unchanged', 'basicstore' ); ?></span>
 					</div>
 				</div>
 				<div class="form-group form-row-wide">
-					<label for="password_2" class="col-sm-4 control-label"><?php _e( 'Confirm New Password', 'woocommerce' ); ?></label>
+					<label for="password_2" class="col-sm-4 control-label"><?php _e( 'Confirm New Password', 'basicstore' ); ?></label>
 					<div class="col-md-8">
 						<input type="password" class="form-control" name="password_2" id="password_2" />
 					</div>
@@ -84,7 +84,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 				<div class="form-group form-row-wide">
 					<?php wp_nonce_field( 'save_account_details' ); ?>
 					<div class="col-md-offset-4 col-md-8">
-						<input type="submit" class="btn btn-primary" name="save_account_details" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>" />
+						<input type="submit" class="btn btn-primary" name="save_account_details" value="<?php esc_attr_e( 'Save changes', 'basicstore' ); ?>" />
 						<input type="hidden" name="action" value="save_account_details" />
 					</div>
 				</div>

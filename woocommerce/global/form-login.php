@@ -31,14 +31,14 @@ if ( is_user_logged_in() ) {
 	<?php if ( $message ) echo wpautop( wptexturize( $message ) ); ?>
 
 	<div class="form-group">
-		<label for="username" class="control-label col-sm-3"><?php _e( 'Username or email', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<label for="username" class="control-label col-sm-3"><?php _e( 'Username or email', 'basicstore' ); ?> <span class="required">*</span></label>
 		<div class="col-md-9">
 			<input type="text" class="input-text form-control" name="username" id="username" />
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label for="password" class="control-label col-sm-3"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<label for="password" class="control-label col-sm-3"><?php _e( 'Password', 'basicstore' ); ?> <span class="required">*</span></label>
 		<div class="col-md-9">
 			<input class="input-text form-control" type="password" name="password" id="password" />
 		</div>
@@ -48,7 +48,7 @@ if ( is_user_logged_in() ) {
     <div class="col-sm-offset-3 col-sm-9">
       <div class="checkbox">
         <label for="rememberme">
-        	<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
+        	<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'basicstore' ); ?>
         </label>
       </div>
     </div>
@@ -56,13 +56,13 @@ if ( is_user_logged_in() ) {
 
 	<div class="form-group">
     <div class="col-md-offset-3 col-sm-9">
-      <input type="submit" class="btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+      <input type="submit" class="btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'basicstore' ); ?>" />
     </div>
   </div>
 
 	<div class="form-group">
     <div class="col-md-offset-3 col-sm-9">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'basicstore' ); ?></a>
     </div>
   </div>
 

@@ -34,10 +34,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<tr>
 					<th class="product-remove">&nbsp;</th>
 					<th class="product-thumbnail">&nbsp;</th>
-					<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-					<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-					<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-					<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
+					<th class="product-name"><?php _e( 'Product', 'basicstore' ); ?></th>
+					<th class="product-price"><?php _e( 'Price', 'basicstore' ); ?></th>
+					<th class="product-quantity"><?php _e( 'Quantity', 'basicstore' ); ?></th>
+					<th class="product-subtotal"><?php _e( 'Total', 'basicstore' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,11 +60,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 										<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> <span class="sr-only">%s</span>
 										</a>',
 										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-										__( 'Remove this item', 'woocommerce' ),
+										__( 'Remove this item', 'basicstore' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() ),
-										__( 'Remove this item', 'woocommerce' ),
-										__( 'Remove this item', 'woocommerce' )
+										__( 'Remove this item', 'basicstore' ),
+										__( 'Remove this item', 'basicstore' )
 									), $cart_item_key );
 								?>
 							</td>
@@ -81,7 +81,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</td>
 
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'basicstore' ); ?>">
 								<?php
 									if ( ! $product_permalink ) {
 										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
@@ -94,18 +94,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 									// Backorder notification
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'basicstore' ) . '</p>';
 									}
 								?>
 							</td>
 
-							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'basicstore' ); ?>">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 								?>
 							</td>
 
-							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'basicstore' ); ?>">
 								<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -122,7 +122,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</td>
 
-							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
+							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'basicstore' ); ?>">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 								?>
@@ -141,17 +141,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php if ( wc_coupons_enabled() ) { ?>
 							<div class="coupon pull-left form-inline">
 
-								<label for="coupon_code" class="sr-only"><?php _e( 'Coupon:', 'woocommerce' ); ?></label>
+								<label for="coupon_code" class="sr-only"><?php _e( 'Coupon:', 'basicstore' ); ?></label>
 
-								<input type="text" name="coupon_code" class="input-text form-control input-sm" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+								<input type="text" name="coupon_code" class="input-text form-control input-sm" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'basicstore' ); ?>" />
 
-								<input type="submit" class="button btn btn-default btn-sm" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+								<input type="submit" class="button btn btn-default btn-sm" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'basicstore' ); ?>" />
 
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
 
-						<input type="submit" class="button btn btn-info pull-right btn-sm" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+						<input type="submit" class="button btn btn-info pull-right btn-sm" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'basicstore' ); ?>" />
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 

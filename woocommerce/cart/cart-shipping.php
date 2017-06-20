@@ -54,9 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				do_action( 'woocommerce_after_shipping_rate', $method, $index );
 			?>
 		<?php elseif ( ! WC()->customer->has_calculated_shipping() ) : ?>
-			<?php echo wpautop( __( 'Shipping costs will be calculated once you have provided your address.', 'woocommerce' ) ); ?>
+			<?php echo wpautop( __( 'Shipping costs will be calculated once you have provided your address.', 'basicstore' ) ); ?>
 		<?php else : ?>
-			<?php echo apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please double check your address, or contact us if you need any help.', 'woocommerce' ) ) ); ?>
+			<?php echo apply_filters( is_cart() ? 'woocommerce_cart_no_shipping_available_html' : 'woocommerce_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please double check your address, or contact us if you need any help.', 'basicstore' ) ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( $show_package_details ) : ?>

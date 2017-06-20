@@ -32,15 +32,15 @@ if ( ! is_ajax() ) {
 						wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 					}
 				} else {
-					echo '<p class="text-warning">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) : __( 'Please fill in your details above to see available payment methods.', 'woocommerce' ) ) . '</p>';
+					echo '<p class="text-warning">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'basicstore' ) : __( 'Please fill in your details above to see available payment methods.', 'basicstore' ) ) . '</p>';
 				}
 			?>
 		</div>
 	<?php endif; ?>
 	<div class="form-row place-order">
 		<noscript>
-			<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?>
-			<br/><input type="submit" class="button btn btn-info alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>" />
+			<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'basicstore' ); ?>
+			<br/><input type="submit" class="button btn btn-info alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'basicstore' ); ?>" />
 		</noscript>
 
 		<?php wc_get_template( 'checkout/terms.php' ); ?>

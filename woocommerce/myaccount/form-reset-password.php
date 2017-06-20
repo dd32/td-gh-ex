@@ -24,14 +24,14 @@ wc_print_notices(); ?>
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-	<legend><?php echo apply_filters( 'woocommerce_reset_password_message', __( 'Enter a new password below.', 'woocommerce') ); ?></legend>
+	<legend><?php echo apply_filters( 'woocommerce_reset_password_message', __( 'Enter a new password below.', 'basicstore') ); ?></legend>
 
 	<div class="form-group woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
-		<label for="password_1"><?php _e( 'New password', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<label for="password_1"><?php _e( 'New password', 'basicstore' ); ?> <span class="required">*</span></label>
 		<input type="password" class="form-control woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" />
 	</div>
 	<div class="form-group woocommerce-FormRow woocommerce-FormRow--last form-row form-row-last">
-		<label for="password_2"><?php _e( 'Re-enter new password', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<label for="password_2"><?php _e( 'Re-enter new password', 'basicstore' ); ?> <span class="required">*</span></label>
 		<input type="password" class="form-control woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" />
 	</div>
 
@@ -42,7 +42,7 @@ wc_print_notices(); ?>
 
 	<div class="form-group woocommerce-FormRow form-row">
 		<input type="hidden" name="wc_reset_password" value="true" />
-		<input type="submit" class="btn btn-primary woocommerce-Button button" value="<?php esc_attr_e( 'Save', 'woocommerce' ); ?>" />
+		<input type="submit" class="btn btn-primary woocommerce-Button button" value="<?php esc_attr_e( 'Save', 'basicstore' ); ?>" />
 	</div>
 
 	<?php wp_nonce_field( 'reset_password' ); ?>

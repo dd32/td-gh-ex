@@ -25,12 +25,12 @@ $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' => __( 'Billing Address', 'woocommerce' ),
-		'shipping' => __( 'Shipping Address', 'woocommerce' )
+		'billing' => __( 'Billing Address', 'basicstore' ),
+		'shipping' => __( 'Shipping Address', 'basicstore' )
 	), $customer_id );
 } else {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' =>  __( 'Billing Address', 'woocommerce' )
+		'billing' =>  __( 'Billing Address', 'basicstore' )
 	), $customer_id );
 }
 
@@ -39,7 +39,7 @@ $col    = 1;
 ?>
 
 <p class="myaccount_address">
-	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', __( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); ?>
+	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', __( 'The following addresses will be used on the checkout page by default.', 'basicstore' ) ); ?>
 </p>
 
 
@@ -75,12 +75,12 @@ $col    = 1;
 						$formatted_address = WC()->countries->get_formatted_address( $address );
 
 						if ( ! $formatted_address )
-							_e( 'You have not set up this type of address yet.', 'woocommerce' );
+							_e( 'You have not set up this type of address yet.', 'basicstore' );
 						else
 							echo $formatted_address;
 					?>
 				</address>
-				<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="btn btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?php _e( 'Edit', 'woocommerce' ); ?></a>
+				<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="btn btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?php _e( 'Edit', 'basicstore' ); ?></a>
 			</div>
 		</div>
 	</div>
