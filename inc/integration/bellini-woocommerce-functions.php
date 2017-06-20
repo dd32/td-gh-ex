@@ -235,7 +235,7 @@ add_filter( 'product_cat_class' , 'bellini_product_cat_class' );
 --------------------------------------------------------------*/
 
 function bellini_woo_order_heading(){ ?>
-	<h3 class="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+	<h3 class="order_review_heading"><?php _e( 'Your order', 'bellini' ); ?></h3>
 <?php }
 
 

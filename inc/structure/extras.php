@@ -65,9 +65,9 @@ function bellini_sidebar_content_class(){
     if ( is_singular() && bellini_sidebar_active_left() && bellini_sidebar_active_right() ){
         echo 'col-md-6';
     }elseif( is_singular() && bellini_sidebar_active_left()){
-        echo 'col-md-9';
+        echo 'col-md-8';
     }elseif( is_singular() &&  bellini_sidebar_active_right()){
-        echo 'col-md-9';
+        echo 'col-md-8';
     }else{
         echo 'col-md-12';
     }

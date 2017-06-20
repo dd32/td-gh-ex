@@ -77,7 +77,8 @@
 .front__product-featured__image img {
     transition: all .3s ease-in-out;
     border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px
+    border-bottom-left-radius: 2px;
+    will-change: transform,box-shadow;
 }
 
 .front__product-featured__image img:hover{
@@ -359,6 +360,7 @@
     -moz-box-shadow: 0px 10px 16px rgba(0,0,0,0.1);
     box-shadow: 0px 10px 16px rgba(0,0,0,0.1);
     transition: all .3s ease-in-out;
+    will-change: transform,box-shadow;
 }
 
 .product-card__inner img {

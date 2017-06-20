@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce (WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.43.3
+Version: 1.43.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -238,6 +238,32 @@ big {
     content: "\f124";
 }
 
+.tagcloud a:before,
+.widget_recent_entries li:before,
+.widget_pages ul li:before,
+.widget_meta ul li:before,
+.widget_archive ul li:before,
+.widget_categories ul li:before {
+  font-family: "Ionicons";
+  margin-right:.5em;
+  opacity:.65;
+}
+
+.tagcloud a:before {content: "\f2aa";}
+.widget_categories ul li:before  {content: "\f41b";}
+.widget_archive ul li:before {content: "\f3eb";}
+.widget_pages ul li:before,.widget_meta ul li:before,.widget_recent_entries li:before { content: "\f12f";}
+
+blockquote:before {
+    font-family: FontAwesome;
+    content: "\f10d";
+}
+
+blockquote:after {
+    font-family: FontAwesome;
+    content: "\f10e";
+}
+
 
 /*--------------------------------------------------------------
 # 2.0 - Elements
@@ -360,8 +386,7 @@ video {
     box-sizing: border-box;
 }
 
-blockquote:before,
-blockquote:after,
+
 q:before,
 q:after {
     content: '';
@@ -398,12 +423,12 @@ li > ol {
     margin-left: 1.5em;
 }
 
-dt {
-    font-weight: bold;
+dt,table caption {
+    font-weight: 700
 }
 
 dd {
-    margin: 0 1.5em 1.5em;
+    margin: 0 1.5em 1.5em
 }
 
 img {
@@ -414,19 +439,27 @@ img {
 blockquote {
     position: relative;
     margin: 30px 0;
-    border-left: 3px solid;
-    padding-left: 15px;
-    font-size: 1.168em;
+    padding-left: 40px;
 }
 
-blockquote:before {
-    content: "\201C";
-    font-size: 3.75em;
+blockquote:before{
+    font-size: 2em;
     font-weight: bold;
     font-style: normal;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -10px;
+    line-height: .2;
+}
+
+blockquote:after{
+  font-size: 2em;
+  font-weight: bold;
+  font-style: normal;
+  position: absolute;
+  bottom:0;
+  right: 0;
+  line-height: .2;
 }
 
 /*--------------------------------------------------------------
@@ -514,16 +547,18 @@ textarea {
   transition: all 0.5s ease-in-out;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
+input[type=email]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
 textarea:focus {
-  outline: none;
-  box-shadow: 0 0 1px 2px #ebe9ee;
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+    outline: 0;
+    box-shadow: 0 0 8px #ebe9ee;
+   -webkit-box-shadow: 0 0 8px #ebe9ee;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .sidebar input[type="text"]:focus,
@@ -2239,6 +2274,33 @@ object {
 ## 14.0 - Single Post
 --------------------------------------------------------------*/
 
+/*************** Single article content styling ****************/
+
+.single-post__content p,
+.single-post__content,
+.single-content p a,
+.single-post__content li{
+  font-size: 1.8rem;
+  line-height:34px;
+}
+
+.single-post__content li {
+  text-indent: 0;
+}
+
+.single-post__content ul,
+.single-post__content ol{
+  padding:0 0 60px 20px;
+}
+
+.single-post__content h2{
+  margin: 50px 0 30px;
+}
+
+.single-post__content h3{
+  margin: 0 0 20px 0;
+}
+
 /*--------------------------------------------------------------
 ## 14.1 - Single Post Layout 1
 --------------------------------------------------------------*/
@@ -2262,7 +2324,7 @@ object {
 }
 
 .single-post__title {
-    width: 55%;
+    width: 70%;
     margin-top: 1%;
     margin-bottom: 2%;
     padding-top: .5%;
@@ -2293,10 +2355,6 @@ object {
     color: inherit;
 }
 
-.post-meta__time{
-    text-decoration: none;
-}
-
 .post-meta__category {
     display: inline-block;
     margin-right: 1%;
@@ -2314,15 +2372,11 @@ object {
 }
 
 .single-post__body {
-    margin-top: 2em;
+    margin-top: 1.2em;
     padding-top: 1em;
     padding-bottom: 4%;
     border-top: 1px solid rgba(0,0,0,.1);
     word-break: break-word;
-}
-
-.post-meta__author {
-    display: inline-block;
 }
 
 .post-meta__author__link {
@@ -2331,29 +2385,20 @@ object {
 }
 
 .post-meta__author,
+.post-meta__author a,
 .post-meta__time,
 .comments-link {
     margin-bottom: .5em;
+    margin-right: .25em;
     padding-bottom: 0;
-    display: block;
+    display: inline-block;
+    text-decoration: none;
+    font-size: .9em;
+    line-height: 1;
 }
 
 .single-post__body p {
     margin: .618em auto;
-}
-
-.single-post__body a,
-.single-post__body--l2 a,
-.single-post__body--l3 a {
-    border-bottom:.14em solid;
-    text-decoration: none;
-    transition: border-bottom .1s ease-in-out;
-}
-
-.single-post__body a:hover,
-.single-post__body--l2 a:hover,
-.single-post__body--l3 a:hover {
-    border-bottom: .16em solid;
 }
 
 
@@ -2551,7 +2596,7 @@ object {
     display: block;
     position: relative;
     margin: 0 0 1.5em;
-    padding:10%;
+    padding: 0 1.5em;
     border-radius: .125em;
     overflow: hidden;
     -ms-border-radius: .125em;
@@ -2622,19 +2667,21 @@ object {
     right: 0;
 }
 
-.widget_search{
-    padding-top:1.5em;
+.widget_search {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .widget_search .search-submit {
     display: none;
 }
 
-.widget_search input[type=search] {
-    padding: .5em;
+.widget_search .search-form input[type="search"],
+.widget_search input[type="search"] {
+    padding: 10px 10px 10px 40px;
+    border-radius: 4px;
     border: 1px solid rgba(0,0,0,.15);
     box-sizing: border-box;
-    border-radius: 2px;
     line-height: 2;
     width: 100%;
     -moz-box-sizing: border-box;
@@ -2777,6 +2824,43 @@ object {
     padding-left:0;
 }
 
+.recent__post__image {padding:0;}
+
+.recent__post__info {
+    font-size: .95em;
+    line-height: 1.4;
+    padding-top: .25em;
+}
+
+.recent__post__info .meta{
+    font-size: .85em;
+    font-style:italic;
+    padding:0;
+    margin-bottom: .15em;
+    opacity: .85;
+}
+
+.widget.recent .flexify--center {
+  padding: .4em 0;
+  padding-bottom: 1em;
+}
+
+.widget.recent {padding: 0;}
+.recent__post__info a{font-weight:600;}
+
+ .widget_recent_comments .avatar{
+     width:65px;
+     height:65px;
+     border-radius:50%;
+ }
+
+
+ .widget_recent_comments .recentcomments{
+     margin-bottom:.7em;
+ }
+
+.recent-comment__content {padding: 0; font-size: .95em;}
+.recent-comment__content a{font-style:italic;}
 /*--------------------------------------------------------------
 # 17.0 - Plugins Support
 --------------------------------------------------------------*/

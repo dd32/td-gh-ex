@@ -388,6 +388,7 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hook
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/widget-native-customize.php');
 
 /**
  * Support for Jetpack
@@ -404,4 +405,14 @@ if ( class_exists( 'Jetpack' )){
 if ( is_woocommerce_activated() ) {
 	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-functions.php');
 	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-hooks.php');
+}
+
+
+add_action( 'widgets_init', 'pangolin_register_bellini_widgets');
+
+function pangolin_register_bellini_widgets(){
+    unregister_widget( 'WP_Widget_Recent_Posts' );
+    register_widget( 'Bellini_Recent_Posts_Widget' );
+    unregister_widget( 'WP_Widget_Recent_Comments' );
+    register_widget( 'Bellini_Recent_Comments_Widget' );
 }
