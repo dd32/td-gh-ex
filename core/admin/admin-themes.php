@@ -70,7 +70,34 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 					<h1 class="section-title">WordPress Themes</h1>
 				</div>
 			</div>
-			
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/fashion.png" class="img-responsive" alt=""/>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Fashionair E-Commerce WordPress Theme</a></h2>
+						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
+						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
+						<div>
+						<p><strong>Description: </strong>
+						Fashionair Premium WordPress Theme is for your Online business, portfolio, blogging or any type of site.You can create your online retail store for selling and tradding. </div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number">$<span>39</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/fashionair-premium/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/fashionair-premium/">Buy Now</a>
+				</div>			
+			</div>
+		</div>
+		
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">
@@ -243,121 +270,12 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			</div>
 		</div>
 		
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Creative.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Creative- Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						Creative is a Full Responsive Multi-Purpose Theme suitable for Business , corporate office and others .Competible with WPML & Woo Commerce Plugin.</p>
-						</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>39</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/creative-premium/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/creative-premium/">Buy Now</a>
-				</div>				
-			</div>
-		</div>
 		
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Chronicle.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Chronicle- Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						Chronicle is a Full Responsive Multi-Purpose Theme suitable for Business , corporate office and others .Cool Blog Layout and full width page also present.</p>
-						</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>35</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/chronicle-premium-theme/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/chronicle-premium-theme/">Buy Now</a>
-				</div>
-			</div>
-		</div>
+		
+		
+		
 	
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Guardian.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Guardian- Ultimate Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						Guardian is a Full Responsive Multi-Purpose Theme suitable for Business , corporate office and others .Cool Blog Layout and full width page also present.</p>
-						</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>39</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/guardian-premium-theme/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/guardian-premium-theme/">Buy Now</a>
-				</div>
-			</div>
-		</div>
-	
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Weblizar.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Weblizar- Ultimate Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						A Responsive WordPress Theme for Business & Corporate Sector’s . Clean And Eye Catching Design with Crisp Look..</p>
-						</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>29</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/weblizar-premium-theme/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/weblizar-premium-theme/">Buy Now</a>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </div>
 <!----Plugin----->

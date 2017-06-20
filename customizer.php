@@ -75,7 +75,40 @@ $wp_customize->add_section(
 		)
 	);
 	// site title and logo position : left and center //
-	
+	// logo height width //
+	$wp_customize->add_setting(
+		'enigma_options[logo_height]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['height'],
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'logo_height', array(
+		'label'        => __( 'Logo Height', 'enigma' ),
+		'description' => '',
+		'type'=>'text',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[logo_height]',
+	) );
+	$wp_customize->add_setting(
+		'enigma_options[logo_width]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['width'],
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'logo_width', array(
+		'label'        => __( 'Logo Width', 'enigma' ),
+		'description' => '',
+		'type'=>'text',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[logo_width]',
+	) );
+	// logo height width //
 	$wp_customize->add_setting(
 	'enigma_options[custom_css]',
 		array(
@@ -106,7 +139,7 @@ $wp_customize->add_section(
 
     //
 
-		$wp_customize->add_setting(
+	$wp_customize->add_setting(
 		'enigma_options[slider_image_speed]',
 		array(
 			'type'    => 'option',
@@ -568,8 +601,8 @@ $wp_customize->add_section(
         array(
 			'label'        => __( 'Service Icon One', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
-            'section'  => 'service_section',
 			'type'=>'text',
+            'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_1_icons]'
         )
     );
@@ -601,12 +634,12 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_title]'
 	) );
-		$wp_customize->add_control( 'enigma_options[service_2_icons]',
+		$wp_customize->add_control('enigma_options[service_2_icons]',
         array(
 			'label'        => __( 'Service Icon Two', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
-            'section'  => 'service_section',
 			'type'=>'text',
+            'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_2_icons]'
         )
     );
@@ -639,8 +672,8 @@ $wp_customize->add_section(
         array(
 			'label'        => __( 'Service Icon Three', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
-            'section'  => 'service_section',
 			'type'=>'text',
+            'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_3_icons]'
         )
     );
@@ -789,6 +822,22 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'blog_section',
 		'settings'   => 'enigma_options[blog_title]',
+	) );
+	$wp_customize->add_setting(
+		'enigma_options[blog_speed]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['blog_speed'],
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'blog_speed', array(
+		'label'        => __( 'Slider Speed Option', 'enigma' ),
+		'description' => 'Value will be in milliseconds',
+		'type'=>'text',
+		'section'    => 'blog_section',
+		'settings'   => 'enigma_options[blog_speed]',
 	) );
 	
 /* Font Family Section */
@@ -1226,11 +1275,7 @@ $wp_customize->add_section(
 				'section'  => 'enigma_more',
 				'settings' => 'enigma_more',
 				'priority' => 1,
-			) ) ); 
-
-			
-
-			
+			) ) ); 		
 }
 function enigma_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
@@ -1262,7 +1307,7 @@ class enigma_Customize_Misc_Control extends WP_Customize_Control {
     }
 }
 endif;
-
+		
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'More_Enigma_Control' ) ) :
 class More_Enigma_Control extends WP_Customize_Control {
 
@@ -1274,9 +1319,6 @@ class More_Enigma_Control extends WP_Customize_Control {
 		<div class="row">
 		<div class="col-md-4">
 				<div class="stitched"><?php _e("Coupon Code : 10%OFF","enigma") ;?>	</div>
-		
-		
-		
 		</div>
 		</div>
 		<label style="overflow: hidden; zoom: 1;">

@@ -96,4 +96,4 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<div id="port-prev" class="enigma_carousel-next" ><i class="fa fa-arrow-right"></i></div>
 	</div>
 	</div>
-</div>
+</div>    

@@ -113,6 +113,7 @@
 			//BLOG Settings
 			'show_blog' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
+			'blog_speed'=>'2000',
 			
 			//Google font style
 			'main_heading_font' => 'Open Sans',
@@ -159,7 +160,12 @@ add_theme_support( 'custom-header', $args );
 		add_theme_support( 'title-tag' );
 		
 		// Logo
-		add_theme_support( 'custom-logo', array());
+		add_theme_support( 'custom-logo', array(
+			'width'       => 250,
+			'height'      => 250,
+			'flex-width'  => true,
+			'flex-height'  => true,
+		));
 		
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
@@ -210,7 +216,6 @@ add_theme_support( 'custom-header', $defaults );
 	return '';
 	}
 	add_filter('excerpt_more', 'weblizar_excerpt_more');
-	
 	
 	if ( ! function_exists( 'enigma_header_style' ) ) :
 	function enigma_header_style() {
@@ -451,7 +456,7 @@ endif;
 	</span> 
 	</nav>
 	</div>	
-<?php 
+<?php
 	}
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
@@ -514,5 +519,4 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
-
 ?>
