@@ -23,17 +23,10 @@ class Wortex_Customizer {
 			'priority'   => 10,
 		) );
 
-		if ( ! function_exists('wp_site_icon') ) :
-		$wp_customize->add_section( 'wortex_logo_favicon' , array(
-			'title'      => __( 'Logo & Favicon', 'wortex-lite' ),
-			'priority'   => 20,
-		) );
-		else:
-		$wp_customize->add_section( 'wortex_logo_favicon' , array(
+		$wp_customize->add_section( 'wortex_logo_settings' , array(
 			'title'      => __( 'Logo', 'wortex-lite' ),
 			'priority'   => 20,
 		) );
-		endif;
 
 		$wp_customize->add_section( 'wortex_blog_settings' , array(
 			'title'      => __( 'Blog Settings', 'wortex-lite' ),
@@ -81,29 +74,11 @@ class Wortex_Customizer {
 				array(
 					'label'      => __( 'Upload your logo', 'wortex-lite' ),
 					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'wortex-lite'),
-					'section'    => 'wortex_logo_favicon',
+					'section'    => 'wortex_logo_settings',
 					'settings'   => 'wortex_logo',
 				)
 			)
 		);
-
-		// Setting and control for favicon
-		if ( ! function_exists('wp_site_icon') ) :
-			$wp_customize->add_setting( 'wortex_favicon' , array(
-				'default'     => '',
-				'sanitize_callback' => 'esc_url_raw',
-			) );
-			$wp_customize->add_control(
-				new WP_Customize_Image_Control( $wp_customize, 'wortex_favicon',
-					array(
-						'label'			=> __( 'Upload a custom favicon', 'wortex-lite' ),
-						'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'wortex-lite'),
-						'section'		=> 'wortex_logo_favicon',
-						'settings'		=> 'wortex_favicon',
-					)
-				)
-			);
-		endif;
 
 		// Setting and control for blog index content switch
 		$wp_customize->add_setting( 'wortex_blog_index_content' , array(
