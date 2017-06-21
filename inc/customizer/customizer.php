@@ -18,17 +18,10 @@ class BoldR_Customizer {
 		$wp_customize->get_section( 'background_image' )->title = __('Background', 'boldr-lite');
 
 		// Add new sections
-		if ( ! function_exists('wp_site_icon') ) :
-		$wp_customize->add_section( 'boldr_logo_favicon' , array(
-			'title'      => __( 'Logo & Favicon', 'boldr-lite' ),
-			'priority'   => 20,
-		) );
-		else:
-		$wp_customize->add_section( 'boldr_logo_favicon' , array(
+		$wp_customize->add_section( 'boldr_logo_settings' , array(
 			'title'      => __( 'Logo', 'boldr-lite' ),
 			'priority'   => 20,
 		) );
-		endif;
 
 		$wp_customize->add_section( 'boldr_blog_settings' , array(
 			'title'      => __( 'Blog Settings', 'boldr-lite' ),
@@ -55,29 +48,11 @@ class BoldR_Customizer {
 				array(
 					'label'      => __( 'Upload your logo', 'boldr-lite' ),
 					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'boldr-lite'),
-					'section'    => 'boldr_logo_favicon',
+					'section'    => 'boldr_logo_settings',
 					'settings'   => 'boldr_logo',
 				)
 			)
 		);
-
-		// Setting and control for favicon
-		if ( ! function_exists('wp_site_icon') ) :
-			$wp_customize->add_setting( 'boldr_favicon' , array(
-				'default'     => '',
-				'sanitize_callback' => 'esc_url_raw',
-			) );
-			$wp_customize->add_control(
-				new WP_Customize_Image_Control( $wp_customize, 'boldr_favicon',
-					array(
-						'label'			=> __( 'Upload a custom favicon', 'boldr-lite' ),
-						'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'boldr-lite'),
-						'section'		=> 'boldr_logo_favicon',
-						'settings'		=> 'boldr_favicon',
-					)
-				)
-			);
-		endif;
 
 		// Setting and control for blog index content switch
 		$wp_customize->add_setting( 'boldr_blog_index_content' , array(
