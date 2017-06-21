@@ -80,7 +80,7 @@ sub{bottom:-0.25em}
 img{border:0}
 svg:not(:root){overflow:hidden}
 figure{margin:1em 40px}
-hr{box-sizing:content-box;height:2px;}
+hr{box-sizing:content-box;height:2px;background-color:#ccc;}
 pre{overflow:auto}
 code,kbd,pre,samp{font-family:'Inconsolata', monospace;font-size:1em}
 /* button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0} */
@@ -653,7 +653,7 @@ kbd,
 tt,
 var {
 	font-family:	'Inconsolata', monospace;
-	}
+}
 del {
 }
 
@@ -701,6 +701,10 @@ pre {
 	white-space:			pre-wrap;
 }
 
+q {
+	font-style: italic;
+}
+
 sup,
 sub {
 	font-size:			.85em;
@@ -711,10 +715,6 @@ var {
 }
 
 /* tables */
-table {
-	border-collapse:    collapse;
-	border-spacing:     0;
-}
 
 th {
 	text-align:			left;

@@ -189,6 +189,8 @@ function weaverx_save_opts($who='', $bump = true) {
 		require_once(get_template_directory() . '/includes/generatecss.php');
 		weaverx_fwrite_current_css();
 	}
+	do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
+
 }
 
 function weaverx_e_opt($opt,$str) {

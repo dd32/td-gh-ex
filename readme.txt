@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 3.1.6
+Stable tag: 3.1.7
 
 == Description ==
 
@@ -416,3 +416,10 @@ with testing and feature suggestions.
 * Tweak: Woocommerce title clear:none rule added to stylesheet
 * Tweak: Font Family for some subthemes
 * Tweaks: WP 4.8 compatibility: list styling for new WP Text Widget, remove Customizer column resize button
+
+= Version 3.1.7 =
+* New: new method of styling Page/Post editor when Weaver Xtreme Support 3.1.7 or later installed
+* Tweak: new styling method allows improved page/post styling to better match theme settings
+* Deprecated: old method of styling Page/Post editor - in the future, this will require Theme Support plugin
+* Fix: check for illegal column value when creating widget areas
+* Tweak: Weaver head JavaScript will load before most other scripts now

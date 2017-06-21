@@ -364,7 +364,7 @@ function weaverx_enqueue_styles() {
 //--
 
 
-add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts' );
+add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );	// early priority so load before most other scripts (added: 3.1.7)
 
 function weaverx_enqueue_scripts() {	// action definition
 

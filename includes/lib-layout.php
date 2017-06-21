@@ -746,7 +746,9 @@ function weaverx_add_widget_classes( $params ) {
 		}
 	}
 
-	$cols = weaverx_getopt_default( $opt_name . '_cols_int', 1);
+	$cols = weaverx_getopt( $opt_name . '_cols_int');
+	if ( !$cols || $cols < 1 )
+		$cols = 1;
 	if ( $cols > 8 )
 		$cols = 8;     // sanity check
 

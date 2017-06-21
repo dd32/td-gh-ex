@@ -406,6 +406,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 				require_once(get_template_directory() . '/includes/generatecss.php');
 				weaverx_fwrite_current_css();
 			}
+			do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
 		}
 
 		return true;
@@ -634,6 +635,7 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 			require_once(get_template_directory() . '/includes/generatecss.php');
 			weaverx_fwrite_current_css();
 		}
+		do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
 
 		return true;
 	}

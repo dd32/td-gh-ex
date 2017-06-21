@@ -80,13 +80,40 @@ h6 {
 
 
 /* -- blockquote */
-.mceContentBody blockquote {
-	font-style: italic;
-	font-weight: normal;
-	margin: 0 3em;
+
+blockquote {
+	background:		rgba(128, 128, 128, 0.1);
+	border-width:	0;
+	border-left:	4px solid rgba(128, 128, 128, 0.4);
+	margin:			1.5em;
+	overflow:		auto;
+	padding:		0.8em 1.5em 0 1.2em;
 }
 
-blockquote em, blockquote i, blockquote cite {
+blockquote cite {
+	font-style:		normal;
+	font-weight:	bold;
+}
+
+blockquote p {
+	font-style:		italic;
+	font-size:		1em;
+}
+
+em, i {
+	font-style:		italic;
+
+}
+
+cite {                  /* cite is supposed to be used only in a quote or blockquote */
+	border-width:	0;
+	display:		block;
+	margin-left:	3em;
+	margin-top:		.5em;
+}
+
+blockquote em,
+blockquote i {
 	font-style: italic;
 }
 
@@ -165,13 +192,16 @@ cite, em, i {
 cite {
 	border:none;
 }
+
+code,kbd,pre,samp{font-family:'Inconsolata', monospace;font-size:1em}
+
 code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: .9em;
-	line-height: 1.5em;
+	color: inherit !important;
+	background:none !important;
+	font-family:	'Inconsolata', monospace;
 }
 
 del {
@@ -179,13 +209,30 @@ del {
 }
 
 pre {
-	background: #ccc;
-	font-family:Courier, monospace;
-	font-size:.8em;
-	line-height: 1.1em;
-	margin-bottom: 1.625em;
-	padding: 1em 1em;
+	box-shadow:				0 1px 0 #ffffff, inset 0 1px 1px rgba(0, 0, 0, 0.2);
+	box-sizing:				border-box;
+	background:				rgba(128, 128, 128, 0.1);
+	border:					1px solid #aaaaaa;
+	border-bottom-color:    #cccccc;
+	border-radius:			2px;
+	font-family:			'Inconsolata', monospace;
+	font-size:				.8em;
+	height:					auto;
+	margin:					0;
+	margin-bottom:			1.5em;
+	outline:				none;
+	overflow:				auto;
+	padding:				6px 10px;
+	vertical-align:			middle;
+	width:					100%;
+	word-wrap:				break-word;
+	white-space:			pre-wrap;
 }
+
+q {
+	font-style: italic;
+}
+
 ins {
 	color:#222;
 	background: #ccc;
@@ -213,54 +260,43 @@ var {
 }
 
 /* -- Tables */
-label,
-th,
-thead th,
-tr,
-td {
+label {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 1em;	/* 133% * 12 */
 }
 
+
+
+/* tables */
+table, caption, tbody, tfoot, thead, tr, th, td {
+	word-wrap:break-word;
+}
+
 table {
 	border-collapse:collapse;
-	border-spacing:0;
-	border: 2px solid #AAA !important;
-	text-align: left;
-	margin: auto;
-	margin-bottom: 5px;
-	width: auto;
+	border-spacing:0
 }
+
+td,th {
+	padding:0
+}
+
 th {
-	text-align:left;
-	padding:4px 4px;
+	text-align:			left;
+	padding:			4px 4px;
 }
+
 td {
-	margin:0;
-	padding:4px 4px;
+	margin:				0;
+	padding:			4px 4px;
 }
-
-tr th,
-thead th {
-	border: none !important;
-	color: inherit;
-	background-color: rgba(0,0,0,.1);
-	font-weight: normal;
-	line-height: normal;
-	padding: 5px 10px;
-	}
-tr td {
-	border: 1px solid #AAA !important;
-	padding: 5px 10px;
-}
-tr.odd td
-{
-	background: inherit;
-}
-
-
 
 hr {
+	box-sizing:content-box;
+	background-color: #ccc;
+	height:2px;
+}
+hrx {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;

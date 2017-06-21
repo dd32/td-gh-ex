@@ -421,6 +421,9 @@ function weaverx_mce_css($default_style) {
 	/* replace the default editor-style.css with custom CSS generated on the fly by the php version */
 	if (weaverx_getopt('_hide_editor_style'))
 		return $default_style;
+	$style_file = apply_filters( 'weaverx_mce_css', $default_style); // theme support plugin builds a css file
+	if ( $style_file )
+		return $style_file;
 
 	$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
 	$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
