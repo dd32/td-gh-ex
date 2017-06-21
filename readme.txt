@@ -1,6 +1,6 @@
 == License ==
 
-AyaFreelance WordPress Theme, Copyright 2017 AyaTemplates.com
+AyaFreelance Theme, Copyright 2017 Aya Templates
 AyaFreelance is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -28,16 +28,14 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * css/customize-controls.css
 *
 *
-* Fontawesome is licensed under the terms of The MIT License
-* Source: https://opensource.org/licenses/mit-license.html
+* css/font-awesome.css - License: MIT License URL: http://opensource.org/licenses/mit-license.html
 *
-* css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.eot SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/FontAwesome.otf License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.eot License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.svg License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.ttf License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.woff License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.woff2 License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
 *
 * Hind (default theme font), Released under Apache License, version 2.0 license - http://www.apache.org/licenses/LICENSE-2.0.html

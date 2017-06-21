@@ -292,6 +292,10 @@ img {
 	vertical-align: middle;
 }
 
+.tagcloud {
+    margin-bottom: 20px;
+}
+
 .wp-caption {
 	background: transparent;
 	border: none;
