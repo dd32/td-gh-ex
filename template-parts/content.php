@@ -43,7 +43,7 @@
 		    echo '</button>' .'</div>';
             }
         else { // If user adds more tag then add Continue Reading text link
-                the_content(__('Continue reading'));
+                the_content(__('Continue reading', 'twentysixteen'));
             }
         ?>
         

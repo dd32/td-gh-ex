@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.5.2
+Version: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -19,6 +19,7 @@ Twentysixteen child theme with toppings. The theme is now Visual Composer friend
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://codex.wordpress.org/Twenty_Seventeen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
+6. Got to https://demos.temas.co.uk/2016/installation/ for further information.
 
 == Copyright ==
 
@@ -50,8 +51,6 @@ Source: https://github.com/aFarkas/html5shiv
 Genericons icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
 Source: http://www.genericons.com
-
-Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/schmidy/), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
 
@@ -101,3 +100,9 @@ Fixed Kirki Google fonts support
 Fixed Kirki Google fonts support for main menu
 Removed body class and added custom body class for new sidebar
 Added new sidebar template
+
+= 1.5.3 =
+* Fixed: June 21, 2017
+
+Added missing template version
+Fixed missing textdomain on template-parts/content.php
