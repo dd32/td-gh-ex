@@ -1,4 +1,4 @@
-﻿Silver Quantum WordPress Theme
+Silver Quantum WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
@@ -60,6 +60,9 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.4.2 
+- Fixed Primary Navigation for dropdown menu and sub-menu.
+
 Version: 0.4.1 
 - Changed Author URI
 - Changed Theme URI

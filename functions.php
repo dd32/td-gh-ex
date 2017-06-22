@@ -166,7 +166,7 @@ function silver_quantum_enqueue_scripts_setup() {
     ================================================================================================
     */
     wp_enqueue_script('silver-quantum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20140601', true);
-	wp_localize_script('silver-quantum-navigation', 'silverquantumscreenReaderText', array(
+	wp_localize_script('silver-quantum-navigation', 'silverquantumScreenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'silver-quantum') . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'silver-quantum') . '</span>',
 	));
