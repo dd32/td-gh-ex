@@ -12,27 +12,17 @@ $template = benjamin_template_settings('template');
 
 $style = '';
 if ( $hero_image = benjamin_hero_image($template) ){
-    $style .= 'style="background-image: url(\''.$hero_image.'\')"';
+    $pos = get_theme_mod($template.'_hero_position_setting', 'top-left');
+    $pos = str_replace('-',' ', $pos);
+    $style = 'style="';
+        $style .= 'background-image: url(\''.$hero_image.'\');';
+        $style .= 'background-position: '.$pos.';';
+    $style .= '"';
 }
 ?>
 
  <section class="usa-hero <?php echo benjamin_hero_size($template); ?>" <?php echo $style; ?> >
      <div class="usa-grid">
-         <?php
-            // This is all gross, fix it
-            // should be a class
-            if( is_front_page() )
-                benjamin_get_hero_callout();
-            elseif( !is_page() && !is_single() && !is_singular() ) {
-                echo benjamin_get_feed_title();
-            } else {
-                echo '<h1>'.get_the_title().'</h1>';
-                if ( 'page' !== get_post_type() ) :
-        		echo '<div class="entry-meta">';
-        			echo benjamin_get_hero_meta();
-        		echo '</div>';
-        		endif;
-            }
-         ?>
+         <?php benjamin_the_hero_content(); ?>
      </div>
  </section>
