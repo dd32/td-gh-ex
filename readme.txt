@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.4.0
+ * Added Welcome Page with demo import functionality
+ * Some Minor Design fixes
+
 Version 1.3.0
  * HTML validation
  * Optmization for Better SEO
