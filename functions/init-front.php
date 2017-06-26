@@ -355,11 +355,13 @@ if ( ! function_exists( 'hu_print_logo_or_title' ) ) {
         $logo_or_title = hu_get_logo_title( $is_mobile_menu );
         // => If no logo is set and  ! hu_is_checked( 'display-header-title' ), the logo title is empty.
         ob_start();
-          if ( ! empty( $logo_or_title ) ) {
-              ?>
-                <p class="site-title"><?php hu_do_render_logo_site_tite( $logo_or_title ) ?></p>
-              <?php
-          }
+            do_action( '__before_logo_or_site_title', $logo_or_title );
+            if ( ! empty( $logo_or_title ) ) {
+                ?>
+                  <p class="site-title"><?php hu_do_render_logo_site_tite( $logo_or_title ) ?></p>
+                <?php
+            }
+            do_action( '__after_logo_or_site_title', $logo_or_title );
         $html = ob_get_contents();
         if ($html) ob_end_clean();
         if ( $echo )
@@ -709,7 +711,9 @@ if ( ! function_exists( 'hu_body_class' ) ) {
     $mobile_sticky = hu_normalize_stick_menu_opt( hu_get_option('header-mobile-sticky') );
 
     if ( 'no_stick' != $desktop_sticky ) { $classes[] = 'header-desktop-sticky'; }
-    if ( 'no_stick' != $mobile_sticky ) { $classes[] = 'header-mobile-sticky'; }
+
+    //Note : no stickyness implemented when 2 menus ( 'both_menus') are displayed on mobiles ( => like it was historically in the earliest version in Hueman )
+    if ( 'no_stick' != $mobile_sticky && 'both_menus' != hu_get_option( 'header_mobile_menu_layout' ) ) { $classes[] = 'header-mobile-sticky'; }
 
     return $classes;
   }
@@ -841,7 +845,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
     if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_get_option('featured-posts-count') != '0' ) ) ) {
       wp_enqueue_script(
         'flexslider',
-        get_template_directory_uri() . '/assets/front/js/lib/jquery.flexslider.min.js',
+        get_template_directory_uri() . '/assets/front/js/libs/jquery.flexslider.min.js',
         array( 'jquery' ),
         '',
         false
@@ -851,7 +855,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
     if ( has_post_format( 'audio' ) ) {
       wp_enqueue_script(
         'jplayer',
-        get_template_directory_uri() . '/assets/front/js/lib/jquery.jplayer.min.js',
+        get_template_directory_uri() . '/assets/front/js/libs/jquery.jplayer.min.js',
         array( 'jquery' ),
         '',
         true
@@ -888,6 +892,10 @@ if ( ! function_exists( 'hu_scripts' ) ) {
             $welcome_note_content = hu_get_welcome_note_content();
         }
     }
+
+    //user font-size preprocess
+    $user_font_size = hu_get_option( 'body-font-size' );
+    $user_font_size = is_numeric( $user_font_size ) ? $user_font_size : '16';
 
     //user started with
     $started_on = get_transient( 'hu_start_date' );
@@ -942,7 +950,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                     array( 'huajax' => true ), //to scope our ajax calls
                     set_url_scheme( home_url( '/' ) )
               ),
-              'huFrontNonce'   => array( 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) ),
+              'frontNonce'   => array( 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) ),
 
               //Welcome
               'userStarted' => array(
@@ -950,7 +958,89 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                     'on' => is_object( $started_on ) ? (array)$started_on : $started_on
               ),
               'isWelcomeNoteOn' => $is_welcome_note_on,
-              'welcomeContent'  => $welcome_note_content
+              'welcomeContent'  => $welcome_note_content,
+
+              //Fittext
+              'fitTextMap'      => array(
+                  //Singular headings
+                  'single_post_title' => array(
+                      'selectors' => '.single .post-title',
+                      'minEm'     => 1.375,
+                      'maxEm'     => 2.62
+                  ),
+                  'page_title' => array(
+                      'selectors' => '.page-title h1',
+                      'minEm'     => 1,
+                      'maxEm'     => 1.3
+                  ),
+                  'home_page_title' => array(
+                      'selectors' => '.home .page-title',
+                      'minEm'     => 1,
+                      'maxEm'     => 1.2,
+                      'compression' => 2.5
+                  ),
+
+                  //post lists
+                  'post_titles' => array(
+                      'selectors' => '.blog .post-title, .archive .post-title',
+                      'minEm'     => 1.375,
+                      'maxEm'     => 1.475
+                  ),
+                  'featured_post_titles' => array(
+                      'selectors' => '.featured .post-title',
+                      'minEm'     => 1.375,
+                      'maxEm'     => 2.125
+                  ),
+
+                  //Comments
+                  'comments' => array(
+                      'selectors' => '.commentlist li',
+                      'minEm'     => 0.8125,
+                      'maxEm'     => 0.93,
+                      'compression' => 2.5
+                  ),
+
+                  //entry content p and hx headings
+                  'entry' => array(
+                      'selectors' => '.entry',
+                      'minEm'     => 0.9375,
+                      'maxEm'     => 1.125,
+                      'compression' => 2.5
+                  ),
+                  'content_h1' => array(
+                      'selectors' => '.entry h1, .woocommerce div.product h1.product_title',
+                      'minEm'     => 1.875 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 2.375 * 1.125//this factor is the .entry inherited font-size : 1.125em
+                  ),
+                  'content_h2' => array(
+                      'selectors' => '.entry h2',
+                      'minEm'     => 1.625 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 2.125 * 1.125//this factor is the .entry inherited font-size : 1.125em
+                  ),
+                  'content_h3' => array(
+                      'selectors' => '.entry h3',
+                      'minEm'     => 1.5 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 1.75 * 1.125//this factor is the .entry inherited font-size : 1.125em
+                  ),
+                  'content_h4' => array(
+                      'selectors' => '.entry h4',
+                      'minEm'     => 1.375 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 1.5 * 1.125//this factor is the .entry inherited font-size : 1.125em
+                  ),
+                  'content_h5' => array(
+                      'selectors' => '.entry h5',
+                      'minEm'     => 1.125 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 1.25 * 1.125//this factor is the .entry inherited font-size : 1.125em
+                  ),
+                  'content_h6' => array(
+                      'selectors' => '.entry h6',
+                      'minEm'     => 1 * 0.9375,//this factor is the .entry inherited font-size @media only screen and (max-width: 719px) {.entry : .9375em }
+                      'maxEm'     => 1.125 * 1.125,//this factor is the .entry inherited font-size : 1.125em,
+                      'compression' => 2.5
+                  )
+              ),
+              'userFontSize'    => $user_font_size,
+              'fitTextCompression' => apply_filters( 'hu_fittext_compression', 1.5 )
             )
         )//end of filter
        );//wp_localize_script()
@@ -1473,8 +1563,11 @@ function hu_ajax_response() {
     if ( ! defined( 'DOING_AJAX' ) )
         define( 'DOING_AJAX', true );
 
-    //'huFrontNonce'   => array( 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) )
-    check_ajax_referer( 'hu-front-nonce', 'HuFrontNonce' );
+    //Nonce is not needed as long as we don't write in the db
+    //Furthermore, when a cache plugin is used, front nonces can not be used.
+    //@see https://github.com/presscustomizr/hueman/issues/512
+    //'frontNonce'   => array( 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) )
+    //check_ajax_referer( 'hu-front-nonce', 'HuFrontNonce' );
 
     @header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
     send_nosniff_header();
@@ -1517,6 +1610,44 @@ function hu_include_attachments_in_search( $query ) {
 
     $query->set( 'post_status', $post_status );
 }
+
+
+/* ------------------------------------------------------------------------- *
+ *  Include attachments in search results
+/* ------------------------------------------------------------------------- */
+add_action ( 'pre_get_posts' , 'hu_include_cpt_in_lists' );
+/**
+* hook : pre_get_posts
+* Includes Custom Posts Types (set to public and excluded_from_search_result = false) in archives and search results
+* In archives, it handles the case where a CPT has been registered and associated with an existing built-in taxonomy like category or post_tag
+* @return void()
+*/
+function hu_include_cpt_in_lists( $query ) {
+    if (
+      is_admin()
+      || ! $query->is_main_query()
+      || ! apply_filters('hu_include_cpt_in_archives' , false)
+      || ! ( $query->is_search || $query->is_archive )
+    ) { return; }
+
+    //filter the post types to include, they must be public and not excluded from search
+    //we also exclude the built-in types, to exclude pages and attachments, we'll add standard posts later
+    $post_types         = get_post_types( array( 'public' => true, 'exclude_from_search' => false, '_builtin' => false) );
+
+    //add standard posts
+    $post_types['post'] = 'post';
+    if ( $query -> is_search ){
+        // add standard pages in search results => new wp behavior
+        $post_types['page'] = 'page';
+        // allow attachments to be included in search results by tc_include_attachments_in_search method
+        if ( apply_filters( 'hu_include_attachments_in_search_results' , hu_is_checked( 'attachments-in-search' ) ) )
+          $post_types['attachment'] = 'attachment';
+    }
+
+    // add standard pages in search results
+    $query->set('post_type', $post_types );
+}
+
 
 
 

@@ -1960,8 +1960,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
   };
 
-})( jQuery );//@global HUParams
-var czrapp = czrapp || {};
+})( jQuery );var czrapp = czrapp || {};
 (function($, czrapp) {
       czrapp._printLog = function( log ) {
             var _render = function() {
@@ -2045,8 +2044,8 @@ var czrapp = czrapp || {};
       czrapp.doAjax = function( query ) {
             query = query || ( _.isObject( query ) ? query : {} );
 
-            var ajaxUrl = HUParams.ajaxUrl,
-                nonce = HUParams.huFrontNonce,//{ 'id' : '', 'handle' : '' }
+            var ajaxUrl = czrapp.localized.ajaxUrl,
+                nonce = czrapp.localized.frontNonce,//{ 'id' : '', 'handle' : '' }
                 dfd = $.Deferred(),
                 _query_ = _.extend( {
                             action : ''
@@ -2165,11 +2164,10 @@ var czrapp = czrapp || {};
                     $_dom_el.trigger( 'after_' + _cb, _.omit( args, 'event' ) );
               });//_.map
       };
-})(jQuery, czrapp);//@global HUParams
-var czrapp = czrapp || {};
+})(jQuery, czrapp);var czrapp = czrapp || {};
 czrapp.methods = {};
 
-(function( HUParams, $ ){
+(function( $ ){
       var ctor, inherits, slice = Array.prototype.slice;
       ctor = function() {};
       inherits = function( parent, protoProps, staticProps ) {
@@ -2462,9 +2460,11 @@ czrapp.methods = {};
       });
       $.extend( czrapp.Values.prototype, czrapp.Events );
 
-})( HUParams, jQuery );//@global HUParams
+})( jQuery );//@global HUParams
 var czrapp = czrapp || {};
 (function($, czrapp) {
+      czrapp.localized = HUParams || {};
+
       var _methods = {
             cacheProp : function() {
                   var self = this;
@@ -2862,10 +2862,18 @@ var czrapp = czrapp || {};
                                 _reset();
                           } else {
                                 self.stickyMenuWrapper = czrapp.$_header.find( to );
-                                if ( 1 == $('#header-image-wrap').find('.site-image').length ) {
-                                      $('#header-image-wrap').find('img.site-image').load( function( img ) {
+                                var $_header_image = $('#header-image-wrap').find('.site-image');
+                                if ( 1 == $_header_image.length ) {
+                                      $_header_image.bind( 'header-image-loaded', function() {
                                             czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
-                                      } );
+                                      });
+                                      if ( $_header_image[0].complete ) {
+                                            $_header_image.trigger('header-image-loaded');
+                                      } else {
+                                        $_header_image.load( function( img ) {
+                                              $_header_image.trigger('header-image-loaded');
+                                        } );
+                                      }
                                 } else {
                                       czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
                                 }
@@ -3577,6 +3585,32 @@ var czrapp = czrapp || {};
 })(jQuery, czrapp);var czrapp = czrapp || {};
 (function($, czrapp) {
   var _methods =  {
+        fittext : function() {
+            var _userBodyFontSize = _.isNumber( HUParams.userFontSize ) && HUParams.userFontSize * 1 > 0 ? HUParams.userFontSize : 16,
+                _fitTextMap = HUParams.fitTextMap,
+                _fitTextCompression = HUParams.fitTextCompression;
+
+            if ( ! _.isObject( _fitTextMap ) || _.size( _fitTextMap ) < 1 ) {
+                czrapp.errorLog( 'Unable to apply fittext params, wrong HUParams.fitTextMap.');
+                return;
+            }
+            _.each( _fitTextMap, function( data, key ) {
+                  if ( ! _.isObject( data ) )
+                    return;
+                  data = _.extend( {
+                        selectors : '',
+                        minEm : 1,
+                        maxEm : 1
+                  }, data );
+                  if ( 1 > $( data.selectors ).length )
+                    return;
+                  var _compressionRatio = ( data.compression && _.isNumber( data.compression ) ) ? data.compression : _.isNumber( _fitTextCompression ) ? _fitTextCompression : 1.5;
+                  $( data.selectors ).fitText( _compressionRatio, {
+                      minFontSize : ( Math.round( data.minEm * _userBodyFontSize * 100) / 100 ) + 'px',
+                      maxFontSize : ( Math.round( data.maxEm * _userBodyFontSize * 100) / 100 ) + 'px'
+                  } ).addClass( 'fittexted_for_' + key );
+            });
+        },
         outline: function() {
               if ( czrapp.$_body.hasClass( 'mozilla' ) && 'function' == typeof( tcOutline ) )
               tcOutline();
@@ -3909,8 +3943,8 @@ var czrapp = czrapp || {};
   $.extend( czrapp.methods.UserXP , _methods );
 
 })(jQuery, czrapp);var czrapp = czrapp || {};
+
 ( function ( czrapp, $, _ ) {
-      czrapp.localized = HUParams || {};
       $.extend( czrapp, czrapp.Events );
       czrapp.Root           = czrapp.Class.extend( {
             initialize : function( options ) {
@@ -3941,64 +3975,6 @@ var czrapp = czrapp || {};
       czrapp.bind( 'czrapp-ready', function() {
             czrapp.ready.resolve();
       });
-      czrapp.isMobileUserAgent = new czrapp.Value( false );
-      czrapp.browserAgentSet = $.Deferred( function() {
-            var _dfd = this;
-            czrapp.doAjax( { action: "hu_wp_is_mobile" } )
-                  .always( function( _r_ ) {
-                        czrapp.isMobileUserAgent( ( ! _r_.success || _.isUndefined( _r_.data.is_mobile ) ) ? ( '1' == HUParams.isWPMobile ) : _r_.data.is_mobile );
-                        _dfd.resolve( czrapp.isMobileUserAgent() );
-                  });
-            _.delay( function() {
-                if ( 'pending' == _dfd.state() )
-                  _dfd.resolve( false );
-            }, 1500 );
-      });
-      var appMap = {
-                base : {
-                      ctor : czrapp.Base,
-                      ready : [
-                            'cacheProp'
-                      ]
-                },
-                browserDetect : {
-                      ctor : czrapp.Base.extend( czrapp.methods.BrowserDetect ),
-                      ready : [ 'addBrowserClassToBody' ]
-                },
-                jqPlugins : {
-                      ctor : czrapp.Base.extend( czrapp.methods.JQPlugins ),
-                      ready : [
-                            'imgSmartLoad',
-                            'extLinks',
-                            'parallax'
-                      ]
-                },
-                userXP : {
-                      ctor : czrapp.Base.extend( czrapp.methods.UserXP ),
-                      ready : [
-                            'setupUIListeners',//<=setup observables values used in various UX modules
-
-                            'stickify',
-                            'outline',
-                            'smoothScroll',
-                            'headerSearchToLife',
-                            'scrollToTop',
-                            'widgetTabs',
-                            'commentTabs',
-                            'tableStyle',
-                            function() {
-                                  var self = this;
-                                  czrapp.browserAgentSet.done( function() {
-                                        self.sidebarToLife();
-                                  });
-                            },
-                            'dropdownMenu',
-                            'mobileMenu',
-                            'topNavToLife',
-                            'mayBePrintWelcomeNote'
-                      ]
-                }
-      };//map
       var _instantianteAndFireOnDomReady = function( newMap, previousMap, isInitial ) {
             if ( ! _.isObject( newMap ) )
               return;
@@ -4044,8 +4020,77 @@ var czrapp = czrapp || {};
                   czrapp.trigger( isInitial ? 'czrapp-ready' : 'czrapp-updated' );
             });
       };//_instantianteAndFireOnDomReady()
-      _instantianteAndFireOnDomReady( appMap, null, true );
+      czrapp.appMap = new czrapp.Value( {} );
+      czrapp.appMap.bind( _instantianteAndFireOnDomReady );//<=THE MAP IS LISTENED TO HERE
       czrapp.customMap = new czrapp.Value( {} );
       czrapp.customMap.bind( _instantianteAndFireOnDomReady );//<=THE CUSTOM MAP IS LISTENED TO HERE
+
+
+})( czrapp, jQuery, _ );var czrapp = czrapp || {};
+( function ( czrapp, $, _ ) {
+      czrapp.localized = HUParams || {};
+      czrapp.isMobileUserAgent = new czrapp.Value( false );
+      czrapp.browserAgentSet = $.Deferred( function() {
+            var _dfd = this;
+            czrapp.doAjax( { action: "hu_wp_is_mobile" } )
+                  .always( function( _r_ ) {
+                        var _isMobileUserAgent = '1' == HUParams.isWPMobile;
+                        if ( _.isObject( _r_ ) ) {
+                              _isMobileUserAgent = ( ! _r_.success || _.isUndefined( _r_.data ) || _.isUndefined( _r_.data.is_mobile ) ) ? _isMobileUserAgent : _r_.data.is_mobile;
+                        }
+                        czrapp.isMobileUserAgent( _isMobileUserAgent );
+                        _dfd.resolve( czrapp.isMobileUserAgent() );
+                  });
+            _.delay( function() {
+                if ( 'pending' == _dfd.state() )
+                  _dfd.resolve( false );
+            }, 1500 );
+      });
+      var appMap = {
+                base : {
+                      ctor : czrapp.Base,
+                      ready : [
+                            'cacheProp'
+                      ]
+                },
+                browserDetect : {
+                      ctor : czrapp.Base.extend( czrapp.methods.BrowserDetect ),
+                      ready : [ 'addBrowserClassToBody' ]
+                },
+                jqPlugins : {
+                      ctor : czrapp.Base.extend( czrapp.methods.JQPlugins ),
+                      ready : [
+                            'imgSmartLoad',
+                            'extLinks',
+                            'parallax'
+                      ]
+                },
+                userXP : {
+                      ctor : czrapp.Base.extend( czrapp.methods.UserXP ),
+                      ready : [
+                            'setupUIListeners',//<=setup observables values used in various UX modules
+                            'fittext',
+                            'stickify',
+                            'outline',
+                            'smoothScroll',
+                            'headerSearchToLife',
+                            'scrollToTop',
+                            'widgetTabs',
+                            'commentTabs',
+                            'tableStyle',
+                            function() {
+                                  var self = this;
+                                  czrapp.browserAgentSet.done( function() {
+                                        self.sidebarToLife();
+                                  });
+                            },
+                            'dropdownMenu',
+                            'mobileMenu',
+                            'topNavToLife',
+                            'mayBePrintWelcomeNote'
+                      ]
+                }
+      };//map
+      czrapp.appMap( appMap , true );//true for isInitial map
 
 })( czrapp, jQuery, _ );
