@@ -639,7 +639,7 @@ if (!function_exists('alhenalite_template')) {
 						
 		}
 
-		return ${$id};
+		return esc_attr(${$id});
 		
 	}
 
