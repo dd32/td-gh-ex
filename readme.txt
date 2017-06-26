@@ -210,3 +210,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 = Version 1.5.9 =
 * Added compatibility with WordPress 4.8
 * Minor bug fixes
+
+= Version 1.6.0 =
+* Minor bug fixes

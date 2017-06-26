@@ -36,7 +36,26 @@
 		<?php if ( $showfullpost == 1 ) : ?>
 			<?php the_excerpt(); ?>
 		<?php else: ?>
-			<?php the_content(); ?>
+			<?php
+			the_content( sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogghiamo' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			) );
+			wp_link_pages( array(
+				'before' => '<div class="page-links smallPart"><i class="fa fa-file-text spaceRight aria-hidden="true""></i>' . esc_html__( 'Pages:', 'blogghiamo' ),
+				'after'  => '</div>',
+				'link_before'      => '<span>',
+				'link_after'       => '</span>',
+			) );
+			?>
 		<?php endif; ?>
 		
 	</div><!-- .entry-content -->
