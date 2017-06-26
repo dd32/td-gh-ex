@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * The file contains the functions which gather all available templates.
+ *
+ * This tempalte list is used to populate the customizer settings and widgets ares
+ *
+ * @package Benjamin
+ */
 
 function benjamin_the_template_list($use_widget_areas = false) {
 
@@ -25,12 +32,8 @@ function benjamin_the_template_list($use_widget_areas = false) {
         '_404' => '404 Page',
     );
 
-    $args = array(
-       'public'   => true,
-       'publicly_queryable' => true,
-       '_builtin' => false
-    );
-    $cpts = get_post_types($args);
+    $cpts = benjamin_get_cpts();
+    $cpts = benjamin_get_cpt_template_types($cpts);
 
     $templates = $templates + $cpts;
 
@@ -49,4 +52,27 @@ function benjamin_the_template_list($use_widget_areas = false) {
         $templates = $templates + $widget_areas;
 
     return $templates;
+}
+
+function benjamin_get_cpts() {
+    $args = array(
+       'public'   => true,
+       'publicly_queryable' => true,
+       '_builtin' => false
+    );
+    return get_post_types($args);
+}
+
+function benjamin_get_cpt_template_types($cpts) {
+    $new = array();
+    foreach($cpts as $cpt){
+        $obj = get_post_type_object($cpt);
+
+        $new[$cpt] = $obj->label;
+        if($obj->has_archive)
+            $new[$cpt.'-feed'] = $obj->label . ' Feed';
+    }
+
+
+    return $new;
 }

@@ -3,16 +3,9 @@
 
 jQuery(document).ready(function($) {
 
-  // require('./save-refresh');
-  require('./refresh-alert');
-  // require('./toggle-template-settings');
-  require('./hide-footer-menu');
-  require('./sortable');
-  require('./frontpage-sortables');
-  require('./widgetized-sortables');
-  require('./footer-sortables');
-  require('./checkbox-group');
-
+  require('./video-media-library');
+  require('./video-field-updated');
+  require('./video-clear');
 
   if($('body.widgets-php')){
     $('.benjamin-widget-area-options').appendTo('.widgets-sortables');
@@ -22,377 +15,144 @@ jQuery(document).ready(function($) {
 
 window.$ = jQuery;
 
-},{"./checkbox-group":2,"./footer-sortables":3,"./frontpage-sortables":4,"./hide-footer-menu":5,"./refresh-alert":6,"./sortable":7,"./widgetized-sortables":8}],2:[function(require,module,exports){
-$('.js--checkbox-group input[type="checkbox"]').on('change', function(e){
+},{"./video-clear":2,"./video-field-updated":3,"./video-media-library":4}],2:[function(require,module,exports){
+$('body').on('click', '.js--clear-video', function(e){
   var $this = $(this);
-  var $parent = $this.closest('.js--checkbox-group');
-  var targetID = $parent.attr('id');
-  var $targetField = $('.'+targetID.replace('js--', ''));
-  var settingID = $parent.data('setting');
-  var $siblings = $parent.find('input[type="checkbox"]:checked');
-  var thisVal = $this.val();
-  var checked = [];
 
-  $siblings.each(function(idx) {
-
-    var $thisComp = $(this);
-    var component = $thisComp.val();
-
-    checked.push(component);
-  });
+  var $thisParent = $this.closest('.js--media-wrapper');
+  var $thisField = $thisParent.find('.js--video-url');
+  var $preview = $thisParent.find('.js--placeholder');
+  var settingKey = $thisField.data('is-customizer') ? $thisField.data('customize-setting-link') : null;
 
 
-  save_checkbox_group_value(settingID, JSON.stringify(checked), $targetField );
+  $thisField.val('');
+  $preview.empty();
 
+
+    if(settingKey ) {
+
+      wp.customize( settingKey, function ( obj ) {
+        obj.set('');
+      } );
+    }
 });
 
-
-function save_checkbox_group_value(key, componentsStr, $field){
-
-  wp.customize( key, function ( obj ) {
-
-    obj.set( componentsStr );
-  } );
-
-  $field.val( componentsStr );
-}
-
 },{}],3:[function(require,module,exports){
-jQuery(function($) {
+$('body').on('change','.js--video-url', function(e){
 
-  if($('.js--footer-sortables').length <= 0)
-    return;
+  var $this = $(this);
+  var url = $this.val();
+  var $thisParent = $this.closest('.js--media-wrapper');
+  var $preview = $thisParent.find('.js--placeholder');
+  var settingKey = $this.data('is-customizer') ? $this.data('customize-setting-link') : null;
 
-  var $sortableList = $('.js--footer-sortables');
-  var $groupWrapper = $sortableList.closest('.sortables');
-  var siblingsName = $groupWrapper.find('.'+$sortableList.data('sortable-group'));
-  var id = $sortableList.data('sortable-group').replace('_control', '_setting');
-  var $active = $groupWrapper.find('.js--sortables-active');
 
-  var $field = $groupWrapper.find('input[type="hidden"]');
-  // inits the sortable and does things
-  $sortableList.sortable({
-    placeholder: 'ui-state-highlight',
-    connectWith: siblingsName,
-    change: function(e, u){
-
-    },
-  	update: function(event, ui) {
-      var $this = $(this);
-
-      var activeComponentsStr = '';
-
-      activeComponentsStr = get_active_sortables($active);
-
-      save_values(id, activeComponentsStr, $field)
-    },
-    receive: function(e){}
+  var data = {
+    "action": "benjamin_video_shortcode",
+    "data": url
+  };
+  $.ajax({
+    type: 'post',
+    url: ajaxurl,
+    data: data,
+    complete: function(response){
+      var output = response.responseText;
+      // console.log(output);
+      $preview.html( output );
+    }
   });
 
 
-  // when the visibility changes
-  // $('.sortable__visibility select').on('change', function(e){
-  //   var $this = $(this);
-  //   var thisVal = $this.val();
-  //   $this.closest('.sortable').addClass('save-warning');
-  //   $('#submit').parent('.submit').addClass('save-warning');
-  //
-  //   var activeComponentsStr = get_active_sortables($active);
-  //   save_values(id, activeComponentsStr, $field);
-  //
-  // });
+  if(settingKey && url ) {
 
-
-  // gets the active sortables and sets their settings/positions to a string to be saved
-  function get_active_sortables($active){
-    var activeComponents = [];
-
-    // loop through the active components and collect their data
-    $active.find('li').each(function(idx) {
-        var $thisComp = $(this);
-        var component = $thisComp.attr('id');
-        var label = $thisComp.text();
-
-        $thisComp.addClass('save-warning');
-        activeComponents.push({
-          name: component,
-          label: label
-        });
-    });
-    // stringify the array into a string and return
-    return JSON.stringify(activeComponents);
-  }
-
-
-  function save_values(key, activeComponentsStr, $field){
-
-    wp.customize( key, function ( obj ) {
-
-      obj.set( activeComponentsStr );
+    wp.customize( settingKey, function ( obj ) {
+      obj.set( url );
     } );
-
-    $field.val(activeComponentsStr);
   }
+
 });
 
 },{}],4:[function(require,module,exports){
-jQuery(function($) {
 
-  if($('.js--frontpage-sortables').length <= 0)
-    return;
+var file_frame;
+var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
+var set_to_post_id = 0; // Set this
 
-  var $sortableList = $('.js--frontpage-sortables');
-  var $groupWrapper = $sortableList.closest('.sortables');
-  var siblingsName = $groupWrapper.find('.'+$sortableList.data('sortable-group'));
-  var id = $sortableList.data('sortable-group').replace('_control', '_setting');
-  var $active = $groupWrapper.find('.js--sortables-active');
+$('body').on('click','.js--media-library', function( event ){
 
-  var $field = $groupWrapper.find('input[type="hidden"]');
-  // inits the sortable and does things
-  $sortableList.sortable({
-    placeholder: 'ui-state-highlight',
-    connectWith: siblingsName,
-    change: function(e, u){
+  var $this = $(this);
 
-    },
-  	update: function(event, ui) {
-      var $this = $(this);
+  var $thisParent = $this.closest('.js--media-wrapper');
+  var $thisField = $thisParent.find('.js--video-url');
+  var $preview = $thisParent.find('.js--placeholder');
+  var filter = $this.data('filter');
+  var settingKey = $thisField.data('is-customizer') ? $thisField.data('customize-setting-link') : null;
 
-      var activeComponentsStr = '';
+	event.preventDefault($thisParent);
 
-      activeComponentsStr = get_active_sortables($active);
+	// If the media frame already exists, reopen it.
+	if ( file_frame ) {
+		// Set the post ID to what we want
+		file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
+		// Open frame
+		file_frame.open();
+		return;
+	} else {
+		// Set the wp.media post id so the uploader grabs the ID we want when initialised
+		wp.media.model.settings.post.id = set_to_post_id;
+	}
 
-      save_values(id, activeComponentsStr, $field)
-    },
-    receive: function(e){}
-  });
+	// Create the media frame.
+	window.butt = file_frame = wp.media.frames.file_frame = wp.media({
+		title: 'Select a image to upload',
+		button: {
+			text: 'Use this image',
+		},
+		multiple: false,
+    library: {
+      type: filter
+    }
+	});
+
+	// When an image is selected, run a callback.
+	file_frame.on( 'select', function() {
+		// We set multiple to false so only get one image from the uploader
+		attachment = file_frame.state().get('selection').first().toJSON();
+
+    var url = attachment.url;
+    var fileName = attachment.filename;
+    var id = attachment.id;
 
 
-  // when the visibility changes
-  $('.sortable__visibility select').on('change', function(e){
-    var $this = $(this);
-    var thisVal = $this.val();
-    $this.closest('.sortable').addClass('save-warning');
-    $('#submit').parent('.submit').addClass('save-warning');
 
-    var activeComponentsStr = get_active_sortables($active);
-    save_values(id, activeComponentsStr, $field);
+    $thisField.val(url);
 
-  });
-
-
-  // gets the active sortables and sets their settings/positions to a string to be saved
-  function get_active_sortables($active){
-    var activeComponents = [];
-
-    // loop through the active components and collect their data
-    $active.find('li').each(function(idx) {
-        var $thisComp = $(this);
-        var component = $thisComp.attr('id');
-        var label = $thisComp.text();
-
-        $thisComp.addClass('save-warning');
-        activeComponents.push({
-          name: component,
-          label: label
-        });
+    var data = {
+      "action": "benjamin_video_shortcode",
+      "data": url
+    };
+    $.ajax({
+      type: 'post',
+      url: ajaxurl,
+      data: data,
+      complete: function(response){
+        $preview.html( response.responseText );
+      }
     });
-    // stringify the array into a string and return
-    return JSON.stringify(activeComponents);
-  }
+
+    if(settingKey && url) {
+      wp.customize( settingKey, function ( obj ) {
+        obj.set( url );
+      } );
+    }
 
 
-  function save_values(key, activeComponentsStr, $field){
+		// Restore the main post ID
+		wp.media.model.settings.post.id = wp_media_post_id;
+	});
 
-    wp.customize( key, function ( obj ) {
-      obj.set( activeComponentsStr );
-    } );
-
-    $field.val(activeComponentsStr);
-  }
-});
-
-},{}],5:[function(require,module,exports){
-
-function hideFooterMenuSetting($) {
-  var val = $('input[name=_customize-radio-footer_top_content_control]:checked').val();
-
-  if(val !== 'menu') {
-    $('#customize-control-footer_menu_control').fadeOut();
-  }else{
-    $('#customize-control-footer_menu_control').fadeIn();
-  }
-}
-
-
-// customizer JS
-if($('body.wp-customizer')){
-  $('#customize-control-footer_top_content_control input').live('click', function(){
-    hideFooterMenuSetting($);
-  });
-
-  hideFooterMenuSetting($);
-}
-
-},{}],6:[function(require,module,exports){
-window.refreshAlert = function() {
-
-  $('#save').addClass('alert alert--refresh').val('Save and Refresh');
-}
-
-},{}],7:[function(require,module,exports){
-jQuery(function($) {
-
-  if($('.js--sortables').length <= 0)
-    return;
-
-  var $sortableList = $('.js--sortables');
-  var $groupWrapper = $sortableList.closest('.sortables');
-  var siblingsName = $groupWrapper.find('.'+$sortableList.data('sortable-group'));
-  var id = $sortableList.data('sortable-group').replace('_control', '_setting');
-  var $active = $groupWrapper.find('.js--sortable-active');
-
-  var $field = $groupWrapper.find('input[type="hidden"]');
-
-
-  // inits the sortable and does things
-  $sortableList.sortable({
-    placeholder: 'ui-state-highlight',
-    connectWith: siblingsName,
-  	update: function(event, ui) {
-      var $this = $(this);
-
-      var activeComponentsStr = '';
-
-      activeComponentsStr = get_active_sortables($active);
-
-      save_values(id, activeComponentsStr, $field)
-    },
-    receive: function(e){}
-  });
-
-
-  // when the visibility changes
-  $('.sortable__visibility select').on('change', function(e){
-    var $this = $(this);
-    var thisVal = $this.val();
-    $this.closest('.sortable').addClass('save-warning');
-    $('#submit').parent('.submit').addClass('save-warning');
-
-    var activeComponentsStr = get_active_sortables($active);
-    save_values(id, activeComponentsStr, $field);
-
-  });
-
-
-  // gets the active sortables and sets their settings/positions to a string to be saved
-  function get_active_sortables($active){
-    var activeComponents = [];
-
-    // loop through the active components and collect their data
-    $active.find('li').each(function(idx) {
-        var $thisComp = $(this);
-        var component = $thisComp.attr('id');
-        var label = $thisComp.text();
-
-        $thisComp.addClass('save-warning');
-        activeComponents.push({
-          name: component,
-          label: label
-        });
-    });
-    // stringify the array into a string and return
-    return JSON.stringify(activeComponents);
-  }
-
-
-  function save_values(key, activeComponentsStr, $field){
-
-
-    wp.customize( key, function ( obj ) {
-      obj.set( activeComponentsStr );
-    } );
-
-    $field.val(activeComponentsStr);
-  }
-});
-
-},{}],8:[function(require,module,exports){
-jQuery(function($) {
-
-  if($('.js--widgetized-sortables').length <= 0)
-    return;
-
-  var $sortableList = $('.js--widgetized-sortables');
-  var $groupWrapper = $sortableList.closest('.sortables');
-  var siblingsName = $groupWrapper.find('.'+$sortableList.data('sortable-group'));
-  var id = $sortableList.data('sortable-group').replace('_control', '_setting');
-  var $active = $groupWrapper.find('.js--sortables-active');
-
-  var $field = $groupWrapper.find('input[type="hidden"]');
-  // inits the sortable and does things
-  $sortableList.sortable({
-    placeholder: 'ui-state-highlight',
-    connectWith: siblingsName,
-    change: function(e, u){
-
-    },
-  	update: function(event, ui) {
-      var $this = $(this);
-
-      var activeComponentsStr = '';
-
-      activeComponentsStr = get_active_sortables($active);
-
-      save_values(id, activeComponentsStr, $field)
-    },
-    receive: function(e){}
-  });
-
-
-  // when the visibility changes
-  $('.sortable__visibility select').on('change', function(e){
-    var $this = $(this);
-    var thisVal = $this.val();
-    $this.closest('.sortable').addClass('save-warning');
-    $('#submit').parent('.submit').addClass('save-warning');
-
-    var activeComponentsStr = get_active_sortables($active);
-    save_values(id, activeComponentsStr, $field);
-
-  });
-
-
-  // gets the active sortables and sets their settings/positions to a string to be saved
-  function get_active_sortables($active){
-    var activeComponents = [];
-
-    // loop through the active components and collect their data
-    $active.find('li').each(function(idx) {
-        var $thisComp = $(this);
-        var component = $thisComp.attr('id');
-        var label = $thisComp.text();
-
-        $thisComp.addClass('save-warning');
-        activeComponents.push({
-          name: component,
-          label: label
-        });
-    });
-    // stringify the array into a string and return
-    return JSON.stringify(activeComponents);
-  }
-
-
-  function save_values(key, activeComponentsStr, $field){
-
-
-    wp.customize( key, function ( obj ) {
-      obj.set( activeComponentsStr );
-    } );
-
-    $field.val(activeComponentsStr);
-  }
+		// Finally, open the modal
+		file_frame.open();
 });
 
 },{}]},{},[1]);
