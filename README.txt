@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 
+= 2.1.9 =
+** WooCommerce 3.0 Outdated files fixed
+
 = 2.1.8 =
 
 ** Add Custom Editor Style
