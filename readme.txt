@@ -1,8 +1,8 @@
 === Basic Store ===
 Contributors: Theme.al
 Requires at least: WordPress 4.0
-Tested up to: WordPress 4.7
-Version: 1.0
+Tested up to: WordPress 4.8
+Version: 1.3.3
 License: GPLv2 or later
 License URI: LICENSE
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
@@ -22,6 +22,18 @@ Basic Store theme is made for developers to easily built an WordPress theme usin
 2. Type in Basic Store in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 
+== Setting Up Demo ==
+1. Create a Page Called Home
+2. Paste the following Code in Home
+<h2>Latest Products</h2>
+[recent_products per_page="4" columns="4"]
+<h2>Featured Products</h2>
+[featured_products per_page="4" columns="4"]
+<h2>Top Rated Products</h2>
+[top_rated_products per_page="4" columns="4"]
+<hr>
+<h2>Product Categories</h2>
+[product_categories number="6" columns="6" parent="0"]
 
 == Frequently Asked Questions ==
 
@@ -31,6 +43,11 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 
 == Changelog ==
+
+= 1.3.3 - Jun 27 2017 =
+- Upgrade To Pro Link Added
+- Front Page (tpl-home.php) added.
+- Customize Options for Show or Hide Latest Products, Featured Products, Top Rated Products and Product Categories added.
 
 = 1.3.2 - Jun 20 2017 =
 - Temporary removed "grouped.php" WooCommerce template file to pass WP tests

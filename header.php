@@ -91,20 +91,18 @@
 	</header><!-- #site-header -->
 
 	<section id="site-content" class="site-content">
-
-		<?php if ( get_post_meta(get_the_ID(),'jumbotron-title',true) || get_post_meta(get_the_ID(),'jumbotron-subtitle',true ) ) : ?>
+	<?php if ( is_home() || is_front_page() ) : ?>
 		<div id="site-jumbotron" class="jumbotron text-center">
 
 			<div class="container">
 
-				<h1><?php echo esc_html(get_post_meta(get_the_ID(),'jumbotron-title',true));?></h1>
-				<p><?php echo esc_html(get_post_meta(get_the_ID(),'jumbotron-subtitle',true));?></p>
+				<h1><?php bloginfo( 'name' ); ?></h1>
+				<p><?php bloginfo('description'); ?></p>
 
 			</div><!-- .container -->
 
 		</div><!-- #site-jumbotron -->
-		<?php endif; ?>
-
+	<?php endif; ?>
 		<div class="container">
 
 			<div class="row">
