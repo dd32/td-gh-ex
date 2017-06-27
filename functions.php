@@ -145,10 +145,17 @@ $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s<
 function digital_theme_setup() { 
 	 
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'defaultthumb', 390, 210);
-		add_image_size( 'popularpost', 75, 75 );
-		add_image_size( 'latestpost', 125, 120 );
+		add_image_size( 'defaultthumb', 390, 210, true);
+		add_image_size( 'popularpost', 75, 75, true );
+		add_image_size( 'latestpost', 125, 120, true );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
+		add_theme_support( 'custom-logo', array(
+   'height'      => 90,
+   'width'       => 400,
+   'header-text' => array( 'site-title', 'site-description' ),
+   'flex-width' => true,
+   'flex-height' => true,
+) );
 		add_editor_style();
 		add_theme_support( 'woocommerce' );
         add_theme_support('automatic-feed-links');

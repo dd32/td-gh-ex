@@ -130,13 +130,21 @@ $options[] = array(
 	$options[] = array(
 		'name' => __('Basic Settings', 'digital'),
 		'type' => 'heading');
-		
 	$options[] = array(
-		'name' => __('Custom Favicon URL', 'digital'),
-		'desc' => __('Upload Favicon Image in .ico format .', 'digital'),
-		'id' => 'digital_favicon',
-		'std' => '',
-		'type' => 'upload');
+		'name' => __('Website Header layout (Pro Only)','digital'),
+		'desc' => __('Select Images for Website layout.','digital'),
+		'id' => "digital_header_layout",
+		'std' => "default",
+		'type' => "images",
+		'options' => array(
+			'default' => $imagepath . 'h1.png',
+			'rightaling' => $imagepath . 'h2.png',
+			'fullgrid' => $imagepath . 'h3.png',			
+			)
+	);	
+	$options[] = array(		
+		'desc' => '<h2>Logo and Favicon can be manage from customize settings Go to <a href="'.esc_url(__(admin_url( 'customize.php' ))).'" target="_blank">'.esc_attr__( 'customizer', 'digital' ).'</a></h2>',		
+		'type' => 'info');
 	$options[] = array(
 		'name' => __('Upload Site Logo', 'digital'),
 		'desc' => __('Upload Website Logo that fit here. Note you can upload any size it will automatic resize .', 'digital'),
@@ -416,7 +424,78 @@ $options[] = array(
 		'desc' => sprintf( __( '<b>Only Premium User Have More slider </b>  <a href="%1$s" target="_blank">Buy Premium version</a>', 'digital' ), 'http://www.insertcart.com/product/digital-wp-theme/' ), 
 		'type' => 'info');
 		
+$options[] = array(
+		'name' => __('Post Settings (Pro Only)', 'digital'),
+		'type' => 'heading');
 		
+		$options[] = array(
+		'name' => __('Social Share Buttons with count', 'digital'),
+		'desc' => __('Display social share buttons with count below post title.', 'digital'),
+		'id' => 'digital_flowshare',
+		'std' => '0',
+		'type' => 'checkbox');	
+		$options[] = array(
+		'name' => __('Show thumbbnail image in sigle post page', 'digital'),
+		'desc' => __('Choose option for post thumbnail image.', 'digital'),
+		'id' => 'singlepost_thumb',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
+						));
+		$options[] = array(
+		'name' => __('Breadcrumbs Options', 'digital'),
+		'desc' => __('Check Box to Enable or Disable Breadcrumbs.', 'digital'),
+		'id' => 'digital_bread',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'name' => __('Enable Post Meta Info.', 'digital'),
+		'desc' => __('Check Box to Show or Hide Tags ', 'digital'),
+		'id' => 'digital_tags',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Comments ', 'digital'),
+		'id' => 'digital_comments',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Categories ', 'digital'),
+		'id' => 'digital_categrious',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Author and date ', 'digital'),
+		'id' => 'digital_autodate',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'name' => __('Next and Previous Post Link', 'digital'),
+		'desc' => __('Show or Hide Next and Previous Post Link below every post.', 'digital'),
+		'id' => 'digital_links',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));	
+		$options[] = array(
+		'name' => __('Edit "Read More" Button', 'digital'),
+		'desc' => __('Show or Hide "Continue reading" or read more Button  Button .', 'digital'),
+		'id' => 'digital_countinuemore',
+		'std' => 'off',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		    'desc' => __('Paste You Custom text for Continue reading <b>Default: Read More &raquo; </b>.','digital'),
+            'id' => 'digital_fullstory',
+            'std' => 'Read More &raquo;',
+            'type' => 'text');						
 $options[] = array(
 		'name' => __('Custom Styling', 'digital'),
 		'type' => 'heading');
@@ -460,13 +539,44 @@ $options[] = array(
 	$options[] = array(
 		'desc' => '<span class="pre-title">New Features</span>', 
 		'type' => 'info');
-		
+$options[] = array(
+		'name' => __('Top and Main Menu Hide or Show', 'digital'),
+		'desc' => __('Top Menu', 'digital'),
+		'id' => 'digital_topm',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
+						));
+		$options[] = array(
+		'desc' => __('Main Menu', 'digital'),
+		'id' => 'digital_mainm',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
+						));				
 	$options[] = array(
-		'name' => __('Social Share Buttons with count', 'digital'),
-		'desc' => __('Display social share buttons with count below post title.', 'digital'),
-		'id' => 'digital_flowshare',
-		'std' => '0',
-		'type' => 'checkbox');
+		'name' => __('Main Navigation Menu', 'digital'),		
+		'desc' => __('Position of main navigation menu', 'digital'),
+		'id' => 'digital_mainmenu',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => __('Fixed','digital'),
+						'off' => __('Float','digital')
+						));
+		$options[] = array(
+		'desc' => __('Hide Search Bar from navigation menu', 'digital'),
+		'id' => 'digital_searchbar',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
+						));			
 	$options[] = array(
 		'desc' => __('Numbers of Popular posts to display', 'digital'),
 		'id' => 'digital_popularpostnumber',
@@ -716,7 +826,7 @@ $options[] = array(
 	$options[] = array(
 		    'desc' => 'Change copyright text.',
             'id' => 'digital_ftarea',
-            'std' => 'Copyright  &#169; 2015',
+            'std' => 'Copyright  &#169; 2017',
             'type' => 'editor',
 		'settings' => $wp_editor_settings= array(
 		'wpautop' => true, // Default

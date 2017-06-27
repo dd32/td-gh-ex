@@ -12,7 +12,15 @@
     float: left;	
     background:#fff;
 }
+div.group.postsettingsproonly ,
+div#section-digital_header_layout {
+    opacity: 0.5;
+	cursor: not-allowed;
+}
 
+div#section-digital_header_layout .controls .of-radio-img-img{
+		cursor: not-allowed;
+}
 #optionsframework .group h4.heading::before{
 	content: "\f345";
     font-family: dashicons;

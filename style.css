@@ -1,11 +1,11 @@
 /*
 Theme Name: Digital
 Theme URI: http://www.insertcart.com/product/digital-wp-theme/
-Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products.
-Version: 1.6
+Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products. Demo http://www.insertcart.com/themes-demo?theme=Digital
+Version: 1.7
 Author: insertcart.com
 Author URI: http://www.insertcart.com/
-Tags: custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
+Tags: custom-logo, custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
 Text Domain: digital
 License: GNU General Public License
 License URI: license.txt
@@ -16,27 +16,9 @@ Digital WordPress theme is licensed under the GPL.
 
 */
 
-@media only screen and (max-device-width: 480px) {
-	#slider img{
-		    min-height: auto !important;
-	}
-	.slider-wrapper{
-		    height: auto !important;
-	}
-	#navigation #search{
-		display:none;
-	}	
-	#singlecontent,
-	#sidebar,
-#content{
-	width:100% !important;
-}
-.thumbnail img{
-	height:auto !important;
-}
-	}
 
 /*===================== reset ===================== */
+
 .clearfix:after { 
 	clear: both;
 	content: ' ';
@@ -2188,4 +2170,42 @@ div.summary.entry-summary > div.product_meta > span:before{
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+@media only screen and (max-width: 479px ) {
+	#slider img{
+			min-height: auto !important;
+	}
+	.slider-wrapper{
+			height: auto !important;
+	}
+	#navigation #search{
+		display:none;
+	}	
+	#singlecontent,
+	#sidebar,
+	#content{
+		width:100% !important;
+	}
+	div#content {
+		width: 100%;
+		float: none;
+	}
+div#sidebar {
+    width: 100%;
+    float: none;
+}
+.thumbnail img,
+img.attachment-defaultthumb.size-defaultthumb.wp-post-image {
+    height: 105px;
+}
+h2.entry-title{
+	font-size:15px;	
+}#banner-top,
+#header #logo{
+	width: 100%;
+	    text-align: center;
+}
+
+
 }
