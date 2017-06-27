@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.22 - 27th June, 2017 =
+* Added Slider Speed Setting
+
 = 1.0.21 - 17th February, 2017 =
 * New Theme Setup page created
 * Easy detailed instructions and recommended plugins section.

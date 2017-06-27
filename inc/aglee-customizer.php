@@ -787,448 +787,475 @@ $wp_customize -> add_control(
         )
     );
 
-
-// Hide readmore in home slider
-$wp_customize->add_section(
-    'homeslider_readmore_show_option',
+// for slider mode change
+$wp_customize -> add_section(
+    'slider_speed_section',
     array(
-        'title' => __('Readmore Display Option','aglee-lite'),
-        'priorty' => 20,
+        'title' => __('Slider Speed','aglee-lite'),
+        'priority' => 30,
         'panel' => 'slider_setting_pannel'
         )
     );
-
-$wp_customize->add_setting(
-    'readmore_slider_setting',
+$wp_customize -> add_setting(
+    'slider_speed_setting',
     array(
-        'default' => '0',
-        'transport'=>'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_checkbox'
-        )
-    );
+        'default' => __('1000','aglee-lite'),
+        'transport' => 'refresh',
+        'sanitize_callback' => 'aglee_lite_sanitize_dropdown_general'
 
-$wp_customize->add_control(
-    'readmore_slider_setting',
-    array(
-        'label'=>__('Click To Hide Readmore In Slider','aglee-lite'),
-        'section'=>'homeslider_readmore_show_option',
-        'type'=>'checkbox'
-        )
-    );
-
-
-/** accordion toggle panel **/
-$wp_customize->add_section(
-    'aglee_lite_section_titles',
-    array(
-        'title' => __('Homepage Section Titles','aglee-lite'),
-        'description' => __('Add title for homepage sections and add its contents from Widget Areas.','aglee-lite'),
-        'priority' => 20,
-        )
-    );
-
-$wp_customize->add_setting(
-    'aglee_lite_features_section_title',
-    array(
-        'default' => '',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
         )
     );
 
 $wp_customize -> add_control(
-    'aglee_lite_features_section_title',
+    'slider_speed_setting',
     array(
-        'label' => __('Features Section Title','aglee-lite'),
-        'section' => 'aglee_lite_section_titles',
-        'type' => 'text'
+        'label' => __('Slider Speed','aglee-lite'),
+        'section' => 'slider_speed_section',
+        'type' => 'number'
         )
     );
 
-$wp_customize->add_setting(
-    'aglee_lite_toggle_section_title',
-    array(
-        'default' => __('Accordion','aglee-lite'),
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
+// Hide readmore in home slider
+    $wp_customize->add_section(
+        'homeslider_readmore_show_option',
+        array(
+            'title' => __('Readmore Display Option','aglee-lite'),
+            'priorty' => 20,
+            'panel' => 'slider_setting_pannel'
+            )
+        );
 
-$wp_customize -> add_control(
-    'aglee_lite_toggle_section_title',
-    array(
-        'label' => __('Toggle/Accordion Section Title','aglee-lite'),
-        'section' => 'aglee_lite_section_titles',
-        'type' => 'text'
-        )
-    );
+    $wp_customize->add_setting(
+        'readmore_slider_setting',
+        array(
+            'default' => '0',
+            'transport'=>'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_checkbox'
+            )
+        );
 
-$wp_customize->add_setting(
-    'aglee_lite_testimonial_section_title',
-    array(
-        'default' => __('What Our Clients Say','aglee-lite'),
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
+    $wp_customize->add_control(
+        'readmore_slider_setting',
+        array(
+            'label'=>__('Click To Hide Readmore In Slider','aglee-lite'),
+            'section'=>'homeslider_readmore_show_option',
+            'type'=>'checkbox'
+            )
+        );
 
-$wp_customize -> add_control(
-    'aglee_lite_testimonial_section_title',
-    array(
-        'label' => __('Testimonial Section Title','aglee-lite'),
-        'section' => 'aglee_lite_section_titles',
-        'type' => 'text'
-        )
-    );
 
-$wp_customize->add_setting(
-    'aglee_lite_services_section_title',
-    array(
-        'default' => __('Our services','aglee-lite'),
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
+    /** accordion toggle panel **/
+    $wp_customize->add_section(
+        'aglee_lite_section_titles',
+        array(
+            'title' => __('Homepage Section Titles','aglee-lite'),
+            'description' => __('Add title for homepage sections and add its contents from Widget Areas.','aglee-lite'),
+            'priority' => 20,
+            )
+        );
 
-$wp_customize -> add_control(
-    'aglee_lite_services_section_title',
-    array(
-        'label' => __('Services Section Title','aglee-lite'),
-        'section' => 'aglee_lite_section_titles',
-        'type' => 'text'
-        )
-    );
-/**  end of titles panel **/ 
+    $wp_customize->add_setting(
+        'aglee_lite_features_section_title',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
 
-/** Testimonial panel **/
-$wp_customize -> add_panel(
-    'testimonial_select_panel',
-    array(
-        'priority' => 20,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __('Testimonial Slider', 'aglee-lite')
-        )
-    ); 
+    $wp_customize -> add_control(
+        'aglee_lite_features_section_title',
+        array(
+            'label' => __('Features Section Title','aglee-lite'),
+            'section' => 'aglee_lite_section_titles',
+            'type' => 'text'
+            )
+        );
+
+    $wp_customize->add_setting(
+        'aglee_lite_toggle_section_title',
+        array(
+            'default' => __('Accordion','aglee-lite'),
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+
+    $wp_customize -> add_control(
+        'aglee_lite_toggle_section_title',
+        array(
+            'label' => __('Toggle/Accordion Section Title','aglee-lite'),
+            'section' => 'aglee_lite_section_titles',
+            'type' => 'text'
+            )
+        );
+
+    $wp_customize->add_setting(
+        'aglee_lite_testimonial_section_title',
+        array(
+            'default' => __('What Our Clients Say','aglee-lite'),
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+
+    $wp_customize -> add_control(
+        'aglee_lite_testimonial_section_title',
+        array(
+            'label' => __('Testimonial Section Title','aglee-lite'),
+            'section' => 'aglee_lite_section_titles',
+            'type' => 'text'
+            )
+        );
+
+    $wp_customize->add_setting(
+        'aglee_lite_services_section_title',
+        array(
+            'default' => __('Our services','aglee-lite'),
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+
+    $wp_customize -> add_control(
+        'aglee_lite_services_section_title',
+        array(
+            'label' => __('Services Section Title','aglee-lite'),
+            'section' => 'aglee_lite_section_titles',
+            'type' => 'text'
+            )
+        );
+    /**  end of titles panel **/ 
+
+    /** Testimonial panel **/
+    $wp_customize -> add_panel(
+        'testimonial_select_panel',
+        array(
+            'priority' => 20,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '',
+            'title' => __('Testimonial Slider', 'aglee-lite')
+            )
+        ); 
 
 // choose category of slider   
-$wp_customize->add_section(
-    'testimonial_category_choose_section',
-    array(
-        'title' => __('Slider Selection(Category)','aglee-lite'),
-        'priority' => 20,
-        'description' => __('Choose Category for testimonial slider','aglee-lite'),
-        'panel' => 'testimonial_select_panel',
-        )
-    );
+    $wp_customize->add_section(
+        'testimonial_category_choose_section',
+        array(
+            'title' => __('Slider Selection(Category)','aglee-lite'),
+            'priority' => 20,
+            'description' => __('Choose Category for testimonial slider','aglee-lite'),
+            'panel' => 'testimonial_select_panel',
+            )
+        );
 
-$wp_customize->add_setting(
-    'slider_testimonial_category',
-    array(
-        'sanitize_callback' => 'aglee_lite_sanitize_dropdown_general'
-        )
-    );
+    $wp_customize->add_setting(
+        'slider_testimonial_category',
+        array(
+            'sanitize_callback' => 'aglee_lite_sanitize_dropdown_general'
+            )
+        );
 
-$wp_customize->add_control( new Aglee_lite_Category_Dropdown( $wp_customize, 'slider_testimonial_category',
-    array(
-        'label' => __('Choose Testimonial Category', 'aglee-lite'),
-        'section' => 'testimonial_category_choose_section',
-        'type' => 'select',
-        )
-    ) ); 
-/**  end of testimonial panel **/       
+    $wp_customize->add_control( new Aglee_lite_Category_Dropdown( $wp_customize, 'slider_testimonial_category',
+        array(
+            'label' => __('Choose Testimonial Category', 'aglee-lite'),
+            'section' => 'testimonial_category_choose_section',
+            'type' => 'select',
+            )
+        ) ); 
+    /**  end of testimonial panel **/       
 
 
-/** For Blog page selection **/
+    /** For Blog page selection **/
 
-$wp_customize -> add_panel( 
-    'blogpage_setting_pannel',
-    array(
-        'priority' => 20,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __( 'Blog Page Option', 'aglee-lite' ),
-        ) 
-    );
+    $wp_customize -> add_panel( 
+        'blogpage_setting_pannel',
+        array(
+            'priority' => 20,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '',
+            'title' => __( 'Blog Page Option', 'aglee-lite' ),
+            ) 
+        );
 
-$wp_customize -> add_section(
-    'blog_category_select_section',
-    array(
-        'title' => __('Choose Category To Use As Blog','aglee-lite'),
-        'priority' => 30,
-        'panel' => 'blogpage_setting_pannel'
-        )        
-    );
+    $wp_customize -> add_section(
+        'blog_category_select_section',
+        array(
+            'title' => __('Choose Category To Use As Blog','aglee-lite'),
+            'priority' => 30,
+            'panel' => 'blogpage_setting_pannel'
+            )        
+        );
 
-$wp_customize -> add_setting(
-    'blog_category_select_setting',
-    array(
-        'sanitize_callback' => 'aglee_lite_sanitize_dropdown_general'
-        )
-    );
+    $wp_customize -> add_setting(
+        'blog_category_select_setting',
+        array(
+            'sanitize_callback' => 'aglee_lite_sanitize_dropdown_general'
+            )
+        );
 
-$wp_customize -> add_control(new Aglee_lite_Category_Dropdown( $wp_customize, 'blog_category_select_setting',
-    array(
-        'label' => __('Choose Blog Category', 'aglee-lite'),
-        'section' => 'blog_category_select_section',
-        'type' => 'select',
-        )
-    ));      
+    $wp_customize -> add_control(new Aglee_lite_Category_Dropdown( $wp_customize, 'blog_category_select_setting',
+        array(
+            'label' => __('Choose Blog Category', 'aglee-lite'),
+            'section' => 'blog_category_select_section',
+            'type' => 'select',
+            )
+        ));      
 
 
 // Blog Post display Layout
-$wp_customize -> add_section(
-    'blog_post_layout_section',
-    array(
-        'title' => __('Blog Post Display Layout','aglee-lite'),
-        'description' => '',
-        'priority' => 10,
-        'panel' => 'blogpage_setting_pannel'
-        )
-    );
+    $wp_customize -> add_section(
+        'blog_post_layout_section',
+        array(
+            'title' => __('Blog Post Display Layout','aglee-lite'),
+            'description' => '',
+            'priority' => 10,
+            'panel' => 'blogpage_setting_pannel'
+            )
+        );
 
-$wp_customize -> add_setting(
-    'blog_post_layout',
-    array(
-        'default' => __('blog_image_large','aglee-lite'),
-        'sanitize_callback' => 'aglee_lite_webpage_sanitize_blog_layout',
-        'transport' => 'refresh'
-        )
-    );
+    $wp_customize -> add_setting(
+        'blog_post_layout',
+        array(
+            'default' => __('blog_image_large','aglee-lite'),
+            'sanitize_callback' => 'aglee_lite_webpage_sanitize_blog_layout',
+            'transport' => 'refresh'
+            )
+        );
 
-$wp_customize -> add_control(
-    'blog_post_layout',
-    array(
-        'label' => __('Blog Posts Display Layout','aglee-lite'),
-        'section' => 'blog_post_layout_section',
-        'type' => 'radio',
-        'choices' => array(
-            'blog_image_large' => __('Blog Image Large','aglee-lite'),
-            'blog_image_medium' => __('Blog Image Medium', 'aglee-lite'),
-            'blog_image_alternate_medium' => __('Blog Image Alternate Medium', 'aglee-lite'),
-            'blog_full_content' => __('Blog Full Content', 'aglee-lite'),
-            )            
-        )
-    );
+    $wp_customize -> add_control(
+        'blog_post_layout',
+        array(
+            'label' => __('Blog Posts Display Layout','aglee-lite'),
+            'section' => 'blog_post_layout_section',
+            'type' => 'radio',
+            'choices' => array(
+                'blog_image_large' => __('Blog Image Large','aglee-lite'),
+                'blog_image_medium' => __('Blog Image Medium', 'aglee-lite'),
+                'blog_image_alternate_medium' => __('Blog Image Alternate Medium', 'aglee-lite'),
+                'blog_full_content' => __('Blog Full Content', 'aglee-lite'),
+                )            
+            )
+        );
 
 
 // function to get webpage sanitize
-function aglee_lite_webpage_sanitize_blog_layout($input) {
-    $valid_keys = array(
-        'blog_image_large' => __('blog_image_large', 'aglee-lite'),
-        'blog_image_medium' => __('blog_image_medium', 'aglee-lite'),
-        'blog_image_alternate_medium' => __('blog_image_alternate_medium', 'aglee-lite'),
-        'blog_full_content' => __('blog_full_content', 'aglee-lite')
-        );
-    if ( array_key_exists( $input, $valid_keys)) {
-        return $input;
-    } else {
-        return '';
+    function aglee_lite_webpage_sanitize_blog_layout($input) {
+        $valid_keys = array(
+            'blog_image_large' => __('blog_image_large', 'aglee-lite'),
+            'blog_image_medium' => __('blog_image_medium', 'aglee-lite'),
+            'blog_image_alternate_medium' => __('blog_image_alternate_medium', 'aglee-lite'),
+            'blog_full_content' => __('blog_full_content', 'aglee-lite')
+            );
+        if ( array_key_exists( $input, $valid_keys)) {
+            return $input;
+        } else {
+            return '';
+        }
     }
-}
-/** End of Blog Page selection **/
+    /** End of Blog Page selection **/
 
 
-/** Translation panel **/
+    /** Translation panel **/
 
-$wp_customize -> add_panel( 
-    'translation_setting_pannel',
-    array(
-        'priority' => 20,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __( 'Translations', 'aglee-lite' ),
-        ) 
-    );
+    $wp_customize -> add_panel( 
+        'translation_setting_pannel',
+        array(
+            'priority' => 20,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '',
+            'title' => __( 'Translations', 'aglee-lite' ),
+            ) 
+        );
 
-$wp_customize -> add_section(
-    'home_page_translation_section',
-    array(
-        'title' => __('Home Page','aglee-lite'),
-        'priority' => 30,
-        'panel' => 'translation_setting_pannel'
-        )
-    );
-$wp_customize -> add_setting(
-    'home_page_translation',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'home_page_translation',
-    array(
-        'label' => __('Read More... (Features)','aglee-lite'),
-        'section' => 'home_page_translation_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_section(
+        'home_page_translation_section',
+        array(
+            'title' => __('Home Page','aglee-lite'),
+            'priority' => 30,
+            'panel' => 'translation_setting_pannel'
+            )
+        );
+    $wp_customize -> add_setting(
+        'home_page_translation',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'home_page_translation',
+        array(
+            'label' => __('Read More... (Features)','aglee-lite'),
+            'section' => 'home_page_translation_section',
+            'type' => 'text'
+            )
+        );
 
-$wp_customize -> add_setting(
-    'home_page_moreinfo',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'home_page_moreinfo',
-    array(
-        'label' => __('More Info... (Services)','aglee-lite'),
-        'section' => 'home_page_translation_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_setting(
+        'home_page_moreinfo',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'home_page_moreinfo',
+        array(
+            'label' => __('More Info... (Services)','aglee-lite'),
+            'section' => 'home_page_translation_section',
+            'type' => 'text'
+            )
+        );
 
 // blog page readmore text change
-$wp_customize -> add_section(
-    'blog_page_translation_section',
-    array(
-        'title' => __('Blog/Archive','aglee-lite'),
-        'priority' => 30,
-        'panel' => 'translation_setting_pannel'
-        )
-    );
-$wp_customize -> add_setting(
-    'blog_page_translation',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'blog_page_translation',
-    array(
-        'label' => __('Read More... ','aglee-lite'),
-        'section' => 'blog_page_translation_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_section(
+        'blog_page_translation_section',
+        array(
+            'title' => __('Blog/Archive','aglee-lite'),
+            'priority' => 30,
+            'panel' => 'translation_setting_pannel'
+            )
+        );
+    $wp_customize -> add_setting(
+        'blog_page_translation',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'blog_page_translation',
+        array(
+            'label' => __('Read More... ','aglee-lite'),
+            'section' => 'blog_page_translation_section',
+            'type' => 'text'
+            )
+        );
 
 // Single Post Page
-$wp_customize -> add_section(
-    'single_post_page_section',
-    array(
-        'title' => __('Single Post Page','aglee-lite'),
-        'priority' => 30,
-        'panel' => 'translation_setting_pannel'
-        )
-    );
+    $wp_customize -> add_section(
+        'single_post_page_section',
+        array(
+            'title' => __('Single Post Page','aglee-lite'),
+            'priority' => 30,
+            'panel' => 'translation_setting_pannel'
+            )
+        );
 
-$wp_customize -> add_setting(
-    'tagged_post_page',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
+    $wp_customize -> add_setting(
+        'tagged_post_page',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
 
-$wp_customize -> add_control(
-    'tagged_post_page',
-    array(
-        'label' => __('Tagged','aglee-lite'),
-        'section' => 'single_post_page_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_control(
+        'tagged_post_page',
+        array(
+            'label' => __('Tagged','aglee-lite'),
+            'section' => 'single_post_page_section',
+            'type' => 'text'
+            )
+        );
 
-$wp_customize -> add_setting(
-    'postedon_post_page',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'postedon_post_page',
-    array(
-        'label' => __('Posted On .. by ..','aglee-lite'),
-        'section' => 'single_post_page_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_setting(
+        'postedon_post_page',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'postedon_post_page',
+        array(
+            'label' => __('Posted On .. by ..','aglee-lite'),
+            'section' => 'single_post_page_section',
+            'type' => 'text'
+            )
+        );
 
-$wp_customize -> add_setting(
-    'by_post_page',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'by_post_page',
-    array(
-        'label' => ' ',
-        'section' => 'single_post_page_section',
-        'type' => 'text',
-        'placeholder' => __('by','aglee-lite')
-        )
-    );
+    $wp_customize -> add_setting(
+        'by_post_page',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'by_post_page',
+        array(
+            'label' => ' ',
+            'section' => 'single_post_page_section',
+            'type' => 'text',
+            'placeholder' => __('by','aglee-lite')
+            )
+        );
 
-$wp_customize -> add_setting(
-    'in_post_page',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'in_post_page',
-    array(
-        'label' => __('Posted In','aglee-lite'),
-        'section' => 'single_post_page_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_setting(
+        'in_post_page',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'in_post_page',
+        array(
+            'label' => __('Posted In','aglee-lite'),
+            'section' => 'single_post_page_section',
+            'type' => 'text'
+            )
+        );
 
 // Search result for 
-$wp_customize -> add_section(
-    'search_page_section',
-    array(
-        'title' => __('Search Page','aglee-lite'),
-        'priority' => 30,
-        'panel' => 'translation_setting_pannel'
-        )
-    );
-$wp_customize -> add_setting(
-    'search_page_setting',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'aglee_lite_sanitize_text'
-        )
-    );
-$wp_customize -> add_control(
-    'search_page_setting',
-    array(
-        'label' => __('Search Results For','aglee-lite'),
-        'section' => 'search_page_section',
-        'type' => 'text'
-        )
-    );
+    $wp_customize -> add_section(
+        'search_page_section',
+        array(
+            'title' => __('Search Page','aglee-lite'),
+            'priority' => 30,
+            'panel' => 'translation_setting_pannel'
+            )
+        );
+    $wp_customize -> add_setting(
+        'search_page_setting',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'aglee_lite_sanitize_text'
+            )
+        );
+    $wp_customize -> add_control(
+        'search_page_setting',
+        array(
+            'label' => __('Search Results For','aglee-lite'),
+            'section' => 'search_page_section',
+            'type' => 'text'
+            )
+        );
 
 //General dropdown sanitize for integer value
-function aglee_lite_sanitize_dropdown_general( $input ) {
-    return absint( $input );
-}
+    function aglee_lite_sanitize_dropdown_general( $input ) {
+        return absint( $input );
+    }
 
 //Sanitize input text general
-function aglee_lite_sanitize_text( $input ){
-    return wp_kses_post( force_balance_tags( $input ) );
-} 
+    function aglee_lite_sanitize_text( $input ){
+        return wp_kses_post( force_balance_tags( $input ) );
+    } 
 
 //Checkbox sanitization customizer
-function aglee_lite_sanitize_checkbox( $input ) {
-    if ( $input == 1 ) {
-        return 1;
-    } else {
-        return '';
+    function aglee_lite_sanitize_checkbox( $input ) {
+        if ( $input == 1 ) {
+            return 1;
+        } else {
+            return '';
+        }
     }
-}
 }
 add_action( 'customize_register', 'aglee_lite_customizer' );
 

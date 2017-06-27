@@ -74,6 +74,7 @@ endif;
 
 function aglee_lite_slidercb(){
     $aglee_lite_mode = get_theme_mod('slider_mode_setting','horizontal');
+    $aglee_lite_speed = get_theme_mod('slider_speed_setting','1000');
     $aglee_lite_slider_select = get_theme_mod('slider_type_choose','option1');
     $aglee_lite_readmore_option = get_theme_mod('readmore_slider_setting', 'Read More');
     if($aglee_lite_slider_select == 'option1'){
@@ -171,7 +172,8 @@ function aglee_lite_slidercb(){
                 $(".aglee-home-slider").bxSlider({
                     pager: true,
                     auto: true,
-                    mode: '<?php echo esc_attr($aglee_lite_mode); ?>'
+                    mode: '<?php echo esc_attr($aglee_lite_mode); ?>',
+                    speed:<?php echo esc_attr($aglee_lite_speed); ?>
                 });
             });
         </script>
