@@ -29,9 +29,9 @@ if ( !empty( $second_cat ) && !is_wp_error( $second_cat ) ) {
 						}
 					} else {
 						if ( $i != 2 ) {
-							echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" width="300px" height="300px" />';
+							echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . esc_html__( 'Placeholder', 'bestore' ) . '" />';
 						} else {
-							echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" width="600px" height="300px" />';
+							echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . esc_html__( 'Placeholder', 'bestore' ) . '" />';
 						}
 					}
 					?>

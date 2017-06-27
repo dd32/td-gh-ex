@@ -9,7 +9,7 @@
 		if ( is_search() ) :
 			$total_results = $wp_query->found_posts;
 
-			echo "<h1 class='search-head text-center'>" . sprintf( __( '%s Search Results for "%s"', 'bestore' ), $total_results, get_search_query() ) . "</h1>";
+			echo "<h1 class='search-head text-center'>" . sprintf( __( '%1$s Search Results for "%2$s"', 'bestore' ), $total_results, get_search_query() ) . "</h1>";
 			
 		endif;
 

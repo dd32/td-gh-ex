@@ -4,7 +4,7 @@ Theme URI: https://themes4wp.com/theme/bestore/
 Author: Themes4WP
 Author URI: https://themes4wp.com/
 Description: Bestore is lightweight, very fast, clean responsive WooCommerce WordPress theme. Bestore is the perfect free theme for e-commerce shop. Theme is Search Engine Optimized (SEO) friendly. Theme is perfect suitable for clothing, electronics, mobile, fashion, affiliate and almost any type of store.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, theme-options, translation-ready, custom-header, custom-logo, full-width-template, e-commerce	
@@ -107,14 +107,14 @@ img {
 .sticky,
 .bypostauthor {}
 table { 
-  width: 100%; 
-  border-collapse: collapse; 
+    width: 100%; 
+    border-collapse: collapse; 
 }
 th { 
-  font-weight: bold; 
+    font-weight: bold; 
 }
 td, th { 
-  padding: 4px; 
+    padding: 4px; 
 }
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
@@ -304,7 +304,6 @@ a, a:active, a:hover, a:focus {
 }
 article {
     clear: both;
-    float: left;
     margin-bottom: 60px;
     width: 100%;
 }
@@ -402,6 +401,24 @@ nav.navigation.pagination .current {
     border-top: 1px solid #ccc;
     padding: 15px;
     clear: both;
+}
+.searchform {
+    position: relative;
+}
+.searchform input[type="text"]{
+    width: 100%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.searchform input[type="submit"]{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px
+    border-radius: 2px;
 }
 
 /* Comments */
@@ -548,6 +565,7 @@ li.product-category.product {
 .woocommerce input.button.alt,
 .woocommerce .widget_shopping_cart .buttons a, 
 .woocommerce.widget_shopping_cart .buttons a,
+.searchform input[type="submit"],
 .dropdown-menu > .active > a, 
 .dropdown-menu > .active > a:hover, 
 .dropdown-menu > .active > a:focus,
