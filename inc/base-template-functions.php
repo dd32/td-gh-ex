@@ -154,11 +154,11 @@ if ( ! function_exists( 'basepress_header_image' ) ) {
 		
 		// Get theme options from database
 		$theme_options = apply_filters('basepress_header_image', array(
-				'post_layout_single' => 'none',
-				'custom_header_hide' => false,
-				'custom_header_link' => ''
+			'post_layout_single' => 'none',
+			'custom_header_hide' => false,
+			'custom_header_link' => ''
 
-			));
+		));
 		
 		// Display featured image as header image on static pages
 		if( is_page() && has_post_thumbnail() ) : ?>
@@ -396,7 +396,7 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 	 */
 	function basepress_post_tags() {
 
-		$metadata = array_flip( apply_filters('basepress_enable_post_metadata', array() ) );
+		$metadata = array_flip( apply_filters('basepress_enable_single_post_tags', array('tag') ) );
 
 		// Get tags.
 		$tag_list = get_the_tag_list( '', __(', ', 'basepress') );
@@ -412,9 +412,9 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 
 							<div class="entry-footer">
 
-								<div class="entry-tags 77">
+								<div class="entry-tags">
 									
-									<?php echo __('<i class="fa fa-tags" aria-hidden="true"></i>', 'basepress') . wp_kses_post($tag_list); ?>
+									<?php echo __('<i class="fa fa-tags" aria-hidden="true"></i> ', 'basepress') . wp_kses_post($tag_list); ?>
 									
 								</div><!-- .entry-tags -->
 
@@ -427,7 +427,6 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 
 		else :
 		?>
-
 			<?php if ( $tag_list ) : ?>
 
 				<div class="entry-footer">
@@ -688,16 +687,26 @@ if ( ! function_exists( 'basepress_meta_date' ) ) :
 	 */
 	function basepress_meta_date( $prefix = '' ) {
 
+		$modified = apply_filters('basepress_enable_modified', false);
+
 		$prefix = $prefix != '' ? '<span class="meta-prefix prefix-date">'. $prefix . '</span>' : '';
 
-		$time_string = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
-		);
+		if ( $modified ) {
 
-		return '<span class="meta-date posted-on">' . $prefix . $time_string . '</span>';
+			$time_string = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() )
+			);
+
+		} else {
+
+			$time_string = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
+			);
+		}
+
+		return '<span class="meta-date posted-on">' . $prefix . $time_string  .  '</span>';
 	}
 endif;
 
@@ -846,7 +855,7 @@ if ( ! function_exists( 'basepress_footer_widgets' ) ) {
 
 		if ( $widget_columns > 0 ) : ?>
 				<div class="container">
-					<div class="footer-widgets col-<?php echo intval( $widget_columns ); ?>">
+					<div class="widget-area footer-widgets col-<?php echo intval( $widget_columns ); ?>">
 						<?php
 						$i = 0;
 						$clas_last = '';

@@ -42,7 +42,7 @@ jQuery.fn.exists = function(callback) {
 			var $first_menu = '';
 			var $second_menu = '';
 
-			$('.sub-menu').parent().append('<span class="arrow-menu"><i class="fa fa-angle-down"></i></span>');
+			$('.sub-menu, .children').parent().append('<span class="arrow-menu"><i class="fa fa-angle-down"></i></span>');
 
 			if ($primary_menu.length == 0 && $secondary_menu.length == 0) {
 				return;
@@ -95,9 +95,9 @@ jQuery.fn.exists = function(callback) {
 				if ( subMenuOpen ) {
 					$(this).removeClass('sub-menu-open');
 					$(this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
-					$(this).prev('ul.sub-menu').slideUp();
+					$(this).prev('ul.sub-menu, ul.children').slideUp();
 				} else {
-					$(this).prev('ul.sub-menu').slideDown();
+					$(this).prev('ul.sub-menu, ul.children').slideDown();
 					$(this).addClass('sub-menu-open');
 					$(this).find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
 				}

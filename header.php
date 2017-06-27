@@ -27,27 +27,33 @@
 	do_action( 'basepress_before_header' ); ?>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
+
+		<div class="main-header">
+		
+			<div class="container">
+				<?php
+					/**
+					 * Functions hooked into basepress_header action
+					 *
+					 * @hooked basepress_skip_links				- 0
+					 * @hooked basepress_site_branding			- 10
+					 * @hooked basepress_primary_navigation		- 20
+					 */
+					do_action( 'basepress_header' );
+				?>
+			</div> <!-- .container -->
+
 			<?php
-				/**
-				 * Functions hooked into basepress_header action
-				 *
-				 * @hooked basepress_skip_links				- 0
-				 * @hooked basepress_site_branding			- 10
-				 * @hooked basepress_primary_navigation		- 20
-				 */
-				do_action( 'basepress_header' ); ?>
-			
-
-		</div> <!-- .container -->
-
-		<?php
 			/**
-				 * Functions hooked into basepress_header action
-				 *
-				 * @hooked basepress_category_navigation	- 0
-				 */
-				do_action( 'basepress_category_menu' ); ?>
+			 * Functions hooked into basepress_header action
+			 *
+			 * @hooked basepress_category_navigation	- 0
+			 */
+			do_action( 'basepress_category_menu' );
+			?>
+
+		</div>
+		<div id="catcher"></div>
 
 	</header><!-- #masthead -->
 
@@ -66,12 +72,12 @@
 	?>
 
 	<div id="content" class="site-content">
-	
+		
 		<div class="container">
-		<?php
-		/**
-		 * Functions hooked in to basepress_content_top
-		 *
-		 */
-		do_action( 'basepress_content_top' );
+			<?php
+			/**
+			 * Functions hooked in to basepress_content_top
+			 *
+			 */
+			do_action( 'basepress_content_top' );
 			

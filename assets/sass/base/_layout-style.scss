@@ -150,7 +150,7 @@
 	}
 	.container {
 		width: 100%;
-		padding: 0 2%;
+		padding: 0 3%;
 	}
 }
 
@@ -158,6 +158,67 @@
 	.container {
 		padding: 0 5%;
 	}
+	.post-navigation {
+
+		.nav-links {
+
+			.nav-next {
+
+				a {
+					padding-left: 15px;
+					padding-right: 0;
+				}
+
+				a::before {
+					content: '';
+				}
+			}
+
+			.nav-previous {
+
+				a {
+					padding-right: 15px;
+					padding-left: 0;
+				}
+
+				a::before {
+					content: '';
+				}
+			}
+
+			a {
+				font-size: 14px;
+			}
+
+		}  
+
+	}
+
+	.comment-meta {
+		width: 100%;
+		margin-bottom: 5px;
+		float: left;
+	}
+
+	#comments {
+
+		.comment-content {
+			overflow: visible;
+			display: inline-block;
+		}
+
+		.comment-list {
+
+				.reply {
+					padding-left: 0;
+				}
+		}
+
+
+	}
+
+	
+	
 }
 
 @include susy-media (max-width $responsive-width) {
@@ -175,9 +236,11 @@
 		text-align: center;
 		width: 100%;
 	}
-	h1.logo {
-		display: inline-block;
-		margin-bottom: 0;
+	.custom-logo-link {
+		
+		.custom-logo {
+			vertical-align: top;
+		}
 	}
 
 	.main-navigation {
@@ -188,7 +251,6 @@
 
 	span.menu-toggle {
 		position: relative;
-		color: #000000;
 		padding: 14px 0;
 		line-height: 24px;
 		font-size: 14px;
@@ -207,7 +269,7 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		width: 60%;
+		width: 90%;
 		height: 100%;
 		min-height: 100%;
 		max-height: 100%;
@@ -231,16 +293,16 @@
 	.mobile-menu-wrapper ul li {
 		width: 100%;
 		display: block;
-		line-height: 24px;
 		position: relative;
 		border-bottom: 1px solid #f0f0f0;
 	}
+	.mobile-menu-wrapper ul li li:last-child {
+		border-bottom: 0;
+	}
 	.mobile-menu-wrapper ul li a {
-		color: #333;
-		font-size: 16px;
-		display: inline-block;
 		width: 100%;
-		padding: 10px;
+		padding: 12px 20px;
+		display: inline-block;
 	}
 	.mobile-menu-wrapper ul ul {
 		border-top: 1px solid #f0f0f0;
@@ -265,24 +327,7 @@
 		top: 0;
 		width: 100%;
 	}
-	.mobile-only, .arrow-menu {
-		display: block;
-	}
-	.mobile-menu-wrapper .arrow-menu {
-		position: absolute;
-		right: 0;
-		top: 0;
-		color: #000;
-		line-height: 44px;
-		border-left: 1px solid #f0f0f0;
-		width: 44px;
-		font-size: 14px;
-		text-align: center;
-		cursor: pointer;
-	}
-	.arrow-main-menu {
-		display: none;
-	}
+
 }
 
 @include susy-media (max-width $handheld) {
@@ -334,10 +379,6 @@
 			.children {
 				padding: 0 0 0 32px;
 			}
-			.reply {
-				padding-left: 92px;
-			}
-
 		}
 		.avatar {
 			max-width: 22%;
@@ -503,8 +544,7 @@
 
 	body,
 	a,
-	.site-title a
-	{
+	.site-title a {
 		color: #222 !important; /* Make sure color schemes don't affect to print */
 	}
 

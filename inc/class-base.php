@@ -176,14 +176,17 @@ if ( ! class_exists( 'basepress' ) ) :
 
 			$footer_widget_regions = apply_filters( 'basepress_footer_widget_regions', 4 );
 
-			for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-				$footer = sprintf( 'footer_%d', $i );
+			if ( $footer_widget_regions > 0) {
 
-				$sidebar_args[ $footer ] = array(
-					'name'        => sprintf( __( 'Footer %d', 'basepress' ), $i ),
-					'id'          => sprintf( 'footer-%d', $i ),
-					'description' => sprintf( __( 'Widgetized Footer Region %d.', 'basepress' ), $i )
-				);
+				for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
+					$footer = sprintf( 'footer_%d', $i );
+
+					$sidebar_args[ $footer ] = array(
+						'name'        => sprintf( __( 'Footer %d', 'basepress' ), $i ),
+						'id'          => sprintf( 'footer-%d', $i ),
+						'description' => sprintf( __( 'Widgetized Footer Region %d.', 'basepress' ), $i )
+					);
+				}
 			}
 
 			foreach ( $sidebar_args as $sidebar => $args ) {
@@ -233,17 +236,21 @@ if ( ! class_exists( 'basepress' ) ) :
 			 * Fonts
 			 */
 			$google_fonts = apply_filters( 'basepress_google_font_families', array(
-				'open-sanse' 	=> 'Open+Sans:300,400,700',
+				'open-sanse' 	=> 'Open+Sans:300,400,700&subset=latin,latin-ext'
 			) );
 
-			$query_args = array(
-				'family' => implode( '|', $google_fonts ),
-				'subset' => urlencode( 'latin,latin-ext' ),
-			);
+			if ( $google_fonts ) {
 
-			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+				$query_args = array(
+					'family' => implode( '|', $google_fonts )
+				);
 
-			wp_enqueue_style( 'basepress-fonts', $fonts_url, array(), null );
+				$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+				
+
+				wp_enqueue_style( 'basepress-fonts', $fonts_url, array(), null );
+
+			}
 
 			/**
 			 * Scripts
