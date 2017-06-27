@@ -1,14 +1,18 @@
 <?php
 /**
- * Jetpack Compatibility File
- * See: http://jetpack.me/
+ * Jetpack Compatibility File.
+ *
+ * @link https://jetpack.com/
  *
  * @package zenzero
  */
 
 /**
- * Add theme support for Infinite Scroll.
- * See: http://jetpack.me/support/infinite-scroll/
+ * Jetpack setup function.
+ *
+ * See: https://jetpack.com/support/infinite-scroll/
+ * See: https://jetpack.com/support/responsive-videos/
+ * See: https://jetpack.com/support/content-options/
  */
 function zenzero_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
@@ -17,6 +21,17 @@ function zenzero_jetpack_setup() {
 		'footer'    => 'page',
 	) );
 	add_theme_support( 'jetpack-responsive-videos' );
+	// Add theme support for Content Options.
+	add_theme_support( 'jetpack-content-options', array(
+		'post-details' => array(
+			'stylesheet' => 'zenzero-style',
+			'date'       => '.posted-on',
+			'categories' => '.cat-links',
+			'tags'       => '.tags-links',
+			'author'     => '.byline',
+			'comment'    => '.comments-link',
+		),
+	) );
 }
 add_action( 'after_setup_theme', 'zenzero_jetpack_setup' );
 
