@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.2
+ * @version     3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,6 +49,7 @@ if ( $attachment_ids ) {
 			}
 			$attributes = array(
 				'title'                   => $image_title,
+				'data-caption'            => get_post_field( 'post_excerpt', $attachment_id ),
 				'data-src'                => $full_size_image[0],
 				'data-large_image'        => $full_size_image[0],
 				'data-large_image_width'  => $full_size_image[1],

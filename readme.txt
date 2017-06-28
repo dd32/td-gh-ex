@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.5.7 | 28th June 2017 = 
+* Update: wc templates
+
 = 1.5.6 | 1st June 2017 = 
 * Update: Schema
 
