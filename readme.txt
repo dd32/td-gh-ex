@@ -39,13 +39,14 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 		Copyright: Automattic, automattic.com
 		Licensed: GNU General Public License v3 or later
 
+		navigation.js
+		Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
 	-Images
 		Screenshot Images: 
 		https://pixabay.com/en/suit-man-dapper-work-male-869380/
 		Licensed: Public Domain Images
 
-	-TGM-Plugin-Activation
-		https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md under GNU GPL license
 
 	- Google Fonts - Apache License, version 2.0
 

@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.1.3.2 =
+	- Fix - html5 enqueued properly
+			- fixed for touch-hover issue on small devices
+
 = 2.1.3.1 =
 	- Fix - Search field issue fixed for safari browser
 	- Update - Space and unwanted php closing removed
