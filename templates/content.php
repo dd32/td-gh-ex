@@ -125,7 +125,7 @@ global $post, $ascend_has_sidebar, $ascend_feat_width;
 
                     $textsize = 'col-md-12'; ?>
                     <div class="col-md-12 post-photo-grid-container">
-                    <?php get_template_part('templates/post', 'head-collage-gallery'); ?>
+                    <?php ascend_build_image_collage($post->ID, 'post', $ascend_has_sidebar); ?>
                     </div>    
                     <?php
 

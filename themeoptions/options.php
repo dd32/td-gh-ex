@@ -405,7 +405,7 @@ Redux::setSection( $opt_name, array(
             'line-height'=>true,
             'color'=>true,
             'preview'=>true,
-            'output' => array('.kad-site-tagline'),
+            'output' => array('#logo .kad-site-tagline'),
             'subtitle'=> __("Choose size and style your site tagline", 'ascend'),
             'default'=> array(
                 'font-family'=>'Source Sans Pro',

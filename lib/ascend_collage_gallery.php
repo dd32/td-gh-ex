@@ -1,10 +1,14 @@
 <?php 
-global $post, $ascend_has_sidebar;
-
-?>
- <div class="kad_post_grid kad-light-gallery">
-            <?php
-            $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+if(!function_exists('ascend_build_image_collage')) {
+    function ascend_build_image_collage($id = null, $link ='image', $sidebar = false) {
+    	if(empty($id)) {
+    		$id = get_the_ID();
+    	}
+ 		echo '<div class="kad_post_grid kad-light-gallery">';
+            $image_gallery = get_post_meta( $id, '_kad_image_gallery', true );
             if(!empty($image_gallery)) {
                 $attachments = array_filter( explode( ',', $image_gallery ) );
                 if ($attachments) {
@@ -12,7 +16,7 @@ global $post, $ascend_has_sidebar;
                     $count = count($attachments);
                     if($count == 2) {
                         echo '<div class="kad_postgrid_wrap kt-2-collage clearfix">';
-                        if($ascend_has_sidebar) {
+                        if($sidebar) {
                             $widthimgsize = 525;
                             $heightimgsize = 350;
                             $smallimgsize = 330;
@@ -35,10 +39,19 @@ global $post, $ascend_has_sidebar;
                             } else {
                                 $image_src_output = 'src="'.esc_url($img['src']).'"'; 
                             }
+                            $datarel = 'post';
+                            if($link == "post") {
+                                $imagelink = get_the_permalink();
+                            } else if($link == "attachment"){
+                                $imagelink = get_permalink($attachment);
+                            } else {
+                            	$imagelink = $img['full'];
+                                $datarel = "lightbox";
+                            }
                             ?>
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
-                                        <a href="<?php echo esc_url($img['full']); ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="lightbox" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                                        <a href="<?php echo esc_url($imagelink); ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                                             <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
@@ -53,7 +66,7 @@ global $post, $ascend_has_sidebar;
                         echo '</div>';
                     } else if($count == 3){
                         echo '<div class="kad_postgrid_wrap kt-3-collage clearfix">';
-                        if($ascend_has_sidebar) {
+                        if($sidebar) {
                             $widthimgsize = 525;
                             $heightimgsize = 350;
                             $swidthimgsize = 330;
@@ -78,12 +91,21 @@ global $post, $ascend_has_sidebar;
                             } else {
                                 $image_src_output = 'src="'.esc_url($img['src']).'"'; 
                             }
+                            $datarel = 'post';
+                            if($link == "post") {
+                                $imagelink = get_the_permalink();
+                            } else if($link == "attachment"){
+                                $imagelink = get_permalink($attachment);
+                            } else {
+                            	$imagelink = $img['full'];
+                                $datarel = "lightbox";
+                            }
                             if($i == 2 || $i == 3) { 
                                 echo '<div class="side_post_gal">';
                             } ?>
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
-                                        <a href="<?php echo esc_url($img['full']) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="lightbox" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                                        <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                                             <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
@@ -102,7 +124,7 @@ global $post, $ascend_has_sidebar;
 
                     } else if($count == 4) {
                         echo '<div class="kad_postgrid_wrap kt-4-collage clearfix">';
-                        if($ascend_has_sidebar) {
+                        if($sidebar) {
                             $largeimgsize = 440;
                             $smallimgsize = 220;
                         } else {
@@ -126,12 +148,21 @@ global $post, $ascend_has_sidebar;
                             } else {
                                 $image_src_output = 'src="'.esc_url($img['src']).'"'; 
                             }
+                            $datarel = 'post';
+                            if($link == "post") {
+                                $imagelink = get_the_permalink();
+                            } else if($link == "attachment"){
+                                $imagelink = get_permalink($attachment);
+                            } else {
+                            	$imagelink = $img['full'];
+                                $datarel = "lightbox";
+                            }
                             if($i == 2 || $i == 4) { 
                                 echo '<div class="side_post_gal">';
                             } ?>
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
-                                        <a href="<?php echo esc_url($img['full']) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="lightbox" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                                        <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                                             <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
@@ -150,7 +181,7 @@ global $post, $ascend_has_sidebar;
 
                     } else {
                         echo '<div class="kad_postgrid_wrap kt-5-collage clearfix">';
-                        if($ascend_has_sidebar) {
+                        if($sidebar) {
                             $largeimgsize = 440;
                             $smallimgsize = 220;
                         } else {
@@ -174,12 +205,21 @@ global $post, $ascend_has_sidebar;
                             } else {
                                 $image_src_output = 'src="'.esc_url($img['src']).'"'; 
                             }
+                            $datarel = 'post';
+                            if($link == "post") {
+                                $imagelink = get_the_permalink();
+                            } else if($link == "attachment"){
+                                $imagelink = get_permalink($attachment);
+                            } else {
+                            	$imagelink = $img['full'];
+                                $datarel = "lightbox";
+                            }
                             if($i == 1 || $i == 4) { 
                                 echo '<div class="side_post_gal side-post-gal-'.esc_attr($i).'">';
                             } ?>
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
-	                                    <a href="<?php echo esc_url($img['full']) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="lightbox" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+	                                    <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
 	                                        <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
 	                                        <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
@@ -197,5 +237,7 @@ global $post, $ascend_has_sidebar;
                         echo '</div>';
                     }
                 }
-            } ?> 
-    </div>
+            } 
+   		echo '</div>';
+	}
+}

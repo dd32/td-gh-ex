@@ -64,7 +64,7 @@ global $post, $ascend_feat_width, $ascend_has_sidebar;
     } else if ($ascend_headcontent == 'gallery') { 
 
             echo '<section class="postfeat">';
-                get_template_part('templates/post', 'head-collage-gallery');
+            	ascend_build_image_collage($post->ID, 'image', $ascend_has_sidebar);
             echo '</section>';
 
     } else if ($ascend_headcontent == 'video') { 
