@@ -23,7 +23,7 @@ Description: Used to style the TinyMCE editor.
  */
 
 @import url('//fonts.googleapis.com/css?family=Roboto:400,300,700|Bree+Serif');
-@import url('elusive-webfont.css');
+@import url('elusive-icons.css');
 
 body {
     color: #333;

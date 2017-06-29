@@ -112,3 +112,6 @@ Version 1.2.6
 
 Version 1.2.7
 * Updated TGM script
+
+Version 1.2.8
+* WP 4.8 - Failed to Load Css Issue Fixed. 
