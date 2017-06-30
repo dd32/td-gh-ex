@@ -36,9 +36,6 @@
 
 .pro-vesrion p{line-height:20px;} 
 
-#accordion-section-spasalon_pro_section .accordion-section-title, .accordion-section-title:after {background:#f22853; color:#fff;}
-#accordion-section-spasalon_pro_section .accordion-section-title:after {color:#fff;}
-
 .customizer_layout {
 	background-color:#ccc;
  }
@@ -61,3 +58,5 @@
  #customize-control-spa_theme_options-front_page_data label{
 	 display:none;
  }
+ 
+ li#accordion-section-spasalon_pro_section h3.accordion-section-title { background-color: #f22853; color:#fff;}
