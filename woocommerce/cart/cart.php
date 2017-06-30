@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.3
+ * @version 3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         	<div class="woocommerce_cart_details">
         
                 <h2 class="title"> <?php esc_html_e('Cart','suevafree');?> </h2>
-                
+
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
                 
                 <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
@@ -118,7 +118,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                                 $product_quantity = woocommerce_quantity_input( array(
                                                     'input_name'  => "cart[{$cart_item_key}][qty]",
                                                     'input_value' => $cart_item['quantity'],
-                                                    'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+                                                    'max_value'   => $_product->get_max_purchase_quantity(),
                                                     'min_value'   => '0',
                                                 ), $_product, false );
                                             }
