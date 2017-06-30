@@ -56,6 +56,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.3
+1. Added styling for upgrade to pro setting.
+@version 1.6.2
+1. Updated font awesome icon 4.6.3 to 4.7.0
 @version 1.6.1
 1. Updated Strings.
 @version 1.6

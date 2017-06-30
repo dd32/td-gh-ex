@@ -17,6 +17,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .review {
   background-color: #82b541;
@@ -31,6 +32,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .document{
   background-color: #ee591f;
@@ -45,6 +47,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .pro-box
 {display:block;text-align:center; margin-bottom: 0px;}
@@ -65,4 +68,6 @@ font-size:14px !important;
   width: 54%;
   border-radius: 2px;
   }
-  .pro-vesrion p{line-height:20px;}  
+  .pro-vesrion p{line-height:20px;} 
+  
+ li#accordion-section-elitepress_pro_section h3.accordion-section-title { background-color:#f36557; color:#fff;}
