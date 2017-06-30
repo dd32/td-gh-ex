@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.8
+1. Added styling for upgrade to pro setting.
 @version 1.7.7
 1. Changes dupilcate string.
 @version 1.7.6

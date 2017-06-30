@@ -11,7 +11,8 @@
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
-}
+  text-decoration:none;
+  }
 .review {
   background-color: #82b541;
   border-color: #1ec846;
@@ -25,6 +26,7 @@
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .document{
   background-color: #ee591f;
@@ -39,6 +41,7 @@
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .pro-box
 {display:block;text-align:center; margin-bottom: 0px;}
@@ -67,3 +70,5 @@
  
  #accordion-panel-template_settings .accordion-section-title:after, #accordion-section-custom_post_slug_section .accordion-section-title:after, #accordion-section-homepage_layout_manager_section .accordion-section-title:after, #accordion-section-social_icons_section .accordion-section-title:after {content: "\f160";}
 #accordion-section-busi_prof_pro_section .accordion-section-title {background-color:#2A7BC1;color:#fff;}
+
+li#accordion-section-busiprof_pro_section h3.accordion-section-title{background-color:#5ca2df; color:#fff;}
