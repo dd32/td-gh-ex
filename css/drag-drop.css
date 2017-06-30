@@ -17,6 +17,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .review {
   background-color: #82b541;
@@ -31,6 +32,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .document{
   background-color: #ee591f;
@@ -45,6 +47,7 @@ font-size:14px !important;
   text-transform: uppercase;
   width: 54%;
   border-radius:2px;
+  text-decoration:none;
 }
 .pro-box
 {display:block;text-align:center; margin-bottom: 0px;}
@@ -103,3 +106,5 @@ list-style-type: none;
  
  
  #accordion-section-project_slider_settings .accordion-section-title:after, #accordion-section-client_settings .accordion-section-title:after,#accordion-section-theme_support .accordion-section-title:after, #accordion-section-footer_callout .accordion-section-title:after, #accordion-panel-about_setting .accordion-section-title:after, #accordion-panel-layout_manager_panel .accordion-section-title:after, #accordion-panel-texonomy_archive_portfolio .accordion-section-title:after, #accordion-panel-typography .accordion-section-title:after, #accordion-section-theme_style .accordion-section-title:after  {content: "\f160";}
+ 
+ li#accordion-section-corpbiz_pro_section h3.accordion-section-title{ background-color: #66d1b9; color:#fff;}

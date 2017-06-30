@@ -83,6 +83,8 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.8
+1. Added styling upgrade to pro setting.
 @Version 1.6.7
 1. Changed duplicate string.
 @Version 1.6.6
