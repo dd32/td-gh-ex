@@ -16,11 +16,28 @@ The Auckland theme is a very clean and simple blogging theme with a grid layout 
 = 1.0.0 =
 * First public release
 
+= 1.0.1 =
+* updated style.css head
+* removed auckland pagination
+* removed auckland editor style
+* updated readme.txt file
+* updated unprefix
+* updated wp_nav_menu
+* updated functions.php
+
 
 == Resources ==
 *   Fontawesome Icons Copyright Dave Gandy, 
     License: MIT License
     Source: http://fontawesome.io/license/
+
+*   Fontawesome Fonts
+    License: SIL OFL 1.1
+    Source: http://scripts.sil.org/OFL
+
+*   Fontawesome CSS and LESS
+    License: MIT License
+    Source: http://opensource.org/licenses/mit-license.html
 
 *   Bootstrap Copyright Mark Otto and jacob, 
     License: MIT License
@@ -31,8 +48,8 @@ The Auckland theme is a very clean and simple blogging theme with a grid layout 
     License: CC0 1.0 Universal (CC0 1.0)
     Source: https://pixabay.com/en/laptop-wordpress-wordpress-design-593673/
 
-    Copyright Kaboompics // Karolina
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: http://kaboompics.com/one_foto/860/woman-with-laptop-lying-down-in-bed
+    Copyright Pexels
+    License: CC0 License
+    Source: https://www.pexels.com/photo/woman-with-laptop-lying-down-in-bed-6356/
 
 *   All the graphics bundled with this theme are created by the theme author, licensed under the GNU GPL.

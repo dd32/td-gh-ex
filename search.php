@@ -32,7 +32,7 @@ get_header(); ?>
 
                 endwhile;
                 echo '<span class="clearfix"></span>';
-                auckland_pagination();
+                the_posts_pagination();
 
             else : ?>
                 <div class="col-md-12">

@@ -120,38 +120,6 @@ function auckland_show_posts_nav() {
   return ($wp_query->max_num_pages > 1);
 }
 
-function auckland_pagination( $query=null ) {
- 
-    global $wp_query;
-    $query = $query ? $query : $wp_query;
-    $big = 999999999;
-
-    $paginate = paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'type' => 'array',
-        'total' => $query->max_num_pages,
-        'format' => '?paged=%#%',
-        'current' => max( 1, get_query_var('paged') ),
-        'prev_text' => __('&laquo;','auckland'),
-        'next_text' => __('&raquo;','auckland'),
-        )
-    );
-
-    if ($query->max_num_pages > 1) :
-        ?>
-        <div class="post-pagination">
-          <ul class="pagination">
-          <?php
-              foreach ( $paginate as $page ) {
-              echo '<li>' . $page . '</li>';
-              }
-          ?>
-          </ul>
-        </div>
-    <?php
-    endif;
-}
-
 
 /**
  * reoder comment form fields

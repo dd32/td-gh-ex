@@ -19,8 +19,9 @@ require get_template_directory() . '/inc/functions/social-nav.php';
 /**
  * load bootstrap navwalker
  */
-require get_template_directory() . '/assets/wp_bootstrap_navwalker.php'; /* Theme wp_bootstrap_navwalker display */
-
+if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
+  require get_template_directory() . '/assets/wp_bootstrap_navwalker.php'; /* Theme wp_bootstrap_navwalker display */
+}
 /**
  * customizer
  */
@@ -57,13 +58,13 @@ function auckland_scripts_and_styles() {
 
     global $wp_styles; 
 
-    wp_enqueue_script( 'jquery-modernizr', get_template_directory_uri() . '/assets/js/modernizr.custom.min.js', array('jquery'), '2.5.3', false );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true );
+    wp_enqueue_script( 'auckland-jquery-modernizr', get_template_directory_uri() . '/assets/js/modernizr.custom.min.js', array('jquery'), '2.5.3', false );
+    wp_enqueue_script( 'auckland-jquery-boostrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true );
 
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css', array(), '', 'all' );
+    wp_enqueue_style( 'auckland-font-awesome', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css', array(), '', 'all' );
 
-    wp_enqueue_style('google-fonts-Playfair', '//fonts.googleapis.com/css?family=Playfair+Display:700,700i');
-    wp_enqueue_style('google-fonts-Raleway', '//fonts.googleapis.com/css?family=Raleway:400,700,900');
+    wp_enqueue_style('auckland-google-fonts-Playfair', '//fonts.googleapis.com/css?family=Playfair+Display:700,700i');
+    wp_enqueue_style('auckland-google-fonts-Raleway', '//fonts.googleapis.com/css?family=Raleway:400,700,900');
 
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
@@ -106,14 +107,6 @@ function auckland_theme_support() {
     )
     );
   
-}
-
-/**
- * load theme styles inside wysiwyg editor
- */
-add_action( 'admin_init', 'auckland_editor_styles' );
-function auckland_editor_styles() {
-    add_editor_style( 'auckland-editor-style.css' );
 }
 
 /**

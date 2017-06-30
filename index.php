@@ -41,7 +41,7 @@ get_header(); ?>
                     ?>
                     <span class="clearfix"></span>
                     <?php
-                    auckland_pagination();
+                    the_posts_pagination();
                     wp_reset_postdata();
 
                 else : ?>

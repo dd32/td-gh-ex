@@ -39,7 +39,6 @@ function auckland_template_header(){ ?>
                 <?php 
                 if ( has_nav_menu( 'main-nav' ) ) {
                 wp_nav_menu( array(
-                'menu'              => 'main-nav',
                 'theme_location'    => 'main-nav',
                 'depth'             => 2,
                 'container'         => 'false',
@@ -119,7 +118,7 @@ function auckland_template_footer(){ ?>
             <p class="footer-site-name"><?php echo esc_html( get_bloginfo('name') ); ?></p>
             <p class="copyright">&#169; <?php echo date_i18n(__('Y','auckland')) . ' '; bloginfo( 'name' ); ?>
             <span><?php if(is_home() || is_front_page()): ?>
-                - <?php _e( 'Thanks to', 'auckland' ); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'auckland' ) ); ?>"><?php printf( esc_html( '%s', 'auckland' ), 'WordPress' ); ?></a> <span><?php _e('and','auckland'); ?></span> <a href="<?php echo esc_url( __( 'http://charlescoxhead.com/', 'auckland' ) ); ?>"><?php printf( esc_html( '%s', 'auckland' ), 'Charles' ); ?></a>
+                - <?php _e( 'Thanks to', 'auckland' ); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'auckland' ) ); ?>"><?php printf( esc_html( '%s', 'auckland' ), 'WordPress' ); ?></a> <span><?php _e('and','auckland'); ?></span> <a href="<?php echo esc_url( __( 'http://charlescoxhead.com/', 'auckland' ) ); ?>"><?php printf( esc_attr( '%s', 'auckland' ), 'Charles' ); ?></a>
             <?php endif; ?>
             </span></p>
         </div>
@@ -128,7 +127,6 @@ function auckland_template_footer(){ ?>
                 <?php
                 if ( has_nav_menu( 'footer-nav' ) ) {
                 wp_nav_menu( array(
-                'menu'              => 'footer-nav',
                 'theme_location'    => 'footer-nav',
                 'depth'             => 1,
                 'container'         => 'false',
