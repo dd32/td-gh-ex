@@ -39,9 +39,9 @@
       <div class="row">
 
         <div class="<?php echo has_nav_menu('menu-2')?'col-6':''; ?> copyright">
-          <span><?php _e( 'Proudly powered by ', 'adaptativo' ) ?></span>	<a href="https://wordpress.org/">WordPress</a>
+          <span><?php _e( 'Proudly powered by ', 'adaptativo' ) ?></span>	<a href="<?php esc_url('https://wordpress.org/') ?>"> <?php _e('WordPress', 'adaptativo') ?></a>
     			<br/>
-          <span>&copy; <?php _e('Theme Adaptativo designed by', 'adaptativo'); ?> </span> <a href="https://www.webempresa.com/" rel="designer">Webempresa</a>
+          <span>&copy; <?php _e('Theme Adaptativo designed by', 'adaptativo'); ?> </span> <a href="<?php esc_url('https://www.webempresa.com/') ?>" rel="designer"> <?php _e('Hosting Webempresa','adaptativo') ?></a>
 
         </div><!-- .site-info -->
 

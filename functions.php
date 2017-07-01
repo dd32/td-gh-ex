@@ -243,7 +243,7 @@ function adaptativo_custom_comments($comment, $args, $depth) {
 
 		    <div class="col-8 comment-author vcard">
 		        <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $size = '48' ); ?>
-		        <?php printf( __( '<cite class="fn">%s</cite>', 'adaptativo' ), get_comment_author_link() ); ?>
+		        <?php printf( __( '<cite class="fn">%s</cite>', 'adaptativo' ), esc_url(get_comment_author_link()) ); ?>
 		    </div>
 
 				<div class="col-4 comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
@@ -289,7 +289,7 @@ function modify_read_more_link() {
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		);
 
-		return '<div class="wrap-more-link"><a class="more-link" href="' . get_permalink() . '">'.$link_text.'</a></div>';
+		return '<div class="wrap-more-link"><a class="more-link" href="' . esc_url(get_permalink()) . '">'.$link_text.'</a></div>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
