@@ -558,7 +558,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => esc_html__("Menu weight","suevafree"),
+				"label" => esc_html__("Menu weight","alhena-lite"),
 				"description" => esc_html__("Choose a font weight for the menu.","alhena-lite"),
 				"id" => "wip_menu_font_weight",
 				"type" => "select",
