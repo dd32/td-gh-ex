@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.4.1 - Released: 02.07.2017
+
+-- Updated : WooCommerce templates.
+
 - Version 1.4.0 - Released: 20.05.2017
 
 -- Fixed : WooCommerce add to cart button for grouped products.

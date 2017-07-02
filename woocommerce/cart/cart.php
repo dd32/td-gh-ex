@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.3
+ * @version 3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         	<div class="woocommerce_cart_details">
         
                 <h2 class="title"> <?php esc_html_e('Cart','bazaar-lite');?> </h2>
-                
+
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
                 
                 <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
@@ -43,10 +43,10 @@ do_action( 'woocommerce_before_cart' ); ?>
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-thumbnail">&nbsp;</th>
-                            <th class="product-name"><?php esc_html_e( 'Product', 'bazaar-lite' ); ?></th>
-                            <th class="product-price"><?php esc_html_e( 'Price', 'bazaar-lite' ); ?></th>
-                            <th class="product-quantity"><?php esc_html_e( 'Quantity', 'bazaar-lite' ); ?></th>
-                            <th class="product-subtotal"><?php esc_html_e( 'Total', 'bazaar-lite' ); ?></th>
+                            <th class="product-name"><?php _e( 'Product', 'bazaar-lite' ); ?></th>
+                            <th class="product-price"><?php _e( 'Price', 'bazaar-lite' ); ?></th>
+                            <th class="product-quantity"><?php _e( 'Quantity', 'bazaar-lite' ); ?></th>
+                            <th class="product-subtotal"><?php _e( 'Total', 'bazaar-lite' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                             echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
                                                 '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
                                                 esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-                                                esc_html__( 'Remove this item', 'bazaar-lite' ),
+                                                __( 'Remove this item', 'bazaar-lite' ),
                                                 esc_attr( $product_id ),
                                                 esc_attr( $_product->get_sku() )
                                             ), $cart_item_key );
@@ -118,7 +118,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                                 $product_quantity = woocommerce_quantity_input( array(
                                                     'input_name'  => "cart[{$cart_item_key}][qty]",
                                                     'input_value' => $cart_item['quantity'],
-                                                    'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+                                                    'max_value'   => $_product->get_max_purchase_quantity(),
                                                     'min_value'   => '0',
                                                 ), $_product, false );
                                             }
@@ -145,7 +145,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             
                                 <?php if ( wc_coupons_enabled() ) { ?>
                                     <div class="coupon">
-                                        <label for="coupon_code"><?php esc_html_e( 'Coupon:', 'bazaar-lite' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'bazaar-lite' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'bazaar-lite' ); ?>" />
+                                        <label for="coupon_code"><?php _e( 'Coupon:', 'bazaar-lite' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'bazaar-lite' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'bazaar-lite' ); ?>" />
                                         <?php do_action( 'woocommerce_cart_coupon' ); ?>
                                     </div>
                                 <?php } ?>
