@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.3 | 27th June 2017 = 
+* Fix issue with skip to content.
+
+
 = Version 3.0.2 | 27th June 2017 = 
 * Update: ready for WC 3.1.0
 * Update: Header and footer templates for better plugin compatibility
