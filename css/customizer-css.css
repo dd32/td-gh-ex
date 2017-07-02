@@ -20,7 +20,8 @@ line-height: 16px;
     font-weight: 600;
     padding: 8px 0;
 }
-li#accordion-section-republic_important_links > h3.accordion-section-title:before {
+
+li#accordion-section-promax_important_links > h3.accordion-section-title:before {
 	content: "\f317";
     font-family: dashicons;
     padding: 3px;

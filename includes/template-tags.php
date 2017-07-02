@@ -59,7 +59,7 @@ endif;
 function promax_post_meta_data() {
 	printf( __( '%2$s  %4$s', 'promax' ),
 	'meta-prep meta-prep-author posted', 
-	sprintf( '<time itemprop="datePublished" class="timestamp published updated">%3$s</time>',
+	sprintf( '<time class="timestamp published updated">%3$s</time>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_html( get_the_date() )
@@ -183,7 +183,7 @@ function promax_search_form( $form ) {
 	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','promax' ) . '</label>
 	<input type="text" placeholder="'. esc_attr__( 'Search..','promax' ) .'" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','promax' ) .'" />
+	<button type="submit" id="searchsubmit" class="input-group-button button"><i class="fa fa-search"></i></button>
 	</div>
 	</form>';
 

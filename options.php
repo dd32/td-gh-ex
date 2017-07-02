@@ -159,6 +159,35 @@ $options[] = array(
 		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
+		'desc' => __( 'Display Post from a Category (Pro Only)', 'promax' ),
+		'id' => 'promax_ifcate',
+		'type' => 'checkbox'
+	);
+
+	if ( $options_categories ) {
+		$options[] = array(
+			'desc' => __( 'Choose a Category instead of latest post (Pro Only)', 'promax' ),
+			'id' => 'promax_catelt',
+			'type' => 'select',
+			//'class' => 'hidden',
+			'options' => $options_categories
+		);
+	}	
+	
+	$options[] = array(	
+		'desc' => __('<b>For Latest Posts</b> (Pro Only)', 'promax'),
+		'id' => 'promax_latestpostnumber',
+		'std' => '5',
+		'class' => 'mini',
+		'type' => 'text');
+	$options[] = array(
+		'desc' => __('Latest Post Link Color (Pro Only)', 'promax'),
+		'id' => 'promax_latesta',
+		'std' => '#4DD247',
+		'type' => 'color' );
+		
+		
+	$options[] = array(
 	'name' => __('Latest Post Bar on Index page', 'promax'),
 	'desc' => __('Change Text of Latest Post.','promax'),
 	'id' => 'promax_latestchange',
@@ -292,7 +321,48 @@ $options[] = array(
             'desc' => __( 'Paste Ads Code for Footer Area', 'promax' ),
             'id' => 'promax_ad1',
             'type' => 'textarea' );
+	$options[] = array(
+		'name' => __('Mobile (Pro Only)', 'promax'),
+		'type' => 'heading');
+				
+	$options[] = array(
+		'name' => __( 'Mobile Top Menu', 'promax' ),
+		'desc' => 'Name Top Mobile Menu.',
+		'id' => 'promax_top_menu_name',
+		'std' => 'Menu',
+		'type' => 'text');
+	$options[] = array(	
+		'name' => __( 'Mobile Second bottom Menu', 'promax' ),
+		'desc' => 'Bottom Menu Name.',
+		'id' => 'promax_bottom_menu_name',
+		'std' => 'Category',
+		'type' => 'text');
+	$options[] = array(
+		'desc' => __('Show Search Button on Mobile', 'promax'),
+		'id' => 'promax_bottom_menu_searchbar',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+				'on' => __('Show','promax'),
+				'off' => __('Hide','promax')
+				));	
+	$options[] = array(
+		'name' => __('Show Latest Posts Below Navigation', 'promax'),
+		'desc' => __('Uncheck to hide latest post box from Mobile', 'promax'),
+		'id' => 'promax_latestmobile',
+		'std' => '1',
+		'type' => 'checkbox');
 		
+	$options[] = array(
+		'name' => __('Sidebar for mobile', 'promax'),
+		'desc' => __('Hide or show on mobile version', 'promax'),
+		'id' => 'promax_mob_sidebar',
+		'std' => 'off',
+		'type' => 'radio',
+		'options' => array(
+				'on' => __('Hide','promax'),
+				'off' => __('Show','promax')
+				));		
 $options[] = array(
 		'name' => __('Advance (Pro Only)', 'promax'),
 		'type' => 'heading');

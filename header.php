@@ -46,8 +46,8 @@
 	<!-- END TOP NAVIGATION -->
 <?php } ?>
 <?php if (of_get_option('promax_navimenushow') !=='off') { ?>
-	<div id="pronav" class="nav"> 
-    <div id="pronav-inner" class="clearfix">
+	<div id="pronav"> 
+    <div id="pronav-inner" class=" nav clearfix">
 		<div class="secondary">		
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</div><!-- end div #nav secondry -->
@@ -55,4 +55,5 @@
 	</div> <!-- end div #pronav -->
 	<!-- END TOP NAVIGATION -->
 <?php } ?>
-<?php if ( !dynamic_sidebar('belownaviwid') ) :  endif; ?>
+<div class="promaxwid">
+<?php if ( !dynamic_sidebar('belownaviwid') ) :  endif; ?></div>

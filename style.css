@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.8
+Version: 2.0
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
@@ -77,7 +77,7 @@ body {
     margin: auto !important;
     background: #FFF;
 }
-
+.promaxwid,
 #header-inner,
 #ltpost,
 #page-inner,
@@ -112,7 +112,6 @@ h6 {
     margin: 0;
     color: #555;
     font-weight: normal;
-    letter-spacing: -1px;
     font-family: 'open_sansregular', sans-serif;
 }
 
@@ -173,7 +172,6 @@ blockquote {
     clear: both;
     font-size: 14px;
     font-style: italic;
-    font-family: Georgia, Times;
     border-left: 5px solid #418cd1;
     background: #eef7f8;
     color: #000;
@@ -1092,7 +1090,7 @@ header.page-header {
     color: #555;
     font-size: 100%;
     top: 0;
-    height: 38px;
+    height: 37px;
 }
 
 #searchform {
@@ -1103,15 +1101,19 @@ header.page-header {
 #searchform div {
     position: relative;
 }
-
-#searchsubmit {
-    cursor: pointer;
-    background: #418cd1;
+#searchsubmit:hover{
+	background: #333;
+}
+#searchsubmit{
+    padding: 5px;
     height: 37px;
-    width: 48px;
-    border: none;
-    font-weight: bold;
-    color: #FFF;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 42px;
+    background: #5b89b8;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
 }
 
 form#searchform input#s {
@@ -1172,6 +1174,9 @@ form#searchform input#s {
 
 /*============Post Table===============*/
 
+#pagecont table th a,
+#singlecontent table th a{
+	    color: #bddde7;}
 #pagecont table,
 #singlecontent table {
     width: 95%;
@@ -1192,7 +1197,7 @@ form#searchform input#s {
 #pagecont table th,
 #singlecontent table th {
     padding: 10px;
-    background: #418CD1;
+    background: #595959;
     color: #FFF;
     text-shadow: none;
     font-size: 15px;
@@ -1485,12 +1490,6 @@ h2.entry-title {
     content: "\f27b";
     font: normal normal normal 14px/1 FontAwesome;
     padding: 6px;
-}
-
-.post-edit-link {
-    font-size: 12px;
-    margin-top: 4px;
-    position: absolute;
 }
 
 .post-edit-link::before {
@@ -2043,7 +2042,7 @@ p.form-submit {
     border-width: 1px;
     display: block;
     font-size: 0.875rem;
-    height: 2.3125rem;
+    height: 2.3rem;
     line-height: 2.3125rem;
     overflow: visible;
     padding-bottom: 0;
@@ -2184,7 +2183,6 @@ ol.commentlist li div.vcard {
 
 ol.commentlist li div.vcard cite.fn {
     font-style: normal;
-    padding: 9px;
 }
 
 ol.commentlist li div.vcard img.avatar {
@@ -2439,7 +2437,9 @@ pre {
 /*--------------------------------------------------------------
 # WooCommerce
 --------------------------------------------------------------*/
-
+.woocommerce-product-gallery__image {
+    margin-top: 10px;
+}
 .woocommerce .woocommerce-message {
     border-top-color: #20598A;
     border-right: 1px solid #ddd;
@@ -2574,3 +2574,34 @@ li.home-icon > a > i {
     z-index: 100000;
     /* Above WP toolbar. */
 }
+
+
+.group:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.group { display: inline-block; }
+
+ .five-columns .imag {
+             float: left; padding: 2%;
+        }
+		
+		
+@media only screen and (max-width: 479px ) {
+	#content,
+	#pagecont,
+	#sidebar,
+	#singlecontent,
+	.woo{
+		width:100%;
+	}
+	
+	.imag{
+		width:47%;
+	}
+	
+}		

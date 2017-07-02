@@ -14,6 +14,25 @@
     float: left;	
     background:#fff;
 }
+#optionsframework .group h4.heading::before{
+	content: "\f345";
+    font-family: dashicons;
+    padding-right: 3px;
+    vertical-align: bottom;
+}
+
+div#section-promax_latesta .explain,
+div#section-promax_latestpostnumber .explain,
+div#section-promax_catelt .explain,
+div#section-promax_ifcate .explain{
+    color: #f03 !important;
+}
+div#section-promax_latestpostnumber,
+div#section-promax_latesta,
+div#section-promax_catelt,
+div#section-promax_ifcate {
+    opacity: 0.3;
+}
 #optionsframework .section{line-height: 1.4;}
 .basicsettings-tab::before{
     content: "\f102";
@@ -24,6 +43,13 @@
 }
 .advanceproonly-tab::before{
 	content: "\f111";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.mobileproonly-tab::before{
+    content: "\f470";
     font-family: dashicons;
     padding: 3px;
     vertical-align: bottom;
@@ -50,8 +76,10 @@
     vertical-align: bottom;
 	color: #339ece;
 }
+.mobileproonly-tab,
 .advanceproonly-tab{
 background: #FFC5C5;}
+#options-group-6,
 #options-group-5{
 	opacity: 0.4;
 	cursor: not-allowed;
