@@ -30,18 +30,8 @@ if ( ! function_exists( 'actinia_header_style' ) ) :
  * @see actinia_custom_header_setup().
  */
 function actinia_header_style() {
-	$header_text_color = get_header_textcolor();
-
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
-	 */
-	if ( HEADER_TEXTCOLOR === $header_text_color ) {
-		return;
-	}
-
-	// If we get this far, we have custom styles. Let's do this.
-	?>
+	$header_text_color = get_header_textcolor(); ?>
+	
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?

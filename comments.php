@@ -28,7 +28,8 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'actinia' ) ),
+                                        /* translators: %s: number of comments*/
+					esc_html( _nx( '%s comment', '%s comments', get_comments_number(), 'comments title', 'actinia' ) ),
 					number_format_i18n( get_comments_number() )
 				);
 			?>
@@ -38,10 +39,10 @@ if ( post_password_required() ) {
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'actinia' ); ?></h2>
 			<div class="nav-links">
-                               <?php if ( ! empty( get_previous_comments_link() ) ): ?>
+                               <?php if ( get_previous_comments_link() ): ?>
                                     <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'actinia' ) ); ?></div>
 				<?php endif; ?>
-                                <?php if ( ! empty( get_next_comments_link() ) ): ?>
+                                <?php if ( get_next_comments_link() ): ?>
                                     <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'actinia' ) ); ?></div>
                                 <?php endif; ?>
 			</div><!-- .nav-links -->
@@ -61,10 +62,10 @@ if ( post_password_required() ) {
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'actinia' ); ?></h2>
 			<div class="nav-links">
-                                <?php if ( ! empty( get_previous_comments_link() ) ): ?>
+                                <?php if ( get_previous_comments_link() ): ?>
                                     <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'actinia' ) ); ?></div>
 				<?php endif; ?>
-                                <?php if ( ! empty( get_next_comments_link() ) ): ?>
+                                <?php if ( get_next_comments_link() ): ?>
                                     <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'actinia' ) ); ?></div>
                                 <?php endif; ?>
 			</div><!-- .nav-links -->

@@ -225,11 +225,13 @@ function actinia_has_widgets() {
 function actinia_has_navbar() {
     $has_items = false;
     if ( has_nav_menu('primary') ) {
-        $menu = get_term(get_nav_menu_locations()['primary'], 'nav_menu')->name;
-        $has_items = boolval(count(wp_get_nav_menu_items($menu)));
+        $menu_locations = get_nav_menu_locations();
+        $menu = get_term($menu_locations['primary'], 'nav_menu')->name;
+        $has_items = count(wp_get_nav_menu_items($menu));
     }
-    return $has_items;
+    return (bool)$has_items;
 }
+
 
 function actinia_color_schemes() {
     
@@ -329,7 +331,8 @@ function actinia_generate_rule( $el, $prop, $val, $media_query = 0, $link_states
 function actinia_set_colors() {
     $colors = array();
     //retrieve color controls names and save them as indices of an associative array
-    foreach ( actinia_color_schemes()['red'] as $color => $val ) {
+    $actinia_color_scheme = actinia_color_schemes();
+    foreach ( $actinia_color_scheme['red'] as $color => $val ) {
         $colors[$color] = '';
     }
     $active_color_scheme = esc_attr( get_theme_mod( 'actinia_color_scheme', 'red' ) );    
@@ -683,7 +686,8 @@ function actinia_colors_generate_css() {
     );    
     
     $custom_css = '';
-    if ( ! empty( esc_attr( get_theme_mod( 'actinia_color_scheme' ) ) ) ) :
+    $color_scheme = esc_attr( get_theme_mod( 'actinia_color_scheme' ) );
+    if ( ! empty( $color_scheme ) ) :
         foreach( actinia_elements() as $el ) { 
             $media_query = isset( $el['media_query'] )? $el['media_query'] : 0;
             $link_states = isset( $el['link_states'] )? $el['link_states'] : 0;

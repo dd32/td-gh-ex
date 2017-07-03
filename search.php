@@ -16,6 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+                                <?php /* translators: %s: search word or words */ ?>
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'actinia' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 

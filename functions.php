@@ -118,8 +118,6 @@ function actinia_scripts() {
         
         wp_enqueue_style( 'actinia-googlefonts', 'https://fonts.googleapis.com/css?family=Raleway:300,400', false );
         
-        wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
-
 	wp_enqueue_script( 'actinia-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
         
         wp_enqueue_script( 'actinia-custom-classes', get_template_directory_uri() . '/js/custom-classes.js', array( 'jquery' ), '20151215', true );

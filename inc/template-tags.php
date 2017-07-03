@@ -25,16 +25,20 @@ function actinia_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s %s', 'post date', 'actinia' ),
-                '<img src="' . get_template_directory_uri() . '/images/PNG/32/calendar.png" width="10%" height="10%" alt="' . esc_attr( 'calendar' ) . '"/>',
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+                '<img src="%1$s/images/PNG/32/calendar.png" width="10%" height="10%" alt="%2$s"/><a href="%3$s" rel="bookmark">%4$s</a>',
+                esc_url( get_template_directory_uri() ),
+                esc_attr__( 'calendar', 'actinia' ),
+                esc_url( get_permalink() ),                
+                $time_string 
+        );
 
 	$byline = sprintf(
-		esc_html_x( '%s %s', 'post author', 'actinia' ),
-                '<img src="' . get_template_directory_uri() . '/images/PNG/32/user.png" width="10%" height="10%" alt="' . esc_attr( 'user' ) . '"/>',
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+                '<img src="%1$s/images/PNG/32/user.png" width="10%" height="10%" alt="%2$s"/><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span>',
+	        esc_url( get_template_directory_uri() ),
+                esc_attr__( 'user', 'actinia' ),
+                esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+                esc_html( get_the_author() )
+        );
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -48,23 +52,23 @@ if ( ! function_exists( 'actinia_entry_footer' ) ) :
 function actinia_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
+		/* translators: space between list items */
 		$categories_list = get_the_category_list( esc_html__( ' ', 'actinia' ) );
-                $categories_icon = '<img src="' . get_template_directory_uri() . '/images/PNG/32/folder.png" alt="' . esc_attr( 'folder' ) . '"/>';
+                $categories_icon = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/PNG/32/folder.png" alt="' . esc_attr__( 'folder', 'actinia' ) . '"/>';
 		if ( $categories_list && actinia_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( '%2$s %1$s', 'actinia' ) . '</span>', $categories_list, $categories_icon ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html( '%1$s %2$s' ) . '</span>', $categories_icon, $categories_list ); // WPCS: XSS OK.
 		}
 
-		/* translators: used between list items, there is a space after the comma */
+		/* translators: space between list items */
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'actinia' ) );
-		$tag_icon = '<img src="' . get_template_directory_uri() . '/images/PNG/32/tag.png" width="10%" height="10%" alt="' . esc_attr( 'tag' ) . '"/>';
+		$tag_icon = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/PNG/32/tag.png" width="10%" height="10%" alt="' . esc_attr__( 'tag', 'actinia' ) . '"/>';
                 if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( '%2$s %1$s', 'actinia' ) . '</span>', $tags_list, $tag_icon ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html( '%1$s %2$s' ) . '</span>', $tag_icon, $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">' . '<img src="' . get_template_directory_uri() . '/images/PNG/32/speech_1.png" alt="' . esc_attr( 'comments' ) . '"/>';
+		echo '<span class="comments-link">' . '<img src="' . esc_url( get_template_directory_uri() ) . '/images/PNG/32/speech_1.png" alt="' . esc_attr__( 'comments', 'actinia' ) . '"/>';
                 
 		/* translators: %s: post title */
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'actinia' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ), get_comments_number(), get_comments_number() );
@@ -77,7 +81,7 @@ function actinia_entry_footer() {
 			esc_html__( 'Edit %s', 'actinia' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link"><img src="' . get_template_directory_uri() .'/images/PNG/32/pen_1.png" alt="' . esc_attr( 'edit' ) . '"/>',
+		'<span class="edit-link"><img src="' . esc_url( get_template_directory_uri() ) .'/images/PNG/32/pen_1.png" alt="' . esc_attr__( 'edit', 'actinia' ) . '"/>',
 		'</span>'
 	);
 }

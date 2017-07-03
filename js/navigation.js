@@ -16,6 +16,24 @@
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
+        
+        buttonSearch = document.getElementsByClassName("searchform-toggle")[0];
+        searchform = document.getElementsByClassName("search-form")[0];
+        
+        if (buttonSearch) {
+            buttonSearch.onclick = function() {
+                    if ( -1 !== searchform.className.indexOf( 'toggled' ) ) {
+                            searchform.className = searchform.className.replace( ' toggled', '' );
+                            buttonSearch.setAttribute( 'aria-expanded', 'false' );
+                            searchform.setAttribute( 'aria-expanded', 'false' );
+                    } else {
+                            searchform.className += ' toggled';
+                            buttonSearch.setAttribute( 'aria-expanded', 'true' );
+                            buttonSearch.style.display = "none";
+                            searchform.setAttribute( 'aria-expanded', 'true' );
+                    }
+            };
+        }
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
@@ -42,22 +60,6 @@
 		}
 	};
         
-        buttonSearch = document.getElementsByClassName("searchform-toggle")[0];
-        searchform = document.getElementsByClassName("search-form")[0];
-        
-        buttonSearch.onclick = function() {
-		if ( -1 !== searchform.className.indexOf( 'toggled' ) ) {
-			searchform.className = searchform.className.replace( ' toggled', '' );
-			buttonSearch.setAttribute( 'aria-expanded', 'false' );
-			searchform.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			searchform.className += ' toggled';
-			buttonSearch.setAttribute( 'aria-expanded', 'true' );
-                        buttonSearch.style.display = "none";
-			searchform.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
-        
         addClassDropdownLeft();
         addToggleButton();   
 
@@ -69,12 +71,18 @@
 	for ( i = 0, len = subMenus.length; i < len; i++ ) {
 		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 	}
-
-	// Each time a menu link is focused or blurred, toggle focus.
-	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-                links[i].addEventListener( 'blur', toggleFocus, true );
-	}
+        
+        var toggleButtons = $('.dropdown-toggle');
+        
+	toggleButtons.on( 'click', function(e) {
+            e.preventDefault();
+            var parentLink = $(this).closest('li');
+            if (parentLink.hasClass('focus') ) {
+	        parentLink.removeClass('focus');
+	    } else {
+		parentLink.addClass('focus');
+	    }
+        });               
         
         setMainHeight();
         
@@ -85,6 +93,7 @@
         $(window).on("resize", function() {
             addClassDropdownLeft();
             setMainHeight();
+            $('li').removeClass('focus');
             
             if (window.innerWidth <= 600) {
                 $(".anchor").css("display", "none");
@@ -102,7 +111,7 @@
         }); 
         
         //remove .focus class from links when clicking outside of navigation bar
-        if ( 'ontouchstart' in window ) {
+        if ( 'ontouchstart' in window && window.innerWidth >= 768 ) {
             $('*').click(function(e) {            
                 if (!$('.main-navigation li > a').is(e.target)) {
                    $('li.focus').removeClass('focus');
@@ -139,32 +148,11 @@
         }
         
         function addToggleButton() {
-            $(".menu-item-has-children > a").prepend("<button class='dropdown-toggle'></button>");
+            $(".menu-item-has-children > a").append("<button class='dropdown-toggle'></button>");
             $("button.dropdown-toggle").append("<span class='screen-reader-text'>expand child menu</span>");          
         
         } 
-                	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus() {
-		var self = this;
-
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
-			}
-
-			self = self.parentElement;
-		}
-	}
-
+                	
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
@@ -172,7 +160,7 @@
 		var touchStartFn, i,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		if ( 'ontouchstart' in window ) {
+		if ( 'ontouchstart' in window && window.innerWidth >= 768 ) {
                     
 			touchStartFn = function( e ) {
 				var menuItem = this.parentNode, i;
@@ -197,7 +185,7 @@
                         
                 
 		}
-	}( container ) );             
+	}( container ) );           
         
 } )(jQuery);
 

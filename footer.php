@@ -21,8 +21,10 @@
 
 	<footer id="colophon" class="site-footer">
 	    <div class="site-info">
+                <?php /* translators: %s: WordPress */ ?>
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'actinia' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'actinia' ), 'WordPress' ); ?></a>
 		<span class="sep"> | </span>
+                <?php /* translators: theme name */ ?>
 		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'green_onion' ); ?>
 	    </div><!-- .site-info -->
 	</footer><!-- #colophon -->
