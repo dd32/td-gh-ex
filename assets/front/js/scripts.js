@@ -2460,7 +2460,1527 @@ czrapp.methods = {};
       });
       $.extend( czrapp.Values.prototype, czrapp.Events );
 
-})( jQuery );var czrapp = czrapp || {};
+})( jQuery );//@global HUParams
+var czrapp = czrapp || {};
+(function($, czrapp) {
+      czrapp.localized = HUParams || {};
+
+      var _methods = {
+            cacheProp : function() {
+                  var self = this;
+                  $.extend( czrapp, {
+                        $_window         : $(window),
+                        $_html           : $('html'),
+                        $_body           : $('body'),
+                        $_header         : $('#header'),
+                        $_wpadminbar     : $('#wpadminbar'),
+                        $_mainWrapper    : $('.main', '#wrapper'),
+                        $_mainContent    : $('.main', '#wrapper').find('.content'),
+                        is_responsive    : self.isResponsive(),//store the initial responsive state of the window
+                        current_device   : self.getDevice()//store the initial device
+                  });
+            },
+            isResponsive : function() {
+                  return this.matchMedia(979);
+            },
+            getDevice : function() {
+                  var _devices = {
+                        desktop : 979,
+                        tablet : 767,
+                        smartphone : 480
+                      },
+                      _current_device = 'desktop',
+                      that = this;
+
+
+                  _.map( _devices, function( max_width, _dev ){
+                        if ( that.matchMedia( max_width ) )
+                          _current_device = _dev;
+                  } );
+
+                  return _current_device;
+            },
+
+            matchMedia : function( _maxWidth ) {
+                  if ( window.matchMedia )
+                    return ( window.matchMedia("(max-width: "+_maxWidth+"px)").matches );
+                  $_window = czrapp.$_window || $(window);
+                  return $_window.width() <= ( _maxWidth - 15 );
+            },
+
+            emit : function( cbs, args ) {
+                  cbs = _.isArray(cbs) ? cbs : [cbs];
+                  var self = this;
+                  _.map( cbs, function(cb) {
+                        if ( 'function' == typeof(self[cb]) ) {
+                              args = 'undefined' == typeof( args ) ? Array() : args ;
+                              self[cb].apply(self, args );
+                              czrapp.trigger( cb, _.object( _.keys(args), args ) );
+                        }
+                  });//_.map
+            },
+
+            triggerSimpleLoad : function( $_imgs ) {
+                  if ( 0 === $_imgs.length )
+                    return;
+
+                  $_imgs.map( function( _ind, _img ) {
+                    $(_img).load( function () {
+                      $(_img).trigger('simple_load');
+                    });//end load
+                    if ( $(_img)[0] && $(_img)[0].complete )
+                      $(_img).load();
+                  } );//end map
+            },//end of fn
+
+            isUserLogged     : function() {
+                  return czrapp.$_body.hasClass('logged-in') || 0 !== czrapp.$_wpadminbar.length;
+            },
+
+            isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
+                  var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
+                  _selsToSkip   = skip_selectors[requested_sel_type];
+                  if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
+                    return true;
+                  if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
+                    return false;
+                  if ( ! $_el.attr( sel_type ) )
+                    return true;
+
+                  var _elSels       = $_el.attr( sel_type ).split(' '),
+                      _filtered     = _elSels.filter( function(classe) { return -1 != $.inArray( classe , _selsToSkip ) ;});
+                  return 0 === _filtered.length;
+            },
+            _isMobile : function() {
+                  return ( _.isFunction( window.matchMedia ) && matchMedia( 'only screen and (max-width: 720px)' ).matches ) || ( this._isCustomizing() && 'desktop' != this.previewDevice() );
+            },
+            _isCustomizing : function() {
+                  return czrapp.$_body.hasClass('is-customizing') || ( 'undefined' !== typeof wp && 'undefined' !== typeof wp.customize );
+            },
+            _has_iframe : function ( $_elements ) {
+                  var that = this,
+                      to_return = [];
+                  _.each( $_elements, function( $_el, container ){
+                        if ( $_el.length > 0 && $_el.find('IFRAME').length > 0 )
+                          to_return.push(container);
+                  });
+                  return to_return;
+            },
+      };//_methods{}
+
+      czrapp.methods.Base = czrapp.methods.Base || {};
+      $.extend( czrapp.methods.Base , _methods );//$.extend
+
+})(jQuery, czrapp);/***************************
+* ADD BROWSER DETECT METHODS
+****************************/
+(function($, czrapp) {
+  var _methods =  {
+    addBrowserClassToBody : function() {
+          if ( $.browser.chrome )
+              czrapp.$_body.addClass("chrome");
+          else if ( $.browser.webkit )
+              czrapp.$_body.addClass("safari");
+          if ( $.browser.mozilla )
+              czrapp.$_body.addClass("mozilla");
+          else if ( $.browser.msie || '8.0' === $.browser.version || '9.0' === $.browser.version || '10.0' === $.browser.version || '11.0' === $.browser.version )
+              czrapp.$_body.addClass("ie").addClass("ie" + $.browser.version.replace(/[.0]/g, ''));
+          if ( czrapp.$_body.hasClass("ie") )
+              czrapp.$_body.addClass($.browser.version);
+    }
+  };//_methods{}
+  czrapp.methods.BrowserDetect = czrapp.methods.BrowserDetect || {};
+  $.extend( czrapp.methods.BrowserDetect , _methods );
+
+})(jQuery, czrapp);
+var czrapp = czrapp || {};
+(function( $, czrapp ) {
+  var _methods = {
+    imgSmartLoad : function() {
+          var smartLoadEnabled = 1 == HUParams.imgSmartLoadEnabled,
+              _where           = HUParams.imgSmartLoadOpts.parentSelectors.join();
+          if (  smartLoadEnabled ) {
+                $( _where ).imgSmartLoad(
+                  _.size( HUParams.imgSmartLoadOpts.opts ) > 0 ? HUParams.imgSmartLoadOpts.opts : {}
+                );
+          }
+          if ( 1 == HUParams.centerAllImg ) {
+                var self                   = this,
+                    $_to_center            = smartLoadEnabled ?
+                       $( _.filter( $( _where ).find('img'), function( img ) {
+                          return $(img).is(HUParams.imgSmartLoadOpts.opts.excludeImg.join());
+                        }) ): //filter
+                        $( _where ).find('img');
+                    $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
+                        return $(img).hasClass('tc-holder-img');
+                    }) );
+                setTimeout( function(){
+                      self.triggerSimpleLoad( $_to_center_with_delay );
+                }, 300 );
+                self.triggerSimpleLoad( $_to_center );
+          }
+    },
+    extLinks : function() {
+          if ( ! HUParams.extLinksStyle && ! HUParams.extLinksTargetExt )
+            return;
+          $('a' , '.post-inner .entry').extLinks({
+                addIcon : HUParams.extLinksStyle,
+                iconClassName : 'hu-external',
+                newTab : HUParams.extLinksTargetExt,
+                skipSelectors : _.isObject(HUParams.extLinksSkipSelectors) ? HUParams.extLinksSkipSelectors : {}
+          });
+    },
+
+    parallax : function() {
+          $( '.parallax-item' ).czrParallax();
+    },
+  };//_methods{}
+
+  czrapp.methods.JQPlugins = czrapp.methods.JQPlugins || {};
+  $.extend( czrapp.methods.JQPlugins = {} , _methods );
+
+})(jQuery, czrapp);
+var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+      setupUIListeners : function() {
+            var self = this;
+            this.windowWidth            = new czrapp.Value( czrapp.$_window.width() );
+            this.isScrolling            = new czrapp.Value( false );
+            this.isResizing             = new czrapp.Value( false );
+            this.scrollPosition         = new czrapp.Value( czrapp.$_window.scrollTop() );
+            this.scrollDirection        = new czrapp.Value('down');
+            self.previewDevice          = new czrapp.Value( 'desktop' );
+            if ( self._isCustomizing() ) {
+                  var _setPreviewedDevice = function() {
+                        wp.customize.preview.bind( 'previewed-device', function( device ) {
+                              self.previewDevice( device );
+                        });
+                  };
+                  if ( wp.customize.preview ) {
+                      _setPreviewedDevice();
+                  } else {
+                        wp.customize.bind( 'preview-ready', function() {
+                              _setPreviewedDevice();
+                        });
+                  }
+            }
+            self.windowWidth.bind( function( to, from ) {
+                  self.isResizing( self._isMobile ? Math.abs( from - to ) > 2 : Math.abs( from - to ) > 0 );
+                  clearTimeout( $.data( this, 'resizeTimer') );
+                  $.data( this, 'resizeTimer', setTimeout(function() {
+                        self.isResizing( false );
+                  }, 50 ) );
+            });
+            self.isResizing.bind( function( is_resizing ) {
+                  czrapp.$_body.toggleClass( 'is-resizing', is_resizing );
+            });
+            this.isScrolling.bind( function( to, from ) {
+                  czrapp.$_body.toggleClass( 'is-scrolling', to );
+                  if ( ! to ) {
+                        czrapp.trigger( 'scrolling-finished' );
+                  }
+            });
+            this.scrollPosition.bind( function( to, from ) {
+                  czrapp.$_body.toggleClass( 'is-scrolled', to > 100 );
+                  if ( to <= 50 ) {
+                        czrapp.trigger( 'page-scrolled-top', {} );
+                  }
+                  self.scrollDirection( to >= from ? 'down' : 'up' );
+            });
+            czrapp.$_window.resize( _.throttle( function( ev ) { self.windowWidth( czrapp.$_window.width() ); }, 10 ) );
+            czrapp.$_window.scroll( _.throttle( function() {
+                  self.isScrolling( true );
+                  self.scrollPosition( czrapp.$_window.scrollTop() );
+                  clearTimeout( $.data( this, 'scrollTimer') );
+                  $.data( this, 'scrollTimer', setTimeout(function() {
+                        self.isScrolling( false );
+                  }, 100 ) );
+            }, 10 ) );
+
+      }
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+
+        mobileMenu : function() {
+              var self = this;
+              self.mobileMenu = new czrapp.Values();
+              $('.nav-container').each( function( _index ) {
+                    if ( ! _.isString( $(this).attr( 'data-menu-id' ) ) )
+                      return;
+
+                    var $container      = $(this),
+                        is_scrollable   = _.isString( $(this).attr( 'data-menu-scrollable' ) ) && "false" == $(this).attr( 'data-menu-scrollable' ) ? false : true,
+                        _candidateId    = $container.attr( 'data-menu-id' ),
+                        ctor;
+
+                    if ( self.mobileMenu.has( _candidateId ) )
+                      return;
+
+                    var $navWrap = $container.find( '.nav-wrap' );
+                    var button_selectors = '.nav-toggle, .ham__navbar-toggler, .ham__navbar-toggler-two',
+                        $button = $container.find( button_selectors );
+                    if ( 1 == $navWrap.length && 1 == $button.length ) {
+                          ctor = czrapp.Value.extend( self.MobileCTOR );
+                          self.mobileMenu.add( _candidateId, new ctor( _candidateId, {
+                                container : $container,
+                                menu_wrapper : $navWrap,
+                                button : $button,
+                                button_selectors : button_selectors,
+                                is_scrollable : is_scrollable
+                          }));
+                    }
+              });
+        },
+        MobileCTOR : {
+              initialize: function( mobile_id, constructor_options ) {
+                    var mobMenu = this;
+                    czrapp.Value.prototype.initialize.call( mobMenu, null, constructor_options );
+                    $.extend( mobMenu, constructor_options || {} );
+                    mobMenu( 'collapsed' );
+                    mobMenu.bind( function( state ) {
+                          return $.Deferred( function() {
+                                var dfd = this;
+                                czrapp.userXP.headerSearchExpanded( false ).done( function() {
+                                      mobMenu._toggleMobileMenu()
+                                            .done( function( state ){
+                                                  mobMenu.button.toggleClass( 'hovering', 'expanded' == state ).toggleClass( 'focusing', 'expanded' == state );
+                                                  dfd.resolve();
+                                            });
+                                });
+                          }).promise();
+                    }, { deferred : true } );
+                    czrapp.setupDOMListeners(
+                          [
+                                {
+                                      trigger   : 'click keydown',
+                                      selector  : mobMenu.button_selectors,
+                                      actions   : function() {
+                                            var mobMenu = this;
+                                            mobMenu( 'collapsed' == mobMenu() ? 'expanded' : 'collapsed' );
+                                      }
+                                },
+                                {
+                                      trigger   : 'mouseenter',
+                                      selector  : mobMenu.button_selectors,
+                                      actions   : function() {
+                                            this.button.addClass( 'hovering' );
+                                      }
+
+                                },
+                                {
+                                      trigger   : 'mouseleave',
+                                      selector  : mobMenu.button_selectors,
+                                      actions   : function() {
+                                            this.button.removeClass( 'hovering' );
+                                      }
+
+                                }
+                          ],//actions to execute
+                          { dom_el: mobMenu.container },//dom scope
+                          mobMenu //instance where to look for the cb methods
+                    );
+                    czrapp.userXP.isResizing.bind( function( is_resizing ) {
+                          if ( ! is_resizing )
+                            return;
+                          mobMenu( 'collapsed' );
+                    });
+              },
+              _toggleMobileMenu : function()  {
+                    var mobMenu = this,
+                        expand = 'expanded' == mobMenu(),
+                        dfd = $.Deferred();
+                    mobMenu.button
+                        .toggleClass( 'collapsed', ! expand )
+                        .toggleClass( 'active', expand )
+                        .attr('aria-expanded', expand );
+
+                    $.when( mobMenu.menu_wrapper.toggleClass( 'expanded', expand ) ).done( function() {
+                          var $navWrap = $(this);
+                          $navWrap.find('.nav').stop()[ ! expand ? 'slideUp' : 'slideDown' ]( {
+                                duration : 300,
+                                complete : function() {
+                                      if ( mobMenu.is_scrollable ) {
+                                            var _winHeight = 'undefined' === typeof window.innerHeight ? window.innerHeight : czrapp.$_window.height(),
+                                                _visibleHeight = _winHeight - $navWrap.offset().top + czrapp.$_window.scrollTop();
+                                            $navWrap.css( {
+                                                  'max-height' : expand ? _visibleHeight : '',
+                                                  'overflow' : 'auto'
+                                            });
+                                      }
+                                      dfd.resolve( expand );
+                                }
+                          } );
+                    });
+                    return dfd.promise();
+              }
+        }//MobileCTOR
+
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+        stickify : function() {
+              var self = this;
+              this.stickyCandidatesMap = {
+                    mobile : {
+                          mediaRule : 'only screen and (max-width: 719px)',
+                          selector : 'mobile-sticky'
+                    },
+                    desktop : {
+                          mediaRule : 'only screen and (min-width: 720px)',
+                          selector : 'desktop-sticky'
+                    }
+              };
+              this.stickyMenuWrapper      = false;
+              this.stickyMenuDown         = new czrapp.Value( '_not_set_' );
+              this.stickyHeaderThreshold  = 50;
+              this.currentStickySelector  = new czrapp.Value( '' );//<= will be set on init and on resize
+              this.hasStickyCandidate     = new czrapp.Value( false );
+              this.stickyHeaderAnimating  = new czrapp.Value( false );
+              this.userStickyOpt          = new czrapp.Value( self._setUserStickyOpt() );//set on init and on resize : stick_always, no_stick, stick_up
+              this.currentStickySelector.bind( function( to, from ) {
+                    var _reset = function() {
+                          czrapp.$_header.css( { 'height' : '' }).removeClass( 'fixed-header-on' );
+                          self.stickyMenuDown( false );
+                          self.stickyMenuWrapper = false;
+                          self.hasStickyCandidate( false );
+                    };
+                    if ( ! _.isEmpty( to ) ) {
+                          self.hasStickyCandidate( 1 == czrapp.$_header.find( to ).length );
+                          if ( ! self.hasStickyCandidate() ) {
+                                _reset();
+                          } else {
+                                self.stickyMenuWrapper = czrapp.$_header.find( to );
+                                var $_header_image = $('#header-image-wrap').find('.site-image');
+                                if ( 1 == $_header_image.length ) {
+                                      $_header_image.bind( 'header-image-loaded', function() {
+                                            czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
+                                      });
+                                      if ( $_header_image[0].complete ) {
+                                            $_header_image.trigger('header-image-loaded');
+                                      } else {
+                                        $_header_image.load( function( img ) {
+                                              $_header_image.trigger('header-image-loaded');
+                                        } );
+                                      }
+                                } else {
+                                      czrapp.$_header.css( { 'height' : czrapp.$_header.height() }).addClass( 'fixed-header-on' );
+                                }
+                          }
+                    } else {//we don't have a candidate
+                          _reset();
+                    }
+              });
+              this.scrollPosition.bind( function( to, from ) {
+                    if ( ! self.hasStickyCandidate() )
+                      return;
+                    if ( Math.abs( to - from ) <= 5 )
+                      return;
+                    self.stickyMenuDown( to < from );
+              });
+              var _maybeResetTop = function() {
+                    if ( 'up' == self.scrollDirection() )
+                        self._mayBeresetTopPosition();
+              };
+              czrapp.bind( 'scrolling-finished', _maybeResetTop );//react on scrolling finished <=> after the timer
+              czrapp.bind( 'topbar-collapsed', _maybeResetTop );//react on topbar collapsed, @see topNavToLife
+              self.stickyMenuDown.validate = function( value ) {
+                    if ( ! self.hasStickyCandidate() )
+                      return false;
+                    if ( 'stick_up' != self.userStickyOpt() )
+                      return true;
+                    if ( self.scrollPosition() < self.stickyHeaderThreshold && ! value ) {
+                          if ( ! self.isScrolling() ) {
+                                czrapp.errorLog('Menu too close from top to be moved up');
+                          }
+                          return self.stickyMenuDown();
+                    } else {
+                          return value;
+                    }
+              };
+
+              self.stickyMenuDown.bind( function( to, from, args ){
+                    if ( ! _.isBoolean( to ) || ! self.hasStickyCandidate() ) {
+                          return $.Deferred( function() { return this.resolve().promise(); } );
+                    }
+
+                    args = _.extend(
+                          {
+                                direction : to ? 'down' : 'up',
+                                force : false,
+                                menu_wrapper : self.stickyMenuWrapper,
+                                fast : false
+                          },
+                          args || {}
+                    );
+                    return self._animate( { direction : args.direction, force : args.force, menu_wrapper : args.menu_wrapper, fast : args.fast } );
+              }, { deferred : true } );
+              self.isResizing.bind( function( is_resizing ) {
+                    self.userStickyOpt( self._setUserStickyOpt() );
+                    self._setStickySelector();
+
+                    if ( self.hasStickyCandidate() ) {
+                          self.stickyMenuDown( self.scrollPosition() < self.stickyHeaderThreshold ,  { fast : true } ).done( function() {
+                                czrapp.$_header.css( 'height' , '' ).removeClass( 'fixed-header-on' );
+                                if ( self.hasStickyCandidate() ) {
+                                      czrapp.$_header.css( 'height' , czrapp.$_header.height() ).addClass( 'fixed-header-on' );
+                                }
+                          });
+                    } else {
+                          self.stickyMenuDown( false ).done( function() {
+                                $('#header').css( 'padding-top', '' );
+                          });
+                    }
+                    if ( ! self._isMobile() ) {
+                          self._adjustDesktopTopNavPaddingTop();
+                    } else {
+                          $('.full-width.topbar-enabled #header').css( 'padding-top', '' );
+                          self._mayBeresetTopPosition();
+                    }
+              } );//resize();
+              self._setStickySelector();
+              if ( ! self._isMobile() && self.hasStickyCandidate() ) {
+                    self._adjustDesktopTopNavPaddingTop();
+              }
+
+        },//stickify
+        _setStickySelector : function() {
+              var self = this,
+                  _match_ = false;
+              _.each( self.stickyCandidatesMap, function( _params, _device ) {
+                    if ( _.isFunction( window.matchMedia ) && matchMedia( _params.mediaRule ).matches && 'no_stick' != self.userStickyOpt() ) {
+                          _match_ = [ '.nav-container', _params.selector ].join('.');
+                    }
+              });
+              self.currentStickySelector( _match_ );
+        },
+        _setUserStickyOpt : function( device ) {
+              var self = this;
+              if ( _.isUndefined( device ) ) {
+                    _.each( self.stickyCandidatesMap, function( _params, _device ) {
+                          if ( _.isFunction( window.matchMedia ) && matchMedia( _params.mediaRule ).matches ) {
+                                device = _device;
+                          }
+                    });
+              }
+              device = device || 'desktop';
+
+              return ( HUParams.menuStickyUserSettings && HUParams.menuStickyUserSettings[ device ] ) ? HUParams.menuStickyUserSettings[ device ] : 'no_stick';
+        },
+        _adjustDesktopTopNavPaddingTop : function() {
+              var self = this;
+              if ( ! self._isMobile() && self.hasStickyCandidate() ) {
+                    $('.full-width.topbar-enabled #header').css( 'padding-top', czrapp.$_header.find( self.currentStickySelector() ).outerHeight() );
+              } else {
+                    $('#header').css( 'padding-top', '' );
+              }
+        },
+        _mayBeresetTopPosition : function() {
+              var  self = this, $menu_wrapper = self.stickyMenuWrapper;
+              if ( 'up' != self.scrollDirection() )
+                return;
+              if ( ! $menu_wrapper.length )
+                return;
+
+              if ( self.scrollPosition() >= self.stickyHeaderThreshold )
+                return;
+
+              if ( ! self._isMobile() ) {
+                  self._adjustDesktopTopNavPaddingTop();
+              }
+              self.stickyMenuDown( true, { force : true, fast : true } ).done( function() {
+                    self.stickyHeaderAnimating( true );
+                    ( function() {
+                          return $.Deferred( function() {
+                              var dfd = this;
+                              _.delay( function() {
+                                    if ( 'up' == self.scrollDirection() && self.scrollPosition() < 10) {
+                                          $menu_wrapper.css({
+                                                '-webkit-transform': '',   /* Safari and Chrome */
+                                                '-moz-transform': '',       /* Firefox */
+                                                '-ms-transform': '',        /* IE 9 */
+                                                '-o-transform': '',         /* Opera */
+                                                transform: ''
+                                          });
+                                    }
+                                    self.stickyHeaderAnimating( false );
+                                    dfd.resolve();
+                              }, 10 );
+                          }).promise();
+                    } )().done( function() { });
+              });
+        },
+        _animate : function( args ) {
+              args = _.extend(
+                    {
+                          direction : 'down',
+                          force : false,
+                          menu_wrapper : {},
+                          fast : false
+                    },
+                    args || {}
+              );
+              var dfd = $.Deferred(),
+                  self = this,
+                  $menu_wrapper = ! args.menu_wrapper.length ? czrapp.$_header.find( self.currentStickySelector() ) : args.menu_wrapper,
+                  _startPosition = self.scrollPosition(),
+                  _endPosition = _startPosition;
+              if ( ! $menu_wrapper.length )
+                return dfd.resolve().promise();
+
+              if ( ! czrapp.$_header.hasClass( 'fixed-header-on' ) ) {
+                    czrapp.$_header.addClass( 'fixed-header-on' );
+              }
+              var _do = function() {
+                    var translateYUp = $menu_wrapper.outerHeight(),
+                        translateYDown = 0,
+                        _translate;
+
+                    if ( args.fast ) {
+                          $menu_wrapper.addClass('fast');
+                    }
+                    if ( _.isFunction( window.matchMedia ) && matchMedia( 'screen and (max-width: 600px)' ).matches && 1 == czrapp.$_wpadminbar.length ) {
+                          translateYDown = translateYDown - $menu_wrapper.outerHeight();
+                    }
+                    _translate = 'up' == args.direction ? 'translate(0px, -' + translateYUp + 'px)' : 'translate(0px, -' + translateYDown + 'px)';
+                    self.stickyHeaderAnimating( true );
+                    self.stickyHeaderAnimationDirection = args.direction;
+                    $menu_wrapper.toggleClass( 'sticky-visible', 'down' == args.direction );
+
+                    $menu_wrapper.css({
+                          '-webkit-transform': _translate,   /* Safari and Chrome */
+                          '-moz-transform': _translate,       /* Firefox */
+                          '-ms-transform': _translate,        /* IE 9 */
+                          '-o-transform': _translate,         /* Opera */
+                          transform: _translate
+                    });
+
+                    _.delay( function() {
+                          self.stickyHeaderAnimating( false );
+                          if ( args.fast ) {
+                                $menu_wrapper.removeClass('fast');
+                          }
+                          dfd.resolve();
+                    }, args.fast ? 100 : 350 );
+              };//_do
+
+              _.delay( function() {
+                    var sticky_menu_id = _.isString( $menu_wrapper.attr('data-menu-id') ) ? $menu_wrapper.attr('data-menu-id') : '';
+                    if ( czrapp.userXP.mobileMenu.has( sticky_menu_id ) ) {
+                          czrapp.userXP.mobileMenu( sticky_menu_id )( 'collapsed' ).done( function() {
+                                _do();
+                          });
+                    } else {
+                          _do();
+                    }
+              }, 50 );
+              return dfd.promise();
+        }
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+        sidebarToLife : function() {
+              var self = this;
+              self.sidebars = new czrapp.Values();
+              self.maxColumnHeight = new czrapp.Value( self._getMaxColumnHeight() );
+              self.maxColumnHeight.bind( function(to) {
+                    self.sidebars.each( function( _sb_ ) {
+                          if ( _sb_.isStickyfiable() ) {
+                                _sb_._setStickyness();
+                          }
+                    });
+              });
+              czrapp.isMobileUserAgent = new czrapp.Value( false );
+              if ( self._isUserStickyOnMobiles() || self._isUserStickyOnDesktops() ) {
+                    $.Deferred( function() {
+                          var _dfd = this;
+                          czrapp.doAjax( { action: "hu_wp_is_mobile" } )
+                                .always( function( _r_ ) {
+                                      var _isMobileUserAgent = '1' == HUParams.isWPMobile;
+                                      if ( _.isObject( _r_ ) ) {
+                                            _isMobileUserAgent = ( ! _r_.success || _.isUndefined( _r_.data ) || _.isUndefined( _r_.data.is_mobile ) ) ? _isMobileUserAgent : _r_.data.is_mobile;
+                                      }
+                                      czrapp.isMobileUserAgent( _isMobileUserAgent );
+                                      _dfd.resolve( czrapp.isMobileUserAgent() );
+                                });
+                          _.delay( function() {
+                              if ( 'pending' == _dfd.state() )
+                                _dfd.resolve( false );
+                          }, 1500 );
+                    });
+              }
+
+              self.sidebars.stickyness = new czrapp.Value( {} );
+              self.sidebars.stickyness.bind( function( state ) {
+                    var _isAfterTop = true;
+                    self.sidebars.each( function( _sb_ ) {
+                          _isAfterTop = 'top' != _sb_.stickyness() && _isAfterTop;
+                    });
+                    czrapp.$_mainWrapper.css({ overflow : _isAfterTop ? 'hidden' : '' });
+              });
+              czrapp.ready.then( function() {
+                    czrapp.userXP.stickyHeaderAnimating.bind( function( animating ) {
+                          if ( ! self._isStickyOptionOn() )
+                              return;
+                          self.sidebars.each( function( _sb_ ) {
+                                _sb_._translateSbContent( czrapp.userXP.stickyMenuDown() );
+                          });
+                    });
+              });
+              czrapp.$_window.scroll( _.throttle( function() {
+                    if ( ! self._isStickyOptionOn() )
+                      return;
+
+                    self.sidebars.each( function( _sb_ ) {
+                          if ( _sb_.isStickyfiable() ) {
+                                _sb_._setStickyness();
+                          }
+                    });
+              }, 10 ) );//window.scroll() throttled
+              czrapp.$_window.scroll( _.throttle( function() {
+                    czrapp.userXP.maxColumnHeight( czrapp.userXP._getMaxColumnHeight() );
+                    self.sidebars.each( function( _sb_ ) {
+                          if ( _sb_.isStickyfiable() && 'expanded' == _sb_() ) {
+                                _sb_._stickify();
+                          }
+                    });
+              }, 300 ) );//window.scroll() throttled
+              czrapp.userXP.windowWidth.bind( function( width ) {
+                    czrapp.userXP.maxColumnHeight( czrapp.userXP._getMaxColumnHeight() );
+                    self.sidebars.each( function( _sb_ ) {
+                          _sb_.isStickyfiable( _sb_._isStickyfiable() );
+                          _sb_( 'collapsed' ).done( function() {
+                                _sb_._stickify();
+                          });
+                    });
+              });
+              $( '.s1, .s2', '#wrapper .main' ).each( function( index ) {
+                    if ( ! _.isString( $(this).attr( 'data-sb-id') ) || _.isEmpty( $(this).attr( 'data-sb-id') ) )
+                      return;
+
+                    var $container = $(this),
+                        _id = $container.attr( 'data-sb-id'),
+                        _position = $container.attr( 'data-position'),
+                        _userLayout = $container.attr( 'data-layout'),
+                        ctor;
+
+                    if ( ! _.isString( _position ) || ! _.isString( _userLayout ) || ! _.isString( _id ) ) {
+                          throw new Error( 'Missing id, position or layout for sidebar ' + _id );
+                    }
+
+                    if ( 1 != $container.find('.sidebar-content').length || 1 != $container.find('.sidebar-toggle').length ) {
+                          throw new Error( 'Missing content or toggle button for sidebar ' + _id );
+                    }
+                    ctor = czrapp.Value.extend( self.SidebarCTOR );
+                    self.sidebars.add( _id, new ctor( _id, {
+                          container : $container,
+                          position : _position,//can take left, middle-left, middle-right, right
+                          layout : _userLayout,//can take : col-2cr, co-2cl, col-3cr, col-3cm, col-3cl
+                          extended_width : 's1' == _id ? 340 : 260//<= hard coded in the base CSS, could be made dynamic in the future
+                    }));
+              });//$( '.s1, .s2', '#wrapper' ).each()
+
+        },
+        _isUserStickyOnMobiles : function() {
+            if ( HUParams.sbStickyUserSettings && _.isObject( HUParams.sbStickyUserSettings ) ) {
+                var _dbOpt = _.extend( { mobile : false }, HUParams.sbStickyUserSettings );
+                return _dbOpt.mobile || false;
+            } else {
+              return false;
+            }
+        },
+        _isUserStickyOnDesktops : function() {
+            if ( HUParams.sbStickyUserSettings && _.isObject( HUParams.sbStickyUserSettings ) ) {
+                var _dbOpt = _.extend( { desktop : false }, HUParams.sbStickyUserSettings );
+                return _dbOpt.desktop || false;
+            } else {
+              return false;
+            }
+        },
+        _isStickyOptionOn : function() {
+              var _isMobile = false, self = this;
+              if ( self._isUserStickyOnMobiles() || self._isUserStickyOnDesktops() ) {
+                    _isMobile = czrapp.isMobileUserAgent() ? true : czrapp.userXP._isMobile();
+                    return _isMobile ? self._isUserStickyOnMobiles() : self._isUserStickyOnDesktops();
+              } else {
+                    return false;
+              }
+        },
+        _getMaxColumnHeight : function() {
+              var _hs = [];
+              czrapp.userXP.sidebars.each( function( _sb_ ) {
+                    _hs.push( _sb_._getVisibleHeight() );
+              });
+              $('.content', '#wrapper .main').each( function() {
+                    if ( 1 == $(this).length )
+                      _hs.push( $(this).outerHeight() );
+              });
+              return Math.max.apply(null, _hs );
+        },
+        SidebarCTOR : {
+              initialize : function( id, options ) {
+                    if ( ! $.isReady ) {
+                          throw new Error( 'Sidebars must be instantiated on DOM ready' );
+                    }
+                    var sb = this;
+                    sb.id = id;
+                    $.extend( sb, options || {} );
+
+                    sb.button_selectors = '.sidebar-toggle';
+                    sb.button = sb.container.find( sb.button_selectors );
+
+                    czrapp.Value.prototype.initialize.call( sb, null, options );
+                    sb.stickyness = new czrapp.Value();//<= will be set to a string on scroll : 'top', 'between', 'bottom'
+                    sb.animating = new czrapp.Value( false );
+                    sb.isStickyfiable = new czrapp.Value( sb._isStickyfiable() );
+                    czrapp.setupDOMListeners(
+                          [
+                                {
+                                      trigger   : 'click keydown',
+                                      selector  : sb.button_selectors,
+                                      actions   : function() {
+                                            var sb = this;
+                                            czrapp.userXP.sidebars.each( function( _sb_ ) {
+                                                _sb_( _sb_.id == sb.id ? _sb_() : 'collapsed' );
+                                            });
+                                            sb( 'collapsed' == sb() ? 'expanded' : 'collapsed' );
+                                      }
+                                },
+                                {
+                                      trigger   : 'mouseenter',
+                                      selector  : sb.button_selectors,
+                                      actions   : function() {
+                                            this.button.addClass( 'hovering' );
+                                      }
+
+                                },
+                                {
+                                      trigger   : 'mouseleave',
+                                      selector  : sb.button_selectors,
+                                      actions   : function() {
+                                            this.button.removeClass( 'hovering' );
+                                      }
+
+                                }
+                          ],//actions to execute
+                          { dom_el: sb.container },//dom scope
+                          sb //instance where to look for the cb methods
+                    );
+                    sb( 'collapsed' );
+                    sb.container.css({
+                          '-webkit-transform': 'translateZ(0)',    //Safari and Chrome
+                          '-moz-transform': 'translateZ(0)',       /* Firefox */
+                          '-ms-transform': 'translateZ(0)',        /* IE 9 */
+                          '-o-transform': 'translateZ(0)',         /* Opera */
+                          transform: 'translateZ(0)'
+                    });
+                    sb.bind( function( state ) {
+                          return $.Deferred( function() {
+                                var dfd = this;
+                                sb._toggleSidebar()
+                                      .done( function( state ){
+                                            sb.button.toggleClass( 'hovering', 'expanded' == state );
+                                            dfd.resolve();
+                                      });
+                          }).promise();
+                    }, { deferred : true } );
+                    sb.validate = function( value ) {
+                          return this._isExpandable() ? value : 'collapsed';
+                    };
+                    sb.stickyness.bind( function( to, from ) {
+                          _stckness = $.extend( {}, true, _.isObject( czrapp.userXP.sidebars.stickyness() ) ? czrapp.userXP.sidebars.stickyness() : {} );
+                          _stckness[ sb.id ] = to;
+                          czrapp.userXP.sidebars.stickyness( _stckness );
+                          var _state = to;
+                          if ( sb._isHighestColumn() && 'between' == _state ) {
+                                switch( from ) {
+                                      case 'top' :
+                                          _state = 'bottom';
+                                      break;
+                                      case 'bottom' :
+                                          _state = 'top';
+                                      break;
+                                }
+                          }
+                          sb._stickify( _state );
+                    });
+                    sb.isStickyfiable.bind( function( isStickyfiable ) {
+                          if ( ! isStickyfiable )
+                            sb._resetStickyness();
+                    });
+              },//initialize
+              _setStickyness : function() {
+                    var sb = this;
+                    if ( ! sb.isStickyfiable() )
+                      return;
+                    var startStickingY      = czrapp.$_mainWrapper.offset().top,
+                        contentBottomToTop  = startStickingY + czrapp.userXP.maxColumnHeight(),//czrapp.userXP._getMaxColumnHeight()
+                        topSpacing          = 0,//_setTopSpacing();
+                        scrollTop           = czrapp.$_window.scrollTop(),
+                        stopStickingY       = contentBottomToTop - ( sb.container.outerHeight() + topSpacing );
+
+
+                    if ( stopStickingY < 0 )
+                      return;
+                    sb.stickyness( ( function() {
+                          if ( scrollTop >= stopStickingY ) {
+                                return 'bottom';
+                          } else if ( scrollTop >= startStickingY ) {
+                                return 'between';
+                          } else if( scrollTop < startStickingY ) {
+                                return 'top';
+                          }
+                    })() );
+              },
+              _stickify : function( stickyness ) {
+                    var sb = this;
+                    if ( ! sb.isStickyfiable() )
+                      return;
+                    stickyness = stickyness ||  sb.stickyness();
+                    czrapp.userXP.maxColumnHeight( czrapp.userXP._getMaxColumnHeight(), { silent : true } );//<= we update it silently here to avoid infinite looping => the maxColumnHeight always triggers a _stickify action in other contexts
+                    var contentBottomToTop  = czrapp.$_mainWrapper.offset().top + czrapp.userXP.maxColumnHeight(),
+                        expanded            = 'expanded' == sb();
+
+                    switch( stickyness ) {
+                          case 'top' :
+                                sb._resetStickyness();//remove sticky class and dynamic style
+                          break;
+
+                          case 'between' :
+                                sb.container.addClass( 'sticky' );
+                                sb._translateSbContent();
+
+                                sb.container.css({
+                                      position : 'fixed',
+                                      top : '0px',
+                                      height : expanded ? Math.max( sb._getInnerHeight(), czrapp.$_window.height() ) + 'px' : '',
+                                      left : sb._getStickyXOffset(),//<= depdendant of the sidebar position : left, middle-left, middle-right, right
+                                      'padding-bottom' : expanded ? 0 : '',
+                                });
+                          break;
+
+                          case 'bottom' :
+                                sb._resetStickyness();//remove sticky class and dynamic style
+                                if ( ! sb._isHighestColumn() ) {
+                                      sb.container.offset( { top: contentBottomToTop - sb.container.outerHeight() } );
+                                }
+                          break;
+                    }//switch()
+              },//stickify
+              _toggleSidebar : function() {
+                    var sb = this,
+                        expanded = 'expanded' == sb();
+                    return $.Deferred( function() {
+                          var _dfd_ = this;
+
+                          var _transX,
+                              _marginRight,
+                              _marginLeft,
+                              _translate;
+                          ( function() {
+                                return $.Deferred( function() {
+                                      var _dfd = this;
+
+                                      sb.animating( true );
+                                      czrapp.$_body
+                                          .toggleClass('sidebar-expanded', expanded )
+                                          .toggleClass('sidebar-expanding', expanded )
+                                          .toggleClass('sidebar-collapsing', ! expanded );
+                                      sb.container
+                                          .toggleClass( 'expanding', expanded )
+                                          .toggleClass( 'collapsing', ! expanded );
+                                      switch( sb.position ) {
+                                            case 'right' :
+                                                _transX = - ( sb.extended_width - 50 );
+                                                if ( 'col-3cl' == sb.layout ) {
+                                                    _marginRight = expanded ? - sb.extended_width - 50 : -100;
+                                                } else {
+                                                    _marginRight = expanded ? - sb.extended_width : -50;
+                                                }
+                                            break;
+                                            case 'middle-right' :
+                                                _transX = - ( sb.extended_width - 50 );
+                                                _marginRight = expanded ? - sb.extended_width  : -50;
+                                            break;
+                                            case 'middle-left' :
+                                                _transX = sb.extended_width - 50;
+                                                _marginLeft = expanded ? - sb.extended_width : -50;
+                                            break;
+                                            case 'left' :
+                                                _transX = sb.extended_width - 50;
+                                                if ( 'col-3cr' == sb.layout ) {
+                                                    _marginLeft = expanded ? - sb.extended_width - 50 : -100;
+                                                } else {
+                                                    _marginLeft = expanded ? - sb.extended_width : -50;
+                                                }
+                                            break;
+                                      }
+
+                                      _transX = expanded ? _transX : 0;
+                                      _translate = 'translate3d(' + _transX + 'px,0px,0px)';
+                                      sb.container.css({
+                                            width : expanded ? sb.extended_width + 'px' : '50px',
+                                            'margin-right' : _.isEmpty( _marginRight + '' ) ? '' : _marginRight + 'px',
+                                            'margin-left' : _.isEmpty( _marginLeft + '' ) ? '' : _marginLeft + 'px',
+                                            height : expanded ? sb._getExpandedHeight() + 'px' : sb.container.height() + 'px',
+                                            '-webkit-transform': _translate,   /* Safari and Chrome */
+                                            '-moz-transform': _translate,       /* Firefox */
+                                            '-ms-transform': _translate,        /* IE 9 */
+                                            '-o-transform': _translate,         /* Opera */
+                                            transform: _translate
+                                      });
+
+                                      czrapp.$_mainContent.css({
+                                            '-webkit-transform': _translate,   /* Safari and Chrome */
+                                            '-moz-transform': _translate,       /* Firefox */
+                                            '-ms-transform': _translate,        /* IE 9 */
+                                            '-o-transform': _translate,         /* Opera */
+                                            transform: _translate,
+                                      });
+                                      sb.container.find('.sidebar-content').css('opacity', expanded ? 0 : 1 );
+                                      sb.container.find('.icon-sidebar-toggle').css('opacity', 0);
+                                      _.delay( function() {
+                                            _dfd.resolve();
+                                      }, 350 );//transition: width .35s ease-in-out;
+                                }).promise();
+                          })().done( function() {
+                                sb.container.toggleClass( 'expanded', expanded ).toggleClass('collapsed', ! expanded );
+                                sb.container
+                                      .removeClass( 'expanding')
+                                      .removeClass( 'collapsing')
+                                      .css({
+                                            width : expanded ? sb.extended_width + 'px' : '',
+                                            'margin-right' : '',
+                                            'margin-left' : '',
+                                            height : expanded ? sb._getExpandedHeight() + 'px' : '',
+                                      });
+                                sb.container.find('.icon-sidebar-toggle').css('opacity', 1);
+                                sb.container.find('.sidebar-content')
+                                    .css({
+                                          opacity : '',
+                                    });
+                                sb.animating( false );
+                                czrapp.$_body.removeClass('sidebar-expanding').removeClass('sidebar-collapsing');
+                                czrapp.userXP.maxColumnHeight( czrapp.userXP._getMaxColumnHeight() );
+                                if ( sb.isStickyfiable() ) {
+                                      sb._setStickyness();
+                                }
+                                _dfd_.resolve();
+                          });
+                    }).promise();
+              },//toggleSidebar
+              _resetStickyness : function() {
+                    var sb = this;
+                    sb.container.removeClass('sticky');
+                    sb.container
+                        .css({
+                              position : '',
+                              top : '',
+                              left : '',
+                              right : '',
+                              'margin-left' : '',
+                              'margin-right' : '',
+                              'padding-bottom' : '',
+                              'min-height' : ''
+                        });
+                        if ( 'expanded' != sb() ) {
+                              sb.container.css( 'height' , '' );
+                        }
+                    sb._translateSbContent();
+              },
+              _translateSbContent : function( stickyMenuDown ) {
+                    if ( this._isHighestColumn() )
+                      return;
+                    stickyMenuDown = stickyMenuDown || czrapp.userXP.stickyMenuDown();
+                    var sb = this,
+                        translateYUp = 0,
+                        translateYDown = 0,
+                        _translate = '',
+                        _stickyMenuWrapper = czrapp.userXP.stickyMenuWrapper,//@stored dynamically in userXP stickify
+                        _stickyMenuHeight = 1 == _stickyMenuWrapper.length ? _stickyMenuWrapper.height() : 50;
+                    if ( 'between' == sb.stickyness() ) {
+                          if ( 1 == czrapp.$_wpadminbar.length && czrapp.userXP.hasStickyCandidate() ) {
+                                translateYUp = translateYUp + czrapp.$_wpadminbar.outerHeight();
+                                translateYDown = translateYDown + czrapp.$_wpadminbar.outerHeight();
+                          }
+                          if ( stickyMenuDown && czrapp.userXP.hasStickyCandidate() ) {
+                                translateYUp = translateYUp + _stickyMenuHeight;
+                          }
+                    }
+
+                    _translate = ( stickyMenuDown && 'between' == sb.stickyness() ) ? 'translate(0px, ' + translateYUp + 'px)' : 'translate(0px, ' + translateYDown + 'px)';
+
+                    sb.container.find('.sidebar-content, .sidebar-toggle').css({
+                          '-webkit-transform': _translate,   /* Safari and Chrome */
+                          '-moz-transform': _translate,       /* Firefox */
+                          '-ms-transform': _translate,        /* IE 9 */
+                          '-o-transform': _translate,         /* Opera */
+                          transform: _translate
+                    });
+              },
+              _getStickyXOffset : function() {
+                    var sb = this,
+                        expanded = 'expanded' == sb(),
+                        $mainWrapper = $('.main', '#wrapper'),
+                        $mainContent = $mainWrapper.find('.content'),
+                        xFixedOffset = '';
+
+                    if ( 'between' != sb.stickyness() )
+                      return '';
+                    switch( sb.position ) {
+                          case 'left' :
+                              if ( expanded ) {
+                                    xFixedOffset = $mainWrapper.offset().left + 50;
+                              } else {
+                                    xFixedOffset = $mainWrapper.offset().left + sb.container.width();
+                              }
+                              if ( 'col-3cr' == sb.layout ) {
+                                    if ( expanded ) {
+                                          xFixedOffset = $mainWrapper.offset().left + czrapp.userXP.sidebars('s2').container.width() + 50;
+                                    } else {
+                                          xFixedOffset = '';
+                                    }
+                              }
+                          break;
+                          case 'middle-left' :
+                              xFixedOffset = czrapp.userXP.sidebars('s1').container.width() + $mainWrapper.offset().left + 50;
+                              if ( 'col-3cr' == sb.layout ) {
+                                    if ( expanded ) {
+                                    } else {
+                                          xFixedOffset = '';
+                                    }
+                              }
+                          break;
+                          case 'middle-right' :
+                              xFixedOffset = $mainWrapper.offset().left + $mainContent.outerWidth();
+                          break;
+                          case 'right' :
+                              if ( expanded ) {
+                                    xFixedOffset = $mainWrapper.offset().left + $mainWrapper.outerWidth() - 50;
+                              } else {
+                                    xFixedOffset = $mainWrapper.offset().left + $mainWrapper.outerWidth() - sb.container.width();
+                              }
+                          break;
+                    }
+                    return _.isEmpty( xFixedOffset ) ? xFixedOffset : xFixedOffset + 'px';
+              },
+              _getExpandedHeight : function() {
+                    var sb = this,
+                        _winHeight = czrapp.$_window.height(),
+                        _contentBottomToTop = czrapp.$_mainWrapper.offset().top + czrapp.$_mainWrapper.find('.content').outerHeight() - sb.container.offset().top,
+                        _maxColHeight = czrapp.userXP.maxColumnHeight();
+                    if ( 'between' == sb.stickyness() ) {
+                          return _contentBottomToTop < _winHeight ? _contentBottomToTop : Math.max( _winHeight, sb._getInnerHeight() );
+                    } else {
+                          return Math.max( _winHeight, sb._getInnerHeight() > _maxColHeight ? _maxColHeight : sb._getInnerHeight() );
+                    }
+
+
+              },
+              _isExpandable : function() {
+                    return _.isFunction( window.matchMedia ) && matchMedia( 'only screen and (min-width: 480px) and (max-width: 1200px)' ).matches;
+              },
+              _isStickyfiable : function() {
+                    return czrapp.userXP._isStickyOptionOn() &&
+                    1 == czrapp.$_mainWrapper.length &&
+                    1 == czrapp.$_mainContent.length &&
+                    _.isFunction( window.matchMedia ) && matchMedia( 'only screen and (min-width: 480px)' ).matches;
+              },
+              _isHighestColumn : function() {
+                    return czrapp.userXP.maxColumnHeight() == this._getInnerHeight();
+              },
+              _getInnerHeight : function() {
+                    return this.container.find('.sidebar-content').height() + this.container.find('.sidebar-toggle').height();
+              },
+              _getVisibleHeight : function() {
+                    return 'expanded' == this() ? this._getInnerHeight() : this.container.height();
+              }
+        }//SidebarCTOR
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+        fittext : function() {
+            if ( ! _.isObject( HUParams.fitTextMap ) )
+              return;
+
+            var _userBodyFontSize = _.isNumber( HUParams.userFontSize ) && HUParams.userFontSize * 1 > 0 ? HUParams.userFontSize : 16,
+                _fitTextMap = HUParams.fitTextMap,
+                _fitTextCompression = HUParams.fitTextCompression;
+
+            if (_.size( _fitTextMap ) < 1 ) {
+                czrapp.errorLog( 'Unable to apply fittext params, wrong HUParams.fitTextMap.');
+                return;
+            }
+            _.each( _fitTextMap, function( data, key ) {
+                  if ( ! _.isObject( data ) )
+                    return;
+                  data = _.extend( {
+                        selectors : '',
+                        minEm : 1,
+                        maxEm : 1
+                  }, data );
+                  if ( 1 > $( data.selectors ).length )
+                    return;
+                  var _compressionRatio = ( data.compression && _.isNumber( data.compression ) ) ? data.compression : _.isNumber( _fitTextCompression ) ? _fitTextCompression : 1.5;
+                  $( data.selectors ).fitText( _compressionRatio, {
+                      minFontSize : ( Math.round( data.minEm * _userBodyFontSize * 100) / 100 ) + 'px',
+                      maxFontSize : ( Math.round( data.maxEm * _userBodyFontSize * 100) / 100 ) + 'px'
+                  } ).addClass( 'fittexted_for_' + key );
+            });
+        },
+        outline: function() {
+              if ( czrapp.$_body.hasClass( 'mozilla' ) && 'function' == typeof( tcOutline ) )
+              tcOutline();
+        },
+        smoothScroll: function() {
+              if ( HUParams.SmoothScroll && HUParams.SmoothScroll.Enabled )
+                smoothScroll( HUParams.SmoothScroll.Options );
+        },
+        topNavToLife : function() {
+              var self = this,
+                  _sel = '.topbar-toggle-down',
+                  $topbar = $('#nav-topbar.desktop-sticky'),
+                  $topbarNavWrap = $topbar.find('.nav-wrap');
+
+              self.topNavExpanded = new czrapp.Value( false );
+              if ( 1 != $('#nav-topbar.desktop-sticky').length || 1 != $('#nav-topbar.desktop-sticky').find('.nav-wrap').length )
+                return;
+              var _mayBeToggleArrow = function( force ) {
+                    $( _sel, $topbar ).css( {
+                          display : ( ( $topbarNavWrap.height() > 60 || force ) && ! czrapp.userXP._isMobile() ) ? 'inline-block' : ''
+                    } );
+              };
+              var _updateMaxWidth = function() {
+                    $topbar.css( { 'max-width' : czrapp.$_window.width() } );
+              };
+              _.delay( _mayBeToggleArrow, 100 );
+              _updateMaxWidth();
+              czrapp.userXP.windowWidth.bind( function() {
+                    _updateMaxWidth();
+                    _mayBeToggleArrow();
+                    czrapp.userXP.topNavExpanded( false );
+              });
+              self.topNavExpanded.bind( function( exp, from, params ) {
+                    params = _.extend( { height : 0 }, params || {} );
+                    return $.Deferred( function() {
+                          var _dfd = this,
+                              _expandHeight = Math.max( $topbarNavWrap.height(), params.height );
+                          _mayBeToggleArrow( exp );
+                          czrapp.userXP.headerSearchExpanded( false ).done( function() {
+                                $.when( $( '#header' ).toggleClass( 'topbar-expanded', exp ) ).done( function() {
+                                      $( _sel, $topbar ).find('i[data-toggle="' + ( exp ? 'down' : 'up' ) + '"]').css( { opacity : 0 });
+
+                                      $topbar.css({
+                                            height : exp ? _expandHeight + 'px' : '50px',
+                                            overflow : exp ? 'visible' : ''
+                                      });
+                                      _.delay( function() {
+                                            $( _sel, $topbar ).find('i[data-toggle="' + ( exp ? 'down' : 'up' ) + '"]').css( { display :'none' });
+                                            $( _sel, $topbar ).find('i[data-toggle="' + ( exp ? 'up' : 'down' ) + '"]').css({ display :'inline-block' , opacity : exp ? 1 : '' });
+                                            _dfd.resolve();
+                                            if ( ! exp ) {
+                                                  _mayBeToggleArrow();
+                                                  czrapp.trigger('topbar-collapsed');//<= will be listened to by the sticky menu to maybe adjust the top padding
+                                            }
+                                      }, 250 );//transition: height 0.35s ease-in-out;
+                                });
+                          });
+                    }).promise();
+              }, { deferred : true } );
+              czrapp.setupDOMListeners(
+                    [
+                          {
+                                trigger   : 'click keydown',
+                                selector  : _sel,
+                                actions   : function() {
+                                      czrapp.userXP.topNavExpanded( ! czrapp.userXP.topNavExpanded() );
+                                }
+                          },
+                    ],//actions to execute
+                    { dom_el: $('#header') },//dom scope
+                    czrapp.userXP //instance where to look for the cb methods
+              );
+              if ( czrapp.userXP.stickyHeaderAnimating ) {
+                    czrapp.userXP.stickyHeaderAnimating.bind( function( animating ) {
+                          czrapp.userXP.topNavExpanded( false );
+                    });
+              }
+        },
+        headerSearchToLife : function() {
+              var self = this,
+                  _sel = '.toggle-search',
+                  $topbar = $('#nav-topbar.desktop-sticky');
+
+              self.headerSearchExpanded = new czrapp.Value( false );
+              self.headerSearchExpanded.bind( function( exp ) {
+                    return $.Deferred( function() {
+                          var _dfd = this;
+                          $.when( $( _sel, '#header' ).toggleClass( 'active', exp ) ).done( function() {
+                                if ( exp ) {
+                                      $topbar.css( {
+                                            overflow : ! exp ? '' : 'visible',
+                                            height : czrapp.userXP.topNavExpanded() ? ( 1 == $topbar.find('.nav-wrap').length ? $topbar.find('.nav-wrap').height() : 'auto' ) : ''
+                                      });
+                                }
+                                $('.search-expand', '#header').stop()[ ! exp ? 'slideUp' : 'slideDown' ]( {
+                                      duration : 250,
+                                      complete : function() {
+                                            if ( exp ) {
+                                                  $('.search-expand input', '#header').focus();
+                                            } else {
+                                                  $topbar.css( { overflow : '' } );
+                                                  if ( ! czrapp.userXP.topNavExpanded() ) {
+                                                       $topbar.css( { height : '' });
+                                                  }
+                                            }
+                                            _dfd.resolve();
+                                      }
+                                } );
+                          });
+                    }).promise();
+              }, { deferred : true } );
+              czrapp.setupDOMListeners(
+                    [
+                          {
+                                trigger   : 'click keydown',
+                                selector  : _sel,
+                                actions   : function() {
+                                      czrapp.userXP.headerSearchExpanded( ! czrapp.userXP.headerSearchExpanded() );
+                                }
+                          },
+                    ],//actions to execute
+                    { dom_el: $('#header') },//dom scope
+                    czrapp.userXP //instance where to look for the cb methods
+              );
+              czrapp.userXP.windowWidth.bind( function() {
+                    self.headerSearchExpanded( false );
+              });
+              if ( czrapp.userXP.stickyHeaderAnimating ) {
+                    czrapp.userXP.stickyHeaderAnimating.bind( function( animating ) {
+                          self.headerSearchExpanded( false );
+                    });
+              }
+        },//toggleHeaderSearch
+        scrollToTop : function() {
+              $('a#back-to-top').click(function() {
+                    $('html, body').animate({scrollTop:0},'slow');
+                    return false;
+              });
+        },
+        widgetTabs : function() {
+            var $tabsNav       = $('.alx-tabs-nav'),
+              $tabsNavLis    = $tabsNav.children('li'),
+              $tabsContainer = $('.alx-tabs-container');
+
+            $tabsNav.each(function() {
+                  var $_el = $(this);
+                  $_el
+                      .next()
+                      .children('.alx-tab')
+                      .stop(true,true)
+                      .hide()
+                      .siblings( $_el.find('a').attr('href') ).show();
+
+                  $_el.children('li').first().addClass('active').stop(true,true).show();
+            });
+
+            $tabsNavLis.on('click', function(e) {
+                  var $this = $(this);
+
+                  $this.siblings().removeClass('active').end()
+                  .addClass('active');
+
+                  $this.parent().next().children('.alx-tab').stop(true,true).hide()
+                  .siblings( $this.find('a').attr('href') ).fadeIn();
+                  e.preventDefault();
+            }).children( window.location.hash ? 'a[href="' + window.location.hash + '"]' : 'a:first' ).trigger('click');
+        },
+        commentTabs : function() {
+            $(".comment-tabs li").click(function() {
+                $(".comment-tabs li").removeClass('active');
+                $(this).addClass("active");
+                $(".comment-tab").hide();
+                var selected_tab = $(this).find("a").attr("href");
+                $(selected_tab).fadeIn();
+                return false;
+            });
+        },
+        tableStyle : function() {
+              $('table tr:odd').addClass('alt');
+        },
+        dropdownMenu : function() {
+              var self = this,
+                  $topbar = $('#nav-topbar.desktop-sticky'),
+                  _isHoveringInTopBar = false;
+              $('#nav-topbar.desktop-sticky').hover(
+                    function() {
+                          if ( czrapp.userXP.topNavExpanded() || czrapp.userXP._isMobile() )
+                            return;
+                          _isHoveringInTopBar = true;
+                          $topbar.css( {
+                                overflow : 'visible',
+                                height : 1 == $topbar.find('.nav-wrap').length ? $topbar.find('.nav-wrap').height() : 'auto'
+                          });
+                    },
+                    function() {
+                          if ( czrapp.userXP.topNavExpanded() || czrapp.userXP._isMobile() )
+                            return;
+                          _isHoveringInTopBar = false;
+                          _.delay( function() {
+                                if ( _isHoveringInTopBar )
+                                  return;
+                                if ( ! czrapp.userXP.topNavExpanded() && ! czrapp.userXP.headerSearchExpanded() ) {
+                                      $topbar.css( { overflow : '', height : '' } );
+                                      _.delay( function() {
+                                            czrapp.trigger('topbar-collapsed');
+                                      }, 400 );
+                                }
+                          }, 1000 );
+                    }
+              );
+              $('.nav ul.sub-menu').hide();
+              $('.nav li').hover(
+                    function() {
+                          if ( czrapp.userXP._isMobile() )
+                            return;
+                          $(this).children('ul.sub-menu').stop().slideDown('fast').css( 'opacity', 1 );
+                    },
+                    function() {
+                          if ( czrapp.userXP._isMobile() )
+                            return;
+                          $(this).children('ul.sub-menu').stop().css( 'opacity', '' ).slideUp( {
+                                duration : 'fast',
+                                complete : function() {
+                                      $(this).hide();
+                                }
+                          });
+                    }
+              );
+        }
+
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+        mayBePrintWelcomeNote : function() {
+              if ( ! HUParams.isWelcomeNoteOn )
+                return;
+              var self = this;
+              czrapp.welcomeNoteVisible = new czrapp.Value( false );
+              czrapp.welcomeNoteVisible.bind( function( visible ) {
+                      return self._toggleWelcNote( visible );//returns a promise()
+              }, { deferred : true } );
+
+              czrapp.welcomeNoteVisible( true );
+        },//mayBePrintWelcomeNote()
+
+
+        _toggleWelcNote : function( visible ) {
+              var self = this,
+                  dfd = $.Deferred();
+
+              var _hideAndDestroy = function() {
+                    return $.Deferred( function() {
+                          var _dfd_ = this,
+                              $welcWrap = $('#bottom-welcome-note', '#footer');
+                          if ( 1 == $welcWrap.length ) {
+                                $welcWrap.css( { bottom : '-100%' } );
+                                _.delay( function() {
+                                      $welcWrap.remove();
+                                      _dfd_.resolve();
+                                }, 450 );// consistent with css transition: all 0.45s ease-in-out;
+                          } else {
+                              _dfd_.resolve();
+                          }
+                    });
+              };
+
+              var _renderAndSetup = function() {
+                    var _dfd_ = $.Deferred(),
+                        $footer = $('#footer', '#wrapper');
+                    $.Deferred( function() {
+                          var dfd = this,
+                              _html = HUParams.welcomeContent;
+                          if ( 1 == $footer.length ) {
+                                $footer.append( _html );
+                                _.delay( function() {
+                                      $('#bottom-welcome-note', '#footer').css( { bottom : 0 } );
+                                      dfd.resolve();
+                                }, 500 );
+                          } else {
+                                dfd.resolve();
+                          }
+                    }).done( function() {
+                          czrapp.setupDOMListeners(
+                                [
+                                      {
+                                            trigger   : 'click keydown',
+                                            selector  : '.close-note',
+                                            actions   : function() {
+                                                  czrapp.welcomeNoteVisible( false ).done( function() {
+                                                        czrapp.doAjax( { action: "dismiss_welcome_front" } );
+                                                  });
+                                            }
+                                      }
+                                ],//actions to execute
+                                { dom_el: $footer },//dom scope
+                                self //instance where to look for the cb methods
+                          );
+                          _dfd_.resolve();
+                    });
+                    return _dfd_.promise();
+              };//renderAndSetup
+
+              if ( visible ) {
+                    _.delay( function() {
+                          _renderAndSetup().always( function() {
+                                dfd.resolve();
+                          });
+                    }, 3000 );
+              } else {
+                    _hideAndDestroy().done( function() {
+                          czrapp.welcomeNoteVisible( false );//should be already false
+                          dfd.resolve();
+                    });
+              }
+              _.delay( function() {
+                          czrapp.welcomeNoteVisible( false );
+                    },
+                    45000
+              );
+              return dfd.promise();
+        }//_toggleWelcNote
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
 
 ( function ( czrapp, $, _ ) {
       $.extend( czrapp, czrapp.Events );
@@ -2543,5 +4063,50 @@ czrapp.methods = {};
       czrapp.customMap = new czrapp.Value( {} );
       czrapp.customMap.bind( _instantianteAndFireOnDomReady );//<=THE CUSTOM MAP IS LISTENED TO HERE
 
+
+})( czrapp, jQuery, _ );var czrapp = czrapp || {};
+( function ( czrapp, $, _ ) {
+      czrapp.localized = HUParams || {};
+      var appMap = {
+                base : {
+                      ctor : czrapp.Base,
+                      ready : [
+                            'cacheProp'
+                      ]
+                },
+                browserDetect : {
+                      ctor : czrapp.Base.extend( czrapp.methods.BrowserDetect ),
+                      ready : [ 'addBrowserClassToBody' ]
+                },
+                jqPlugins : {
+                      ctor : czrapp.Base.extend( czrapp.methods.JQPlugins ),
+                      ready : [
+                            'imgSmartLoad',
+                            'extLinks',
+                            'parallax'
+                      ]
+                },
+                userXP : {
+                      ctor : czrapp.Base.extend( czrapp.methods.UserXP ),
+                      ready : [
+                            'setupUIListeners',//<=setup observables values used in various UX modules
+                            'fittext',
+                            'stickify',
+                            'outline',
+                            'smoothScroll',
+                            'headerSearchToLife',
+                            'scrollToTop',
+                            'widgetTabs',
+                            'commentTabs',
+                            'tableStyle',
+                            'sidebarToLife',
+                            'dropdownMenu',
+                            'mobileMenu',
+                            'topNavToLife',
+                            'mayBePrintWelcomeNote'
+                      ]
+                }
+      };//map
+      czrapp.appMap( appMap , true );//true for isInitial map
 
 })( czrapp, jQuery, _ );
