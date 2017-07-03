@@ -26,12 +26,44 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	/**
+	 * Theme Pro Section
+	 */
+	$wp_customize->add_section( 'bandana_pro', array(
+		'title'       => esc_html__( 'About Bandana Pro', 'bandana' ),
+		'description' => esc_html__( 'Bandana Pro is premium WordPress theme with lot of additional features and support forum access. Please visit the link below to know more about Bandana Pro theme.', 'bandana' ),
+		'panel'       => 'bandana_theme_options',
+		'priority'    => 10,
+	) );
+
+	// Theme
+	$wp_customize->add_setting ( 'bandana_pro_about', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Bandana_WP_Customize_Control_Button(
+			$wp_customize,
+			'bandana_pro_about',
+			array(
+				'label'         => esc_html__( 'Bandana Pro', 'bandana' ),
+				'section'       => 'bandana_pro',
+				'priority'      => 1,
+				'type'          => 'bandana_button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'https://designorbital.com/bandana-pro/',
+				'button_target' => '_blank',
+			)
+		)
+	);
+
+	/**
 	 * General Options Section
 	 */
 	$wp_customize->add_section( 'bandana_general_options', array (
 		'title'     => esc_html__( 'General Options', 'bandana' ),
 		'panel'     => 'bandana_theme_options',
-		'priority'  => 10,
+		'priority'  => 20,
 		'description' => esc_html__( 'Personalize the settings of your theme.', 'bandana' ),
 	) );
 
@@ -53,13 +85,51 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	/**
+	 * Footer Section
+	 */
+	$wp_customize->add_section( 'bandana_footer_options', array (
+		'title'       => esc_html__( 'Footer Options', 'bandana' ),
+		'panel'       => 'bandana_theme_options',
+		'priority'    => 30,
+		'description' => esc_html__( 'Personalize the footer settings of your theme.', 'bandana' ),
+	) );
+
+	// Copyright Control
+	$wp_customize->add_setting ( 'bandana_copyright', array (
+		'default'           => bandana_default( 'bandana_copyright' ),
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control ( 'bandana_copyright', array (
+		'label'    => esc_html__( 'Copyright', 'bandana' ),
+		'section'  => 'bandana_footer_options',
+		'priority' => 1,
+		'type'     => 'textarea',
+	) );
+
+	// Credit Control
+	$wp_customize->add_setting ( 'bandana_credit', array (
+		'default'           => bandana_default( 'bandana_credit' ),
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'bandana_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control ( 'bandana_credit', array (
+		'label'    => esc_html__( 'Display Designer Credit', 'bandana' ),
+		'section'  => 'bandana_footer_options',
+		'priority' => 2,
+		'type'     => 'checkbox',
+	) );
+
+	/**
 	 * Theme Support Section
 	 */
 	$wp_customize->add_section( 'bandana_support', array(
 		'title'       => esc_html__( 'Support Options', 'bandana' ),
 		'description' => esc_html__( 'Thanks for your interest in Bandana Lite! Following links will be helpful to you.', 'bandana' ),
 		'panel'       => 'bandana_theme_options',
-		'priority'    => 20,
+		'priority'    => 40,
 	) );
 
 	// Theme
@@ -128,59 +198,8 @@ function bandana_customize_register ( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Theme Pro Section
-	 */
-	$wp_customize->add_section( 'bandana_pro', array(
-		'title'       => esc_html__( 'About Bandana Pro', 'bandana' ),
-		'description' => esc_html__( 'Bandana Pro is premium WordPress theme with lot of additional features and support forum access. Please visit the link below to know more about Bandana Pro theme.', 'bandana' ),
-		'panel'       => 'bandana_theme_options',
-		'priority'    => 30,
-	) );
-
-	// Theme
-	$wp_customize->add_setting ( 'bandana_pro_about', array(
-		'default' => '',
-	) );
-
-	$wp_customize->add_control(
-		new Bandana_WP_Customize_Control_Button(
-			$wp_customize,
-			'bandana_pro_about',
-			array(
-				'label'         => esc_html__( 'Bandana Pro', 'bandana' ),
-				'section'       => 'bandana_pro',
-				'priority'      => 1,
-				'type'          => 'bandana_button',
-				'button_tag'    => 'a',
-				'button_class'  => 'button button-primary',
-				'button_href'   => 'https://designorbital.com/bandana-pro/',
-				'button_target' => '_blank',
-			)
-		)
-	);
-
 }
 add_action( 'customize_register', 'bandana_customize_register' );
-
-/**
- * Sanitize Select.
- *
- * @param string $input Slug to sanitize.
- * @param WP_Customize_Setting $setting Setting instance.
- * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
- */
-function bandana_sanitize_select( $input, $setting ) {
-
-	// Ensure input is a slug.
-	$input = sanitize_key( $input );
-
-	// Get list of choices from the control associated with the setting.
-	$choices = $setting->manager->get_control( $setting->id )->choices;
-
-	// If the input is a valid key, return it; otherwise, return the default.
-	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-}
 
 /**
  * Button Control Class
@@ -281,6 +300,35 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 
+}
+
+/**
+ * Sanitize Select.
+ *
+ * @param string $input Slug to sanitize.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
+ */
+function bandana_sanitize_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
+ * Sanitize the checkbox.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
+ */
+function bandana_sanitize_checkbox( $checked ) {
+	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
 
 /**

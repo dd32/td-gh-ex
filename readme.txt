@@ -1,7 +1,7 @@
 === Bandana ===
 Contributors: DesignOrbital.com
-Requires at least: WordPress 4.5
-Tested up to: WordPress 4.6.1
+Requires at least: WordPress 4.6
+Tested up to: WordPress 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,13 @@ Licensed under the terms of CC0
 Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.2.1 =
+Released: July 04, 2017
+
+* New `Footer Options` section added in the `Theme Options` panel.
+* Font Awesome is updated to 4.7.0 version.
+* Code enhancements.
 
 = 1.2 =
 Released: October 04, 2016

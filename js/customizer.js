@@ -51,4 +51,28 @@
 		} );
 	} );
 
+	// Copyright Control
+	wp.customize( 'bandana_copyright', function( value ) {
+		value.bind( function( to ) {
+			$( '.credits-blog' ).html( to );
+		} );
+	} );
+
+	// Credit Control
+	wp.customize( 'bandana_credit', function( value ) {
+		value.bind( function( to ) {
+			if ( true === to ) {
+				$( '.credits-designer' ).css( {
+					'clip': 'auto',
+					'position': 'relative'
+				} );
+			} else {
+				$( '.credits-designer' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			}
+		} );
+	} );
+
 } )( jQuery );
