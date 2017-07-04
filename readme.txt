@@ -32,6 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+
+= 1.5.8 | 4th July 2017 = 
+* Small fix for polylang.
+* Small css update.
+* Update: unminified for referance.
+
 = 1.5.7 | 28th June 2017 = 
 * Update: wc templates
 

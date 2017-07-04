@@ -3995,7 +3995,6 @@ input[type="file"] {
   -ms-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-  -webkit-transform: translateZ(0) scale(1, 1);
 }
 .lightboxhover:hover img {
   opacity: .9;
@@ -4746,8 +4745,8 @@ body {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('fonts/fontawesome-webfont.eot?v=3.2.1');
-  src: url('fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  src: url('fonts/kt-font-awesome.eot?t9jwae');
+  src: url('fonts/kt-font-awesome.eot?t9jwae#iefix') format('embedded-opentype'), url('fonts/kt-font-awesome.ttf?t9jwae') format('truetype'), url('fonts/kt-font-awesome.woff?t9jwae') format('woff'), url('fonts/kt-font-awesome.svg?t9jwae#kt-font-awesome') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -4756,13 +4755,15 @@ body {
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: FontAwesome;
-  font-weight: normal;
+  speak: none;
   font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  *margin-right: .3em;
-  line-height: 1;
+  font-weight: normal;
+  font-variant: normal;
   text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
@@ -4878,6 +4879,15 @@ a [class*=" icon-"] {
 }
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
+.icon-soundcloud:before {
+  content: "\f1be";
+}
+.icon-google-plus-square:before {
+  content: "\f0d4";
+}
+.icon-google-plus2:before {
+  content: "\f0d5";
+}
 .icon-glass:before {
   content: "\f000";
 }
@@ -5978,6 +5988,9 @@ a [class*=" icon-"] {
 .icon-renren:before {
   content: "\f18b";
 }
+.icon-vimeo:before {
+  content: "\f27d";
+}
 #wrapper.container {
   max-width: 100%!important;
   padding: 0!important;
@@ -6800,8 +6813,8 @@ html[xmlns] .slides {
   -o-transition: background 0.4s ease-out;
 }
 .kad-icon-box .kad-btn-primary {
-  margin-top: 5px
-  color:transparent;
+  margin-top: 5px;
+  color: transparent;
   background: transparent;
   box-shadow: none;
   -moz-box-shadow: none;
@@ -7459,6 +7472,98 @@ span.onsale,
 }
 div.product .product_title.kt_title_hidden {
   display: none;
+}
+.product_thumbnails .woocommerce-product-gallery__image {
+  display: inline-block;
+}
+.woocommerce-product-gallery {
+  position: relative;
+}
+.woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  height: 24px;
+  width: 24px;
+  border-radius: 3px;
+  z-index: 99;
+  text-align: center;
+}
+.woocommerce-product-gallery img {
+  margin: 0;
+}
+.woocommerce-product-gallery .flex-viewport {
+  margin-bottom: 6px;
+}
+.woocommerce-product-gallery .flex-control-thumbs {
+  margin-left: -3px;
+  margin-right: -3px;
+  padding: 0;
+}
+.woocommerce-product-gallery .flex-control-thumbs li {
+  list-style: none;
+  margin-bottom: 6px;
+  cursor: pointer;
+  padding: 0 3px;
+}
+.woocommerce-product-gallery .flex-control-thumbs li img {
+  opacity: .5;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.woocommerce-product-gallery .flex-control-thumbs li img.flex-active {
+  opacity: 1;
+}
+.woocommerce-product-gallery .flex-control-thumbs li:hover img {
+  opacity: 1;
+}
+.woocommerce-product-gallery.woocommerce-product-gallery--columns-2 .flex-control-thumbs li {
+  width: 50%;
+  float: left;
+}
+.woocommerce-product-gallery.woocommerce-product-gallery--columns-3 .flex-control-thumbs li {
+  width: 33.33%;
+  float: left;
+}
+.woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-thumbs li {
+  width: 25%;
+  float: left;
+}
+.woocommerce-product-gallery.woocommerce-product-gallery--columns-5 .flex-control-thumbs li {
+  width: 20%;
+  float: left;
+}
+.woo_product_zoom_enabled .woocommerce-product-gallery__image a:before {
+  font-family: FontAwesome;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f002";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  top: 10px;
+  color: #444;
+  right: 10px;
+  border: 1px solid transparent;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+  z-index: 100;
+  border-radius: 50%;
+  line-height: 36px;
+  text-align: center;
+}
+.woo_product_zoom_enabled .woocommerce-product-gallery__image a:hover:before {
+  border-color: #444;
 }
 .shop_table {
   width: 100%;
@@ -10582,6 +10687,169 @@ textarea {
   display: block;
   margin: 3px 0;
 }
+/**
+ * My Account
+ */
+@media (min-width: 767px) {
+  .kt-woo-account-nav {
+    float: left;
+    width: 30%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .woocommerce-MyAccount-content {
+    float: left;
+    width: 70%;
+    padding-left: 25px;
+  }
+  .woocommerce .order_details li,
+  .woocommerce-page .order_details li {
+    width: 33.33%;
+    padding-top: 10px;
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  .kt-woo-account-nav {
+    width: 22%;
+  }
+  .woocommerce-MyAccount-content {
+    width: 78%;
+  }
+}
+.kt-woo-account-nav {
+  text-align: center;
+}
+.woocommerce-MyAccount-content {
+  padding-top: 20px;
+}
+.woocommerce-MyAccount-content mark {
+  background: transparent;
+  font-weight: bold;
+}
+table.shop_table.customer_details,
+.woocommerce .shop_table.order_details {
+  margin-bottom: 40px;
+}
+.addresses address {
+  font-style: italic;
+}
+.woocommerce-MyAccount-navigation ul {
+  margin-left: 0;
+  border-top: 1px solid #eee;
+  text-align: left;
+  padding-left: 0;
+}
+.woocommerce-MyAccount-navigation ul li {
+  list-style: none;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.woocommerce-MyAccount-navigation ul li.is-active a:before {
+  opacity: 1;
+}
+.woocommerce-MyAccount-navigation ul li a {
+  padding: .857em 0;
+  display: block;
+  font-weight: 600;
+}
+.woocommerce-MyAccount-navigation ul li a:before {
+  font-family: "FontAwesome";
+  content: "\e0b5";
+  line-height: 1.618;
+  margin-left: .53em;
+  width: 1.387em;
+  text-align: right;
+  float: right;
+  opacity: .25;
+}
+.woocommerce-MyAccount-navigation ul li a:hover:before {
+  opacity: 1;
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--dashboard a:before {
+  content: "\f0e4";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--orders a:before {
+  content: "\f07a";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--downloads a:before {
+  content: "\f019";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--edit-address a:before {
+  content: "\f015";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--payment-methods a:before {
+  content: "\f09d";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--edit-account a:before {
+  content: "\f007";
+}
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--customer-logout a:before {
+  content: "\f0a9";
+}
+ul.order_details {
+  @include clearfix;
+  list-style: none;
+  position: relative;
+  margin: 3.631em 0;
+}
+ul.order_details:before,
+ul.order_details:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-size: 0px 100%, 16px 16px, 16px 16px;
+}
+ul.order_details:after {
+  top: auto;
+  bottom: -16px;
+  @include transform(rotate(180deg));
+}
+ul.order_details li {
+  padding: 1em 1.618em;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+ul.order_details li strong {
+  display: block;
+  font-size: 1.387em;
+  text-transform: none;
+}
+.my_account_orders .button,
+.woocommerce-MyAccount-downloads .button {
+  padding: .618em .857em;
+  font-size: .857em;
+  margin-right: .236em;
+}
+.my_account_orders .button.view:after {
+  font-family: "FontAwesome";
+  content: "\f06e";
+  margin-left: .53em;
+}
+p.order-again .button:after {
+  font-family: "FontAwesome";
+  content: "\f01e";
+  margin-left: .53em;
+}
+.woocommerce-MyAccount-downloads .button:after {
+  font-family: "FontAwesome";
+  content: "\f019";
+  margin-left: .53em;
+}
+.woocommerce-MyAccount-content h2 {
+  font-size: 2em;
+  font-weight: 600;
+}
+.woocommerce-MyAccount-content #payment .payment_methods {
+  margin-bottom: 1.618em !important;
+}
+.woocommerce-MyAccount-content #payment .payment_methods li .payment_box {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 .testimonialbox {
   padding: 20px;
   background: #fff;
@@ -10955,6 +11223,17 @@ nav.woocommerce-pagination ul li span.current {
 .woocommerce .products.shopcolumn1 .product_item .star-rating,
 .woocommerce .products.shopcolumn2.shopfullwidth .product_item .star-rating {
   display: inline-block;
+}
+.kt-cat-intrinsic img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.kt-cat-intrinsic {
+  position: relative;
+  height: 0;
 }
 .author-box {
   padding: 20px 0 0px;
@@ -13595,6 +13874,9 @@ p.demo_store {
     background-attachment: scroll!important;
     background-position: center!important;
   }
+  .kt-home-call-to-action {
+    background-attachment: scroll!important;
+  }
   .kad-primary-nav ul.sf-menu,
   .nav-main ul.sf-menu {
     display: none;
@@ -13627,6 +13909,9 @@ p.demo_store {
   }
   .stickyheader.trans-header #kad-banner {
     position: absolute;
+  }
+  .kt-home-call-to-action {
+    background-attachment: scroll!important;
   }
   #nav-main ul.sf-menu,
   .nav-main ul.sf-menu {
