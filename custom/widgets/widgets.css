@@ -1,0 +1,82 @@
+/*
+Default CSS Styles for the Latest Posts Widget plugin
+Version: 1.1
+*/
+.ct_latest_post * {
+	margin: 0;
+	padding:0;
+}
+.ct_latest_post {
+	font-size: 12px;	
+	line-height: 18px;
+}
+.ct_latest_post p {
+	margin-bottom: 0;
+}
+.ct_latest_post .post-title {
+	font-size: 15px;	
+	font-weight: bold;
+}
+.ct_latest_post .post-date {
+	font-style: italic;
+	margin-bottom: 0;
+}
+.ct_latest_post img {
+	float: left;
+	margin: 5px 10px 0 0;
+}
+.ct_latest_post ul li {
+  	/*border-bottom: 1px solid #ccc;*/
+	list-style: none;
+	list-style-type: none;
+	margin: 10px 0;
+	padding: 3px 0;
+	clear:both;
+}
+.ct_latest_post ul li:last-child {
+	border-bottom: none;
+}
+.ct_latest_post .more-link {
+	display: inline;
+}
+.ct_latest_post .post-entry { 
+  overflow: hidden;
+  padding: 0 0 5px 0;
+
+}
+
+
+/*css for ct_author*/
+.ct_author img{ float:left;margin:0; padding:0;width:22%; max-width:150px;}
+@media screen and (max-width: 550px) {
+.ct_author img{margin:0; padding:0;width:200px;}
+.ct_author .rc{ margin-top:30px; width:100%;}
+}
+.ct_author .rc{margin-left:5%;float:left; width:70%;}
+.ct_author .rch1{font-size:24px; line-height:1.5em; border-bottom:solid  thin #E6E6E6;}
+.social-ul{margin-top:20px; }
+.social-ul li{float:left;list-style:none;margin:0 10px 0 0;line-height:normal}
+.social-ul li:last-child{margin-right:0}
+.social-ul li a{height:40px;width:40px;line-height:40px;font-size:20px;text-align:center;background-color:#37474f;display:inline-block;overflow:hidden}
+.ct_border .social-home a{background-color:#437bd0; color:#FFF;}
+.ct_border .social-qq a{background-color:#20b6ad; color:#FFF;}
+.ct_border .social-envelope a{background-color:#22b147; color:#FFF;}
+.ct_border .social-weibo a{background-color:#e95d53; color:#FFF;}
+.ct_border .social-tencent-weibo a{background-color:#01ace2; color:#FFF;}
+.ct_border .social-facebook a{background-color:#5d82d1; color:#FFF;}
+.ct_border .social-twitter a{background-color:#40bff5; color:#FFF;}
+.after-content .social-google a{background-color:#eb5e4c; color:#FFF;}
+.social-ul li a:hover{
+	background-color: #2a363c;
+	color: #F7F7F7;
+}
+
+.ct_border {
+border: 1px solid #EFEFEF;
+padding: 30px;
+margin: 15px 0 20px 0;
+background-color: #fff;
+overflow: hidden;
+
+}
+/*css for ct_author end*/

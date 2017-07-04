@@ -5,10 +5,12 @@ get_header(); ?>
 
 	<div class="blog-content">
         <div class="wrap">
-        
-          	<?php if ( function_exists('ascreen_breadcrumbs') ) {echo ascreen_breadcrumbs();} ?>      
+			<?php if(get_theme_mod( 'enable_breadcrumb_check',1 )){ ?> 
+            <div itemscope itemtype="http://schema.org/WebPage" id="crumbs" class="breadcrumb">
+        		<?php ascreen_breadcrumb_trail(); ?> 
+			</div>
+            <?php } ?> 
             <div class="main">
-
                 <!--article-->
                 <ul class="blog-article-list">
                 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -36,7 +38,7 @@ get_header(); ?>
 							<?php ascreen_get_author_info();?>
 
                     		<div class="quote">
-                            	<p><?php the_content(); ?></p>
+                            	<p><?php the_excerpt(); ?></p>
 							</div>
                 		</div>
             		</li>
@@ -44,6 +46,7 @@ get_header(); ?>
                     <?php endwhile;endif; ?>                
                     
             	</ul><!--ul class="blog-article-list"-->
+ 
 
                 <?php 
 					the_posts_pagination( array(

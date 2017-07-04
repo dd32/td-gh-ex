@@ -1,14 +1,13 @@
-<?php 
-//post page
-
-get_header(); ?>  
+<?php get_header(); ?>  
 
 	<div class="blog-content">
         <div class="wrap">
-        
-          	<?php if ( function_exists('ascreen_breadcrumbs') ) {echo ascreen_breadcrumbs();} ?>      
+			<?php if(get_theme_mod( 'enable_breadcrumb_check',1 )){ ?> 
+            <div itemscope itemtype="http://schema.org/WebPage" id="crumbs" class="breadcrumb">
+        		<?php ascreen_breadcrumb_trail(); ?> 
+			</div>
+            <?php } ?> 
             <div class="main">
-
                 <!--article-->
                 <ul class="blog-article-list">
                 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -57,7 +56,6 @@ get_header(); ?>
  
             </div><!--div class="main"-->
 
-            <!--siedbar-->
             <?php get_sidebar(); ?>
             
             

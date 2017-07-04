@@ -1,14 +1,26 @@
-<?php 
-//post page
-get_header(); ?>  
+<?php get_header(); ?>  
 
 	<div class="blog-content">
+    
+   
         <div class="wrap">
         
-            <?php if ( function_exists('ascreen_breadcrumbs') ) {echo ascreen_breadcrumbs();} ?>        
+			<?php
+                if ( is_active_sidebar( 'sidebar-6' ) ) :
+                    dynamic_sidebar( 'sidebar-6' );
+					echo '<br>';
+                endif;
+            ?>  
+                    
+			<?php if(get_theme_mod( 'enable_breadcrumb_check',1 )){ ?> 
+            <div itemscope itemtype="http://schema.org/WebPage" id="crumbs" class="breadcrumb">
+        		<?php ascreen_breadcrumb_trail(); ?> 
+			</div>
+            <?php } ?> 
+            
             <div class="main">
             
-
+  
                 <!--article--> 
 				<article class="blog-article">
                 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -61,18 +73,35 @@ get_header(); ?>
                         <div id="article-tag">
                             <?php the_tags('<strong>'.__( 'Tags:','ascreen' ).'</strong> ', ' , ' , ''); ?>
                         </div> 
-                    <?php }?>                       
+                    <?php }?> 
+                    
+                    
+                                          
                 </article>
+
+			
+				<?php
+
+					if ( get_theme_mod( 'post_previous_next','') != 'no-display' )
+					{
+						ascreen_previous_next($post->ID);
+					}
+                ?>            
+            
             
              	<?php
 					if(comments_open()){comments_template();}
             	?>
-            </div><!--div class="main"-->               
+            </div><!--div class="main"-->   
+            
+            
+                       
 
             <!--siedbar-->
             <?php get_sidebar(); ?>
             
-            
+
+                            
     	</div><!--div class="wrap"-->
 	</div><!--div class="blog-content"-->
 
