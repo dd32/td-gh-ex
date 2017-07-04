@@ -4,7 +4,7 @@ Theme URI: https://simplefreethemes.com/bezel/
 Author: SimpleFreeThemes
 Author URI: https://simplefreethemes.com/
 Description: Bezel is a beautiful, light and elegant WordPress theme that allows your reader to focus on your content. Theme is based on Bootstrap framework grid and is perfect WordPress theme for personal blogs, product reviews, newspapers and magazines. It is simple and flexible theme with easy to use theme options. Bezel is packed with useful features such as responsive design, clean code, site logo, custom menu, translation ready, SEO friendly, Google fonts and easy to customize.
-Version: 0.1
+Version: 0.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bezel
@@ -1114,7 +1114,6 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #eb684b;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1145,7 +1144,6 @@ textarea {
           justify-content: center;
   width: 40px;
   height: 40px;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1165,7 +1163,6 @@ textarea {
   padding: 30px;
   padding: 1.875rem;
   position: relative;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1293,7 +1290,6 @@ textarea {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1350,7 +1346,6 @@ textarea {
   display: block;
   padding: 0;
   position: relative;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1819,7 +1814,6 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1866,7 +1860,6 @@ textarea {
   padding: 0.625rem 1.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2345,7 +2338,6 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2382,7 +2374,6 @@ div#respond #cancel-comment-reply-link {
   font-size: 16px !important;
   font-size: 1rem !important;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2905,7 +2896,6 @@ div#respond #cancel-comment-reply-link {
     padding: 0 0.9375rem;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu > li > a:hover,
@@ -2952,7 +2942,6 @@ div#respond #cancel-comment-reply-link {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
-    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -2964,7 +2953,6 @@ div#respond #cancel-comment-reply-link {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
-    -webkit-transition: none;
     transition: none;
   }
   /* Last & Second Last Child Drop Down Menu Second Level */

@@ -1,8 +1,8 @@
 === Bezel ===
 Contributors: SimpleFreeThemes.com
-Requires at least: WordPress 4.5
-Tested up to: WordPress 4.7.3
-Version: 0.1
+Requires at least: WordPress 4.6
+Tested up to: WordPress 4.8
+Version: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
@@ -89,6 +89,11 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/BmsmOjGQegU
 
 == Changelog ==
+
+= 0.1.1 =
+Released: July 04, 2017
+
+* Font Awesome library is updated to 4.7.0 version.
 
 = 0.1 =
 Released: March 26, 2017
