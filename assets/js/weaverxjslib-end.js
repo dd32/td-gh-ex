@@ -85,6 +85,20 @@
     // Works with either jQuery or Zepto
 })(window.jQuery || window.Zepto);
 
+// TABS - put in front to make show faster
+
+jQuery(document).ready(function($) {		// self-defining function - for tabs shortcode
+    // Tabs
+	$('.wvr-tabs-nav').delegate('span:not(.wvr-tabs-current)', 'click', function() {
+		$(this).addClass('wvr-tabs-current').siblings().removeClass('wvr-tabs-current')
+		.parents('.wvr-tabs').find('.wvr-tabs-pane').hide().eq($(this).index()).show();
+	});
+	$('.wvr-tabs-pane').hide();
+	$('.wvr-tabs-nav span:first-child').addClass('wvr-tabs-current');
+	$('.wvr-tabs-panes .wvr-tabs-pane:first-child').show();
+
+});
+
 /* -------------------------
 	support [showhide]
 */
@@ -733,18 +747,4 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'sc
         }
     });
 }
-
-
-});
-
-jQuery(document).ready(function($) {		// self-defining function - for tabs shortcode
-    // Tabs
-	$('.wvr-tabs-nav').delegate('span:not(.wvr-tabs-current)', 'click', function() {
-		$(this).addClass('wvr-tabs-current').siblings().removeClass('wvr-tabs-current')
-		.parents('.wvr-tabs').find('.wvr-tabs-pane').hide().eq($(this).index()).show();
-	});
-	$('.wvr-tabs-pane').hide();
-	$('.wvr-tabs-nav span:first-child').addClass('wvr-tabs-current');
-	$('.wvr-tabs-panes .wvr-tabs-pane:first-child').show();
-
 });

@@ -423,3 +423,8 @@ with testing and feature suggestions.
 * Deprecated: old method of styling Page/Post editor - in the future, this will require Theme Support plugin
 * Fix: check for illegal column value when creating widget areas
 * Tweak: Weaver head JavaScript will load before most other scripts now
+
+= Version 3.1.8 =
+* Fix: Page/Post Editor styling issues - no longer requires Xtreme Plus.
+* Tweak: reminder to save theme settings for new editor styling
+* New: support for Weaver Xtreme Plus per blog, single, archive-like themes.

@@ -501,8 +501,6 @@ function weaverx_customizer_add_section_options( $section, $args, $initial_prior
 				'sanitize_js_callback' => $setting['sanitize_js_callback'],
 			) ));
 
-			//$wp_customize->add_setting( weaverx_cz_settings_name( $setting_id ),
-			//		$usesetting);
 		}
 
 		// Add control

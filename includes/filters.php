@@ -422,7 +422,7 @@ function weaverx_mce_css($default_style) {
 	if (weaverx_getopt('_hide_editor_style'))
 		return $default_style;
 	$style_file = apply_filters( 'weaverx_mce_css', $default_style); // theme support plugin builds a css file
-	if ( $style_file )
+	if ( $style_file != $default_style )
 		return $style_file;
 
 	$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';

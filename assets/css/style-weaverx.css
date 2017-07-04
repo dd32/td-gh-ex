@@ -4733,6 +4733,11 @@ span.wvr-tabs-current {
 	z-index:			2;
 }		/* add line to tab */
 
+.wvr-tabs-panes .wvr-tabs-hide {
+	display: none;
+
+}
+
 .wvr-tabs-nav {
 	position:			relative;
 	z-index:			3;
