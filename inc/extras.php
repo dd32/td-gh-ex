@@ -19,6 +19,8 @@ function cell_default( $theme_mod = 'cell_theme_style' ) {
 		'cell_theme_style'      => 'wide',
 		'cell_sidebar_position' => 'right',
 		'cell_author_name'      => true,
+		'cell_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'cell' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'cell_credit'           => true,
 	);
 
 	if ( isset ( $default[$theme_mod] ) ) {
@@ -217,6 +219,86 @@ function cell_body_classes( $classes ) {
 add_filter( 'body_class', 'cell_body_classes' );
 
 /**
+ * Blog Credits.
+ *
+ * @return void
+ */
+function cell_credits_blog() {
+	$html = '<div class="credits credits-blog">'. cell_mod( 'cell_copyright' ) .'</div>';
+
+	/**
+	 * Filters the Blog Credits HTML.
+	 *
+	 * @param string $html Blog Credits HTML.
+	 */
+	$html = apply_filters( 'cell_credits_blog_html', $html );
+
+	echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $html ) ) ) ) ) ); // WPCS: XSS OK.
+}
+add_action( 'cell_credits', 'cell_credits_blog' );
+
+/**
+ * Designer Credits.
+ *
+ * @return void
+ */
+function cell_credits_designer() {
+	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> %4$s <span>&sdot;</span> %5$s <a href="%6$s" title="%7$s">%8$s</a>',
+		esc_url( 'https://designorbital.com/cell/' ),
+		esc_attr( 'Cell Theme' ),
+		esc_html( 'Cell Theme' ),
+		esc_html( 'by DesignOrbital', 'cell' ),
+		esc_html__( 'Powered by', 'cell' ),
+		esc_url( 'https://wordpress.org/' ),
+		esc_attr( 'WordPress', 'cell' ),
+		esc_html( 'WordPress' )
+	);
+
+	// Designer HTML
+	$html = '<div class="credits credits-designer">'. $designer_string .'</div>';
+
+	/**
+	 * Filters the Designer HTML.
+	 *
+	 * @param string $html Designer HTML.
+	 */
+	$html = apply_filters( 'cell_credits_designer_html', $html );
+
+	echo $html; // WPCS: XSS OK.
+}
+add_action( 'cell_credits', 'cell_credits_designer' );
+
+/**
+ * Enqueues front-end CSS to hide elements.
+ *
+ * @see wp_add_inline_style()
+ */
+function cell_hide_elements() {
+	// Elements
+	$elements = array();
+
+	// Credit
+	if ( false === cell_mod( 'cell_credit' ) ) {
+		$elements[] = '.credits-designer';
+	}
+
+	// Bail if their are no elements to process
+	if ( 0 === count( $elements ) ) {
+		return;
+	}
+
+	// Build Elements
+	$elements = implode( ',', $elements );
+
+	// Build CSS
+	$css = sprintf( '%1$s { clip: rect(1px, 1px, 1px, 1px); position: absolute; }', $elements );
+
+	// Add Inline Style
+	wp_add_inline_style( 'cell-style', cell_minify_css( $css ) );
+}
+add_action( 'wp_enqueue_scripts', 'cell_hide_elements', 11 );
+
+/**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
 function cell_attachment_link( $url, $id ) {
@@ -232,62 +314,6 @@ function cell_attachment_link( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'cell_attachment_link', 10, 2 );
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function cell_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
-}
-add_action( 'wp', 'cell_setup_author' );
-
-/**
- * Blog Credits.
- *
- * @return void
- */
-function cell_credits_blog() {
-	$credit_blog_string = '<div class="credits-blog">&copy; %1$s %2$s <span>&sdot;</span> <a href="%3$s">%4$s</a></div>';
-	printf( $credit_blog_string,
-		esc_html__( 'Copyright', 'cell' ),
-		esc_html( date( 'Y' ) ),
-		esc_url( home_url() ),
-		esc_html( get_bloginfo( 'name' ) )
-	);
-}
-add_action( 'cell_credits', 'cell_credits_blog' );
-
-/**
- * Designer Credits.
- *
- * @return void
- */
-function cell_credits_designer() {
-	$credit_designer_string = '<div class="credits-designer"><a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a></div>';
-	printf( $credit_designer_string,
-		esc_url( 'https://designorbital.com/cell/' ),
-		esc_attr( 'Cell Theme' ),
-		esc_html( 'Cell Theme' ),
-		esc_html__( 'Powered by', 'cell' ),
-		esc_url( 'https://wordpress.org/' ),
-		esc_attr( 'WordPress', 'cell' ),
-		esc_html( 'WordPress' )
-	);
-}
-add_action( 'cell_credits', 'cell_credits_designer' );
 
 if ( ! function_exists( 'cell_the_attached_image' ) ) :
 /**
@@ -361,3 +387,26 @@ function cell_the_attached_image() {
 
 }
 endif;
+
+/**
+ * Minify the CSS.
+ *
+ * @param string $css.
+ * @return minified css
+ */
+function cell_minify_css( $css ) {
+
+    // Remove CSS comments
+    $css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+
+    // Remove space after colons
+	$css = str_replace( ': ', ':', $css );
+
+	// Remove space before curly braces
+	$css = str_replace( ' {', '{', $css );
+
+    // Remove whitespace i.e tabs, spaces, newlines, etc.
+    $css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '     '), '', $css );
+
+    return $css;
+}
