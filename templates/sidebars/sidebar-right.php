@@ -1,10 +1,7 @@
 <?php
 
-// get layout
-$ashe_sid = ashe_page_layout();
-
 // check if available
-if ( ! is_active_sidebar( 'sidebar-right' ) || ( strpos( $ashe_sid, 'rsidebar' ) === false && strpos( $ashe_sid, 'lrsidebar' ) === false ) ) {
+if ( ! is_active_sidebar( 'sidebar-right' ) ) {
 	return;
 }
 

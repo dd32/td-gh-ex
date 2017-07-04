@@ -1,11 +1,23 @@
+<?php 
+/**
+ * ----------------------------------------------------------------------------------------
+ * Template Name: Left Sidebar Page 
+ * ----------------------------------------------------------------------------------------
+ */
+?>
+
 <?php get_header(); ?>
 
 <!-- Page Content -->
-<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="col1-fullwidth">
+<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="col1-lsidebar">
 
-	<?php // Sidebar Alt
+	<?php 
 
+	// Sidebar Alt
 	get_template_part( 'templates/sidebars/sidebar', 'alt' );
+
+	// Sidebar Left
+	get_template_part( 'templates/sidebars/sidebar', 'left' ); 
 
  	?>
 

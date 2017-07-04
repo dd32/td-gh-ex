@@ -1,12 +1,18 @@
 <div id="featured-links" class="<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>">
+	
 	<div class="boxed-wrapper clear-fix">
 
-	<?php if ( ashe_options( 'featured_links_sec_title' ) !== '' ) : ?>
-	<h1><?php echo esc_html( ashe_options( 'featured_links_sec_title' ) ); ?></h1>
-	<?php endif; ?>
+	<?php
 
-	<!-- Open Links in New Tab -->
-	<?php $links_window = ( ashe_options( 'featured_links_window' ) === true )?'_blank':'_self'; ?>
+	// Featured Links section Title
+	if ( ashe_options( 'featured_links_sec_title' ) !== '' ) {
+		echo '<h1>'. esc_html( ashe_options( 'featured_links_sec_title' ) ) .'</h1>';
+	}
+
+	// Open Links in New Tab
+	$links_window = ( ashe_options( 'featured_links_window' ) === true )?'_blank':'_self';
+
+	?>
 
 	<!-- Link 1 -->
 	<?php if ( ashe_options( 'featured_links_image_1' ) !== '' ): ?>

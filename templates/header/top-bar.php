@@ -1,8 +1,11 @@
 <?php if ( ashe_options( 'top_bar_label' ) === true ) : ?>
+
 <div id="top-bar" class="clear-fix">
 	<div <?php echo ashe_options( 'general_header_width' ) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>
 		
 		<?php
+
+		// Menu
 		if ( ashe_options( 'top_bar_show_menu' ) === true ) {
 			if ( has_nav_menu('top') ) {
 				wp_nav_menu( array(
@@ -21,11 +24,14 @@
 			}
 		}
 		
+		// Social Icons
 		if ( ashe_options( 'top_bar_show_socials' ) === true ) {	
 			ashe_social_media( 'top-bar-socials' );
 		}
+
 		?>
 
 	</div>
 </div><!-- #top-bar -->
+
 <?php endif; ?>

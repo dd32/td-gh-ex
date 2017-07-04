@@ -59,6 +59,11 @@ function ashe_customize_register( $wp_customize ) {
 
 	}
 
+	// fonts
+	function ashe_sanitize_fonts( $font ) { // MOD
+		return $font;
+	}
+
 
 /*
 ** Reusable Functions =====
@@ -250,6 +255,19 @@ function ashe_customize_register( $wp_customize ) {
 	}
 
 
+/*
+** Colors =====
+*/
+	// add Colors section
+	$wp_customize->add_section( 'ashe_colors' , array(
+		'title'		 => esc_html__( 'Colors', 'ashe' ),
+		'priority'	 => 1,
+		'capability' => 'edit_theme_options'
+	) );
+
+	// Content Accent
+	ashe_color_control( 'colors', 'content_accent', esc_html__( 'Accent', 'ashe' ), 'postMessage', 1 );
+
 
 /*
 ** General Layouts =====
@@ -262,7 +280,7 @@ function ashe_customize_register( $wp_customize ) {
 	) );
 
 	// Sidebar Width
-	ashe_number_absint_control( 'general', 'sidebar_width', esc_html__( 'Sidebar Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 3 );
+	ashe_number_absint_control( 'general', 'sidebar_width', esc_html__( 'Sidebar Width', 'ashe' ), array( 'step' => '1' ), 'refresh', 3 );
 
 	// Background Image
 	ashe_image_control( 'general', 'bg_image', esc_html__( 'Background Image', 'ashe' ), 'postMessage', 7 );
@@ -282,7 +300,6 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Background Image Type
 	ashe_radio_control( 'general', 'bg_image_type', esc_html__( 'Background Image Type', 'ashe' ), $bg_image_type, 'postMessage', 11 );
-
 
 	$boxed_width = array(
 		'full' 		=> esc_html__( 'Full', 'ashe' ),
@@ -376,9 +393,16 @@ function ashe_customize_register( $wp_customize ) {
 	// Align
 	ashe_select_control( 'main_nav', 'align', esc_html__( 'Align', 'ashe' ), $main_nav_align, 'refresh', 7 );
 
+	$main_nav_position = array(
+		'above' => esc_html__( 'Above Page Header', 'ashe' ),
+		'below' => esc_html__( 'Below Page Header', 'ashe' ),
+	);
+
 	// Show Search Icon
 	ashe_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'ashe' ), 'refresh', 13 );
 
+	// Show Sidebar Icon
+	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
 
 /*
 ** Featured Slider =====
@@ -410,7 +434,7 @@ function ashe_customize_register( $wp_customize ) {
 	// Category
 	ashe_select_control( 'featured_slider', 'category', esc_html__( 'Select Category', 'ashe' ), $slider_cats, 'refresh', 3 );
 
-	// Number of Slides
+	// Amount
 	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'max' => '5' ), 'refresh', 10 );
 
 	$slider_culumns = array( 'step' => '1', 'min' => '1', 'max' => '4' );
@@ -442,7 +466,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_url_control( 'featured_links', 'url_1', esc_html__( 'URL', 'ashe' ), 'refresh', 11 );
 
 	// Link #1 Image
-	ashe_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'ashe' ), 600, 400, 'refresh', 13 );
+	ashe_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'ashe' ), 600, 340, 'refresh', 13 );
 
 	// Link #2 Title
 	ashe_text_control( 'featured_links', 'title_2', esc_html__( 'Title', 'ashe' ), 'refresh', 15 );
@@ -451,7 +475,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_url_control( 'featured_links', 'url_2', esc_html__( 'URL', 'ashe' ), 'refresh', 17 );
 
 	// Link #2 Image
-	ashe_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'ashe' ), 600, 400, 'refresh', 19 );
+	ashe_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'ashe' ), 600, 340, 'refresh', 19 );
 
 	// Link #3 Title
 	ashe_text_control( 'featured_links', 'title_3', esc_html__( 'Title', 'ashe' ), 'refresh', 21 );
@@ -460,7 +484,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_url_control( 'featured_links', 'url_3', esc_html__( 'URL', 'ashe' ), 'refresh', 23 );
 
 	// Link #3 Image
-	ashe_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'ashe' ), 600, 400, 'refresh', 25 );
+	ashe_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'ashe' ), 600, 340, 'refresh', 25 );
 
 
 /*
@@ -496,22 +520,22 @@ function ashe_customize_register( $wp_customize ) {
 	// Show Date
 	ashe_checkbox_control( 'blog_page', 'show_date', esc_html__( 'Show Date', 'ashe' ), 'refresh', 7 );
 
+	// Show Comments
+	ashe_checkbox_control( 'blog_page', 'show_comments', esc_html__( 'Show Comments', 'ashe' ), 'refresh', 9 );
+
 	// Show Dropcups
-	ashe_checkbox_control( 'blog_page', 'show_dropcups', esc_html__( 'Show Dropcups', 'ashe' ), 'refresh', 9 );
+	ashe_checkbox_control( 'blog_page', 'show_dropcups', esc_html__( 'Show Dropcups', 'ashe' ), 'refresh', 11 );
 
 	// Show Author
-	ashe_checkbox_control( 'blog_page', 'show_author', esc_html__( 'Show Author', 'ashe' ), 'refresh', 13 );
-
-	// Show Comments
-	ashe_checkbox_control( 'blog_page', 'show_comments', esc_html__( 'Show Comments', 'ashe' ), 'refresh', 15 );
+	ashe_checkbox_control( 'blog_page', 'show_author', esc_html__( 'Show Author', 'ashe' ), 'refresh', 16 );
 
 	$related_posts = array(
 		'none' 		=> esc_html__( 'None', 'ashe' ),
-		'related' 	=> esc_html__( 'Related', 'ashe' ),
+		'related' 	=> esc_html__( 'Related', 'ashe' )
 	);
 
 	// Related Posts Orderby
-	ashe_select_control( 'blog_page', 'related_orderby', esc_html__( 'Display', 'ashe' ), $related_posts, 'refresh', 23 );
+	ashe_select_control( 'blog_page', 'related_orderby', esc_html__( 'Related Posts Display', 'ashe' ), $related_posts, 'refresh', 33 );
 
 
 /*
@@ -654,6 +678,7 @@ function ashe_customize_register( $wp_customize ) {
 	// Copyright
 	ashe_textarea_control( 'page_footer', 'copyright', esc_html__( 'Copyright', 'ashe' ), 'refresh', 3 );
 
+
 }
 add_action( 'customize_register', 'ashe_customize_register' );
 
@@ -662,7 +687,7 @@ add_action( 'customize_register', 'ashe_customize_register' );
 ** Bind JS handlers to instantly live-preview changes
 */
 function ashe_customize_preview_js() {
-	wp_enqueue_script( 'ashe-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.min.js' ), array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'ashe-customize-preview', get_theme_file_uri( '/inc/customizer/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 
@@ -671,8 +696,8 @@ add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 */
 function ashe_panels_js() {
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.min.css' ) );
-	wp_enqueue_style( 'customizer-ui-css', get_theme_file_uri( '/assets/css/customizer-ui.css' ) );
-	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/assets/js/customize-controls.min.js' ), array(), '1.0', true );
+	wp_enqueue_style( 'customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
+	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.0', true );
 
 }
 add_action( 'customize_controls_enqueue_scripts', 'ashe_panels_js' );

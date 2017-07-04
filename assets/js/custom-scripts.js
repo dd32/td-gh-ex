@@ -93,7 +93,7 @@ jQuery(document).ready(function( $ ) {
 			var SidebarOffset = 0;
 
 			if ( $("#main-nav").attr( 'data-fixed' ) === '1' ) {
-				SidebarOffset = 45;
+				SidebarOffset = 40;
 			}
 
 			$('.sidebar-left,.sidebar-right').stick_in_parent({

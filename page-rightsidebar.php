@@ -1,7 +1,15 @@
+<?php 
+/**
+ * ----------------------------------------------------------------------------------------
+ * Template Name: Right Sidebar Page 
+ * ----------------------------------------------------------------------------------------
+ */
+?>
+
 <?php get_header(); ?>
 
 <!-- Page Content -->
-<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="col1-fullwidth">
+<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="col1-rsidebar">
 
 	<?php // Sidebar Alt
 
@@ -46,6 +54,12 @@
 		<?php get_template_part( 'templates/single/comments', 'area' ); ?>
 
 	</div><!-- .main-container -->
+
+	<?php // Sidebar Right
+	
+	get_template_part( 'templates/sidebars/sidebar', 'right' ); 
+
+	?>
 
 </div><!-- #page-content -->
 

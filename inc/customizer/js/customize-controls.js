@@ -48,7 +48,7 @@
 			});
 
 			// on load
-			if ( $( '#customize-control-ashe_options-'+ select ).find('select') === value ) {
+			if ( $( '#customize-control-ashe_options-'+ select ).find('select').val() === value ) {
 				$(children).show();
 			} else {
 				$(children).hide();
@@ -60,18 +60,10 @@
 	/*
 	** Tabs
 	*/
-		// Colors
-		ashe_customizer_label( 'colors_top_bar_bg', 'Top Bar' );
-		ashe_customizer_label( 'colors_main_nav_bg', 'Main Navigation' );
-		ashe_customizer_label( 'colors_content_bg', 'Content' );
-		ashe_customizer_label( 'colors_button', 'Button' );
-		ashe_customizer_label( 'colors_overlay', 'Image Overlay' );
 
 		// General Layouts
-		ashe_customizer_label( 'general_home_layout', 'Page Layouts' );
+		ashe_customizer_label( 'general_sidebar_width', 'General' );
 		ashe_customizer_label( 'general_header_width', 'Boxed Controls' );
-		ashe_customizer_label( 'general_site_width', 'General' );
-		ashe_customizer_label( 'colors_footer_bg', 'Footer' );
 
 		// Top Bar
 		ashe_customizer_checkbox_label( 'top_bar_label' );
@@ -91,13 +83,10 @@
 		ashe_customizer_label( 'featured_links_title_1', 'Featured Link #1' );
 		ashe_customizer_label( 'featured_links_title_2', 'Featured Link #2' );
 		ashe_customizer_label( 'featured_links_title_3', 'Featured Link #3' );
-		ashe_customizer_label( 'featured_links_title_4', 'Featured Link #4' );
-		ashe_customizer_label( 'featured_links_title_5', 'Featured Link #5' );
 
 		// Blog Page
-		ashe_customizer_label( 'blog_page_gutter_horz', 'General' );
+		ashe_customizer_label( 'blog_page_post_description', 'General' );
 		ashe_customizer_label( 'blog_page_show_categories', 'Post Elements' );
-		ashe_customizer_label( 'blog_page_related_title', 'Related Posts' );
 
 		// Single Page
 		ashe_customizer_label( 'single_page_show_categories', 'Post Elements' );
@@ -108,11 +97,10 @@
 		ashe_customizer_label( 'social_media_icon_2', 'Social Icon #2' );
 		ashe_customizer_label( 'social_media_icon_3', 'Social Icon #3' );
 		ashe_customizer_label( 'social_media_icon_4', 'Social Icon #4' );
-		ashe_customizer_label( 'social_media_icon_5', 'Social Icon #5' );
-
 
 		// Contditional Logics
 		ashe_customizer_select( 'featured_slider_display', '#customize-control-ashe_options-featured_slider_category', 'category' );
+		ashe_customizer_select( 'blog_page_post_description', '#customize-control-ashe_options-blog_page_excerpt_length,#customize-control-ashe_options-blog_page_grid_excerpt_length', 'excerpt' );
 
 
 		// Add bottom space to tabs

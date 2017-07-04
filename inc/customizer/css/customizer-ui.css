@@ -67,3 +67,11 @@ li[id*="customize-control-ashe_options-social_media_icon"] span {
 	padding: 0 !important;
 	background-color: transparent;
 }
+
+
+/* Fix Labels */
+#customize-control-ashe_options-top_bar_label,
+#customize-control-ashe_options-featured_links_label {
+	width: 100% !important;
+	padding-bottom: 15px !important;
+}

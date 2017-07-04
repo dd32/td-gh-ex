@@ -10,10 +10,13 @@ if ( ! is_active_sidebar( 'sidebar-alt' ) || ashe_options( 'main_nav_show_sideba
 <div class="sidebar-alt-wrap">
 	<div class="sidebar-alt-close image-overlay"></div>
 	<aside class="sidebar-alt">
+
 		<div class="sidebar-alt-close-btn">
 			<span></span>
 			<span></span>
 		</div>
+
 		<?php dynamic_sidebar( 'sidebar-alt' ); ?>
+		
 	</aside>
 </div>

@@ -32,15 +32,6 @@ function ashe_setup() {
 		'gallery',
 		'caption',
 	) );
-
-	// Enable support for Post Formats
-	add_theme_support( 'post-formats', array(
-		'audio',
-		'video',
-		'gallery',
-		'link',
-		'quote'
-	) );
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
 
@@ -54,7 +45,7 @@ function ashe_scripts() {
 	wp_enqueue_style( 'ashe-style', get_stylesheet_uri() );
 
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_stylesheet_uri() );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ) );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.min.css' ) );
@@ -71,7 +62,7 @@ function ashe_scripts() {
 
 	// Enqueue Custom Scripts
 	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.min.js' ), array( 'jquery' ), false, true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.min.js' ), array( 'jquery' ), false, true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), false, true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -152,27 +143,16 @@ function ashe_widgets_init() {
 		'after_title'   => '</h2></div>',
 	) );
 
-	register_sidebar( array(
-		'name'          => __( 'Instagram Widget', 'ashe' ),
-		'id'            => 'instagram-widget',
-		'description'   => __( 'Add widget here to appear in your instagram area.', 'ashe' ),
-		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
-		'after_title'   => '</h2></div>',
-	) );
 }
 add_action( 'widgets_init', 'ashe_widgets_init' );
 
 /*
 ** Custom Image Sizes
 */
-// tmp
-add_image_size( 'ashe-slider-full-thumbnail', 1140, 570, true );
-add_image_size( 'ashe-slider-grid-thumbnail', 720, 450, true );
-add_image_size( 'ashe-full-thumbnail',1140, 0, true );
-add_image_size( 'ashe-grid-thumbnail',500, 330, true );
-add_image_size( 'ashe-single-navigation',75, 75, true );
+add_image_size( 'ashe-slider-full-thumbnail', 1080, 540, true );
+add_image_size( 'ashe-full-thumbnail', 1140, 0, true );
+add_image_size( 'ashe-grid-thumbnail', 500, 330, true );
+add_image_size( 'ashe-single-navigation', 75, 75, true );
 
 
 
@@ -183,13 +163,11 @@ add_image_size( 'ashe-single-navigation',75, 75, true );
 function ashe_excerpt_length() {	
 	return 2000;
 }
-
 add_filter( 'excerpt_length', 'ashe_excerpt_length', 999 );
 
 function ashe_new_excerpt( $more ) {
 	return '...';
 }
-
 add_filter( 'excerpt_more', 'ashe_new_excerpt' );
 
 if ( ! function_exists( 'ashe_excerpt' ) ) {
@@ -200,7 +178,6 @@ if ( ! function_exists( 'ashe_excerpt' ) ) {
 
 }
 
-
 /*
 ** Custom Functions
 */
@@ -208,19 +185,13 @@ if ( ! function_exists( 'ashe_excerpt' ) ) {
 // Page Layouts
 function ashe_page_layout() {
 	// get layout
- 	if ( is_page() ) {
-		return 'rsidebarlrsidebar';
-	} elseif ( is_single() ) {
-		return ashe_options( 'general_single_layout' );
-	} elseif ( is_category() || is_tag() ) {
-		return ashe_options( 'general_category_layout' );
-	} elseif ( is_search() ) {
-		return ashe_options( 'general_search_layout' );
-	} elseif ( is_author() ) {
-		return ashe_options( 'general_author_layout' );
-	} else {
-		return ashe_options( 'general_home_layout' );
-	}
+ 	if ( is_active_sidebar( 'sidebar-right' ) && is_active_sidebar( 'sidebar-left' ) ) {
+		return 'col1-lrsidebar';
+	}  elseif ( is_active_sidebar( 'sidebar-right' ) ) {
+		return 'col1-rsidebar';
+	} elseif ( is_active_sidebar( 'sidebar-left' ) ) {
+		return 'col1-lsidebar';
+	} 
 }
 
 // HEX to RGBA Converter
@@ -241,31 +212,24 @@ function ashe_hex2rgba( $color, $opacity = 1 ) {
     return $output;
 }
 
-// Get Thumbnail
-if ( ! function_exists( 'ashe_post_thumbnail' ) ) {
-	function ashe_post_thumbnail() {
-		if ( has_post_thumbnail() ) {
-			if ( substr( ashe_page_layout(), 0, 4 ) === 'col1' || is_single() ) {
-				the_post_thumbnail('ashe-full-thumbnail');	
-			} else {
-				the_post_thumbnail( 'ashe-grid-thumbnail' );
-			}
-		}
-	}
-}
 
 // Social Media
-if ( ! function_exists( 'ashe_comments' ) ) {
+if ( ! function_exists( 'ashe_social_media' ) ) {
 
-	function ashe_social_media( $social_class='' ) { ?>
+	function ashe_social_media( $social_class='' ) {
+
+	?>
+
 		<div class="<?php echo esc_attr( $social_class ); ?>">
+
 			<?php
 			$social_window = ( ashe_options( 'social_media_window' ) === true )?'_blank':'_self';
-			
-			if ( ashe_options( 'social_media_url_1' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( ashe_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo ashe_options( 'social_media_icon_1' ); ?>"></i>
-				</a>
+			if ( ashe_options( 'social_media_url_1' ) !== '' ) :
+			?>
+
+			<a href="<?php echo esc_url( ashe_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+				<i class="fa fa-<?php echo ashe_options( 'social_media_icon_1' ); ?>"></i>
+			</a>
 			<?php endif; ?>
 
 			<?php if ( ashe_options( 'social_media_url_2' ) !== '' ) : ?>
@@ -286,21 +250,20 @@ if ( ! function_exists( 'ashe_comments' ) ) {
 				</a>
 			<?php endif; ?>
 
-			<?php if ( ashe_options( 'social_media_url_5' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( ashe_options( 'social_media_url_5' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo ashe_options( 'social_media_icon_5' ); ?>"></i>
-				</a>
-			<?php endif; ?>
 		</div>
-	<?php	
-	}
 
-}
+	<?php
+
+	} // ashe_social_media()
+
+} // function_exists( 'ashe_social_media' )
+
 
 // Related Posts
 if ( ! function_exists( 'ashe_related_posts' ) ) {
 	
 	function ashe_related_posts( $title, $orderby ) {
+
 		global $post;
 		$current_categories	= get_the_category();
 
@@ -308,6 +271,7 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 
 			$first_category	= $current_categories[0]->term_id;
 
+			// Random
 			if ( $orderby === 'random' ) {
 				$args = array(
 					'post_type'				=> 'post',
@@ -322,6 +286,8 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 				        ),
 				    )
 				);
+
+			// Similar
 			} else {
 				$args = array(
 					'post_type'				=> 'post',
@@ -341,38 +307,54 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 
 			$similar_posts = new WP_Query( $args );	
 
-			if ( $similar_posts->have_posts() ) { ?>
-			<div class="related-posts">	
+			if ( $similar_posts->have_posts() ) {
+
+			?>
+
+			<div class="related-posts">
 				<h3><?php echo esc_html( $title ); ?></h3>
+
 				<?php 
+
 				while ( $similar_posts->have_posts() ) { 
 					$similar_posts->the_post();
-					if ( has_post_thumbnail() ) { ?>
+					if ( has_post_thumbnail() ) {
+				?>
 					<section>
 						<a href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail('ashe-grid-thumbnail'); ?></a>
 						<h4><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h4>
 						<span class="related-post-date"><?php echo get_the_time( get_option('date_format') ); ?></span>
 					</section>
-					<?php }
-				} ?>
+
+				<?php
+
+					} // end if
+				} // end while
+
+				?>
+
 				<div class="clear-fix"></div>
 			</div>
-			<?php }
-		} 
 
-		wp_reset_postdata(); 
-	}
-}
+			<?php
+
+			} // end have_posts()
+
+		} // if ( $current_categories )
+
+		wp_reset_postdata();
+
+	} // ashe_related_posts()
+} // function_exists( 'ashe_related_posts' )
 
 
 /*
 ** Custom Search Form
 */
-
 function ashe_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
-	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type and hit enter...', 'ashe' ) .'" value="'. get_search_query() .'" name="s" />';
+	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type and hit enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
 	$html .= '<i class="fa fa-search"></i>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';
@@ -407,7 +389,6 @@ if ( ! function_exists( 'ashe_comments' ) ) {
 					</div>
 				</div>
 			</article>
-		</li>
 
 		<?php elseif ( get_comment_type() == 'comment' ) : ?>
 
@@ -431,57 +412,38 @@ if ( ! function_exists( 'ashe_comments' ) ) {
 					</div>
 
 					<div class="comment-text">
-						<?php if($comment->comment_approved == '0') : ?>
+						<?php if ( $comment->comment_approved == '0' ) : ?>
 						<p class="awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'ashe' ); ?></p>
 						<?php endif; ?>
 						<?php comment_text(); ?>
 					</div>
 				</div>
 				
-			</article>	
-		</li>						
+			</article>
+
 		<?php endif;
 	}
 }
 
+// Move Comments Textarea
+function ashe_move_comments_field( $fields ) {
 
-/*
-**  Author Social
-*/
+	// unset/set
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
 
-function ashe_contactmethods( $contactmethods ) {
-
- 	$contactmethods['facebook']     = esc_html__( 'Facebook', 'ashe' );
-    $contactmethods['twitter']      = esc_html__( 'Twitter', 'ashe' );
-    $contactmethods['instagram']    = esc_html__( 'Instagram', 'ashe' );
-    $contactmethods['pinterest']	= esc_html__( 'Pinterest', 'ashe' );
-    $contactmethods['bloglovin']    = esc_html__( 'Bloglovin', 'ashe' );
-    $contactmethods['google_plus']	= esc_html__( 'Google Plus', 'ashe' );
-    $contactmethods['tumblr']       = esc_html__( 'Tumblr', 'ashe' );
-    $contactmethods['youtube']      = esc_html__( 'Youtube', 'ashe' );
-    $contactmethods['vine']         = esc_html__( 'Vine', 'ashe' );
-    $contactmethods['flickr']       = esc_html__( 'Flickr', 'ashe' );
-    $contactmethods['linkedin']     = esc_html__( 'Linkedin', 'ashe' );
-    $contactmethods['behance']      = esc_html__( 'Behance', 'ashe' );
-    $contactmethods['soundcloud']   = esc_html__( 'Soundcloud', 'ashe' );
-    $contactmethods['vimeo']        = esc_html__( 'Vimeo', 'ashe' );
-    $contactmethods['rss']          = esc_html__( 'Rss', 'ashe' );
-    $contactmethods['dribbble']     = esc_html__( 'Dribbble', 'ashe' );
-    $contactmethods['envelope']     = esc_html__( 'Envelope', 'ashe' );
-
-	return $contactmethods;
+	return $fields;
 }
 
-add_filter( 'user_contactmethods','ashe_contactmethods', 10, 1 );
-
-
+add_filter( 'comment_form_fields', 'ashe_move_comments_field' );
 
 
 /*
 ** Incs: Theme Customizer
 */
 
+// Customizer
 require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer-defaults.php' );
 require get_parent_theme_file_path( '/inc/customizer/dynamic-css.php' );
-require get_parent_theme_file_path( '/inc/metaboxes/metabox.php' );

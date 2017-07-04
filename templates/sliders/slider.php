@@ -1,33 +1,35 @@
-<?php 
+<?php
+
 $slider_columns 	= ashe_options( 'featured_slider_columns' );
 $slider_autoplay 	= ashe_options( 'featured_slider_autoplay' );
 $slider_navigation 	= ashe_options( 'featured_slider_navigation' );
 $slider_pagination 	= ashe_options( 'featured_slider_pagination' );
 
 $slider_data = '{';
-$slider_data .= '"slidesToShow":'.$slider_columns;
 
+	$slider_data .= '"slidesToShow":'.$slider_columns;
 
-if ( $slider_autoplay > 0 ) {
-	$slider_data .= ', "autoplay": true, "autoplaySpeed": '. $slider_autoplay;
-}
+	if ( $slider_autoplay > 0 ) {
+		$slider_data .= ', "autoplay": true, "autoplaySpeed": '. $slider_autoplay;
+	}
 
-if ( !$slider_navigation ) {
-	$slider_data .= ', "arrows":false';
-} 
+	if ( !$slider_navigation ) {
+		$slider_data .= ', "arrows":false';
+	} 
 
-if ( $slider_pagination ) {
-	$slider_data .= ', "dots":true';
-}
+	if ( $slider_pagination ) {
+		$slider_data .= ', "dots":true';
+	}
 
-if ( $slider_columns === 1 ) {
-  	$slider_data .= ', "fade":true';
-}
+	if ( $slider_columns === '1' ) {
+	  	$slider_data .= ', "fade":true';
+	}
 
 $slider_data .= '}';
+
 ?>
 
-<div id="featured-slider" data-slick="<?php echo esc_attr( $slider_data ); ?>" class="<?php echo ashe_options( 'general_slider_width' ) === 'boxed' ? 'boxed-wrapper': ''; ?>">
+<div id="featured-slider" data-slick="<?php echo esc_attr( $slider_data ); ?>">
 	
 	<?php 
 
@@ -65,28 +67,31 @@ $slider_data .= '}';
 
 	$sliderQuery = new WP_Query();
 	$sliderQuery->query( $args );
+
+
+	// Loop Start
+	if ( $sliderQuery->have_posts() ) :
+
+	while ( $sliderQuery->have_posts() ) : $sliderQuery->the_post();
+
 	?>
 
-	<?php if ( $sliderQuery->have_posts() ) : while ( $sliderQuery->have_posts() ) : $sliderQuery->the_post(); ?>
+	<div class="slider-item">
 
+		<?php if ( ashe_options( 'general_slider_width' ) === 'full' ) : ?>
+		<div class="slider-item-bg" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>);"></div>
+
+		<?php else : ?>	
+		<img src="<?php the_post_thumbnail_url('ashe-slider-full-thumbnail'); ?>" alt="">
+		<?php endif; ?>
 	
-				
-		
-			<div class="slider-item">
-
-				<?php if ( $slider_columns === 1 ) : ?>
-				<img src="<?php the_post_thumbnail_url('ashe-slider-full-thumbnail'); ?>" alt="">
-				<?php else : ?>	
-				<img src="<?php the_post_thumbnail_url('ashe-slider-grid-thumbnail'); ?>" alt="">
-				<?php endif; ?>
-
-				<div class="cv-container image-overlay">
-				<div class="cv-outer">
-					<div class="cv-inner">
-			
+		<div class="cv-container image-overlay">
+			<div class="cv-outer">
+				<div class="cv-inner">
 					<div class="slider-info">
 
-						<?php $category_list = get_the_category_list( ', ' ); ?>			
+						<?php $category_list = get_the_category_list( ', ' ); ?>		
+
 						<?php if ( ashe_options( 'featured_slider_categories' ) === true && $category_list ) : ?>
 						<div class="slider-categories">
 							<?php echo '' . $category_list; ?>
@@ -99,8 +104,8 @@ $slider_data .= '}';
 						</h2>
 						<?php endif; ?>
 
-						<?php if (ashe_options( 'featured_slider_excerpt' ) === true ): ?>							
-						<div class="slider-content"><?php ashe_excerpt(30); ?></div>
+						<?php if ( ashe_options( 'featured_slider_excerpt' ) === true ): ?>							
+						<div class="slider-content"><?php ashe_excerpt( 30 ); ?></div>
 						<?php endif; ?>
 
 						<?php if ( ashe_options( 'featured_slider_more' ) === true ) : ?>
@@ -112,14 +117,19 @@ $slider_data .= '}';
 						<?php if( ashe_options( 'featured_slider_date' ) === true ) : ?>
 						<div class="slider-date"><?php the_time( get_option('date_format') ); ?></div>
 						<?php endif; ?>
-						
-					</div>
 
 					</div>
-				
 				</div>
-				</div>
+			</div>
 		</div>
-	<?php endwhile; ?>
-	<?php endif; ?>
+
+	</div>
+
+	<?php
+
+	endwhile; // Loop end
+	endif;
+
+	?>
+
 </div>
