@@ -1,32 +1,34 @@
 <?php
  /**
-  * search.php
-  * Default template for search
+  * The search.php file.
   *
-  * @package WordPress
-  * @subpackage Best_Reloaded
-  * @since Best Reloaded 0.1
+  * Default template for search templates
+  *
+  * @package Best_Reloaded
+  * @since Best Reloaded v0.1
   */
+
 ?>
 
 <?php get_header(); ?>
-        <?php get_template_part( 'featured', 'bar' ); ?>
+		<?php // This is the hook used to add featurebar content.
+		best_reloaded_do_featurebar(); ?>
+		
+		<div class="row">
+			<div class="col-md-8">
+				<div id="main_content" class="blog-page" role="main">
 
-        <div class="row">
-            <div class="col-md-8">
-                <div id="main_content" class="blog-page" role="main">
+					<?php get_template_part( 'inc/parts/loop', 'main' ); ?>
 
-			        <?php get_template_part( 'loop', 'main' ); ?>
+					<?php // Add custom pagination if we can. ?>
+					<?php if ( function_exists( 'pagenavi' ) ) { pagenavi(); } ?>
 
-                    <?php // Add custom pagination ?>
-                    <?php if ( function_exists( 'pagenavi' ) ) { pagenavi(); } ?>
+				</div><!-- end #main_content -->
 
-                </div><!-- end #main_content -->
+			</div><!-- end .col-md-8 -->
 
-            </div><!-- end .col-md-8 -->
+			<?php get_sidebar( 'main' ); ?>
 
-            <?php get_sidebar( 'main' ); ?>
-
-        </div><!-- end .row -->
+		</div><!-- end .row -->
 
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@ Theme URI: http://www.pattonwebz.com/best-reloaded-bootstrap-theme
 Description: A responsive, mobile-first, WordPress theme that uses Bootstrap.
 Author: William Patton
 Author URI: http://pattonwebz.com/
-Version: 0.9.2
+Version: 1.0.0
 Text Domain: best-reloaded
 Tags: left-sidebar, right-sidebar, custom-colors, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 
@@ -208,6 +208,53 @@ h6, .h6 {
   letter-spacing: -1px;
 }
 
+.no-content-message {
+  font-size: 2em;
+  padding: 30px 0;
+}
+.no-content-message .in-loop {
+  padding: 25px 0 35px;
+}
+
+.hr-row-divider {
+  clear: both;
+}
+
+.not-found-404 h2.title {
+  font-size: 3em;
+  text-align: center;
+  margin: -5px auto 33px;
+}
+.not-found-404 ul {
+  display: table;
+  font-size: 1.5em;
+  list-style: none;
+  text-align: center;
+  margin: 30px auto 35px;
+}
+
+.navigation .nav-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.navigation .nav-links:first-child {
+  text-align: left !important;
+}
+.navigation .nav-links div {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 1 0%;
+      -ms-flex: 2 1 0%;
+          flex: 2 1 0%;
+}
+.navigation .nav-links a {
+  font-size: 1.8rem;
+}
+.navigation .nav-links .nav-next {
+  text-align: right;
+}
+
 /* --------------------------------------- *
 * Header                               *
 * ---------------------------------------- */
@@ -232,6 +279,10 @@ header .navbar .container {
 
 .site-title a:hover, .site-title a:focus {
   text-decoration: none;
+}
+
+.logged-in.admin-bar .fixed-top {
+  padding-top: 40px;
 }
 
 #site-footer {
@@ -312,12 +363,15 @@ header .navbar .container {
   margin-bottom: 5px;
 }
 
-#comments .commentlist {
+#comments .commentlist, #comments .form-group {
   margin-left: 0;
   padding-left: 0;
 }
 #comments li.comment, #comments li.pingpack {
   list-style: none;
+}
+#comments label {
+  padding: 0;
 }
 #comments .pingback, #comments article.comment {
   position: relative;
@@ -399,7 +453,7 @@ header .navbar .container {
  * --------------------------------------- */
 .featured-bar {
   background-color: #f5f5f5;
-  background-image: url("../../img/featured-bg-thumb-up.png");
+  background-image: url("../../assets/img/featured-bg-thumb-up.png");
   background-repeat: no-repeat;
   background-position: -1% 50%;
   padding: 30px 60px;
@@ -615,15 +669,15 @@ header .navbar .container {
   cursor: not-allowed;
 }
 
-.gform_fields input, .gform_fields .has-success input, .has-success .gform_fields select, .gform_fields .has-success select, .has-success .gform_fields textarea, .gform_fields .has-success textarea {
+.gform_fields .has-success input, .has-success .gform_fields select, .gform_fields .has-success select, .has-success .gform_fields textarea, .gform_fields .has-success textarea {
   border-color: #5cb85c;
 }
 
-.gform_fields input, .gform_fields .has-warning input, .has-warning .gform_fields select, .gform_fields .has-warning select, .has-warning .gform_fields textarea, .gform_fields .has-warning textarea {
+.gform_fields .has-warning input, .has-warning .gform_fields select, .gform_fields .has-warning select, .has-warning .gform_fields textarea, .gform_fields .has-warning textarea {
   border-color: #f0ad4e;
 }
 
-.gform_fields input, .gform_fields .has-danger input, .has-danger .gform_fields select, .gform_fields .has-danger select, .has-danger .gform_fields textarea, .gform_fields .has-danger textarea {
+.gform_fields .has-danger input, .has-danger .gform_fields select, .gform_fields .has-danger select, .has-danger .gform_fields textarea, .gform_fields .has-danger textarea {
   border-color: #d9534f;
 }
 
@@ -718,12 +772,12 @@ gfield_description, .validation_error, .validation_message {
     vertical-align: middle;
   }
 
-  .form-inline .input-group .gform_fields input, .gform_fields
-  .form-inline .input-group input,
-  .form-inline .input-group .gform_fields select, .gform_fields
-  .form-inline .input-group select,
-  .form-inline .input-group .gform_fields textarea, .gform_fields
-  .form-inline .input-group textarea {
+  .form-inline .input-group .gform_fields input,
+  .gform_fields .form-inline .input-group input,
+  .form-inline .input-group .gform_fields select,
+  .gform_fields .form-inline .input-group select,
+  .form-inline .input-group .gform_fields textarea,
+  .gform_fields .form-inline .input-group textarea {
     width: auto;
   }
 
