@@ -226,7 +226,7 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_accent_color', array(
-				'label'	   				=> __( 'Link / accent color', 'basepress' ),
+				'label'	   				=> __( 'Link / Button Color', 'basepress' ),
 				'section'  				=> 'basepress_typography',
 				'settings' 				=> 'basepress_accent_color',
 				'priority' 				=> 40,
@@ -423,7 +423,8 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				body, .sidebar { color: ' . $basepress_theme_mods['text_color'] . '; }
 				.entry-footer, .entry-footer > span {color: '. basepress_adjust_color_brightness( $basepress_theme_mods['text_color'], 100 ) .'}
 				h1, h2, h3, h4, h5 ,h6, .entry-title a, .sidebar .widget-title { color: ' . $basepress_theme_mods['heading_color'] . '; }
-				a, .site-info a, .sidebar a, .post-navigation .nav-links a, .post-navigation .nav-links a::before { color: ' . $basepress_theme_mods['accent_color'] . '; }
+				a, .site-info a, .sidebar a, .post-navigation .nav-links a, .post-navigation .nav-links a::before, blockquote p, .wp-caption .wp-caption-text { color: ' . $basepress_theme_mods['accent_color'] . '; }
+				.back-to-top { background: ' . $basepress_theme_mods['accent_color'] . '; }
 				a:hover, .site-info a:hover, .sidebar a:hover, .entry-title a:hover {color: ' . basepress_adjust_color_brightness( $basepress_theme_mods['accent_color'],  $darken_factor ) . '; }
 
 				.site-footer { background: ' . $basepress_theme_mods['footer_background_color'] . '; }
@@ -445,7 +446,6 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				.footer-navigation .footer-menu li a {
 					color: ' . $basepress_theme_mods['footer_link_color'] . ';
 				}
-				.back-to-top { background: ' . $basepress_theme_mods['footer_link_color'] . '; }
 
 			';
 

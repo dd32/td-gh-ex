@@ -5,7 +5,7 @@ Theme URI: https://themecountry.com/basepress
 Author: ThemeCountry
 Author URI: https://themecountry.com
 Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basepress
@@ -2615,8 +2615,7 @@ h6 {
 h1,
 .alpha {
   font-size: 2.617924em;
-  line-height: 1.214;
-  letter-spacing: -1px; }
+  line-height: 1.214; }
 
 h2,
 .beta {
@@ -2726,7 +2725,6 @@ blockquote p {
   line-height: 30px;
   font-weight: 400;
   font-style: italic;
-  text-align: center;
   text-transform: uppercase;
   color: #cb2027;
   word-wrap: break-word; }
@@ -2813,8 +2811,7 @@ body {
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  line-height: 1.625;
-  font-size: 14px; }
+  line-height: 1.625; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -3276,6 +3273,9 @@ li > ul, li > ol {
 .entry-content a:hover {
   text-decoration: underline; }
 
+.entry-content ol {
+  margin: 15px; }
+
 .entry-content ul {
   margin: 15px;
   margin-right: 0;
@@ -3288,7 +3288,7 @@ li > ul, li > ol {
   word-wrap: break-word;
   margin-left: 21px; }
 
-.entry-content li:before {
+.entry-content ul li:before {
   font: normal normal normal 14px/1 FontAwesome;
   content: "\f105";
   float: left;
@@ -3475,10 +3475,13 @@ object {
     display: block;
     margin: 0 auto; }
   .wp-caption .wp-caption-text {
-    text-align: left;
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin: 10px 0 20px 0;
+    line-height: normal;
+    text-align: center;
     font-style: italic;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 1em 0; }
+    color: #cb2027; }
 
 /*--------------------------------------------------------------
 ## Galleries
@@ -3567,7 +3570,8 @@ object {
 .site-title a {
   color: #333333;
   text-transform: uppercase;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: 700; }
 
 .site-description {
   margin-bottom: 0;
@@ -3584,7 +3588,13 @@ object {
 .arrow-main-menu {
   display: none; }
 
-.arrow-menu {
+.widget_nav_menu .arrow-menu {
+  display: block; }
+
+.widget_nav_menu ul.sub-menu {
+  display: none; }
+
+.widget_nav_menu .arrow-menu {
   width: 44px;
   text-align: center;
   cursor: pointer;
@@ -3593,7 +3603,7 @@ object {
   top: 50%;
   margin-top: -11px; }
 
-.wpadminbar-active .arrow-menu {
+.wpadminbar-active .widget_nav_menu .arrow-menu {
   top: 0;
   margin-top: 11px; }
 
@@ -3657,7 +3667,19 @@ object {
   border-right: 1px solid #e0e0e0; }
 
 .main-navigation-menu li:hover > a {
-  color: #cb2027; }
+  color: #cb2027;
+  text-decoration: underline; }
+
+.main-navigation > ul li.menu-item-has-children > a:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 30px;
+  right: 7px; }
+
+.main-navigation > ul ul li.menu-item-has-children > a:after {
+  top: 18px;
+  right: 10px; }
 
 /*--------------------------------------------------------------
 # category Menu
@@ -3971,9 +3993,6 @@ input#url:hover,
   font-size: 16px;
   border-bottom: 1px dotted; }
 
-.logged-in-as a:hover {
-  color: #ea4435; }
-
 .comment-awaiting-moderation {
   margin: 10px 0;
   font-size: 16px;
@@ -4073,8 +4092,8 @@ input#url:hover,
   top: 0;
   right: 0;
   border: none;
-  height: 44px;
-  width: 44px;
+  height: 46px;
+  width: 46px;
   font-size: 0;
   box-shadow: none; }
 
@@ -4083,7 +4102,7 @@ input#url:hover,
   display: inline-block;
   outline: none;
   border: 1px solid #eaeaea;
-  padding: 0.723em 2em 0.723em 1em;
+  padding: 8px 15px;
   box-shadow: none;
   box-sizing: border-box;
   -webkit-appearance: none; }
@@ -4352,7 +4371,10 @@ input.search-field:input-placeholder {
 .footer-navigation {
   width: 100%;
   text-align: center;
-  margin: 0 0 15px; }
+  margin: 10px 0 0 0; }
+
+.footer-navigation ul {
+  margin: 0; }
 
 .footer-menu li {
   position: relative;
@@ -4612,6 +4634,8 @@ input.search-field:input-placeholder {
   .main-navigation {
     display: none; }
   /* Menu */
+  .mobile-only, .arrow-menu {
+    display: block; }
   span.menu-toggle {
     position: relative;
     padding: 14px 0;
@@ -4661,20 +4685,32 @@ input.search-field:input-placeholder {
   .mobile-menu-wrapper ul ul {
     border-top: 1px solid #f0f0f0; }
   .mobile-menu-wrapper ul ul li a {
-    padding-left: 15px; }
+    padding-left: 25px; }
   .mobile-menu-wrapper ul ul ul li a {
-    padding-left: 20px; }
+    padding-left: 30px; }
   .mobile-menu-active .mobile-menu-wrapper {
     -ms-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0); }
   .mobile-menu-active #page {
-    -ms-transform: translate(-60%, 0);
-    -webkit-transform: translate(-60%, 0);
-    transform: translate(-60%, 0);
+    -ms-transform: translate(-90%, 0);
+    -webkit-transform: translate(-90%, 0);
+    transform: translate(-90%, 0);
     position: fixed;
     top: 0;
-    width: 100%; } }
+    width: 100%; }
+  .main-navigation > ul li.menu-item-has-children > a:after {
+    content: ''; }
+  #mobile-menu-wrapper .arrow-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    line-height: 44px;
+    border-left: 1px solid #f0f0f0;
+    width: 44px;
+    font-size: 14px;
+    text-align: center; } }
 
 @media (max-width: 568px) {
   /* General */

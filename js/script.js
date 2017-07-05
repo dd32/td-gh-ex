@@ -16,7 +16,7 @@ jQuery.fn.exists = function(callback) {
 		},
 		mainmenu: function() {
 				$menu = $('.main-navigation > ul li.menu-item-has-children > a');
-				$menu.append('<span class="arrow-main-menu"><i class="fa fa-angle-down"></i></span>');
+				//$menu.append('<span class="arrow-main-menu"><i class="fa fa-angle-down"></i></span>');
 
 				$('.main-navigation ul.sub-menu').hide();
 				var time;
@@ -42,7 +42,7 @@ jQuery.fn.exists = function(callback) {
 			var $first_menu = '';
 			var $second_menu = '';
 
-			$('.sub-menu, .children').parent().append('<span class="arrow-menu"><i class="fa fa-angle-down"></i></span>');
+			$('.sub-menu, .widget_nav_menu .children').parent().append('<span class="arrow-menu"><i class="fa fa-angle-down"></i></span>');
 
 			if ($primary_menu.length == 0 && $secondary_menu.length == 0) {
 				return;

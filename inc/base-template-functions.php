@@ -92,27 +92,29 @@ if ( ! function_exists( 'basepress_site_title_or_logo' ) ) {
 if ( ! function_exists( 'basepress_primary_navigation' ) ) {
 
 	function basepress_primary_navigation() {
-
-		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-
-			<?php
-				// Display Primary Navigation.
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id' 		 => 'primary-navigation',
-					'container' 	 => '',
-					'menu_class' 	 => 'main-navigation-menu',
-					'echo' 			 => true,
-					'fallback_cb' 	 => 'basepress_default_menu',
-					)
-				);
-			
-			?>
-						
-		</nav><!-- #site-navigation -->
 		
-		<?php 
+		if ( has_nav_menu( 'primary' ) ) :
+		?>
+			<nav id="site-navigation" class="main-navigation default-menustyle" role="navigation">
+
+				<?php
+					// Display Primary Navigation.
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id' 		 => 'primary-navigation',
+						'container' 	 => '',
+						'menu_class' 	 => 'main-navigation-menu',
+						'echo' 			 => true,
+						'fallback_cb' 	 => 'basepress_default_menu',
+						)
+					);
+				
+				?>
+							
+			</nav><!-- #site-navigation -->
+		
+		<?php
+		endif;
 	}
 }
 
@@ -136,7 +138,6 @@ if ( ! function_exists( 'basepress_category_navigation' ) ) {
 		<div id="sticky" class="category-menu">
 			<div class="container clearfix">
 				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e('Main Navigation', 'basepress') ?></span>
-
 			</div>
 		</div>
 		<div id="catcher"></div>
@@ -157,30 +158,29 @@ if ( ! function_exists( 'basepress_header_image' ) ) {
 			'post_layout_single' => 'none',
 			'custom_header_hide' => false,
 			'custom_header_link' => ''
-
 		));
 		
 		// Display featured image as header image on static pages
 		if( is_page() && has_post_thumbnail() ) : ?>
-			
+
 			<div id="headimg" class="header-image featured-image-header 66">
 				<?php the_post_thumbnail( 'basepress-header-image' ); ?>
 			</div>
-		
+
 		<?php // Display Header Image on Single Posts
 		elseif( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) : ?>
-			
+
 			<div id="headimg" class="header-image featured-image-header">
 				<?php the_post_thumbnail( 'basepress-header-image' ); ?>
 			</div>
-		
+
 		<?php 
 		elseif( ( is_single() || is_page() ) && 'none' == $theme_options['post_layout_single'] ) :
 			return;
 
 		?>
 		<?php // Display default header image set on Appearance > Header
-		elseif( get_header_image() ) : 
+		elseif( get_header_image() ) :
 
 			// Hide header image on front page
 			if ( true == $theme_options['custom_header_hide'] and ( is_front_page() || is_archive() || is_search() ) ) {
@@ -198,11 +198,11 @@ if ( ! function_exists( 'basepress_header_image' ) ) {
 					</a>
 					
 				<?php else : ?>
-				
+
 					<img src="<?php echo get_header_image(); ?>" />
-					
+
 				<?php endif; ?>
-				
+
 			</div>
 		
 		<?php 
@@ -217,8 +217,8 @@ if ( ! function_exists( 'basepress_paging_nav' ) ) :
 function basepress_paging_nav() {
 
 	the_posts_pagination( array(
-		'prev_text'          => __( '<i class="fa fa-angle-left"></i>', 'basepress' ),
-		'next_text'          => __( '<i class="fa fa-angle-right"></i>', 'basepress' ),
+		'prev_text'      	=> __( '<i class="fa fa-angle-left"></i>', 'basepress' ),
+		'next_text'		  => __( '<i class="fa fa-angle-right"></i>', 'basepress' ),
 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'basepress' ) . ' </span>',
 	) );
 	
@@ -396,7 +396,7 @@ if ( ! function_exists( 'basepress_post_tags' ) ) :
 	 */
 	function basepress_post_tags() {
 
-		$metadata = array_flip( apply_filters('basepress_enable_single_post_tags', array('tag') ) );
+		$metadata = array_flip( apply_filters('basepress_enable_post_metadata', array('tag') ) );
 
 		// Get tags.
 		$tag_list = get_the_tag_list( '', __(', ', 'basepress') );
@@ -555,10 +555,10 @@ if ( ! function_exists( 'basepress_categorized_blog' ) ) {
 		if ( false === ( $all_the_cool_cats = get_transient( 'basepress_categories' ) ) ) {
 			// Create an array of all the categories that are attached to posts.
 			$all_the_cool_cats = get_categories( array(
-				'fields'     => 'ids',
+				'fields'	 => 'ids',
 				'hide_empty' => 1,
 				// We only need to know if there is more than one category.
-				'number'     => 2,
+				'number'	 => 2,
 			) );
 
 			// Count the number of categories that are attached to the posts.
@@ -588,7 +588,7 @@ function basepress_category_transient_flusher() {
 	delete_transient( 'basepress_categories' );
 }
 add_action( 'edit_category', 'basepress_category_transient_flusher' );
-add_action( 'save_post',     'basepress_category_transient_flusher' );
+add_action( 'save_post',	 'basepress_category_transient_flusher' );
 
 if ( ! function_exists ( 'basepress_post_metadata' ) ) :
 /**
@@ -780,7 +780,7 @@ if ( ! function_exists( 'basepress_meta_comments' ) ) :
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
 
-    		$txt_comment = '<a href="'. esc_url ( get_comments_link() ) .'">'.get_comments_number_text( __('Leave a Comment', 'basepress'), __('One Comment', 'basepress'), __('% Comments', 'basepress')) . '</a>';
+			$txt_comment = '<a href="'. esc_url ( get_comments_link() ) .'">'.get_comments_number_text( __('Leave a Comment', 'basepress'), __('One Comment', 'basepress'), __('% Comments', 'basepress')) . '</a>';
 
 				return '<span class="comments-link">' . $prefix . $txt_comment . '</span>';				
 
@@ -908,7 +908,7 @@ if ( ! function_exists( 'basepress_footer_nav' ) ) {
 		// Check if there is a footer menu.
 		if ( has_nav_menu( 'footer' ) ) {
 
-			echo '<nav id="footer-links" class="footer-navigation navigation" role="navigation">';
+			echo '<nav id="footer-links" class="footer-navigation default-menustyle" role="navigation">';
 
 			wp_nav_menu( array(
 				'theme_location' => 'footer',
@@ -940,8 +940,7 @@ if ( ! function_exists( 'basepress_credit' ) ) {
 			<?php echo esc_html( apply_filters( 'basepress_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
 
 			<?php if ( apply_filters( 'basepress_credit_link', true ) ) { ?>
-
-			<br> <?php printf( esc_attr__( '%1$s designed by %2$s.', 'basepress' ), 'BasePress', '<a href="https://themecountry.com" title="Base - The best free blog theme for WordPress" rel="author">ThemeCountry</a>' ); ?>
+				<?php printf( esc_attr__( '%1$s designed by %2$s.', 'basepress' ), 'BasePress', '<a href="https://themecountry.com" title="Base - The best free blog theme for WordPress" rel="author">ThemeCountry</a>' ); ?>
 			<?php } ?>
 		</div><!-- .site-info -->
 		<?php

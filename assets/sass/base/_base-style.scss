@@ -46,7 +46,6 @@ h1,
 .alpha {
 	font-size: ms(5);
 	line-height: 1.214;
-	letter-spacing: -1px;
 }
 
 h2,
@@ -162,7 +161,6 @@ blockquote p {
 	line-height: 30px;
 	font-weight: 400;
 	font-style: italic;
-	text-align: center;
 	text-transform: uppercase;
 	color: #cb2027;
 	word-wrap: break-word;
@@ -270,7 +268,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
 	line-height: 1.625;
-	font-size: 14px;
 }
 
 /*--------------------------------------------------------------
@@ -516,7 +513,6 @@ fieldset {
 	overflow: hidden;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
-
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -550,13 +546,11 @@ fieldset {
 	float: left;
 	margin-right: 1.5em;
 }
-
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
-
 .aligncenter {
 	clear: both;
 	display: block;
@@ -627,11 +621,9 @@ li > ul, li > ol {
 .sticky {
 	display: block;
 }
-
 .hentry {
 	margin: 0 0 1.5em;
 }
-
 .single .byline,
 .group-blog .byline {
 	display: inline;
@@ -676,7 +668,6 @@ li > ul, li > ol {
 .entry-title a {
 	font-size: 32px;
 }
-
 .more-link {
 	width: 100%;
 	font-size: 16px;
@@ -735,6 +726,9 @@ li > ul, li > ol {
 .entry-content a:hover {
 	text-decoration: underline;
 }
+.entry-content ol {
+	margin: 15px;
+}
 .entry-content ul {
 	margin: 15px;
 	margin-right: 0;
@@ -747,7 +741,7 @@ li > ul, li > ol {
 	word-wrap: break-word;
 	margin-left: 21px;
 }
-.entry-content li:before {
+.entry-content ul li:before {
 	font: normal normal normal 14px/1 FontAwesome;
 	content: "\f105";
 	float: left;
@@ -824,7 +818,6 @@ li > ul, li > ol {
 	color: #979797;
 	text-decoration: underline;
 }
-
 .entry-footer span a:hover {
 	text-decoration: none;
 }
@@ -940,7 +933,6 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-
 .wp-caption {
 	margin-bottom: ms(1);
 	max-width: 100%;
@@ -950,10 +942,13 @@ object {
 		margin: 0 auto;
 	}
 	.wp-caption-text {
-		text-align: left;
+		font-size: 16px;
+		font-size: 1.6rem;
+		margin: 10px 0 20px 0;
+		line-height: normal;
+		text-align: center;
 		font-style: italic;
-		border-bottom: 1px solid $color_border;
-		padding: 1em 0;
+		color: #cb2027;
 	}
 }
 
@@ -963,46 +958,36 @@ object {
 .gallery {
 	margin-bottom: 1.5em;
 }
-
 .gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
-
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
 }
-
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
 }
-
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
 }
-
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
 }
-
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
 }
-
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
 }
-
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
-
 .gallery-caption {
 	display: block;
 }
@@ -1059,6 +1044,7 @@ object {
 	color: #333333;
 	text-transform: uppercase;
 	text-decoration: none;
+	font-weight: 700;
 }
 .site-description {
 	margin-bottom: 0;
@@ -1076,7 +1062,13 @@ object {
 .arrow-main-menu {
 	display: none;
 }
-.arrow-menu {
+.widget_nav_menu .arrow-menu  {
+	display: block;
+}
+.widget_nav_menu ul.sub-menu {
+	display: none;
+}
+.widget_nav_menu .arrow-menu {
 	width: 44px;
 	text-align: center;
 	cursor: pointer;
@@ -1085,7 +1077,7 @@ object {
 	top: 50%;
 	margin-top: -11px;
 }
-.wpadminbar-active .arrow-menu {
+.wpadminbar-active .widget_nav_menu .arrow-menu {
 	top: 0;
 	margin-top: 11px;
 }
@@ -1178,6 +1170,18 @@ object {
 }
 .main-navigation-menu  li:hover > a {
 	color: #cb2027;
+	text-decoration: underline;
+}
+.main-navigation > ul li.menu-item-has-children > a:after {
+	content: "\f107";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 30px;
+	right: 7px;
+}
+.main-navigation > ul ul li.menu-item-has-children > a:after {
+	top: 18px;
+	right: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1489,9 +1493,6 @@ input#url:hover,
 	font-size: 16px;
 	border-bottom: 1px dotted;
 }
-.logged-in-as a:hover {
-	color: #ea4435;
-}
 .comment-awaiting-moderation {
 	margin: 10px 0;
 	font-size: 16px;
@@ -1596,8 +1597,8 @@ input#url:hover,
 	top: 0;
 	right: 0;
 	border: none;
-	height: 44px;
-	width: 44px;
+	height: 46px;
+	width: 46px;
 	font-size: 0;
 	box-shadow: none;
 }
@@ -1606,7 +1607,7 @@ input#url:hover,
 	display: inline-block;
 	outline: none;
 	border: 1px solid #eaeaea;
-	padding: 0.723em 2em 0.723em 1em;
+	padding: 8px 15px;
 	box-shadow: none;
 	box-sizing: border-box;
 	 -webkit-appearance: none;
@@ -1695,6 +1696,7 @@ input.search-field:input-placeholder { color: #fff }
 	text-align: right;
 	padding-right: 12px;
 }
+
 /*-------------------------------------------------
 # Text Widget
 --------------------------------------------------*/
@@ -1703,6 +1705,7 @@ input.search-field:input-placeholder { color: #fff }
 	font-size: 15px;
 	line-height: 26px;
 }
+
 /*-------------------------------------------------
 # Widget For Theme Pro
 --------------------------------------------------*/
@@ -1736,6 +1739,7 @@ input.search-field:input-placeholder { color: #fff }
 .tc-sidebar-widget li.tc-has-thumbnail.lg-thumbnail .wp-post-image {
 	margin: 0 0 10px 0;
 }
+
 /*-------------------------------------------------
 # Banner Ads
 --------------------------------------------------*/
@@ -1865,13 +1869,17 @@ input.search-field:input-placeholder { color: #fff }
 	text-decoration: underline;
 	color: #cb2027;
 }
+
 /*-------------------------------------------------
 # Menu Footer
 --------------------------------------------------*/
 .footer-navigation {
 	width: 100%;
 	text-align: center;
-	margin: 0 0 15px;
+	margin: 10px 0 0 0;
+}
+.footer-navigation ul {
+    margin: 0;
 }
 .footer-menu li {
 	position: relative;
@@ -1938,6 +1946,7 @@ input.search-field:input-placeholder { color: #fff }
     background: #fff;
     border-top: 1px solid #e0e0e0;
 }
+
 /*--------------------------------------------------------------
 # Ads Management
 --------------------------------------------------------------*/
@@ -1955,7 +1964,6 @@ input.search-field:input-placeholder { color: #fff }
 	float: left;
 	margin: 20px 20px 20px 0;
 }
-
 .ads-970x90,
 .ads-468x60 {
 	width: 100%;
@@ -1975,7 +1983,6 @@ input.search-field:input-placeholder { color: #fff }
 }
 
 @media screen and (max-width: 480px) {
-	
 	.mobile-only,
 	.menu-toggle,
 	.arrow-menu {
@@ -1988,5 +1995,4 @@ input.search-field:input-placeholder { color: #fff }
 	.widget li.menu-item-has-children ul.sub-menu {
 		display: none;
 	}
-
 }
