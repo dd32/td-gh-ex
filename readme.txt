@@ -25,6 +25,9 @@ The Auckland theme is a very clean and simple blogging theme with a grid layout 
 * updated wp_nav_menu
 * updated functions.php
 
+= 1.0.2 =
+* updated style.css head
+
 
 == Resources ==
 *   Fontawesome Icons Copyright Dave Gandy, 
