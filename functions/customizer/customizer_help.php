@@ -1,6 +1,5 @@
 <?php
 //Pro Button
-
 function rambo_help_customizer( $wp_customize ) {
 class WP_help_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';

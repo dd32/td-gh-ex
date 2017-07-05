@@ -92,9 +92,9 @@
 	
 	   'class'       => 'navbar-brand',
 	   
-	   'width'       => 150,
+	   'width'       => 200,
 	   
-	   'height'      => 40,
+	   'height'      => 50,
 	   
 	   'flex-width' => false,
 	   
