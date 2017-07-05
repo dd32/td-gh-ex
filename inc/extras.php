@@ -239,27 +239,6 @@ function keratin_site_info() {
 }
 add_action( 'keratin_footer', 'keratin_site_info' );
 
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function keratin_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
-}
-add_action( 'wp', 'keratin_setup_author' );
-
 if ( ! function_exists( 'keratin_the_attached_image' ) ) :
 /**
  * Print the attached image with a link to the next attached image.

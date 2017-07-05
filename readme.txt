@@ -42,6 +42,11 @@ Images used in the screenshot are licensed - https://unsplash.com/license (Creat
 
 == Changelog ==
 
+= 1.0.3 =
+Release Date: July 05, 2017
+
+* Enhancement : Code improvements.
+
 = 1.0.2.1 =
 Release Date: June 14, 2017
 
