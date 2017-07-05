@@ -29,10 +29,13 @@ $baseline-debug:        $debug;
 
 // mobile first means we need min-width media queries
 $breakpoints: (
-    small:              500px,
+    small:              560px,
     lap:                900px,
     desk:               1280px
 );
+
+// Max width
+$container-max-width: 1440px;
 
 // https://css-tricks.com/handling-z-index/
 $zindex: (
@@ -61,11 +64,3 @@ $typeline-rules: (
 // misc
 $transition--micro:     .15s;
 $transition--macro:     .3s;
-
-@font-face {
-  font-family: 'overpass';
-  src: url('assets/fonts/overpass/overpass-regular.eot');
-  src: url('assets/fonts/overpass/overpass-regular.woff2') format('woff2'),
-  url('assets/fonts/overpass/overpass-regular.woff') format('woff'),
-  url('assets/fonts/overpass/overpass-regular.ttf')  format('truetype');
-}

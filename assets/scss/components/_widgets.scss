@@ -3,11 +3,17 @@
   width: 100%;
   margin: 0 auto;
 
+  >* {
+    color: $color-white;
+  }
   .widget-area {
     position: relative;
     display: flex;
     flex-flow: row wrap;
-    padding: 40px;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 30px;
+    width: 100%;
 
     @include below(small) {
       padding: 0;
@@ -19,6 +25,10 @@
       outline: 2px solid blue;
       flex: 1;
       flex-basis: 25%;
+
+      @include below(lap) {
+        flex-basis: 50%;
+      }
 
       @include below(small) {
         padding: 35px;
@@ -37,11 +47,15 @@
         margin: 0;
       }
 
-      ul > li, span {
+      ul > li,
+      span {
         list-style: none;
         color: $color-white;
         margin: 0;
         line-height: 24px;
+      }
+      a:link {
+        color: $color-white !important;
       }
 
       ul > li > a {
@@ -56,5 +70,9 @@
       font-weight: bold;
       line-height: 36px;
     }
+  }
+
+  button, html [type="button"], [type="reset"], [type="submit"] {
+    padding: 0;
   }
 }

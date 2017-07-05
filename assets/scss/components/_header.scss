@@ -1,17 +1,45 @@
-.site-branding {
+.site-header {
   position: absolute;
-  z-index: 4;
-  margin-left: 80px;
+  display: flex;
+  max-width: $container-max-width;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: space-between;
+  padding: 0 70px;
 
   @include below(small) {
-    margin-left: 35px;
+    padding: 0 35px;
   }
-}
 
-.site-title a {
-  color: white;
-  text-decoration: none;
-  text-transform: none;
-  line-height: 100px;
-  margin-top:80px;
+  .site-branding {
+    z-index: 4;
+    margin-top: 36px;
+    width: 60%;
+  }
+
+  .site-title a {
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+    line-height: 137px;
+    margin-top: 16px;
+    margin-left: -1%;
+
+
+    @include below(lap){
+      line-height: 1;
+      margin-top: 5px;
+    }
+
+    @include below(small){
+
+    }
+
+    @include above(lap){
+      font-size: 160px;
+    }
+
+  }
 }

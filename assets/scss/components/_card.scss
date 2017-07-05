@@ -1,4 +1,4 @@
-$card-padding:         40px                 !default;
+$card-padding:         35px                 !default;
 $card-background:      transparent          !default;
 $card-color:           transparent          !default;
 $card-border-width:    0px                  !default;
@@ -39,8 +39,31 @@ $card-radius:          0                    !default;
             width: 100%;
         }
 
-        @include below(small){
-            padding: 15px;
+        @include below(small) {
+            padding: 20px;
+        }
+    }
+
+    &.portrait, &.tall {
+        @include below(lap) {
+            .entry-thumbnail {
+                display: block;
+                width: 45%;
+                float: left;
+            }
+            .entry-header, .entry-content {
+                display: inline-block;
+                margin-left: 35px;
+                width: 45%;
+                float: left;
+
+            }
+        }
+        @include below(small) {
+            .entry-thumbnail, .entry-header, .entry-content  {
+                width: 100%;
+                margin-left:0;
+            }
         }
     }
 }
@@ -73,20 +96,44 @@ $card-radius:          0                    !default;
 }
 
 .c-card .entry-content {
-    max-width: 428px;
+    max-width: 420px;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+
+        > p {
+            margin-bottom: 46px;
+            font-size: 16px;
+            line-height: 24px;
+            color: $color-dark;
+        }
+
+    }
 }
 
 article:nth-child(1) {
     .c-hero__image {
-       width: 100vw !important;
+       width: 100% !important;
     }
 }
-.entry-title a {
-    @extend %fs50 !optional;
+.entry-title {
+    padding: 0;
+    margin-bottom: 38px;
+
+    a {
+        @extend %fs50 !optional;
+        color: #424242;
+        line-height: 50px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .entry-thumbnail {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .separator:after{
@@ -99,31 +146,5 @@ article:nth-child(1) {
 }
 
 .read-more--arrow {
-    display: inline;
-    float: right;
-
-    &:before {
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        border-top: solid 3px #fff;
-        width: 84px;
-        height: 2px;
-
-        @include below(small){
-            width: 30px;
-        }
-    }
-    &:after {
-        content: "";
-        display: inline-block;
-        vertical-align: middle;;
-        border: solid #fff;
-        border-width: 0 3px 3px 0;
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        margin-left: -16px;
-        margin-right:10px;
-        padding: 6px;
-    }
+ display: none;
 }

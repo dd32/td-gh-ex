@@ -6,8 +6,7 @@
     flex-flow: column nowrap;
 
     min-height: 100vh;
-    margin-bottom: 80px;
-    padding-bottom: 80px;
+    margin-bottom: 35px;
 
     text-align: center;
 
@@ -24,12 +23,14 @@
 %c-hero_left {
     height: 100%;
     text-align: left;
-    margin-left: 95px;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    width: 100%;
 
-    @include below(small) {
-        margin-left: 35px;
-    }
 }
+
+$background-gradient-archive: linear-gradient(180deg, rgba(1,29,255,0.4) 0%, rgba(248,215,232,0.4) 100%), linear-gradient(180deg, rgba(8,0,255,0.4) 0%, rgba(134,48,250,0.4) 100%);
+$background-gradient-single: linear-gradient(180deg, rgba(3,26,204,0.79) 0%, rgba(97,48,250,0.68) 100%);
 
 %link-style {
     text-transform: uppercase;
@@ -47,12 +48,12 @@
 
     &:before {
         content:"";
-        display:block;
-        position:absolute;
+        display: block;
+        position: absolute;
         z-index: 2;
         height: 100vh;
         width: 100%;
-        background-color:rgba(0, 0, 0, .3);
+        background: $background-gradient-archive;
     }
 }
 
@@ -63,21 +64,35 @@
 }
 
 .c-hero__wrap {
-    display: flex;
-    align-items: left;
-    justify-content: left;
     flex-flow: column nowrap;
+    padding: 0 70px 70px;
     z-index: 3;
     @extend %c-hero_left;
-}
 
-.c-hero__entry-title {
-    order: 2;
-    margin-bottom: 0;
+    a:hover {
+        text-decoration: none;
+    }
+    .hero_categories > a, .posted-on > a{
+        color: $color-white;
+    }
+
+    .separator:after {
+        border-top: 2px solid $color-white;
+    }
+
+    @include below(small) {
+        padding: 0 35px 40px;
+    }
+
+    > a > h1 {
+        margin-bottom: 35px;
+    }
 }
 
 h1.c-hero__entry-title {
     color: $color-white;
+    line-height: 50px;
+    padding: 0;
 }
 
 .c-hero__content {
@@ -89,28 +104,47 @@ h1.c-hero__entry-title {
         width: 100%;
         margin-bottom: 48px;
     }
-}
-
-.c-hero__entry-meta, .entry-meta{
-    order: 1;
-    margin-bottom: 32px;
-
-    .hero_categories, .posted-on {
-        display: inline;
-        a {
-            @extend %link-style;
-            font-size: 14px;
-            font-weight: bold;
+    .c-hero_read_more {
+        @include below(small) {
+            display: none;
         }
     }
 }
 
+.c-hero__entry-meta,
+.entry-meta {
+    margin-bottom: 14px;
+
+    .hero_categories, .posted-on {
+        display: inline;
+
+        > a {
+            @extend %link-style;
+            font-size: 14px;
+            font-weight: bold;
+
+            &:after {
+                content:",";
+            }
+
+            &:last-child {
+                &:after {
+                    content:"";
+                }
+            }
+        }
+    }
+}
+
+.c-hero__entry-meta {
+    margin-bottom: 25px;
+}
+
 .c-hero_read_more,
 .hero_read_more {
-    background: $color-accent;
-    order: 4;
-    margin-top: 48px;
+    position: relative;
     max-width: 300px;
+    background: $color-accent;
 
     a {
         @extend %link-style;
@@ -118,6 +152,44 @@ h1.c-hero__entry-title {
         display: block;
         width: 100%;
         padding: 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        font-weight: bold;
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            width: 84px;
+            height: 2px;
+            right: 30px;
+            background: $color-white;
+
+            @include below(small){
+                width: 30px;
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            top: 43%;
+            vertical-align: middle;;
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            padding: 4px;
+            right: 30px;
+        }
+
+        &:hover {
+            transition: background 0.2s ease-in-out;
+            background: $color-dark;
+            opacity: 1;
+        }
     }
 }
 
