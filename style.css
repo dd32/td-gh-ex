@@ -4,7 +4,7 @@ Theme URI: http://www.tutorialchip.com/chip-life/
 Author: TutorialChip
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life is a charming and modern blog WordPress theme. It has a responsive layout having clean and content focused design with straightforward functionality. Chip Life is a perfect solution for sharing your valuable content and creativity with the world. Chip Life is a versatile, sophisticated WordPress theme designed for creatives and bloggers.
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chip-life
@@ -1110,7 +1110,6 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #007ada;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1141,7 +1140,6 @@ textarea {
           justify-content: center;
   width: 40px;
   height: 40px;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1161,7 +1159,6 @@ textarea {
   padding: 30px;
   padding: 1.875rem;
   position: relative;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1280,7 +1277,6 @@ textarea {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1335,7 +1331,6 @@ textarea {
   display: block;
   padding: 0;
   position: relative;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1830,7 +1825,6 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1881,7 +1875,6 @@ textarea {
   padding: 0.625rem 1.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2404,7 +2397,6 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2442,7 +2434,6 @@ div#respond #cancel-comment-reply-link {
   font-size: 0.8125rem !important;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2959,7 +2950,6 @@ div#respond #cancel-comment-reply-link {
     padding: 1.0625rem;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu a:hover,
@@ -2991,7 +2981,6 @@ div#respond #cancel-comment-reply-link {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
-    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -3003,7 +2992,6 @@ div#respond #cancel-comment-reply-link {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
-    -webkit-transition: none;
     transition: none;
   }
   /* Last Child Reverse */
