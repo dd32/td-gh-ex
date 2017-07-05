@@ -24,7 +24,7 @@ class zeeDynamic_Magazine_Posts_Grid_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Grid)', 'zeedynamic' ), // Name.
 			array(
 				'classname' => 'zeedynamic-magazine-grid-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'zeedynamic' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout.', 'zeedynamic' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,10 +36,10 @@ class zeeDynamic_Magazine_Posts_Grid_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'layout'			=> 'three-columns',
-			'number'			=> 6,
+			'title'    => esc_html__( 'Magazine (Grid)', 'zeedynamic' ),
+			'category' => 0,
+			'layout'   => 'three-columns',
+			'number'   => 6,
 		);
 
 		return $defaults;
@@ -105,9 +105,10 @@ class zeeDynamic_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		// Fetch posts from database.
 		$query_arguments = array(
-			'post__in'       => $post_ids,
-			'posts_per_page' => absint( $settings['number'] ),
-			'no_found_rows'  => true,
+			'post__in'            => $post_ids,
+			'posts_per_page'      => absint( $settings['number'] ),
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
 
