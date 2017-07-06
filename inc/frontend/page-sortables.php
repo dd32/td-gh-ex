@@ -7,8 +7,9 @@ function benjamin_page_sortables($target = null) {
 
     $target_name = strtok($target, '_');
 
-    $sortables = get_theme_mod($target);
-    if(!$sortables){
+    $sortables = get_theme_mod($target, null);
+
+    if(!$sortables || $sortables == '[]'){
         echo benjamin_sortable_default($target_name);
         return;
     }
