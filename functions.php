@@ -60,12 +60,13 @@ function beonepage_setup() {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+	add_theme_support( 'html5', array( 
+	'comment-list', 
+	'comment-form', 
+	'search-form', 
+	'gallery', 
+	'caption' 
+	) ); 
 
 	/*
 	 * Enable support for Post Formats.
@@ -132,7 +133,7 @@ function beonepage_scripts() {
 
 	wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array(), '1.3.2', true );
 
-	wp_enqueue_script( 'imagesloaded-pkgd', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '4.0.0', true );
+	wp_enqueue_script( 'imagesloaded' );
 
 	wp_enqueue_script( 'isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array(), '2.2.2', true );
 
@@ -151,7 +152,8 @@ function beonepage_scripts() {
 		'ajax_url'         => admin_url( 'admin-ajax.php' ),
 		'home_url'         => esc_url( home_url( '/' ) ),
 		'current_page_url' => beonepage_get_current_url(),
-		'accent_color'     => '#ffcc00'
+		'accent_color'     => '#ffcc00',
+		'nonce' => wp_create_nonce('ajax-nonce')
 	) );
   
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

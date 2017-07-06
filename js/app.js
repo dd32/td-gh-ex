@@ -35,19 +35,19 @@
 	}
 } )();
 
-var requesting = false;
+var be_requesting = false;
 
 function onScrollSliderParallax() {
-	if ( ! requesting ) {
-		requesting = true;
+	if ( ! be_requesting ) {
+		be_requesting = true;
 
 		requestAnimationFrame( function() {
-			APP.slider.sliderParallax();
+			BE_APP.slider.sliderParallax();
 		} );
 	}
 
 	debounce( function() {
-		requesting = false;
+		be_requesting = false;
 	}, 100 );
 }
 
@@ -86,7 +86,7 @@ function debounce( func, wait, immediate ) {
 	};
 }
 
-var APP = APP || {};
+var BE_APP = BE_APP || {};
 
 ( function( $ ) {
 	var $window = $( window ),
@@ -113,15 +113,15 @@ var APP = APP || {};
 		$cfResult = $( '#contact-form-result' ),
 		$goToTop = $( '#go-to-top' );
 
-	APP.initialize = {
+	BE_APP.initialize = {
 		init: function() {
-			APP.initialize.bootstrap();
-			APP.initialize.responsiveClasses();
-			APP.initialize.imageFade();
-			APP.initialize.fullScreen();
-			APP.initialize.triangle();
-			APP.initialize.topScrollOffset();
-			APP.initialize.goToTop();
+			BE_APP.initialize.bootstrap();
+			BE_APP.initialize.responsiveClasses();
+			BE_APP.initialize.imageFade();
+			BE_APP.initialize.fullScreen();
+			BE_APP.initialize.triangle();
+			BE_APP.initialize.topScrollOffset();
+			BE_APP.initialize.goToTop();
 		},
 
 		bootstrap: function() {
@@ -188,7 +188,7 @@ var APP = APP || {};
 				}
 			] );
 
-			if ( APP.isMobile.any() ) {
+			if ( BE_APP.isMobile.any() ) {
 				$body.addClass( 'device-touch' );
 			}
 		},
@@ -207,7 +207,7 @@ var APP = APP || {};
 
 		fullScreen: function() {
 			var headerHeight = 0,
-				wpAdminBarHeight = APP.initialize.wpAdminBar();
+				wpAdminBarHeight = BE_APP.initialize.wpAdminBar();
 
 			if ( $body.hasClass( 'device-sm' ) || $body.hasClass( 'device-xs' ) || $body.hasClass( 'device-xxs' ) ) {
 				headerHeight = 70;
@@ -238,7 +238,7 @@ var APP = APP || {};
 
 		topScrollOffset: function() {
 			var	topOffsetScroll = 0,
-				adminBarHeight = APP.initialize.wpAdminBar();
+				adminBarHeight = BE_APP.initialize.wpAdminBar();
 
 			if ( $header.hasClass( 'sticky' ) ) {
 				topOffsetScroll = adminBarHeight + 70;
@@ -280,12 +280,12 @@ var APP = APP || {};
 		}
 	}
 
-	APP.header = {
+	BE_APP.header = {
 		init: function() {
-			APP.header.anchorMenu();
-			APP.header.headerMenu();
-			APP.header.menuInvert();
-			APP.header.mobileMenu();
+			BE_APP.header.anchorMenu();
+			BE_APP.header.headerMenu();
+			BE_APP.header.menuInvert();
+			BE_APP.header.mobileMenu();
 		},
 
 		anchorMenu : function() {
@@ -301,7 +301,7 @@ var APP = APP || {};
 		},
 
 		headerMenu: function() {
-			var wpAdminBarHeight = APP.initialize.wpAdminBar(),
+			var wpAdminBarHeight = BE_APP.initialize.wpAdminBar(),
 				jRes = jRespond( [
 					{ label: 'wpadminbar_600', enter: 0, exit: 600 },
 					{ label: 'wpadminbar_782', enter: 601, exit: 782 }
@@ -398,7 +398,7 @@ var APP = APP || {};
 				$mobileMenu.toggleClass( 'closed' );
 
 				if ( $mobileMenu.hasClass( 'closed' ) ) {
-					var wpAdminBarHeight = APP.initialize.wpAdminBar();
+					var wpAdminBarHeight = BE_APP.initialize.wpAdminBar();
 
 					$nav.slideDown();
 
@@ -417,7 +417,7 @@ var APP = APP || {};
 			$anchorMenuItem.each( function() {
 				var sectionContainer = $( 'section' + this.hash ),
 					windowScrollTop = $window.scrollTop(),
-					topOffsetScroll = APP.initialize.topScrollOffset();
+					topOffsetScroll = BE_APP.initialize.topScrollOffset();
 
 				if ( sectionContainer.length > 0 ) {
 					var sectionOffset = sectionContainer.offset().top;
@@ -433,15 +433,15 @@ var APP = APP || {};
 		}
 	}
 
-	APP.slider = {
+	BE_APP.slider = {
 		init: function() {
-			APP.slider.sliderParallax();
-			APP.slider.sliderScrollDown();
+			BE_APP.slider.sliderParallax();
+			BE_APP.slider.sliderScrollDown();
 		},
 
 		sliderParallax: function() {
 			if ( $sliderParallax.length > 0 ) {
-				if ( ! APP.isMobile.any() ) {
+				if ( ! BE_APP.isMobile.any() ) {
 					var parallaxHeight = $sliderParallax.outerHeight();
 
 					if( parallaxHeight > $window.scrollTop() ) {
@@ -459,9 +459,9 @@ var APP = APP || {};
 						}
 					}
 
-					if ( requesting ) {
+					if ( be_requesting ) {
 						requestAnimationFrame( function() {
-							APP.slider.sliderParallax();
+							BE_APP.slider.sliderParallax();
 						} );
 					}
 				}
@@ -469,7 +469,7 @@ var APP = APP || {};
 		},
 
 		sliderFade: function() {
-			if ( ! APP.isMobile.any() ) {
+			if ( ! BE_APP.isMobile.any() ) {
 				if ( $window.scrollTop() > 0 ) {
 					var sliderHeight = $slider.outerHeight();
 
@@ -487,7 +487,7 @@ var APP = APP || {};
 
 			if ( $scrollToElement.length > 0 ) {
 				$sliderScroll.click( function() {
-					var topOffsetScroll = APP.initialize.topScrollOffset();
+					var topOffsetScroll = BE_APP.initialize.topScrollOffset();
 
 					$( 'html, body' ).stop( true ).animate( {
 						scrollTop: $scrollToElement.offset().top - topOffsetScroll
@@ -497,11 +497,11 @@ var APP = APP || {};
 		}
 	}
 
-	APP.portfolio = {
+	BE_APP.portfolio = {
 		init: function() {
-			APP.portfolio.load();
-			APP.portfolio.filter();
-			APP.portfolio.ajaxload();
+			BE_APP.portfolio.load();
+			BE_APP.portfolio.filter();
+			BE_APP.portfolio.ajaxload();
 		},
 
 		load: function() {
@@ -551,7 +551,7 @@ var APP = APP || {};
 				var portfolioId = $( this ).parents( '.portfolio-item' ).attr( 'id' );
 
 				if ( ! $( this ).parents( '.portfolio-item' ).hasClass( 'portfolio-active' ) ) {
-					APP.portfolio.loadPortfolio( portfolioId );
+					BE_APP.portfolio.loadPortfolio( portfolioId );
 				}
 
 				e.preventDefault();
@@ -559,10 +559,10 @@ var APP = APP || {};
 		},
 
 		loadPortfolio: function( portfolioId ) {
-			var portfolioNext = APP.portfolio.getNextItem( portfolioId ),
-				portfolioPrev = APP.portfolio.getPrevItem( portfolioId );
+			var portfolioNext = BE_APP.portfolio.getNextItem( portfolioId ),
+				portfolioPrev = BE_APP.portfolio.getPrevItem( portfolioId );
 
-			APP.portfolio.closePortfolio();
+			BE_APP.portfolio.closePortfolio();
 			$portfolioLoader.fadeIn();
 
 			$portfolioContainer.load(
@@ -578,8 +578,8 @@ var APP = APP || {};
 
 					success: function( html ) {
 						$portfolioContainer.append( html );
-						APP.portfolio.initializePortfolio( portfolioId );
-						APP.portfolio.openPortfolio( portfolioId );
+						BE_APP.portfolio.initializePortfolio( portfolioId );
+						BE_APP.portfolio.openPortfolio( portfolioId );
 
 						$portfolioItem.removeClass( 'portfolio-active' );
 						$( '#' + portfolioId ).addClass( 'portfolio-active' );
@@ -632,7 +632,7 @@ var APP = APP || {};
 				$portfolioItem.removeClass( 'portfolio-active' );
 				$( '#' + portfolioId ).addClass( 'portfolio-active' );
 
-				APP.portfolio.loadPortfolio( portfolioId );
+				BE_APP.portfolio.loadPortfolio( portfolioId );
 
 				e.preventDefault();
 			} );
@@ -654,7 +654,7 @@ var APP = APP || {};
 		},
 
 		openPortfolio: function( portfolioId ) {
-			var topOffsetScroll = APP.initialize.topScrollOffset();
+			var topOffsetScroll = BE_APP.initialize.topScrollOffset();
 
 			$portfolioContainer.addClass( 'ajax-portfolio-opened' );
 
@@ -662,8 +662,8 @@ var APP = APP || {};
 				$portfolioContainer.imagesLoaded( function() {
 					$portfolioContainer.fadeIn( 500 );
 
-					APP.initialize.imageFade();
-					APP.widget.magnificPopup();
+					BE_APP.initialize.imageFade();
+					BE_APP.widget.magnificPopup();
 
 					var containerHeight = $( '.portfolio-single-image' ).height();
 
@@ -701,9 +701,9 @@ var APP = APP || {};
 		}
 	}
 
-	APP.blog = {
+	BE_APP.blog = {
 		init: function() {
-			APP.blog.containerHeight();
+			BE_APP.blog.containerHeight();
 		},
 
 		containerHeight: function() {
@@ -717,7 +717,7 @@ var APP = APP || {};
 		}
 	}
 
-	APP.isMobile = {
+	BE_APP.isMobile = {
 		Android: function() {
 			return navigator.userAgent.match( /Android/i );
 		},
@@ -739,21 +739,21 @@ var APP = APP || {};
 		},
 
 		any: function() {
-			return ( APP.isMobile.Android() || APP.isMobile.BlackBerry() || APP.isMobile.iOS() || APP.isMobile.Opera() || APP.isMobile.Windows() );
+			return ( BE_APP.isMobile.Android() || BE_APP.isMobile.BlackBerry() || BE_APP.isMobile.iOS() || BE_APP.isMobile.Opera() || BE_APP.isMobile.Windows() );
 		}
 	}
 
-	APP.widget = {
+	BE_APP.widget = {
 		init: function() {
-			APP.widget.smoothScroll();
-			APP.widget.magnificPopup();
-			APP.widget.sendMail();
+			BE_APP.widget.smoothScroll();
+			BE_APP.widget.magnificPopup();
+			BE_APP.widget.sendMail();
 		},
 
 		smoothScroll: function() {
 			$anchorMenuItem.smoothScroll( {
 				beforeScroll: function( options ) {
-					options.offset = 0 - APP.initialize.topScrollOffset();
+					options.offset = 0 - BE_APP.initialize.topScrollOffset();
 				},
 				easing: 'easeInOutExpo',
 				speed: 'auto',
@@ -867,17 +867,17 @@ var APP = APP || {};
 		}
 	}
 
-	APP.documentOnReady = {
+	BE_APP.documentOnReady = {
 		init: function() {
-			APP.initialize.init();
-			APP.widget.init();
-			APP.header.init();
-			APP.portfolio.init();
-			APP.blog.init();
-			APP.documentOnReady.windowscroll();
+			BE_APP.initialize.init();
+			BE_APP.widget.init();
+			BE_APP.header.init();
+			BE_APP.portfolio.init();
+			BE_APP.blog.init();
+			BE_APP.documentOnReady.windowscroll();
 
 			if ( $slider.length > 0 ) {
-				APP.slider.init();
+				BE_APP.slider.init();
 			}
 		},
 
@@ -886,22 +886,22 @@ var APP = APP || {};
 		}
 	}
 	
-	APP.documentOnScroll = {
+	BE_APP.documentOnScroll = {
 		init: function() {
-			APP.initialize.goToTopScroll();
-			APP.header.activateCurrentMenu();
-			APP.header.headerMenu();
-			APP.slider.sliderFade();
+			BE_APP.initialize.goToTopScroll();
+			BE_APP.header.activateCurrentMenu();
+			BE_APP.header.headerMenu();
+			BE_APP.slider.sliderFade();
 		}
 	}
 
-	APP.documentOnResize = {
+	BE_APP.documentOnResize = {
 		init: function() {
 			setTimeout( function() {
-				APP.header.headerMenu();
-				APP.header.menuInvert();
-				APP.portfolio.load();
-				APP.blog.containerHeight();
+				BE_APP.header.headerMenu();
+				BE_APP.header.menuInvert();
+				BE_APP.portfolio.load();
+				BE_APP.blog.containerHeight();
 
 				if ( $body.hasClass( 'device-md' ) || $body.hasClass( 'device-lg' ) ) {
 					$portfolioContainer.css( 'height', $( '.portfolio-single-image' ).height() + 'px' );
@@ -921,14 +921,14 @@ var APP = APP || {};
 					} );
 				}
 
-				if ( ! APP.isMobile.any() ) {
-					APP.initialize.fullScreen();
+				if ( ! BE_APP.isMobile.any() ) {
+					BE_APP.initialize.fullScreen();
 				}
 			}, 500 );
 		}
 	}
 
-	$( document ).ready( APP.documentOnReady.init );
-	$window.on( 'scroll', APP.documentOnScroll.init );
-	$window.on( 'resize', APP.documentOnResize.init );
+	$( document ).ready( BE_APP.documentOnReady.init );
+	$window.on( 'scroll', BE_APP.documentOnScroll.init );
+	$window.on( 'resize', BE_APP.documentOnResize.init );
 } )( jQuery );

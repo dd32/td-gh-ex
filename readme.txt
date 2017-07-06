@@ -47,6 +47,10 @@ The following resources are included within the theme package.
   Author: Metafizzy
   Source: http://isotope.metafizzy.co
   License: GPLv3
+* Kirki :
+  Author: Aristeides Stathopoulos
+  Source: https://aristath.github.io/kirki/
+  License: GPLv2 or later
  
 
 All other resources and theme elements are licensed under the GNU GPL, version 2 or later, http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

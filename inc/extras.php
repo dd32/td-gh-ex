@@ -163,63 +163,15 @@ add_filter( 'excerpt_more', 'beonepage_new_excerpt_more' );
  * Include the Portfolio details template.
  */
 function beonepage_ajax_portfolio() {
+	
+	$nonce = $_POST['nonce'];
 	get_template_part( 'template-parts/content', 'ajax-portfolio' );
 
-	wp_die();
+	if ( ! wp_verify_nonce( $nonce, 'ajax-nonce' ) )
+        die ( 'Busted!');
 }
 add_action( 'wp_ajax_ajax_portfolio', 'beonepage_ajax_portfolio' );
 add_action( 'wp_ajax_nopriv_ajax_portfolio', 'beonepage_ajax_portfolio' );
-
-
-
-/**
- * Add numeric pagination.
- */
-function beonepage_numeric_pagination( $pages = '', $range = 2 ) {
-     $showitems = ( $range * 2 ) + 1;
-
-     if ( empty( $paged ) ) $paged = 1;
-
-     if ( $pages == '' ) {
-		global $wp_query;
-
-		$pages = $wp_query->max_num_pages;
-
-		if ( ! $pages ) {
-			$pages = 1;
-		}
-	}
-
-	if ( $pages != 1 ) {
-		echo '<nav class="posts-navigation text-center hidden-xs clearfix" role="navigation">';
-		echo '<ul>';
-
-		if( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
-			echo '<li><a href=' . get_pagenum_link( 1 ) . '>' . esc_html__( 'First', 'beonepage' ) . '</a></li>';
-		}
-
-		if( $paged > 1 && $showitems < $pages ) {
-			echo '<li><a href=' . get_pagenum_link( $paged - 1 ) . '>' . esc_html__( 'Prev', 'beonepage' ) . '</a></li>';
-		}
-
-		for ( $i = 1; $i <= $pages; $i++ ) {
-			if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-				echo ( $paged == $i ) ? '<li class="active"><a href=' . get_pagenum_link( $i ) . '>' . $i . '</a></li>' : '<li><a href=' . get_pagenum_link( $i ) . '>' . $i . '</a></li>';
-			}
-		}
-
-		if ( $paged < $pages && $showitems < $pages) {
-			echo '<li><a href=' . get_pagenum_link( $paged + 1 ) . '>' . esc_html__( 'Next', 'beonepage' ) . '</a></li>';
-		}
-
-		if ( $paged < $pages - 1 &&  $pages > $paged + $range - 1 && $showitems < $pages ) {
-			echo '<li><a href=' . get_pagenum_link( $pages ) . '>' . esc_html__( 'Last', 'beonepage' ) . '</a></li>';
-		}
-
-		echo '</ul>';
-		echo '</nav>';
-	}
-}
 
 /**
  * Set/unset post as image post type if post has thumbnail.
@@ -328,7 +280,7 @@ function beonepage_admin_scripts() {
 	}
 
 	// Localize the script with new data.
-	wp_localize_script( 'beonepage-admin-script', 'admin_vars', array(
+	wp_localize_script( 'beonepage-admin-script', 'be_admin_vars', array(
 		'screen'            => $pagenow,
 		's_icon_found'      => esc_html__( 'icon found.', 'beonepage' ),
 		'p_icons_found'     => esc_html__( 'icons found.', 'beonepage' ),

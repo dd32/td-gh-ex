@@ -4,7 +4,7 @@ Theme URI: http://betheme.me/themes/beonepage/
 Author: BeTheme
 Author URI: http://betheme.me/
 Description: BeOnePage is a professional one-page creative WordPress theme. Perfect to promote your work or your creative business. It is cross-browser compatible, fully responsive, and retina ready. BeOnePage is very easy to set up and customize, being powered by the amazing WordPress Customizer. The theme performs beautifully on all devices, with smooth animations and optimum speed.
-Version: 1.2.9
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beonepage
@@ -432,7 +432,9 @@ body.home.page-template-template-home-page-php.admin-bar .site-header {
 	-webkit-transition: margin .2s linear;
 			transition: margin .2s linear;
 }
-
+.page-template-front-page .site-title{
+	margin: 13px 0;
+} 
 .site-title a {
 	color: #fff;
 	text-decoration: none;
@@ -1651,20 +1653,27 @@ article .entry-title a {
 	border-bottom-right-radius: 4px;
 }
 
-.posts-navigation ul li a {
+.posts-navigation ul li a,.pagination .nav-links a,.pagination .nav-links span {
     margin: 5px;
     padding: 15px 20px;
 	color: #aaa;
 	text-decoration: none;
     border: solid 1px #333;
 }
-
-.posts-navigation ul li a:hover {
+.pagination{
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.pagination .nav-links {
+	display: inline-block;
+}
+.posts-navigation ul li a:hover,.pagination .nav-links a:hover {
 	color: #fff;
     border-color: #fff;
 }
 
-.posts-navigation ul li.active a {
+.posts-navigation ul li.active a ,.pagination .nav-links span{
 	color: #fff;
     background-color: #ffcc00;
 	border-color: #ffcc00;

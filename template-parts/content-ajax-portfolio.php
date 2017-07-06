@@ -32,13 +32,13 @@ $post_id = str_replace( 'portfolio-item-', '', $portfolio_id );
 
 				<div id="portfolio-navigation">
 					<?php if ( $prev_id ) { ?>
-						<a href="#prev-portfolio" id="prev-portfolio" data-id="<?php echo $prev_id; ?>"><i class="fa fa-arrow-circle-left"></i></a>
+						<a href="#prev-portfolio" id="prev-portfolio" data-id="<?php echo esc_attr($prev_id); ?>"><i class="fa fa-arrow-circle-left"></i></a>
 					<?php } ?>
 
 					<a href="#close-portfolio" id="close-portfolio"><i class="fa fa-times-circle"></i></a>
 
 					<?php if ( $next_id ) { ?>
-						<a href="#next-portfolio" id="next-portfolio" data-id="<?php echo $next_id; ?>"><i class="fa fa-arrow-circle-right"></i></a>
+						<a href="#next-portfolio" id="next-portfolio" data-id="<?php echo esc_attr($next_id); ?>"><i class="fa fa-arrow-circle-right"></i></a>
 					<?php } ?>
 				</div><!-- #portfolio-navigation -->
 			</div><!-- .portfolio-ajax-title -->

@@ -12,17 +12,17 @@
 			var themeName = $( '.theme-info .theme-name' ).text();
 
 			if ( themeName.indexOf( 'BeOnePage Lite' ) >= 0 ) {
-				$( '.theme-overlay .theme-author' ).after( '<div class="theme-update-message"><h4 class="theme-update">' + admin_vars.upgrade_available + '</h4><p><strong>' + admin_vars.upgrade_info + '</strong></p></div>' );
+				$( '.theme-overlay .theme-author' ).after( '<div class="theme-update-message"><h4 class="theme-update">' + be_admin_vars.upgrade_available + '</h4><p><strong>' + be_admin_vars.upgrade_info + '</strong></p></div>' );
 			}
 		} );
 
 		$( '.plugin-title strong' ).each( function() {
 			if ( $( this ).text() == 'BeOnePage Lite' ) {
-				$( this ).parent().append( '<p>' + admin_vars.upgrade_info + '</p>' );
+				$( this ).parent().append( '<p>' + be_admin_vars.upgrade_info + '</p>' );
 			}
 		} );
 
-		if ( admin_vars.screen == 'nav-menus.php' ) {
+		if ( be_admin_vars.screen == 'nav-menus.php' ) {
 			// Icon for menu items.
 			var	selected_icon,
 				icon_item_object;
@@ -84,11 +84,11 @@
 					$( 'span#icons-search-result' ).show();
 
 					if ( count == 1 ) {
-						$( 'span#icons-search-result' ).html( '<strong>' + count + '</strong> ' + admin_vars.s_icon_found );
+						$( 'span#icons-search-result' ).html( '<strong>' + count + '</strong> ' + be_admin_vars.s_icon_found );
 					} else if ( count > 1 ) {
-						$( 'span#icons-search-result' ).html( '<strong>' + count + '</strong> ' + admin_vars.p_icons_found );
+						$( 'span#icons-search-result' ).html( '<strong>' + count + '</strong> ' + be_admin_vars.p_icons_found );
 					} else {
-						$( 'span#icons-search-result' ).html( admin_vars.no_icons_found );
+						$( 'span#icons-search-result' ).html( be_admin_vars.no_icons_found );
 					}
 				}
 			} );

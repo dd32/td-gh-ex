@@ -38,9 +38,12 @@ get_header(); ?>
 
 								endwhile;
 
-								beonepage_numeric_pagination();
-
-								beonepage_posts_navigation();
+								the_posts_pagination(
+									array(
+										'prev_text' => esc_html__('PREVIOUS','beonepage'),
+										'next_text' => esc_html__('NEXT','beonepage')
+									)
+								);
 
 						} else {
 							get_template_part( 'template-parts/content', 'none' );

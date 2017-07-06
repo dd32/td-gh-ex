@@ -43,11 +43,14 @@ get_header(); ?>
 									 */
 									get_template_part( 'template-parts/content', get_post_format() );
 
-								endwhile;
-
-								beonepage_numeric_pagination();
-
-								beonepage_posts_navigation();
+								endwhile; 
+								
+								the_posts_pagination(
+									array(
+										'prev_text' => esc_html__('PREVIOUS','beonepage'),
+										'next_text' => esc_html__('NEXT','beonepage')
+									)
+								);
 							} else {
 								get_template_part( 'template-parts/content', 'none' );
 							}
