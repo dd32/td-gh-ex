@@ -53,6 +53,33 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.2.1 
+Fixed Navigation Bar 
+
+Version: 0.2.0
+Minor Changes
+
+Version: 0.1.9
+Minor Changes
+
+Version: 0.1.8
+Minor Changes
+
+Version: 0.1.7 
+Bug Fixed
+
+Version: 0.1.6 
+Minor Changes
+
+Version: 0.1.5
+Minor Changes
+
+Vesion: 0.1.4
+Fixed Bugs
+
+Vesion : 0.1.3
+Minor Changes
+
 Version: 0.1.2
 Minor Changes
 
