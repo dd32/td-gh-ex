@@ -7,7 +7,7 @@
  * @package topshop
  */
 global $woocommerce;
-?><!DOCTYPE html>
+?><!DOCTYPE html><!-- TopShop.ORG -->
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">

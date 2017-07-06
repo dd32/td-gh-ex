@@ -70,6 +70,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.08
+* Style tweaks/fixes
+Premium: Added setting to set WooCommerce products amount shown per page
+
 #### 1.3.07
 * Neatened up Customizer Settings
 * Added setting to set max-width for Site Logo
