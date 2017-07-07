@@ -41,12 +41,11 @@
 		_initToggles: function()
 		{
 			// Trigger the Adv Tab Click trigger.
-			ASTControlTrigger.triggerHook( 'ast-toggle-control', api );
+			ASTControlTrigger.triggerHook( 'astra-toggle-control', api );
 
 			// Loop through each setting.
 			$.each( ASTCustomizerToggles, function( settingId, toggles ) {
 
-				// console.log( settingId );
 				// Get the setting object.
 				api( settingId, function( setting ) {
 
@@ -55,7 +54,7 @@
 
 						// Loop through the controls for the toggle.
 						$.each( toggle.controls, function( k, controlId ) {
-							// console.log( controlId );
+
 							// Get the control object.
 							api.control( controlId, function( control ) {
 
@@ -82,8 +81,8 @@
 
 							$.each(toggle.controls, function( k, controlId) {
 
-								controlId = controlId.replace( 'ast-settings[','' ).replace( ']','' );
-								var parent = $( '#customize-control-ast-settings-' + controlId ).closest( '.control-section' );
+								controlId = controlId.replace( 'astra-settings[','' ).replace( ']','' );
+								var parent = $( '#customize-control-astra-settings-' + controlId ).closest( '.control-section' );
 								if ( typeof parent != 'undefined' ) {
 
 									var parentId = parent.attr( 'id' );
@@ -110,8 +109,8 @@
 
 					$.each(toggle.controls, function( k, controlId) {
 
-						controlId = controlId.replace( 'ast-settings[','' ).replace( ']','' );
-						var parent = $( '#customize-control-ast-settings-' + controlId ).closest( '.control-section' );
+						controlId = controlId.replace( 'astra-settings[','' ).replace( ']','' );
+						var parent = $( '#customize-control-astra-settings-' + controlId ).closest( '.control-section' );
 
 						if ( typeof parent != 'undefined' ) {
 
@@ -140,3 +139,16 @@
 	$( function() { ASTCustomizer.init(); } );
 
 })( jQuery );
+
+
+( function( api ) {
+    // Extends our custom astra-pro section.
+    api.sectionConstructor['astra-pro'] = api.Section.extend( {
+        // No events for this type of section.
+        attachEvents: function () {},
+        // Always make the section active.
+        isContextuallyActive: function () {
+            return true;
+        }
+    } );
+} )( wp.customize );

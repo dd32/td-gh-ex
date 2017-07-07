@@ -15,15 +15,18 @@
 
 get_header(); ?>
 
-<?php if ( ast_page_layout() == 'left-sidebar' ) : ?>
+<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
 
 	<?php get_sidebar(); ?>
-		
+
 <?php endif ?>
 
-	<div id="primary" <?php ast_primary_class(); ?>>
+	<div id="primary" <?php astra_primary_class(); ?>>
+
+		<?php astra_primary_content_top(); ?>
+
 		<main id="main" class="site-main" role="main">
-			
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
@@ -38,12 +41,15 @@ get_header(); ?>
 			<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
+
+		<?php astra_primary_content_bottom(); ?>
+
 	</div><!-- #primary -->
 
-<?php if ( ast_page_layout() == 'right-sidebar' ) : ?>
+<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
 
 	<?php get_sidebar(); ?>
-		
+
 <?php endif ?>
 
 <?php get_footer(); ?>

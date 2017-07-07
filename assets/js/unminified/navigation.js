@@ -79,13 +79,12 @@ var toggleClass = function ( el, className ) {
 		menu_toggle.addEventListener( 'click', function( event ) {
 	    	event.preventDefault();
 
-	    	var menuHasChildren = document.getElementsByClassName( 'menu-item-has-children' );
+	    	var menuHasChildren = document.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
 			for ( var i = 0; i < menuHasChildren.length; i++ ) {
 				menuHasChildren[i].classList.remove( 'ast-submenu-expanded' );
-
-				var menuHasChildrenSubMenu = menuHasChildren[i].querySelectorAll( '.sub-menu' );
-				for (var j = 0; j < menuHasChildrenSubMenu.length; j++) {
-					menuHasChildrenSubMenu[j].style.display = 'none';
+				var menuHasChildrenSubMenu = menuHasChildren[i].querySelectorAll( '.sub-menu, .children' );		
+				for (var j = 0; j < menuHasChildrenSubMenu.length; j++) {		
+					menuHasChildrenSubMenu[j].style.display = 'none';		
 				};
 			}
 
@@ -95,59 +94,105 @@ var toggleClass = function ( el, className ) {
 				case 'main-menu':
 						toggleClass( __main_header, 'toggle-on' );
 						toggleClass( menu_toggle, 'toggled' );
-					if ( __main_header.classList.contains( 'toggle-on' ) ) {
-						__main_header.style.display = 'block';
-					} else {
-						__main_header.style.display = '';
-					}
+						if ( __main_header.classList.contains( 'toggle-on' ) ) {		
+							__main_header.style.display = 'block';		
+						} else {		
+							__main_header.style.display = '';		
+						}
 					break;
 			}
 	    }, false);
 	}
 
-	/* Submenu button click */
-	var ast_menu_toggle = document.getElementsByClassName( 'ast-menu-toggle' );
-	for (var i = 0; i < ast_menu_toggle.length; i++) {
+	AstraNavigationMenu = function( selector ) {
 
-		ast_menu_toggle[i].addEventListener( 'click', function ( event ) {
-			event.preventDefault();
+		var parentList = document.querySelectorAll( selector );
 
-			var parent_li = this.parentNode;
+		for (var i = 0; i < parentList.length; i++) {
 
-			var parent_li_child = parent_li.querySelectorAll( '.menu-item-has-children' );
-			for (var j = 0; j < parent_li_child.length; j++) {
+			if ( null != parentList[i].querySelector( '.sub-menu, .children' ) ) {
 
-				parent_li_child[j].classList.remove( 'ast-submenu-expanded' );
+				// Insert Toggle Button.
+				var  toggleButton = document.createElement("BUTTON");        // Create a <button> element
+					toggleButton.setAttribute("role", "button");
+					toggleButton.setAttribute("class", "ast-menu-toggle");
+					toggleButton.setAttribute("aria-expanded", "false");
+				parentList[i].insertBefore( toggleButton, parentList[i].childNodes[1] );
 
-				var parent_li_child_sub_menu = parent_li_child[j].querySelector( '.sub-menu' );
-				parent_li_child_sub_menu.style.display = 'none';
-			};
+				var menuLeft         = parentList[i].getBoundingClientRect().left,
+					windowWidth      = window.innerWidth,
+					menuFromLeft     = (parseInt( windowWidth ) - parseInt( menuLeft ) ),
+					menuGoingOutside = false;
 
-			var parent_li_sibling = parent_li.parentNode.querySelectorAll( '.menu-item-has-children' );
-			for (var j = 0; j < parent_li_sibling.length; j++) {
-
-				if ( parent_li_sibling[j] != parent_li ) {
-
-					parent_li_sibling[j].classList.remove( 'ast-submenu-expanded' );
-
-					var all_sub_menu = parent_li_sibling[j].querySelectorAll( '.sub-menu' );
-					for (var k = 0; k < all_sub_menu.length; k++) {
-						all_sub_menu[k].style.display = 'none';
-					};
+				if( menuFromLeft < 500 ) {
+					menuGoingOutside = true;
 				}
-			};
 
-			if ( parent_li.classList.contains( 'menu-item-has-children' ) ) {
-				toggleClass( parent_li, 'ast-submenu-expanded' );
+				// Submenu items goes outside?
+				if( menuGoingOutside ) {
+					parentList[i].classList.add( 'ast-left-align-sub-menu' );
 
-				if ( parent_li.classList.contains( 'ast-submenu-expanded' ) ) {
-					parent_li.querySelector( '.sub-menu' ).style.display = 'block';
-				} else {
-					parent_li.querySelector( '.sub-menu' ).style.display = 'none';
+					var all_submenu_parents = parentList[i].querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+					for (var k = 0; k < all_submenu_parents.length; k++) {
+						all_submenu_parents[k].classList.add( 'ast-left-align-sub-menu' );
+					}
 				}
-			}
-		}, false);
+
+				// Submenu Container goes to outside?
+				if( menuFromLeft < 240 ) {
+					parentList[i].classList.add( 'ast-sub-menu-goes-outside' );
+				}
+
+			};
+		};
 	};
+
+	AstraNavigationMenu( 'ul.main-header-menu li' );
+
+	AstraToggleMenu = function( selector ) {
+		var astra_menu_toggle = document.querySelectorAll( selector );
+		/* Submenu button click */
+		for (var i = 0; i < astra_menu_toggle.length; i++) {
+
+			astra_menu_toggle[i].addEventListener( 'click', function ( event ) {
+				event.preventDefault();
+
+				var parent_li = this.parentNode;
+
+				var parent_li_child = parent_li.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+				for (var j = 0; j < parent_li_child.length; j++) {
+
+					parent_li_child[j].classList.remove( 'ast-submenu-expanded' );
+					var parent_li_child_sub_menu = parent_li_child[j].querySelector( '.sub-menu, .children' );		
+					parent_li_child_sub_menu.style.display = 'none';
+				};
+
+				var parent_li_sibling = parent_li.parentNode.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+				for (var j = 0; j < parent_li_sibling.length; j++) {
+
+					if ( parent_li_sibling[j] != parent_li ) {
+
+						parent_li_sibling[j].classList.remove( 'ast-submenu-expanded' );
+						var all_sub_menu = parent_li_sibling[j].querySelectorAll( '.sub-menu, .children' );
+						for (var k = 0; k < all_sub_menu.length; k++) {		
+							all_sub_menu[k].style.display = 'none';		
+						};
+					}
+				};
+
+				if ( parent_li.classList.contains( 'menu-item-has-children' ) || parent_li.classList.contains( 'page_item_has_children' ) ) {
+					toggleClass( parent_li, 'ast-submenu-expanded' );
+					if ( parent_li.classList.contains( 'ast-submenu-expanded' ) ) {
+						parent_li.querySelector( '.sub-menu, .children' ).style.display = 'block';
+					} else {
+						parent_li.querySelector( '.sub-menu, .children' ).style.display = 'none';
+					}
+				}
+			}, false);
+		};
+	};
+ 
+	AstraToggleMenu('ul.main-header-menu .ast-menu-toggle');
 
 	document.body.addEventListener("astra-header-responsive-enabled", function() {
 
@@ -159,6 +204,10 @@ var toggleClass = function ( el, className ) {
 		var sub_menu = document.getElementsByClassName( 'sub-menu' );
 		for ( var i = 0; i < sub_menu.length; i++ ) {
 			sub_menu[i].style.display = '';
+		}
+		var child_menu = document.getElementsByClassName( 'children' );
+		for ( var i = 0; i < child_menu.length; i++ ) {
+			child_menu[i].style.display = '';
 		}
 
 		var searchIcons = document.getElementsByClassName( 'ast-search-menu-icon' );
@@ -173,7 +222,7 @@ var toggleClass = function ( el, className ) {
 
 		if( null != document.getElementById( 'masthead' ) ) {
 
-			var break_point = ast.break_point,
+			var break_point = astra.break_point,
 				headerWrap = document.getElementById( 'masthead' ).childNodes;
 
 			for ( var i = 0; i < headerWrap.length; i++ ) {
@@ -246,39 +295,6 @@ var toggleClass = function ( el, className ) {
 		}
 	}
 
-	AstMenuAlignment = function( selector ) {
-
-		var parentList = document.querySelectorAll( selector );
-
-		for (var i = 0; i < parentList.length; i++) {
-
-			if ( null != parentList[i].querySelector( '.sub-menu' ) ) {
-
-				var menuLeft    	 = parentList[i].getBoundingClientRect().left,
-					windowWidth     = window.innerWidth,
-					menuFromLeft     = (parseInt( windowWidth ) - parseInt( menuLeft ) ),
-					menuGoingOutside = false;
-
-				if( menuFromLeft < 240 || (parseInt( windowWidth ) > parseInt( menuLeft ) ) ) {
-					menuGoingOutside = true;
-				}
-
-				// Submenu items goes outside?
-				if( menuGoingOutside && ! parentList[i].classList.contains( 'ast-left-align-sub-menu' ) ) {
-					parentList[i].classList.add( 'ast-left-align-sub-menu' );
-				}
-
-				// Submenu Container goes to outside?
-				if( menuFromLeft < 240 ) {
-					parentList[i].classList.add( 'ast-sub-menu-goes-outside' );
-				}
-
-			};
-		};
-	};
-
-	AstMenuAlignment( 'ul.main-header-menu li' );
-
 	/**
 	 * Navigation Keyboard Navigation.
 	 */
@@ -290,7 +306,6 @@ var toggleClass = function ( el, className ) {
 	}
 
 	button = container.getElementsByTagName( 'button' )[0];
-
 	if ( 'undefined' === typeof button ) {
 		return;
 	}

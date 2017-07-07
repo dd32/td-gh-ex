@@ -10,28 +10,24 @@
 
 get_header(); ?>
 
-<?php if ( ast_page_layout() == 'left-sidebar' ) : ?>
+<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
 
 	<?php get_sidebar(); ?>
-		
+
 <?php endif ?>
 
-	<div id="primary" <?php ast_primary_class(); ?>>
-		
-		<?php if ( have_posts() ) : ?>
-		
-			<?php /* Archive Page info */
-				ast_archive_page_info();
-			?>
+	<div id="primary" <?php astra_primary_class(); ?>>
 
-		<?php endif; ?>
-		
+		<?php astra_primary_content_top(); ?>
+
+		<?php astra_archive_header(); ?>
+
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
-			<?php ast_content_while_before(); ?>
+			<?php astra_content_while_before(); ?>
 
 			<div class="ast-row">
 
@@ -44,14 +40,14 @@ get_header(); ?>
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content', ast_get_post_format() );
+						get_template_part( 'template-parts/content', astra_get_post_format() );
 					?>
 
 				<?php endwhile; ?>
 
 			</div>
-			
-			<?php ast_content_while_after(); ?>
+
+			<?php astra_content_while_after(); ?>
 
 		<?php else : ?>
 
@@ -61,14 +57,16 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php ast_pagination(); ?>
+		<?php astra_pagination(); ?>
+
+		<?php astra_primary_content_bottom(); ?>
 
 	</div><!-- #primary -->
 
-<?php if ( ast_page_layout() == 'right-sidebar' ) : ?>
+<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
 
 	<?php get_sidebar(); ?>
-		
+
 <?php endif ?>
 
 <?php get_footer(); ?>
