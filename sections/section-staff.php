@@ -25,14 +25,14 @@
     }
         if($staff_section_cat){
 
-        $staff_qry = new WP_Query( array( 'cat' => $staff_section_cat, 'posts_per_page' => -1, 'ignore_sticky_posts'   => true ) );
+        $staff_qry = new WP_Query( array( 'cat' => $staff_section_cat, 'posts_per_page' => "1", 'ignore_sticky_posts'   => true ) );
             
             if( $staff_qry->have_posts() ){
 	 
-			echo '<div id="staff-slider" class="flexslider">';
-				echo '<ul class="slides">';
+			echo '<div id="staff-slider">';
+				echo '<div class="slides">';
                     while($staff_qry->have_posts()){ $staff_qry-> the_post();
-					echo '<li>';
+					echo '<div>';
 						echo '<div class="holder">';
 						if(has_post_thumbnail()){
 							echo '<div class="img-holder">';
@@ -48,24 +48,28 @@
 								echo '</p>';
 							echo '</div>';
 						echo '</div>';
-					echo '</li>';
+					echo '</div>';
                  }
-				echo'</ul>';
+				echo'</div>';
+				echo '<div id="loader"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>';
 			echo '</div>';
-			echo '<div id="carousel" class="flexslider">';
-				echo '<ul class="slides">';
-				    while($staff_qry->have_posts()){
-                    	$staff_qry-> the_post();
-							if(has_post_thumbnail()){
-								echo '<li>';
-								the_post_thumbnail();
-								echo '</li>';
-							}
-				    }
-	    			 /*items mirrored twice, total of 12*/ 
-	  			echo '</ul>';
+			wp_reset_postdata();
+			}
+			$qry = new WP_Query( array( 'cat' => $staff_section_cat, 'posts_per_page' => -1, 'ignore_sticky_posts'   => true ) );
+            
+			echo '<div id="carousel" class="owl-carousel">';
+				if( $staff_section_cat && $qry->have_posts() ){ $i = 0;
+					while( $qry->have_posts() ){ $i++; 
+						$qry->the_post(); ?>
+						<div class="item img-btn <?php if( $i == 1 ){echo "current";} ?>" id= "<?php the_title(); ?>" >
+							<?php the_post_thumbnail( 'thumbnail' ); ?>
+						</div>
+			<?php 
+					}
+					wp_reset_postdata();
+				}
 			echo '</div>';
-		}
-		 } 
+ 
 		echo '</div>';
+	}
 		?>

@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc.  The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://raratheme.com/preview/bakes-and-cakes/ , documentation at https://raratheme.com/documentation/bakes-cakes/ and get support at http://raratheme.com/support-ticket/
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -1421,7 +1421,8 @@ object {
 }
 
 /*our staff style*/
-.our-staff{
+
+.our-staff{ 
 	padding: 70px 0;
 	background: url(images/img12.jpg) no-repeat;
 	background-size: cover;
@@ -1477,10 +1478,15 @@ object {
 	border-radius: 0;
 }
 
+.our-staff #staff-slider{
+	position: relative;
+}
+
 .our-staff #staff-slider .holder{
 	overflow: hidden;
 	background: #fff;
 }
+
 
 .our-staff #staff-slider .img-holder{
 	float: left;
@@ -1548,21 +1554,26 @@ object {
 	margin: 0 auto;
 }
 
-.our-staff #carousel .flex-direction-nav .flex-next{
+.our-staff #carousel .owl-nav >div {
+	top: 40%;
+	position: absolute;
+}
+
+.our-staff #carousel .owl-next{
 	background: url(images/btn-next.png) no-repeat;
 	width: 36px;
 	height: 36px;
-	text-indent: 100%;
-	right: 85px;
+	text-indent: -9999px;
+	right: 35px;
 	opacity: 0.25;
 }
 
-.our-staff #carousel .flex-direction-nav .flex-prev{
+.our-staff #carousel .owl-prev{
 	background: url(images/btn-prev.png) no-repeat;
 	width: 36px;
 	height: 36px;
 	text-indent: -9999px;
-	left: 85px;
+	left: 35px;
 	opacity: 0.5;
 }
 
@@ -1572,6 +1583,55 @@ object {
 
 .our-staff #carousel .flex-direction-nav .flex-next:hover{
   	opacity: 1;
+}
+
+.our-staff #carousel {
+    position: relative;
+    top: -134px;
+    width: 693px;
+    float: right;
+    text-align: center;
+    background: #f7f6f4;
+    padding: 21px 85px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+}
+
+.our-staff #carousel img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+    cursor: pointer;
+}
+
+#staff-slider #loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 45px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.6);
+    display: none;
+}
+
+.our-staff #carousel .current img{
+	border-color: #81c9c7;
+}
+
+#staff-slider #loader .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /*.testimonial style*/

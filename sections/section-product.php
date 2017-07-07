@@ -50,7 +50,8 @@ if( bakes_and_cakes_is_woocommerce_activated() ){
         'post_type'           => 'product',
         'post__in'            => $featured_products,
         'orderby'             => 'post__in',
-        'ignore_sticky_posts' => true
+        'ignore_sticky_posts' => true,
+        'posts_per_page'       => '10'
     
     ) );
 

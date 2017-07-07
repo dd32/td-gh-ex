@@ -68,12 +68,12 @@ add_filter( 'body_class', 'bakes_and_cakes_body_classes' );
  
 function bakes_and_cakes_breadcrumbs_cb() {
  
-    $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-    $delimiter = get_theme_mod( 'bakes_and_cakes_breadcrumb_separator', __( '>', 'bakes-and-cakes' ) ); // delimiter between crumbs
-    $home = get_theme_mod( 'bakes_and_cakes_breadcrumb_home_text', __( 'Home', 'bakes-and-cakes' ) ); // text for the 'Home' link
+    $showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+    $delimiter   = get_theme_mod( 'bakes_and_cakes_breadcrumb_separator', __( '>', 'bakes-and-cakes' ) ); // delimiter between crumbs
+    $home        = get_theme_mod( 'bakes_and_cakes_breadcrumb_home_text', __( 'Home', 'bakes-and-cakes' ) ); // text for the 'Home' link
     $showCurrent = get_theme_mod( 'bakes_and_cakes_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
-    $before = '<span class="current">'; // tag before the current crumb
-    $after = '</span>'; // tag after the current crumb
+    $before      = '<span class="current">'; // tag before the current crumb
+    $after       = '</span>'; // tag after the current crumb
     
     global $post;
     $homeLink = home_url();
@@ -442,3 +442,46 @@ function bakes_and_cakes_sanitize_iframe( $iframe ){
             ) );
     return wp_kses( $iframe, $allow_tag );
     }
+
+
+/**
+ * Ajax Callback for Team section
+*/
+function bakes_and_cakes_home_team_ajax(){
+
+    $id   = $_POST['id'];
+    $staff_cat = get_theme_mod('bakes_and_cakes_staff_section_cat');
+    $response  = '';
+
+    $args = array( 
+        'title'               => $id,
+        'post_status'         => 'publish',
+        'cat'                 => $staff_cat,    
+        'ignore_sticky_posts' => true,
+    );
+    
+    $bakes_and_cakes_qry = new WP_Query( $args );
+    if( !empty( $id ) && $bakes_and_cakes_qry->have_posts() ){
+        while( $bakes_and_cakes_qry->have_posts() ){ 
+            $bakes_and_cakes_qry->the_post(); 
+            
+            if( has_post_thumbnail() ){
+                $response .= '<div class="img-holder">';
+                $response .= get_the_post_thumbnail( get_the_ID(), 'bakes-and-cakes-staff-thumb' );
+                $response .= '</div>';
+            } 
+            $response .= '<div class="text-holder">';
+            $response .= '<strong class="name">' . esc_html( get_the_title() ) . '</strong>';
+            $response .= wpautop(  wp_kses_post( get_the_content() ) );
+            $response .= '</div>';   
+
+            
+        }
+        wp_reset_postdata(); 
+    }
+    echo $response;
+    
+    wp_die();
+}
+add_action( 'wp_ajax_bakes_and_cakes_team_ajax', 'bakes_and_cakes_home_team_ajax' );
+add_action( 'wp_ajax_nopriv_bakes_and_cakes_team_ajax', 'bakes_and_cakes_home_team_ajax' ); 

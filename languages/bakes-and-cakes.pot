@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-15 11:29+0000\n"
+"POT-Creation-Date: 2017-07-07 12:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -118,31 +118,31 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:162
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:172
 msgid "Google Map Widget"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:174
 msgid "Widget for Google map section( Use Text widget for Google Map )."
 msgstr ""
 
-#: functions.php:183
+#: functions.php:182
 msgid "Footer First"
 msgstr ""
 
-#: functions.php:193
+#: functions.php:192
 msgid "Footer Second"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:194
 msgid "Here you can use text widget to display Contact Form."
 msgstr ""
 
-#: functions.php:203
+#: functions.php:202
 msgid "Footer Third"
 msgstr ""
 
@@ -179,24 +179,24 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/custom-functions.php:421
+#: inc/custom-functions.php:420
 msgid "&copy;"
 msgstr ""
 
-#: inc/custom-functions.php:424
+#: inc/custom-functions.php:423
 msgid "All Rights Reserved."
 msgstr ""
 
-#: inc/custom-functions.php:427
+#: inc/custom-functions.php:426
 msgid "Bakes and Cakes by Rara Theme."
 msgstr ""
 
-#: inc/custom-functions.php:429
+#: inc/custom-functions.php:428
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:429
+#: inc/custom-functions.php:428
 msgid "https://wordpress.org/"
 msgstr ""
 
@@ -578,7 +578,7 @@ msgid "%1$s"
 msgstr ""
 
 #: inc/widget-popular-post.php:105 inc/widget-recent-post.php:110
-#: inc/widget-social-links.php:98
+#: inc/widget-social-links.php:120
 msgid "Title"
 msgstr ""
 
@@ -617,40 +617,52 @@ msgstr ""
 msgid "A Social Links Widget"
 msgstr ""
 
-#: inc/widget-social-links.php:40 inc/widget-social-links.php:86
-#: inc/widget-social-links.php:152
+#: inc/widget-social-links.php:40 inc/widget-social-links.php:105
+#: inc/widget-social-links.php:189
 msgid "Social Media"
 msgstr ""
 
-#: inc/widget-social-links.php:57 inc/widget-social-links.php:103
+#: inc/widget-social-links.php:61 inc/widget-social-links.php:125
 msgid "Facebook"
 msgstr ""
 
-#: inc/widget-social-links.php:59 inc/widget-social-links.php:108
+#: inc/widget-social-links.php:64 inc/widget-social-links.php:130
 msgid "Twitter"
 msgstr ""
 
-#: inc/widget-social-links.php:61
+#: inc/widget-social-links.php:67
 msgid "Linkedin"
 msgstr ""
 
-#: inc/widget-social-links.php:63 inc/widget-social-links.php:118
+#: inc/widget-social-links.php:70 inc/widget-social-links.php:140
 msgid "Instagram"
 msgstr ""
 
-#: inc/widget-social-links.php:65 inc/widget-social-links.php:123
+#: inc/widget-social-links.php:73 inc/widget-social-links.php:145
 msgid "Google Plus"
 msgstr ""
 
-#: inc/widget-social-links.php:67 inc/widget-social-links.php:128
+#: inc/widget-social-links.php:76 inc/widget-social-links.php:150
 msgid "Pinterest"
 msgstr ""
 
-#: inc/widget-social-links.php:69 inc/widget-social-links.php:133
+#: inc/widget-social-links.php:79 inc/widget-social-links.php:155
 msgid "YouTube"
 msgstr ""
 
-#: inc/widget-social-links.php:113
+#: inc/widget-social-links.php:82 inc/widget-social-links.php:160
+msgid "OK"
+msgstr ""
+
+#: inc/widget-social-links.php:85 inc/widget-social-links.php:165
+msgid "VK"
+msgstr ""
+
+#: inc/widget-social-links.php:88 inc/widget-social-links.php:170
+msgid "Xing"
+msgstr ""
+
+#: inc/widget-social-links.php:135
 msgid "LinkedIn"
 msgstr ""
 
@@ -700,6 +712,14 @@ msgstr ""
 #: template-parts/content.php:43 template-parts/content.php:52
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/tgmpa/recommended-plugins.php:58
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/tgmpa/recommended-plugins.php:64
+msgid "Woocommerce"
 msgstr ""
 
 #. Name of the theme

@@ -45,28 +45,47 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
         $google_plus = ! empty( $instance['google_plus'] ) ?  $instance['google_plus'] : '' ;
         $pinterest   = ! empty( $instance['pinterest'] ) ?  $instance['pinterest'] : '' ;
         $youtube     = ! empty( $instance['youtube'] ) ?  $instance['youtube'] : '' ;
+        $ok     	 = ! empty( $instance['ok'] ) ?  $instance['ok'] : '' ;
+        $vk          = ! empty( $instance['vk'] ) ?  $instance['vk'] : '' ;
+        $xing    	 = ! empty( $instance['xing'] ) ?  $instance['xing'] : '' ;
         
         
-        if( $facebook || $twitter ||  $linkedin || $instagram || $google_plus || $pinterest || $youtube ){ 
+        if( $facebook || $twitter ||  $linkedin || $instagram || $google_plus || $pinterest || $youtube || $ok || $vk || $xing ){ 
         echo $args['before_widget'];
         if( $title ) echo $args['before_title'] . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $args['after_title'];
         
         ?>
             <ul class="social-networks">
+				
 				<?php if( $facebook ){ ?>
                 <li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_attr_e( 'Facebook', 'bakes-and-cakes' ); ?>" class="fa fa-facebook"></a></li>
+				
 				<?php } if( $twitter ){ ?>
                 <li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_attr_e( 'Twitter', 'bakes-and-cakes' ); ?>" class="fa fa-twitter"></a></li>
+				
 				<?php } if( $linkedin ){ ?>
                 <li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_attr_e( 'Linkedin', 'bakes-and-cakes' ); ?>" class="fa fa-linkedin"></a></li>
+				
 				<?php } if( $instagram ){ ?>
                 <li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_attr_e( 'Instagram', 'bakes-and-cakes' ); ?>" class="fa fa-instagram"></a></li>
+				
 				<?php } if( $google_plus ){ ?>
                 <li><a href="<?php echo esc_url( $google_plus ); ?>" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'bakes-and-cakes' ); ?>" class="fa fa-google-plus"></a></li>
+				
 				<?php } if( $pinterest ){ ?>
                 <li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'bakes-and-cakes' ); ?>" class="fa fa-pinterest"></a></li>
+				
 				<?php } if( $youtube ){ ?>
                 <li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_attr_e( 'YouTube', 'bakes-and-cakes' ); ?>" class="fa fa-youtube"></a></li>
+
+                <?php } if( $ok ){ ?>
+                <li><a href="<?php echo esc_url( $ok ); ?>" target="_blank" title="<?php esc_attr_e( 'OK', 'bakes-and-cakes' ); ?>" class="fa fa-odnoklassniki"></a></li>
+
+                <?php }if( $vk ){ ?>
+                <li><a href="<?php echo esc_url( $vk ); ?>" target="_blank" title="<?php esc_attr_e( 'VK', 'bakes-and-cakes' ); ?>" class="fa fa-vk"></a></li>
+
+                <?php } if( $xing ){ ?>
+                <li><a href="<?php echo esc_url( $xing ); ?>" target="_blank" title="<?php esc_attr_e( 'Xing', 'bakes-and-cakes' ); ?>" class="fa fa-xing"></a></li>
                 <?php } ?>
 			</ul>
         <?php
@@ -91,6 +110,9 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
         $google_plus = ! empty( $instance['google_plus'] ) ?  $instance['google_plus'] : '' ;
         $pinterest   = ! empty( $instance['pinterest'] ) ?  $instance['pinterest'] : '' ;
         $youtube     = ! empty( $instance['youtube'] ) ?  $instance['youtube'] : '' ;
+        $ok     	 = ! empty( $instance['ok'] ) ?  $instance['ok'] : '' ;
+        $vk          = ! empty( $instance['vk'] ) ?  $instance['vk'] : '' ;
+        $xing    	 = ! empty( $instance['xing'] ) ?  $instance['xing'] : '' ;
         
         ?>
 		
@@ -133,6 +155,21 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
             <label for="<?php echo esc_attr($this->get_field_id( 'youtube' )); ?>"><?php _e( 'YouTube', 'bakes-and-cakes' ); ?></label> 
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'youtube' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'youtube' )); ?>" type="text" value="<?php echo esc_url( $youtube ); ?>" />
 		</p>
+
+		<p>
+            <label for="<?php echo esc_attr($this->get_field_id( 'ok' )); ?>"><?php _e( 'OK', 'bakes-and-cakes' ); ?></label> 
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'ok' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'ok' )); ?>" type="text" value="<?php echo esc_url( $ok ); ?>" />
+		</p>
+
+		<p>
+            <label for="<?php echo esc_attr($this->get_field_id( 'vk' )); ?>"><?php _e( 'VK', 'bakes-and-cakes' ); ?></label> 
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'vk' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'vk' )); ?>" type="text" value="<?php echo esc_url( $vk ); ?>" />
+		</p>
+
+		<p>
+            <label for="<?php echo esc_attr($this->get_field_id( 'xing' )); ?>"><?php _e( 'Xing', 'bakes-and-cakes' ); ?></label> 
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'xing' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'xing' )); ?>" type="text" value="<?php echo esc_url( $xing ); ?>" />
+		</p>
 		<?php 
 	}
 
@@ -157,6 +194,9 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
         $instance['google_plus'] = ! empty( $new_instance['google_plus'] ) ? esc_url_raw( $new_instance['google_plus'] ) : '';
         $instance['pinterest']   = ! empty( $new_instance['pinterest'] ) ? esc_url_raw( $new_instance['pinterest'] ) : '';
         $instance['youtube']     = ! empty( $new_instance['youtube'] ) ? esc_url_raw( $new_instance['youtube'] ) : '';
+        $instance['ok']          = ! empty( $new_instance['ok'] ) ? esc_url_raw( $new_instance['ok'] ) : '';
+        $instance['vk']          = ! empty( $new_instance['vk'] ) ? esc_url_raw( $new_instance['vk'] ) : '';
+        $instance['xing']        = ! empty( $new_instance['xing'] ) ? esc_url_raw( $new_instance['xing'] ) : '';
 		return $instance;
 	}
 

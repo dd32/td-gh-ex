@@ -5,8 +5,8 @@ Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-backg
 
 
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.1.1
+Tested up to: 4.8
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -196,11 +196,9 @@ https://pixabay.com/en/easter-easter-cakes-cookie-cutter-100171/
 
 
 # JS
-
-jquery.flexslider.js, http://www.woothemes.com/flexslider/ - Copyright (c) 2015 WooThemes, http://www.gnu.org/licenses/gpl-2.0.html
+owl.carousel.js, https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html, Copyright (c) 2013-2017 David Deutsch, Licensed under MIT, http://opensource.org/licenses/MIT
 
 lightslider.js, https://github.com/sachinchoolur/lightslider, (C) Sachin, MIT, http://opensource.org/licenses/MIT
-
 
 sameheight.js, https://css-tricks.com/examples/EqualHeightsInRows/ ,   licensed under GPLv2 or later
 
@@ -228,6 +226,11 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.1.2
+    * Made theme RTL Compatible.
+    * OK, VK, Xing added social icon list.
+    * TGM added.
+    
     1.1.1
     * Added option to show full content in Blog page.
     * fixed image size naming issue on slider.

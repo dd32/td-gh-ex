@@ -27,8 +27,9 @@ if( $events_first_post || $events_second_post ){
         'post_type'           => 'post',
         'post__in'            => $events_posts,
         'orderby'             => 'post__in',
-        'ignore_sticky_posts' => true
-    
+        'ignore_sticky_posts' => true,
+        'posts_per_page'       => '2'
+
     ) );
 
 ?>
