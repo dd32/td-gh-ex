@@ -79,6 +79,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.04
+* Styling fixes/tweaks
+* Fix/Improve Default Slider responsiveness
+* Updated/Improved masonry layout javascript
+* Updated the language.pot file
+Premium: Added 3 settings to adjust sidebar widgets titles
+
 #### 1.3.03
 * Styling fixes/tweaks
 * Re-added footer Address setting - Accidentally removed

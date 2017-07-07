@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2017-06-14 12:37+0200\n"
+"POT-Creation-Date: 2017-07-07 11:42+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -166,19 +166,19 @@ msgid "Switch Header Main"
 msgstr ""
 
 #: customizer/customizer-options.php:119
-msgid "Header Layout One"
+msgid "Standard Header"
 msgstr ""
 
 #: customizer/customizer-options.php:120
-msgid "Header Layout Two"
+msgid "Standard Header Two"
 msgstr ""
 
 #: customizer/customizer-options.php:121
-msgid "Header Layout Three"
+msgid "Standard Header Three"
 msgstr ""
 
 #: customizer/customizer-options.php:122
-msgid "Header Layout Four"
+msgid "Centered Header Layout"
 msgstr ""
 
 #: customizer/customizer-options.php:126
@@ -329,8 +329,9 @@ msgstr ""
 
 #: customizer/customizer-options.php:298
 msgid ""
-"<b>Premium Extra Features:</b><br />- Select Featured Image to display as a "
-"page banner<br />- Change banner size and width"
+"<b>Premium Extra Features:</b><br />- Adjust sidebar widget title size/align/"
+"styling<br />- Select Featured Image to display as a page banner<br />- "
+"Change banner size and width"
 msgstr ""
 
 #: customizer/customizer-options.php:306

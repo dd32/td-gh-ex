@@ -5,21 +5,25 @@
 ( function( $ ) {
     
     $(window).load(function() {
-        var $container = $( '.blog-grid-layout-wrap-inner' );
         
-        // initialize
-        $container.masonry({
+        // Initialize the Masonry plugin
+        var grid = $( '.blog-grid-layout-wrap-inner' ).masonry({
             columnWidth: '.blog-grid-layout',
-            itemSelector: '.blog-grid-layout'
+            itemSelector: '.blog-grid-layout',
+            percentPosition: true
         });
-        
-        // Show layout once Masonry is complete
-        $container.masonry( 'on', 'layoutComplete', onBlogGridLayout() );
+
+        // Once all images within the grid have loaded lay out the grid
+        $( '.blog-grid-layout-wrap-inner' ).imagesLoaded( function() {
+            grid.masonry('layout');
+        });
+
+        // Once the layout is complete hide the loader. Triggering the window resize event fixes a small spacing issue on the grid 
+        grid.one( 'layoutComplete', function() {
+            $( '.blog-grid-layout-wrap' ).removeClass( 'blog-grid-layout-wrap-remove' );
+            $(window).resize();
+        } );
         
     });
-    
-    function onBlogGridLayout() {
-        $( '.blog-grid-layout-wrap' ).removeClass( 'blog-grid-layout-wrap-remove' );
-    }
     
 } )( jQuery );

@@ -45,7 +45,7 @@
     
     $(window).resize(function () {
         
-        
+        $( '.home-slider-block-inner').height( $( '.home-slider-block-bg' ).outerHeight() );
         
     }).resize();
     
@@ -69,6 +69,7 @@
             },
             onCreate: function(items) {
                 $( '.home-slider-wrap' ).removeClass( 'home-slider-remove' );
+                $( '.home-slider-block-inner').height( $( '.home-slider-block-bg' ).outerHeight() );
             },
             scroll: {
                 fx: 'uncover-fade',

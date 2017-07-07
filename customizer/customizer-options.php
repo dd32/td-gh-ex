@@ -116,10 +116,10 @@ function customizer_library_conica_options() {
         'default' => 0
     );
     $choices = array(
-        'conica-header-layout-one' => __( 'Header Layout One', 'conica' ),
-        'conica-header-layout-two' => __( 'Header Layout Two', 'conica' ),
-        'conica-header-layout-three' => __( 'Header Layout Three', 'conica' ),
-        'conica-header-layout-four' => __( 'Header Layout Four', 'conica' )
+        'conica-header-layout-one' => __( 'Standard Header', 'conica' ),
+        'conica-header-layout-two' => __( 'Standard Header Two', 'conica' ),
+        'conica-header-layout-three' => __( 'Standard Header Three', 'conica' ),
+        'conica-header-layout-four' => __( 'Centered Header Layout', 'conica' )
     );
     $options['conica-set-header-layout'] = array(
         'id' => 'conica-set-header-layout',
@@ -295,7 +295,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-pages',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Select Featured Image to display as a page banner<br />- Change banner size and width', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Adjust sidebar widget title size/align/styling<br />- Select Featured Image to display as a page banner<br />- Change banner size and width', 'conica' )
     );
     // --------------------------------------------------------------------------------- Single Pages Settings
 
