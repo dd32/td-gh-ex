@@ -3,11 +3,10 @@
 
 	<footer id="footer">
 		<div class="margin footer-widgets">
-			<?php if ( is_active_sidebar( 'footer' ) ) : ?>
-				<?php dynamic_sidebar( 'footer' ); ?>
-	
-			<?php else: ?>
+		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+			<?php dynamic_sidebar( 'footer' ); ?>
 
+		<?php else: ?>
 			<div class="widget one-third">
 				<h3><?php _e( 'Categories', 'arix' ) ?></h3>
 				<ul>
@@ -28,11 +27,11 @@
 				<?php arix_recent_comments(); ?>
 			</div>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
 			<div class="copyright">
 				<p><?php esc_html_e( 'Copyright &copy;', 'arix' ); ?> <?php bloginfo( 'name' ); ?><br />
-				<a href="<?php echo esc_url( __( 'http://photricity.com/', 'arix' ) ); ?>"><?php esc_html_e( 'Arix theme', 'arix' ); ?></a> <?php esc_html_e( 'by Photricity', 'arix' ); ?></p>
+				<a href="<?php echo esc_url( __( 'https://photricity.com/', 'arix' ) ); ?>"><?php esc_html_e( 'Arix theme', 'arix' ); ?></a> <?php esc_html_e( 'by Photricity', 'arix' ); ?></p>
 			</div>
 		</div>
 	</footer>

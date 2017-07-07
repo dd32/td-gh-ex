@@ -1,5 +1,5 @@
 === Arix WordPress Theme ===
-Version: 1.1.3
+Version: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -7,17 +7,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Arix is a simple and beautiful WordPress theme with a customizable background image that is lightened in the header and darkened in the footer. Arix has a mobile-friendly design with a responsive layout, and supports a custom logo, single-level submenus and widgetized sidebar and footer area. If you're looking to add a light, fresh, and modern touch to your website or blog, Arix is for you.
 
-For more information about Arix please go to http://photricity.com/wordpress-themes/arix/
+For more information about Arix please go to https://photricity.com/wordpress-themes/arix/
 
 == Copyright ==
 
 Arix WordPress Theme, Copyright 2016 Photricity Web Design (photricity.com)
 Arix is distributed under the terms of the GNU GPL
 
-Included background image, svg images and screenshot are Copyright 2016 Photricity Web Design
+Included background image, svg images and screenshot are Copyright Photricity Web Design
 License: GPLv2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Changelog ==
+Version: 1.1.4
+Date: 7/7/2017
+Description: Bugfixes and added template parts. Code cleanup. Various minor updates.
 
 Version: 1.1.3
 Date: 3/15/2017

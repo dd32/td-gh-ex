@@ -1,10 +1,10 @@
 /*
 Theme Name: Arix
-Theme URI: http://photricity.com/wordpress-themes/arix/
+Theme URI: https://photricity.com/wordpress-themes/arix/
 Author: Josh Meyer
-Author URI: http://photricity.com
+Author URI: https://photricity.com
 Description: Arix is a simple and beautiful WordPress theme with a customizable background image that is lightened in the header and darkened in the footer. Arix has a mobile-friendly design with a responsive layout, and supports a custom logo, single-level submenus and widgetized sidebar and footer area. If you're looking to add a light, fresh, and modern touch to your website or blog, Arix is for you.
-Version: 1.1.3
+Version: 1.1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, featured-images, sticky-post, editor-style, two-columns, right-sidebar, custom-background, custom-logo, footer-widgets
@@ -36,8 +36,6 @@ body {
 	font: 1.3em/1.7 Dosis, "Arial Narrow", sans-serif;
 	font-weight: 300;
 	color: #777;
-	/*background: #dce2e5 url(images/arix-background.jpg);*/
-	/*background-position: -99999em -99999em;*/
 	word-wrap: break-word;
 }
 
@@ -101,8 +99,11 @@ body:before {
 	overflow: hidden;
 }
 
-#footer {
+footer {
 	clear: both;
+}
+
+#footer {
 	overflow: hidden;
 	padding-bottom: 3em;
 	color: #fff;
@@ -903,7 +904,6 @@ optgroup,
 select,
 textarea {
 	margin: 0 0 0.2em 0;
-	color: inherit;
 	font: inherit;
 }
 
