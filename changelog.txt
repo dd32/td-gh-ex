@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+LeftSide version 5.1 - july 2017
+- file style and custom-editor-style: added clear and margin-bottom to headings
+
 LeftSide version 5.0 - june 2017
 - file style: minor changes
 
@@ -9,7 +12,7 @@ LeftSide version 4.9 - june 2017
 - replaced select menu with toggle menu 
 - files nav, header and style: added and removed code regarding new navigation
 - files style and custom-editor-style: changed margin of several html tags to avoid margin collapsing
-- in case of a child theme that contains file header: please replace this file
+- if you're using a child theme that contains file header: copy-paste code regarding new navigation
 
 LeftSide version 4.8 - april 2017
 - file single: added post class .post-single
