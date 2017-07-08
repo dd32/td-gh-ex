@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2017-06-16 14:53+0200\n"
+"POT-Creation-Date: 2017-07-08 14:08+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: page-full.php:28 page.php:27 single.php:31
+#: page-full.php:29 page.php:27 single-full.php:33 single.php:31
 msgid "Edit"
 msgstr ""
 
