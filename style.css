@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 5.7
+Version: 5.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: OneColumn is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, dropdown navigation. For more info please check readme file. Enjoy.
@@ -71,12 +71,12 @@ body {background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-siz
 
 
 /* HEADINGS */
-h1 {font-size:2.25em; line-height:1.25em;}
-h2 {font-size:1.80em; line-height:1.25em;}
-h3 {font-size:1.45em; line-height:1.5em;}
-h4 {font-size:1.20em; line-height:1.5em;}
-h5 {font-size:1em; line-height:1.5em;}
-h6 {font-size:0.80em; line-height:2em;}
+h1 {clear:both; margin:0 0 10px; font-size:2.25em; line-height:1.25em;}
+h2 {clear:both; margin:0 0 10px; font-size:1.80em; line-height:1.25em;}
+h3 {clear:both; margin:0 0 10px; font-size:1.45em; line-height:1.5em;}
+h4 {clear:both; margin:0 0 10px; font-size:1.20em; line-height:1.5em;}
+h5 {clear:both; margin:0 0 10px; font-size:1em; line-height:1.5em;}
+h6 {clear:both; margin:0 0 10px; font-size:0.80em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
@@ -137,10 +137,10 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* HEADER LOGO */
 .logo {clear:both; padding:10px 0;}
-.logo h1 {font-size:4em;}
+.logo h1 {margin:0; font-size:4em;}
 .logo h1 a {color:#fff;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {padding:10px 0 0; font-size:2.0em;}
+.logo h2 {margin:0; padding:10px 0 0; font-size:2.0em;}
 
 
 /* HEADER IMAGE */
@@ -176,7 +176,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* PAGE */
-.page-title {clear:both; margin:0 0 20px;}
+.page-title {margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
 .pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
@@ -184,11 +184,11 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 /* POST */
 .post-list {width:100%; clear:both; float:left;}
 .post-single {width:100%; clear:both; float:left;}
-.post-title {clear:both; margin:0 0 20px;}
+.post-title {margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.post-title-single {clear:both; margin:0 0 20px;}
+.post-title-single {margin:0 0 20px;}
 .entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
-.sticky-title {clear:both; text-align:center; margin:0 0 20px; padding:2px 0; border-top:2px solid #eee; border-bottom:2px solid #eee;}
+.sticky-title {margin:0 0 20px; padding:2px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; text-align:center;}
 .postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; color:#333; background:#eee;}
 .more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #eee;}
 a.readmore {float:right; padding:2px 10px; background:#f26535; color:#fff; text-decoration:none;}
@@ -243,8 +243,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-body {background:#fff; border:1px solid #eee; padding:10px; margin:0 0 20px;}
 .comment-content {padding:10px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
-.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
-.comments-title {margin:0 0 20px;}
+.comments-title {margin:0 0 20px; font-size:1.45em;}
+.comment-reply-title, .no-comments {margin:0; font-size:1.45em;}
 .comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
 .bypostauthor .comment-content {font-style:italic;}
 .comment-awaiting-moderation {font-style:italic;}
@@ -265,7 +265,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* WIDGETS */
 .widget {margin:0 0 20px;}
-.widgettitle {clear:both; padding:5px 10px; margin:0 0 10px; background:#eee; color:#333;}
+.widgettitle {padding:5px 10px; margin:0 0 10px; background:#eee; color:#333;}
 
 
 /* FOOTER */
