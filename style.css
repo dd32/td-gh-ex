@@ -1,11 +1,11 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 5.7
+Version: 5.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
-Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: darkorange
@@ -66,17 +66,16 @@ body {background:#f2f2f2; color:#333; font-family:'Open Sans', sans-serif; font-
 
 /* MAIN CONTENT AREA */
 #content {width:56%; float:left; padding:30px 0 30px 4%;}
-#content-right {width:56%; float:right; padding:30px 4% 30px 0;}
 #content-full {width:92%; float:left; padding:30px 4% 30px;}
 
 
 /* HEADINGS */
-h1 {font-size:2.25em; line-height:1.25em;}
-h2 {font-size:1.80em; line-height:1.25em;}
-h3 {font-size:1.45em; line-height:1.5em;}
-h4 {font-size:1.20em; line-height:1.5em;}
-h5 {font-size:1em; line-height:1.5em;}
-h6 {font-size:0.80em; line-height:2em;}
+h1 {clear:both; margin:0 0 10px; font-size:2.25em; line-height:1.25em;}
+h2 {clear:both; margin:0 0 10px; font-size:1.80em; line-height:1.25em;}
+h3 {clear:both; margin:0 0 10px; font-size:1.45em; line-height:1.5em;}
+h4 {clear:both; margin:0 0 10px; font-size:1.20em; line-height:1.5em;}
+h5 {clear:both; margin:0 0 10px; font-size:1em; line-height:1.5em;}
+h6 {clear:both; margin:0 0 10px; font-size:0.80em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
@@ -167,9 +166,9 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* HEADER SECOND LOGO */
 .logo {clear:both; padding:20px 0;}
-.logo h1 {font-weight:bold;}
+.logo h1 {margin:0; font-weight:bold;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {padding:10px 0 0; text-align:center; font-style:italic; font-size:1.45em;}
+.logo h2 {margin:0; padding:10px 0 0; text-align:center; font-style:italic; font-size:1.45em;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
@@ -182,18 +181,18 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* PAGE */
-.page-title {clear:both; margin:0 0 20px;}
+.page-title {margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
 .pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
 .post-single {width:100%; clear:both; float:left;}
-.post-title {clear:both; margin:0 0 20px;}
+.post-title {margin:0 0 20px;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.post-title-single {clear:both; margin:0 0 20px;}
+.post-title-single {margin:0 0 20px;}
 .entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
-.sticky-title {clear:both; text-align:center; margin:10px 0 20px; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
+.sticky-title {margin:10px 0 20px; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; text-align:center;}
 .postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px;}
 .more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #eee;}
 a.readmore {float:right; padding:2px 5px; background:#444; color:#fff; text-decoration:none; border-radius:5px;}
@@ -229,7 +228,6 @@ img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
-.single-image-right {float:right; margin:0.4em 0 0.4em 1em;}
 
 .wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
@@ -253,8 +251,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-body {background:#f8f8f8; border:1px solid #ccc; border-radius:5px; padding:10px; margin:0 0 20px;}
 .comment-content {padding:10px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
-.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
-.comments-title {margin:0 0 20px;}
+.comments-title {margin:0 0 20px; font-size:1.45em;}
+.comment-reply-title, .no-comments {margin:0; font-size:1.45em;}
 .comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
 .bypostauthor .comment-content {font-style:italic;}
 .comment-awaiting-moderation {font-style:italic;}
@@ -275,9 +273,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:32%; float:right; padding:30px 4% 10px 0;}
-#sidebar-left {width:32%; float:left; padding:30px 0 10px 4%;}
 .widget {padding:0 0 20px; margin:0 0 20px; border-bottom:1px solid #eee;}
-.widgettitle {clear:both; color:#333; margin:0 0 20px;}
+.widgettitle {margin:0 0 20px; color:#333;}
 
 
 /* FOOTER */
@@ -302,7 +299,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#container {width:98%; padding:10px 1% 0; margin:0 auto 0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-right, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
 
 	/* HEADER FIRST */
 	#header-first {display:none;}
@@ -339,10 +336,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.45em;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
+	.wp-post-image, .single-image {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar, #sidebar-left {width:100%; clear:both; float:left; padding:0;}
+	#sidebar {width:100%; clear:both; float:left; padding:0;}
 	.widgettitle {margin:0 0 10px;}
 
 	/* FOOTER WIDGET AREA */
