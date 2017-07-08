@@ -36,12 +36,12 @@ body {background:none; color:#333; font-family:'Open Sans', sans-serif; font-siz
 
 
 /* HEADINGS */
-h1 {font-size:2.25em; line-height:1.25em;}
-h2 {font-size:1.80em; line-height:1.25em;}
-h3 {font-size:1.45em; line-height:1.5em;}
-h4 {font-size:1.20em; line-height:1.5em;}
-h5 {font-size:1em; line-height:1.5em;}
-h6 {font-size:0.80em; line-height:2em;}
+h1 {clear:both; margin:0 0 10px; font-size:2.25em; line-height:1.25em;}
+h2 {clear:both; margin:0 0 10px; font-size:1.80em; line-height:1.25em;}
+h3 {clear:both; margin:0 0 10px; font-size:1.45em; line-height:1.5em;}
+h4 {clear:both; margin:0 0 10px; font-size:1.20em; line-height:1.5em;}
+h5 {clear:both; margin:0 0 10px; font-size:1em; line-height:1.5em;}
+h6 {clear:both; margin:0 0 10px; font-size:0.80em; line-height:2em;}
 
 
 /* LINKS AND HTML TAGS */
