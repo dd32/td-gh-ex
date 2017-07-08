@@ -679,12 +679,6 @@ function actinia_recurring_elements() {
 }
 
 function actinia_colors_generate_css() {
-           
-    wp_enqueue_style(
-        'custom-style',
-        get_template_directory_uri() . '/custom_script.css'
-    );    
-    
     $custom_css = '';
     $color_scheme = esc_attr( get_theme_mod( 'actinia_color_scheme' ) );
     if ( ! empty( $color_scheme ) ) :
@@ -701,7 +695,7 @@ function actinia_colors_generate_css() {
         }
     endif;
     
-    wp_add_inline_style( 'custom-style', $custom_css );            
+    wp_add_inline_style( 'actinia-style', $custom_css );            
 }
 
 add_action( 'wp_enqueue_scripts', 'actinia_colors_generate_css' );
