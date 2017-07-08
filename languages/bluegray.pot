@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BlueGray\n"
-"POT-Creation-Date: 2017-06-16 14:52+0200\n"
+"POT-Creation-Date: 2017-07-08 14:07+0200\n"
 "PO-Revision-Date: 2015-11-15 16:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid " +"
 msgstr ""
 
-#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:31
+#: page-full.php:29 page.php:27 single-full.php:33 single.php:31
 msgid "Edit"
 msgstr ""
 
