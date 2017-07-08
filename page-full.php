@@ -1,7 +1,8 @@
 <?php
 /*
  * Template Name: Full Width Template
- * Description: Template without sidebar.
+ * Description: Template without sidebar
+ * Template Post Type: page
  */
 ?>
 

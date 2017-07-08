@@ -1,12 +1,19 @@
 CHANGELOG
 =========
 
+SimplyBlack version 5.6 - july 2017
+- added full width post template
+- removed page template with left sidebar
+- because other parts of theme do not support left sidebar
+- removed files page-sidebar-left and sidebar-left
+- file style and custom-editor-style: added clear and margin-bottom to headings
+
 SimplyBlack version 5.5 - june 2017
 - new jquery navigation for mobile screens
 - replaced select menu with toggle menu 
 - files nav, header and style: added and removed code regarding new navigation
 - files style and custom-editor-style: changed margin of several html tags to avoid margin collapsing
-- in case of a child theme that contains file header: please replace this file
+- if you're using a child theme that contains file header: copy-paste code regarding new navigation
 
 SimplyBlack version 5.4 - april 2017
 - file style: minor changes
