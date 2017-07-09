@@ -14,7 +14,7 @@
  */
 function bfastmag_get_prevdem_img_src( $i = 0 ) {
 	// prevent infinite loop
-	if ( 10 == $i ) {
+	if ( 6 == $i ) {
 		return '';
 	}
 	$path = apply_filters( 'bfastmag_prevdem_home_filter', get_template_directory() . '/inc/prevdem_tpacific/img/' );
@@ -70,4 +70,3 @@ function bfastmag_the_post_thumbnail( $img_tag_src ) {
 
 }
 add_filter( 'bfastmag_get_prev_img', 'bfastmag_the_post_thumbnail' );
-

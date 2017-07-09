@@ -15,10 +15,8 @@
 get_header(); 
 
 if ( bfastmag_isprevdem() ) {
-	bfastmag_action_front_page();
-	bfastmag_action_content_bloc_start();
-	bfastmag_action_content_bloc();
-
+ 	bfastmag_action_content_bloc_start();
+ 
 }else{
 	bfastmag_action_content_bloc_start();
 

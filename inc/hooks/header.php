@@ -151,13 +151,11 @@ function bfastmag_header() {
                                         'menu_id' => 'primary-menu',
                                         'depth' => 1,
                                                 ) );  
-                                    }else{
-                                          _e( 'Top Menu.Set Menu Using Customize', 'bfastmag' );
-                                    }
+                                    } 
                                     ?>
                             </nav><!-- #navigation-top -->
                     </div>
-                    <div class="tp_time_date"><i class="fa fa-calendar-o"></i><span></span></div>
+                    <div class="tp_time_date"><i class="fa fa-calendar-o"></i><span><?php  echo date(get_option('date_format'));?></span></div>
                 </div>
 
                 <?php bfastmag_after_navbar_top();?>
@@ -197,20 +195,7 @@ function bfastmag_header() {
                     <?php
                     if ( is_active_sidebar( 'bfastmag-header-ad' ) ) {
                         dynamic_sidebar( 'bfastmag-header-ad' );
-                    } else {
-                        the_widget(
-                            'bfastmag_Ad_Code',
-                            array(
-                                'link_ad'  => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
-                                'image_uri_ad'   => apply_filters( 'bfastmag_default_top_banner_filter', get_template_directory_uri() . '/assets/images/banner_default.png' ),
-                                'ad_type' => 'image',
-                            ),
-                            array(
-                                'before_widget' => '<div id="bfastmag_Ad_Code-widget-2" class="widget bfastmag_Ad_Code">',
-                                'after_widget'  => '</div>',
-                            )
-                        );
-                    } ?>
+                    }?>
                 </div>
 
                 <?php bfastmag_action_after_inner_header(); ?>
@@ -229,28 +214,14 @@ function bfastmag_header() {
                 <a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'bfastmag' ); ?>"><?php _e( 'Skip to content', 'bfastmag' ); ?></a>
 
                 <?php 
-                     if ( has_nav_menu( 'bfastmag-top' ) ) {
+                    
                                  wp_nav_menu( array(
                                     'theme_location' => 'bfastmag-primary',
                                     'menu_class' => 'nav-menu',
                                     'menu_id' => 'primary-menu',
                                     'depth' => 6,
                                 ) );
-                             }else{
-                             ?>
-                    <div class="menu-1-container">
-                    <ul id="primary-menu" class="nav-menu">
-                        <li class="menu-item menu-item-home">
-                            <a href="<?php echo esc_url( home_url( '/' ));  ?>" title="">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            </a></li>        
-                              <li class="menu-item">
-                            <a href="#" title="">
-                            <?php _e( 'Primary Menu. Set Menu Using Customize', 'bfastmag' );?>
-                            </a></li>
-                        </ul>
-                        </div>
-                        <?php  }?>
+                          ?>
 
                 <button type="button" class="navbar-btn nav-desktop"><i class="fa fa-search"></i></button>
 
@@ -426,11 +397,16 @@ if ( ! function_exists( 'bfastmag_content_bloc_start' ) ) :
  *
  */
 function bfastmag_home_content_bloc_start(){
+
+    $bfast_lo_class = 'col-md-9';
+    if ( ! is_active_sidebar( 'bfastmag-sidebar' ) ) {
+        $bfast_lo_class = 'col-md-12';
+    }
 ?>
     <div class="container">
         <div class="row">
 
-            <div class="bfastmag-content-left col-md-9">
+            <div class="bfastmag-content-left <?php echo $bfast_lo_class;?>">
 <?php
 
 }

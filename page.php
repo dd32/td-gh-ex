@@ -12,11 +12,16 @@
  * @package bfastmag
  */
 
-get_header(); ?>
+get_header(); 
+ $bfast_lo_class = 'col-md-9';
+    if ( ! is_active_sidebar( 'bfastmag-sidebar' ) ) {
+        $bfast_lo_class = 'col-md-12';
+    }
+?>
 
 	<div id="primary" class="content-area">
 	 
-		<div  class="bfastmag-content-left col-md-9">
+		<div  class="bfastmag-content-left <?php echo $bfast_lo_class;?>">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>

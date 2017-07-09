@@ -26,10 +26,12 @@
 		</figure>
 	</div><!-- End .tp-post-thumbnail -->
 	<?php
-	bfastmag_entry_date();
- 
-	 
-	bfastmag_content_footer(); ?>
+			 if ( 'post' === get_post_type() ) {
+			 		bfastmag_entry_date();
+		 			bfastmag_content_footer();
+			 }
+					
+ 			 ?>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 	<div class="entry-content">

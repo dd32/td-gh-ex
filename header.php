@@ -17,13 +17,9 @@
  */
 bfastmag_action_before_head();
 bfastmag_action_before_wp_head();
- wp_head(); 
-/**
-	 * bfastmag_action_after_wp_head hook
- 	 *
-	 * @hooked null
-	 */
-bfastmag_action_after_wp_head();
+
+
+wp_head(); 
 ?>
 
 </head>

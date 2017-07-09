@@ -23,14 +23,7 @@ function bfastmag_action_before_wp_head() {
 	do_action( 'bfastmag_action_before_wp_head' );
 }
 
-/**
- * Hook at the After wp_head 
- */
-function bfastmag_action_after_wp_head() {
-	do_action( 'bfastmag_action_after_wp_head' );
-
-}
-
+ 
 
 /**
  * Hook at the beginning the page content wrap.

@@ -247,9 +247,7 @@ function bfastmag_widgets_init() {
 		);
 	}
 
- 	register_widget( 'bfastmag_sb_ad' );
-	register_widget( 'bfastmag_Ad_Code' );
- 	
+  	
 }
 add_action( 'widgets_init', 'bfastmag_widgets_init' );
 

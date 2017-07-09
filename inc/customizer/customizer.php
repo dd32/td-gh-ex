@@ -176,10 +176,11 @@ function bfastmag_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'bfastmag_set_original_fp', array(
 		'sanitize_callback' => 'sanitize_text_field',
+		'default' => false
 	));
 	$wp_customize->add_control( 'bfastmag_set_original_fp', array(
 		'type' => 'checkbox',
-		'label' => esc_html__( 'Use a different custom Page template as frontpage?','bfastmag' ),
+		'label' => esc_html__( 'Use Magazine Style frontpage?','bfastmag' ),
 		'section' => 'static_front_page',
 		'priority'    => 9,
 	));
@@ -200,12 +201,7 @@ function bfastmag_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
-
-	$wp_customize->add_setting( 'bfastmag_top_slider_post_text_color', array(
-		'default'           => '#ffffff',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
+ 
 
 	$wp_customize->add_setting( 'bfastmag_blocks_post_title_color', array(
 		'default'           => apply_filters( 'bfastmag_blocks_post_title_color_default_filter', '#333' ),
@@ -213,11 +209,7 @@ function bfastmag_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_setting( 'bfastmag_blocks_post_text_color', array(
-		'default'           => apply_filters( 'bfastmag_blocks_post_text_color_default_filter', '#333' ),
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
+ 
 
 	$wp_customize->add_setting( 'bfastmag_social_links', array(
 		'transport'         => 'postMessage',
@@ -230,7 +222,7 @@ function bfastmag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'bfastmag_featured_big_disable', array(
-		'defalt'            => false,
+		'default'            => false,
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
@@ -241,7 +233,7 @@ function bfastmag_customize_register( $wp_customize ) {
 	) );
 
  	$wp_customize->add_setting( 'bfastmag_featured_slider_disable', array(
-		'defalt'            => false,
+		'default'            => false,
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
@@ -288,7 +280,7 @@ function bfastmag_customize_register( $wp_customize ) {
 	
  		}
 		$wp_customize->add_setting( 'bfastmag_block' . $i . '_disable', array(
-			'defalt'            => false,
+			'default'            => true,
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 
@@ -345,7 +337,7 @@ function bfastmag_customize_register( $wp_customize ) {
 	 */
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bfastmag_title_color', array(
-		'label'    => esc_html__( 'Title color', 'bfastmag' ),
+		'label'    => esc_html__( 'Home Blocks, Widget Title color', 'bfastmag' ),
 		'section'  => 'colors',
 		'priority' => 1,
 	) ) );
@@ -356,24 +348,14 @@ function bfastmag_customize_register( $wp_customize ) {
 		'priority' => 3,
 	) ) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bfastmag_top_slider_post_text_color', array(
-		'label'    => esc_html__( 'Top slider\'s posts text color', 'bfastmag' ),
-		'section'  => 'colors',
-		'priority' => 4,
-	) ) );
+ 
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bfastmag_blocks_post_title_color', array(
 		'label'    => esc_html__( 'Block\'s posts title color', 'bfastmag' ),
 		'section'  => 'colors',
 		'priority' => 5,
 	) ) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bfastmag_blocks_post_text_color', array(
-		'label'    => esc_html__( 'Block\'s posts text color', 'bfastmag' ),
-		'section'  => 'colors',
-		'priority' => 6,
-	) ) );
-
+ 
 	$wp_customize->add_control( new bfastmag_General_Repeater( $wp_customize, 'bfastmag_social_links', array(
 		'label'                => esc_html__( 'Add New Social Link', 'bfastmag' ),
 		'section'              => 'bfastmag_header_social_links',

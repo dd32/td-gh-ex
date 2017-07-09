@@ -32,7 +32,16 @@ if ( ! jQuery( 'body' ).hasClass( 'tp_anim-enabled' ) ) {
       btAnimateRows();
     });
   }
+jQuery('article').each(function(){
+  var  tp_thu_height = jQuery(this).find('.tp-post-thumbnail').outerHeight(true);
+  var catlinks = jQuery(this).find('.cat-links').outerHeight(true);
+  if( catlinks > tp_thu_height){
+    jQuery(this).find('.tp-post-thumbnail').css("height", catlinks);
+   
 
+  }
+
+});
 jQuery(window).on('resize', function(){
 
   //Search Box
@@ -50,15 +59,7 @@ jQuery(document).ready(function($) {
 
 
     jQuery('.bfastmag-breaking-container').ticker();
-var d = new Date();
-
-var month = d.getMonth()+1;
-var day = d.getDate();
-
-var tp_date = ((''+day).length<2 ? '0' : '') + day+ '-' +
-    ((''+month).length<2 ? '0' : '') + month + '-' +
-    d.getFullYear() ;
-    jQuery('.tp_time_date').find('span').text(tp_date);
+ 
  
   var bfastmag_sticky = jQuery('.bfastmag-sticky');
 
@@ -119,7 +120,7 @@ if(jQuery('body').hasClass('prevpac')){
     to = to == -1 ? pr_url.length : to + 1;
     pr_url = pr_url.substring(0, to);
      var ii=1; jQuery('.bfastmag-featured-slider img,.bfastmag-fp-s1 img,.bfastmag-fp-s3-posts img,.bfastmag-featured-slider,.featured-wrap img,.bfastmag-fp-s2 img').each(function(){
-  if(ii>10) ii=1;
+  if(ii>6) ii=1;
     jQuery(this).attr('src',pr_url+ii+'.jpg');
     ii++;
   });    

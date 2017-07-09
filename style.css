@@ -1,10 +1,10 @@
 /*
-Theme Name: bFastMag
+Theme Name: BfastMag
 Theme URI: https://themepacific.com/bfastmag/
 Author: ThemePacific
 Author URI: https://themepacific.com/
 Description: bfastmag is an Ultra Fast Responsive free WordPress theme for News, News Paper, magazines, tech blogs, Personal Blogs, Fashion blogs and photography, Photogallery Blogs. Theme is very responsive, highly customizable built with Bootstrap. It comes with the flat, minimalist, magazine style homepage Design with boxed layout, Featured Grid Slider, Multi Style Drop-down Menu. Awesome design for Categories, Tags, Archive pages with Mutiple Sidebars and Ad, Category Widgets. bfastmag Offers SEO friendly, Retina ready, Mobile Optimized design and Google Adsense Banner features. Also, It features Custom Backgrounds, theme cutomizer options. bfastmag supports many 3rd party plugins, compatiple with Jetpack,Contact Form 7,WP Product Review, Page Builder. bfastmag is Translation ready theme supports WPML. For demo: http://demo.themepacific.com/bfastmag
-Version: 1.0.0
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bfastmag
@@ -328,8 +328,7 @@ body {
 }
 blockquote:before,
 blockquote:after,
-q:before,
-q:after {
+  {
     content: '”';
     opacity: .4;
     font-family: Roboto;
@@ -341,9 +340,12 @@ q:after {
     top: 8px;
     left: 14px;
 }
-blockquote,
-q {
+blockquote {
     quotes: "" "";
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
 }
 hr {
     height: 1px;
@@ -964,7 +966,7 @@ a:active {
 .admin-bar .sticky-menu {
     top: 32px;
 }
-li.menu-item.menu-item-home a {
+.main-navigation li.menu-item.menu-item-home-icon a {
     color: #fff;
     font-size: 25px;
     line-height: 14px;
@@ -973,7 +975,7 @@ li.menu-item.menu-item-home a {
     -webkit-transition: background-color 100ms linear;
     transition: background-color 100ms linear;
 }
-.tp_header_v2 .main-navigation .sub-menu a {
+.tp_header_v2 .main-navigation .sub-menu a,.tp_header_v2 .main-navigation .children a {
     padding: 8px 15px;
     color: #505050;
     font-weight: 500;
@@ -981,11 +983,12 @@ li.menu-item.menu-item-home a {
 .tp_header_v2 .main-navigation .sub-menu a:hover {
     color: #f88c00
 }
-li.menu-item.menu-item-home a:hover {
+
+li.menu-item.menu-item-home-icon a:hover {
     background: #cc7300;
     color: #fff;
 }
-.tp_header_v2 li.menu-item.menu-item-home a {
+.tp_header_v2 li.menu-item.menu-item-home-icon a {
     padding: 19px 24px;
 }
 .tp_header_v2 .main-navigation {
@@ -2497,7 +2500,7 @@ styled buttons not container for vertical centered navs*/
 }
 .bfastmag-featured-slider .tp-item-block .tp-post-item-meta .entry-title a {
     display: block;
-    color: #fff!important;
+    color: #fff;
     font-size: 28px;
     padding: 0 10px;
     line-height: 32px;
@@ -3026,10 +3029,10 @@ a.bfast-in {
     transition: transform 1000ms cubic-bezier(.190, 1, .220, 1) 200ms, opacity 1000ms cubic-bezier(.190, 1, .220, 1) 200ms;
 }
 .animate-moveup {
-    -webkit-transform: translateY(100px);
+/*    -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
     -ms-transform: translateY(100px);
-    transform: translateY(100px);
+    transform: translateY(100px);*/
 }
 .animate-moveright {
     -webkit-transform: translateX(-100px);
@@ -3038,7 +3041,7 @@ a.bfast-in {
     transform: translateX(-100px);
 }
 .animate-fadein {
-    opacity: 0;
+   /* opacity: 0;*/
 }
 .touch .animate-fadein {
     opacity: 1;
@@ -3050,7 +3053,7 @@ a.bfast-in {
     transform: translateX(-100px);
 }
 .animate-moveup {
-    transform: translateY(100px);
+    /*transform: translateY(100px);*/
 }
 .animate-movedown {
     transform: translateY(-100px);
@@ -3100,7 +3103,7 @@ a.bfast-in {
 .tp-post-item-meta a,
 .entry-meta a {
     font-size: 12px;
-    color: #404040!important;
+    color: #404040;
 }
 .tp-post-item-meta a:hover,
 .entry-meta a:hover {
@@ -3925,7 +3928,7 @@ h2.comments-title {
     background-color: rgba(255, 255, 255, 0.46);
 }
 .entry-title {
-    margin: 10px 0 0;
+    margin: -3px 0 0;
     font-size: 36px;
     line-height: 1.4;
     font-weight: 700;
@@ -4521,3 +4524,12 @@ a.bfast_ss_ico i {
     font-size: 16px;
     vertical-align: top;
 }
+@media print {
+body {background:white; 
+     font-size:10pt; 
+     margin:0; }
+.sidebar,.navbar-top,.bfastmag-related-posts-wrap,#respond, .pagination{ display:none; }
+#header { height:75px; }
+ 
+#footer, .ad { display:none; }
+ 

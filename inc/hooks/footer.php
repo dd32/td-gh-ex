@@ -107,7 +107,7 @@ add_action( 'bfastmag_action_footer_container_start', 'bfastmag_footer_container
  */
 function bfastmag_footer() {
     ?>
-    <div class="col-md-8 col-md-push-4 bfastmag-footer-menu">
+    <div class="col-md-6 col-md-push-6 bfastmag-footer-menu">
         <?php
 
         $defaults = array(
@@ -121,12 +121,15 @@ function bfastmag_footer() {
 
         ?>
     </div><!-- End .col-md-6 -->
-    <div class="col-md-4 col-md-pull-8 poweredby">
+    <div class="col-md-6 col-md-pull-6 poweredby">
         <?php printf(
             /* translators: 1 - Theme name , 2 - WordPress link */
-            __( ' %1$s %2$s Powered by %3$s', 'bfastmag' ), esc_html__('&copy; Copyright 2017 - ','bfastmag'),
-            sprintf( '<a href="%1s" title="%2s">%3s</a>', esc_url('https://themepacific.com/bfastmag/'),esc_attr__( 'Free bfast Magazine WordPress Theme by Themepacific', 'bfastmag' ), esc_html__( 'bfastmag', 'bfastmag' ) ),
-            sprintf( '<a href="http://wordpress.org/">%s</a>', esc_html__( 'WordPress', 'bfastmag' ) )
+            __( ' %4$s %1$s %5$s  %2$s Powered by %3$s', 'bfastmag' ),
+             esc_html__('&copy;  ','bfastmag'),
+            sprintf('%s <a href="%1s" title="%2s">%3s</a>',esc_html__( '- Designed By', 'bfastmag' ),  esc_url('https://themepacific.com/bfastmag/'),esc_attr__( 'Free bfast News Magazine WordPress Theme', 'bfastmag' ), esc_html__( 'BfastMag', 'bfastmag' ) ),
+            sprintf( '<a href="https://wordpress.org/">%s</a>', esc_html__( 'WordPress', 'bfastmag' )),
+            get_bloginfo( 'name' ),
+            date( 'Y' )
         ); ?>
     </div><!-- End .col-md-6 -->
     <?php

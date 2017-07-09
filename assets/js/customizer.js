@@ -211,7 +211,7 @@ function bfastmag_strip_tags(input, allowed) {
     // Titles color
     wp.customize('bfastmag_title_color', function (value) {
         value.bind(function (to) {
-            $('.title-border span,	.post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a, .page-header h1').css({'color': to});
+            $('.title-border span,	.page-header h1').css({'color': to});
         });
     });
 

@@ -34,17 +34,7 @@
 	 				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"> <?php the_author(); ?></a>
 	 			  	<span class="tp-post-item-date"> <?php echo get_the_date( ); ?></span>
 				</div> 
-	 			  	<div class="socialShareRow">
-
-	 			  	<span class="bfastmag_Facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink());?>" target="_self" class="bfast_ss_ico"><i class="fa fa-facebook"></i></a></span>
-	 			  	
-	 			  	<span class="bfastmag_Twitter"><a href="https://twitter.com/home?status=<?php echo esc_url(get_permalink());?>" target="_self" class="bfast_ss_ico"><i class="fa fa-twitter"></i></a></span>
-	 			  	
-	 			  	<span class="bfastmag_Linkedin"><a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(get_permalink());?>" target="_self" class="bfast_ss_ico"><i class="fa fa-linkedin"></i></a></span>
-	 			  	
-	 			  	<span class="bfastmag_GooglePlus"><a href="https://plus.google.com/share?url=<?php echo esc_url(get_permalink());?>" target="_self" class="bfast_ss_ico"><i class="fa fa-google-plus"></i></a></span>
-	 			  	
- 	 			  	</div>
+ 
 				   
 			  </div> <!-- End .entry-meta -->
 				  <div class="entry-content">
@@ -123,7 +113,7 @@
 				</article>
 
 				<?php $bfastmag_single_post_hide_related_posts = get_theme_mod( 'bfastmag_single_post_hide_related_posts' ); ?>
-				
+				<div class="bfastmag-related-posts-wrap">
 				<h3 class="mb30 title-underblock title-border title-bg-line custom bfastmag-related-posts-title <?php if ( $bfastmag_single_post_hide_related_posts == true ) { echo 'bfastmag_hide';} ?> "><span><?php esc_html_e( 'Related Posts', 'bfastmag' ); ?><span class="line"></span></span></h3>
 
  
@@ -174,6 +164,7 @@
 					}// End if().
 					wp_reset_postdata(); ?>
 				</div><!-- End .bfastmag-related-posts -->
+				</div>
 			</div><!-- End .col-md-12 -->
 		  </div><!-- End .row -->
 		  <div class="mb20"></div><!-- space -->

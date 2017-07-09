@@ -17,7 +17,7 @@ function bfastmag_custom_menu_filter( $items, $args ) {
      */
     if ( $args->theme_location == 'bfastmag-primary' ) {        
 
-        $home = '<li class="menu-item menu-item-home"><a href="' . esc_url( home_url( '/' ) ) . '" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"><i class="fa fa-home" aria-hidden="true"></i></a></li>';
+        $home = '<li class="menu-item menu-item-home menu-item-home-icon"><a href="' . esc_url( home_url( '/' ) ) . '" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"><i class="fa fa-home" aria-hidden="true"></i></a></li>';
         $items = $home . $items;
     }
 
@@ -26,11 +26,11 @@ function bfastmag_custom_menu_filter( $items, $args ) {
 
 
 /**
- * Sets the Page Template Instead of front-page.
+ * Sets the Magazine Template Instead of front-page.
  */
 function bfastmag_fp_template_set( $template ) {
-	$bfastmag_set_original_fp = get_theme_mod( 'bfastmag_set_original_fp' );
-	if ( ! $bfastmag_set_original_fp ) {
+	$bfastmag_set_original_fp = get_theme_mod( 'bfastmag_set_original_fp' ,false);
+	if ( $bfastmag_set_original_fp ) {
 		return is_home() ? '' : $template;
 	} else {
 		return '';
@@ -133,7 +133,7 @@ function bfastmag_comment_action( $args, $comment, $depth, $add_below ) {
 		if ( $args['avatar_size'] != 0 ) {
 			echo get_avatar( $comment, $args['avatar_size'] );
 		} ?>
-		<?php /* translators: 1- comment author link, 2 - comment date, 3 - comment time */ printf( __( '<h4 class="media-heading">%1$s</h4><span class="comment-date">(%2$s - %3$s)</span>','bfastmag' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)','bfastmag' ), '  ', '' ); ?>
+		<?php /* translators: 1- comment author link, 2 - comment date, 3 - comment time */ printf( __( '<h4 class="media-heading">%1$s</h4><a href="%4$s"><span class="comment-date">(%2$s - %3$s)</span></a>','bfastmag' ), get_comment_author_link(), get_comment_date(),  get_comment_time(),get_comment_link() ); ?><?php edit_comment_link( __( '(Edit)','bfastmag' ), '  ', '' ); ?>
 
 	</div>
 

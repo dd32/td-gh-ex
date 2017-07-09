@@ -14,8 +14,7 @@ if( ! function_exists( 'bfastmag_inline_style' ) ) :
     $bfastmag_title_color = esc_attr( get_theme_mod( 'bfastmag_title_color',apply_filters( 'bfastmag_title_color_default_filter','#333' ) ) );
     if ( ! empty( $bfastmag_title_color ) ) {
         echo '.title-border span { color: ' . $bfastmag_title_color . ' }';
-        echo '.post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a { color: ' . $bfastmag_title_color . ' }';
-        echo '.page-header h1 { color: ' . $bfastmag_title_color . ' }';
+         echo '.page-header h1 { color: ' . $bfastmag_title_color . ' }';
     }
 
     $bfastmag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor',apply_filters( 'bfastmag_header_textcolor_default_filter','#181818' ) ) );
