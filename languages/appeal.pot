@@ -1,0 +1,578 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Appeal\n"
+"POT-Creation-Date: 2017-07-08 22:01-0700\n"
+"PO-Revision-Date: 2017-07-08 22:01-0700\n"
+"Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
+"Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_nx;"
+"_x\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: nothing.php:2
+msgid "Page not available."
+msgstr ""
+
+#: functions.php:64
+msgid "Main Menu Top"
+msgstr ""
+
+#: functions.php:65
+msgid "Above Footer Links"
+msgstr ""
+
+#: functions.php:84
+msgid "Four by three Ratio Thumb"
+msgstr ""
+
+#: functions.php:142
+msgid "on"
+msgstr ""
+
+#: functions.php:253
+msgid "Read Article"
+msgstr ""
+
+#: functions.php:355
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:356 functions.php:365
+msgid "Used on every page."
+msgstr ""
+
+#: functions.php:364
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:374
+msgid "Top Above Content"
+msgstr ""
+
+#: functions.php:375
+msgid "Only works on Top Advert and Page templates"
+msgstr ""
+
+#: functions.php:384
+msgid "Bottom Below Content"
+msgstr ""
+
+#: functions.php:393
+msgid "Footer Left"
+msgstr ""
+
+#: functions.php:402
+msgid "Footer Middle"
+msgstr ""
+
+#: functions.php:411
+msgid "Footer Right"
+msgstr ""
+
+#: author.php:15
+msgid "Author Website "
+msgstr ""
+
+#: author.php:20
+msgid "Archives for "
+msgstr ""
+
+#: author.php:23 content.php:492
+msgid "Articles by "
+msgstr ""
+
+#: author.php:28 content.php:498
+msgid "E-Mail: "
+msgstr ""
+
+#: author.php:31 content.php:501
+msgid "email link text to author"
+msgstr ""
+
+#: sidebar.php:6 footer.php:84
+msgid "Top/Pg."
+msgstr ""
+
+#: home.php:19
+msgid "show sidebars and navaigation options"
+msgstr ""
+
+#: comments.php:37
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: comments.php:39
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:46
+msgid "Send"
+msgstr ""
+
+#: comments.php:49
+msgid "Write a Reply or Comment"
+msgstr ""
+
+#: comments.php:53
+#, php-format
+msgid ""
+"You may use these\n"
+"                                 <abbr title=\"HyperText Markup Language"
+"\">HTML</abbr>\n"
+"                                 tags and attributes: %s"
+msgstr ""
+
+#: comments.php:61
+msgid "Respond"
+msgstr ""
+
+#: comments.php:63
+msgid "Comment textarea box"
+msgstr ""
+
+#: comments.php:69
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:76
+msgid "Your email address will not be published."
+msgstr ""
+
+#: content-header.php:87
+msgid "Author Gravatar is shown here. Clickable link to Author page."
+msgstr ""
+
+#: content-header.php:94
+msgid "Author Gravatar"
+msgstr ""
+
+#: content-header.php:98
+msgid "Article by: "
+msgstr ""
+
+#: content-header.php:101
+msgid "Authors link to author website or other works."
+msgstr ""
+
+#: header.php:13
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:45
+msgid "Navigation"
+msgstr ""
+
+#: header.php:57
+msgid "Home"
+msgstr ""
+
+#: theme-options.php:30
+msgid "Instructions Etc"
+msgstr ""
+
+#: theme-options.php:31
+msgid "Theme Options"
+msgstr ""
+
+#: theme-options.php:49
+msgid "Theme Overview"
+msgstr ""
+
+#: theme-options.php:58
+msgid "Appeal Theme Instructions and General Information"
+msgstr ""
+
+#: theme-options.php:74
+msgid "Appeal theme page"
+msgstr ""
+
+#: theme-options.php:76
+msgid "General Overview of Theme Settings"
+msgstr ""
+
+#: theme-options.php:81
+msgid "Excerpt Instructions"
+msgstr ""
+
+#: theme-options.php:82
+msgid "Two Part Page"
+msgstr ""
+
+#: theme-options.php:83
+msgid "Three Wide Page"
+msgstr ""
+
+#: theme-options.php:84
+msgid "Tips and Information"
+msgstr ""
+
+#: theme-options.php:89
+msgid ""
+"To utilize the Pullquote excerpt option you will need to enable the Screen "
+"Options from the Pages or Posts Editor page. See first picture below."
+msgstr ""
+
+#: theme-options.php:89
+msgid ""
+"To add the Pullquote you will use the Excerpt box which should now appear at "
+"the bottom of the Editor box. See picture 2 below."
+msgstr ""
+
+#: theme-options.php:91
+msgid ""
+"Page template that is TwoPart Template can divide the page content by using "
+"the"
+msgstr ""
+
+#: theme-options.php:94
+msgid ""
+"Three Width Page Template is a normal copy of your content and displays the "
+"page with small sidebar on the left and a wider sidebar on the right."
+msgstr ""
+
+#: theme-options.php:96
+msgid "Customize Theme"
+msgstr ""
+
+#: theme-options.php:98
+#, php-format
+msgid ""
+"To set up the Pullquote color, width and length, open Customizer </p>\n"
+"    <p style=\"text-align:center\"><a href=\"%s\" class=\"button-primary"
+"\">customizer</a>"
+msgstr ""
+
+#: theme-options.php:108
+msgid "Screen Options pull-down menu"
+msgstr ""
+
+#: theme-options.php:109
+msgid "Editor Excerpt meta-box for Pullquote"
+msgstr ""
+
+#: theme-options.php:112
+msgid "Other Notes"
+msgstr ""
+
+#: theme-options.php:112
+msgid ""
+"&bull; Author Links are taken from the User Profile. Be creative by adding "
+"user profile info into Bio textarea."
+msgstr ""
+
+#: theme-options.php:112
+msgid ""
+"To set up social media links in the page footer--and the popup--use "
+"Appearance > Menus  then create your links using the <Custom Links> panel."
+msgstr ""
+
+#: theme-options.php:117
+msgid "ref. use more tag in editor:"
+msgstr ""
+
+#: theme-options.php:118
+msgid "ref. private page viewing:"
+msgstr ""
+
+#: theme-options.php:122
+msgid "Three Wide Template"
+msgstr ""
+
+#: theme-options.php:124
+msgid "Full width Template"
+msgstr ""
+
+#: theme-options.php:125
+msgid ""
+"Appeal has an additional template Full Width Page that can be used for "
+"galleries or larger content."
+msgstr ""
+
+#: theme-options.php:137
+msgid ""
+"Also try the Plugin Depict by TSW to create an expanded Author Profile for "
+"this theme."
+msgstr ""
+
+#: theme-options.php:137
+#, php-format
+msgid ""
+"Plugin can be found online at <a href=\"%s\" title=\"w.org plugins\" target="
+"\"_blank\">https://wordpress.org/plugins/depict/</a>"
+msgstr ""
+
+#: theme-options.php:139
+msgid "Donate if you like."
+msgstr ""
+
+#: part-metadata.php:13
+msgid "1 Response"
+msgstr ""
+
+#: part-metadata.php:23
+msgid "Edit"
+msgstr ""
+
+#: part-metadata.php:40
+msgid "Leave a comment"
+msgstr ""
+
+#: part-metadata.php:41
+msgid "1 Comment"
+msgstr ""
+
+#: part-metadata.php:42
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:68
+msgid "Design by "
+msgstr ""
+
+#: content.php:212 content.php:371
+msgid "Pages : "
+msgstr ""
+
+#: content.php:218 content.php:377
+msgid "Next page"
+msgstr ""
+
+#: content.php:219 content.php:378
+msgid "Previous page"
+msgstr ""
+
+#: content.php:464
+msgid "Information about the author you selected"
+msgstr ""
+
+#: content.php:469
+msgid "Author:  "
+msgstr ""
+
+#: content.php:481
+msgid "link to author"
+msgstr ""
+
+#: content.php:485
+msgid "Author Page and Archives for "
+msgstr ""
+
+#: content.php:489
+msgid "Number of articles by this author, "
+msgstr ""
+
+#: content.php:505 content.php:506
+msgid "Close"
+msgstr ""
+
+#: search.php:8
+msgid "Ok, here is what we found"
+msgstr ""
+
+#: search.php:23 archive.php:78
+msgid "View Article..."
+msgstr ""
+
+#: nav-content.php:13
+msgid "Older posts"
+msgstr ""
+
+#: nav-content.php:25
+msgid "Newer posts"
+msgstr ""
+
+#: nav-content.php:40
+msgid "Previous Post"
+msgstr ""
+
+#: nav-content.php:42
+msgid "&laquo; Previous: "
+msgstr ""
+
+#: nav-content.php:46
+msgid "Next Post"
+msgstr ""
+
+#: nav-content.php:48
+msgid "Next: "
+msgstr ""
+
+#: customize.php:18
+msgid "Appeal Theme Controls"
+msgstr ""
+
+#: customize.php:177
+msgid "Header, Footer and Sidebars Background"
+msgstr ""
+
+#: customize.php:179
+msgid ""
+"Select the background color of the header area,\n"
+"                    the footer and sidebars"
+msgstr ""
+
+#: customize.php:192
+msgid "Content Background Color"
+msgstr ""
+
+#: customize.php:194
+msgid "Sets background color of Post and Page content"
+msgstr ""
+
+#: customize.php:207
+msgid "Links Color"
+msgstr ""
+
+#: customize.php:209
+msgid "Select the color for hyperlinks. May not effect everything."
+msgstr ""
+
+#: customize.php:222
+msgid "PullQuote Text Color"
+msgstr ""
+
+#: customize.php:224
+msgid "Select the color for pullquote excerpt on articles."
+msgstr ""
+
+#: customize.php:236
+msgid "PullQuote Replaces Excerpt"
+msgstr ""
+
+#: customize.php:239
+msgid "Use Excerpt as Pullquote"
+msgstr ""
+
+#: customize.php:240
+msgid "Use default excert"
+msgstr ""
+
+#: customize.php:251
+msgid "Set Pullquote Width"
+msgstr ""
+
+#: customize.php:252
+msgid "This sets how wide the Teaser will be."
+msgstr ""
+
+#: customize.php:266
+msgid "Set POSTS ONLY Excerpt Length"
+msgstr ""
+
+#: customize.php:278
+msgid "Title Visible only on: "
+msgstr ""
+
+#: customize.php:282
+msgid "Posts and Pages"
+msgstr ""
+
+#: customize.php:283
+msgid "Posts Only"
+msgstr ""
+
+#: customize.php:284
+msgid "Pages Only"
+msgstr ""
+
+#: customize.php:285
+msgid "Only HomePage Blog &amp; Single Posts"
+msgstr ""
+
+#: customize.php:293
+msgid "Choose color for link icon: "
+msgstr ""
+
+#: customize.php:297
+msgid "Black Link Icon"
+msgstr ""
+
+#: customize.php:298
+msgid "Red Link Icon"
+msgstr ""
+
+#: customize.php:299
+msgid "Blue Link Icon"
+msgstr ""
+
+#: customize.php:300
+msgid "Green Link Icon"
+msgstr ""
+
+#: customize.php:301
+msgid "Gray Link Icon"
+msgstr ""
+
+#: customize.php:312
+msgid "Upload Image to Top Advert Box"
+msgstr ""
+
+#: customize.php:313
+msgid "Upload will override any widgets."
+msgstr ""
+
+#: customize.php:321
+msgid "Choose border style on sidebars."
+msgstr ""
+
+#: customize.php:325
+msgid "No borders"
+msgstr ""
+
+#: customize.php:326
+msgid "Show borders"
+msgstr ""
+
+#: customize.php:328
+msgid "Show borders and Box-Shadow"
+msgstr ""
+
+#: customize.php:338
+msgid "Wording for View Sidebar button"
+msgstr ""
+
+#: customize.php:348
+msgid ""
+"View theme instructions and option notes from menu <b>Appearance > Theme "
+"Options</b>"
+msgstr ""
+
+#: archive.php:16
+#, php-format
+msgid "Author Archive for %s"
+msgstr ""
+
+#: archive.php:21
+#, php-format
+msgid "Tag Archive for %s"
+msgstr ""
+
+#: archive.php:25
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:30
+msgid "F Y"
+msgstr ""
+
+#: archive.php:34
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:35
+msgid "Y"
+msgstr ""

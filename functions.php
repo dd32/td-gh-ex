@@ -1,17 +1,17 @@
 <?php
-// functions for theme Appeal
-// @since 1.0.2
-
-
-/**
+/** 
+ * Functions for theme Appeal
+ * @since 1.0.2
  * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
+ */
+ 
+/**
+ *  Setup function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
 function appeal_theme_setup() {
-    /*
+    /**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -30,6 +30,7 @@ function appeal_theme_setup() {
 	 */
     add_theme_support( 'title-tag' );
     add_theme_support( 'automatic-feed-links' ); // rss feederz
+    
     /**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 * wp thumbnails (sizes handled below)
@@ -37,9 +38,13 @@ function appeal_theme_setup() {
 	 */
     add_theme_support( 'post-thumbnails' );
 
-    set_post_thumbnail_size( 180, 180, true );   // default thumb size
+    set_post_thumbnail_size( 400, 300, true );   // new default thumb size
+    
+    // new featured image name. width, height, and crop 
+    add_image_size( 'appeal-featured', 400, 300, false);  // 4:3 ratio 
 
     add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
+
     //page background image and color support
     $defaults = array(
 	   'default-color'      => '#fcfcfc',
@@ -51,11 +56,13 @@ function appeal_theme_setup() {
     add_theme_support( 'custom-background', $defaults );
     add_theme_support( 'custom-logo' );
 
-    // main nav in header (not sticky) also nav menu in footer and modal are same
+    add_editor_style('editor-style.css');
+    
+    // main nav in header - also nav menu in footer and modal are same
     register_nav_menus(
         array(
-            'primary' => __('Main Menu Top', 'appeal'),
-            'author_modal' => __('Footer and Author Links', 'appeal')
+            'primary'      => __('Main Menu Top', 'appeal'),
+            'above_footer' => __('Above Footer Links', 'appeal')
         )
     );
 
@@ -68,10 +75,20 @@ function appeal_theme_setup() {
 }
 add_action('after_setup_theme','appeal_theme_setup');
 
-   /**
-    * Enqueue scripts and styles.
-    */
-    function appeal_theme_scripts() {
+
+// Register the custom image size for use in Add Media library.
+add_filter( 'image_size_names_choose', 'appeal_custom_thumb_sizes' );
+function appeal_custom_thumb_sizes( $sizes ) {
+
+    return array_merge( $sizes, array(
+        'appeal-featured' => __( 'Four by three Ratio Thumb', 'appeal' ),
+    ) );
+}
+
+/**
+ * Enqueue scripts and styles.
+ */
+function appeal_theme_scripts() {
 
     // For use of child themes
     wp_register_style( 'appeal-style',
@@ -84,20 +101,44 @@ add_action('after_setup_theme','appeal_theme_setup');
                         array ( 'jquery' ),
                         '3.3.7',
                         true);
+    wp_register_script( 'appeal-script',
+                        get_template_directory_uri() . '/assets/appeal.js',
+                        array ( 'jquery' ),
+                        '',
+                        true);
+
     //enqueue (sane and include) scripts into WP
     wp_enqueue_style( 'appeal-google-fonts');
     wp_enqueue_style( 'appeal-style' );
     wp_enqueue_script( 'bootstrap-script' );
-    }
-    add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+    wp_enqueue_script( 'appeal-script' );
 
-function appeal_fonts_url() {
-    $fonts_url = '';
+}
+add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
+
+/**
+ * Apply theme's stylesheet to the visual editor.
+ *
+ * @uses add_editor_style() Links a stylesheet to visual editor
+ * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+*/
+// Add Google Scripts for use with the editor
+if ( ! function_exists( 'appeal_mce_google_fonts_styles' ) ) {
+	function appeal_mce_google_fonts_styles() {
+	   $font_url = 'https://fonts.googleapis.com/css?family=Raleway';
+           add_editor_style( str_replace( ',', '%2C', $font_url ) );
+	}
+}
+add_action( 'init', 'appeal_mce_google_fonts_styles' );
+
 	/*
 	 * Translators: If there are characters in your language that are not
 	 * supported by Raleway, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
+function appeal_fonts_url() {
+    $fonts_url = '';
+
     $Raleway = _x( 'on', 'Raleway font: on or off', 'appeal' );
 	if ( 'off' !== $Raleway  ) {
 		$font_families = array();
@@ -132,7 +173,6 @@ function appeal_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'appeal_fonts' );
 
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -141,7 +181,7 @@ add_action( 'wp_enqueue_scripts', 'appeal_fonts' );
  * @global int $content_width
  */
 function appeal_content_width() {
-$GLOBALS['content_width'] = 750;
+    $GLOBALS['content_width'] = 750;
 }
 add_action( 'after_setup_theme', 'appeal_content_width', 0 );
 
@@ -159,7 +199,7 @@ add_action( 'init', 'appeal_theme_excerpt_support' );
 
 
 /**
- * support for logo upload, output
+ * support for logo upload, output.
  */
 function appeal_theme_custom_logo() {
 
@@ -179,7 +219,8 @@ function appeal_theme_custom_logo() {
 }
 
 
-/** Custom usage of more_tag to split content in two.
+/** 
+ * Custom usage of more_tag to split content in two.
  * @only works on template Two Part Content
  * @uses more tag to split content "<!--more-->"
  * @only works for two columns
@@ -220,6 +261,35 @@ remove_filter( 'the_content', 'wptexturize' );
 
 
 /**
+ * Conditional post format 
+ * @since 1.0.7
+ * @uses has_post_format()
+ */
+if( ! function_exists( 'appeal_post_formats' ) ) :  
+function appeal_post_formats() {
+
+    if ( has_post_format( 'image' ) ) { 
+    $appealpost = 'format-image-post'; }
+        elseif( has_post_format( 'gallery' ) ) { 
+        $appealpost = 'format-gallery-post'; }
+            else { $appealpost = 'format-standard-post'; } 
+    return $appealpost;
+}
+endif; 
+
+
+/**
+ * Add schema attribute to menu-items.
+ * https://developer.wordpress.org/reference/hooks/nav_menu_link_attributes/
+ */
+function appeal_add_menu_attributes( $atts, $item, $args ) {
+  $atts['itemprop'] = 'url';
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'appeal_add_menu_attributes', 10, 3 );
+
+                          
+/**
  * Implementation of the Custom Header feature.
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
@@ -243,7 +313,11 @@ function appeal_custom_header_setup()
 add_action( 'after_setup_theme', 'appeal_custom_header_setup' );
 
 
-//create header styles
+/**
+ * Create header styles
+ * You can over ride height by adding CSS
+ * `max-height: x!important;` where x = less than 250px
+ */
 function appeal_theme_header_style()
 {
     $header_text_color = get_header_textcolor();
@@ -251,7 +325,7 @@ function appeal_theme_header_style()
 
     if ( $header_image )
     { ?>
-        <style type="text/css">.site-head {position: relative;background-image: url( <?php echo esc_url( $header_image ); ?>);background-position: center;background-repeat: no-repeat;background-size: cover;content: "";display: block;height: 220px;left: 0;top: 0;   width: auto;z-index: -1;}</style>
+        <style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);background-size: cover}</style>
     <?php
     }
 
@@ -386,10 +460,17 @@ function appeal_theme_wrapper_end() {
     echo '</div>';
 }
 
-
+/**
+ * @example for path if using a child theme
+ * require_once ( get_stylesheet_directory() . '/theme-options.php' );
+ * @usage You would use the above method for any file you move to child dir
+ */
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/assets/wp_bootstrap_navwalker.php';
 
 //Register Customizer assets
 require_once get_template_directory() . '/customize.php';
+
+//Register Theme Page assets
+require_once get_template_directory() . '/theme-options.php';
 ?>

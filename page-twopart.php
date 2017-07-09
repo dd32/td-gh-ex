@@ -14,10 +14,7 @@ use more tag to split content "&gt;!--more-->"
 		<?php while (have_posts()) : the_post(); ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-lines' ); ?>>
-            <h2 class="entry-title">
-             <a class="text-dark"
-                href="<?php the_permalink(); ?>"
-                title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="entry-title"><?php the_title(); ?></h2>
             <section class="post_content">
 	    <?php 
 

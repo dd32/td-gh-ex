@@ -8,13 +8,11 @@
         <div id="main" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
             <?php if (have_posts()) : ?>
-
             <?php while (have_posts()) : the_post(); ?>
 
                 <?php get_template_part( 'content' ); ?>
 
             <?php endwhile; ?>
-
                 <?php else : ?>
 
                     <?php get_template_part( 'nothing' ); ?>
@@ -38,13 +36,11 @@
 	    <div id="main" class="col-xs-12 col-sm-6 col-md-7 col-lg-7" role="main">
 
 		<?php if (have_posts()) : ?>
-
 		<?php while (have_posts()) : the_post(); ?>
 
 		    <?php get_template_part( 'content' ); ?>
 
 		<?php endwhile; ?>
-
 		<?php else : ?>
 
 		    <?php get_template_part( 'nothing' ); ?>

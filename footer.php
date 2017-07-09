@@ -12,14 +12,15 @@
     </div><!-- .content-wrapper -->
             <footer class="footer-footer container-fluid">
         <nav class="social-footer">
-            <?php if ( has_nav_menu( 'author_modal' ) ) {
+            <?php if ( has_nav_menu( 'above_footer' ) ) {
                     wp_nav_menu( array(
-                    'menu'               => 'author_modal',
-                    'theme_location'    => 'author_modal',
+                    'menu'               => 'above_footer',
+                    'theme_location'    => 'above_footer',
                     'container'        => 'ul',
                     'container_class' => 'list-inline',
-                    'container_id'   => 'modalLinkA',
-                    'menu_class'    => 'nav navbar-nav'));
+                    'container_id'   => 'above_footer',
+                    'fallback_cb'   => 'wp_page_menu',
+                    'menu_class'   => 'nav navbar-nav'));
              } ?>
         </nav>
                 <div id="inner-footer">

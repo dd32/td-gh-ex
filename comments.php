@@ -20,9 +20,11 @@
 
 if ( post_password_required() )
     return;
-        ?><ol class="commentlist"><?php
+        ?><ol class="commentlist" itemscope="commentText" 
+                                  itemtype="http://schema.org/UserComments">
+        <?php
             wp_list_comments( array(
-				'style'      => 'ol',
+                'style'      => 'ol',
 				'short_ping' => true,
 				'avatar_size'=> 34,
 			) );

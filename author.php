@@ -25,19 +25,10 @@
                     <?php echo esc_url(the_author_meta('email')); ?></li>
                     </ul>
                     <div class="author-footer">
-                        <nav class="modal-nav">
-                        <?php if ( has_nav_menu( 'author_modal' ) ) {
-                                    wp_nav_menu( array(
-                                'menu'               => 'author_modal',
-                                'theme_location'    => 'author_modal',
-                                'container'        => 'ul',
-                                'container_class' => 'list-inline',
-                                'container_id'   => 'modalLinkA',
-                                'menu_class'    => 'nav navbar-nav',
-                                'fallback_cb' => 'wp_nav_menu',
-                                ));
-                             } ?>
-                        </nav>
+                        <em class="text-muted"><?php esc_html_e( 'E-Mail: ', 'appeal' ); ?>
+                            <?php echo esc_html( the_author_meta('user_email') ); ?></em>
+                        <span class="screen-reader-text">
+                        <?php esc_html_e( 'email link text to author', 'appeal' ); ?></span>
                     </div>
                 </aside><div class="clearfix"></div>
 
@@ -60,10 +51,6 @@
             $trimmed_content = wp_trim_words( $content, $length, $appealmore );
 
             echo '<p>'.$trimmed_content.'</p>'; ?>
-
-                    <nav class="pagination"><?php // more tag display
-                    wp_link_pages();
-                    ?></nav>
 
             </section><div class="clearfix"></div>
                 <footer class="meta-footer">

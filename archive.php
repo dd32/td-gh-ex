@@ -2,38 +2,90 @@
 
     <div id="content" class="row">
 
-	    <div id="main" class="col-xs-12 col-sm-6 col-md-7 col-lg-7" role="main">
+	    <div id="main" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" role="main">
 
+		  <?php if (have_posts()) : ?>
 
-		<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
+			<header id="archive-header">
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-lines' ); ?>>
-            <h2 class="entry-title">
-             <a class="text-dark"
-                href="<?php the_permalink(); ?>"
-                title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-            <section class="post_content">
+				<h1 class="page-title">
+					<?php if ( is_category() ) : ?>
+						<?php echo single_cat_title( '', false ); ?>
 
+					<?php elseif ( is_author() ) : ?>
+						<?php printf( __( 'Author Archive for %s', 'appeal' ),
+                                      get_the_author_meta( 'display_name',
+                                      get_query_var( 'author' ) ) ); ?>
+
+					<?php elseif ( is_tag() ) : ?>
+						<?php printf( __( 'Tag Archive for %s', 'appeal' ),
+                                      single_tag_title( '', false ) ); ?>
+
+					<?php elseif ( is_day() ) : ?>
+						<?php printf( __( 'Daily Archives: %s', 'appeal' ),
+                                      get_the_date() ); ?>
+
+					<?php elseif ( is_month() ) : ?>
+						<?php printf( __( 'Monthly Archives: %s', 'appeal' ),
+                                      get_the_date( _x( 'F Y',
+                                      'monthly archives date format', 'appeal' ) ) ); ?>
+
+					<?php elseif ( is_year() ) : ?>
+						<?php printf( __( 'Yearly Archives: %s', 'appeal' ),
+                                      get_the_date( _x( 'Y',
+                                      'yearly archives date format', 'appeal' ) ) ); ?>
+
+    					<?php else : ?>
+    						<?php _e( 'Blog Archives', 'appeal' ); ?>
+
+    				<?php endif; ?>
+				</h1><!-- .page-title -->
+				<?php
+				if ( is_category() ) :
+					if ( $category_description = category_description() )
+						echo '<h2 class="archive-meta">' . $category_description
+                        . '</h2>'; ?>
+				<?php endif; ?>
+                <?php
+				if ( is_author() ) :
+					$curauth = ( get_query_var('author_name') ) ? 
+					get_user_by( 'slug', get_query_var( 'author_name' ) ) :   
+					get_userdata( get_query_var(' author' ) );
+					if ( isset( $curauth->description ) )
+						echo '<h2 class="archive-meta">' . $curauth->description . '</h2>';
+				endif;
+
+				if ( is_tag() ) :
+					if ( $tag_description = tag_description() )
+						echo '<h2 class="archive-meta">' . $tag_description . '</h2>';
+				endif;
+				?>
+			</header><!-- #archive-header -->
             <?php
-            $length          = appeal_custom_posts_excerpt_length();
-            $appealmore      = appeal_custom_excerpt_more();
-            $content         = get_the_content();
-            $trimmed_content = wp_trim_words( $content, $length, $appealmore );
+            while ( have_posts() ) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h1 class="entry-title"><a href="<?php the_permalink() ?>"
+                                           rel="bookmark"><?php the_title(); ?></a></h1>
+                <div class="entry-content">
 
-            echo '<p>'.$trimmed_content.'</p>'; ?>
+                    <?php the_excerpt(); ?>
+                        
 
+                </div><!-- ends entry-content -->      
+                    <footer class="meta-footer">
+                      <a href="<?php echo get_permalink(); ?>" 
+                            title="<?php the_title_attribute(); ?>"> 
+                      <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
+                      <time class="alignright" 
+                            datetime="<?php echo get_the_date('F j, Y'); ?>"
+                            itemprop="datePublished" pubdate 
+                            class="thedate">
+                        <?php echo the_date('', '<em>', '</em>', false ); ?></time> 
+                        <div class="clearfix"></div>      
+                    </footer>
+            </article><!-- #post -->
 
-                
-            </section>
-                <footer class="meta-footer">
-
-                    <?php get_template_part('part', 'metadata' ); ?>
-
-                </footer><div class="clearfix"></div>
-
-        </article>
-		<?php endwhile; ?>
+        <?php endwhile; // end of the loop ?>
 
 		<?php else : ?>
 
@@ -44,12 +96,8 @@
                     <?php get_template_part( 'nav', 'content' ); ?>
 
 	    </div>
-        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-
-            <?php get_sidebar( 'left'); ?>
-
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	    
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
             <?php get_sidebar( 'right' ); ?>
 

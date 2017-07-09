@@ -3,7 +3,7 @@
 get_header(); ?>
 
     <div id="content" class="row">
-	    <div id="main" class="col-xs-12 col-sm-6 col-md-7 col-lg-7" role="main">
+	    <div id="main" class="col-xs-12 col-sm-8 col-md-9 col-lg-9" role="main">
             <?php
             if ( have_posts() ) : while ( have_posts() ) : the_post();
             ?>
@@ -18,7 +18,7 @@ get_header(); ?>
                        rel="attachment"><img src="<?php echo esc_attr($att_image[0]);?>"
                        width="<?php echo esc_attr($att_image[1]);?>"
                        height="<?php echo esc_attr($att_image[2]);?>"
-                       class="attachment-medium"
+                       class="img-responsive"
                        alt="<?php the_title(); ?>" /></a>
                     </p>
 
@@ -66,12 +66,7 @@ get_header(); ?>
     <?php get_template_part( 'nav', 'content' ); ?>
 
     </div>
-        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-
-            <?php get_sidebar( 'left'); ?>
-
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
 
             <?php get_sidebar( 'right' ); ?>
 

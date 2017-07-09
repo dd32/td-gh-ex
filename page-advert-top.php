@@ -5,9 +5,6 @@
  */
 get_header(); ?>
 
-<div class="col-xs-12 col-sm-12">
- <?php get_sidebar( 'sidebar-top' ); ?>
- </div>
     <div id="content" class="row">
 
         <div id="main" class="col-xs-12 col-sm-12 col-md-9 col-lg-9" role="main">
@@ -35,6 +32,7 @@ get_header(); ?>
             <?php get_sidebar( 'right' ); ?>
 
         </div>
+
 
     </div><!-- ends #content .row -->
 
