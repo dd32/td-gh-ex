@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header col-md-12">
 				<!-- Title for search results containing search term -->
 				<h1 class="page-title">
 					<?php
@@ -26,7 +26,7 @@ get_header(); ?>
 					printf( esc_html__( 'Search Results for: %s', 'bellini' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
-			</header><!-- .page-header -->
+			</header>
 
 			<ol>
 			<?php while ( have_posts() ) : the_post(); ?>

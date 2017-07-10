@@ -269,3 +269,221 @@ if ( ! function_exists( 'bellini_woo_product_category_layout_one_inner_close' ) 
 		<?php
 	}
 endif;
+
+/*--------------------------------------------------------------
+## WooCommerce Native Widget
+--------------------------------------------------------------*/
+
+function bellini_woo_register_widgets() {
+
+    unregister_widget( 'WC_Widget_Top_Rated_Products' );
+    unregister_widget( 'WC_Widget_Products' );
+    unregister_widget( 'WC_Widget_Recently_Viewed' );
+
+    if ( 'yes' === get_option( 'woocommerce_enable_reviews', 'yes' ) ) {
+         register_widget( 'Bellini_Woo_Top_product_Widget' );
+    }
+
+    register_widget( 'Bellini_Woo_Product_Widget' );
+    register_widget( 'Bellini_Woo_recently_viewed_product_Widget' );
+}
+
+add_action( 'widgets_init', 'bellini_woo_register_widgets' );
+
+
+class Bellini_Woo_Top_product_Widget extends WC_Widget_Top_Rated_Products {
+
+    public function widget( $args, $instance ) {
+
+        if ( $this->get_cached_widget( $args ) ) {
+            return;
+        }
+
+        ob_start();
+
+        $number = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : $this->settings['number']['std'];
+
+        $query_args = array(
+            'posts_per_page' => $number,
+            'no_found_rows'  => 1,
+            'post_status'    => 'publish',
+            'post_type'      => 'product',
+            'meta_key'       => '_wc_average_rating',
+            'orderby'        => 'meta_value_num',
+            'order'          => 'DESC',
+            'meta_query'     => WC()->query->get_meta_query(),
+            'tax_query'      => WC()->query->get_tax_query(),
+        );
+
+        $r = new WP_Query( $query_args );
+
+        if ( $r->have_posts() ) {
+
+            $this->widget_start( $args, $instance );
+
+            echo apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' );
+
+            while ( $r->have_posts() ) {
+                $r->the_post();
+                global $product;
+                ?>
+
+            <li>
+            <div class="widget__product__thumb col-xs-4">
+                <?php echo $product->get_image(); ?>
+            </div>
+            <div class="col-xs-8">
+                <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
+                    <span class="product-title"><?php echo $product->get_name(); ?></span>
+                </a>
+                <?php if ( ! empty( $show_rating ) ) : ?>
+                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+                <?php endif; ?>
+                <?php echo $product->get_price_html(); ?>
+            </div>
+            </li>
+
+   <?php   }
+
+            echo apply_filters( 'woocommerce_after_widget_product_list', '</ul>' );
+
+            $this->widget_end( $args );
+        }
+
+        wp_reset_postdata();
+
+        $content = ob_get_clean();
+
+        echo $content;
+
+        $this->cache_widget( $args, $content );
+    }
+}
+
+
+
+class Bellini_Woo_Product_Widget extends WC_Widget_Products {
+
+    public function widget( $args, $instance ) {
+        if ( $this->get_cached_widget( $args ) ) {
+            return;
+        }
+
+        ob_start();
+
+        if ( ( $products = $this->get_products( $args, $instance ) ) && $products->have_posts() ) {
+            $this->widget_start( $args, $instance );
+
+            echo apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' );
+
+            while ( $products->have_posts() ) {
+                $products->the_post();
+                global $product;
+                ?>
+
+            <li>
+            <div class="widget__product__thumb col-xs-4">
+                <?php echo $product->get_image(); ?>
+            </div>
+            <div class="col-xs-8">
+                <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
+                    <span class="product-title"><?php echo $product->get_name(); ?></span>
+                </a>
+                <?php if ( ! empty( $show_rating ) ) : ?>
+                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+                <?php endif; ?>
+                <?php echo $product->get_price_html(); ?>
+            </div>
+            </li>
+
+   <?php   }
+
+            echo apply_filters( 'woocommerce_after_widget_product_list', '</ul>' );
+
+            $this->widget_end( $args );
+        }
+
+        wp_reset_postdata();
+
+        echo $this->cache_widget( $args, ob_get_clean() );
+    }
+}
+
+class Bellini_Woo_recently_viewed_product_Widget extends WC_Widget_Recently_Viewed {
+
+    public function widget( $args, $instance ) {
+
+        $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
+        $viewed_products = array_reverse( array_filter( array_map( 'absint', $viewed_products ) ) );
+
+        if ( empty( $viewed_products ) ) {
+            return;
+        }
+
+        ob_start();
+
+        $number = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : $this->settings['number']['std'];
+
+        $query_args = array(
+            'posts_per_page' => $number,
+            'no_found_rows'  => 1,
+            'post_status'    => 'publish',
+            'post_type'      => 'product',
+            'post__in'       => $viewed_products,
+            'orderby'        => 'post__in',
+        );
+
+        if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+            $query_args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'name',
+                    'terms'    => 'outofstock',
+                    'operator' => 'NOT IN',
+                ),
+            );
+        }
+
+        $r = new WP_Query( $query_args );
+
+        if ( $r->have_posts() ) {
+
+            $this->widget_start( $args, $instance );
+
+            echo apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' );
+
+            while ( $r->have_posts() ) {
+                $r->the_post();
+                global $product;
+                ?>
+
+            <li>
+            <div class="widget__product__thumb col-xs-4">
+                <?php echo $product->get_image(); ?>
+            </div>
+            <div class="col-xs-8">
+                <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
+                    <span class="product-title"><?php echo $product->get_name(); ?></span>
+                </a>
+                <?php if ( ! empty( $show_rating ) ) : ?>
+                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+                <?php endif; ?>
+                <?php echo $product->get_price_html(); ?>
+            </div>
+            </li>
+
+   <?php   }
+
+            echo apply_filters( 'woocommerce_after_widget_product_list', '</ul>' );
+
+            $this->widget_end( $args );
+        }
+
+        wp_reset_postdata();
+
+        $content = ob_get_clean();
+
+        echo $content;
+    }
+
+}

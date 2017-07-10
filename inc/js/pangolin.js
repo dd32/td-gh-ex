@@ -95,8 +95,6 @@ jQuery(document).ready(function () {
         jQuery(this).find( '.sub-menu' ).toggleClass('delay--hover');
      });
 
-    jQuery(".woocommerce-ordering select").simpleselect();
-
     if(jQuery(".type-product").hasClass("has-post-thumbnail")){
         jQuery(".attachment-shop_single").attr("data-adaptive-background","1");
     }

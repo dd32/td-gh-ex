@@ -2,6 +2,20 @@
 global $bellini;
 $bellini = bellini_option_defaults();
 
+add_filter( 'get_the_archive_title', 'bellini_clean_archive_title');
+
+function bellini_clean_archive_title() {
+
+  if ( is_category() ) {
+      $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+      $title = single_tag_title( '', false );
+  }
+
+  return $title;
+}
+
+
 add_filter( 'body_class', 'bellini_body_classes' );
 
 function bellini_body_classes( $classes ) {
@@ -150,11 +164,13 @@ function bellini_comment_count(){
 */
 function bellini_post_author() { ?>
 
-  <p class="post-meta__author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-  <span itemprop="author">
-  <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
-  <?php the_author_link(); ?>
-  </a>
+  <p class="post-meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <span class="vcard author author_name" itemprop="name" >
+  <span class="fn">
+    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
+    <?php the_author(); ?>
+    </a>
+  </span>
   </span>
   </p>
 

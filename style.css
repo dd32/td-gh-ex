@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce (WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.43.4
+Version: 1.43.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -1387,7 +1387,7 @@ a:hover.page-numbers {
 #footer-nav li{
     list-style: none;
     display:inline-block;
-    padding: .6em;
+    padding: .2em;
 }
 
 #footer-nav .sub-menu{
@@ -1688,7 +1688,7 @@ a:hover.page-numbers {
 
 .page-header {
     border: none;
-    padding: 4em 2em;
+    padding: 2em;
 }
 
 .single-page__title {
@@ -1856,7 +1856,9 @@ a:hover.page-numbers {
     position: relative;
     text-decoration: none;
     transition: all .3s ease;
+    display: inline-block;
 }
+
 
 .post-meta__tag__item:before {
     padding-right: .5em;
@@ -2103,12 +2105,13 @@ object {
 ## 12.2.2 - Blocks
 --------------------------------------------------------------*/
 
-
 .feature-block__content {
-    padding: 0 1.2em;
+    padding: .15em 1.8em;
 }
 
-.block-title {margin: 1em 0;}
+.block-title {
+    margin: 1em 0 .5em 0;
+}
 
 .feature-block__inner {
     padding-top: 0;
@@ -2894,7 +2897,77 @@ div.sharedaddy h3.sd-title {font-size: inherit !important;}
 /*--------------------------------------------------------------
 # 17.3 - Contact Form 7
 --------------------------------------------------------------*/
+
 input.wpcf7-text {width: 100%;}
+
+.wpcf7 form {
+  position: relative;
+}
+
+.wpcf7 form > p,
+.wpcf7 form > div {
+  margin-bottom: 1.2em;
+}
+
+.wpcf7 .wpcf7-form-control-wrap {
+  width: 100%;
+  display: block;
+}
+
+.wpcf7 input:not([type="submit"]):focus,
+.wpcf7 textarea:focus,
+.wpcf7 select:focus {
+  background: #fff;
+  border-color: #eaeaea;
+  outline: 0;
+  box-shadow: none;
+}
+
+.wpcf7 input:not([type="submit"]), .wpcf7 textarea, .wpcf7 select {
+  width: 100%;
+  padding: 0.75em;
+}
+
+.wpcf7 textarea {
+  height: 135px;
+}
+
+.wpcf7 input[type="file"] {
+  color: #666;
+  height: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eaeaea;
+  border-radius: 2px;
+  background: #fafafa;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+.wpcf7 input[type="radio"],
+.wpcf7 input[type="checkbox"] {
+  display: inline-block;
+  background: #E9EEF2;
+  color: #555;
+  clear: none;
+  cursor: pointer;
+  line-height: 0;
+  height: 1.2em;
+  margin: -3px 4px 0 0;
+  outline: 0;
+  padding: 0;
+  border-radius: 0.2em;
+  text-align: center;
+  vertical-align: middle;
+  width: 1.4em;
+  min-width: 1.4em;
+  transition: all 0.2s linear;
+}
+
+.wpcf7 .wpcf7-validation-errors {
+  border-color: #f00;
+}
 
 
 /*--------------------------------------------------------------
@@ -2902,6 +2975,22 @@ input.wpcf7-text {width: 100%;}
 --------------------------------------------------------------*/
 
 .so-panel.widget {background-color:initial; padding:0;}
+
+.siteorigin-panels .panel-row-style {
+  z-index: 0;
+  position: relative;
+}
+
+.siteorigin-panels .siteorigin-panels-stretch {
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.siteorigin-panels .siteorigin-panels-stretch[data-stretch-type="full"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
 
 /*--------------------------------------------------------------
@@ -3281,3 +3370,8 @@ input.wpcf7-text {width: 100%;}
 }
 
 .site-footer--center {text-align:center;}
+
+.wp-custom-header img{
+    margin:0 auto;
+    display:block;
+}
