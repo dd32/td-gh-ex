@@ -196,63 +196,63 @@ msgstr ""
 msgid "Medical Icons"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:259, inc/customizer.php:36
+#: functions.php:260, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:261
+#: functions.php:262
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:270
+#: functions.php:271
 msgid "Shop"
 msgstr ""
 
-#: functions.php:272
+#: functions.php:273
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:281, inc/customizer.php:40
+#: functions.php:282, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:284
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:291
+#: functions.php:292
 msgid "Header"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:294
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:301
+#: functions.php:302
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:304
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:398
+#: functions.php:399
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:598
+#: functions.php:599
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:603
+#: functions.php:604
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:608
+#: functions.php:609
 msgid "SiteOrigin CSS"
 msgstr ""
 
