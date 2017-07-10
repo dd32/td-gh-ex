@@ -35,7 +35,7 @@ function basic_store_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'BasicStore Plus', 'basicstore' ),
 				'pro_text' => esc_html__( 'Upgrade to PRO', 'basicstore' ),
-				'pro_url'  => 'http://www.theme.al/product/pureshop/',
+				'pro_url'  => 'http://www.theme.al/product/basicstore-pro/',
 				'priority' => 1,
 			)
 		)
