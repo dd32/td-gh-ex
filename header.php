@@ -25,6 +25,7 @@
 			'theme_location' => 'main_menu',
 			'menu'           => __( 'Main Menu', 'arix' ),
 			'depth'          => 2,
+			'fallback_cb'    => false,
 			'items_wrap'     => '
 				<a class="mobile-nav open" href="#nav">
 					<svg viewBox="0 0 24 24">

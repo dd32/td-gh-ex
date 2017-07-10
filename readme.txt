@@ -1,5 +1,5 @@
 === Arix WordPress Theme ===
-Version: 1.1.4
+Version: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,10 @@ Included background image, svg images and screenshot are Copyright Photricity We
 License: GPLv2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Changelog ==
+Version: 1.1.5
+Date: 7/10/2017
+Description: Fixed menu bug. fallback_cb was causing an issue, so users will have to create a menu manually.
+
 Version: 1.1.4
 Date: 7/7/2017
 Description: Bugfixes and added template parts. Code cleanup. Various minor updates.
