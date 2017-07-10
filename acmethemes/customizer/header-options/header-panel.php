@@ -1,7 +1,7 @@
 <?php
 /*adding header options panel*/
 $wp_customize->add_panel( 'acmephoto-header-panel', array(
-    'priority'       => 160,
+    'priority'       => 30,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Header Options', 'acmephoto' ),

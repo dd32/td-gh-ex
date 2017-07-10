@@ -50,7 +50,6 @@ do_action( 'acmephoto_action_after_footer' );
  * @hooked acmephoto_page_end - 10
  */
 do_action( 'acmephoto_action_after' );
-?>
-<?php wp_footer(); ?>
+wp_footer(); ?>
 </body>
 </html>

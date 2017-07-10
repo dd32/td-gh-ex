@@ -7,7 +7,8 @@
  * @package Acme Themes
  * @subpackage AcmePhoto
  */
-global $acmephoto_customizer_all_values;
+$acmephoto_customizer_all_values = acmephoto_get_theme_options();
+$acmephoto_get_image_sizes_options = $acmephoto_customizer_all_values['acmephoto-blog-archive-image-size'];
 $no_image ='';
 if( !has_post_thumbnail() ){
 	$no_image = 'acme-no-image';
@@ -57,7 +58,7 @@ if( 1 != $acmephoto_blog_enable_gap ){
 					<?php
 				}
 				else{
-					the_post_thumbnail('large');
+					the_post_thumbnail($acmephoto_get_image_sizes_options );
 				}
 				?>
 			</a>

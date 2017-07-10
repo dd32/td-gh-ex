@@ -46,6 +46,7 @@ $wp_customize->add_control( 'acmephoto_theme_options[acmephoto-feature-height]',
         'style' => 'color: #0a0',
     ),
 ) );
+
 /*Button Options*/
 $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-feature-button-option]', array(
     'capability'		=> 'edit_theme_options',

@@ -20,6 +20,24 @@ if( !function_exists('acmephoto_file_directory') ){
     }
 }
 
+/**
+ * Check empty or null
+ *
+ * @since acmephoto 1.0.0
+ *
+ * @param string $str, string
+ * @return boolean
+ *
+ */
+if( !function_exists('acmephoto_is_null_or_empty') ){
+	function acmephoto_is_null_or_empty( $str ){
+		return ( !isset($str) || trim($str)==='' );
+	}
+}
+
+/*file for library*/
+require_once acmephoto_file_directory('acmethemes/library/tgm/class-tgm-plugin-activation.php');
+
 /*
 * file for customizer theme options
 */
@@ -35,6 +53,12 @@ require $acmephoto_functions_file_path;
 /*
 * files for hooks
 */
+require_once acmephoto_file_directory('acmethemes/hooks/tgm.php');
+
+require_once acmephoto_file_directory('acmethemes/hooks/siteorigin-panels.php');
+
+require_once acmephoto_file_directory('acmethemes/hooks/acme-demo-setup.php');
+
 $acmephoto_slider_selection_file_path = acmephoto_file_directory('acmethemes/hooks/slider-selection.php');
 require $acmephoto_slider_selection_file_path;
 
@@ -74,8 +98,17 @@ require $acmephoto_acme_author_widget;
 $acmephoto_sidebar = acmephoto_file_directory('acmethemes/sidebar-widget/sidebar.php');
 require $acmephoto_sidebar;
 
+/**
+ * Implement Custom Metaboxes
+ */
+require acmephoto_file_directory('acmethemes/metabox/metabox.php');
+
 /*
 * file for core functions imported from functions.php while downloading Underscores
 */
 $acmephoto_sidebar = acmephoto_file_directory('acmethemes/core.php');
 require $acmephoto_sidebar;
+
+
+/*themes info*/
+require_once acmephoto_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');

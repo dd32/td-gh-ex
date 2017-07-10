@@ -4,7 +4,7 @@ Theme URI: https://www.acmethemes.com/themes/acmephoto/
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: AcmePhoto is one of the best WordPress photography Theme based on masonry layout. Carefully Crafted theme with Creativity for photography, art portfolio, freelancer and other creative photography centric websites. A very flexible theme with dozens of premium features including multiple menu position, control the height of slider/featured section, advanced pagination options and many more. An elegant theme with quality code and based on customizer. A translation ready theme with major browser compatibility. AcmePhoto comes with lots of features including logo options, site layout options, header options, footer options, sidebar options as well as color options too. Related posts, breadcrumb, search options, social icons, custom widgets are also the added features on this theme. This theme packs a lot of premium features which helps you to make your site awesome and well organized. Try yourself today and check it out. Demo-1: http://demo.acmethemes.com/acmephoto, Demo-2: http://www.demo.acmethemes.com/acmephoto/home-1/, Supports: https://www.acmethemes.com/supports/
-Version: 1.0.5
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmephoto
@@ -479,7 +479,8 @@ i.fa{
 	text-decoration: inherit;
 	vertical-align: 10%;
 	width: auto;
-	color: #fff;
+	color: #000;
+	padding-right: 5px;
 }
 .main-navigation .sub-menu .menu-item-has-children::after{
 	margin-top: -25px;
@@ -1751,63 +1752,56 @@ article.post .post-thumb {
 .not-found .page-header .page-title::after {
 	background: transparent;
 }
+
 /*breadcrumbs*/
-#acmephoto-breadcrumbs{
-	background: #eeeeef ;
+.breadcrumbs.clearfix{
+	background: #f1f1f1 none repeat scroll 0 0;
 	margin-bottom: 20px;
 	padding: 0;
 }
-.breadcrumb a {
-	background: hsla(34, 85%, 35%, 1) none repeat scroll 0 0;
-	color: white;
+span.breadcrumb::after {
+	border-bottom: 5px solid transparent;
+	border-top: 5px solid transparent;
+	content: "";
+	height: 0;
+	margin-top: -3px;
+	position: absolute;
+	right: -5px;
+	top: 50%;
+	width: 0;
+}
+span.breadcrumb {
+	color: #ffffff;
+	float: left;
+	padding: 5px 10px;
+	position: relative;
+	margin-right: 10px;
+}
+#acmephoto-breadcrumbs{
+	padding: 0;
+}
+#acmephoto-breadcrumbs .breadcrumb-trail li {
 	display: block;
 	float: left;
-	padding: 10px 0 10px 25px;
-	position: relative;
-	text-decoration: none;
-	font-size: 14px;
+	list-style: outside none none;
+	padding: 5px 0 5px 5px;
 }
-.breadcrumb a::before {
-	border-bottom: 21px solid transparent;
-	border-left: 16px solid white;
-	border-top: 21px solid transparent;
-	content: " ";
-	display: block;
-	height: 0;
-	left: 100%;
-	margin-left: 1px;
-	margin-top: -21px;
-	position: absolute;
-	top: 50%;
-	width: 0;
-	z-index: 1;
+#acmephoto-breadcrumbs a:hover{
+	text-decoration: underline;
 }
-.breadcrumb a::after {
-	border-bottom: 21px solid transparent;
-	border-left: 15px solid hsla(34, 85%, 35%, 1);
-	border-top: 21px solid transparent;
-	content: " ";
-	display: block;
-	height: 0;
-	left: 100%;
-	margin-top: -21px;
-	position: absolute;
-	top: 50%;
-	width: 0;
-	z-index: 2;
+#acmephoto-breadcrumbs .breadcrumb-trail li.trail-item.trail-end::after {
+	display: none;
 }
-.breadcrumb a:hover {
-	background: hsla(34, 85%, 25%, 1) none repeat scroll 0 0;
+#acmephoto-breadcrumbs .breadcrumb-trail li::after {
+	content: "\f101";
+	font-family: FontAwesome;
+	margin-left: 10px;
 }
-.breadcrumb a:hover::after {
-	border-left-color: hsla(34, 85%, 25%, 1) !important;
+#acmephoto-breadcrumbs .breadcrumb-trail .trail-items {
+	margin: 0;
+	padding: 0;
 }
-.breadcrumb .current {
-	line-height: 38px;
-	margin-left: 20px;
-	font-size: 14px;
-}
-/*innder thumb*/
+/*inner thumb*/
 .inner-wrapper.acme-no-image .thumb-holder-link{
 	height: 250px;
 	width: 100%;

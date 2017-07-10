@@ -6,7 +6,7 @@ $wp_customize->add_section( 'acmephoto-design-sidebar-layout-option', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => __( 'Default Sidebar Layout', 'acmephoto' ),
+    'title'          => __( 'Single/Default Sidebar Layout', 'acmephoto' ),
     'panel'          => 'acmephoto-design-panel'
 ) );
 

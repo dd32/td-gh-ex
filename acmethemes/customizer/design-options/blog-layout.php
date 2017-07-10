@@ -8,6 +8,22 @@ $wp_customize->add_section( 'acmephoto-design-blog-layout-option', array(
     'panel'          => 'acmephoto-design-panel'
 ) );
 
+
+/*blog image size*/
+$wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-blog-archive-image-size]', array(
+	'capability'		=> 'edit_theme_options',
+	'default'			=> $defaults['acmephoto-blog-archive-image-size'],
+	'sanitize_callback' => 'acmephoto_sanitize_select'
+) );
+$choices = acmephoto_get_image_sizes_options();
+$wp_customize->add_control( 'acmephoto_theme_options[acmephoto-blog-archive-image-size]', array(
+	'choices'  	=> $choices,
+	'label'		=> __( 'Image Size Options', 'acmephoto' ),
+	'section'   => 'acmephoto-design-blog-layout-option',
+	'settings'  => 'acmephoto_theme_options[acmephoto-blog-archive-image-size]',
+	'type'	  	=> 'select',
+) );
+
 /*enable padding( gap ) */
 $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-blog-enable-gap]', array(
     'capability'		=> 'edit_theme_options',

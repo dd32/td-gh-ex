@@ -18,7 +18,7 @@ if( $sidebar_layout == "right-sidebar" || empty( $sidebar_layout ) ) : ?>
 			<?php dynamic_sidebar( 'acmephoto-sidebar' ); ?>
 		</div>
 	</div>
-<?php endif; ?>
+<?php endif;
 
 
 

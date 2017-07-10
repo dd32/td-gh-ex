@@ -1,6 +1,6 @@
 <?php
 /**
- * Acmephoto functions and definitions.
+ * AcmePhoto functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *

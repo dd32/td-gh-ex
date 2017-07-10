@@ -9,7 +9,10 @@
  *
  */
 if ( !function_exists('acmephoto_alter_excerpt') ) :
-    function acmephoto_alter_excerpt(){
+    function acmephoto_alter_excerpt( $length ){
+		if( is_admin() ){
+			return $length;
+		}
         return 90;
     }
 endif;
@@ -28,6 +31,9 @@ add_filter('excerpt_length', 'acmephoto_alter_excerpt');
 
 if ( !function_exists('acmephoto_excerpt_more') ) :
     function acmephoto_excerpt_more($more) {
+		if( is_admin() ){
+			return $more;
+		}
         return ' ';
     }
 endif;

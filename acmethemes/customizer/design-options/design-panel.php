@@ -3,7 +3,7 @@
  * adding theme options panel
  * */
 $wp_customize->add_panel( 'acmephoto-design-panel', array(
-    'priority'       => 190,
+    'priority'       => 90,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Layout/Design Option', 'acmephoto' )
@@ -20,6 +20,22 @@ require $acmephoto_customizer_default_layout_file_path;
 */
 $acmephoto_customizer_sidebar_layout_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/sidebar-layout.php');
 require $acmephoto_customizer_sidebar_layout_file_path;
+
+
+/*
+* file for front page sidebar layout options
+*/
+require acmephoto_file_directory('acmethemes/customizer/design-options/front-page-sidebar-layout.php');
+
+/*
+* file for front archive sidebar layout options
+*/
+require acmephoto_file_directory('acmethemes/customizer/design-options/archive-sidebar-layout.php');
+
+/*
+* file for sticky sidebar
+*/
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/sticky-sidebar.php');
 
 /*
 * file for blog layout

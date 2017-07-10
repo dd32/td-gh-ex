@@ -11,6 +11,8 @@ $no_image ='';
 if( !has_post_thumbnail() ){
 	$no_image = 'acme-no-image';
 }
+global $acmephoto_customizer_all_values;
+$acmephoto_single_image_size = $acmephoto_customizer_all_values['acmephoto-single-image-size']
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($no_image); ?>>
 	<!--post thumbnal options-->
@@ -21,8 +23,7 @@ if( !has_post_thumbnail() ){
 			<div class="at-hover-fixed">
 				<figure class="single-thumb single-thumb-full">
 					<?php
-					$thumbnail = 'full';
-					the_post_thumbnail( $thumbnail );
+					the_post_thumbnail( $acmephoto_single_image_size );
 					?>
 				</figure>
 				<div class="singe-content-wrapper">
