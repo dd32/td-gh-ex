@@ -1,6 +1,6 @@
 === Appeal ===
 Theme URI:   http://themes.tradesouthwest.com/wordpress/appeal/
-Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has two column-newspaper style-template, a fullwidth, a three section wide and an advert template. An Author template is included that has a modal box linked to every author link. This is perfect for authors who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support, number of words and width of pullquote teaser and set post excerpt length. Pullquote uses the theme editor "excerpt." Be sure it is activated from admin "Screen Options" menu in upper right. Demo at https://larryjudd.us/appeal
+Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has two column-newspaper style-template, a fullwidth, a three section wide and an advert template. An Author template is included that has a modal box linked to every author link. This is perfect for authors who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support,  width of pullquote teaser and set post excerpt length. Pullquote uses the theme editor "excerpt." Be sure it is activated from admin "Screen Options" menu in upper right. Demo at https://larryjudd.us/appeal
 
  * Theme Name:  Appeal
  * Author:      Larry Judd Oliver
@@ -23,10 +23,25 @@ Home header 2017 Unsplash.com - GPL-2.0+
 Home demo 2017 pelo - GPL-2.0+
 Twitter in admin https://brand.twitter.com/logo
 
-!== Notes ==
-Requires WordPress 3.6 or higher!
+== Notes ==
+* Requires WordPress 3.6 or higher!
+* All navigation to main top menu is parent recursive. If you have a menu with sub pages then the top link will not be 
+clickable. This is to prevent conflict with mobile navigation. A mobile device will not be able to tap on the top parent 
+link and use any of the child links below it.
+
+ToDo: flatten search button and resize
 
 == Change Log ==
+1.0.8 
+- changed date output to date_format 
+- fixed some buttons and search inputs
+- added category list to posts
+- removed author from footers
+- conditionalized metadata parts
+- repositioned time in title heading
+- placed comment count in title heading
+- fixed search responsivness
+
 1.0.7
 - revised 404 page
 - fixed title to link issue

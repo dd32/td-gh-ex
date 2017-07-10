@@ -93,7 +93,7 @@
 
 
         <?php } elseif ( is_home() ) {
-//Blog page if theme homepage is static. No thumb, just post and meta.
+//Blog page if theme homepage is static. No thumb.
         ?>
         <section class="post_content">
 
@@ -366,7 +366,7 @@
                     </div><div class="clearfix"></div>
                     <div class="pagination">
 
-		      <?php wp_link_pages( array(
+		            <?php wp_link_pages( array(
                                     'before' => '<p class="post-pagination">'
                                     . __( 'Pages : ', 'appeal' ),
                                     'after' => '</p>',
@@ -385,15 +385,13 @@
         </div>
     </section><div class="clearfix"></div> 
                 <footer class="meta-footer">
-
-                    <?php get_template_part('part', 'metadata' ); ?>
-
+                    <ul class="metas list-inline">
+                        <li><?php edit_post_link(__( 'Edit', "appeal"), ' '); ?></li>
+                    </ul>
                 </footer>
 
                     <?php comments_template(); ?>
                     
-
-          
                     <div class="row"><hr class="short"></div>
                     
 

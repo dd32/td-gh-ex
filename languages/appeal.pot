@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-07-08 22:01-0700\n"
-"PO-Revision-Date: 2017-07-08 22:01-0700\n"
+"POT-Creation-Date: 2017-07-10 11:30-0700\n"
+"PO-Revision-Date: 2017-07-10 11:31-0700\n"
 "Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,13 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_nx;"
-"_x\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_x;"
+"_nx\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: nothing.php:2
-msgid "Page not available."
+msgid "Nothing available."
 msgstr ""
 
 #: functions.php:64
@@ -83,15 +83,15 @@ msgstr ""
 msgid "Archives for "
 msgstr ""
 
-#: author.php:23 content.php:492
+#: author.php:23 content.php:490
 msgid "Articles by "
 msgstr ""
 
-#: author.php:28 content.php:498
+#: author.php:28 content.php:496
 msgid "E-Mail: "
 msgstr ""
 
-#: author.php:31 content.php:501
+#: author.php:31 content.php:499
 msgid "email link text to author"
 msgstr ""
 
@@ -145,20 +145,24 @@ msgstr ""
 msgid "Your email address will not be published."
 msgstr ""
 
-#: content-header.php:87
+#: content-header.php:89
 msgid "Author Gravatar is shown here. Clickable link to Author page."
 msgstr ""
 
-#: content-header.php:94
+#: content-header.php:96
 msgid "Author Gravatar"
 msgstr ""
 
-#: content-header.php:98
+#: content-header.php:100
 msgid "Article by: "
 msgstr ""
 
-#: content-header.php:101
+#: content-header.php:103
 msgid "Authors link to author website or other works."
+msgstr ""
+
+#: content-header.php:115 part-metadata.php:14
+msgid "1 Response"
 msgstr ""
 
 #: header.php:13
@@ -167,10 +171,6 @@ msgstr ""
 
 #: header.php:45
 msgid "Navigation"
-msgstr ""
-
-#: header.php:57
-msgid "Home"
 msgstr ""
 
 #: theme-options.php:30
@@ -312,11 +312,8 @@ msgstr ""
 msgid "Donate if you like."
 msgstr ""
 
-#: part-metadata.php:13
-msgid "1 Response"
-msgstr ""
-
-#: part-metadata.php:23
+#: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
+#: content.php:389
 msgid "Edit"
 msgstr ""
 
@@ -348,35 +345,36 @@ msgstr ""
 msgid "Previous page"
 msgstr ""
 
-#: content.php:464
+#: content.php:462
 msgid "Information about the author you selected"
 msgstr ""
 
-#: content.php:469
+#: content.php:467
 msgid "Author:  "
 msgstr ""
 
-#: content.php:481
+#: content.php:479
 msgid "link to author"
 msgstr ""
 
-#: content.php:485
+#: content.php:483
 msgid "Author Page and Archives for "
 msgstr ""
 
-#: content.php:489
+#: content.php:487
 msgid "Number of articles by this author, "
 msgstr ""
 
-#: content.php:505 content.php:506
+#: content.php:503 content.php:504
 msgid "Close"
 msgstr ""
 
 #: search.php:8
-msgid "Ok, here is what we found"
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:23 archive.php:78
+#: search.php:23 archive.php:74
 msgid "View Article..."
 msgstr ""
 

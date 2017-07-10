@@ -49,13 +49,7 @@
 						</button>
 					
 						<?php endif ?>
-					
-						<a class="navbar-brand"
-                           title="<?php bloginfo('description'); ?>"
-                           href="<?php echo esc_url(home_url('/')); ?>">
-                      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/homepng.png'); ?>"
-                           alt="<?php esc_attr_e( 'Home', 'appeal' ); ?>"
-                           height="45" /></a>
+						
 					</div>
 
 					<div id="navbar-responsive-collapse" class="collapse navbar-collapse">

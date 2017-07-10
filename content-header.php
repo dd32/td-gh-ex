@@ -79,31 +79,45 @@
     
     <div class="hidden"></div>
 
-    <?php } ?>
+    <?php } 
+    $time_format = get_the_date( get_option('date_format') );
+    ?>
 
-		  <div class="entry-meta">
-			<p class="theauthor"><span class="screen-reader-text">
-            <?php esc_html_e(
-                'Author Gravatar is shown here. Clickable link to Author page.',
-                'appeal' ); ?></span>
-            <a data-toggle="modal"
-               data-target="#theAuthor"
-               href="#"
-               title="<?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?>">
+    <div class="entry-meta">
+	    <p class="theauthor"><span class="screen-reader-text">
+        <?php esc_html_e(
+            'Author Gravatar is shown here. Clickable link to Author page.',
+            'appeal' ); ?></span>
+        <a data-toggle="modal"
+           data-target="#theAuthor"
+           href="#"
+           title="<?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?>">
 
-            <?php $alt = __( 'Author Gravatar', 'appeal' );
-             echo get_avatar( get_the_author_meta( 'email' ), 42, '', $alt); ?>
+        <?php $alt = __( 'Author Gravatar', 'appeal' );
+                echo get_avatar( get_the_author_meta( 'email' ), 42, '', $alt); ?>
 
-            <span class="aspace"> &nbsp; </span> 
-            <em><?php esc_html_e( 'Article by: ', 'appeal' );
-                      echo nl2br( get_the_author( ) ); ?></em>
-            <span class="screen-reader-text">
-            <?php esc_html_e( 'Authors link to author website or other works.', 'appeal' ); ?>
-            <?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?></span> </a></p>
-
-            <time class="alignright" 
-                  datetime="<?php echo get_the_date('F j, Y'); ?>"
-                  itemprop="datePublished" pubdate 
-                  class="thedate"><?php echo the_date('', '<em>', '</em>', false ); ?></time> 
-		  </div>
-	   </header>
+        <span class="aspace"> &nbsp; </span> 
+        <em><?php esc_html_e( 'Article by: ', 'appeal' );
+                  echo nl2br( get_the_author( ) ); ?></em>
+        <span class="screen-reader-text">
+        <?php esc_html_e( 'Authors link to author website or other works.', 'appeal' ); ?>
+        <?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?></span> </a></p>
+        
+            <div class="containbox alignright">
+                <time class="right-time" 
+                      datetime="<?php echo esc_attr( $time_format ); ?>"
+                      itemprop="datePublished" pubdate 
+                      class="thedate"><?php echo esc_html( $time_format ); ?></time> 
+                <div class="count-header">
+                <?php if( is_single() ) 
+                {
+                echo '<span class="show-comment-nmbr"><small>'; 
+                printf( esc_html( _nx( '1 Response', '%1$s Responses', get_comments_number(), 
+                'Responses', 'appeal' ) ), number_format_i18n( get_comments_number() ) );
+                echo '</small></span>'; 
+                } 
+                ?></div>
+            </div>
+            
+    </div>
+	   </header><!-- <div class="clearfix"></div>-->

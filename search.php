@@ -5,7 +5,7 @@
 	    <div id="main" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" role="main">
 
 		<?php if (have_posts()) : ?>
-        <h3><?php esc_html_e( 'Ok, here is what we found', 'appeal' ); ?></h3>   
+        <h2><?php printf( __( 'Search Results for: %s', 'appeal' ), '<span>' . get_search_query() . '</span>'); ?></h2>
              
             <?php  while ( have_posts() ) : the_post(); ?>
         
@@ -16,7 +16,7 @@
 
                     <?php the_excerpt(); ?>
                         
-                </div><!-- ends entry-content -->      
+                </div><!-- ends entry-content -->
                     <footer class="meta-footer">
                       <a href="<?php echo get_permalink(); ?>" 
                             title="<?php the_title_attribute(); ?>"> 

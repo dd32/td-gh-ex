@@ -69,19 +69,19 @@
                 <div class="entry-content">
 
                     <?php the_excerpt(); ?>
-                        
-
-                </div><!-- ends entry-content -->      
-                    <footer class="meta-footer">
-                      <a href="<?php echo get_permalink(); ?>" 
+                         <a href="<?php echo get_permalink(); ?>" 
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
+                </div><!-- ends entry-content -->   
+                    <footer class="meta-footer archive-footer">
+
+                     
                       <time class="alignright" 
                             datetime="<?php echo get_the_date('F j, Y'); ?>"
                             itemprop="datePublished" pubdate 
                             class="thedate">
                         <?php echo the_date('', '<em>', '</em>', false ); ?></time> 
-                        <div class="clearfix"></div>      
+                          
                     </footer>
             </article><!-- #post -->
 
