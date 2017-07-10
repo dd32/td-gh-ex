@@ -63,6 +63,22 @@ function bentoOnePage() {
 	return menuitems;
 }
 
+// Set side menu width for boxed layout
+function bentoSideMenuWidth() {
+	if ( bentoThemeVars.menu_config == 3 ) {
+		var wrapwidth = $str('.site-wrapper').outerWidth();
+		var sidewidth = wrapwidth * 0.2;
+		var $header = $str('.header-side .site-header');
+		var widthstyle = 'width:'+sidewidth+'px !important;';
+		if ( $header.attr('style') ) {
+			$header.css('width','');
+			$header.attr('style', widthstyle + $header.attr('style'));
+		} else {
+			$header.attr('style', widthstyle);
+		}
+	}
+}
+
 
 $str(document).ready(function() {
 	
@@ -248,19 +264,8 @@ $str(document).ready(function() {
 	});
 	
 	
-	// Hide novice header on button click
-	$str('.nhb-dismiss').click(function() {
-		$str.ajax({
-            type:   'post',
-            url:    bentoThemeVars.ajaxurl,
-			data: {
-                action: 'dismiss_novice',
-            },
-            dataType: 'json'
-		}).done(function( json ) {
-            $str('.novice-header').fadeOut();
-        });
-	});
+	// Set side menu width for boxed layout
+	bentoSideMenuWidth();
 		
 		
 });
@@ -318,7 +323,10 @@ $str(window).load(function () {
 				}
 				e.stopPropagation();
 				e.preventDefault();
-				$str('html, body').animate( { scrollTop: val }, 500 );
+				$str('html, body').animate( { scrollTop: val }, 500, function() {
+					$str('.mobile-menu-shadow').fadeOut(500);
+					$str('#nav-mobile').css("left", '-100%');
+				});
 			});
 		});
 	}
@@ -352,6 +360,10 @@ $str(window).resize(function () {
 		var bento_menuMargin = ( $str(window).height() - bento_menuHeight ) / 2;
 		$bento_menu.css('margin-top',bento_menuMargin+'px');
 	}
+	
+	
+	// Set side menu width for boxed layout
+	bentoSideMenuWidth();
 
 
 });

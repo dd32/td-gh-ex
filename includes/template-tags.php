@@ -351,7 +351,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
 			( is_singular( array( 'post' , 'project' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
-			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' ) 
+			( is_singular( 'post', 'project', 'product' ) && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' ) 
 		) {
 			return;
 		}
@@ -774,7 +774,7 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 		$sitename = '<a href="'.esc_url( home_url( '/' ) ).'">'.esc_attr( get_bloginfo( 'name' ) ).'</a>';
 		$author = esc_html__( 'Bento theme by Satori', 'bento' );
 		if ( is_front_page() ) {
-			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a>';
+			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">SatoriStudio</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
