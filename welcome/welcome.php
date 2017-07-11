@@ -56,7 +56,7 @@
 					'getting_started' => esc_html__('Getting Started', 'accesspress-store'),
 					'actions_required' => esc_html__('Required Actions', 'accesspress-store'),
 					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-store'),
-					'import_demo' => esc_html__('Import Demo', 'accesspress-store'),
+					//'import_demo' => esc_html__('Import Demo', 'accesspress-store'),
 					'support' => esc_html__('Support', 'accesspress-store'),
 				);
 

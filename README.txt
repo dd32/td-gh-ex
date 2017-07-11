@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 
+= 2.2.0 =
+** Minor Bug Fixes
+
 = 2.1.9 =
 ** WooCommerce 3.0 Outdated files fixed
 
