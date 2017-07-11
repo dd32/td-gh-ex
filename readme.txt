@@ -4,8 +4,8 @@ Contributors: Lisa Armstrong (Working Websites)
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-logo, editor-style, featured-images, theme-options, footer-widgets, threaded-comments, blog, news
 
 Requires at least:
-Tested up to:
-Stable tag: 1.0.2
+Tested up to: WordPress 4.8
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,30 @@ Fixed:
 - Added license information for Font Awesome & Pixbay
 - Removed un-used files
 - Removed code for custom header background.  Not needed.
+
+= 1.0.3 - [Date] = 2017-05-23
+* Updated release
+Fixed:
+- Clarified need for 'custom-header' (not needed, not used).
+- Added translatable items to content-featured, functions, custom-header
+
+
+= 1.0.4 - [Date] = 2017-06-27
+* Updated release
+Fixed:
+- Added theme name to various functions
+- Re-worked way featured content posts are displayed
+
+
+= 1.0.5 - [Date] = 2017-07-11
+* Updated release
+Fixed:
+- Addressed error and some warnings being thrown
+- Removed more un-used files
+- Menu more tablet friendly
+- Lessed amount of bold and drop shadows
+- Updated this file
+
 
 == Credits ==
 

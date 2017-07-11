@@ -4,11 +4,14 @@
  * Helps with accessibility for keyboard only users.
  *
  * Learn more: https://git.io/vWdr2
+ *
+ * @package Authorize
  */
+
 ( function() {
 	var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-	    isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-	    isIe     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
+		isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' ) > -1,
+		isIe     = navigator.userAgent.toLowerCase().indexOf( 'msie' ) > -1;
 
 	if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEventListener ) {
 		window.addEventListener( 'hashchange', function() {

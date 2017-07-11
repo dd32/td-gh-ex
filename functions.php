@@ -206,7 +206,7 @@ function authorize_scripts() {
 	}
 	
 	//Add Google fonts
-	add_google_font();
+	authorize_add_google_font();
 	
 	//Add Font Awesome (for menu)
 	wp_enqueue_style( 'authorize-fontawesome_icon', trailingslashit(get_template_directory_uri()).'assets/stylesheets/font-awesome/css/font-awesome.min.css', false );
@@ -220,13 +220,13 @@ add_action( 'wp_enqueue_scripts', 'authorize_scripts' );
  * Add styles to admin for editor
  *
  */
-function add_google_font() {
+function authorize_add_google_font() {
   	//Add Google fonts
 	wp_enqueue_style( 'authorize-font-Merriweather', 'https://fonts.googleapis.com/css?family=Merriweather+Sans', false ); 
 
 	wp_enqueue_style( 'authorize-font-Source-Sans', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro', false ); 
 }
-add_action( 'admin_enqueue_scripts', 'add_google_font' );
+add_action( 'admin_enqueue_scripts', 'authorize_add_google_font' );
 
 
 /**
@@ -278,29 +278,29 @@ function authorize_entrytype_meta_html($object){
             <?php 
 				$radio_value = get_post_meta($object->ID, "authorize_entry_type", true);
 			
-				$Radio1_Checked = $radio_value == 'write' ? 'checked="checked"' : NULL;
-				$Radio2_Checked = $radio_value == 'event' ? 'checked="checked"' : NULL;
-				$Radio3_Checked = $radio_value == 'video' ? 'checked="checked"' : NULL;
-				$Radio4_Checked = $radio_value == 'podcast' ? 'checked="checked"' : NULL;
+				$Radio1_Checked = $radio_value == 'write' ? 'checked=checked' : NULL;
+				$Radio2_Checked = $radio_value == 'event' ? 'checked=checked' : NULL;
+				$Radio3_Checked = $radio_value == 'video' ? 'checked=checked' : NULL;
+				$Radio4_Checked = $radio_value == 'podcast' ? 'checked=checked' : NULL;
 			?>
               
               	<div>
-                	<input type="radio" name="authorize_entry_type" id="entry_type_write" value="write" <?php echo $Radio1_Checked ?> />
+                	<input type="radio" name="authorize_entry_type" id="entry_type_write" value="write" <?php echo esc_attr( $Radio1_Checked ) ?> />
                 	<label for="entry_type_write"><span class="dashicons dashicons-media-document"></span> <?php echo __( 'Article', 'authorize' ); ?></label>
              	</div>
               
                 <div>
-                	<input type="radio" name="authorize_entry_type" id="entry_type_event" value="event" <?php echo $Radio2_Checked ?> />
+                	<input type="radio" name="authorize_entry_type" id="entry_type_event" value="event" <?php echo esc_attr( $Radio2_Checked ) ?> />
                 	<label for="entry_type_event"><span class="dashicons dashicons-calendar-alt"></span> <?php echo __( 'Event', 'authorize' ); ?></label>
 				</div>
              
                 <div>
-                	<input type="radio" name="authorize_entry_type" id="entry_type_video" value="video" <?php echo $Radio3_Checked ?> />
+                	<input type="radio" name="authorize_entry_type" id="entry_type_video" value="video" <?php echo esc_attr( $Radio3_Checked ) ?> />
                 	<label for="entry_type_video"><span class="dashicons dashicons-video-alt2"></span> <?php echo __( 'Video', 'authorize' ); ?></label>
                 </div>
 
                 <div>
-                	<input type="radio" name="authorize_entry_type" id="entry_type_podcast" value="podcast" <?php echo $Radio4_Checked ?> />
+                	<input type="radio" name="authorize_entry_type" id="entry_type_podcast" value="podcast" <?php echo esc_attr( $Radio4_Checked ) ?> />
 					<label for="entry_type_podcast"><span class="dashicons dashicons-controls-volumeon"></span> <?php echo __( 'Podcast', 'authorize' ); ?></label>
                 </div>
 
@@ -315,7 +315,7 @@ add_action("add_meta_boxes", "authorize_add_entrytype_meta_box");
 
 
 function authorize_save_entrytype_meta_box($post_id, $post, $update){
-    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
+    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce( $_POST["meta-box-nonce"] , basename(__FILE__)))
         return $post_id;
 
     if(!current_user_can("edit_post", $post_id))
@@ -331,7 +331,7 @@ function authorize_save_entrytype_meta_box($post_id, $post, $update){
     $meta_box_radio_value = "";
     
 	if( isset( $_POST[ 'authorize_entry_type' ] ) ) {
-		$meta_box_radio_value = $_POST["authorize_entry_type"];
+		$meta_box_radio_value = esc_html( $_POST["authorize_entry_type"] );
 	}
 	update_post_meta($post_id, "authorize_entry_type", $meta_box_radio_value);
 }
@@ -342,7 +342,7 @@ add_action("save_post", "authorize_save_entrytype_meta_box", 10, 3);
  * Return entry type image
  */
  
-function get_entrytype_image($type){
+function authorize_get_entrytype_image($type){
 		 
 	switch ($type) {
 		case 'write':

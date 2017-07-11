@@ -5,7 +5,7 @@ Author: Working Websites
 Author URI: http://workingwebsites.ca
 Description: Authorize is a responsive clean crisp flat design for text based sites.  Ideal for news and other information portal sites.  The layout features three panels on the home page to highlight pages as well as featured posts and pages.  There are two sidebars, one for the home page and another for inside pages, as well as three footer widget areas.
 
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: authorize
@@ -388,6 +388,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: 'Merriweather Sans', sans-serif;
+  font-weight:normal;
 }
 
 p {
@@ -686,18 +687,32 @@ table {
 
 .main-navigation ul ul li:hover > ul, 
 .main-navigation ul ul li.focus > ul {
-  left: 75%;
-   top: -2%;
+  	/*
+	left: 10em;
+	top: -.5em;
+	*/
 }
 
-.main-navigation ul ul a {
-  width: 100px;
+.menu ul.sub-menu.sub-menu-show2{
+	left: 10em;
+    top: -.5em;
 }
+
+.main-navigation .sub-menu li {
+    width: 10em;
+	 padding: .2em 0;
+}
+
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: auto;
+  /*left: auto;*/
 }
+
+.menu ul.sub-menu.sub-menu-show{
+	left: auto;
+}
+
 
 .main-navigation li {
   float: left;
@@ -705,10 +720,11 @@ table {
   padding: 0 1em;
   text-transform:uppercase;
   font-weight: bold;
+  color: #989a9e;
 }
 
 .main-navigation a {
-  display: block;
+  display:inline-block;
   text-decoration: none;
   color: #989a9e;
 }
@@ -722,7 +738,11 @@ table {
 .main-navigation .current_page_item > a,
 .main-navigation .current_page_parent > a,
 .main-navigation .current_page_ancestor > a,
-.main-navigation a:hover {
+.main-navigation a:hover,
+.main-navigation .parent_item a,
+
+.main-navigation .span_children:hover,
+.main-navigation .span_children:focus{
     color: #0f2035;
 }
 
@@ -730,6 +750,28 @@ table {
 .main-navigation.toggled ul {
   display: block;
   width: 100%;
+}
+
+
+.main-navigation .span_children{
+	font-family: "FontAwesome";
+	padding-left: .75em;
+	position: relative;
+	display: inline-block;
+	bottom: .20em;
+	line-height: .75em;
+	font-size: 1.25em;
+}
+
+.main-navigation ul.sub-menu .span_children{
+	font-family: "FontAwesome";
+	position: relative;
+	display: inline-block;
+	line-height: .75em;
+	font-size: 1.25em;
+	vertical-align: middle;
+	padding-top: .3em;
+	float: right;
 }
 
 
@@ -752,16 +794,28 @@ table {
 	  z-index: 99999;
 	}
 	
-	.main-navigation .menu-item-has-children > a:after,
-	.page_item_has_children > a:after{
+	/*
+	.main-navigation .span_children{
 		font-family: "FontAwesome";
-		content: "\f0dd";
-		padding-left: .5em;
+		padding-left: .75em;
 		position: relative;
 		display: inline-block;
 		bottom: .20em;
 		line-height: .75em;
+		font-size: 1.25em;
 	}
+	
+	.main-navigation ul.sub-menu .span_children{
+		font-family: "FontAwesome";
+		position: relative;
+		display: inline-block;
+		line-height: .75em;
+		font-size: 1.25em;
+		vertical-align: middle;
+		padding-top: .3em;
+		float: right;
+	}
+	*/
 
 	
 }
@@ -790,21 +844,10 @@ table {
 	  z-index: 99999;
 	}
 	
-	.main-navigation .menu-item-has-children > a:after,
-	.page_item_has_children > a:after{
-		font-family: "FontAwesome";
-		content: "\f0dd";
-		padding-left: .5em;
-		position: relative;
-		display: inline-block;
-		bottom: .20em;
-		line-height: .75em;
-	}
-
-
 	.main-navigation {
 		top: 1rem;
 	}
+	
 	
 }
 
@@ -849,6 +892,17 @@ table {
 		box-shadow: none;
 	}
 	
+	.main-navigation .span_children,
+	.main-navigation ul.sub-menu .span_children{
+		display:none;	
+	}
+	
+	.menu ul.sub-menu.sub-menu-show2 {
+		left: auto;
+		top: auto;
+	}
+
+	
 	.main-navigation .menu-item-has-children > a:after, 
 	.page_item_has_children > a:after {
 		display:none;
@@ -885,11 +939,12 @@ table {
 
 }
 
-
+/*
 .main-navigation .sub-menu .menu-item-has-children > a:after,
 .sub-menu .page_item_has_children > a:after{
 	content: "\f0da";
 }
+*/
 
 
 .site-main .comment-navigation, .site-main
@@ -969,8 +1024,8 @@ a:focus {
 a:hover, 
 a:active {
   outline: 0;
-  /*font-weight:bold;*/
-	text-shadow: 0px 0px 1px #6b6558;
+  font-weight:bold;
+	/*text-shadow: 0px 0px 1px #6b6558;*/
 }
 
 /*--------------------------------------------------------------
@@ -1009,6 +1064,7 @@ body {
 
 .site-content .widget-area {
   overflow: hidden;
+  font-size: .9em;
 }
 
 .site-footer {
@@ -1388,7 +1444,7 @@ img.custom-logo {
 }
 
 .entry-title a:hover {
-    font-size: 1.65rem;
+    /*font-size: 1.65rem;*/
 }
 
 .entry-title {
@@ -1452,13 +1508,13 @@ img.custom-logo {
     padding-right: .75em;
     color: #b19649;
     font-size: .65em;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 
 
 .widget_authorize_recent_posts{
-	font-size: .9em;
+	/*font-size: .9em;*/
 }
 
 .widget_authorize_recent_posts a{

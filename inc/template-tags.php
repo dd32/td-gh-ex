@@ -25,11 +25,13 @@ function authorize_posted_on() {
 	);
 
 	$posted_on = sprintf(
+		/* translators: Posted on (date posted) */
 		esc_html_x( 'Posted on %s', 'post date', 'authorize' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
+		/* translators: Posted by (Author's name) */
 		esc_html_x( 'by %s', 'post author', 'authorize' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
@@ -49,12 +51,14 @@ function authorize_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'authorize' ) );
 		if ( $categories_list && authorize_categorized_blog() ) {
+			/* translators: Posted in (cat name) */
 			printf( '<div class="cat-links">' . esc_html__( 'Posted in %1$s', 'authorize' ) . '</div>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'authorize' ) );
 		if ( $tags_list ) {
+			/* translators: lists tags */
 			printf( '<div class="tags-links">' . esc_html__( 'Tagged %1$s', 'authorize' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 		}
 	}

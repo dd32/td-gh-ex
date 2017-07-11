@@ -16,7 +16,11 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'authorize' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title">
+					<?php 
+						/* translators: Shows search results for (search input) */
+						printf( esc_html__( 'Search Results for: %s', 'authorize' ), '<span>' . get_search_query() . '</span>' ); ?>
+				</h1>
 			</header>
 			<?php
 			/* Start the Loop */

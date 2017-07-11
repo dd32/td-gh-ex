@@ -82,7 +82,7 @@ Class authorize_recent_posts_widget extends WP_Widget {
 				$PostImage = get_the_post_thumbnail($ID, 'thumbnail');
 				
 				if(empty($PostImage)){
-					$PostImage = get_entrytype_image($EntryType);
+					$PostImage = authorize_get_entrytype_image($EntryType);
 				}
 			
 			?>

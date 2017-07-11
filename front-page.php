@@ -26,7 +26,7 @@ get_header(); ?>
             <div id="hf_left_div" class="shadow-border">
                 <div class="FeatureLeft_Content">
                     <div class="FeatImage">
-                        <?php echo $arHFLeft['image'] ?>
+                        <?php echo $arHFLeft['image']  ?>
                     </div>
                     
                     <div class="FeatContent">

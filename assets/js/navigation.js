@@ -3,7 +3,10 @@
  *
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
+ *
+ * @package Authorize
  */
+
 ( function() {
 	var container, button, menu, links, subMenus, i, len;
 
@@ -78,4 +81,36 @@
 			self = self.parentElement;
 		}
 	}
+	
+	/**
+	 * If element has children, add arrow to display sub menus.
+	 * When clicked, display sub-menu
+	 */
+	 
+	//Menu first Level
+	first_level = jQuery(".menu-item-has-children a").not(".sub-menu a");
+	
+	jQuery( "<span class='span_children'><i class = 'fa fa-sort-desc' aria-hidden='true'></i></span>" ).insertAfter( first_level );
+	
+	//Show sub menu if clicked
+	jQuery( ".main-navigation .span_children" ).click(function() {
+
+	  jQuery( this ).siblings('.sub-menu').toggleClass('sub-menu-show');
+	  
+	});
+	
+	
+	//Sub Menu
+	jQuery( "<span class='span_children'><i class='fa fa-caret-right' aria-hidden='true'></i></span>" ).insertAfter( '.sub-menu .menu-item-has-children > a' );
+	
+	//Show next menu if clicked
+	jQuery( ".main-navigation .sub-menu .span_children" ).click(function() {
+		jQuery( this ).siblings('.sub-menu').toggleClass('sub-menu-show2');
+		jQuery( this ).parent().toggleClass('parent_item');
+	  
+	});
+	
+	 
+
+	
 } )();
