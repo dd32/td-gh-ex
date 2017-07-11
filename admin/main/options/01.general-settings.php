@@ -77,83 +77,83 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $thinkup_homepage_layout == "option3" ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_page() and ! is_page_template( 'template-blog.php' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_general_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_general_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( thinkup_check_isblog() and ! is_single() ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $thinkup_blog_layout == "option3" ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_page_template( 'template-blog.php' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_blog_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_blog_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_single() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_post_layout == "option1" or empty( $thinkup_post_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_post_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_post_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			} else {
 				echo '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_search() ) {
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_general_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ($thinkup_general_layout == "option3") {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else {
 		if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	}
 }
@@ -379,7 +379,7 @@ function thinkup_input_responsivecss() {
 global $thinkup_general_fixedlayoutswitch;
 	
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
-		wp_enqueue_style ( 'responsive' );
+		wp_enqueue_style ( 'thinkup-responsive' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_input_responsivecss', '12' );
