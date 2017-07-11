@@ -40,17 +40,52 @@ add_filter( 'embed_oembed_html', 'thinkup_fix_oembed', 1 );
 
 
 //----------------------------------------------------------------------------------
-//	CHANGE TITLE AND DESCRIPTION OF PORTFOLIO EXTRACT BOX - PREMIUM FEATURE
+//	ADD PAGE TITLE
 //----------------------------------------------------------------------------------
+
+function thinkup_title_select() {
+global $post;
+
+	if ( is_page() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} elseif ( is_attachment() ) {
+		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
+	} else if ( is_single() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} else if ( is_search() ) {
+		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
+	} else if ( is_404() ) {
+		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
+	} else if ( is_category() ) {
+		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		printf( __( 'Tag Archives: %s', 'lan-thinkupthemes' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		the_post();
+		printf( __( 'Author Archives: %s', 'lan-thinkupthemes' ), get_the_author() );
+		rewind_posts();
+	} elseif ( is_day() ) {
+		printf( __( 'Daily Archives: %s', 'lan-thinkupthemes' ), get_the_date() );
+	} elseif ( is_month() ) {
+		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
+	} elseif ( is_year() ) {
+		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
+	} elseif ( is_post_type_archive( 'portfolio' ) ) {
+		printf( __( 'Portfolio', 'lan-thinkupthemes' ) );
+	} elseif ( thinkup_check_isblog() ) {
+		printf( __( 'Blog', 'lan-thinkupthemes' ) );
+	} else {
+		printf( '%s', esc_html( get_the_title() ) );
+	}
+}
 
 
 //----------------------------------------------------------------------------------
 //	ADD BREADCRUMBS FUNCTIONALITY
 //----------------------------------------------------------------------------------
 
-function wp_bac_breadcrumb() {
+function thinkup_input_breadcrumb() {
 $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumbdelimeter' );
-
 
 	if ( empty( $thinkup_general_breadcrumbdelimeter ) ) {
 		$delimiter = '<span class="delimiter">/</span>';
@@ -177,11 +212,11 @@ global $wp_query;
 //	REMOVE NON VALID REL CATEGORY TAGS
 //----------------------------------------------------------------------------------
 
-function add_nofollow_cat( $text ) { 
+function thinkup_removerel_category( $text ) { 
 	$text = str_replace( 'rel="category"', "", $text );
 	return $text; 
 };
-add_filter( 'the_category', 'add_nofollow_cat' );  
+add_filter( 'the_category', 'thinkup_removerel_category' );  
 
 
 //----------------------------------------------------------------------------------
@@ -215,21 +250,21 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		// 1 Column Layout
-		$sizes['column1-1/3'] = 'Full - 1:3';
-		$sizes['column1-2/3'] = 'Full - 2:3';
-		$sizes['column1-2/5'] = 'Full - 2:5';
+		$sizes['column1-1/3'] = __( 'Full - 1:3', 'lan-thinkupthemes' );
+		$sizes['column1-2/3'] = __( 'Full - 2:3', 'lan-thinkupthemes' );
+		$sizes['column1-2/5'] = __( 'Full - 2:5', 'lan-thinkupthemes' );
 
 		// 2 Column Layout
-		$sizes['column2-1/2'] = 'Half - 1:2';
-		$sizes['column2-2/3'] = 'Half - 2:3';
-		$sizes['column2-2/5'] = 'Half - 2:5';
-		$sizes['column2-3/5'] = 'Half - 3:5';
+		$sizes['column2-1/2'] = __( 'Half - 1:2', 'lan-thinkupthemes' );
+		$sizes['column2-2/3'] = __( 'Half - 2:3', 'lan-thinkupthemes' );
+		$sizes['column2-2/5'] = __( 'Half - 2:5', 'lan-thinkupthemes' );
+		$sizes['column2-3/5'] = __( 'Half - 3:5', 'lan-thinkupthemes' );
 
 		// 3 Column Layout
-		$sizes['column3-2/3'] = 'Third - 2:3';
+		$sizes['column3-2/3'] = __( 'Third - 2:3', 'lan-thinkupthemes' );
 
 		// 4 Column Layout
-		$sizes['column4-2/3'] = 'Quarter - 2:3';
+		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'lan-thinkupthemes' );
 
 		return $sizes;
 	}
@@ -359,7 +394,7 @@ function thinkup_check_isblog() {
     //Check all blog-related conditional tags, as well as the current post type,
     //to determine if we're viewing a blog page.
     return (
-        ( is_home() || is_archive() || is_single() )
+        ( is_home() || is_archive() )
         && ($post_type == 'post')
     ) ? true : false ;
  

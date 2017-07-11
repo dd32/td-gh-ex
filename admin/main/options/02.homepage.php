@@ -128,9 +128,9 @@ global $thinkup_homepage_section3_desc;
 global $thinkup_homepage_section3_link;
 
 	// Set default values for icons
-	if ( empty( $thinkup_homepage_section1_icon ) ) $thinkup_homepage_section1_icon = 'icon-ok';
-	if ( empty( $thinkup_homepage_section2_icon ) ) $thinkup_homepage_section2_icon = 'icon-gift';
-	if ( empty( $thinkup_homepage_section3_icon ) ) $thinkup_homepage_section3_icon = 'icon-star-empty';
+	if ( empty( $thinkup_homepage_section1_icon ) ) $thinkup_homepage_section1_icon = 'el el-icon-ok';
+	if ( empty( $thinkup_homepage_section2_icon ) ) $thinkup_homepage_section2_icon = 'el el-icon-gift';
+	if ( empty( $thinkup_homepage_section3_icon ) ) $thinkup_homepage_section3_icon = 'el el-icon-star-empty';
 
 	// Update selected icon for Elusive Icon v2
 	if ( strpos( $thinkup_homepage_section1_icon, 'el-icon-' ) !== false) $thinkup_homepage_section1_icon = str_replace( 'el-icon-', 'el el-', $thinkup_homepage_section1_icon );

@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	4.0.0
-Tested up to:		4.3.1
+Tested up to:		4.7.2
 
 Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -34,7 +34,7 @@ Engrave Lite is the free version of the multi-purpose professional theme ideal f
 	Copyright, Sources, Credits & Licenses
 -----------------------------------------------------------------------------
 
-Engrave Lite WordPress Theme, Copyright 2011 Think Up Themes Ltd
+Engrave Lite WordPress Theme, Copyright 2017 Think Up Themes Ltd
 Engrave Lite is distributed under the terms of the GNU GPL
 
 Demo images are licensed under CC0 1.0 Universal (CC0 1.0) and available from http://pixabay.com/
@@ -57,38 +57,33 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.04] Item:        html5shiv (jQuery file)
-           Item URL:    http://code.google.com/p/html5shiv/
-           Licence:     MIT
-           Licence MIT: http://opensource.org/licenses/mit-license.html
-
-    [1.05] Item:        Retina js
+    [1.04] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.06] Item:        ResponsiveSlides
+    [1.05] Item:        ResponsiveSlides
            Item URL:    https://github.com/viljamis/ResponsiveSlides.js
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.07] Item:        Font Awesome
+    [1.06] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.08] Item:        Twitter Bootstrap
+    [1.07] Item:        Twitter Bootstrap (including images)
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.09] Item:        Elegant Icons
+    [1.08] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
 
-    [1.10] Item:        Elegant Media Icons
+    [1.09] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
@@ -97,6 +92,46 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.8.10
+- New:     Version control now updated with use of global variable $thinkup_theme_version.
+- Updated: Anchor for responsive stylesheet changed from "responsive" changed to "thinkup-responsive".
+- Updated: Anchor for left sidebar stylesheet changed from "sidebarleft" changed to "thinkup-sidebarleft".
+- Updated: Anchor for right sidebar stylesheet changed from "sidebarright" changed to "thinkup-sidebarright".
+- Removed: imagesloaded folder removed and enqueued directly from core.
+
+Version 1.8.9
+- Fixed:   Documentation display fixed to ensure compatibilty with WordPress v4.8.
+- Updated: Homepage (Featured) section customizer options display regardless of if switch is on or off.
+
+Version 1.8.8
+- Fixed:   Improved escaping in background and gallery options fields.
+
+Version 1.8.7
+- New:     Documentation link added to customizer.
+- New:     Theme information page added under Appearance in admin area.
+- Updated: Default icons now use elusive icons.
+- Updated: Text domain changed from 'redux-framework' to 'lan-thinkupthemes' in options.php.
+
+Version 1.8.6
+- New:     Theme information page added under Appearance in admin area.
+- Removed: Migration notice informing users that theme options have moved to customizer no longer needed.
+
+Version 1.8.5
+- Updated: Custom image size names now translation ready.
+- Updated: Function thinkup_check_isblog() updated to no longer trigger on single posts.
+
+Version 1.8.4
+- Updated: style-shortcodes.css updated.
+- Removed: Unnecesary translation wrappers removed from string containins no text in function thinkup_title_select().
+
+Version 1.8.3
+- Updated: Renamed function add_nofollow_cat() to thinkup_removerel_category() to prevent conflict issues.
+- Updated: Renamed function thinkup_input_breadcrumb() to wp_bac_breadcrumb() to prevent conflict issues.
+- Updated: Moved function thinkup_title_select() from 00.theme-setup.php to 01.general-settings.php to better group related functions.
+
+Version 1.8.2
+- Updated: Font Awesome updated to v4.7.0.
 
 Version 1.8.1
 - Updated: Improved escaping in framwork.php.
