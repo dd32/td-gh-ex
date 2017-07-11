@@ -49,6 +49,10 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 				<a href="<?php echo esc_url( $instance['google_plus_url'] ) ?>"><div class="googleplus social-icon"><i class="fa fa-google-plus"></i></div></a>
 			<?php endif; ?>
 
+			<?php if ( ! empty( $instance['youtube_url'] ) ) : ?>
+				<a href="<?php echo esc_url( $instance['youtube_url'] ) ?>"><div class="youtube social-icon"><i class="fa fa-youtube"></i></div></a>
+			<?php endif; ?>			
+
 			<?php if ( ! empty( $instance['instagram_url'] ) ) : ?>
 				<a href="<?php echo esc_url( $instance['instagram_url'] ) ?>"><div class="instagram social-icon"><i class="fa fa-instagram"></i></div></a>
 			<?php endif; ?>
@@ -70,7 +74,7 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['email_address'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['email_address'] ) ?>"><div class="email social-icon"><i class="fa fa-envelope"></i></div></a>
+				<a href="mailto:<?php echo sanitize_email( $instance['email_address'] ) ?>"><div class="email social-icon"><i class="fa fa-envelope"></i></div></a>
 			<?php endif; ?>
 			</div>
 		</div>
@@ -112,6 +116,12 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'google_plus_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'google_plus_url' ) ); ?>" type="text" value="<?php echo esc_attr( $google_plus_url ); ?>">
 		</p>
 
+		<?php $youtube_url = ! empty( $instance['youtube_url'] ) ? $instance['youtube_url'] : ''; ?>
+		<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'youtube_url' ) ); ?>"><?php _e( 'Youtube Link', 'arouse' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'youtube_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'youtube_url' ) ); ?>" type="text" value="<?php echo esc_attr( $youtube_url ); ?>">
+		</p>
+
 		<?php $instagram_url = ! empty( $instance['instagram_url'] ) ? $instance['instagram_url'] : ''; ?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'instagram_url' ) ); ?>"><?php _e( 'Instagram Link', 'arouse' ); ?></label> 
@@ -145,7 +155,7 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 		<?php $email_address = ! empty( $instance['email_address'] ) ? $instance['email_address'] : ''; ?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'email_address' ) ); ?>"><?php _e( 'Email Address', 'arouse' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email_address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email_address' ) ); ?>" type="text" value="<?php echo esc_attr( $email_address ); ?>">
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email_address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email_address' ) ); ?>" type="text" value="<?php echo sanitize_email( $email_address ); ?>">
 		</p>
 		<?php 
 	}
@@ -166,12 +176,13 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 		$instance['facebook_url'] = ( ! empty( $new_instance['facebook_url'] ) ) ? esc_url_raw( $new_instance['facebook_url'] ) : '';
 		$instance['twitter_url'] = ( ! empty( $new_instance['twitter_url'] ) ) ? esc_url_raw( $new_instance['twitter_url'] ) : '';
 		$instance['google_plus_url'] = ( ! empty( $new_instance['google_plus_url'] ) ) ? esc_url_raw( $new_instance['google_plus_url'] ) : '';
+		$instance['youtube_url'] = ( ! empty( $new_instance['youtube_url'] ) ) ? esc_url_raw( $new_instance['youtube_url'] ) : '';
 		$instance['instagram_url'] = ( ! empty( $new_instance['instagram_url'] ) ) ? esc_url_raw( $new_instance['instagram_url'] ) : '';
 		$instance['linkedin_url'] = ( ! empty( $new_instance['linkedin_url'] ) ) ? esc_url_raw( $new_instance['linkedin_url'] ) : '';
 		$instance['pinterest_url'] = ( ! empty( $new_instance['pinterest_url'] ) ) ? esc_url_raw( $new_instance['pinterest_url'] ) : '';
 		$instance['dribbble_url'] = ( ! empty( $new_instance['dribbble_url'] ) ) ? esc_url_raw( $new_instance['dribbble_url'] ) : '';
 		$instance['rss_url'] = ( ! empty( $new_instance['rss_url'] ) ) ? esc_url_raw( $new_instance['rss_url'] ) : '';
-		$instance['email_address'] = ( ! empty( $new_instance['email_address'] ) ) ? esc_email( $new_instance['email_address'] ) : '';
+		$instance['email_address'] = ( ! empty( $new_instance['email_address'] ) ) ? sanitize_email( $new_instance['email_address'] ) : '';
 
 		return $instance;
 	}

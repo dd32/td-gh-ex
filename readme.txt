@@ -3,7 +3,7 @@
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
 Tested up to: 4.7.3
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,11 @@ Arouse supports woocommerce plugin.
 
 = 1.1.6 - May 30 2017 =
 * Added slider page template.
+
+= 1.1.7 - July 11 2017 =
+* Declared RTL language support
+* Added youtube icon to the social media widget.
+* Fixed email icon issue on the social media widget.
 
 == Credits ==
 

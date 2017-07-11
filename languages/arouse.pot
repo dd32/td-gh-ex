@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.1.5\n"
-"POT-Creation-Date: 2017-04-18 14:02+0530\n"
-"PO-Revision-Date: 2017-04-18 14:02+0530\n"
+"Project-Id-Version: arouse.1.1.7\n"
+"POT-Creation-Date: 2017-07-11 22:29+0530\n"
+"PO-Revision-Date: 2017-07-11 22:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -344,7 +344,7 @@ msgid "Latest Posts"
 msgstr ""
 
 #: inc/widgets/category-posts-widget.php:41
-#: inc/widgets/social-links-widget.php:93
+#: inc/widgets/social-links-widget.php:97
 msgid "Title:"
 msgstr ""
 
@@ -368,43 +368,47 @@ msgstr ""
 msgid "Adds social media icons to widget areas."
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:90
+#: inc/widgets/social-links-widget.php:94
 msgid "New title"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:99
+#: inc/widgets/social-links-widget.php:103
 msgid "Facebook Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:105
+#: inc/widgets/social-links-widget.php:109
 msgid "Twitter Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:111
+#: inc/widgets/social-links-widget.php:115
 msgid "Google Plus Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:117
+#: inc/widgets/social-links-widget.php:121
+msgid "Youtube Link"
+msgstr ""
+
+#: inc/widgets/social-links-widget.php:127
 msgid "Instagram Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:123
+#: inc/widgets/social-links-widget.php:133
 msgid "LinkedIn Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:129
+#: inc/widgets/social-links-widget.php:139
 msgid "Pinterest Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:135
+#: inc/widgets/social-links-widget.php:145
 msgid "Dribbble Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:141
+#: inc/widgets/social-links-widget.php:151
 msgid "RSS Link"
 msgstr ""
 
-#: inc/widgets/social-links-widget.php:147
+#: inc/widgets/social-links-widget.php:157
 msgid "Email Address"
 msgstr ""
 

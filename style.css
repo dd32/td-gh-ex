@@ -4,11 +4,11 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,e-commerce
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,e-commerce,rtl-language-support
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1195,6 +1195,9 @@ a:hover, a:active {
 .arouse-social-links .googleplus {
   background: #dd4b39;
 }
+.arouse-social-links .youtube {
+  background: #CD201F;
+}
 .arouse-social-links .pinterest {
   background: #bd081c;
 }
@@ -1209,6 +1212,9 @@ a:hover, a:active {
 }
 .arouse-social-links .rss {
   background: #f26522;
+}
+.arouse-social-links .email {
+  background: #f9ae3d;
 }
 .arouse-social-links a {
   color: #fff;
