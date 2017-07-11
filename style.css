@@ -5,7 +5,7 @@ Author: Working Websites
 Author URI: http://workingwebsites.ca
 Description: Authorize is a responsive clean crisp flat design for text based sites.  Ideal for news and other information portal sites.  The layout features three panels on the home page to highlight pages as well as featured posts and pages.  There are two sidebars, one for the home page and another for inside pages, as well as three footer widget areas.
 
-Version: 1.0.5
+Version: 1.0.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: authorize
@@ -687,10 +687,8 @@ table {
 
 .main-navigation ul ul li:hover > ul, 
 .main-navigation ul ul li.focus > ul {
-  	/*
 	left: 10em;
 	top: -.5em;
-	*/
 }
 
 .menu ul.sub-menu.sub-menu-show2{
@@ -706,7 +704,7 @@ table {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  /*left: auto;*/
+	left: auto;
 }
 
 .menu ul.sub-menu.sub-menu-show{
