@@ -74,7 +74,7 @@ class WP_document_Customize_Control extends WP_Customize_Control {
 	 <a href="<?php echo esc_url('http://webriti.com/help/themes/rambo/rambo-wordpress-theme/');?>" target="_blank" class="document" id="review_pro">
 	 <?php _e( 'PRO DOCUMENTATION','rambo' ); ?></a>
 	 
-	 <div>
+	 </div>
 	 <div class="pro-vesrion">
 	 <?php _e('The Pro Version gives you more opportunities to enhance your site and business. In order to create effective online presence one have to showcase their wide range of products, have to use contact us enquiry form, have to make effective about us page, have to introduce team members, etc etc . The pro version will give it all. Buy the pro version and give us a chance to serve you better. ','rambo');?>
 	 </div>

@@ -44,8 +44,8 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_copyright.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_help.php');
-	
-	
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	
 	// Rambo Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
@@ -85,6 +85,9 @@
 		add_theme_support( 'title-tag' ); //Title Tag
 		add_theme_support( 'automatic-feed-links' ); // Feed Link
 		add_theme_support( 'custom-background' ); // Custom Background
+		
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		//Custom logo
 	
@@ -156,4 +159,10 @@ function rambo_after_import_setup() {
 	
 }
 add_action( 'pt-ocdi/after_import', 'rambo_after_import_setup' );
+
+//Cerate enwueu function in customizer setting
+function rambo_customize_preview_js() {
+	wp_enqueue_script( 'rambo-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160816', true );
+}
+add_action( 'customize_preview_init', 'rambo_customize_preview_js' );
 ?>

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2017-06-10 14:05+0530\n"
-"PO-Revision-Date: 2017-06-10 14:05+0530\n"
+"POT-Creation-Date: 2017-07-11 16:50+0530\n"
+"PO-Revision-Date: 2017-07-11 16:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -144,15 +144,15 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:77
 msgid "Page"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:113
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:136
 msgid ""
 "Click the big blue button to start the dummy data import process.</br></"
 "br>Please be patient while WordPress imports all the content.</br></br>\n"
@@ -170,6 +170,22 @@ msgstr ""
 
 #: functions/commentbox/comment-function.php:30
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:10
+msgid "Import Dummy Data"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:13
+#: functions/rambo-info/welcome-screen.php:68
+#, php-format
+msgid ""
+"Save time by importing our demo data and make your site ready in minutes. %s"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:13
+#: functions/rambo-info/welcome-screen.php:68
+msgid "Import Demo Data"
 msgstr ""
 
 #: functions/customizer/customizer_copyright.php:8
@@ -197,19 +213,19 @@ msgstr ""
 msgid "Custom CSS"
 msgstr ""
 
-#: functions/customizer/customizer_help.php:13
+#: functions/customizer/customizer_help.php:12
 msgid "DOWNLOAD IMPORT FILE"
 msgstr ""
 
-#: functions/customizer/customizer_help.php:20
+#: functions/customizer/customizer_help.php:19
 msgid "HELP"
 msgstr ""
 
-#: functions/customizer/customizer_help.php:45
+#: functions/customizer/customizer_help.php:44
 msgid "VIDEO SETUP GUIDE"
 msgstr ""
 
-#: functions/customizer/customizer_help.php:74
+#: functions/customizer/customizer_help.php:73
 msgid "THEME SUPPORT"
 msgstr ""
 
@@ -236,42 +252,42 @@ msgid ""
 "serve you better. "
 msgstr ""
 
-#: functions/customizer/customizer_project.php:6
+#: functions/customizer/customizer_project.php:8
 msgid "Project section"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:13
+#: functions/customizer/customizer_project.php:15
 #: functions/customizer/customizer_recent_news.php:14
-#: functions/customizer/customizer_service_panel.php:14
+#: functions/customizer/customizer_service_panel.php:16
 #: functions/customizer/customizer_site_intro.php:12
 #: functions/customizer/customizer_slider_panel.php:24
 msgid "Settings"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:27
+#: functions/customizer/customizer_project.php:29
 msgid "Hide project section"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:41
-#: functions/customizer/customizer_service_panel.php:42
+#: functions/customizer/customizer_project.php:43
+#: functions/customizer/customizer_service_panel.php:44
 #: functions/customizer/customizer_site_intro.php:26
 msgid "Select column layout"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:49
-#: functions/customizer/customizer_service_panel.php:49
+#: functions/customizer/customizer_project.php:51
+#: functions/customizer/customizer_service_panel.php:51
 msgid "Section Header"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:65
-#: functions/customizer/customizer_service_panel.php:63
+#: functions/customizer/customizer_project.php:68
+#: functions/customizer/customizer_service_panel.php:66
 #: functions/widget/rambo-recent-news-widget.php:86
 #: functions/widget/rambo-sidebar-latest-news.php:74
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:80
-#: functions/customizer/customizer_service_panel.php:76
+#: functions/customizer/customizer_project.php:84
+#: functions/customizer/customizer_service_panel.php:80
 #: functions/widget/rambo-site-intro-widget.php:74
 msgid "Description"
 msgstr ""
@@ -288,11 +304,11 @@ msgstr ""
 msgid "Show slider post in latest news"
 msgstr ""
 
-#: functions/customizer/customizer_service_panel.php:7
+#: functions/customizer/customizer_service_panel.php:9
 msgid "Service section"
 msgstr ""
 
-#: functions/customizer/customizer_service_panel.php:28
+#: functions/customizer/customizer_service_panel.php:30
 msgid "Hide service section"
 msgstr ""
 
@@ -851,17 +867,6 @@ msgstr ""
 msgid ""
 "Welcome! Thank you for choosing Rambo Theme! To fully take advantage of the "
 "best our theme can offer please make sure you visit our %swelcome page%s."
-msgstr ""
-
-#: functions/rambo-info/welcome-screen.php:68
-#, php-format
-msgid ""
-"Save time by import our demo data, your website will be set up and ready to "
-"customize in minutes. %s"
-msgstr ""
-
-#: functions/rambo-info/welcome-screen.php:68
-msgid "Import Demo Data"
 msgstr ""
 
 #: functions/rambo-info/welcome-screen.php:76

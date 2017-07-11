@@ -1,6 +1,8 @@
 <?php
 function rambo_project_customizer( $wp_customize ) {
 
+$selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
+
 //Project panel
 	$wp_customize->add_panel( 'project_panel' , array(
 	'title'      => __('Project section', 'rambo'),
@@ -59,6 +61,7 @@ function rambo_project_customizer( $wp_customize ) {
 					'capability'     => 'edit_theme_options',
 					'sanitize_callback' => 'rambo_project_sanitize_html',
 					'type' => 'option',
+					'transport' => $selective_refresh ? 'postMessage' : 'refresh',
 					)
 				);	
 				$wp_customize->add_control('rambo_pro_theme_options[project_heading_one]',array(
@@ -74,6 +77,7 @@ function rambo_project_customizer( $wp_customize ) {
 					'capability'     => 'edit_theme_options',
 					'sanitize_callback' => 'rambo_project_sanitize_html',
 					'type' => 'option',
+					'transport' => $selective_refresh ? 'postMessage' : 'refresh',
 					)
 				);	
 				$wp_customize->add_control( 'rambo_pro_theme_options[project_tagline]',array(
@@ -81,10 +85,32 @@ function rambo_project_customizer( $wp_customize ) {
 				'section' => 'project_section_settings',
 				 'type' => 'textarea',)  );
 				 
+				
 				 function rambo_project_sanitize_html( $input ) {
 					return force_balance_tags( $input );
 				}
 
 }
 add_action( 'customize_register', 'rambo_project_customizer' );
+
+
+
+ /**
+ * Add selective refresh for project title section controls.
+ */
+function rambo_register_project_title_section_partials( $wp_customize ) {
+				 $wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[project_heading_one]', array(
+		'selector'            => '.portfolio_main_content .featured_port_title h1',
+		'settings'            => 'rambo_pro_theme_options[project_heading_one]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[project_tagline]', array(
+		'selector'            => '.portfolio_main_content .featured_port_title p',
+		'settings'            => 'rambo_pro_theme_options[project_tagline]',
+	
+	) );
+				 
+}		 
+add_action( 'customize_register', 'rambo_register_project_title_section_partials' );
 ?>

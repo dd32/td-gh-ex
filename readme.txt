@@ -133,6 +133,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.6.2
+1. Added dummy data import button in customizer.
+2. Added Live customizer setting.
 @version 1.6.1
 1. Update custom logo height and width.
 @version 1.6

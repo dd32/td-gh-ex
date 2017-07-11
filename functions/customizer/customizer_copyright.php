@@ -35,3 +35,17 @@ function rambo_copyright_customizer( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'rambo_copyright_customizer' );
+
+
+/**
+ * Add selective refresh for Copyright section controls.
+ */
+function rambo_register_copyright_section_partials( $wp_customize ) {
+	
+				 $wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[footer_copyright]', array(
+		'selector'            => '.footer-section .span8 p',
+		'settings'            => 'rambo_pro_theme_options[footer_copyright]',
+	
+	) );				 
+}		 
+add_action( 'customize_register', 'rambo_register_copyright_section_partials' );

@@ -2,6 +2,8 @@
 // customizer serive panel
 function service_customizer_service_panel( $wp_customize ) {
 
+$selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
+
 	//Service panel
 	$wp_customize->add_panel( 'service_panel' , array(
 	'title'      => __('Service section', 'rambo'),
@@ -56,7 +58,8 @@ function service_customizer_service_panel( $wp_customize ) {
 			'default' => '',
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'rambo_service_sanitize_html',
-			'type' => 'option'
+			'type' => 'option',
+			'transport' => $selective_refresh ? 'postMessage' : 'refresh',
 			) );
 			
 			$wp_customize->add_control('rambo_pro_theme_options[service_section_title]',array(
@@ -69,7 +72,8 @@ function service_customizer_service_panel( $wp_customize ) {
 			$wp_customize->add_setting('rambo_pro_theme_options[service_section_descritpion]',array(
 			'default' => '',
 			'sanitize_callback' => 'rambo_service_sanitize_html',
-			'type' => 'option'
+			'type' => 'option',
+			'transport' => $selective_refresh ? 'postMessage' : 'refresh',
 			) );
 			
 			$wp_customize->add_control('rambo_pro_theme_options[service_section_descritpion]',array(
@@ -78,9 +82,32 @@ function service_customizer_service_panel( $wp_customize ) {
 			'type' => 'textarea',
 			) );
 			
+			
+			
 			function rambo_service_sanitize_html( $input ) {
 				return force_balance_tags( $input );
 			}
+			
+			
 }
 add_action( 'customize_register', 'service_customizer_service_panel' );
+
+/**
+ * Add selective refresh for service title section controls.
+ */
+function rambo_register_service_section_partials( $wp_customize ){
+
+$wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[service_section_title]', array(
+		'selector'            => '.home_service_section .featured_port_title h1',
+		'settings'            => 'rambo_pro_theme_options[service_section_title]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[service_section_descritpion]', array(
+		'selector'            => '.home_service_section .featured_port_title p',
+		'settings'            => 'rambo_pro_theme_options[service_section_descritpion]',
+	
+	) );
+}
+add_action( 'customize_register', 'rambo_register_service_section_partials' );
 ?>

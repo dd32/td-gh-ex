@@ -65,7 +65,7 @@ class rambo_screen {
 	function rambo_admin_import_notice(){
     ?>
     <div class="updated notice notice-success notice-alt is-dismissible">
-        <p><?php printf( esc_html__( 'Save time by import our demo data, your website will be set up and ready to customize in minutes. %s', 'rambo' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'rambo-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'rambo' ).'</a>'  ); ?></p>
+        <p><?php printf( esc_html__( 'Save time by importing our demo data and make your site ready in minutes. %s', 'rambo' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'rambo-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'rambo' ).'</a>'  ); ?></p>
     </div>
     <?php
 }
