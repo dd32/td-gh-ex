@@ -58,7 +58,7 @@
 					'getting_started' => __('Getting Started', 'accesspress-parallax'),
 					'actions_required' => __('Actions Required', 'accesspress-parallax'),
 					'recommended_plugins' => __('Recommended Plugins', 'accesspress-parallax'),
-					'import_demo' => __('Import Demo', 'accesspress-parallax'),
+					//'import_demo' => __('Import Demo', 'accesspress-parallax'),
 					'support' => __('Support', 'accesspress-parallax'),
 				);
 

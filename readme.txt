@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.5.0
+ * Minor Bug Fixes
+
 Version 1.4.0
  * Added Welcome Page with demo import functionality
  * Some Minor Design fixes
