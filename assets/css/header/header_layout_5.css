@@ -32,15 +32,19 @@
 #logo a { 
 	text-decoration:none; 
 	line-height:inherit;
-	color:#fff
-} 
-
-#logo a span { 
+	color:#fff;
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
 	-o-transition: all .3s ease;
+} 
+
+#logo a span { 
 	font-weight:400;
 }
+
+#logo a:hover { 
+	color: #d14a2b;
+} 
 
 /* ===============================================
    SCROLL SIDEBAR

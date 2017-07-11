@@ -278,49 +278,19 @@ if( !class_exists( 'suevafree_metaboxes' ) ) {
 		
 		public function suevafree_metaboxes_save() {
 		
-				global $post_id, $post;
+			global $post_id, $post;
 				
-				$metaboxes_fields = $this->metaboxes_fields ;
+			$metaboxes_fields = $this->metaboxes_fields ;
 		
-				foreach ( $metaboxes_fields as $value ) {
+			foreach ( $metaboxes_fields as $value ) {
 					
-					foreach ($value as $field) {
+				foreach ($value as $field) {
 
-						if ( isset($field['id']) && isset ($_POST[$field['id']] ) ) {
+					if ( isset($field['id']) && isset ($_POST[$field['id']] ) ) {
 
-							$new = $_POST[$field['id']];
-
-							if ( $field['id'] == "galleries" ) {	
+						$new = $_POST[$field['id']];
+						update_post_meta( $post_id , $field['id'], sanitize_text_field($new) );
 							
-							$suevafree_gallery = suevafree_postmeta('galleries');
-						
-							if ( $suevafree_gallery != false ) {
-									
-								$suevafree_gallery = maybe_unserialize( $suevafree_gallery );
-								
-							} else {
-								
-								$suevafree_gallery = array();
-								
-							}      
-								
-							$key = 0;
-								
-							foreach ( $new as $slide => $gallery) { 
-		
-								unset ($new[$slide]);
-								$key++;
-								$slideshow[ 'slide' . $key ] = array( 'title' => sanitize_text_field($gallery['title']), 'url' => esc_url($gallery['url']));
-									
-							}
-						
-							update_post_meta( $post_id , $field['id'] , $slideshow );
-								
-						} else if ( $field['id'] <> "galleries" ) {
-		
-							update_post_meta( $post_id , $field['id'], sanitize_text_field($new) );
-		
-						}
 							
 					}
 						
