@@ -8,16 +8,46 @@
 	0. GENERAL STYLING
 ---------------------------------------------------------------------------------------------------------- */
 
-/* Fix issue where bottom of section doesn't always show */
+/* Fix issue where bottom of section doesn't always show - General */
 #customize-controls .accordion-section-content {
 	padding-bottom: 50px;
 	background: #FCFCFC;
+}
+#customize-controls .redux-main .customize-control:last-child {
+	padding-bottom: 75px !important;
+}
+
+/* Fix issue where bottom of section doesn't always show - Homepage CTA */
+#customize-controls li#thinkup_redux_variables-thinkup_homepage_introactionlink1 {
+	margin-bottom: 50px !important;
+}
+#customize-controls li#thinkup_redux_variables-thinkup_homepage_introactionpage1,
+#customize-controls li#thinkup_redux_variables-thinkup_homepage_introactioncustom1 {
+	margin-top: -50px;
+	padding-bottom: 50px;
+}
+
+/* Tidy update documentation section */
+#customize-controls #accordion-section-thinkup_theme_documentation > h3 {
+/*	border-bottom: none !important; */
+}
+#customize-controls #accordion-section-thinkup_theme_documentation > h3:before {
+	content: '\f114';
+	font-family: fontawesome;
+	padding-right: 5px;
+}
+#customize-controls .redux-main #thinkup_redux_variables-thinkup_theme_documentation_button {
+	padding-bottom: 0 !important;
 }
 
 /* Hide "Theme Options" submenu tab from showing */
 #customize-controls #accordion-panel-thinkup_theme_options {
 	display: block !important;
-	border-top: 1px solid #ddd;
+}
+#customize-controls #accordion-panel-thinkup_theme_options > h3:before {
+	content: '\f0ad';
+	font-family: fontawesome;
+	padding-right: 5px;
 }
 #customize-controls #accordion-panel-thinkup_theme_options #accordion-section-thinkup_theme_options {
 	display: none !important;
@@ -629,15 +659,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /* ----------------------------------------------------------------------------------------------------------
 	1. WIDTH CHANGES
 ---------------------------------------------------------------------------------------------------------- */
@@ -645,6 +666,7 @@
 /* Change sidebar width - Theme Options */
 #customize-controls.thinkup-width-450 {
 	width: 450px !important;
+	max-width: 450px !important;
 }
 #customize-preview.thinkup-width-450 {
 	left: 150px !important;
