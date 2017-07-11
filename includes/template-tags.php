@@ -350,8 +350,8 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			post_password_required() || 
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
-			( is_singular( array( 'post' , 'project' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
-			( is_singular( 'post', 'project', 'product' ) && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' ) 
+			( is_singular( array( 'post' , 'project', 'product' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
+			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && $bento_parent_page_id == null ) 
 		) {
 			return;
 		}
