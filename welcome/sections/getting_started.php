@@ -1,9 +1,9 @@
 <div class="theme-steps-list">
 
 	<div class="theme-steps">
-		<h3><?php echo esc_html__('Step 1 - Recommended Actions', 'accesspress-lite'); ?></h3>
-		<p><?php echo esc_html__('Before you start setting up the theme, there are few recommended action that you need to follow. These recommendation helps you to set up the theme more easily and quickly.', 'accesspress-lite'); ?></p>
-		<a class="button" href="<?php echo esc_url(admin_url('/themes.php?page=accesspress_root-welcome&section=import_demo')); ?>"><?php echo esc_html__('Recommended Actions', 'accesspress-lite'); ?></a>
+		<h3><?php echo esc_html__('Step 1 - Documentation', 'accesspress-lite'); ?></h3>
+		<p><?php echo esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme AccessPress Lite.', 'accesspress-lite'); ?></p>
+		<a target='__blank' class="button" href="https://accesspressthemes.com/theme-instruction-accesspress-lite/"><?php echo esc_html__('Read Full Documentation', 'accesspress-lite'); ?></a>
 	</div>
 
 	<div class="theme-steps">
