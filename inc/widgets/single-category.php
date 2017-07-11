@@ -81,7 +81,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Latest Posts', 'awaken' );	
 		$category = ( isset( $instance['category'] ) ) ? $instance['category'] : '';
 		// Latest Posts
 		$latest_posts = new WP_Query( 

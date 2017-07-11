@@ -36,10 +36,12 @@ textarea {
 .top-navigation ul ul {
   float: right;
   right: -999em;
+  left: auto;
 }
 .main-navigation ul ul ul,
 .top-navigation ul ul ul {
   right: -999em;
+  left: auto;
 }
 .main-navigation ul ul li:hover > ul,
 .top-navigation ul ul li:hover > ul {
@@ -218,11 +220,18 @@ textarea {
 .site-title-text {
   float: right;
 }
-.fr {
+
+.awfr {
+  float: left;
   text-align: left;
 }
+
+.awfl {
+  float: right;
+}
+
 @media all and (max-width:768px) {
-  .footer-site-info .fr {
+  .footer-site-info .awfr {
     text-align: right;
   }
 }
@@ -315,10 +324,10 @@ textarea {
 
 /* RTL Support */
 .awaken-rtl {
-	float: right;
+  float: right;
 }
 .flex-direction-nav .flex-prev {
-	left: 5px;
+  left: 5px;
 }
 .search-form .search-submit {
     right: auto;

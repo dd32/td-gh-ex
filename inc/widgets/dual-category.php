@@ -29,19 +29,19 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 		$defaults = array(
 			'title1'		=>	__( 'Latest Posts', 'awaken' ),
 			'category1'		=>	'',
-			'number_posts1'	=> 3,
+			'number_posts1'	=> 4,
 			'sticky_posts1' => true,
 			'offset1' 		=> 0,
 			'title2'		=>	__( 'Latest Posts', 'awaken' ),
 			'category2'		=>	'',
-			'number_posts2'	=> 3,
+			'number_posts2'	=> 4,
 			'sticky_posts2' => true,
 			'offset2' 		=> 0			
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
-		$number_posts1   = isset( $instance['number_posts1'] ) ? absint( $instance['number_posts1'] ) : 3;
+		$number_posts1   = isset( $instance['number_posts1'] ) ? absint( $instance['number_posts1'] ) : 4;
 		$offset1	=	isset( $instance['offset1'] ) ? absint( $instance['offset1'] ) : 0;
-		$number_posts2   = isset( $instance['number_posts2'] ) ? absint( $instance['number_posts2'] ) : 3;
+		$number_posts2   = isset( $instance['number_posts2'] ) ? absint( $instance['number_posts2'] ) : 4;
 		$offset2	=	isset( $instance['offset2'] ) ? absint( $instance['offset2'] ) : 0;
 
 	?>
@@ -139,14 +139,14 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title1 = ( ! empty( $instance['title1'] ) ) ? $instance['title1'] : '';
-		$number_posts1 = ( ! empty( $instance['number_posts1'] ) ) ? absint( $instance['number_posts1'] )  : 5; 
-		$sticky_posts1 = ( isset( $instance['sticky_posts1'] ) ) ? $instance['sticky_posts1'] : false;
+		$title1 = ( ! empty( $instance['title1'] ) ) ? $instance['title1'] : esc_html__( 'Latest Posts', 'awaken' );
+		$number_posts1 = ( ! empty( $instance['number_posts1'] ) ) ? absint( $instance['number_posts1'] )  : 4; 
+		$sticky_posts1 = ( isset( $instance['sticky_posts1'] ) ) ? $instance['sticky_posts1'] : true;
 		$category1 = ( isset( $instance['category1'] ) ) ? $instance['category1'] : '';
 		$offset1 = ( ! empty( $instance['offset1'] ) ) ? absint( $instance['offset1'] ) : 0;
-		$title2 = ( ! empty( $instance['title2'] ) ) ? $instance['title2'] : '';
-		$number_posts2 = ( ! empty( $instance['number_posts2'] ) ) ? absint( $instance['number_posts2'] )  : 5; 
-		$sticky_posts2 = ( isset( $instance['sticky_posts2'] ) ) ? $instance['sticky_posts2'] : false;
+		$title2 = ( ! empty( $instance['title2'] ) ) ? $instance['title2'] : esc_html__( 'Latest Posts', 'awaken' );
+		$number_posts2 = ( ! empty( $instance['number_posts2'] ) ) ? absint( $instance['number_posts2'] )  : 4; 
+		$sticky_posts2 = ( isset( $instance['sticky_posts2'] ) ) ? $instance['sticky_posts2'] : true;
 		$category2 = ( isset( $instance['category2'] ) ) ? $instance['category2'] : '';
 		$offset2 = ( ! empty( $instance['offset2'] ) ) ? absint( $instance['offset2'] ) : 0;
 

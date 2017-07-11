@@ -102,19 +102,19 @@ class awaken_three_block_posts extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
-		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] )  : 5; 
-		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : false;
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Latest Posts', 'awaken' );
+		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 3;
+		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : true;
 		$category = ( isset( $instance['category'] ) ) ? $instance['category'] : '';
 		$offset = ( ! empty( $instance['offset'] ) ) ? absint( $instance['offset'] ) : 0;
 		// Latest Posts
 		$latest_posts = new WP_Query( 
 			array(
-				'cat'	=>	$category,
-				'posts_per_page'	=>	$number_posts,
-				'post_status'         => 'publish',
-				'ignore_sticky_posts' => $sticky_posts,
-				'offset'	=>	$offset
+				'cat'					=> $category,
+				'posts_per_page'		=> $number_posts,
+				'post_status'         	=> 'publish',
+				'ignore_sticky_posts' 	=> $sticky_posts,
+				'offset'				=> $offset
 				)
 		);	
 

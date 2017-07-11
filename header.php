@@ -112,7 +112,7 @@
 		<div class="container">
 
 	<?php 
-		if ( is_front_page() ) {
+		if ( is_front_page() || is_page_template( 'layouts/magazine.php' ) ) {
 			if ( get_theme_mod( 'display_slider', 1 ) == '1' ) {
 				awaken_featured_posts();
 			}

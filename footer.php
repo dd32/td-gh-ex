@@ -50,7 +50,7 @@
 		<div class="footer-site-info">	
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-md-6 col-sm-6">
+					<div class="col-xs-12 col-md-6 col-sm-6 awfl">
 						<?php $footer_copyright_text = get_theme_mod( 'footer_copyright_text', '' );
 						if( ! empty( $footer_copyright_text ) ) {
 							echo wp_kses_post( $footer_copyright_text ); 
@@ -60,7 +60,7 @@
 							printf( __( 'Copyright &#169; %1$s %2$s.', 'awaken' ), date_i18n( 'Y' ), $site_link );
 						} ?>
 					</div>
-					<div class="col-xs-12 col-md-6 col-sm-6 fr">
+					<div class="col-xs-12 col-md-6 col-sm-6 awfr">
 						<div class="th-copyright">
 							<?php
 								$wp_link = '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'awaken' ) . '">' . __( 'WordPress', 'awaken' ) . '</a>'; 

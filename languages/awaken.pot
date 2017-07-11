@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: awaken.2.1.2\n"
-"POT-Creation-Date: 2017-03-20 07:36+0530\n"
-"PO-Revision-Date: 2017-03-20 07:36+0530\n"
+"Project-Id-Version: awaken.2.1.5\n"
+"POT-Creation-Date: 2017-07-11 12:58+0530\n"
+"PO-Revision-Date: 2017-07-11 12:58+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -184,44 +184,44 @@ msgstr ""
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:152
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:161
 msgid "Magazine 1"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:170
 msgid "Magazine 2"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:179
 msgid "Header Ad Area"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:181
 msgid ""
 "728px x 90px Ad area. Use default text widget to put ad codes like google."
 msgstr ""
 
-#: functions.php:185
+#: functions.php:188
 msgid "Footer Left Sidebar"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:197
 msgid "Footer Mid Sidebar"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:206
 msgid "Footer Right Sidebar"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:215
 msgid "Shop Page Sidebar"
 msgstr ""
 
-#: functions.php:264 functions.php:270 functions.php:276
+#: functions.php:267 functions.php:273 functions.php:279
 msgid "on"
 msgstr ""
 
@@ -551,7 +551,9 @@ msgid "Displays posts in a full width layout"
 msgstr ""
 
 #: inc/widgets/dual-category.php:30 inc/widgets/dual-category.php:35
-#: inc/widgets/single-category.php:31 inc/widgets/three-block-posts.php:30
+#: inc/widgets/dual-category.php:142 inc/widgets/dual-category.php:147
+#: inc/widgets/single-category.php:31 inc/widgets/single-category.php:84
+#: inc/widgets/three-block-posts.php:30 inc/widgets/three-block-posts.php:105
 msgid "Latest Posts"
 msgstr ""
 
