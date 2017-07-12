@@ -1,11 +1,11 @@
 /**
   Theme Name:  Appeal
-  Theme URI:   http://themes.tradesouthwest.com/wordpress/appeal/
-  Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert template and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support, set color, width of pullquote teaser and set Post excerpt length. Parent navigation is mobile first. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
+  Theme URI:   http://themes.tradesouthwest.com/appeal/
+  Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert template and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support, set color and width of pullquote teaser, set Post excerpt length. Parent navigation is mobile first. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.0.8
+  Version:     1.0.9
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -4233,6 +4233,7 @@ button.close {
 
 #respond {
   height:100%;
+  padding-left: 12px;
 }
 #reply-title {
   color:#656565;
@@ -4246,12 +4247,10 @@ button.close {
 textarea#comment {
   padding: 3px;
   border: 1px solid #ddd;
-  background-image: none;
-  background: #fdfdfd;
-  box-shadow: 0 1px 1px #aaaaaa;
+  background: #f9f9f9;
   width: 540px;
   height: 100px;
-  border-radius: 4px;
+  border-radius: 1px;
 }
 textarea#comment:focus {
   box-shadow: 0 3px 5px #5588cc;
@@ -4285,18 +4284,23 @@ color: inherit;
 /* Highlight active form field */
 
 #respond input[type=text],
+#respond input[type=email] {
+margin-left: 3px;
+}
+#respond input[type=text],
 #respond input[type=email],
 #respond input[type=url] {
   min-width: 318px;
   transition: all 0.30s ease-in-out;
   outline: none;
   padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
   border: 1px solid #cccccc;
-  border-radius: 3px;
-
-  box-shadow: 0 1px 1px #aaa;
-  background-image: linear-gradient( to bottom, #ffffff, #efefef );
+  border-radius: 1px;
+  box-shadow: 0 1px 1px #ddd
+  background-image: linear-gradient( to bottom, #ffffff, #f9f9f9 );
+}
+#respond input[type=url] {
+margin-left: 1px;
 }
 @media screen and (max-width: 760px){
   #respond input[type=text],
@@ -4311,7 +4315,6 @@ color: inherit;
 #respond input[type=email]:focus,
 #respond input[type=url]:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
 }
 h3.comment-reply-title {
@@ -4327,17 +4330,16 @@ h3.comment-reply-title {
   font-size: 1em;
   padding: 5px 15px;
   text-decoration: none;
-  box-shadow: 0px 1px 2px #ccc;
-  text-shadow: 1px 1px 3px #eee;
+  border-bottom-color: #ddd;
+  text-shadow: 1px 1px 3px #fff;
   margin-top: 8px;
-  border-radius: 4px;
-  border-color: #f1f1f1;
-  background-image: linear-gradient( #f3f3f3, #e4e4e4);
+  border-radius: 0px;
+  border-color: #dfdfdf;
+  background: #f3f3f3;
 }
 
 #submit:hover {
   background-image: linear-gradient( #fdfdfd, #efefef);
-  border-radius: 5px;
 }
 
 /* widgets

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-07-10 11:30-0700\n"
-"PO-Revision-Date: 2017-07-10 11:31-0700\n"
+"POT-Creation-Date: 2017-07-11 19:23-0700\n"
+"PO-Revision-Date: 2017-07-11 19:23-0700\n"
 "Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_x;"
-"_nx\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_nx;"
+"_x\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "email link text to author"
 msgstr ""
 
-#: sidebar.php:6 footer.php:84
+#: sidebar.php:6 footer.php:92
 msgid "Top/Pg."
 msgstr ""
 
@@ -145,23 +145,23 @@ msgstr ""
 msgid "Your email address will not be published."
 msgstr ""
 
-#: content-header.php:89
+#: content-header.php:98
 msgid "Author Gravatar is shown here. Clickable link to Author page."
 msgstr ""
 
-#: content-header.php:96
+#: content-header.php:105
 msgid "Author Gravatar"
 msgstr ""
 
-#: content-header.php:100
+#: content-header.php:109
 msgid "Article by: "
 msgstr ""
 
-#: content-header.php:103
+#: content-header.php:112
 msgid "Authors link to author website or other works."
 msgstr ""
 
-#: content-header.php:115 part-metadata.php:14
+#: content-header.php:124 part-metadata.php:14
 msgid "1 Response"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: footer.php:68
+#: footer.php:76
 msgid "Design by "
 msgstr ""
 
@@ -473,70 +473,62 @@ msgid "Posts and Pages"
 msgstr ""
 
 #: customize.php:283
-msgid "Posts Only"
+msgid "Posts Only - Not Pages"
 msgstr ""
 
-#: customize.php:284
-msgid "Pages Only"
-msgstr ""
-
-#: customize.php:285
-msgid "Only HomePage Blog &amp; Single Posts"
-msgstr ""
-
-#: customize.php:293
+#: customize.php:291
 msgid "Choose color for link icon: "
 msgstr ""
 
-#: customize.php:297
+#: customize.php:295
 msgid "Black Link Icon"
 msgstr ""
 
-#: customize.php:298
+#: customize.php:296
 msgid "Red Link Icon"
 msgstr ""
 
-#: customize.php:299
+#: customize.php:297
 msgid "Blue Link Icon"
 msgstr ""
 
-#: customize.php:300
+#: customize.php:298
 msgid "Green Link Icon"
 msgstr ""
 
-#: customize.php:301
+#: customize.php:299
 msgid "Gray Link Icon"
 msgstr ""
 
-#: customize.php:312
+#: customize.php:310
 msgid "Upload Image to Top Advert Box"
 msgstr ""
 
-#: customize.php:313
+#: customize.php:311
 msgid "Upload will override any widgets."
 msgstr ""
 
-#: customize.php:321
+#: customize.php:319
 msgid "Choose border style on sidebars."
 msgstr ""
 
-#: customize.php:325
+#: customize.php:323
 msgid "No borders"
 msgstr ""
 
-#: customize.php:326
+#: customize.php:324
 msgid "Show borders"
 msgstr ""
 
-#: customize.php:328
+#: customize.php:326
 msgid "Show borders and Box-Shadow"
 msgstr ""
 
-#: customize.php:338
+#: customize.php:336
 msgid "Wording for View Sidebar button"
 msgstr ""
 
-#: customize.php:348
+#: customize.php:346
 msgid ""
 "View theme instructions and option notes from menu <b>Appearance > Theme "
 "Options</b>"

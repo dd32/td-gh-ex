@@ -5,7 +5,7 @@ Description:  Appeal features a pull-quote block in the main content to display 
  * Theme Name:  Appeal
  * Author:      Larry Judd Oliver
  * Author URI:  http://tradesouthwest.com/
- * Stable Version:     1.0.2
+ * Stable Version:     1.0.9
  * Text Domain: appeal
  * Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template
  * License:     GPL 3
@@ -29,9 +29,15 @@ Twitter in admin https://brand.twitter.com/logo
 clickable. This is to prevent conflict with mobile navigation. A mobile device will not be able to tap on the top parent 
 link and use any of the child links below it.
 
-ToDo: flatten search button and resize
+
 
 == Change Log ==
+1.0.9 
+- removed some title options
+- is_sidebar to footer and header
+- styled comment form
+- sanitized throughout
+
 1.0.8 
 - changed date output to date_format 
 - fixed some buttons and search inputs

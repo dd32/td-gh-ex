@@ -3,10 +3,18 @@
         </div><!-- .container -->
 
 <div class="container">
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottombox">
-<?php get_sidebar( 'bottom' ); ?>
-</div></div>
+    <div class="row">
+    
+        <?php if( is_active_sidebar( 'sidebar-bottom' ) ) { ?>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottombox">
+    
+        <?php get_sidebar( 'bottom' ); ?>
+    
+    </div>
+
+        <?php } ?>
+    </div>
 </div>
 
     </div><!-- .content-wrapper -->

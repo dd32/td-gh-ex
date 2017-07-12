@@ -134,16 +134,18 @@
                         <div class="col-xs-6 col-sm-6 col-lg-7">
                         <a class="appeal-imglinks"
                            href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>" 
-                           <?php if(!empty( $get_description )){ 
-                           echo 'title="' . $get_description . '"'; } ?>>
+                           <?php if( !empty ( $get_description ) ) { ?>
+                        title="<?php echo esc_attr( $get_description ); ?>"><?php } ?>
                         <?php the_post_thumbnail( 'appeal-featured', array( 
                                                 'itemprop' => 'image', 
                                                 'class' => 'img-responsive appeal-thumbnail',
                                                 'alt' => 'link' ) ); ?></a>
                                                 <?php  
-                                                if(!empty($get_description)){
-                                                //If description-caption is not empty show the div
-    echo '<div class="featured_caption" title="'.$get_description.'">' . $get_description . '</div>';
+                                                if( !empty( $get_description ) ) {
+    //If description-caption is not empty show the div
+    ?><div class="featured_caption" title="<?php echo esc_attr( $get_description ); ?>">
+    <?php echo esc_html( $get_description ); ?></div>
+    <?php 
     } else { 
     echo '<div class="no-descript"></div>'; } ?>
     
@@ -157,8 +159,8 @@
                         <div class="col-xs-6 col-sm-6 col-lg-7">
                         <a class="appeal-imglinks"
                            href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>" 
-                           <?php if(!empty( $get_description )){ 
-                           echo 'title="' . $get_description .'"'; } ?>>
+                              <?php if( !empty ( $get_description ) ) { ?>
+                        title="<?php echo esc_attr( $get_description ); ?>"><?php } ?>
                         <?php the_post_thumbnail('thumbnail', array( 
                                                 'itemprop' => 'image', 
                                                 'class' => 'img-responsive appeal-thumbnail',
@@ -167,7 +169,9 @@
                         $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
                                                 if(!empty($get_description)){
                                                 //If description-caption is not empty show the div
-    echo '<div class="featured_caption" title="'.$get_description.'">' . $get_description . '</div>';
+    ?><div class="featured_caption" title="<?php echo esc_attr( $get_description ); ?>">
+    <?php echo esc_html( $get_description ); ?></div>
+    <?php 
     } else { 
     echo '<div class="no-descript"></div>'; } ?>
                         </div>

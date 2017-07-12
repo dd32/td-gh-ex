@@ -1,30 +1,64 @@
-    <header class="content-header">
-
-    <?php 
+<?php 
 /**
  * Get theme mods from options value
  * @uses get_theme_mods()
  * @string $titlelink 
- * @string $hgroup
+ * @string $hgroup 
+ * atv1=Posts and Pages 
+ * atv2=Posts Only Not Pages
+ * atv3= @since 1.0.9 deprecated
+ * atv4= @since 1.0.9 deprecated
  */    
+ ?>
+     <header class="content-header">
+
+    <?php 
+    /**
+     * Get theme mods from options value
+     * @uses get_theme_mods()
+     * @string $titlelink 
+     * @string $hgroup
+     */    
     if ( get_theme_mods( ) ) :
     $titlelink = get_theme_mod( 'appeal_titlelink_color_setting', 'linkico-gray' );
        $hgroup = get_theme_mod( 'appeal_title_visible_setting', 'atvt1' );
     endif;
 
-    if( $hgroup == "atvt1" && is_page() || is_single() ) { 
-/**
- * Posts and Pages but no links
- */
+
+   
+    /**
+     * Posts and Pages but no links
+     */
+    if( $hgroup == "atvt1" && is_page() || $hgroup == "atvt1" && is_single() ) { 
     ?>
 
     <h2 class="entry-title"><?php the_title(); ?></h2>
 
-    <?php } 
-    elseif( $hgroup == "atvt2" && is_home() ) { 
-/**
- * Posts Only -not homepage blog- with links
- */
+    <?php 
+    }
+    
+    /**
+     * Only home page is blog
+     */
+    elseif( $hgroup == "atvt1" && is_home() && is_front_page() || is_home() ) { 
+    ?>
+    
+    <h2 class="entry-title">
+       <a class="text-link"
+          href="<?php the_permalink(); ?>"
+          title="<?php the_title_attribute(); ?>">
+    <span class="genico">
+     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
+          alt="link" /></span> <?php the_title(); ?></a></h2> 
+
+    <?php 
+    }
+    /**
+     * Posts Only -not homepage blog- with links
+     */
+    elseif( $hgroup == "atvt2" ) { 
+        
+        if ( is_home() ) {
     ?>
 
     <h2 class="entry-title"><a class="text-link"
@@ -34,52 +68,27 @@
      <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
           alt="link" /></span> <?php the_title(); ?></a></h2>
              
-    <?php }
-    elseif( $hgroup == "atvt3" && is_page() ) { 
-/**
- * Pages Only
- */
-    ?>
+        <?php } ?>
+        <?php
+            if ( is_single() ) {
+            ?><h2 class="entry-title"><?php the_title(); ?></h2>
+            <?php 
+            } ?>
+    <?php 
+    }
 
-    <h2 class="entry-title"><?php the_title(); ?></h2>
 
-    <?php }
-    elseif ( $hgroup == "atvt4" && is_home() && is_front_page() ) { 
-/**
- * Only HomePage Blog &amp; Single Posts 
- */
-    ?>
-
-    <h2 class="entry-title" style="<?php echo $visonly; ?>">
-       <a class="text-link"
-          href="<?php the_permalink(); ?>"
-          title="<?php the_title_attribute(); ?>">
-    <span class="genico">
-     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
-          alt="link" /></span> <?php the_title(); ?></a></h2>
-
-    <?php } elseif( $hgroup == "atvt1" && is_home() && is_front_page() || is_home() ) { 
-/**
- * Only home page is blog
- */
-    ?>
-    <h2 class="entry-title" style="<?php echo $visonly; ?>">
-       <a class="text-link"
-          href="<?php the_permalink(); ?>"
-          title="<?php the_title_attribute(); ?>">
-    <span class="genico">
-     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
-          alt="link" /></span> <?php the_title(); ?></a></h2>
-
-    <?php } else { 
-/**
- * Archives and everything else 
- */
+    else { 
+    /**
+     * Everything else 
+     */
     ?>
     
-    <div class="hidden"></div>
+    <h2 class="entry-title"><?php the_title(); ?></h2>
 
-    <?php } 
+    <?php } ?>
+    
+    <?php  
     $time_format = get_the_date( get_option('date_format') );
     ?>
 
@@ -112,8 +121,8 @@
                 <?php if( is_single() ) 
                 {
                 echo '<span class="show-comment-nmbr"><small>'; 
-                printf( esc_html( _nx( '1 Response', '%1$s Responses', get_comments_number(), 
-                'Responses', 'appeal' ) ), number_format_i18n( get_comments_number() ) );
+                printf( _nx( '1 Response', '%1$s Responses', get_comments_number(), 
+                'Responses', 'appeal' ), number_format_i18n( get_comments_number() ) );
                 echo '</small></span>'; 
                 } 
                 ?></div>

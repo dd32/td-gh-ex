@@ -18,7 +18,7 @@
 
         <div class="hgroup">
 
-            <?php appeal_theme_custom_logo(); ?>
+            <?php printf( appeal_theme_custom_logo() ); ?>
         
             <p class="list-inline">
             <span class="site-title">
@@ -72,15 +72,9 @@
 
    <div class="clearfix"></div>
    <?php if( is_page() || is_home() ){ ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbox">
-
+    
                 <?php get_sidebar( 'top' ); ?>
 
-            </div>
-        </div>
-    </div>
-    <?php } else { echo '<div class="hidden"></div>'; } ?>
+      <?php } else { echo '<div class="hidden"></div>'; } ?>
 		<div id="page-content"><!-- ends in footer -->
 			<div class="container"><!-- ends in footer -->

@@ -36,28 +36,20 @@
                                       'yearly archives date format', 'appeal' ) ) ); ?>
 
     					<?php else : ?>
-    						<?php _e( 'Blog Archives', 'appeal' ); ?>
+    						<?php esc_html_e( 'Blog Archives', 'appeal' ); ?>
 
     				<?php endif; ?>
 				</h1><!-- .page-title -->
 				<?php
 				if ( is_category() ) :
-					if ( $category_description = category_description() )
-						echo '<h2 class="archive-meta">' . $category_description
-                        . '</h2>'; ?>
+					if ( $category_description = category_description() ) ?> 
+						<div class="archive-meta"><?php echo wp_kses( $category_description, '<p>', '</p>' ); ?></div>
 				<?php endif; ?>
-                <?php
-				if ( is_author() ) :
-					$curauth = ( get_query_var('author_name') ) ? 
-					get_user_by( 'slug', get_query_var( 'author_name' ) ) :   
-					get_userdata( get_query_var(' author' ) );
-					if ( isset( $curauth->description ) )
-						echo '<h2 class="archive-meta">' . $curauth->description . '</h2>';
-				endif;
-
+                <?php 
 				if ( is_tag() ) :
-					if ( $tag_description = tag_description() )
-						echo '<h2 class="archive-meta">' . $tag_description . '</h2>';
+					if ( $tag_description = tag_description() ) ?>
+						<div class="archive-meta"><?php echo wp_kses( $tag_description, '<p>', '</p>' ); ?></div>
+				<?php 
 				endif;
 				?>
 			</header><!-- #archive-header -->
@@ -75,13 +67,13 @@
                 </div><!-- ends entry-content -->   
                     <footer class="meta-footer archive-footer">
 
+                    <?php $time_format = get_the_date( get_option('date_format') ); ?>
                      
-                      <time class="alignright" 
-                            datetime="<?php echo get_the_date('F j, Y'); ?>"
-                            itemprop="datePublished" pubdate 
-                            class="thedate">
-                        <?php echo the_date('', '<em>', '</em>', false ); ?></time> 
-                          
+                    <time class="alignright" 
+                      datetime="<?php echo esc_attr( $time_format ); ?>"
+                      itemprop="datePublished" pubdate 
+                      class="thedate"><?php echo esc_html( $time_format ); ?></time> 
+                      
                     </footer>
             </article><!-- #post -->
 

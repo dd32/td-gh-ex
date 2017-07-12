@@ -215,7 +215,7 @@ function appeal_theme_custom_logo() {
     if (empty($output))
         $output = '';
 
-    echo $output;
+    return $output;
 }
 
 
@@ -433,6 +433,11 @@ function appeal_pingback_header() {
 }
 add_action( 'wp_head', 'appeal_pingback_header' );
 
+function appeal_is_blog () {
+	global  $post;
+	$posttype = get_post_type($post );
+	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
+}
 
 /**woo weady
  * Removes woo wrappers and replace with this theme's content

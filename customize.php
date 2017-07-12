@@ -280,9 +280,7 @@ function appeal_register_theme_customizer($wp_customize)
         'type'      => 'select',
         'choices'   => array(
             'atvt1' => __( 'Posts and Pages', 'appeal' ),
-            'atvt2' => __( 'Posts Only', 'appeal' ),
-            'atvt3' => __( 'Pages Only', 'appeal' ),
-            'atvt4' => __( 'Only HomePage Blog &amp; Single Posts', 'appeal' ),
+            'atvt2' => __( 'Posts Only - Not Pages', 'appeal' ),
         ),
     ));
 
@@ -375,27 +373,27 @@ function appeal_customizer_css() {
 
         if ( get_theme_mod( 'appeal_header_background_color_setting' ) ) :
              $appealheader = get_theme_mod( 'appeal_header_background_color_setting');
-             echo '.site-head, .footer-footer, #sidebar-right, #sidebar-left{background: ' . $appealheader . ';} .commentlist, article.sticky .content-header{border-color: ' . $appealheader . ';}';
+             echo '.site-head, .footer-footer, #sidebar-right, #sidebar-left{background: ' . esc_attr( $appealheader ) . ';} .commentlist, article.sticky .content-header{border-color: ' . esc_attr( $appealheader ) . ';}';
         endif;
         
         if ( get_theme_mod( 'appeal_page_background_color_setting' ) ) :
              $appealpage = get_theme_mod( 'appeal_page_background_color_setting');
-             echo '#content {background: ' . $appealpage . ';}';
+             echo '#content {background: ' . esc_attr( $appealpage ) . ';}';
         endif;
         
         if ( get_theme_mod( 'appeal_anchor_links_color_setting' ) ) :
              $appeallink = get_theme_mod( 'appeal_anchor_links_color_setting');
-             echo 'a, a:link, #inner-footer a {color: ' . $appeallink . ';}';
+             echo 'a, a:link, #inner-footer a {color: ' . esc_attr( $appeallink ) . ';}';
         endif;
 
         if ( get_theme_mod( 'appeal_pullquote_text_color_setting' ) ) :
              $appealquote = get_theme_mod( 'appeal_pullquote_text_color_setting');
-             echo '.pullquote aside {color: ' . $appealquote . ';}';
+             echo '.pullquote aside {color: ' . esc_attr( $appealquote ) . ';}';
         endif;
 
         if ( get_theme_mod( 'appeal_custom_teaser_width_setting' ) ) :
              $appealwidth = get_theme_mod( 'appeal_custom_teaser_width_setting');
-             echo '.pullquote {width: ' . $appealwidth . 'px;}';
+             echo '.pullquote {width: ' . esc_attr( $appealwidth ).'px;}';
         endif;
 
         if ( get_theme_mod( 'appeal_topbox_image_setting' ) ) :
@@ -405,7 +403,7 @@ function appeal_customizer_css() {
         
         if ( get_theme_mod( 'appeal_sidebar_border_setting' ) ) :
              $appealsidebrd = get_theme_mod( 'appeal_sidebar_border_setting', 'none');
-             echo '#sidebar-left, #sidebar-right { border: '.$appealsidebrd.'; }';
+             echo '#sidebar-left, #sidebar-right { border: ' . esc_attr( $appealsidebrd ) .'; }';
         endif; 
     
     echo '</style>';
@@ -427,12 +425,4 @@ function appeal_custom_posts_excerpt_length()
     }
 }
 add_filter( 'excerpt_length', 'appeal_custom_posts_excerpt_length' );
-
-function appeal_title_visible()
-{
-    if ( get_theme_mods( ) ) {
-        $hgroup = get_theme_mod( 'appeal_title_visible_setting', 'atvt1' );
-        return $hgroup;
-    }
-}
 ?>
