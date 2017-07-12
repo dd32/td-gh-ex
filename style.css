@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 2.0
+Version: 2.1
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
@@ -919,8 +919,10 @@ p.site-title,
 h1.site-title
 {
 	font-size: 2rem;
-	    padding: 0px 0px;
-    margin-bottom: 0;
+	padding: 0px 0px;
+	margin-top:20px;
+	margin-bottom: 0;
+    line-height: 1;	
 }
 p.site-description{
 	font-size: 1.4rem;
@@ -1263,15 +1265,6 @@ tbody {
     font-size: 14px;
     line-height: 24px;
 }
-
-.entry a {
-    text-decoration: underline;
-}
-
-.entry a:hover {
-    text-decoration: none;
-}
-
 .entry ul,
 .entry ol {
     padding: 9px 40px;
@@ -2082,9 +2075,6 @@ textarea {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.75);
     display: block;
-    font-family: inherit;
-    font-size: 0.875rem;
-    height: 2.4rem;
     margin: 0 0 1rem 0;
     padding: 0.5rem;
     width: 100%;
@@ -2437,6 +2427,26 @@ pre {
 /*--------------------------------------------------------------
 # WooCommerce
 --------------------------------------------------------------*/
+.woocommerce div.product form.cart .quickcheckout a{
+    color: #fff;
+    background: #5b89b8;
+    padding: 8px;
+    border-radius: 3px;
+}
+.woocommerce div.product form.cart .quickcheckout {
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.woocommerce div.product form.cart .quickcheckout a:before {
+    content: "\f08b";
+    font: normal normal normal 14px/1 FontAwesome;
+    padding: 1px 6px 0px 0px;
+    font-size: 1.1rem;
+}
+.woocommerce div.product div.images ol.flex-control-nav.flex-control-thumbs img{
+	    padding: 4px;
+}
 .woocommerce-product-gallery__image {
     margin-top: 10px;
 }

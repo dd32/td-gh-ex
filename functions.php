@@ -90,6 +90,9 @@ function promax_theme_setup() {
 		add_image_size( 'promax_singlefull', 816, 500 );
 		//woocommerce plugin support
 		add_theme_support( 'woocommerce' );
+			if(of_get_option('promax_woozoom')=='on'){ add_theme_support( 'wc-product-gallery-zoom' );}
+	if(of_get_option('promax_woolightbox')!=='off'){ add_theme_support( 'wc-product-gallery-lightbox' );}
+	if(of_get_option('promax_wooslider')=='on'){ add_theme_support( 'wc-product-gallery-slider' );}
 global $content_width;
 		if ( ! isset( $content_width ) ) {
 		$content_width = 670;
