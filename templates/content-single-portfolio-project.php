@@ -53,7 +53,7 @@ global $post;
     		global $ascend_has_sidebar;
     		$ascend_has_sidebar = 'false';
             echo '<section class="postfeat">';
-                get_template_part('templates/post', 'head-collage-gallery');
+                ascend_build_image_collage($post->ID, 'image', $ascend_has_sidebar);
             echo '</section>';
 
     } else if ($ascend_project == 'video') { 

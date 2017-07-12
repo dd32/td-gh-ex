@@ -170,7 +170,11 @@ jQuery(document).ready(function ($) {
 						},
 						image: {
 							titleSrc: function(item) {
+								if(item.el.find('img').attr('data-caption')) {
+									return item.el.find('img').attr('data-caption');
+								} else {
 									return item.el.find('img').attr('alt');
+								}
 							}
 						},
 					removalDelay: 500, //delay removal by X to allow out-animation

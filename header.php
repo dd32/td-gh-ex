@@ -8,6 +8,7 @@
   	get_template_part('templates/head');
   	?>
 	<body <?php body_class(); ?>>
+	<?php do_action('ascend_after_body_open'); ?>
 	<div id="wrapper" class="container">
 	<?php
 	   	do_action('ascend_beforeheader');

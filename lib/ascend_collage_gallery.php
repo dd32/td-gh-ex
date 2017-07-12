@@ -52,7 +52,7 @@ if(!function_exists('ascend_build_image_collage')) {
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
                                         <a href="<?php echo esc_url($imagelink); ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
+                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" data-caption="'.esc_attr( get_post_field('post_excerpt', $attachment) ).'"  itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
 							                <meta itemprop="height" content="<?php echo esc_attr($img['height'])?>">
@@ -106,7 +106,7 @@ if(!function_exists('ascend_build_image_collage')) {
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
                                         <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
+                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" data-caption="'.esc_attr( get_post_field('post_excerpt', $attachment) ).'"  itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
 							                <meta itemprop="height" content="<?php echo esc_attr($img['height'])?>">
@@ -163,7 +163,7 @@ if(!function_exists('ascend_build_image_collage')) {
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
                                         <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
+                                            <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" data-caption="'.esc_attr( get_post_field('post_excerpt', $attachment) ).'"  itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
                                             <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
 							                <meta itemprop="height" content="<?php echo esc_attr($img['height'])?>">
@@ -220,7 +220,7 @@ if(!function_exists('ascend_build_image_collage')) {
                                 <div class="kpgi kad_post_grid_item-<?php echo esc_attr($i); ?>">
                                     <div class="kpgi-inner">
 	                                    <a href="<?php echo esc_url($imagelink) ?>" class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr($padding);?>%;" data-rel="<?php echo esc_attr($datarel);?>" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-	                                        <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
+	                                        <?php echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" alt="'.esc_attr($img['alt']).'" data-caption="'.esc_attr( get_post_field('post_excerpt', $attachment) ).'"  itemprop="contentUrl" '.$img['srcset'].'/>'; ?>
 	                                        <meta itemprop="url" content="<?php echo esc_url($img['src']); ?>">
 							                <meta itemprop="width" content="<?php echo esc_attr($img['width'])?>">
 							                <meta itemprop="height" content="<?php echo esc_attr($img['height'])?>">
