@@ -204,7 +204,7 @@ Kirki::add_field( 'beonepage_kirki', array(
 
 Kirki::add_field( 'beonepage_kirki', array(
 	'type'     => 'background',
-	'setting'  => 'front_page_text_slider_bg',
+	'settings'  => 'front_page_text_slider_bg',
 	'label'    => esc_html__( 'Background Image', 'beonepage' ),
 	'section'  => 'site_front_page_slider_module',
 	'default'  => array(
@@ -616,7 +616,7 @@ Kirki::add_field( 'beonepage_kirki', array(
 
 Kirki::add_field( 'beonepage_kirki', array(
 	'type'     => 'background',
-	'setting'  => 'blog_page_header_bg',
+	'settings'  => 'blog_page_header_bg',
 	'label'    => esc_html__( 'Header Image', 'beonepage' ),
 	'section'  => 'site_blog_page',
 	'default'  => array(
