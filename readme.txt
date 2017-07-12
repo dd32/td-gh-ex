@@ -172,3 +172,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.7.8 =
 * Added compatibility with WordPress 4.8
 * Minor bug fixes
+
+= Version 1.7.9 =
+* Added compatibility with Content Options for Jetpack
+* Improved comments section
+* Minor bug fixes

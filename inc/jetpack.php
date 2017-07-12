@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package fortunato
+ * @package semplicemente
  */
 
 /**
@@ -12,6 +12,7 @@
  *
  * See: https://jetpack.com/support/infinite-scroll/
  * See: https://jetpack.com/support/responsive-videos/
+ * See: https://jetpack.com/support/content-options/
  */
 function semplicemente_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
@@ -20,6 +21,17 @@ function semplicemente_jetpack_setup() {
 		'footer'    => 'page',
 	) );
 	add_theme_support( 'jetpack-responsive-videos' );
+	// Add theme support for Content Options.
+	add_theme_support( 'jetpack-content-options', array(
+		'post-details' => array(
+			'stylesheet' => 'semplicemente-style',
+			'date'       => '.posted-on',
+			'categories' => '.cat-links',
+			'tags'       => '.tags-links',
+			'author'     => '.byline',
+			'comment'    => '.comments-link',
+		),
+	) );
 }
 add_action( 'after_setup_theme', 'semplicemente_jetpack_setup' );
 
