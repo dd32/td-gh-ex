@@ -2,7 +2,7 @@
 Contributors: Theme.al
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.3.4
+Version: 1.3.5
 License: GPLv2 or later
 License URI: LICENSE
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
@@ -43,6 +43,9 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 
 == Changelog ==
+
+= 1.3.5 - July 12 2017 =
+- Demo link in description in style.css updated
 
 = 1.3.4 - July 10 2017 =
 - Upgrade To Pro link updated.
