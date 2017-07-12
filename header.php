@@ -28,7 +28,7 @@
 					<div claSS="logo logocenter">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id ); ?>
+						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
 					 <?php if (has_custom_logo()) { ?> <img src="<?php echo $image[0]; ?>" height="<?php echo $wl_theme_options['logo_height'] ?>" width="<?php echo $wl_theme_options['logo_width'] ?>"> <?php } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
@@ -39,7 +39,7 @@
 					<div claSS="logo">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id ); ?>
+						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
 					<?php if (has_custom_logo()) { ?> <img src="<?php echo $image[0]; ?>" height="<?php echo $wl_theme_options['logo_height'] ?>" width="<?php echo $wl_theme_options['logo_width'] ?>"> <?php } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>

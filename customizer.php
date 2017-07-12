@@ -840,6 +840,21 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[blog_speed]',
 	) );
 	
+	$wp_customize->add_setting( 'enigma_options[blog_speed]', array(
+            'type'    => 'option',
+            'default'=>$wl_theme_options['blog_speed'],
+            'sanitize_callback'=>'enigma_sanitize_text',
+            'capability'        => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( 'blog_speed', array(
+        'label'        => __( 'Blog Speed Option', 'enigma' ),
+        'description' => 'Value will be in milliseconds',
+        'type'=>'text',
+        'section'    => 'blog_section',
+        'settings'   => 'enigma_options[blog_speed]',
+    ) );
+	
 /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
 	'title' => __('Typography Settings', 'enigma'),
@@ -1190,6 +1205,7 @@ $wp_customize->add_section(
 		'section'    => 'callout_section',
 		'settings'   => 'enigma_options[fc_icon]'
 	) );
+	
 	/* Footer Options */
 	$wp_customize->add_section('footer_section',array(
 	'title'=>__("Footer Options",'enigma'),
@@ -1275,7 +1291,29 @@ $wp_customize->add_section(
 				'section'  => 'enigma_more',
 				'settings' => 'enigma_more',
 				'priority' => 1,
-			) ) ); 		
+			) ) ); 
+
+	// excerpt option 
+    $wp_customize->add_section('excerpt_option',array(
+    'title'=>__("Excerpt Option",'enigma'),
+    'panel'=>'enigma_theme_option',
+    'capability'=>'edit_theme_options',
+    'priority' => 37,
+    ));
+    
+    $wp_customize->add_setting( 'enigma_options[excerpt_blog]', array(
+        'default'=>_($wl_theme_options['excerpt_blog']),
+        'type'=>'option',
+        'sanitize_callback'=>'enigma_sanitize_integer',
+        'capability'=>'edit_theme_options'
+    ) );
+        $wp_customize->add_control( 'excerpt_blog', array(
+        'label'        => __( 'Excerpt length blog section', 'enigma' ),
+        'type'=>'number',
+        'section'    => 'excerpt_option',
+		'description' => esc_html__('Excerpt length only for home blog section.', 'enigma'),
+		'settings'   => 'enigma_options[excerpt_blog]'
+    ) );
 }
 function enigma_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );

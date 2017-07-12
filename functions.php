@@ -34,6 +34,7 @@
 			'_frontpage' => '1',
 			'blog_count'=>'3',			
 			'custom_css'=>'',
+			'excerpt_blog'=>'55',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,

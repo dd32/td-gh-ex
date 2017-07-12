@@ -38,7 +38,7 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<?php if(get_the_tag_list() != '') { ?>
 				<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 				<?php } ?>
-				<?php the_excerpt( __( 'Read More' , 'enigma' ) ); ?>
+				<p><?php echo substr(get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] ); ?></p>
 				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
@@ -97,3 +97,40 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	</div>
 	</div>
 </div>    
+<script>
+var wl_caroufredsel = function () {
+                 
+               // jQuery CarouFredSel  For blog               
+                
+                jQuery('#enigma_blog_section').wl_caroufredsel({
+                    width: '100%',
+                    responsive: true,
+                   scroll : {
+                        items : 1,
+                        duration : <?php echo $wl_theme_options['blog_speed'] ?>,
+                        timeoutDuration : 2000
+                    },
+                    circular: true,
+                    direction: 'left',
+                    items: {
+                        height: 'variable',
+                        visible: {
+                            min: 1,
+                            max: 3
+                        },
+                        
+                   },
+                     prev: '#port-prev',
+                    next: '#port-next',
+                    auto: {
+                        play: true
+                    }
+                });
+        }
+        jQuery(window).resize(function () {
+                wl_caroufredsel();
+            });   
+            jQuery(window).load(function () {
+                wl_caroufredsel();
+            });    
+</script>

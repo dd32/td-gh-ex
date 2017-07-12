@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.3 [12-07-2017]
+New feature add in Blog Option.
+Excerpt Option added.
+
 @Version: 3.2 [20-06-2017]
 Minor changes in header
 
