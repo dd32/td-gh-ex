@@ -218,28 +218,7 @@ function beonepage_custom_tag_cloud_font( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'beonepage_custom_tag_cloud_font' );
 
-/**
- * Add meta instead of editor on Front Page.
- *
- */ 
-function beonepage_hide_editor() {
-	global $pagenow, $post;
 
-	if ( ! ( $pagenow == 'post.php' ) ) {
-		return;
-	}
-
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-
-	if ( ! isset( $post_id ) ) {
-		return;
-	};
-
-	if ( $post_id == get_option( 'page_on_front' ) ) {
-		remove_post_type_support( 'page', 'editor' );
-	}
-}
-add_action( 'admin_head', 'beonepage_hide_editor' );
 
 /**
  * Update option after Customizer save.

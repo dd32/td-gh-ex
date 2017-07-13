@@ -1,12 +1,17 @@
 <?php
 /**
- * Template Name: Home Page
- * 
+ *  For displaying home page.
  * @package BeOnePage
  */
 
 get_header(); ?>
 
+<?php
+if ( 'posts' == get_option( 'show_on_front' ) ) {
+    include( get_home_template() );
+    }
+    else{
+		?> 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<section id="slider" class="slider<?php echo Kirki::get_option( 'front_page_text_slider_parallax' ) == '1' ? ' slider-parallax' : ''; ?> nopadding clearfix">
@@ -364,5 +369,5 @@ get_header(); ?>
 			</section><!-- #contact -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<?php } ?>
 <?php get_footer(); ?>
