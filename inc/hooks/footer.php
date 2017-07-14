@@ -12,7 +12,7 @@ if ( ! function_exists( 'bfastmag_entry_footer' ) ) :
             $categories_list = get_the_category_list();
             if ( $categories_list ) {
                 /* translators: Categories list */
-                printf( '<span class="cat-links">' . esc_html__( '%1$s', 'bfastmag' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+                printf( '<span class="cat-links">' . esc_html__( '%1$s') . '</span>', $categories_list ); // WPCS: XSS OK.
             }
 
          

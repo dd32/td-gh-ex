@@ -61,7 +61,7 @@ class bfastmag_Welcome {
 	public function bfastmag_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing %s! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'bfastmag' ), 'bfastmag', '<a href="' . esc_url( admin_url( 'themes.php?page=bfastmag-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.', 'bfastmag' ), 'bfastmag', '<a href="' . esc_url( admin_url( 'themes.php?page=bfastmag-welcome' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=bfastmag-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php printf( __( 'Get started with %s', 'bfastmag' ), 'bfastmag' ); ?></a></p>
 			</div>
 		<?php
@@ -231,7 +231,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h1 class="bfastmag-about-title"><?php esc_html_e( 'About bfastmag! ','bfastmag'); if( !empty($bfastmag['Version']) ): ?> <sup id="bfastmag-theme-version"><?php echo esc_attr( $bfastmag['Version'] ); ?> </sup><?php endif; ?></h1>
 
 		<p><?php printf( esc_html__( 'Our best Ultra Fast Blog magazine WordPress theme, %s!','bfastmag'), 'bfastmag' ); ?></p>
-		<p><?php printf( esc_html__( 'Get the best experience using %s and that is why we have created this page with all the necessary informations for you. ThemePacific team hopes that you will enjoy using %s, as much as we enjoy creating it.', 'bfastmag' ), 'bfastmag', 'bfastmag' ); ?>
+		<p><?php printf( esc_html__( 'Get the best experience using %1$s and that is why we have created this page with all the necessary informations for you. ThemePacific team hopes that you will enjoy using %1$s, as much as we enjoy creating it.', 'bfastmag' ), 'bfastmag' ); ?>
 
 	</div>
 
@@ -317,8 +317,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 		$bfastmag_show_required_actions = get_option("bfastmag_show_required_actions");
 
 		foreach( $bfastmag_required_actions as $bfastmag_required_action_key => $bfastmag_required_action_value ):
-			if(@$bfastmag_show_required_actions[$bfastmag_required_action_value['id']] === false) continue;
-			if(@$bfastmag_required_action_value['check']) continue;
+			if($bfastmag_show_required_actions[$bfastmag_required_action_value['id']] === false) continue;
+			if($bfastmag_required_action_value['check']) continue;
 			?>
 			<div class="bfastmag-action-required-box">
 				<span class="dashicons dashicons-no-alt bfastmag-dismiss-required-action" id="<?php echo $bfastmag_required_action_value['id']; ?>"></span>
@@ -400,7 +400,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div>
 		<h4><?php printf( esc_html__( 'Are you enjoying %s?', 'bfastmag' ), 'bfastmag' ); ?></h4>
 
-		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %sWordPress.org%s. We\'d really appreciate it!', 'bfastmag' ), '<a href="https://wordpress.org/support/view/theme-reviews/bfastmag#postform/">', '</a>' ); ?></p>
+		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %1$sWordPress.org%2$s. We\'d really appreciate it!', 'bfastmag' ), '<a href="https://wordpress.org/support/view/theme-reviews/bfastmag#postform/">', '</a>' ); ?></p>
 
 		<p><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></p>
 	</div>

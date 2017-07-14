@@ -36,12 +36,10 @@ jQuery('article').each(function(){
   var  tp_thu_height = jQuery(this).find('.tp-post-thumbnail').outerHeight(true);
   var catlinks = jQuery(this).find('.cat-links').outerHeight(true);
   if( catlinks > tp_thu_height){
-    jQuery(this).find('.tp-post-thumbnail').css("height", catlinks);
-   
-
-  }
-
-});
+    //jQuery(this).find('.tp-post-thumbnail').css("height", catlinks+500);
+    jQuery(this).find('.cat-links').css("position", "relative");
+   }
+ });
 jQuery(window).on('resize', function(){
 
   //Search Box

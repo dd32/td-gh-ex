@@ -264,44 +264,45 @@ class bfastmag_themepacific_social_widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-			$defaults = array( 'title' =>__('Social' , 'bfastmag') , 'rss' =>__('' , 'bfastmag') , 'fb' =>__('' , 'bfastmag') , 'gp' =>__('' , 'bfastmag') , 'tw' =>__('' , 'bfastmag') , 'in' =>__('' , 'bfastmag') , 'yt' =>__('' , 'bfastmag') , 'fr' =>__('' , 'bfastmag')   );
+			$defaults = array( 'title' =>__('Social' , 'bfastmag') , 'rss' =>'' , 'fb' =>'' , 'gp' =>'' , 'tw' =>'' , 'in' =>'' , 'yt' =>'' , 'fr' =>''  );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title : </label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title :','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" class="widefat" type="text" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'rss' ); ?>">RSS </label>
+			<label for="<?php echo $this->get_field_id( 'rss' ); ?>"><?php _e('RSS:','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'rss' ); ?>" name="<?php echo $this->get_field_name( 'rss' ); ?>" value="<?php echo $instance['rss']; ?>" class="widefat" type="text" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fb' ); ?>">Facebook : </label>
+			<label for="<?php echo $this->get_field_id( 'fb' ); ?>"><?php _e('Facebook : ','bfastmag'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'fb' ); ?>" name="<?php echo $this->get_field_name( 'fb' ); ?>" value="<?php echo $instance['fb']; ?>" class="widefat" type="text" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'gp' ); ?>">Google+ : </label>
+			<label for="<?php echo $this->get_field_id( 'gp' ); ?>"><?php _e('Google+ : ','bfastmag'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'gp' ); ?>" name="<?php echo $this->get_field_name( 'gp' ); ?>" value="<?php echo $instance['gp']; ?>" class="widefat" type="text" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'tw' ); ?>">Twitter : </label>
+			<label for="<?php echo $this->get_field_id( 'tw' ); ?>"><?php _e('Twitter :','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'tw' ); ?>" name="<?php echo $this->get_field_name( 'tw' ); ?>" value="<?php echo $instance['tw']; ?>" class="widefat" type="text" />
 		</p>
 
  		<p>
-			<label for="<?php echo $this->get_field_id( 'in' ); ?>"> LinkedIn : </label>
+			<label for="<?php echo $this->get_field_id( 'in' ); ?>"><?php _e(' LinkedIn :','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'in' ); ?>" name="<?php echo $this->get_field_name( 'in' ); ?>" value="<?php echo $instance['in']; ?>" class="widefat" type="text" />
 		</p>
 
  		<p>
-			<label for="<?php echo $this->get_field_id( 'yt' ); ?>">YouTube : </label>
+			<label for="<?php echo $this->get_field_id( 'yt' ); ?>"><?php _e('YouTube :','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'yt' ); ?>" name="<?php echo $this->get_field_name( 'yt' ); ?>" value="<?php echo $instance['yt']; ?>" class="widefat" type="text" />
 		</p>
 
  		<p>
-			<label for="<?php echo $this->get_field_id( 'fr' ); ?>">Flickr : </label>
+			<label for="<?php echo $this->get_field_id( 'fr' ); ?>"><?php _e('Flickr :','bfastmag'); ?> </label>
 			<input id="<?php echo $this->get_field_id( 'fr' ); ?>" name="<?php echo $this->get_field_name('fr'); ?>" value="<?php echo $instance['fr']; ?>" class="widefat" type="text" />
 		</p>
+
 
  
  

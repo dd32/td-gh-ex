@@ -58,8 +58,7 @@ function bfastmag_cat_count_span($links) {
  * Callback function for comment form
  **/
 function bfastmag_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	if ( 'div' === $args['style'] ) {
+ 	if ( 'div' === $args['style'] ) {
 		$tag       = 'div ';
 		$add_below = 'comment bfast-mag-comment';
 	} else {
@@ -100,7 +99,7 @@ function bfastmag_comments_heading() {
 	$comments_number = get_comments_number();
 	if ( 1 === $comments_number ) {
 		/* translators: %s: post title */
-		printf( _x( ' %1$s Comment', $comments_number, 'comments title','bfastmag' ),'<span>'.number_format_i18n( $comments_number ) );
+		printf( _x( ' %1$s Comment', 'comments title','bfastmag' ),'<span>'.number_format_i18n( $comments_number ) );
 	} else {
 		printf(
 			/* translators: 1: number of comments */
