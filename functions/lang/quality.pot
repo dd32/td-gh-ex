@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2017-06-10 18:15+0530\n"
-"PO-Revision-Date: 2017-06-10 18:15+0530\n"
+"POT-Creation-Date: 2017-07-14 16:34+0530\n"
+"PO-Revision-Date: 2017-07-14 16:34+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -108,23 +108,23 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: functions.php:41
+#: functions.php:42
 msgid "Page"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:56
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:82
 msgid "Get the one page template"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:86
 msgid "Install Pirate Forms"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:92
 msgid "Check the contact form after installing Pirate Forms"
 msgstr ""
 
@@ -138,6 +138,19 @@ msgstr ""
 
 #: functions/commentbox/comment-function.php:29
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:9
+msgid "Activate Homepage"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:12
+#, php-format
+msgid "To show the Home Page, click on the buttons given below %s"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:12
+msgid "How to activate homepage"
 msgstr ""
 
 #: functions/customizer/customizer-blog.php:7

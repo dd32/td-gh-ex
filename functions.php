@@ -23,6 +23,7 @@
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	//wp title tag starts here
@@ -109,4 +110,10 @@
 	function quality_add_class_to_excerpt( $excerpt ) {
     return str_replace('<p', '<p class="qua-blog-post-description"', $excerpt);
 	}
+	
+	add_action( 'admin_init', 'quality_detect_button' );
+	function quality_detect_button() {
+	wp_enqueue_style( 'quality-info-button', get_template_directory_uri() . '/css/import-button.css' );
+	}
+	
   ?>

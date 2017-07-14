@@ -1,7 +1,7 @@
 <?php
  if ( function_exists( 'add_image_size' ) ) 
  { 
-	/*** blog ***/	
+	/*** blog ***/
 	add_image_size('quality_blog_img',730,280,true);
 }
 // code for home slider post types 

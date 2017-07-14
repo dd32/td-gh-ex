@@ -54,7 +54,7 @@ class quality_screen {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing quality Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'quality' ), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with quality Lite', 'quality' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary" style="text-decoration: none;"><?php _e( 'Get started with quality Lite', 'quality' ); ?></a></p>
 			</div>
 		<?php
 	}
