@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.9
+Version: 	2.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -50,6 +50,9 @@ You can visit the Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
 Limitation: The width of the Main Menu is fixed. You should use the menu items within the box for better visualization.
 
+Changelog 2.1
+=============
+- Some Styling Issues Fixed
 
 Changelog 1.9
 =============

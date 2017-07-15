@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <?php get_template_part( 'fpslide' ); ?>
 <?php if ( 'posts' == get_option( 'show_on_front' ) ): ?>
 <div id="fpblog-box-item" class="box100 bqpcontainer" >
