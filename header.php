@@ -40,18 +40,15 @@
 				<?php endif ?>
 
 				<div id="navigation">
-
-				<?php if (has_nav_menu('primary')): ?>
 					<nav id="main-menu" class="site-navigation primary-navigation" role="navigation" aria-label='<?php _e( 'Primary Menu ', 'aguafuerte' ); ?>'>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'false', 'menu_id' => 'primary-menu' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'ul', 'menu_id' => 'primary-menu' ) ); ?>
 					</nav><!--main-menu-->
-				<?php endif; ?>
 
 				<?php if (has_nav_menu('social')): ?>
 					<nav id="social" class="site-navigation social-navigation" role="navigation" aria-label='<?php _e( 'Social Menu ', 'aguafuerte' ); ?>' >
 					   <?php wp_nav_menu( array(
 							'theme_location' => 'social',
-							'container' => 'false',
+							'container' => 'ul',
 							'menu_id' => 'social-menu',
 							'link_before'    => '<span class="screen-reader-text">',
 							'link_after'     => '</span>', )); ?>
