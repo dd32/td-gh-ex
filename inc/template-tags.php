@@ -21,7 +21,7 @@ function begonia_lite_posted_on() { ?>
 			if ( $categories ) {
 				foreach ( $categories as $category ) {
 					// translators: the %s is replaced with the category name
-					$output .= '<a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'begonia-lite' ), $category->name ) ) . '">' . $category->cat_name . '</a>' . $separator;
+					$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'begonia-lite' ), esc_html( $category->name ) ) ) . '">' . esc_html( $category->cat_name ) . '</a>' . $separator;
 				}
 				echo trim( $output, $separator );
 			} ?>
