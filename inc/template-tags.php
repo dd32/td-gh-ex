@@ -123,10 +123,7 @@ function argent_entry_meta() {
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'argent' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'argent' ) . '</span>', $tags_list );
-		}
+		the_tags( sprintf( '<span class="tags-links">%s ', esc_html__( 'Tagged', 'argent' ) ), esc_html__( ', ', 'argent' ), '</span>' );
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
