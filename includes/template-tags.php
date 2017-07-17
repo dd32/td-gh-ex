@@ -351,7 +351,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
 			( is_singular( array( 'post' , 'project', 'product' ) ) && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
-			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && $bento_parent_page_id == null ) 
+			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && $bento_parent_page_id == $post->ID ) 
 		) {
 			return;
 		}
@@ -372,7 +372,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 				</a>
 			</div>
 		
-			<?php 
+			<?php
 		}
 		
 	}
@@ -489,10 +489,7 @@ if ( ! function_exists( 'bento_post_content' ) ) {
 				the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );
 			}
 		} else if ( get_post_format() === 'quote' ) {
-			$quote = esc_html( get_the_content() );
-			echo '<div class="format-quote-text">';
-			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );
-			echo '</div><div class="format-quote-author">'.esc_html( get_the_title() ).'</div>';
+			echo bento_quote_format_content();
 		} else {
 			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );	
 		}
@@ -755,13 +752,14 @@ if ( ! function_exists( 'bento_link_format_content' ) ) {
 if ( ! function_exists( 'bento_quote_format_content' ) ) {
 
 	function bento_quote_format_content() {
-		$quote = esc_html( get_the_content() );
+		
+		$output = '<div class="format-quote-text">'.get_the_content().'</div>';
 		$author = esc_html( get_the_title() );
-		$output = '<div class="format-quote-text">'.$quote.'</div>';
 		if ( $author != '' ) {
 			$output .= '<div class="format-quote-author">'.$author.'</div>';
 		}
 		return $output;
+		
 	}
 	
 }

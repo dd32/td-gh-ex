@@ -743,7 +743,7 @@ function bento_register_required_plugins() {
 
 
 // Custom excerpt ellipses
-function bento_custom_excerpt_more($more) {
+function bento_custom_excerpt_more( $more ) {
 	return esc_html__('Continue reading', 'bento').' &rarr;';
 }
 
@@ -779,8 +779,9 @@ function bento_get_custom_logo() {
 // Custom excerpt for grid items
 function bento_grid_excerpt( $excerpt ) {
 	global $bento_parent_page_id; 
-	if ( 'grid.php' == get_page_template_slug( $bento_parent_page_id ) ) {
-		$content = get_extended( apply_filters( 'the_content', strip_shortcodes( get_the_content() ) ) );
+	if ( $bento_parent_page_id && 'grid.php' == get_page_template_slug( $bento_parent_page_id ) ) {
+		$stripped_content = wp_strip_all_tags( strip_shortcodes( get_the_content() ) );
+		$content = get_extended( apply_filters( 'the_content', $stripped_content ) );
 		$content = str_replace( ']]>', ']]&gt;', $content );
 		$length = 300;
 		if ( ! has_excerpt() ) {
@@ -893,6 +894,7 @@ function bento_extra_classes( $classes ) {
 	}
 	
     return $classes;
+
 }
 
 
