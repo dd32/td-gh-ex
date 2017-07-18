@@ -365,8 +365,7 @@ require get_template_directory() . '/inc/functions/custom-functions.php';
 
 
 function bfastmag_customize_register_required(){
-	require( get_template_directory() . '/inc/customizer/customizer-repeater/bfastmag-general-control.php' );
- 	require( get_template_directory() . '/inc/customizer/bfastmag-info.php' );
+  	require( get_template_directory() . '/inc/customizer/bfastmag-info.php' );
 
 }
 add_action( 'customize_register', 'bfastmag_customize_register_required' );

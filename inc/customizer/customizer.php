@@ -86,11 +86,6 @@ function bfastmag_customize_register( $wp_customize ) {
 		'panel'    => 'featured_panel',
 	) );
 
-	$wp_customize->add_section( 'bfastmag_header_social_links', array(
-		'title'    => esc_html__( 'Header Social Links', 'bfastmag' ),
-		'priority' => 1,
-		'panel'    => 'social_links_panel',
-	) );
  
  
 
@@ -356,13 +351,7 @@ function bfastmag_customize_register( $wp_customize ) {
 		'priority' => 5,
 	) ) );
  
-	$wp_customize->add_control( new bfastmag_General_Repeater( $wp_customize, 'bfastmag_social_links', array(
-		'label'                => esc_html__( 'Add New Social Link', 'bfastmag' ),
-		'section'              => 'bfastmag_header_social_links',
-		'priority'             => 1,
-		'bfastmag_icon_control' => true,
-		'bfastmag_link_control' => true,
-	) ) );
+ 
 
 	$wp_customize->add_control( 'bfastmag_sticky_menu', array(
  		'type'     => 'checkbox',

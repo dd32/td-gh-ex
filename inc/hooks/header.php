@@ -100,21 +100,7 @@ function bfastmag_header() {
                 <?php bfastmag_action_inner_navbar_top(); ?>
 
                 <div class="navbar-left social-links">
-                    <?php
-                        $bfastmag_social_links = get_theme_mod( 'bfastmag_social_links' );
-
-                    if ( ! empty( $bfastmag_social_links ) ) {
-                        $bfastmag_social_links_decode = json_decode( $bfastmag_social_links );
-                        if ( ! empty( $bfastmag_social_links_decode ) ) {
-                            foreach ( $bfastmag_social_links_decode as $icon ) {
-                                if ( ! empty( $icon->icon_value ) ) {
-                                    echo '<a ' . ( empty( $icon->link ) ? '' : 'href="' . esc_url( $icon->link ) . '"' ) . ' class="social-link"><i class="fa ' . esc_attr( $icon->icon_value ) . '"></i></a>';
-                                }
-                            }
-                        }
-                    }
-                    ?>
-                </div>
+                 </div>
                 
               
          <span class="breaking"><?php _e( 'Trending', 'bfastmag' );?></span>
