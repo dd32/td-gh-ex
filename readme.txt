@@ -84,6 +84,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.11
+- Fixed:   Slider now displays correctly.
+- Updated: Minified version of bootstrap css file.
+- Updated: Minified version of responsive slides js file added.
+
 Version 1.3.10
 - New:     Version control now updated with use of global variable $thinkup_theme_version.
 - Updated: All instances of sidebar anchor text "sidebarleft" changed to "thinkup-sidebarleft".
