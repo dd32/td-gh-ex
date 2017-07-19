@@ -7,8 +7,6 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-
 <?php wp_head(); ?>
 
 </head>
@@ -31,16 +29,12 @@
 
 <div class="aqa-logo">
     
-<?php 
-    
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-	if ( has_custom_logo() ) {
-	        echo '<a href="'. esc_url( home_url() ) .'"><img src="'. esc_url( $logo[0] ) .'"></a>';
-	} else {
-	        echo '<a href="'. esc_url( home_url() ) .'"><h1>'. get_bloginfo( 'name' ) .'</h1></a>';
-	}
-	?>
+<?php if ( function_exists('the_custom_logo') && has_custom_logo() ) : ?>
+			<?php the_custom_logo(); ?>
+		<?php else : ?>
+		    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			
+			<?php endif; ?>
 
 </div>
 
@@ -54,12 +48,11 @@
 
 <nav class="navbar navbar-default">
 
-    <?php
+<?php
 
 wp_nav_menu(
   array(
-	'theme_location' => 'Header Menu',
-	'menu'              => 'Header Menu',
+	'theme_location' => 'header-menu',
 	'container' => '',
 	'container_class' => '',
 	'li_class'   => 'dropdown-submenu-position',
@@ -82,7 +75,7 @@ wp_nav_menu(
 
 
 
-<?php if( get_theme_mod( 'aqua_search_box' ) == '1') { ?> 
+<?php if( get_theme_mod( 'aquaparallax_search_box' ) == '1') { ?> 
 
 <div class="col-md-1 col-xs-6">
 
@@ -123,8 +116,16 @@ wp_nav_menu(
 <?php if ( ! is_home() && ! is_front_page() ) { ?>
 <div class="breadcrumb">
 <div class="container">
-<div class="aqa-page-breadcrum-title"><?php the_title(); ?> </div>
-<div class="aqa-breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="aqa-page-breadcrum-title">
+	<?php if (is_search()) {
+		echo "Search";
+	} elseif (is_archive()) {
+		echo "Archive";
+	} elseif (is_category()) {
+		echo "Category";
+	} elseif (is_page() || is_single()) { 
+ the_title(); } ?> </div>
+<div class="aqa-breadcrumb"><?php aquaparallax_get_breadcrumb(); ?></div>
 </div>
 </div>
 <?php } ?>

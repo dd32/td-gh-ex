@@ -1,13 +1,14 @@
 <?php
 /**
- * The template for displaying all single posts and attachments
+ * The template for displaying all single posts.
  *
- * @package WordPress
- * @subpackage Aquaparallax
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package aquaparallax
  */
 
-get_header();
-?>
+get_header(); ?>
+
 <div class="aqa-content-area">
 
 <div class="aqa-blog-section">

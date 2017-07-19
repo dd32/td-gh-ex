@@ -9,9 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Aquaparallax
- * @version 1.2
+ * @package aquaparallax
  */
 
 get_header(); ?>
@@ -44,8 +42,8 @@ get_header(); ?>
 <ul class="blog-page-nation">
    
 	<?php
-      if (function_exists('aqua_pagination')) {
-        aqua_pagination();
+      if (function_exists('aquaparallax_pagination')) {
+        aquaparallax_pagination();
       }
     ?>
 </ul>
@@ -68,7 +66,7 @@ get_header(); ?>
 
 <div class="aqa-blog-side-bar">
 
-<?php dynamic_sidebar('aqua_right_sidebar');  ?>
+<?php dynamic_sidebar('aquaparallax_right_sidebar');  ?>
 
 </div>
 </div>
@@ -77,4 +75,4 @@ get_header(); ?>
 </div>
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

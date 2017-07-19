@@ -191,7 +191,15 @@ ul.footer-social-icons {
   padding: 40px 0 0px 0;
   background: #1c1c1d;
   margin-top: 60px;
+  color: #ffffff;
 }
+.aqa-footer-section table#wp-calendar caption {
+   color: #fff;
+}
+.aqa-footer-section table#wp-calendar {
+   color: #fff;
+}
+
 .aqa-footer-bottom {
     background: #0e0e0e;
     /*margin-top: 40px;*/
@@ -513,8 +521,11 @@ a.read-more-btn:hover{
   background: #1e56d0;
 }
 .aqa-view-more-btn {
-  text-align: center;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
 }
+
 
 /*Home services*/
 .aqa-home-services-header {
@@ -613,6 +624,8 @@ ol.comment-list p {
     width: auto;
     max-width: 100%;
     height: auto;
+    text-align: center;
+    margin: 0 auto;
 }
 /*Blog*/
 .aqa-single-blog {
@@ -1223,23 +1236,7 @@ p.chat-reply-btn a {
 }
 .entry-content ul li ul{
     margin: 0 0 0px 15px;
-}
-img.blog-manso-one{
-height: 170px;
-width: 100%;
-}
-img.blog-manso-two{
-height: 150px;
-width: 100%;
-}
-img.blog-manso-three{
-height: 250px;
-width: 100%;
-}
-img.blog-manso-four{
-height: 200px;
-width: 100%;
-}
+} 
 .aqa-blog-meta span {
 padding-right: 20px;
 float: left;
@@ -1270,23 +1267,19 @@ h3.you-may-like{
   padding: 0 0px 0 10px;
 }
 .aqa-footer-section .widget_search input#searchsubmit {
-  position: absolute;
-  top: 71px;
-  right: 17px;
+  margin-top: 15px;
   background: #3b5998;
   color: #fff;
   border: none;
   outline: none;
   border-radius: 50px;
-  padding: 6px 20px;
+  padding: 6px 20px; 
 }
 .aqa-footer-section .widget_search input#searchsubmit:hover {
   background: #1e56d0;
 }
 .aqa-search-page{
-
-margin-top:50px;
-
+  margin-top:50px;
 }
 
 .aqa-search-page article {
@@ -1914,7 +1907,7 @@ div#html5-watermark {
     text-align: center;
   }
   .aqa-footer-section .widget_search input#s {width: 50%;}
-  .aqa-footer-section .widget_search input#searchsubmit{right: 198px;top: 51px;}
+  
 /*Blog sidebar*/
 .aqa-blog-side-bar {text-align: center;}
 .calendar_wrap table {display: inline-block;}
@@ -1923,4 +1916,30 @@ table#wp-calendar {width: auto;}
 .aqa-blog-section .widget_search input[type="text"]{width: 50%;}
 .aqa-blog-section .widget_search input[type="text"]:focus{width: 55%;}
 .blog-right-sidebar {text-align: center;float: none;margin: 0 auto;}
+}
+.aqa-footer-section .widget p,
+.aqa-footer-section .widget h1,
+.aqa-footer-section .widget h2,
+.aqa-footer-section .widget h3,
+.aqa-footer-section .widget h4,
+.aqa-footer-section .widget h5,
+.aqa-footer-section .widget h6,
+.aqa-footer-section .widget span,
+.aqa-footer-section .widget a,
+.aqa-footer-section .widget table,
+.aqa-footer-section .widget table th,
+.aqa-footer-section .widget table tr,
+.aqa-footer-section .widget table td,
+.aqa-footer-section .widget li,
+.aqa-footer-section .widget strong {
+  color: #fff !important;
+}
+.entry-content ol {
+  margin: 0 0 10px 25px; 
+}
+.entry-content ul {
+  margin: 0 0 10px 25px;
+}
+img {
+  height: auto;
 }

@@ -4,7 +4,8 @@
 * Template Name: Blog
 * The template for displaying content from posts
 * @link https://codex.wordpress.org/Template_Hierarchy
-* @package Aquaparallax
+*
+* @package aquaparallax
 */
 
 get_header();
@@ -50,8 +51,8 @@ $the_query = new WP_Query( $args );
 <ul class="blog-page-nation">
 
 <?php
-      if (function_exists('aqua_pagination')) {
-        aqua_pagination($the_query->max_num_pages,"",$paged);
+      if (function_exists('aquaparallax_pagination')) {
+        aquaparallax_pagination($the_query->max_num_pages,"",$paged);
       }
     ?>
 
@@ -73,7 +74,7 @@ $the_query = new WP_Query( $args );
 
 <div class="aqa-blog-side-bar">
 
-<?php dynamic_sidebar('aqua_right_sidebar'); ?>
+<?php dynamic_sidebar('aquaparallax_right_sidebar'); ?>
 
 </div>
 

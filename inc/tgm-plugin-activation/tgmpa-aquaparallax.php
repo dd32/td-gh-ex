@@ -9,9 +9,9 @@
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
 
-add_action( 'tgmpa_register', 'aqua_register_required_plugins' );
+add_action( 'tgmpa_register', 'aquaparallax_register_required_plugins' );
 
-function aqua_register_required_plugins() {
+function aquaparallax_register_required_plugins() {
 	
 	$plugins = array(
 

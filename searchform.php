@@ -1,10 +1,9 @@
 <?php
 /**
- * Template for displaying search forms in Aqua Parallax
+ * Template for displaying search forms in Aquaparallax
  *
- * @package WordPress
- * @subpackage Aquaparallax
- * @version 1.2
+ * @package aquaparallax
+ * 
  */
 ?>
 

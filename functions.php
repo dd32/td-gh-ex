@@ -1,12 +1,43 @@
 <?php
-function aqua_theme_features()  {
-	global $wp_version;
+/**
+ * aquaparallax functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package aquaparallax
+ */
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+if ( ! isset( $content_width ) ) $content_width = 640;
+
+function aquaparallax_setup()  {
     /*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Aquaparallax Theme, use a find and replace
 	 */
 	load_theme_textdomain( 'aquaparallax', get_template_directory() . '/languages' );
+
+    add_theme_support( 'title-tag' );
+
+    add_theme_support( 'post-thumbnails' );
+
+    add_theme_support( 'automatic-feed-links' );
+
+    // Add theme support for Custom Header
+    $args = array(
+    'flex-width'    => true,
+    'width'         => 980,
+    'flex-height'   => true,
+    'height'        => 200,
+    'default-image' => get_template_directory_uri() . '/assets/images/banner.jpg',
+    );
+    add_theme_support( 'custom-header', $args );
 	
 	// Add theme support for Custom Background
 	$background_args = array(
@@ -17,44 +48,9 @@ function aqua_theme_features()  {
 		'admin-preview-callback' => '',
 	);
 	add_theme_support( 'custom-background', $background_args );
-
-	// Add theme support for Custom Header
-	$header_args = array(
-		'default-image'          => '',
-        'random-default'         => false,
-        'width'                  => '',
-        'height'                 => '',
-        'flex-height'            => true,
-        'flex-width'             => true,
-        'default-text-color'     => '',
-        'header-text'            => true,
-        'uploads'                => true,
-        'wp-head-callback'       => '',
-        'admin-head-callback'    => '',
-        'admin-preview-callback' => ''
-	);
-	
-add_theme_support( 'custom-header', $header_args );
-
-function aqua_register_menus() {
-  register_nav_menus(
-    array(
-      'header-menu' => esc_html( 'Header Menu', 'aquaparallax' ),
-      'extra-menu' => esc_html( 'Extra Menu', 'aquaparallax' )
-    )
-  );
-}
-add_action( 'init', 'aqua_register_menus' );	
-
-add_theme_support( 'post-thumbnails' );
-
-add_theme_support( 'automatic-feed-links' );
-
-}
-
-// Aquaparallax custom logo 
-function aqua_custom_logo_setup() {
-    $defaults = array(
+   
+    // Add theme support for Custom Logo
+	$defaults = array(
         'height'      => 71,
         'width'       => 255,
         'flex-height' => true,
@@ -62,43 +58,93 @@ function aqua_custom_logo_setup() {
         'header-text' => array( 'site-title', 'site-description' ),
     );
     add_theme_support( 'custom-logo', $defaults );
-}
-add_action( 'after_setup_theme', 'aqua_custom_logo_setup' );
 
-// Featured image support
-add_theme_support( 'post-thumbnails' ); 
+    /*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+	) );
+
+    // This theme uses wp_nav_menu() in one location. 
+    register_nav_menus(
+    array(
+      'header-menu' => esc_html( 'Header Menu', 'aquaparallax' ),
+      )
+    );
+
+   	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+}
+
+add_action( 'after_setup_theme', 'aquaparallax_setup' );
+
 
 // wp enque script and style
-function aqua_scripts() {
+function aquaparallax_scripts() {
     // aquaparallax styles
+    wp_enqueue_style( 'aquaparallax-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', true, '', 'all' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', false, '', 'all' );
-	wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets/css/styles.css', false, '', 'all' );
-	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css', false, '', 'all' );
+	wp_enqueue_style( 'aquaparallax-styles', get_template_directory_uri() . '/assets/css/styles.css', false, '', 'all' );
+	wp_enqueue_style( 'aquaparallax-responsive', get_template_directory_uri() . '/assets/css/responsive.css', false, '', 'all' );
 	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/assets/css/meanmenu.min.css', false, '', 'all' );
-	wp_enqueue_style( 'elastic', get_template_directory_uri() . '/assets/css/elastic_grid.min.css', false, '', 'all' );
-	wp_enqueue_style( 'testimonial', get_template_directory_uri() . '/assets/css/testimonial-style.css', false, '', 'all' );
-	wp_enqueue_style( 'pagination', get_template_directory_uri() . '/assets/css/pagination.css', false, '', 'all' );
+	wp_enqueue_style( 'aquaparallax-pagination', get_template_directory_uri() . '/assets/css/pagination.css', false, '', 'all' );
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Pacifico|Roboto:400,500,700', false, '', 'all' );
 
     // aquaparallax scripts
-	wp_enqueue_script( 'test-modernizr', get_template_directory_uri() . '/assets/js/testi-modernizr.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.js', array( 'jquery' ), '', true ); 
-	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/assets/js/masonry.pkgd.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array( 'jquery' ), '', true ); 
+	wp_enqueue_script( 'meanmenu-js', get_template_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array( 'jquery' ), '', true ); 
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), '', true ); 
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '', true ); 
 	wp_enqueue_script( 'menu-jquery', get_template_directory_uri() . '/assets/js/menu-jquery.js', array( 'jquery' ), '', true );  
-	wp_enqueue_script( 'nav-jquery', get_template_directory_uri() . '/assets/js/nav.jquery.min.js', array( 'jquery' ), '', true );	
+	wp_enqueue_script( 'nav-jquery', get_template_directory_uri() . '/assets/js/nav.jquery.min.js', array( 'jquery' ), '', true );	 
+	wp_enqueue_script( 'aquaparallax-main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '', true );
+	// Pull Masonry from the core of WordPress
+    wp_enqueue_script( 'masonry' ); 
+ 
+    //Pull Masonry from a cdn
+    wp_enqueue_script( 'masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js' );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action('wp_enqueue_scripts', 'aqua_scripts');
+add_action('wp_enqueue_scripts', 'aquaparallax_scripts');
+
+
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function aquaparallax_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aquaparallax_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'aquaparallax_content_width', 0 );
 
 // Aquaparallax Register widget
-function aqua_widgets_init() {
+function aquaparallax_widgets_init() {
 	// Right Sidebar
 	register_sidebar( array(
 		'name'          => esc_html( 'Right Sidebar', 'aquaparallax' ),
-		'id'            => 'aqua_right_sidebar',
+		'id'            => 'aquaparallax_right_sidebar',
 		'description'   => esc_html( 'Add widgets here for right sidebar.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -108,7 +154,7 @@ function aqua_widgets_init() {
 	// Left Sidebar
 	register_sidebar( array(
 		'name'          => esc_html( 'Left Sidebar', 'aquaparallax' ),
-		'id'            => 'aqua_left_sidebar',
+		'id'            => 'aquaparallax_left_sidebar',
 		'description'   => esc_html( 'Add widgets here for left sidebar.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -118,7 +164,7 @@ function aqua_widgets_init() {
 	// Footer 1
 	register_sidebar( array(
 		'name'          => esc_html( 'Footer Sidebar 1', 'aquaparallax' ),
-		'id'            => 'aqua_footer_sidebar1',
+		'id'            => 'aquaparallax_footer_sidebar1',
 		'description'   => esc_html( 'Add widgets here for footer sidebar 1.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -128,7 +174,7 @@ function aqua_widgets_init() {
 	// Footer 2
 	register_sidebar( array(
 		'name'          => esc_html( 'Footer Sidebar 2', 'aquaparallax' ),
-		'id'            => 'aqua_footer_sidebar2',
+		'id'            => 'aquaparallax_footer_sidebar2',
 		'description'   => esc_html( 'Add widgets here for footer sidebar 2.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -138,7 +184,7 @@ function aqua_widgets_init() {
 	// Footer 3
 	register_sidebar( array(
 		'name'          => esc_html( 'Footer Sidebar 3', 'aquaparallax' ),
-		'id'            => 'aqua_footer_sidebar3',
+		'id'            => 'aquaparallax_footer_sidebar3',
 		'description'   => esc_html( 'Add widgets here for footer sidebar 3.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -148,7 +194,7 @@ function aqua_widgets_init() {
 	// Footer 4
 	register_sidebar( array(
 		'name'          => esc_html( 'Footer Sidebar 4', 'aquaparallax' ),
-		'id'            => 'aqua_footer_sidebar4',
+		'id'            => 'aquaparallax_footer_sidebar4',
 		'description'   => esc_html( 'Add widgets here for footer sidebar 4.', 'aquaparallax' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -156,35 +202,29 @@ function aqua_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'aqua_widgets_init' );
+add_action( 'widgets_init', 'aquaparallax_widgets_init' );
 
 // Aquaparallax register nav walker
-require_once('wp_bootstrap_navwalker.php');
+require get_template_directory() . '/wp_bootstrap_navwalker.php';
 
 // Aquaparallax excerpt length for posts
-function custom_excerpt_length( $length ) {
+function aquaparallax_excerpt_length( $length ) {
         return 20;
     }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'aquaparallax_excerpt_length', 999 );
 
 // Aquaparallax register customizer
-require_once('inc/customizer.php');
+require get_template_directory() . '/inc/customizer.php';
 
-// Aquaparallax register testimonial 
-require_once('inc/tgm-plugin-activation/class-tgm-plugin-activation.php');
-require_once('inc/tgm-plugin-activation/tgmpa-aqua.php');
-
-// Aquaparallax post format support
-function aqua_post_formats_setup() {
-    add_theme_support( 'post-formats', array( 'audio', 'quote', 'image', 'video' ) );
-}
-add_action( 'after_setup_theme', 'aqua_post_formats_setup' );
+// Aquaparallax register plugins 
+require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-aquaparallax.php';
 
 // Aquaparallax register pagination
-require_once('inc/pagination.php');
+require get_template_directory() . '/inc/pagination.php';
 
 // Generate breadcrumbs
-function get_breadcrumb() {
+function aquaparallax_get_breadcrumb() {
     echo '<a href="'. esc_url( home_url() ) .'" rel="nofollow">'. esc_html('Home', 'aquaparallax') .'</a>';
     if (is_category() || is_single()) {
         echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
@@ -201,22 +241,12 @@ function get_breadcrumb() {
         echo '"<em>';
         echo the_search_query();
         echo '</em>"';
-    }
+    } elseif (is_archive()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_archive_title();
+    } 
 }
 
-// Aquaparallax title tag
-add_action( 'after_setup_theme', 'theme_slug_setup' );
-
-function theme_slug_setup() {
-
-	add_theme_support( 'title-tag' );
-}
-
- 
- // Aquaparallax content width
-if ( ! isset( $content_width ) ) {
-	$content_width = 600;
-}
 
 // Aquaparallax link pages
  	$defaults = array(
@@ -233,8 +263,8 @@ if ( ! isset( $content_width ) ) {
 	);
  
         wp_link_pages( $defaults );
-		
-function aqua_add_editor_styles() {
+    
+function aquaparallax_add_editor_styles() {
     add_editor_style( 'style.css' );
 }
-add_action( 'admin_init', 'aqua_add_editor_styles' );
+add_action( 'admin_init', 'aquaparallax_add_editor_styles' );

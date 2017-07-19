@@ -41,7 +41,16 @@ jQuery(document).ready(function($){
   meanMenuOpen: '<span></span>',
   meanMenuClose: '<span></span>',
 
-
   });
+ 
+	jQuery(window).load(function() {
+		var container = document.querySelector('.blog-maonry');
+		var msnry = new Masonry( container, {
+		itemSelector: '.masonry-item',
+		columnWidth: '.masonry-item',                
+		});  
+
+	});
+
 
 });

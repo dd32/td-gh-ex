@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Aquaparallax
+ * @package aquaparallax
  */
 
 get_header(); ?>
@@ -24,7 +24,7 @@ get_header(); ?>
          
                     <div class="page-wrapper">
                         <div class="page-content">
-                            <h2><?php esc_html_e( 'This is somewhat embarrassing, isnot it?', 'aquaparallax' ); ?></h2>
+                            <h2><?php esc_html_e( 'This is somewhat embarrassing, is it not?', 'aquaparallax' ); ?></h2>
                             <p class="aqa-pag-search"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'aquaparallax' ); ?></p>
                                   <?php get_search_form(); ?>
                         </div>
@@ -45,4 +45,4 @@ get_header(); ?>
 </div>
 
 <?php
-get_footer(); 
+get_footer(); ?>
