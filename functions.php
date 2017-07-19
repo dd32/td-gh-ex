@@ -58,6 +58,7 @@
 
 				//BLOG Settings
 				'show_blog'                          => '1',
+				'show_blog_meta'                     => 1,
 				'blog_title'                         => '',
 				'blog_show_posts'					 => '',
 				'bhumi_latest_show_posts'		     => 'all_posts',
@@ -344,15 +345,4 @@ if ( function_exists( 'wp_update_custom_css_post' ) ) {
     if ( !empty($custom_css) && empty($core_css) ) {
         $return = wp_update_custom_css_post( $core_css . $custom_css );
     }
-}
-
-if ( ! function_exists( 'bhumi_admin_notice' ) ) {
-    function bhumi_admin_notice() {
-        ?>
-        <div class="notice notice-success is-dismissible">
-            <p><strong><a href="<?php echo esc_url('https://codethemes.co/product-category/themes/?utm_source=wporg&utm_campaign=bhumilite');?>"><?php esc_html_e( 'On the occasion of Resortica Lite reaching 20,000+ active installs, get $10 off on all our Premium Themes', 'bhumi' ); ?></a></strong></p>
-        </div>
-        <?php
-    }
-    add_action( 'admin_notices', 'bhumi_admin_notice' );
 }

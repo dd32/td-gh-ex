@@ -54,19 +54,21 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<?php the_excerpt( __( 'Read More' , 'bhumi' ) ); ?>
 				<a href="<?php the_permalink(); ?>" class="bhumi_blog_read_btn"><?php echo esc_html($blog_read_more); ?></a>
-				<div class="bhumi_blog_thumb_footer">
-					<ul class="bhumi_blog_thumb_date">
-						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
-						<li><i class="fa fa-clock-o"></i>
-						<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
-						<?php echo get_the_date('F d ,Y'); ?>
-						<?php else : ?>
-						<?php echo get_the_date(); ?>
-						<?php endif; ?>
-						</li>
-						<li><i class="fa fa-comments-o"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></li>
-					</ul>
-				</div>
+				<?php if($cpm_theme_options['show_blog_meta'] == "1") { ?>
+					<div class="bhumi_blog_thumb_footer">
+						<ul class="bhumi_blog_thumb_date">
+							<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
+							<li><i class="fa fa-clock-o"></i>
+							<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
+							<?php echo get_the_date('F d ,Y'); ?>
+							<?php else : ?>
+							<?php echo get_the_date(); ?>
+							<?php endif; ?>
+							</li>
+							<li><i class="fa fa-comments-o"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></li>
+						</ul>
+					</div>
+				<?php } ?>
 			</div>
 			</div>
 			<?php  endwhile;

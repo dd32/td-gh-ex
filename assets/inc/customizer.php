@@ -334,6 +334,22 @@ function bhumi_customizer( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting(
+	'bhumi_options[show_blog_meta]',
+		array(
+		'default'=>2,
+		'type'=>'option',
+		'sanitize_callback'=>'bhumi_sanitize_checkbox',
+		'capability'=>'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( 'show_blog_meta', array(
+		'label'        => __( 'Show Meta In Blog Posts', 'bhumi' ),
+		'type'=>'checkbox',
+		'section'    => 'blog_section',
+		'settings'   => 'bhumi_options[show_blog_meta]'
+	) );
+
+	$wp_customize->add_setting(
 		'bhumi_options[blog_title]',
 		array(
 			'type'    => 'option',
