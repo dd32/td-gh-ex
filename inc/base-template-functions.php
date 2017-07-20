@@ -694,15 +694,17 @@ if ( ! function_exists( 'basepress_meta_date' ) ) :
 		if ( $modified ) {
 
 			$time_string = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
 			);
+
+			
 
 		} else {
 
 			$time_string = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
-				esc_attr( get_the_modified_date( 'c' ) ),
-				esc_html( get_the_modified_date() )
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() )
 			);
 		}
 
