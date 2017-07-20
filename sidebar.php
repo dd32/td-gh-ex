@@ -7,7 +7,7 @@
  */
 ?>
 
-	<aside id="secondary" class="sidebar widget-area" role="complementary">
+	<aside id="secondary" class="sidebar widget-area">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 	
@@ -16,14 +16,14 @@
 			</div>
 	
 			<div id="archives" class="widget widget_archive">
-				<h3 class="widget-title"><?php _e( 'Archives', 'the-box' ); ?></h3>
+				<h3 class="widget-title"><span><?php _e( 'Archives', 'the-box' ); ?></span></h3>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</div>
 	
 			<div id="meta" class="widget widget_meta">
-				<h3 class="widget-title"><?php _e( 'Meta', 'the-box' ); ?></h3>
+				<h3 class="widget-title"><span><?php _e( 'Meta', 'the-box' ); ?></span></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

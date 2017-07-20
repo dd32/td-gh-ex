@@ -29,11 +29,26 @@
 		<?php if ( have_comments() ) : ?>
 			<h3 class="comments-title">
 				<?php
-					printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'the-box' ),
-						number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+					$comments_number = get_comments_number();
+					if ( '1' === $comments_number ) {
+						/* translators: %s: post title */
+						printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'the-box' ), get_the_title() );
+					} else {
+						printf(
+							/* translators: 1: number of comments, 2: post title */
+							_nx(
+								'%1$s Reply to &ldquo;%2$s&rdquo;',
+								'%1$s Replies to &ldquo;%2$s&rdquo;',
+								$comments_number,
+								'comments title',
+								'the-box'
+							),
+							number_format_i18n( $comments_number ),
+							'<span>' . get_the_title() . '</span>'
+						);
+					}
 				?>
 			</h3>
-	
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 				<nav role="navigation" id="comment-nav-above" class="post-navigation comment-navigation">
 					<h1 class="assistive-text"><?php _e( 'Comment navigation', 'the-box' ); ?></h1>

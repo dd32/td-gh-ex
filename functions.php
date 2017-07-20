@@ -127,7 +127,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.6' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.7' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
 
@@ -163,8 +163,8 @@ function thebox_widgets_init() {
 		'id' => 'sidebar-1',
 		'before_widget' => '<div class="widget-wrapper"><div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',	
+		'before_title' => '<h3 class="widget-title"><span>',
+		'after_title' => '</span></h3>',	
 	) );
 	register_sidebar( array(
 		'name' => __( 'Footer', 'the-box' ),
@@ -187,52 +187,10 @@ require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**
- * Helper function for getting the script/style `.min` suffix for minified files.
- *
- */
-function thebox_get_min_suffix() {
-	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-}
-
-
-/**
  * Add Upsell "pro" link to the customizer
  *
  */
 require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/class-customize.php' );
-
-
-/**
- * Filters the 'stylesheet_uri' to allow theme developers to offer a minimized version of their main 
- * 'style.css' file.  It will detect if a 'style.min.css' file is available and use it if SCRIPT_DEBUG 
- * is disabled.
- * 
- * from Hybrid Core, Copyright Justin Tadlock.
- */
-function thebox_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
-
-	/* Get the minified suffix. */
-	$suffix = thebox_get_min_suffix();
-
-	/* Use the .min stylesheet if available. */
-	if ( !empty( $suffix ) ) {
-
-		/* Remove the stylesheet directory URI from the file name. */
-		$stylesheet = str_replace( trailingslashit( $stylesheet_dir_uri ), '', $stylesheet_uri );
-
-		/* Change the stylesheet name to 'style.min.css'. */
-		$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
-
-		/* If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet. */
-		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $stylesheet ) )
-			$stylesheet_uri = trailingslashit( $stylesheet_dir_uri ) . $stylesheet;
-	}
-
-	/* Return the theme stylesheet. */
-	return $stylesheet_uri;
-}
-/* Load the development stylsheet in script debug mode. */
-add_filter( 'stylesheet_uri', 'thebox_min_stylesheet_uri', 5, 2 );
 
 
 /*

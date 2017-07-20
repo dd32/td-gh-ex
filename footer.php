@@ -11,7 +11,7 @@
 		
 	</div><!-- #main .site-main -->
 
-	<footer id="colophon" class="site-footer clearfix" role="contentinfo">
+	<footer id="colophon" class="site-footer clearfix">
 		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 			<div id="tertiary" class="clearfix">
 				<?php dynamic_sidebar( 'sidebar-2' ); ?>

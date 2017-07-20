@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 20:32+0000\n"
+"POT-Creation-Date: 2017-07-18 23:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:52
+#: header.php:56
 msgid "open menu"
 msgstr ""
 
@@ -172,18 +172,18 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: functions.php:365
+#: functions.php:323
 msgid "Read More"
 msgstr ""
 
-#: functions.php:416
+#: functions.php:374
 #, php-format
 msgid ""
 "<strong>Upgrade to The Box Plus</strong> version to get extended "
 "functionality and advanced customization options: %1$s"
 msgstr ""
 
-#: functions.php:421
+#: functions.php:379
 msgid "Close and don't show this message again"
 msgstr ""
 
@@ -222,27 +222,34 @@ msgstr ""
 msgid "Archives: %s"
 msgstr ""
 
-#: comments.php:32
+#: comments.php:35
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#. 1: number of comments, 2: post title
+#: comments.php:39
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:39 comments.php:59
+#: comments.php:54 comments.php:74
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:40 comments.php:60
+#: comments.php:55 comments.php:75
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:41 comments.php:61
+#: comments.php:56 comments.php:76
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:86
 msgid "Comments are closed."
 msgstr ""
 
@@ -285,7 +292,7 @@ msgstr ""
 
 #: template-parts/content-page.php:26 template-parts/content-single.php:50
 #: template-parts/content-quote.php:22 template-parts/content.php:58
-#: template-parts/content-aside.php:22 inc/customizer.php:184
+#: template-parts/content-aside.php:22 inc/customizer.php:194
 msgid "Page"
 msgstr ""
 
@@ -363,118 +370,126 @@ msgid "%1$s at %2$s"
 msgstr ""
 
 #: inc/customizer.php:62
-msgid "Try The Box Plus &rarr;"
+msgid "Try The Box Plus"
 msgstr ""
 
 #: inc/customizer.php:66
-msgid "Rate This Theme &rarr;"
+msgid "Rate This Theme"
 msgstr ""
 
 #: inc/customizer.php:70
-msgid "Documentation &rarr;"
+msgid "Documentation"
 msgstr ""
 
 #: inc/customizer.php:94
+msgid "The Box Links"
+msgstr ""
+
+#: inc/customizer.php:109
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:115
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:129
 msgid "Layout Options"
 msgstr ""
 
-#: inc/customizer.php:119
+#: inc/customizer.php:133
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:134
 msgid "Sidebar Left"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:135
 msgid "One Column"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:136
 msgid "2 Columns + Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:147
 msgid "Post length"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:152
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:153
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:165
 msgid "Display Post Thumbnails"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:172
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:175 inc/customizer.php:198
+#: inc/customizer.php:186 inc/customizer.php:208
 msgid "Enable Featured Image"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:187
 msgid "Display Featured Image on Single Posts."
 msgstr ""
 
-#: inc/customizer.php:207
+#: inc/customizer.php:209
+msgid "Display Featured Image on Pages."
+msgstr ""
+
+#: inc/customizer.php:216
 msgid "Social Links"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:218
 msgid "Paste here your Social Links."
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:250
 msgid "Show the RSS Feed icon"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:263
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:276
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:289
 msgid "Google + Url"
 msgstr ""
 
-#: inc/customizer.php:296
+#: inc/customizer.php:302
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:315
 msgid "Instagram Url"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:328
 msgid "Youtube Url"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:341
 msgid "Pinterest Url"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:354
 msgid "StumbleUpon Url"
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:367
 msgid "Flickr Url"
 msgstr ""
 
@@ -482,27 +497,23 @@ msgstr ""
 msgid "Tumblr Url"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:393
 msgid "Medium Url"
 msgstr ""
 
-#: inc/customizer.php:408
+#: inc/customizer.php:406
 msgid "Github Url"
 msgstr ""
 
-#: inc/customizer.php:422
+#: inc/customizer.php:419
 msgid "Xing Url"
 msgstr ""
 
-#: inc/customizer.php:430
-msgid "The Box Links"
-msgstr ""
-
-#: inc/customizer.php:453
+#: inc/customizer.php:433
 msgid "Accent Color"
 msgstr ""
 
-#: inc/customizer.php:467
+#: inc/customizer.php:446
 msgid "Footer Background"
 msgstr ""
 
@@ -520,8 +531,8 @@ msgstr ""
 
 #. Description of the theme
 msgid ""
-"Simple and minimal two columns Theme: custom header, custom background, "
-"custom colors, post thumbnails, post formats."
+"Clean and Simple WordPress Theme designed for blogs and online publications. "
+"With easy to use options The Box lets you focus on your awesome writing."
 msgstr ""
 
 #. URI of the theme

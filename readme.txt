@@ -1,7 +1,7 @@
 === The Box ===
 Requires at least: WordPress 4.3
-Tested up to: WordPress 4.7.2
-Version: 1.4.6
+Tested up to: WordPress 4.8.0
+Version: 1.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,3 +108,6 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 1.4.6
 - New: Layout Options
 - New: Excerpt or Full Content Option
+
+1.4.7
+- Update: HTML tags and attributes

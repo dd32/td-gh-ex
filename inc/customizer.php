@@ -59,19 +59,19 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	    	$important_links = array(
 				'upsell' => array(
 		        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/'),
-		        'text' => __('Try The Box Plus &rarr;', 'the-box'),
+		        'text' => __('Try The Box Plus', 'the-box'),
 		        ),
 		        'rate' => array(
 				'link' => esc_url('https://wordpress.org/support/theme/the-box/reviews/#new-post'),
-				'text' => __('Rate This Theme &rarr;', 'the-box'),
+				'text' => __('Rate This Theme', 'the-box'),
 				),
 				'documentation' => array(
 				'link' => esc_url('https://www.designlabthemes.com/the-box-documentation/'),
-				'text' => __('Documentation &rarr;', 'the-box'),
+				'text' => __('Documentation', 'the-box'),
 				)
 			);
 	    	foreach ($important_links as $important_link) :
-	        	echo '<p><a target="_blank" href="' . esc_url( $important_link['link'] ). '" >' . esc_html($important_link['text']) . ' </a></p>';
+	        	echo '<p><a target="_blank" class="button" href="' . esc_url( $important_link['link'] ). '" >' . esc_html($important_link['text']) . ' </a></p>';
 	        endforeach;
 	    }
 	}
@@ -88,6 +88,21 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	// The Box Links
+	$wp_customize->add_section('thebox_links_section', array(
+	  'title' => __('The Box Links', 'the-box'),
+	  'priority' => 2,
+	) );
+	
+	$wp_customize->add_setting('thebox_links', array(
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'esc_url_raw',
+	) );
+	
+	$wp_customize->add_control(new DL_Important_Links($wp_customize, 'thebox_links', array(
+	  'section' => 'thebox_links_section',
+	) ) );
 	
 	// The Box Panel
 	$wp_customize->add_panel( 'thebox_panel', array(
@@ -113,7 +128,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( new TheBox_Post_Layout_Control( $wp_customize, 'thebox_sidebar_settings', array(
 		'label' => __( 'Layout Options', 'the-box' ),
 		'section' => 'thebox_layout_section',
-		'settings' => 'thebox_sidebar_settings',
 		'size' => false,
 		'choices' => array(
             'content-sidebar' => __( 'Sidebar Right', 'the-box' ),
@@ -132,14 +146,12 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( 'thebox_post_settings', array(
 		'label' => __( 'Post length', 'the-box' ),
 		'section' => 'thebox_layout_section',
-		'settings' => 'thebox_post_settings',
 		'active_callback' => 'thebox_check_layout_options',
 		'type' => 'radio',
 		'choices' => array(
 		'option1' => __( 'Excerpt', 'the-box' ),
 		'option2' => __( 'Full Content', 'the-box' ),
-		),
-	) );
+	) ) );
 	
 	// Display Thumbnails
 	$wp_customize->add_setting( 'thebox_show_thumbnails', array(
@@ -152,7 +164,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( 'thebox_show_thumbnails', array(
 	    'label'    => __( 'Display Post Thumbnails', 'the-box' ),
 	    'section' => 'thebox_layout_section',
-	    'settings' => 'thebox_show_thumbnails',
 	    'type'     => 'checkbox',
 	) );
 	
@@ -175,7 +186,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	    'label'    		=> __( 'Enable Featured Image', 'the-box' ),
 	    'description'	=> __( 'Display Featured Image on Single Posts.', 'the-box' ),
 	    'section'  		=> 'thebox_post_section',
-	    'settings' 		=> 'thebox_enable_featured_image',
 	    'type'     		=> 'checkbox',
 	) );
 	
@@ -198,7 +208,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	    'label'    		=> __( 'Enable Featured Image', 'the-box' ),
 	    'description'	=> __( 'Display Featured Image on Pages.', 'the-box' ),
 	    'section'  		=> 'thebox_page_section',
-	    'settings' 		=> 'thebox_page_featured_image',
 	    'type'     		=> 'checkbox',
 	) );
 	
@@ -229,6 +238,7 @@ function thebox_theme_customizer( $wp_customize ) {
 			'githuburl' => '',
 		);
 	}
+	
 	$wp_customize->add_setting( 'thebox_show_rss', array(
         'default' => 1,
         'type' => 'option',
@@ -239,7 +249,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( 'thebox_show_rss', array(
 	    'label'    => __( 'Show the RSS Feed icon', 'the-box' ),
 	    'section' => 'thebox_social_section',
-	    'settings' => 'thebox_show_rss',
 	    'type'     => 'checkbox',
 	) );
 	
@@ -253,7 +262,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'facebook_url', array(
         'label' => __( 'Facebook Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'facebook_url',
         'type' => 'text',
     ) );
     
@@ -267,7 +275,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'twitter_url', array(
         'label' => __( 'Twitter Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'twitter_url',
         'type' => 'text',
     ) );
     
@@ -281,7 +288,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'googleplus_url', array(
         'label' => __( 'Google + Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'googleplus_url',
         'type' => 'text',
     ) );
     
@@ -295,7 +301,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'linkedin_url', array(
         'label' => __( 'Linkedin Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'linkedin_url',
         'type' => 'text',
     ) );
     
@@ -309,7 +314,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'instagram_url', array(
         'label' => __( 'Instagram Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'instagram_url',
         'type' => 'text',
     ) );
     
@@ -323,7 +327,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'youtube_url', array(
         'label' => __( 'Youtube Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'youtube_url',
         'type' => 'text',
     ) );
     
@@ -337,7 +340,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'pinterest_url', array(
         'label' => __( 'Pinterest Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'pinterest_url',
         'type' => 'text',
     ) );
     
@@ -351,7 +353,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'stumbleupon_url', array(
         'label' => __( 'StumbleUpon Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'stumbleupon_url',
         'type' => 'text',
     ) );
     
@@ -365,7 +366,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'flickr_url', array(
         'label' => __( 'Flickr Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'flickr_url',
         'type' => 'text',
     ) );
     
@@ -379,7 +379,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'tumblr_url', array(
         'label' => __( 'Tumblr Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'tumblr_url',
         'type' => 'text',
     ) );
     
@@ -393,7 +392,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'medium_url', array(
         'label' => __( 'Medium Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'medium_url',
         'type' => 'text',
     ) );
     
@@ -407,7 +405,6 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'github_url', array(
         'label' => __( 'Github Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'github_url',
         'type' => 'text',
     ) );
     
@@ -421,26 +418,9 @@ function thebox_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'xing_url', array(
         'label' => __( 'Xing Url', 'the-box' ),
         'section' => 'thebox_social_section',
-        'settings' => 'xing_url',
         'type' => 'text',
     ) );
-    
-	// The Box Links
-	$wp_customize->add_section('thebox_links_section', array(
-	  'title' => __('The Box Links', 'the-box'),
-	  'priority' => 11,
-	) );
-	
-	$wp_customize->add_setting('thebox_links', array(
-	  'capability' => 'edit_theme_options',
-	  'sanitize_callback' => 'thebox_links_sanitize',
-	) );
-	
-	$wp_customize->add_control(new DL_Important_Links($wp_customize, 'thebox_links', array(
-	  'section' => 'thebox_links_section',
-	  'settings' => 'thebox_links',
-	) ) );
-   
+
     // Accent Color
 	$wp_customize->add_setting( 'color_primary', array(
 		'default' => '#0fa5d9',
@@ -452,7 +432,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_primary', array(
 		'label' => __( 'Accent Color', 'the-box' ),
 		'section' => 'colors',
-		'settings' => 'color_primary',
 	) ) );
 	
 	// Footer Background
@@ -466,7 +445,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_footer', array(
 		'label' => __( 'Footer Background', 'the-box' ),
 		'section' => 'colors',
-		'settings' => 'color_footer',
 	) ) );
 	
 }
@@ -498,15 +476,6 @@ function thebox_sanitize_choices( $input, $setting ) {
     } else {
         return $setting->default;
     }
-}
-
-
-/**
- * Sanitize The Box Links
- *
- */ 
-function thebox_links_sanitize() {
-	return false;
 }
 
 
@@ -578,9 +547,9 @@ function thebox_get_brightness($hex) {
  */
 function thebox_custom_styles() {
 	
-	$accent_color = get_option('color_primary'); 
+	$accent_color = esc_attr( get_option('color_primary') ); 
 	$accent_color_rgb = thebox_hex2rgb($accent_color);
-	$footer_bg = get_option('color_footer');
+	$footer_bg = esc_attr( get_option('color_footer') );
 	
 	$custom_style = "";
 			

@@ -18,7 +18,7 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>	
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->	
 	<?php wp_head(); ?>
 </head>
@@ -27,24 +27,28 @@
 <div id="page">
 	
 	<a class="skip-link screen-reader-text" href="#main"><?php _e( 'Skip to content', 'the-box' ); ?></a>
-	<header id="masthead" class="site-header clearfix" role="banner">
+	<header id="masthead" class="site-header clearfix">
 		
 		<div class="site-brand clearfix">
-			<hgroup>
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
-	
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
-				<?php endif; ?>
-			</hgroup>
-			<nav id="social-navigation" class="social-navigation">
-				<?php thebox_social_links(); // Social Links ?>	
-			</nav>
+			<div class="row">
+				<div class="col-6">
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif;
+		
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; ?></p>
+					<?php endif; ?>
+				</div>
+				<div class="col-6">
+					<nav id="social-navigation" class="social-navigation">
+						<?php thebox_social_links(); // Social Links ?>	
+					</nav>
+				</div>
+			</div><!-- .row -->
 		</div><!-- .site-brand -->
 		
 		<nav id="site-navigation" class="main-navigation" role="navigation">
