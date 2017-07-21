@@ -1,0 +1,14 @@
+@media print {
+	
+	#top-bar,
+	#main-nav,
+	.sidebar-left-wrap,
+	.sidebar-right-wrap,
+	.comments-area { 
+	display: none !important;
+	}
+
+	.main-container {
+		width: 100% !important;
+	}
+}

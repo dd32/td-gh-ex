@@ -4,7 +4,7 @@ Theme URI: http://wp-royal.com/themes/ashe/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Clean and minimalist blogging theme.
-Version: 0.2
+Version: 0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -1571,11 +1571,11 @@ sup {
 }
 
 .single-post .previous-post {
-  left: 0;
+  right: 0;
 }
 
 .single-post .next-post {
-  right: 0;
+  left: 0;
 }
 
 .single-post .previous-post i,
@@ -1598,19 +1598,19 @@ sup {
 }
 
 .single-post .previous-post img {
-  left: -100px;
-}
-
-.single-post .next-post img {
   right: -100px;
 }
 
+.single-post .next-post img {
+  left: -100px;
+}
+
 .single-post .previous-post:hover img {
-  left: 25px;
+  right: 25px;
 }
 
 .single-post .next-post:hover img {
-  right: 25px;
+  left: 25px;
 }
 
 /* Post Pagination */
@@ -1854,12 +1854,6 @@ sup {
 .gallery {
   overflow: hidden;
   list-style: none !important;
-}
-
-.gallery-icon img,
-.gallery-icon a img {
-  width: 100%;
-  height: auto !important;
 }
 
 .gallery-caption,
@@ -2460,6 +2454,11 @@ body,
 /*--------------------------------------------------------------
 17.0 Pages
 --------------------------------------------------------------*/
+
+.search .page .post-date,
+.search .page .post-author {
+  display: none;
+}
 
 .page-404 {
   padding: 120px 40px;

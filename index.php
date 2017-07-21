@@ -7,7 +7,7 @@ if ( is_home() ) {
 
 	// Featured Slider, Carousel
 	if ( ashe_options( 'featured_slider_label' ) === true ) {
-		get_template_part( 'templates/sliders/slider' ); 
+		get_template_part( 'templates/header/slider' ); 
 	}
 
 	// Featured Links, Banners

@@ -648,7 +648,7 @@ $css = '<style id="ashe_dynamic_css">';
 	';
 
 	// Blog Page Dropcups
-	if ( ashe_options( 'blog_page_show_dropcups' ) === true && !is_single() && !is_page() ) {
+	if ( ashe_options( 'blog_page_show_dropcaps' ) === true && !is_single() && !is_page() ) {
 		$css .= '
 			
 			.post-content > p:first-child:first-letter { /* MOD */
@@ -668,7 +668,7 @@ $css = '<style id="ashe_dynamic_css">';
 	}
 
 	// Single Page Dropcups
-	if ( ashe_options( 'single_page_show_dropcups' ) === true && is_single() ) {
+	if ( ashe_options( 'single_page_show_dropcaps' ) === true && is_single() ) {
 		$css .= '
 			.post-content > p:first-child:first-letter { /* MOD */
 			  float: left;

@@ -110,7 +110,7 @@
 
 	<div class="no-result-found">
 		<h3><?php esc_html_e( 'Nothing Found!', 'ashe' ); ?></h3>
-		<p><?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help or go back to ', 'ashe' ); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Homepage', 'ashe' ); ?></a></p>
+		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ashe' ); ?></p>
 		<div class="ashe-widget widget_search">
 			<?php get_search_form(); ?>
 		</div> 

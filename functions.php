@@ -41,8 +41,11 @@ add_action( 'after_setup_theme', 'ashe_setup' );
 */
 function ashe_scripts() {
 
-	// Theme stylesheet
+	// Theme Stylesheet
 	wp_enqueue_style( 'ashe-style', get_stylesheet_uri() );
+
+	// Theme Print Style
+	wp_enqueue_style( 'ashe-print-style', get_theme_file_uri( '/print.css' ) );
 
 	// Theme Responsive CSS
 	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ) );
@@ -154,7 +157,29 @@ add_image_size( 'ashe-full-thumbnail', 1140, 0, true );
 add_image_size( 'ashe-grid-thumbnail', 500, 330, true );
 add_image_size( 'ashe-single-navigation', 75, 75, true );
 
+/*
+**  Top Menu Fallback
+*/
 
+function top_menu_fallback() {
+	echo '<ul id="top-menu">';
+		echo '<li>';
+			echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+		echo '</li>';
+	echo '</ul>';
+}
+
+/*
+**  Main Menu Fallback
+*/
+
+function main_menu_fallback() {
+	echo '<ul id="main-menu">';
+		echo '<li>';
+			echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+		echo '</li>';
+	echo '</ul>';
+}
 
 /*
 **  Custom Excerpt Length

@@ -7,21 +7,14 @@
 
 		// Menu
 		if ( ashe_options( 'top_bar_show_menu' ) === true ) {
-			if ( has_nav_menu('top') ) {
-				wp_nav_menu( array(
-					'theme_location' 	=> 'top',
-					'menu_id' 		 	=> 'top-menu',
-					'menu_class' 		=> '',
-					'container' 	 	=> 'nav',
-					'container_class'	=> 'top-menu-container',
-				) );
-			} else {
-				echo '<ul id="top-menu">';
-					echo '<li>';
-						echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
-					echo '</li>';
-				echo '</ul>';
-			}
+			wp_nav_menu( array(
+				'theme_location' 	=> 'top',
+				'menu_id' 		 	=> 'top-menu',
+				'menu_class' 		=> '',
+				'container' 	 	=> 'nav',
+				'container_class'	=> 'top-menu-container',
+				'fallback_cb' 		=> 'top_menu_fallback'
+			) );
 		}
 		
 		// Social Icons

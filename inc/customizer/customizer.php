@@ -523,8 +523,8 @@ function ashe_customize_register( $wp_customize ) {
 	// Show Comments
 	ashe_checkbox_control( 'blog_page', 'show_comments', esc_html__( 'Show Comments', 'ashe' ), 'refresh', 9 );
 
-	// Show Dropcups
-	ashe_checkbox_control( 'blog_page', 'show_dropcups', esc_html__( 'Show Dropcups', 'ashe' ), 'refresh', 11 );
+	// Show Drop Caps
+	ashe_checkbox_control( 'blog_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'ashe' ), 'refresh', 11 );
 
 	// Show Author
 	ashe_checkbox_control( 'blog_page', 'show_author', esc_html__( 'Show Author', 'ashe' ), 'refresh', 16 );

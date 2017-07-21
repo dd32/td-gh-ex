@@ -33,6 +33,14 @@
 				
 				echo '<div class="post-content">';
 					the_content('');
+
+					// Post Pagination
+					$defaults = array(
+						'before' => '<p class="single-pagination">'. esc_html__( 'Pages:', 'ashe' ),
+						'after' => '</p>'
+					);
+
+					wp_link_pages( $defaults );
 				echo '</div>';
 
 			endwhile; // Loop End

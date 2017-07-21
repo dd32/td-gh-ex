@@ -4,7 +4,7 @@
 	<div <?php echo ashe_options( 'general_header_width' ) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
 		
 		<!-- Alt Sidebar Icon -->
-		<?php if ( ashe_options( 'main_nav_show_sidebar' ) === true ) : ?>
+		<?php if ( ashe_options( 'main_nav_show_sidebar' ) === true && is_active_sidebar( 'sidebar-alt' ) ) : ?>
 		<div class="main-nav-sidebar">
 			<div>
 				<span></span>
@@ -40,32 +40,24 @@
 
 		<?php // Navigation Menus
 
-		if ( has_nav_menu('main') ) {
+		wp_nav_menu( array(
+			'theme_location' 	=> 'main',
+			'menu_id'        	=> 'main-menu',
+			'menu_class' 		=> '',
+			'container' 	 	=> 'nav',
+			'container_class'	=> 'main-menu-container',
+			'fallback_cb' 		=> 'main_menu_fallback'
+		) );
 
-			wp_nav_menu( array(
-				'theme_location' 	=> 'main',
-				'menu_id'        	=> 'main-menu',
-				'menu_class' 		=> '',
-				'container' 	 	=> 'nav',
-				'container_class'	=> 'main-menu-container',
-			) );
+		wp_nav_menu( array(
+			'theme_location' 	=> 'main',
+			'menu_id'        	=> 'mobile-menu',
+			'menu_class' 		=> '',
+			'container' 	 	=> 'nav',
+			'container_class'	=> 'mobile-menu-container',
+			'fallback_cb' 		=> false
+		) );
 
-			wp_nav_menu( array(
-				'theme_location' 	=> 'main',
-				'menu_id'        	=> 'mobile-menu',
-				'menu_class' 		=> '',
-				'container' 	 	=> 'nav',
-				'container_class'	=> 'mobile-menu-container',
-			) );
-
-		} else {
-			echo '<ul id="main-menu">';
-				echo '<li>';
-					echo '<a href="'. esc_url( home_url( '/' ) .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
-				echo '</li>';
-			echo '</ul>';
-		}
-		
 		?>
 
 	</div>
