@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2017-07-11 16:50+0530\n"
-"PO-Revision-Date: 2017-07-11 16:49+0530\n"
+"POT-Creation-Date: 2017-07-21 16:46+0530\n"
+"PO-Revision-Date: 2017-07-21 16:46+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -144,15 +144,15 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:76
 msgid "Page"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:112
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:135
 msgid ""
 "Click the big blue button to start the dummy data import process.</br></"
 "br>Please be patient while WordPress imports all the content.</br></br>\n"
@@ -201,6 +201,35 @@ msgstr ""
 msgid ""
 "Copyright @ 2014 - RAMBO. Designed by <a href=\"http://webriti.com\" rel="
 "\"nofollow\" target=\"_blank\"> Webriti</a>"
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:5
+msgid "CREATE TRUSTWORTHY WEBSITES"
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:20
+msgid "A website exists for one and ONLY one reason:"
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:21
+msgid "To bring you more business."
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:23
+msgid ""
+"Think of your website as a hardworking salesman who works 24/7 and never "
+"asks for a raise!"
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:25
+msgid ""
+"In this email course I deliver 4 highly actionable tips on how you can build "
+"a website which is trustworthy and which, in turn, brings more business to "
+"you."
+msgstr ""
+
+#: functions/customizer/customizer_emailcourse.php:29
+msgid "JOIN COURSE"
 msgstr ""
 
 #: functions/customizer/customizer_header.php:8

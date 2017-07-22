@@ -18,7 +18,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
 }
 $wp_customize->add_section( 'rambo_pro_section' , array(
 		'title'      => __('UPGRADE  TO PRO', 'rambo'),
-		'priority'   => 1200,
+		'priority'   => 1100,
    	) );
 
 $wp_customize->add_setting(

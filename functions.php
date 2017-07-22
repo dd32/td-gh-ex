@@ -46,6 +46,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_help.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_emailcourse.php');
 	
 	// Rambo Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');

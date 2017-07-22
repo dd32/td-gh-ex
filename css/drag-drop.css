@@ -100,6 +100,22 @@ list-style-type: none;
   width: 54%;
   border-radius: 2px;
   }
+  
+  .course{
+  background-color: #0d6db8;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration: none;
+}
  
 #customize-control-hc_pro_options-hc_back_image input, #customize-control-rambo_pro_theme_options-rambopro_stylesheet input, 
 #customize-control-hc_pro_options-front_page_data, #customize-control-rambo_pro_theme_options-layout_textbox_disable, #customize-control-rambo_pro_theme_options-front_page_data input, #customize-control-rambo_pro_theme_options-front_page_data label
@@ -124,9 +140,8 @@ list-style-type: none;
 
 #accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 
-#accordion-section-rambo_help_section .accordion-section-title:after, #accordion-section-rambo_pro_section .accordion-section-title:after {color:#fff !important; }
-
-
+#accordion-section-rambo_help_section .accordion-section-title:after, #accordion-section-rambo_pro_section .accordion-section-title:after, 
+#accordion-section-rambo_email_course_section.accordion-section-title:after {color:#fff !important; }
 
 
 #accordion-section-rambo_pro_section .accordion-section-title, #accordion-section-rambo_pro_section .accordion-section-title:hover { background: #7aa228 !important; color:#fff !important; }
@@ -148,4 +163,6 @@ list-style-type: none;
 	color:#fff;
 	 text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
 }
-}
+
+#accordion-section-rambo_email_course_section h3{ font-size: 14px;font-weight: 700;  background-color: #0d6db8 !important;border-color: #ef9c28;
+color: #fff !important;}
