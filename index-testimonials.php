@@ -15,7 +15,7 @@
 					<?php } ?>
 				</div>
 				<!-- /Section Title -->
-				<div class="post"> 
+				<div class="post" id="post1"> 
 					<div class="media"> 
 						<figure class="post-thumbnail width-lg">
 						<div class="home-post-img">
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				
-				<div class="post"> 
+				<div class="post" id="post2"> 
 					<div class="media"> 
 						<figure class="post-thumbnail width-lg">
 						<div class="home-post-img">

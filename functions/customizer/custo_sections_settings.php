@@ -1178,3 +1178,112 @@ function busiprof_sections_settings( $wp_customize ){
 		
 }
 add_action( 'customize_register', 'busiprof_sections_settings' );
+
+
+/**
+ * Add selective refresh for Front page section section controls.
+ */
+function busiprof_register_home_section_partials( $wp_customize ){
+
+$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[slider_head_title]', array(
+		'selector'            => '.header-title h2',
+		'settings'            => 'busiprof_theme_options[slider_head_title]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[caption_head]', array(
+		'selector'            => '.slide-caption h2',
+		'settings'            => 'busiprof_theme_options[caption_head]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[caption_text]', array(
+		'selector'            => '.slide-caption p',
+		'settings'            => 'busiprof_theme_options[caption_text]',
+	
+	) );
+	
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[service_heading_one]', array(
+		'selector'            => '.service .section-title .section-heading',
+		'settings'            => 'busiprof_theme_options[service_heading_one]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[service_tagline]', array(
+		'selector'            => '.service .section-title p',
+		'settings'            => 'busiprof_theme_options[service_tagline]',
+	
+	) );
+	
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[service_icon_one]', array(
+		'selector'            => '.service #service_content',
+		'settings'            => 'busiprof_theme_options[service_icon_one]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[service_button_value]', array(
+		'selector'            => '.services_more_btn',
+		'settings'            => 'busiprof_theme_options[service_button_value]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[protfolio_tag_line]', array(
+		'selector'            => '.portfolio .section-title h1',
+		'settings'            => 'busiprof_theme_options[protfolio_tag_line]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[protfolio_description_tag]', array(
+		'selector'            => '.portfolio .section-title p',
+		'settings'            => 'busiprof_theme_options[protfolio_description_tag]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[project_title_one]', array(
+		'selector'            => '.portfolio #myTabContent',
+		'settings'            => 'busiprof_theme_options[project_title_one]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_title]', array(
+		'selector'            => '.testimonial .section-title-small .section-heading',
+		'settings'            => 'busiprof_theme_options[testimonials_title]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_text]', array(
+		'selector'            => '.testimonial .section-title-small p',
+		'settings'            => 'busiprof_theme_options[testimonials_text]',
+	
+	) );
+	
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_image_one]', array(
+		'selector'            => '.testimonial #post1',
+		'settings'            => 'busiprof_theme_options[testimonials_image_one]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_image_two]', array(
+		'selector'            => '.testimonial #post2',
+		'settings'            => 'busiprof_theme_options[testimonials_image_two]',
+	
+	) );
+	
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[recent_blog_title]', array(
+		'selector'            => '.home-post .section-title-small .section-heading',
+		'settings'            => 'busiprof_theme_options[recent_blog_title]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[recent_blog_description]', array(
+		'selector'            => '.home-post .section-title-small p',
+		'settings'            => 'busiprof_theme_options[recent_blog_description]',
+	
+	) );
+	
+}
+add_action( 'customize_register', 'busiprof_register_home_section_partials' );

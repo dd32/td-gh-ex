@@ -20,7 +20,7 @@ if( $current_options['enable_services'] == 'on' ) { ?>
 			</div>
 		</div>
 		<!-- /Section Title -->	
-		<div class="row">
+		<div id="service_content" class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12">
 				<div class="post">
 					<?php if($current_options['service_icon_one']!='') {?>

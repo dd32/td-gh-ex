@@ -55,6 +55,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.1
+1. Add selective refersh feature.
+@version 1.7.9
+1. Commit from new office.
 @version 1.7.8
 1. Added styling for upgrade to pro setting.
 @version 1.7.7

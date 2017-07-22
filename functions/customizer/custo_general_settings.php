@@ -194,3 +194,23 @@ function busiprof_general_settings( $wp_customize ){
 		
 }
 add_action( 'customize_register', 'busiprof_general_settings' );
+
+/**
+ * Add selective refresh for Front page section section controls.
+ */
+function busiprof_register_copyright_section_partials( $wp_customize ){
+
+$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[footer_copyright_text]', array(
+		'selector'            => '.site-info .col-md-7 p',
+		'settings'            => 'busiprof_theme_options[footer_copyright_text]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[upload_image]', array(
+		'selector'            => '.navbar-header a',
+		'settings'            => 'busiprof_theme_options[upload_image]',
+	
+	) );
+}
+
+add_action( 'customize_register', 'busiprof_register_copyright_section_partials' );
