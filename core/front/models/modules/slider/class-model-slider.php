@@ -17,6 +17,7 @@ class CZR_slider_model_class extends CZR_Model {
   public $right_control_class = '';
 
   public $has_controls        = false;
+  public $has_dots            = false;
   public $has_loader          = false;
 
   public $pure_css_loader     = '';
@@ -60,7 +61,7 @@ class CZR_slider_model_class extends CZR_Model {
     }
 
     $element_class      = $this -> czr_fn_get_slider_element_class( $queried_id, $slider_name_id, $layout );
-    $inner_class        = $this -> czr_fn_get_slider_inner_class( $queried_id );
+    $inner_class        = $this -> czr_fn_get_slider_inner_class();
 
     //set-up inner attrs
     $inner_attrs        = $this -> czr_fn_get_slider_inner_attrs();
@@ -70,6 +71,10 @@ class CZR_slider_model_class extends CZR_Model {
       $left_control_class  = ! is_rtl() ? 'control-left' : 'control-right';
       $right_control_class = ! is_rtl() ? 'control-right' : 'control-left';
       $has_controls        = true;
+    }
+    //set-up dots
+    if ( apply_filters('czr_show_slider_dots' , count( $slides ) > 1 ) ) {
+      $has_dots        = true;
     }
 
     //set-up loader
@@ -92,6 +97,7 @@ class CZR_slider_model_class extends CZR_Model {
         'inner_class',
         'inner_attrs',
         //'img_size',
+        'has_dots',
         'has_controls',
         'layout',
         'left_control_class',
@@ -187,15 +193,15 @@ class CZR_slider_model_class extends CZR_Model {
     //title
     $title                  = esc_attr(get_post_meta( $id, $key = 'slide_title_key' , $single = true ));
     $default_title_length   = apply_filters( 'czr_slide_title_length', 80 );
-    $title                  = czr_fn_text_truncate( $title, $default_title_length, '...' );
+    $title                  = $this -> czr_fn_trim_text( $title, $default_title_length, '...' );
     //lead text
     $text                   = get_post_meta( $id, $key = 'slide_text_key' , $single = true );
     $default_text_length    = apply_filters( 'czr_slide_text_length', 250 );
-    $text                   = czr_fn_text_truncate( $text, $default_text_length, '...' );
+    $text                   = $this -> czr_fn_trim_text( $text, $default_text_length, '...' );
     //button text
     $button_text            = esc_attr(get_post_meta( $id, $key = 'slide_button_key' , $single = true ));
     $default_button_length  = apply_filters( 'czr_slide_button_length', 80 );
-    $button_text            = czr_fn_text_truncate( $button_text, $default_button_length, '...' );
+    $button_text            = $this -> czr_fn_trim_text( $button_text, $default_button_length, '...' );
     //link post id
     $link_id                = apply_filters( 'czr_slide_link_id', esc_attr(get_post_meta( $id, $key = 'slide_link_key' , $single = true )), $id, $slider_name_id );
     //link
@@ -217,15 +223,6 @@ class CZR_slider_model_class extends CZR_Model {
     $slide_background_attr  = array_filter( array_merge( array( 'class' => 'slide' , 'alt' => $alt ), $this -> czr_fn_set_wp_responsive_slide_img_attr() ) );
 
     $slide_background       = wp_get_attachment_image( $id, $img_size, false, $slide_background_attr );
-
-    //Parse img for smartload
-    //Should normally be done with apply_filters( 'czr_thumb_html', $html ), but this filter is added later (  on 'wp_head' ) for plugin compatibility.
-    //=> that's why we invoke czr_fn_parse_imgs() directly here
-    //@see czr_fn_wp_filters
-    if ( czr_fn_is_checked( 'tc_slider_img_smart_load' ) ) {
-        $slide_background = czr_fn_parse_imgs( $slide_background ); //<- to prepare the img smartload
-    }
-
     //adds all values to the slide array only if the content exists (=> handle the case when an attachment has been deleted for example). Otherwise go to next slide.
     if ( !isset($slide_background) || empty($slide_background) )
       return;
@@ -245,7 +242,6 @@ class CZR_slider_model_class extends CZR_Model {
       'edit_suffix'         =>  $edit_suffix
     );
   }
-
 
   /*
   * By default we don't want the slider images to be responsive as wp intends as our slider isnot completely responsive (has fixed heights for different viewports)
@@ -274,99 +270,60 @@ class CZR_slider_model_class extends CZR_Model {
 
 
   //@hook: 'wp_calculate_image_srcset'
-  //this hook is defined in wp-includes/media.php::wp_calculate_image_srcset()
   function czr_maybe_add_resp_slide_img_size_to_the_srcset( $sources, $size_array, $image_src, $image_meta, $attachment_id ) {
-      if ( is_array( $sources ) && count( $sources ) ) {
-          /**
-           * if the first image in $sources is not our $image_src, do nothing, as this means that wp_calculate_image_srcset()
-           * has found no matches, hence it will return no srcset whatever image sizes we add to the $sources
-           * as matter of fact, just after the wp_calculate_image_srcset filter hook it makes this check:
-           * // Only return a 'srcset' value if there is more than one source.
-           * if ( ! $src_matched || count( $sources ) < 2 ) {
-           *    return false;
-           * }
-           */
-          $first_image_size_src = reset( $sources );
+    if ( count( $sources ) ) {
 
-          if ( ! is_array( $first_image_size_src ) || ! array_key_exists( 'url', $first_image_size_src ) || $image_src !== $first_image_size_src[ 'url' ] ) {
-              return $sources;
-          }
+        if ( is_array( $size_array) && ! empty( $image_meta['sizes'] ) ){
 
-          if ( is_array( $size_array) && ! empty( $image_meta['sizes'] ) ){
+            // Retrieve the uploads sub-directory from the full size image.
+            $dirname = _wp_get_attachment_relative_path( $image_src );
 
-              // Retrieve the uploads sub-directory from the full size image.
-              $dirname = _wp_get_attachment_relative_path( $image_meta['file'] );
+            if ( $dirname ) {
+              $dirname = trailingslashit( $dirname );
+            }
 
-              if ( $dirname ) {
-                  $dirname = trailingslashit( $dirname );
-              }
-
-              $upload_dir    = wp_get_upload_dir();
-              $image_baseurl = trailingslashit( $upload_dir['baseurl'] ) . $dirname;
+            $upload_dir    = wp_get_upload_dir();
+            $image_baseurl = trailingslashit( $upload_dir['baseurl'] ) . $dirname;
 
 
-              if ( is_ssl() && 'https' !== substr( $image_baseurl, 0, 5 ) && parse_url( $image_baseurl, PHP_URL_HOST ) === $_SERVER['HTTP_HOST'] ) {
-                  $image_baseurl = set_url_scheme( $image_baseurl, 'https' );
-              }
-
-              /*
-               * Images that have been edited in WordPress after being uploaded will
-               * contain a unique hash. Look for that hash and use it later to filter
-               * out images that are leftovers from previous versions.
-               */
-              $image_edited = preg_match( '/-e[0-9]{13}/', wp_basename( $image_src ), $image_edit_hash );
-
-              //always use the tc-slider-small if available and not corrupted
-              //and that is not from previous edits
-              $small_slider_thumb = ! empty( $image_meta['sizes']['tc-slider-small'] ) ? $image_meta['sizes']['tc-slider-small'] : null;
-
-              if ( $small_slider_thumb && ! ( $image_edited && ! strpos( $small_slider_thumb['file'], $image_edit_hash[0] ) ) ) {
-                  //if available use the slider small size
-                  $sources[ $small_slider_thumb['width'] ] = array(
-                    'url'        => $image_baseurl .  $small_slider_thumb['file'],
-                    'descriptor' => 'w',
-                    'value'      => $small_slider_thumb['width'],
-                  );
-              }
-              else {
-                  //flag to avoid several checks on whether the image sizes we're about to add to the sources
-                  //is not the original src already added by wp-includes/media.php::wp_calculate_image_srcset()
-                  $original_src_matched  = false;
-
-                  //Grab all the available scaled images
-                  //The cons of this method is that you can have images that are really far by the "desired" aspect ratio
-                  foreach ( $image_meta[ 'sizes' ] as $img_size => $image ) {
-
-                      // If the file name is part of the `src`, we're parsing the src itself
-                      // this has already been added by wp-includes/media.php::wp_calculate_image_srcset()
-                      if ( ! $original_src_matched && false !== strpos( $image_src, $dirname . $image['file'] ) ) {
-                          //src attr matched, set $original_src_matched flag so that we don't make the above check again
-                          $original_src_matched = true;
-                          continue;
-                      }
-
-                      // Filter out images that are from previous edits.
-                      if ( $image_edited && ! strpos( $image['file'], $image_edit_hash[0] ) ) {
-                          continue;
-                      }
-
-                      $source = array(
-                        'url'        => $image_baseurl . $image['file'],
-                        'descriptor' => 'w',
-                        'value'      => $image['width'],
-                      );
+            if ( is_ssl() && 'https' !== substr( $image_baseurl, 0, 5 ) && parse_url( $image_baseurl, PHP_URL_HOST ) === $_SERVER['HTTP_HOST'] ) {
+              $image_baseurl = set_url_scheme( $image_baseurl, 'https' );
+            }
 
 
-                      // If not already part of the $sources array, add this image size
-                      if( ! isset( $sources[ $image['width'] ] ) ){
-                          $sources[ $image['width'] ] = $source;
-                      }
-                  }
-              }//else
-          }
-      }
+            if ( ! empty( $image_meta['sizes']['tc-slider-small'] ) ) {
+                $image = $image_meta['sizes']['tc-slider-small'];
+                //if available use the slider small size
+                $sources[ $image['width'] ] = array(
+                  'url'        => $image_baseurl . $image['file'],
+                  'descriptor' => 'w',
+                  'value'      => $image['width'],
+                );
 
-      return $sources;
+            }
+            else {
+                //Grab all the available scaled images
+                //The cons of this method is that you can have images that are really far by the "desired" aspect ratio
+                foreach ( $image_meta[ 'sizes' ] as $img_size => $image ) {
+                    $source = array(
+                      'url'        => $image_baseurl . $image['file'],
+                      'descriptor' => 'w',
+                      'value'      => $image['width'],
+                    );
+
+                    // The 'src' image has to be the first in the 'srcset', because of a bug in iOS8. See wp #35030.
+                    if ( $image['file'] == basename( $image_src ) ) {
+                        unset( $sources[ $image['width'] ] );
+                        $sources = array( $image['width'] => $source ) + $sources;
+                    } elseif( ! isset( $sources[ $image['width'] ] ) ){
+                        $sources[ $image['width'] ] = $source;
+                    }
+                }
+            }//else
+        }
+    }
+
+    return $sources;
 
   }
 
@@ -440,23 +397,13 @@ class CZR_slider_model_class extends CZR_Model {
   * @package Customizr
   * @since Customizr 3.3+
   */
-  function czr_fn_get_slider_inner_class( $queried_id ) {
+  function czr_fn_get_slider_inner_class() {
     $class = array( 'carousel-inner' );
 
-    $class[] = (bool) esc_attr( czr_fn_opt( 'tc_center_slider_img') ) ? 'center-slides-enabled' : 'center-slides-disabled';
-
+    if ( (bool) esc_attr( czr_fn_opt( 'tc_center_slider_img') ) )
+      array_push( $class, 'center-slides-enabled' );
     if ( (bool) esc_attr( czr_fn_opt( 'tc_slider_parallax') ) )
-      $class[] = 'czr-parallax-slider';
-
-    //Is the overlay checked for this slider ?
-    //gets slider options if any
-    $overlay_value                 = czr_fn_is_real_home() ? czr_fn_opt( 'tc_home_slider_overlay' ) : esc_attr( get_post_meta( $queried_id, $key = 'slider_overlay_key' , $single = true ) );
-    $overlay_value                 = apply_filters( 'czr_slider_overlay', $overlay_value, $queried_id );
-    //if the option is unchecked OR has never been set
-    if ( 'off' == $overlay_value ) {
-      $class[] = 'czr-has-no-dark-overlay';
-    }
-
+      array_push( $class, 'czr-parallax-slider' );
     return apply_filters( 'czr_carousel_inner_classes', $class );
   }
 
@@ -509,22 +456,14 @@ class CZR_slider_model_class extends CZR_Model {
     $atts = array();
 
     if ( (bool) esc_attr( czr_fn_opt( 'tc_slider_parallax') ) ) {
-        $atts[] = sprintf( 'data-parallax-ratio="%s"',
-          apply_filters('tc_parallax_ratio', 0.55 )
-        );
+      $atts[] = sprintf( 'data-parallax-ratio="%s"',
+        apply_filters('tc_parallax_ratio', 0.55 )
+      );
     }
 
     $atts[] = sprintf( 'data-slider-delay="%s"',
-        czr_fn_is_real_home() ? czr_fn_opt( 'tc_slider_delay' ) : get_post_meta( czr_fn_get_id() , $key = 'slider_delay_key' , $single = true )
+      czr_fn_is_real_home() ? czr_fn_opt( 'tc_slider_delay' ) : get_post_meta( czr_fn_get_id() , $key = 'slider_delay_key' , $single = true )
     );
-
-
-    $has_dots  =  czr_fn_is_real_home() ? czr_fn_opt( 'tc_home_slider_dots' ) : get_post_meta( czr_fn_get_id() , $key = 'slider_dots_key' , $single = true );
-
-    //for users who set up a slider in singular before introducing this option the post meta has never been saved
-    $has_dots = 'off' != $has_dots;
-
-    $atts[] = sprintf( 'data-has-dots="%s"', $has_dots );
 
     return czr_fn_stringify_array( $atts );
   }
@@ -654,6 +593,32 @@ class CZR_slider_model_class extends CZR_Model {
   }
 
 
+  /**
+  * Helper
+  * Returns the passed text trimmed at $text_length char.
+  * with the $more text added
+  *
+  * @return string
+  *
+  * @package Customizr
+  * @since Customizr 3.4.9
+  *
+  */
+  // move this into CZR_utils?
+  function czr_fn_trim_text( $text, $text_length, $more ) {
+    if ( ! $text )
+      return '';
+    $text       = trim( strip_tags( $text ) );
+    if ( ! $text_length )
+      return $text;
+    $end_substr = $_text_length = strlen( $text );
+    if ( $_text_length > $text_length ){
+      $end_substr = strpos( $text, ' ' , $text_length);
+      $end_substr = ( $end_substr !== FALSE ) ? $end_substr : $text_length;
+      $text = substr( $text , 0 , $end_substr );
+    }
+    return ( ( $end_substr < $text_length ) && $more ) ? $text : $text . ' ' .$more ;
+  }
 
   /**
   * hook : tc_slider_height, fired in czr_fn_user_options_style
@@ -693,7 +658,7 @@ class CZR_slider_model_class extends CZR_Model {
     //custom css for the slider loader
     if ( $this -> czr_fn_is_slider_loader_active( $slider_name_id ) ) {
 
-      $_slider_loader_src = apply_filters( 'czr_slider_loader_src' , sprintf( '%1$s%2$s' , CZR_FRONT_ASSETS_URL, 'img/slider-loader.gif') );
+      $_slider_loader_src = apply_filters( 'czr_slider_loader_src' , sprintf( '%1$s/%2$s' , CZR_BASE_URL . CZR_ASSETS_PREFIX, 'img/slider-loader.gif') );
       //we can load only the gif, or use it as fallback for old browsers (.no-csstransforms3d)
       if ( ! apply_filters( 'czr_slider_loader_gif_only', false ) ) {
         $_slider_loader_gif_class  = '.no-csstransforms3d';

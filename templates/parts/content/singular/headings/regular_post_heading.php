@@ -60,12 +60,12 @@
 
             }
 
-            if ( ( $author || $date || $up_date ) && $comment_info )
+            if ( $comment_info )
               echo '<span class="v-separator">|</span>';
-        ?></span><?php
-        endif;
-        echo $comment_info;
         ?>
+          </span>
+        <?php endif ?>
+        <?php echo $comment_info; ?>
       </div>
     </div>
   </div>

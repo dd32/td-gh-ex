@@ -1,4 +1,3 @@
-
 /* ===================================================
  * jqueryimgSmartLoad.js v1.0.0
  * ===================================================
@@ -21,13 +20,13 @@
  * Requires requestAnimationFrame polyfill:
  * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
  * =================================================== */
-(function ( $, window ) {
+;(function ( $, window, document, undefined ) {
       //defaults
       var pluginName = 'imgSmartLoad',
           defaults = {
                 load_all_images_on_first_scroll : false,
                 attribute : [ 'data-src', 'data-srcset', 'data-sizes' ],
-                excludeImg : [],
+                excludeImg : [''],
                 threshold : 200,
                 fadeIn_options : { duration : 400 },
                 delaySmartLoadEvent : 0,
@@ -43,11 +42,10 @@
             this.element = element;
             this.options = $.extend( {}, defaults, options) ;
             //add .tc-smart-load-skip to the excludeImg
-            if ( _.isArray( this.options.excludeImg ) ) {
-                  this.options.excludeImg.push( '.'+skipImgClass );
-            } else {
-                  this.options.excludeImg = [ '.'+skipImgClass ];
-            }
+            if ( _.isArray( this.options.excludeImg ) )
+              this.options.excludeImg.push( '.'+skipImgClass );
+            else
+              this.options.excludeImg = [ '.'+skipImgClass ];
 
             this._defaults = defaults;
             this._name = pluginName;
@@ -68,9 +66,7 @@
                   //avoid intersecting cointainers to parse the same images
                   .addClass( skipImgClass )
                   //attach action to the load event
-                  .bind( 'load_img', {}, function() {
-                        self._load_img(this);
-                  });
+                  .bind( 'load_img', {}, function() { self._load_img(this); });
 
             //the scroll event gets throttled with the requestAnimationFrame
             $(window).scroll( function( _evt ) { self._better_scroll_event_handler( $_imgs, _evt ); } );
@@ -105,13 +101,11 @@
       * @return : void
       */
       Plugin.prototype._maybe_trigger_load = function( $_imgs , _evt ) {
-            var self = this,
+            var self = this;
                 //get the visible images list
                 _visible_list = $_imgs.filter( function( ind, _img ) { return self._is_visible( _img ,  _evt ); } );
             //trigger load_img event for visible images
-            _visible_list.map( function( ind, _img ) {
-                  $(_img).trigger( 'load_img' );
-            });
+            _visible_list.map( function( ind, _img ) { $(_img).trigger( 'load_img' );  } );
       };
 
 
@@ -159,12 +153,13 @@
                   .removeAttr( this.options.attribute.join(' ') )
                   .attr( 'sizes' , _sizes )
                   .attr( 'srcset' , _src_set )
-                  .attr( 'src', _src )
+                  .attr('src', _src )
                   .load( function () {
                         //prevent executing this twice on an already smartloaded img
                         if ( ! $_img.hasClass('tc-smart-loaded') ) {
                               $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
                         }
+
                         //Following would be executed twice if needed, as some browsers at the
                         //first execution of the load callback might still have not actually loaded the img
 
@@ -173,7 +168,7 @@
                         //Basically photon recalculates the image dimension and sets its
                         //width/height attribute once the image is smartloaded. Given the fact that those attributes are "needed" by the browser to assign the images a certain space so that when loaded the page doesn't "grow" it's height .. what's the point doing it so late?
                         if ( ( 'undefined' !== typeof $_img.attr('data-tcjp-recalc-dims')  ) && ( false !== $_img.attr('data-tcjp-recalc-dims') ) ) {
-                              var _width  = $_img.originalWidth(),
+                              var _width  = $_img.originalWidth();
                                   _height = $_img.originalHeight();
 
                               if ( 2 != _.size( _.filter( [ _width, _height ], function(num){ return _.isNumber( parseInt(num, 10) ) && num > 1; } ) ) )
@@ -187,8 +182,6 @@
                         }
 
                         $_img.trigger('smartload');
-                        //flag to avoid double triggering
-                        $_img.data('czr-smart-loaded', true );
                   });//<= create a load() fn
             //http://stackoverflow.com/questions/1948672/how-to-tell-if-an-image-is-loaded-or-cached-in-jquery
             if ( $_img[0].complete ) {
@@ -207,4 +200,4 @@
                   }
             });
       };
-})( jQuery, window );
+})( jQuery, window, document );

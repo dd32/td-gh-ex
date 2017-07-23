@@ -78,9 +78,6 @@ if ( ! class_exists( 'CZR_customize' ) ) :
       if ( class_exists('CZR_Customize_Cropped_Image_Control') )
         $manager -> register_control_type( 'CZR_Customize_Cropped_Image_Control' );
 
-      if ( class_exists('CZR_Customize_Code_Editor_Control') )
-        $manager -> register_control_type( 'CZR_Customize_Code_Editor_Control' );
-
       if ( class_exists('CZR_Customize_Panels') )
         $manager -> register_panel_type( 'CZR_Customize_Panels');
 
@@ -114,7 +111,7 @@ if ( ! class_exists( 'CZR_customize' ) ) :
         ) );
 
         //ONLY FOR OLD CZR at the moment
-        if ( ! czr_fn_is_ms() ) {
+        if ( ! czr_fn_is_modern_style() ) {
             /* Header */
             $wp_customize->selective_refresh->add_partial( 'main_header', array(
                 'selector'            => 'header.tc-header',
@@ -242,8 +239,23 @@ if ( ! class_exists( 'CZR_customize' ) ) :
 
       //MOVE THE CUSTOM CSS SECTION (introduced in 4.7) INTO THE ADVANCED PANEL
       if ( is_object( $wp_customize->get_section( 'custom_css' ) ) ) {
+
           $wp_customize -> get_section( 'custom_css' ) -> panel = 'tc-advanced-panel';
           $wp_customize -> get_section( 'custom_css' ) -> priority = 10;
+
+
+        //CHANGE CUSTOM_CSS DEFAULT
+        $custom_css_setting_id = sprintf( 'custom_css[%s]', get_stylesheet() );
+        if ( is_object( $wp_customize->get_setting( $custom_css_setting_id ) ) ) {
+          $original = $wp_customize->get_setting( $custom_css_setting_id )->default;
+          $new_def = sprintf( "%s\n%s\n%s\n*/",
+              substr( $original, 0, strlen($original) - 2),
+              __( "Use this field to test small chunks of CSS code. For important CSS customizations, it is recommended to modify the style.css file of a child theme." , 'customizr' ),
+              'http' . esc_url( '//codex.wordpress.org/Child_Themes' )
+          );
+          $wp_customize->get_setting( $custom_css_setting_id )->default = $new_def;
+        }
+
       }
     }
 
@@ -291,8 +303,6 @@ if ( ! class_exists( 'CZR_customize' ) ) :
                 'type',
                 'active_callback',
 
-                'pro_subtitle',
-                'pro_doc_url',
                 'pro_text',
                 'pro_url',
 
@@ -341,11 +351,7 @@ if ( ! class_exists( 'CZR_customize' ) ) :
                 'dst_width',
                 'dst_height',
 
-                'ubq_section',
-
-                //for the code editor
-                'code_type',
-                'input_attrs'
+                'ubq_section'
 
           )
       );
@@ -932,7 +938,7 @@ if ( ! class_exists( 'CZR_customize_resources' ) ) :
             'gridDesignControls' => CZR_customize::$instance -> czr_fn_get_grid_design_controls(),
             'isRTL'           => is_rtl(),
             'isChildTheme'    => is_child_theme(),
-            'isModernStyle'   => czr_fn_is_ms(),
+            'isModernStyle'   => czr_fn_is_modern_style(),
             'isPro'           => czr_fn_is_pro()
           )
         )
@@ -1080,7 +1086,7 @@ if ( ! class_exists( 'CZR_controls' ) ) :
                 $sliders          = czr_fn_opt( 'tc_sliders' );
 
                 if ( empty( $sliders ) ) {
-                  printf('<div class="czr-notice" style="width:99%; padding: 5px;"><span class="czr-notice">%1$s<br/><a class="button-primary" href="%2$s" target="_blank">%3$s</a><br/><span class="tc-notice">%4$s <a href="%5$s" title="%6$s" target="_blank">%6$s</a></span></span>',
+                  printf('<div class="czr-notice" style="width:99%; padding: 5px;"><p class="description">%1$s<br/><a class="button-primary" href="%2$s" target="_blank">%3$s</a><br/><span class="tc-notice">%4$s <a href="%5$s" title="%6$s" target="_blank">%6$s</a></span></p>',
                     __("You haven't create any slider yet. Go to the media library, edit your images and add them to your sliders.", "customizr" ),
                     admin_url( 'upload.php?mode=list' ),
                     __( 'Create a slider' , 'customizr' ),
@@ -1270,7 +1276,7 @@ if ( ! class_exists( 'CZR_controls' ) ) :
 
         wp_enqueue_style(
           'font-awesome',
-          sprintf('%1$s/css/fontawesome-all.min.css', CZR_BASE_URL . 'assets/shared/fonts/fa' ),
+          sprintf('%1$s/css/font-awesome.min.css', CZR_BASE_URL . 'assets/shared/fonts/fa' ),
           array(),
           CUSTOMIZR_VER,
           $media = 'all'
@@ -1346,56 +1352,6 @@ if ( class_exists('WP_Customize_Cropped_Image_Control') && ! class_exists( 'CZR_
         }//end overload
 
     }
-
-    /**
-    * Render a JS template for the content of the media control.
-    *
-    * @since 3.4.19
-    * @package      Customizr
-    *
-    * @Override
-    * @see WP_Customize_Control::content_template()
-    */
-    public function content_template() {
-      ?>
-      <# if ( data.title ) { #>
-          <h3 class="czr-customizr-title">{{{ data.title }}}</h3>
-        <# } #>
-          <?php parent::content_template(); ?>
-        <# if ( data.notice ) { #>
-          <span class="czr-notice">{{{ data.notice }}}</span>
-        <# } #>
-      <?php
-    }
-  }//end class
-endif;
-?><?php
-/*
-*/
-if ( class_exists('WP_Customize_Code_Editor_Control') && ! class_exists( 'CZR_Customize_Code_Editor_Control' ) ) :
-  class CZR_Customize_Code_Editor_Control extends WP_Customize_Code_Editor_Control {
-
-    public $type = 'czr_code_editor';
-    public $title;
-    public $notice;
-
-    /**
-     * Refresh the parameters passed to the JavaScript via JSON.
-     *
-     * @see WP_Customize_Control::json()
-     *
-     * @return array Array of parameters passed to the JavaScript.
-     */
-    public function json() {
-        $json = parent::json();
-        if ( is_array( $json ) ) {
-            $json['title']  = !empty( $this -> title )  ? esc_html( $this -> title ) : '';
-            $json['notice'] = !empty( $this -> notice ) ?           $this -> notice  : '';
-        }
-
-        return $json;
-    }
-
 
     /**
     * Render a JS template for the content of the media control.
@@ -1836,9 +1792,6 @@ class CZR_Customize_Section_Pro extends WP_Customize_Section {
      */
     public $type ='czr-customize-section-pro';
 
-    public $pro_subtitle = '';
-    public $pro_doc_url = '';
-
     /**
      * Custom button text to output.
      *
@@ -1861,8 +1814,6 @@ class CZR_Customize_Section_Pro extends WP_Customize_Section {
      */
     public function json() {
       $json = parent::json();
-      $json['pro_subtitle'] = $this->pro_subtitle;
-      $json['pro_doc_url']  = esc_url( $this->pro_doc_url );
       $json['pro_text'] = $this->pro_text;
       $json['pro_url']  = esc_url( $this->pro_url );
       return $json;
@@ -1871,11 +1822,10 @@ class CZR_Customize_Section_Pro extends WP_Customize_Section {
     //overrides the default template
     protected function render_template() { ?>
       <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-          <h3 style="padding: 10px 25px 18px 14px;" class="accordion-section-title">
+          <h3 class="accordion-section-title">
             {{ data.title }}
-            <a href="{{ data.pro_doc_url }}" style="font-size: 0.7em;display: block;float: left;position: absolute;bottom: 0px;font-style: italic;color: #555d66;" target="_blank" title="{{ data.pro_subtitle }}">{{ data.pro_subtitle }}</a>
             <# if ( data.pro_text && data.pro_url ) { #>
-              <a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank" title="{{ data.pro_text }}" style="margin-top:0px">{{ data.pro_text }}</a>
+              <a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
             <# } #>
           </h3>
         </li>
@@ -1970,7 +1920,7 @@ function czr_fn_print_module_templates() {
   ?>
 
     <script type="text/html" id="tmpl-czr-crud-module-part">
-      <button class="<?php echo $css_attr['open_pre_add_btn']; ?>"><?php _e('Add New', 'customizr'); ?> <span class="fas fa-plus-square"></span></button>
+      <button class="<?php echo $css_attr['open_pre_add_btn']; ?>"><?php _e('Add New', 'customizr'); ?> <span class="fa fa-plus-square"></span></button>
       <div class="<?php echo $css_attr['pre_add_wrapper']; ?>">
         <div class="<?php echo $css_attr['pre_add_success']; ?>"><p></p></div>
         <div class="<?php echo $css_attr['pre_add_item_content']; ?>">
@@ -1982,7 +1932,7 @@ function czr_fn_print_module_templates() {
 
 
     <script type="text/html" id="tmpl-czr-rud-item-alert-part">
-      <p class="czr-item-removal-title"><?php _e('Are you sure you want to remove : <strong>{{ data.title }} ?</strong>', 'customizr'); ?></p>
+      <p><?php _e('Are you sure you want to remove : <strong>{{ data.title }} ?</strong>', 'customizr'); ?></p>
               <span class="<?php echo $css_attr['remove_view_btn']; ?> button"><?php _e('Yes', 'customizr'); ?></span> <span class="<?php echo $css_attr['cancel_alert_btn']; ?> button"><?php _e('No', 'customizr'); ?></span>
     </script>
 
@@ -1991,7 +1941,7 @@ function czr_fn_print_module_templates() {
     <script type="text/html" id="tmpl-czr-rud-item-part">
         <div class="<?php echo $css_attr['item_header']; ?> czr-custom-model">
           <div class="<?php echo $css_attr['item_title']; ?> <?php echo $css_attr['item_sort_handle']; ?>"><h4>{{ data.title }}</h4></div>
-          <div class="<?php echo $css_attr['item_btns']; ?>"><a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fas fa-pencil-alt <?php echo $css_attr['edit_view_btn']; ?>"></a>&nbsp;<a title="<?php _e('Remove', 'customizr'); ?>" href="javascript:void(0);" class="fas fa-trash <?php echo $css_attr['display_alert_btn']; ?>"></a></div>
+          <div class="<?php echo $css_attr['item_btns']; ?>"><a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fa fa-pencil <?php echo $css_attr['edit_view_btn']; ?>"></a>&nbsp;<a title="<?php _e('Remove', 'customizr'); ?>" href="javascript:void(0);" class="fa fa-trash <?php echo $css_attr['display_alert_btn']; ?>"></a></div>
           <div class="<?php echo $css_attr['remove_alert_wrapper']; ?>"></div>
         </div>
     </script>
@@ -2004,7 +1954,7 @@ function czr_fn_print_module_templates() {
     <script type="text/html" id="tmpl-czr-ru-item-part">
         <div class="<?php echo $css_attr['item_header']; ?> czr-custom-model">
           <div class="<?php echo $css_attr['item_title']; ?> <?php echo $css_attr['item_sort_handle']; ?>"><h4>{{ data.title }}</h4></div>
-            <div class="<?php echo $css_attr['item_btns']; ?>"><a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fas fa-pencil-alt <?php echo $css_attr['edit_view_btn']; ?>"></a></div>
+            <div class="<?php echo $css_attr['item_btns']; ?>"><a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fa fa-pencil <?php echo $css_attr['edit_view_btn']; ?>"></a></div>
           </div>
         </div>
     </script>
@@ -2058,11 +2008,11 @@ function czr_fn_print_sektion_module_templates() {
       <li class="czr-single-module" data-module-id="{{ data.id }}">
           <div class="czr-mod-header">
               <div class="czr-mod-title">
-                <span class="czr-mod-drag-handler fas fa-arrows-alt"></span>
+                <span class="czr-mod-drag-handler fa fa-arrows-alt"></span>
                 <h4>{{ data.id }}</h4>
                 <div class="czr-mod-buttons">
 
-                  <a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fas fa-pencil-alt czr-edit-mod"></a>&nbsp;<a title="<?php _e('Remove', 'customizr'); ?>" href="javascript:void(0);" class="fas fa-trash czr-remove-mod"></a>
+                  <a title="<?php _e('Edit', 'customizr'); ?>" href="javascript:void(0);" class="fa fa-pencil czr-edit-mod"></a>&nbsp;<a title="<?php _e('Remove', 'customizr'); ?>" href="javascript:void(0);" class="fa fa-trash czr-remove-mod"></a>
                 </div>
               </div>
               <div class="<?php echo $css_attr['remove_alert_wrapper']; ?>"></div>

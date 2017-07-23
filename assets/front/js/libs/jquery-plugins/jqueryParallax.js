@@ -1,4 +1,3 @@
-
 /* ===================================================
  * jqueryParallax.js v1.0.0
  * ===================================================
@@ -10,7 +9,7 @@
  *
  *
  * =================================================== */
-(function ( $, window, _ ) {
+;(function ( $, window, document, undefined ) {
         //defaults
         var pluginName = 'czrParallax',
             defaults = {
@@ -51,9 +50,10 @@
         //@return void
         //map custom events if any
         Plugin.prototype._bind_evt = function() {
-            //var _customEvt = $.isArray(this.options.oncustom) ? this.options.oncustom : this.options.oncustom.split(' ');
+              var self = this,
+                  _customEvt = $.isArray(this.options.oncustom) ? this.options.oncustom : this.options.oncustom.split(' ');
 
-            _.bindAll( this, 'maybeParallaxMe', 'parallaxMe' );
+              _.bindAll( this, 'maybeParallaxMe', 'parallaxMe' );
               /* TODO: custom events? */
         };
 
@@ -163,4 +163,4 @@
                 }
             });
         };
-})( jQuery, window, _ );
+})( jQuery, window, document );

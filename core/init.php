@@ -135,16 +135,14 @@ if ( ! class_exists( 'CZR___' ) ) :
 
         public $slider_resp_shrink_ratio;
 
-        private $_hide_update_notification_for_versions;
-
 
 
         function __construct( $_args = array()) {
             //allow modern_style templates
-            add_filter( 'czr_ms'             , '__return_true' );
+            add_filter( 'czr_modern_style'             , '__return_true' );
             //define a constant we can use everywhere
             //that will tell us we're in the new Customizr:
-            //Will be highly used during the transion between the two styles
+            //Will be highly used during the transion between the two themes
             if( ! defined( 'CZR_IS_MODERN_STYLE' ) ) define( 'CZR_IS_MODERN_STYLE' , true );
 
 
@@ -152,8 +150,8 @@ if ( ! class_exists( 'CZR___' ) ) :
             parent::__construct( $_args );
 
             //this action callback is the one responsible to load new czr main templates
-            //Those templates have no models there are invoked from the WP templates with this kind of syntax : do_action( 'czr_ms_tmpl', 'header' );
-            add_action( 'czr_ms_tmpl'       , array( $this , 'czr_fn_load_modern_template_with_no_model' ), 10 , 1 );
+            //Those templates have no models there are invoked from the WP templates with this kind of syntax : do_action( 'czr_modern_style_tmpl', 'header' );
+            add_action( 'czr_modern_style_tmpl'       , array( $this , 'czr_fn_load_modern_template_with_no_model' ), 10 , 1 );
 
             //filters to 'the_content', 'wp_title' => in utils
             add_action( 'wp_head' , 'czr_fn_wp_filters' );
@@ -185,14 +183,6 @@ if ( ! class_exists( 'CZR___' ) ) :
             $this -> tc_slider_small_size        = array( 'width' => 517  , 'height' => 235, 'crop' => true ); //size name : tc-slider-small
 
             add_action( 'czr_after_load'         , array( $this, 'czr_maybe_prevdem') );
-
-            //don't display update notification for a list of versions
-            //typically useful when several versions are released in a short time interval
-            //to avoid hammering the wp admin dashboard with a new admin notice each time
-            $this -> _hide_update_notification_for_versions = array();
-            if( ! defined( 'DISPLAY_UPDATE_NOTIFICATION' ) ) {
-                define( 'DISPLAY_UPDATE_NOTIFICATION' , ! in_array( CUSTOMIZR_VER, $this -> _hide_update_notification_for_versions ) );
-            }
 
         }
 
@@ -286,7 +276,15 @@ if ( ! class_exists( 'CZR___' ) ) :
             require_once( CZR_BASE . CZR_CORE_PATH . 'core-settings-map.php' );
 
             //loads utils
-            require_once( CZR_BASE . CZR_CORE_PATH . 'functions-ccat.php' );
+            if ( CZR_DEV_MODE ) {
+                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-0-base.php' );
+                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-1-utils.php' );
+                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-2-query.php' );
+                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-3-thumbnails.php' );
+                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-4-colors.php' );
+            } else {
+                require_once( CZR_BASE . CZR_CORE_PATH . 'functions-ccat.php' );
+            }
 
             do_action( 'czr_load' );
 
@@ -637,6 +635,27 @@ if ( ! class_exists( 'CZR___' ) ) :
             */
             $prop_value = $prop_value && is_array( $prop_value ) ? czr_fn_stringify_array( $prop_value ) : $prop_value;
             echo empty( $prop_value ) ? '' : $prop_value;
+        }
+
+        /*
+        * An handly function to print the content wrapper class
+        */
+        function czr_fn_column_content_wrapper_class() {
+            echo czr_fn_stringify_array( czr_fn_get_column_content_wrapper_class() );
+        }
+
+        /*
+        * An handly function to print the main container class
+        */
+        function czr_fn_main_container_class() {
+            echo czr_fn_stringify_array( czr_fn_get_main_container_class() );
+        }
+
+        /*
+        * An handly function to print the article containerr class
+        */
+        function czr_fn_article_container_class() {
+            echo czr_fn_stringify_array( czr_fn_get_article_container_class() );
         }
 
 

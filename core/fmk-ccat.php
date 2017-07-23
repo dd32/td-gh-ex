@@ -1046,18 +1046,28 @@ if ( ! class_exists( 'CZR_View' ) ) :
 
         //do_action( "__before_{$this -> model -> id}" ); <= DO WE REALLY NEED THOSE ?
 
-        //ADD ATTRIBUTES TO THE WRAPPER
-        if ( is_user_logged_in() ) {
-            /* Maybe merge debug info into the model element attributes */
-            $this -> model -> element_attributes = is_array( $this -> model -> element_attributes ) ? $this -> model -> element_attributes : explode( ' ', $this -> model -> element_attributes );
-            $this -> model -> element_attributes = join( ' ', array_filter( array_unique( array_merge( $this -> model -> element_attributes, array(
-                'data-czr-model_id="'. $this -> model -> id .'"',
-                isset( $this -> model -> template ) ? 'data-czr-template="templates/parts/'. $this -> model -> template .'"' : ''
-            )))) );
+        $czr_fn_print_debug =  ! czr_fn_is_customizing() && is_user_logged_in() && current_user_can( 'edit_theme_options' );
+
+        if ( $czr_fn_print_debug ) {
+            echo "<!-- HOOK CONTENT HERE : __before_{$this -> model -> id} -->";
+            echo "<!-- START RENDERING VIEW ID : {$this -> model -> id} -->";
         }
+
+        //ADD ATTRIBUTES TO THE WRAPPER
+        /* Maybe merge debug info into the model element attributes */
+        $this -> model -> element_attributes =  join( ' ', array_filter( array(
+            $this -> model -> element_attributes,
+            'data-czr-model_id="'. $this -> model -> id .'"',
+            isset( $this -> model -> template ) ? 'data-czr-template="templates/parts/'. $this -> model -> template .'"' : ''
+        )) );
 
         $this -> czr_fn_render();
 
+        if ( $czr_fn_print_debug ) {
+            echo "<!-- END OF RENDERING VIEW ID : {$this -> model -> id} -->";
+            echo "<!-- HOOK CONTENT HERE : __after_{$this -> model -> id} -->";
+        }
+        //do_action( "__after_{$this -> model -> id}" ); <= DO WE REALLY NEED THOSE ?
 
         // (the view's model is passed by reference)
         do_action_ref_array( 'post_rendering_view', array(&$this -> model) );
@@ -1165,7 +1175,6 @@ if ( ! class_exists( 'CZR_controllers' ) ) :
               'navbar_secondary_menu',
               'sidenav',
               'topbar_menu',
-              'mobile_menu',
 
               'menu_button',
               'mobile_menu_button',
@@ -1177,8 +1186,7 @@ if ( ! class_exists( 'CZR_controllers' ) ) :
 
               'desktop_topbar_search',
               'desktop_primary_search',
-              'mobile_navbar_search',
-              'mobile_menu_search',
+              'mobile_search',
 
               'desktop_topbar_wc_cart',
               'desktop_primary_wc_cart',
@@ -1203,9 +1211,6 @@ if ( ! class_exists( 'CZR_controllers' ) ) :
 
               'regular_page_heading',
               'regular_post_heading',
-              'regular_attachment_image_heading',
-
-              'attachment_image',
 
               'archive_heading',
               'author_description',

@@ -307,7 +307,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         add_filter( $filter, 'czr_fn_url_lang' );
 
       //outputs the qtranslate translation for slider
-      foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt', 'czr_posts_slider_button_text_pre_trim' ) as $filter )
+      foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt' ) as $filter )
         add_filter( $filter, 'czr_fn_apply_qtranslate' );
       //sets no character limit for slider (title, lead text and button title) => allow users to use qtranslate tags for as many languages they wants ([:en]English text[:de]German text...and so on)
       foreach ( array( 'czr_slide_title_length', 'czr_slide_text_length', 'czr_slide_button_length' ) as $filter )
@@ -334,6 +334,36 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         add_filter( 'tc_featured_text_three_customizer_set', 'czr_fn_change_transport', 20, 2);
       }
 
+      //posts slider (this filter is not fired in admin )
+      add_filter('czr_posts_slider_pre_model', 'czr_fn_posts_slider_qtranslate');
+      function czr_fn_posts_slider_qtranslate( $pre_slides ){
+        if ( empty($pre_slides) )
+          return $pre_slides;
+
+        // remove useles q-translation of the slider view
+        foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt' ) as $filter )
+          remove_filter( $filter, 'czr_fn_apply_qtranslate' );
+
+        // allow q-translation pre trim/sanitize
+        foreach ( array( 'czr_posts_slider_button_text_pre_trim', 'czr_post_title_pre_trim', 'czr_post_excerpt_pre_sanitize', 'czr_posts_slide_background' ) as $filter )
+          add_filter( $filter, 'czr_fn_apply_qtranslate' );
+
+        //translate button text
+        $pre_slides['common']['button_text'] = $pre_slides['common']['button_text'] ? CZR_slider::$instance -> czr_fn_get_post_slide_button_text( $pre_slides['common']['button_text'] ) : '';
+
+        //translate title and excerpt if needed
+        $_posts = &$pre_slides['posts'];
+
+        foreach ($_posts as &$_post) {
+          $ID = $_post['ID'];
+          $_p = get_post( $ID );
+          if ( ! $_p ) continue;
+
+          $_post['title'] = $_post['title'] ? CZR_slider::$instance -> czr_fn_get_post_slide_title($_p, $ID) : '';
+          $_post['text']  = $_post['text'] ? CZR_slider::$instance -> czr_fn_get_post_slide_excerpt($_p, $ID) : '';
+        }
+        return $pre_slides;
+      }
     }
 
 
@@ -354,7 +384,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_pll_strings_setup() {
         // grab theme options
-        $tc_options = czr_fn_get_theme_options();
+        $tc_options = czr_fn__f('__options');
         // grab settings map, useful for some options labels
         $tc_settings_map = czr_fn_get_customizer_map( $get_default = true );
         $tc_controls_map = $tc_settings_map['add_setting_control'];
@@ -569,7 +599,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
           $tc_wpml_options     = array_keys($tc_wpml_option_name);
 
           // grab theme options
-          $tc_options = czr_fn_get_theme_options();
+          $tc_options = czr_fn__f('__options');
 
           // build array of options to translate
           foreach ( $tc_wpml_options as $tc_wpml_option )
@@ -647,7 +677,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         }
         /*A) FP*/
         // Featured pages ids "translation"
-        add_filter( 'czr_fp_id', 'czr_fn_wpml_page_id', 20 );
+        add_filter( 'tc_fp_id', 'czr_fn_wpml_page_id', 20 );
         function czr_fn_wpml_page_id( $fp_page_id ) {
           return czr_fn_wpml_object_id( $fp_page_id, 'page');
         }
@@ -777,17 +807,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       add_action('sensei_before_main_content', 'czr_fn_sensei_wrappers', 10);
       add_action('sensei_after_main_content', 'czr_fn_sensei_wrappers', 10);
 
-      //removes related posts on __after_loop/__after_content hook
-      add_filter( 'tc_opt_tc_related_posts', 'czr_fn_sensei_disable_related_posts' );
-      function czr_fn_sensei_disable_related_posts( $bool ) {
-          return ( function_exists('is_sensei') && is_sensei() ) ? 'disabled' : $bool;
-      }
-
-      //removes author info on __after_loop/__after_content hook
-      add_filter( 'tc_opt_tc_show_author_info', 'czr_fn_sensei_disable_author_info' );
-      function czr_fn_sensei_disable_author_info( $bool ) {
-          return ( function_exists('is_sensei') && is_sensei() ) ? false : $bool;
-      }
 
       function czr_fn_sensei_wrappers() {
         switch ( current_filter() ) {
@@ -845,18 +864,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       function czr_fn_woocommerce_shop_enable( $bool ){
         return ( function_exists('is_woocommerce') && is_woocommerce() && function_exists('is_shop') && is_shop() ) ? true : $bool;
       }
-      //Helper
-      function czr_fn_is_woocommerce_disable( $bool ) {
-        return ( function_exists('is_woocommerce') && is_woocommerce() ) ? false : $bool;
-      }
-
-      //enable lightbox for images in the wc short description
-      add_filter( 'czr_enable_lightbox_in_wc_short_description', '__return_true' );
-
-
-      //enable images smartload in the wc short description
-      add_filter( 'czr_enable_img_smart_load_in_wc_short_description', '__return_true' );
-
 
       //when in the woocommerce shop page use the "shop" id
       add_filter( 'czr_id', 'czr_fn_woocommerce_shop_page_id' );
@@ -869,18 +876,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       //allow page layout post meta in 'shop'
       add_filter( 'czr_is_page_layout', 'czr_fn_woocommerce_shop_enable' );
 
-
-      //removes post comment action on __after_loop/__after_content hook
-      add_filter( 'czr_are_comments_enabled', 'czr_fn_is_woocommerce_disable' );
-
-      //removes related posts on __after_loop/__after_content hook
-      add_filter( 'tc_opt_tc_related_posts', 'czr_fn_woocommerce_disable_related_posts' );
-      function czr_fn_woocommerce_disable_related_posts( $bool ) {
-          return ( function_exists('is_woocommerce') && is_woocommerce() ) ? 'disabled' : $bool;
-      }
-
-      //removes author info on __after_loop/__after_content hook
-      add_filter( 'tc_opt_tc_show_author_info', 'czr_fn_is_woocommerce_disable' );
 
       //handles the woocomerce sidebar : removes action if sidebars not active
       if ( !is_active_sidebar( 'shop') ) {
@@ -969,8 +964,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_wc_skin_color_border_color_prop_selectors( $selectors ) {
          return array_merge( $selectors, array(
-            '.woocommerce .woocommerce-info',
-            '.woocommerce .woocommerce-message',
             '.woocommerce #respond input#submit',
             '.woocommerce input#submit',
             '.woocommerce input.button',
@@ -1337,48 +1330,31 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
             <div id="content" class="<?php czr_fn_article_container_class() ?>">
 
-              <?php do_action ('__before_loop');
+              <?php
 
     }
 
 
-    /* no navigation */
+    /* no comments, no related posts, no navigation */
     function czr_fn_mainwrapper_end() {
-                    /*
-                     * Optionally attached to this hook :
-                     * - In single posts:
-                     *   - Author bio | 10
-                     *   - Related posts | 20
-                     * - In posts and pages
-                     *   - Comments | 30
-                     */
-                    do_action ('__after_loop');
       ?>
             </div>
 
+            <?php do_action('__after_content'); ?>
+
             <?php
-                /*
-                 * Optionally attached to this hook :
-                 * - In single posts:
-                 *   - Author bio | 10
-                 *   - Related posts | 20
-                 * - In posts and pages
-                 *   - Comments | 30
-                 */
-                do_action('__after_content');
+              /*
+              * SIDEBARS
+              */
+              /* By design do not display sidebars in 404 or home empty */
+              if ( ! ( czr_fn_is_home_empty() || is_404() ) ) {
+                if ( czr_fn_is_registered_or_possible('left_sidebar') )
+                  get_sidebar( 'left' );
 
-                /*
-                * SIDEBARS
-                */
-                /* By design do not display sidebars in 404 or home empty */
-                if ( ! ( czr_fn_is_home_empty() || is_404() ) ) {
-                  if ( czr_fn_is_registered_or_possible('left_sidebar') )
-                    get_sidebar( 'left' );
+                if ( czr_fn_is_registered_or_possible('right_sidebar') )
+                  get_sidebar( 'right' );
 
-                  if ( czr_fn_is_registered_or_possible('right_sidebar') )
-                    get_sidebar( 'right' );
-
-                }
+              }
             ?>
           </div><!-- .column-content-wrapper -->
 

@@ -1,7 +1,11 @@
 <?php
+/*
+*
+* TODO: treat case post format image with no text and post format gallery
+*/
 class CZR_post_list_plain_model_class extends CZR_Model {
 
-  public $post_class               = array( 'col-12', 'grid-item' );
+  public $post_class               = array( 'col-12' );
   public $post_list_items          = array();
 
   /**
@@ -13,45 +17,29 @@ class CZR_post_list_plain_model_class extends CZR_Model {
   function czr_fn_get_preset_model() {
     $_preset = array(
       'show_thumb'                => esc_attr( czr_fn_opt( 'tc_post_list_show_thumb' ) ),
-      'content_wrapper_breadth'   => czr_fn_get_content_breadth(),
+      'content_width'             => czr_fn_get_in_content_width_class(),
       'excerpt_length'            => esc_attr( czr_fn_opt( 'tc_post_list_excerpt_length' ) ),
       'show_full_content'         => true, //false for post list plain excerpt
       'contained'                 => false,
-      'split_layout'              => true,//0 != esc_attr( czr_fn_opt( 'tc_post_list_plain_split_layout' ) ), //whether display TAX | CONTENT (horiz) or TAX/CONTENT (vertical)
+      'split_layout'              => 1 != esc_attr( czr_fn_opt( 'tc_post_list_plain_split_layout' ) ), //whether display TAX | CONTENT (horiz) or TAX/CONTENT (vertical)
       'wrapped'                   => true,
     );
 
     return $_preset;
   }
 
-  /**
-  * @override
-  * fired before the model properties are parsed becoming model properties
-  *
-  * At this stage the preset model has already been parsed into the $model array passed to the constructor
-  * return model params array()
-  */
-  function czr_fn_extend_params( $model = array() ) {
-      //merge with args
-      $model                              = parent::czr_fn_extend_params( $model );
-
-      $model[ 'content_wrapper_breadth' ] = in_array( $model[ 'content_wrapper_breadth' ], array( 'full', 'semi-narrow', 'narrow' ) ) ?
-            $model[ 'content_wrapper_breadth' ] : 'full';
-
-      return $model;
-  }
 
   /**
   * add custom classes to the masonry container element
   */
   function czr_fn_get_element_class() {
-    $_classes = $this->content_wrapper_breadth ? array( $this->content_wrapper_breadth ) : array();
+    $_classes = is_array($this->content_width) ? $this->content_width : array();
 
-    if ( $this->split_layout && 'narrow' != $this->content_wrapper_breadth )
-      $_classes[] = 'split';
+    if ( $this->split_layout && !in_array('narrow', $_classes) )
+      array_push( $_classes, 'split' );
 
     if ( ! empty( $this->contained ) )
-      $_classes[] = 'container';
+      array_push( $_classes, 'container' );
 
     return $_classes;
   }
@@ -64,11 +52,10 @@ class CZR_post_list_plain_model_class extends CZR_Model {
   * and add it to the post_list_items_array
   */
   function czr_fn_setup_late_properties() {
-      //all post lists do this
-      if ( ! $this -> show_full_content && czr_fn_is_loop_start() )
-          $this -> czr_fn_setup_text_hooks();
-
-      $this->post_list_items[] = $this->czr_fn__get_post_list_item();
+    //all post lists do this
+    if ( ! $this -> show_full_content && czr_fn_is_loop_start() )
+      $this -> czr_fn_setup_text_hooks();
+    array_push( $this->post_list_items, $this->czr_fn__get_post_list_item() );
   }
 
 
@@ -144,15 +131,14 @@ class CZR_post_list_plain_model_class extends CZR_Model {
     /* Build inner elements classes */
     $cat_list_class = $entry_header_inner_class = $content_inner_class = array( 'col-12' );
 
-    //split layout
-    if ( $this->split_layout && $cat_list && 'narrow' != $this->content_wrapper_breadth ) {
-      $bp                  = 'narrow' == $this->content_wrapper_breadth ? 'lg' : 'xl';
-      $cat_list_text_align = is_rtl() ? 'left' : 'right';
+    if ( $this->split_layout && $cat_list && is_array($this->content_width) && !in_array( 'narrow', $this->content_width ) ) {
+      $bp = in_array( 'narrow', $this->content_width ) ? 'xl' : 'lg';
+
       /* the header inner class (width) depends on the presence of the category list */
       array_push( $entry_header_inner_class, "col-{$bp}-7", "offset-{$bp}-4" );
       /* the content inner class (width) depends on the presence of the category list */
       array_push( $content_inner_class, "col-{$bp}-7", "offset-{$bp}-1" );
-      array_push( $cat_list_class, "col-{$bp}-3 text-{$bp}-{$cat_list_text_align}" );
+      array_push( $cat_list_class, "col-{$bp}-3 text-{$bp}-right" );
     }
 
     $article_selectors           = $this -> czr_fn__get_article_selectors( $cat_list );

@@ -1,4 +1,3 @@
-
 /* ===================================================
  * jqueryAnimateSvg.js v1.0.0
  * @dependency : Vivus.js (MIT licensed)
@@ -6,7 +5,7 @@
  * (c) 2016 Nicolas Guillaume, Nice, France
  * Animates an svg icon with Vivus given its #id
  * =================================================== */
-(function ( $, window, document, _ ) {
+;(function ( $, window, document, _ ) {
   var pluginName = 'animateSvg',
       defaults = {
         filter_opacity : 0.8,

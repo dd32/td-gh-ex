@@ -1,4 +1,3 @@
-
 /* ===================================================
  * jqueryCenterImages.js v1.0.0
  * ===================================================
@@ -10,15 +9,13 @@
  * Center images in a specified container
  *
  * =================================================== */
-(function ( $, window ) {
+;(function ( $, window, document, undefined ) {
       //defaults
       var pluginName = 'centerImages',
           defaults = {
                 enableCentering : true,
                 onresize : true,
-                onInit : true,//<= shall we smartload on init or wait for a custom event, typically smartload ?
                 oncustom : [],//list of event here
-                $containerToListen : null,//<= we might want to listen to custom event trigger to a parent container.Should be a jQuery obj
                 imgSel : 'img',
                 defaultCSSVal : { width : 'auto' , height : 'auto' },
                 leftAdjust : 0,
@@ -32,7 +29,6 @@
                 disableGRUnder : 767,//in pixels
                 useImgAttr:false,//uses the img height and width attributes if not visible (typically used for the customizr slider hidden images)
                 setOpacityWhenCentered : false,//this can be used to hide the image during the time it is centered
-                addCenteredClassWithDelay : 0,//<= a small delay can be required when we rely on the v-centered or h-centered css classes to set the opacity for example
                 opacity : 1
           };
 
@@ -50,8 +46,7 @@
       //@return void
       Plugin.prototype.init = function () {
             var self = this,
-                _do = function( _event_ ) {
-                    _event_ = _event_ || 'init';
+                _do = function() {
                     //applies golden ratio to all containers ( even if there are no images in container )
                     self._maybe_apply_golden_r();
 
@@ -72,32 +67,25 @@
 
                     //if no images or centering is not active, only handle the golden ratio on resize event
                     if ( 1 <= $_imgs.length && self.options.enableCentering ) {
-                          self._parse_imgs( $_imgs, _event_ );
+                          self._parse_imgs($_imgs);
                     }
                 };
 
             //fire
-            if ( self.options.onInit ) {
-                  _do();
-            }
+            _do();
 
-            //console.log('$( self.container )', $( self.container ) );
             //bind the container element with custom events if any
             //( the images will also be bound )
             if ( $.isArray( self._customEvt ) ) {
                   self._customEvt.map( function( evt ) {
-                        var $_containerToListen = ( self.options.$containerToListen instanceof $ && 1 < self.options.$containerToListen.length ) ? self.options.$containerToListen : $( self.container );
-                        //console.log('container to listen',$_containerToListen, evt  );
-                        $_containerToListen.bind( evt, {} , function() {
-                              _do( evt );
-                        });
+                        $( self.container ).bind( evt, {} , _do );
                   } );
             }
       };
 
 
       //@return void
-      Plugin.prototype._maybe_apply_golden_r = function() {
+      Plugin.prototype._maybe_apply_golden_r = function( evt ) {
             //check if options are valids
             if ( ! this.options.enableGoldenRatio || ! this.options.goldenRatioVal || 0 === this.options.goldenRatioVal )
               return;
@@ -134,37 +122,34 @@
 
 
       //@return void
-      Plugin.prototype._parse_imgs = function( $_imgs, _event_ ) {
+      Plugin.prototype._parse_imgs = function( $_imgs ) {
             var self = this;
             $_imgs.each(function ( ind, img ) {
                   var $_img = $(img);
-                  self._pre_img_cent( $_img, _event_ );
+                  self._pre_img_cent( $_img );
 
-                  // IMG CENTERING FN ON RESIZE ?
-                  // Parse Img can be fired several times, so bind once
-                  if ( self.options.onresize && ! $_img.data('resize-react-bound' ) ) {
-                        $_img.data('resize-react-bound', true );
+                  //IMG CENTERING FN ON RESIZE ?
+                  if ( self.options.onresize ) {
                         $(window).resize( _.debounce( function() {
-                              self._pre_img_cent( $_img, 'resize');
-                        }, 100 ) );
+                              self._pre_img_cent( $_img );
+                        }, 200 ) );
                   }
-
+                  //CUSTOM EVENTS ACTIONS
+                  //bind img
+                  if ( $.isArray( self._customEvt ) ) {
+                        self._customEvt.map( function( evt ) {
+                              $_img.bind( evt, {} , function( evt ) {
+                                    self._pre_img_cent( $_img );
+                              } );
+                        } );
+                  }
             });//$_imgs.each()
-
-            // Mainly designed to check if a container is not getting parsed too many times
-            if ( $(self.container).attr('data-img-centered-in-container') ) {
-                  var _n = parseInt( $(self.container).attr('data-img-centered-in-container'), 10 ) + 1;
-                  $(self.container).attr('data-img-centered-in-container', _n );
-            } else {
-                  $(self.container).attr('data-img-centered-in-container', 1 );
-            }
       };
 
 
 
       //@return void
       Plugin.prototype._pre_img_cent = function( $_img ) {
-
             var _state = this._get_current_state( $_img ),
                 self = this,
                 _case  = _state.current,
@@ -176,23 +161,9 @@
                   $_img
                       .css( _p.dim.name , _p.dim.val )
                       .css( _not_p.dim.name , self.options.defaultCSSVal[ _not_p.dim.name ] || 'auto' )
+                      .addClass( _p._class ).removeClass( _not_p._class )
                       .css( _p.dir.name, _p.dir.val ).css( _not_p.dir.name, _not_p_dir_val );
 
-                  if ( 0 !== self.options.addCenteredClassWithDelay && _.isNumber( self.options.addCenteredClassWithDelay ) ) {
-                        _.delay( function() {
-                              $_img.addClass( _p._class ).removeClass( _not_p._class );
-                        }, self.options.addCenteredClassWithDelay );
-                  } else {
-                        $_img.addClass( _p._class ).removeClass( _not_p._class );
-                  }
-
-                  // Mainly designed to check if a single image is not getting parsed too many times
-                  if ( $_img.attr('data-img-centered') ) {
-                        var _n = parseInt( $_img.attr('data-img-centered'), 10 ) + 1;
-                        $_img.attr('data-img-centered', _n );
-                  } else {
-                        $_img.attr('data-img-centered', 1 );
-                  }
                   return $_img;
             };
             if ( this.options.setOpacityWhenCentered ) {
@@ -200,7 +171,7 @@
                         $_img.css( 'opacity', self.options.opacity );
                   });
             } else {
-                  _.delay(function() { _centerImg( $_img ); }, 0 );
+                  _centerImg( $_img );
             }
       };
 
@@ -294,4 +265,4 @@
             });
       };
 
-})( jQuery, window );
+})( jQuery, window, document );
