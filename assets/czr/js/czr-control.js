@@ -8,22 +8,22 @@ Array.from||(Array.from=function(){var a=Object.prototype.toString,b=function(b)
 if ( 'function' != typeof(jQuery.fn.iCheck) ) {
   !function(a){function b(a,b,e){var f=a[0],g=/er/.test(e)?p:/bl/.test(e)?n:l,h=e==q?{checked:f[l],disabled:f[n],indeterminate:"true"==a.attr(p)||"false"==a.attr(o)}:f[g];if(/^(ch|di|in)/.test(e)&&!h)c(a,g);else if(/^(un|en|de)/.test(e)&&h)d(a,g);else if(e==q)for(g in h)h[g]?c(a,g,!0):d(a,g,!0);else b&&"toggle"!=e||(b||a[u]("ifClicked"),h?f[r]!==k&&d(a,g):c(a,g))}function c(b,c,e){var q=b[0],u=b.parent(),v=c==l,x=c==p,y=c==n,z=x?o:v?m:"enabled",A=f(b,z+g(q[r])),B=f(b,c+g(q[r]));if(!0!==q[c]){if(!e&&c==l&&q[r]==k&&q.name){var C=b.closest("form"),D='input[name="'+q.name+'"]',D=C.length?C.find(D):a(D);D.each(function(){this!==q&&a(this).data(i)&&d(a(this),c)})}x?(q[c]=!0,q[l]&&d(b,l,"force")):(e||(q[c]=!0),v&&q[p]&&d(b,p,!1)),h(b,v,c,e)}q[n]&&f(b,w,!0)&&u.find("."+j).css(w,"default"),u[s](B||f(b,c)||""),y?u.attr("aria-disabled","true"):u.attr("aria-checked",x?"mixed":"true"),u[t](A||f(b,z)||"")}function d(a,b,c){var d=a[0],e=a.parent(),i=b==l,k=b==p,q=b==n,u=k?o:i?m:"enabled",v=f(a,u+g(d[r])),x=f(a,b+g(d[r]));!1!==d[b]&&((k||!c||"force"==c)&&(d[b]=!1),h(a,i,u,c)),!d[n]&&f(a,w,!0)&&e.find("."+j).css(w,"pointer"),e[t](x||f(a,b)||""),q?e.attr("aria-disabled","false"):e.attr("aria-checked","false"),e[s](v||f(a,u)||"")}function e(b,c){b.data(i)&&(b.parent().html(b.attr("style",b.data(i).s||"")),c&&b[u](c),b.off(".i").unwrap(),a(v+'[for="'+b[0].id+'"]').add(b.closest(v)).off(".i"))}function f(a,b,c){return a.data(i)?a.data(i).o[b+(c?"":"Class")]:void 0}function g(a){return a.charAt(0).toUpperCase()+a.slice(1)}function h(a,b,c,d){d||(b&&a[u]("ifToggled"),a[u]("ifChanged")[u]("if"+g(c)))}var i="iCheck",j=i+"-helper",k="radio",l="checked",m="un"+l,n="disabled",o="determinate",p="in"+o,q="update",r="type",s="addClass",t="removeClass",u="trigger",v="label",w="cursor",x=/ipad|iphone|ipod|android|blackberry|windows phone|opera mini|silk/i.test(navigator.userAgent);a.fn[i]=function(f,g){var h='input[type="checkbox"], input[type="'+k+'"]',m=a(),o=function(b){b.each(function(){var b=a(this);m=b.is(h)?m.add(b):m.add(b.find(h))})};if(/^(check|uncheck|toggle|indeterminate|determinate|disable|enable|update|destroy)$/i.test(f))return f=f.toLowerCase(),o(this),m.each(function(){var c=a(this);"destroy"==f?e(c,"ifDestroyed"):b(c,!0,f),a.isFunction(g)&&g()});if("object"!=typeof f&&f)return this;var w=a.extend({checkedClass:l,disabledClass:n,indeterminateClass:p,labelHover:!0,aria:!1},f),y=w.handle,z=w.hoverClass||"hover",A=w.focusClass||"focus",B=w.activeClass||"active",C=!!w.labelHover,D=w.labelHoverClass||"hover",E=0|(""+w.increaseArea).replace("%","");return("checkbox"==y||y==k)&&(h='input[type="'+y+'"]'),-50>E&&(E=-50),o(this),m.each(function(){var f=a(this);e(f);var g=this,h=g.id,m=-E+"%",o=100+2*E+"%",o={position:"absolute",top:m,left:m,display:"block",width:o,height:o,margin:0,padding:0,background:"#fff",border:0,opacity:0},m=x?{position:"absolute",visibility:"hidden"}:E?o:{position:"absolute",opacity:0},p="checkbox"==g[r]?w.checkboxClass||"icheckbox":w.radioClass||"i"+k,y=a(v+'[for="'+h+'"]').add(f.closest(v)),F=!!w.aria,G=i+"-"+Math.random().toString(36).substr(2,6),H='<div class="'+p+'" '+(F?'role="'+g[r]+'" ':"");F&&y.each(function(){H+='aria-labelledby="',this.id?H+=this.id:(this.id=G,H+=G),H+='"'}),H=f.wrap(H+"/>")[u]("ifCreated").parent().append(w.insert),o=a('<ins class="'+j+'"/>').css(o).appendTo(H),f.data(i,{o:w,s:f.attr("style")}).css(m),w.inheritClass&&H[s](g.className||""),w.inheritID&&h&&H.attr("id",i+"-"+h),"static"==H.css("position")&&H.css("position","relative"),b(f,!0,q),y.length&&y.on("click.i mouseover.i mouseout.i touchbegin.i touchend.i",function(c){var d=c[r],e=a(this);if(!g[n]){if("click"==d){if(a(c.target).is("a"))return;b(f,!1,!0)}else C&&(/ut|nd/.test(d)?(H[t](z),e[t](D)):(H[s](z),e[s](D)));if(!x)return!1;c.stopPropagation()}}),f.on("click.i focus.i blur.i keyup.i keydown.i keypress.i",function(a){var b=a[r];return a=a.keyCode,"click"==b?!1:"keydown"==b&&32==a?(g[r]==k&&g[l]||(g[l]?d(f,l):c(f,l)),!1):("keyup"==b&&g[r]==k?!g[l]&&c(f,l):/us|ur/.test(b)&&H["blur"==b?t:s](A),void 0)}),o.on("click mousedown mouseup mouseover mouseout touchbegin.i touchend.i",function(a){var c=a[r],d=/wn|up/.test(c)?B:z;if(!g[n]){if("click"==c?b(f,!1,!0):(/wn|er|in/.test(c)?H[s](d):H[t](d+" "+B),y.length&&C&&d==z&&y[/ut|nd/.test(c)?t:s](D)),!x)return!1;a.stopPropagation()}})})}}(window.jQuery||window.Zepto);
 }
-/* 
- * Selecter v3.0.9 - 2014-02-10 
- * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
- * http://formstone.it/selecter/ 
- * 
- * Copyright 2014 Ben Plum; MIT Licensed 
+/*
+ * Selecter v3.0.9 - 2014-02-10
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library.
+ * http://formstone.it/selecter/
+ *
+ * Copyright 2014 Ben Plum; MIT Licensed
  */
 if ( 'function' != typeof(jQuery.fn.selecter) ) {
   !function(a,b){"use strict";function c(b){b=a.extend({},x,b||{}),null===w&&(w=a("body"));for(var c=a(this),e=0,f=c.length;f>e;e++)d(c.eq(e),b);return c}function d(b,c){if(!b.hasClass("selecter-element")){c=a.extend({},c,b.data("selecter-options")),c.external&&(c.links=!0);var d=b.find("option, optgroup"),g=d.filter("option"),h=g.filter(":selected"),n=""!==c.label?-1:g.index(h),p=c.links?"nav":"div";c.tabIndex=b[0].tabIndex,b[0].tabIndex=-1,c.multiple=b.prop("multiple"),c.disabled=b.is(":disabled");var q="<"+p+' class="selecter '+c.customClass;v?q+=" mobile":c.cover&&(q+=" cover"),q+=c.multiple?" multiple":" closed",c.disabled&&(q+=" disabled"),q+='" tabindex="'+c.tabIndex+'">',c.multiple||(q+='<span class="selecter-selected'+(""!==c.label?" placeholder":"")+'">',q+=a("<span></span").text(r(""!==c.label?c.label:h.text(),c.trim)).html(),q+="</span>"),q+='<div class="selecter-options">',q+="</div>",q+="</"+p+">",b.addClass("selecter-element").after(q);var s=b.next(".selecter"),u=a.extend({$select:b,$allOptions:d,$options:g,$selecter:s,$selected:s.find(".selecter-selected"),$itemsWrapper:s.find(".selecter-options"),index:-1,guid:t++},c);e(u),o(n,u),void 0!==a.fn.scroller&&u.$itemsWrapper.scroller(),u.$selecter.on("touchstart.selecter click.selecter",".selecter-selected",u,f).on("click.selecter",".selecter-item",u,j).on("close.selecter",u,i).data("selecter",u),u.$select.on("change.selecter",u,k),v||(u.$selecter.on("focus.selecter",u,l).on("blur.selecter",u,m),u.$select.on("focus.selecter",u,function(a){a.data.$selecter.trigger("focus")}))}}function e(b){for(var c="",d=b.links?"a":"span",e=0,f=0,g=b.$allOptions.length;g>f;f++){var h=b.$allOptions.eq(f);if("OPTGROUP"===h[0].tagName)c+='<span class="selecter-group',h.is(":disabled")&&(c+=" disabled"),c+='">'+h.attr("label")+"</span>";else{var i=h.val();h.attr("value")||h.attr("value",i),c+="<"+d+' class="selecter-item',h.is(":selected")&&""===b.label&&(c+=" selected"),h.is(":disabled")&&(c+=" disabled"),c+='" ',c+=b.links?'href="'+i+'"':'data-value="'+i+'"',c+=">"+a("<span></span>").text(r(h.text(),b.trim)).html()+"</"+d+">",e++}}b.$itemsWrapper.html(c),b.$items=b.$selecter.find(".selecter-item")}function f(c){c.preventDefault(),c.stopPropagation();var d=c.data;if(!d.$select.is(":disabled"))if(a(".selecter").not(d.$selecter).trigger("close.selecter",[d]),v){var e=d.$select[0];if(b.document.createEvent){var f=b.document.createEvent("MouseEvents");f.initMouseEvent("mousedown",!1,!0,b,0,0,0,0,0,!1,!1,!1,!1,0,null),e.dispatchEvent(f)}else e.fireEvent&&e.fireEvent("onmousedown")}else d.$selecter.hasClass("closed")?g(c):d.$selecter.hasClass("open")&&i(c)}function g(b){b.preventDefault(),b.stopPropagation();var c=b.data;if(!c.$selecter.hasClass("open")){var d=c.$selecter.offset(),e=w.outerHeight(),f=c.$itemsWrapper.outerHeight(!0),g=c.index>=0?c.$items.eq(c.index).position():{left:0,top:0};d.top+f>e&&c.$selecter.addClass("bottom"),c.$itemsWrapper.show(),c.$selecter.removeClass("closed").addClass("open"),w.on("click.selecter-"+c.guid,":not(.selecter-options)",c,h),void 0!==a.fn.scroller?c.$itemsWrapper.scroller("scroll",c.$itemsWrapper.find(".scroller-content").scrollTop()+g.top,0).scroller("reset"):c.$itemsWrapper.scrollTop(c.$itemsWrapper.scrollTop()+g.top)}}function h(b){b.preventDefault(),b.stopPropagation(),0===a(b.currentTarget).parents(".selecter").length&&i(b)}function i(a){a.preventDefault(),a.stopPropagation();var b=a.data;b.$selecter.hasClass("open")&&(b.$itemsWrapper.hide(),b.$selecter.removeClass("open bottom").addClass("closed"),w.off(".selecter-"+b.guid))}function j(b){b.preventDefault(),b.stopPropagation();var c=a(this),d=b.data;if(!d.$select.is(":disabled")){if(d.$itemsWrapper.is(":visible")){var e=d.$items.index(c);o(e,d),p(d)}d.multiple||i(b)}}function k(b,c){var d=a(this),e=b.data;if(!c&&!e.multiple){var f=e.$options.index(e.$options.filter("[value='"+s(d.val())+"']"));o(f,e),p(e)}}function l(b){b.preventDefault(),b.stopPropagation();var c=b.data;c.$select.is(":disabled")||c.multiple||(c.$selecter.addClass("focus").on("keydown.selecter"+c.guid,c,n),a(".selecter").not(c.$selecter).trigger("close.selecter",[c]))}function m(b){b.preventDefault(),b.stopPropagation();var c=b.data;c.$selecter.removeClass("focus").off("keydown.selecter"+c.guid+" keyup.selecter"+c.guid),a(".selecter").not(c.$selecter).trigger("close.selecter",[c])}function n(b){var c=b.data;if(13===b.keyCode)c.$selecter.hasClass("open")&&(i(b),o(c.index,c)),p(c);else if(!(9===b.keyCode||b.metaKey||b.altKey||b.ctrlKey||b.shiftKey)){b.preventDefault(),b.stopPropagation();var d=c.$items.length-1,e=c.index<0?0:c.index;if(a.inArray(b.keyCode,u?[38,40,37,39]:[38,40])>-1)e+=38===b.keyCode||u&&37===b.keyCode?-1:1,0>e&&(e=0),e>d&&(e=d);else{var f,g,h=String.fromCharCode(b.keyCode).toUpperCase();for(g=c.index+1;d>=g;g++)if(f=c.$options.eq(g).text().charAt(0).toUpperCase(),f===h){e=g;break}if(0>e)for(g=0;d>=g;g++)if(f=c.$options.eq(g).text().charAt(0).toUpperCase(),f===h){e=g;break}}e>=0&&o(e,c)}}function o(a,b){var c=b.$items.eq(a),d=c.hasClass("selected"),e=c.hasClass("disabled");if(!e){if(-1===a&&""!==b.label)b.$selected.html(b.label);else if(d)b.multiple&&(b.$options.eq(a).prop("selected",null),c.removeClass("selected"));else{{var f=c.html();c.data("value")}b.multiple?b.$options.eq(a).prop("selected",!0):(b.$selected.html(f).removeClass("placeholder"),b.$items.filter(".selected").removeClass("selected"),b.$select[0].selectedIndex=a),c.addClass("selected")}(!d||b.multiple)&&(b.index=a)}}function p(a){a.links?q(a):(a.callback.call(a.$selecter,a.$select.val(),a.index),a.$select.trigger("change",[!0]))}function q(a){var c=a.$select.val();a.external?b.open(c):b.location.href=c}function r(a,b){return 0===b?a:a.length>b?a.substring(0,b)+"...":a}function s(a){return a.replace(/([;&,\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g,"\\$1")}var t=0,u=b.navigator.userAgent.toLowerCase().indexOf("firefox")>-1,v=/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(b.navigator.userAgent||b.navigator.vendor||b.opera),w=null,x={callback:a.noop,cover:!1,customClass:"",label:"",external:!1,links:!1,trim:0},y={defaults:function(b){return x=a.extend(x,b||{}),a(this)},disable:function(b){return a(this).each(function(c,d){var e=a(d).next(".selecter").data("selecter");if(e)if("undefined"!=typeof b){var f=e.$items.index(e.$items.filter("[data-value="+b+"]"));e.$items.eq(f).addClass("disabled"),e.$options.eq(f).prop("disabled",!0)}else e.$selecter.hasClass("open")&&e.$selecter.find(".selecter-selected").trigger("click.selecter"),e.$selecter.addClass("disabled"),e.$select.prop("disabled",!0)})},enable:function(b){return a(this).each(function(c,d){var e=a(d).next(".selecter").data("selecter");if(e)if("undefined"!=typeof b){var f=e.$items.index(e.$items.filter("[data-value="+b+"]"));e.$items.eq(f).removeClass("disabled"),e.$options.eq(f).prop("disabled",!1)}else e.$selecter.removeClass("disabled"),e.$select.prop("disabled",!1)})},destroy:function(){return a(this).each(function(b,c){var d=a(c).next(".selecter").data("selecter");d&&(d.$selecter.hasClass("open")&&d.$selecter.find(".selecter-selected").trigger("click.selecter"),void 0!==a.fn.scroller&&d.$selecter.find(".selecter-options").scroller("destroy"),d.$select[0].tabIndex=d.tabIndex,d.$select.off(".selecter").removeClass("selecter-element").show(),d.$selecter.off(".selecter").remove())})},refresh:function(){return a(this).each(function(b,c){var d=a(c).next(".selecter").data("selecter");if(d){var f=d.index;d.$allOptions=d.$select.find("option, optgroup"),d.$options=d.$allOptions.filter("option"),d.index=-1,f=d.$options.index(d.$options.filter(":selected")),e(d),o(f,d)}})}};a.fn.selecter=function(a){return y[a]?y[a].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof a&&a?this:c.apply(this,arguments)},a.selecter=function(a){"defaults"===a&&y.defaults.apply(this,Array.prototype.slice.call(arguments,1))}}(jQuery,window);
 }
-/* 
- * Stepper v3.0.5 - 2014-02-06 
- * A jQuery plugin for cross browser number inputs. Part of the Formstone Library. 
- * http://formstone.it/stepper/ 
- * 
- * Copyright 2014 Ben Plum; MIT Licensed 
+/*
+ * Stepper v3.0.5 - 2014-02-06
+ * A jQuery plugin for cross browser number inputs. Part of the Formstone Library.
+ * http://formstone.it/stepper/
+ *
+ * Copyright 2014 Ben Plum; MIT Licensed
  */
 if ( 'function' != typeof(jQuery.fn.stepper) ) {
   !function(a){"use strict";function b(b){b=a.extend({},k,b||{});for(var d=a(this),e=0,f=d.length;f>e;e++)c(d.eq(e),b);return d}function c(b,c){if(!b.hasClass("stepper-input")){c=a.extend({},c,b.data("stepper-options"));var e=parseFloat(b.attr("min")),f=parseFloat(b.attr("max")),g=parseFloat(b.attr("step"))||1;b.addClass("stepper-input").wrap('<div class="stepper '+c.customClass+'" />').after('<span class="stepper-arrow up">'+c.labels.up+'</span><span class="stepper-arrow down">'+c.labels.down+"</span>");var h=b.parent(".stepper"),j=a.extend({$stepper:h,$input:b,$arrow:h.find(".stepper-arrow"),min:void 0===typeof e||isNaN(e)?!1:e,max:void 0===typeof f||isNaN(f)?!1:f,step:void 0===typeof g||isNaN(g)?1:g,timer:null},c);j.digits=i(j.step),b.is(":disabled")&&h.addClass("disabled"),h.on("touchstart.stepper mousedown.stepper",".stepper-arrow",j,d).data("stepper",j)}}function d(b){b.preventDefault(),b.stopPropagation(),e(b);var c=b.data;if(!c.$input.is(":disabled")&&!c.$stepper.hasClass("disabled")){var d=a(b.target).hasClass("up")?c.step:-c.step;c.timer=g(c.timer,125,function(){f(c,d,!1)}),f(c,d),a("body").on("touchend.stepper mouseup.stepper",c,e)}}function e(b){b.preventDefault(),b.stopPropagation();var c=b.data;h(c.timer),a("body").off(".stepper")}function f(a,b){var c=parseFloat(a.$input.val()),d=b;void 0===typeof c||isNaN(c)?d=a.min!==!1?a.min:0:a.min!==!1&&c<a.min?d=a.min:d+=c;var e=(d-a.min)%a.step;0!==e&&(d-=e),a.min!==!1&&d<a.min&&(d=a.min),a.max!==!1&&d>a.max&&(d-=a.step),d!==c&&(d=j(d,a.digits),a.$input.val(d).trigger("change"))}function g(a,b,c){return h(a),setInterval(c,b)}function h(a){a&&(clearInterval(a),a=null)}function i(a){var b=String(a);return b.indexOf(".")>-1?b.length-b.indexOf(".")-1:0}function j(a,b){var c=Math.pow(10,b);return Math.round(a*c)/c}var k={customClass:"",labels:{up:"Up",down:"Down"}},l={defaults:function(b){return k=a.extend(k,b||{}),a(this)},destroy:function(){return a(this).each(function(){var b=a(this).data("stepper");b&&(b.$stepper.off(".stepper").find(".stepper-arrow").remove(),b.$input.unwrap().removeClass("stepper-input"))})},disable:function(){return a(this).each(function(){var b=a(this).data("stepper");b&&(b.$input.attr("disabled","disabled"),b.$stepper.addClass("disabled"))})},enable:function(){return a(this).each(function(){var b=a(this).data("stepper");b&&(b.$input.attr("disabled",null),b.$stepper.removeClass("disabled"))})}};a.fn.stepper=function(a){return l[a]?l[a].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof a&&a?this:b.apply(this,arguments)},a.stepper=function(a){"defaults"===a&&l.defaults.apply(this,Array.prototype.slice.call(arguments,1))}}(jQuery,this);
@@ -52,7 +52,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                       return string.length > 150 ? string.substr( 0, 149 ) : string;
                 };
             if ( ! _.isEmpty( _.filter( _toArr, function( it ) { return ! _.isString( it ); } ) ) ) {
-                  _toArr =  JSON.stringify( _toArr );
+                  _toArr =  JSON.stringify( _toArr.join(' ') );
             } else {
                   _toArr = _toArr.join(' ');
             }
@@ -66,7 +66,6 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
               return;
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
-
             console.log.apply( console, _prettyPrintLog( { consoleArguments : arguments } ) );
       };
 
@@ -120,6 +119,36 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                   }
             });
       }
+
+
+      /*****************************************************************************
+      * OBSERVE UBIQUE CONTROL'S PANELS EXPANSION
+      *****************************************************************************/
+      if ( 'function' === typeof api.Panel ) {
+            api.section.bind( 'add', function( _sec ) {
+                  if ( _sec.params.ubq_panel && _sec.params.ubq_panel.panel ) {
+                        _sec.params.original_priority = _sec.params.priority;
+                        _sec.params.original_panel  = _sec.params.panel;
+
+                        api.panel.when( _sec.params.ubq_panel.panel, function( _panel_instance ) {
+                                _panel_instance.expanded.bind( function( expanded ) {
+                                      if ( expanded ) {
+                                            if ( _sec.params.ubq_panel.priority ) {
+                                                  _sec.priority( _sec.params.ubq_panel.priority );
+                                            }
+                                            _sec.panel( _sec.params.ubq_panel.panel );
+                                      }
+                                      else {
+                                            _sec.priority( _sec.params.original_priority );
+                                            _sec.panel( _sec.params.original_panel );
+                                      }
+                                });
+
+                        } );
+                  }
+            });
+      }
+
 
       /*****************************************************************************
       * CLOSE THE MOD OPTION PANEL ( if exists ) ON : section change, panel change, skope switch
@@ -197,6 +226,20 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                   api.czr_skopeReset  = new api.CZR_skopeReset();
 
                   api.trigger('czr-skope-started');
+                  var _toggleTopFailureNote = function() {
+                        api.czr_skopeBase.toggleTopNote( true, {
+                              title : serverControlParams.i18n.skope['There was a problem when trying to load the customizer.'],
+                              message : [
+                                    serverControlParams.i18n.skope['Please refer to'],
+                                    '<a href="http://docs.presscustomizr.com/article/285-there-was-a-problem-when-trying-to-load-the-customizer" target="_blank">',
+                                    serverControlParams.i18n.skope['this documentation page'],
+                                    '</a>',
+                                    serverControlParams.i18n.skope['to understand how to fix the problem.']
+                              ].join(' '),
+                              selfCloseAfter : 40000
+                        });
+                  };
+
 
                   api.czr_skopeReady
                         .done( function() {
@@ -204,6 +247,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                         })
                         .fail( function( error ) {
                               api.errorLog( 'Skope could not be instantiated : ' + error );
+                              _toggleTopFailureNote();
                               serverControlParams.isSkopOn = false;
                         })
                         .always( function() {
@@ -212,25 +256,11 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                   if ( 'rejected' != api.czr_skopeReady.state() ) {
                         setTimeout( function() {
                             if ( 'pending' == api.czr_skopeReady.state() )  {
-                                  api.czr_skopeBase.toggleTopNote( true, {
-                                        title : serverControlParams.i18n.skope['There was a problem when trying to load the customizer.'],
-                                        message : [
-                                              serverControlParams.i18n.skope['Please open your'],
-                                              '<a href="http://docs.presscustomizr.com/article/272-inspect-your-webpages-in-your-browser-with-the-development-tools" target="_blank">',
-                                              serverControlParams.i18n.skope['browser debug tool'],
-                                              '</a>',
-                                              ',',
-                                              serverControlParams.i18n.skope['and report any error message (in red) printed in the javascript console in the'],
-                                              '<a href="https://wordpress.org/support/theme/hueman" target="_blank">',
-                                              serverControlParams.i18n.skope['Hueman theme forum'],
-                                              '</a>.'
-                                        ].join(' '),
-                                        selfCloseAfter : 40000
-                                  });
+                                  _toggleTopFailureNote();
 
                                   api.czr_isLoadingSkope( false );
                             }
-                        }, 30000);
+                        }, 40000);
                   }
             }
             if ( serverControlParams.isChangeSetOn ) {
@@ -326,6 +356,79 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                   _destroy();
             }
       };//toggleSkopeLoadPane
+
+
+      /*****************************************************************************
+      * REACT TO PREVIEW DEVICE SWITCH => send device to preview
+      *****************************************************************************/
+      api.bind( 'ready' , function() {
+          if ( api.previewedDevice ) {
+                api.previewedDevice.bind( function( device ) {
+                      api.previewer.send( 'previewed-device', device );
+                });
+          }
+      });
+
+      /*****************************************************************************
+      * ADD PRO BEFORE SPECIFIC SECTIONS AND PANELS
+      *****************************************************************************/
+      if ( serverControlParams.isPro ) {
+            _.each( [
+                  'tc_font_customizer_settings',//WFC
+
+                  'header_image_sec',//hueman pro
+                  'content_blog_sec',//hueman pro
+                  'static_front_page',//hueman pro
+                  'content_single_sec',//hueman pro
+
+                  'tc_fpu',//customizr-pro
+                  'nav',//customizr-pro
+                  'post_lists_sec'//customizr-pro
+
+            ], function( _secId ) {
+                  _.delay( function() {
+                      api.section.when( _secId, function( _sec_ ) {
+                            if ( 1 >= _sec_.headContainer.length ) {
+                                _sec_.headContainer.find('.accordion-section-title').prepend( '<span class="pro-title-block">Pro</span>' );
+                            }
+                      });
+                  }, 1000 );
+            });
+            _.each( [
+                  'hu-header-panel',//hueman pro
+                  'hu-content-panel',//hueman pro
+
+                  'tc-header-panel',//customizr-pro
+                  'tc-content-panel',//customizr-pro
+                  'tc-footer-panel'//customizr-pro
+            ], function( _secId ) {
+                  api.panel.when( _secId, function( _sec_ ) {
+                        if ( 1 >= _sec_.headContainer.length ) {
+                            _sec_.headContainer.find('.accordion-section-title').prepend( '<span class="pro-title-block">Pro</span>' );
+                        }
+                  });
+            });
+      }
+
+
+      /*****************************************************************************
+      * PRO SECTION CONSTRUCTOR
+      *****************************************************************************/
+      if ( ! serverControlParams.isPro && _.isFunction( api.Section ) ) {
+            proSectionConstructor = api.Section.extend( {
+                  active : true,
+                  attachEvents: function () {},
+                  isContextuallyActive: function () {
+                    return this.active();
+                  },
+                  _toggleActive: function(){ return true; },
+
+            } );
+
+            $.extend( api.sectionConstructor, {
+                  'czr-customize-section-pro' : proSectionConstructor
+            });
+      }
 })( wp.customize , jQuery, _);
 
 
@@ -345,8 +448,8 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                 self.skope_colors = {
                       global : 'rgb(255, 255, 255)',
                       special_group : 'rgba(173, 213, 247, 0.55)',
-                      group  : 'rgba(173, 213, 247, 0.55)',
-                      local  : 'rgba(78, 122, 199, 0.35)'
+                      group  : 'rgba(39, 59, 88, 0.12)',// 'rgba(173, 213, 247, 0.55)',
+                      local  : 'rgba(39, 59, 88, 0.28)'// 'rgba(78, 122, 199, 0.35)'
                 };
                 api.czr_isPreviewerSkopeAware   = $.Deferred();
                 api.czr_initialSkopeCollectionPopulated = $.Deferred();
@@ -372,11 +475,15 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                       }
                 });
                 api.previewer.bind( 'czr-skopes-synced', function( data ) {
-                      if ( ! serverControlParams.isSkopOn || 'rejected' == api.czr_skopeReady.state() )
-                        return;
+                      if ( ! serverControlParams.isSkopOn || 'rejected' == api.czr_skopeReady.state() ) {
+                            return;
+                      }
                       var preview = this,
                           previousSkopeCollection = api.czr_currentSkopesCollection();
                       if ( ! _.has( data, 'czr_skopes') ) {
+                            if ( 'resolved' != api.czr_skopeReady.state() ) {
+                                  api.czr_skopeReady.reject();
+                            }
                             api.errorLog( "On 'czr-skopes-synced' : missing skopes in the server data" );
                             return;
                       }
@@ -386,6 +493,14 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                             api.czr_skopeReady.reject( er );
                             return;
                       }
+                      var _refreshSkopeInfosNotices = function() {
+                            self._writeCurrentSkopeTitle();
+                            if ( api.czr_bottomInfosVisible() ) {
+                                  self.renderBottomInfosTmpl();//<= will build a new bottom skope message infos in the preview based on the new active skopes
+                            } else {
+                                  api.czr_bottomInfosVisible( true );
+                            }
+                      };
                       api.czr_initialSkopeCollectionPopulated.then( function() {
                             var refreshActiveSkope = _.isUndefined( _.findWhere( api.czr_currentSkopesCollection(), {id : api.czr_activeSkopeId() } ) );
                             api.czr_skopeBase.reactWhenSkopeSyncedDone( data ).done( function() {
@@ -396,7 +511,7 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                                                           if ( 'resolved' != api.czr_skopeReady.state() ) {
                                                                 api.czr_skopeReady.resolve( self.getActiveSkopeId() );
                                                           }
-                                                          self._writeCurrentSkopeTitle();
+                                                          _refreshSkopeInfosNotices();
                                                     })
                                                     .fail( function() {
                                                           throw new Error( 'Error when trying to set the active skope after skope synced.' );
@@ -409,7 +524,7 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                                             _newLoc  =_.findWhere( data.czr_skopes, { skope : 'local' } ).opt_name;
 
                                         if ( _newLoc !== _prevLoc && 'resolved' == api.czr_skopeReady.state() ) {
-                                              self._writeCurrentSkopeTitle();
+                                              _refreshSkopeInfosNotices();
                                         }
                                   }
                             });
@@ -451,34 +566,7 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                 api.czr_serverNotification.bind( function( to, from ) {
                         self.toggleServerNotice( to );
                 });
-                api.czr_topNoteVisible = new api.Value( false );
-                api.czr_skopeReady.then( function() {
-                      api.czr_topNoteVisible.bind( function( visible ) {
-                              var noteParams = {},
-                                  _defaultParams = {
-                                        title : '',
-                                        message : '',
-                                        actions : '',
-                                        selfCloseAfter : 20000
-                                  };
-                              noteParams = $.extend( _defaultParams , serverControlParams.topNoteParams );
-                              noteParams.actions = function() {
-                                    var _query = $.extend(
-                                          api.previewer.query(),
-                                          { nonce:  api.previewer.nonce.save }
-                                    );
-                                    wp.ajax.post( 'czr_dismiss_top_note' , _query )
-                                          .always( function () {})
-                                          .fail( function ( response ) { api.consoleLog( 'czr_dismiss_top_note failed', _query, response ); })
-                                          .done( function( response ) {});
-                              };
-
-                              self.toggleTopNote( visible, noteParams );
-                      });
-                      _.delay( function() {
-                            api.czr_topNoteVisible( ! _.isEmpty( serverControlParams.isTopNoteOn ) || 1 == serverControlParams.isTopNoteOn );
-                      }, 2000 );
-                });
+                self._setupPreviewNotificationsBlocks();//top note and bottom skope infos
                 self.scopeSwitcherEventMap = [
                       {
                             trigger   : 'click keydown',
@@ -518,6 +606,21 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
           },//initialize
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           /*****************************************************************************
           * EMBED WRAPPER
           *****************************************************************************/
@@ -541,6 +644,13 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
           },
 
 
+
+
+
+
+
+
+
           /*****************************************************************************
           * API DIRTYNESS REACTIONS
           *****************************************************************************/
@@ -548,6 +658,13 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                 $('body').toggleClass('czr-api-dirty', is_dirty );
                 api.state( 'saved')( ! is_dirty );
           },
+
+
+
+
+
+
+
 
 
           /*****************************************************************************
@@ -613,6 +730,11 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                                       });
                                 });
                           };
+                          if ( api.czr_bottomInfosVisible() ) {
+                                self.renderBottomInfosTmpl();//<= will build a new bottom skope message infos in the preview based on the new active skopes
+                          } else {
+                                api.czr_bottomInfosVisible( true );
+                          }
                           _.delay( function() {
                                 _setupSectionControlDialogs();
                           }, 500 );
@@ -620,6 +742,67 @@ var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
                 api.czr_skopeReady.then( function() {
                       _doWhenSkopeReady();
                 });
+          },
+          _setupPreviewNotificationsBlocks : function() {
+                var self = this;
+                api.czr_topNoteVisible = new api.Value( false );
+                api.czr_skopeReady.then( function() {
+                      api.czr_topNoteVisible.bind( function( visible ) {
+                              var noteParams = {},
+                                  _defaultParams = {
+                                        title : '',
+                                        message : '',
+                                        actions : '',
+                                        selfCloseAfter : 20000
+                                  };
+                              noteParams = $.extend( _defaultParams , serverControlParams.topNoteParams );
+                              noteParams.actions = function() {
+                                    var _query = $.extend(
+                                          api.previewer.query(),
+                                          { nonce:  api.previewer.nonce.save }
+                                    );
+                                    wp.ajax.post( 'czr_dismiss_top_note' , _query )
+                                          .always( function () {})
+                                          .fail( function ( response ) { api.consoleLog( 'czr_dismiss_top_note failed', _query, response ); })
+                                          .done( function( response ) {});
+                              };
+
+                              self.toggleTopNote( visible, noteParams );
+                      });
+                      _.delay( function() {
+                            api.czr_topNoteVisible( ! _.isEmpty( serverControlParams.isTopNoteOn ) || 1 == serverControlParams.isTopNoteOn );
+                      }, 2000 );
+                });
+                api.czr_bottomInfosVisible = new api.Value( false );
+                api.czr_skopeReady.then( function() {
+                      api.czr_bottomInfosVisible.bind( function( visible ) {
+                              var noteParams = {},
+                                  _defaultParams = {
+                                        title : '',
+                                        message : '',
+                                        actions : '',
+                                        selfCloseAfter : 20000
+                                  };
+                              noteParams = $.extend( _defaultParams , {} );
+
+                              return self.toggleBottomInfos( visible, noteParams );//returns a promise()
+                      }, { deferred : true } );
+                      var _skopeInfosSetId = api.CZR_Helpers.build_setId( 'show-skope-infos' );
+                      api.when( _skopeInfosSetId, function( _set_ ){
+                            api.czr_bottomInfosVisible.validate = function( value ) {
+                                  var _v = _set_(),
+                                      _isChecked = 0 !== _v && '0' !== _v && false !== _v && 'off' !== _v;
+
+                                  return _isChecked ? value : false;
+                            };
+                            _set_.bind( function( visible ) {
+                                  api.czr_bottomInfosVisible( 0 !== visible && '0' !== visible && false !== visible && 'off' !== visible );
+                            });
+                      });
+                      _.delay( function() {
+                            api.czr_bottomInfosVisible( true );
+                      }, 2000 );
+                });//api.czr_skopeReady.then()
           }
       });//$.extend()
 })( wp.customize , jQuery, _);
@@ -759,10 +942,10 @@ $.extend( CZRSkopeBaseMths, {
                             api.CZR_Helpers.setupDOMListeners(
                                   [ {
                                         trigger   : 'click keydown',
-                                        selector  : '.czr-top-note-close',
-                                        name      : 'close-top-note',
+                                        selector  : '.czr-preview-note-close',
                                         actions   : function() {
-                                              _destroy().done( function() {
+                                              _hideAndDestroy().done( function() {
+                                                    api.czr_topNoteVisible( false );
                                                     if ( _.isFunction( noteParams.actions ) ) {
                                                           noteParams.actions();
                                                     }
@@ -774,7 +957,7 @@ $.extend( CZRSkopeBaseMths, {
                             );
                       });
                 },
-                _destroy = function() {
+                _hideAndDestroy = function() {
                       var dfd = $.Deferred();
                       $('body').removeClass('czr-top-note-open');
                       if ( self.welcomeNote.length ) {
@@ -793,10 +976,12 @@ $.extend( CZRSkopeBaseMths, {
             if ( visible ) {
                   _renderAndSetup();
             } else {
-                  _destroy();
+                  _hideAndDestroy().done( function() {
+                        api.czr_topNoteVisible( false );//should be already false
+                  });
             }
             _.delay( function() {
-                        _destroy();
+                        api.czr_topNoteVisible( false );
                   },
                   noteParams.selfCloseAfter || 20000
             );
@@ -1199,6 +1384,209 @@ $.extend( CZRSkopeBaseMths, {
 });//$.extend()
 })( wp.customize , jQuery, _ );
 var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
+(function ( api, $, _ ) {
+$.extend( CZRSkopeBaseMths, {
+      toggleBottomInfos : function( visible, noteParams ) {
+            noteParams = _.isObject( noteParams ) ? noteParams : {};
+            var self = this,
+                dfd = $.Deferred(),
+                _defaultParams = {
+                      title : '',
+                      message : '',
+                      actions : '',
+                      selfCloseAfter : 20000
+                },
+                _skopeInfosSetId = api.CZR_Helpers.build_setId('show-skope-infos'),
+                _renderAndSetup = function() {
+                      var _dfd = $.Deferred();
+                      $.when( self.renderBottomInfosTmpl( noteParams ) )
+                            .done( function( $_el ) {
+                                  self.bottomInfosContainer = $_el;
+                                  _.delay( function() {
+                                        $('body').addClass('czr-bottom-infos-open');
+                                        _dfd.resolve();
+                                  }, 200 );
+                                  api.CZR_Helpers.setupDOMListeners(
+                                        [
+                                              {
+                                                    trigger   : 'click keydown',
+                                                    selector  : '.czr-preview-note-close',
+                                                    actions   : function() {
+                                                          _hideAndDestroy().done( function() {
+                                                                api.czr_bottomInfosVisible( false );
+                                                                if ( _.isFunction( noteParams.actions ) ) {
+                                                                      noteParams.actions();
+                                                                }
+                                                          });
+                                                    }
+                                              },
+                                              {
+                                                    trigger   : 'click keydown',
+                                                    selector  : '.czr-skope-switch',
+                                                    actions   : function( params ) {
+                                                          var _skopeIdToSwithTo = $( params.dom_event.currentTarget, params.dom_el ).attr('data-skope-id');
+                                                          if ( ! _.isEmpty( _skopeIdToSwithTo ) && api.czr_skope.has( _skopeIdToSwithTo ) )
+                                                            api.czr_activeSkopeId( _skopeIdToSwithTo );
+                                                    }
+                                              },
+                                              {
+                                                    trigger   : 'click keydown',
+                                                    selector  : '.czr-disable-bottom-infos',
+                                                    actions   : function( params ) {
+                                                          if ( api.control.has( _skopeInfosSetId ) ) {
+                                                                api.control( _skopeInfosSetId ).focus();
+                                                          }
+                                                    }
+                                              }
+                                        ] ,
+                                        { dom_el : self.bottomInfosContainer },
+                                        self
+                                  );
+                            })
+                            .fail( function() {
+                                  _dfd.resolve();
+                            });
+                      return _dfd.promise();
+                },
+                _hideAndDestroy = function() {
+                      return $.Deferred( function() {
+                            var _dfd_ = this;
+                            $('body').removeClass('czr-bottom-infos-open');
+                            if ( self.bottomInfosContainer.length ) {
+                                  _.delay( function() {
+                                        self.bottomInfosContainer.remove();
+                                        self.bottomInfosContainer = false;
+                                        _dfd_.resolve();
+                                  }, 300 );
+                            } else {
+                                _dfd_.resolve();
+                            }
+                      });
+                };
+
+
+            noteParams = $.extend( _defaultParams , noteParams);
+
+            if ( visible ) {
+                  _renderAndSetup().always( function() {
+                        dfd.resolve();
+                  });
+            } else {
+                  _hideAndDestroy().done( function() {
+                        api.czr_bottomInfosVisible( false );//should be already false
+                        dfd.resolve();
+                  });
+            }
+            return dfd.promise();
+      },
+      renderBottomInfosTmpl : function( params ) {
+            params = params || {};
+            var self = this,
+                _tmpl = '',
+                _skope_id = api.czr_activeSkopeId();
+            if ( ! api.czr_skope.has( _skope_id ) || ! _.isObject( api.czr_skope( _skope_id )() ) )
+              return false;
+
+            var _skope_title = api.czr_skope( _skope_id )().long_title,
+                _ctxTitle = api.czr_skope( _skope_id )().ctx_title;
+
+            _skope_title = _.isString( _skope_title ) ? _skope_title : '';
+            _ctxTitle = _.isString( _ctxTitle ) ? _ctxTitle : '';
+
+            var _title = params.title || ['Customizing', _ctxTitle.toLowerCase() ].join(' '),
+                _message = params.message || self._getSkopeInfosMessage( _skope_id ),
+                _renderTmpl = function() {
+                      return $.Deferred( function() {
+                            var dfd = this;
+                            try {
+                                  _tmpl =  wp.template( 'czr-bottom-infos' )( { title : _title } );
+                                  $('#customize-preview').after( $( _tmpl ) );
+                                  dfd.resolve();
+                            } catch( er ) {
+                                  api.errorLog( 'Error when parsing the the bottom infos template : ' + er );
+                                  dfd.reject( er );
+                            }
+                      });
+                };
+            if ( _.isUndefined( this.bottomInfosContainer ) || 1 != this.bottomInfosContainer.length ) {
+                  _renderTmpl().done( function() {
+                        $('.czr-note-message', '#czr-bottom-infos').html( _message );
+                  });
+            } else {
+                  $('.czr-note-content', self.bottomInfosContainer ).fadeOut({
+                        duration : 'fast',
+                        complete : function() {
+                              $( 'h2', self.bottomInfosContainer ).html( [ '&middot;', _title, '&middot;' ].join(' ') );
+                              $('.czr-note-message', self.bottomInfosContainer ).html( _message );
+                              $(this).fadeIn('fast');
+                        }
+                  });
+
+            }
+            return ( this.bottomInfosContainer && 1 == this.bottomInfosContainer.length ) ? this.bottomInfosContainer : $( '#czr-bottom-infos' );
+      },
+      _getSkopeInfosMessage : function( skope_id ) {
+            skope_id = skope_id || api.czr_activeSkopeId();
+            var _localSkopeId = _.findWhere( api.czr_currentSkopesCollection(), { skope : 'local' } ).id;
+            if ( ! api.czr_skope.has( skope_id ) || ! _.isObject( api.czr_skope( skope_id )() ) || _.isUndefined( _localSkopeId ) )
+              return '';
+
+            var self = this,
+                _skpLevel = api.czr_skope( skope_id )().skope,
+                _inheritedFrom = self.getInheritedSkopeTitles(),
+                _overrides = self.getOverridenSkopeTitles(),
+                _localCtxTitle = api.czr_skope( _localSkopeId )().ctx_title,//<= the context title is always the one of the local skope
+                current_title = api.czr_skope( skope_id )().long_title,//ex : Options for home
+                _html;
+
+            switch( _skpLevel ) {
+                    case 'global' :
+                          _html = [
+                                serverControlParams.i18n.skope['The customizations made site wide are inherited by all other levels of customization.'],
+                                '<br/>',
+                                serverControlParams.i18n.skope['The current context'],
+                                ['(', _localCtxTitle, ')'].join(' '),
+                                serverControlParams.i18n.skope['can be customized more specifically at the following level'] + '(s)',
+                                ':',
+                                _overrides + '.'
+                          ].join(' ');
+                    break;
+                    case 'group' :
+                          _html = [
+                                serverControlParams.i18n.skope['The current customizations will be applied to'],
+                                api.czr_skope( skope_id )().ctx_title.toLowerCase() + '.',
+                                '<br/>',
+                                serverControlParams.i18n.skope['The options not customized at this level will inherit their value from'],
+                                _inheritedFrom,
+                                '.<br/>',
+                                serverControlParams.i18n.skope['The current context'],
+                                ['(', _localCtxTitle, ')'].join(' '),
+                                serverControlParams.i18n.skope['can be customized more specifically at the following level'],
+                                ':',
+                                _overrides + '.'
+                          ].join(' ');
+                    break;
+                    case 'local' :
+                          _html = [
+                                serverControlParams.i18n.skope['The current context'],
+                                ['(', _localCtxTitle, ')'].join(' '),
+                                serverControlParams.i18n.skope['can be customized with a specific set of options.'],
+                                '<br/>',
+                                serverControlParams.i18n.skope['The options not customized at this level will inherit their value from'],
+                                _inheritedFrom + '.'
+                          ].join(' ');
+                    break;
+            }
+
+            return $.trim( [
+                  '<span class="czr-skope-bottom-infos">',
+                    _html,
+                    '</span>'
+            ].join(' ') );
+      }
+});//$.extend()
+})( wp.customize , jQuery, _);
+var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
 ( function ( api, $, _ ) {
 $.extend( CZRSkopeBaseMths, {
 
@@ -1246,13 +1634,21 @@ $.extend( CZRSkopeBaseMths, {
     getActiveSkopeId : function( _current_skope_collection ) {
           _current_skope_collection = _current_skope_collection || api.czr_currentSkopesCollection();
 
-          var _currentSkopeLevel = ( ! _.isEmpty( api.czr_activeSkopeId() ) && api.czr_skope.has( api.czr_activeSkopeId() ) ) ? api.czr_skope( api.czr_activeSkopeId() )().skope : serverControlParams.isLocalSkope ? 'local' : 'global',
-              _newSkopeCandidate = _.findWhere( _current_skope_collection, { skope : _currentSkopeLevel } );
+          var _currentSkopeLevel, _newSkopeCandidate, _skpId;
+          if ( ! _.isEmpty( api.czr_activeSkopeId() ) && api.czr_skope.has( api.czr_activeSkopeId() ) ) {
+                _currentSkopeLevel = api.czr_skope( api.czr_activeSkopeId() )().skope;
+          } else if ( serverControlParams.isLocalSkope ) {
+                _currentSkopeLevel = 'local';
+          } else {
+                _currentSkopeLevel = 'global';
+          }
+
+          _newSkopeCandidate = _.findWhere( _current_skope_collection, { skope : _currentSkopeLevel } );
 
           _skpId = ! _.isUndefined( _newSkopeCandidate ) ? _newSkopeCandidate.id : _.findWhere( _current_skope_collection, { skope : 'global' } ).id;
 
           if ( _.isUndefined( _skpId ) ) {
-            throw new Error( 'No default skope was found in getActiveSkopeId ', _current_skope_collection );
+                throw new Error( 'No default skope was found in getActiveSkopeId ', _current_skope_collection );
           }
           return _skpId;
     },
@@ -1946,7 +2342,7 @@ $.extend( CZRSkopeBaseMths, {
           var self = this, dfd = $.Deferred();
           if ( ! _.isUndefined(from) && api.czr_skope.has(from) )
             api.czr_skope(from).active(false);
-          else if ( ! _.isUndefined(from) )
+          else if ( ! _.isUndefined( from ) )
             throw new Error('listenToActiveSkope : previous scope does not exist in the collection', from );
 
           if ( ! _.isUndefined(to) && api.czr_skope.has(to) )
@@ -2096,7 +2492,7 @@ $.extend( CZRSkopeBaseMths, {
                             api.state( 'switching-skope' ).isBound = true;
                       }
           });
-    }
+    }//_writeCurrentSkopeTitle
 });//$.extend
 })( wp.customize , jQuery, _ );
 var CZRSkopeBaseMths = CZRSkopeBaseMths || {};
@@ -2911,13 +3307,15 @@ $.extend( CZRSkopeBaseMths, {
               _isSkoped = function( setId ) {
                     return setId && self.isSettingSkopeEligible( setId );
               },//filter only eligible ctrlIds
+
               _generateControlNotice = function( setId, _localSkopeId ) {
                     var _currentSkopeId         = api.czr_activeSkopeId(),
                         _inheritedFromSkopeId   = self.getInheritedSkopeId( setId, _currentSkopeId ),
                         _overridedBySkopeId     = self.getAppliedPrioritySkopeId( setId, _currentSkopeId ),
                         _html = [],
                         _isCustomized,
-                        _hasDBVal;
+                        _hasDBVal,
+                        _ctxTitle;
                     if ( ! _isSkoped( setId ) ) {
                           _html.push( [
                                 serverControlParams.i18n.skope['This option is always customized sitewide and cannot be reset.']
@@ -2928,6 +3326,10 @@ $.extend( CZRSkopeBaseMths, {
                           _isCustomized = ! _.isUndefined( api.czr_skope( _currentSkopeId ).dirtyValues()[setId] );
                           _hasDBVal     = ! _.isUndefined( api.czr_skope( _currentSkopeId ).dbValues()[setId] );
 
+                          _ctxTitle = api.czr_skope( _inheritedFromSkopeId )().ctx_title;
+
+                          _ctxTitle = ( _.isString( _ctxTitle ) ? _ctxTitle : '' ).toLowerCase();
+
                           if ( _isCustomized ) {
                                 if ( 'global' == api.czr_skope( _inheritedFromSkopeId )().skope ) {
                                       _html.push( [
@@ -2936,7 +3338,7 @@ $.extend( CZRSkopeBaseMths, {
                                 } else {
                                     _html.push( [
                                           serverControlParams.i18n.skope['Customized. Will be applied to'],
-                                          '<strong>' + api.czr_skope( _inheritedFromSkopeId )().ctx_title + '</strong>',
+                                          '<strong>' + _ctxTitle + '</strong>',
                                           serverControlParams.i18n.skope['once published.']
                                     ].join(' ') );
                                 }
@@ -2949,7 +3351,7 @@ $.extend( CZRSkopeBaseMths, {
                                       } else {
                                             _html.push( [
                                                   serverControlParams.i18n.skope['Customized and applied to'],
-                                                  '<strong>' + api.czr_skope( _inheritedFromSkopeId )().ctx_title + '.' + '</strong>'
+                                                  '<strong>' + _ctxTitle + '.' + '</strong>'
                                             ].join(' ') );
                                       }
                                 } else {
@@ -2960,12 +3362,17 @@ $.extend( CZRSkopeBaseMths, {
                     if ( _inheritedFromSkopeId !== _currentSkopeId && api.czr_skope.has( _inheritedFromSkopeId ) ) {
                           _isCustomized = ! _.isUndefined( api.czr_skope( _inheritedFromSkopeId ).dirtyValues()[setId] );
                           _hasDBVal     = ! _.isUndefined( api.czr_skope( _inheritedFromSkopeId ).dbValues()[setId] );
+
+                          _ctxTitle = api.czr_skope( _currentSkopeId )().ctx_title;
+
+                          _ctxTitle = ( _.isString( _ctxTitle ) ? _ctxTitle : '' ).toLowerCase();
+
                           if ( ! _isCustomized && ! _hasDBVal ) {
                                 _html.push(
                                       [
                                             serverControlParams.i18n.skope['Default website value.'],
                                             serverControlParams.i18n.skope['You can customize this specifically for'],
-                                            '<strong>' + api.czr_skope( _currentSkopeId )().ctx_title + '.' + '</strong>'
+                                            '<strong>' + _ctxTitle + '.' + '</strong>'
                                       ].join(' ')
                                 );
                           } else {
@@ -2974,7 +3381,7 @@ $.extend( CZRSkopeBaseMths, {
                                             serverControlParams.i18n.skope['Currently inherited from'],
                                             self.buildSkopeLink( _inheritedFromSkopeId ) + '.',
                                             serverControlParams.i18n.skope['You can customize this specifically for'],
-                                            '<strong>' + api.czr_skope( _currentSkopeId )().ctx_title + '.' + '</strong>'
+                                            '<strong>' + _ctxTitle + '.' + '</strong>'
                                       ].join(' ')
                                 );
                           }
@@ -2982,9 +3389,13 @@ $.extend( CZRSkopeBaseMths, {
                     if ( _overridedBySkopeId !== _currentSkopeId && api.czr_skope.has( _overridedBySkopeId ) ) {
                           _isCustomized = ! _.isUndefined( api.czr_skope( _overridedBySkopeId ).dirtyValues()[setId] );
 
+                          _ctxTitle = api.czr_skope( _localSkopeId )().ctx_title;
+
+                          _ctxTitle = ( _.isString( _ctxTitle ) ? _ctxTitle : '' ).toLowerCase();
+
                           _html.push( [
                                 ! _isCustomized ? serverControlParams.i18n.skope['The value currently applied to'] : serverControlParams.i18n.skope['The value that will be applied to'],
-                                '<strong>' + api.czr_skope( _localSkopeId )().ctx_title + '</strong>',
+                                '<strong>' + _ctxTitle + '</strong>',
                                 ! _isCustomized ? serverControlParams.i18n.skope['is set in'] : serverControlParams.i18n.skope['is customized in'],
                                 self.buildSkopeLink( _overridedBySkopeId ),
                                 serverControlParams.i18n.skope['which has a higher priority than the current option scope'],
@@ -3255,6 +3666,7 @@ $.extend( CZRSkopeSaveMths, {
                       opt_name : null
                 },
                 invalidSettings = [],
+                settingInvalidities = [],
                 modifiedWhileSaving = {},
                 invalidControls,
                 submit_dfd = $.Deferred();
@@ -4718,18 +5130,10 @@ $.extend( CZRSkopeMths, {
             if ( ! serverControlParams.isSkopOn ) {
                   return dfd.resolve().promise();
             }
-
             if ( ! _.has( api, 'czr_activeSkopeId') || _.isUndefined( api.czr_activeSkopeId() ) ) {
                   api.consoleLog( 'The api.czr_activeSkopeId() is undefined in the api.previewer._new_refresh() method.');
-            }
-            if ( ! _.has( api, 'czr_activeSkopeId') ) {
-                  if ( 'resolved' != api.czr_skopeReady.state() ) {
-                        api.czr_skopeReady.done( function() {
-                              _new_refresh.apply( api.previewer, params );
-                        });
-                        coreRefresh.apply( previewer );
-                        return dfd.resolve().promise();
-                  }
+                  coreRefresh.apply( previewer );
+                  return dfd.resolve().promise();
             }
             previewer.send( 'loading-initiated' );
 
@@ -6505,6 +6909,10 @@ $.extend( CZRItemMths , {
             if ( item.module.isMultiItem() ) {
                   item.viewState.callbacks.add( function( to, from ) {
                         var _isExpanded = -1 !== to.indexOf( 'expanded' );
+                        if ( module.hasModOpt() && _isExpanded ) {
+                              api.czr_ModOptVisible( false );
+                        }
+
                         if ( _isExpanded ) {
                               if ( _.isObject( item.contentContainer ) && false !== item.contentContainer.length ) {
                                     item.toggleItemExpansion(to, from );
@@ -6705,7 +7113,8 @@ $.extend( CZRModOptMths , {
             var ctrl = modOpt.module.control;
             modOpt.set( _initial_model );
             api.czr_ModOptVisible = new api.Value( false );
-            api.czr_ModOptVisible.bind( function( visible ) {
+            api.czr_ModOptVisible.bind( function( visible, from, args ) {
+                  args = args || {};
                   if ( visible ) {
                         modOpt.module.closeRemoveDialogs().closeAllItems();
 
@@ -6715,6 +7124,13 @@ $.extend( CZRModOptMths , {
                                     api.CZR_Helpers.setupInputCollectionFromDOM.call( modOpt ).toggleModPanelView( visible );
                               } catch(e) {
                                     api.consoleLog(e);
+                              }
+                              if ( args.module && args.focus ) {
+                                    _.delay( function() {
+                                          if ( _.isNull(  args.module.czr_ModOpt.container ) || ! args.module.czr_ModOpt.container.find('[data-tab-id="' + args.focus + '"] a').length )
+                                            return;
+                                          args.module.czr_ModOpt.container.find('[data-tab-id="' + args.focus + '"] a').trigger('click');
+                                    }, 200 );
                               }
                         });
 
@@ -6886,6 +7302,7 @@ $.extend( CZRModuleMths, {
 
             } );
             module.embedded = $.Deferred();
+            module.itemsWrapper = '';//will store the $ item container
             if ( ! module.isInSektion() ) {
                   module.container = $( module.control.selector );
                   module.embedded.resolve();
@@ -7084,11 +7501,12 @@ $.extend( CZRModuleMths, {
                   module        : { items : $.extend( true, {}, module().items ) , modOpt : module.hasModOpt() ?  $.extend( true, {}, module().modOpt ): {} },
                   input_parent_id : args.input_parent_id,//<= can be the mod opt or the item
                   input_id      : args.input_id,
-                  value         : args.to
+                  value         : args.to,
+                  isPartialRefresh : args.isPartialRefresh//<= let us know if it is a full wrapper refresh or a single input update ( true when fired from sendModuleInputsToPreview )
             });
             module.trigger( 'input_sent', { input : args.to , dom_el: module.container } );
       },
-      sendModuleInputsToPreview : function() {
+      sendModuleInputsToPreview : function( args ) {
             var module = this,
                 _sendInputData = function() {
                       var inputParent = this,//this is the input parent : item or modOpt
@@ -7100,7 +7518,8 @@ $.extend( CZRModuleMths, {
                                   input_id : inputId,
                                   input_parent_id : inputParent.id,
                                   to : inputVal,
-                                  from : null
+                                  from : null,
+                                  isPartialRefresh : args.isPartialRefresh
                             });
                       });
                 };
@@ -7539,6 +7958,8 @@ $.extend( CZRDynModuleMths, {
               $.extend( module, {
                   itemPreAddEl : ''//is specific for each crud module
               } );
+
+              module.preItemsWrapper = '';//will store the pre items wrapper
               module.itemAddedMessage = serverControlParams.i18n.successMessage;
               module.userEventMap = new api.Value( [
                     {
@@ -7560,7 +7981,8 @@ $.extend( CZRDynModuleMths, {
               module.setupDOMListeners( module.userEventMap() , { dom_el : module.container } );
               module.preItem = new api.Value( module.getDefaultItemModel() );
               module.preItemEmbedded = $.Deferred();//was module.czr_preItem.create('item_content');
-              module.preItemEmbedded.done( function() {
+              module.preItemEmbedded.done( function( $preWrapper ) {
+                    module.preItemsWrapper = $preWrapper;
                     module.setupPreItemInputCollection();
               });
               module.preItemExpanded = new api.Value(false);
@@ -7594,27 +8016,37 @@ $.extend( CZRDynModuleMths, {
                   collapsePreItem = function() {
                         module.preItemExpanded.set(false);
                         module._resetPreItemInputs();
-                        module.toggleSuccessMessage('off');
-                  };
+                  },
+                  dfd = $.Deferred();
 
               if ( _.isEmpty(item) || ! _.isObject(item) ) {
-                throw new Error('addItem : an item should be an object and not empty. In : ' + module.id +'. Aborted.' );
+                    api.errorLog( 'addItem : an item should be an object and not empty. In : ' + module.id +'. Aborted.' );
+                    return dfd.resolve().promise();
               }
-              collapsePreItem = _.debounce( collapsePreItem, 2000 );
+              collapsePreItem = _.debounce( collapsePreItem, 200 );
               module.instantiateItem( item, true ).ready(); //true == Added by user
+              ( function() {
+                    return $.Deferred( function() {
+                          var _dfd_ = this;
+                          module.czr_Item( item.id ).isReady.then( function() {
+                                collapsePreItem();
 
-              module.czr_Item( item.id ).isReady.then( function() {
-                    module.toggleSuccessMessage('on');
-                    collapsePreItem();
-
-                    module.trigger('item-added', item );
-                    if ( 'postMessage' == api(module.control.id).transport && _.has( obj, 'dom_event') && ! _.has( obj.dom_event, 'isTrigger' ) && ! api.CZR_Helpers.hasPartRefresh( module.control.id ) ) {
-                      module.control.previewer.refresh();
-                    }
+                                module.trigger('item-added', item );
+                                if ( 'postMessage' == api(module.control.id).transport && _.has( obj, 'dom_event') && ! _.has( obj.dom_event, 'isTrigger' ) && ! api.CZR_Helpers.hasPartRefresh( module.control.id ) ) {
+                                  module.control.previewer.refresh().done( function() {
+                                        _dfd_.resolve();
+                                  });
+                                } else {
+                                        _dfd_.resolve();
+                                }
+                          });
+                    }).promise();
+              })().done( function() {
+                      module.czr_Item( item.id ).viewState( 'expanded' );
+              }).always( function() {
+                      dfd.resolve();
               });
-
-
-
+              return dfd.promise();
       },
 
       _resetPreItemInputs : function() {
@@ -7645,7 +8077,7 @@ $.extend( CZRDynModuleMths, {
 
               var $_pre_add_el = $('.' + module.control.css_attr.pre_add_item_content, module.container );
               $_pre_add_el.prepend( pre_add_template() );
-              module.preItemEmbedded.resolve();
+              module.preItemEmbedded.resolve( $_pre_add_el );
       },
       _getPreItemView : function() {
               var module = this;
@@ -8782,7 +9214,7 @@ $.extend( CZRBaseControlMths, {
                               if ( ! control.czr_Module( _mod_.id ) )
                                 return;
 
-                              control.czr_Module( _mod_.id ).sendModuleInputsToPreview();
+                              control.czr_Module( _mod_.id ).sendModuleInputsToPreview( { isPartialRefresh : true } );
                         });
                   }
             });
@@ -10367,7 +10799,10 @@ $.extend( CZRLayoutSelectMths , {
 
             /* CHECKBOXES */
             api.czrSetupCheckbox = function( controlId, refresh ) {
-                  $('input[type=checkbox]', api.control(controlId).container ).each( function() {
+                  var _ctrl = api.control( controlId );
+                  $('input[type=checkbox]', _ctrl.container ).each( function() {
+                        if ( 'tc_font_customizer_settings' == _ctrl.params.section )
+                          return;
                         if ( 0 === $(this).val() || '0' == $(this).val() || 'off' == $(this).val() || _.isEmpty($(this).val() ) ) {
                               $(this).prop('checked', false);
                         } else {
@@ -10400,8 +10835,11 @@ $.extend( CZRLayoutSelectMths , {
 
             /* NUMBER INPUT */
             api.czrSetupStepper = function( controlId, refresh ) {
-                  $('input[type="number"]', api.control(controlId).container ).each( function() {
-                        $(this).stepper();
+                  var _ctrl = api.control( controlId );
+                  $('input[type="number"]', _ctrl.container ).each( function() {
+                        if ( 'tc_font_customizer_settings' != _ctrl.params.section ) {
+                            $(this).stepper();
+                        }
                   });
             };//api.czrSetupStepper()
 
@@ -10949,59 +11387,43 @@ $.extend( CZRLayoutSelectMths , {
                             visibility: function (to) {
                                   return _is_checked(to);
                             }
-                    },
+                    }
                 ]//dominiDeps {}
           );//_.extend()
 
-}) ( wp.customize, jQuery, _);(function (wp, $) {
-        /* Pro section init */
-        var api = api || wp.customize,
-            proSectionConstructor;
+}) ( wp.customize, jQuery, _);//global serverControlParams
+(function (wp, $) {
+        var api = api || wp.customize;
 
-        if ( 'function' === typeof api.Section ) {
-            proSectionConstructor = api.Section.extend( {
-                  active : true,
-                  attachEvents: function () {},
-                  isContextuallyActive: function () {
-                    return this.active();
-                  },
-                  _toggleActive: function(){ return true; },
-
-            } );
-
-            $.extend( api.sectionConstructor, {
-                  'czr-customize-section-pro' : proSectionConstructor
-            });
-        }
         $( function($) {
-                /* GRID */
-                var _build_control_id = function( _control ) {
-                  return [ '#' , 'customize-control-tc_theme_options-', _control ].join('');
-                };
+              /* GRID */
+              var _build_control_id = function( _control ) {
+                    return [ '#' , 'customize-control-tc_theme_options-', _control ].join('');
+              };
 
-                var _get_grid_design_controls = function() {
-                  return $( serverControlParams.gridDesignControls.map( function( _control ) {
-                    return _build_control_id( _control );
-                  }).join(',') );
-                };
-                $( _get_grid_design_controls() ).addClass('tc-grid-design').hide();
+              var _get_grid_design_controls = function() {
+                    return $( serverControlParams.gridDesignControls.map( function( _control ) {
+                          return _build_control_id( _control );
+                    }).join(',') );
+              };
+              $( _get_grid_design_controls() ).addClass('tc-grid-design').hide();
 
-                $('.tc-grid-toggle-controls').on( 'click', function() {
-                  $( _get_grid_design_controls() ).slideToggle('fast');
-                  $(this).toggleClass('open');
-                } );
+              $('.tc-grid-toggle-controls').on( 'click', function() {
+                    $( _get_grid_design_controls() ).slideToggle('fast');
+                    $(this).toggleClass('open');
+              } );
 
-                /* ADD GOOGLE IN TITLE */
-                $g_logo = $('<img>' , {class : 'tc-title-google-logo' , src : '//www.google.com/images/logos/google_logo_41.png' , height : 20 });
-                $('#accordion-section-fonts_sec').prepend($g_logo);
+              /* ADD GOOGLE IN TITLE */
+              $g_logo = $('<img>' , {class : 'tc-title-google-logo' , src : '//www.google.com/images/logos/google_logo_41.png' , height : 20 });
+              $('#accordion-section-fonts_sec').prepend($g_logo);
 
-                /*
-                * Override select2 Results Adapter in order to select on highlight
-                * deferred needed cause the selects needs to be instantiated when this override is complete
-                * selec2.amd.require is asynchronous
-                */
-                var selectFocusResults = $.Deferred();
-                if ( 'undefined' !== typeof $.fn.select2 && 'undefined' !== typeof $.fn.select2.amd && 'function' === typeof $.fn.select2.amd.require ) {
+              /*
+              * Override select2 Results Adapter in order to select on highlight
+              * deferred needed cause the selects needs to be instantiated when this override is complete
+              * selec2.amd.require is asynchronous
+              */
+              var selectFocusResults = $.Deferred();
+              if ( 'undefined' !== typeof $.fn.select2 && 'undefined' !== typeof $.fn.select2.amd && 'function' === typeof $.fn.select2.amd.require ) {
                     $.fn.select2.amd.require(['select2/results', 'select2/utils'], function (Result, Utils) {
                       var ResultsAdapter = function($element, options, dataAdapter) {
                         ResultsAdapter.__super__.constructor.call(this, $element, options, dataAdapter);
@@ -11020,51 +11442,129 @@ $.extend( CZRLayoutSelectMths , {
                       };
                       selectFocusResults.resolve( ResultsAdapter );
                     });
-                }
-                else {
-                  selectFocusResults.resolve( false );
-                }
+              }
+              else {
+                    selectFocusResults.resolve( false );
+              }
 
-                $.when( selectFocusResults ).done( function( customResultsAdapter ) {
-                    var _skin_select2_params = {
-                        minimumResultsForSearch: -1, //no search box needed
-                        templateResult: paintSkinOptionElement,
-                        templateSelection: paintSkinOptionElement,
-                        escapeMarkup: function(m) { return m; }
-                    },
-                        _fonts_select2_params = {
-                        minimumResultsForSearch: -1, //no search box needed
-                        templateResult: paintFontOptionElement,
-                        templateSelection: paintFontOptionElement,
-                        escapeMarkup: function(m) { return m; },
-                    };
-                    /*
-                    * Maybe use custom adapter
+
+
+              $.when( selectFocusResults ).done( function( customResultsAdapter ) {
+                      var _skin_select2_params = {
+                          minimumResultsForSearch: -1, //no search box needed
+                          templateResult: paintSkinOptionElement,
+                          templateSelection: paintSkinOptionElement,
+                          escapeMarkup: function(m) { return m; }
+                      },
+                      _fonts_select2_params = {
+                          minimumResultsForSearch: -1, //no search box needed
+                          templateResult: paintFontOptionElement,
+                          templateSelection: paintFontOptionElement,
+                          escapeMarkup: function(m) { return m; },
+                      };
+                      /*
+                      * Maybe use custom adapter
+                      */
+                      if ( customResultsAdapter ) {
+                            $.extend( _skin_select2_params, {
+                                  resultsAdapter: customResultsAdapter,
+                                  closeOnSelect: false,
+                            } );
+                            $.extend( _fonts_select2_params, {
+                                  resultsAdapter: customResultsAdapter,
+                                  closeOnSelect: false,
+                            } );
+                      }
+                      $('select[data-customize-setting-link="tc_theme_options[tc_skin]"]').select2( _skin_select2_params );
+                      function paintSkinOptionElement(state) {
+                        console.log( 'here' );
+                              if (!state.id) return state.text; // optgroup
+                              return '<span class="tc-select2-skin-color" style="background:' + $(state.element).data('hex') + '">' + $(state.element).data('hex') + '<span>';
+                      }
+                      $('select[data-customize-setting-link="tc_theme_options[tc_fonts]"]').select2( _fonts_select2_params );
+
+                      function paintFontOptionElement(state) {
+                            if ( ! state.id && ( -1 != state.text.indexOf('Google') ) )
+                              return '<img class="tc-google-logo" src="//www.google.com/images/logos/google_logo_41.png" height="20"/> Font pairs'; // google font optgroup
+                            else if ( ! state.id )
+                              return state.text;// optgroup different than google font
+                            return '<span class="tc-select2-font">' + state.text + '</span>';
+                      }
+              });//$.when( selectFocusResults )
+
+
+              if ( ! serverControlParams.isModernStyle ) {
+                    /**
+                    * Dependency between the header layout and the horizontal menu positions
+                    * What this does:
+                    * 1) enable/disale the 'pull-menu-center' among the select option for the horizontal menus position
+                    *    this option is available only when the header layout is "centered" (logo centered)
+                    * 2) reset to default the horizontal menus position ONLY if the user switches from an header
+                    *    centered layout to a logo right/left layout.
+                    *
                     */
-                    if ( customResultsAdapter ) {
-                        $.extend( _skin_select2_params, {
-                          resultsAdapter: customResultsAdapter,
-                          closeOnSelect: false,
-                        } );
-                        $.extend( _fonts_select2_params, {
-                          resultsAdapter: customResultsAdapter,
-                          closeOnSelect: false,
-                        } );
-                    }
-                    $('select[data-customize-setting-link="tc_theme_options[tc_skin]"]').select2( _skin_select2_params );
-                    function paintSkinOptionElement(state) {
-                        if (!state.id) return state.text; // optgroup
-                        return '<span class="tc-select2-skin-color" style="background:' + $(state.element).data('hex') + '">' + $(state.element).data('hex') + '<span>';
-                    }
-                    $('select[data-customize-setting-link="tc_theme_options[tc_fonts]"]').select2( _fonts_select2_params );
+                    (function() {
+                        var _hm_primary_position_option    = 'tc_theme_options[tc_menu_position]',
 
-                    function paintFontOptionElement(state) {
-                        if ( ! state.id && ( -1 != state.text.indexOf('Google') ) )
-                          return '<img class="tc-google-logo" src="//www.google.com/images/logos/google_logo_41.png" height="20"/> Font pairs'; // google font optgroup
-                        else if ( ! state.id )
-                          return state.text;// optgroup different than google font
-                        return '<span class="tc-select2-font">' + state.text + '</span>';
-                    }
-                });
+                            _hm_secondary_position_option  = 'tc_theme_options[tc_second_menu_position]',
+                            _header_layout_setting         = api( 'tc_theme_options[tc_header_layout]' );
+                        if ( 'centered' != _header_layout_setting.get() ) {
+                              toggle_select_option_visibility( false );
+                        }
+                        _header_layout_setting.callbacks.add( function(to, from ) {
+                              if ( 'centered' != to && 'centered' == from ) {
+                                    reset_menu_position_option();
+                              }
+                              toggle_select_option_visibility( 'centered' == to );
+
+                        } );
+
+                        function reset_menu_position_option() {
+                              _.each( [ _hm_primary_position_option, _hm_secondary_position_option], function( option ) {
+                                    if ( 'pull-menu-center' == api( option ).get() ) {
+                                        api( option ).set( serverControlParams.isRTL ? 'pull-menu-left' : 'pull-menu-right' );
+                                    }
+                              });
+                        }
+
+                        function toggle_select_option_visibility( is_header_centered ) {
+                              _.each( [ _hm_primary_position_option, _hm_secondary_position_option], function( option ) {
+                                    var $_select = api.control( option ).container.find("select");
+                                    $_select.find( 'option[value="pull-menu-center"]' )[ is_header_centered ? 'removeAttr': 'attr']('disabled', 'disabled');
+                                    $_select.selecter( 'destroy' ).selecter();
+                              });
+                        }
+                    })();
+              }//if ( serverControlParams.isModernStyle )
+
+        });//$( function($) {} )
+        api.when( 'tc_theme_options[tc_style]', function( _set ) {
+              _set.bind( function() {
+                    api.previewer.save().always( function() {
+                          if ( _wpCustomizeSettings && _wpCustomizeSettings.url && _wpCustomizeSettings.url.parent ) {
+                                var url = [ _wpCustomizeSettings.url.parent ];
+                                url.push( 'customize.php?&autofocus%5Bcontrol%5D=' + _set.id );
+                                _.delay( function() {
+                                      window.location.href = url.join('');
+                                }, 500 );
+                          } else {
+                                _.delay( function() {
+                                      window.parent.location.reload();
+                                });
+                          }
+                    });
+              });
+              _set.validate = function( value ) {
+                    return serverControlParams.isChildTheme ? _set() : value;
+              };
+              api.control.when( _set.id, function( _ctrl ) {
+                    _ctrl.deferred.embedded.done( function() {
+                          api.section( _ctrl.section() ).expanded.bind( function() {
+                                if ( serverControlParams.isChildTheme ) {
+                                      _ctrl.container.find( 'select, .selecter' ).hide();
+                                }
+                          });
+                    });
+              } );
         });
 }) ( wp, jQuery );
