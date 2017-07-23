@@ -785,12 +785,6 @@ body.minimal-layout .woocommerce-info {
 	margin:0 0 5px 0;
 }
 
-/*
-.woocommerce_cart_page.post-container {
-	margin-bottom:0;
-}
-*/
-
 .woocommerce_cart_page .post-article {
     background: none;
     padding: 0;
@@ -804,6 +798,15 @@ body.minimal-layout .woocommerce-info {
     content: '';
     display: block;
     clear: both;
+}
+
+body.woocommerce-cart .media-container {
+	margin-bottom:50px;
+}
+
+body.woocommerce-cart .media-container:after {
+	display: none;
+	visibility:hidden;
 }
 
 /* ===============================================

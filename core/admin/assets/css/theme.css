@@ -447,7 +447,8 @@ div.wip_inputbox {
 	margin:0;
 }
 
-h2.title, #poststuff h2 { 
+h2.title, 
+#tabs h2.title { 
 	font-size: 14px;
 	font-family: Geneva, sans-serif;
 	color: #606060;
