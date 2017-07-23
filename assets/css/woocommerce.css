@@ -781,6 +781,15 @@ body.sneak_button .woocommerce .wc-proceed-to-checkout input:hover {
     clear: both;
 }
 
+body.woocommerce-cart .pin-container {
+	margin-bottom:50px;
+}
+
+body.woocommerce-cart .pin-container:after {
+	display: none;
+	visibility:hidden;
+}
+
 /* ===============================================
    Woocommerce shop layout
    ============================================= */
