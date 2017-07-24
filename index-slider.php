@@ -18,6 +18,10 @@ if( $current_options['home_banner_strip_enabled'] == 'on' && $current_options['s
 							<?php } if($current_options['caption_text']!='') {?>
 							<p><?php echo esc_html($current_options['caption_text']); ?></p>
 							<?php } ?>	
+							<?php if($current_options['readmore_text_link']!=''){ ?>
+							<div><a href="<?php echo esc_url($current_options['readmore_text_link']); ?>" <?php if($current_options['readmore_target']!=''){?>target="_blank"<?php }?> class="flex-btn"><?php echo esc_html($current_options['readmore_text']); ?></a>
+							</div>
+							<?php }?>
 						</div>		
 					</div>
 				</li>

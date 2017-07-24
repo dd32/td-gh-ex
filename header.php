@@ -38,7 +38,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 				'theme_location' => 'primary',
 				'container'  => 'nav-collapse collapse navbar-inverse-collapse',
 				'menu_class' => 'nav navbar-nav navbar-right',
-				'fallback_cb' => 'webriti_fallback_page_menu',
+				'fallback_cb' => 'busiprof_fallback_page_menu',
 				'walker' => new busiprof_nav_walker()) 
 				); 
 			?>			

@@ -2,7 +2,7 @@
 * Theme Name: Busiprof
 * Theme URI: http://webriti.com/busiprof-premium-wordpress-theme-1/
 * Description: Busiprof is a business WordPress theme.  Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof  
-* Version: 1.8.1
+* Version: 1.8.3
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, portfolio, photography, entertainment, education, footer-widgets, e-commerce
@@ -100,7 +100,7 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
     padding: 10px 25px;
 	margin: 0;
     text-align: center;
-    text-transform: uppercase;
+   /* text-transform: uppercase;*/
     vertical-align: middle;
 }
 .flex-btn:hover, .flex-btn:focus { background-color: #64b445; }

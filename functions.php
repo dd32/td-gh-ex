@@ -26,6 +26,7 @@
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_post_slugs_settings.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_layout_manager_settings.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/cust_pro.php' );
+	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_emailcourse.php' );
 	
 	
 	//theme ckeck plugin required 	

@@ -38,6 +38,9 @@ function theme_setup_data()
 			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
 			'caption_head' =>__('Responsive WP theme','busiprof'),//Image Caption Heading
 			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Caption detail
+			'readmore_text' => __('Read More','busiprof'),
+			'readmore_text_link' => "#",
+			'readmore_target' => false,
 			
 			//Slide Heading								
 			'animation' => 'slide',

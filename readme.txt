@@ -55,6 +55,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.3
+1. Add Read more button in slider.
+2. Fixed default menu issue.
+@version 1.8.2
+1. Add email course button in customize setting.
 @version 1.8.1
 1. Add selective refersh feature.
 @version 1.7.9

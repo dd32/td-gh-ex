@@ -106,6 +106,55 @@ function busiprof_sections_settings( $wp_customize ){
 		));
 		
 		
+		
+		//Slider read more button
+		$wp_customize->add_setting(
+		'busiprof_theme_options[readmore_text]', 
+			array(
+			'default'        => __('Read more','busiprof'),
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[readmore_text]', array(
+			'label'   => __('Button Text', 'busiprof'),
+			'section' => 'slider_section',
+			'type' => 'text',
+		));
+		
+		
+		//Slider read more button link
+		$wp_customize->add_setting(
+		'busiprof_theme_options[readmore_text_link]', 
+			array(
+			'default'        => __('#','busiprof'),
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[readmore_text_link]', array(
+			'label'   => __('Button Link', 'busiprof'),
+			'section' => 'slider_section',
+			'type' => 'text',
+		));
+		
+		
+		//Slider read more button target
+		$wp_customize->add_setting(
+		'busiprof_theme_options[readmore_target]', 
+			array(
+			'default'        => false,
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[readmore_target]', array(
+			'label'   => __('Button Link', 'busiprof'),
+			'section' => 'slider_section',
+			'type' => 'checkbox',
+		));
+		
+		
 	class WP_slider_pro_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**
@@ -1282,6 +1331,12 @@ $wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[slider_he
 	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[recent_blog_description]', array(
 		'selector'            => '.home-post .section-title-small p',
 		'settings'            => 'busiprof_theme_options[recent_blog_description]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[readmore_text]', array(
+		'selector'            => '.slider .flex-btn',
+		'settings'            => 'busiprof_theme_options[readmore_text]',
 	
 	) );
 	
