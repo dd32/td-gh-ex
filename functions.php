@@ -176,8 +176,17 @@ add_action( 'wp_enqueue_scripts', 'beam_scripts' );
 function beam_styles() 
 {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-    //wp_enqueue_style( 'beam-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '4.0.3' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/inc/fonts/css/font-awesome.min.css' ); // Local
+    //wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/inc/fonts/css/font-awesome.min.css' ); // Local
+	if ( true == get_theme_mod( 'load_font_awesome', true ) ) : 
+		wp_enqueue_style( 'beam-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '4.6.3' );
+	endif;
+	if ( true == get_theme_mod( 'load_bootstrap', true ) ) : 
+		wp_enqueue_style( 'beam-bootstrap_css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7' );
+		wp_enqueue_script( 'beam-bootstrap_js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), '3.3.7', true);
+	endif;
+	if ( true == get_theme_mod( 'load_animate_css', true ) ) : 
+		wp_enqueue_style( 'beam-animate-css', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', array(), '3.5.2' );
+	endif;
 }
 add_action( 'wp_enqueue_scripts', 'beam_styles' ); 
 

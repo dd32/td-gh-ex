@@ -174,34 +174,48 @@
 	}
 	endif;
 
+
 	if ( ! function_exists( 'beam_posted_on' ) ) :
-		/**
-		* Prints HTML with meta information for the current post-date/time and author.
-		*/
-		function beam_posted_on() {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
-				$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function beam_posted_on() {
 
-				$time_string = sprintf( $time_string,
-					esc_attr( get_the_date( 'c' ) ),
-					esc_html( get_the_date() ),
-					esc_attr( get_the_modified_date( 'c' ) ),
-					esc_html( get_the_modified_date() )
-				);
+		if ( false == get_theme_mod( 'hide_post_date', false ) ) : 
+			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-			printf( __( '<div class="byline"><i class="fa fa-user"></i>  %2$s</div> <div class="posted-on"><i class="fa fa-calendar"></i> %1$s</div> ', 'beam' ),
-			sprintf( '%3$s',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				$time_string
-			),
-			sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'All posts by %s', 'beam' ), get_the_author() ) ),
-				esc_html( get_the_author() )
-			) );
-		}
+			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>' . PHP_EOL;
+				
+				if ( true == get_theme_mod( 'show_updated_date', true ) ) : 
+					$time_string .= ' (Updated <time class="updated" datetime="%3$s">%4$s)</time>';
+				endif;
+			}
+
+			$time_string = sprintf( $time_string,
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() ),
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
+			);		
+		
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x( 'Posted on %s', 'post date', 'beam' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+			echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		endif;
+
+		if ( false == get_theme_mod( 'hide_author', false ) ) :
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				esc_html_x( 'by %s', 'post author', 'beam' ),
+				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			);
+			echo '<span class="byline"> ' . $byline . '</span>';
+		endif;
+	}
 	endif;
 
 
@@ -241,3 +255,50 @@
 	}
 	add_action( 'edit_category', 'beam_category_transient_flusher' );
 	add_action( 'save_post',     'beam_category_transient_flusher' );
+
+
+if ( ! function_exists( 'beam_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function beam_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+
+		if ( false == get_theme_mod( 'hide_categories', false ) ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'beam' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links clearfix">' . esc_html__( 'Posted in %1$s', 'beam' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+		}
+
+		if ( false == get_theme_mod( 'hide_tags', false ) ) {
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'beam' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links clearfix">' . esc_html__( 'Tagged %1$s', 'beam' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+	}
+
+	edit_post_link(
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'beam' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
+}
+endif;

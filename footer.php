@@ -70,8 +70,8 @@
 		<div class="centeralign-footer">
             <div class="site-info">
                 <?php 
-                    if( Kirki::get_option( 'bo', 'opt_copyright' ) ) { 
-                        $opt_copyright = Kirki::get_option( 'bo', 'opt_copyright' );
+                    if( Kirki::get_option( 'bo', 'opt_copyright_new' ) ) { 
+                        $opt_copyright = Kirki::get_option( 'bo', 'opt_copyright_new' );
                 ?>
                     <p>	
                      <?php

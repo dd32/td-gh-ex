@@ -39,39 +39,10 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search 
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'beam' ) );
-		if ( $categories_list && beam_categorized_blog() ) :
-		?>
-		
-		<span class="cat-links">
-			<i class="fa fa-folder-open"></i> <?php printf( __( '%1$s', 'beam' ), $categories_list ); ?>
-		</span>
-
-		<?php endif; // End if categories 
-
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'beam' ) );
-		if ( $tags_list ) :
-		?>
-		<span class="tags-links">
-			<i class="fa fa-tags"></i> <?php printf( __( '%1$s', 'beam' ), $tags_list ); ?>
-		</span>
-		<?php 
-		endif; // End if $tags_list
-		endif; // End if 'post' == get_post_type() 
-		?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><i class="fa fa-comment"></i> <?php comments_popup_link( __( 'Leave a comment', 'beam' ), __( '1 Comment', 'beam' ), __( '% Comments', 'beam' ) ); ?></span>
-		<?php endif; ?>
-
-		<?php
-		if ( current_user_can('edit_posts') ) {
-		?>
-		<i class="fa fa-pencil"></i> <?php edit_post_link( __( 'Edit', 'beam' ), '<span class="edit-link">', '</span>' ); ?>
-		<?php }
+	<?php
+		// See inc/template-tags.php L255
+		beam_entry_footer()
 		?>
 	</footer><!-- .entry-meta -->
+
 </article><!-- #post-## -->

@@ -23,34 +23,47 @@
 		<?php do_action( 'beam_before_header' ); ?>
 		<header id="masthead" class="site-header">
 			<div class="centeralign-header">
-				<?php do_action( 'beam_before_branding' ); ?>
-				<div class="site-branding">
-				<?php 
-					// No Custom Logo, just display the site's name
-					if (!has_custom_logo()) {
-						?>
-						<h4><?php bloginfo('name'); ?></h4>
-						<?php
-							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php 
-							endif;
-					} else {
-						// Display the Custom Logo
-						the_custom_logo();
-					}
-				?>
-				</div><!-- #site-branding -->
-				<?php do_action( 'beam_after_branding' ); ?>
-				<?php 
-				$opt_menu_visibility = get_theme_mod( 'opt_menu_visibility', 'option-1' );
-                if ($opt_menu_visibility !== '') {
-                	if ($opt_menu_visibility == 'option-1') {
-				?>
+				<div class="branding-wrapper">
+					<?php do_action( 'beam_before_branding' ); ?>
+					<div class="site-branding">
+					<?php 
+						// No Custom Logo, just display the site's name
+						if ( ! has_custom_logo() ) {
+							?>
+							<h4><?php bloginfo('name'); ?></h4>
+							<?php
+								$description = get_bloginfo( 'description', 'display' );
+								if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+							<?php 
+								endif;
+						} else {
+							// Display the Custom Logo
+							the_custom_logo();
+						}
+					?>
+					</div><!-- #site-branding -->
 
-				<button class="menu-toggle menu-button"><?php _e('Responsive Menu', 'beam' ); ?></button>
+					<?php 
+						do_action( 'beam_after_branding' );
+						if ( false == get_theme_mod( 'hide_menus', false ) ) : 
+					?>
+					<div class="menu-toggle menu-button"><?php _e('Responsive Menu', 'beam' ); ?>
+						<div class="menu-container">
+		  					<div class="beam-bar"></div>
+		  					<div class="beam-bar"></div>
+		  					<div class="beam-bar"></div>
+						</div>
+					</div>
+					<?php
+						endif;
+					?>
+				</div><!-- branding-wrapper end -->
 
+				<?php 
+					do_action( 'beam_after_branding' );
+					if ( false == get_theme_mod( 'hide_menus', false ) ) : 
+				?>
 				<div class="mobile-menu">
 					<?php $args = array(
 							'container'      => '',
@@ -61,10 +74,11 @@
 						<?php wp_nav_menu($args);//extract the content from apperance-> nav menu ?>
 					</nav><!-- #access -->
 				</div>	
-				<?php do_action( 'beam_after_nav' ); ?>
-
-				<?php } } ?>
+				<?php
+					endif;
+					do_action( 'beam_after_nav' ); 
+				?>
 
 			</div><!-- centeralign-header -->
 		</header><!-- #header-->
-		<?php do_action( 'beam_after_header' ); ?>
+		<?php do_action( 'beam_after_header' );

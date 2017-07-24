@@ -4,7 +4,7 @@ Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
 Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
-Version: 0.9.1
+Version: 1.0
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -376,8 +376,6 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
-time { font-size: small; }
-
 a time { color: #404040; text-decoration: none;}
 
 button,
@@ -607,15 +605,12 @@ a:active{
 }
 
 .mobile-menu {
-    padding: 0;
-    margin-right: 2%;
-    width: 71%;
-    max-width: 71% !important;
     top: 50%;
     transform: translateY(-50%);
     z-index: 99999;
+    display: block;
     position: relative;
-    float: left;
+    float: right;
 }
 
 @media screen and (max-width: 768px) {
@@ -623,7 +618,7 @@ a:active{
 		top: 0;
     	transform: translateY(0);
 		width: 100%;
-    	max-width: 100% !important;
+		float: none;
 	}
 }
 
@@ -644,12 +639,6 @@ a:active{
 	padding: 0;
 }
 
-@media screen and (max-width: 768px) {
-	.main-navigation ul {
-		padding-left: 20px;
-	}
-}
-
 .main-navigation li {	
 	float: left;	
 	position: relative;
@@ -660,28 +649,6 @@ a:active{
 .main-navigation ul ul li {	
     margin: 0; 
     border-bottom: 1px solid #ccc;
-}
-
-.main-navigation li.menu-parent-item > a:after { /* If you don't want the arrows on the top level drop down, simply remove this style */	
-	font-family: 'FontAwesome';	
-	font-weight: normal;	
-	font-style: normal;	
-	speak: none;	
-	vertical-align: middle;	
-	font-size: 9px;	
-	font-size: 0.5625rem;	
-	content: " \f078";
-}
-
-.main-navigation ul li li.menu-parent-item > a:after { /* If you don't want the arrows on the sub-menu options, simply remove this style */	
-	font-family: 'FontAwesome';	
-	font-weight: normal;	
-	font-style: normal;	
-	speak: none;	
-	vertical-align: middle;	
-	font-size: 9px;	
-	font-size: 0.5625rem;	
-	content: " \f054";
 }
 
 .main-navigation ul a {	padding: 10px; /* Padding around each top level menu option (if needed) */ }
@@ -794,6 +761,10 @@ a:active{
 	max-width: 980px;
 }
 
+.centeralign-header {
+	padding: 0 25px;
+	vertical-align: middle;
+}
 
 .site-content,
 .site-content-inner {
@@ -839,11 +810,6 @@ a:active{
 	margin: 0 0 2.2em;
 }
 
-.updated {
-	display: none;
-}
-
-
 .single .byline,
 .group-blog .byline,
 .archive .byline	{
@@ -884,11 +850,12 @@ a:active{
 	width: 77%;
 }
 
+.branding-wrapper {
+	float: left;
+	height: 100%;
+}
+
 .site-branding {
-	padding: 0;	
-	margin-left: 2%;
-	width: 25%;
-	max-width: 250px;
 	top: 50%;
 	transform: translateY(-50%);	
 	z-index: 999;
@@ -897,7 +864,7 @@ a:active{
 }
 
 .site-main { 
-	padding: 5%;
+	padding: 3% 5%;
 }
 
 
@@ -945,67 +912,36 @@ a:active{
 	float:right;
 }
 
-header.shrink {
-    position:fixed;
-    clear:both !important;
-    width:100%;
-    height:90px !important;
-    max-height:90px !important;
-    min-height:90px !important;
-    z-index:99999;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.entry-date { 
-	margin-left: 4px;
-}
-
 .entry-header .entry-meta { 
 	line-height: 1.2; 
 }
 
-.entry-meta, .entry-meta { 
-	color: grey;
-}
-
 .entry-meta i a {  
 	text-decoration: none; 
+	font-size: 28px;
+    font-weight: 700;
+    color: #258a24;
 }
 
 .posted-on { 
 	display: inline-block;
 }
 
-.big {
-    font-size: 58px;
-    text-shadow: 2px 2px 7px rgba(0, 0, 0, 1);
-    font-weight: 700;
-    line-height: 70px;
-    border: none;
-}
-
-.intro {
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 38px;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
-}
-
 .single .posted-on { 
 	margin-top: 10px;
 }
 
-.single main .entry-meta {
-	padding-left: 5px;
+.single main footer.entry-meta {
+	margin-left: 15px;
+	padding-left: 15px;
+	border-left: 1px solid #ccc;
 	}
 
-
+.more-link {
+    float: right;
+    padding: 10px;
+    background-color: antiquewhite;
+}
 
 /* =Asides
 ----------------------------------------------- */
@@ -1135,7 +1071,7 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 .site-main [class*="navigation"] {
-	margin: 0 0 1.5em;
+	margin: 3em 0 1.5em;
 	overflow: hidden;
 	clear: both;
 }
@@ -1230,11 +1166,6 @@ ul.comment-list {
 .comments-link { 
 	margin: 0 15px; 
 }
-.comment-reply-link:before {
-	font-family: FontAwesome;
-	content: "\f112";
-	padding-right: 10px;
-}
 
 .comment-reply-link { 
 	font-size: larger;
@@ -1267,10 +1198,6 @@ ul.comment-list {
 	margin-top: 0;
 }
 
-span .author { 
-	margin-left: 6px; 
-}
-
 .form-allowed-tags, .form-allowed-tags code { 
 	font-size: 12px; 
 }
@@ -1281,6 +1208,30 @@ span .author {
 	text-align: right;
 }
 
+#comments .submit {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 6px 30px;
+    line-height: 1.6;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+    border: none;
+    border-bottom: 4px solid #7ca76a;
+    background: #a1da8a;
+    color: #222;
+}
 
 /* =Widgets
 ----------------------------------------------- */
@@ -1325,13 +1276,6 @@ span .author {
 
 .widget-area .widget li {
     padding: 10px 10px 10px 12px;
-}
-
-.widget-area .widget li a:before {
-    font-family: "FontAwesome";
-    position: absolute;
-    content: "\f0da";
-    left: 12px;
 }
 
 .double-sidebar .widget-area { 
@@ -1415,10 +1359,6 @@ footer.entry-meta .fa-permalink a { text-decoration: none; margin-right: 15px; p
 	overflow: hidden;
     clear: both;
     text-align: center;
-    padding-bottom: 20px;
-    max-width: 110% !important;
-    margin: -5.5%;
-    margin-bottom: 10px;
 }
 
 .logo { margin: 10px 15px; }
@@ -1606,9 +1546,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 		padding-left: 20px;
 	
 	}
-	.site-branding {
-		margin: 1%;
-	}
 }
 
 
@@ -1656,7 +1593,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 
 .menu-toggle {
 	display: none;
-	cursor: pointer;
 }
 
 /* =max-width: 768px -------------------- */
@@ -1687,10 +1623,12 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 		padding: 25px;
 		max-width: 100%;
 	}
+
+	.branding-wrapper {
+		float: none;
+	}
    
 	.site-branding {
-		width: 50%;
-		max-width: 50% !important;
 		float: left;
 	}
 
@@ -1739,7 +1677,13 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
+	}
 
+	.beam-bar {
+   		width: 35px;
+   		height: 5px;
+   		background-color: #333;
+   		margin: 6px 0;
 	}
 
 	.navigation-wrap {
@@ -1765,7 +1709,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	}
 
 	.main-navigation.toggled {
-		padding-top: 10px;
 		clear: both;
 		width: 100%;
 		display: block;
@@ -1779,10 +1722,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 
 	.entry-content-sidebar {
 		display: none;
-	}
-
-	.toggled h1.menu-toggle {
-		/* 0 */
 	}
 
 	h1.button {
@@ -1801,26 +1740,17 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	
 	.menu-toggle {
 		display: block;
-		background-color: rgba(0, 0, 0, 0);
 		font-size: 0;
 		border: 0 none;
-		padding: 0;
-		width: 34px;
-		height: 31px;
 		float: right;
-		margin: 35px 20px 0 0;
 		cursor: pointer;
-	}
-	
-	.menu-toggle:before {
-		display: block;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		font-size: 35px;
-		line-height: 0;
-		font-family: 'FontAwesome';
-		vertical-align: top;
-		content: '\f0c9';
+		z-index: 9999;
+		position: relative;
+		top: 50%;
+    	-ms-transform: translateY(-50%); /* IE 9 */
+    	-webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);    	
 	}
 
 	.main-navigation ul {
