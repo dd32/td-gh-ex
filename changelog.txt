@@ -27,6 +27,6 @@ Version 1.5
 	- Updated Bootstrap
 	- Fixed Layout Issues
 	
-Version 1.7
+Version 1.7.1
 
 	- Changed the Theme URI

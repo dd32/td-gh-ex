@@ -696,40 +696,8 @@ function attirant_customize_register( $wp_customize ) {
 			<br>
 			<li><p class="rev-title"><?php _e('<i>If you liked the theme, spare a few minutes to Review Attirant Plus</i>', 'attirant'); ?></p><a class="button attirant_rev" href="https://www.wordpress.org/themes/attirant" target="_blank" title="<?php esc_attr_e('Rate the Theme', 'attirant'); ?>"><?php printf('Review attirant Theme', 'attirant'); ?></a></li>
 			<br>
-			<li><h2 class="fb-like-title"><?php _e('Like Divjot.Co on Facebook', 'attirant'); ?></h2><div class="fb-like" data-href="https://www.facebook.com/divjotco" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></li>
-			<br>
-			<li><h2 class="twitter-title"><?php _e('Follow me on Twitter', 'attirant'); ?></h2><a class="twitter-follow-button" href="https://twitter.com/divjot911" data-size="large">Follow me on Twitter</a></li>
-			<br>
-			<li><h2 class="pro-title"><?php _e('<b>Enjoying the Theme? Upgrade to Attirant Plus and enjoy much much more of the awesomeness of Attirant</b>', 'attirant'); ?></h2><a class="button attirant_pro" href="http://www.divjot.co/product/attirant-plus" target="_blank" title="<?php esc_attr_e('Attirant Plus', 'attirant'); ?>"><?php printf('Check out Attirant Plus', 'attirant'); ?></a></li>
-			
-			
-				<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-				
-				<script>window.twttr = (function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0],
-				    t = window.twttr || {};
-				  if (d.getElementById(id)) return t;
-				  js = d.createElement(s);
-				  js.id = id;
-				  js.src = "https://platform.twitter.com/widgets.js";
-				  fjs.parentNode.insertBefore(js, fjs);
-				
-				  t._e = [];
-				  t.ready = function(f) {
-				    t._e.push(f);
-				  };
-				
-				  return t;
-				}(document, "script", "twitter-wjs"));</script>
-			
-					
+			<li><h2 class="pro-title"><?php _e('<b>Enjoying the Theme? Upgrade to Attirant Plus and enjoy much much more of the awesomeness of Attirant</b>', 'attirant'); ?></h2><a class="button attirant_pro" href="http://www.inkhive.com/product/attirant-plus" target="_blank" title="<?php esc_attr_e('Attirant Plus', 'attirant'); ?>"><?php printf('Check out Attirant Plus', 'attirant'); ?></a></li>
+								
 	        <?php
 	    }
 	}
