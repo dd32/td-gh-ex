@@ -661,21 +661,37 @@ var czrapp = czrapp || {};
                   }
             },
             centerImages : function() {
-                  $('.tc-grid-figure, .widget-front .tc-thumbnail').centerImages( {
-                        enableCentering : 1,
-                        oncustom : ['smartload', 'refresh-height', 'simple_load'],
-                        zeroTopAdjust: 0,
-                        enableGoldenRatio : false,
-                  } );
-
-                  $('.js-centering.entry-media__holder, .js-centering.entry-media__wrapper').centerImages({
-                        enableCentering : 1,
-                        oncustom : ['smartload', 'refresh-height', 'simple_load'],
-                        enableGoldenRatio : false, //true
-                        zeroTopAdjust: 0,
-                        setOpacityWhenCentered : true,//will set the opacity to 1
-                        opacity : 1
+                  var $wrappersOfCenteredImagesCandidates = $('.tc-grid-figure, .widget-front .tc-thumbnail, .js-centering.entry-media__holder, .js-centering.entry-media__wrapper');
+                  _css_loader = '<div class="czr-css-loader czr-mr-loader" style="display:none"><div></div><div></div><div></div></div>';
+                  $.when( $wrappersOfCenteredImagesCandidates.each( function() {
+                        $( this ).append(  _css_loader ).find('.czr-css-loader').fadeIn( 'slow');
+                  })).done( function() {
+                        $wrappersOfCenteredImagesCandidates.centerImages({
+                              enableCentering : 1,
+                              oncustom : ['smartload', 'refresh-height', 'simple_load'],
+                              enableGoldenRatio : false, //true
+                              zeroTopAdjust: 0,
+                              setOpacityWhenCentered : false,//will set the opacity to 1
+                              addCenteredClassWithDelay : 50,
+                              opacity : 1
+                        });
+                        _.delay( function() {
+                              $wrappersOfCenteredImagesCandidates.find('.czr-css-loader').fadeOut( {
+                                duration: 500,
+                                done : function() { $(this).remove();}
+                              } );
+                        }, 300 );
                   });
+
+                  $wrappersOfCenteredImagesCandidates.centerImages({
+                            enableCentering : 1,
+                            oncustom : ['smartload', 'refresh-height', 'simple_load'],
+                            enableGoldenRatio : false, //true
+                            zeroTopAdjust: 0,
+                            setOpacityWhenCentered : false,//will set the opacity to 1
+                            addCenteredClassWithDelay : 50,
+                            opacity : 1
+                      });
                   var _mayBeForceOpacity = function( params ) {
                         params = _.extend( {
                               el : {},
@@ -691,18 +707,18 @@ var czrapp = czrapp || {};
 
                   };
                   if ( czrapp.localized.imgSmartLoadEnabled ) {
-                        czrapp.$_body.on( 'smartload', 'img' , function( ev ) {
+                        $wrappersOfCenteredImagesCandidates.on( 'smartload', 'img' , function( ev ) {
                               if ( 1 != $( ev.target ).length )
                                 return;
                               _mayBeForceOpacity( { el : $( ev.target ), delay : 200 } );
                         });
                   } else {
-                        $('img').each( function() {
+                        $wrappersOfCenteredImagesCandidates.find('img').each( function() {
                               _mayBeForceOpacity( { el : $(this), delay : 100 } );
                         });
                   }
                   _.delay( function() {
-                        $('img').each( function() {
+                        $wrappersOfCenteredImagesCandidates.find('img').each( function() {
                               _mayBeForceOpacity( { el : $(this), delay : 0 } );
                         });
                   }, 1000 );
@@ -1106,7 +1122,7 @@ var czrapp = czrapp || {};
                     czrapp.$_header.toggleClass( 'fixed-header-on', isFixed ).toggleClass( 'is-sticky', isFixed );
                     self._pushPrimaryNavBarDown( isFixed );
               });
-              var _doScrollPosReact = function( to, from ) {
+              var _setStickynessStatesOnScroll = function( to, from ) {
                     if ( ! self.hasStickyCandidate() )
                       return;
 
@@ -1150,16 +1166,17 @@ var czrapp = czrapp || {};
                           self.isFixedPositionned( to > self.topStickPoint() );
                     }
               };
-
-
-              this.scrollPosition.bind( _doScrollPosReact );
+              this.scrollPosition.bind( function( to, from ) {
+                    _setStickynessStatesOnScroll( to, from );
+                    czrapp.$_header.toggleClass( 'can-shrink-brand', to > czrapp.$_header[0].getBoundingClientRect().height * 2 );
+              } );
               var _maybeResetTop = function() {
                     if ( 'up' == self.scrollDirection() )
                         self._mayBeresetTopPosition();
               };
               czrapp.bind( 'scrolling-finished', _maybeResetTop );
               czrapp.bind( 'scrolling-finished', function() {
-                    _.delay( _doScrollPosReact, 500 );
+                    _.delay( _setStickynessStatesOnScroll, 500 );
               });
               czrapp.bind( 'topbar-collapsed', _maybeResetTop );
               self.stickyMenuDown.validate = function( value ) {
@@ -1346,6 +1363,7 @@ var czrapp = czrapp || {};
         _adjustDesktopTopNavPaddingTop : function() {
         },
         _mayBeresetTopPosition : function() {
+
               var  self = this, $menu_wrapper = self.stickyMenuWrapper;
               if ( 'up' != self.scrollDirection() )
                 return;
@@ -1375,6 +1393,7 @@ var czrapp = czrapp || {};
                                           });
                                     }
                                     self.stickyHeaderAnimating( false );
+                                    self.isFixedPositionned( false );
                                     dfd.resolve();
                               }, 10 );
                           }).promise();
