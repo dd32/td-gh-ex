@@ -1172,7 +1172,7 @@ function catchkathmandu_homepage_featured_content() {
 			$output = '<section id="featured-post" class="' . $classes . '">';
 
 			if ( !empty( $headline ) ) {
-				$output .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
+				$output .= '<h1 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
 			}
 
 			$output .= '<div class="featued-content-wrap">';
@@ -1435,7 +1435,7 @@ function catchkathmandu_alter_home( $query ){
 	    if ( $options['exclude_slider_post'] != "0" && !empty( $options['featured_slider'] ) ) {
 			$query->query_vars['post__not_in'] = $options['featured_slider'];
 		}
-		
+
 		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
 			$query->query_vars['category__in'] = $cats;
 		}

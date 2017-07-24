@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-07 23:32+0545\n"
-"PO-Revision-Date: 2017-06-07 23:32+0545\n"
+"POT-Creation-Date: 2017-07-24 21:22+0545\n"
+"PO-Revision-Date: 2017-07-24 21:22+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -1793,7 +1793,7 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr "Résultats de la recherche pour: %s"
 
-#: ../searchform.php:15 ../searchform.php:17
+#: ../searchform.php:17
 msgid "Search"
 msgstr "Recherche"
 

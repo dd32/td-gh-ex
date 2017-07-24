@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-07 23:32+0545\n"
-"PO-Revision-Date: 2017-06-07 23:32+0545\n"
+"POT-Creation-Date: 2017-07-24 21:22+0545\n"
+"PO-Revision-Date: 2017-07-24 21:22+0545\n"
 "Last-Translator: \n"
 "Language-Team: Stephan Ermann <info@bewegungsfelder.de>\n"
 "Language: de\n"
@@ -1802,7 +1802,7 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr "Suchresultate für: %s"
 
-#: ../searchform.php:15 ../searchform.php:17
+#: ../searchform.php:17
 msgid "Search"
 msgstr "Suche"
 
