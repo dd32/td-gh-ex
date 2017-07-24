@@ -1,13 +1,13 @@
 === Authorize ===
-
 Contributors: Lisa Armstrong (Working Websites)
-Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-logo, editor-style, featured-images, theme-options, footer-widgets, threaded-comments, blog, news
-
-Requires at least:
+Requires at least: WordPress 4.7
 Tested up to: WordPress 4.8
-Version: 1.0.5
+Version: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-logo, editor-style, featured-images, theme-options, footer-widgets, threaded-comments, blog, news
+
 
 == Description ==
 
@@ -68,8 +68,29 @@ Note:  Changing the 'Entry Type' does not affect the Format of the post.  You ne
 
 == Changelog ==
 
-= 1.0 - [Date] = 2017-01-23
-* Initial release
+= 1.0.5 - [Date] = 2017-07-11
+* Updated release
+Fixed:
+- Addressed error and some warnings being thrown
+- Removed more un-used files
+- Menu more tablet friendly
+- Lessed amount of bold and drop shadows
+- Updated this file
+
+
+= 1.0.4 - [Date] = 2017-06-27
+* Updated release
+Fixed:
+- Added theme name to various functions
+- Re-worked way featured content posts are displayed
+
+
+= 1.0.3 - [Date] = 2017-05-23
+* Updated release
+Fixed:
+- Clarified need for 'custom-header' (not needed, not used).
+- Added translatable items to content-featured, functions, custom-header
+
 
 = 1.0.2 - [Date] = 2017-05-01
 * Updated release
@@ -84,28 +105,15 @@ Fixed:
 - Removed un-used files
 - Removed code for custom header background.  Not needed.
 
-= 1.0.3 - [Date] = 2017-05-23
-* Updated release
-Fixed:
-- Clarified need for 'custom-header' (not needed, not used).
-- Added translatable items to content-featured, functions, custom-header
+
+= 1.0 - [Date] = 2017-01-23
+* Initial release
 
 
-= 1.0.4 - [Date] = 2017-06-27
-* Updated release
-Fixed:
-- Added theme name to various functions
-- Re-worked way featured content posts are displayed
 
 
-= 1.0.5 - [Date] = 2017-07-11
-* Updated release
-Fixed:
-- Addressed error and some warnings being thrown
-- Removed more un-used files
-- Menu more tablet friendly
-- Lessed amount of bold and drop shadows
-- Updated this file
+
+
 
 
 == Credits ==

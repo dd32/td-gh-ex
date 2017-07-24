@@ -26,14 +26,14 @@ get_header(); ?>
             <div id="hf_left_div" class="shadow-border">
                 <div class="FeatureLeft_Content">
                     <div class="FeatImage">
-                        <?php echo $arHFLeft['image']  ?>
+                        <?php echo wp_kses_post( $arHFLeft['image'] )  ?>
                     </div>
                     
                     <div class="FeatContent">
-                        <h1><?php echo $arHFLeft['title'] ?></h1>
-                        <?php echo $arHFLeft['content'] ?>
+                        <h1><?php echo wp_kses_post( $arHFLeft['title'] ) ?></h1>
+                        <?php echo wp_kses_post( $arHFLeft['content'] ) ?>
                         <div class="moreinfo_link">
-                            <?php echo $arHFLeft['link'] ?>
+                            <?php echo esc_url( $arHFLeft['link'] ) ?>
                         </div>
                     </div>
                 </div>
@@ -45,15 +45,15 @@ get_header(); ?>
             <?php if(!empty($arHFTopRight['title'])) {?>
                 <div id="hf_right_top_div" class="hf_right_inner shadow-border">                
                     <div class="FeatImage">
-                        <?php echo $arHFTopRight['image'] ?>
+                        <?php echo wp_kses_post( $arHFTopRight['image'] ) ?>
                     </div>
                     
                     <div class="FeatContent">
-                        <h2><?php echo $arHFTopRight['title'] ?></h2>
-                        <?php echo $arHFTopRight['content'] ?>
+                        <h2><?php echo wp_kses_post($arHFTopRight['title'] ) ?></h2>
+                        <?php echo wp_kses_post( $arHFTopRight['content'] ) ?>
                     
                         <div class="moreinfo_link">
-                            <?php echo $arHFTopRight['link'] ?>
+                            <?php echo esc_url( $arHFTopRight['link'] ) ?>
                         </div>
                     </div>
                 </div>
@@ -62,15 +62,15 @@ get_header(); ?>
        		<?php if(!empty($arHFBottomRight['title'])) {?>	
                 <div id="hf_right_bottom_div" class="hf_right_inner shadow-border">
                     <div class="FeatImage">
-                        <?php echo $arHFBottomRight['image'] ?>
+                        <?php echo wp_kses_post( $arHFBottomRight['image'] ) ?>
                     </div>
                     
                     <div class="FeatContent">
-                        <h2><?php echo $arHFBottomRight['title'] ?></h2>
-                        <?php echo $arHFBottomRight['content'] ?>
+                        <h2><?php echo wp_kses_post( $arHFBottomRight['title'] ) ?></h2>
+                        <?php echo wp_kses_post( $arHFBottomRight['content'] ) ?>
                         
                         <div class="moreinfo_link">
-                            <?php echo $arHFBottomRight['link'] ?>
+                            <?php echo esc_url( $arHFBottomRight['link'] ) ?>
                         </div>
                     </div>
                 </div>
