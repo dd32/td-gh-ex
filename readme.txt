@@ -71,6 +71,9 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 21 July 2017 =
+* sanitize output after regex replacement.
+
 = 27 June 2017 =
 * Centring icons in social media widget, and changing opacity when hovered over.
 
