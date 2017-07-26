@@ -71,6 +71,9 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 26 July 2017 =
+* Rework '[comment author] says' string to include a translation function, and replace wp_kses_post with just wp_kses and specific markup.
+
 = 21 July 2017 =
 * sanitize output after regex replacement.
 

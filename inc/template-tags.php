@@ -176,7 +176,18 @@ function argent_comment( $comment, $args, $depth ) {
 						) ) );
 					?>
 				</div><!-- .comment-metadata -->
-				<?php printf( wp_kses_post( '%s <span class="says">says:</span>', 'argent' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				<?php printf(
+						wp_kses(
+							__( '%s <span class="says">says:</span>', 'argent' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
+					);
+				 ?>
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'argent' ); ?></p>
