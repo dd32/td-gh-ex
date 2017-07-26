@@ -1,0 +1,245 @@
+/*
+• Legend
+cn: constructor
+cp: component
+hr: header
+cr: container
+ct: content
+fr: footer
+
+• Hide headings, labels 
+• Reset lists
+• Include Theme Check required styles
+• Image width limit
+*/
+
+
+
+
+/* ------------------------- Visually Hidden Headings ------------------------- */
+.applicator-theme--default .main-nav--h,
+.applicator-theme--default .search--h,
+.applicator-theme--default .nav--h,
+.applicator-theme--default .comments--h,
+
+.applicator-theme--default .axns--h,
+.applicator-theme--default .comment-respond--h,
+.applicator-theme--default .post-navigation h2.screen-reader-text
+{
+    
+    display: inline-block;
+    padding: .25rem .75rem;
+    vertical-align: middle;
+    
+    background-color: black;
+    color: white;
+    
+    text-transform: uppercase;
+    
+    letter-spacing: .125rem;
+    word-spacing: .25rem;
+    
+    font-weight: normal;
+    font-size: .75rem;
+}
+
+.applicator-theme--default .axns--h
+{
+    padding: .125rem .5rem;
+    background-color: red;
+    font-size: .5rem;
+}
+
+
+
+
+
+.html,
+.body
+{
+    height: 100%;
+}
+
+
+
+
+
+
+/* ------------------------- Clearfix */
+.clearfix:before,
+.clearfix:after,
+
+.post---ct_cr:before,
+.post---ct_cr:after
+{
+    content: " ";
+    display: table;
+}
+
+.post---ct_cr:after
+{
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------- WordPress Required Selectors */
+.wp-caption-text,
+.sticky,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor
+{
+
+}
+
+
+/*------------ Resets */
+figure
+{
+    margin: 0;
+}
+
+
+
+
+
+/* ------------------------- Responsive Media */
+/* Images */
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Videos */
+iframe
+{
+    max-width: 100%;
+}
+
+/* Text */
+.post-content
+{
+    word-break: break-word;
+}
+
+.post-content table
+{
+    word-break: normal;
+}
+
+.post-content pre
+{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+
+
+/* ------------------------- WordPress Image Alignments */
+.alignleft,
+.alignright
+{
+    display: inline;
+}
+
+.aligncenter
+{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/* ------------------------- Image Captions */
+.wp-caption
+{
+    width: auto !important;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"]
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/* ------------------------- Enhancements */
+.icon--vector,
+.icon--raster
+{
+    display: inline-block;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.post---h
+{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.svg .icon--raster,
+.no-svg .icon--vector
+{
+    display: none;
+}
+
+.main-content
+{
+    display: flex; /* Contains margins of nested elements to bleed out of the container. */
+}
+
+.main-content---cr
+{
+    flex-grow: 1;
+}
+
+
+
+
+
+/* ------------------------- Viewport Width: 560 */
+
+@media only screen and (min-width: 35em)
+{
+
+    .alignleft
+    {
+        float: left;
+        
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .alignright
+    {
+        float: right;
+        
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+}
