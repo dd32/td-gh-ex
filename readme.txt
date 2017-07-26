@@ -83,6 +83,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 
 == Change log ==
 
+= 3.9.4 (Released: July 24, 2017) =
+* Version bumped due to WordPress.org svn issue
+
 = 3.9.3 (Released: July 24, 2017) =
 * Code optimization
 * Removed: changelog.txt file and added changelog in readme.txt file
