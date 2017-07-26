@@ -3,10 +3,8 @@
 	<?php if ( have_posts() ) : ?>
 
 	<header>
-		<?php
-			the_archive_title( '<h2 class="title">', '</h2>' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
-		?>
+		<?php the_archive_title( '<h2 class="title">', '</h2>' ); ?>
+		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 	</header>
 
 	<?php while ( have_posts() ) : the_post(); ?>

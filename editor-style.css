@@ -1,10 +1,8 @@
 body {
-	margin: .5em;
-	font: 1.3em/1.7 Dosis, 'Arial Narrow', sans-serif;
-	font-weight: 300;
+	font: 300 1.3em/1.7 Dosis, "Arial Narrow", sans-serif;
 	color: #777;
-	background: #fff;
 	word-wrap: break-word;
+	background: #fff;
 }
 
 
@@ -136,49 +134,49 @@ li {
 	list-style: none;
 }
 
-.post ul,
-.page ul,
-.post ol,
-.page ol {
+article.post ul,
+article.page ul,
+article.post ol,
+article.page ol {
 	margin-bottom: 1em;
 }
 
-.post ul li,
-.page ul li {
+article.post ul li,
+article.page ul li {
 	margin-left: 1.2em;
 	list-style: disc outside none;
 }
 
-.post .post-content > ul,
-.page .post-content > ul {
+article.post .post-content > ul,
+article.page .post-content > ul {
 	margin-bottom: 1em;
 }
 
-.post ul ul li,
-.page ul ul li {
+article.post ul ul li,
+article.page ul ul li {
 	list-style: circle outside none;
 }
 
-.post ol ul li,
-.page ol ul li {
+article.post ol ul li,
+article.page ol ul li {
 	list-style: disc outside none;
 }
 
-.post ol li,
-.page ol li,
-.post ol ol ol li,
-.page ol ol ol li {
+article.post ol li,
+article.page ol li,
+article.post ol ol ol li,
+article.page ol ol ol li {
 	margin-left: 1.4em;
 	list-style: decimal outside none;
 }
 
-.post .post-content > ol,
-.page .post-content > ol {
+article.post .post-content > ol,
+article.page .post-content > ol {
 	margin-bottom: 1em;
 }
 
-.post ol ol li,
-.page ol ol li {
+article.post ol ol li,
+article.page ol ol li {
 	list-style: lower-alpha outside none;
 }
 
@@ -193,17 +191,19 @@ li {
  */
 
 a {
-    color: #f7941e;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
+	color: #f7941e;
+	text-decoration: none;
+	-webkit-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #eb5b04;
-    outline: 0;
-    text-decoration: none;
+	color: #eb5b04;
+	outline: 0;
+	text-decoration: none;
 }
 
 
@@ -212,109 +212,109 @@ a:focus {
  */
 
 img {
-    max-width: 100%;
-    height: auto;
-    border: 0;
+	max-width: 100%;
+	height: auto;
+	border: 0;
 }
 
 svg:not(:root) {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .size-thumbnail {
-    max-width: 45%;
+	max-width: 45%;
 }
 
 .alignnone {
-    max-width: 100%;
-    margin: 0.2em 0.8em 0.8em 0;
+	max-width: 100%;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 .aligncenter {
-    max-width: 100%;
-    margin: 0.2em auto;
+	max-width: 100%;
+	margin: 0.2em auto;
 }
 
 .alignright,
 .attachment-post-thumbnail {
-    float: right;
-    max-width: 48%;
-    margin: 0.2em 0 0.8em 0.8em;
+	float: right;
+	max-width: 48%;
+	margin: 0.2em 0 0.8em 0.8em;
 }
 
 .alignleft {
-    float: left;
-    max-width: 48%;
-    margin: 0.2em 0.8em 0.8em 0;
+	float: left;
+	max-width: 48%;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 a img .alignright {
-    float: right;
-    margin: 0.2em 0 0.8em 0.8em;
+	float: right;
+	margin: 0.2em 0 0.8em 0.8em;
 }
 
 a img .alignnone {
-    margin: 0.2em 0.8em 0.8em 0;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 a img .alignleft {
-    float: left;
-    margin: 0.2em 0.8em 0.8em 0;
+	float: left;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 a img .aligncenter {
-    display: block;
-    margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 }
 
 .wp-caption {
-    padding: 0.2em 0 0.4em;
-    text-align: center;
-    font-size: 80%;
+	padding: 0.2em 0 0.4em;
+	text-align: center;
+	font-size: 80%;
 }
 
 .wp-caption .alignnone {
-    margin: 0.2em 0.8em 0.8em 0;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 .wp-caption .alignleft {
-    margin: 0.2em 0.8em 0.8em 0;
+	margin: 0.2em 0.8em 0.8em 0;
 }
 
 .wp-caption .alignright {
-    margin: 0.2em 0 0.8em 0.8em;
+	margin: 0.2em 0 0.8em 0.8em;
 }
 
 .wp-caption img {
-    max-width: 98.5%;
-    margin: 0;
-    padding: 0;
+	max-width: 98.5%;
+	margin: 0;
+	padding: 0;
 }
 
 .wp-caption .wp-caption-text {
-    margin: 0;
-    padding: 0 0.1em 0.2em;
+	margin: 0;
+	padding: 0 0.1em 0.2em;
 }
 
 .gallery-caption {
-    text-align: center;
+	text-align: center;
 }
 
 @media (max-width: 740px) {
-    .alignleft,
-    .alignright,
-    a img .alignleft,
-    a img .alignright,
-    .attachment-post-thumbnail {
-        display: block;
-        float: none;
-        max-width: 100%;
-        margin: 0.2em 0 0.4em 0;
-    }
+	.alignleft,
+	.alignright,
+	a img .alignleft,
+	a img .alignright,
+	.attachment-post-thumbnail {
+		float: none;
+		display: block;
+		max-width: 100%;
+		margin: 0.2em 0 0.4em 0;
+	}
 
-    .alignnone {
-        margin: 0 0.4em 0.4em 0;
-    }
+	.alignnone {
+		margin: 0 0.4em 0.4em 0;
+	}
 }
 
 
@@ -405,25 +405,37 @@ a img .aligncenter {
 
 table {
 	width: 100%;
-	max-width: 100%;
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
 	border-collapse: collapse;
 	border-spacing: 0;
-	background-color: transparent;
+	border: 0;
 }
 
 table th,
 table td {
-	padding: 0 0.2em;
+	padding: 0 0.4em;
 	vertical-align: top;
 	text-align: left;
-	border: 1px solid #ddd;
+	border: 0;
 }
 
 table th {
-	font-weight: 500;
-	background: #f1f3f3;
-	color: #777;
+	font-weight: bold;
+	background: #bfbbbb;
+	color: #fff;
+}
+
+tr:nth-child(odd) {
+    background: #fefbfb;
+}
+
+tr:nth-child(even) {
+    background: #f5f2f2;
+}
+
+#wp-calendar th,
+#wp-calendar td {
+	text-align: center;
 }
 
 
@@ -435,22 +447,8 @@ embed,
 iframe,
 object,
 video {
-    max-width: 100%;
-    margin-bottom: 1.5em;
-}
-
-p > embed,
-p > iframe,
-p > object,
-span > embed,
-span > iframe,
-span > object {
-    margin-bottom: 0;
-}
-
-[hidden],
-template {
-    display: none;
+	max-width: 100%;
+	margin-bottom: 1.5em;
 }
 
 
@@ -492,7 +490,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0;
 }
@@ -522,7 +520,7 @@ textarea {
 
 input,
 textarea {
-	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	max-width: 100%;
 	padding: 0.2em 0.7em;
@@ -531,6 +529,8 @@ textarea {
 	border-radius: 1.3em;
 	border: 1px solid #777;
 	border-width: 1px 2px 2px 1px;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-o-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
 }
 
@@ -552,7 +552,10 @@ input[type="reset"],
 	color: #fff;
 	border: 0;
 	border-radius: 1.3em;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-o-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
+	-webkit-box-shadow: 0.05em 0.1em 0 #777;
 	box-shadow: 0.05em 0.1em 0 #777;
 }
 
@@ -564,7 +567,7 @@ input[type="reset"],
 .button:hover,
 .button:active,
 .button:focus,
-#header .button:hover
+#header .button:hover,
 .more-link:hover,
 .comment-reply-link:hover,
 .comment-reply-link:active,

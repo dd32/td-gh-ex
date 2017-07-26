@@ -2,30 +2,33 @@
 
 
 	<footer id="footer">
-		<div class="margin footer-widgets">
+		<div class="footer-widgets margin">
 		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
 			<?php dynamic_sidebar( 'footer' ); ?>
 
 		<?php else: ?>
-			<div class="widget one-third">
+
+			<aside class="widget one-third">
 				<h3><?php _e( 'Categories', 'arix' ) ?></h3>
 				<ul>
-					<?php wp_list_categories( array(
+					<?php
+					wp_list_categories( array(
 						'title_li' => '',
-						'number'   => 7,
-					) ); ?>
+						'number'   => 6,
+					) );
+					?>
 				</ul>
-			</div>
+			</aside>
 
-			<div class="widget one-third widget_tag_cloud">
+			<aside class="widget one-third widget_tag_cloud">
 				<h3><?php _e( 'Tags', 'arix' ) ?></h3>
 				<p class="tag-cloud"><?php wp_tag_cloud( 'number=38' ); ?></p>
-			</div>
+			</aside>
 
-			<div class="widget one-third recent-comments">
+			<aside class="widget one-third recent-comments">
 				<h3><?php _e( 'Recent Comments', 'arix' ) ?></h3>
 				<?php arix_recent_comments(); ?>
-			</div>
+			</aside>
 
 		<?php endif; ?>
 
@@ -33,8 +36,9 @@
 				<p><?php esc_html_e( 'Copyright &copy;', 'arix' ); ?> <?php bloginfo( 'name' ); ?><br />
 				<a href="<?php echo esc_url( __( 'https://photricity.com/', 'arix' ) ); ?>"><?php esc_html_e( 'Arix theme', 'arix' ); ?></a> <?php esc_html_e( 'by Photricity', 'arix' ); ?></p>
 			</div>
-		</div>
+		</div><!--.footer-widgets-->
 	</footer>
+
 
 <?php wp_footer(); ?>
 

@@ -4,9 +4,9 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments">
 
-	<?php if ( have_comments() ) : ?>
+<?php if ( have_comments() ) : ?>
 
 	<h3 class="comments-title">
 		<?php
@@ -20,25 +20,28 @@ if ( post_password_required() ) {
 		wp_kses_post( wp_list_comments( array(
 			'style'       => 'div',
 			'short_ping'  => true,
-			'avatar_size' => 40
+			'avatar_size' => 40,
 		) ) );
 		?>
-	</div><!-- .comment-list -->
+	</div><!--.comment-list-->
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h4 class="screen-reader-text"><?php _e( 'Comment navigation', 'arix' ); ?></h4>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'arix' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'arix' ) ); ?></div>
-	</nav>
+		<nav class="comment-navigation">
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'arix' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'arix' ) ); ?></div>
+		</nav>
 	<?php endif; ?>
 
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'arix' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'arix' ); ?></p>
 	<?php endif; ?>
 
-	<?php endif; // have_comments() ?>
+<?php endif; ?>
 
-	<?php comment_form(); ?>
+<?php
+comment_form( array(
+	'title_reply' => __( 'Write a Comment', 'arix' ),
+) );
+?>
 
-</div><!-- #comments -->
+</div><!--#comments-->

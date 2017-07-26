@@ -1,5 +1,6 @@
 <?php
 
+
 function arix_scripts() {
 	// load main stylesheet
 	wp_enqueue_style( 'arix-style', get_stylesheet_uri() );
@@ -8,7 +9,7 @@ function arix_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
+
 	// load google fonts
 	wp_enqueue_style( 'arix-fonts', arix_google_fonts(), array(), null );
 }
@@ -65,30 +66,27 @@ add_action( 'after_setup_theme', 'arix_functions' );
 
 
 
-
 // widget areas
 function arix_widgets() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar 1', 'arix' ),
 		'id'            => 'sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => "</div>\n",
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => "</h3>\n",
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'arix' ),
 		'id'            => 'footer',
-		'before_widget' => '<div id="%1$s" class="widget one-third %2$s">',
-		'after_widget'  => "</div>\n",
+		'before_widget' => '<section id="%1$s" class="widget one-third %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => "</h3>\n",
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'arix_widgets' );
-
-
 
 
 
@@ -97,9 +95,6 @@ function arix_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'arix_content_width', 1000 );
 }
 add_action( 'after_setup_theme', 'arix_content_width', 0 );
-
-
-
 
 
 
@@ -126,8 +121,6 @@ function arix_page_nav() {
 
 
 
-
-
 // register google fonts
 if ( ! function_exists( 'arix_google_fonts' ) ) :
 
@@ -136,7 +129,6 @@ function arix_google_fonts() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
-	/* translators: If there are characters in your language that are not supported by Dosis, translate this to 'off'. Do not translate into your own language. */
 	if ( 'off' !== _x( 'on', 'Dosis font: on or off', 'arix' ) ) {
 		$fonts[] = 'Dosis:300,500';
 	}
@@ -150,7 +142,6 @@ function arix_google_fonts() {
 	return $fonts_url;
 }
 endif;
-
 
 
 
@@ -169,6 +160,17 @@ function arix_recent_comments( $no_comments = 3, $comment_len = 130 ) {
 	return wp_kses_post( $comm );
 }
 
+
+
+// YouTube embed wrapper
+add_filter( 'oembed_dataparse', 'oembed_youtube_add_wrapper', 10, 3 );
+function oembed_youtube_add_wrapper( $return, $data, $url ) {
+	if ( $data->provider_name == 'YouTube' ) {
+			return "<div class='video-wrap'><div class='video-container'>{$return}</div></div>";
+	} else {
+			return $return;
+	}
+}
 
 
 ?>

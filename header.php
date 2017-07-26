@@ -4,10 +4,9 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php wp_head(); ?>
-
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 </head>
 
 
@@ -40,7 +39,7 @@
 					<rect x="3" y="11" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.9706 12)" width="18" height="2" />
 					</svg>
 				</a>
-				<ul id="%1$s" class="%2$s">%3$s</ul>'
+				<ul id="%1$s" class="%2$s">%3$s</ul>',
 		) );
 		?>
 		</nav>

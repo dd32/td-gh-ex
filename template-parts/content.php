@@ -22,14 +22,14 @@
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			}
-			the_content( 'Continue&nbsp;Reading', 'arix' );
+			the_content( 'Continue...', false, 'arix' );
 			?>
 		</div>
 
-			<?php if ( is_single() ) : ?>
-			<footer>
-				<?php wp_link_pages(); ?>
-				<p><?php the_tags( '<span class="post-tags">' . __( 'Tags:', 'arix' ) . '</span> ', ', ' ); ?></p>
-			</footer>
-			<?php endif; ?>
+		<?php if ( is_single() ) : ?>
+		<footer>
+			<?php wp_link_pages(); ?>
+			<p><?php the_tags( '<span class="post-tags">' . __( 'Tags:', 'arix' ) . '</span> ', ', ' ); ?></p>
+		</footer>
+		<?php endif; ?>
 	</article>

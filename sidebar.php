@@ -6,6 +6,7 @@
 			<?php dynamic_sidebar( 'sidebar' ); ?>
 
 		<?php else: ?>
+
 			<div class="widget">
 				<?php get_search_form(); ?>
 			</div>
@@ -14,15 +15,18 @@
 				<h3><?php _e( 'Recent Posts', 'arix' ) ?></h3>
 				<ul>
 					<?php
-					$arix_recent = new WP_Query( 'posts_per_page=5' ); ?>
-					
-					<?php if ( $arix_recent->have_posts() ) : ?>
+					$vivex_recent = new WP_Query( array(
+						'posts_per_page'      => 6,
+						'ignore_sticky_posts' => 1,
+					) );
 
-					<?php while ( $arix_recent->have_posts() ) : $arix_recent->the_post(); ?>
-					<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-					<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-					<?php else : endif; ?>
+					if ( $vivex_recent->have_posts() ) :
+						while ( $vivex_recent->have_posts() ) : $vivex_recent->the_post();
+							the_title( '<li><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
+						endwhile;
+						wp_reset_postdata();
+					endif;
+					?>
 				</ul>
 			</div>
 
@@ -31,5 +35,4 @@
 			</div>
 
 			<?php endif; ?>
-
 		</aside><!--#sidebar-->
