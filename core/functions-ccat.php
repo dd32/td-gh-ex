@@ -341,25 +341,25 @@ function czr_fn_get_global_layout() {
 }
 
 /**
-* This function returns the CSS class to apply to content's element based on the layout
-* @return array
+* This function returns the current context content breadth
+* @return string
 *
 *
 * @package Customizr
 * @since Customizr 4.0
 */
-function czr_fn_get_in_content_width_class() {
-  $global_sidebar_layout                 = czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
+function czr_fn_get_content_breadth() {
+  $sidebar_layout                 = czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
 
-  switch ( $global_sidebar_layout ) {
-    case 'b': $_class = 'narrow';
+  switch ( $sidebar_layout ) {
+    case 'b': $content_breadth = 'narrow';
               break;
-    case 'f': $_class = 'full';
+    case 'f': $content_breadth = 'full';
               break;
-    default : $_class = 'semi-narrow';
+    default : $content_breadth = 'semi-narrow';
   }
 
-  return apply_filters( 'czr_in_content_width_class' , array( $_class ) );
+  return apply_filters( 'czr_content_breadth' , $content_breadth );
 }
 
 /**
@@ -742,7 +742,36 @@ function czr_fn_get_logo_atts( $logo_type = '', $backward_compatibility = true )
 
 
 
+/**
+ * Check on if there's any header/sidenav menu location assigned
+ * Locations are:
+ * 1) primary navbar menu, or sidenav menu => 'main'
+ * 2) topbar menu => 'topbar'
+ * 2) secondary navbar menu => 'secondary'
+ * @return bool
+ */
+function czr_fn_is_there_any_visible_menu_location_assigned() {
 
+    $menu_locations = array(
+        //location => condition
+        'main'        => true,
+        'topbar'      => 1 == czr_fn_opt( 'tc_header_desktop_topbar' ),
+        'secondary'   => true
+    );
+
+    $menu_assigned = false;
+
+    foreach ( $menu_locations as $menu_location => $condition ) {
+        if ( ! ( $condition && has_nav_menu( $menu_location ) ) ) {
+            continue;
+        }
+
+        $menu_assigned = true;
+        break;
+    }
+
+    return $menu_assigned;
+}
 
 
 

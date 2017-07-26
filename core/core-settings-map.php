@@ -177,7 +177,7 @@ function czr_fn_site_identity_option_map( $get_default = null ) {
                             //to keep the selected cropped size
                             'dst_width'  => false,
                             'dst_height'  => false,
-                            'notice'    => __( "Uncheck this option to keep your original logo dimensions." , 'customizr')
+                            //'notice'    => __( "Uncheck this option to keep your original logo dimensions." , 'customizr')
           ),
           //force logo resize 250 * 85
           'tc_logo_resize'  => array(
@@ -1057,6 +1057,18 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'min'     => 1000,
                             'notice'    => __( 'in ms : 1000ms = 1s' , 'customizr' ),
                             'priority'      => 50,
+          ),
+          'tc_home_slider_overlay'  =>  array(
+                            'default'       => 'on',
+                            'control'     => 'CZR_controls' ,
+                            'label'         => __( "Apply a dark overlay on your slider's images" , 'customizr' ),
+                            'section'       => 'frontpage_sec',
+                            'type'      =>  'select' ,
+                            'choices'     => array(
+                                    'on'       => __( 'Yes' , 'customizr'),
+                                    'off'      => __( 'No' , 'customizr'),
+                            ),
+                            'priority'      => 51
           ),
 
           'tc_slider_default_height' => array(

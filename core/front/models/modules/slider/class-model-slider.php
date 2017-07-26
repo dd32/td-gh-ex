@@ -61,7 +61,7 @@ class CZR_slider_model_class extends CZR_Model {
     }
 
     $element_class      = $this -> czr_fn_get_slider_element_class( $queried_id, $slider_name_id, $layout );
-    $inner_class        = $this -> czr_fn_get_slider_inner_class();
+    $inner_class        = $this -> czr_fn_get_slider_inner_class( $queried_id );
 
     //set-up inner attrs
     $inner_attrs        = $this -> czr_fn_get_slider_inner_attrs();
@@ -397,13 +397,23 @@ class CZR_slider_model_class extends CZR_Model {
   * @package Customizr
   * @since Customizr 3.3+
   */
-  function czr_fn_get_slider_inner_class() {
+  function czr_fn_get_slider_inner_class( $queried_id ) {
     $class = array( 'carousel-inner' );
 
     if ( (bool) esc_attr( czr_fn_opt( 'tc_center_slider_img') ) )
       array_push( $class, 'center-slides-enabled' );
     if ( (bool) esc_attr( czr_fn_opt( 'tc_slider_parallax') ) )
       array_push( $class, 'czr-parallax-slider' );
+
+    //Is the overlay checked for this slider ?
+    //gets slider options if any
+    $overlay_value                 = czr_fn_is_real_home() ? czr_fn_opt( 'tc_home_slider_overlay' ) : esc_attr( get_post_meta( $queried_id, $key = 'slider_overlay_key' , $single = true ) );
+    $overlay_value                 = apply_filters( 'czr_slider_overlay', $overlay_value, $queried_id );
+    //if the option is unchecked OR has never been set
+    if ( 'off' == $overlay_value ) {
+      array_push( $class, 'czr-has-no-dark-overlay' );
+    }
+
     return apply_filters( 'czr_carousel_inner_classes', $class );
   }
 
@@ -658,7 +668,7 @@ class CZR_slider_model_class extends CZR_Model {
     //custom css for the slider loader
     if ( $this -> czr_fn_is_slider_loader_active( $slider_name_id ) ) {
 
-      $_slider_loader_src = apply_filters( 'czr_slider_loader_src' , sprintf( '%1$s/%2$s' , CZR_BASE_URL . CZR_ASSETS_PREFIX, 'img/slider-loader.gif') );
+      $_slider_loader_src = apply_filters( 'czr_slider_loader_src' , sprintf( '%1$s%2$s' , CZR_FRONT_ASSETS_URL, 'img/slider-loader.gif') );
       //we can load only the gif, or use it as fallback for old browsers (.no-csstransforms3d)
       if ( ! apply_filters( 'czr_slider_loader_gif_only', false ) ) {
         $_slider_loader_gif_class  = '.no-csstransforms3d';
