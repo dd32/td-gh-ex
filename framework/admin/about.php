@@ -74,8 +74,17 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-					echo '<p>* Added Agama Blue contents hook.</p>';
-					echo '<p>* Fixed minor header menu styling issues.</p>';
+					echo '<p>* Added top navigation select links color feature.</p>';
+					echo '<p>* Added top navigation select links hover color feature.</p>';
+					echo '<p>* Added primary navigation select links color feature.</p>';
+					echo '<p>* Added primary navigation select links hover color feature.</p>';
+					echo '<p>* Added mobile navigation select links color feature.</p>';
+					echo '<p>* Added mobile navigation select links hover color feature.</p>';
+					echo '<p>* Added mobile navigation custom title below hamburger menu icon.</p>';
+					echo '<p>* Added mobile navigation write custom text below hamburger menu icon.</p>';
+					echo '<p>* Fixed slider buttons not clickable when particles is enabled.</p>';
+					echo '<p>* Fixed mobile navigation links color and menu background color issue.</p>';
+					echo '<p>* Updated mobile hamburger menu icon styling & animation.</p>';
 				echo '</div>';
 				
 			echo '</div>';

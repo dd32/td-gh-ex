@@ -378,7 +378,8 @@ var THEMEVISION = THEMEVISION || {};
 					$(this).parent().removeClass("open");
 				});
 			});
-			$('.mobile-menu-toggle.collapsed').click(function() {
+			$('.mobile-menu-toggle').click(function() {
+				$(this).toggleClass('is-active');
 				$('nav.mobile-menu').slideToggle();
 			});
 			$window.on('resize', function(){

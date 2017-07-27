@@ -31,6 +31,26 @@ class Agama_Helper {
 	}
 	
 	/**
+	 * Render Mobile Menu Toggle Icon
+	 *
+	 * @since 1.2.9.2
+	 */
+	public static function get_mobile_menu_toggle_icon() {
+		echo '<!-- Mobile Navigation Toggle -->';
+		echo '<button class="mobile-menu-toggle toggle--elastic" type="button" aria-label="'. __( 'Menu', 'agama' ) .'" aria-controls="navigation" aria-expanded="true/false">';
+			echo '<span class="mobile-menu-toggle-box">';
+				echo '<span class="mobile-menu-toggle-inner"></span>';
+			echo '</span>';
+			if( get_theme_mod( 'agama_nav_mobile_icon_title', false ) ) {
+				echo '<span class="mobile-menu-toggle-label">';
+					echo esc_html( get_theme_mod( 'agama_nav_mobile_icon_title', false ) );
+				echo '</span>';
+			}
+		echo '</button>';
+		echo '<!-- Mobile Navigation Toggle End -->';
+	}
+	
+	/**
 	 * Render Agama Header Image
 	 *
 	 * @since 1.2.9

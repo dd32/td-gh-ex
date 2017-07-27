@@ -17,10 +17,7 @@
 			<?php echo Agama::menu( 'primary', 'sticky-nav' ); ?>
 		</nav><!-- Primary Navigation End -->
 		
-		<!-- Mobile Navigation Toggle -->
-		<a href="#mobile-menu" data-toggle="collapse" class="mobile-menu-toggle collapsed">
-			<?php _e( 'Mobile Menu Toggle', 'agama' ); ?>
-		</a><!-- Mobile Navigation Toggle End -->
+		<?php Agama_Helper::get_mobile_menu_toggle_icon(); ?>
 		
 	</div>
 </div>

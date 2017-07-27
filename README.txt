@@ -1,9 +1,22 @@
-Agama WordPress Theme, Copyright 2015 Theme-Vision.com
+Agama WordPress Theme, Copyright 2015 - 2017 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
-= 1.2.9.1 unreleased =
+= 1.3.0 July 27 2017 =
+* Added top navigation select links color feature.
+* Added top navigation select links hover color feature.
+* Added primary navigation select links color feature.
+* Added primary navigation select links hover color feature.
+* Added mobile navigation select links color feature.
+* Added mobile navigation select links hover color feature.
+* Added mobile navigation custom title below hamburger menu icon.
+* Added mobile navigation write custom text below hamburger menu icon.
+* Fixed slider buttons not clickable when particles is enabled.
+* Fixed mobile navigation links color and menu background color issue.
+* Updated mobile hamburger menu icon styling & animation.
+
+= 1.2.9.1 May 18 2017 =
 * Added Agama Blue contents hook.
 * Fixed minor header menu styling issues.
 

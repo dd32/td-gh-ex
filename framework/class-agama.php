@@ -66,8 +66,11 @@ if( ! class_exists( 'Agama' ) ) {
 				case 'transparent':
 					$classes[] = 'header_v1';
 				break;
+				case 'default':
+					$classes[] = 'header_v2';
+				break;
 				case 'sticky':
-					$classes[] = 'sticky_header';
+					$classes[] = 'header_v3 sticky_header';
 				break;
 			}
 			

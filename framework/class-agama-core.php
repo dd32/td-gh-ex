@@ -23,7 +23,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.2.9.1';
+		static private $version = '1.3.0';
 		
 		/**
 		 * Development Mode
@@ -50,6 +50,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			}
 			
 			$this->defines();
+			$this->migrate_options();
 			
 			add_action( 'wp_head', array( $this, 'IE_Scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
@@ -247,6 +248,26 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				});
 				</script>
 				';
+			}
+		}
+		
+		/**
+		 * Migrate Theme Options
+		 *
+		 * @since 1.3.0
+		 */
+		function migrate_options() {
+			// If current theme version is bigger than "1.2.9.1" apply next updates.
+			if( version_compare( '1.2.9.1', self::$version, '<' ) ) {
+				if( ! get_option( '_agama_1291_migrated' ) ) {
+					$nav_color 			= esc_attr( get_theme_mod( 'agama_header_nav_color', '#fe6663' ) );
+					$nav_hover_color	= esc_attr( get_theme_mod( 'agama_header_nav_hover_color', '#000' ) );
+					set_theme_mod( 'agama_nav_top_color', $nav_color );
+					set_theme_mod( 'agama_nav_top_hover_color', $nav_hover_color );
+					set_theme_mod( 'agama_nav_primary_color', $nav_color );
+					set_theme_mod( 'agama_nav_primary_hover_color', $nav_hover_color );
+					update_option( '_agama_1291_migrated', true );
+				}
 			}
 		}
 		

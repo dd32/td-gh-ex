@@ -33,10 +33,7 @@
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		<?php endif; ?>
 		
-		<!-- Mobile Navigation Toggle -->
-		<a href="#mobile-menu" data-toggle="collapse" class="mobile-menu-toggle collapsed">
-			<?php _e( 'Mobile Menu Toggle', 'agama' ); ?>
-		</a><!-- Mobile Navigation Toggle End -->
+		<?php Agama_Helper::get_mobile_menu_toggle_icon(); ?>
 		
 	</hgroup><!-- Logo End -->
 	
