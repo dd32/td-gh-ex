@@ -7,15 +7,14 @@ function benjamin_page_sortables($target = null) {
 
     $target_name = strtok($target, '_');
 
-    $sortables = get_theme_mod($target, null);
+    $sortables = get_theme_mod($target, '[{"name":"page-content","label":"Page Content"}]');
+
 
     if(!$sortables || $sortables == '[]'){
-        echo benjamin_sortable_default($target_name);
-        return;
+        $sortables = '[{"name":"page-content","label":"Page Content"}]';
     }
 
     $sortables = json_decode($sortables);
-
     foreach($sortables as $s){
         $name = $s->name;
         switch($name):
@@ -38,7 +37,7 @@ function benjamin_page_sortables($target = null) {
 
 function benjamin_page_content($target = null) {
     ?>
-    <div class="sortable-row sortable-row--<?php echo $target; ?> cf">
+    <div class="sortable-row sortable-row--<?php echo esc_attr($target); ?> cf">
     <?php
     if ( have_posts() ) :
 
@@ -79,7 +78,7 @@ function benjamin_sortable_widget_area_content($target = null, $num) {
     $target = $target . '-widget-area-'.$num;
 
 ?>
-    <div class="sortable-row sortable-row--<?php echo $target; ?> cf">
+    <div class="sortable-row sortable-row--<?php echo esc_attr($target); ?> cf">
         <?php dynamic_sidebar($target); ?>
     </div>
 <?php
@@ -88,7 +87,7 @@ function benjamin_sortable_widget_area_content($target = null, $num) {
 
 function benjamin_sortable_default($target_name){
 
-    $url = admin_url( 'customize.php?autofocus[section]='.$target_name.'_section' );
+    $url = esc_url(admin_url( 'customize.php?autofocus[section]='.$target_name.'_settings_section' ));
 
     $output = '';
     $output .= '<h2>Page not configured</h2>';

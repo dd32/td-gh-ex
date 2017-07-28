@@ -58,6 +58,7 @@ function randomString(length, chars) {
 
 
 (function ( api ) {
+
     api.section( '_404_settings_section', function( section ) {
         section.expanded.bind( function( isExpanded ) {
             var rand = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
@@ -68,6 +69,18 @@ function randomString(length, chars) {
             }
         } );
     } );
+
+    api.section( 'frontpage_settings_section', function( section ) {
+        section.expanded.bind( function( isExpanded ) {
+            var url = api.settings.url.home ;
+
+            var previousUrl = api.previewer.previewUrl.get();
+            if ( isExpanded ) {
+                api.previewer.previewUrl.set( url );
+            }
+        } );
+    } );
+
 } ( wp.customize ) );
 
 },{}],4:[function(require,module,exports){
@@ -117,16 +130,16 @@ function benjaminSortable(elm) {
 
 
   // when the visibility changes
-  $('.sortable__visibility select').on('change', function(e){
-    var $this = $(this);
-    var thisVal = $this.val();
-    $this.closest('.sortable').addClass('save-warning');
-    $('#submit').parent('.submit').addClass('save-warning');
-
-    var activeComponentsStr = get_active_sortables($active);
-    save_values(id, activeComponentsStr, $field);
-
-  });
+  // $('.sortable__visibility select').on('change', function(e){
+  //   var $this = $(this);
+  //   var thisVal = $this.val();
+  //   $this.closest('.sortable').addClass('save-warning');
+  //   $('#submit').parent('.submit').addClass('save-warning');
+  //
+  //   var activeComponentsStr = get_active_sortables($active);
+  //   save_values(id, activeComponentsStr, $field);
+  //
+  // });
 
 
   // gets the active sortables and sets their settings/positions to a string to be saved
@@ -145,6 +158,7 @@ function benjaminSortable(elm) {
           label: label
         });
     });
+
     // stringify the array into a string and return
     return JSON.stringify(activeComponents);
   }

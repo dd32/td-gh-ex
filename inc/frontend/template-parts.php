@@ -27,13 +27,15 @@ function benjamin_the_header() {
             continue;
         switch($component->name):
             case 'banner':
-                get_template_part('template-parts/section', 'banner');
+                if( get_theme_mod('banner_visibility_setting', 'hide') !== 'hide')
+                    get_template_part('template-parts/section', 'banner');
                 break;
             case 'navbar':
                 get_template_part('template-parts/navbars/navbar');
                 break;
             case 'hero':
-                echo new BenjaminHero($template);
+                $hero = new BenjaminHero($template);
+                echo $hero; //WPCS: xss ok.
                 break;
         endswitch;
     endforeach;

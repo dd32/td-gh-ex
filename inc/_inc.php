@@ -3,7 +3,7 @@
 
 // these files contain functions used by both the admin section and frontend
 $shared_files = array(
-    '/inc/admin/customizer.php',
+    '/inc/shared/customizer.php',
     '/inc/shared/functions.php',
     '/inc/shared/template-list.php',
     '/inc/shared/theme-support.php',
@@ -16,7 +16,8 @@ $shared_files = array(
 );
 
 foreach($shared_files as $file)
-    require get_template_directory() . $file;
+    require get_template_directory() . $file; // WPCS: xss ok.
+
 // only load these in the admin section
 if (is_admin()) {
     $files = array(
@@ -26,7 +27,7 @@ if (is_admin()) {
         '/inc/admin/metabox-featured-video.php',
     );
     foreach($files as $file)
-        require get_template_directory() . $file;
+        require get_template_directory() . $file; // WPCS: xss ok.
 }
 
 
@@ -54,5 +55,5 @@ if( !is_admin() ){
         '/inc/frontend/navs/footer-nav-walker.php',
     );
     foreach($files as $file)
-        require get_template_directory() . $file;
+        require get_template_directory() . $file; // WPCS: xss ok.
 }

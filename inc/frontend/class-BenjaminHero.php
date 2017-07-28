@@ -179,7 +179,7 @@ class BenjaminHero {
         } elseif($content == 'callout') {
             $output .= $this->heroCallout();
         } else {
-            $output = '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+            $output = '<h1>' . get_bloginfo( 'name', 'display' ) . '</h1>';
         }
 
         return $output;
@@ -298,7 +298,7 @@ class BenjaminHero {
     // author feed title
     public function authorFeedTitle(){
         $auth = get_user_by('slug', get_query_var('author_name'));
-        return '<h1>' . 'Posts by: '.$auth->nickname . '</h1>';
+        return '<h1>' . 'Posts by: '.$auth->display_name . '</h1>';
     }
 
     // date title
@@ -327,7 +327,7 @@ class BenjaminHero {
     public function searchTitle() {
         global $wp_query;
         $total_results = $wp_query->found_posts;
-        $title = $total_results ? 'Search Results for: '.get_search_query() : 'No results found' ;
+        $title = $total_results ? 'Search Results for: ' . get_search_query() : 'No results found' ;
 
         return '<h1>' . $title . '</h1>';
 
