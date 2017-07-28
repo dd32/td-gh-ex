@@ -20,11 +20,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-// check to see if Shop Sidebar is published to adjust bootstrap column size
-$bootstrap_col_size = is_active_sidebar( 'sidebar-shop' ) ? "col-md-9" : "col-md-12";
+$template = get_option( 'template' );
 
-?>
-
-<div id="primary" class="content-area <?php echo esc_attr($bootstrap_col_size); ?> ">
-
-	<main id="main" class="site-main">
+switch ( $template ) {
+	case 'twentyeleven' :
+		echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
+		break;
+	case 'twentytwelve' :
+		echo '<div id="primary" class="site-content"><div id="content" role="main" class="twentytwelve">';
+		break;
+	case 'twentythirteen' :
+		echo '<div id="primary" class="site-content"><div id="content" role="main" class="entry-content twentythirteen">';
+		break;
+	case 'twentyfourteen' :
+		echo '<div id="primary" class="content-area"><div id="content" role="main" class="site-content twentyfourteen"><div class="tfwc">';
+		break;
+	case 'twentyfifteen' :
+		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
+		break;
+	case 'twentysixteen' :
+		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
+		break;
+	default :
+		$bootstrap_col_size = is_active_sidebar( 'sidebar-shop' ) ? "col-md-9" : "col-md-12";
+		echo '<div id="container" class="'.$bootstrap_col_size.'"><div id="content" role="main">';
+		break;
+}

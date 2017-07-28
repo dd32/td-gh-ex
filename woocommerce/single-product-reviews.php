@@ -27,9 +27,7 @@ if ( ! comments_open() ) {
 
 ?>
 <div id="reviews" class="woocommerce-Reviews">
-
 	<div id="comments">
-
 		<h2 class="woocommerce-Reviews-title"><?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) ) {
 				/* translators: 1: reviews count 2: product name */
@@ -41,32 +39,23 @@ if ( ! comments_open() ) {
 
 		<?php if ( have_comments() ) : ?>
 
-			<ol class="commentlist list-unstyled">
+			<ol class="commentlist">
 				<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
 			</ol>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-				// echo '<nav class="woocommerce-pagination text-center">';
-				// paginate_comments_links( apply_filters( 'woocommerce_comment_pagination_args', array(
-				// 	'prev_text' => '&larr;',
-				// 	'next_text' => '&rarr;',
-				// 	'type'      => 'list',
-				// ) ) );
-				// echo '</nav>';
-				?>
-
-				<nav aria-label="<?php _e("Comments Pagination","basicstore"); ?>">
-					<ul class="pager">
-						<li class=""><?php previous_comments_link(); ?></li>
-						<li class=""><?php next_comments_link(); ?></li>
-					</ul>
-				</nav>
-
-			<?php endif; ?>
+				echo '<nav class="woocommerce-pagination">';
+				paginate_comments_links( apply_filters( 'woocommerce_comment_pagination_args', array(
+					'prev_text' => '&larr;',
+					'next_text' => '&rarr;',
+					'type'      => 'list',
+				) ) );
+				echo '</nav>';
+			endif; ?>
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews alert alert-warning" role="alert"><?php _e( 'There are no reviews yet.', 'basicstore' ); ?></p>
+			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'basicstore' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -74,28 +63,25 @@ if ( ! comments_open() ) {
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 
 		<div id="review_form_wrapper">
-
 			<div id="review_form">
-
 				<?php
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = array(
 						'title_reply'          => have_comments() ? __( 'Add a review', 'basicstore' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'basicstore' ), get_the_title() ),
 						'title_reply_to'       => __( 'Leave a Reply to %s', 'basicstore' ),
-						'title_reply_before'   => '<legend id="reply-title" class="comment-reply-title">',
-						'title_reply_after'    => '</legend>',
+						'title_reply_before'   => '<span id="reply-title" class="comment-reply-title">',
+						'title_reply_after'    => '</span>',
 						'comment_notes_after'  => '',
 						'fields'               => array(
-							'author' => '<div class="form-group"><p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'basicstore' ) . ' <span class="required">*</span></label> ' .
-													'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" class="form-control" /></p></div>',
-							'email'  => '<div class="form-group"><p class="comment-form-email"><label for="email">' . __( 'Email', 'basicstore' ) . ' <span class="required">*</span></label> ' .
-													'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true" class="form-control"/></p></div>',
+							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'basicstore' ) . ' <span class="required">*</span></label> ' .
+										'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
+							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'basicstore' ) . ' <span class="required">*</span></label> ' .
+										'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
 						),
 						'label_submit'  => __( 'Submit', 'basicstore' ),
 						'logged_in_as'  => '',
 						'comment_field' => '',
-						'class_submit' => 'btn btn-info'
 					);
 
 					if ( $account_page_url = wc_get_page_permalink( 'myaccount' ) ) {
@@ -103,27 +89,26 @@ if ( ! comments_open() ) {
 					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'basicstore' ) . '</label><select name="rating" id="rating" aria-required="true" required>
+						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'basicstore' ) . '</label><select name="rating" id="rating" aria-required="true" required>
 							<option value="">' . esc_html__( 'Rate&hellip;', 'basicstore' ) . '</option>
 							<option value="5">' . esc_html__( 'Perfect', 'basicstore' ) . '</option>
 							<option value="4">' . esc_html__( 'Good', 'basicstore' ) . '</option>
 							<option value="3">' . esc_html__( 'Average', 'basicstore' ) . '</option>
 							<option value="2">' . esc_html__( 'Not that bad', 'basicstore' ) . '</option>
 							<option value="1">' . esc_html__( 'Very poor', 'basicstore' ) . '</option>
-						</select></p>';
+						</select></div>';
 					}
 
-					$comment_form['comment_field'] .= '<div class="form-group comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'basicstore' ) . ' <span class="required">*</span></label><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></div>';
+					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'basicstore' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p>';
 
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
 			</div>
-
 		</div>
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required alert alert-warning" role="alert"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'basicstore' ); ?></p>
+		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'basicstore' ); ?></p>
 
 	<?php endif; ?>
 

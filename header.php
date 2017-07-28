@@ -103,6 +103,6 @@
 
 		</div><!-- #site-jumbotron -->
 	<?php endif; ?>
-		<div class="container">
+	<div class="container">
 
-			<div class="row">
+		<div class="row">

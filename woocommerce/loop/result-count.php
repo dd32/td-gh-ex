@@ -24,10 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $wp_query;
 
-if ( ! woocommerce_products_will_display() )
+if ( ! woocommerce_products_will_display() ) {
 	return;
+}
 ?>
-<p class="woocommerce-result-count text-muted">
+<p class="woocommerce-result-count">
 	<?php
 	$paged    = max( 1, $wp_query->get( 'paged' ) );
 	$per_page = $wp_query->get( 'posts_per_page' );
@@ -40,7 +41,7 @@ if ( ! woocommerce_products_will_display() )
 		printf( _n( 'Showing %d result', 'Showing all %d results', $total, 'basicstore' ), $total );
 	} else {
 		/* translators: 1: first result 2: last result 3: total results */
-		printf( _nx( 'Showing %1$d&ndash;%2$d of %3$d result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, 'with first and last result', 'basicstore' ), $first, $last, $total );
+		printf( _nx( 'Showing %3$d result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, 'with first and last results', 'basicstore' ), $first, $last, $total );
 	}
 	?>
 </p>

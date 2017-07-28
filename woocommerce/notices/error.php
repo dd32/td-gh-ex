@@ -25,11 +25,8 @@ if ( ! $messages ) {
 }
 
 ?>
-
-<div class="woocommerce-error alert alert-danger" role="alert">
-	<ul class="">
-		<?php foreach ( $messages as $message ) : ?>
-			<li><?php echo wp_kses_post( $message ); ?></li>
-		<?php endforeach; ?>
-	</ul>
-</div>
+<ul class="woocommerce-error">
+	<?php foreach ( $messages as $message ) : ?>
+		<li><?php echo wp_kses_post( $message ); ?></li>
+	<?php endforeach; ?>
+</ul>

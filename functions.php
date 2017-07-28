@@ -71,6 +71,9 @@ function basic_store_setup() {
 	// Declare WooCommerce support
 	add_theme_support( 'woocommerce' );
 
+	// Add theme support for custom header
+	add_theme_support( 'custom-header' );
+
 	// WooCommerce gallery support
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
@@ -163,6 +166,12 @@ add_filter('dynamic_sidebar_params','basic_store_widgets_count');
  * Enqueue scripts and styles.
  */
 function basic_store_scripts() {
+
+	wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
+
+	wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/woocommerce-layout.css' );
+
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css' );
 
 	wp_enqueue_style( 'basicstore-wp-style', get_stylesheet_directory_uri() .'/assets/css/wp.css' );
 

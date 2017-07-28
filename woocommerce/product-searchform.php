@@ -21,20 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<form role="search" method="get" class="woocommerce-product-search search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-
-	<div class="form-group">
-
-		<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php _e( 'Search for:', 'basicstore' ); ?></label>
-
-		<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field form-control" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'basicstore' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-
-		<button class="btn btn-link" type="submit" aria-label="<?php echo esc_attr_x( 'Search', 'submit button', 'basicstore' ); ?>" title="<?php echo esc_attr_x( 'Search', 'submit button', 'basicstore' ); ?>">
-			 <i class="glyphicon glyphicon-search"></i>
-		</button>
-
-	</div>
-
+<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php _e( 'Search for:', 'basicstore' ); ?></label>
+	<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field form-control" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'basicstore' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+	<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'basicstore' ); ?>" class="btn btn-primary" />
 	<input type="hidden" name="post_type" value="product" />
-
 </form>

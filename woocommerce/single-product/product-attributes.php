@@ -15,29 +15,32 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version     3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-
-<dl class="shop_attributes dl-horizontal">
-
+<table class="shop_attributes">
 	<?php if ( $display_dimensions && $product->has_weight() ) : ?>
-		<dt><?php _e( 'Weight', 'basicstore' ) ?></dt>
-		<dd class="product_weight"><?php echo esc_html( wc_format_weight( $product->get_weight() ) ); ?></dd>
+		<tr>
+			<th><?php _e( 'Weight', 'basicstore' ) ?></th>
+			<td class="product_weight"><?php echo esc_html( wc_format_weight( $product->get_weight() ) ); ?></td>
+		</tr>
 	<?php endif; ?>
 
 	<?php if ( $display_dimensions && $product->has_dimensions() ) : ?>
-		<dt><?php _e( 'Dimensions', 'basicstore' ) ?></dt>
-		<dd class="product_dimensions"><?php echo esc_html( wc_format_dimensions( $product->get_dimensions( false ) ) ); ?></dd>
+		<tr>
+			<th><?php _e( 'Dimensions', 'basicstore' ) ?></th>
+			<td class="product_dimensions"><?php echo esc_html( wc_format_dimensions( $product->get_dimensions( false ) ) ); ?></td>
+		</tr>
 	<?php endif; ?>
 
 	<?php foreach ( $attributes as $attribute ) : ?>
-			<dt><?php echo wc_attribute_label( $attribute->get_name() ); ?></dt>
-			<dd><?php
+		<tr>
+			<th><?php echo wc_attribute_label( $attribute->get_name() ); ?></th>
+			<td><?php
 				$values = array();
 
 				if ( $attribute->is_taxonomy() ) {
@@ -57,12 +60,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					$values = $attribute->get_options();
 
 					foreach ( $values as &$value ) {
-						$value = esc_html( $value );
+						$value = make_clickable( esc_html( $value ) );
 					}
 				}
 
 				echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-			?></dd>
+			?></td>
+		</tr>
 	<?php endforeach; ?>
-
-</dl><!-- .shop_attributes -->
+</table>

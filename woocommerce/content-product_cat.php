@@ -19,15 +19,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-global $woocommerce_loop;
-
-// Bootstrap row count
-$bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
-
 ?>
-
-<div <?php wc_product_cat_class( $bootstrap_row_count, $category ); ?>>
+<li <?php wc_product_cat_class( '', $category ); ?>>
 	<?php
 	/**
 	 * woocommerce_before_subcategory hook.
@@ -61,12 +54,4 @@ $bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_
 	 * @hooked woocommerce_template_loop_category_link_close - 10
 	 */
 	do_action( 'woocommerce_after_subcategory', $category ); ?>
-</div>
-
-<?php
-	// add bootstrap row break if we reach number of columns in a row
-	// if ($woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0) {
-	// 	echo '</div><!-- .row -->
-	// 	<div class="row">';
-	// }
-?>
+</li>

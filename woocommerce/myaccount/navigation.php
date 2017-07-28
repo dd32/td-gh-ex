@@ -20,34 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 do_action( 'woocommerce_before_account_navigation' );
 ?>
 
-
 <nav class="woocommerce-MyAccount-navigation">
-
-	<ul class="nav nav-tabs">
-
+	<ul>
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-
-			<?php
-				// check if class has "is-active" and add bootstrap required "active" class
-				if (stripos(wc_get_account_menu_item_classes( $endpoint ), "is-active") !== false) {
-			    $bootstrap_active_class = "active";
-				} else  {
-					 $bootstrap_active_class = " ";
-				};
-			?>
-
-			<li role="presentation" class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?> <?php echo esc_attr($bootstrap_active_class); ?>">
+			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
 			</li>
-
 		<?php endforeach; ?>
-
 	</ul>
-
 </nav>
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

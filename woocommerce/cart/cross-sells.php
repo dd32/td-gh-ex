@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $cross_sells ) : ?>
 
-	<div class="cross-sells col-md-6">
+	<div class="cross-sells">
 
 		<h2><?php _e( 'You may be interested in&hellip;', 'basicstore' ) ?></h2>
 
@@ -33,7 +33,7 @@ if ( $cross_sells ) : ?>
 				<?php
 				 	$post_object = get_post( $cross_sell->get_id() );
 
-					setup_postdata( $post =& $post_object );
+					setup_postdata( $GLOBALS['post'] =& $post_object );
 
 					wc_get_template_part( 'content', 'product' ); ?>
 

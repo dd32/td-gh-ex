@@ -20,23 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $woocommerce_loop;
+global $product;
 
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
-// Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) )
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4);
-
-// Bootstrap row count
-$bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_loop['columns']);
-
 ?>
-
-<div <?php post_class($bootstrap_row_count); ?>>
+<li <?php post_class(); ?>>
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.
@@ -76,12 +67,4 @@ $bootstrap_row_count = basic_store_woocommerce_bootstrap_row_count($woocommerce_
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-</div>
-
-<?php
-	// add bootstrap row break if we reach number of columns in a row
-	if ($woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0) {
-		echo '</div><!-- .row -->
-		<div class="row">';
-	}
-?>
+</li>

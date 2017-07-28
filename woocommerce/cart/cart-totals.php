@@ -20,18 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Count Cross-Sells products
-$crosssells = count(WC()->cart->get_cross_sells());
-
 ?>
-
-<div class="cart_totals col-md-6 <?php echo $crosssells > 1 ? " " : "col-md-offset-6"; ?> <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
+<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php _e( 'Cart Totals', 'basicstore' ); ?></h2>
+	<h2><?php _e( 'Cart totals', 'basicstore' ); ?></h2>
 
-	<table cellspacing="0" class="table table-bordered shop_table shop_table_responsive">
+	<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'basicstore' ); ?></th>
@@ -39,7 +35,7 @@ $crosssells = count(WC()->cart->get_cross_sells());
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-			<tr class="cart-discount bg-success coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
 				<td data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
@@ -72,7 +68,7 @@ $crosssells = count(WC()->cart->get_cross_sells());
 		<?php if ( wc_tax_enabled() && 'excl' === WC()->cart->tax_display_cart ) :
 			$taxable_address = WC()->customer->get_taxable_address();
 			$estimated_text  = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
-					? sprintf( ' <small>(' . __( 'estimated for %s', 'basicstore' ) . ')</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] )
+					? sprintf( ' <small>' . __( '(estimated for %s)', 'basicstore' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] )
 					: '';
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>

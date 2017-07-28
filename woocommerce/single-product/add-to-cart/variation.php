@@ -15,25 +15,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <script type="text/template" id="tmpl-variation-template">
-
-	<div class="well">
-
-		<div class="woocommerce-variation-description">
-			{{{ data.variation.variation_description }}}
-		</div>
-
-		<div class="woocommerce-variation-price lead">
-			{{{ data.variation.price_html }}}
-		</div>
-
-		<div class="woocommerce-variation-availability">
-			{{{ data.variation.availability_html }}}
-		</div>
-
+	<div class="woocommerce-variation-description">
+		{{{ data.variation.variation_description }}}
 	</div>
 
-</script>
+	<div class="woocommerce-variation-price">
+		{{{ data.variation.price_html }}}
+	</div>
 
+	<div class="woocommerce-variation-availability">
+		{{{ data.variation.availability_html }}}
+	</div>
+</script>
 <script type="text/template" id="tmpl-unavailable-variation-template">
-	<p class="alert alert-warning" role="alert"><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'basicstore' ); ?></p>
+	<p><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'basicstore' ); ?></p>
 </script>

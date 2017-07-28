@@ -16,7 +16,4 @@
  * @version     2.0.0
  */
 ?>
-
-<div class="products">
-
-  <div class="row">
+<ul class="products">

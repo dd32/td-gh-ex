@@ -25,73 +25,60 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<h2><?php _e( 'Customer details', 'basicstore' ); ?></h2>
 
-	<div class="table-responsive">
+	<table class="woocommerce-table woocommerce-table--customer-details shop_table customer_details">
 
-		<table class="table table-bordered woocommerce-table woocommerce-table--customer-details shop_table customer_details">
+		<?php if ( $order->get_customer_note() ) : ?>
+			<tr>
+				<th><?php _e( 'Note:', 'basicstore' ); ?></th>
+				<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
+			</tr>
+		<?php endif; ?>
 
-			<?php if ( $order->get_customer_note() ) : ?>
-				<tr>
-					<th><?php _e( 'Note:', 'basicstore' ); ?></th>
-					<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
-				</tr>
-			<?php endif; ?>
+		<?php if ( $order->get_billing_email() ) : ?>
+			<tr>
+				<th><?php _e( 'Email:', 'basicstore' ); ?></th>
+				<td><?php echo esc_html( $order->get_billing_email() ); ?></td>
+			</tr>
+		<?php endif; ?>
 
-			<?php if ( $order->get_billing_email() ) : ?>
-				<tr>
-					<th><?php _e( 'Email:', 'basicstore' ); ?></th>
-					<td><?php echo esc_html( $order->get_billing_email() ); ?></td>
-				</tr>
-			<?php endif; ?>
+		<?php if ( $order->get_billing_phone() ) : ?>
+			<tr>
+				<th><?php _e( 'Phone:', 'basicstore' ); ?></th>
+				<td><?php echo esc_html( $order->get_billing_phone() ); ?></td>
+			</tr>
+		<?php endif; ?>
 
-			<?php if ( $order->get_billing_phone() ) : ?>
-				<tr>
-					<th><?php _e( 'Phone:', 'basicstore' ); ?></th>
-					<td><?php echo esc_html( $order->get_billing_phone() ); ?></td>
-				</tr>
-			<?php endif; ?>
+		<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
-			<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
-
-		</table>
-
-	</div><!-- .table-responsive -->
+	</table>
 
 	<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 
 	<section class="woocommerce-columns woocommerce-columns--2 woocommerce-columns--addresses col2-set addresses">
 
-		<div class="row">
-			<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
-			<div class="col-sm-6">
-			<?php else : ?>
-			<div class="col-md-12">
+		<div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-1">
+
 			<?php endif; ?>
-				<div class="panel panel-default addresses">
-				  <div class="panel-heading">
-				    <h3 class="panel-title"><?php _e( 'Billing Address', 'basicstore' ); ?></h3>
-				  </div>
-				  <div class="panel-body">
-						<address>
-							<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
-						</address>
-				  </div>
-				</div>
-			</div>
+
+			<h3 class="woocommerce-column__title"><?php _e( 'Billing address', 'basicstore' ); ?></h3>
+
+			<address>
+				<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
+			</address>
+
 			<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
-			<div class="col-sm-6">
-				<div class="panel panel-default addresses">
-				  <div class="panel-heading">
-				    <h3 class="panel-title"><?php _e( 'Billing Address', 'basicstore' ); ?></h3>
-				  </div>
-				  <div class="panel-body">
-						<address>
-							<?php echo ( $address = $order->get_formatted_shipping_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
-						</address>
-				  </div>
-				</div>
-			</div>
-			<?php endif; ?>
-		</div>
+
+		</div><!-- /.col-1 -->
+
+		<div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2">
+
+			<h3 class="woocommerce-column__title"><?php _e( 'Shipping address', 'basicstore' ); ?></h3>
+
+			<address>
+				<?php echo ( $address = $order->get_formatted_shipping_address() ) ? $address : __( 'N/A', 'basicstore' ); ?>
+			</address>
+
+		</div><!-- /.col-2 -->
 
 	</section><!-- /.col2-set -->
 

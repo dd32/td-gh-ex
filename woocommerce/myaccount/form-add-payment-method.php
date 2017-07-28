@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 3.0.0
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $available_gateways = WC()->payment_gateways->get_available_payment_gateways() ) : ?>
 	<form id="add_payment_method" method="post">
-		<div id="payment" class="woocommerce-Payment well">
+		<div id="payment" class="woocommerce-Payment">
 			<ul class="woocommerce-PaymentMethods payment_methods methods">
 				<?php
 					// Chosen Method.
@@ -50,11 +50,11 @@ if ( $available_gateways = WC()->payment_gateways->get_available_payment_gateway
 
 			<div class="form-row">
 				<?php wp_nonce_field( 'woocommerce-add-payment-method' ); ?>
-				<input type="submit" class="btn btn-primary woocommerce-Button woocommerce-Button--alt button alt" id="place_order" value="<?php esc_attr_e( 'Add Payment Method', 'basicstore' ); ?>" />
+				<input type="submit" class="woocommerce-Button woocommerce-Button--alt button alt" id="place_order" value="<?php esc_attr_e( 'Add payment method', 'basicstore' ); ?>" />
 				<input type="hidden" name="woocommerce_add_payment_method" id="woocommerce_add_payment_method" value="1" />
 			</div>
 		</div>
 	</form>
 <?php else : ?>
-	<p class="alert alert-warning"><?php esc_html_e( 'Sorry, it seems that there are no payment methods which support adding a new payment method. Please contact us if you require assistance or wish to make alternate arrangements.', 'basicstore' ); ?></p>
+	<p class="woocommerce-notice woocommerce-notice--info woocommerce-info"><?php esc_html_e( 'Sorry, it seems that there are no payment methods which support adding a new payment method. Please contact us if you require assistance or wish to make alternate arrangements.', 'basicstore' ); ?></p>
 <?php endif; ?>

@@ -22,24 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-
-
-<li <?php comment_class('media'); ?> id="li-comment-<?php comment_ID() ?>">
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
 
-		<div class="media-left">
-			<?php
-			/**
-			 * The woocommerce_review_before hook
-			 *
-			 * @hooked woocommerce_review_display_gravatar - 10
-			 */
-			do_action( 'woocommerce_review_before', $comment );
-			?>
-		</div>
+		<?php
+		/**
+		 * The woocommerce_review_before hook
+		 *
+		 * @hooked woocommerce_review_display_gravatar - 10
+		 */
+		do_action( 'woocommerce_review_before', $comment );
+		?>
 
-		<div class="media-body comment-text">
+		<div class="comment-text">
 
 			<?php
 			/**
@@ -69,5 +65,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_review_after_comment_text', $comment ); ?>
 
 		</div>
-
 	</div>

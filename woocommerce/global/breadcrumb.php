@@ -25,27 +25,22 @@ if ( ! empty( $breadcrumb ) ) {
 
 	echo $wrap_before;
 
-	echo "<ol class=\"breadcrumb\">";
-
 	foreach ( $breadcrumb as $key => $crumb ) {
 
 		echo $before;
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<li><a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a></li>';
+			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
 		} else {
-			echo '<li class="active">'.esc_html( $crumb[0] ). '</li>';
+			echo esc_html( $crumb[0] );
 		}
 
 		echo $after;
 
 		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			//echo $delimiter;
+			echo $delimiter;
 		}
-
 	}
-
-		echo "</ol>";
 
 	echo $wrap_after;
 

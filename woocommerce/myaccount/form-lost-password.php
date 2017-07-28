@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 3.0.0
@@ -24,26 +24,22 @@ wc_print_notices(); ?>
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-	<p class="lead"><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'basicstore' ) ); ?></p>
+	<p><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'basicstore' ) ); ?></p>
 
-	<div class="well">
+	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+		<label for="user_login"><?php _e( 'Username or email', 'basicstore' ); ?></label>
+		<input class="woocommerce-Input woocommerce-Input--text input-text" type="text" name="user_login" id="user_login" />
+	</p>
 
-		<div class="form-group woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
-			<label for="user_login"><?php _e( 'Username or email', 'basicstore' ); ?></label>
-			<input class="form-control woocommerce-Input woocommerce-Input--text input-text" type="text" name="user_login" id="user_login" />
-		</div>
+	<div class="clear"></div>
 
-		<div class="clear"></div>
+	<?php do_action( 'woocommerce_lostpassword_form' ); ?>
 
-		<?php do_action( 'woocommerce_lostpassword_form' ); ?>
+	<p class="woocommerce-form-row form-row">
+		<input type="hidden" name="wc_reset_password" value="true" />
+		<input type="submit" class="woocommerce-Button button" value="<?php esc_attr_e( 'Reset password', 'basicstore' ); ?>" />
+	</p>
 
-		<p class="woocommerce-FormRow form-row">
-			<input type="hidden" name="wc_reset_password" value="true" />
-			<input type="submit" class="btn btn-primary woocommerce-Button button" value="<?php esc_attr_e( 'Reset Password', 'basicstore' ); ?>" />
-		</p>
-
-		<?php wp_nonce_field( 'lost_password' ); ?>
-
-	</div>
+	<?php wp_nonce_field( 'lost_password' ); ?>
 
 </form>
