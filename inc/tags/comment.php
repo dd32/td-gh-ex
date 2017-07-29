@@ -99,7 +99,7 @@ if ( ! function_exists( 'applicator_func_comment' ) ) {
         
         // R: Comment Published Date Stamp
         $comment_published_date_stamp_obj = htmlok( array(
-            'name'      => 'Comment Published Date',
+            'name'      => 'Comment Published Date Stamp',
             'structure' => array(
                 'type'      => 'object',
                 'subtype'   => 'time',
@@ -139,7 +139,7 @@ if ( ! function_exists( 'applicator_func_comment' ) ) {
         
         // R: Comment Published Time Stamp
         $comment_published_time_stamp_obj = htmlok( array(
-            'name'      => 'Comment Published Time',
+            'name'      => 'Comment Published Time Stamp',
             'structure' => array(
                 'type'      => 'object',
                 'subtype'   => 'time',
@@ -180,7 +180,7 @@ if ( ! function_exists( 'applicator_func_comment' ) ) {
         
         // R: Comment Published Date and Time Stamp
         $comment_published_date_time_stamp_cp = htmlok( array(
-            'name'      => 'Comment Published Date and Time',
+            'name'      => 'Comment Published Date and Time Stamp',
             'structure' => array(
                 'type'      => 'component',
             ),
@@ -320,6 +320,7 @@ if ( ! function_exists( 'applicator_func_comment' ) ) {
                 'type'      => 'component',
             ),
             'root_css'  => $commenter_avatar_type_css,
+            'css'       => 'published-com-commenter',
             'content'   => array(
                 'component' => array(
                     $commenter_published_label_obj,
@@ -371,15 +372,27 @@ if ( ! function_exists( 'applicator_func_comment' ) ) {
                 <div class="ct comment---ct">
                     <div class="ct_cr comment---ct_cr">
                         
-                        <?php if ( $comment->comment_approved == '0' ) { ?>
-                        <div class="obj note comment-unapproved-note---obj" data-name="Comment Unapproved Note Object">
-                            <div class="g comment-unapproved-note---g">
-                                <p><?php esc_html_e( 'Your comment is awaiting moderation.', 'applicator' ); ?></p>
-                            </div>
-                        </div><!-- Comment Unapproved Note Object -->
-                        <?php } ?>
-                        
-                        <?php comment_text(); ?>
+        <?php
+        
+        if ( $comment->comment_approved == '0' ) {
+            
+            $comment_unapproved_note_obj = htmlok( array(
+                'name'      => 'Comment Unapproved',
+                'structure' => array(
+                    'type'      => 'object',
+                    'subtype'   => 'note',
+                ),
+                'content'   => array(
+                    'object'    => '<p>'.esc_html__( 'Your comment is awaiting moderation.', 'applicator' ).'</p>',
+                ),
+                'echo'      => true,
+            ) );
+            
+        }
+        
+        comment_text();
+        
+        ?>
                     
                     </div>
                 </div><!-- ct -->

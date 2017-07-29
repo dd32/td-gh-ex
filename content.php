@@ -5,9 +5,9 @@
                 
                 <?php
                 
-                // E: Post Title
+                // E: Main Post Title
                 $post_title_obj = htmlok( array(
-                    'name'      => 'Post Title',
+                    'name'      => 'Main Post Title',
                     'structure' => array(
                         'type'      => 'object',
                         'elem'      => 'h1',
@@ -21,11 +21,7 @@
                         ),
                     ),
                     'content'   => array(
-                        'object'        => array(
-                            array(
-                                'txt'       => get_the_title(),
-                            ),
-                        ),
+                        'object'        => get_the_title(),
                     ),
                     'echo'      => true,
                 ) );

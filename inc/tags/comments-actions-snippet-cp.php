@@ -41,6 +41,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         $comment_creation_ability_pri_css = 'comment-creation-ability';
         
         $comments_count_axn_css = 'comments-count-axn';
+        $comments_count_css = 'comments-count';
         
         $comments_count_single_text = '1';
         $comments_count_multi_text = '%';
@@ -54,12 +55,24 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         
         // Comments Count Template Markup
         $comments_count_mu = '';
+        $comments_count_mu .= '<span class="a_l %5$s---a_l">';
             $comments_count_mu .= '<span class="txt num %3$s---txt">';
                 $comments_count_mu .= '%1$s';
             $comments_count_mu .= '</span>';
             $comments_count_mu .= ' <span class="txt %4$s---txt">';
                 $comments_count_mu .= '%2$s';
             $comments_count_mu .= '</span>';
+        $comments_count_mu .= '</span>';
+        
+        
+        // Comments Count Zero Template Markup
+        $comments_count_zero_mu = '';
+        $comments_count_zero_mu .= '<span class="txt num %3$s---txt">';
+            $comments_count_zero_mu .= '%1$s';
+        $comments_count_zero_mu .= '</span>';
+        $comments_count_zero_mu .= ' <span class="txt %4$s---txt">';
+            $comments_count_zero_mu .= '%2$s';
+        $comments_count_zero_mu .= '</span>';
         
         
         // Comments Count Single Text
@@ -81,7 +94,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         );
         
         // Comments Count Zero Text
-        $comments_count_zero_txt = sprintf( $comments_count_mu,
+        $comments_count_zero_txt = sprintf( $comments_count_zero_mu,
             $comments_count_zero_text,
             $comment_singular_text,
             $comments_count_num_css,
@@ -97,7 +110,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
             
             $comments_count_obj_a_link = '';
 
-            $comments_count_obj_a = sprintf( get_comments_popup_link(
+            $comments_count_obj_a = sprintf( applicator_func_get_comments_popup_link(
                 // Comments Count: Zero
                 '',
 
@@ -126,7 +139,9 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
             /* If Comments Actions Snippet is in index, use permalink. */
             if ( ! is_singular() ) {
                 $comments_count_obj_a_link = esc_url( get_permalink() );
-            } else {
+            }
+            
+            else {
                 $comments_count_obj_a_link = '';
             }
             
@@ -152,7 +167,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
                 'wpg'       => $wpg_setting,
                 'attr'      => $a_attr_setting,
             ),
-            'css'       => $comments_count_axn_css,
+            'css'       => $comments_count_css,
             'content'   => array(
                 'object'    => $comments_count_obj_a,
 
@@ -165,7 +180,6 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
             'structure' => array(
                 'type'      => 'component',
             ),
-            'css'       => 'comments-population',
             'content'   => array(
                 'component' => $comments_count_obj,
             ),
