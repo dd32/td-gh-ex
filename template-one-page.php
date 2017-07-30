@@ -22,7 +22,7 @@
 
 <?php 
 	
-	do_action( 'suevafree_' . suevafree_setting( 'suevafree_header_layout', 'header_layout_1'), 'one-page-menu' );
+	do_action( 'suevafree_' . suevafree_setting( 'suevafree_header_layout', 'header_layout_1'), 'one-page-menu', 'one-page-menu' );
 	do_action( 'suevafree_onepage_sidebar', 'onepage-sidebar-area');
 	get_footer(); 
 	

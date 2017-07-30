@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.2.3 - Released: 30.07.2017
+
+-- Fixed : Default header image.
+-- Fixed : Header image on header layout 5.
+-- Edit  : Code optimized.
+
 - Version 3.2.2 - Released: 24.07.2017
 
 -- Fixed : Featured image on WooCommerce cart page.

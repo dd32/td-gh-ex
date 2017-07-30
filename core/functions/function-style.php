@@ -9,9 +9,17 @@ if (!function_exists('suevafree_css_custom')) {
 			/* =================== HEADER STYLE =================== */
 		
 			if ( get_header_image() )
-				
-				$css .=  "#header.header-5 { background-image: url(".esc_html(get_header_image()).") }"; 
-	
+
+				$css .=  "
+					#header.header-5  { 
+						background-image: url(".esc_html(get_header_image()).");
+						-webkit-background-size: cover !important;
+						-moz-background-size: cover !important;
+						-o-background-size: cover !important;
+						background-size: cover !important;
+						background-attachment: fixed;
+					}"; 
+
 			/* =================== BEGIN PAGE WIDTH =================== */
 			
 		

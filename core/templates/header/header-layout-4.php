@@ -12,9 +12,9 @@
 
 if (!function_exists('suevafree_header_layout_4_function')) {
 
-	function suevafree_header_layout_4_function($menu) { 
+	function suevafree_header_layout_4_function($theme_location, $menu_class) { 
 		
-			do_action( 'suevafree_mobile_menu', $menu );
+			do_action( 'suevafree_mobile_menu', $theme_location, $menu_class );
 		
 	?>
 
@@ -47,8 +47,8 @@ if (!function_exists('suevafree_header_layout_4_function')) {
                                         <?php 
 										
 											wp_nav_menu( array(
-                                        		'theme_location' => $menu,
-                                        		'menu_class' => $menu,
+                                        		'theme_location' => $theme_location,
+                                        		'menu_class' => $menu_class,
 												'container' => 'false',
 												'depth' => 3
 												)

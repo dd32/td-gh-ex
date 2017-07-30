@@ -12,9 +12,9 @@
 
 if (!function_exists('suevafree_header_layout_5_function')) {
 
-	function suevafree_header_layout_5_function($menu) { 
+	function suevafree_header_layout_5_function($theme_location, $menu_class) { 
 			
-			do_action('suevafree_scroll_sidebar', $menu );
+			do_action('suevafree_scroll_sidebar', $theme_location, $menu_class );
 
 	?>
 

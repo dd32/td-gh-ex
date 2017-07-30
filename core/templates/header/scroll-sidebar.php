@@ -11,7 +11,7 @@
 
 if (!function_exists('suevafree_scroll_sidebar_function')) {
 
-	function suevafree_scroll_sidebar_function($menu) {
+	function suevafree_scroll_sidebar_function($theme_location, $menu_class) {
 
 ?>
         
@@ -32,8 +32,8 @@ if (!function_exists('suevafree_scroll_sidebar_function')) {
                             wp_nav_menu( 
                             
                                 array(
-									'theme_location' => $menu,
-									'menu_class' => $menu,
+									'theme_location' => $theme_location,
+									'menu_class' => $menu_class,
                                     'container' => 'false',
                                     'menu_id' => 'widgetmenus',
                                     'depth' => 3

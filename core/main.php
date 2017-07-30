@@ -906,11 +906,21 @@ if (!function_exists('suevafree_setup')) {
 
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f3',
-		) );
+		));
+
+		register_default_headers( array(
+			'default-image' => array(
+				'url'           => get_template_directory_uri() . '/assets/images/background/header.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/assets/images/background/resized-header.jpg',
+				'description'   => __( 'Default image', 'suevafree' )
+			),
+		));
 
 		add_theme_support( 'custom-header', array( 
+			'width'         => 1920,
+			'height'        => 1200,
 			'default-image' => get_template_directory_uri() . '/assets/images/background/header.jpg'
-		) );
+		));
 
 		add_theme_support( 'post-formats', 
 			

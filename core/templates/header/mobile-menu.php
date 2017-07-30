@@ -11,7 +11,7 @@
 
 if (!function_exists('suevafree_mobile_menu_function')) {
 
-	function suevafree_mobile_menu_function($menu) {
+	function suevafree_mobile_menu_function($theme_location, $menu_class) {
 
 ?>
 
@@ -33,8 +33,8 @@ if (!function_exists('suevafree_mobile_menu_function')) {
 										
 							wp_nav_menu( array(
 							
-								'theme_location' => $menu,
-								'menu_class' => $menu,
+								'theme_location' => $theme_location,
+								'menu_class' => $menu_class,
 								'container' => 'false',
 								'depth' => 3
 							
