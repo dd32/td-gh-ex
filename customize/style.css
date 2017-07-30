@@ -1,0 +1,15 @@
+/*** Kirki - Custom Styles ***/
+.customize-control-kirki-toggle .switch {
+    margin-top: 5px !important;
+}
+.customize-control-kirki .description {
+    font-style: normal !important;
+    font-size: 13px !important;
+    font-weight: normal !important;
+}
+
+.customize-control-kirki-radio label .option-description {
+    color: #999 !important;
+    font-size: 12px !important;
+    font-style:italic !important;
+}
