@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/aguafuerte
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Aguafuerte is a theme designed to be fully responsive by taking the mobile-first approach. It features the full range of post formats, two menu locations, one sidebar and three footer widget areas.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, accessibility-ready, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -2422,7 +2422,6 @@ a.entry-date:hover {
 #page-footer a { 
 	text-decoration: none;
 	color: #222;
-	/*! font-size: 1em */
 }
 
 #page-footer i { 
@@ -2950,15 +2949,16 @@ footer .social-navigation .menu {
 .posts-navigation .nav-previous {
 	width: 50%;    
 }
-	.posts-navigation .nav-next {
-		text-align: right;
-		margin-left: 50%;
-	}
+
+.posts-navigation .nav-next {
+	text-align: right;
+	margin-left: 50%;
+}
+
+.posts-navigation .nav-previous {
+	text-align: left;
 	
-	.posts-navigation .nav-previous {
-		text-align: left;
-		
-	}
+}
 
 /**
  * 11.0 - Content
@@ -2982,17 +2982,20 @@ main {
 	min-height: 80vh
 	/*! background-color: red; */
 }
-	.custom-background main, .blog main {
-		margin: 0;
-	}
 
-.inner { 
+.custom-background main, .blog main {
+	margin: 0;
+}
+
+.inner {
+	display: flex;
 	width: 75%;           /*  1200 / 1920   */
 	margin: 0 auto;
 	/*! background-color: blue; */
 }
 
 .single main .inner {
+	display: flex;
 	/*! padding: 2em; */
 	/*! background-color: green; */
 }
@@ -3104,6 +3107,7 @@ header.inner{
 	padding: 0;
 	min-height: 600px;
 	text-align: center;
+	border: 0;
 }
 
 .post:nth-child(4n+1) {
