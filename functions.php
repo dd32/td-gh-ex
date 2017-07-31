@@ -143,6 +143,11 @@ function attitude_core_functionality() {
 	add_image_size( 'gallery', 474, 342, true ); 				// used to show gallery all images
 	add_image_size( 'icon', 80, 80, true );						//used for icon on business layout
 
+	// Support for WooCommerce Product gallery
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
 	/**
 	 * This theme supports custom background color and image
 	 */
@@ -158,4 +163,19 @@ function attitude_core_functionality() {
  * Hooking some functions of functions.php file to this action hook.
  */
 do_action( 'attitude_init' );
+
+add_action( 'after_setup_theme', 'attitude_woocommerce_support' );
+function attitude_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+add_action('woocommerce_before_main_content', 'attitude_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'attitude_wrapper_end', 10);
+function attitude_wrapper_start() { echo '<div id="primary"> <div id="content">'; }
+
+function attitude_wrapper_end() { echo '</div></div>'; }
 ?>

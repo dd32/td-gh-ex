@@ -54,6 +54,6 @@
    do_action( 'attitude_after_primary' );
 ?>
 
-<div id="secondary" class="no-margin-left">
+<div id="secondary">
 	<?php get_sidebar( 'left' ); ?>
 </div><!-- #secondary -->

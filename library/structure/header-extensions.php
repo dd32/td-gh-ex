@@ -18,7 +18,7 @@ add_action( 'attitude_title', 'attitude_add_meta', 5 );
 function attitude_add_meta() {
 ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
 <?php
 }
 
@@ -36,53 +36,6 @@ function attitude_add_links() {
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />	
 <?php
 }
-
-/****************************************************************************************/
-
-// Load Favicon in Header Section
-add_action( 'attitude_links', 'attitude_favicon', 15 );
-// Load Favicon in Admin Section
-add_action( 'admin_head', 'attitude_favicon' );
-/**
- * Get the favicon Image from theme options via Customize
- * display favicon
- */
-function attitude_favicon() {	
-	
-	$attitude_favicon = '';
-	global $options, $array_of_default_settings;
-	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
-
-		if ( 1 != $options[ 'disable_favicon' ] ) {
-			if ( !empty( $options[ 'favicon' ] ) ) {
-				$attitude_favicon .= '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
-			}
-		}
-	echo $attitude_favicon ;	
-}
-
-/****************************************************************************************/
-
-// Load webpageicon in Header Section
-add_action( 'attitude_links', 'attitude_webpageicon', 20 );
-/**
- * Get the webpageicon Image from theme options via Customize
- * display webpageicon
- */
-function attitude_webpageicon() {	
-	
-	$attitude_webpageicon = '';
-	global $options, $array_of_default_settings;
-	$options = wp_parse_args( get_option( 'attitude_theme_options', array() ),attitude_get_option_defaults());
-
-		if ( 1 != $options[ 'disable_webpageicon' ] ) {
-			if ( !empty( $options[ 'webpageicon' ] ) ) {
-				$attitude_webpageicon .= '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'webpageicon' ] ).'" />';
-			}
-		}
-	echo $attitude_webpageicon ;	
-}
-
 /****************************************************************************************/
 
 add_action( 'attitude_header', 'attitude_headerdetails', 10 );
@@ -129,16 +82,14 @@ function attitude_headerdetails() {
 
 	<div class="container clearfix">
 		<div class="hgroup-wrap clearfix">
+			<section class="hgroup-right">
 			<?php 
 				if( 0 == $options[ 'hide_header_searchform' ] || 1 == $flag ) {
-			?>
-					<section class="hgroup-right">
-						<?php attitude_socialnetworks( $flag ); ?>
-						<?php if( 0 == $options[ 'hide_header_searchform' ] ) get_search_form(); ?>
-					</section><!-- .hgroup-right -->	
-			<?php
-				}
-			?>
+					attitude_socialnetworks( $flag );
+					if( 0 == $options[ 'hide_header_searchform' ] ) get_search_form();
+				} ?>
+				<button class="menu-toggle"><?php _e('Responsive Menu','attitude'); ?></button>
+			</section><!-- .hgroup-right -->	
 				<hgroup id="site-logo" class="clearfix">
 					<?php 
 						if( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-text' ) {
@@ -437,7 +388,11 @@ if ( ! function_exists( 'attitude_header_title' ) ) :
  */
 function attitude_header_title() {
 	if( is_archive() ) {
-		$attitude_header_title = single_cat_title( '', FALSE );
+		if( class_exists( 'WooCommerce' ) && is_woocommerce()){
+		$attitude_header_title = get_the_title( get_option( 'woocommerce_shop_page_id' ) );
+		} else{
+		$attitude_header_title = single_cat_title('', FALSE);
+		}
 	}
 	elseif( is_404() ) {
 		$attitude_header_title = __( 'Page NOT Found', 'attitude' );

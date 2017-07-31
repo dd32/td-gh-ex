@@ -18,9 +18,9 @@ add_action( 'attitude_left_sidebar', 'attitude_display_left_sidebar', 10 );
  * Shows all the widgets that are dragged and dropped on the left Sidebar.
  */
 function attitude_display_left_sidebar() {
-	// Calling the left sidebar if it exists.
-	if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_left_sidebar' ) ):
-	endif;
+	if ( is_active_sidebar( 'attitude_left_sidebar' ) ) :
+   	dynamic_sidebar( 'attitude_left_sidebar' );
+   endif;
 }
 
 /****************************************************************************************/
@@ -32,9 +32,37 @@ add_action( 'attitude_right_sidebar', 'attitude_display_right_sidebar', 10 );
  * Shows all the widgets that are dragged and dropped on the right Sidebar.
  */
 function attitude_display_right_sidebar() {
-	// Calling the right sidebar if it exists.
-	if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_right_sidebar' ) ):
-	endif;
+	// Calling the right sidebar
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
+		$content_layout = $options['default_layout'];
+	if ( class_exists( 'WooCommerce' ) && is_woocommerce() && $content_layout == 'right-sidebar' ){ 
+		echo '<div id="secondary">';
+		// Calling the right sidebar
+		if ( is_active_sidebar( 'attitude_right_sidebar' ) ) :
+			dynamic_sidebar( 'attitude_right_sidebar' );
+		endif;
+		echo '</div>';
+	}elseif( class_exists( 'WooCommerce' ) && is_woocommerce() && $content_layout == 'left-sidebar' ){
+		echo '<div id="secondary">';
+		// Calling the left sidebar
+		if ( is_active_sidebar( 'attitude_left_sidebar' ) ) :
+			dynamic_sidebar( 'attitude_left_sidebar' );
+		endif;
+		echo '</div>';
+	}
+	if(!class_exists( 'WooCommerce' )){
+	// Calling the right sidebar
+		if ( is_active_sidebar( 'attitude_right_sidebar' ) ) :
+			dynamic_sidebar( 'attitude_right_sidebar' );
+		endif;
+	}
+	if(class_exists( 'WooCommerce' ) && !is_woocommerce()){
+	// Calling the right sidebar
+		if ( is_active_sidebar( 'attitude_right_sidebar' ) ) :
+			dynamic_sidebar( 'attitude_right_sidebar' );
+		endif;
+	}
 }
 
 /****************************************************************************************/
@@ -46,8 +74,8 @@ add_action( 'attitude_contact_page_sidebar', 'attitude_display_contact_page_side
  * Shows all the widgets that are dragged and dropped on the Contact Page Sidebar.
  */
 function attitude_display_contact_page_sidebar() {
-	// Calling the conatact page sidebar if it exists.
-	if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_contact_page_sidebar' ) ):
+	if ( is_active_sidebar( 'attitude_contact_page_sidebar' ) ) :
+		dynamic_sidebar( 'attitude_contact_page_sidebar' );
 	endif;
 }
 
@@ -66,8 +94,8 @@ function attitude_display_footer_sidebar() {
 			<div class="container">
 				<div class="widget-area clearfix">
 				<?php
-					// Calling the footer sidebar if it exists.
-					if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_footer_sidebar' ) ):
+					if ( is_active_sidebar( 'attitude_footer_sidebar' ) ) :
+						dynamic_sidebar( 'attitude_footer_sidebar' );
 					endif;
 				?>
 				</div><!-- .widget-area -->

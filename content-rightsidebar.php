@@ -15,7 +15,7 @@
    do_action( 'attitude_before_primary' );
 ?>
 
-<div id="primary" class="no-margin-left">
+<div id="primary">
    <?php
       /**
        * attitude_before_loop_content

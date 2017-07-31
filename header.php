@@ -33,8 +33,6 @@
 		 * HOOKED_FUNCTION_NAME PRIORITY
 		 *
 		 * attitude_add_links 10
-		 * attitude_favicon 15
-		 * attitude_webpageicon 20
 		 *
 		 */
 		do_action( 'attitude_links' );

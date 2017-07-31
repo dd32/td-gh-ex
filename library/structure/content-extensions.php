@@ -145,8 +145,8 @@ function attitude_theloop_for_archive() {
 
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
-    				<span class="by-author"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span> |
-    				<span class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
+    				<span class="by-author vcard author"><span class="fn"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></span> |
+    				<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
     				<?php if( has_category() ) { ?>
              		<span class="category"><?php the_category(', '); ?></span> |
              	<?php } ?> 
@@ -308,8 +308,8 @@ function attitude_theloop_for_single() {
 <?php if(get_the_time( get_option( 'date_format' ) )) { ?>
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
-    				<span class="by-author"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span> |
-    				<span class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
+    				<span class="by-author vcard author"><span class="fn"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></span> |
+    				<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
     				<?php if( has_category() ) { ?>
              		<span class="category"><?php the_category(', '); ?></span> |
              	<?php } ?> 
@@ -464,8 +464,8 @@ function attitude_theloop_for_template_blog_image_large() {
 
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
-    				<span class="by-author"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span> |
-    				<span class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
+    				<span class="by-author vcard author"><span class="fn"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></span> |
+    				<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
     				<?php if( has_category() ) { ?>
              		<span class="category"><?php the_category(', '); ?></span> |
              	<?php } ?> 
@@ -577,8 +577,8 @@ function attitude_theloop_for_template_blog_image_medium() {
 
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
-    				<span class="by-author"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span> |
-    				<span class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
+    				<span class="by-author vcard author"><span class="fn"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></span> |
+    				<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
     				<?php if( has_category() ) { ?>
              		<span class="category"><?php the_category(', '); ?></span> |
              	<?php } ?> 
@@ -692,8 +692,8 @@ function attitude_theloop_for_template_blog_full_content() {
 
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
-    				<span class="by-author"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span> |
-    				<span class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
+    				<span class="by-author vcard author"><span class="fn"><?php _e( 'By', 'attitude' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></span> |
+    				<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span> |
     				<?php if( has_category() ) { ?>
              		<span class="category"><?php the_category(', '); ?></span> |
              	<?php } ?> 
@@ -881,7 +881,7 @@ function attitude_display_contact_page_template_content() {
 
 			do_action( 'attitude_before_post' );
 ?>
-	<div id="primary" class="no-margin-left">
+	<div id="primary">
 		<div id="content">
 
 		  			<?php do_action( 'attitude_before_post_content' ); ?>
@@ -960,12 +960,10 @@ add_action( 'attitude_business_template_content', 'attitude_business_template_wi
  */
 function attitude_business_template_widgetized_content() { ?>
 	<div id="content">
-		<?php if( is_active_sidebar( 'attitude_business_page_sidebar' ) ) {
-
-			// Calling the footer sidebar if it exists.
-			if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_business_page_sidebar' ) ):
-			endif;
-		}
+		<?php
+		if ( is_active_sidebar( 'attitude_business_page_sidebar' ) ) :
+			dynamic_sidebar( 'attitude_business_page_sidebar' );
+		endif;
 		?>
 	</div><!-- #content -->
 <?php
