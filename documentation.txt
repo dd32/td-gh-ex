@@ -9,13 +9,16 @@ As an alternative, go to Appearance => Themes => Add New => Upload Theme and cho
 
 - Sample Data
 
-You need to import the sample data in this sequence:
+You need to download and extract the following archive with the sample data
+http://demo.themeinprogress.com/suevafree/suevafree-sample-data.zip
+
+Please follow these steps to import the sample data :
 
 1) Install and activate SuevaFree theme.
 2) Install and activate each required and recommended plugin from Appareance => Plugins
 2) These plugins must be enabled: SuevaFree Essential Kit, WooCommerce, Widget Importer & Exporter, Contact Form 7 and Instagram Slider Widget
-3) Go to Tools => Widget Importer & Exporter => Import and choose suevafree-widgets.wie from “suevafree/demo-content” folder
-4) Go to Tools => Import => WordPress and choose suevafree-export.xml from “suevafree/demo-content” folder.
+3) Go to Tools => Widget Importer & Exporter => Import and choose suevafree-widgets.wie
+4) Go to Tools => Import => WordPress and choose suevafree-export.xml
 5) Go to WooCommerce => Settings => Products => Display and set "Shop" as Shop page
 6) Go to Appareance => Menus and set “Main Menu” to Main Menu position and “One Page” to One Page menu position, from Theme locations option
 
