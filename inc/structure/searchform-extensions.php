@@ -17,7 +17,7 @@ add_action( 'interface_searchform', 'interface_display_searchform', 10 );
 function interface_display_searchform() {
 ?>
 
-<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="searchform clearfix">
+<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="search-form clearfix">
   <label class="assistive-text">
     <?php _e( 'Search', 'interface' ); ?>
   </label>

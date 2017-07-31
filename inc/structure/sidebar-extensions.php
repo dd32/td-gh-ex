@@ -34,9 +34,36 @@ add_action( 'interface_right_sidebar', 'interface_display_right_sidebar', 10 );
  */
 function interface_display_right_sidebar() {
 	// Calling the right sidebar
-	if ( is_active_sidebar( 'interface_right_sidebar' ) ) :
-	dynamic_sidebar( 'interface_right_sidebar' );
-	endif;
+	global $options, $array_of_default_settings;
+   $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
+		$content_layout = $options['default_layout'];
+	if ( class_exists( 'WooCommerce' ) && is_woocommerce() && $content_layout == 'right-sidebar' ){ 
+		echo '<div id="secondary">';
+		// Calling the right sidebar
+		if ( is_active_sidebar( 'interface_right_sidebar' ) ) :
+			dynamic_sidebar( 'interface_right_sidebar' );
+		endif;
+		echo '</div>';
+	}elseif( class_exists( 'WooCommerce' ) && is_woocommerce() && $content_layout == 'left-sidebar' ){
+		echo '<div id="secondary">';
+		// Calling the left sidebar
+		if ( is_active_sidebar( 'interface_left_sidebar' ) ) :
+			dynamic_sidebar( 'interface_left_sidebar' );
+		endif;
+		echo '</div>';
+	}
+	if(!class_exists( 'WooCommerce' )){
+	// Calling the right sidebar
+		if ( is_active_sidebar( 'interface_right_sidebar' ) ) :
+			dynamic_sidebar( 'interface_right_sidebar' );
+		endif;
+	}
+	if(class_exists( 'WooCommerce' ) && !is_woocommerce()){
+	// Calling the right sidebar
+		if ( is_active_sidebar( 'interface_right_sidebar' ) ) :
+			dynamic_sidebar( 'interface_right_sidebar' );
+		endif;
+	}
 
 }
 

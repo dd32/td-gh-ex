@@ -42,8 +42,6 @@
 		 * HOOKED_FUNCTION_NAME PRIORITY
 		 *
 		 * interface_add_links 10
-		 * interface_favicon 15
-		 * interface_webpage_icon 20
 		 *
 		 */
 		do_action( 'interface_links' ); ?>

@@ -112,7 +112,7 @@ function interface_theloop_for_archive() {
 			do_action( 'interface_before_post' );
 ?>
 
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<section id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
   <?php do_action( 'interface_before_post_header' ); ?>
   <article>
     <?php
@@ -962,7 +962,7 @@ function interface_display_contact_page_template_content() {
 
 			do_action( 'interface_before_post' );
 ?>
-  <div id="primary" class="no-margin-left">
+  <div id="primary">
     <div id="content">
       <?php do_action( 'interface_before_post_content' ); ?>
       <div class="entry-content clearfix">

@@ -14,7 +14,7 @@
    do_action( 'interface_before_primary' );
 ?>
 
-<div id="primary" class="no-margin-left">
+<div id="primary">
   <?php
       /**
        * interface_before_loop_content

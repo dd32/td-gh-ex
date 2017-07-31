@@ -22,7 +22,7 @@ function interface_add_meta_name() {
  global $options, $array_of_default_settings;
  $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
 	   if ('on' == $options['site_design']) { ?>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width">
 <?php   } else{ ?>
 <meta name="viewport" content="width=1078" />
 <?php  }
@@ -40,60 +40,7 @@ function interface_add_links() {
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
 <?php
-}
-
-/****************************************************************************************/
-
-// Load Favicon in Header Section
-add_action( 'interface_links', 'interface_favicon', 15 );
-// Load Favicon in Admin Section
-add_action( 'admin_head', 'interface_favicon' );
-/**
- * Get the favicon Image from Customizer
- * display favicon
- * 
- */
-function interface_favicon() {	
-	
-	$interface_favicon = '';
-		global $options, $array_of_default_settings;
-      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
-		if ( 1 != $options[ 'disable_favicon' ] ) {
-			if ( !empty( $options[ 'favicon' ] ) ) {
-				$interface_favicon .= '<link rel="shortcut icon" href="'.esc_url( $options[ 'favicon' ] ).'" type="image/x-icon" />';
-			}
-		}
-
-	echo $interface_favicon ;	
-}
-
-/****************************************************************************************/
-
-// Load webpageicon in Header Section
-add_action( 'interface_links', 'interface_webpage_icon', 20 );
-/**
- * Get the webpageicon Image from Customizer
- * display webpageicon
- *
- */
-function interface_webpage_icon() {	
-	
-	$interface_webpage_icon = '';
-		global $options, $array_of_default_settings;
-      $options = wp_parse_args( get_option( 'interface_theme_options', array() ), interface_get_option_defaults());
-
-		if ( 1 != $options[ 'disable_webpageicon' ] ) {
-			if ( !empty( $options[ 'webpageicon' ] ) ) {
-				$interface_webpage_icon .= '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'webpageicon' ] ).'" />';
-			}
-		}
-		
-		
-	echo $interface_webpage_icon ;	
 }
 
 /****************************************************************************************/
@@ -527,10 +474,15 @@ if ( ! function_exists( 'interface_header_title' ) ) :
  * @since Interface 1.0
  */
 function interface_header_title() {
-	if( is_archive() ) {
-		$interface_header_title = single_cat_title( '', FALSE );
-	}
-	elseif( is_404() ) {
+	if (is_archive()) {
+		if( class_exists( 'WooCommerce' ) && is_woocommerce()){
+		$interface_header_title = get_the_title( get_option( 'woocommerce_shop_page_id' ) );
+		} else{
+		$interface_header_title = single_cat_title('', FALSE);
+		}
+	} elseif (is_home()){
+		$interface_header_title = get_the_title( get_option( 'page_for_posts' ) );
+	} elseif (is_404()) {
 		$interface_header_title = __( 'Page NOT Found', 'interface' );
 	}
 	elseif( is_search() ) {

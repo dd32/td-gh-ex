@@ -33,7 +33,6 @@
 	#primary,
 	#secondary {
 		float: none;
-		margin-left: 0;
 		width: 100%;
 	}
 	.no-sidebar-template #content {
@@ -106,25 +105,6 @@
 	hr {
 		margin-bottom: 30px;
 	}
-	input[type="text"],
-	input[type="email"],
-	input[type="search"],
-	input[type="password"],
-	input[type="tel"],
-	input[type="url"],
-	input[type="date"],
-	textarea,
-	input[type="reset"],
-	input[type="button"],
-	input[type="submit"],
-	input[type="radio"],
-	input[type="checkbox"],
-	input[type="file"] {
-		margin-bottom: 20px;
-	}
-	input.s {
-		margin: 0;
-	}
 	.container,
 	.narrow-layout .wrapper {
 		width: 300px;
@@ -173,7 +153,7 @@
 		border: 0 none;
 		padding: 0;
 		color: #777;
-		width: 30px;
+		width: 24px;
 		height: 21px;
 		float: right;
 		margin-top: 39px;
@@ -183,11 +163,11 @@
 		display: block;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		font-size: 25px;
+		font-size: 28px;
 		line-height: 0;
-		font-family: 'Genericons';
+		font-family: 'FontAwesome';
 		vertical-align: top;
-		content: '\f419';
+		content: '\f0c9';
 	}
 	.hgroup-right {
 		clear: both;

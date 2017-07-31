@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-30 13:39+0530\n"
-"PO-Revision-Date: 2015-09-30 13:39+0530\n"
+"POT-Creation-Date: 2017-07-26 16:11+0530\n"
+"PO-Revision-Date: 2017-07-26 16:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: Themehorse <support@themehorse.com>\n"
 "MIME-Version: 1.0\n"
@@ -87,11 +87,6 @@ msgstr ""
 msgid "Theme Horse"
 msgstr ""
 
-#: inc/functions/customizer.php:11
-#: inc/functions/customizer.php:12
-msgid "Donate"
-msgstr ""
-
 #: inc/functions/customizer.php:14
 msgid "Review Interface"
 msgstr ""
@@ -121,404 +116,377 @@ msgstr ""
 msgid "View Demo"
 msgstr ""
 
-#: inc/functions/customizer.php:32
-#: inc/functions/customizer.php:33
-#: inc/functions/customizer.php:762
-msgid "Upgrade to Interface Pro"
-msgstr ""
-
-#: inc/functions/customizer.php:34
-msgid "to get more aditional features like (Advanced Slider, Color Options, Typography Options and many more.)"
-msgstr ""
-
-#: inc/functions/customizer.php:53
+#: inc/functions/customizer.php:45
 msgid "--Disabled--"
 msgstr ""
 
-#: inc/functions/customizer.php:69
+#: inc/functions/customizer.php:132
 msgid "Layout Options"
 msgstr ""
 
-#: inc/functions/customizer.php:74
+#: inc/functions/customizer.php:137
 msgid "Design Options"
 msgstr ""
 
-#: inc/functions/customizer.php:80
+#: inc/functions/customizer.php:143
 msgid "Advance Options"
 msgstr ""
 
-#: inc/functions/customizer.php:86
+#: inc/functions/customizer.php:149
 msgid "Featured Post/Page Slider"
 msgstr ""
 
-#: inc/functions/customizer.php:92
+#: inc/functions/customizer.php:155
 msgid "Contact / Social Links"
 msgstr ""
 
-#: inc/functions/customizer.php:99
-msgid "What is new on Interface Pro?"
-msgstr ""
-
-#: inc/functions/customizer.php:112
-#: inc/functions/customizer.php:133
-msgid "Interface Upgrade"
-msgstr ""
-
-#: inc/functions/customizer.php:119
+#: inc/functions/customizer.php:162
 msgid "Interface Support"
 msgstr ""
 
-#: inc/functions/customizer.php:120
-msgid "Hey! Buy us a beer and we shall come with new features and update."
-msgstr ""
-
-#: inc/functions/customizer.php:142
-#: inc/functions/customizer.php:153
-msgid "Site Layout"
-msgstr ""
-
-#: inc/functions/customizer.php:154
-msgid "This change is reflected in whole website"
-msgstr ""
-
-#: inc/functions/customizer.php:160
-msgid "Narrow Layout"
-msgstr ""
-
-#: inc/functions/customizer.php:161
-msgid "Wide Layout"
-msgstr ""
-
-#: inc/functions/customizer.php:166
-msgid "Content Layout"
-msgstr ""
-
-#: inc/functions/customizer.php:177
-msgid "Layouts"
-msgstr ""
-
-#: inc/functions/customizer.php:183
-msgid "No Sidebar"
+#: inc/functions/customizer.php:175
+msgid "Interface Upgrade"
 msgstr ""
 
 #: inc/functions/customizer.php:184
+#: inc/functions/customizer.php:195
+msgid "Site Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:196
+msgid "This change is reflected in whole website"
+msgstr ""
+
+#: inc/functions/customizer.php:202
+msgid "Narrow Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:203
+msgid "Wide Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:208
+msgid "Content Layout"
+msgstr ""
+
+#: inc/functions/customizer.php:219
+msgid "Layouts"
+msgstr ""
+
+#: inc/functions/customizer.php:225
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/functions/customizer.php:226
 msgid "No Sidebar, Full Width"
 msgstr ""
 
-#: inc/functions/customizer.php:185
+#: inc/functions/customizer.php:227
 #: inc/widgets/interface_widgets.php:20
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/functions/customizer.php:186
+#: inc/functions/customizer.php:228
 #: inc/widgets/interface_widgets.php:31
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/functions/customizer.php:191
-#: inc/functions/customizer.php:202
+#: inc/functions/customizer.php:233
+#: inc/functions/customizer.php:244
 msgid "Responsive Layout"
 msgstr ""
 
-#: inc/functions/customizer.php:208
+#: inc/functions/customizer.php:250
 msgid "ON(Responsive view will be displayed in small devices )"
 msgstr ""
 
-#: inc/functions/customizer.php:209
+#: inc/functions/customizer.php:251
 msgid "OFF(Full site will display as desktop view)"
 msgstr ""
 
-#: inc/functions/customizer.php:216
+#: inc/functions/customizer.php:258
 msgid "Custom Header"
 msgstr ""
 
-#: inc/functions/customizer.php:227
+#: inc/functions/customizer.php:269
 msgid "Hide Searchform from Header"
 msgstr ""
 
-#: inc/functions/customizer.php:242
+#: inc/functions/customizer.php:284
 msgid "Header Logo"
 msgstr ""
 
-#: inc/functions/customizer.php:255
+#: inc/functions/customizer.php:297
 msgid "Show"
 msgstr ""
 
-#: inc/functions/customizer.php:261
+#: inc/functions/customizer.php:303
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/functions/customizer.php:262
+#: inc/functions/customizer.php:304
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/functions/customizer.php:263
+#: inc/functions/customizer.php:305
 msgid "Disable"
 msgstr ""
 
-#: inc/functions/customizer.php:268
-msgid "Fav Icon Options"
-msgstr ""
-
-#: inc/functions/customizer.php:279
-msgid "Disable Favicon"
-msgstr ""
-
-#: inc/functions/customizer.php:301
-msgid "Web Clip Icon Options"
-msgstr ""
-
-#: inc/functions/customizer.php:312
-msgid "Disable Web Clip Icon"
-msgstr ""
-
-#: inc/functions/customizer.php:334
+#: inc/functions/customizer.php:310
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/functions/customizer.php:345
+#: inc/functions/customizer.php:321
 msgid "Enter your custom CSS styles."
 msgstr ""
 
-#: inc/functions/customizer.php:346
+#: inc/functions/customizer.php:322
 msgid "This CSS will overwrite the CSS of style.css file."
 msgstr ""
 
-#: inc/functions/customizer.php:355
+#: inc/functions/customizer.php:331
 msgid "Home Slogan Options"
 msgstr ""
 
-#: inc/functions/customizer.php:366
+#: inc/functions/customizer.php:342
 msgid "Disable Slogan Part"
 msgstr ""
 
-#: inc/functions/customizer.php:378
+#: inc/functions/customizer.php:354
 msgid "Slogan Position"
 msgstr ""
 
-#: inc/functions/customizer.php:384
+#: inc/functions/customizer.php:360
 msgid "Above Slider"
 msgstr ""
 
-#: inc/functions/customizer.php:385
+#: inc/functions/customizer.php:361
 msgid "Below Slider"
 msgstr ""
 
-#: inc/functions/customizer.php:395
+#: inc/functions/customizer.php:371
 msgid "Home Page Primary Slogan"
 msgstr ""
 
-#: inc/functions/customizer.php:396
+#: inc/functions/customizer.php:372
 msgid "TThe appropriate length of the slogan is around 10 words."
 msgstr ""
 
-#: inc/functions/customizer.php:408
+#: inc/functions/customizer.php:384
 msgid "Home Page Secondary Slogan"
 msgstr ""
 
-#: inc/functions/customizer.php:409
+#: inc/functions/customizer.php:385
 msgid "The appropriate length of the slogan is around 10 words."
 msgstr ""
 
-#: inc/functions/customizer.php:417
+#: inc/functions/customizer.php:393
 msgid "Homepage Blog Category Setting"
 msgstr ""
 
-#: inc/functions/customizer.php:418
+#: inc/functions/customizer.php:394
 msgid "Only posts that belong to the categories selected here will be displayed on the front page. ( You may select multiple categories by holding down the CTRL key. ) "
 msgstr ""
 
-#: inc/functions/customizer.php:433
+#: inc/functions/customizer.php:409
 msgid "Front page posts categories"
 msgstr ""
 
-#: inc/functions/customizer.php:444
+#: inc/functions/customizer.php:420
 msgid "Slider Options"
 msgstr ""
 
-#: inc/functions/customizer.php:456
+#: inc/functions/customizer.php:432
 msgid "Disable Slider"
 msgstr ""
 
-#: inc/functions/customizer.php:469
+#: inc/functions/customizer.php:445
 msgid "Slider Content"
 msgstr ""
 
-#: inc/functions/customizer.php:475
+#: inc/functions/customizer.php:451
 msgid "ON (Slider Content will be displayed)"
 msgstr ""
 
-#: inc/functions/customizer.php:476
+#: inc/functions/customizer.php:452
 msgid "OFF (Slider Content will not be displayed)"
 msgstr ""
 
-#: inc/functions/customizer.php:487
+#: inc/functions/customizer.php:463
 msgid "Number of Slides"
 msgstr ""
 
-#: inc/functions/customizer.php:500
+#: inc/functions/customizer.php:476
 msgid "Transition Effect"
 msgstr ""
 
-#: inc/functions/customizer.php:505
+#: inc/functions/customizer.php:481
 msgid "Fade"
 msgstr ""
 
-#: inc/functions/customizer.php:506
+#: inc/functions/customizer.php:482
 msgid "Wipe"
 msgstr ""
 
-#: inc/functions/customizer.php:507
+#: inc/functions/customizer.php:483
 msgid "Scroll Up"
 msgstr ""
 
-#: inc/functions/customizer.php:508
+#: inc/functions/customizer.php:484
 msgid "Scroll Down"
 msgstr ""
 
-#: inc/functions/customizer.php:509
+#: inc/functions/customizer.php:485
 msgid "Scroll Left"
 msgstr ""
 
-#: inc/functions/customizer.php:510
+#: inc/functions/customizer.php:486
 msgid "Scroll Right"
 msgstr ""
 
-#: inc/functions/customizer.php:511
+#: inc/functions/customizer.php:487
 msgid "Blind X"
 msgstr ""
 
-#: inc/functions/customizer.php:512
+#: inc/functions/customizer.php:488
 msgid "Blind Y"
 msgstr ""
 
-#: inc/functions/customizer.php:513
+#: inc/functions/customizer.php:489
 msgid "Blind Z"
 msgstr ""
 
-#: inc/functions/customizer.php:514
+#: inc/functions/customizer.php:490
 msgid "Cover"
 msgstr ""
 
-#: inc/functions/customizer.php:515
+#: inc/functions/customizer.php:491
 msgid "Shuffle"
 msgstr ""
 
-#: inc/functions/customizer.php:526
+#: inc/functions/customizer.php:502
 msgid "Transition Delay"
 msgstr ""
 
-#: inc/functions/customizer.php:539
+#: inc/functions/customizer.php:515
 msgid "Transition Length"
 msgstr ""
 
-#: inc/functions/customizer.php:546
+#: inc/functions/customizer.php:522
 msgid "Featured Post/ Page Slider Options"
 msgstr ""
 
-#: inc/functions/customizer.php:558
+#: inc/functions/customizer.php:534
 msgid "Check to exclude"
 msgstr ""
 
-#: inc/functions/customizer.php:559
+#: inc/functions/customizer.php:535
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 
-#: inc/functions/customizer.php:574
+#: inc/functions/customizer.php:550
 msgid " Featured Slider Post/Page #"
 msgstr ""
 
-#: inc/functions/customizer.php:583
+#: inc/functions/customizer.php:559
 msgid "Contact Info Bar"
 msgstr ""
 
-#: inc/functions/customizer.php:595
+#: inc/functions/customizer.php:571
 msgid "Disable Top Info Bar"
 msgstr ""
 
-#: inc/functions/customizer.php:608
+#: inc/functions/customizer.php:584
 msgid "Disable Bottom Info Bar"
 msgstr ""
 
-#: inc/functions/customizer.php:621
+#: inc/functions/customizer.php:597
 msgid "Phone Number"
 msgstr ""
 
-#: inc/functions/customizer.php:622
+#: inc/functions/customizer.php:598
 msgid "Enter your Phone number only"
 msgstr ""
 
-#: inc/functions/customizer.php:635
+#: inc/functions/customizer.php:611
 msgid "Email ID Only"
 msgstr ""
 
-#: inc/functions/customizer.php:636
+#: inc/functions/customizer.php:612
 msgid "Enter your Email ID"
 msgstr ""
 
-#: inc/functions/customizer.php:649
+#: inc/functions/customizer.php:625
 msgid "Location Only"
 msgstr ""
 
-#: inc/functions/customizer.php:650
+#: inc/functions/customizer.php:626
 msgid "Enter your Address"
 msgstr ""
 
-#: inc/functions/customizer.php:658
+#: inc/functions/customizer.php:634
 msgid "Social Links"
 msgstr ""
 
-#: inc/functions/customizer.php:664
-#: inc/structure/header-extensions.php:215
+#: inc/functions/customizer.php:640
+#: inc/structure/header-extensions.php:162
 msgid "Facebook"
 msgstr ""
 
-#: inc/functions/customizer.php:665
-#: inc/structure/header-extensions.php:216
+#: inc/functions/customizer.php:641
+#: inc/structure/header-extensions.php:163
 msgid "Twitter"
 msgstr ""
 
-#: inc/functions/customizer.php:666
-#: inc/structure/header-extensions.php:217
+#: inc/functions/customizer.php:642
+#: inc/structure/header-extensions.php:164
 msgid "Google Plus"
 msgstr ""
 
-#: inc/functions/customizer.php:667
-#: inc/structure/header-extensions.php:218
+#: inc/functions/customizer.php:643
+#: inc/structure/header-extensions.php:165
 msgid "Pinterest"
 msgstr ""
 
-#: inc/functions/customizer.php:668
-#: inc/structure/header-extensions.php:219
+#: inc/functions/customizer.php:644
+#: inc/structure/header-extensions.php:166
 msgid "Youtube"
 msgstr ""
 
-#: inc/functions/customizer.php:669
-#: inc/structure/header-extensions.php:220
+#: inc/functions/customizer.php:645
+#: inc/structure/header-extensions.php:167
 msgid "Vimeo"
 msgstr ""
 
-#: inc/functions/customizer.php:670
-#: inc/structure/header-extensions.php:221
+#: inc/functions/customizer.php:646
+#: inc/structure/header-extensions.php:168
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/functions/customizer.php:671
-#: inc/structure/header-extensions.php:222
+#: inc/functions/customizer.php:647
+#: inc/structure/header-extensions.php:169
 msgid "Flickr"
 msgstr ""
 
-#: inc/functions/customizer.php:672
-#: inc/structure/header-extensions.php:223
+#: inc/functions/customizer.php:648
+#: inc/structure/header-extensions.php:170
 msgid "Tumblr"
 msgstr ""
 
-#: inc/functions/customizer.php:673
-#: inc/structure/header-extensions.php:224
+#: inc/functions/customizer.php:649
+#: inc/structure/header-extensions.php:171
 msgid "RSS"
 msgstr ""
 
-#: inc/functions/functions.php:299
+#: inc/functions/customizer.php:727
+msgid "Interface Pro"
+msgstr ""
+
+#: inc/functions/customizer.php:728
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: inc/functions/functions.php:301
 msgid "on"
 msgstr ""
 
@@ -684,24 +652,24 @@ msgstr ""
 msgid "Powered by:"
 msgstr ""
 
-#: inc/structure/header-extensions.php:162
+#: inc/structure/header-extensions.php:109
 msgid "\" Call Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:172
+#: inc/structure/header-extensions.php:119
 msgid "\" Mail Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:246
+#: inc/structure/header-extensions.php:193
 #, php-format
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: inc/structure/header-extensions.php:534
+#: inc/structure/header-extensions.php:486
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/structure/header-extensions.php:537
+#: inc/structure/header-extensions.php:489
 msgid "Search Results"
 msgstr ""
 

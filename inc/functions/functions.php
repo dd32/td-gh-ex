@@ -26,10 +26,10 @@ function interface_scripts_styles_method() {
 	 */
 	// Load our main stylesheet.
 	wp_enqueue_style( 'interface_style', get_stylesheet_uri());
-
-	
-	
-	wp_style_add_data( 'interface-ie', 'conditional', 'lt IE 9' ); 
+	wp_enqueue_style('interface-font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.css');
+	// Load the html5 shiv.
+	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' ); 
 	
 	if ('on' == $options['site_design']) {
 	//Css for responsive design
@@ -46,7 +46,7 @@ function interface_scripts_styles_method() {
 	 * Register JQuery cycle js file for slider.
 	 * Register Jquery fancybox js and css file for fancybox effect.
 	 */
-	wp_register_script( 'jquery_cycle', INTERFACE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery_cycle', INTERFACE_JS_URL . '/jquery.cycle.all.js', array( 'jquery' ), '3.0.3', true );
 
    wp_register_style( 'google_fonts', '//fonts.googleapis.com/css?family=PT+Sans:400,700italic,700,400italic' ); 
 
