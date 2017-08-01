@@ -90,8 +90,15 @@ if ( $args->has_children && $depth === 0 ) {
 } else {
    $atts['href'] = ! empty( $item->url ) ? $item->url : '';
 }
-
-
+/** 
+ * theme_mod in theme Appeal 
+ */
+ 
+    if( get_theme_mods() ) : 
+        if ( get_theme_mod( 'appeal_nav_walker_mobi_setting', 0 ) ) : 
+            $appealmobi = get_theme_mod( 'appeal_nav_walker_mobi_setting');
+            if ( $appealmobi == 1 ) { 
+ 
 			// If item has_children add atts to a.
  
 			if ( $args->has_children && $depth === 0 ) {
@@ -102,7 +109,14 @@ if ( $args->has_children && $depth === 0 ) {
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
+            //ends nav_walker commented out
+
+ } else { 
+ //no mobile 
+ } 
+ endif;
  
+ endif;
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
 			$attributes = '';

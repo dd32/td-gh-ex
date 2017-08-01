@@ -39,9 +39,9 @@
                             <?php // Check which Post Thumbnail is assigned to post.
                             if ( has_post_thumbnail( 'appeal-thumbnail' ) ) { ?>
                                 <?php printf( '<a class="appeal-imglink"
-                                                href="' . get_permalink( $post->ID  ) . '"
-                                                alt ="' . esc_attr( get_the_title( $post->ID  ) 
-                                                ) . '">' ); ?>
+                                                href="' . esc_attr( get_permalink( $post->ID  ) ) . '"
+                                                alt ="' . esc_attr( get_the_title( $post->ID  ) ) . '">' 
+                                            ); ?>
                                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                                           'itemprop' => 'image', 
                                                           'class' => 'img-responsive appeal-thumbnail',
@@ -50,9 +50,9 @@
                                 // ends if has custom thumb size
                                 ?>
                                 <?php printf( '<a class="appeal-imglink"
-                                                href="' . get_permalink( $post->ID ) . '"
-                                                alt ="' . esc_attr( get_the_title( $post->ID ) 
-                                                ) . '">' ); ?>
+                                                href="' . esc_attr( get_permalink( $post->ID ) ) . '"
+                                                alt ="' . esc_attr( get_the_title( $post->ID ) ) . '">' 
+                                            ); ?>
                                 <?php the_post_thumbnail('thumbnail', array( 
                                                          'itemprop' => 'image', 
                                                          'class' => 'img-responsive appeal-thumbnail',
@@ -114,95 +114,102 @@
  */
             ?>
 
-            <section id="appeal-content" class="post_content">
+        <section id="appeal-content" class="post_content">
 
-				<?php get_template_part('content', 'header' ); ?>
+		    <?php get_template_part('content', 'header' ); ?>
 
-                <div class="row">
-                    <div class="after-content-header">
+            <div class="row">
+                <div class="after-content-header">
 
-                    <?php if( has_post_thumbnail() ) :
-                    ?>
-                        <?php
-                        // check which Post Thumbnail is assigned to page.
-
-                        if ( has_post_thumbnail( 'appeal-thumbnail' ) ) { 
+                <?php if( has_post_thumbnail() ) :
+                ?>
+                    <?php 
                         //set caption var for titles and caption
                         $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
-                        ?>
+                        
+                    // check which Post Thumbnail is assigned to page.
+                    if ( has_post_thumbnail( 'appeal-thumbnail' ) ) { 
+                    //SHOW APPEAL THUMB
+                    ?>
 
                         <div class="col-xs-6 col-sm-6 col-lg-7">
                         <a class="appeal-imglinks"
-                           href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>" 
+                           href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>" 
                            <?php if( !empty ( $get_description ) ) { ?>
-                        title="<?php echo esc_attr( $get_description ); ?>"><?php } ?>
+                           title="<?php echo esc_attr( $get_description ); ?>"<?php } ?>>
                         <?php the_post_thumbnail( 'appeal-featured', array( 
-                                                'itemprop' => 'image', 
-                                                'class' => 'img-responsive appeal-thumbnail',
-                                                'alt' => 'link' ) ); ?></a>
-                                                <?php  
-                                                if( !empty( $get_description ) ) {
-    //If description-caption is not empty show the div
-    ?><div class="featured_caption" title="<?php echo esc_attr( $get_description ); ?>">
-    <?php echo esc_html( $get_description ); ?></div>
-    <?php 
-    } else { 
-    echo '<div class="no-descript"></div>'; } ?>
+                                                  'itemprop' => 'image', 
+                                                  'class' => 'img-responsive appeal-thumbnail',
+                                                  'alt' => 'link' ) ); ?></a>
+                          <?php if( !empty( $get_description ) ) 
+                          {
+                            //If description-caption is not empty show the div
+                          ?>
+                            <div class="featured_caption" 
+                                 title="<?php echo esc_attr( $get_description ); ?>">
+                                 <?php echo esc_html( $get_description ); ?>
+                            </div>
+                          <?php 
+                          } ?>          
     
                         </div>
 
-                        <?php } else { 
-                        //set caption var for titles and caption
-                        $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
-                        ?>
+                    <?php 
+                    } else { 
+                    //SHOW WP ATTACHMENT THUMB
+                    ?>
 
                         <div class="col-xs-6 col-sm-6 col-lg-7">
                         <a class="appeal-imglinks"
-                           href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>" 
-                              <?php if( !empty ( $get_description ) ) { ?>
-                        title="<?php echo esc_attr( $get_description ); ?>"><?php } ?>
+                           href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>" 
+                           <?php if( !empty ( $get_description ) ) { ?>
+                           title="<?php echo esc_attr( $get_description ); ?>"<?php } ?>>
                         <?php the_post_thumbnail('thumbnail', array( 
                                                 'itemprop' => 'image', 
                                                 'class' => 'img-responsive appeal-thumbnail',
                                                 'alt' => 'link' ) ); ?></a>
-                                                <?php 
-                        $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
-                                                if(!empty($get_description)){
-                                                //If description-caption is not empty show the div
-    ?><div class="featured_caption" title="<?php echo esc_attr( $get_description ); ?>">
-    <?php echo esc_html( $get_description ); ?></div>
-    <?php 
-    } else { 
-    echo '<div class="no-descript"></div>'; } ?>
+                        <?php if(!empty($get_description)){
+                              //If description-caption is not empty show the div
+                        ?>
+                        <div class="featured_caption">
+                        <?php echo esc_html( $get_description ); ?>
                         </div>
                         <?php } ?>
-
-                    <?php else : echo '<div class="no-thumb"></div>';
-
-                    endif; 
-                    //end of check for thumbnail
-                    ?>
+                        </div>
                     <?php 
-    // Check if theme mod Pullquote uusage is activated.
+                    //ends wp thumb
+                    } ?>
+
+                <?php else : 
+                echo '<div class="no-thumb"></div>';
+
+                endif; 
+                //end of check for thumbnail
+                ?>
+                    <?php 
+                    // Check if theme mod Pullquote uusage is activated.
                     $theme_modEx = get_theme_mod( 'appeal_custom_teaser_usage_setting', 'none' ); 
-                    if( $theme_modEx == "block" ) { 
+                    if( $theme_modEx == "block" ) 
+                    : 
                     ?>
-                    <?php if ( has_excerpt( $post->ID ) ) { ?>
+                        <?php if ( has_excerpt( $post->ID ) ) 
+                        { ?>
                         <div class="col-xs-6 col-sm-6 col-lg-5">
                             <div class="pullquote">
-                            <aside>
-                            <?php the_excerpt() ?>
-                            </aside>
+                                <aside>
+                                <?php the_excerpt() ?>
+                                </aside>
                             </div>
                         </div><div class="clearfix"></div>
-                    </div>
-                    <?php }  
-                    }
+                        
+                    <?php 
+                        }  
+                    endif;
                     //ends .after-content-header .row
                     ?>
 
                 </div>
-                    <div class="<?php echo appeal_post_formats(); ?>">
+                    <div class="<?php echo esc_attr( appeal_post_formats() ); ?>">
                         <div class="inner_content">
 
                             <?php the_content(''); ?>
@@ -273,7 +280,7 @@
 
                 <div class="col-xs-6 col-sm-6 col-lg-7">
                 <a class="appeal-imglinks"
-                   href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>">
+                   href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>">
                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',
@@ -286,7 +293,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-lg-7">
                     <a class="appeal-imglinks"
-                       href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>">
+                       href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>">
                     <?php the_post_thumbnail( 'thumbnail', array( 
                                               'itemprop' => 'image', 
                                               'class' => 'img-responsive appeal-thumbnail',
@@ -330,7 +337,7 @@
                         
             <div class="col-sm-12">
                 <a class="appeal-imglinks"
-                   href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>">
+                   href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>">
                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',
@@ -343,7 +350,7 @@
 
                 <div class="col-sm-12">
                 <a class="appeal-imglinks"
-                   href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>">
+                   href="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>">
                 <?php the_post_thumbnail( 'thumbnail', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',

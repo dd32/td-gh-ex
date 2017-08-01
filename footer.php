@@ -80,9 +80,10 @@
 
                             <div class="col-sx-12 col-md-4">
                                 <p class="text-muted"><?php
-                                $year   = esc_attr( date( 'Y' ) );
-                                printf( esc_attr__( 'Copyright %s ', 'appeal' ), $year );
-                                printf( bloginfo( 'name' ) ); ?></p>
+                                $year   = date( 'Y' );
+                                esc_attr_e( 'Copyright ', 'appeal' ); 
+                                echo esc_attr( $year ) . ' ';
+                                printf( esc_attr( bloginfo( 'name' ) ) ); ?></p>
                             </div>
 
                             <div class="col-sx-12 col-md-4">

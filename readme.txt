@@ -32,6 +32,14 @@ link and use any of the child links below it.
 
 
 == Change Log ==
+1.1.0
+* escaped several functions
+* fixed featured image and appeal image in single page
+* fixed wordwraps
+* added comment count helper
+* added theme mod for mobile nav
+* enqueue scripts fixed
+
 1.0.9 
 - removed some title options
 - is_sidebar to footer and header

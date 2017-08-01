@@ -1,11 +1,11 @@
 /**
   Theme Name:  Appeal
   Theme URI:   http://themes.tradesouthwest.com/appeal/
-  Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert template and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support, set color and width of pullquote teaser, set Post excerpt length. Parent navigation is mobile first. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
+  Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert top-bar and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support; set color, width and number of words for pullquote teaser; set Post excerpt length. Parent navigation is mobile first yet has an off switch for desktop. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.0.9
+  Version:     1.1.0
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -4352,6 +4352,14 @@ h3.comment-reply-title {
     font-size: 14px;
     margin: 0 auto;
 }
+.inner_content,
+.show-comment-nmbr,
+.widget,
+.entry-title, 
+.widget[class*="widget_"] {
+overflow-wrap: break-word;
+word-wrap: break-word;
+}
 #calendar_wrap {
     margin-top: .5em;
 }
@@ -5167,7 +5175,7 @@ body.home.blog #main .article-inner {
     margin-top: 1.4em;
 } 
 
-body.home.page-template-page-advert-top .inner-content { 
+body.home.page-template-page-advert-top .inner_content { 
     width: 100%;
 }
 header.content-header {

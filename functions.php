@@ -91,17 +91,13 @@ function appeal_custom_thumb_sizes( $sizes ) {
 function appeal_theme_scripts() {
 
     // For use of child themes
-    wp_register_style( 'appeal-style',
-                        get_stylesheet_directory_uri() . '/style.css',
-                        array(),
-                        null,
-                        'all' );
-    wp_register_script( 'bootstrap-script',
+    wp_enqueue_style( 'appeal-style', get_stylesheet_uri() );
+    wp_enqueue_script( 'bootstrap-script',
                         get_template_directory_uri() . '/assets/bootstrap.js',
                         array ( 'jquery' ),
                         '3.3.7',
                         true);
-    wp_register_script( 'appeal-script',
+    wp_enqueue_script( 'appeal-script',
                         get_template_directory_uri() . '/assets/appeal.js',
                         array ( 'jquery' ),
                         '',
@@ -109,9 +105,7 @@ function appeal_theme_scripts() {
 
     //enqueue (sane and include) scripts into WP
     wp_enqueue_style( 'appeal-google-fonts');
-    wp_enqueue_style( 'appeal-style' );
-    wp_enqueue_script( 'bootstrap-script' );
-    wp_enqueue_script( 'appeal-script' );
+   
 
 }
 add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
@@ -202,22 +196,18 @@ add_action( 'init', 'appeal_theme_excerpt_support' );
  * support for logo upload, output.
  */
 function appeal_theme_custom_logo() {
-
-    // Try to retrieve the Custom Logo
     $output = '';
-    if (function_exists('get_custom_logo'))
-        $output = '<div class="header-logo">';
-        $output .= get_custom_logo();
-        $output .= '</div>';
-
-    // If Custom Logo is not supported, or there is no selected logo
-    // In both cases we display the site's name
-    if (empty($output))
-        $output = '';
-
+    if ( function_exists( 'the_custom_logo' ) ) {
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        if ( has_custom_logo() ) {
+            $output = '<div class="header-logo"><img src="'. esc_url( $logo[0] ) .'"></div>'; 
+            } 
+            else 
+                { $output = '<h1>'. get_bloginfo( 'name' ) .'</h1>'; }
+    }
     return $output;
 }
-
 
 /** 
  * Custom usage of more_tag to split content in two.
@@ -227,8 +217,8 @@ function appeal_theme_custom_logo() {
   */
 function appeal_split_content() {
 if( is_page()) {
-    global $more;
-    $more = true;
+    //global $more;
+    //$more = true;
     $content = preg_split('/<span id="more-\d+"><\/span>/i', get_the_content('more'));
     for($c = 0, $csize = count($content); $c < $csize; $c++) {
         $content[$c] = apply_filters('the_content', $content[$c]);
@@ -428,7 +418,7 @@ function appeal_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 
 		printf( '<link rel="pingback" href="%s">'
-                 . "\n", get_bloginfo( 'pingback_url' ) );
+                 . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'appeal_pingback_header' );

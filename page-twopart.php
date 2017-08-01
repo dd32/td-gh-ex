@@ -16,8 +16,8 @@ use more tag to split content "&gt;!--more-->"
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-lines' ); ?>>
             <h2 class="entry-title"><?php the_title(); ?></h2>
             <section class="post_content">
+            
 	    <?php 
-
             $content = appeal_split_content();
             // output first content section in column1
 	    echo '<div class="col-sm-6">', array_shift($content), '</div>';

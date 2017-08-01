@@ -5,7 +5,7 @@
 	    <div id="main" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" role="main">
 
 		<?php if (have_posts()) : ?>
-        <h2><?php printf( __( 'Search Results for: %s', 'appeal' ), '<span>' . get_search_query() . '</span>'); ?></h2>
+        <h2><?php esc_html_e( 'Search Results for: ', 'appeal' ); echo esc_html( get_search_query() ); ?></h2>
              
             <?php  while ( have_posts() ) : the_post(); ?>
         
@@ -18,7 +18,7 @@
                         
                 </div><!-- ends entry-content -->
                     <footer class="meta-footer">
-                      <a href="<?php echo get_permalink(); ?>" 
+                      <a href="<?php echo esc_attr( get_permalink() ); ?>" 
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
                       <time class="alignright" 

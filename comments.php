@@ -20,7 +20,7 @@
 
 if ( post_password_required() )
     return;
-        ?><ol class="commentlist" itemscope="commentText" 
+        ?><ol id="appealComm" class="commentlist" itemscope="commentText" 
                                   itemtype="http://schema.org/UserComments">
         <?php
             wp_list_comments( array(

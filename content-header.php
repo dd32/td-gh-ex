@@ -117,15 +117,18 @@
                       datetime="<?php echo esc_attr( $time_format ); ?>"
                       itemprop="datePublished" pubdate 
                       class="thedate"><?php echo esc_html( $time_format ); ?></time> 
-                <div class="count-header">
                 <?php if( is_single() ) 
                 {
-                echo '<span class="show-comment-nmbr"><small>'; 
-                printf( _nx( '1 Response', '%1$s Responses', get_comments_number(), 
-                'Responses', 'appeal' ), number_format_i18n( get_comments_number() ) );
-                echo '</small></span>'; 
+                ?>      
+                <div class="count-header">
+                    <span class="show-comment-nmbr"><small> 
+                     <?php get_template_part( 'comments', 'count' ); ?></small>
+                    </span>
+                </div>
+                <?php 
                 } 
-                ?></div>
+                ?>
+                
             </div>
             
     </div>

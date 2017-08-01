@@ -13,27 +13,26 @@
 						<?php echo single_cat_title( '', false ); ?>
 
 					<?php elseif ( is_author() ) : ?>
-						<?php printf( __( 'Author Archive for %s', 'appeal' ),
-                                      get_the_author_meta( 'display_name',
-                                      get_query_var( 'author' ) ) ); ?>
+						<?php esc_html_e( 'Author Archive for ', 'appeal' ); 
+                              printf( esc_attr( get_the_author_meta( 
+                                      'display_name', get_query_var( 'author' ) ) ) 
+                                    ); ?>
 
 					<?php elseif ( is_tag() ) : ?>
-						<?php printf( __( 'Tag Archive for %s', 'appeal' ),
-                                      single_tag_title( '', false ) ); ?>
+						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' );  
+                                      printf( single_tag_title( '', false ) ); ?>
 
 					<?php elseif ( is_day() ) : ?>
-						<?php printf( __( 'Daily Archives: %s', 'appeal' ),
-                                      get_the_date() ); ?>
+						<?php echo esc_html_e( 'Daily Archives: ', 'appeal' );
+                              printf( get_the_date() ); ?>
 
 					<?php elseif ( is_month() ) : ?>
-						<?php printf( __( 'Monthly Archives: %s', 'appeal' ),
-                                      get_the_date( _x( 'F Y',
-                                      'monthly archives date format', 'appeal' ) ) ); ?>
+						<?php echo esc_html_e( 'Monthly Archives: ', 'appeal' );
+                              printf( esc_attr( get_the_date( 'F Y' ) ) ); ?>
 
 					<?php elseif ( is_year() ) : ?>
-						<?php printf( __( 'Yearly Archives: %s', 'appeal' ),
-                                      get_the_date( _x( 'Y',
-                                      'yearly archives date format', 'appeal' ) ) ); ?>
+						<?php echo esc_html_e( 'Yearly Archives: ', 'appeal' );
+                              printf( esc_attr( get_the_date( 'Y' ) ) ); ?>
 
     					<?php else : ?>
     						<?php esc_html_e( 'Blog Archives', 'appeal' ); ?>
@@ -61,7 +60,7 @@
                 <div class="entry-content">
 
                     <?php the_excerpt(); ?>
-                         <a href="<?php echo get_permalink(); ?>" 
+                         <a href="<?php echo esc_url( get_permalink() ); ?>" 
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
                 </div><!-- ends entry-content -->   

@@ -154,6 +154,17 @@ function appeal_register_theme_customizer($wp_customize)
 		)
 	);
 	
+	/** (13)
+     * WP_Customize_ /add_setting for use mobile nav or not
+     * @since 1.1.0
+    */
+	$wp_customize->add_setting(	'appeal_nav_walker_mobi_setting', array(
+            'type'              => 'theme_mod',
+            'default'           => '0',
+			'sanitize_callback'	=> 'appeal_sanitize_number_absint',
+			'transport'			=> 'refresh'
+		)
+	);
     /** (9)
      * WP_Customize_ /add_setting for theme instructions
     */
@@ -237,7 +248,7 @@ function appeal_register_theme_customizer($wp_customize)
             'type'              => 'select',
             'choices'   => array(
                 'block' => __( 'Use Excerpt as Pullquote', 'appeal' ),
-                'none'  => __( 'Use default excert', 'appeal' ),
+                'none'  => __( 'Use default excerpt', 'appeal' ),
             ),
         )
     );
@@ -337,13 +348,29 @@ function appeal_register_theme_customizer($wp_customize)
         )
     );
     
+    /** (13) Mobile Nav @use or not use
+     * @since 1.0.7 
+     */
+    $wp_customize->add_control(
+        'appeal_nav_walker_mobi', array(
+            'settings'          => 'appeal_nav_walker_mobi_setting',
+            'section'           => 'appeal_custom_teaser_length_section',
+            'label'             => __( 'Mobile Navigation Preference', 'appeal' ),
+            'type'              => 'select',
+            'choices'   => array(
+                '0' => __( 'Leave Top Menu Item Selectable', 'appeal' ),
+                '1'  => __( 'Use Mobile Nav (top tap only)', 'appeal' ),
+            ),
+        )
+    );
+    
     // (9)
     $wp_customize->add_control(
         'appeal_theme_instructions', array(
             'settings'          => 'appeal_theme_instructions_setting',
             'type'              => 'hidden',
             'section'           => 'appeal_custom_teaser_length_section',
-            'description'       => __( 'View theme instructions and option notes from menu <b>Appearance > Theme Options</b>', 'appeal' ),
+            'description'       => __( 'Instructions: <b>Appearance > Theme Options</b>', 'appeal' ),
         )
     );
 
@@ -398,7 +425,7 @@ function appeal_customizer_css() {
 
         if ( get_theme_mod( 'appeal_topbox_image_setting' ) ) :
              $appealtopbox = get_theme_mod( 'appeal_topbox_image_setting');
-             echo '#topbox-banner { background: url('.$appealtopbox.'); }';
+             echo '#topbox-banner { background: url( ' . esc_attr($appealtopbox) . ' ); }';
         endif;
         
         if ( get_theme_mod( 'appeal_sidebar_border_setting' ) ) :

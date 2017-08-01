@@ -14,11 +14,13 @@
 <div id="content-wrapper">
     <div class="site-head">
 
-
-
         <div class="hgroup">
 
-            <?php printf( appeal_theme_custom_logo() ); ?>
+            <?php if( has_custom_logo() ) : ?>
+            <a title="<?php bloginfo('description'); ?>"
+                  href="<?php echo esc_url(home_url('/')); ?>">
+            <?php printf( appeal_theme_custom_logo() ); ?></a>
+            <?php endif; ?>
         
             <p class="list-inline">
             <span class="site-title">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-07-11 19:23-0700\n"
-"PO-Revision-Date: 2017-07-11 19:23-0700\n"
+"POT-Creation-Date: 2017-07-31 19:58-0700\n"
+"PO-Revision-Date: 2017-07-31 19:58-0700\n"
 "Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_nx;"
-"_x\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html_e;esc_attr_e;"
+"_nx;_n\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -31,47 +31,43 @@ msgstr ""
 msgid "Four by three Ratio Thumb"
 msgstr ""
 
-#: functions.php:142
-msgid "on"
-msgstr ""
-
-#: functions.php:253
+#: functions.php:243
 msgid "Read Article"
 msgstr ""
 
-#: functions.php:355
+#: functions.php:345
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:356 functions.php:365
+#: functions.php:346 functions.php:355
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:364
+#: functions.php:354
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:364
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:365
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:374
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:393
+#: functions.php:383
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:402
+#: functions.php:392
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:401
 msgid "Footer Right"
 msgstr ""
 
@@ -83,19 +79,19 @@ msgstr ""
 msgid "Archives for "
 msgstr ""
 
-#: author.php:23 content.php:490
+#: author.php:23 content.php:501
 msgid "Articles by "
 msgstr ""
 
-#: author.php:28 content.php:496
+#: author.php:28 content.php:507
 msgid "E-Mail: "
 msgstr ""
 
-#: author.php:31 content.php:499
+#: author.php:31 content.php:510
 msgid "email link text to author"
 msgstr ""
 
-#: sidebar.php:6 footer.php:92
+#: sidebar.php:6 footer.php:93
 msgid "Top/Pg."
 msgstr ""
 
@@ -161,15 +157,11 @@ msgstr ""
 msgid "Authors link to author website or other works."
 msgstr ""
 
-#: content-header.php:124 part-metadata.php:14
-msgid "1 Response"
-msgstr ""
-
 #: header.php:13
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:45
+#: header.php:47
 msgid "Navigation"
 msgstr ""
 
@@ -178,7 +170,7 @@ msgid "Instructions Etc"
 msgstr ""
 
 #: theme-options.php:31
-msgid "Theme Options"
+msgid "Theme Setup"
 msgstr ""
 
 #: theme-options.php:49
@@ -189,131 +181,169 @@ msgstr ""
 msgid "Appeal Theme Instructions and General Information"
 msgstr ""
 
-#: theme-options.php:74
+#: theme-options.php:75
 msgid "Appeal theme page"
 msgstr ""
 
-#: theme-options.php:76
+#: theme-options.php:77
 msgid "General Overview of Theme Settings"
 msgstr ""
 
-#: theme-options.php:81
+#: theme-options.php:82
 msgid "Excerpt Instructions"
 msgstr ""
 
-#: theme-options.php:82
+#: theme-options.php:83
 msgid "Two Part Page"
 msgstr ""
 
-#: theme-options.php:83
+#: theme-options.php:84
 msgid "Three Wide Page"
 msgstr ""
 
-#: theme-options.php:84
+#: theme-options.php:85
 msgid "Tips and Information"
 msgstr ""
 
-#: theme-options.php:89
+#: theme-options.php:90
 msgid ""
 "To utilize the Pullquote excerpt option you will need to enable the Screen "
 "Options from the Pages or Posts Editor page. See first picture below."
 msgstr ""
 
-#: theme-options.php:89
+#: theme-options.php:91
 msgid ""
 "To add the Pullquote you will use the Excerpt box which should now appear at "
 "the bottom of the Editor box. See picture 2 below."
 msgstr ""
 
-#: theme-options.php:91
+#: theme-options.php:93
 msgid ""
 "Page template that is TwoPart Template can divide the page content by using "
 "the"
 msgstr ""
 
-#: theme-options.php:94
+#: theme-options.php:95
+msgid "tag."
+msgstr ""
+
+#: theme-options.php:97
+msgid ""
+"Place the more-tag at the point where you want the page content to split in "
+"half."
+msgstr ""
+
+#: theme-options.php:98
+msgid ""
+"Test your height by viewing and pre-defining your content with a private "
+"page in order to achieve a balanced layout of paragraphs prior to publishing"
+msgstr ""
+
+#: theme-options.php:100
+msgid "in editor will justify text alignment."
+msgstr ""
+
+#: theme-options.php:102
 msgid ""
 "Three Width Page Template is a normal copy of your content and displays the "
 "page with small sidebar on the left and a wider sidebar on the right."
 msgstr ""
 
-#: theme-options.php:96
+#: theme-options.php:103
+msgid ""
+"Also note that if theme is set to render posts &lt;blog> as home page  Three "
+"Wide Template will be the home page."
+msgstr ""
+
+#: theme-options.php:105
 msgid "Customize Theme"
 msgstr ""
 
-#: theme-options.php:98
-#, php-format
-msgid ""
-"To set up the Pullquote color, width and length, open Customizer </p>\n"
-"    <p style=\"text-align:center\"><a href=\"%s\" class=\"button-primary"
-"\">customizer</a>"
-msgstr ""
-
-#: theme-options.php:108
-msgid "Screen Options pull-down menu"
-msgstr ""
-
-#: theme-options.php:109
-msgid "Editor Excerpt meta-box for Pullquote"
-msgstr ""
-
-#: theme-options.php:112
-msgid "Other Notes"
-msgstr ""
-
-#: theme-options.php:112
-msgid ""
-"&bull; Author Links are taken from the User Profile. Be creative by adding "
-"user profile info into Bio textarea."
-msgstr ""
-
-#: theme-options.php:112
-msgid ""
-"To set up social media links in the page footer--and the popup--use "
-"Appearance > Menus  then create your links using the <Custom Links> panel."
+#: theme-options.php:106
+msgid "To set up the Pullquote color, width and length, open Customizer"
 msgstr ""
 
 #: theme-options.php:117
-msgid "ref. use more tag in editor:"
-msgstr ""
-
-#: theme-options.php:118
-msgid "ref. private page viewing:"
-msgstr ""
-
-#: theme-options.php:122
-msgid "Three Wide Template"
+msgid "Screen Options pull-down menu"
 msgstr ""
 
 #: theme-options.php:124
+msgid "Editor Excerpt meta-box for Pullquote"
+msgstr ""
+
+#: theme-options.php:126
+msgid "Mobile Navigation"
+msgstr ""
+
+#: theme-options.php:127
+msgid ""
+"Set you preferences for mobile navigation in the Customizer to allow the top "
+"level menu item to be a tap only, on dropdowns; or as a non-mobile menu to "
+"allow the top level item to be a clickable link."
+msgstr ""
+
+#: theme-options.php:135
+msgid "ref. use more tag in editor:"
+msgstr ""
+
+#: theme-options.php:137
+msgid "ref. private page viewing:"
+msgstr ""
+
+#: theme-options.php:144
+msgid "Three Wide Template"
+msgstr ""
+
+#: theme-options.php:147
 msgid "Full width Template"
 msgstr ""
 
-#: theme-options.php:125
+#: theme-options.php:148
 msgid ""
 "Appeal has an additional template Full Width Page that can be used for "
 "galleries or larger content."
 msgstr ""
 
-#: theme-options.php:137
+#: theme-options.php:152
+msgid "Other notes"
+msgstr ""
+
+#: theme-options.php:153
+msgid ""
+"By hiding titles of posts/pages, your titles can be added from your Editor "
+"to give better SEO URLs and puts title where you want it in the article. h3 "
+"tag is pre styled to match theme. The Editor Title box will be the url name "
+"which, is required."
+msgstr ""
+
+#: theme-options.php:154
+msgid ""
+"&bull; Author Links are taken from the User Profile. Be creative by adding "
+"user profile info into Bio textarea."
+msgstr ""
+
+#: theme-options.php:155
+msgid ""
+"To set up social media links in the page footer: Appearance > Menus - then "
+"<Custom Links> to the left. Footer does not support depths."
+msgstr ""
+
+#: theme-options.php:163
 msgid ""
 "Also try the Plugin Depict by TSW to create an expanded Author Profile for "
 "this theme."
 msgstr ""
 
-#: theme-options.php:137
-#, php-format
-msgid ""
-"Plugin can be found online at <a href=\"%s\" title=\"w.org plugins\" target="
-"\"_blank\">https://wordpress.org/plugins/depict/</a>"
+#: theme-options.php:164
+msgid "Plugin can be found online at "
 msgstr ""
 
-#: theme-options.php:139
+#: theme-options.php:169
 msgid "Donate if you like."
 msgstr ""
 
 #: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
-#: content.php:389
+#: content.php:400
 msgid "Edit"
 msgstr ""
 
@@ -333,48 +363,51 @@ msgstr ""
 msgid "Design by "
 msgstr ""
 
-#: content.php:212 content.php:371
+#: footer.php:84
+msgid "Copyright "
+msgstr ""
+
+#: content.php:223 content.php:382
 msgid "Pages : "
 msgstr ""
 
-#: content.php:218 content.php:377
+#: content.php:229 content.php:388
 msgid "Next page"
 msgstr ""
 
-#: content.php:219 content.php:378
+#: content.php:230 content.php:389
 msgid "Previous page"
 msgstr ""
 
-#: content.php:462
+#: content.php:473
 msgid "Information about the author you selected"
 msgstr ""
 
-#: content.php:467
+#: content.php:478
 msgid "Author:  "
 msgstr ""
 
-#: content.php:479
+#: content.php:490
 msgid "link to author"
 msgstr ""
 
-#: content.php:483
+#: content.php:494
 msgid "Author Page and Archives for "
 msgstr ""
 
-#: content.php:487
+#: content.php:498
 msgid "Number of articles by this author, "
 msgstr ""
 
-#: content.php:503 content.php:504
+#: content.php:514 content.php:515
 msgid "Close"
 msgstr ""
 
 #: search.php:8
-#, php-format
-msgid "Search Results for: %s"
+msgid "Search Results for: "
 msgstr ""
 
-#: search.php:23 archive.php:74
+#: search.php:23 archive.php:65
 msgid "View Article..."
 msgstr ""
 
@@ -402,167 +435,173 @@ msgstr ""
 msgid "Next: "
 msgstr ""
 
+#: comments-count.php:16
+#, php-format
+msgid "%1$s Response to &ldquo;%2$s&rdquo;"
+msgstr ""
+
 #: customize.php:18
 msgid "Appeal Theme Controls"
 msgstr ""
 
-#: customize.php:177
+#: customize.php:188
 msgid "Header, Footer and Sidebars Background"
 msgstr ""
 
-#: customize.php:179
+#: customize.php:190
 msgid ""
 "Select the background color of the header area,\n"
 "                    the footer and sidebars"
 msgstr ""
 
-#: customize.php:192
+#: customize.php:203
 msgid "Content Background Color"
 msgstr ""
 
-#: customize.php:194
+#: customize.php:205
 msgid "Sets background color of Post and Page content"
 msgstr ""
 
-#: customize.php:207
+#: customize.php:218
 msgid "Links Color"
 msgstr ""
 
-#: customize.php:209
+#: customize.php:220
 msgid "Select the color for hyperlinks. May not effect everything."
 msgstr ""
 
-#: customize.php:222
+#: customize.php:233
 msgid "PullQuote Text Color"
 msgstr ""
 
-#: customize.php:224
+#: customize.php:235
 msgid "Select the color for pullquote excerpt on articles."
 msgstr ""
 
-#: customize.php:236
+#: customize.php:247
 msgid "PullQuote Replaces Excerpt"
 msgstr ""
 
-#: customize.php:239
+#: customize.php:250
 msgid "Use Excerpt as Pullquote"
 msgstr ""
 
-#: customize.php:240
-msgid "Use default excert"
+#: customize.php:251
+msgid "Use default excerpt"
 msgstr ""
 
-#: customize.php:251
+#: customize.php:262
 msgid "Set Pullquote Width"
 msgstr ""
 
-#: customize.php:252
+#: customize.php:263
 msgid "This sets how wide the Teaser will be."
 msgstr ""
 
-#: customize.php:266
+#: customize.php:277
 msgid "Set POSTS ONLY Excerpt Length"
 msgstr ""
 
-#: customize.php:278
+#: customize.php:289
 msgid "Title Visible only on: "
 msgstr ""
 
-#: customize.php:282
+#: customize.php:293
 msgid "Posts and Pages"
 msgstr ""
 
-#: customize.php:283
+#: customize.php:294
 msgid "Posts Only - Not Pages"
 msgstr ""
 
-#: customize.php:291
+#: customize.php:302
 msgid "Choose color for link icon: "
 msgstr ""
 
-#: customize.php:295
+#: customize.php:306
 msgid "Black Link Icon"
 msgstr ""
 
-#: customize.php:296
+#: customize.php:307
 msgid "Red Link Icon"
 msgstr ""
 
-#: customize.php:297
+#: customize.php:308
 msgid "Blue Link Icon"
 msgstr ""
 
-#: customize.php:298
+#: customize.php:309
 msgid "Green Link Icon"
 msgstr ""
 
-#: customize.php:299
+#: customize.php:310
 msgid "Gray Link Icon"
 msgstr ""
 
-#: customize.php:310
+#: customize.php:321
 msgid "Upload Image to Top Advert Box"
 msgstr ""
 
-#: customize.php:311
+#: customize.php:322
 msgid "Upload will override any widgets."
 msgstr ""
 
-#: customize.php:319
+#: customize.php:330
 msgid "Choose border style on sidebars."
 msgstr ""
 
-#: customize.php:323
+#: customize.php:334
 msgid "No borders"
 msgstr ""
 
-#: customize.php:324
+#: customize.php:335
 msgid "Show borders"
 msgstr ""
 
-#: customize.php:326
+#: customize.php:337
 msgid "Show borders and Box-Shadow"
 msgstr ""
 
-#: customize.php:336
+#: customize.php:347
 msgid "Wording for View Sidebar button"
 msgstr ""
 
-#: customize.php:346
-msgid ""
-"View theme instructions and option notes from menu <b>Appearance > Theme "
-"Options</b>"
+#: customize.php:358
+msgid "Mobile Navigation Preference"
+msgstr ""
+
+#: customize.php:361
+msgid "Leave Top Menu Item Selectable"
+msgstr ""
+
+#: customize.php:362
+msgid "Use Mobile Nav (top tap only)"
+msgstr ""
+
+#: customize.php:373
+msgid "Instructions: <b>Appearance > Theme Options</b>"
 msgstr ""
 
 #: archive.php:16
-#, php-format
-msgid "Author Archive for %s"
+msgid "Author Archive for "
 msgstr ""
 
-#: archive.php:21
-#, php-format
-msgid "Tag Archive for %s"
+#: archive.php:22
+msgid "Tag Archive for "
 msgstr ""
 
-#: archive.php:25
-#, php-format
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: archive.php:29
-#, php-format
-msgid "Monthly Archives: %s"
+#: archive.php:26
+msgid "Daily Archives: "
 msgstr ""
 
 #: archive.php:30
-msgid "F Y"
+msgid "Monthly Archives: "
 msgstr ""
 
 #: archive.php:34
-#, php-format
-msgid "Yearly Archives: %s"
+msgid "Yearly Archives: "
 msgstr ""
 
-#: archive.php:35
-msgid "Y"
+#: archive.php:38
+msgid "Blog Archives"
 msgstr ""

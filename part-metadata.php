@@ -10,10 +10,10 @@
 
     <?php if ( is_front_page() && is_home() || is_home() ) 
     { 
-        echo '<li class="show-comment-nmbr"><small>'; 
-        printf( _nx( '1 Response', '%1$s Responses', get_comments_number(), 
-        'Responses', 'appeal' ), number_format_i18n( get_comments_number() ) );
-        echo '</small></li></ul>'; 
+    ?>
+        <li class="show-comment-nmbr"><small>
+        <?php get_template_part( 'comments', 'count' );
+        ?></small></li></ul><?php 
     }   // Stop here (don't need tags and edit on home blog)
         elseif ( is_single() )
         { 
