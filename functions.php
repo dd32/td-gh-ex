@@ -4,6 +4,14 @@ require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' 
 foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
 	include $filename;
 }
+require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
+new WP_Review_Me( array(
+		'days_after' => 14,
+		'type'       => 'theme',
+		'slug'       => 'apex',
+		'message'    => __( 'Hey! Sorry to interrupt, but you\'ve been using Apex for a little while now. If you\'re happy with this theme, could you take a minute to leave a review? <i>You won\'t see this notice again after closing it.</i>', 'apex' )
+	)
+);
 
 if ( ! function_exists( ( 'ct_apex_set_content_width' ) ) ) {
 	function ct_apex_set_content_width() {
@@ -32,12 +40,13 @@ if ( ! function_exists( ( 'ct_apex_theme_setup' ) ) ) {
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_apex_infinite_scroll_render'
 		) );
-
-		load_theme_textdomain( 'apex', get_template_directory() . '/languages' );
+		add_theme_support( 'woocommerce' );
 
 		register_nav_menus( array(
 			'primary' => __( 'Primary', 'apex' )
 		) );
+
+		load_theme_textdomain( 'apex', get_template_directory() . '/languages' );
 	}
 }
 add_action( 'after_setup_theme', 'ct_apex_theme_setup', 10 );
@@ -130,6 +139,12 @@ add_filter( 'comment_form_default_fields', 'ct_apex_update_fields' );
 if ( ! function_exists( 'ct_apex_update_comment_field' ) ) {
 	function ct_apex_update_comment_field( $comment_field ) {
 
+		// don't filter the WooCommerce review form
+		if ( function_exists( 'is_woocommerce' ) ) {
+			if ( is_woocommerce() ) {
+				return $comment_field;
+            }
+        }
 		$comment_field =
 			'<p class="comment-form-comment">
 	            <label for="comment">' . _x( "Comment", "noun", "apex" ) . '</label>
