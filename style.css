@@ -1,0 +1,558 @@
+@charset "UTF-8";
+/*
+Theme Name: Base For Original
+Description: Base For Original is simpler, inorganic, less tasty theme than any theme. Base For Original is the basis of original theme creation, and supports to create your own original theme. This theme contains the minimum necessary files on the typical Web site. Please use this theme to create your own original theme or lerning.
+Author: Wildworks
+Author URI: https://profiles.wordpress.org/wildworks/
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, featured-images, editor-style, threaded-comments, right-sidebar, sticky-post, full-width-template, translation-ready
+Text Domain: base-for-original
+*/
+
+/******************************************************
+* Reset CSS
+******************************************************/
+
+html, body, div, span, p, h1, h2, h3, h4, h5,h6,
+a, dl, dt, dd, ol, ul, li, form, label,
+table, tbody, tfoot, thead, tr, th, td,
+article, footer, header, nav, section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+*{
+  box-sizing: border-box;
+}
+main, article, footer, header, nav, section {
+  display: block;
+}
+ol, ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+pre {
+  white-space: normal;
+}
+textarea{
+  max-width: 100%;
+}
+
+/******************************************************
+* WordPress Origin Class
+******************************************************/
+
+.wp-caption{
+  max-width: 100%;
+}
+.wp-caption-text{
+  text-align: left;
+}
+.screen-reader-text{
+}
+.gallery-caption{
+}
+.bypostauthor{
+}
+.sticky{
+}
+.alignright{
+  float: right;
+}
+.alignleft{
+  float: left;
+}
+.aligncenter{
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:768px) {
+  .alignright,
+  .alignleft,
+  .aligncenter{
+    float: none;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/******************************************************
+* Common Style
+******************************************************/
+
+body {
+  line-height: 1.7; /*Set the base line height of the site.*/
+  font-size: 14px; /*Set the base font size of the site.*/
+  font-family: sans-serif;
+  background: #FFF;
+  color: #3C3C3C; /*Set the base color of the site.*/
+}
+
+/*Reduce the width of the image to fit the width of the parent element.*/
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/*Set the base color of the link.*/
+a{
+  color: #F27398;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+/*Transpare image when mouseover the img element surrounded by a tag.*/
+a:hover img{
+  opacity: 0.8;
+}
+
+/*Attach this class to the parent element when you want to cancel float.*/
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/*Attach this class to the element you want to display as a button.*/
+.button{
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  transition: 0.2s;
+  text-align: center;
+  max-width: 100%;
+  border: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 200px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #F27398; /*Set the base color of button.*/
+  color: #FFFFFF; /*Set the font color of the button.*/
+}
+
+/*Set the style when mouseover the button.*/
+.button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/*Determine the width of the entire content.*/
+.container{
+  width: 1020px; /*Set the width of the entire content.*/
+  max-width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+@media screen and (max-width:768px) {
+  .container{
+    width: 100%;
+  }
+}
+
+/******************************************************
+* Header
+*
+* - Includes site description, site logo, tel link and navigation menu.
+* - The header is fixed at the top of the browser if the width of the browser is 768px or less.
+******************************************************/
+
+header #header_description{
+  margin-left: 10px;
+}
+header h1{
+  margin: 10px 0 0 10px;
+  float: left;
+  font-size: 0;
+}
+header h1 a{
+  display: block;
+}
+header h1 a img{
+  height: 50px;
+  vertical-align: bottom;
+}
+header #header_tel{
+  float: right;
+  border: 1px #BBB solid;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  margin: 10px 10px 0 0;
+}
+header #header_tel a{
+  display: block;
+  text-decoration: none;
+}
+header #header_button{
+  display: none;
+}
+header nav{
+  margin: 20px 0;
+}
+header nav ul{
+  font-size:0;
+}
+header nav ul li{
+  border: 1px #BBB solid;
+  text-align: center;
+  display: inline-block;
+  width: 20%; /*Change the value according to the number of navigation menu.*/
+  height: 40px;
+  line-height: 40px;
+}
+header nav ul li a{
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media screen and (max-width:768px) {
+  /*The header is fixed at the top of the browser */
+  header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    border: 1px #BBB solid;
+    background: #FFF;
+    z-index: 1;
+  }
+
+  header #header_description{
+    display: none;
+  }
+  header #header_tel{
+    display: none;
+  }
+
+  /*Hamburger menu style.*/
+  header #header_button{
+    display: block;
+  }
+  header #header_button{
+    display: block;
+    position: fixed;
+    top: 12px;
+    right: 15px;
+  }
+  header #header_button:hover{
+    cursor: pointer;
+  }
+  header #header_button span{
+    display: block;
+    height: 6px;
+    width: 40px;
+    background: #3C3C3C;
+    margin: 7px auto;
+  }
+
+  header nav{
+    margin: 0;
+  }
+  header nav ul{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    padding: 0;
+    width: 100%;
+    border: 1px #BBB solid;
+    background: #FFF;
+  }
+  header nav ul li{
+    display: block;
+    width: 100%;
+  }
+}
+
+/******************************************************
+*Style for wrap
+*
+* - Includes main visual, main contents and sidebar.
+******************************************************/
+
+#wrap{
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width:768px) {
+  #wrap{
+    margin-top: 70px; /*Set the height of header.*/
+  }
+}
+
+/******************************************************
+* Style for main visual
+*
+* - Display full width of browser.
+* - Includes page title of h2 tag.
+******************************************************/
+
+#main_visual{
+  background: url(images/main_visual.jpg) no-repeat center;
+  padding-top: 31.25%; /* (image height / image width × 100) */
+  background-size: contain;
+  border: 1px #BBB solid;
+  position: relative;
+  margin-bottom: 20px;
+}
+ #main_visual h2{
+  position: absolute;
+  padding: 0 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+@media screen and (max-width:768px) {
+   #main_visual h2{
+    font-size: 20px;
+   }
+}
+
+/******************************************************
+*  Style for main contents
+*
+* - Stretch according to the width of the browser.
+******************************************************/
+
+/*Wrapper id of main contents.*/
+#primary{
+  float: left;
+  width: 100%;
+  margin-right: -300px; /*Set a value more than the width of the sidebar.*/
+  padding-right: 300px; /*Set a value more than the width of the sidebar.*/
+}
+#primary main{
+  border: 1px #BBB solid;
+  padding: 10px;
+}
+
+@media screen and (max-width:768px) {
+  #primary{
+    float: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+}
+
+/******************************************************
+*  Style for sidebar
+*
+* - Fixed width.
+******************************************************/
+
+/*Wrapper id of sidebar.*/
+#secondary{
+  float: right;
+  width: 280px; /*Set the width of sidebar.*/
+  border: 1px #BBB solid;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/*Wrapper class of widget.*/
+#secondary .widget{
+  border: 1px #BBB solid;
+}
+#secondary .widget:not(:last-child){
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width:768px) {
+  #secondary{
+    float: none;
+    width: 100%;
+  }
+}
+
+
+/******************************************************
+* Style for footer
+*
+* - Includes navigation menu and copyright.
+******************************************************/
+
+footer{
+  border: 1px #BBB solid;
+}
+footer nav{
+  padding: 10px;
+}
+footer nav ul{
+  float: left;
+  width: 33.3%; /*Change the value according to the number of columns.*/
+  border: 1px #BBB solid;
+  padding: 10px;
+}
+footer #copyright{
+  text-align: center;
+  padding: 0 10px;
+  border: 1px #BBB solid;
+}
+
+@media screen and (max-width:768px) {
+  footer nav ul{
+    float: none;
+    width: 100%;
+  }
+}
+
+/******************************************************
+*  Style for Comments
+******************************************************/
+
+/*Wrapper id of comments.*/
+#comments{
+  border: 1px #BBB solid;
+  padding: 10px;
+}
+
+/*Wrapper class of comment.*/
+#comments .comment{
+  border: 1px #BBB solid;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/*Wrapper class of comment reply.*/
+#comments .comment-respond{
+  border: 1px #BBB solid;
+  padding: 10px;
+}
+
+/******************************************************
+*  Style for Single Page
+*
+* - The body tag has 'single' class on the single page.
+* - Describe here.If you want to define unique style on the single page.
+******************************************************/
+
+/*Style for the article title.*/
+.single h2.entry-title{
+  font-size: 20px;
+}
+
+/*Style for the article thumbnail. */
+.single .entry-thumbnail{
+  text-align: center;
+}
+.single .entry-thumbnail img{
+  width: 100%;
+  max-width: 250px; /*Set the max width of the thumbnail.*/
+}
+
+/*Style for the article text. */
+.single .entry-content{
+  border: 1px #BBB solid;
+  margin-bottom: 10px;
+}
+
+/*Style for the pagenation. */
+.single .pagenation{
+  border: 1px #BBB solid;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.single .pagenation .prev{
+  float: left;
+}
+.single .pagenation .next{
+  float: right;
+}
+
+/*Style for the tag. */
+.single .tag{
+  border: 1px #BBB solid;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/******************************************************
+*  Style for Archive Page
+* - The body tag has 'archive' class on the archive page.
+* - Describe here.If you want to define unique style on the archive page.
+******************************************************/
+
+/*Style for the archive category title.*/
+.archive h2.archive-title{
+  font-size: 20px;
+}
+
+.archive .archive-entry{
+  display: table;
+  border: 1px #BBB solid;
+  padding: 10px;
+  width: 100%;
+}
+
+/*Style for the article thumbnail. */
+.archive .archive-entry .entry-thumbnail{
+  display: table-cell;
+  width: 200px; /*Set the width of the thumbnail.*/
+  vertical-align: middle;
+}
+
+/*Style for the article title and excerpt. */
+.archive .archive-entry .entry-main{
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+}
+.archive .archive-entry .entry-main h3 a{
+  font-size: 18px;
+}
+
+@media screen and (max-width:768px) {
+  .archive .archive-entry .entry-thumbnail{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .archive .archive-entry .entry-thumbnail img{
+    max-width: 200px;
+  }
+  .archive .archive-entry .entry-main{
+    display: block;
+  }
+}
+
+/******************************************************
+*  Style for Front Page
+*
+* - Body element has 'home' class on the front page.
+* - Describe here.If you want to define unique style on the front page.
+******************************************************/
+
+.home #primary main{
+}
+
+/******************************************************
+*  Style for Page (xxx)
+*
+* - Body element has 'page-xxx' class on the page. ('xxx' is the page slug.)
+* - Describe here.If you want to define unique style on the page.
+******************************************************/
+
+.page-xxx #primary main{
+}
