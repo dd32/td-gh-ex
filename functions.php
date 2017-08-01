@@ -58,7 +58,7 @@ function ariel_setup() {
 	add_image_size( 'ariel-featured', 540, 540, true ); // Featured Posts 
 	add_image_size( 'ariel-grid', 840, 500, true ); // Grid blog feed
 	if ( class_exists( 'WooCommerce' ) ) {
-        add_image_size( 'ariel-shop', 270, 320, true ); // Shop archive
+        add_image_size( 'ariel-shop', 540, 640, true ); // Shop archive
     }
 
 	/**

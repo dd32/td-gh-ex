@@ -23,7 +23,5 @@ get_header(); ?>
 /**
  * Footer widgets area
  */
-get_sidebar( 'footer-top' );
-get_sidebar( 'footer' );
-get_sidebar( 'footer-bottom' );
+
 get_footer();

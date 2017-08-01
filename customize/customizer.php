@@ -25,7 +25,7 @@ function ariel_customizer_panels_sections( $wp_customize ) {
 
 	// ariel_section_general_settings
 	$wp_customize->add_section( 'ariel_section_theme_info', array(
-		'title'       => esc_html__( 'Ariel Pro - Info', 'ariel' ),
+		'title'       => esc_html__( 'Upgrade to Pro', 'ariel' ),
 		'priority'    => 0
 	) );
 
@@ -111,22 +111,35 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_theme_info',
-		'label'       => esc_html__( 'Ariel Pro', 'ariel' ),
-		'description' => __( '
+		'label'       => esc_html__( 'Ariel', 'ariel' ),
+		'description' => wp_kses_post(__( '
+        <h1>Ariel Pro</h1>
+        <p><a class="button" href="https://www.lyrathemes.com/ariel-pro/" target="_blank">Upgrade to Ariel Pro</a></p>
+        <p>Upgrade for the many awesome features and expert support included with the pro version of this theme. View the <a href="http://www.lyrathemes.com/preview/?theme=ariel-pro" target="_blank">Ariel Pro Demo</a> to see the additional features and functionality available in your upgrade.</p>
+        <p>Pro Features:
+        <ul>
+            <li>&raquo; Slider options: Custom slider</li>
+            <li>&raquo; Built-in Related Posts</li>
+            <li>&raquo; Multiple Header Styles</li>
+            <li>&raquo; Multiple Blog Feed Styles</li>
+            <li>&raquo; Built-in social media sharing</li>
+            <li>&raquo; One on one personal support and continuous theme updates</li>
+        </ul>
+        </p>
+        <hr />
+        <h1>Current Theme: Ariel</h1>
         <h3>Demo Site</h3>
-        <p>Head on over to the <a href="http://www.lyrathemes.com/preview/?theme=ariel-pro" target="_blank">Ariel Pro demo</a> to see what you can accomplish with this theme!</p>
+        <p>Head on over to the <a  href="http://www.lyrathemes.com/preview/?theme=ariel" target="_blank">Ariel demo</a> to see what you can accomplish with this theme!</p>
         <h3>Documentation</h3>
-        <p>Detailed information on theme setup and customization.</p>
-        <p><a class="button" href="https://www.lyrathemes.com/documentation/ariel-pro.pdf" target="_blank">Ariel Pro Documentation</a></p>
-        <h3>One Click Demo Import</h3>
-        <p>You can import the demo data by installing the <a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank">One Click Demo Data</a> plugin, and then going to Appearance > Import Demo Data.</p>
+        <p>Read how to customize the theme, set up widgets, and learn of all the possible options available to you.</p>
+        <p><a class="button" href="https://www.lyrathemes.com/documentation/ariel/" target="_blank">Ariel Documentation</a></p>
         <h3>Sample Data</h3>
-        <p>Alternatively, you can manually install the content and settings shown on our demo site by importing this sample data.</p>
-        <p><a class="button" href="https://www.lyrathemes.com/sample-data/ariel-pro-sample-data.zip" target="_blank">Ariel Pro Sample Data</a></p>
+        <p>You can install the content and settings shown on our demo site by importing this sample data.</p>
+        <p><a class="button" href="https://www.lyrathemes.com/sample-data/ariel-sample-data.zip" target="_blank">Ariel Sample Data</a></p>
         <h3>Feedback and Support</h3>
         <p>For feedback and support, please contact us and we would be happy to assist!</p>
-        <p><a class="button" href="https://www.lyrathemes.com/support" target="_blank">Ariel Pro Support</a></p>
-        ', 'ariel' ),
+        <p><a class="button" href="https://www.lyrathemes.com/support" target="_blank">Ariel Support</a></p>
+        ', 'ariel' ) ),
         'section'     => 'ariel_section_theme_info',
         'priority'    => 1,
     );

@@ -72,7 +72,11 @@ endif; // $jetpack_activated
 		<?php ariel_entry_separator('author_comments'); ?>
 		<?php ariel_entry_comments_link(); ?>
 	</p>
-
+    
+    <?php if ( is_front_page() || is_home() || is_archive() || ( is_single() && $ariel_posts_featured_image_show ) ) : ?>
+        <?php ariel_entry_thumbnail( 'post-thumbnail' ); ?>
+    <?php endif; ?>
+            
 	<div class="entry-content">
 		<?php
 			the_content();
@@ -135,7 +139,6 @@ endif; // $jetpack_activated
 		 * Check for author visibility
 		 * @var bool
 		 */
-		//$show_author = ariel_toggle_entry_meta( $ariel_blog_feed_author_show, $ariel_posts_author_show );
 		$show_author = ariel_get_option ( 'ariel_author_box_show' );
 
 		if ( $show_author || is_sticky() ) :

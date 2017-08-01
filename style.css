@@ -4,7 +4,7 @@ Theme URI: https://www.lyrathemes.com/ariel/
 Author: LyraThemes
 Author URI: https://www.lyrathemes.com/
 Description: Ariel Pro is a simple but feature-filled blogging WordPress theme.
-Version: 1.0.0
+Version: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ariel
@@ -239,7 +239,7 @@ img.pull-right {
 
 .img-frame {
     border: 1px solid #ececec;
-    padding: 15px 10px
+    padding: 10px 10px
 }
 
 hr {
@@ -1513,6 +1513,8 @@ h5.form-heading {
 
 .navbar-default .navbar-nav>li>a {
     padding: 15px;
+	padding-left: 12px;
+	padding-right: 12px;
     font-size: 20px;
     line-height: 30px;
     font-weight: 400;
@@ -1577,7 +1579,6 @@ h5.form-heading {
 
 .menu-item-has-children {
     position: relative;
-    padding-right: 10px
 }
 
 .menu-item-has-children .caret-wrap {
@@ -1612,7 +1613,7 @@ h5.form-heading {
     content: "\f107";
     font-family: 'FontAwesome';
     font-size: 11px;
-    margin-left: 10px
+    margin-left: 5px
 }
 
 .sub-menu .menu-item-has-children>a:after {
@@ -2386,6 +2387,10 @@ h5.form-heading {
     color: #666
 }
 
+.entry-author-share .fa-youtube {
+    color: #CD201F
+}
+
 .entry-grid.entry {
     margin-bottom: 49px
 }
@@ -2762,13 +2767,15 @@ h5.form-heading {
     padding-bottom: 0
 }
 
-.sidebar-column .widget img {
+.sidebar-column .widget img,
+.footer-row-columns .widget img {
     display: block;
     max-width: 100%;
     height: auto
 }
 
-.sidebar-column .widget ul {
+.sidebar-column .widget ul,
+.footer-row-columns .widget ul {
     font-size: 14px;
     font-weight: 400;
     list-style: none;
@@ -2777,35 +2784,43 @@ h5.form-heading {
     line-height: 20px
 }
 
-.sidebar-column .widget ul li {
+.sidebar-column .widget ul li,
+.footer-row-columns .widget ul li {
     margin-bottom: 8px
 }
 
-.sidebar-column .widget ul li:last-child {
+.sidebar-column .widget ul li:last-child,
+.footer-row-columns .widget ul li:last-child {
     margin-bottom: 0
 }
 
-.sidebar-column .widget ul a {
+.sidebar-column .widget ul a,
+.footer-row-columns .widget ul a {
     color: inherit
 }
 
 .sidebar-column .widget ul a:focus,
-.sidebar-column .widget ul a:hover {
+.sidebar-column .widget ul a:hover,
+.footer-row-columns .widget ul a:focus,
+.footer-row-columns .widget ul a:hover {
     color: #cea259;
     text-decoration: none
 }
 
-.sidebar-column .widget ul ul {
+.sidebar-column .widget ul ul,
+.footer-row-columns .widget ul ul {
     list-style: disc;
     margin-top: 8px;
     padding-left: 30px
 }
 
-.sidebar-column .widget form label {
+.sidebar-column .widget form label,
+.footer-row-columns .widget form label {
     display: none
 }
 
-.sidebar-column .widget input[type="submit"] {
+.sidebar-column .widget input[type="submit"],
+.footer-row-columns .widget input[type="submit"] {
     height: 37px;
     background-color: #cea259;
     color: #fff;
@@ -2817,24 +2832,30 @@ h5.form-heading {
 }
 
 .sidebar-column .widget input[type="submit"]:focus,
-.sidebar-column .widget input[type="submit"]:hover {
+.sidebar-column .widget input[type="submit"]:hover,
+.footer-row-columns .widget input[type="submit"]:focus,
+.footer-row-columns .widget input[type="submit"]:hover {
     background-color: #bf934a;
     color: #fff
 }
 
 .sidebar-column .widget input[type="text"],
-.sidebar-column .widget input[type="email"] {
+.sidebar-column .widget input[type="email"],
+.footer-row-columns .widget input[type="text"],
+.footer-row-columns .widget input[type="email"] {
     height: 37px;
     border: 1px solid #949494;
     padding: 5px 8px;
     width: 100%
 }
 
-.sidebar-column .widget_search form {
+.sidebar-column .widget_search form,
+.footer-row-columns .widget_search form {
     position: relative
 }
 
-.sidebar-column .widget_search button {
+.sidebar-column .widget_search button,
+.footer-row-columns .widget_search button {
     font-size: 14px;
     line-height: 19px;
     height: 44px;
@@ -2853,13 +2874,16 @@ h5.form-heading {
 }
 
 .sidebar-column .widget_search button:focus,
-.sidebar-column .widget_search button:hover {
+.sidebar-column .widget_search button:hover,
+.footer-row-columns .widget_search button:focus,
+.footer-row-columns .widget_search button:hover {
     background-color: #c4984f;
     color: #fff;
     border-color: #c4984f
 }
 
-.sidebar-column .widget_search .form-control {
+.sidebar-column .widget_search .form-control,
+.footer-row-columns .widget_search .form-control {
     border-color: #8c8c8c;
     height: 44px
 }
@@ -2937,7 +2961,7 @@ h5.form-heading {
 }
 
 .widget_recent_entries li a {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     margin: 0;
     line-height: 20px
@@ -3132,7 +3156,8 @@ h5.form-heading {
 
 .footer-row-columns {
     background-color: #f7f7f7;
-    padding: 54px 0 20px
+    padding: 54px 0 20px;
+	margin-top: 30px;
 }
 
 .footer-row-columns .widget {
