@@ -1,7 +1,10 @@
 iFeature Changelog
 
 ****************************
-Version 5.8 (06-16-17)
+Version 5.9 (08-02-17)
+- Added author gravatar for blog posts
+
+Version 5.8 (06-19-17)
 - Default font changed
 - Highlighted edit links in the customizer preview
 
