@@ -1,10 +1,10 @@
-.credit/*
+/*
 Theme Name: Ashe
 Theme URI: http://wp-royal.com/ashe-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Clean and minimalist blogging theme.
-Version: 0.4
+Version: 0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -509,7 +509,7 @@ pre {
 .comments-area h4,
 .comments-area h5,
 .comments-area h6 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -560,12 +560,14 @@ blockquote a {
 
 .post-content ul {
   padding-left: 15px;
+  margin-bottom: 15px;
   list-style: disc;
   list-style-position: inside;
 }
 
 .post-content ol {
   padding-left: 25px;
+  margin-bottom: 15px;
   list-style: decimal;
   list-style-position: inside;
 }
@@ -1870,6 +1872,7 @@ sup {
 --------------------------------------------------------------*/
 
 .gallery {
+  margin-bottom: 10px;
   overflow: hidden;
   list-style: none !important;
 }
