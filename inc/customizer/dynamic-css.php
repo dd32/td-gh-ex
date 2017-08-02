@@ -404,26 +404,18 @@ $css = '<style id="ashe_dynamic_css">';
 
 	';
 
-	// Background Image
+	// Padding
 	$css .= '
-		#page-wrap {
-			background-image: url("'. ashe_options( 'general_bg_image' ) .'");
-			background-size: '. ashe_options( 'general_bg_image_size' ) .';
-			background-attachment: '. ashe_options( 'general_bg_image_type' ) .';
+		.boxed-wrapper {
+			padding-left: '. ashe_options( 'general_content_padding' ) .'px;
+			padding-right: '. ashe_options( 'general_content_padding' ) .'px;
 		}
-	'; 
 
-		// Padding
-	$css .= '
-	.boxed-wrapper {
-		padding-left: '. ashe_options( 'general_content_padding' ) .'px;
-		padding-right: '. ashe_options( 'general_content_padding' ) .'px;
-	}
-
-	.boxed-wrapper > .boxed-wrapper {
-		padding: 0;
-	}
+		.boxed-wrapper > .boxed-wrapper {
+			padding: 0;
+		}
 	';
+
 
 /*
 ** Top Bar =====
@@ -450,18 +442,22 @@ $css = '<style id="ashe_dynamic_css">';
 		$css .= '
 			#top-menu {
 				float: left;
+				margin-left: '. ashe_options( 'general_content_padding' ) .'px;
 			}
 			.top-bar-socials {
 				float: right;
+				margin-right: '. ashe_options( 'general_content_padding' ) .'px;
 			}
 		'; 
 	} elseif ( ashe_options( 'top_bar_align' ) === 'right-left' ) {
 		$css .= '
 			#top-menu {
 				float: right;
+				margin-right: '. ashe_options( 'general_content_padding' ) .'px;
 			}
 			.top-bar-socials {
 				float: left;
+				margin-left: '. ashe_options( 'general_content_padding' ) .'px;
 			}
 		'; 
 	}
@@ -473,15 +469,15 @@ $css = '<style id="ashe_dynamic_css">';
 	// Height / Background
 	$css .= '
 		.entry-header {
-			height: '. ashe_options( 'page_header_height' ) .'px;
-			background-image:url('. esc_url( ashe_options( 'page_header_bg_image' ) ) .');
-			background-size: '. ashe_options( 'page_header_bg_image_size' ) .';
+			height: '. ashe_options( 'header_image_height' ) .'px;
+			background-image:url('. get_header_image() .');
+			background-size: '. ashe_options( 'header_image_bg_image_size' ) .';
 
 		}
 	';
 
 	// Center if cover
-	if ( ashe_options( 'page_header_bg_image_size' ) === 'cover' ) {
+	if ( ashe_options( 'header_image_bg_image_size' ) === 'cover' ) {
 		$css .= '
 			.entry-header {
 				background-position: center center;
@@ -491,9 +487,8 @@ $css = '<style id="ashe_dynamic_css">';
 
 	// Header Logo
 	$css .= '
-		.header-logo a {
-			max-width: '. ashe_options( 'page_header_logo_width' ) .'px;
-			padding-top: '. ashe_options( 'page_header_logo_distance' ) .'px;
+		.custom-logo-link {
+			max-width: '. ashe_options( 'title_tagline_logo_width' ) .'px;
 		}
 	';
 

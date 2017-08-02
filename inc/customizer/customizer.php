@@ -59,11 +59,6 @@ function ashe_customize_register( $wp_customize ) {
 
 	}
 
-	// fonts
-	function ashe_sanitize_fonts( $font ) { // MOD
-		return $font;
-	}
-
 
 /*
 ** Reusable Functions =====
@@ -71,6 +66,13 @@ function ashe_customize_register( $wp_customize ) {
 	// checkbox
 	function ashe_checkbox_control( $section, $id, $name, $transport, $priority ) {
 		global $wp_customize;
+
+		if ( $section !== 'header_image' ) {
+			$section_id = 'ashe_'. $section;
+		} else {
+			$section_id = $section;
+		}
+
 		$wp_customize->add_setting( 'ashe_options['. $section .'_'. $id .']', array(
 			'default'	 => ashe_options( $section .'_'. $id),
 			'type'		 => 'option',
@@ -80,7 +82,7 @@ function ashe_customize_register( $wp_customize ) {
 		) );
 		$wp_customize->add_control( 'ashe_options['. $section .'_'. $id .']', array(
 			'label'		=> $name,
-			'section'	=> 'ashe_'. $section,
+			'section'	=> $section_id,
 			'type'		=> 'checkbox',
 			'priority'	=> $priority
 		) );
@@ -160,6 +162,13 @@ function ashe_customize_register( $wp_customize ) {
 	// number absint
 	function ashe_number_absint_control( $section, $id, $name, $atts, $transport, $priority ) {
 		global $wp_customize;
+
+		if ( $section !== 'title_tagline' ) {
+			$section_id = 'ashe_'. $section;
+		} else {
+			$section_id = $section;
+		}
+
 		$wp_customize->add_setting( 'ashe_options['. $section .'_'. $id .']', array(
 			'default'	 => ashe_options( $section .'_'. $id),
 			'type'		 => 'option',
@@ -169,7 +178,7 @@ function ashe_customize_register( $wp_customize ) {
 		) );
 		$wp_customize->add_control( 'ashe_options['. $section .'_'. $id .']', array(
 			'label'			=> $name,
-			'section'		=> 'ashe_'. $section,
+			'section'		=> $section_id,
 			'type'			=> 'number',
 			'input_attrs' 	=> $atts,
 			'priority'		=> $priority
@@ -198,6 +207,13 @@ function ashe_customize_register( $wp_customize ) {
 	// radio
 	function ashe_radio_control( $section, $id, $name, $atts, $transport, $priority ) {
 		global $wp_customize;
+
+		if ( $section !== 'header_image' ) {
+			$section_id = 'ashe_'. $section;
+		} else {
+			$section_id = $section;
+		}
+
 		$wp_customize->add_setting( 'ashe_options['. $section .'_'. $id .']', array(
 			'default'	 => ashe_options( $section .'_'. $id),
 			'type'		 => 'option',
@@ -207,7 +223,7 @@ function ashe_customize_register( $wp_customize ) {
 		) );
 		$wp_customize->add_control( 'ashe_options['. $section .'_'. $id .']', array(
 			'label'			=> $name,
-			'section'		=> 'ashe_'. $section,
+			'section'		=> $section_id,
 			'type'			=> 'radio',
 			'choices' 		=> $atts,
 			'priority'		=> $priority
@@ -268,6 +284,19 @@ function ashe_customize_register( $wp_customize ) {
 	// Content Accent
 	ashe_color_control( 'colors', 'content_accent', esc_html__( 'Accent', 'ashe' ), 'postMessage', 1 );
 
+	$wp_customize->get_control( 'background_image' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_image' )->priority = 100;
+	$wp_customize->get_control( 'background_preset' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_preset' )->priority = 101;
+	$wp_customize->get_control( 'background_position' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_position' )->priority = 102;
+	$wp_customize->get_control( 'background_size' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_size' )->priority = 103;
+	$wp_customize->get_control( 'background_repeat' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_repeat' )->priority = 104;
+	$wp_customize->get_control( 'background_attachment' )->section = 'ashe_colors';
+	$wp_customize->get_control( 'background_attachment' )->priority = 105;
+
 
 /*
 ** General Layouts =====
@@ -282,25 +311,6 @@ function ashe_customize_register( $wp_customize ) {
 	// Sidebar Width
 	ashe_number_absint_control( 'general', 'sidebar_width', esc_html__( 'Sidebar Width', 'ashe' ), array( 'step' => '1' ), 'refresh', 3 );
 
-	// Background Image
-	ashe_image_control( 'general', 'bg_image', esc_html__( 'Background Image', 'ashe' ), 'postMessage', 7 );
-
-	$bg_image_size = array(
-		'cover'   => esc_html__( 'Cover', 'ashe' ),
-		'initial' => esc_html__( 'Pattern', 'ashe' )
-	);
-
-	// Background Image Size
-	ashe_radio_control( 'general', 'bg_image_size', esc_html__( 'Site Background Image Size', 'ashe' ), $bg_image_size, 'postMessage', 9 );
-
-	$bg_image_type = array(
-		'scroll' 	=> esc_html__( 'Scrollable', 'ashe' ),
-		'fixed' 	=> esc_html__( 'Fixed', 'ashe' )
-	);
-
-	// Background Image Type
-	ashe_radio_control( 'general', 'bg_image_type', esc_html__( 'Background Image Type', 'ashe' ), $bg_image_type, 'postMessage', 11 );
-
 	$boxed_width = array(
 		'full' 		=> esc_html__( 'Full', 'ashe' ),
 		'contained' => esc_html__( 'Contained', 'ashe' ),
@@ -308,7 +318,7 @@ function ashe_customize_register( $wp_customize ) {
 	);
 
 	// Header Width
-	ashe_select_control( 'general', 'header_width', esc_html__( 'Header Width', 'ashe' ), $boxed_width, 'postMessage', 25 );
+	ashe_select_control( 'general', 'header_width', esc_html__( 'Header Width', 'ashe' ), $boxed_width, 'refresh', 25 );
 
 	$boxed_width_slider = array(
 		'full' => esc_html__( 'Full', 'ashe' ),
@@ -343,32 +353,29 @@ function ashe_customize_register( $wp_customize ) {
 
 
 /*
-** Page Header =====
+** Header Image =====
 */
-	// add Page Header section
-	$wp_customize->add_section( 'ashe_page_header' , array(
-		'title'		 => esc_html__( 'Page Header', 'ashe' ),
-		'priority'	 => 21,
-		'capability' => 'edit_theme_options'
-	) );
+
+	$wp_customize->get_section( 'header_image' )->priority = 10;
 
 	// Page Header label
-	ashe_checkbox_control( 'page_header', 'label', esc_html__( 'Page Header', 'ashe' ), 'refresh', 1 );
+	ashe_checkbox_control( 'header_image', 'label', esc_html__( 'Page Header', 'ashe' ), 'refresh', 1 );
 
-	// Background Image
-	ashe_image_control( 'page_header', 'bg_image', esc_html__( 'Background Image', 'ashe' ), 'postMessage', 5 );
+	$bg_image_size = array(
+		'cover'   => esc_html__( 'Cover', 'ashe' ),
+		'initial' => esc_html__( 'Pattern', 'ashe' )
+	);
 
 	// Background Image Size
-	ashe_radio_control( 'page_header', 'bg_image_size', esc_html__( 'Background Image Size', 'ashe' ), $bg_image_size, 'postMessage', 7 );
+	ashe_radio_control( 'header_image', 'bg_image_size', esc_html__( 'Background Image Size', 'ashe' ), $bg_image_size, 'refresh', 10 );
 
-	// Logo Image
-	ashe_image_control( 'page_header', 'logo', esc_html__( 'Image', 'ashe' ), 'refresh', 11 );
+
+/*
+** Site Identity =====
+*/
 
 	// Logo Width
-	ashe_number_absint_control( 'page_header', 'logo_width', esc_html__( 'Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 13 );
-
-	// Show Tagline
-	ashe_checkbox_control( 'page_header', 'show_tagline', esc_html__( 'Show Tagline', 'ashe' ), 'refresh', 17 );
+	ashe_number_absint_control( 'title_tagline', 'logo_width', esc_html__( 'Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 8 );
 
 
 /*
@@ -403,6 +410,7 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Show Sidebar Icon
 	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
+
 
 /*
 ** Featured Slider =====

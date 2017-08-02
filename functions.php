@@ -16,6 +16,22 @@ function ashe_setup() {
 	// Enable support for Post Thumbnails on posts and pages
 	add_theme_support( 'post-thumbnails' );
 
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 450,
+		'height'      => 200,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
+
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-header', array(
+		'default-image' => 'http://wp-royal.com/themes/ashe/images/ashe_bg.jpg',
+	) );
+
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-background' );
+
 	// Set the default content width.
 	$GLOBALS['content_width'] = 960;
 
@@ -198,7 +214,7 @@ add_filter( 'excerpt_more', 'ashe_new_excerpt' );
 if ( ! function_exists( 'ashe_excerpt' ) ) {
 
 	function ashe_excerpt( $limit = 50 ) {
-	    echo '<p>'.wp_trim_words(get_the_excerpt(), $limit).'</p>';
+	    echo '<p>'. wp_trim_words(get_the_excerpt(), $limit) .'</p>';
 	}
 
 }

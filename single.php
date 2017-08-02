@@ -20,7 +20,7 @@
 		<?php
 
 		// Single Post
-		get_template_part( 'templates/single/single', 'post' );
+		get_template_part( 'templates/single/post', 'content' );
 
 		// Author Description
 		if ( ashe_options( 'single_page_show_author_desc' ) === true ) {

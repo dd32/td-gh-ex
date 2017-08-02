@@ -1,23 +1,34 @@
-<?php if ( ashe_options('page_header_label') === true ) : ?>
+<?php if ( ashe_options('header_image_label') === true ) : ?>
 
 	<div class="entry-header">
-		
-		<div class="header-logo">
-			<a href="<?php echo esc_url(home_url('/')); ?>">
+		<div class="cv-container">
+		<div class="cv-outer">
+		<div class="cv-inner">
+			<div class="header-logo">
+				
+				<?php // Logo & Tagline
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
-				<!-- Logo -->
-				<?php if ( ashe_options( 'page_header_logo' ) !== '' ) : ?>
-				<img src="<?php echo esc_url(ashe_options( 'page_header_logo' )); ?>" alt="Logo">
+				if ( function_exists( 'the_custom_logo' ) && isset( $image[0] ) ) :
+					the_custom_logo();
+				else :
+				?>
+
+				<a href="<?php echo esc_url(home_url('/')); ?>">
+					<?php echo bloginfo( 'title' ); ?>
+				</a>
 				<?php endif; ?>
 
-				<!-- Tagline -->
-				<?php if ( ashe_options( 'page_header_show_tagline' ) ) : ?>
-				<p class="site-description image-overlay"><?php bloginfo( 'description' ); ?></p>
+				<?php if ( display_header_text() ) : ?>
+				<br>
+				<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
 				<?php endif; ?>
-
-			</a>
+				
+			</div>
 		</div>
-		
+		</div>
+		</div>
 	</div>
 
 <?php endif; ?>

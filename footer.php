@@ -20,19 +20,15 @@
 					<p><?php echo ashe_options( 'page_footer_copyright' ); ?></p>
 				</div>
 				<?php 
-				$credit_link = 'http://wp-royal.com/themes/ashe-free';
+				$credit_link = 'http://wp-royal.com/';
 				?>
 				<p class="credit">
-					&#9400;<?php esc_html_e( ' 2017 - ', 'ashe' ); ?>
-					<a href="<?php echo esc_attr( $credit_link ); ?>"><?php esc_html_e( 'Ashe', 'ashe' ); ?> </a>
-					<?php esc_html_e( 'Theme by Royal-Flush.', 'ashe' ); ?>
+					<?php esc_html_e( 'Ashe Theme by ', 'ashe' ); ?>
+					<a href="<?php echo esc_attr( $credit_link ); ?>">
+					<?php esc_html_e( 'Royal-Flush', 'ashe' ); ?>
+					</a>
 				</p>
 
-				<?php
-				if ( ashe_options( 'page_footer_show_socials' ) === true ) {	
-					ashe_social_media( 'footer-socials' );
-				} 
-				?>
 			</div>
 
 			</div><!-- .boxed-wrapper -->

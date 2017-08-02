@@ -19,7 +19,8 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
 				
 				<div class="post-media">
-					<?php get_template_part( 'templates/post/content', get_post_format() ); ?>
+					<a href="<?php echo esc_url( get_the_permalink() ); ?>"></a>
+					<?php the_post_thumbnail('ashe-full-thumbnail'); ?>
 				</div>
 
 				<header class="post-header">

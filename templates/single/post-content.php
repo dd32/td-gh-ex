@@ -12,7 +12,7 @@ if ( have_posts() ) :
 ?>	
 
 	<div class="post-media">
-		<?php get_template_part( 'templates/post/content', get_post_format() ); ?>
+		<?php the_post_thumbnail('ashe-full-thumbnail'); ?>
 	</div>
 
 	<header class="post-header">

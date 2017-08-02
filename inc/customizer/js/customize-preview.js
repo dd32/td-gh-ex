@@ -46,33 +46,13 @@
 		$( '#page-wrap' ).css( 'background-image', 'url("'+ val +'")' );
 	});
 
-	asheLivePreview( 'general_bg_image_size', function( val ) {
-		$( '#page-wrap' ).css( 'background-size', val );
-	});
-
-	asheLivePreview( 'general_bg_image_type', function( val ) {
-		$( '#page-wrap' ).css( 'background-attachment', val );
-	});
-
 
 /*
 ** Page Header
 */
 
-	asheLivePreview( 'page_header_bg_image', function( val ) {
-		$( '.entry-header' ).css( 'background-image', 'url("'+ val +'")' );
-	});
-
-	asheLivePreview( 'page_header_bg_image_size', function( val ) {
-		$( '.entry-header' ).css( 'background-size', val );
-	});
-
-	asheLivePreview( 'page_header_bg_image_type', function( val ) {
-		$( '.entry-header' ).css( 'background-attachment', val );
-	});
-
-	asheLivePreview( 'page_header_logo_width', function( val ) {
-		$('.header-logo a').css( 'width', val +'px' );
+	asheLivePreview( 'title_tagline_logo_width', function( val ) {
+		$('.header-logo a').css( 'max-width', val +'px' );
 	});
 
 

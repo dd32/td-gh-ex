@@ -10,7 +10,13 @@
 	*/
 		// Label
 		function ashe_customizer_label( id, title ) {
-			$( '#customize-control-ashe_options-'+ id ).before('<li class="tab-title customize-control">'+ title +'</li>');
+
+			if ( id === 'custom_logo' || id === 'site_icon' || 'background_image' ) {
+				$( '#customize-control-'+ id ).before('<li class="tab-title customize-control">'+ title +'</li>');
+			} else {
+				$( '#customize-control-ashe_options-'+ id ).before('<li class="tab-title customize-control">'+ title +'</li>');
+			}
+			
 		}
 
 		// Checkbox Label
@@ -61,6 +67,9 @@
 	** Tabs
 	*/
 
+		// Colors
+		ashe_customizer_label( 'background_image', 'Body Background' );
+
 		// General Layouts
 		ashe_customizer_label( 'general_sidebar_width', 'General' );
 		ashe_customizer_label( 'general_header_width', 'Boxed Controls' );
@@ -69,8 +78,11 @@
 		ashe_customizer_checkbox_label( 'top_bar_label' );
 
 		// Page Header
-		ashe_customizer_checkbox_label( 'page_header_label' );
-		ashe_customizer_label( 'page_header_logo', 'Logo Setup' );
+		ashe_customizer_checkbox_label( 'header_image_label' );
+
+		// Site Identity
+		ashe_customizer_label( 'custom_logo', 'Logo Setup' );
+		ashe_customizer_label( 'site_icon', 'Favicon' );
 
 		// Main Navigation
 		ashe_customizer_checkbox_label( 'main_nav_label' );

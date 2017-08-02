@@ -22,3 +22,26 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+
+Ashe bundles the following third-party resources:
+
+waitForImages, Copyright (c) 2011-2017 Alexander Dickson @alexdickson
+Licenses: MIT
+Source: https://github.com/alexanderdickson/waitForImages
+
+FitVids.js, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+Licenses: WTFPL
+Source: https://github.com/davatron5000/FitVids.js
+
+Slick, Copyright (c) 2014 Ken Wheeler
+Licenses: MIT
+Source: https://github.com/kenwheeler/slick/
+
+perfect-scrollbar, Copyright (c) 2014 Hyeonje Jun
+Licenses: MIT
+Source: https://github.com/noraesae/perfect-scrollbar/releases
+
+Sticky-kit, Leaf Corcoran 2015
+Licenses: WTFPL
+Source: http://leafo.net/sticky-kit/
