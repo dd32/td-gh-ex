@@ -2,7 +2,7 @@
 Contributors: Lisa Armstrong (Working Websites)
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.8
-Version: 1.0.6
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,11 @@ When a post is displayed, it will try and display the featured image as a thumbn
 Note:  Changing the 'Entry Type' does not affect the Format of the post.  You need to set that separately.
 
 == Changelog ==
+= 1.0.6 - [Date] = 2017-08-03
+* Updated release
+Fixed:
+- Javascript Error in loading menu
+
 
 = 1.0.5 - [Date] = 2017-07-11
 * Updated release
