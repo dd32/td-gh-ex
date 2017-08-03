@@ -24,24 +24,6 @@ if ( ! isset( $content_width ) ) {
  * Odin Classes.
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
-// require_once get_template_directory() . '/core/classes/class-shortcodes.php';
-require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
-// require_once get_template_directory() . '/core/classes/class-theme-options.php';
-// require_once get_template_directory() . '/core/classes/class-options-helper.php';
-// require_once get_template_directory() . '/core/classes/class-post-type.php';
-// require_once get_template_directory() . '/core/classes/class-taxonomy.php';
-// require_once get_template_directory() . '/core/classes/class-metabox.php';
-// require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
-// require_once get_template_directory() . '/core/classes/class-contact-form.php';
-// require_once get_template_directory() . '/core/classes/class-post-form.php';
-// require_once get_template_directory() . '/core/classes/class-user-meta.php';
-// require_once get_template_directory() . '/core/classes/class-post-status.php';
-// require_once get_template_directory() . '/core/classes/class-term-meta.php';
-
-/**
- * Odin Widgets.
- */
-//require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
 
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
@@ -118,26 +100,6 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 				'posts_per_page' => get_option( 'posts_per_page' )
 			)
 		);
-
-		/**
-		 * Add support for Post Formats.
-		 */
-		// add_theme_support( 'post-formats', array(
-		//     'aside',
-		//     'gallery',
-		//     'link',
-		//     'image',
-		//     'quote',
-		//     'status',
-		//     'video',
-		//     'audio',
-		//     'chat'
-		// ) );
-
-		/**
-		 * Support The Excerpt on pages.
-		 */
-		// add_post_type_support( 'page', 'excerpt' );
 
 		/**
 		 * Switch default core markup for search form, comment form, and comments to output valid HTML5.
@@ -226,9 +188,6 @@ function odin_enqueue_scripts() {
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
 
-	// Grunt watch livereload in the browser.
-	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
-
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -272,19 +231,9 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 require_once get_template_directory() . '/core/helpers.php';
 
 /**
- * WP Custom Admin.
- */
-require_once get_template_directory() . '/inc/admin.php';
-
-/**
  * Comments loop.
  */
 require_once get_template_directory() . '/inc/comments-loop.php';
-
-/**
- * WP optimize functions.
- */
-require_once get_template_directory() . '/inc/optimize.php';
 
 /**
  * Custom template tags.
@@ -331,11 +280,11 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_control(
       new WP_Customize_Color_Control(
         $wp_customize,
-        $color[ 'slug' ], 
+        $color[ 'slug' ],
         array(
-          'label' => $color[ 'label' ], 
-          'section' => 'colors', 
-          'settings' => $color[ 'slug' ] 
+          'label' => $color[ 'label' ],
+          'section' => 'colors',
+          'settings' => $color[ 'slug' ]
         )
       )
     );
@@ -353,43 +302,43 @@ function avalon_customizer_options( $wp_customize ) {
   $social_medias[] = array(
     'slug' => 'avalon_social_media_wordpress',
     'default' => '',
-    'label' => __( 'WordPress Profile', 'avalon-b' ), 
+    'label' => __( 'WordPress Profile', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_github',
     'default' => '',
-    'label' => __( 'GitHub', 'avalon-b' ), 
+    'label' => __( 'GitHub', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_facebook',
     'default' => '',
-    'label' => __( 'Facebook', 'avalon-b' ), 
+    'label' => __( 'Facebook', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_twitter',
     'default' => '',
-    'label' => __( 'Twitter', 'avalon-b' ), 
+    'label' => __( 'Twitter', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_instagram',
     'default' => '',
-    'label' => __( 'Instagram', 'avalon-b' ), 
+    'label' => __( 'Instagram', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_google_plus',
     'default' => '',
-    'label' => __( 'Google Plus', 'avalon-b' ), 
+    'label' => __( 'Google Plus', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_youtube',
     'default' => '',
-    'label' => __( 'Youtube', 'avalon-b' ), 
+    'label' => __( 'Youtube', 'avalon-b' ),
   );
 
   foreach ( $social_medias as $social_media ) {
@@ -413,8 +362,8 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_section(
     'avalon_footer_section',
     array(
-        'title' => 'Footer',
-        'description' => 'Set a text to copyright.',
+        'title' => __( 'Footer', 'avalon-b' ),
+        'description' => __( 'Set a text to copyright.', 'avalon-b' ),
         'priority' => 165,
     )
   );
@@ -422,7 +371,7 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_setting(
     'copyright_text',
     array(
-        'default' => 'Theme Avalon B',
+        'default' => __( 'Theme Avalon B', 'avalon-b' ),
         'sanitize_callback' => 'sanitize_text_field',
     )
   );
@@ -430,8 +379,8 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_control(
     'copyright_text',
     array(
-        'label' => 'Copyright text',
-        'section' => 'avalon_footer_section',
+        'label' => __( 'Copyright text', 'avalon-b' ),
+        'section' => __( 'avalon_footer_section', 'avalon-b' ),
         'type' => 'text',
     )
   );
@@ -449,10 +398,12 @@ add_action( 'wp_enqueue_scripts', 'avalon_b_scripts' );
 
 function avalon_b_customizer_css()
 {
+	$navbar_background_color = get_theme_mod( 'avalon_header_background_color', '#349bc0' );
+	$widget_title_background_color = get_theme_mod( 'avalon_widget_header_background_color', '#bdc3c7' );
     ?>
          <style type="text/css">
-         	.navbar-default { background-color: <?php echo get_theme_mod('avalon_header_background_color', '#349bc0'); ?>; }
-            .widget .title { background-color: <?php echo get_theme_mod('avalon_widget_header_background_color', '#bdc3c7'); ?>; } 
+         	.navbar-default { background-color: <?php echo esc_html( $navbar_background_color ); ?>; }
+          .widget .title { background-color: <?php echo esc_html( $widget_title_background_color ); ?>; }
          </style>
     <?php
 }
@@ -460,16 +411,16 @@ add_action( 'wp_head', 'avalon_b_customizer_css');
 
 /**
  * Used by hook: 'customize_preview_init'
- * 
+ *
  * @see add_action('customize_preview_init',$func)
  */
 function avalon_b_customizer_live_preview()
 {
-	wp_enqueue_script( 
+	wp_enqueue_script(
 		  'avalon-b-themecustomizer',			//Give the script an ID
 		  get_template_directory_uri() . '/assets/js/avalon-b-customizer.js',//Point to file
 		  array( 'jquery', 'customize-preview' ),	//Define dependencies
-		  '',						//Define a version (optional) 
+		  '',						//Define a version (optional)
 		  true						//Put script in footer?
 	);
 }
