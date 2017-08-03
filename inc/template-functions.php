@@ -4,22 +4,44 @@
  *
  * @package Ariel
  */
-
-
- 
 /**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
+ * Add inline style from customizer's custom css field
  *
  * This function is attached to 'wp_head' action hook.
  *
- * @return  Returns pingback link
+ * For overriding in child themes remove the action hook:
+ * remove_action( 'wp_head', 'ariel_custom_css', 99 );
+ *
+ * @return  Returns inline style
  */
-function ariel_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+function ariel_custom_css() {
+	$ariel_advanced_css = ariel_get_option( 'ariel_advanced_css' );
+	if ( $ariel_advanced_css != '' ) {
+		echo '<!-- Custom CSS -->';
+		$output = "<style>" . wp_strip_all_tags( $ariel_advanced_css ) . "</style>";
+		echo $output;
+		echo '<!-- /Custom CSS -->';
 	}
 }
-add_action( 'wp_head', 'ariel_pingback_header' );
+add_action( 'wp_head', 'ariel_custom_css', 99 );
+
+if ( ! function_exists( 'ariel_show_custom_css_field' ) ) :
+/**
+ * Show custom css field in customizer if WordPress version
+ * is less than 4.7
+ */
+function ariel_show_custom_css_field() {
+	if ( get_bloginfo( 'version' ) >= 4.7 ) {
+		$ariel_advanced_css = ariel_get_option( 'ariel_advanced_css' );
+		if ( $ariel_advanced_css == '' ) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	return true;
+}
+endif; // function_exists( 'ariel_show_custom_css_field' )
 
 
 if ( ! function_exists( 'ariel_default_nav' ) ) :
@@ -46,13 +68,27 @@ function ariel_default_nav() {
 			$current_class = '';
 		}
 
-        echo "<li class='page_item ".esc_attr($menu_class)." $current_class'><a href='".esc_url($menu_link)."'>".esc_html($menu_name)."</a></li>";
+		echo "<li class='page_item $menu_class $current_class'><a href='$menu_link'>$menu_name</a></li>";
 	}
 	echo '</ul>';
 	echo '</div>';
 }
 endif; // function_exists( 'ariel_default_nav' )
-
+/**
+ * Add class to default page nav
+ *
+ * This function is attached to 'wp_page_menu' filter hook.
+ *
+ * For overriding in child themes remove the filter hook:
+ * remove_filter( 'wp_page_menu', 'ariel_wp_page_menu_class' );
+ *
+ * @param  string $class HTML output of a page-based menu
+ * @return string        Returns filtered page memnu markup
+ */
+function ariel_wp_page_menu_class( $class ) {
+  return preg_replace( '/<ul>/', '<ul class="nav navbar-nav">', $class, 1 );
+}
+add_filter( 'wp_page_menu', 'ariel_wp_page_menu_class' );
 
 /**
  * Filter Archive title
@@ -70,12 +106,11 @@ function ariel_archive_title( $title ) {
 		$title = get_page( get_option( 'page_for_posts' ) )->post_title;
 	} elseif ( is_home() ) {
 		$title = ariel_get_option( 'ariel_blog_feed_label' );
+		$title = esc_html( $title );
 	}
-    $title = esc_html( $title );
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'ariel_archive_title' );
-
 
 /**
  * Filter number of words for excerpt
@@ -92,8 +127,6 @@ function ariel_excerpt_length( $length ) {
 	return 35;
 }
 add_filter( 'excerpt_length', 'ariel_excerpt_length', 999 );
-
-
 /**
  * Wrap oEmbed-embedded video in <div>
  *
@@ -114,8 +147,6 @@ function ariel_embed_oembed_html( $html, $url, $attr, $post_id ) {
   return '<div class="iframe-video">' . $html . '</div>';
 }
 add_filter( 'embed_oembed_html', 'ariel_embed_oembed_html', 99, 4 );
-
-
 
 if ( ! function_exists( 'ariel_site_identity_text' ) ) :
 /**
@@ -141,8 +172,6 @@ function ariel_site_identity_text() {
 	<?php endif;
 }
 endif;
-
-
 if ( ! function_exists( 'ariel_get_first_embed_media' ) ) :
 /**
  * Get first embedded video from post
@@ -167,8 +196,6 @@ function ariel_get_first_embed_media( $post_id ) {
 	endif;
 }
 endif;
-
-
 if ( ! function_exists( 'ariel_get_first_post_image' ) ) :
 /**
  * Get first image in post content
@@ -198,8 +225,6 @@ function ariel_get_first_post_image() {
 	}
 }
 endif;
-
-
 /**
  * Filter tag chould args and set the same font size
  * for all tags. This function is attached to
@@ -215,3 +240,14 @@ function ariel_tag_cloud_filter( $args = array() ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'ariel_tag_cloud_filter', 90 );
+
+#https://jetpack.com/2013/06/10/moving-sharing-icons/
+function jptweak_remove_share() {
+	remove_filter( 'the_content', 'sharing_display',19 );
+	remove_filter( 'the_excerpt', 'sharing_display',19 );
+	if ( class_exists( 'Jetpack_Likes' ) ) {
+		remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+	}
+}
+add_action( 'init', 'jptweak_remove_share');
+add_action( 'loop_start', 'jptweak_remove_share' );

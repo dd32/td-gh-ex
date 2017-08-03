@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying a featured post on frontpage
+ * Template for displaying a featured post/page on frontpage
  *
  * @package ariel
  */

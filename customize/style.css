@@ -14,11 +14,6 @@
     font-style:italic !important;
 }
 
-.customize-control-kirki-switch .switch input:checked + label {
-    background: #0073aa;
-    width: 113px !important;
-}
-
 #accordion-section-ariel_section_theme_info .accordion-section-title{background-color:#BEA5D0; color:#fff}
 #accordion-section-ariel_section_theme_info .customize-control-description a{color:#6f26ac; text-decoration:underline;}
 #accordion-section-ariel_section_theme_info .customize-control-description .button{background-color:#BEA5D0; color:#fff; text-decoration:none;}

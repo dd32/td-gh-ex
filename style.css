@@ -3,13 +3,13 @@ Theme Name: Ariel
 Theme URI: https://www.lyrathemes.com/ariel/
 Author: LyraThemes
 Author URI: https://www.lyrathemes.com/
-Description: Ariel is a simple but feature-filled blogging WordPress theme.
-Version: 1.0.10
+Description: Ariel Pro is a simple but feature-filled blogging WordPress theme.
+Version: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ariel
 Domain Path: /languages/
-Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, rtl-language-support
+Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, food-and-drink
 */
 
 .col-xs-20,
@@ -1301,7 +1301,7 @@ h5.form-heading {
 .header-top-right .menu-social-container {
     list-style: none;
     margin: 0;
-    padding: 30px 0 30px;
+    padding: 20px 0 30px;
     font-size: 12px;
     line-height: 30px;
     display: inline-block;
@@ -1380,7 +1380,7 @@ h5.form-heading {
 }
 
 .logo {
-    padding: 20px 0 25px
+    padding: 20px 0 31px
 }
 
 .logo img.custom-logo {
@@ -1426,7 +1426,7 @@ h5.form-heading {
     display: inline-block;
     vertical-align: middle;
     padding-left: 10px;
-    margin-left: 10px;
+    margin-left: 18px;
     border-left: 1px solid #000
 }
 
@@ -2114,7 +2114,7 @@ h5.form-heading {
 .entry-category {
     font-family: "Merriweather", serif;
     line-height: 20px;
-    margin: 0 0 7px;
+    margin: 0 0 10px;
     font-size: 11px;
     font-style: italic;
     color: #cea259

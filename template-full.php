@@ -12,6 +12,14 @@ get_header();
 
 $ariel_pages_featured_image_show = ariel_get_option( 'ariel_pages_featured_image_show' ); ?>
 
+<?php
+$is_cart = false; $is_checkout = false; $is_account_page = false;
+if ( class_exists( 'WooCommerce' ) ) {
+	if( is_cart() ) $is_cart = true;
+	if( is_checkout() ) $is_checkout = true;
+	if( is_account_page() ) $is_account_page = true;
+}
+?>
 
 <div class="contents">
 	<div class="container">
@@ -21,11 +29,9 @@ $ariel_pages_featured_image_show = ariel_get_option( 'ariel_pages_featured_image
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-					if ( $ariel_pages_featured_image_show && has_post_thumbnail() ) : ?>
-                        <div class="entry-thumb">
-                            <?php the_post_thumbnail( 'full', array( 'alt' => get_the_title(), 'class' => 'img-responsive' ) ); ?>
-                        </div><!-- entry-thumb -->
-					<?php endif;
+					if ( $ariel_pages_featured_image_show && ! $is_cart && ! $is_checkout && ! $is_account_page ) :
+						ariel_entry_thumbnail( 'post-thumbnail' );
+					endif;
 
 					the_title( '<h2 class="page-title">', '</h2>' );
 
@@ -35,6 +41,14 @@ $ariel_pages_featured_image_show = ariel_get_option( 'ariel_pages_featured_image
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ariel' ),
 						'after'  => '</div>',
 					) ); ?>
+
+					<div id="entry-share">
+						<div class="entry-share-default">
+							<?php if ( function_exists( 'sharing_display' ) ) {
+									sharing_display( '', true );
+								} ?>
+						</div>
+					</div>
 
 					<?php
 					if ( comments_open() || get_comments_number() ) :

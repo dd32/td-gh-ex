@@ -12,11 +12,10 @@ $ariel_frontpage_slider_type  = ariel_get_option( 'ariel_frontpage_slider_type' 
  * Get differences in sizes between slider types
  */
 if ( $ariel_frontpage_slider_type == 'Default' ) :
-	$ariel_size = 'fw';
+	$size = 'fw';
 elseif ( $ariel_frontpage_slider_type == 'Thumbnails' ) :
-	$ariel_size = 'sm';
+	$size = 'sm';
 endif;
-
 
 if ( $ariel_frontpage_banner == 'Posts' ) :
 
@@ -30,7 +29,7 @@ if ( $ariel_frontpage_banner == 'Posts' ) :
 
 	if ( $query->have_posts() ) : ?>
 
-		<div class="frontpage-slider frontpage-slider-posts <?php echo esc_attr ( $ariel_size ); ?>">
+		<div class="frontpage-slider frontpage-slider-posts <?php echo $size; ?>">
 
 			<div class="container">
 
@@ -53,26 +52,26 @@ if ( $ariel_frontpage_banner == 'Posts' ) :
 						 */
 						while ( $query->have_posts() ) : $query->the_post();
 
-							$ariel_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'ariel-slider-' . $ariel_size ) ;
-							$ariel_featured_image = '';
+							$src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'ariel-slider-' . $size ) ;
+							$featured_image = '';
 
-							if ( $ariel_src ) :
-								$ariel_featured_image = $ariel_src[0];
+							if ( $src ) :
+								$featured_image = $src[0];
 							elseif ( $ariel_example_content == 1 ) :
-								$ariel_featured_image = ariel_get_sample( 'ariel-slider-' . $ariel_size );
+								$featured_image = ariel_get_sample( 'ariel-slider-' . $size );
 							endif;
 
-						if ( $ariel_featured_image ) : ?>
+						if ( $featured_image ) : ?>
 
-							<div class="slick-slide" style="background-image:url(<?php echo esc_url( $ariel_featured_image ); ?>)">
+							<div class="slick-slide" style="background-image:url(<?php echo esc_url( $featured_image ); ?>)">
 								<div class="box-caption">
 									<p class="box-caption-category"><?php the_category( ', ' ); ?></p>
 									<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-									<p class="box-caption-meta"><span class="date"><?php echo esc_html ( get_the_date() ); ?></span></p>
+									<p class="box-caption-meta"><span class="date"><?php echo get_the_date(); ?></span></p>
 								</div>
 							</div>
 
-						<?php endif; // $ariel_featured_image
+						<?php endif; // $featured_image
 					endwhile; // $query->have_posts() ?>
 				</div><!-- slick-carousel -->
 
@@ -93,44 +92,43 @@ if ( $ariel_frontpage_banner == 'Posts' ) :
 								 * Initiate counter for proper nav control
 								 * @var integer
 								 */
-								$ariel_count = 0;
+								$count = 0;
 								while ( $query->have_posts() ) : $query->the_post();
 
-									$ariel_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'ariel-recent' ) ;
-									$ariel_featured_image = '';
-                                    $ariel_categories = '';
+									$src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'ariel-recent' ) ;
+									$featured_image = '';
 
-									if ( $ariel_src ) :
-										$ariel_featured_image = $ariel_src[0];
+									if ( $src ) :
+										$featured_image = $src[0];
 									elseif ( $ariel_example_content == 1 ) :
-										$ariel_featured_image = ariel_get_sample( 'ariel-recent' );
+										$featured_image = ariel_get_sample( 'ariel-recent' );
 									endif;
 
-									if ( $ariel_featured_image ) : ?>
-										<li data-slick-go-to="<?php echo esc_attr ( $ariel_count++ ); ?>">
+									if ( $featured_image ) : ?>
+										<li data-slick-go-to="<?php echo $count++; ?>">
 											<div class="latest-post-image">
-												<img src="<?php echo esc_url( $ariel_featured_image ); ?>" />
+												<img src="<?php echo esc_url( $featured_image ); ?>" />
 											</div>
 											<div class="latest-post-body">
 												<p class="latest-post-category">
 													<?php
-														$ariel_categories = get_the_category();
+														$categories = get_the_category();
 														/**
 														 * Display only names, no links
 														 */
-														foreach ( $ariel_categories as $ariel_category ) {
-															if ( end( $ariel_categories ) == $ariel_category ) {
-																echo esc_html( $ariel_category->cat_name );
+														foreach ( $categories as $category ) {
+															if ( end( $categories ) == $category ) {
+																echo esc_html( $category->cat_name );
 															} else {
-																echo esc_html( $ariel_category->cat_name . ', ' );
+																echo esc_html( $category->cat_name . ', ' );
 															}
 														}
 													?>
 												</p>
-												<h4 class="latest-post-title"><?php echo esc_html ( ariel_truncated_entry_title (get_the_title(), 45) ) ; ?></h4>
+												<h4 class="latest-post-title"><?php echo ariel_truncated_entry_title (get_the_title(), 45) ; ?></h4>
 											</div><!-- latest-post-body -->
 										</li>
-									<?php endif; // $ariel_featured_image
+									<?php endif; // $featured_image
 								endwhile; // $query->have_posts() ?>
 							</ul>
 						</div><!-- latest-post -->
@@ -141,12 +139,11 @@ if ( $ariel_frontpage_banner == 'Posts' ) :
 
 			</div><!-- container -->
 
-		</div><!-- frontpage-slider <?php echo esc_attr( $ariel_size ); ?> -->
+		</div><!-- frontpage-slider <?php echo $size; ?> -->
 
 	<?php endif; // $query->have_posts()
 	wp_reset_postdata();
 
-    
 elseif ( $ariel_frontpage_banner == 'Banner' ) :
 	$header_image             = get_header_image();
 	$ariel_banner_heading     = ariel_get_option( 'ariel_banner_heading' );
@@ -156,7 +153,7 @@ elseif ( $ariel_frontpage_banner == 'Banner' ) :
 	if ( $header_image ) : ?>
 		<div class="frontpage-banner">
 			<div class="container">
-				<img src="<?php echo esc_url ( $header_image ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+				<img src="<?php echo $header_image ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 
 				<div class="box-caption">
 					<?php if ( $ariel_banner_url && $ariel_banner_heading ) : ?>

@@ -10,16 +10,16 @@ $ariel_pages_sidebar             = ariel_get_option( 'ariel_pages_sidebar' );
 $ariel_pages_featured_image_show = ariel_get_option( 'ariel_pages_featured_image_show' );
 
 if ( $ariel_pages_sidebar ) {
-	$ariel_main_class = 'col-md-9';
+	$main_class = 'col-md-9';
 } else {
-	$ariel_main_class = 'col-md-12';
+	$main_class = 'col-md-12';
 }
 ?>
 <div class="contents">
 	<div class="container">
 		<div class="row two-columns">
 
-			<div class="main-column <?php echo esc_attr( $ariel_main_class ); ?>">
+			<div class="main-column <?php echo esc_attr( $main_class ); ?>">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 					if ( $ariel_pages_featured_image_show ) :
