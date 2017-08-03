@@ -113,10 +113,8 @@
         <?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?></span> </a></p>
         
             <div class="containbox alignright">
-                <time class="right-time" 
-                      datetime="<?php echo esc_attr( $time_format ); ?>"
-                      itemprop="datePublished" pubdate 
-                      class="thedate"><?php echo esc_html( $time_format ); ?></time> 
+                <span class="right-time" 
+                      itemprop="datePublished"><?php echo esc_html( $time_format ); ?></span> 
                 <?php if( is_single() ) 
                 {
                 ?>      

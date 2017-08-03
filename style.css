@@ -5,7 +5,7 @@
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.1.0
+  Version:     1.1.1
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -4552,6 +4552,11 @@ color: inherit;
 	display: block;
 	margin: 0 auto;
 }
+.textcenter {
+	clear: left;
+	display: block;
+	margin: 0 auto;
+}
 .wp-caption {
     color: inherit;
 }
@@ -4607,154 +4612,6 @@ color: inherit;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
-/** =Navbar generic changes
------------------------------------------------ */
-a {
-  color: #337ab7;
-  text-decoration: none;
-}
-.semi-fixed {
-  position: relative;
-  top: 1px;
-}
-
-.navbar-default {
-  background-color: rgba( 253, 253, 253, .95);
-  border-color: #e7e7e7;
-}
-.navbar-default .navbar-brand {
-  color: #777;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #222;
-  box-shadow: 0 2px 5px #ccc;
-}
-
-
-/* =dropdown parent clickable
------------------------------------------------ */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* =pagination
------------------------------------------------ */
-.social-footer {
-  width: 100%;
-  padding: 0 15px 7px 15px;
-  margin-bottom: 1px;
-  height: 51px;
-
-}
-.social-footer li a {
-  background: rgba( 255, 255, 255, .7);
-  border-left: 1px solid #aaa;
-  border-bottom: 1px solid #bbb;
-  color: black;
-  margin-right: 0;
-
-}
-.social-footer li:last-child {
-  border-right: 1px solid #ccc;
-}
-@media screen and (max-width: 800px) {
-  .social-footer {
-    margin-bottom: 1em;
-    display: inline-block;
-  }
-}
-
-.pagination {
-  display: inline-block;
-  width: 98%;
-  margin: 7px auto;
-}
-
-.pagination .nav-links [class*="nav-"] {
-margin-bottom: 2px;
-}
-.nav-previous,
-.nav-next,
-.postlink li.btn-paging {
-  min-height: 2em;
-  display: inline-block;
-  min-width: 120px;
-  padding: 3px 12px;
-  margin: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  text-shadow: 0 .25px .75px #f6f6f6;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  border: 1px solid #e2e2e2;
-  border-radius: 0;
-  user-select: none;
-  background-image: none;
-  background: rgba(255,255,255, .75);
-  border-bottom-color: #cfcfcf;
-  margin-left: .78em;
-  text-decoration: none;
-}
-
-.nav-previous a:hover,
-.nav-next a:hover {
-  text-decoration: none;
-}
-.nav-title {
-color: inherit;
-}
-
-.nav-subtitle {
-  color: black;
-}
-/*
-.nav-next:before {
-  content: " | ";
-  position: relative;
-  padding: 0 4px;
-}
-*/
-a.navbar-brand img {
-  position: relative;
-  top: -.7825em;
-}
-
-.previous {
-  background: #fcfcfc;
-}
-.previous a {
-  color: #14c;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-
-.next {
-  background: #fafafa;
-}
-
-.next a {
-  color: #14c;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-
-.postlink {
-  width: 100%;
-  padding: 7px 15px 0 15px;
-  text-align: center;
-  height: 4em;
-  margin: 7px auto 15px auto;
-  border-top: 1px solid #eee;
-
-}
-
 
 /* =Header
 ----------------------------------------------- */
@@ -4873,7 +4730,7 @@ margin: 0 auto;
     border-color: #dfdfdf;
 }
 @media all and (min-width: 300px) and (max-width: 761px) { 
-    #main { float: left; }
+    #main { float: left; max-width: 100%;}
     #sideA { transition: all 1.5s ease-in; display: none; height: 100%; width: 100%;}
     #sideA:target { display: block; }
     .side-abtn { display: block; width: auto; }
@@ -4941,9 +4798,9 @@ a span.genico img {
     top: -45px;
 }
 .entry-meta .screen-reader-text {
-width: 1px;
-height: 0;
-clear: both;
+    width: 1px;
+    height: 0;
+    clear: both;
 }
 .entry-meta .containbox .count-header {
     display: table-row;
@@ -4954,7 +4811,7 @@ clear: both;
     top: 0;
     left: 10px;
 }
-.entry-meta time.right-time {
+.entry-meta .right-time {
     position: relative;
     min-width: 110px;
     min-height: 1px;
@@ -4968,12 +4825,12 @@ clear: both;
     background: #f9f9f9;
 
 }
-.entry-meta time.right-time:after {
+.entry-meta .right-time:after {
     content: "";
     clear: left;
 }
     @media all and (min-width: 768px) and (max-width: 1000px) {
-        .entry-meta time.right-time {
+        .entry-meta .right-time {
             background: transparent;
             border-color: transparent;
             padding: 0 5px 2px 0;
@@ -4984,7 +4841,7 @@ clear: both;
             }
     }
     @media screen and (max-width: 500px) {
-        .entry-meta time.right-time {
+        .entry-meta .right-time {
             background: transparent;
             border-color: transparent;
             padding: 0 5px 2px 0;
@@ -5133,6 +4990,167 @@ p.theauthor > span {
     display:inline-block;
     min-width:2em;
 }
+.mb1 {
+    top: -10px;
+    position: relative;
+}
+
+/** =Navbar generic changes
+----------------------------------------------- */
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.semi-fixed {
+  position: relative;
+  top: 1px;
+}
+
+.navbar-default {
+  background-color: rgba( 253, 253, 253, .95);
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-brand {
+  color: #777;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #222;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+
+/* =dropdown parent clickable
+----------------------------------------------- */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* =pagination
+----------------------------------------------- */
+#socialContainer {
+    display: block;
+    width: 100%;
+    height: 67px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: #efefef;
+}
+.social-footer {
+    width: 95%;
+    margin: 5px auto;
+    padding: 7px 15px 7px 15px;
+    height: 52px;
+}
+.social-footer li a {
+  background: rgba( 255, 255, 255, .7);
+  border-left: 1px solid #c4c4c4;
+  border-bottom: 2px solid #c9c9c9;
+  border-top: 1px solid #cccccc;
+  color: black;
+  margin-right: 0;
+}
+.social-footer li:last-child {
+  border-right: 1px solid #ccc;
+}
+@media screen and (max-width: 800px) {
+  .social-footer {
+    margin-bottom: 1em;
+    display: inline-block;
+  }
+}
+
+.pagination {
+  display: inline-block;
+  width: 98%;
+  margin: 7px auto;
+}
+
+.pagination .nav-links [class*="nav-"] {
+margin-bottom: 2px;
+}
+.nav-previous,
+.nav-next,
+.postlink li.btn-paging {
+  min-height: 2em;
+  display: inline-block;
+  min-width: 120px;
+  padding: 3px 12px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  text-shadow: 0 .25px .75px #f6f6f6;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid #e2e2e2;
+  border-radius: 0;
+  user-select: none;
+  background-image: none;
+  background: rgba(255,255,255, .75);
+  border-bottom-color: #cfcfcf;
+  margin-left: .78em;
+  text-decoration: none;
+}
+
+.nav-previous a:hover,
+.nav-next a:hover {
+  text-decoration: none;
+}
+.nav-title {
+color: inherit;
+}
+
+.nav-subtitle {
+  color: black;
+}
+/*
+.nav-next:before {
+  content: " | ";
+  position: relative;
+  padding: 0 4px;
+}
+*/
+a.navbar-brand img {
+  position: relative;
+  top: -.7825em;
+}
+
+.previous {
+  background: #fcfcfc;
+}
+.previous a {
+  color: #14c;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.next {
+  background: #fafafa;
+}
+
+.next a {
+  color: #14c;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.postlink {
+  width: 100%;
+  padding: 7px 15px 0 15px;
+  text-align: center;
+  height: 4em;
+  margin: 7px auto 15px auto;
+  border-top: 1px solid #eee;
+
+}
+
 /* body class seletors 
 ----------------------------------------- */
 
@@ -5198,7 +5216,7 @@ body.archive .entry-title {
     margin: 15px 0 0 0;
     padding-left: 0;
 }
-body.archive footer.meta-footer time {
+body.archive footer.meta-footer span.right-time {
     position: relative;
     top: -2em;
 }

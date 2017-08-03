@@ -13,10 +13,10 @@
 /**
  * Start Article Content case
  * ************************************************************ */
-
+$alts = esc_attr( get_the_title( $post->ID  ) );
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="contentText" 
-         itemtype="http://schema.org/Article">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> 
+         itemscope itemtype="http://schema.org/Article">
     <div class="article-inner">
         <div class="entry-content">
 
@@ -40,23 +40,23 @@
                             if ( has_post_thumbnail( 'appeal-thumbnail' ) ) { ?>
                                 <?php printf( '<a class="appeal-imglink"
                                                 href="' . esc_attr( get_permalink( $post->ID  ) ) . '"
-                                                alt ="' . esc_attr( get_the_title( $post->ID  ) ) . '">' 
+                                                title ="' . esc_attr( get_the_title( $post->ID  ) ) . '">' 
                                             ); ?>
                                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                                           'itemprop' => 'image', 
                                                           'class' => 'img-responsive appeal-thumbnail',
-                                                          'alt' => 'link'  ) ); ?></a>
+                                                          'alt' => $alts  ) ); ?></a>
                                 <?php } else {
                                 // ends if has custom thumb size
                                 ?>
                                 <?php printf( '<a class="appeal-imglink"
                                                 href="' . esc_attr( get_permalink( $post->ID ) ) . '"
-                                                alt ="' . esc_attr( get_the_title( $post->ID ) ) . '">' 
+                                                title ="' . esc_attr( get_the_title( $post->ID ) ) . '">' 
                                             ); ?>
                                 <?php the_post_thumbnail('thumbnail', array( 
                                                          'itemprop' => 'image', 
                                                          'class' => 'img-responsive appeal-thumbnail',
-                                                         'alt' => 'link' ) ); ?></a>
+                                                         'alt' => $alts ) ); ?></a>
                                 <?php }
                                 //ends if has wp_thumbnail
                                 ?>
@@ -140,7 +140,7 @@
                         <?php the_post_thumbnail( 'appeal-featured', array( 
                                                   'itemprop' => 'image', 
                                                   'class' => 'img-responsive appeal-thumbnail',
-                                                  'alt' => 'link' ) ); ?></a>
+                                                  'alt' => $alts ) ); ?></a>
                           <?php if( !empty( $get_description ) ) 
                           {
                             //If description-caption is not empty show the div
@@ -167,7 +167,7 @@
                         <?php the_post_thumbnail('thumbnail', array( 
                                                 'itemprop' => 'image', 
                                                 'class' => 'img-responsive appeal-thumbnail',
-                                                'alt' => 'link' ) ); ?></a>
+                                                'alt' => $alts ) ); ?></a>
                         <?php if(!empty($get_description)){
                               //If description-caption is not empty show the div
                         ?>
@@ -284,7 +284,7 @@
                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',
-                                          'alt' => 'link' ) ); ?></a>
+                                          'alt' => $alts ) ); ?></a>
                 </div>
 
                 <?php 
@@ -297,7 +297,7 @@
                     <?php the_post_thumbnail( 'thumbnail', array( 
                                               'itemprop' => 'image', 
                                               'class' => 'img-responsive appeal-thumbnail',
-                                              'alt' => 'link' ) ); ?></a>
+                                              'alt' => $alts ) ); ?></a>
                     </div>
                     <?php 
                     } // ends thumbnail choices
@@ -341,7 +341,7 @@
                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',
-                                          'alt' => 'link' ) ); ?></a>
+                                          'alt' => $alts ) ); ?></a>
             </div>
 
             <?php 
@@ -354,7 +354,7 @@
                 <?php the_post_thumbnail( 'thumbnail', array( 
                                           'itemprop' => 'image', 
                                           'class' => 'img-responsive appeal-thumbnail',
-                                          'alt' => 'link' ) ); ?></a>
+                                          'alt' => $alts ) ); ?></a>
                 </div>
                 <?php 
                 } 

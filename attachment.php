@@ -41,19 +41,7 @@ get_header(); ?>
 
                     </footer>
 
-<?php
-	           $comments = get_comments(array(
-				'status' => 'approve',
-                'post_id' => get_the_ID()
-                ));
-				$args = array(
-						'reverse_top_level' => false
-						);
-				get_comments($args, $comments);
-
-				//we display the comments template
-				comment_form(); // comments_template();
-?>
+                    <?php comments_template(); ?>
 
 		<?php endwhile; ?>
 

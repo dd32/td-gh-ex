@@ -32,6 +32,23 @@ link and use any of the child links below it.
 
 
 == Change Log ==
+1.1.1
+* removed response title name in header
+* fixed attachment page comments not posting correctly
+* registered default header imgs
+* added max-width to id=main 
+* altered footer menu
+* add alt tag to logo
+* fixed schema throughout
+* add pubdate to screen reader syntax
+* fixed screenreader throughout
+* replaced nonvalid alt with title on thumbnail links
+* removed itemprop form menus
+* removed unsupportted time tag
+* fix margin on archive page meta
+* rearranged theme overview page
+
+
 1.1.0
 * escaped several functions
 * fixed featured image and appeal image in single page

@@ -2,35 +2,35 @@
             </div><!-- ends from tag #page-content (below nav/header) -->
         </div><!-- .container -->
 
-<div class="container">
-    <div class="row">
-    
-        <?php if( is_active_sidebar( 'sidebar-bottom' ) ) { ?>
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottombox">
+            <?php if( is_active_sidebar( 'sidebar-bottom' ) ) : ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottombox">
     
-        <?php get_sidebar( 'bottom' ); ?>
+                        <?php get_sidebar( 'bottom' ); ?>
     
-    </div>
-
-        <?php } ?>
-    </div>
-</div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
 
     </div><!-- .content-wrapper -->
-            <footer class="footer-footer container-fluid">
-        <nav class="social-footer">
-            <?php if ( has_nav_menu( 'above_footer' ) ) {
+        <footer class="footer-footer container-fluid">
+            <?php if ( has_nav_menu( 'above_footer' ) ) : ?>
+            <div id="socialContainer">
+            <nav class="social-footer">
+                    <?php
                     wp_nav_menu( array(
-                    'menu'               => 'above_footer',
                     'theme_location'    => 'above_footer',
                     'container'        => 'ul',
-                    'container_class' => 'list-inline',
-                    'container_id'   => 'above_footer',
-                    'fallback_cb'   => 'wp_page_menu',
+                    'depth'          => 1,
+                    'fallback_cb'   => '__return_false',
                     'menu_class'   => 'nav navbar-nav'));
-             } ?>
-        </nav>
+                    ?>
+            </nav>
+            </div>
+            <?php endif; ?>
                 <div id="inner-footer">
 
                     <div class="row">

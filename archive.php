@@ -68,10 +68,8 @@
 
                     <?php $time_format = get_the_date( get_option('date_format') ); ?>
                      
-                    <time class="alignright" 
-                      datetime="<?php echo esc_attr( $time_format ); ?>"
-                      itemprop="datePublished" pubdate 
-                      class="thedate"><?php echo esc_html( $time_format ); ?></time> 
+                    <span class="alignright mb1" 
+                      itemprop="datePublished"><?php echo esc_html( $time_format ); ?></span> 
                       
                     </footer>
             </article><!-- #post -->

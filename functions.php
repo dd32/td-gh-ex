@@ -62,7 +62,7 @@ function appeal_theme_setup() {
     register_nav_menus(
         array(
             'primary'      => __('Main Menu Top', 'appeal'),
-            'above_footer' => __('Above Footer Links', 'appeal')
+            'above_footer' => __('Footer Links ~ 1 level ONLY', 'appeal')
         )
     );
 
@@ -201,7 +201,8 @@ function appeal_theme_custom_logo() {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         if ( has_custom_logo() ) {
-            $output = '<div class="header-logo"><img src="'. esc_url( $logo[0] ) .'"></div>'; 
+            $output = '<div class="header-logo"><img src="'. esc_url( $logo[0] ) .'" 
+            alt="'. get_bloginfo( 'name' ) .'"></div>'; 
             } 
             else 
                 { $output = '<h1>'. get_bloginfo( 'name' ) .'</h1>'; }
@@ -267,17 +268,6 @@ function appeal_post_formats() {
 }
 endif; 
 
-
-/**
- * Add schema attribute to menu-items.
- * https://developer.wordpress.org/reference/hooks/nav_menu_link_attributes/
- */
-function appeal_add_menu_attributes( $atts, $item, $args ) {
-  $atts['itemprop'] = 'url';
-  return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'appeal_add_menu_attributes', 10, 3 );
-
                           
 /**
  * Implementation of the Custom Header feature.
@@ -301,6 +291,29 @@ function appeal_custom_header_setup()
         ) ) );
 }
 add_action( 'after_setup_theme', 'appeal_custom_header_setup' );
+
+
+/**
+ * Register Default Headers 
+ * @since 1.1.1
+ * https://codex.wordpress.org/Function_Reference/register_default_headers
+ * https://generatewp.com/snippet/OvG9wDA/ updated
+ * Left @string $parenturl to adjust for child theme
+ */
+function appeal_default_header_imgs() 
+{
+    $parenturl = get_template_directory_uri();
+    $suggested_imgs =  array( 
+        'appeal_tokyo'   => array( 
+            'description' => __( 'Tokyo', 'appeal' ),
+            'url'          => $parenturl . '/assets/appeal-default-header-img.png',
+            'thumbnail_url' => $parenturl . '/assets/appeal-default-header-img-small.png',
+            ), 
+        );
+        register_default_headers( $suggested_imgs );
+        
+}
+add_action( 'after_setup_theme', 'appeal_default_header_imgs' );
 
 
 /**
