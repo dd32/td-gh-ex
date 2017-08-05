@@ -8,12 +8,12 @@ add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 }
 
 // Register new page widget
-add_action( 'widgets_init', 'child_twentysixteen_widgets_init' );
-function child_twentysixteen_widgets_init() {
+add_action( 'widgets_init', 'child_2016_vcready_widgets_init' );
+function child_2016_vcready_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Page Sidebar', 'twentysixteen' ),
+		'name'          => __( 'Page Sidebar', '2016-vcready' ),
 		'id'            => 'sidebar-4',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentysixteen' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar.', '2016-vcready' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -22,8 +22,8 @@ function child_twentysixteen_widgets_init() {
 }
 
 // Remove class of no-sidebar
-add_filter( 'body_class', 'child_twentysixteen_body_classes' , 30 );
-    function child_twentysixteen_body_classes( $classes ) {
+add_filter( 'body_class', 'child_2016_vcready_body_classes' , 30 );
+    function child_2016_vcready_body_classes( $classes ) {
         
     if (is_single() || is_archive() ){
 		 // Adds a class of no-sidebar without active sidebar on archive and single post.
@@ -53,17 +53,8 @@ add_filter( 'body_class', 'child_twentysixteen_body_classes' , 30 );
 	return $classes;
 }
 
-// Add credit to footer
-
-add_action( 'twentysixteen_credits', 'twentysixteen_clean_design_credits_handler' );
-    function twentysixteen_clean_design_credits_handler() {
-        ?>
-            Theme by <a href="https://www.websitehelper.co.uk" target="_blank">Websitehelper.co.uk</a> |
-        <?php
-    }
-
-// Twenty Sixteen Child Theme functions and definitions
+// 2016 VCReady Child Theme functions and definitions
 
 require_once dirname(__FILE__ ) . '/inc/include-kirki.php';
-require_once dirname(__FILE__ ) . '/inc/class-twentysixteen-child-kirki.php';
+require_once dirname(__FILE__ ) . '/inc/class-2016-vcready-child-kirki.php';
 require_once dirname(__FILE__ ) . '/inc/customizer.php';

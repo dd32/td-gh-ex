@@ -13,9 +13,9 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<!-- post details -->
 		<div class="post-meta">
-			<span class="author"><?php _e( 'Published by', 'twentysixteen' ); ?> <?php the_author_posts_link(); ?> - </span>
+			<span class="author"><?php _e( 'Published by', '2016-vcready' ); ?> <?php the_author_posts_link(); ?> - </span>
 			<span class="date"><?php the_time('F j, Y'); ?> - </span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'twentysixteen' ), __( '1 Comment', 'twentysixteen' ), __( '% Comments', 'twentysixteen' )); ?></span>
+			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', '2016-vcready' ), __( '1 Comment', '2016-vcready' ), __( '% Comments', '2016-vcready' )); ?></span>
 		</div>	
 			<!-- /post details -->
 	</header><!-- .entry-header -->
@@ -29,11 +29,11 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', '2016-vcready' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', '2016-vcready' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 
@@ -49,7 +49,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', '2016-vcready' ),
 					get_the_title()
 				),
 				'<span class="edit-link">',

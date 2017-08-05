@@ -2,7 +2,7 @@
 /**
  * Class responsible for adding options in Customizer
  */
-class Twentysixteen_Child_Kirki_Fields {
+class Child_2016_Vcready_Kirki_Fields {
 
 	/**
 	 * Constructor
@@ -17,26 +17,26 @@ class Twentysixteen_Child_Kirki_Fields {
 	public function setup_options() {
 		
 		// Add configuration
-		Twentysixteen_Child_Kirki::add_config( 'twentysixteen_child_config', array(
+		Child_2016_Vcready_Kirki::add_config( 'child_2016_vcready_config', array(
 			'capability' => 'edit_theme_options',
 			'option_type' => 'theme_mod',
 		) );
 
 
 		// Add section header color
-		Twentysixteen_Child_Kirki::add_section( 'twentysixteen_child_custom_css', array(
-			'title'          => esc_html__( 'Header Colors', 'twentysixteen' ),
+		Child_2016_Vcready_Kirki::add_section( 'child_2016_vcready_custom_css', array(
+			'title'          => esc_html__( 'Header Colors', '2016-vcready' ),
 			'priority'       => 40,
 			'capability'     => 'edit_theme_options',
 		) );
 		
 		// Add field header color
-		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
+		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
 			'type'        => 'color',
 			'settings'    => 'site_header',
-			'label'       => esc_html__( 'Header Color', 'twentysixteen' ),
-			'description' => esc_attr__( 'Change the main color for the header of your site.', 'twentysixteen' ),
-			'section'     => 'twentysixteen_child_custom_css',
+			'label'       => esc_html__( 'Header Color', '2016-vcready' ),
+			'description' => esc_attr__( 'Change the main color for the header of your site.', '2016-vcready' ),
+			'section'     => 'child_2016_vcready_custom_css',
 			'default'     => '#FFFFFF',
 			'priority'    => 1,
 			'alpha'       => true,
@@ -49,12 +49,12 @@ class Twentysixteen_Child_Kirki_Fields {
 		) );
 		
 		// Add field header color
-		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
+		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
 		    'type'        => 'color',
 			'settings'    => 'site_header_icons',
-			'label'       => esc_html__( 'Social Icons Color', 'twentysixteen' ),
-			'description' => esc_attr__( 'Change the main color for the social icons.', 'twentysixteen' ),
-			'section'     => 'twentysixteen_child_custom_css',
+			'label'       => esc_html__( 'Social Icons Color', '2016-vcready' ),
+			'description' => esc_attr__( 'Change the main color for the social icons.', '2016-vcready' ),
+			'section'     => 'child_2016_vcready_custom_css',
 			'default'     => '#000000',
 			'priority'    => 7,
 			'alpha'       => true,
@@ -69,8 +69,8 @@ class Twentysixteen_Child_Kirki_Fields {
 		/**
  		* Add the typography section
 	 	*/
-		Twentysixteen_Child_Kirki::add_section( 'typography', array(
-		'title'      => esc_attr__( 'Typography', 'twentysixteen' ),
+		Child_2016_Vcready_Kirki::add_section( 'typography', array(
+		'title'      => esc_attr__( 'Typography', '2016-vcready' ),
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		) );
@@ -78,12 +78,12 @@ class Twentysixteen_Child_Kirki_Fields {
 		/**
  		* Add the body-typography control
  		*/
-		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
+		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
 		'type'        => 'typography',
 		'settings'    => 'body_typography',
-		'label'       => esc_attr__( 'Body Typography', 'twentysixteen' ),
-		'description' => esc_attr__( 'Select the main typography options for your site.', 'twentysixteen' ),
-		'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'twentysixteen' ),
+		'label'       => esc_attr__( 'Body Typography', '2016-vcready' ),
+		'description' => esc_attr__( 'Select the main typography options for your site.', '2016-vcready' ),
+		'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', '2016-vcready' ),
 		'section'     => 'typography',
 		'priority'    => 10,
 		'default'     => array(
@@ -105,12 +105,12 @@ class Twentysixteen_Child_Kirki_Fields {
 		/**
  		* Add the body-typography control
  		*/
-		Twentysixteen_Child_Kirki::add_field( 'twentysixteen_child_config', array(
+		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
 		'type'        => 'typography',
 		'settings'    => 'headers_typography',
-		'label'       => esc_attr__( 'Headers Typography', 'twentysixteen' ),
-		'description' => esc_attr__( 'Select the typography options for your titles.', 'twentysixteen' ),
-		'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', 'twentysixteen' ),
+		'label'       => esc_attr__( 'Headers Typography', '2016-vcready' ),
+		'description' => esc_attr__( 'Select the typography options for your titles.', '2016-vcready' ),
+		'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', '2016-vcready' ),
 		'section'     => 'typography',
 		'priority'    => 10,
 		'default'     => array(
@@ -136,4 +136,4 @@ class Twentysixteen_Child_Kirki_Fields {
 }
 
 // Init class
-new Twentysixteen_Child_Kirki_Fields();
+new Child_2016_Vcready_Kirki_Fields();

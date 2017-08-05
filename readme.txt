@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.5.3
+Version: 1.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -23,9 +23,12 @@ Twentysixteen child theme with toppings. The theme is now Visual Composer friend
 
 == Copyright ==
 
-20/16 VCReady WordPress Child Theme, Copyright 2017 Humberto Tordecilla
+2016-vcready WordPress Theme, Copyright 2017 Website Helper
 Based on the Twenty Sixteen WordPress Theme, Copyright 2016 WordPress.org
-20/16 VCReady is distributed under the terms of the GNU GPL
+2016-vcready is distributed under the terms of the GNU GPL
+
+2016-vcready WordPress Theme is child theme of Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
+Twenty Sixteen is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -40,22 +43,10 @@ GNU General Public License for more details.
 Every part of every file included in the theme is licensed under GPLv2 or later,
 including screenshot.png.
 
-The parent theme, Twenty Sixteen, bundles the following third-party resources:
-
-Twenty Sixteen Theme bundles the following third-party resources:
-
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
-
-Genericons icon font, Copyright 2013-2015 Automattic.com
-License: GNU GPL, Version 2 (or later)
-Source: http://www.genericons.com
-
 == Changelog ==
 
 
-= 1.0 =
+== 1.0 ==
 * Released: June 14, 2017
 
 Initial release
@@ -65,44 +56,84 @@ Initial release
 
 Fixed missing stylesheet headers
 
-= 1.2 =
+== 1.2 ==
 * Fixed: June 15, 2017
 
 Fixed post archive loop
 
 
-= 1.3 =
+== 1.3 ==
 * Fixed: June 15, 2017
 
 Added license URI
 
 
-= 1.4 =
+== 1.4 ==
 * Fixed: June 15, 2017
 
 Added sidebar support to archive
 
-= 1.5 =
+== 1.5 ==
 * Fixed: June 15, 2017
 
 Fixed link focus on loop button
 Remove unnecessary functions
 Fixed .no-sidebar class to accomodate new custom sidebar
 
-= 1.5.1 =
+== 1.5.1 ==
 * Fixed: June 15, 2017
 
 Fixed Kirki Google fonts support
 
-= 1.5.2 =
+== 1.5.2 ==
 * Fixed: June 16, 2017
 
 Fixed Kirki Google fonts support for main menu
 Removed body class and added custom body class for new sidebar
 Added new sidebar template
 
-= 1.5.3 =
+== 1.5.3 ==
 * Fixed: June 21, 2017
 
 Added missing template version
 Fixed missing textdomain on template-parts/content.php
+
+== 1.5.4 ==
+* Fixed: August 05, 2017
+
+Fixed content.php
+Updated text domain
+Added credits to readme.txt
+Added credit to footer.php
+
+== Resources ==
+
+The parent theme, Twenty Sixteen, bundles the following third-party resources:
+
+HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
+Licenses: MIT/GPL2
+Source: https://github.com/aFarkas/html5shiv
+
+Genericons icon font, Copyright 2013-2015 Automattic.com
+License: GNU GPL, Version 2 (or later)
+Source: http://www.genericons.com
+
+Screenshot, Shape Memory, Copyright Alex Andreyev
+Resource URI: https://www.behance.net/alexandreev
+License: CC0 1.0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+Screenshot, Ixtlan Airlines, Copyright Alex Andreyev
+Resource URI: https://www.behance.net/alexandreev
+License: CC0 1.0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+Screenshot, Ixtlan Airlines, Copyright Alex Andreyev
+Resource URI: https://www.behance.net/alexandreev
+License: CC0 1.0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+Screenshot, Metalic Bridge, Copyright Nikolai Ulltang
+Resource URI: https://www.pexels.com/u/ulltangfilms/
+License: CC0 1.0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en

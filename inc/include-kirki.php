@@ -51,14 +51,14 @@ if ( ! class_exists( 'Kirki' ) ) {
 				?>
 				<li id="accordion-section-<?php echo esc_attr( $this->id ); ?>" class="<?php echo esc_attr( $classes ); ?>" style="border-top:none;border-bottom:1px solid #ddd;padding:7px 14px 16px 14px;text-align:right;">
 					<?php if ( ! $installed ) : ?>
-						<p style="text-align:left;margin-top:0;"><?php esc_attr_e( 'A plugin is required to take advantage of this theme\'s features in the customizer.', 'twentysixteen' ); ?></p>
-						<a class="install-now button-primary button" data-slug="kirki" href="<?php echo esc_url_raw( $plugin_install_url ); ?>" aria-label="<?php esc_attr_e( 'Install Kirki Toolkit now', 'twentysixteen' ); ?>" data-name="Kirki Toolkit">
-							<?php esc_html_e( 'Install Now', 'twentysixteen' ); ?>
+						<p style="text-align:left;margin-top:0;"><?php esc_attr_e( 'A plugin is required to take advantage of this theme\'s features in the customizer.', '2016-vcready' ); ?></p>
+						<a class="install-now button-primary button" data-slug="kirki" href="<?php echo esc_url_raw( $plugin_install_url ); ?>" aria-label="<?php esc_attr_e( 'Install Kirki Toolkit now', '2016-vcready' ); ?>" data-name="Kirki Toolkit">
+							<?php esc_html_e( 'Install Now', '2016-vcready' ); ?>
 						</a>
 					<?php else : ?>
-						<p style="text-align:left;margin-top:0;"><?php esc_attr_e( 'You have installed Kirki. Activate it to take advantage of this theme\'s features in the customizer.', 'twentysixteen' ); ?></p>
-						<a class="install-now button-secondary button change-theme" data-slug="kirki" href="<?php echo esc_url_raw( self_admin_url( 'plugins.php' ) ); ?>" aria-label="<?php esc_attr_e( 'Activate Kirki Toolkit now', 'twentysixteen' ); ?>" data-name="Kirki Toolkit">
-							<?php esc_html_e( 'Activate Now', 'twentysixteen' ); ?>
+						<p style="text-align:left;margin-top:0;"><?php esc_attr_e( 'You have installed Kirki. Activate it to take advantage of this theme\'s features in the customizer.', '2016-vcready' ); ?></p>
+						<a class="install-now button-secondary button change-theme" data-slug="kirki" href="<?php echo esc_url_raw( self_admin_url( 'plugins.php' ) ); ?>" aria-label="<?php esc_attr_e( 'Activate Kirki Toolkit now', '2016-vcready' ); ?>" data-name="Kirki Toolkit">
+							<?php esc_html_e( 'Activate Now', '2016-vcready' ); ?>
 						</a>
 					<?php endif; ?>
 				</li>
