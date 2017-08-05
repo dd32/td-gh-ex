@@ -158,7 +158,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         }
         
         // R: Comments Count
-        $comments_count_obj = htmlok( array(
+        $comments_count_obj = applicator_htmlok( array(
             'name'      => 'Comments Count',
             'structure' => array(
                 'type'      => 'object',
@@ -167,7 +167,6 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
                 'wpg'       => $wpg_setting,
                 'attr'      => $a_attr_setting,
             ),
-            'css'       => $comments_count_css,
             'content'   => array(
                 'object'    => $comments_count_obj_a,
 
@@ -175,7 +174,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         ) );
         
         // R: Comments Population
-        $comments_population_cp = htmlok( array(
+        $comments_population_cp = applicator_htmlok( array(
             'name'      => 'Comments Population',
             'structure' => array(
                 'type'      => 'component',
@@ -208,13 +207,12 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
             }
                 
             // R: Add Comment
-            $add_comment_axn_obj = htmlok( array(
+            $add_comment_axn_obj = applicator_htmlok( array(
                 'name'      => 'Add Comment',
                 'structure' => array(
                     'type'      => 'object',
                     'subtype'   => 'action item',
                     'linked'    => true,
-                    'layout'    => 'inline',
                     'attr'      => array(
                         'a'         => array(
                             'href'      => $add_comment_axn_a_href,
@@ -222,7 +220,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
                         ),
                     ),
                 ),
-                'css'       => 'add-com-axn',
+                'css'       => 'add-com',
                 'content'   => array(
                     'object'    => array(
                         array(
@@ -241,7 +239,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
             if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {
                 
                 // R: Sign In Required
-                $sign_in_required_label_obj = htmlok( array(
+                $sign_in_required_label_obj = applicator_htmlok( array(
                     'name'      => 'Sign In Required',
                     'structure' => array(
                         'type'      => 'object',
@@ -265,7 +263,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         } else {
         
             // R: Commenting Disabled Note
-            $commenting_disabled_note_obj = htmlok( array(
+            $commenting_disabled_note_obj = applicator_htmlok( array(
                 'name'      => 'Commenting Disabled',
                 'structure' => array(
                     'type'      => 'object',
@@ -282,7 +280,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         
         
         // R: Comment Creation Ability
-        $comment_creation_ability_cp = htmlok( array(
+        $comment_creation_ability_cp = applicator_htmlok( array(
             'name'      => 'Comment Creation Ability',
             'structure' => array(
                 'type'      => 'component',
@@ -335,7 +333,7 @@ if ( ! function_exists( 'applicator_func_comments_actions_snippet_cp' ) ) {
         
         
         // R: Comments Actions Snippet
-        $comments_actions_snippet_cp = htmlok( array(
+        $comments_actions_snippet_cp = applicator_htmlok( array(
             'name'      => 'Comments Actions Snippet',
             'structure' => array(
                 'type'      => 'component',

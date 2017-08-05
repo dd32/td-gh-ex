@@ -186,6 +186,46 @@ if ( ! function_exists( 'applicator_func_html_class' ) ) {
         } else {
             echo ' ' . 'wp-admin-bar' . $off;
         }
+        
+        
+        // Comments
+        if ( is_singular() ) {
+            $comments_count_int = (int) get_comments_number( get_the_ID() );
+            
+            // Comments Population Count
+            if ( $comments_count_int == 1 ) {
+                echo ' '.'comments-population--populated--single';
+            }
+            elseif ( $comments_count_int > 1 ) {
+                echo ' '.'comments-population--populated--multiple';
+            }
+            elseif ( $comments_count_int == 0 ) {
+                echo ' '.'comments-population--populated--zero';
+            }
+            
+            // Comment Creation Ability
+            if ( comments_open() ) {
+                echo ' '.'comment-creation-ability--enabled';
+            }
+            else {
+                echo ' '.'comment-creation-ability--disabled';
+            }
+            
+            // Comments Population Status
+            if ( $comments_count_int > 1 ) {
+                echo ' '.'comments-population--populated';
+            }
+            else {
+                echo ' '.'comments-population--empty';
+            }
+        }
+        
+        // Category
+        if ( is_singular() ) {
+            foreach ( ( get_the_category( $post->ID ) ) as $category ) {
+                echo ' '.'category--' . $category->category_nicename;
+            }
+        }
     
     }
     add_action( 'applicator_hook_html_class', 'applicator_func_html_class');

@@ -1176,7 +1176,7 @@ $go-green: #12b32d;
     position: relative;
     
     margin-right: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
     
     width: auto;
     
@@ -1188,8 +1188,6 @@ $go-green: #12b32d;
 .main-menu-func .main-hr-aside---ct_cr
 {
     box-sizing: border-box;
-    
-    margin-top: 3rem;
     
     overflow-y: auto;
 }
@@ -1254,7 +1252,7 @@ $go-green: #12b32d;
     content: '';
     position: absolute;
     left: 100%;
-    top: -3rem;
+    top: 0;
     
     width: .5rem;
     height: 100%;
@@ -1265,6 +1263,27 @@ $go-green: #12b32d;
     background: linear-gradient(to right, hsla(0,0%,0%,0.25) 0%,hsla(0,0%,0%,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
+
+/* Fading Gradient */
+.main-menu-func .main-hr-aside---ct_cr::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+    height: 1rem;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+    background: -moz-linear-gradient(top, hsla(0,0%,100%,1) 0%, hsla(0,0%,100%,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, hsla(0,0%,100%,1) 0%,hsla(0,0%,100%,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, hsla(0,0%,100%,1) 0%,hsla(0,0%,100%,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    
+    transform: translateY( 3rem );
+}
+
 
 .main-menu-tog---b
 {
@@ -1372,6 +1391,7 @@ $go-green: #12b32d;
 .apl-search .b,
 .apl-search .b_l,
 
+/* Comment Respond */
 .comment-form .input-text,
 .comment-form-submit-axn---b
 {
@@ -1398,8 +1418,7 @@ $go-green: #12b32d;
 .search-term-creation-label---obj,
 .search-term-creation-input---obj,
 
-.search-term-crt-search-flabel,
-.search-term-crt-search-text-input
+.search-term-crt-search-flabel
 {
     display: block;
 }
@@ -1408,7 +1427,7 @@ $go-green: #12b32d;
 
 
 
-/* ------------------------- Search - Style > Decorations */
+/* ------------------------- Form Elements - Style > Decorations */
 .apl-search .input-text,
 
 .comment-form .input-text
@@ -1438,16 +1457,7 @@ $go-green: #12b32d;
     color: hsla(0, 0%, 0%, .5);
 }
 
-.apl-search .input-text,
-.apl-search .b_l,
 
-.comment-form .input-text,
-.comment-form-submit-axn---b,
-.post-content .apl-search .b,
-.aside .apl-search .b
-{   
-    border-radius: .125rem;
-}
 
 .main-header---cr > .apl-search
 {
@@ -1457,6 +1467,19 @@ $go-green: #12b32d;
 .apl--applicator--main-search .main-header---cr > .apl-search
 {
     background-color: transparent;
+}
+
+/* Search */
+.apl-search .input-text,
+.apl-search .b_l,
+.post-content .apl-search .b,
+.aside .apl-search .b,
+
+/* Comment Respond */
+.comment-form .input-text,
+.comment-form-submit-axn---b
+{   
+    border-radius: .125rem;
 }
 
 
@@ -1754,13 +1777,17 @@ $go-green: #12b32d;
 
 
 
-/* ------------------------- Comments - Style */
+/*------------------ Comment Respond - Style ------------------*/
 .comment-form .input-text
 {
     box-sizing: border-box;
     width: 100%;
 }
 
+
+
+
+/* ------------------------- Comments - Style */
 .comments---grp,
 .comment .children
 {
@@ -1804,6 +1831,7 @@ $go-green: #12b32d;
 }
 
 .aside .widget_search,
+.aside .widget_calendar,
 .post-content .apl-search
 {
     max-width: 30rem;
@@ -2049,16 +2077,50 @@ $go-green: #12b32d;
     width: 100%;
 }
 
-/*
-.comment-md,
-.comment-respond
+
+
+
+
+/*------------------ Applicator Table Theme - Stroked ------------------*/
+
+/* Reset */
+.apl--applicator--theme--table--stroked .post-content td,
+.apl--applicator--theme--table--stroked .post-content th
 {
-    border: 1px solid red;
+    border: 0;
 }
 
-.comment-respond
+.apl--applicator--theme--table--stroked .post-content tbody,
+.apl--applicator--theme--table--stroked .post-content tfoot
 {
-    margin: 1rem;
-    padding: 1rem;
+    border: 2px solid hsla( 0, 0%, 0%, .125 );
+    border-left: 0;
+    border-right: 0;
 }
-*/
+
+.apl--applicator--theme--table--stroked .post-content tfoot
+{
+    border-top: 0;
+    border-color: hsla( 0, 0%, 0%, .0625 );
+}
+
+.apl--applicator--theme--table--stroked .post-content th
+{
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.apl--applicator--theme--table--stroked .post-content td
+{
+    border: 1px solid hsla( 0, 0%, 0%, .0625 );
+    
+    border-left-style: dotted;
+    
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.apl--applicator--theme--table--stroked .post-content td:first-child
+{
+    border-left: 0;
+}

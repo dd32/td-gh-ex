@@ -26,6 +26,8 @@ if ( ! function_exists( 'apl_applicator_func_class' ) ) {
         echo ' ' . $snapon_name . '--' . 'sub-nav';
         
         echo ' ' . $snapon_name . '--' . 'easy-access-nav';
+        
+        echo ' ' . $snapon_name . '--' . 'theme--table--stroked';
     
     }
     add_action( 'applicator_hook_html_class', 'apl_applicator_func_class');
@@ -42,6 +44,7 @@ if ( ! function_exists( 'applicator_snapons_applicator_class' ) ) {
                 html.classList.add( '_applicator--article' );
                 
                 html.classList.remove( 'applicator-theme--default' );
+                
             } ) ( document.documentElement );
         </script>
     

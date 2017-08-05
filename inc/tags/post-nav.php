@@ -112,7 +112,7 @@ if ( ! function_exists('applicator_func_post_nav' ) ) {
                 
                 
                 // R: Parent Post Navigation Label
-                $parent_post_nav_label_obj = htmlok( array(
+                $parent_post_nav_label_obj = applicator_htmlok( array(
                     'name'      => 'Parent Post Navigation',
                     'structure' => array(
                         'type'      => 'object',
@@ -144,18 +144,20 @@ if ( ! function_exists('applicator_func_post_nav' ) ) {
             }
         }
 
-        // E: Post Navigation
-        $post_nav_cp = htmlok( array(
-            'name'      => 'Post',
-            'structure' => array(
-                'type'      => 'component',
-                'subtype'   => 'navigation',
-            ),
-            'content'   => array(
-                'component' => $output,
-            ),
-            'echo'      => true,
-        ) );
+        if ( $multipage || is_singular( 'attachment' ) ) {
+            // E: Post Navigation
+            $post_nav_cp = applicator_htmlok( array(
+                'name'      => 'Post',
+                'structure' => array(
+                    'type'      => 'component',
+                    'subtype'   => 'navigation',
+                ),
+                'content'   => array(
+                    'component' => $output,
+                ),
+                'echo'      => true,
+            ) );
+        }
         
     }
 }
@@ -211,7 +213,7 @@ if ( ! function_exists('xapplicator_func_post_nav' ) ) {
         
         
             // E: Post Navigation
-            $post_nav_cp = htmlok( array(
+            $post_nav_cp = applicator_htmlok( array(
                 'name'      => 'Post',
                 'structure' => array(
                     'type'      => 'component',
@@ -244,7 +246,7 @@ if ( ! function_exists('xapplicator_func_post_nav' ) ) {
                 
                 
                 // R: Parent Post Navigation Label
-                $parent_post_nav_label_obj = htmlok( array(
+                $parent_post_nav_label_obj = applicator_htmlok( array(
                     'name'      => 'Parent Post Navigation',
                     'structure' => array(
                         'type'      => 'object',
@@ -273,7 +275,7 @@ if ( ! function_exists('xapplicator_func_post_nav' ) ) {
         
         
                 // E: Post Navigation
-                $post_nav_cp = htmlok( array(
+                $post_nav_cp = applicator_htmlok( array(
                     'name'      => 'Post',
                     'structure' => array(
                         'type'      => 'component',
