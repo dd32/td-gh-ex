@@ -1,53 +1,62 @@
- <!--Footer-->
- <?php 
- $display_footer_widgets    = avata_option('display_footer_widgets'); 
- $footer_columns            = avata_option('footer_columns'); 
- ?>
- <footer id="footer" role="contentinfo" aria-label="<?php _e( 'Footer Info', 'avata' ); ?>">
-  <?php if( $display_footer_widgets == '1' ):?>
-<section class="widget-area">
-<div class="container">
-    <div class="row">
-    <?php 
-					for( $i=1;$i<=$footer_columns; $i++ ){
-					?>
-                    <div class="col-md-<?php echo 12/$footer_columns; ?>">
-                    <?php
-							if(is_active_sidebar("footer_widget_".$i)){
-	                           dynamic_sidebar("footer_widget_".$i);
-                               }
-							?>
-                    </div>
-                    
-                    <?php }?>
+<section class="section fp-auto-height footer">
+	<footer>
+  <?php 
+  global $allowedposttags;
+  $enable_footer_widgets  = esc_attr(avata_option('enable_footer_widgets')); 
+  ?>
+  <?php if ($enable_footer_widgets == '1'): ?>
+  <div class="footer-widget-area">
+    <div class="container">
+      <div class="row">
+        <?php $footer_columns = 4; ?>
+        <?php for ($i = 1; $i <= $footer_columns; $i++) : ?>
+        <div class="col-sm-6 col-md-<?php echo 12/$footer_columns; ?>">
+          <?php if (is_active_sidebar("footer-".$i)) : ?>
+          <?php dynamic_sidebar("footer-".$i); ?>
+          <?php endif; ?>
+        </div>
+        <?php endfor; ?>
       </div>
     </div>
-</section>
-<?php endif;?>
-
-<section id="footer-copyright">
-
-    <div class="container">
+  </div>
+  <?php endif; ?>
+  
+    <div class="sub-footer">
+      <div class="container">
         <div class="row">
-            <p class="col-md-4">
-              <?php
-                        printf(__('Designed by <a href="%s">HooThemes</a>.','avata'),esc_url('http://www.hoothemes.com/'));
-                      
-                      ?>
-            </p>
-
-            <div class="col-md-8 hidden-phone">
-               <?php 
-					 wp_nav_menu(array('theme_location'=>'footer_menu','depth'=>1,'fallback_cb' =>false,'menu_class'=>'footer-links','link_before' => '', 'link_after' => '','items_wrap'=> '<ul id="%1$s" class="%2$s">%3$s</ul>'));
-					?>
+         
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+              <div class="text-left margintop-30">
+              <?php $copyright = wp_kses(avata_option('copyright'), $allowedposttags); ?>
+                <p><?php echo $copyright;?> &nbsp;&nbsp; <?php printf(__('Designed by <a href="%s">HooThemes</a>.','avata'),esc_url('http://www.hoothemes.com/'));?></p>
+              </div>
             </div>
-
+          </div>
+           <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+            <ul class="social">
+      <?php
+	for($i=0;$i<9; $i++){
+					$social_icon  = avata_option('social_icon_'.$i);
+					$social_link  = avata_option('social_link_'.$i);
+					$social_title = avata_option('social_title_'.$i);
+					$social_icon  = str_replace('fa fa-','',$social_icon);
+					$social_icon  = str_replace('fa-','',$social_icon);
+					$social_icon  = 'fa fa-'.trim($social_icon);
+					
+					if( $social_icon !=""  ){
+					echo '<li><a href="'.esc_url($social_link).'" target="_blank" data-toggle="tooltip" title="'.esc_attr($social_title).'"><i class="'.esc_attr($social_icon).'"></i></a></li>';
+					}
+					}
+					?>
+            </ul>       
+          </div>
         </div>
+      </div>
     </div>
-</section>
-
-</footer>
+      <?php do_action( 'avata_after__footer' ); ?>
+  </footer>
+ </section>
 <?php wp_footer(); ?>
-
 </body>
 </html>

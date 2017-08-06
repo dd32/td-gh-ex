@@ -1,28 +1,58 @@
 <?php
-get_header(); 
 
-$main_class = 'no-aside';
+get_header();
+
+global $avata_post_meta;
+
+$fullwidth  = isset($avata_post_meta['avata_fullpage'][0])?$avata_post_meta['avata_fullpage'][0]:'';
+$fullscreen = isset($avata_post_meta['avata_fullscreen'][0])?$avata_post_meta['avata_fullscreen'][0]:'';
+
+if ($fullwidth == '1' || $fullwidth == 'on' || $fullscreen >0) {
+	get_template_part('template','fullwidth');
+	exit;
+}
+
+$container = 'container';
+$sidebar = 'none';
+$post_class = '';
+$left_sidebar = esc_attr(avata_option('left_sidebar_pages'));
+$right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
+
+if ($left_sidebar != '')
+	$sidebar = 'left';
+
+if ($right_sidebar != '')
+	$sidebar = 'right';
+
+if ($left_sidebar != '' && $right_sidebar != '')
+	$sidebar = 'both';
 
 ?>
-
-<section class="page-main" id="content">
-  <div class="container">
-    <div id="primary" class="content-area row <?php echo $main_class;?>">
-        <main id="main" class="site-main col-main" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
-          <?php while ( have_posts() ) : the_post(); ?>
-          <?php get_template_part( 'content', 'page' ); ?>
-          <?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-          <?php endwhile; // end of the loop. ?>
-        </main>
-       
-</div>
-      <!-- #primary -->
-    
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <section class="page-title-bar title-center no-subtitle" >
+    <div class="container">
+      <hgroup class="page-title text-light text-center">
+        <h1>
+          <?php the_title();?>
+        </h1>
+      </hgroup>
+      <div class="breadcrumb-nav breadcrumbs text-center text-light" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
+  <div class="post-wrap">
+    <div class="<?php echo $container;?>">
+      <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
+        <div class="col-main">
+          <?php while (have_posts()) : ?>
+          <?php the_post(); ?>
+          <?php get_template_part('template-parts/content', 'page'); ?>
+          <?php endwhile; ?>
+        </div>
+        <?php avata_get_sidebar($sidebar, 'page'); ?>
+      </div>
+    </div>
   </div>
-</section>
-<?php get_footer(); ?>
+</article>
+<?php 
+get_footer();

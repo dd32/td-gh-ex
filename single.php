@@ -1,33 +1,59 @@
-<?php
-/**
- * The template for displaying all single posts.
- *
- * @package avata
- */
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<section class="page-main" id="content">
+<section class="page-title-bar page-title-bar-single title-left">
   <div class="container">
-    <div id="primary" class="content-area">
-      <div class="row">
-        <main id="main" class="site-main col-md-9" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
-          <?php while ( have_posts() ) : the_post(); ?>
-          <?php get_template_part( 'content', 'single' ); ?>
-          <?php avata_post_nav(); ?>
-          <?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-          <?php endwhile; // end of the loop. ?>
-        </main>
-        <!-- #main -->
-        <?php get_sidebar(); ?>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+  <h4 class="text-uppercase"><?php the_title();?></h4>
+    <div class="breadcrumb-nav">
+      <?php avata_breadcrumbs();?>
     </div>
-    <!-- #primary -->
+    <div class="clearfix"></div>
+    </div>
+    </div>
   </div>
 </section>
-<?php get_footer(); ?>
+<div class="page-wrap">
+  <div class="container">
+    <div class="page-inner row">
+      <div class="blog-post">
+        <div class="full-width">
+          <?php the_post_thumbnail( 'avata-featured-image' ); ?>
+        </div>
+        <h4 class="text-uppercase entry-title">
+          <?php the_title();?>
+        </h4>
+        <?php echo avata_posted_on();?>
+        <?php while ( have_posts() ) : the_post();?>
+        <div class="post-content">
+          <?php
+
+			the_content();
+
+			the_posts_pagination( array(
+			'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'avata' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avata' ) . ' </span>',
+		) );
+			?>
+        </div>
+        <div class="inline-block">
+          <div class="widget-tags">
+            <?php
+				  if(get_the_tag_list()) {
+					  echo get_the_tag_list(__( 'Tags: ', 'avata' ),', ');
+				  }
+				  
+				  ?>
+          </div>
+        </div>
+        <div class="pagination-row">
+          <div class="pagination-post"> </div>
+        </div>
+        <?php endwhile; // End of the loop.?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php get_footer();
+

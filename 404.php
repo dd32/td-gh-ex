@@ -1,63 +1,62 @@
 <?php
-/**
- * The template for displaying 404 pages (not found).
- *
- * @package avata
- */
+global $avata_post_meta, $allowedposttags;
+get_header();
 
-get_header(); ?>
-<section class="page-main" id="content">
-  <div class="container">
-	<div id="primary" class="content-area ">
-		<main id="main" class="site-main" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
-            
-			<section class="error-404 not-found row">
-            <div class="col-main col-md-9">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'avata' ); ?></h1>
-				</header><!-- .page-header -->
+$container = 'container';
+$sidebar = 'none';
+$post_class = '';
+$left_sidebar = esc_attr(avata_option('left_sidebar_pages'));
+$right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
 
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'avata' ); ?></p>
+if ($left_sidebar != '')
+	$sidebar = 'left';
 
-					<?php get_search_form() ;?>				
+if ($right_sidebar != '')
+	$sidebar = 'right';
 
-	
-				</div><!-- .page-content -->
-                </div>
-                
-               <aside id="sidebar" class="col-aside-right col-md-3">
-                
-                <?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'avata' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-                    
-                <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-                	<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+if ($left_sidebar != '' && $right_sidebar != '')
+	$sidebar = 'both';
 
-					<?php if ( avata_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'avata' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-                </div>
-			</section><!-- .error-404 -->
+$page_id = absint(avata_option('page_404_content'));
+$title   =  __('404 Not Found', 'avata');
+$content = __('<h1>OOPS!</h1><p>Can\'t find the page.</p>', 'avata');
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div>
-</section>
-<?php get_footer(); ?>
+if ($page_id  > 0) {
+	$query = new WP_Query(array('page_id' => $page_id));
+	if ($query->have_posts() ) {
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			$title   = get_the_title();
+			$content = get_the_content();
+        }
+	}
+	wp_reset_postdata();
+}
+
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <section class="page-title-bar title-center no-subtitle" >
+    <div class="container">
+      <hgroup class="page-title text-light text-center">
+        <h1>
+          <?php the_title();?>
+        </h1>
+      </hgroup>
+      <div class="breadcrumb-nav breadcrumbs text-center text-light" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
+  <div class="page-wrap">
+    <div class="<?php echo $container;?>">
+      <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
+        <div class="col-main">
+        <?php echo wp_kses($content, $allowedposttags);?>
+        </div>
+        <?php avata_get_sidebar($sidebar, 'page'); ?>
+      </div>
+    </div>
+  </div>
+</article>
+<?php 
+get_footer();
