@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Demo is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layout. background colors, header & footer and logo are also customizable. 
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -2208,7 +2208,12 @@ a:hover .lnk-icon-right {
 3.0 FOOTERS
 ///////////////////////////////////////////////////
 */
-
+.widget-box{
+	margin-bottom:20px;
+}
+.widget-box ul{
+	margin-left:0;
+}
 .footer-widget-area{
 	
 	}
