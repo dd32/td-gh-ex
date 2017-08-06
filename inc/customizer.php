@@ -2,7 +2,7 @@
 /**
  * Class responsible for adding options in Customizer
  */
-class Child_2016_Vcready_Kirki_Fields {
+class Vcready_2016_Kirki_Fields {
 
 	/**
 	 * Constructor
@@ -17,26 +17,26 @@ class Child_2016_Vcready_Kirki_Fields {
 	public function setup_options() {
 		
 		// Add configuration
-		Child_2016_Vcready_Kirki::add_config( 'child_2016_vcready_config', array(
+		Vcready_2016_Kirki::add_config( 'Vcready_2016_config', array(
 			'capability' => 'edit_theme_options',
 			'option_type' => 'theme_mod',
 		) );
 
 
 		// Add section header color
-		Child_2016_Vcready_Kirki::add_section( 'child_2016_vcready_custom_css', array(
+		Vcready_2016_Kirki::add_section( 'Vcready_2016_custom_css', array(
 			'title'          => esc_html__( 'Header Colors', '2016-vcready' ),
 			'priority'       => 40,
 			'capability'     => 'edit_theme_options',
 		) );
 		
 		// Add field header color
-		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config', array(
 			'type'        => 'color',
 			'settings'    => 'site_header',
 			'label'       => esc_html__( 'Header Color', '2016-vcready' ),
 			'description' => esc_attr__( 'Change the main color for the header of your site.', '2016-vcready' ),
-			'section'     => 'child_2016_vcready_custom_css',
+			'section'     => 'Vcready_2016_custom_css',
 			'default'     => '#FFFFFF',
 			'priority'    => 1,
 			'alpha'       => true,
@@ -49,12 +49,12 @@ class Child_2016_Vcready_Kirki_Fields {
 		) );
 		
 		// Add field header color
-		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config', array(
 		    'type'        => 'color',
 			'settings'    => 'site_header_icons',
 			'label'       => esc_html__( 'Social Icons Color', '2016-vcready' ),
 			'description' => esc_attr__( 'Change the main color for the social icons.', '2016-vcready' ),
-			'section'     => 'child_2016_vcready_custom_css',
+			'section'     => 'Vcready_2016_custom_css',
 			'default'     => '#000000',
 			'priority'    => 7,
 			'alpha'       => true,
@@ -69,7 +69,7 @@ class Child_2016_Vcready_Kirki_Fields {
 		/**
  		* Add the typography section
 	 	*/
-		Child_2016_Vcready_Kirki::add_section( 'typography', array(
+		Vcready_2016_Kirki::add_section( 'typography', array(
 		'title'      => esc_attr__( 'Typography', '2016-vcready' ),
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
@@ -78,7 +78,7 @@ class Child_2016_Vcready_Kirki_Fields {
 		/**
  		* Add the body-typography control
  		*/
-		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config', array(
 		'type'        => 'typography',
 		'settings'    => 'body_typography',
 		'label'       => esc_attr__( 'Body Typography', '2016-vcready' ),
@@ -105,7 +105,7 @@ class Child_2016_Vcready_Kirki_Fields {
 		/**
  		* Add the body-typography control
  		*/
-		Child_2016_Vcready_Kirki::add_field( 'child_2016_vcready_config', array(
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config', array(
 		'type'        => 'typography',
 		'settings'    => 'headers_typography',
 		'label'       => esc_attr__( 'Headers Typography', '2016-vcready' ),
@@ -136,4 +136,4 @@ class Child_2016_Vcready_Kirki_Fields {
 }
 
 // Init class
-new Child_2016_Vcready_Kirki_Fields();
+new Vcready_2016_Kirki_Fields();

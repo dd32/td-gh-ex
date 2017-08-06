@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.5.4
+Version: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -106,6 +106,15 @@ Updated text domain
 Added credits to readme.txt
 Added credit to footer.php
 
+== 1.5.5 ==
+* Fixed: August 05, 2017
+
+Changed function prefixes
+Minor functions.php fixes
+Chaged creative common licenses for images
+Updated theme screenshot
+Minor CSS changes
+
 == Resources ==
 
 The parent theme, Twenty Sixteen, bundles the following third-party resources:
@@ -118,22 +127,22 @@ Genericons icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
 Source: http://www.genericons.com
 
-Screenshot, Shape Memory, Copyright Alex Andreyev
-Resource URI: https://www.behance.net/alexandreev
+Screenshot, Yellow and green, blue brick wall, Copyright Scott Webb
+Resource URI: https://www.pexels.com/photo/yellow-green-and-blue-brick-wall-63952/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
-Screenshot, Ixtlan Airlines, Copyright Alex Andreyev
-Resource URI: https://www.behance.net/alexandreev
+Screenshot, Bridge Fog Ocean, Copyright Nikolai Ulltang
+Resource URI: https://www.pexels.com/photo/architecture-bridge-fog-ocean-285283/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
-Screenshot, Ixtlan Airlines, Copyright Alex Andreyev
-Resource URI: https://www.behance.net/alexandreev
+Screenshot, Asians Culture Ederly, Copyright Pixabay
+Resource URI: https://www.pexels.com/photo/asians-culture-elderly-enjoyment-235478/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
-Screenshot, Metalic Bridge, Copyright Nikolai Ulltang
-Resource URI: https://www.pexels.com/u/ulltangfilms/
+Screenshot, Asphalt Blur Car City, Copyright Pixabay
+Resource URI: https://www.pexels.com/photo/asphalt-blur-car-city-290470/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en

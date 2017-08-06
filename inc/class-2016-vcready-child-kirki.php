@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ensuring that all CSS & fonts still work.
  * It does not handle the customizer options, simply the frontend CSS.
  */
-class Child_2016_Vcready_Kirki {
+class Vcready_2016_Kirki {
 
 	/**
 	 * @static
@@ -388,4 +388,4 @@ class Child_2016_Vcready_Kirki {
 		}
 	}
 }
-new Child_2016_Vcready_Kirki();
+new Vcready_2016_Kirki();

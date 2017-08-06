@@ -1,15 +1,14 @@
 <?php
 
 // Register parent style
-
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-    function enqueue_parent_styles() {
+add_action( 'wp_enqueue_scripts', 'vcready_2016_enqueue_parent_styles' );
+    function vcready_2016_enqueue_parent_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
 // Register new page widget
-add_action( 'widgets_init', 'child_2016_vcready_widgets_init' );
-function child_2016_vcready_widgets_init() {
+add_action( 'widgets_init', 'vcready_2016_widgets_init' );
+function vcready_2016_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Page Sidebar', '2016-vcready' ),
 		'id'            => 'sidebar-4',
@@ -22,8 +21,8 @@ function child_2016_vcready_widgets_init() {
 }
 
 // Remove class of no-sidebar
-add_filter( 'body_class', 'child_2016_vcready_body_classes' , 30 );
-    function child_2016_vcready_body_classes( $classes ) {
+add_filter( 'body_class', 'vcready_2016_body_classes' , 30 );
+    function vcready_2016_body_classes( $classes ) {
         
     if (is_single() || is_archive() ){
 		 // Adds a class of no-sidebar without active sidebar on archive and single post.
@@ -54,7 +53,6 @@ add_filter( 'body_class', 'child_2016_vcready_body_classes' , 30 );
 }
 
 // 2016 VCReady Child Theme functions and definitions
-
-require_once dirname(__FILE__ ) . '/inc/include-kirki.php';
-require_once dirname(__FILE__ ) . '/inc/class-2016-vcready-child-kirki.php';
-require_once dirname(__FILE__ ) . '/inc/customizer.php';
+require_once( get_stylesheet_directory() . '/inc/include-kirki.php' );
+require_once( get_stylesheet_directory() . '/inc/class-2016-vcready-child-kirki.php' );
+require_once( get_stylesheet_directory() . '/inc/customizer.php' );
