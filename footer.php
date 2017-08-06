@@ -18,8 +18,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ) {
 <?php
 /*Add easter eggs and christmas*/
 if ( get_theme_mod( 'bunny_easter_eggs' ) || get_theme_mod( 'bunny_christmas' ) || get_theme_mod( 'bunny_spooky' ) ) {
-	echo '<div class="egg2"></div>
-	<div class="egg1"></div>';
+	echo '<div class="egg2"></div><div class="egg1"></div>';
 }
 
 wp_footer();

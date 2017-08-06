@@ -26,20 +26,37 @@ if ( post_password_required() ) {
 		<h2 id="comments-title">
 		<?php
 			printf( // WPCS: XSS OK.
-				esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bunny' ) ),
+				esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bunny' ) ),
 				number_format_i18n( get_comments_number() ),
 				'<span>' . get_the_title() . '</span>'
 			);
 		?>
 		</h2>
 	</div>
-	<?php the_comments_navigation( array( 'prev_text' => __( '&larr; Older Comments','bunny' ), 'next_text' => __( 'Newer Comments &rarr;', 'bunny' ) ) ); ?>
+	<?php
+	the_comments_navigation(
+		array(
+			'prev_text' => __( '&larr; Older Comments','bunny' ),
+			'next_text' => __( 'Newer Comments &rarr;', 'bunny' ),
+			)
+	); ?>
 	<ol class="commentlist">
-		<?php wp_list_comments( array( 'avatar_size' => 46 ) ); ?>
+		<?php
+		wp_list_comments(
+			array(
+				'avatar_size' => 46,
+			)
+		);
+		?>
 	</ol>
-	<?php the_comments_navigation( array( 'prev_text' => __( '&larr; Older Comments','bunny' ), 'next_text' => __( 'Newer Comments &rarr;', 'bunny' ) ) ); ?>
-<?php
-}
+	<?php
+	the_comments_navigation(
+		array(
+			'prev_text' => __( '&larr; Older Comments','bunny' ),
+			'next_text' => __( 'Newer Comments &rarr;', 'bunny' ),
+			)
+	);
+} // End if().
 
 comment_form();
 ?>

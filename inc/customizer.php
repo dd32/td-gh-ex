@@ -1,8 +1,18 @@
 <?php
+/**
+ *  Bunny Theme Customizer.
+ *
+ * @package bunny
+ */
 
+/**
+ * Add settings and controls for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
 function bunny_customizer( $wp_customize ) {
 
-	$wp_customize->remove_section('header_image'); /*We are not actually using a header image, only the text options.*/
+	$wp_customize->remove_section( 'header_image' ); /*We are not actually using a header image, only the text options.*/
 
 	$wp_customize->add_panel('bunny_options_panel',	array(
 		'title' => __( 'Theme Options', 'bunny' ),
@@ -153,13 +163,13 @@ function bunny_customizer( $wp_customize ) {
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-	    'selector' => '.site-description',
-	    'render_callback' => get_bloginfo( 'description' ),
+		'selector' => '.site-description',
+		'render_callback' => get_bloginfo( 'description' ),
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'the_custom_logo', array(
-	    'selector' => '.custom-logo-link',
-	    'render_callback' => get_custom_logo(),
+		'selector' => '.custom-logo-link',
+		'render_callback' => get_custom_logo(),
 	) );
 
 }

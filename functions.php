@@ -27,6 +27,7 @@ function bunny_setup() {
 		'flex-width'  => true,
 	) );
 	add_theme_support( 'title-tag' );
+	/* This theme does not use a header image, only the header-text options.*/
 	add_theme_support( 'custom-header', array(
 		'uploads'	=> false,
 		'header-text'	 => true,
@@ -35,7 +36,11 @@ function bunny_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
 
-	register_nav_menus( array( 'header' => __( 'Header Navigation', 'bunny' ) ) );
+	register_nav_menus(
+		array(
+			'header' => __( 'Header Navigation', 'bunny' ),
+		)
+	);
 
 	add_editor_style();
 
@@ -114,10 +119,8 @@ function bunny_fonts_styles() {
 	wp_enqueue_script( 'bunny-js', get_template_directory_uri() . '/inc/bunny.js', array( 'jquery' ) );
 
 	/* Enqueue comment reply / threaded comments. */
-	if ( ! is_admin() ) {
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// Add Easter eggs.
@@ -147,8 +150,9 @@ function bunny_css() {
 		echo '#wrapper{margin: 40px auto auto auto;}
 		#main{position: relative; overflow: auto; float: none; margin: 0 auto;}
 		#footer{position: relative; overflow: auto; float: none; margin-top: 40px;}
+
 		@media screen and (max-width: 840px){
-			#wrapper{margin-top: 40px; margin-left: 1%;}
+			#wrapper{margin: 40px auto;}
 			.kaninsmall{display: none;}
 		}
 		@media screen and (max-width: 600px){
@@ -165,11 +169,11 @@ function bunny_css() {
 		echo '.site-description{margin-top: 90px;}';
 	}
 
-	if ( get_theme_mod( 'bunny_disable_arc' ) and get_bloginfo( 'name' ) ) {
+	if ( get_theme_mod( 'bunny_disable_arc' ) && get_bloginfo( 'name' ) ) {
 		echo '.site-description{margin-top: -20px;}';
 	}
 
-	if ( get_theme_mod( 'bunny_disable_arc' ) and ! get_bloginfo( 'name' ) ) {
+	if ( get_theme_mod( 'bunny_disable_arc' ) && ! get_bloginfo( 'name' ) ) {
 		echo '.site-description{margin-top: 60px;}';
 	}
 
@@ -198,13 +202,20 @@ function bunny_classes( $classes ) {
 }
 add_filter( 'body_class', 'bunny_classes' );
 
-/* Add title to read more links */
+/**
+* Add title to read more links.
+* In order to remove this in your child theme, use
+* remove_filter( 'get_the_excerpt', 'bunny_custom_excerpt_more',100 );
+* remove_filter( 'excerpt_more', 'bunny_excerpt_more',100 );
+* remove_filter( 'the_content_more_link', 'bunny_content_more', 100 );
+* together with 'after_setup_theme'.
+*/
 add_filter( 'get_the_excerpt', 'bunny_custom_excerpt_more',100 );
 add_filter( 'excerpt_more', 'bunny_excerpt_more',100 );
 add_filter( 'the_content_more_link', 'bunny_content_more', 100 );
 
 function bunny_continue_reading( $id ) {
-	return '<a href="' . get_permalink( $id ) . '">' . __( 'Read more: ', 'bunny' ) . get_the_title( $id ) . '</a>';
+	return '<a href="' . esc_url( get_permalink( $id ) ) . '">' . __( 'Read more: ', 'bunny' ) . get_the_title( $id ) . '</a>';
 }
 
 function bunny_content_more( $more ) {
@@ -284,7 +295,8 @@ if ( ! function_exists( 'bunny_meta' ) ) {
 				}
 				if ( ! post_password_required() ) {
 					if ( comments_open() ) :
-						comments_popup_link( '<span class="screen-reader-text">' . esc_html__( 'Leave a comment', 'bunny' ) . '</span><i class="comment-icon fa"></i>',
+						comments_popup_link( '<span class="screen-reader-text">' . esc_html__( 'Leave a comment', 'bunny' ) . '</span>
+							<i class="comment-icon fa"></i>',
 							'<span class="screen-reader-text">' . esc_html__( '1 Comment', 'bunny' ) . '</span><i class="comment-icon fa"></i>',
 						'<span class="screen-reader-text">' . esc_html__( '% Comments', 'bunny' ) . '</span><i class="comment-icon fa"></i>', null, null );
 						echo '&nbsp;';
@@ -309,8 +321,18 @@ if ( ! function_exists( 'bunny_meta' ) ) {
 			?>
 			</div>
 		<?php
-		}
+		} // End if().
 	}
-}
+} // End if().
 
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function bunny_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'bunny_pingback_header' );

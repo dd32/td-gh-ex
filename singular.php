@@ -23,13 +23,23 @@ while ( have_posts() ) : the_post(); ?>
 		} else {
 			the_content();
 		}
-		wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'bunny' ), 'after' => '</div>' ) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-link">' . __( 'Pages: ', 'bunny' ),
+				'after' => '</div>',
+			)
+		);
 		bunny_meta();
 		?>	
 	</div><!-- end post -->
 	<?php
 	if ( is_single() ) {
-		the_post_navigation( array( 'prev_text' => __( '&larr; Previous post','bunny' ), 'next_text' => __( 'Next post &rarr;', 'bunny' ) ) );
+		the_post_navigation(
+			array(
+				'prev_text' => __( '&larr; Previous post','bunny' ),
+				'next_text' => __( 'Next post &rarr;', 'bunny' ),
+			)
+		);
 	}
 	comments_template( '', true );
 endwhile;

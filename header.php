@@ -13,7 +13,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -21,15 +20,22 @@
 <div id="header" role="banner">
 	<?php
 	if ( has_nav_menu( 'header' ) ) {
-		wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu' ) );
+		wp_nav_menu(
+			array(
+				'theme_location' => 'header',
+				'container' => 'div',
+				'container_id' => 'header-menu',
+			)
+		);
 	}
 	?>
 	<div class="logo">
 	<?php
 	if ( has_custom_logo() ) {
 		the_custom_logo();
+		// Hide the cloud if the 'hide images' option is chosen.
 	} elseif ( ! get_theme_mod( 'bunny_hide' ) ) {
-		echo '<img src="' . get_template_directory_uri() . '/images/cloud-large.png" height="146" width="316" alt="" />';
+		echo '<img src="' . esc_url( get_template_directory_uri() ) . '/images/cloud-large.png" height="146" width="316" alt="" />';
 	}
 	?>
 	</div>
@@ -46,13 +52,19 @@
 	}
 
 	if ( has_nav_menu( 'header' ) ) {
-		echo '<button id="mobile-menu"><img src="' . get_template_directory_uri() . '/images/burger.png">' . esc_html__( 'Menu', 'bunny' ) . '</button>';
-		wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu' ) );
+		echo '<button id="mobile-menu">
+		<img src="' . esc_url( get_template_directory_uri() ) . '/images/burger.png">' . esc_html__( 'Menu', 'bunny' ) . '</button>';
+		wp_nav_menu(
+			array(
+				'theme_location' => 'header',
+				'menu_class' => 'nav-menu',
+			)
+		);
 	}
 	?>
 </div>
 <?php
-// Hide these if the 'hide images' option is chosen.
+// Hide these decorative images if the 'hide images' option is chosen.
 if ( ! get_theme_mod( 'bunny_hide' ) ) {
 ?>
 	<div id="sol" class="sol"></div>
