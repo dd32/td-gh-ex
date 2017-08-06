@@ -138,6 +138,9 @@ function avata_enqueue_scripts() {
 		$menu_slug          = esc_attr(avata_option('section_id_'.$j ));
 		$anchors[]          = $menu_slug;
 		
+		if(is_numeric($background_image))
+			$background_image = wp_get_attachment_image_url($background_image,'full');
+		
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$font.";color:".$font_color.";}";
 		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";
@@ -353,19 +356,24 @@ $css .=  ".btn-primary {
 	color:  ".$primary_color.";
 }
 .main-nav li.onepress-current-item > a {
-	color:  ".$primary_color.";
+	color: ".$primary_color.";
 }
 .main-nav ul li.current-menu-item > a {
-	color:  ".$primary_color.";
+	color: ".$primary_color.";
 }
 
 .main-nav > li a.active {
-	color:  ".$primary_color.";
+	color: ".$primary_color.";
 }
 .main-nav.main-nav-mobile li.onepress-current-item > a {
-		color:  ".$primary_color.";
+		color: ".$primary_color.";
 	}
-";
+.footer-widget-area .widget-title:after {
+    background: ".$primary_color.";
+}
+.wrap-testimonial .testimonial-slide span a.twitter {
+  color: ".$primary_color.";
+}";
 
 $css .=  ".work .overlay {background: ".Hoo_Color::get_rgba( $primary_color, '0.9' ).";}";
 

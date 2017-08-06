@@ -10,6 +10,8 @@
   $layout            =  avata_option('section_layout_intro_1');
   $fullwidth         =  avata_option('section_fullwidth_intro_1');
   $autoheight        =  avata_option('section_autoheight_intro_1');
+  if(is_numeric($section_image))
+		$item['image'] = wp_get_attachment_image_url($section_image,'full');
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';

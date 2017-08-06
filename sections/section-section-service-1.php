@@ -30,7 +30,10 @@
 	?>
     <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 avata-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 1.1s; animation-name: fadeInUp;">
 					<div class="avata-icon">
-                    <?php if($item['image']!=''){?>
+                    <?php if($item['image']!=''){
+						if(is_numeric($item['image']))
+							$item['image'] = wp_get_attachment_image_url($item['image'],'full');
+						?>
                    <img src="<?php echo esc_url($item['image']);?>" alt="<?php echo esc_attr($item['title']);?>"/>
                     <?php }else{?>
                     <i class="fa fa-<?php echo esc_attr(str_replace('fa-','',$item['icon']));?>"></i>

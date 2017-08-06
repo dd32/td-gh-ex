@@ -481,6 +481,7 @@ array_splice($service_1_options,3,0,array('section_items_service_1' => array(
 															'image'  => '',
 															'title'  => __('Online Support', 'avata' ),
 															'description'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+															
 														),
 														array(
 															'icon' => 'bar-chart',
@@ -507,6 +508,8 @@ array_splice($service_1_options,3,0,array('section_items_service_1' => array(
 															'label'       => esc_attr__( 'Image Icon', 'avata' ),
 															'description' => '',
 															'default'     => '',
+															'choices' => array('save_as'=>'url')
+															
 														),
 														'title' => array(
 															'type'        => 'text',

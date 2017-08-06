@@ -28,6 +28,8 @@
 	$i = 1;
 	if (is_array($team) && !empty($team) ):
 		foreach($team as $item ):
+			if(is_numeric($item['avatar']))
+				$item['avatar'] = wp_get_attachment_image_url($item['avatar'],'full');
 	?>
     
     <div class="col-md-4">

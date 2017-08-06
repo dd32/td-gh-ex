@@ -32,6 +32,8 @@
 	$i = 1;
 	if (is_array($testimonial) && !empty($testimonial) ):
 		foreach($testimonial as $item ):
+			if(is_numeric($item['image']))
+				$item['avatar'] = wp_get_attachment_image_url($item['avatar'],'full');
 	?>
           <div class="item">
             <div class="testimonial-slide text-center">

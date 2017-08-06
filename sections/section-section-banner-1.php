@@ -20,7 +20,10 @@
 	if (is_array($slider) && !empty($slider) ):
 		foreach($slider as $item ):
 		if ($item['image'] !='' ){
+			
 			$font_color = esc_attr($item['font_color']);
+			if(is_numeric($item['image']))
+				$item['image'] = wp_get_attachment_image_url($item['image'],'full');
 	?>
       <div class="avata-slider-item slide text-center" >
         <div class="text-center avata-fullheight avata-verticalmiddle avata-banner-bgimage" style="background-image: url(<?php echo esc_url($item['image']);?>);">

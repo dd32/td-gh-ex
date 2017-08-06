@@ -28,6 +28,8 @@
 	$i = 1;
 	if (is_array($gallery) && !empty($gallery) ):
 		foreach($gallery as $item ):
+			if(is_numeric($item['image']))
+				$item['image'] = wp_get_attachment_image_url($item['image'],'full');
 	?>
     <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="<?php echo esc_url($item['image']);?>" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" alt="<?php echo esc_attr($item['title']);?>">
         <div class="overlay">
