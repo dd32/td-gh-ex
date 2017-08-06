@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.1.7 = = 06/08/2017 
+* Compatible with WPML & Polylang
+
 = Version 1.1.6 = = 06/08/2017 
 * Fix - Fixed widgets margin issue
 
