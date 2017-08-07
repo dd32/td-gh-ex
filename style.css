@@ -1,10 +1,10 @@
 /*
 Theme Name: Aguafuerte
-Theme URI: http://ebyb.eu/aguafuerte
+Theme URI: http://ebyb.eu/themes/aguafuerte/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Aguafuerte is a theme designed to be fully responsive by taking the mobile-first approach. It features the full range of post formats, two menu locations, one sidebar and three footer widget areas.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, accessibility-ready, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -299,7 +299,8 @@ optgroup {
 .post-edit-link .genericon,
 .comment-edit-link .genericon,
 .featured-post .genericon,
-.entry-format .genericon {
+.entry-format .genericon,
+.more-link .genericon {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
@@ -321,6 +322,7 @@ optgroup {
 	font-weight: bold;
 	vertical-align: text-bottom;	
 }
+
 
 /**
  * 3.0 - Typography
@@ -835,7 +837,8 @@ a:focus {
 }
 
 .primary-navigation li,
-.secondary-navigation li {    
+.secondary-navigation li {
+	display: inline-block; 
 	border-top: 1px solid #ddd;  
 	position: relative;
 }
@@ -863,7 +866,7 @@ a:focus {
 
 .primary-navigation ul ul ul,
 .secondary-navigation ul ul ul {
-	left: -1000%; /* -999 so it is not visible until hover. */
+	left: -999em; /* -999 so it is not visible until hover. */
 	top: 0;
 }
 
@@ -879,7 +882,8 @@ a:focus {
 	background-color: transparent; 
 }
 
-.primary-navigation .menu-item-has-children > a {
+.primary-navigation .menu-item-has-children > a,
+.primary-navigation .page-item-has-children > a {
 	margin-right: 60px;
 }
 
@@ -2751,12 +2755,11 @@ h6 {
 #navigation {
 	position: unset;
 	left: unset;
-	margin: 1em auto 0;
-	
+	margin: 1em auto 0;	
 }
 	
 #main-menu #primary-menu {
-	background-color: transparent;
+	/*! background-color: transparent; */
 }
 	
 .site-navigation a {
@@ -2778,7 +2781,7 @@ h6 {
 
 .primary-navigation ul ul,
 .secondary-navigation ul ul  {
-	background-color: transparent;
+	/*! background-color: transparent; */
 	margin: 0;
 	padding-left: 0; /* This is important to reset the padding */
 	position: absolute;
@@ -2824,17 +2827,23 @@ h6 {
 }
 
 .primary-navigation > ul > .menu-item-has-children:hover,
-.primary-navigation > ul > .menu-item-has-children:focus {
+.primary-navigation > ul > .menu-item-has-children:focus,
+.primary-navigation > ul > .page_item_has_children:hover,
+.primary-navigation > ul > .page_item_has_children:focus {
 	background-color: transparent;
 }
 .primary-navigation > ul > .menu-item-has-children:hover ul a,
-.primary-navigation > ul > .menu-item-has-children.focus ul a {
+.primary-navigation > ul > .menu-item-has-children.focus ul a,
+.primary-navigation > ul > .page_item_has_children:hover ul a,
+.primary-navigation > ul > .page_item_has_children.focus ul a {
 	background-color: #f6f6f6;
 	box-shadow: 1px 1px 5px 1px #ccc;
 }
 
 .primary-navigation li .menu-item-has-children:hover > ul a,
-.primary-navigation li .menu-item-has-children.focus > ul a {
+.primary-navigation li .menu-item-has-children.focus > ul a,
+.primary-navigation li .page_item_has_children:hover > ul a,
+.primary-navigation li .page_item_has_children.focus > ul a {
 	background-color: #f6f6f6;
 	box-shadow: 1px 1px 5px 1px #ccc;
    
