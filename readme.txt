@@ -2,8 +2,8 @@
 
 - By Think Up Themes, http://www.thinkupthemes.com/
 
-Requires at least:	3.4.1
-Tested up to:		3.9.2
+Requires at least:	4.0.0
+Tested up to:		4.7.2
 
 Minamaze is a multi-purpose professional Premium WordPress Theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -34,7 +34,7 @@ Minamaze is a multi-purpose professional Premium WordPress Theme ideal for a bus
 	Copyright, Sources, Credits & Licenses
 -----------------------------------------------------------------------------
 
-Minamaze WordPress Theme, Copyright 2014 Think Up Themes Ltd
+Minamaze WordPress Theme, Copyright 2017 Think Up Themes Ltd
 Minamaze is distributed under the terms of the GNU GPL
 
 Demo images are licensed under CC0 1.0 Universal (CC0 1.0) and available from http://unsplash.com/
@@ -56,68 +56,63 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.04] Item:        html5shiv (jQuery file)
-           Item URL:    http://code.google.com/p/html5shiv/
-           Licence:     MIT
-           Licence MIT: http://opensource.org/licenses/mit-license.html
-
-    [1.05] Item:        Wordpress Sidebar Generator
+    [1.04] Item:        Wordpress Sidebar Generator
            Item URL:    https://github.com/Smartik89/Wordpress-Sidebar-Generator
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.06] Item:        Custom Metaboxes and Fields for WordPress
+    [1.05] Item:        Custom Metaboxes and Fields for WordPress
            Item URL:    https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/readme.md
            Licence:     GPLv2
            Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
 
-    [1.07] Item:        PrettyPhoto
+    [1.06] Item:        PrettyPhoto
            Item URL:    http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
            Licence:     GPLv2
            Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
 
-    [1.09] Item:        ImagesLoaded
+    [1.07] Item:        ImagesLoaded
            Item URL:    https://github.com/desandro/imagesloaded
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.10] Item:        Sticky
+    [1.08] Item:        Sticky
            Item URL:    https://github.com/garand/sticky
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.11] Item:        Waypoints
+    [1.09] Item:        Waypoints
            Item URL:    https://github.com/imakewebthings/jquery-waypoints
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.12] Item:        Retina js
+    [1.10] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.13] Item:        ResponsiveSlides
+    [1.11] Item:        ResponsiveSlides
            Item URL:    https://github.com/viljamis/ResponsiveSlides.js
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.14] Item:        Font Awesome
+    [1.12] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.15] Item:        Twitter Bootstrap
+    [1.13] Item:        Twitter Bootstrap (including images)
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.16] Item:        Elegant Icons
+    [1.14] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
 
-    [1.17] Item:        Elegant Media Icons
+    [1.15] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
@@ -126,6 +121,46 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.10
+- Updated: Escaping improved in "media" field of framework.
+- Updated: Escaping improved in "slides" field of framework.
+- Updated: Escaping improved in "gallery" field of framework.
+- Updated: Escaping improved in "background" field of framework.
+- Updated: Escaping improved in "image_select" field of framework.
+
+Version 1.4.9
+- New:     Version control now updated with use of global variable $thinkup_theme_version.
+- Updated: Anchor for responsive stylesheet changed from "responsive" changed to "thinkup-responsive".
+- Updated: Anchor for left sidebar stylesheet changed from "sidebarleft" changed to "thinkup-sidebarleft".
+- Updated: Anchor for right sidebar stylesheet changed from "sidebarright" changed to "thinkup-sidebarright".
+
+Version 1.4.8
+- Fixed:   Documentation display fixed to ensure compatibilty with WordPress v4.8.
+- Updated: Homepage (Featured) section customizer options display regardless of if switch is on or off.
+
+Version 1.4.7
+- New:     Documentation link added to customizer.
+- Updated: Text domain changed from 'redux-framework' to 'lan-thinkupthemes' in options.php.
+
+Version 1.4.6
+- New:     Theme information page added under Appearance in admin area.
+- Removed: Migration notice informing users that theme options have moved to customizer no longer needed.
+
+Version 1.4.5
+- Updated: Custom image size names now translation ready.
+- Updated: Function thinkup_check_isblog() updated to no longer trigger on single posts.
+
+Version 1.4.4
+- Updated: style-shortcodes.css updated.
+- Removed: Unnecesary translation wrappers removed from string containins no text in function thinkup_title_select().
+
+Version 1.4.3
+- Updated: Function thinkup_check_ishome() updated to improve reliability with use of use wp_unslash.
+
+Version 1.4.2
+- Updated: Font Awesome updated to v4.7.0.
+- Removed: Outdated vesions of jQuery removed from prettyPhoto folder.
 
 Version 1.4.1
 - Updated: Improved escaping in framwork.php.

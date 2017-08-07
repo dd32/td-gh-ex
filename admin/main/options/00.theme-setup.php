@@ -34,6 +34,45 @@ function thinkup_fix_oembed( $embed ) {
 add_filter( 'embed_oembed_html', 'thinkup_fix_oembed', 1 );
 
 
+//----------------------------------------------------------------------------------
+//	ADD PAGE TITLE
+//----------------------------------------------------------------------------------
+
+function thinkup_title_select() {
+	global $post;
+
+	if ( is_page() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} elseif ( is_attachment() ) {
+		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
+	} else if ( is_single() ) {
+		printf( '%s', esc_html( get_the_title() ) );
+	} else if ( is_search() ) {
+		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
+	} else if ( is_404() ) {
+		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
+	} else if ( is_category() ) {
+		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		printf( __( 'Tag Archives: %s', 'lan-thinkupthemes' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		the_post();
+		printf( __( 'Author Archives: %s', 'lan-thinkupthemes' ), get_the_author() );
+		rewind_posts();
+	} elseif ( is_day() ) {
+		printf( __( 'Daily Archives: %s', 'lan-thinkupthemes' ), get_the_date() );
+	} elseif ( is_month() ) {
+		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
+	} elseif ( is_year() ) {
+		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
+	} elseif ( thinkup_check_isblog() ) {
+		printf( __( 'Blog', 'lan-thinkupthemes' ) );
+	} else {
+		printf( '%s', esc_html( get_the_title() ) );
+	}
+}
+
+
 /* ----------------------------------------------------------------------------------
 	ADD BREADCRUMBS FUNCTIONALITY
 ---------------------------------------------------------------------------------- */
@@ -164,11 +203,11 @@ global $wp_query;
 	REMOVE NON VALID REL CATEGORY TAGS
 ---------------------------------------------------------------------------------- */
 
-function thinkup_add_nofollow_cat( $text ) { 
+function thinkup_removerel_category( $text ) { 
 	$text = str_replace( 'rel="category"', "", $text );
 	return $text; 
 };
-add_filter( 'the_category', 'thinkup_add_nofollow_cat' );  
+add_filter( 'the_category', 'thinkup_removerel_category' );  
 
 
 /* ----------------------------------------------------------------------------------
@@ -233,52 +272,52 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		/* 1 Column Layout */
-		$sizes['column1-1/1'] = 'Full - 1:1';
-		$sizes['column1-1/2'] = 'Full - 1:2';
-		$sizes['column1-1/3'] = 'Full - 1:3';
-		$sizes['column1-2/3'] = 'Full - 2:3';
-		$sizes['column1-1/4'] = 'Full - 1:4';
-		$sizes['column1-3/4'] = 'Full - 3:4';
-		$sizes['column1-1/5'] = 'Full - 1:5';
-		$sizes['column1-2/5'] = 'Full - 2:5';
-		$sizes['column1-3/5'] = 'Full - 3:5';
-		$sizes['column1-4/5'] = 'Full - 4:5';
+		$sizes['column1-1/1'] = __( 'Full - 1:1', 'lan-thinkupthemes' );
+		$sizes['column1-1/2'] = __( 'Full - 1:2', 'lan-thinkupthemes' );
+		$sizes['column1-1/3'] = __( 'Full - 1:3', 'lan-thinkupthemes' );
+		$sizes['column1-2/3'] = __( 'Full - 2:3', 'lan-thinkupthemes' );
+		$sizes['column1-1/4'] = __( 'Full - 1:4', 'lan-thinkupthemes' );
+		$sizes['column1-3/4'] = __( 'Full - 3:4', 'lan-thinkupthemes' );
+		$sizes['column1-1/5'] = __( 'Full - 1:5', 'lan-thinkupthemes' );
+		$sizes['column1-2/5'] = __( 'Full - 2:5', 'lan-thinkupthemes' );
+		$sizes['column1-3/5'] = __( 'Full - 3:5', 'lan-thinkupthemes' );
+		$sizes['column1-4/5'] = __( 'Full - 4:5', 'lan-thinkupthemes' );
 
 		/* 2 Column Layout */
-		$sizes['column2-1/1'] = 'Half - 1:1';
-		$sizes['column2-1/2'] = 'Half - 1:2';
-		$sizes['column2-1/3'] = 'Half - 1:3';
-		$sizes['column2-2/3'] = 'Half - 2:3';
-		$sizes['column2-1/4'] = 'Half - 1:4';
-		$sizes['column2-3/4'] = 'Half - 3:4';
-		$sizes['column2-1/5'] = 'Half - 1:5';
-		$sizes['column2-2/5'] = 'Half - 2:5';
-		$sizes['column2-3/5'] = 'Half - 3:5';
-		$sizes['column2-4/5'] = 'Half - 4:5';
+		$sizes['column2-1/1'] = __( 'Half - 1:1', 'lan-thinkupthemes' );
+		$sizes['column2-1/2'] = __( 'Half - 1:2', 'lan-thinkupthemes' );
+		$sizes['column2-1/3'] = __( 'Half - 1:3', 'lan-thinkupthemes' );
+		$sizes['column2-2/3'] = __( 'Half - 2:3', 'lan-thinkupthemes' );
+		$sizes['column2-1/4'] = __( 'Half - 1:4', 'lan-thinkupthemes' );
+		$sizes['column2-3/4'] = __( 'Half - 3:4', 'lan-thinkupthemes' );
+		$sizes['column2-1/5'] = __( 'Half - 1:5', 'lan-thinkupthemes' );
+		$sizes['column2-2/5'] = __( 'Half - 2:5', 'lan-thinkupthemes' );
+		$sizes['column2-3/5'] = __( 'Half - 3:5', 'lan-thinkupthemes' );
+		$sizes['column2-4/5'] = __( 'Half - 4:5', 'lan-thinkupthemes' );
 
 		/* 3 Column Layout */
-		$sizes['column3-1/1'] = 'Third - 1:1';
-		$sizes['column3-1/2'] = 'Third - 1:2';
-		$sizes['column3-1/3'] = 'Third - 1:3';
-		$sizes['column3-2/3'] = 'Third - 2:3';
-		$sizes['column3-1/4'] = 'Third - 1:4';
-		$sizes['column3-3/4'] = 'Third - 3:4';
-		$sizes['column3-1/5'] = 'Third - 1:5';
-		$sizes['column3-2/5'] = 'Third - 2:5';
-		$sizes['column3-3/5'] = 'Third - 3:5';
-		$sizes['column3-4/5'] = 'Third - 4:5';
+		$sizes['column3-1/1'] = __( 'Third - 1:1', 'lan-thinkupthemes' );
+		$sizes['column3-1/2'] = __( 'Third - 1:2', 'lan-thinkupthemes' );
+		$sizes['column3-1/3'] = __( 'Third - 1:3', 'lan-thinkupthemes' );
+		$sizes['column3-2/3'] = __( 'Third - 2:3', 'lan-thinkupthemes' );
+		$sizes['column3-1/4'] = __( 'Third - 1:4', 'lan-thinkupthemes' );
+		$sizes['column3-3/4'] = __( 'Third - 3:4', 'lan-thinkupthemes' );
+		$sizes['column3-1/5'] = __( 'Third - 1:5', 'lan-thinkupthemes' );
+		$sizes['column3-2/5'] = __( 'Third - 2:5', 'lan-thinkupthemes' );
+		$sizes['column3-3/5'] = __( 'Third - 3:5', 'lan-thinkupthemes' );
+		$sizes['column3-4/5'] = __( 'Third - 4:5', 'lan-thinkupthemes' );
 
 		/* 4 Column Layout */
-		$sizes['column4-1/1'] = 'Quarter - 1:1';
-		$sizes['column4-1/2'] = 'Quarter - 1:2';
-		$sizes['column4-1/3'] = 'Quarter - 1:3';
-		$sizes['column4-2/3'] = 'Quarter - 2:3';
-		$sizes['column4-1/4'] = 'Quarter - 1:4';
-		$sizes['column4-3/4'] = 'Quarter - 3:4';
-		$sizes['column4-1/5'] = 'Quarter - 1:5';
-		$sizes['column4-2/5'] = 'Quarter - 2:5';
-		$sizes['column4-3/5'] = 'Quarter - 3:5';
-		$sizes['column4-4/5'] = 'Quarter - 4:5';
+		$sizes['column4-1/1'] = __( 'Quarter - 1:1', 'lan-thinkupthemes' );
+		$sizes['column4-1/2'] = __( 'Quarter - 1:2', 'lan-thinkupthemes' );
+		$sizes['column4-1/3'] = __( 'Quarter - 1:3', 'lan-thinkupthemes' );
+		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'lan-thinkupthemes' );
+		$sizes['column4-1/4'] = __( 'Quarter - 1:4', 'lan-thinkupthemes' );
+		$sizes['column4-3/4'] = __( 'Quarter - 3:4', 'lan-thinkupthemes' );
+		$sizes['column4-1/5'] = __( 'Quarter - 1:5', 'lan-thinkupthemes' );
+		$sizes['column4-2/5'] = __( 'Quarter - 2:5', 'lan-thinkupthemes' );
+		$sizes['column4-3/5'] = __( 'Quarter - 3:5', 'lan-thinkupthemes' );
+		$sizes['column4-4/5'] = __( 'Quarter - 4:5', 'lan-thinkupthemes' );
 
 		return $sizes;
 	}
@@ -305,14 +344,9 @@ function thinkup_check_ishome() {
 	if( isset($_SERVER["HTTPS"]) ) {
 		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
 	}
-	$pageURL .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	}
-	$pageURL = rtrim($pageURL, '/') . '/';
+	$pageURL .= '://' . wp_unslash( $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] );
 
+	$pageURL = rtrim($pageURL, '/') . '/';
 	$pageURL = str_replace( "www.", "", $pageURL );
 	$siteURL = str_replace( "www.", "", site_url( '/' ) );
 
@@ -435,7 +469,7 @@ function thinkup_check_isblog() {
     //Check all blog-related conditional tags, as well as the current post type,
     //to determine if we're viewing a blog page.
     return (
-        ( is_home() || is_archive() || is_single() )
+        ( is_home() || is_archive() )
         && ($post_type == 'post')
     ) ? true : false ;
  
