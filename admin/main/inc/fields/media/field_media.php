@@ -186,8 +186,8 @@ if ( ! class_exists( 'ReduxFramework_media' ) ) {
             }
 
             echo '<div class="' . $hide . 'screenshot">';
-            echo '<a class="of-uploaded-image" href="' . $this->value['url'] . '" target="_blank">';
-            echo '<img class="redux-option-image" id="image_' . $this->field['id'] . '" src="' . $this->value['thumbnail'] . '" alt="" target="_blank" rel="external" />';
+            echo '<a class="of-uploaded-image" href="' . esc_url( $this->value['url'] ) . '" target="_blank">';
+            echo '<img class="redux-option-image" id="image_' . $this->field['id'] . '" src="' . esc_url( $this->value['thumbnail'] ) . '" alt="" target="_blank" rel="external" />';
             echo '</a>';
             echo '</div>';
 

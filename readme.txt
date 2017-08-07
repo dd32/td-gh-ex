@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.11
+- Updated: Escaping improved in "media" field of framework.
+- Updated: Escaping improved in "slides" field of framework.
+- Updated: Escaping improved in "image_select" field of framework.
+
 Version 1.8.10
 - New:     Version control now updated with use of global variable $thinkup_theme_version.
 - Updated: Anchor for responsive stylesheet changed from "responsive" changed to "thinkup-responsive".
