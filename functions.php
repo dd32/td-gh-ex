@@ -37,6 +37,9 @@ function avata_setup(){
 	add_editor_style("editor-style.css");
 	add_image_size( 'blog', 609, 214 , true);
 	if ( !isset( $content_width ) ) $content_width = 1170;
+	
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 
 add_action( 'after_setup_theme', 'avata_setup' );
@@ -64,6 +67,46 @@ function avata_register_widgets() {
 		
     endforeach;
 }
+
+/**
+ * Selective Refresh
+ */
+function avata_register_blogname_partials( WP_Customize_Manager $wp_customize ) {
+	
+	global $avata_sections;
+	if (is_array($avata_sections) && !empty($avata_sections) ){
+    	foreach( $avata_sections as $k => $v ){
+			foreach( $v['fields'] as $field_id=>$field ){
+				if(!isset($field['settings']) ){
+					$field['settings'] = $field_id;
+					}
+				if(!is_array($field['settings']))
+					$wp_customize->selective_refresh->add_partial( $field['settings'].'_selective', array(
+						'selector' => '.avata-'.$field['settings'],
+						'settings' => array( 'avata['.$field['settings'].']' ),
+						) );
+				
+			}
+		}
+	}
+	
+	$wp_customize->selective_refresh->add_partial( 'header_site_title', array(
+		'selector' => '.site-name',
+		'settings' => array( 'blogname' ),
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'header_site_description', array(
+		'selector' => '.site-tagline',
+		'settings' => array( 'blogdescription' ),
+	) );
+	
+	
+	$wp_customize->selective_refresh->add_partial( 'copyright_selective', array(
+		'selector' => '.avata-copyright',
+		'settings' => array( 'avata[copyright]' ),
+	) );
+}
+add_action( 'customize_register', 'avata_register_blogname_partials' );
 
 /**
  * Enqueue scripts and styles.
@@ -558,20 +601,19 @@ function avata_posted_on() {
 		
 	if( $display_post_meta != '1' ){
 		
-	  $display_meta_author     = avata_option('display_meta_author','1');
-	  $display_meta_date       = avata_option('display_meta_date','1');
-	  $display_meta_categories = avata_option('display_meta_categories','1');
-	  $display_meta_comments   = avata_option('display_meta_comments','1');
-	  $display_meta_readmore   = avata_option('display_meta_readmore','1');	
+	  $hide_meta_date       = avata_option('hide_meta_date');
+	  $hide_meta_author     = avata_option('hide_meta_author');
+	  $hide_meta_comments   = avata_option('hide_meta_comments');
+	  
 		
 	   $return .=  '<ul class="entry-meta">';
-	  if( $display_meta_date == '1' )
+	  if( $hide_meta_date != '1' )
 		$return .=  '<li class="entry-date"><i class="fa fa-calendar"></i>'. get_the_date(  ).'</li>';
-	  if( $display_meta_author == '1' )
+	  if( $hide_meta_author != '1' )
 		$return .=  '<li class="entry-author"><i class="fa fa-user"></i>'.get_the_author_link().'</li>';
-	  if( $display_meta_categories == '1' )		
-		$return .=  '<li class="entry-catagory"><i class="fa fa-file-o"></i>'.get_the_category_list(', ').'</li>';
-	  if( $display_meta_comments == '1' )	
+	  //if( $hide_meta_categories != '1' )		
+		//$return .=  '<li class="entry-catagory"><i class="fa fa-file-o"></i>'.get_the_category_list(', ').'</li>';
+	  if( $hide_meta_comments != '1' )	
 		$return .=  '<li class="entry-comments pull-right">'.avata_get_comments_popup_link('', __( '<i class="fa fa-comment"></i> 1 ', 'avata'), __( '<i class="fa fa-comment"></i> % ', 'avata'), 'read-comments', '').'</li>';
         $return .=  '</ul>';
 	}

@@ -2,6 +2,10 @@
 
 == CHANGE LOG == 
 
+= Version 1.1.8 = = 07/08/2017 
+* Add - Added blog options
+* Fix - Fixed testimonial avatar issue
+
 = Version 1.1.7 = = 06/08/2017 
 * Compatible with WPML & Polylang
 

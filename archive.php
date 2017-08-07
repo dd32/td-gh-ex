@@ -2,8 +2,7 @@
 get_header(); ?>
 
  <!--Main Area-->
-        
-        <section class="page-title-bar page-title-bar-archive title-left">
+<section class="page-title-bar page-title-bar-archive title-left">
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -21,7 +20,7 @@ get_header(); ?>
     </div>
     </div>
   </div>
-        </section>
+</section>
         <div class="page-wrap">
             <div class="container">
                 <div class="page-inner row right-aside">
@@ -41,8 +40,8 @@ get_header(); ?>
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'avata' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
+					'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous Page', 'avata' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avata' ) . ' </span>',
 				) );
 

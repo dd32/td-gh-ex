@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_sections;
+  global $allowedposttags;
   $section_title    = avata_option('section_title_0');
   $section_subtitle = avata_option('section_subtitle_0');
   $section_content  = wp_kses(avata_option('section_content_0'), $allowedposttags);
@@ -17,8 +17,8 @@
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
-      <h2 class="section-title"><?php echo esc_attr($section_title);?></h2>
-      <h5 class="section-subtitle"><?php echo esc_attr($section_subtitle);?></h5>
+      <h2 class="section-title avata-section_title_0"><?php echo esc_attr($section_title);?></h2>
+      <h5 class="section-subtitle avata-section_subtitle_0"><?php echo wp_kses($section_subtitle, $allowedposttags);?></h5>
     </div>
     <?php }?>
     <div class="section-content">

@@ -1259,7 +1259,46 @@ Hoo::add_field( 'avata', array(
 	'settings' => 'hide_post_meta',
 	'label'    => __('Hide Post Meta', 'avata'),
 	'section'  => 'avata_blog',
-	'choices'  => $choices,
+	'default'  => '',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'hide_meta_date',
+	'label'    => __('Hide Meta: Date', 'avata'),
+	'section'  => 'avata_blog',
+	'default'  => '',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'hide_meta_author',
+	'label'    => __('Hide Meta: Author', 'avata'),
+	'section'  => 'avata_blog',
+	'default'  => '',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'hide_meta_comments',
+	'label'    => __('Hide Meta: Comments', 'avata'),
+	'section'  => 'avata_blog',
+	'default'  => '',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'hide_meta_categories',
+	'label'    => __('Hide Categories on Post List Page', 'avata'),
+	'section'  => 'avata_blog',
+	'default'  => '',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'hide_meta_readmore',
+	'label'    => __('Hide "Read More" on Post List Page', 'avata'),
+	'section'  => 'avata_blog',
 	'default'  => '',
 	'priority' => 10,
 	) );

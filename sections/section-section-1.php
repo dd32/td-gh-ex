@@ -17,8 +17,8 @@
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
-      <h2 class="section-title"><?php echo esc_attr($section_title);?></h2>
-      <h5 class="section-subtitle"><?php echo esc_attr($section_subtitle);?></h5>
+      <h2 class="section-title avata-section_title_1"><?php echo esc_attr($section_title);?></h2>
+      <h5 class="section-subtitle avata-section_subtitle_1"><?php echo wp_kses($section_subtitle, $allowedposttags);?></h5>
     </div>
     <?php }?>
     <div class="section-content">

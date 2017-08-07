@@ -27,7 +27,7 @@
 	?>
       <div class="avata-slider-item slide text-center" >
         <div class="text-center avata-fullheight avata-verticalmiddle avata-banner-bgimage" style="background-image: url(<?php echo esc_url($item['image']);?>);">
-          <div class="avata-section-content text-center">
+          <div class="avata-section-content text-center avata-section_slider_banner_1">
             <div class="avata-container">
               <div class="avata-section-title-wrap text-center">
                 <h2 class="section-title" style="color:<?php echo $font_color;?>"><span><?php echo esc_attr($item['title']);?></span></h2>

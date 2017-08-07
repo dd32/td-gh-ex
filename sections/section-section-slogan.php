@@ -1,7 +1,6 @@
 <?php
-  global $allowedposttags, $avata_sections;
-  $section_title     = avata_option('section_title_slogan');
-  $section_subtitle  = avata_option('section_subtitle_slogan');
+  global $allowedposttags;
+
   $section_content   = avata_option('section_content_slogan');
   $btn_txt           = avata_option('section_btn_txt_slogan');
   $btn_link          = avata_option('section_btn_link_slogan');
@@ -21,8 +20,8 @@
   <div class="<?php echo $container;?>">
     <div class="section-content">
         <div class="col-md-8 col-md-offset-2 text-center">
-      <h3><?php echo wp_kses($section_content, $allowedposttags);?></h3>
-      <a href="<?php echo esc_url($btn_link);?>" target="<?php echo esc_attr($btn_target);?>" class="btn btn-lg btn-primary"><?php echo esc_attr($btn_txt);?></a> </div>
+      <h3 class="avata-section_content_slogan"><?php echo wp_kses($section_content, $allowedposttags);?></h3>
+      <a href="<?php echo esc_url($btn_link);?>" target="<?php echo esc_attr($btn_target);?>" class="btn btn-lg btn-primary avata-section_btn_txt_slogan"><?php echo esc_attr($btn_txt);?></a> </div>
 
 
     </div>

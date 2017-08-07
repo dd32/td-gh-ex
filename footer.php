@@ -27,7 +27,7 @@
          
           <div class="col-sm-6 col-md-6 col-lg-6">
             <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
-              <div class="text-left margintop-30">
+              <div class="text-left margintop-30 avata-copyright">
               <?php $copyright = wp_kses(avata_option('copyright'), $allowedposttags); ?>
                 <p><?php echo $copyright;?> &nbsp;&nbsp; <?php printf(__('Designed by <a href="%s">HooThemes</a>.','avata'),esc_url('http://www.hoothemes.com/'));?></p>
               </div>
