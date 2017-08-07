@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.3.11';
+$GLOBALS['thinkup_theme_version'] = '1.3.12';
 
 // Setup content width 
 function thinkup_content_width() {

@@ -116,8 +116,8 @@ if ( !class_exists ( 'ReduxFramework_slides' ) ) {
 
 
                     echo '<div class="screenshot' . $hide . '">';
-                    echo '<a class="of-uploaded-image" href="' . $slide[ 'image' ] . '">';
-                    echo '<img class="redux-slides-image" id="image_image_id_' . $x . '" src="' . $slide[ 'thumb' ] . '" alt="" target="_blank" rel="external" />';
+                    echo '<a class="of-uploaded-image" href="' . esc_url( $slide[ 'image' ] ) . '">';
+                    echo '<img class="redux-slides-image" id="image_image_id_' . $x . '" src="' . esc_url( $slide[ 'thumb' ] ) . '" alt="" target="_blank" rel="external" />';
                     echo '</a>';
                     echo '</div>';
 

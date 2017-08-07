@@ -84,6 +84,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.12
+- Updated: Escaping improved in "media" field of framework.
+- Updated: Escaping improved in "slides" field of framework.
+- Updated: Escaping improved in "image_select" field of framework.
+
 Version 1.3.11
 - Fixed:   Slider now displays correctly.
 - Updated: Minified version of bootstrap css file.
