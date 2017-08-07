@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.7.4
+Stable tag: 1.7.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,10 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.5 / 8 August 2017
+Fixed thumbnail visibility for posts with active Extended Header
+"Hide featured image" option now also hides thumbs on native blog page.
 
 * 1.7.4 / 17 July 2017
 Improved the presentation of item content in column and row grids.

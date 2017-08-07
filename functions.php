@@ -94,7 +94,7 @@ function bento_theme_setup() {
 
 
 // Register and enqueue CSS and scripts
-function bento_theme_styles_scripts () {	
+function bento_theme_styles_scripts() {	
 	
 	// Scripts
 	wp_enqueue_script( 'jquery-isotope', get_template_directory_uri().'/includes/isotope/isotope.pkgd.min.js', array('jquery', 'imagesloaded'), false, true );
@@ -119,7 +119,7 @@ function bento_theme_styles_scripts () {
 
 
 // Admin scripts
-function bento_admin_scripts () {
+function bento_admin_scripts() {
 	
 	// Enqueue scripts
 	$screen = get_current_screen();
