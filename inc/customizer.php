@@ -20,50 +20,94 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'title' => __( 'Theme Settings', 'bb-ecommerce-store' ),
 	    'description' => __( 'Description of what this panel does.', 'bb-ecommerce-store' ),
 	) );
-
 	
-	/*Contact Us*/
-	$wp_customize->add_section('bb_ecommerce_store_contact_us',array(
-		'title'	=> __('Contact Us','bb-ecommerce-store'),
-		'description'	=> __('Add homepage sections content here.','bb-ecommerce-store'),
+	//Layouts
+	$wp_customize->add_section( 'bb_ecommerce_store_left_right', array(
+    	'title'      => __( 'Layout Settings', 'bb-ecommerce-store' ),
+		'priority'   => 30,
 		'panel' => 'bb_ecommerce_store_panel_id'
-	));
-	
-	$wp_customize->add_setting('bb_ecommerce_store_our_address',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_textarea_field'
-	));
-	
-	$wp_customize->add_control('bb_ecommerce_store_our_address',array(
-		'label'	=> __('Add Address here.','bb-ecommerce-store'),
-		'section'	=> 'bb_ecommerce_store_contact_us',
-		'setting'	=> 'bb_ecommerce_store_our_address',
-		'type'		=> 'textarea'
-	));
-	$wp_customize->add_setting('bb_ecommerce_store_contact',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('bb_ecommerce_store_contact',array(
-		'label'	=> __('Add Number here.','bb-ecommerce-store'),
-		'section'	=> 'bb_ecommerce_store_contact_us',
-		'setting'	=> 'bb_ecommerce_store_contact',
-		'type'		=> 'text'
-	));
+	) );
 
-	$wp_customize->add_setting('bb_ecommerce_store_email',array(
-		'default'	=> '',
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('bb_ecommerce_store_theme_options',array(
+	        'default' => '',
+	        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
+	    )
+    );
+
+	$wp_customize->add_control('bb_ecommerce_store_theme_options',
+	    array(
+	        'type' => 'radio',
+	        'label' => 'Change Layouts',
+	        'section' => 'bb_ecommerce_store_left_right',
+	        'choices' => array(
+	            'Left Sidebar' => __('Left Sidebar','bb-ecommerce-store'),
+	            'Right Sidebar' => __('Right Sidebar','bb-ecommerce-store'),
+	            'One Column' => __('One Column','bb-ecommerce-store'),
+	            'Three Columns' => __('Three Columns','bb-ecommerce-store'),
+	            'Four Columns' => __('Four Columns','bb-ecommerce-store'),
+	            'Grid Layout' => __('Grid Layout','bb-ecommerce-store')
+	        ),
+	    )
+    );
+
+    //home page slider
+	$wp_customize->add_section( 'bb_ecommerce_store_slidersettings' , array(
+    	'title'      => __( 'Slider Settings', 'bb-ecommerce-store' ),
+		'priority'   => 30,
+		'panel' => 'bb_ecommerce_store_panel_id'
+	) );
+
+	for ( $count = 1; $count <= 4; $count++ ) {
+
+		// Add color scheme setting and control.
+		$wp_customize->add_setting( 'bb_ecommerce_store_slidersettings-page-' . $count, array(
+				'default'           => '',
+				'sanitize_callback' => 'absint'
+		) );
+
+		$wp_customize->add_control( 'bb_ecommerce_store_slidersettings-page-' . $count, array(
+			'label'    => __( 'Select Slide Image Page', 'bb-ecommerce-store' ),
+			'section'  => 'bb_ecommerce_store_slidersettings',
+			'type'     => 'dropdown-pages'
+		) );
+
+	}
+
+	//OUR services
+	$wp_customize->add_section('bb_ecommerce_store_product',array(
+		'title'	=> __('Products','bb-ecommerce-store'),
+		'description'=> __('This section will appear below the slider.','bb-ecommerce-store'),
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));
+	
+	
+	$wp_customize->add_setting('bb_ecommerce_store_sec1_title',array(
+		'default'=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
-	$wp_customize->add_control('bb_ecommerce_store_email',array(
-		'label'	=> __('Add Email address here.','bb-ecommerce-store'),
-		'section'	=> 'bb_ecommerce_store_contact_us',
-		'setting'	=> 'bb_ecommerce_store_email',
-		'type'		=> 'text'
-	));
+	$wp_customize->add_control('bb_ecommerce_store_sec1_title',array(
+		'label'	=> __('Section Title','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_product',
+		'setting'=> 'bb_ecommerce_store_sec1_title',
+		'type'=> 'text'
+	));	
+
+	for ( $count = 0; $count <= 0; $count++ ) {
+
+		$wp_customize->add_setting( 'bb_ecommerce_store_servicesettings-page-' . $count, array(
+			'default'           => '',
+			'sanitize_callback' => 'absint'
+		));
+		$wp_customize->add_control( 'bb_ecommerce_store_servicesettings-page-' . $count, array(
+			'label'    => __( 'Select Page', 'bb-ecommerce-store' ),
+			'section'  => 'bb_ecommerce_store_product',
+			'type'     => 'dropdown-pages'
+		));
+	}
 	
+	//footer
 	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
 		'title'	=> __('Footer Text','bb-ecommerce-store'),
 		'description'	=> __('Add some text for footer like copyright etc.','bb-ecommerce-store'),
@@ -156,7 +200,7 @@ final class bb_ecommerce_store_customize {
 	public function sections( $manager ) {
 
 		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
+		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
 		$manager->register_section_type( 'bb_ecommerce_store_customize_Section_Pro' );

@@ -7,8 +7,8 @@
  * @since Ecommerce Store 1.0
  */
 ?>
+<div class="col-md-4 col-sm-4">
   <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
-
       <h3 class="ecomercepost-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>
   	  <div class="metabox">
             <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
@@ -29,4 +29,5 @@
         </div>
       </div>	
       <div class="clearfix"></div>
+  </div>
 </div>

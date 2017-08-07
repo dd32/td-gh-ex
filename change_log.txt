@@ -13,3 +13,8 @@ i) Licence updated
 Version 1.2.2
 i) Fixed licence text
 ii) Fixed code for wp_link_pages and missing trasnlation in function.php
+
+Version 1.2.3
+i) Changed the layout of theme.
+ii) Removed the depreceated functions.
+iii) Added the  static part with post.

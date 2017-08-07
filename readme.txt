@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2.2
-Tested up to    :   WP 4.7+
+Version         :   1.2.3
+Tested up to    :   WP 4.8
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
 
@@ -52,7 +52,15 @@ Theme is Built using the following resource bundles.
         https://pixabay.com/en/shopping-shopping-cart-sale-meadow-2291966/
 
 3 - CSS bootstrap.css
-	Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+        Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+    CSS nivo-slider.css
+        Copyright 2012, Dev7studios
+        Free to use and abuse under the MIT license.
+        http://www.opensource.org/licenses/mit-license.php
+
+4 - All the icons taken from fontawesome licensed under GPL License.
+    https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
+
 
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
