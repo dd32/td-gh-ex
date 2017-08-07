@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.8
+- Updated: Customizer theme option styling updated.
+
 Version 1.0.7
 - Updated: Slider updated to ensure full compatibility with child themes.
 
