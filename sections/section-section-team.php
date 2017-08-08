@@ -15,6 +15,7 @@
   
   ?>
 <section class="section section-team <?php echo esc_attr($section_class);?>">
+<div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
@@ -60,5 +61,6 @@
 	 ?>
 		</div>
     </div>
+  </div>
   </div>
 </section>

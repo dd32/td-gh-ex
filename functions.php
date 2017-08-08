@@ -126,13 +126,17 @@ function avata_enqueue_scripts() {
 	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/assets/plugins/font-awesome/css/font-awesome.min.css', false, '4.7.0', false);
 	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/assets/plugins/bootstrap/css/bootstrap.css', false, '3.3.7', false);
 	wp_enqueue_style('jquery-fullpage',  get_template_directory_uri() .'/assets/plugins/fullPage.js/jquery.fullPage.css', false, '2.9.4', false);
-	wp_enqueue_style('jquery-prettyPhoto',  get_template_directory_uri() .'/assets/plugins/jquery-prettyPhoto/prettyPhoto.css', false, '2.9.4', false);
+	wp_enqueue_style('lightgallery',  get_template_directory_uri() .'/assets/plugins/lightGallery/css/lightgallery.min.css', false, '1.5', false);
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri().'/assets/plugins/owl-carousel/assets/owl.carousel.css',false, '2.3.0', false );
 	wp_enqueue_style( 'avata-main', get_stylesheet_uri(), array(),  $theme_info->get( 'Version' ) );
 	
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/assets/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
 	wp_enqueue_script( 'jquery-fullpage', get_template_directory_uri().'/assets/plugins/fullPage.js/jquery.fullPage.min.js', array( 'jquery' ), '2.9.4', true );
-	wp_enqueue_script( 'jquery-prettyPhoto', get_template_directory_uri().'/assets/plugins/jquery-prettyPhoto/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
+        
+    wp_enqueue_script( 'picturefill', get_template_directory_uri().'/assets/plugins/lightGallery/js/picturefill.js', array( 'jquery' ), '3.0.2', true );
+	wp_enqueue_script( 'lightgallery', get_template_directory_uri().'/assets/plugins/lightGallery/js/lightgallery-all.min.js', array( 'jquery' ), '1.5', true );
+    wp_enqueue_script( 'jquery-mousewheel', get_template_directory_uri().'/assets/plugins/lightGallery/js/jquery.mousewheel.js', array( 'jquery' ), '3.1.13', true );
+	
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri().'/assets/plugins/owl-carousel/owl.carousel.js', array( 'jquery' ), '2.3.0', true );
 	wp_enqueue_script( 'imagesloaded' );
 	wp_enqueue_script( 'masonry' );
@@ -168,6 +172,7 @@ function avata_enqueue_scripts() {
 		$font      = avata_option('font_'.$j);
 		$font_color = avata_option('font_color_'.$j);
 		$background_color = avata_option('background_color_'.$j);
+		$background_opacity = avata_option('background_opacity_'.$j);
 		$background_image = avata_option('background_image_'.$j);
 		$background_repeat = avata_option('background_repeat_'.$j);
 		$background_position = avata_option('background_position_'.$j);
@@ -187,7 +192,9 @@ function avata_enqueue_scripts() {
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$font.";color:".$font_color.";}";
 		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";
-		$css .= ".section-".$item."{background-color:".$background_color.";background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
+		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
+		
+		$css .= ".section-".$item." .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
 		
 		if( $full_background_image == 'yes' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
@@ -195,7 +202,7 @@ function avata_enqueue_scripts() {
 		if( $content_background_color != '' )
 			$css .= ".section-".$item." .container{background-color:".$content_background_color.";opacity:".$content_background_opacity.";border-radius:".$content_box_border_radius.";}";
 		
-		$css .= ".section-".$item.".fp-auto-height{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
+		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
 
 	}
 	$copyright_font_color = avata_option('copyright_color');

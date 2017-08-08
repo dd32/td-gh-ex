@@ -14,6 +14,7 @@
   	$section_class .= ' fp-auto-height';
   ?>
 <section class="section section-section-0 <?php echo esc_attr($section_class);?>">
+<div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
@@ -27,5 +28,6 @@
      <?php dynamic_sidebar("section-0"); ?>
      </div>
     </div>
+  </div>
   </div>
 </section>

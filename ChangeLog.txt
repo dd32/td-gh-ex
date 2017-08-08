@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.1.9 = = 08/08/2017 
+* Add - Added section - Video
+
 = Version 1.1.8 = = 07/08/2017 
 * Add - Added blog options
 * Fix - Fixed testimonial avatar issue

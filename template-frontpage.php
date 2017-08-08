@@ -44,7 +44,7 @@
 			$i++;
 		}
 		?>
-         <?php get_footer();?>
+         <?php get_footer('frontpage');?>
        </main>
 <?php
 	if ( $hide_side_nav != '1' ){
@@ -57,3 +57,6 @@
 </div>
 <?php }?>
  </div>
+ <?php wp_footer(); ?>
+</body>
+</html>

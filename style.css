@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Demo is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layout. background colors, header & footer and logo are also customizable. 
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -1738,7 +1738,7 @@ a:hover .lnk-icon-right {
     padding: 0 10px;
 }
 .entry-meta {
-    margin-bottom: 40px; 
+    margin-bottom: 20px; 
     padding: 0;
     list-style: none;
 	margin-left:0;
@@ -2849,7 +2849,7 @@ section .btn-lg{
 section .no-padding{
 	padding:0;
 	}
-.section.fp-auto-height{
+.section.fp-auto-height .section-content-wrap{
 	padding-top:100px;
 	padding-bottom:100px;
 	}
@@ -3103,7 +3103,7 @@ section.section .section-content{
 .intro-content{
     border: 0;
     margin: 0;
-    padding: 50px 15% 0;
+    padding: 80px 15% 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -3158,7 +3158,9 @@ section.section .section-content{
 }
 
 /* Works gallery*/
-
+#lightgallery{
+	list-style:none;
+}
 .work {
 	-moz-box-shadow: 0 0 0 1px #fff;
 	-webkit-box-shadow: 0 0 0 1px #fff;
@@ -3407,6 +3409,20 @@ section.section .section-content{
 	border-color: #3d3d3d !important;
 	color: #fff !important;
 }
+/* video section*/
+
+a.avate-media{
+	margin-bottom:36px;
+	display:inline-block;
+}
+.video-content i{
+	border: 2px solid white;
+    font-size: 35px;
+    padding: 15px 40px;
+    color: #fff;
+    border-radius: 5px;
+}
+
 /*
 ///////////////////////////////////////////////////
 9.0 Side nav dotstyle

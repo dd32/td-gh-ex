@@ -71,6 +71,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 								  'font' => 'Open Sans, sans-serif',
 								  'font_color' => '#666666',
 								  'background_color' => '',
+								  'background_opacity' => '1',
 								  'background_image' => '',
 								  'background_repeat' => 'repeat',
 								  'background_position' => 'top left',
@@ -167,6 +168,13 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 				  'label'       => esc_attr__( 'Background Color', 'avata' ),
 				  'description' =>  esc_attr__( 'Section background color.', 'avata' ),
 				  'default'     => $default_options['background_color'],
+			  ),
+			  'background_opacity_'.$id => array(
+				  'type'        => 'select',
+				  'label'       => esc_attr__( 'Background Opacity', 'avata' ),
+				  'description' =>  esc_attr__( 'Section background color opacity.', 'avata' ),
+				  'default'     => $default_options['background_opacity'],
+				  'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
 			  ),
 			  
 			  'background_image_'.$id => array(
@@ -454,6 +462,7 @@ $avata_lite_sidebars['section-banner-1'] = array(
 										'fields'=> $banner_1_options 
 										);
 
+
 // section service 1
 
 $service_1_defaults = array(
@@ -529,6 +538,36 @@ array_splice($service_1_options,3,0,array('section_items_service_1' => array(
 $avata_lite_sidebars['section-service-1'] = array(
 										'name'=> __('Section Features Style 1', 'avata'),
 										'fields'=> $service_1_options
+										);
+										
+										
+// section video 1
+
+$video_1_defaults = array(
+			'section_title'=> __('Watch the best Technology in <span>Action</span>', 'avata'),
+			'section_subtitle'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.',
+			'menu_slug' => 'video-1',
+			'background_image' => $imagepath.'video.jpg',
+			'background_color' => '#539ebc',
+			'background_opacity' => '0.6',
+			'font_color' => '#ffffff',
+			);
+
+$video_1_options = avata_public_section_options('video_1',$video_1_defaults,false,$args);
+
+array_splice($video_1_options,3,0,array('section_url_video_1' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_url_video_1',
+												  'label'       => esc_attr__( 'Youtube or Vimeo Video URL', 'avata' ),
+												  'description' => '',
+												  'default'     => 'https://www.youtube.com/watch?v=meBbDqAXago',
+														
+													)
+));
+
+$avata_lite_sidebars['section-video-1'] = array(
+										'name'=> __('Section Video', 'avata'),
+										'fields'=> $video_1_options
 										);
 
 // section intro 1
@@ -625,8 +664,8 @@ array_splice($gallery_options,3,0,array('section_items_gallery' => array(
 															'default'     => '',
 														),
 														'title' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Title', 'avata' ),
+															'type'        => 'textarea',
+															'label'       => esc_attr__( 'Description', 'avata' ),
 															'description' => '',
 															'default'     => '',
 														),
@@ -827,6 +866,7 @@ array_splice($testimonial_options,3,0,array('section_items_testimonial' => array
 													'type'        => 'repeater',
 													'label'       => esc_attr__( 'Testimonial', 'avata' ),
 													'section'     => 'section_testimonial',
+													'settings'     => 'section_items_testimonial',
 													'priority'    => 10,
 													'row_label' => array(
 														'type' => 'text',

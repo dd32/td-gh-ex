@@ -15,6 +15,7 @@
   
   ?>
 <section class="section section-gallery <?php echo esc_attr($section_class);?>">
+<div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
@@ -23,7 +24,7 @@
     </div>
     <?php }?>
     <div class="section-content avata-section_items_gallery">
-		<div class="row no-gutter">
+		<ul class="row no-gutter" id="lightgallery">
     <?php
 	$i = 1;
 	if (is_array($gallery) && !empty($gallery) ):
@@ -31,20 +32,21 @@
 			if(is_numeric($item['image']))
 				$item['image'] = wp_get_attachment_image_url($item['image'],'full');
 	?>
-    <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="<?php echo esc_url($item['image']);?>" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" alt="<?php echo esc_attr($item['title']);?>">
+    <li class="col-lg-2 col-md-4 col-sm-4 work" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
         <div class="overlay">
           <div class="overlay-caption">
             <p><i class="fa fa-search" aria-hidden="true"></i></p>
           </div>
         </div>
         </a> 
-        </div>
+        </li>
      <?php
 	 $i++;
 	 endforeach;
 	 endif; 
 	 ?>
-		</div>
+		</ul>
     </div>
+  </div>
   </div>
 </section>

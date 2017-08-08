@@ -62,7 +62,9 @@ $('.avata-home-sections').fullpage({
 });
 
 /*gallery*/
-$('a.work-box').prettyPhoto();
+$('#lightgallery').lightGallery();
+$('.avate-video-container').lightGallery();
+
 /*testimonial*/
 var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
@@ -94,8 +96,6 @@ if( $('header nav > ul').length )
 
 				
 });
-
-
 
 /*!
 * responsive menu

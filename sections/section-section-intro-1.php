@@ -20,6 +20,7 @@
   
   ?>
 <section class="section section-intro-1 <?php echo esc_attr($section_class);?>">
+<div class="section-content-wrap">
   <div class="<?php echo $container;?>">
     <div class="section-content">
     
@@ -68,7 +69,7 @@
   
 </div>
 
-
+</div>
     </div>
   </div>
 </section>
