@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post(); ?>
     	</div>
     </div>
 
-    <div id="content-vw" class="container">
+    <div id="content-ts" class="container">
         <div class="middle-align">       
     		<div class="col-md-12">
                 <?php the_content();

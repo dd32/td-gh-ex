@@ -63,6 +63,12 @@ function bb_mobile_application_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f1f1f1'
 	) );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style( array( 'css/editor-style.css', bb_mobile_application_font_url() ) );
 }
 endif;
 add_action( 'after_setup_theme', 'bb_mobile_application_setup' );
@@ -90,9 +96,49 @@ function bb_mobile_application_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Navigation', 'bb-mobile-application' ),
-		'description'   => __( 'Appears on footer', 'bb-mobile-application' ),
+		'name'          => __( 'Third Column Sidebar', 'bb-mobile-application' ),
+		'description'   => __( 'Appears on page sidebar', 'bb-mobile-application' ),
+		'id'            => 'sidebar-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Nav 1', 'bb-mobile-application' ),
+		'description'   => __( 'footer-1', 'bb-mobile-application' ),
 		'id'            => 'footer-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Nav 2', 'bb-mobile-application' ),
+		'description'   => __( 'footer-2', 'bb-mobile-application' ),
+		'id'            => 'footer-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Nav 3', 'bb-mobile-application' ),
+		'description'   => __( 'footer-3', 'bb-mobile-application' ),
+		'id'            => 'footer-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Nav 4', 'bb-mobile-application' ),
+		'description'   => __( 'footer-4', 'bb-mobile-application' ),
+		'id'            => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -153,7 +199,7 @@ function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
 	wp_enqueue_style( 'bb-mobile-application-basic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bb-mobile-application-effect', get_template_directory_uri().'/css/effect.css' );
-
+	wp_enqueue_style( 'bb-mobile-application-customcss', get_template_directory_uri() . '/css/custom.css' );
 	if ( is_home() || is_front_page() ) { 
 		wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 		wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
@@ -177,8 +223,38 @@ function bb_mobile_application_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bb_mobile_application_scripts' );
 
+
+define('bb_mobile_application_CREDIT','http://themeshopy.com','bb-mobile-application');
+
+if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
+	function bb_mobile_application_credit(){
+			echo "<a href=".esc_url(bb_mobile_application_CREDIT)." target='_blank' rel='nofollow'>ThemeShopy</a>";
+	}
+}
+
+/*radio button sanitization*/
+
+ function bb_mobile_application_sanitize_choices( $input, $setting ) {
+
+    global $wp_customize; 
+
+    $control = $wp_customize->get_control( $setting->id ); 
+
+    if ( array_key_exists( $input, $control->choices ) ) {
+
+        return $input;
+
+    } else {
+
+        return $setting->default;
+
+    }
+}
+
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';
 /* Customizer additions. */
 require get_template_directory() . '/inc/customizer.php';
+/* Custom header additions. */
+require get_template_directory() . '/inc/custom-header.php';
 ?>

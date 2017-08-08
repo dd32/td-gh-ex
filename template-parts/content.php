@@ -8,24 +8,19 @@
  */
 ?>
   
-    <div class="page-box">
-   
-
-    <div class="box-image">
-         <?php 
-                        if(has_post_thumbnail()) { 
-                          the_post_thumbnail(); 
-                        }
-						
-                      ?>
-    </div>
-
-    <div class="new-text"
-	<?php if(has_post_thumbnail()) { ?><?php } ?>>
-	 <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
-      <?php the_excerpt();?>
-	  <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php _e('Read More','bb-mobile-application'); ?>"><?php _e('Read More','bb-mobile-application'); ?></a> 
-    </div>
-    <div class="clearfix"></div>
-   </div>
+<div class="page-box">
+  <div class="box-image">
+    <?php 
+        if(has_post_thumbnail()) { 
+          the_post_thumbnail(); 
+        }
+    ?>
+  </div>
+  <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
+    <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
+    <p><?php the_excerpt();?></p>
+    <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php esc_html_e('Read More','bb-mobile-application'); ?>"><?php esc_html_e('Read More','bb-mobile-application'); ?></a> 
+  </div>
+  <div class="clearfix"></div>
+</div>
   

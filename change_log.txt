@@ -42,4 +42,10 @@ ii) Author Name Changed
 iii) Footer Link Changed
 
 Version 1.2.2
-I) Styling
+i) Styling
+
+Version 1.2.3
+i) Customization in theme.
+ii) Changed the layout.
+iii) Addded static section with post.
+iv) Removed deopreceated functions.

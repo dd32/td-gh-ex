@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content-vw">
+ * Displays all of the <head> section and everything up till <div id="content-ts">
  *
  * @package BB Mobile Application
  */
@@ -19,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="toggle"><a class="toggleMenu" href="#"><?php _e('Menu','bb-mobile-application'); ?></a></div>
+  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-mobile-application'); ?></a></div>
   <div id="header">
     <div class="container">
       <div class="menubox col-md-8 col-sm-8 col-md-push-4">

@@ -9,76 +9,178 @@
 
 get_header(); ?>
 
-<div class="container">
-    <div class="middle-align content_sidebar">
-        <div class="col-md-9" id="content-vw">
-		<div class="feature-box">
-	        	<div class="col-md-12">
-		            <div class="bradcrumbs">
-		                <?php bb_mobile_application_the_breadcrumb(); ?>
-		            </div>
-			</div>
-		</div>
-            <?php if ( have_posts() ) : ?>
-                <div class="container">
-                    <header>
-                        <h1 class="page-title">
-                            <?php
-                                the_archive_title( '<h1 class="page-title">', '</h1>' );
-                                the_archive_description( '<div class="taxonomy-description">', '</div>' );
-                            ?>
-                        </h1>
-                    </header><!-- .page-header -->  
-                </div>
-                <?php /* Start the Loop */ ?>
-            <?php 
-                while ( have_posts() ) : the_post(); ?>
-                    <div class="postbox smallpostimage">
-                        <?php 
-                            if(has_post_thumbnail()) { ?>
-                                <div class="col-md-5 wow bounceInUp">
-                                    <div class="hovereffect">
-                                        <?php the_post_thumbnail(); ?>
-                                    </div>
-                                </div><?php
-                                $class_col = '7';
-                            }
-                            else{
-                                $class_col = '12';                              
-                            }
-                        ?>
-                        <div class="col-md-<?php echo $class_col; ?> wow bounceInUp">
-                            <h4><?php the_title();?></h4>           
-                            <p><?php the_excerpt(); ?></p>
-                            <div class="metabox">
-                                <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-                                <span class="entry-author"> <?php the_author(); ?></span>
-                                <span class="entry-comments"> <?php comments_number( __('0 Comments','bb-mobile-application'), __('0 Comments','bb-mobile-application'), __('% Comments','bb-mobile-application') ); ?></span>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read Full', 'bb-mobile-application' ); ?>"><?php _e('Read Full','bb-mobile-application'); ?></a>
-                        </div>
-                        <div class="clearfix"></div> 
-                    </div>
-                <?php endwhile; ?>
-                <div class="navigation">
+<section id="our-services">
+    <div class="innerlightbox">
+        <div class="container">
+            <?php
+                $left_right = get_theme_mod( 'bb_mobile_application_theme_options','One Column');
+                if($left_right == 'Left Sidebar'){ ?>
+                <div class="col-md-4"><?php get_sidebar();?></div>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-8 col-sm-8 col-xs-12'); ?>>
                     <?php
-                        // Previous/next page navigation.
-                        the_posts_pagination( array(
-                            'prev_text' => __( 'Previous page', 'bb-mobile-application' ),
-                            'next_text' => __( 'Next page', 'bb-mobile-application' ),
-                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
-                        ) );
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
                     ?>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/content' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
                 </div>
-            <?php else : ?>
-                <?php get_template_part( 'no-results', 'archive' ); ?>
-            <?php endif; ?>
+            <?php }else if($left_right == 'Right Sidebar'){ ?>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-8 col-sm-8 col-xs-12'); ?>>
+                    <?php
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>                    
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/content' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
+                </div>        
+                <div class="col-md-4"><?php get_sidebar();?></div>
+            <?php }else if($left_right == 'One Column'){ ?>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 col-sm-12 col-xs-12'); ?>>
+                    <?php
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/content' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
+                </div>
+            <?php }else if($left_right == 'Three Columns'){ ?>
+                <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-6 col-sm-6 col-xs-12'); ?>>
+                    <?php
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/content' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
+                </div>
+                <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
+            <?php }else if($left_right == 'Four Columns'){ ?>
+                <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-3 col-sm-3 col-xs-12'); ?>>
+                    <?php
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/content' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
+                </div>
+                <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
+                <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
+            <?php }else if($left_right == 'Grid Layout'){ ?>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 col-sm-12 col-xs-12'); ?>>
+                    <?php
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+                          get_template_part( 'template-parts/grid-layout' ); 
+                        endwhile;
+                        else :
+                          get_template_part( 'no-results', 'archive' ); 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                          // Previous/next page navigation.
+                          the_posts_pagination( array(
+                              'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                              'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                          ) );
+                        ?>
+                    </div> 
+                </div>
+            <?php }?>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-md-3">
-            <?php dynamic_sidebar('sidebar-1');?>
-        </div>
-        <div class="clear"></div>
     </div>
-</div>
+</section>
 
 <?php get_footer(); ?>

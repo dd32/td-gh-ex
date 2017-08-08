@@ -21,7 +21,34 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-mobile-application' ),
 	) );
 
+	//Layouts
+	$wp_customize->add_section( 'bb_mobile_application_left_right', array(
+    	'title'      => __( 'General Settings', 'bb-mobile-application' ),
+		'priority'   => 30,
+		'panel' => 'bb_mobile_application_panel_id'
+	) );
 
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('bb_mobile_application_theme_options',array(
+	        'default' => '',
+	        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+
+	$wp_customize->add_control('bb_mobile_application_theme_options',
+	    array(
+	        'type' => 'radio',
+	        'label' => 'Change Layouts',
+	        'section' => 'bb_mobile_application_left_right',
+	        'choices' => array(
+	            'Left Sidebar' => __('Left Sidebar','bb-mobile-application'),
+	            'Right Sidebar' => __('Right Sidebar','bb-mobile-application'),
+	            'One Column' => __('One Column','bb-mobile-application'),
+	            'Three Columns' => __('Three Columns','bb-mobile-application'),
+	            'Four Columns' => __('Four Columns','bb-mobile-application'),
+	            'Grid Layout' => __('Grid Layout','bb-mobile-application')
+	        ),
+	    )
+    );
 
 	//home page slider
 	$wp_customize->add_section( 'bb_mobile_application_slidersettings' , array(
@@ -46,168 +73,109 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	}
 
-	$wp_customize->add_section('bb_mobile_application_footer-section',array(
-	        'title' => __('Footer','bb-mobile-application'),
-	        'description'   => __('Add News sections content here.','bb-mobile-application'),
-	        'panel' => 'bb_mobile_application_panel_id',
-	    ));
+	//Creative Feature
+	$wp_customize->add_section('bb_mobile_application_creative_section',array(
+		'title'	=> __('Creative Features Section','bb-mobile-application'),
+		'description'	=> '',
+		'priority'	=> null,
+		'panel' => 'bb_mobile_application_panel_id',
+	));
+	
+	$wp_customize->add_setting('bb_mobile_application_title',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));
 
-	    // add color picker setting
-	    $wp_customize->add_setting('bb_mobile_application_section_color5', array(
-	        'default' => '#18304c',
-			'sanitize_callback'	=> 'sanitize_hex_color',
-	    ));
+	$wp_customize->add_control('bb_mobile_application_title',array(
+		'label'	=> __('Title','bb-mobile-application'),
+		'section'	=> 'bb_mobile_application_creative_section',
+		'type'	=> 'text'
+	));
 
-	    // add color picker control
-	    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_section_color5', array(
-	        'label' => 'Background Color',
-	        'section' => 'bb_mobile_application_footer-section',
-	        'settings' => 'bb_mobile_application_section_color5',
-	    ) ) );
+	// category left
+	$categories = get_categories();
+	$cats = array();
+	$i = 0;
+	foreach($categories as $category){
+	if($i==0){
+	$default = $category->slug;
+	$i++;
+	}
+	$cats[$category->slug] = $category->name;
+	}
 
-	    $wp_customize->add_setting('bb_mobile_application_section_image5',array(
-	            'default'   => get_template_directory_uri().'',
-	            'sanitize_callback' => 'esc_url_raw',
-	    ));
-	        
-        $wp_customize->add_control(
-            new WP_Customize_Image_Control(
-                $wp_customize,
-                'bb_mobile_application_section_image4',
-                array(
-                    'label' => __('Background image (1440x700)','bb-mobile-application'),
-                    'section' => 'bb_mobile_application_footer-section',
-                    'settings' => 'bb_mobile_application_section_image5'
-                )
-            )
-        );
-	    $wp_customize->add_setting('bb_mobile_application_our_newsletter',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_our_newsletter',array(
-	        'label' => __('Section Title','bb-mobile-application'),
-	        'section'   => 'bb_mobile_application_footer-section',
-	        'type'      => 'text'
-	    ));
-	    
-	    $wp_customize->add_setting('bb_mobile_application_our_newsletter_desc',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_our_newsletter_desc',array(
-	        'label' => __('Section Description','bb-mobile-application'),
-	        'section'   => 'bb_mobile_application_footer-section',
-	        'type'      => 'textarea'
-	    ));
-	    
-	    $wp_customize->add_setting('bb_mobile_application_our_newsletter_shortcode',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_our_newsletter_shortcode',array(
-	        'label' => __('Section shortcode','bb-mobile-application'),
-	        'section'   => 'bb_mobile_application_footer-section',
-	        'type'      => 'text'
-	    ));
+	$wp_customize->add_setting('bb_mobile_application_blogcategory_left_setting',array(
+		'default'	=> 'select',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
 
-	    $wp_customize->add_setting('bb_mobile_application_news-title',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'bb-mobile-application_format_for_editor',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_address',array(
-	            'label' => __('News Title','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_news-title',
-	            'type'  => 'textarea'
-	        )
-	    );
+	$wp_customize->add_control('bb_mobile_application_blogcategory_left_setting',array(
+		'type'    => 'select',
+		'choices' => $cats,
+		'label' => __('Select Category to display Latest Post','bb-mobile-application'),
+		'section' => 'bb_mobile_application_creative_section',
+	));
 
-	    $wp_customize->add_setting('bb_mobile_application_address-title',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_address-title',array(
-	            'label' => __('Address Title','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_address-title',
-	            'type'  => 'text'
-	        )
-	    );
+	//middle image
+	$post_list = get_posts();
+	$i = 0;
+	foreach($post_list as $post){
+		$posts[$post->post_title] = $post->post_title;
+	}
 
-	    $wp_customize->add_setting('bb_mobile_application_address',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_address',array(
-	            'label' => __('Our Address','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_address',
-	            'type'  => 'textarea'
-	        )
-	    );
-	    
-	    $wp_customize->add_setting('bb_mobile_application_contact-number',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_contact-number',array(
-	            'label' => __('Contact No ','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_contact-number',
-	            'type'  => 'text'
-	        )
-	    );
-	    
-	    $wp_customize->add_setting('bb_mobile_application_cont_email',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_cont_email',array(
-	            'label' => __('Email Address','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_cont_email',
-	            'type'  => 'text'
-	        )
-	    );
-	    $wp_customize->add_setting('bb_mobile_application_website',array(
-	        'default'   => '',
-	        'sanitize_callback' => 'sanitize_text_field',
-	    ));
-	    
-	    $wp_customize->add_control('bb_mobile_application_website',array(
-	            'label' => __('Website Address','bb-mobile-application'),
-	            'section' => 'bb_mobile_application_footer-section',
-	            'setting'   => 'bb_mobile_application_website',
-	            'type'  => 'text'
-	        )
-	    );
+	$wp_customize->add_setting('the_wp_business_middle_image_setting',array(
+		'sanitize_callback' => 'sanitize_text_field',
+	));
 
-		$wp_customize->add_section('bb_mobile_application_footer_section',array(
-			'title'	=> __('Footer Text','bb-mobile-application'),
-			'description'	=> '',
-			'priority'	=> null,
-			'panel' => 'bb_mobile_application_panel_id',
-		));
-		
-		$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
-			'default'	=> '',
-			'sanitize_callback'	=> 'sanitize_text_field',
-		));
-		
-		$wp_customize->add_control('bb_mobile_application_footer_copy',array(
-			'label'	=> __('Copyright Text','bb-mobile-application'),
-			'section'	=> 'bb_mobile_application_footer_section',
-			'type'		=> 'textarea'
-		));
+	$wp_customize->add_control('the_wp_business_middle_image_setting',array(
+		'type'    => 'select',
+		'choices' => $posts,
+		'label' => __('Select post to display featured image','bb-mobile-application'),
+		'section' => 'bb_mobile_application_creative_section',
+	));
+
+	// category right
+	$categories = get_categories();
+	$cats = array();
+	$i = 0;
+	foreach($categories as $category){
+	if($i==0){
+	$default = $category->slug;
+	$i++;
+	}
+	$cats[$category->slug] = $category->name;
+	}
+
+	$wp_customize->add_setting('bb_mobile_application_blogcategory_right_setting',array(
+		'default'	=> 'select',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control('bb_mobile_application_blogcategory_right_setting',array(
+		'type'    => 'select',
+		'choices' => $cats,
+		'label' => __('Select Category to display Latest Post','bb-mobile-application'),
+		'section' => 'bb_mobile_application_creative_section',
+	));
+	
+
+	$wp_customize->add_section('bb_mobile_application_footer_section',array(
+		'title'	=> __('Footer Text','bb-mobile-application'),
+		'description'	=> '',
+		'priority'	=> null,
+		'panel' => 'bb_mobile_application_panel_id',
+	));
+	
+	$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));
+	
+	$wp_customize->add_control('bb_mobile_application_footer_copy',array(
+		'label'	=> __('Copyright Text','bb-mobile-application'),
+		'section'	=> 'bb_mobile_application_footer_section',
+		'type'		=> 'textarea'
+	));
 	
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	
@@ -276,7 +244,7 @@ final class bb_mobile_application_customize {
 	public function sections( $manager ) {
 
 		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
+		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
 		$manager->register_section_type( 'bb_mobile_application_customize_Section_Pro' );
@@ -289,7 +257,7 @@ final class bb_mobile_application_customize {
 				array(
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-mobile-application' ),
-					'pro_url'  => 'http://www.themeshopy.com/product/bb-mobile-application-theme/'
+					'pro_url'  => 'http://www.themeshopy.com/bb-mobile-application-theme/'
 				)
 			)
 		);

@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="col-md-3">
 		<?php dynamic_sidebar('sidebar-2'); ?>
 	</div>		 
-	<div class="col-md-9" id="content-vw" >
+	<div class="col-md-9" id="content-ts" >
 		<?php while ( have_posts() ) : the_post(); ?>
         
         <h1><?php the_title();?></h1>
