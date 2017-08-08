@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.2.5 - Released: 08.08.2017
+
+-- Fixed : Search results page, error message on the breadcrumb.
+
 - Version 3.2.4 - Released: 31.07.2017
 
 -- Moved : SuevaFree sample data, please see our documentation.

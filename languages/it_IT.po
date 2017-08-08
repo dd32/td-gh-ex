@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-24 01:17+0200\n"
-"PO-Revision-Date: 2017-07-24 01:17+0200\n"
+"POT-Creation-Date: 2017-08-08 22:35+0200\n"
+"PO-Revision-Date: 2017-08-08 22:36+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -1213,8 +1213,8 @@ msgid "Upgrade to Sueva Premium"
 msgstr "Aggiorna a Sueva Premium"
 
 #: core/includes/class-customize.php:77
-msgid "Upgrade to Avana Premium"
-msgstr "Aggiorna ad Avana Premium"
+msgid "Upgrade to SvevaPro"
+msgstr "Aggiorna a SvevaPro"
 
 #: core/includes/class-customize.php:352
 msgid ""
@@ -1775,6 +1775,10 @@ msgstr "Continua"
 msgid "Article"
 msgstr "Articolo"
 
+#: core/main.php:915
+msgid "Default image"
+msgstr ""
+
 #: core/metaboxes/post.php:19 core/metaboxes/post.php:32
 #: core/metaboxes/product.php:20 core/metaboxes/product.php:31
 #: core/metaboxes/service.php:20 core/metaboxes/service.php:31
@@ -1903,23 +1907,23 @@ msgstr "risultati per"
 msgid "Home"
 msgstr "Home"
 
-#: core/templates/header/breadcrumb.php:52
+#: core/templates/header/breadcrumb.php:53
 msgid "<span>Search </span> results for "
 msgstr "<span>Risultati </span> ricerca per:"
 
-#: core/templates/header/breadcrumb.php:56
+#: core/templates/header/breadcrumb.php:57
 msgid "Page 404"
 msgstr "Pagina 404"
 
-#: core/templates/header/breadcrumb.php:60
+#: core/templates/header/breadcrumb.php:61
 msgid "Attachment: "
 msgstr "Allegato:"
 
-#: core/templates/header/breadcrumb.php:64
+#: core/templates/header/breadcrumb.php:65
 msgid "Portfolio: "
 msgstr "Portfolio"
 
-#: core/templates/header/breadcrumb.php:68
+#: core/templates/header/breadcrumb.php:69
 msgid "Testimonial: "
 msgstr "Testimonianza: "
 
@@ -2131,6 +2135,9 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Upgrade to Avana Premium"
+#~ msgstr "Aggiorna ad Avana Premium"
 
 #~ msgid ""
 #~ "Insert the size of thumbnails for all contents with a sidebar, then use a "

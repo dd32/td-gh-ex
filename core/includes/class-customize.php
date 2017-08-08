@@ -74,8 +74,8 @@ if( !class_exists( 'suevafree_customize' ) ) {
 			
 				'sueva_label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
 				'sueva_url' => esc_url('https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel'),
-				'avana_label' => esc_html__( 'Upgrade to Avana Premium', 'suevafree' ),
-				'avana_url' => esc_url('https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?ref=2&campaign=avana-panel')
+				'avana_label' => esc_html__( 'Upgrade to SvevaPro', 'suevafree' ),
+				'avana_url' => esc_url('https://www.themeinprogress.com/sveva-pro-beauty-and-clean-suevafree-child-theme/?ref=2&campaign=sveva-panel')
 			
 			);
 		

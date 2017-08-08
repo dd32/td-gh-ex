@@ -23,8 +23,8 @@ if (!function_exists('suevafree_get_breadcrumb_function')) {
                     
                     <div class="col-md-12">
                     
-                        <?php 
-	
+                        <?php
+						
 							echo '<ul id="breadcrumb">';
 							
 							if ( !suevafree_is_woocommerce_active('is_woocommerce') ) {
@@ -48,7 +48,8 @@ if (!function_exists('suevafree_get_breadcrumb_function')) {
 									echo "<li>" . suevafree_get_archive_title() . "</li>";
 								
 								} else if ( is_search() ) {
-					
+									
+									global $s; 
 									echo "<li>" . __( '<span>Search </span> results for ', 'suevafree' ) . $s . "</li>";
 								
 								} else if ( is_404() ) {
