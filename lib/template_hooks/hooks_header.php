@@ -105,20 +105,21 @@ function ascend_header_extras_hook() {
 }
 add_action('ascend_start_vertical_header', 'ascend_header_vertical_extras_top', 20);
 function ascend_header_vertical_extras_top() {
-	global $ascend;
+	$ascend = ascend_get_options();
 	if(isset($ascend['beside_header_style']) && $ascend['beside_header_style'] == 'extras_above_menu') {
 		ascend_header_extras('sf-vertical');
 	}
 }
 add_action('ascend_end_vertical_header', 'ascend_header_vertical_extras_bottom', 20);
 function ascend_header_vertical_extras_bottom() {
-		global $ascend;
+	$ascend = ascend_get_options();
 	if((isset($ascend['beside_header_style']) && $ascend['beside_header_style'] == 'standard') || !isset($ascend['beside_header_style'])) {
 		ascend_header_extras('sf-vertical');
 	}
 }
 function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
-	global $ascend, $woocommerce;
+	global $woocommerce;
+	$ascend = ascend_get_options();
 	if(isset($ascend['header_extras']) ){
 		$header_extras = $ascend['header_extras'];
 	}
@@ -273,7 +274,7 @@ add_action('ascend_after_above_header', 'ascend_secondary_menu_area', 20);
 add_action('ascend_after_vertical_header', 'ascend_secondary_menu_area', 20);
 function ascend_secondary_menu_area() {
 		if (has_nav_menu('secondary_navigation')) : 
-			global $ascend;
+			$ascend = ascend_get_options();
 			$data_second_sticky = "none";
 			if(isset($ascend['site_layout']) && $ascend['site_layout'] != 'above') { 
 				if(isset($ascend['second_sticky']) && $ascend['second_sticky'] == '1') {

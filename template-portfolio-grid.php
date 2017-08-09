@@ -25,7 +25,7 @@ get_header();
       		$ascend = ascend_get_options();
   			$portfolio_type 		= get_post_meta( $post->ID, '_kad_portfolio_type', true );
 		   	$portfolio_items 		= get_post_meta( $post->ID, '_kad_portfolio_items', true );
-		   	$portfolio_order 		= get_post_meta( $post->ID, '_kad_portfolio_order', true );
+		   	$portfolio_order 		= get_post_meta( $post->ID, '_kad_portfolio_orderby', true );
 		   	$portfolio_column 		= get_post_meta( $post->ID, '_kad_portfolio_columns', true );
 		   	$portfolio_excerpt 		= get_post_meta( $post->ID, '_kad_portfolio_excerpt', true );
 		   	$portfolio_item_types 	= get_post_meta( $post->ID, '_kad_portfolio_types', true );

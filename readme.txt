@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.8 | 9th August 2017 =
+* Fix: Portfolio Grid orderby.
+* Fix: Issue with 992px and demo 4.
+* Fix: Color issue with empty mini cart.
+
 = Version 1.1.7 | 12th June 2017 =
 * Fix: Portfolio Image College.
 

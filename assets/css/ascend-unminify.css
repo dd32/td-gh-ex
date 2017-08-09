@@ -2201,7 +2201,7 @@ html .postlist article.sticky {
 .kt_mobile_slider {
   display: none;
 }
-@media (min-width: 992px) {
+@media (min-width: 993px) {
   .kad-header-position-left #wrapper {
     padding-left: 240px;
   }
@@ -7192,6 +7192,9 @@ input[type="submit"]:focus {
 .kad-smsquare-iconclass {
   padding: 5px;
   display: inline-block;
+}
+.sf-menu button.search-submit {
+  padding: 8px 16px;
 }
 .kt-title,
 .sidebar .widget-title,

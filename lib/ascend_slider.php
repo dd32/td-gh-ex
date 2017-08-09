@@ -175,6 +175,7 @@ if(!function_exists('ascend_build_post_carousel')) {
     	$extraargs = array();
     	if($type == 'portfolio') {
     		$tax = 'portfolio-type';
+    		$qtax = 'portfolio-type';
     	} elseif($type == 'product') {
     		if($featured == 'true'){
 	    		$extraargs = array(
@@ -183,12 +184,10 @@ if(!function_exists('ascend_build_post_carousel')) {
 				);
     		}
     		$tax = 'product_cat';
-    	} else if($type == 'staff') {
-    		$tax = 'staff-group';
-    	} else if($type == 'testimonal') {
-    		$tax = 'testimonal-group';
+    		$qtax = 'product_cat';
     	} else {
     		$tax = 'category';
+    		$qtax = 'category_name';
     	}
     	if(!empty($cat)) {
     		$cat = get_term($cat, $tax);
@@ -200,7 +199,7 @@ if(!function_exists('ascend_build_post_carousel')) {
 			'post_type' 		=> $type,
 			'offset' 			=> $offset,
 			'post_status' 		=> 'publish',
-			$tax 				=> $cat,
+			$qtax 				=> $cat,
 			'posts_per_page' 	=> $items,
 		);
 		$args = array_merge($args, $extraargs);
