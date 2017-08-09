@@ -203,6 +203,8 @@ function virtue_content($limit) {
       return $content;
     }
 
+
+
 /* === Ambrosite Next/Previous Post Link Plus ===
 Author: ambrosite
 Link: http://www.ambrosite.com/plugins
@@ -573,13 +575,6 @@ function kadence_adjacent_post_link_plus($args = '', $format = '%link &raquo;', 
   echo apply_filters( "{$adjacent}_post_link_plus", $output, $r );
 
   return true;
-}
-if (class_exists('SitePress')) {
-global $sitepress;
-add_filter('get_previous_post_plus_join', array($sitepress,'get_adjacent_post_join'));
-add_filter('get_next_post_plus_join', array($sitepress,'get_adjacent_post_join'));
-add_filter('get_previous_post_plus_where', array($sitepress,'get_adjacent_post_where'));
-add_filter('get_next_post_plus_where', array($sitepress,'get_adjacent_post_where'));
 }
 
 
