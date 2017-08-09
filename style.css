@@ -5,7 +5,7 @@
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.1.1
+  Version:     1.1.2
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -5246,6 +5246,20 @@ body.archive footer.meta-footer span.right-time {
 .topbox .widget > ul > li {
     display: inline;
     margin-left: 1em;
+}
+.tempbox {
+    min-height: 38px;
+    padding: 15px 15px 5px 30px;
+    margin: 0 auto;
+    width: 100%;
+    background: #fafafa;
+    margin-bottom: 15px;
+
+        display: block;
+         
+}
+.tempbox .temp-title {
+         text-shadow: 0 1px 1px #555;
 }
 #sidebar-top {
     min-height: 68px;

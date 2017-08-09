@@ -22,11 +22,11 @@
             <nav class="social-footer">
                     <?php
                     wp_nav_menu( array(
-                    'theme_location'    => 'above_footer',
-                    'container'        => 'ul',
-                    'depth'          => 1,
-                    'fallback_cb'   => '__return_false',
-                    'menu_class'   => 'nav navbar-nav'));
+                    'theme_location' => 'above_footer',
+                    'container'     => 'ul',
+                    'depth'        => 1,
+                    'fallback_cb' => '__return_false',
+                    'menu_class' => 'nav navbar-nav'));
                     ?>
             </nav>
             </div>

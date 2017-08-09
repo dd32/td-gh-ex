@@ -1,6 +1,13 @@
 === Appeal ===
 Theme URI:   http://themes.tradesouthwest.com/wordpress/appeal/
-Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has two column-newspaper style-template, a fullwidth, a three section wide and an advert template. An Author template is included that has a modal box linked to every author link. This is perfect for authors who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support,  width of pullquote teaser and set post excerpt length. Pullquote uses the theme editor "excerpt." Be sure it is activated from admin "Screen Options" menu in upper right. Demo at https://larryjudd.us/appeal
+Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has two column-newspaper style-template, a fullwidth, a three section wide and an advert template. An Author template is included that has a modal box linked to every author link.
+Customize 
+If title is shown
+Color of links and content backgrounds
+Custom featured image and header image with logo support
+Width of pullquote teaser and set post excerpt length 
+
+Demo at https://larryjudd.us/appeal
 
  * Theme Name:  Appeal
  * Author:      Larry Judd Oliver
@@ -25,13 +32,21 @@ Twitter in admin https://brand.twitter.com/logo
 
 == Notes ==
 * Requires WordPress 3.6 or higher!
-* All navigation to main top menu is parent recursive. If you have a menu with sub pages then the top link will not be 
-clickable. This is to prevent conflict with mobile navigation. A mobile device will not be able to tap on the top parent 
-link and use any of the child links below it.
+
+* Pullquote uses the theme editor "excerpt." Be sure it is activated from admin "Screen Options" menu in upper right.
+
+* All navigation to main top menu is parent recursive. If you have a menu with sub pages then the top link will not be clickable unless you turn off the option to use mobile nav in the Customizer. 
+
+* To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 
 
 == Change Log ==
+1.1.2
+* added defaults to sidebars
+* removed unused script
+* rebuild poedit
+
 1.1.1
 * removed response title name in header
 * fixed attachment page comments not posting correctly

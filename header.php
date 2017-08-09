@@ -18,7 +18,7 @@
 
             <?php if( has_custom_logo() ) : ?>
             <a title="<?php bloginfo('description'); ?>"
-                  href="<?php echo esc_url(home_url('/')); ?>">
+               href="<?php echo esc_url(home_url('/')); ?>">
             <?php printf( appeal_theme_custom_logo() ); ?></a>
             <?php endif; ?>
         
