@@ -14,23 +14,22 @@ if ($fullwidth == '1' || $fullwidth == 'on' || $fullscreen >0) {
 
 $container = 'container';
 $sidebar = 'none';
-$post_class = '';
-$left_sidebar = esc_attr(avata_option('left_sidebar_pages'));
+$left_sidebar  = esc_attr(avata_option('left_sidebar_pages'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
 
-if ($left_sidebar != '')
+if ($left_sidebar != '' && $left_sidebar != '0')
 	$sidebar = 'left';
 
-if ($right_sidebar != '')
+if ($right_sidebar != '' && $right_sidebar != '0')
 	$sidebar = 'right';
 
-if ($left_sidebar != '' && $right_sidebar != '')
+if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $right_sidebar != '0')
 	$sidebar = 'both';
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <section class="page-title-bar title-center no-subtitle" >
-    <div class="container">
+    <div class="<?php echo $container;?>">
       <hgroup class="page-title text-light text-center">
         <h1>
           <?php the_title();?>

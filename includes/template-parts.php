@@ -97,10 +97,10 @@ add_action('avata_featured__header','avata_featured_header');
  */
 function avata_hide_sections(){
 	
-	global $avata_lite_sidebars;
+	global $avata_lite_sections;
 	if ( is_customize_preview() ) {
 		echo '<div class="hide">';
-		foreach( $avata_lite_sidebars as $k => $v ){
+		foreach( $avata_lite_sections as $k => $v ){
 			dynamic_sidebar($k);
 		}
 	echo '</div>';

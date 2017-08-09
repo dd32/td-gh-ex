@@ -1,7 +1,24 @@
-<?php get_header(); ?>
+<?php 
 
+get_header(); 
+
+$container = 'container';
+$sidebar = 'none';
+$left_sidebar  = esc_attr(avata_option('left_sidebar_posts'));
+$right_sidebar = esc_attr(avata_option('right_sidebar_posts'));
+
+if ($left_sidebar != '' && $left_sidebar != '0')
+	$sidebar = 'left';
+
+if ($right_sidebar != '' && $right_sidebar != '0')
+	$sidebar = 'right';
+
+if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $right_sidebar != '0')
+	$sidebar = 'both';
+
+?>
 <section class="page-title-bar page-title-bar-single title-left">
-  <div class="container">
+  <div class="<?php echo $container;?>">
   <div class="row">
     <div class="col-md-12">
   <h4 class="text-uppercase"><?php the_title();?></h4>
@@ -14,8 +31,9 @@
   </div>
 </section>
 <div class="page-wrap">
-  <div class="container">
-    <div class="page-inner row">
+  <div class="<?php echo $container;?>">
+    <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
+    <div class="col-main">
       <div class="blog-post">
         <div class="full-width">
           <?php the_post_thumbnail( 'avata-featured-image' ); ?>
@@ -52,6 +70,8 @@
         </div>
         <?php endwhile; // End of the loop.?>
       </div>
+      </div>
+       <?php avata_get_sidebar($sidebar, 'post'); ?>
     </div>
   </div>
 </div>

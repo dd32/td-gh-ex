@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header(); 
 
 $container = 'container';
 $sidebar = 'none';
@@ -17,7 +17,6 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 ?>
 
  <!--Main Area-->
-        
 <section class="page-title-bar page-title-bar-archive title-left">
 <div class="<?php echo $container;?>">
   <div class="row">
@@ -36,7 +35,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
     </div>
     </div>
   </div>
-        </section>
+</section>
         <div class="page-wrap">
             <div class="<?php echo $container;?>">
                 <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
@@ -44,18 +43,20 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
                         <section class="page-main" role="main" id="content">
                             <div class="page-content">
                                 <!--blog list begin-->
+                                
                                 <div class="post-list">
                                 
                           <?php
 			if ( have_posts() ) :
+
 				while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content', 'post' );
+					get_template_part( 'template-parts/content', 'search' );
 
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'avata' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
+					'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous Page', 'avata' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avata' ) . ' </span>',
 				) );
 
@@ -74,8 +75,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
                             <div class="post-attributes"></div>
                         </section>
                     </div>
-                   <?php avata_get_sidebar($sidebar, 'archive'); ?>
-                    
+                    <?php avata_get_sidebar($sidebar, 'archive'); ?>
                 </div>
             </div>  
         </div>

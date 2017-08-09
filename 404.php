@@ -37,10 +37,10 @@ if ($page_id  > 0) {
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <section class="page-title-bar title-center no-subtitle" >
-    <div class="container">
+    <div class="<?php echo $container;?>">
       <hgroup class="page-title text-light text-center">
         <h1>
-          <?php the_title();?>
+          <?php echo $title;?>
         </h1>
       </hgroup>
       <div class="breadcrumb-nav breadcrumbs text-center text-light" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>

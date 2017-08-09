@@ -2,39 +2,24 @@
 // global $wp_registered_sidebars;
 #########################################
 function avata_widgets_init() {
-		register_sidebar(array(
-			'name' => __('Default Sidebar', 'avata'),
-			'id'   => 'default_sidebar',
-			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
-			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
-			'before_title' => '<h2 class="widget-title">', 
-			'after_title' => '</h2>' 
-			));
-		register_sidebar(array(
-			'name' => __('Displayed Everywhere', 'avata'),
-			'id'   => 'displayed_everywhere',
-			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
-			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
-			'before_title' => '<h2 class="widget-title">', 
-			'after_title' => '</h2>' 
-			));
-		
-		register_sidebar(array(
-			'name' => __('Blog Sidebar', 'avata'),
-			'id'   => 'blog',
-			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
-			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
-			'before_title' => '<h3 class="widget-title">', 
-			'after_title' => '</h3>' 
-			));
-		register_sidebar(array(
-			'name' => __('Page Sidebar', 'avata'),
-			'id'   => 'page',
-			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
-			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
-			'before_title' => '<h3 class="widget-title">', 
-			'after_title' => '</h3>' 
-			));
+		global $avata_sidebars;
+		/* Register sidebars */
+		$extra_class = 'avata-sidebar-widgets widget widget-box';
+		foreach ( $avata_sidebars as $k => $v ):
+			if( $k!='0' && $k !='' )
+			register_sidebar(
+				array (
+					'name'          => $v,
+					'id'            => $k,
+					'before_widget' => '<div id="%1$s" class="'.$extra_class.' %2$s">',
+					'after_widget' => '<span class="seperator extralight-border"></span></div>', 
+					'before_title' => '<h3 class="widget-title">', 
+					'after_title' => '</h3>' 
+				)
+			);
+			
+		endforeach;
+	
 		
 		register_sidebar(array(
 			'name' => __('Footer Area One', 'avata'),

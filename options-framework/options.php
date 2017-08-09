@@ -1,5 +1,5 @@
 <?php
-global $avata_sections;
+global $avata_sections, $avata_sidebars;
 $option_name = avata_get_option_name();
 
 $args['repeat'] = $repeat = array(
@@ -37,7 +37,13 @@ $args['fonts'] = $fonts = array(
 		'Tahoma, Geneva, sans-serif' => esc_attr__( 'Tahoma', 'avata' ),
 	);
 
-	
+$avata_sidebars['0'] = __( '--Disable--', 'avata' );
+for( $i=1;$i<=8;$i++ ):
+	$avata_sidebars['avata-sidebar-'.$i] = sprintf( __( 'Sidebar %d', 'avata' ), $i);
+endfor;
+
+
+
 $font_size = array();
 for($i=9;$i<=71;$i++){
 	$font_size[$i.'px'] = $i.'px';
@@ -51,7 +57,7 @@ $args['imagepath'] = $imagepath =  get_template_directory_uri() . '/assets/image
 $options         = get_option($option_name);
 $default_options = array();
 $nav_icon_style  = 'css3';
-$avata_lite_sidebars = array();
+$avata_lite_sections = array();
 $is_old_version  = false;
 
 
@@ -457,7 +463,7 @@ array_splice($banner_1_options,1,0,array('section_slider_banner_1' => array(
 													
 													));
 
-$avata_lite_sidebars['section-banner-1'] = array(
+$avata_lite_sections['section-banner-1'] = array(
 										'name'=> __('Section Banner', 'avata'),
 										'fields'=> $banner_1_options 
 										);
@@ -535,7 +541,7 @@ array_splice($service_1_options,3,0,array('section_items_service_1' => array(
 													),
 													)));
 
-$avata_lite_sidebars['section-service-1'] = array(
+$avata_lite_sections['section-service-1'] = array(
 										'name'=> __('Section Features Style 1', 'avata'),
 										'fields'=> $service_1_options
 										);
@@ -565,7 +571,7 @@ array_splice($video_1_options,3,0,array('section_url_video_1' => array(
 													)
 ));
 
-$avata_lite_sidebars['section-video-1'] = array(
+$avata_lite_sections['section-video-1'] = array(
 										'name'=> __('Section Video', 'avata'),
 										'fields'=> $video_1_options
 										);
@@ -612,7 +618,7 @@ array_splice($intro_1_options,3,0,
 
 ));
 
-$avata_lite_sidebars['section-intro-1'] = array(
+$avata_lite_sections['section-intro-1'] = array(
 										'name'=> __('Section Intro', 'avata'),
 										'fields'=> $intro_1_options 
 										);
@@ -673,7 +679,7 @@ array_splice($gallery_options,3,0,array('section_items_gallery' => array(
 													),
 													)));
 
-$avata_lite_sidebars['section-gallery'] = array(
+$avata_lite_sections['section-gallery'] = array(
 										'name'=> __('Section Gallery', 'avata'),
 										'fields'=> $gallery_options 
 										);
@@ -842,7 +848,7 @@ array_splice($team_options,3,0,array('section_items_team' => array(
 													),
 													)));
 
-$avata_lite_sidebars['section-team'] = array(
+$avata_lite_sections['section-team'] = array(
 										'name'=> __('Section Team', 'avata'),
 										'fields'=> $team_options 
 										);		
@@ -928,7 +934,7 @@ array_splice($testimonial_options,3,0,array('section_items_testimonial' => array
 													),
 													)));
 
-$avata_lite_sidebars['section-testimonial'] = array(
+$avata_lite_sections['section-testimonial'] = array(
 										'name'=> __('Section Testimonial', 'avata'),
 										'fields'=> $testimonial_options 
 										);	
@@ -975,7 +981,7 @@ array_splice($slogan_options,3,0,
 
 ));
 
-$avata_lite_sidebars['section-slogan'] = array(
+$avata_lite_sections['section-slogan'] = array(
 										'name'=> __('Section Slogan', 'avata'),
 										'fields'=> $slogan_options 
 										);
@@ -991,7 +997,7 @@ for( $i=1;$i<=2;$i++){
 	if(!isset($default_options[$j]))
 		$default_options[$j] = array();
 	$options = avata_public_section_options($j,$default_options[$j],true,$args);
-	$avata_lite_sidebars['section-'.$j] = array(
+	$avata_lite_sections['section-'.$j] = array(
 										'name'=>sprintf(__('Custom Section %d', 'avata'),$i),
 										'fields'=> $options
 										);
@@ -1010,15 +1016,15 @@ $sortsections_saved  = get_option('avata_sortsections',true);
 $avata_sections = array();
 if( is_array($sortsections_saved) && !empty($sortsections_saved) ){
 	foreach( $sortsections_saved as $sortsection ){
-		if(isset($avata_lite_sidebars[$sortsection])){
-			$avata_sections[$sortsection] = $avata_lite_sidebars[$sortsection];
+		if(isset($avata_lite_sections[$sortsection])){
+			$avata_sections[$sortsection] = $avata_lite_sections[$sortsection];
 		}
 	}
 
-	$avata_sections = array_merge($avata_sections,$avata_lite_sidebars);
+	$avata_sections = array_merge($avata_sections,$avata_lite_sections);
 
 }else{
-	$avata_sections = 	$avata_lite_sidebars;
+	$avata_sections = 	$avata_lite_sections;
 }
 	
 foreach( $avata_sections as $k => $v ){
@@ -1186,13 +1192,87 @@ Hoo::add_field( 'avata', array(
 	'default'  => '0',
 ) );
 
+// Sidebar settings
+
+
+Hoo::add_section( 'avata_panel_sidebar_settings', array(
+    'title'          => __( 'Sidebar Settings', 'avata' ),
+    'description'    => '',
+    'panel'          => '', 
+    'priority'       => 12,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'left_sidebar_pages',
+	'label'    => __( 'Page Left Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'right_sidebar_pages',
+	'label'    => __( 'Page Right Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'left_sidebar_posts',
+	'label'    => __( 'Post Left Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'right_sidebar_posts',
+	'label'    => __( 'Post Right Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'left_sidebar_archive',
+	'label'    => __( 'Archive Left Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'right_sidebar_archive',
+	'label'    => __( 'Archive Right Sidebar', 'avata' ),
+	'section'  => 'avata_panel_sidebar_settings',
+	'type'     => 'select',
+	'priority' => 10,
+	'default'  => '0',
+	'choices'  => $avata_sidebars
+) );
+
+
+
 // Footer
 
 Hoo::add_section( 'avata_footer', array(
     'title'          => __( 'Footer', 'avata' ),
     'description'    => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
     'panel'          => '', 
-    'priority'       => 12,
+    'priority'       => 13,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
 ) );
@@ -1269,7 +1349,7 @@ Hoo::add_section( 'avata_typography', array(
     'title'          => __( 'Typography', 'avata' ),
     'description'    => '',
     'panel'          => '', 
-    'priority'       => 13,
+    'priority'       => 14,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
 ) );
@@ -1289,7 +1369,7 @@ Hoo::add_section( 'avata_blog', array(
     'title'          => __( 'Blog', 'avata'  ),
     'description'    => '',
     'panel'          => '', 
-    'priority'       => 14,
+    'priority'       => 15,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
 ) );

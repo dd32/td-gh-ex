@@ -2,6 +2,10 @@
 
 == CHANGE LOG == 
 
+= Version 1.2.0 = = 08/08/2017 
+* Add - Added sidebar options
+* Fix - Fixed 404 page title issue
+
 = Version 1.1.9 = = 08/08/2017 
 * Add - Added section - Video
 

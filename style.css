@@ -3,12 +3,12 @@ Theme Name: Avata
 Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
-Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Demo is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layout. background colors, header & footer and logo are also customizable. 
-Version: 1.1.9
+Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, slogan and so on, you can also sort them by dragging and dropping. 
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
-Tags: one-column, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
 
 Avata Wordpress Theme has been created by Hoothemes.com, Copyright 2017 Hoothemes.com
 Avata Wordpress theme is released under the terms of GNU GPL.
@@ -1678,6 +1678,7 @@ a:hover .lnk-icon-right {
 
 .post-list .post-single .post-desk h4 {
     margin-bottom: 10px;
+	line-height: 30px;
 }
 
 .post-list .post-single .post-desk .date:after,
@@ -1995,9 +1996,207 @@ a:hover .lnk-icon-right {
   transform: scale(1.1);
 }
 
+/*
+ *  Blog Columns
+ */
+
+.right-aside .col-aside-left {
+	display: none;
+}
+
+.left-aside .col-aside-right {
+	display: none;
+}
+
+.no-aside .col-aside-left,
+.no-aside .col-aside-right {
+	display: none;
+}
+
+.col-main,
+.col-aside-left,
+.col-aside-right {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+	.col-main,
+	.col-aside-left,
+	.col-aside-right {
+		float: left;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.no-aside .col-main {
+		width: 100%;
+	}
+	.left-aside .col-main,
+	.right-aside .col-main {
+		width: 75%;
+	}
+	.both-aside .col-main {
+		width: 60%;
+	}
+	.left-aside .col-aside-left,
+	.right-aside .col-aside-right {
+		width: 25%;
+	}
+	.both-aside .col-aside-left {
+		width: 20%;
+	}
+	.both-aside .col-aside-right {
+		width: 20%;
+	}
+	.left-aside .col-main {
+		left: 25%; /*.left-aside .col-aside-left width*/
+	}
+	.left-aside .col-aside-left {
+		right: 75%; /*.left-aside .col-aside-main width*/
+	}
+	.both-aside .col-main {
+		left: 20%; /*.both-aside .col-aside-left width*/
+	}
+	.both-aside .col-aside-left {
+		right: 60%; /*.both-aside .col-aside-main width*/
+	}
+}
+
 /* 
 ///////////////////////////////////////////////////
-2.0 TEAM 
+2.0 WIDGET & FOOTERS
+///////////////////////////////////////////////////
+*/
+.widget-box{
+	margin-bottom:20px;
+}
+.widget-title {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+.widget-box ul{
+	margin-left:0;
+	list-style: none;
+}
+.footer-widget-area{
+	
+	}
+.footer-widget-area {
+    background: #3f5267;
+	padding: 5em 0;
+}
+.footer-widget-area, .footer-widget-area a {
+    color: #74889e;
+}
+.footer-widget-area ul{
+	list-style:none;
+	margin-left: 0;
+	}
+.footer-widget-area .widget-title {
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.content-widgets .search-form,
+.widget_search .search-form {
+	border: 2px solid #74889e;
+	color:#dcdcdc;
+	padding: 12px;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	position: static;
+	border-radius: 3px;
+}
+footer .widget_search .search-form{
+	border: 2px solid #fff;
+	}
+.content-widgets .search-form label,
+.widget_search .search-form label {
+    position:relative;
+    display: block;
+    margin: 0;
+}
+.content-widgets .search-form label:before,
+.widget_search .search-form label:before {
+	color:inherit;
+    position:absolute;
+    top:0; right:0;
+    font: normal normal normal 24px/20px 'FontAwesome';
+    content: "\f002";
+}
+.content-widgets .search-form  input[type="text"],
+.content-widgets .search-form input[type="search"],
+.widget_search .search-form input[type="text"],
+.widget_search .search-form input[type="search"] {
+	border: none;
+	float: left;
+	width: 100%;
+	margin-right: -25px;
+	padding-right: 25px;
+	background-color: transparent;
+	color: inherit;
+}
+.content-widgets .search-form input[type="submit"],
+.widget_search .search-form input[type="submit"] {
+	background: none;
+	float: right;
+	border: none;
+	width: 20px;
+	height: 20px;
+	position:relative;
+	z-index:2;
+    color: transparent;
+}
+.content-widgets ul{
+	list-style:none;
+}
+.content-widgets > span{
+	padding-bottom: 15px;
+    display: block;
+}
+.content-widgets > span > ul{
+	margin-left:0;
+}
+.footer-widget-area .widget-title:after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 35px;
+    height: 2px;
+    background: #58ca7e;
+    content: '';
+    left: 0;
+}
+
+.sub-footer {
+    padding: 50px 0 20px;
+}
+ul.social {
+    list-style: none;
+    padding-left: 0;
+}
+ul.social li {
+    display: inline;
+    margin-left: 15px;
+}
+.sub-footer p{
+	font-size:13px;
+	}
+	
+
+/* 
+///////////////////////////////////////////////////
+4.0 TEAM 
 ///////////////////////////////////////////////////
 */
 .avata-team-style-1,
@@ -2205,125 +2404,7 @@ a:hover .lnk-icon-right {
 
 /* 
 ///////////////////////////////////////////////////
-3.0 FOOTERS
-///////////////////////////////////////////////////
-*/
-.widget-box{
-	margin-bottom:20px;
-}
-.widget-box ul{
-	margin-left:0;
-}
-.footer-widget-area{
-	
-	}
-.footer-widget-area {
-    background: #3f5267;
-	padding: 5em 0;
-}
-.footer-widget-area, .footer-widget-area a {
-    color: #74889e;
-}
-.footer-widget-area ul{
-	list-style:none;
-	margin-left: 0;
-	}
-.footer-widget-area .widget-title {
-    font-size: 22px;
-    color: #fff;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.content-widgets .search-form,
-.widget_search .search-form {
-	border: 2px solid #74889e;
-	color:#dcdcdc;
-	padding: 12px;
-	overflow: hidden;
-	width: 100%;
-	display: block;
-	position: static;
-	border-radius: 3px;
-}
-footer .widget_search .search-form{
-	border: 2px solid #fff;
-	}
-.content-widgets .search-form label,
-.widget_search .search-form label {
-    position:relative;
-    display: block;
-    margin: 0;
-}
-.content-widgets .search-form label:before,
-.widget_search .search-form label:before {
-	color:inherit;
-    position:absolute;
-    top:0; right:0;
-    font: normal normal normal 24px/20px 'FontAwesome';
-    content: "\f002";
-}
-.content-widgets .search-form  input[type="text"],
-.content-widgets .search-form input[type="search"],
-.widget_search .search-form input[type="text"],
-.widget_search .search-form input[type="search"] {
-	border: none;
-	float: left;
-	width: 100%;
-	margin-right: -25px;
-	padding-right: 25px;
-	background-color: transparent;
-	color: inherit;
-}
-.content-widgets .search-form input[type="submit"],
-.widget_search .search-form input[type="submit"] {
-	background: none;
-	float: right;
-	border: none;
-	width: 20px;
-	height: 20px;
-	position:relative;
-	z-index:2;
-    color: transparent;
-}
-.content-widgets ul{
-	list-style:none;
-}
-.content-widgets > span{
-	padding-bottom: 15px;
-    display: block;
-}
-.content-widgets > span > ul{
-	margin-left:0;
-}
-.footer-widget-area .widget-title:after {
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 35px;
-    height: 2px;
-    background: #58ca7e;
-    content: '';
-    left: 0;
-}
-
-.sub-footer {
-    padding: 50px 0 20px;
-}
-ul.social {
-    list-style: none;
-    padding-left: 0;
-}
-ul.social li {
-    display: inline;
-    margin-left: 15px;
-}
-.sub-footer p{
-	font-size:13px;
-	}
-/* 
-///////////////////////////////////////////////////
-4.0 TESTIMONIALS
+5.0 TESTIMONIALS
 ///////////////////////////////////////////////////
 */
 .avata-testimonial-style-1,
@@ -2452,7 +2533,7 @@ ul.social li {
 
 /* 
 ///////////////////////////////////////////////////
-5.0 TESTIMONIALS
+6.0 PRICING
 ///////////////////////////////////////////////////
 */
 .avata-pricing-style-1,
@@ -2637,7 +2718,7 @@ ul.social li {
 
 /* 
 ///////////////////////////////////////////////////
-6.0 COUNTER
+7.0 COUNTER
 ///////////////////////////////////////////////////
 */
 .avata-counter-style-1,
@@ -2733,7 +2814,7 @@ ul.social li {
 
 /*
 ///////////////////////////////////////////////////
-7.0 MISCELLANEOUS
+8.0 MISCELLANEOUS
 ///////////////////////////////////////////////////
 */
 /* Burger Menu */
@@ -2836,7 +2917,7 @@ ul.social li {
 }
 /*
 ///////////////////////////////////////////////////
-8.0 SECTION
+9.0 SECTION
 ///////////////////////////////////////////////////
 */
 .no-gutter [class*=col-] {
@@ -3425,7 +3506,7 @@ a.avate-media{
 
 /*
 ///////////////////////////////////////////////////
-9.0 Side nav dotstyle
+10.0 Side nav dotstyle
 ///////////////////////////////////////////////////
 */
 
@@ -4095,8 +4176,8 @@ a.avate-media{
 	float:none !important;
 	}
 	
-	/*
- * 5.0 Side Navigation
+/*
+ *  Side Navigation
  */
 .dotstyle ul li .fp-tooltip {
     background: #333;
@@ -4220,7 +4301,7 @@ body.dark .fp-slidesNav ul li a span {
 
 /* 
 ///////////////////////////////////////////////////
-6.0 FEATURES 
+11.0 FEATURES 
 ///////////////////////////////////////////////////
 */
 /* FEATURE STYLE #1 */

@@ -13,7 +13,7 @@ function avata_get_option_name(){
 }
 
 function avata_setup(){
-	global $content_width,$avata_lite_sidebars;
+	global $content_width,$avata_lite_sections;
 
 	load_theme_textdomain('avata');
 	add_theme_support( 'post-thumbnails' ); 
@@ -52,10 +52,10 @@ add_action( 'after_setup_theme', 'avata_setup' );
 add_action('widgets_init', 'avata_register_widgets');
 
 function avata_register_widgets() {
-	global $avata_lite_sidebars;
-	/* Register sidebars */
-	foreach ( $avata_lite_sidebars as $k => $v ):
-		$extra_class = '';
+	global $avata_lite_sections;
+	/* Register sections */
+	$extra_class = 'avata-section-widgets';
+	foreach ( $avata_lite_sections as $k => $v ):
         register_sidebar(
             array (
                 'name'          => $v['name'],
@@ -66,6 +66,9 @@ function avata_register_widgets() {
         );
 		
     endforeach;
+	
+
+	
 }
 
 /**
@@ -188,6 +191,7 @@ function avata_enqueue_scripts() {
 		
 		if(is_numeric($background_image))
 			$background_image = wp_get_attachment_image_url($background_image,'full');
+			
 		
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$font.";color:".$font_color.";}";
@@ -210,7 +214,6 @@ function avata_enqueue_scripts() {
 	
 	$css .= "footer .sub-footer{background-color:".$copyright_bg_color.";}";
 	$css .= "footer .sub-footer,footer .sub-footer i,footer .sub-footer li{color:".$copyright_font_color .";}";
-	
 	
 	$nav_css3_border_color = avata_option("nav_css3_border_color");
 	
@@ -239,8 +242,7 @@ function avata_enqueue_scripts() {
 }
 .dotstyle-stroke li.active a {
     box-shadow: 0 0 0 2px ".$nav_css3_border_color.";
-}
-	";
+}";
 	
 	$nav_css3_color = avata_option("nav_css3_color");
 	
@@ -550,7 +552,7 @@ function avata_get_sidebar($sidebar, $template_part)
         <div class="col-aside-left">
             <aside class="blog-side left text-left">
                 <div class="widget-area">
-                <?php get_sidebar($template_part.'left');?>
+                <?php get_sidebar($template_part.'-left');?>
                 </div>
             </aside>
         </div>
@@ -559,12 +561,13 @@ function avata_get_sidebar($sidebar, $template_part)
     if ($sidebar == 'right' || $sidebar == 'both') { ?>
         <div class="col-aside-right">
             <div class="widget-area">
-            <?php get_sidebar($template_part.'right');?>
+            <?php get_sidebar($template_part.'-right');?>
             </div>
         </div>
     <?php 
     }
 }
+
 
 /**
  *  Custom comments list

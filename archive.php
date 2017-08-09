@@ -1,9 +1,24 @@
 <?php
-get_header(); ?>
+get_header(); 
+
+$container = 'container';
+$sidebar = 'none';
+$left_sidebar  = esc_attr(avata_option('left_sidebar_archive'));
+$right_sidebar = esc_attr(avata_option('right_sidebar_archive'));
+
+if ($left_sidebar != '' && $left_sidebar != '0')
+	$sidebar = 'left';
+
+if ($right_sidebar != '' && $right_sidebar != '0')
+	$sidebar = 'right';
+
+if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $right_sidebar != '0')
+	$sidebar = 'both';
+?>
 
  <!--Main Area-->
 <section class="page-title-bar page-title-bar-archive title-left">
-<div class="container">
+<div class="<?php echo $container;?>">
   <div class="row">
     <div class="col-md-12">
   <h4 class="text-uppercase"><?php 
@@ -22,8 +37,8 @@ get_header(); ?>
   </div>
 </section>
         <div class="page-wrap">
-            <div class="container">
-                <div class="page-inner row right-aside">
+            <div class="<?php echo $container;?>">
+                <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
                     <div class="col-main">
                         <section class="page-main" role="main" id="content">
                             <div class="page-content">
@@ -60,16 +75,7 @@ get_header(); ?>
                             <div class="post-attributes"></div>
                         </section>
                     </div>
-                    <div class="col-aside-left"></div>
-                    <div class="col-aside-right">
-                        <aside class="blog-side left text-left">
-                            <div class="widget-area">
-                                
-                                <?php get_sidebar();?>
-                                
-                            </div>
-                        </aside>
-                    </div>
+                    <?php avata_get_sidebar($sidebar, 'archive'); ?>
                 </div>
             </div>  
         </div>
