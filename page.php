@@ -2,17 +2,14 @@
 
 get_header();
 
-global $avata_post_meta;
+global $avata_page_meta;
 
-$fullwidth  = isset($avata_post_meta['avata_fullpage'][0])?$avata_post_meta['avata_fullpage'][0]:'';
-$fullscreen = isset($avata_post_meta['avata_fullscreen'][0])?$avata_post_meta['avata_fullscreen'][0]:'';
-
-if ($fullwidth == '1' || $fullwidth == 'on' || $fullscreen >0) {
-	get_template_part('template','fullwidth');
-	exit;
-}
+$fullwidth  = isset($avata_page_meta->full_width)?$avata_page_meta->full_width:'';
 
 $container = 'container';
+if ($fullwidth=='on')
+	$container = 'container-fluid';
+	
 $sidebar = 'none';
 $left_sidebar  = esc_attr(avata_option('left_sidebar_pages'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
@@ -31,9 +28,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
   <section class="page-title-bar title-center no-subtitle" >
     <div class="<?php echo $container;?>">
       <hgroup class="page-title text-light text-center">
-        <h1>
-          <?php the_title();?>
-        </h1>
+        <h2><?php the_title();?></h2>
       </hgroup>
       <div class="breadcrumb-nav breadcrumbs text-center text-light" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>
       <div class="clearfix"></div>

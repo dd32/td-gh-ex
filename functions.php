@@ -198,7 +198,8 @@ function avata_enqueue_scripts() {
 		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";
 		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
 		
-		$css .= ".section-".$item." .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
+		$css .= ".section-".$item."{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
+		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
 		
 		if( $full_background_image == 'yes' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
@@ -437,10 +438,8 @@ $css .=  ".dotstyle{
 	right: ".$side_nav_padding.";
 }";
 	
-	
-	$custom_css = avata_option("custom_css");
-	$css       .= $custom_css;
 	$css        = wp_filter_nohtml_kses($css);
+	$css        = apply_filters('avata_custom_css',$css);
 	
 	wp_add_inline_style( 'avata-main', $css );
 	
@@ -568,6 +567,21 @@ function avata_get_sidebar($sidebar, $template_part)
     }
 }
 
+/**
+ *  Cet excerpt
+ */	
+
+function avata_get_excerpt($limit) {
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).'...';
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+  return $excerpt;
+}
 
 /**
  *  Custom comments list
@@ -628,7 +642,7 @@ function avata_posted_on() {
         $return .=  '</ul>';
 	}
 
-	echo $return;
+	return $return;
 
 }
 

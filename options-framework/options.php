@@ -17,41 +17,47 @@ $args['position'] = $position = array(
 	'center center' => esc_attr__( 'Middle Center', 'avata' ),
 	'center right' => esc_attr__( 'Middle Right', 'avata' ),
 	'bottom left' => esc_attr__( 'Bottom Left', 'avata' ),
-		'bottom center' => esc_attr__( 'Bottom Center', 'avata' ),
-		'bottom right' => esc_attr__( 'Bottom Right', 'avata' ),
+	'bottom center' => esc_attr__( 'Bottom Center', 'avata' ),
+	'bottom right' => esc_attr__( 'Bottom Right', 'avata' ),
 	);
 	
 $args['attachment'] = $attachment = array(
-		'scroll'   => esc_attr__( 'Scroll Normally', 'avata' ),
-		'fixed' => esc_attr__( 'Fixed in Place', 'avata' ),
+	'scroll'   => esc_attr__( 'Scroll Normally', 'avata' ),
+	'fixed' => esc_attr__( 'Fixed in Place', 'avata' ),
 	);
 
 $args['fonts'] = $fonts = array(
-		'Arial, sans-serif'   => esc_attr__( 'Arial', 'avata' ),
-		'"Avant Garde", sans-serif' => esc_attr__( 'Avant Garde', 'avata' ),
-		'Cambria, Georgia, serif' => esc_attr__( 'Cambria', 'avata' ),
-		'Copse, sans-serif' => esc_attr__( 'Copse', 'avata' ),
-		'Garamond, "Hoefler Text", Times New Roman, Times, serif' => esc_attr__( 'Garamond', 'avata' ),
-		'Georgia, serif' => esc_attr__( 'Georgia', 'avata' ),
-		'"Helvetica Neue", Helvetica, sans-serif' => esc_attr__( 'Helvetica Neue', 'avata' ),
-		'Tahoma, Geneva, sans-serif' => esc_attr__( 'Tahoma', 'avata' ),
+	'Arial, sans-serif'   => esc_attr__( 'Arial', 'avata' ),
+	'"Avant Garde", sans-serif' => esc_attr__( 'Avant Garde', 'avata' ),
+	'Cambria, Georgia, serif' => esc_attr__( 'Cambria', 'avata' ),
+	'Copse, sans-serif' => esc_attr__( 'Copse', 'avata' ),
+	'Garamond, "Hoefler Text", Times New Roman, Times, serif' => esc_attr__( 'Garamond', 'avata' ),
+	'Georgia, serif' => esc_attr__( 'Georgia', 'avata' ),
+	'"Helvetica Neue", Helvetica, sans-serif' => esc_attr__( 'Helvetica Neue', 'avata' ),
+	'Tahoma, Geneva, sans-serif' => esc_attr__( 'Tahoma', 'avata' ),
 	);
+	
+// Pull all the categories into an array
+	$options_categories = array();
+	$options_categories_obj = get_categories();
+	$options_categories[''] = __( 'All', 'avata' );
+	foreach ($options_categories_obj as $category) {
+		$options_categories[$category->cat_ID] = $category->cat_name;
+	}
 
 $avata_sidebars['0'] = __( '--Disable--', 'avata' );
 for( $i=1;$i<=8;$i++ ):
 	$avata_sidebars['avata-sidebar-'.$i] = sprintf( __( 'Sidebar %d', 'avata' ), $i);
 endfor;
 
-
-
 $font_size = array();
 for($i=9;$i<=71;$i++){
 	$font_size[$i.'px'] = $i.'px';
 }
-$args['font_size'] = $font_size;
 
-$args['choices'] = $choices   = array('yes'=>esc_attr__( 'Yes', 'avata' ),'no'=>esc_attr__( 'No', 'avata' ));
-$args['target'] = $target    = array('_self'=>esc_attr__( 'Self', 'avata' ),'_blank'=>esc_attr__( 'Blank', 'avata' ));
+$args['font_size'] = $font_size;
+$args['choices']   = $choices   = array('yes'=>esc_attr__( 'Yes', 'avata' ),'no'=>esc_attr__( 'No', 'avata' ));
+$args['target']    = $target    = array('_self'=>esc_attr__( 'Self', 'avata' ),'_blank'=>esc_attr__( 'Blank', 'avata' ));
 $args['imagepath'] = $imagepath =  get_template_directory_uri() . '/assets/images/';
 
 $options         = get_option($option_name);
@@ -59,6 +65,8 @@ $default_options = array();
 $nav_icon_style  = 'css3';
 $avata_lite_sections = array();
 $is_old_version  = false;
+if($options)
+	$is_old_version  = true;
 
 
 function avata_public_section_options($id,$default,$custom = false,$args ){
@@ -66,223 +74,223 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 	extract($args);
 	
 	$default_options = array_merge(array(
-								  'hide' => $hide,
-								  'section_title' => '',
-								  'section_subtitle' => '',
-								  'fullwidth' => '',
-								  'autoheight' => '',
-								  'menu_title'  => '',
-								  'menu_slug' => 'section-'.$id,
-								  'font_size' => '14px',
-								  'font' => 'Open Sans, sans-serif',
-								  'font_color' => '#666666',
-								  'background_color' => '',
-								  'background_opacity' => '1',
-								  'background_image' => '',
-								  'background_repeat' => 'repeat',
-								  'background_position' => 'top left',
-								  'background_attachment' => 'scroll',
-								  'background_color_tablet' => '',
-								  'background_image_tablet' => '',
-								  'background_repeat_tablet' => 'repeat',
-								  'background_position_tablet' => 'top left',
-								  'background_attachment_tablet' => 'scroll',
-								  'background_color_mobile' => '',
-								  'background_image_mobile' => '',
-								  'background_repeat_mobile' => 'repeat',
-								  'background_position_mobile' => 'top left',
-								  'background_attachment_mobile' => 'scroll',
-								  'full_background_image' => 'yes',
-								  'css_class' => '',
-								  'id' => '',
-								  'content_background_image' => '',
-								  'content_background_image_link' => '',
-								  'content_background_image_target' => '_blank',
-								  'content_background_color' => '',
-								  'content_background_opacity' => '1',
-								  'content_box_border_radius' => '',
-								  'content' => '',
-								  'padding_top' => '100px',
-								  'padding_bottom' => '100px',
-							  ),$default);
+						  'hide' => $hide,
+						  'section_title' => '',
+						  'section_subtitle' => '',
+						  'fullwidth' => '',
+						  'autoheight' => '',
+						  'menu_title'  => '',
+						  'menu_slug' => 'section-'.$id,
+						  'font_size' => '14px',
+						  'font' => 'Open Sans, sans-serif',
+						  'font_color' => '#666666',
+						  'background_color' => '',
+						  'background_opacity' => '1',
+						  'background_image' => '',
+						  'background_repeat' => 'repeat',
+						  'background_position' => 'top left',
+						  'background_attachment' => 'scroll',
+						  'background_color_tablet' => '',
+						  'background_image_tablet' => '',
+						  'background_repeat_tablet' => 'repeat',
+						  'background_position_tablet' => 'top left',
+						  'background_attachment_tablet' => 'scroll',
+						  'background_color_mobile' => '',
+						  'background_image_mobile' => '',
+						  'background_repeat_mobile' => 'repeat',
+						  'background_position_mobile' => 'top left',
+						  'background_attachment_mobile' => 'scroll',
+						  'full_background_image' => 'yes',
+						  'css_class' => '',
+						  'id' => '',
+						  'content_background_image' => '',
+						  'content_background_image_link' => '',
+						  'content_background_image_target' => '_blank',
+						  'content_background_color' => '',
+						  'content_background_opacity' => '1',
+						  'content_box_border_radius' => '',
+						  'content' => '',
+						  'padding_top' => '100px',
+						  'padding_bottom' => '100px',
+				),$default);
 
 	
 	$return = array(
 												
 			  'section_hide_'.$id => array(
-						  'type'        => 'checkbox',
-						  'label'       => esc_attr__('Hide Section', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['hide'],
+					'type'        => 'checkbox',
+					'label'       => esc_attr__('Hide Section', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['hide'],
 					  ),
 
 			  'section_title_'.$id => array(
-						  'type'        => 'text',
-						  'label'       => esc_attr__('Section Title', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['section_title'],
+					'type'        => 'text',
+					'label'       => esc_attr__('Section Title', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['section_title'],
 					  ),
 
 			  'section_subtitle_'.$id => array(
-						  'type'        => 'text',
-						  'label'       => esc_attr__('Section Subitle', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['section_subtitle'],
+					'type'        => 'text',
+					'label'       => esc_attr__('Section Subitle', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['section_subtitle'],
 					  ),
 			  'section_content_'.$id => array(
-						  'type'        => 'textarea',
-						  'label'       => esc_attr__('Section Content', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['content'],
+					'type'        => 'textarea',
+					'label'       => esc_attr__('Section Content', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content'],
 					  ),
 					  
 			  'section_fullwidth_'.$id => array(
-						  'type'        => 'checkbox',
-						  'label'       => esc_attr__('Full Width', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['fullwidth'],
+					'type'        => 'checkbox',
+					'label'       => esc_attr__('Full Width', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['fullwidth'],
 					  ),
 			   'section_autoheight_'.$id => array(
-						  'type'        => 'checkbox',
-						  'label'       => esc_attr__('Auto Height', 'avata' ),
-						  'description' =>  '',
-						  'default'     => $default_options['autoheight'],
+					'type'        => 'checkbox',
+					'label'       => esc_attr__('Auto Height', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['autoheight'],
 					  ),
 			  'font_size_'.$id => array(
-						  'type'        => 'select',
-						  'label'       => esc_attr__( 'Font Size', 'avata' ),
-						  'description' =>  esc_attr__( 'Section content font size.', 'avata' ),
-						  'default'     => $default_options['font_size'],
-						  'choices'     => $font_size
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Font Size', 'avata' ),
+					'description' =>  esc_attr__( 'Section content font size.', 'avata' ),
+					'default'     => $default_options['font_size'],
+					'choices'     => $font_size
 					  ),
 			  'font_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Content Font', 'avata' ),
-				  'description' =>  esc_attr__( 'Section content font.', 'avata' ),
-				  'default'     => $default_options['font'],
-				  'choices'     => $fonts
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Content Font', 'avata' ),
+					'description' =>  esc_attr__( 'Section content font.', 'avata' ),
+					'default'     => $default_options['font'],
+					'choices'     => $fonts
 			  ),
 			  'font_color_'.$id => array(
-				  'type'        => 'color',
-				  'label'       => esc_attr__( 'Font Color', 'avata' ),
-				  'description' =>  esc_attr__( 'Section content font color.', 'avata' ),
-				  'default'     => $default_options['font_color'],
+					'type'        => 'color',
+					'label'       => esc_attr__( 'Font Color', 'avata' ),
+					'description' =>  esc_attr__( 'Section content font color.', 'avata' ),
+					'default'     => $default_options['font_color'],
 			  ),
 			  
 			  'background_color_'.$id => array(
-				  'type'        => 'color',
-				  'label'       => esc_attr__( 'Background Color', 'avata' ),
-				  'description' =>  esc_attr__( 'Section background color.', 'avata' ),
-				  'default'     => $default_options['background_color'],
+					'type'        => 'color',
+					'label'       => esc_attr__( 'Background Color', 'avata' ),
+					'description' =>  esc_attr__( 'Section background color.', 'avata' ),
+					'default'     => $default_options['background_color'],
 			  ),
 			  'background_opacity_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Background Opacity', 'avata' ),
-				  'description' =>  esc_attr__( 'Section background color opacity.', 'avata' ),
-				  'default'     => $default_options['background_opacity'],
-				  'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Background Opacity', 'avata' ),
+					'description' =>  esc_attr__( 'Section background color opacity.', 'avata' ),
+					'default'     => $default_options['background_opacity'],
+					'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
 			  ),
 			  
 			  'background_image_'.$id => array(
-				  'type'        => 'image',
-				  'label'       => esc_attr__( 'Background Image', 'avata' ),
-				  'description' =>  esc_attr__( 'Section background image.', 'avata' ),
-				  'default'     => $default_options['background_image'],
+					'type'        => 'image',
+					'label'       => esc_attr__( 'Background Image', 'avata' ),
+					'description' =>  esc_attr__( 'Section background image.', 'avata' ),
+					'default'     => $default_options['background_image'],
 			  ),
 			  'background_repeat_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Background Repeat', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['background_repeat'],
-				  'choices'     => $repeat
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Background Repeat', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['background_repeat'],
+					'choices'     => $repeat
 			  ),
 			  'background_position_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Background Position', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['background_position'],
-				  'choices'     => $position
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Background Position', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['background_position'],
+					'choices'     => $position
 			  ),
 			  'background_attachment_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Background Attachment', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['background_attachment'],
-				  'choices'     => $attachment
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Background Attachment', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['background_attachment'],
+					'choices'     => $attachment
 			  ),
 			  
 			  'full_background_image_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( '100% Width Background Image', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['full_background_image'],
-				  'choices'     => $choices
+					'type'        => 'select',
+					'label'       => esc_attr__( '100% Width Background Image', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['full_background_image'],
+					'choices'     => $choices
 			  ),
 			  
 			  'section_css_class_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Css Class', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['css_class'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Css Class', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['css_class'],
 			  ),
 			  'section_id_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Section ID', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['menu_slug'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Section ID', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['menu_slug'],
 			  ),
 			  'content_background_image_'.$id => array(
-				  'type'        => 'image',
-				  'label'       => esc_attr__( 'Content Background Image', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_background_image'],
+					'type'        => 'image',
+					'label'       => esc_attr__( 'Content Background Image', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_background_image'],
 			  ),
 			  'content_background_image_link_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Content Background Image Link', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_background_image_link'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Content Background Image Link', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_background_image_link'],
 			  ),
 			  'section_image_link_target_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Content Background Image Link Target', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_background_image_target'],
-				  'choices'     => $target
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Content Background Image Link Target', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_background_image_target'],
+					'choices'     => $target
 			  ),
 			  
 			  'content_background_color_'.$id => array(
-				  'type'        => 'color',
-				  'label'       => esc_attr__( 'Content Box Background Color', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_background_color'],
+					'type'        => 'color',
+					'label'       => esc_attr__( 'Content Box Background Color', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_background_color'],
 			  ),
 			  'content_background_opacity_'.$id => array(
-				  'type'        => 'select',
-				  'label'       => esc_attr__( 'Opacity', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_background_opacity'],
-				  'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Opacity', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_background_opacity'],
+					'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
 			  ),
 			  
 			  'content_box_border_radius_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Content Box Border Radius', 'avata' ),
-				  'description' =>  '',
-				  'default'     => $default_options['content_box_border_radius'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Content Box Border Radius', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['content_box_border_radius'],
 			  ),
 			  
 			  'padding_top_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Padding Top ( Valid under Auto Height )', 'avata' ),
-				  'description' => '',
-				  'default'     => $default_options['padding_top'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Padding Top ( Valid under Auto Height )', 'avata' ),
+					'description' => '',
+					'default'     => $default_options['padding_top'],
 			  ),
 			  'padding_bottom_'.$id => array(
-				  'type'        => 'text',
-				  'label'       => esc_attr__( 'Padding Bottom ( Valid under Auto Height )', 'avata' ),
-				  'description' => '',
-				  'default'     => $default_options['padding_bottom'],
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Padding Bottom ( Valid under Auto Height )', 'avata' ),
+					'description' => '',
+					'default'     => $default_options['padding_bottom'],
 			  ),
 			  
 	  );
@@ -302,11 +310,11 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 	}
 
 // front page sections
-
+$args['hide'] = '';
 if ($is_old_version){
-	$args['hide'] = '1';
+	$hide = '1';
 	}else{
-	$args['hide'] = '';
+	$hide = '';
 }
 
 $defaults = array();
@@ -372,8 +380,6 @@ array_splice($banner_1_options,1,0,array('section_slider_banner_1' => array(
 															'right_btn_link' => '#',
 															'right_btn_target' => '_blank',
 														),
-														
-														
 														
 													),
 													'fields' => array( 
@@ -557,6 +563,8 @@ $video_1_defaults = array(
 			'background_color' => '#539ebc',
 			'background_opacity' => '0.6',
 			'font_color' => '#ffffff',
+			'padding_top' => '150px',
+			'padding_bottom' => '120px',
 			);
 
 $video_1_options = avata_public_section_options('video_1',$video_1_defaults,false,$args);
@@ -938,7 +946,82 @@ $avata_lite_sections['section-testimonial'] = array(
 										'name'=> __('Section Testimonial', 'avata'),
 										'fields'=> $testimonial_options 
 										);	
-										
+	
+
+// section blog
+
+$blog_defaults = array('menu_slug' => 'blog','section_title'=>'Recent From Blog','section_subtitle'=>'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.','background_color'=>'#eeeeee','hide'=>$hide);
+$blog_args = $args;
+$blog_args['excludes'] = array();
+
+$blog_options = avata_public_section_options('blog',$blog_defaults,false,$blog_args);
+
+array_splice($blog_options,3,0,
+		array(
+		'section_post_num_blog' => array(
+				  'type'        => 'select',
+				  'settings'    => 'section_post_num_blog',
+				  'label'       => esc_attr__( 'Display Posts Num', 'avata' ),
+				  'description' => '',
+				  'default'     => '3',
+				  'choices'     => array('2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9')
+		),
+		'section_columns_blog' => array(
+				  'type'        => 'select',
+				  'settings'    => 'section_columns_blog',
+				  'label'       => esc_attr__( 'Columns', 'avata' ),
+				  'description' => '',
+				  'default'     => '3',
+				  'choices'     => array('2'=>'2','3'=>'3','4'=>'4')
+		),
+		'section_category_blog' => array(
+				  'type'        => 'select',
+				  'settings'    => 'section_category_blog',
+				  'label'       => esc_attr__( 'Category', 'avata' ),
+				  'description' => '',
+				  'default'     => '',
+				  'multiple'    => 10,
+				  'choices'     => $options_categories
+		),
+		'section_excerpt_length' => array(
+				  'type'        => 'text',
+				  'settings'    => 'section_excerpt_length',
+				  'label'       => esc_attr__( 'Excerpt Length', 'avata' ),
+				  'description' => '',
+				  'default'     => 20,
+		),
+		
+		'section_btn_txt' => array(
+				  'type'        => 'text',
+				  'settings'    => 'section_btn_txt_blog',
+				  'label'       => esc_attr__( 'Button Text', 'avata' ),
+				  'description' => '',
+				  'default'     => esc_attr__( 'View All Post', 'avata' ),
+		),
+		'section_btn_link_blog' => array(
+				  'type'        => 'text',
+				  'settings'    => 'section_btn_link_blog',
+				  'label'       => esc_attr__( 'Button Link', 'avata' ),
+				  'description' => '',
+				  'default'     => '#',
+		),
+		'section_btn_target_blog' => array(
+				  'type'        => 'select',
+				  'settings'    => 'section_btn_target_blog',
+				  'label'       => esc_attr__( 'Link Target', 'avata' ),
+				  'description' => '',
+				  'default'     => '_blank',
+				  'choices'     => $target
+		),
+
+));
+
+$avata_lite_sections['section-blog'] = array(
+										'name'=> __('Section Blog', 'avata'),
+										'fields'=> $blog_options 
+										);
+
+									
 // section slogan
 
 $slogan_defaults = array('autoheight' => '1','menu_slug' => 'slogan');

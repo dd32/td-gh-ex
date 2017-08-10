@@ -190,6 +190,11 @@
 			<key name='section_title_video_1' />
             <key name='section_subtitle_video_1' />
 			
+			<!-- section blog -->
+			<key name='section_title_blog' />
+            <key name='section_subtitle_blog' />
+			<key name='section_btn_txt_blog' />
+			
 			<!-- section custom 1 -->
 			<key name='section_title_0' />
             <key name='section_subtitle_0' />

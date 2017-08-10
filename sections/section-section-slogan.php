@@ -7,7 +7,6 @@
   $btn_target        = avata_option('section_btn_target_slogan');
   $section_class     = avata_option('section_css_class_slogan');
   $section_id        = avata_option('section_id_slogan');
-  $service           = avata_option('section_slogan');
   $fullwidth         =  avata_option('section_fullwidth_slogan');
   $autoheight        =  avata_option('section_autoheight_slogan');
   $container         = 'container';

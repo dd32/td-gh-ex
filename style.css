@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, slogan and so on, you can also sort them by dragging and dropping. 
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -119,7 +119,7 @@ h6 {
 	clear: both;
 	font-weight: 400;
 	margin: 20px 0 12px;
-	color: #333;
+	color: #696969;
 	font-family: "Montserrat", Arial, sans-serif;
 }
 
@@ -1065,14 +1065,6 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 20px 0;
-  padding: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 700;
-  color: #262626;
-}
-
 p {
   margin-bottom: 30px;
 }
@@ -1452,7 +1444,7 @@ a:hover .lnk-icon-right {
     background-color: #3f5267;
 }
 
-.page-title h1 {
+.page-title h2 {
 	font-size: 36px;
 	line-height: 1;
 	margin: 0;
@@ -1802,30 +1794,14 @@ a:hover .lnk-icon-right {
 ///////////////////////////////////////////////////
 */
 /* BLOG STYLE #1 */
-.avata-blog-style-1 {
-  padding: 7em 0;
-  background: #fff;
-}
-@media screen and (max-width: 768px) {
-  .avata-blog-style-1 {
-    padding: 4em 0;
-  }
-}
+
 .avata-blog-style-1 .avata-post {
   float: left;
   width: 100%;
   background: #fff;
   position: relative;
   margin-bottom: 30px;
-  -webkit-box-shadow: 0px 0px 20px #DFDFDF;
-  -moz-box-shadow: 0px 0px 20px #DFDFDF;
-  -ms-box-shadow: 0px 0px 20px #DFDFDF;
-  -o-box-shadow: 0px 0px 20px #DFDFDF;
-  box-shadow: 0px 0px 20px #DFDFDF;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  border-radius: 7px;
+  border:1px solid #eee;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1849,8 +1825,6 @@ a:hover .lnk-icon-right {
 .avata-blog-style-1 .avata-post .avata-post-image {
   position: relative;
   overflow: hidden;
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
   z-index: 1;
 }
 .avata-blog-style-1 .avata-post .avata-post-image .avata-overlay {
@@ -1902,7 +1876,7 @@ a:hover .lnk-icon-right {
   font-weight: 700;
 }
 .avata-blog-style-1 .avata-post .avata-post-text h3 a {
-  color: #000;
+  color: #696969;
 }
 .avata-blog-style-1 .avata-post .avata-post-text h3 a:hover {
   color: #58ca7e;
@@ -2085,9 +2059,9 @@ a:hover .lnk-icon-right {
 	margin-left:0;
 	list-style: none;
 }
-.footer-widget-area{
-	
-	}
+.widget-box ul li{
+	padding-bottom:5px;
+}
 .footer-widget-area {
     background: #3f5267;
 	padding: 5em 0;
@@ -2105,7 +2079,6 @@ a:hover .lnk-icon-right {
     position: relative;
     padding-bottom: 20px;
 }
-
 .content-widgets .search-form,
 .widget_search .search-form {
 	border: 2px solid #74889e;
@@ -2119,7 +2092,7 @@ a:hover .lnk-icon-right {
 }
 footer .widget_search .search-form{
 	border: 2px solid #fff;
-	}
+}
 .content-widgets .search-form label,
 .widget_search .search-form label {
     position:relative;
@@ -2177,7 +2150,6 @@ footer .widget_search .search-form{
     content: '';
     left: 0;
 }
-
 .sub-footer {
     padding: 50px 0 20px;
 }
@@ -2191,8 +2163,7 @@ ul.social li {
 }
 .sub-footer p{
 	font-size:13px;
-	}
-	
+}
 
 /* 
 ///////////////////////////////////////////////////
@@ -2211,7 +2182,6 @@ ul.social li {
     padding: 3em 0;
   }
 }
-
 .avata-team-style-1 .avata-person {
   position: relative;
   height: 350px;
@@ -2277,7 +2247,6 @@ ul.social li {
   opacity: 1;
   top: 0;
 }
-
 .avata-team-style-2 {
   background: #fafafa;
 }
@@ -2351,7 +2320,6 @@ ul.social li {
 .avata-team-style-2 .avata-social li a:hover {
   color: #58ca7e;
 }
-
 .avata-team-style-3 .person {
   text-align: center;
   margin-bottom: 40px;
@@ -2948,6 +2916,12 @@ section.section {
     max-width: 100%;
     overflow: hidden;
 }
+h2.section-title{
+	margin: 0 0 30px 0;
+}
+.section-title-area{
+	padding-bottom:40px;
+}
 section.section .section-content{
 	position:relative;
 }
@@ -3490,6 +3464,9 @@ section.section .section-content{
 	border-color: #3d3d3d !important;
 	color: #fff !important;
 }
+.avata-section_content_slogan{
+	padding-bottom:30px;
+	}
 /* video section*/
 
 a.avate-media{

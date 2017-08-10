@@ -21,7 +21,7 @@
       <div class="post-desk <?php echo $entry_class;?>">
         <?php the_title( '<h4 class="entry-title text-uppercase"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );?>
          <?php echo avata_posted_on();?>
-        <p> <?php the_excerpt();?> </p>
+        <p> <?php echo avata_get_excerpt(20);?> </p>
         
         <?php if( $hide_meta_readmore !='1' ){?>
         <a href="<?php the_permalink();?>" class="p-read-more"><?php _e('Read More', 'avata')?> <i class="fa fa-long-arrow-right"></i></a>
