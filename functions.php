@@ -7,6 +7,14 @@ foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*.php' ) as $
 foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/widgets/*.php' ) as $filename ) {
 	include $filename;
 }
+require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
+new WP_Review_Me( array(
+		'days_after' => 14,
+		'type'       => 'theme',
+		'slug'       => 'ignite',
+		'message'    => __( 'Hey! Sorry to interrupt, but you\'ve been using Ignite for a little while now. If you\'re happy with this theme, could you take a minute to leave a review? <i>You won\'t see this notice again after closing it.</i>', 'ignite' )
+	)
+);
 
 if ( ! function_exists( ( 'ct_ignite_set_content_width' ) ) ) {
 	function ct_ignite_set_content_width() {
@@ -34,7 +42,8 @@ if ( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 			'container' => 'loop-container',
 			'footer'    => 'overflow-container'
 		) );
-
+		add_theme_support( 'woocommerce' );
+		
 		load_theme_textdomain( 'ignite', get_template_directory() . '/languages' );
 	}
 }
@@ -132,6 +141,13 @@ add_filter( 'comment_form_default_fields', 'ct_ignite_update_fields' );
 if ( ! function_exists( 'ct_ignite_update_comment_field' ) ) {
 	function ct_ignite_update_comment_field( $comment_field ) {
 
+		// don't filter the WooCommerce review form
+		if ( function_exists( 'is_woocommerce' ) ) {
+			if ( is_woocommerce() ) {
+				return $comment_field;
+			}
+		}
+		
 		$comment_field =
 			'<p class="comment-form-comment">
                 <label for="comment" class="screen-reader-text">' . __( 'Your Comment', 'ignite' ) . '</label>
@@ -225,6 +241,18 @@ if ( ! function_exists( 'ct_ignite_remove_more_link_scroll' ) ) {
 	}
 }
 add_filter( 'the_content_more_link', 'ct_ignite_remove_more_link_scroll' );
+
+// Yoast OG description has "Continue ReadingTitle of the Post" due to its use of get_the_excerpt(). This fixes that.
+function ct_ignite_update_yoast_og_description( $ogdesc ) {
+	$read_more_text = get_theme_mod( 'read_more_text' );
+	if ( empty( $read_more_text ) ) {
+		$read_more_text = __( 'Continue Reading', 'ignite' );
+	}
+	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
+
+	return $ogdesc;
+}
+add_filter( 'wpseo_opengraph_desc', 'ct_ignite_update_yoast_og_description' );
 
 if ( ! function_exists( 'ct_ignite_featured_image' ) ) {
 	function ct_ignite_featured_image() {
