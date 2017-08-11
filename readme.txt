@@ -41,6 +41,8 @@ Twitter in admin: https://brand.twitter.com/logo
 
 
 == Change Log ==
+1.1.4
+* sanity for selects uses `sanitzie_text_field` all select entries are text values
 1.1.3
 * fixed break word in content and excerpt
 * made gallery templt wider
