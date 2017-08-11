@@ -1,11 +1,12 @@
+@charset "UTF-8";
 /*
 Theme Name: Tracks
 Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
-Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  Preview on desktop, tablets, and mobile with our interactive live demo: https://www.competethemes.com/demos/?theme=tracks
-Version: 1.58
-Tags: blog, photography, portfolio, one-column, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, or podcast. As a free theme, you can use Tracks for as many projects as you’d like. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
+Version: 1.59
+Tags: one-column, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Text Domain: tracks
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -295,7 +296,13 @@ img {
 }
 
 /* Form styles */
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
 textarea {
   padding: 0.8em;
   width: 100%;
@@ -320,7 +327,7 @@ textarea {
 input[type="submit"] {
   background: #222;
   color: white;
-  max-width: 22.2em !important;
+  max-width: 22.2em;
   min-width: 11.1em;
   padding: 0.8em;
   min-height: 45px;
@@ -1683,6 +1690,16 @@ li.pingback:first-child {
   margin-top: 1.5em;
 }
 
+.page-template-full-width .entry {
+  width: 100%;
+  max-width: none;
+}
+.page-template-full-width .entry-container {
+  padding: 0 5%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 /* 900px */
 @media all and (min-width: 56.25em) {
   .search-form-container {
@@ -1749,10 +1766,35 @@ li.pingback:first-child {
   margin-bottom: 3em;
 }
 
+.site-footer .widget_search .search-field {
+  max-width: none;
+}
+.site-footer .widget_search .search-submit {
+  background: #4d4d4d;
+  width: 100%;
+  max-width: none;
+  min-width: none;
+}
+
 .widget_categories select {
   margin-top: 1.5em;
 }
 
+@media all and (min-width: 50em) {
+  .site-footer .widget_search .search-form {
+    display: -webkit-box;
+    display: flex;
+  }
+  .site-footer .widget_search .search-field,
+  .site-footer .widget_search .search-submit {
+    width: auto;
+  }
+  .site-footer .widget_search .search-field {
+    margin-right: 0;
+    -webkit-box-flex: 1;
+            flex-grow: 1;
+  }
+}
 /* Footer menu styles */
 .menu-footer-items {
   list-style: none;

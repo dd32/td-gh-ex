@@ -10,6 +10,14 @@ foreach ( glob( trailingslashit( get_template_directory() ) . 'licenses/*.php' )
 foreach ( glob( trailingslashit( get_template_directory() ) . 'licenses/functions/*.php' ) as $filename ) {
 	include $filename;
 }
+require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
+new WP_Review_Me( array(
+		'days_after' => 14,
+		'type'       => 'theme',
+		'slug'       => 'tracks',
+		'message'    => __( 'Hey! Sorry to interrupt, but you\'ve been using Tracks for a little while now. If you\'re happy with this theme, could you take a minute to leave a review? <i>You won\'t see this notice again after closing it.</i>', 'tracks' )
+	)
+);
 
 if ( ! function_exists( ( 'ct_tracks_set_content_width' ) ) ) {
 	function ct_tracks_set_content_width() {
@@ -251,6 +259,18 @@ if ( ! function_exists( 'ct_tracks_remove_more_link_scroll' ) ) {
 	}
 }
 add_filter( 'the_content_more_link', 'ct_tracks_remove_more_link_scroll' );
+
+// Yoast OG description has "Read the postTitle of the Post" due to its use of get_the_excerpt(). This fixes that.
+function ct_tracks_update_yoast_og_description( $ogdesc ) {
+	$read_more_text = get_theme_mod( 'read_more_text' );
+	if ( empty( $read_more_text ) ) {
+		$read_more_text = __( 'Read the post', 'tracks' );
+	}
+	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
+
+	return $ogdesc;
+}
+add_filter( 'wpseo_opengraph_desc', 'ct_tracks_update_yoast_og_description' );
 
 // for displaying featured images including mobile versions and default versions
 if ( ! function_exists( 'ct_tracks_featured_image' ) ) {
@@ -821,3 +841,18 @@ if ( ! function_exists( ( 'ct_tracks_settings_notice' ) ) ) {
 	}
 }
 add_action( 'admin_notices', 'ct_tracks_settings_notice' );
+
+//----------------------------------------------------------------------------------
+// Add paragraph tags for author bio displayed in content/archive-header.php.
+// the_archive_description includes paragraph tags for tag and category descriptions, but not the author bio.
+//----------------------------------------------------------------------------------
+if ( ! function_exists( 'ct_tracks_modify_archive_descriptions' ) ) {
+	function ct_tracks_modify_archive_descriptions( $description ) {
+
+		if ( is_author() ) {
+			$description = wpautop( $description );
+		}
+		return $description;
+	}
+}
+add_filter( 'get_the_archive_description', 'ct_tracks_modify_archive_descriptions' );

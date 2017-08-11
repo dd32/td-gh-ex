@@ -19,7 +19,7 @@ function ct_tracks_add_video_meta_box() {
 
 		add_meta_box(
 			'ct_tracks_video',
-			__( 'Featured Video', 'tracks' ),
+			esc_html__( 'Featured Video', 'tracks' ),
 			'ct_tracks_video_callback',
 			$screen,
 			'normal',
@@ -54,6 +54,7 @@ function ct_tracks_video_callback( $post ) {
 	$youtube_logo     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_logo', true );
 	$youtube_captions = get_post_meta( $post->ID, 'ct_tracks_video_youtube_captions', true );
 	$youtube_autoplay = get_post_meta( $post->ID, 'ct_tracks_video_youtube_autoplay', true );
+	$youtube_loop     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_loop', true );
 
 	// sets video to display on posts only by default
 	if( empty( $display_value ) ) {
@@ -63,7 +64,7 @@ function ct_tracks_video_callback( $post ) {
 	// video preview
 	echo '<div class="ct_tracks_video_preview_container" id="ct_tracks_video_preview_container">';
 		echo '<label for="ct_tracks_video_url">';
-			_e( 'Video Preview', 'tracks' );
+			esc_html_e( 'Video Preview', 'tracks' );
 		echo '</label> ';
 		if( $value ) {
 			// output video embed
@@ -77,7 +78,7 @@ function ct_tracks_video_callback( $post ) {
 	// video URL input
 	echo '<div class="ct_tracks_video_input_container">';
 		echo '<label for="ct_tracks_video_url">';
-			_e( 'Add video URL:', 'tracks' );
+			esc_html_e( 'Add video URL:', 'tracks' );
 		echo '</label> ';
 		echo '<div>';
 			echo '<input type="text" class="regular-text" id="ct_tracks_video_url" name="ct_tracks_video_url" value="' . esc_url( $value ) . '" />';
@@ -88,18 +89,18 @@ function ct_tracks_video_callback( $post ) {
 	// Display option
 	if( $post->post_type == 'post' ) {
 		echo '<div class="ct_tracks_video_display_container">';
-			echo '<p>' . __( 'Choose where to display the video:', 'tracks' ) . '</p>';
+			echo '<p>' . esc_html__( 'Choose where to display the video:', 'tracks' ) . '</p>';
 			echo '<label for="ct_tracks_video_display_post">';
 				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_post" value="post" ' . checked( $display_value, "post", false ) . '>';
-				_ex( 'Post', 'noun', 'tracks' );
+				echo esc_html_x( 'Post', 'noun', 'tracks' );
 			echo '</label> ';
 			echo '<label for="ct_tracks_video_display_blog">';
 				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_blog" value="blog" ' . checked( $display_value, "blog", false ) . '>';
-				_ex( 'Blog', 'noun', 'tracks' );
+				echo esc_html_x( 'Blog', 'noun', 'tracks' );
 			echo '</label> ';
 			echo '<label for="ct_tracks_video_display_both">';
 				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_both" value="both" ' . checked( $display_value, "both", false ) . '>';
-				_e( 'Post & Blog', 'tracks' );
+				esc_html_e( 'Post & Blog', 'tracks' );
 			echo '</label> ';
 		echo '</div>';
 	}
@@ -115,26 +116,30 @@ function ct_tracks_video_callback( $post ) {
 	}
 
 	echo '<div class="ct_tracks_video_youtube_controls_container ' . $class . '">';
-		echo '<p>' . __( 'Youtube controls', 'tracks' ) . '</p>';
+		echo '<p>' . esc_html__( 'Youtube controls', 'tracks' ) . '</p>';
 		echo '<label for="ct_tracks_video_youtube_title">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_title" id="ct_tracks_video_youtube_title" value="1" ' . checked( '1', $youtube_title, false ) . '>';
-			_e( 'Hide title', 'tracks' );
+			esc_html_e( 'Hide title', 'tracks' );
 		echo '</label> ';
 		echo '<label for="ct_tracks_video_youtube_related">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_related" id="ct_tracks_video_youtube_related" value="1" ' . checked( '1', $youtube_related, false ) . '>';
-			_e( 'Hide related videos', 'tracks' );
+			esc_html_e( 'Hide related videos', 'tracks' );
 		echo '</label> ';
 		echo '<label for="ct_tracks_video_youtube_logo">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_logo" id="ct_tracks_video_youtube_logo" value="1" ' . checked( '1', $youtube_logo, false ) . '>';
-			_e( 'Hide Youtube logo', 'tracks' );
+			esc_html_e( 'Hide Youtube logo', 'tracks' );
 		echo '</label> ';
 		echo '<label for="ct_tracks_video_youtube_captions">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_captions" id="ct_tracks_video_youtube_captions" value="1" ' . checked( '1', $youtube_captions, false ) . '>';
-			_e( 'Show Captions by Default', 'tracks' );
+			esc_html_e( 'Show Captions by Default', 'tracks' );
 		echo '</label> ';
 		echo '<label for="ct_tracks_video_youtube_autoplay">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_autoplay" id="ct_tracks_video_youtube_autoplay" value="1" ' . checked( '1', $youtube_autoplay, false ) . '>';
-			_e( 'Autoplay video', 'tracks' );
+			esc_html_e( 'Autoplay video', 'tracks' );
+		echo '</label> ';
+		echo '<label for="ct_tracks_video_youtube_loop">';
+			echo '<input type="checkbox" name="ct_tracks_video_youtube_loop" id="ct_tracks_video_youtube_loop" value="1" ' . checked( '1', $youtube_loop, false ) . '>';
+			esc_html_e( 'Loop video', 'tracks' );
 		echo '</label> ';
 	echo '</div>';
 }
@@ -235,7 +240,8 @@ function ct_tracks_video_save_data( $post_id ) {
 		'ct_tracks_video_youtube_related',
 		'ct_tracks_video_youtube_logo',
 		'ct_tracks_video_youtube_captions',
-		'ct_tracks_video_youtube_autoplay'
+		'ct_tracks_video_youtube_autoplay',
+		'ct_tracks_video_youtube_loop'
 	);
 
 	foreach ( $youtube_IDs as $youtube_option ) {
@@ -309,23 +315,25 @@ function ct_tracks_add_youtube_parameters($html, $url, $args) {
 
 				$youtube_captions = get_post_meta( $post->ID, 'ct_tracks_video_youtube_captions', true );
 				$youtube_autoplay = get_post_meta( $post->ID, 'ct_tracks_video_youtube_autoplay', true );
+				$youtube_loop     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_loop', true );
 
 				$youtube_parameters = array(
 					'showinfo'       => $youtube_title,
 					'rel'            => $youtube_related,
 					'modestbranding' => $youtube_logo,
 					'cc_load_policy' => $youtube_captions,
-					'autoplay'       => $youtube_autoplay
+					'autoplay'       => $youtube_autoplay,
+					'loop'           => $youtube_loop
 				);
 
-				if ( is_array( $args ) ) {
-					$args = array_merge( $args, $youtube_parameters );
-				} else {
-					$args = $youtube_parameters;
+				if ( $youtube_loop == 1 ) {
+					$video_id = explode( 'v=', $featured_video );
+					$video_id = $video_id[1];
+					$youtube_parameters['playlist'] = $video_id;
 				}
 
+				$args       = is_array( $args ) ? array_merge( $args, $youtube_parameters ) : $youtube_parameters;
 				$parameters = http_build_query( $args );
-
 				// Modify video parameters
 				$html = str_replace( '?feature=oembed', '?feature=oembed&' . $parameters, $html );
 			}
