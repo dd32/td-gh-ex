@@ -69,7 +69,14 @@
 
 .comments---hr .comments-nav,
 
-.comments---h
+.comments---h,
+
+.commenter-url-creation-flabel .open-parenthesis---txt,
+.commenter-url-creation-flabel .close-parenthesis---txt,
+
+.post-header-aside .comment-creation-ability,
+
+.comments-population--empty--zero .comments-population
 {position:absolute;margin:-1px;padding:0;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;}
 
 
@@ -293,6 +300,22 @@
 
 
 
+/*------------------ Forms ------------------*/
+.post-content .search-form-search-axn,
+.aside .search-form-search-axn
+{
+    padding: .5rem 1rem;
+}
+
+.post-password-form [type="submit"]
+{
+    margin-top: 1rem;
+}
+
+
+
+
+
 
 
 
@@ -338,6 +361,9 @@
     display: block;
     
     padding: 0;
+    
+    width: 3rem;
+    height: 3rem;
     
     border-radius: 50%;
     overflow: hidden;
@@ -509,7 +535,7 @@
 {
     font-size: .75rem;
     
-    color: hsla( 0, 0%, 0%, .65);
+    color: hsla( 0, 0%, 0%, .5 );
 }
 
 .comment---ct_cr > ul
@@ -526,6 +552,8 @@
 {
     text-decoration: underline;
 }
+
+
 
 
 
@@ -551,13 +579,9 @@
     padding-bottom: calc( 1rem - .25rem );
 }
 
-/* Form Actions (WPg) */
-.comment-form .form-submit,
-.post-content .search-form-search-axn,
-.aside .search-form-search-axn
+.comment-form .form-submit
 {
-    padding: 2em 1em;
-    margin-top: -1rem;
+    padding: .5em 1em;
 }
 
 /* Form Elements */

@@ -119,6 +119,7 @@
     background-color: #f5f5f5;
     
     font-family: 'Noto Sans', sans-serif;
+    font-display: swap;
     text-rendering: geometricPrecision;
 }
 
@@ -130,6 +131,7 @@
 .wbp,
 .wbp---cr
 {
+    
 }
 
 
@@ -1378,22 +1380,29 @@ $go-green: #12b32d;
 .apl-search .b,
 
 .comment-form .input-text,
-.comment-form-submit-axn---b
+.comment-form-submit-axn---b,
+
+.post-password-form [type="password"],
+.post-password-form [type="submit"]
 {
     /* Reset */
     margin: 0;
     padding: 0;
     border: 0;
     background-color: transparent;
+    
+    /* Set */
+    width: 100%;
 }
 
 .apl-search .input-text,
-.apl-search .b,
 .apl-search .b_l,
 
-/* Comment Respond */
 .comment-form .input-text,
-.comment-form-submit-axn---b
+.comment-form-submit-axn---b,
+
+.post-password-form [type="password"],
+.post-password-form [type="submit"]
 {
     box-sizing: border-box;
     
@@ -1408,8 +1417,8 @@ $go-green: #12b32d;
 }
 
 .apl-search .b_l,
-
-.comment-form-submit-axn---b
+.comment-form-submit-axn---b,
+.post-password-form [type="submit"]
 {
     padding: .5rem 1rem;
 }
@@ -1429,23 +1438,30 @@ $go-green: #12b32d;
 
 /* ------------------------- Form Elements - Style > Decorations */
 .apl-search .input-text,
-
-.comment-form .input-text
+.comment-form .input-text,
+.post-password-form [type="password"]
 {
     padding: 0 .5rem;
     
     border: 1px solid black;
     border-color: hsla(0, 0%, 0%, .5);
+    border-radius: .125rem;
 }
 
-.apl-search .search-submit-axn---b_l,
 
+
+
+.apl-search .search-submit-axn---b_l,
+.apl-search .b_l,
 .comment-form-submit-axn---b,
 .post-content .apl-search .b,
-.aside .apl-search .b
+
+.post-password-form [type="submit"]
 {
     background-color: #00aaff;
     color: white;
+    
+    border-radius: .125rem;
 }
 
 .apl-search .search-reset-axn---b_l
@@ -1467,19 +1483,6 @@ $go-green: #12b32d;
 .apl--applicator--main-search .main-header---cr > .apl-search
 {
     background-color: transparent;
-}
-
-/* Search */
-.apl-search .input-text,
-.apl-search .b_l,
-.post-content .apl-search .b,
-.aside .apl-search .b,
-
-/* Comment Respond */
-.comment-form .input-text,
-.comment-form-submit-axn---b
-{   
-    border-radius: .125rem;
 }
 
 
