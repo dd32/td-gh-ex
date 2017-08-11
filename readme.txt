@@ -26,9 +26,8 @@ Demo at https://larryjudd.us/appeal
 - wp_bootstrap_navwalker GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker, Author: Edward McIntyre, License: GPL-2.0+
 
 Default Images:
-Home header 2017 Unsplash.com - GPL-2.0+
-Home demo 2017 pelo - GPL-2.0+
-Twitter in admin https://brand.twitter.com/logo
+Header photograph: by Christian Holzinger https://unsplash.com - GPL-2.0+ https://unsplash.com/?photo=lqQlmcPt9Qg
+Twitter in admin: https://brand.twitter.com/logo
 
 == Notes ==
 * Requires WordPress 3.6 or higher!
@@ -42,6 +41,19 @@ Twitter in admin https://brand.twitter.com/logo
 
 
 == Change Log ==
+1.1.3
+* fixed break word in content and excerpt
+* made gallery templt wider
+* added all setup function into setup except content_width
+* redundant header text color declaration removed
+* function `is_blog` removed... had added home tmplt (v 1.1.0) to override
+* secured alt text to gravatar and several other outputs
+* revised 404, search and nothing tmplts
+* archives core title use added
+* added sanity on select field
+* add img credit
+* added padding to sidebar 
+
 1.1.2
 * added defaults to sidebars
 * removed unused script

@@ -24,8 +24,9 @@
                       <time class="alignright" 
                             datetime="<?php echo get_the_date('F j, Y'); ?>"
                             itemprop="datePublished" pubdate 
-                            class="thedate">
-                        <?php echo the_date('', '<em>', '</em>', false ); ?></time> 
+                            class="thedate"><em><?php echo esc_attr( 
+                            the_date( ) ); ?></em>
+                      </time> 
                         <div class="clearfix"></div>      
                     </footer>
             </article><!-- #post -->
@@ -40,6 +41,11 @@
 
                     <?php get_template_part( 'nav', 'content' ); ?>
 
+            <aside class="post_content">
+            <h4><?php esc_html_e( 'Maybe try another search while you are here?', 'appeal' ); ?></h4>
+				   <p><?php get_search_form(); ?></p>
+
+			</aside>
 	    </div>
 	    
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

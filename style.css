@@ -5,7 +5,7 @@
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.1.2
+  Version:     1.1.3
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -4345,7 +4345,7 @@ h3.comment-reply-title {
 /* widgets
 ----------------------------------------------------------- */
 .widget ul{
-  margin-left: -2em;
+    margin-left: -2em;
 }
 /* calendar widget */
 .widget_calendar {
@@ -4357,8 +4357,17 @@ h3.comment-reply-title {
 .widget,
 .entry-title, 
 .widget[class*="widget_"] {
-overflow-wrap: break-word;
-word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.tempbox .widgettitle { 
+    display: none;
+}
+.tempbox .widget_meta ul {
+    float: right;
+}
+.tempbox .widget_meta ul li:last-child a { 
+    display: none;
 }
 #calendar_wrap {
     margin-top: .5em;
@@ -4375,13 +4384,13 @@ word-wrap: break-word;
     width: 80%;
     margin: 5px auto;
 }
-#wp-calendar tr td {}
-#calendar_wrap th {}
-#wp-calendar #today {}
-#wp-calendar #prev {}
-#wp-calendar #next {}
-#wp-calendar #next a {}
-#wp-calendar #prev a {}
+#wp-calendar tr td {color:inherit}
+#calendar_wrap th {color:inherit}
+#wp-calendar #today {color:inherit}
+#wp-calendar #prev {color:inherit}
+#wp-calendar #next {color:inherit}
+#wp-calendar #next a {color:inherit}
+#wp-calendar #prev a {color:inherit}
 #wp-calendar caption {
     background: #eee;
     border: thin solid #ddd;
@@ -4436,13 +4445,13 @@ word-wrap: break-word;
     max-width: 100%;
 }
 img.aligncenter, div.aligncenter, figure.aligncenter, img.wp-post-image {
-display:block; margin:1em auto;
+    display:block; margin:1em auto;
 }
 img.alignright, div.alignright, figure.alignright {
-float:right; margin:1em 0 1em 2em;
+    float:right; margin:1em 0 1em 2em;
 }
 img.alignleft, div.alignleft, figure.alignleft, img.wp-post-image.attachment-thumb {
-float:left; margin:1em 1em 2em 0;
+    float:left; margin:1em 1em 2em 0;
 }
 figure {
 max-width: 100%; height: auto; margin:1em 0;
@@ -4556,6 +4565,11 @@ color: inherit;
 	clear: left;
 	display: block;
 	margin: 0 auto;
+	text-align: center;
+}
+.text-note {
+    color: #676767;
+    border-bottom: 1px dashed #777777;
 }
 .wp-caption {
     color: inherit;
@@ -4694,7 +4708,7 @@ margin: 0 auto;
     bottom: 2px;
 }
 #sidebar-left {
-    padding: 1px 8px 15px 12px;
+    padding: 7px 8px 15px 12px;
     word-wrap: break-word;
 }
 #sidebar-top h5 {
@@ -4985,6 +4999,7 @@ section.post_content {
 
 section.post_content p {
     line-height: 1.8;
+    word-wrap: break-word;
 }
 p.theauthor > span {
     display:inline-block;
@@ -5537,7 +5552,14 @@ h2.entry-title {
  /* margin: .444em 0 1em 0; */
   margin: 0;
 }
-
+.page-content p,
+.entry-content p,
+.entry-summary p {
+  word-wrap: break-word;
+}
+.archive-meta {
+font-style: italic;
+}
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -5583,10 +5605,10 @@ h2.entry-title {
   margin-left: 1px;
 }
 .meta-footer.archive-footer {
-margin-top: 8px;
-width: 100%;
-height: 15px;
-padding: 0 15px;
+    margin-top: 8px;
+    width: 100%;
+    height: 15px;
+    padding: 0 15px;
 }
 body.home .thedate {
   padding-left: 5px;
@@ -5599,10 +5621,9 @@ body.home .thedate {
   color: #818181;
 }
 .thedate:before{
-content:" ";
-display: inline-block;
-margin-left: 2px;
-
+    content:" ";
+    display: inline-block;
+    margin-left: 2px;
 }
 .appeal-thumbnail {
   border: thin solid #eee;
@@ -5656,7 +5677,7 @@ margin-left: 2px;
   color: #888;
 }
 .tags > a:last-child::after {
-content: "";
+    content: "";
 }
 /* 2713=checkmark */
 .tags:before {

@@ -102,7 +102,7 @@
            href="#"
            title="<?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?>">
 
-        <?php $alt = __( 'Author Gravatar', 'appeal' );
+        <?php $alt = esc_attr__( 'Author Gravatar', 'appeal' );
                 echo get_avatar( get_the_author_meta( 'email' ), 42, '', $alt); ?>
 
         <span class="aspace"> &nbsp; </span> 

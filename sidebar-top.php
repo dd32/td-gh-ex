@@ -34,15 +34,8 @@ if ( !empty ( get_theme_mod( 'appeal_topbox_image_setting' ) ) || is_active_side
 <?php } else { ?>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tempbox">
-          <p class="list-inline">
-            <span class="temp-title">
-               <a title="<?php bloginfo('description'); ?>"
-                  href="<?php echo esc_url(home_url('/')); ?>">
-                  <?php bloginfo('name') ?></a></span>
-            <span class="temp-description"><em> | </em></span>
-            <span class="temp-description"><?php bloginfo('description') ?></span></p>
-        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbox tempbox">
+            <div class="end"><?php the_widget( 'WP_Widget_Meta' ); ?></div> 
         </div>
     </div>
 </div>

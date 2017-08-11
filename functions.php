@@ -72,16 +72,67 @@ function appeal_theme_setup() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    
+                              
+/**
+ * Implementation of the Custom Header feature.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
+ *  @uses appeal_header_style()
+ */
+     add_theme_support( 'custom-header',
+        apply_filters( 'appeal_custom_header_args', array(
+            'default-image'          => get_template_directory_uri()
+                                        . '/assets/appeal-default-header-img.png',
+            'default-text-color'    => '0000a0',
+            'width'                => 1000,
+            'height'              => 250,
+            'flex-height'        => true,
+            'flex-width'        => true,
+            'wp-head-callback' => 'appeal_theme_header_style',
+        ) ) );
+        
+/**
+ * Register Default Headers 
+ * @since 1.1.1
+ * https://codex.wordpress.org/Function_Reference/register_default_headers
+ * https://generatewp.com/snippet/OvG9wDA/ updated
+ * Left @string $parenturl to adjust for child theme
+ */
+    $parenturl = get_template_directory_uri();
+    $suggested_imgs =  array( 
+        'appeal_tokyo'   => array( 
+            'description' => __( 'Tokyo', 'appeal' ),
+            'url'          => $parenturl . '/assets/appeal-default-header-img.png',
+            'thumbnail_url' => $parenturl . '/assets/appeal-default-header-img-small.png',
+            ), 
+        );
+        register_default_headers( $suggested_imgs );
+
+    //woocommerce filters below setup
+    add_theme_support( 'woocommerce' );
 }
 add_action('after_setup_theme','appeal_theme_setup');
 
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function appeal_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'appeal_content_width', 740 );
+}
+add_action( 'after_setup_theme', 'appeal_content_width', 0 );
 
 // Register the custom image size for use in Add Media library.
 add_filter( 'image_size_names_choose', 'appeal_custom_thumb_sizes' );
 function appeal_custom_thumb_sizes( $sizes ) {
 
     return array_merge( $sizes, array(
-        'appeal-featured' => __( 'Four by three Ratio Thumb', 'appeal' ),
+        'appeal-featured' => __( 'Four by Three Ratio Thumb', 'appeal' ),
     ) );
 }
 
@@ -166,18 +217,6 @@ function appeal_fonts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'appeal_fonts' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function appeal_content_width() {
-    $GLOBALS['content_width'] = 750;
-}
-add_action( 'after_setup_theme', 'appeal_content_width', 0 );
 
 
 /**
@@ -268,52 +307,7 @@ function appeal_post_formats() {
 }
 endif; 
 
-                          
-/**
- * Implementation of the Custom Header feature.
- *
- * @link https://developer.wordpress.org/themes/functionality/custom-headers/
- *
- *  @uses appeal_header_style()
- */
-function appeal_custom_header_setup()
-{
-    add_theme_support( 'custom-header',
-        apply_filters( 'appeal_custom_header_args', array(
-            'default-image'          => get_template_directory_uri()
-                                        . '/assets/appeal-default-header-img.png',
-            'default-text-color'    => '0000a0',
-            'width'                => 1000,
-            'height'              => 250,
-            'flex-height'        => true,
-            'flex-width'        => true,
-            'wp-head-callback' => 'appeal_theme_header_style',
-        ) ) );
-}
-add_action( 'after_setup_theme', 'appeal_custom_header_setup' );
 
-
-/**
- * Register Default Headers 
- * @since 1.1.1
- * https://codex.wordpress.org/Function_Reference/register_default_headers
- * https://generatewp.com/snippet/OvG9wDA/ updated
- * Left @string $parenturl to adjust for child theme
- */
-function appeal_default_header_imgs() 
-{
-    $parenturl = get_template_directory_uri();
-    $suggested_imgs =  array( 
-        'appeal_tokyo'   => array( 
-            'description' => __( 'Tokyo', 'appeal' ),
-            'url'          => $parenturl . '/assets/appeal-default-header-img.png',
-            'thumbnail_url' => $parenturl . '/assets/appeal-default-header-img-small.png',
-            ), 
-        );
-        register_default_headers( $suggested_imgs );
-        
-}
-add_action( 'after_setup_theme', 'appeal_default_header_imgs' );
 
 
 /**
@@ -336,8 +330,6 @@ function appeal_theme_header_style()
      * If no custom options for text are set, let's bail.
      * get_header_textcolor() options: Any hex value, 'blank' to hide text.
      */
-    $header_text_color = get_header_textcolor();
-
     echo '<style type="text/css">';
 
         if ( ! display_header_text() )
@@ -436,21 +428,14 @@ function appeal_pingback_header() {
 }
 add_action( 'wp_head', 'appeal_pingback_header' );
 
-function appeal_is_blog () {
-	global  $post;
-	$posttype = get_post_type($post );
-	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
-}
-
 /**woo weady
  * Removes woo wrappers and replace with this theme's content
  * wrappers so that woo content fits in this theme.
  * @https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
 */
-add_action( 'after_setup_theme', 'appeal_woocommerce_support' );
+if ( class_exists( 'WooCommerce' ) ) : 
 function appeal_woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
+   
 remove_action( 'woocommerce_before_main_content',
                'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content',
@@ -459,7 +444,7 @@ add_action(    'woocommerce_before_main_content',
                'appeal_theme_wrapper_start', 10);
 add_action(    'woocommerce_after_main_content',
                'appeal_theme_wrapper_end', 10);
-
+}
 function appeal_theme_wrapper_start() {
     echo '<div id="content-woo">';
 }
@@ -467,6 +452,7 @@ function appeal_theme_wrapper_start() {
 function appeal_theme_wrapper_end() {
     echo '</div>';
 }
+endif;
 
 /**
  * @example for path if using a child theme

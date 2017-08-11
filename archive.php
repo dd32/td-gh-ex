@@ -13,29 +13,30 @@
 						<?php echo single_cat_title( '', false ); ?>
 
 					<?php elseif ( is_author() ) : ?>
-						<?php esc_html_e( 'Author Archive for ', 'appeal' ); 
-                              printf( esc_attr( get_the_author_meta( 
+						<?php esc_html_e( 'Author Archive for ', 'appeal' ); ?><span class="text-note"> 
+                            <?php printf( esc_attr( get_the_author_meta( 
                                       'display_name', get_query_var( 'author' ) ) ) 
-                                    ); ?>
+                                    ); ?></span>
 
 					<?php elseif ( is_tag() ) : ?>
-						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' );  
-                                      printf( single_tag_title( '', false ) ); ?>
+						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' ); ?><span class="text-note"> 
+                                    <?php  printf( esc_attr( single_tag_title( '', false ) ) ); ?></span>
 
 					<?php elseif ( is_day() ) : ?>
-						<?php echo esc_html_e( 'Daily Archives: ', 'appeal' );
-                              printf( get_the_date() ); ?>
+						<?php echo esc_html_e( 'Dated Archives: ', 'appeal' ); ?><span class="text-note"> 
+                            <?php printf( esc_attr( get_the_date() ) ); ?></span>
 
 					<?php elseif ( is_month() ) : ?>
-						<?php echo esc_html_e( 'Monthly Archives: ', 'appeal' );
-                              printf( esc_attr( get_the_date( 'F Y' ) ) ); ?>
+						<?php echo esc_html_e( 'Monthly Archives: ', 'appeal' ); ?><span class="text-note"> 
+                            <?php printf( esc_attr( get_the_date( 'F Y' ) ) ); ?></span>
 
 					<?php elseif ( is_year() ) : ?>
-						<?php echo esc_html_e( 'Yearly Archives: ', 'appeal' );
-                              printf( esc_attr( get_the_date( 'Y' ) ) ); ?>
+						<?php echo esc_html_e( 'Yearly Archives: ', 'appeal' ); ?><span class="text-note"> 
+                            <?php printf( esc_attr( get_the_date( 'Y' ) ) ); ?></span>
 
     					<?php else : ?>
-    						<?php esc_html_e( 'Blog Archives', 'appeal' ); ?>
+    						<?php the_archive_title(); ?>
+    						<?php the_archive_description(); ?>
 
     				<?php endif; ?>
 				</h1><!-- .page-title -->

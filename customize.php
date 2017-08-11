@@ -69,7 +69,7 @@ function appeal_register_theme_customizer($wp_customize)
 	$wp_customize->add_setting(	'appeal_custom_teaser_usage_setting', array(
             'type'              => 'theme_mod',
             'default'           => 'none',
-			'sanitize_callback'	=> 'sanitize_text_field',
+			'sanitize_callback'	=> 'appeal_sanitize_select',
 			'transport'			=> 'refresh'
 		)
 	);
@@ -102,7 +102,7 @@ function appeal_register_theme_customizer($wp_customize)
 	$wp_customize->add_setting(	'appeal_title_visible_setting', array(
             'type'              => 'theme_mod',
             'default'           => 'atvt1',
-			'sanitize_callback'	=> 'sanitize_text_field',
+			'sanitize_callback'	=> 'appeal_sanitize_select',
 			'transport'			=> 'refresh'
 		)
 	);
@@ -113,7 +113,7 @@ function appeal_register_theme_customizer($wp_customize)
 	$wp_customize->add_setting(	'appeal_titlelink_color_setting', array(
             'type'              => 'theme_mod',
             'default'           => 'linkico-gray',
-			'sanitize_callback'	=> 'sanitize_text_field',
+			'sanitize_callback'	=> 'appeal_sanitize_select',
 			'transport'			=> 'refresh'
 		)
 	);
@@ -138,7 +138,7 @@ function appeal_register_theme_customizer($wp_customize)
 	$wp_customize->add_setting(	'appeal_sidebar_border_setting', array(
             'type'              => 'theme_mod',
             'default'           => 'none',
-			'sanitize_callback'	=> 'sanitize_text_field',
+			'sanitize_callback'	=> 'appeal_sanitize_select',
 			'transport'			=> 'refresh'
 		)
 	);
@@ -452,4 +452,33 @@ function appeal_custom_posts_excerpt_length()
     }
 }
 add_filter( 'excerpt_length', 'appeal_custom_posts_excerpt_length' );
+
+/**
+ * Select sanitization callback example.
+ *
+ * - Sanitization: select from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ * - Control: select, radio
+ * 
+ * Sanitization callback for 'select' and 'radio' type controls. This callback sanitizes `$input`
+ * as a slug, and then validates `$input` against the choices defined for the control.
+ * 
+ * @see sanitize_key()               https://developer.wordpress.org/reference/functions/sanitize_key/
+ * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/
+ *
+ * @param string               $input   Slug to sanitize.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
+ */
+function appeal_sanitize_select( $input, $setting ) {
+	
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+	
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
 ?>

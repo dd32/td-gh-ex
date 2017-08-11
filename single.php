@@ -5,7 +5,7 @@
     <?php //use 9 by 3 if gallery or image post type
     if( has_post_format( 'gallery' ) || has_post_format( 'image' ) ) { ?>
 
-        <div id="main" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <div id="main" class="col-xs-12">
 
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -20,12 +20,6 @@
             <?php endif; ?>
 
             <?php get_template_part( 'nav', 'content' ); ?>
-
-        </div>
-
-         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-            <?php get_sidebar( 'right' ); ?>
 
         </div>
 

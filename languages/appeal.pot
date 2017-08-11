@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-08-08 19:20-0700\n"
-"PO-Revision-Date: 2017-08-08 19:20-0700\n"
+"POT-Creation-Date: 2017-08-10 20:18-0700\n"
+"PO-Revision-Date: 2017-08-10 20:19-0700\n"
 "Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,13 +10,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html_e;esc_attr_e;_nx;"
-"_n;_x;esc_html__;esc_attr__;_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx;_x;esc_html__;"
+"esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: nothing.php:2
-msgid "Nothing available."
+msgid "Content Not available."
+msgstr ""
+
+#: nothing.php:5 search.php:45
+msgid "Maybe try another search while you are here?"
 msgstr ""
 
 #: functions.php:64
@@ -27,55 +31,55 @@ msgstr ""
 msgid "Footer Links ~ 1 level ONLY"
 msgstr ""
 
-#: functions.php:84
-msgid "Four by three Ratio Thumb"
-msgstr ""
-
-#: functions.php:136
-msgid "on"
-msgstr ""
-
-#: functions.php:244
-msgid "Read Article"
-msgstr ""
-
-#: functions.php:308
+#: functions.php:106
 msgid "Tokyo"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:135
+msgid "Four by Three Ratio Thumb"
+msgstr ""
+
+#: functions.php:187
+msgid "on"
+msgstr ""
+
+#: functions.php:283
+msgid "Read Article"
+msgstr ""
+
+#: functions.php:350
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:359 functions.php:368
+#: functions.php:351 functions.php:360
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:367
+#: functions.php:359
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:369
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:370
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:379
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:396
+#: functions.php:388
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:405
+#: functions.php:397
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:406
 msgid "Footer Right"
 msgstr ""
 
@@ -221,98 +225,108 @@ msgid ""
 "the bottom of the Editor box. See picture 2 below."
 msgstr ""
 
-#: theme-options.php:95
+#: theme-options.php:97
+msgid "Screen Options pull-down menu"
+msgstr ""
+
+#: theme-options.php:102
 msgid ""
 "Page template that is TwoPart Template can divide the page content by using "
 "the"
 msgstr ""
 
-#: theme-options.php:97
+#: theme-options.php:104
 msgid "tag."
 msgstr ""
 
-#: theme-options.php:99
+#: theme-options.php:106
 msgid ""
 "Place the more-tag at the point where you want the page content to split in "
 "half."
 msgstr ""
 
-#: theme-options.php:100
+#: theme-options.php:107
 msgid ""
 "Test your height by viewing and pre-defining your content with a private "
 "page in order to achieve a balanced layout of paragraphs prior to publishing"
 msgstr ""
 
-#: theme-options.php:102
+#: theme-options.php:109
 msgid "in editor will justify text alignment."
 msgstr ""
 
-#: theme-options.php:105
+#: theme-options.php:112
 msgid ""
 "Three Width Page Template is a normal copy of your content and displays the "
 "page with small sidebar on the left and a wider sidebar on the right."
 msgstr ""
 
-#: theme-options.php:106
+#: theme-options.php:113
 msgid ""
 "Also note that if theme is set to render posts &lt;blog> as home page  Three "
 "Wide Template will be the home page."
 msgstr ""
 
-#: theme-options.php:109
+#: theme-options.php:116
 msgid "Mobile Navigation"
 msgstr ""
 
-#: theme-options.php:111
+#: theme-options.php:118
 msgid ""
 "Set you preferences for mobile navigation in the Customizer to allow the top "
 "level menu item to be a tap only, on dropdowns; or as a non-mobile menu to "
 "allow the top level item to be a clickable link."
 msgstr ""
 
-#: theme-options.php:120
-msgid "Screen Options pull-down menu"
-msgstr ""
-
-#: theme-options.php:128
+#: theme-options.php:129
 msgid "Editor Excerpt meta-box for Pullquote"
 msgstr ""
 
-#: theme-options.php:131
+#: theme-options.php:132
+msgid "Bottom Menu (Social Links)"
+msgstr ""
+
+#: theme-options.php:133
+msgid ""
+"To set up social media links in the page footer: Appearance > Menus - then "
+"<Custom Links> to the left. Footer does not support depths."
+msgstr ""
+
+#: theme-options.php:135
 msgid "Customize Theme"
 msgstr ""
 
-#: theme-options.php:132
+#: theme-options.php:136
 msgid "To set up the Pullquote color, width and length, open Customizer"
 msgstr ""
 
-#: theme-options.php:145
+#: theme-options.php:149
 msgid "ref. use more tag in editor:"
 msgstr ""
 
-#: theme-options.php:148
+#: theme-options.php:152
 msgid "ref. private page viewing:"
 msgstr ""
 
-#: theme-options.php:155
+#: theme-options.php:159
 msgid "Three Wide Template"
 msgstr ""
 
-#: theme-options.php:158
+#: theme-options.php:162
 msgid "Full width Template"
 msgstr ""
 
-#: theme-options.php:159
+#: theme-options.php:163
 msgid ""
 "Appeal has an additional template Full Width Page that can be used for "
 "galleries or larger content."
 msgstr ""
 
-#: theme-options.php:162
+#: theme-options.php:166
 msgid "Other notes"
 msgstr ""
 
-#: theme-options.php:164
+#: theme-options.php:167
 msgid ""
 "By hiding titles of posts/pages, your titles can be added from your Editor "
 "to give better SEO URLs and puts title where you want it in the article. h3 "
@@ -320,29 +334,15 @@ msgid ""
 "which, is required."
 msgstr ""
 
-#: theme-options.php:166
-msgid ""
-"&bull; Author Links are taken from the User Profile. Be creative by adding "
-"user profile info into Bio textarea."
+#: theme-options.php:173
+msgid "Try the Plugin Depict by TSW to create an expanded Author Profile."
 msgstr ""
 
-#: theme-options.php:168
-msgid ""
-"To set up social media links in the page footer: Appearance > Menus - then "
-"<Custom Links> to the left. Footer does not support depths."
-msgstr ""
-
-#: theme-options.php:176
-msgid ""
-"Also try the Plugin Depict by TSW to create an expanded Author Profile for "
-"this theme."
-msgstr ""
-
-#: theme-options.php:178
+#: theme-options.php:174
 msgid "Plugin can be found online at "
 msgstr ""
 
-#: theme-options.php:184
+#: theme-options.php:178
 msgid "Donate if you like."
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "Search Results for: "
 msgstr ""
 
-#: search.php:23 archive.php:65
+#: search.php:23 archive.php:66
 msgid "View Article..."
 msgstr ""
 
@@ -451,6 +451,11 @@ msgstr ""
 #: comments-count.php:39
 #, php-format
 msgid "%1$s Response"
+msgstr ""
+
+#: 404.php:6
+msgid ""
+"Looks like the content you were looking for does not exists at this time."
 msgstr ""
 
 #: customize.php:18
@@ -604,7 +609,7 @@ msgid "Tag Archive for "
 msgstr ""
 
 #: archive.php:26
-msgid "Daily Archives: "
+msgid "Dated Archives: "
 msgstr ""
 
 #: archive.php:30
@@ -613,8 +618,4 @@ msgstr ""
 
 #: archive.php:34
 msgid "Yearly Archives: "
-msgstr ""
-
-#: archive.php:38
-msgid "Blog Archives"
 msgstr ""

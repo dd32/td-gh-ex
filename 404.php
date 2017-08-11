@@ -3,7 +3,7 @@
 <div id="content" class="row">
 
 	<div id="main" class="col-sm-8" role="main">
-
+<h2 class="textcenter"><?php esc_html_e( 'Looks like the content you were looking for does not exists at this time.', 'appeal' ); ?></h2>
 		<article id="post-not-found" class="block">
 
 			<section class="post_content">
