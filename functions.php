@@ -4,6 +4,15 @@ require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' 
 foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
 	include $filename;
 }
+require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
+new WP_Review_Me( array(
+		'days_after' => 14,
+		'type'       => 'theme',
+		'slug'       => 'unlimited',
+		'message'    => __( 'Hey! Sorry to interrupt, but you\'ve been using Unlimited for a little while now. If you\'re happy with this theme, could you take a minute to leave a review? <i>You won\'t see this notice again after closing it.</i>', 'unlimited' )
+	)
+);
+
 
 if ( ! function_exists( ( 'ct_unlimited_set_content_width' ) ) ) {
 	function ct_unlimited_set_content_width() {
@@ -220,6 +229,18 @@ if ( ! function_exists( 'unlimited_remove_more_link_scroll' ) ) {
 	}
 }
 add_filter( 'the_content_more_link', 'unlimited_remove_more_link_scroll' );
+
+// Yoast OG description has "Read the postTitle of the Post" due to its use of get_the_excerpt(). This fixes that.
+function ct_unlimited_update_yoast_og_description( $ogdesc ) {
+	$read_more_text = get_theme_mod( 'read_more_text' );
+	if ( empty( $read_more_text ) ) {
+		$read_more_text = __( 'Read more', 'unlimited' );
+	}
+	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
+
+	return $ogdesc;
+}
+add_filter( 'wpseo_opengraph_desc', 'ct_unlimited_update_yoast_og_description' );
 
 if ( ! function_exists( 'unlimited_featured_image' ) ) {
 	function unlimited_featured_image() {
@@ -482,7 +503,7 @@ add_action( 'wp_enqueue_scripts', 'unlimited_custom_css_output', 20 );
 if ( ! function_exists( 'unlimited_sticky_post_marker' ) ) {
 	function unlimited_sticky_post_marker() {
 
-		if ( is_sticky() && ! is_archive() ) {
+		if ( is_sticky() && !is_archive() && !is_search() ) {
 			echo '<span class="sticky-status">' . __( "Featured Post", "unlimited" ) . '</span>';
 		}
 	}
@@ -641,3 +662,18 @@ function ct_unlimited_welcome_redirect() {
 	wp_safe_redirect( esc_url_raw( $welcome_url ) );
 }
 add_action( 'after_switch_theme', 'ct_unlimited_welcome_redirect' );
+
+//----------------------------------------------------------------------------------
+// Add paragraph tags for author bio displayed in content/archive-header.php.
+// the_archive_description includes paragraph tags for tag and category descriptions, but not the author bio. 
+//----------------------------------------------------------------------------------
+if ( ! function_exists( 'ct_unlimited_modify_archive_descriptions' ) ) {
+	function ct_unlimited_modify_archive_descriptions( $description ) {
+
+		if ( is_author() ) {
+			$description = wpautop( $description );
+		}
+		return $description;
+	}
+}
+add_filter( 'get_the_archive_description', 'ct_unlimited_modify_archive_descriptions' );
