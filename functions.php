@@ -158,6 +158,9 @@ function avata_enqueue_scripts() {
 	}else{
 		$css .=  '.site-name,.site-tagline{display:none;}';
 		}
+		
+	$menu_color_frontpage =  avata_option('menu_color_frontpage');
+	$css .=  ".homepage-header .main-nav > li > a{color:".$menu_color_frontpage.";}";
 	
 	$anchors = array();
 	
@@ -188,6 +191,8 @@ function avata_enqueue_scripts() {
 		$padding_bottom = avata_option('padding_bottom_'.$j);
 		$menu_slug          = esc_attr(avata_option('section_id_'.$j ));
 		$anchors[]          = $menu_slug;
+		
+		
 		
 		if(is_numeric($background_image))
 			$background_image = wp_get_attachment_image_url($background_image,'full');
@@ -436,16 +441,32 @@ $css .=  ".dotstyle{
 }
 .dotstyle.dotstyle-align-right{
 	right: ".$side_nav_padding.";
+}
+.avata-hero__subtext{
+	color: ".$primary_color.";
+	}
+
+.main-nav > li.current-menu-item > a,
+.main-nav .current-menu-item a,
+.main-nav > li > a:hover,
+.main-nav > li.active > a,
+.main-nav > li.current > a{
+	color: ".$primary_color.";
 }";
 	
 	$css        = wp_filter_nohtml_kses($css);
 	$css        = apply_filters('avata_custom_css',$css);
-	
+	$css        = str_replace('&gt;','>',$css);
 	wp_add_inline_style( 'avata-main', $css );
+	
+	$autoscrolling = avata_option('autoscrolling');
+	$sticky_header_opacity_frontpage = avata_option('sticky_header_opacity_frontpage');
 	
 	wp_localize_script( 'avata-main', 'avata_params', array(
 			'ajaxurl'  => admin_url('admin-ajax.php'),
 			'menu_anchors'  => $anchors,
+			'autoscrolling' => $autoscrolling,
+			'sticky_header_opacity_frontpage'  => $sticky_header_opacity_frontpage,
 		));
 }
 

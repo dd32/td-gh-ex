@@ -46,6 +46,13 @@
 					<key name="right_btn_text" />
 				</key>
 			</key>
+			
+			<!-- section banner 2 -->
+			<key name='section_title_banner_2' />
+            <key name='section_subtitle_banner_2' />
+			<key name='section_btntxt_1_banner_2' />
+			<key name='section_btntxt_2_banner_2' />
+			
 		    <!-- section service 1-->
             <key name='section_title_service_1' />
             <key name='section_subtitle_service_1' />

@@ -2,19 +2,14 @@
   global $allowedposttags;
   $section_title     = avata_option('section_title_gallery');
   $section_subtitle  = avata_option('section_subtitle_gallery');
-  $section_class     = avata_option('section_css_class_gallery');
-  $section_id        = avata_option('section_id_gallery');
   $gallery           = avata_option('section_items_gallery');
   $fullwidth         = avata_option('section_fullwidth_gallery');
-  $autoheight        =  avata_option('section_autoheight_gallery');
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
+
   
   ?>
-<section class="section section-gallery <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
@@ -49,4 +44,3 @@
     </div>
   </div>
   </div>
-</section>

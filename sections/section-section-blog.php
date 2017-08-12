@@ -10,25 +10,18 @@
   $btn_txt           = avata_option('section_btn_txt_blog');
   $btn_link          = avata_option('section_btn_link_blog');
   $btn_target        = avata_option('section_btn_target_blog');
-  $section_class     = avata_option('section_css_class_blog');
-  $section_id        = avata_option('section_id_blog');
   $service           = avata_option('section_blog');
   $fullwidth         =  avata_option('section_fullwidth_blog');
-  $autoheight        =  avata_option('section_autoheight_blog');
   $col               = $columns>0?12/$columns:4;
   $container         = 'container';
   if ($fullwidth=='1')
- 	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
+ 	 $container         = 'container-fullwidth';
 	
   if( is_array($category) )
 	$categories = implode(',',$category);
   else
   	$categories = $category;
   ?>
-
-<section class="section section-blog avata-blog-style-1 <?php echo esc_attr($section_class);?>">
   <div class="section-content-wrap">
     <div class="<?php echo $container;?>">
     <?php if ( $section_title !='' || $section_subtitle !='' ){?>
@@ -104,4 +97,3 @@ if( $news_item != '' ){
       </div>
     </div>
   </div>
-</section>

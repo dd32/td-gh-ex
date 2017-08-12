@@ -8,6 +8,7 @@
  
  $hide_side_nav   = absint( avata_option( 'hide_side_nav'));
  $side_nav_align  = esc_attr( avata_option( 'side_nav_align'));
+ $sticky_header    = absint( avata_option( 'sticky_header_frontpage'));
 
  ?>
  
@@ -19,27 +20,47 @@
 		
 		foreach ( $avata_sections as $k=>$v ){
 			
-			$index = str_replace('section-','',$k);
-			$index = str_replace('-','_',$index);
+			$key   = str_replace('section-','',$k);
+			$index = str_replace('-','_',$key);
 			$hide  = avata_option('section_hide_'.$index);
 			if ( $hide == '1' || $hide == 'on' )
 				continue;
+				
+			$section_class     = avata_option('section_css_class_'.$index);
+			$section_id        = avata_option('section_id_'.$index);
+  			$section_class    .= ' section section-'.$key;
+			$autoheight        =  avata_option('section_autoheight_'.$index);
+			$attr              = '';
 			
+			if ($autoheight=='1')
+				$section_class .= ' fp-auto-height';
+			
+			if ($key=='blog')
+				$section_class .= ' avata-blog-style-1';
+			
+			echo '<section class="'.esc_attr($section_class).'" '.$attr.'>';
+			if($i==0 && $sticky_header !='1' )
+				echo avata_featured_header();
+				
+			do_action('avata_before_section');
 			get_template_part('sections/section',$k);
+			do_action('avata_after_section');
+			echo '</section>';
 			
 			$menu_title         = avata_option('section_menu_title_'.$index );
 			$menu_slug          = esc_attr(avata_option('section_id_'.$index ));
-			$section_type       = avata_option( 'section_type_'.$index, 'content' );
 			
 			$current     = "";
 			if( $i==0 )
 				$current  = "active";
+			
+			$hide_side_menu  = esc_attr(avata_option('hide_side_menu_'.$index ));
+			$css = '';
+			if($hide_side_menu == '1')
+				$css = 'style="height:0;width:0;"';
 		
-			if( $section_type == 'link'){
-				$sub_nav .= '<li class="'.$current.'"><a id="nav-'.$menu_slug.'" target="'.$target.'" href="'.$section_menu_link.'">'.esc_attr($menu_title).'</a></li>';
-			}else{
-			    $sub_nav .= '<li data-menuanchor="'.$menu_slug.'" class="'.$current.'"><a id="nav-'.$menu_slug.'" href="#'.$menu_slug.'">'.esc_attr($menu_title).'</a></li>';
-			}
+			 $sub_nav .= '<li '.$css.' class="'.$current.'"><a id="nav-'.$menu_slug.'" href="#'.$menu_slug.'">'.esc_attr($menu_title).'</a></li>';
+			
 
 			$i++;
 		}

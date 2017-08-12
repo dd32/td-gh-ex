@@ -33,22 +33,44 @@ if( $('#sub_nav').length ){
 $('#avata-nav').css({'margin-top':'-'+($('#avata-nav').height()/2)+'px'});
 $('.page-template-template-frontpage.admin-bar #main-header').css({'top':stickyTop});
 
+$('#dotstyle-nav ul li').click(function(){
+		var hash = $(this).find('a').attr('href');
+		Anchor = hash.replace('#','');
+		var index = $("[data-anchor='"+Anchor+"']").index();
+		$.fn.fullpage.moveTo(Anchor);
+										
+});
 // Page Scroll
-var sections = $('section')
+
+
+var sections = $('section'),
 	nav = $('nav[role="navigation"]');
+
+var autoScrolling = true;
+if(avata_params.autoscrolling !=='1' )
+	autoScrolling = false;
+	
 $('.avata-home-sections').fullpage({
-	menu: '#dotstyle-nav',
+	menu: '',
 	anchors: avata_params.menu_anchors,
-	autoScrolling: true,
+	autoScrolling: autoScrolling,
+	fitToSection: false,
 	fixedElements:'#wpadminbar',
 	responsiveWidth:919,
 	onLeave:  function(index, nextIndex, direction){
 		if( nextIndex > 1 ){
-			$('#main-header').css({'background-color':'rgba(48, 48, 48, 0.42)'});
+			$('#main-header').css({'background-color':'rgba(48, 48, 48, '+avata_params.sticky_header_opacity_frontpage+')'});
 		}else{
 			$('#main-header').css({'background':'transparent'});
 		}
 	},
+	afterLoad: function(anchor, index){
+		console.log(anchor);
+		$('#dotstyle-nav li').removeClass('active');
+		$('#menu-main li a').removeClass('active');
+		$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');
+		$('#menu-main li a[href="#'+anchor+'"]').addClass('active');
+		},
 	 afterRender: function () {
 		 if($('.avata-slider').length ){
 			 var options = $('.avata-slider').data('options');
@@ -58,7 +80,9 @@ $('.avata-home-sections').fullpage({
             }, parseInt(options.timeout));
 		 }
 		 }
-        }
+		
+        },
+	
 });
 
 /*gallery*/
@@ -93,8 +117,15 @@ $container.imagesLoaded(function(){
 // responsive menu
 if( $('header nav > ul').length )
     $('header nav').hoomenu({hooScreenWidth:919,hooMenuContainer:'header#main-header'});
+	
+	
+$('.move-section-down').click(function(){
+    $.fn.fullpage.moveSectionDown();
+});
+$('.move-section-up').click(function(){
+    $.fn.fullpage.moveSectionUp();
+});
 
-				
 });
 
 /*!

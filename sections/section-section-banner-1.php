@@ -1,19 +1,11 @@
 <?php
-  global $allowedposttags, $avata_sections;
+  global $allowedposttags;
 
-  $section_class     = avata_option('section_css_class_banner_1');
-  $section_id        = avata_option('section_id_banner_1');
   $slider            = avata_option('section_slider_banner_1');
-  $autoheight        =  avata_option('section_autoheight_banner_1');
   $autoplay          =  avata_option('section_autoplay_banner_1');
   $timeout           =  avata_option('section_timeout_banner_1');
-  
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
-  
-  ?>
-<section class="section avata-section section-banner-1 <?php echo esc_attr($section_class);?>">
 
+  ?>
 <div class="carousel-wrap full">
     <div class="avata-slider" data-options='{"autoplay":"<?php echo esc_attr($autoplay);?>","timeout":<?php echo esc_attr($timeout);?>}'>
     <?php 
@@ -58,6 +50,3 @@
       
     </div>
   </div>
-  
-  
-</section>

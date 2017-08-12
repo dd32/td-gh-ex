@@ -2,19 +2,13 @@
   global $allowedposttags;
   $section_title     = avata_option('section_title_team');
   $section_subtitle  = avata_option('section_subtitle_team');
-  $section_class     = avata_option('section_css_class_team');
-  $section_id        = avata_option('section_id_team');
   $team              = avata_option('section_items_team');
   $fullwidth         =  avata_option('section_fullwidth_team');
-  $autoheight        =  avata_option('section_autoheight_team');
   $container         = 'container';
   if ($fullwidth=='1')
- 	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
+ 	 $container         = 'container-fullwidth';
   
   ?>
-<section class="section section-team <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
@@ -63,4 +57,3 @@
     </div>
   </div>
   </div>
-</section>

@@ -153,7 +153,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 			   'section_autoheight_'.$id => array(
 					'type'        => 'checkbox',
 					'label'       => esc_attr__('Auto Height', 'avata' ),
-					'description' =>  '',
+					'description' =>  __('It will take the height defined by your section/slide content.', 'avata' ),
 					'default'     => $default_options['autoheight'],
 					  ),
 			  'font_size_'.$id => array(
@@ -292,6 +292,12 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'description' => '',
 					'default'     => $default_options['padding_bottom'],
 			  ),
+			  'hide_side_menu_'.$id => array(
+					'type'        => 'checkbox',
+					'label'       => esc_attr__( 'Hide Side Menu Dot', 'avata' ),
+					'description' => '',
+					'default'     => '',
+			  ),
 			  
 	  );
 	  
@@ -322,8 +328,6 @@ $defaults = array();
 // section banner 1
 
 $banner_defaults = array(
-			'section_title'=> __('Why Choose Us', 'avata'),
-			'section_subtitle'=> 'Nullam porttitor, turpis lacinia euismod efficitur,<br/> nisl arcu imperdiet ligula',
 			'menu_slug' => 'banner',
 			);
 
@@ -470,10 +474,93 @@ array_splice($banner_1_options,1,0,array('section_slider_banner_1' => array(
 													));
 
 $avata_lite_sections['section-banner-1'] = array(
-										'name'=> __('Section Banner', 'avata'),
+										'name'=> __('Section Slider Banner', 'avata'),
 										'fields'=> $banner_1_options 
 										);
 
+
+// section banner 2
+
+$banner_2_defaults = array(
+			'section_title'=> __('FULL-SCREEN VIDEO BACKGROUND', 'avata'),
+			'section_subtitle'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
+			'menu_slug' => 'banner-video',
+			'hide' => 1,
+			'background_image' => $imagepath.'maxresdefault.jpg'
+			);
+
+$banner_args = $args;
+$banner_args['excludes'] = array('section_fullwidth','section_autoheight','font_color','font_size');
+$banner_2_options = avata_public_section_options('banner_2',$banner_2_defaults,false,$banner_args);
+
+array_splice($banner_2_options,3,0,array(
+										'section_videourl_banner_2' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_videourl_banner_2',
+												  'label'       => esc_attr__( 'YouTube Video URL(Pro Version)', 'avata' ),
+												  'description' => '',
+												  'default'     => 'https://www.youtube.com/embed/V-FgQ2NAGFc?rel=0&amp;autoplay=0&amp;loop=0',
+										),
+										
+										'section_btntxt_1_banner_2' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_btntxt_1_banner_2',
+												  'label'       => esc_attr__( 'Left Button Text', 'avata' ),
+												  'description' => '',
+												  'default'     => esc_attr__( 'DOWNLOAD FOR WINDOWS', 'avata' ),
+										),
+										'section_btnlink_1_banner_2' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_btnlink_1_banner_2',
+												  'label'       => esc_attr__( 'Button Link', 'avata' ),
+												  'description' => '',
+												  'default'     => 'http://',
+										),
+										'section_btntarget_1_banner_2' => array(
+												  'type'        => 'select',
+												  'settings'    => 'section_btntarget_1_banner_2',
+												  'label'       => esc_attr__( 'Link Target', 'avata' ),
+												  'description' => '',
+												  'default'     => '_blank',
+												  'choices'     => $target
+										),
+										
+										'section_btntxt_2_banner_2' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_btntxt_2_banner_2',
+												  'label'       => esc_attr__( 'Right Button Text', 'avata' ),
+												  'description' => '',
+												  'default'     => esc_attr__( 'DOWNLOAD FOR MAC', 'avata' ),
+										),
+										'section_btnlink_2_banner_2' => array(
+												  'type'        => 'text',
+												  'settings'    => 'section_btnlink_2_banner_2',
+												  'label'       => esc_attr__( 'Button Link', 'avata' ),
+												  'description' => '',
+												  'default'     => 'http://',
+										),
+										'section_btntarget_2_banner_2' => array(
+												  'type'        => 'select',
+												  'settings'    => 'section_btntarget_2_banner_2',
+												  'label'       => esc_attr__( 'Link Target', 'avata' ),
+												  'description' => '',
+												  'default'     => '_blank',
+												  'choices'     => $target
+										),
+										'section_display_arrow_banner_2' => array(
+												  'type'        => 'checkbox',
+												  'settings'    => 'section_display_arrow_banner_2',
+												  'label'       => esc_attr__( 'Display Arrow Button', 'avata' ),
+												  'description' => '',
+												  'default'     => '1',
+										),
+													
+	));
+
+$avata_lite_sections['section-banner-2'] = array(
+										'name'=> __('Section Video Background Banner(Pro)', 'avata'),
+										'fields'=> $banner_2_options 
+										);
 
 // section service 1
 
@@ -565,6 +652,7 @@ $video_1_defaults = array(
 			'font_color' => '#ffffff',
 			'padding_top' => '150px',
 			'padding_bottom' => '120px',
+			'autoheight' => '1',
 			);
 
 $video_1_options = avata_public_section_options('video_1',$video_1_defaults,false,$args);
@@ -621,7 +709,13 @@ array_splice($intro_1_options,3,0,
 				  'settings'    => 'section_content_intro_1',
 				  'label'       => esc_attr__( 'Content', 'avata' ),
 				  'description' => '',
-				  'default'     => '<p>Susan Sims, Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.Cras mattis consectetur purus sit amet fermentum.Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.Cras mattis consectetur purus sit amet fermentum. </p><p>Susan Sims, Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.Cras mattis consectetur purus sit amet fermentum. </p>',
+				  'default'     => '<p>Susan Sims, Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.Cras mattis consectetur purus sit amet fermentum.Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum.</p><p></p><ul class="list-nav">
+								<li><i class="fa fa-check"></i> Far far away, behind the word</li>
+								<li><i class="fa fa-check"></i>There live the blind texts</li>
+								<li><i class="fa fa-check"></i>Separated they live in bookmarksgrove</li>
+								<li><i class="fa fa-check"></i>Semantics a large language ocean</li>
+								<li><i class="fa fa-check"></i>A small river named Duden</li>
+							</ul>',
 		)
 
 ));
@@ -1145,6 +1239,66 @@ Hoo::add_panel( 'avata_homepage_options', array(
     'description' => '',
 ) );
 
+// Front Page General Options
+Hoo::add_section( 'avata_frontpage_general', array(
+    'title'          => __( 'General Options', 'avata'  ),
+    'description'    => '',
+    'panel'          => 'avata_homepage_options', 
+    'priority'       => 9,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'autoscrolling',
+	'label'    => __('Section Auto Scrolling', 'avata'),
+	'description' => __('Defines whether to use the "automatic" scrolling or the "normal" one. It also has affects the way the sections fit in the browser/device window in tablets and mobile phones.', 'avata'),
+	'section'  => 'avata_frontpage_general',
+	'default'  => '',
+	'priority' => 10,
+	) );
+
+Hoo::add_field( 'avata', array(
+	'type'     => 'color',
+	'settings' => 'menu_color_frontpage',
+	'label'    => __('Menu Font Color', 'avata'),
+	'section'  => 'avata_frontpage_general',
+	'default'  => '#ffffff',
+	'priority' => 10,
+	) );
+
+	
+// Front Page Header
+Hoo::add_section( 'avata_frontpage_header', array(
+    'title'          => __( 'Front Page Header', 'avata'  ),
+    'description'    => '',
+    'panel'          => 'avata_homepage_options', 
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'sticky_header_frontpage',
+	'label'    => __('Sticky Header', 'avata'),
+	'section'  => 'avata_frontpage_header',
+	'default'  => '',
+	'priority' => 10,
+	) );
+
+Hoo::add_field( 'avata', array(
+	'type'     => 'select',
+	'settings' => 'sticky_header_opacity_frontpage',
+	'label'    => __('Sticky Header Opacity', 'avata'),
+	'section'  => 'avata_frontpage_header',
+	'default'  => '0.4',
+	'priority' => 10,
+	'choices'  => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
+	) );
+
+	
 // Side Navigation Styling
 
 Hoo::add_section( 'avata_nav_styling', array(
@@ -1207,7 +1361,7 @@ Hoo::add_field( 'avata', array(
 	'section'  => 'avata_nav_styling',
 	'type'     => 'color',
 	'priority' => 10,
-	'default'  => '#58ca7e',
+	'default'  => '#f9ae40',
 ) );
 
 Hoo::add_field( 'avata', array(
@@ -1216,7 +1370,7 @@ Hoo::add_field( 'avata', array(
 	'section'  => 'avata_nav_styling',
 	'type'     => 'color',
 	'priority' => 10,
-	'default'  => '#58ca7e',
+	'default'  => '#f9ae40',
 ) );
 
 Hoo::add_field( 'avata', array(
@@ -1245,7 +1399,7 @@ Hoo::add_field( 'avata', array(
 	'section'  => 'avata_panel_basic_settings',
 	'type'     => 'color',
 	'priority' => 10,
-	'default'  => '#58ca7e',
+	'default'  => '#f9ae40',
 ) );
 
 Hoo::add_field( 'avata', array(

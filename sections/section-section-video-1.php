@@ -3,22 +3,15 @@
 
   $section_title     = avata_option('section_title_video_1');
   $section_subtitle  = avata_option('section_subtitle_video_1');
-  $section_class     = avata_option('section_css_class_testimonial');
   $video             = avata_option('section_url_video_1');
-  
   $fullwidth         =  avata_option('section_fullwidth_slogan');
-  $autoheight        =  avata_option('section_autoheight_slogan');
   $container         = 'container';
   if ($fullwidth=='1')
- 	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
+ 	 $container         = 'container-fullwidth';
   ?>
 
-<section class="section section-video-1 <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
                 <div class="<?php echo esc_attr($container);?> text-center">
-                    <!-- Example row of columns -->
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                             <div class="video-content">
@@ -31,6 +24,5 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- /container -->
+                </div> 
   </div>
-</section>

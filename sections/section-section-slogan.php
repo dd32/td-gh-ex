@@ -5,17 +5,11 @@
   $btn_txt           = avata_option('section_btn_txt_slogan');
   $btn_link          = avata_option('section_btn_link_slogan');
   $btn_target        = avata_option('section_btn_target_slogan');
-  $section_class     = avata_option('section_css_class_slogan');
-  $section_id        = avata_option('section_id_slogan');
   $fullwidth         =  avata_option('section_fullwidth_slogan');
-  $autoheight        =  avata_option('section_autoheight_slogan');
   $container         = 'container';
   if ($fullwidth=='1')
- 	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
+ 	 $container         = 'container-fullwidth';
   ?>
-<section class="section section-slogan <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
   <div class="<?php echo $container;?>">
     <div class="section-content">
@@ -26,4 +20,3 @@
 
     </div>
   </div>
-</section>

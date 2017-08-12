@@ -2,20 +2,14 @@
   global $allowedposttags;
   $section_title     = avata_option('section_title_testimonial');
   $section_subtitle  = avata_option('section_subtitle_testimonial');
-  $section_class     = avata_option('section_css_class_testimonial');
-  $section_id        = avata_option('section_id_testimonial');
   $testimonial       = avata_option('section_items_testimonial');
   $fullwidth         = avata_option('section_fullwidth_testimonial');
-  $autoheight        = avata_option('section_autoheight_testimonial');
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
   
   ?>
 
-<section class="section section-testimonial <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
@@ -57,4 +51,3 @@
     </div>
   </div>
   </div>
-</section>

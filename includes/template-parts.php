@@ -90,7 +90,9 @@ echo $html;
 			
 }
 
-add_action('avata_featured__header','avata_featured_header');
+$sticky_header    = absint( avata_option( 'sticky_header_frontpage'));
+if( $sticky_header == '1')
+ 	add_action('avata_featured__header','avata_featured_header');
 
 /**
  * Display frontpage sections option in customizer 

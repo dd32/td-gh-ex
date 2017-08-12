@@ -2,19 +2,13 @@
   global $allowedposttags;
   $section_title     = avata_option('section_title_service_1');
   $section_subtitle  = avata_option('section_subtitle_service_1');
-  $section_class     = avata_option('section_css_class_service_1');
-  $section_id        = avata_option('section_id_service_1');
   $service           = avata_option('section_items_service_1');
   $fullwidth         =  avata_option('section_fullwidth_service_1');
-  $autoheight        =  avata_option('section_autoheight_service_1');
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
-  if($autoheight=='1')
-  	$section_class .= ' fp-auto-height';
 	 
   ?>
-<section class="section section-service-1 <?php echo esc_attr($section_class);?>">
 <div class="section-content-wrap">
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
@@ -56,4 +50,3 @@
     </div>
   </div>
   </div>
-</section>

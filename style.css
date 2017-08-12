@@ -3,8 +3,8 @@ Theme Name: Avata
 Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
-Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, slogan and so on, you can also sort them by dragging and dropping. 
-Version: 1.2.1
+Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial,blog, slogan and so on, you can also sort them by dragging and dropping. You can check the demo at http://demo.hoosoft.com/avata/.
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -468,7 +468,12 @@ nav li {
     width: 1px;
     overflow: hidden;
 }
-
+ul.list-nav{
+	list-style:none;
+}
+ul > li > i{
+	margin-right:10px;
+}
 /* header */
 #main-header{
 	width: 100%;
@@ -487,6 +492,7 @@ nav li {
 }
 #main-header.homepage-header{
 	position:absolute;
+	top: 0;
 	}
 .site-branding {
 	float: left;
@@ -1069,15 +1075,6 @@ p {
   margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 35px;
-  font-weight: 700;
-}
-
 a {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1098,10 +1095,10 @@ a:hover, a:focus, a:active {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -3158,7 +3155,7 @@ section.section .section-content{
 .intro-content{
     border: 0;
     margin: 0;
-    padding: 80px 15% 0;
+    padding: 60px 15% 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -3481,6 +3478,147 @@ a.avate-media{
     border-radius: 5px;
 }
 
+/* video background section*/
+.avata-box {
+    display: table;
+    width: 100%;
+}
+
+.avata-section--bg-adapted {
+    background-attachment: scroll;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.avata-section--full-height {
+    height: 100vh;
+}
+
+.avata-box__magnet--sm-padding {
+    padding: 41px 0;
+}
+
+.avata-box__magnet {
+    text-align: center;
+    vertical-align: middle;
+	width:100%;
+
+}
+.avata-overlay {
+    background: #222;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+.avata-background-video, .avata-background-video-preview {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.avata-background-video-preview img{
+	max-width: initial;
+}
+.avata-box__container {
+    height: 50%;
+}
+
+.avata-section__container {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+.avata-box--stretched {
+    height: 100%;
+}
+.avata-hero__subtext {
+    font-size: 21px;
+    line-height: 29px;
+    margin: -32px 0 3px 0;
+    padding: 0 0 41px 0;
+    position: relative;
+    top: 6px;
+}
+.avata-hero__text {
+    font-size: 46px;
+    font-weight: bold;
+    left: -2px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    margin: -18px 0 1px 0;
+    padding-bottom: 41px;
+    position: relative;
+    top: 8px;
+	color:#fff;
+}
+.avata-arrow {
+    bottom: 71px;
+    left: 0;
+    line-height: 1px;
+    padding: 0 20px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+.avata-arrow--floating .avata-arrow__link {
+  -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
+  -o-animation: floating-arrow 1.6s infinite ease-in-out 0s;
+  animation: floating-arrow 1.6s infinite ease-in-out 0s;
+}
+@-webkit-keyframes floating-arrow {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -webkit-transform: translateY(11px);
+    transform: translateY(11px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-o-keyframes floating-arrow {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -webkit-transform: translateY(11px);
+    transform: translateY(11px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes floating-arrow {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -webkit-transform: translateY(11px);
+    transform: translateY(11px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.avata-arrow__link, .avata-arrow__link:hover, .avata-arrow__link:focus {
+    color: #fff;
+}
+.avata-arrow__link {
+    display: inline-block;
+    font-size: 26px;
+}
 /*
 ///////////////////////////////////////////////////
 10.0 Side nav dotstyle
