@@ -1,5 +1,8 @@
 *** Revision History ***
 ===========================
+version 2.0.1		2017-08-13
+* Added css margin fix for archives
+
 version 2.0.0		2017-01-19
 * Added latest WP compatibility
 * Added option to control slider interval

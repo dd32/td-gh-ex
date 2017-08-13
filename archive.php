@@ -41,7 +41,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 		
-			<div class="panel panel-default">
+			<div class="panel panel-default archive-panel">
 				<div class="panel-heading">
 					<h1 class="archive-title"><?php
 					if ( is_day() ) :

@@ -21,7 +21,7 @@
 		 */
 			get_sidebar( 'footer' );		
 			$aadya_copyrighttxt = of_get_option('copyright_text');
-			$aadya_copyrighttxt = ! empty($aadya_copyrighttxt) ? $aadya_copyrighttxt : __('&copy; ', 'aadya') . __(date('Y')) . sprintf(' <a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));
+			$aadya_copyrighttxt = ! empty($aadya_copyrighttxt) ? $aadya_copyrighttxt : __('&copy; ', 'aadya') . date('Y') . sprintf(' <a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));
 			$d=sprintf('<a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));			
 		?>
 <div id="footer">
