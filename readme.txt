@@ -3,7 +3,7 @@ Contributors: williampatton
 Tags: left-sidebar, right-sidebar, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,6 @@ Single page next/previous article pagination uses `previous_post_link()` and `ne
 
 == Resources ==
 * Bootstrap styles and scripts © 2011-2017 The Bootstrap Authors and Twitter, Inc - MIT Licence
-* Tether.io © 2014-2017 HubSpot - MIT License
+* Popper.js © 2016-2017 Federico Zivolo - MIT License
 * Images used by theme (found in /assets/img/) are owned by theme author - Available under CC0
 * Images appearing in screenshot are owned by theme author - Available under CC0
