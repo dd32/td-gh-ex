@@ -22,7 +22,7 @@
 	<?php } ?>
 
 	<header class="genpost-entry-header">
-		<?php the_title( sprintf( '<h2 class="genpost-entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="genpost-entry-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="genpost-entry-meta">

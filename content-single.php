@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="single-entry-header">
-		<?php the_title( '<h1 class="single-entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="single-entry-title entry-title">', '</h1>' ); ?>
 
 		<div class="single-entry-meta">
 			<?php awaken_posted_on(); ?>
