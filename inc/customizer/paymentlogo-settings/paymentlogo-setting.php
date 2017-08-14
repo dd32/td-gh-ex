@@ -138,25 +138,5 @@ function accesspress_paymentlogo_setting($wp_customize){
             'label'         =>      __('Upload Other Seal 2 Image', 'accesspress-store'),                                        'type'          =>      'image',
             )
         ));
-/**
- * Custom Themes Info
-*/
-    $wp_customize->add_section(
-        'accesspress_store_pro_features',
-        array(
-          'title'           =>  __('Important Links', 'accesspress-store'),
-          'priority'        =>  1,
-    ));
-
-    $wp_customize->add_setting('theme_info_theme',array(
-        'default' => '',
-        'sanitize_callback' => 'accesspress_store_sanitize_text',
-    ));
-
-    $wp_customize->add_control( new AccessPress_Store_Theme_Info_Custom_Control( $wp_customize ,'theme_info_theme',array(
-        'label' => __( 'Store Pro Features' , 'accesspress-store' ),
-        'section' => 'accesspress_store_pro_features',
-    )));
-
 }
 add_action('customize_register', 'accesspress_paymentlogo_setting');

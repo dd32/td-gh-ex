@@ -14,6 +14,45 @@ function accesspress_store_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	/*------------------------------------------------------------------------------------*/
+	/**
+	 * Upgrade to Uncode Pro
+	*/
+	// Register custom section types.
+	$wp_customize->register_section_type( 'AccessPress_Store_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section(
+	    new AccessPress_Store_Customize_Section_Pro(
+	        $wp_customize,
+	        'accesspress-store-pro',
+	        array(
+	            'title'    => esc_html__( 'Upgrade To Pro', 'accesspress-store' ),
+	            'title1'    => esc_html__( 'Free Vs Pro', 'accesspress-store' ),
+	            'pro_text' => esc_html__( 'Buy Now','accesspress-store' ),
+	            'pro_text1' => esc_html__( 'Compare','accesspress-store' ),
+	            'pro_url'  => 'https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/',
+	            'pro_url1'  => admin_url( 'themes.php?page=accesspressstore-welcome&section=free_vs_pro'),
+	            'priority' => 1,
+	        )
+	    )
+	);
+	$wp_customize->add_setting(
+		'revolve_pro_upbuton',
+		array(
+			'section' => 'accesspress-store-pro',
+			'sanitize_callback' => 'esc_attr',
+		)
+	);
+
+	$wp_customize->add_control(
+		'revolve_pro_upbuton',
+		array(
+			'section' => 'accesspress-store-pro'
+		)
+	);
+
 }
 add_action( 'customize_register', 'accesspress_store_customize_register' );
 
@@ -67,12 +106,3 @@ function accesspress_store_customize_preview_js() {
 	wp_enqueue_script( 'accesspress_store_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'accesspress_store_customize_preview_js' );
-
-
-/**
- * AccessPress Store Customizer Js
-*/
-function accesspress_store_setting_live_promo() {
-	wp_enqueue_script( 'accessoress-store-promo',	get_template_directory_uri().'/inc/js/accesspress-theme-promo.js', array( 'jquery','customize-controls' ), '', true	);
-}
-add_action( 'customize_controls_enqueue_scripts', 'accesspress_store_setting_live_promo' );

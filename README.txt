@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.2.1 =
+** Minor Bug Fixes
+** Added Translation for Russian Language
+
 = 2.2.0 =
 ** Minor Bug Fixes
 
