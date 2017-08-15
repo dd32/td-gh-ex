@@ -4,7 +4,7 @@ Theme URI: https://designorbital.com/bandana/
 Author: DesignOrbital
 Author URI: https://designorbital.com/
 Description: Bandana is a modern, creative and beautiful WordPress theme. Bandana is easy to use theme with clean code and elegant design. The theme is suitable for any kind of blog, business, creative agency and portfolio.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bandana
@@ -82,7 +82,9 @@ and Blueprint http://www.blueprintcss.org/
 	14.1 - Overlay Effect
 	14.2 - Misc
 15.0 - Admin Bar
-16.0 - Media Queries
+16.0 - Jetpack
+	16.1 - WP Stats
+17.0 - Media Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Normalize
@@ -2858,10 +2860,22 @@ body.admin-bar .site-header-menu-responsive {
 }
 
 /*--------------------------------------------------------------
-16.0 Media Queries
+16.0 Jetpack
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-16.1 Small devices (landscape phones, 544px and up)
+16.1 WP Stats
+--------------------------------------------------------------*/
+img#wpstats,
+img[id*="botd"] {
+  position: absolute;
+  top: -9999px;
+}
+
+/*--------------------------------------------------------------
+17.0 Media Queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+17.1 Small devices (landscape phones, 544px and up)
 --------------------------------------------------------------*/
 @media (min-width: 544px) {
   /* Typography: Blockquote */
@@ -3033,7 +3047,7 @@ body.admin-bar .site-header-menu-responsive {
 }
 
 /*--------------------------------------------------------------
-16.2 Medium devices (tablets, 768px and up)
+17.2 Medium devices (tablets, 768px and up)
 --------------------------------------------------------------*/
 @media (min-width: 768px) {
   /* Typography: Global */
@@ -3592,7 +3606,7 @@ body.admin-bar .site-header-menu-responsive {
 }
 
 /*--------------------------------------------------------------
-16.3 Large devices (desktops, 992px and up)
+17.3 Large devices (desktops, 992px and up)
 --------------------------------------------------------------*/
 @media (min-width: 992px) {
   /* Elements: Table */
@@ -3648,7 +3662,7 @@ body.admin-bar .site-header-menu-responsive {
 }
 
 /*--------------------------------------------------------------
-16.4 Extra large devices (large desktops, 1200px and up)
+17.4 Extra large devices (large desktops, 1200px and up)
 --------------------------------------------------------------*/
 @media (min-width: 1200px) {
   /* Typography: Blockquote */
