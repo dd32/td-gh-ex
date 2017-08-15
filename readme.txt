@@ -1,8 +1,7 @@
 === Cell Lite ===
 Contributors: DesignOrbital.com
 Requires at least: WordPress 4.6
-Tested up to: WordPress 4.8
-Version: 1.1.1
+Tested up to: WordPress 4.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, photography
@@ -65,6 +64,11 @@ Image used in screenshot.png - http://unsplash.com/
 Licensed under the terms of CC0
 
 == Changelog ==
+
+= 1.1.2 =
+Released: August 15, 2017
+
+* Style added to hide Jetpack stats smiley icon.
 
 = 1.1.1 =
 Release Date: July 04, 2017
