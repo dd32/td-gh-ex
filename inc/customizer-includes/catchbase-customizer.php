@@ -113,16 +113,8 @@ function catchbase_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 
-	$schemes = catchbase_color_schemes();
-
-	$choices = array();
-
-	foreach ( $schemes as $scheme ) {
-		$choices[ $scheme['value'] ] = $scheme['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[color_scheme]', array(
-		'choices'  => $choices,
+		'choices'  => catchbase_color_schemes(),
 		'label'    => __( 'Color Scheme', 'catch-base' ),
 		'priority' => 5,
 		'section'  => 'colors',

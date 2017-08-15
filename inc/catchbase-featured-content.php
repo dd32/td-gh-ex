@@ -79,10 +79,10 @@ function catchbase_featured_content_display() {
 						if ( !empty( $headline ) || !empty( $subheadline ) ) {
 							$catchbase_featured_content .='<div class="featured-heading-wrap">';
 								if ( !empty( $headline ) ) {
-									$catchbase_featured_content .='<h1 id="featured-heading" class="entry-title">'. $headline .'</h1>';
+									$catchbase_featured_content .='<h1 id="featured-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
 								}
 								if ( !empty( $subheadline ) ) {
-									$catchbase_featured_content .='<p>'. $subheadline .'</p>';
+									$catchbase_featured_content .='<p>' . wp_kses_post( $subheadline ) . '</p>';
 								}
 							$catchbase_featured_content .='</div><!-- .featured-heading-wrap -->';
 						}

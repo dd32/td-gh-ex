@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-08 10:07+0545\n"
-"PO-Revision-Date: 2017-06-08 10:07+0545\n"
+"POT-Creation-Date: 2017-08-15 22:28+0545\n"
+"PO-Revision-Date: 2017-08-15 22:28+0545\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -258,377 +258,377 @@ msgstr "Anmeldelser"
 msgid "Search..."
 msgstr "Søg..."
 
-#: ../inc/catchbase-default-options.php:118
+#: ../inc/catchbase-default-options.php:116
 msgid "True"
 msgstr "Sandt"
 
-#: ../inc/catchbase-default-options.php:122
+#: ../inc/catchbase-default-options.php:117
 msgid "Wait"
 msgstr "Vent"
 
-#: ../inc/catchbase-default-options.php:126
+#: ../inc/catchbase-default-options.php:118
 msgid "False"
 msgstr "Falsk"
 
-#: ../inc/catchbase-default-options.php:142
+#: ../inc/catchbase-default-options.php:131
 msgid "Light"
 msgstr "Lys"
 
-#: ../inc/catchbase-default-options.php:146
+#: ../inc/catchbase-default-options.php:132
 msgid "Dark"
 msgstr "Mørk"
 
-#: ../inc/catchbase-default-options.php:163
-#: ../inc/catchbase-default-options.php:654
+#: ../inc/catchbase-default-options.php:146
+#: ../inc/catchbase-default-options.php:498
 msgid "Primary Sidebar, Content"
 msgstr "Primære Sidebar, Indhold"
 
-#: ../inc/catchbase-default-options.php:167
-#: ../inc/catchbase-default-options.php:659
+#: ../inc/catchbase-default-options.php:147
+#: ../inc/catchbase-default-options.php:503
 msgid "Content, Primary Sidebar"
 msgstr "Indhold, Primære sidebar"
 
-#: ../inc/catchbase-default-options.php:171
-#: ../inc/catchbase-default-options.php:664
+#: ../inc/catchbase-default-options.php:148
+#: ../inc/catchbase-default-options.php:508
 msgid "Three Columns ( Secondary Sidebar, Content, Primary Sidebar )"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:175
-#: ../inc/catchbase-default-options.php:669
+#: ../inc/catchbase-default-options.php:149
+#: ../inc/catchbase-default-options.php:513
 msgid "No Sidebar ( Content Width )"
 msgstr "Ingen sidebar (indholds bredde)"
 
-#: ../inc/catchbase-default-options.php:191
-#: ../inc/catchbase-default-options.php:344
+#: ../inc/catchbase-default-options.php:162
+#: ../inc/catchbase-default-options.php:258
 msgid "Show Excerpt"
 msgstr "Vis resumé"
 
-#: ../inc/catchbase-default-options.php:195
+#: ../inc/catchbase-default-options.php:163
 msgid "Show Full Content (No Featured Image)"
 msgstr "Vis fuldt indhold (Ingen Billeder)"
 
-#: ../inc/catchbase-default-options.php:212
-#: ../inc/catchbase-default-options.php:278
+#: ../inc/catchbase-default-options.php:177
+#: ../inc/catchbase-default-options.php:213
 msgid "Homepage / Frontpage"
 msgstr "Homepage / Forside"
 
-#: ../inc/catchbase-default-options.php:216
+#: ../inc/catchbase-default-options.php:178
 msgid "Excluding Homepage"
 msgstr "Udelad Forsiden"
 
-#: ../inc/catchbase-default-options.php:220
+#: ../inc/catchbase-default-options.php:179
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr "Ekskluder Homepage, Side / Post Billede"
 
-#: ../inc/catchbase-default-options.php:224
-#: ../inc/catchbase-default-options.php:282
+#: ../inc/catchbase-default-options.php:180
+#: ../inc/catchbase-default-options.php:214
 msgid "Entire Site"
 msgstr "Hele siden"
 
-#: ../inc/catchbase-default-options.php:228
+#: ../inc/catchbase-default-options.php:181
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Hele siden, Indlæg/Side fremvisningsbillede"
 
-#: ../inc/catchbase-default-options.php:232
+#: ../inc/catchbase-default-options.php:182
 msgid "Pages and Posts"
 msgstr "Sider og Posts"
 
-#: ../inc/catchbase-default-options.php:236
-#: ../inc/catchbase-default-options.php:286
-#: ../inc/catchbase-default-options.php:487
+#: ../inc/catchbase-default-options.php:183
+#: ../inc/catchbase-default-options.php:215
+#: ../inc/catchbase-default-options.php:332
 msgid "Disabled"
 msgstr "Deaktiveret"
 
-#: ../inc/catchbase-default-options.php:253
-#: ../inc/catchbase-default-options.php:722
+#: ../inc/catchbase-default-options.php:197
+#: ../inc/catchbase-default-options.php:566
 msgid "Full Image"
 msgstr "Fuldt billede"
 
-#: ../inc/catchbase-default-options.php:257
+#: ../inc/catchbase-default-options.php:198
 msgid "Large Image"
 msgstr "Stor Billede"
 
-#: ../inc/catchbase-default-options.php:261
-#: ../inc/catchbase-default-options.php:727
+#: ../inc/catchbase-default-options.php:199
+#: ../inc/catchbase-default-options.php:571
 msgid "Slider Image"
 msgstr "Slider billede"
 
-#: ../inc/catchbase-default-options.php:303
+#: ../inc/catchbase-default-options.php:229
 msgid "Demo Featured Content"
 msgstr "Demo Vist Indhold"
 
-#: ../inc/catchbase-default-options.php:307
+#: ../inc/catchbase-default-options.php:230
 msgid "Featured Page Content"
 msgstr "Vist Side Indhold"
 
-#: ../inc/catchbase-default-options.php:324
+#: ../inc/catchbase-default-options.php:244
 msgid "3 columns"
 msgstr "3 kolonner"
 
-#: ../inc/catchbase-default-options.php:328
+#: ../inc/catchbase-default-options.php:245
 msgid "4 columns"
 msgstr "4 kolonner"
 
-#: ../inc/catchbase-default-options.php:348
+#: ../inc/catchbase-default-options.php:259
 msgid "Show Full Content"
 msgstr "Vis fuldt indhold"
 
-#: ../inc/catchbase-default-options.php:352
+#: ../inc/catchbase-default-options.php:260
 msgid "Hide Content"
 msgstr "Skjul Indhold"
 
-#: ../inc/catchbase-default-options.php:368
+#: ../inc/catchbase-default-options.php:273
 msgid "Demo Featured Slider"
 msgstr "Demo Fremhævet Slider"
 
-#: ../inc/catchbase-default-options.php:372
+#: ../inc/catchbase-default-options.php:274
 msgid "Featured Page Slider"
 msgstr "Fremhævet fast-side slider"
 
-#: ../inc/catchbase-default-options.php:389
+#: ../inc/catchbase-default-options.php:288
 msgid "Fade"
 msgstr "Falme"
 
-#: ../inc/catchbase-default-options.php:393
+#: ../inc/catchbase-default-options.php:289
 msgid "Fade Out"
 msgstr "Tone ud"
 
-#: ../inc/catchbase-default-options.php:397
+#: ../inc/catchbase-default-options.php:290
 msgid "None"
 msgstr "Ingen"
 
-#: ../inc/catchbase-default-options.php:401
+#: ../inc/catchbase-default-options.php:291
 msgid "Scroll Horizontal"
 msgstr "Scroll horisontal"
 
-#: ../inc/catchbase-default-options.php:405
+#: ../inc/catchbase-default-options.php:292
 msgid "Scroll Vertical"
 msgstr "Scroll vertikalt"
 
-#: ../inc/catchbase-default-options.php:409
+#: ../inc/catchbase-default-options.php:293
 msgid "Flip Horizontal"
 msgstr "Vend horisontalt"
 
-#: ../inc/catchbase-default-options.php:413
+#: ../inc/catchbase-default-options.php:294
 msgid "Flip Vertical"
 msgstr "Vend Vertikalt"
 
-#: ../inc/catchbase-default-options.php:417
+#: ../inc/catchbase-default-options.php:295
 msgid "Tile Slide"
 msgstr "Felt sliske"
 
-#: ../inc/catchbase-default-options.php:421
+#: ../inc/catchbase-default-options.php:296
 msgid "Tile Blind"
 msgstr "Felt Skjul"
 
-#: ../inc/catchbase-default-options.php:425
+#: ../inc/catchbase-default-options.php:297
 msgid "Shuffle"
 msgstr "Shuffle"
 
-#: ../inc/catchbase-default-options.php:442
+#: ../inc/catchbase-default-options.php:311
 msgid "Default(Older Posts/Newer Posts)"
 msgstr "Default (Gamle posts/Nye Posts)"
 
-#: ../inc/catchbase-default-options.php:446
+#: ../inc/catchbase-default-options.php:312
 msgid "Numeric"
 msgstr "Numerisk"
 
-#: ../inc/catchbase-default-options.php:450
+#: ../inc/catchbase-default-options.php:313
 msgid "Infinite Scroll (Click)"
 msgstr "Uendelig Scroll (Click)"
 
-#: ../inc/catchbase-default-options.php:454
+#: ../inc/catchbase-default-options.php:314
 msgid "Infinite Scroll (Scroll)"
 msgstr "Uendelig Scroll (Scroll)"
 
-#: ../inc/catchbase-default-options.php:471
+#: ../inc/catchbase-default-options.php:328
 msgid "Large"
 msgstr "Stor"
 
-#: ../inc/catchbase-default-options.php:475
+#: ../inc/catchbase-default-options.php:329
 msgid "Medium"
 msgstr "Medium"
 
-#: ../inc/catchbase-default-options.php:479
+#: ../inc/catchbase-default-options.php:330
 msgid "Full size"
 msgstr "Fuld størrelse"
 
-#: ../inc/catchbase-default-options.php:483
+#: ../inc/catchbase-default-options.php:331
 msgid "Slider Image Size"
 msgstr "slider billed størrelse"
 
-#: ../inc/catchbase-default-options.php:503
+#: ../inc/catchbase-default-options.php:347
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchbase-default-options.php:507
+#: ../inc/catchbase-default-options.php:351
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchbase-default-options.php:511
+#: ../inc/catchbase-default-options.php:355
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/catchbase-default-options.php:515
+#: ../inc/catchbase-default-options.php:359
 #: ../inc/catchbase-social-icons.php:37
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchbase-default-options.php:519
+#: ../inc/catchbase-default-options.php:363
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/catchbase-default-options.php:523
+#: ../inc/catchbase-default-options.php:367
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchbase-default-options.php:527
+#: ../inc/catchbase-default-options.php:371
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchbase-default-options.php:531
+#: ../inc/catchbase-default-options.php:375
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchbase-default-options.php:535
+#: ../inc/catchbase-default-options.php:379
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchbase-default-options.php:539
+#: ../inc/catchbase-default-options.php:383
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchbase-default-options.php:543
+#: ../inc/catchbase-default-options.php:387
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchbase-default-options.php:547
+#: ../inc/catchbase-default-options.php:391
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchbase-default-options.php:551
+#: ../inc/catchbase-default-options.php:395
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchbase-default-options.php:555
+#: ../inc/catchbase-default-options.php:399
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchbase-default-options.php:559
+#: ../inc/catchbase-default-options.php:403
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/catchbase-default-options.php:563
+#: ../inc/catchbase-default-options.php:407
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/catchbase-default-options.php:567
+#: ../inc/catchbase-default-options.php:411
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/catchbase-default-options.php:571
+#: ../inc/catchbase-default-options.php:415
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchbase-default-options.php:575
+#: ../inc/catchbase-default-options.php:419
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchbase-default-options.php:579
+#: ../inc/catchbase-default-options.php:423
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/catchbase-default-options.php:583
+#: ../inc/catchbase-default-options.php:427
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/catchbase-default-options.php:587
+#: ../inc/catchbase-default-options.php:431
 msgid "Stumbleupon"
 msgstr "Stumbleupon"
 
-#: ../inc/catchbase-default-options.php:591
+#: ../inc/catchbase-default-options.php:435
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/catchbase-default-options.php:595
+#: ../inc/catchbase-default-options.php:439
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/catchbase-default-options.php:599
+#: ../inc/catchbase-default-options.php:443
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/catchbase-default-options.php:603
+#: ../inc/catchbase-default-options.php:447
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/catchbase-default-options.php:607
+#: ../inc/catchbase-default-options.php:451
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/catchbase-default-options.php:611
+#: ../inc/catchbase-default-options.php:455
 msgid "Website"
 msgstr "Website"
 
-#: ../inc/catchbase-default-options.php:615
+#: ../inc/catchbase-default-options.php:459
 msgid "Phone"
 msgstr "Tlf."
 
-#: ../inc/catchbase-default-options.php:619
+#: ../inc/catchbase-default-options.php:463
 msgid "Handset"
 msgstr "Handset"
 
-#: ../inc/catchbase-default-options.php:623
+#: ../inc/catchbase-default-options.php:467
 msgid "Cart"
 msgstr "Kurv"
 
-#: ../inc/catchbase-default-options.php:627
+#: ../inc/catchbase-default-options.php:471
 msgid "Cloud"
 msgstr "Cloud"
 
-#: ../inc/catchbase-default-options.php:631
+#: ../inc/catchbase-default-options.php:475
 msgid "Link"
 msgstr "Link"
 
-#: ../inc/catchbase-default-options.php:649
-#: ../inc/catchbase-default-options.php:685
-#: ../inc/catchbase-default-options.php:712
+#: ../inc/catchbase-default-options.php:493
+#: ../inc/catchbase-default-options.php:529
+#: ../inc/catchbase-default-options.php:556
 msgid "Default"
 msgstr "Standard"
 
-#: ../inc/catchbase-default-options.php:690
+#: ../inc/catchbase-default-options.php:534
 msgid "Enable"
 msgstr "Aktiver"
 
-#: ../inc/catchbase-default-options.php:695
+#: ../inc/catchbase-default-options.php:539
 msgid "Disable"
 msgstr "Deaktivér"
 
-#: ../inc/catchbase-default-options.php:717
+#: ../inc/catchbase-default-options.php:561
 msgid "Featured Image"
 msgstr "Indlæggets thumbnail "
 
-#: ../inc/catchbase-default-options.php:732
+#: ../inc/catchbase-default-options.php:576
 msgid "Disable Image"
 msgstr "Deaktiver billede"
 
-#: ../inc/catchbase-default-options.php:747
+#: ../inc/catchbase-default-options.php:591
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright &copy; %1$s %2$s. All Rights Reserved."
 
-#: ../inc/catchbase-default-options.php:747
+#: ../inc/catchbase-default-options.php:591
 #, fuzzy
 #| msgctxt "yearly archives date format"
 #| msgid "Y"
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/catchbase-default-options.php:749
+#: ../inc/catchbase-default-options.php:593
 msgid "by"
 msgstr "af"
 
@@ -679,7 +679,7 @@ msgid "Header Featured Image Options"
 msgstr "Header featured billede indstillinger"
 
 #: ../inc/catchbase-metabox.php:94
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:236
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:217
 msgid "Single Page/Post Image Layout "
 msgstr "Single Side/Post Billed Layout"
 
@@ -776,39 +776,39 @@ msgstr ""
 msgid "Featured Content Options"
 msgstr "Fremhævet Indhold indstillinger"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:52
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:46
 msgid "Enable Featured Content on"
 msgstr "Aktiver Side Indhold"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:74
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:62
 msgid "Select Featured Content Layout"
 msgstr "Vælg Side Indholds Layout"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:89
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:77
 msgid "Check to Move above Footer"
 msgstr "Tjek af for at flytte over sidefod"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:111
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:93
 msgid "Select Content Type"
 msgstr "Vælg indholds type"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:127
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:109
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Lad feltet være tomt hvis du vil fjerne overskriften."
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:128
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:110
 msgid "Headline for Featured Content"
 msgstr "Overskrift for Indhold"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:145
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:127
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Lad feltet være tomt hvis du vil fjerne underoverskriften."
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:146
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:128
 msgid "Sub-headline for Featured Content"
 msgstr "Underoverskrift for Indhold"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:162
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:144
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -816,16 +816,16 @@ msgstr ""
 "Gem og opdater siden hvis Antal Fremhævet Indhold er ændret (Max antal "
 "Fremhævet indhold er 20)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:169
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:151
 msgid "No of Featured Content"
 msgstr "Antal Fremhævet Indhold"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:192
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:168
 msgid "Display Content"
 msgstr "Vis indhold"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:208
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:196
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:184
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
 msgid "Featured Page"
 msgstr "Fremhævet Side"
 
@@ -839,28 +839,28 @@ msgstr "Fremhævet Slider Valgmuligheder"
 msgid "Featured Slider"
 msgstr "Featured Slider"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:51
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:45
 msgid "Enable Slider on"
 msgstr "Aktiver Slider"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:73
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:61
 msgid "Transition Effect"
 msgstr "Overgangs effekt"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:89
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:108
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:77
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:96
 msgid "seconds(s)"
 msgstr "Sekund(er)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:93
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:81
 msgid "Transition Delay"
 msgstr "Transition - forsinkelse"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:112
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:100
 msgid "Transition Length"
 msgstr "Transitions-længde"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:115
 msgid ""
 "True: Fixes the height overlap issue. Slideshow will start as soon as two "
 "slider are available. Slide may display in random, as image is fetch."
@@ -868,43 +868,43 @@ msgid ""
 "after all images are available."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:117
 msgid "Image Loader"
 msgstr "Billede Loader"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:157
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
 msgid "Select Slider Type"
 msgstr "Vælg slider type"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:148
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is "
 "20)"
 msgstr ""
 "Gem og opdater siden hvis Antal Slides er ændret (Max antal slides er 20)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:179
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:155
 msgid "No of Slides"
 msgstr "Antal Slides"
 
-#: ../inc/customizer-includes/catchbase-customizer-header-options.php:31
+#: ../inc/customizer-includes/catchbase-customizer-header-options.php:25
 msgid "Enable Featured Header Image on "
 msgstr "Aktiver Fremhævet Sidehoved Billede "
 
-#: ../inc/customizer-includes/catchbase-customizer-header-options.php:53
+#: ../inc/customizer-includes/catchbase-customizer-header-options.php:41
 msgid "Page/Post Featured Header Image Size"
 msgstr "Side/post fremhævet sidehoved billedstørrelse."
 
-#: ../inc/customizer-includes/catchbase-customizer-header-options.php:68
+#: ../inc/customizer-includes/catchbase-customizer-header-options.php:56
 msgid "Featured Header Image Alt/Title Tag "
 msgstr "Fremhævet Header billede alt/title tag "
 
-#: ../inc/customizer-includes/catchbase-customizer-header-options.php:83
+#: ../inc/customizer-includes/catchbase-customizer-header-options.php:71
 msgid "Featured Header Image Link URL"
 msgstr "Featured Header Billede Link URL"
 
-#: ../inc/customizer-includes/catchbase-customizer-header-options.php:98
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:405
+#: ../inc/customizer-includes/catchbase-customizer-header-options.php:86
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:374
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Marker for at åbne i nyt vindue/faneblad"
 
@@ -1001,15 +1001,15 @@ msgstr "Homepage / Forside indstillinger"
 msgid "Select Categories"
 msgstr "Vælg Kategorier"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:196
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:190
 msgid "Default Layout"
 msgstr "Standard Layout"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:216
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:204
 msgid "Archive Content Layout"
 msgstr "Arkiv Indhold Layout"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:247
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:228
 #, fuzzy, php-format
 #| msgid ""
 #| "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi "
@@ -1024,7 +1024,7 @@ msgstr ""
 "Plugin</a>.<br/>Uendelig Scroll Muligheder kræver <a target=\"_blank\" href="
 "\"%s\">JetPack Plugin</a> Med Uendelig Scroll modul Aktiveret."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:254
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:235
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -1033,7 +1033,7 @@ msgstr ""
 "Uendelig Scroll Mulighed kræver <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> med Uendelig Scroll modul aktiveret."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:265
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:246
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</"
@@ -1042,71 +1042,71 @@ msgstr ""
 "Numerisk mulighed kræver <a target=\"_blank\" href=\"%s\">WP-SideNavi "
 "Plugin</a>."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:276
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:257
 msgid "Pagination Options"
 msgstr "Sideinddelings Instillinger"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:293
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:268
 msgid "Pagination type"
 msgstr "Sideinddelings type"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:302
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:277
 msgid "To disable the fields, simply leave them empty."
 msgstr "For at deaktivere felterne, lad dem være tomme."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:305
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:280
 msgid "Promotion Headline Options"
 msgstr "Promotion Headline indstillinger"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:322
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:291
 msgid "Enable Promotion Headline on"
 msgstr "Aktiver Promotion Headline for"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:338
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:307
 msgid "Appropriate Words: 10"
 msgstr "Passende ord: 10"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:339
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:308
 msgid "Promotion Headline Text"
 msgstr "Promotion Headline Tekst"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:355
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:324
 msgid "Appropriate Words: 15"
 msgstr "Passende ord: 15"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:356
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:325
 msgid "Promotion Subheadline Text"
 msgstr "Promotion Subheadline Tekst"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:372
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:341
 msgid "Appropriate Words: 3"
 msgstr "Passende ord: 3"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:373
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:342
 msgid "Promotion Headline Button Text "
 msgstr "Promotion Headline knap Tekst"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:389
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:358
 msgid "Promotion Headline Link"
 msgstr "Promotion Headline link"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:417
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:386
 msgid "Scrollup Options"
 msgstr "Scroll op indstillinger"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:427
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:396
 msgid "Check to disable Scroll Up"
 msgstr "Afmærk for at deaktivere Scroll Up"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:436
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:405
 msgid "Change default placeholder text in Search."
 msgstr "Ændre standard pladsholder text i Søg."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:439
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:408
 msgid "Search Options"
 msgstr "Søgemuligheder"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:450
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:419
 msgid "Default Display Text in Search"
 msgstr "Standardtekst i søgefelt"
 
@@ -1126,11 +1126,11 @@ msgstr "Alternativ Logo Text"
 msgid "Check to move Site Title and Tagline before logo"
 msgstr "Afmærk for at flytte side titel og beskrivelse før logo"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:126
+#: ../inc/customizer-includes/catchbase-customizer.php:118
 msgid "Color Scheme"
 msgstr "Farvetema"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:151
+#: ../inc/customizer-includes/catchbase-customizer.php:143
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
@@ -1138,20 +1138,20 @@ msgstr ""
 "Advarsel: Nulstil alle indstillinger til standard. Genindlæs siden efter "
 "arkivering for at se effekten."
 
-#: ../inc/customizer-includes/catchbase-customizer.php:153
+#: ../inc/customizer-includes/catchbase-customizer.php:145
 msgid "Reset all settings"
 msgstr "Nulstil alle indstillinger"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:164
+#: ../inc/customizer-includes/catchbase-customizer.php:156
 msgid "Check to reset all settings to default"
 msgstr "Afmærk for at nulstille alle indstillinger til standard"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:174
-#: ../inc/customizer-includes/catchbase-customizer.php:185
+#: ../inc/customizer-includes/catchbase-customizer.php:166
+#: ../inc/customizer-includes/catchbase-customizer.php:177
 msgid "Important Links"
 msgstr "Vigtige links"
 
-#: ../inc/customizer-includes/catchbase-customizer.php:226
+#: ../inc/customizer-includes/catchbase-customizer.php:218
 msgid "Refresh the customizer page after saving to view reset effects"
 msgstr ""
 
@@ -1172,7 +1172,7 @@ msgstr "Fejl 404 - Emne Blev Ikke Fundet"
 msgid "Search Results for: %s"
 msgstr "Søgeresultater for: %s"
 
-#: ../searchform.php:14 ../searchform.php:15
+#: ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
 msgstr "Søg efter:"

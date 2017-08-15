@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -20,20 +20,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_enable_featured_header_image_options = catchbase_enable_featured_header_image_options();
-	$choices = array();
-	foreach ( $catchbase_enable_featured_header_image_options as $catchbase_enable_featured_header_image_option ) {
-		$choices[$catchbase_enable_featured_header_image_option['value']] = $catchbase_enable_featured_header_image_option['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[enable_featured_header_image]', array(
-			'choices'  	=> $choices,
+			'choices'  	=> catchbase_enable_featured_header_image_options(),
 			'label'		=> __( 'Enable Featured Header Image on ', 'catch-base' ),
 			'section'   => 'header_image',
 	        'settings'  => 'catchbase_theme_options[enable_featured_header_image]',
 	        'type'	  	=> 'select',
 	) );
-	
+
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_image_size]', array(
 		'capability'		=> 'edit_theme_options',
@@ -41,15 +35,9 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_featured_image_size_options = catchbase_featured_image_size_options();
-	$choices = array();
-	foreach ( $catchbase_featured_image_size_options as $catchbase_featured_image_size_option ) {
-		$choices[$catchbase_featured_image_size_option['value']] = $catchbase_featured_image_size_option['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[featured_image_size]', array(
 		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
-		'choices'  	=> $choices,
+		'choices'  	=> catchbase_featured_image_size_options(),
 		'label'		=> __( 'Page/Post Featured Header Image Size', 'catch-base' ),
 		'section'   => 'header_image',
 		'settings'  => 'catchbase_theme_options[featured_image_size]',
@@ -99,5 +87,5 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'section'  	=> 'header_image',
 		'settings' 	=> 'catchbase_theme_options[featured_header_image_base]',
 		'type'     	=> 'checkbox',
-	) );	
+	) );
 // Header Options End

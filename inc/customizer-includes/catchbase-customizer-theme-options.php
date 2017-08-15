@@ -169,7 +169,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
         'type'     	=> 'dropdown-categories',
     ) ) );
 	//Homepage / Frontpage Settings End
-	
+
 
 	// Layout Options
 	$wp_customize->add_section( 'catchbase_layout', array(
@@ -185,14 +185,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$layouts = catchbase_layouts();
-	$choices = array();
-	foreach ( $layouts as $layout ) {
-		$choices[ $layout['value'] ] = $layout['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[theme_layout]', array(
-		'choices'	=> $choices,
+		'choices'	=> catchbase_layouts(),
 		'label'		=> __( 'Default Layout', 'catch-base' ),
 		'section'	=> 'catchbase_layout',
 		'settings'   => 'catchbase_theme_options[theme_layout]',
@@ -205,14 +199,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$layouts = catchbase_get_archive_content_layout();
-	$choices = array();
-	foreach ( $layouts as $layout ) {
-		$choices[ $layout['value'] ] = $layout['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[content_layout]', array(
-		'choices'   => $choices,
+		'choices'   => catchbase_get_archive_content_layout(),
 		'label'		=> __( 'Archive Content Layout', 'catch-base' ),
 		'section'   => 'catchbase_layout',
 		'settings'  => 'catchbase_theme_options[content_layout]',
@@ -225,19 +213,12 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-
-	$single_post_image_layouts = catchbase_single_post_image_layout_options();
-	$choices = array();
-	foreach ( $single_post_image_layouts as $single_post_image_layout ) {
-		$choices[$single_post_image_layout['value']] = $single_post_image_layout['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[single_post_image_layout]', array(
 			'label'		=> __( 'Single Page/Post Image Layout ', 'catch-base' ),
 			'section'   => 'catchbase_layout',
 	        'settings'  => 'catchbase_theme_options[single_post_image_layout]',
 	        'type'	  	=> 'select',
-			'choices'  	=> $choices,
+			'choices'  	=> catchbase_single_post_image_layout_options(),
 	) );
    	// Layout Options End
 
@@ -282,14 +263,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$pagination_types = catchbase_get_pagination_types();
-	$choices = array();
-	foreach ( $pagination_types as $pagination_type ) {
-		$choices[$pagination_type['value']] = $pagination_type['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[pagination_type]', array(
-		'choices'  => $choices,
+		'choices'  => catchbase_get_pagination_types(),
 		'label'    => __( 'Pagination type', 'catch-base' ),
 		'section'  => 'catchbase_pagination_options',
 		'settings' => 'catchbase_theme_options[pagination_type]',
@@ -311,14 +286,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_featured_slider_content_options = catchbase_featured_slider_content_options();
-	$choices = array();
-	foreach ( $catchbase_featured_slider_content_options as $catchbase_featured_slider_content_option ) {
-		$choices[$catchbase_featured_slider_content_option['value']] = $catchbase_featured_slider_content_option['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[promotion_headline_option]', array(
-		'choices'  	=> $choices,
+		'choices'  	=> catchbase_featured_slider_content_options(),
 		'label'    	=> __( 'Enable Promotion Headline on', 'catch-base' ),
 		'priority'	=> '0.5',
 		'section'  	=> 'catchbase_promotion_headline_options',

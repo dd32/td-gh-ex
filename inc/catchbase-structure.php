@@ -42,8 +42,10 @@ if ( ! function_exists( 'catchbase_head' ) ) :
 		?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php
+		if ( is_singular() && pings_open() ) {
+			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		}
 	}
 endif;
 add_action( 'catchbase_before_wp_head', 'catchbase_head', 10 );

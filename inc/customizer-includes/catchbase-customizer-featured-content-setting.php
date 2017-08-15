@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -41,14 +41,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_featured_slider_content_options = catchbase_featured_slider_content_options();
-	$choices = array();
-	foreach ( $catchbase_featured_slider_content_options as $catchbase_featured_slider_content_option ) {
-		$choices[$catchbase_featured_slider_content_option['value']] = $catchbase_featured_slider_content_option['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_option]', array(
-		'choices'  	=> $choices,
+		'choices'  	=> catchbase_featured_slider_content_options(),
 		'label'    	=> __( 'Enable Featured Content on', 'catch-base' ),
 		'priority'	=> '1',
 		'section'  	=> 'catchbase_featured_content_settings',
@@ -62,15 +56,9 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_featured_content_layout_options = catchbase_featured_content_layout_options();
-	$choices = array();
-	foreach ( $catchbase_featured_content_layout_options as $catchbase_featured_content_layout_option ) {
-		$choices[$catchbase_featured_content_layout_option['value']] = $catchbase_featured_content_layout_option['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_layout]', array(
 		'active_callback'	=> 'catchbase_is_featured_content_active',
-		'choices'  			=> $choices,
+		'choices'  			=> catchbase_featured_content_layout_options(),
 		'label'    			=> __( 'Select Featured Content Layout', 'catch-base' ),
 		'priority'			=> '2',
 		'section'  			=> 'catchbase_featured_content_settings',
@@ -99,15 +87,9 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'catchbase_sanitize_select',
 	) );
 
-	$catchbase_featured_content_types = catchbase_featured_content_types();
-	$choices = array();
-	foreach ( $catchbase_featured_content_types as $catchbase_featured_content_type ) {
-		$choices[$catchbase_featured_content_type['value']] = $catchbase_featured_content_type['label'];
-	}
-
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_type]', array(
 		'active_callback'	=> 'catchbase_is_featured_content_active',
-		'choices'  			=> $choices,
+		'choices'  			=> catchbase_featured_content_types(),
 		'label'    			=> __( 'Select Content Type', 'catch-base' ),
 		'priority'			=> '4',
 		'section'  			=> 'catchbase_featured_content_settings',
@@ -148,7 +130,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'section'  			=> 'catchbase_featured_content_settings',
 		'settings' 			=> 'catchbase_theme_options[featured_content_subheadline]',
 		'type'	   			=> 'text',
-		) 
+		)
 	);
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_number]', array(
@@ -171,24 +153,18 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'section'  			=> 'catchbase_featured_content_settings',
 		'settings' 			=> 'catchbase_theme_options[featured_content_number]',
 		'type'	   			=> 'number',
-		) 
+		)
 	);
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_show]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_show'],
 		'sanitize_callback'	=> 'catchbase_sanitize_select',
-	) ); 
-
-	$catchbase_featured_content_show = catchbase_featured_content_show();
-	$choices = array();
-	foreach ( $catchbase_featured_content_show as $catchbase_featured_content_shows ) {
-		$choices[$catchbase_featured_content_shows['value']] = $catchbase_featured_content_shows['label'];
-	}
+	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_show]', array(
 		'active_callback'	=> 'catchbase_is_demo_featured_content_inactive',
-		'choices'  			=> $choices,
+		'choices'  			=> catchbase_featured_content_show(),
 		'label'    			=> __( 'Display Content', 'catch-base' ),
 		'priority'			=> '8',
 		'section'  			=> 'catchbase_featured_content_settings',

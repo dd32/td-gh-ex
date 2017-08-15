@@ -113,18 +113,9 @@ function catchbase_get_default_theme_options() {
  */
 function catchbase_featured_slider_image_loader() {
 	$color_scheme_options = array(
-		'true' => array(
-			'value' 				=> 'true',
-			'label' 				=> __( 'True', 'catch-base' ),
-		),
-		'wait' => array(
-			'value' 				=> 'wait',
-			'label' 				=> __( 'Wait', 'catch-base' ),
-		),
-		'false' => array(
-			'value' 				=> 'false',
-			'label' 				=> __( 'False', 'catch-base' ),
-		),
+		'true'  => __( 'True', 'catch-base' ),
+		'wait'  => __( 'Wait', 'catch-base' ),
+		'false' => __( 'False', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_color_schemes', $color_scheme_options );
@@ -137,14 +128,8 @@ function catchbase_featured_slider_image_loader() {
  */
 function catchbase_color_schemes() {
 	$color_scheme_options = array(
-		'light' => array(
-			'value' 				=> 'light',
-			'label' 				=> __( 'Light', 'catch-base' ),
-		),
-		'dark' => array(
-			'value' 				=> 'dark',
-			'label' 				=> __( 'Dark', 'catch-base' ),
-		),
+		'light' => __( 'Light', 'catch-base' ),
+		'dark'  => __( 'Dark', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_color_schemes', $color_scheme_options );
@@ -158,22 +143,10 @@ function catchbase_color_schemes() {
  */
 function catchbase_layouts() {
 	$layout_options = array(
-		'left-sidebar' 	=> array(
-			'value' => 'left-sidebar',
-			'label' => __( 'Primary Sidebar, Content', 'catch-base' ),
-		),
-		'right-sidebar' => array(
-			'value' => 'right-sidebar',
-			'label' => __( 'Content, Primary Sidebar', 'catch-base' ),
-		),
-		'three-columns'	=> array(
-			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
-		),
-		'no-sidebar'	=> array(
-			'value' => 'no-sidebar',
-			'label' => __( 'No Sidebar ( Content Width )', 'catch-base' ),
-		),
+		'left-sidebar' 	=> __( 'Primary Sidebar, Content', 'catch-base' ),
+		'right-sidebar' => __( 'Content, Primary Sidebar', 'catch-base' ),
+		'three-columns'	=> __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
+		'no-sidebar'	=> __( 'No Sidebar ( Content Width )', 'catch-base' ),
 	);
 	return apply_filters( 'catchbase_layouts', $layout_options );
 }
@@ -186,14 +159,8 @@ function catchbase_layouts() {
  */
 function catchbase_get_archive_content_layout() {
 	$layout_options = array(
-		'excerpt-featured-image' => array(
-			'value' => 'excerpt-featured-image',
-			'label' => __( 'Show Excerpt', 'catch-base' ),
-		),
-		'full-content' => array(
-			'value' => 'full-content',
-			'label' => __( 'Show Full Content (No Featured Image)', 'catch-base' ),
-		),
+		'excerpt-featured-image' => __( 'Show Excerpt', 'catch-base' ),
+		'full-content'           => __( 'Show Full Content (No Featured Image)', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_get_archive_content_layout', $layout_options );
@@ -207,34 +174,13 @@ function catchbase_get_archive_content_layout() {
  */
 function catchbase_enable_featured_header_image_options() {
 	$enable_featured_header_image_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => __( 'Homepage / Frontpage', 'catch-base' ),
-		),
-		'exclude-home' 		=> array(
-			'value'	=> 'exclude-home',
-			'label' => __( 'Excluding Homepage', 'catch-base' ),
-		),
-		'exclude-home-page-post' 	=> array(
-			'value' => 'exclude-home-page-post',
-			'label' => __( 'Excluding Homepage, Page/Post Featured Image', 'catch-base' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => __( 'Entire Site', 'catch-base' ),
-		),
-		'entire-site-page-post' 	=> array(
-			'value' => 'entire-site-page-post',
-			'label' => __( 'Entire Site, Page/Post Featured Image', 'catch-base' ),
-		),
-		'pages-posts' 	=> array(
-			'value' => 'pages-posts',
-			'label' => __( 'Pages and Posts', 'catch-base' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'catch-base' ),
-		),
+		'homepage'               => __( 'Homepage / Frontpage', 'catch-base' ),
+		'exclude-home'           => __( 'Excluding Homepage', 'catch-base' ),
+		'exclude-home-page-post' => __( 'Excluding Homepage, Page/Post Featured Image', 'catch-base' ),
+		'entire-site'            => __( 'Entire Site', 'catch-base' ),
+		'entire-site-page-post'  => __( 'Entire Site, Page/Post Featured Image', 'catch-base' ),
+		'pages-posts'            => __( 'Pages and Posts', 'catch-base' ),
+		'disabled'               => __( 'Disabled', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_enable_featured_header_image_options', $enable_featured_header_image_options );
@@ -248,18 +194,9 @@ function catchbase_enable_featured_header_image_options() {
  */
 function catchbase_featured_image_size_options() {
 	$featured_image_size_options = array(
-		'full' 		=> array(
-			'value'	=> 'full',
-			'label' => __( 'Full Image', 'catch-base' ),
-		),
-		'large' 	=> array(
-			'value' => 'large',
-			'label' => __( 'Large Image', 'catch-base' ),
-		),
-		'slider'		=> array(
-			'value' => 'slider',
-			'label' => __( 'Slider Image', 'catch-base' ),
-		),
+		'full'   => __( 'Full Image', 'catch-base' ),
+		'large'  => __( 'Large Image', 'catch-base' ),
+		'slider' => __( 'Slider Image', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_image_size_options', $featured_image_size_options );
@@ -273,18 +210,9 @@ function catchbase_featured_image_size_options() {
  */
 function catchbase_featured_slider_content_options() {
 	$featured_slider_content_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => __( 'Homepage / Frontpage', 'catch-base' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => __( 'Entire Site', 'catch-base' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'catch-base' ),
-		),
+		'homepage' 		=> __( 'Homepage / Frontpage', 'catch-base' ),
+		'entire-site' 	=> __( 'Entire Site', 'catch-base' ),
+		'disabled'		=> __( 'Disabled', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_slider_content_options', $featured_slider_content_options );
@@ -298,14 +226,8 @@ function catchbase_featured_slider_content_options() {
  */
 function catchbase_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => array(
-			'value' => 'demo-featured-content',
-			'label' => __( 'Demo Featured Content', 'catch-base' ),
-		),
-		'featured-page-content' => array(
-			'value' => 'featured-page-content',
-			'label' => __( 'Featured Page Content', 'catch-base' ),
-		)
+		'demo-featured-content' => __( 'Demo Featured Content', 'catch-base' ),
+		'featured-page-content' => __( 'Featured Page Content', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_types', $featured_content_types );
@@ -319,14 +241,8 @@ function catchbase_featured_content_types() {
  */
 function catchbase_featured_content_layout_options() {
 	$featured_content_layout_option = array(
-		'layout-three' 		=> array(
-			'value'	=> 'layout-three',
-			'label' => __( '3 columns', 'catch-base' ),
-		),
-		'layout-four' 	=> array(
-			'value' => 'layout-four',
-			'label' => __( '4 columns', 'catch-base' ),
-		),
+		'layout-three' => __( '3 columns', 'catch-base' ),
+		'layout-four'  => __( '4 columns', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_layout_options', $featured_content_layout_option );
@@ -339,18 +255,9 @@ function catchbase_featured_content_layout_options() {
  */
 function catchbase_featured_content_show() {
 	$featured_content_show_option = array(
-		'excerpt' 		=> array(
-			'value'	=> 'excerpt',
-			'label' => __( 'Show Excerpt', 'catch-base' ),
-		),
-		'full-content' 	=> array(
-			'value' => 'full-content',
-			'label' => __( 'Show Full Content', 'catch-base' ),
-		),
-		'hide-content' 	=> array(
-			'value' => 'hide-content',
-			'label' => __( 'Hide Content', 'catch-base' ),
-		),
+		'excerpt' 		=> __( 'Show Excerpt', 'catch-base' ),
+		'full-content' 	=> __( 'Show Full Content', 'catch-base' ),
+		'hide-content' 	=> __( 'Hide Content', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_show', $featured_content_show_option );
@@ -363,14 +270,8 @@ function catchbase_featured_content_show() {
  */
 function catchbase_featured_slider_types() {
 	$featured_slider_types = array(
-		'demo-featured-slider' => array(
-			'value' => 'demo-featured-slider',
-			'label' => __( 'Demo Featured Slider', 'catch-base' ),
-		),
-		'featured-page-slider' => array(
-			'value' => 'featured-page-slider',
-			'label' => __( 'Featured Page Slider', 'catch-base' ),
-		),
+		'demo-featured-slider' => __( 'Demo Featured Slider', 'catch-base' ),
+		'featured-page-slider' => __( 'Featured Page Slider', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_slider_types', $featured_slider_types );
@@ -384,46 +285,16 @@ function catchbase_featured_slider_types() {
  */
 function catchbase_featured_slide_transition_effects() {
 	$featured_slide_transition_effects = array(
-		'fade' 		=> array(
-			'value'	=> 'fade',
-			'label' => __( 'Fade', 'catch-base' ),
-		),
-		'fadeout' 	=> array(
-			'value'	=> 'fadeout',
-			'label' => __( 'Fade Out', 'catch-base' ),
-		),
-		'none' 		=> array(
-			'value' => 'none',
-			'label' => __( 'None', 'catch-base' ),
-		),
-		'scrollHorz'=> array(
-			'value' => 'scrollHorz',
-			'label' => __( 'Scroll Horizontal', 'catch-base' ),
-		),
-		'scrollVert'=> array(
-			'value' => 'scrollVert',
-			'label' => __( 'Scroll Vertical', 'catch-base' ),
-		),
-		'flipHorz'	=> array(
-			'value' => 'flipHorz',
-			'label' => __( 'Flip Horizontal', 'catch-base' ),
-		),
-		'flipVert'	=> array(
-			'value' => 'flipVert',
-			'label' => __( 'Flip Vertical', 'catch-base' ),
-		),
-		'tileSlide'	=> array(
-			'value' => 'tileSlide',
-			'label' => __( 'Tile Slide', 'catch-base' ),
-		),
-		'tileBlind'	=> array(
-			'value' => 'tileBlind',
-			'label' => __( 'Tile Blind', 'catch-base' ),
-		),
-		'shuffle'	=> array(
-			'value' => 'shuffle',
-			'label' => __( 'Shuffle', 'catch-base' ),
-		)
+		'fade' 		=> __( 'Fade', 'catch-base' ),
+		'fadeout' 	=> __( 'Fade Out', 'catch-base' ),
+		'none' 		=> __( 'None', 'catch-base' ),
+		'scrollHorz'=> __( 'Scroll Horizontal', 'catch-base' ),
+		'scrollVert'=> __( 'Scroll Vertical', 'catch-base' ),
+		'flipHorz'	=> __( 'Flip Horizontal', 'catch-base' ),
+		'flipVert'	=> __( 'Flip Vertical', 'catch-base' ),
+		'tileSlide'	=> __( 'Tile Slide', 'catch-base' ),
+		'tileBlind'	=> __( 'Tile Blind', 'catch-base' ),
+		'shuffle'	=> __( 'Shuffle', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_slide_transition_effects', $featured_slide_transition_effects );
@@ -437,22 +308,10 @@ function catchbase_featured_slide_transition_effects() {
  */
 function catchbase_get_pagination_types() {
 	$pagination_types = array(
-		'default' => array(
-			'value' => 'default',
-			'label' => __( 'Default(Older Posts/Newer Posts)', 'catch-base' ),
-		),
-		'numeric' => array(
-			'value' => 'numeric',
-			'label' => __( 'Numeric', 'catch-base' ),
-		),
-		'infinite-scroll-click' => array(
-			'value' => 'infinite-scroll-click',
-			'label' => __( 'Infinite Scroll (Click)', 'catch-base' ),
-		),
-		'infinite-scroll-scroll' => array(
-			'value' => 'infinite-scroll-scroll',
-			'label' => __( 'Infinite Scroll (Scroll)', 'catch-base' ),
-		),
+		'default'                => __( 'Default(Older Posts/Newer Posts)', 'catch-base' ),
+		'numeric'                => __( 'Numeric', 'catch-base' ),
+		'infinite-scroll-click'  => __( 'Infinite Scroll (Click)', 'catch-base' ),
+		'infinite-scroll-scroll' => __( 'Infinite Scroll (Scroll)', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_get_pagination_types', $pagination_types );
@@ -466,26 +325,11 @@ function catchbase_get_pagination_types() {
  */
 function catchbase_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'large' => array(
-			'value' => 'large',
-			'label' => __( 'Large', 'catch-base' ),
-		),
-		'medium' => array(
-			'value' => 'medium',
-			'label' => __( 'Medium', 'catch-base' ),
-		),
-		'full-size' => array(
-			'value' => 'full-size',
-			'label' => __( 'Full size', 'catch-base' ),
-		),
-		'slider-image-size' => array(
-			'value' => 'slider-image-size',
-			'label' => __( 'Slider Image Size', 'catch-base' ),
-		),
-		'disabled' => array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'catch-base' ),
-		),
+		'large'             => __( 'Large', 'catch-base' ),
+		'medium'            => __( 'Medium', 'catch-base' ),
+		'full-size'         => __( 'Full size', 'catch-base' ),
+		'slider-image-size' => __( 'Slider Image Size', 'catch-base' ),
+		'disabled'          => __( 'Disabled', 'catch-base' ),
 	);
 	return apply_filters( 'catchbase_single_post_image_layout_options', $single_post_image_layout_options );
 }

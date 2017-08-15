@@ -41,7 +41,7 @@ function catchbase_primary_menu() {
 
                 ?>
                 <div id="search-toggle" class="genericon">
-                    <a class="screen-reader-text" href="#search-container"><?php _e( 'Search', 'catch-base' ); ?></a>
+                    <a class="screen-reader-text" href="#search-container"><?php esc_html_e( 'Search', 'catch-base' ); ?></a>
                 </div>
 
                 <div id="search-container" class="displaynone">
