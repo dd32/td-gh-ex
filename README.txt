@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 
+= 2.2.2 =
+** Fixed some customizer related issue
+
 = 2.2.1 =
 ** Minor Bug Fixes
 ** Added Translation for Russian Language

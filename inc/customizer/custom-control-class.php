@@ -3,7 +3,7 @@
  * Custom Control Class
 */
 
-if( class_exists( 'WP_Customize_control') ){
+if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section' ) ){
     
     class AccessPress_Store_WP_Customize_Switch_Control extends WP_Customize_Control {
 		public $type = 'switch';
