@@ -3,7 +3,7 @@
 // Register parent style
 add_action( 'wp_enqueue_scripts', 'vcready_2016_enqueue_parent_styles' );
     function vcready_2016_enqueue_parent_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+    wp_enqueue_style( 'vcready_2016_enqueue_parent_styles', get_template_directory_uri().'/style.css' );
 }
 
 // Register new page widget

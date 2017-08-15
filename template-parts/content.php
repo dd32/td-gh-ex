@@ -18,7 +18,7 @@
 		<!-- post details -->
 		<div class="post-meta">
 			<span class="author"><?php _e( 'By', '2016-vcready' ); ?> <?php the_author_posts_link(); ?> - </span>
-			<span class="date"><?php the_time('F j, Y'); ?></span>
+			<span class="date"><?php the_time(get_option('date_format')); ?></span>
 			<span class="comments"> <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', '2016-vcready' ), __( '1 Comment', '2016-vcready' ), __( '% Comments', '2016-vcready' )); ?></span>
 		</div>	
 			<!-- /post details -->
