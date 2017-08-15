@@ -2,7 +2,7 @@
 Contributors: WebsiteHelper
 Requires at least: 4.8
 Tested up to: 4.8
-Version: 1.5.6
+Version: 1.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -120,6 +120,11 @@ Minor CSS changes
 
 Minor functions.php fixes
 Date format fixed on post meta 
+
+== 1.5.7 ==
+* Fixed: August 15, 2017
+
+Updated theme URL in Style.css
 
 == Resources ==
 
