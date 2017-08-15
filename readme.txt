@@ -97,6 +97,9 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.27
+ * Minor bug fixes
+
 Version 1.25
  * Added Welcome Page with demo import functionality
 
