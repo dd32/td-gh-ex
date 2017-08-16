@@ -239,6 +239,18 @@ if ( ! function_exists( 'ct_apex_remove_more_link_scroll' ) ) {
 }
 add_filter( 'the_content_more_link', 'ct_apex_remove_more_link_scroll' );
 
+// Yoast OG description has "Continue readingTitle of the Post" due to its use of get_the_excerpt(). This fixes that.
+function ct_apex_update_yoast_og_description( $ogdesc ) {
+	$read_more_text = get_theme_mod( 'read_more_text' );
+	if ( empty( $read_more_text ) ) {
+		$read_more_text = __( 'Continue reading', 'apex' );
+	}
+	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
+
+	return $ogdesc;
+}
+add_filter( 'wpseo_opengraph_desc', 'ct_apex_update_yoast_og_description' );
+
 if ( ! function_exists( 'ct_apex_featured_image' ) ) {
 	function ct_apex_featured_image() {
 
@@ -433,7 +445,7 @@ add_filter( 'walker_nav_menu_start_el', 'ct_apex_nav_dropdown_buttons', 10, 4 );
 if ( ! function_exists( ( 'ct_apex_sticky_post_marker' ) ) ) {
 	function ct_apex_sticky_post_marker() {
 
-		if ( is_sticky() && ! is_archive() ) {
+		if ( is_sticky() && !is_archive() && !is_search() ) {
 			echo '<div class="sticky-status"><span>' . __( "Featured Post", "apex" ) . '</span></div>';
 		}
 	}
@@ -664,3 +676,18 @@ if ( function_exists( 'ct_apex_pro_plugin_updater' ) ) {
 	remove_action( 'admin_init', 'ct_apex_pro_plugin_updater', 0 );
 	add_action( 'admin_init', 'ct_apex_pro_plugin_updater', 0 );
 }
+
+//----------------------------------------------------------------------------------
+// Add paragraph tags for author bio displayed in content/archive-header.php.
+// the_archive_description includes paragraph tags for tag and category descriptions, but not the author bio. 
+//----------------------------------------------------------------------------------
+if ( ! function_exists( 'ct_apex_modify_archive_descriptions' ) ) {
+	function ct_apex_modify_archive_descriptions( $description ) {
+
+		if ( is_author() ) {
+			$description = wpautop( $description );
+		}
+		return $description;
+	}
+}
+add_filter( 'get_the_archive_description', 'ct_apex_modify_archive_descriptions' );

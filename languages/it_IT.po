@@ -2,44 +2,51 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Apex 1.25\n"
+"Project-Id-Version: Apex 1.23\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-08-16 14:48:50+00:00\n"
+"POT-Creation-Date: 2017-07-18 11:12+0200\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"PO-Revision-Date: 2017-07-18 11:46+0200\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
 
 #: 404.php:6
 msgid "404: Page Not Found"
-msgstr ""
+msgstr "404 - Pagina Non Trovata"
 
 #: 404.php:9
 msgid ""
 "Looks like nothing was found on this url.  Double-check that the url is "
 "correct or try the search form below to find what you were looking for."
 msgstr ""
+"Sembra che non sia stato trovato nulla su questo URL. Verifica nuovamente "
+"che l'URL sia corretto o prova il modulo di ricerca qui sotto per trovare "
+"quello che stavi cercando."
 
 #: comments.php:12 comments.php:32 comments.php:54
 msgid "Be First to Comment"
-msgstr ""
+msgstr "Commenta per primo"
 
 #: comments.php:12 comments.php:32 comments.php:54
 msgid "One Comment"
-msgstr ""
+msgstr "Un commento"
 
 #: comments.php:46
 msgid ""
-"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this "
-"post\">trackbacks</a> and pingbacks are open."
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
+"\">trackbacks</a> and pingbacks are open."
 msgstr ""
+"I commenti sono chiusi, ma <a href=“%s” title=“Trackback URL per questo "
+"post”>trackbacks</a> e pingbacks sono aperti."
 
-#: comments.php:69 comments.php:85
+#: comments.php:69 comments.php:76
 msgid "Comments are closed."
-msgstr ""
+msgstr "I commenti sono chiusi."
 
 #: content/comments-link.php:6
 msgid "comment icon"
@@ -47,126 +54,119 @@ msgstr ""
 
 #: content/comments-link.php:9
 msgid "Comments closed"
-msgstr ""
+msgstr "Commenti chiusi"
 
 #: content/comments-link.php:9 content/comments-link.php:12
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Commento"
 
 #: content/comments-link.php:12
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Lascia un Commento"
 
 #: content/post-categories.php:15
 msgid "and"
-msgstr ""
+msgstr "e"
 
 #: content/post-nav-attachment.php:3
 msgid "Previous Image"
-msgstr ""
+msgstr "Immagine precedente"
 
 #: content/post-nav-attachment.php:6
 msgid "Next Image"
-msgstr ""
+msgstr "Immagine successiva"
 
 #: content/post-nav.php:9
 msgid "Previous Post"
-msgstr ""
+msgstr "Post precedente"
 
 #: content/post-nav.php:10
 msgid "The Previous Post"
-msgstr ""
+msgstr "Il precedente Post"
 
 #: content/post-nav.php:13
 msgid "No Older Posts"
-msgstr ""
+msgstr "Il Post più vecchio"
 
 #: content/post-nav.php:14 content/post-nav.php:28
 msgid "Return to Blog"
-msgstr ""
+msgstr "Ritorna al Blog"
 
 #: content/post-nav.php:23
 msgid "Next Post"
-msgstr ""
+msgstr "Post successivo"
 
 #: content/post-nav.php:24
 msgid "The Next Post"
-msgstr ""
+msgstr "Il Post successivo"
 
 #: content/post-nav.php:27
 msgid "No Newer Posts"
-msgstr ""
+msgstr "Nessun nuovo post"
 
 #: content/post-tags.php:8
 msgid "View all posts tagged %s"
-msgstr ""
+msgstr "Visualizza tutti i post taggati %s"
 
 #: content/search-bar.php:11 searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: content/search-bar.php:12
 msgid "Search..."
-msgstr ""
+msgstr "Cerca…"
 
 #: content/search-bar.php:13 searchform.php:5
 msgid "Search for:"
-msgstr ""
+msgstr "Cerca per:"
 
-#: content-page.php:12 content.php:13 templates/full-width.php:22
+#: content-page.php:12 content.php:13
 msgid "Pages:"
-msgstr ""
+msgstr "Pagina:"
 
 #: footer.php:11
 msgid "<a href=\"%1$s\">%2$s WordPress Theme</a> by Compete Themes"
-msgstr ""
+msgstr "<a href=“%1$s”>%2$s  Copyright © 2017</a> - Mohini Pettinato"
 
-#: functions.php:12
-msgid ""
-"Hey! Sorry to interrupt, but you've been using Apex for a little while now. "
-"If you're happy with this theme, could you take a minute to leave a review? "
-"<i>You won't see this notice again after closing it.</i>"
-msgstr ""
-
-#: functions.php:46
+#: functions.php:39
 msgid "Primary"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:50
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:52
 msgid ""
 "Widgets in this area will be shown in the sidebar next to the main post "
 "content"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:77
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Il tuo commento è in attesa di approvazione."
 
-#: functions.php:110
+#: functions.php:101
 msgid "(optional)"
-msgstr ""
+msgstr "(opzionale)"
 
-#: functions.php:129
+#: functions.php:120
 msgid "Website"
 msgstr ""
 
-#: functions.php:182 functions.php:246 inc/customizer.php:246
+#: functions.php:167 inc/customizer.php:246
 msgid "Continue reading"
-msgstr ""
+msgstr "Continua a leggere"
 
-#: functions.php:449
+#: functions.php:422
 msgid "Featured Post"
-msgstr ""
+msgstr "Post in evidenza"
 
-#: functions.php:512
+#: functions.php:485
 msgid "Customizer settings deleted."
 msgstr ""
 
-#: functions.php:518
+#: functions.php:491
 msgid "%s successfully activated!"
 msgstr ""
 
@@ -234,8 +234,7 @@ msgstr ""
 
 #: inc/customizer.php:162
 msgid ""
-"Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn "
-"more</a>)"
+"Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn more</a>)"
 msgstr ""
 
 #: inc/customizer.php:189
@@ -296,17 +295,13 @@ msgstr ""
 msgid "Add Custom CSS Here:"
 msgstr ""
 
-#: inc/review.php:113
-msgid "Click here to leave your review"
-msgstr ""
-
 #: index.php:19
 msgid "Previous"
-msgstr ""
+msgstr "Precedente"
 
 #: index.php:20
 msgid "Next"
-msgstr ""
+msgstr "Successivo"
 
 #: search.php:9
 msgid "%1$d search result for \"%2$s\""
@@ -346,8 +341,8 @@ msgstr ""
 
 #: theme-options.php:34
 msgid ""
-"Download the %s Pro plugin and unlock custom colors, new layouts, a "
-"flexible header image, and more"
+"Download the %s Pro plugin and unlock custom colors, new layouts, a flexible "
+"header image, and more"
 msgstr ""
 
 #: theme-options.php:37
@@ -368,9 +363,8 @@ msgstr ""
 
 #: theme-options.php:48
 msgid ""
-"%s can be converted into a mobile app and listed on the App Store and "
-"Google Play Store with the help of PressPad News. Read our tutorial to "
-"learn more."
+"%s can be converted into a mobile app and listed on the App Store with the "
+"help of PressPad News. Read our tutorial to learn more."
 msgstr ""
 
 #: theme-options.php:49
@@ -390,25 +384,18 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Apex is a sophisticated, minimalist theme. It looks great and performs "
-"wonderfully on mobile devices, tablets, laptops, and everything in between. "
-"Use it to setup a business blog, newspaper website, fashion magazine, or "
-"travel blog. Now with WooCommerce support, you can even setup an eCommerce "
-"store with Apex. The design of this minimal theme also suits media-rich "
-"sites well like food blogs and personal photography portfolios. As a "
-"simple, responsive, and SEO optimized theme, you can trust Apex to present "
-"your best content to the world. Preview Apex now with the interactive live "
-"demo: https://www.competethemes.com/demos/?theme=apex"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Full-width"
+"wonderfully on phones, tablets, laptops, and everything in between. As a "
+"fast, responsive, accessibility-ready, and translation-ready theme, Apex is "
+"a theme you can trust to present your content to the world. Preview on "
+"desktop, tablets, and mobile with our interactive live demo: https://www."
+"competethemes.com/demos/?theme=apex"
 msgstr ""
 
 #: comments.php:12 comments.php:32 comments.php:54 content/comments-link.php:9
 #: content/comments-link.php:12
 msgctxt "noun: 5 comments"
 msgid "% Comments"
-msgstr ""
+msgstr "% Commenti"
 
 #: content/archive-header.php:4
 msgctxt "noun: Site Title's Posts"
@@ -418,54 +405,54 @@ msgstr ""
 #: content/post-byline.php:5
 msgctxt "Published on this date"
 msgid "Published %s"
-msgstr ""
+msgstr "Pubblicato %s"
 
 #: content/post-byline.php:12
 msgctxt "Published on a date BY this author"
 msgid "by"
-msgstr ""
+msgstr "di"
 
 #: content/post-categories.php:10
 msgctxt "Published in post category"
 msgid "Published in"
-msgstr ""
+msgstr "Pubblicato in"
 
 #: content/post-categories.php:17
 msgctxt "View all posts in post category"
 msgid "View all posts in %s"
-msgstr ""
+msgstr "Visualizza tutti i post in %s"
 
-#: functions.php:94
+#: functions.php:85
 msgctxt "verb: reply to this comment"
 msgid "Reply"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:89
 msgctxt "verb: edit this comment"
 msgid "Edit"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:106
 msgctxt "noun"
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
-#: functions.php:122
+#: functions.php:113
 msgctxt "noun"
 msgid "Email"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:135
 msgctxt "noun"
 msgid "Comment"
-msgstr ""
+msgstr "Commento"
 
-#: functions.php:388 functions.php:389
+#: functions.php:361 functions.php:362
 msgctxt "noun"
 msgid "email"
 msgstr ""
 
-#: functions.php:436 inc/scripts.php:18
+#: functions.php:409 inc/scripts.php:18
 msgctxt "verb: open the dropdown menu"
 msgid "open dropdown menu"
 msgstr ""
@@ -489,3 +476,4 @@ msgstr ""
 msgctxt "verb: close the  dropdown menu"
 msgid "close dropdown menu"
 msgstr ""
+
