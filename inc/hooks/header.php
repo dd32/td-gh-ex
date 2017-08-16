@@ -121,6 +121,7 @@ function bfastmag_header() {
                     </li> 
                    <?php
                endwhile;
+                wp_reset_postdata(); 
                 ?></ul>
         </div>   <!-- .bfastmag-breaking-container -->
 
