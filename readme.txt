@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.4 [16-08-2017]
+Icon picker feature added in Service Options.
+
 @Version: 3.3 [12-07-2017]
 New feature add in Blog Option.
 Excerpt Option added.

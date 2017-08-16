@@ -597,7 +597,7 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[service_1_title]'
 	) );
 	
-		$wp_customize->add_control('enigma_options[service_1_icons]',
+		$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize,'service_1_icons',
         array(
 			'label'        => __( 'Service Icon One', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
@@ -605,7 +605,7 @@ $wp_customize->add_section(
             'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_1_icons]'
         )
-    );
+    ));
 	
 	$wp_customize->add_control( 'service_one_text', array(
 		'label'        => __( 'Service One Text', 'enigma' ),
@@ -634,7 +634,7 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_title]'
 	) );
-		$wp_customize->add_control('enigma_options[service_2_icons]',
+		$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize,'service_2_icons',
         array(
 			'label'        => __( 'Service Icon Two', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
@@ -642,7 +642,7 @@ $wp_customize->add_section(
             'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_2_icons]'
         )
-    );
+    ));
 	$wp_customize->add_control( 'enigma_service_two_text', array(
 		'label'        => __( 'Service Two Text', 'enigma' ),
 		'type'=>'text',
@@ -668,7 +668,7 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_3_title]'
 	) );
-	$wp_customize->add_control('enigma_options[service_3_icons]',
+	$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize, 'service_3_icons',
         array(
 			'label'        => __( 'Service Icon Three', 'enigma' ),
 			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
@@ -676,7 +676,7 @@ $wp_customize->add_section(
             'section'  => 'service_section',
 			'settings'   => 'enigma_options[service_3_icons]'
         )
-    );
+    ));
 	$wp_customize->add_control( 'enigma_service_three_text', array(
 		'label'        => __( 'Service Three Text', 'enigma' ),
 		'type'=>'text',
@@ -1472,5 +1472,30 @@ class enigma_Font_Control extends WP_Customize_Control
   <?php
  }
 }
+endif;
+
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Enigma_Customizer_Icon_Picker_Control' ) ) :
+	class Enigma_Customizer_Icon_Picker_Control extends WP_Customize_Control {
+		public function enqueue() {
+			wp_enqueue_script( 'fontawesome-iconpicker', get_stylesheet_directory_uri() . '/iconpicker-control/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'iconpicker-control', get_stylesheet_directory_uri() . '/iconpicker-control/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_style( 'fontawesome-iconpicker', get_stylesheet_directory_uri() . '/iconpicker-control/assets/css/fontawesome-iconpicker.min.css' );
+		}
+		
+		
+		public function render_content() {
+			?>
+			<label>
+				<span class="customize-control-title">
+					<?php echo esc_html( $this->label ); ?>
+				</span>
+				<div class="input-group icp-container">
+					<input data-placement="bottomRight" class="icp icp-auto" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" type="text">
+					<span class="input-group-addon"></span>
+				</div>
+			</label>
+			<?php
+		}
+	}
 endif;
 ?>
