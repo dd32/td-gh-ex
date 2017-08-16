@@ -1,47 +1,72 @@
 <?php
 /**
- * The template for displaying Comments.
+ * The template for displaying comments
  *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package fmi
  */
-if(post_password_required())return;?>
 
-<?php if(have_comments()):?>
-<div id="comments">
-	<ol class="comment-list">
-		<?php wp_list_comments(array('callback'=>'fmi_theme_comment'));?>
-	</ol>
-
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>
-	<div class="navigation">
-		<div class="alignleft"><?php previous_comments_link('<i class="fa fa-arrow-left"></i> Older Comments'); ?></div>
-		<div class="alignright"><?php next_comments_link('Newer Comments <i class="fa fa-arrow-right"></i>'); ?></div>
-        <div class="clear"></div>
-	</div>
-	<?php endif;?>
-    
-	<?php if ( ! comments_open() && get_comments_number() ) : ?>
-	<p class="no-comments"><i class="fa fa-exclamation-circle"></i> Comments are closed</p>
-	<?php endif; ?>
-
-</div>
-<?php endif;?>
-
-<?php //comment_form(); ?>
-<?php
-$commenter = wp_get_current_commenter();
-$req = get_option( 'require_name_email' );
-$aria_req = ( $req ? " aria-required='true'" : '' );
-$fields =  array(
-	'author' => '<div class="input-container"><input id="author" type="text" aria-required="true" tabindex="1" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' autocomplete="off" /><span>'.__('Name').' '.($req?'*':'').'</span></div>',
-	'email' => '<div class="input-container"><input id="email" type="text" aria-required="true" tabindex="2" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' autocomplete="off" /><span>'.__('Email').' '.($req?'*':'').'</span></div>',
-	'url' => '<div class="input-container"><input id="url" type="text" aria-required="true" tabindex="3" size="22" value="'.esc_attr($commenter['comment_author_url']).'" name="url" autocomplete="off" /><span>'.__('Website').'</span></div>'
-);
-$comments_args = array(
-	'comment_notes_before' => '',
-	'comment_notes_after'  => '',
-    'fields' =>  $fields,
-	'comment_field'        => '<div class="input-container-full"><textarea id="comment" tabindex="4" rows="10" cols="58" name="comment" autocomplete="off" /></textarea></div><div class="input-container-full"><button class="button" type="submit">Post Comment</button></div>',
-	'cancel_reply_link'    => '<i class="fa fa-times-circle"></i>'
-);
-comment_form($comments_args);
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
 ?>
+
+<div id="comments" class="comments-area">
+
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'fmi' ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'fmi' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
+			?>
+		</h2><!-- .comments-title -->
+
+		<?php the_comments_navigation(); ?>
+
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'callback'=>'fmi_theme_comment',
+					'avatar_size' => 40,
+				) );
+			?>
+		</ol><!-- .comment-list -->
+
+		<?php the_comments_navigation();
+
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fmi' ); ?></p>
+		<?php
+		endif;
+
+	endif; // Check for have_comments().
+	?>
+
+</div><!-- #comments -->
+<?php
+comment_form();

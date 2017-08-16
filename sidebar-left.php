@@ -7,11 +7,11 @@
  * @package fmi
  */
 
-if ( ! is_active_sidebar( 'fmi_right_sidebar' ) ) {
+if ( ! is_active_sidebar( 'fmi_left_sidebar' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'fmi_right_sidebar' ); ?>
+	<?php dynamic_sidebar( 'fmi_left_sidebar' ); ?>
 </aside><!-- #secondary -->

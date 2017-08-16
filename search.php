@@ -1,56 +1,51 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package fmi
  */
+
 get_header(); ?>
 
-<div id="content"><div class="inner">
-<div id="cont">
-    <div id="main">
-		<?php if ( have_posts() ) : ?>
-            
-            <div class="page-header"><?php printf( __( 'Search Results for: %s', 'fmi' ), '<span>' . get_search_query() . '</span>' ); ?></div>
-            
-            <?php while ( have_posts() ) : the_post(); ?>
-                
-                <?php get_template_part( 'content'); ?>
-                
-            <?php endwhile; ?>
-            
-            <?php
-			if(function_exists('the_posts_pagination')){
-				the_posts_pagination( array(
-					'prev_text'          => '<i class="fa fa-arrow-left"></i>',
-					'next_text'          => '<i class="fa fa-arrow-right"></i>',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'fmi' ) . ' </span>',
-				) );
-			}else{
-			?>
-				<div id="page-nav-below">
-					<?php if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous"><i class="fa fa-arrow-left"></i> <?php next_posts_link( __( 'Older posts', 'fmi' ) ); ?></div>
-					<?php endif; ?>
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-					<?php if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'fmi' ) ); ?> <i class="fa fa-arrow-right"></i></div>
-					<?php endif; ?>
-				</div>
+		<?php
+		if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title"><?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'fmi' ), '<span>' . get_search_query() . '</span>' );
+				?></h1>
+			</header><!-- .page-header -->
+
 			<?php
-			}
-			?>
-            
-        <?php else : ?>
-            
-            <?php get_template_part( 'content', 'none' ); ?>
-            
-        <?php endif; ?>
-    </div>
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-	<?php get_sidebar();?>
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
 
-	<div class="clear"></div>
-</div>
-</div></div>
+			endwhile;
 
-<?php get_footer();?>
+			fmi_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+<?php
+fmi_sidebar_select();
+get_footer();

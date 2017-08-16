@@ -1,29 +1,35 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package fmi
  */
+
 get_header(); ?>
 
-<div id="content"><div class="inner">
-<div id="cont">
-    <div id="main">
-		<?php while ( have_posts() ):the_post(); ?>
-            <?php get_template_part( 'content',"single"); ?>
-            
-            <?php fmi_post_nav();?>
-            
-            <?php if ( comments_open() || '0' != get_comments_number() ):?>
-            	<?php comments_template();?>
-            <?php endif; ?>
-                
-        <?php endwhile;?>
-    </div>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-	<?php get_sidebar();?>
+		<?php
+		while ( have_posts() ) : the_post();
 
-	<div class="clear"></div>
-</div>
-</div></div>
+			get_template_part( 'template-parts/content', get_post_type() );
 
-<?php get_footer();?>
+			fmi_post_navigation();
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+fmi_sidebar_select();
+get_footer();

@@ -1,396 +1,401 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: fmi\n"
-"POT-Creation-Date: 2015-02-03 16:23+0800\n"
-"PO-Revision-Date: 2015-02-03 16:23+0800\n"
+"Project-Id-Version: Fmi\n"
+"POT-Creation-Date: 2017-08-17 03:22+0800\n"
+"PO-Revision-Date: 2017-08-17 03:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: zh\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7\n"
-"X-Poedit-Basepath: D:\\Mu06\\web\\html\\m1\\wp-content\\themes\\fmi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __\n"
-"X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:18 content-none.php:18 content-none.php:26
-msgid "Return Home"
+#: footer.php:21
+msgid "https://wordpress.org/"
 msgstr ""
 
-#: archive.php:18
-#, php-format
-msgid "Archive for the &#8216;<span>%1$s</span>&#8217; Category"
-msgstr ""
-
-#: archive.php:21
-#, php-format
-msgid "Posts Tagged &#8216;<span>%1$s</span>&#8217;"
-msgstr ""
-
-#: archive.php:24 archive.php:27 archive.php:30
-#, php-format
-msgid "Archive for <span>%1$s</span>"
-msgstr ""
-
-#: archive.php:24
-msgid "F jS, Y"
-msgstr ""
-
-#: archive.php:27
-msgid "F, Y"
-msgstr ""
-
-#: archive.php:30
-msgid "Y"
-msgstr ""
-
-#: archive.php:33
-msgid "Author Archive"
-msgstr ""
-
-#: archive.php:36
-msgid "Blog Archives"
-msgstr ""
-
-#: archive.php:51 index.php:23 search.php:26
-msgid "Page"
-msgstr ""
-
-#: archive.php:57 index.php:29 search.php:32
-msgid "Older posts"
-msgstr ""
-
-#: archive.php:61 index.php:33 search.php:36
-msgid "Newer posts"
-msgstr ""
-
-#: comments.php:35
-msgid "Name"
-msgstr ""
-
-#: comments.php:36
-msgid "Email"
-msgstr ""
-
-#: comments.php:37
-msgid "Website"
-msgstr ""
-
-#: content-none.php:11
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: content-page.php:13 content-single.php:13 content.php:14
-msgid "(no title)"
-msgstr ""
-
-#: content-page.php:18 content-single.php:18 content.php:19 fun/base.php:9
-#: fun/base.php:24
-msgid "Edit"
-msgstr ""
-
-#: content-page.php:21 content-single.php:21 content.php:22
-msgid "Leave a comment"
-msgstr ""
-
-#: content-page.php:21 content-single.php:21 content.php:22
-msgid "1 Comment"
-msgstr ""
-
-#: content-page.php:21 content-single.php:21 content.php:22
-msgid "% Comments"
-msgstr ""
-
-#: content-page.php:30 content-single.php:30 content.php:31
-msgid "Pages:"
-msgstr ""
-
-#: content.php:35
-msgid "Featured"
-msgstr ""
-
-#: footer.php:3
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:7
+#: footer.php:34
 msgid "Send Us an Email"
 msgstr ""
 
-#: footer.php:9
+#: footer.php:36
 msgid "Contact Us on Skype"
 msgstr ""
 
-#: footer.php:11
+#: footer.php:38
 msgid "Find Us on Facebook"
 msgstr ""
 
-#: footer.php:13
+#: footer.php:40
 msgid "Follow Us on Twitter"
 msgstr ""
 
-#: footer.php:15
+#: footer.php:42
 msgid "Find Us on Google Plus"
 msgstr ""
 
-#: footer.php:17
+#: footer.php:44
 msgid "View our YouTube Channel"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:46
 msgid "Follow Us on Instagram"
 msgstr ""
 
-#: footer.php:21
+#: footer.php:48
 msgid "Pin Us on Pinterest"
 msgstr ""
 
-#: footer.php:23
+#: footer.php:50
 msgid "Find Us on LinkedIn"
 msgstr ""
 
-#: footer.php:25
+#: footer.php:52
 msgid "Find Us on Tumblr"
 msgstr ""
 
-#: footer.php:27
+#: footer.php:54
 msgid "Find Us on Flickr"
 msgstr ""
 
-#: fun/base.php:9
-msgid "Pingback:"
+#: functions.php:87
+msgid "Right Sidebar"
 msgstr ""
 
-#: fun/base.php:27
-msgid "Your comment is awaiting moderation."
+#: functions.php:96
+msgid "Left Sidebar"
 msgstr ""
 
-#: fun/base.php:48
-msgid "Previous Post"
+#: functions.php:105
+msgid "Footer Sidebar One"
 msgstr ""
 
-#: fun/base.php:49
-msgid "Next Post"
+#: functions.php:107
+msgid "Shows widgets at footer sidebar one."
 msgstr ""
 
-#: functions.php:69
-#, php-format
-msgid "Page %s"
+#: functions.php:114
+msgid "Footer Sidebar Two"
 msgstr ""
 
-#: functions.php:78
-msgid "Sidebar"
+#: functions.php:116
+msgid "Shows widgets at footer sidebar two."
 msgstr ""
 
-#: header.php:36
-msgid "Menu"
+#: functions.php:123
+msgid "Footer Sidebar Three"
 msgstr ""
 
-#: search.php:13
-#, php-format
-msgid "Search Results for: %s"
+#: functions.php:125
+msgid "Shows widgets at footer sidebar three."
 msgstr ""
 
-#: set/settings.php:12
-msgid "General Settings"
+#: inc/customizer.php:33
+msgid "Display Controls"
 msgstr ""
 
-#: set/settings.php:13
-msgid "Styling Settings"
+#: inc/customizer.php:41
+msgid "Show the search in the Header?"
 msgstr ""
 
-#: set/settings.php:14
-msgid "Social Links"
+#: inc/customizer.php:46
+#: inc/customizer.php:287
+msgid "Yes"
 msgstr ""
 
-#: set/settings.php:15
-msgid "Website Text"
+#: inc/customizer.php:47
+#: inc/customizer.php:288
+msgid "No"
 msgstr ""
 
-#: set/settings.php:42 set/settings.php:84
-msgid "Theme Settings"
+#: inc/customizer.php:55
+msgid "Site Layout"
 msgstr ""
 
-#: set/settings.php:53
-msgid "Fmi Setting"
+#: inc/customizer.php:56
+msgid "Choose your site layout. The change is reflected in whole site."
 msgstr ""
 
-#: set/settings.php:54
-msgid "This is a default description."
+#: inc/customizer.php:61
+msgid "Boxed layout"
 msgstr ""
 
-#: set/settings.php:87
-msgid "Theme options updated."
+#: inc/customizer.php:62
+msgid "Wide layout"
 msgstr ""
 
-#: set/settings.php:105
-msgid "Save Changes"
+#: inc/customizer.php:70
+msgid "Default layout"
 msgstr ""
 
-#: set/settings.php:206
-msgid "Upgrade to premium to get all features"
-msgstr ""
-
-#: set/settings.php:224
-msgid "Favicon"
-msgstr ""
-
-#: set/settings.php:225
+#: inc/customizer.php:71
 msgid ""
-"Upload a favicon to your website, this needs to be 16 pixels by 16 pixels"
+"Select default layout. This layout will be reflected in whole site archives, search etc. The "
+"layout for a single post and page can be controlled from below options."
 msgstr ""
 
-#: set/settings.php:233
-msgid "Header Settings"
+#: inc/customizer.php:76
+#: inc/customizer.php:92
+#: inc/customizer.php:108
+msgid "Right sidebar"
 msgstr ""
 
-#: set/settings.php:238
-msgid "Header Search"
+#: inc/customizer.php:77
+#: inc/customizer.php:93
+#: inc/customizer.php:109
+msgid "Left sidebar"
 msgstr ""
 
-#: set/settings.php:239
-msgid "Select this to show the search in the header"
+#: inc/customizer.php:78
+#: inc/customizer.php:94
+#: inc/customizer.php:110
+msgid "No sidebar"
 msgstr ""
 
-#: set/settings.php:246
-msgid "Enable Slider"
+#: inc/customizer.php:86
+msgid "Default layout for pages only"
 msgstr ""
 
-#: set/settings.php:247
-msgid "Click to enable the default homepage slider"
-msgstr ""
-
-#: set/settings.php:255
-msgid "Slider Options"
-msgstr ""
-
-#: set/settings.php:260
-msgid "Slider Categories"
-msgstr ""
-
-#: set/settings.php:261 set/settings.php:298
-msgid "Enter the ID of the <a href=\""
-msgstr ""
-
-#: set/settings.php:268
-msgid "Body font URL"
-msgstr ""
-
-#: set/settings.php:269
+#: inc/customizer.php:87
 msgid ""
-"Enter ONLY the fonts URL here. Eg: link href='<b><big> http://fonts."
-"googleapis.com/css?family=Open+Sans:400italic,400 </big></b>' "
-"rel='stylesheet' type='text/css'"
+"Select default layout for pages. This layout will be reflected in all pages unless unique layout "
+"is set for specific page."
 msgstr ""
 
-#: set/settings.php:275
-msgid "Body font name"
+#: inc/customizer.php:102
+msgid "Default layout for single posts only"
 msgstr ""
 
-#: set/settings.php:276
+#: inc/customizer.php:103
 msgid ""
-"Enter the FULL name. Eg:<b><big> font-family: 'Open Sans', sans-serif; </"
-"big></b>"
+"Select default layout for single posts. This layout will be reflected in all single posts unless "
+"unique layout is set for specific post."
 msgstr ""
 
-#: set/settings.php:283
-msgid "Custom Styling"
+#: inc/customizer.php:117
+msgid "Social Media Icons"
 msgstr ""
 
-#: set/settings.php:288
-msgid "Custom CSS"
-msgstr ""
-
-#: set/settings.php:289
-msgid "Add Custom CSS to add your own styling to the Theme"
-msgstr ""
-
-#: set/settings.php:297
-msgid "Blog Categories"
-msgstr ""
-
-#: set/settings.php:305
-msgid "Blog Posts Per Page"
-msgstr ""
-
-#: set/settings.php:306
-msgid "Enter the number of posts you'd like to show per page"
-msgstr ""
-
-#: set/settings.php:314
+#: inc/customizer.php:125
 msgid "Email Address"
 msgstr ""
 
-#: set/settings.php:321
+#: inc/customizer.php:135
 msgid "Skype"
 msgstr ""
 
-#: set/settings.php:328
+#: inc/customizer.php:145
 msgid "Facebook"
 msgstr ""
 
-#: set/settings.php:335
+#: inc/customizer.php:155
 msgid "Twitter"
 msgstr ""
 
-#: set/settings.php:342
+#: inc/customizer.php:165
 msgid "Google Plus"
 msgstr ""
 
-#: set/settings.php:349
+#: inc/customizer.php:175
 msgid "YouTube"
 msgstr ""
 
-#: set/settings.php:356
+#: inc/customizer.php:185
 msgid "Instagram"
 msgstr ""
 
-#: set/settings.php:363
+#: inc/customizer.php:195
 msgid "Pinterest"
 msgstr ""
 
-#: set/settings.php:370
+#: inc/customizer.php:205
 msgid "LinkedIn"
 msgstr ""
 
-#: set/settings.php:377
+#: inc/customizer.php:215
 msgid "Tumblr"
 msgstr ""
 
-#: set/settings.php:384
+#: inc/customizer.php:225
 msgid "Flickr"
 msgstr ""
 
-#: set/settings.php:391
+#: inc/customizer.php:234
+msgid "Website Text"
+msgstr ""
+
+#: inc/customizer.php:242
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: set/settings.php:392
-msgid "Enter the heading for the 404 Error page"
+#: inc/customizer.php:243
+msgid "Enter the heading for the 404 Error page."
 msgstr ""
 
-#: set/settings.php:398
+#: inc/customizer.php:253
 msgid "Error 404 Message"
 msgstr ""
 
-#: set/settings.php:399
-msgid "Enter the default text on the 404 error page (Page not found)"
+#: inc/customizer.php:254
+msgid "Enter the default text on the 404 error page (Page not found)."
 msgstr ""
 
-#: set/settings.php:408
-msgid "Search Results Page"
-msgstr ""
-
-#: set/settings.php:413
+#: inc/customizer.php:264
 msgid "No Search Results"
 msgstr ""
 
-#: set/settings.php:414
-msgid "Enter the default text for when no search results are found"
+#: inc/customizer.php:265
+msgid "Enter the default text for when no search results are found."
+msgstr ""
+
+#: inc/customizer.php:274
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "Show the slider?"
+msgstr ""
+
+#: inc/customizer.php:296
+msgid "Image Upload #1"
+msgstr ""
+
+#: inc/customizer.php:297
+#: inc/customizer.php:340
+#: inc/customizer.php:383
+#: inc/customizer.php:426
+msgid "Upload slider image"
+msgstr ""
+
+#: inc/customizer.php:308
+#: inc/customizer.php:351
+#: inc/customizer.php:394
+#: inc/customizer.php:437
+msgid "Enter title for your slider"
+msgstr ""
+
+#: inc/customizer.php:318
+#: inc/customizer.php:361
+#: inc/customizer.php:404
+#: inc/customizer.php:447
+msgid "Enter your slider description"
+msgstr ""
+
+#: inc/customizer.php:328
+#: inc/customizer.php:371
+#: inc/customizer.php:414
+#: inc/customizer.php:457
+msgid "Enter link to redirect slider when clicked"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Image Upload #2"
+msgstr ""
+
+#: inc/customizer.php:382
+msgid "Image Upload #3"
+msgstr ""
+
+#: inc/customizer.php:425
+msgid "Image Upload #4"
+msgstr ""
+
+#: inc/template-comments.php:14
+msgid "Name"
+msgstr ""
+
+#: inc/template-comments.php:15
+msgid "Email"
+msgstr ""
+
+#: inc/template-comments.php:16
+msgid "Website"
+msgstr ""
+
+#: inc/template-comments.php:22
+msgid "Post Comment"
+msgstr ""
+
+#: inc/template-tags.php:33
+#: inc/template-tags.php:103
+#: inc/template-tags.php:116
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:37
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:37
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:37
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:48
+msgid "Featured"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:53
+#: inc/template-tags.php:59
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:103
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:115
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:119
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:141
+msgid "Previous Post"
+msgstr ""
+
+#: inc/template-tags.php:142
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgid "Page"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:165
+msgid "Newer posts"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search for:"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:26
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:41
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:40
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
