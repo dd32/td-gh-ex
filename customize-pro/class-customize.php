@@ -59,10 +59,10 @@ final class Atmosphere_Lite_Customize {
 		$manager->add_section(
 			new Atmosphere_Lite_Customize_Section_Pro(
 				$manager,
-				'atmosphere',
+				'atmosphere-lite',
 				array(
-					'title'    => esc_html__( 'Atmosphere Lite Pro', 'atmosphere' ),
-					'pro_text' => esc_html__( 'Go Pro',         'atmosphere' ),
+					'title'    => esc_html__( 'Atmosphere Lite Pro', 'atmosphere-lite' ),
+					'pro_text' => esc_html__( 'Go Pro',         'atmosphere-lite' ),
 					'pro_url'  => 'https://alexathemes.net/themes/atmosphere-restaurant-wordpress-theme/',
 					'priority'	=> 1
 				)
@@ -77,8 +77,8 @@ final class Atmosphere_Lite_Customize {
 	 * @return void
 	 */
 	public function enqueue_control_scripts() {
-		wp_enqueue_script( 'atmosphere-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/customize-controls.js', array( 'customize-controls' ) );
-		wp_enqueue_style( 'atmosphere-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/customize-controls.css' );
+		wp_enqueue_script( 'atmosphere-lite-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_style( 'atmosphere-lite-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/customize-controls.css' );
 	}
 }
 // Doing this customizer thang!

@@ -13,7 +13,7 @@ class Atmosphere_Lite_Customize_Section_Pro extends WP_Customize_Section {
 	 * @access public
 	 * @var    string
 	 */
-	public $type = 'atmosphere';
+	public $type = 'atmosphere-lite';
 	/**
 	 * Custom button text to output.
 	 *

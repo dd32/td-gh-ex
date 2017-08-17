@@ -4,7 +4,7 @@
 
 Theme Name      :   Atmosphere Lite
 Theme URI       :  https://alexathemes.net/themes/atmosphere-free-wordpress-theme/
-Version         :   1.0
+Version         :   1.1
 Tested up to    :   WP 4.8.1
 Author          :   AlexaThemes
 Author URI      :   https://www.alexathemes.net/
