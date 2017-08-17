@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.5 | 17th August 2017 = 
+* Fix: css import issue.
+* Fix: POT so that esc_html__ is added. 
+
 = Version 3.0.4 | 8th August 2017 = 
 * Fix issue with WPML
 * Update: Small CSS change
