@@ -45,7 +45,7 @@ function auckland_template_header(){ ?>
                 'container_class'   => 'collapse navbar-collapse',
                 'container_id'      => 'bs-navbar-collapse-1',
                 'menu_class'        => 'nav navbar-nav navbar-right',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'fallback_cb'       => 'auckland_primary_menu_fallback',
                 'walker'            => new wp_bootstrap_navwalker())
                 );
                 }
@@ -213,10 +213,10 @@ function auckland_post_tag(){
 function auckland_author_bio(){ ?>
     <div class="author-info">
       <div class="avatar">
-        <?php echo get_avatar( get_the_author_meta( 'ID' ) , 100 ); ?>
+        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) , 100 ); ?></a>
       </div>
       <div class="info">
-          <p class="author-name"><span><?php _e('Posted By ','auckland'); ?></span><?php the_author(); ?></p>
+          <p class="author-name"><span><?php _e('Posted By ','auckland'); ?></span><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></p>
           <?php echo get_the_author_meta('description'); ?>
       </div>
       <span class="clearfix"></span>

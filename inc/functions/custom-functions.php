@@ -132,3 +132,24 @@ function auckland_move_comment_field_to_bottom( $fields ) {
 }
 
 add_filter( 'comment_form_fields', 'auckland_move_comment_field_to_bottom' );
+
+/**
+ * wp_nav_menu Fallback
+ */
+function auckland_primary_menu_fallback() {
+    ?>
+
+    <ul id="menu-main-menu" class="nav navbar-nav navbar-right">
+        <?php
+        wp_list_pages(array(
+            'depth'        => 1,
+            'exclude' => '', //comma seperated IDs of pages you want to exclude
+            'title_li' => '', //must override it to empty string so that it does not break our nav
+            'sort_column' => 'post_title', //see documentation for other possibilites
+            'sort_order' => 'ASC', //ASCending or DESCending
+        ));
+        ?>
+    </ul>
+
+    <?php
+}

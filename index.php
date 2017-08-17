@@ -14,7 +14,8 @@ get_header(); ?>
                 if ( have_posts() ) :
                     $clear = 0;
                     $sticky = get_option( 'sticky_posts' );
-                    if(count($sticky) > 0) {
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    if(count($sticky) > 0 && 1 == $paged) {
                         $query_sticky = new WP_Query( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1 ) );
                         while ( $query_sticky->have_posts() ) : $query_sticky->the_post();  ?>
 

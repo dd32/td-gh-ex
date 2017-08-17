@@ -23,6 +23,7 @@
                     'after'  => '</div>',
                 ) );
             ?>
+            <span class="clearfix"></span>
         </div><!-- .entry-content -->
     <!-- </div> -->
 

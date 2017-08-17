@@ -27,7 +27,8 @@ get_header(); ?>
                 get_template_part( 'contents/content', 'single' );
 
                 endwhile; // End of the loop.
-                ?>  
+                ?> 
+                <span class="clearfix"></span> 
             </div> 
 
             <span class="clearfix"></span>

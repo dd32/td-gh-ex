@@ -11,6 +11,9 @@ Auckland is distributed under the terms of the GNU GPL
 == Description ==
 The Auckland theme is a very clean and simple blogging theme with a grid layout on the home page and plenty of white space. You can easily upload your own logo, add your own social media links, adjust theme colors and add custom styles from the customizer.
 
+== Notes ==
+* nested comments are limited. It can only take 2 levels deep
+
 == Changelog ==
 
 = 1.0.0 =
@@ -28,6 +31,16 @@ The Auckland theme is a very clean and simple blogging theme with a grid layout 
 = 1.0.2 =
 * updated style.css head
 
+= 1.0.3 =
+* added sidebar area in default page template
+* updated wp_nav_menu
+* updated comment area
+* updated sticky post
+* added link in author box
+* fixed floats
+* fixed html markup formatting
+* added note for comment reply levels, It can only take 2 levels deep.
+* removed pingback link
 
 == Resources ==
 *   Fontawesome Icons Copyright Dave Gandy, 

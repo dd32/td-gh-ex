@@ -22,7 +22,7 @@ get_header();
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <?php
                 while ( have_posts() ) : the_post();
 
@@ -34,8 +34,11 @@ get_header();
                 endif;
 
                 endwhile; // End of the loop.
-                ?>  
+                ?> 
+                <span class="clearfix"></span> 
             </div>
+
+            <?php get_sidebar(); ?>
 
             <span class="clearfix"></span>
         </div>

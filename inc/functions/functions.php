@@ -38,6 +38,8 @@ function auckland_theme_setup() {
 
     add_action( 'wp_enqueue_scripts', 'auckland_scripts_and_styles', 999 );
 
+    add_action( 'widgets_init', 'auckland_register_sidebars' );
+
     auckland_theme_support();
 
     global $content_width;
@@ -50,6 +52,23 @@ function auckland_theme_setup() {
     add_image_size( 'auckland-thumb-300', 300, 300, true );
 
 } 
+
+/**
+ * register sidebar
+ */
+function auckland_register_sidebars() {
+
+  register_sidebar(array(
+    'id' => 'sidebar1',
+    'name' => __( 'Posts Widget Area', 'auckland' ),
+    'description' => __( 'The Posts Widget Area.', 'auckland' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widgettitle">',
+    'after_title' => '</h3>',
+  ));
+
+}
 
 /**
  * enqueue scripts and styles
@@ -150,7 +169,7 @@ function auckland_comments( $comment, $args, $depth ) { ?>
       <?php endif; ?>
       <section class="comment_content cf">
         <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'auckland' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'auckland' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><?php comment_time(__( 'F jS, Y', 'auckland' )); ?></time>
+        <a href="<?php comment_link(); ?>"><time datetime="<?php echo comment_time('Y-m-j'); ?>"><?php comment_date(); ?></time></a>
         <?php comment_text() ?>
         <p class="reply-link"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></p>
       </section>

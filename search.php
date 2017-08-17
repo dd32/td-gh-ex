@@ -22,7 +22,7 @@ get_header(); ?>
                 $clear = 0;
                 while ( have_posts() ) : the_post(); ?>
                 <div class="col-md-4 blog-item">
-                    <?php get_template_part( 'contents/content', get_post_format() ); ?>
+                    <?php get_template_part( 'contents/content', 'search' ); ?>
                 </div>
                 <?php 
                 if($clear++ == 2){

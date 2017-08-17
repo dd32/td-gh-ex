@@ -16,7 +16,6 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
 		<?php wp_head(); ?>
 
