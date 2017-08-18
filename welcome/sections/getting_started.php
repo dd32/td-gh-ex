@@ -7,9 +7,9 @@
 	</div>
 
 	<div class="theme-steps">
-		<h3><?php echo esc_html__('Step 2 - Customizer Options Panel', 'accesspress-lite'); ?></h3>
-		<p><?php echo esc_html__('Using the WordPress Customizer you can easily customize every aspect of the theme.', 'accesspress-lite'); ?></p>
-		<a class="button button-primary" href="<?php echo esc_url(admin_url('customize.php')); ?>"><?php echo esc_html__('Go to Customizer Panels', 'accesspress-lite'); ?></a>
+		<h3><?php echo esc_html__('Step 2 - Theme Options Panel', 'accesspress-lite'); ?></h3>
+		<p><?php echo esc_html__('Using the Theme Options you can easily customize every aspect of the theme.', 'accesspress-lite'); ?></p>
+		<a class="button button-primary" href="<?php echo esc_url(admin_url('themes.php?page=accesspresslite-welcome&section=getting_started')); ?>"><?php echo esc_html__('Go to Theme Options Panels', 'accesspress-lite'); ?></a>
 	</div>
 
 </div>

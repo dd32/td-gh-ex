@@ -43,8 +43,8 @@
 				$this->tab_sections = array(
 					'getting_started' => __('Getting Started', 'accesspress-lite'),
 					'recommended_plugins' => __('Recommended Plugins', 'accesspress-lite'),
-					//'import_demo' => __('Import Demo', 'accesspress-lite'),
 					'support' => __('Support', 'accesspress-lite'),
+					'free_vs_pro' => __('Free vs Pro', 'accesspress-lite'),
 				);
 
 				/** List of Recommended Free Plugins **/
