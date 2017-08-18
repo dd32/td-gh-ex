@@ -1153,7 +1153,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 				$themew_less_one = $themew - 1;
 			// *** the rules below had a useless no-vert-scrolbar rules.
 			// *** The padding rules in this section do not contain viewport units so do not need a no-scrollbar version
-				switch ($align) {
+				switch ( $align ) {
 					case 'center':
 						$align_left  = " + (100% - {$width}) / 2";
 						$align_right = $align_left; // center = same

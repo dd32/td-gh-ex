@@ -524,18 +524,22 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
         }
         multiTop = multiTop + curHeight;
 
+		// calc widget area before primary since this is the most common case.
+		// Widget area always after fixed top secondary menu and before fixed top primary menu
+
+		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
+        if (curHeight > 0) {
+            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
+        }
+        multiTop = multiTop + curHeight;
+
+
         curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight();
         if (curHeight > 0) {
             $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop);
         }
         multiTop = multiTop + curHeight;
 
-
-        curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
-        if (curHeight > 0) {
-            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
-        }
-        multiTop = multiTop + curHeight;
 
         if (multiTop > 0) {
             $('body').css('margin-top', multiTop); // now maker room for the top fixed areas

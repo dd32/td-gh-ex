@@ -476,7 +476,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 				'control' => array(
 					'label' => __( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Fix entire Header area to top of page. You may set the Header Bottom Margin for more space under the menu. Use the Extend BG Attributes to make a full width header.',
+					'description' => __('Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary.',
 										'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),

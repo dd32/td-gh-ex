@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 3.1.7
+Stable tag: 3.1.9
 
 == Description ==
 
@@ -428,3 +428,9 @@ with testing and feature suggestions.
 * Fix: Page/Post Editor styling issues - no longer requires Xtreme Plus.
 * Tweak: reminder to save theme settings for new editor styling
 * New: support for Weaver Xtreme Plus per blog, single, archive-like themes.
+
+= Version 3.1.9 =
+* Tweak: added <!--googleoff/on: all--> around JAVASCRIPT DISABLED message - only matters if user doesn't have blank site title
+* Fix: FI as header image now does have priority over Header HTML Replacement option as stated in option's description.
+* Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and befoe Primary fixed-top menu.
+* Update: Updated to TGMPA v2.6.1 (used for suggested plugins)

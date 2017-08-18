@@ -23,13 +23,12 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$logo = '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" /></span>';
+				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" /></span>');
 		}
 	}
 
 	$left = weaverx_getopt('m_primary_html_left');
 	$right = weaverx_getopt('m_primary_html_right');
-
 
 
 
@@ -52,6 +51,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	}
 
 	$left = $logo . $left;
+	//$right = $right . $logo;
 
 	if ( $use_smart ) {							// ==================  SMART MENUS (make any changes in default menu version, too)
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));

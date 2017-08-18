@@ -69,7 +69,8 @@ function weaverx_page_menu( $args = array() ) {
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$left = '<img class="custom-logo-on-menu" src="' . $custom_logo_url . '" />' . $left;
+				$left = apply_filters('weaverx_menu_logo','<span class="custom-logo-on-menu"><img class="custom-logo-on-menu" src="' . $custom_logo_url . '" /></span>') . $left;
+				//$right = $right . apply_filters('weaverx_menu_logo','<span class="custom-logo-on-menu"><img class="custom-logo-on-menu" src="' . $custom_logo_url . '" /></span>' );
 		}
 	}
 
@@ -129,7 +130,7 @@ function weaverx_featured_image_info($text) {
 
 	return $text .
 '<p><small>' .
- __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
+ __('Please see Weaver Xtreme\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
 
 }
 //--
@@ -226,19 +227,6 @@ function weaverx_unlink_page($link, $id) {	// filter definition
 //--
 
 
-// =============================== >>> FILTER: weaverx_wp_nav_menu_objects <<< ================================
-/* add_filter('wp_nav_menu_objects', 'weaverx_wp_nav_menu_objects', 10, 2);		// for stay on page
-function weaverx_wp_nav_menu_objects($sorted_menu_items, $args) {	// filter definition
-	// echo '<!-- menu items '; print_r($sorted_menu_items); echo '-->';
-	// echo '<!-- MENU TITLES: ';
-	foreach ($sorted_menu_items as $item ) {
-		if ($item->type == 'custom')
-			$item->title = do_shortcode( $item->title );
-	}
-	// echo '-->';
-	return $sorted_menu_items;
-} */
-//--
 
 // =============================== >>> FILTER: admin_post_thumbnail_html <<< ================================
 // Change what's hidden by default - show Custom Fields and Discussion by default!
@@ -430,6 +418,7 @@ function weaverx_mce_css($default_style) {
 	if (!@file_exists($mce_css_file)) {	// see if it is there
 		return $default_style;
 	}
+
 	/* do we need to do anything about rtl? */
 
 	/* if we have a custom style file, return that instead of the default */

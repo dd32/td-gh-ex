@@ -825,8 +825,8 @@ function weaverx_the_page_content( $who = '' ) {
 
 function weaverx_the_contnt(  ) {
 	if ( (weaverx_is_checked_page_opt('_pp_raw_html') && !weaverx_t_get('showposts')) || weaverx_is_checked_post_opt('_pp_raw_html') ) {
-		remove_filter ('the_content', 'wpautop');
-		remove_filter ('the_content', 'wptexturize');
+		remove_filter('the_content', 'wpautop');
+		remove_filter('the_content', 'wptexturize');
 	}
 	the_content(weaverx_continue_reading_link());
 }

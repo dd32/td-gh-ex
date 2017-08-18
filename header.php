@@ -79,8 +79,10 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 <body <?php body_class(); ?>>
 <a href="#page-bottom" id="page-top">&darr;</a> <!-- add custom CSS to use this page-bottom link -->
 <div id="wvrx-page-width">&nbsp;</div>
+<!--googleoff: all-->
 <noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
-<?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/); ?></p></noscript><!-- displayed only if JavaScript disabled -->
+<?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/); ?></p></noscript>
+<!--googleon: all--><!-- displayed only if JavaScript disabled -->
 <?php
 	do_action('weaverxplus_action','body_top');	// mostly for the loading screen
 
@@ -274,7 +276,7 @@ function weaverx_header_image() {
 
 	$page_type = ( is_single() ) ? 'post' : 'page';
 
-	$hdr_bg = weaverx_fi( $page_type, 'header-image' );
+	$hdr_bg = weaverx_fi( $page_type, 'header-image');
 
 	$hdr_type = ($hdr_bg) ? 'fi' : 'std';
 
@@ -290,38 +292,22 @@ function weaverx_header_image() {
 	// 4. As FI Replacement
 	// 5. As standard Image
 
-	// 0. Archive type page - just use the standard header image for archives and search - maybe add as optoin?
-
-	/* if ( is_archive() || is_search() ) {
-		if ( weaverx_getopt('link_site_image') ) {
-		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-		}
-		if ( weaverx_getopt('header_actual_size') ) {
-?>
-		<img src="<?php echo get_header_image() ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" class="wvrx-header-image" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-<?php
-		} else {
-			the_header_image_tag();
-		}
-
-		weaverx_e_opt('link_site_image',"</a>");	// need to close link
-
-		echo("\n</div><!-- #header-image -->\n");
-		return;
-	} */
-
 
 	// 1. HTML replacement
+	$hdr_html = '';
 
-	$hdr_html = weaverx_get_per_page_value('_pp_header_image_html_text');	// per page has priority
+	if ( !$hdr_bg ) {		// FI as header replacement has priority
 
-	if ( !$hdr_html )
-		$hdr_html = weaverx_getopt('header_image_html_text');
-	if ( $hdr_html && weaverx_getopt('header_image_html_home_only') && !is_front_page())	// only on global, not per page/post
-		$hdr_html = '';		// make empty so will pickup the standard header
+		$hdr_html = weaverx_get_per_page_value('_pp_header_image_html_text');	// per page has priority
 
-	if ($hdr_html) {					// custom header html replacement overrides all other header image options
-		echo do_shortcode($hdr_html);	// output the html
+		if ( !$hdr_html )
+			$hdr_html = weaverx_getopt('header_image_html_text');
+		if ( $hdr_html && weaverx_getopt('header_image_html_home_only') && !is_front_page())	// only on global, not per page/post
+			$hdr_html = '';		// make empty so will pickup the standard header
+
+		if ($hdr_html) {					// custom header html replacement overrides all other header image options
+			echo do_shortcode($hdr_html);	// output the html
+		}
 	}
 
 	// 2. As Header Video
