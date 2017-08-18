@@ -1,15 +1,15 @@
 @charset "UTF-8";
 /*!
 Theme Name: Bani
-Theme URI: https://themes.salttechno.com/downloads/bani/
+Theme URI: https://themes.salttechno.com/wordpress-theme/bani-free-blog-theme
 Author: SaltTechno
 Author URI: https://themes.salttechno.com
 Description: Modern, clean & elegant WordPress blog theme.
-Version: 1.0.1
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Version: 1.0.2
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bani
-Tags: blog, two-columns, right-sidebar, right-sidebar, custom-background, custom-menu, sticky-post, custom-logo, footer-widgets, rtl-language-support, theme-options, threaded-comments, featured-images
+Tags: blog, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, sticky-post, custom-logo, footer-widgets, full-width-template, rtl-language-support, theme-options, threaded-comments, featured-images
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -17831,6 +17831,25 @@ button, input, optgroup, select, textarea {
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
   letter-spacing: .5px;
+}
+.post-navigation .nav-previous a{
+  background: #fff;
+padding: 6px 20px;
+display: inline-block;
+border-radius: 6px;
+box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+transition: color .4s ease;
+}
+.post-navigation .nav-next a{
+background: #fff;
+padding: 6px 20px;
+display: inline-block;
+border-radius: 6px;
+box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+transition: color .4s ease;
+}
+.post-password-form input[type="submit"]{
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

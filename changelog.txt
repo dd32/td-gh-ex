@@ -1,0 +1,7 @@
+== Changelog ==
+
+= 1.0.2 - Aug 18 2017 =
+* Licence Update, Add missing pages
+
+= 1.0.1 - Jul 15 2017 =
+* Initial release
