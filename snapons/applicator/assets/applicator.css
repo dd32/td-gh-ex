@@ -87,9 +87,9 @@
 
 /* Main Search */
 .main-search-tog---b_l .show-hide---txt,
-.main-search-func .search-submit-axn---b_l .search---txt,
+.main-search-func .search-submit-axn---b_l .go---txt,
 .main-search-func .search-reset-axn---b_l .reset---txt,
-.main-search-func .search-form-search-axn .search---txt,
+.main-search-func .search-form-search-axn .go---txt,
 .main-search-func .search-form-reset-axn .reset---txt,
 
 /* Web Product Info */
@@ -116,22 +116,11 @@
 /* ------------------------- Root */
 .apl--applicator
 {
-    background-color: #f5f5f5;
-    
     font-family: 'Noto Sans', sans-serif;
-    font-display: swap;
     text-rendering: geometricPrecision;
-}
-
-
-
-
-
-/* ------------------------- Web Product */
-.wbp,
-.wbp---cr
-{
     
+    background-color: #f2f2f2;;
+    background-color: hsla(0, 0%, 0%, .0325);
 }
 
 
@@ -140,14 +129,18 @@
 
 /* ------------------------- Highlight */
 ::-moz-selection {
-    background: #12b32d;
+    background: #14cc14;
+    background: var(--highlight-pri-color);
     color: white;
+    
     text-shadow: none;
 }
 
 ::selection {
-    background: #12b32d;
+    background: #14cc14;
+    background: var(--highlight-pri-color);
     color: white;
+    
     text-shadow: none;
 }
  
@@ -340,27 +333,10 @@
 
 
 /* ------------------------- Color Scheme ------------------------- */
-/*
-$white: #fff;
-$black: #222;
-$gray: #808080;
-$superhero-blue: #00aaff;
-$chikka-orange: #ff7f00;
-$record-red: #f22424;
-$go-green: #12b32d;
-*/
-
-.widget_search .search-form-submit--a-l,
-.widget_search .search-form-submit--a-l,
-.widget_search .search-form-submit--a-l,
-.widget_search .search-form-reset--a-l,
-.comment-submit--a,
-
-
-
-.entry-title--a
+.comment-form-submit-axn---b
 {
-    color: #00aaff;
+    /* color: #00aaff; */
+    background-color: var( --primary-color );
 }
 
 .main-search-func .main-search-toggle--a,
@@ -373,18 +349,6 @@ $go-green: #12b32d;
 .main-nav--header-aside--menu-toggle--a-l
 {
     color: white;
-}
-
-
-
-
-
-/* ------------------------- Post ------------------------- */
-
-.post-content a:hover,
-.post---hr a:hover
-{
-    text-decoration: none;
 }
 
 
@@ -623,6 +587,7 @@ $go-green: #12b32d;
     min-height: 3rem;
     
     background-color: #00aaff;
+    background-color: var(--wbp-pri-color);
 }
 
 
@@ -805,11 +770,12 @@ $go-green: #12b32d;
 .wbp-main-desc---a
 {
     text-decoration: none;
+    
+    color: hsla( 100, 100%, 100%, .75 );
 }
 
 .wbp-main-desc---a_l
 {
-    color: hsla( 100, 100%, 100%, .75 );
     font-size: .75rem;
 }
 
@@ -1187,6 +1153,12 @@ $go-green: #12b32d;
     cursor: initial;
 }
 
+.main-menu-func .main-hr-aside---ct,
+.main-menu--active .main-menu-toggle
+{
+    max-width: 30rem;
+}
+
 .main-menu-func .main-hr-aside---ct_cr
 {
     box-sizing: border-box;
@@ -1264,26 +1236,6 @@ $go-green: #12b32d;
     background: -webkit-linear-gradient(left, hsla(0,0%,0%,0.25) 0%,hsla(0,0%,0%,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, hsla(0,0%,0%,0.25) 0%,hsla(0,0%,0%,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
-}
-
-/* Fading Gradient */
-.main-menu-func .main-hr-aside---ct_cr::after
-{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    
-    width: 100%;
-    height: 1rem;
-    
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
-    background: -moz-linear-gradient(top, hsla(0,0%,100%,1) 0%, hsla(0,0%,100%,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, hsla(0,0%,100%,1) 0%,hsla(0,0%,100%,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, hsla(0,0%,100%,1) 0%,hsla(0,0%,100%,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-    
-    transform: translateY( 3rem );
 }
 
 
@@ -1472,7 +1424,6 @@ $go-green: #12b32d;
     color: black;
     color: hsla(0, 0%, 0%, .5);
 }
-
 
 
 .main-header---cr > .apl-search
@@ -1838,6 +1789,11 @@ $go-green: #12b32d;
 .post-content .apl-search
 {
     max-width: 30rem;
+}
+
+.widget---h
+{
+    margin: 0;
 }
 
 

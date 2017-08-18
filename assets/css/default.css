@@ -135,6 +135,7 @@ label[for]:hover
 /* Images */
 img
 {
+    box-sizing: border-box;
     max-width: 100%;
     height: auto;
 }
@@ -212,7 +213,8 @@ iframe
     fill: currentColor;
 }
 
-.main-post-title---a_l
+.main-post-title---a_l,
+.post-title---txt
 {
     word-break: break-word;
 }
@@ -242,7 +244,7 @@ iframe
 @media only screen and (min-width: 35em)
 {
 
-    .alignleft
+    .post-content---ct_cr > .alignleft
     {
         float: left;
         
@@ -250,7 +252,7 @@ iframe
         margin-bottom: 1rem;
     }
 
-    .alignright
+    .post-content---ct_cr > .alignright
     {
         float: right;
         

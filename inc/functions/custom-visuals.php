@@ -10,7 +10,7 @@ if ( ! function_exists( 'applicator_func_custom_visuals_setup' ) ) {
             'width'              => 1280,
             'height'             => 800,
             'flex-height'        => true,
-            'wbp-head-callback'   => 'applicator_func_header_style',
+            'wp-head-callback'   => 'applicator_func_header_style',
         ) ) );
 
         register_default_headers( array(
@@ -44,24 +44,13 @@ if ( ! function_exists( 'applicator_func_header_style' ) ) {
             return;
         } ?>
 
-        <style id="applicator-custom-visuals-styles" type="text/css">
-
-        <?php // Customizer > Site Identity > Uncheck: Display Site Title and Description
-        if ( 'blank' === $header_text_color ) { ?>
-
-            .wbp-main-name-obj,
-            .wbp-main-desc-obj
-            {
-                /* WordPress Visually Hidden */
-                position: absolute;
-                clip: rect(1px, 1px, 1px, 1px);
-            }
+        <style id="applicator-custom-header-styles">
 
         <?php // If the user has set a custom color for the text use that.
-        } else { ?>
+        if ( 'blank' !== $header_text_color ) { ?>
 
-            .wbp-main-name-obj---a,
-            .wbp-main-desc-obj---a_l
+            .wbp-main-name---a,
+            .wbp-main-desc---a
             {
                 color: #<?php echo esc_attr( $header_text_color ); ?>;
             }
