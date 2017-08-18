@@ -44,9 +44,9 @@
 				/** Define Tabs Sections **/
 				$this->tab_sections = array(
 					'getting_started' => __('Getting Started', 'accesspress-parallax'),
-					//'actions_required' => __('Actions Required', 'accesspress-parallax'),
 					'recommended_plugins' => __('Recommended Plugins', 'accesspress-parallax'),
 					'support' => __('Support', 'accesspress-parallax'),
+					'free_vs_pro' => __('Free vs Pro', 'accesspress-parallax'),
 				);
 
 				/** List of Recommended Free Plugins **/

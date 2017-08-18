@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+
+Version 1.5.2
+ * Minor Bug Fixes
+
 Version 1.5.1
  * Alignment Issue with Center Header fixed
  * Unwanted text removed.
