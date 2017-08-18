@@ -51,7 +51,7 @@ class MAKE_Sections_Columns_Definition {
 			'text',
 			__( 'Content', 'make' ),
 			Make()->scripts()->get_css_directory_uri() . '/builder/sections/images/text.png',
-			__( 'Create rearrangeable columns of content and images.', 'make' ),
+			__( 'Create rearrangeable content of text and images.', 'make' ),
 			array( $this, 'save' ),
 			array(
 				'text' => 'sections/columns/builder-template',
@@ -94,7 +94,7 @@ class MAKE_Sections_Columns_Definition {
 			),
 			500 => array(
 				'type'    => 'divider',
-				'label'   => __( 'Background', 'make' ),
+				'label'   => __( 'Background', 'make-plus' ),
 				'name'    => 'divider-background',
 				'class'   => 'ttfmake-configuration-divider',
 			),
