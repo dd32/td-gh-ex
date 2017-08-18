@@ -15,14 +15,11 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			do_action( 'azonbooster_single_post_before' );
 
-			the_post_navigation();
+			get_template_part( 'template-parts/content', 'single' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			do_action( 'azonbooster_single_post_after' );
 
 		endwhile; // End of the loop.
 		?>

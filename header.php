@@ -45,6 +45,7 @@
 
 		</div>
 	</header><!-- #masthead -->
+	<?php do_action( 'azonbooster_after_header' ); ?>
 
 	<?php
 	/**
@@ -55,3 +56,4 @@
 	do_action( 'azonbooster_before_content' ); ?>
 
 	<div id="content" class="site-content">
+		<div class="col-full">

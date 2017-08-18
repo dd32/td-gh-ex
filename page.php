@@ -20,12 +20,16 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				do_action( 'azonbooster_page_before' );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				get_template_part( 'template-parts/content', 'page' );
+				
+				/**
+				 * Functions hooked in to azonbooster_page_after action
+				 *
+				 * @hooked azonbooster_display_comments - 10
+				 */
+				do_action( 'azonbooster_page_after' );
 
 			endwhile; // End of the loop.
 			?>
@@ -34,5 +38,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+do_action( 'azonbooster_sidebar' );
 get_footer();

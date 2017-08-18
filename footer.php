@@ -10,22 +10,28 @@
  */
 
 ?>
-
+	</div> <!-- .col-full -->
 	</div><!-- #content -->
+	
+	<?php do_action( 'azonbooster_before_footer' ); ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'azonbooster' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'azonbooster' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
+
+		<div class="col-full">
+
 			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'azonbooster' ), 'azonbooster', '<a href="https://azonbooster.com">AzonBooster Team</a>' );
-			?>
-		</div><!-- .site-info -->
+			/**
+			 * Functions hooked in to azonbooster_footer action
+			 *
+			 * @hooked azonbooster_footer_widgets - 10
+			 * @hooked azonbooster_credit         - 20
+			 */
+			do_action( 'azonbooster_footer' ); ?>
+
+		</div><!-- .col-full -->
 	</footer><!-- #colophon -->
+
+	<?php do_action( 'azonbooster_after_footer' ); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

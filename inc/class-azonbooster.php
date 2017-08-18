@@ -37,6 +37,8 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
 			add_action( 'enqueue_embed_scripts',      array( $this, 'print_embed_styles' ) );
 			add_action( 'wp_footer',                  array( $this, 'get_structured_data' ) );
+
+			add_filter( 'get_the_archive_title', array( $this, 'the_archive_title' ) );
 		}
 
 		public function setup() {
@@ -63,12 +65,17 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			add_theme_support( 'post-thumbnails' );
 
 			/**
+			 * Set Post Thumbnail
+			 */
+			$this->set_custom_thumbnail();
+
+			/**
 			 * Enable support for site logo
 			 */
 			add_theme_support( 'custom-logo', array(
-				'height'      => 110,
-				'width'       => 470,
+				'height'      => 60,
 				'flex-width'  => true,
+				'flex-height' => true,
 			) );
 
 			// This theme uses wp_nav_menu() in two locations.
@@ -121,7 +128,7 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 				'description' => __( 'Widgets added to this region will appear beneath the header and above the main content.', 'azonbooster' ),
 			);
 
-			$rows    = intval( apply_filters( 'azonbooster_footer_widget_rows', 1 ) );
+			$rows    = intval( apply_filters( 'azonbooster_footer_widget_rows', 2 ) );
 			$regions = intval( apply_filters( 'azonbooster_footer_widget_columns', 4 ) );
 
 			for ( $row = 1; $row <= $rows; $row++ ) {
@@ -189,7 +196,7 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			 * Fonts
 			 */
 			$google_fonts = apply_filters( 'azonbooster_google_font_families', array(
-				'source-sans-pro' => 'Source+Sans+Pro:400,300,300italic,400italic,600,700,900',
+				'pt-serif' => 'PT+Serif:400,400i,700,700i',
 			) );
 
 			$query_args = array(
@@ -200,6 +207,12 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
 			wp_enqueue_style( 'azonbooster-fonts', $fonts_url, array(), null );
+
+			/**
+			 * Scripts
+			 */
+			wp_enqueue_script( 'azonbooster-script', get_template_directory_uri() . '/assets/js/script.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'azonbooster-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 			/**
 			 * Scripts
@@ -386,6 +399,70 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			}
 
 			return $sanitized;
+		}
+
+		public function set_custom_thumbnail() {
+
+			//add_image_size( 'azonbooster-magazine-small', 366, 226, true );
+			//add_image_size( 'azonbooster-magazine-medium', 360, 508, true );
+			add_image_size( 'azonbooster-post-feature-large', 694, 390, true);
+
+		}
+
+		public function the_archive_title() {
+			if ( is_category() ) {
+				/* translators: Category archive title. 1: Category name */
+				$title = single_cat_title( '', false );
+			} elseif ( is_tag() ) {
+				/* translators: Tag archive title. 1: Tag name */
+				$title = single_tag_title( '', false );
+			} elseif ( is_author() ) {
+				/* translators: Author archive title. 1: Author name */
+				$title ='<span class="vcard">' . get_the_author() . '</span>';
+			} elseif ( is_year() ) {
+				/* translators: Yearly archive title. 1: Year */
+				$title = get_the_date( _x( 'Y', 'yearly archives date format', 'azonbooster' ) );
+
+			} elseif ( is_month() ) {
+				/* translators: Monthly archive title. 1: Month name and year */
+				$title = get_the_date( _x( 'F Y', 'monthly archives date format', 'azonbooster' ) );
+			} elseif ( is_day() ) {
+				/* translators: Daily archive title. 1: Date */
+				$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'azonbooster' ) );
+
+			} elseif ( is_tax( 'post_format' ) ) {
+				if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+					$title = _x( 'Asides', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+					$title = _x( 'Galleries', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+					$title = _x( 'Images', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+					$title = _x( 'Videos', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+					$title = _x( 'Quotes', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+					$title = _x( 'Links', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+					$title = _x( 'Statuses', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+					$title = _x( 'Audio', 'post format archive title', 'azonbooster' );
+				} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+					$title = _x( 'Chats', 'post format archive title', 'azonbooster' );
+				}
+			} elseif ( is_post_type_archive() ) {
+				/* translators: Post type archive title. 1: Post type name */
+				$title =  post_type_archive_title( '', false );
+			} elseif ( is_tax() ) {
+				$tax = get_taxonomy( get_queried_object()->taxonomy );
+				/* translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term */
+				$title = sprintf( __( '%1$s: %2$s', 'azonbooster' ), $tax->labels->singular_name, single_term_title( '', false ) );
+			} else {
+
+				$title = '';
+			}
+
+			return $title;
 		}
 
 	}

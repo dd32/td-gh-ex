@@ -143,7 +143,7 @@ input[type="submit"],
 			@include fa-icon();
 			content: "\f002";
 			position: absolute;
-			top: 1em;
+			top: 0.750em;
 			left: 1em;
 		}
 
@@ -180,131 +180,22 @@ a.reset_variations {
 		margin: 0;
 
 		li {
-			padding-left: ms(3);
+			padding-left: ms(1);
 
 			&:before {
 				font-family: "FontAwesome";
-				margin-right: ms(-3);
+				margin-right: 0;
 				display: block;
 				float: left;
 				opacity: 0.35;
-				margin-left: - ms(3);
+				margin-left: - ms(1);
 				width: 1em;
+				content: "\f105";
 			}
 		}
 	}
 }
 
-.widget_product_categories {
-	ul {
-		li {
-			&:before {
-				content: "\f114";
-			}
-
-			&.current-cat {
-				&:before {
-					content: "\f115";
-				}
-			}
-		}
-	}
-}
-
-.widget_layered_nav {
-	li {
-		&:before {
-			content: "\f0c8";
-		}
-	}
-
-	.chosen {
-		&:before {
-			content: "\f14a";
-		}
-	}
-}
-
-.widget_layered_nav_filters {
-	ul {
-		li {
-			&.chosen {
-				&:before {
-					content: "\f00d";
-					color: $error;
-					opacity: 1;
-				}
-			}
-		}
-	}
-}
-
-.widget_recent_entries,
-.widget_pages {
-	ul {
-		li {
-			&:before {
-				content: "\f0f6";
-			}
-		}
-	}
-}
-
-.widget_categories {
-	ul {
-		li {
-			&:before {
-				content: "\f114";
-			}
-
-			&.current-cat {
-				&:before {
-					content: "\f115";
-				}
-			}
-		}
-	}
-}
-
-.widget_archive {
-	ul {
-		li {
-			&:before {
-				content: "\f115";
-			}
-		}
-	}
-}
-
-.widget_recent_comments {
-	ul {
-		li {
-			&:before {
-				content: "\f0e5";
-			}
-		}
-	}
-}
-
-.widget_nav_menu {
-	ul {
-		li {
-			&:before {
-				content: "\f0f6";
-			}
-		}
-	}
-}
-
-.widget_links {
-	ul {
-		li {
-			&:before {
-				content: "\f08e";
-			}
-		}
-	}
-}
 
 a.remove {
 	display: block;
