@@ -13,8 +13,8 @@
                 <li><?php echo esc_html__('Posted on ','bar-restaurant').get_the_date(get_option('date_format')); ?></li>
             </ul>
         </div>
-        <?php if ( has_post_thumbnail() ) : ?>
-        <div class="single-blog-wrap"> 
+       <div class="single-blog-wrap">
+         <?php if ( has_post_thumbnail() ) : ?> 
             <div class="blog-img">
                 <?php the_post_thumbnail('bar-restaurant-feature-image'); ?>
             </div>
@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
+ </div>   
 <?php wp_link_pages( array(
         'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'bar-restaurant' ) . '</span>',
         'after'       => '</div>',

@@ -343,7 +343,7 @@ add_action( 'customize_register', 'bar_restaurant_customize_register' );
 
 function bar_restaurant_custom_css(){ ?>
   <style type="text/css">
-    .blog-sidebar .widget ul li a:hover,.blog-content-left a{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
+    .blog-sidebar .widget ul li a:hover,.blog-content-left a{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#240115')); ?>; }
     .bloginner-content-part ul li a:hover{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
     .meta-nav-next:hover, .meta-nav-prev:hover{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#FFFFFF')); ?>; }
     textarea:focus ~ label{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
@@ -355,8 +355,8 @@ function bar_restaurant_custom_css(){ ?>
     .search-form .screen-reader-text{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
     .default-feature-image{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; border: 1px solid <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
     .blog-sidebar input:focus { border-color: <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    a:focus, a:hover,button.search-submit{ color: <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    .blog-sidebar #today{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>;}
+    a:focus, a:hover,button.search-submit{ color: <?php  echo esc_attr(get_theme_mod('theme_color','#240115')); ?>; }
+    .blog-sidebar #today{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#5f021f')); ?>;}
      button{Background-color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
     .blog-sidebar th,.widget select,.blog-sidebar .widget ul li a,input, textarea{color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
     .header-logo a,.header-text a {color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
