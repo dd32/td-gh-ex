@@ -17,7 +17,7 @@
 	.bt-wrapper {
 		padding: 0 10px;
 	}
-	.ps-home-section .bt-wrapper {
+	.bt-contact-section .bt-wrapper {
 		padding-bottom: 0;
 	}
 
@@ -36,11 +36,11 @@
 		width: 80%;
 		margin: 0 auto;
 	}
-	.ps-home-section .contact-form form input, .ps-home-section .contact-form form textarea {
+	.bt-contact-section .contact-form form input, .bt-contact-section .contact-form form textarea {
 		width: 100%;
 		margin: 0 0 10px;
 	}
-	.ps-home-section .contact-form form p {
+	.bt-contact-section .contact-form form p {
 		display: block;
 	}
 	.home.page-template-template-home section {
@@ -253,7 +253,7 @@ width: 100%;
 	.bt-portfolio .row .col {
 		width: 50%;
 	}
-	.ps-home-section .contact-form .detail-contact div {
+	.bt-contact-section .contact-form .detail-contact div {
 		margin: 0;
 	}
 	#content.site-content {
@@ -350,7 +350,7 @@ width: 100%;
 	.bt-blog .row .col {
 		margin-left: 0;
 	}
-	.ps-home-section .contact-form .detail-contact {
+	.bt-contact-section .contact-form .detail-contact {
 		text-align: left;
 	}
 	.bt-about .about-tab .img-holder {

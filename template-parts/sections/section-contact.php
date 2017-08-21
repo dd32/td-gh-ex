@@ -21,7 +21,7 @@
         $contact_section_form_query = new WP_Query(array('post_type'=>'page','post__in'=>array(absint($contact_section_form_page))));
         $contact_section_map_query = new WP_Query(array('post_type'=>'page','post__in'=>array(absint($contact_section_map_page))));
 ?>
-		<section class="ps-home-section" id="bt-section-contact">
+		<section class="bt-contact-section" id="bt-section-contact">
                 <?php if($contact_section_map_query->have_posts()){ ?>
                         <div class="map-contact">
                             <?php

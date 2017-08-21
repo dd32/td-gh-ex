@@ -105,4 +105,88 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
     
+    /**  Beetech Pro Link **/
+    class beetech_Pro_Link_Section extends WP_Customize_Section {
+
+        public $type = 'beetech-pro';
+
+        public $pro_text = '';
+
+        public $pro_url = '';
+
+        public function json() {
+            $json = parent::json();
+            $json['pro_text'] = $this->pro_text;
+            $json['pro_url']  = esc_url( $this->pro_url );
+            return $json;
+        }
+        protected function render_template() { ?>
+
+            <li id="custom-section-{{ data.id }}" class="custom-section control-section control-section-{{ data.type }} cannot-expand">
+                <h3 class="custom-section-title">
+                    {{ data.title }}
+                    <# if ( data.pro_text && data.pro_url ) { #>
+                        <a href="{{ data.pro_url }}" class="button button-custom alignright" target="_blank">{{ data.pro_text }}</a>
+                    <# } #>
+                </h3>
+            </li>
+        <?php }
+    }
+    
+    /**
+     * Theme info
+     */
+    class beetech_Theme_Info extends WP_Customize_Control {
+        public function render_content(){
+
+            $our_theme_infos = array(
+                'demo' => array(
+                   'link' => esc_url( 'http://buzthemes.com/demo/beetech/' ),
+                   'text' => esc_html__( 'View Demo', 'beetech' ),
+                ),
+                'documentation' => array(
+                   'link' => esc_url( 'https://buzthemes.com/doc/beetech/' ),
+                   'text' => esc_html__( 'Documentation', 'beetech' ),
+                ),
+                'support' => array(
+                   'link' => esc_url( 'https://buzthemes.com/forums/forum/beetech/' ),
+                   'text' => esc_html__( 'Support', 'beetech' ),
+                ),
+            );
+            foreach ( $our_theme_infos as $our_theme_info ) {
+                echo '<p><a target="_blank" href="' . $our_theme_info['link'] . '" >' . esc_html( $our_theme_info['text'] ) . ' </a></p>';
+            }
+        ?>
+        	<label>
+        	    <h2 class="customize-title"><?php echo esc_html( $this->label ); ?></h2>
+        	    <span class="customize-text_editor_desc">                 
+        	        <ul class="admin-pro-feature-list">   
+                        <li><span><?php esc_html_e('One Click Demo Import','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Modern and elegant design','beetech'); ?> </span></li>
+                        <li><span><?php esc_html_e('3 Homepage Layouts','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('100% Responsive theme','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Awesome Counter Section','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Advanced Typography','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Breadcrumb Settings','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Highly configurable home page','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('3 Blog Section Layout','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Pricing Table  Section','beetech'); ?> </span></li>
+                        <li><span><?php esc_html_e('Skill Section','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('FAQ Section','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('3 Testimonial Section Layout','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('3 Portfolio Section','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Four Footer Widget Areas','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Sidebar Options','beetech'); ?> </span></li>
+        	            <li><span><?php esc_html_e('Translation ready','beetech'); ?> </span></li>
+                        <li><span><?php esc_html_e('Useful Shortcodes','beetech'); ?> </span></li>
+                        <li><span><?php esc_html_e('WordPress Live Customizer Based','beetech'); ?> </span></li>
+        	        </ul>
+        	        <?php $beetech_pro_link = 'https://buzthemes.com/demo/beetech-pro/'; ?>
+        	        <a href="<?php echo esc_url($beetech_pro_link); ?>" class="button button-primary buynow" target="_blank"><?php esc_html_e('Buy Now','beetech'); ?></a>
+        	    </span>
+        	</label>
+        <?php
+        }
+    }
+    
 }

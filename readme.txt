@@ -112,3 +112,6 @@ https://pixabay.com/en/shaft-architecture-tunnel-3d-1745933/
 = 1.0.8 =
     * Reset all query
     * Change screenshot
+    
+= 1.0.9 =
+    * Add Theme Information

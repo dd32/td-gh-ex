@@ -7,9 +7,10 @@ function beetech_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'beetech_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1920,
+		'width'                  => 62,
 		'height'                 => 300,
 		'flex-height'            => true,
+		'flex-width'             => true,        
 		'wp-head-callback'       => 'beetech_header_style',
 	) ) );
 }

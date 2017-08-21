@@ -4,7 +4,7 @@ Theme URI: http://buzthemes.com/wordpress_themes/beetech/
 Author: Buzthemes
 Author URI: http://buzthemes.com
 Description:  Beetech is a responsive free WordPress theme for Construction and business website. All our options use the WordPress Customizer so you can see every change you make live. The theme is also clean, and SEO optimized and we promise to make best website.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beetech
@@ -1536,10 +1536,10 @@ clients
 /*===============
 map
 ===============*/
-.ps-home-section {
+.bt-contact-section {
 	padding: 0 !important;
 }
-.ps-home-section .map-contact p iframe {
+.bt-contact-section .map-contact p iframe {
     width: 100%;
 } 
 /*=====================
@@ -1833,23 +1833,23 @@ z-index: 999999;
     line-height: 1;
 }
 /*==============
-ps-home-section
+bt-contact-section
 ==============*/
-.ps-home-section .bt-wrapper {
+.bt-contact-section .bt-wrapper {
     padding: 40px 0 60px;
 }
-.ps-home-section .bt-section-header {
+.bt-contact-section .bt-section-header {
     margin-bottom: 75px;
 }
-.ps-home-section .contact-form form p {
+.bt-contact-section .contact-form form p {
     display: inline-block;
     vertical-align: middle;
 }
-.ps-home-section .contact-form .bt-home-contact {
+.bt-contact-section .contact-form .bt-home-contact {
     text-align: center;
 }
-.ps-home-section .contact-form form input,
-.ps-home-section .contact-form form textarea {
+.bt-contact-section .contact-form form input,
+.bt-contact-section .contact-form form textarea {
     padding: 10px 13px 13px;
     border: 1px solid #ccc;
     display: inline-block;
@@ -1858,11 +1858,11 @@ ps-home-section
     width: 220px;
     margin: 0 10px;
 }
-.ps-home-section .contact-form form textarea {
+.bt-contact-section .contact-form form textarea {
     height: 49px;
     width: 280px;
 }
-.ps-home-section .contact-form form input[type="submit"] {
+.bt-contact-section .contact-form form input[type="submit"] {
     box-shadow: none;
     padding: 14px 13px 15px;
     font-size: 18px;
@@ -1874,11 +1874,11 @@ ps-home-section
     -webkit-transition: all ease 0.3s;
     -ms-transition: all ease 0.3s;
 }
-.ps-home-section .contact-form form input[type="submit"]:hover {
+.bt-contact-section .contact-form form input[type="submit"]:hover {
     background: transparent;
     color: #ffb900;
 }
-.ps-home-section .contact-form .detail-contact {
+.bt-contact-section .contact-form .detail-contact {
     text-align: center;
     color: #666666;
     font-size: 24px;
@@ -1886,19 +1886,19 @@ ps-home-section
     font-weight: 600;
     padding: 30px 0;
 }
-.ps-home-section .contact-form .detail-contact span {
+.bt-contact-section .contact-form .detail-contact span {
     font-size: 15px;
     font-weight: 400;
     margin-left: 10px; 
 }
-.ps-home-section .contact-form .detail-contact div {
+.bt-contact-section .contact-form .detail-contact div {
     display: inline-block;
     vertical-align: middle;
     padding-left: 30px;
     position: relative;
     margin: 0 80px;
 }
-.ps-home-section .contact-form .detail-contact div:before {
+.bt-contact-section .contact-form .detail-contact div:before {
     content: '';
     position: absolute;
     font-family: FontAwesome;
@@ -1907,10 +1907,10 @@ ps-home-section
     left: 0;
     line-height: 1.2;
 }
-.ps-home-section .contact-form .detail-contact div.number:before {
+.bt-contact-section .contact-form .detail-contact div.number:before {
     content: '\f095';
 }
-.ps-home-section .contact-form .detail-contact div.address:before {
+.bt-contact-section .contact-form .detail-contact div.address:before {
     content: '\f041';
 }
 /*=================

@@ -13,7 +13,7 @@
 	
 /** Parallax Menu Array **/
 $beetech_single_menu_fields = array(
-		'slider' =>  array( 
+		'page' =>  array(
 						'default'=> esc_html__( 'Main', 'beetech' ), 
 						'label'=>  esc_html__( 'Top Section', 'beetech' ) 
 					),
@@ -71,12 +71,12 @@ if( ! function_exists( 'beetech_parallax_menu_cb' ) ):
 			if( !empty( $beetech_menu_title ) ) {
 				$beetech_menu_tab = '';
                 $beetech_menu_tab .= '<li class="bt-menu-tab">';
-                if( $parallax_menu_type == 'float' ) {
-                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.esc_html($section_id).'"><span></span></a>';
-                	$beetech_menu_tab .= '<div class="px-tooltip">'. esc_attr( $beetech_menu_title ) .'</div>';
-                } else {
-                	$beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.esc_html($section_id).'">'. esc_html( $beetech_menu_title ) .'</a>';
-                }                
+                if($section_id == 'page'){
+                    $beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#'.esc_html($section_id).'">'. esc_html( $beetech_menu_title ) .'</a>';
+                }else{
+                    $beetech_menu_tab .= '<a href="'. esc_url( home_url() ) .'/#bt-section-'.esc_html($section_id).'">'. esc_html( $beetech_menu_title ) .'</a>';   
+                }
+                             
                 $beetech_menu_tab .= '</li>';
                 echo  $beetech_menu_tab;
 			}
@@ -243,10 +243,10 @@ if( ! function_exists( 'beetech_get_sidebar' ) ):
 function beetech_get_sidebar() {
     $sidebar_meta_option = 'right_sidebar';
     global $post;
-    if(is_archive()) { 
+    if(is_archive()) {
         $sidebar_meta_option = get_theme_mod( 'beetech_archive_sidebar_layout', 'right_sidebar' );
         if( $sidebar_meta_option == 'right_sidebar' || $sidebar_meta_option == 'both_sidebar' || $sidebar_meta_option == '') {
-        get_sidebar();
+            get_sidebar();
         }
         
         if($sidebar_meta_option == 'both_sidebar' || $sidebar_meta_option == 'left_sidebar'){
