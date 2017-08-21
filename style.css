@@ -4,11 +4,11 @@ Author: Stefan C.
 Theme URI: https://www.pwtthemes.com/theme/aedificator-free-responsive-wordpress-theme
 Author URI: http://www.stefanciobanu.com
 Description: Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.
-Version: 1.0.6
+Version: 1.0.7
 Tags: entertainment, one-column, two-columns, right-sidebar, grid-layout, footer-widgets, custom-menu, custom-background, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain:  aedificator 
+Text Domain:  aedificator
 */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -30,7 +30,7 @@ body {
 font: normal 400 13px/1 'ralewaysemibold', Arial, sans-serif;
 word-wrap: break-word;
 }
-article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section { 
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {
 display: block;
 }
 ol {
@@ -58,7 +58,7 @@ table {
 border-collapse: collapse;
 border-spacing: 0;
 border-bottom: 1px solid #f68a15;
-margin: 15px 0;	
+margin: 15px 0;
 width:100%;
 }
 td {
@@ -87,9 +87,9 @@ line-height: 20px;
 }
 pre {
 padding: 18px;
-overflow: auto;	
+overflow: auto;
 white-space:pre-wrap;
-margin: 10px 0;	
+margin: 10px 0;
 }
 ins {
 background: none repeat scroll 0 0 #EEEEEE;
@@ -105,8 +105,8 @@ line-height: 1.4;
 }
 address {
 margin: 0 0 15px;
-display: block;	
-line-height: 20px;	
+display: block;
+line-height: 20px;
 }
 abbr, acronym, dfn {
 border-bottom: 1px dotted #f68a15;
@@ -149,7 +149,7 @@ text-decoration: none;
 /* change colours to suit your needs */
 mark {
 background-color: #ff9;
-color: #000; 
+color: #000;
 font-style: italic;
 font-weight: bold;
 }
@@ -169,7 +169,7 @@ width: 100%;
 hr {
 display: block;
 height: 1px;
-border: 0;   
+border: 0;
 border-top: 1px solid #cccccc;
 margin: 1em 0;
 padding: 0;
@@ -631,6 +631,7 @@ border-top-style: solid;
 border-top-width: 1px;
 list-style: outside none none;
 padding-top: 25px;
+width:100%;
 }
 .comment-body {
 position: relative;
@@ -640,7 +641,7 @@ float: left;
 margin: 0 25px 25px;
 }
 .comment-respond {
-margin-top:40px;	
+margin-top:40px;
 }
 .comment-body .says {
 display: none;
@@ -949,7 +950,7 @@ margin-right: 15px;
 cursor: default;
 }
 .sub-menu .current-menu-item a, .children .current-menu-item a {
-color:#f68a15;	
+color:#f68a15;
 }
 .menu-tabs .current-menu-item a:after, .menu-tabs .current_page_item a:after, .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor:after {
 content: '';
@@ -1082,7 +1083,7 @@ padding-bottom: 10px;
 padding-top: 10px;
 }
 .sidebar-block .current-menu-item a {
-color:#f68a15;	
+color:#f68a15;
 }
 		/**  popular-posts, menu-sideabr  **/
 .popular-posts li, .sidebar-block .widget ul  li, .sidebar-block ul li {
@@ -1458,10 +1459,10 @@ padding-bottom: 7px;
 background: transparent;
 }
 .menu-top-container .current-menu-item  .sub-menu a, .menu-top-container .current-menu-item  .children a {
-background:#ffffff;	
+background:#ffffff;
 }
 .menu-top-container  .sub-menu .current-menu-item a, .menu-top-container   .children .current-menu-item a {
-background:#ffffff;	
+background:#ffffff;
 }
 .menu-top .sub-menu a.icon-arrow, .menu-top .children a.icon-arrow {
 position: relative;
@@ -1679,7 +1680,7 @@ font-size: 13px;
 }
 .testimonial .quotes, .testimonial .author-name {
 margin-bottom: 20px;
-} 
+}
 .testimonial .quotes {
 font-family: 'bitteritalic';
 }
@@ -1838,14 +1839,14 @@ display: block;
 padding: 12px 20px;
 }
 .filter-cotainer .filter .column-3-12 {
-display:none;	
+display:none;
 }
 .filter-cotainer  .menu-filter li {
-cursor:pointer;	
+cursor:pointer;
 }
 .filter-cotainer  .menu-filter li  .active{
 color:#ffffff;
-background:#f68a15;	
+background:#f68a15;
 }
 		/**  section-welcome  **/
 .section-welcome {
@@ -1943,7 +1944,7 @@ margin-right: 1px;
 }
 .pagination a.page-prev, .pagination a.page-next {
 width: 65px;
-} 
+}
 .pagination a.current-page {}
 .pagination a:first-child {
 margin-left: 0
@@ -1986,14 +1987,14 @@ margin-bottom: 20px;
 margin-bottom: 10px;
 }
 .listsubservice {
-margin:15px 0;	
+margin:15px 0;
 }
 .listsubservice li {
 font-size: 15px;
-list-style: outside none none;	
+list-style: outside none none;
 }
 .listsubservice li a:hover{
-color:#535353;	
+color:#535353;
 }
 		/**  article-latest-news  **/
 .article-latest-news {}
@@ -2061,7 +2062,7 @@ margin-bottom: 25px;
 .member-post {
 font-family: 'bitteritalic';
 }
-		
+
 /**  footer  **/
 .footer {
 clear: both;
@@ -2088,7 +2089,7 @@ text-align: left;
 text-align: right;
 }
 .aboutblogtop {
- padding-bottom: 0;	
+ padding-bottom: 0;
 }
 .popular-posts li li:first-child,
 .sidebar-block .widget li ul li:first-child,
@@ -2112,7 +2113,7 @@ margin: 20px 0 !important;
 padding: 0 !important;
 }
 .wpcf7-not-valid-tip {
-margin-top:5px;	
+margin-top:5px;
 }
 .wp-pagenavi a, .wp-pagenavi span {
 background: #222d34 none repeat scroll 0 0;
@@ -2258,7 +2259,7 @@ width: auto;
 z-index: 100000;
 }
 .pagination .left a {
-float:left;	
+float:left;
 padding: 5px 23px;
 text-transform: uppercase;
 width: auto;
@@ -2267,10 +2268,10 @@ width: auto;
 float:right;
 padding: 5px 23px;
 text-transform: uppercase;
-width: auto;	
+width: auto;
 }
 .footer .widget select, .sidebar-block .widget select {
-margin:10px 0;	
+margin:10px 0;
 width:100%;
 padding:5px;
 }
@@ -2286,7 +2287,7 @@ padding: 5px;
 text-align: center;
 }
 .footer .widget table #today, .sidebar-block .widget table #today {
-color:#f68a15;	
+color:#f68a15;
 font-weight: bold;
 }
 .footer .widget .textwidget img, .sidebar-block .widget .textwidget img {
@@ -2787,8 +2788,8 @@ only screen and (   min--moz-device-pixel-ratio: 1.5),
 only screen and (     -o-min-device-pixel-ratio: 3/2),
 only screen and (        min-device-pixel-ratio: 1.5),
 only screen and (             min-resolution: 144dpi),
-only screen and (            min-resolution: 1.5dppx) { 
-  
+only screen and (            min-resolution: 1.5dppx) {
+
   /* Retina-specific stuff here */
 
 }

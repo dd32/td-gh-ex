@@ -4,21 +4,21 @@ Author: Stefan C.
 Theme URI: https://www.pwtthemes.com/theme/aedificator-free-responsive-wordpress-theme
 Author URI: http://www.stefanciobanu.com
 Description: Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.
-Version: 1.0.6
+Version: 1.0.7
 Tags: entertainment, one-column, two-columns, right-sidebar, grid-layout, footer-widgets, custom-menu, custom-background, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain:  aedificator 
+Text Domain:  aedificator
 */
 
 == Copyright ==
 Aedificator WordPress Theme, Copyright (C) 2016 Stefan C.
 Aedificator WordPress Theme is licensed under the GPL 3.
 
-Aedificator is built with the following resources: 
+Aedificator is built with the following resources:
 
 Owl Carousel - https://github.com/OwlFonk/OwlCarousel
-License: MIT 
+License: MIT
 Copyright: owlgraphic, http://owlgraphic.com/owlcarousel/
 
 HTML5 - https://github.com/aFarkas/html5shiv
@@ -50,7 +50,7 @@ License: SIL Open Font License v1.10
 Copyright: The League of Moveable Type, https://www.theleagueofmoveabletype.com/
 
 Images Owl Carousel (AjaxLoader.png, grabbing.png) - https://github.com/OwlFonk/OwlCarousel
-License: MIT 
+License: MIT
 Copyright: owlgraphic, http://owlgraphic.com/owlcarousel/
 
 Images (overlay-gray.png, search.png) - http://www.pwtthemes.com/
