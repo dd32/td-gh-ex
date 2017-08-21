@@ -124,15 +124,12 @@ function aileron_scripts() {
 	 * Enqueue JS files
 	 */
 
-	// Modernizr
-	wp_enqueue_script( 'aileron-modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ), '2.7.1', true );
-
 	// Superfish Menu
-	wp_enqueue_script( 'aileron-hover-intent', get_template_directory_uri() . '/js/hover-intent.js', array( 'jquery' ), 'r7', true );
-	wp_enqueue_script( 'aileron-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '1.7.4', true );
+	wp_enqueue_script( 'hover-intent', get_template_directory_uri() . '/js/hover-intent.js', array( 'jquery' ), 'r7', true );
+	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '1.7.4', true );
 
 	// Fitvids
-	wp_enqueue_script( 'aileron-fitvids', get_template_directory_uri() . '/js/fitvids.js', array( 'jquery' ), '1.0.3', true );
+	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.js', array( 'jquery' ), '1.0.3', true );
 
 	// Comment Reply
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
@@ -152,10 +149,10 @@ function aileron_scripts() {
 	 */
 
 	// Bootstrap
-	wp_enqueue_style( 'aileron-bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
+	wp_enqueue_style( 'aileron-bootstrap-custom', get_template_directory_uri() . '/css/bootstrap.css' );
 
 	// Fontawesome
-	wp_enqueue_style( 'aileron-fontawesome', get_template_directory_uri() . '/css/font-awesome.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
 
 	// Google Fonts
 	wp_enqueue_style( 'aileron-fonts', aileron_google_fonts_url(), array(), null );
