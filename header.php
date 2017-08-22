@@ -46,7 +46,6 @@
 	  /**
 	   * Hook - best_business_action_before_header.
 	   *
-	   * @hooked best_business_add_top_head_content - 5
 	   * @hooked best_business_header_start - 10
 	   */
 	  do_action( 'best_business_action_before_header' );
@@ -73,8 +72,6 @@
 	/**
 	 * Hook - best_business_action_before_content.
 	 *
-	 * @hooked best_business_add_custom_header - 6
-	 * @hooked best_business_add_breadcrumb - 7
 	 * @hooked best_business_content_start - 10
 	 */
 	do_action( 'best_business_action_before_content' );

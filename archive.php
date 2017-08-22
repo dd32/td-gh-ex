@@ -46,11 +46,11 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-	/**
-	 * Hook - best_business_action_sidebar.
-	 *
-	 * @hooked: best_business_add_sidebar - 10
-	 */
-	do_action( 'best_business_action_sidebar' );
+/**
+ * Hook - best_business_action_sidebar.
+ *
+ * @hooked: best_business_add_sidebar - 10
+ */
+do_action( 'best_business_action_sidebar' );
 ?>
 <?php get_footer(); ?>

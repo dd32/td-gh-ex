@@ -41,7 +41,9 @@ if ( ! function_exists( 'best_business_is_featured_page_slider_active' ) ) :
 	 */
 	function best_business_is_featured_page_slider_active( $control ) {
 
-		if ('featured-page' === $control->manager->get_setting( 'theme_options[featured_slider_type]' )->value() && 'disabled' !== $control->manager->get_setting( 'theme_options[featured_slider_status]' )->value()
+		if (
+		'featured-page' === $control->manager->get_setting( 'theme_options[featured_slider_type]' )->value()
+		&& 'disabled' !== $control->manager->get_setting( 'theme_options[featured_slider_status]' )->value()
 		) {
 			return true;
 		} else {

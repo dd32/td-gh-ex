@@ -17,10 +17,24 @@ function best_business_customize_register( $wp_customize ) {
 	// Load custom controls.
 	require_once trailingslashit( get_template_directory() ) . 'includes/customizer/control.php';
 
-	// Custom controls and sections.
+	// Load custom controls and sections.
 	$wp_customize->register_control_type( 'Best_Business_Heading_Control' );
 	$wp_customize->register_control_type( 'Best_Business_Message_Control' );
+	$wp_customize->register_control_type( 'Best_Business_Dropdown_Taxonomies_Control' );
+	$wp_customize->register_control_type( 'Best_Business_Dropdown_Sidebars_Control' );
 	$wp_customize->register_section_type( 'Best_Business_Upsell_Section' );
+
+	// Upsell section.
+	$wp_customize->add_section(
+		new Best_Business_Upsell_Section( $wp_customize, 'custom_theme_upsell',
+			array(
+				'title'    => esc_html__( 'Best Business Pro', 'best-business' ),
+				'pro_text' => esc_html__( 'Buy Pro', 'best-business' ),
+				'pro_url'  => 'http://axlethemes.com/downloads/best-business-pro/',
+				'priority' => 1,
+			)
+		)
+	);
 
 	// Load helpers.
 	require_once trailingslashit( get_template_directory() ) . 'includes/helpers.php';
@@ -31,11 +45,14 @@ function best_business_customize_register( $wp_customize ) {
 	// Load customize callback.
 	require_once trailingslashit( get_template_directory() ) . 'includes/customizer/callback.php';
 
-	// Load customize options.
+	// Load customize option.
 	require_once trailingslashit( get_template_directory() ) . 'includes/customizer/option.php';
 
-	// Load slider customize options.
+	// Load slider customize option.
 	require_once trailingslashit( get_template_directory() ) . 'includes/customizer/slider.php';
+
+	// Modify default customizer options.
+	$wp_customize->get_control( 'background_color' )->description = esc_html__( 'Note: Background Color is applicable in all pages except static front page.', 'best-business' );
 }
 
 add_action( 'customize_register', 'best_business_customize_register' );
@@ -104,16 +121,16 @@ function best_business_customize_partial_blogdescription() {
 }
 
 /**
- * Customizer control assets.
+ * Register customizer controls scripts.
  *
- * @since 1.0.4
+ * @since 1.0.0
  */
-function best_business_customizer_control_scripts() {
+function best_business_customize_controls_register_scripts() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	wp_enqueue_script( 'best-business-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '1.0.4' );
-	wp_enqueue_style( 'best-business-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '1.0.4' );
 
+	wp_enqueue_style( 'best-business-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '1.0.0' );
+	wp_enqueue_script( 'best-business-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '1.0.0', true );
 }
 
-add_action( 'customize_controls_enqueue_scripts', 'best_business_customizer_control_scripts', 0 );
+add_action( 'customize_controls_enqueue_scripts', 'best_business_customize_controls_register_scripts', 0 );

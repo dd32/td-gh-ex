@@ -20,11 +20,31 @@ if ( ! function_exists( 'best_business_get_global_layout_options' ) ) :
 			'right-sidebar' => esc_html__( 'Right Sidebar', 'best-business' ),
 			'three-columns' => esc_html__( 'Three Columns', 'best-business' ),
 			'no-sidebar'    => esc_html__( 'No Sidebar', 'best-business' ),
-			);
+		);
 		return $choices;
 	}
 
 endif;
+
+if ( ! function_exists( 'best_business_get_breadcrumb_type_options' ) ) :
+
+	/**
+	 * Returns breadcrumb type options.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Options array.
+	 */
+	function best_business_get_breadcrumb_type_options() {
+		$choices = array(
+			'disabled' => esc_html__( 'Disabled', 'best-business' ),
+			'enabled'  => esc_html__( 'Enabled', 'best-business' ),
+		);
+		return $choices;
+	}
+
+endif;
+
 
 if ( ! function_exists( 'best_business_get_archive_layout_options' ) ) :
 
@@ -73,8 +93,8 @@ if ( ! function_exists( 'best_business_get_image_sizes_options' ) ) :
 		$choices['full']      = esc_html__( 'Full (original)', 'best-business' );
 
 		if ( true === $show_dimension ) {
-			foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $size ) {
-				$choices[ $size ] = $choices[ $size ] . ' (' . get_option( $size . '_size_w' ) . 'x' . get_option( $size . '_size_h' ) . ')';
+			foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $_size ) {
+				$choices[ $_size ] = $choices[ $_size ] . ' (' . get_option( $_size . '_size_w' ) . 'x' . get_option( $_size . '_size_h' ) . ')';
 			}
 		}
 
@@ -104,7 +124,7 @@ endif;
 if ( ! function_exists( 'best_business_get_image_alignment_options' ) ) :
 
 	/**
-	 * Returns image options.
+	 * Returns image alignment options.
 	 *
 	 * @since 1.0.0
 	 *

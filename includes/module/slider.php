@@ -108,12 +108,13 @@ if ( ! function_exists( 'best_business_get_slider_details' ) ) :
 				}
 
 				$qargs = array(
-					'posts_per_page' => esc_attr( $featured_slider_number ),
-					'no_found_rows'  => true,
-					'orderby'        => 'post__in',
-					'post_type'      => 'page',
-					'post__in'       => $ids,
-					'meta_query'     => array(
+					'posts_per_page'   => esc_attr( $featured_slider_number ),
+					'no_found_rows'    => true,
+					'orderby'          => 'post__in',
+					'post_type'        => 'page',
+					'post__in'         => $ids,
+					'suppress_filters' => false,
+					'meta_query'       => array(
 						array( 'key' => '_thumbnail_id' ),
 					),
 				);
@@ -180,6 +181,7 @@ if ( ! function_exists( 'best_business_render_featured_slider' ) ) :
 		$featured_slider_enable_arrow        = best_business_get_option( 'featured_slider_enable_arrow' );
 		$featured_slider_enable_pager        = best_business_get_option( 'featured_slider_enable_pager' );
 		$featured_slider_enable_autoplay     = best_business_get_option( 'featured_slider_enable_autoplay' );
+		$featured_slider_enable_overlay      = best_business_get_option( 'featured_slider_enable_overlay' );
 		$featured_slider_transition_duration = best_business_get_option( 'featured_slider_transition_duration' );
 		$featured_slider_transition_delay    = best_business_get_option( 'featured_slider_transition_delay' );
 
@@ -212,10 +214,12 @@ if ( ! function_exists( 'best_business_render_featured_slider' ) ) :
 			$slide_attributes_text .= ' data-cycle-' . esc_attr( $key );
 			$slide_attributes_text .= '="' . esc_attr( $item ) . '"';
 		}
+
+		$extra_slider_classes = ( true === $featured_slider_enable_overlay ) ? 'slider-overlay-enabled' : 'slider-overlay-disabled' ;
 	?>
 	<div id="featured-slider">
 
-		<div class="cycle-slideshow" id="main-slider" <?php echo $slide_attributes_text; ?>>
+		<div class="cycle-slideshow <?php echo esc_attr( $extra_slider_classes ); ?>" id="main-slider" <?php echo $slide_attributes_text; ?>>
 
 			<?php if ( $featured_slider_enable_arrow ) : ?>
 				<div class="cycle-prev"><i aria-hidden="true" class="fa fa-angle-left"></i></div>
@@ -256,14 +260,19 @@ if ( ! function_exists( 'best_business_render_featured_slider' ) ) :
 					$buttons_markup .= '</div>';
 				}
 				?>
-				<article class="<?php echo esc_attr( $class_text ); ?>">
+				<article class="<?php echo esc_attr( $class_text ); ?>"
+					data-cycle-title="<?php echo esc_attr( $slide['title'] ); ?>"
+					data-cycle-url="<?php echo esc_url( $url ); ?>"
+					data-cycle-excerpt="<?php echo esc_attr( $slide['excerpt'] ); ?>"
+					data-cycle-buttons="<?php echo esc_attr( $buttons_markup ); ?>" >
 						<?php if ( ! empty( $slide['url'] ) ) : ?>
-							<a href="<?php echo esc_url( $slide['url'] ); ?>">
+						<a href="<?php echo esc_url( $slide['url'] ); ?>">
 						<?php endif; ?>
 						<img src="<?php echo esc_url( $slide['images'][0] ); ?>" alt="<?php echo esc_attr( $slide['title'] ); ?>" />
 						<?php if ( ! empty( $slide['url'] ) ) : ?>
-							</a>
+						</a>
 						<?php endif; ?>
+
 						<?php if ( $featured_slider_enable_caption ) : ?>
 							<div class="cycle-caption">
 								<div class="caption-wrap">

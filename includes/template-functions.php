@@ -82,14 +82,9 @@ if ( ! function_exists( 'best_business_fonts_url' ) ) :
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 
-		/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'best-business' ) ) {
-			$fonts[] = 'Open Sans:400,700';
-		}
-
 		/* translators: If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language. */
 		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'best-business' ) ) {
-			$fonts[] = 'Roboto:400,500,600,700';
+			$fonts[] = 'Roboto:400italic,700italic,300,400,500,600,700';
 		}
 
 		if ( $fonts ) {
@@ -130,7 +125,7 @@ if ( ! function_exists( 'best_business_the_custom_logo' ) ) :
 	/**
 	 * Render logo.
 	 *
-	 * @since 1.0.0
+	 * @since 2.0
 	 */
 	function best_business_the_custom_logo() {
 
@@ -176,7 +171,7 @@ if ( ! function_exists( 'best_business_render_select_dropdown' ) ) :
 
 			$output = "<select name='" . esc_attr( $r['name'] ) . "' id='" . esc_attr( $r['id'] ) . "'>\n";
 			if ( true === $r['add_default'] ) {
-				$output .= '<option value="">' . __( 'Default', 'best-business' ) . '</option>\n';
+				$output .= '<option value="">' . esc_html__( 'Default', 'best-business' ) . '</option>\n';
 			}
 			if ( ! empty( $choices ) ) {
 				foreach ( $choices as $key => $choice ) {
@@ -227,28 +222,49 @@ if ( ! function_exists( 'best_business_get_numbers_dropdown_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'best_business_has_more_tag' ) ) :
+if ( ! function_exists( 'best_business_message_front_page_widget_area' ) ) :
 
 	/**
-	 * Check if more tag is in the content.
+	 * Show default message in front page widget area.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return bool Status.
 	 */
-	function best_business_has_more_tag() {
-		$output = false;
+	function best_business_message_front_page_widget_area() {
 
-		$post = get_post( get_the_ID() );
+		// Welcome.
+		$args = array(
+			'title'                 => esc_html__( 'Welcome to Best Business', 'best-business' ),
+			'filter'                => true,
+			'layout'                => 2,
+			'primary_button_url'    => esc_url( admin_url( 'widgets.php' ) ),
+			'primary_button_text'   => esc_html__( 'Add Widgets', 'best-business' ),
+			'secondary_button_url'  => esc_url( admin_url( 'widgets.php' ) ),
+			'secondary_button_text' => esc_html__( 'Add Widgets', 'best-business' ),
+			'text'                  => esc_html__( 'You are seeing this because there is no any widget in Front Page Widget Area. Go to Appearance->Widgets in admin panel to add widgets. All these widgets will be replaced when you start adding widgets.', 'best-business' ),
+		);
 
-		if ( $post ) {
-			$pos = strpos( $post->post_content, '<!--more-->' );
-			if ( false !== $pos ) {
-				$output = true;
-			}
-		}
+		$widget_args = array(
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+			'before_widget' => '<aside class="widget best_business_widget_call_to_action"><div class="container">',
+			'after_widget'  => '</div></aside>',
+		);
+		the_widget( 'Best_Business_Call_To_Action_Widget', $args, $widget_args );
 
-		return $output;
+		// Latest news.
+		$args = array(
+			'title'    => esc_html__( 'Latest News', 'best-business' ),
+			'subtitle' => esc_html__( 'What we are doing.', 'best-business' ),
+		);
+
+		$widget_args = array(
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+			'before_widget' => '<aside class="widget best_business_widget_latest_news"><div class="container">',
+			'after_widget'  => '</div></aside>',
+		);
+
+		the_widget( 'Best_Business_Latest_News_Widget', $args, $widget_args );
 	}
 
 endif;
@@ -258,7 +274,7 @@ if ( ! function_exists( 'best_business_woocommerce_status' ) ) :
 	/**
 	 * Return WooCommerce status.
 	 *
-	 * @since 1.0.5
+	 * @since 1.0.0
 	 *
 	 * @return bool Active status.
 	 */
@@ -266,6 +282,57 @@ if ( ! function_exists( 'best_business_woocommerce_status' ) ) :
 
 		return class_exists( 'WooCommerce' );
 
+	}
+
+endif;
+
+if ( ! function_exists( 'best_business_render_quick_contact' ) ) :
+
+	/**
+	 * Render quick contact.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_render_quick_contact() {
+
+		$contact_number_title  = best_business_get_option( 'contact_number_title' );
+		$contact_number        = best_business_get_option( 'contact_number' );
+		$contact_email_title   = best_business_get_option( 'contact_email_title' );
+		$contact_email         = best_business_get_option( 'contact_email' );
+		$contact_address_title = best_business_get_option( 'contact_address_title' );
+		$contact_address       = best_business_get_option( 'contact_address' );
+		?>
+		<div id="quick-contact">
+			<ul class="quick-contact-list">
+				<?php if ( ! empty( $contact_number ) ) : ?>
+					<li class="quick-call">
+						<?php if ( ! empty( $contact_number_title ) ) : ?>
+							<strong><?php echo esc_html( $contact_number_title ); ?></strong>
+						<?php endif; ?>
+						<a href="<?php echo esc_url( 'tel:' . preg_replace( '/\D+/', '', $contact_number ) ); ?>"><?php echo esc_html( $contact_number ); ?></a>
+					</li>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $contact_email ) ) : ?>
+					<li class="quick-email">
+					<?php if ( ! empty( $contact_email_title ) ) : ?>
+						<strong><?php echo esc_html( $contact_email_title ); ?></strong>
+					<?php endif; ?>
+						<a href="<?php echo esc_url( 'mailto:' . $contact_email ); ?>"><?php echo esc_html( $contact_email ); ?></a>
+					</li>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $contact_address ) ) : ?>
+					<li class="quick-address">
+						<?php if ( ! empty( $contact_address_title ) ) : ?>
+							<strong><?php echo esc_html( $contact_address_title ); ?></strong>
+						<?php endif; ?>
+							<?php echo esc_html( $contact_address ); ?>
+					</li>
+				<?php endif; ?>
+			</ul><!-- .quick-contact-list -->
+		</div><!--  .quick-contact -->
+		<?php
 	}
 
 endif;

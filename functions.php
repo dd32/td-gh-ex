@@ -8,7 +8,6 @@
  */
 
 if ( ! function_exists( 'best_business_setup' ) ) :
-
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -34,9 +33,9 @@ if ( ! function_exists( 'best_business_setup' ) ) :
 		// Register nav menus.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'best-business' ),
+			'top'     => esc_html__( 'Top Menu', 'best-business' ),
 			'footer'  => esc_html__( 'Footer Menu', 'best-business' ),
 			'social'  => esc_html__( 'Social Menu', 'best-business' ),
-			'top'	  => esc_html__( 'Top Menu', 'best-business' ),
 		) );
 
 		// Add support for HTML5 markup.
@@ -56,24 +55,35 @@ if ( ! function_exists( 'best_business_setup' ) ) :
 		// Enable support for selective refresh of widgets in Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Enable support for custom logo.
+		add_theme_support( 'custom-logo' );
+
+		// Add WooCommerce support.
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		// Enable admin editor style.
 		add_editor_style( array( best_business_fonts_url(), 'css/editor-style' . $min . '.css' ) );
 
-		// Enable support for custom logo.
-		add_theme_support( 'custom-logo', array(
-			'width'  => 95,
-			'height' => 95,
-		) );
-		
 		add_theme_support( 'custom-header', apply_filters( 'best_business_custom_header_args', array(
 			'default-image' => get_template_directory_uri() . '/images/custom-header.jpg',
 			'width'         => 1920,
-			'height'        => 500,
-			'flex-height'   => false,
+			'height'        => 490,
+			'flex-height'   => true,
 			'header-text'   => false,
 		) ) );
+
+		// Register default custom headers.
+		register_default_headers( array(
+			'business-time' => array(
+				'url'           => '%s/images/custom-header.jpg',
+				'thumbnail_url' => '%s/images/custom-header.jpg',
+				'description'   => esc_html_x( 'Business Time', 'header image description', 'best-business' ),
+			),
+		) );
+
 	}
 endif;
 
@@ -118,7 +128,7 @@ function best_business_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Front Page Widget Area', 'best-business' ),
 		'id'            => 'sidebar-front-page-widget-area',
-		'description'   => esc_html__( 'Add widgets here to appear in your Front Page.', 'best-business' ),
+		'description'   => esc_html__( 'Add widgets here to appear in your Static Front Page.', 'best-business' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="container">',
 		'after_widget'  => '</div></aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -157,7 +167,6 @@ function best_business_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-
 add_action( 'widgets_init', 'best_business_widgets_init' );
 
 /**
@@ -170,14 +179,13 @@ function best_business_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendors/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
 
 	$fonts_url = best_business_fonts_url();
-
 	if ( ! empty( $fonts_url ) ) {
 		wp_enqueue_style( 'best-business-google-fonts', $fonts_url, array(), null );
 	}
 
 	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/vendors/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 
-	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.0' );
+	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.1' );
 
 	wp_enqueue_script( 'best-business-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 
@@ -193,27 +201,6 @@ function best_business_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'best_business_scripts' );
-
-/**
- * Enqueue admin scripts and styles.
- *
- * @since 1.0.0
- *
- * @param string $hook Hook name.
- */
-function best_business_admin_scripts( $hook ) {
-
-	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-	if ( 'widgets.php' === $hook ) {
-	    wp_enqueue_media();
-		wp_enqueue_style( 'best-business-widgets', get_template_directory_uri() . '/css/widgets' . $min . '.css', array(), '1.0.0' );
-		wp_enqueue_script( 'best-business-widgets', get_template_directory_uri() . '/js/widgets' . $min . '.js', array( 'jquery' ), '1.0.0', true );
-	}
-
-}
-
-add_action( 'admin_enqueue_scripts', 'best_business_admin_scripts' );
 
 // Load starting file.
 require_once trailingslashit( get_template_directory() ) . 'includes/start.php';

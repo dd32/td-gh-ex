@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary Sidebar.
+ * The Primary Sidebar.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

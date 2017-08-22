@@ -1,13 +1,21 @@
-
 /*===========================================================
 # Typography
 ===========================================================*/
 
+button,
+input,
+select,
+textarea {
+    color: #737272;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 body {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.7;
-    color: #666666;
-    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-family: 'Roboto', sans-serif;
 }
 h1,
 h2,
@@ -19,20 +27,21 @@ p {
     margin: 0 0 15px 0;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #4e5052;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+    color: #222;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
 }
 h1 {
     font-size: 30px;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 26px;
 }
 
 h3{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 h4 {
@@ -46,9 +55,7 @@ h5 {
 h6 {
     font-size: 14px;
 }
-p {
-    color:#666;
-}
+
 dfn,
 cite,
 em,
@@ -100,26 +107,15 @@ ins {
 big {
     font-size: 125%;
 }
-
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+blockquote, q {
+    quotes: "" "";
+    padding-left: 15px;
+    border-left: 5px solid #038fd6;
+    display: block;
+    margin-bottom: 15px;
 }
 
-legend {
-    border: 0;
-    padding: 0;
-}
 
-textarea {
-    overflow: auto;
-}
-
-optgroup {
-    font-weight: bold;
-}
 
 blockquote::before,
 blockquote::after,
@@ -174,8 +170,6 @@ img {
     height: auto; /* Make sure images are scaled correctly. */
     max-width: 100%; /* Adhere to container width. */
 }
-
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -198,7 +192,6 @@ blockquote, q {
     display: block;
     margin-bottom: 15px;
 }
-
 /*===========================================================
 **************************** Links *************************
 ===========================================================*/
@@ -215,7 +208,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    color: #179bd7;
+    color: #038fd6;
 }
 
 a:focus {
@@ -226,3 +219,4 @@ a:hover,
 a:active {
     outline: 0;
 }
+

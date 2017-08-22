@@ -5,6 +5,9 @@
  * @package Best_Business
  */
 
+// Load widget helper.
+require_once get_template_directory() . '/vendors/widget-helper/widget-helper.php';
+
 if ( ! function_exists( 'best_business_register_widgets' ) ) :
 
 	/**
@@ -20,8 +23,14 @@ if ( ! function_exists( 'best_business_register_widgets' ) ) :
 		// Featured Page widget.
 		register_widget( 'Best_Business_Featured_Page_Widget' );
 
+		// Pages Blocks widget.
+		register_widget( 'Best_Business_Pages_Blocks_Widget' );
+
 		// Call To Action widget.
 		register_widget( 'Best_Business_Call_To_Action_Widget' );
+
+		// Advanced Recent Posts widget.
+		register_widget( 'Best_Business_Advanced_Recent_Posts_Widget' );
 
 		// Latest News widget.
 		register_widget( 'Best_Business_Latest_News_Widget' );
@@ -37,11 +46,11 @@ add_action( 'widgets_init', 'best_business_register_widgets' );
 if ( ! class_exists( 'Best_Business_Social_Widget' ) ) :
 
 	/**
-	 * Social widget Class.
+	 * Social widget class.
 	 *
 	 * @since 1.0.0
 	 */
-	class Best_Business_Social_Widget extends WP_Widget {
+	class Best_Business_Social_Widget extends Best_Business_Widget_Helper {
 
 		/**
 		 * Constructor.
@@ -49,12 +58,24 @@ if ( ! class_exists( 'Best_Business_Social_Widget' ) ) :
 		 * @since 1.0.0
 		 */
 		function __construct() {
-			$opts = array(
+			$args['id']    = 'best-business-social';
+			$args['label'] = esc_html__( 'BB: Social', 'best-business' );
+
+			$args['widget'] = array(
 				'classname'                   => 'best_business_widget_social',
 				'description'                 => esc_html__( 'Social Icons Widget', 'best-business' ),
 				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
 				);
-			parent::__construct( 'best-business-social', esc_html__( 'BB: Social', 'best-business' ), $opts );
+
+			parent::create_widget( $args );
 		}
 
 		/**
@@ -68,13 +89,14 @@ if ( ! class_exists( 'Best_Business_Social_Widget' ) ) :
 		 */
 		function widget( $args, $instance ) {
 
-			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 			echo $args['before_widget'];
 
 			// Render widget title.
-			if ( ! empty( $title ) ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
 			}
 
 			if ( has_nav_menu( 'social' ) ) {
@@ -84,53 +106,13 @@ if ( ! class_exists( 'Best_Business_Social_Widget' ) ) :
 					'depth'          => 1,
 					'link_before'    => '<span class="screen-reader-text">',
 					'link_after'     => '</span>',
-					) );
+				) );
 			}
 
 			echo $args['after_widget'];
 
 		}
 
-		/**
-		 * Update widget instance.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $new_instance New settings for this instance as input by the user.
-		 * @param array $old_instance Old settings for this instance.
-		 * @return array Settings to save or bool false to cancel saving.
-		 */
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
-
-			return $instance;
-		}
-
-		/**
-		 * Output the settings update form.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $instance Current settings.
-		 */
-		function form( $instance ) {
-
-			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title' => '',
-				) );
-			?>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-			</p>
-			<?php if ( true !== has_nav_menu( 'social' ) ) : ?>
-				<p><?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'best-business' ); ?></p>
-			<?php endif; ?>
-			<?php
-		}
 	}
 
 endif;
@@ -142,7 +124,7 @@ if ( ! class_exists( 'Best_Business_Featured_Page_Widget' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	class Best_Business_Featured_Page_Widget extends WP_Widget {
+	class Best_Business_Featured_Page_Widget extends Best_Business_Widget_Helper {
 
 		/**
 		 * Constructor.
@@ -150,12 +132,59 @@ if ( ! class_exists( 'Best_Business_Featured_Page_Widget' ) ) :
 		 * @since 1.0.0
 		 */
 		function __construct() {
-			$opts = array(
+			$args['id']    = 'best-business-featured-page';
+			$args['label'] = esc_html__( 'BB: Featured Page', 'best-business' );
+
+			$args['widget'] = array(
 				'classname'                   => 'best_business_widget_featured_page',
 				'description'                 => esc_html__( 'Displays single featured Page', 'best-business' ),
 				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'featured_page' => array(
+					'label'            => esc_html__( 'Select Page:', 'best-business' ),
+					'type'             => 'dropdown-pages',
+					'show_option_none' => esc_html__( '&mdash; Select &mdash;', 'best-business' ),
+					),
+				'content_type' => array(
+					'label'   => esc_html__( 'Show Content:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'full',
+					'choices' => array(
+						'short' => esc_html__( 'Short', 'best-business' ),
+						'full'  => esc_html__( 'Full', 'best-business' ),
+						),
+					),
+				'excerpt_length' => array(
+					'label'       => esc_html__( 'Excerpt Length:', 'best-business' ),
+					'description' => esc_html__( 'Applies when Short is selected in Show Content.', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 40,
+					'min'         => 1,
+					'max'         => 100,
+					'style'       => 'max-width:60px;',
+					),
+				'featured_image' => array(
+					'label'   => esc_html__( 'Select Image:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'medium',
+					'choices' => best_business_get_image_sizes_options(),
+					),
+				'featured_image_alignment' => array(
+					'label'   => esc_html__( 'Select Image Alignment:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'left',
+					'choices' => best_business_get_image_alignment_options(),
+					),
 				);
-			parent::__construct( 'best-business-featured-page', esc_html__( 'BB: Featured Page', 'best-business' ), $opts );
+
+			parent::create_widget( $args );
 		}
 
 		/**
@@ -169,22 +198,17 @@ if ( ! class_exists( 'Best_Business_Featured_Page_Widget' ) ) :
 		 */
 		function widget( $args, $instance ) {
 
-			$title                    = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-			$featured_page            = ! empty( $instance['featured_page'] ) ? $instance['featured_page'] : 0;
-			$content_type             = ! empty( $instance['content_type'] ) ? $instance['content_type'] : 'full';
-			$excerpt_length           = ! empty( $instance['excerpt_length'] ) ? $instance['excerpt_length'] : 80;
-			$featured_image           = ! empty( $instance['featured_image'] ) ? $instance['featured_image'] : 'medium';
-			$featured_image_alignment = ! empty( $instance['featured_image_alignment'] ) ? $instance['featured_image_alignment'] : 'left';
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 			echo $args['before_widget'];
 
-			if ( absint( $featured_page ) > 0 ) {
+			if ( absint( $values['featured_page'] ) > 0 ) {
 
 				$qargs = array(
-					'p'                   => absint( $featured_page ),
-					'post_type'           => 'page',
-					'no_found_rows'       => true,
-					'ignore_sticky_posts' => true,
+					'p'             => absint( $values['featured_page'] ),
+					'post_type'     => 'page',
+					'no_found_rows' => true,
 					);
 
 				$the_query = new WP_Query( $qargs );
@@ -195,22 +219,22 @@ if ( ! class_exists( 'Best_Business_Featured_Page_Widget' ) ) :
 						$the_query->the_post();
 
 						// Display featured image.
-						if ( 'disable' !== $featured_image && has_post_thumbnail() ) {
-							the_post_thumbnail( esc_attr( $featured_image ), array( 'class' => 'align' . esc_attr( $featured_image_alignment ) ) );
+						if ( 'disable' !== $values['featured_image'] && has_post_thumbnail() ) {
+							the_post_thumbnail( esc_attr( $values['featured_image'] ), array( 'class' => 'align' . esc_attr( $values['featured_image_alignment'] ) ) );
 						}
 
 						echo '<div class="featured-page-widget">';
 
 						// Render widget title.
-						if ( ! empty( $title ) ) {
-							echo $args['before_title'] . $title . $args['after_title'];
+						if ( ! empty( $values['title'] ) ) {
+							echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
 						}
 
-						if ( 'short' === $content_type ) {
-							if ( absint( $excerpt_length ) > 0 ) {
-								$excerpt = best_business_get_the_excerpt( absint( $excerpt_length ) );
+						if ( 'short' === $values['content_type'] ) {
+							if ( absint( $values['excerpt_length'] ) > 0 ) {
+								$excerpt = best_business_get_the_excerpt( absint( $values['excerpt_length'] ) );
 								echo wp_kses_post( wpautop( $excerpt ) );
-								echo '<a href="' . esc_url( get_permalink() ) . '" class="read-more">' . esc_html__( 'Read more', 'best-business' ) . '</a>';
+								echo '<a href="' . esc_url( get_permalink() ) . '" class="custom-button">' . esc_html__( 'Read more', 'best-business' ) . '</a>';
 							}
 						} else {
 							the_content();
@@ -230,548 +254,18 @@ if ( ! class_exists( 'Best_Business_Featured_Page_Widget' ) ) :
 
 		}
 
-		/**
-		 * Update widget instance.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $new_instance New settings for this instance as input by the user.
-		 * @param array $old_instance Old settings for this instance.
-		 * @return array Settings to save or bool false to cancel saving.
-		 */
-		function update( $new_instance, $old_instance ) {
-
-			$instance = $old_instance;
-
-			$instance['title']                    = sanitize_text_field( $new_instance['title'] );
-			$instance['featured_page']            = absint( $new_instance['featured_page'] );
-			$instance['content_type']             = sanitize_key( $new_instance['content_type'] );
-			$instance['excerpt_length']           = absint( $new_instance['excerpt_length'] );
-			$instance['featured_image']           = sanitize_text_field( $new_instance['featured_image'] );
-			$instance['featured_image_alignment'] = sanitize_key( $new_instance['featured_image_alignment'] );
-
-			return $instance;
-		}
-
-		/**
-		 * Output the settings update form.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $instance Current settings.
-		 */
-		function form( $instance ) {
-
-			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title'                    => '',
-				'featured_page'            => '',
-				'content_type'             => 'full',
-				'excerpt_length'           => 80,
-				'featured_image'           => 'medium',
-				'featured_image_alignment' => 'left',
-			) );
-			?>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'featured_page' ) ); ?>"><?php esc_html_e( 'Select Page:', 'best-business' ); ?></label>
-				<?php
-				wp_dropdown_pages( array(
-					'id'               => $this->get_field_id( 'featured_page' ),
-					'name'             => $this->get_field_name( 'featured_page' ),
-					'selected'         => $instance['featured_page'],
-					'show_option_none' => esc_html__( '&mdash; Select &mdash;', 'best-business' ),
-					)
-				);
-				?>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'content_type' ) ); ?>"><?php esc_html_e( 'Show Content:', 'best-business' ); ?></label>
-				<select id="<?php echo esc_attr( $this->get_field_id( 'content_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content_type' ) ); ?>">
-					<option value="short"<?php selected( $instance['content_type'], 'short' ) ?>><?php esc_html_e( 'Short', 'best-business' ) ?></option>
-					<option value="full"<?php selected( $instance['content_type'], 'full' ) ?>><?php esc_html_e( 'Full', 'best-business' ) ?></option>
-				</select>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>"><?php esc_html_e( 'Excerpt Length:', 'best-business' ); ?></label>
-				<input id="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'excerpt_length' ) ); ?>" type="number" value="<?php echo esc_attr( $instance['excerpt_length'] ); ?>" min="1" max="200" />&nbsp;<small><?php esc_html_e( 'in words', 'best-business' ); ?></small>
-				<br/><span><small><?php esc_html_e( 'Applies when Short is selected in Show Content.', 'best-business') ?></small></span>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'featured_image' ) ); ?>"><?php esc_html_e( 'Featured Image:', 'best-business' ); ?></label>
-				<?php
-				$dropdown_args = array(
-					'id'       => $this->get_field_id( 'featured_image' ),
-					'name'     => $this->get_field_name( 'featured_image' ),
-					'selected' => $instance['featured_image'],
-					);
-				best_business_render_select_dropdown( $dropdown_args, 'best_business_get_image_sizes_options' );
-				?>
-			</p>
-			<p>
-				<label for="<?php echo $this->get_field_id( 'featured_image_alignment' ); ?>"><?php esc_html_e( 'Image Alignment:', 'best-business' ); ?></label>
-				<?php
-				$dropdown_args = array(
-					'id'       => $this->get_field_id( 'featured_image_alignment' ),
-					'name'     => $this->get_field_name( 'featured_image_alignment' ),
-					'selected' => $instance['featured_image_alignment'],
-					);
-				best_business_render_select_dropdown( $dropdown_args, 'best_business_get_image_alignment_options' );
-				?>
-			</p>
-			<?php
-		}
 	}
 
 endif;
 
-if ( ! class_exists( 'Best_Business_Call_To_Action_Widget' ) ) :
+if ( ! class_exists( 'Best_Business_Pages_Blocks_Widget' ) ) :
 
 	/**
-	 * Call To Action widget Class.
+	 * Pages Blocks widget class.
 	 *
 	 * @since 1.0.0
 	 */
-	class Best_Business_Call_To_Action_Widget extends WP_Widget {
-
-		/**
-		 * Constructor.
-		 *
-		 * @since 1.0.0
-		 */
-		function __construct() {
-			$opts = array(
-				'classname'                   => 'best_business_widget_call_to_action',
-				'description'                 => esc_html__( 'Call To Action Widget', 'best-business' ),
-				'customize_selective_refresh' => true,
-				);
-			parent::__construct( 'best-business-call-to-action', esc_html__( 'BB: Call To Action', 'best-business' ), $opts );
-		}
-
-		/**
-		 * Echo the widget content.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $args     Display arguments including before_title, after_title,
-		 *                        before_widget, and after_widget.
-		 * @param array $instance The settings for the particular instance of the widget.
-		 */
-		function widget( $args, $instance ) {
-
-			$title                 = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-			$text                  = ! empty( $instance['text'] ) ? $instance['text'] : '';
-			$primary_button_text   = ! empty( $instance['primary_button_text'] ) ? esc_html( $instance['primary_button_text'] ) : '';
-			$primary_button_url    = ! empty( $instance['primary_button_url'] ) ? esc_url( $instance['primary_button_url'] ) : '';
-			$secondary_button_text = ! empty( $instance['secondary_button_text'] ) ? esc_html( $instance['secondary_button_text'] ) : '';
-			$secondary_button_url  = ! empty( $instance['secondary_button_url'] ) ? esc_url( $instance['secondary_button_url'] ) : '';
-			$layout                = ! empty( $instance['layout'] ) ? absint( $instance['layout'] ) : 1;
-			$background_image      = ! empty( $instance['background_image'] ) ? esc_url( $instance['background_image'] ) : '';
-
-			// Add background image for layout 2.
-			if ( 2 === absint( $layout ) && ! empty( $background_image ) ) {
-				$background_style = '';
-				$background_style .= ' style="background-image:url(' . esc_url( $background_image ) . ');" ';
-				$args['before_widget'] = implode( $background_style . ' class="', explode( 'class="', $args['before_widget'], 2 ) );
-			}
-
-			// Add layout class.
-			$layout_class = 'cta-layout-' . absint( $layout );
-			$args['before_widget'] = implode( 'class="' . $layout_class . ' ', explode( 'class="', $args['before_widget'], 2 ) );
-
-			echo $args['before_widget'];
-			echo '<div class="cta-content">';
-			// Render widget title.
-			if ( ! empty( $title ) ) {
-				echo $args['before_title'] . $title . $args['after_title'];
-			}
-			?>
-
-			<?php echo wp_kses_post( wpautop( $text ) ); ?>
-			<?php echo '</div>'; ?>
-			<?php if ( ( ! empty( $primary_button_text ) && ! empty( $primary_button_url ) ) || ( ! empty( $secondary_button_text ) && ! empty( $secondary_button_url ) ) ) : ?>
-				<div class="call-to-action-buttons">
-					<?php if ( ! empty( $primary_button_url ) && ! empty( $primary_button_text ) ) : ?>
-						<a href="<?php echo esc_url( $primary_button_url ); ?>" class="button custom-button button-primary"><?php echo esc_attr( $primary_button_text ); ?></a>
-					<?php endif; ?>
-					<?php if ( ! empty( $secondary_button_url ) && ! empty( $secondary_button_text ) ) : ?>
-						<a href="<?php echo esc_url( $secondary_button_url ); ?>" class="button custom-button button-secondary"><?php echo esc_attr( $secondary_button_text ); ?></a>
-					<?php endif; ?>
-				</div><!-- .call-to-action-buttons -->
-			<?php endif; ?>
-			<?php
-			echo $args['after_widget'];
-
-		}
-
-		/**
-		 * Update widget instance.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $new_instance New settings for this instance as input by the user via
-		 *                            {@see WP_Widget::form()}.
-		 * @param array $old_instance Old settings for this instance.
-		 * @return array Settings to save or bool false to cancel saving.
-		 */
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-
-			$instance['title']                 = sanitize_text_field( $new_instance['title'] );
-			$instance['text']                  = sanitize_text_field( $new_instance['text'] );
-			$instance['primary_button_text']   = sanitize_text_field( $new_instance['primary_button_text'] );
-			$instance['primary_button_url']    = esc_url_raw( $new_instance['primary_button_url'] );
-			$instance['secondary_button_text'] = sanitize_text_field( $new_instance['secondary_button_text'] );
-			$instance['secondary_button_url']  = esc_url_raw( $new_instance['secondary_button_url'] );
-			$instance['layout']                = absint( $new_instance['layout'] );
-			$instance['background_image']      = esc_url_raw( $new_instance['background_image'] );
-
-			return $instance;
-		}
-
-		/**
-		 * Output the settings update form.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $instance Current settings.
-		 */
-		function form( $instance ) {
-
-			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title'                 => '',
-				'text'                  => '',
-				'primary_button_text'   => esc_html__( 'Read more', 'best-business' ),
-				'primary_button_url'    => home_url( '/' ),
-				'secondary_button_text' => esc_html__( 'Learn more', 'best-business' ),
-				'secondary_button_url'  => home_url( '/' ),
-				'layout'                => '',
-				'background_image'      => '',
-			) );
-			?>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Text:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['text'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'primary_button_text' ) ); ?>"><?php esc_html_e( 'Primary Button Text:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'primary_button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'primary_button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['primary_button_text'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'primary_button_url' ) ); ?>"><?php esc_html_e( 'Primary Button URL:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'primary_button_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'primary_button_url' ) ); ?>" type="text" value="<?php echo esc_url( $instance['primary_button_url'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'secondary_button_text' ) ); ?>"><?php esc_html_e( 'Secondary Button Text:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'secondary_button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'secondary_button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['secondary_button_text'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'secondary_button_url' ) ); ?>"><?php esc_html_e( 'Secondary Button URL:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'secondary_button_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'secondary_button_url' ) ); ?>" type="text" value="<?php echo esc_url( $instance['secondary_button_url'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"><?php esc_html_e( 'Select Layout:', 'best-business' ); ?></label>
-				<?php
-				$dropdown_args = array(
-					'id'       => $this->get_field_id( 'layout' ),
-					'name'     => $this->get_field_name( 'layout' ),
-					'selected' => $instance['layout'],
-				);
-				best_business_render_select_dropdown( $dropdown_args, 'best_business_get_numbers_dropdown_options', array( 'min' => 1, 'max' => 2, 'prefix' => esc_html__( 'Layout', 'best-business' ) . ' ' ) );
-				?>
-			</p>
-			<div>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>"><?php esc_html_e( 'Background Image:', 'best-business' ); ?></label>
-				<?php
-				$background_image = $instance['background_image'];
-				$image_status = false;
-
-				if ( ! empty( $background_image ) ) {
-					$image_status = true;
-				}
-
-				$remove_button_style = 'display:none;';
-
-				if ( true === $image_status ) {
-					$remove_button_style = 'display:inline-block;';
-				}
-				?>
-				<input type="hidden" class="img widefat" name="<?php echo esc_attr( $this->get_field_name( 'background_image' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>" value="<?php echo esc_url( $background_image ); ?>" />
-				<input type="button" class="select-img button button-primary" value="<?php esc_html_e( 'Upload', 'best-business' ); ?>" data-uploader_title="<?php esc_attr_e( 'Select Image', 'best-business' ); ?>" data-uploader_button_text="<?php esc_attr_e( 'Choose Image', 'best-business' ); ?>" />
-				<input type="button" value="<?php echo esc_attr_x( 'X', 'remove button', 'best-business' ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $remove_button_style ); ?>" />
-				<div class="image-preview-wrap">
-					<?php if ( ! empty( $background_image ) ) : ?>
-						<img src="<?php echo esc_url( $background_image ); ?>" alt="" />
-					<?php endif; ?>
-				</div><!-- .image-preview-wrap -->
-				<br /><small><?php esc_html_e( 'Background Image applies to Layout 2 only.', 'best-business' ); ?></small>
-			</div>
-			<?php
-		}
-	}
-
-endif;
-
-if ( ! class_exists( 'Best_Business_Latest_News_Widget' ) ) :
-
-	/**
-	 * Latest news widget class.
-	 *
-	 * @since 1.0.0
-	 */
-	class Best_Business_Latest_News_Widget extends WP_Widget {
-
-		/**
-		 * Constructor.
-		 *
-		 * @since 1.0.0
-		 */
-		function __construct() {
-			$opts = array(
-				'classname'                   => 'best_business_widget_latest_news',
-				'description'                 => esc_html__( 'Latest News Widget. Displays latest posts in grid.', 'best-business' ),
-				'customize_selective_refresh' => true,
-				);
-
-			parent::__construct( 'best-business-latest-news', esc_html__( 'BB: Latest News', 'best-business' ), $opts );
-		}
-
-		/**
-		 * Echo the widget content.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $args     Display arguments including before_title, after_title,
-		 *                        before_widget, and after_widget.
-		 * @param array $instance The settings for the particular instance of the widget.
-		 */
-		function widget( $args, $instance ) {
-
-			$title          = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-			$subtitle       = ! empty( $instance['subtitle'] ) ? $instance['subtitle'] : '';
-			$post_category  = ! empty( $instance['post_category'] ) ? $instance['post_category'] : 0;
-			$post_column    = ! empty( $instance['post_column'] ) ? $instance['post_column'] : 4;
-			$featured_image = ! empty( $instance['featured_image'] ) ? $instance['featured_image'] : 'best-business-thumb';
-			$post_number    = ! empty( $instance['post_number'] ) ? $instance['post_number'] : 4;
-			$excerpt_length = ! empty( $instance['excerpt_length'] ) ? $instance['excerpt_length'] : 0;
-			$more_text      = ! empty( $instance['more_text'] ) ? $instance['more_text'] : '';
-
-			echo $args['before_widget'];
-
-			// Display widget title.
-			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
-			}
-
-			// Display widget subtitle.
-			if ( $subtitle ) {
-				echo '<h3 class="subtitle">' . esc_html( $subtitle ) . '</h3>';
-			}
-
-			$qargs = array(
-				'posts_per_page'      => esc_attr( $post_number ),
-				'no_found_rows'       => true,
-				'ignore_sticky_posts' => true,
-			);
-
-			if ( absint( $post_category ) > 0 ) {
-				$qargs['cat'] = absint( $post_category );
-			}
-
-			$the_query = new WP_Query( $qargs );
-			?>
-			<?php if ( $the_query->have_posts() ) : ?>
-
-				<div class="latest-news-widget latest-news-col-<?php echo esc_attr( $post_column ); ?>">
-
-					<div class="inner-wrapper">
-
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-							<div class="latest-news-item">
-								<div class="latest-news-wrapper">
-									<?php if ( 'disable' !== $featured_image && has_post_thumbnail() ) : ?>
-										<div class="latest-news-thumb">
-											<a href="<?php the_permalink(); ?>">
-												<?php
-												$img_attributes = array( 'class' => 'aligncenter' );
-												the_post_thumbnail( esc_attr( $featured_image ), $img_attributes );
-												?>
-											</a>
-										</div><!-- .latest-news-thumb -->
-
-
-									<?php endif; ?>
-									<div class="latest-news-text-wrap">
-										<div class="latest-news-meta">
-											<span class="posted-on"><?php the_time( get_option( 'date_format' ) ); ?></span>
-											<?php
-											if ( comments_open( get_the_ID() ) ) {
-												echo '<span class="comments-link">';
-												comments_popup_link( '<span class="leave-reply">' . esc_html__( '0 Comment', 'best-business' ) . '</span>', esc_html__( '1 Comment', 'best-business' ), esc_html__( '% Comments', 'best-business' ) );
-												echo '</span>';
-											}
-											?>
-										</div><!-- .latest-news-meta -->
-										<h3 class="latest-news-title">
-											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										</h3>
-
-										<?php if ( absint( $excerpt_length ) > 0 ) : ?>
-											<div class="latest-news-summary">
-												<?php
-												$excerpt = best_business_get_the_excerpt( absint( $excerpt_length ) );
-												echo wp_kses_post( wpautop( $excerpt ) );
-												?>
-											</div><!-- .latest-news-summary -->
-										<?php endif; ?>
-										<?php if ( ! empty( $more_text ) ) : ?>
-											<div class="latest-news-read-more">
-												<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html( $more_text ); ?></a>
-											</div>
-										<?php endif; ?>
-									</div><!-- .latest-news-text-wrap -->
-								</div><!-- .latest-news-wrapper -->
-							</div><!-- .latest-news-item -->
-
-						<?php endwhile; ?>
-
-					</div><!-- .inner-wrapper -->
-				</div><!-- .latest-news-widget -->
-
-				<?php wp_reset_postdata(); ?>
-
-			<?php endif; ?>
-			<?php
-			echo $args['after_widget'];
-
-		}
-
-		/**
-		 * Update widget instance.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $new_instance New settings for this instance as input by the user.
-		 * @param array $old_instance Old settings for this instance.
-		 * @return array Settings to save or bool false to cancel saving.
-		 */
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-
-			$instance['title']          = sanitize_text_field( $new_instance['title'] );
-			$instance['subtitle']       = sanitize_text_field( $new_instance['subtitle'] );
-			$instance['post_category']  = absint( $new_instance['post_category'] );
-			$instance['post_number']    = absint( $new_instance['post_number'] );
-			$instance['post_column']    = absint( $new_instance['post_column'] );
-			$instance['excerpt_length'] = absint( $new_instance['excerpt_length'] );
-			$instance['featured_image'] = sanitize_text_field( $new_instance['featured_image'] );
-			$instance['more_text']      = sanitize_text_field( $new_instance['more_text'] );
-
-			return $instance;
-		}
-
-		/**
-		 * Output the settings update form.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $instance Current settings.
-		 */
-		function form( $instance ) {
-
-			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title'          => '',
-				'subtitle'       => '',
-				'post_category'  => '',
-				'post_column'    => 4,
-				'featured_image' => 'best-business-thumb',
-				'post_number'    => 4,
-				'excerpt_length' => 40,
-				'more_text'      => esc_html__( 'Read more', 'best-business' ),
-			) );
-			?>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'subtitle' ) ); ?>"><?php esc_html_e( 'Subtitle:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'subtitle' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'subtitle' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['subtitle'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo  esc_attr( $this->get_field_id( 'post_category' ) ); ?>"><?php esc_html_e( 'Select Category:', 'best-business' ); ?></label>
-				<?php
-				$cat_args = array(
-					'orderby'         => 'name',
-					'hide_empty'      => true,
-					'taxonomy'        => 'category',
-					'name'            => $this->get_field_name( 'post_category' ),
-					'id'              => $this->get_field_id( 'post_category' ),
-					'selected'        => $instance['post_category'],
-					'show_option_all' => esc_html__( 'All Categories','best-business' ),
-				);
-				wp_dropdown_categories( $cat_args );
-				?>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>"><?php esc_html_e( 'Number of Posts:', 'best-business' ); ?></label>
-				<input id="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_number' ) ); ?>" type="number" value="<?php echo esc_attr( $instance['post_number'] ); ?>" min="1" max="20" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'post_column' ) ); ?>"><?php esc_html_e( 'Number of Columns:', 'best-business' ); ?></label>
-				<?php
-				$dropdown_args = array(
-					'id'       => $this->get_field_id( 'post_column' ),
-					'name'     => $this->get_field_name( 'post_column' ),
-					'selected' => $instance['post_column'],
-				);
-				best_business_render_select_dropdown( $dropdown_args, 'best_business_get_numbers_dropdown_options', array( 'min' => 3, 'max' => 4 ) );
-				?>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'featured_image' ) ); ?>"><?php esc_html_e( 'Select Image Size:', 'best-business' ); ?></label>
-				<?php
-				$dropdown_args = array(
-					'id'       => $this->get_field_id( 'featured_image' ),
-					'name'     => $this->get_field_name( 'featured_image' ),
-					'selected' => $instance['featured_image'],
-				);
-				best_business_render_select_dropdown( $dropdown_args, 'best_business_get_image_sizes_options', array( 'add_disable' => false ) );
-				?>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>"><?php esc_html_e( 'Excerpt Length:', 'best-business' ); ?></label>
-				<input id="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'excerpt_length' ) ); ?>" type="number" value="<?php echo esc_attr( $instance['excerpt_length'] ); ?>" min="0" max="200" />&nbsp;<small><?php esc_html_e( 'in words', 'best-business' ); ?></small>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'more_text' ) ); ?>"><?php esc_html_e( 'Read More Text:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'more_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'more_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['more_text'] ); ?>" />
-			</p>
-			<?php
-		}
-
-	}
-
-endif;
-
-if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
-
-	/**
-	 * Services widget class.
-	 *
-	 * @since 1.0.0
-	 */
-	class Best_Business_Services_Widget extends WP_Widget {
+	class Best_Business_Pages_Blocks_Widget extends Best_Business_Widget_Helper {
 
 		/**
 		 * Block count.
@@ -788,14 +282,66 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 		 * @since 1.0.0
 		 */
 		function __construct() {
+			$this->block_count = 3;
 
-			$this->block_count = 4;
-			$opts = array(
-				'classname'                   => 'best_business_widget_services',
-				'description'                 => esc_html__( 'Show your services pages with icon and read more link.', 'best-business' ),
+			$args['id']    = 'best-business-pages-blocks';
+			$args['label'] = esc_html__( 'BB: Pages Blocks', 'best-business' );
+
+			$args['widget'] = array(
+				'classname'                   => 'best_business_widget_pages_blocks',
+				'description'                 => esc_html__( 'Displays pages blocks.', 'best-business' ),
 				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'subtitle' => array(
+					'label' => esc_html__( 'Subtitle:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'featured_image' => array(
+					'label'   => esc_html__( 'Featured Image:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'medium',
+					'choices' => best_business_get_image_sizes_options(),
+					),
+				'excerpt_length' => array(
+					'label'       => esc_html__( 'Excerpt Length:', 'best-business' ),
+					'description' => esc_html__( 'Number of words. Enter 0 to disable.', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 10,
+					'min'         => 0,
+					'max'         => 500,
+					'style'       => 'max-width:60px;',
+					),
+				'more_text' => array(
+					'label'   => esc_html__( 'Read More Text:', 'best-business' ),
+					'class'   => 'widefat',
+					'type'    => 'text',
+					'default' => esc_html__( 'Read more', 'best-business' ),
+					),
+				'pages_blocks_separator' => array(
+					'label' => '',
+					'type'  => 'separator',
+					),
 				);
-			parent::__construct( 'best-business-services', esc_html__( 'BB: Services', 'best-business' ), $opts );
+
+			for ( $i = 1; $i <= $this->block_count ; $i++ ) {
+				$block_fields[ 'block_page_' . $i ] = array(
+						'label'            => sprintf( esc_html__( 'Page - %d:', 'best-business' ), $i ),
+						'type'             => 'dropdown-pages',
+						'show_option_none' => esc_html__( '&mdash; Select &mdash;', 'best-business' ),
+					);
+
+				$args['fields'] = array_merge( $args['fields'], $block_fields );
+			}
+
+			parent::create_widget( $args );
 		}
 
 		/**
@@ -809,10 +355,727 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 		 */
 		function widget( $args, $instance ) {
 
-			$title          = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-			$subtitle       = ! empty( $instance['subtitle'] ) ? $instance['subtitle'] : '';
-			$excerpt_length = ! empty( $instance['excerpt_length'] ) ? $instance['excerpt_length'] : 0;
-			$more_text      = ! empty( $instance['more_text'] ) ? $instance['more_text'] : '';
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+			echo $args['before_widget'];
+
+			// Render widget title.
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
+			}
+
+			// Render widget subtitle.
+			if ( ! empty( $values['subtitle'] ) ) {
+				echo '<h3 class="subtitle">' . esc_html( $values['subtitle'] ) . '</h3>';
+			}
+
+			$pages_array = array();
+			for ( $i = 1; $i <= $this->block_count; $i++ ) {
+				$page = 0;
+
+				if ( ! empty( $values[ 'block_page_' . $i ] ) && absint( $values[ 'block_page_' . $i ] ) > 0 ) {
+					$page = absint( $values[ 'block_page_' . $i ] );
+				}
+
+				if ( $page > 0 ) {
+					$pages_array[] = absint( $values[ 'block_page_' . $i ] );
+				}
+
+				if ( ! empty( $pages_array ) ) {
+					$pages_array = array_unique( $pages_array );
+				}
+			}
+
+			// Render content.
+			if ( ! empty( $pages_array ) ) {
+				$extra_args = array(
+					'featured_image' => $values['featured_image'],
+					'excerpt_length' => $values['excerpt_length'],
+					'more_text'      => $values['more_text'],
+				);
+				$this->render_widget_content( $pages_array, $extra_args );
+			}
+
+			echo $args['after_widget'];
+
+		}
+
+		/**
+		 * Render content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $pages Pages.
+		 * @param array $args  Arguments.
+		 */
+		function render_widget_content( $pages, $args ) {
+
+			$qargs = array(
+				'no_found_rows'  => true,
+				'orderby'        => 'post__in',
+				'post__in'       => $pages,
+				'post_type'      => 'page',
+				'posts_per_page' => count( $pages ),
+			);
+
+			$the_query = new WP_Query( $qargs );
+			?>
+
+			<?php if ( $the_query->have_posts() ) : ?>
+
+				<div class="pages-blocks pages-blocks-layout-1 pages-blocks-column-3">
+					<div class="inner-wrapper">
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<div class="block-item">
+								<div class="block-item-inner">
+									<?php if ( 'disable' !== $args['featured_image'] && has_post_thumbnail() ) : ?>
+										<div class="block-item-thumb">
+											<a href="<?php the_permalink(); ?>">
+												<?php
+												$img_attributes = array( 'class' => 'aligncenter' );
+												the_post_thumbnail( esc_attr( $args['featured_image'] ), $img_attributes );
+												?>
+											</a>
+										</div><!-- .block-item-thumb -->
+									<?php endif; ?>
+									<div class="block-content-wrap">
+										<h3 class="block-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+										<?php if ( absint( $args['excerpt_length'] ) > 0 ) : ?>
+											<div class="block-content-summary">
+												<?php
+												$excerpt = best_business_get_the_excerpt( absint( $args['excerpt_length'] ) );
+												echo wp_kses_post( wpautop( $excerpt ) );
+												?>
+											</div><!-- .block-content-summary -->
+										<?php endif; ?>
+
+										<?php if ( ! empty( $args['more_text'] ) ) : ?>
+											<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html( $args['more_text'] ); ?></a>
+										<?php endif; ?>
+
+									</div><!-- .block-content-wrap -->
+
+								</div><!-- .block-item-inner -->
+							</div><!-- .block-item -->
+						<?php endwhile; ?>
+
+						<?php wp_reset_postdata(); ?>
+
+					</div><!-- .inner-wrapper -->
+				</div><!-- .pages-blocks -->
+
+			<?php endif; ?>
+			<?php
+		}
+
+	}
+
+endif;
+
+if ( ! class_exists( 'Best_Business_Call_To_Action_Widget' ) ) :
+
+	/**
+	 * Call To Action widget class.
+	 *
+	 * @since 1.0.0
+	 */
+	class Best_Business_Call_To_Action_Widget extends Best_Business_Widget_Helper {
+
+		/**
+		 * Constructor.
+		 *
+		 * @since 1.0.0
+		 */
+		function __construct() {
+			$args['id']    = 'best-business-call-to-action';
+			$args['label'] = esc_html__( 'BB: Call To Action', 'best-business' );
+
+			$args['widget'] = array(
+				'classname'                   => 'best_business_widget_call_to_action',
+				'description'                 => esc_html__( 'Call To Action Widget', 'best-business' ),
+				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'text' => array(
+					'label' => esc_html__( 'Text:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'primary_button_text' => array(
+					'label'   => esc_html__( 'Primary Button Text:', 'best-business' ),
+					'default' => esc_html__( 'Learn more', 'best-business' ),
+					'type'    => 'text',
+					'class'   => 'widefat',
+					),
+				'primary_button_url' => array(
+					'label'   => esc_html__( 'Primary Button URL:', 'best-business' ),
+					'type'    => 'url',
+					'default' => '#',
+					'class'   => 'widefat',
+					),
+				'secondary_button_text' => array(
+					'label'   => esc_html__( 'Secondary Button Text:', 'best-business' ),
+					'default' => '',
+					'type'    => 'text',
+					'class'   => 'widefat',
+					),
+				'secondary_button_url' => array(
+					'label' => esc_html__( 'Secondary Button URL:', 'best-business' ),
+					'type'  => 'url',
+					'class' => 'widefat',
+					),
+				'layout' => array(
+					'label'   => esc_html__( 'Select Layout:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 1,
+					'choices' => best_business_get_numbers_dropdown_options( 1, 2, esc_html__( 'Layout', 'best-business' ) . ' ' ),
+					),
+				'background_image' => array(
+					'label'       => esc_html__( 'Background Image:', 'best-business' ),
+					'description' => sprintf( esc_html__( 'Background Image applies to Layout 2 only. Recommended image size: %1$dpx X %2$dpx', 'best-business' ), 1920, 600 ),
+					'type'        => 'image',
+					),
+				);
+
+			parent::create_widget( $args );
+		}
+
+		/**
+		 * Echo the widget content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args     Display arguments including before_title, after_title,
+		 *                        before_widget, and after_widget.
+		 * @param array $instance The settings for the particular instance of the widget.
+		 */
+		function widget( $args, $instance ) {
+
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+			// Add background image for layout 2.
+			if ( 2 === absint( $values['layout'] ) && ! empty( $values['background_image'] ) ) {
+				$background_style = '';
+				$background_style .= ' style="background-image:url(' . esc_url( $values['background_image'] ) . ');" ';
+				$args['before_widget'] = implode( $background_style . ' class="', explode( 'class="', $args['before_widget'], 2 ) );
+			}
+
+			// Add layout class.
+			$layout_class = 'cta-layout-' . absint( $values['layout'] );
+			$args['before_widget'] = implode( 'class="' . $layout_class . ' ', explode( 'class="', $args['before_widget'], 2 ) );
+
+			echo $args['before_widget'];
+
+			echo '<div class="cta-content">';
+
+			// Render widget title.
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
+			}
+
+			if ( ! empty( $values['text'] ) ) {
+				echo wp_kses_post( wpautop( $values['text'] ) );
+			}
+
+			echo '</div>';
+			?>
+			<?php if ( ( ! empty( $values['primary_button_text'] ) && ! empty( $values['primary_button_url'] ) ) || ( ! empty( $values['secondary_button_text'] ) && ! empty( $values['secondary_button_url'] ) ) ) : ?>
+				<div class="call-to-action-buttons">
+					<?php if ( ! empty( $values['primary_button_url'] ) && ! empty( $values['primary_button_text'] ) ) : ?>
+						<a href="<?php echo esc_url( $values['primary_button_url'] ); ?>" class="button custom-button button-primary"><?php echo esc_attr( $values['primary_button_text'] ); ?></a>
+					<?php endif; ?>
+					<?php if ( ! empty( $values['secondary_button_url'] ) && ! empty( $values['secondary_button_text'] ) ) : ?>
+						<a href="<?php echo esc_url( $values['secondary_button_url'] ); ?>" class="button custom-button button-secondary"><?php echo esc_attr( $values['secondary_button_text'] ); ?></a>
+					<?php endif; ?>
+				</div><!-- .call-to-action-buttons -->
+			<?php endif;
+
+			echo $args['after_widget'];
+
+		}
+
+	}
+
+endif;
+
+if ( ! class_exists( 'Best_Business_Advanced_Recent_Posts_Widget' ) ) :
+
+	/**
+	 * Advanced recent posts widget class.
+	 *
+	 * @since 1.0.0
+	 */
+	class Best_Business_Advanced_Recent_Posts_Widget extends Best_Business_Widget_Helper {
+
+		/**
+		 * Constructor.
+		 *
+		 * @since 1.0.0
+		 */
+		function __construct() {
+			$args['id']    = 'best-business-advanced-recent-posts';
+			$args['label'] = esc_html__( 'BB: Advanced Recent Posts', 'best-business' );
+
+			$args['widget'] = array(
+				'classname'                   => 'best_business_widget_advanced_recent_posts',
+				'description'                 => esc_html__( 'Advanced Recent Posts Widget. Displays recent posts with thumbnail.', 'best-business' ),
+				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'post_category' => array(
+					'label'           => esc_html__( 'Select Category:', 'best-business' ),
+					'type'            => 'dropdown-taxonomies',
+					'show_option_all' => esc_html__( 'All Categories', 'best-business' ),
+					),
+				'featured_image' => array(
+					'label'   => esc_html__( 'Featured Image:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'thumbnail',
+					'choices' => best_business_get_image_sizes_options( true, array( 'disable', 'thumbnail' ), false ),
+					),
+				'image_width' => array(
+					'label'       => esc_html__( 'Image Width:', 'best-business' ),
+					'description' => esc_html__( 'px', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 90,
+					'min'         => 1,
+					'max'         => 150,
+					'style'       => 'max-width:60px;',
+					'newline'     => false,
+					),
+				'post_number' => array(
+					'label'   => esc_html__( 'No of Posts:', 'best-business' ),
+					'type'    => 'number',
+					'default' => 4,
+					'min'     => 1,
+					'max'     => 50,
+					'style'   => 'max-width:60px;',
+					),
+				'excerpt_length' => array(
+					'label'       => esc_html__( 'Excerpt Length:', 'best-business' ),
+					'description' => esc_html__( 'Number of words. Enter 0 to disable.', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 10,
+					'min'         => 0,
+					'max'         => 100,
+					'style'       => 'max-width:60px;',
+					),
+				'disable_date' => array(
+					'label'   => esc_html__( 'Disable Date', 'best-business' ),
+					'type'    => 'checkbox',
+					'default' => false,
+					),
+				);
+
+			parent::create_widget( $args );
+		}
+
+		/**
+		 * Echo the widget content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args     Display arguments including before_title, after_title,
+		 *                        before_widget, and after_widget.
+		 * @param array $instance The settings for the particular instance of the widget.
+		 */
+		function widget( $args, $instance ) {
+
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+			echo $args['before_widget'];
+
+			// Render widget title.
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
+			}
+
+			?>
+			<?php
+			$qargs = array(
+				'posts_per_page'      => absint( $values['post_number'] ),
+				'no_found_rows'       => true,
+				'ignore_sticky_posts' => true,
+				);
+
+			if ( absint( $values['post_category'] ) > 0 ) {
+				$qargs['cat'] = $values['post_category'];
+			}
+
+			$the_query = new WP_Query( $qargs );
+			?>
+			<?php if ( $the_query->have_posts() ) : ?>
+
+				<div class="advanced-recent-posts-widget">
+
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<div class="advanced-recent-posts-item">
+
+							<?php if ( 'disable' !== $values['featured_image'] && has_post_thumbnail() ) : ?>
+								<div class="advanced-recent-posts-thumb">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										$img_attributes = array(
+											'class' => 'alignleft',
+											'style' => 'max-width:' . esc_attr( $values['image_width'] ) . 'px;',
+											);
+										the_post_thumbnail( esc_attr( $values['featured_image'] ), $img_attributes );
+										?>
+									</a>
+								</div>
+							<?php endif; ?>
+							<div class="advanced-recent-posts-text-wrap">
+								<h3 class="advanced-recent-posts-title">
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h3>
+
+								<?php if ( false === $values['disable_date'] ) : ?>
+									<div class="advanced-recent-posts-meta">
+										<span class="advanced-recent-posts-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
+									</div>
+								<?php endif; ?>
+
+								<?php if ( absint( $values['excerpt_length'] ) > 0 ) : ?>
+									<div class="advanced-recent-posts-summary">
+									<?php
+									$excerpt = best_business_get_the_excerpt( absint( $values['excerpt_length'] ) );
+									echo wp_kses_post( wpautop( $excerpt ) );
+									?>
+									</div>
+								<?php endif; ?>
+							</div><!-- .advanced-recent-posts-text-wrap -->
+
+						</div><!-- .advanced-recent-posts-item -->
+					<?php endwhile; ?>
+
+				</div><!-- .advanced-recent-posts-widget -->
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php endif; ?>
+
+			<?php
+
+			echo $args['after_widget'];
+
+		}
+
+	}
+
+endif;
+
+if ( ! class_exists( 'Best_Business_Latest_News_Widget' ) ) :
+
+	/**
+	 * Latest news widget class.
+	 *
+	 * @since 1.0.0
+	 */
+	class Best_Business_Latest_News_Widget extends Best_Business_Widget_Helper {
+
+		/**
+		 * Constructor.
+		 *
+		 * @since 1.0.0
+		 */
+		function __construct() {
+			$args['id']    = 'best-business-latest-news';
+			$args['label'] = esc_html__( 'BB: Latest News', 'best-business' );
+
+			$args['widget'] = array(
+				'classname'                   => 'best_business_widget_latest_news',
+				'description'                 => esc_html__( 'Latest News Widget. Displays latest posts in grid.', 'best-business' ),
+				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'subtitle' => array(
+					'label' => esc_html__( 'Subtitle:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'post_category' => array(
+					'label'           => esc_html__( 'Select Category:', 'best-business' ),
+					'type'            => 'dropdown-taxonomies',
+					'show_option_all' => esc_html__( 'All Categories', 'best-business' ),
+					),
+				'post_column' => array(
+					'label'   => esc_html__( 'No of Columns:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 3,
+					'choices' => best_business_get_numbers_dropdown_options( 1, 4 ),
+					'style'   => 'min-width:40px;',
+					),
+				'featured_image' => array(
+					'label'   => esc_html__( 'Featured Image:', 'best-business' ),
+					'type'    => 'select',
+					'default' => 'best-business-thumb',
+					'choices' => best_business_get_image_sizes_options(),
+					),
+				'post_number' => array(
+					'label'   => esc_html__( 'No of Posts:', 'best-business' ),
+					'type'    => 'number',
+					'default' => 3,
+					'min'     => 1,
+					'max'     => 100,
+					'style'   => 'max-width:60px;',
+					),
+				'excerpt_length' => array(
+					'label'       => esc_html__( 'Excerpt Length:', 'best-business' ),
+					'description' => esc_html__( 'Number of words. Enter 0 to disable.', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 20,
+					'min'         => 0,
+					'max'         => 300,
+					'style'       => 'max-width:60px;',
+					),
+				'more_text' => array(
+					'label'   => esc_html__( 'Read More Text:', 'best-business' ),
+					'type'    => 'text',
+					'class'   => 'widefat',
+					'default' => esc_html__( 'Read more', 'best-business' ),
+					),
+				);
+
+			parent::create_widget( $args );
+		}
+
+		/**
+		 * Echo the widget content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args     Display arguments including before_title, after_title,
+		 *                        before_widget, and after_widget.
+		 * @param array $instance The settings for the particular instance of the widget.
+		 */
+		function widget( $args, $instance ) {
+
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+			echo $args['before_widget'];
+
+			// Render widget title.
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
+			}
+
+			// Render widget subtitle.
+			if ( ! empty( $values['subtitle'] ) ) {
+				echo '<h3 class="subtitle">' . esc_html( $values['subtitle'] ) . '</h3>';
+			}
+
+			$qargs = array(
+				'posts_per_page'      => absint( $values['post_number'] ),
+				'no_found_rows'       => true,
+				'ignore_sticky_posts' => true,
+			);
+
+			if ( absint( $values['post_category'] ) > 0 ) {
+				$qargs['cat'] = absint( $values['post_category'] );
+			}
+
+			$the_query = new WP_Query( $qargs );
+			?>
+			<?php if ( $the_query->have_posts() ) : ?>
+
+				<div class="latest-news-widget latest-news-col-<?php echo esc_attr( $values['post_column'] ); ?>">
+
+					<div class="inner-wrapper">
+
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+							<div class="latest-news-item">
+								<div class="latest-news-wrapper">
+									<?php if ( 'disable' !== $values['featured_image'] && has_post_thumbnail() ) : ?>
+										<div class="latest-news-thumb">
+											<a href="<?php the_permalink(); ?>">
+												<?php
+												$img_attributes = array( 'class' => 'aligncenter' );
+												the_post_thumbnail( esc_attr( $values['featured_image'] ), $img_attributes );
+												?>
+											</a>
+										</div><!-- .latest-news-thumb -->
+									<?php endif; ?>
+									<div class="latest-news-text-wrap">
+										<div class="latest-news-meta">
+											<span class="posted-on"><?php the_time( get_option( 'date_format' ) ); ?></span>
+											<?php
+											if ( comments_open( get_the_ID() ) ) {
+												echo '<span class="comments-link">';
+												comments_popup_link( '<span class="leave-reply">' . esc_html__( '0 Comment', 'best-business' ) . '</span>', esc_html__( '1 Comment', 'best-business' ), esc_html__( '% Comments', 'best-business' ) );
+												echo '</span>';
+											}
+											?>
+										</div><!-- .latest-news-meta -->
+										<h3 class="latest-news-title">
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</h3>
+
+										<?php if ( absint( $values['excerpt_length'] ) > 0 ) : ?>
+											<div class="latest-news-summary">
+												<?php
+												$excerpt = best_business_get_the_excerpt( absint( $values['excerpt_length'] ) );
+												echo wp_kses_post( wpautop( $excerpt ) );
+												?>
+											</div><!-- .latest-news-summary -->
+										<?php endif; ?>
+										<?php if ( ! empty( $values['more_text'] ) ) : ?>
+											<div class="latest-news-read-more">
+												<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html( $values['more_text'] ); ?></a>
+											</div>
+										<?php endif; ?>
+									</div><!-- .latest-news-text-wrap -->
+								</div><!-- .latest-news-wrapper -->
+							</div><!-- .latest-news-item -->
+
+						<?php endwhile; ?>
+
+					</div><!-- .inner-wrapper -->
+				</div><!-- .latest-news-widget -->
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php endif; ?>
+
+			<?php
+
+			echo $args['after_widget'];
+
+		}
+
+	}
+
+endif;
+
+if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
+
+	/**
+	 * Services widget class.
+	 *
+	 * @since 1.0.0
+	 */
+	class Best_Business_Services_Widget extends Best_Business_Widget_Helper {
+
+		/**
+		 * Block count.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var int Block count.
+		 */
+		protected $block_count;
+
+		/**
+		 * Constructor.
+		 *
+		 * @since 1.0.0
+		 */
+		function __construct() {
+			$this->block_count = 6;
+
+			$args['id']    = 'best-business-services';
+			$args['label'] = esc_html__( 'BB: Services', 'best-business' );
+
+			$args['widget'] = array(
+				'classname'                   => 'best_business_widget_services',
+				'description'                 => esc_html__( 'Displays services pages with icon and read more link.', 'best-business' ),
+				'customize_selective_refresh' => true,
+			);
+
+			$args['fields'] = array(
+				'title' => array(
+					'label' => esc_html__( 'Title:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'subtitle' => array(
+					'label' => esc_html__( 'Subtitle:', 'best-business' ),
+					'type'  => 'text',
+					'class' => 'widefat',
+					),
+				'excerpt_length' => array(
+					'label'       => esc_html__( 'Excerpt Length:', 'best-business' ),
+					'description' => esc_html__( 'Number of words. Enter 0 to disable.', 'best-business' ),
+					'type'        => 'number',
+					'default'     => 15,
+					'min'         => 0,
+					'max'         => 400,
+					'style'       => 'max-width:60px;',
+					),
+				'more_text' => array(
+					'label'   => esc_html__( 'Read More Text:', 'best-business' ),
+					'type'    => 'text',
+					'default' => esc_html__( 'Read more', 'best-business' ),
+					'class'   => 'widefat',
+					),
+				);
+
+			for ( $i = 1; $i <= $this->block_count ; $i++ ) {
+				$block_fields[ 'heading_' . $i ] = array(
+						'label' => sprintf( esc_html__( 'Block %d', 'best-business' ), $i ),
+						'type'  => 'heading',
+					);
+				$block_fields[ 'block_page_' . $i ] = array(
+						'label'            => esc_html__( 'Page:', 'best-business' ),
+						'type'             => 'dropdown-pages',
+						'show_option_none' => esc_html__( '&mdash; Select &mdash;', 'best-business' ),
+					);
+				$block_fields[ 'block_icon_' . $i ] = array(
+						'label'       => esc_html__( 'Icon:', 'best-business' ),
+						'type'        => 'text',
+						'default'     => 'fa-cogs',
+						'placeholder' => esc_html__( 'eg: fa-cogs', 'best-business' ),
+					);
+
+				if ( 1 === $i ) {
+					$block_fields[ 'message_' . $i ] = array(
+							'label' => '<a href="http://fontawesome.io/cheatsheet/" target="_blank">' . esc_html__( 'View Font Awesome Reference', 'best-business' ) . '</a>',
+							'type'  => 'message',
+						);
+				}
+
+				$args['fields'] = array_merge( $args['fields'], $block_fields );
+			}
+
+			parent::create_widget( $args );
+		}
+
+		/**
+		 * Echo the widget content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args     Display arguments including before_title, after_title,
+		 *                        before_widget, and after_widget.
+		 * @param array $instance The settings for the particular instance of the widget.
+		 */
+		function widget( $args, $instance ) {
+
+			$values = $this->get_field_values( $instance );
+			$values['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 			// Add layout class.
 			$layout_class = 'services-layout-1';
@@ -821,28 +1084,28 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 			echo $args['before_widget'];
 
 			// Render widget title.
-			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+			if ( ! empty( $values['title'] ) ) {
+				echo $args['before_title'] . esc_html( $values['title'] ) . $args['after_title'];
 			}
 
-			// Display widget subtitle.
-			if ( $subtitle ) {
-				echo '<h3 class="subtitle">' . esc_html( $subtitle ) . '</h3>';
+			// Render widget subtitle.
+			if ( ! empty( $values['subtitle'] ) ) {
+				echo '<h3 class="subtitle">' . esc_html( $values['subtitle'] ) . '</h3>';
 			}
 
 			$services_array = array();
 			for ( $i = 1; $i <= $this->block_count; $i++ ) {
 				$page = 0;
-				if ( ! empty( $instance[ 'block_page_' . $i ] ) && absint( $instance[ 'block_page_' . $i ] ) > 0 ) {
-					$page = absint( $instance[ 'block_page_' . $i ] );
+				if ( ! empty( $values[ 'block_page_' . $i ] ) && absint( $values[ 'block_page_' . $i ] ) > 0 ) {
+					$page = absint( $values[ 'block_page_' . $i ] );
 				}
 				if ( $page > 0 ) {
 					$sitem = array();
 					$sitem['page'] = $page;
 					$sitem['icon'] = '';
 
-					if ( ! empty( $instance[ 'block_icon_' . $i ] ) ) {
-						$sitem['icon'] = $instance[ 'block_icon_' . $i ];
+					if ( ! empty( $values[ 'block_icon_' . $i ] ) ) {
+						$sitem['icon'] = $values[ 'block_icon_' . $i ];
 					}
 
 					$services_array[] = $sitem;
@@ -852,8 +1115,8 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 			// Render content.
 			if ( ! empty( $services_array ) ) {
 				$extra_args = array(
-					'excerpt_length' => $excerpt_length,
-					'more_text'      => $more_text,
+					'excerpt_length' => $values['excerpt_length'],
+					'more_text'      => $values['more_text'],
 				);
 				$this->render_widget_content( $services_array, $extra_args );
 			}
@@ -872,7 +1135,7 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 		 */
 		function render_widget_content( $services, $args = array() ) {
 
-			$service_column = count( $services );
+			global $post;
 
 			$ids = wp_list_pluck( $services, 'page' );
 
@@ -891,7 +1154,7 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 				return;
 			}
 			?>
-			<div class="service-block-list service-col-<?php echo esc_attr( $service_column ); ?>">
+			<div class="service-block-list service-col-3">
 				<div class="inner-wrapper">
 
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -936,98 +1199,6 @@ if ( ! class_exists( 'Best_Business_Services_Widget' ) ) :
 			<?php
 		}
 
-		/**
-		 * Update widget instance.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $new_instance New settings for this instance as input by the user.
-		 * @param array $old_instance Old settings for this instance.
-		 * @return array Settings to save or bool false to cancel saving.
-		 */
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-
-			$instance['title']          = sanitize_text_field( $new_instance['title'] );
-			$instance['subtitle']       = sanitize_text_field( $new_instance['subtitle'] );
-			$instance['excerpt_length'] = absint( $new_instance['excerpt_length'] );
-			$instance['more_text']      = sanitize_text_field( $new_instance['more_text'] );
-
-			for ( $i = 1; $i <= $this->block_count ; $i++ ) {
-				$instance[ 'block_page_' . $i ] = absint( $new_instance[ 'block_page_' . $i ] );
-				$instance[ 'block_icon_' . $i ] = sanitize_text_field( $new_instance[ 'block_icon_' . $i ] );
-			}
-
-			return $instance;
-		}
-
-		/**
-		 * Output the settings update form.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $instance Current settings.
-		 */
-		function form( $instance ) {
-
-			// Defaults.
-			$widget_defaults = array(
-				'title'          => '',
-				'subtitle'       => '',
-				'excerpt_length' => 20,
-				'more_text'      => esc_html__( 'Read more', 'best-business' ),
-			);
-
-			for ( $i = 1; $i <= $this->block_count ; $i++ ) {
-				$widget_defaults[ 'block_page_' . $i ] = '';
-				$widget_defaults[ 'block_icon_' . $i ] = 'fa-cogs';
-			}
-
-			$instance = wp_parse_args( (array) $instance, $widget_defaults );
-			?>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'subtitle' ) ); ?>"><?php esc_html_e( 'Subtitle:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'subtitle' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'subtitle' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['subtitle'] ); ?>" />
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>"><?php esc_html_e( 'Excerpt Length:', 'best-business' ); ?></label>
-				<input id="<?php echo esc_attr( $this->get_field_id( 'excerpt_length' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'excerpt_length' ) ); ?>" type="number" value="<?php echo esc_attr( $instance['excerpt_length'] ); ?>" min="0" max="200" />&nbsp;<small><?php esc_html_e( 'in words', 'best-business' ); ?></small>
-			</p>
-			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'more_text' ) ); ?>"><?php esc_html_e( 'Read More Text:', 'best-business' ); ?></label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'more_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'more_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['more_text'] ); ?>" />
-			</p>
-			<hr />
-			<?php for ( $i = 1; $i <= $this->block_count ; $i++ ) { ?>
-				<h4 class="block-heading"><?php printf( esc_html__( 'Block %d','best-business' ), $i ); ?></h4>
-				<p>
-					<label for="<?php echo $this->get_field_id( 'block_page_' . $i ); ?>"><?php esc_html_e( 'Page:', 'best-business' ); ?></label>
-					<?php
-					wp_dropdown_pages( array(
-						'id'               => $this->get_field_id( 'block_page_' . $i ),
-						'name'             => $this->get_field_name( 'block_page_' . $i ),
-						'selected'         => $instance[ 'block_page_' . $i ],
-						'show_option_none' => esc_html__( '&mdash; Select &mdash;', 'best-business' ),
-						)
-					);
-					?>
-				</p>
-				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'block_icon_' . $i ) ); ?>"><?php esc_html_e( 'Icon:', 'best-business' ); ?></label>
-					<input id="<?php echo esc_attr( $this->get_field_id( 'block_icon_' . $i ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'block_icon_' . $i ) ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'block_icon_' . $i ] ); ?>" placeholder="<?php esc_attr_e( 'eg: fa-cogs', 'best-business' ); ?>" />
-				</p>
-				<?php if ( 1 === $i ) : ?>
-					<p>
-						<a href="<?php echo esc_url( 'http://fontawesome.io/cheatsheet/' ); ?>"><?php esc_html_e( 'View Font Awesome Reference', 'best-business' ); ?></a>
-					</p>
-				<?php endif; ?>
-			<?php } // End for loop. ?>
-			<?php
-		}
 	}
 
 endif;

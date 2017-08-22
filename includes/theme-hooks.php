@@ -27,14 +27,6 @@ if ( ! function_exists( 'best_business_site_branding' ) ) :
 	 * @since 1.0.0
 	 */
 	function best_business_site_branding() {
-
-		$contact_number        	= best_business_get_option( 'contact_number' );
-		$contact_email         	= best_business_get_option( 'contact_email' );
-		$contact_addr         	= best_business_get_option( 'contact_address' );
-
-		$contact_title        	= best_business_get_option( 'contact_number_title' );
-		$email_title         	= best_business_get_option( 'contact_email_title' );
-		$addr_title         	= best_business_get_option( 'contact_address_title' );
 		?>
 		<div class="site-branding">
 
@@ -58,40 +50,10 @@ if ( ! function_exists( 'best_business_site_branding' ) ) :
 					<?php endif; ?>
 				</div><!-- #site-identity -->
 			<?php endif; ?>
-
 		</div><!-- .site-branding -->
+
 		<div class="right-head">
-			<div id="quick-contact">
-				<ul>
-					<?php if ( ! empty( $contact_number ) ) : ?>
-						<li class="quick-call">
-							<?php if ( ! empty( $contact_title ) ) : ?>
-								<strong><?php echo esc_html( $contact_title ); ?></strong>
-							<?php endif; ?>
-							<a href="?php echo esc_url( 'tel:' . preg_replace( '/\D+/', '', $contact_number ) ); ?>"><?php echo esc_html( $contact_number ); ?></a>
-						</li>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $contact_email ) ) : ?>
-						<li class="quick-email">
-						<?php if ( ! empty( $email_title ) ) : ?>
-							<strong><?php echo esc_html( $email_title ); ?></strong>
-						<?php endif; ?>
-							<a href="<?php echo esc_url( 'mailto:' . $contact_email ); ?>"><?php echo esc_html( $contact_email ); ?></a>
-						</li>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $contact_addr ) ) : ?>
-						<li class="quick-address">
-							<?php if ( ! empty( $addr_title ) ) : ?>
-								<strong><?php echo esc_html( $addr_title ); ?></strong>
-							<?php endif; ?>
-								<?php echo esc_html( $contact_addr ); ?>
-						</li>
-					<?php endif; ?>
-
-				</ul>
-			</div><!--  .quick-contact -->
+			<?php best_business_render_quick_contact(); ?>
 
 			<?php if ( best_business_woocommerce_status() ) : ?>
 				<div class="cart-section">
@@ -104,7 +66,6 @@ if ( ! function_exists( 'best_business_site_branding' ) ) :
 				 </div><!-- .cart-section -->
 			<?php endif; ?>
 		</div><!-- .right-head -->
-
 	<?php
 	}
 
@@ -121,22 +82,111 @@ if ( ! function_exists( 'best_business_mobile_navigation' ) ) :
 	 */
 	function best_business_mobile_navigation() {
 		?>
-		<a id="mobile-trigger" href="#mob-menu"><i class="fa fa-bars"></i></a>
-		<div id="mob-menu">
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container'      => '',
-				'fallback_cb'    => 'best_business_primary_navigation_fallback',
-			) );
-			?>
-		</div>
+		<div class="mobile-nav-wrap">
+			<a id="mobile-trigger" href="#mob-menu"><i class="fa fa-list-ul" aria-hidden="true"></i><span><?php esc_html_e( 'Main Menu', 'best-business' ); ?><span></a>
+			<div id="mob-menu">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'container'      => '',
+					'fallback_cb'    => 'best_business_primary_navigation_fallback',
+				) );
+				?>
+			</div><!-- #mob-menu -->
+			<?php if ( has_nav_menu( 'top' ) ) : ?>
+				<a id="mobile-trigger-quick" href="#mob-menu-quick"><span><?php esc_html_e( 'Top Menu', 'best-business' ); ?></span><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+				<div id="mob-menu-quick">
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'top',
+						'container'      => '',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					) );
+					?>
+				</div><!-- #mob-menu-quick -->
+			<?php endif; ?>
+		</div><!-- .mobile-nav-wrap -->
 		<?php
 	}
 
 endif;
 
 add_action( 'best_business_action_before', 'best_business_mobile_navigation', 20 );
+
+if ( ! function_exists( 'best_business_add_top_head_content' ) ) :
+
+	/**
+	 * Add top head section.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_add_top_head_content() {
+
+		// Check if top head content is disabled.
+		$status = apply_filters( 'best_business_filter_top_head_status', false, 1 );
+
+		if ( true !== $status ) {
+			return;
+		}
+		?>
+		<div id="tophead">
+			<div class="container">
+				<nav id="header-nav" class="menu-top-menu-container">
+					<?php
+						wp_nav_menu(
+							array(
+							'theme_location' => 'top',
+							'menu_class'     => 'menu',
+							'depth'          => 1,
+							'fallback_cb'    => false,
+							)
+						);
+					?>
+				</nav>
+
+				<?php if ( true === best_business_get_option( 'show_social_in_header' ) && has_nav_menu( 'social' ) ) : ?>
+					<div id="header-social">
+						<?php the_widget( 'Best_Business_Social_Widget' ); ?>
+					</div><!-- .header-social -->
+				<?php endif; ?>
+			</div><!-- .container -->
+		</div><!-- #tophead -->
+		<?php
+	}
+
+endif;
+
+add_action( 'best_business_action_before_header', 'best_business_add_top_head_content', 5 );
+
+if ( ! function_exists( 'best_business_check_top_head_status' ) ) :
+
+	/**
+	 * Top head status.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $status Active status.
+	 * @param int  $layout Header layout.
+	 * @return bool Modified status.
+	 */
+	function best_business_check_top_head_status( $status, $layout ) {
+
+		$top_menu_status = ( has_nav_menu( 'top' ) ) ? true : false;
+		$social_status = ( ! ( false === has_nav_menu( 'social' ) || false === best_business_get_option( 'show_social_in_header' ) ) ) ? true : false;
+
+		if ( 1 === $layout ) {
+			if ( true === $top_menu_status || true === $social_status ) {
+				$status = true;
+			}
+		}
+
+		return $status;
+	}
+
+endif;
+
+add_filter( 'best_business_filter_top_head_status', 'best_business_check_top_head_status', 10, 2 );
 
 if ( ! function_exists( 'best_business_footer_copyright' ) ) :
 
@@ -149,12 +199,11 @@ if ( ! function_exists( 'best_business_footer_copyright' ) ) :
 
 		// Check if footer is disabled.
 		$footer_status = apply_filters( 'best_business_filter_footer_status', true );
-
 		if ( true !== $footer_status ) {
 			return;
 		}
 
-		// Copyright text.
+		// Copyright content.
 		$copyright_text = best_business_get_option( 'copyright_text' );
 		$copyright_text = apply_filters( 'best_business_filter_copyright_text', $copyright_text );
 		?>
@@ -176,9 +225,7 @@ if ( ! function_exists( 'best_business_footer_copyright' ) ) :
 			</div>
 		<?php endif; ?>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'best-business' ) ); ?>"><?php printf( esc_html__( 'Powered by %s', 'best-business' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( '%1$s by %2$s', 'best-business' ), 'Best Business', '<a href="http://axlethemes.com">Axle Themes</a>' ); ?>
+			<?php echo esc_html__( 'Best Business by', 'best-business' ) . ' <a target="_blank" rel="designer" href="http://axlethemes.com/">Axle Themes</a>'; ?>
 		</div>
 		<?php
 	}
@@ -242,7 +289,6 @@ if ( ! function_exists( 'best_business_custom_posts_navigation' ) ) :
 		the_posts_pagination();
 
 	}
-
 endif;
 
 add_action( 'best_business_action_posts_navigation', 'best_business_custom_posts_navigation' );
@@ -257,11 +303,9 @@ if ( ! function_exists( 'best_business_add_image_in_single_display' ) ) :
 	function best_business_add_image_in_single_display() {
 
 		if ( has_post_thumbnail() ) {
-
 			$args = array(
 				'class' => 'best-business-post-thumb aligncenter',
 			);
-
 			the_post_thumbnail( 'large', $args );
 		}
 
@@ -270,6 +314,68 @@ if ( ! function_exists( 'best_business_add_image_in_single_display' ) ) :
 endif;
 
 add_action( 'best_business_single_image', 'best_business_add_image_in_single_display' );
+
+if ( ! function_exists( 'best_business_footer_goto_top' ) ) :
+
+	/**
+	 * Go to top.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_footer_goto_top() {
+		$go_to_top_status = best_business_get_option( 'go_to_top_status' );
+		if ( true === $go_to_top_status ) {
+			echo '<a href="#page" class="scrollup" id="btn-scrollup"><i class="fa fa-angle-up"></i></a>';
+		}
+	}
+
+endif;
+
+add_action( 'best_business_action_after', 'best_business_footer_goto_top', 20 );
+
+if ( ! function_exists( 'best_business_add_front_page_widget_area' ) ) :
+
+	/**
+	 * Add front page widget area.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_add_front_page_widget_area() {
+
+		if ( is_front_page() && ! is_home() ) {
+			if ( is_active_sidebar( 'sidebar-front-page-widget-area' ) ) {
+				echo '<div id="sidebar-front-page-widget-area" class="widget-area">';
+				dynamic_sidebar( 'sidebar-front-page-widget-area' );
+				echo '</div><!-- #sidebar-front-page-widget-area -->';
+			} else {
+				if ( current_user_can( 'edit_theme_options' ) ) {
+					echo '<div id="sidebar-front-page-widget-area" class="widget-area">';
+					best_business_message_front_page_widget_area();
+					echo '</div><!-- #sidebar-front-page-widget-area -->';
+				}
+			}
+		}
+
+	}
+endif;
+
+add_action( 'best_business_action_before_content', 'best_business_add_front_page_widget_area', 7 );
+
+if ( ! function_exists( 'best_business_add_footer_widgets' ) ) :
+
+	/**
+	 * Add footer widgets.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_add_footer_widgets() {
+
+		get_template_part( 'template-parts/footer-widgets' );
+
+	}
+endif;
+
+add_action( 'best_business_action_before_footer', 'best_business_add_footer_widgets', 5 );
 
 if ( ! function_exists( 'best_business_add_custom_header' ) ) :
 
@@ -280,12 +386,17 @@ if ( ! function_exists( 'best_business_add_custom_header' ) ) :
 	 */
 	function best_business_add_custom_header() {
 
-		if ( ( is_front_page() && ! is_home() ) ) {
+		if ( is_front_page() || is_home() ) {
 			return;
 		}
+
+		$image = get_header_image();
+		$extra_style = '';
+		if ( ! empty( $image ) ) {
+			$extra_style .= 'style="background-image:url(\'' . esc_url( $image ) . '\');"';
+		}
 		?>
-		<div id="custom-header">
-			<img src="<?php header_image(); ?>">
+		<div id="custom-header" <?php echo $extra_style; ?>>
 			<div class="custom-header-wrapper">
 				<div class="container">
 					<?php do_action( 'best_business_action_custom_header_title' ); ?>
@@ -354,106 +465,3 @@ if ( ! function_exists( 'best_business_add_breadcrumb' ) ) :
 endif;
 
 add_action( 'best_business_add_breadcrumb', 'best_business_add_breadcrumb', 10 );
-
-if ( ! function_exists( 'best_business_footer_goto_top' ) ) :
-
-	/**
-	 * Go to top.
-	 *
-	 * @since 1.0.0
-	 */
-	function best_business_footer_goto_top() {
-		echo '<a href="#page" class="scrollup" id="btn-scrollup"><i class="fa fa-angle-up"></i></a>';
-	}
-
-endif;
-
-add_action( 'best_business_action_after', 'best_business_footer_goto_top', 20 );
-
-if ( ! function_exists( 'best_business_add_front_page_widget_area' ) ) :
-
-	/**
-	 * Add front page widget area.
-	 *
-	 * @since 1.0.0
-	 */
-	function best_business_add_front_page_widget_area() {
-
-		if ( is_front_page() && ! is_home() && is_active_sidebar( 'sidebar-front-page-widget-area' ) ) {
-			echo '<div id="sidebar-front-page-widget-area" class="widget-area">';
-			dynamic_sidebar( 'sidebar-front-page-widget-area' );
-			echo '</div><!-- #sidebar-front-page-widget-area -->';
-		}
-
-	}
-
-endif;
-
-add_action( 'best_business_action_before_content', 'best_business_add_front_page_widget_area', 7 );
-
-if ( ! function_exists( 'best_business_add_footer_widgets' ) ) :
-
-	/**
-	 * Add footer widgets.
-	 *
-	 * @since 1.0.0
-	 */
-	function best_business_add_footer_widgets() {
-
-		get_template_part( 'template-parts/footer-widgets' );
-
-	}
-
-endif;
-
-add_action( 'best_business_action_before_footer', 'best_business_add_footer_widgets', 5 );
-
-if ( ! function_exists( 'best_business_add_top_head_content' ) ) :
-
-	/**
-	 * Add top head section.
-	 *
-	 * @since 1.0.0
-	 */
-	function best_business_add_top_head_content() {
-		$contact_number        = best_business_get_option( 'contact_number' );
-		$contact_email         = best_business_get_option( 'contact_email' );
-		$show_social_in_header = best_business_get_option( 'show_social_in_header' );
-
-		if ( empty( $contact_number ) && empty( $contact_email ) ) {
-			$contact_status = false;
-		} else {
-			$contact_status = true;
-		}
-
-		if ( false === has_nav_menu( 'top' ) && ( false === best_business_get_option( 'show_social_in_header' ) || false === has_nav_menu( 'social' ) ) ) {
-			return;
-		}
-		?>
-		<div id="tophead">
-			<div class="container">
-				<nav id="header-nav" class="menu-top-menu-container">
-					<?php
-						wp_nav_menu(
-							array(
-							'theme_location' => 'top',
-							'menu_class'        => 'menu',
-							'fallback_cb'    => 'best_business_primary_navigation_fallback',
-							)
-						);
-					?>
-				</nav>
-				<?php if ( true === $show_social_in_header && has_nav_menu( 'social' ) ) : ?>
-					<div id="header-social">
-						<?php the_widget( 'Best_Business_Social_Widget' ); ?>
-					</div><!-- .header-social -->
-				<?php endif; ?>
-
-			</div><!-- .container -->
-		</div><!-- #tophead -->
-		<?php
-	}
-
-endif;
-
-add_action( 'best_business_action_before_header', 'best_business_add_top_head_content', 5 );

@@ -95,6 +95,8 @@ endif;
 
 add_action( 'best_business_action_after_content', 'best_business_content_end' );
 
+add_action( 'best_business_action_after_content', 'best_business_content_end' );
+
 if ( ! function_exists( 'best_business_header_start' ) ) :
 
 	/**
@@ -117,34 +119,7 @@ if ( ! function_exists( 'best_business_header_end' ) ) :
 	 * @since 1.0.0
 	 */
 	function best_business_header_end() {
-		?></div><!-- .container --></header>		
-		<div id="main-nav" class="clear-fix">
-			<div class="container">
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="wrap-menu-content">
-					<?php
-					wp_nav_menu(
-						array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'fallback_cb'    => 'best_business_primary_navigation_fallback',
-						)
-					);
-					?>
-				</div><!-- .wrap-menu-content -->
-			</nav><!-- #site-navigation -->
-			<?php
-			$show_search_in_header = best_business_get_option( 'show_search_in_header' );
-			if ( true === $show_search_in_header ) : ?>
-				<div class="header-search-box">
-					<a href="#" class="search-icon"><i class="fa fa-search"></i></a>
-					<div class="search-box-wrap">
-						<?php get_search_form(); ?>
-					</div>
-				</div><!-- .header-search-box -->
-			<?php endif; ?>
-			</div> <!-- .container -->
-		</div><!-- #main-nav --><!-- #masthead --><?php
+		?></div><!-- .container --></header><!-- #masthead --><?php
 	}
 endif;
 

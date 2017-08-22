@@ -44,27 +44,6 @@ $wp_customize->add_control( 'theme_options[featured_slider_status]',
 	)
 );
 
-// Setting featured_slider_image_info.
-$wp_customize->add_setting( 'theme_options[featured_slider_image_info]',
-	array(
-	'default'           => '',
-	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'sanitize_text_field',
-	)
-);
-$wp_customize->add_control(
-	new Best_Business_Message_Control( $wp_customize, 'theme_options[featured_slider_image_info]',
-		array(
-			'label'           => esc_html__( 'Info:', 'best-business' ),
-			'description'     => sprintf( esc_html__( 'Recommended size for slider image: %1$dpx X %2$dpx', 'best-business' ), 1920, 770 ),
-			'section'         => 'section_theme_slider_type',
-			'settings'        => 'theme_options[featured_slider_image_info]',
-			'priority'        => 100,
-			'active_callback' => 'best_business_is_featured_slider_active',
-		)
-	)
-);
-
 // Setting featured_slider_type.
 $wp_customize->add_setting( 'theme_options[featured_slider_type]',
 	array(
@@ -96,19 +75,18 @@ $wp_customize->add_setting( 'theme_options[featured_slider_number]',
 $wp_customize->add_control( 'theme_options[featured_slider_number]',
 	array(
 	'label'           => esc_html__( 'No of Slides', 'best-business' ),
-	'description'     => sprintf( esc_html__( 'Enter number between %1$d and %2$d. Save and refresh the page if No of Slides is changed.', 'best-business' ), 1, 10 ),
+	'description'     => esc_html__( 'Enter number between 1 and 5. Save and refresh the page if No of Slides is changed.', 'best-business' ),
 	'section'         => 'section_theme_slider_type',
 	'type'            => 'number',
 	'priority'        => 100,
 	'active_callback' => 'best_business_is_featured_slider_active',
-	'input_attrs'     => array( 'min' => 1, 'max' => 10, 'step' => 1, 'style' => 'width: 60px;' ),
+	'input_attrs'     => array( 'min' => 1, 'max' => 5, 'step' => 1, 'style' => 'width: 55px;' ),
 	)
 );
 
 $featured_slider_number = absint( best_business_get_option( 'featured_slider_number' ) );
 
 if ( $featured_slider_number > 0 ) {
-
 	for ( $i = 1; $i <= $featured_slider_number; $i++ ) {
 		$wp_customize->add_setting( "theme_options[featured_slider_page_$i]",
 			array(
@@ -119,7 +97,7 @@ if ( $featured_slider_number > 0 ) {
 		);
 		$wp_customize->add_control( "theme_options[featured_slider_page_$i]",
 			array(
-			'label'           => esc_html__( 'Featured Page', 'best-business' ) . ' #' . $i,
+			'label'           => esc_html__( 'Featured Page', 'best-business' ) . ' - ' . $i,
 			'section'         => 'section_theme_slider_type',
 			'type'            => 'dropdown-pages',
 			'priority'        => 100,
@@ -127,7 +105,6 @@ if ( $featured_slider_number > 0 ) {
 			)
 		);
 	} // End for loop.
-
 }
 
 // Setting featured_slider_read_more_text.
@@ -271,6 +248,22 @@ $wp_customize->add_setting( 'theme_options[featured_slider_enable_autoplay]',
 $wp_customize->add_control( 'theme_options[featured_slider_enable_autoplay]',
 	array(
 	'label'    => esc_html__( 'Enable Autoplay', 'best-business' ),
+	'section'  => 'section_theme_slider_options',
+	'type'     => 'checkbox',
+	'priority' => 100,
+	)
+);
+// Setting featured_slider_enable_overlay.
+$wp_customize->add_setting( 'theme_options[featured_slider_enable_overlay]',
+	array(
+	'default'           => $default['featured_slider_enable_overlay'],
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'best_business_sanitize_checkbox',
+	)
+);
+$wp_customize->add_control( 'theme_options[featured_slider_enable_overlay]',
+	array(
+	'label'    => esc_html__( 'Enable Overlay', 'best-business' ),
 	'section'  => 'section_theme_slider_options',
 	'type'     => 'checkbox',
 	'priority' => 100,

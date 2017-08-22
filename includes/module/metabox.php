@@ -18,7 +18,7 @@ if ( ! function_exists( 'best_business_add_theme_meta_box' ) ) :
 
 		foreach ( $post_types as $type ) {
 			add_meta_box(
-				'theme-settings',
+				'best-business-theme-settings',
 				esc_html__( 'Theme Settings', 'best-business' ),
 				'best_business_render_theme_settings_metabox',
 				$type
@@ -43,7 +43,7 @@ if ( ! function_exists( 'best_business_render_theme_settings_metabox' ) ) :
 		global $post;
 		$post_id = $post->ID;
 
-		// Metabox nonce for verification.
+		// Meta box nonce for verification.
 		wp_nonce_field( basename( __FILE__ ), 'best_business_settings_meta_box_nonce' );
 
 		// Fetch values of current post meta.
@@ -70,7 +70,7 @@ endif;
 if ( ! function_exists( 'best_business_save_theme_settings_meta' ) ) :
 
 	/**
-	 * Save theme settings metabox value.
+	 * Save theme settings meta box value.
 	 *
 	 * @since 1.0.0
 	 *
@@ -80,7 +80,10 @@ if ( ! function_exists( 'best_business_save_theme_settings_meta' ) ) :
 	function best_business_save_theme_settings_meta( $post_id, $post ) {
 
 		// Verify nonce.
-		if (! ( isset( $_POST['best_business_settings_meta_box_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['best_business_settings_meta_box_nonce'] ), basename( __FILE__ ) ) ) ) {
+		if (
+			! ( isset( $_POST['best_business_settings_meta_box_nonce'] )
+			&& wp_verify_nonce( sanitize_key( $_POST['best_business_settings_meta_box_nonce'] ), basename( __FILE__ ) ) )
+		) {
 			return;
 		}
 
@@ -139,11 +142,10 @@ if ( ! function_exists( 'best_business_save_theme_settings_meta' ) ) :
 
 				update_post_meta( $post_id, 'best_business_settings', $sanitized_values );
 			}
-
 		} // End if isset.
 
 	}
 
 endif;
 
-add_action( 'save_post', 'best_business_save_theme_settings_meta', 10, 3 );
+add_action( 'save_post', 'best_business_save_theme_settings_meta', 10, 2 );

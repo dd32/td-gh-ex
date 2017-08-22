@@ -8,12 +8,12 @@
  */
 
 if ( ! function_exists( 'best_business_posted_on' ) ) :
+
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function best_business_posted_on() {
 
-		$posted_on = '';
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -44,9 +44,11 @@ if ( ! function_exists( 'best_business_posted_on' ) ) :
 		}
 
 	}
+
 endif;
 
 if ( ! function_exists( 'best_business_entry_footer' ) ) :
+
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
@@ -75,17 +77,8 @@ if ( ! function_exists( 'best_business_entry_footer' ) ) :
 
 		edit_post_link( esc_html__( 'Edit', 'best-business' ), '<span class="edit-link">', '</span>' );
 
-		$archive_layout = best_business_get_option( 'archive_layout' );
-
-		if ( 'excerpt' === $archive_layout || best_business_has_more_tag() ) {
-			$read_more_text = best_business_get_option( 'read_more_text' );
-			if ( ! empty( $read_more_text ) ) {
-				$read_more_link = get_permalink();
-				echo '<a href="' . esc_url( $read_more_link ) . '" class="read-more">' . esc_html( $read_more_text ) . '</a>';
-			}
-		}
-
 	}
+
 endif;
 
 /**
@@ -125,7 +118,6 @@ function best_business_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
-
 	// Like, beat it. Dig?
 	delete_transient( 'best_business_categories' );
 }
