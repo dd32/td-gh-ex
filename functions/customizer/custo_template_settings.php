@@ -11,7 +11,7 @@ function busiprof_template_settings( $wp_customize ){
 	
 	/* About settings */
 	$wp_customize->add_section( 'about_section' , array(
-		'title'      => __('About us page setting', 'busiprof'),
+		'title'      => __('About Us page settings', 'busiprof'),
 		'panel'  => 'template_settings',
 		'priority'   => 0,
    	) );
@@ -68,7 +68,7 @@ function busiprof_template_settings( $wp_customize ){
 		
 	/* Service settings */
 	$wp_customize->add_section( 'service_template' , array(
-		'title'      => __('Service page setting', 'busiprof'),
+		'title'      => __('Service page settings', 'busiprof'),
 		'panel'  => 'template_settings',
 		'priority'   => 1,
    	) );
@@ -128,7 +128,7 @@ function busiprof_template_settings( $wp_customize ){
 	
 	/* Portfolio settings */
 	$wp_customize->add_section( 'portfolio_section' , array(
-		'title'      => __('Project page setting', 'busiprof'),
+		'title'      => __('Project page settings', 'busiprof'),
 		'panel'  => 'template_settings',
 		'priority'   => 2,
    	) );

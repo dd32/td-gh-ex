@@ -1,11 +1,11 @@
 /*
 * Theme Name: Busiprof
 * Theme URI: http://webriti.com/busiprof-premium-wordpress-theme-1/
-* Description: Busiprof is a business WordPress theme.  Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof  
-* Version: 1.8.3
+* Description: Busiprof WordPress Theme is a fully responsive and translation-ready theme that allows you to create stunning blogs and websites. The theme is well suited for companies, law firms,ecommerce, finance, agency, travel, photography, recipes, design, arts, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own favicon, logo, feature slide, services, 2 testimonial slider, blog, callout and much more. In the premium version you can add unlimited slides. There are a number of in-built widgets and support for various popular plugins like WPML, the Polylang Translation WordPress Plugin, Woocommerce and Contact Form 7. 10 beautifully designed templates like About Us, Services, Portfolio 2/3/4 column, Portfolio with Category, Portfolio Archive, Blog Left/Right Sidebar, Blog Fullwidth, Full Width Page, Contact Us and many useful sections for business using the Homepage template. Busiprof theme comes with various Locales. Just navigate to Appearance / Customize to start customizing.  
+* Version: 1.8.4
 * Author: webriti
 * Author URI: http://www.webriti.com
-* Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, portfolio, photography, entertainment, education, footer-widgets, e-commerce
+* Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, portfolio, photography, entertainment, education, footer-widgets, e-commerce, news
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl.html
 * Copyright (c) 2013 Webriti. All rights reserved.
@@ -82,7 +82,7 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.slide-caption h2 { font-weight: 400; color: #ffffff; text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); margin: 0 0 16px; } 
+.slide-caption h2 { font-weight: 400; color: #ffffff; text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); margin: 0 0 16px; word-wrap:break-word; } 
 .slide-caption p { color: #ffffff; margin: 0 0 17px; text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); letter-spacing: 0.5px; }
 .flex-btn {
 	background-color: #71c550;
@@ -275,10 +275,11 @@ a.rsswidget::before { display: none; }
 .paginations a {	
 	background: #eff1f2 none repeat scroll 0 0;
     border: 1px solid #b0b0b0;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
     color: #4b453f;
     cursor: pointer;
     display: inline-block;
-	border-radius: 1px;
+    border-radius: 1px;
     font-size: 15px;
     font-weight: 500;
     line-height: 20px;
@@ -290,8 +291,9 @@ a.rsswidget::before { display: none; }
 }
 
 .paginations span.current{
-	background-color: #5ca2df; box-shadow:inset 1px 1px 1px #89c9f6; 
-	border:1px solid #4493d8; 
+	background-color: #2a7bc1; 
+	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+	border:1px solid #2a7bc1; 
 	color:#FFFFFF;
     cursor: pointer;
     display: inline-block;
@@ -307,15 +309,53 @@ a.rsswidget::before { display: none; }
 }
 
 .paginations a:hover, .paginations a:focus, .paginations a.active {		
-	border:1px solid #4493d8; 
-	color:#FFFFFF;
-	background-color: #5ca2df; box-shadow:inset 1px 1px 1px #89c9f6;  
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5ca2df), to(#297ac1));
-	background-image: -webkit-linear-gradient(top, #5ca2df, #297ac1); 
-	background-image:    -moz-linear-gradient(top, #5ca2df, #297ac1);
-	background-image:     -ms-linear-gradient(top, #5ca2df, #297ac1);
-	background-image:      -o-linear-gradient(top, #5ca2df, #297ac1);
+	background-color: #2a7bc1; 
+	border:1px solid #2a7bc1; 
+	opacity: 0.9;
+	color:#fff;
 }
+
+/* Home Blog Section Css ------------------------------------------------------------------------------------------------------------- */
+.home-post { margin: 0 0 20px; }
+.home-post .post { margin: 0 0 20px; padding-bottom: 20px; border-bottom: 1px solid #e4e8ea; }
+.home-post .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; }
+.home-post .post .post-thumbnail img { transition: all 0.5s ease 0s; }
+.home-post .post:hover .post-thumbnail img { transform: rotate(-25deg); opacity: 0.9; }
+.home-post .post .entry-header { display: block; margin: 0 0 2px; padding: 0; }
+.home-post .post .entry-header .entry-title { font-family: 'Droid Sans'; font-size: 15px; line-height: 25px; font-weight: 400; margin: 0; } 
+.home-post .entry-header .entry-title > a { color: #737f85; }
+.home-post .entry-header .entry-title > a:hover { color: #2a7bc1; }
+.home-post .entry-date {
+    color: #b4babe;
+    font-family: 'Droid Serif';
+	font-size: 14px;
+	font-weight: 400;
+	font-style: italic;
+    white-space: nowrap;
+	display: block;
+	padding-top: 5px;
+}
+.home-post .entry-date a { color: #b4babe; }
+.home-post-img img { height: 80px; }
+
+/* Home Blog Section Css ------------------------------------------------------------------------------------------------------------- */
+.home-post-latest { margin: 0 0 0px; padding-bottom: 0 !important; }
+.home-post-latest .post { margin: 0 0 40px; }
+.home-post-latest .post .post-thumbnail { float: left; margin: 0 25px 0 0; overflow: hidden; width: 200px; }
+.home-post-latest .post .post-thumbnail img { transition: all 0.5s ease 0s; border-radius: 1%; }
+.home-post-latest .post:hover .post-thumbnail img { opacity: 0.9; }
+.home-post-latest .post .entry-header { display: block; margin: 0 0 18px; padding: 0; }
+.home-post-latest .post .entry-header .entry-title { font-size: 20px; margin: 0; } 
+.home-post-latest .entry-header .entry-title > a { color: #404b56; }
+.home-post-latest .entry-meta { margin: -6px 0 17px; }
+.home-post-latest .entry-meta a { letter-spacing: 0; }
+.home-post-latest .post:nth-last-child(2) { margin: 0 0 10px; }
+.home-post-latest .entry-date:before, .home-post-latest .comments-link:before, 
+.home-post-latest .cat-links:before, .home-post-latest .tag-links:before { font-size: 13px; }
+.entry-date:before { content: "\f073"; }
+.home-post-latest .more-link { margin: 0; padding: 3px 18px; }
+.home-post-latest .entry-meta > span { margin-right: 13px; }
+.home-post-latest .post p { margin: 0 0 20px; }
 
 /* Testimonial Section Css --------------------------------------------------------------------------------------------------------------------- */
 .testimonial .post { margin: 0 0 40px; }
@@ -359,7 +399,7 @@ a.rsswidget::before { display: none; }
 	left: 24px;
 	margin-left: -15;
 }
-.testimonial-scroll .post .post-thumbnail { float: left; margin: 0 20px 0 10px; overflow: hidden; }
+/**.testimonial-scroll .post .post-thumbnail { float: left; margin: 0 20px 0 10px; overflow: hidden; } */
 .testimonial-scroll .author-name { 
 	background-color: transparent;
 	display: block; 
@@ -409,6 +449,131 @@ a.rsswidget::before { display: none; }
 .testi-nav a.testi-next:before { content: '\f105'; }
 
 .home-post-img img{height:80px;}
+
+
+/* Testimonial Section Css --------------------------------------------------------------------------------------------------------------------- */
+.testimonial .post { margin: 0 0 40px; }
+.testimonial .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; position: relative; }
+.testimonial .post .post-thumbnail img { transition: all 0.5s ease 0s; }
+.testimonial .post:hover .post-thumbnail img { transform: rotate(-25deg); opacity: 0.9; }
+.author-name { background-color: #f2f5f6; display: block; font-size: 14px; margin: 17px 0 0; padding: 1px 7px; }
+.designation { color: #737f85; }
+/*Testimonial Scroll*/
+.testimonial-scroll .post { margin: 0 0 40px; }
+.testimonial-scroll .post .entry-content { 
+	border: 1px solid #e4e8ea;
+    border-radius: 7px;
+    clear: both;
+    display: block;
+    /* padding: 16px 25px; */
+	padding: 23px 25px 23px 75px;
+	margin: 0 0 16px;
+    position: relative; 
+}
+.testimonial-scroll .post .entry-content p { font-size: 16px; line-height: 27px; } 
+.testimonial-scroll .post .entry-content p:before {
+    position: absolute;
+	content: '\f10d';
+    font-family: "FontAwesome";
+    top: 25px;
+    left: 25px;
+    font-size: 35px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 700;
+}
+.testimonial-scroll .post .entry-content:after, 
+.testimonial-scroll .post .entry-content:before {
+	bottom: -30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.testimonial-scroll .post .entry-content:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 15px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.testimonial-scroll .post .entry-content:before {
+	border-color: rgba(228, 232, 234, 0);
+	border-top-color: #719ECE;
+	border-width: 15px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+/* .testimonial-scroll .post .post-thumbnail { margin: 0px 0 25px; overflow: hidden; } */
+/* .testimonial-scroll .post-thumbnail img { border-radius: 50%; background-color: #fff; border: 1px solid #d2d2d2; padding: 4px; width: 100px; height: 100px; margin: 0 auto; } */
+.testimonial-scroll .post .post-thumbnail { margin: 0px auto 25px; width: 100px; height: 100px; }
+.testimonial-scroll .post-thumbnail img { border-radius: 50%; background-color: #fff; border: 1px solid #d2d2d2; padding: 4px; width: 100px; height: 100px; margin: 0; }
+
+
+.testimonial-scroll .author-name { 
+	background-color: transparent;
+	display: block; 
+	font-size: 16px; 
+	margin: 17px 0 0; 
+	padding: 0;
+	font-weight: 700;
+	text-align: center;
+}
+.testimonial-scroll .designation { color: #737f85; font-size: 14px; font-weight: 400; display: block; }
+
+/* Direction Nav */
+.testi-nav { *height: 0; list-style-type: none; margin: -20px 0 0; padding: 0; float: right; }
+.testi-nav li { display: inline-block; padding: 0; }
+.testi-nav a {
+	background-color: #e3e3e3;
+	border-radius: 50%;
+    text-decoration: none;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+	text-align: center;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.testi-nav .testi-prev { left: 0; opacity: 1; }
+.testi-nav .testi-next { right: 0; opacity: 1; }
+.testi-next:hover, .testi-prev:hover { color: #ffffff; }
+.testi-nav .carou-disabled { opacity: 0!important; filter: alpha(opacity=0); cursor: default; }
+.testi-nav a:before {
+    font-family: "FontAwesome";
+    font-size: 17px;
+	color: #000;
+    line-height: 1.3;
+    display: inline-block;
+    content: '\f104';
+	transition: all .3s ease;
+}
+.testi-nav:hover a:before { color: #ffffff; }
+.testi-nav a.testi-next:before { content: '\f105'; }
+
+/* Testimonial Pager --------------------------------------------------------------------------------------------------------------*/
+.testi-pager { margin-top: 66px !important; }
+.testi-pager .carousel-indicators li {
+	background-color: transparent; border: 2px solid #344656;
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border-radius: 10px;
+	padding: 0;
+	margin: 1px;
+}
+.testi-pager .carousel-indicators .active { background-color: #344656; border: 2px solid #344656; margin: 1px; }
 
 /*404 Error Page Css-----------------------------------------------------------------------------------------------------------------------------*/
 .error-404 { clear: both; text-align: center; padding: 30px 0 100px; }
@@ -652,12 +817,12 @@ form.comment-form .submit{ margin:0 15px; }
 
 /*Footer Sidebar Widget Section----------------------------------------------------------------------------------------------------------------*/
 .footer-sidebar { background-color: #344656; margin: 0; padding: 55px 0 0px; width: 100%; }
-.footer-sidebar .widget { color: #869bae; border-bottom: 0 none; display: block; margin: 0px; padding: 0 0 60px; }
-.footer-sidebar .widget p { color: #869bae; }
-.footer-sidebar ul li, .footer-sidebar ol li, .footer-sidebar ul li a { color: #869bae; }
+.footer-sidebar .widget { color: #d3dee8; border-bottom: 0 none; display: block; margin: 0px; padding: 0 0 60px; }
+.footer-sidebar .widget p { color: #d3dee8; }
+.footer-sidebar ul li, .footer-sidebar ol li, .footer-sidebar ul li a { color: #d3dee8; }
 .footer-sidebar .widget .widget-title {
 	background-color: transparent;
-	color: #ffffff;
+	color: #fff;
     border-left: 0 none;
     font-weight: 400;
 	font-size: 20px;
@@ -825,3 +990,7 @@ li.mini_cart_item  a::before{ display:none;}
 .page-content p {
     margin-bottom: 20px;
 }
+
+.col-md-3:nth-child(4n+1){ clear:left; }
+.col-md-4:nth-child(3n+1){ clear:left; }
+.col-md-6:nth-child(2n+1){ clear:left; }

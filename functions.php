@@ -27,6 +27,7 @@
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_layout_manager_settings.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/cust_pro.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_emailcourse.php' );
+	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 	
 	
 	//theme ckeck plugin required 	
@@ -73,4 +74,48 @@
 endif;
 	
 	add_action( 'after_setup_theme', 'busiporf_setup' );
+	
+	
+	function busiprof_inline_style() {
+	$custom_css              = '';
+	
+	
+	$busiprof_service_content = get_theme_mod(
+		'busiprof_service_content', json_encode(
+			array(
+				array(
+					'color'      => '#e91e63',
+				),
+				array(
+					'color'      => '#00bcd4',
+				),
+				array(
+					'color'      => '#4caf50',
+				),
+			)
+		)
+	);
+	
+	if ( ! empty( $busiprof_service_content ) ) {
+		$busiprof_service_content = json_decode( $busiprof_service_content );
+		
+		
+		foreach ( $busiprof_service_content as $key => $features_item ) {
+			$box_nb = $key + 1;
+			if ( ! empty( $features_item->color ) ) {
+				
+				$color = ! empty( $features_item->color ) ? apply_filters( 'busiprof_translate_single_string', $features_item->color, 'Features section' ) : '';
+				
+				$custom_css .= '.service-box:nth-child(' . esc_attr( $box_nb ) . ') .service-icon {
+                            color: ' . esc_attr( $color ) . ';
+				}';
+				
+				
+			}
+		}
+	}
+	wp_add_inline_style( 'style', $custom_css );
+}
+
+add_action( 'wp_enqueue_scripts', 'busiprof_inline_style' );	
 ?>

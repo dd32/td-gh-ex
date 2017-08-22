@@ -40,7 +40,12 @@ function theme_setup_data()
 			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Caption detail
 			'readmore_text' => __('Read More','busiprof'),
 			'readmore_text_link' => "#",
-			'readmore_target' => false,
+			'image_url'=>  $template_uri .'home_slide.jpg',//Slide Image
+			'title' =>__('Responsive WP theme','busiprof'),//Image Caption Heading
+			'text' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Caption detail
+			'button_text' => __('Read More','busiprof'),
+			'link' => "#",
+			
 			
 			//Slide Heading								
 			'animation' => 'slide',
@@ -81,7 +86,6 @@ function theme_setup_data()
 			
 			
 			
-			'enable_services' => 'on',
 			'service_heading_one' =>__('<b>Awesome</b>services','busiprof'),//Service Heading One
 			'service_tagline'  => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Tagline
 			
@@ -90,20 +94,20 @@ function theme_setup_data()
 			'service_image_three' => '',	//Service Icon Third
 			'service_image_four' => '',//Service Icon Fourth
 			
-			'service_icon_one' => 'fa-group',
-			'service_icon_two' =>'fa-truck',
-			'service_icon_three' => 'fa-camera',
-			'service_icon_four' => 'fa-fighter-jet',
+			'service_icon_one' => '',
+			'service_icon_two' =>'',
+			'service_icon_three' => '',
+			'service_icon_four' => '',
 			
-			'service_title_one' => __('Web design','busiprof'),//Service Title One
-			'service_title_two' =>__('Web design','busiprof'),//Service Title Two
-			'service_title_three' =>__('Web design','busiprof'),//Service Title Three
-			'service_title_four' =>__('Web design','busiprof'),//Service Title Four
+			'service_title_one' => '',//Service Title One
+			'service_title_two' =>'',//Service Title Two
+			'service_title_three' =>'',//Service Title Three
+			'service_title_four' =>'',//Service Title Four
 			
-			'service_text_one' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Description One
-			'service_text_two' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Description Two
-			'service_text_three' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Description Three
-			'service_text_four' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Description Four
+			'service_text_one' =>'',//Service Description One
+			'service_text_two' => '',//Service Description Two
+			'service_text_three' => '',//Service Description Three
+			'service_text_four' => '',
 			
 			'service_link_btn' => '#',//More Button Link
 			'service_button_value' => __('More services','busiprof'),
@@ -148,6 +152,7 @@ function theme_setup_data()
 			
 			'recent_blog_title' =>__('<b>Recent</b> blog','busiprof'),
 			'recent_blog_description' =>__('We are a group of passionate designers & developers','busiprof'),
+			'home_recentblog_meta_enable' => 'on',
 			
 			//contact page settings
 			'contact_address_1'=>'378 Kingston Court',

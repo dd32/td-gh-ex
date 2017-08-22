@@ -7,7 +7,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 	
 	array(
 	
-		'title'      => __('Theme layout manager', 'busiprof'),
+		'title'      => __('Theme Layout Manager', 'busiprof'),
 		
 		'priority'   => 130,
 		

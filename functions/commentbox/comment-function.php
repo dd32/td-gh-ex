@@ -38,7 +38,7 @@ $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['tra
 					<div class="media-body">		
                     <!-- /comment-avatar -->
                     <div class="comment-content">
-						<h5 class="fn"><?php printf(__('%s'), get_comment_author_link()) ?><span>|</span>
+						<h5 class="fn"><?php printf(__('%s','busiprof'), get_comment_author_link()) ?><span>|</span>
 						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="datetime"><?php echo get_comment_date(); ?></a></h5>
                     <!-- /comment-meta -->
                     <?php if ( $comment->comment_approved == '0' ) : ?>

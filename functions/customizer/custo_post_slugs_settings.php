@@ -3,7 +3,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 
 	/* Post slug section */
 	$wp_customize->add_section( 'custom_post_slug_section' , array(
-		'title'      => __("SEO Friendly Url's","busiprof"),
+		'title'      => __("SEO Friendly URL","busiprof"),
 		'priority'       => 128,
    	) );
 	
@@ -31,25 +31,6 @@ function busiprof_post_slugs_settings( $wp_customize ){
 			)
 		);
 		
-		// slider slug
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_slider_slug]', array( 'default' => 'busiprof-slider' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_slider_slug]', 
-			array(
-				'label'    => __( 'Slider slug', 'busiprof' ),
-				'section'  => 'custom_post_slug_section',
-				'type'     => 'text',
-				'input_attrs' => array('disabled' => 'disabled'),
-		));
-		
-		// Services Slug
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_service_slug]', array( 'default' => 'busiprof-service' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_service_slug]', 
-			array(
-				'label'    => __( 'Services slug', 'busiprof' ),
-				'section'  => 'custom_post_slug_section',
-				'type'     => 'text',
-				'input_attrs' => array('disabled' => 'disabled'),
-		));
 		
 		// Projects Slug
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_project_slug]', array( 'default' => 'busiprof-project' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
@@ -71,15 +52,6 @@ function busiprof_post_slugs_settings( $wp_customize ){
 				'input_attrs' => array('disabled' => 'disabled'),
 		));
 		
-		// Testimonial Slug
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_testimonial_slug]', array( 'default' => 'busiprof-testimonial' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_testimonial_slug]', 
-			array(
-				'label'    => __( 'Testimonial slug', 'busiprof' ),
-				'section'  => 'custom_post_slug_section',
-				'type'     => 'text',
-				'input_attrs' => array('disabled' => 'disabled'),
-		));
 		
 		// Team Slug
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_team_slug]', array( 'default' => 'busiprof-team' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );

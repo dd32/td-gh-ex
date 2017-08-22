@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2017-07-21 18:11+0530\n"
-"PO-Revision-Date: 2017-07-21 18:11+0530\n"
+"POT-Creation-Date: 2017-08-17 14:00+0530\n"
+"PO-Revision-Date: 2017-08-17 13:59+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:58 index-blog.php:41
 msgid "Leave a Reply"
 msgstr ""
 
@@ -126,11 +126,12 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: content.php:37
+#: content.php:37 index-blog.php:53 theme_setup_data.php:41
+#: theme_setup_data.php:46
 msgid "Read More"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
@@ -147,14 +148,142 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#: functions/customizer-repeater/class/customizer-repeater-control.php:29
+msgid "Add new field"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:34
+msgid "Customizer Repeater"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:234
+#: functions/customizer-repeater/class/customizer-repeater-control.php:336
+msgid "Color"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:242
+#: functions/customizer-repeater/class/customizer-repeater-control.php:344
+#: functions/customizer/custo_sections_settings.php:93
+#: functions/customizer/custo_sections_settings.php:232
+#: functions/customizer/custo_sections_settings.php:368
+#: functions/customizer/custo_sections_settings.php:655
+#: functions/customizer/custo_sections_settings.php:695
+#: functions/customizer/custo_sections_settings.php:782
+#: functions/customizer/custo_template_settings.php:166
+msgid "Title"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:249
+#: functions/customizer-repeater/class/customizer-repeater-control.php:351
+msgid "Subtitle"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:256
+#: functions/customizer/custo_sections_settings.php:108
+#: functions/customizer/custo_sections_settings.php:251
+#: functions/customizer/custo_sections_settings.php:383
+#: functions/customizer/custo_sections_settings.php:433
+#: functions/customizer/custo_sections_settings.php:483
+#: functions/customizer/custo_sections_settings.php:532
+#: functions/customizer/custo_sections_settings.php:580
+#: functions/customizer/custo_sections_settings.php:664
+#: functions/customizer/custo_sections_settings.php:704
+#: functions/customizer/custo_sections_settings.php:793
+#: functions/customizer/custo_template_settings.php:177
+msgid "Description"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:264
+#: functions/customizer-repeater/class/customizer-repeater-control.php:366
+msgid "Designation"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:277
+#: functions/customizer-repeater/class/customizer-repeater-control.php:374
+#: functions/customizer-repeater/class/customizer-repeater-control.php:503
+#: functions/customizer-repeater/class/customizer-repeater-control.php:525
+msgid "Link"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:285
+#: functions/customizer-repeater/class/customizer-repeater-control.php:381
+msgid "Shortcode"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:309
+#: functions/customizer-repeater/class/customizer-repeater-control.php:398
+msgid "Delete field"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:358
+msgid "Text"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:432
+msgid "Open link in new tab:"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:443
+#: functions/customizer-repeater/class/customizer-repeater-control.php:479
+msgid "Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:448
+#, php-format
+msgid ""
+"Note: Some icons may not be displayed here. You can see the full list of "
+"icons at %1$s."
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:449
+msgid "http://fontawesome.io/icons/"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:466
+#: functions/customizer-repeater/class/customizer-repeater-control.php:480
+#: functions/customizer/custo_sections_settings.php:75
+#: functions/customizer/custo_sections_settings.php:414
+#: functions/customizer/custo_sections_settings.php:463
+#: functions/customizer/custo_sections_settings.php:513
+#: functions/customizer/custo_sections_settings.php:562
+msgid "Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:469
+msgid "Upload Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:476
+msgid "Image type"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:481
+msgid "None"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:489
+#: functions/customizer/custo_general_settings.php:110
+msgid "Social icons"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:506
+#: functions/customizer-repeater/class/customizer-repeater-control.php:536
+msgid "Remove Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:511
+#: functions/customizer-repeater/class/customizer-repeater-control.php:544
+msgid "Add Icon"
+msgstr ""
+
 #: functions/customizer/cust_pro.php:13 functions/customizer/cust_pro.php:20
 #: functions/customizer/custo_general_settings.php:120
 #: functions/customizer/custo_layout_manager_settings.php:20
 #: functions/customizer/custo_post_slugs_settings.php:13
-#: functions/customizer/custo_sections_settings.php:120
-#: functions/customizer/custo_sections_settings.php:545
-#: functions/customizer/custo_sections_settings.php:825
-#: functions/customizer/custo_sections_settings.php:1060
+#: functions/customizer/custo_sections_settings.php:174
+#: functions/customizer/custo_sections_settings.php:318
+#: functions/customizer/custo_sections_settings.php:598
+#: functions/customizer/custo_sections_settings.php:742
 #: functions/customizer/custo_template_settings.php:23
 #: functions/customizer/custo_template_settings.php:81
 #: functions/customizer/custo_template_settings.php:140
@@ -251,10 +380,6 @@ msgstr ""
 msgid "Copyright text"
 msgstr ""
 
-#: functions/customizer/custo_general_settings.php:110
-msgid "Social icons"
-msgstr ""
-
 #: functions/customizer/custo_general_settings.php:118
 msgid "Want to add social icon than"
 msgstr ""
@@ -276,7 +401,7 @@ msgid "LinkedIn URL"
 msgstr ""
 
 #: functions/customizer/custo_layout_manager_settings.php:10
-msgid "Theme layout manager"
+msgid "Theme Layout Manager"
 msgstr ""
 
 #: functions/customizer/custo_layout_manager_settings.php:20
@@ -304,305 +429,268 @@ msgid "Section 5"
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:6
-msgid "SEO Friendly Url's"
+msgid "SEO Friendly URL"
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:13
 msgid "Want to add custom post type slug than"
 msgstr ""
 
-#: functions/customizer/custo_post_slugs_settings.php:38
-msgid "Slider slug"
-msgstr ""
-
-#: functions/customizer/custo_post_slugs_settings.php:48
-msgid "Services slug"
-msgstr ""
-
-#: functions/customizer/custo_post_slugs_settings.php:58
+#: functions/customizer/custo_post_slugs_settings.php:39
 msgid "Projects slug"
 msgstr ""
 
-#: functions/customizer/custo_post_slugs_settings.php:68
+#: functions/customizer/custo_post_slugs_settings.php:49
 msgid "Projects category slug"
 msgstr ""
 
-#: functions/customizer/custo_post_slugs_settings.php:78
-msgid "Testimonial slug"
-msgstr ""
-
-#: functions/customizer/custo_post_slugs_settings.php:88
+#: functions/customizer/custo_post_slugs_settings.php:60
 msgid "Team slug"
 msgstr ""
 
-#: functions/customizer/custo_post_slugs_settings.php:101
+#: functions/customizer/custo_post_slugs_settings.php:73
 msgid ""
 "After Changing the slug, please do not forget to save permalinks. Without "
 "saving, the old permalinks will not revise."
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:8
+#: functions/customizer/custo_sections_settings.php:13
 msgid "Homepage section settings"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:13
+#: functions/customizer/custo_sections_settings.php:18
 msgid "Infobar settings"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:21
+#: functions/customizer/custo_sections_settings.php:26
 msgid "Enable Infobar"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:32 theme_setup_data.php:37
+#: functions/customizer/custo_sections_settings.php:37 theme_setup_data.php:37
 msgid "Backend as a service plateform for any app developer"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:35
+#: functions/customizer/custo_sections_settings.php:40
 msgid "Infobar text"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:42
-msgid "Slider"
+#: functions/customizer/custo_sections_settings.php:47
+msgid "Slider settings"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:50
+#: functions/customizer/custo_sections_settings.php:55
 msgid "Enable slider"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:70
-#: functions/customizer/custo_sections_settings.php:305
-#: functions/customizer/custo_sections_settings.php:383
-#: functions/customizer/custo_sections_settings.php:461
-#: functions/customizer/custo_sections_settings.php:641
-#: functions/customizer/custo_sections_settings.php:690
-#: functions/customizer/custo_sections_settings.php:740
-#: functions/customizer/custo_sections_settings.php:789
-#: functions/customizer/custo_sections_settings.php:892
-#: functions/customizer/custo_sections_settings.php:955
-msgid "Image"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:82 theme_setup_data.php:39
+#: functions/customizer/custo_sections_settings.php:87 theme_setup_data.php:39
+#: theme_setup_data.php:44
 msgid "Responsive WP theme"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:88
-#: functions/customizer/custo_sections_settings.php:176
-#: functions/customizer/custo_sections_settings.php:251
-#: functions/customizer/custo_sections_settings.php:329
-#: functions/customizer/custo_sections_settings.php:407
-#: functions/customizer/custo_sections_settings.php:485
-#: functions/customizer/custo_sections_settings.php:595
-#: functions/customizer/custo_sections_settings.php:863
-#: functions/customizer/custo_sections_settings.php:1025
-#: functions/customizer/custo_sections_settings.php:1100
-#: functions/customizer/custo_template_settings.php:166
-msgid "Title"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:97
-#: functions/customizer/custo_sections_settings.php:186
-#: functions/customizer/custo_sections_settings.php:261
-#: functions/customizer/custo_sections_settings.php:339
-#: functions/customizer/custo_sections_settings.php:417
-#: functions/customizer/custo_sections_settings.php:495
-#: functions/customizer/custo_sections_settings.php:604
-#: functions/customizer/custo_sections_settings.php:904
-#: functions/customizer/custo_sections_settings.php:967
-#: functions/customizer/custo_sections_settings.php:1108
-#: theme_setup_data.php:40 theme_setup_data.php:52 theme_setup_data.php:69
-#: theme_setup_data.php:83 theme_setup_data.php:100 theme_setup_data.php:101
-#: theme_setup_data.php:102 theme_setup_data.php:103 theme_setup_data.php:136
-#: theme_setup_data.php:141
+#: functions/customizer/custo_sections_settings.php:102
+#: functions/customizer/custo_sections_settings.php:243
+#: functions/customizer/custo_sections_settings.php:377
+#: functions/customizer/custo_sections_settings.php:790 theme_setup_data.php:40
+#: theme_setup_data.php:45 theme_setup_data.php:60 theme_setup_data.php:77
+#: theme_setup_data.php:90 theme_setup_data.php:143 theme_setup_data.php:148
 msgid ""
 "We are a group of passionate designers and developers who really love to "
 "create awesome wordpress themes & support"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:103
-#: functions/customizer/custo_sections_settings.php:194
-#: functions/customizer/custo_sections_settings.php:272
-#: functions/customizer/custo_sections_settings.php:350
-#: functions/customizer/custo_sections_settings.php:428
-#: functions/customizer/custo_sections_settings.php:506
-#: functions/customizer/custo_sections_settings.php:610
-#: functions/customizer/custo_sections_settings.php:660
-#: functions/customizer/custo_sections_settings.php:710
-#: functions/customizer/custo_sections_settings.php:759
-#: functions/customizer/custo_sections_settings.php:807
-#: functions/customizer/custo_sections_settings.php:877
-#: functions/customizer/custo_sections_settings.php:910
-#: functions/customizer/custo_sections_settings.php:973
-#: functions/customizer/custo_sections_settings.php:1041
-#: functions/customizer/custo_sections_settings.php:1111
-#: functions/customizer/custo_template_settings.php:177
-msgid "Description"
+#: functions/customizer/custo_sections_settings.php:119
+msgid "Read more"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:117
-msgid "Add more slider and animation effect than click upgrade to pro"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:143
-msgid "Service settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:153
-msgid "Enable services on homepage"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:167
-msgid "<b>Awesome</b> services"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:212
-#: functions/customizer/custo_sections_settings.php:290
-#: functions/customizer/custo_sections_settings.php:368
-#: functions/customizer/custo_sections_settings.php:446
-msgid "Icon"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:241
-#: functions/customizer/custo_sections_settings.php:319
-#: functions/customizer/custo_sections_settings.php:397
-#: functions/customizer/custo_sections_settings.php:475 theme_setup_data.php:95
-#: theme_setup_data.php:96 theme_setup_data.php:97 theme_setup_data.php:98
-msgid "Web design"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:515 theme_setup_data.php:76
-#: theme_setup_data.php:106
-msgid "More services"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:518
+#: functions/customizer/custo_sections_settings.php:125
+#: functions/customizer/custo_sections_settings.php:289
 msgid "Button Text"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:527
+#: functions/customizer/custo_sections_settings.php:135
+msgid "#"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:141
+#: functions/customizer/custo_sections_settings.php:299
 msgid "Button Link"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:542
+#: functions/customizer/custo_sections_settings.php:157
+msgid "Open link in new tab"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:171
+msgid "Add more slider and animation effect than click upgrade to pro"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:197
+msgid "Service settings"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:208
+msgid "Enable services on homepage"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:223
+msgid "<b>Awesome</b> services"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:269
+msgid "Service Content"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:272
+msgid "Add new service"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:273
+msgid "Service"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:286 theme_setup_data.php:84
+#: theme_setup_data.php:113
+msgid "More services"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:315
 msgid "Add more service than click upgrade to pro"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:568
+#: functions/customizer/custo_sections_settings.php:341
 msgid "Project settings"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:577
+#: functions/customizer/custo_sections_settings.php:350
 msgid "Enable home project section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:589 theme_setup_data.php:68
+#: functions/customizer/custo_sections_settings.php:362 theme_setup_data.php:76
 msgid "<b>Recent </b>projects"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:620
-#: functions/customizer/custo_sections_settings.php:669
-#: functions/customizer/custo_sections_settings.php:719
-#: functions/customizer/custo_sections_settings.php:768
-#: theme_setup_data.php:109 theme_setup_data.php:114 theme_setup_data.php:119
-#: theme_setup_data.php:124
+#: functions/customizer/custo_sections_settings.php:393
+#: functions/customizer/custo_sections_settings.php:442
+#: functions/customizer/custo_sections_settings.php:492
+#: functions/customizer/custo_sections_settings.php:541
+#: theme_setup_data.php:116 theme_setup_data.php:121 theme_setup_data.php:126
+#: theme_setup_data.php:131
 msgid "Business cards"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:626
+#: functions/customizer/custo_sections_settings.php:399
 msgid "Project one"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:654
-#: functions/customizer/custo_sections_settings.php:704
-#: functions/customizer/custo_sections_settings.php:753
-#: functions/customizer/custo_sections_settings.php:801
-#: theme_setup_data.php:111 theme_setup_data.php:116 theme_setup_data.php:121
-#: theme_setup_data.php:126
+#: functions/customizer/custo_sections_settings.php:427
+#: functions/customizer/custo_sections_settings.php:477
+#: functions/customizer/custo_sections_settings.php:526
+#: functions/customizer/custo_sections_settings.php:574
+#: theme_setup_data.php:118 theme_setup_data.php:123 theme_setup_data.php:128
+#: theme_setup_data.php:133
 msgid "Graphic design & web design"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:675
+#: functions/customizer/custo_sections_settings.php:448
 msgid "Project two"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:725
+#: functions/customizer/custo_sections_settings.php:498
 msgid "Project three"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:774
+#: functions/customizer/custo_sections_settings.php:547
 msgid "Project four"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:822
+#: functions/customizer/custo_sections_settings.php:595
 msgid "Want to add more projects and categorization than upgrade to pro"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:848
-msgid "Testimonial setting"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:857
-#: theme_setup_data.php:132
-msgid "<b>Our</b> Testimonials"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:871
-#: functions/customizer/custo_sections_settings.php:1034
-#: theme_setup_data.php:133 theme_setup_data.php:144 theme_setup_data.php:147
-msgid "We are a group of passionate designers & developers"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:924
-#: functions/customizer/custo_sections_settings.php:988
-msgid "Author"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:933
-#: functions/customizer/custo_sections_settings.php:997
-#: theme_setup_data.php:138 theme_setup_data.php:143
-msgid "(Sales & Marketing)"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:939
-#: functions/customizer/custo_sections_settings.php:1003
-msgid "Designation"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:1011
+#: functions/customizer/custo_sections_settings.php:620
 msgid "Recent blog setting"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1018
-#: theme_setup_data.php:146
-msgid "<b>Recent</b> blog"
+#: functions/customizer/custo_sections_settings.php:629
+msgid "Enable home blog section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1049
+#: functions/customizer/custo_sections_settings.php:633
+#: functions/customizer/custo_sections_settings.php:645
+#: functions/customizer/custo_sections_settings.php:685
+msgid "ON"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:634
+#: functions/customizer/custo_sections_settings.php:646
+#: functions/customizer/custo_sections_settings.php:686
+msgid "OFF"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:641
+msgid "Enable home blog meta"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:652
+msgid "<b>Recent </b> blog"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:661
+#: functions/customizer/custo_sections_settings.php:701
+#: theme_setup_data.php:140 theme_setup_data.php:151 theme_setup_data.php:154
+msgid "We are a group of passionate designers & developers"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:673
+msgid "Testimonial settings"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:681
+msgid "Enable home testimonial section"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:692
+#: theme_setup_data.php:139
+msgid "<b>Our</b> Testimonials"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:715
+msgid "Testimonial Content"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:717
+msgid "Add new testimonila"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:718
+msgid "Testimonial"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:731
 msgid "Client slider setting"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1059
+#: functions/customizer/custo_sections_settings.php:741
 msgid "Want to add client section with slider animation then"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1086
+#: functions/customizer/custo_sections_settings.php:768
 msgid "Enable home client section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1097
-#: theme_setup_data.php:51
+#: functions/customizer/custo_sections_settings.php:779 theme_setup_data.php:59
 msgid "Meet our clients"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1121
+#: functions/customizer/custo_sections_settings.php:803
 msgid "No. of clients show"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1133
+#: functions/customizer/custo_sections_settings.php:815
 msgid "Animation speed"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:1149
+#: functions/customizer/custo_sections_settings.php:831
 msgid "Click here to add client"
 msgstr ""
 
@@ -611,7 +699,7 @@ msgid "Template settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:14
-msgid "About us page setting"
+msgid "About Us page settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:22
@@ -628,7 +716,7 @@ msgid "Enable client section"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:71
-msgid "Service page setting"
+msgid "Service page settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:80
@@ -640,7 +728,7 @@ msgid "Enable testimonial section"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:131
-msgid "Project page setting"
+msgid "Project page settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:140
@@ -705,6 +793,39 @@ msgstr ""
 msgid "Select column layout"
 msgstr ""
 
+#: functions/customizer/customizer.php:85
+#: functions/customizer/customizer.php:130 index-services.php:172
+msgid "Web Design"
+msgstr ""
+
+#: functions/customizer/customizer.php:86
+#: functions/customizer/customizer.php:94
+#: functions/customizer/customizer.php:102
+#: functions/customizer/customizer.php:111
+#: functions/customizer/customizer.php:131
+#: functions/customizer/customizer.php:139
+#: functions/customizer/customizer.php:147
+#: functions/customizer/customizer.php:156 index-services.php:186
+msgid ""
+"It is a long established fact that a reader will be distracted by the "
+"readable content of a page when looking at its layout."
+msgstr ""
+
+#: functions/customizer/customizer.php:93
+#: functions/customizer/customizer.php:138 index-services.php:172
+msgid "Unique Elements"
+msgstr ""
+
+#: functions/customizer/customizer.php:101
+#: functions/customizer/customizer.php:146 index-services.php:172
+msgid "User Friendly"
+msgstr ""
+
+#: functions/customizer/customizer.php:110
+#: functions/customizer/customizer.php:155 index-services.php:172
+msgid "24×7 Support"
+msgstr ""
+
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
 msgstr ""
@@ -724,6 +845,15 @@ msgstr ""
 msgid "Woocommerce sidebar area"
 msgstr ""
 
+#: index-testimonials.php:97
+msgid ""
+"We are group of passionate designers and developers who really love to "
+"create wordpress themes with amazing support. Widest laborum dolo rumes "
+"fugats untras. Ethar omnis iste natus error sit voluptatem "
+"accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem "
+"ipsum am quaerat voluptatem..."
+msgstr ""
+
 #: search.php:27
 msgid "Nothing Found"
 msgstr ""
@@ -738,8 +868,16 @@ msgstr ""
 msgid "Tag  Archive"
 msgstr ""
 
-#: theme_setup_data.php:82
+#: theme_setup_data.php:89
 msgid "<b>Awesome</b>services"
+msgstr ""
+
+#: theme_setup_data.php:145 theme_setup_data.php:150
+msgid "(Sales & Marketing)"
+msgstr ""
+
+#: theme_setup_data.php:153
+msgid "<b>Recent</b> blog"
 msgstr ""
 
 #. Theme Name of the plugin/theme

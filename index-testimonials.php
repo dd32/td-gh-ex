@@ -1,112 +1,153 @@
-<?php  $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); ?>
-<!-- Testimonial & Blog Section -->
-<section id="section">
-	<div class="container">	
-		<div class="row">
-		
-			<!-- Testimonial -->
-			<div class="col-md-6 testimonial">
-				<!-- Section Title -->
-				<div class="section-title-small">
-					<?php if( $current_options['testimonials_title'] != '' ) { ?>
-					<h3 class="section-heading"><?php echo $current_options['testimonials_title'];?></h3>
-					<?php } if( $current_options['testimonials_text'] !='') { ?>
-					<p><?php echo $current_options['testimonials_text'];?></p>
-					<?php } ?>
-				</div>
-				<!-- /Section Title -->
-				<div class="post" id="post1"> 
-					<div class="media"> 
-						<figure class="post-thumbnail width-lg">
-						<div class="home-post-img">
-						<img src="<?php if($current_options['testimonials_image_one']!='') { echo esc_url($current_options['testimonials_image_one']);} ?>" class="img-circle" alt="img">
-						</div>
-						</figure> 
-						<div class="media-body">
-							<div class="entry-content">
-								<p><?php if($current_options['testimonials_text_one']!='') { echo $current_options['testimonials_text_one'];} ?></p>
-								<span class="author-name"><?php if($current_options['testimonials_name_one']!='') { echo $current_options['testimonials_name_one'];} ?> <small class="designation">(<?php if($current_options['testimonials_designation_one']!='') { echo $current_options['testimonials_designation_one'];} ?>)</small></span>
-							</div>
-						</div> 
-					</div>
-				</div>
+<?php  
+$testimonial_options = get_theme_mod('busiprof_testimonial_content');
+if(empty($testimonial_options)){
+	$old_testimonial_data = get_option( 'busiprof_theme_options');
+	
+	$testimonial_options = json_encode( array(
+				array(
+				'title'      => isset($old_testimonial_data['testimonials_name_one'])? $old_testimonial_data['testimonials_name_one']:'Robert Johnson',
+				'text'       => isset($old_testimonial_data['testimonials_text_one'])? $old_testimonial_data['testimonials_text_one']:'We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
+				'designation' => isset($old_testimonial_data['testimonials_designation_one'])? $old_testimonial_data['testimonials_designation_one']:'(CEO & Founder)',
+				'link'       => '#',
+				'image_url'  => isset($old_testimonial_data['testimonials_image_one'])? $old_testimonial_data['testimonials_image_one']:get_template_directory_uri()."/images/item12.jpg",
+				'id'         => 'customizer_repeater_56d7ea7f40b96',
+				'open_new_tab' => 'no',
 				
-				<div class="post" id="post2"> 
-					<div class="media"> 
-						<figure class="post-thumbnail width-lg">
-						<div class="home-post-img">
-						<img src="<?php if($current_options['testimonials_image_two']!='') { echo esc_url($current_options['testimonials_image_two']);} ?>" class="img-circle" alt="img">
-						</div>
-						</figure> 
-						<div class="media-body">
-							<div class="entry-content">
-								<p><?php if($current_options['testimonials_text_two']!='') { echo $current_options['testimonials_text_two'];} ?></p>
-								<span class="author-name"><?php if($current_options['testimonials_name_two']!='') { echo $current_options['testimonials_name_two'];} ?> <small class="designation">(<?php if($current_options['testimonials_designation_two']!='') { echo $current_options['testimonials_designation_two'];} ?>)</small></span>
-							</div>
-						</div> 
+				),
+				array(
+				'title'      => isset($old_testimonial_data['testimonials_name_two'])? $old_testimonial_data['testimonials_name_two']:'Annah Doe',
+				'text'       => isset($old_testimonial_data['testimonials_text_two'])? $old_testimonial_data['testimonials_text_two']:'We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
+				'designation' => isset($old_testimonial_data['testimonials_designation_two'])? $old_testimonial_data['testimonials_designation_two']:'(Team Leader)',
+				'link'       => '#',
+				'image_url'  => isset($old_testimonial_data['testimonials_image_two'])? $old_testimonial_data['testimonials_image_two']:get_template_directory_uri()."/images/item12.jpg",
+				'id'         => 'customizer_repeater_56d7ea7f40b97',
+				'open_new_tab' => 'no',
+				
+				),
+			) );
+	
+	
+}
+ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() );
+if( $current_options['home_testimonial_section_enabled']=='on' ) { ?>
+<!-- Additional Section Two - Testimonial Scroll -->
+<section id="section" class="testimonial-scroll bg-color">
+	<div class="container">
+			
+			<!-- Section Title -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<?php if( $current_options['testimonials_title'] != '' ) { ?>
+						<h1 class="section-heading"><?php echo $current_options['testimonials_title'];?></h1>
+						<?php } if( $current_options['testimonials_text'] !='') { ?>
+						<p><?php echo $current_options['testimonials_text'];?></p>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
-			<!-- /Testimonial -->
 			
-			<!-- Blog Post -->
-			<div class="col-md-6 home-post">
-				<!-- Section Title -->
-				<div class="section-title-small">
-				<?php
-					if( $current_options['recent_blog_title'] != '' ) { ?> 
-					<h3 class="section-heading"><?php echo $current_options['recent_blog_title'];?></h3>
-					<?php } if( $current_options['recent_blog_description'] !='')  { ?>
-					<p><?php echo $current_options['recent_blog_description'];?></p>
-					<?php } ?>
-				</div>
-				<!-- /Section Title -->	
+			<!-- /Section Title -->					
+						
+			<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myTestimonial">
+				<div class="carousel-inner">
+					<?php
+					$t=true;
+					$testimonial_options = json_decode($testimonial_options);
+					if( $testimonial_options!='' )
+						{
+					foreach($testimonial_options as $testimonial_iteam){ 
+					
+							$test_desc =  $testimonial_iteam->text;
+							$test_link = $testimonial_iteam->link;
+							$open_new_tab = $testimonial_iteam->open_new_tab;
+							$designation = $testimonial_iteam->designation;
+						
 				
-				<div class="row">
-					<?php 	$args = array( 'post_type' => 'post','posts_per_page' => 4,'post__not_in'=>get_option("sticky_posts")) ; 	
-						query_posts( $args );
-						if(query_posts( $args ))
-					{	
-						$i=1;
-						while(have_posts()):the_post();
-					{ ?>
-					<div class="col-md-6">
+					?>
+					<div class="col-md-12 pull-left item <?php if( $t == true ){ echo 'active'; } $t = false; ?>">
 						<div class="post"> 
+							<?php $default_arg =array('class' => "img-circle"); ?>
+							<figure class="post-thumbnail">
+							<a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>>
+							<img alt="img" class="img-responsive" src="<?php echo $testimonial_iteam->image_url; ?>" draggable="false">
+							</a>
+							</figure>
+							
+							<div class="entry-content">
+								<p><?php echo $test_desc; ?></p>
+							</div>
 							<div class="media"> 
-								<figure class="post-thumbnail width-lg">
-								<div class="home-post-img">
-								<?php $defalt_arg =array('class' => "img-circle");?>
-								<?php if(has_post_thumbnail()){?>
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('',$defalt_arg);?></a>
-								<?php } ?>
-								</div>
-								</figure> 
 								<div class="media-body">
-									<div class="entry-header">
-										<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h5>
-										<span class="entry-date">
-											<a href="<?php the_permalink(); ?>"><?php echo get_the_date('M j,Y');?></a>
-										</span>
-									</div>
+									<span class="author-name"> <a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>> <?php echo $testimonial_iteam->title; ?> </a> <small class="designation"><?php echo $designation; ?></small></span>
 								</div> 
 							</div>
 						</div>
 					</div>
-					<?php
-					}					
-					if($i==2)
-					{ 
-					echo '<div class="clearfix"></div>';
-					$i=0;
-					}$i++;
-					wp_reset_postdata();
-					endwhile;  } ?>
+					<?php } } else {
+					$image = array('item9','item10','item-small2','item-small3');
+					$name = array('Robert Johnson','Natelie Portman','Annah Doe','Charlie Sun');
+					$desc = array('(CEO & Founder)','(Sales & Marketing)','(Sales Executive)','(Team Leader)');
+					for($i=0; $i<=3; $i++) { ?>
+					<div class="col-md-12 pull-left item <?php if($i == 0) { echo 'active'; } ?>">
+					
+						<div class="post"> 
+							<figure class="post-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $image[$i]; ?>.jpg" class="img-circle" alt="img"></figure> 	
+							<div class="entry-content">
+								<p><?php _e('We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...','busiprof'); ?></p>
+							</div>
+							<div class="media"> 
+								<div class="media-body">
+									<span class="author-name"><?php echo $name[$i]; ?> <small class="designation"><?php echo $desc[$i]; ?></small></span>
+								</div> 
+							</div>
+						</div>
+					</div>
+					<?php } }?>
 				</div>
-			</div>
-			<!-- /Blog Post -->
-		</div>	
-	</div>
-</section>
-<!-- End of Testimonial & Blog Section -->
 
-<div class="clearfix"></div>
+				
+				<?php 
+				//print_r($testimonial_options);
+				if( $testimonial_options!='')
+						{
+							if(count($testimonial_options)>1){
+							$i=0;
+							?>
+						<div class="row">
+							<div class="testi-pager">
+								<ol class="carousel-indicators testi-pagi">
+								<?php
+								foreach($testimonial_options as $testimonial_iteam){
+									?>
+									<li data-target="#myTestimonial" data-slide-to="<?php echo $i; ?>"<?php if($i==0){ ?> class="active" <?php }?> ></li>
+										<?php $i++;
+										}
+								?>
+								</ol>
+							</div>	
+						</div>
+							<?php
+							}
+						}else{
+							?>
+									<!-- Testimonial Pagination -->
+						<div class="row">
+							<div class="testi-pager">
+								<ol class="carousel-indicators testi-pagi">
+								<li data-target="#myTestimonial" data-slide-to="0" class="active"></li>
+								<li data-target="#myTestimonial" data-slide-to="1" ></li>
+								<li data-target="#myTestimonial" data-slide-to="2" ></li>
+								<li data-target="#myTestimonial" data-slide-to="2" ></li>
+								</ol>
+							</div>	
+				</div>
+						<?php }
+				?>
+				
+				
+			</div>		
+	</div>		
+</section>
+<!-- End of Additional Section Two - Testimonial Scroll -->
+<?php } ?>

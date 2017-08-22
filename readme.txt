@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.4
+1. Added Repetator control for slider, service, testimoanil section.
 @version 1.8.3
 1. Add Read more button in slider.
 2. Fixed default menu issue.
@@ -224,8 +226,8 @@ along with this program.  If not, see .
 
 BusiProf WordPress Theme bundles the following third-party resources:
 
-Screenshot: Image used in screenshot By FirmBee
-URL: https://pixabay.com/p-667280/?no_redirect
+Screenshot: Image used in screenshot By Stocksnap
+URL: https://pixabay.com/en/people-man-work-office-business-2572981/
 
 Slider Banner Image: Image used in screenshot By FirmBee
 URL: https://pixabay.com/p-667280/?no_redirect
@@ -248,7 +250,7 @@ Testimonial Image :
 
 
 
-Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license
 Source: http://fontawesome.io
 

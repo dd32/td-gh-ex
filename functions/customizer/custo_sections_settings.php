@@ -1,5 +1,10 @@
-<?php 
+<?php
+$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
+if ( file_exists( $repeater_path ) ) {
+require_once( $repeater_path );
+}
 function busiprof_sections_settings( $wp_customize ){
+$selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 
 /* Sections Settings */
 	$wp_customize->add_panel( 'section_settings', array(
@@ -39,7 +44,7 @@ function busiprof_sections_settings( $wp_customize ){
 		
 	/* Slider Section */
 	$wp_customize->add_section( 'slider_section' , array(
-		'title'      => __('Slider', 'busiprof'),
+		'title'      => __('Slider settings', 'busiprof'),
 		'panel'  => 'section_settings',
 		'priority'   => 1,
    	) );
@@ -149,7 +154,7 @@ function busiprof_sections_settings( $wp_customize ){
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[readmore_target]', array(
-			'label'   => __('Button Link', 'busiprof'),
+			'label'   => __('Open link in new tab', 'busiprof'),
 			'section' => 'slider_section',
 			'type' => 'checkbox',
 		));
@@ -189,12 +194,13 @@ function busiprof_sections_settings( $wp_customize ){
 	
 	/* Services section */
 	$wp_customize->add_section( 'services_section' , array(
-		'title'      => __('Service settings', 'busiprof'),
+		'title'    => esc_html__( 'Service settings', 'busiprof' ),
 		'panel'  => 'section_settings',
 		'priority'   => 3,
    	) );
 	
-	//Hide Index Service Section
+	
+	
 	
 	// Enable service more btn
 		$wp_customize->add_setting( 'busiprof_theme_options[enable_services]' , array( 'default' => 'on' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
@@ -202,6 +208,7 @@ function busiprof_sections_settings( $wp_customize ){
 				'label'    => __( 'Enable services on homepage', 'busiprof' ),
 				'section'  => 'services_section',
 				'type'     => 'radio',
+				'priority'   => 1,
 				'choices' => array(
 					'on'=>'ON',
 					'off'=>'OFF'
@@ -225,6 +232,7 @@ function busiprof_sections_settings( $wp_customize ){
 			'label' => __('Title','busiprof'),
 			'section' => 'services_section',
 			'type' => 'text',
+			'priority'   => 2,
 		)
 		);
 		
@@ -233,7 +241,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[service_tagline]',
 		array(
 			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		)	
 		);
@@ -244,329 +252,44 @@ function busiprof_sections_settings( $wp_customize ){
 			'section' => 'services_section',
 			'type' => 'textarea',
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'priority'   => 3,
 		)
 		);	
 	
-		//service section one
 	
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_icon_one]', array(
-		 'sanitize_callback' => 'sanitize_text_field',
-        'default'        => 'fa-medkit',
-        'capability'     => 'edit_theme_options',
-		'type' => 'option',
-		));
-	
-		$wp_customize->add_control( 'busiprof_theme_options[service_icon_one]', array(
-        'label'   => __('Icon', 'busiprof'),
-		'section' => 'services_section',
-        'type'    => 'text',
-		));
 		
 		
-		//Service One Custom image
-		$wp_customize->add_setting( 'busiprof_theme_options[service_image_one]',array('default' => '',
-		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
- 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[service_image_one]',
-				array(
-					'label' => 'Service One Custom Image',
-					'settings' =>'busiprof_theme_options[service_image_one]',
-					'section' => 'services_section',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		
-		//Service One Title
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_title_one]',
-		array(
-			'default' => __('Web design','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		)	
-		);
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_title_one]',
-		array(
-			'label' => __('Title','busiprof'),
-			'section' => 'services_section',
-			'type' => 'text',
-		)
-		);
-		
-		//Service One Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_text_one]',
-		array(
-			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			 'capability'     => 'edit_theme_options',
-			 'sanitize_callback' => 'sanitize_text_field',
-			 'type' => 'option',
-		)	
-		);
-		
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_text_one]',
-		array(
-			'label' => __('Description','busiprof'),
-			'section' => 'services_section',
-			'type' => 'textarea',	
-		)
-		);
-		
-		
-		//service section Two
-	
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_icon_two]', array(
-		 'sanitize_callback' => 'sanitize_text_field',
-        'default'        => 'fa-truck',
-        'capability'     => 'edit_theme_options',
-		'type' => 'option',
-		));
-	
-		$wp_customize->add_control( 'busiprof_theme_options[service_icon_two]', array(
-        'label'   => __('Icon', 'busiprof'),
-		'section' => 'services_section',
-        'type'    => 'text',
-		));
-		
-		
-		//Service Two Custom image
-		$wp_customize->add_setting( 'busiprof_theme_options[service_image_two]',
-		array('type' => 'option','sanitize_callback' => 'esc_url_raw',));
- 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[service_image_two]',
-				array(
-					'label' => __('Image','busiprof'),
-					'settings' =>'busiprof_theme_options[service_image_two]',
-					'section' => 'services_section',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		
-		//Service Two Title
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_title_two]',
-		array(
-			'default' => __('Web design','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		)	
-		);
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_title_two]',
-		array(
-			'label' => __('Title','busiprof'),
-			'section' => 'services_section',
-			'type' => 'text',
-		)
-		);
-		
-		//Service Two Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_text_two]',
-		array(
-			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			 'capability'     => 'edit_theme_options',
-			 'sanitize_callback' => 'sanitize_text_field',
-			 'type' => 'option',
-		)	
-		);
-		
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_text_two]',
-		array(
-			'label' => __('Description','busiprof'),
-			'section' => 'services_section',
-			'type' => 'textarea',	
-		)
-		);
-		
-		
-		//service section Three
-	
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_icon_three]', array(
-		 'sanitize_callback' => 'sanitize_text_field',
-        'default'        => 'fa-camera',
-        'capability'     => 'edit_theme_options',
-		'type' => 'option',
-		));
-	
-		$wp_customize->add_control( 'busiprof_theme_options[service_icon_three]', array(
-        'label'   => __('Icon', 'busiprof'),
-		'section' => 'services_section',
-        'type'    => 'text',
-		));
-		
-		
-		//Service Three Custom image
-		$wp_customize->add_setting( 'busiprof_theme_options[service_image_three]',array('default' => '',
-		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
- 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[service_image_three]',
-				array(
-					'label' => __('Image','busiprof'),
-					'settings' =>'busiprof_theme_options[service_image_three]',
-					'section' => 'services_section',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		
-		//Service Three Title
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_title_three]',
-		array(
-			'default' => __('Web design','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		)	
-		);
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_title_three]',
-		array(
-			'label' => __('Title','busiprof'),
-			'section' => 'services_section',
-			'type' => 'text',
-		)
-		);
-		
-		//Service Three Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_text_three]',
-		array(
-			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			 'capability'     => 'edit_theme_options',
-			 'sanitize_callback' => 'sanitize_text_field',
-			 'type' => 'option',
-		)	
-		);
-		
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_text_three]',
-		array(
-			'label' => __('Description','busiprof'),
-			'section' => 'services_section',
-			'type' => 'textarea',	
-		)
-		);
-		
-		
-		//service section Four
-	
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_icon_four]', array(
-		 'sanitize_callback' => 'sanitize_text_field',
-        'default'        => 'fa-fighter-jet',
-        'capability'     => 'edit_theme_options',
-		'type' => 'option',
-		));
-	
-		$wp_customize->add_control( 'busiprof_theme_options[service_icon_four]', array(
-        'label'   => __('Icon', 'busiprof'),
-		'section' => 'services_section',
-        'type'    => 'text',
-		));
-		
-		
-		//Service Three Custom image
-		$wp_customize->add_setting( 'busiprof_theme_options[service_image_four]',array('default' => '',
-		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
- 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[service_image_four]',
-				array(
-					'label' => __('Image','busiprof'),
-					'settings' =>'busiprof_theme_options[service_image_four]',
-					'section' => 'services_section',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		
-		//Service Three Title
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_title_four]',
-		array(
-			'default' => __('Web design','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		)	
-		);
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_title_four]',
-		array(
-			'label' => __('Title','busiprof'),
-			'section' => 'services_section',
-			'type' => 'text',
-		)
-		);
-		
-		//Service Three Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[service_text_four]',
-		array(
-			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			 'capability'     => 'edit_theme_options',
-			 'sanitize_callback' => 'sanitize_text_field',
-			 'type' => 'option',
-		)	
-		);
-		
-		
-		$wp_customize->add_control(
-		'busiprof_theme_options[service_text_four]',
-		array(
-			'label' => __('Description','busiprof'),
-			'section' => 'services_section',
-			'type' => 'textarea',	
-		)
-		);
+
+		if ( class_exists( 'Busiprof_Repeater' ) ) {
+			$wp_customize->add_setting( 'busiprof_service_content', array(
+				'sanitize_callback' => 'busiprof_repeater_sanitize',
+			) );
+
+			$wp_customize->add_control( new Busiprof_Repeater( $wp_customize, 'busiprof_service_content', array(
+				'label'                             => esc_html__( 'Service Content', 'busiprof' ),
+				'section'                           => 'services_section',
+				'priority'                          => 4,
+				'add_field_label'                   => esc_html__( 'Add new service', 'busiprof' ),
+				'item_name'                         => esc_html__( 'Service', 'busiprof' ),
+				'customizer_repeater_icon_control'  => true,
+				'customizer_repeater_title_control' => true,
+				'customizer_repeater_text_control'  => true,
+				'customizer_repeater_link_control'  => true,
+				'customizer_repeater_color_control' => true,
+				'customizer_repeater_image_control' => true,
+				) ) );
+		}
 		
 			
 		// Services Read More Text
 		$wp_customize->add_setting( 'busiprof_theme_options[service_button_value]', 
-		array( 'default' => __('More services','busiprof') , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		array( 'default' => __('More services','busiprof') , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[service_button_value]', 
 			array(
 				'label'    => __('Button Text', 'busiprof' ),
 				'section'  => 'services_section',
 				'type'     => 'text',
+				'priority'   => 5,
 		));
 		
 		// Services Read More Button URL
@@ -576,6 +299,7 @@ function busiprof_sections_settings( $wp_customize ){
 				'label'    => __('Button Link', 'busiprof' ),
 				'section'  => 'services_section',
 				'type'     => 'text',
+				'priority'   => 6,
 		));
 		
 		
@@ -652,7 +376,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[protfolio_description_tag]', array(
 			'default'        => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[protfolio_description_tag]', array(
@@ -668,7 +392,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_title_one]', array(
 			'default'        => __('Business cards','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_one]', array(
@@ -702,7 +426,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_text_one]', array(
 			'default'        => __('Graphic design & web design','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_one]', array(
@@ -717,7 +441,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_title_two]', array(
 			'default'        => __('Business cards','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_two]', array(
@@ -752,7 +476,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_text_two]', array(
 			'default'        => __('Graphic design & web design','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_two]', array(
@@ -767,7 +491,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_title_three]', array(
 			'default'        => __('Business cards','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_three]', array(
@@ -801,7 +525,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_text_three]', array(
 			'default'        => __('Graphic design & web design','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_three]', array(
@@ -816,7 +540,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_title_four]', array(
 			'default'        => __('Business cards','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_four]', array(
@@ -849,7 +573,7 @@ function busiprof_sections_settings( $wp_customize ){
 		'busiprof_theme_options[project_text_four]', array(
 			'default'        => __('Graphic design & web design','busiprof'),
 			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_four]', array(
@@ -891,206 +615,115 @@ function busiprof_sections_settings( $wp_customize ){
 		);
 		
 		
-	//Testimonial Section
-			
-	$wp_customize->add_section( 'testimonial_settings' , array(
-		'title'      => __('Testimonial setting', 'busiprof'),
-		'panel'  => 'section_settings',
-		'priority'   => 5,
-   	) );
-	
-	
-		//Testimonail Title
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_title]', array(
-			'default'        => __('<b>Our</b> Testimonials','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_title]', array(
-			'label'   => __('Title', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		//Testimonail Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_text]', array(
-			'default'        => __('We are a group of passionate designers & developers','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_text]', array(
-			'label'   => __('Description', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'textarea',
-		));
-		
-		
-		//Testimonail One Image
-		$wp_customize->add_setting( 'busiprof_theme_options[testimonials_image_one]',array('default' => get_template_directory_uri().'/images/default/testimonial.jpg',
-		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
-	 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[testimonials_image_one]',
-				array(
-					'label' => __('Image','busiprof'),
-					'settings' =>'busiprof_theme_options[testimonials_image_one]',
-					'section' => 'testimonial_settings',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		//Testimonail One Author Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_text_one]', array(
-			'default'        => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_text_one]', array(
-			'label'   => __('Description', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		//Testimonail One Author
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_name_one]', array(
-			'default'        => 'Natalie Portman',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_name_one]', array(
-			'label'   => __('Author', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		
-		//Testimonail one Author Designation
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_designation_one]', array(
-			'default'        => __('(Sales & Marketing)','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_designation_one]', array(
-			'label'   => __('Designation', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		
-		
-		//Testimonail Two Image
-		$wp_customize->add_setting( 'busiprof_theme_options[testimonials_image_two]',array('default' => get_template_directory_uri().'/images/default/testimonial2.jpg',
-		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
-	 
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'busiprof_theme_options[testimonials_image_two]',
-				array(
-					'label' => __('Image','busiprof'),
-					'settings' =>'busiprof_theme_options[testimonials_image_two]',
-					'section' => 'testimonial_settings',
-					'type' => 'upload',
-				)
-			)
-		);
-		
-		
-		//Testimonail Two Author Description
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_text_two]', array(
-			'default'        => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_text_two]', array(
-			'label'   => __('Description', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		
-		//Testimonail Two Author
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_name_two]', array(
-			'default'        => 'Natalie Portman',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_name_two]', array(
-			'label'   => __('Author', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		
-		//Testimonail one Author Designation
-		$wp_customize->add_setting(
-		'busiprof_theme_options[testimonials_designation_two]', array(
-			'default'        => __('(Sales & Marketing)','busiprof'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('busiprof_theme_options[testimonials_designation_two]', array(
-			'label'   => __('Designation', 'busiprof'),
-			'section' => 'testimonial_settings',
-			'type' => 'text',
-		));
-		
-		
 		//Recent Blog Setting
 		$wp_customize->add_section( 'recent_blog_settings' , array(
 		'title'      => __('Recent blog setting', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 6,
+		'priority'   => 5,
 		) );
+		
+		
+		// Enable Recent Blog
+		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'busiprof_theme_options[home_recentblog_section_enabled]' , array(
+				'label'    => __( 'Enable home blog section', 'busiprof' ),
+				'section'  => 'recent_blog_settings',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>__('ON', 'busiprof'),
+					'off'=>__('OFF', 'busiprof')
+				)
+		));
+		
+		// Enable Recent Blog
+		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_meta_enable]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[home_recentblog_meta_enable]' , array(
+				'label'    => __( 'Enable home blog meta', 'busiprof' ),
+				'section'  => 'recent_blog_settings',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>__('ON', 'busiprof'),
+					'off'=>__('OFF', 'busiprof')
+				)
+		));	
+		
+		
+		// blog section title
+		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_title]', array( 'default' => __('<b>Recent </b> blog', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[recent_blog_title]', 
+			array(
+				'label'    => __( 'Title', 'busiprof' ),
+				'section'  => 'recent_blog_settings',
+				'type'     => 'text',
+		));
+		
+		// blog section desc
+		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_description]', array( 'default' => __('We are a group of passionate designers & developers', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[recent_blog_description]', 
+			array(
+				'label'    => __( 'Description', 'busiprof' ),
+				'section'  => 'recent_blog_settings',
+				'type'     => 'textarea',
+		));
+		
+		
+		//Testimonial Section
+			
+	$wp_customize->add_section( 'testimonial_settings' , array(
+		'title'      => __('Testimonial settings', 'busiprof'),
+		'panel'  => 'section_settings',
+		'priority'   => 6,
+   	) );
 	
-		//Recent Blog Title
-		$wp_customize->add_setting('busiprof_theme_options[recent_blog_title]',array(
-		'default' => __('<b>Recent</b> blog','busiprof'),
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'busiprof_input_field_sanitize_text',
-		'type' => 'option',
+		
+		$wp_customize->add_setting( 'busiprof_theme_options[home_testimonial_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[home_testimonial_section_enabled]' , array(
+				'label'    => __( 'Enable home testimonial section', 'busiprof' ),
+				'section'  => 'testimonial_settings',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>__('ON', 'busiprof'),
+					'off'=>__('OFF', 'busiprof')
+				)
 		));
 		
-		$wp_customize->add_control('busiprof_theme_options[recent_blog_title]',array(
-		'label' => __('Title','busiprof'),
-		'section'=> 'recent_blog_settings',
-		'type'=> 'text',
+		// testmonial section title
+		$wp_customize->add_setting( 'busiprof_theme_options[testimonials_title]', 
+		array( 'default' => __('<b>Our</b> Testimonials', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[testimonials_title]', 
+			array(
+				'label'    => __( 'Title', 'busiprof' ),
+				'section'  => 'testimonial_settings',
+				'type'     => 'text',
 		));
 		
+		// testmonial section desc
+		$wp_customize->add_setting( 'busiprof_theme_options[testimonials_text]', array( 'default' => __('We are a group of passionate designers & developers', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
+		$wp_customize->add_control(	'busiprof_theme_options[testimonials_text]', 
+			array(
+				'label'    => __( 'Description', 'busiprof' ),
+				'section'  => 'testimonial_settings',
+				'type'     => 'textarea',
+		));	
 		
-		
-		//Recent Blog Description
-		$wp_customize->add_setting('busiprof_theme_options[recent_blog_description]',array(
-		'default' => __('We are a group of passionate designers & developers','busiprof'),
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'busiprof_input_field_sanitize_text',
-		'type' => 'option',
-		));
-		
-		$wp_customize->add_control('busiprof_theme_options[recent_blog_description]',array(
-		'label' => __('Description','busiprof'),
-		'section'=> 'recent_blog_settings',
-		'type'=> 'textarea',
-		));
+		if ( class_exists( 'Busiprof_Repeater' ) ) {
+			$wp_customize->add_setting( 'busiprof_testimonial_content', array(
+			'sanitize_callback' => 'busiprof_repeater_sanitize',
+			) );
+
+			$wp_customize->add_control( new Busiprof_Repeater( $wp_customize, 'busiprof_testimonial_content', array(
+				'label'                             => esc_html__( 'Testimonial Content', 'busiprof' ),
+				'section'                           => 'testimonial_settings',
+				'add_field_label'                   => esc_html__( 'Add new testimonila', 'busiprof' ),
+				'item_name'                         => esc_html__( 'Testimonial', 'busiprof' ),
+				'customizer_repeater_title_control' => true,
+				'customizer_repeater_text_control'  => true,
+				'customizer_repeater_link_control'  => true,
+				'customizer_repeater_image_control' => true,
+				'customizer_repeater_designation_control' => true,
+				'customizer_repeater_checkbox_control' => true,
+				) ) );
+		}
 		
 		
 		/* Client Slider Section */
@@ -1297,39 +930,27 @@ $wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[slider_he
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_title]', array(
-		'selector'            => '.testimonial .section-title-small .section-heading',
+		'selector'            => '.testimonial-scroll .section-heading',
 		'settings'            => 'busiprof_theme_options[testimonials_title]',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_text]', array(
-		'selector'            => '.testimonial .section-title-small p',
+		'selector'            => '.testimonial-scroll .section-title p',
 		'settings'            => 'busiprof_theme_options[testimonials_text]',
 	
 	) );
 	
 	
-	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_image_one]', array(
-		'selector'            => '.testimonial #post1',
-		'settings'            => 'busiprof_theme_options[testimonials_image_one]',
-	
-	) );
-	
-	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[testimonials_image_two]', array(
-		'selector'            => '.testimonial #post2',
-		'settings'            => 'busiprof_theme_options[testimonials_image_two]',
-	
-	) );
-	
 	
 	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[recent_blog_title]', array(
-		'selector'            => '.home-post .section-title-small .section-heading',
+		'selector'            => '.home-post-latest .section-heading',
 		'settings'            => 'busiprof_theme_options[recent_blog_title]',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'busiprof_theme_options[recent_blog_description]', array(
-		'selector'            => '.home-post .section-title-small p',
+		'selector'            => '.home-post-latest .section-title p',
 		'settings'            => 'busiprof_theme_options[recent_blog_description]',
 	
 	) );

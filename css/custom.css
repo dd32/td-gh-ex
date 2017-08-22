@@ -46,7 +46,7 @@
     height: auto;
     line-height: 40px;
     margin-right: 50px;
-	padding: 10px 0px; 	
+	padding: 25px 0px; 	
 }
 .navbar > .container .navbar-brand { margin-left: 0px; }
 .navbar-default .navbar-brand { color: #1b1b1b; } 
@@ -77,7 +77,7 @@
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
-	padding: 20px 15px;
+	padding: 35px 15px;
 	transition: all 0.3s ease-in-out 0s;
 }
 .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus { background-color: #00c2a9; color: #FFFFFF; }
@@ -200,12 +200,12 @@ table { border-spacing: 0; letter-spacing: 0.5px; margin: 0 0 20px; padding: 0; 
 table, table th, table td { font-size: 15px; border: 1px solid #e4e8ea; padding: 5px 10px; }
 table th { text-align: left; line-height: 1.9375; }
 table td { line-height: 25px; }
-tbody a, p a { color: #2a7bc1; font-weight: 500; }
+tbody a, p a { color: #5ca2df; font-weight: 500; }
 /*Definition Lists*/
 dl { margin-bottom: 20px; margin-top: 0; font-size: 15px; }
 dl dt { font-weight: 600; margin-bottom: 5px; }
 dl dd { margin-bottom: 20px; margin-left: 20px; }
-dl dd a { color: #2a7bc1; }
+dl dd a { color: #5ca2df; }
 /*Abriviation, Acronym, Big, Strike, del, em, Ins, cite, q*/
 abbr { text-decoration: none; cursor: help; }
 tla, acronym { text-decoration: underline; cursor: help; }
@@ -213,7 +213,7 @@ acronym { border-bottom: 0 none; }
 big { font-size: larger; font-weight: 600; }
 s, strike, del { text-decoration: line-through; }
 em, cite, q { font-style:italic; }
-ins, mark { background-color: #2a7bc1; color:#ffffff; text-decoration: none; padding: 0 3px; }
+ins, mark { background-color: #5ca2df; color:#ffffff; text-decoration: none; padding: 0 3px; }
 code, kbd, tt, var, samp, pre {
     font-family: Inconsolata, monospace;
     -webkit-hyphens: none;
@@ -342,49 +342,38 @@ textarea {
 	width: 100%; 
 	outline: 0;
 }
-input[type="submit"], .more-link { 
-	color: #FFFFFF;
+input[type="submit"], .more-link {
+    color: #FFFFFF;
     font-family: 'Montserrat';
     font-size: 14px;
-	font-weight: 400;
+    font-weight: 400;
     line-height: 30px;
-	letter-spacing: 0.5px;
+    letter-spacing: 0.5px;
     margin: 0;
+    border: 0;
     text-align: center;
-    text-shadow: 0 0 1px #226056;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
     vertical-align: middle;
     display: inline-block;
-    background-color: #5ca2e0;
-    background-image: -moz-linear-gradient(top, #5ca2e0, #3381c7);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5ca2e0), to(#3381c7));
-    background-image: -webkit-linear-gradient(top, #5ca2e0, #3381c7);
-    background-image: -o-linear-gradient(top, #5ca2e0, #3381c7);
-    background-image: linear-gradient(to bottom, #5ca2e0, #3381c7);
-    background-repeat: repeat-x;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #77bcec;
-    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    border-bottom-color: #e6e6e6;
     text-decoration: none;
-	transition: opacity 0.45s;
-    box-shadow: inset 1px 1px 0px 0px #77bcec;
+    transition: opacity 0.45s;
+	background-color: #5ca2df;
 }
+
 input[type="submit"]:hover, .more-link:hover { 
-	background-color: #3381c7;
-    background-image: -moz-linear-gradient(top, #3381c7, #5ca2e0);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3381c7), to(#5ca2e0));
-    background-image: -webkit-linear-gradient(top, #3381c7, #5ca2e0);
-    background-image: -o-linear-gradient(top, #3381c7, #5ca2e0);
-    background-image: linear-gradient(to bottom, #3381c7, #5ca2e0);
-	color: #ffffff;
+	background-color: #5ca2df;
+    opacity: 0.9;
 }
 
 input[type="text"].search_btn {
     margin: 0 0 20px;
 }
+
+.entry-content p:before{ color: #5ca2df; }
+.author-name a{ color: #5ca2df; }
 
 /*search for page title*/
 .search_box {
