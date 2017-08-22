@@ -15,10 +15,6 @@ span.description {
     display: block;
 }
 
-.background-position-control .button-group {
-    display: block;
-}
-
 /* Html control styles */
 .customize-control-make_html {
 	margin-bottom: -2px;
@@ -296,8 +292,6 @@ li.customize-control.customize-control-make_range .ui-slider-handle:hover {
 #make-socialicons-list i {
 	display: block;
 	float: left;
-	font-family: 'Font Awesome 5 Brands';
-	font-weight: normal;
 	margin-right: 6px;
 	font-size: 34px;
 	line-height: 1;

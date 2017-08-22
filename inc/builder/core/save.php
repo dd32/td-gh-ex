@@ -88,7 +88,7 @@ class TTFMAKE_Builder_Save {
 		if ( isset( $_POST['use-builder'] ) && 1 === (int) $_POST['use-builder'] ) {
 			update_post_meta( $post_id, '_ttfmake-use-builder', 1 );
 		} else {
-			update_post_meta( $post_id, '_ttfmake-use-builder', '' );
+			delete_post_meta( $post_id, '_ttfmake-use-builder' );
 		}
 
 		// Don't save data if we're not using the Builder template
@@ -206,16 +206,20 @@ class TTFMAKE_Builder_Save {
 
 		foreach( $sections as $id => $section ) {
 			// Save new section metas
-			update_post_meta( $post_id, '_ttfmake_section_' . $section[ 'id' ], $section );
+			update_post_meta(
+				$post_id,
+				'_ttfmake_section_' . $section[ 'id' ],
+				serialize( $section )
+			);
 
 			$layout[] = $section[ 'id' ];
 		}
 
 		// Purge removed sections
-		$current_layout = get_post_meta( $post_id, '_ttfmake_layout', true );
+		$current_layout_meta = get_post_meta( $post_id, '_ttfmake_layout', true );
 
-		if ( ! empty( $current_layout ) ) {
-			$current_layout = maybe_unserialize( $current_layout );
+		if ( $current_layout_meta ) {
+			$current_layout = unserialize( $current_layout_meta );
 			$removed_section_ids = array_diff( $current_layout, $layout );
 
 			foreach ( $removed_section_ids as $section_id ) {
@@ -224,7 +228,7 @@ class TTFMAKE_Builder_Save {
 		}
 
 		// Update layout
-		update_post_meta( $post_id, '_ttfmake_layout', $layout );
+		update_post_meta( $post_id, '_ttfmake_layout', serialize( $layout ) );
 	}
 
 	/**
@@ -519,7 +523,7 @@ class TTFMAKE_Builder_Save {
 		if ( empty( $this->_sanitized_sections ) ) {
 			$data = array();
 
-			if ( isset( $_POST['ttfmake-section-layout'] ) && ! empty( $_POST['ttfmake-section-layout'] ) ) {
+			if ( isset( $_POST['ttfmake-section-layout'] ) ) {
 				$section_ids = json_decode( wp_unslash( $_POST['ttfmake-section-layout'] ), true );
 
 				foreach( $section_ids as $section_id ) {
