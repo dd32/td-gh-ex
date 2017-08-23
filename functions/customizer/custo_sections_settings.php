@@ -34,7 +34,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		// Banner strip text
 		$wp_customize->add_setting( 'busiprof_theme_options[slider_head_title]', 
-		array( 'default' => __('Backend as a service plateform for any app developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		array( 'default' => __('Backend as a service platform for any app developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[slider_head_title]', 
 			array(
 				'label'    => __( 'Infobar text', 'busiprof' ),
@@ -714,7 +714,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			$wp_customize->add_control( new Busiprof_Repeater( $wp_customize, 'busiprof_testimonial_content', array(
 				'label'                             => esc_html__( 'Testimonial Content', 'busiprof' ),
 				'section'                           => 'testimonial_settings',
-				'add_field_label'                   => esc_html__( 'Add new testimonila', 'busiprof' ),
+				'add_field_label'                   => esc_html__( 'Add new testimonial', 'busiprof' ),
 				'item_name'                         => esc_html__( 'Testimonial', 'busiprof' ),
 				'customizer_repeater_title_control' => true,
 				'customizer_repeater_text_control'  => true,

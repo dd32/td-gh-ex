@@ -34,7 +34,7 @@ function theme_setup_data()
 			
 			'home_banner_strip_enabled' => 'on',
 			'home_page_slider_enabled' => 'on',
-			'slider_head_title' =>__('Backend as a service plateform for any app developer','busiprof'),//Slide Heading
+			'slider_head_title' =>__('Backend as a service platform for any app developer','busiprof'),//Slide Heading
 			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
 			'caption_head' =>__('Responsive WP theme','busiprof'),//Image Caption Heading
 			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Caption detail

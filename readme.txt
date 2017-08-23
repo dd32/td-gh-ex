@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.5
+1. Fixed spelling mistake issue.
 @version 1.8.4
 1. Added Repetator control for slider, service, testimoanil section.
 @version 1.8.3
