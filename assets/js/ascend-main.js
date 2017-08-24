@@ -948,10 +948,10 @@ jQuery(document).ready(function($){
 		var visible = false,
 			item = $('<div id="topcontrol"><div class="to_the_top"><div class="kt-icon-chevron-up"></div></div></div>')
 		.css({position:'fixed', bottom:2, right:0, opacity:0, cursor:'pointer'})
-		.click(function(){
+		.on('click',function(){
 			item.css({opacity:0});
-			$('body').animate({scrollTop: 0}, 1200);
-		 	return false
+			$('body, html').animate({scrollTop: 0}, 1200);
+		 	return false;
 		 })
 		.appendTo('body');
 

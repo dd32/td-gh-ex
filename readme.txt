@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.1.9 | 24th August 2017 =
+* Fix: Scroll to top arrrow, issue in firefox.
+
 = Version 1.1.8 | 9th August 2017 =
 * Fix: Portfolio Grid orderby.
 * Fix: Issue with 992px and demo 4.
