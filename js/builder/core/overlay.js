@@ -12,8 +12,7 @@
 		events: {
 			'click .ttfmake-overlay-close-update': 'onUpdate',
 			'click .ttfmake-overlay-close-discard': 'onDiscard',
-			'mousedown .ttfmake-overlay-dialog': 'onDialogClick',
-			'mousedown .ttfmake-overlay-wrapper': 'onWrapperClick',
+			'click .ttfmake-overlay-wrapper': 'onWrapperClick',
 		},
 
 		editor: false,
@@ -108,15 +107,13 @@
 			this.remove();
 		},
 
-		onDialogClick: function( e ) {
-			e.stopPropagation();
-		},
-
 		onWrapperClick: function( e ) {
-			e.preventDefault();
-			e.stopPropagation();
+			if ( $( e.target ).is( '.ttfmake-overlay-wrapper' ) ) {
+				e.preventDefault();
+				e.stopPropagation();
 
-			this.remove();
+				this.remove();
+			}
 		},
 
 		onKeyDown: function( e ) {
@@ -281,8 +278,7 @@
 		events: {
 			'click .ttfmake-overlay-close-update': 'onUpdate',
 			'click .ttfmake-overlay-close-discard': 'onDiscard',
-			'mousedown .ttfmake-overlay-dialog': 'onDialogClick',
-			'mousedown .ttfmake-overlay-wrapper': 'onWrapperClick',
+			'click .ttfmake-overlay-wrapper': 'onWrapperClick',
 		},
 
 		initialize: function( options, settings ) {
@@ -402,15 +398,13 @@
 			this.remove();
 		},
 
-		onDialogClick: function( e ) {
-			e.stopPropagation();
-		},
-
 		onWrapperClick: function( e ) {
-			e.preventDefault();
-			e.stopPropagation();
+			if ( $( e.target ).is( '.ttfmake-overlay-wrapper' ) ) {
+				e.preventDefault();
+				e.stopPropagation();
 
-			this.remove();
+				this.remove();
+			}
 		},
 
 		onKeyDown: function( e ) {
@@ -471,10 +465,6 @@
 			return this;
 		},
 
-		setDataAttribute: function() {
-			this.$el.attr( 'data-value', this.getValue() );
-		},
-
 		setValue: function( value ) {
 			// Noop
 		},
@@ -492,7 +482,6 @@
 		},
 
 		settingUpdated: function() {
-			this.setDataAttribute();
 			this.overlay.trigger( 'setting-updated', { name: this.setting.name, value: this.getValue() } );
 		}
 	} );
@@ -548,15 +537,6 @@
 
 	/**
 	 *
-	 * Description control
-	 *
-	 */
-	window.make.classes.configuration.description = window.make.classes.configuration.control.extend( {
-		template: wp.template( 'ttfmake-settings-description' ),
-	} );
-
-	/**
-	 *
 	 * Section title control
 	 *
 	 */
@@ -598,7 +578,6 @@
 
 		setValue: function( value ) {
 			$( 'select', this.$el ).val( value );
-			this.setDataAttribute();
 		},
 
 		getValue: function() {

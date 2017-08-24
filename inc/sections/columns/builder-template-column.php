@@ -1,7 +1,4 @@
 <?php
-
-global $ttfmake_section_data;
-
 $section_name   = 'ttfmake-section[{{ data.get("parentID") }}][columns][{{ data.get("id") }}]';
 $combined_id = "{{ data.get('parentID') }}-{{ data.get('id') }}";
 $overlay_id  = "ttfmake-overlay-" . $combined_id;
