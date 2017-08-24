@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.09
+* Styling fixes/tweaks
+* Updated WooCommerce ajax cart function
+* Fixed/Improved default slider responsiveness
+
 #### 1.3.08
 * Style tweaks/fixes
 Premium: Added setting to set WooCommerce products amount shown per page

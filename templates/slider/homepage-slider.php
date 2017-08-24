@@ -45,14 +45,16 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
                             <?php endif; ?>
                             
                             <div class="home-slider-block-inner">
-                                <h3>
-                                    <?php the_title(); ?>
-                                </h3>
-                                <?php if ( has_excerpt() ) : ?>
-                                    <?php the_excerpt(); ?>
-                                <?php else : ?>
-                                    <?php the_content(); ?>
-                                <?php endif; ?>
+                                <div class="home-slider-block-bg">
+                                    <h3>
+                                        <?php the_title(); ?>
+                                    </h3>
+                                    <?php if ( has_excerpt() ) : ?>
+                                        <?php the_excerpt(); ?>
+                                    <?php else : ?>
+                                        <?php the_content(); ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                             
                         </div>
@@ -78,10 +80,12 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/slider_default_01.jpg" alt="<?php esc_attr_e('Demo Slide One', 'topshop') ?>" />
                     
                     <div class="home-slider-block-inner">
-                        <h3>
-                            <?php _e( 'A Little Extra Thought', 'topshop' ); ?>
-                        </h3>
-                        <p><?php _e( 'It\'s that little extra thought that counts', 'topshop' ); ?></p>
+                        <div class="home-slider-block-bg">
+                            <h3>
+                                <?php _e( 'A Little Extra Thought', 'topshop' ); ?>
+                            </h3>
+                            <p><?php _e( 'It\'s that little extra thought that counts', 'topshop' ); ?></p>
+                        </div>
                     </div>
                     
                 </div>
@@ -91,10 +95,12 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/slider_default_02.jpg" alt="<?php esc_attr_e('Demo Slide Two', 'topshop') ?>" />
                     
                     <div class="home-slider-block-inner">
-                        <h3>
-                            <?php _e( 'Online Shopping', 'topshop' ); ?>
-                        </h3>
-                        <p><?php _e( 'Install WooCommerce to start building your online store', 'topshop' ); ?></p>
+                        <div class="home-slider-block-bg">
+                            <h3>
+                                <?php _e( 'Online Shopping', 'topshop' ); ?>
+                            </h3>
+                            <p><?php _e( 'Install WooCommerce to start building your online store', 'topshop' ); ?></p>
+                        </div>
                     </div>
                     
                 </div>
