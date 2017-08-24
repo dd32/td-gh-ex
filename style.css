@@ -4,7 +4,7 @@ Theme URI: http://www.tutorialchip.com/chip-life/
 Author: TutorialChip
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life is a charming and modern blog WordPress theme. It has a responsive layout having clean and content focused design with straightforward functionality. Chip Life is a perfect solution for sharing your valuable content and creativity with the world. Chip Life is a versatile, sophisticated WordPress theme designed for creatives and bloggers.
-Version: 2.0.3
+Version: 2.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chip-life
@@ -110,7 +110,8 @@ html {
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
   -ms-overflow-style: scrollbar;
 }
@@ -119,7 +120,8 @@ html {
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -262,7 +264,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -273,7 +276,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -553,7 +557,8 @@ code, kbd, samp, tt, var {
 kbd {
   background-color: #020202;
   border-radius: 2px;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   font-size: 90%;
   padding: 2px 4px;
@@ -561,7 +566,8 @@ kbd {
 }
 
 kbd kbd {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   font-size: 100%;
   font-weight: bold;
   padding: 0;
@@ -939,7 +945,8 @@ textarea {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
@@ -961,7 +968,8 @@ textarea {
 /* must have higher specificity than alternative color schemes inline styles */
 .site .skip-link {
   background-color: #f1f1f1;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -977,7 +985,8 @@ textarea {
 }
 
 .logged-in .site .skip-link {
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .site .skip-link:focus {
@@ -1110,6 +1119,7 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #007ada;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1140,6 +1150,7 @@ textarea {
           justify-content: center;
   width: 40px;
   height: 40px;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1159,6 +1170,7 @@ textarea {
   padding: 30px;
   padding: 1.875rem;
   position: relative;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1277,6 +1289,7 @@ textarea {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1331,6 +1344,7 @@ textarea {
   display: block;
   padding: 0;
   position: relative;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1825,6 +1839,7 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1875,6 +1890,7 @@ textarea {
   padding: 0.625rem 1.875rem;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2397,6 +2413,7 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2434,6 +2451,7 @@ div#respond #cancel-comment-reply-link {
   font-size: 0.8125rem !important;
   text-decoration: none;
   text-transform: uppercase;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2920,7 +2938,8 @@ div#respond #cancel-comment-reply-link {
     text-align: center;
   }
   .sf-menu ul {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-width: 12em;
     /* allow long menu items to determine submenu width */
     max-width: 12em;
@@ -2950,6 +2969,7 @@ div#respond #cancel-comment-reply-link {
     padding: 1.0625rem;
     text-transform: uppercase;
     text-decoration: none;
+    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu a:hover,
@@ -2981,6 +3001,7 @@ div#respond #cancel-comment-reply-link {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
+    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -2992,6 +3013,7 @@ div#respond #cancel-comment-reply-link {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
+    -webkit-transition: none;
     transition: none;
   }
   /* Last Child Reverse */
