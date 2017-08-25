@@ -18,44 +18,10 @@ get_header();
 	?></h2></div></div><?php
 	endif;
 
-	/* TAG CONDITIONAL TITLE */
-	if ( is_tag() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Tag: %s', 'wortex-lite'), single_tag_title('', false) );
-	?></h2></div></div><?php
-	endif;
-
-	/* CATEGORY CONDITIONAL TITLE */
-	if ( is_category() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Category: %s', 'wortex-lite'), single_cat_title('', false) );
-	?></h2></div></div><?php
-	endif;
-
-	/* ARCHIVES CONDITIONAL TITLE */
-	if ( is_day() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Daily archives: %s', 'wortex-lite'), get_the_time('F jS, Y') );
-	?></h2></div></div><?php
-	endif;
-
-	if ( is_month() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Monthly archives: %s', 'wortex-lite'), get_the_time('F, Y') );
-	?></h2></div></div><?php
-	endif;
-	if ( is_year() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Yearly archives: %s', 'wortex-lite'), get_the_time('Y') );
-	?></h2></div></div><?php
-	endif;
-
-	/* AUTHOR ARCHIVE CONDITIONAL TITLE */
-	if ( is_author() ):
-	?><div id="page-title"><div class="container"><h2><?php
-		echo sprintf( __('Author archives: %s', 'wortex-lite'), get_the_author() );
-	?></h2></div></div><?php
-	endif;
+	/* ARCHIVE CONDITIONAL TITLE */
+  if ( is_archive() ):
+		?><div id="page-title"><div class="container"><h2><?php the_archive_title(); ?></h2></div></div><?php
+  endif;
 
 	/* DEFAULT CONDITIONAL TITLE */
 	if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() && !is_author() ):

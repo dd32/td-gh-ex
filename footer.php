@@ -21,15 +21,15 @@
 /* You are free to modify or replace this by anything you like as per the terms of the GPL license */ ?>
 
 <?php
-	printf( __('Copyright &copy; %s %s.', 'wortex-lite'), date('Y'), get_bloginfo('name') );
+	printf( __('Copyright &copy; %1$s %2$s.', 'wortex-lite'), date('Y'), get_bloginfo('name') );
 	echo ' ';
-	printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'wortex-lite'),
+	printf( __('Proudly powered by <a href="%1$s" title="%2$s">%3$s</a>.', 'wortex-lite'),
 		esc_url( __('https://wordpress.org/', 'wortex-lite') ),
 		esc_attr__( 'Semantic Personal Publishing Platform', 'wortex-lite' ),
 		__('WordPress', 'wortex-lite')
 	);
 	echo ' ';
-	printf( __('Wortex design by <a href="%s" title="%s">Iceable Themes</a>.', 'wortex-lite'),
+	printf( __('Wortex design by <a href="%1$s" title="%2$s">Iceable Themes</a>.', 'wortex-lite'),
 		esc_url( 'https://www.iceablethemes.com' ),
 		esc_attr( 'Iceablethemes', 'wortex-lite' )
 	);
