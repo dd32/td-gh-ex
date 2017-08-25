@@ -12,12 +12,12 @@
 /*
  * Theme constants
  */
-define( "THEME_DIR", get_template_directory() );
-define( "THEME_DIR_URI", get_template_directory_uri() );
-define( "STYLESHEET_DIR", get_stylesheet_directory() );
-define( "STYLESHEET_DIR_URI", get_stylesheet_directory_uri() );
-$the_theme = wp_get_theme();
-define( "THEME_VERSION", $the_theme->get( 'Version' ) );
+define( "BLACKOOT_THEME_DIR", get_template_directory() );
+define( "BLACKOOT_THEME_DIR_URI", get_template_directory_uri() );
+define( "BLACKOOT_STYLESHEET_DIR", get_stylesheet_directory() );
+define( "BLACKOOT_STYLESHEET_DIR_URI", get_stylesheet_directory_uri() );
+$blackoot_the_theme = wp_get_theme();
+define( "BLACKOOT_THEME_VERSION", $blackoot_the_theme->get( 'Version' ) );
 
 /*
  * Setup and registration functions
@@ -28,7 +28,7 @@ function blackoot_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('blackoot-lite', THEME_DIR . '/languages');
+	load_theme_textdomain('blackoot-lite', BLACKOOT_THEME_DIR . '/languages');
 
 	// Content Width
 	global $content_width;
@@ -60,7 +60,7 @@ function blackoot_setup(){
 	/* Custom background support */
 	add_theme_support( 'custom-background',
 						array(	'default-color' => '111111',
-								'default-image' => THEME_DIR_URI . '/img/zwartevilt.png',
+								'default-image' => BLACKOOT_THEME_DIR_URI . '/img/zwartevilt.png',
 								)
 					);
 
@@ -142,37 +142,17 @@ function blackoot_styles() {
 		$stylesheet = '/css/blackoot-unresponsive.min.css';
 	endif;
 
-	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
-		/* Child theme support:
-		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-		 * or the parent theme's version otherwise
-		 */
-		wp_register_style( 'blackoot', get_theme_file_uri( $stylesheet ), array(), THEME_VERSION );
+	/* Child theme support:
+	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+	 * or the parent theme's version otherwise
+	 */
+	wp_register_style( 'blackoot', get_theme_file_uri( $stylesheet ), array(), BLACKOOT_THEME_VERSION );
 
-		// Enqueue style.css from the current theme
-		wp_register_style( 'blackoot-style', get_theme_file_uri ( 'style.css' ), array(), THEME_VERSION );
+	// Enqueue style.css from the current theme
+	wp_register_style( 'blackoot-style', get_theme_file_uri ( 'style.css' ), array(), BLACKOOT_THEME_VERSION );
 
-		// Load font-awesome
-		wp_register_style( 'font-awesome', get_theme_file_uri ( 'css/font-awesome/css/font-awesome.min.css' ), array(), THEME_VERSION );
-
-	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-
-		/* Child theme support:
-		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-		 * or the parent theme's version otherwise
-		 */
-		if ( @file_exists( STYLESHEET_DIR . $stylesheet ) )
-			wp_register_style( 'blackoot', STYLESHEET_DIR_URI . $stylesheet, array(), THEME_VERSION );
-		else
-			wp_register_style( 'blackoot', THEME_DIR_URI . $stylesheet, array(), THEME_VERSION );
-
-		// Always enqueue style.css from the current theme
-		wp_register_style( 'blackoot-style', STYLESHEET_DIR_URI . '/style.css', array(), THEME_VERSION );
-
-		// Load font-awesome
-		wp_register_style( 'font-awesome', THEME_DIR_URI . "/css/font-awesome/css/font-awesome.min.css", array(), THEME_VERSION );
-
-	endif;
+	// Load font-awesome
+	wp_register_style( 'font-awesome', get_theme_file_uri ( 'css/font-awesome/css/font-awesome.min.css' ), array(), BLACKOOT_THEME_VERSION );
 
 	wp_enqueue_style( 'blackoot' );
 	wp_enqueue_style( 'blackoot-style' );
@@ -198,10 +178,18 @@ add_action( 'init', 'blackoot_editor_styles' );
 function blackoot_scripts() {
 
 	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
-		wp_enqueue_script('blackoot', get_theme_file_uri( '/js/blackoot.min.js' ), array('jquery','hoverIntent'), THEME_VERSION );
+		wp_enqueue_script('blackoot', get_theme_file_uri( '/js/blackoot.min.js' ), array('jquery','hoverIntent'), BLACKOOT_THEME_VERSION );
+		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
+    wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), BLACKOOT_THEME_VERSION );
 	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script('blackoot', THEME_DIR_URI . '/js/blackoot.min.js', array('jquery','hoverIntent'), THEME_VERSION );
+		wp_enqueue_script('blackoot', BLACKOOT_THEME_DIR_URI . '/js/blackoot.min.js', array('jquery','hoverIntent'), BLACKOOT_THEME_VERSION );
+		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
+    wp_enqueue_script( 'html5shiv', BLACKOOT_THEME_DIR_URI . '/js/html5.js', array(), BLACKOOT_THEME_VERSION );
 	endif;
+
+	// Add conditional for HTML5Shiv to only load for IE < 9
+  wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+
 	/* Threaded comments support */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -388,9 +376,9 @@ function blackoot_breadcrumbs() {
 			echo '<span class="separator"> '.$sep.' </span>', get_the_title();
 
 		elseif (is_page()):
+			$output = '';
 			if($post->post_parent):
 				$anc = get_post_ancestors( $post->ID );
-				$output = '';
 				foreach ( $anc as $ancestor ):
 					$output = '<a href="'.esc_url(get_permalink($ancestor)).'" title="' . the_title_attribute( array( 'echo' => false, 'post' => $ancestor ) ).'">' . get_the_title($ancestor) . '</a><span class="separator"> '.$sep.' </span>' . $output;
 				endforeach;
