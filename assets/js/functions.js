@@ -101,8 +101,13 @@
 				// Get the width of each label
 
 				labels.each( function() {
-
-					widths.push( $( this ).outerWidth() );
+					
+					if ( $( this ).parent().width() - $( this ).width() > 100 ) {
+						widths.push( $( this ).outerWidth() );
+						$( this ).addClass( 'absolute' );
+					} else {
+						$( this ).next( 'input[type="text"], input[type="email"], input[type="url"], input[type="name"]' ).addClass( 'no-padding' );
+					}
 
 				} );
 
@@ -110,9 +115,13 @@
 
 				padding = Math.max.apply( Math, widths ) + 28;
 
-				// Set left-hand padding on the fields
-
-				inputs.css( { 'padding-left' : padding } );
+				// Set right/left-hand padding on the fields
+				
+				if ( $( 'html' ).attr( 'dir' ) == 'rtl') {
+					inputs.css( { 'padding-right' : padding } );
+				} else {
+					inputs.css( { 'padding-left' : padding } );
+				}
 
 			}
 

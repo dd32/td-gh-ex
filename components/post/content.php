@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( ! is_single() && has_post_thumbnail() ) : ?>
+	<?php if ( ! is_single() && affinity_has_post_thumbnail() ) : ?>
 		<div class="featured-image">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 				<?php the_post_thumbnail(); ?>
@@ -29,7 +29,7 @@
 		?>
 	</header>
 
-	<?php if ( has_excerpt() ) : ?>
+	<?php if ( has_excerpt() && ( is_single() || ! affinity_content_options_show_excerpt() ) ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div>

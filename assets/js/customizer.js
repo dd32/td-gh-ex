@@ -75,6 +75,28 @@
 		} );
 	} );
 
+	// Display the excerpt when Blog Display is set to Full post
+	wp.customize( 'jetpack_content_blog_display', function( value ) {
+		value.bind( function( to ) {
+			// make sure we're not on a single page
+			if ( ! $( 'body.hfeed' ).length ) return;
+
+			if ( 'content' == to ){
+				if ( $( '.entry-summary' ).length ) {
+					$( '.entry-summary' ).show();
+				} else {
+					$( '.entry-content' ).each( function() {
+						var the_excerpt = $( this + ' .jetpack-the-excerpt' ).html()
+						// add an excerpt to each article
+						$( this ).prepend( the_excerpt );
+					});
+				}
+			} else {
+				$( '.entry-summary' ).hide();
+			}
+		} );
+	} );
+
 	/* Featured Images background attachment.
 	 * Disabled because the Customizer doesn't like fixed-position backgrounds
 	wp.customize( 'affinity_scrolling', function( value ) {

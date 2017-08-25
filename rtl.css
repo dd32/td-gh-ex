@@ -52,6 +52,10 @@ textarea {
 
 /* Jetpack Comment Form */
 
+form.contact-form input {
+	direction: rtl;
+}
+
 .contact-form label.text,
 .contact-form label.email,
 .contact-form label.name,
@@ -61,20 +65,15 @@ textarea {
 	left: auto;
 }
 
-.contact-form input[type=\"text\"],
-.contact-form input[type=\"email\"],
-.contact-form input[type=\"url\"],
-.contact-form input[type=\"name\"],
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="url"],
+.contact-form input[type="name"],
 .contact-form textarea {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 28%;
-	padding-left: 0;
-}
-
-.contact-form textarea {
-	padding-right: .8em;
-	padding-left: 0;
+	padding-left: .5em;
 }
 
 /*--------------------------------------------------------------
@@ -83,9 +82,9 @@ textarea {
 .button,
 button,
 #infinite-handle span,
-input[type=\"button\"],
-input[type=\"reset\"],
-input[type=\"submit\"] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	margin-left: .8em;
 	right: 4px;
 	left: auto;
@@ -345,7 +344,7 @@ th {
 /*--------------------------------------------------------------
 # Customizer
 --------------------------------------------------------------*/
-/* Hide this until we\'re in the Customizer */
+/* Hide this until we're in the Customizer */
 
 .affinity-customizer.affinity-front-page .affinity-panel::after {
 	right: 1.6em;

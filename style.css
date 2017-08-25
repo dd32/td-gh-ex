@@ -2,7 +2,7 @@
 Theme Name: Affinity
 Theme URI: https://wordpress.com/themes/affinity/
 Description: Affinity is a classic one-page theme designed with weddings and family announcements in mind.
-Version: 1.0.7
+Version: 1.0.8
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 License: GNU General Public License v2 or later
@@ -570,9 +570,6 @@ textarea {
 .contact-form label.textarea {
   display: inline-block;
   margin-bottom: 0;
-  position: absolute;
-  left: .8em;
-  top: .5em;
 }
 .contact-form input[type="text"],
 .contact-form input[type="email"],
@@ -586,8 +583,7 @@ textarea {
   max-width: 100% !important;
 }
 .contact-form textarea {
-  padding-left: .8em;
-  padding-top: 40px;
+  padding: 2.5em .5em .5em;
 }
 
 .post-password-form input[type="submit"] {
@@ -1779,6 +1775,10 @@ body {
   letter-spacing: 1px;
 }
 
+.widget-title label {
+  color: inherit;
+}
+
 #secondary .widget {
   padding: 1.6em;
   border: 3px solid #f3f3f4;
@@ -1838,6 +1838,25 @@ body {
 
 .textwidget {
   word-wrap: break-word;
+}
+
+/* Social Media Icons Widget */
+.jetpack_widget_social_icons > ul,
+.widget_wpcom_social_media_icons_widget > ul {
+	text-align: center;
+}
+
+.jetpack_widget_social_icons > ul li,
+.widget_wpcom_social_media_icons_widget > ul li {
+	border: 0;
+	margin: 0 .2em;
+	padding: 0;
+	display: inline-block;
+}
+
+.widget_wpcom_social_media_icons_widget > ul li a:before {
+	font-size: 32px;
+	margin-right: 0.21875em;
 }
 
 /*--------------------------------------------------------------
@@ -2147,6 +2166,16 @@ object {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+@media screen and (max-width: 45.9375em) {
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="url"],
+  .contact-form input[type="name"],
+  .contact-form textarea {
+    padding-left: .5em !important;
+    padding-right: .5em !important;
+  }
+}
 @media screen and (min-width: 46em) {
   body {
     position: relative;
@@ -2613,6 +2642,16 @@ object {
 
   .affinity-customizer .header-wrapper {
     z-index: 5;
+  }
+
+  .contact-form label.absolute {
+    position: absolute;
+    left: .8em;
+    top: .5em;
+  }
+  .contact-form .no-padding {
+    padding-left: .5em !important;
+    padding-right: .5em !important;
   }
 }
 @media screen and (max-width: 782px) {

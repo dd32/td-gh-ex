@@ -147,6 +147,39 @@ Affinity also supports the following features:
 
 == Changelog ==
 
+= 25 August 2017 =
+* Replace line of smarter featured image code that was not compatible with PHP 5.3.x, for backwards compatibility.
+
+= 24 July 2017 =
+* Fix for #4744, where excerpts were displayed twice on home/category/archive pages if Customizer settings were set to 'Post Excerpt' instead of 'Full Post'
+
+= 6 June 2017 =
+* Add style for the social icons widget.
+
+= 3 May 2017 =
+* Add support for Content Options, with Smarter FEatured Images, off by default.
+* Add support for Content Options, with Smarter Featured Images, off by default.
+
+= 22 March 2017 =
+* add Custom Colors annotations directly to the theme
+* move fonts annotations directly into the theme
+
+= 2 February 2017 =
+* Add forgotten context and gettext function around comma separators for translators.
+
+= 25 January 2017 =
+* Replace get_the_tag_list() with the_tags() for a more straightforward approach that prevents potential fatal errors.
+
+= 19 January 2017 =
+* Make sure labels in Widget Title have the same color.
+
+= 10 November 2016 =
+* Add Headstart translation (strand ID 9902).
+
+= 2 November 2016 =
+* Fix textarea padding
+* If Contact From label is too long make sure it says above.
+
 = 28 October 2016 =
 * Add additional checks for header image.
 

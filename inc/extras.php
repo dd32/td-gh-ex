@@ -20,7 +20,7 @@ function affinity_body_classes( $classes ) {
 	}
 
 	//Adds a class if a header image or featured header image is active
-	if ( get_header_image() || ( is_singular() && has_post_thumbnail() ) ) {
+	if ( get_header_image() || ( affinity_has_post_thumbnail() && affinity_jetpack_featured_image_display() && 'post' === get_post_type() ) || ( has_post_thumbnail() && is_singular() && affinity_jetpack_featured_image_display() ) ) {
 		$classes[] = 'custom-header-active';
 	} else {
 		$classes[] = 'no-custom-header';
