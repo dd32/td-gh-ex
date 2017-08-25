@@ -18,26 +18,10 @@ get_header();
 	?><h1 class="page-title"><?php _e('Search Results for ', 'boldr-lite'); ?>"<?php the_search_query() ?>"</h1><?php
 	endif;
 
-	/* TAG CONDITIONAL TITLE */
-	if ( is_tag() ):
-	?><h1 class="page-title"><?php _e('Tag: ', 'boldr-lite'); single_tag_title(); ?></h1><?php
-	endif;
-
-	/* CATEGORY CONDITIONAL TITLE */
-	if ( is_category() ):
-	?><h1 class="page-title"><?php _e('Category: ', 'boldr-lite'); single_cat_title(); ?></h1><?php
-	endif;
-
-	/* ARCHIVES CONDITIONAL TITLE */
-	if ( is_day() ):
-	?><h1 class="page-title"><?php _e('Daily archives: ', 'boldr-lite'); echo get_the_time('F jS, Y'); ?></h1><?php
-	endif;
-	if ( is_month() ):
-	?><h1 class="page-title"><?php _e('Monthly archives: ', 'boldr-lite'); echo get_the_time('F, Y'); ?></h1><?php
-	endif;
-	if ( is_year() ):
-	?><h1 class="page-title"><?php _e('Yearly archives: ', 'boldr-lite'); echo get_the_time('Y'); ?></h1><?php
-	endif;
+	/* ARCHIVE CONDITIONAL TITLE */
+  if ( is_archive() ):
+		?><h1 class="page-title"><?php echo get_the_archive_title(); ?></h1><?php
+  endif;
 
 	/* DEFAULT CONDITIONAL TITLE */
 	if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() ):
@@ -51,31 +35,35 @@ get_header();
 
 		?><div id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
 
-			?><div class="postmetadata"><?php
-				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
-					?><span class="month"><?php the_time('M'); ?></span><?php
-					?><span class="day"><?php the_time('d'); ?></span><?php
-					?><span class="year"><?php the_time('Y'); ?></span><?php
+			if ( get_post_type() == 'post' ):
 
-					// Echo published and updated dates for hatom-feed - not to be displayed on front end
-					?><span class="published"><?php the_time(get_option('date_format')); ?></span><?php
-					?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
-				?></a></span><?php
+				?><div class="postmetadata"><?php
+					?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
+						?><span class="month"><?php echo date_i18n( 'M', strtotime( get_the_time('Y-m-d') ) ); ?></span><?php
+						?><span class="day"><?php the_time('d'); ?></span><?php
+						?><span class="year"><?php the_time('Y'); ?></span><?php
 
-				if ( ( comments_open() || get_comments_number()!=0 ) && !post_password_required() ):
-				?><span class="meta-comments"><?php
-					comments_popup_link( __( 'No', 'boldr-lite' ), __( '1', 'boldr-lite' ), __( '%', 'boldr-lite' ), 'comments-count', '' );
-					comments_popup_link( __( 'Comment', 'boldr-lite' ), __( 'Comment', 'boldr-lite' ), __( 'Comments', 'boldr-lite' ), '', __('Comments Off', 'boldr-lite') );
-				?></span><?php
-				endif;
+						// Echo published and updated dates for hatom-feed - not to be displayed on front end
+						?><span class="published"><?php the_time(get_option('date_format')); ?></span><?php
+						?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
+					?></a></span><?php
 
-				?><span class="meta-author vcard author"><?php
-					_e('by ', 'boldr-lite');
-					?><span class="fn"><?php the_author(); ?></span><?php
-				?></span><?php
+					if ( ( comments_open() || get_comments_number()!=0 ) && !post_password_required() ):
+					?><span class="meta-comments"><?php
+						comments_popup_link( __( 'No', 'boldr-lite' ), __( '1', 'boldr-lite' ), __( '%', 'boldr-lite' ), 'comments-count', '' );
+						comments_popup_link( __( 'Comment', 'boldr-lite' ), __( 'Comment', 'boldr-lite' ), __( 'Comments', 'boldr-lite' ), '', __('Comments Off', 'boldr-lite') );
+					?></span><?php
+					endif;
 
-				edit_post_link(__('Edit', 'boldr-lite'), '<span class="editlink">', '</span>');
-			?></div><?php
+					?><span class="meta-author vcard author"><?php
+						_e('by ', 'boldr-lite');
+						?><span class="fn"><?php the_author(); ?></span><?php
+					?></span><?php
+
+					edit_post_link(__('Edit', 'boldr-lite'), '<span class="editlink">', '</span>');
+				?></div><?php
+
+			endif;
 
 			?><div class="post-contents"><?php
 				if ( '' != get_the_post_thumbnail() ):	// As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()

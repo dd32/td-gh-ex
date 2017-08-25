@@ -20,7 +20,7 @@ endif;
 
 if ( have_comments() ):
 	?><h3 id="comments"><?php
-		printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'boldr-lite' ),
+		printf( _n( '%1$s Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'boldr-lite' ),
 					number_format_i18n( get_comments_number() ),  get_the_title() );
 	?></h3><?php
 

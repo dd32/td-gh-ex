@@ -22,7 +22,7 @@ get_header();
 
 			?><div class="postmetadata"><?php
 				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
-					?><span class="month"><?php the_time('M'); ?></span><?php
+					?><span class="month"><?php echo date_i18n( 'M', strtotime( get_the_time('Y-m-d') ) ); ?></span><?php
 					?><span class="day"><?php the_time('d'); ?></span><?php
 					?><span class="year"><?php the_time('Y'); ?></span><?php
 

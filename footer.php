@@ -22,15 +22,15 @@
 /* You are free to modify or replace this by anything you like as per the terms of the GPL license */ ?>
 
 <?php
-			printf( __('Copyright &copy; %s %s.', 'boldr-lite'), date('Y'), get_bloginfo('name') );
+			printf( __('Copyright &copy; %1$s %2$s.', 'boldr-lite'), date('Y'), get_bloginfo('name') );
 			echo ' ';
-			printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'boldr-lite'),
+			printf( __('Proudly powered by <a href="%1$s" title="%2$s">%3$s</a>.', 'boldr-lite'),
 				esc_url( __('https://wordpress.org/', 'boldr-lite') ),
 				esc_attr__( 'Semantic Personal Publishing Platform', 'boldr-lite' ),
 				__('WordPress', 'boldr-lite')
 			);
 			echo ' ';
-			printf( __('BoldR design by <a href="%s" title="%s">Iceable Themes</a>.', 'boldr-lite'),
+			printf( __('BoldR design by <a href="%1$s" title="%2$s">Iceable Themes</a>.', 'boldr-lite'),
 				esc_url( 'https://www.iceablethemes.com' ),
 				esc_attr( 'Iceablethemes', 'boldr-lite' )
 			);

@@ -227,13 +227,13 @@ class BoldR_Customizer {
 	public static function customize_controls_scripts(){
 		wp_enqueue_style(
 			'boldr-customizer-controls-style',
-			THEME_DIR_URI . '/inc/customizer/css/customizer-controls.css',
+			BOLDR_THEME_DIR_URI . '/inc/customizer/css/customizer-controls.css',
 			array( 'customize-controls' )
 		);
 
 		wp_register_script(
 			  'boldr-customizer-section',
-			  THEME_DIR_URI . '/inc/customizer/js/boldr-customizer-section.js',
+			  BOLDR_THEME_DIR_URI . '/inc/customizer/js/boldr-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
 			  '',
 			  true
