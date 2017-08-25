@@ -51,6 +51,17 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.2.13 =
+August 25th, 2017
+* Removed metadata for pages in search results
+* Wrapped pingback url in appropriate conditionals in header.php
+* HTML5Shiv is now properly enqueued
+* Prefixed theme constants names
+* Using the_archive_title() for archive page titles
+* Ordered placeholders for printf() in footer.php
+* Removed additional support for child themes for WP<4.7 (was relying on file_exists() which emits a PHP E_WARNING upon failure)
+* Fixed singular placeholder in gettext function in comments.php
+
 = 1.2.12 =
 June 21th, 2017
 * Removed function_exists('wp_site_icon') checks and related functions (deprecated since WP 4.3)
