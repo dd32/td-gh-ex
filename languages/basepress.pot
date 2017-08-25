@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: BasePress 1.1.1\n"
+"Project-Id-Version: BasePress 1.2.0\n"
 "Report-Msgid-Bugs-To: https://my.shopperwp.com/support\n"
-"POT-Creation-Date: 2017-07-05 15:35:38+00:00\n"
+"POT-Creation-Date: 2017-08-25 08:42:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:90 inc/base-template-functions.php:783
+#: comments.php:90 inc/base-template-functions.php:798
 msgid "Leave a Comment"
 msgstr ""
 
@@ -64,85 +64,85 @@ msgstr ""
 msgid "Your Comment Here ..."
 msgstr ""
 
-#: inc/base-template-functions.php:19
+#: inc/base-template-functions.php:20
 msgid "Skip to navigation"
 msgstr ""
 
-#: inc/base-template-functions.php:20
+#: inc/base-template-functions.php:21
 msgid "Skip to content"
 msgstr ""
 
-#: inc/base-template-functions.php:140
+#: inc/base-template-functions.php:151
 msgid "Main Navigation"
 msgstr ""
 
-#: inc/base-template-functions.php:220
+#: inc/base-template-functions.php:232
 msgid "<i class=\"fa fa-angle-left\"></i>"
 msgstr ""
 
-#: inc/base-template-functions.php:221
+#: inc/base-template-functions.php:233
 msgid "<i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: inc/base-template-functions.php:222
+#: inc/base-template-functions.php:234
 msgid "Page"
 msgstr ""
 
-#: inc/base-template-functions.php:312 inc/base-template-functions.php:353
+#: inc/base-template-functions.php:325 inc/base-template-functions.php:366
 #. translators: %s: Name of current post.
 msgid "Continue Reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/base-template-functions.php:327 inc/base-template-functions.php:362
-#: inc/base-template-functions.php:993
+#: inc/base-template-functions.php:340 inc/base-template-functions.php:375
+#: inc/base-template-functions.php:1011
 msgid "Pages:"
 msgstr ""
 
-#: inc/base-template-functions.php:402 inc/base-template-functions.php:760
-#: inc/base-template-functions.php:1143
+#: inc/base-template-functions.php:415 inc/base-template-functions.php:775
+#: inc/base-template-functions.php:1161
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/base-template-functions.php:417
+#: inc/base-template-functions.php:430
 msgid "<i class=\"fa fa-tags\" aria-hidden=\"true\"></i> "
 msgstr ""
 
-#: inc/base-template-functions.php:436
+#: inc/base-template-functions.php:449
 msgid "<i class=\"fa fa-tags\" aria-hidden=\"true\"></i>"
 msgstr ""
 
-#: inc/base-template-functions.php:539 inc/base-template-functions.php:1166
+#: inc/base-template-functions.php:552 inc/base-template-functions.php:1184
 #: template-parts/content-page.php:30
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#: inc/base-template-functions.php:609
+#: inc/base-template-functions.php:622
 msgid "By "
 msgstr ""
 
-#: inc/base-template-functions.php:725
+#: inc/base-template-functions.php:740
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/base-template-functions.php:783
+#: inc/base-template-functions.php:798
 msgid "One Comment"
 msgstr ""
 
-#: inc/base-template-functions.php:783
+#: inc/base-template-functions.php:798
 msgid "% Comments"
 msgstr ""
 
-#: inc/base-template-functions.php:943
-msgid "%1$s designed by %2$s."
+#: inc/base-template-functions.php:960
+msgid "%1$s designed by %2$s"
 msgstr ""
 
-#: inc/base-template-functions.php:1145
+#: inc/base-template-functions.php:1163
 msgid "%1$s"
 msgstr ""
 
-#: inc/base-template-functions.php:1157
+#: inc/base-template-functions.php:1175
 #. translators: %s: post title
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
@@ -177,57 +177,60 @@ msgstr ""
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:148
+#: inc/customizer/class-basepress-customizer.php:149
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:152
+#: inc/customizer/class-basepress-customizer.php:153
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:186
+#: inc/customizer/class-basepress-customizer.php:187
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:199
-#: inc/customizer/class-basepress-customizer.php:275
-msgid "Heading color"
+#: inc/customizer/class-basepress-customizer.php:200
+msgid "Primary color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:214
-#: inc/customizer/class-basepress-customizer.php:290
-msgid "Text color"
+#: inc/customizer/class-basepress-customizer.php:215
+msgid "Secondary color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:229
-msgid "Link / Button Color"
+#: inc/customizer/class-basepress-customizer.php:230
+#: inc/customizer/class-basepress-customizer.php:291
+msgid "Body text color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:238
+#: inc/customizer/class-basepress-customizer.php:239
 msgid "Header background image"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:246
+#: inc/customizer/class-basepress-customizer.php:247
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:248
+#: inc/customizer/class-basepress-customizer.php:249
 msgid "Customise the look & feel of your web site footer."
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:260
+#: inc/customizer/class-basepress-customizer.php:261
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:305
+#: inc/customizer/class-basepress-customizer.php:276
+msgid "Title heading color"
+msgstr ""
+
+#: inc/customizer/class-basepress-customizer.php:306
 msgid "Link color"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:315
+#: inc/customizer/class-basepress-customizer.php:316
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/class-basepress-customizer.php:327
+#: inc/customizer/class-basepress-customizer.php:328
 msgid "General Layout"
 msgstr ""
 
@@ -298,12 +301,12 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/base-template-functions.php:1102
+#: inc/base-template-functions.php:1120
 msgctxt "post date"
 msgid "%s"
 msgstr ""
 
-#: inc/base-template-functions.php:1108
+#: inc/base-template-functions.php:1126
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

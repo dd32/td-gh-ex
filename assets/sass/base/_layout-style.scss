@@ -152,6 +152,10 @@
 		width: 100%;
 		padding: 0 3%;
 	}
+	.page-content,
+	.single_post {
+		display: inline-block;
+	}
 }
 
 @include susy-media (max-width $min-width) {

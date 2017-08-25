@@ -16,8 +16,10 @@ if ( ! function_exists( 'basepress_skip_links' ) ) {
 	 */
 	function basepress_skip_links() {
 		?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_attr_e( 'Skip to navigation', 'basepress' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'basepress' ); ?></a>
+
+			<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_attr_e( 'Skip to navigation', 'basepress' ); ?></a>
+			<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'basepress' ); ?></a>
+		
 		<?php
 	}
 }
@@ -31,9 +33,11 @@ if ( ! function_exists( 'basepress_site_branding' ) ) {
 	 */
 	function basepress_site_branding() {
 		?>
-		<div id="logo" class="site-branding clearfix">
-			<?php basepress_site_title_or_logo(); ?>
-		</div>
+			
+			<div id="logo" class="site-branding clearfix">
+				<?php basepress_site_title_or_logo(); ?>
+			</div>
+
 		<?php
 	}
 }
@@ -47,10 +51,14 @@ if ( ! function_exists( 'basepress_site_title_or_logo' ) ) {
 	 * @return string
 	 */
 	function basepress_site_title_or_logo( $echo = true ) {
+		
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+			
 			$logo = get_custom_logo();
 			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
+		
 		} elseif ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+			
 			// Copied from jetpack_the_site_logo() function.
 			$logo    = site_logo()->logo;
 			$logo_id = get_theme_mod( 'custom_logo' ); // Check for WP 4.5 Site Logo
@@ -71,7 +79,9 @@ if ( ! function_exists( 'basepress_site_title_or_logo' ) ) {
 			);
 
 			$html = apply_filters( 'jetpack_the_site_logo', $html, $logo, $size );
+		
 		} else {
+			
 			$tag = is_home() ? 'h1' : 'div';
 
 			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) .'>';
@@ -79,6 +89,7 @@ if ( ! function_exists( 'basepress_site_title_or_logo' ) ) {
 			if ( '' !== get_bloginfo( 'description' ) ) {
 				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
 			}
+
 		}
 
 		if ( ! $echo ) {
@@ -140,6 +151,7 @@ if ( ! function_exists( 'basepress_category_navigation' ) ) {
 				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e('Main Navigation', 'basepress') ?></span>
 			</div>
 		</div>
+		
 		<div id="catcher"></div>
 
 		<?php
@@ -294,6 +306,7 @@ if ( ! function_exists( 'basepress_post_content' ) ) {
 	function basepress_post_content() {
 
 		$size = apply_filters('basepress_thunmbnail_size', 'large');
+
 		$basepress_display_excerpt = apply_filters('basepress_display_excerpt', false);
 
 		/**
@@ -913,12 +926,12 @@ if ( ! function_exists( 'basepress_footer_nav' ) ) {
 			echo '<nav id="footer-links" class="footer-navigation default-menustyle" role="navigation">';
 
 			wp_nav_menu( array(
-				'theme_location' => 'footer',
-				'container' => false,
-				'menu_class' => 'footer-menu',
-				'echo' => true,
-				'fallback_cb' => '',
-				'depth' => 1,
+					'theme_location' => 'footer',
+					'container' => false,
+					'menu_class' => 'footer-menu',
+					'echo' => true,
+					'fallback_cb' => '',
+					'depth' => 1,
 				)
 			);
 
@@ -939,11 +952,15 @@ if ( ! function_exists( 'basepress_credit' ) ) {
 	function basepress_credit() {
 		?>
 		<div class="site-info">
+			
 			<?php echo esc_html( apply_filters( 'basepress_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
 
 			<?php if ( apply_filters( 'basepress_credit_link', true ) ) { ?>
-				<?php printf( esc_attr__( '%1$s designed by %2$s.', 'basepress' ), 'BasePress', '<a href="https://themecountry.com" title="Base - The best free blog theme for WordPress" rel="author">ThemeCountry</a>' ); ?>
+				
+				<?php printf( esc_attr__( '%1$s designed by %2$s', 'basepress' ), 'BasePress', '<a href="https://themecountry.com" title="Base - The best free blog theme for WordPress" rel="author">ThemeCountry</a>' ); ?>
+			
 			<?php } ?>
+
 		</div><!-- .site-info -->
 		<?php
 	}
@@ -956,7 +973,7 @@ if ( ! function_exists( 'basepress_footer_back_top' ) ) {
 
 		if ( $enable_backtop ) {
 		?>
-		<span class="back-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+			<span class="back-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
 		<?php 
 		}
 	}
@@ -972,8 +989,7 @@ if ( ! function_exists( 'basepress_page_header' ) ) {
 		?>
 		<header class="entry-header">
 			<?php
-			
-			the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title( '<h1 class="entry-title">', '</h1>' );
 			?>
 		</header><!-- .entry-header -->
 		<?php

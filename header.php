@@ -53,7 +53,7 @@
 			?>
 
 		</div>
-		<div id="catcher"></div>
+		<div id="header-catcher"></div>
 
 	</header><!-- #masthead -->
 

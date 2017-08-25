@@ -34,17 +34,18 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			add_action( 'customize_save_after',     array( $this, 'set_basepress_style_theme_mods' ) );
 
 			/* On the frontend */
-			//if ( ! is_admin() ) {
 				$layout = get_theme_mod( 'basepress_layout' );
+
+
 				if ( $layout === 'none' ) {
 
 					remove_action( 'basepress_sidebar', 'basepress_get_sidebar', 10 );
 					
 				} else {
-					add_action( 'basepress_sidebar', 'basepress_get_sidebar', 10 );
+
+					add_action( 'basepress_sidebar',     'basepress_get_sidebar', 10 );
 
 				}
-			// }
 			
 
 		}
@@ -196,10 +197,25 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_heading_color', array(
-				'label'	   				=> __( 'Heading color', 'basepress' ),
+				'label'	   				=> __( 'Primary color', 'basepress' ),
 				'section'  				=> 'basepress_typography',
 				'settings' 				=> 'basepress_heading_color',
 				'priority' 				=> 20,
+			) ) );
+
+			/**
+			 * Accent Color
+			 */
+			$wp_customize->add_setting( 'basepress_accent_color', array(
+				'default'				=> apply_filters( 'basepress_default_accent_color', '#cb2027' ),
+				'sanitize_callback'		=> 'sanitize_hex_color',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_accent_color', array(
+				'label'					=> __( 'Secondary color', 'basepress' ),
+				'section'				=> 'basepress_typography',
+				'settings'				=> 'basepress_accent_color',
+				'priority'				=> 30,
 			) ) );
 
 			/**
@@ -211,55 +227,40 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_text_color', array(
-				'label'					=> __( 'Text color', 'basepress' ),
+				'label'					=> __( 'Body text color', 'basepress' ),
 				'section'				=> 'basepress_typography',
 				'settings'				=> 'basepress_text_color',
-				'priority'				=> 30,
-			) ) );
-
-			/**
-			 * Accent Color
-			 */
-			$wp_customize->add_setting( 'basepress_accent_color', array(
-				'default'           	=> apply_filters( 'basepress_default_accent_color', '#cb2027' ),
-				'sanitize_callback' 	=> 'sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_accent_color', array(
-				'label'	   				=> __( 'Link / Button Color', 'basepress' ),
-				'section'  				=> 'basepress_typography',
-				'settings' 				=> 'basepress_accent_color',
-				'priority' 				=> 40,
+				'priority'				=> 40,
 			) ) );
 
 			$wp_customize->add_control( new Arbitrary_BasePress_Control( $wp_customize, 'basepress_header_image_heading', array(
-				'section'  				=> 'header_image',
-				'type' 					=> 'heading',
+				'section'				=> 'header_image',
+				'type'					=> 'heading',
 				'label'					=> __( 'Header background image', 'basepress' ),
-				'priority' 				=> 6,
+				'priority'				=> 6,
 			) ) );
 
 			/**
 			 * Footer section
 			 */
 			$wp_customize->add_section( 'basepress_footer' , array(
-				'title'      			=> __( 'Footer', 'basepress' ),
-				'priority'   			=> 28,
-				'description' 			=> __( 'Customise the look & feel of your web site footer.', 'basepress' ),
+				'title'					=> __( 'Footer', 'basepress' ),
+				'priority'				=> 28,
+				'description'			=> __( 'Customise the look & feel of your web site footer.', 'basepress' ),
 			) );
 
 			/**
 			 * Footer Background
 			 */
 			$wp_customize->add_setting( 'basepress_footer_background_color', array(
-				'default'           	=> apply_filters( 'basepress_default_footer_background_color', '#ffffff' ),
-				'sanitize_callback' 	=> 'sanitize_hex_color',
+				'default'				=> apply_filters( 'basepress_default_footer_background_color', '#ffffff' ),
+				'sanitize_callback'		=> 'sanitize_hex_color',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_footer_background_color', array(
-				'label'	   				=> __( 'Background color', 'basepress' ),
-				'section'  				=> 'basepress_footer',
-				'settings' 				=> 'basepress_footer_background_color',
+				'label'					=> __( 'Background color', 'basepress' ),
+				'section'				=> 'basepress_footer',
+				'settings'				=> 'basepress_footer_background_color',
 				'priority'				=> 10,
 			) ) );
 
@@ -267,14 +268,14 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			 * Footer heading color
 			 */
 			$wp_customize->add_setting( 'basepress_footer_heading_color', array(
-				'default'           	=> apply_filters( 'basepress_default_footer_heading_color', '#333333' ),
-				'sanitize_callback' 	=> 'sanitize_hex_color',
+				'default'				=> apply_filters( 'basepress_default_footer_heading_color', '#333333' ),
+				'sanitize_callback'		=> 'sanitize_hex_color',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_footer_heading_color', array(
-				'label'	   				=> __( 'Heading color', 'basepress' ),
-				'section'  				=> 'basepress_footer',
-				'settings' 				=> 'basepress_footer_heading_color',
+				'label'					=> __( 'Title heading color', 'basepress' ),
+				'section'				=> 'basepress_footer',
+				'settings'				=> 'basepress_footer_heading_color',
 				'priority'				=> 20,
 			) ) );
 
@@ -282,14 +283,14 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			 * Footer text color
 			 */
 			$wp_customize->add_setting( 'basepress_footer_text_color', array(
-				'default'           	=> apply_filters( 'basepress_default_footer_text_color', '#3333333' ),
-				'sanitize_callback' 	=> 'sanitize_hex_color',
+				'default'				=> apply_filters( 'basepress_default_footer_text_color', '#3333333' ),
+				'sanitize_callback'		=> 'sanitize_hex_color',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_footer_text_color', array(
-				'label'	   				=> __( 'Text color', 'basepress' ),
-				'section'  				=> 'basepress_footer',
-				'settings' 				=> 'basepress_footer_text_color',
+				'label'					=> __( 'Body text color', 'basepress' ),
+				'section'				=> 'basepress_footer',
+				'settings'				=> 'basepress_footer_text_color',
 				'priority'				=> 30,
 			) ) );
 
@@ -297,14 +298,14 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			 * Footer link color
 			 */
 			$wp_customize->add_setting( 'basepress_footer_link_color', array(
-				'default'           	=> apply_filters( 'basepress_default_footer_link_color', '#cb2027' ),
-				'sanitize_callback' 	=> 'sanitize_hex_color',
+				'default'				=> apply_filters( 'basepress_default_footer_link_color', '#cb2027' ),
+				'sanitize_callback'		=> 'sanitize_hex_color',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'basepress_footer_link_color', array(
-				'label'	   				=> __( 'Link color', 'basepress' ),
-				'section'  				=> 'basepress_footer',
-				'settings' 				=> 'basepress_footer_link_color',
+				'label'					=> __( 'Link color', 'basepress' ),
+				'section'				=> 'basepress_footer',
+				'settings'				=> 'basepress_footer_link_color',
 				'priority'				=> 40,
 			) ) );
 
@@ -312,13 +313,13 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 			 * Layout
 			 */
 			$wp_customize->add_section( 'basepress_layout' , array(
-				'title'      			=> __( 'Layout', 'basepress' ),
-				'priority'   			=> 50,
+				'title'					=> __( 'Layout', 'basepress' ),
+				'priority'				=> 50,
 			) );
 
 			$wp_customize->add_setting( 'basepress_layout', array(
-				'default'    			=> apply_filters( 'basepress_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
-				'sanitize_callback' 	=> 'basepress_sanitize_choices',
+				'default'				=> apply_filters( 'basepress_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
+				'sanitize_callback'		=> 'basepress_sanitize_choices',
 			) );
 
 			$wp_customize->add_control( new basepress_Custom_Radio_Image_Control( $wp_customize, 'basepress_layout', array(
@@ -327,10 +328,10 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				'label'					=> __( 'General Layout', 'basepress' ),
 				'priority'				=> 1,
 				'choices'				=> array(
-						'left'  => get_template_directory_uri() . '/assets/images/customizer/controls/left.png',
-						'none'  => get_template_directory_uri() . '/assets/images/customizer/controls/none.png',
-						'right' => get_template_directory_uri() . '/assets/images/customizer/controls/right.png',
-				),
+						'left'	=> get_template_directory_uri() . '/assets/images/customizer/controls/left.png',
+						'none'	=> get_template_directory_uri() . '/assets/images/customizer/controls/none.png',
+						'right'	=> get_template_directory_uri() . '/assets/images/customizer/controls/right.png',
+					),
 			) ) );
 
 		}
@@ -370,7 +371,7 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 		 */
 		public function add_customizer_css() {
 
-			$basepress_styles             = get_theme_mod( 'basepress_styles' );
+			$basepress_styles = get_theme_mod( 'basepress_styles' );
 
 			if ( is_customize_preview() || ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) || ( false === $basepress_styles ) ) {
 
@@ -423,16 +424,11 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				body, .sidebar { color: ' . $basepress_theme_mods['text_color'] . '; }
 				.entry-footer, .entry-footer > span {color: '. basepress_adjust_color_brightness( $basepress_theme_mods['text_color'], 100 ) .'}
 				h1, h2, h3, h4, h5 ,h6, .entry-title a, .sidebar .widget-title { color: ' . $basepress_theme_mods['heading_color'] . '; }
-				a, .site-info a, .sidebar a, .post-navigation .nav-links a, .post-navigation .nav-links a::before, blockquote p, .wp-caption .wp-caption-text { color: ' . $basepress_theme_mods['accent_color'] . '; }
+				a, .sidebar a, .wp-caption .wp-caption-text { color: ' . $basepress_theme_mods['accent_color'] . '; }
+				a:hover, .sidebar a:hover, .entry-title a:hover { color: ' . basepress_adjust_color_brightness( $basepress_theme_mods['accent_color'],  $darken_factor ) . '; }
 				.back-to-top { background: ' . $basepress_theme_mods['accent_color'] . '; }
-				a:hover, .site-info a:hover, .sidebar a:hover, .entry-title a:hover {color: ' . basepress_adjust_color_brightness( $basepress_theme_mods['accent_color'],  $darken_factor ) . '; }
-
 				.site-footer { background: ' . $basepress_theme_mods['footer_background_color'] . '; }
-				.site-footer,
-				.site-footer #wp-calendar caption,
-				.site-info {
-					color: ' . $basepress_theme_mods['footer_text_color'] . ';
-				}
+				.site-footer, .site-footer #wp-calendar caption, .site-info { color: ' . $basepress_theme_mods['footer_text_color'] . '; }
 				.site-footer h1,
 				.site-footer h2,
 				.site-footer h3,
@@ -442,10 +438,8 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				.site-footer .widget-title {
 					color: ' . $basepress_theme_mods['footer_heading_color'] . ';
 				}
-				.site-footer a,
-				.footer-navigation .footer-menu li a {
-					color: ' . $basepress_theme_mods['footer_link_color'] . ';
-				}
+				
+				.footer-navigation .footer-menu li a { color: ' . $basepress_theme_mods['footer_link_color'] . '; }
 
 			';
 
