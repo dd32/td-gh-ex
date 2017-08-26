@@ -18,7 +18,6 @@ if ( post_password_required() )
     return;
 ?>
 
-
 <div id="comments" class="comments-area">
 
     <?php if ( have_comments() ) : ?>
@@ -29,13 +28,10 @@ if ( post_password_required() )
 
                 /* translators: %s: post title */
                 printf( esc_html(_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'bb-ecommerce-store' ), get_the_title() ) );
-
             } else {
                 printf(
                 /* translators: 1: number of comments, 2: post title */
-
                     esc_html( _nx(
-
                         '%1$s thought on &ldquo;%2$s&rdquo;',
                         '%1$s thoughts on &ldquo;%2$s&rdquo;',
                         $comments_number,
@@ -65,7 +61,6 @@ if ( post_password_required() )
         <?php the_comments_navigation(); ?>
 
     <?php endif; // Check for have_comments(). ?>
-
     <?php
         // If comments are closed and there are comments, let's leave a little note, shall we?
         if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :

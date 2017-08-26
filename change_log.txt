@@ -18,3 +18,7 @@ Version 1.2.3
 i) Changed the layout of theme.
 ii) Removed the depreceated functions.
 iii) Added the  static part with post.
+
+Version 1.2.4
+i) Added the translation ready tag.
+ii) Added Rtl language support tag.

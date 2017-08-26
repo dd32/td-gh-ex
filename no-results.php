@@ -6,8 +6,7 @@
  *
  * @package Ecommerce Store
  */
-?>
-	
+?>	
 <header>
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-ecommerce-store' ); ?></h1>
 </header>

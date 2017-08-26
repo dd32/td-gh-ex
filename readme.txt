@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2.3
-Tested up to    :   WP 4.8
+Version         :   1.2.4
+Tested up to    :   WP 4.8.1
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
 
