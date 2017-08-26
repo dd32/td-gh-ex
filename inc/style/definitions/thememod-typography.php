@@ -64,7 +64,7 @@ if ( ! empty( $declarations ) ) {
  * H1
  */
 $element = 'h1';
-$selectors = array( 'h1:not(.site-title)', '.font-header', '.entry-title' );
+$selectors = array( 'h1:not(.site-title)', 'h1:not(.site-title) a', '.font-header', '.entry-title' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -78,7 +78,7 @@ if ( ! empty( $link_rule ) ) {
  * H2
  */
 $element = 'h2';
-$selectors = array( 'h2' );
+$selectors = array( 'h2', 'h2 a' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -103,7 +103,7 @@ if ( isset( $declarations['font-size-px'] ) ) {
  * H3
  */
 $element = 'h3';
-$selectors = array( 'h3', '.builder-text-content .widget-title' );
+$selectors = array( 'h3', 'h3 a', '.builder-text-content .widget-title' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -117,7 +117,7 @@ if ( ! empty( $link_rule ) ) {
  * H4
  */
 $element = 'h4';
-$selectors = array( 'h4' );
+$selectors = array( 'h4', 'h4 a' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -131,7 +131,7 @@ if ( ! empty( $link_rule ) ) {
  * H5
  */
 $element = 'h5';
-$selectors = array( 'h5' );
+$selectors = array( 'h5', 'h5 a' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -145,7 +145,7 @@ if ( ! empty( $link_rule ) ) {
  * H6
  */
 $element = 'h6';
-$selectors = array( 'h6' );
+$selectors = array( 'h6', 'h6 a' );
 $declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
@@ -287,9 +287,8 @@ if ( $is_style_preview || ! $this->thememod()->is_default( 'font-weight-nav-curr
  * Header Bar Text
  */
 $element = 'header-bar-text';
-$selectors = array( '.header-bar', '.header-text', '.header-bar .search-form input', '.header-bar .menu a', '.header-navigation .mobile-menu ul.menu li a' );
-$force = $is_style_preview || $body_font_customized;
-$declarations = $this->helper()->parse_font_properties( $element, $force );
+$selectors = array( '.header-bar', '.header-text', '.header-bar .search-form input', '.header-bar .menu a' );
+$declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
 }
@@ -322,8 +321,7 @@ if ( $is_style_preview || ! $this->thememod()->is_default( 'font-size-header-bar
  */
 $element = 'widget-title';
 $selectors = array( '.sidebar .widget-title', '.sidebar .widgettitle', '.sidebar .widget-title a', '.sidebar .widgettitle a', '.font-widget-title' );
-$force = $is_style_preview || $body_font_customized;
-$declarations = $this->helper()->parse_font_properties( $element, $force );
+$declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
 }
@@ -352,8 +350,7 @@ if ( ! empty( $link_rule ) ) {
  */
 $element = 'footer-widget-title';
 $selectors = array( '.footer-widget-container .widget-title', '.footer-widget-container .widgettitle', '.footer-widget-container .widget-title a', '.footer-widget-container .widgettitle a' );
-$force = $is_style_preview || $body_font_customized;
-$declarations = $this->helper()->parse_font_properties( $element, $force );
+$declarations = $this->helper()->parse_font_properties( $element, $is_style_preview );
 if ( ! empty( $declarations ) ) {
 	$this->css()->add( array( 'selectors' => $selectors, 'declarations' => $declarations, ) );
 }
