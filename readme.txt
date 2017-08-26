@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.6 | 25th August 2017 = 
+* Add: string translate for blog category.
+
 = Version 3.0.5 | 17th August 2017 = 
 * Fix: css import issue.
 * Fix: POT so that esc_html__ is added. 
