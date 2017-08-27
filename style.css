@@ -1,10 +1,10 @@
 /*
 Theme Name: Bellini
-Theme URI: https://atlantisthemes.com/
+Theme URI: https://atlantisthemes.com/bellini-woocommerce-theme/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce (WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.43.5
+Version: 1.43.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -1653,7 +1653,7 @@ a:hover.page-numbers {
     vertical-align: bottom;
 }
 
-.custom-header-media {
+.has-header-image .custom-header-media {
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -1745,9 +1745,7 @@ a:hover.page-numbers {
 }
 
 .widget__before__content,
-.widget__after__content,
-.widget-area--right,
-.widget-area--left{
+.widget__after__content{
     padding-left:0;
     padding-right:0;
 }
@@ -2372,6 +2370,7 @@ object {
     font-size: .8em;
     border-radius: 2px;
     display: inline-block;
+    line-height: 1.4;
 }
 
 .single-post__body {
@@ -3134,6 +3133,7 @@ input.wpcf7-text {width: 100%;}
     padding: .8em;
     margin: 0;
     width: 180px;
+    text-align: left;
   }
 
   .main-navigation ul li:hover > ul,

@@ -667,6 +667,8 @@
 
 .woocommerce .woocommerce-breadcrumb {
     padding-left: 15px;
+    text-align: left!important;
+    padding-top: 1em;
 }
 
 #add_payment_method table.cart img,
@@ -822,7 +824,13 @@ mark.count {background-color: transparent; opacity: .35;}
         padding: 0;
     }
 
-    #order_review,#customer_details {width:100%;}
+    #order_review,#customer_details {width:100% !important;}
+
+    .widget__before__content,
+    .widget__after__content{
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+    }
 
     .woo__info__sorting .navigation.pagination{
         text-align:center !important;
@@ -1230,3 +1238,7 @@ table.cart td.actions .coupon {
 
 .widget__product__thumb{padding-left: 0;}
 .widget__product__thumb img {width:100% !important;}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    border: none !important;
+}
