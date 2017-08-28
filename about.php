@@ -33,15 +33,15 @@ function aedificator_guide() {
 <div class="wrapper-info">
 	<div class="aedifcator-box">
    		<div class="aedifcator-box-title">
-			<?php esc_html('About Aedificator Theme', 'aedificator'); ?>
+			<?php esc_attr_e('About Aedificator Theme', 'aedificator'); ?>
 		</div>
-		<p><?php esc_html('Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.','aedificator'); ?></p>
+		<p><?php esc_attr_e('Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.','aedificator'); ?></p>
 		<div class="proversion">
-			<h3><?php esc_html('Upgrade to Pro version!', 'aedificator'); ?></h3>
+			<h3><?php esc_attr_e('Upgrade to Pro version!', 'aedificator'); ?></h3>
 				<a class="upgradepro" target="_blank" href="<?php echo esc_url('https://www.pwtthemes.com/theme/aedificator-responsive-wordpress-theme'); ?>" target="_blank"><?php esc_html('UPGRADE TO PRO', 'aedificator'); ?></a>
-				<a class="livepreviw" target="_blank" href="<?php echo esc_url('https://www.pwtthemes.com/demo/aedificator'); ?>" target="_blank"><?php esc_html('LIVE PREVIEW', 'aedificator'); ?></a>
-			<p><?php esc_html('If you need assistance, please do not hesitate to', 'aedificator'); ?> <a target="_blank" href="<?php echo esc_url('http://www.pwtthemes.com/contact'); ?>"><?php esc_html('contact us', 'aedificator'); ?></a></p>
-	        <h3><?php esc_html('FREE vs PRO', 'aedificator'); ?></h3>
+				<a class="livepreviw" target="_blank" href="<?php echo esc_url('https://www.pwtthemes.com/demo/aedificator'); ?>" target="_blank"><?php esc_attr_e('LIVE PREVIEW', 'aedificator'); ?></a>
+			<p><?php esc_attr_e('If you need assistance, please do not hesitate to', 'aedificator'); ?> <a target="_blank" href="<?php echo esc_url('http://www.pwtthemes.com/contact'); ?>"><?php esc_attr_e('contact us', 'aedificator'); ?></a></p>
+	        <h3><?php esc_attr_e('FREE vs PRO', 'aedificator'); ?></h3>
 
     	</div>
 		<a href="<?php echo esc_url('https://www.pwtthemes.com/theme/aedificator-responsive-wordpress-theme'); ?>" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/demo/freevspro.jpg" alt="" /></a>
