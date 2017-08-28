@@ -102,10 +102,10 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <?php esc_html_e( 'Page template that is TwoPart Template can divide the page content by using the', 'appeal' ); ?>
 <br><code>&lt;!--more--></code> 
 <?php esc_html_e( 'tag.', 'appeal' ) ?>
-<sup>1</sup> <strong>
+<sup><?php esc_html_e( '1', 'appeal' ) ?></sup> <strong>
 <?php esc_html_e( 'Place the more-tag at the point where you want the page content to split in half.', 'appeal' ); ?></strong> 
-<?php esc_html_e( 'Test your height by viewing and pre-defining your content with a private page in order to achieve a balanced layout of paragraphs prior to publishing', 'appeal' ); ?>
-<sup>2</sup>. <b>Shift+Alt+j</b> 
+<?php esc_html_e( 'Test your height by viewing and pre-defining your content with a private page in order to achieve a balanced layout of paragraphs prior to publishing.', 'appeal' ); ?>
+<sup><?php esc_html_e( '2', 'appeal' ) ?></sup> <b><?php esc_html_e( 'Shift+Alt+j', 'appeal' ) ?></b> 
 <?php esc_html_e( 'in editor will justify text alignment.', 'appeal' ); ?></p></td>
 
 <td>
@@ -119,7 +119,6 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 </tr>
 
 <tr>
-
 <td>
 <figure>
 <a href="<?php echo esc_url( get_template_directory_uri() ) . '/assets/imgs/screenshot-04.png'; ?>">
@@ -135,9 +134,8 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <strong><?php esc_html_e( 'Customize Theme', 'appeal' ); ?></strong>
 <p><?php esc_html_e( 'To set up the Pullquote color, width and length, open Customizer', 'appeal' ); ?></p>
 <center>
-<a href="<?php echo esc_url( $adurl ); ?>" class="button-primary">Customizer</a>
+<a href="<?php echo esc_url( $adurl ); ?>" class="button-primary"><?php esc_html_e( 'Customizer', 'appeal' ); ?></a>
 </center>
-
 </td>
 
 <td>
@@ -165,7 +163,7 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <td>
 <strong><?php esc_html_e( 'Other notes', 'appeal' ); ?></strong>
 <p><?php esc_html_e( 'By hiding titles of posts/pages, your titles can be added from your Editor to give better SEO URLs and puts title where you want it in the article. h3 tag is pre styled to match theme. The Editor Title box will be the url name which, is required.', 'appeal' ); ?></p>
-<p><a href="http://themes.tradesouthwest.com/wordpress/" target="_blank" title="=|=">Tradesouthwest</a></p></td>
+<p><a href="http://themes.tradesouthwest.com/wordpress/" target="_blank" title="=|="><?php esc_html_e( 'Tradesouthwest', 'appeal' ); ?></a></p></td>
 </tr></tbody></table>
 
 <table><tbody>
@@ -173,11 +171,11 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <td><p><?php esc_html_e( 'Try the Plugin Depict by TSW to create an expanded Author Profile.', 'appeal' ); ?></p>
 <p><?php esc_html_e( 'Plugin can be found online at ', 'appeal' ); ?> 
 <a href="https://wordpress.org/plugins/depict/" 
-   title="w.org plugins" 
+   title="<?php esc_attr_e('w.org plugins', 'appeal'); ?>" 
    target="_blank">https://wordpress.org/plugins/depict/ </a> </p> </td>
-<td> <p>&nbsp; &nbsp; &nbsp; &nbsp; <a href="https://paypal.me/tradesouthwest" class="button button-primary"  title="paypal.me/tradesouthwest Opens in new window" target="_blank"><?php esc_html_e( 'Donate if you like.', 'appeal' ); ?></a> 
-<span> <a href="https://twitter.com/tradesouthwest" title="Twitter" target="_blank"> 
-<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/imgs/alpha-twitter.png'; ?>" alt="tweet" height="28"/></a></span></p></td>
+<td> <p>&nbsp; &nbsp; &nbsp; &nbsp; <a href="https://paypal.me/tradesouthwest" class="button button-primary"  title="<?php esc_attr_e('paypal.me/tradesouthwest Opens in new window', 'appeal'); ?>" target="_blank"><?php esc_html_e( 'Donate if you like.', 'appeal' ); ?></a> 
+<span> <a href="https://twitter.com/tradesouthwest" title="<?php esc_attr_e('Twitter', 'appeal'); ?>" target="_blank"> 
+<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/imgs/alpha-twitter.png'; ?>" alt="<?php esc_attr_e('tweet', 'appeal'); ?>" height="28"/></a></span></p></td>
 </tr></tbody></table>
 
 </div>

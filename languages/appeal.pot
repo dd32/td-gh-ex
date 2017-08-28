@@ -1,27 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-08-10 20:18-0700\n"
-"PO-Revision-Date: 2017-08-10 20:19-0700\n"
-"Last-Translator: Larry Judd <tradesouthwest@gmail.com>\n"
+"POT-Creation-Date: 2017-08-28 14:20-0800\n"
+"PO-Revision-Date: 2017-08-28 14:20-0800\n"
+"Last-Translator: \n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx;_x;esc_html__;"
-"esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;"
+"esc_attr__;esc_attr_e;_n;_nx;_x\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: nothing.php:2
-msgid "Content Not available."
-msgstr ""
-
-#: nothing.php:5 search.php:45
-msgid "Maybe try another search while you are here?"
-msgstr ""
 
 #: functions.php:64
 msgid "Main Menu Top"
@@ -43,72 +35,113 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:315
 msgid "Read Article"
 msgstr ""
 
-#: functions.php:350
+#: functions.php:347
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:351 functions.php:360
+#: functions.php:348 functions.php:357
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:359
+#: functions.php:356
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:366
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:367
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:376
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:385
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:397
+#: functions.php:394
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:406
+#: functions.php:403
 msgid "Footer Right"
 msgstr ""
 
-#: author.php:15
-msgid "Author Website "
+#: archive.php:16
+msgid "Author Archive for "
 msgstr ""
 
-#: author.php:20
-msgid "Archives for "
+#: archive.php:22
+msgid "Tag Archive for "
 msgstr ""
 
-#: author.php:23 content.php:501
-msgid "Articles by "
+#: archive.php:26
+msgid "Dated Archives: "
 msgstr ""
 
-#: author.php:28 content.php:507
-msgid "E-Mail: "
+#: archive.php:30
+msgid "Monthly Archives: "
 msgstr ""
 
-#: author.php:31 content.php:510
-msgid "email link text to author"
+#: archive.php:34
+msgid "Yearly Archives: "
 msgstr ""
 
-#: sidebar.php:10 footer.php:93
-msgid "Top/Pg."
+#: archive.php:66 search.php:23
+msgid "View Article..."
 msgstr ""
 
-#: home.php:19
-msgid "show sidebars and navaigation options"
+#: content-header.php:98
+msgid "Author Gravatar is shown here. Clickable link to Author page."
+msgstr ""
+
+#: content-header.php:114
+msgid "Article by: "
+msgstr ""
+
+#: content-header.php:117
+msgid "Authors link to author website or other works."
+msgstr ""
+
+#: search.php:8
+msgid "Search Results for: "
+msgstr ""
+
+#: search.php:45 nothing.php:5
+msgid "Maybe try another search while you are here?"
+msgstr ""
+
+#: header.php:13
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:47
+msgid "Navigation"
+msgstr ""
+
+#: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
+#: content.php:400
+msgid "Edit"
+msgstr ""
+
+#: part-metadata.php:40
+msgid "Leave a comment"
+msgstr ""
+
+#: part-metadata.php:41
+msgid "1 Comment"
+msgstr ""
+
+#: part-metadata.php:42
+msgid "% Comments"
 msgstr ""
 
 #: comments.php:37
@@ -119,62 +152,64 @@ msgstr ""
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:48
 msgid "Send"
 msgstr ""
 
-#: comments.php:49
+#: comments.php:51
 msgid "Write a Reply or Comment"
 msgstr ""
 
-#: comments.php:53
-#, php-format
-msgid ""
-"You may use these\n"
-"                                 <abbr title=\"HyperText Markup Language"
-"\">HTML</abbr>\n"
-"                                 tags and attributes: %s"
+#: comments.php:55
+msgid "You may use these "
 msgstr ""
 
-#: comments.php:61
-msgid "Respond"
+#: comments.php:56
+msgid "HyperText Markup Language"
+msgstr ""
+
+#: comments.php:57
+msgid "HTML"
+msgstr ""
+
+#: comments.php:58
+msgid "tags and attributes: "
 msgstr ""
 
 #: comments.php:63
+msgid "Respond"
+msgstr ""
+
+#: comments.php:65
 msgid "Comment textarea box"
 msgstr ""
 
-#: comments.php:69
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+#: comments.php:71
+msgid "You must be "
 msgstr ""
 
-#: comments.php:76
+#: comments.php:72
+msgid "logged in "
+msgstr ""
+
+#: comments.php:73
+msgid "to post a comment."
+msgstr ""
+
+#: comments.php:77
 msgid "Your email address will not be published."
 msgstr ""
 
-#: content-header.php:98
-msgid "Author Gravatar is shown here. Clickable link to Author page."
+#: footer.php:79
+msgid "Design by "
 msgstr ""
 
-#: content-header.php:105
-msgid "Author Gravatar"
+#: footer.php:87
+msgid "Copyright "
 msgstr ""
 
-#: content-header.php:109
-msgid "Article by: "
-msgstr ""
-
-#: content-header.php:112
-msgid "Authors link to author website or other works."
-msgstr ""
-
-#: header.php:13
-msgid "Skip to content"
-msgstr ""
-
-#: header.php:47
-msgid "Navigation"
+#: footer.php:96 sidebar.php:10
+msgid "Top/Pg."
 msgstr ""
 
 #: theme-options.php:30
@@ -239,6 +274,10 @@ msgstr ""
 msgid "tag."
 msgstr ""
 
+#: theme-options.php:105
+msgid "1"
+msgstr ""
+
 #: theme-options.php:106
 msgid ""
 "Place the more-tag at the point where you want the page content to split in "
@@ -248,7 +287,15 @@ msgstr ""
 #: theme-options.php:107
 msgid ""
 "Test your height by viewing and pre-defining your content with a private "
-"page in order to achieve a balanced layout of paragraphs prior to publishing"
+"page in order to achieve a balanced layout of paragraphs prior to publishing."
+msgstr ""
+
+#: theme-options.php:108
+msgid "2"
+msgstr ""
+
+#: theme-options.php:108
+msgid "Shift+Alt+j"
 msgstr ""
 
 #: theme-options.php:109
@@ -278,55 +325,59 @@ msgid ""
 "allow the top level item to be a clickable link."
 msgstr ""
 
-#: theme-options.php:129
+#: theme-options.php:128
 msgid "Editor Excerpt meta-box for Pullquote"
 msgstr ""
 
-#: theme-options.php:132
+#: theme-options.php:131
 msgid "Bottom Menu (Social Links)"
 msgstr ""
 
-#: theme-options.php:133
+#: theme-options.php:132
 msgid ""
 "To set up social media links in the page footer: Appearance > Menus - then "
 "<Custom Links> to the left. Footer does not support depths."
 msgstr ""
 
-#: theme-options.php:135
+#: theme-options.php:134
 msgid "Customize Theme"
 msgstr ""
 
-#: theme-options.php:136
+#: theme-options.php:135
 msgid "To set up the Pullquote color, width and length, open Customizer"
 msgstr ""
 
-#: theme-options.php:149
+#: theme-options.php:137
+msgid "Customizer"
+msgstr ""
+
+#: theme-options.php:147
 msgid "ref. use more tag in editor:"
 msgstr ""
 
-#: theme-options.php:152
+#: theme-options.php:150
 msgid "ref. private page viewing:"
 msgstr ""
 
-#: theme-options.php:159
+#: theme-options.php:157
 msgid "Three Wide Template"
 msgstr ""
 
-#: theme-options.php:162
+#: theme-options.php:160
 msgid "Full width Template"
 msgstr ""
 
-#: theme-options.php:163
+#: theme-options.php:161
 msgid ""
 "Appeal has an additional template Full Width Page that can be used for "
 "galleries or larger content."
 msgstr ""
 
-#: theme-options.php:166
+#: theme-options.php:164
 msgid "Other notes"
 msgstr ""
 
-#: theme-options.php:167
+#: theme-options.php:165
 msgid ""
 "By hiding titles of posts/pages, your titles can be added from your Editor "
 "to give better SEO URLs and puts title where you want it in the article. h3 "
@@ -334,41 +385,55 @@ msgid ""
 "which, is required."
 msgstr ""
 
-#: theme-options.php:173
+#: theme-options.php:166
+msgid "Tradesouthwest"
+msgstr ""
+
+#: theme-options.php:171
 msgid "Try the Plugin Depict by TSW to create an expanded Author Profile."
 msgstr ""
 
-#: theme-options.php:174
+#: theme-options.php:172
 msgid "Plugin can be found online at "
 msgstr ""
 
-#: theme-options.php:178
+#: theme-options.php:174
+msgid "w.org plugins"
+msgstr ""
+
+#: theme-options.php:176
+msgid "paypal.me/tradesouthwest Opens in new window"
+msgstr ""
+
+#: theme-options.php:176
 msgid "Donate if you like."
 msgstr ""
 
-#: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
-#: content.php:400
-msgid "Edit"
+#: theme-options.php:177
+msgid "Twitter"
 msgstr ""
 
-#: part-metadata.php:40
-msgid "Leave a comment"
+#: theme-options.php:178
+msgid "tweet"
 msgstr ""
 
-#: part-metadata.php:41
-msgid "1 Comment"
+#: 404.php:6
+msgid ""
+"Looks like the content you were looking for does not exists at this time."
 msgstr ""
 
-#: part-metadata.php:42
-msgid "% Comments"
+#: comments-count.php:17
+#, php-format
+msgid "%1$s Response to &ldquo;%2$s&rdquo;"
 msgstr ""
 
-#: footer.php:76
-msgid "Design by "
+#: comments-count.php:33
+msgid "1 Response"
 msgstr ""
 
-#: footer.php:84
-msgid "Copyright "
+#: comments-count.php:39
+#, php-format
+msgid "%1$s Response"
 msgstr ""
 
 #: content.php:223 content.php:382
@@ -403,59 +468,20 @@ msgstr ""
 msgid "Number of articles by this author, "
 msgstr ""
 
+#: content.php:501 author.php:23
+msgid "Articles by "
+msgstr ""
+
+#: content.php:507 author.php:28
+msgid "E-Mail: "
+msgstr ""
+
+#: content.php:510 author.php:31
+msgid "email link text to author"
+msgstr ""
+
 #: content.php:514 content.php:515
 msgid "Close"
-msgstr ""
-
-#: search.php:8
-msgid "Search Results for: "
-msgstr ""
-
-#: search.php:23 archive.php:66
-msgid "View Article..."
-msgstr ""
-
-#: nav-content.php:13
-msgid "Older posts"
-msgstr ""
-
-#: nav-content.php:25
-msgid "Newer posts"
-msgstr ""
-
-#: nav-content.php:40
-msgid "Previous Post"
-msgstr ""
-
-#: nav-content.php:42
-msgid "&laquo; Previous: "
-msgstr ""
-
-#: nav-content.php:46
-msgid "Next Post"
-msgstr ""
-
-#: nav-content.php:48
-msgid "Next: "
-msgstr ""
-
-#: comments-count.php:17
-#, php-format
-msgid "%1$s Response to &ldquo;%2$s&rdquo;"
-msgstr ""
-
-#: comments-count.php:33
-msgid "1 Response"
-msgstr ""
-
-#: comments-count.php:39
-#, php-format
-msgid "%1$s Response"
-msgstr ""
-
-#: 404.php:6
-msgid ""
-"Looks like the content you were looking for does not exists at this time."
 msgstr ""
 
 #: customize.php:18
@@ -600,22 +626,42 @@ msgstr ""
 msgid "Instructions: <b>Appearance > Theme Options</b>"
 msgstr ""
 
-#: archive.php:16
-msgid "Author Archive for "
+#: home.php:19
+msgid "show sidebars and navaigation options"
 msgstr ""
 
-#: archive.php:22
-msgid "Tag Archive for "
+#: author.php:15
+msgid "Author Website "
 msgstr ""
 
-#: archive.php:26
-msgid "Dated Archives: "
+#: author.php:20
+msgid "Archives for "
 msgstr ""
 
-#: archive.php:30
-msgid "Monthly Archives: "
+#: nav-content.php:13
+msgid "Older posts"
 msgstr ""
 
-#: archive.php:34
-msgid "Yearly Archives: "
+#: nav-content.php:25
+msgid "Newer posts"
+msgstr ""
+
+#: nav-content.php:40
+msgid "Previous Post"
+msgstr ""
+
+#: nav-content.php:42
+msgid "&laquo; Previous: "
+msgstr ""
+
+#: nav-content.php:46
+msgid "Next Post"
+msgstr ""
+
+#: nav-content.php:48
+msgid "Next: "
+msgstr ""
+
+#: nothing.php:2
+msgid "Content Not available."
 msgstr ""

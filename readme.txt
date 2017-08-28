@@ -41,6 +41,13 @@ Twitter in admin: https://brand.twitter.com/logo
 
 
 == Change Log ==
+1.1.5
+* changed width of bottom box
+* fixed bottom social nav for responsive
+* removed conditional from sidebar top
+* added escapes to comments file
+* remove modal link from blog and home
+* added left margins to nav submenu links
 1.1.4
 * sanity for selects uses `sanitzie_text_field` all select entries are text values
 1.1.3

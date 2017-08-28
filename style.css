@@ -5,7 +5,7 @@
 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
-  Version:     1.1.4
+  Version:     1.1.5
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images
   License:     GPL 3
@@ -327,7 +327,8 @@ th {
     li {
     line-height: 1.6em;
     }    
-    #commentform, #sidbar-left, #sidebar-right {display: none;}
+    #commentform, #sidbar-left, #sidebar-right {
+    display: none;}
 }
 
 * {
@@ -1707,7 +1708,6 @@ tbody.collapse.in {
   cursor: not-allowed;
   background-color: transparent;
   background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .open > .dropdown-menu {
   display: block;
@@ -1767,8 +1767,8 @@ tbody.collapse.in {
   }
 }
 .navbar li.dropdown:hover > ul.dropdown-menu {
- display: block;
-   animation: fadeInUp 700ms;
+  display: block;
+  animation: fadeInUp 700ms;
 }
 
 .navbar .dropdown-menu {
@@ -1790,6 +1790,10 @@ tbody.collapse.in {
 .navbar .dropdown-menu > li.divider {
   background-color: #888;
 }
+/* Adjust for dropdown positions */
+.navbar li.dropdown > ul.dropdown-menu {
+  left: 1em;
+}
 .navbar li.dropdown:hover > ul.dropdown-menu {
   display: block;
   animation: fadeInUp 700ms;
@@ -1801,15 +1805,17 @@ tbody.collapse.in {
 }
 
 @media all and max-width: 768px) {
-      .dropdown:hover .dropdown-menu,
-    .dropdown-menu li, .dropdown-menu li ul li {
-  display: block;
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu li, 
+    .dropdown-menu li ul li {
+        display: block;
+    }
+    .navbar-default .dropdown-menu {
+        right:0;
+        left: 0;
+    }
 }
-.navbar-default .dropdown-menu {
-  right:0;
-  left: 0;
-  }
-}
+
 .input-group {
   position: relative;
   display: table;
@@ -2182,8 +2188,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   overflow-x: visible;
   -webkit-overflow-scrolling: touch;
   border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
 }
 
 .navbar-collapse.in {
@@ -3523,8 +3528,7 @@ button.list-group-item-danger.active:focus {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 .well blockquote {
   border-color: #ddd;
@@ -3579,19 +3583,11 @@ button.close {
   outline: 0;
 }
 .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, -25%);
-      -ms-transform: translate(0, -25%);
-       -o-transform: translate(0, -25%);
-          transform: translate(0, -25%);
+    transition:         transform .3s ease-out;
+    transform: translate(0, -25%);
 }
 .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-       -o-transform: translate(0, 0);
-          transform: translate(0, 0);
+   transform: translate(0, 0);
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -3605,14 +3601,12 @@ button.close {
 .modal-content {
   position: relative;
   background-color: #fff;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
+  background-clip: padding-box;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 2px;
   outline: 0;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
-          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
 .modal-backdrop {
   position: fixed;
@@ -3697,8 +3691,8 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
-  -webkit-transition: .6s ease-in-out left;
-       -o-transition: .6s ease-in-out left;
+   
+        
           transition: .6s ease-in-out left;
 }
 .carousel-inner > .item > img,
@@ -3707,34 +3701,26 @@ button.close {
 }
 
 @media all and(transform-3d), (-webkit-transform-3d) {
-  .carousel-inner > .item {
-    -webkit-transition: -webkit-transform .6s ease-in-out;
-         -o-transition:      -o-transform .6s ease-in-out;
-            transition:         transform .6s ease-in-out;
-
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-            perspective: 1000px;
+    .carousel-inner > .item {
+        transition:         transform .6s ease-in-out;
+        backface-visibility: hidden;
+        perspective: 1000px;
   }
   .carousel-inner > .item.next,
   .carousel-inner > .item.active.right {
     left: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
   .carousel-inner > .item.prev,
   .carousel-inner > .item.active.left {
     left: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
   .carousel-inner > .item.next.left,
   .carousel-inner > .item.prev.right,
   .carousel-inner > .item.active {
     left: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 .carousel-inner > .active,
@@ -3782,21 +3768,13 @@ button.close {
   opacity: .5;
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
   background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control.right {
   right: 0;
   left: auto;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
   background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control:hover,
@@ -4643,12 +4621,22 @@ color: inherit;
     color: #37c;
 }
 
-.site-head .hgroup{
+.site-head {
+     
+  padding: 15px;
+  min-height: 250px;
+  height: auto;
+  max-height: 250px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+.site-head .hgroup {
     padding-left: 30px;
     z-index: 100;
     position: relative;
     top: 15px;
-    text-shadow: 0 1px 1px hsla( 200, 100%, 80%);
+    text-shadow: 0 1px 1px rgba(242, 242, 242, .8);
 }
 .header-logo { 
     z-index: 3;
@@ -4861,7 +4849,7 @@ a span.genico img {
             padding: 0 5px 2px 0;
             top: -1px;
             }
-        }
+    }
 
 .author-footer .modal-nav a {
     border: 1px solid #ddd;
@@ -5044,39 +5032,6 @@ a {
 
 /* =pagination
 ----------------------------------------------- */
-#socialContainer {
-    display: block;
-    width: 100%;
-    height: 67px;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    background: #efefef;
-}
-.social-footer {
-    width: 95%;
-    margin: 5px auto;
-    padding: 7px 15px 7px 15px;
-    height: 52px;
-}
-.social-footer li a {
-  background: rgba( 255, 255, 255, .7);
-  border-left: 1px solid #c4c4c4;
-  border-bottom: 2px solid #c9c9c9;
-  border-top: 1px solid #cccccc;
-  color: black;
-  margin-right: 0;
-}
-.social-footer li:last-child {
-  border-right: 1px solid #ccc;
-}
-@media screen and (max-width: 800px) {
-  .social-footer {
-    margin-bottom: 1em;
-    display: inline-block;
-  }
-}
-
 .pagination {
   display: inline-block;
   width: 98%;
@@ -5254,14 +5209,17 @@ body.archive footer.meta-footer span.right-time {
     zoom: 1;
     *display: inline;
     /* Adjust width to the appropriate size for your theme */
-    width: auto;
+    width: 100%;
     /* Presumably you want all the widgets to align-top */
     vertical-align: top;
 }
 .topbox .widget > ul > li {
     display: inline;
     margin-left: 1em;
+
 }
+/* tempbox is for topbox demo content of this theme. 
+Can be enabled to get same effect */
 .tempbox {
     min-height: 38px;
     padding: 15px 15px 5px 30px;
@@ -5269,12 +5227,10 @@ body.archive footer.meta-footer span.right-time {
     width: 100%;
     background: #fafafa;
     margin-bottom: 15px;
-
-        display: block;
-         
+    display: block;         
 }
 .tempbox .temp-title {
-         text-shadow: 0 1px 1px #555;
+    text-shadow: 0 1px 1px #555;
 }
 #sidebar-top {
     min-height: 68px;
@@ -5325,10 +5281,16 @@ margin: 0 auto; */
 border-bottom: none;
 }
 .bottombox {
+   
+    width: 100%;
+}
+#sidebar-bottom {
   background: #fefefe;
   min-height: 62px;
   border: 1px solid #eee;
   margin-top: 30px;
+  margin-left: -15px;
+  margin-right: 0px;
 }
 .bottombox .widget > ul > li {
     display: flexbox;
@@ -5645,6 +5607,7 @@ body.home .thedate {
   min-height: 30px;
   height:     100%;
   margin-bottom: 0;
+  margin-top: 1px;
 }
 #inner-footer h4 {
   text-shadow: 0 .5px .25px #222;
@@ -5653,6 +5616,53 @@ body.home .thedate {
   color: #336aa7;
   text-shadow: 0 .5px .25px #eee;
 }
+#socialContainer {
+    display: block;
+    width: 100%;
+    height: 67px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: #efefef;
+}
+.social-footer {
+    width: 95%;
+    margin: 5px auto;
+    padding: 7px 15px 7px 15px;
+    height: 52px;
+}
+.social-footer li a {
+  background: rgba( 255, 255, 255, .7);
+  border-left: 1px solid #c4c4c4;
+  border-bottom: 2px solid #c9c9c9;
+  border-top: 1px solid #cccccc;
+  color: black;
+  margin-right: 0;
+}
+.social-footer li:last-child {
+  border-right: 1px solid #ccc;
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .social-footer {
+    margin-bottom: 1em;
+    
+  }
+  .social-footer li {
+    display: inline-block;
+    float: left
+    z-index: 888;
+    border-right: thin solid #c4c4c4;
+    margin-bottom: 1px;
+    }
+    .footer-footer {
+      z-index: 8;
+    }
+    #socialContainer nav.social-footer ul {
+    display: inline-block;
+    max-height: 67px;
+    margin-bottom: 1px;
+}
+
 .copyright {
   background: rgba(250, 250, 250, .9);
   margin-top: 0;
@@ -5742,15 +5752,6 @@ pagination span.space:not(a) {
     text-overflow:   visible;
 }
 
-.site-head {
-  overflow:hidden;
-  padding: 15px;
-  height: 250px;
-  width: 100%;
-  z-index: 1;
-  background-repeat: no-repeat !important;
-  position: relative;
-}
 
 ol.commentlist,
 li.comment {

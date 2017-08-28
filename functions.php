@@ -237,7 +237,7 @@ add_action( 'init', 'appeal_theme_excerpt_support' );
 function appeal_theme_custom_logo() {
     $output = '';
     if ( function_exists( 'the_custom_logo' ) ) {
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         if ( has_custom_logo() ) {
             $output = '<div class="header-logo"><img src="'. esc_url( $logo[0] ) .'" 
@@ -247,6 +247,38 @@ function appeal_theme_custom_logo() {
                 { $output = '<h1>'. get_bloginfo( 'name' ) .'</h1>'; }
     }
     return $output;
+}
+
+/**
+ * Create header styles
+ * You can over ride height by adding CSS
+ * `max-height: x!important;` where x = less than 250px
+ */
+function appeal_theme_header_style()
+{
+    $header_text_color = get_header_textcolor();
+    $header_image = get_header_image();
+
+    if ( $header_image )
+    { ?>
+        <style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);background-size:cover;}</style>
+    <?php
+    }
+
+    /*
+     * If no custom options for text are set, let's bail.
+     * get_header_textcolor() options: Any hex value, 'blank' to hide text.
+     */
+    echo '<style type="text/css">';
+
+        if ( ! display_header_text() )
+        {
+        echo '.site-title,.site-description{position: absolute;clip: rect(1px, 1px, 1px, 1px);';
+        } else {
+        echo '#inner-footer h4,.site-title a,.site-description{color:'; ?> #<?php echo esc_attr( $header_text_color ); ?>;}
+            <?php
+            }
+     echo '</style>';
 }
 
 /** 
@@ -306,41 +338,6 @@ function appeal_post_formats() {
     return $appealpost;
 }
 endif; 
-
-
-
-
-/**
- * Create header styles
- * You can over ride height by adding CSS
- * `max-height: x!important;` where x = less than 250px
- */
-function appeal_theme_header_style()
-{
-    $header_text_color = get_header_textcolor();
-    $header_image = get_header_image();
-
-    if ( $header_image )
-    { ?>
-        <style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);background-size: cover}</style>
-    <?php
-    }
-
-    /*
-     * If no custom options for text are set, let's bail.
-     * get_header_textcolor() options: Any hex value, 'blank' to hide text.
-     */
-    echo '<style type="text/css">';
-
-        if ( ! display_header_text() )
-        {
-        echo '.site-title,.site-description{position: absolute;clip: rect(1px, 1px, 1px, 1px);';
-        } else {
-        echo '#inner-footer h4,.site-title a,.site-description{color:'; ?> #<?php echo esc_attr( $header_text_color ); ?>;}
-            <?php
-            }
-     echo '</style>';
-}
 
 
 // Sidebar and Footer declarations

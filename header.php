@@ -19,7 +19,7 @@
             <?php if( has_custom_logo() ) : ?>
             <a title="<?php bloginfo('description'); ?>"
                href="<?php echo esc_url(home_url('/')); ?>">
-            <?php printf( appeal_theme_custom_logo() ); ?></a>
+            <?php echo appeal_theme_custom_logo(); ?></a>
             <?php endif; ?>
         
             <p class="list-inline">
@@ -77,6 +77,6 @@
     
                 <?php get_sidebar( 'top' ); ?>
 
-      <?php } else { echo '<div class="hidden"></div>'; } ?>
+      <?php } ?>
 		<div id="page-content"><!-- ends in footer -->
 			<div class="container"><!-- ends in footer -->

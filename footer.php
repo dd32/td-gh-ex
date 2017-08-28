@@ -18,6 +18,8 @@
     </div><!-- .content-wrapper -->
         <footer class="footer-footer container-fluid">
             <?php if ( has_nav_menu( 'above_footer' ) ) : ?>
+            
+           
             <div id="socialContainer">
             <nav class="social-footer">
                     <?php
@@ -30,6 +32,7 @@
                     ?>
             </nav>
             </div>
+            
             <?php endif; ?>
                 <div id="inner-footer">
 

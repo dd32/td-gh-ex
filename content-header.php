@@ -9,7 +9,7 @@
  * atv3= @since 1.0.9 deprecated
  * atv4= @since 1.0.9 deprecated
  */    
- ?>
+?>
      <header class="content-header">
 
     <?php 
@@ -97,13 +97,18 @@
         <?php esc_html_e(
             'Author Gravatar is shown here. Clickable link to Author page.',
             'appeal' ); ?></span>
+            
+        <?php //only show modal on pages 
+        if ( ! is_home() ) : ?>    
         <a data-toggle="modal"
            data-target="#theAuthor"
            href="#"
            title="<?php echo esc_attr( get_the_author_meta( 'nicename' ) ); ?>">
+        <?php endif; ?>
 
-        <?php $alt = esc_attr__( 'Author Gravatar', 'appeal' );
-                echo get_avatar( get_the_author_meta( 'email' ), 42, '', $alt); ?>
+        <?php $alt = get_the_author_meta( 'display_name' ); 
+              $avatar = get_avatar( get_the_author_meta( 'email' ), 42, '', $alt); 
+              echo wp_kses_post( $avatar ); ?>
 
         <span class="aspace"> &nbsp; </span> 
         <em><?php esc_html_e( 'Article by: ', 'appeal' );
