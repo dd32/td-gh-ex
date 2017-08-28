@@ -13,6 +13,7 @@ if ($fullwidth=='on')
 $sidebar = 'none';
 $left_sidebar  = esc_attr(avata_option('left_sidebar_pages'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
+$hide_page_titlebar = esc_attr(avata_option('hide_page_titlebar'));
 
 if ($left_sidebar != '' && $left_sidebar != '0')
 	$sidebar = 'left';
@@ -25,6 +26,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php if($hide_page_titlebar !='1'){?>
   <section class="page-title-bar title-center no-subtitle" >
     <div class="<?php echo $container;?>">
       <hgroup class="page-title text-light text-center">
@@ -34,6 +36,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
       <div class="clearfix"></div>
     </div>
   </section>
+ <?php }?>
   <div class="post-wrap">
     <div class="<?php echo $container;?>">
       <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">

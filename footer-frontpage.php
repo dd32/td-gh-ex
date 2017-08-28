@@ -35,17 +35,19 @@
           </div>
            <div class="col-sm-6 col-md-6 col-lg-6 text-right">
             <ul class="social">
-      <?php
-	for($i=0;$i<9; $i++){
-					$social_icon  = avata_option('social_icon_'.$i);
-					$social_link  = avata_option('social_link_'.$i);
-					$social_title = avata_option('social_title_'.$i);
+    <?php
+	$footer_social_icons = avata_option('footer_social_icons');
+	foreach($footer_social_icons as $icon){
+					$social_icon  = $icon['icon'];
+					$social_link  = $icon['link'];
+					$social_title = $icon['title'];
+					$social_target = $icon['target'];
 					$social_icon  = str_replace('fa fa-','',$social_icon);
 					$social_icon  = str_replace('fa-','',$social_icon);
 					$social_icon  = 'fa fa-'.trim($social_icon);
 					
 					if( $social_icon !=""  ){
-					echo '<li><a href="'.esc_url($social_link).'" target="_blank" data-toggle="tooltip" title="'.esc_attr($social_title).'"><i class="'.esc_attr($social_icon).'"></i></a></li>';
+					echo '<li><a href="'.esc_url($social_link).'" target="'.esc_attr($social_target).'" data-toggle="tooltip" title="'.esc_attr($social_title).'"><i class="'.esc_attr($social_icon).'"></i></a></li>';
 					}
 					}
 					?>

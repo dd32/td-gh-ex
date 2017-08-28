@@ -10,12 +10,14 @@
   $btn_txt_2          = avata_option('section_btntxt_2_banner_2');
   $btn_link_2         = avata_option('section_btnlink_2_banner_2');
   $btn_target_2       = avata_option('section_btntarget_2_banner_2');
-  
-  $arrow             = avata_option('section_display_arrow_banner_2');
+  $arrow              = avata_option('section_display_arrow_banner_2');
+  $overlay            = avata_option('section_overlay_banner_2');
   
   ?>
     <div class="avata-box__magnet avata-box__magnet--sm-padding avata-box__magnet--center-center">
+    <?php if($overlay == '1'){?>
         <div class="avata-overlay" style="opacity: 0.6; background-color: rgb(40, 50, 78);"></div>
+        <?php }?>
         <div class="avata-box__container avata-section__container container">
             <div class="avata-box avata-box--stretched"><div class="avata-box__magnet avata-box__magnet--center-center">
                 <div class="avata-hero animated fadeInUp">

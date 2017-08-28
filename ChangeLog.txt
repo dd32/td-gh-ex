@@ -2,6 +2,11 @@
 
 == CHANGE LOG == 
 
+= Version 1.2.5 = = 28/08/2017 
+* Add - Added "Section Background Overlay" option for section - Section Video Background Banner
+* Add - Added option "Avata: Basic Settings > Hide Breadcrumb"
+* Add - Added option "Avata: Basic Settings >  Hide Page Title Bar"
+
 = Version 1.2.4 = = 13/08/2017 
 * WooCommerce compatible
 

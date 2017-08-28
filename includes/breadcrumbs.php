@@ -1,7 +1,14 @@
 <?php
 
 function avata_breadcrumbs( $args = array() ) {
-
+	
+	if( function_exists('avata_option')){
+		$hide_breadcrumb  = avata_option('hide_breadcrumb');
+		if( $hide_breadcrumb == '1' ){
+			return '';
+			}
+	}
+		
 	if ( function_exists( 'is_bbpress' ) && is_bbpress() )
 		$breadcrumb = new Avata_bbPress_Breadcrumb( $args );
 	else
@@ -47,7 +54,7 @@ class Avata_Breadcrumb {
 			'separator'       => '&#47;',
 			'before'          => '',
 			'after'           => '',
-			'show_on_front'   => true,
+			'show_on_front'   => false,
 			'network'         => false,
 			//'show_edit_link'  => false,
 			'show_title'      => true,

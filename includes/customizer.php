@@ -56,7 +56,7 @@ function avata_customize_register( $wp_customize ) {
 	if ( avata_check_if_wp_greater_than_4_7() ) {
 
 		$avata_frontpage_sections_panel = new Avata_WP_Customize_Panel( $wp_customize, 'avata_frontpage_sections_panel', array(
-			'title'    => __( 'Front Page Sections', 'avata' ),
+			'title'    => __( 'Avata: Front Page Sections', 'avata' ),
 			'priority' => 1,
 		) );
 

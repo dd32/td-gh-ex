@@ -5,6 +5,7 @@ $container = 'container';
 $sidebar = 'none';
 $left_sidebar  = esc_attr(avata_option('left_sidebar_archive'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_archive'));
+$hide_page_titlebar = esc_attr(avata_option('hide_page_titlebar'));
 
 if ($left_sidebar != '' && $left_sidebar != '0')
 	$sidebar = 'left';
@@ -17,6 +18,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 ?>
 
  <!--Main Area-->
+ <?php if($hide_page_titlebar !='1'){?>
 <section class="page-title-bar page-title-bar-archive title-left">
 <div class="<?php echo $container;?>">
   <div class="row">
@@ -36,6 +38,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
     </div>
   </div>
 </section>
+<?php }?>
         <div class="page-wrap">
             <div class="<?php echo $container;?>">
                 <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">

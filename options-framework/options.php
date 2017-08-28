@@ -103,12 +103,6 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 						  'full_background_image' => 'yes',
 						  'css_class' => '',
 						  'id' => '',
-						  'content_background_image' => '',
-						  'content_background_image_link' => '',
-						  'content_background_image_target' => '_blank',
-						  'content_background_color' => '',
-						  'content_background_opacity' => '1',
-						  'content_box_border_radius' => '',
 						  'content' => '',
 						  'padding_top' => '100px',
 						  'padding_bottom' => '100px',
@@ -156,6 +150,8 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'description' =>  __('It will take the height defined by your section/slide content.', 'avata' ),
 					'default'     => $default_options['autoheight'],
 					  ),
+			   
+			   
 			  'font_size_'.$id => array(
 					'type'        => 'select',
 					'label'       => esc_attr__( 'Font Size', 'avata' ),
@@ -238,46 +234,6 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'label'       => esc_attr__( 'Section ID', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['menu_slug'],
-			  ),
-			  'content_background_image_'.$id => array(
-					'type'        => 'image',
-					'label'       => esc_attr__( 'Content Background Image', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_background_image'],
-			  ),
-			  'content_background_image_link_'.$id => array(
-					'type'        => 'text',
-					'label'       => esc_attr__( 'Content Background Image Link', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_background_image_link'],
-			  ),
-			  'section_image_link_target_'.$id => array(
-					'type'        => 'select',
-					'label'       => esc_attr__( 'Content Background Image Link Target', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_background_image_target'],
-					'choices'     => $target
-			  ),
-			  
-			  'content_background_color_'.$id => array(
-					'type'        => 'color',
-					'label'       => esc_attr__( 'Content Box Background Color', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_background_color'],
-			  ),
-			  'content_background_opacity_'.$id => array(
-					'type'        => 'select',
-					'label'       => esc_attr__( 'Opacity', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_background_opacity'],
-					'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
-			  ),
-			  
-			  'content_box_border_radius_'.$id => array(
-					'type'        => 'text',
-					'label'       => esc_attr__( 'Content Box Border Radius', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['content_box_border_radius'],
 			  ),
 			  
 			  'padding_top_'.$id => array(
@@ -494,6 +450,7 @@ $banner_args['excludes'] = array('section_fullwidth','section_autoheight','font_
 $banner_2_options = avata_public_section_options('banner_2',$banner_2_defaults,false,$banner_args);
 
 array_splice($banner_2_options,3,0,array(
+										 										 
 										'section_videourl_banner_2' => array(
 												  'type'        => 'text',
 												  'settings'    => 'section_videourl_banner_2',
@@ -546,6 +503,13 @@ array_splice($banner_2_options,3,0,array(
 												  'description' => '',
 												  'default'     => '_blank',
 												  'choices'     => $target
+										),
+										'section_overlay_banner_2' => array(
+												  'type'        => 'checkbox',
+												  'settings'    => 'section_overlay_banner_2',
+												  'label'       => esc_attr__( 'Section Background Overlay', 'avata' ),
+												  'description' => '',
+												  'default'     => '1',
 										),
 										'section_display_arrow_banner_2' => array(
 												  'type'        => 'checkbox',
@@ -1235,7 +1199,7 @@ foreach( $avata_sections as $k => $v ){
 
 Hoo::add_panel( 'avata_homepage_options', array(
     'priority'    => 10,
-    'title'       => __( 'Front Page Options', 'avata' ),
+    'title'       => __( 'Avata: Front Page Options', 'avata' ),
     'description' => '',
 ) );
 
@@ -1385,7 +1349,7 @@ Hoo::add_field( 'avata', array(
 // Basic settings
 
 Hoo::add_section( 'avata_panel_basic_settings', array(
-    'title'          => __( 'Basic Settings', 'avata' ),
+    'title'          => __( 'Avata: Basic Settings', 'avata' ),
     'description'    => '',
     'panel'          => '', 
     'priority'       => 11,
@@ -1400,6 +1364,24 @@ Hoo::add_field( 'avata', array(
 	'type'     => 'color',
 	'priority' => 10,
 	'default'  => '#f9ae40',
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'hide_breadcrumb',
+	'label'    => __( 'Hide Breadcrumb', 'avata' ),
+	'section'  => 'avata_panel_basic_settings',
+	'type'     => 'checkbox',
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Hoo::add_field( 'avata', array(
+	'settings' => 'hide_page_titlebar',
+	'label'    => __( 'Hide Page Title Bar', 'avata' ),
+	'section'  => 'avata_panel_basic_settings',
+	'type'     => 'checkbox',
+	'priority' => 10,
+	'default'  => '',
 ) );
 
 Hoo::add_field( 'avata', array(
@@ -1433,7 +1415,7 @@ Hoo::add_field( 'avata', array(
 
 
 Hoo::add_section( 'avata_panel_sidebar_settings', array(
-    'title'          => __( 'Sidebar Settings', 'avata' ),
+    'title'          => __( 'Avata: Sidebar Settings', 'avata' ),
     'description'    => '',
     'panel'          => '', 
     'priority'       => 12,
@@ -1506,7 +1488,7 @@ Hoo::add_field( 'avata', array(
 // Footer
 
 Hoo::add_section( 'avata_footer', array(
-    'title'          => __( 'Footer', 'avata' ),
+    'title'          => __( 'Avata: Footer', 'avata' ),
     'description'    => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
     'panel'          => '', 
     'priority'       => 13,
@@ -1522,35 +1504,74 @@ Hoo::add_field( 'avata', array(
 	'default'  => '1',
 	'priority' => 10,
 	) );
+
+$default = array();
+
 for($i=0;$i<9;$i++){
-	
-	Hoo::add_field( 'avata', array(
-	'type'     => 'text',
-	'settings' => 'social_icon_'.$i.'',
-	'label'    => sprintf(__('Social Icon %s', 'avata' ),'#'.($i+1)),
-	'section'  => 'avata_footer',
-	'default'  => '',
-	'priority' => 10+$i,
-	) );
-	
-	Hoo::add_field( 'avata', array(
-	'type'     => 'text',
-	'settings' => 'social_title_'.$i.'',
-	'label'    => sprintf(__('Social Title %s', 'avata' ),'#'.($i+1)),
-	'section'  => 'avata_footer',
-	'default'  => '',
-	'priority' => 10+$i,
-	) );
-	
-	Hoo::add_field( 'avata', array(
-	'type'     => 'text',
-	'settings' => 'social_link_'.$i.'',
-	'label'    => sprintf(__('Social Link %s', 'avata' ),'#'.($i+1)),
-	'section'  => 'avata_footer',
-	'default'  => '',
-	'priority' => 10+$i,
-	) );
+	$icon = avata_option('social_icon_'.$i);
+	if($icon !=''){
+		
+		$default[] = array(
+			'title'  => avata_option('social_title_'.$i),
+			'icon'  => $icon,
+			'link'  => avata_option('social_link_'.$i),
+			'target'  => '_blank'
+		);
+		
+	}
 }
+
+
+Hoo::add_field( 'avata', array(
+	'type'        => 'repeater',
+	'label'       => esc_attr__( 'Social Icons', 'avata' ),
+	'section'     => 'avata_footer',
+	'settings'     => 'footer_social_icons',
+	'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
+	'priority' => 10+$i,
+	'row_label' => array(
+		'type' => 'field',
+		'value' => esc_attr__('Icon', 'avata' ),
+		'field' => 'title',
+	),
+	'default'     => array(
+		array(
+			'title'  => '',
+			'icon'  => '',
+			'link'  => '',
+			'target'  => '_blank'
+	),
+		),
+	'fields' => array( 
+		'title' => array(
+			'type'        => 'text',
+			'label'       => esc_attr__( 'Social Title', 'avata' ),
+			'description' => '',
+			'default'     => '',
+		),
+		'icon' => array(
+			'type'        => 'text',
+			'label'       => esc_attr__( 'Social Icon', 'avata' ),
+			'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
+			'default'     => '',
+		),
+		'link' => array(
+			'type'        => 'text',
+			'label'       => esc_attr__( 'Social Icon Link', 'avata' ),
+			'description' => '',
+			'default'     => '',
+		),
+		'target' => array(
+			'type'        => 'select',
+			'label'       => esc_attr__( 'Icon Link Target', 'avata' ),
+			'description' => '',
+			'default'     => '_blank',
+			'choices'     => $target
+		),
+		
+	)
+	)
+);
 
 Hoo::add_field( 'avata', array(
 	'type'     => 'textarea',
@@ -1583,7 +1604,7 @@ Hoo::add_field( 'avata', array(
 // Typography
 
 Hoo::add_section( 'avata_typography', array(
-    'title'          => __( 'Typography', 'avata' ),
+    'title'          => __( 'Avata: Typography', 'avata' ),
     'description'    => '',
     'panel'          => '', 
     'priority'       => 14,
@@ -1603,7 +1624,7 @@ Hoo::add_field( 'avata', array(
 
 // Blog
 Hoo::add_section( 'avata_blog', array(
-    'title'          => __( 'Blog', 'avata'  ),
+    'title'          => __( 'Avata: Blog', 'avata'  ),
     'description'    => '',
     'panel'          => '', 
     'priority'       => 15,
