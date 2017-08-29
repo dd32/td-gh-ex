@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.23 - 29th August, 2017 =
+* Added Demo Import Feature in welcome page.
+* Bx pager icon css fix.
+
 = 1.0.22 - 27th June, 2017 =
 * Added Slider Speed Setting
 

@@ -19,6 +19,14 @@ $customizer_url = admin_url() . 'customize.php';
 
 	<div class="cols">
 		<span><?php esc_html_e('Step 2','aglee-lite')?></span>
+		<h3><?php esc_html_e( 'Import Demo Contents', 'aglee-lite' ); ?></h3>
+		<p><?php esc_html_e( 'If you like to have a site as similar like our demo then, go to Import Demo tab and do the needfuls.', 'aglee-lite' ) ?></p>
+		<p><a class="button button-primary" href="<?php echo esc_url( admin_url( 'themes.php?page=aglee-lite-about&tab=demo_import' ) ); ?>"><?php esc_html_e( 'Click Me to import demo contents.', 'aglee-lite' ); ?></a>
+		</p>
+	</div><!--/.col-->
+
+	<div class="cols">
+		<span><?php esc_html_e('Step 3','aglee-lite')?></span>
 		<h3><?php esc_html_e( 'Check our documentation', 'aglee-lite' ); ?></h3>
 		<p><?php esc_html_e( 'Even if you\'re a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'aglee-lite' ) ?></p>
 		<p>
@@ -27,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php';
 	</div><!--/.col-->
 
 	<div class="cols">
-		<span><?php esc_html_e('Step 3','aglee-lite')?></span>
+		<span><?php esc_html_e('Step 4','aglee-lite')?></span>
 		<h3><?php esc_html_e( 'Customize everything', 'aglee-lite' ); ?></h3>
 		<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'aglee-lite' ); ?></p>
 		<p><a target="_blank" href="<?php echo esc_url( $customizer_url ); ?>"

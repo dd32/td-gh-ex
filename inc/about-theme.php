@@ -8,6 +8,33 @@ class Aglee_Lite_About_Theme {
 		add_action( 'admin_menu', array( $this, 'aglee_lite_welcome_register_menu' ) );
 		/* activation notice */
 		add_action( 'load-themes.php', array( $this, 'aglee_lite_activation_admin_notice' ) );
+
+		/** List of required Plugins **/
+		$this->req_plugins = array(
+
+			'instant-demo-importer' => array(
+				'slug' => 'instant-demo-importer',
+				'name' => __('Instant Demo Importer', 'aglee-lite'),
+				'filename' =>'instant-demo-importer.php',
+				'class' => 'Instant_Demo_Importer',
+				'github_repo' => true,
+				'bundled' => true,
+				'location' => 'https://github.com/WPaccesskeys/instant-demo-importer/archive/master.zip',
+				'info' => __('Instant Demo Importer Plugin adds the feature to Import the Demo Conent with a single click.', 'aglee-lite'),
+				),
+			);
+
+		/** Plugin Installation Ajax **/
+		add_action( 'wp_ajax_aglee_lite_plugin_installer', array( $this, 'aglee_lite_plugin_installer_callback' ) );
+
+		/** Plugin Installation Ajax **/
+		add_action( 'wp_ajax_aglee_lite_plugin_offline_installer', array( $this, 'aglee_lite_plugin_offline_installer_callback' ) );
+
+		/** Plugin Activation Ajax **/
+		add_action( 'wp_ajax_aglee_lite_plugin_activation', array( $this, 'aglee_lite_plugin_activation_callback' ) );
+
+		/** Plugin Activation Ajax (Offline) **/
+		add_action( 'wp_ajax_aglee_lite_plugin_offline_activation', array( $this, 'aglee_lite_plugin_offline_activation_callback' ) );
 	}
 	public function aglee_lite_welcome_register_menu() {
 		$title = __( 'About Aglee Lite', 'aglee-lite' );
@@ -51,6 +78,10 @@ class Aglee_Lite_About_Theme {
 						class="aglee-lite-tab <?php echo $active_tab == 'recommended_plugins' ? 'aglee-lite-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'aglee-lite' ); ?>
 
 					</a></li>
+					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=aglee-lite-about&tab=demo_import' ) ); ?>"
+						class="aglee-lite-tab <?php echo $active_tab == 'demo_import' ? 'aglee-lite-tab-active' : ''; ?> "><?php echo esc_html__( 'Import Demo', 'aglee-lite' ); ?>
+
+					</a></li>
 					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=aglee-lite-about&tab=support' ) ); ?>"
 						class="aglee-lite-tab <?php echo $active_tab == 'support' ? 'aglee-lite-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'aglee-lite' ); ?>
 
@@ -78,6 +109,9 @@ class Aglee_Lite_About_Theme {
 						break;
 						case 'changelog':
 						require_once get_template_directory() . '/inc/admin-panel/about/step-fourth.php';
+						break;
+						case 'demo_import':
+						require_once get_template_directory() . '/inc/admin-panel/about/step-demo.php';
 						break;
 						default:
 						echo "Start";
@@ -123,15 +157,30 @@ class Aglee_Lite_About_Theme {
 	}
 
 	public function check_active( $slug ) {
+		if(is_array($slug)){
+			$slug = (isset($slug['slug']))?$slug['slug']:$slug['location'];
+		}
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 			$needs = is_plugin_active( $slug . '/' . $slug . '.php' ) ? 'deactivate' : 'activate';
-
-			return array( 'status' => is_plugin_active( $slug . '/' . $slug . '.php' ), 'needs' => $needs );
+			$key = $slug . '/' . $slug . '.php';
+			return array( 'status' => is_plugin_active( $slug . '/' . $slug . '.php' ), 'needs' => $needs, 'key'=>$key );
 		}
-
-		return array( 'status' => false, 'needs' => 'install' );
+		$all_plugins = get_plugins();
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		// echoes the main file plugin if it's active
+		foreach($all_plugins as $key => $plugin) {
+			$kerarr = explode('/',$key);
+			if($kerarr[0]==$slug){
+				if( is_plugin_active($key) ) {
+					$needs = is_plugin_active( $key ) ? 'deactivate' : 'activate';
+					return array( 'status' => is_plugin_active($key), 'needs' => $needs,'key'=>$key);
+				}
+			}
+		}
+		$key = $slug . '/' . $slug . '.php';
+		return array( 'status' => false, 'needs' => 'install','key'=>$key );
 	}
 
 	public function check_for_icon( $arr ) {
@@ -148,7 +197,7 @@ class Aglee_Lite_About_Theme {
 		return $plugin_icon_url;
 	}
 
-	public function create_action_link( $state, $slug ) {
+	public function create_action_link( $state, $slug, $key ) {
 		switch ( $state ) {
 			case 'install':
 			return wp_nonce_url(
@@ -165,19 +214,19 @@ class Aglee_Lite_About_Theme {
 			case 'deactivate':
 			return add_query_arg( array(
 				'action'        => 'deactivate',
-				'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+				'plugin'        => rawurlencode( $key ),
 				'plugin_status' => 'all',
 				'paged'         => '1',
-				'_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
+				'_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $key ),
 				), network_admin_url( 'plugins.php' ) );
 			break;
 			case 'activate':
 			return add_query_arg( array(
 				'action'        => 'activate',
-				'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+				'plugin'        => rawurlencode( $key ),
 				'plugin_status' => 'all',
 				'paged'         => '1',
-				'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
+				'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $key ),
 				), network_admin_url( 'plugins.php' ) );
 			break;
 		}
@@ -210,5 +259,183 @@ class Aglee_Lite_About_Theme {
 			</div>
 			<?php
 		}
+
+		public function get_local_dir_path($plugin) {
+
+			$url = wp_nonce_url(admin_url('themes.php??page=aglee-lite-about&tab=demo_import'),'aglee-file-installation');
+			if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
+					return; // stop processing here
+				}
+
+				if ( ! WP_Filesystem($creds) ) {
+					request_filesystem_credentials($url, '', true, false, null);
+					return;
+				}
+
+				global $wp_filesystem;
+				$file = $wp_filesystem->get_contents( $plugin['location'] );
+
+				$file_location = get_template_directory().'/inc/demo/'.$plugin['slug'].'.zip';
+
+				$wp_filesystem->put_contents( $file_location, $file, FS_CHMOD_FILE );
+
+				return $file_location;
+			}
+
+
+
+			/* ========== Plugin Installation Ajax =========== */
+			public function aglee_lite_plugin_installer_callback(){
+
+				if ( ! current_user_can('install_plugins') )
+					wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'aglee-lite' ) );
+
+				$nonce = $_POST["nonce"];
+				$plugin = $_POST["plugin"];
+				$plugin_file = $_POST["plugin_file"];
+
+				// Check our nonce, if they don't match then bounce!
+				if (! wp_verify_nonce( $nonce, 'aglee_lite_plugin_installer_nonce' ))
+					wp_die( __( 'Error - unable to verify nonce, please try again.', 'aglee-lite') );
+
+
+         		// Include required libs for installation
+				require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+				require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
+				require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+
+				// Get Plugin Info
+				$api = $this->aglee_lite_call_plugin_api($plugin);
+
+				$skin     = new WP_Ajax_Upgrader_Skin();
+				$upgrader = new Plugin_Upgrader( $skin );
+				$upgrader->install($api->download_link);
+
+				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
+
+				if($api->name) {
+					$main_plugin_file = $this->get_plugin_file($plugin);
+					if($main_plugin_file){
+						activate_plugin($main_plugin_file);
+						echo "success";
+						die();
+					}
+				}
+				echo "fail";
+
+				die();
+			}
+
+			/** Plugin Offline Installation Ajax **/
+			public function aglee_lite_plugin_offline_installer_callback() {
+
+
+				$file_location = $_POST['file_location'];
+				$file = $_POST['file'];
+				$github = $_POST['github'];
+				$slug = $_POST['slug'];
+				$plugin_directory = ABSPATH . 'wp-content/plugins/';
+
+				$zip = new ZipArchive;
+				if ($zip->open(esc_html($file_location), ZIPARCHIVE::CREATE) === TRUE) {
+
+					$zip->extractTo($plugin_directory);
+					$zip->close();
+
+					if($github) {
+						rename(realpath($plugin_directory).'/'.$slug.'-master', realpath($plugin_directory).'/'.$slug);
+					}
+
+					activate_plugin($file);
+					echo "success";
+					die();
+				} else {
+					echo 'failed';
+				}
+
+				die();
+			}
+
+			/** Plugin Offline Activation Ajax **/
+			public function aglee_lite_plugin_offline_activation_callback() {
+
+				$plugin = $_POST['plugin'];
+				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin).'.php';
+
+				if(file_exists($plugin_file)) {
+					activate_plugin($plugin_file);
+				} else {
+					echo "Plugin Doesn't Exists";
+				}
+
+				die();
+
+			}
+
+			/** Plugin Activation Ajax **/
+			public function aglee_lite_plugin_activation_callback(){
+
+				if ( ! current_user_can('install_plugins') )
+					wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'aglee-lite' ) );
+
+				$nonce = $_POST["nonce"];
+				$plugin = $_POST["plugin"];
+
+				// Check our nonce, if they don't match then bounce!
+				if (! wp_verify_nonce( $nonce, 'aglee_lite_plugin_activate_nonce' ))
+					die( __( 'Error - unable to verify nonce, please try again.', 'aglee-lite' ) );
+
+
+	         	// Include required libs for activation
+				require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+				require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+				require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+
+
+				// Get Plugin Info
+				$api = $this->aglee_lite_call_plugin_api(esc_attr($plugin));
+
+
+				if($api->name){
+					$main_plugin_file = $this->get_plugin_file(esc_attr($plugin));
+					$status = 'success';
+					if($main_plugin_file){
+						activate_plugin($main_plugin_file);
+						$msg = $api->name .' successfully activated.';
+					}
+				} else {
+					$status = 'failed';
+					$msg = esc_html__('There was an error activating $api->name', 'aglee-lite');
+				}
+
+				$json = array(
+					'status' => $status,
+					'msg' => $msg,
+					);
+
+				wp_send_json($json);
+
+			}
 	}
 	new Aglee_Lite_About_Theme();
+
+	/** Initializing Demo Importer if exists **/
+		if(class_exists('Instant_Demo_Importer')) :
+			$demoimporter = new Instant_Demo_Importer();
+
+		$demoimporter->demos = array(
+			'aglee-lite' => array(
+				'title' => __('aglee Lite Demo', 'aglee-lite'),
+				'name' => 'aglee-lite',
+				'screenshot' => get_template_directory_uri().'/screenshot.png',
+				'home_page' => 'home',
+				'menus' => array(
+					'Menu 1' => 'primary'
+					)
+				),
+			);
+
+		$demoimporter->demo_dir = get_template_directory().'/inc/admin-panel/demo/'; // Path to the directory containing demo files
+		$demoimporter->options_replace_url = ''; // Set the url to be replaced with current siteurl
+		$demoimporter->option_name = ''; // Set the the name of the option if the theme is based on theme option
+		endif;

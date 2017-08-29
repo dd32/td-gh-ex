@@ -1528,6 +1528,22 @@ ul.aglee-lite-tab-wrapper {
 .featured-section.changelog {
   margin-top: -30px;
 }
+.demo > img {
+    max-width: 100%;
+}
+.warning-msg {
+    background: #f5f5f5;
+    padding: 20px;
+    border-top: 3px solid #ff9c08;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+    font-style: italic;
+}
+.demoinstall-title-btn-wrap h4 {
+    margin: 0;
+    color: #333;
+}
 @media screen and (max-width:1083px) {
   .aglee-lite-content-wrapper {
     width: 69%;

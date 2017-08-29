@@ -94,6 +94,16 @@ if ( is_admin() ) : // Load only if we are viewing an admin page
 function aglee_lite_admin_scripts() {
     wp_enqueue_media();
     wp_enqueue_script( 'agleelite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/admin.js', array( 'jquery' ),'',true );
+    wp_localize_script( 'agleelite_custom_js', 'agleeWelcomeObject', array(
+        'admin_nonce'   => wp_create_nonce('aglee_plugin_installer_nonce'),
+        'activate_nonce'    => wp_create_nonce('aglee_plugin_activate_nonce'),
+        'ajaxurl'       => esc_url( admin_url( 'admin-ajax.php' ) ),
+        'activate_btn' => __('Activate', 'aglee-lite'),
+        'installed_btn' => __('Activated', 'aglee-lite'),
+        'demo_installing' => __('Installing Demo', 'aglee-lite'),
+        'demo_installed' => __('Demo Installed', 'aglee-lite'),
+        'demo_confirm' => __('Are you sure to import demo content ?', 'aglee-lite'),
+        ) );
     wp_enqueue_style( 'agleelite_admin_style',get_template_directory_uri().'/inc/admin-panel/css/admin.css', '1.0', 'screen' );
 }
 add_action('admin_enqueue_scripts', 'aglee_lite_admin_scripts');

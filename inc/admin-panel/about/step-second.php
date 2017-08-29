@@ -22,7 +22,7 @@ $aglee_lite_recommended_plugins = array(
 		$info   = $this->call_plugin_api( $plugin );
 		$icon   = $this->check_for_icon( $info->icons );
 		$active = $this->check_active( $plugin );
-		$url    = $this->create_action_link( $active['needs'], $plugin );
+		$url    = $this->create_action_link( $active['needs'], $plugin,$active['key'] );
 		$label  = '';
 
 		switch ( $active['needs'] ) {
