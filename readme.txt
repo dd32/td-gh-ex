@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.6
+ * Added Welcome Page
+ * Added Support for Editor Style
+
 Version 2.4.5
  * Fixed the search bugs at header and widget area
  

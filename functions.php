@@ -93,6 +93,13 @@ function accesspress_mag_setup() {
 endif; // accesspress_mag_setup
 add_action( 'after_setup_theme', 'accesspress_mag_setup' );
 
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function accesspress_mag_theme_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'accesspress_mag_theme_add_editor_styles' );
 
 /**
  * Enqueue scripts and styles.
@@ -202,18 +209,8 @@ require get_template_directory() . '/inc/custom-metabox.php';
 require get_template_directory() . '/inc/accesspress-widgets.php';
 
 /**
- * Load Options Plugin Activation
+ * Load Welcome Page
  */
-require get_template_directory() . '/inc/accesspress-plugin-activation.php';
-
-/**
- * Load TGMPA function
- */
-require get_template_directory() . '/inc/accesspress-tgmpa.php';
-
-/**
- * Load More Theme Page
- */
-require get_template_directory() . '/inc/more-themes.php';
+require get_template_directory() . '/welcome/welcome.php';
 
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/' );
