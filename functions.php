@@ -77,6 +77,18 @@ function responsiveedit_customize_register( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[banner_image]', array(
 			'selector' => '#featured',
 	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[about_title]', array(
+			'selector' => '.about-title',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[about_text]', array(
+			'selector' => '.about_text',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[about_cta_text]', array(
+			'selector' => '.about-cta-button',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[feature_title]', array(
+			'selector' => '#feature_div .section_title',
+	) );	
 $wp_customize->selective_refresh->add_partial( 'responsive_theme_options[testimonial_title]', array(
 		'selector' => '#testimonial_div .section_title',
 ) );
@@ -110,6 +122,30 @@ $wp_customize->selective_refresh->add_partial( 'responsive_theme_options[team_ti
 	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[copyright_textbox]', array(
 			'selector' => '.copyright',
 			 
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_title]', array(
+			'selector' => '.contact_title',
+	
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_subtitle]', array(
+			'selector' => '.contact_subtitle',
+	
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_add]', array(
+			'selector' => '.contact_add',
+	
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_email]', array(
+			'selector' => '.contact_email',
+	
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_ph]', array(
+			'selector' => '.contact_ph',
+	
+	) );
+	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[contact_content]', array(
+			'selector' => '.contact_right',
+	
 	) );
 	$wp_customize->selective_refresh->add_partial( 'header_image', array(
 			'selector' => '#logo',
@@ -183,3 +219,12 @@ $link = get_home_url() . '/cart/?add-to-cart=' . $product->get_ID();
 		echo'<div class="prod_wrap_right"><a href="'.$link.'"><button class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></a></div>';
 	}
 }
+
+/* Lightbox support for woocommerce templates */
+	$responsive_options = responsive_get_options();
+	if ( isset($responsive_options['override_woo']) && 1 == $responsive_options['override_woo'] )
+	{
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+	}
