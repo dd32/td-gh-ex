@@ -4,7 +4,7 @@ Author: Stefan C.
 Theme URI: https://www.pwtthemes.com/theme/aedificator-free-responsive-wordpress-theme
 Author URI: http://www.stefanciobanu.com
 Description: Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.
-Version: 1.0.8
+Version: 1.0.9
 Tags: entertainment, one-column, two-columns, right-sidebar, grid-layout, footer-widgets, custom-menu, custom-background, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
