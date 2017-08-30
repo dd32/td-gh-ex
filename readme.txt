@@ -90,6 +90,10 @@ Images
 
 == Changelog ==
 
+Version 1.5.3
+ * Updated bxSlider Plugin
+ * Update Fontawesome
+
 Version 1.5.2
  * Minor Bug Fixes
 

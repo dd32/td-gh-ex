@@ -152,7 +152,7 @@ function accesspress_parallax_scripts() {
 		'family' => 'Roboto:400,300,500,700|Oxygen:400,300,700',
 	);
 	wp_enqueue_style( 'accesspress-parallax-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/fontawesome/css/font-awesome.min.css' );
 	wp_enqueue_style( 'jquery-bxslider', get_template_directory_uri() . '/css/jquery.bxslider.css' );
 	wp_enqueue_style( 'nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css' );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css' );
