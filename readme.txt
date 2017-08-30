@@ -84,6 +84,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.13
+- Updated: 404.php updated to output content directly from within file as opposed to calling on function.
+
 Version 1.3.12
 - Updated: Escaping improved in "media" field of framework.
 - Updated: Escaping improved in "slides" field of framework.
