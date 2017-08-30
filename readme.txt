@@ -65,6 +65,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+
+Version 2.72
+* Updated bxSlider Plugins
+* Added updated version of Fontawesome
+
 Version 2.70
 * Minor Bug Fixes
 
