@@ -321,7 +321,7 @@ function responsive_theme_options_do_page() {
 					'subtitle'    => '',
 					'heading'     => '',
 					'type'        => 'text',
-					'id'          => 'contact_subtitlet',
+					'id'          => 'contact_subtitle',
 					'description' => '',
 					'placeholder' => __( 'Contact subtitle', 'responsive' )
 			),

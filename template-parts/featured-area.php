@@ -269,7 +269,8 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 		$responsive_alt2_text = get_the_title( $responsive_team2_post_id );
 	}
 	}
-	$responsive_team2_post_id='';
+	else
+		$responsive_team2_post_id='';
 	if (isset ($responsive_options['teammember3'])) {
 	$responsive_team3_post_id = $responsive_options['teammember3'];
 	if (!$responsive_team3_post_id ==''){
