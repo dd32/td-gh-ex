@@ -3,7 +3,7 @@
 Contributors: axlethemes
 Requires at least: 4.6
 Tested up to: 4.8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright: (c) 2017 Axle Themes
@@ -21,6 +21,9 @@ Best Business is a modern and trendy, useful and resourceful, versatile and flex
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 - Aug 31 2017 =
+* Minor bug fixes
 
 = 1.0.1 - Aug 18 2017 =
 * Minor bug fixes

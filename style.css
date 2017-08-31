@@ -4,7 +4,7 @@ Theme URI: http://axlethemes.com/downloads/best-business/
 Author: Axle Themes
 Author URI: http://axlethemes.com/
 Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
-Version: 1.0.1
+Version: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-business
@@ -487,12 +487,12 @@ blockquote, q {
 
 button,
 a.custom-button,
-.comment-reply-link, 
-.comment-reply-link:visited, 
-a.button, 
-a.button:visited, 
-input[type="button"], 
-input[type="reset"], 
+.comment-reply-link,
+.comment-reply-link:visited,
+a.button,
+a.button:visited,
+input[type="button"],
+input[type="reset"],
 input[type="submit"] {
     background: #efa046 none repeat scroll 0 0;
     border: medium none;
@@ -504,12 +504,12 @@ input[type="submit"] {
 
 }
 
-button:hover, 
+button:hover,
 a.custom-button,
-.comment-reply-link:hover, 
-a.button:hover, 
-input[type="button"]:hover, 
-input[type="reset"]:hover, 
+.comment-reply-link:hover,
+a.button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
 input[type="submit"]:hover {
     background-color: #038fd6;
 }
@@ -590,7 +590,7 @@ a.read-more {
 
 a.read-more:hover {
     border:3px solid #038fd6;
-    
+
 }
 
 a.view-more {
@@ -679,8 +679,8 @@ a:active {
 a.comment-reply-link {
     text-transform: uppercase;
 }
-.site-main .comment-navigation, 
-.site-main .posts-navigation, 
+.site-main .comment-navigation,
+.site-main .posts-navigation,
 .site-main .post-navigation {
     margin: 25px 0;
     overflow: hidden;
@@ -1861,7 +1861,7 @@ a.cart-contents {
     padding-left: 45px;
     position: relative;
     margin-left: 40px;
-} 
+}
 #quick-contact li:first-child {
     margin: 0;
 }
@@ -2050,11 +2050,11 @@ a.cart-contents {
 .header-layout-2 .main-navigation ul li li a {
     color: #fff;
 }
-.header-layout-2 .main-navigation ul li.menu-item-has-children > a::after, 
+.header-layout-2 .main-navigation ul li.menu-item-has-children > a::after,
 .header-layout-2 .main-navigation ul li.page_item_has_children > a::after {
     border-top: 4px solid #a4a2b3;
 }
-.header-layout-2 .main-navigation ul li li.menu-item-has-children > a::after, 
+.header-layout-2 .main-navigation ul li li.menu-item-has-children > a::after,
 .header-layout-2 .main-navigation ul li li.page_item_has_children > a::after {
     top: 19px;
     border-top: 4px solid transparent;
@@ -2209,7 +2209,7 @@ a.cart-contents {
 /*===========================================================
 **************************** Navigation *********************
 ===========================================================*/
-div#mob-menu-quick, 
+div#mob-menu-quick,
 #mobile-trigger-quick {
     display: none;
 }
@@ -2411,7 +2411,7 @@ div#mob-menu-quick,
     border: none;
 }
 
-.main-navigation ul li.menu-item-has-children > a::after, 
+.main-navigation ul li.menu-item-has-children > a::after,
 .main-navigation ul li.page_item_has_children > a::after {
     content: "";
     margin-left: 10px;
@@ -2527,7 +2527,7 @@ div#mob-menu-quick,
     line-height: 1.5;
     margin-bottom: 20px;
 }
-#main-slider a, 
+#main-slider a,
 #main-slider h3 {
     color: #ffffff;
 }
@@ -3425,8 +3425,8 @@ div.wpcf7 {
     margin-top: 15px;
 }
 
-.sidebar .best_business_widget_call_to_action .button, 
-.sidebar .cta-layout-1.best_business_widget_call_to_action .button, 
+.sidebar .best_business_widget_call_to_action .button,
+.sidebar .cta-layout-1.best_business_widget_call_to_action .button,
 #footer-widgets .best_business_widget_call_to_action .button,
  #footer-widgets .cta-layout-1.best_business_widget_call_to_action .button {
     margin: 5px 3px;
@@ -3833,10 +3833,10 @@ div.wpcf7 {
 }
 .address-info-wrapper.info-phone::before {
       content: "\f095";
-  
+
 }
 .address-info-wrapper.info-fax::before {
-      content: "\f1ac";  
+      content: "\f1ac";
 }
 /*--------------------------------------------------------------
 ### Featured Page Widget
@@ -4008,7 +4008,7 @@ div.wpcf7 {
 /*Testimonial cycle next / previous*/
 
 
-.best_business_widget_testimonials .slick-prev.slick-arrow, 
+.best_business_widget_testimonials .slick-prev.slick-arrow,
 .best_business_widget_testimonials .slick-next.slick-arrow {
     color: #aaaaaa;
     cursor: pointer;
@@ -4031,7 +4031,7 @@ div.wpcf7 {
     right:-15px;
 }
 
-.best_business_widget_testimonials .slick-prev.slick-arrow::after, 
+.best_business_widget_testimonials .slick-prev.slick-arrow::after,
 .best_business_widget_testimonials .slick-next.slick-arrow::after {
     background: #219fcd none repeat scroll 0 0;
     color: #ffffff;
@@ -4075,7 +4075,7 @@ div.wpcf7 {
     position: relative;
     background-color: #fff;
 }
-.best_business_widget_products_carousel .featured-porduct-carousel-content, 
+.best_business_widget_products_carousel .featured-porduct-carousel-content,
 .best_business_widget_products_carousel a {
     display: inline-block;
 }
@@ -4095,7 +4095,7 @@ div.wpcf7 {
     background: #efa046;
     color: #fff;
 }
-.best_business_widget_products_carousel .slick-prev.slick-arrow, 
+.best_business_widget_products_carousel .slick-prev.slick-arrow,
 .best_business_widget_products_carousel .slick-next.slick-arrow {
     background-color: #038fd6;
     color: #ffffff;
@@ -4366,7 +4366,7 @@ div.wpcf7 {
 }
 
 /*--------------------------------------------------------------
-### Featured Page block 
+### Featured Page block
 --------------------------------------------------------------*/
 
 .best_business_widget_pages_blocks .block-item {
@@ -4587,10 +4587,10 @@ div.wpcf7 {
     text-decoration: none;
     font-weight:400;
     font-size:15px;
-    -webkit-transition: all 0.37s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
-    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+    -webkit-transition: all 0.37s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
     -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
     cursor: pointer;
 }
@@ -4637,7 +4637,7 @@ div.wpcf7 {
 .best_business_widget_portfolios .item-wrapper {
     position: relative;
 }
-.best_business_widget_portfolios .portfolios-filter a:hover, 
+.best_business_widget_portfolios .portfolios-filter a:hover,
 .best_business_widget_portfolios .portfolios-filter a.current {
     color: #038fd6;
     text-decoration: none;
@@ -4756,9 +4756,9 @@ div.wpcf7 {
 .woocommerce .star-rating span:before {
     color: orange;
 }
-.woocommerce ul.products li.product .woocommerce-loop-category__title, 
-.woocommerce ul.products li.product .woocommerce-loop-product__title, 
-.woocommerce ul.products li.product h3{ 
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3{
     padding: 5px;
     margin: 0;
     font-size: 19px;
@@ -4834,7 +4834,7 @@ div.wpcf7 {
         margin-left: 20px;
         margin-right: 0;
     }
-    
+
 }
 /* Smaller than standard 1024 (devices and browsers) */
 @media only screen and (max-width:1024px) {
@@ -5072,7 +5072,7 @@ div.wpcf7 {
     }
     #main-slider .slider-buttons a {
         padding: 10px 25px;
-        min-width: auto; 
+        min-width: auto;
         font-size: 15px;
     }
     #main-slider .cycle-caption {
@@ -5098,11 +5098,11 @@ div.wpcf7 {
         width: 50%;
     }
 
-    .widget.best_business_widget_pricing_table .pricing-plan-item, 
-    .widget.services-layout-1.best_business_widget_services .service-block-item, 
-    .widget.best_business_widget_latest_news .latest-news-item, .service-block-item, 
-    .widget.best_business_widget_services_primary .service-block-item, 
-    .widget.best_business_widget_teams .our-team-item, 
+    .widget.best_business_widget_pricing_table .pricing-plan-item,
+    .widget.services-layout-1.best_business_widget_services .service-block-item,
+    .widget.best_business_widget_latest_news .latest-news-item, .service-block-item,
+    .widget.best_business_widget_services_primary .service-block-item,
+    .widget.best_business_widget_teams .our-team-item,
     .widget.best_business_widget_pages_blocks .pages-blocks .block-item {
         padding: 10px;
     }
@@ -5323,7 +5323,7 @@ div.wpcf7 {
     #main-slider .cycle-next {
         right: 0;
     }
-    #main-slider .cycle-prev, 
+    #main-slider .cycle-prev,
     #main-slider .cycle-next {
         padding: 13px;
     }
@@ -5486,32 +5486,32 @@ div.wpcf7 {
         max-width: 44px;
     }
     .widget.best_business_widget_portfolios .portfolio-item,
-    .widget.best_business_widget_pricing_table .pricing-plan-item, 
-    .widget.best_business_widget_services .service-block-item, 
-    .widget.best_business_widget_latest_news .latest-news-item, 
-    .widget.best_business_widget_services_primary .service-block-item, 
-    .widget.best_business_widget_teams .our-team-item, 
+    .widget.best_business_widget_pricing_table .pricing-plan-item,
+    .widget.best_business_widget_services .service-block-item,
+    .widget.best_business_widget_latest_news .latest-news-item,
+    .widget.best_business_widget_services_primary .service-block-item,
+    .widget.best_business_widget_teams .our-team-item,
     .widget.best_business_widget_pages_blocks .pages-blocks .block-item {
         padding: 10px;
         width: 50%;
     }
     .widget.best_business_widget_portfolios .portfolio-item:nth-child(2n+1),
-    .widget.best_business_widget_pricing_table .pricing-plan-item:nth-child(2n+1), 
-    .widget.best_business_widget_services .service-block-item:nth-child(2n+1), 
-    .widget.best_business_widget_latest_news .latest-news-item:nth-child(2n+1), 
-    .widget.best_business_widget_services_primary .service-block-item:nth-child(2n+1), 
-    .widget.best_business_widget_teams .our-team-item:nth-child(2n+1), 
+    .widget.best_business_widget_pricing_table .pricing-plan-item:nth-child(2n+1),
+    .widget.best_business_widget_services .service-block-item:nth-child(2n+1),
+    .widget.best_business_widget_latest_news .latest-news-item:nth-child(2n+1),
+    .widget.best_business_widget_services_primary .service-block-item:nth-child(2n+1),
+    .widget.best_business_widget_teams .our-team-item:nth-child(2n+1),
     .widget.best_business_widget_pages_blocks .pages-blocks .block-item:nth-child(2n+1),
     .best_business_widget_features .features-block-item:nth-child(2n+1),
     .best_business_widget_services .service-block-item:nth-child(2n+1) {
         clear: both;
     }
     .widget.best_business_widget_portfolios .portfolio-item:nth-child(3n+1),
-    .widget.best_business_widget_pricing_table .pricing-plan-item:nth-child(3n+1), 
-    .widget.best_business_widget_services .service-block-item:nth-child(3n+1), 
-    .widget.best_business_widget_latest_news .latest-news-item:nth-child(3n+1), 
-    .widget.best_business_widget_services_primary .service-block-item:nth-child(3n+1), 
-    .widget.best_business_widget_teams .our-team-item:nth-child(3n+1), 
+    .widget.best_business_widget_pricing_table .pricing-plan-item:nth-child(3n+1),
+    .widget.best_business_widget_services .service-block-item:nth-child(3n+1),
+    .widget.best_business_widget_latest_news .latest-news-item:nth-child(3n+1),
+    .widget.best_business_widget_services_primary .service-block-item:nth-child(3n+1),
+    .widget.best_business_widget_teams .our-team-item:nth-child(3n+1),
     .widget.best_business_widget_pages_blocks .pages-blocks .block-item:nth-child(3n+1),
     .best_business_widget_features .features-block-item:nth-child(3n+1),
     .best_business_widget_services .service-block-item:nth-child(3n+1) {
@@ -5675,11 +5675,11 @@ div.wpcf7 {
     }
 
     .widget.best_business_widget_portfolios .portfolio-item,
-    .widget.best_business_widget_pricing_table .pricing-plan-item, 
-    .widget.best_business_widget_services .service-block-item, 
-    .widget.best_business_widget_latest_news .latest-news-item, 
-    .widget.best_business_widget_services_primary .service-block-item, 
-    .widget.best_business_widget_teams .our-team-item, 
+    .widget.best_business_widget_pricing_table .pricing-plan-item,
+    .widget.best_business_widget_services .service-block-item,
+    .widget.best_business_widget_latest_news .latest-news-item,
+    .widget.best_business_widget_services_primary .service-block-item,
+    .widget.best_business_widget_teams .our-team-item,
     .widget.best_business_widget_pages_blocks .pages-blocks .block-item {
         padding: 10px;
         width: 100%;

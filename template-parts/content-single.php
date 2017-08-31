@@ -19,8 +19,6 @@
 	do_action( 'best_business_single_image' );
 	?>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
 		<div class="entry-meta">
 			<?php best_business_posted_on(); ?>
 		</div><!-- .entry-meta -->
