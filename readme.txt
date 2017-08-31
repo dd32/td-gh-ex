@@ -97,7 +97,11 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
-Version 1.27
+Version 1.28
+ * Updated bxSlider
+ * Updated Fontawesome Fonts
+
+ Version 1.27
  * Minor bug fixes
 
 Version 1.25

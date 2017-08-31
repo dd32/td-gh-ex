@@ -160,7 +160,7 @@ function accesspress_root_scripts() {
     ); 
 	wp_enqueue_style('accesspress-root-google-fonts-css', add_query_arg($query_args, "//fonts.googleapis.com/css"));
 	wp_enqueue_style('accesspress-root-step3-css', get_template_directory_uri() . '/css/off-canvas-menu.css');
-    wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
+    wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/fontawesome/css/font-awesome.min.css');
     wp_enqueue_style('accesspress-root-bx-slider-css', get_template_directory_uri() . '/css/jquery.bxslider.css');
     wp_enqueue_style('accesspress-root-nivo-lightbox-css', get_template_directory_uri() . '/css/nivo-lightbox.css');
     wp_enqueue_style('accesspress-root-woocommerce-style',get_template_directory_uri().'/woocommerce/woocommerce-style.css');
