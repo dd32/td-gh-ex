@@ -1,12 +1,13 @@
 <?php
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Main Widget Template
+ *
  *
  * @file           sidebar.php
  * @package        Responsive
@@ -19,11 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since          available since Release 1.0
  */
 
-$responsive_options = responsive_get_options();
-if ( ( isset( $responsive_options['override_woo'] ) && ( $responsive_options['override_woo'] ) ) && in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && is_product() ) {
-	return;
-}
-
 /*
  * Load the correct sidebar according to the page layout
  */
@@ -31,11 +27,6 @@ $layout = responsive_get_layout();
 switch ( $layout ) {
 	case 'sidebar-content-page':
 		get_sidebar( 'left' );
-		return;
-		break;
-
-	case 'content-sidebar-page':
-		get_sidebar( 'right' );
 		return;
 		break;
 
@@ -55,14 +46,21 @@ switch ( $layout ) {
 }
 ?>
 
-<?php responsive_widgets_before(); // above widgets container hook. ?>
-	<div id="widgets" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>" role="complementary" <?php responsive_schema_markup( 'sidebar' ); ?>>
-		<?php responsive_widgets(); // above widgets hook. ?>
+<?php responsive_widgets_before(); // above widgets container hook ?>
+	<div id="widgets" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>" role="complementary">
+		<?php responsive_widgets(); // above widgets hook ?>
+
 		<?php if ( !dynamic_sidebar( 'main-sidebar' ) ) : ?>
-			<div class="widget-wrapper" style="display:none;">
-				<div class="widget-title"></div>
+			<div class="widget-wrapper">
+
+				<div class="widget-title"><h3><?php _e( 'In Archive', 'responsive' ); ?></h3></div>
+				<ul>
+					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+				</ul>
+
 			</div><!-- end of .widget-wrapper -->
 		<?php endif; //end of main-sidebar ?>
-		<?php responsive_widgets_end(); // after widgets hook. ?>
+
+		<?php responsive_widgets_end(); // after widgets hook ?>
 	</div><!-- end of #widgets -->
-<?php responsive_widgets_after(); // after widgets container hook. ?>
+<?php responsive_widgets_after(); // after widgets container hook ?>
