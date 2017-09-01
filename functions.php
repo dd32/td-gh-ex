@@ -56,7 +56,11 @@ if ( ! function_exists( 'best_business_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Enable support for custom logo.
-		add_theme_support( 'custom-logo' );
+		add_theme_support( 'custom-logo', array(
+			'width'      => 300,
+			'height'     => 150,
+			'flex-height' => true,
+		) );
 
 		// Add WooCommerce support.
 		add_theme_support( 'woocommerce' );
@@ -185,7 +189,7 @@ function best_business_scripts() {
 
 	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/vendors/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 
-	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.2' );
+	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.3' );
 
 	wp_enqueue_script( 'best-business-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 
