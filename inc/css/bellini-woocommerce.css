@@ -1242,3 +1242,12 @@ table.cart td.actions .coupon {
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
     border: none !important;
 }
+
+.woocommerce div.product .woocommerce-tabs .panel{
+    position:relative !important;
+    z-index: 999999;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    z-index: 99 !important;
+}

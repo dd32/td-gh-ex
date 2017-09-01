@@ -25,7 +25,7 @@ $bellini_frontpage_section_pro_conversion 				= sprintf( __( 'You are missing ou
 																			<li>Advanced Customization</li>
 																			<li>Full WooCommerce Compatibility</li>
 																			<li>Shortcodes &amp; Widgets</li>
-																			</ul><a target="_blank" href="%s" class="bellini__pro--features--button">Upgrade To Pro</a>- 30-day money back guarantee', 'bellini' ), esc_url( 'https://atlantisthemes.com/' ));
+																			</ul><a target="_blank" href="%s" class="bellini__pro--features--button">Upgrade To Pro</a>- 30-day money back guarantee', 'bellini' ), esc_url( 'https://atlantisthemes.com/bellini-woocommerce-theme/' ));
 
 
 /*--------------------------------------------------------------

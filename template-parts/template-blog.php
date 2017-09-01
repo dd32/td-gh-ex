@@ -47,12 +47,11 @@ get_header(); ?>
 
 			<?php
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				if ( absint($bellini['bellini_layout_blog']) === 1 ):
-					get_template_part( 'template-parts/content' );
-				endif;
-				if ( absint($bellini['bellini_layout_blog']) === 5 ):
-					get_template_part( 'template-parts/content-lb-5');
-				endif;
+                    if ( absint($bellini['bellini_layout_blog']) === 1 ){
+                        get_template_part( 'template-parts/content' );
+                    }else{
+                            get_template_part( 'template-parts/content-lb-5');
+                    }
 			endwhile;
 				bellini_pagination();
 				echo '</div>';
@@ -66,4 +65,5 @@ get_header(); ?>
 		wp_reset_postdata(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_footer(); ?>
+<?php
+get_footer();

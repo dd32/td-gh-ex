@@ -151,7 +151,7 @@ function bellini_getting_started() {
 				</div>
 
 				<div class="col-md-5 dashboard-cta-right">
-					<a class="theme__cta--download--pro" href="<?php echo esc_url('https://atlantisthemes.com'); ?>">Upgrade Now</a>
+					<a class="theme__cta--download--pro" href="<?php echo esc_url('https://atlantisthemes.com/bellini-woocommerce-theme/'); ?>">Upgrade Now</a>
 					<a class="theme__cta--demo" href="<?php echo esc_url('demo.atlantisthemes.com'); ?>">Live Demo</a>
 				</div>
 			</div>
