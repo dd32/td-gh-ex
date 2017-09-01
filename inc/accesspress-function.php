@@ -620,7 +620,10 @@ if( is_woocommerce_activated() ){
 		return $placeholder;
 	}
 	add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
-	add_filter( 'wc_product_sku_enabled', '__return_true' );
+
+	if (! has_filter('wc_product_sku_enabled')) {
+		add_filter( 'wc_product_sku_enabled', '__return_true' );
+	}
 
 
 	/**

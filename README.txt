@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.2.3 =
+** Updated Font Awesome Fonts
+** Added Woocommerce Child theme compatibility.
+
 = 2.2.2 =
 ** Fixed some customizer related issue
 
