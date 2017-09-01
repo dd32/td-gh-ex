@@ -53,6 +53,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 3.1.1
+===============
+* Updated bxSlider Plugin
+* Updated Fontawesome Fonts
+
 Version 3.0.9
 ===============
 * Minor Bug Fixes
