@@ -156,7 +156,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					  ),
 			   
 			   'title_typography_'.$id => array(
-					'label' => __('Section Title Typography', 'onetone'),
+					'label' => __('Section Title Typography', 'avata'),
 					'slug'   => "title_typography_".$id,
 					'default'  => array(
 						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
@@ -179,7 +179,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					),
 					
 				  'subtitle_typography_'.$id => array(
-					'label' => __('Section Subtitle Typography', 'onetone'),
+					'label' => __('Section Subtitle Typography', 'avata'),
 					'slug'   => "subtitle_typography_".$id,
 					'default'  => array(
 						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
@@ -202,7 +202,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					),
 				
 				 'content_typography_'.$id => array(
-					'label' => __('Section Content Typography', 'onetone'),
+					'label' => __('Section Content Typography', 'avata'),
 					'slug'   => "content_typography_".$id,
 					'default'  => array(
 						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
