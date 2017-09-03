@@ -100,7 +100,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 						  'background_repeat_mobile' => 'repeat',
 						  'background_position_mobile' => 'top left',
 						  'background_attachment_mobile' => 'scroll',
-						  'full_background_image' => 'yes',
+						  'full_background_image' => '1',
 						  'css_class' => '',
 						  'id' => '',
 						  'content' => '',
@@ -108,7 +108,11 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 						  'padding_bottom' => '100px',
 				),$default);
 
-	
+	$font_family = avata_option_saved('font_'.$id);
+	$font_size   = avata_option_saved('font_size_'.$id);
+	$font_color  = avata_option_saved('font_color_'.$id);
+	$key         = str_replace('_','-',$id);
+
 	$return = array(
 												
 			  'section_hide_'.$id => array(
@@ -151,27 +155,76 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'default'     => $default_options['autoheight'],
 					  ),
 			   
-			   
-			  'font_size_'.$id => array(
-					'type'        => 'select',
-					'label'       => esc_attr__( 'Font Size', 'avata' ),
-					'description' =>  esc_attr__( 'Section content font size.', 'avata' ),
-					'default'     => $default_options['font_size'],
-					'choices'     => $font_size
+			   'title_typography_'.$id => array(
+					'label' => __('Section Title Typography', 'onetone'),
+					'slug'   => "title_typography_".$id,
+					'default'  => array(
+						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
+						  'variant'        => 'regular',
+						  'font-size'      => '30px',
+						  'line-height'    => '1.1',
+						  'letter-spacing' => '0',
+						  'subsets'        => array( 'latin-ext' ),
+						  'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
+						  'text-transform' => 'none',
+						  'text-align'     => 'center',
 					  ),
-			  'font_'.$id => array(
-					'type'        => 'select',
-					'label'       => esc_attr__( 'Content Font', 'avata' ),
-					'description' =>  esc_attr__( 'Section content font.', 'avata' ),
-					'default'     => $default_options['font'],
-					'choices'     => $fonts
-			  ),
-			  'font_color_'.$id => array(
-					'type'        => 'color',
-					'label'       => esc_attr__( 'Font Color', 'avata' ),
-					'description' =>  esc_attr__( 'Section content font color.', 'avata' ),
-					'default'     => $default_options['font_color'],
-			  ),
+					'type' => 'typography',
+					'output' => array(
+										array(
+											'element' => 'body .avata-section-'.$key.' .section-title',
+										),
+									),
+					
+					),
+					
+				  'subtitle_typography_'.$id => array(
+					'label' => __('Section Subtitle Typography', 'onetone'),
+					'slug'   => "subtitle_typography_".$id,
+					'default'  => array(
+						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
+						  'variant'        => 'regular',
+						  'font-size'      => '16px',
+						  'line-height'    => '1.8',
+						  'letter-spacing' => '0',
+						  'subsets'        => array( 'latin-ext' ),
+						  'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
+						  'text-transform' => 'none',
+						  'text-align'     => 'center',
+					  ),
+					'type' => 'typography',
+					'output' => array(
+										array(
+											'element' => 'body .avata-section-'.$key.' .section-subtitle',
+										),
+									),
+					
+					),
+				
+				 'content_typography_'.$id => array(
+					'label' => __('Section Content Typography', 'onetone'),
+					'slug'   => "content_typography_".$id,
+					'default'  => array(
+						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
+						  'variant'        => 'regular',
+						  'font-size'      => ($font_size!='')?$font_size:$default_options['font_size'],
+						  'line-height'    => '1.8',
+						  'letter-spacing' => '0',
+						  'subsets'        => array( 'latin-ext' ),
+						  'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
+						  'text-transform' => 'none',
+						  'text-align'     => 'center',
+					  ),
+					'type' => 'typography',
+					'output' => array(
+										array(
+											'element' => 'body .avata-section-'.$key.' .section-content',
+										),
+									),
+					
+					),
+					
+			 
 			  
 			  'background_color_'.$id => array(
 					'type'        => 'color',
@@ -207,16 +260,17 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'default'     => $default_options['background_position'],
 					'choices'     => $position
 			  ),
-			  'background_attachment_'.$id => array(
-					'type'        => 'select',
-					'label'       => esc_attr__( 'Background Attachment', 'avata' ),
+			  
+			   'full_background_image_'.$id => array(
+					'type'        => 'checkbook',
+					'label'       => esc_attr__( 'Background Cover', 'avata' ),
 					'description' =>  '',
-					'default'     => $default_options['background_attachment'],
-					'choices'     => $attachment
+					'default'     => $default_options['full_background_image'],
+
 			  ),
 			  
 			  'full_background_image_'.$id => array(
-					'type'        => 'select',
+					'type'        => 'checkbook',
 					'label'       => esc_attr__( '100% Width Background Image', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['full_background_image'],
@@ -297,9 +351,9 @@ array_splice($banner_1_options,1,0,array('section_slider_banner_1' => array(
 													'section'     => 'section_banner_1',
 													'priority'    => 10,
 													'row_label' => array(
-														'type' => 'text',
+														'type' => 'field',
 														'value' => esc_attr__('Slide', 'avata' ),
-														'field' => 'icon',
+														'field' => 'title',
 													),
 													'settings'    => 'section_slider_banner_1',
 													'default'     => array(
@@ -542,9 +596,9 @@ array_splice($service_1_options,3,0,array('section_items_service_1' => array(
 													'section'     => 'section_service_1',
 													'priority'    => 10,
 													'row_label' => array(
-														'type' => 'text',
+														'type' => 'field',
 														'value' => esc_attr__('Service', 'avata' ),
-														'field' => 'icon',
+														'field' => 'title',
 													),
 													'settings'    => 'section_items_service_1',
 													'default'     => array(
@@ -708,9 +762,9 @@ array_splice($gallery_options,3,0,array('section_items_gallery' => array(
 													'section'     => 'section_gallery',
 													'priority'    => 10,
 													'row_label' => array(
-														'type' => 'text',
+														'type' => 'field',
 														'value' => esc_attr__('Image', 'avata' ),
-														'field' => 'icon',
+														'field' => 'title',
 													),
 													'settings'    => 'section_items_gallery',
 													'default'     => array(
@@ -768,9 +822,9 @@ array_splice($team_options,3,0,array('section_items_team' => array(
 													'section'     => 'section_team',
 													'priority'    => 10,
 													'row_label' => array(
-														'type' => 'text',
+														'type' => 'field',
 														'value' => esc_attr__('Member', 'avata' ),
-														'field' => 'icon',
+														'field' => 'name',
 													),
 													'settings'    => 'section_items_team',
 													'default'     => array(
@@ -941,9 +995,9 @@ array_splice($testimonial_options,3,0,array('section_items_testimonial' => array
 													'settings'     => 'section_items_testimonial',
 													'priority'    => 10,
 													'row_label' => array(
-														'type' => 'text',
+														'type' => 'field',
 														'value' => esc_attr__('Testimonial', 'avata' ),
-														'field' => 'icon',
+														'field' => 'name',
 													),
 													'settings'    => 'section_items_testimonial',
 													'default'     => array(
@@ -1412,8 +1466,6 @@ Hoo::add_field( 'avata', array(
 ) );
 
 // Sidebar settings
-
-
 Hoo::add_section( 'avata_panel_sidebar_settings', array(
     'title'          => __( 'Avata: Sidebar Settings', 'avata' ),
     'description'    => '',

@@ -28,7 +28,7 @@
 				
 			$section_class     = avata_option('section_css_class_'.$index);
 			$section_id        = avata_option('section_id_'.$index);
-  			$section_class    .= ' section section-'.$key;
+  			$section_class    .= ' section section-'.$key.' avata-section-'.$key;
 			$autoheight        =  avata_option('section_autoheight_'.$index);
 			$attr              = '';
 			

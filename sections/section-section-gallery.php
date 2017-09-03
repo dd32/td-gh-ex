@@ -26,8 +26,9 @@
 		foreach($gallery as $item ):
 			if(is_numeric($item['image']))
 				$item['image'] = wp_get_attachment_image_url($item['image'],'full');
+				
 	?>
-    <li class="col-lg-2 col-md-4 col-sm-4 work" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
+    <li class="col-lg-2 col-md-4 col-sm-4 work" data-download-url="<?php echo esc_url($item['image']);?>" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>" data-facebook-share-url="<?php echo esc_url($item['image']);?>" data-twitter-share-url="<?php echo esc_url($item['image']);?>" data-googleplus-share-url="<?php echo esc_url($item['image']);?>" data-pinterest-share-url="<?php echo esc_url($item['image']);?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
         <div class="overlay">
           <div class="overlay-caption">
             <p><i class="fa fa-search" aria-hidden="true"></i></p>

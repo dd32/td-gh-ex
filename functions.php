@@ -71,9 +71,6 @@ function avata_register_widgets() {
         );
 		
     endforeach;
-	
-
-	
 }
 
 /**
@@ -151,8 +148,6 @@ function avata_enqueue_scripts() {
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	wp_enqueue_script( 'avata-main', get_template_directory_uri().'/assets/js/main.js', array( 'jquery' ), $theme_info->get( 'Version' ), true );
 	
-	
-	
 		
 	$css = '';
 	/* custom sections */
@@ -194,8 +189,8 @@ function avata_enqueue_scripts() {
 		$content_box_border_radius = avata_option('content_box_border_radius_'.$j);
 		$padding_top = avata_option('padding_top_'.$j);
 		$padding_bottom = avata_option('padding_bottom_'.$j);
-		$menu_slug          = esc_attr(avata_option('section_id_'.$j ));
-		$anchors[]          = $menu_slug;
+		$menu_slug      = esc_attr(avata_option('section_id_'.$j ));
+		$anchors[]      = $menu_slug;
 		
 		
 		
@@ -203,15 +198,21 @@ function avata_enqueue_scripts() {
 			$background_image = wp_get_attachment_image_url($background_image,'full');
 			
 		
-		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
+		/*$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
 		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$font.";color:".$font_color.";}";
-		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";
+		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";*/
+		$content_typography = avata_option( 'content_typography_'.$j );
+		
+		if( $content_typography )
+			$css .= ".section-".$item." .section-content,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$content_typography['font-family'].";color:".$content_typography['color'].";}.section-".$item." .social-icons a{border-color:".$content_typography['color'].";},.section-".$item." .social-icons i{color:".$content_typography['color'].";}";
+		
+		
 		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
 		
 		$css .= ".section-".$item."{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
 		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
 		
-		if( $full_background_image == 'yes' )
+		if( $full_background_image == 'yes' || $full_background_image == '1' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
 		
 		if( $content_background_color != '' )
@@ -220,6 +221,7 @@ function avata_enqueue_scripts() {
 		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
 
 	}
+	
 	$copyright_font_color = avata_option('copyright_color');
 	$copyright_bg_color   = avata_option('copyright_bg_color');
 	
@@ -462,6 +464,7 @@ $css .=  ".dotstyle{
 	$css        = wp_filter_nohtml_kses($css);
 	$css        = apply_filters('avata_custom_css',$css);
 	$css        = str_replace('&gt;','>',$css);
+	$css        = stripslashes($css);
 	wp_add_inline_style( 'avata-main', $css );
 	
 	$autoscrolling = avata_option('autoscrolling');
@@ -536,6 +539,19 @@ function avata_option($name,$default=''){
 	return $return;
   }
 
+/**
+ * Get option saved
+ */
+function avata_option_saved($name,$default=''){
+	$textdomain = avata_get_option_name();
+	$options    = get_option($textdomain);
+	if( isset($options[$name]) )
+		$return = $options[$name];
+	else
+		$return = $default;
+		
+	return $return;
+}
 /**
  * Save section order
  */
@@ -771,6 +787,72 @@ add_action('wp_head', 'avata_space_before_head');
  } 
 
 add_action('wp_footer', 'avata_space_before_body'); 
+
+/**
+* Standard fonts
+*/
+function avata_standard_fonts(){
+	$standard_fonts = array(
+			
+			'arial' => array(
+				'label' => 'Arial',
+				'stack' => 'Arial, sans-serif',
+			),
+			'avant-garde' => array(
+				'label' => 'Avant Garde',
+				'stack' => '"Avant Garde", sans-serif',
+			),
+			'arial' => array(
+				'label' => 'Arial',
+				'stack' => 'Arial, sans-serif',
+			),
+			
+			'arial' => array(
+				'label' => 'Arial',
+				'stack' => 'Arial, sans-serif',
+			),
+			'cambria' => array(
+				'label'  => 'Cambria',
+				'stack'  => 'Cambria, Georgia, serif',
+			),
+			'calibri' => array(
+				'label' => 'Calibri',
+				'stack' => 'Calibri,sans-serif',
+			),
+			'copse' => array(
+				'label' => 'Copse',
+				'stack' => 'Copse, sans-serif',
+			),
+			'garamond' => array(
+				'label' => 'Garamond',
+				'stack' => 'Garamond, "Hoefler Text", Times New Roman, Times, serif',
+			),
+			'georgia' => array(
+				'label' => 'Georgia',
+				'stack' => 'Georgia, serif',
+			),
+			'helvetica-neue' => array(
+				'label' => 'Helvetica Neue',
+				'stack' => '"Helvetica Neue", Helvetica, sans-serif',
+			),
+			'lustria' => array(
+				'label' => 'Lustria',
+				'stack' => 'Lustria,serif',
+			),
+			'open-sans' => array(
+				'label' => 'Open Sans',
+				'stack' => 'Open Sans, sans-serif',
+			),
+			'tahoma' => array(
+				'label' => 'Tahoma',
+				'stack' => 'Tahoma, Geneva, sans-serif',
+			),
+			
+		);
+	return $standard_fonts;	
+	}
+		
+add_filter( 'options-framework/fonts/standard_fonts', 'avata_standard_fonts' );
 
 require_once dirname( __FILE__ ) . '/options-framework/hoo.php';
 require_once dirname( __FILE__ ) . '/options-framework/options.php';
