@@ -32,7 +32,7 @@
               </a>
                <?php } ?>
                <?php if( $item['right_btn_text'] !=''){?>
-              <a href="<?php echo esc_url($item['left_btn_link']);?>" target="<?php echo esc_attr($item['right_btn_target']);?>">
+              <a href="<?php echo esc_url($item['right_btn_link']);?>" target="<?php echo esc_attr($item['right_btn_target']);?>">
               	<span class="btn btn-lg btn-primary btn-outline"><?php echo esc_attr($item['right_btn_text']);?></span>
               </a>
                <?php } ?>

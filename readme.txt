@@ -51,6 +51,11 @@ The theme itself is nothing but 100% GPL v2 or later.
     * Copyright (C) 2015 alvarotrigo.com - A project by Alvaro Trigo
 
 
+ ## waypoints
+    * Copyright 2011-2016 Caleb Troughton
+    * Licensed under the MIT license.
+    * https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+
 ==Fonts
 
   ##  font-awesome
@@ -58,7 +63,13 @@ The theme itself is nothing but 100% GPL v2 or later.
     License -  Font: SIL OFL 1.1, CSS: MIT License
     http://fontawesome.io/license
 
-
+==CSS
+ ## animate.css
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.2
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2017 Daniel Eden
 
 --------------------------------------------------------------------------------------------
 	For any help you can mail me at support[at]hoosoft.com

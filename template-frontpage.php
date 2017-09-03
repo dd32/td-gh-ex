@@ -4,12 +4,17 @@
  */
  
  get_header('featured');
- global $avata_sections;
+ global $avata_sections, $avata_animation, $avata_animation_delay;
  
  $hide_side_nav   = absint( avata_option( 'hide_side_nav'));
  $side_nav_align  = esc_attr( avata_option( 'side_nav_align'));
- $sticky_header    = absint( avata_option( 'sticky_header_frontpage'));
-
+ $sticky_header   = absint( avata_option( 'sticky_header_frontpage'));
+ $animation       = avata_option( 'animation');
+ 
+ $avata_animation = '';
+ if( $animation == '1' )
+ 	$avata_animation =  'os-animation';
+ $avata_animation_delay = esc_attr( avata_option( 'animation_delay'),'0.1s');
  ?>
  
  <div id="content" class="site-content">

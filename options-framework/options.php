@@ -237,7 +237,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'label'       => esc_attr__( 'Background Opacity', 'avata' ),
 					'description' =>  esc_attr__( 'Section background color opacity.', 'avata' ),
 					'default'     => $default_options['background_opacity'],
-					'choices'     => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
+					'choices'     =>  array('0.1'=>'0.1','0.2'=>'0.2','0.3'=>'0.3','0.4'=>'0.4','0.5'=>'0.5','0.6'=>'0.6','0.7'=>'0.7','0.8'=>'0.8','0.9'=>'0.9','1'=>'1')
 			  ),
 			  
 			  'background_image_'.$id => array(
@@ -262,7 +262,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 			  ),
 			  
 			   'full_background_image_'.$id => array(
-					'type'        => 'checkbook',
+					'type'        => 'checkbox',
 					'label'       => esc_attr__( 'Background Cover', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['full_background_image'],
@@ -1186,11 +1186,10 @@ $avata_lite_sections['section-slogan'] = array(
 
 // custom frontpage sections
 $args['hide']    = '1';
-
 for( $i=1;$i<=2;$i++){
 	$j = $i-1;
 	if(!isset($default_options[$j]))
-		$default_options[$j] = array();
+	$default_options[$j] = array('autoheight' => '1');
 	$options = avata_public_section_options($j,$default_options[$j],true,$args);
 	$avata_lite_sections['section-'.$j] = array(
 										'name'=>sprintf(__('Custom Section %d', 'avata'),$i),
@@ -1274,6 +1273,23 @@ Hoo::add_field( 'avata', array(
 	'description' => __('Defines whether to use the "automatic" scrolling or the "normal" one. It also has affects the way the sections fit in the browser/device window in tablets and mobile phones.', 'avata'),
 	'section'  => 'avata_frontpage_general',
 	'default'  => '',
+	'priority' => 10,
+	) );
+
+Hoo::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'animation',
+	'label'    => __('Enable Animation', 'avata'),
+	'section'  => 'avata_frontpage_general',
+	'default'  => '1',
+	'priority' => 10,
+	) );
+Hoo::add_field( 'avata', array(
+	'type'     => 'text',
+	'settings' => 'animation_delay',
+	'label'    => __('Animation Delay', 'avata'),
+	'section'  => 'avata_frontpage_general',
+	'default'  => '0.1s',
 	'priority' => 10,
 	) );
 

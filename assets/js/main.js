@@ -34,14 +34,14 @@ $('#avata-nav').css({'margin-top':'-'+($('#avata-nav').height()/2)+'px'});
 $('.page-template-template-frontpage.admin-bar #main-header').css({'top':stickyTop});
 
 $('#dotstyle-nav ul li').click(function(){
-		var hash = $(this).find('a').attr('href');
-		Anchor = hash.replace('#','');
-		var index = $("[data-anchor='"+Anchor+"']").index();
-		$.fn.fullpage.moveTo(Anchor);
+	var hash = $(this).find('a').attr('href');
+	Anchor = hash.replace('#','');
+	var index = $("[data-anchor='"+Anchor+"']").index();
+	$.fn.fullpage.moveTo(Anchor);
 										
 });
-// Page Scroll
 
+// Page Scroll
 
 var sections = $('section'),
 	nav = $('nav[role="navigation"]');
@@ -63,6 +63,18 @@ $('.avata-home-sections').fullpage({
 		}else{
 			$('#main-header').css({'background':'transparent'});
 		}
+		
+		$('section').eq(index).find('.os-animation').each(function(){
+				var osAnimationClass = $(this).attr('data-os-animation'),
+		 		 osAnimationDelay = $(this).attr('data-os-animation-delay');	
+				 $(this).css({
+			  '-webkit-animation-delay':  osAnimationDelay,
+			  '-moz-animation-delay':     osAnimationDelay,
+			  'animation-delay':          osAnimationDelay
+		  });
+	
+	  	$(this).addClass('animated').addClass(osAnimationClass);
+		});
 	},
 	afterLoad: function(anchor, index){
 		console.log(anchor);
@@ -70,7 +82,7 @@ $('.avata-home-sections').fullpage({
 		$('#menu-main li a').removeClass('active');
 		$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');
 		$('#menu-main li a[href="#'+anchor+'"]').addClass('active');
-		},
+	},
 	 afterRender: function () {
 		 if($('.avata-slider').length ){
 			 var options = $('.avata-slider').data('options');
@@ -124,6 +136,33 @@ $('.move-section-down').click(function(){
 });
 $('.move-section-up').click(function(){
     $.fn.fullpage.moveSectionUp();
+});
+
+// Animation
+$(function(){
+	function onScrollInit( items, trigger ) {
+		items.each( function() {
+		var osElement = $(this),
+		osAnimationClass = osElement.attr('data-os-animation'),
+		osAnimationDelay = osElement.attr('data-os-animation-delay');
+                  
+		osElement.css({
+			'-webkit-animation-delay':  osAnimationDelay,
+			'-moz-animation-delay':     osAnimationDelay,
+			'animation-delay':          osAnimationDelay
+		});
+	var osTrigger = ( trigger ) ? trigger : osElement;
+                    
+	osTrigger.waypoint(function() {
+		osElement.addClass('animated').addClass(osAnimationClass);
+	},{
+		triggerOnce: true,
+		offset: '80%'
+	});
+	});
+	}
+	onScrollInit( $('.os-animation') );
+	onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
 });
 
 });

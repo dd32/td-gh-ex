@@ -133,6 +133,8 @@ function avata_enqueue_scripts() {
 	wp_enqueue_style('jquery-fullpage',  get_template_directory_uri() .'/assets/plugins/fullPage.js/jquery.fullPage.css', false, '2.9.4', false);
 	wp_enqueue_style('lightgallery',  get_template_directory_uri() .'/assets/plugins/lightGallery/css/lightgallery.min.css', false, '1.5', false);
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri().'/assets/plugins/owl-carousel/assets/owl.carousel.css',false, '2.3.0', false );
+	wp_enqueue_style( 'animate', get_template_directory_uri().'/assets/css/animate.css',false, '3.5.2', false );
+	
 	wp_enqueue_style( 'avata-main', get_stylesheet_uri(), array(),  $theme_info->get( 'Version' ) );
 	
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/assets/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
@@ -143,6 +145,7 @@ function avata_enqueue_scripts() {
     wp_enqueue_script( 'jquery-mousewheel', get_template_directory_uri().'/assets/plugins/lightGallery/js/jquery.mousewheel.js', array( 'jquery' ), '3.1.13', true );
 	
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri().'/assets/plugins/owl-carousel/owl.carousel.js', array( 'jquery' ), '2.3.0', true );
+	wp_enqueue_script( 'waypoints', get_template_directory_uri().'/assets/plugins/waypoints/jquery.waypoints.js',array( 'jquery' ), '4.0.1', true );
 	wp_enqueue_script( 'imagesloaded' );
 	wp_enqueue_script( 'masonry' );
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
@@ -198,9 +201,6 @@ function avata_enqueue_scripts() {
 			$background_image = wp_get_attachment_image_url($background_image,'full');
 			
 		
-		/*$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span{font-size:".$font_size.";}";
-		$css .= ".section-".$item." .section-content,.section-".$item." .section-content p,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$font.";color:".$font_color.";}";
-		$css .= ".section-".$item." .section-title,.section-".$item." .section-subtitle{color:".$font_color.";}";*/
 		$content_typography = avata_option( 'content_typography_'.$j );
 		
 		if( $content_typography )

@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags;
+  global $allowedposttags, $avata_animation, $avata_animation_delay;
 
   $section_title      = avata_option('section_title_banner_2');
   $section_subtitle   = avata_option('section_subtitle_banner_2');
@@ -13,6 +13,9 @@
   $arrow              = avata_option('section_display_arrow_banner_2');
   $overlay            = avata_option('section_overlay_banner_2');
   
+  $avata_animation_delay_new = str_replace('s','',$avata_animation_delay);
+  $avata_animation_delay_new = $avata_animation_delay_new+0.3;
+  $avata_animation_delay_new = $avata_animation_delay_new.'s';
   ?>
     <div class="avata-box__magnet avata-box__magnet--sm-padding avata-box__magnet--center-center">
     <?php if($overlay == '1'){?>
@@ -20,16 +23,20 @@
         <?php }?>
         <div class="avata-box__container avata-section__container container">
             <div class="avata-box avata-box--stretched"><div class="avata-box__magnet avata-box__magnet--center-center">
-                <div class="avata-hero animated fadeInUp">
-                    <h1 class="avata-hero__text avata-section_title_banner_2"><?php echo esc_attr($section_title);?></h1>
-                    <p class="avata-hero__subtext avata-section_subtitle_banner_2"><strong><?php echo wp_kses($section_subtitle, $allowedposttags);?></strong></p>
+                <div class="avata-hero" >
+                <h1 class="avata-hero__text avata-section_title_banner_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h1>
+                    <p class="avata-hero__subtext avata-section_subtitle_banner_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><strong><?php echo wp_kses($section_subtitle, $allowedposttags);?></strong></p>
                 </div>
                 <div class="avata-buttons btn-inverse avata-buttons--center">
                 <?php if($btn_txt_1 !=''){?>
-                <a class="avata-buttons__btn btn btn-lg animated fadeInUp delay btn-primary avata-section_btntxt_1_banner_2" href="<?php echo esc_url($btn_link_1);?>" target="<?php echo esc_attr($btn_target_1);?>"><?php echo esc_attr($btn_txt_1);?></a>
+                <a class="avata-buttons__btn btn btn-lg btn-primary avata-section_btntxt_1_banner_2 <?php echo $avata_animation;?>" href="<?php echo esc_url($btn_link_1);?>" target="<?php echo esc_attr($btn_target_1);?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><?php echo esc_attr($btn_txt_1);?></a>
                 <?php }?>
-                <?php if($btn_txt_2 !=''){?>
-                <a class="avata-buttons__btn btn btn-lg btn-outline animated fadeInUp delay avata-section_btntxt_2_banner_2" href="<?php echo esc_url($btn_link_2);?>" target="<?php echo esc_attr($btn_target_2);?>"><?php echo esc_attr($btn_txt_2);?></a>
+                <?php if($btn_txt_2 !=''){
+					 $avata_animation_delay_new = str_replace('s','',$avata_animation_delay_new);
+ 					 $avata_animation_delay_new = $avata_animation_delay_new+0.3;
+					 $avata_animation_delay_new = $avata_animation_delay_new.'s';
+				?>
+                <a class="avata-buttons__btn btn btn-lg btn-outline avata-section_btntxt_2_banner_2 <?php echo $avata_animation;?>" href="<?php echo esc_url($btn_link_2);?>" target="<?php echo esc_attr($btn_target_2);?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><?php echo esc_attr($btn_txt_2);?></a>
                 <?php }?>
                 
                 </div>
@@ -43,4 +50,4 @@
                 <a class="avata-arrow__link move-section-down" href="#"><i class="glyphicon glyphicon-menu-down"></i></a>
             </div>
         </div>
-         <?php }?>
+<?php }?>

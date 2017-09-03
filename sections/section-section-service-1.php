@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags;
+  global $allowedposttags, $avata_animation, $avata_animation_delay;
   $section_title     = avata_option('section_title_service_1');
   $section_subtitle  = avata_option('section_subtitle_service_1');
   $service           = avata_option('section_items_service_1');
@@ -13,17 +13,19 @@
   <div class="<?php echo $container;?>">
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
-      <h2 class="section-title text-center avata-section_title_service_1"><?php echo esc_attr($section_title);?></h2>
-      <p class="section-subtitle text-center avata-section_subtitle_service_1"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
+      <h2 class="section-title text-center avata-section_title_service_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
+      <p class="section-subtitle text-center avata-section_subtitle_service_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
     </div>
     <?php }?>
     <div class="section-content">
     <div class="avata-service-style-1 avata-section_items_service_1">
-    <?php 
+    <?php
+	$avata_animation_delay_new = $avata_animation_delay;
 	if (is_array($service) && !empty($service) ):
 		foreach($service as $item ):
+				
 	?>
-    <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 avata-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 1.1s; animation-name: fadeInUp;">
+    <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 avata-feature <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>">
 					<div class="avata-icon">
                     <?php if($item['image']!=''){
 						if(is_numeric($item['image']))
@@ -39,7 +41,10 @@
 						<p><?php echo wp_kses($item['description'], $allowedposttags);?></p>
 					</div>	
 				</div>
-     <?php 
+     <?php
+	 $avata_animation_delay_new = str_replace('s','',$avata_animation_delay_new);
+	 $avata_animation_delay_new = $avata_animation_delay_new+0.4;
+	 $avata_animation_delay_new = $avata_animation_delay_new.'s';
 	 endforeach;
 	 endif; 
 	 ?>

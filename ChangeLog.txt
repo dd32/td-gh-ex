@@ -2,6 +2,11 @@
 
 == CHANGE LOG == 
 
+= Version 1.2.8 = = 03/09/2017 
+* Add - Added option "Enable Animation"
+* Add - Added option "Animation Delay"
+* Fix - Fixed button link issue for section - Banner
+
 = Version 1.2.7 = = 03/09/2017 
 * Add - Added option "Section Title Typography"
 * Add - Added option "Section Subtitle Typography"
