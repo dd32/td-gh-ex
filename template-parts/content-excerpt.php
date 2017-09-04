@@ -10,9 +10,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<h1 class="entry-title">
+	<strong class="entry-title">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-	</h1>
+	</strong>
 
 	<div class="before-content">
 

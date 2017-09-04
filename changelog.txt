@@ -1,3 +1,9 @@
+AyaPortfolio 1.0.1, 2017-09-05
+------------------------
+fix issue with alignment issues of header on Mobile
+fix issue with Posts displayed under - Search results all have h1 tag
+fix issue with Menu on desktop is pushed down if is a little longer
+
 AyaPortfolio 1.0.0, 2017-07-11
 ------------------------
 - Initial release
