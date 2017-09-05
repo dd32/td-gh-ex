@@ -215,7 +215,10 @@ final class Hoo_Fonts {
 	 * @return bool
 	 */
 	public static function is_google_font( $fontname ) {
-		return ( array_key_exists( $fontname, self::$google_fonts ) );
+		if(!empty($fontname) && is_string($fontname))
+			return ( array_key_exists( $fontname, self::$google_fonts ) );
+		else
+			return false;
 	}
 
 	/**

@@ -77,7 +77,7 @@ $('.avata-home-sections').fullpage({
 		});
 	},
 	afterLoad: function(anchor, index){
-		console.log(anchor);
+		
 		$('#dotstyle-nav li').removeClass('active');
 		$('#menu-main li a').removeClass('active');
 		$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');

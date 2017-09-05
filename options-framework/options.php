@@ -202,35 +202,42 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					),
 				
 				 'content_typography_'.$id => array(
-					'label' => __('Section Content Typography', 'avata'),
-					'slug'   => "content_typography_".$id,
-					'default'  => array(
-						  'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
-						  'variant'        => 'regular',
-						  'font-size'      => ($font_size!='')?$font_size:$default_options['font_size'],
-						  'line-height'    => '1.8',
-						  'letter-spacing' => '0',
-						  'subsets'        => array( 'latin-ext' ),
-						  'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
-						  'text-transform' => 'none',
-						  'text-align'     => 'center',
-					  ),
-					'type' => 'typography',
-					'output' => array(
-										array(
-											'element' => 'body .avata-section-'.$key.' .section-content',
-										),
-									),
-					
+					  'label' => __('Section Content Typography', 'avata'),
+					  'slug'   => "content_typography_".$id,
+					  'default'  => array(
+							'font-family'    => ($font_family!='')?$font_family:$default_options['font'],
+							'variant'        => 'regular',
+							'font-size'      => ($font_size!='')?$font_size:$default_options['font_size'],
+							'line-height'    => '1.8',
+							'letter-spacing' => '0',
+							'subsets'        => array( 'latin-ext' ),
+							'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
+							'text-transform' => 'none',
+							'text-align'     => 'center',
+						),
+					  'type' => 'typography',
+					  'output' => array(
+										  array(
+											  'element' => 'body .avata-section-'.$key.' .section-content',
+										  ),
+									  ),
+					  
 					),
 					
-			 
-			  
-			  'background_color_'.$id => array(
+			 'background_color_'.$id => array(
 					'type'        => 'color',
 					'label'       => esc_attr__( 'Background Color', 'avata' ),
 					'description' =>  esc_attr__( 'Section background color.', 'avata' ),
 					'default'     => $default_options['background_color'],
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'background-color',
+							)
+						),
+
 			  ),
 			  'background_opacity_'.$id => array(
 					'type'        => 'select',
@@ -245,20 +252,60 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'label'       => esc_attr__( 'Background Image', 'avata' ),
 					'description' =>  esc_attr__( 'Section background image.', 'avata' ),
 					'default'     => $default_options['background_image'],
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'background-image',
+							)
+						),
 			  ),
 			  'background_repeat_'.$id => array(
 					'type'        => 'select',
 					'label'       => esc_attr__( 'Background Repeat', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['background_repeat'],
-					'choices'     => $repeat
+					'choices'     => $repeat,
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'background-repeat',
+							)
+						),
 			  ),
 			  'background_position_'.$id => array(
 					'type'        => 'select',
 					'label'       => esc_attr__( 'Background Position', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['background_position'],
-					'choices'     => $position
+					'choices'     => $position,
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'background-position',
+							)
+						),
+			  ),
+			  
+			   'background_attachment_'.$id => array(
+					'type'        => 'select',
+					'label'       => esc_attr__( 'Background Attachment', 'avata' ),
+					'description' =>  '',
+					'default'     => $default_options['background_attachment'],
+					'choices'     => $attachment,
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'background-attachment',
+							)
+						),
 			  ),
 			  
 			   'full_background_image_'.$id => array(
@@ -269,39 +316,62 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 
 			  ),
 			  
-			  'full_background_image_'.$id => array(
-					'type'        => 'checkbook',
-					'label'       => esc_attr__( '100% Width Background Image', 'avata' ),
-					'description' =>  '',
-					'default'     => $default_options['full_background_image'],
-					'choices'     => $choices
-			  ),
-			  
 			  'section_css_class_'.$id => array(
 					'type'        => 'text',
 					'label'       => esc_attr__( 'Css Class', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['css_class'],
+					'transport' => 'postMessage',
 			  ),
 			  'section_id_'.$id => array(
 					'type'        => 'text',
 					'label'       => esc_attr__( 'Section ID', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['menu_slug'],
+					'transport' => 'postMessage',
 			  ),
 			  
 			  'padding_top_'.$id => array(
 					'type'        => 'text',
-					'label'       => esc_attr__( 'Padding Top ( Valid under Auto Height )', 'avata' ),
+					'label'       => esc_attr__( 'Padding Top', 'avata' ),
 					'description' => '',
 					'default'     => $default_options['padding_top'],
+					'active_callback' => array(
+								array(
+									'setting'  => 'section_autoheight_'.$id,
+									'operator' => '===',
+									'value'    => '1',
+								),),
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'padding-top',
+							)
+						),
 			  ),
 			  'padding_bottom_'.$id => array(
 					'type'        => 'text',
-					'label'       => esc_attr__( 'Padding Bottom ( Valid under Auto Height )', 'avata' ),
+					'label'       => esc_attr__( 'Padding Bottom', 'avata' ),
 					'description' => '',
 					'default'     => $default_options['padding_bottom'],
+					'active_callback' => array(
+								array(
+									'setting'  => 'section_autoheight_'.$id,
+									'operator' => '===',
+									'value'    => '1',
+								),),
+					'transport' => 'postMessage',
+					'js_vars'   => array(
+						array(
+							'element'  => 'body .avata-section-'.$key.'',
+							'function' => 'css',
+							'property' => 'padding-bottom',
+							)
+						),
 			  ),
+			  
 			  'hide_side_menu_'.$id => array(
 					'type'        => 'checkbox',
 					'label'       => esc_attr__( 'Hide Side Menu Dot', 'avata' ),
@@ -1062,7 +1132,7 @@ $avata_lite_sections['section-testimonial'] = array(
 
 // section blog
 
-$blog_defaults = array('menu_slug' => 'blog','section_title'=>'Recent From Blog','section_subtitle'=>'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.','background_color'=>'#eeeeee','hide'=>$hide);
+$blog_defaults = array('menu_slug' => 'blog','section_title'=>'Recent From Blog','section_subtitle'=>'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.','background_color'=>'#eeeeee','hide'=>'');
 $blog_args = $args;
 $blog_args['excludes'] = array();
 
@@ -1095,15 +1165,22 @@ array_splice($blog_options,3,0,
 				  'multiple'    => 10,
 				  'choices'     => $options_categories
 		),
-		'section_excerpt_length' => array(
+		'section_display_categories_blog' => array(
+				  'type'        => 'checkbox',
+				  'settings'    => 'section_display_categories_blog',
+				  'label'       => esc_attr__( 'Display Categories', 'avata' ),
+				  'description' => '',
+				  'default'     => '1',
+		),
+		'section_excerpt_length_blog' => array(
 				  'type'        => 'text',
-				  'settings'    => 'section_excerpt_length',
+				  'settings'    => 'section_excerpt_length_blog',
 				  'label'       => esc_attr__( 'Excerpt Length', 'avata' ),
 				  'description' => '',
 				  'default'     => 20,
 		),
 		
-		'section_btn_txt' => array(
+		'section_btn_txt_blog' => array(
 				  'type'        => 'text',
 				  'settings'    => 'section_btn_txt_blog',
 				  'label'       => esc_attr__( 'Button Text', 'avata' ),

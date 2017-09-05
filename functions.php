@@ -85,11 +85,15 @@ function avata_register_blogname_partials( WP_Customize_Manager $wp_customize ) 
 				if(!isset($field['settings']) ){
 					$field['settings'] = $field_id;
 					}
-				if(!is_array($field['settings']))
+				if(!is_array($field['settings'])){
+					if(isset($field['type']) && ($field['type'] == 'text' || $field['type'] == 'textarea' || $field['type'] == 'editor' || $field['type'] == 'image' || $field['type'] == 'repeater' ) ){
 					$wp_customize->selective_refresh->add_partial( $field['settings'].'_selective', array(
 						'selector' => '.avata-'.$field['settings'],
 						'settings' => array( 'avata['.$field['settings'].']' ),
+						'fallback_refresh' => false
 						) );
+					}
+				}
 				
 			}
 		}
@@ -187,9 +191,6 @@ function avata_enqueue_scripts() {
 		$background_position = avata_option('background_position_'.$j);
 		$background_attachment = avata_option('background_attachment_'.$j);
 		$full_background_image = avata_option('full_background_image_'.$j);
-		$content_background_color = avata_option('content_background_color_'.$j);
-		$content_background_opacity = avata_option('content_background_opacity_'.$j);
-		$content_box_border_radius = avata_option('content_box_border_radius_'.$j);
 		$padding_top = avata_option('padding_top_'.$j);
 		$padding_bottom = avata_option('padding_bottom_'.$j);
 		$menu_slug      = esc_attr(avata_option('section_id_'.$j ));
@@ -214,9 +215,6 @@ function avata_enqueue_scripts() {
 		
 		if( $full_background_image == 'yes' || $full_background_image == '1' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
-		
-		if( $content_background_color != '' )
-			$css .= ".section-".$item." .container{background-color:".$content_background_color.";opacity:".$content_background_opacity.";border-radius:".$content_box_border_radius.";}";
 		
 		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
 

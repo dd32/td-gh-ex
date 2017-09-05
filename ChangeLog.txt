@@ -2,6 +2,10 @@
 
 == CHANGE LOG == 
 
+= Version 1.2.9 = = 05/09/2017 
+* Add - Added option "Display Categories" for section - blog
+* Fix - Fixed animation issue for section - blog
+
 = Version 1.2.8 = = 03/09/2017 
 * Add - Added option "Enable Animation"
 * Add - Added option "Animation Delay"

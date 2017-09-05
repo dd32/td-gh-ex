@@ -17,7 +17,7 @@
       <h5 class="section-subtitle avata-section_subtitle_1 <?php echo $avata_animation;?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></h5>
     </div>
     <?php }?>
-    <div class="section-content <?php echo $avata_animation;?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>">
+    <div class="section-content avata-section_content_1 <?php echo $avata_animation;?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>">
      <?php echo do_shortcode($section_content);?>
      <div class="content-widgets <?php echo $avata_animation;?>"  data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>">
      <?php dynamic_sidebar("section-1"); ?>
