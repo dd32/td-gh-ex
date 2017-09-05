@@ -15,3 +15,6 @@
 #customize-control-sidebars_widgets-section-banner-2{
 	display:none !important;
 	}
+#sub-accordion-section-sidebar-widgets-section-banner-1 .customize-control-widget_form{
+	display:none !important;
+}

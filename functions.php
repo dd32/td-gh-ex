@@ -6,10 +6,10 @@
 
 function avata_get_option_name(){
 	
-	$themename = get_option( 'stylesheet' );
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-	return $themename;
-	
+	//$themename = get_option( 'stylesheet' );
+	//$themename = preg_replace("/\W/", "_", strtolower($themename) );
+	//return $themename;
+	return 'avata';
 }
 
 function avata_setup(){

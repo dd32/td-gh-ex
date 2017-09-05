@@ -49,6 +49,7 @@ add_action('avata_main__header','avata_main_header');
  */
 
 function avata_featured_header(){
+	
 global $avata_header;
 
 $custom_logo_id = get_theme_mod('custom_logo');
@@ -89,10 +90,7 @@ $html .= '<div class="name-box">
 echo $html;
 			
 }
-
-$sticky_header    = absint( avata_option( 'sticky_header_frontpage'));
-if( $sticky_header == '1')
- 	add_action('avata_featured__header','avata_featured_header');
+	
 
 /**
  * Display frontpage sections option in customizer 

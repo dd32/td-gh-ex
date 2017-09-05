@@ -11,6 +11,8 @@
 
 <body <?php body_class(); ?>>
 <?php
+	$sticky_header   = absint( avata_option( 'sticky_header_frontpage'));
 	do_action( 'avata_header__before' );
-	do_action( 'avata_featured__header');
+	if( $sticky_header =='1' )
+		echo avata_featured_header();
 	do_action( 'avata_header__after' ); 

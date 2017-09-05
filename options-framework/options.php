@@ -646,7 +646,7 @@ array_splice($banner_2_options,3,0,array(
 	));
 
 $avata_lite_sections['section-banner-2'] = array(
-										'name'=> __('Section Video Background Banner(Pro)', 'avata'),
+										'name'=> __('Section Video Background (Pro)', 'avata'),
 										'fields'=> $banner_2_options 
 										);
 
@@ -1279,7 +1279,7 @@ for( $i=1;$i<=2;$i++){
 Hoo::add_config( 'avata', array(
 	'capability'    => 'edit_theme_options',
 	'option_type'   => 'option',
-	'option_name'   => $option_name
+	'option_name'   => 'avata'
 ) );
 
 
@@ -1397,6 +1397,7 @@ Hoo::add_field( 'avata', array(
 	'section'  => 'avata_frontpage_header',
 	'default'  => '',
 	'priority' => 10,
+	//'transport' => 'refresh',
 	) );
 
 Hoo::add_field( 'avata', array(
