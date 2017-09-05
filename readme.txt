@@ -89,6 +89,8 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.54
+ * Design issue of submenu in responsive fixed
 
 Version 1.5.3
  * Updated bxSlider Plugin
