@@ -1,0 +1,47 @@
+=== Best Commerce ===
+
+Contributors: axlethemes
+Requires at least: 4.6
+Tested up to: 4.8.1
+Stable tag: 1.0.0
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Copyright: (c) 2017 Axle Themes
+
+Simple e-commerce WordPress Theme.
+
+== Description ==
+
+Best Commerce is an aesthetically pure and clean and highly customizable, professionally composed and very lightweight and fast loading, responsive WordPress e-commerce theme. It smoothly integrates WooCommerce, one of theme best e-commerce plugin, to make professional and stunning stores. It comes with an eye-catching layout design that will instantly draw the attention of anyone who visits your website. It is designed with strong focus on usability and overall excellent user experience. It exists so that you can speedily and efficiently craft powerful e-Commerce websites across all niches and markets in a matter of minutes, without having to write a line of code.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Changelog ==
+
+= 1.0 - Sep 5 2017 =
+* Initial release
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Font Awesome: http://fontawesome.io/, (c) Dave Gandy, CSS - [MIT](http://opensource.org/licenses/MIT) ; Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
+* Breadcrumb Trail (http://themehybrid.com/plugins/breadcrumb-trail) under GPLv2 license
+* Sidr - https://www.berriart.com/sidr/ [MIT](http://opensource.org/licenses/MIT)
+* Slick - http://kenwheeler.github.io/slick/ [MIT](http://opensource.org/licenses/MIT)
+* TGM - http://tgmpluginactivation.com/ [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* TRT Customizer Pro, https://github.com/justintadlock/trt-customizer-pro, (C) 2016 Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html
+* WordPress Widgets Helper - https://github.com/sksmatt/WordPress-Widgets-Helper-Class [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+== Images ==
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+
+
+* https://www.pexels.com/photo/person-wearing-green-button-up-bottoms-6734/
+* https://www.pexels.com/photo/adult-attractive-beautiful-beauty-413885/
+* https://www.pexels.com/photo/beautiful-dress-elegant-fashion-235508/
+* https://www.pexels.com/photo/man-wearing-white-and-black-legendary-print-t-shirt-157646/
