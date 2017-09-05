@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames Pro\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-07 23:19+0545\n"
-"PO-Revision-Date: 2017-06-07 23:19+0545\n"
+"POT-Creation-Date: 2017-09-05 10:35+0545\n"
+"PO-Revision-Date: 2017-09-05 10:35+0545\n"
 "Last-Translator: Isabel G.R. (Ladypingu) <isasi.gr@gmail.com>\n"
 "Language-Team: Isabel González Reyes <isasi.gr@gmail.com>\n"
 "Language: es_ES\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -552,12 +552,6 @@ msgstr "Menú"
 msgid "Connect"
 msgstr "Conectar"
 
-#: ../inc/catchflames-menus.php:62
-#: ../inc/panel/catchflames-themeoptions-defaults.php:72 ../searchform.php:17
-#: ../searchform.php:19
-msgid "Search"
-msgstr "Buscar"
-
 #: ../inc/catchflames-menus.php:111
 msgid "Primary menu"
 msgstr "Menú Principal"
@@ -654,6 +648,10 @@ msgstr "Área dos del pie de página"
 #: ../inc/catchflames-widgets.php:66
 msgid "Footer Area Three"
 msgstr "Área tres del pie de página"
+
+#: ../inc/panel/catchflames-themeoptions-defaults.php:72 ../searchform.php:19
+msgid "Search"
+msgstr "Buscar"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:145
 msgid "Continue Reading"

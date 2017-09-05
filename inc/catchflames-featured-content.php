@@ -68,10 +68,10 @@ function catchflames_featured_content_display() {
 							if ( !empty( $headline ) || !empty( $subheadline ) ) {
 								$catchflames_featured_content .='<div class="featured-heading-wrap">';
 									if ( !empty( $headline ) ) {
-										$catchflames_featured_content .='<h1 id="featured-heading" class="entry-title">'. $headline .'</h1>';
+										$catchflames_featured_content .='<h1 id="featured-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
 									}
 									if ( !empty( $subheadline ) ) {
-										$catchflames_featured_content .='<p>'. $subheadline .'</p>';
+										$catchflames_featured_content .='<p>' . wp_kses_post( $subheadline ) . '</p>';
 									}
 								$catchflames_featured_content .='</div><!-- .featured-heading-wrap -->';
 							}

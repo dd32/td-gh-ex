@@ -59,7 +59,7 @@ function catchflames_header_top_menu() {
                 </div><!-- #header-social -->
 
                 <div id="header-search-toggle" class="genericon genericon-search">
-                	<a class="assistive-text" href="#header-search-toggle"><?php _e( 'Search', 'catch-flames' );?></a>
+                	<a class="assistive-text" href="#header-search-toggle"><?php esc_html_e( 'Search', 'catch-flames' );?></a>
               	</div>
                 <div id="header-search" class="displaynone">
                     <?php get_search_form(); ?>
