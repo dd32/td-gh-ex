@@ -821,7 +821,9 @@ $gallery_defaults = array(
 			'section_title'=> __('Gallery', 'avata'),
 			'section_subtitle'=> 'Vivamus tincidunt cursus mi pretium tristique',
 			'fullwidth' => '1',
-			'menu_slug' => 'gallery'
+			'autoheight' => '1',
+			'menu_slug' => 'gallery',
+			'padding_bottom' => '0'
 			);
 
 $gallery_options = avata_public_section_options('gallery',$gallery_defaults,false,$args);
@@ -880,7 +882,8 @@ $avata_lite_sections['section-gallery'] = array(
 $team_defaults = array(
 			'section_title'=> __('Our Team', 'avata'),
 			'section_subtitle'=> 'Vivamus tincidunt cursus mi pretium tristique',
-			'menu_slug' => 'team'
+			'menu_slug' => 'team',
+			'background_color' => '#40dff9',
 			);
 
 $team_options = avata_public_section_options('team',$team_defaults,false,$args);
