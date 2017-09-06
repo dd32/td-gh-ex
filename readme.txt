@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.9
+- Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
+
 Version 1.0.8
 - Updated: Customizer theme option styling updated.
 
