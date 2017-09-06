@@ -122,6 +122,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.11
+- Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
+
 Version 1.4.10
 - Updated: Escaping improved in "media" field of framework.
 - Updated: Escaping improved in "slides" field of framework.
