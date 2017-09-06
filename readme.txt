@@ -84,6 +84,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.14
+- Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
+
 Version 1.3.13
 - Updated: 404.php updated to output content directly from within file as opposed to calling on function.
 
