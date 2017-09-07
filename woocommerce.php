@@ -1,8 +1,8 @@
 <?php get_header();
 
-if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
+if (!is_shop()) : ?>
 
-        <article id="title-image-content" itemscope itemtype="http://schema.org/NewsArticle">
+<article id="title-image-content" itemscope itemtype="http://schema.org/NewsArticle">
             
             <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/>
             
@@ -32,18 +32,18 @@ if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
             </header>
             
             <main id="the-article" itemprop="articleBody">
-            
-                <?php edit_post_link('Edit this Post'); ?>
-                
-                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php get_template_part( 'microdata' ); ?><?php endif; endif; ?>
-                
-                <?php the_content(); ?>
 
-                <?php wp_link_pages( array('before' => 'Pages: ', 'after' => '</br>') ); ?>
+                <?php $product = wc_get_product( $wp_query->post ); ?>
+
+                <?php woocommerce_content(); ?>
+
+                <h2>Price: $<?php echo $product->get_regular_price(); ?> <?php if (($product->get_manage_stock() != 0) && ($product->get_stock_status() == 'instock')) : ?><span><?php echo $product->get_stock_quantity(); ?> in Stock</span><?php endif; ?></h2>
+
+                <?php echo apply_filters('the_content', $product->get_description()); ?>
             
             </main>
             
-            <?php if ( function_exists( 'is_cart' ) ) : if(!is_cart() && !is_account_page() && comments_open()) : ?><section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
+            <section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
 <?php if (get_the_category_list() != '') : ?>
     
                 <ul class="post-categories" itemprop="about">
@@ -53,16 +53,7 @@ if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
                     <li>', 'semper-fi-lite' ) ); ?></li>
 
                 </ul>
-    <?php endif; elseif (comments_open()) : ?><section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
-<?php if (get_the_category_list() != '') : ?>
-    
-                <ul class="post-categories" itemprop="about">
-
-                    <li><?php echo get_the_category_list( __( '</li>
-
-                    <li>', 'semper-fi-lite' ) ); ?></li>
-
-                </ul><?php endif; endif; ?>
+    <?php endif; ?>
 
                 <?php if(get_the_tag_list()) { echo get_the_tag_list('<ul class="tag-list" itemprop="keywords">
 
@@ -73,15 +64,44 @@ if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
                 </ul>');} ?>
 
 
-            </section><?php endif; ?>
-<?php if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'page')) : comments_template(); endif; ?>
+            </section>
 
         </article>
 
-<?php endwhile; endif; ?>
-
-<?php if ( function_exists( 'is_checkout' ) ) : if (!is_checkout()) : get_template_part( 'store-front' ); endif; else : get_template_part( 'store-front' ); endif; ?>
-
 <?php get_template_part( 'advertise' ); ?>
+
+<?php else : ?>
+
+    <article id="title-image-content">
+            
+            <header id="title-and-image">
+            
+            <?php if (is_customize_preview()) echo '<div class="customizer-tite-image"></div>'; ?>
+                
+                <img src="<?php echo get_theme_mod('default_header_img'); ?>" class="featured_image" />
+                
+                <h2 itemprop="headline">The Store Front</h2>
+            
+            </header>
+        
+    </article>
+        
+    <?php if ( have_posts() ) : ?>
+
+    <article id="advertise">
+        
+        <?php while ( have_posts() ) : the_post(); ?>
+            
+            <?php wc_get_template_part( 'content', 'product' ); ?>
+        
+        <?php endwhile; // end of the loop. ?>
+        
+        <?php do_action( 'woocommerce_after_shop_loop' ); ?>
+            
+    </article>
+        
+    <?php endif; ?>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>
