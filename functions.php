@@ -58,6 +58,7 @@
 			'bfastmag-top'  => esc_html__( 'Top Menu', 'bfastmag' ),
 			'bfastmag-primary' => esc_html__( 'Primary Menu', 'bfastmag' ),
 			'bfastmag-footer'  => esc_html__( 'Footer Menu', 'bfastmag' ),
+			'social'  => esc_html__( 'Social Menu', 'bfastmag' ),
 		) );
 
 		/*
