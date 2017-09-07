@@ -196,63 +196,63 @@ msgstr ""
 msgid "Medical Icons"
 msgstr ""
 
-#: functions.php:70, tmp/functions.php:70
+#: functions.php:70
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:261, inc/customizer.php:36, tmp/functions.php:261
+#: functions.php:261, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:263, tmp/functions.php:263
+#: functions.php:263
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:272, tmp/functions.php:272
+#: functions.php:272
 msgid "Shop"
 msgstr ""
 
-#: functions.php:274, tmp/functions.php:274
+#: functions.php:274
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:283, inc/customizer.php:40, tmp/functions.php:283
+#: functions.php:283, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:285, tmp/functions.php:285
+#: functions.php:285
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:293, tmp/functions.php:293
+#: functions.php:293
 msgid "Header"
 msgstr ""
 
-#: functions.php:295, tmp/functions.php:295
+#: functions.php:295
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:303, tmp/functions.php:303
+#: functions.php:303
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:305, tmp/functions.php:305
+#: functions.php:305
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:400, tmp/functions.php:400
+#: functions.php:400
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:600, tmp/functions.php:600
+#: functions.php:600
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:605, tmp/functions.php:605
+#: functions.php:605
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:610, tmp/functions.php:610
+#: functions.php:610
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: inc/customizer.php:16, inc/mobilenav/mobilenav.php:13, inc/mobilenav/mobilenav.php:62
+#: inc/customizer.php:16, inc/mobilenav/mobilenav.php:13, inc/mobilenav/mobilenav.php:67
 msgid "Menu"
 msgstr ""
 
@@ -1088,11 +1088,11 @@ msgstr ""
 msgid "Slider: "
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:14, inc/mobilenav/mobilenav.php:63
+#: inc/mobilenav/mobilenav.php:14, inc/mobilenav/mobilenav.php:68
 msgid "Back"
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:64, inc/settings.php:440
+#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69, inc/settings.php:440
 msgid "Close"
 msgstr ""
 
