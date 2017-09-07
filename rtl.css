@@ -1,9 +1,9 @@
- body {
-	   direction: rtl;
-     unicode-bidi: embed;
- }
- .flex-viewport {
-  direction: ltr;
+body {
+   direction: rtl;
+   unicode-bidi: embed;
+}
+.flex-viewport {
+direction: ltr;
 }
 
  .main-navigation a,.site-content,.footer-widgets,.service-content {

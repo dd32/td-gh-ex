@@ -1023,3 +1023,30 @@ add_action( 'after_setup_theme', 'boxy_logo_update_check' );
 		echo $output;
 	}
 }*/
+
+
+
+/* Admin notice */
+/* Activation notice */
+add_action( 'load-themes.php',  'boxy_one_activation_admin_notice'  );
+
+if( !function_exists('boxy_one_activation_admin_notice') ) {
+	function boxy_one_activation_admin_notice() {
+        global $pagenow;
+	    if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+	        add_action( 'admin_notices', 'boxy_admin_notice' );
+	    } 
+	} 
+}    
+
+/**
+ * Add admin notice when active theme
+ *
+ * @return bool|null
+ */
+function boxy_admin_notice() { ?>
+    <div class="updated notice notice-alt notice-success is-dismissible">  
+        <p><?php printf( __( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'boxy' ), 'Boxy', esc_url( admin_url( 'themes.php?page=boxy_upgrade' ) ) ); ?></p>
+    	<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=boxy_upgrade' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Boxy', 'boxy' ); ?></a></p>
+    </div><?php
+}

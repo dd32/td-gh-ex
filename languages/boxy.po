@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Boxy\n"
-"POT-Creation-Date: 2017-02-04 12:04+0530\n"
-"PO-Revision-Date: 2017-02-04 12:05+0530\n"
+"POT-Creation-Date: 2017-09-07 10:28+0530\n"
+"PO-Revision-Date: 2017-09-07 10:28+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 
 #: ../content-none.php:28
-msgid "" 
+msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../content-page.php:25 ../content.php:40 ../content-single.php:45
+#: ../content-page.php:25 ../content.php:40 ../content-single.php:44
 #: ../content-blog.php:49
 msgid "Pages:"
 msgstr ""
@@ -84,39 +84,39 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../functions.php:184
+#: ../functions.php:313
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:192
+#: ../functions.php:321
 msgid "Sidebar Left"
 msgstr ""
 
-#: ../functions.php:194
+#: ../functions.php:323
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../functions.php:202
+#: ../functions.php:331
 msgid "Header Top Right"
 msgstr ""
 
-#: ../functions.php:212
+#: ../functions.php:341
 msgid "Footer 1"
 msgstr ""
 
-#: ../functions.php:221
+#: ../functions.php:350
 msgid "Footer 2"
 msgstr ""
 
-#: ../functions.php:230
+#: ../functions.php:359
 msgid "Footer 3"
 msgstr ""
 
-#: ../functions.php:239
+#: ../functions.php:368
 msgid "Footer 4"
 msgstr ""
 
-#: ../functions.php:248
+#: ../functions.php:377
 msgid "Footer Nav"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgstr ""
 #: ../front-page.php:54
 #, php-format
 msgid ""
-"<h3>Featured Page</h3><p>Featured page description text : use the page "
+"<h3>Responsive Layout</h3><p>Featured page description text : use the page "
 "excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
 "\"> Customizer </a> and Goto Home => Sercice Section -1.</p>"
 msgstr ""
@@ -223,7 +223,7 @@ msgstr ""
 #: ../front-page.php:69
 #, php-format
 msgid ""
-"<h3>Featured Page</h3><p>Featured page description text : use the page "
+"<h3>Retina Ready</h3><p>Featured page description text : use the page "
 "excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
 "\"> Customizer </a> and Goto Home => Sercice Section -2.</p>"
 msgstr ""
@@ -231,7 +231,7 @@ msgstr ""
 #: ../front-page.php:84
 #, php-format
 msgid ""
-"<h3>Featured Page</h3><p>Featured page description text : use the page "
+"<h3>Awesome Sliders</h3><p>Featured page description text : use the page "
 "excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
 "\"> Customizer </a> and Goto Home => Sercice Section -3.</p>"
 msgstr ""
@@ -409,13 +409,25 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
+#: ../includes/template-tags.php:1049
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing %1$s! To fully take advantage of the best "
+"our theme can offer please make sure you visit our <a href=\"%2$s\">Welcome "
+"page</a>"
+msgstr ""
+
+#: ../includes/template-tags.php:1050
+msgid "Get started with Boxy"
+msgstr ""
+
 #: ../includes/theme_upgrade.php:2
 msgid "Page Builder"
 msgstr ""
 
 #: ../includes/theme_upgrade.php:3
 msgid ""
-"boxy Pro supports Page Builder. All our shortcodes can be used as widgets "
+"Boxy Pro supports Page Builder. All our shortcodes can be used as widgets "
 "too. You can drag and drop our widgets with page builder visual editor."
 msgstr ""
 
@@ -425,11 +437,11 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:5
 msgid ""
-"boxy Pro offers many different page layouts so you can quickly and easily "
+"Boxy Pro offers many different page layouts so you can quickly and easily "
 "create your pages with various layout without any hassle!"
 msgstr ""
 
-#: ../includes/theme_upgrade.php:6
+#: ../includes/theme_upgrade.php:6 ../includes/theme_upgrade.php:295
 msgid "Unlimited Sidebar"
 msgstr ""
 
@@ -465,7 +477,7 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:13
 msgid ""
-"boxy Pro loves typography, you can choose from over 500+ Google Fonts and "
+"Boxy Pro loves typography, you can choose from over 500+ Google Fonts and "
 "Standard Fonts to customize your site!"
 msgstr ""
 
@@ -475,7 +487,7 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:15
 msgid ""
-"boxy Pro includes two types of slider. You can use both Flex and Elastic "
+"Boxy Pro includes two types of slider. You can use both Flex and Elastic "
 "sliders anywhere in your site."
 msgstr ""
 
@@ -485,7 +497,7 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:17
 msgid ""
-"boxy Pro has full design/code integration for WooCommerce, your shop will "
+"Boxy Pro has full design/code integration for WooCommerce, your shop will "
 "look as good as the rest of your site!"
 msgstr ""
 
@@ -505,8 +517,8 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:21
 msgid ""
-" you can customize any part of your site quickly and easily! using "
-"Customizer options."
+"Advanced Redux Framework for theme options panel, you can customize any part "
+"of your site quickly and easily!"
 msgstr ""
 
 #: ../includes/theme_upgrade.php:22
@@ -525,7 +537,7 @@ msgstr ""
 
 #: ../includes/theme_upgrade.php:25
 msgid ""
-"boxy Pro is fully responsive and can adapt to any screen size. Resize your "
+"Boxy Pro is fully responsive and can adapt to any screen size. Resize your "
 "browser window to view it!"
 msgstr ""
 
@@ -549,13 +561,13 @@ msgid ""
 "icons all throughout the theme!"
 msgstr ""
 
-#: ../includes/theme_upgrade.php:30
+#: ../includes/theme_upgrade.php:30 ../includes/theme_upgrade.php:265
 msgid "Google Map"
 msgstr ""
 
 #: ../includes/theme_upgrade.php:31
 msgid ""
-"boxy Pro includes Goole Map as shortcode and widget. So, you can use it "
+"Boxy Pro includes Goole Map as shortcode and widget. So, you can use it "
 "anywhere in your site!"
 msgstr ""
 
@@ -575,12 +587,82 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: ../includes/theme_upgrade.php:128
-msgid "Upgrade To boxy Pro"
+#: ../includes/theme_upgrade.php:119
+msgid "Boxy Theme"
 msgstr ""
 
-#: ../includes/theme_upgrade.php:129
-msgid "Theme Upgrade"
+#: ../includes/theme_upgrade.php:121
+msgid "Upgrade To Boxy Pro"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:150
+msgid ""
+"<div class=\"about-text\">  Boxy is uniquely designed, elegant looking "
+"responsive theme. It uses Skeleton Grid system and SASS to keep CSS DRY. It "
+"is multi purpose theme and suited for all types of sites. It comes with "
+"Jigoshop support. It has advanced theme options panel to customize various "
+"parts of site, footer widget area to accommodate 4 widgets.</div>"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:152 ../includes/theme_upgrade.php:302
+#, php-format
+msgid "Buy %1s Pro - $39"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:220
+msgid "Flex Slider"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:225
+msgid "Support"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:230
+msgid "Responsive Design"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:235
+msgid "Custom Logo Option"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:240
+msgid "Social Links"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:245
+msgid "Unlimited color option"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:250
+msgid "Elastic Slider"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:255
+msgid "Page Builder Support"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:260
+msgid "Page Templates"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:270
+msgid "Demo Content"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:275
+msgid "Polylang Compatible"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:280
+msgid "Multiple Portfolio Layouts"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:285
+msgid "Multiple Blog Layouts"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:290
+msgid "Page Animation"
 msgstr ""
 
 #: ../includes/extras.php:63
