@@ -33,7 +33,7 @@ if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
             
             <main id="the-article" itemprop="articleBody">
             
-                <?php edit_post_link('Edit this Post'); ?>
+                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : edit_post_link('Edit this Post'); endif; endif; ?>
                 
                 <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php get_template_part( 'microdata' ); ?><?php endif; endif; ?>
                 

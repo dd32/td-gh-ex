@@ -85,12 +85,14 @@ if (!is_shop()) : ?>
             </header>
         
     </article>
-        
-    <?php if ( have_posts() ) : ?>
 
-    <article id="advertise">
+    <?php $product_posts = new WP_Query( array( 'post_type' => array('product'), 'posts_per_page' => 100 ) ); ?>
         
-        <?php while ( have_posts() ) : the_post(); ?>
+    <?php if ( $product_posts->have_posts() ) : ?>
+
+    <article id="advertises">
+        
+        <?php while ( $product_posts->have_posts() ) : $product_posts->the_post(); ?>
             
             <?php wc_get_template_part( 'content', 'product' ); ?>
         
@@ -99,8 +101,12 @@ if (!is_shop()) : ?>
         <?php do_action( 'woocommerce_after_shop_loop' ); ?>
             
     </article>
+
+    <section id="categories-and-tags" style="background: url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
+
+    </section>
         
-    <?php endif; ?>
+    <?php endif; wp_reset_postdata(); ?>
 
 <?php endif; ?>
 
