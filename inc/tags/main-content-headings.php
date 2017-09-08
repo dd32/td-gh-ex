@@ -282,14 +282,29 @@ if ( ! function_exists( 'applicator_func_main_content_headings' ) ) {
             );
         }
         
+        // Error 404
+        if ( is_404() ) {
+
+            $property_text = esc_html__( 'Error 404', 'applicator' );
+            $value_text = esc_html__( 'Page', 'applicator' );
+            
+            $line_array = array(
+                'css'   => $value_line_term,
+                array(
+                    'sep'       => $GLOBALS['space_sep'],
+                    'txt'       => $value_text,
+                ),
+            );
+        }
+        
         
         // Main Content Heading
         $main_content_heading_obj = applicator_htmlok( array(
                 'name'      => 'Main Content',
                 'structure' => array(
-                    'type'          => 'object',
-                    'subtype'       => 'heading',
-                    'elem'          => 'h2'
+                    'type'      => 'object',
+                    'subtype'   => 'heading',
+                    'elem'      => 'h2',
                 ),
                 'content'   => array(
                     'object'        => array(

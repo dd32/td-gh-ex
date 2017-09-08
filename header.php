@@ -7,8 +7,6 @@
         
         <link rel="profile" href="http://gmpg.org/xfn/11">
         
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-        
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -178,6 +176,7 @@
                             ),
                         ),
                         'css'       => 'wbp-main-desc',
+                        'root_css'  => 'site-description',
                         'title'     => $description,
                         'content'   => array(
                             'object'    => $description,

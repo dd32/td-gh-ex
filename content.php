@@ -12,7 +12,6 @@
                         'type'      => 'object',
                         'elem'      => 'h1',
                         'linked'    => true,
-                        'layout'    => 'inline',
                         'attr'      => array(
                             'a'         => array(
                                 'href'      => esc_url( get_permalink() ),
@@ -162,6 +161,7 @@
                 
                 // Sub-Post
                 if ( is_page_template( 'page-templates/sub-pages.php' ) ) {
+                    
                     $parent = $post->ID;
                     $args = array(
                         'post_type'     => 'page',

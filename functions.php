@@ -9,8 +9,6 @@ if ( file_exists( $applicator_htmlok ) ) { require_once( $applicator_htmlok ); }
 $globals = get_parent_theme_file_path( '/inc/globals.php' );
 if ( file_exists( $globals ) ) { require_once( $globals ); }
 
-$customizer = get_parent_theme_file_path( '/inc/customizer.php' );
-if ( file_exists( $customizer ) ) { require_once( $customizer ); }
 
 $settings = get_parent_theme_file_path( '/inc/settings.php' );
 if ( file_exists( $settings ) ) { require_once( $settings ); }
@@ -78,16 +76,10 @@ if ( file_exists( $post_title ) ) { require_once( $post_title ); }
 $comments = get_parent_theme_file_path( '/inc/functions/get-comments.php' );
 if ( file_exists( $comments ) ) { require_once( $comments ); }
 
-
-
-
 $comments_actions_snippet = get_parent_theme_file_path( '/inc/tags/comments-actions-snippet-cp.php' );
 if ( file_exists( $comments_actions_snippet ) ) {
     require_once( $comments_actions_snippet );
 }
-
-
-
 
 $comments_nav = get_parent_theme_file_path( '/inc/tags/comments-nav.php' );
 if ( file_exists( $comments_nav ) ) { require_once( $comments_nav ); }
@@ -97,6 +89,7 @@ if ( file_exists( $comment ) ) { require_once( $comment ); }
 
 $comment_form = get_parent_theme_file_path( '/inc/functions/comment-form.php' );
 if ( file_exists( $comment_form ) ) { require_once( $comment_form ); }
+
 
 // Template Parts
 $post_content = get_parent_theme_file_path( '/template-parts/post-content.php' );
@@ -132,38 +125,16 @@ $icons = get_parent_theme_file_path( '/inc/functions/icons.php' );
 if ( file_exists( $icons ) ) { require_once( $icons ); }
 
 
+/*
+// Customizer
+$customizer = get_parent_theme_file_path( '/inc/functions/customizer.php' );
+if ( file_exists( $customizer ) ) { require_once( $customizer ); }
+
+$customizer_custom_colors = get_parent_theme_file_path( '/inc/functions/customizer-custom-colors.php' );
+if ( file_exists( $customizer_custom_colors ) ) { require_once( $customizer_custom_colors ); }
+*/
+
+
 // Snap-ons
 $snapons = get_parent_theme_file_path( '/snapons.php' );
 if ( file_exists( $snapons ) ) { require_once( $snapons ); }
-
-
-
-
-
-
-
-/**
- * Display custom color CSS.
- */
-function applicator_func_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
-		return;
-	}
-
-	require_once( get_parent_theme_file_path( '/inc/functions/color-patterns.php' ) );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
-?>
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
-		<?php echo applicator_func_custom_colors_css(); ?>
-	</style>
-<?php }
-add_action( 'wp_head', 'applicator_func_colors_css_wrap' );
-
-
-
-
-
-add_action( 'wp_enqueue_scripts', function () {
-    $js = 'wp.customize.selectiveRefresh.Partial.prototype.createEditShortcutForPlacement = function() {};';
-    wp_add_inline_script( 'customize-selective-refresh', $js );
-} );
