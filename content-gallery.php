@@ -18,7 +18,7 @@
 				
 				<?php if ( has_post_thumbnail() ) : ?>
 
-					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+					<?php the_post_thumbnail( 'akyl-thumbnail' ); ?>
 
 				<?php else : ?>
 

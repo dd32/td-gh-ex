@@ -17,7 +17,7 @@
 
 				<div class="post-thumb">
 					<a class="text-center" href="<?php the_permalink(); ?>" rel="bookmark"  title="<?php the_title_attribute(); ?>" >
-						<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+						<?php the_post_thumbnail( 'akyl-thumbnail' ); ?>
 					</a>
 
 			<?php else: ?>

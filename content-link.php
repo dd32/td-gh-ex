@@ -16,14 +16,9 @@
 		<div class="thumb-link">
 			<?php
 				
-				// Fetch post content
-				$content = get_post_field( 'post_content', get_the_ID() );
-				
-				// Get content parts
-				$content_parts = get_extended( $content );
-				
 				// Output part before <!--more--> tag
-				echo '<i class="fa fa-link" ></i> ' . $content_parts['main'];
+				$befortitle = '<a href="' . esc_url( akyl_get_link_url() ) . '" rel="bookmark"><i class="fa fa-link" ></i> ';
+				the_title( $befortitle, '</a>' );
 			
 			?>
 			<div class="post-meta-1">
@@ -35,11 +30,7 @@
 		</div>
 		
 		<div class="post-content">
-			<header>
-				<h2 class="post-title">
-					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a>
-				</h2>
-			</header>
+		
 			<div class="post-main">
 			
 				<div class="post-meta-2 tags"></div>
@@ -49,7 +40,7 @@
 						$content = $post->post_content;
 						$pos = strpos($content, '<!--more-->');
 						if ( $pos ) {
-							echo mb_strimwidth($content_parts['extended'], 0, 100) . '<strong>. . .</strong>';
+							the_content('');
 						}else{
 							the_excerpt();
 						}

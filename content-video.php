@@ -13,23 +13,15 @@
 	<?php if( is_sticky() ) { ?> <span class="sticky-post"><i class="fa fa-paperclip"></i></span> <?php } ?>
 	<div class="post-wrapper">
 		
-		<div class="thumb-video">
+		<?php
+			$content = apply_filters( 'the_content', get_the_content() );
+			$media = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
 
-			<?php
-				
-				// Fetch post content
-				$content = get_post_field( 'post_content', get_the_ID() );
-				
-				// Get content parts
-				$content_parts = get_extended( $content );
-				
-				// Output part before <!--more--> tag
-				echo wp_oembed_get( $content_parts['main'] );
-				
-			?>
+			if ( ! empty($media) ) {
+				printf( '<div class="thumb-video">%s</div>', $media[0] );
+			}
+		?>
 
-		</div>
-		
 		<div class="post-content">
 			<div class="nothumb">
 				<div class="post-meta-1">
@@ -49,13 +41,7 @@
 
 				<div class="post-excerpt">
 					<?php 
-						$content = $post->post_content;
-						$pos = strpos($content, '<!--more-->');
-						if ( $pos ) {
-							echo mb_strimwidth($content_parts['extended'], 0, 200) . '<strong>. . .</strong>';
-						}else{
-							the_excerpt();
-						}
+						the_excerpt();
 					?>
 				</div>
 

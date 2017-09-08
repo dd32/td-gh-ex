@@ -19,7 +19,7 @@
 
 				<div class="page-title">
 					<!-- Display the title -->
-					<h6>Search Results For: <?php echo get_search_query(); ?></h6>
+					<h6><?php echo __('Search Results For', 'akyl') . ' : ' . get_search_query(); ?></h6>
 				</div> <!-- /page-title -->
 
 				<div class="row blog-masonry">
@@ -65,7 +65,7 @@
 
 			<div class="page-title">
 				<!-- Display the title -->
-				<h6>Search Results For: <?php echo get_search_query(); ?></h6>
+				<h6><?php echo __('Search Results For', 'akyl') . ' : ' . get_search_query(); ?></h6>
 			</div> <!-- /page-title -->
 
 			<!-- post content -->
@@ -79,7 +79,7 @@
 						<div class="post-content">
 							<div class="post-main">
 
-								<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+								<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'akyl' ); ?></p>
 
 								<?php get_search_form(); ?>
 

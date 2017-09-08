@@ -17,7 +17,7 @@
 
 				<div class="post-thumb">
 					<a class="text-center" href="<?php the_permalink(); ?>" rel="bookmark"  title="<?php the_title_attribute(); ?>" >
-						<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+						<?php the_post_thumbnail( 'akyl-thumbnail' ); ?>
 					</a>
 
 			<?php else: ?>
@@ -41,9 +41,8 @@
 				</h2>
 			</header>
 			<div class="post-main">
-				<div class="post-meta-2 tags">
-					<?php akyl_post_meta( 'category' ); ?>
-				</div>
+			
+				<div class="post-meta-2 tags"></div>
 
 				<div class="post-excerpt">
 					<?php 

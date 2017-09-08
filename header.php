@@ -26,10 +26,10 @@
 		<div class="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php 
-				if ( get_option( 'site_logo_image' ) !='' ) {
+				if ( get_theme_mod( 'custom_logo' ) !='' ) {
 					$site_icon = esc_url( get_site_icon_url(32) );
-					$site_icon = get_option( 'site_logo_image' );
-					echo '<img src="' . $site_icon . '" />';
+					$site_icon = get_theme_mod( 'custom_logo' );
+					the_custom_logo();
 				}else{
 					echo '<span class="first-letter">' . substr( get_bloginfo('name'), 0, 1 ) . '</span>';
 				}
@@ -92,6 +92,6 @@
 		</div>
 	</header>
 	<!--===== End Header Area ======-->
-	
-	<!-- background image -->
-	<div class="bg-image" style="background-image: url('<?php echo get_option('background_image'); ?>');"></div>
+
+	<!-- background overlay -->
+	<div class="bg-overlay"></div>

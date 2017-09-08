@@ -1,7 +1,7 @@
 /*	
  * Theme Name: Akyl
  * Text Domain: akyl
- * Version: 1.0
+ * Version: 1.0.1
  * Description: Akyl is a clean and responsive masonry style blog theme. It features Responsive, Support Post Formats, Social Menu, Customization Option, Editor Styling and Translation-Ready Code
  * Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, threaded-comments, translation-ready, grid-layout
  * Author: Akila Thiwanka
@@ -447,7 +447,8 @@ input[type="text"] {
 }
 
 .logo img {
-	height: 40px;
+	height: 60px;
+	width: auto;
 }
 
 .logo a .first-letter {
@@ -503,7 +504,6 @@ input[type="text"] {
 	background-color: transparent;
 	border: 0 none;
 	padding: 15px 10px 14px 10px;
-	outline: none;
 }
 
 .toggle-btn .icon-bar {
@@ -618,7 +618,7 @@ input[type="text"] {
 	line-height: 20px;
 }
 
-.nav li:hover >.sub-menu, .nav li:hover >.children {
+.nav li:hover >.sub-menu, .nav a:focus + .sub-menu, .nav li:hover >.children, .nav a:focus + .children {
 	visibility: visible;
 	opacity: 1;
 	top: 55px;
@@ -671,7 +671,7 @@ input[type="text"] {
 * ----------------------------------------------------------------------------------------
 */
 
-.bg-image {
+.bg-overlay {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
@@ -683,35 +683,17 @@ input[type="text"] {
 	left: 0;
 }
 
-.bg-image::after {
+.bg-overlay::after {
 	content: '';
-	display: block;
-	position: absolute;
-	background: rgba(8, 33, 60, 0.7);
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 0;
+    display: block;
+    position: fixed;
+    background: rgba(8, 33, 60, 0.6);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
 } 
-
-.bg-image::before {
-	content: "";
-	display: block;
-	height: 300px;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, #08213c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,#08213c));
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,#08213c 100%);
-	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,#08213c 100%);
-	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,#08213c 100%);
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #08213c 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#08213c',GradientType=0 );
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 0;
-}
 
 #blog-grid article {
 	margin-bottom: 30px;
@@ -1372,7 +1354,6 @@ blockquote::before, blockquote::after{
 }
 
 .comment-form input[type="text"]:focus, .comment-form input[type="email"]:focus, .comment-form textarea:focus {
-    outline: 0;
     box-shadow: none;
 }
 
@@ -1460,8 +1441,22 @@ blockquote::before, blockquote::after{
 	z-index: -1;
 }
 
+/* Audio Post - Player css */
+.mejs-container {
+  height: 60px !important;
+}
+
+.mejs-controls, .mejs-mediaelement {
+  background: #041323 !important;
+  height: 45px !important;
+}
+
+.mejs-controls button::before {
+  color: #fff !important;
+}
+
 /* image post */
-.format-image h2 {
+.format-image .has-thumb  h2 {
 	position: absolute;
 	text-align: center;
 	width: 100%;
@@ -1767,6 +1762,7 @@ footer a:hover {
 
 #footer .social-icons {
 	float: right;
+	margin-bottom: 0;
 }
 
 #footer .social-icons a {
@@ -1888,5 +1884,3 @@ footer a:hover {
 .logged-in .logo, .logged-in .main-menu {
 	margin-top: 32px;
 }
-
-

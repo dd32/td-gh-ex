@@ -29,11 +29,10 @@ if ( ! function_exists('akyl_theme_setup') ) {
 
 		/* Add support for post thumbnails. */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'post-thumbnail', 720, 999);
-		add_image_size( 'post-featured', 1200, 999);
+		add_image_size( 'akyl-thumbnail', 720, 999);
 
 		/* Add Post formats */
-		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+		add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'link', 'quote', 'video' ) );
 
 		/* Add support for title_tag */
 		add_theme_support('title-tag');
@@ -42,33 +41,19 @@ if ( ! function_exists('akyl_theme_setup') ) {
 		register_nav_menus( array( 
 			'main-menu' => __( 'Main menu', 'akyl' )
 		) );
-
-		/* Add author social profile */
-		function akyl_new_contactmethods( $contactmethods ) {
-			// Add Facebook
-			$contactmethods['facebook'] = 'Facebook';
-			// Add Twitter
-			$contactmethods['twitter'] = 'Twitter';
-			// Add google plus
-			$contactmethods['gplus'] = 'Google Plus';
-			// Add dribble
-			$contactmethods['dribbble'] = 'Dribbble';
-			// Add instagram
-			$contactmethods['instagram'] = 'Instagram';
-
-			return $contactmethods;
-		}
-
-		add_filter( 'user_contactmethods' , 'akyl_new_contactmethods' ,10,1);
-
 	}
 	add_action( 'after_setup_theme', 'akyl_theme_setup' );
 }
 
-function add_id_and_classes_to_page_menu( $ulclass ) {
+
+/**
+ * Modify default menu
+ */
+function akyl_modify_default_menu( $ulclass ) {
   return preg_replace( '/<ul>/', '<ul class="nav navbar-nav nav-menu">', $ulclass, 1 );
 }
-add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );
+add_filter( 'wp_page_menu', 'akyl_modify_default_menu' );
+
 
 /* ------------------------------------
 /* 3. WIDGET AREA
@@ -114,7 +99,7 @@ if ( ! function_exists('akyl_post_meta') ) {
 	function akyl_post_meta( $type = 'tags', $id = '' ) {
 		/* post date */
  		if ( $type == 'date' ) {
- 			echo '<a href="' . get_the_permalink() . ' rel="bookmark" ">';
+ 			echo '<a href="' . get_the_permalink() . '" rel="bookmark" >';
  			echo '<span id="time"><i class="fa  fa-clock-o"></i> ' . get_the_date() . '</span>';
  			echo '</a>';
  		}
@@ -241,24 +226,35 @@ function load_social_links( $ele = '' ) {
 }
 
 
+/**
+ * return first url from a post
+ * @return string URL
+ */
+function akyl_get_link_url() {
+	$content = get_the_content();
+	$has_url = get_url_in_content( $content );
+
+	return ( $has_url && has_post_format( 'link' ) ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+}
+
 // Change the length of excerpts
-function custom_excerpt_length( $length ) {
+function akyl_custom_excerpt_length( $length ) {
 	return 30;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'akyl_custom_excerpt_length', 999 );
 
 // Add more-link ( [...] to . . . )
-function new_excerpt_more( $more ) {
+function akyl_excerpt_more( $more ) {
 	return '<strong>. . .</strong>';
 }
-add_filter( 'excerpt_more', 'new_excerpt_more' );
+add_filter( 'excerpt_more', 'akyl_excerpt_more' );
 
 
 // Use full size gallery images for the next gallery shortcode: 
 function akyl_shortcode_atts_gallery( $out )
 {
     remove_filter( current_filter(), __FUNCTION__ );
-    $out['size'] = 'post-thumbnail';
+    $out['size'] = 'akyl-thumbnail';
     return $out;
 }
 add_filter( 'shortcode_atts_gallery', 'akyl_shortcode_atts_gallery' );
@@ -338,9 +334,8 @@ require get_template_directory() . '/inc/customizer.php' ;
 
 
 /*
-	Uncomment following code if needed to remove version number from static files ( css, js)
- */
-
+* Uncomment following code if needed to remove version number from static files ( css, js)
+*/
 /*
 
 // Remove WP Version From Styles	
@@ -354,5 +349,4 @@ function sdt_remove_ver_css_js( $src ) {
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
-
 */
