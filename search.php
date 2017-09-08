@@ -7,8 +7,8 @@
  * @package bellini
  */
 get_header(); ?>
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area">
+		<section id="main" class="site-main">
 		<div class="row bellini__canvas">
 		<div itemscope itemtype="https://schema.org/SearchResultsPage">
 
@@ -51,7 +51,7 @@ get_header(); ?>
 		 ?>
 		</div>
 		</div>
-		</main><!-- #main -->
 	</section><!-- #primary -->
+		</main><!-- #main -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

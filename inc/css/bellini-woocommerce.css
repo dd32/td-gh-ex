@@ -468,7 +468,7 @@
 .featured__review-card--left img {
     margin-bottom: 6%;
     border-radius: 50%;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
 }
 
@@ -480,6 +480,7 @@
 .featured__review__rating,
 .featured__review__author {
     display: block;
+    text-align: left;
 }
 
 .product-featured__add-cart {
@@ -1250,4 +1251,32 @@ table.cart td.actions .coupon {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
     z-index: 99 !important;
+}
+
+.featured__review__rating .star-rating::before {
+    content: '\73\73\73\73\73';
+    color: #d3ced2;
+    float: left;
+    top: 0;
+    left: 0;
+}
+
+.featured__review__rating .star-rating span::before {
+    content: '\53\53\53\53\53';
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.featured__review__rating .star-rating {
+    color: #f2cb64;
+    margin: .5em 4px 0 0;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 1em;
+    line-height: 1;
+    font-size: 1em;
+    width: 5.4em;
+    font-family: star;
 }

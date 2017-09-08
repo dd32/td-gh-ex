@@ -13,8 +13,8 @@
  */
 global $bellini;
 get_header(); ?>
-<div id="primary" class="content-area">
-<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area">
+<div id="main" class="site-main" itemscope="itemscope" itemtype="http://schema.org/Blog">
 <section class="bellini__canvas">
 		<?php
 		if ( have_posts() ) :
@@ -53,7 +53,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 		endif;
 		wp_reset_postdata(); ?>
-		</main><!-- #main -->
 	</div><!-- #primary -->
+	</main><!-- #main -->
 <?php
 get_footer(); ?>

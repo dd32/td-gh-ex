@@ -10,8 +10,8 @@ get_header();?>
 <div class="bellini__canvas">
 <div class="row">
 <?php get_sidebar('left');?>
-	<div id="primary" class="content-area single-post__content <?php bellini_sidebar_content_class(); ?>">
-		<main id="main" class="site-main row" role="main" itemscope itemprop="mainEntityOfPage">
+	<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area single-post__content <?php bellini_sidebar_content_class(); ?>">
+		<div id="main" class="site-main row">
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php if( 'jetpack-testimonial' === get_post_type() ){
@@ -24,8 +24,8 @@ get_header();?>
 
 			?>
 		<?php endwhile; // End of the loop. ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+	</main>
 	<?php get_sidebar(); ?>
 </div>
 </div>

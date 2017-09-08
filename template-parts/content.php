@@ -8,7 +8,7 @@
  */
 global $bellini;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
 <div class="row">
 <div class="blog__post col-md-12">
 

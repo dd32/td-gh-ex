@@ -165,13 +165,13 @@ function bellini_comment_count(){
 function bellini_post_author() { ?>
 
   <p class="post-meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <span class="vcard author author_name" itemprop="name" >
-  <span class="fn">
-    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
-    <?php the_author(); ?>
-    </a>
-  </span>
-  </span>
+    <span class="vcard author author_name" itemprop="name">
+    <span class="fn">
+      <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
+        <?php the_author(); ?>
+      </a>
+    </span>
+    </span>
   </p>
 
 <?php

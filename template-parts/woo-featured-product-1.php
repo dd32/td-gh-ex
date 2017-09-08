@@ -55,7 +55,7 @@ $woocommerce_loop['loop']++;
 		foreach($comments as $comment) :?>
 		<div class="col-sm-12 product-featured__review" itemprop="review" itemscope itemtype="http://schema.org/Review">
 			<div class="product-featured__review--centered clearfix">
-				<div class="col-sm-4 text-center featured__review-card--left">
+				<div class="col-sm-3 text-center featured__review-card--left">
 					<?php echo get_avatar( $comment, 60 ); ?>
 					<span class="featured__review__author" itemprop="author"><?php echo $comment->comment_author;?></span>
 					<span class="featured__review__rating">
@@ -71,7 +71,7 @@ $woocommerce_loop['loop']++;
 					?>
 					</a></span>
 				</div>
-				<div class="col-sm-8 text-center featured__review-card--right">
+				<div class="col-sm-9 text-center featured__review-card--right">
 					<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
 						<p class="featured__review__content" itemprop="description">
 						<?php echo $comment->comment_content;?></p>

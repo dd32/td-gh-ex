@@ -11,7 +11,7 @@
 	global $post;
 	$author_id=$post->post_author;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class("post-item post-item--l5 col-sm-4");?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class("post-item post-item--l5 col-sm-4");?>>
 <div class="blog__post--l5 row">
 	<div class="col-xs-12 post-content--l5">
 		<?php bellini_category(); ?>

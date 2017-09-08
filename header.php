@@ -14,7 +14,7 @@ $bellini = bellini_option_defaults();
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?>>
 <div id="page" class="hfeed site website-width">
 
 <?php
