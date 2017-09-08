@@ -5,7 +5,7 @@ Theme URI: https://themecountry.com/basepress
 Author: ThemeCountry
 Author URI: https://themecountry.com
 Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basepress
@@ -2718,9 +2718,8 @@ blockquote {
   padding: 0.8em;
   quotes: "“" "”" "‘" "’";
   margin: 0 0 1em 0; }
-
-blockquote p::last-child {
-  margin-bottom: 0; }
+  blockquote p:last-child {
+    margin-bottom: 0; }
 
 address {
   margin: 0 0 1em; }
@@ -3182,7 +3181,7 @@ li > ul, li > ol {
   width: 100%;
   background: #fff;
   margin: 0 0 30px 0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f2f2f2;
   box-sizing: border-box;
   padding: 32px 40px 40px;
   word-wrap: break-word; }
@@ -3297,7 +3296,7 @@ li > ul, li > ol {
   color: #666666;
   margin-right: 26px; }
 
-.entry-header > span::last-child {
+.entry-header > span:last-child {
   margin-right: 0; }
 
 .entry-header > span::after {
@@ -3328,8 +3327,8 @@ li > ul, li > ol {
   display: inline-block;
   padding-right: 16px; }
 
-.entry-footer > span::last-child,
-.entry-meta > span::last-child {
+.entry-footer > span:last-child,
+.entry-meta > span:last-child {
   padding-right: 0; }
 
 .entry-footer > span::after,
@@ -3346,8 +3345,8 @@ li > ul, li > ol {
   content: ':';
   right: -10px; }
 
-.entry-footer > span::last-child::after,
-.entry-meta > span::last-child::after {
+.entry-footer > span:last-child:after,
+.entry-meta > span:last-child:after {
   content: ''; }
 
 .entry-footer span a {
@@ -3604,8 +3603,10 @@ object {
   .main-navigation ul li .arrow-main-menu i {
     font-size: 16px; }
 
-.main-navigation ul > li::last-child > ul li:hover > ul {
-  left: -230px; }
+.main-navigation ul > li:last-child > ul {
+  right: 0; }
+  .main-navigation ul > li:last-child > ul li:hover > ul {
+    left: -230px; }
 
 .main-navigation ul ul {
   display: none;
@@ -3712,7 +3713,7 @@ object {
   margin: 0 0 30px 0;
   padding: 40px;
   float: left;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f2f2f2;
   box-sizing: border-box; }
 
 .single_post .entry-header {
@@ -3786,16 +3787,17 @@ object {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: normal; }
+  .post-navigation .nav-links a:before {
+    font-family: FontAwesome;
+    position: absolute; }
+  .post-navigation .nav-links a:hover {
+    text-decoration: underline; }
 
-.post-navigation .nav-links a::before {
-  font-family: FontAwesome;
-  position: absolute; }
-
-.post-navigation .nav-previous a::before {
+.post-navigation .nav-links .nav-previous a:before {
   content: '\f060';
   left: 0; }
 
-.post-navigation .nav-next a::before {
+.post-navigation .nav-links .nav-next a:before {
   content: '\f061';
   right: 0; }
 
@@ -3828,7 +3830,7 @@ object {
   margin-bottom: 25px;
   box-sizing: border-box; }
 
-.comment-list > li::last-child {
+.comment-list > li:last-child {
   margin-bottom: 0; }
 
 .comments-area ol {
@@ -3893,7 +3895,7 @@ object {
 .comment .comment-respond {
   margin-top: 25px; }
 
-.comment-list .children li::last-child {
+.comment-list .children li:last-child {
   margin-bottom: 0; }
 
 .comment-form-wrap {
@@ -4015,7 +4017,7 @@ input#submit:hover {
   margin: 0 0 30px 0;
   padding: 40px;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f2f2f2;
   box-sizing: border-box; }
 
 .widget-title {
@@ -4034,9 +4036,6 @@ input#submit:hover {
   padding-bottom: 12px;
   border-bottom: 1px solid #eaeaea; }
 
-.widget li::last-child {
-  border-bottom: 0; }
-
 .widget li a:hover {
   text-decoration: underline; }
 
@@ -4048,7 +4047,7 @@ input#submit:hover {
 .widget ul ul li {
   margin-left: 15px; }
 
-.widget ul ul li::last-child {
+.widget ul ul li:last-child {
   margin-bottom: 0;
   padding-bottom: 0; }
 
@@ -4187,7 +4186,7 @@ input:input-placeholder {
   position: relative;
   margin-right: 5px; }
 
-.post-meta span::last-child {
+.post-meta span:last-child {
   margin-right: 0; }
 
 .tc-sidebar-widget li p {
@@ -4317,7 +4316,7 @@ input:input-placeholder {
   right: -6px;
   font-size: 14px; }
 
-.footer-menu li::last-child::after {
+.footer-menu li:last-child::after {
   content: ''; }
 
 .footer-menu li a {

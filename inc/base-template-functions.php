@@ -642,7 +642,7 @@ function basepress_post_metadata() {
 	));
 
 
-	foreach ( $metadata as $md) {
+	foreach ( $metadata as $md ) {
 
 		switch ( $md ) {
 			case 'date':

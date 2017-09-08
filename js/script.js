@@ -15,28 +15,31 @@ jQuery.fn.exists = function(callback) {
 			this.scrollTop();
 		},
 		mainmenu: function() {
-				$menu = $('.main-navigation > ul li.menu-item-has-children > a');
-				//$menu.append('<span class="arrow-main-menu"><i class="fa fa-angle-down"></i></span>');
+			$menu = $('.main-navigation > ul li.menu-item-has-children > a');
 
-				$('.main-navigation ul.sub-menu').hide();
-				var time;
-				var delay = 100;
-				$('.main-navigation li').hover(
-						function() {
-							var $this = $(this);
-							time = setTimeout(function(){ 
-							$this.children('ul.sub-menu').slideDown(600); 
-							}, delay);
-							
-						},
-						function() {
-							$(this).children('ul.sub-menu').hide();
-							clearTimeout(time);
-						}
-					);
+			$('.main-navigation ul.sub-menu').hide();
+			var time;
+			var delay = 100;
+			
+			$('.main-navigation li').hover(
+				function() {
+					var $this = $(this);
+
+					time = setTimeout(function(){ 
+						$this.children('ul.sub-menu').slideDown(600); 
+					}, delay);
+				},
+
+				function() {
+					$(this).children('ul.sub-menu').hide();
+					clearTimeout(time);
+				}
+			);
 
 		},
+
 		mobileMenu: function() {
+			
 			var $primary_menu = $('#primary-navigation');
 			var $secondary_menu = $('#category-navigation');
 			var $first_menu = '';
@@ -56,17 +59,16 @@ jQuery.fn.exists = function(callback) {
 					$first_menu = $secondary_menu;
 				}
 			}
+
 			var menu_wrapper = $first_menu
 			.clone().attr('class', 'mobile-menu')
 			.wrap('<div id="mobile-menu-wrapper" class="mobile-menu-wrapper mobile-only"></div>').parent().hide()
 			.appendTo('body');
 
-
 			// Add items from the other menu
 			if ($second_menu.length) {
 				$second_menu.clone().appendTo('#mobile-menu-wrapper');
 			}
-			
 			
 			$('.menu-toggle').click(function(e) {
 				e.preventDefault();
@@ -85,13 +87,11 @@ jQuery.fn.exists = function(callback) {
 				$('#mobile-menu-wrapper').addClass('wpadminbar-active');
 			}
 
-
 			$('.arrow-menu').on('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 				var subMenuOpen = $(this).hasClass('sub-menu-open');
 				
-
 				if ( subMenuOpen ) {
 					$(this).removeClass('sub-menu-open');
 					$(this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
@@ -104,8 +104,8 @@ jQuery.fn.exists = function(callback) {
 
 			});
 		
+		},
 
-		},		
 		scrollTop : function() {
 			$(".back-to-top").click(function () {
 				$('html, body').animate({scrollTop : 0},800);
@@ -113,14 +113,21 @@ jQuery.fn.exists = function(callback) {
 			});
 
 			$(document).scroll ( function() {
+				
 				var topPositionScrollBar = $(document).scrollTop();
 				if ( topPositionScrollBar < "150" ) {
+					
 					$(".back-to-top").fadeOut();
+				
 				} else {
+
 					$(".back-to-top").fadeIn();
+
 				}
+
 			});
 		},
+
 		skipLinkFocusFix: function() {
 			var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 			is_opera	= navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
