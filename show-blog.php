@@ -1,20 +1,40 @@
-<?php get_header(); ?>
-    <article id="title-image-content">
+<?php
 
-        <header id="title-and-image">
-            
-            <img src="<?php echo get_theme_mod('default_header_img'); ?>" class="featured_image" />
+$remove_from_blog = get_the_ID();
 
-            <h2 itemprop="headline"><?php printf( __( 'Search Results for: %s', 'semper-fi-lite' ), '<i>' . get_search_query() . '</i>' ); ?></h2>
+global $paged;
+global $wp_query;
 
-        </header>
+if ( get_query_var('paged') ) :
+
+    $paged = get_query_var('paged');
+
+elseif ( get_query_var('page') ) :
     
-<?php if ( have_posts() ) : ?>
+    // 'page' is used instead of 'paged' on Static Front Page
+    $paged = get_query_var('page');
+
+else :
+
+    $paged = 1;
+
+endif;
+
+$wp_query = new WP_Query( array(
+    'order' => 'DESC',
+    'orderby' => 'date',
+    'post_status' => 'publish',
+    'post_type' => 'post',
+    'posts_per_page' => get_option('posts_per_page'),
+    'post__not_in' => array($remove_from_blog),
+    'paged' => $paged));
+
+if ( $wp_query->have_posts() ) : ?>
 
         <section id="the-posts">
 
 <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php if (!has_post_thumbnail()) : ?>class="the-blog no-post-thumbnail"<?php else : ?>class="the-blog"<?php endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
+            <article id="post-<?php the_ID(); ?>" <?php if (!has_post_thumbnail()) : post_class(array('the-blog','no-post-thumbnail')); else : post_class(array('the-blog'));  endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
 
                 <?php edit_post_link('Edit this Post'); ?>
                 
@@ -83,15 +103,14 @@
         <section id="categories-and-tags" style="background: url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
             
             <?php if (is_customize_preview()) echo '<div class="customizer-categories-and-tags"></div>'; ?>
+
+<?php if ($wp_query->max_num_pages > 1) : // check if the max number of pages is greater than 1  ?>
             
-            <?php if ( get_next_posts_link( 'Older Search Results' )) : ?><h3 class="older-blog-posts"><?php next_posts_link( 'Older Search Results' ); // display older posts link ?></h3><?php endif; ?>
+            <?php if ( get_next_posts_link( 'Older News', $wp_query->max_num_pages )) : ?><h3 class="older-blog-posts"><?php next_posts_link( 'Older News', $wp_query->max_num_pages ); // display older posts link ?></h3><?php endif; ?>
             
-            <?php if ( get_previous_posts_link( 'Newer Search Results' )) : ?><h3 class="newer-blog-posts"><?php previous_posts_link( 'Newer Search Results' ); // display newer posts link ?></h3><?php endif; ?>
+            <?php if ( get_previous_posts_link( 'Newer News' )) : ?><h3 class="newer-blog-posts"><?php previous_posts_link( 'Newer News' ); // display newer posts link ?></h3><?php endif; ?>
+<?php endif; ?>
 
         </section>
 
-<?php endif; ?>
-
-<?php get_template_part( 'advertise' ); ?>
-
-<?php get_footer(); ?>
+<?php wp_reset_postdata(); endif; ?>

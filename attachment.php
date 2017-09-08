@@ -1,54 +1,42 @@
-<?php get_header();
+<?php get_header(); ?>
 
-    if (have_posts()) :
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        while (have_posts()) : the_post(); ?>
-
-            <div id="post-<?php the_ID(); ?>" <?php if ( has_post_thumbnail()) : post_class('has_featured_image'); else : post_class(); endif;?>>
-
-                <?php if ( get_theme_mod('display_post_title_setting') == 'off' ) : else : ?>
-
-                    <h5 class="post_title"><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M jS') ?><br/><?php the_time('Y') ?></time><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_adventure'); } ?></a></h5>
-
-                <?php endif; ?>
-
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail('small_featured', array( 'class' => "featured_image")); ?>
-                </a>
-				
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-				    <?php the_excerpt(); ?>
-                </a>
+        <article id="title-image-content">
+            
+            <header id="title-and-image">
+            
+                <img src="<?php echo wp_get_attachment_image_url( get_the_ID(), 'full' ); ?>" class="featured_image" />
                 
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-				    Continue Reading &#8594;
-                </a>
+                <h2><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
+            
+            </header>
+            
+            <main id="the-article">
+                
+                <p style="text-align: center;"><img src="<?php echo wp_get_attachment_image_url( get_the_ID(), 'full' ); ?>" class="featured_image" /></p>
+            
+                <p style="text-align: center;"><?php $images = array();
+                $image_sizes = get_intermediate_image_sizes();
+                array_unshift( $image_sizes, 'full' );
+                foreach( $image_sizes as $image_size ) {
+                    if (($image_size == 'full') || ($image_size == 'medium') || ($image_size == 'small') || ($image_size == 'thumbnail')) {
+                    $image = wp_get_attachment_image_src( get_the_ID(), $image_size );
+                    $name = $image_size . ' (' . $image[1] . 'x' . $image[2] . ')';
+                    $images[] = '<a href="' . $image[0] . '">' . ucfirst(strtolower($name)) . '</a>';}}
 
-            </div>
+                echo implode( ' | ', $images ); ?></p>
+            
+            </main>
 
-            <?php if (!is_home() && (get_theme_mod('comments_setting') != 'none')) :
+        </article>
+        
+<?php endwhile; endif; ?>
 
-                comments_template();
+<?php get_template_part( 'store-front' ); ?>
 
-            endif;
+<?php get_template_part( 'show-blog' ); ?>
 
-        endwhile;
+<?php get_template_part( 'advertise' ); ?>
 
-    endif; ?>
-
-<?php if ( (get_next_posts_link() != '') || (get_previous_posts_link() != '') ) : ?>
-
-    <div class="stars_and_bars">   
-        <span class="left"><?php next_posts_link( '&#8249; ' . __('Older Posts', 'adventure_localizer')); ?></span>
-        <span class="right"><?php previous_posts_link( __('Newer Posts', 'adventure_localizer') . ' &#8250;'); ?></span>
-    </div>
-
-<?php else : ?>
-
-    <div class="stars_and_bars"></div>
-
-<?php endif;
-
-if (semperfi_is_sidebar_active('widget')) get_sidebar();
-
-get_footer(); ?>
+<?php get_footer(); ?>
