@@ -3,10 +3,12 @@
  * Template Name: Front Page
  * The template used for displaying fullwidth page content in fullwidth.php
  *
+ * @version 1.3.7
+ * @since   1.0.0
  * @package basicstore
  */
  // check to see if Site Sidebar is published to adjust bootstrap column size
-$bootstrap_col_size = is_active_sidebar( 'sidebar-site' ) ? "col-md-9" : "col-md-12";
+$bootstrap_col_size = is_active_sidebar( 'sidebar-frontpage' ) ? "col-md-9" : "col-md-12";
 
 get_header(); ?>
 
@@ -56,5 +58,4 @@ get_header(); ?>
 
 <?php
 get_sidebar();
-
 get_footer();

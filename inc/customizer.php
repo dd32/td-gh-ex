@@ -2,11 +2,16 @@
 /**
  * basic_store Theme Customizer
  *
+ * @version 1.3.7
+ * @since   1.0.0
  * @package basic_store
  */
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @version 1.3.7
+ * @since   1.0.0
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -14,7 +19,7 @@ function basic_store_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	//$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
+
 	// Sanitization.
 	require_once trailingslashit( get_template_directory() ) . '/inc/sanitize.php';
 
@@ -35,7 +40,7 @@ function basic_store_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'BasicStore Plus', 'basicstore' ),
 				'pro_text' => esc_html__( 'Upgrade to PRO', 'basicstore' ),
-				'pro_url'  => 'http://www.theme.al/product/basicstore-pro/',
+				'pro_url'  => 'https://wpcodefactory.com/item/basicstore-theme-for-woocommerce/',
 				'priority' => 1,
 			)
 		)

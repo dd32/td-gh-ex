@@ -1,20 +1,15 @@
 === Basic Store ===
-Contributors: Theme.al
+Contributors: Theme.al,algoritmika,karzin,anbinder
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.3.6
+Version: 1.3.7
 License: GPLv2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
-
-
-Skeleton WooCommerce theme based on Bootstrap framework. Create an amazing store today!
-
 
 == Description ==
 
-Basic Store theme is made for developers to easily built an WordPress theme using Bootstrap framework. Plus, it fully support WooCommerce plugin, which is also ready with Bootstrap. Create your own amazing store today.
-
+Basic Store theme is made for developers to easily built an WordPress theme using Bootstrap framework. Besides, it fully supports WooCommerce plugin, which is also Bootstrap ready. Create your own amazing store today.
 
 == Installation ==
 
@@ -23,17 +18,14 @@ Basic Store theme is made for developers to easily built an WordPress theme usin
 3. Click on the 'Activate' button to use your new theme right away.
 
 == Setting Up Demo ==
+
+If you want to setup your front page like our demo, just follow these steps:
+
 1. Create a Page Called Home
-2. Paste the following Code in Home
-<h2>Latest Products</h2>
-[recent_products per_page="4" columns="4"]
-<h2>Featured Products</h2>
-[featured_products per_page="4" columns="4"]
-<h2>Top Rated Products</h2>
-[top_rated_products per_page="4" columns="4"]
-<hr>
-<h2>Product Categories</h2>
-[product_categories number="6" columns="6" parent="0"]
+2. Select the page as "Front Page" template
+3. Setup it using the native WordPress customizer, on Appearance > Themes > Basicstore > Customize > Theme options > Front Page Options
+4. Optionally, add some widgets to the Footer sidebar. If you just want some simple text, like our demo, you can use the "Custom Html" widget
+5. Don't forget to add a menu. You can do that accessing the Front page on front-end and clicking on "Add a menu"
 
 == Frequently Asked Questions ==
 
@@ -41,8 +33,13 @@ Basic Store theme is made for developers to easily built an WordPress theme usin
 
 Basic Store is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
-
 == Changelog ==
+
+= 1.3.7 - Sept 07 2017 =
+- Improve plugin's description
+- Fix widget checking on front page template
+- Fix links
+- Fix theme checking
 
 = 1.3.6 - July 28 2017 =
 - Woocommerce templates files updated.
@@ -117,6 +114,13 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 = 1.0.0 - Apr 18 2017 =
 * Initial release
 
+== Upgrade Notice ==
+
+= 1.3.7 =
+- Improve plugin's description
+- Fix widget checking on front page template
+- Fix links
+- Fix theme checking
 
 == Credits ==
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

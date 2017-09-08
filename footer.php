@@ -46,7 +46,7 @@
 
 				<span class="sep"> | </span>
 
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s', 'basicstore' ), 'BasicStore', '<a href="https://theme.al" target="_blank">Theme.al</a>' ); ?></p>
+				<?php printf( esc_html__( 'Theme: %1$s by %2$s', 'basicstore' ), 'BasicStore', '<a href="https://wpcodefactory.com/author/theme-al/" target="_blank">Theme.al</a>' ); ?></p>
 
 			</div><!-- .site-info -->
 
