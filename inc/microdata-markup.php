@@ -9,7 +9,7 @@
 
 
 function semperfi_microdata_organization(){ 
-if( get_theme_mod('microdata_organization_display') ) { ?>
+if( get_theme_mod('microdata_organization_display' == 'true') ) { ?>
 <script type="application/ld+json">
     { "@context" : "http://schema.org",
       "@type" : "Organization",

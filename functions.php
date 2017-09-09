@@ -58,6 +58,21 @@ add_theme_support( 'custom-background' );
 } endif;
 
 
+/**
+ * Remove this crap code that adds margin-top in pixels to the HTML element, why would you do this... */
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
+
+
+/**
+ * I don't need that emoji junk in my header */
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
 // Switch default core markup for search form, comment form, and comments to output valid HTML5.
 add_theme_support( 'html5', array('automatic-feed-links', 'caption', 'comment-form', 'comment-list', 'custom-background', 'gallery', 'search-form', 'widgets'));
 
