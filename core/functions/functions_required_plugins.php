@@ -41,12 +41,6 @@ if (!function_exists('bazaarlite_required_plugins')) {
 			),
 
 			array(
-				'name'      => 'Tracking Code Manager',
-				'slug'      => 'tracking-code-manager',
-				'required'  => false,
-			),
-
-			array(
 				'name'      => 'Regenerate Thumbnails',
 				'slug'      => 'regenerate-thumbnails',
 				'required'  => false,
