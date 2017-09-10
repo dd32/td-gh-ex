@@ -13,6 +13,11 @@ if ($("body.admin-bar").length) {
 }
 	return stickyTop;	
 }
+
+  if ($(window).width() < 919 ) {
+		  $('.avata-home-sections .section').addClass('fp-auto-height-responsive');		  
+	  }
+	
 	
 var h = 0;
 var stickyTop = adminbarHeight();
@@ -86,6 +91,7 @@ $('.avata-home-sections').fullpage({
 	 afterRender: function () {
 		 if($('.avata-slider').length ){
 			 var options = $('.avata-slider').data('options');
+			 $('.avata-slider .avata-banner-bgimage').removeClass('avata-fullheight');
 			 if(typeof options.autoplay !='undefined' && options.autoplay === '1'){
             setInterval(function () {
                 $.fn.fullpage.moveSlideRight();
