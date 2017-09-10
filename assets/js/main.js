@@ -93,7 +93,7 @@ $('.avata-home-sections').fullpage({
 		 }
 		 }
 		
-        },
+	},
 	
 });
 
@@ -112,7 +112,7 @@ var owl = $('.owl-carousel-fullwidth');
 			dots: true,
 			smartSpeed: 500,
 			autoHeight: true
-		});
+	});
 
 $('.comment-form #submit').addClass('btn btn-md btn-primary');
 $('.comment-reply-link').addClass('pull-right btn-reply');
@@ -125,12 +125,10 @@ $container.imagesLoaded(function(){
   });
 });
 
-
 // responsive menu
 if( $('header nav > ul').length )
     $('header nav').hoomenu({hooScreenWidth:919,hooMenuContainer:'header#main-header'});
-	
-	
+
 $('.move-section-down').click(function(){
     $.fn.fullpage.moveSectionDown();
 });

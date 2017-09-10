@@ -55,12 +55,17 @@ global $avata_header;
 $custom_logo_id = get_theme_mod('custom_logo');
 $image          = wp_get_attachment_image_src($custom_logo_id , 'full');
 $logo           =  $image[0];
+$sticky_header  = esc_attr( avata_option( 'sticky_header_frontpage'));
 
 $header_class  = 'main-header homepage-header';
 $theme_location = 'primary';
 if (has_nav_menu('home')){
 	$theme_location = 'home';
-	}
+}
+
+if($sticky_header=='1'){
+	$header_class .= ' fixed';
+}	
 
 $html = '<header id="main-header" class="'.$header_class.'">
 <div class="container">
@@ -90,7 +95,7 @@ $html .= '<div class="name-box">
 echo $html;
 			
 }
-	
+add_action('avata_featured__header','avata_featured_header');
 
 /**
  * Display frontpage sections option in customizer 

@@ -1350,7 +1350,7 @@ Hoo::add_field( 'avata', array(
 	'type'     => 'checkbox',
 	'settings' => 'autoscrolling',
 	'label'    => __('Section Auto Scrolling', 'avata'),
-	'description' => __('Defines whether to use the "automatic" scrolling or the "normal" one. It also has affects the way the sections fit in the browser/device window in tablets and mobile phones.', 'avata'),
+	'description' => __('Defines whether to use the "automatic" scrolling or the "normal" one.(Only affect desktop devices)', 'avata'),
 	'section'  => 'avata_frontpage_general',
 	'default'  => '',
 	'priority' => 10,
