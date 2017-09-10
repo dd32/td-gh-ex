@@ -4,7 +4,7 @@ Theme URI: http://www.tutorialchip.com/chip-life/
 Author: TutorialChip
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life is a charming and modern blog WordPress theme. It has a responsive layout having clean and content focused design with straightforward functionality. Chip Life is a perfect solution for sharing your valuable content and creativity with the world. Chip Life is a versatile, sophisticated WordPress theme designed for creatives and bloggers.
-Version: 2.0.4
+Version: 2.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chip-life
@@ -1679,6 +1679,12 @@ textarea {
   padding: 0;
 }
 
+.sidebar-widget-area .hentry {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Entry Post Thumbnail */
 .entry-image-wrapper {
   margin: 0 0 30px;
@@ -2367,22 +2373,22 @@ div#respond #cancel-comment-reply-link {
   margin-left: 1.5rem;
 }
 
-.widget li {
+.widget li, .widget li.hentry {
   padding: 0 0 15px;
   padding: 0 0 0.9375rem;
   position: relative;
 }
 
-.widget li ul {
+.widget li ul, .widget li.hentry ul {
   margin-top: 9px;
   margin-top: 0.5625rem;
 }
 
-.widget li li:last-child {
+.widget li li:last-child, .widget li.hentry li:last-child {
   padding-bottom: 0;
 }
 
-.widget li:last-child {
+.widget li:last-child, .widget li.hentry:last-child {
   padding-bottom: 0;
 }
 

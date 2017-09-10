@@ -86,6 +86,12 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
+= 2.0.5 =
+Released: September 11, 2017
+
+* CSS improvements.
+* POT file updated.
+
 = 2.0.4 =
 Released: August 24, 2017
 

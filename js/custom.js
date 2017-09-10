@@ -2,7 +2,7 @@
  * Custom v1.0
  * Contains handlers for the different site functions
  *
- * Copyright (c) 2013-2016 TutorialChip.com
+ * Copyright (c) 2013-2017 TutorialChip.com
  * License: GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
  */

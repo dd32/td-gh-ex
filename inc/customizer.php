@@ -134,6 +134,35 @@ function chip_life_customize_register ( $wp_customize ) {
 			)
 		)
 	);
+
+	// Theme Review Section
+	$wp_customize->add_section( 'chip_life_review', array(
+		'title'       => esc_html__( 'Enjoying the theme?', 'chip-life' ),
+		'description' => esc_html__( 'Why not leave us a review on WordPress.org? We\'d really appreciate it!', 'chip-life' ),
+		'panel'       => 'chip_life_theme_options',
+		'priority'    => 4,
+	) );
+
+	// Theme
+	$wp_customize->add_setting ( 'chip_life_theme_review', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Chip_Life_Button_Control(
+			$wp_customize,
+			'chip_life_theme_review',
+			array(
+				'label'         => esc_html__( 'Review on WordPress.org', 'chip-life' ),
+				'section'       => 'chip_life_review',
+				'type'          => 'button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'https://wordpress.org/support/theme/chip-life/reviews',
+				'button_target' => '_blank',
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'chip_life_customize_register' );
 
