@@ -46,12 +46,6 @@ if (!function_exists('alhenalite_required_plugins')) {
 				'required'  => false,
 			),
 
-			array(
-				'name'      => 'Tracking Code Manager',
-				'slug'      => 'tracking-code-manager',
-				'required'  => false,
-			),
-
 		);
 
 		$config = array(
