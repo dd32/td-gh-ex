@@ -2,14 +2,14 @@
 Contributors: Theme.al,algoritmika,karzin,anbinder
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.3.7
+Version: 1.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
 
 == Description ==
 
-Basic Store theme is made for developers to easily built an WordPress theme using Bootstrap framework. Besides, it fully supports WooCommerce plugin, which is also Bootstrap ready. Create your own amazing store today.
+Basicstore is a free theme for shop owners using WooCommerce who like the bootstrap framework and want a clean design
 
 == Installation ==
 
@@ -34,6 +34,9 @@ If you want to setup your front page like our demo, just follow these steps:
 Basic Store is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
 == Changelog ==
+
+= 1.3.8 - Sept 08 2017 =
+- Improve plugin's description
 
 = 1.3.7 - Sept 07 2017 =
 - Improve plugin's description
@@ -116,11 +119,8 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Upgrade Notice ==
 
-= 1.3.7 =
+= 1.3.8 =
 - Improve plugin's description
-- Fix widget checking on front page template
-- Fix links
-- Fix theme checking
 
 == Credits ==
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
