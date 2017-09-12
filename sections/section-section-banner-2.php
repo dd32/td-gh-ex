@@ -22,7 +22,7 @@
         <div class="avata-overlay" style="opacity: 0.6; background-color: rgb(40, 50, 78);"></div>
         <?php }?>
         <div class="avata-box__container avata-section__container container">
-            <div class="avata-box avata-box--stretched"><div class="avata-box__magnet avata-box__magnet--center-center">
+            <div class="avata-box avata-box--stretched"><div class="avata-box__magnet section-content-wrap avata-box__magnet--center-center">
                 <div class="avata-hero" >
                 <h1 class="avata-hero__text avata-section_title_banner_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h1>
                     <p class="avata-hero__subtext <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><strong class="avata-section_subtitle_banner_2"><?php echo wp_kses($section_subtitle, $allowedposttags);?></strong></p>

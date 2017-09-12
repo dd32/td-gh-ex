@@ -211,7 +211,7 @@ function avata_enqueue_scripts() {
 		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
 		
 		$css .= ".section-".$item."{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
-		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
+		//$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
 		
 		if( $full_background_image == 'yes' || $full_background_image == '1' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";

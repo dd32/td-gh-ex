@@ -339,13 +339,13 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'active_callback' => array(
 								array(
 									'setting'  => 'section_autoheight_'.$id,
-									'operator' => '===',
+									'operator' => '==',
 									'value'    => '1',
 								),),
 					'transport' => 'postMessage',
 					'js_vars'   => array(
 						array(
-							'element'  => 'body .avata-section-'.$key.'',
+							'element'  => 'body .avata-section-'.$key.' .section-content-wrap,.section-'.$key.'.fp-auto-height .section-content-wrap',
 							'function' => 'css',
 							'property' => 'padding-top',
 							)
@@ -359,13 +359,13 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'active_callback' => array(
 								array(
 									'setting'  => 'section_autoheight_'.$id,
-									'operator' => '===',
+									'operator' => '==',
 									'value'    => '1',
 								),),
 					'transport' => 'postMessage',
 					'js_vars'   => array(
 						array(
-							'element'  => 'body .avata-section-'.$key.'',
+							'element'  => 'body .avata-section-'.$key.' .section-content-wrap,.section-'.$key.'.fp-auto-height .section-content-wrap',
 							'function' => 'css',
 							'property' => 'padding-bottom',
 							)
