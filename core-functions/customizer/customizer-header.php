@@ -11,6 +11,31 @@ $wp_customize->remove_control('header_textcolor');
 		'title'      => __('Theme Options Settings', 'becorp'),
 	) );
 	
+	$wp_customize->add_section( 'header_front_data' , array(
+		'title'      => __('Custom Header Settings', 'becorp'),
+		'panel'  => 'header_options',
+		'priority'   => 20,
+   	) );
+	//Hide slider
+	
+	$wp_customize->add_setting(
+    'becorp_option[front_page_enabled]',
+    array(
+        'default' => 1 ,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+	);
+	$wp_customize->add_control(
+    'becorp_option[front_page_enabled]',
+    array(
+        'label' => __('Front Page Enable/Disabe','becorp'),
+        'section' => 'header_front_data',
+        'type' => 'checkbox',
+    )
+	);
+	
    	$wp_customize->add_section( 'header_front_data' , array(
 		'title'      => __('Custom Header Settings', 'becorp'),
 		'panel'  => 'header_options',
@@ -51,7 +76,7 @@ $wp_customize->remove_control('header_textcolor');
     ));
 	$wp_customize->add_setting('becorp_option[header_info_mail]'
 		, array(
-        'default'        => 'becorp@gmail.com',
+        'default'        => 'asiathemes[at]gmail[dot]com',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -317,24 +342,265 @@ $wp_customize->remove_control('header_textcolor');
         'section' => 'header_social_icon',
     )
 );
-	//Custom css
-	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom css', 'becorp'),
+	// Home Blog Sction
+	$wp_customize->add_section( 'home_blog_sction' , array(
+		'title'      => __('Home blog section', 'becorp'),
 		'panel'  => 'header_options',
-		'priority' => 24,
+		//'priority' => 39,
    	) );
+	
 	$wp_customize->add_setting(
-	'becorp_option[becorp_custom_css]'
+	'becorp_option[blog_title_one]'
 		, array(
-        'default'        => '',
+        'default'        => __('Blog Title','becorp'),
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'wp_strip_all_tags',
+		'sanitize_callback' => 'sanitize_text_field',
 		'type'=> 'option',
     ));
-    $wp_customize->add_control( 'becorp_option[becorp_custom_css]', array(
-        'label'   => __('Custom css snippet:', 'becorp'),
-        'section' => 'custom_css',
-        'type' => 'textarea',
+    $wp_customize->add_control( 'becorp_option[blog_title_one]', array(
+        'label'   => __('Home Blog Title One', 'becorp'),
+        'section' => 'home_blog_sction',
+        'type' => 'text',
+    ));	
+	
+	$wp_customize->add_setting(
+	'becorp_option[blog_title_two]'
+		, array(
+        'default'        => __('Here','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'=> 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[blog_title_two]', array(
+        'label'   => __('Home Blog Title Two', 'becorp'),
+        'section' => 'home_blog_sction',
+        'type' => 'text',
+    ));	
+	
+	$wp_customize->add_setting(
+	'becorp_option[blog_section_desc]'
+		, array(
+        'default'        => __('Home Blog Description Here','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'=> 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[blog_section_desc]', array(
+        'label'   => __('Home Blog Section Description', 'becorp'),
+        'section' => 'home_blog_sction',
+        'type' => 'text',
+    ));
+
+	//Select number of latest news on front page
+	
+	$wp_customize->add_setting(
+    'becorp_option[post_display_count]',
+    array(
+		'type' => 'option',
+        'default' => __('4','becorp'),
+		'sanitize_callback' => 'sanitize_text_field',
+    )
+	);
+
+	$wp_customize->add_control(
+    'becorp_option[post_display_count]',
+    array(
+        'type' => 'select',
+        'label' => __('Select Number of Post','becorp'),
+        'section' => 'home_blog_sction',
+		 'choices' => array('2'=>__('2', 'becorp'), '4'=>__('4', 'becorp'), '6' => __('6','becorp'), '8' => __('8','becorp'),'10'=> __('10','becorp'), '12'=> __('12','becorp'),'14'=> __('14','becorp'), '16' =>__('16','becorp')),
+		));
+	
+	
+	/**  Home page services section **/
+	
+	$wp_customize->add_section( 'service_section' , array(
+		'title'      => __('Service Section Settings', 'becorp'),
+		'panel'  => 'header_options',
+		'priority'   => 100,
+		'sanitize_callback' => 'sanitize_text_field',
+   	) );
+	
+	$wp_customize->add_setting(
+    'becorp_option[service_heading_title_one]',
+    array(
+        'default' => __('Services','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option'
+    ));
+	$wp_customize->add_control(
+    'becorp_option[service_heading_title_one]',
+    array(
+        'label' => __('Service Heading Title One','becorp'),
+        'section' => 'service_section',
+        'type' => 'text',
+    ));
+	
+	$wp_customize->add_setting(
+    'becorp_option[service_heading_title_two]',
+    array(
+        'default' => __('Section','becorp'),
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option'
+    ));
+	$wp_customize->add_control(
+    'becorp_option[service_heading_title_two]',
+    array(
+        'label' => __('Service Heading Title Two','becorp'),
+        'section' => 'service_section',
+        'type' => 'text',
+    ));
+	
+	$wp_customize->add_setting(
+	'becorp_option[service_heading_desc]'
+		, array(
+        'default'        => __('Services Description Here','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'=> 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_heading_desc]', array(
+        'label'   => __('Services Section Description', 'becorp'),
+        'section' => 'service_section',
+        'type' => 'text',
+    ));
+	
+	/** Service one **/
+	
+	$wp_customize->add_setting(
+		'becorp_option[service_one_icon]', array(
+		 'sanitize_callback' => 'sanitize_text_field',
+        'default'        => 'fa-leaf',
+        'capability'     => 'edit_theme_options',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control( 'becorp_option[service_one_icon]', array(
+        'label'   => __('Service icon one', 'becorp'),
+		'style' => 'background-color: red',
+        'section' => 'service_section',
+        'type'    => 'text',
+		'description'=>__('Add More <a href="http://fontawesome.io/icons/" target="_blank">FontAwesome Icons</a>','becorp'),
+    ));	
+	
+	
+	$wp_customize->add_setting('becorp_option[service_title_one]'
+		, array(
+        'default'        => __('Service title one','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_title_one]', array(
+        'label'   => __('Enter Service Title One', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
+    ));
+	
+	$wp_customize->add_setting('becorp_option[service_desc_one]'
+		, array(
+        'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis, erat vitae sodales cursus.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_desc_one]', array(
+        'label'   => __('Enter Service Description One', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
+    ));
+	
+	
+	/** Service two **/
+	
+	$wp_customize->add_setting(
+		'becorp_option[service_two_icon]', array(
+		 'sanitize_callback' => 'sanitize_text_field',
+        'default'        => 'fa-desktop',
+        'capability'     => 'edit_theme_options',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control( 'becorp_option[service_two_icon]', array(
+        'label'   => __('Service icon two', 'becorp'),
+		'style' => 'background-color: red',
+        'section' => 'service_section',
+        'type'    => 'text',
+		'description'=>__('Add More <a href="http://fontawesome.io/icons/" target="_blank">FontAwesome Icons</a>','becorp'),
+    ));	
+	
+	
+	$wp_customize->add_setting('becorp_option[service_title_two]'
+		, array(
+        'default'        => __('Service title two','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_title_two]', array(
+        'label'   => __('Enter Service Title Two', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
+    ));
+	
+	$wp_customize->add_setting('becorp_option[service_desc_two]'
+		, array(
+        'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis, erat vitae sodales cursus.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_desc_two]', array(
+        'label'   => __('Enter Service Description Two', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
+    ));
+	
+	/** Service three **/
+	
+	$wp_customize->add_setting(
+		'becorp_option[service_three_icon]', array(
+		 'sanitize_callback' => 'sanitize_text_field',
+        'default'        => 'fa-cogs',
+        'capability'     => 'edit_theme_options',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control( 'becorp_option[service_three_icon]', array(
+        'label'   => __('Service icon three', 'becorp'),
+		'style' => 'background-color: red',
+        'section' => 'service_section',
+        'type'    => 'text',
+		'description'=>__('Add More <a href="http://fontawesome.io/icons/" target="_blank">FontAwesome Icons</a>','becorp'),
+    ));	
+	
+	
+	$wp_customize->add_setting('becorp_option[service_title_three]'
+		, array(
+        'default'        => __('Service title three','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_title_three]', array(
+        'label'   => __('Enter Service Title Three', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
+    ));
+	
+	$wp_customize->add_setting('becorp_option[service_desc_three]'
+		, array(
+        'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis, erat vitae sodales cursus.','becorp'),
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    ));
+    $wp_customize->add_control( 'becorp_option[service_desc_two]', array(
+        'label'   => __('Enter Service Description Three', 'becorp'),
+        'section' => 'service_section',
+        'type'    => 'text',
     ));
 	
 	// Footer Copyright Option Settings
@@ -449,7 +715,7 @@ $wp_customize->remove_control('header_textcolor');
 	);
 	 
 	 
-	//portfolio Image one setting
+	//Slider Image one setting
 	
 	$wp_customize->add_setting(
 		'becorp_option[slider_image_one]'

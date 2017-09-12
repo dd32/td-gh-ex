@@ -2,12 +2,8 @@
 function becorp_scripts()
 {
  /*--------Css----------*/
-	$becorp_options=becorp_theme_default_data(); 
-	$becorp_custom_css = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); 
-	$custom_css= esc_attr($becorp_custom_css['becorp_custom_css']);
 		
 	wp_enqueue_style('becorp-style', get_stylesheet_uri());
-	wp_add_inline_style( 'becorp-style', $custom_css );
     
 	 wp_enqueue_style('default', BECORP_TEMPLATE_DIR_URI . '/css/default.css');
 	 wp_enqueue_style('becorp-bootstrap', BECORP_TEMPLATE_DIR_URI . '/css/bootstrap.css');
@@ -24,6 +20,8 @@ function becorp_scripts()
 	wp_enqueue_script('becorp-carousel', BECORP_TEMPLATE_DIR_URI .'/js/carousel.js');
 	wp_enqueue_script('becorp-menu', BECORP_TEMPLATE_DIR_URI .'/js/menu.js',array('jquery'));
 	wp_enqueue_script('becorp-page-scroll-js' , BECORP_TEMPLATE_DIR_URI.'/js/page-scroll.js');
+	wp_enqueue_script('becorp-SmoothScroll' , BECORP_TEMPLATE_DIR_URI.'/js/SmoothScroll.js');
+	
 	
 	/******* becorp tab js*********/
 	wp_enqueue_script('becorp-lightbox', BECORP_TEMPLATE_DIR_URI .'/js/jquery.photobox.js');

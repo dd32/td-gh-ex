@@ -362,4 +362,22 @@ $becorp_options=becorp_theme_default_data();
 	</div>
 </div>
 
-<?php } ?>
+<?php }
+
+function blog_image(){
+
+	$member_title=array('John Doe','Jane Doe','Mike Doe','Laura Doe');
+	$member_designation=array('Creative Director','Founder','Developer','Designer');
+	for($sep=1; $sep<=4;$sep++)
+			{ ?>
+			<div class="col-md-3 col-sm-6 member">
+	    
+		 <h3 class="member-name"><?php echo $member_title[$sep-1]; ?></h3>
+		  <div class="member-job"><?php echo $member_designation[$sep-1]; ?></div>
+		   
+	  </div>
+			
+			<?php }
+}
+
+ ?>

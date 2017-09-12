@@ -90,6 +90,12 @@ released
 1. Update theme color scheme.
 2. Update styling issues.
 3. Update header image setting.
+
+@Version 3.2
+1. Add front-page contents.
+2. Update styling issues.
+3. Add smoothscroll js.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -126,7 +132,7 @@ Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
 Released under the MIT license : http://jquery.org/license
 Source:http://jquery.com/
 
-jquery.photobox -- v1.9.9 --000 
+jquery.photobox -- v1.9.9 --
 Copyright Yair Even 2013 jQuery Foundation, Inc. and other contributors
 Licensed under MIT license :https://jquery.org/license/
 Source:http://jquery.com/
@@ -140,6 +146,11 @@ Copyright 2015 asiathemes
 Dual licensed under the MIT license and GPL license.
 
 menu.js jquery
+Balazs Galambosi
+Licensed under MIT license : http://www.smoothscroll.net/
+SmoothScroll of theme.
+
+SmoothScroll.js -- v1.4.6 --
 Copyright 2015 asiathemes
 Just to make hover effects of the menu.
 
