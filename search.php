@@ -18,7 +18,7 @@
                         
                 </div><!-- ends entry-content -->
                     <footer class="meta-footer">
-                      <a href="<?php echo esc_attr( get_permalink() ); ?>" 
+                      <a href="<?php echo esc_url( get_permalink() ); ?>" 
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
                       <time class="alignright" 

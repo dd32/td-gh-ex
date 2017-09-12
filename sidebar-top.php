@@ -4,7 +4,7 @@
  * only shows on Default Template page template
  * and Three Width Page Template
  */
-if ( !empty ( get_theme_mod( 'appeal_topbox_image_setting' ) ) || is_active_sidebar( 'sidebar-top' ) ) 
+if ( get_theme_mod( 'appeal_topbox_image_setting' ) != '' || is_active_sidebar( 'sidebar-top' ) ) 
 {  
 ?>
 <div class="container">
@@ -14,7 +14,7 @@ if ( !empty ( get_theme_mod( 'appeal_topbox_image_setting' ) ) || is_active_side
             <div id="sidebar-top" role="complementary">
                 <div class="vertical-nav block">
 
-                    <?php if ( !empty ( get_theme_mod( 'appeal_topbox_image_setting' ) ) ) : ?>
+                    <?php if ( get_theme_mod( 'appeal_topbox_image_setting' ) != '' ) : ?>
                 
                     <div id="topbox-banner"></div>
                 

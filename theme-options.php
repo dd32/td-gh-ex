@@ -29,7 +29,7 @@ function appeal_add_options_page() {
 
         __( 'Instructions Etc', 'appeal' ),
         __( 'Theme Overview', 'appeal' ),
-        'manage_options',
+        'edit_theme_options',
         'appeal_page_elements',
         'appeal_display_options_page'
     );

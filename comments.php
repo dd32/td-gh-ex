@@ -42,7 +42,7 @@ if ( post_password_required() )
 	<?php endif; ?>
 
 <?php 
-    $wurl = wp_login_url( apply_filters( 'the_permalink', get_permalink() ) );
+    $wurl = wp_login_url( apply_filters( 'the_permalink', esc_url(get_permalink()) ) );
     $comment_args = array(
     // Change the title of send button
     'label_submit' => esc_attr__( 'Send', 'appeal' ),

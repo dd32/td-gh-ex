@@ -1,22 +1,16 @@
 === Appeal ===
-Theme URI:   http://themes.tradesouthwest.com/wordpress/appeal/
-Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has two column-newspaper style-template, a fullwidth, a three section wide and an advert template. An Author template is included that has a modal box linked to every author link.
-Customize 
-If title is shown
-Color of links and content backgrounds
-Custom featured image and header image with logo support
-Width of pullquote teaser and set post excerpt length 
+Theme URI:      https://larryjudd.us/appeal/
 
-Demo at https://larryjudd.us/appeal
-
- * Theme Name:  Appeal
- * Author:      Larry Judd Oliver
- * Author URI:  http://tradesouthwest.com/
- * Stable Version:     1.0.9
- * Text Domain: appeal
- * Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template
- * License:     GPL 3
- * License URI: https://www.gnu.org/licenses/quick-guide-gplv3.en.html
+Theme Name:     Appeal
+Author:         Larry Judd Oliver
+Author URI:     http://tradesouthwest.com/
+Stable Version: 1.1.6
+Text Domain:    appeal
+Tags:           one-column, two-columns, three-columns, translation-ready, footer-widgets, full-width-template
+License:        GPL 3
+License URI:    https://www.gnu.org/licenses/quick-guide-gplv3.en.html
+Appeal WordPress Theme, Copyright 2012 Joe Smith
+Appeal is distributed under the terms of the GNU GPL
  
 == Other Licenses ==
 - Bootstrap (Copyright 2015 Twitter, released under the terms of the MIT license)
@@ -41,6 +35,21 @@ Twitter in admin: https://brand.twitter.com/logo
 
 
 == Change Log ==
+1.1.7
+* typo in stylesheet
+
+1.1.6 
+* change template prefixes
+* changed theme uri
+* removed core wptexturize
+* reworked archives page
+* added admin support to read more excerpt tag
+* fix il8n in footer 
+* added subject tags
+* retooled 404 page
+* updated conditionals in sidebar-top
+* a few style adjustments
+
 1.1.5
 * changed width of bottom box
 * fixed bottom social nav for responsive

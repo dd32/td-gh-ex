@@ -39,8 +39,8 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                             <?php // Check which Post Thumbnail is assigned to post.
                             if ( has_post_thumbnail( 'appeal-thumbnail' ) ) { ?>
                                 <?php printf( '<a class="appeal-imglink"
-                                                href="' . esc_attr( get_permalink( $post->ID  ) ) . '"
-                                                title ="' . esc_attr( get_the_title( $post->ID  ) ) . '">' 
+                                                href="' . esc_url( get_permalink( $post->ID  ) ) . '"
+                                                title ="' . esc_attr( get_the_title( $post->ID ) ) . '">' 
                                             ); ?>
                                 <?php the_post_thumbnail( 'appeal-featured', array( 
                                                           'itemprop' => 'image', 
@@ -50,7 +50,7 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                                 // ends if has custom thumb size
                                 ?>
                                 <?php printf( '<a class="appeal-imglink"
-                                                href="' . esc_attr( get_permalink( $post->ID ) ) . '"
+                                                href="' . esc_url( get_permalink( $post->ID ) ) . '"
                                                 title ="' . esc_attr( get_the_title( $post->ID ) ) . '">' 
                                             ); ?>
                                 <?php the_post_thumbnail('thumbnail', array( 

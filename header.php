@@ -19,7 +19,7 @@
             <?php if( has_custom_logo() ) : ?>
             <a title="<?php bloginfo('description'); ?>"
                href="<?php echo esc_url(home_url('/')); ?>">
-            <?php echo appeal_theme_custom_logo(); ?></a>
+            <?php printf( appeal_theme_custom_logo()); ?></a>
             <?php endif; ?>
         
             <p class="list-inline">
@@ -57,7 +57,6 @@
 					<div id="navbar-responsive-collapse" class="collapse navbar-collapse">
 
 	    <?php wp_nav_menu( array(
-                'menu'             => 'primary',
                 'theme_location'  => 'primary',
                 'depth'          => 8,
                 'container_id'  => 'navbar-collapse-top',

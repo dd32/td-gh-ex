@@ -18,9 +18,9 @@ use more tag to split content "&gt;!--more-->"
             <section class="post_content">
             
 	    <?php 
-            $content = appeal_split_content();
-            // output first content section in column1
-	    echo '<div class="col-sm-6">', array_shift($content), '</div>';
+        $content = appeal_split_content();
+        // output first content section in column1
+	    echo '<div id="column1" class="col-sm-6">', array_shift($content), '</div>';
 
 	    // output remaining content sections in column2
 	    echo '<div id="column2" class="col-sm-6">', implode($content), '</div>';

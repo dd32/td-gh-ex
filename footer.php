@@ -83,8 +83,8 @@
 
                             <div class="col-sx-12 col-md-4">
                                 <p class="text-muted"><?php
-                                $year   = date( 'Y' );
-                                esc_attr_e( 'Copyright ', 'appeal' ); 
+                                $year  = date_i18n(__( 'Y', 'appeal' ));
+                                esc_html_e( 'Copyright ', 'appeal' ); 
                                 echo esc_attr( $year ) . ' ';
                                 printf( esc_attr( bloginfo( 'name' ) ) ); ?></p>
                             </div>

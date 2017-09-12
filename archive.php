@@ -40,24 +40,21 @@
 
     				<?php endif; ?>
 				</h1><!-- .page-title -->
+				
 				<?php
-				if ( is_category() ) :
-					if ( $category_description = category_description() ) ?> 
-						<div class="archive-meta"><?php echo wp_kses( $category_description, '<p>', '</p>' ); ?></div>
+				$category_description = category_description();
+				if ( $category_description != '' ) : ?> 
+				
+				    <div class="archive-meta"><p><?php the_archive_description(); ?></p></div>
+				
 				<?php endif; ?>
-                <?php 
-				if ( is_tag() ) :
-					if ( $tag_description = tag_description() ) ?>
-						<div class="archive-meta"><?php echo wp_kses( $tag_description, '<p>', '</p>' ); ?></div>
-				<?php 
-				endif;
-				?>
-			</header><!-- #archive-header -->
+
+    		</header><!-- #archive-header -->
             <?php
             while ( have_posts() ) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <h1 class="entry-title"><a href="<?php the_permalink() ?>"
-                                           rel="bookmark"><?php the_title(); ?></a></h1>
+                                           rel="bookmark"><?php the_archive_title(); ?></a></h1>
                 <div class="entry-content">
 
                     <?php the_excerpt(); ?>

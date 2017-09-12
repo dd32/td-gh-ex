@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-08-28 14:20-0800\n"
-"PO-Revision-Date: 2017-08-28 14:20-0800\n"
+"POT-Creation-Date: 2017-09-11 17:19-0800\n"
+"PO-Revision-Date: 2017-09-11 17:20-0800\n"
 "Last-Translator: \n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;"
-"esc_attr__;esc_attr_e;_n;_nx;_x\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n;_nx;esc_html__;"
+"esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -35,43 +35,43 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:318
 msgid "Read Article"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:346
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:348 functions.php:357
+#: functions.php:347 functions.php:356
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:356
+#: functions.php:355
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:365
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:366
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:375
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:384
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:393
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:402
 msgid "Footer Right"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Yearly Archives: "
 msgstr ""
 
-#: archive.php:66 search.php:23
+#: archive.php:63 search.php:23
 msgid "View Article..."
 msgstr ""
 
@@ -202,6 +202,10 @@ msgstr ""
 
 #: footer.php:79
 msgid "Design by "
+msgstr ""
+
+#: footer.php:86
+msgid "Y"
 msgstr ""
 
 #: footer.php:87
@@ -420,6 +424,38 @@ msgstr ""
 #: 404.php:6
 msgid ""
 "Looks like the content you were looking for does not exists at this time."
+msgstr ""
+
+#: 404.php:17
+msgid "You may have landed on this page because of: "
+msgstr ""
+
+#: 404.php:19
+msgid "An out-of-date bookmark/favourite"
+msgstr ""
+
+#: 404.php:20
+msgid "A search engine that has an out-of-date listing for this site"
+msgstr ""
+
+#: 404.php:21
+msgid "A mistyped address"
+msgstr ""
+
+#: 404.php:22
+msgid "You have no access to this page"
+msgstr ""
+
+#: 404.php:23
+msgid "The requested resource was not found"
+msgstr ""
+
+#: 404.php:24
+msgid "An error has occurred while processing your request"
+msgstr ""
+
+#: 404.php:29
+msgid "Return to Home Page"
 msgstr ""
 
 #: comments-count.php:17

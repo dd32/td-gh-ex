@@ -14,12 +14,12 @@ get_header(); ?>
 
                     <p class="attachment">
                        <a href="<?php echo esc_attr( wp_get_attachment_url( $post->id ) ); ?>"
-                       title="<?php the_title(); ?>"
+                       title="<?php the_title_attribute(); ?>"
                        rel="attachment"><img src="<?php echo esc_attr($att_image[0]);?>"
                        width="<?php echo esc_attr($att_image[1]);?>"
                        height="<?php echo esc_attr($att_image[2]);?>"
                        class="img-responsive"
-                       alt="<?php the_title(); ?>" /></a>
+                       alt="<?php the_title_attribute(); ?>" /></a>
                     </p>
 
                         <?php else : ?>

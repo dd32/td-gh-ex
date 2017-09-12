@@ -100,8 +100,8 @@ function appeal_theme_setup() {
  * https://generatewp.com/snippet/OvG9wDA/ updated
  * Left @string $parenturl to adjust for child theme
  */
-    $parenturl = get_template_directory_uri();
-    $suggested_imgs =  array( 
+    $parenturl         = get_template_directory_uri();
+    $suggested_imgs     =  array( 
         'appeal_tokyo'   => array( 
             'description' => __( 'Tokyo', 'appeal' ),
             'url'          => $parenturl . '/assets/appeal-default-header-img.png',
@@ -143,12 +143,12 @@ function appeal_theme_scripts() {
 
     // For use of child themes
     wp_enqueue_style( 'appeal-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'bootstrap-script',
+    wp_enqueue_script( 'bootstrap',
                         get_template_directory_uri() . '/assets/bootstrap.js',
                         array ( 'jquery' ),
                         '3.3.7',
                         true);
-    wp_enqueue_script( 'appeal-script',
+    wp_enqueue_script( 'appeal',
                         get_template_directory_uri() . '/assets/appeal.js',
                         array ( 'jquery' ),
                         '',
@@ -157,7 +157,7 @@ function appeal_theme_scripts() {
     //enqueue (sane and include) scripts into WP
     wp_enqueue_style( 'appeal-google-fonts');
    
-
+   
 }
 add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
 
@@ -303,23 +303,22 @@ if( is_page()) {
 //modify the read more tag
 function appeal_theme_modify_read_more_link() {
     return '<a class="more-link" href="' . get_permalink() . '">[ + ]</a>';
+    
 }
 add_filter( 'the_content_more_link', 'appeal_theme_modify_read_more_link' );
 
 
 //remove ellipsis
-function appeal_custom_excerpt_more() {
-
+function appeal_custom_excerpt_more($link) {
+    if ( is_admin() ) {
+		return $link;
+	}
     $post = get_post();
-        return ' <a class="more-link" href="'. get_permalink($post->ID)
+        $link = ' <a class="more-link" href="'. get_permalink($post->ID)
                 . '">'. __('Read Article', 'appeal') .'</a>';
-
+        return $link;
 }
 add_filter('excerpt_more', 'appeal_custom_excerpt_more');
-
-
-//check keyboard for compatibility
-remove_filter( 'the_content', 'wptexturize' );
 
 
 /**

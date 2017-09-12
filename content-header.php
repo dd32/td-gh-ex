@@ -49,7 +49,7 @@
           title="<?php the_title_attribute(); ?>">
     <span class="genico">
      <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
-          alt="link" /></span> <?php the_title(); ?></a></h2> 
+          alt="<?php the_title_attribute(); ?>" /></span> <?php the_title(); ?></a></h2> 
 
     <?php 
     }
@@ -66,7 +66,7 @@
           title="<?php the_title_attribute(); ?>">
     <span class="genico">
      <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/'. $titlelink .'.png'); ?>"
-          alt="link" /></span> <?php the_title(); ?></a></h2>
+          alt="<?php the_title_attribute(); ?>" /></span> <?php the_title(); ?></a></h2>
              
         <?php } ?>
         <?php
