@@ -89,6 +89,11 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
+= 0.1.3 =
+Released: September 13, 2017
+
+* CSS Enhancements.
+
 = 0.1.2 =
 Released: August 20, 2017
 

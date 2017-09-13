@@ -277,11 +277,11 @@ add_action( 'bezel_credits', 'bezel_copyright' );
  */
 function bezel_designer() {
 	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>',
-		esc_url( 'https://simplefreethemes.com/' ),
+		esc_url( 'https://simplefreethemes.com' ),
 		esc_attr( 'Bezel Theme' ),
 		esc_html( 'Bezel Theme' ),
 		esc_html__( 'Powered by', 'bezel' ),
-		esc_url( 'https://wordpress.org/' ),
+		esc_url( 'https://wordpress.org' ),
 		esc_attr( 'WordPress', 'bezel' ),
 		esc_html( 'WordPress' )
 	);

@@ -10,6 +10,7 @@
 /* global enquire:true */
 
 ( function( $ ) {
+	"use strict";
 
 	var bezel = {
 
@@ -112,7 +113,7 @@
 					bezel.slidePanelInit();
 
 					// Responsive Tables
-					$( '.entry-content, .sidebar, .footer-sidebar' ).find( 'table' ).wrap( '<div class="table-responsive"></div>' );
+					$( '.entry-content, .sidebar' ).find( 'table' ).wrap( '<div class="table-responsive"></div>' );
 
 			    },
 			    unmatch : function() {
@@ -121,7 +122,7 @@
 					bezel.slidePanelCloseInit();
 
 					// Responsive Tables Undo
-					$( '.entry-content, .sidebar, .footer-sidebar' ).find( 'table' ).unwrap( '<div class="table-responsive"></div>' );
+					$( '.entry-content, .sidebar' ).find( 'table' ).unwrap( '<div class="table-responsive"></div>' );
 
 			    }
 

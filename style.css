@@ -4,7 +4,7 @@ Theme URI: https://simplefreethemes.com/bezel/
 Author: SimpleFreeThemes
 Author URI: https://simplefreethemes.com/
 Description: Bezel is a beautiful, light and elegant WordPress theme that allows your reader to focus on your content. Theme is based on Bootstrap framework grid and is perfect WordPress theme for personal blogs, product reviews, newspapers and magazines. It is simple and flexible theme with easy to use theme options. Bezel is packed with useful features such as responsive design, clean code, site logo, custom menu, translation ready, SEO friendly, Google fonts and easy to customize.
-Version: 0.1.2
+Version: 0.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bezel
@@ -112,7 +112,8 @@ html {
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 
@@ -120,7 +121,8 @@ html {
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -263,7 +265,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -274,7 +277,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -555,7 +559,8 @@ code, kbd, samp, tt, var {
 kbd {
   background-color: #020202;
   border-radius: 2px;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   font-size: 90%;
   padding: 2px 4px;
@@ -563,7 +568,8 @@ kbd {
 }
 
 kbd kbd {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   font-size: 100%;
   font-weight: bold;
   padding: 0;
@@ -941,7 +947,8 @@ textarea {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
@@ -963,7 +970,8 @@ textarea {
 /* must have higher specificity than alternative color schemes inline styles */
 .site .skip-link {
   background-color: #f1f1f1;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -979,7 +987,8 @@ textarea {
 }
 
 .logged-in .site .skip-link {
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .site .skip-link:focus {
@@ -1117,6 +1126,7 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #eb684b;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1147,6 +1157,7 @@ textarea {
           justify-content: center;
   width: 40px;
   height: 40px;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1166,6 +1177,7 @@ textarea {
   padding: 30px;
   padding: 1.875rem;
   position: relative;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1293,6 +1305,7 @@ textarea {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1349,6 +1362,7 @@ textarea {
   display: block;
   padding: 0;
   position: relative;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1644,6 +1658,12 @@ textarea {
   position: relative;
 }
 
+.sidebar-widget-area .hentry {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Entry Image Wrapper Archive */
 .entry-image-wrapper-archive {
   background-color: #ededeb;
@@ -1817,6 +1837,7 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1863,6 +1884,7 @@ textarea {
   padding: 0.625rem 1.875rem;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2295,22 +2317,22 @@ div#respond #cancel-comment-reply-link {
   margin-left: 1.5rem;
 }
 
-.widget li {
+.widget li, .widget li.hentry {
   padding: 0 0 15px;
   padding: 0 0 0.9375rem;
   position: relative;
 }
 
-.widget li ul {
+.widget li ul, .widget li.hentry ul {
   margin-top: 9px;
   margin-top: 0.5625rem;
 }
 
-.widget li li:last-child {
+.widget li li:last-child, .widget li.hentry li:last-child {
   padding-bottom: 0;
 }
 
-.widget li:last-child {
+.widget li:last-child, .widget li.hentry:last-child {
   padding-bottom: 0;
 }
 
@@ -2341,6 +2363,7 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2377,6 +2400,7 @@ div#respond #cancel-comment-reply-link {
   font-size: 16px !important;
   font-size: 1rem !important;
   text-decoration: none;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2576,6 +2600,7 @@ div#respond #cancel-comment-reply-link {
 .img-featured,
 .img-postlist {
   opacity: 1;
+  -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
 
@@ -2909,7 +2934,8 @@ img[id*="botd"] {
   }
   .sf-menu ul {
     background: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-width: 15em;
     /* allow long menu items to determine submenu width */
     max-width: 15em;
@@ -2928,6 +2954,7 @@ img[id*="botd"] {
     padding: 0 0.9375rem;
     text-transform: uppercase;
     text-decoration: none;
+    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu > li > a:hover,
@@ -2974,6 +3001,7 @@ img[id*="botd"] {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
+    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -2985,6 +3013,7 @@ img[id*="botd"] {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
+    -webkit-transition: none;
     transition: none;
   }
   /* Last & Second Last Child Drop Down Menu Second Level */
