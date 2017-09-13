@@ -389,3 +389,75 @@ a.symbol:hover {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
+
+/*=================Sticky Header ====================*/
+.sticky-header
+{
+	position: fixed;
+	top: 0;
+	left: 0px;
+	z-index: 200;
+	width: 100%;
+	background-color:#000;
+	margin: 0 !important;
+	opacity:0.75;
+	box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.9);
+	-webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.9);
+	-moz-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.9);
+	-webkit-transition: all 0.8s ease-in-out 0s;
+	-moz-transition: all 0.8s ease-in-out 0s;
+	-o-transition: all 0.8s ease-in-out 0s;
+	transition: all 0.8s ease-in-out 0s;
+}
+.admin-bar .sticky-header
+{
+	top:46px;
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .sticky-header {
+    top: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .admin-bar .sticky-header {
+    top: 0;
+  }
+}
+/*==================Testimonial element ====================*/
+#testimonial_section .container
+{
+	max-width:100%;
+}
+#testimonial_img
+{
+	background: url("../images/icons/testimonial.png") no-repeat;
+        float:right;
+	display:inline-block;
+	height: 1.6em;
+	width: 1.55em;
+}
+
+
+/* Author Bio  */
+.cyberchimps_author_bio
+{
+    margin-top: 2%;
+}
+.author_bio_wrapper {
+    border: 1px solid #cfcfcf;
+    display: inline-block;
+    padding: 2% 0;
+}
+.author_bio_name a
+{
+    font-size: 25px;
+}
+.avatar_author img
+{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 0 #e4e4e4;
+    height: 90px;
+    padding: 5px;
+    width: 90px;
+}
