@@ -1174,7 +1174,32 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
         )
     );
     
- 
+     /** Footer Section */
+    $wp_customize->add_section(
+        'bakes_and_cakes_footer_section',
+        array(
+            'title' => __( 'Footer Settings', 'bakes-and-cakes' ),
+            'priority' => 70,
+        )
+    );
+    
+    /** Copyright Text */
+    $wp_customize->add_setting(
+        'bakes_and_cakes_footer_copyright_text',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'bakes_and_cakes_footer_copyright_text',
+        array(
+            'label' => __( 'Copyright Info', 'bakes-and-cakes' ),
+            'section' => 'bakes_and_cakes_footer_section',
+            'type' => 'textarea',
+        )
+    );
  
 
     /**

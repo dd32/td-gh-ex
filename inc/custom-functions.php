@@ -413,14 +413,19 @@ if( ! function_exists( 'bakes_and_cakes_footer_info' ) ) :
  * 
 */
 function bakes_and_cakes_footer_info(){
+    $copyright_text = get_theme_mod( 'bakes_and_cakes_footer_copyright_text' );
     ?>
     <div class="site-info">        
         <span>
-            <?php 
-            echo esc_html__( '&copy;','bakes-and-cakes');
-            echo esc_html(date_i18n('Y')); ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>.
-            <?php esc_html_e('All Rights Reserved.', 'bakes-and-cakes'); ?>
+        <?php 
+            if( $copyright_text ){
+                echo wp_kses_post( $copyright_text );
+            }else{
+                esc_html_e( '&copy; ', 'bakes-and-cakes' ); 
+                esc_html_e( date_i18n( 'Y' ), 'bakes-and-cakes' );
+                echo ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.';    
+            }
+        ?>
         </span>
         <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank">
             <?php echo esc_html__( 'Bakes and Cakes by Rara Theme.', 'bakes-and-cakes' ); ?>
@@ -485,3 +490,10 @@ function bakes_and_cakes_home_team_ajax(){
 }
 add_action( 'wp_ajax_bakes_and_cakes_team_ajax', 'bakes_and_cakes_home_team_ajax' );
 add_action( 'wp_ajax_nopriv_bakes_and_cakes_team_ajax', 'bakes_and_cakes_home_team_ajax' ); 
+
+/**
+ * Query if Rara One Click Demo Import id activate
+*/
+function is_rocdi_activated(){
+    return class_exists( 'RDDI_init' ) ? true : false;
+}

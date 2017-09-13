@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 12:09+0000\n"
+"POT-Creation-Date: 2017-09-12 05:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -179,24 +179,20 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/custom-functions.php:420
-msgid "&copy;"
+#: inc/custom-functions.php:424
+msgid "&copy; "
 msgstr ""
 
-#: inc/custom-functions.php:423
-msgid "All Rights Reserved."
-msgstr ""
-
-#: inc/custom-functions.php:426
+#: inc/custom-functions.php:431
 msgid "Bakes and Cakes by Rara Theme."
 msgstr ""
 
-#: inc/custom-functions.php:428
+#: inc/custom-functions.php:433
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:428
+#: inc/custom-functions.php:433
 msgid "https://wordpress.org/"
 msgstr ""
 
@@ -457,6 +453,14 @@ msgstr ""
 msgid "Enable Full content"
 msgstr ""
 
+#: inc/customizer.php:1181
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:1198
+msgid "Copyright Info"
+msgstr ""
+
 #: inc/info.php:11
 msgid "Information Links"
 msgstr ""
@@ -712,14 +716,6 @@ msgstr ""
 #: template-parts/content.php:43 template-parts/content.php:52
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/tgmpa/recommended-plugins.php:58
-msgid "Contact Form 7"
-msgstr ""
-
-#: inc/tgmpa/recommended-plugins.php:64
-msgid "Woocommerce"
 msgstr ""
 
 #. Name of the theme

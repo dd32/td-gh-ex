@@ -78,7 +78,7 @@ jQuery(document).ready(function ($) {
   });
 	 
 
-    $("#carousel").owlCarousel({
+        $("#carousel").owlCarousel({
             margin: 15,
             nav: true,
             dots: false,
@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
             }
         });
 
- $(".featured-slider").lightSlider({
+        $(".featured-slider").lightSlider({
                 item: 4,
                 slideMargin: 0,
                 speed: 600, //ms'
@@ -148,7 +148,7 @@ jQuery(document).ready(function ($) {
                         ],
                 });
 
-$('.img-btn').click(function(e){
+    $('.img-btn').click(function(e){
        
         id = $(this).attr('id');
         console.log( id );
@@ -164,22 +164,6 @@ $('.img-btn').click(function(e){
             },
             success: function(response){
                 $('.our-staff .holder').html(response);
-           /*     $(".our-staff .holder .text-holder").niceScroll({
-                    cursorcolor: "#dedede",
-                    zindex: "1",
-                    cursorborder: "none",
-                    cursoropacitymin: "1",
-                    cursoropacitymax: "1",
-                    cursorwidth: "4px",
-                    cursorborderradius: "0px;",
-                    railpadding: {
-                        top: 0,
-                        right: 5,
-                        left: 5,
-                        bottom: 0
-                    }
-                });*/
-
             },
             complete: function(){
                 $('#loader').fadeOut(500);             

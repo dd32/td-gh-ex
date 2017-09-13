@@ -231,7 +231,7 @@ function bakes_and_cakes_scripts() {
     
 	
 	wp_enqueue_script('bakes-and-cakes-light-slider', get_template_directory_uri() . '/js/lightslider.js', array(), '1.1.5', true);
-    wp_enqueue_script('owl-carousel-min', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '2.2.1', true);
+    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '2.2.1', true);
 	wp_enqueue_script('bakes-and-cakes-tab', get_template_directory_uri() . '/js/tab.js', array(), '20120206', true);
 	wp_enqueue_script('bakes-and-cakes-same-height', get_template_directory_uri() . '/js/sameheight.js', array(), '20120206', true);
 	wp_enqueue_script('bakes-and-cakes-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.0.8', true);
@@ -380,5 +380,3 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
  * Info Section
  */
 require get_template_directory() . '/inc/info.php';
-
-?>

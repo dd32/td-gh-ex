@@ -6,7 +6,7 @@ Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-backg
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -226,6 +226,10 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.1.3
+    * Added front-page.php so that home page can be setup without choosing page template.
+    * Added Footer settings option on customizer.
+
     1.1.2
     * Made theme RTL Compatible.
     * OK, VK, Xing added social icon list.

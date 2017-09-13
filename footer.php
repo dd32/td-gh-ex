@@ -8,8 +8,9 @@
  *
  * @package Bakes_And_Cakes
  */
+$enabled_sections = bakes_and_cakes_get_sections();  
 
-if(!is_page_template('template-home.php')){ echo '</div></div>'; } ?>
+if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ){ echo '</div></div>'; } ?>
 	
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		

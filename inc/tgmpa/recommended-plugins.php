@@ -49,19 +49,13 @@ function bakes_and_cakes_register_required_plugins() {
     $plugins = array(
 
         array(
-			'name'      => 'Rara One Click Demo Import', // The plugin name.
-			'slug'      => 'rara-one-click-demo-import', 
-			'required'  => false, // If false, the plugin is only 'recommended' instead of required.
-		),
-
-        array(
-            'name'      => __( 'Contact Form 7', 'bakes-and-cakes' ),
+            'name'      => 'Contact Form 7',
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
 
         array(
-            'name'      => __( 'Woocommerce', 'bakes-and-cakes' ),
+            'name'      => 'Woocommerce',
             'slug'      => 'woocommerce',
             'required'  => false,
         ),        

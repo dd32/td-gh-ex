@@ -53,9 +53,9 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-  <?php $enable_slider = get_theme_mod('bakes_and_cakes_ed_slider');
-        
-        $ed_breadcrumbs = get_theme_mod('bakes_and_cakes_ed_breadcrumb');
+  <?php $enable_slider    = get_theme_mod('bakes_and_cakes_ed_slider');
+        $enabled_sections = bakes_and_cakes_get_sections();  
+        $ed_breadcrumbs   = get_theme_mod('bakes_and_cakes_ed_breadcrumb');
         
         if( (is_front_page() || is_page_template('template-home.php')) && $enable_slider ) {
           
@@ -63,7 +63,7 @@
        
         }
 
-        if(!is_page_template('template-home.php')){ 
+        if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ){ 
    	       
           echo '<div class="container">';
 	          
