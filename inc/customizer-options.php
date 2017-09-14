@@ -306,6 +306,17 @@ $semperfi_customizer_array_of_options = array(
         'selector'          => 'header#title-and-image div.customizer-tite-image',
         'type'              => 'img'),
 
+    'main_background_img' => array(
+        'default'           => get_template_directory_uri() . '/images/moose-aaaaaa.jpg',
+        'label'             => __('Background Image', 'semper-fi-lite'),
+        'panel_title'       => __('Blog', 'semper-fi-lite'),
+        'panel_priority'    => 106,
+        'priority'          => 10,
+        'section_title'     => __('Background', 'semper-fi-lite'),
+        'section_priority'  => 11,
+        'selector'          => 'main#the-article',
+        'type'              => 'img'),
+
 
 
     // Range Example

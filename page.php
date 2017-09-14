@@ -31,7 +31,7 @@ if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
             
             </header>
             
-            <main id="the-article" itemprop="articleBody">
+            <main id="the-article" itemprop="articleBody"<?php if ( (get_theme_mod('main_background_img') != '') && (get_theme_mod('main_background_img') != get_template_directory_uri() . '/images/moose-aaaaaa.jpg') ) : ?> style="background-image:url(<?php echo get_theme_mod('main_background_img'); ?>);" <?php endif; ?>>
             
                 <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : edit_post_link('Edit this Post'); endif; endif; ?>
                 

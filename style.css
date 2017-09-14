@@ -10,7 +10,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Semper Fi Lite is a handwritten WordPress theme for blogs, businesses, and can also be used as a powerful ecommerce (Woocommerce) solution. Written without JavaScript, just pure HTML5 and CSS3, Semper Fi Lite is free of any possible scripting conflicts with every WordPress Pulgin out there. Fully responsive, with a built in mobile friendly touch screen menu, adaptive font sizing, a pure CSS3 Slider, Woocommerce integration, page specific custom backgrounds, and 4k+ ready. All of Semper Fi Lite’s options are organized and controlled with WordPress's powerful Customizer for real time customization. For support with questions, help, or issues use <a href="http://schwarttzy.com/contact-me/" target="_blank">the contact page</a>, or head over to <a href="https://wordpress.org/support/theme/semperfi" target="_blank">the forums</a>.
 
-Version: 32
+Version: 34
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -566,7 +566,7 @@ figure.gallery-item {
     box-shadow: 0 0 1em rgba(0,0,0,.5);
 	margin: 0 auto 2.5%;
     max-width: 40em;
-	padding: 0 0 25.55vw;
+	padding: 0 0 49.7vw;
 	position:relative;
 	width: 100%;}
 
@@ -1494,11 +1494,11 @@ article#advertises section:before {
 }
 
 article#advertises section:hover:before {
-    background: rgba(0,0,0, 0);
+    background: rgba(0,0,0, .1);
 }
 
 article#advertises section h3 {
-    font-size: 4em;
+    font-size: 2.2em;
     position: absolute;
     top: 0;
     width: 100%;
@@ -1916,6 +1916,10 @@ body.woocommerce ul.products {
         line-height: 1.25em;
     }
     
+    .video-container,
+    .embed-youtube {
+        padding: 0 0 25.55vw;}
+    
     article.the-blog {
         background-color: #fff;
         display: grid;
@@ -2027,10 +2031,6 @@ body.woocommerce ul.products {
 
     article#advertises section img {
         height: 20em;
-    }
-
-    article#advertises section h3 {
-        font-size: 2.5em;
     }
     
     footer#widgets-and-credits aside.footer_widget {
