@@ -13,25 +13,30 @@
 						<?php echo single_cat_title( '', false ); ?>
 
 					<?php elseif ( is_author() ) : ?>
-						<?php esc_html_e( 'Author Archive for ', 'appeal' ); ?><span class="text-note"> 
+						<?php esc_html_e( 'Author Archive for ', 'appeal' ); ?>
+						<span class="text-note"> 
                             <?php printf( esc_attr( get_the_author_meta( 
                                       'display_name', get_query_var( 'author' ) ) ) 
                                     ); ?></span>
 
 					<?php elseif ( is_tag() ) : ?>
-						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' ); ?><span class="text-note"> 
-                                    <?php  printf( esc_attr( single_tag_title( '', false ) ) ); ?></span>
+						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' ); ?>
+						<span class="text-note"> 
+                        <?php  printf( esc_attr( single_tag_title( '', false ) ) ); ?></span>
 
 					<?php elseif ( is_day() ) : ?>
-						<?php echo esc_html_e( 'Dated Archives: ', 'appeal' ); ?><span class="text-note"> 
+						<?php echo esc_html_e( 'Dated Archives: ', 'appeal' ); ?>
+						<span class="text-note"> 
                             <?php printf( esc_attr( get_the_date() ) ); ?></span>
 
 					<?php elseif ( is_month() ) : ?>
-						<?php echo esc_html_e( 'Monthly Archives: ', 'appeal' ); ?><span class="text-note"> 
+						<?php echo esc_html_e( 'Monthly Archives: ', 'appeal' ); ?>
+						<span class="text-note"> 
                             <?php printf( esc_attr( get_the_date( 'F Y' ) ) ); ?></span>
 
 					<?php elseif ( is_year() ) : ?>
-						<?php echo esc_html_e( 'Yearly Archives: ', 'appeal' ); ?><span class="text-note"> 
+						<?php echo esc_html_e( 'Yearly Archives: ', 'appeal' ); ?>
+						<span class="text-note"> 
                             <?php printf( esc_attr( get_the_date( 'Y' ) ) ); ?></span>
 
     					<?php else : ?>
@@ -45,7 +50,9 @@
 				$category_description = category_description();
 				if ( $category_description != '' ) : ?> 
 				
-				    <div class="archive-meta"><p><?php the_archive_description(); ?></p></div>
+				    <div class="archive-meta">
+				        <p><?php the_archive_description(); ?></p>
+				    </div>
 				
 				<?php endif; ?>
 
@@ -53,11 +60,14 @@
             <?php
             while ( have_posts() ) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1 class="entry-title"><a href="<?php the_permalink() ?>"
-                                           rel="bookmark"><?php the_archive_title(); ?></a></h1>
+                <h1 class="entry-title"><?php the_archive_title(); ?> 
+                <a href="<?php the_permalink() ?>" rel="bookmark" 
+                   title="<?php the_archive_title(); ?>" >
+                   <?php the_title(); ?></a></h1>
                 <div class="entry-content">
 
                     <?php the_excerpt(); ?>
+                    
                          <a href="<?php echo esc_url( get_permalink() ); ?>" 
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>

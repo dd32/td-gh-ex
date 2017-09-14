@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-09-11 17:19-0800\n"
-"PO-Revision-Date: 2017-09-11 17:20-0800\n"
+"POT-Creation-Date: 2017-09-14 14:41-0800\n"
+"PO-Revision-Date: 2017-09-14 14:41-0800\n"
 "Last-Translator: \n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,68 +10,64 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n;_nx;esc_html__;"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_x;_nx;esc_html__;"
 "esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:64
+#: functions.php:61
 msgid "Main Menu Top"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:62
 msgid "Footer Links ~ 1 level ONLY"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:95
 msgid "Tokyo"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:133
 msgid "Four by Three Ratio Thumb"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:183
 msgid "on"
 msgstr ""
 
-#: functions.php:318
-msgid "Read Article"
-msgstr ""
-
-#: functions.php:346
+#: functions.php:347
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:347 functions.php:356
+#: functions.php:348 functions.php:357
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:355
+#: functions.php:356
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:365
+#: functions.php:366
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:367
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:376
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:385
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:393
+#: functions.php:394
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:402
+#: functions.php:403
 msgid "Footer Right"
 msgstr ""
 
@@ -79,35 +75,35 @@ msgstr ""
 msgid "Author Archive for "
 msgstr ""
 
-#: archive.php:22
+#: archive.php:23
 msgid "Tag Archive for "
 msgstr ""
 
-#: archive.php:26
+#: archive.php:28
 msgid "Dated Archives: "
 msgstr ""
 
-#: archive.php:30
+#: archive.php:33
 msgid "Monthly Archives: "
 msgstr ""
 
-#: archive.php:34
+#: archive.php:38
 msgid "Yearly Archives: "
 msgstr ""
 
-#: archive.php:63 search.php:23
+#: archive.php:73 search.php:23
 msgid "View Article..."
 msgstr ""
 
-#: content-header.php:98
+#: content-header.php:96
 msgid "Author Gravatar is shown here. Clickable link to Author page."
 msgstr ""
 
-#: content-header.php:114
+#: content-header.php:112
 msgid "Article by: "
 msgstr ""
 
-#: content-header.php:117
+#: content-header.php:115
 msgid "Authors link to author website or other works."
 msgstr ""
 
@@ -123,12 +119,12 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:47
+#: header.php:48
 msgid "Navigation"
 msgstr ""
 
 #: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
-#: content.php:400
+#: content.php:404
 msgid "Edit"
 msgstr ""
 
@@ -472,51 +468,43 @@ msgstr ""
 msgid "%1$s Response"
 msgstr ""
 
-#: content.php:223 content.php:382
+#: content.php:227 content.php:388
 msgid "Pages : "
 msgstr ""
 
-#: content.php:229 content.php:388
-msgid "Next page"
-msgstr ""
-
-#: content.php:230 content.php:389
-msgid "Previous page"
-msgstr ""
-
-#: content.php:473
+#: content.php:477
 msgid "Information about the author you selected"
 msgstr ""
 
-#: content.php:478
+#: content.php:482
 msgid "Author:  "
 msgstr ""
 
-#: content.php:490
+#: content.php:494
 msgid "link to author"
 msgstr ""
 
-#: content.php:494
+#: content.php:498
 msgid "Author Page and Archives for "
 msgstr ""
 
-#: content.php:498
+#: content.php:502
 msgid "Number of articles by this author, "
 msgstr ""
 
-#: content.php:501 author.php:23
+#: content.php:505 author.php:23
 msgid "Articles by "
 msgstr ""
 
-#: content.php:507 author.php:28
+#: content.php:511 author.php:28
 msgid "E-Mail: "
 msgstr ""
 
-#: content.php:510 author.php:31
+#: content.php:514 author.php:31
 msgid "email link text to author"
 msgstr ""
 
-#: content.php:514 content.php:515
+#: content.php:518 content.php:519
 msgid "Close"
 msgstr ""
 
@@ -524,141 +512,149 @@ msgstr ""
 msgid "Appeal Theme Controls"
 msgstr ""
 
-#: customize.php:188
+#: customize.php:163
+msgid "Read Article"
+msgstr ""
+
+#: customize.php:199
 msgid "Header, Footer and Sidebars Background"
 msgstr ""
 
-#: customize.php:190
+#: customize.php:201
 msgid ""
 "Select the background color of the header area,\n"
 "                    the footer and sidebars"
 msgstr ""
 
-#: customize.php:203
+#: customize.php:214
 msgid "Content Background Color"
 msgstr ""
 
-#: customize.php:205
+#: customize.php:216
 msgid "Sets background color of Post and Page content"
 msgstr ""
 
-#: customize.php:218
+#: customize.php:229
 msgid "Links Color"
 msgstr ""
 
-#: customize.php:220
+#: customize.php:231
 msgid "Select the color for hyperlinks. May not effect everything."
 msgstr ""
 
-#: customize.php:233
+#: customize.php:244
 msgid "PullQuote Text Color"
 msgstr ""
 
-#: customize.php:235
+#: customize.php:246
 msgid "Select the color for pullquote excerpt on articles."
 msgstr ""
 
-#: customize.php:247
+#: customize.php:258
 msgid "PullQuote Replaces Excerpt"
 msgstr ""
 
-#: customize.php:250
+#: customize.php:261
 msgid "Use Excerpt as Pullquote"
 msgstr ""
 
-#: customize.php:251
+#: customize.php:262
 msgid "Use default excerpt"
 msgstr ""
 
-#: customize.php:262
+#: customize.php:273
 msgid "Set Pullquote Width"
 msgstr ""
 
-#: customize.php:263
+#: customize.php:274
 msgid "This sets how wide the Teaser will be."
 msgstr ""
 
-#: customize.php:277
+#: customize.php:288
 msgid "Set POSTS ONLY Excerpt Length"
 msgstr ""
 
-#: customize.php:289
+#: customize.php:300
 msgid "Title Visible only on: "
 msgstr ""
 
-#: customize.php:293
+#: customize.php:304
 msgid "Posts and Pages"
 msgstr ""
 
-#: customize.php:294
+#: customize.php:305
 msgid "Posts Only - Not Pages"
 msgstr ""
 
-#: customize.php:302
+#: customize.php:313
 msgid "Choose color for link icon: "
 msgstr ""
 
-#: customize.php:306
+#: customize.php:317
 msgid "Black Link Icon"
 msgstr ""
 
-#: customize.php:307
+#: customize.php:318
 msgid "Red Link Icon"
 msgstr ""
 
-#: customize.php:308
+#: customize.php:319
 msgid "Blue Link Icon"
 msgstr ""
 
-#: customize.php:309
+#: customize.php:320
 msgid "Green Link Icon"
 msgstr ""
 
-#: customize.php:310
+#: customize.php:321
 msgid "Gray Link Icon"
 msgstr ""
 
-#: customize.php:321
+#: customize.php:332
 msgid "Upload Image to Top Advert Box"
 msgstr ""
 
-#: customize.php:322
+#: customize.php:333
 msgid "Upload will override any widgets."
 msgstr ""
 
-#: customize.php:330
+#: customize.php:341
 msgid "Choose border style on sidebars."
 msgstr ""
 
-#: customize.php:334
+#: customize.php:345
 msgid "No borders"
 msgstr ""
 
-#: customize.php:335
+#: customize.php:346
 msgid "Show borders"
 msgstr ""
 
-#: customize.php:337
+#: customize.php:348
 msgid "Show borders and Box-Shadow"
 msgstr ""
 
-#: customize.php:347
+#: customize.php:358
 msgid "Wording for View Sidebar button"
 msgstr ""
 
-#: customize.php:358
+#: customize.php:368
+msgid "Wording for Read More button"
+msgstr ""
+
+#: customize.php:379
 msgid "Mobile Navigation Preference"
 msgstr ""
 
-#: customize.php:361
+#: customize.php:382
 msgid "Leave Top Menu Item Selectable"
 msgstr ""
 
-#: customize.php:362
+#: customize.php:383
 msgid "Use Mobile Nav (top tap only)"
 msgstr ""
 
-#: customize.php:373
+#: customize.php:394
 msgid "Instructions: <b>Appearance > Theme Options</b>"
 msgstr ""
 

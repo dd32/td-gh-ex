@@ -20,7 +20,8 @@ use more tag to split content "&gt;!--more-->"
 	    <?php 
         $content = appeal_split_content();
         // output first content section in column1
-	    echo '<div id="column1" class="col-sm-6">', array_shift($content), '</div>';
+	    echo '<div id="column1" class="col-sm-6">', 
+	    wp_kses_post( force_balance_tags( array_shift($content) ) ), '</div>';
 
 	    // output remaining content sections in column2
 	    echo '<div id="column2" class="col-sm-6">', implode($content), '</div>';
@@ -42,7 +43,9 @@ use more tag to split content "&gt;!--more-->"
 		  <?php get_template_part( 'nothing' ); ?>
 
 		<?php endif; ?>
-
+        
+        <?php get_template_part( 'nav', 'content' ); ?>
+	
 	</div>
 	<div class="hidden-xs col-sm-12 col-md-3 col-lg-3">
 

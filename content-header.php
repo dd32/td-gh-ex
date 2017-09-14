@@ -24,8 +24,6 @@
        $hgroup = get_theme_mod( 'appeal_title_visible_setting', 'atvt1' );
     endif;
 
-
-   
     /**
      * Posts and Pages but no links
      */

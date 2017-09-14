@@ -19,7 +19,8 @@
             <?php if( has_custom_logo() ) : ?>
             <a title="<?php bloginfo('description'); ?>"
                href="<?php echo esc_url(home_url('/')); ?>">
-            <?php printf( appeal_theme_custom_logo()); ?></a>
+            <?php echo wp_kses_post( force_balance_tags( 
+            appeal_theme_custom_logo() ) ); ?></a>
             <?php endif; ?>
         
             <p class="list-inline">

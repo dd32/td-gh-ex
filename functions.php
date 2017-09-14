@@ -4,17 +4,16 @@
  * @since 1.0.2
  * Sets up theme defaults and registers support for various WordPress features.
  */
- 
 /**
  *  Setup function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
 function appeal_theme_setup() {
-    /**
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+/**
+ * Switch default core markup for search form, comment form, and comments
+ * to output valid HTML5.
+ */
     add_theme_support( 'html5', array(
         'search-form',
         'comment-form',
@@ -22,20 +21,19 @@ function appeal_theme_setup() {
         'gallery',
         'caption',
     ));
-    /**
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+/**
+ * Let WordPress manage the document title.
+ * By adding theme support, we declare that this theme does not use a
+ * hard-coded <title> tag in the document head, and expect WordPress to
+ * provide it for us.
+ */
     add_theme_support( 'title-tag' );
     add_theme_support( 'automatic-feed-links' ); // rss feederz
-    
-    /**
-	 * Enable support for Post Thumbnails on posts and pages.
-	 * wp thumbnails (sizes handled below)
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+/**
+ * Enable support for Post Thumbnails on posts and pages.
+ * wp thumbnails (sizes handled below)
+ * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+ */
     add_theme_support( 'post-thumbnails' );
 
     set_post_thumbnail_size( 400, 300, true );   // new default thumb size
@@ -56,8 +54,7 @@ function appeal_theme_setup() {
     add_theme_support( 'custom-background', $defaults );
     add_theme_support( 'custom-logo' );
 
-    add_editor_style('editor-style.css');
-    
+    add_editor_style('editor-style.css');    
     // main nav in header - also nav menu in footer and modal are same
     register_nav_menus(
         array(
@@ -67,13 +64,6 @@ function appeal_theme_setup() {
     );
 
     load_theme_textdomain( 'appeal', get_template_directory_uri() . '/languages' );
-
-    //comments thread support
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
-    
-                              
 /**
  * Implementation of the Custom Header feature.
  *
@@ -91,8 +81,7 @@ function appeal_theme_setup() {
             'flex-height'        => true,
             'flex-width'        => true,
             'wp-head-callback' => 'appeal_theme_header_style',
-        ) ) );
-        
+        ) ) );     
 /**
  * Register Default Headers 
  * @since 1.1.1
@@ -109,11 +98,20 @@ function appeal_theme_setup() {
             ), 
         );
         register_default_headers( $suggested_imgs );
-
     //woocommerce filters below setup
     add_theme_support( 'woocommerce' );
 }
 add_action('after_setup_theme','appeal_theme_setup');
+
+/**
+ * only enable js if the visitor is browsing either a page or a post    
+ * or if comments are open for the entry, or threaded comments are enabled
+ */
+function appeal_theme_queue_js(){
+    if ( (!is_admin()) && is_singular() && comments_open() && get_option('thread_comments') )
+        wp_enqueue_script( 'comment-reply' );
+}
+add_action('wp_print_scripts', 'appeal_theme_queue_js');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -156,8 +154,6 @@ function appeal_theme_scripts() {
 
     //enqueue (sane and include) scripts into WP
     wp_enqueue_style( 'appeal-google-fonts');
-   
-   
 }
 add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
 
@@ -171,16 +167,16 @@ add_action( 'wp_enqueue_scripts', 'appeal_theme_scripts' );
 if ( ! function_exists( 'appeal_mce_google_fonts_styles' ) ) {
 	function appeal_mce_google_fonts_styles() {
 	   $font_url = 'https://fonts.googleapis.com/css?family=Raleway';
-           add_editor_style( str_replace( ',', '%2C', $font_url ) );
+           add_editor_style( str_replace( ',', '%2C', esc_url( $font_url ) ) );
 	}
 }
 add_action( 'init', 'appeal_mce_google_fonts_styles' );
 
-	/*
-	 * Translators: If there are characters in your language that are not
-	 * supported by Raleway, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
+/*
+ * Translators: If there are characters in your language that are not
+ * supported by Raleway, translate this to 'off'. Do not translate
+ * into your own language.
+ */
 function appeal_fonts_url() {
     $fonts_url = '';
 
@@ -197,8 +193,9 @@ function appeal_fonts_url() {
 		);
 		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
 	}
-	return $fonts_url;
+	return esc_url( $fonts_url );
 }
+
 /**
  * Loads custom font CSS file.
  *
@@ -218,7 +215,6 @@ function appeal_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'appeal_fonts' );
 
-
 /**
  * page excerpt support
  * @init
@@ -230,9 +226,10 @@ function appeal_theme_excerpt_support()
 }
 add_action( 'init', 'appeal_theme_excerpt_support' );
 
-
 /**
  * support for logo upload, output.
+ * Output sanitized in header to assure all html displays.
+ * @since 1.1.8 
  */
 function appeal_theme_custom_logo() {
     $output = '';
@@ -264,11 +261,10 @@ function appeal_theme_header_style()
         <style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);background-size:cover;}</style>
     <?php
     }
-
-    /*
-     * If no custom options for text are set, let's bail.
-     * get_header_textcolor() options: Any hex value, 'blank' to hide text.
-     */
+/*
+ * If no custom options for text are set, let's bail.
+ * get_header_textcolor() options: Any hex value, 'blank' to hide text.
+ */
     echo '<style type="text/css">';
 
         if ( ! display_header_text() )
@@ -281,6 +277,11 @@ function appeal_theme_header_style()
      echo '</style>';
 }
 
+//https://themefoundation.com/wordpress-theme-customizer/
+function appeal_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
 /** 
  * Custom usage of more_tag to split content in two.
  * @only works on template Two Part Content
@@ -291,35 +292,36 @@ function appeal_split_content() {
 if( is_page()) {
     //global $more;
     //$more = true;
-    $content = preg_split('/<span id="more-\d+"><\/span>/i', get_the_content('more'));
+    $content = preg_split('/<span id="more-\d+"><\/span>/i', 
+               get_the_content('more'));
     for($c = 0, $csize = count($content); $c < $csize; $c++) {
         $content[$c] = apply_filters('the_content', $content[$c]);
     }
-    return $content;
+    return appeal_sanitize_text( $content );
     }
 }
 
-
-//modify the read more tag
-function appeal_theme_modify_read_more_link() {
-    return '<a class="more-link" href="' . get_permalink() . '">[ + ]</a>';
-    
-}
-add_filter( 'the_content_more_link', 'appeal_theme_modify_read_more_link' );
-
-
-//remove ellipsis
+/**
+ * Remove ellipsis and set read more text.
+ * Dev note: Title attribute is not attribute realted, 
+ * it is text from the theme_mod only. Only `get_the_title` would work
+ * if you want the actual title of the post.
+ */
 function appeal_custom_excerpt_more($link) {
+    //make sure admin tables not effected
     if ( is_admin() ) {
 		return $link;
 	}
     $post = get_post();
-        $link = ' <a class="more-link" href="'. get_permalink($post->ID)
-                . '">'. __('Read Article', 'appeal') .'</a>';
-        return $link;
+    if( get_theme_mods() ) {
+    $title = get_theme_mod( 'appeal_readon_text_setting' );
+    }
+        $link = ' <a class="more-link" href="'. esc_url( get_permalink($post->ID) ) 
+                . '" title="' . esc_attr( $title ) . '">' 
+                . esc_html( $title ) .'</a>';
+        return appeal_sanitize_text( $link );
 }
 add_filter('excerpt_more', 'appeal_custom_excerpt_more');
-
 
 /**
  * Conditional post format 
@@ -334,10 +336,9 @@ function appeal_post_formats() {
         elseif( has_post_format( 'gallery' ) ) { 
         $appealpost = 'format-gallery-post'; }
             else { $appealpost = 'format-standard-post'; } 
-    return $appealpost;
+    return sanitize_html_class( $appealpost );
 }
 endif; 
-
 
 // Sidebar and Footer declarations
 function appeal_register_sidebars() {
@@ -408,7 +409,6 @@ function appeal_register_sidebars() {
 
 }
 add_action( 'widgets_init', 'appeal_register_sidebars' );
-
 
 /**
  * Header for singular articles

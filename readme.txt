@@ -1,6 +1,5 @@
 === Appeal ===
 Theme URI:      https://larryjudd.us/appeal/
-
 Theme Name:     Appeal
 Author:         Larry Judd Oliver
 Author URI:     http://tradesouthwest.com/
@@ -9,7 +8,7 @@ Text Domain:    appeal
 Tags:           one-column, two-columns, three-columns, translation-ready, footer-widgets, full-width-template
 License:        GPL 3
 License URI:    https://www.gnu.org/licenses/quick-guide-gplv3.en.html
-Appeal WordPress Theme, Copyright 2012 Joe Smith
+Appeal WordPress Theme, Copyright 2017 Tradesouthwest
 Appeal is distributed under the terms of the GNU GPL
  
 == Other Licenses ==
@@ -35,6 +34,21 @@ Twitter in admin: https://brand.twitter.com/logo
 
 
 == Change Log ==
+1.1.8 
+* added nav to tpl-twopart
+* aligned image caption
+* changed conditionals in archives
+* fixed admin view of post excerpts
+* added more sanity throughout
+* moved script enque from setup
+* changed style of readmore button
+* added option to readmore link text
+* aligned search button
+* styled nextpage buttons
+* corrected archive titles
+* sanitize blog logo
+* revised read more
+
 1.1.7
 * typo in stylesheet
 

@@ -148,8 +148,19 @@ function appeal_register_theme_customizer($wp_customize)
      * @since1.0.7
     */
 	$wp_customize->add_setting(	'appeal_sidebar_text_setting', array(
-            'type'              => 'option',
+            'type'              => 'theme_mod',
             'default'           => ' + ',
+			'sanitize_callback'	=> 'sanitize_text_field'
+		)
+	);
+	
+    /** (12)
+     * WP_Customize_ /add_setting for offscreen sidebar button text
+     * @since1.1.8
+    */
+	$wp_customize->add_setting(	'appeal_readon_text_setting', array(
+            'type'              => 'theme_mod',
+            'default'           => __( 'Read Article', 'appeal' ),
 			'sanitize_callback'	=> 'sanitize_text_field'
 		)
 	);
@@ -348,6 +359,16 @@ function appeal_register_theme_customizer($wp_customize)
         )
     );
     
+    // (12)
+    $wp_customize->add_control(
+        'appeal_readon_text', array(
+            'settings'          => 'appeal_readon_text_setting',
+            'type'              => 'text',
+            'section'           => 'appeal_custom_teaser_length_section',
+            'label'       => __( 'Wording for Read More button', 'appeal' ),
+        )
+    );
+    
     /** (13) Mobile Nav @use or not use
      * @since 1.0.7 
      */
@@ -445,11 +466,13 @@ add_action( 'wp_head', 'appeal_customizer_css');
  * integer value
 */
 function appeal_custom_posts_excerpt_length()
-{
+{ 
+    if( !is_admin()) : 
     if ( get_theme_mods( ) ) {
         $length = get_theme_mod( 'appeal_posts_excerpt_length_setting', 60 );
-        return $length;
+        return esc_attr( $length );
     }
+    endif;
 }
 add_filter( 'excerpt_length', 'appeal_custom_posts_excerpt_length' );
 
