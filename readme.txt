@@ -2,7 +2,7 @@
 Contributors: Theme.al,algoritmika,karzin,anbinder
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.3.8
+Version: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
@@ -34,6 +34,12 @@ If you want to setup your front page like our demo, just follow these steps:
 Basic Store is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
 == Changelog ==
+
+= 1.3.9 - Sept 12 2017 =
+- Add Custom background color support
+- Fix custom header theme support
+- Add editor style
+- Change style.css tags
 
 = 1.3.8 - Sept 08 2017 =
 - Improve plugin's description
@@ -119,8 +125,11 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 
 == Upgrade Notice ==
 
-= 1.3.8 =
-- Improve plugin's description
+= 1.3.9 =
+- Add Custom background color support
+- Fix custom header theme support
+- Add editor style
+- Change style.css tags
 
 == Credits ==
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

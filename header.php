@@ -4,7 +4,10 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @version 1.3.9
+ * @since   1.0.0
+ *
+ * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package basicstore
  */
@@ -90,14 +93,39 @@
 
 	</header><!-- #site-header -->
 
+	<?php
+    // Header image
+	$header_image = get_header_image();
+	if ( $header_image ) {
+		$header_image_style = 'background-image:url(' . esc_url( $header_image ) . ');';
+	} else {
+		$header_image_style = '';
+	}
+	if ( $custom_header->width ) {
+		$header_image_style .= 'max-width:' . $custom_header->width . 'px;';
+	}
+	if ( $custom_header->height ) {
+		$header_image_style .= 'height:' . $custom_header->height . 'px;';
+	}
+	?>
+
+    <?php
+    // Header text color
+    if ( display_header_text() ) {
+	    $style = ' style="color:#' . get_header_textcolor() . ';"';
+    } else {
+	    $style = ' style="display:none;"';
+    }
+    ?>
+
 	<section id="site-content" class="site-content">
 	<?php if ( is_home() || is_front_page() ) : ?>
-		<div id="site-jumbotron" class="jumbotron text-center">
+		<div id="site-jumbotron" class="jumbotron text-center" style="<?php echo $header_image_style; ?>">
 
 			<div class="container">
 
-				<h1><?php bloginfo( 'name' ); ?></h1>
-				<p><?php bloginfo('description'); ?></p>
+				<h1 <?php echo $style; ?>><?php bloginfo( 'name' ); ?></h1>
+				<p <?php echo $style; ?>><?php bloginfo('description'); ?></p>
 
 			</div><!-- .container -->
 
