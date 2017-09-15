@@ -88,7 +88,20 @@ if ( ! function_exists( 'best_business_setup' ) ) :
 			),
 		) );
 
+		// Declare support for demo importer.
+		$importer_content = array(
+			'static_front_page' => true,
+			'static_page'       => 'home',
+			'posts_page'        => 'blog',
+			'menu_locations'    => array(
+				'primary' => 'main-menu',
+				'top'     => 'top-menu',
+				'social'  => 'social-menu',
+				),
+			);
+		add_theme_support( 'axle-demo-importer', $importer_content );
 	}
+
 endif;
 
 add_action( 'after_setup_theme', 'best_business_setup' );
@@ -189,7 +202,7 @@ function best_business_scripts() {
 
 	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/vendors/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 
-	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.3' );
+	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.4' );
 
 	wp_enqueue_script( 'best-business-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 

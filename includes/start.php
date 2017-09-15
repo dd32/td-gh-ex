@@ -36,6 +36,9 @@ require_once trailingslashit( get_template_directory() ) . 'includes/template-ta
 // Customizer options.
 require_once trailingslashit( get_template_directory() ) . 'includes/customizer.php';
 
+// Load plugin recommendations.
+require_once trailingslashit( get_template_directory() ) . 'includes/tgm.php';
+
 // Load WooCommerce support.
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once trailingslashit( get_template_directory() ) . 'includes/support/woocommerce.php';

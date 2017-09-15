@@ -316,4 +316,22 @@ if ( ! function_exists( 'best_business_custom_content_width' ) ) :
 	}
 endif;
 
-add_filter( 'template_redirect', 'best_business_custom_content_width' );
+add_action( 'template_redirect', 'best_business_custom_content_width' );
+
+
+if ( ! function_exists( 'best_business_custom_demo_message' ) ) :
+
+	/**
+	 * Custom demo message.
+	 *
+	 * @since 1.0.0
+	 */
+	function best_business_custom_demo_message() {
+		echo '<p><strong><span class="dashicons dashicons-download"></span>';
+		printf( esc_html__( 'Demo zip file is available for this theme %1$s. %2$sDownload Now%3$s', 'best-business' ), 'Best Business', '<a href="https://raw.githubusercontent.com/axlethemes/demo-contents/master/files/best-business.zip">', '</a>' );
+		echo '</strong></p>';
+	}
+
+endif;
+
+add_action( 'axle_demo_importer_before_admin_content', 'best_business_custom_demo_message' );
