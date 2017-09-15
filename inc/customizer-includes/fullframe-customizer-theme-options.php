@@ -205,14 +205,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$layouts = fullframe_layouts();
-	$choices = array();
-	foreach ( $layouts as $layout ) {
-		$choices[ $layout['value'] ] = $layout['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[theme_layout]', array(
-		'choices'	=> $choices,
+		'choices'	=> fullframe_layouts(),
 		'label'		=> esc_html__( 'Default Layout', 'full-frame' ),
 		'section'	=> 'fullframe_layout',
 		'settings'   => 'fullframe_theme_options[theme_layout]',
@@ -225,14 +219,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$layouts = fullframe_get_archive_content_layout();
-	$choices = array();
-	foreach ( $layouts as $layout ) {
-		$choices[ $layout['value'] ] = $layout['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[content_layout]', array(
-		'choices'   => $choices,
+		'choices'   => fullframe_get_archive_content_layout(),
 		'label'		=> esc_html__( 'Archive Content Layout', 'full-frame' ),
 		'section'   => 'fullframe_layout',
 		'settings'  => 'fullframe_theme_options[content_layout]',
@@ -245,19 +233,12 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-
-	$single_post_image_layouts = fullframe_single_post_image_layout_options();
-	$choices = array();
-	foreach ( $single_post_image_layouts as $single_post_image_layout ) {
-		$choices[$single_post_image_layout['value']] = $single_post_image_layout['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[single_post_image_layout]', array(
 			'label'		=> esc_html__( 'Single Page/Post Image Layout ', 'full-frame' ),
 			'section'   => 'fullframe_layout',
 	        'settings'  => 'fullframe_theme_options[single_post_image_layout]',
 	        'type'	  	=> 'select',
-			'choices'  	=> $choices,
+			'choices'  	=> fullframe_single_post_image_layout_options(),
 	) );
    	// Layout Options End
 
@@ -302,14 +283,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$pagination_types = fullframe_get_pagination_types();
-	$choices = array();
-	foreach ( $pagination_types as $pagination_type ) {
-		$choices[$pagination_type['value']] = $pagination_type['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[pagination_type]', array(
-		'choices'  => $choices,
+		'choices'  => fullframe_get_pagination_types(),
 		'label'    => esc_html__( 'Pagination type', 'full-frame' ),
 		'section'  => 'fullframe_pagination_options',
 		'settings' => 'fullframe_theme_options[pagination_type]',
@@ -331,14 +306,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_slider_content_options = fullframe_featured_slider_content_options();
-	$choices = array();
-	foreach ( $fullframe_featured_slider_content_options as $fullframe_featured_slider_content_option ) {
-		$choices[$fullframe_featured_slider_content_option['value']] = $fullframe_featured_slider_content_option['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_option]', array(
-		'choices'  	=> $choices,
+		'choices'  	=> fullframe_featured_slider_content_options(),
 		'label'    	=> esc_html__( 'Enable Promotion Headline on', 'full-frame' ),
 		'priority'	=> '0.5',
 		'section'  	=> 'fullframe_promotion_headline_options',

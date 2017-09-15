@@ -32,14 +32,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_slider_content_options = fullframe_featured_slider_content_options();
-	$choices = array();
-	foreach ( $fullframe_featured_slider_content_options as $fullframe_featured_slider_content_option ) {
-		$choices[$fullframe_featured_slider_content_option['value']] = $fullframe_featured_slider_content_option['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_option]', array(
-		'choices'  	=> $choices,
+		'choices'  	=> fullframe_featured_slider_content_options(),
 		'label'    	=> esc_html__( 'Enable Featured Content on', 'full-frame' ),
 		'priority'	=> '1',
 		'section'  	=> 'fullframe_featured_content_settings',
@@ -53,15 +47,9 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_content_layout_options = fullframe_featured_content_layout_options();
-	$choices = array();
-	foreach ( $fullframe_featured_content_layout_options as $fullframe_featured_content_layout_option ) {
-		$choices[$fullframe_featured_content_layout_option['value']] = $fullframe_featured_content_layout_option['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_layout]', array(
 		'active_callback'	=> 'fullframe_is_featured_content_active',
-		'choices'  	=> $choices,
+		'choices'  	=> fullframe_featured_content_layout_options(),
 		'label'    	=> esc_html__( 'Select Featured Content Layout', 'full-frame' ),
 		'priority'	=> '2',
 		'section'  	=> 'fullframe_featured_content_settings',
@@ -105,15 +93,9 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_content_types = fullframe_featured_content_types();
-	$choices = array();
-	foreach ( $fullframe_featured_content_types as $fullframe_featured_content_type ) {
-		$choices[$fullframe_featured_content_type['value']] = $fullframe_featured_content_type['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_type]', array(
 		'active_callback'	=> 'fullframe_is_featured_content_active',
-		'choices'  	=> $choices,
+		'choices'  	=> fullframe_featured_content_types(),
 		'label'    	=> esc_html__( 'Select Content Type', 'full-frame' ),
 		'priority'	=> '3',
 		'section'  	=> 'fullframe_featured_content_settings',
@@ -198,15 +180,9 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_content_show = fullframe_featured_content_show();
-	$choices = array();
-	foreach ( $fullframe_featured_content_show as $fullframe_featured_content_shows ) {
-		$choices[$fullframe_featured_content_shows['value']] = $fullframe_featured_content_shows['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
 		'active_callback'	=> 'fullframe_is_demo_featured_content_inactive',
-		'choices'  	=> $choices,
+		'choices'  	=> fullframe_featured_content_show(),
 		'label'    	=> esc_html__( 'Display Content', 'full-frame' ),
 		'priority'	=> '8',
 		'section'  	=> 'fullframe_featured_content_settings',

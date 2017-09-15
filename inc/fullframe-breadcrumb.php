@@ -132,8 +132,9 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 			elseif( is_single() && !is_attachment() ) {
 				if( get_post_type() != 'post' ) {
 					$post_type = get_post_type_object( get_post_type() );
-					$slug      = $post_type->rewrite;
-					printf( $link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name );
+					$post_link = get_post_type_archive_link( $post_type->name );
+
+					printf( $link, esc_url( $post_link ), $post_type->labels->singular_name );
 					if( $showCurrent == 1 ) {
 						echo $before . get_the_title() . $after;
 					}

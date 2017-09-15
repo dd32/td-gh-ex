@@ -1231,7 +1231,7 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 
 							$fullframe_promotion_headline .= '
 							<div class="section right">
-								<a href="' . esc_url( $promotion_headline_url ) . '" target="' . $headlinetarget . '">' . esc_attr( $promotion_headline_button ) . '
+								<a href="' . esc_url( $promotion_headline_url ) . '" target="' . $headlinetarget . '">' . esc_html( $promotion_headline_button ) . '
 								</a>
 							</div><!-- .section.right -->';
 						}
@@ -1452,10 +1452,10 @@ function fullframe_custom_css_migrate(){
 	if ( version_compare( $ver, '4.7' ) >= 0 ) {
 		return;
 	}
-	
+
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
 	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
-	    
+
 	    /**
 		 * Get Theme Options Values
 		 */

@@ -113,14 +113,8 @@ function fullframe_get_default_theme_options() {
  */
 function fullframe_color_schemes() {
 	$color_scheme_options = array(
-		'light' => array(
-			'value' 				=> 'light',
-			'label' 				=> esc_html__( 'Light', 'full-frame' ),
-		),
-		'dark' => array(
-			'value' 				=> 'dark',
-			'label' 				=> esc_html__( 'Dark', 'full-frame' ),
-		),
+		'light' => esc_html__( 'Light', 'full-frame' ),
+		'dark'  => esc_html__( 'Dark', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_color_schemes', $color_scheme_options );
@@ -134,18 +128,9 @@ function fullframe_color_schemes() {
  */
 function fullframe_layouts() {
 	$layout_options = array(
-		'left-sidebar' 	=> array(
-			'value' => 'left-sidebar',
-			'label' => esc_html__( 'Primary Sidebar, Content', 'full-frame' ),
-		),
-		'right-sidebar' => array(
-			'value' => 'right-sidebar',
-			'label' => esc_html__( 'Content, Primary Sidebar', 'full-frame' ),
-		),
-		'no-sidebar'	=> array(
-			'value' => 'no-sidebar',
-			'label' => esc_html__( 'No Sidebar ( Content Width )', 'full-frame' ),
-		),
+		'left-sidebar' 	=> esc_html__( 'Primary Sidebar, Content', 'full-frame' ),
+		'right-sidebar' => esc_html__( 'Content, Primary Sidebar', 'full-frame' ),
+		'no-sidebar'	=> esc_html__( 'No Sidebar ( Content Width )', 'full-frame' ),
 	);
 	return apply_filters( 'fullframe_layouts', $layout_options );
 }
@@ -158,14 +143,8 @@ function fullframe_layouts() {
  */
 function fullframe_get_archive_content_layout() {
 	$layout_options = array(
-		'excerpt-featured-image' => array(
-			'value' => 'excerpt-featured-image',
-			'label' => esc_html__( 'Show Excerpt', 'full-frame' ),
-		),
-		'full-content' => array(
-			'value' => 'full-content',
-			'label' => esc_html__( 'Show Full Content (No Featured Image)', 'full-frame' ),
-		),
+		'excerpt-featured-image' => esc_html__( 'Show Excerpt', 'full-frame' ),
+		'full-content'           => esc_html__( 'Show Full Content (No Featured Image)', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_get_archive_content_layout', $layout_options );
@@ -179,34 +158,13 @@ function fullframe_get_archive_content_layout() {
  */
 function fullframe_enable_featured_header_image_options() {
 	$enable_featured_header_image_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => esc_html__( 'Homepage / Frontpage', 'full-frame' ),
-		),
-		'exclude-home' 		=> array(
-			'value'	=> 'exclude-home',
-			'label' => esc_html__( 'Excluding Homepage', 'full-frame' ),
-		),
-		'exclude-home-page-post' 	=> array(
-			'value' => 'exclude-home-page-post',
-			'label' => esc_html__( 'Excluding Homepage, Page/Post Featured Image', 'full-frame' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => esc_html__( 'Entire Site', 'full-frame' ),
-		),
-		'entire-site-page-post' 	=> array(
-			'value' => 'entire-site-page-post',
-			'label' => esc_html__( 'Entire Site, Page/Post Featured Image', 'full-frame' ),
-		),
-		'pages-posts' 	=> array(
-			'value' => 'pages-posts',
-			'label' => esc_html__( 'Pages and Posts', 'full-frame' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => esc_html__( 'Disabled', 'full-frame' ),
-		),
+		'homepage'               => esc_html__( 'Homepage / Frontpage', 'full-frame' ),
+		'exclude-home'           => esc_html__( 'Excluding Homepage', 'full-frame' ),
+		'exclude-home-page-post' => esc_html__( 'Excluding Homepage, Page/Post Featured Image', 'full-frame' ),
+		'entire-site'            => esc_html__( 'Entire Site', 'full-frame' ),
+		'entire-site-page-post'  => esc_html__( 'Entire Site, Page/Post Featured Image', 'full-frame' ),
+		'pages-posts'            => esc_html__( 'Pages and Posts', 'full-frame' ),
+		'disabled'               => esc_html__( 'Disabled', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_enable_featured_header_image_options', $enable_featured_header_image_options );
@@ -220,18 +178,9 @@ function fullframe_enable_featured_header_image_options() {
  */
 function fullframe_featured_image_size_options() {
 	$featured_image_size_options = array(
-		'full' 		=> array(
-			'value'	=> 'full',
-			'label' => esc_html__( 'Full Image', 'full-frame' ),
-		),
-		'large' 	=> array(
-			'value' => 'large',
-			'label' => esc_html__( 'Large Image', 'full-frame' ),
-		),
-		'slider'		=> array(
-			'value' => 'slider',
-			'label' => esc_html__( 'Slider Image', 'full-frame' ),
-		),
+		'full'   => esc_html__( 'Full Image', 'full-frame' ),
+		'large'  => esc_html__( 'Large Image', 'full-frame' ),
+		'slider' => esc_html__( 'Slider Image', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_image_size_options', $featured_image_size_options );
@@ -245,18 +194,9 @@ function fullframe_featured_image_size_options() {
  */
 function fullframe_featured_slider_content_options() {
 	$featured_slider_content_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => esc_html__( 'Homepage / Frontpage', 'full-frame' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => esc_html__( 'Entire Site', 'full-frame' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => esc_html__( 'Disabled', 'full-frame' ),
-		),
+		'homepage'    => esc_html__( 'Homepage / Frontpage', 'full-frame' ),
+		'entire-site' => esc_html__( 'Entire Site', 'full-frame' ),
+		'disabled'    => esc_html__( 'Disabled', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_slider_content_options', $featured_slider_content_options );
@@ -270,14 +210,8 @@ function fullframe_featured_slider_content_options() {
  */
 function fullframe_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => array(
-			'value' => 'demo-featured-content',
-			'label' => esc_html__( 'Demo Featured Content', 'full-frame' ),
-		),
-		'featured-page-content' => array(
-			'value' => 'featured-page-content',
-			'label' => esc_html__( 'Featured Page Content', 'full-frame' ),
-		)
+		'demo-featured-content' => esc_html__( 'Demo Featured Content', 'full-frame' ),
+		'featured-page-content' => esc_html__( 'Featured Page Content', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_content_types', $featured_content_types );
@@ -291,14 +225,8 @@ function fullframe_featured_content_types() {
  */
 function fullframe_featured_content_layout_options() {
 	$featured_content_layout_option = array(
-		'layout-three' 		=> array(
-			'value'	=> 'layout-three',
-			'label' => esc_html__( '3 columns', 'full-frame' ),
-		),
-		'layout-four' 	=> array(
-			'value' => 'layout-four',
-			'label' => esc_html__( '4 columns', 'full-frame' ),
-		),
+		'layout-three' => esc_html__( '3 columns', 'full-frame' ),
+		'layout-four'  => esc_html__( '4 columns', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_content_layout_options', $featured_content_layout_option );
@@ -311,18 +239,9 @@ function fullframe_featured_content_layout_options() {
  */
 function fullframe_featured_content_show() {
 	$featured_content_show_option = array(
-		'excerpt' 		=> array(
-			'value'	=> '1',
-			'label' => esc_html__( 'Show Excerpt', 'full-frame' ),
-		),
-		'full-content' 	=> array(
-			'value' => '2',
-			'label' => esc_html__( 'Show Full Content', 'full-frame' ),
-		),
-		'hide-content' 	=> array(
-			'value' => '0',
-			'label' => esc_html__( 'Hide Content', 'full-frame' ),
-		),
+		'1' => esc_html__( 'Show Excerpt', 'full-frame' ),
+		'2' => esc_html__( 'Show Full Content', 'full-frame' ),
+		'0' => esc_html__( 'Hide Content', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_content_show', $featured_content_show_option );
@@ -336,14 +255,8 @@ function fullframe_featured_content_show() {
  */
 function fullframe_featured_slider_types() {
 	$featured_slider_types = array(
-		'demo-featured-slider' => array(
-			'value' => 'demo-featured-slider',
-			'label' => esc_html__( 'Demo Featured Slider', 'full-frame' ),
-		),
-		'featured-page-slider' => array(
-			'value' => 'featured-page-slider',
-			'label' => esc_html__( 'Featured Page Slider', 'full-frame' ),
-		),
+		'demo-featured-slider' =>  esc_html__( 'Demo Featured Slider', 'full-frame' ),
+		'featured-page-slider' => esc_html__( 'Featured Page Slider', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_slider_types', $featured_slider_types );
@@ -357,46 +270,16 @@ function fullframe_featured_slider_types() {
  */
 function fullframe_featured_slide_transition_effects() {
 	$featured_slide_transition_effects = array(
-		'fade' 		=> array(
-			'value'	=> 'fade',
-			'label' => esc_html__( 'Fade', 'full-frame' ),
-		),
-		'fadeout' 	=> array(
-			'value'	=> 'fadeout',
-			'label' => esc_html__( 'Fade Out', 'full-frame' ),
-		),
-		'none' 		=> array(
-			'value' => 'none',
-			'label' => esc_html__( 'None', 'full-frame' ),
-		),
-		'scrollHorz'=> array(
-			'value' => 'scrollHorz',
-			'label' => esc_html__( 'Scroll Horizontal', 'full-frame' ),
-		),
-		'scrollVert'=> array(
-			'value' => 'scrollVert',
-			'label' => esc_html__( 'Scroll Vertical', 'full-frame' ),
-		),
-		'flipHorz'	=> array(
-			'value' => 'flipHorz',
-			'label' => esc_html__( 'Flip Horizontal', 'full-frame' ),
-		),
-		'flipVert'	=> array(
-			'value' => 'flipVert',
-			'label' => esc_html__( 'Flip Vertical', 'full-frame' ),
-		),
-		'tileSlide'	=> array(
-			'value' => 'tileSlide',
-			'label' => esc_html__( 'Tile Slide', 'full-frame' ),
-		),
-		'tileBlind'	=> array(
-			'value' => 'tileBlind',
-			'label' => esc_html__( 'Tile Blind', 'full-frame' ),
-		),
-		'shuffle'	=> array(
-			'value' => 'shuffle',
-			'label' => esc_html__( 'Shuffle', 'full-frame' ),
-		)
+		'fade' 		=> esc_html__( 'Fade', 'full-frame' ),
+		'fadeout' 	=> esc_html__( 'Fade Out', 'full-frame' ),
+		'none' 		=> esc_html__( 'None', 'full-frame' ),
+		'scrollHorz'=> esc_html__( 'Scroll Horizontal', 'full-frame' ),
+		'scrollVert'=> esc_html__( 'Scroll Vertical', 'full-frame' ),
+		'flipHorz'	=> esc_html__( 'Flip Horizontal', 'full-frame' ),
+		'flipVert'	=> esc_html__( 'Flip Vertical', 'full-frame' ),
+		'tileSlide'	=> esc_html__( 'Tile Slide', 'full-frame' ),
+		'tileBlind'	=> esc_html__( 'Tile Blind', 'full-frame' ),
+		'shuffle'	=> esc_html__( 'Shuffle', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_slide_transition_effects', $featured_slide_transition_effects );
@@ -410,18 +293,9 @@ function fullframe_featured_slide_transition_effects() {
  */
 function fullframe_featured_slider_image_loader() {
 	$color_scheme_options = array(
-		'true' => array(
-			'value' 				=> 'true',
-			'label' 				=> esc_html__( 'True', 'full-frame' ),
-		),
-		'wait' => array(
-			'value' 				=> 'wait',
-			'label' 				=> esc_html__( 'Wait', 'full-frame' ),
-		),
-		'false' => array(
-			'value' 				=> 'false',
-			'label' 				=> esc_html__( 'False', 'full-frame' ),
-		),
+		'true'  => esc_html__( 'True', 'full-frame' ),
+		'wait'  => esc_html__( 'Wait', 'full-frame' ),
+		'false' => esc_html__( 'False', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_color_schemes', $color_scheme_options );
@@ -435,22 +309,10 @@ function fullframe_featured_slider_image_loader() {
  */
 function fullframe_get_pagination_types() {
 	$pagination_types = array(
-		'default' => array(
-			'value' => 'default',
-			'label' => esc_html__( 'Default(Older Posts/Newer Posts)', 'full-frame' ),
-		),
-		'numeric' => array(
-			'value' => 'numeric',
-			'label' => esc_html__( 'Numeric', 'full-frame' ),
-		),
-		'infinite-scroll-click' => array(
-			'value' => 'infinite-scroll-click',
-			'label' => esc_html__( 'Infinite Scroll (Click)', 'full-frame' ),
-		),
-		'infinite-scroll-scroll' => array(
-			'value' => 'infinite-scroll-scroll',
-			'label' => esc_html__( 'Infinite Scroll (Scroll)', 'full-frame' ),
-		),
+		'default'                => esc_html__( 'Default(Older Posts/Newer Posts)', 'full-frame' ),
+		'numeric'                => esc_html__( 'Numeric', 'full-frame' ),
+		'infinite-scroll-click'  => esc_html__( 'Infinite Scroll (Click)', 'full-frame' ),
+		'infinite-scroll-scroll' => esc_html__( 'Infinite Scroll (Scroll)', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_get_pagination_types', $pagination_types );
@@ -464,18 +326,9 @@ function fullframe_get_pagination_types() {
  */
 function fullframe_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'featured' => array(
-			'value' => 'featured',
-			'label' => esc_html__( 'Featured', 'full-frame' ),
-		),
-		'full-size' => array(
-			'value' => 'full-size',
-			'label' => esc_html__( 'Full Size', 'full-frame' ),
-		),
-		'disabled' => array(
-			'value' => 'disabled',
-			'label' => esc_html__( 'Disabled', 'full-frame' ),
-		),
+		'featured'  => esc_html__( 'Featured', 'full-frame' ),
+		'full-size' => esc_html__( 'Full Size', 'full-frame' ),
+		'disabled'  => esc_html__( 'Disabled', 'full-frame' ),
 	);
 	return apply_filters( 'fullframe_single_post_image_layout_options', $single_post_image_layout_options );
 }

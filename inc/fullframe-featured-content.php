@@ -80,10 +80,10 @@ function fullframe_featured_content_display() {
 						if ( !empty( $headline ) || !empty( $subheadline ) ) {
 							$fullframe_featured_content .='<div class="featured-heading-wrap">';
 								if ( !empty( $headline ) ) {
-									$fullframe_featured_content .='<h1 id="featured-heading" class="entry-title">'. $headline .'</h1>';
+									$fullframe_featured_content .='<h1 id="featured-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
 								}
 								if ( !empty( $subheadline ) ) {
-									$fullframe_featured_content .='<p>'. $subheadline .'</p>';
+									$fullframe_featured_content .='<p>' . wp_kses_post( $subheadline ) . '</p>';
 								}
 							$fullframe_featured_content .='</div><!-- .featured-heading-wrap -->';
 						}

@@ -20,14 +20,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_enable_featured_header_image_options = fullframe_enable_featured_header_image_options();
-	$choices = array();
-	foreach ( $fullframe_enable_featured_header_image_options as $fullframe_enable_featured_header_image_option ) {
-		$choices[$fullframe_enable_featured_header_image_option['value']] = $fullframe_enable_featured_header_image_option['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[enable_featured_header_image]', array(
-			'choices'  	=> $choices,
+			'choices'  	=> fullframe_enable_featured_header_image_options(),
 			'label'		=> esc_html__( 'Enable Featured Header Image on ', 'full-frame' ),
 			'section'   => 'header_image',
 	        'settings'  => 'fullframe_theme_options[enable_featured_header_image]',
@@ -41,14 +35,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'fullframe_sanitize_select',
 	) );
 
-	$fullframe_featured_image_size_options = fullframe_featured_image_size_options();
-	$choices = array();
-	foreach ( $fullframe_featured_image_size_options as $fullframe_featured_image_size_option ) {
-		$choices[$fullframe_featured_image_size_option['value']] = $fullframe_featured_image_size_option['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[featured_image_size]', array(
-			'choices'  	=> $choices,
+			'choices'  	=> fullframe_featured_image_size_options(),
 			'label'		=> esc_html__( 'Page/Post Featured Header Image Size', 'full-frame' ),
 			'section'   => 'header_image',
 			'settings'  => 'fullframe_theme_options[featured_image_size]',

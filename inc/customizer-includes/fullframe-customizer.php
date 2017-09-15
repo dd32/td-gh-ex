@@ -108,16 +108,8 @@ function fullframe_customize_register( $wp_customize ) {
 		'transport'         => 'refresh',
 	) );
 
-	$schemes = fullframe_color_schemes();
-
-	$choices = array();
-
-	foreach ( $schemes as $scheme ) {
-		$choices[ $scheme['value'] ] = $scheme['label'];
-	}
-
 	$wp_customize->add_control( 'fullframe_theme_options[color_scheme]', array(
-		'choices'  => $choices,
+		'choices'  => fullframe_color_schemes(),
 		'label'    => esc_html__( 'Color Scheme', 'full-frame' ),
 		'priority' => 5,
 		'section'  => 'colors',
