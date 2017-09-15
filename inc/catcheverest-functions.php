@@ -758,7 +758,7 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post" class="' . $parentclasses . '">';
 
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
+				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
 			}
 
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';

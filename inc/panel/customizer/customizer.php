@@ -470,7 +470,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			'input_attrs' 	=> array(
 					            'style' => 'width: 45px;',
 					            'min'   => 0,
-					            'max'   => 24,
+					            'max'   => 50,
 					            'step'  => 1,
 					        	)
 		),
