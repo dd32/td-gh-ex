@@ -29,7 +29,7 @@
 
 				// Check if the text color has been removed and use default colors in theme stylesheet.
 				if ( ! to.length ) {
-					$( '#applicator-custom-header-styles' ).remove();
+					$( '#applicator-style--custom-header-colors' ).remove();
 				}
 				$( '.web-product-main-name, .web-product-main-description' ).css({
 					clip: 'auto',
@@ -49,8 +49,8 @@
 		value.bind( function( to ) {
 
 			$( 'body' )
-				.removeClass( 'apl--applicator--theme--customizer-colors--default apl--applicator--theme--customizer-colors--custom' )
-				.addClass( 'apl--applicator--theme--customizer-colors--' + to );
+				.removeClass( 'applicator-snapon--applicator--theme--customizer-colors--default applicator-snapon--applicator--theme--customizer-colors--custom' )
+				.addClass( 'applicator-snapon--applicator--theme--customizer-colors--' + to );
 		});
 	});
 

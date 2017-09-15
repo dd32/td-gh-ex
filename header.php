@@ -113,30 +113,29 @@
                         
                 
                 // R: Web Product Main Name
-                $web_product_main_name_obj = applicator_htmlok( array(
-                    'name'      => 'Web Product Main Name',
-                    'structure' => array(
-                        'type'      => 'object',
-                        'elem'      => 'h1',
-                        'linked'    => true,
-                        'attr'      => array(
-                            'a'     => array(
-                                'href'      => esc_url( home_url( '/' ) ),
+                $web_product_main_name_obj = '';
+                $web_product_main_name = get_bloginfo( 'name', 'display' );
+                if ( $web_product_main_name || is_customize_preview() ) {
+                    $web_product_main_name_obj = applicator_htmlok( array(
+                        'name'      => 'Web Product Main Name',
+                        'structure' => array(
+                            'type'      => 'object',
+                            'elem'      => 'h1',
+                            'linked'    => true,
+                            'attr'      => array(
+                                'a'     => array(
+                                    'href'      => esc_url( home_url( '/' ) ),
+                                ),
                             ),
                         ),
-                    ),
-                    'css'       => 'wbp-main-name',
-                    'root_css'  => 'site-title',
-                    'title'     => get_bloginfo( 'name' ),
-                    'content'   => array(
-                        'object'        => array(
-                            array(
-                                'txt'           => get_bloginfo( 'name' ),
-                                'css'           => 'wbp-name',
-                            ),
+                        'css'       => 'wbp-main-name',
+                        'root_css'  => 'site-title',
+                        'title'     => $web_product_main_name,
+                        'content'   => array(
+                            'object'        => $web_product_main_name,
                         ),
-                    ),
-                ) );
+                    ) );
+                }
 
                 
                 // R: Web Product Main Logo
@@ -161,9 +160,9 @@
                 
                 // R: Web Product Main Description
                 $web_product_main_description_obj = '';
-                $description = get_bloginfo( 'description', 'display' );
+                $web_product_main_description = get_bloginfo( 'description', 'display' );
 
-                if ( $description || is_customize_preview() ) {
+                if ( $web_product_main_description || is_customize_preview() ) {
                     $web_product_main_description_obj = applicator_htmlok( array(
                         'name'      => 'Web Product Main Description',
                         'structure' => array(
@@ -177,9 +176,9 @@
                         ),
                         'css'       => 'wbp-main-desc',
                         'root_css'  => 'site-description',
-                        'title'     => $description,
+                        'title'     => $web_product_main_description,
                         'content'   => array(
-                            'object'    => $description,
+                            'object'    => $web_product_main_description,
                         ),
                     ) );
                 }
@@ -220,7 +219,11 @@
                         'name'      => 'Web Product Main Media Banner',
                         'structure' => array(
                             'type'      => 'object',
-                            'subtype'   => 'wordpress generated content',
+                            'attr'      => array(
+                                'elem'         => array(
+                                    'style'      => 'background-image: url('. esc_url( get_header_image() ). ')',
+                                ),
+                            ),
                         ),
                         'css'       => 'wbp-main-media-banner',
                         'content'   => array(
@@ -260,7 +263,7 @@
                             $web_product_main_info_cp,
                             
                             // Main Nav
-                            applicator_func_main_nav(),
+                            applicator_main_nav(),
                             
                             // Hook After Main Nav
                             $hook_after_main_nav_ob_content,
@@ -272,7 +275,7 @@
                             $web_product_main_media_banner_obj,
                             
                             // Main Header Aside
-                            applicator_func_main_header_aside(),
+                            applicator_main_header_aside(),
                         ),
                     ),
                     'echo'      => true,

@@ -5,19 +5,22 @@
         $window = $( window ),
         $body = $( document.body ),
         
-        $aplApplicatorGoCtNav = $html.closest( '.apl--applicator--go-content-nav' ),
-        $aplApplicatorGoStartNav = $html.closest( '.apl--applicator--go-start-nav' ),
-        $aplApplicatorMainSearch = $html.closest( '.apl--applicator--main-search' ),
-        $aplApplicatorSubNav = $html.closest( '.apl--applicator--sub-nav' ),
-        $aplApplicatorMainMenu = $html.closest( '.apl--applicator--main-menu' ),
-        $aplApplicatorEasyAccessNav = $html.closest( '.apl--applicator--easy-access-nav' ),
+        $aplApplicatorGoCtNav = $html.closest( '.applicator-snapon--applicator--go-content-nav' ),
+        $aplApplicatorGoStartNav = $html.closest( '.applicator-snapon--applicator--go-start-nav' ),
+        $aplApplicatorMainSearch = $html.closest( '.applicator-snapon--applicator--main-search' ),
+        $aplApplicatorSubNav = $html.closest( '.applicator-snapon--applicator--sub-nav' ),
+        $aplApplicatorMainMenu = $html.closest( '.applicator-snapon--applicator--main-menu' ),
+        $aplApplicatorEasyAccessNav = $html.closest( '.applicator-snapon--applicator--easy-access-nav' ),
         
         $mainHrAsEnabled = $html.closest( '.main-header-aside--enabled' ),
         
         showHideTxtCss = 'show-hide---txt',
         
         mainSearchFuncCss = 'main-search-func',
-        funcCss = 'func';
+        funcCss = 'func',
+        
+        tabKeyActCss = 'tab-key--active',
+        tabKeyInactCss = 'tab-key--inactive';
     
     
     
@@ -102,8 +105,7 @@
             
             $colophonHeight = $('#main-footer').height(),
             bodyOffsetCriteriaHeight,
-            bodyOffsetSliceHeight,
-            bodyOffsetMostHeight;
+            bodyOffsetHeight;
         
         function goStartNavActivate() {
             $cp
@@ -129,18 +131,19 @@
         ( function() {
             
             bodyOffsetCriteriaHeight = document.body.offsetHeight / 2;
-            bodyOffsetSliceHeight = document.body.offsetHeight / 1.5;
-            bodyOffsetMostHeight = document.body.offsetHeight - bodyOffsetSliceHeight;
+            bodyOffsetHeight = document.body.offsetHeight;
             
             if ( ( window.innerHeight ) <= ( bodyOffsetCriteriaHeight ) ) {
 
                 // http://stackoverflow.com/a/40370876
                 $window.scroll( function( e ) {
-                    if ( ( ( window.innerHeight + window.pageYOffset ) >= ( bodyOffsetMostHeight ) ) && ( ! window.pageYOffset == 0 ) ) {
+                    
+                    if ( ( ( window.innerHeight + window.pageYOffset ) >= ( bodyOffsetHeight / 4 ) ) && ( ! window.pageYOffset == 0 ) ) {
                         goStartNavActivate();
-                    } else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetMostHeight ) ) || ( window.pageYOffset == 0 ) ) {
+                    } else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetHeight / 4 ) ) || ( window.pageYOffset == 0 ) ) {
                         goStartNavDeactivate();
                     }
+                    
                 } );
             }
         }() );
@@ -173,7 +176,7 @@
     
     
     
-    // Main Menu | Main Nav - Main Header Aside
+    // Main Menu | Main Header Aside
     function initMainMenu( $cp ) {
         
         if ( ! $aplApplicatorMainMenu.length ) {
@@ -209,7 +212,9 @@
             
             $mainMenuTogBtn,
             $mainMenuTogBtnL,
-            $mainMenuTogBtnLTxt;
+            $mainMenuTogBtnLTxt,
+            
+            $mainHrAsCtCr;
         
         // Build Markup
         ( function() {
@@ -290,12 +295,20 @@
         // Initialize
         mainMenuDeactivate();
         
+        function mainMenuResetScroll() {
+            $mainHrAsCtCr = $cp.find( '.main-hr-aside---ct_cr' );
+            
+            $mainHrAsCtCr.scrollTop(0);
+        }
+        
         // Toggle
         function mainMenuToggle() {
-            if ( $cp.hasClass( mainMenuActCss ) ) {
-                mainMenuDeactivate();
-            } else if ( $cp.hasClass( mainMenuInactCss ) ) {
+            if ( $cp.hasClass( mainMenuInactCss ) ) {
                 mainMenuActivate();
+                mainMenuResetScroll();
+            }
+            else if ( $cp.hasClass( mainMenuActCss ) ) {
+                mainMenuDeactivate();
             }
         }
         
@@ -321,7 +334,7 @@
 
         // Deactivate upon presseing ESC Key
         $window.load( function () {
-            $( document ).on( 'keyup.applicator', function ( e ) {
+            $document.on( 'keyup.applicator', function ( e ) {
                 if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
                     mainMenuDeactivate();
                 }
@@ -545,7 +558,7 @@
 
         // Deactivate upon presseing ESC Key
         $window.load( function () {
-            $( document ).on( 'keyup.applicator', function ( e ) {
+            $document.on( 'keyup.applicator', function ( e ) {
                 if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
                     mainSearchDeactivate();
                 }
@@ -581,6 +594,9 @@
             
             subNavActCss = 'sub-nav--active',
             subNavInactCss = 'sub-nav--inactive',
+            
+            subNavPrevActCss = 'sub-nav--previous--active',
+            subNavPrevInactCss = 'sub-nav--previous--inactive',
             
             subNavIbCss = 'sub-nav--inbound',
             subNavObLeftCss = 'sub-nav--outbound-left',
@@ -739,6 +755,15 @@
             }
         }
         
+        // Deactivate on HTML level
+        function htmlSubNavDeactivate() {
+            if ( ! $subNavParentItems.hasClass( subNavActCss ) ) {
+                $html
+                    .addClass( aplSubNavInactCss )
+                    .removeClass( aplSubNavActCss );
+            }
+        }
+        
         // Deactivate
         function subNavDeactivate() {
             var _this = $( this );
@@ -747,9 +772,8 @@
             $subNavParent
                 .addClass( subNavInactCss )
                 .removeClass( subNavActCss );
-            $html
-                .addClass( aplSubNavInactCss )
-                .removeClass( aplSubNavActCss );
+            
+            htmlSubNavDeactivate();
             
             _this.attr( {
                  'aria-expanded': 'false',
@@ -774,9 +798,8 @@
                 $subNavParentItems
                     .addClass( subNavInactCss )
                     .removeClass( subNavActCss );
-                $html
-                    .addClass( aplSubNavInactCss )
-                    .removeClass( aplSubNavActCss );
+                
+                htmlSubNavDeactivate();
                 
                 $subNavTogBtn.attr( {
                     'aria-expanded': 'false',
@@ -784,6 +807,15 @@
                 } );
                 
                 _this.find( $subNavShowHideTxt ).text( $subNavTogBtnShowL );
+            } );
+            
+            
+            
+            $cp.find( $navParentItems ).each( function() {
+                var _this = $( this );
+                _this
+                    .addClass( subNavPrevInactCss )
+                    .removeClass( subNavPrevActCss );
             } );
         }
         
@@ -798,6 +830,26 @@
                 .removeClass( subNavActCss );
         }
         
+        // Deactivate Sub Nav Siblings
+        function subNavsiblingsDeactivate() {
+            var _this = $( this );
+            $navParent = _this.closest( $navParentItems );
+            
+            _this.closest( $navParent ).nextAll()
+                .addClass( subNavPrevActCss )
+                .removeClass( subNavPrevInactCss );
+        }
+        
+        // Activate Sub Nav Siblings
+        function subNavsiblingsActivate() {
+            var _this = $( this );
+            $navParent = _this.closest( $navParentItems );
+            
+            _this.closest( $navParent ).nextAll()
+                .addClass( subNavPrevInactCss )
+                .removeClass( subNavPrevActCss );
+        }
+        
         // Click
         ( function() {
             $subNavTogBtn.on( 'click.applicator', function( e ) {
@@ -808,8 +860,12 @@
                 if ( $subNavParent.hasClass( subNavInactCss ) ) {
                     subNavActivate.apply( this );
                     subNavItemDetectBounds.apply( this );
-                } else if ( $subNavParent.hasClass( subNavActCss ) ) {
+                    subNavsiblingsDeactivate.apply( this );
+                }
+                
+                else if ( $subNavParent.hasClass( subNavActCss ) ) {
                     subNavDeactivate.apply( this );
+                    subNavsiblingsActivate.apply( this );
                 }
                 
                 if ( $cp.hasClass( 'easy-access-nav-func' ) ) {
@@ -821,11 +877,14 @@
         }() );
         
         // Hover
-        $( $mainNavItem ).hover( function () {
-            navHoverActivate.apply( this );
-        }, function() {
-            navHoverDeactivate.apply( this );
-        } );
+        ( function() {
+            
+            $( $mainNavItem ).hover( function () {
+                navHoverActivate.apply( this );
+            }, function() {
+                navHoverDeactivate.apply( this );
+            } );
+        }() );
         
         
         // Deactivate upon interaction outside specified elements
@@ -833,6 +892,16 @@
             if ( $html.hasClass( aplSubNavActCss ) && ! $( e.target ).closest( $subNavParentItems ).length && ! $( e.target ).is( 'a' ).length ) {
                 subNavAllDeactivate();
             }
+        } );
+        
+        
+        // Deactivate upon presseing ESC Key
+        $window.load( function () {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
+                    subNavAllDeactivate();
+                }
+            } );
         } );
         
     }
@@ -896,10 +965,14 @@
 
                             var validityNoteTerm = 'validity-note';
 
-                            validityNoteContainerGenericElementLabel = $( '<div />', {
-                                'class': 'g_l '+ validityNoteTerm +'---g_l',
+                            validityNoteContainerGenericElementLabelL = $( '<div />', {
+                                'class': 'l '+ validityNoteTerm +'---l',
                                 'html': '<p>' + this.validationMessage + '</p>'
                             } );
+
+                            validityNoteContainerGenericElementLabel = $( '<div />', {
+                                'class': 'g_l '+ validityNoteTerm +'---g_l'
+                            } ).append( validityNoteContainerGenericElementLabelL );
 
                             validityNoteContainerGenericElement = $( '<div />', {
                                 'class': 'g '+ validityNoteTerm +'---g'
@@ -937,18 +1010,61 @@
     
     
     
+    // ------------------------- No Tab Key
+    ( function() {
+        
+        $window.load( function () {
+            
+            $document.on( 'keydown.applicator', function ( e ) {
+                var keyCode = e.keyCode || e.which; 
+                
+                if ( keyCode == 9 ) {
+                    
+                    if ( $html.hasClass( tabKeyInactCss ) ) {
+                        $html
+                            .addClass( tabKeyActCss )
+                            .removeClass( tabKeyInactCss );
+                    }
+                  }
+            } );
+            
+            // Deactivate upon any interaction
+            $document.on( 'touchmove.applicator click.applicator', function ( e ) {
+                
+                if ( $html.hasClass( tabKeyActCss ) ) {
+                    $html
+                        .addClass( tabKeyInactCss )
+                        .removeClass( tabKeyActCss );
+                }
+            } );
+            
+        } );
+        
+    } )();
+    
+    
+    
+    
+    
     // ------------------------- DOM Ready
-    $( document ).ready( function() {
+    $document.ready( function() {
 		
         
         // Remove DOM Unready class
-        $html.addClass( 'dom--ready' ).removeClass( 'dom--unready' );
+        $html
+            .addClass( 'dom--ready' )
+            .removeClass( 'dom--unready' );
+        
+        // Initialize Tab Key CSS
+        $html
+            .addClass( tabKeyInactCss )
+            .removeClass( tabKeyActCss );
         
         
         // Alias for WP Admin Bar
         if ( $body.hasClass( 'admin-bar' ) ) {
             $( '#wpadminbar' ).addClass( 'wpadminbar' );
         }
-	});
+    } );
 
 })( jQuery );

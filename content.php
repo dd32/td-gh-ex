@@ -1,4 +1,44 @@
-<article <?php post_class( 'cp article' ); ?> data-name="Post CP">
+<?php
+
+// Post Classes
+
+// Variables
+$on = '--enabled';
+$off = '--disabled';
+$post_thumbnail_term = 'post-thumbnail';
+$post_excerpt_term = 'post-excerpt';
+
+// Post Thumbnail Class
+if ( '' !== get_the_post_thumbnail() ) {
+    $post_thumbnail_class = ' '. $post_thumbnail_term. $on;
+}
+else {
+    $post_thumbnail_class = ' '. $post_thumbnail_term. $off;
+}
+
+
+// Excerpt Class
+if ( has_excerpt() ) {
+    $excerpt_class = ' '. $post_excerpt_term. $on;
+}
+else {
+    $excerpt_class = ' '. $post_excerpt_term. $off;
+}
+
+// Post Classes Array
+$post_classes = array(
+    'cp',
+    'article',
+    'post',
+    $post_thumbnail_class,
+    $excerpt_class,
+);
+
+// Array Implode
+$post_classes = implode( ' ', $post_classes );
+?>
+
+<article <?php post_class( $post_classes ); ?> data-name="Post CP">
     <div class="cr post---cr">
         <header class="hr post---hr entry-header">
             <div class="hr_cr post---hr_cr">
@@ -27,16 +67,16 @@
                 ) );
                 
                 
-                // After Post Heading Hook | inc > hooks.php
-                applicator_hook_after_post_heading();
+                // After Main Post Title Hook | inc > hooks.php
+                applicator_hook_after_main_post_title();
                 
                 
                 // Post Actions | inc > tags > entry-actions.php
-                applicator_func_post_actions();
+                applicator_post_actions();
                 
                 
                 // Breadcrumbs Navigation | inc > tags > breadcumbs-nav.php
-                applicator_func_breadcrumbs_nav();
+                applicator_breadcrumbs_nav();
                 
                 
                 // E: Post Meta
@@ -50,15 +90,15 @@
                             
                             // Date and Time Stamp
                             // inc > tags > post-published-modified-cp.php
-                            applicator_func_post_published_modified(),
+                            applicator_post_published_modified(),
                             
                             // Author
                             // inc > tags > post-author.php
-                            applicator_func_post_author(),
+                            applicator_post_author(),
                             
                             // Categories
                             // inc > tags > post-classification.php
-                            applicator_func_post_categories(),
+                            applicator_post_categories(),
                         ),
                     ),
                 ) );
@@ -80,10 +120,10 @@
                             $post_meta,
                             
                             // Post Banner Visual | inc > tags > post-banner-visual.php
-                            applicator_func_post_banner_visual(),
+                            applicator_post_banner_visual(),
                             
                             // inc > tags > comments-actions-snippet-cp.php
-                            applicator_func_comments_actions_snippet_cp(),
+                            applicator_comments_actions_snippet(),
                         ),
                     ),
                     'echo'      => true,
@@ -152,15 +192,16 @@
                     
                     // E: Post Excerpt
                     echo $post_excerpt;
+                
                 }
                 
                 
                 // Entry Page Navigation
                 // inc > tags > post-nav.php
-                applicator_func_post_nav();
+                applicator_post_nav();
                 
                 // Sub-Post
-                if ( is_page_template( 'page-templates/sub-pages.php' ) ) {
+                if ( is_page_template( 'sub-pages.php' ) ) {
                     
                     $parent = $post->ID;
                     $args = array(
@@ -226,7 +267,7 @@
                             'component'     => array(
 
                                 // Tags
-                                applicator_func_post_tags(),
+                                applicator_post_tags(),
                             ),
                         ),
                         'echo'      => true,
