@@ -13,15 +13,19 @@ $sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-    
-    <?php if( has_post_thumbnail() ){ ?>
-    <div class="post-thumbnail">
-        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' ) ; ?>
-    </div>
-    <?php }?>
+	<?php 
+	if ( ! is_front_page() ){ ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+	    
+    <?php }
+    if( has_post_thumbnail() ){ ?>
+	    <div class="post-thumbnail">
+	        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' ) ; ?>
+	    </div>
+    <?php 
+    }?>
     
 	<div class="entry-content">
 		<?php

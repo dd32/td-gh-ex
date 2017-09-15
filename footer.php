@@ -8,8 +8,8 @@
  *
  * @package Benevolent
  */
-
-    if( !is_page_template( 'template-home.php' ) ) echo '</div></div></div>' ; //<!-- .row --><!-- #content --><!-- .container -->
+	$enabled_sections = benevolent_get_sections();
+    if( is_home() || ! $enabled_sections || !( is_front_page() || is_page_template( 'template-home.php' ) ) ) echo '</div></div></div>' ; //<!-- .row --><!-- #content --><!-- .container -->
 
 ?>            
 	<footer id="colophon" class="site-footer" role="contentinfo">

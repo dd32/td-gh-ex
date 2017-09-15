@@ -436,7 +436,7 @@ function benevolent_slider_cb(){
             'ignore_sticky_posts'   => true
         ) );
         if( $slider_qry->have_posts() ){
-            echo '<div class="banner"><div class="flexslider"><ul class="slides">';
+            echo '<div class="banner"><ul id="banner-slider">';
             
             while( $slider_qry->have_posts()) {
                 $slider_qry->the_post();
@@ -463,7 +463,7 @@ function benevolent_slider_cb(){
                 <?php 
                 }
             } 
-            echo '</ul></div></div>';
+            echo '</ul></div>';
             wp_reset_postdata(); 
         }
     }   
@@ -583,10 +583,16 @@ endif;
  * Footer Credits 
 */
 function benevolent_footer_credit(){
-        
-    $text  = '<div class="site-info"><div class="container"><span class="copyright">';
-    $text .=  esc_html__( '&copy; ', 'benevolent' ) . date('Y'); 
-    $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.</span>';
+    $copyright_text = get_theme_mod( 'benevolent_footer_copyright_text' );
+    $text  = '<div class="site-info"><div class="container">';
+    $text .= '<span class="copyright">';
+      if( $copyright_text ){
+        $text .=  wp_kses_post( $copyright_text );
+      }else{
+        $text .=  esc_html__( '&copy; ', 'benevolent' ) . esc_html( date_i18n('Y') ); 
+        $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
+      }
+    $text .= '.</span>';
     $text .= '<span class="by">';
     $text .= '<a href="' . esc_url( 'http://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
     $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );

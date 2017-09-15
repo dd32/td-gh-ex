@@ -79,13 +79,14 @@
     </header><!-- #masthead -->
     
     <?php 
-    $ed_breadcrumb = get_theme_mod( 'benevolent_ed_breadcrumb' );
+    $ed_breadcrumb    = get_theme_mod( 'benevolent_ed_breadcrumb' );
+    $enabled_sections = benevolent_get_sections();
     
-    if( is_front_page() && get_theme_mod( 'benevolent_ed_slider' ) ) do_action( 'benevolent_slider' );
+    if( ( is_front_page() || is_page_template( 'template-home.php' ) ) && get_theme_mod( 'benevolent_ed_slider' ) ) do_action( 'benevolent_slider' );
     
-    if( !is_page_template( 'template-home.php' ) ) echo '<div class="container">';
+    if( is_home() || ! $enabled_sections || !( is_front_page() || is_page_template( 'template-home.php' ) ) ) echo '<div class="container">';
     
     //BreadCrumbs
-    if( !is_page_template( 'template-home.php' ) && !is_404() && $ed_breadcrumb ) do_action( 'benevolent_breadcrumbs' ); 
+    if( !( is_front_page() || is_page_template( 'template-home.php' ) ) && !is_404() && $ed_breadcrumb ) do_action( 'benevolent_breadcrumbs' ); 
         
-   	if( !is_page_template( 'template-home.php' ) ) echo '<div id="content" class="site-content"><div class="row">';
+   	if( is_home() || ! $enabled_sections || !( is_front_page() || is_page_template( 'template-home.php' ) ) ) echo '<div id="content" class="site-content"><div class="row">';

@@ -1679,6 +1679,34 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     /** Custom CSS Ends */
+
+     /** Footer Section */
+    $wp_customize->add_section(
+        'benevolent_footer_section',
+        array(
+            'title' => __( 'Footer Settings', 'benevolent' ),
+            'priority' => 70,
+        )
+    );
+    
+    /** Copyright Text */
+    $wp_customize->add_setting(
+        'benevolent_footer_copyright_text',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_footer_copyright_text',
+        array(
+            'label' => __( 'Copyright Info', 'benevolent' ),
+            'section' => 'benevolent_footer_section',
+            'type' => 'textarea',
+        )
+    );
+ 
     
     /**
      * Sanitization Functions

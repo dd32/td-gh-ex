@@ -200,11 +200,11 @@ function benevolent_scripts() {
     wp_enqueue_style( 'benevolent-google-fonts', add_query_arg( $benevolent_query_args, "//fonts.googleapis.com/css" ) );
     wp_enqueue_style( 'benevolent-font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
     wp_enqueue_style( 'benevolent-sidr-style', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
-    wp_enqueue_style( 'benevolent-flexslider-style', get_template_directory_uri() . '/css/flexslider.css' );
+    wp_enqueue_style( 'lightslider', get_template_directory_uri() . '/css/lightslider.css' );
     wp_enqueue_style( 'benevolent-style', get_stylesheet_uri() );
     
     wp_enqueue_script( 'benevolent-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '20160125', true );
-	wp_enqueue_script( 'benevolent-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array('jquery'), '2.6.0', true );
+	wp_enqueue_script( 'lightslider', get_template_directory_uri() . '/js/lightslider.js', array('jquery'), '1.1.5', true );	
 	wp_enqueue_script( 'benevolent-tab', get_template_directory_uri() . '/js/tab.js', array('jquery'), '20160125', true );
     wp_enqueue_script( 'benevolent-waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), '2.0.3', true );
     wp_enqueue_script( 'benevolent-counterup', get_template_directory_uri() . '/js/jquery.counterup.js', array('jquery', 'benevolent-waypoint'), '1.0', true );
@@ -220,10 +220,12 @@ function benevolent_scripts() {
     $benevolent_array = array(
         'auto'      => esc_attr( $benevolent_slider_auto ),
         'loop'      => esc_attr( $benevolent_slider_loop ),
-        'pager'   => esc_attr( $benevolent_slider_pager ),
+        'pager'     => esc_attr( $benevolent_slider_pager ),
         'animation' => esc_attr( $benevolent_slider_animation ),
         'speed'     => absint( $benevolent_slider_speed ),
-        'a_speed'   => absint( $benevolent_animation_speed )
+        'a_speed'   => absint( $benevolent_animation_speed ),
+        'rtl'       => is_rtl(),
+
     );
     
     wp_localize_script( 'benevolent-custom', 'benevolent_data', $benevolent_array );

@@ -18,16 +18,25 @@ jQuery(document).ready(function($){
     }else{
         slider_control = false;
     }
+    if( benevolent_data.rtl == '1' ){
+        var rtl = true;
+    }else{
+        var rtl = false;
+    }
     
     /** Home Page Slider */
-    $('.flexslider').flexslider({
-        slideshow: slider_auto,
-        animationLoop : slider_loop,
-        directionNav: false,
-        animation: benevolent_data.animation,
-        controlNav: slider_control,
-        slideshowSpeed: benevolent_data.speed,
-        animationSpeed: benevolent_data.a_speed
+    $('#banner-slider').lightSlider({
+        item        : 1,
+        slideMargin : 0,
+        mode        : benevolent_data.animation,
+        speed       : benevolent_data.a_speed, //ms'
+        auto        : slider_auto,
+        loop        : slider_loop,
+        pause       : benevolent_data.speed,
+        controls    : false,
+        pager       : slider_control,
+        enableDrag  : false,
+        rtl         : rtl,
     });
    
    $('.number').counterUp({
