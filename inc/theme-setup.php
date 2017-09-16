@@ -83,6 +83,19 @@ if ( ! function_exists( 'best_reloaded_setup' ) ) {
 		);
 		add_theme_support( 'custom-background', $custom_bg_args );
 
+		add_theme_support( 'gutenberg', array(
+			'wide-images' => true,
+			'colors' => array(
+				'#e5450f',
+				'#f26535',
+				'#f58a65',
+				'#2f2f2f',
+			),
+		) );
+
+		// we'll want to use these over built in breadcrumbs.
+		add_theme_support( 'yoast-seo-breadcrumbs' );
+
 	}
 }// End if().
 
@@ -101,11 +114,48 @@ if ( ! function_exists( 'best_reloaded_load_styles' ) ) {
 	 */
 	function best_reloaded_load_styles() {
 		if ( ! is_admin() ) {
-			wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '4.0.0-alpha.6' );
-			wp_enqueue_style( 'best-reloaded', get_template_directory_uri() . '/assets/css/style.min.css', array( 'bootstrap' ), '0.13.0' );
+			// we can either have full bootstrap or a slim version. For ease
+			// keep handle the same but change src and tag the slim version.
+			if ( ! get_theme_mod( 'enable_slim_mode', false ) ){
+				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '4.0.0-beta' );
+			} else {
+				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-slim.min.css', '4.0.0-beta-slim' );
+			}
+
+
+			wp_register_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', '4.7.0' );
+			wp_enqueue_style( 'best-reloaded', get_template_directory_uri() . '/assets/css/style.min.css', array( 'bootstrap' ), '1.4.0' );
+
+			if ( get_theme_mod( 'enable_font-awesome', true ) ) {
+				wp_enqueue_style( 'font-awesome' );
+			}
+
+			// we want to add some additional styles based on navbar style.
+			$nav_style = get_theme_mod( 'navbar_style', 'fixed-top' );
+			switch ( $nav_style ) {
+				case 'fixed-top':
+					$css = '
+					body { padding-top: 60px; }
+					@media( min-width: 768px ) {
+						body { padding-top: 90px; }
+					}
+					';
+					break;
+				case 'fixed-bottom':
+					$css = '
+					body { padding: 60px 0; }
+					';
+					break;
+				case 'sticky-top':
+					$css = '
+					#main_navbar { margin-bottom: 40px; }
+					';
+					break;
+			}
+			wp_add_inline_style( 'best-reloaded', $css, 20 );
 		}
 	}
-}
+} // End if().
 add_action( 'wp_enqueue_scripts', 'best_reloaded_load_styles' );
 
 if ( ! function_exists( 'best_reloaded_load_scripts' ) ) {
@@ -114,17 +164,23 @@ if ( ! function_exists( 'best_reloaded_load_scripts' ) ) {
 	 */
 	function best_reloaded_load_scripts() {
 		if ( ! is_admin() ) {
-			// register bootstrap scripts.
-			wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery', 'popper' ), '4.0.0-beta', true );
-			// register tether - needed by bootstrap affix.
+			// we can either have full bootstrap or a slim version. For ease
+			// keep handle the same but change src and tag the slim version.
+			if ( ! get_theme_mod( 'enable_slim_mode', false ) ){
+				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery', 'popper' ), '4.0.0-beta', true );
+			} else {
+				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap-slim.min.js', array( 'jquery', 'popper' ), '4.0.0-beta-slim', true );
+			}
+			// register popper - needed by bootstrap affix.
 			wp_register_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), '1.11.1', true );
 
 			// enqueue the main theme scripts file - which will in turn enqueue
 			// bootstrap, tether and jQuery due to dependancy chaining.
-			wp_enqueue_script( 'best-reloaded', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'bootstrap', 'jquery' ), '0.13.0', true );
+			wp_enqueue_script( 'best-reloaded', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'bootstrap', 'jquery' ), '1.4.0', true );
 
 			// only enqueue comment-reply script on single pages.
-			if ( is_single() ) { wp_enqueue_script( 'comment-reply' );
+			if ( is_single() ) {
+				wp_enqueue_script( 'comment-reply' );
 			}
 		}
 	}
@@ -237,7 +293,7 @@ if ( ! function_exists( 'best_reloaded_new_excerpt_more' ) ) {
 		$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'best-reloaded' ), get_the_title( get_the_ID() ) )
+			sprintf( __( 'Continue Reading<span class="sr-only"> "%s"</span>', 'best-reloaded' ), get_the_title( get_the_ID() ) )
 		);
 		return ' &hellip; ' . $link;
 	}

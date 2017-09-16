@@ -16,7 +16,7 @@
 
 		<article <?php post_class(); ?> >
 			<header>
-				<a href="<?php the_permalink(); ?>" class="post-thumb">
+				<a href="<?php the_permalink(); ?>" class="post-thumb" title="<?php esc_attr( get_the_title ) ?>">
 					<span>
 						<?php get_template_part( 'inc/parts/featured', 'image' ); ?>
 					</span>
@@ -43,12 +43,7 @@
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="col-sm-4">
-					<footer>
-						<span class="meta"><?php esc_html_e( 'Written by', 'best-reloaded' ); ?> <?php the_author_link(); ?></span>
-						<span class="meta"><?php esc_html_e( 'on', 'best-reloaded' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></span>
-						<span class="meta"><?php esc_html_e( 'in', 'best-reloaded' ); ?> <?php the_category( ' and ' ); ?></span>
-						<span class="meta"><?php esc_html_e( 'with', 'best-reloaded' ); ?> <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a></span>
-					</footer>
+					<?php best_reloaded_do_post_meta(); ?>
 				</div>
 			</div><!-- end .row -->
 		</article>

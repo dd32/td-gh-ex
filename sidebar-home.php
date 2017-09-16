@@ -15,15 +15,8 @@
 
 	<div class="row widget-area">
 
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		<?php dynamic_sidebar( 'frontpage-widget-row' ); ?>
 
 	</div><!-- end .row -->
 
 <?php endif; ?>
-
-<div class="row blog-three-up">
-	<div class="col-sm-3 widget-area">
-
-		<?php dynamic_sidebar( 'sidebar-4' ); ?>
-
-	</div><!-- end .col-sm-3 -->

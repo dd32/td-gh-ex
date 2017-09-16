@@ -11,9 +11,10 @@
 ?>
 <?php get_header(); ?>
 		<?php // This is the hook used to add featurebar content.
-		best_reloaded_do_featurebar(); ?>
-
-		<div class="row">
+		best_reloaded_do_featurebar();
+		best_reloaded_do_before_main_content_row()
+		// open he main row div and do the laout selection actions.	?>
+		<div <?php best_reloaded_do_layout_selection(); ?>>
 			<div class="col-md-8">
 				<div id="main_content" role="main">
 				<?php
@@ -38,9 +39,8 @@
 				</div><!-- end #main_content -->
 				<hr class="hr-row-divider">
 
-					<?php comments_template(); ?>
+				<?php comments_template(); ?>
 
-				<hr class="hr-row-divider">
 			</div><!-- end .col-md-8 -->
 
 			<?php get_sidebar( 'main' ); ?>

@@ -13,42 +13,52 @@
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>>    <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<a class="skip-link sr-only sr-only-focusable" href="#main_content" tabindex="1">Skip to Content</a>
 	<header>
 
-		<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-
+		<div id="main_navbar" <?php best_reloaded_do_navbar_classes( 'navbar navbar-expand-md' ); ?>>
 			<div class="container">
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'best-reloaded' ); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+				<?php
+				if ( get_theme_mod( 'display_navbar_brand', false ) ) {
+					// navbar is toggled on, get the branding.
+					best_reloaded_do_navbar_brand();
+				}
+				?>
 
-					<div class="collapse navbar-collapse" id="headerNav">
-						<?php
-						wp_nav_menu( array(
-							'theme_location' 	=> 'best_reloaded_nav_topbar',
-							'depth'      		=> 2,
-							'container'  		=> false,
-							'menu_class' 		=> 'navbar-nav mr-auto',
-							'fallback_cb' 		=> 'best_reloaded_topbar_nav_fallback',
-							'walker'            => new wp_bootstrap_navwalker(),
-						) );
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'best-reloaded' ); ?>">
+					<span class="navbar-toggler-icon"></span><span class="sr-only">Toggle Navigation</span>
+				</button>
 
+				<nav class="collapse navbar-collapse" id="headerNav" role="navigation" aria-label="Main Menu">
+					<span class="sr-only">Main Menu</span>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' 	=> 'best_reloaded_nav_topbar',
+						'depth'      		=> 2,
+						'container'  		=> false,
+						'menu_class' 		=> 'navbar-nav mr-auto',
+						'fallback_cb' 		=> 'best_reloaded_topbar_nav_fallback',
+						'walker'            => new wp_bootstrap_navwalker(),
+					) );
+					// if the navbar search is on then output searchform.
+					if ( get_theme_mod( 'display_navbar_search', true ) ) {
 						get_search_form();
-						?>
-					</div>
+					}
+					?>
+				</nav>
 
 			</div>
-		</nav>
+		</div>
 
 	</header>
 	<div class="container container-main container-wrapper">
-		<div class="row">
+		<div class="row" role="banner">
 			<div class="col-sm-8 site-header">
 
 				<?php
@@ -60,6 +70,7 @@
 					<div class="name-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 							<img src="<?php echo esc_url( $image[0] ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							<span class="sr-only"><?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?></span>
 						</a>
 					</div>
 				<?php } else {
@@ -82,7 +93,7 @@
 					</div>
 				<?php } ?>
 			</div><!-- end .col-md-8 -->
-			<?php if ( get_theme_mod( 'display_header_banner_area' ) ) { ?>
+			<?php if ( get_theme_mod( 'display_header_banner_area', true ) ) { ?>
 				<div class="col-sm-4 header-banner-area">
 					<?php echo do_shortcode( wp_kses_post( get_theme_mod( 'header_banner_area' ) ) ); ?>
 				</div>

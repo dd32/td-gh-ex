@@ -1,6 +1,5 @@
 <?php
  /**
-  * Template Name: Home
   *
   * The home.php file.
   *
@@ -13,7 +12,7 @@
 ?>
 
 <?php get_header(); ?>
-	<?php if ( get_theme_mod( 'display_intro_text' ) && get_theme_mod( 'intro_text' ) ) : ?>
+	<?php if ( get_theme_mod( 'display_intro_text', true ) && get_theme_mod( 'intro_text', false ) ) : ?>
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<p class="hero-p"><?php echo wp_kses_post( get_theme_mod( 'intro_text' ) ); ?></p>
@@ -27,9 +26,10 @@
 				<div id="carousel-home" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
-						<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel-home" data-slide-to="1"></li>
-						<li data-target="#carousel-home" data-slide-to="2"></li>
+						<?php $slides_max = get_theme_mod( 'slider_limit', 3 );
+						for ( $i = 0; $i < $slides_max ; $i++ ) { ?>
+							<li data-target="#carousel-home" data-slide-to="<?php echo esc_attr( $i ); ?>" class="<?php if ( 0 === $i ) { echo esc_attr( 'active' ); } ?>"></li>
+						<?php } ?>
 					</ol>
 
 					<!-- Wrapper for slides -->
@@ -51,16 +51,19 @@
 			</div><!-- end .col-sm-9 -->
 
 			<div class="col-md-3 widget-area">
-
-				<?php dynamic_sidebar( 'sidebar-2' ); ?>
-
+				<?php
+				if ( is_active_sidebar( 'slider-row-sidebar' ) ) {
+					dynamic_sidebar( 'sidebar-2 ' );
+				} else {
+					the_widget( 'WP_Widget_Recent_Comments' );
+				} ?>
 			</div><!-- end .col-md-3 -->
 		</div><!-- end .row -->
 
-			<?php get_sidebar( 'home' ); ?>
+		<?php get_sidebar( 'home' ); ?>
 
-			<?php get_template_part( 'inc/parts/loop', 'home' ); ?>
+		<?php get_template_part( 'inc/parts/loop', 'home' ); ?>
 
-		</div><!-- end .row -->
+
 	</div><!-- end #main_content -->
 <?php get_footer(); ?>

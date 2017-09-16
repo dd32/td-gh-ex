@@ -77,7 +77,7 @@ add_action( 'widgets_init', 'best_reloaded_remove_recent_comments_style' );
  */
 function best_reloaded_add_class_the_tags( $html ) {
 	$postid = get_the_ID();
-	$html = str_replace( '<a','<a class="label label-default"', $html );
+	$html = str_replace( '<a','<a class="badge badge-dark"', $html );
 	return $html;
 }
 add_filter( 'the_tags','best_reloaded_add_class_the_tags',10,1 );
@@ -108,3 +108,277 @@ function best_reloaded_jptweak_remove_share() {
 	remove_filter( 'the_content', array( 'Jetpack_Likes', 'post_likes' ), 30, 1 );
 }
 add_action( 'loop_end', 'best_reloaded_jptweak_remove_share' );
+
+/**
+ * Echos the markup output by navbar branding function.
+ *
+ * @since v1.2.0
+ *
+ * @return void
+ */
+function best_reloaded_output_navbar_brand() {
+	// try get the branding markup.
+	$output = best_reloaded_bootstrap_navbar_branding();
+	// if we have output to use then echo it.
+	if ( $output ) {
+		$allowed_brand_tags = array(
+			'span' => array(
+				'class' => array(),
+			),
+			'img' => array(
+				'id'	=> array(),
+				'class'	=> array(),
+				'src' => array(),
+				'alt' => array(),
+			),
+		);
+		echo wp_kses( apply_filters( 'best_reloaded_filter_navbar_brand', $output ), $allowed_brand_tags );
+	}
+}
+add_action( 'best_reloaded_do_navbar_brand', 'best_reloaded_output_navbar_brand' );
+
+/**
+ * Returns or echos some entry meta based on conditionals.
+ * NOTE: Will fail silently.
+ *
+ * @param  boolean $echo flag to indicate echo or return.
+ * @param  string  $type string indicating type of meta we want, can be FALSE.
+ *
+ * @return string/void	 Can return either a string or nothing if echoing.
+ */
+function best_reloaded_output_post_meta( $echo = true, $type = false ) {
+	// if no specific type was requested, figure it out.
+	// NOTE: due to a quirk of using a front-page.php template `is_home()` and
+	// `is_front_page()` are true when no static page is set. Test that first.
+	if ( is_home() && is_front_page() ) {
+		$type = 'front-page';
+	} elseif ( is_home() ) {
+		$type = 'home';
+	} elseif ( is_front_page() ) {
+		$type = 'front-page';
+	} elseif ( is_single() && ! is_singular( 'page' ) ) {
+		$type = 'single';
+	}
+	$output = '';
+	// if $type is single OR no type is passed and it is single but not a page...
+	if ( 'single' === $type ) {
+		ob_start(); ?>
+		<div class="meta">
+			<span class="entry-meta text-muted">
+				<i class="fa fa-pencil"></i>
+				<?php
+				esc_html_e( ' Written by ', 'best-reloaded' );
+				the_author_link();
+				esc_html_e( ' on ', 'best-reloaded' );
+				the_time( get_option( 'date_format' ) );
+				esc_html_e( ' and posted in ', 'best-reloaded' );
+				the_category( ' and ' ); ?>.
+			</span>
+		</div>
+		<?php
+		$output = ob_get_clean();
+	} elseif ( 'front-page' === $type ) {
+		ob_start(); ?>
+		<footer class="meta">
+			<span class="entry-meta">
+				<?php the_time( get_option( 'date_format' ) ); ?> &#8226;
+				<a href="<?php comments_link(); ?>" title="<?php comments_number( 'No Comments', 'One Comment', '% Comments' ); ?>">
+					<?php comments_number( 'No Comments', 'One Comment', '% Comments' ); ?>
+				</a>
+			</span>
+		</footer>
+		<?php
+		$output = ob_get_clean();
+	} else {
+		ob_start(); ?>
+		<footer class="meta">
+			<span class="entry-meta">
+				<?php esc_html_e( 'Written by', 'best-reloaded' ); ?> <?php the_author_link(); ?>
+				<?php esc_html_e( 'on', 'best-reloaded' ); ?> <?php the_time( get_option( 'date_format' ) ); ?>
+				<?php esc_html_e( 'in', 'best-reloaded' ); ?> <?php the_category( ' and ' ); ?>
+				<?php esc_html_e( 'with', 'best-reloaded' ); ?> <a href="<?php comments_link(); ?>" title="<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>"><?php comments_number( 'no comments', 'one Comment', '% comments' ); ?></a>
+			</span>
+		</footer>
+		<?php
+		$output = ob_get_clean();
+	} // End if().
+
+	// either return or echo the output.
+	if ( $echo ) {
+		echo wp_kses_post( apply_filters( 'best_reloaded_post_meta_output', $output ) );
+	} else {
+		return apply_filters( 'best_reloaded_post_meta_output', $output );
+	}
+}
+
+add_action( 'best_reloaded_do_post_meta', 'best_reloaded_output_post_meta', 10, 2 );
+
+/**
+ * Returns or echos a classname string for use defining theme layouts.
+ *
+ * @param  string  $classname_string any classnames to be output.
+ * @param  boolean $echo             flag to decide when to echo or return.
+ *
+ * @return string
+ */
+function best_reloaded_layout_output_classnames( $classname_string, $echo = true ) {
+	// either echo or return any passed classnames.
+	if ( $echo ) {
+		// echo classnames inside a `class=""` attribute`.
+		echo 'class="' . esc_attr( apply_filters( 'best_reloaded_filter_layout_classnames', $classname_string ) ) . '"';
+	} else {
+		// return just the classnames.
+		return apply_filters( 'best_reloaded_filter_layout_classnames', $classname_string );
+	}
+}
+add_action( 'best_reloaded_do_layout_selection', 'best_reloaded_layout_output_classnames', 10, 2 );
+
+/**
+ * Filter for layout classnames to add any specific classes wanted.
+ *
+ * @param  string $classname_string a string of classnames to output.
+ *
+ * @return string
+ */
+function best_reloaded_filter_layout_classnames_output( $classname_string ) {
+	// get the layout selection string.
+	$layout = get_theme_mod( 'layout_selection', '' );
+	// if we got a layout selection then append a space then it to the string.
+	if ( $layout ) {
+		$classname_string .= ' ' . $layout;
+	}
+	// return the string with any modifications applied.
+	return $classname_string;
+}
+add_filter( 'best_reloaded_filter_layout_classnames', 'best_reloaded_filter_layout_classnames_output' );
+
+/**
+ * Accepts a string of classes and adds any addition ones to it based on user
+ * option settings before echoing it.
+ *
+ * @param  string $classnames string of classnames to start with.
+ */
+function best_reloaded_output_navbar_classes( $classnames ) {
+	$classes = $classnames;
+	// add the navbar_style class to the classes string.
+	$classes .= ' ' . get_theme_mod( 'navbar_style', 'fixed-top' );
+	// add the navbar color modifier class.
+	$classes .= ' ' . get_theme_mod( 'navbar-color', 'navbar-light' );
+	// add the navbar bg modifier class.
+	$classes .= ' ' . get_theme_mod( 'navbar-bg', 'bg-light' );
+	// echo the classes.
+	echo 'class="' . esc_attr( $classes ) . '"';
+}
+add_action( 'best_reloaded_do_navbar_classes', 'best_reloaded_output_navbar_classes', 10, 1 );
+
+/**
+ * A breadcrumb function implimentation.
+ *
+ * Preference for using Yoast breadcrumbs but will fall back to an in-built
+ * version when it is not available.
+ *
+ * @link: https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
+ * @link: https://github.com/BenSibley/ignite/blob/master/inc/breadcrumbs.php
+ *
+ * @param array $args An array of arguments that can be used to override default args.
+ */
+function best_reloaded_do_breadcrumbs( $args = array() ) {
+	// TODO: we want to defer to yoast breadcrumbs when we can.
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb('
+			<div class="col-12">
+				<p id="breadcrumbs">','</p>
+			</div>
+		');
+	} else {
+		/**
+		 * This is the themes built in breadcrumbs feature, it's in need of
+		 * improvement but it fills the space when yoast is not available.
+		 */
+		global $post;
+		$defaults  = array(
+			'separator_icon'      => '&gt;',
+			'breadcrumbs_id'      => 'breadcrumbs',
+			'breadcrumbs_classes' => 'breadcrumb-trail breadcrumbs',
+			'home_title'          => esc_html( 'Home', 'best-reloaded' ),
+		);
+		$args      = wp_parse_args( $args, $defaults );
+		$separator = '<span class="separator"> ' . esc_html( $args['separator_icon'] ) . ' </span>';
+
+		// Open the breadcrumbs.
+		$html = '<div id="' . esc_attr( $args['breadcrumbs_id'] ) . '" class="' . esc_attr( $args['breadcrumbs_classes'] ) . '">';
+		// Add Homepage link & separator (always present).
+		$html .= '<span class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . esc_attr( $args['home_title'] ) . '">' . esc_html( $args['home_title'] ) . '</a></span>';
+		$html .= $separator;
+		// Post.
+		if ( is_singular( 'post' ) ) {
+
+			$category = get_the_category( $post->ID );
+			$category_values = array_values( $category );
+			$last_category = end( $category_values );
+			$cat_parents = rtrim( get_category_parents( $last_category->term_id, true, ',' ), ',' );
+			$cat_parents = explode( ',', $cat_parents );
+			foreach ( $cat_parents as $parent ) {
+				$html .= '<span class="item-cat">' . wp_kses( $parent, wp_kses_allowed_html( 'a' ) ) . '</span>';
+				$html .= $separator;
+			}
+			$html .= '<span class="item-current item-' . $post->ID . '"><span class="bread-current bread-' . $post->ID . '" title="' . esc_attr( get_the_title() ) . '">' . wp_strip_all_tags( get_the_title() ) . '</span></span>';
+		} elseif ( is_singular( 'page' ) ) {
+			if ( $post->post_parent ) {
+				$parents = get_post_ancestors( $post->ID );
+				$parents = array_reverse( $parents );
+				foreach ( $parents as $parent ) {
+					$html .= '<span class="item-parent item-parent-' . esc_attr( $parent ) . '"><a class="bread-parent bread-parent-' . esc_attr( $parent ) . '" href="' . esc_url( get_permalink( $parent ) ) . '" title="' . esc_attr( get_the_title( $parent ) ) . '">' . wp_strip_all_tags( get_the_title( $parent ) ) . '</a></span>';
+					$html .= $separator;
+				}
+			}
+			$html .= '<span class="item-current item-' . $post->ID . '"><span title="' . esc_attr( get_the_title() ) . '"> ' . wp_strip_all_tags( get_the_title() ) . '</span></span>';
+		} elseif ( is_singular( 'attachment' ) ) {
+			$parent_id        = $post->post_parent;
+			$parent_title     = get_the_title( $parent_id );
+			$parent_permalink = esc_url( get_permalink( $parent_id ) );
+			$html .= '<span class="item-parent"><a class="bread-parent" href="' . esc_url( $parent_permalink ) . '" title="' . esc_attr( $parent_title ) . '">' . wp_strip_all_tags( $parent_title ) . '</a></span>';
+			$html .= $separator;
+			$html .= '<span class="item-current item-' . $post->ID . '"><span title="' . esc_attr( get_the_title() ) . '"> ' . wp_strip_all_tags( get_the_title() ) . '</span></span>';
+		} elseif ( is_singular() ) {
+			$post_type         = get_post_type( $post->ID );
+			$post_type_object  = get_post_type_object( $post_type );
+			$post_type_archive = get_post_type_archive_link( $post_type );
+			$html .= '<span class="item-cat item-custom-post-type-' . esc_attr( $post_type ) . '"><a class="bread-cat bread-custom-post-type-' . esc_attr( $post_type ) . '" href="' . esc_url( $post_type_archive ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . wp_strip_all_tags( $post_type_object->labels->name ) . '</a></span>';
+			$html .= $separator;
+			$html .= '<span class="item-current item-' . $post->ID . '"><span class="bread-current bread-' . $post->ID . '" title="' . $post->post_title . '">' . wp_strip_all_tags( $post->post_title ) . '</span></span>';
+		} elseif ( is_category() ) {
+			$parent = get_queried_object()->category_parent;
+			if ( 0 !== $parent ) {
+				$parent_category = get_category( $parent );
+				$category_link   = get_category_link( $parent );
+				$html .= '<span class="item-parent item-parent-' . esc_attr( $parent_category->slug ) . '"><a class="bread-parent bread-parent-' . esc_attr( $parent_category->slug ) . '" href="' . esc_url( $category_link ) . '" title="' . esc_attr( $parent_category->name ) . '">' . esc_html( $parent_category->name ) . '</a></span>';
+				$html .= $separator;
+			}
+			$html .= '<span class="item-current item-cat"><span class="bread-current bread-cat" title="' . $post->ID . '">' . single_cat_title( '', false ) . '</span></span>';
+		} elseif ( is_tag() ) {
+			$html .= '<span class="item-current item-tag"><span class="bread-current bread-tag">' . single_tag_title( '', false ) . '</span></span>';
+		} elseif ( is_author() ) {
+			$html .= '<span class="item-current item-author"><span class="bread-current bread-author">' . get_queried_object()->display_name . '</span></span>';
+		} elseif ( is_day() ) {
+			$html .= '<span class="item-current item-day"><span class="bread-current bread-day">' . get_the_date() . '</span></span>';
+		} elseif ( is_month() ) {
+			$html .= '<span class="item-current item-month"><span class="bread-current bread-month">' . get_the_date( 'F Y' ) . '</span></span>';
+		} elseif ( is_year() ) {
+			$html .= '<span class="item-current item-year"><span class="bread-current bread-year">' . get_the_date( 'Y' ) . '</span></span>';
+		} elseif ( is_archive() ) {
+			$custom_tax_name = get_queried_object()->name;
+			$html .= '<span class="item-current item-archive"><span class="bread-current bread-archive">' . esc_html( $custom_tax_name ) . '</span></span>';
+		} elseif ( is_search() ) {
+			$html .= '<span class="item-current item-search"><span class="bread-current bread-search">Search results for: ' . get_search_query() . '</span></span>';
+		} elseif ( is_404() ) {
+			$html .= '<span>' . __( 'Error 404', 'best-reloaded' ) . '</span>';
+		} elseif ( is_home() ) {
+			$html .= '<span>' . esc_html( get_the_title( get_option( 'page_for_posts' ) ) ) . '</span>';
+		} // End if().
+		$html .= '</div>';
+		echo wp_kses_post( $html );
+
+	} // End if().
+}
+add_action( 'best_reloaded_do_before_main_content_row', 'best_reloaded_do_breadcrumbs' );

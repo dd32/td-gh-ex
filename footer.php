@@ -13,42 +13,19 @@
 	</div><!-- end .container.container-main -->
 
 	<footer id="site-footer" class="container" role="contentinfo">
-
-		<?php if ( get_theme_mod( 'display_footer_top' ) ) : ?>
-
-		<div class="footer-top">
-			<div class="widget-area row">
-				<div class="footer-widget-col col-md-3">
-					<?php
-					if ( ! dynamic_sidebar( 'sidebar-5' ) ) {
-						echo '&nbsp;';
-					} ?>
-				</div>
-				<div class="footer-widget-col col-md-3">
-					<?php
-					if ( ! dynamic_sidebar( 'sidebar-6' ) ) {
-						echo '&nbsp;';
-					} ?>
-				</div>
-				<div class="footer-widget-col col-md-3">
-					<?php
-					if ( ! dynamic_sidebar( 'sidebar-7' ) ) {
-						echo '&nbsp;';
-					}?>
-				</div>
-				<div class="footer-widget-col col-md-3">
-					<?php
-					if ( ! dynamic_sidebar( 'sidebar-8' ) ) {
-						echo '&nbsp;';
-					} ?>
-				</div>
-			</div><!-- end .widget-area -->
-		</div><!-- end .footer-top -->
-
-		<?php endif; ?>
-		<?php if ( get_theme_mod( 'display_footer_bottom' ) ) : ?>
-
-		<div class="footer-bottom">
+		<?php
+		if ( get_theme_mod( 'display_footer_top', true ) ) {
+			if ( is_active_sidebar( 'footer-col' ) ) { ?>
+				<div class="footer-top">
+					<div class="widget-area row">
+						<?php dynamic_sidebar( 'footer-col' ); ?>
+					</div><!-- end .widget-area -->
+				</div><!-- end .footer-top -->
+			<?php
+			}
+		}
+		if ( get_theme_mod( 'display_footer_bottom', true ) ) { ?>
+		<div class="footer-bottom" role="contentinfo">
 			<div class="row">
 				<div class="col-sm-5">
 					<p id="footer-site-title"><?php echo wp_kses_post( get_theme_mod( 'footer_bottom_tagline',
@@ -56,9 +33,9 @@
 						sprintf( __( '&copy; %1$s %2$s', 'best-reloaded' ), date_i18n( __( 'Y', 'best-reloaded' ) ), get_bloginfo( 'name' ) )
 					) ); ?></p>
 				</div>
-				<div class="col-sm-7">
-					<nav role="navigation">
-
+				<div class="col-sm-7 align-self-center">
+					<nav role="navigation" aria-label="Footer Menu">
+						<span class="sr-only">Footer Menu</span>
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'best_reloaded_nav_footer',
@@ -76,7 +53,7 @@
 			</div><!-- end .row -->
 		</div><!-- end .footer-bottom -->
 
-		<?php endif; ?>
+		<?php }; ?>
 
 	</footer>
 
