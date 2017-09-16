@@ -43,7 +43,8 @@ if ( ! function_exists( 'zenzero_social_button' ) ) {
 		$pinterestURL = get_theme_mod('zenzero_theme_options_pinteresturl', '#');
 		$tumblrURL = get_theme_mod('zenzero_theme_options_tumblrurl', '#');
 		$vkURL = get_theme_mod('zenzero_theme_options_vkurl', '#');
-		$xingURL = get_theme_mod('zenzero_theme_options_xingurl', ''); ?>
+		$xingURL = get_theme_mod('zenzero_theme_options_xingurl', '');
+		$vimeoURL = get_theme_mod('zenzero_theme_options_vimeourl', '');		?>
 		<div class="site-social smallPart">
 			<?php if (!empty($facebookURL)) : ?>
 				<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-facebook"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'zenzero' ); ?></span></i></a>
@@ -74,6 +75,9 @@ if ( ! function_exists( 'zenzero_social_button' ) ) {
 			<?php endif; ?>
 			<?php if (!empty($xingURL)) : ?>
 				<a href="<?php echo esc_url($xingURL); ?>" title="<?php esc_attr_e( 'Xing', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-xing"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'zenzero' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if (!empty($vimeoURL)) : ?>
+				<a href="<?php echo esc_url($vimeoURL); ?>" title="<?php esc_attr_e( 'Vimeo', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-vimeo"><span class="screen-reader-text"><?php esc_html_e( 'Vimeo', 'zenzero' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($hideRss == 1 ) : ?>
 				<a href="<?php esc_url(bloginfo( 'rss2_url' )); ?>" title="<?php esc_attr_e( 'RSS', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-rss"><span class="screen-reader-text"><?php esc_html_e( 'RSS', 'zenzero' ); ?></span></i></a>
@@ -199,6 +203,11 @@ function zenzero_color_primary_register( $wp_customize ) {
 	'slug'=>'xingurl', 
 	'default' => '',
 	'label' => __('Xing URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'vimeourl', 
+	'default' => '',
+	'label' => __('Vimeo URL', 'zenzero')
 	);
 	
 	foreach( $socialmedia as $zenzero_theme_options ) {
