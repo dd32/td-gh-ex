@@ -11,7 +11,7 @@ $description = get_theme_mod('404_desc'); ?>
     <div class="container">
         <div class="blog-title">
             <h2><?php esc_html_e( "Error - Page Not Found", 'bar-restaurant' ); ?></h2>
-            <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
+            <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
         </div>
     </div>
 </section>
@@ -22,7 +22,7 @@ $description = get_theme_mod('404_desc'); ?>
                 <div class="bloginner-content-part">
                     <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i></h1>
                     <?php if($title != ''){ ?><h1><?php echo esc_html($title); ?></h1><?php }
-                        if($description != ''){ ?><p><?php echo wp_kses_post($description); ?></p><?php }
+                        if($description != ''){ ?><p><?php echo esc_html($description); ?></p><?php }
                     get_search_form(); ?>
                 </div>
         	</div>

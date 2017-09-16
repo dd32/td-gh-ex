@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
 <body <?php body_class();?>>
-    <div class="preloader"><span class="preloader-gif"></span></div>
+    <div class="preloader"><span style="" class="preloader-gif"></span></div>
     <header class="header">
     <?php  ?>
         <!-- Header with Brand -->
@@ -42,7 +42,7 @@
                             </div>
                             <?php if(get_theme_mod('header_text')):?>
                                 <div class="header-text">
-                                    <?php echo '<a href='.esc_url( home_url( '/' ) ).' title='.esc_attr( get_bloginfo( 'name', 'display' ) ).' rel="home"><h3 class="site-title logo-box">'.esc_html(get_bloginfo('name')).'</h3><span class="site-description">'.esc_html(get_bloginfo('description')).'</span></a>'; ?>
+                                    <?php echo '<a href='.esc_url( home_url( '/' ) ).' title='.esc_attr( get_bloginfo( 'name', 'display' ) ).' rel="home"><h3 class="site-title logo-box">'.get_bloginfo('name').'</h3><span class="site-description">'.get_bloginfo('description').'</span></a>'; ?>
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -14,7 +14,7 @@
             <?php $k = 1; ?>
                 <?php for( $i=0; $i<$footer_widget_style; $i++) { ?>
                 <?php if (is_active_sidebar('footer-'.$k)) { ?>
-                    <div class="col-md-<?php echo esc_attr($footer_column_value); ?> col-sm-<?php echo esc_attr($footer_column_value); ?> col-xs-12 footer-column">
+                    <div class="col-md-<?php echo esc_attr($footer_column_value); ?> col-sm-<?php echo esc_attr($footer_column_value); ?> col-xs-12">
                         <?php dynamic_sidebar('footer-'.$k); ?>
                     </div>
                 <?php }
@@ -51,9 +51,9 @@
                                 </ul>
                             </div>
                             <?php if(get_theme_mod('copyright_area_text') != '') : ?>
-                                <p><?php echo wp_kses_post(get_theme_mod('copyright_area_text')); ?></p>
+                                <p><?php echo balanceTags(get_theme_mod('copyright_area_text')); ?></p>
                             <?php endif; ?>
-                            <p><?php esc_html_e('Powered By ','bar-restaurant'); ?><a href="<?php echo esc_url('https://voilathemes.com/wordpress-themes/bar-restaurant/','bar-restaurant'); ?>"><?php esc_html_e('Bar Restaurant WordPress Theme','bar-restaurant'); ?></a></p>
+                            <p><?php esc_html_e('Powered By ','bar-restaurant'); ?><a href="<?php echo esc_url('https://voilathemes.com/wordpress-themes/bar-restaurant/','bar-restaurant'); ?>"><?php esc_html_e('Bar Restaurant WordPress Theme.','bar-restaurant'); ?></a></p>
                         </div>
                     </div>
                 </div>

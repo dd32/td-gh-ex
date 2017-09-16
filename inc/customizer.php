@@ -57,7 +57,7 @@ function bar_restaurant_customize_register( $wp_customize ) {
         array(
             'default' => esc_html__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','bar-restaurant'),
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'wp_kses_post',
+            'sanitize_callback' => 'wp_kses',
             'priority' => 20, 
         )
     );
@@ -87,7 +87,7 @@ function bar_restaurant_customize_register( $wp_customize ) {
   for($i=1;$i <= 10;$i++):
   $bar_restaurant_social_icon[] =  array( 'slug'=>sprintf('bar_restaurant_social_icon%d',$i),
    'default' => '',
-   'label' => sprintf(/* translators: %s is count */esc_html__( 'Social Account %s', 'bar-restaurant' ),$i),
+   'label' => sprintf(esc_html__( 'Social Account %s', 'bar-restaurant' ),$i),
    'priority' => sprintf('%d',$i) );
   endfor;
   foreach($bar_restaurant_social_icon as $bar_restaurant_social_icons){
@@ -113,7 +113,7 @@ $bar_restaurant_social_iconLink = array();
 for($i=1;$i <= 10;$i++):
   $bar_restaurant_social_iconLink[] =  array( 'slug'=>sprintf('bar_restaurant_social_iconLink%d',$i),
    'default' => '',
-   'label' => sprintf(/* translators: %s is count */esc_html__( 'Social Link %s', 'bar-restaurant' ),$i),
+   'label' => sprintf(esc_html__( 'Social Link %s', 'bar-restaurant' ),$i),
    'priority' => sprintf('%d',$i) );
   endfor;
   foreach($bar_restaurant_social_iconLink as $bar_restaurant_social_icons){
@@ -180,7 +180,7 @@ $wp_customize->add_setting(
     array(
         'default' => '',
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
+        'sanitize_callback' => 'esc_attr',
     )
 );
 $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'scroll_logo', array(
@@ -199,7 +199,7 @@ $wp_customize->add_setting(
   array(
     'default' => '',
     'capability'     => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
+    'sanitize_callback' => 'sanitize_text_field',
     )
   );
 $wp_customize->add_control(
@@ -213,7 +213,7 @@ $wp_customize->add_control(
     )
   );
 //Remove Background Image Section
-$wp_customize->get_section('background_image')->panel = 'general';
+$wp_customize->remove_section( 'background_image' );
 $wp_customize->add_setting(
     'theme_color',
     array(
@@ -340,7 +340,7 @@ $wp_customize->add_setting(
     'copyright_area_text',
     array(
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses_post',
+        'sanitize_callback' => 'wp_kses',
         'priority' => 20, 
     )
 );
@@ -362,7 +362,7 @@ function bar_restaurant_dynamic_styles(){
   if(get_theme_mod('preloader') == 2) : 
      $custom_css.= ".preloader .preloader-custom-gif, .preloader .preloader-gif{background:none !important;}";
   endif;
-  $custom_css.= ".admin-bar .header .navbar-top{top:0;}.blog-sidebar .widget ul li a:hover,.blog-content-left a, #breadcrumbs li.item-current, #breadcrumbs a:hover, .bloginner-content-part .title-data h2, .blog-sidebar aside h3, .blog-sidebar .widget ul li:hover:before, .meta-nav-prev, .meta-nav-next, .meta-nav-next:hover, .meta-nav-prev:hover, .blog-single-inner-page p a:hover, .comment-metadata a, .reply a:hover, .reply a:focus, .reply a:active, .widget_rss .widget-title a.rsswidget{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.bloginner-content-part ul li a { color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }textarea:focus ~ label, .widget .tagcloud a:hover{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus ~ label, input:valid ~ label, input[type=submit]:hover, #wp-calendar tfoot td a, .blog-title h2{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.page-numbers.current, a.page-numbers:hover,.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus,.leave-reply-form p.form-submit:active,button, .header .navbar-fixed-top, .reply a, input[type=submit], .tagcloud a, #main-footer1, .footer-widget #wp-calendar #today,.home .header .navbar-top-scroll{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus,textarea:focus, .meta-nav-next:hover, .meta-nav-prev:hover, .reply a:hover, .reply a:focus, .reply a:active, input[type=submit]:hover, .widget .tagcloud a:hover{border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }#blog-innerpage-content .bloginner-content-part blockquote{ border-color : ".esc_attr(get_theme_mod('theme_color','#8C001A  '))."; }.search-form .screen-reader-text{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.default-feature-image{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; border: 1px solid ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }   .blog-sidebar input:focus { border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }a:focus, a:hover,button.search-submit{ color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.blog-sidebar #today,#cssmenu ul ul li a{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A')).";} button, #main-footer2, .blog-image-overlay, #cssmenu #menu-button{Background-color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}.blog-sidebar th,.widget select,.blog-sidebar .widget ul li a,input, textarea{color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}
+  $custom_css.= ".admin-bar .header .navbar-top{top:0;}.blog-sidebar .widget ul li a:hover,.blog-content-left a, #breadcrumbs li.item-current, #breadcrumbs a:hover, .bloginner-content-part .title-data h2, .blog-sidebar aside h3, .blog-sidebar .widget ul li:hover:before, .meta-nav-prev, .meta-nav-next, .meta-nav-next:hover, .meta-nav-prev:hover, .blog-single-inner-page p a:hover, .comment-metadata a, .reply a:hover, .reply a:focus, .reply a:active, .widget_rss .widget-title a.rsswidget{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.bloginner-content-part ul li a { color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }textarea:focus ~ label, .widget .tagcloud a:hover{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus ~ label, input:valid ~ label, input[type=submit]:hover, #wp-calendar tfoot td a, .blog-title h2{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.page-numbers.current, a.page-numbers:hover,.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus,.leave-reply-form p.form-submit:active,button, .header .navbar-fixed-top, .reply a, input[type=submit], .tagcloud a, #main-footer1, .footer-widget #wp-calendar #today{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus,textarea:focus, .meta-nav-next:hover, .meta-nav-prev:hover, .reply a:hover, .reply a:focus, .reply a:active, input[type=submit]:hover, .widget .tagcloud a:hover{border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }#blog-innerpage-content .bloginner-content-part blockquote{ border-color : ".esc_attr(get_theme_mod('theme_color','#8C001A  '))."; }.search-form .screen-reader-text{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.default-feature-image{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; border: 1px solid ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }   .blog-sidebar input:focus { border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }a:focus, a:hover,button.search-submit{ color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.blog-sidebar #today,#cssmenu ul ul li a{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A')).";} button, #main-footer2, .blog-image-overlay, #cssmenu #menu-button{Background-color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}.blog-sidebar th,.widget select,.blog-sidebar .widget ul li a,input, textarea{color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}
     .blog-sidebar aside h3 {border-color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}";
     $logo_height = (get_theme_mod('logo_height'))?(get_theme_mod('logo_height')):45;
     $custom_css.= ".navbar-fixed-top .header-logo img { max-height: ".esc_attr($logo_height)."px;   }";

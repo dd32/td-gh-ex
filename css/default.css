@@ -40,9 +40,6 @@ button,
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
-.home #blog-title-top{
-    display: none;
-}
 .preloader {
     top: 0;
     left: 0;
@@ -251,9 +248,6 @@ a.btn-effect:hover {
 /* Logo Style*/
 .header-logo,.header-text {
     float: left;
-    margin-top: 10px 0;
-}
-.header-text {
     margin-top: 15px;
 }
 .header-text h3{
@@ -268,7 +262,7 @@ a.btn-effect:hover {
     max-height: 80px;
     width: auto;
     max-width: 100%;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 .header-text h3,.header-text span{
     margin: 0px;
@@ -278,10 +272,6 @@ a.btn-effect:hover {
 .navbar-fixed-top .logo-dark{ display: none;}
 .navbar-top-scroll .logo-dark{ display: block;}
 .navbar-top-scroll .custom-logo{ display: none;}
-.home .header { position: absolute; }
-.home .header .navbar-fixed-top { background: transparent; }
-.home .header .navbar-top-scroll { background: #8c001a; }
-.navbar-top-scroll #cssmenu {    height: 60px;  }
 /*Menu Style*/
 #cssmenu{display: flex;height: 90px;align-items: center;}
 #cssmenu ul,
@@ -541,9 +531,6 @@ ul.sub-menu .submenu-left,ul.children .submenu-left {
     background-color: rgb(255, 255, 255);
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
-}
-.navbar-top-scroll #cssmenu {
-    height: 60px;
 }
 /*menu end*/
 /* footer */
@@ -1765,7 +1752,7 @@ ul.ro-list-disc li:before {
 /* Media Query Start */
 /*----testimonail---*/
 .carousel-overlay{
-  /*position: absolute;*/
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -2223,7 +2210,7 @@ table th, table td{
     position: absolute;
     right: 15px;
     text-transform: uppercase;
-    top: 20px;
+    top: 30px;
     width: 40px;
     }
     #cssmenu #menu-button::after {
@@ -2447,14 +2434,3 @@ table th, table td{
         margin: 0 0px 90px;
     }
 }
-.page-links {
-    text-align: center;
-    padding: 0px 0 40px;
-}
-.page-links a {
-    background-color: #8C001A;
-    color: #fff;
-    padding: 10px;
-    display: inline-block;
-}
-.page-links a:hover{color: #000;}
