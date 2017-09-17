@@ -6,28 +6,44 @@
 
 jQuery.noConflict()(function($){
 
+	"use strict";
+
 /* ===============================================
    MAIN MENU
    =============================================== */
 
-    $('nav#mainmenu ul.menu').tinyNav({
-        active: 'selected',
-    });
+	if ( $('nav#mainmenu ul:first .current-menu-item').length ) { 
 	
+		$('nav#mainmenu ul:first').tinyNav({
+			active: 'current-menu-item',
+		});
+
+	} else {
+	
+		$('nav#mainmenu ul:first').tinyNav({
+			header: 'Select an item',
+		});
+
+	}
+
 	$('nav#mainmenu ul > li').each(function(){
-			if( $('ul', this).length > 0 )
+    	
+		if( $('ul', this).length > 0 ) {
+        
 			$(this).children('a').append('<span class="sf-sub-indicator"> <i class="fa fa-chevron-down"></i> </span>');
-	}); 
+		
+		}
+	
+	});
 	
 	$('nav#mainmenu li').hover(
-			function () {
+		function () {
 				$(this).children('ul').stop(true, true).fadeIn(100);
 	 
-			}, 
-			function () {
+		}, 
+		function () {
 				$(this).children('ul').stop(true, true).fadeOut(400);		
-			}
-			
+		}
 	
 	);
 
@@ -36,10 +52,15 @@ jQuery.noConflict()(function($){
    =============================================== */
 
 	$('nav#widgetmenu ul > li').each(function(){
-			if( $('ul', this).length > 0 )
+    	
+		if( $('ul', this).length > 0 ) {
+        
 			$(this).children('a').append('<span class="sf-sub-indicator"> &raquo;</span>').removeAttr("href");
-	}); 
-
+		
+		}
+	
+	});
+	
 	$('nav#widgetmenu ul > li ul').click(function(e){
 		  e.stopPropagation();
 		})
