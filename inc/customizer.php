@@ -60,7 +60,7 @@ $wp_customize->add_control('show_site_description', array(
 //  =============================
 //  == Special Pages Section   ==
 //  =============================
-$wp_customize->add_section( 'Special Pages Settings', array(
+$wp_customize->add_section( 'special_pages_settings', array(
 	'title'          => __( 'Special Pages', 'aguafuerte' ),
 	'description' => __( 'This section saves the slug (i.e. its URL valid name) of the pages made with the special page templates, so they can be used across the theme. Put the pages slug here.', 'aguafuerte'),
 ) );
@@ -74,7 +74,7 @@ $wp_customize->add_setting( 'aguafuerte_theme_options[contributors_slug]', array
 
 $wp_customize->add_control( 'contributors_slug', array(
 	'label'    => __('Slug of your Contributors Page', 'aguafuerte'),
-	'section'  => 'Special Pages Settings',
+	'section'  => 'special_pages_settings',
 	'settings' => 'aguafuerte_theme_options[contributors_slug]',
 ));
 
@@ -88,14 +88,14 @@ $wp_customize->add_setting( 'aguafuerte_theme_options[featured_articles_slug]', 
 
 $wp_customize->add_control( 'featured_articles_slug', array(
 	'label'    => __('Slug of your Featured Articles Page', 'aguafuerte'),
-	'section'  => 'Special Pages Settings',
+	'section'  => 'special_pages_settings',
 	'settings' => 'aguafuerte_theme_options[featured_articles_slug]',
 ));
 
 //  =============================
 //  ==   Navigation Section    ==
 //  ============================= 
-$wp_customize->add_section( 'Blog Navigation', array(
+$wp_customize->add_section( 'navigation_settings', array(
 	'title'          => __( 'Navigation Settings', 'aguafuerte' ),
 	'description' => __( 'This section adds the possibility of choosing between navigation or pagination in multiple view pages.', 'aguafuerte'),
 
@@ -111,7 +111,7 @@ $wp_customize->add_section( 'Blog Navigation', array(
 $wp_customize->add_control( 'blog_navigation', array(
 	'settings' => 'aguafuerte_theme_options[blog_navigation]',
 	'label'   => __('Choose your preferred mode of navigating between old and new articles','aguafuerte'),
-	'section' => 'Blog Navigation',
+	'section' => 'navigation_settings',
 	'type'    => 'radio',
 	'choices'    => $blog_navigation_array,
 ));

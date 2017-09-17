@@ -220,6 +220,27 @@ function aguafuerte_comments_navigation() {
 }
 endif;
 
+if ( ! function_exists( 'aguafuerte_archive_title' ) ) :
+/**
+ * Filters the_archive_title()
+ *
+ * @since Aguafuerte 1.0.7
+ */
+function aguafuerte_archive_title( $title ) {
+	if ( is_category() ) {
+		$title =  __( 'All articles in ', 'aguafuerte' ) . single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = __( 'All articles about ', 'aguafuerte' ). ucfirst( single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		$title = get_template_part( 'template-parts/author-bio' );
+		$title .= __( 'All articles by ', 'aguafuerte') . get_the_author();
+	}
+  
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'aguafuerte_archive_title' );
+endif;
+
 if ( ! function_exists( 'aguafuerte_excerpt_more' ) && ! is_admin() ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ...

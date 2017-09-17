@@ -27,7 +27,7 @@ For more information about Aguafuerte please go to http://ebyb.eu.
 
 == Copyright ==
 
-Aguafuerte WordPress Theme, Copyright 2016 acalfieri
+Aguafuerte WordPress Theme, Copyright 2017 acalfieri
 Aguafuerte is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,8 @@ Genericons icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
 Source: http://www.genericons.com
 
-All images are mine.
+All images are mine. Copyright 2017 acalfieri
+License: GNU GPL, Version 2 (or later)
 
 == Notes ==
 

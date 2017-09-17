@@ -18,39 +18,41 @@
 get_header(); ?>
 
 <div class="inner">
-    <div id="main-content">        
-        <?php if ( have_posts() ) : ?>
+	<div id="main-content">        
+		<?php if ( have_posts() ) : ?>
 
-        <header class="page-header">
-            <?php
-                the_archive_title( '<h1 class="page-title">', '</h1>' );
-                the_archive_description( '<div class="taxonomy-description">', '</div>' );
-            ?>
-        </header><!-- .page-header -->
-        <?php
-            // Start the Loop.
-            while ( have_posts() ) : the_post();
+		<header class="page-header">
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+			if ( ! is_author()) :
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			endif;
+			?>
+		</header><!-- .page-header -->
+		<?php
+			// Start the Loop.
+			while ( have_posts() ) : the_post();
 
-                /*
-                 * Include the post format-specific template for the content. If you want to
-                 * use this in a child theme, then include a file called called content-___.php
-                 * (where ___ is the post format) and that will be used instead.
-                 */
-                get_template_part( 'template-parts/content', get_post_format() );
+				/*
+				 * Include the post format-specific template for the content. If you want to
+				 * use this in a child theme, then include a file called called content-___.php
+				 * (where ___ is the post format) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
 
-            endwhile;
-            // Previous/next post navigation.
-            aguafuerte_blog_navigation();
+			endwhile;
+			// Previous/next post navigation.
+			aguafuerte_blog_navigation();
 
 
-        else :
-            // If no content, include the "No posts found" template.
-            get_template_part( 'template-parts/content', 'none' );
+		else :
+			// If no content, include the "No posts found" template.
+			get_template_part( 'template-parts/content', 'none' );
 
-        endif;
-    ?>
-        
-    </div><!--/main-content-->
+		endif;
+	?>
+		
+	</div><!--/main-content-->
 <?php get_sidebar('sidebar'); ?>  
 </div><!--/inner-->
 

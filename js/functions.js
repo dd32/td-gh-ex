@@ -68,7 +68,7 @@ siteNavigation.find( '.dropdown-toggle' ).click( function(e) {
 			_this.next( '.sub-menu' ).toggleClass( 'toggled-on' );
 
 			// _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			//_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			//_this.html( _this.html() === aguafuerteScreenReaderText.expand ? aguafuerteScreenReaderText.collapse : aguafuerteScreenReaderText.expand );
 		} );
 
 siteNavigation.find( '.menu a' ).on( 'focus blur', function() {

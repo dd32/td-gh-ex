@@ -105,7 +105,7 @@ function aguafuerte_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+		'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
 	/*
@@ -311,7 +311,7 @@ function aguafuerte_scripts() {
 	}
 
 	// Translate accesibility menues.
-	wp_localize_script( 'aguafuerte-script', 'screenReaderText', array(
+	wp_localize_script( 'aguafuerte-script', 'aguafuerteScreenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'aguafuerte' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'aguafuerte' ) . '</span>',
 	) );
