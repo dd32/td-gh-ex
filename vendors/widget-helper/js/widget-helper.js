@@ -2,9 +2,9 @@ var best_business_upload_frame_obj;
 
 ( function( $ ) {
 
-	jQuery(document).ready(function($) {
+	$(document).ready(function($) {
 
-		jQuery(document).on('click', 'input.wh-image-picker', function( event ){
+		$(document).on('click', 'input.wh-image-picker', function( event ){
 
 			var $this = $(this);
 			event.preventDefault();
@@ -23,7 +23,7 @@ var best_business_upload_frame_obj;
 
 			best_business_upload_frame_obj = wp.media.frames.best_business_upload_frame_obj = wp.media({
 				button: {
-					text: jQuery( this ).data( 'uploader_button_text' )
+					text: $( this ).data( 'uploader_button_text' )
 				},
 				state : 'best-business-state-insert',
 				states : [
@@ -58,7 +58,7 @@ var best_business_upload_frame_obj;
 		});
 
 		// Callback for image remove.
-		jQuery(document).on('click', 'input.btn-image-remove', function( e ) {
+		$(document).on('click', 'input.btn-image-remove', function( e ) {
 			e.preventDefault();
 			var $this = $(this);
 			var image_field = $this.siblings('.image-field-hidden');

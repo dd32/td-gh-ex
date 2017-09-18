@@ -445,7 +445,6 @@ if ( ! class_exists( 'Best_Business_Widget_Helper' ) ) {
 			}
 
 			return $ret;
-
 		}
 	}
 }

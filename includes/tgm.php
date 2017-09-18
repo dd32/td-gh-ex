@@ -23,6 +23,11 @@ if ( ! function_exists( 'best_business_register_recommended_plugins' ) ) :
 				'slug'     => 'axle-demo-importer',
 				'required' => false,
 			),
+			array(
+				'name'     => esc_html__( 'Contact Form 7', 'best-business' ),
+				'slug'     => 'contact-form-7',
+				'required' => false,
+			),
 		);
 
 		$config = array();
