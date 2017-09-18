@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2017-06-07 11:55+0100\n"
-"PO-Revision-Date: 2017-06-07 11:55+0100\n"
+"POT-Creation-Date: 2017-09-18 11:44+0100\n"
+"PO-Revision-Date: 2017-09-18 11:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -34,14 +34,14 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#. translators: %s: post title
-#: comments.php:31
+#. translators: 1: title.
+#: comments.php:32
 #, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%s&rdquo;"
+msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: comments.php:36
+#. translators: 1: comment count number, 2: title.
+#: comments.php:38
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -49,79 +49,79 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:55
+#: comments.php:52
 msgid "Reply"
 msgstr ""
 
-#: comments.php:62
+#: comments.php:59
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:63
+#: comments.php:60
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:61
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:74
+#: comments.php:71
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:83
+#: comments.php:80
 msgid "Name *"
 msgstr ""
 
-#: comments.php:84
+#: comments.php:81
 msgid "Email *"
 msgstr ""
 
-#: comments.php:85
+#: comments.php:82
 msgid "Website"
 msgstr ""
 
-#: comments.php:87
+#: comments.php:84
 msgid " Required fields are marked "
 msgstr ""
 
 #. translators: %s: wordpress login url
-#: comments.php:92
+#: comments.php:89
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
 #. translators: 1: profile user link, 2: username, 3: logout link
-#: comments.php:94
+#: comments.php:91
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:95
+#: comments.php:92
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:96
+#: comments.php:93
 msgid "Leave a Reply"
 msgstr ""
 
 #. translators: %s: name of person to reply
-#: comments.php:98
+#: comments.php:95
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:99
+#: comments.php:96
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:100
+#: comments.php:97
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:101
+#: comments.php:98
 msgid "Comment *"
 msgstr ""
 

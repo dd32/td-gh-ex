@@ -94,11 +94,11 @@ function storto_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' ' );
 		if ( $categories_list && storto_categorized_blog() ) {
-			echo '<div class="dataBottom"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>' . $categories_list . '</div>';
+			echo '<div class="dataBottom cat-links"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>' . $categories_list . '</div>';
 		}
 		$tags_list = get_the_tag_list( '', ' ' );
 		if ( $tags_list ) {
-			echo '<div class="dataBottom"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</div>';
+			echo '<div class="dataBottom tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</div>';
 		}
 	}
 

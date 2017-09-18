@@ -143,3 +143,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.4.8 =
 * Added compatibility with WordPress 4.8
 * Minor bug fixes
+
+= Version 1.4.9 =
+* Added support for Jetpack Content Options
+* Fixed comments section
+* Minor bug fixes
