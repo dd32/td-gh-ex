@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The main template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -12,56 +12,48 @@
  * @package Atlantic
  */
 
+$setting = atlantic_setting_default();
+$layout = get_theme_mod( 'blog_layout', $setting['blog_layout'] );
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header class="inner">
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-		<?php
-			endif;
-			?>
-			<article class="blog-wrap">
-				<div class="blog-layout">
-					<div class="column layout-toggle active"><i class="fa fa-bars" aria-hidden="true"></i></div>
-					<div class="grid layout-toggle"><i class="fa fa-th-large" aria-hidden="true"></i></div>
-				</div>
-				
-				<section class="blog-listing column">
-					<?php
-					
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-		
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', get_post_format() );
-		
-					endwhile;
-					?>
-				</section>
-			</article>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+		<div class="container">
+			<div class="row <?php echo esc_attr( $layout );?>">
 			<?php
-			
-			get_template_part( 'template-parts/pagination' );
+			if ( have_posts() ) :
 
-		else :
+				if ( is_home() && ! is_front_page() ) : ?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
 
-			get_template_part( 'template-parts/content', 'none' );
+				<?php
+				endif;
 
-		endif; ?>
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-<?php get_footer();
+				endwhile;
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
+			</div><!-- .row -->
+			<?php atlantic_posts_navigation();?>
+		</div><!-- .container -->
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();
