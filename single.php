@@ -2,7 +2,8 @@
 
 
 <!-- Page Content -->
-<div id="page-content" class="clear-fix<?php echo ( ashe_options( 'general_single_width' ) === 'boxed' ) ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>">
+<div class="main-content clear-fix<?php echo ( ashe_options( 'general_single_width' ) === 'boxed'  ) ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>">
+
 
 	<?php
 

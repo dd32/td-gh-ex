@@ -1,33 +1,28 @@
-<?php get_header(); ?>
+<?php 
 
-<?php if ( ashe_options( 'featured_slider_label' ) === true || ashe_options( 'featured_links_label' ) === true ) : ?>
-<div id="featured-area" class="<?php echo ashe_options( 'general_slider_width' ) === 'boxed' ? 'boxed-wrapper': ''; ?>">
-<?php
+get_header();
+
 if ( is_home() ) {
 
-	// Featured Slider, Carousel
-	if ( ashe_options( 'featured_slider_label' ) === true ) {
-		get_template_part( 'templates/header/slider' ); 
-	}
+	if ( ashe_options( 'featured_slider_label' ) === true || ashe_options( 'featured_links_label' ) === true ) {
+		// Featured Slider, Carousel
+		if ( ashe_options( 'featured_slider_label' ) === true ) {
+			get_template_part( 'templates/header/featured', 'slider' );
+		}
 
-	// Featured Links, Banners
-	if ( ashe_options( 'featured_links_label' ) === true ) {
-		get_template_part( 'templates/header/featured', 'links' ); 
+		// Featured Links, Banners
+		if ( ashe_options( 'featured_links_label' ) === true ) {
+			get_template_part( 'templates/header/featured', 'links' ); 
+		}
 	}
 }
 
 ?>
-</div>
-<?php endif; ?>
 
-<!-- Page Content -->
-<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
+<div class="main-content clear-fix<?php echo esc_attr(ashe_options( 'general_content_width' )) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
 	
-	<?php 
+	<?php
 	
-	// Sidebar Alt
-	get_template_part( 'templates/sidebars/sidebar', 'alt' ); 
-
 	// Sidebar Left
 	get_template_part( 'templates/sidebars/sidebar', 'left' ); 
 
@@ -39,6 +34,6 @@ if ( is_home() ) {
 
 	?>
 
-</div><!-- #page-content -->
+</div>
 
 <?php get_footer(); ?>

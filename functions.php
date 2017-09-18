@@ -17,20 +17,30 @@ function ashe_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add theme support for Custom Logo.
-	add_theme_support( 'custom-logo', array(
+	$custom_logo_defaults = array(
 		'width'       => 450,
 		'height'      => 200,
 		'flex-width'  => true,
 		'flex-height' => true,
-	) );
+	);
+	add_theme_support( 'custom-logo', $custom_logo_defaults );
 
-	// Add theme support for Custom Logo.
-	add_theme_support( 'custom-header', array(
-		'default-image' => 'http://wp-royal.com/themes/ashe/images/ashe_bg.jpg',
-	) );
+	// Add theme support for Custom Header.
+	$custom_header_defaults = array(
+		'width'       			=> 1300,
+		'height'      			=> 500,
+		'flex-width'  			=> true,
+		'flex-height' 			=> true,
+		'default-image' 		=> 'http://wp-royal.com/themes/ashe/images/ashe_bg.jpg',
+		'default-text-color'	=> '111',
+	);
+	add_theme_support( 'custom-header', $custom_header_defaults );
 
-	// Add theme support for Custom Logo.
-	add_theme_support( 'custom-background' );
+	// Add theme support for Custom Background.
+	$custom_background_defaults = array(
+		'default-color'	=> '',
+	);
+	add_theme_support( 'custom-background', $custom_background_defaults );
 
 	// Set the default content width.
 	$GLOBALS['content_width'] = 960;
@@ -48,6 +58,13 @@ function ashe_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	// WooCommerce
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
 
@@ -60,14 +77,8 @@ function ashe_scripts() {
 	// Theme Stylesheet
 	wp_enqueue_style( 'ashe-style', get_stylesheet_uri() );
 
-	// Theme Print Style
-	wp_enqueue_style( 'ashe-print-style', get_theme_file_uri( '/print.css' ) );
-
-	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ) );
-
 	// FontAwesome Icons
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.min.css' ) );
+	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
 
 	// Fontello Icons
 	wp_enqueue_style( 'fontello', get_theme_file_uri( '/assets/css/fontello.css' ) );
@@ -78,9 +89,14 @@ function ashe_scripts() {
 	// Scrollbar
 	wp_enqueue_style( 'scrollbar', get_theme_file_uri( '/assets/css/perfect-scrollbar.css' ) );
 
+	// WooCommerce
+	wp_enqueue_style( 'ashe-woocommerce', get_theme_file_uri( '/assets/css/woocommerce.css' ) );
+
+	// Theme Responsive CSS
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ) );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.min.js' ), array( 'jquery' ), false, true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), false, true );
 	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), false, true );
 
 	// Comment reply link
@@ -122,9 +138,10 @@ add_action( 'wp_enqueue_scripts', 'ashe_gfonts_scripts' );
 ** Register widget areas.
 */
 function ashe_widgets_init() {
+	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Left', 'ashe' ),
-		'id'            => 'sidebar-left',
+		'name'          => __( 'Sidebar Right', 'ashe' ),
+		'id'            => 'sidebar-right',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'ashe' ),
 		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
 		'after_widget'  => '</div>',
@@ -133,8 +150,8 @@ function ashe_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Right', 'ashe' ),
-		'id'            => 'sidebar-right',
+		'name'          => __( 'Sidebar Left', 'ashe' ),
+		'id'            => 'sidebar-left',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'ashe' ),
 		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
 		'after_widget'  => '</div>',
@@ -225,14 +242,13 @@ if ( ! function_exists( 'ashe_excerpt' ) ) {
 
 // Page Layouts
 function ashe_page_layout() {
-	// get layout
- 	if ( is_active_sidebar( 'sidebar-right' ) && is_active_sidebar( 'sidebar-left' ) ) {
+	if ( is_active_sidebar( 'sidebar-left' ) && is_active_sidebar( 'sidebar-right' ) ) {
 		return 'col1-lrsidebar';
-	}  elseif ( is_active_sidebar( 'sidebar-right' ) ) {
-		return 'col1-rsidebar';
-	} elseif ( is_active_sidebar( 'sidebar-left' ) ) {
+	} else if ( is_active_sidebar( 'sidebar-left' ) ) {
 		return 'col1-lsidebar';
-	} 
+	} else if ( is_active_sidebar( 'sidebar-right' ) ) {
+		return 'col1-rsidebar';
+	}
 }
 
 // HEX to RGBA Converter
@@ -269,25 +285,25 @@ if ( ! function_exists( 'ashe_social_media' ) ) {
 			?>
 
 			<a href="<?php echo esc_url( ashe_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-				<i class="fa fa-<?php echo ashe_options( 'social_media_icon_1' ); ?>"></i>
+				<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_1' )); ?>"></i>
 			</a>
 			<?php endif; ?>
 
 			<?php if ( ashe_options( 'social_media_url_2' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo ashe_options( 'social_media_icon_2' ); ?>"></i>
+					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_2' )); ?>"></i>
 				</a>
 			<?php endif; ?>
 
 			<?php if ( ashe_options( 'social_media_url_3' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo ashe_options( 'social_media_icon_3' ); ?>"></i>
+					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_3' )); ?>"></i>
 				</a>
 			<?php endif; ?>
 
 			<?php if ( ashe_options( 'social_media_url_4' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo ashe_options( 'social_media_icon_4' ); ?>"></i>
+					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_4' )); ?>"></i>
 				</a>
 			<?php endif; ?>
 
@@ -395,7 +411,7 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 function ashe_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
-	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type and hit enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
+	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type & hit enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
 	$html .= '<i class="fa fa-search"></i>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';
@@ -481,6 +497,58 @@ add_filter( 'comment_form_fields', 'ashe_move_comments_field' );
 
 
 /*
+** WooCommerce
+*/
+
+// wrap woocommerce content - start
+function ashe_woocommerce_output_content_wrapper() {
+
+	$layout = ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': '';
+
+	echo '<div class="main-content clear-fix'. $layout .'">';
+		echo '<div class="main-container">';
+
+}
+add_action( 'woocommerce_before_main_content', 'ashe_woocommerce_output_content_wrapper', 5 );
+
+// wrap woocommerce content - end
+function ashe_woocommerce_output_content_wrapper_end() {
+
+		echo '</div><!-- .main-container -->';
+	echo '</div><!-- .main-content -->';
+
+}
+add_action( 'woocommerce_after_main_content', 'ashe_woocommerce_output_content_wrapper_end', 50 );
+
+// Remove Default Sidebar
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+// Change product grid columns
+if ( ! function_exists('ashe_woocommerce_grid_columns') ) {
+	function ashe_woocommerce_grid_columns() {
+		return 3;
+	}
+}
+add_filter('loop_shop_columns', 'ashe_woocommerce_grid_columns');
+
+// Change related products grid columns
+add_filter( 'woocommerce_output_related_products_args', 'ashe_related_products_args' );
+  function ashe_related_products_args( $args ) {
+  	$args['posts_per_page'] = 3;
+	$args['columns'] = 3;
+	return $args;
+}
+
+// Remove Breadcrumbs
+if ( ! function_exists('ashe_remove_wc_breadcrumbs') ) {
+	function ashe_remove_wc_breadcrumbs() {
+	    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	}
+}
+add_action( 'init', 'ashe_remove_wc_breadcrumbs' );
+
+
+/*
 ** Incs: Theme Customizer
 */
 
@@ -488,3 +556,6 @@ add_filter( 'comment_form_fields', 'ashe_move_comments_field' );
 require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer-defaults.php' );
 require get_parent_theme_file_path( '/inc/customizer/dynamic-css.php' );
+
+// About Ashe
+require get_parent_theme_file_path( '/inc/about/about-ashe.php' );

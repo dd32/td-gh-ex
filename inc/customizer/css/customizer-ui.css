@@ -11,6 +11,7 @@
 	padding: 10px;
 }
 
+.customize-control-pro_options + .tab-title,
 .customize-section-description-container + .tab-title {
 	margin-top: 0 !important;
 }
@@ -74,4 +75,42 @@ li[id*="customize-control-ashe_options-social_media_icon"] span {
 #customize-control-ashe_options-featured_links_label {
 	width: 100% !important;
 	padding-bottom: 15px !important;
+}
+
+li[id*="pro_version"] {
+	position: relative;
+	padding: 0 !important;
+	margin-bottom: 30px;
+}
+
+li[id*="pro_version"] .dashicons {
+	float: left;
+	font-size: 20px;
+	margin-top: -1px;
+}
+
+li[id*="pro_version"] a {
+	display: block;
+	padding: 13px;
+	color: #ffffff;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #0085ba;
+	box-shadow: 1px 1px 7px rgba(51, 51, 51, 0.68);
+	text-align: center;
+	outline: none !important;
+	transition: opacity 0.1s ease-in;
+}
+
+li[id*="pro_version"] a:hover {
+	opacity: 0.9;
+}
+
+#accordion-section-ashe_pro h3 {
+  color: #fff !important;
+  background-color: #008EC2 !important;
+}
+
+#accordion-section-ashe_pro h3:after {
+  color: #fff !important;
 }

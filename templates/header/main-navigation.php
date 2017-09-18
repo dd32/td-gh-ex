@@ -1,7 +1,7 @@
 <?php if ( ashe_options( 'main_nav_label' ) === true ) : ?>
-<div id="main-nav" class="clear-fix" data-fixed="<?php echo ashe_options( 'main_nav_fixed' ); ?>">
+<div id="main-nav" class="clear-fix" data-fixed="<?php echo esc_attr(ashe_options( 'main_nav_fixed' )); ?>">
 
-	<div <?php echo ashe_options( 'general_header_width' ) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
+	<div <?php echo esc_attr(ashe_options( 'general_header_width' )) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
 		
 		<!-- Alt Sidebar Icon -->
 		<?php if ( ashe_options( 'main_nav_show_sidebar' ) === true && is_active_sidebar( 'sidebar-alt' ) ) : ?>

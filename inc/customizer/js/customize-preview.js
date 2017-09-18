@@ -8,12 +8,27 @@
 ** Colors
 */
 
+	// Header
+	wp.customize( 'header_textcolor', function( value ) {
+		value.bind( function( val ) {
+			$( '.header-logo a, .site-description' ).css({
+				color: val
+			});
+		});
+	});
+
+	asheLivePreview( 'colors_header_bg', function( val ) {
+		$('.entry-header').css( 'background-color', val );
+	});
+
+	// Accent Color
 	asheLivePreview( 'colors_content_accent', function( val ) {
 		var selectors = '\
 			#page-content h1 a,\
 			#page-content .post-comments,\
 			#page-content .post-author a,\
 			#page-content .post-share a,\
+		 	#page-content .ashe-widget a,\
 			#page-content .related-posts h4 a,\
 			#page-content .author-description h4 a,\
 			#page-content .blog-pagination a,\
@@ -35,15 +50,6 @@
 			}\
 		';
 		asheStyle( 'colors_content_accent', css );
-	});
-
-
-/*
-** General Layouts
-*/
-	// General
-	asheLivePreview( 'general_bg_image', function( val ) {
-		$( '#page-wrap' ).css( 'background-image', 'url("'+ val +'")' );
 	});
 
 

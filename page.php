@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<!-- Page Content -->
-<div id="page-content" class="clear-fix<?php echo ashe_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="col1-fullwidth">
+<div class="main-content clear-fix<?php echo esc_attr(ashe_options( 'general_content_width' )) === 'boxed' ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
+	
+	<?php
+	
+	// Sidebar Left
+	get_template_part( 'templates/sidebars/sidebar', 'left' ); 
 
-	<?php // Sidebar Alt
-
-	get_template_part( 'templates/sidebars/sidebar', 'alt' );
-
- 	?>
+	?>
 
 	<!-- Main Container -->
 	<div class="main-container">
@@ -28,7 +28,7 @@
 				}
 
 				echo '<header class="post-header">';
-					echo '<h1 class="post-title">'. get_the_title() .'</h1>';
+					echo '<h1 class="page-title">'. get_the_title() .'</h1>';
 				echo '</header>';
 				
 				echo '<div class="post-content">';
@@ -54,6 +54,13 @@
 		<?php get_template_part( 'templates/single/comments', 'area' ); ?>
 
 	</div><!-- .main-container -->
+
+	<?php
+	
+	// Sidebar Right
+	get_template_part( 'templates/sidebars/sidebar', 'right' ); 
+
+	?>
 
 </div><!-- #page-content -->
 

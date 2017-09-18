@@ -54,12 +54,17 @@ jQuery(document).ready(function( $ ) {
 /*
 ** Featured Slider =====
 */
+	var RTL = false;
+	if( $('html').attr('dir') == 'rtl' ) {
+	RTL = true;
+	}
 
 	$('#featured-slider').slick({
 		prevArrow: '<span class="prev-arrow icon-left-open-big"></span>',
 		nextArrow: '<span class="next-arrow icon-right-open-big"></span>',
 		dotsClass: 'slider-dots',
 		adaptiveHeight: true,
+		rtl: RTL,
 		speed: 700,
   		customPaging: function(slider, i) {
             return '';
@@ -71,7 +76,7 @@ jQuery(document).ready(function( $ ) {
 ** Single Navigation =====
 */
 
-	var singleNav = $('.single-navigation'),
+	var singleNav 	 = $('.single-navigation'),
 		headerHeight = $('#page-header').outerHeight();
 
 	$(window).scroll(function() {

@@ -29,7 +29,7 @@ $slider_data .= '}';
 
 ?>
 
-<div id="featured-slider" data-slick="<?php echo esc_attr( $slider_data ); ?>">
+<div id="featured-slider" class="<?php echo esc_attr(ashe_options( 'general_slider_width' )) === 'boxed' ? 'boxed-wrapper': ''; ?>" data-slick="<?php echo esc_attr( $slider_data ); ?>">
 	
 	<?php 
 

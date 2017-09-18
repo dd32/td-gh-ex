@@ -11,7 +11,7 @@
 		// Label
 		function ashe_customizer_label( id, title ) {
 
-			if ( id === 'custom_logo' || id === 'site_icon' || 'background_image' ) {
+			if ( id === 'custom_logo' || id === 'site_icon' || id === 'background_image' ) {
 				$( '#customize-control-'+ id ).before('<li class="tab-title customize-control">'+ title +'</li>');
 			} else {
 				$( '#customize-control-ashe_options-'+ id ).before('<li class="tab-title customize-control">'+ title +'</li>');
@@ -68,6 +68,7 @@
 	*/
 
 		// Colors
+		ashe_customizer_label( 'colors_content_accent', 'General' );
 		ashe_customizer_label( 'background_image', 'Body Background' );
 
 		// General Layouts

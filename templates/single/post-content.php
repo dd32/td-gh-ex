@@ -29,7 +29,7 @@ if ( have_posts() ) :
 		<h1 class="post-title"><?php the_title(); ?></h1>
 		
 		<div class="post-meta clear-fix">
-			<?php if ( ashe_options( 'blog_page_show_date' ) === true ) : ?>
+			<?php if ( ashe_options( 'single_page_show_date' ) === true ) : ?>
 			<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
 			<?php endif; ?>
 		</div>
@@ -62,7 +62,7 @@ if ( have_posts() ) :
 		$tag_list = get_the_tag_list( '<div class="post-tags">','','</div>');
 		
 		if ( ashe_options( 'single_page_show_tags' ) === true && $tag_list ) {
-			echo $tag_list;
+			echo ''. $tag_list;
 		}
 
 		?>
@@ -73,7 +73,7 @@ if ( have_posts() ) :
 
 		<?php
 
-		if ( ashe_options( 'blog_page_show_comments' ) === true && comments_open() ) {
+		if ( ashe_options( 'single_page_show_comments' ) === true && comments_open() ) {
 			comments_popup_link( esc_html__( 'No Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments');
 		}
 

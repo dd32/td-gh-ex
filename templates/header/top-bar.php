@@ -1,7 +1,7 @@
 <?php if ( ashe_options( 'top_bar_label' ) === true ) : ?>
 
 <div id="top-bar" class="clear-fix">
-	<div <?php echo ashe_options( 'general_header_width' ) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>
+	<div <?php echo esc_attr(ashe_options( 'general_header_width' )) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>
 		
 		<?php
 

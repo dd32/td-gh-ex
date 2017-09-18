@@ -1,10 +1,5 @@
 <?php
 
-// prevent the direct loading of this file
-if ( ! empty( $_SERVER['SCRIPT-FILENAME'] ) && basename( $_SERVER['SCRIPT-FILENAME'] ) == 'comments.php' ) {
-	die( esc_html__( 'You cannot access this file directory', 'ashe' ) );
-}
-
 // if password is required
 if ( post_password_required() ) {
 	echo '<p>'. esc_html__( 'This post is password protected. Enter the password to view the comments.' ,'ashe') .'</p>';

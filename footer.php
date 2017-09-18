@@ -1,12 +1,14 @@
+		</div><!-- #page-content -->
+
 		<!-- Page Footer -->
-		<footer id="page-footer" class="<?php echo ashe_options( 'general_footer_width' ) === 'boxed' ? 'boxed-wrapper ': ''; ?>clear-fix">
+		<footer id="page-footer" class="<?php echo esc_attr(ashe_options( 'general_footer_width' )) === 'boxed' ? 'boxed-wrapper ': ''; ?>clear-fix">
 			
 			<!-- Scroll Top Button -->
 			<span class="scrolltop">
 				<i class="fa fa fa-angle-up"></i>
 			</span>
 
-			<div <?php echo ashe_options( 'general_footer_width' ) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>
+			<div class="page-footer-inner <?php echo ashe_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
 
 			<!-- Footer Widgets -->
 			<?php 
@@ -17,17 +19,40 @@
 
 			<div class="footer-copyright">
 				<div class="copyright-info">
-					<p><?php echo ashe_options( 'page_footer_copyright' ); ?></p>
+				<?php
+
+				// some allowed HTML
+				echo wp_kses( ashe_options( 'page_footer_copyright' ), array( 
+					'a' => array(
+						'href' 		=> array(),
+						'title' 	=> array(),
+						'_blank'	=> array()
+					),
+					'img' => array(
+						'src' 		=> array(),
+						'alt' 		=> array(),
+						'width'		=> array(),
+						'height'	=> array(),
+						'style'		=> array(),
+						'class'		=> array(),
+						'id'		=> array()
+					),
+					'br' 	 => array(),
+					'em' 	 => array(),
+					'strong' => array()
+				) );
+
+				?>
 				</div>
 				<?php 
 				$credit_link = 'http://wp-royal.com/';
 				?>
-				<p class="credit">
+				<div class="credit">
 					<?php esc_html_e( 'Ashe Theme by ', 'ashe' ); ?>
 					<a href="<?php echo esc_attr( $credit_link ); ?>">
 					<?php esc_html_e( 'Royal-Flush', 'ashe' ); ?>
 					</a>
-				</p>
+				</div>
 
 			</div>
 

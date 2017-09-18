@@ -1,6 +1,6 @@
 <?php global $wp_query; ?>
 
-<nav class="blog-pagination clear-fix <?php echo ashe_options( 'blog_page_post_pagination' ); ?>" data-max-pages="<?php echo esc_attr( $wp_query->max_num_pages ); ?>" data-loading="<?php esc_attr_e( 'Loading...', 'ashe' ); ?>" >
+<nav class="blog-pagination clear-fix <?php echo esc_attr(ashe_options( 'blog_page_post_pagination' )); ?>" data-max-pages="<?php echo esc_attr( $wp_query->max_num_pages ); ?>" data-loading="<?php esc_attr_e( 'Loading...', 'ashe' ); ?>" >
 
 <?php
 
