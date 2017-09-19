@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 5.6 - september 2017
+- fixed display issue with mobile menu
+- added div container around mobile menu
+- updated files header and style
+
 MyKnowledgeBase version 5.5 - july 2017
 - added full width post template
 - file style and custom-editor-style: added clear and margin-bottom to headings
