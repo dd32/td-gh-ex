@@ -164,11 +164,9 @@ add_filter( 'excerpt_more', 'beonepage_new_excerpt_more' );
  */
 function beonepage_ajax_portfolio() {
 	
-	$nonce = $_POST['nonce'];
 	get_template_part( 'template-parts/content', 'ajax-portfolio' );
 
-	if ( ! wp_verify_nonce( $nonce, 'ajax-nonce' ) )
-        die ( 'Busted!');
+	wp_die();
 }
 add_action( 'wp_ajax_ajax_portfolio', 'beonepage_ajax_portfolio' );
 add_action( 'wp_ajax_nopriv_ajax_portfolio', 'beonepage_ajax_portfolio' );
