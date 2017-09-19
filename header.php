@@ -39,10 +39,12 @@
 			<h3 class="nav-primary-title"><?php echo $menu_title; ?></h3>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-primary' ) ); ?>
-			<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkelements' ); ?><?php _e( ' +', 'darkelements' ); ?></div>
-			<div class="mobile-nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</div>
+			<div class="mobile-nav-container">
+				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkelements' ); ?><?php _e( ' +', 'darkelements' ); ?></div>
+				<div class="mobile-nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</div>
+			</div>	
 		<?php endif; ?>
 
 		<?php if ( is_front_page() ) {?> 
