@@ -105,14 +105,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: comments.php:34, comments.php:46
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:35, comments.php:47
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:36, comments.php:48
+#: comments.php:35, comments.php:47
 msgid "Newer Comments &rarr;"
 msgstr ""
 
