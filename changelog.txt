@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Medical version 5.3 - september 2017
+- fixed display issue with mobile menu
+- added div container around mobile menu
+- updated files header and style
+
 Medical version 5.2 - july 2017
 - added full width post template
 - removed page template with left sidebar
