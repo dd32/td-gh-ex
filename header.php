@@ -20,9 +20,9 @@
 <body <?php body_class(); ?> >
 <div id="container">
 	<?php if ( has_nav_menu( 'primary' ) ) {?> 
-	<div id="header-first">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
-	</div>
+		<div id="header-first">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+		</div>
 	<?php } ?> 
 
 	<div id="header-second">
@@ -36,9 +36,11 @@
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) {?>
-			<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkorange' ); ?><?php _e( ' +', 'darkorange' ); ?></div>
-			<div class="mobile-nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<div class="mobile-nav-container">
+				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkorange' ); ?><?php _e( ' +', 'darkorange' ); ?></div>
+				<div class="mobile-nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</div>
 			</div> 
 		<?php } ?> 
 

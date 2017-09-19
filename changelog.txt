@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 5.9 - september 2017
+- fixed display issue with mobile menu
+- added div container around mobile menu
+- updated files header and style
+
 DarkOrange version 5.8 - july 2017
 - added full width post template
 - removed page template with left sidebar
