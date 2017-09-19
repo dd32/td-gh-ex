@@ -30,3 +30,7 @@ if($bellini['bellini_show_frontpage_slider_pages'] == true) :
 endif;
 
 add_action( 'wp_footer', 'bellini_scroll_to_top' );
+
+// Pagination
+
+add_action('bellini_loop_after', 'bellini_pagination');

@@ -22,6 +22,23 @@ if ( ! function_exists( 'bellini_after_content' ) ):
 	}
 endif;
 
+function bootstrap_grid_col_12(){
+    echo "<div class='col-md-12'>";
+}
+
+function bootstrap_grid_col_6(){
+    echo "<div class='col-md-6'>";
+}
+
+function bootstrap_grid_col_4(){
+    echo "<div class='col-md-4'>";
+}
+
+function bellini_woocommerce_before_shop_filter(){
+    global $bellini;
+    $filter_ver = absint($bellini['bellini_woo_shop_product_pagination_layout']) ;
+    echo "<div class='product-filter-wrap filter--$filter_ver row flexify--center'>";
+}
 
 /*--------------------------------------------------------------
 ## WooCommerce Product Items Container
@@ -108,42 +125,6 @@ function bellini_woo_pagination(){
 			bellini_pagination();
 		}
 }
-
-/* Layout 1 */
-
-if ( ! function_exists( 'bellini_shop_archive_sorting_info' ) ):
-	function bellini_shop_archive_sorting_info() { ?>
-		<div class="col-md-12 woo__info__sorting">
-		<div class="row">
-			<div class="col-md-3">
-				<?php woocommerce_catalog_ordering();?>
-			</div>
-			<div class="col-md-6 text-center">
-				<?php woocommerce_result_count();?>
-			</div>
-			<div class="col-md-3 text-right">
-				<?php bellini_woo_pagination();?>
-			</div>
-		</div>
-		</div>
-		<?php
-	}
-endif;
-
-/* Layout 2 */
-
-if ( ! function_exists( 'bellini_woo_pagination_two_sorting' ) ):
-	function bellini_woo_pagination_two_sorting() { ?>
-		<div class="col-md-12 text-center pagination__sorting--l2">
-			<?php
-			esc_html_e('Sort by:','bellini');
-			woocommerce_catalog_ordering();
-			?>
-		</div>
-		<?php
-	}
-endif;
-
 
 /*--------------------------------------------------------------
 ## WooCommerce Stylesheets

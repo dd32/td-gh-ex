@@ -7,7 +7,7 @@
 function bellini_customize_register( $wp_customize ) {
 
 require_once(get_template_directory() . '/inc/customize/bellini-custom-control.php');          //Custom Controls
-
+require_once(get_template_directory() . '/inc/customize/bellini-customizer-panel.php');          //Custom Controls
 /**
 * Your Brand name
 */
@@ -24,9 +24,9 @@ $wp_customize->get_control('custom_logo')->description 			= esc_html__('Upload a
 $wp_customize->get_control('blogname')->description 			= esc_html__("Your Website's Name", 'bellini');
 $wp_customize->get_control('blogdescription')->description 		= esc_html__("Your Website's Tagline", 'bellini');
 
-$wp_customize->get_control('custom_logo')->priority 			= 2;
-$wp_customize->get_control('blogname')->priority 				= 3;
-$wp_customize->get_control('blogdescription')->priority 		= 4;
+$wp_customize->get_control('custom_logo')->priority 			= 7;
+$wp_customize->get_control('blogname')->priority 				= 2;
+$wp_customize->get_control('blogdescription')->priority 		= 3;
 
 /**
 * Colors Panel.
@@ -50,56 +50,7 @@ $wp_customize->get_section( 'static_front_page' )->panel 	= 'bellini_frontpage_p
 $wp_customize->remove_section('background_image');
 
 
-// Frontpage Panel
-$wp_customize->add_panel( 'bellini_frontpage_panel', array(
-	'priority'       => 2,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Frontpage','bellini' ),
-	'description'    => esc_html__( 'Your frontpage elements','bellini' ),
-) );
 
-// Color Panel
-$wp_customize->add_panel( 'bellini_colors_panel', array(
-	'priority'       => 3,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Colors & Typography','bellini' ),
-	'description'    => esc_html__( 'Customize your sites color and font','bellini' ),
-) );
-
-
-// Layout & Positioning Panel
-$wp_customize->add_panel( 'bellini_placeholder_layout_panel', array(
-	'priority'       => 4,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Layout','bellini' ),
-	'description'    => esc_html__( 'Change layout or shape and postion of components.','bellini' ),
-) );
-
-
-
-// Show / Hide
-$wp_customize->add_panel( 'bellini_show_hide_components', array(
-	'priority'       => 5,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Show / Hide','bellini' ),
-	'description'    => esc_html__('Check 3rd Party Software & App Settings','bellini' ),
-) );
-
-// Default Image & Text Panel
-$wp_customize->add_panel( 'bellini_misc_panel', array(
-	'priority'       => 6,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Other Options','bellini' ),
-	'description'    => esc_html__( 'Set default content link text, image or social icons','bellini' ),
-) );
-
-// 3rd party Integrations
-$wp_customize->add_panel( 'bellini_third_party_integration', array(
-	'priority'       => 7,
-	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Integrations','bellini' ),
-	'description'    => esc_html__('Check 3rd Party Software & App Settings','bellini' ),
-) );
 
 
 	// Logo & Title
@@ -131,7 +82,7 @@ $wp_customize->add_panel( 'bellini_third_party_integration', array(
 					'label' => esc_html__('Favicon','bellini'),
 					'section' => 'title_tagline',
 					'settings'    => 'bellini_logo_favicon_helper',
-					'priority'   => 4,
+					'priority'   => 10,
 			)) );
 
 

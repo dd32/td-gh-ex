@@ -201,10 +201,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 			<ul class="single-item--featured">
 				<?php
 				 while ( $loop->have_posts() ) : $loop->the_post();
-
-				 	if ( absint($bellini['woo_featured_product_layout']) === 1 ) {
 						get_template_part( 'template-parts/woo', 'featured-product-1' );
-					}
 				endwhile;
 				?>
 			</ul>
@@ -298,11 +295,7 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 		<?php
 
 			while ( $loop->have_posts() ) : $loop->the_post();
-
-				if ( absint($bellini['woo_product_new_layout']) === 1 ){
 					get_template_part( 'template-parts/woo', 'product-1' );
-				}
-
 			endwhile; ?>
 		</div>
 		</div>

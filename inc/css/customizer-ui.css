@@ -124,15 +124,25 @@
     color: #fff;
 }
 
+#accordion-panel-bellini_header_panel h3:before,
+#accordion-section-bellini_header_color_section h3:before,
 #accordion-section-bellini_header_section_layout h3:before,
 #accordion-section-bellini_header_navigation_section h3:before{
     content: "\f342";
     background-color:#3b8686;
 }
 
+#accordion-section-bellini_settings_footer_widget h3:before,
+#accordion-panel-bellini_footer_panel h3:before,
 #accordion-section-bellini_layout_settings_footer h3:before{
     content: "\f346";
     background-color:#8a9b0f;
+}
+
+#accordion-section-bellini_woocommerce_integration h3:before, #accordion-section-bellini_woocommerce_single_layout_section h3:before, #accordion-section-bellini_woocommerce_color_section h3:before, #accordion-section-bellini_woocommerce_sidebar_layout_section h3:before, #accordion-panel-bellini_third_party_integration h3:before {
+    content: '\f174';
+    background-color: #F44336;
+    color: #fff;
 }
 
 #accordion-section-bellini_general_layout h3:before{
