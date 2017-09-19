@@ -31,9 +31,11 @@
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
-			<div class="mobile-nav-toggle"><?php _e( 'Menu', 'shipyard' ); ?><?php _e( ' +', 'shipyard' ); ?></div>
-			<div class="mobile-nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<div class="mobile-nav-container">
+				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'shipyard' ); ?><?php _e( ' +', 'shipyard' ); ?></div>
+				<div class="mobile-nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</div>
 			</div>
 		<?php endif; ?>
 
