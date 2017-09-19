@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+OneColumn version 5.9 - september 2017
+- fixed display issue with mobile menu
+- added div container around mobile menu
+- updated files header and style
+
 OneColumn version 5.8 - july 2017
 - file style and custom-editor-style: added clear and margin-bottom to headings
 
