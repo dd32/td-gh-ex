@@ -149,17 +149,6 @@ function odin_widgets_init() {
 add_action( 'widgets_init', 'odin_widgets_init' );
 
 /**
- * Flush Rewrite Rules for new CPTs and Taxonomies.
- *
- * @since 2.2.0
- */
-function odin_flush_rewrite() {
-	flush_rewrite_rules();
-}
-
-add_action( 'after_switch_theme', 'odin_flush_rewrite' );
-
-/**
  * Load site scripts.
  *
  * @since 2.2.0
@@ -184,6 +173,10 @@ function odin_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array( 'jquery' ), null, true );
 	}
+
+	// HTML5.
+	wp_enqueue_script( 'html5', $template_url . '/assets/js/html5.js' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
@@ -211,15 +204,10 @@ add_filter( 'stylesheet_uri', 'odin_stylesheet_uri', 10, 2 );
 
 /**
  * Query WooCommerce activation
- *
- * @since  2.2.6
- *
- * @return boolean
  */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
-		return class_exists( 'woocommerce' ) ? true : false;
-	}
+
+function avalon_b_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
 }
 
 /**
@@ -240,7 +228,7 @@ require_once get_template_directory() . '/inc/template-tags.php';
 /**
  * WooCommerce compatibility files.
  */
-if ( is_woocommerce_activated() ) {
+if ( avalon_b_is_woocommerce_activated() ) {
 	add_theme_support( 'woocommerce' );
 	require get_template_directory() . '/inc/woocommerce/hooks.php';
 	require get_template_directory() . '/inc/woocommerce/functions.php';
@@ -342,7 +330,7 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_setting(
       $social_media[ 'slug' ], array(
         'default' => $social_media[ 'default' ],
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'esc_url_raw',
       )
     );
 
@@ -351,7 +339,7 @@ function avalon_customizer_options( $wp_customize ) {
       array(
         'label' => $social_media[ 'label' ],
         'section' => 'social_media_settings_section',
-        'type' => 'text',
+        'type' => 'url',
       )
     );
   }

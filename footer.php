@@ -65,7 +65,7 @@
 
             if ( $url ) {
             ?>
-              <a href="<?php echo esc_url( $url ) ?>" target="_blank">
+              <a href="<?php echo esc_attr( $url ) ?>" target="_blank">
                 <i class="fa <?php echo $icon ?> fa-2x" aria-hidden="true"></i>
               </a>
             <?php
@@ -83,7 +83,7 @@
 			 	$copyright_text = get_theme_mod( 'copyright_text' );
 
 				if ( $copyright_text ) {
-					echo esc_attr( $copyright_text );
+					echo esc_html( $copyright_text );
 				}
 				else {
 					echo 'Avalon B Theme';
