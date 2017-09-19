@@ -3,7 +3,7 @@
 Contributors: axlethemes
 Requires at least: 4.6
 Tested up to: 4.8.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright: (c) 2017 Axle Themes
@@ -22,7 +22,10 @@ Best Commerce is an aesthetically pure and clean and highly customizable, profes
 
 == Changelog ==
 
-= 1.0 - Sep 5 2017 =
+= 1.0.1 - Sep 19 2017 =
+* Minor bug fixes
+
+= 1.0.0 - Sep 5 2017 =
 * Initial release
 
 == Credits ==
@@ -40,8 +43,10 @@ Best Commerce is an aesthetically pure and clean and highly customizable, profes
 == Images ==
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-
-* https://www.pexels.com/photo/person-wearing-green-button-up-bottoms-6734/
-* https://www.pexels.com/photo/adult-attractive-beautiful-beauty-413885/
-* https://www.pexels.com/photo/beautiful-dress-elegant-fashion-235508/
-* https://www.pexels.com/photo/man-wearing-white-and-black-legendary-print-t-shirt-157646/
+* https://www.pexels.com/photo/beautiful-blur-daylight-dock-221342/
+* https://www.pexels.com/photo/adult-beautiful-blonde-blur-324658/
+* https://www.pexels.com/photo/desk-cable-technology-headphones-8506/
+* https://www.pexels.com/photo/woman-hand-apple-girl-110471/
+* https://www.pexels.com/photo/mobile-phone-samsung-edge-samsung-galaxy-s6-edge-plus-50614/
+* https://www.pexels.com/photo/android-smartphone-technology-mobile-phone-15092/
+* https://www.pexels.com/photo/close-up-of-man-wearing-shoes-293406/

@@ -435,6 +435,43 @@ $wp_customize->add_control( 'theme_options[archive_layout]',
 	)
 );
 
+// Setting archive_image.
+$wp_customize->add_setting( 'theme_options[archive_image]',
+	array(
+	'default'           => $default['archive_image'],
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'best_commerce_sanitize_select',
+	)
+);
+$wp_customize->add_control( 'theme_options[archive_image]',
+	array(
+	'label'    => esc_html__( 'Image in Archive', 'best-commerce' ),
+	'section'  => 'section_layout',
+	'type'     => 'select',
+	'choices'  => best_commerce_get_image_sizes_options(),
+	'priority' => 100,
+	)
+);
+
+// Setting archive_image_alignment.
+$wp_customize->add_setting( 'theme_options[archive_image_alignment]',
+	array(
+	'default'           => $default['archive_image_alignment'],
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'best_commerce_sanitize_select',
+	)
+);
+$wp_customize->add_control( 'theme_options[archive_image_alignment]',
+	array(
+	'label'           => esc_html__( 'Image Alignment in Archive', 'best-commerce' ),
+	'section'         => 'section_layout',
+	'type'            => 'select',
+	'choices'         => best_commerce_get_image_alignment_options(),
+	'priority'        => 100,
+	'active_callback' => 'best_commerce_is_image_in_archive_active',
+	)
+);
+
 // Footer Section.
 $wp_customize->add_section( 'section_footer',
 	array(

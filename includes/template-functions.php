@@ -84,12 +84,12 @@ if ( ! function_exists( 'best_commerce_fonts_url' ) ) :
 
 		/* translators: If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language. */
 		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'best-commerce' ) ) {
-			$fonts[] = 'Roboto:400,700';
+			$fonts[] = 'Roboto:300,400,500,700';
 		}
 
 		/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
 		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'best-commerce' ) ) {
-			$fonts[] = 'Montserrat:100,400,500,600';
+			$fonts[] = 'Montserrat:300,400,500,600,700';
 		}
 
 		if ( $fonts ) {

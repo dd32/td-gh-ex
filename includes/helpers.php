@@ -196,3 +196,139 @@ if ( ! function_exists( 'best_commerce_get_featured_carousel_widget_alignment' )
 	}
 
 endif;
+
+if ( ! function_exists( 'best_commerce_get_woocommerce_pages' ) ) :
+
+	/**
+	 * Returns WooCommerce pages.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Pages details.
+	 */
+	function best_commerce_get_woocommerce_pages() {
+		// WC pages to check against.
+		$check_pages = array(
+			esc_html_x( 'Shop base', 'page setting', 'best-commerce' ) => array(
+				'option'    => 'woocommerce_shop_page_id',
+				'shortcode' => '',
+			),
+			esc_html_x( 'Cart', 'page setting', 'best-commerce' ) => array(
+				'option'    => 'woocommerce_cart_page_id',
+				'shortcode' => '[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']',
+			),
+			esc_html_x( 'Checkout', 'page setting', 'best-commerce' ) => array(
+				'option'    => 'woocommerce_checkout_page_id',
+				'shortcode' => '[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']',
+			),
+			esc_html_x( 'My account', 'page setting', 'best-commerce' ) => array(
+				'option'    => 'woocommerce_myaccount_page_id',
+				'shortcode' => '[' . apply_filters( 'woocommerce_my_account_shortcode_tag', 'woocommerce_my_account' ) . ']',
+			),
+		);
+
+		$pages_output = array();
+		foreach ( $check_pages as $page_name => $values ) {
+			$page_id = get_option( $values['option'] );
+			$page_set = $page_exists = $page_visible = false;
+			$shortcode_present = $shortcode_required = false;
+
+			// Page checks.
+			if ( $page_id ) {
+				$page_set = true;
+			}
+			if ( get_post( $page_id ) ) {
+				$page_exists = true;
+			}
+			if ( 'publish' === get_post_status( $page_id ) ) {
+				$page_visible = true;
+			}
+
+			// Shortcode checks.
+			if ( $values['shortcode']  && get_post( $page_id ) ) {
+				$shortcode_required = true;
+				$page = get_post( $page_id );
+				if ( strstr( $page->post_content, $values['shortcode'] ) ) {
+					$shortcode_present = true;
+				}
+			}
+
+			// Wrap up our findings into an output array.
+			$pages_output[] = array(
+				'page_name'          => $page_name,
+				'page_id'            => $page_id,
+				'page_set'           => $page_set,
+				'page_exists'        => $page_exists,
+				'page_visible'       => $page_visible,
+				'shortcode'          => $values['shortcode'],
+				'shortcode_required' => $shortcode_required,
+				'shortcode_present'  => $shortcode_present,
+			);
+		} // End foreach().
+
+		return $pages_output;
+	}
+
+endif;
+
+if ( ! function_exists( 'best_commerce_woocommerce_pages_status' ) ) :
+
+	/**
+	 * Returns WooCommerce pages status.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return bool Page status.
+	 */
+	function best_commerce_woocommerce_pages_status() {
+		$output = true;
+
+		$pages = best_commerce_get_woocommerce_pages();
+		foreach ( $pages as $page ) {
+			if ( true === $page['page_set'] ) {
+				if ( true === $page['shortcode_required'] && true !== $page['shortcode_present'] ) {
+					$output = false;
+					break;
+				}
+			} else {
+				$output = false;
+				break;
+			}
+		}
+
+		return $output;
+	}
+
+endif;
+
+if ( ! function_exists( 'best_commerce_woocommerce_pages_status_message' ) ) :
+
+	/**
+	 * Returns WooCommerce pages status message.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Message.
+	 */
+	function best_commerce_woocommerce_pages_status_message() {
+		$output = '';
+
+		$pages = best_commerce_get_woocommerce_pages();
+		foreach ( $pages as $page ) {
+			if ( true === $page['page_set'] ) {
+				if ( true === $page['shortcode_required'] && true !== $page['shortcode_present'] ) {
+					$output .= '<li>' . sprintf( esc_html__( '%1$s page does not contain %2$s shortcode.', 'best-commerce' ), $page['page_name'], $page['shortcode'] ) . '</li>';
+				}
+			} else {
+				$output .= '<li>' . sprintf( esc_html__( '%s page is not set.', 'best-commerce' ), $page['page_name'] ) . '</li>';
+			}
+		}
+
+		if ( ! empty( $output ) ) {
+			$output = '<ul>' . $output . '</ul>';
+		}
+
+		return $output;
+	}
+
+endif;

@@ -29,6 +29,7 @@ if ( ! function_exists( 'best_commerce_setup' ) ) :
 		// Enable support for Post Thumbnails.
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'best-commerce-thumb', 360, 270 );
+		add_image_size( 'best-commerce-product', 400, 500, true );
 
 		// Register nav menus.
 		register_nav_menus( array(
@@ -55,14 +56,18 @@ if ( ! function_exists( 'best_commerce_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Enable support for custom logo.
-		add_theme_support( 'custom-logo' );
+		add_theme_support( 'custom-logo', array(
+			'width'       => 300,
+			'height'      => 150,
+			'flex-width'  => true,
+			'flex-height' => true,
+		) );
 
-		// Add WooCommerce support.
+		// Enable support for WooCommerce.
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 
-		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
+		// Enable support for Custom Header.
 		add_theme_support( 'custom-header', apply_filters( 'best_commerce_custom_header_args', array(
 			'default-image' => '',
 			'width'         => 1920,
@@ -70,6 +75,18 @@ if ( ! function_exists( 'best_commerce_setup' ) ) :
 			'flex-height'   => true,
 			'header-text'   => false,
 		) ) );
+
+		// Declare support for demo importer.
+		$importer_content = array(
+			'static_front_page' => true,
+			'static_page'       => 'shop',
+			'posts_page'        => 'blog',
+			'menu_locations'    => array(
+				'primary' => 'main-menu',
+				'social'  => 'social-menu',
+				),
+			);
+		add_theme_support( 'axle-demo-importer', $importer_content );
 	}
 
 endif;
@@ -174,11 +191,9 @@ function best_commerce_scripts() {
 
 	wp_enqueue_style( 'jquery-slick', get_template_directory_uri() . '/vendors/slick/slick' . $min . '.css', '', '1.5.9' );
 
-	wp_enqueue_style( 'best-commerce-style', get_stylesheet_uri(), array(), '1.0.0' );
+	wp_enqueue_style( 'best-commerce-style', get_stylesheet_uri(), array(), '1.0.1' );
 
 	wp_enqueue_script( 'best-commerce-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
-
-	wp_enqueue_script( 'jquery-cycle2', get_template_directory_uri() . '/vendors/cycle2/js/jquery.cycle2' . $min . '.js', array( 'jquery' ), '2.1.6', true );
 
 	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/vendors/sidr/js/jquery.sidr' . $min . '.js', array( 'jquery' ), '2.2.1', true );
 

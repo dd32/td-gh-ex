@@ -6,7 +6,7 @@
  */
 
 $carousel_details = best_commerce_get_featured_carousel_details();
-// nspre( $carousel_details );
+
 $featured_carousel_widget_alignment = best_commerce_get_option( 'featured_carousel_widget_alignment' );
 
 $carousel_settings = array(
@@ -17,7 +17,7 @@ $carousel_settings = array(
 	'nextArrow'      => '<span data-role="none" class="slick-next" tabindex="0"><i class="fa fa-angle-right" aria-hidden="true"></i></span>',
 	'responsive'     => array(
 		array(
-			'breakpoint' => 1024,
+			'breakpoint' => 479,
 			'settings'   => array(
 				'slidesToShow' => 1,
 				),
@@ -57,6 +57,9 @@ $section_classes .= ' featured-section-widget-' . ( ( is_active_sidebar( 'sideba
 
 									<div class="main-product-carousel-item">
 										<div class="main-product-carousel-item-inner">
+											<?php if ( isset( $item['price'] ) && ! empty( $item['price'] ) ): ?>
+												<span class="featured-product-price"><?php echo wc_price( $item['price'], array( 'decimals' => 0 ) ); ?></span>
+											<?php endif; ?>
 											<div class="product-thumb">
 												<a href="<?php echo esc_url( $item['url'] ); ?>" class="product-thumb-wrapper">
 													<?php if ( ! empty( $item['images'] ) ) : ?>
@@ -69,9 +72,6 @@ $section_classes .= ' featured-section-widget-' . ( ( is_active_sidebar( 'sideba
 											</div><!-- .product-thumb -->
 											<h3 class="main-product-carousel-title">
 												<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
-												<?php if ( isset( $item['price'] ) && ! empty( $item['price'] ) ): ?>
-													<span class="featured-product-price"><?php echo wc_price( $item['price'], array( 'decimals' => 0 ) ); ?></span>
-												<?php endif; ?>
 											</h3>
 										</div><!-- .main-product-carousel-item-inner -->
 									</div><!-- .main-product-carousel-item -->

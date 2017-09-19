@@ -94,6 +94,10 @@ if ( ! function_exists( 'best_commerce_mobile_navigation' ) ) :
 		?>
 		<div class="mobile-nav-wrap">
 			<a id="mobile-trigger" href="#mob-menu"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+			<?php $enable_category_menu = best_commerce_get_option( 'enable_category_menu' ); ?>
+			<?php if ( true === $enable_category_menu ) : ?>
+				<a id="mobile-trigger2" href="#category-list"><i class="fa fa-folder-o" aria-hidden="true"></i></a>
+			<?php endif; ?>
 			<div id="mob-menu">
 				<?php
 				wp_nav_menu( array(
@@ -103,6 +107,7 @@ if ( ! function_exists( 'best_commerce_mobile_navigation' ) ) :
 				) );
 				?>
 			</div><!-- #mob-menu -->
+
 		</div><!-- .mobile-nav-wrap -->
 		<?php
 	}

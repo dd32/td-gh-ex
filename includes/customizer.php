@@ -24,6 +24,18 @@ function best_commerce_customize_register( $wp_customize ) {
 	$wp_customize->register_control_type( 'Best_Commerce_Checkbox_Multiple_Control' );
 	$wp_customize->register_section_type( 'Best_Commerce_Upsell_Section' );
 
+	// Upsell section.
+	$wp_customize->add_section(
+		new Best_Commerce_Upsell_Section( $wp_customize, 'custom_theme_upsell',
+			array(
+				'title'    => esc_html__( 'Best Commerce Pro', 'best-commerce' ),
+				'pro_text' => esc_html__( 'Buy Pro', 'best-commerce' ),
+				'pro_url'  => 'https://axlethemes.com/downloads/best-commerce-pro/',
+				'priority' => 1,
+			)
+		)
+	);
+
 	// Load helpers.
 	require_once trailingslashit( get_template_directory() ) . 'includes/helpers.php';
 

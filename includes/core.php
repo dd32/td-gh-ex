@@ -97,8 +97,10 @@ if ( ! function_exists( 'best_commerce_get_default_theme_options' ) ) :
 		$defaults['category_menu_depth']        = 3;
 
 		// Layout.
-		$defaults['global_layout']  = 'right-sidebar';
-		$defaults['archive_layout'] = 'excerpt';
+		$defaults['global_layout']           = 'right-sidebar';
+		$defaults['archive_layout']          = 'excerpt';
+		$defaults['archive_image']           = 'medium';
+		$defaults['archive_image_alignment'] = 'left';
 
 		// Footer.
 		$defaults['copyright_text'] = esc_html__( 'Copyright &copy; All rights reserved.', 'best-commerce' );

@@ -59,6 +59,9 @@ class Best_Commerce_Woocommerce {
 
 		// Related posts loop columns.
 		add_filter( 'woocommerce_related_products_columns', array( $this, 'custom_related_products_columns' ) );
+
+		// Loop image size.
+		add_filter( 'single_product_archive_thumbnail_size', array( $this, 'loop_image_size' ) );
 	}
 
 	/**
@@ -223,6 +226,20 @@ class Best_Commerce_Woocommerce {
 	function custom_related_products_columns( $input ) {
 
 		return 3;
+	}
+
+	/**
+	 * Loop image size.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $input Size.
+	 * @return string Modified size.
+	 */
+	function loop_image_size( $input ) {
+
+		$input = 'best-commerce-product';
+		return $input;
 	}
 
 	/**

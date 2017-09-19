@@ -28,6 +28,11 @@ if ( ! function_exists( 'best_commerce_register_recommended_plugins' ) ) :
 				'slug'     => 'yith-woocommerce-wishlist',
 				'required' => false,
 			),
+			array(
+				'name'     => esc_html__( 'Contact Form 7', 'best-commerce' ),
+				'slug'     => 'contact-form-7',
+				'required' => false,
+			),
 		);
 
 		$config = array();

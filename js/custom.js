@@ -23,6 +23,14 @@
 			name: 'sidr-main'
 		});
 
+		$( '#mobile-trigger2' ).sidr({
+			timing: 'ease-in-out',
+			speed: 500,
+			source: '#category-list',
+			side: 'right',
+			name: 'sidr-category'
+		});
+
 		// Implement go to top.
 		var $scrollup_object = $( '#btn-scrollup' );
 		if ( $scrollup_object.length > 0 ) {
