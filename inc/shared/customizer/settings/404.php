@@ -52,42 +52,9 @@ function benjamin_404_settings($wp_customize) {
             'settings'=> '_404_page_select_setting',
             'type'    => 'dropdown-pages',
             'priority' => 1,
-            'active_callback' => function() use ( $wp_customize ) {
-                  return 'page' == $wp_customize->get_setting( '_404_page_content_setting' )->value();
-            },
          )
     );
 
 }
 
 add_action('customize_register', 'benjamin_404_settings');
-
-
-/**
- * ----------------------------------------------------------------------------
- * Sanitization settings
- * ----------------------------------------------------------------------------
- */
-
-
-function benjamin_404_page_select_sanitize($val) {
-    $pages = get_posts(array('post_type' => 'page', 'posts_per_page' => -1, 'fields' => 'ids'));
-
-    if( !in_array($val, $pages) && 'publish' == get_post_status( $val ) )
-        return null;
-
-    return $val;
-}
-
-
-function benjamin_404_content_sanitize($val) {
-    $valids = array(
-        'default',
-        'page'
-    );
-
-    if( !in_array($val, $valids) )
-        return null;
-
-    return $val;
-}

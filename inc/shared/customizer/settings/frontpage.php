@@ -39,9 +39,6 @@ function benjamin_frontpage_settings($wp_customize) {
              'settings'=> 'frontpage_hero_callout_setting',
              'type'    => 'dropdown-pages',
              'priority' => 1,
-             'active_callback' => function() use ( $wp_customize ) {
-                   return 'callout' === $wp_customize->get_setting( 'frontpage_hero_content_setting' )->value();
-              },
          )
      );
 
@@ -58,9 +55,6 @@ function benjamin_frontpage_settings($wp_customize) {
             'settings'=> 'frontpage_hero_page_setting',
             'type'    => 'dropdown-pages',
             'priority' => 1,
-            'active_callback' => function() use ( $wp_customize ) {
-                  return 'page' === $wp_customize->get_setting( 'frontpage_hero_content_setting' )->value();
-             },
          )
     );
 
@@ -99,58 +93,3 @@ function benjamin_frontpage_settings($wp_customize) {
 
 }
 add_action('customize_register', 'benjamin_frontpage_settings');
-
-
-/**
- * ----------------------------------------------------------------------------
- * Sanitization settings
- * ----------------------------------------------------------------------------
- */
-
-
-function benjamin_frontpage_hero_callout_sanitize($val) {
-    $pages = get_posts(array('post_type' => 'page', 'posts_per_page' => -1, 'fields' => 'ids'));
-
-    if( !in_array($val, $pages) && 'publish' == get_post_status( $val ) )
-        return null;
-
-    return $val;
-}
-
-
-function benjamin_frontpage_sortable_sanitize($val) {
-    $valids = array(
-        'widget-area-1',
-        'widget-area-2',
-        'widget-area-3',
-        'page-content',
-    );
-
-    $valid = true;
-    $tmp_val = json_decode($val);
-    foreach($tmp_val as $v){
-        if( !in_array($v->name, $valids) )
-            $valid = false;
-    }
-
-    if(!$valid)
-        return null;
-
-    return $val;
-}
-
-
-function benjamin_frontpage_hero_content_sanitize($val) {
-
-    $valids = array(
-        'callout',
-        'page',
-        'nothing',
-    );
-
-
-    if( !in_array($val, $valids) )
-        return null;
-
-    return $val;
-}

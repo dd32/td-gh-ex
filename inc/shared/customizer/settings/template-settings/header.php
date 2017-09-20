@@ -15,9 +15,10 @@ $args = array(
     'type' => 'label',
     'section' => $name . '_settings_section',
     'settings' => $name . '_header_label',
+    'input_attrs' => array(
+      'data-toggled-by' => $name . '_settings_active',
+    )
 );
-if($name != 'archive')
-    $args['active_callback'] = $active_callback;
 
 $wp_customize->add_control(
     new Benjamin_Label_Custom_Control(
@@ -41,10 +42,10 @@ $hero_image_args = array(
     'label'   => __('Header Image', 'benjamin'),
     'section' => $name . '_settings_section',
     'settings'   => $name . '_image_setting',
+    'input_attrs' => array(
+      'data-toggled-by' => $name . '_settings_active',
+    )
 );
-
-if( $name !== 'archive')
-    $hero_image_args['active_callback'] = $active_callback;
 
 $wp_customize->add_control(
     new WP_Customize_Image_Control(
@@ -72,9 +73,10 @@ $hero_video_args = array(
     'label'   => __('Header Video', 'benjamin'),
     'section' => $name . '_settings_section',
     'settings'   => $name . '_video_setting',
+    'input_attrs' => array(
+      'data-toggled-by' => $name . '_settings_active',
+    )
 );
-if( $name !== 'archive')
-    $hero_video_args['active_callback'] = $active_callback;
 
 $wp_customize->add_control(
     new Benjamin_Video_Control(
@@ -87,7 +89,7 @@ $wp_customize->add_control(
 
 
 /**
- * Hero Size
+ * background position
  */
 $wp_customize->add_setting( $name . '_hero_position_setting', array(
     'default' => 'top',
@@ -107,10 +109,10 @@ $hero_position_args = array(
     'settings' => $name . '_hero_position_setting',
     'type' => 'select',
     'choices' => $choices,
+    'input_attrs' => array(
+      'data-toggled-by' => $name . '_settings_active',
+    )
 );
-
-if( $name !== 'archive')
-    $hero_position_args['active_callback'] = $active_callback;
 
 $wp_customize->add_control( $name . '_hero_position_control', $hero_position_args );
 
@@ -119,7 +121,7 @@ $wp_customize->add_control( $name . '_hero_position_control', $hero_position_arg
  * Hero Size
  */
 $wp_customize->add_setting( $name . '_hero_size_setting', array(
-    'default' => 'slim',
+    'default' => 'medium',
     'sanitize_callback' => 'benjamin_hero_size_sanitize',
 ) );
 
@@ -133,11 +135,13 @@ $hero_size_args = array(
         'slim' => 'Slim',
         'medium' => 'Medium',
         'big' => 'Big',
+        'xtra-big' => 'Extra Big',
         'full' => 'Full Screen'
     ),
+    'input_attrs' => array(
+      'data-toggled-by' => $name . '_settings_active',
+    )
 );
 
-if( $name !== 'archive')
-    $hero_size_args['active_callback'] = $active_callback;
 
 $wp_customize->add_control( $name . '_hero_size_control', $hero_size_args );
