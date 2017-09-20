@@ -48,6 +48,7 @@ function bb_mobile_application_setup() {
 	load_theme_textdomain( 'bb-mobile-application', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,

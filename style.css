@@ -4,11 +4,11 @@ Theme URI: http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: http://www.themeshopy.com
 Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: http://www.themeshopy.com/bb-mobile-application-theme/
-Version: 1.2.3
+Version: 1.2.3.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
-Tags:left-sidebar,right-sidebar,one-column,two-columns,three-columns,four-columns,grid-layout,custom-colors,custom-background,custom-logo,custom-menu,custom-header,editor-style,featured-images,footer-widgets,sticky-post,buddypress,full-width-template,theme-options,threaded-comments,blog,news,portfolio
+Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
 
 BB Mobile Application WordPress Theme has been created by ThemeShopy, 2017.
 BB Mobile Application WordPress Theme is released under the terms of GNU GPL
@@ -430,6 +430,13 @@ a.button{
 
 
 @media screen and (max-width:720px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	    width: 100% !important;
+	    margin: 10% 0 !important;
+	}	
+	.woocommerce a.button, .woocommerce a.added_to_cart {
+	    width: 60% !important;
+	}
 	.toggle{
  	display:block;
 	}
@@ -891,6 +898,174 @@ section .innerdarkbox{
 	text-align:center;
 }
 
+
+/* Woocommerce CSS */
+li.woocommerce-MyAccount-navigation-link {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+#content {
+  padding-top: 4%;
+}
+#content .container {
+  width: 100%;
+}
+li.product {
+  margin: 18px 0;
+  box-shadow: 4px 4px 10px #ccc;
+}
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product {
+  width: 47%;
+  margin: 1% 1.5%;
+}
+.woocommerce ul.products li.product .price ins{
+  text-decoration: none;
+}
+.woocommerce ul.products li.product a img{
+  margin-bottom: 0;
+}
+span.woocommerce-Price-amount.amount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+span.price {
+  display: none !important;
+}
+h2.woocommerce-loop-product__title{
+  display: none;
+}
+
+.woocommerce-page ul.products li.product:hover h2.woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product:hover span.price {
+  background: rgba(20, 194, 160, 0.32);
+  display: block !important;
+  position: absolute;
+  top: 0px;
+  font-family: Roboto;
+  padding: 20px 0 !important;
+  font-size: 18px;
+  margin: 0 auto !important;
+  border-radius: 0;
+  text-align: center;
+  width:100%;
+  height: 100%;
+}
+.woocommerce-page ul.products li.product:hover span.price{
+  top: 80px;
+  background: transparent;
+}
+.woocommerce ul.products li.product:hover h2.woocommerce-loop-product__title,
+.woocommerce ul.products li.product:hover span.woocommerce-Price-amount.amount {
+    color: #000;
+}
+.woocommerce a.button,
+.woocommerce a.added_to_cart {
+    padding: 15px !important;
+    color: #fff !important;
+    display: block !important;
+    text-align: center;
+    background: #14c2a0;
+    border-radius: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: none;
+    margin: 20px auto !important;
+    width: 50%;    
+    box-shadow: 5px 5px 10px 2px #bbb;
+}
+.woocommerce select.orderby {
+  padding: 10px;
+  border: solid 2px #14c2a0;
+  background: #fff;
+  color: #14c2a0;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+p.woocommerce-result-count {
+  font-size: 17px;
+  color: #14c2a0;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+h1.woocommerce-products-header__title {
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+  color: #14c2a0;
+}
+.woocommerce div.product .product_title {
+  color: #14c2a0;
+  font-weight: bold;
+   margin-bottom: 5%;
+}
+.woocommerce div.product p.price {
+  color: #000;
+  font-weight: bold;
+}
+.woocommerce .quantity .qty {
+  width: 30%;
+  text-align: center;
+  padding: 5px;
+  border: solid 2px #bbb;
+  color: #000;
+}
+.woocommerce div.product form.cart div.quantity {
+  float: none;
+  margin-bottom: 4%;
+}
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt {
+  background: #14c2a0;
+  padding: 12px 30px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #fff !important;
+}
+.woocommerce button.button.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background: #bbb;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 23%;
+  margin: 1%;
+}
+.woocommerce-product-details__short-description p {
+  font-size: 15px;
+  color: #000;
+  font-family: Roboto;
+}
+.woocommerce span.onsale {
+  background-color: #14c2a0;
+  font-size: 15px;
+  font-family: Roboto;
+  padding: 0;
+}
+.woocommerce .star-rating {
+  margin: 15px auto !important;
+  font-size: 15px;
+  font-family: star;
+}
+.woocommerce ul.products li.product .star-rating{
+  font-size: 15px;
+}
+.woocommerce .star-rating span::before{
+  color: #ffd400;
+}
+.woocommerce #sidebar{
+  margin-top: 4%;
+}
+.woocommerce .panel{
+	padding: 15px !important;
+}
+/* Woocommerce CSS End*/
+
+
+
 /* --------- Blog Page ------- */
 
 #full-width-blog .postbox{
@@ -1171,21 +1346,6 @@ section#blog{
   font-weight:bold;
   font-size:12px;
 }
-  
-
-#content-vw #comments ol li{
-  width:100%;
-  background:none;list-style:none;
-  margin: 0 0 20px;
-  padding: 20px;
-  background:#eee;
-  display:inline-block;
-}
-  
-#content-vw #comments ul{
-  margin:0 0 0 40px;
-}
-
 #comments .reply{
   float:right;
 }
@@ -1527,8 +1687,7 @@ label{
 	font-weight:normal;
 }
 
-@media screen and (max-width:991px) 
-{
+@media screen and (max-width:991px){
 	#slider .slide-cap h2{
 		font-size:150%
 	}
@@ -1536,6 +1695,12 @@ label{
 		border-bottom: 1px solid #fff;
 		margin-bottom: 15px;
 		padding-bottom: 20px;
+	}
+}
+
+@media screen and (min-width: 721px) and (max-width: 768px){
+	.woocommerce a.button, .woocommerce a.added_to_cart{
+		width: 70%
 	}
 }
 

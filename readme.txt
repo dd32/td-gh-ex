@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3
-Tested up to    :   WP 4.8
+Version         :   1.2.3.1
+Tested up to    :   WP 4.8.1
 Author          :   ThemeShopy
 Author URI      :   http://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -69,6 +69,70 @@ All the slider images taken from pixabay under Creative Commons Deed CC0 - https
 
 All the icons taken from genericons licensed under GPL License.
 http://genericons.com/
+
+/*-----------------------------------------------------------------------------------*/
+/* Changelog */
+/*-----------------------------------------------------------------------------------*/
+
+Version 1.1
+i) Intial version Release
+
+Version 1.1.0
+i) Fixes
+
+Version 1.1.2
+i) Fix author urls
+
+Version 1.1.3
+i) Fix requried points of data validation and other.
+
+Version 1.1.4
+i) Minor fixes
+
+Version 1.1.5
+i) Removed console error
+
+Version 1.1.6
+i) Minor fixes
+
+Version 1.1.7
+i)  REQUIRED: Comment form missing in single page.
+    REQUIRED: Google search result is not acceptable for image URL. Please keep full URL. Also note that images should be GPL compatible licensed. CC-BY-SA 3.0 is not GPL compatible. But CC-BY-SA 4.0 is compatible with GPLv3.
+    REQUIRED: © 2017 BB Mobile Application theme by burhanuddinbohra - This implies that site is copyrighted to you. Even if copyright field is editable, it should not imply that site is copyrighted to your theme. Please fix it.
+    REQUIRED: footer.php L33; esc_html() is not appropriate for escaping href value.
+    REQUIRED: Custom section should not be displayed when Latest Posts or Posts Page. It should be displayed only in static front page. Please fix it.
+    REQUIRED: readme.txt - I find only one image URL. Even in slides folder there are 3. Can you please check thoroughly? 
+
+Version 1.1.8
+i) Style changes
+
+Version 1.1.9
+i) fix console error
+
+Version 1.2
+i) URL Changed
+
+Version 1.2.1
+i) Description Changed
+ii) Author Name Changed
+iii) Footer Link Changed
+
+Version 1.2.2
+i) Styling
+
+Version 1.2.3
+i) Customization in theme.
+ii) Changed the layout.
+iii) Addded static section with post.
+iv) Removed deopreceated functions.
+
+Version 1.2.3.1
+i) Added ecommerce in theme.
+ii) Added translation ready tag.
+iii) Addded rtl tag.
+iv) Added changelog content in readme file.
+
+
 
 BB Mobile Application Premium version
 ==========================================================
