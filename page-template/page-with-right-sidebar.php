@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_ecommerce_store_pageright_header' ); ?>
+
 <div class="container">
     <div class="middle-align">       
 		<div class="col-md-9" id="content-tc">
@@ -37,4 +39,7 @@ get_header(); ?>
         <div class="clear"></div>    
     </div>
 </div>
+
+<?php do_action( 'bb_ecommerce_store_pageright_footer' ); ?>
+
 <?php get_footer(); ?>

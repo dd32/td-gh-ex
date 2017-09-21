@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_ecommerce_store_single_header' ); ?>
+
 <div class="container">
     <div class="middle-align">
     	<?php
@@ -353,4 +355,7 @@ get_header(); ?>
 	        <div class="clearfix"></div>
     </div>
 </div>
+
+<?php do_action( 'bb_ecommerce_store_single_footer' ); ?>
+
 <?php get_footer(); ?>

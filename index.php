@@ -10,10 +10,11 @@
  * @package Ecommerce Store
  */
 
-get_header(); 
-?>
-<?php /** post section **/ ?>
+get_header(); ?>
 
+<?php do_action( 'bb_ecommerce_store_index_header' ); ?>
+
+<?php /** post section **/ ?>
 <div class="container">
   <?php
     $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','One Column');
@@ -207,5 +208,7 @@ get_header();
   <?php }?>
 </div>
 <div class="clearfix"></div>
+
+<?php do_action( 'bb_ecommerce_store_index_footer' ); ?>
 
 <?php get_footer(); ?>

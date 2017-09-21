@@ -71,6 +71,9 @@ get_header(); ?>
 			  endif;
 			endif;
 		?>
+
+		<?php do_action( 'bb_ecommerce_store_after_slider' ); ?>
+
 		<section id="our-products">
 		    <div class="text-center innerlightbox">
 		        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
@@ -108,4 +111,8 @@ get_header(); ?>
 	</div>
 </div>
 <div class="clearfix"></div>
+
+<?php do_action( 'bb_ecommerce_store_after_productsec' ); ?>
+
+
 <?php get_footer(); ?>

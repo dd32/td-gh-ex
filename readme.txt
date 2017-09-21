@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2.4
-Tested up to    :   WP 4.8.1
+Version         :   1.2.4.1
+Tested up to    :   WP 4.8.2
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
 
@@ -67,9 +67,41 @@ All the slider images taken from pixabay under Creative Commons Deed CC0 - https
 All the icons taken from genericons licensed under GPL License.
 http://genericons.com/
 
+/*----------------------------------------------------------------------------*/
+/* Changelog */
+/*----------------------------------------------------------------------------*/
+
+Version 1.0
+i) Intial version Release
+
+Version 1.1
+i) Bug fixes
+
+Version 1.2
+i) Fixed CSS Issue
+
+Version 1.2.1
+i) Licence updated
+
+Version 1.2.2
+i) Fixed licence text
+ii) Fixed code for wp_link_pages and missing trasnlation in function.php
+
+Version 1.2.3
+i) Changed the layout of theme.
+ii) Removed the depreceated functions.
+iii) Added the  static part with post.
+
+Version 1.2.4
+i) Added the translation ready tag.
+ii) Added Rtl language support tag.
+
+Version 1.2.4.1
+i) Added hooks in theme.
+ii) Change the readme as per the standard.
+
 Ecommerce Store Plus version
 ==========================================================
 Ecommerce Store Plus version is compatible with GPL licensed.
-
 
 For any help you can mail us at support[at]themeshopy.com
