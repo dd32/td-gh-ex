@@ -378,7 +378,7 @@ class Semplicemente_Admin {
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'semplicemente' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'semplicemente' ); ?></a>
 							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/downloads/semplicemente/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'semplicemente' ); ?></a>
 						</td>
 					</tr>

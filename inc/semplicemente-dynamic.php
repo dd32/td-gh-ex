@@ -168,7 +168,7 @@ function semplicemente_custom_settings_register( $wp_customize ) {
         		</span>
         	</p>
 			<p style="text-align:center;" class="semplicemente-upgrade-button">
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/semplicemente-pro/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/demo/semplicemente-pro/" class="button button-secondary">
 					<?php esc_html_e('Watch the demo', 'semplicemente'); ?>
 				</a>
 				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/semplicemente/" class="button button-secondary">

@@ -73,10 +73,16 @@ td {
 	margin: 20px 0;
 }
 
-.about-wrap .about-text,
+.about-wrap .about-text {
+	margin: 20px 10px;
+	width: 70%;
+	float: left;
+	text-align: justify;
+}
+
 .cresta-screenshot {
 	margin: 20px 10px;
-	width: 47%;
+	width: 24%;
 	float: left;
 	text-align: justify;
 }
