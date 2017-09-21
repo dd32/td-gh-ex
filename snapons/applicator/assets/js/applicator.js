@@ -5,6 +5,7 @@
         $window = $( window ),
         $body = $( document.body ),
         
+        // Functionalities
         $aplApplicatorGoCtNav = $html.closest( '.applicator-snapon--applicator--go-content-nav' ),
         $aplApplicatorGoStartNav = $html.closest( '.applicator-snapon--applicator--go-start-nav' ),
         $aplApplicatorMainSearch = $html.closest( '.applicator-snapon--applicator--main-search' ),
@@ -16,11 +17,88 @@
         
         showHideTxtCss = 'show-hide---txt',
         
-        mainSearchFuncCss = 'main-search-func',
-        funcCss = 'func',
+        funcTerm = 'func',
         
         tabKeyActCss = 'tab-key--active',
-        tabKeyInactCss = 'tab-key--inactive';
+        tabKeyInactCss = 'tab-key--inactive',
+        
+        $page = $( '#page' ),
+        pageHeight = $page.height(),
+        
+        $webProductContainer = $page.find( '.wbp---cr' ),
+        $webProductCopyright = $( '#web-product-copyright' ),
+        pageShortCss = 'page--short',
+        pageLongCss = 'page--long',
+        
+        $goContentNav = $( '#go-content-nav' ),
+        
+        $aplWildcard = $( '#applicator-wildcard' ),
+        $aplWildcardCr = $aplWildcard.find( '.applicator-wildcard---cr' ),
+        overlayTerm = 'overlay',
+        overlayMu;
+        
+    
+    
+    
+    
+    
+    /*------------------------- Overlay -------------------------*/
+    function overlayActivate( funcName ) {
+        
+        overlayMu = $( '<div />', {
+            'class': overlayTerm + ' ' + overlayTerm + '--' + funcName,
+            'role' : 'presentation'
+        } );
+        
+        $aplWildcardCr.append( overlayMu );
+        
+    };
+    
+    
+    
+    
+    
+    /*------------------------- Page Length -------------------------*/
+    ( function() {
+        
+        if ( $webProductCopyright.css( 'display' ) == 'none' ) {
+			return;
+		}
+
+        var copyrightHeight,
+            pageHeight;
+
+        function pageHeightCSS() {
+            
+            copyrightHeight = $webProductCopyright.height();
+            
+            if ( ( pageHeight ) <= ( window.innerHeight ) ) {
+
+                $html
+                    .addClass( pageShortCss )
+                    .removeClass( pageLongCss );
+                
+                $webProductContainer.css( 'padding-bottom', copyrightHeight + 'px' );
+            }
+            else {
+
+                $html
+                    .addClass( pageLongCss )
+                    .removeClass( pageShortCss );
+                
+                $webProductContainer.css( 'padding-bottom', '' ).removeAttr( 'style' );
+            }
+        }
+        pageHeightCSS();
+        
+        
+        // Debounce
+        var pageHeightDebounce = debounce( function () {
+            pageHeightCSS();
+        }, applicatorDebounceTimeout );
+
+        window.addEventListener( 'resize', pageHeightDebounce );
+    }() );
     
     
     
@@ -33,9 +111,13 @@
 			return;
 		}
         
+        funcName = 'go-content-nav-func';
+        
         $cp
-            .addClass( 'go-content-nav-func' )
-            .addClass( funcCss );
+            .addClass( funcName )
+            .addClass( funcTerm );
+        
+        overlayActivate( funcName );
         
         var $goCtNaviA = $( '#go-ct-navi---a' ),
             
@@ -75,6 +157,14 @@
             goCtNavDeactivate();
         } );
         
+
+        // Deactivate upon presseing ESC Key
+        $document.on( 'keyup.applicator', function ( e ) {
+            if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
+                goCtNavDeactivate();
+            }
+        } );
+        
     } // Go to Content Nav
     initGoContentNav( $( '#go-content-nav' ) );
     
@@ -89,9 +179,11 @@
 			return;
 		}
         
+        funcName = 'go-start-nav-func';
+        
         $cp
-            .addClass( 'go-start-nav-func' )
-            .addClass( funcCss );
+            .addClass( funcName )
+            .addClass( funcTerm );
         
         var $goStartNaviA = $( '#go-start-navi---a' ),
             
@@ -168,7 +260,7 @@
         // Add Icon to Button
         $goStartNaviAL = $goStartNaviA.find( '.go-start-navi---a_l' );
         $goStartNaviAL.append( $goStartNavArrowIco );
-    } // Go to Start Nav
+    }
     
     initGoStartNav( $( '#go-start-nav' ) );
     
@@ -176,7 +268,7 @@
     
     
     
-    // Main Menu | Main Header Aside
+    /*------------------------ Main Menu ------------------------*/
     function initMainMenu( $cp ) {
         
         if ( ! $aplApplicatorMainMenu.length ) {
@@ -187,9 +279,13 @@
 			return;
 		}
         
+        funcName = 'main-menu-func';
+        
         $cp
-            .addClass( 'main-menu-func' )
-            .addClass( funcCss );
+            .addClass( funcName )
+            .addClass( funcTerm );
+            
+        overlayActivate( funcName );
         
         var mainMenuTogObjMu,
             mainMenuTogBtnMu,
@@ -216,7 +312,7 @@
             
             $mainHrAsCtCr;
         
-        // Build Markup
+        // Markup
         ( function() {
             
             mainMenuTogBtnLTxtMu = $( '<span />', {
@@ -259,6 +355,7 @@
             $cp
                 .addClass( mainMenuActCss )
                 .removeClass( mainMenuInactCss );
+            
             $html
                 .addClass( aplMainMenuActCss )
                 .removeClass( aplMainMenuInactCss );
@@ -266,6 +363,7 @@
             $mainMenuTogBtn.attr( {
                  'aria-expanded': 'true',
                  'title': $mainMenuHideL
+                
             } );
             
             $mainMenuTogBtnLTxt.text( $mainMenuHideL );
@@ -333,15 +431,13 @@
         } );
 
         // Deactivate upon presseing ESC Key
-        $window.load( function () {
-            $document.on( 'keyup.applicator', function ( e ) {
-                if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
-                    mainMenuDeactivate();
-                }
-            } );
+        $document.on( 'keyup.applicator', function ( e ) {
+            if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
+                mainMenuDeactivate();
+            }
         } );
         
-    } // Main Menu | Main Nav - Main Header Aside
+    } // Main Menu
 
     initMainMenu( $( '#main-header-aside' ) );
     
@@ -349,7 +445,7 @@
     
     
     
-    // Main Search
+    /*------------------------ Main Search ------------------------*/
     ( function() {
         
         if ( ! $aplApplicatorMainSearch.length ) {
@@ -359,7 +455,7 @@
         $( '#main-header' )
             .find( $( '.main-header---cr' ) )
                 .children( '.search:first' )
-                    .attr( 'id', mainSearchFuncCss );
+                    .attr( 'id', 'main-search-func' );
     }() );
     
     function initMainSearch( $cp ) {
@@ -368,9 +464,11 @@
 			return;
 		}
         
+        funcName = 'main-search-func';
+        
         $cp
-            .addClass( mainSearchFuncCss )
-            .addClass( funcCss );
+            .addClass( funcName )
+            .addClass( funcTerm );
         
         var mainSearchTogObjMu,
             mainSearchTogBtnMu,
@@ -496,10 +594,11 @@
         
         // Toggle
         function mainSearchToggle() {
-            if ( $cp.hasClass( mainSearchActCss ) ) {
-                mainSearchDeactivate();
-            } else if ( $cp.hasClass( mainSearchInactCss ) ) {
+            if ( $cp.hasClass( mainSearchInactCss ) ) {
                 mainSearchActivate();
+            }
+            else if ( $cp.hasClass( mainSearchActCss ) ) {
+                mainSearchDeactivate();
             }
         }
         
@@ -557,12 +656,10 @@
         } );
 
         // Deactivate upon presseing ESC Key
-        $window.load( function () {
-            $document.on( 'keyup.applicator', function ( e ) {
-                if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
-                    mainSearchDeactivate();
-                }
-            } );
+        $document.on( 'keyup.applicator', function ( e ) {
+            if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
+                mainSearchDeactivate();
+            }
         } );
         
         // Add Icons to Buttons
@@ -572,8 +669,7 @@
         $mainSearchBL.append( $mainSearchSearchIco );
         $mainSearchResetBL.append( $mainSearchDismissIco );
         
-    } // Main Search | Search
-
+    }
     initMainSearch( $( '#main-search-func' ) );
     
     
@@ -631,7 +727,7 @@
         if ( $cp.has( $subNavParentItems ) ) {
             $cp
                 .addClass( 'sub-nav-func' )
-                .addClass( funcCss );
+                .addClass( funcTerm );
         }
         
         // Build Markup
@@ -896,12 +992,10 @@
         
         
         // Deactivate upon presseing ESC Key
-        $window.load( function () {
-            $document.on( 'keyup.applicator', function ( e ) {
-                if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
-                    subNavAllDeactivate();
-                }
-            } );
+        $document.on( 'keyup.applicator', function ( e ) {
+            if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
+                subNavAllDeactivate();
+            }
         } );
         
     }
@@ -923,7 +1017,7 @@
         
         $cp
             .addClass( 'easy-access-nav-func' )
-            .addClass( funcCss );
+            .addClass( funcTerm );
     }
     initEasyAccessNav( $( '#main-nav' ) );
     
@@ -1003,43 +1097,6 @@
                 }
             }, false);
         }
-    
-    } )();
-    
-    
-    
-    
-    
-    // ------------------------- No Tab Key
-    ( function() {
-        
-        $window.load( function () {
-            
-            $document.on( 'keydown.applicator', function ( e ) {
-                var keyCode = e.keyCode || e.which; 
-                
-                if ( keyCode == 9 ) {
-                    
-                    if ( $html.hasClass( tabKeyInactCss ) ) {
-                        $html
-                            .addClass( tabKeyActCss )
-                            .removeClass( tabKeyInactCss );
-                    }
-                  }
-            } );
-            
-            // Deactivate upon any interaction
-            $document.on( 'touchmove.applicator click.applicator', function ( e ) {
-                
-                if ( $html.hasClass( tabKeyActCss ) ) {
-                    $html
-                        .addClass( tabKeyInactCss )
-                        .removeClass( tabKeyActCss );
-                }
-            } );
-            
-        } );
-        
     } )();
     
     
@@ -1050,21 +1107,44 @@
     $document.ready( function() {
 		
         
-        // Remove DOM Unready class
+        // Remove DOM Unready CSS
         $html
             .addClass( 'dom--ready' )
             .removeClass( 'dom--unready' );
-        
-        // Initialize Tab Key CSS
-        $html
-            .addClass( tabKeyInactCss )
-            .removeClass( tabKeyActCss );
         
         
         // Alias for WP Admin Bar
         if ( $body.hasClass( 'admin-bar' ) ) {
             $( '#wpadminbar' ).addClass( 'wpadminbar' );
         }
+        
+        
+        // Initialize Tab Key CSS
+        $html
+            .addClass( tabKeyInactCss )
+            .removeClass( tabKeyActCss );
+        
+        // No Tab Key
+        $document.on( 'keydown.applicator', function ( e ) {
+            var keyCode = e.keyCode || e.which; 
+
+            if ( $html.hasClass( tabKeyInactCss ) && keyCode == 9 ) {
+
+                $html
+                    .addClass( tabKeyActCss )
+                    .removeClass( tabKeyInactCss );
+              }
+        } );
+
+        // Tab Key - Deactivate upon any interaction
+        $document.on( 'touchmove.applicator click.applicator', function ( e ) {
+
+            if ( $html.hasClass( tabKeyActCss ) ) {
+                $html
+                    .addClass( tabKeyInactCss )
+                    .removeClass( tabKeyActCss );
+            }
+        } );
     } );
 
 })( jQuery );

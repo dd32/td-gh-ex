@@ -11,6 +11,7 @@
                     'structure' => array(
                         'type'          => 'object',
                     ),
+                    'id'        => 'web-product-copyright',
                     'css'       => 'wbp-copyright',
                     'root_css'  => 'site-info',
                     'content'   => array(
@@ -143,6 +144,23 @@
             
             </div>
         </div><!-- Web Product -->
+
+        <?php
+
+        // Wildcard
+        $wildcard_cn = applicator_htmlok( array(
+            'name'      => 'Applicator Wildcard',
+            'structure' => array(
+                'type'      => 'constructor',
+            ),
+            'id'        => 'applicator-wildcard',
+            'content'   => array(
+                'constructor'       => '',
+            ),
+            'echo'      => true,
+        ) );
+
+        ?>
 
         <?php wp_footer(); ?>
     

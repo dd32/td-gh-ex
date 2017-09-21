@@ -58,7 +58,7 @@ if ( ! function_exists( 'applicator_snapon_applicator_html_classes' ) ) {
         
         
         // Customizer Colors
-        $colors = applicator_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'default' ) );
+        $colors = applicator_snapon_applicator_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'default' ) );
         echo ' '. $snapon_name. '--'. 'theme--customizer-colors--'. $colors;
     
     }
@@ -76,6 +76,8 @@ if ( ! function_exists( 'applicator_snapon_applicator_styles' ) ) {
         add_editor_style( array( 'assets/css/editor-style.css' ) );
         
         wp_enqueue_style( 'applicator-snapon--applicator-style', get_theme_file_uri() . '/snapons/applicator/assets/css/applicator.css', array( 'applicator-style--default' ) );
+        
+        wp_enqueue_style( 'applicator-snapon--applicator-style--magazine-header', get_theme_file_uri() . '/snapons/applicator/assets/css/main-header_magazine.css', array( 'applicator-snapon--applicator-style' ) );
 
     }
     add_action( 'wp_enqueue_scripts', 'applicator_snapon_applicator_styles', 0);
@@ -89,7 +91,7 @@ if ( ! function_exists( 'applicator_snapon_applicator_styles' ) ) {
 if ( ! function_exists( 'applicator_snapon_applicator_scripts' ) ) {
     function applicator_snapon_applicator_scripts() {
         
-        wp_enqueue_script( 'applicator-snapon--applicator-script', get_theme_file_uri( '/snapons/applicator/assets/js/applicator.js' ), array( 'jquery' ), '25.5', true );
+        wp_enqueue_script( 'applicator-snapon--applicator-script', get_theme_file_uri( '/snapons/applicator/assets/js/applicator.js' ), array( 'jquery' ), '25.6', true );
         
         // SVG Icons
         $arrow_icon = applicator_get_svg( array( 'icon' => 'arrow-icon', 'fallback' => true, ) );

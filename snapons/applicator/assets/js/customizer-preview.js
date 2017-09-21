@@ -1,7 +1,7 @@
 // Instantly live-update customizer settings in the preview for improved user experience.
 // From twentyseventeen
 
-(function( $ ) {
+( function( $ ) {
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -59,7 +59,7 @@
 		value.bind( function( to ) {
 
 			// Update custom color CSS.
-			var style = $( '#applicator-style-custom-theme-colors' ),
+			var style = $( '#applicator-snapon--applicator-style--custom-theme-colors' ),
 				hue = style.data( 'hue' ),
 				css = style.html();
 
