@@ -69,7 +69,7 @@ if ( $wp_query->have_posts() ) : ?>
 
                     <?php the_excerpt(); ?>
                     
-                    <time itemprop="datePublished" content="<?php the_time('Y-m-d H:i') ?>" >July 16th, 1987</time>
+                    <time itemprop="datePublished" content="<?php the_time('Y-m-d H:i') ?>" ><?php the_time('F jS, Y'); ?></time>
                 
                 </div>
                 
