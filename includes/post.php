@@ -14,7 +14,10 @@
 				endif; 
 			?>
 			</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'optimize'); ?></span></a>
-	</article>
+<span class="postmeta_box">
+		<?php get_template_part('/includes/postmeta'); ?>
+	</span><!-- .entry-header -->
+			</article>
 <?php else : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
@@ -29,11 +32,12 @@
 				endif; 
 			?>
 		</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'optimize'); ?></span></a>
-	</article>
-<?php endif; ?>
 <span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?>
 	</span><!-- .entry-header -->
+		</article>
+<?php endif; ?>
+
 
 
 

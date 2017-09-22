@@ -18,7 +18,7 @@
 </div> 
 <div id="footer">
 	<div id="footer-inner" class="clearfix">
-			<a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> <?php _e(' &#169;', 'optimize'); ?>  <?php echo date('Y');?> | <?php _e('Theme: ', 'optimize'); ?> <a href="<?php echo esc_url( __( 'http://www.insertcart.com/product/optimize-wp-theme/', 'optimize' ) ); ?>" title="<?php esc_attr_e( 'Optimize', 'optimize' ); ?>"><strong><?php printf( __( 'Optimize %s', 'optimize' ),''); ?></strong></a> <?php _e('Powered by', 'optimize'); ?> <a href="http://wordpress.org/"><?php _e('WordPress', 'optimize'); ?></a> <a class="backtop" href="#top">  <?php _e('&#8593;', 'optimize'); ?></a>
+			<a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> <?php _e(' &#169;', 'optimize'); ?>  <?php echo date('Y');?> | <?php _e('Theme: ', 'optimize'); ?> <a href="<?php echo esc_url( __( 'https://www.insertcart.com/product/optimize-wp-theme/', 'optimize' ) ); ?>" title="<?php esc_attr_e( 'Optimize', 'optimize' ); ?>"><strong><?php printf( __( 'Optimize %s', 'optimize' ),''); ?></strong></a> <a class="backtop" href="#top">  <?php _e('&#8593;', 'optimize'); ?></a>
 <?php wp_nav_menu( array( 'theme_location' => 'footer-menu','container_class' => '','menu_id' => 'footerhorizontal',    'echo' => true,'after' =>'|','depth' =>'1' ) ); ?>
 		</div> <!-- end div #footer-right -->
 	</div> <!-- end div #footer-inner -->

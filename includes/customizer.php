@@ -15,7 +15,7 @@ function optimize_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
         
-      $wp_customize->remove_section("background_image");
+    //	  $wp_customize->remove_section("background_image");
       $wp_customize->add_section( 'optimize_responsive' , 
         array(
 				'title'       => __( 'Theme Options & Settings', 'optimize' ),
@@ -83,9 +83,8 @@ function optimize_registers() {
 	wp_enqueue_script( 'optimize_customizer_script' );
 	
 	wp_localize_script( 'optimize_customizer_script', 'scatmanjhon', array(
-		'documentation' => __( 'Documentation', 'optimize' ),
 		'pro' => __('Upgrade to Pro','optimize'),
-		'support' => __('Support Forum','optimize')
+		'support' => __('Support','optimize')
 		
 	) );
 }

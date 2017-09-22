@@ -422,7 +422,7 @@ $options[] = array(
 		$options[] = array(
 		    'desc' => 'Footer Copyright Text.',
             'id' => 'optimize_ftarea',
-            'std' => '&#169; 2016 Theme: <a href="http://www.insertcart.com/product/optimize-wp-theme/" title="Insertcart.com">optimize</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
+            'std' => '&#169; 2017 Theme: <a href="https://www.insertcart.com/product/optimize-wp-theme/" title="Insertcart.com">optimize</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
             'type' => 'editor',
 			'settings' => $wp_editor_settings= array(
 		'wpautop' => true, // Default

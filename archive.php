@@ -4,7 +4,7 @@
 			<div id="page-inner" class="clearfix">
 				<?php get_template_part('/includes/banner-top'); ?>
 				
-				<div id="content">
+			<div id="content">
 				<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title titlepage"><i class="fa fa-list-alt"></i> ', '</h1>' );

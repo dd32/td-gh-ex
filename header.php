@@ -20,7 +20,8 @@
 <head>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -29,25 +30,23 @@
 <!-- BEGIN HEADER -->
 	<header id="header">
     <div id="header-inner" class="clearfix">
-		<div id="logo">
-			<?php if (of_get_option( 'optimize_logo' )): ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'optimize_logo' ); ?>" max-height="100px" max-width="470px" alt="<?php bloginfo( 'name' ); ?>"/></a>
+		<div id="logo">	  
+		  <?php if (of_get_option( 'optimize_logo' )): ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'optimize_logo' ); ?>"alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
-            
-			<?php if ( is_front_page() && is_home() ) : ?>
-		<div class="site-branding">
-			<h1 itemprop="headline" class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
-	<?php else : ?>		
-		<div class="site-branding">
-			<p itemprop="headline" class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
-	<?php endif;   ?> 
-          <?php endif; ?>
+				
+					<?php optimize_site_logo();?>
+					<?php optimize_site_title(); ?>
+					<?php optimize_site_description(); ?>
+	  <?php endif; ?>	
+		  
+		  
+		  
 		</div>		
-<div id="myban"> <?php if ( of_get_option('optimize_ad1') <> "" ) { echo of_get_option('optimize_ad1'); } ?></div>
+<div id="myban"> 
+<?php if ( !dynamic_sidebar('headerwid') ) : ?>
+			<?php endif; ?>
+<?php if ( of_get_option('optimize_ad1') <> "" ) { echo of_get_option('optimize_ad1'); } ?></div>
     </div> <!-- end div #header-inner -->
 	</header> <!-- end div #header -->
 

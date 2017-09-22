@@ -68,7 +68,13 @@ function optimize_theme_setup() {
         add_editor_style();
 		add_theme_support( 'title-tag' );
         add_theme_support('automatic-feed-links');
-
+// Set up the WordPress core custom logo feature.
+		add_theme_support( 'custom-logo', apply_filters( 'optimize_custom_logo_args', array(
+			'height' => 100,
+			'width' => 470,
+			'flex-height' => true,
+			'flex-width' => true,
+		) ) );
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
 		register_nav_menu( 'Footer-menu', __( 'Footer Menu', 'optimize' ) );
 		// Setup the WordPress core custom background feature.
@@ -121,6 +127,14 @@ add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	    'before_title' => '<h4 class="widgettitle">',
 	    'after_title' => '</h4>',
 	    'id' => 'opsidebar',
+	));
+	register_sidebar(array(
+		'name' => __( 'Header Widget', 'optimize' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	    'id' => 'headerwid',
 	));
 	register_sidebar(array(
 		'name' => __( 'Below Navigation', 'optimize' ),
@@ -226,4 +240,63 @@ function optimize_comment_form( $argsbutton ) {
         $argsbutton['class_submit'] = 'button'; 
     return $argsbutton;
 }
+
+
+if ( ! function_exists( 'optimize_site_logo' ) ) :
+/**
+ * Displays the site logo in the header area
+ */
+function optimize_site_logo() {
+
+	if ( function_exists( 'the_custom_logo' ) ) {
+
+		the_custom_logo();
+
+	}
+
+}
+endif;
+
+
+if ( ! function_exists( 'optimize_site_title' ) ) :
+/**
+ * Displays the site title in the header area
+ */
+function optimize_site_title() {
+
+
+	if ( is_front_page() && is_home() ) : ?>
+
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+	<?php else : ?>
+
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+
+	<?php endif;
+
+}
+endif;
+
+if ( ! function_exists( 'optimize_site_description' ) ) :
+/**
+ * Displays the site description in the header area
+ */
+function optimize_site_description() {
+
+
+	$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+	if ( $description || is_customize_preview() ) : ?>
+
+		<p class="site-description"><?php echo $description; ?></p>
+
+	<?php
+	endif;
+
+}
+endif;
+
+
+
 ?>
