@@ -137,8 +137,14 @@ public function widget($args, $instance){
   elseif($product_type == 'feature_product'){
     $product_args = array(
      'post_type'        => 'product',  
-     'meta_key'         => '_featured',  
-     'meta_value'       => 'yes',  
+     'tax_query' => array(
+          array(
+              'taxonomy' => 'product_visibility',
+              'field'    => 'name',
+              'terms'    => 'featured',
+              'operator' => 'IN'
+          )
+      ), 
      'posts_per_page'   => $product_number   
      );
   }

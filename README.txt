@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 
+= 2.2.4 =
+** Fixed issue with not displaying of featured products
+
 = 2.2.3 =
 ** Updated Font Awesome Fonts
 ** Added Woocommerce Child theme compatibility.
