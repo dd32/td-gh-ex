@@ -82,11 +82,17 @@
                             </div>
 
                             <div class="col-sx-12 col-md-4">
+                            <?php  if ( get_theme_mods() ) { 
+                            $appeal_copyright = get_theme_mod( 'appeal_copyright_text_setting' );
+                            if( $appeal_copyright != '' ) { ?><p><?php 
+                            echo esc_html( $appeal_copyright ); ?></p>
+                            <?php } else { ?>
                                 <p class="text-muted"><?php
                                 $year  = date_i18n(__( 'Y', 'appeal' ));
                                 esc_html_e( 'Copyright ', 'appeal' ); 
-                                echo esc_attr( $year ) . ' ';
+                                echo esc_attr( ' ' . $year . ' ' );
                                 printf( esc_attr( bloginfo( 'name' ) ) ); ?></p>
+                            <?php } } ?>    
                             </div>
 
                             <div class="col-sx-12 col-md-4">

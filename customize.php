@@ -118,7 +118,7 @@ function appeal_register_theme_customizer($wp_customize)
 		)
 	);
 
-    /** (10)
+    /** (9)
      * WP_Customize_ /add_setting for sidebar-top image
      * Raw image to output on advert box.
      * @since 1.0.7
@@ -131,7 +131,7 @@ function appeal_register_theme_customizer($wp_customize)
         )
     );
 
-    /** (11)
+    /** (10)
      * WP_Customize_ /add_setting for border around sidebars
      * @since 1.0.7
     */
@@ -143,9 +143,9 @@ function appeal_register_theme_customizer($wp_customize)
 		)
 	);
 	
-	/** (12)
+	/** (11)
      * WP_Customize_ /add_setting for offscreen sidebar button text
-     * @since1.0.7
+     * @since 1.0.7
     */
 	$wp_customize->add_setting(	'appeal_sidebar_text_setting', array(
             'type'              => 'theme_mod',
@@ -155,8 +155,8 @@ function appeal_register_theme_customizer($wp_customize)
 	);
 	
     /** (12)
-     * WP_Customize_ /add_setting for offscreen sidebar button text
-     * @since1.1.8
+     * WP_Customize_ /add_setting for readon text
+     * @since 1.1.8
     */
 	$wp_customize->add_setting(	'appeal_readon_text_setting', array(
             'type'              => 'theme_mod',
@@ -164,8 +164,19 @@ function appeal_register_theme_customizer($wp_customize)
 			'sanitize_callback'	=> 'sanitize_text_field'
 		)
 	);
-	
+
 	/** (13)
+     * WP_Customize_ /add_setting for copyright text
+     * @since 1.1.9
+    */
+	$wp_customize->add_setting(	'appeal_copyright_text_setting', array(
+            'type'              => 'theme_mod',
+            'default'           => '',
+			'sanitize_callback'	=> 'sanitize_text_field'
+		)
+	);
+	
+	/** (14)
      * WP_Customize_ /add_setting for use mobile nav or not
      * @since 1.1.0
     */
@@ -176,7 +187,8 @@ function appeal_register_theme_customizer($wp_customize)
 			'transport'			=> 'refresh'
 		)
 	);
-    /** (9)
+	
+    /** (15)
      * WP_Customize_ /add_setting for theme instructions
     */
 	$wp_customize->add_setting(	'appeal_theme_instructions_setting', array(
@@ -322,7 +334,7 @@ function appeal_register_theme_customizer($wp_customize)
         ),
     ));
 
-    // (10)
+    // (9)
     $wp_customize->add_control(
     new WP_Customize_Image_Control(
     $wp_customize,
@@ -334,7 +346,7 @@ function appeal_register_theme_customizer($wp_customize)
         )
     ));
 
-    // (11)
+    // (10)
     $wp_customize->add_control(
         'appeal_sidebar_border', array(
         'settings' => 'appeal_sidebar_border_setting',
@@ -349,7 +361,7 @@ function appeal_register_theme_customizer($wp_customize)
         ),
     ));
     
-    // (12)
+    // (11)
     $wp_customize->add_control(
         'appeal_sidebar_text', array(
             'settings'          => 'appeal_sidebar_text_setting',
@@ -369,6 +381,16 @@ function appeal_register_theme_customizer($wp_customize)
         )
     );
     
+    // (12)
+    $wp_customize->add_control(
+        'appeal_copyright_text', array(
+            'settings'          => 'appeal_copyright_text_setting',
+            'type'              => 'text',
+            'section'           => 'appeal_custom_teaser_length_section',
+            'label'       => __( 'Replace Footer Copyright with Text', 'appeal' ),
+        )
+    );
+    
     /** (13) Mobile Nav @use or not use
      * @since 1.0.7 
      */
@@ -385,7 +407,7 @@ function appeal_register_theme_customizer($wp_customize)
         )
     );
     
-    // (9)
+    // (14)
     $wp_customize->add_control(
         'appeal_theme_instructions', array(
             'settings'          => 'appeal_theme_instructions_setting',

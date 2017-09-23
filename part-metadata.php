@@ -9,26 +9,19 @@
     <ul class="metas list-inline">
 
     <?php if ( is_front_page() && is_home() || is_home() ) 
-    { 
-    ?>
+    { ?>
         <li class="show-comment-nmbr"><small>
         <?php get_template_part( 'comments', 'count' );
         ?></small></li></ul><?php 
     }   // Stop here (don't need tags and edit on home blog)
         elseif ( is_single() )
-        { 
-        // Uncomment author li to display in content footer of single post.
-        ?> 
-            
-        <!--<li><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>"
-               title="<?php the_author(); ?>"
-               class="theauthor"><?php the_author(); ?></a></li>-->
+        { ?> 
         <li><?php edit_post_link(__( 'Edit', "appeal"), ' '); ?></li>
     </ul>
-    <ul class="list-unstyled">
-      <li class="tagcats"><?php the_tags('<p class="tags">', ' ', '</p>'); ?></li>
-      <li class="cat-links-post"><?php the_category( ' &bull; ' ); ?></li>
-    </ul>
+        <ul class="list-unstyled">
+          <li class="tagcats"><?php the_tags('<p class="tags">', ' ', '</p>'); ?></li>
+          <li class="cat-links-post"><?php the_category( ' &bull; ' ); ?></li>
+        </ul>
         
             <?php if ( ! post_password_required() && (
             comments_open() || get_comments_number() ) )
@@ -46,11 +39,12 @@
 
         <?php 
         //ends if single
-        } elseif ( is_page() ) 
+        }   elseif ( is_page() ) 
             {
         ?>
         <li><?php edit_post_link(__( 'Edit', "appeal"), ' '); ?></li></ul>
-        <?php 
+            <?php 
+            // everything else (attachments etc)
             } else {
             ?>
      <li><?php edit_post_link(__( 'Edit', "appeal"), ' '); ?></li></ul>

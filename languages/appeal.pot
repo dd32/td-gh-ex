@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-09-14 14:41-0800\n"
-"PO-Revision-Date: 2017-09-14 14:41-0800\n"
+"POT-Creation-Date: 2017-09-23 14:06-0800\n"
+"PO-Revision-Date: 2017-09-23 14:07-0800\n"
 "Last-Translator: \n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_x;_nx;esc_html__;"
-"esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_attr_e;esc_html_e;"
+"esc_attr__;esc_html__;_x;_n;_nx\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -115,84 +115,84 @@ msgstr ""
 msgid "Maybe try another search while you are here?"
 msgstr ""
 
-#: header.php:13
+#: header.php:11
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:48
+#: header.php:46
 msgid "Navigation"
 msgstr ""
 
-#: part-metadata.php:26 part-metadata.php:52 part-metadata.php:56
+#: part-metadata.php:19 part-metadata.php:45 part-metadata.php:50
 #: content.php:404
 msgid "Edit"
 msgstr ""
 
-#: part-metadata.php:40
+#: part-metadata.php:33
 msgid "Leave a comment"
 msgstr ""
 
-#: part-metadata.php:41
+#: part-metadata.php:34
 msgid "1 Comment"
 msgstr ""
 
-#: part-metadata.php:42
+#: part-metadata.php:35
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:37
+#: comments.php:31
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:33
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:42
 msgid "Send"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:45
 msgid "Write a Reply or Comment"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:49
 msgid "You may use these "
 msgstr ""
 
-#: comments.php:56
+#: comments.php:50
 msgid "HyperText Markup Language"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:51
 msgid "HTML"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:52
 msgid "tags and attributes: "
 msgstr ""
 
-#: comments.php:63
+#: comments.php:57
 msgid "Respond"
 msgstr ""
 
-#: comments.php:65
+#: comments.php:59
 msgid "Comment textarea box"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:65
 msgid "You must be "
 msgstr ""
 
-#: comments.php:72
+#: comments.php:66
 msgid "logged in "
 msgstr ""
 
-#: comments.php:73
+#: comments.php:67
 msgid "to post a comment."
 msgstr ""
 
-#: comments.php:77
+#: comments.php:71
 msgid "Your email address will not be published."
 msgstr ""
 
@@ -200,15 +200,15 @@ msgstr ""
 msgid "Design by "
 msgstr ""
 
-#: footer.php:86
+#: footer.php:91
 msgid "Y"
 msgstr ""
 
-#: footer.php:87
+#: footer.php:92
 msgid "Copyright "
 msgstr ""
 
-#: footer.php:96 sidebar.php:10
+#: footer.php:102 sidebar.php:10
 msgid "Top/Pg."
 msgstr ""
 
@@ -516,145 +516,149 @@ msgstr ""
 msgid "Read Article"
 msgstr ""
 
-#: customize.php:199
+#: customize.php:211
 msgid "Header, Footer and Sidebars Background"
 msgstr ""
 
-#: customize.php:201
+#: customize.php:213
 msgid ""
 "Select the background color of the header area,\n"
 "                    the footer and sidebars"
 msgstr ""
 
-#: customize.php:214
+#: customize.php:226
 msgid "Content Background Color"
 msgstr ""
 
-#: customize.php:216
+#: customize.php:228
 msgid "Sets background color of Post and Page content"
 msgstr ""
 
-#: customize.php:229
+#: customize.php:241
 msgid "Links Color"
 msgstr ""
 
-#: customize.php:231
+#: customize.php:243
 msgid "Select the color for hyperlinks. May not effect everything."
 msgstr ""
 
-#: customize.php:244
+#: customize.php:256
 msgid "PullQuote Text Color"
 msgstr ""
 
-#: customize.php:246
+#: customize.php:258
 msgid "Select the color for pullquote excerpt on articles."
 msgstr ""
 
-#: customize.php:258
+#: customize.php:270
 msgid "PullQuote Replaces Excerpt"
 msgstr ""
 
-#: customize.php:261
+#: customize.php:273
 msgid "Use Excerpt as Pullquote"
 msgstr ""
 
-#: customize.php:262
+#: customize.php:274
 msgid "Use default excerpt"
 msgstr ""
 
-#: customize.php:273
+#: customize.php:285
 msgid "Set Pullquote Width"
 msgstr ""
 
-#: customize.php:274
+#: customize.php:286
 msgid "This sets how wide the Teaser will be."
 msgstr ""
 
-#: customize.php:288
+#: customize.php:300
 msgid "Set POSTS ONLY Excerpt Length"
 msgstr ""
 
-#: customize.php:300
+#: customize.php:312
 msgid "Title Visible only on: "
 msgstr ""
 
-#: customize.php:304
+#: customize.php:316
 msgid "Posts and Pages"
 msgstr ""
 
-#: customize.php:305
+#: customize.php:317
 msgid "Posts Only - Not Pages"
 msgstr ""
 
-#: customize.php:313
+#: customize.php:325
 msgid "Choose color for link icon: "
 msgstr ""
 
-#: customize.php:317
+#: customize.php:329
 msgid "Black Link Icon"
 msgstr ""
 
-#: customize.php:318
+#: customize.php:330
 msgid "Red Link Icon"
 msgstr ""
 
-#: customize.php:319
+#: customize.php:331
 msgid "Blue Link Icon"
 msgstr ""
 
-#: customize.php:320
+#: customize.php:332
 msgid "Green Link Icon"
 msgstr ""
 
-#: customize.php:321
+#: customize.php:333
 msgid "Gray Link Icon"
 msgstr ""
 
-#: customize.php:332
+#: customize.php:344
 msgid "Upload Image to Top Advert Box"
 msgstr ""
 
-#: customize.php:333
+#: customize.php:345
 msgid "Upload will override any widgets."
 msgstr ""
 
-#: customize.php:341
+#: customize.php:353
 msgid "Choose border style on sidebars."
 msgstr ""
 
-#: customize.php:345
+#: customize.php:357
 msgid "No borders"
 msgstr ""
 
-#: customize.php:346
+#: customize.php:358
 msgid "Show borders"
 msgstr ""
 
-#: customize.php:348
+#: customize.php:360
 msgid "Show borders and Box-Shadow"
 msgstr ""
 
-#: customize.php:358
+#: customize.php:370
 msgid "Wording for View Sidebar button"
 msgstr ""
 
-#: customize.php:368
+#: customize.php:380
 msgid "Wording for Read More button"
 msgstr ""
 
-#: customize.php:379
+#: customize.php:390
+msgid "Replace Footer Copyright with Text"
+msgstr ""
+
+#: customize.php:401
 msgid "Mobile Navigation Preference"
 msgstr ""
 
-#: customize.php:382
+#: customize.php:404
 msgid "Leave Top Menu Item Selectable"
 msgstr ""
 
-#: customize.php:383
+#: customize.php:405
 msgid "Use Mobile Nav (top tap only)"
 msgstr ""
 
-#: customize.php:394
+#: customize.php:416
 msgid "Instructions: <b>Appearance > Theme Options</b>"
 msgstr ""
 

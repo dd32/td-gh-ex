@@ -3,7 +3,6 @@ Theme URI:      https://larryjudd.us/appeal/
 Theme Name:     Appeal
 Author:         Larry Judd Oliver
 Author URI:     http://tradesouthwest.com/
-Stable Version: 1.1.6
 Text Domain:    appeal
 Tags:           one-column, two-columns, three-columns, translation-ready, footer-widgets, full-width-template
 License:        GPL 3
@@ -31,9 +30,16 @@ Twitter in admin: https://brand.twitter.com/logo
 
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
-
-
 == Change Log ==
+
+1.1.9
+* fixed comments notes
+* header spaces removed
+* dev notes throughout updated
+* made comment box responsive 
+* added footer text option
+* removed html comments
+
 1.1.8 
 * added nav to tpl-twopart
 * aligned image caption
@@ -71,8 +77,10 @@ Twitter in admin: https://brand.twitter.com/logo
 * added escapes to comments file
 * remove modal link from blog and home
 * added left margins to nav submenu links
+
 1.1.4
 * sanity for selects uses `sanitzie_text_field` all select entries are text values
+
 1.1.3
 * fixed break word in content and excerpt
 * made gallery templt wider
