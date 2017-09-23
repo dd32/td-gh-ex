@@ -35,6 +35,7 @@
 			'blog_count'=>'3',			
 			'custom_css'=>'',
 			'excerpt_blog'=>'55',
+			'home_reorder'=>'',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
@@ -77,7 +78,7 @@
 			'developed_by_text' => __('Theme Developed By', 'enigma' ),
 			'developed_by_weblizar_text' => __('Weblizar Themes', 'enigma' ),
 			'developed_by_link' => 'http://weblizar.com/',
-			'service_home'=>'1',
+			'services_home'=>'1',
 			'home_service_heading' => __('Our Services', 'enigma' ),
 			'service_1_title'=>__("Idea",'enigma' ),
 			'service_1_icons'=>"fa-google",
@@ -112,7 +113,7 @@
 			'port_4_title'=>__('randomised', 'enigma' ),
 			'port_4_link'=>'#',
 			//BLOG Settings
-			'show_blog' => '1',
+			'blog_home' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
 			'blog_speed'=>'2000',
 			
@@ -463,14 +464,7 @@ if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 	
 }
-/*
-global $wp_version;
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
-		add_theme_support( 'custom-header' );
-	else :
-		add_custom_image_header( $wp_head_callback, $admin_head_callback );
-	endif;
-	*/
+
 
 //Plugin Recommend
 add_action('tgmpa_register','enigma_plugin_recommend');
@@ -480,32 +474,7 @@ function enigma_plugin_recommend(){
             'name'      => 'Responsive Coming Soon',
             'slug'      => 'responsive-coming-soon-page',
             'required'  => false,
-        ),/* 
-	array(
-            'name'      => 'Photo Video Link Gallery',
-            'slug'      => 'photo-video-link-gallery',
-            'required'  => false,
         ),
-	array(
-            'name'      => 'Lightbox Gallery',
-            'slug'      => 'simple-lightbox-gallery',
-            'required'  => false,
-        ),
-	array(
-            'name'      => 'Instagram Gallery',
-            'slug'      => 'gallery-for-instagram',
-            'required'  => false,
-        ),
-	array(
-            'name'      => 'Ultimate Responsive Image Slider',
-            'slug'      => 'ultimate-responsive-image-slider',
-            'required'  => false,
-        ),
-	array(
-            'name'      => 'Flickr Album Gallery',
-            'slug'      => 'flickr-album-gallery',
-            'required'  => false,
-        ),*/
 	array(
             'name'      => 'Appointment Scheduler',
             'slug'      => 'appointment-scheduler-weblizar',
@@ -520,4 +489,20 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
+add_action( 'admin_notices', 'enigma_rating' );
+function enigma_rating() {
+    ?>
+    <div class="notice error my-acf-notice is-dismissible notice-box" >
+        <p><?php _e( 'Thank You for using Weblizar theme, Please give your rating on Enigma theme. Your rating help us to improve our theme' ); ?></p>
+		<p style="font-size:17px;"> 
+			<a style="color: #fff;background: #ec635b;padding: 3px 7px 4px 6px;border-radius: 5px;" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank"><?php _e('Rate the theme','enigma') ?></a>
+		</p>
+    </div>
+    <?php
+}
+function enqueue_custom_admin_style() {
+        wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
+        wp_enqueue_style( 'custom_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_style' );
 ?>

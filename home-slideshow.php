@@ -34,7 +34,7 @@ $wl_theme_options['slider_image_speed'];
 			<?php  	
 			 if($wl_theme_options['slide_desc_'.$i]!='') {  ?>
 			  <ul class="list-unstyled carousel-list">
-			 <li class="animated bounceInLeft"><?php echo esc_attr($wl_theme_options['slide_desc_'.$i]); ?></li>
+			 <li class="animated bounceInLeft"><?php echo get_theme_mod('slide_desc_'.$i , $wl_theme_options['slide_desc_'.$i]); ?></li>
 			 </ul>
 			 <?php }
 			if($wl_theme_options['slide_btn_text_'.$i]!='') { ?>

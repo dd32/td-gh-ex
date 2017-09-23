@@ -6,6 +6,12 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.5 [23-09-2017]
+1. Editor in Service section added.
+2. HomePage Section manager  added.
+3. User Rating Banner.
+
+
 @Version: 3.4 [16-08-2017]
 Icon picker feature added in Service Options.
 
