@@ -57,7 +57,7 @@ a:hover, a:active, a:focus {
 body a:focus, body a:hover {
     outline: none;
     text-decoration: none;
-	color: #f22853;
+	color: #1bbc9b;
 }
 .bypostauthor{}
 
@@ -135,7 +135,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     padding: 8px 3px;
 }
 .gallery-item:hover figcaption {
-	background: #f22853;
+	background: #1bbc9b;
 	-webkit-transition: all 200ms ease-out;
        -moz-transition: all 200ms ease-out;
          -o-transition: all 200ms ease-out;
@@ -266,7 +266,7 @@ blockquote {
     margin: 0 0 20px;
     font-size: 17.5px;
     background: #f7f9fc;
-	border-left: 5px solid #f22853 !important;
+	border-left: 5px solid #1bbc9b !important;
 }
 blockquote, blockquote p { 
     font-size: 15px; 
@@ -295,8 +295,8 @@ table {
 table th {     
     padding: 10px 10px;
     color: #fff; 
-	border: 1px solid #f22853;
-    background: #f22853;
+	border: 1px solid #1bbc9b;
+    background: #1bbc9b;
 }
 table td { border: 1px solid #e8e7e7; padding: 8px 10px;  }
 

@@ -21,14 +21,17 @@ Avira is the right theme for you if you are looking for a multipurpose theme tha
 
 ##Copyright
 
-Screenshot Image
+Images
 =================================================================================================
 Screenshot Image
-URL: https://www.pexels.com/photo/blue-narrow-road-under-brown-mountain-under-white-clouds-495702/
+URL: https://www.pexels.com/photo/people-brasil-guys-avpaulista-109919/
 Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+
+version 1.0.1
+* Initial release
 
 version 1.0
 * Initial release
