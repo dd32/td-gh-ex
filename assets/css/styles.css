@@ -24,7 +24,7 @@ h2.aqa-main-title {
     text-transform: uppercase;
     text-align: center;
 }
-h2.aqa-main-title:before {
+h2.aqa-main-title:before { 
     content: "";
     border-bottom: 1px solid #3b5998;
     position: absolute;
@@ -1038,7 +1038,7 @@ img.blog-img-auther {
     width: 150px;
 }
 .blog-img-auther.img-responsive img {
-   margin-top: 21px;
+   margin-top: 10px;
    width: 80%;
    height: auto;
    border-radius: 60px;
@@ -1261,6 +1261,7 @@ h3.you-may-like{
   position: relative;
   width: 100%;
   height: 36px;
+  color: #000;
   border: none;
   border-radius: 50px;
   outline: none;

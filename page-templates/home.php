@@ -69,8 +69,7 @@ get_header();
 <div class="container">
 <div class="row port_spacing">
 	<?php
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	if( is_plugin_active( 'portfolio-gallery/portfolio-gallery.php' ) ) {
+	if( aquaparallax_is_plugin_active( 'portfolio-gallery/portfolio-gallery.php' ) ) {
 		echo do_shortcode("[huge_it_portfolio id='1']"); 
 	}
 	?> 
@@ -80,4 +79,4 @@ get_header();
 <?php } ?>
 
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

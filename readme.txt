@@ -1,7 +1,7 @@
 === Aquaparallax ===
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.8
-Version: 1.3
+Tested up to: WordPress 4.8.2
+Version: 1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -31,27 +31,36 @@ Copyright 2017 wordpress themes Aquaparallax is distributed under the terms of t
 * Fixed Wordpress menu issue
 * Fixed unsplash license issue
 
+= 1.4 =
+* Fixed WordPress globals Overriding
+
 == Resources ==
-*   TGM Plugin Activation library, Copyright Thomas Griffin, Gary Jones, Juliette Reinders Folmer, 
+*   TGM Plugin Activation library
+    Resource URI: http://tgmpluginactivation.com/
+    Copyright: Thomas Griffin, Gary Jones, Juliette Reinders Folmer, 
     License: GPL-2.0 or later license, 
-    Source: http://tgmpluginactivation.com/#license
+    License URI: https://opensource.org/licenses/GPL-2.0
 
-*   Fontawesome Icons Copyright Dave Gandy, 
-    License: MIT License
-    Source: http://fontawesome.io/license/
+*   Fontawesome Icons
+    Resource URI: http://fontawesome.io
+    Copyright: Dave Gandy
+    License: SIL Open Font License, Version 1.1
+    License URI: https://scripts.sil.org/OFL
 
-*   Google fonts, Copyright 2011 Google Inc
+*   Google fonts
+    Copyright: 2011 Google Inc
     License: Apache License, Version 2.0
-    Source: http://www.apache.org/licenses/LICENSE-2.0
+    License URI: http://www.apache.org/licenses/LICENSE-2.0
 
-*   Images used in Screenshot of Aquaparallax theme: 
-    Logo, Copyright © 2017, Brandfuge
-    License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
-
-*   All images are used in pixabay, licensed under Creative Commons Zero (https://creativecommons.org/publicdomain/zero/1.0/deed.en):
-    Copyright Scott Webb
+*   Banner image 
+    Copyright: ErikaWittlieb
+    Resource URI: https://pixabay.com/en/bicycle-bike-red-biking-cycle-2505476/
     License: CC0 1.0 Universal (CC0 1.0)
-    https://pixabay.com/en/bicycle-bike-red-biking-cycle-2505476/
+    License URI: https://creativecommons.org/publicdomain/zero/1.0  
 
-*  Mean menu,
+*   Mean menu,
     License: MIT License
+
+*   WP Bootstrap Navwalker
+    License: GPL-3.0+
+    License URI: http://www.gnu.org/licenses/gpl-3.0.txt

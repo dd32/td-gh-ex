@@ -63,8 +63,7 @@
     <div class="row">
     <div class="col-md-12">
    
-    <p>
-<?php printf( esc_html__( 'Copyright 2017. Aqua %1$s  by %2$s and powered by %3$s', 'aquaparallax' ), '<a href="http://brandfuge.com/" target="_blank">free Wordpress theme</a> ', '<a href="http://vepp.me/" target="_blank">Vepp.me</a> ', '<a href="https://wordpress.org/" target="_blank">Wordpress.org</a>' ); ?></p>
+    <p><?php echo esc_html_e( 'Proudly powered by WordPress | Theme: Aquaparallax', 'aquaparallax' ); ?></p>
     
     </div>
     </div>

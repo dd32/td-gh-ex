@@ -223,31 +223,6 @@ require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-aquaparalla
 // Aquaparallax register pagination
 require get_template_directory() . '/inc/pagination.php';
 
-// Generate breadcrumbs
-function aquaparallax_get_breadcrumb() {
-    echo '<a href="'. esc_url( home_url() ) .'" rel="nofollow">'. esc_html('Home', 'aquaparallax') .'</a>';
-    if (is_category() || is_single()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        the_category(' &bull; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    } elseif (is_archive()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_archive_title();
-    } 
-}
-
-
 // Aquaparallax link pages
  	$defaults = array(
 		'before'           => '<p>' . esc_html( 'Pages:', 'aquaparallax' ),
@@ -268,3 +243,8 @@ function aquaparallax_add_editor_styles() {
     add_editor_style( 'style.css' );
 }
 add_action( 'admin_init', 'aquaparallax_add_editor_styles' );
+
+// Aquaparallax active plugin
+function aquaparallax_is_plugin_active( $plugin ) {
+    return in_array( $plugin, (array) get_option( 'active_plugins', array() ) );
+}

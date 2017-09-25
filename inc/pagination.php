@@ -5,8 +5,6 @@
  * @package aquaparallax
  */
 function aquaparallax_pagination($numpages = '', $pagerange = '', $paged='') {
-Global $wp_query;
-Global $paged;
 
   if (empty($pagerange)) {
     $pagerange = 2;

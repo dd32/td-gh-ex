@@ -87,7 +87,7 @@ wp_nav_menu(
 		
 		     <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="search-form">
 
-            <input id="field" type="text" placeholder="Search here" name="s" />  
+            <input id="field" type="text" placeholder="<?php echo esc_html_e( 'Search here', 'aquaparallax' ); ?>" name="s" />  
            
             <div class="close">
 
@@ -113,21 +113,4 @@ wp_nav_menu(
 </div>
 
 </div>
-<?php if ( ! is_home() && ! is_front_page() ) { ?>
-<div class="breadcrumb">
-<div class="container">
-<div class="aqa-page-breadcrum-title">
-	<?php if (is_search()) {
-		echo "Search";
-	} elseif (is_archive()) {
-		echo "Archive";
-	} elseif (is_category()) {
-		echo "Category";
-	} elseif (is_page() || is_single()) { 
- the_title(); } ?> </div>
-<div class="aqa-breadcrumb"><?php aquaparallax_get_breadcrumb(); ?></div>
-</div>
-</div>
-<?php } ?>
-
 </header>

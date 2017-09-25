@@ -14,10 +14,7 @@ function aquaparallax_customize_register( $wp_customize ) {
 
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-    $wp_customize->get_control( 'header_textcolor' )->priority  = 10;
-    $wp_customize->get_control( 'header_textcolor' )->label     = 'Site Description Color';
-    
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';   
  
 //Header section
 $wp_customize->add_section(
@@ -289,6 +286,6 @@ function aquaparallax_sanitize_url( $url ) {
     return esc_url_raw( $url );
 }
 function aquaparallax_customize_preview_js() {
-    wp_enqueue_script( 'aquaparallax_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+    wp_enqueue_script( 'aquaparallax_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'aquaparallax_customize_preview_js' );

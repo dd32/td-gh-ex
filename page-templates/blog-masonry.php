@@ -22,7 +22,6 @@ get_header();
     <div class="col-md-8">
     <div class="blog-maonry">
     <?php
-    global $wp_query, $paged;
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
     $args = array( 
