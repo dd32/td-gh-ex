@@ -1,10 +1,10 @@
 /*
 Theme Name: Best Business
-Theme URI: http://axlethemes.com/downloads/best-business/
+Theme URI: https://axlethemes.com/downloads/best-business/
 Author: Axle Themes
-Author URI: http://axlethemes.com/
+Author URI: https://axlethemes.com/
 Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
-Version: 1.0.5
+Version: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-business
@@ -1762,15 +1762,15 @@ object {
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .right-head {
     float: right;
     margin-left: 15px;
-    margin-top: 7px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-
 .cart-section {
     float: right;
     position: relative;
@@ -1886,8 +1886,8 @@ a.cart-contents {
 
 #site-identity {
     float: left;
+    margin-top: 20px;
 }
-
 .site-branding a {
     color: #222;
 }
@@ -1899,6 +1899,7 @@ a.cart-contents {
 .custom-logo-link {
     float: left;
     margin-right: 15px;
+    max-width: 300px;
 }
 
 .custom-logo-link img {
@@ -3686,7 +3687,9 @@ div.wpcf7 {
 
 /* Smaller than standard 1024 (devices and browsers) */
 @media only screen and (max-width:1023px) {
-
+    #masthead {
+        padding: 20px 0;
+    }
     h1 {
         font-size: 22px;
     }
@@ -4004,16 +4007,23 @@ div.wpcf7 {
         position: inherit;
         width: 100%;
     }
+
     .widget.best_business_widget_services .service-block-item {
         width: 50%;
     }
+
    .best_business_widget_services .service-col-3 .service-block-item:nth-child(3n+1) {
         clear: none;
     }
-    .custom-logo-link,
-    .site-branding {
+
+    .site-branding,
+    .custom-logo-link{
         float: none;
         margin-right: 0;
+        display: inline-block;
+    }
+    .custom-logo-link {
+        max-width: 200px;
     }
     #site-identity {
         float: none;
@@ -4367,7 +4377,6 @@ div.wpcf7 {
         margin-right: 0;
         text-align: center;
         width: 100%;
-        max-width: inherit;
         margin-bottom: 5px;
     }
     .site-branding {

@@ -225,7 +225,7 @@ if ( ! function_exists( 'best_business_footer_copyright' ) ) :
 			</div>
 		<?php endif; ?>
 		<div class="site-info">
-			<?php echo esc_html__( 'Best Business by', 'best-business' ) . ' <a target="_blank" rel="designer" href="http://axlethemes.com/">Axle Themes</a>'; ?>
+			<?php echo esc_html__( 'Best Business by', 'best-business' ) . ' <a target="_blank" rel="designer" href="https://axlethemes.com/">Axle Themes</a>'; ?>
 		</div>
 		<?php
 	}
