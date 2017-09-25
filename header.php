@@ -240,13 +240,6 @@
                 ob_end_clean();
                 
                 
-                // OB: Search
-                ob_start();
-                get_search_form();
-                $search_ob_content = ob_get_contents();
-                ob_end_clean();
-                
-                
                 // E: Main Header
                 $main_header_cn = applicator_htmlok( array(
                     'name'      => 'Main Header',
@@ -267,9 +260,6 @@
                             
                             // Hook After Main Nav
                             $hook_after_main_nav_ob_content,
-                            
-                            // Search
-                            $search_ob_content,
                             
                             // Web Product Main Media Banner
                             $web_product_main_media_banner_obj,

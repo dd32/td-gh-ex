@@ -6,12 +6,12 @@
         $body = $( document.body ),
         
         // Functionalities
-        $aplApplicatorGoCtNav = $html.closest( '.applicator-snapon--applicator--go-content-nav' ),
-        $aplApplicatorGoStartNav = $html.closest( '.applicator-snapon--applicator--go-start-nav' ),
-        $aplApplicatorMainSearch = $html.closest( '.applicator-snapon--applicator--main-search' ),
-        $aplApplicatorSubNav = $html.closest( '.applicator-snapon--applicator--sub-nav' ),
-        $aplApplicatorMainMenu = $html.closest( '.applicator-snapon--applicator--main-menu' ),
-        $aplApplicatorEasyAccessNav = $html.closest( '.applicator-snapon--applicator--easy-access-nav' ),
+        $aplApplicatorGoCtNav = $html.closest( '.applicator--go-content-nav' ),
+        $aplApplicatorGoStartNav = $html.closest( '.applicator--go-start-nav' ),
+        $aplApplicatorMainSearch = $html.closest( '.applicator--main-search' ),
+        $aplApplicatorSubNav = $html.closest( '.applicator--sub-nav' ),
+        $aplApplicatorMainMenu = $html.closest( '.applicator--main-menu' ),
+        $aplApplicatorEasyAccessNav = $html.closest( '.applicator--easy-access-nav' ),
         
         $mainHrAsEnabled = $html.closest( '.main-header-aside--enabled' ),
         
@@ -27,6 +27,7 @@
         
         $webProductContainer = $page.find( '.wbp---cr' ),
         $webProductCopyright = $( '#web-product-copyright' ),
+        copyrightHeight = $webProductCopyright.height(),
         pageShortCss = 'page--short',
         pageLongCss = 'page--long',
         
@@ -53,52 +54,6 @@
         $aplWildcardCr.append( overlayMu );
         
     };
-    
-    
-    
-    
-    
-    /*------------------------- Page Length -------------------------*/
-    ( function() {
-        
-        if ( $webProductCopyright.css( 'display' ) == 'none' ) {
-			return;
-		}
-
-        var copyrightHeight,
-            pageHeight;
-
-        function pageHeightCSS() {
-            
-            copyrightHeight = $webProductCopyright.height();
-            
-            if ( ( pageHeight ) <= ( window.innerHeight ) ) {
-
-                $html
-                    .addClass( pageShortCss )
-                    .removeClass( pageLongCss );
-                
-                $webProductContainer.css( 'padding-bottom', copyrightHeight + 'px' );
-            }
-            else {
-
-                $html
-                    .addClass( pageLongCss )
-                    .removeClass( pageShortCss );
-                
-                $webProductContainer.css( 'padding-bottom', '' ).removeAttr( 'style' );
-            }
-        }
-        pageHeightCSS();
-        
-        
-        // Debounce
-        var pageHeightDebounce = debounce( function () {
-            pageHeightCSS();
-        }, applicatorDebounceTimeout );
-
-        window.addEventListener( 'resize', pageHeightDebounce );
-    }() );
     
     
     
@@ -159,10 +114,12 @@
         
 
         // Deactivate upon presseing ESC Key
-        $document.on( 'keyup.applicator', function ( e ) {
-            if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
-                goCtNavDeactivate();
-            }
+        $window.load( function() {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
+                    goCtNavDeactivate();
+                }
+            } );
         } );
         
     } // Go to Content Nav
@@ -250,7 +207,7 @@
 
             $( 'html, body' ).stop().animate( {
                 scrollTop: $( target ).offset().top
-            }, 320, 'linear', function() {
+            }, 1000, 'easeInOutCirc', function() {
                 location.hash = target;
             } );
             
@@ -431,10 +388,12 @@
         } );
 
         // Deactivate upon presseing ESC Key
-        $document.on( 'keyup.applicator', function ( e ) {
-            if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
-                mainMenuDeactivate();
-            }
+        $window.load( function() {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
+                    mainMenuDeactivate();
+                }
+            } );
         } );
         
     } // Main Menu
@@ -452,8 +411,8 @@
 			return;
 		}
         
-        $( '#main-header' )
-            .find( $( '.main-header---cr' ) )
+        $( '#main-actions' )
+            .find( $( '.main-actions---ct_cr' ) )
                 .children( '.search:first' )
                     .attr( 'id', 'main-search-func' );
     }() );
@@ -656,10 +615,12 @@
         } );
 
         // Deactivate upon presseing ESC Key
-        $document.on( 'keyup.applicator', function ( e ) {
-            if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
-                mainSearchDeactivate();
-            }
+        $window.load( function() {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
+                    mainSearchDeactivate();
+                }
+            } );
         } );
         
         // Add Icons to Buttons
@@ -992,10 +953,12 @@
         
         
         // Deactivate upon presseing ESC Key
-        $document.on( 'keyup.applicator', function ( e ) {
-            if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
-                subNavAllDeactivate();
-            }
+        $window.load( function() {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
+                    subNavAllDeactivate();
+                }
+            } );
         } );
         
     }
@@ -1103,7 +1066,7 @@
     
     
     
-    // ------------------------- DOM Ready
+    /*------------------------ DOM Ready ------------------------*/
     $document.ready( function() {
 		
         
@@ -1124,6 +1087,7 @@
             .addClass( tabKeyInactCss )
             .removeClass( tabKeyActCss );
         
+        
         // No Tab Key
         $document.on( 'keydown.applicator', function ( e ) {
             var keyCode = e.keyCode || e.which; 
@@ -1136,6 +1100,7 @@
               }
         } );
 
+        
         // Tab Key - Deactivate upon any interaction
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
 
@@ -1145,6 +1110,208 @@
                     .removeClass( tabKeyActCss );
             }
         } );
+        
+        
+        // Data Format
+        ( function() {
+
+            // Variables
+            var dataFormatCss = '.data-format',
+                dataFormatTerm = 'data-format',
+                dataFormatPrefixCss = 'data-format--',
+
+                dataFormatImage = dataFormatPrefixCss + 'img',
+                dataFormatIframe = dataFormatPrefixCss + 'iframe',
+
+                postContent = '.post-content---ct_cr > *',
+                postContentCtCrCss = '.post-content---ct_cr',
+
+                postContentP = '.post-content---ct_cr > p',
+                alignedTerm = 'aligned',
+
+                commentContent = '.comment-content---ct_cr > *',
+
+                dataFormatBlockCpMu,
+                dataFormatInlineCpMu;
+
+            // Block Markup
+            dataFormatBlockCpMu = $( '<div />', {
+                'class': dataFormatTerm
+            } );
+
+            // Inline Markup
+            dataFormatInlineCpMu = $( '<span />', {
+                'class': dataFormatTerm
+            } );
+
+
+            // ------------ <pre>
+            $( postContentCtCrCss + ' ' + '> *:has( pre )' ).each(function() {
+                var $this = $( this ),
+                    $pre = $this.find( 'pre' );
+
+                $pre.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'pre' );
+            });
+
+            $( postContentCtCrCss + ' ' + '> pre' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'pre' );
+            });
+
+
+            // ------------ <img>
+            $( postContent + ':has( img )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage );
+
+            $( postContent + ':has( img.alignnone )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--not-' + alignedTerm );
+
+            $( postContent + ':has( img.alignleft )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--left-' + alignedTerm );
+
+            $( postContent + ':has( img.alignright )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--right-' + alignedTerm );
+
+            $( postContent + ':has( img.aligncenter )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--center-' + alignedTerm );
+
+            $( postContentCtCrCss + ' ' + '> img' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatInlineCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'img' );
+            });
+
+
+            // ------------ <code>
+            $( postContentCtCrCss + ' ' + '> *:has( code )' ).each(function() {
+                var $this = $( this ),
+                    $code = $this.find( 'code' );
+
+                $code.wrap( dataFormatInlineCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'code' );
+            });
+
+            $( postContentCtCrCss + ' ' + '> code' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatInlineCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'code' );
+            });
+
+
+            // ------------ <table>
+            $( postContentCtCrCss + ' ' + '> *:has( table )' ).each(function() {
+                var $this = $( this ),
+                    $table = $this.find( 'table' );
+
+                $table.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'table' );
+            });
+
+            $( postContentCtCrCss + ' ' + '> table' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'table' );
+            });
+
+
+            // ------------ <iframe>
+            $( postContentCtCrCss + ' ' + '> *:has( iframe )' ).each(function() {
+                var $this = $( this );
+
+                $this.addClass( dataFormatTerm + ' ' + dataFormatPrefixCss + 'iframe' );
+            });
+
+            $( postContentCtCrCss + ' ' + '> iframe' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatInlineCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'iframe' );
+            });
+
+
+            // ------------ Wrap text nodes in <span>
+            // https://stackoverflow.com/a/18727318
+            $( '.data-format' )
+            .contents()
+            .filter( function() {
+
+                // Get only the text nodes
+                return this.nodeType === 3;
+            } )
+            .wrap( '<span class="span"></span>' );
+
+            /*
+
+            $( '.post-content iframe' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'iframe' );
+            });
+
+            $( '.post-content embed' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'embed' );
+            });
+            */
+
+         } )();
+    } );
+    
+    
+    
+        
+    
+    /*------------------------ DOM Ready and Images Loaded ------------------------*/
+    $window.load( function() {
+        
+        // Page Length
+        ( function() {
+
+            if ( $webProductCopyright.css( 'display' ) == 'none' ) {
+                return;
+            }
+
+            function pageHeightCSS() {
+
+                if ( ( pageHeight ) <= ( window.innerHeight ) ) {
+
+                    $html
+                        .addClass( pageShortCss )
+                        .removeClass( pageLongCss );
+
+                    $webProductContainer.css( 'padding-bottom', copyrightHeight + 'px' );
+                }
+                else {
+
+                    $html
+                        .addClass( pageLongCss )
+                        .removeClass( pageShortCss );
+
+                    $webProductContainer.css( 'padding-bottom', '' ).removeAttr( 'style' );
+                }
+            }
+            pageHeightCSS();
+
+
+            // Debounce
+            var pageHeightDebounce = debounce( function () {
+                pageHeightCSS();
+            }, applicatorDebounceTimeout );
+
+            window.addEventListener( 'resize', pageHeightDebounce );
+        }() );
     } );
 
 })( jQuery );

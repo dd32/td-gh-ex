@@ -1,16 +1,82 @@
-<?php // Scripts
+<?php // Default Styles and Scripts
 
 
-// Default Classes
-if ( ! function_exists( 'applicator_scripts_inline' ) ) {
-    function applicator_scripts_inline() { ?>
+
+
+
+/*------------------------ Default Applicator Styles ------------------------*/
+if ( ! function_exists( 'applicator_default_styles_scripts' ) ) {
+    
+    function applicator_default_styles_scripts() {
+        
+        
+        /*------------ Styles ------------*/
+        
+        
+        // Editor Style
+        add_editor_style( array( 'assets/css/editor-style.css' ) );
+        
+        
+        // style.css
+        wp_enqueue_style( 'applicator-style', get_stylesheet_uri() );
+        
+        
+        // HTML5 Boilerplate
+        wp_enqueue_style( 'applicator-style--h5bp', get_theme_file_uri( '/assets/css/h5bp.css' )  );
+        
+        
+        // Default Style
+        wp_enqueue_style( 'applicator-style--default', get_theme_file_uri( '/assets/css/default.css' ) );
+        
+        
+        /*------------ Scripts ------------*/
+        
+        
+        // Modernizr
+        wp_enqueue_script( 'applicator-script--modernizr', get_theme_file_uri( '/assets/js/modernizr.min.js' ), array(), '1.0.0', true );
+        
+        
+        // HTML5 Shiv
+        wp_enqueue_script( 'applicator-script--html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
+        wp_script_add_data( 'applicator-script--html5', 'conditional', 'lt IE 9' );
+        
+        
+        // Skip Link Focus Fix
+        wp_enqueue_script( 'applicator-script--skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0.1', true );
+        
+        
+        // Plugins
+        wp_enqueue_script( 'applicator-script--plugins', get_theme_file_uri( '/assets/js/plugins.js' ), array( 'jquery' ), '1.0.0', true );
+        
+        
+        // Global
+        wp_enqueue_script( 'applicator-script--global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery', 'applicator-script--plugins' ), '3.8.2', true );
+        
+        
+        // Comment Reply
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+        
+    }
+    add_action('wp_enqueue_scripts', 'applicator_default_styles_scripts', 0);
+}
+
+
+
+
+
+/*------------------------ Default Applicator Inline Scripts ------------------------*/
+if ( ! function_exists( 'applicator_inline_scripts' ) ) {
+    
+    function applicator_inline_scripts() { ?>
         
         <script type="text/javascript">
             
             
-            // JavaScript Debounce Function
+            /*------------------------ Debounce ------------------------*/
             // https://davidwalsh.name/javascript-debounce-function
-            function debounce(func, wait, immediate) {
+            function debounce( func, wait, immediate ) {
                 var timeout;
                 return function () {
                     var context = this, args = arguments;
@@ -27,7 +93,7 @@ if ( ! function_exists( 'applicator_scripts_inline' ) ) {
             var applicatorDebounceTimeout = 250;
             
             
-            // Test if inline SVGs are supported
+            /*------------------------ SVG Feature Detection ------------------------*/
             // https://github.com/Modernizr/Modernizr/
             function supportsInlineSVG() {
                 var div = document.createElement( 'div' );
@@ -36,19 +102,20 @@ if ( ! function_exists( 'applicator_scripts_inline' ) ) {
             }
             
             
-            // CSS Variables Feature Detection
+            /*------------------------ CSS Variables Feature Detection ------------------------*/
             // https://stackoverflow.com/a/26633844
             function supportCssVariables() {
               return window.CSS && window.CSS.supports && window.CSS.supports('--var', 0);
             }
 
 
+            /*------------------------ HTMl CSS Classes ------------------------*/
             ( function( html ) {
                 
                 // Replace no-js with js if JavaScript is supported
                 html.className = html.className.replace( /\bno-js\b/,'js' );
 
-                // DOM Unready CSS inserted via JS
+                // DOM Unready (will be removed on DOM ready)
                 html.classList.add( 'dom--unready' );
                 
                 // Replace no-svg with svg if supported
@@ -112,41 +179,5 @@ if ( ! function_exists( 'applicator_scripts_inline' ) ) {
         </script>
     
     <?php }
-    add_action( 'wp_head', 'applicator_scripts_inline', 0 );
-}
-
-
-// Enqueue Scripts
-if ( ! function_exists( 'applicator_scripts_enqueue' ) ) {
-    function applicator_scripts_enqueue() {
-        
-        
-        // Modernizr
-        wp_enqueue_script( 'applicator-script--modernizr', get_theme_file_uri( '/assets/js/modernizr.min.js' ), array(), '1.0.0', true );
-        
-        
-        // HTML5 Shiv
-        wp_enqueue_script( 'applicator-script--html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-        wp_script_add_data( 'applicator-script--html5', 'conditional', 'lt IE 9' );
-        
-        
-        // Skip Link Focus Fix
-        wp_enqueue_script( 'applicator-script--skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0.1', true );
-        
-        
-        // Plugins
-        wp_enqueue_script( 'applicator-script--plugins', get_theme_file_uri( '/assets/js/plugins.js' ), array( 'jquery' ), '1.0.0', true );
-        
-        
-        // Global
-        wp_enqueue_script( 'applicator-script--global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery', 'applicator-script--plugins' ), '3.8.2', true );
-        
-        
-        // Comment Reply
-        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-            wp_enqueue_script( 'comment-reply' );
-        }
-            
-    }
-    add_action( 'wp_enqueue_scripts', 'applicator_scripts_enqueue' );
+    add_action( 'wp_head', 'applicator_inline_scripts', 0 );
 }
