@@ -69,6 +69,7 @@ function backyard_scripts() {
 		wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/js/bootstrap.js', array('jquery'),true);
         wp_enqueue_script('wow', get_template_directory_uri().'/assets/js/wow.js', array('jquery'),true );       
         wp_enqueue_script('backyard-custom', get_template_directory_uri().'/assets/js/custom.js', array('jquery'),true );
+        wp_localize_script( 'backyard-custom', 'backyard_wp_ajax_url', admin_url( 'admin-ajax.php' ) );  
         wp_enqueue_script('jquery-flexslider', get_template_directory_uri().'/assets/js/jquery.flexslider.js', array('jquery'),true);		
 		// Load the HTML5 Shiv.
 		wp_enqueue_script('backyard-html5', get_template_directory_uri() . '/assets/js/html5shiv.js', array(), '3.7.2');

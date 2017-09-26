@@ -15,7 +15,8 @@ $choose_slider=get_theme_mod('choose_slider');
           <main id="main" class="site-main">
            <?php 
             global $the_query;
-            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8));
+			$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8,'paged' => $paged));
             if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
             get_template_part('template-parts/content');  
            ?>
@@ -23,6 +24,11 @@ $choose_slider=get_theme_mod('choose_slider');
            <?php endwhile; ?>
           <?php endif; wp_reset_postdata(); ?>
           </main>
+          <?php if ($the_query->max_num_pages > 1) {?>
+         <div class="loadmore_post" max_page="<?php echo $the_query->max_num_pages?>" start_page="1"> 
+         	<a class="btn fillbg" href="#"><?php esc_html_e('Load More Post', 'backyard'); ?><i aria-hidden="true" class="fa fa-angle-double-down"></i><i class="fa fa-refresh fa-spin"></i></a>
+         </div>
+         <?php }?>
         </div>
        <?php get_sidebar(); ?>
       </div>

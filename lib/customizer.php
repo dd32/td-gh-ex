@@ -262,8 +262,45 @@ array(
    'section' => 'social_media',
 )
 );
+		/* Global Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section(
+   'blog_settings',
+   array(
+       'title' => esc_html__('Blog Settings', 'backyard'),
+       'description' => esc_html__('This is a page settings.', 'backyard'),
+       'priority' => 5,
+	   'panel'       => 'backyard_options',
+   )
+);
+$wp_customize->add_setting( 'blog_sidebar', array(
+  'default' => 'left',
+  'sanitize_callback' => 'backyard_themeslug_sanitize_select',
+) );
+
+$wp_customize->add_control( 'blog_sidebar', array(
+  'type' => 'radio',
+  'section' => 'blog_settings', // Add a default or your own section
+  'label' => esc_html__( 'Blog sidebar settings' ,'backyard'),
+  'choices' => array(
+    'left' => esc_html__( 'Left sidebar','backyard' ),
+    'right' => esc_html__( 'RIght sidebar' ,'backyard'),
+    'full' => esc_html__( 'Full width' ,'backyard'),
+  ),
+) );
 }
 add_action('customize_register', 'backyard_themes_customizer');
+function backyard_themeslug_sanitize_select( $input, $setting ) {
+
+  // Ensure input is a slug.
+  $input = sanitize_key( $input );
+
+  // Get list of choices from the control associated with the setting.
+  $choices = $setting->manager->get_control( $setting->id )->choices;
+
+  // If the input is a valid key, return it; otherwise, return the default.
+  return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
 /* add settings to create various social media text areas. */
 function backyard_boolean($value){
 	if(is_bool($value)) {
