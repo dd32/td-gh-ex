@@ -124,13 +124,13 @@ function suits_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 
 	// Loads JavaScript file with functionality specific to Suits.
-	wp_enqueue_script( 'suits-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-10-20', true );
+	wp_enqueue_script( 'suits-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2017-09-25', true );
 
 	// Add Lato font, used in the main stylesheet.
 	wp_enqueue_style( 'suits-fonts', suits_fonts_url(), array(), null );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'suits-style', get_stylesheet_uri(), array(), '2013-10-20' );
+	wp_enqueue_style( 'suits-style', get_stylesheet_uri(), array(), '2017-09-25' );
 }
 add_action( 'wp_enqueue_scripts', 'suits_scripts_styles' );
 
@@ -148,8 +148,8 @@ function suits_widgets_init() {
 		'description'   => __( 'Appears on posts and pages in the sidebar.', 'suits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -158,8 +158,8 @@ function suits_widgets_init() {
 		'description'   => __( 'Appears in the footer section of the site.', 'suits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -168,8 +168,8 @@ function suits_widgets_init() {
 		'description'   => __( 'Appears in the footer section of the site.', 'suits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -178,8 +178,8 @@ function suits_widgets_init() {
 		'description'   => __( 'Appears in the footer section of the site.', 'suits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'suits_widgets_init' );
@@ -487,6 +487,6 @@ add_action( 'customize_register', 'suits_customize_register' );
  * @since Suits 1.0
  */
 function suits_customize_preview_js() {
-	wp_enqueue_script( 'suits-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20131020', true );
+	wp_enqueue_script( 'suits-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '2017-09-25', true );
 }
 add_action( 'customize_preview_init', 'suits_customize_preview_js' );

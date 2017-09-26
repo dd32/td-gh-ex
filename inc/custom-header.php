@@ -140,13 +140,13 @@ function suits_admin_header_style() {
 		width: 100%;
 	}
 	<?php if ( ! display_header_text() ) : ?>
-	#headimg h1,
-	#headimg h2 {
+	#headimg .site-title,
+	#headimg .site-description {
 		position: absolute !important;
 		clip: rect(1px, 1px, 1px, 1px);
 	}
 	<?php endif; ?>
-	#headimg h1 {
+	#headimg .site-title {
 		color: #fff;
 		font-family: Lato, sans-serif;
 		font-size: 80px;
@@ -157,12 +157,12 @@ function suits_admin_header_style() {
 		padding: 40px 0 5px;
 		text-transform: uppercase;
 	}
-	#headimg h1 a,
-	#headimg h1 a:hover {
+	#headimg .site-title a,
+	#headimg .site-title a:hover {
 		color: #fff;
 		text-decoration: none;
 	}
-	#headimg h2 {
+	#headimg .site-description {
 		color: #666;
 		font: normal 14px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 		letter-spacing: 2px;
@@ -196,8 +196,8 @@ function suits_admin_header_image() {
 ?>
 	<div id="headimg"<?php echo $header; ?>>
 		<div class="home-link">
-			<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="#"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
+			<h1 class="displaying-header-text site-title"><a id="name"<?php echo $style; ?> onclick="return false;" href="#"><?php bloginfo( 'name' ); ?></a></h1>
+			<p id="desc" class="displaying-header-text site-description"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></p>
 		</div>
 	</div>
 <?php }

@@ -61,3 +61,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 - updated theme tags (removed deprecated, added footer-widgets, translation-ready, blog)
 - added load_theme_textdomain
 - added languages/suits.pot file
+
+#### 1.4.0
+
+- changes to heading elements for better SEO structure

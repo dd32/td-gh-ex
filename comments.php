@@ -19,12 +19,12 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 				printf( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'suits' ),
 					number_format_i18n( get_comments_number() ) );
 			?>
-		</h2>
+		</h3>
 
 		<ol class="comment-list">
 			<?php
