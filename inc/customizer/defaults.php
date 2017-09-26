@@ -37,12 +37,12 @@ function academic_get_default_theme_options() {
 		'archive_content_type' 			=> 'excerpt',
 		'archive_image' 				=> false,
 		'archive_meta' 					=> false,
-
+		
 		// Top bar options
 		'top_bar_content_type'   		=> 'custom',
 		'top_bar_show'           		=> false,
 		'top_bar_field_number'   		=> 3,
-
+		
 		// slider
 		'slider_enable'                 => 'disabled',
 		'slider_content_effect'         => 'cubic-bezier(0.250, 0.250, 0.750, 0.750)',
@@ -57,8 +57,8 @@ function academic_get_default_theme_options() {
 		
 		// about
 		'about_section_enable'			=> 'disabled',
-
-
+		
+		
 		// category blog two
 		'category_blog_two_enable'		=> 'disabled',
 		'category_blog_two_dragable'	=> true,
@@ -67,7 +67,7 @@ function academic_get_default_theme_options() {
 		'category_blog_two_count'		=> 8,
 		'category_blog_two_type'		=> 'recent-posts',
 		'category_blog_two_layout'		=> 4,
-
+		
 		// category blog one
 		'category_blog_one_enable'	=> 'disabled',
 		'category_blog_one_dragable'	=> true,
@@ -76,7 +76,7 @@ function academic_get_default_theme_options() {
 		'category_blog_one_title'		=> esc_html__( 'First Category Blog', 'academic' ),
 		'category_blog_one_type'		=> 'category',
 		'category_blog_one_icon'		=> 'fa-snapchat-ghost',
-
+		
 		// Partners
 		'partner_enable'				=> 'disabled',
 		'partner_title'					=> esc_html__( 'Our Partners', 'academic' ),
