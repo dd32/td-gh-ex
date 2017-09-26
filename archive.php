@@ -14,19 +14,19 @@ get_header();
 				<div class="page-title">
 					<h2><?php if ( is_day() ) :
 			
-						  _e( "Daily Archive", 'busiprof' ); echo (get_the_date()); 
+						  _e( "Daily Archive ", 'busiprof' ); echo (get_the_date()); 
 						  
 						 elseif ( is_month() ) : 
 						 
-							 _e( "Monthly Archive", 'busiprof' ); echo (get_the_date( 'F Y' )); 
+							 _e( "Monthly Archive ", 'busiprof' ); echo (get_the_date( 'F Y' )); 
 							 
 						 elseif ( is_year() ) :
 						 
-						 _e( "Yearly Archive", 'busiprof' );  echo (get_the_date( 'Y' )); 
+						 _e( "Yearly Archive ", 'busiprof' );  echo (get_the_date( 'Y' )); 
 						 
 						else : 
 						
-							 _e( "Blog Archive", 'busiprof' ); 	
+							 _e( "Blog Archive ", 'busiprof' ); 	
 							 
 						 endif; 
 						 ?>
@@ -35,13 +35,9 @@ get_header();
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="search_box">
-				<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input type="text" id="appendedInputButton" class="search_input" 
-					placeholder=<?php _e('Search','busiprof' ); ?> name="s">
-					<input type="button" value="" class="search_btn">
-				</form>	
-				</div>
+				<ul class="page-breadcrumb">
+					<?php if (function_exists('busiprof_custom_breadcrumbs')) busiprof_custom_breadcrumbs();?>
+				</ul>
 			</div>
 		</div>
 	</div>	

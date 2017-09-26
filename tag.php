@@ -15,14 +15,11 @@ get_header();
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
-			<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div class="col-md-6">
-				<div class="search_box">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
-					<input type="button" value="" class="search_btn">
-				</div>
+				<ul class="page-breadcrumb">
+					<?php if (function_exists('busiprof_custom_breadcrumbs')) busiprof_custom_breadcrumbs();?>
+				</ul>
 			</div>
-			</form>
 		</div>
 	</div>	
 </section>

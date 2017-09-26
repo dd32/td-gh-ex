@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.6
+1. Added Bredcrumb navigation.
 @version 1.8.5
 1. Fixed spelling mistake issue.
 @version 1.8.4

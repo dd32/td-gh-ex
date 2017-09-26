@@ -11,17 +11,14 @@ get_header();
 		<div class="row">
 			<div class="col-md-6">
 				<div class="page-title">
-					<h2><?php  _e("Category Archive", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
+					<h2><?php  _e("Category Archive ", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="search_box">
-					<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
-					<input type="button" value="" class="search_btn">
-				</form>
-				</div>
+				<ul class="page-breadcrumb">
+					<?php if (function_exists('busiprof_custom_breadcrumbs')) busiprof_custom_breadcrumbs();?>
+				</ul>
 			</div>
 		</div>
 	</div>	

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2017-08-23 16:42+0530\n"
-"PO-Revision-Date: 2017-08-23 16:42+0530\n"
+"POT-Creation-Date: 2017-08-24 16:33+0530\n"
+"PO-Revision-Date: 2017-08-24 16:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:14
+#: 404.php:14 functions/breadcrumbs/breadcrumbs.php:103
 msgid "Error 404"
 msgstr ""
 
@@ -38,38 +38,33 @@ msgid "Go Back"
 msgstr ""
 
 #: archive.php:17
-msgid "Daily Archive"
+msgid "Daily Archive "
 msgstr ""
 
 #: archive.php:21
-msgid "Monthly Archive"
+msgid "Monthly Archive "
 msgstr ""
 
 #: archive.php:25
-msgid "Yearly Archive"
+msgid "Yearly Archive "
 msgstr ""
 
 #: archive.php:29
-msgid "Blog Archive"
+msgid "Blog Archive "
 msgstr ""
 
-#: archive.php:41 author.php:22 category.php:21 index-bannerstrip.php:29
-#: searchform.php:14 searchform.php:15 tag.php:21
-msgid "Search"
-msgstr ""
-
-#: archive.php:73 author.php:54 category.php:53 index.php:26 search.php:35
-#: tag.php:53
+#: archive.php:69 author.php:51 category.php:50 index.php:26 search.php:35
+#: tag.php:50
 msgid "Previous"
 msgstr ""
 
-#: archive.php:74 author.php:55 category.php:54 index.php:27 search.php:36
-#: tag.php:54
+#: archive.php:70 author.php:52 category.php:51 index.php:27 search.php:36
+#: tag.php:51
 msgid "Next"
 msgstr ""
 
 #: category.php:14
-msgid "Category Archive"
+msgid "Category Archive "
 msgstr ""
 
 #: comments.php:11
@@ -131,8 +126,33 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:70
 msgid "Primary Menu"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:6
+#: functions/menu/default_menu_walker.php:23
+msgid "Home"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:25
+msgid "Archive by category"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:28
+msgid "Search results for"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:95
+msgid "Posts tagged"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:100
+msgid "Articles posted by"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:108
+msgid "Page"
 msgstr ""
 
 #: functions/commentbox/comment-function.php:30
@@ -826,10 +846,6 @@ msgstr ""
 msgid "24×7 Support"
 msgstr ""
 
-#: functions/menu/default_menu_walker.php:23
-msgid "Home"
-msgstr ""
-
 #: functions/widgets/custom-widgets.php:7
 #: functions/widgets/custom-widgets.php:9
 msgid "Sidebar widget area"
@@ -862,6 +878,10 @@ msgstr ""
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
+msgstr ""
+
+#: searchform.php:14 searchform.php:15
+msgid "Search"
 msgstr ""
 
 #: tag.php:14

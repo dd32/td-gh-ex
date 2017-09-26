@@ -12,6 +12,7 @@
 	require( BUSI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH .'/font/font.php' );
+	require( BUSI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 
 
 	// Theme functions file including
