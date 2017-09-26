@@ -55,14 +55,6 @@
 							<div class="caption verticle-center text-center wow zoomIn">
 								<h1 class="wow fadeInDown animated" data-wow-delay="0.4s"><?php echo $title; ?></span></h1>
 								<?php echo $content; ?>
-								
-								<?php if( get_post_meta(get_the_ID(),'slidebutton', true ) ): ?>
-									<a href="<?php echo get_post_meta( get_the_ID(),'slidebutton', true); ?>" class="specia-btn-1">
-										<?php echo _e( 'Read More','avira' ); ?> 
-									</a>
-								<?php
-									endif;
-								?>
 							</div>
 						</div>
 					</div>
