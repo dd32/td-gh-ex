@@ -62,25 +62,6 @@ if( !class_exists( 'suevafree_customize' ) ) {
 				''
 			);
 	
-			wp_enqueue_script( 
-				  'suevafree-customizer-preview',
-				  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
-				  array( 'jquery' ),
-				  '1.0.0', 
-				  true
-			);
-	
-			$suevafree_details = array(
-			
-				'sueva_label' => __( 'Upgrade to Sueva Premium', 'suevafree' ),
-				'sueva_url' => esc_url('https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel'),
-				'avana_label' => esc_html__( 'Upgrade to SvevaPro', 'suevafree' ),
-				'avana_url' => esc_url('https://www.themeinprogress.com/sveva-pro-beauty-and-clean-suevafree-child-theme/?ref=2&campaign=sveva-panel')
-			
-			);
-		
-			wp_localize_script( 'suevafree-customizer-preview', 'suevafree_details', $suevafree_details );
-		  
 		}
 		
 		public function customize_panel ( $wp_customize ) {
@@ -345,10 +326,39 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 		public function render_content() { ?>
 
-			<h2><?php esc_html_e('Get support','suevafree');?></h2> 
-            
             <div class="inside">
+
+				<h2><?php esc_html_e('Upgrade to Sueva Premium.','suevafree');?></h2> 
+
+                <p><?php esc_html_e("Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more.","suevafree");?></p>
+
+                <ul>
+                
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Venice Pro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Sueva premium','suevafree');?></a></li>
+                
+                </ul>
+
+            </div>
+
+            <div class="inside">
+
+                <h2><?php esc_html_e('SuevaFree child themes.','suevafree');?></h2> 
     
+                <p><?php esc_html_e("You can also choose one of available premium child themes for SuevaFree, SvevaPro or Avana.","suevafree");?></p>
+
+                <ul>
+                
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sveva-pro-beauty-and-clean-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to SvevaPro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to SvevaPro','suevafree');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Avana','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Avana','suevafree');?></a></li>
+                
+                </ul>
+
+            </div>
+
+            <div class="inside">
+
+                <h2><?php esc_html_e('Get support','suevafree');?></h2> 
+
                 <p><?php _e("If you've opened a new support ticket from <strong>WordPress.org</strong>, please send a reminder to <strong>support@wpinprogress.com</strong>, to get a faster reply.","suevafree");?></p>
 
                 <ul>

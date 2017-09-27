@@ -10,7 +10,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 			
-				"title" => esc_html__( "Get support","suevafree"),
+				"title" => esc_html__( "Upgrade to Sueva Premium","suevafree"),
 				"id" => "suevafree-customize-info",
 				"type" => "suevafree-customize-info",
 				"section" => "suevafree-customize-info",

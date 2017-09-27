@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.2.7 - Released: 27.09.2017
+
+-- Fixed : Featured image box shadow.
+
 - Version 3.2.6 - Released: 10.09.2017
 
 -- Fixed : Search results page, error message on the breadcrumb.

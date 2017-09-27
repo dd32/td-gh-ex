@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-08 22:35+0200\n"
-"PO-Revision-Date: 2017-08-08 22:36+0200\n"
+"POT-Creation-Date: 2017-09-27 14:38+0200\n"
+"PO-Revision-Date: 2017-09-27 14:40+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -80,9 +80,9 @@ msgctxt "Comment field textarea."
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:13 core/includes/class-customize.php:348
-msgid "Get support"
-msgstr "Ottieni supporto."
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:75
+msgid "Upgrade to Sueva Premium"
+msgstr "Aggiorna a Sueva Premium"
 
 #: core/admin/customize/customize.php:25 core/admin/customize/customize.php:26
 msgid "Thumbnails"
@@ -1208,15 +1208,47 @@ msgstr "Sidebar piè di pagina"
 msgid "This sidebar will be shown at the end of your content."
 msgstr "Questa barra laterale verrà mostrata alla fine del tuo sito."
 
-#: core/includes/class-customize.php:75 core/includes/class-notice.php:75
-msgid "Upgrade to Sueva Premium"
+#: core/includes/class-customize.php:331
+msgid "Upgrade to Sueva Premium."
+msgstr "Aggiorna a Sueva Premium."
+
+#: core/includes/class-customize.php:333 core/includes/class-notice.php:71
+msgid ""
+"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+"Aggiorna alla versione premium di Sueva, per attivare oltre 600 Google "
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
+
+#: core/includes/class-customize.php:337
+msgid "Upgrade to Sueva premium"
 msgstr "Aggiorna a Sueva Premium"
 
-#: core/includes/class-customize.php:77
+#: core/includes/class-customize.php:345
+msgid "SuevaFree child themes."
+msgstr "Temi child per SuevaFree"
+
+#: core/includes/class-customize.php:347
+msgid ""
+"You can also choose one of available premium child themes for SuevaFree, "
+"SvevaPro or Avana."
+msgstr ""
+"Puoi anche scegliere uno dei temi child in versione premium disponibili per "
+"SuevaFree, SvevaPro oppure Avana"
+
+#: core/includes/class-customize.php:351
 msgid "Upgrade to SvevaPro"
 msgstr "Aggiorna a SvevaPro"
 
 #: core/includes/class-customize.php:352
+msgid "Upgrade to Avana"
+msgstr "Aggiorna ad Avana"
+
+#: core/includes/class-customize.php:360
+msgid "Get support"
+msgstr "Ottieni supporto."
+
+#: core/includes/class-customize.php:362
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -1226,15 +1258,15 @@ msgstr ""
 "invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
 "ottenere rapidamente una risposta."
 
-#: core/includes/class-customize.php:356
+#: core/includes/class-customize.php:366
 msgid "Open a new ticket"
 msgstr "Apri un nuovo ticket."
 
-#: core/includes/class-customize.php:357
+#: core/includes/class-customize.php:367
 msgid "Send a reminder"
 msgstr "Invia un promemoria."
 
-#: core/includes/class-customize.php:362
+#: core/includes/class-customize.php:372
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -1242,29 +1274,21 @@ msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
 "strong> una delle seguenti azioni:"
 
-#: core/includes/class-customize.php:366
+#: core/includes/class-customize.php:376
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:367
+#: core/includes/class-customize.php:377
 msgid "Like on Facebook"
 msgstr "Seguici su Facebook."
 
-#: core/includes/class-customize.php:368
+#: core/includes/class-customize.php:378
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-customize.php:369
+#: core/includes/class-customize.php:379
 msgid "Download our free WordPress themes"
 msgstr "Scarica i nostri temi gratuiti per WordPress"
-
-#: core/includes/class-notice.php:71
-msgid ""
-"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
-"Unlimited sidebars, Portfolio section and much more."
-msgstr ""
-"Aggiorna alla versione premium di Sueva, per attivare oltre 600 Google "
-"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
 #: core/includes/class-notice.php:72
 #: core/includes/class-plugin-activation.php:400
@@ -1777,7 +1801,7 @@ msgstr "Articolo"
 
 #: core/main.php:915
 msgid "Default image"
-msgstr ""
+msgstr "Immagine di default"
 
 #: core/metaboxes/post.php:19 core/metaboxes/post.php:32
 #: core/metaboxes/product.php:20 core/metaboxes/product.php:31

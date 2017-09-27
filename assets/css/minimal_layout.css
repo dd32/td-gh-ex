@@ -30,11 +30,15 @@ body.minimal_layout .post-article {
     border: none;
 }
 
+body.minimal_layout .pin-container , 
 body.minimal_layout .post-article {
     padding: 0;
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
 }
 
 body.minimal_layout .masonry .product-content,

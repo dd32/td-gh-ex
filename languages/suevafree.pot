@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-08 22:35+0200\n"
+"POT-Creation-Date: 2017-09-27 14:38+0200\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -81,8 +81,8 @@ msgctxt "Comment field textarea."
 msgid "Comment"
 msgstr ""
 
-#: core/admin/customize/customize.php:13 core/includes/class-customize.php:348
-msgid "Get support"
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:75
+msgid "Upgrade to Sueva Premium"
 msgstr ""
 
 #: core/admin/customize/customize.php:25 core/admin/customize/customize.php:26
@@ -1129,55 +1129,77 @@ msgstr ""
 msgid "This sidebar will be shown at the end of your content."
 msgstr ""
 
-#: core/includes/class-customize.php:75 core/includes/class-notice.php:75
-msgid "Upgrade to Sueva Premium"
+#: core/includes/class-customize.php:331
+msgid "Upgrade to Sueva Premium."
 msgstr ""
 
-#: core/includes/class-customize.php:77
+#: core/includes/class-customize.php:333 core/includes/class-notice.php:71
+msgid ""
+"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+
+#: core/includes/class-customize.php:337
+msgid "Upgrade to Sueva premium"
+msgstr ""
+
+#: core/includes/class-customize.php:345
+msgid "SuevaFree child themes."
+msgstr ""
+
+#: core/includes/class-customize.php:347
+msgid ""
+"You can also choose one of available premium child themes for SuevaFree, "
+"SvevaPro or Avana."
+msgstr ""
+
+#: core/includes/class-customize.php:351
 msgid "Upgrade to SvevaPro"
 msgstr ""
 
 #: core/includes/class-customize.php:352
+msgid "Upgrade to Avana"
+msgstr ""
+
+#: core/includes/class-customize.php:360
+msgid "Get support"
+msgstr ""
+
+#: core/includes/class-customize.php:362
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
 "a faster reply."
 msgstr ""
 
-#: core/includes/class-customize.php:356
+#: core/includes/class-customize.php:366
 msgid "Open a new ticket"
 msgstr ""
 
-#: core/includes/class-customize.php:357
+#: core/includes/class-customize.php:367
 msgid "Send a reminder"
 msgstr ""
 
-#: core/includes/class-customize.php:362
+#: core/includes/class-customize.php:372
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:366
+#: core/includes/class-customize.php:376
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:367
+#: core/includes/class-customize.php:377
 msgid "Like on Facebook"
 msgstr ""
 
-#: core/includes/class-customize.php:368
+#: core/includes/class-customize.php:378
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-customize.php:369
+#: core/includes/class-customize.php:379
 msgid "Download our free WordPress themes"
-msgstr ""
-
-#: core/includes/class-notice.php:71
-msgid ""
-"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
-"Unlimited sidebars, Portfolio section and much more."
 msgstr ""
 
 #: core/includes/class-notice.php:72
