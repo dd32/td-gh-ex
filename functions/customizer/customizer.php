@@ -107,7 +107,7 @@
 					
 					array(
 					'icon_value' => 'fa-life-ring',
-					'title'      => esc_html__( '24×7 Support', 'busiprof' ),
+					'title'      => esc_html__( '24/7 Support', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
 					'id'         => 'customizer_repeater_56d7ea7f40b96',
@@ -152,7 +152,7 @@
 					
 					array(
 					'icon_value' => 'fa-life-ring',
-					'title'      => esc_html__( '24×7 Support', 'busiprof' ),
+					'title'      => esc_html__( '24/7 Support', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
 					'id'         => 'customizer_repeater_56d7ea7f40b96',

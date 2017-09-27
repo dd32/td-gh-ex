@@ -24,9 +24,9 @@ register_sidebar( array(
 	) );
 	
 register_sidebar( array(
-	'name' => __('Woocommerce sidebar area', 'busiprof' ),
+	'name' => __('WooCommerce sidebar area', 'busiprof' ),
 	'id' => 'woocommerce-1',
-	'description' => __( 'Woocommerce sidebar area', 'busiprof' ),
+	'description' => __( 'WooCommerce sidebar area', 'busiprof' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',

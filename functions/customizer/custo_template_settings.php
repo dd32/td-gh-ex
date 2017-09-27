@@ -19,8 +19,8 @@ function busiprof_template_settings( $wp_customize ){
 	//About Pro
 		class busiprof_Customize_about_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add about us template, team section, client section then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add about us template, team section, or client section? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -44,7 +44,7 @@ function busiprof_template_settings( $wp_customize ){
 	// Enable Team Section
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[enable_team_section]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[enable_team_section]' , array(
-				'label'    => __('Enable team section', 'busiprof' ),
+				'label'    => __('Enable Team section', 'busiprof' ),
 				'section'  => 'about_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -57,7 +57,7 @@ function busiprof_template_settings( $wp_customize ){
 	// Enable Client Section
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[enable_client_section]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[enable_client_section]' , array(
-				'label'    => __( 'Enable client section', 'busiprof' ),
+				'label'    => __( 'Enable Client section', 'busiprof' ),
 				'section'  => 'about_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -77,8 +77,8 @@ function busiprof_template_settings( $wp_customize ){
 	//About Pro
 		class busiprof_Customize_service_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add service template, testimonial section, client section then','busiprof'); ?><a href="<?php echo esc_url('http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add service template, testimonial section or client section? Then','busiprof'); ?><a href="<?php echo esc_url('http://www.webriti.com/busiprof' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -104,7 +104,7 @@ function busiprof_template_settings( $wp_customize ){
 		// Enable Testimonial Section
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[enable_testimonial_section_portfolio]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[enable_testimonial_section_portfolio]' , array(
-				'label'    => __('Enable testimonial section', 'busiprof' ),
+				'label'    => __('Enable Testimonial section', 'busiprof' ),
 				'section'  => 'service_template',
 				'type'     => 'radio',
 				'choices' => array(
@@ -117,7 +117,7 @@ function busiprof_template_settings( $wp_customize ){
 		// Enable Client Section
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[enable_client_section_portfolio]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[enable_client_section_portfolio]' , array(
-				'label'    => __('Enable client section', 'busiprof' ),
+				'label'    => __('Enable Client section', 'busiprof' ),
 				'section'  => 'service_template',
 				'type'     => 'radio',
 				'choices' => array(
@@ -137,7 +137,7 @@ function busiprof_template_settings( $wp_customize ){
 		//Slug Pro
 		class busiprof_Customize_portfolio_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add project template like : Project 2 column, 3 column , 4 column and portfolio categorization than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add project templates, like: Project 2 column, 3 column, 4 column, or portfolio categorisation? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -160,7 +160,7 @@ function busiprof_template_settings( $wp_customize ){
 	
 		// Portfolio template title
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[protfolio_tag_line]', 
-		array( 'default' => __('<b>Recent</b> projects','busiprof') , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		array( 'default' => __('Recent Projects','busiprof') , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[protfolio_tag_line]', 
 			array(
 				'label'    => __('Title','busiprof' ),
@@ -171,7 +171,7 @@ function busiprof_template_settings( $wp_customize ){
 		
 		// Portfolio template desc
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[protfolio_description_tag]', 
-		array( 'default' => __('Project for select your column webdesign','busiprof') , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		array( 'default' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof') , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[protfolio_description_tag]', 
 			array(
 				'label'    => __('Description','busiprof' ),
@@ -191,8 +191,8 @@ function busiprof_template_settings( $wp_customize ){
 		//Contact Pro
 		class busiprof_Customize_contact_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add contact template google map and contact form than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add contact template, Google Maps or Contact form? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -278,7 +278,7 @@ function busiprof_template_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[contact_google_map_enabled]' , 
 		array( 'default' => '' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[contact_google_map_enabled]' , array(
-				'label'    => __('Enable Google map', 'busiprof' ),
+				'label'    => __('Enable Google Maps', 'busiprof' ),
 				'section'  => 'contact_template_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -291,7 +291,7 @@ function busiprof_template_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[google_map_url]', array( 'default' => 'https://maps.google.co.in/maps?f=q&source=s_q&hl=en&geocode=&q=Kota+Industrial+Area,+Kota,+Rajasthan&aq=2&oq=kota+&sll=25.003049,76.117499&sspn=0.020225,0.042014&t=h&ie=UTF8&hq=&hnear=Kota+Industrial+Area,+Kota,+Rajasthan&z=13&ll=25.142832,75.879538' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[google_map_url]', 
 			array(
-				'label'    => __( 'Google map URL', 'busiprof' ),
+				'label'    => __( 'Google Maps URL', 'busiprof' ),
 				'section'  => 'contact_template_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -299,7 +299,7 @@ function busiprof_template_settings( $wp_customize ){
 		
 	/* Taxonomy Archive Protfolio */
 	$wp_customize->add_section( 'texonomy_template_section' , array(
-		'title'      => __('Project archive page setting', 'busiprof'),
+		'title'      => __('Project Archive page setting', 'busiprof'),
 		'panel'  => 'template_settings',
 		'priority'   => 5,
    	) );
@@ -309,7 +309,7 @@ function busiprof_template_settings( $wp_customize ){
 		class busiprof_Customize_portfolio_texonomy_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
 			<h3><?php _e('Want to add taxonomy archive portfolio template than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}

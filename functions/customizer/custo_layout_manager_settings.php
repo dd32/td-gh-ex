@@ -17,7 +17,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 		//Layout Pro
 		class busiprof_Customize_section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to change homepage layout section than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to change the Homepage layout section? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}

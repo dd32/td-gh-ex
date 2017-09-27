@@ -94,7 +94,7 @@ if( $current_options['home_testimonial_section_enabled']=='on' ) { ?>
 						<div class="post"> 
 							<figure class="post-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $image[$i]; ?>.jpg" class="img-circle" alt="img"></figure> 	
 							<div class="entry-content">
-								<p><?php _e('We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...','busiprof'); ?></p>
+								<p><?php _e('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...','busiprof'); ?></p>
 							</div>
 							<div class="media"> 
 								<div class="media-body">

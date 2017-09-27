@@ -34,7 +34,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		// Banner strip text
 		$wp_customize->add_setting( 'busiprof_theme_options[slider_head_title]', 
-		array( 'default' => __('Backend as a service platform for any app developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		array( 'default' => __('Busiprof WordPress theme for an app and web developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[slider_head_title]', 
 			array(
 				'label'    => __( 'Infobar text', 'busiprof' ),
@@ -99,7 +99,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_setting(
 		'busiprof_theme_options[caption_text]', 
 			array(
-			'default'        => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
+			'default'        => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
@@ -168,10 +168,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Add more slider and animation effect than click upgrade to pro','busiprof');?></P>
+	 <P><?php _e('To add more more slider and animation effects click to upgrade to pro','busiprof');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to pro','busiprof' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','busiprof' ); ?></a>
 	 <div>
     <?php
     }
@@ -205,7 +205,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	// Enable service more btn
 		$wp_customize->add_setting( 'busiprof_theme_options[enable_services]' , array( 'default' => 'on' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[enable_services]' , array(
-				'label'    => __( 'Enable services on homepage', 'busiprof' ),
+				'label'    => __( 'Enable Services on homepage', 'busiprof' ),
 				'section'  => 'services_section',
 				'type'     => 'radio',
 				'priority'   => 1,
@@ -220,7 +220,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_setting(
 		'busiprof_theme_options[service_heading_one]',
 		array(
-			'default' => __('<b>Awesome</b> services','busiprof'),
+			'default' => __('Awesome Services','busiprof'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
@@ -240,7 +240,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_setting(
 		'busiprof_theme_options[service_tagline]',
 		array(
-			'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
+			'default' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
 		)	
@@ -266,10 +266,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			) );
 
 			$wp_customize->add_control( new Busiprof_Repeater( $wp_customize, 'busiprof_service_content', array(
-				'label'                             => esc_html__( 'Service Content', 'busiprof' ),
+				'label'                             => esc_html__( 'Service content', 'busiprof' ),
 				'section'                           => 'services_section',
 				'priority'                          => 4,
-				'add_field_label'                   => esc_html__( 'Add new service', 'busiprof' ),
+				'add_field_label'                   => esc_html__( 'Add new Service', 'busiprof' ),
 				'item_name'                         => esc_html__( 'Service', 'busiprof' ),
 				'customizer_repeater_icon_control'  => true,
 				'customizer_repeater_title_control' => true,
@@ -283,7 +283,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			
 		// Services Read More Text
 		$wp_customize->add_setting( 'busiprof_theme_options[service_button_value]', 
-		array( 'default' => __('More services','busiprof') , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text' ) );
+		array( 'default' => __('More Services','busiprof') , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[service_button_value]', 
 			array(
 				'label'    => __('Button Text', 'busiprof' ),
@@ -312,10 +312,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		public function render_content() {
 		?>
 		 <div class="pro-vesrion">
-		 <P><?php _e('Add more service than click upgrade to pro','busiprof');?></P>
+		 <P><?php _e('Want to add more Services? Then upgrade to Pro!','busiprof');?></P>
 		 </div>
 		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to pro','busiprof' ); ?></a>
+		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','busiprof' ); ?></a>
 		 <div>
 		<?php
 		}
@@ -347,7 +347,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		// Enable Projects
 		$wp_customize->add_setting( 'busiprof_theme_options[enable_projects]' , array( 'default' => 'on' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[enable_projects]' , array(
-				'label'    => __( 'Enable home project section', 'busiprof' ),
+				'label'    => __( 'Enable Home Project section', 'busiprof' ),
 				'section'  => 'projects_settings',
 				'type'     => 'radio',
 				'choices' => array(
@@ -359,7 +359,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		//Projects Heading One
 		$wp_customize->add_setting(
 		'busiprof_theme_options[protfolio_tag_line]', array(
-			'default'        => __('<b>Recent </b>projects','busiprof'),
+			'default'        => __('Recent Projects','busiprof'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
@@ -374,7 +374,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		//Projects Heading two
 		$wp_customize->add_setting(
 		'busiprof_theme_options[protfolio_description_tag]', array(
-			'default'        => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
+			'default'        => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
 			'type' => 'option',
@@ -396,7 +396,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_one]', array(
-			'label'   => __('Project one', 'busiprof'),
+			'label'   => __('Project One', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
@@ -445,7 +445,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_two]', array(
-			'label'   => __('Project two', 'busiprof'),
+			'label'   => __('Project Two', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
@@ -495,7 +495,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_three]', array(
-			'label'   => __('Project three', 'busiprof'),
+			'label'   => __('Project Three', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
@@ -544,7 +544,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'option',
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_title_four]', array(
-			'label'   => __('Project four', 'busiprof'),
+			'label'   => __('Project Four', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
@@ -592,10 +592,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		public function render_content() {
 		?>
 		 <div class="pro-vesrion">
-		 <P><?php _e('Want to add more projects and categorization than upgrade to pro','busiprof');?></P>
+		 <P><?php _e('Want to add more projects and categorisations? Then upgrade to Pro.','busiprof');?></P>
 		 </div>
 		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to pro','busiprof' ); ?></a>
+		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','busiprof' ); ?></a>
 		 <div>
 		<?php
 		}
@@ -617,7 +617,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		//Recent Blog Setting
 		$wp_customize->add_section( 'recent_blog_settings' , array(
-		'title'      => __('Recent blog setting', 'busiprof'),
+		'title'      => __('Recent Blog setting', 'busiprof'),
 		'panel'  => 'section_settings',
 		'priority'   => 5,
 		) );
@@ -626,7 +626,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		// Enable Recent Blog
 		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[home_recentblog_section_enabled]' , array(
-				'label'    => __( 'Enable home blog section', 'busiprof' ),
+				'label'    => __( 'Enable Home Blog section', 'busiprof' ),
 				'section'  => 'recent_blog_settings',
 				'type'     => 'radio',
 				'choices' => array(
@@ -638,7 +638,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		// Enable Recent Blog
 		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_meta_enable]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
 		$wp_customize->add_control(	'busiprof_theme_options[home_recentblog_meta_enable]' , array(
-				'label'    => __( 'Enable home blog meta', 'busiprof' ),
+				'label'    => __( 'Enable Home Blog meta', 'busiprof' ),
 				'section'  => 'recent_blog_settings',
 				'type'     => 'radio',
 				'choices' => array(
@@ -649,7 +649,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		
 		// blog section title
-		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_title]', array( 'default' => __('<b>Recent </b> blog', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_title]', array( 'default' => __('Recent Blog', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
 		$wp_customize->add_control(	'busiprof_theme_options[recent_blog_title]', 
 			array(
 				'label'    => __( 'Title', 'busiprof' ),
@@ -678,7 +678,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		$wp_customize->add_setting( 'busiprof_theme_options[home_testimonial_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
 		$wp_customize->add_control(	'busiprof_theme_options[home_testimonial_section_enabled]' , array(
-				'label'    => __( 'Enable home testimonial section', 'busiprof' ),
+				'label'    => __( 'Enable Home Testimonial section', 'busiprof' ),
 				'section'  => 'testimonial_settings',
 				'type'     => 'radio',
 				'choices' => array(
@@ -712,9 +712,9 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			) );
 
 			$wp_customize->add_control( new Busiprof_Repeater( $wp_customize, 'busiprof_testimonial_content', array(
-				'label'                             => esc_html__( 'Testimonial Content', 'busiprof' ),
+				'label'                             => esc_html__( 'Testimonial content', 'busiprof' ),
 				'section'                           => 'testimonial_settings',
-				'add_field_label'                   => esc_html__( 'Add new testimonial', 'busiprof' ),
+				'add_field_label'                   => esc_html__( 'Add new Testimonial', 'busiprof' ),
 				'item_name'                         => esc_html__( 'Testimonial', 'busiprof' ),
 				'customizer_repeater_title_control' => true,
 				'customizer_repeater_text_control'  => true,
@@ -728,7 +728,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		/* Client Slider Section */
 	$wp_customize->add_section( 'clientslider_section' , array(
-		'title'      => __('Client slider setting', 'busiprof'),
+		'title'      => __('Client Slider setting', 'busiprof'),
 		'panel'  => 'section_settings',
 		'priority'   => 7,
    	) );
@@ -738,8 +738,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		//Client Pro
 		class busiprof_Customize_client_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add client section with slider animation then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add a Client section with slider animations? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -765,7 +765,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		// Enable Client Strip
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[home_client_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field',  ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[home_client_section_enabled]' , array(
-				'label'    => __('Enable home client section', 'busiprof' ),
+				'label'    => __('Enable Home Client section', 'busiprof' ),
 				'section'  => 'clientslider_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -787,7 +787,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		
 		// Client section Description
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_desc]', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof') , 'type'=>'option' ) );
+		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_desc]', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof') , 'type'=>'option' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[client_desc]', 
 			array(
 				'label'    => __('Description', 'busiprof' ),
@@ -800,7 +800,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_strip_total]', array( 'default' => 5 , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field', ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[client_strip_total]', 
 			array(
-				'label'    => __('No. of clients show', 'busiprof' ),
+				'label'    => __('Number of shown clients', 'busiprof' ),
 				'section'  => 'clientslider_section',
 				'type'     => 'select',
 				'choices'=>array(

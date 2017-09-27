@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2017-08-24 16:33+0530\n"
-"PO-Revision-Date: 2017-08-24 16:33+0530\n"
+"POT-Creation-Date: 2017-09-27 16:26+0530\n"
+"PO-Revision-Date: 2017-09-27 16:26+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -309,7 +309,7 @@ msgstr ""
 #: functions/customizer/custo_template_settings.php:140
 #: functions/customizer/custo_template_settings.php:195
 #: functions/customizer/custo_template_settings.php:312
-msgid "Upgrade to pro"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: functions/customizer/cust_pro.php:46
@@ -401,11 +401,11 @@ msgid "Copyright text"
 msgstr ""
 
 #: functions/customizer/custo_general_settings.php:118
-msgid "Want to add social icon than"
+msgid "Want to add social icons? Then"
 msgstr ""
 
 #: functions/customizer/custo_general_settings.php:144
-msgid "Enable footer soical icons"
+msgid "Enable footer's social icons"
 msgstr ""
 
 #: functions/customizer/custo_general_settings.php:157
@@ -425,7 +425,7 @@ msgid "Theme Layout Manager"
 msgstr ""
 
 #: functions/customizer/custo_layout_manager_settings.php:20
-msgid "Want to change homepage layout section than"
+msgid "Want to change the Homepage layout section? Then"
 msgstr ""
 
 #: functions/customizer/custo_layout_manager_settings.php:49
@@ -453,7 +453,7 @@ msgid "SEO Friendly URL"
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:13
-msgid "Want to add custom post type slug than"
+msgid "Want to add a custom post type slug? Then"
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:39
@@ -461,7 +461,7 @@ msgid "Projects slug"
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:49
-msgid "Projects category slug"
+msgid "Project’s category slug "
 msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:60
@@ -470,8 +470,8 @@ msgstr ""
 
 #: functions/customizer/custo_post_slugs_settings.php:73
 msgid ""
-"After Changing the slug, please do not forget to save permalinks. Without "
-"saving, the old permalinks will not revise."
+"After changing the slug, please don't forget to save the permalinks. Without "
+"saving them, the old permalinks will not be updated."
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:13
@@ -487,7 +487,7 @@ msgid "Enable Infobar"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:37 theme_setup_data.php:37
-msgid "Backend as a service platform for any app developer"
+msgid "Busiprof WordPress theme for an app and web developer"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:40
@@ -510,12 +510,13 @@ msgstr ""
 #: functions/customizer/custo_sections_settings.php:102
 #: functions/customizer/custo_sections_settings.php:243
 #: functions/customizer/custo_sections_settings.php:377
-#: functions/customizer/custo_sections_settings.php:790 theme_setup_data.php:40
-#: theme_setup_data.php:45 theme_setup_data.php:60 theme_setup_data.php:77
-#: theme_setup_data.php:90 theme_setup_data.php:143 theme_setup_data.php:148
+#: functions/customizer/custo_sections_settings.php:790
+#: functions/customizer/custo_template_settings.php:174 theme_setup_data.php:45
+#: theme_setup_data.php:60 theme_setup_data.php:77 theme_setup_data.php:90
+#: theme_setup_data.php:143 theme_setup_data.php:148
 msgid ""
-"We are a group of passionate designers and developers who really love to "
-"create awesome wordpress themes & support"
+"We are a group of passionate designers and developers who really love "
+"creating awesome WordPress themes & giving support."
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:119
@@ -541,7 +542,7 @@ msgid "Open link in new tab"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:171
-msgid "Add more slider and animation effect than click upgrade to pro"
+msgid "To add more more slider and animation effects click to upgrade to pro"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:197
@@ -549,19 +550,19 @@ msgid "Service settings"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:208
-msgid "Enable services on homepage"
+msgid "Enable Services on homepage"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:223
-msgid "<b>Awesome</b> services"
+#: functions/customizer/custo_sections_settings.php:223 theme_setup_data.php:89
+msgid "Awesome Services"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:269
-msgid "Service Content"
+msgid "Service content"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:272
-msgid "Add new service"
+msgid "Add new Service"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:273
@@ -570,11 +571,11 @@ msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:286 theme_setup_data.php:84
 #: theme_setup_data.php:113
-msgid "More services"
+msgid "More Services"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:315
-msgid "Add more service than click upgrade to pro"
+msgid "Want to add more Services? Then upgrade to Pro!"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:341
@@ -582,11 +583,12 @@ msgid "Project settings"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:350
-msgid "Enable home project section"
+msgid "Enable Home Project section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:362 theme_setup_data.php:76
-msgid "<b>Recent </b>projects"
+#: functions/customizer/custo_sections_settings.php:362
+#: functions/customizer/custo_template_settings.php:163 theme_setup_data.php:76
+msgid "Recent Projects"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:393
@@ -599,7 +601,7 @@ msgid "Business cards"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:399
-msgid "Project one"
+msgid "Project One"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:427
@@ -612,27 +614,27 @@ msgid "Graphic design & web design"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:448
-msgid "Project two"
+msgid "Project Two"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:498
-msgid "Project three"
+msgid "Project Three"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:547
-msgid "Project four"
+msgid "Project Four"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:595
-msgid "Want to add more projects and categorization than upgrade to pro"
+msgid "Want to add more projects and categorisations? Then upgrade to Pro."
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:620
-msgid "Recent blog setting"
+msgid "Recent Blog setting"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:629
-msgid "Enable home blog section"
+msgid "Enable Home Blog section"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:633
@@ -648,11 +650,12 @@ msgid "OFF"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:641
-msgid "Enable home blog meta"
+msgid "Enable Home Blog meta"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:652
-msgid "<b>Recent </b> blog"
+#: theme_setup_data.php:153
+msgid "Recent Blog"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:661
@@ -666,20 +669,19 @@ msgid "Testimonial settings"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:681
-msgid "Enable home testimonial section"
+msgid "Enable Home Testimonial section"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:692
-#: theme_setup_data.php:139
 msgid "<b>Our</b> Testimonials"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:715
-msgid "Testimonial Content"
+msgid "Testimonial content"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:717
-msgid "Add new testimonial"
+msgid "Add new Testimonial"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:718
@@ -687,15 +689,15 @@ msgid "Testimonial"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:731
-msgid "Client slider setting"
+msgid "Client Slider setting"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:741
-msgid "Want to add client section with slider animation then"
+msgid "Want to add a Client section with slider animations? Then"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:768
-msgid "Enable home client section"
+msgid "Enable Home Client section"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:779 theme_setup_data.php:59
@@ -703,7 +705,7 @@ msgid "Meet our clients"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:803
-msgid "No. of clients show"
+msgid "Number of shown clients"
 msgstr ""
 
 #: functions/customizer/custo_sections_settings.php:815
@@ -723,16 +725,16 @@ msgid "About Us page settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:22
-msgid "Want to add about us template, team section, client section then"
+msgid "Want to add about us template, team section, or client section? Then"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:47
-msgid "Enable team section"
+msgid "Enable Team section"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:60
 #: functions/customizer/custo_template_settings.php:120
-msgid "Enable client section"
+msgid "Enable Client section"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:71
@@ -740,11 +742,12 @@ msgid "Service page settings"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:80
-msgid "Want to add service template, testimonial section, client section then"
+msgid ""
+"Want to add service template, testimonial section or client section? Then"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:107
-msgid "Enable testimonial section"
+msgid "Enable Testimonial section"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:131
@@ -753,16 +756,8 @@ msgstr ""
 
 #: functions/customizer/custo_template_settings.php:140
 msgid ""
-"Want to add project template like : Project 2 column, 3 column , 4 column "
-"and portfolio categorization than"
-msgstr ""
-
-#: functions/customizer/custo_template_settings.php:163
-msgid "<b>Recent</b> projects"
-msgstr ""
-
-#: functions/customizer/custo_template_settings.php:174
-msgid "Project for select your column webdesign"
+"Want to add project templates, like: Project 2 column, 3 column, 4 column, "
+"or portfolio categorisation? Then"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:185
@@ -770,7 +765,7 @@ msgid "Contact page setting"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:194
-msgid "Want to add contact template google map and contact form than"
+msgid "Want to add contact template, Google Maps or Contact form? Then"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:220
@@ -794,15 +789,15 @@ msgid "Website"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:281
-msgid "Enable Google map"
+msgid "Enable Google Maps"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:294
-msgid "Google map URL"
+msgid "Google Maps URL"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:302
-msgid "Project archive page setting"
+msgid "Project Archive page setting"
 msgstr ""
 
 #: functions/customizer/custo_template_settings.php:311
@@ -843,7 +838,7 @@ msgstr ""
 
 #: functions/customizer/customizer.php:110
 #: functions/customizer/customizer.php:155 index-services.php:172
-msgid "24×7 Support"
+msgid "24/7 Support"
 msgstr ""
 
 #: functions/widgets/custom-widgets.php:7
@@ -858,14 +853,14 @@ msgstr ""
 
 #: functions/widgets/custom-widgets.php:27
 #: functions/widgets/custom-widgets.php:29
-msgid "Woocommerce sidebar area"
+msgid "WooCommerce sidebar area"
 msgstr ""
 
 #: index-testimonials.php:97
 msgid ""
-"We are group of passionate designers and developers who really love to "
-"create wordpress themes with amazing support. Widest laborum dolo rumes "
-"fugats untras. Ethar omnis iste natus error sit voluptatem "
+"We are a group of passionate designers and developers who really love "
+"creating awesome WordPress themes & giving support. Widest laborum dolo "
+"rumes fugats untras. Ethar omnis iste natus error sit voluptatem "
 "accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem "
 "ipsum am quaerat voluptatem..."
 msgstr ""
@@ -888,16 +883,18 @@ msgstr ""
 msgid "Tag  Archive"
 msgstr ""
 
-#: theme_setup_data.php:89
-msgid "<b>Awesome</b>services"
+#: theme_setup_data.php:40
+msgid ""
+"We are a group of passionate designers and developers who really love to "
+"create awesome wordpress themes & support"
+msgstr ""
+
+#: theme_setup_data.php:139
+msgid "Our Testimonials"
 msgstr ""
 
 #: theme_setup_data.php:145 theme_setup_data.php:150
 msgid "(Sales & Marketing)"
-msgstr ""
-
-#: theme_setup_data.php:153
-msgid "<b>Recent</b> blog"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -905,7 +902,7 @@ msgid "Busiprof"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/busiprof-premium-wordpress-theme-1/"
+msgid "https://webriti.com/busiprof-premium-wordpress-theme-1/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -913,5 +910,5 @@ msgid "webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://www.webriti.com"
+msgid "https://www.webriti.com"
 msgstr ""

@@ -115,9 +115,9 @@ function busiprof_general_settings( $wp_customize ){
 		//Layout Pro
 		class busiprof_Customize_social_icon_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add social icon than','busiprof'); ?>
+			<h3><?php _e('Want to add social icons? Then','busiprof'); ?>
 			<a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -141,7 +141,7 @@ function busiprof_general_settings( $wp_customize ){
 		// Enable footer social icons
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_social_media_enabled]' , array( 'default' =>'' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_social_media_enabled]' , array(
-				'label'    => __( 'Enable footer soical icons', 'busiprof' ),
+				'label'    => __( "Enable footer's social icons", "busiprof" ),
 				'section'  => 'social_icons_section',
 				'type'     => 'radio',
 				'choices' => array(

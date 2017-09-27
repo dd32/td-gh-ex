@@ -10,7 +10,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		//Portfolio Pro
 		class busiprof_Customize_slug_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add custom post type slug than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add a custom post type slug? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -46,7 +46,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_portfolio_slug]', array( 'default' => 'project-category' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_portfolio_slug]', 
 			array(
-				'label'    => __( 'Projects category slug', 'busiprof' ),
+				'label'    => __( "Project’s category slug ", "busiprof" ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -70,7 +70,7 @@ class WP_amenities_Customize_Control extends WP_Customize_Control {
     */
     public function render_content() {
     ?>
-    <p><?php _e('After Changing the slug, please do not forget to save permalinks. Without saving, the old permalinks will not revise.', 'busiprof' ); ?></p>
+    <p><?php _e("After changing the slug, please don't forget to save the permalinks. Without saving them, the old permalinks will not be updated.", "busiprof" ); ?></p>
     <?php
     }
 }

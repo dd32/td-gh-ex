@@ -55,6 +55,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.8
+1. Strings Updated (Suggested by Transifex)
+@version 1.8.7
+1. Strings Updated (Suggested by Transifex)
 @version 1.8.6
 1. Added Bredcrumb navigation.
 @version 1.8.5
