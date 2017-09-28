@@ -308,7 +308,7 @@ function busiprof_template_settings( $wp_customize ){
 		//Texonomy Archive Pro
 		class busiprof_Customize_portfolio_texonomy_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add taxonomy archive portfolio template than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
+			<h3><?php _e('Want to add a taxonomy archive portfolio template? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
 			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
 			<?php
 			}

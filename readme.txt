@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.9
+1. Strings Updated (Suggested by Transifex)
 @version 1.8.8
 1. Strings Updated (Suggested by Transifex)
 @version 1.8.7

@@ -34,10 +34,10 @@ function theme_setup_data()
 			
 			'home_banner_strip_enabled' => 'on',
 			'home_page_slider_enabled' => 'on',
-			'slider_head_title' =>__('Busiprof WordPress theme for an app and web developer','busiprof'),//Slide Heading
+			'slider_head_title' =>__('Busiprof: the perfect WordPress theme for an app and web developer','busiprof'),//Slide Heading
 			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
 			'caption_head' =>__('Responsive WP theme','busiprof'),//Image Caption Heading
-			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Caption detail
+			'caption_text' =>__('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),//Caption detail
 			'readmore_text' => __('Read More','busiprof'),
 			'readmore_text_link' => "#",
 			'image_url'=>  $template_uri .'home_slide.jpg',//Slide Image
