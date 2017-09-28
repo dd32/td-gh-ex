@@ -39,15 +39,6 @@ get_header(); ?>
 
 <div class="col-md-12">
 
-<ul class="blog-page-nation">
-   
-	<?php
-      if (function_exists('aquaparallax_pagination')) {
-        aquaparallax_pagination();
-      }
-    ?>
-</ul>
-
 <?php wp_reset_postdata(); ?>
 <?php else:  ?>
  

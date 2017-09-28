@@ -1,7 +1,7 @@
 === Aquaparallax ===
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.8.2
-Version: 1.4
+Version: 1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -52,15 +52,29 @@ Copyright 2017 wordpress themes Aquaparallax is distributed under the terms of t
     License: Apache License, Version 2.0
     License URI: http://www.apache.org/licenses/LICENSE-2.0
 
-*   Banner image 
-    Copyright: ErikaWittlieb
-    Resource URI: https://pixabay.com/en/bicycle-bike-red-biking-cycle-2505476/
-    License: CC0 1.0 Universal (CC0 1.0)
-    License URI: https://creativecommons.org/publicdomain/zero/1.0  
-
 *   Mean menu,
     License: MIT License
 
 *   WP Bootstrap Navwalker
     License: GPL-3.0+
     License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+
+== Images ==
+*   Banner
+    Copyright: ErikaWittlieb
+    Resource URI: https://pixabay.com/en/bicycle-bike-red-biking-cycle-2505476/
+    License: CC0 1.0 Universal (CC0 1.0)
+    License URI: https://creativecommons.org/publicdomain/zero/1.0 
+
+*   Flower-2505115_1280
+    Copyright: daffymommy
+    Resource URI: https://pixabay.com/en/flower-yellow-wild-yellow-flowers-2505115/
+    License: CC0 1.0 Universal (CC0 1.0)
+    License URI: https://creativecommons.org/publicdomain/zero/1.0 
+
+*   Soap-bubble-2403673_1920
+    Copyright: Alexas_Fotos
+    Resource URI: https://pixabay.com/en/soap-bubble-huge-large-2403673/
+    License: CC0 1.0 Universal (CC0 1.0)
+    License URI: https://creativecommons.org/publicdomain/zero/1.0 
+ 

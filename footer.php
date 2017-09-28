@@ -62,9 +62,7 @@
     <div class="container">
     <div class="row">
     <div class="col-md-12">
-   
-    <p><?php echo esc_html_e( 'Proudly powered by WordPress | Theme: Aquaparallax', 'aquaparallax' ); ?></p>
-    
+ 	<p><?php echo esc_html_e( 'Proudly powered by WordPress | Theme: Aquaparallax', 'aquaparallax' ); ?></p>
     </div>
     </div>
     </div>
