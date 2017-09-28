@@ -4,7 +4,7 @@ Theme Name: Base For Original
 Description: Base For Original is simpler, inorganic, less tasty theme than any theme. Base For Original is the basis of original theme creation, and supports to create your own original theme. This theme contains the minimum necessary files on the typical Web site. Please use this theme to create your own original theme or lerning.
 Author: Wildworks
 Author URI: https://profiles.wordpress.org/wildworks/
-Version: 1.0
+Version: 1.01
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, editor-style, threaded-comments, right-sidebar, sticky-post, full-width-template, translation-ready
@@ -442,10 +442,56 @@ footer #copyright{
 }
 
 /******************************************************
+*  Style for Front Page (displays Your latest posts)
+*
+* - The body tag has 'home' when you select 'Front page displays Your latest posts'.
+* - Describe here if you want to define unique style on the Front Page.
+******************************************************/
+
+/*Style for the article box. */
+.home .archive-entry{
+  display: table;
+  border: 1px #BBB solid;
+  padding: 10px;
+  width: 100%;
+}
+
+/*Style for the article thumbnail. */
+.home .archive-entry .entry-thumbnail{
+  display: table-cell;
+  width: 200px; /*Set the width of the thumbnail.*/
+  vertical-align: middle;
+}
+
+/*Style for the article title and excerpt. */
+.home .archive-entry .entry-main{
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+}
+.home .archive-entry .entry-main h3 a{
+  font-size: 18px;
+}
+
+@media screen and (max-width:768px) {
+  .home .archive-entry .entry-thumbnail{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .home .archive-entry .entry-thumbnail img{
+    max-width: 200px;
+  }
+  .home .archive-entry .entry-main{
+    display: block;
+  }
+}
+
+/******************************************************
 *  Style for Single Page
 *
 * - The body tag has 'single' class on the single page.
-* - Describe here.If you want to define unique style on the single page.
+* - Describe here if you want to define unique style on the single page.
 ******************************************************/
 
 /*Style for the article title.*/
@@ -490,8 +536,9 @@ footer #copyright{
 
 /******************************************************
 *  Style for Archive Page
+*
 * - The body tag has 'archive' class on the archive page.
-* - Describe here.If you want to define unique style on the archive page.
+* - Describe here if you want to define unique style on the archive page.
 ******************************************************/
 
 /*Style for the archive category title.*/
@@ -499,6 +546,7 @@ footer #copyright{
   font-size: 20px;
 }
 
+/*Style for the article box. */
 .archive .archive-entry{
   display: table;
   border: 1px #BBB solid;
@@ -541,7 +589,7 @@ footer #copyright{
 *  Style for Front Page
 *
 * - Body element has 'home' class on the front page.
-* - Describe here.If you want to define unique style on the front page.
+* - Describe here if you want to define unique style on the front page.
 ******************************************************/
 
 .home #primary main{
@@ -551,7 +599,7 @@ footer #copyright{
 *  Style for Page (xxx)
 *
 * - Body element has 'page-xxx' class on the page. ('xxx' is the page slug.)
-* - Describe here.If you want to define unique style on the page.
+* - Describe here if you want to define unique style on the page.
 ******************************************************/
 
 .page-xxx #primary main{

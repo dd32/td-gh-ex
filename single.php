@@ -20,7 +20,7 @@ get_header(); ?>
             <?php the_time('Y.m.d');?>
           </div><!-- .entry-date -->
           <h2 class="entry-title">
-            <?php the_title_attribute();?>
+            <?php the_title();?>
           </h2><!-- .entry-title -->
 
           <?php if(has_post_thumbnail()):?>

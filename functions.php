@@ -59,10 +59,6 @@ function base_for_original_setup(){
   // The visual editor stylesheet
   add_editor_style('css/editor-style.css');
 
-  // Delete unnecessary meta tag
-  remove_action('wp_head', 'wp_generator');
-  remove_action('wp_head', 'rsd_link');
-  remove_action('wp_head', 'wlwmanifest_link');
 }
 add_action('after_setup_theme','base_for_original_setup');
 
@@ -114,21 +110,5 @@ function base_for_original_body_pagename_class($classes = ''){
   return $classes;
 }
 add_filter('body_class', 'base_for_original_body_pagename_class');
-
-/**
- * Disable visual editor in page
- */
-function base_for_original_disable_visual_editor_in_page(){
-  global $typenow;
-  if($typenow == 'page'){
-    add_filter( 'user_can_richedit' , 'base_for_original_disable_visual_editor_in_page' );
-  }
-}
-add_action( 'load-post.php' , 'base_for_original_disable_visual_editor_in_page' );
-
-function base_for_original_disable_visual_editor_filter(){
-  return false;
-}
-add_action( 'load-post-new.php' , 'base_for_original_disable_visual_editor_filter' );
 
 ?>

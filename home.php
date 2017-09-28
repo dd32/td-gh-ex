@@ -16,8 +16,6 @@ get_header(); ?>
       <main id="main" role="main" class="clearfix">
         <?php if ( have_posts() ) : ?>
 
-        <h2 class="archive-title"><?php the_archive_title(); ?></h2>
-
         <?php while ( have_posts() ) : the_post(); ?>
 
         <article class="archive-entry">

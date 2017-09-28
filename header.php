@@ -38,7 +38,11 @@
   <div class="container">
     <nav>
       <ul>
-        <li><a href="<?php echo esc_url(home_url());?>">header-menu-1</a></li>
+    <?php wp_nav_menu( array(
+      'theme_location'  => 'globalnav',
+      'container_class' => 'globalnav clearfix',
+      'menu_class'      => 'globalnav clearfix',
+    ) ); ?>        <li><a href="<?php echo esc_url(home_url());?>">header-menu-1</a></li>
         <li><a href="<?php echo esc_url(home_url());?>">header-menu-2</a></li>
         <li><a href="<?php echo esc_url(home_url());?>">header-menu-3</a></li>
         <li><a href="<?php echo esc_url(home_url());?>">header-menu-4</a></li>

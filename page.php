@@ -14,7 +14,7 @@ get_header(); ?>
   <div id="main_visual">
     <h2 class="container">
     <?php if(!is_front_page()):?>
-      <?php the_title_attribute();?>
+      <?php the_title();?>
     <?php endif;?>
     </h2>
   </div><!-- #main_visual -->
