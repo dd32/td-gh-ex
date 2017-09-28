@@ -38,7 +38,17 @@ get_header(); ?>
 <div class="row">
 
 <div class="col-md-12">
+ 
+ <div class="aqua-pagination">
 
+	<?php the_posts_pagination( array(
+		'screen_reader_text' => ' ', 
+		'mid_size' => 2,
+		'prev_text' => __( 'Previous', 'aquaparallax' ),
+	    'next_text' => __( 'Next', 'aquaparallax' ),
+	) ); ?>
+
+  </div>	
 <?php wp_reset_postdata(); ?>
 <?php else:  ?>
  

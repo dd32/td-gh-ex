@@ -1,7 +1,7 @@
 === Aquaparallax ===
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.8.2
-Version: 1.5
+Version: 1.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
