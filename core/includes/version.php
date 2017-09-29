@@ -1,12 +1,13 @@
 <?php
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Version Control
+ *
  *
  * @file           version.php
  * @package        WordPress
@@ -23,32 +24,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 function responsive_template_data() {
 	echo '<!-- We need this for debugging -->' . "\n";
-	echo '<!-- ' . responsive_get_template_name() . ' ' . responsive_get_template_version() . ' -->' . "\n";
+	echo '<!-- ' . get_responsive_template_name() . ' ' . get_responsive_template_version() . ' -->' . "\n";
 }
 
 add_action( 'wp_head', 'responsive_template_data' );
 
 function responsive_theme_data() {
 	if ( is_child_theme() ) {
-		echo '<!-- ' . responsive_get_theme_name() . ' ' . responsive_get_theme_version() . ' -->' . "\n";
+		echo '<!-- ' . get_responsive_theme_name() . ' ' . get_responsive_theme_version() . ' -->' . "\n";
 	}
 }
 
 add_action( 'wp_head', 'responsive_theme_data' );
 
-function responsive_get_theme_name() {
+function get_responsive_theme_name() {
 	$theme = wp_get_theme();
 
 	return $theme->Name;
 }
 
-function responsive_get_theme_version() {
+function get_responsive_theme_version() {
 	$theme = wp_get_theme();
 
 	return $theme->Version;
 }
 
-function responsive_get_template_name() {
+function get_responsive_template_name() {
 	$theme  = wp_get_theme();
 	$parent = $theme->parent();
 	if ( $parent ) {
@@ -58,7 +59,7 @@ function responsive_get_template_name() {
 	return $theme->Name;
 }
 
-function responsive_get_template_version() {
+function get_responsive_template_version() {
 	$theme  = wp_get_theme();
 	$parent = $theme->parent();
 	if ( $parent ) {

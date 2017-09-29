@@ -1,12 +1,13 @@
 <?php
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Main Widget Template
+ *
  *
  * @file           sidebar-left.php
  * @package        Responsive
@@ -20,11 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 ?>
 <?php responsive_widgets_before(); // above widgets container hook ?>
-	<aside id="widgets" class="grid-right col-300 rtl-fit" role="complementary">
+	<div id="widgets" class="grid-right col-300 rtl-fit" role="complementary">
 		<?php responsive_widgets(); // above widgets hook ?>
+
 		<?php if ( !dynamic_sidebar( 'left-sidebar' ) ) : ?>
-			<?php dynamic_sidebar( 'main-sidebar' ); ?>
-		<?php endif; //end of ReflectionFunctionAbstract-sidebar ?>
+			<div class="widget-wrapper">
+
+				<div class="widget-title"><h3><?php _e( 'In Archive', 'responsive' ); ?></h3></div>
+				<ul>
+					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+				</ul>
+
+			</div><!-- end of .widget-wrapper -->
+		<?php endif; //end of right-left ?>
+
 		<?php responsive_widgets_end(); // after widgets hook ?>
-	</aside><!-- end of #widgets -->
+	</div><!-- end of #widgets -->
 <?php responsive_widgets_after(); // after widgets container hook ?>
