@@ -207,13 +207,13 @@ add_filter('dynamic_sidebar_params','basic_store_widgets_count');
 /**
  * Enqueue scripts and styles.
  *
- * @version 1.0.0
+ * @version 1.4.0
  * @since   1.0.0
  */
 function basic_store_scripts() {
 	wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
 	wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/woocommerce-layout.css' );
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/basicstore.css' );
 	wp_enqueue_style( 'basicstore-wp-style', get_stylesheet_directory_uri() . '/assets/css/wp.css' );
 	wp_enqueue_style( 'basicstore-main-style', get_stylesheet_directory_uri() . '/assets/css/theme.css' );
 	wp_enqueue_script( 'basicstore-bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array( 'jquery' ), '', true );

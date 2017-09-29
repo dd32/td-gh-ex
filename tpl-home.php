@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php
 				$latest_product = get_theme_mod( 'latest_product_disable', '1' );
 				if( $latest_product == '1' ) :
-			?> 
+			?>
 				<h2><?php _e('Latest Products' , 'basicstore' ); ?> </h2>
 				<?php echo do_shortcode('[recent_products per_page="4" columns="4"]'); ?>
 			<?php

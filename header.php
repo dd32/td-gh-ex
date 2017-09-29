@@ -4,7 +4,7 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @version 1.3.9
+ * @version 1.4.0
  * @since   1.0.0
  *
  * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -100,13 +100,7 @@
 		$header_image_style = 'background-image:url(' . esc_url( $header_image ) . ');';
 	} else {
 		$header_image_style = '';
-	}
-	if ( $custom_header->width ) {
-		$header_image_style .= 'max-width:' . $custom_header->width . 'px;';
-	}
-	if ( $custom_header->height ) {
-		$header_image_style .= 'height:' . $custom_header->height . 'px;';
-	}
+	}	
 	?>
 
     <?php
