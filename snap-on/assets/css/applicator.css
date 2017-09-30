@@ -1,3 +1,13 @@
+/*------------------ Variables ------------------*/
+.html
+{
+    --post-banner-vis--height: 10rem;
+}
+
+
+
+
+
 /*------------------ Visually Hidden ------------------*/
 .visually-hidden,
 
@@ -8,10 +18,44 @@
 .page .comments-actions-snippet,
 .page .comment-md,
 
-/* Page Nav */
-.entries---hr .page-nav
+/* Nav */
+.main-content---hr_cr .page-nav,
+.entry---hr .entry-nav,
+
+/* Edit Action */
+.edit-post-action .post-title---txt,
+.edit-comment-action .comment-title---txt,
+
+/* Comments */
+.post-header-aside .comment-creation-ability,
+.post-header-aside .comments-population--empty .comments-population,
+.comment-creation-ability--disabled.comments-population--empty .comment-md,
+.comments-population--empty .comments-empty-note,
+.comment-creation-glabel,
+.comment-form .open-parenthesis---txt,
+.comment-form .close-parenthesis---txt,
+.comments-heading,
+.comment-title,
+.comment-reply-axn .to---txt,
+.comment-reply-axn .comment---txt,
+#cancel-comment-reply-link .to---txt,
+#cancel-comment-reply-link .comment---txt,
+.logged-in .commenter-comment-creation-flabel,
+.comments---hr .comments-nav
 {
-    position:absolute;margin:-1px;padding:0;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
+    position:absolute;margin:-1px;padding:0;width:1px;min-width:auto;height:1px;min-height:auto;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
+}
+
+
+
+
+
+/*------------------ Unlist ------------------*/
+.unlist
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -34,7 +78,199 @@
 
 
 
-.page .main-post-title---a
+/*------------------ Post ------------------*/
+.post a
 {
     text-decoration: none;
+}
+
+.post a:hover
+{
+    text-decoration: underline;
+}
+
+.view--detail .main-post-title---a
+{
+    color: black;
+}
+
+
+
+
+
+/*------------------ Comments ------------------*/
+.comments a
+{
+    text-decoration: none;
+}
+
+.comments a:hover
+{
+    text-decoration: underline;
+}
+
+.comments-header-aside .comments-actions-snippet .comments-count-axn---a
+{
+    color: black;
+}
+
+.comments-header-aside .comments-actions-snippet .comments-count-axn---a:hover{
+    text-decoration: none;
+}
+
+.comments-header-aside .comments-actions-snippet .comments-count-axn---a .comments-label---txt
+{
+    margin-right: var(--glabel--between--spacing);
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.optional---txt
+{
+    color: gray;
+    font-size: .75rem;
+    text-transform: capitalize;
+}
+
+.commenter-url-creation-flabel---l
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.comment-form .creation--invalid .input-text
+{
+    border-color: var(--color--record-red);
+}
+
+.comment-form .creation--valid .input-text
+{
+    border-color: var(--color--go-green);
+}
+
+.comment-title,
+.edit-comment-action
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.comments-header-aside---cr
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+.signed-in-acct---cr
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.signed-in-acct---hr
+{
+    flex: 1 100%;
+}
+
+.signed-in-account a
+{
+    text-decoration: none;
+}
+
+.signed-in-account a:hover
+{
+    text-decoration: underline;
+}
+
+.comment-md---cr
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+
+
+
+
+/*------------ Juxtapose Post Title and Edit Action ------------*/
+.main-post-title,
+.edit-post-action
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+/*------------ Juxtapose Post Published and Modified and Post Author ------------*/
+.post-published-modified,
+.published-post-author,
+.apl-post-categories
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.comment-published,
+.published-comment-commenter
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+/*------------ Post Meta ------------*/
+.post-published-date-and-time-stamp
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+.author-name,
+.author-avatar
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+
+
+
+
+/*------------ Comment Meta ------------*/
+.comment-published-date-and-time-stamp
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+.commenter-name,
+.commenter-avatar
+{
+    padding-top: var(--component--spacing-y);
+    padding-bottom: var(--component--spacing-y);
+}
+
+
+
+
+
+/*------------ Widget ------------*/
+.widget a
+{
+    text-decoration: none;
+}
+
+.widget a:hover
+{
+    text-decoration: underline;
 }

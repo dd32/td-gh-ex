@@ -11,11 +11,13 @@
         $aplApplicatorMainSearch = $html.closest( '.applicator--main-search' ),
         $aplApplicatorSubNav = $html.closest( '.applicator--sub-nav' ),
         $aplApplicatorMainMenu = $html.closest( '.applicator--main-menu' ),
-        $aplApplicatorEasyAccessNav = $html.closest( '.applicator--easy-access-nav' ),
+        $applicatorComments = $html.closest( '.applicator--comments' ),
+        $applicatorPageNav = $html.closest( '.applicator--page-nav' ),
         
         $mainHrAsEnabled = $html.closest( '.main-header-aside--enabled' ),
         
         showHideTxtCss = 'show-hide---txt',
+        showHideTxtLabelCss = 'show-hide---l',
         
         funcTerm = 'func',
         
@@ -23,7 +25,8 @@
         tabKeyInactCss = 'tab-key--inactive',
         
         $page = $( '#page' ),
-        pageHeight = $page.height(),
+        
+        pageHeight,
         
         $webProductContainer = $page.find( '.wbp---cr' ),
         $webProductCopyright = $( '#web-product-copyright' ),
@@ -113,7 +116,7 @@
         } );
         
 
-        // Deactivate upon presseing ESC Key
+        // Deactivate via keyboard ESC key
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
@@ -177,7 +180,7 @@
         // Initiate
         goStartNavDeactivate();
         
-        ( function() {
+        function goStartNav() {
             
             bodyOffsetCriteriaHeight = document.body.offsetHeight / 2;
             bodyOffsetHeight = document.body.offsetHeight;
@@ -188,14 +191,24 @@
                 $window.scroll( function( e ) {
                     
                     if ( ( ( window.innerHeight + window.pageYOffset ) >= ( bodyOffsetHeight / 4 ) ) && ( ! window.pageYOffset == 0 ) ) {
+                        
                         goStartNavActivate();
-                    } else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetHeight / 4 ) ) || ( window.pageYOffset == 0 ) ) {
+                    
+                    }
+                    else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetHeight / 4 ) ) || ( window.pageYOffset == 0 ) ) {
+                        
                         goStartNavDeactivate();
+                    
                     }
                     
                 } );
             }
-        }() );
+        }
+        goStartNav();
+        
+        new ResizeSensor( $page, function() {
+            goStartNav();
+        } );
         
     
         // Smooth Scroll to #start
@@ -370,24 +383,24 @@
         // Click
         ( function() {
             $mainMenuTogBtn.on( 'click.applicator', function( e ) {
-                var _this = $( this );
+                var $this = $( this );
                 e.preventDefault();
                 mainMenuToggle();
-                $window.scrollTop( _this.position().top );
+                $window.scrollTop( $this.position().top );
             } );
         }() );
         
         // For Calendar links
         // $mainMenuTogBtn.click();
         
-        // Deactivate upon interaction outside specified elements
+        // Deactivate via external click
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
             if ( $cp.hasClass( mainMenuActCss ) && ( ! $( e.target ).closest( $mainMenuTog ).length ) && ( ! $( e.target ).closest( $mainHrAsCt ).length ) ) {
                 mainMenuDeactivate();
             }
         } );
 
-        // Deactivate upon presseing ESC Key
+        // Deactivate via keyboard ESC key
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( $cp.hasClass( mainMenuActCss ) && e.keyCode == 27 ) {
@@ -396,15 +409,244 @@
             } );
         } );
         
-    } // Main Menu
-
+    }
     initMainMenu( $( '#main-header-aside' ) );
     
     
     
     
     
-    /*------------------------ Main Search ------------------------*/
+    /*------------------------ Comments ------------------------*/
+    function initComments( $cp ) {
+        
+        
+        // Don't proceed if Applicator Comments CSS Class name isn't found
+        if ( ! $applicatorComments.length ) {
+            return;
+        }
+
+        
+        // Functionality Name
+        funcName = 'comments-func';
+
+        
+        // Variables
+        var commentsToggleObjectMU,
+            commentsToggleButtonMU,
+            commentsToggleButtonLabelMU,
+            commentsToggleButtonTextLabelMU,
+            
+            $comments = $( '#comments' ),
+            
+            $commentModuleH,
+            $commentModuleCT,
+            $commentsCountAction,
+            $commentsToggleButton,
+            $commentsToggleButtonTextLabel,
+            
+            $commentsCount,
+            
+            $commentsShowL = aplDataComments.commentsShowL,
+            $commentsHideL = aplDataComments.commentsHideL,
+            
+            aplCommentsOnCSS = 'apl--comments--active',
+            aplCommentsOffCSS = 'apl--comments--inactive',
+            
+            commentsOnCSS = 'comments--active',
+            commentsOffCSS = 'comments--inactive'
+        ;
+
+        
+        // Add CSS Class names to Component
+        $cp.addClass( funcTerm + ' ' + funcName );
+
+        
+        // Build Markup
+        ( function() {
+            
+            var commentsToggleTerm = 'comments-toggle';
+
+            // Text Label
+            commentsToggleButtonTextLabelMU = $( '<span />', {
+                'class': 'l' + ' ' + showHideTxtLabelCss,
+                'text': $commentsHideL
+            } );
+
+            // Button Label
+            commentsToggleButtonLabelMU = $( '<span />', {
+                'class': 'b_l' + ' ' + commentsToggleTerm + '---b_l'
+            } )
+                .append( commentsToggleButtonTextLabelMU );
+
+            // Button
+            commentsToggleButtonMU = $( '<button />', {
+                'id' : commentsToggleTerm + '---b',
+                'class': 'b' + ' ' + commentsToggleTerm + '---b',
+                'title': $commentsHideL
+            } ).append( commentsToggleButtonLabelMU );
+
+            // Object
+            commentsToggleObjectMU = $( '<div />', {
+                'class': 'obj toggle' + ' ' + commentsToggleTerm,
+                'data-name': 'Comments Toggle OBJ'
+            } ).append( commentsToggleButtonMU );
+
+        }() );
+        
+        
+        // Define existing elements
+        $commentModuleH = $cp.find( '.comment-md---h' );
+        $commentModuleCT = $cp.find( '.comment-md---ct' );
+        $commentsCountAction = $( '.comments-actions-snippet' ).find( '.comments-count-axn---a' );
+
+        
+        // Insert Markup
+        $commentModuleH.after( commentsToggleObjectMU );
+        
+        
+        // Define elements after inserting the markup
+        $commentsToggleButton = $( '#comments-toggle---b' );
+        $commentsToggleButtonTextLabel = $commentsToggleButton.find( '.show-hide---l' );
+        
+        // To insert beside the button label
+        $commentsCount = $( '#comments-header-aside' ).find( '.comments-count---txt' );
+        $commentsCount.clone().insertAfter( $commentsToggleButtonTextLabel );
+        
+        
+        // Activate Comments
+        function commentsActivate() {
+            
+            $cp
+                .addClass( commentsOnCSS )
+                .removeClass( commentsOffCSS );
+            
+            $html
+                .addClass( aplCommentsOnCSS )
+                .removeClass( aplCommentsOffCSS );
+            
+            $commentsToggleButton.attr( {
+                 'aria-expanded': 'true',
+                 'title': $commentsHideL
+                
+            } );
+            
+            // Swap text label and icon
+            $commentsToggleButtonTextLabel.text( $commentsHideL );
+            
+            // Mimic Target
+            $window.scrollTop( $comments.position().top );
+        }
+        
+        
+        // Deactivate Comments
+        function commentsDeactivate() {
+            
+            $cp
+                .addClass( commentsOffCSS )
+                .removeClass( commentsOnCSS );
+            
+            $html
+                .addClass( aplCommentsOffCSS )
+                .removeClass( aplCommentsOnCSS );
+            
+            $commentsToggleButton.attr( {
+                 'aria-expanded': 'false',
+                 'title': $commentsShowL
+                
+            } );
+            
+            // Swap text label and icon
+            $commentsToggleButtonTextLabel.text( $commentsShowL );
+        }
+        
+        // Initialize Deactivate
+        commentsDeactivate();
+        
+        
+        // Toggle
+        function commentsToggle() {
+            
+            if ( $cp.hasClass( commentsOffCSS ) ) {
+                
+                commentsActivate();
+                location.hash = '#comments';
+            
+            }
+            else if ( $cp.hasClass( commentsOnCSS ) ) {
+                
+                commentsDeactivate();
+                location.hash = '';
+            }
+        }
+        
+        
+        // Button Clicks
+        ( function() {
+            
+            $commentsToggleButton.on( 'click.applicator', function( e ) {
+                var $this = $( this );
+                e.preventDefault();
+                
+                commentsToggle();
+            } );
+        
+        }() );
+        
+        
+        // Link Clicks
+        ( function() {
+            
+            $commentsCountAction.on( 'click.applicator', function() {
+                var $this = $( this );
+                
+                commentsActivate();
+            } );
+        
+        }() );
+        
+        
+        $document.ready( function () {
+            
+            if ( window.location.hash.indexOf( '#comment' ) !== -1 ) {
+                commentsActivate();
+            }
+        
+        } );
+        
+        
+        /*
+        // Deactivate via external click
+        $document.on( 'touchmove.applicator click.applicator', function ( e ) {
+            
+            if ( $cp.hasClass( commentsOnCSS ) && ( ! $( e.target ).closest( $commentsToggleButton ).length && ! $( e.target ).closest( $commentModuleCT ).length && ! $( e.target ).closest( $commentsCountAction ).length ) ) {
+                commentsDeactivate();
+            }
+        
+        } );
+
+        
+        // Deactivate via keyboard ESC key
+        $window.load( function() {
+            
+            $document.on( 'keyup.applicator', function ( e ) {
+                
+                if ( $cp.hasClass( commentsOnCSS ) && e.keyCode == 27 ) {
+                    commentsDeactivate();
+                }
+                
+            } );
+        
+        } );
+        */
+
+    }
+    initComments( $( '#comment-md' ) );
+    
+    
+    
+    
+    
+        /*------------------------ Main Search ------------------------*/
     ( function() {
         
         if ( ! $aplApplicatorMainSearch.length ) {
@@ -414,7 +656,7 @@
         $( '#main-actions' )
             .find( $( '.main-actions---ct_cr' ) )
                 .children( '.search:first' )
-                    .attr( 'id', 'main-search-func' );
+                    .attr( 'id', 'main-search' );
     }() );
     
     function initMainSearch( $cp ) {
@@ -425,9 +667,7 @@
         
         funcName = 'main-search-func';
         
-        $cp
-            .addClass( funcName )
-            .addClass( funcTerm );
+        $cp.addClass( funcTerm + ' ' + funcName );
         
         var mainSearchTogObjMu,
             mainSearchTogBtnMu,
@@ -442,14 +682,14 @@
             mainSearchInputEmpCss = 'main-search-input--empty',
             mainSearchInputPopCss = 'main-search-input--populated',
             
-            $mainSearchTogSearchIco = $( aplDataArbitNav.mainSearchTogCtrlSearchIco ),
-            $mainSearchTogDismissIco = $( aplDataArbitNav.mainSearchTogDismissIco ),
+            $mainSearchTogSearchIco = $( aplDataMainSearch.mainSearchTogCtrlSearchIco ),
+            $mainSearchTogDismissIco = $( aplDataMainSearch.mainSearchTogDismissIco ),
             
-            $mainSearchSearchIco = $( aplDataArbitNav.mainSearchSearchIco ),
-            $mainSearchDismissIco = $( aplDataArbitNav.mainSearchDismissIco ),
+            $mainSearchSearchIco = $( aplDataMainSearch.mainSearchSearchIco ),
+            $mainSearchDismissIco = $( aplDataMainSearch.mainSearchDismissIco ),
             
-            $mainSearchShowL = aplDataArbitNav.mainSearchShowL,
-            $mainSearchHideL = aplDataArbitNav.mainSearchHideL,
+            $mainSearchShowL = aplDataMainSearch.mainSearchShowL,
+            $mainSearchHideL = aplDataMainSearch.mainSearchHideL,
             
             $mainSearchH,
             $mainSearchCt,
@@ -458,9 +698,6 @@
             $mainSearchTogBtn,
             $mainSearchTogBtnL,
             $mainSearchTogBtnLTxt,
-            
-            $arbitNavSubmitAxnBl,
-            $arbitNavResetAxnBl,
             
             $mainSearchInput,
             $mainSearchResetBtn;
@@ -584,18 +821,18 @@
         ( function() {
             
             $mainSearchTogBtn.on( 'click.applicator', function( e ) {
-                var _this = $( this );
+                var $this = $( this );
                 e.preventDefault();
                 
-                $window.scrollTop( _this.position().top );
+                $window.scrollTop( $this.position().top );
                 mainSearchToggle();
             } );
             
             $mainSearchResetBtn.on( 'click.applicator', function( e ) {
-                var _this = $( this );
+                var $this = $( this );
                 e.preventDefault();
                 
-                $window.scrollTop( _this.position().top );
+                $window.scrollTop( $this.position().top );
                 $mainSearchInput.val( '' ).focus();
                 mainSearchInputStatus();
             } );
@@ -607,14 +844,14 @@
             mainSearchInputStatus();
         } );
         
-        // Deactivate upon interaction outside specified elements
+        // Deactivate via external click
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
             if ( $cp.hasClass( mainSearchActCss ) && ( ! $( e.target ).closest( $mainSearchTog ).length && ! $( e.target ).closest( $mainSearchCt ).length ) ) {
                 mainSearchDeactivate();
             }
         } );
 
-        // Deactivate upon presseing ESC Key
+        // Deactivate via keyboard ESC key
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( $cp.hasClass( mainSearchActCss ) && e.keyCode == 27 ) {
@@ -631,35 +868,32 @@
         $mainSearchResetBL.append( $mainSearchDismissIco );
         
     }
-    initMainSearch( $( '#main-search-func' ) );
+    initMainSearch( $( '#main-search' ) );
     
     
     
     
     
-    // Sub-Nav | Main Menu, Widget Menu
+    // Sub-Nav for Main Menu, Widget Menu, Widget Pages
     function initSubNav( $cp ) {
         
         if ( ! $aplApplicatorSubNav.length ) {
 			return;
 		}
         
+        
         var subNavTogObjMu,
             subNavTogBtnMu,
             subNavTogBtnLmu,
             subNavTogBtnLTxtMu,
             
+            mainNavCSS = 'main-nav',
+            
             subNavActCss = 'sub-nav--active',
             subNavInactCss = 'sub-nav--inactive',
             
-            subNavPrevActCss = 'sub-nav--previous--active',
-            subNavPrevInactCss = 'sub-nav--previous--inactive',
-            
-            subNavIbCss = 'sub-nav--inbound',
-            subNavObLeftCss = 'sub-nav--outbound-left',
-            subNavObRightCss = 'sub-nav--outbound-right',
-            subNavObTopCss = 'sub-nav--outbound-top',
-            subNavObBottomCss = 'sub-nav--outbound-bottom',
+            subNavOthersActiveCSS = 'sub-nav--others--active',
+            subNavOthersInactiveCSS = 'sub-nav--others--inactive',
             
             navHoverActiveCss = 'nav-hover--active',
             navHoverInactiveCss = 'nav-hover--inactive',
@@ -685,11 +919,15 @@
             $subNavTogBtnShowL = aplDataSubNav.subNavTogBtnShowL,
             $subNavTogBtnHideL = aplDataSubNav.subNavTogBtnHideL;
         
+        
         if ( $cp.has( $subNavParentItems ) ) {
-            $cp
-                .addClass( 'sub-nav-func' )
-                .addClass( funcTerm );
+            
+            funcName = 'sub-nav-func';
+            
+            $cp.addClass( funcTerm + ' ' + funcName );
+        
         }
+        
         
         // Build Markup
         ( function() {
@@ -723,14 +961,16 @@
             
         }() );
         
+        
         $subNavTogBtn = $cp.find( '.sub-nav-tog---b' );
         $subNavShowHideTxt = '.show-hide---txt';
         
+        
         // Activate
         function subNavActivate() {
-            var _this = $( this );
+            var $this = $( this );
             
-            $subNavParent = _this.closest( $subNavParentItems );
+            $subNavParent = $this.closest( $subNavParentItems );
             
             $subNavParent
                 .addClass( subNavActCss )
@@ -739,78 +979,32 @@
                 .addClass( aplSubNavActCss )
                 .removeClass( aplSubNavInactCss );
             
-            _this.attr( {
+            $this.attr( {
                  'aria-expanded': 'true',
                  'title': $subNavTogBtnHideL
             } );
             
-            _this.find( $subNavShowHideTxt ).text( $subNavTogBtnHideL );
+            $this.find( $subNavShowHideTxt ).text( $subNavTogBtnHideL );
         }
         
-        // Activate
+        
+        // Hover Activate
         function navHoverActivate() {
-            var _this = $( this );
-            _this.closest( $navParentItems )
+            var $this = $( this );
+            $this.closest( $navParentItems )
                 .addClass( navHoverActiveCss )
                 .removeClass( navHoverInactiveCss );
         }
         
-        // Deactivate
+        
+        // Hover Deactivate
         function navHoverDeactivate() {
-            var _this = $( this );
-            _this.closest( $navParentItems )
+            var $this = $( this );
+            $this.closest( $navParentItems )
                 .addClass( navHoverInactiveCss )
                 .removeClass( navHoverActiveCss );
         }
         
-        $cp.find( $subNavParentItems ).each( function() {
-            $subNavParentItems.addClass( subNavIbCss );
-        } );
-        
-        // Detect Element Bounds
-        function subNavItemDetectBounds() {
-            var _this = $( this ),
-                subNavOffset,
-                subNavLeftOffset,
-                subNavTopOffset,
-                containerWidth,
-                elemWidth;
-            
-            $subNavParent = _this.closest( $subNavParentItems );
-            
-            $elem = $subNavParent.find( $subNavGrp );
-            subNavOffset = $elem.offset();
-            subNavLeftOffset = subNavOffset.left;
-            subNavTopOffset = subNavOffset.top;
-            containerWidth = $body.width();
-            containerHeight = $window.height();
-            elemWidth = $elem.width();
-            elemHeight = $elem.height();
-            
-            // If outbound left
-            if ( subNavLeftOffset < 0 ) {
-                $subNavParent.addClass( subNavObLeftCss );
-                $subNavParent.removeClass( subNavIbCss );
-            }
-            
-            // If oubound right
-            if ( ( elemWidth > containerWidth ) || ( parseInt( elemWidth, 10 ) + parseInt( subNavLeftOffset, 10 ) ) > containerWidth ) {
-                $subNavParent.addClass( subNavObRightCss );
-                $subNavParent.removeClass( subNavIbCss );
-            }
-            
-            // If outbound top
-            if ( subNavTopOffset < 0 ) {
-                $subNavParent.addClass( subNavObTopCss );
-                $subNavParent.removeClass( subNavIbCss );
-            }
-            
-            // If outbound bottom
-            if ( ( elemHeight > containerHeight ) || ( parseInt( elemHeight, 10 ) + parseInt( subNavTopOffset, 10 ) ) > containerHeight ) {
-                $subNavParent.addClass( subNavObBottomCss );
-                $subNavParent.removeClass( subNavIbCss );
-            }
-        }
         
         // Deactivate on HTML level
         function htmlSubNavDeactivate() {
@@ -821,10 +1015,11 @@
             }
         }
         
+        
         // Deactivate
         function subNavDeactivate() {
-            var _this = $( this );
-            $subNavParent = _this.closest( $subNavParentItems );
+            var $this = $( this );
+            $subNavParent = $this.closest( $subNavParentItems );
             
             $subNavParent
                 .addClass( subNavInactCss )
@@ -832,26 +1027,20 @@
             
             htmlSubNavDeactivate();
             
-            _this.attr( {
+            $this.attr( {
                  'aria-expanded': 'false',
                  'title': $subNavTogBtnShowL
             } );
             
-            _this.find( $subNavShowHideTxt ).text( $subNavTogBtnShowL );
-            
-            $subNavParent
-                .addClass( subNavIbCss )
-                .removeClass( subNavObLeftCss )
-                .removeClass( subNavObRightCss )
-                .removeClass( subNavObTopCss )
-                .removeClass( subNavObBottomCss );
+            $this.find( $subNavShowHideTxt ).text( $subNavTogBtnShowL );
         }
+        
         
         // Deactivate all Sub-Nav
         function subNavAllDeactivate() {
             
             $cp.find( $subNavParentItems ).each( function() {
-                var _this = $( this );
+                var $this = $( this );
                 $subNavParentItems
                     .addClass( subNavInactCss )
                     .removeClass( subNavActCss );
@@ -863,74 +1052,95 @@
                     'title': $subNavTogBtnShowL
                 } );
                 
-                _this.find( $subNavShowHideTxt ).text( $subNavTogBtnShowL );
+                $this.find( $subNavShowHideTxt ).text( $subNavTogBtnShowL );
             } );
             
             
             
             $cp.find( $navParentItems ).each( function() {
-                var _this = $( this );
-                _this
-                    .addClass( subNavPrevInactCss )
-                    .removeClass( subNavPrevActCss );
+                var $this = $( this );
+                $this
+                    .addClass( subNavOthersInactiveCSS )
+                    .removeClass( subNavOthersActiveCSS );
             } );
         }
         
         // Initiate
         subNavAllDeactivate();
         
+        
         // Deactivate Siblings
         function siblingsDeactivate() {
-            var _this = $( this );
-            _this.closest( $subNavParentItems ).siblings()
+            
+            var $this = $( this );
+            
+            $this.closest( $subNavParentItems ).siblings()
                 .addClass( subNavInactCss )
                 .removeClass( subNavActCss );
         }
         
-        // Deactivate Sub Nav Siblings
-        function subNavsiblingsDeactivate() {
-            var _this = $( this );
-            $navParent = _this.closest( $navParentItems );
+        
+        // Activate Sub-Nav Siblings
+        function subNavSiblingsActivate() {
             
-            _this.closest( $navParent ).nextAll()
-                .addClass( subNavPrevActCss )
-                .removeClass( subNavPrevInactCss );
+            var $this = $( this );
+            
+            $navParent = $this.closest( $navParentItems );
+            
+            $this.closest( $navParent ).nextAll()
+                .addClass( subNavOthersInactiveCSS )
+                .removeClass( subNavOthersActiveCSS );
         }
         
-        // Activate Sub Nav Siblings
-        function subNavsiblingsActivate() {
-            var _this = $( this );
-            $navParent = _this.closest( $navParentItems );
+        
+        // Deactivate Sub-Nav Siblings
+        function subNavSiblingsDeactivate() {
             
-            _this.closest( $navParent ).nextAll()
-                .addClass( subNavPrevInactCss )
-                .removeClass( subNavPrevActCss );
+            var $this = $( this );
+            
+            $navParent = $this.closest( $navParentItems );
+            
+            $this.closest( $navParent ).nextAll()
+                .addClass( subNavOthersActiveCSS )
+                .removeClass( subNavOthersInactiveCSS );
         }
+        
         
         // Click
         ( function() {
+            
             $subNavTogBtn.on( 'click.applicator', function( e ) {
-                var _this = $( this );
+                
+                var $this = $( this );
+                
                 e.preventDefault();
-                $subNavParent = _this.closest( $subNavParentItems );
+                
+                $subNavParent = $this.closest( $subNavParentItems );
                 
                 if ( $subNavParent.hasClass( subNavInactCss ) ) {
+                    
                     subNavActivate.apply( this );
-                    subNavItemDetectBounds.apply( this );
-                    subNavsiblingsDeactivate.apply( this );
+                    
+                    if ( $cp.hasClass( mainNavCSS ) ) {
+                        subNavSiblingsDeactivate.apply( this );
+                    }
+                    
                 }
                 
                 else if ( $subNavParent.hasClass( subNavActCss ) ) {
+                    
                     subNavDeactivate.apply( this );
-                    subNavsiblingsActivate.apply( this );
+                    
+                    if ( $cp.hasClass( mainNavCSS ) ) {
+                        subNavSiblingsActivate.apply( this );
+                    }
                 }
                 
-                if ( $cp.hasClass( 'easy-access-nav-func' ) ) {
+                if ( $cp.hasClass( mainNavCSS ) ) {
                     siblingsDeactivate.apply( this );
                 }
-                
-                siblingsDeactivate.apply( this );
             } );
+            
         }() );
         
         // Hover
@@ -944,7 +1154,7 @@
         }() );
         
         
-        // Deactivate upon interaction outside specified elements
+        // Deactivate via external click
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
             if ( $html.hasClass( aplSubNavActCss ) && ! $( e.target ).closest( $subNavParentItems ).length && ! $( e.target ).is( 'a' ).length ) {
                 subNavAllDeactivate();
@@ -952,7 +1162,7 @@
         } );
         
         
-        // Deactivate upon presseing ESC Key
+        // Deactivate via keyboard ESC key
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( $html.hasClass( aplSubNavActCss ) && e.keyCode == 27 ) {
@@ -966,23 +1176,6 @@
     initSubNav( $( '#main-nav' ) );
     initSubNav( $( '.widget_nav_menu' ) );
     initSubNav( $( '.widget_pages' ) );
-    
-    
-    
-    
-    
-    // ------------------------- Easy Access Nav | Main Menu
-    function initEasyAccessNav( $cp ) {
-        
-        if ( ! $aplApplicatorEasyAccessNav.length ) {
-			return;
-		}
-        
-        $cp
-            .addClass( 'easy-access-nav-func' )
-            .addClass( funcTerm );
-    }
-    initEasyAccessNav( $( '#main-nav' ) );
     
     
     
@@ -1005,14 +1198,14 @@
                     //$('#commentform :input:visible[required="required"]').each( function () {
                     $('#commentform :input:visible').each( function () {
                         
-                        var _this = $( this );
+                        var $this = $( this );
 
-                        _this.closest( '.cr' )
+                        $this.closest( '.cr' )
                             .find( '.validity-note' ).remove();
 
                         if ( this.validity.valid ) {
                             
-                            _this.closest( '.cp' )
+                            $this.closest( '.cp' )
                                 .addClass( 'creation--valid' )
                                 .removeClass( 'creation--invalid' )
                             
@@ -1044,9 +1237,9 @@
                                 'data-name': 'Validity Note OBJ'
                             } ).append( validityNoteContainer );
 
-                            _this.focus();
+                            $this.focus();
 
-                            _this.closest( '.cp' )
+                            $this.closest( '.cp' )
                                 .addClass( 'creation--invalid' )
                                 .removeClass( 'creation--valid' )
                                 .find( '.cr' )
@@ -1060,6 +1253,104 @@
                 }
             }, false);
         }
+    } )();
+    
+    
+    
+    
+    
+    /* ------------------------- Page Nav ------------------------- */
+    ( function() {
+        
+        
+        if ( ! $applicatorPageNav.length ) {
+			return;
+		}
+        
+        
+        // Variables
+        var $content = $( '#content' ),
+            $pageNav = $content.find( '.page-nav' ),
+            $pageNavGroup = $pageNav.find( 'ul' ),
+            
+            $pageNavItem = $pageNav.find( 'li' ),
+            $pageNavItemChild = $pageNav.find( 'li > *' ),
+            $adjacentNavi = $pageNav.find( 'li:has( .adjacent-navi---a_l )' ),
+            $pageNavi = $pageNav.find( 'li:has( a )' ),
+            
+            $prevPageNavi,
+            $nextPageNavi,
+            $pageNavArrowIco = aplDataPageNav.pageNavArrowIco;
+        
+        funcName = 'page-nav-func';
+            
+        $pageNav.addClass( funcTerm + ' ' + funcName );
+        $pageNavGroup.addClass( 'grp page-nav---grp' );
+        
+        // Generic Page Nav Item
+        $pageNavItem.each( function() {
+            
+            var $this = $( this );
+            
+            $this.addClass( 'li item obj' );
+        
+        } );
+        
+        // Adjacent Nav Item
+        $adjacentNavi.each( function() {
+            
+            var $this = $( this );
+            
+            $this
+                .addClass( 'adjacent-navi' )
+                .find( 'a' ).addClass( 'adjacent-nav---a' );
+            
+        } );
+        
+        $pageNavItemChild.each( function() {
+            
+            var $this = $( this );
+
+            if ( $this.hasClass( 'prev' ) ) {
+                $this.closest( $pageNavItem ).addClass( 'prev-page-navi' );
+            }
+
+            if ( $this.hasClass( 'next' ) ) {
+                $this.closest( $pageNavItem ).addClass( 'next-page-navi' );
+            }
+
+            if ( $this.hasClass( 'dots' ) ) {
+                $this.closest( $pageNavItem ).addClass( 'ellipsis--sep' );
+            }
+
+            if ( $this.hasClass( 'current' ) ) {
+                $this.closest( $pageNavItem ).addClass( 'page-navi--current' );
+            }
+        } );
+        
+        // Page Nav Item
+        $pageNavi.each( function() {
+            
+            var $this = $( this );
+            
+            $this.closest( 'li' ).addClass( 'page-navi' );
+            
+        } );
+        
+        $pageNavGroup.not( ':has( .next-page-navi )' ).addClass( 'page-nav--no-next' );
+        $pageNavGroup.not( ':has( .prev-page-navi )' ).addClass( 'page-nav--no-prev' );
+        
+        // Define created elements
+        $prevPageNavi = $pageNav.find( '.prev-page-navi' );
+        $prevPageNaviLabel = $prevPageNavi.find( '.adjacent-navi---a_l' );
+        $nextPageNavi = $pageNav.find( '.next-page-navi' );
+        $nextPageNaviLabel = $nextPageNavi.find( '.adjacent-navi---a_l' );
+        
+        
+        // Add Icons
+        $prevPageNaviLabel.append( $pageNavArrowIco );
+        $nextPageNaviLabel.append( $pageNavArrowIco );
+        
     } )();
     
     
@@ -1240,31 +1531,14 @@
 
             // ------------ Wrap text nodes in <span>
             // https://stackoverflow.com/a/18727318
-            $( '.data-format' )
+            $( '.data-format, .excerpt-link' )
             .contents()
             .filter( function() {
 
                 // Get only the text nodes
                 return this.nodeType === 3;
             } )
-            .wrap( '<span class="span"></span>' );
-
-            /*
-
-            $( '.post-content iframe' ).each(function() {
-                var $this = $( this );
-                $this.wrap( dataFormatBlockCpMu )
-                    .closest( dataFormatCss )
-                        .addClass( dataFormatPrefixCss + 'iframe' );
-            });
-
-            $( '.post-content embed' ).each(function() {
-                var $this = $( this );
-                $this.wrap( dataFormatBlockCpMu )
-                    .closest( dataFormatCss )
-                        .addClass( dataFormatPrefixCss + 'embed' );
-            });
-            */
+            .wrap( '<span class="span text-node"></span>' );
 
          } )();
     } );
@@ -1276,14 +1550,23 @@
     /*------------------------ DOM Ready and Images Loaded ------------------------*/
     $window.load( function() {
         
+        
+        // Remove Window Unloaded
+        $html
+            .addClass( 'window--loaded' )
+            .removeClass( 'window--unloaded' );
+        
+        
         // Page Length
         ( function() {
 
             if ( $webProductCopyright.css( 'display' ) == 'none' ) {
                 return;
             }
-
+            
             function pageHeightCSS() {
+                
+                pageHeight = $page.height();
 
                 if ( ( pageHeight ) <= ( window.innerHeight ) ) {
 
@@ -1303,14 +1586,12 @@
                 }
             }
             pageHeightCSS();
-
-
-            // Debounce
-            var pageHeightDebounce = debounce( function () {
+            
+            
+            new ResizeSensor( $page, function() {
                 pageHeightCSS();
-            }, applicatorDebounceTimeout );
-
-            window.addEventListener( 'resize', pageHeightDebounce );
+            } );
+        
         }() );
     } );
 

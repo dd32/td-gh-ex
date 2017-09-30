@@ -43,14 +43,23 @@ if ( ! function_exists( 'applicator_enhancements_styles_scripts' ) ) {
         wp_localize_script( 'applicator-script--functionalities', 'aplDataMainMenu', $applicator_l10n );
         
         
-        // Main Search Icons Icons
+        // Main Search Icons
         $applicator_l10n['mainSearchShowL'] = __( 'Show Search', 'applicator' );
         $applicator_l10n['mainSearchHideL'] = __( 'Hide Search', 'applicator' );
         $applicator_l10n['mainSearchTogCtrlSearchIco'] = $search_icon;
         $applicator_l10n['mainSearchTogDismissIco'] = $dismiss_icon;
         $applicator_l10n['mainSearchSearchIco'] = $search_icon;
         $applicator_l10n['mainSearchDismissIco'] = $dismiss_icon;
-        wp_localize_script( 'applicator-script--functionalities', 'aplDataArbitNav', $applicator_l10n );
+        wp_localize_script( 'applicator-script--functionalities', 'aplDataMainSearch', $applicator_l10n );
+        
+        
+        // Comments Icons
+        $applicator_l10n['commentsShowL'] = __( 'Show Comments', 'applicator' );
+        $applicator_l10n['commentsHideL'] = __( 'Hide Comments', 'applicator' );
+        
+        $applicator_l10n['commentsToggleIco'] = $search_icon;
+        $applicator_l10n['commentsDismissIco'] = $dismiss_icon;
+        wp_localize_script( 'applicator-script--functionalities', 'aplDataComments', $applicator_l10n );
         
         
         // Sub-Nav Icons
@@ -58,6 +67,11 @@ if ( ! function_exists( 'applicator_enhancements_styles_scripts' ) ) {
 		$applicator_l10n['subNavTogBtnHideL']    = __( 'Hide Sub-Nav', 'applicator' );
         $applicator_l10n['subNavTogBtnIco']      = $arrow_icon;
         wp_localize_script( 'applicator-script--functionalities', 'aplDataSubNav', $applicator_l10n );
+        
+        
+        // Page-Nav
+        $applicator_l10n['pageNavArrowIco']      = $arrow_icon;
+        wp_localize_script( 'applicator-script--functionalities', 'aplDataPageNav', $applicator_l10n );
     }
     add_action( 'wp_enqueue_scripts', 'applicator_enhancements_styles_scripts' );
 }
@@ -69,16 +83,12 @@ if ( ! function_exists( 'applicator_enhancements_styles_scripts' ) ) {
 
 
 
-// HTML Classes
-if ( ! function_exists( 'applicator_functionalities_html_classes' ) ) {
-    function applicator_functionalities_html_classes() {
+// Functionalities CSS Class Names
+if ( ! function_exists( 'applicator_functionalities_css_class_names' ) ) {
+    function applicator_functionalities_css_class_names() {
         
-        // Variables
-        $theme_name = 'applicator';
+        $applicator_term = 'applicator';
         
-        echo ' ' . $theme_name;
-        
-        // Array of CSS Class Names
         $r = array(
             
             // Functionalities
@@ -88,17 +98,15 @@ if ( ! function_exists( 'applicator_functionalities_html_classes' ) ) {
             'easy-access-nav',
             'sub-nav',
             'go-start-nav',
-            
-            // Themes
-            'theme--table--stroked',
-            'theme--avatar--circular',
+            'comments',
+            'page-nav',
         ); 
         
+        echo ' ' . $applicator_term;
         
-        // Functionalities, Themes
-        foreach ( ( array ) $r as $class_name ) {
-            echo ' '. $theme_name. '--'. $class_name;
+        foreach ( ( array ) $r as $css_class_name ) {
+            echo ' '. $applicator_term. '--'. $css_class_name;
         }
     }
-    add_action( 'applicator_hook_html_class', 'applicator_functionalities_html_classes');
+    add_action( 'applicator_hook_html_class', 'applicator_functionalities_css_class_names');
 }

@@ -31,7 +31,6 @@ if ( ! function_exists( 'applicator_default_styles_scripts' ) ) {
         
         /*------------ Scripts ------------*/
         
-        
         // Modernizr
         wp_enqueue_script( 'applicator-script--modernizr', get_theme_file_uri( '/assets/js/modernizr.min.js' ), array(), '1.0.0', true );
         
@@ -115,8 +114,11 @@ if ( ! function_exists( 'applicator_inline_scripts' ) ) {
                 // Replace no-js with js if JavaScript is supported
                 html.className = html.className.replace( /\bno-js\b/,'js' );
 
-                // DOM Unready (will be removed on DOM ready)
+                // DOM Unready (will be removed on document.ready)
                 html.classList.add( 'dom--unready' );
+
+                // Window Unloaded (will be removed on window.load)
+                html.classList.add( 'window--unloaded' );
                 
                 // Replace no-svg with svg if supported
                 if ( true === supportsInlineSVG() ) {

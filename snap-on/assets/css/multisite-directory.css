@@ -16,7 +16,7 @@
 .view--multisite-directory .post-banner-visual img,
 .view--multisite-directory .entry-content
 {
-    position:absolute;margin:-1px;padding:0;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
+    position:absolute;margin:-1px;padding:0;width:1px;min-width:auto;height:1px;min-height:auto;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
 }
 
 
@@ -78,7 +78,7 @@
 
 
 /*------------------ Main Post Title ------------------*/
-.view--multisite-directory .main-post-title
+.view--multisite-directory .post---hr_cr
 {
     text-align: center;
 }
@@ -126,6 +126,11 @@
     padding: 0;
 }
 
+.view--multisite-directory .main-post-title---a
+{
+    color: var(--links--fg-color);
+}
+
 
 
 
@@ -143,7 +148,7 @@
 
 .site-preview .site-main-name---a
 {
-    color: var(--off-black--color-a);
+    color: var(--color--off-black-a);
     
     text-decoration: none;
 }
