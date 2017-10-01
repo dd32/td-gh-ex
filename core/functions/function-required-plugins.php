@@ -57,13 +57,7 @@ if (!function_exists('suevafree_required_plugins')) {
 				'name'      => 'Instagram Slider Widget',
 				'slug'      => 'instagram-slider-widget',
 				'required'  => false,
-			),
-
-			array(
-				'name'      => 'Inline Related Posts',
-				'slug'      => 'intelly-related-posts',
-				'required'  => false,
-			),
+			)
 
 		);
 	

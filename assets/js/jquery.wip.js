@@ -276,8 +276,8 @@ jQuery.noConflict()(function($){
 		
 	});
 
-	$('.back-to-top').click(function(){
-		$.scrollTo(0,'slow');
+	$('#back-to-top').click(function(){
+		$.scrollTo(0, 'slow');
 		return false;
 	});
 

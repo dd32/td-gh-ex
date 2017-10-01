@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.2.8 - Released: 01.10.2017
+
+-- Fixed : Back to top button.
+-- Updated : jQuery.scrollTo plugin.
+-- Added : Portuguese Brazilian translation (Thanks to Higork, higork@zoho.com)
+
 - Version 3.2.7 - Released: 27.09.2017
 
 -- Fixed : Featured image box shadow.
