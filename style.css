@@ -4,7 +4,7 @@ Theme Name: Sneak Lite
 Description: Sneak Lite is a clean, minimal and responsive SuevaFree child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts. Now is ecommerce ready and is optimized to work with WooCommerce and Contact Form 7 plugins.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 3.0.1
+Version: 3.0.2
 Template: suevafree
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, food-and-drink, news, photography
 License: GNU General Public License v3 or later
@@ -98,8 +98,8 @@ a.post-edit-link,
 #sidebar th,
 #sidebar .textwidget,
 #logo a span,
-nav#mainmenu ul li a,
-nav#mainmenu ul ul li a,
+.suevafree-menu ul li a,
+.suevafree-menu ul ul li a,
 .comment-author .author,
 h3#reply-title small, .logged-in-as,
 .contact-form input[type=text], .contact-form textarea,
@@ -176,6 +176,7 @@ h3.comments {
 	display:none;
 }
 
+.pin-container,
 .post-container .post-article {
 	border-radius: 0;
 	-moz-border-radius: 0;
@@ -185,15 +186,8 @@ h3.comments {
 	-webkit-box-shadow: none;
 }
 
-.wp-post-image:hover { 
-	-moz-transform: none;
-	-webkit-transform: none;
-	-o-transform: none;
-	transform: none;
-}
-
 .line:before {
-  background-color: #ddd;
+	background-color: #ddd;
 }
 
 footer.line {
