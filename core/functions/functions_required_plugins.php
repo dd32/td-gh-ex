@@ -35,12 +35,6 @@ if (!function_exists('bazaarlite_required_plugins')) {
 			),
 
 			array(
-				'name'      => 'Inline Related Posts',
-				'slug'      => 'intelly-related-posts',
-				'required'  => false,
-			),
-
-			array(
 				'name'      => 'Regenerate Thumbnails',
 				'slug'      => 'regenerate-thumbnails',
 				'required'  => false,

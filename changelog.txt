@@ -1,5 +1,10 @@
 Bazaar Lite Changelog
 
+- Version 1.4.3 - Released: 01.10.2017
+
+-- Fixed : Back to top button.
+-- Updated : jQuery.scrollTo plugin.
+
 - Version 1.4.2 - Released: 10.09.2017
 
 -- Edit : Code optimized.
