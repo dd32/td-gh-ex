@@ -29,7 +29,7 @@
         pageHeight,
         
         $webProductContainer = $page.find( '.wbp---cr' ),
-        $webProductCopyright = $( '#web-product-copyright' ),
+        $webProductCopyright = $( '#copyright' ),
         copyrightHeight = $webProductCopyright.height(),
         pageShortCss = 'page--short',
         pageLongCss = 'page--long',
@@ -46,7 +46,7 @@
     
     
     
-    /*------------------------- Overlay -------------------------*/
+    /* ------------------------- Overlay ------------------------- */
     function overlayActivate( funcName ) {
         
         overlayMu = $( '<div />', {
@@ -81,8 +81,8 @@
             
             goCtNavActCss = 'go-content-nav--active',
             goCtNavInactCss = 'go-content-nav--inactive',
-            aplGoCtNavActCss = 'apl--go-content-nav--active',
-            aplGoCtNavInactCss = 'apl--go-content-nav--inactive';
+            aplGoCtNavActCss = 'applicator--go-content-nav--active',
+            aplGoCtNavInactCss = 'applicator--go-content-nav--inactive';
         
         function goCtNavActivate() {
             $cp
@@ -150,8 +150,8 @@
             goStartNavActCss = 'go-start-nav--active',
             goStartNavInactCss = 'go-start-nav--inactive',
             
-            aplgoStartNavActCss = 'apl--go-start-nav--active',
-            aplgoStartNavInactCss = 'apl--go-start-nav--inactive',
+            aplgoStartNavActCss = 'applicator--go-start-nav--active',
+            aplgoStartNavInactCss = 'applicator--go-start-nav--inactive',
             
             $goStartNavArrowIco = aplDataGoStartNav.goStartNavArrowIco,
             
@@ -238,7 +238,7 @@
     
     
     
-    /*------------------------ Main Menu ------------------------*/
+    /* ------------------------ Main Menu ------------------------ */
     function initMainMenu( $cp ) {
         
         if ( ! $aplApplicatorMainMenu.length ) {
@@ -264,8 +264,8 @@
             
             mainMenuActCss = 'main-menu--active',
             mainMenuInactCss = 'main-menu--inactive',
-            aplMainMenuActCss = 'apl--main-menu--active',
-            aplMainMenuInactCss = 'apl--main-menu--inactive',
+            aplMainMenuActCss = 'applicator--main-menu--active',
+            aplMainMenuInactCss = 'applicator--main-menu--inactive',
             
             $mainMenuTogBtnHideIco = $( aplDataMainMenu.mainMenuHideIco ),
             $mainMenuTogBtnShowIco = $( aplDataMainMenu.mainMenuShowIco ),
@@ -416,7 +416,7 @@
     
     
     
-    /*------------------------ Comments ------------------------*/
+    /* ------------------------ Comments ------------------------ */
     function initComments( $cp ) {
         
         
@@ -449,8 +449,8 @@
             $commentsShowL = aplDataComments.commentsShowL,
             $commentsHideL = aplDataComments.commentsHideL,
             
-            aplCommentsOnCSS = 'apl--comments--active',
-            aplCommentsOffCSS = 'apl--comments--inactive',
+            aplCommentsOnCSS = 'applicator--comments--active',
+            aplCommentsOffCSS = 'applicator--comments--inactive',
             
             commentsOnCSS = 'comments--active',
             commentsOffCSS = 'comments--inactive'
@@ -646,7 +646,7 @@
     
     
     
-        /*------------------------ Main Search ------------------------*/
+        /* ------------------------ Main Search ------------------------ */
     ( function() {
         
         if ( ! $aplApplicatorMainSearch.length ) {
@@ -676,8 +676,8 @@
             
             mainSearchActCss = 'main-search--active',
             mainSearchInactCss = 'main-search--inactive',
-            aplmainSearchActCss = 'apl--main-search--active',
-            aplmainSearchInactCss = 'apl--main-search--inactive',
+            aplmainSearchActCss = 'applicator--main-search--active',
+            aplmainSearchInactCss = 'applicator--main-search--inactive',
             
             mainSearchInputEmpCss = 'main-search-input--empty',
             mainSearchInputPopCss = 'main-search-input--populated',
@@ -897,8 +897,8 @@
             
             navHoverActiveCss = 'nav-hover--active',
             navHoverInactiveCss = 'nav-hover--inactive',
-            aplSubNavActCss = 'apl--sub-nav--active',
-            aplSubNavInactCss = 'apl--sub-nav--inactive',
+            aplSubNavActCss = 'applicator--sub-nav--active',
+            aplSubNavInactCss = 'applicator--sub-nav--inactive',
             
             $navParentItems = $( '.page_item, .menu-item' ),
             
@@ -1320,7 +1320,7 @@
             }
 
             if ( $this.hasClass( 'dots' ) ) {
-                $this.closest( $pageNavItem ).addClass( 'ellipsis--sep' );
+                $this.closest( $pageNavItem ).addClass( 'ellipsis--delimiter' );
             }
 
             if ( $this.hasClass( 'current' ) ) {
@@ -1357,7 +1357,7 @@
     
     
     
-    /*------------------------ DOM Ready ------------------------*/
+    /* ------------------------ DOM Ready ------------------------ */
     $document.ready( function() {
 		
         
@@ -1531,14 +1531,14 @@
 
             // ------------ Wrap text nodes in <span>
             // https://stackoverflow.com/a/18727318
-            $( '.data-format, .excerpt-link' )
-            .contents()
-            .filter( function() {
+            $( '.data-format, .excerpt-link, .post-password-form label' )
+                .contents()
+                .filter( function() {
 
-                // Get only the text nodes
-                return this.nodeType === 3;
-            } )
-            .wrap( '<span class="span text-node"></span>' );
+                    // Get only the text nodes
+                    return this.nodeType === 3;
+                } )
+                .wrap( '<span class="span text-node"></span>' );
 
          } )();
     } );
@@ -1547,7 +1547,7 @@
     
         
     
-    /*------------------------ DOM Ready and Images Loaded ------------------------*/
+    /* ------------------------ DOM Ready and Images Loaded ------------------------ */
     $window.load( function() {
         
         

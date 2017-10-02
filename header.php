@@ -16,7 +16,7 @@
                 
                 <?php
                 
-                //------------------------------------------------ Web Product Start
+                /* ------------------------ Web Product Start ------------------------ */
                 
                 // R: Go to Content Navi
                 $go_to_content_navi_obj = applicator_htmlok( array(
@@ -104,20 +104,18 @@
                     'echo'      => true,
                 ) );
                 
-                //------------------------------------------------ End: Web Product Start
+                
+                /* ------------------------ Main Header ------------------------ */
                 
                 
-                //------------------------------------------------ Main Header
+                /* ------------------------ Main Info ------------------------ */
                 
-                //------------------------ Web Product Main Info
-                        
-                
-                // R: Web Product Main Name
-                $web_product_main_name_obj = '';
-                $web_product_main_name = get_bloginfo( 'name', 'display' );
-                if ( $web_product_main_name || is_customize_preview() ) {
-                    $web_product_main_name_obj = applicator_htmlok( array(
-                        'name'      => 'Web Product Main Name',
+                // R: Main Name
+                $main_name_obj = '';
+                $main_name = get_bloginfo( 'name', 'display' );
+                if ( $main_name || is_customize_preview() ) {
+                    $main_name_obj = applicator_htmlok( array(
+                        'name'      => 'Main Name',
                         'structure' => array(
                             'type'      => 'object',
                             'elem'      => 'h1',
@@ -128,28 +126,26 @@
                                 ),
                             ),
                         ),
-                        'css'       => 'wbp-main-name',
                         'root_css'  => 'site-title',
-                        'title'     => $web_product_main_name,
+                        'title'     => $main_name,
                         'content'   => array(
-                            'object'        => $web_product_main_name,
+                            'object'        => $main_name,
                         ),
                     ) );
                 }
 
                 
-                // R: Web Product Main Logo
+                // R: Main Logo
                 // inc > settings.php | Customizer > Site Identity
-                $web_product_main_logo_obj = '';
+                $main_logo_obj = '';
 
                 if ( has_custom_logo() ) {
-                    $web_product_main_logo_obj = applicator_htmlok( array(
-                        'name'      => 'Web Product Main Logo',
+                    $main_logo_obj = applicator_htmlok( array(
+                        'name'      => 'Main Logo',
                         'structure' => array(
                             'type'          => 'object',
                             'subtype'       => 'wordpress generated content',
                         ),
-                        'css'       => 'wbp-main-logo',
                         'title'     => get_bloginfo( 'name' ),
                         'content'   => array(
                             'object'        => get_custom_logo(),
@@ -158,13 +154,13 @@
                 }
 
                 
-                // R: Web Product Main Description
-                $web_product_main_description_obj = '';
-                $web_product_main_description = get_bloginfo( 'description', 'display' );
+                // R: Main Description
+                $main_description_obj = '';
+                $main_description = get_bloginfo( 'description', 'display' );
 
-                if ( $web_product_main_description || is_customize_preview() ) {
-                    $web_product_main_description_obj = applicator_htmlok( array(
-                        'name'      => 'Web Product Main Description',
+                if ( $main_description || is_customize_preview() ) {
+                    $main_description_obj = applicator_htmlok( array(
+                        'name'      => 'Main Description',
                         'structure' => array(
                             'type'      => 'object',
                             'linked'    => true,
@@ -174,49 +170,49 @@
                                 ),
                             ),
                         ),
-                        'css'       => 'wbp-main-desc',
+                        'css'       => 'main-desc',
                         'root_css'  => 'site-description',
-                        'title'     => $web_product_main_description,
+                        'title'     => $main_description,
                         'content'   => array(
-                            'object'    => $web_product_main_description,
+                            'object'    => $main_description,
                         ),
                     ) );
                 }
 
                 
-                // R: Web Product Main Info
-                $web_product_main_info_cp = applicator_htmlok( array(
-                    'name'      => 'Web Product Main Info',
+                // R: Main Info
+                $main_info_cp = applicator_htmlok( array(
+                    'name'      => 'Main Info',
                     'structure' => array(
                         'type'  => 'component',
                         'hr_structure'  => true,
                     ),
-                    'css'       => 'wbp-main-info',
                     'content'   => array(
                         'component' => array(
                             
                             // Main Name
-                            $web_product_main_name_obj,
+                            $main_name_obj,
                             
                             // Main Logo
-                            $web_product_main_logo_obj,
+                            $main_logo_obj,
                             
                             // Main Description
-                            $web_product_main_description_obj,
+                            $main_description_obj,
                         ),
                     ),
                 ) );
-
-                //------------------------ End: Web Product Main Info
                 
                 
-                // R: Web Product Main Media Banner
+                
                 // Custom Header | Customizer > Custom Header | inc > functions > custom-header.php
-                $web_product_main_media_banner_obj = '';
+                $main_media_banner_obj = '';
+                $main_banner_cp = '';
 
                 if ( has_header_image() ) {
-                    $web_product_main_media_banner_obj = applicator_htmlok( array(
-                        'name'      => 'Web Product Main Media Banner',
+                    
+                    // R: Main Media Banner
+                    $main_media_banner_obj = applicator_htmlok( array(
+                        'name'      => 'Main Media Banner',
                         'structure' => array(
                             'type'      => 'object',
                             'attr'      => array(
@@ -225,9 +221,24 @@
                                 ),
                             ),
                         ),
-                        'css'       => 'wbp-main-media-banner',
                         'content'   => array(
                             'object'    => get_custom_header_markup(),
+                        ),
+                    ) );
+                
+                    
+                    // R: Main Banner
+                    $main_banner_cp = applicator_htmlok( array(
+                        'name'      => 'Main Banner',
+                        'structure' => array(
+                            'type'  => 'component',
+                        ),
+                        'content'   => array(
+                            'component' => array(
+                                
+                                $main_media_banner_obj,
+                            
+                            ),
                         ),
                     ) );
                 }
@@ -252,8 +263,8 @@
                     'content'   => array(
                         'constructor'   => array(
                             
-                            // Web Product Main Info
-                            $web_product_main_info_cp,
+                            // Main Info
+                            $main_info_cp,
                             
                             // Main Nav
                             applicator_main_nav(),
@@ -261,8 +272,8 @@
                             // Hook After Main Nav
                             $hook_after_main_nav_ob_content,
                             
-                            // Web Product Main Media Banner
-                            $web_product_main_media_banner_obj,
+                            // Main Banner
+                            $main_banner_cp,
                             
                             // Main Header Aside
                             applicator_main_header_aside(),
@@ -270,8 +281,6 @@
                     ),
                     'echo'      => true,
                 ) );
-                
-                //------------------------------------------------ End: Main Header
                 
                 ?>
                 

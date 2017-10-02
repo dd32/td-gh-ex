@@ -1,7 +1,21 @@
-/*------------------ CSS Variables ------------------*/
+/*
+
+Default Style
+
+• Contains Absolute CSS Variables
+• Visually hides HTML Structure headings
+• Sets basic element visual styles
+
+*/
+
+
+
+
+
+/* ------------------ CSS Variables ------------------ */
 :root
 {
-    /*------------ Level 1 - Absolutes ------------*/
+    /* ------------ Level 1 - Absolutes ------------ */
     
     
     /* Superhero Blue */
@@ -169,10 +183,10 @@
 
 
 
-/*------------------ Visually Hidden ------------------*/
+/* ------------------ Visually Hidden ------------------ */
 .visually-hidden,
 .go-ct-nav---h,
-.wbp-main-info---h,
+.main-info---h,
 .main-actions---h,
 .search-term-crt---h,
 .search-term-crt-search-flabel,
@@ -220,7 +234,8 @@
 .site-preview---h,
 .site-main-info---h,
 .comment-content---h,
-.comments---h
+.comments---h,
+.main-banner---h
 {
     position:absolute;margin:-1px;padding:0;width:1px;min-width:auto;height:1px;min-height:auto;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
 }
@@ -257,7 +272,7 @@ pre
 
 
 
-/*------------------ Clearfix ------------------*/
+/* ------------------ Clearfix ------------------ */
 /* Due to floating images */
 .clearfix:before,
 .clearfix:after,
@@ -278,7 +293,7 @@ pre
 
 
 
-/*------------------ WordPress Required Selectors ------------------*/
+/* ------------------ WordPress Required Selectors ------------------ */
 /* To pass WP Theme Check */
 .wp-caption-text,
 .sticky,
@@ -292,7 +307,7 @@ pre
 
 
 
-/*------------------ Resets ------------------*/
+/* ------------------ Resets ------------------ */
 abbr[title]
 {
     text-decoration: none;
@@ -312,7 +327,7 @@ label[for]:hover
 
 
 
-/*------------------ Image ------------------*/
+/* ------------------ Image ------------------ */
 img
 {
     max-width: 100%;
@@ -323,7 +338,7 @@ img
 
 
 
-/*------------------ Icons ------------------*/
+/* ------------------ Icons ------------------ */
 .icon--vector,
 .icon--raster
 {
@@ -345,7 +360,7 @@ img
 
 
 
-/*------------------ Viewport Width: 560 ------------------*/
+/* ------------------ Viewport Width: 560 ------------------ */
 
 @media only screen and ( min-width: 35em )
 {
