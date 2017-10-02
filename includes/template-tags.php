@@ -491,7 +491,11 @@ if ( ! function_exists( 'bento_post_content' ) ) {
 		} else if ( get_post_format() === 'quote' ) {
 			echo bento_quote_format_content();
 		} else {
-			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );	
+			if ( is_home() && has_excerpt() ) {
+				the_excerpt();
+			} else {
+				the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );	
+			}
 		}
 
 		// Navigation for paged posts
@@ -772,7 +776,7 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 		$sitename = '<a href="'.esc_url( home_url( '/' ) ).'">'.esc_attr( get_bloginfo( 'name' ) ).'</a>';
 		$author = esc_html__( 'Bento theme by Satori', 'bento' );
 		if ( is_front_page() ) {
-			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori</a>';
+			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="https://satoristudio.net/" target="blank" title="Satori Studio">Satori</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {

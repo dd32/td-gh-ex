@@ -52,7 +52,7 @@ function bentoOnePage() {
 		itemclasses = $str(this).parent('li').attr('class').split(" ");
 		var itemid = itemclasses.slice(-1).pop();
 		var itemPosition = 0;
-		if ( $str(this).attr('href').indexOf("#") != -1 ) {
+		if ( $str(this).attr('href') && $str(this).attr('href').indexOf("#") != -1 ) {
 			hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
 			if ( $str('#' + hash).length ) {
 				itemPosition = $str('#' + hash).offset().top - headerHeight - 10;
@@ -303,8 +303,9 @@ $str(window).load(function () {
 	if ( window.location.hash ) {
 		var bento_cleanhash = window.location.hash.substr(1);
 		if ( $str('#' + bento_cleanhash).length ) {
+			var bento_headerHeight = 0;
 			if ( bentoThemeVars.fixed_menu == 1 ) {
-				var bento_headerHeight = $str('.site-header').outerHeight(true);
+				bento_headerHeight = $str('.site-header').outerHeight(true);
 			}
 			scrollPosition = $str('#' + bento_cleanhash).offset().top - bento_headerHeight - 10;
 			$str('html, body').animate( { scrollTop: scrollPosition }, 1 );
@@ -433,6 +434,7 @@ $str(window).scroll(function () {
 	if ( ! $str.isEmptyObject(bento_op_menu) ) {
 		var currentPosition = $str(window).scrollTop();
 		$str.each( bento_op_menu, function( ind, val ) {
+			val = val - 10;
 			if ( currentPosition >= val ) {
 				activeParent = ind;
 			}

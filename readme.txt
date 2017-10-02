@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.7.5
+Stable tag: 1.7.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,12 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.6 / 2 October 2017
+Fixed scroll positions for same-page links in the absence of fixed header.
+Posts with excerpts now display the excerpt on the native blog page.
+Added more robustness to the one-page links js function.
+Fixed margins for the first stretched Content Builder element.
 
 * 1.7.5 / 8 August 2017
 Fixed thumbnail visibility for posts with active Extended Header

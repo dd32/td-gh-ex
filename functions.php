@@ -31,7 +31,6 @@ function bento_theme_setup() {
 	add_action( 'wp_ajax_nopriv_ajax_pagination', 'bento_ajax_pagination' );
 	add_action( 'widgets_init', 'bento_register_sidebars' );
 	add_action( 'comment_form_defaults', 'bento_comment_form_defaults' );
-	add_filter( 'comment_form_fields', 'bento_rearrange_comment_fields' );
 	add_action( 'comment_form_default_fields', 'bento_comment_form_fields' );
 	add_action( 'wp_ajax_bento_migrate_customizer_options', 'bento_migrate_customizer_options' );
 	add_action( 'wp_ajax_nopriv_bento_migrate_customizer_options', 'bento_migrate_customizer_options' );
@@ -41,6 +40,7 @@ function bento_theme_setup() {
 	add_filter( 'get_custom_logo', 'bento_get_custom_logo' );
 	add_filter( 'get_the_excerpt', 'bento_grid_excerpt' );
 	add_filter( 'body_class', 'bento_extra_classes' );
+	add_filter( 'comment_form_fields', 'bento_rearrange_comment_fields' );
 	add_filter( 'post_class', 'bento_has_thumb_class' );
 	add_filter( 'get_the_archive_title', 'bento_cleaner_archive_titles' );
 	add_filter( 'cmb2_admin_init', 'bento_metaboxes' );
