@@ -265,8 +265,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="bfastmag-tab-pane-center">
 
-		<!-- Page Builder by SiteOrigin -->
-		<h4><?php esc_html_e( 'Tiled Gallery Carousel Without JetPack', 'bfastmag' ); ?></h4>
+ 		<h4><?php esc_html_e( 'Tiled Gallery Carousel Without JetPack', 'bfastmag' ); ?></h4>
 		<p><?php esc_html_e( 'Create Stylish Gallery with Carousel Like Jetpack', 'bfastmag' ); ?></p>
 
 		<?php if ( is_plugin_active( 'tiled-gallery-carousel-without-jetpack/tiled-gallery.php' ) ) { ?>
@@ -288,7 +287,56 @@ $customizer_url = admin_url() . 'customize.php' ;
   
 
 	</div>
+				<div class="bfastmag-tab-pane-half">
 
+					<!-- Page Builder by SiteOrigin -->
+					<h4><?php esc_html_e( 'Themepacific WordPress Review Plugin', 'bfastmag' ); ?></h4>
+					<p><?php esc_html_e( 'TP WordPress Review and User Rating Plugin (TP WP Reviews) will help sites to add reviews', 'bfastmag' ); ?></p>
+
+					<?php if ( is_plugin_active( 'themepacific-review-lite/tpcrn_wpreview.php' ) ) { ?>
+
+					<p><span class="bfastmag-w-activated button"><?php esc_html_e( 'Already activated', 'bfastmag' ); ?></span></p>
+
+					<?php
+				}
+				else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=themepacific-review-lite' ), 'install-plugin_themepacific-review-lite' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Themepacific WordPress Review Plugin', 'bfastmag' ); ?></a></p>
+
+				<?php
+			}
+
+			?>
+
+			<hr />
+
+
+		</div>
+						<div class="bfastmag-tab-pane-half">
+
+					<!-- Page Builder by SiteOrigin -->
+					<h4><?php esc_html_e( 'WordPress PostViews Count & Popular Posts Widgets', 'bfastmag' ); ?></h4>
+					<p><?php esc_html_e( 'Using this plugin, Show the Popular Trening Posts to your users to get more pageviews.', 'bfastmag' ); ?></p>
+
+					<?php if ( is_plugin_active( 'tp-postviews-count-popular-posts-widgets/tp_postviews.php' ) ) { ?>
+
+					<p><span class="bfastmag-w-activated button"><?php esc_html_e( 'Already activated', 'bfastmag' ); ?></span></p>
+
+					<?php
+				}
+				else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=tp-postviews-count-popular-posts-widgets' ), 'install-plugin_tp-postviews-count-popular-posts-widgets' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install WordPress PostViews Count & Popular Posts Widgets', 'bfastmag' ); ?></a></p>
+
+				<?php
+			}
+
+			?>
+
+			<hr />
+
+
+		</div>
 	<div class="bfastmag-clear"></div>
 
 </div><?php

@@ -367,6 +367,7 @@ require get_template_directory() . '/inc/functions/custom-functions.php';
 
 function bfastmag_customize_register_required(){
   	require( get_template_directory() . '/inc/customizer/bfastmag-info.php' );
+	require( get_template_directory() . '/inc/customizer/customizer-repeater/bfastmag-general-control.php' );
 
 }
 add_action( 'customize_register', 'bfastmag_customize_register_required' );
@@ -471,7 +472,7 @@ function bfastmag_show_block( $block_hm_styl) {
 		case 1:
 			$postperpage = get_theme_mod( 'bfastmag_block1_posts_per_page', 4 );
  			$fp_style = $block_hm_styl;
-			$bfastmag_block_title = get_theme_mod( 'bfastmag_block1_title', esc_html__( 'Block 1', 'bfastmag' ) );
+			$bfastmag_block_title = get_theme_mod( 'bfastmag_sblock1_title' );
  			break;
 		case 2:
 			$fp_style = 3;
