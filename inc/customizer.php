@@ -339,7 +339,7 @@ final class bb_wedding_bliss_customize {
 				array(
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-wedding-bliss' ),
-					'pro_url'  => 'http://www.themeshopy.com/bb-wedding-bliss-theme/'
+					'pro_url'  => 'http://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'
 				)
 			)
 		);

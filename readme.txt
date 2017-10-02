@@ -3,9 +3,9 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   BB Wedding Bliss
-Theme URI       :   http://themeshopy.com/free/wp-wedding-design-theme/
-Version         :   1.0
-Tested up to    :   WP 4.8
+Theme URI       :   http://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
+Version         :   1.0.1
+Tested up to    :   WP 4.8.2
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -21,7 +21,7 @@ email       	:   support@themeshopy.com
 /* Theme Resources */
 /*-----------------------------------------------------------------------------------*/
 
-BB wedding bliss WordPress Theme, Copyright 2017 Burhanuddin Bohra
+BB wedding bliss WordPress Theme, Copyright 2017 Themeshopy
 BB wedding bliss is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -37,8 +37,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see .
 
-BB wedding bliss WordPress Theme, Copyright 2017 Burhanuddin Bohra
+BB Wedding Bliss WordPress Theme, Copyright 2017 Themeshopy
 BB wedding bliss is distributed under the terms of the GNU GPL
+
+BB Wedding Bliss WordPress Theme is derived from Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
+Twenty Sixteen is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
@@ -64,7 +67,7 @@ Theme is Built using the following resource bundles.
         http://www.opensource.org/licenses/mit-license.php
 
 5 - All the icons taken from fontawesome licensed under GPL License.
-    https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
+    https://github.com/FortAwesome/Font-Awesome
 
 6 - Images used from Pixabay.
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
@@ -75,8 +78,19 @@ Theme is Built using the following resource bundles.
 		
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
-All the icons taken from genericons licensed under GPL License.
-http://genericons.com/
+All the icons taken from genericons licensed under GPL License v2.0.
+http://genericons.com/ 
+
+/*-----------------------------------------------------------------------------------*/
+/* Changelog */
+/*-----------------------------------------------------------------------------------*/
+
+Version 1.0
+i) Intial version Release
+
+Version 1.0.1
+i) Resolved errors.
+ii) Added changelog in readme file sa per standerd.
 
 BB Wedding Bliss Premium version
 ==========================================================

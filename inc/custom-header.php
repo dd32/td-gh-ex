@@ -45,14 +45,10 @@ function bb_wedding_bliss_header_style() {
 			background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
 			background-position: center top;
 		}
-	<?php endif; ?>	
+	<?php endif; ?>
 	</style>
 	<?php
 }
 
 endif; // bb_wedding_bliss_header_style
 
-add_action( 'admin_head', 'bb_wedding_bliss_admin_header_css' );
-function bb_wedding_bliss_admin_header_css(){ ?>
-	<style>pre{white-space: pre-wrap;}</style><?php
-}

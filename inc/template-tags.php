@@ -92,7 +92,7 @@ if ( ! function_exists( 'bb_wedding_bliss_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since Twenty Sixteen 1.2
+ * @since BB Wedding Bliss 1.2
  */
 function bb_wedding_bliss_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

@@ -139,7 +139,7 @@ a.nivo-nextNav {
     transition: all 200ms ease-in-out 0s;
     width: 43px;
 }
-.nivo-directionNav a{background:url(../images/slide-nav.png) no-repeat scroll 0 0 #373a3f;}
+.nivo-directionNav a{background:url(../images/slide-nav.png) no-repeat scroll 0 0;}
 .slider-main:hover .nivo-directionNav a {
     opacity: 0.8;
 }

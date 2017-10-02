@@ -48,12 +48,12 @@
         </div>
         <div class="top-contact col-md-2 col-xs-12 col-sm-4">
           <?php if(esc_url( get_theme_mod( 'bb_wedding_bliss_contact','' ) ) != '') { ?>
-            <span class="call"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_contact',__('(518) 356-5373','bb-wedding-bliss') )); ?></span>
-           <?php } ?>
+            <span class="call"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_contact',__('(123) 456 7890','bb-wedding-bliss') )); ?></span>
+          <?php } ?>
         </div>   
         <div class="top-contact col-md-3 col-xs-12 col-sm-4">
           <?php if(esc_url( get_theme_mod( 'bb_wedding_bliss_email','' ) ) != '') { ?>
-            <span class="email"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_email',__('support@themeshopy.com','bb-wedding-bliss')) ); ?></span>
+            <span class="email"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_email',__('example.123@gmail.com','bb-wedding-bliss')) ); ?></span>
           <?php } ?>
         </div>
       </div>
