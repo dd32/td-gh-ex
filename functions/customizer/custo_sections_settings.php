@@ -168,7 +168,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('To add more more slider and animation effects click to upgrade to pro','busiprof');?></P>
+	 <P><?php _e('To add more slider and animation effects click to upgrade to pro','busiprof');?></P>
 	 </div>
 	  <div class="pro-box">
 	 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','busiprof' ); ?></a>
