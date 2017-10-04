@@ -50,7 +50,7 @@ if( !class_exists( 'suevafree_admin_notice' ) ) {
 		
 			if ( isset( $_GET['sueva-free-dismiss'] ) ) {
 		
-				update_user_meta( get_current_user_id(), 'sueva-free_notice_userid_' . get_current_user_id() , $_GET['sueva-free-dismiss'] );
+				update_user_meta( get_current_user_id(), 'sueva-free_notice_userid_' . get_current_user_id() , intval($_GET['sueva-free-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 

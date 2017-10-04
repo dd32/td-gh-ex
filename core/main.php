@@ -34,48 +34,6 @@ if ( ! function_exists( 'suevafree_is_woocommerce_active' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* TAG TITLE */
-/*-----------------------------------------------------------------------------------*/  
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-
-	function suevafree_title( $title, $sep ) {
-		
-		global $paged, $page;
-	
-		if ( is_feed() )
-			return $title;
-	
-		$title .= get_bloginfo( 'name' );
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-		
-		if ( $paged >= 2 || $page >= 2 )	
-			$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'suevafree' ), max( $paged, $page ) );
-
-		return $title;
-		
-	}
-
-	add_filter( 'wp_title', 'suevafree_title', 10, 2 );
-
-	function suevafree_add_title() {
-		
-?>
-
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-
-	}
-
-	add_action( 'wp_head', 'suevafree_add_title' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* IS SINGLE */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -376,7 +334,7 @@ if (!function_exists('suevafree_body_classes_function')) {
 		
 		if ( suevafree_setting('suevafree_footer_layout') <> '' ) :
 				
-			$classes[] = suevafree_setting('suevafree_footer_layout');
+			$classes[] = esc_html(suevafree_setting('suevafree_footer_layout'));
 	
 		endif;
 		
@@ -946,8 +904,8 @@ if (!function_exists('suevafree_setup')) {
 		add_image_size( 'suevafree_medium', 290,220, TRUE ); 
 		add_image_size( 'suevafree_small', 211,150, TRUE ); 
 
-		register_nav_menu('main-menu', 'Main menu' );
-		register_nav_menu('one-page-menu', 'One Page menu' );
+		register_nav_menu('main-menu', esc_html__('Main menu', 'suevafree'));
+		register_nav_menu('one-page-menu', esc_html__('One Page menu', 'suevafree'));
 
 		suevafree_require('/core/post-formats/');
 		suevafree_require('/core/templates/header/');

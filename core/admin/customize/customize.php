@@ -48,7 +48,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Width","suevafree"),
 				"description" => esc_html__( "Insert the width of this thumbnail, for example 1170 and not 1170px.","suevafree"),
 				"id" => "suevafree_thumbnail_width",
-				"type" => "text",
+				"type" => "number",
 				"section" => "full_width_section",
 				"std" => "1170",
 
@@ -60,7 +60,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Height","suevafree"),
 				"description" => esc_html__( "Insert the height of this thumbnail, for example 690 and not 690px.","suevafree"),
 				"id" => "suevafree_thumbnail_height",
-				"type" => "text",
+				"type" => "number",
 				"section" => "full_width_section",
 				"std" => "690",
 
@@ -84,7 +84,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Width","suevafree"),
 				"description" => esc_html__( "Insert the width of this thumbnail, for example 750 and not 750px.","suevafree"),
 				"id" => "suevafree_thumbnail_l_width",
-				"type" => "text",
+				"type" => "number",
 				"section" => "sidebar_section",
 				"std" => "750",
 
@@ -96,7 +96,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Height","suevafree"),
 				"description" => esc_html__( "Insert the height of this thumbnail, for example 379 and not 379px.","suevafree"),
 				"id" => "suevafree_thumbnail_l_height",
-				"type" => "text",
+				"type" => "number",
 				"section" => "sidebar_section",
 				"std" => "379",
 
@@ -120,7 +120,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Width","suevafree"),
 				"description" => esc_html__( "Insert the width of this thumbnail, for example 360 and not 360px.","suevafree"),
 				"id" => "suevafree_thumbnail_s_width",
-				"type" => "text",
+				"type" => "number",
 				"section" => "masonry_section",
 				"std" => "360",
 
@@ -132,7 +132,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Height","suevafree"),
 				"description" => esc_html__( "Insert the height of this thumbnail, for example 182 and not 182px.","suevafree"),
 				"id" => "suevafree_thumbnail_s_height",
-				"type" => "text",
+				"type" => "number",
 				"section" => "masonry_section",
 				"std" => "182",
 
@@ -204,7 +204,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Screen greater than 768px",'suevafree'),
 				"description" => esc_html__( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'suevafree'),
 				"id" => "suevafree_screen1",
-				"type" => "text",
+				"type" => "number",
 				"section" => "pagewidth_section",
 				"std" => "750",
 
@@ -215,7 +215,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Screen greater than 992px",'suevafree'),
 				"description" => esc_html__( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'suevafree'),
 				"id" => "suevafree_screen2",
-				"type" => "text",
+				"type" => "number",
 				"section" => "pagewidth_section",
 				"std" => "940",
 
@@ -226,7 +226,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Screen greater than 1200px",'suevafree'),
 				"description" => esc_html__( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'suevafree'),
 				"id" => "suevafree_screen3",
-				"type" => "text",
+				"type" => "number",
 				"section" => "pagewidth_section",
 				"std" => "940",
 
@@ -237,7 +237,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Screen greater than 1400px",'suevafree'),
 				"description" => esc_html__( "Set a width, in px, for a screen greater than 1400px pixel (for example 1370 and not 1370px ) ",'suevafree'),
 				"id" => "suevafree_screen4",
-				"type" => "text",
+				"type" => "number",
 				"section" => "pagewidth_section",
 				"std" => "940",
 
@@ -1052,7 +1052,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Font size","suevafree"),
 				"description" => esc_html__( "Insert a size, for logo font (For example, 60px) ","suevafree"),
 				"id" => "suevafree_logo_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "logo_section",
 				"std" => "70px",
 
@@ -1063,7 +1063,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Description font size","suevafree"),
 				"description" => esc_html__( "Insert a size, for logo description (For example, 14px) ","suevafree"),
 				"id" => "suevafree_logo_description_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "logo_section",
 				"std" => "14px",
 
@@ -1074,7 +1074,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Description top margin","suevafree"),
 				"description" => esc_html__( "Add a space between the logo and the description (For example, 15px) ","suevafree"),
 				"id" => "suevafree_logo_description_top_margin",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "logo_section",
 				"std" => "15px",
 
@@ -1098,7 +1098,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Font size","suevafree"),
 				"description" => esc_html__( "Insert a size, for menu font (For example, 14px) ","suevafree"),
 				"id" => "suevafree_menu_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "menu_section",
 				"std" => "14px",
 
@@ -1157,7 +1157,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "Font size","suevafree"),
 				"description" => esc_html__( "Insert a size, for content font (For example, 14px) ","suevafree"),
 				"id" => "suevafree_content_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "content_section",
 				"std" => "14px",
 
@@ -1182,7 +1182,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H1 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H1 elements (For example, 24px) ","suevafree"),
 				"id" => "suevafree_h1_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "24px",
 
@@ -1193,7 +1193,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H2 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H2 elements (For example, 22px) ","suevafree"),
 				"id" => "suevafree_h2_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "22px",
 
@@ -1204,7 +1204,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H3 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H3 elements (For example, 20px) ","suevafree"),
 				"id" => "suevafree_h3_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "20px",
 
@@ -1215,7 +1215,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H4 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H4 elements (For example, 18px) ","suevafree"),
 				"id" => "suevafree_h4_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "18px",
 
@@ -1226,7 +1226,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H5 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H5 elements (For example, 16px) ","suevafree"),
 				"id" => "suevafree_h5_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "16px",
 
@@ -1237,7 +1237,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => esc_html__( "H6 headline","suevafree"),
 				"description" => esc_html__( "Insert a size, for for H6 elements (For example, 14px) ","suevafree"),
 				"id" => "suevafree_h6_font_size",
-				"type" => "text",
+				"type" => "pixel_size",
 				"section" => "headlines_section",
 				"std" => "14px",
 

@@ -22,13 +22,11 @@ if (!function_exists('suevafree_required_plugins')) {
 		$plugins = array(
 
 			array(
-				'name'               => 'SuevaFree Essential Kit',
-				'slug'               => 'suevafree-essential-kit', 
-				'required'           => true,
-				'force_activation'   => true,
-				'force_deactivation' => false,
+				'name'      => 'SuevaFree Essential Kit',
+				'slug'      => 'suevafree-essential-kit',
+				'required'  => false,
 			),
-			
+
 			array(
 				'name'      => 'WIP Custom Login',
 				'slug'      => 'wip-custom-login',

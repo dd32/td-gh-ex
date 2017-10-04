@@ -119,13 +119,53 @@ if( !class_exists( 'suevafree_customize' ) ) {
 								
 					break;
 	
+					case 'pixel_size' :
+								
+						$wp_customize->add_setting( $element['id'], array(
+						
+							'default' => $element['std'],
+							'sanitize_callback' => array( &$this, 'pixel_size_sanize' ),
+
+						));
+												 
+						$wp_customize->add_control( $element['id'] , array(
+						
+							'type' => 'text',
+							'section' => $element['section'],
+							'label' => $element['label'],
+							'description' => $element['description'],
+										
+						));
+								
+					break;
+	
+					case 'number' :
+								
+						$wp_customize->add_setting( $element['id'], array(
+						
+							'sanitize_callback' => 'absint',
+							'default' => $element['std'],
+	
+						));
+												 
+						$wp_customize->add_control( $element['id'] , array(
+						
+							'type' => $element['type'],
+							'section' => $element['section'],
+							'label' => $element['label'],
+							'description' => $element['description'],
+										
+						));
+								
+					break;
+	
 					case 'upload' :
 								
 						$wp_customize->add_setting( $element['id'], array(
 	
 							'default' => $element['std'],
 							'capability' => 'edit_theme_options',
-							'sanitize_callback' => 'esc_url_raw'
+							'sanitize_callback' => array( &$this, 'image_upload_sanize' )
 	
 						) );
 	
@@ -157,7 +197,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'label' => $element['label'],
 							'description' => $element['description'],
 										
-						) );
+						));
 								
 					break;
 	
@@ -168,7 +208,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'sanitize_callback' => 'sanitize_hex_color',
 							'default' => $element['std'],
 	
-						) );
+						));
 												 
 						$wp_customize->add_control( $element['id'] , array(
 						
@@ -177,7 +217,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'label' => $element['label'],
 							'description' => $element['description'],
 										
-						) );
+						));
 								
 					break;
 	
@@ -185,10 +225,10 @@ if( !class_exists( 'suevafree_customize' ) ) {
 								
 						$wp_customize->add_setting( $element['id'], array(
 						
-							'sanitize_callback' => array( &$this, 'customize_button_sanize' ),
+							'sanitize_callback' => array( &$this, 'button_sanize' ),
 							'default' => $element['std'],
 	
-						) );
+						));
 												 
 						$wp_customize->add_control( $element['id'] , array(
 						
@@ -197,7 +237,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'label' => $element['label'],
 							'description' => $element['description'],
 										
-						) );
+						));
 								
 					break;
 	
@@ -205,7 +245,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 								
 						$wp_customize->add_setting( $element['id'], array(
 						
-							'sanitize_callback' => 'esc_textarea',
+							'sanitize_callback' => 'sanitize_textarea_field',
 							'default' => $element['std'],
 	
 						) );
@@ -217,7 +257,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'label' => $element['label'],
 							'description' => $element['description'],
 										
-						) );
+						));
 								
 					break;
 	
@@ -225,7 +265,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 								
 						$wp_customize->add_setting( $element['id'], array(
 	
-							'sanitize_callback' => array( &$this, 'customize_select_sanize' ),
+							'sanitize_callback' => array( &$this, 'select_sanize' ),
 							'default' => $element['std'],
 	
 						) );
@@ -238,7 +278,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'description' => $element['description'],
 							'choices'  => $element['options'],
 										
-						) );
+						));
 								
 					break;
 
@@ -250,15 +290,15 @@ if( !class_exists( 'suevafree_customize' ) ) {
 							'priority' => $element['priority'],
 							'capability' => 'edit_theme_options',
 	
-						) );
+						));
 	
 						$wp_customize->add_setting(  $element['id'], array(
 							'sanitize_callback' => 'esc_url_raw'
-						) );
+						));
 						 
 						$wp_customize->add_control( new Suevafree_Customize_Info_Control( $wp_customize,  $element['id'] , array(
 							'section' => $element['section'],
-						) ) );		
+						)));		
 											
 					break;
 
@@ -266,15 +306,15 @@ if( !class_exists( 'suevafree_customize' ) ) {
 				
 			}
 
-			if ( !suevafree_is_woocommerce_active() )
+			if (!suevafree_is_woocommerce_active())
 				$wp_customize->remove_control( 'suevafree_woocommerce_category_layout');
 			
-			if ( $wp_version >= 4.7 )
+			if ($wp_version >= 4.7)
 				$wp_customize->remove_section( 'styles_section');
 
 	   }
 	
-		public function customize_select_sanize ($value, $setting) {
+		public function select_sanize ($value, $setting) {
 
 			global $wp_customize;
 			
@@ -292,7 +332,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 
 		}
 	
-		public function customize_button_sanize ( $value, $setting ) {
+		public function button_sanize ( $value, $setting ) {
 			
 			$sanize = array (
 			
@@ -302,7 +342,7 @@ if( !class_exists( 'suevafree_customize' ) ) {
 			
 			);
 	
-			if ( !strstr ( $value, $sanize[$setting->id]) ) :
+			if (!strstr ( $value, $sanize[$setting->id])) :
 	
 				return $sanize[$setting->id] . $value;
 	
@@ -313,7 +353,26 @@ if( !class_exists( 'suevafree_customize' ) ) {
 			endif;
 	
 		}
+		
+		public function image_upload_sanize ( $file, $setting ) {
+
+			$mimes = array (
+				'jpg|jpeg|jpe' 	=> 'image/jpeg',
+				'gif' 			=> 'image/gif',
+				'png' 			=> 'image/png',
+			);
+			
+			$file_ext = wp_check_filetype ($file, $mimes );
+			return	$file_ext['ext'] ? $file : $setting->default;
+
+		}
+
+		public function pixel_size_sanize($value) {
+			
+			return absint(str_replace('px', '', $value)) . 'px';
 	
+		}
+		
 	}
 
 }

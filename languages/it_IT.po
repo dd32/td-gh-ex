@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-27 14:38+0200\n"
-"PO-Revision-Date: 2017-09-27 14:40+0200\n"
+"POT-Creation-Date: 2017-10-04 20:33+0200\n"
+"PO-Revision-Date: 2017-10-04 20:33+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -1208,11 +1208,11 @@ msgstr "Sidebar piè di pagina"
 msgid "This sidebar will be shown at the end of your content."
 msgstr "Questa barra laterale verrà mostrata alla fine del tuo sito."
 
-#: core/includes/class-customize.php:331
+#: core/includes/class-customize.php:390
 msgid "Upgrade to Sueva Premium."
 msgstr "Aggiorna a Sueva Premium."
 
-#: core/includes/class-customize.php:333 core/includes/class-notice.php:71
+#: core/includes/class-customize.php:392 core/includes/class-notice.php:71
 msgid ""
 "Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
 "Unlimited sidebars, Portfolio section and much more."
@@ -1220,15 +1220,15 @@ msgstr ""
 "Aggiorna alla versione premium di Sueva, per attivare oltre 600 Google "
 "Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/includes/class-customize.php:337
+#: core/includes/class-customize.php:396
 msgid "Upgrade to Sueva premium"
 msgstr "Aggiorna a Sueva Premium"
 
-#: core/includes/class-customize.php:345
+#: core/includes/class-customize.php:404
 msgid "SuevaFree child themes."
 msgstr "Temi child per SuevaFree"
 
-#: core/includes/class-customize.php:347
+#: core/includes/class-customize.php:406
 msgid ""
 "You can also choose one of available premium child themes for SuevaFree, "
 "SvevaPro or Avana."
@@ -1236,19 +1236,19 @@ msgstr ""
 "Puoi anche scegliere uno dei temi child in versione premium disponibili per "
 "SuevaFree, SvevaPro oppure Avana"
 
-#: core/includes/class-customize.php:351
+#: core/includes/class-customize.php:410
 msgid "Upgrade to SvevaPro"
 msgstr "Aggiorna a SvevaPro"
 
-#: core/includes/class-customize.php:352
+#: core/includes/class-customize.php:411
 msgid "Upgrade to Avana"
 msgstr "Aggiorna ad Avana"
 
-#: core/includes/class-customize.php:360
+#: core/includes/class-customize.php:419
 msgid "Get support"
 msgstr "Ottieni supporto."
 
-#: core/includes/class-customize.php:362
+#: core/includes/class-customize.php:421
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -1258,15 +1258,15 @@ msgstr ""
 "invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
 "ottenere rapidamente una risposta."
 
-#: core/includes/class-customize.php:366
+#: core/includes/class-customize.php:425
 msgid "Open a new ticket"
 msgstr "Apri un nuovo ticket."
 
-#: core/includes/class-customize.php:367
+#: core/includes/class-customize.php:426
 msgid "Send a reminder"
 msgstr "Invia un promemoria."
 
-#: core/includes/class-customize.php:372
+#: core/includes/class-customize.php:431
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -1274,19 +1274,19 @@ msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
 "strong> una delle seguenti azioni:"
 
-#: core/includes/class-customize.php:376
+#: core/includes/class-customize.php:435
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:377
+#: core/includes/class-customize.php:436
 msgid "Like on Facebook"
 msgstr "Seguici su Facebook."
 
-#: core/includes/class-customize.php:378
+#: core/includes/class-customize.php:437
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-customize.php:379
+#: core/includes/class-customize.php:438
 msgid "Download our free WordPress themes"
 msgstr "Scarica i nostri temi gratuiti per WordPress"
 
@@ -1458,7 +1458,7 @@ msgstr ""
 #: core/includes/class-plugin-activation.php:2959
 msgctxt "plugin A *and* plugin B"
 msgid "and"
-msgstr ""
+msgstr "e"
 
 #: core/includes/class-plugin-activation.php:1993
 #, php-format
@@ -1686,122 +1686,125 @@ msgstr "Tutte le installazioni sono state completate."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
-#: core/main.php:56
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
-
-#: core/main.php:105
+#: core/main.php:63
 #, php-format
 msgid "Category: %s"
 msgstr "Categoria: %s"
 
-#: core/main.php:107
+#: core/main.php:65
 #, php-format
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: core/main.php:109
+#: core/main.php:67
 #, php-format
 msgid "Author: %s"
 msgstr "Autore: %s"
 
-#: core/main.php:111
+#: core/main.php:69
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
 
-#: core/main.php:111
+#: core/main.php:69
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
-#: core/main.php:113
+#: core/main.php:71
 #, php-format
 msgid "Month: %s"
 msgstr "Mese: %s"
 
-#: core/main.php:113
+#: core/main.php:71
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
-#: core/main.php:115
+#: core/main.php:73
 #, php-format
 msgid "Day: %s"
 msgstr "Giorno: %s"
 
-#: core/main.php:115
+#: core/main.php:73
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "F j, Y"
 
-#: core/main.php:118
+#: core/main.php:76
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "Digressione"
 
-#: core/main.php:120
+#: core/main.php:78
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Gallerie"
 
-#: core/main.php:122
+#: core/main.php:80
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Immagini"
 
-#: core/main.php:124
+#: core/main.php:82
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "Video"
 
-#: core/main.php:126
+#: core/main.php:84
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citazioni"
 
-#: core/main.php:128
+#: core/main.php:86
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Links"
 
-#: core/main.php:130
+#: core/main.php:88
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Stati"
 
-#: core/main.php:132
+#: core/main.php:90
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
-#: core/main.php:134
+#: core/main.php:92
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chats"
 
-#: core/main.php:137
+#: core/main.php:95
 #, php-format
 msgid "Archives: %s"
 msgstr "Archivi: %s"
 
-#: core/main.php:140
+#: core/main.php:98
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:649 core/main.php:655
+#: core/main.php:607 core/main.php:613
 msgid "Read More"
 msgstr "Continua"
 
-#: core/main.php:760
+#: core/main.php:718
 msgid "Article"
 msgstr "Articolo"
 
-#: core/main.php:915
+#: core/main.php:873
 msgid "Default image"
 msgstr "Immagine di default"
+
+#: core/main.php:907
+msgid "Main menu"
+msgstr "Menù principale."
+
+#: core/main.php:908
+msgid "One Page menu"
+msgstr "Menu One Page"
 
 #: core/metaboxes/post.php:19 core/metaboxes/post.php:32
 #: core/metaboxes/product.php:20 core/metaboxes/product.php:31
@@ -2159,6 +2162,9 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Page %s"
+#~ msgstr "Pagina %s"
 
 #~ msgid "Upgrade to Avana Premium"
 #~ msgstr "Aggiorna ad Avana Premium"

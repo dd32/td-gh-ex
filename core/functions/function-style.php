@@ -25,33 +25,33 @@ if (!function_exists('suevafree_css_custom')) {
 		
 			if (suevafree_setting('suevafree_screen1')) {
 			
-				$css .= "@media (min-width:768px) {.container{width:".esc_html(suevafree_setting('suevafree_screen1'))."px}}"; 
-				$css .= "@media (min-width:768px) {.container.block{width:" . (esc_html(suevafree_setting('suevafree_screen1'))-10) . "px}}"; 
-				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (esc_html(suevafree_setting('suevafree_screen1'))-20) . "px}}"; 
+				$css .= "@media (min-width:768px) {.container{width:".intval(suevafree_setting('suevafree_screen1'))."px}}"; 
+				$css .= "@media (min-width:768px) {.container.block{width:" . (intval(suevafree_setting('suevafree_screen1'))-10) . "px}}"; 
+				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (intval(suevafree_setting('suevafree_screen1'))-20) . "px}}"; 
 			
 			}
 			
 			if (suevafree_setting('suevafree_screen2')) {
 				
-				$css .= "@media (min-width:992px) {.container{width:".esc_html(suevafree_setting('suevafree_screen2'))."px}}"; 
-				$css .= "@media (min-width:992px) {.container.block{width:" . (esc_html(suevafree_setting('suevafree_screen2'))-10) . "px}}"; 
-				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (esc_html(suevafree_setting('suevafree_screen2'))-20) . "px}}"; 
+				$css .= "@media (min-width:992px) {.container{width:".intval(suevafree_setting('suevafree_screen2'))."px}}"; 
+				$css .= "@media (min-width:992px) {.container.block{width:" . (intval(suevafree_setting('suevafree_screen2'))-10) . "px}}"; 
+				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (intval(suevafree_setting('suevafree_screen2'))-20) . "px}}"; 
 			
 			}
 			
 			if (suevafree_setting('suevafree_screen3'))  {
 				
-				$css .= "@media (min-width:1200px){.container{width:".esc_html(suevafree_setting('suevafree_screen3'))."px}}"; 
-				$css .= "@media (min-width:1200px){.container.block{width:" . (esc_html(suevafree_setting('suevafree_screen3'))-10) . "px}}"; 
-				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (esc_html(suevafree_setting('suevafree_screen3'))-20) . "px}}"; 
+				$css .= "@media (min-width:1200px){.container{width:".intval(suevafree_setting('suevafree_screen3'))."px}}"; 
+				$css .= "@media (min-width:1200px){.container.block{width:" . (intval(suevafree_setting('suevafree_screen3'))-10) . "px}}"; 
+				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (intval(suevafree_setting('suevafree_screen3'))-20) . "px}}"; 
 			
 			}
 			
 			if (suevafree_setting('suevafree_screen4'))  {
 				
-				$css .= "@media (min-width:1400px){.container{width:".esc_html(suevafree_setting('suevafree_screen4'))."px}}"; 
-				$css .= "@media (min-width:1400px){.container.block{width:" . (esc_html(suevafree_setting('suevafree_screen4'))-10) . "px}}"; 
-				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (esc_html(suevafree_setting('suevafree_screen4'))-20) . "px}}"; 
+				$css .= "@media (min-width:1400px){.container{width:".intval(suevafree_setting('suevafree_screen4'))."px}}"; 
+				$css .= "@media (min-width:1400px){.container.block{width:" . (intval(suevafree_setting('suevafree_screen4'))-10) . "px}}"; 
+				$css .= "@media (min-width:768px) {.container.grid-container{width:" . (intval(suevafree_setting('suevafree_screen4'))-20) . "px}}"; 
 			
 			}
 			
