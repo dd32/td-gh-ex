@@ -53,7 +53,7 @@
         </div>   
         <div class="top-contact col-md-3 col-xs-12 col-sm-4">
           <?php if(esc_url( get_theme_mod( 'bb_wedding_bliss_email','' ) ) != '') { ?>
-            <span class="email"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_email',__('example.123@gmail.com','bb-wedding-bliss')) ); ?></span>
+            <span class="email"><?php echo esc_html( get_theme_mod('bb_wedding_bliss_email',__('example.com','bb-wedding-bliss')) ); ?></span>
           <?php } ?>
         </div>
       </div>

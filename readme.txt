@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Wedding Bliss
 Theme URI       :   http://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.1
+Version         :   1.0.2
 Tested up to    :   WP 4.8.2
 Author          :   themeshopy
 Author URI      :   https://www.themeshopy.com/
@@ -66,8 +66,10 @@ Theme is Built using the following resource bundles.
         Free to use and abuse under the MIT license.
         http://www.opensource.org/licenses/mit-license.php
 
-5 - All the icons taken from fontawesome licensed under GPL License.
-    https://github.com/FortAwesome/Font-Awesome
+5 - The Font Awesome font is licensed under the SIL OFL 1.1:
+	http://scripts.sil.org/OFL
+	Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
+	https://opensource.org/licenses/mit-license.html
 
 6 - Images used from Pixabay.
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
@@ -91,6 +93,9 @@ i) Intial version Release
 Version 1.0.1
 i) Resolved errors.
 ii) Added changelog in readme file sa per standerd.
+
+Version 1.0.2
+i) Resolved errors.
 
 BB Wedding Bliss Premium version
 ==========================================================
