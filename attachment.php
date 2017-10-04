@@ -5,13 +5,12 @@ get_header();
 <?php while ( have_posts() ) : the_post(); ?>
 
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <h2 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 <div class="meta">
-<?php edit_post_link(__('Edit This', 'northern')); ?>
+<?php edit_post_link(__('Edit This', 'northern-web-coders')); ?>
 <ul>
-<li><?php _e("Published on:", 'northern'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li></ul>
+<li><?php _e("Published on:", 'northern-web-coders'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li></ul>
 </div>
 						
 <?php
@@ -54,10 +53,10 @@ echo wp_get_attachment_image( $post->ID, array( $attachment_size, 1024 ) ); // f
 
 
 
-<section class="pagenav">
-<span class="previous"><?php previous_image_link( false, __( '&laquo; Previous' , 'northern' ) ); ?></span> -
-<span class="next"><?php next_image_link( false, __( 'Next &raquo;' , 'northern' ) ); ?></span>
-</section>
+<div class="pagenav">
+<span class="previous"><?php previous_image_link( false, __( '&laquo; Previous' , 'northern-web-coders' ) ); ?></span> -
+<span class="next"><?php next_image_link( false, __( 'Next &raquo;' , 'northern-web-coders' ) ); ?></span>
+</div>
 				
 				
 </article><!-- #post-<?php the_ID(); ?> -->
@@ -66,11 +65,8 @@ echo wp_get_attachment_image( $post->ID, array( $attachment_size, 1024 ) ); // f
 
 <?php endwhile; // end of the loop. ?>
  
-</section>
+</div>
 
 <?php get_sidebar(''); ?>
-<?php get_sidebar('2'); ?>
-<?php get_sidebar('3'); ?>
-<?php get_sidebar('4'); ?>
 
 <?php get_footer(); ?>

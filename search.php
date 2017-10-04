@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<h4 class="page-title"><?php _e( 'Search results for:', 'northern' ); ?> <?php the_search_query(); ?> </h4>
+<h4 class="page-title  animated fadeIn  duration4"><?php _e( 'Search results for:', 'northern-web-coders' ); ?> <?php the_search_query(); ?> </h4>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -11,43 +11,36 @@ get_header();
 <?php the_post_thumbnail('thumbnail'); ?>
 
 <div class="meta">
-<?php edit_post_link(__('Edit This', 'northern')); ?>
-<ul>
-<li><?php _e("Published on:", 'northern'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
-<li><?php _e("Categories:", 'northern'); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'northern'), ' , ' , ''); ?></li>
-</ul>
+<?php edit_post_link(__('Edit This', 'northern-web-coders')); ?>
 </div>
 
-<?php the_content(__('(more...)', 'northern')); ?>
+<?php the_content(__('(more...)', 'northern-web-coders')); ?>
 
 <div class="commentlink">
 <?php wp_link_pages(); ?>
-<?php comments_popup_link(__('No Comments', 'northern'), __('1 Comment', 'northern'), __('% Comments', 'northern'), '', __('Comments are closed.', 'northern') ); ?>
+<?php comments_popup_link(__('No Comments', 'northern-web-coders'), __('1 Comment', 'northern-web-coders'), __('% Comments', 'northern-web-coders'), '', __('Comments are closed.', 'northern-web-coders') ); ?>
 </div>
 
 </article>
 
 <?php endwhile; else: ?>
 
-<h2 class="storytitle"><?php _e("Not Found", 'northern'); ?></h2>
 <article class="noresults">
-<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'northern' ); ?></p>
+<h2 class="storytitle"><?php _e("Not Found", 'northern-web-coders'); ?></h2>
+<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'northern-web-coders' ); ?></p>
 <?php get_search_form(); ?>
 </article>
 
 <?php endif; ?>
 
-<section class="pagenav">
+<div class="pagenav">
 <?php northern_pagenavi() ?>
-</section>
+</div>
 
 <?php comments_template( '', true ); ?>
 
-</section>
+</div>
 
 <?php get_sidebar(''); ?>
-<?php get_sidebar('2'); ?>
-<?php get_sidebar('3'); ?>
-<?php get_sidebar('4'); ?>
 
 <?php get_footer(); ?>

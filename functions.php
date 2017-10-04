@@ -5,53 +5,186 @@ if ( ! isset( $content_width ) )
 add_action( 'after_setup_theme', 'northern_setup' );
 
 function northern_setup() {
-	load_theme_textdomain( 'northern', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'northern-web-coders', get_template_directory() . '/languages' );
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
-register_nav_menu( 'primary', __( 'Primary Menu', 'northern' ) );
+register_nav_menu( 'primary', __( 'Primary Menu', 'northern-web-coders' ) );
 
 add_editor_style();
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
-add_theme_support( 'custom-background', array( 'default-color' => '444' ) );
+add_theme_support( 'custom-background', array( 'default-color' => '72726b' ) );
+add_theme_support( 'title-tag' );
+
+require( get_template_directory() . '/inc/theme-options.php' );
 };
 
+function northern_custom_header_setup() {
+$args = array(
+	'random-default'         => true,
+	'default-text-color'     => 'FFFFFF',
+	'width'                  => 1250,
+	'height'                 => 371,
+	'flex-height'            => true,
+	'wp-head-callback'       => 'northern_header_style',
+	'admin-head-callback'    => 'northern_admin_header_style',
+	'admin-preview-callback' => 'northern_admin_header_image',
+);
 
-
-function northern_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'northern' ), max( $paged, $page ) );
-	}
-
-	return $title;
+$args = apply_filters( 'northern_custom_header_args', $args );
+add_theme_support( 'custom-header', $args );
 }
-add_filter( 'wp_title', 'northern_wp_title', 10, 2 );
 
+
+
+add_action( 'after_setup_theme', 'northern_custom_header_setup' );
+
+function northern_header_style() {
+if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+		return;
+?>
+<style type="text/css">	
+#headerpic
+{
+    background: url('<?php header_image(); ?>');
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    height: <?php echo HEADER_IMAGE_HEIGHT; ?>px
+}
+
+<?php
+// Has the text been hidden?
+if ( 'blank' == get_header_textcolor() ) :
+?>
+
+header#header h1 ,
+header#header em {
+	display: none;
+}
+
+<?php
+// If the user has set a custom color for the text use that
+else :
+?>
+
+header#header h1 a,
+header#header em {
+	color: #<?php echo get_header_textcolor(); ?> !important;
+}
+<?php endif; ?>
+</style>
+<?php
+}
+
+function northern_admin_header_style() {
+	wp_enqueue_style( 'northern-fonts', 'http://fonts.googleapis.com/css?family=Ubuntu' );
+?>
+<style type="text/css">
+#headerpic
+{
+    background: #<?php echo get_background_color() ?>; width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    padding: 20px;
+}
+
+#headerpic h1
+{
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    font-family: Ubuntu;
+    margin: 0;
+    padding: 0;
+}
+
+#headerpic h1 a:first-letter
+{
+    font-size: 50px;
+    color: #EB6E44;
+    font-style: italic;
+    margin-right: 5px;
+}
+
+#headerpic h1 a
+{
+    font-family: Ubuntu;
+    font-size: 35px;
+    text-decoration: none;
+    display: block;
+    line-height: 45px;
+}
+
+#headerpic em
+{
+    font-size: 12px;
+    display: block;
+    margin-left: 4px;
+}
+
+<?php
+// Has the text been hidden?
+if ( 'blank' == get_header_textcolor() ) :
+?>
+
+#headerpic h1 ,
+#headerpic em {
+	display: none;
+}
+
+<?php
+// If the user has set a custom color for the text use that
+else :
+?>
+
+#headerpic h1 a,
+#headerpic em {
+	color: #<?php echo get_header_textcolor(); ?> !important;
+}
+<?php endif; ?>
+
+
+
+
+div.northern-admin-header-image
+{
+    height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    background: url(<?php echo get_header_image(); ?>) 0 0 no-repeat;
+    border-top : 3px solid #FAFAFA;
+    border-bottom : 1px solid #FAFAFA;
+    -moz-border-radius: 8px 8px 0 0;
+    -webkit-border-radius:  8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
+    }
+</style>
+<?php
+}
+
+function northern_admin_header_image() { ?>
+<div id="headerpic">
+<h1><a id="name" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+<em><?php bloginfo( 'description' ); ?></em>
+
+
+<?php
+if ( 'blank' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) || '' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) )
+	$style = ' style="display:none;"';
+else
+	$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
+?>
+<?php $header_image = get_header_image();
+if ( ! empty( $header_image ) ) : ?>
+
+<div class="northern-admin-header-image">
+<?php endif; ?>
+</div>
+</div>
+<?php }
 
 function northern_widgets_init() {
     register_sidebar(array(
-    'name'=> __( 'Sidebar 1', 'northern' ),
-    'id' => 'sidebar-1',
-    'description' => 'Sidebar 1',
+    'name'=> __( 'Sidebar Blog', 'northern-web-coders' ),
+    'id' => 'sidebar-blog',
+    'description' => 'Sidebar Blog',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3>',
@@ -59,29 +192,9 @@ function northern_widgets_init() {
     ));
 
     register_sidebar(array(
-    'name'=> __( 'Sidebar 2', 'northern' ),
-    'id' => 'sidebar-2',
-    'description' => 'Sidebar 2',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-    ));
-    
-    register_sidebar(array(
-    'name'=> __( 'Sidebar 3,', 'northern' ),
-    'id' => 'sidebar-3,',
-    'description' => 'Sidebar 3,',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-    ));
-    
-    register_sidebar(array(
-    'name'=> __( 'Sidebar 4', 'northern' ),
-    'id' => 'sidebar-4',
-    'description' => 'Sidebar 4',
+    'name'=> __( 'Sidebar Page', 'northern-web-coders' ),
+    'id' => 'sidebar-page',
+    'description' => 'Sidebar Page',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3>',
@@ -89,15 +202,6 @@ function northern_widgets_init() {
     ));
 }
 add_action( 'widgets_init', 'northern_widgets_init' );
-
-
-
-
-
-
-
-
-
 
 function northern_pagenavi() {
     global $wp_query, $wp_rewrite;
@@ -117,11 +221,11 @@ if ( $wp_rewrite->using_permalinks() )
     $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
     echo paginate_links( $pagination );
 }
-  
+
 function northern_the_breadcrumb() {
-    echo(_e("You are here:", 'northern'));
+    echo(_e("You are here:", 'northern-web-coders'));
 	echo ' <a href="';
-	echo esc_url( home_url() );
+	echo home_url();
 	echo '">';
 	bloginfo('name');
 	echo "</a> ";
@@ -138,24 +242,49 @@ function northern_the_breadcrumb() {
 	}
 };
 
+function my_search_form( $form ) {
+	$form = '<form method="get"  action="' . home_url( '/' ) . '" id="searchform">
+	<label class="screen-reader-text" for="s">' . __( 'Search for:' , 'northern-web-coders') . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' , 'northern-web-coders') .'" />
+	</form>';
+
+	return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form' );
+
 function northern_theme_styles()
 {
    wp_register_style( 'screen-style', get_template_directory_uri() . '/style.css');
+   wp_register_style( 'animate-style', get_template_directory_uri() . '/css/animate.css');
    wp_register_style('ubuntu-font', 'http://fonts.googleapis.com/css?family=Ubuntu');
    wp_enqueue_style( 'screen-style' );
-   wp_enqueue_style('ubuntu-font');
+   wp_enqueue_style( 'animate-style' );
+   wp_enqueue_style('roboto');
+   wp_enqueue_style('roboto-slab');
 }
 add_action('wp_print_styles', 'northern_theme_styles');
 
 function northern_enqueue_scripts() {
 	if (!is_admin()) {
-	  wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js');
+      wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js');
+      wp_register_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js');
       wp_register_script('northern-custom', get_template_directory_uri() . '/js/northern-custom.js');
-      wp_register_script( 'html5-shim', get_template_directory_uri() . '/js/html5.js', array( 'jquery' ), '1', false );
+      wp_register_script( 'html5-shim', get_template_directory_uri() . '/js/html5.js');
       wp_enqueue_script('jquery');
-	  wp_enqueue_script('superfish');
+      wp_enqueue_script('superfish');
+      wp_enqueue_script('hoverIntent');
       wp_enqueue_script('northern-custom');
       wp_enqueue_script( 'html5-shim' );
 	}
 }
 add_action('init', 'northern_enqueue_scripts');
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+
+
