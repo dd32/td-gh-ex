@@ -877,7 +877,8 @@ if (!function_exists('suevafree_setup')) {
 		add_theme_support( 'custom-header', array( 
 			'width'         => 1920,
 			'height'        => 1200,
-			'default-image' => get_template_directory_uri() . '/assets/images/background/header.jpg'
+			'default-image' => get_template_directory_uri() . '/assets/images/background/header.jpg',
+			'header-text' 	=> false
 		));
 
 		add_theme_support( 'post-formats', 

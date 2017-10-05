@@ -1,6 +1,10 @@
 SuevaFree Changelog
 
-- Version 3.2.9 - Released: 01.10.2017
+- Version 3.3.0 - Released: 05.10.2017
+
+-- Removed : Option to disable the header text.
+
+- Version 3.2.9 - Released: 04.10.2017
 
 -- Edit  : Code optimized.
 -- Edit  : Data sanitization optimized.
