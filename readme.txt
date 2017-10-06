@@ -289,3 +289,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 2.09 ==
 * Added better theme descripitons.
 * Minor fix.
+
+== 2.10 ==
+* Minor fix.

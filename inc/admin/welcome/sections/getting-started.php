@@ -25,7 +25,7 @@
                 <li><?php esc_html_e( 'Premium support', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'base-wp' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/downloads/base-wp' ); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://iograficathemes.com/shop/wordpress-themes/'. $theme_data->get( 'TextDomain' )); ); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('view all premium features', 'base-wp'); ?>
             </a>
         </p>
@@ -39,7 +39,7 @@
         <h3><?php esc_html_e( 'Theme Documentation', 'base-wp' ); ?></h3>
         <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'base-wp'), $theme_data->Name); ?></p>
         <p>
-            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/documentation/'. $theme_data->get( 'TextDomain' ) .'-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
+            <a href="<?php echo esc_url( 'https://www.iograficathemes.com/documentation/'. $theme_data->get( 'TextDomain' )); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
         </p>
         <h3><?php esc_html_e( 'Theme Customizer', 'base-wp' ); ?></h3>
         <p class="about"><?php printf(esc_html__('%s supports the Theme Customizer for all theme settings. Click "Customize" to start customize your site.', 'base-wp'), $theme_data->Name); ?></p>
