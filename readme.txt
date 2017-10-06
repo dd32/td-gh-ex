@@ -77,3 +77,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 ** 1.09 **
 * Fixed description.
+
+** 1.10 **
+* minor fix.
