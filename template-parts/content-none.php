@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php _e( 'Nothing Found', 'bar-restaurant' ); ?></h2>
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>

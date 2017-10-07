@@ -9,7 +9,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php the_title(); ?></h2>
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>

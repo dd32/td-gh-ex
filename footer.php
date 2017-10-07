@@ -51,7 +51,7 @@
                                 </ul>
                             </div>
                             <?php if(get_theme_mod('copyright_area_text') != '') : ?>
-                                <p><?php echo balanceTags(get_theme_mod('copyright_area_text')); ?></p>
+                                <p><?php echo wp_kses_post(get_theme_mod('copyright_area_text')); ?></p>
                             <?php endif; ?>
                             <p><?php esc_html_e('Powered By ','bar-restaurant'); ?><a href="<?php echo esc_url('https://voilathemes.com/wordpress-themes/bar-restaurant/','bar-restaurant'); ?>"><?php esc_html_e('Bar Restaurant WordPress Theme.','bar-restaurant'); ?></a></p>
                         </div>

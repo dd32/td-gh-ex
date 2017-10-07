@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
 <body <?php body_class();?>>
-    <div class="preloader"><span style="" class="preloader-gif"></span></div>
+    <div class="preloader"><span class="preloader-gif"></span></div>
     <header class="header">
     <?php  ?>
         <!-- Header with Brand -->

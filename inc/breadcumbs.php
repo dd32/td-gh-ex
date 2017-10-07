@@ -1,6 +1,6 @@
 <?php 
 // Breadcrumbs
-function bar_retaurant_breadcrumbs() {
+function bar_restaurant_breadcrumbs() {
     // Settings
     $separator          = '&gt;';
     $breadcrums_id      = esc_html__('breadcrumbs','bar-restaurant');

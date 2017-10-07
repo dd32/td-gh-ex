@@ -7,7 +7,7 @@ get_header(); ?>
 <section id="blog-title-top" style="">
 	<div class="container">
 		<div class="blog-title">
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>

@@ -180,7 +180,7 @@ $wp_customize->add_setting(
     array(
         'default' => '',
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'esc_attr',
+        'sanitize_callback' => 'esc_url_raw',
     )
 );
 $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'scroll_logo', array(
@@ -213,7 +213,7 @@ $wp_customize->add_control(
     )
   );
 //Remove Background Image Section
-$wp_customize->remove_section( 'background_image' );
+$wp_customize->get_section('background_image')->panel = 'general';
 $wp_customize->add_setting(
     'theme_color',
     array(

@@ -5,7 +5,7 @@
  * @package Bar Restaurant
  */
 
-require_once (dirname(__FILE__) . '/inc/class-tgm-plugin-activation.php');
+require_once (get_template_directory() . '/inc/class-tgm-plugin-activation.php');
 if ( ! function_exists( 'bar_restaurant_setup' ) ) :
 
 function bar_restaurant_setup() {

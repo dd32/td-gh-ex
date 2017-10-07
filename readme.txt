@@ -2,8 +2,8 @@
 Contributors: VoilaThemes
 Tags: two-columns, right-sidebar, grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 1.0.2
+Tested up to: 4.8.2
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bar-restaurant
@@ -42,6 +42,10 @@ Bar Restaurant is distributed under the terms of the GNU GPL
 * Misc css Chages
 = 1.0.2(16 Sept 2017)
 * Added customizer scroll logo option, and misc changes.
+= 1.0.3(07 Oct 2017)
+* Updated TGM latest version.
+* Updated Bootstrap css and js files
+* Misc changes.
 
 ---------------------------------------------------------
 Resources
@@ -49,12 +53,11 @@ Resources
 == Resources ==
 * Quicksand - https://fonts.googleapis.com/css?family=Quicksand, MIT 
 * Ruthie - https://fonts.googleapis.com/css?family=Ruthie, MIT 
-* bootstrap.js © 2011-2015 Twitter, Inc., MIT Version 3.3.6
-* bootstrap.css © 2011-2015 Twitter, Inc., MIT Version 3.3.6
+* bootstrap.js © 2011-2016 Twitter, Inc., MIT Version 3.3.7
+* bootstrap.css © 2011-2016 Twitter, Inc., MIT Version 3.3.7
 * font-awesome.css © @fontawesome, MIT Version 4.6.3
 * https://pixabay.com/en/pasta-spaghetti-food-italian-1463926/ © ponce_photography, CC0
 * https://pixabay.com/en/table-restaurant-glass-drink-2060499/ © Bessi, CC0
 * https://www.pexels.com/photo/interior-of-modern-building-331107/ © NastyaSensei Sens, CC0
 * https://pixabay.com/en/concert-stage-music-entertainment-2171166/ © tomipetrovic, CC0
 * https://www.pexels.com/photo/man-night-bar-barman-110472/ © energepic.com, CC0
-
