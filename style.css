@@ -1,10 +1,10 @@
 /*
 Theme Name: ProMax
-Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
-Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 2.1
+Theme URI: https://www.insertcart.com/product/promax-wordpress-theme/
+Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo https://demo.baztro.com/promax 
+Version: 2.3
 Author: InsertCart.com
-Author URI: http://www.insertcart.com/
+Author URI: https://www.insertcart.com/
 Tags: custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
 Text Domain: promax
 License: GNU General Public License v2
@@ -1976,12 +1976,15 @@ table#wp-calendar th {
 }
 
 table#wp-calendar td {
-    padding: 0;
+    padding: 6px;
     text-align: center;
 }
 
 
 /* ===================== comments ===================== */
+h3#reply-title {
+    clear: both;
+}
 h3#Comments {
     font-size: 21px !important;
     padding: 13px 0px;
@@ -2606,12 +2609,21 @@ li.home-icon > a > i {
 	#pagecont,
 	#sidebar,
 	#singlecontent,
-	.woo{
+	.woo,
+	#bottom-menu-1,
+	#bottom-menu-2,
+	#bottom-menu-3,
+	#bottom-menu-4{
 		width:100%;
 	}
 	
 	.imag{
 		width:47%;
 	}
-	
+	.nav-previous,.nav-next{
+		width: 100%;
+	}
+	.ltl{
+		width: auto;
+	}
 }		

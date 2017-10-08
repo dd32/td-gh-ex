@@ -14,7 +14,7 @@
 </div> </div> </div>
 	<div id="footer">
 	<div id="footer-inner" class="clearfix">
-	   <?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> | <?php _e(' Theme ', 'promax'); ?><a href="<?php echo esc_url( __( 'http://www.insertcart.com/product/promax-wordpress-theme/', 'promax' ) ); ?>" title="<?php esc_attr_e( 'InsertCart', 'promax' ); ?>"><?php printf( __( 'ProMax %s', 'promax' ),''); ?></a>	   
+	   <?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> | <?php _e(' Theme ', 'promax'); ?><a href="<?php echo esc_url( __( 'https://www.insertcart.com/product/promax-wordpress-theme/', 'promax' ) ); ?>" title="<?php esc_attr_e( 'InsertCart', 'promax' ); ?>"><?php printf( __( 'ProMax %s', 'promax' ),''); ?></a>	   
 	<?php wp_nav_menu( array( 'theme_location' => 'footer-menu','menu_id' => 'footerhorizontal','echo' => true,'depth' =>'1','fallback_cb' => false ) ); ?>	
 	</div> <!-- end div #footer-inner -->
 	</div> <!-- end div #footer -->

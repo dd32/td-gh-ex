@@ -15,7 +15,7 @@
     <div id="header-inner" class="clearfix">
 		<div id="logo">
 <?php if (of_get_option( 'promax_logo' )): ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'promax_logo' ); ?>" max-height="88px" max-width="470px" alt="<?php bloginfo( 'name' ); ?>"/></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(of_get_option( 'promax_logo' )); ?>" max-height="88px" max-width="470px" alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
 				
 					<?php promax_site_logo();?>
@@ -24,7 +24,7 @@
 	  <?php endif; ?>	
 		</div>		
 		
-		<div id="banner-top">	<?php echo of_get_option( 'banner_top'); ?>
+		<div id="banner-top">	<?php echo wp_kses_post(of_get_option( 'banner_top')); ?>
 		<?php if ( !dynamic_sidebar('headerban') ) :  endif; ?>
 		</div>		
     </div> <!-- end div #header-inner -->

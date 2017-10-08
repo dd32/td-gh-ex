@@ -42,15 +42,15 @@ function promax_customize_register( $wp_customize ) {
          $important_links = array(
 		 
             'theme-info' => array(
-               'link' => esc_url('http://www.insertcart.com/product/promax-wordpress-theme/'),
-               'text' => __('promax Pro', 'promax'),
+               'link' => esc_url('https://www.insertcart.com/product/promax-wordpress-theme/'),
+               'text' => __('Promax Pro', 'promax'),
             ),
             'support' => array(
-               'link' => esc_url('http://www.insertcart.com/contact-us/'),
+               'link' => esc_url('https://www.insertcart.com/contact-us/'),
                'text' => __('Contact us', 'promax'),
             ),         
 			'Documentation' => array(
-               'link' => esc_url('http://www.insertcart.com/promax-theme-setup-guide-and-documentation/'),
+               'link' => esc_url('https://www.insertcart.com/promax-theme-setup-guide-and-documentation/'),
                'text' => __('Documentation', 'promax'),
             ),			 
          );
