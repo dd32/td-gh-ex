@@ -17,20 +17,6 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-/**
- * Include the TGM_Plugin_Activation class.
- *
- * Depending on your implementation, you may want to change the include call:
- *
- * Parent Theme:
- * require_once get_template_directory() . '/path/to/class-tgm-plugin-activation.php';
- *
- * Child Theme:
- * require_once get_stylesheet_directory() . '/path/to/class-tgm-plugin-activation.php';
- *
- * Plugin:
- * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
- */
 require_once get_template_directory() . '/framework/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'bani_register_required_plugins' );
@@ -48,64 +34,14 @@ function bani_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'     				=> 'WP Instagram Widget',
-			'slug'     				=> 'wp-instagram-widget',
+			'name'     				=> 'Titan Framework',
+			'slug'     				=> 'titan-framework',
 			'required' 				=> false,
 			'version' 				=> '',
 			'force_activation' 		=> false,
 			'force_deactivation' 	=> false,
 			'external_url' 			=> '',
 		),
-
-		array(
-			'name'     				=> 'Contact Form 7',
-			'slug'     				=> 'contact-form-7',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-
-        array(
-			'name'     				=> 'Autoptimize',
-			'slug'     				=> 'autoptimize',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-
-        array(
-			'name'     				=> 'Facebook Widget',
-			'slug'     				=> 'facebook-pagelike-widget',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-
-        array(
-			'name'     				=> 'Twitter Widget',
-			'slug'     				=> 'recent-tweets-widget',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-
-        array(
-			'name'     				=> 'MailChimp for WordPress',
-			'slug'     				=> 'mailchimp-for-wp',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		)
 
 	);
 
@@ -119,14 +55,14 @@ function bani_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'bani',                 
-		'default_path' => '',                      
-		'menu'         => 'tgmpa-install-plugins', 
-		'has_notices'  => true,                   
-		'dismissable'  => true,                   
-		'dismiss_msg'  => '',                      
-		'is_automatic' => false,                   
-		'message'      => '',                     
+		'id'           => 'bani',
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
     );
 
 	tgmpa( $plugins, $config );

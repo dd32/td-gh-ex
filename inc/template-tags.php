@@ -51,15 +51,25 @@ function bani_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ' ', 'bani' ) );
 		if ( $categories_list && bani_categorized_blog() ) {
-			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'bani' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			echo '<span class="cat-links">';
+			echo wp_kses( $categories_list, array('a' => array(
+		        'href' => array(),
+		        'title' => array()
+		    ),) );
+			echo '</span>';
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '<span class="badge bani-badge-secondary">', '</span> <span class="badge bani-badge-secondary">', '</span>' );
 		if ( $tags_list ) {
-			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'bani' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '<span class="tags-links">';
+			echo wp_kses( $tags_list, array('a' => array(
+		        'href' => array(),
+		        'title' => array()
+		    ), 'span' => array(
+				'class' => array()
+			)) );
+			echo '</span>';
 		}
 	}
 

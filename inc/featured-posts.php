@@ -39,7 +39,7 @@
                         $feat_image = get_template_directory_uri() . '/images/default-img.png';
                     }
                 ?>
-                <div class="swiper-slide bani-slide" href="<?php echo get_permalink(); ?>" style="background-image:url(<?php echo $feat_image; ?>)">
+                <div class="swiper-slide bani-slide" href="<?php echo get_permalink(); ?>" style="background-image:url(<?php echo esc_url($feat_image); ?>)">
                     <div class="slide-content">
                         <div class="text-center ver-center">
                             <h6 class="featured-title"><?php echo esc_html_e( 'Featured Post', 'bani' ); ?></h6>

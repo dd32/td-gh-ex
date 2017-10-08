@@ -47,14 +47,6 @@ jQuery(document).ready(function($) {
         spaceBetween: 10,
     });
 
-    // Initialize typed js
-    var typed = new Typed("#typed", {
-		stringsElement: document.getElementById('typed-strings'),
-        typeSpeed: 100,
-		backSpeed: 50,
-        loop: true
-	});
-
     // Check cover content height
     var coverContentHt = $('.bani-content-height').height();
     $('.bani-cover-wrapper').height(coverContentHt);

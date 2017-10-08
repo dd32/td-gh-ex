@@ -72,7 +72,7 @@ function bani_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'bani' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'bani' ),
-		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-block">',
+		'before_widget' => '<section id="%1$s" class="widget bani-widget card %2$s"><div class="card-block">',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',

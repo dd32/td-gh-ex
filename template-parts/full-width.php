@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="bani-cover-wrapper <?php if ( ! has_post_thumbnail() ) : ?> short-cover <?php else : ?> page-cover <?php endif; ?>">
-	<div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo the_post_thumbnail_url(); ?>); -webkit-filter: brightness(35%); filter: brightness(35%);" <?php endif; ?>></div><!-- /.bani-cover -->
+	<div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo esc_url(the_post_thumbnail_url()); ?>); -webkit-filter: brightness(35%); filter: brightness(35%);" <?php endif; ?>></div><!-- /.bani-cover -->
 	<div class="bani-cover-content row align-items-center justify-content-center">
 		<div class="col-md-6 bani-content-height">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

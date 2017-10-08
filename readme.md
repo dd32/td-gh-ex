@@ -85,6 +85,12 @@ License: MIT
 License URI: https://github.com/mattboldt/typed.js/blob/master/LICENSE.txt
 Copyright: Matt Boldt http://www.mattboldt.com/
 
+## TGMPA License
+TGM Plugin Activation - http://tgmpluginactivation.com/
+License: http://tgmpluginactivation.com/
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+
 
 ## Credits
 
@@ -99,11 +105,3 @@ Copyright: Matt Boldt http://www.mattboldt.com/
 Brand Icons
 All brand icons are trademarks of their respective owners.
 The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
-
-
-## Theme screenshot images
-CC0-licensed (GPL-compatible) images from http://pixabay.com/
-Content, top to bottom:
-1. pixabay ID  558251
-2. pixabay ID  801823
-3. pixabay ID  1684601

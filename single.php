@@ -1,12 +1,4 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package bani
- */
-
 get_header(); ?>
 
 
@@ -14,15 +6,19 @@ get_header(); ?>
 
 	<?php if ( is_single() ) : ?>
 		<div class="bani-cover-wrapper">
-			<div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo the_post_thumbnail_url(); ?>); -webkit-filter: brightness(35%) blur(2px); filter: brightness(35%) blur(2px);" <?php endif; ?>></div><!-- /.bani-cover -->
+			<div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo esc_url(the_post_thumbnail_url()); ?>); -webkit-filter: brightness(35%) blur(2px); filter: brightness(35%) blur(2px);" <?php endif; ?>></div><!-- /.bani-cover -->
 			<div class="bani-cover-content row align-items-center justify-content-center">
 				<div class="col-md-6 bani-content-height">
 					<div class="entry-meta ">
 						<?php
 							$categories_list = get_the_category_list( esc_html__( '  ', 'bani' ) );
 							if ( $categories_list && bani_categorized_blog() ) {
-								/* translators: 1: list of categories. */
-								printf( '<span class="cat-links bani-cat-links">' . esc_html__( '%1$s', 'bani' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+								echo '<span class="cat-links">';
+								echo wp_kses( $categories_list, array('a' => array(
+							        'href' => array(),
+							        'title' => array()
+							    ),) );
+								echo '</span>';
 							}
 						?>
 					</div><!-- /.entry-meta -->
@@ -52,9 +48,6 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', get_post_format() );
 
 					the_post_navigation();
-					//if ( !get_theme_mod( 'bani_hide_related_posts' ) ) {
-						//get_template_part( 'template-parts/related-posts' );
-					//}
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :

@@ -7,7 +7,6 @@
 
 if ( ! function_exists( 'bani_comments' ) ) {
     function bani_comments( $comment, $args, $depth ) {
-        $GLOBALS['comment'] = $comment;
 
     	?>
     	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">

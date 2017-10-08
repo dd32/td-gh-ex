@@ -22,7 +22,8 @@ if ( post_password_required() ) {
 				<h6 class="comments-title ">
 				<?php
 					printf( // WPCS: XSS OK.
-						esc_html( _nx( '1 comment', '%1$s comments', get_comments_number(), 'comments title', 'bani' ) ),
+						/* translators: %d: number of comments. */
+						esc_html( _n( '%d comment', '%d comments', get_comments_number(), 'bani' ) ),
 						number_format_i18n( get_comments_number() ),
 						'<span>' . get_the_title() . '</span>'
 					);
