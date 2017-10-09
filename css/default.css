@@ -40,6 +40,9 @@ button,
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
+.home #blog-title-top{
+    display: none;
+}
 .preloader {
     top: 0;
     left: 0;
@@ -1752,7 +1755,7 @@ ul.ro-list-disc li:before {
 /* Media Query Start */
 /*----testimonail---*/
 .carousel-overlay{
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   height: 100%;
   top: 0;

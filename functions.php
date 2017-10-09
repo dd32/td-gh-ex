@@ -52,7 +52,14 @@ function bar_restaurant_custom_excerpt_Length_more( $more ) {
   return ' {...}';
 }
 add_filter( 'excerpt_more', 'bar_restaurant_custom_excerpt_Length_more' );
-
+add_action( 'admin_menu', 'bar_restaurant_admin_menu');
+function bar_restaurant_admin_menu( ) {
+    add_theme_page( __('Pro Feature','bar-restaurant'), __('Bar Restaurant Pro','bar-restaurant'), 'manage_options', 'bar-restaurant-pro-buynow', 'bar_restaurant_pro_buy_now', 300 ); 
+  
+}
+function bar_restaurant_pro_buy_now(){ ?>
+  <script>window.location = "https://voilathemes.com/products/bar-restaurant-pro-wordpress-plugin/";</script>
+<?php }
 /*
 * TGM plugin activation register hook 
 */
