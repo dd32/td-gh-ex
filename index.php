@@ -17,7 +17,7 @@ else
 	$fullclass='col-lg-8 col-md-8';
 }
 	  ?>        
-       <div class="<?php echo esc_attr_e($fullclass);?> col-sm-12 col-xs-12">
+       <div class="<?php echo esc_attr($fullclass);?> col-sm-12 col-xs-12">
           <main id="main" class="site-main">
            <?php if(have_posts()): while(have_posts()): the_post();
            get_template_part('template-parts/content');    

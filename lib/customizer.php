@@ -288,6 +288,22 @@ $wp_customize->add_control( 'blog_sidebar', array(
     'full' => esc_html__( 'Full width' ,'backyard'),
   ),
 ) );
+//
+$wp_customize->add_setting( 'single_blog_layouts', array(
+  'default' => 'singleleftsidebar',
+  'sanitize_callback' => 'backyard_themeslug_sanitize_select',
+) );
+
+$wp_customize->add_control( 'single_blog_layouts', array(
+  'type' => 'radio',
+  'section' => 'blog_settings', // Add a default or your own section
+  'label' => esc_html__( 'Blog sidebar settings' ,'backyard'),
+  'choices' => array(
+     'singlerightsidebar' => esc_html__('Single Blog with Right Sidebar', 'backyard'),
+        'singleleftsidebar' => esc_html__('Single Blog with Left Sidebar', 'backyard')
+  ),
+) );
+//
 }
 add_action('customize_register', 'backyard_themes_customizer');
 function backyard_themeslug_sanitize_select( $input, $setting ) {

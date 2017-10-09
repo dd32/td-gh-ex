@@ -49,5 +49,7 @@ Screenshots
 1. 1. screenshot.png
 Changelog
 ---------
+2.3 - Added single blog sidebar options in Customizer
+
 2.2 - Added blog sidebar options in Customizer. Go to Theme Options > Blog settings > Blog sidebar settings
-    - Added ajax load more post button on home page template
+    - Added ajax load more post button on home page template   

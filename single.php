@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 <section id="content">
 <section class="container paddingtop">
-   <div class="row">         
+   <div class="row">
+   <?php $sidebar=get_theme_mod('single_blog_layouts');?>
+   <?php if(isset($sidebar)&&$sidebar=='singleleftsidebar'){?>
+   <?php get_sidebar(); ?>  
+   <?php }?>       
  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <?php while ( have_posts() ) : the_post(); ?>
              <main id="main" class="site-main wow fadeInUp">
@@ -22,7 +26,9 @@ the_post_navigation(array(
 		// End the loop.       
 ?>
 </div>
+<?php if(isset($sidebar)&&$sidebar=='singlerightsidebar'){?>
 <?php get_sidebar(); ?>
+<?php }?>
 </div>
 </section>
 </section>
