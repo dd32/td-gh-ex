@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2017-09-21 13:51+0100\n"
-"PO-Revision-Date: 2017-09-21 13:51+0100\n"
+"POT-Creation-Date: 2017-10-09 11:25+0100\n"
+"PO-Revision-Date: 2017-10-09 11:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -197,47 +197,51 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:55
+#: header.php:56
 msgid "Facebook"
 msgstr ""
 
-#: header.php:59
+#: header.php:60
 msgid "Twitter"
 msgstr ""
 
-#: header.php:63
+#: header.php:64
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:67
+#: header.php:68
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:71
+#: header.php:72
 msgid "Instagram"
 msgstr ""
 
-#: header.php:75
+#: header.php:76
 msgid "YouTube"
 msgstr ""
 
-#: header.php:79
+#: header.php:80
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:83
+#: header.php:84
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:87
+#: header.php:88
 msgid "VK"
 msgstr ""
 
-#: header.php:91
+#: header.php:92
 msgid "Xing"
 msgstr ""
 
-#: header.php:107
+#: header.php:96
+msgid "Email"
+msgstr ""
+
+#: header.php:112
 msgid "Menu"
 msgstr ""
 
@@ -399,12 +403,12 @@ msgid "Powerful theme options"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:338
-#: inc/semplicemente-dynamic.php:183
+#: inc/semplicemente-dynamic.php:200
 msgid "Loading Page"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:343
-#: inc/semplicemente-dynamic.php:182
+#: inc/semplicemente-dynamic.php:199
 msgid "Font switcher"
 msgstr ""
 
@@ -413,12 +417,12 @@ msgid "Breadcrumb"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:353
-#: inc/semplicemente-dynamic.php:185
+#: inc/semplicemente-dynamic.php:202
 msgid "Post views counter"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:358
-#: inc/semplicemente-dynamic.php:187
+#: inc/semplicemente-dynamic.php:204
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -427,12 +431,12 @@ msgid "10 Exclusive Widgets"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:368
-#: inc/semplicemente-dynamic.php:189
+#: inc/semplicemente-dynamic.php:206
 msgid "Related Posts Box"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:373
-#: inc/semplicemente-dynamic.php:190
+#: inc/semplicemente-dynamic.php:207
 msgid "Information About Author Box"
 msgstr ""
 
@@ -505,50 +509,54 @@ msgid "Xing URL"
 msgstr ""
 
 #: inc/semplicemente-dynamic.php:153
+msgid "Your Email"
+msgstr ""
+
+#: inc/semplicemente-dynamic.php:170
 msgid "Show Search Button"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:167
+#: inc/semplicemente-dynamic.php:184
 msgid "Get Semplicemente PRO WP Theme for only"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:172
+#: inc/semplicemente-dynamic.php:189
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:175
+#: inc/semplicemente-dynamic.php:192
 msgid "Get Semplicemente PRO Theme"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:179
+#: inc/semplicemente-dynamic.php:196
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:180
+#: inc/semplicemente-dynamic.php:197
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:181
+#: inc/semplicemente-dynamic.php:198
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:184
+#: inc/semplicemente-dynamic.php:201
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:186
+#: inc/semplicemente-dynamic.php:203
 msgid "Post format"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:188
+#: inc/semplicemente-dynamic.php:205
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:191
+#: inc/semplicemente-dynamic.php:208
 msgid "And much more..."
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:197
+#: inc/semplicemente-dynamic.php:214
 msgid "More features? Upgrade to PRO"
 msgstr ""
 

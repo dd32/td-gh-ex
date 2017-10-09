@@ -139,6 +139,23 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 	}
 	
 	/*
+	Email Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('semplicemente_theme_options_emailurl', array(
+        'default'    => '',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_email'
+    ) );
+	
+	$wp_customize->add_control('semplicemente_theme_options_emailurl', array(
+        'label'      => __( 'Your Email', 'semplicemente' ),
+        'section'    => 'cresta_semplicemente_options',
+        'settings'   => 'semplicemente_theme_options_emailurl',
+    ) );
+	
+	/*
 	Search Button
 	=====================================================
 	*/

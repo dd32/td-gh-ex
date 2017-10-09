@@ -46,6 +46,7 @@
 			$tumblrURL = get_theme_mod('semplicemente_theme_options_tumblrurl', '#');
 			$vkURL = get_theme_mod('semplicemente_theme_options_vkurl', '#');
 			$xingURL = get_theme_mod('semplicemente_theme_options_xingurl', '');
+			$emailURL = get_theme_mod('semplicemente_theme_options_emailurl', '');
 		?>
 
 		<div class="site-social">
@@ -89,6 +90,10 @@
 				
 				<?php if (!empty($xingURL )) : ?>
 					<a href="<?php echo esc_url($xingURL ); ?>" title="<?php esc_attr_e( 'Xing', 'semplicemente' ); ?>"><i class="fa fa-xing spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'semplicemente' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($emailURL)) : ?>
+					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'semplicemente' ); ?>"><i class="fa fa-envelope spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Email', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>

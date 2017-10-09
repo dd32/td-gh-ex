@@ -180,3 +180,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.8.0 =
 * Minor bug fixes
+
+= Version 1.8.1 =
+* Added email button
