@@ -153,7 +153,7 @@ function avata_enqueue_scripts() {
 	wp_enqueue_script( 'imagesloaded' );
 	wp_enqueue_script( 'masonry' );
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
-	wp_enqueue_script( 'avata-main', get_template_directory_uri().'/assets/js/main.js', array( 'jquery' ), $theme_info->get( 'Version' ), true );
+	
 	
 		
 	$css = '';
@@ -173,6 +173,10 @@ function avata_enqueue_scripts() {
 	
 	foreach ( $avata_sections as $k=>$v ){
 		
+		if($k=='section-progress-bar-2')
+			wp_enqueue_script( 'jquery-circle-progress', get_template_directory_uri().'/assets/plugins/jquery-circle-progress/circle-progress.js',array( 'jquery' ), '1.2.2', true );
+			
+			
 		$n = str_replace('section-','',$k);
 		$j = str_replace('-','_',$n);
 		$item = str_replace('section-','',$k) ;
@@ -219,6 +223,8 @@ function avata_enqueue_scripts() {
 		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
 
 	}
+	
+	wp_enqueue_script( 'avata-main', get_template_directory_uri().'/assets/js/main.js', array( 'jquery' ), $theme_info->get( 'Version' ), true );
 	
 	$copyright_font_color = avata_option('copyright_color');
 	$copyright_bg_color   = avata_option('copyright_bg_color');
@@ -858,3 +864,51 @@ require_once dirname( __FILE__ ) . '/includes/customizer.php';
 require_once dirname( __FILE__ ) . '/includes/breadcrumbs.php';
 require_once dirname( __FILE__ ) . '/includes/template-parts.php';
 require_once dirname( __FILE__ ) . '/includes/theme-widgets.php';
+
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+load_template( trailingslashit( get_template_directory() ) . 'includes/class-tgm-plugin-activation.php' );
+
+
+add_action( 'tgmpa_register', 'avata_theme_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ */
+function avata_theme_register_required_plugins() {
+
+    $plugins = array(
+		array(
+			'name'     				=> __('Hoo Contact Form','avata'), // The plugin name
+			'slug'     				=> 'avata-hoo-contact-form', // The plugin slug (typically the folder name)
+			'source'   				=> esc_url('https://downloads.wordpress.org/plugin/hoo-contact-form.zip'), // The plugin source
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+		
+	);
+
+    /**
+     * Array of configuration settings. Amend each line as needed.
+     */
+    $config = array(
+        'id'           => 'avata-hoo-contact-form',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'has_notices'  => true,                    // Show admin notices or not.
+        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                      // Message to output right before the plugins table.
+      
+    );
+
+    tgmpa( $plugins, $config );
+
+}

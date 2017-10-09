@@ -169,7 +169,22 @@ $(function(){
 	onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
 });
 
+$('.progress-bar').waypoint(function() { $(this.element).css({ animation: "animate-positive 2s", opacity: "1" }); }, { offset: '75%' });
+$('.progress2').waypoint(function() {
+	var percent = parseInt($(this.element).data('percent'));
+	var color = $(this.element).data('color');
+	$(this.element).circleProgress({
+		fill: {color: color},
+   		value: (percent/100)
+  	}).on('circle-animation-progress', function(event, progress) {
+   		$(this).find('strong').html(Math.round(percent * progress) + '<i>%</i>');
+  });
+}, { offset: '75%' });
+
+
 });
+
+
 
 /*!
 * responsive menu

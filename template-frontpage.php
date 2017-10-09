@@ -40,6 +40,8 @@
 			
 			if ($autoheight=='1')
 				$section_class .= ' fp-auto-height';
+			else
+				$section_class .= ' avata-full-height';
 			
 			if ($key=='blog')
 				$section_class .= ' avata-blog-style-1';

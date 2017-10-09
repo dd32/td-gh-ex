@@ -106,6 +106,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 						  'content' => '',
 						  'padding_top' => '100px',
 						  'padding_bottom' => '100px',
+						  'text_align' => 'center'
 				),$default);
 
 	$font_family = avata_option_saved('font_'.$id);
@@ -213,7 +214,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 							'subsets'        => array( 'latin-ext' ),
 							'color'          => ($font_color!='')?$font_color:$default_options['font_color'],
 							'text-transform' => 'none',
-							'text-align'     => 'center',
+							'text-align'     => $default_options['text_align'],
 						),
 					  'type' => 'typography',
 					  'output' => array(
@@ -771,6 +772,7 @@ $intro_1_defaults = array(
 			'padding_bottom' => '0',
 			'menu_slug' => 'about-us',
 			'background_color' => '#f9f9f9',
+			'text_align' => 'left'
 			);
 
 $intro_1_options = avata_public_section_options('intro_1',$intro_1_defaults,false,$args);
@@ -1264,6 +1266,205 @@ $avata_lite_sections['section-slogan'] = array(
 
 
 
+// section progress bar 1
+
+$args['hide'] = '';
+if ($is_old_version){
+	$hide = '1';
+	$args['hide'] = $hide;
+	}else{
+	$hide = '';
+}
+$progress_bar_1_defaults = array(
+			'section_title'=> __('About Us', 'avata'),
+			'section_subtitle'=> 'Nullam porttitor, turpis lacinia euismod efficitur',
+			'fullwidth' => '0',
+			'autoheight' => '1',
+			'padding_top' => '50px',
+			'padding_bottom' => '50px',
+			'text_align' => 'left',
+			'menu_slug' => 'progress_bar_1',
+			'background_color' => '#f9f9f9',
+			);
+
+$progress_bar_1_options = avata_public_section_options('progress_bar_1',$progress_bar_1_defaults,false,$args);
+
+array_splice($progress_bar_1_options,3,0,
+		array(
+		'section_layout_progress_bar_1' => array(
+				  'type'        => 'select',
+				  'settings'    => 'section_layout_progress_bar_1',
+				  'label'       => esc_attr__( 'Layout', 'avata' ),
+				  'description' => '',
+				  'default'     => '1',
+				  'choices'     => array('0'=>__( 'Left Progress Bar Right Text', 'avata' ),'1'=>__( 'Left Text Right Progress Bar', 'avata' ))
+		),
+		
+		'section_progress_progress_bar_1' =>  array(
+													'type'        => 'repeater',
+													'label'       => esc_attr__( 'Progress Bar', 'avata' ),
+													'section'     => 'section_progress_bar_1',
+													'settings'     => 'section_progress_progress_bar_1',
+													'priority'    => 10,
+													'row_label' => array(
+														'type' => 'field',
+														'value' => esc_attr__('Progress Bar', 'avata' ),
+														'field' => 'title',
+													),
+													'default'     => array(
+														array(
+															'title'  => 'HTML5',
+															'percent'  => '90',
+															'color'  => '#ff4b7d',
+														),
+														array(
+															'title'  => 'CSS3',
+															'percent'  => '75',
+															'color'  => '#5fad56',
+														),
+														array(
+															'title'  => 'J-Query',
+															'percent'  => '60',
+															'color'  => '#e8d324',
+														),
+														array(
+															'title'  => 'Bootstrap',
+															'percent'  => '85',
+															'color'  => '#3485ef',
+														),
+								
+													),
+													'fields' => array(
+				
+														'title' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Title', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														'percent' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Percent', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														'color' => array(
+															'type'        => 'color',
+															'label'       => esc_attr__( 'Color', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+												
+														
+													),
+													),
+		'section_content_progress_bar_1' => array(
+				  'type'        => 'editor',
+				  'settings'    => 'section_content_progress_bar_1',
+				  'label'       => esc_attr__( 'Content', 'avata' ),
+				  'description' => '',
+				  'default'     => '<p>Susan Sims, Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.Cras mattis consectetur purus sit amet fermentum.Interaction Designer at XYZCras mattis consectetur purus sit amet fermentum.</p><p></p><ul class="list-nav">
+								<li><i class="fa fa-check"></i> Far far away, behind the word</li>
+								<li><i class="fa fa-check"></i>There live the blind texts</li>
+								<li><i class="fa fa-check"></i>Separated they live in bookmarksgrove</li>
+								<li><i class="fa fa-check"></i>Semantics a large language ocean</li>
+								<li><i class="fa fa-check"></i>A small river named Duden</li>
+							</ul>',
+		)
+
+));
+
+$avata_lite_sections['section-progress-bar-1'] = array(
+										'name'=> __('Progress Bar Style 1', 'avata'),
+										'fields'=> $progress_bar_1_options 
+										);
+
+
+// section progress bar 2
+
+$progress_bar_2_defaults = array(
+			'section_title'=> __('Progress Bar', 'avata'),
+			'section_subtitle'=> 'Nullam porttitor, turpis lacinia euismod efficitur',
+			'fullwidth' => '0',
+			'autoheight' => '1',
+			'padding_top' => '50px',
+			'padding_bottom' => '50px',
+			'text_align' => 'left',
+			'menu_slug' => 'progress_bar_2',
+			'background_color' => '#ffffff',
+			);
+
+$progress_bar_2_options = avata_public_section_options('progress_bar_2',$progress_bar_2_defaults,false,$args);
+
+array_splice($progress_bar_2_options,3,0,
+		array(
+		
+		'section_progress_progress_bar_2' =>  array(
+													'type'        => 'repeater',
+													'label'       => esc_attr__( 'Progress Bar', 'avata' ),
+													'section'     => 'section_progress_bar_2',
+													'settings'     => 'section_progress_progress_bar_2',
+													'priority'    => 10,
+													'row_label' => array(
+														'type' => 'field',
+														'value' => esc_attr__('Progress Bar', 'avata' ),
+														'field' => 'title',
+													),
+													'default'     => array(
+														array(
+															'title'  => 'HTML5',
+															'percent'  => '90',
+															'color'  => '#ff4b7d',
+														),
+														array(
+															'title'  => 'CSS3',
+															'percent'  => '75',
+															'color'  => '#5fad56',
+														),
+														array(
+															'title'  => 'J-Query',
+															'percent'  => '60',
+															'color'  => '#e8d324',
+														),
+														array(
+															'title'  => 'Bootstrap',
+															'percent'  => '85',
+															'color'  => '#3485ef',
+														),
+								
+													),
+													'fields' => array(
+														'title' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Title', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														'percent' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Percent', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														'color' => array(
+															'type'        => 'color',
+															'label'       => esc_attr__( 'Color', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+												
+														
+													),
+													),
+
+));
+
+$avata_lite_sections['section-progress-bar-2'] = array(
+										'name'=> __('Progress Bar Style 2', 'avata'),
+										'fields'=> $progress_bar_2_options 
+										);
+										
+										
 // custom frontpage sections
 $args['hide']    = '1';
 for( $i=1;$i<=2;$i++){

@@ -211,6 +211,72 @@
 			<key name='section_title_1' />
             <key name='section_subtitle_1' />
 			<key name='section_content_1' />
+			
+			<!-- section Progress Bar -->
+			<key name='section_title_progress_bar_1' />
+            <key name='section_subtitle_progress_bar_1' />
+			<key name="section_progress_progress_bar_1">
+				<key name="0">
+			   		<key name="title" />
+				</key>
+				<key name="1">
+			   		<key name="title" />
+				</key>
+				<key name="2">
+			   		<key name="title" />
+				</key>
+				<key name="3">
+			   		<key name="title" />
+				</key>
+				<key name="4">
+			   		<key name="title" />
+				</key>
+				<key name="5">
+			   		<key name="title" />
+				</key>
+				<key name="6">
+			   		<key name="title" />
+				</key>
+				<key name="7">
+			   		<key name="title" />
+				</key>
+				<key name="8">
+			   		<key name="title" />
+				</key>
+			</key>
+			
+			<!-- Progress Bar Style 2 -->
+			<key name='section_title_progress_bar_2' />
+            <key name='section_subtitle_progress_bar_2' />
+			<key name="section_progress_progress_bar_2">
+				<key name="0">
+			   		<key name="title" />
+				</key>
+				<key name="1">
+			   		<key name="title" />
+				</key>
+				<key name="2">
+			   		<key name="title" />
+				</key>
+				<key name="3">
+			   		<key name="title" />
+				</key>
+				<key name="4">
+			   		<key name="title" />
+				</key>
+				<key name="5">
+			   		<key name="title" />
+				</key>
+				<key name="6">
+			   		<key name="title" />
+				</key>
+				<key name="7">
+			   		<key name="title" />
+				</key>
+				<key name="8">
+			   		<key name="title" />
+				</key>
+			</key>
 
         </key>
     </admin-texts>

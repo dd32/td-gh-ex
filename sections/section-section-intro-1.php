@@ -4,9 +4,8 @@
   $section_subtitle  = avata_option('section_subtitle_intro_1');
   $section_content   = avata_option('section_content_intro_1');
   $section_image     = avata_option('section_image_intro_1');
-  $service           = avata_option('section_intro_1');
-  $layout            =  avata_option('section_layout_intro_1');
-  $fullwidth         =  avata_option('section_fullwidth_intro_1');
+  $layout            = avata_option('section_layout_intro_1');
+  $fullwidth         = avata_option('section_fullwidth_intro_1');
   if(is_numeric($section_image))
 		$item['image'] = wp_get_attachment_image_url($section_image,'full');
   $container         = 'container';
