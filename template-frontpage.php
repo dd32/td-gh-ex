@@ -64,8 +64,10 @@
 			
 			$hide_side_menu  = esc_attr(avata_option('hide_side_menu_'.$index ));
 			$css = '';
-			if($hide_side_menu == '1')
+			if($hide_side_menu == '1'){
 				$css = 'style="height:0;width:0;"';
+				$current .= ' avata-hide';
+			}
 		
 			 $sub_nav .= '<li '.$css.' class="'.$current.'"><a id="nav-'.$menu_slug.'" href="#'.$menu_slug.'">'.esc_attr($menu_title).'</a></li>';
 			
