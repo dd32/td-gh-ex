@@ -11,24 +11,29 @@
 
 get_header();
 
-?><div class="container" id="main-content"><?php
+?>
+<div class="container" id="main-content">
 
-	?><h1 class="page-title"><?php _e('404', 'boldr-lite'); ?></h1><?php
+	<h1 class="page-title"><?php esc_html_e( '404', 'boldr-lite' ); ?></h1>
 
-	?><div id="page-container" class="left with-sidebar"><?php
+	<div id="page-container" class="left with-sidebar">
 
-		?><h2><?php _e('Page Not Found', 'boldr-lite'); ?></h2><?php
-		?><p><?php _e('What you are looking for isn\'t here...', 'boldr-lite'); ?></p><?php
-		?><p><?php _e('Maybe a search will help ?', 'boldr-lite'); ?></p><?php
+		<h2><?php esc_html_e( 'Page Not Found', 'boldr-lite' ); ?></h2>
+		<p><?php esc_html_e( 'What you are looking for isn\'t here...', 'boldr-lite' ); ?></p>
+		<p><?php esc_html_e( 'Maybe a search will help ?', 'boldr-lite' ); ?></p>
+		<?php
+
 		get_search_form();
 
-	?></div><?php // End page container
+		?>
+	</div>
 
-	?><div id="sidebar-container" class="right"><?php
-		?><ul id="sidebar"><?php
-		dynamic_sidebar( 'sidebar' );
-		?></ul><?php
-	?></div><?php // End sidebar
-?></div><?php // End main content
+	<div id="sidebar-container" class="right">
+		<ul id="sidebar">
+			<?php dynamic_sidebar( 'sidebar' ); ?>
+		</ul>
+	</div>
+</div>
+<?php
 
 get_footer();
