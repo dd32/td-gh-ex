@@ -2,14 +2,14 @@
 
 Contributors: specia
 Requires at least: WordPress 4.4
-Tested up to: WordPress 4.9.5
-Stable tag: 1.0.29
-Version: 1.0.29
+Tested up to: WordPress 4.8.2
+Stable tag: 1.0.2
+Version: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
 
-Avira WordPress Theme, Copyright 2018 Specia Theme
+Avira WordPress Theme, Copyright 2017 Specia Theme
 Avira is distributed under the terms of the GNU GPL
 
 ##Description
@@ -30,83 +30,11 @@ Avira WordPress Theme is distributed under the terms of the GNU GPL
 Images
 =================================================================================================
 Screenshot Image
-URL: https://www.pexels.com/photo/man-holding-teacup-infront-of-laptop-on-top-of-table-inside-the-room-925786/
+URL: https://www.pexels.com/photo/people-brasil-guys-avpaulista-109919/
 Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
-version 1.0.29
-* Changed Screenshot and Copyright
-
-version 1.0.28
-* Added [wp_reset_postdata();] for templates.
-
-version 1.0.27
-* Output escaping issue resolved.
-
-version 1.0.25
-* Resolved color issue in editor-style.css
-
-version 1.0.24
-* WordPress 4.9.5 Compatibility Tested.
-
-version 1.0.23
-* Resolved Slider Bug
-
-version 1.0.22
-* Resolved Slider Bug
-
-version 1.0.21
-* Screenshot Changed
-
-version 1.0.20
-* Screenshot Changed
-
-version 1.0.19
-* WordPress 4.9.4 Compatibility Tested.
-
-version 1.0.18
-* Code Improvement.
-
-version 1.0.17
-* WordPress 4.9.2 Compatibility Tested.
-
-version 1.0.16
-* Image URL changed.
-
-version 1.0.15
-* Screenshot Changed.
-
-version 1.0.14
-* WordPress 4.9.1 compatibility tested.
-* Customizer Improvment(Allow Addition True).
-
-version 1.0.13
-* WordPress 4.9 compatibility tested.
-
-version 1.0.12
-* Tested Latest WordPress version compatibility
-
-version 1.0.11
-* Responsive Bug Resolved
-
-version 1.0.10
-* Screenshot Changed
-
-version 1.0.8
-* Enhance Theme Detail
-
-version 1.0.7
-* Description Improvement
-
-version 1.0.6
-* Sanitization Issue Fixed
-
-version 1.0.5
-* Replace Screenshot Image
-
-version 1.0.4
-* Version Error Fixed
 
 version 1.0.3
 * Social Media Features Added
