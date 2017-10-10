@@ -24,7 +24,7 @@
 			<div class="container">
 				<footer id="colophon" class="site-footer row align-items-center" role="contentinfo">
 					<div class="col-md-4 site-info self-align-first">
-						<h6 class="mb-0"><?php esc_html_e( get_theme_mod( 'bani_footer_text_left', __( '(c) Copyright 2017 - All Rights Reserved', 'bani' ) ) ); ?></h6>
+						<h6 class="mb-0"><?php echo wp_kses_post( get_theme_mod( 'bani_footer_text_left', __( '(c) Copyright 2017 - All Rights Reserved', 'bani' ) ) ); ?></h6>
 					</div><!-- .site-info -->
 					<div class="col-md-4 text-center site-info">
 						<?php if ( !get_theme_mod( 'bani_hide_social_icons_footer' ) ) : ?>

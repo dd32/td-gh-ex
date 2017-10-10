@@ -34,8 +34,8 @@ Contributors: salttechno
 Tags: blog, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, sticky-post, custom-logo, footer-widgets, full-width-template, rtl-language-support, theme-options, threaded-comments, featured-images
 
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.0.2
+Tested up to: 4.8.2
+Stable tag: 1.0.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

@@ -113,6 +113,10 @@ function bani_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( (is_home() ) &&  (! get_theme_mod( 'bani_hide_cover_section' ) ) ) {
+		wp_enqueue_script( 'bani-home', get_template_directory_uri() . '/js/bani-home.js', array( 'jquery' ), '', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bani_scripts', 99 );
 
@@ -181,3 +185,9 @@ function bani_get_social_icons() { ?>
 	<?php if(get_theme_mod('bani_snapchat')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_snapchat')); ?>" target="_blank" class="nav-link"><i class="fa fa-snapchat-ghost"></i></a></li><?php endif; ?>
 	<?php if(get_theme_mod('bani_rss')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_rss')); ?>" target="_blank" class="nav-link"><i class="fa fa-rss"></i></a></li><?php endif; ?>
 <?php }
+
+
+function bani_excerpt_more( $more ) {
+    return '[&hellip;]';
+}
+add_filter( 'excerpt_more', 'bani_excerpt_more' );
