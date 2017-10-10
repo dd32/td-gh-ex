@@ -23,7 +23,7 @@ if ( have_comments() ) :
 		<?php
 		printf(
 			// Translators: %1$s is the number of comments, %2$s is the post title
-			esc_html( _n( '%1$s Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'blackoot-lite' ) ),
+			esc_html( _n( '%1$s Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'wortex-lite' ) ),
 			esc_html( number_format_i18n( get_comments_number() ) ),
 			get_the_title()
 		);
