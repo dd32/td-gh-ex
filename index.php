@@ -12,7 +12,7 @@
         	<?php 
 	        if (!have_posts()) : ?>
 		          <div class="alert">
-		            <?php _e('Sorry, no results were found.', 'ascend'); ?>
+		            <?php esc_html_e( 'Sorry, no results were found.', 'ascend' ); ?>
 		          </div>
 	          <?php 
           		get_search_form(); 

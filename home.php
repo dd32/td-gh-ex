@@ -31,7 +31,7 @@ global $post, $ascend_grid_carousel;
 				<div class="kt_archivecontent <?php echo esc_attr($lay['tclass']); ?>" data-masonry-selector="<?php echo esc_attr($lay['data_selector']);?>" data-masonry-style="<?php echo esc_attr($lay['data_style']);?>"> 
 	  				<?php
 					if (!have_posts()) :?>
-						<div class="error-not-found"><?php _e('Sorry, no blog entries found.', 'ascend'); ?></div>
+						<div class="error-not-found"><?php esc_html_e( 'Sorry, no blog entries found.', 'ascend' ); ?></div>
 					<?php 
 					endif; 
 					$ascend_blog_loop['count'] = $wp_query->post_count;

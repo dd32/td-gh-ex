@@ -149,7 +149,7 @@
                 $array['key'] = md5( AUTH_KEY . SECURE_AUTH_KEY );
             }
 
-            echo json_encode( $array, true );
+            echo json_encode( $array );
             die();
         }
 

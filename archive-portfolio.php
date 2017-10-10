@@ -8,29 +8,29 @@
 	
     <div id="content" class="container clearfix">
    		<div class="row">
-      		<div class="main <?php echo esc_attr(ascend_main_class()); ?>" role="main">
+      		<div class="main <?php echo esc_attr( ascend_main_class() ); ?>" role="main">
       			<div class="entry-content">
       				<?php echo category_description(); ?>
       			</div>
-				<?php if (!have_posts()) : ?>
+				<?php if ( ! have_posts() ) : ?>
 		            <div class="error-not-found entry-content">
-		                <h5><?php _e('Sorry, no results were found.', 'ascend'); ?></h5>
+		                <h5><?php esc_html_e( 'Sorry, no results were found.', 'ascend' ); ?></h5>
 		                <?php get_search_form(); ?>
 		            </div>
 				<?php endif; 
 				global $ascend_portfolio_loop, $ascend_portfolio_loop_count;
 				$ascend = ascend_get_options();
-				if(isset($ascend['portfolio_tax_show_type']) && $ascend['portfolio_tax_show_type'] == '0') {
+				if( isset( $ascend[ 'portfolio_tax_show_type'] ) && $ascend['portfolio_tax_show_type'] == '0' ) {
 					$portfolio_item_types = 'false';
 				} else {
 					$portfolio_item_types = 'true';
 				}
-				if(isset($ascend['portfolio_tax_show_excerpt']) && $ascend['portfolio_tax_show_excerpt'] == '1') {
+				if( isset( $ascend['portfolio_tax_show_excerpt'] ) && $ascend['portfolio_tax_show_excerpt'] == '1' ) {
 					$portfolio_excerpt = 'true';
 				} else {
 					$portfolio_excerpt = 'false';
 				}
-				if(isset($ascend['portfolio_tax_show_lightbox']) && $ascend['portfolio_tax_show_lightbox'] == '0') {
+				if(isset($ascend['portfolio_tax_show_lightbox']) && $ascend['portfolio_tax_show_lightbox'] == '0' ) {
 					$portfolio_lightbox = 'false';
 				} else {
 					$portfolio_lightbox = 'true';

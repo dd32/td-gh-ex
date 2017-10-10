@@ -142,7 +142,7 @@ if(!function_exists('ascend_build_slider')) {
                                     		echo  '<div class="gallery_item">';
 							      			echo  '<div class="photo-caption-bg"></div>';
 							        		echo  '<div class="caption kad_caption">';
-							        			echo  '<div class="kad_caption_inner">' . wptexturize($item->post_excerpt) . '</div>';
+							        			echo  '<div class="kad_caption_inner">' . wp_kses_post( $item->post_excerpt ) . '</div>';
 							        		echo  '</div>';
 							        		echo  '</div>';
 							        	}

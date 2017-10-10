@@ -9,7 +9,7 @@
     $ascend 				= ascend_get_options();
     $ascend_grid_carousel 		= false;
     $ascend_blog_loop['loop'] 	= 1;
-    $paged 					= (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $paged 					= ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
     if(isset($ascend['category_post_summary'])) {
     	$layout = $ascend['category_post_summary'];
@@ -29,7 +29,7 @@
         $fullclass 			= 'fullwidth';
         $ascend_has_sidebar 	= false;
     }
-    $itemsize = ascend_get_post_grid_item_size($ascend_grid_columns, $ascend_has_sidebar);
+    $itemsize = ascend_get_post_grid_item_size( $ascend_grid_columns, $ascend_has_sidebar );
     /**
     * @hooked ascend_archive_title - 20
     */
@@ -37,11 +37,11 @@
     ?>
 <div id="content" class="container clearfix">
     <div class="row">
-        <div class="main <?php echo esc_attr(ascend_main_class()); ?>  <?php echo esc_attr($lay['pclass']) .' '. esc_attr($fullclass); ?> clearfix" role="main">
+        <div class="main <?php echo esc_attr( ascend_main_class() ); ?>  <?php echo esc_attr( $lay[ 'pclass' ] ) .' '. esc_attr( $fullclass ); ?> clearfix" role="main">
 
         <?php if (!have_posts()) : ?>
             <div class="error-not-found">
-                <?php _e('Sorry, no results were found.', 'ascend'); ?>
+                <?php esc_html_e( 'Sorry, no results were found.', 'ascend' ); ?>
                 <?php get_search_form(); ?>
             </div>
         <?php endif; ?>
@@ -60,7 +60,7 @@
 	                        get_template_part('templates/content', get_post_format());
 	                    } else { ?>
 	                        <div class="<?php echo esc_attr($itemsize);?> b_item kad_blog_item">
-	                            <?php get_template_part('templates/content', 'post-grid'); ?>
+	                            <?php get_template_part( 'templates/content', 'post-grid' ); ?>
 	                        </div>
 	                   <?php }
 	                } else if($lay['sum'] == 'photo') { ?>

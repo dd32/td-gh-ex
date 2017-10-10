@@ -71,7 +71,7 @@
              */
             public function render() {
                 if ( version_compare( phpversion(), "5.3.0", ">=" ) ) {
-                    $json = json_encode( $this->parent->options, true );
+                    $json = json_encode( $this->parent->options );
                 } else {
                     $json = json_encode( $this->parent->options );
                 }

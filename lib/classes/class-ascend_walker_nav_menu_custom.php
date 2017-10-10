@@ -105,7 +105,7 @@ class Ascend_Walker_Nav_Menu_Custom extends Walker_Nav_Menu {
         <li id="menu-item-<?php echo esc_attr($item_id); ?>" class="<?php echo esc_attr(implode(' ', $classes )); ?>">
             <div class="menu-item-bar">
                 <div class="menu-item-handle">
-                    <span class="item-title"><span class="menu-item-title"><?php echo esc_html( $title ); ?></span> <span class="is-submenu" <?php echo $submenu_text; ?>><?php _e( 'sub item', 'ascend' ); ?></span></span>
+                    <span class="item-title"><span class="menu-item-title"><?php echo esc_html( $title ); ?></span> <span class="is-submenu" <?php echo $submenu_text; ?>><?php esc_html_e( 'sub item', 'ascend' ); ?></span></span>
                     <span class="item-controls">
                         <span class="item-type"><?php echo esc_html( $item->type_label ); ?></span>
                         <span class="item-order hide-if-js">
@@ -137,7 +137,7 @@ class Ascend_Walker_Nav_Menu_Custom extends Walker_Nav_Menu {
                         </span>
                         <a class="item-edit" id="edit-<?php echo esc_attr($item_id); ?>" href="<?php
                             echo esc_url( ( isset( $_GET['edit-menu-item'] ) && $item_id == $_GET['edit-menu-item'] ) ? admin_url( 'nav-menus.php' ) : add_query_arg( 'edit-menu-item', $item_id, remove_query_arg( $removed_args, admin_url( 'nav-menus.php#menu-item-settings-' . $item_id ) ) ) );
-                        ?>" aria-label="<?php esc_attr_e( 'Edit menu item', 'ascend' ); ?>"><?php _e( 'Edit', 'ascend' ); ?></a>
+                        ?>" aria-label="<?php esc_attr_e( 'Edit menu item', 'ascend' ); ?>"><?php esc_html_e( 'Edit', 'ascend' ); ?></a>
                     </span>
                 </div>
             </div>
@@ -146,44 +146,44 @@ class Ascend_Walker_Nav_Menu_Custom extends Walker_Nav_Menu {
                 <?php if ( 'custom' == $item->type ) : ?>
                     <p class="field-url description description-wide">
                         <label for="edit-menu-item-url-<?php echo esc_attr($item_id); ?>">
-                            <?php _e( 'URL', 'ascend' ); ?><br />
+                            <?php esc_html_e( 'URL', 'ascend' ); ?><br />
                             <input type="text" id="edit-menu-item-url-<?php echo esc_attr($item_id); ?>" class="widefat code edit-menu-item-url" name="menu-item-url[<?php echo esc_attr($item_id); ?>]" value="<?php echo esc_attr( $item->url ); ?>" />
                         </label>
                     </p>
                 <?php endif; ?>
                 <p class="description description-wide">
                     <label for="edit-menu-item-title-<?php echo esc_attr($item_id); ?>">
-                        <?php _e( 'Navigation Label', 'ascend' ); ?><br />
+                        <?php esc_html_e( 'Navigation Label', 'ascend' ); ?><br />
                         <input type="text" id="edit-menu-item-title-<?php echo esc_attr($item_id); ?>" class="widefat edit-menu-item-title" name="menu-item-title[<?php echo esc_attr($item_id); ?>]" value="<?php echo esc_attr( $item->title ); ?>" />
                     </label>
                 </p>
                 <p class="field-title-attribute field-attr-title description description-wide">
                     <label for="edit-menu-item-attr-title-<?php echo esc_attr($item_id); ?>">
-                        <?php _e( 'Title Attribute', 'ascend' ); ?><br />
+                        <?php esc_html_e( 'Title Attribute', 'ascend' ); ?><br />
                         <input type="text" id="edit-menu-item-attr-title-<?php echo esc_attr($item_id); ?>" class="widefat edit-menu-item-attr-title" name="menu-item-attr-title[<?php echo esc_attr($item_id); ?>]" value="<?php echo esc_attr( $item->post_excerpt ); ?>" />
                     </label>
                 </p>
                 <p class="field-link-target description">
                     <label for="edit-menu-item-target-<?php echo esc_attr($item_id); ?>">
                         <input type="checkbox" id="edit-menu-item-target-<?php echo esc_attr($item_id); ?>" value="_blank" name="menu-item-target[<?php echo esc_attr($item_id); ?>]"<?php checked( $item->target, '_blank' ); ?> />
-                        <?php _e( 'Open link in a new tab', 'ascend' ); ?>
+                        <?php esc_html_e( 'Open link in a new tab', 'ascend' ); ?>
                     </label>
                 </p>
                 <p class="field-css-classes description description-thin">
                     <label for="edit-menu-item-classes-<?php echo esc_attr($item_id); ?>">
-                        <?php _e( 'CSS Classes (optional)', 'ascend' ); ?><br />
+                        <?php esc_html_e( 'CSS Classes (optional)', 'ascend' ); ?><br />
                         <input type="text" id="edit-menu-item-classes-<?php echo esc_attr($item_id); ?>" class="widefat code edit-menu-item-classes" name="menu-item-classes[<?php echo esc_attr($item_id); ?>]" value="<?php echo esc_attr( implode(' ', $item->classes ) ); ?>" />
                     </label>
                 </p>
                 <p class="field-xfn description description-thin">
                     <label for="edit-menu-item-xfn-<?php echo esc_attr($item_id); ?>">
-                        <?php _e( 'Link Relationship (XFN)', 'ascend' ); ?><br />
+                        <?php esc_html_e( 'Link Relationship (XFN)', 'ascend' ); ?><br />
                         <input type="text" id="edit-menu-item-xfn-<?php echo esc_attr($item_id); ?>" class="widefat code edit-menu-item-xfn" name="menu-item-xfn[<?php echo esc_attr($item_id); ?>]" value="<?php echo esc_attr( $item->xfn ); ?>" />
                     </label>
                 </p>
                 <p class="field-description description description-wide">
                     <label for="edit-menu-item-description-<?php echo esc_attr($item_id); ?>">
-                        <?php _e( 'Description', 'ascend' ); ?><br />
+                        <?php esc_html_e( 'Description', 'ascend' ); ?><br />
                         <textarea id="edit-menu-item-description-<?php echo esc_attr($item_id); ?>" class="widefat edit-menu-item-description" rows="3" cols="20" name="menu-item-description[<?php echo esc_attr($item_id); ?>]"><?php echo esc_html( $item->description ); // textarea_escaped ?></textarea>
                         <span class="description"><?php _e('The description will be displayed in the menu if the current theme supports it.', 'ascend'); ?></span>
                     </label>
@@ -197,7 +197,7 @@ class Ascend_Walker_Nav_Menu_Custom extends Walker_Nav_Menu {
 
                 <p class="field-move hide-if-no-js description description-wide">
                     <label>
-                        <span><?php _e( 'Move', 'ascend' ); ?></span>
+                        <span><?php esc_html_e( 'Move', 'ascend' ); ?></span>
                         <a href="#" class="menus-move menus-move-up" data-dir="up"><?php _e( 'Up one', 'ascend' ); ?></a>
                         <a href="#" class="menus-move menus-move-down" data-dir="down"><?php _e( 'Down one', 'ascend' ); ?></a>
                         <a href="#" class="menus-move menus-move-left" data-dir="left"></a>
@@ -222,7 +222,7 @@ class Ascend_Walker_Nav_Menu_Custom extends Walker_Nav_Menu {
                             admin_url( 'nav-menus.php' )
                         ),
                         'delete-menu_item_' . $item_id
-                    ); ?>"><?php _e( 'Remove', 'ascend' ); ?></a> <span class="meta-sep hide-if-no-js"> | </span> <a class="item-cancel submitcancel hide-if-no-js" id="cancel-<?php echo esc_attr($item_id); ?>" href="<?php echo esc_url( add_query_arg( array( 'edit-menu-item' => $item_id, 'cancel' => time() ), admin_url( 'nav-menus.php' ) ) );
+                    ); ?>"><?php esc_html_e( 'Remove', 'ascend' ); ?></a> <span class="meta-sep hide-if-no-js"> | </span> <a class="item-cancel submitcancel hide-if-no-js" id="cancel-<?php echo esc_attr($item_id); ?>" href="<?php echo esc_url( add_query_arg( array( 'edit-menu-item' => $item_id, 'cancel' => time() ), admin_url( 'nav-menus.php' ) ) );
                         ?>#menu-item-settings-<?php echo esc_attr($item_id); ?>"><?php _e('Cancel', 'ascend'); ?></a>
                 </div>
 

@@ -13,14 +13,16 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version     3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 do_action('ascend_woo_thank_you_start');
 ?>
+
 <div class="woocommerce-order">
 
 	<?php if ( $order ) : ?>
@@ -52,18 +54,23 @@ do_action('ascend_woo_thank_you_start');
 					<strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
 				</li>
 
+				<?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ) : ?>
+					<li class="woocommerce-order-overview__total total">
+						<?php _e( 'Email:', 'ascend' ); ?>
+						<strong><?php echo $order->get_billing_email(); ?></strong>
+					</li>
+				<?php endif; ?>
+
 				<li class="woocommerce-order-overview__total total">
 					<?php _e( 'Total:', 'ascend' ); ?>
 					<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 				</li>
 
 				<?php if ( $order->get_payment_method_title() ) : ?>
-
-				<li class="woocommerce-order-overview__payment-method method">
-					<?php _e( 'Payment method:', 'ascend' ); ?>
-					<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
-				</li>
-
+					<li class="woocommerce-order-overview__payment-method method">
+						<?php _e( 'Payment method:', 'ascend' ); ?>
+						<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
+					</li>
 				<?php endif; ?>
 
 			</ul>

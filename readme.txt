@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.0 | 9th October 2017 =
+* Fix: Video iframe embed issue.
+* Update: Ready for woo 3.2
+* Update: CMB
+
 = Version 1.1.9 | 24th August 2017 =
 * Fix: Scroll to top arrrow, issue in firefox.
 
