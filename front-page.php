@@ -19,7 +19,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					<div class="container slider-caption text-center clearfix">
 						<?php
 							if ( Kirki::get_option( 'front_page_text_slider_title' ) != '' ) {
-								echo '<h1>' . wp_kses( Kirki::get_option( 'front_page_text_slider_title' ), '<span>' ) . '</h1>';
+								echo '<h1>' . wp_kses( Kirki::get_option( 'front_page_text_slider_title' ), array( 'span' => array() ) ) . '</h1>';
 							}
 						?>
 
