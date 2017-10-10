@@ -282,11 +282,18 @@ function adventurous_header_image() {
 
 		// Checking Header Details
 		$adventurous_header_details = '
-		<div id="hgroup" class="' . $sitedetails . '">
-			<h1 id="site-title">
+		<div id="hgroup" class="' . $sitedetails . '">';
+			if ( is_front_page() && is_home() ) :
+				$adventurous_header_details .= '<h1 id="site-title">
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>
-			</h1>
-			<h2 id="site-description"> ' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '</h2>
+				</h1>';
+			else :
+				$adventurous_header_details .= '<p id="site-title">
+				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>
+				</p>';
+			endif;
+
+			$adventurous_header_details .= '<p id="site-description"> ' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '</p>
 		</div><!-- #hgroup -->';
 
 		echo $adventurous_header_logo;

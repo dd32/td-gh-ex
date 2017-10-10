@@ -53,7 +53,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'adventurous' ); ?></h1>
+			<h3 class="assistive-text"><?php _e( 'Comment navigation', 'adventurous' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'adventurous' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'adventurous' ) ); ?></div>
 		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
@@ -73,7 +73,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'adventurous' ); ?></h1>
+			<h3 class="assistive-text"><?php _e( 'Comment navigation', 'adventurous' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'adventurous' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'adventurous' ) ); ?></div>
 		</nav><!-- #comment-nav-below .site-navigation .comment-navigation -->

@@ -37,9 +37,9 @@ function adventurous_default_featured_content() {
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
-								<h1 class="entry-title">
+								<h2 class="entry-title">
 									<a title="Mountain Risk Caution" href="#">Mountain Risk Caution</a>
-								</h1>
+								</h2>
 							</header>
 							<div class="entry-content">
 								Chocolate bar tiramisu chocolate cake jelly-o cotton candy. Apple pie bear claw jelly-o tootsie roll chocolate halvah jujubes jujubes biscuit.
@@ -55,9 +55,9 @@ function adventurous_default_featured_content() {
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
-								<h1 class="entry-title">
+								<h2 class="entry-title">
 									<a title="Rhino Nepal National Park" href="#">Rhino Nepal National Park</a>
-								</h1>
+								</h2>
 							</header>
 							<div class="entry-content">
 								Chocolate cake sweet pie chocolate bar. Danish tart cookie topping tootsie roll pie tart jujubes donut. Dragee bear claw tootsie roll chocolate cake.
@@ -73,9 +73,9 @@ function adventurous_default_featured_content() {
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
-								<h1 class="entry-title">
+								<h2 class="entry-title">
 									<a title="Nepal Yak Tibetan" href="#">Nepal Yak Tibetan</a>
-								</h1>
+								</h2>
 							</header>
 							<div class="entry-content">
 								Marshmallow cotton candy candy cotton candy cake apple pie. Jelly-o donut cotton candy. Cheesecake ice cream chupa chups fruitcake jelly-o marshmallow.
@@ -92,9 +92,9 @@ function adventurous_default_featured_content() {
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
-								<h1 class="entry-title">
+								<h2 class="entry-title">
 									<a title="White Water Rafting" href="#">White Water Rafting</a>
-								</h1>
+								</h2>
 							</header>
 							<div class="entry-content">
 								Marshmallow chocolate muffin gingerbread chupa chups carrot cake wafer cheesecake. Pudding chocolate cake lollipop lollipop tootsie roll jelly souffle bonbon sugar plum.
@@ -145,10 +145,10 @@ function adventurous_homepage_featured_content() {
 			if ( !empty( $headline ) || !empty( $subheadline ) ) {
 				$adventurous_homepage_featured_content .= '<div id="featured-heading">';
 				if ( !empty( $headline ) ) {
-					$adventurous_homepage_featured_content .= '<h2>' . $headline . '</h2>';
+					$adventurous_homepage_featured_content .= '<h2>' . wp_kses_post( $headline ) . '</h2>';
 				}
 				if ( !empty( $subheadline ) ) {
-					$adventurous_homepage_featured_content .= '<p>' . $subheadline . '</p>';
+					$adventurous_homepage_featured_content .= '<p>' . wp_kses_post( $subheadline ) . '</p>';
 				}
 				$adventurous_homepage_featured_content .= '</div><!-- #featured-heading -->';
 			}
@@ -204,9 +204,9 @@ function adventurous_homepage_featured_content() {
 									if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
 										$adventurous_homepage_featured_content .= '
 										<header class="entry-header">
-											<h1 class="entry-title">
+											<h2 class="entry-title">
 												<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . $target . '">' . $title . '</a>
-											</h1>
+											</h2>
 										</header>';
 									}
 									if ( !empty ( $options['homepage_featured_content'][ $i ] ) ) {

@@ -106,9 +106,9 @@ function adventurous_post_sliders() {
 							$output .= '
 							<div class="entry-container">
 								<header class="entry-header">
-									<h1 class="entry-title">
+									<h2 class="entry-title">
 										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
-									</h1>
+									</h2>
 								</header>';
 								if ( $excerpt !='') {
 									$output .= '<div class="entry-content">'. $excerpt.'</div>';
@@ -178,9 +178,9 @@ function adventurous_category_sliders() {
 							$adventurous_category_sliders .= '
 							<div class="entry-container">
 								<header class="entry-header">
-									<h1 class="entry-title">
+									<h2 class="entry-title">
 										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
-									</h1>
+									</h2>
 								</header>';
 								if ( $excerpt !='') {
 									$adventurous_category_sliders .= '<div class="entry-content">'. $excerpt.'</div>';

@@ -28,7 +28,7 @@ $moretag = $options['more_tag_text'];
     <div class="entry-container">
 
 		<header class="entry-header">
-    		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'adventurous' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+    		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'adventurous' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php if ( 'post' == get_post_type() ) : ?>
                 <div class="entry-meta">
                     <?php adventurous_header_meta(); ?>

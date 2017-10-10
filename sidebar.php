@@ -61,7 +61,7 @@ if ( 'left-sidebar' == $adventurous_layout || 'right-sidebar' == $adventurous_la
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'adventurous' ); ?></h1>
+				<h3 class="widget-title"><?php _e( 'Archives', 'adventurous' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
