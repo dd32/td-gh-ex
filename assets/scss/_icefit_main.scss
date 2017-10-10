@@ -1,0 +1,322 @@
+/* #Reset & Basics (E. Meyers) */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: top;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+ol,ul { list-style: none; }
+
+blockquote,q { quotes: none; }
+
+blockquote::before,blockquote::after,
+q::before,q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+}
+
+/* #Lists */
+ul, ol { margin-bottom: 20px; }
+
+ul { list-style: none inside; }
+
+ol { list-style: decimal inside; }
+
+ul ul, ul ol, ol ol, ol ul { margin: 4px 0 5px 25px; }
+
+ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px; }
+
+li { line-height: 130%; margin-bottom: 12px; }
+
+ul.large li { line-height: 21px; }
+
+li p { line-height: 140%; }
+
+/* #Images */
+
+img.scale-with-grid { max-width: 100%; height: auto; }
+
+/* #Buttons */
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Clearfixing tabs for beautiful stacking */
+ul.tabs::before,
+ul.tabs::after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+ul.tabs::after { clear: both; }
+
+ul.tabs { zoom: 1; }
+
+/* #Forms */
+
+form { margin-bottom: 20px; }
+
+fieldset { margin-bottom: 20px; }
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	padding: 6px 4px;
+	outline: none;
+	font: 13px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 190px;
+	max-width: 100%;
+	display: block;
+}
+
+select { padding: 0; }
+
+textarea { min-height: 60px; }
+
+label,
+legend {
+	font-family: 'Open Sans';
+	display: block;
+	font-size: 12px;
+	line-height: 160%;
+}
+
+input[type="checkbox"] { display: inline; }
+
+label span,
+legend span {
+	font-weight: normal;
+	font-size: 13px;
+	color: #444;
+}
+
+/* #Misc */
+
+sub, sup { font-size: xx-small; line-height: 100%; }
+
+sub { vertical-align: sub; }
+
+sup { vertical-align: super; }
+
+code, kbd, var { font-family: 'Courier new', Courier, Monospace; }
+
+del, strike { text-decoration: line-through; }
+
+ins { text-decoration: underline; }
+
+acronym, abbr { border-bottom: 1px dotted; cursor: help; }
+
+big { font-size: 120%; }
+
+/* =WordPress Core */
+.alignnone { margin: 5px 0 20px 0; }
+
+.aligncenter,
+div.aligncenter,
+div.aligncenter { display: block; margin: 5px auto !important; }
+
+.alignright { float: right!important; margin: 5px 0 20px 20px; }
+.alignleft { float: left!important; margin: 5px 20px 20px 0; }
+.aligncenter { display: block; margin: 5px auto; }
+
+a img.alignright { float: right; margin: 5px 0 20px 20px; }
+a img.alignnone { margin: 5px 20px 20px 0; }
+a img.alignleft { float: left; margin: 5px 20px 20px 0; }
+a img.aligncenter { display: block; margin-left: auto; margin-right: auto }
+
+figure,
+.wp-caption {
+	border-color: #f0f0f0;
+	max-width: 100%;
+	text-align: center;
+}
+
+.wp-caption.alignnone { margin: 5px 0 20px 0; }
+.wp-caption.alignleft { margin: 5px 20px 20px 0; }
+.wp-caption.alignright { margin: 5px 0 20px 20px; }
+
+figure img,
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+	width: auto;
+}
+
+figure figcaption,
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 160%;
+	margin: 5px 0;
+}
+
+.sticky {}
+
+.gallery-caption { font-size: 80%; }
+
+.gallery-item img { padding: 0 5px; box-sizing: border-box; -moz-box-sizing: border-box; }
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    clip: auto !important;
+    display: block;
+    height: auto;
+    left: 5px;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
+/* #Responsive Menu */
+
+#navbar select {
+	display: none;
+	margin: auto;
+	width: 220px;
+}
+
+/* #Base Grid */
+
+#main-wrap { background: #fff; }
+
+#main-wrap.boxed {
+	width: 1000px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0;
+	clear: both;
+}
+
+#navbar,
+#slider-wrap { width: 920px; }
+
+#page-container {
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+#page-container,
+#footer .container {
+	font-size: 1px;
+	letter-spacing: -1px;
+	word-spacing: -1px;
+}
+
+#sidebar-container { float: right; }
+#page-container.with-sidebar { float: left; }
+
+#page-container > *,
+#footer .container > ul > li {
+	margin-left: 20px !important;
+	margin-right: 20px !important;
+	margin-bottom: 20px;
+	vertical-align: top;
+	float: none;
+}
+
+
+#page-container .page-title { margin-top: 0px; }
+
+#page-container.with-sidebar { width: 760px; }
+#sidebar-container { width: 200px; margin: 0 20px; }
+
+#footer .container > ul > li {
+	width: 200px;
+	display: inline-block;
+}
+
+/* #Clearing */
+
+/* Self Clearing Goodness */
+.container::after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+.clearfix::before,
+.clearfix::after,
+.row::before,
+.row::after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.row::after,
+.clearfix::after { clear: both; }
+
+.row,
+.clearfix { zoom: 1; }
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* IE8 clearfixing */
+.ie8 #footer,
+.ie8 #sub-footer,
+.ie8 #navbar ul { clear:both; }
+.ie8 .container, { overflow: auto; }
+.ie8 .container > * {overflow-y:hidden; overflow-x:hidden; }
+.ie8 #tophead-wrap .container,
+.ie8 #sub-footer .container { clear:both; overflow-y:hidden; overflow-x:hidden; }

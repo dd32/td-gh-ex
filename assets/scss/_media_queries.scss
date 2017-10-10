@@ -1,0 +1,120 @@
+/* #Tablet (Portrait) | Design for a width of 768px */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+	#main-wrap { width: 100%; }
+
+	#main-wrap.boxed,
+	.container { width: 768px; }
+
+	#header-wrap .container { padding: 0 15px; }
+
+	#page-container > *,
+	#footer .container > ul > li {
+		margin-left: 15px !important;
+		margin-right: 15px !important;
+		margin-bottom: 20px;
+	}
+
+	#page-container.with-sidebar {
+		width: 592px;
+	}
+
+	#sidebar-container {
+		width: 161px;
+		margin: 0 15px 0 0!important;
+	}
+
+	#footer .container > ul > li { width: 162px; }
+
+	#calendar_wrap td { padding: 1px 3px; }
+	.thumbnail { max-width: 200px; height: auto; }
+
+	.gallery .gallery-item { width: 50%!important; min-height: 210px; }
+	.gallery br { display: none; }
+
+}
+
+/* #Mobile (Portrait) | Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+
+	#main-wrap.boxed { width: 310px; margin: 0 auto; }
+
+	#header-wrap { top: 0px; }
+	#header-wrap .container { padding: 0; }
+	.boxed #header-wrap { width: 310px; }
+	.container { width: 300px; }
+
+	#logo { text-align: center; float: none; max-width: 100%; }
+
+	#navbar div { display: none; }
+	#navbar { width: 100%!important }
+	#navbar select {
+		display: block;
+		margin: 20px auto 0;
+		width: 90%;
+	}
+
+	#page-container,
+	#page-container.with-sidebar,
+	#sidebar-container {
+		width: 280px;
+		margin: 0px 10px 20px 10px;
+	}
+
+	#page-container > * {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+
+	#page-container .post,
+	#page-container .article_nav,
+	#page-container > hr { margin: 0 0 20px 0 !important; clear: both; }
+	#page-container .comments { margin: 0!important; }
+
+	.thumbnail,
+	.single-post .thumbnail { width: 100%; text-align: center; }
+
+	.gallery .gallery-item { float: none!important; width: 100%!important; }
+	.gallery br { display: none; }
+
+	#sidebar .search-form .search-field { width: 100%; }
+	#calendar_wrap td { padding: 3px 12px; }
+
+	#footer .container > ul > li {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+		margin-bottom: 20px;
+	}
+
+	#footer .container > ul > li { width: 280px; }
+
+	#sub-footer .container > div { width: 100%; }
+
+	.sub-footer-left { margin-bottom: 20px; }
+	.sub-footer-left,
+	.sub-footer-right { float: none; text-align: center; }
+
+}
+
+/* #Mobile (Landscape) | Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	#main-wrap.boxed,
+	.boxed #header-wrap { width: 440px; }
+	.container { width: 420px; }
+
+	#page-container,
+	#page-container.with-sidebar,
+	#sidebar-container { width: 400px; margin: 0px 10px 20px 10px; }
+
+	#footer .container > ul > li { width: 400px; }
+
+	.gallery .gallery-item {
+		float: left!important;
+		width: 50%!important;
+		min-height: 210px;
+	}
+
+	#calendar_wrap td { padding: 5px 20px; }
+
+}
