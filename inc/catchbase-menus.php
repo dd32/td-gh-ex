@@ -24,7 +24,7 @@ function catchbase_primary_menu() {
     ?>
 	<nav class="nav-primary search-enabled" role="navigation">
         <div class="wrapper">
-            <h1 class="assistive-text"><?php _e( 'Primary Menu', 'catch-base' ); ?></h1>
+            <h3 class="assistive-text"><?php _e( 'Primary Menu', 'catch-base' ); ?></h3>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
             <?php
                 if ( has_nav_menu( 'primary' ) ) {
@@ -66,7 +66,7 @@ function catchbase_secondary_menu() {
 	?>
     	<nav class="nav-secondary" role="navigation">
             <div class="wrapper">
-                <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-base' ); ?></h1>
+                <h3 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-base' ); ?></h3>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
                 <?php
                     $catchbase_secondary_menu_args = array(

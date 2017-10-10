@@ -79,7 +79,7 @@ function catchbase_featured_content_display() {
 						if ( !empty( $headline ) || !empty( $subheadline ) ) {
 							$catchbase_featured_content .='<div class="featured-heading-wrap">';
 								if ( !empty( $headline ) ) {
-									$catchbase_featured_content .='<h1 id="featured-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
+									$catchbase_featured_content .='<h2 id="featured-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h2>';
 								}
 								if ( !empty( $subheadline ) ) {
 									$catchbase_featured_content .='<p>' . wp_kses_post( $subheadline ) . '</p>';
@@ -158,9 +158,9 @@ function catchbase_demo_content( $options ) {
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
-					<h1 class="entry-title">
+					<h2 class="entry-title">
 						Durbar Square
-					</h1>
+					</h2>
 				</header>
 				<div class="entry-content">
 					The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
@@ -174,9 +174,9 @@ function catchbase_demo_content( $options ) {
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
-					<h1 class="entry-title">
+					<h2 class="entry-title">
 						Seto Ghumba
-					</h1>
+					</h2>
 				</header>
 				<div class="entry-content">
 					Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
@@ -190,9 +190,9 @@ function catchbase_demo_content( $options ) {
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
-					<h1 class="entry-title">
+					<h2 class="entry-title">
 						Swayambhunath
-					</h1>
+					</h2>
 				</header>
 				<div class="entry-content">
 					Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
@@ -208,9 +208,9 @@ function catchbase_demo_content( $options ) {
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
-					<h1 class="entry-title">
+					<h2 class="entry-title">
 						Dhulikhel
-					</h1>
+					</h2>
 				</header>
 				<div class="entry-content">
 					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world.
@@ -296,9 +296,9 @@ function catchbase_page_content( $options ) {
 				$catchbase_page_content .= '
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . the_title( '','', false ) . '</a>
-							</h1>
+							</h2>
 						</header>';
 						if ( 'excerpt' == $show_content ) {
 							$catchbase_page_content .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';

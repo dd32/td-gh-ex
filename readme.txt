@@ -151,6 +151,9 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 == Change log ==
 
+= 3.0 (Released: October 10, 2017) =
+* Major Update: Enhanced HTML structure
+
 = 2.9.2 (Released: June 28, 2017) =
 * Code Optimization
 * Removed: changelog.txt file and added changelog in readme.txt file

@@ -105,9 +105,9 @@ function catchbase_demo_slider( $options ) {
 				</figure>
 				<div class="entry-container">
 					<header class="entry-header">
-						<h1 class="entry-title">
+						<h2 class="entry-title">
 							<a title="Slider Image 1" href="#"><span>Slider Image 1</span></a>
-						</h1>
+						</h2>
 					</header>
 					<div class="entry-content">
 						<p>Slider Image 1 Content</p>
@@ -123,9 +123,9 @@ function catchbase_demo_slider( $options ) {
 				</figure>
 				<div class="entry-container">
 					<header class="entry-header">
-						<h1 class="entry-title">
+						<h2 class="entry-title">
 							<a title="Slider Image 2" href="#"><span>Slider Image 2</span></a>
-						</h1>
+						</h2>
 					</header>
 					<div class="entry-content">
 						<p>Slider Image 2 Content</p>
@@ -212,9 +212,9 @@ function catchbase_page_slider( $options ) {
 				</figure><!-- .slider-image -->
 				<div class="entry-container">
 					<header class="entry-header">
-						<h1 class="entry-title">
+						<h2 class="entry-title">
 							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
-						</h1>
+						</h2>
 						<div class="assistive-text">'.catchbase_page_post_meta().'</div>
 					</header>';
 					if ( $excerpt !='') {

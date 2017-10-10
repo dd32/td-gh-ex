@@ -292,7 +292,7 @@
 	wp.customize( 'catchbase_theme_options[featured_content_headline]', function( value ) {
 		value.bind( function( to ) {
 			var $featured_content_wrapper_div 	= $( 'section#featured-content .wrapper .featured-heading-wrap' );
-			var $featured_content_headline 		= $( 'section#featured-content .wrapper .featured-heading-wrap h1#featured-heading' );
+			var $featured_content_headline 		= $( 'section#featured-content .wrapper .featured-heading-wrap h2#featured-heading' );
 			var subheadline 					= wp.customize( 'catchbase_theme_options[featured_content_subheadline]' ).get();
 
 			//check if at least headline or subheadline is not empty
@@ -301,15 +301,15 @@
 				if ( 0 !== $featured_content_wrapper_div.length ) {
 					//check if featured-content-headline exists
 					if ( 0 !== $featured_content_headline.length ) {
-						$( 'section#featured-content .wrapper .featured-heading-wrap h1#featured-heading' ).text( to );
+						$( 'section#featured-content .wrapper .featured-heading-wrap h2#featured-heading' ).text( to );
 					} else {
-						$featured_headline = '<h1 id="featured-heading" class="entry-title">' + to + '</h1>';
+						$featured_headline = '<h2 id="featured-heading" class="entry-title">' + to + '</h2>';
 
 						$featured_content_wrapper_div.prepend( $featured_headline );
 					}
 				} else {
 					$div_featured_heading_wrap 	= '';
-					$featured_headline 			= '<h1 id="featured-heading" class="entry-title">' + to + '</h1>';
+					$featured_headline 			= '<h2 id="featured-heading" class="entry-title">' + to + '</h2>';
 					$div_featured_heading_wrap 	= '<div class="featured-heading-wrap">' + $featured_headline + '</div>';
 
 					$( 'section#featured-content .wrapper' ).prepend( $div_featured_heading_wrap );
@@ -319,7 +319,7 @@
 			else if ( '' === to && '' === subheadline ) {
 				$featured_content_wrapper_div.remove();
 			}
-			//if only headline is empty, remove headline h1
+			//if only headline is empty, remove headline h2
 			else {
 				$featured_content_headline.remove();
 			}
@@ -330,7 +330,7 @@
 	wp.customize( 'catchbase_theme_options[featured_content_subheadline]', function( value ) {
 		value.bind( function( to ) {
 			var $featured_content_wrapper_div 	= $( 'section#featured-content .wrapper .featured-heading-wrap' );
-			var $featured_content_headline 		= $( 'section#featured-content .wrapper .featured-heading-wrap h1#featured-heading' );
+			var $featured_content_headline 		= $( 'section#featured-content .wrapper .featured-heading-wrap h2#featured-heading' );
 			var $featured_content_subheadline 	= $( 'section#featured-content .wrapper .featured-heading-wrap p' );
 
 			var headline 	= wp.customize( 'catchbase_theme_options[featured_content_headline]' ).get();

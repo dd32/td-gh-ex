@@ -226,12 +226,17 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 			</div><!-- #site-logo -->';
 		}
 
-		$catchbase_header_text = '
-		<div id="site-header">
-			<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
-			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
-		</div><!-- #site-header -->';
+		$catchbase_header_text = '<div id="site-header">';
 
+		if ( is_front_page() && is_home() ) :
+			$catchbase_header_text .= '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
+		else :
+			$catchbase_header_text .= '<p class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></p>';
+		endif;
+
+			$catchbase_header_text .= '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>';
+			
+		$catchbase_header_text .= '</div><!-- #site-header -->';
 
 		$text_color = get_header_textcolor();
 
