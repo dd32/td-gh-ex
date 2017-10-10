@@ -1,12 +1,5 @@
 <?php
-/**
- * The main template file
- *
- * @package Bani
- */
-
 get_header(); ?>
-
 
 <?php if ( is_home() ) : ?>
 	<?php if( ! get_theme_mod( 'bani_hide_cover_section' ) ) : ?>
@@ -14,7 +7,7 @@ get_header(); ?>
 			<div class="bani-cover-bg"></div><!-- /.bani-cover -->
 			<div class="bani-cover-content row align-items-center justify-content-center">
 				<div class="col-md-6 bani-content-height">
-					<h5 class="sub-title"><?php echo esc_html( get_theme_mod( 'bani_cover_subtitle', __( 'Welcome to my blog!', 'bani' ) ) ); ?></h5>
+					<h5 class="sub-title"><?php echo wp_kses_post( get_theme_mod( 'bani_cover_subtitle', __( 'Welcome to my blog!', 'bani' ) ) ); ?></h5>
 					<h3 class="title"><?php echo wp_kses_post( get_theme_mod( 'bani_cover_static_title', __( 'I am a', 'bani' ) ) ); ?> <span id="banityped"></span></h3>
 					<?php
 						$typing_strings = array( __( 'Father...', 'bani' ), __( 'Son...', 'bani' ), __( 'Writer...', 'bani' ), __( 'Designer...', 'bani' ), __( 'Developer...', 'bani' ), __( 'Blogger!', 'bani' ) );
@@ -29,7 +22,7 @@ get_header(); ?>
 							}
 						?>
 					</div>
-					<p><?php echo esc_attr( get_theme_mod('bani_cover_paragraph', __( 'This is a perfect place to introduce yourself and this blog. You can easily customize this text from WordPress admin panel. If you want, you can disable this section. You can also customize colors used for this template easily.', 'bani' )) ); ?></p>
+					<p><?php echo wp_kses_post( get_theme_mod('bani_cover_paragraph', __( 'This is a perfect place to introduce yourself and this blog. You can easily customize this text from WordPress admin panel. If you want, you can disable this section. You can also customize colors used for this template easily.', 'bani' )) ); ?></p>
 				</div><!-- /.col -->
 			</div><!-- /.bani-cover-content -->
 		</div>
@@ -45,7 +38,7 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 <?php endif; ?>
 
-	<div class="st-primary-wrapper post-hover-effect <?php if ( get_theme_mod( 'bani_full_width_home' ) ) : echo 'col-lg-12'; else : echo 'col-lg-9'; endif; ?>">
+	<div class="st-primary-wrapper <?php if( !get_theme_mod( 'bani_no_hover' ) ) : echo 'post-hover-effect'; endif; ?> <?php if ( get_theme_mod( 'bani_full_width_home' ) ) : echo 'col-lg-12'; else : echo 'col-lg-9'; endif; ?>">
 
 		<?php if ( is_home() ) : ?>
 			<?php if( ! get_theme_mod( 'bani_hide_featured_posts' ) ) : ?>

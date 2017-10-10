@@ -4,12 +4,14 @@ Theme URI: https://themes.salttechno.com/wordpress-theme/bani-free-blog-theme/
 Author: SaltTechno
 Author URI: https://themes.salttechno.com
 Description: A comprehensive blog theme with a fresh, clean & elegant design. The theme is designed with the classic elegance to keep your reader more focused on the content & images. Our professional designers have kept the design simple yet eye-pleasing. You can customize most of the theme settings with live preview. Native WordPress customizer is used to make it easy for you to edit theme settings. We have added a customizable slider for featured posts and a cover section at the top for your blog introduction. The theme is lightweight with less than 40kb style.css (you can minimize it further easily). It is fully responsive theme built on world's most loved framework for responsive websites, Bootstrap 4. You can use all latest WordPress page builder plugins like Site Origin, Elementor, Beaver Builder etc. This is a perfect WordPress theme for any kind of blog. Bani is a classic blog theme with RTL language support and is completely translation-ready. Our support team is always there to answer your queries. The theme will be regularly updated with new features. Check demo at http://bani.themesease.com. To know more about the theme, visit https://themes.salttechno.com/wordpress-theme/bani-free-blog-theme/.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
 Text Domain: bani
 Tags: blog, two-columns, one-column, left-sidebar, right-sidebar, grid-layout, custom-background, custom-menu, sticky-post, custom-logo, footer-widgets, rtl-language-support, theme-options, threaded-comments, featured-images, full-width-template, translation-ready, holiday, news
 
+
+@fs_premium_only /functions/metaboxes-post-formats.php, /template-parts/content-audio.php, /template-parts/content-gallery.php, /template-parts/content-video.php, /template-parts/content-status.php, /js/post-admin.js, /sidebar-page.php, /inc/widgets/about-widget.php, /inc/widgets/link-box-widget.php, /inc/widgets/recent-posts-widget.php,  /js/top-navigation.js, /function/bani-customizer-single-post.php
 */
 
 html { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -130,7 +132,7 @@ a:hover, a:active { outline: 0; }
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget { margin: 0 0 1.5em; /* Make sure select elements fit in widgets. */ }
+.widget { margin: 0 0 1.5em; }
 
 .widget select { max-width: 100%; }
 
@@ -174,7 +176,6 @@ a:hover, a:active { outline: 0; }
 --------------------------------------------------------------*/
 .page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley { border: none; margin-bottom: 0; margin-top: 0; padding: 0; }
 
-/* Make sure embeds and iframes fit their containers. */
 embed, iframe, object { max-width: 100%; }
 
 /*--------------------------------------------------------------
@@ -257,7 +258,7 @@ q:after { content: '"'; }
 /*--------------------------------------------------------------
 # INDEX
 --------------------------------------------------------------*/
-.st-content-area { word-wrap: break-word; /*  margin-top: 54px;  */ }
+.st-content-area { word-wrap: break-word; }
 
 .entry-title a { color: #272B30; font-style: italic; }
 
@@ -444,7 +445,7 @@ button, input, optgroup, select, textarea { font-family: inherit; }
 
 .subscribe-post-widget .mc4wp-response { color: #F3F3F1; font-size: .875rem; }
 
-.widget.card { /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */ /* border: 0; */ border-color: #e7e7e3; }
+.widget.card { border-color: #e7e7e3; }
 
 .widget.bani-widget ul { margin-left: 0rem; padding-left: 0rem; list-style: none; }
 
@@ -617,7 +618,7 @@ button, input, optgroup, select, textarea { font-family: inherit; }
 
 .comment-list { margin-left: 0; padding-left: 0; list-style: none; }
 
-.bani-comment .comment-author { /* font-size: 1rem; */ margin-bottom: 0; }
+.bani-comment .comment-author { margin-bottom: 0; }
 
 .bani-comment .comment-author a { -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; transition: all 0.4s ease; }
 
@@ -629,7 +630,7 @@ button, input, optgroup, select, textarea { font-family: inherit; }
 
 .comment-list .comment { margin-bottom: 2rem; }
 
-.comment-list .comment.bypostauthor { /* Comment or reply by post author */ padding: 15px; background: #F3F3F1; border-radius: 0.25rem; }
+.comment-list .comment.bypostauthor { padding: 15px; background: #F3F3F1; border-radius: 0.25rem; }
 
 .comment-list .children { list-style: none; }
 
@@ -749,7 +750,6 @@ body { overflow-x: hidden; }
 
 .site-footer.row.align-items-center { padding-top: 1rem; }
 
-/* .comments-area #commentform { margin-left: 0px !important; margin-right: 0px !important; } */
 @media (max-width: 678px) { .bani-social-header { text-align: center !important; } }
 
 /*--------------------------------------------------------------

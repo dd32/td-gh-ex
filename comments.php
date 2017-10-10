@@ -104,7 +104,7 @@ if ( post_password_required() ) {
 					'label_submit' => esc_html__('Post Comment', 'bani'),
 					'fields' => $sp_fields,
 					'class_submit' => 'submit btn btn-primary comment-submit-btn',
-					'submit_field' => '<div class="form-submit text-center col">%1$s %2$s</div>',
+					'submit_field' => '<div class="form-submit text-center w-100">%1$s %2$s</div>',
 					'cancel_reply_before' => '<small class="bani-cancel-reply">',
 					'class_form' => 'comment-form row align-items-center'
 				));

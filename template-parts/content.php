@@ -29,7 +29,11 @@
 			<?php if ( get_theme_mod( 'bani_default_image_home' ) ) : ?>
 				<?php if ( !is_single() ) : ?>
 		    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="bani-thumb-link">
-		                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/default-img.png'); ?>" alt="<?php the_title_attribute(); ?>" class="card-img-top d-block img-fluid w-100">
+		    		    <?php if ( get_theme_mod( 'bani_change_default_post_thumbnail' ) ) : ?>
+		                  <img src="<?php echo esc_url(get_theme_mod('bani_change_default_post_thumbnail')); ?>" alt="<?php the_title_attribute(); ?>" class="card-img-top d-block img-fluid w-100">
+		                <?php else : ?>
+		                 	<img src="<?php echo esc_url(get_template_directory_uri() . '/images/default-img.png'); ?>" alt="<?php the_title_attribute(); ?>" class="card-img-top d-block img-fluid w-100">
+		                <?php endif; ?>
 		            </a>
 		        <?php endif; ?>
 			<?php endif; ?>
@@ -75,8 +79,13 @@
 				</div><!-- .entry-content -->
 			<?php else : ?>
 		        <div class="entry excerpt entry-summary">
-					<?php the_excerpt(); ?>
-				</div><!--/.entry-->
+                    <?php if ( get_theme_mod( 'bani_full_content_post' ) ) : ?>
+						<?php the_content(); ?>
+	           	        <!-- full content -->
+	           	    <?php else : ?>
+					    <?php the_excerpt(); ?>  <!-- only show excerpt -->
+					<?php endif; ?>
+                </div><!--/.entry-->
 		    <?php endif; ?>
 
 			<?php if ( is_sticky() && !is_single() ) : ?>

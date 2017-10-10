@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     "use strict";
 
     $(".loading-screen").fadeOut('slow', function(){
-        $(".loading-screen").addClass('hide-screen');
+       $(".loading-screen").addClass('hide-screen');
     });
 
     // For Fixed header & Scroll to top
@@ -20,8 +20,8 @@ jQuery(document).ready(function($) {
 	});
 
     // Adjust margin-top
-    var headerHt = $('.st-header-area').height();
-    $('.st-content-area').css('margin-top', headerHt);
+    //var headerHt = $('.st-header-area').height();
+    //$('.st-content-area').css('margin-top', headerHt);
 
     // For Scroll to top
     $(".scroll-to-top").on("click", function() {
@@ -36,8 +36,16 @@ jQuery(document).ready(function($) {
     // For menu on mobile
     $(".bani-main-menu .menu-item-has-children a .fa").on("click", function(e){
         e.preventDefault();
-        // console.log(this);
+          //console.log(this);
         $(this).parent().parent().find(" > .sub-menu").toggleClass("showSubMenu");
+    });
+
+        // bxSlider for gallery post
+    $('.bxslider').bxSlider({
+        infiniteLoop: true,
+        nextText: '<i class="fa fa-angle-right"></i>',
+        prevText: '<i class="fa fa-angle-left"></i>',
+        mode: 'fade'
     });
 
     // For Featured Posts
@@ -47,8 +55,12 @@ jQuery(document).ready(function($) {
         spaceBetween: 10,
     });
 
+
     // Check cover content height
     var coverContentHt = $('.bani-content-height').height();
     $('.bani-cover-wrapper').height(coverContentHt);
 
 });
+
+
+

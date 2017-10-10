@@ -5,7 +5,8 @@
 */
 $wp_customize->add_section( 'bani_featured_section' , array(
 	'title'      => esc_html__( 'Featured Posts Settings', 'bani' ),
-	'priority'   => 22,
+	'panel'   => 'blog_home_panel',
+	'description' => esc_attr__( 'Customize your blog\'s home page layout here. You must have selected "Your Latest Posts" at "Static Front Page" settings.', 'bani' ),
 ) );
 
 

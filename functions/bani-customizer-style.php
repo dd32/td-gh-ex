@@ -7,16 +7,28 @@
 * For adding styling to page as per customizer
 * ------------------------------------------------------------------------------------
 */
-
-
-function bani_customizer_style() {
+function bani_customizer_style()
+{
     ?>
 
     <style type="text/css">
-        <?php if ( get_theme_mod( 'bani_logo_height' ) ) : ?> .bani-logo-img { height: <?php echo get_theme_mod( 'bani_logo_height' ); ?>px; } <?php endif; ?>
-        
+        <?php 
+    
+    if ( get_theme_mod( 'bani_logo_height' ) ) {
+        ?>
+ .bani-logo-img { height: <?php 
+        echo  get_theme_mod( 'bani_logo_height' ) ;
+        ?>
+px; } <?php 
+    }
+    
+    ?>
+
+         <?php 
+    ?>
     </style>
 
-    <?php
+    <?php 
 }
+
 add_action( 'wp_head', 'bani_customizer_style' );

@@ -1,5 +1,16 @@
 <?php
+/**
+ * Custom functions that act independently of the theme templates
+ *
+ * Eventually, some of the functionality here could be replaced by core features.
+ *
+ * @package social
+ */
 
+
+/**
+* Add help button on admin navbar
+*/
 function bani_add_help_button() {
 	if ( ! current_user_can( 'edit_theme_options' ) ) {
 		return;

@@ -1,15 +1,4 @@
 <?php
-/**
- * Sample implementation of the Custom Header feature
- *
- * You can add an optional custom header image to header.php like so ...
- *
-	<?php the_header_image_tag(); ?>
- *
- * @link https://developer.wordpress.org/themes/functionality/custom-headers/
- *
- * @package Bani
- */
 
 /**
  * Set up the WordPress core custom header feature.
@@ -19,7 +8,7 @@
 function bani_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bani_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => '8E847E',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
@@ -71,9 +60,3 @@ function bani_header_style() {
 	<?php
 }
 endif;
-
-  
-	
-
-
-

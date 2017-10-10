@@ -34,6 +34,16 @@ function bani_register_required_plugins() {
 	$plugins = array(
 
 		array(
+			'name'     				=> 'Install FitVids - Embed Fluid Videos',
+			'slug'     				=> 'install-fitvids-embed-fluid-width-videos',
+			'required' 				=> false,
+			'version' 				=> '',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
+
+		array(
 			'name'     				=> 'Titan Framework',
 			'slug'     				=> 'titan-framework',
 			'required' 				=> false,
