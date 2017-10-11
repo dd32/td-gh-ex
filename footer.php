@@ -53,7 +53,7 @@
                             <?php if(get_theme_mod('copyright_area_text') != '') : ?>
                                 <p><?php echo wp_kses_post(get_theme_mod('copyright_area_text')); ?></p>
                             <?php endif; ?>
-                            <p><?php esc_html_e('Powered By ','bar-restaurant'); ?><a href="<?php echo esc_url('https://voilathemes.com/products/bar-restaurant-wordpress-theme/','bar-restaurant'); ?>"><?php esc_html_e('Bar Restaurant WordPress Theme.','bar-restaurant'); ?></a></p>
+                            <p><?php esc_html_e('Powered By ','bar-restaurant'); ?><a href="<?php echo esc_url('https://voilathemes.com/products/bar-restaurant-wordpress-theme/','bar-restaurant'); ?>"><?php esc_html_e('Bar Restaurant WordPress Theme','bar-restaurant'); ?></a></p>
                         </div>
                     </div>
                 </div>
