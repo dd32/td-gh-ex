@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.10
+* Styling fixes/tweaks
+* Updated dashboard help links
+* Updated language .pot file
+
 #### 1.3.09
 * Styling fixes/tweaks
 * Updated WooCommerce ajax cart function

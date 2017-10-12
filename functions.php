@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.09' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.10' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -242,23 +242,13 @@ function topshop_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
 		array(
-			'name'      => __( 'Page Builder', 'topshop' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false,
-		),
+            'name'      => __( 'Elementor Page Builder', 'topshop' ),
+            'slug'      => 'elementor',
+            'required'  => false,
+        ),
 		array(
 			'name'      => __( 'WooCommerce', 'topshop' ),
 			'slug'      => 'woocommerce',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'Widgets Bundle', 'topshop' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'Contact Form 7', 'topshop' ),
-			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 		array(
@@ -280,6 +270,13 @@ function topshop_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'topshop_register_required_plugins' );
+
+/**
+ * Elementor Check
+ */
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+    define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
 
 /**
  * Register a custom Post Categories ID column
