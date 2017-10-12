@@ -37,21 +37,12 @@ function bhost_theme_mostrar_guide() {
 			<div style="text-align:center; font-weight:bold;">
 				<hr />
 				<a href="<?php echo BHOST_LIVE_DEMO; ?>" target="_blank"><?php esc_attr_e('Live Demo', 'bhost'); ?></a> | 
-				<a href="<?php echo BHOST_PRO_THEME_URL; ?>"><?php esc_attr_e('Buy Pro', 'bhost'); ?></a> | 
+				<a href="<?php echo BHOST_PRO_THEME_URL; ?>"><?php esc_attr_e('Buy Pro Version', 'bhost'); ?></a> 
                 <div style="height:5px"></div>
 				<hr />                
                 <a href="<?php echo BHOST_PRO_THEME_URL; ?>" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/sktskill.jpg" alt="" /></a>
 			</div>	
-			<center><h3><?php echo esc_html_e('Our Awosome WordPress Themes' , 'bhost');?></h3></center>
-			<a href="https://themeforest.net/item/kingal-multipurpose-wordpress-theme/15902772" target="_blank"><img width="350" src="<?php echo esc_url(get_template_directory_uri());?>/images/kinglal.jpg" alt="" /></a>
-			<a href="http://preview.themeforest.net/item/kingal-multipurpose-wordpress-theme/full_screen_preview/15902772" target="_blank"><?php esc_html_e('Live Demo' , 'bhost');?></a> |
-			<a href="https://themeforest.net/item/kingal-multipurpose-wordpress-theme/15902772" target="_blank"><?php esc_html_e('Item Details' , 'bhost');?></a>
-			<br />
-			<br />
-			<a href="https://themeforest.net/item/saffron-corporate-multipurpose-wordpress-theme/16476091" target="_blank"><img width="350" src="<?php echo esc_url(get_template_directory_uri());?>/images/saffron.jpg" alt="" /></a>
-			<a href="http://preview.themeforest.net/item/saffron-corporate-multipurpose-wordpress-theme/full_screen_preview/16476091" target="_blank"><?php esc_html_e('Live Demo' , 'bhost');?></a> |
-			<a href="https://themeforest.net/item/saffron-corporate-multipurpose-wordpress-theme/16476091" target="_blank"><?php esc_html_e('Item Details' , 'bhost');?></a>
-	
+			
 	</div><!-- .col-right -->
 </div><!-- .wrapper-info -->
 <?php } ?>

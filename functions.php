@@ -81,7 +81,7 @@ function bhost_setup() {
 endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
-define('BHOST_PRO_THEME_URL','https://www.codegrape.com/item/bhost-pro-responsive-wordpress-theme/8758','bhost');
+define('BHOST_PRO_THEME_URL','https://themesvila.com/item/bhost-pro/','bhost');
 define('BHOST_LIVE_DEMO','//getmasum.net/preview/bhost/','bhost');
 
 
@@ -99,6 +99,16 @@ function bhost_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
+	) );	
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer', 'bhost' ),
+		'id'            => 'sidebar-2',
+		'description'   => '',
+		'before_widget' => '<aside class="col-sm-3"><div class="single-widget %2$s">',
+		'after_widget'  => '</div></aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'bhost_widgets_init' );
@@ -110,7 +120,7 @@ add_action( 'widgets_init', 'bhost_widgets_init' );
  * register google fonts
  */
 function bhost_fonts_url() {
-	$bhost_google_fonts_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700|Open Sans:400,400italic,600,700,700italic' ), "https://fonts.googleapis.com/css" );
+	$bhost_google_fonts_url = add_query_arg( 'family', urlencode( 'Montserrat:400,500,600,700|Open Sans:400,400italic,600,700,700italic' ), "https://fonts.googleapis.com/css" );
 	return $bhost_google_fonts_url;
 }
 

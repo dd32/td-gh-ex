@@ -16,6 +16,11 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
+	
+	<footer class="entry-footer">
+		<?php bhost_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+	
 	<div class="entry-content">
 			<?php
 			/* translators: %s: Name of current post */
@@ -33,7 +38,5 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php bhost_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->

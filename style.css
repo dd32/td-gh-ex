@@ -2,9 +2,9 @@
 Theme Name: Bhost
 Theme URI: 
 Author: Masum Billah
-Author URI: http://getmasum.net/
+Author URI: https://themesvila.com/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.3.6
+Version: 1.3.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -84,7 +84,7 @@ html {
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Montserrat', sans-serif;
 	color: #444;
-	text-transform: uppercase;
+	text-transform: inherit;
 	font-weight: 500;
 }
 
@@ -763,7 +763,7 @@ a:active {
 	width: 100%;
 }
 .site-branding h1.site-title a{
-	font-size: 40px;
+	font-size: 35px;
 	text-decoration: none;
 	color: #444;
 	-webkit-transition: all .25s linear;
@@ -828,7 +828,7 @@ a:active {
 --------------------------------------------------------------*/
 
 .mainmenu {
-  background: #292929;
+  background: #161721;
   display: table;
   width: 100%;
 }
@@ -854,7 +854,8 @@ a:active {
 	transition: 0.8s;
 }
 .mainmenu #nav li:hover:before,
-.mainmenu #nav  li.active:before{
+.mainmenu #nav  li.active:before,
+.mainmenu #nav li.current_page_item:before{
 	width: 100%;
 	opacity: 1;
 }
@@ -864,7 +865,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-weight: 600;
-	padding: 15px 20px;
+	padding: 20px 20px;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-family: "Open Sans",sans-serif;
@@ -873,13 +874,15 @@ a:active {
 .mainmenu #nav  li  a i.fa{
 	padding-right: 5px;
 }
-.mainmenu #nav  li:hover a:before{
+.mainmenu #nav  li:hover a:before,
+.mainmenu #nav li.current_page_item a:before
+{
 	opacity: 1;
 	
 }
 .mainmenu #nav li:hover a,
-.mainmenu #nav li.active a
-{
+.mainmenu #nav li.active a,
+.mainmenu #nav li.current_page_item a{
 	color: #2bcdc1;
 }
 #stickymenu{
@@ -1898,19 +1901,36 @@ li.cat-item{
 /*--------------------------------------------------------------
 25. Foorer
 --------------------------------------------------------------*/
-
+#footer_top{
+	background: #161721;
+	color: #fff;
+	padding: 30px 0;
+}
+#footer_top li{
+	border-color: #22232c;
+}
+#footer_top .single-widget{
+	background: transparent;
+}
+#footer_top a,
+#footer_top .widget-title{
+	color: #fff;
+	transition: .5s;
+}
+#footer_top a:hover{
+	color: #2bcdc1;
+}
 #footer{
 	color: #ffffff;
-	font-size: 13px;
+	font-size: 15px;
 	padding: 30px;
 	text-align: center;
-	text-transform: uppercase;
-	background: #000;
+	background: #0f1017;
 }
 #footer a{
 	color: #2bcdc1;
 	text-decoration: none;	
-	font-size: 13px;
+	font-size: 15px;
 }
 #footer a:hover{
 	color: #fff;
@@ -1943,7 +1963,7 @@ article.single-post{
 	width: auto;
 }
 .entry-footer a{
-	font-weight: 700;
+	font-weight: 600;
 }
 @media (max-width: 767px){
 	#primary{
@@ -1954,16 +1974,17 @@ article.single-post{
 h1.entry-title{	
 	margin-bottom: 15px;
 	margin-top: 0px;
-	font-size: 17px;
-	text-transform: uppercase;
+	font-size: 25px;
+	font-weight: 500;
+	text-transform: inherit;
 }
 
 h1.entry-title a{
-	color: #444;
-	font-size: 17px;
+	color: #777;
+	font-size: 25px;
 	font-weight: 500;
 	text-decoration: none;
-	text-transform: uppercase;
+	text-transform: inherit;
 	font-family: 'Montserrat', sans-serif;
 }
 h1.entry-title a:hover{
@@ -2019,8 +2040,7 @@ h1.entry-title a:hover{
 .entry-meta a{
 	text-decoration: none;
 	color: #2bcdc1;
-	text-transform: uppercase;
-	font-size: 13px!important;
+
 	display: block-inline;
 	
 }
@@ -2028,7 +2048,6 @@ h1.entry-title a:hover{
 .entry-meta{
 	font-size: 13px!important;
 	display: block-inline;
-	text-transform: uppercase;
 }
 .entry-footer i.fa,
 .entry-meta i.fa{
@@ -2179,17 +2198,20 @@ fieldset {
 	padding-top: 0;
 }
 .single-widget{
-	background: #fff;
+	background: #fafafa;
 	margin-bottom: 40px;
-	padding: 0 0 0 20px;
+	padding: 30px 30px;
 	font-size: 15px;
 }
 .single-widget ul li {
-  padding-bottom: 7px;
-  margin-bottom: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e8e8e9;
 }
+
 .single-widget ul li:last-child{
 	margin-bottom: 0;
+	 padding-bottom: 0;
 	border: none;
 }
 input, select{
@@ -2292,7 +2314,7 @@ position:relative;
 
 }
 .comments-title, #reply-title{
-	padding-top: 18px;
+	padding-top: 35px;
 }
 ol.comment-list{
 	padding: 0;
@@ -2605,6 +2627,9 @@ object {
 }
 
 @media (max-width: 767px){
+	#content, .site-content{
+		margin: 20px 0 30px;
+	}
 	.mean-container .mean-bar{
 		margin-bottom: 30px;
 
@@ -2642,3 +2667,15 @@ object {
   box-shadow: none;
 }
 .bypostauthor{}
+.tagcloud a {
+	font-size: 15px !important;
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	transition: .5s;
+	margin-right: 10px;
+}
+.tagcloud a:hover{
+	background: #2bcdc1;
+	border-color: #2bcdc1;
+	color:#fff;
+}

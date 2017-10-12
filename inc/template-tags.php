@@ -19,26 +19,26 @@ function bhost_entry_footer() {
 	// Author name with url.
 	$byline = '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a> ';
 	
-	printf( '<span class="by_admin">' . __( 'By in %1$s', 'bhost' ) .  '</span>' , $byline );
+	printf( '<span class="by_admin">' . __( 'By in : %1$s', 'bhost' ) .  '</span>' , $byline );
 	
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'bhost' ) );
 		if ( $categories_list && bhost_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '/ Posted in / %1$s', 'bhost' ) . '</span>', $categories_list .' / ');
+			printf( '<span class="cat-links">' . __( '- Posted in : %1$s', 'bhost' ) . '</span>', $categories_list .' ');
 		}
 		
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'bhost' ) );
 		if ( $tags_list ) {
-			printf( ' <span class="tags-links">' . __( 'Tagged %1$s', 'bhost' ) . '</span>', $tags_list );
+			printf( ' <span class="tags-links">' . __( ' - Tagged : %1$s - ', 'bhost' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo ' <span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'bhost' ), __( '1 Comment', 'bhost' ), __( '% Comments', 'bhost' ) );
+		comments_popup_link( __( ' Leave a comment', 'bhost' ), __( ' 1 Comment', 'bhost' ), __( ' % Comments', 'bhost' ) );
 		echo '</span>';
 	}
 
