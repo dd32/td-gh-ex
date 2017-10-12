@@ -79,6 +79,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.06
+* Styling fixes/tweaks
+* Updated dashboard help links
+
 #### 1.3.05
 * Styling fixes/tweaks
 * Updated WooCommerce ajax cart function

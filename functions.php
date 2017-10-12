@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.05' );
+define( 'CONICA_THEME_VERSION' , '1.3.06' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -287,23 +287,13 @@ function conica_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
 		array(
-			'name'      => __( 'Page Builder', 'conica' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false,
-		),
+            'name'      => __( 'Elementor Page Builder', 'conica' ),
+            'slug'      => 'elementor',
+            'required'  => false,
+        ),
 		array(
 			'name'      => __( 'WooCommerce', 'conica' ),
 			'slug'      => 'woocommerce',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'Widgets Bundle', 'conica' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'Contact Form 7', 'conica' ),
-			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 		array(
@@ -325,6 +315,13 @@ function conica_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'conica_register_required_plugins' );
+
+/**
+ * Elementor Check
+ */
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+    define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
 
 /**
  * Register a custom Post Categories ID column

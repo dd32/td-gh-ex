@@ -14,64 +14,69 @@
                 </a>
             </div>
             
-            <div class="upgrade-help">
-                <h5><?php printf( __( '<span>Simple Steps to upgrade', 'conica' ) ); ?></h5>
-                <p>
-                    <a href="https://kairaweb.com/theme/conica/#purchase-premium" target="_blank">
-                        <?php printf( __( 'Purchase and Download Conica Premium', 'conica' ) ); ?>
-                    </a>
-                </p>
-                <p><?php printf( __( '<a href="https://kairaweb.com/documentation/delete-a-theme/" target="_blank">Delete the old free theme</a>... Then', 'conica' ) ); ?></p>
-                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the Conica Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'conica' ) ); ?></p>
-            </div>
-            
-            <div class="upgrade-order-number-info-btns">
-                <a href="https://kairaweb.com/docs/conica/" class="upgrade-page-link" target="_blank">
-                    <?php printf( __( '<em>Support</em><span>Conica Documentation </span>', 'conica' ) ); ?>
-                </a>
-            </div>
-            
-            <div class="upgrade-help">
-                <p><?php printf( __( 'We support all our themes, offering one on one email support to help you build the website you want', 'conica' ) ); ?></p>
-                <p><?php printf( __( 'While we do support our both free and premium themes... <strong>Premium themes get prioritized support</strong>', 'conica' ) ); ?></p>
-            </div>
+            <p class="conica-upgrade-p">
+                <?php printf( __( '<strong>All settings for Conica</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'conica' ) , admin_url( 'customize.php' ) ); ?>
+            </p>
+            <p class="conica-upgrade-p">
+                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'conica' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+            </p>
             
         </div>
         <div class="clearboth"></div>
         
         <div class="upgrade-page-left">
             
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Upgrade to Premium', 'conica' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "If you've enjoyed using our Conica theme to build your website, then you should love the premium version which comes with a bunch of <a href='https://kairaweb.com/theme/conica/#premium-features' class='upgrade-btn' target='_blank'>extra premium features</a> for a low cost of <strong>$25</strong>.<br /><br />With Conica premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'conica' ) ); ?>
+            <div class="conica-upgrade-page-inner-wrap">
+                
+                <h3><?php _e( 'Conica Premium is a once off payment of $25', 'conica' ); ?></h3>
+                
+                <div class="conica-upgrade-block">
+                    <div class="conica-upgrade-block-left">
+                        <?php _e( 'View the Conica Premium Demo, and try out all the settings neatly built into the Customizer', 'conica' ); ?>
+                    </div>
+                    <div class="conica-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://demo.kairaweb.com/#conica' ) ?>" target="_blank" class="conica-upgrade-result-button">
+                            <?php _e( 'Conica Premium Demo', 'conica' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php esc_attr_e( 'Upgrade to Premium', 'conica' ); ?>" />
+                
+                <div class="conica-upgrade-block conica-upgrade-block-alt">
+                    <div class="conica-upgrade-block-left">
+                        <?php _e( 'Download a working Child Theme for Conica', 'conica' ); ?><br />
+                        <?php printf( __( 'Or learn more on creating/editing a <a href="%s" target="_blank">Child Theme</a>', 'conica' ) , 'https://codex.wordpress.org/Child_Themes' ); ?>
+                    </div>
+                    <div class="conica-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/conica-child-theme/' ) ?>" target="_blank" class="conica-upgrade-result-button">
+                            <?php _e( 'Conica Child Theme', 'conica' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="clearboth"></div>
-            </div>
-            
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Continued Updates', 'conica' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "Once you upgrade to Conica Premium, you'll then support and move over to our premium updates system which will ensure conica works with all future versions of WordPress that are released.", 'conica' ) ); ?>
+                
+                <div class="conica-upgrade-block">
+                    <div class="conica-upgrade-block-left">
+                        <?php _e( 'We have on-growing documentation on setting up your website with the Conica theme', 'conica' ); ?>
+                    </div>
+                    <div class="conica-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" target="_blank" class="conica-upgrade-result-button">
+                            <?php _e( 'Documentation', 'conica' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-updates.png" alt="<?php esc_attr_e( 'Continued Updates', 'conica' ); ?>" />
+                
+                <div class="conica-upgrade-block conica-upgrade-block-alt">
+                    <div class="conica-upgrade-block-left">
+                        <?php _e( 'Have you enjoyed using Conica?', 'conica' ); ?><br />
+                        <?php printf( __( 'Please help by giving us a 5 star rating on WordPress.org :)', 'conica' ) , 'https://kairaweb.com/' ); ?>
+                    </div>
+                    <div class="conica-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/conica/reviews/?rate=5#new-post' ) ?>" target="_blank" class="conica-upgrade-result-button">
+                            <?php _e( 'Rate Conica 5 stars', 'conica' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="clearboth"></div>
-            </div>
-            
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Get Premium Support', 'conica' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "Upgrading to Conica Premium will also give you prioritized support, ensuring we get to your queries first.<br /><br />We have a growing <a href='https://kairaweb.com/documentation/' target='_blank'>support forum</a> on our website as well as <a href='https://kairaweb.com/support-contact/' target='_blank'>email support</a> to sort out any queries you may have.", 'conica' ) ); ?>
-                </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-support.png" alt="<?php esc_attr_e( 'Get Premium Support', 'conica' ); ?>" />
-                </div>
-                <div class="clearboth"></div>
+                
+                <div class="conica-upgrade-footer"><?php printf( __( 'Theme: Conica, built by <a href="%s" target="_blank">Kaira</a>', 'conica' ) , 'https://kairaweb.com/' ); ?></div>
             </div>
             
         </div>
@@ -80,7 +85,7 @@
             
             <div class="upgrade-page-right-box">
                 
-                <p><?php printf( __( "We aim to keep our theme prices cheaper than the rest, while still offering you great WordPress themes.", 'conica' ) ); ?></p>
+                <p><?php printf( __( "We aim to keep our prices cheaper than other theme shops, while still offering you the best WordPress themes.", 'conica' ) ); ?></p>
                 
                 <p><?php printf( __( "Upgrading will support us and enable us to keep building WordPress themes.", 'conica' ) ); ?></p>
                 
