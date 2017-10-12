@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.56
+ * Smooth Scrolling issue on back to top and slider down button fixed
+
 Version 1.55
  * Menu Scrolling issue fixed - jquery.nav.js updated 
  
