@@ -4,25 +4,7 @@
     
     
     
-    // Remove Empty Containers
-    function initRemoveEmpty( $elem ) {
-        $( $elem ).each( function() {
-            var $this = $( this );
-
-            if ( $this.html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
-                $this.remove();
-            }
-        } );
-    }
-    initRemoveEmpty( $( '.post-content---ct_cr > *' ) );
-    initRemoveEmpty( $( '.main-navi---a' ) );
-    initRemoveEmpty( $( '.menu-item' ) );
-    
-    
-    
-    
-    
-    // Widget Content
+        // Widget Content
     $( '.widget-content---ct_cr > *' ).each( function() {
         var $this = $( this );
         
@@ -45,8 +27,8 @@
     ( function() {
         
         var $main = $( '#main' ),
-            $privatePostTitle = $main.find( $( '.main-post-title---l:contains("Private:")' ) ),
-            $protectedPostTitle = $main.find( $( '.main-post-title---l:contains("Protected:")' ) );
+            $privatePostTitle = $main.find( $( '.post-title---l:contains("Private:")' ) ),
+            $protectedPostTitle = $main.find( $( '.post-title---l:contains("Protected:")' ) );
         
         $privatePostTitle.html( function( _, html ) {
            return html.split("Private:").join("<span class='txt private-post-title---txt private---txt'>Private</span><span class='sep colon---sep'>:</span>");
