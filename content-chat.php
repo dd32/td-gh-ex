@@ -13,8 +13,8 @@
 	<div class="entry-container post-format">
     
         <header class="entry-header">
-            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'chat' ) ); ?>" title="<?php esc_attr_e( 'All Chat Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Chat', 'catch-everest' ); ?></a></h2>
+            <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+            <h3 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'chat' ) ); ?>" title="<?php esc_attr_e( 'All Chat Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Chat', 'catch-everest' ); ?></a></h3>
     	</header><!-- .entry-header -->  
     
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

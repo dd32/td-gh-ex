@@ -69,7 +69,7 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 
 == Change Log ==
 
-= 3.1 (Released: October 12, 2017) =
+= 3.1.1 (Merged 3.1) (Released: October 12, 2017) =
 * Major Update: Enhanced HTML structure
 
 = 3.0.4 (Released: September 15, 2017) =

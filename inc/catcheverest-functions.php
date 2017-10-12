@@ -470,9 +470,9 @@ function catcheverest_post_sliders() {
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
-								<h1 class="entry-title">
+								<h2 class="entry-title">
 									<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
-								</h1>
+								</h2>
 							</header>';
 							if ( $excerpt !='') {
 								$catcheverest_post_sliders .= '<div class="entry-content">'. $excerpt.'</div>';
@@ -516,9 +516,9 @@ function catcheverest_default_sliders() {
 					</figure>
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a title="Mount Everest" href="#"><span>Mount Everest</span></a>
-							</h1>
+							</h2>
 						</header>
 						<div class="entry-content">
 							<p>Mount Everest is the Earth\'s highest mountain, with a peak at 8,848 metres above sea level and the 5th tallest mountain measured from the centre of the Earth. It is located in the Nepal.</p>
@@ -534,9 +534,9 @@ function catcheverest_default_sliders() {
 					</figure>
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a title="Nepal Prayer Wheels" href="#"><span>Nepal Prayer Wheels</span></a>
-							</h1>
+							</h2>
 						</header>
 						<div class="entry-content">
 							<p>A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.</p>
@@ -679,9 +679,9 @@ function catcheverest_default_featured_content() {
 					</figure>
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a title="Nepal Prayer Wheels" href="#">Nepal Prayer Wheels</a>
-							</h1>
+							</h2>
 						</header>
 						<div class="entry-content">
 							A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.
@@ -697,9 +697,9 @@ function catcheverest_default_featured_content() {
 					</figure>
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a title="Mount Everest" href="#">Mount Everest</a>
-							</h1>
+							</h2>
 						</header>
 						<div class="entry-content">
 							Mount Everest is the Earth\'s highest mountain, with a peak at 8,848 metres above sea level and the 5th tallest mountain measured from the centre of the Earth. It is located in the Nepal.
@@ -715,9 +715,9 @@ function catcheverest_default_featured_content() {
 					</figure>
 					<div class="entry-container">
 						<header class="entry-header">
-							<h1 class="entry-title">
+							<h2 class="entry-title">
 								<a title="Mount Kanchengjunga" href="#">Mount Kanchengjunga</a>
-							</h1>
+							</h2>
 						</header>
 						<div class="entry-content">
 							Kangchenjunga is the third highest mountain in the world, with apeat at 8,586 metres above sea level. It is located on the boundary between Nepal and the Indian state of Sikkim.
@@ -758,7 +758,7 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post" class="' . $parentclasses . '">';
 
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h1>';
+				$catcheverest_homepage_featured_content .= '<h2 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h2>';
 			}
 
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
@@ -813,9 +813,9 @@ function catcheverest_homepage_featured_content() {
 									if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
 										$catcheverest_homepage_featured_content .= '
 										<header class="entry-header">
-											<h1 class="entry-title">
+											<h2 class="entry-title">
 												<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . $target . '">' . $title . '</a>
-											</h1>
+											</h2>
 										</header>';
 									}
 									if ( !empty ( $options['homepage_featured_content'][ $i ] ) ) {

@@ -16,8 +16,8 @@ function catcheverest_widgets_init() {
 		'description'   	=> __( 'Shows the Widgets at the side of Content', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );
 
 	//Footer One Sidebar
@@ -27,8 +27,8 @@ function catcheverest_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );
 
 	//Footer Two Sidebar
@@ -38,8 +38,8 @@ function catcheverest_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );
 
 	//Footer Three Sidebar
@@ -49,8 +49,8 @@ function catcheverest_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );
 
 }
