@@ -69,6 +69,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 
 == Change Log ==
 
+= 3.1 (Released: October 12, 2017) =
+* Major Update: Enhanced HTML structure
+
 = 3.0.4 (Released: September 15, 2017) =
 * Code optimization
 * Bug Fixed: typo issue in German language file (Reported by Vladi)

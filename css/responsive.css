@@ -24,7 +24,7 @@
 	}
 	.single-format-gallery .entry-meta {
 		margin-top: 40px;
-	}	
+	}
 	article.sticky .featured-post,
 	.page-header,
 	p,
@@ -37,7 +37,7 @@
 	.single-attachment .entry-attachment img {
 		margin-bottom: 40px;
 	}
-	#header-right .widget,
+	.header-sidebar .widget,
 	.entry-header,
 	article.format-aside .entry-title,
 	.comments-area article header {
@@ -45,7 +45,7 @@
 	}
 	.page .entry-header,
 	.widget-title,
-	#header-right .widget.widget_catcheverest_social_widget, {
+	.header-sidebar .widget.widget_catcheverest_social_widget, {
 		margin-bottom: 20px;
 	}
 	#featured-post .entry-header {
@@ -56,7 +56,7 @@
 	}
 	#site-logo,
 	#hgroup,
-	#header-right,
+	.header-sidebar,
 	#supplementary,
 	#main {
 		padding-top: 50px;
@@ -129,7 +129,7 @@
 	.single-attachment .entry-attachment img {
 		margin-bottom: 20px;
 	}
-	#header-right .widget,
+	.header-sidebar .widget,
 	.entry-header,
 	article.format-aside .entry-title,
 	.comments-area article header {
@@ -137,7 +137,7 @@
 	}
 	.page .entry-header,
 	.widget-title,
-	#header-right .widget.widget_catcheverest_social_widget {
+	.header-sidebar .widget.widget_catcheverest_social_widget {
 		margin-bottom: 10px;
 	}
 	.container {
@@ -145,7 +145,7 @@
 	}
 	#site-logo,
 	#hgroup,
-	#header-right,
+	.header-sidebar,
 	#supplementary,
 	#main {
 		padding-top: 30px;
@@ -165,7 +165,6 @@
 	.entry-header .entry-title {
 		padding-bottom: 0;
 	}
-
 	/* Font Sizes */
 	.entry-header .entry-title,
 	#homepage-message {
@@ -199,13 +198,15 @@
 	.entry-content h6, .comment-content h6 {
 		font-size: 14px;
 		font-size: 1.4rem;	
-	}		
+	}	
 }
-@media screen and (max-width: 1000px) {
-	.site {
+@media screen and (max-width: 1000px) {	
+	.site,
+	.no-sidebar-one-column .site {
+		margin: 5px auto;
 		width: 760px;
 	}
-	#primary, 
+	#primary,
 	#secondary {
 		width: 100%;
 	}
@@ -213,23 +214,35 @@
 	#colophon #access-footer ul.menu a {
 		padding: 0 10px;
 	}
+	#featured-post.layout-four .post, 
 	#secondary .widget {
 	    float: left;
 	    margin-left: 4%;
 	    width: 48%;
 	}
+	#featured-post.layout-four .post:nth-child(2n+1),
 	#secondary .widget:nth-child(2n+1) {  
 		clear: both;
 		margin-left: 0;
 	}	
+	/* Four Footer Widget Areas */
+	#supplementary.four .widget-area {
+	    width: 48%;
+	}
+	#supplementary.four #third.widget-area {
+		clear: both;
+		margin-left: 0;
+	}
 }
 @media screen and (max-width: 767px) {
 	/* Larger Smart Devices */		
-	.site {
+	.site,
+	.no-sidebar-one-column .site {
 		margin: 15px auto;
 		width: 660px;
 	}
 	#header-left,
+	.header-sidebar, 
 	#header-right {
 		clear: both;
 	    display: block;
@@ -237,15 +250,22 @@
 	    text-align: center;
 	    width: 100%;
 	}
-	#header-right {
-		max-width: 100%;
-	}	
-	#header-right .widget,
-	#header-right ul.social-profile li,
-	#header-right #s {
+	#site-logo {
 		float: none;
 	}
-	#header-right ul.social-profile {
+	#hgroup-wrap img{
+		margin: 0 auto;
+	}
+	.header-sidebar, 
+	#header-right {
+		max-width: 100%;
+	}
+	.header-sidebar .widget,
+	.header-sidebar ul.social-profile li,
+	.header-sidebar #s {
+		float: none;
+	}
+	.header-sidebar ul.social-profile {
 		width: 100%;
 	}	
 	#site-title {
@@ -267,13 +287,20 @@
 	}
 	#main-slider .entry-title a,
 	#main-slider .entry-title a:hover,
-	#main-slider .entry-title a:focus {
+	#main-slider .entry-title a:focus,
+	#main-slider .entry-title span,
+	#main-slider .entry-title span:hover,
+	#main-slider .entry-title span:focus {
 		background-color: transparent;
+	}
+	#main-slider .entry-title span {
 		padding: 10px 25px 0;
 	}
 	#main-slider .entry-content,
 	#main-slider .entry-content:hover {
 		background-color: transparent;
+	}
+	#main-slider .entry-content {
 		padding: 0 25px 25px;	
 	}
 	#slider-nav a {
@@ -310,7 +337,14 @@
 	#site-generator .powered {
 		text-align: center;
 	}
-	.menu {
+	#masthead .menu,
+	#footer-menu {
+		display: none;
+	}
+	.mobile-footermenu #footer-menu {
+		display: block;
+	}
+	.mobile-footermenu #footer-menu .menu {
 		display: none;
 	}
 	.tinynav {
@@ -321,6 +355,21 @@
 	}
 	.commentlist .children {
 		margin-left: 0;
+	}	
+	.woocommerce #content ul.products li {
+		margin-right: 0;
+		width: 100%;
+	}
+	.woocommerce #content .product a.added_to_cart {
+		clear: both;
+		display: block;
+	}
+	#main .woocommerce .col-1,
+	#main .woocommerce .col-2 {
+		width: 100%;
+	}
+	.header-sidebar .widget.widget_nav_menu {
+		width: 100%;
 	}
 	.widget.widget_nav_menu .sb-holder {
 		background-color: #3A3D41;
@@ -329,8 +378,8 @@
 		display: block;
 		width: 100%;
 	}
-	.widget.widget_nav_menu a,
-	.widget.widget_nav_menu a:hover {
+	.widget.widget_nav_menu .sb-holder a,
+	.widget.widget_nav_menu .sb-holder a:hover {
 		color: #eee;
 	}
 	/* Pagination */
@@ -340,7 +389,7 @@
 	.page-link span,
 	.page-link a span {
 		height: 25px;
-		font-size:12px;
+		font-size: 12px;
 		line-height: 24px;
 		padding:0 10px;
 	}	
@@ -356,9 +405,11 @@
 	}
 }
 @media screen and (max-width: 700px) {
-	.site {
+	.site,
+	.no-sidebar.one-column .site {
 		width: 560px;
 	}
+	#featured-post.layout-four .post, 
 	#secondary .widget {
 	    float: left;
 	    margin-left: 6%;
@@ -367,14 +418,16 @@
 }
 @media screen and (max-width:600px) {
 	/* Iphone 5 landscape */
-	.site {
+	.site,
+	.no-sidebar.one-column .site {
 		width: 520px;
-	}
+	}	
 }
 @media screen and (max-width: 540px) {
-	.site {
+	.site,
+	.no-sidebar.one-column .site {
 		width: 460px;
-	}
+	}	
 	#featured-post .post,
 	#supplementary.three .widget-area {
 		width: 100%;
@@ -383,7 +436,8 @@
 }
 @media screen and (max-width: 480px) {
 	/* iPhone6plus Portrait */
-	.site {
+	.site,
+	.no-sidebar.one-column .site {
 		width: 370px;
 	}	
 	#secondary .widget,
@@ -392,9 +446,13 @@
 		width: 100%;
 		margin-left: 0;
 	}	
+	#main .woocommerce .col-1,
+	#main .woocommerce .col-2 {
+		width: 100%;
+	}	
 	.container {
 		padding: 0 20px;
-	}
+	}	
 	#hgroup-wrap,
 	.hentry,
 	.comments-area article { 
@@ -402,14 +460,15 @@
 	}
 	#site-logo,
 	#hgroup,
-	#header-right,
+	.header-sidebar,
 	#supplementary,
-	#main {
+	#main,
+	#masthead .breadcrumb {
 		padding-top: 20px;
 	}
 	#homepage-message {
 		margin-top: 20px;
-	}
+	}	
 	.entry-meta,
 	#site-generator {
 		font-size: 11px;
@@ -417,16 +476,18 @@
 	}	
 }
 @media screen and (max-width: 400px) {
-	.site {
+	.site,
+	.no-sidebar-one-column .site {
 		width: 320px;
 		margin: 0 auto;
 	}	
 }
 @media screen and (max-width: 320px) {
 	/* Small Devices iphone 5 and below Portrait */	
-	.site {
+	.site,
+	.no-sidebar-one-column .site {
 		width: 100%;
-	}	
+	}		
 	#site-title {
 		font-size: 20px;
 		font-size: 2rem;
@@ -453,5 +514,5 @@
 	}
 	#homepage-message {
 		margin-top: 15px;
-	}		
+	}	
 }
