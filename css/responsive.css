@@ -1,0 +1,37 @@
+@media (max-width: 768px){
+.content {padding: 40% 0 0;}
+#sb-home .heading{padding:9px;}
+#tf-menu.navbar-default{background-color:transparent;}
+.navbar-collapse{background-color:#44484b;}
+#jumbo .jumbotron{padding-top:100px;}
+#sb-home h1{font-size: 24px;}
+}
+
+@media (max-width: 603px){
+#tf-menu.navbar-default {background-color: rgba(0, 0, 0, 0.79);}
+#tf-works li.pull-right, #tf-works li.pull-left {
+    margin-top: 10px;
+    float: none !important;
+    text-align: center;
+    display: block;
+}
+label{float: none !important}
+.pull-left.fnav,
+.pull-right.fnav {
+    float: none !important;
+    text-align: center;
+}
+.hover-bg .hover-text { padding: 12% 10%;}
+#jumbo .jumbotron{padding-top:130px;}
+
+}
+@media (max-width: 360px){
+.hover-bg .hover-text {
+    padding: 22% 10%;
+}
+}
+@media (min-width: 321px) and (max-width: 640px){
+	#sb-home .carousel-caption {
+    top: 20%;
+}
+}

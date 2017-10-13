@@ -1,0 +1,12 @@
+/*
+Theme Name: atoZ
+*/
+
+li#accordion-section-atoz_theme_info .accordion-section-title {
+    background: #ffa444;
+    color: #fff;
+}
+li#accordion-section-atoz_theme_info .accordion-section-title:hover {
+    background: #ffa444;
+    color: #fff;
+}
