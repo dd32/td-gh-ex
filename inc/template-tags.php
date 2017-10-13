@@ -134,6 +134,8 @@ if ( ! function_exists( 'ariel_entry_comments_link' ) ) :
  * @return string Prints comments number inside comments link for curent post
  */
 function ariel_entry_comments_link() {
+    $separator = '';
+    
 	$ariel_blog_feed_comments_show = ariel_get_option( 'ariel_blog_feed_comments_show' );
 	$ariel_posts_comments_show     = ariel_get_option( 'ariel_posts_comments_show' );
 

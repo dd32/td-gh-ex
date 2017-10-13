@@ -132,7 +132,7 @@ function ariel_customizer_fields( $fields ) {
         <p>Head on over to the <a  href="http://www.lyrathemes.com/preview/?theme=ariel" target="_blank">Ariel demo</a> to see what you can accomplish with this theme!</p>
         <h3>Documentation</h3>
         <p>Read how to customize the theme, set up widgets, and learn of all the possible options available to you.</p>
-        <p><a class="button" href="https://www.lyrathemes.com/documentation/ariel/" target="_blank">Ariel Documentation</a></p>
+        <p><a class="button" href="https://www.lyrathemes.com/documentation/" target="_blank">Ariel Documentation</a></p>
         <h3>Sample Data</h3>
         <p>You can install the content and settings shown on our demo site by importing this sample data.</p>
         <p><a class="button" href="https://www.lyrathemes.com/sample-data/ariel-sample-data.zip" target="_blank">Ariel Sample Data</a></p>

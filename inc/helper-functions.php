@@ -56,7 +56,7 @@ function ariel_get_sample( $what ) {
 
     switch ( $what ) {
         case 'post-thumbnail':
-            $images = $ariel_defaults['ariel-slider-fs'];
+            $images = $ariel_defaults['ariel-featured'];
             $rand_key = array_rand( $images, 1 );
             return ( $images[$rand_key] );
             break;
