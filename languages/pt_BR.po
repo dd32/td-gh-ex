@@ -2,9 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-12 20:39-0300\n"
-"PO-Revision-Date: 2017-10-01 12:41+0200\n"
+"POT-Creation-Date: 2017-10-13 12:20+0200\n"
+"PO-Revision-Date: 2017-10-13 12:22+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,9 +15,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.6\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: pt_BR\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11 layouts/home-default.php:25 layouts/home-sidebar.php:29
@@ -81,9 +81,9 @@ msgctxt "Comment field textarea."
 msgid "Comment"
 msgstr "Comentário"
 
-#: core/admin/customize/customize.php:13 core/includes/class-customize.php:348
-msgid "Get support"
-msgstr "Obter suporte"
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:75
+msgid "Upgrade to Sueva Premium"
+msgstr "Atualizar para Sueva Premium"
 
 #: core/admin/customize/customize.php:25 core/admin/customize/customize.php:26
 msgid "Thumbnails"
@@ -304,7 +304,7 @@ msgstr "Você deseja habilitar o breadcrumb usando o layout de header 4?"
 #: core/admin/customize/customize.php:426
 #: core/admin/customize/customize.php:442
 #: core/admin/customize/customize.php:458
-#: core/admin/customize/customize.php:1017
+#: core/admin/customize/customize.php:1028
 msgid "No"
 msgstr "Não"
 
@@ -321,7 +321,7 @@ msgstr "Não"
 #: core/admin/customize/customize.php:427
 #: core/admin/customize/customize.php:443
 #: core/admin/customize/customize.php:459
-#: core/admin/customize/customize.php:1018
+#: core/admin/customize/customize.php:1029
 msgid "Yes"
 msgstr "Sim"
 
@@ -646,8 +646,8 @@ msgid "Select a layout for the details of each page."
 msgstr "Selecione um layout para os detalhes de cada página."
 
 #: core/admin/customize/customize.php:700
-#: core/admin/customize/customize.php:1134
-#: core/admin/customize/customize.php:1273
+#: core/admin/customize/customize.php:1145
+#: core/admin/customize/customize.php:1284
 msgid "None"
 msgstr "Nenhum"
 
@@ -855,205 +855,213 @@ msgstr ""
 "Insira o número do Whatsapp (deixe em branco se quiser ocultar o botão)"
 
 #: core/admin/customize/customize.php:989
+msgid "Telegram URL"
+msgstr "URL do Telegram"
+
+#: core/admin/customize/customize.php:990
+msgid "Insert Telegram Url (leave empty if you want to hide the button)"
+msgstr "Insira o link do Telegram (deixe vazio se você quer esconder o botão)"
+
+#: core/admin/customize/customize.php:1000
 msgid "Skype Url"
 msgstr "URL do Skype"
 
-#: core/admin/customize/customize.php:990
+#: core/admin/customize/customize.php:1001
 msgid "Insert Skype ID (leave empty if you want to hide the button)"
 msgstr "Insira o ID do Skype (deixe em branco se quiser ocultar o botão)"
 
-#: core/admin/customize/customize.php:1000
+#: core/admin/customize/customize.php:1011
 msgid "Email Address"
 msgstr "Endereço de Email"
 
-#: core/admin/customize/customize.php:1001
+#: core/admin/customize/customize.php:1012
 msgid "Insert Email Address (leave empty if you want to hide the button)"
 msgstr "Informe o Email (deixe em branco se quiser ocultar o botão)"
 
-#: core/admin/customize/customize.php:1011
+#: core/admin/customize/customize.php:1022
 msgid "Feed Rss Button"
 msgstr "Botão de Feed RSS"
 
-#: core/admin/customize/customize.php:1012
+#: core/admin/customize/customize.php:1023
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Você que exibir o botão de feed RSS?"
 
-#: core/admin/customize/customize.php:1029
-#: core/admin/customize/customize.php:1030
+#: core/admin/customize/customize.php:1040
+#: core/admin/customize/customize.php:1041
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:1041
+#: core/admin/customize/customize.php:1052
 msgid "Logo"
 msgstr "Logo"
 
-#: core/admin/customize/customize.php:1042
+#: core/admin/customize/customize.php:1053
 msgid "From this section you can manage the typography of the logo."
 msgstr "Nesta seção você pode gerenciar a tipografia do logo."
 
-#: core/admin/customize/customize.php:1052
-#: core/admin/customize/customize.php:1098
-#: core/admin/customize/customize.php:1157
+#: core/admin/customize/customize.php:1063
+#: core/admin/customize/customize.php:1109
+#: core/admin/customize/customize.php:1168
 msgid "Font size"
 msgstr "Tamanho da fonte"
 
-#: core/admin/customize/customize.php:1053
+#: core/admin/customize/customize.php:1064
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Insira um tamanho para a fonte do logo (por exemplo, 60px)"
 
-#: core/admin/customize/customize.php:1063
+#: core/admin/customize/customize.php:1074
 msgid "Description font size"
 msgstr "Tamanho da fonte da descrição"
 
-#: core/admin/customize/customize.php:1064
+#: core/admin/customize/customize.php:1075
 msgid "Insert a size, for logo description (For example, 14px) "
 msgstr "Insira um tamanho para a descrição do logo (por exemplo, 14px)"
 
-#: core/admin/customize/customize.php:1074
+#: core/admin/customize/customize.php:1085
 msgid "Description top margin"
 msgstr "Top margin da descrição"
 
-#: core/admin/customize/customize.php:1075
+#: core/admin/customize/customize.php:1086
 msgid "Add a space between the logo and the description (For example, 15px) "
 msgstr "Acrescente um espaço entre o logo e a descrição (por exemplo, 15px)"
 
-#: core/admin/customize/customize.php:1087
+#: core/admin/customize/customize.php:1098
 #: core/templates/header/scroll-sidebar.php:26
 msgid "Menu"
 msgstr "Menu"
 
-#: core/admin/customize/customize.php:1088
+#: core/admin/customize/customize.php:1099
 msgid "From this section you can manage the typography of the menu."
 msgstr "Nesta seção você pode gerenciar a tipografia do menu."
 
-#: core/admin/customize/customize.php:1099
+#: core/admin/customize/customize.php:1110
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Insira um tamanho para a fonte do menu (por exemplo, 14px)"
 
-#: core/admin/customize/customize.php:1109
+#: core/admin/customize/customize.php:1120
 msgid "Menu weight"
 msgstr "Tamanho do menu"
 
-#: core/admin/customize/customize.php:1110
+#: core/admin/customize/customize.php:1121
 msgid "Choose a font weight for the menu."
 msgstr "Escolha um tamanho de fonte para o menu."
 
-#: core/admin/customize/customize.php:1115
-#: core/admin/customize/customize.php:1254
+#: core/admin/customize/customize.php:1126
+#: core/admin/customize/customize.php:1265
 msgid "400"
 msgstr "400"
 
-#: core/admin/customize/customize.php:1116
-#: core/admin/customize/customize.php:1255
+#: core/admin/customize/customize.php:1127
+#: core/admin/customize/customize.php:1266
 msgid "500"
 msgstr "500"
 
-#: core/admin/customize/customize.php:1117
-#: core/admin/customize/customize.php:1256
+#: core/admin/customize/customize.php:1128
+#: core/admin/customize/customize.php:1267
 msgid "600"
 msgstr "600"
 
-#: core/admin/customize/customize.php:1118
-#: core/admin/customize/customize.php:1257
+#: core/admin/customize/customize.php:1129
+#: core/admin/customize/customize.php:1268
 msgid "700"
 msgstr "700"
 
-#: core/admin/customize/customize.php:1119
-#: core/admin/customize/customize.php:1258
+#: core/admin/customize/customize.php:1130
+#: core/admin/customize/customize.php:1269
 msgid "800"
 msgstr "800"
 
-#: core/admin/customize/customize.php:1128
-#: core/admin/customize/customize.php:1267
+#: core/admin/customize/customize.php:1139
+#: core/admin/customize/customize.php:1278
 msgid "Text transform"
 msgstr "Transformação de texto"
 
-#: core/admin/customize/customize.php:1129
+#: core/admin/customize/customize.php:1140
 msgid "Do you want to display an uppercase menu?."
 msgstr "Você deseja exibir o menu em maiúsculas?"
 
-#: core/admin/customize/customize.php:1135
-#: core/admin/customize/customize.php:1274
+#: core/admin/customize/customize.php:1146
+#: core/admin/customize/customize.php:1285
 msgid "Uppercase"
 msgstr "Maiúscula"
 
-#: core/admin/customize/customize.php:1146
+#: core/admin/customize/customize.php:1157
 msgid "Content"
 msgstr "Conteúdo"
 
-#: core/admin/customize/customize.php:1147
+#: core/admin/customize/customize.php:1158
 msgid "From this section you can manage the typography of the content."
 msgstr "Nesta seção você pode gerenciar a tipografia do conteúdo."
 
-#: core/admin/customize/customize.php:1158
+#: core/admin/customize/customize.php:1169
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr "Insira um tamanho para a fonte do conteúdo (por exemplo, 14px)"
 
-#: core/admin/customize/customize.php:1171
+#: core/admin/customize/customize.php:1182
 msgid "Headlines"
 msgstr "Títulos"
 
-#: core/admin/customize/customize.php:1172
+#: core/admin/customize/customize.php:1183
 msgid "From this section you can manage the typography of the headlines."
 msgstr "Nesta seção você pode gerenciar a tipografia dos títulos."
 
-#: core/admin/customize/customize.php:1182
+#: core/admin/customize/customize.php:1193
 msgid "H1 headline"
 msgstr "Título H1"
 
-#: core/admin/customize/customize.php:1183
+#: core/admin/customize/customize.php:1194
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Insira um tamanho para elementos H1 (por exemplo, 24px)"
 
-#: core/admin/customize/customize.php:1193
+#: core/admin/customize/customize.php:1204
 msgid "H2 headline"
 msgstr "Título H2"
 
-#: core/admin/customize/customize.php:1194
+#: core/admin/customize/customize.php:1205
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Insira um tamanho para elementos H2 (por exemplo, 22px)"
 
-#: core/admin/customize/customize.php:1204
+#: core/admin/customize/customize.php:1215
 msgid "H3 headline"
 msgstr "Título H3"
 
-#: core/admin/customize/customize.php:1205
+#: core/admin/customize/customize.php:1216
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Insira um tamanho para elementos H3 (por exemplo, 20px)"
 
-#: core/admin/customize/customize.php:1215
+#: core/admin/customize/customize.php:1226
 msgid "H4 headline"
 msgstr "Título H4"
 
-#: core/admin/customize/customize.php:1216
+#: core/admin/customize/customize.php:1227
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Insira um tamanho para elementos H4 (por exemplo, 18px)"
 
-#: core/admin/customize/customize.php:1226
+#: core/admin/customize/customize.php:1237
 msgid "H5 headline"
 msgstr "Título H5"
 
-#: core/admin/customize/customize.php:1227
+#: core/admin/customize/customize.php:1238
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Insira um tamanho para elementos H5 (por exemplo, 16px)"
 
-#: core/admin/customize/customize.php:1237
+#: core/admin/customize/customize.php:1248
 msgid "H6 headline"
 msgstr "Título H6"
 
-#: core/admin/customize/customize.php:1238
+#: core/admin/customize/customize.php:1249
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Insira um tamanho para elementos H6 (por exemplo, 14px)"
 
-#: core/admin/customize/customize.php:1248
+#: core/admin/customize/customize.php:1259
 msgid "Titles weight"
 msgstr "Tamanho dos títulos"
 
-#: core/admin/customize/customize.php:1249
+#: core/admin/customize/customize.php:1260
 msgid "Choose a font weight for the titles."
 msgstr "Escolha um tamanho de fonte para os títulos."
 
-#: core/admin/customize/customize.php:1268
+#: core/admin/customize/customize.php:1279
 msgid "Do you want to display an uppercase title?."
 msgstr "Você deseja exibir o título em maiúsculas?"
 
@@ -1158,15 +1166,45 @@ msgstr "Barra de baixo"
 msgid "This sidebar will be shown at the end of your content."
 msgstr "Esta barra será exibida no final do seu conteúdo."
 
-#: core/includes/class-customize.php:75 core/includes/class-notice.php:75
-msgid "Upgrade to Sueva Premium"
+#: core/includes/class-customize.php:390
+msgid "Upgrade to Sueva Premium."
+msgstr "Atualizar para Sueva Premium."
+
+#: core/includes/class-customize.php:392 core/includes/class-notice.php:71
+msgid ""
+"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+"Atualize para a versão premium do Sueva para habilitar mais de 600 Google "
+"Fonts, sidebars ilimitadas, a seção de Portfolio e muito mais."
+
+#: core/includes/class-customize.php:396
+msgid "Upgrade to Sueva premium"
 msgstr "Atualizar para Sueva Premium"
 
-#: core/includes/class-customize.php:77
+#: core/includes/class-customize.php:404
+msgid "SuevaFree child themes."
+msgstr ""
+
+#: core/includes/class-customize.php:406
+msgid ""
+"You can also choose one of available premium child themes for SuevaFree, "
+"SvevaPro or Avana."
+msgstr ""
+
+#: core/includes/class-customize.php:410
 msgid "Upgrade to SvevaPro"
 msgstr "Atualizar para SuevaPro"
 
-#: core/includes/class-customize.php:352
+#: core/includes/class-customize.php:411
+msgid "Upgrade to Avana"
+msgstr "Atualizar para Avana"
+
+#: core/includes/class-customize.php:419
+msgid "Get support"
+msgstr "Obter suporte"
+
+#: core/includes/class-customize.php:421
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -1176,15 +1214,15 @@ msgstr ""
 "favor envie um lembrete para <strong>support@wpinprogress.com</strong> para "
 "ser respondido mais rápido."
 
-#: core/includes/class-customize.php:356
+#: core/includes/class-customize.php:425
 msgid "Open a new ticket"
 msgstr "Abrir novo chamado"
 
-#: core/includes/class-customize.php:357
+#: core/includes/class-customize.php:426
 msgid "Send a reminder"
 msgstr "Enviar um lembrete"
 
-#: core/includes/class-customize.php:362
+#: core/includes/class-customize.php:431
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -1192,29 +1230,21 @@ msgstr ""
 "Caso tenha gostado deste tema e queira nos apoiar, <strong>eu ficaria muito "
 "grato</strong> por qualquer um dos seguintes:"
 
-#: core/includes/class-customize.php:366
+#: core/includes/class-customize.php:435
 msgid "Rate this Theme"
 msgstr "Qualifique este Tema"
 
-#: core/includes/class-customize.php:367
+#: core/includes/class-customize.php:436
 msgid "Like on Facebook"
 msgstr "Like no Facebook"
 
-#: core/includes/class-customize.php:368
+#: core/includes/class-customize.php:437
 msgid "Subscribe our newsletter"
 msgstr "Assine nossa newsletter"
 
-#: core/includes/class-customize.php:369
+#: core/includes/class-customize.php:438
 msgid "Download our free WordPress themes"
 msgstr "Baixe nossos temas WordPress gratuitos"
-
-#: core/includes/class-notice.php:71
-msgid ""
-"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
-"Unlimited sidebars, Portfolio section and much more."
-msgstr ""
-"Atualize para a versão premium do Sueva para habilitar mais de 600 Google "
-"Fonts, sidebars ilimitadas, a seção de Portfolio e muito mais."
 
 #: core/includes/class-notice.php:72
 #: core/includes/class-plugin-activation.php:400
@@ -1563,122 +1593,125 @@ msgstr "Todas as instalações foram terminadas."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Instalando Plugin %1$s (%2$d/%3$d)"
 
-#: core/main.php:56
-#, php-format
-msgid "Page %s"
-msgstr "Página %s"
-
-#: core/main.php:105
+#: core/main.php:63
 #, php-format
 msgid "Category: %s"
 msgstr "Categoria: %s"
 
-#: core/main.php:107
+#: core/main.php:65
 #, php-format
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: core/main.php:109
+#: core/main.php:67
 #, php-format
 msgid "Author: %s"
 msgstr "Autor: %s"
 
-#: core/main.php:111
+#: core/main.php:69
 #, php-format
 msgid "Year: %s"
 msgstr "Ano: %s"
 
-#: core/main.php:111
+#: core/main.php:69
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: core/main.php:113
+#: core/main.php:71
 #, php-format
 msgid "Month: %s"
 msgstr "Mês: %s"
 
-#: core/main.php:113
+#: core/main.php:71
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: core/main.php:115
+#: core/main.php:73
 #, php-format
 msgid "Day: %s"
 msgstr "Dia: %s"
 
-#: core/main.php:115
+#: core/main.php:73
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "F j, Y"
 
-#: core/main.php:118
+#: core/main.php:76
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "Asides"
 
-#: core/main.php:120
+#: core/main.php:78
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Galerias"
 
-#: core/main.php:122
+#: core/main.php:80
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Imagens"
 
-#: core/main.php:124
+#: core/main.php:82
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "Videos"
 
-#: core/main.php:126
+#: core/main.php:84
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Quotes"
 
-#: core/main.php:128
+#: core/main.php:86
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Links"
 
-#: core/main.php:130
+#: core/main.php:88
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Status"
 
-#: core/main.php:132
+#: core/main.php:90
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
-#: core/main.php:134
+#: core/main.php:92
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chats"
 
-#: core/main.php:137
+#: core/main.php:95
 #, php-format
 msgid "Archives: %s"
 msgstr "Arquivos: %s"
 
-#: core/main.php:140
+#: core/main.php:98
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:649 core/main.php:655
+#: core/main.php:607 core/main.php:613
 msgid "Read More"
 msgstr "Leia Mais"
 
-#: core/main.php:760
+#: core/main.php:718
 msgid "Article"
 msgstr "Artigo"
 
-#: core/main.php:915
+#: core/main.php:873
 msgid "Default image"
 msgstr "Imagem Default"
+
+#: core/main.php:908
+msgid "Main menu"
+msgstr ""
+
+#: core/main.php:909
+msgid "One Page menu"
+msgstr ""
 
 #: core/metaboxes/post.php:19 core/metaboxes/post.php:32
 #: core/metaboxes/product.php:20 core/metaboxes/product.php:31
@@ -2033,5 +2066,8 @@ msgstr "Informação adicional"
 msgid "You may also like&hellip;"
 msgstr "Você também pode gostar&hellip;"
 
-msgid "Category"
-msgstr "Categorisa"
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+#~ msgid "Category"
+#~ msgstr "Categorisa"

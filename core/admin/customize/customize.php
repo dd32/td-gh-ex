@@ -986,6 +986,17 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
+				"label" => esc_html__( "Telegram URL","suevafree"),
+				"description" => esc_html__( "Insert Telegram Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_telegram_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => esc_html__( "Skype Url","suevafree"),
 				"description" => esc_html__( "Insert Skype ID (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_skype_button",

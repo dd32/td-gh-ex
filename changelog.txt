@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.3.1 - Released: 13.10.2017
+
+-- Added : Telegram button.
+
 - Version 3.3.0 - Released: 05.10.2017
 
 -- Removed : Option to disable the header text.
