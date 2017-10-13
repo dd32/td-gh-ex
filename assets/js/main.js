@@ -14,11 +14,10 @@ if ($("body.admin-bar").length) {
 	return stickyTop;	
 }
 
-  if ($(window).width() < 919 ) {
-		  $('.avata-home-sections .section').addClass('fp-auto-height-responsive');		  
-	  }
-	
-	
+if ($(window).width() < 919 ) {
+	$('.avata-home-sections .section').addClass('fp-auto-height-responsive');		  
+}
+
 var h = 0;
 var stickyTop = adminbarHeight();
 if($('#main-header').length)
@@ -80,6 +79,8 @@ $('.avata-home-sections').fullpage({
 	
 	  	$(this).addClass('animated').addClass(osAnimationClass);
 		});
+
+
 	},
 	afterLoad: function(anchor, index){
 		
@@ -87,6 +88,21 @@ $('.avata-home-sections').fullpage({
 		$('#menu-main li a').removeClass('active');
 		$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');
 		$('#menu-main li a[href="#'+anchor+'"]').addClass('active');
+				
+		$('section').eq(index-1).find('.os-animation').each(function(){
+		
+				var osAnimationClass = $(this).attr('data-os-animation'),
+		 		 osAnimationDelay = $(this).attr('data-os-animation-delay');	
+				 $(this).css({
+			  '-webkit-animation-delay':  osAnimationDelay,
+			  '-moz-animation-delay':     osAnimationDelay,
+			  'animation-delay':          osAnimationDelay
+		  });
+	
+	  	$(this).addClass('animated').addClass(osAnimationClass);
+		});
+
+		
 	},
 	 afterRender: function () {
 		 if($('.avata-slider').length ){

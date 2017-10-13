@@ -41,6 +41,8 @@ class Hoo_Init {
 			if ( false !== strpos( Hoo::$path, $content_dir ) ) {
 				$relative_path = str_replace( $content_dir, '', Hoo::$path );
 				Hoo::$url = content_url( $relative_path );
+				
+	
 			}
 		}
 
@@ -51,16 +53,18 @@ class Hoo_Init {
 		// Is Hoo included in the theme?
 		if ( false !== strpos( Hoo::$path, $theme_path ) ) {
 			Hoo::$url = get_template_directory_uri() . str_replace( $theme_path, '', Hoo::$path );
+			
 		}
 
 		// Is there a child-theme?
 		$child_theme_path = wp_normalize_path( get_stylesheet_directory_uri() );
-		if ( $child_theme_path !== $theme_path ) {
+		if ( $child_theme_path !== $theme_path &&  is_child_theme()) {
 			// Is Hoo included in a child theme?
 			if ( false !== strpos( Hoo::$path, $child_theme_path ) ) {
 				Hoo::$url = get_template_directory_uri() . str_replace( $child_theme_path, '', Hoo::$path );
 			}
 		}
+		
 
 		// Apply the options-framework/config filter.
 		$config = apply_filters( 'options-framework/config', array() );

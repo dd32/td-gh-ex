@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.3.7 = = 13/10/2017
+* Fix - Fixed 'Section Auto Scrolling' option issue
+
 = Version 1.3.6 = = 09/10/2017 
 * Fix - Fixed 'Hide Side Menu Dot' option issue
 
