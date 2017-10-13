@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PlaceHolder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 23:09+0000\n"
-"PO-Revision-Date: 2017-07-18 23:09+0000\n"
+"POT-Creation-Date: 2017-10-09 11:58+0000\n"
+"PO-Revision-Date: 2017-10-09 11:58+0000\n"
 "Last-Translator: fabio <fabiorubioglio@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl-PL\n"
@@ -33,7 +33,7 @@ msgid "&rarr;"
 msgstr ""
 
 #: footer.php:25
-msgid "http://wordpress.org/"
+msgid "https://wordpress.org/"
 msgstr ""
 
 #: footer.php:25
@@ -43,7 +43,7 @@ msgstr ""
 
 #. Author URI of the theme
 #: footer.php:27
-msgid "http://www.designlabthemes.com/"
+msgid "https://www.designlabthemes.com/"
 msgstr ""
 
 #: footer.php:27
@@ -86,52 +86,56 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: functions.php:44
+#: functions.php:38
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:45
+#: functions.php:39
 msgid "Footer Menu"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:83
+#: functions.php:77
 msgctxt "Source Sans Pro: on or off"
 msgid "on"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language.
-#: functions.php:88
+#: functions.php:82
 msgctxt "Oxygen: on or off"
 msgid "on"
 msgstr ""
 
 #. To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: functions.php:93
+#: functions.php:87
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:156
 msgid "Sidebar Primary"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:158
+msgid "Add widgets here to appear in your Sidebar."
+msgstr ""
+
+#: functions.php:165
 msgid "Footer"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:310
 msgid "Read More"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:368
 #, php-format
 msgid ""
-"<strong>Upgrade to The Box Plus</strong> version to get extended "
-"functionality and advanced customization options: %1$s"
+"<strong>Upgrade to The Box Plus</strong> to get extended functionality and "
+"advanced customization options: %1$s"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:373
 msgid "Close and don't show this message again"
 msgstr ""
 
@@ -149,10 +153,11 @@ msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: template-parts/content-page.php:26 template-parts/content-single.php:50
 #: template-parts/content-quote.php:22 template-parts/content.php:58
-#: template-parts/content-aside.php:22 inc/customizer.php:194
+#: template-parts/content-aside.php:22 inc/customizer.php:201
 msgid "Page"
 msgstr ""
 
@@ -202,146 +207,154 @@ msgid "Try The Box Plus"
 msgstr ""
 
 #: inc/customizer.php:66
-msgid "Rate This Theme"
+msgid "Theme Homepage"
 msgstr ""
 
 #: inc/customizer.php:70
-msgid "Documentation"
+msgid "Theme Documentation"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:74
+msgid "Rate This Theme"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Follow on Twitter"
+msgstr ""
+
+#: inc/customizer.php:102
 msgid "The Box Links"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:117
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:123
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:129
+#: inc/customizer.php:137
 msgid "Layout Options"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:141
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:142
 msgid "Sidebar Left"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:143
 msgid "One Column"
 msgstr ""
 
-#: inc/customizer.php:136
+#: inc/customizer.php:144
 msgid "2 Columns + Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:154
 msgid "Post length"
 msgstr ""
 
-#: inc/customizer.php:152
+#: inc/customizer.php:159
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:160
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:172
 msgid "Display Post Thumbnails"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:179
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:208
+#: inc/customizer.php:193 inc/customizer.php:215
 msgid "Enable Featured Image"
 msgstr ""
 
-#: inc/customizer.php:187
+#: inc/customizer.php:194
 msgid "Display Featured Image on Single Posts."
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:216
 msgid "Display Featured Image on Pages."
 msgstr ""
 
-#: inc/customizer.php:216
+#: inc/customizer.php:223
 msgid "Social Links"
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:225
 msgid "Paste here your Social Links."
 msgstr ""
 
-#: inc/customizer.php:250
+#: inc/customizer.php:257
 msgid "Show the RSS Feed icon"
 msgstr ""
 
-#: inc/customizer.php:263
+#: inc/customizer.php:270
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:283
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer.php:289
+#: inc/customizer.php:296
 msgid "Google + Url"
 msgstr ""
 
-#: inc/customizer.php:302
+#: inc/customizer.php:309
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer.php:315
+#: inc/customizer.php:322
 msgid "Instagram Url"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:335
 msgid "Youtube Url"
 msgstr ""
 
-#: inc/customizer.php:341
+#: inc/customizer.php:348
 msgid "Pinterest Url"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:361
 msgid "StumbleUpon Url"
 msgstr ""
 
-#: inc/customizer.php:367
+#: inc/customizer.php:374
 msgid "Flickr Url"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:387
 msgid "Tumblr Url"
 msgstr ""
 
-#: inc/customizer.php:393
+#: inc/customizer.php:400
 msgid "Medium Url"
 msgstr ""
 
-#: inc/customizer.php:406
+#: inc/customizer.php:413
 msgid "Github Url"
 msgstr ""
 
-#: inc/customizer.php:419
+#: inc/customizer.php:426
 msgid "Xing Url"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:440
 msgid "Accent Color"
 msgstr ""
 
-#: inc/customizer.php:446
+#: inc/customizer.php:453
 msgid "Footer Background"
 msgstr ""
 
@@ -369,10 +382,6 @@ msgstr ""
 
 #. Author of the theme
 msgid "Design Lab"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://www.designlabthemes.com/"
 msgstr ""
 
 #: sidebar.php:19

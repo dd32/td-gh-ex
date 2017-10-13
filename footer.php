@@ -22,9 +22,9 @@
 			<div class="col-6">
 				<div class="credits">
 					<?php thebox_credits(); ?><br>
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'the-box' ) ); ?>"><?php printf( __( 'Powered by %s', 'the-box' ), 'WordPress' ); ?></a>
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'the-box' ) ); ?>"><?php printf( __( 'Powered by %s', 'the-box' ), 'WordPress' ); ?></a>
 					<span class="sep"> / </span>
-					<a href="<?php echo esc_url( __( 'http://www.designlabthemes.com/', 'the-box' ) ); ?>"><?php printf( __( 'Theme by %s', 'the-box' ), 'Design Lab' ); ?></a>
+					<a href="<?php echo esc_url( __( 'https://www.designlabthemes.com/', 'the-box' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme by %s', 'the-box' ), 'Design Lab' ); ?></a>
 				</div>
 			</div>
 			<div class="col-6">

@@ -1,26 +1,17 @@
 <?php
 /**
- * The Box functions and definitions
+ * Theme functions and definitions
  *
  * @package The Box
  * @since The Box 1.0
  */
 
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- */
-if ( ! isset( $content_width ) )
-	$content_width = 600; /* pixels */
-
-
-/**
- * The Box Theme setup
- *
- */
 if ( ! function_exists( 'thebox_setup' ) ) :
-
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ */
 function thebox_setup() {
 	
 	// Make theme available for translation. Translations can be filed in the /languages/ directory
@@ -39,12 +30,21 @@ function thebox_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 940, 9999 ); //600 pixels wide (and unlimited height)
 	
+	// Set the default content width.
+	$GLOBALS['content_width'] = 600;
+	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'the-box' ),
 		'secondary' => __( 'Footer Menu', 'the-box' )
 	) );
-
+	
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+	
 	// Enable support for Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
@@ -127,14 +127,18 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.7' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.8' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
+	
+	// Load the html5 shiv.
+	wp_enqueue_script( 'html5', get_theme_file_uri( '/js/html5.min.js' ), array(), '3.7.3' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+	
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
@@ -161,6 +165,7 @@ function thebox_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar Primary', 'the-box' ),
 		'id' => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your Sidebar.', 'the-box' ),
 		'before_widget' => '<div class="widget-wrapper"><div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title"><span>',
@@ -174,7 +179,6 @@ function thebox_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
 }
 add_action( 'widgets_init', 'thebox_widgets_init' );
 
@@ -184,13 +188,6 @@ add_action( 'widgets_init', 'thebox_widgets_init' );
  *
  */
 require( get_template_directory() . '/inc/custom-header.php' );
-
-
-/**
- * Add Upsell "pro" link to the customizer
- *
- */
-require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/class-customize.php' );
 
 
 /*
@@ -356,6 +353,13 @@ function thebox_credits() {
 
 
 /**
+ * Add Upsell "pro" link to the customizer
+ *
+ */
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/class-customize.php' );
+
+
+/**
  * The Box Plus Notice
  *
  */
@@ -371,8 +375,8 @@ function thebox_credits() {
       <div class="basic-notice updated is-dismissible" style="position: relative;padding-right: 40px;">
         <p>
           <?php
-            printf(__('<strong>Upgrade to The Box Plus</strong> version to get extended functionality and advanced customization options: %1$s', 'the-box'),
-            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://www.designlabthemes.com/the-box-plus-wordpress-theme/" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
+            printf(__('<strong>Upgrade to The Box Plus</strong> to get extended functionality and advanced customization options: %1$s', 'the-box'),
+            sprintf('<a class="button button-primary" style="text-decoration:none" href="https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=wordpress&utm_campaign=the_box&utm_content=notice_button" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
             );
           ?>
         </p>

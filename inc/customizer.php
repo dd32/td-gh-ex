@@ -1,6 +1,6 @@
 <?php
 /**
- * The Box Theme Customizer
+ * The Box Customizer functionality
  *
  * @package The Box
  * @since The Box 1.0
@@ -51,36 +51,44 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 
-	class DL_Important_Links extends WP_Customize_Control {
+	class TheBox_Important_Links extends WP_Customize_Control {
 		
 		public $type = "thebox-important-links";
 	
 		public function render_content() {
-	    	$important_links = array(
-				'upsell' => array(
-		        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/'),
-		        'text' => __('Try The Box Plus', 'the-box'),
-		        ),
-		        'rate' => array(
-				'link' => esc_url('https://wordpress.org/support/theme/the-box/reviews/#new-post'),
-				'text' => __('Rate This Theme', 'the-box'),
-				),
-				'documentation' => array(
-				'link' => esc_url('https://www.designlabthemes.com/the-box-documentation/'),
-				'text' => __('Documentation', 'the-box'),
-				)
-			);
-	    	foreach ($important_links as $important_link) :
-	        	echo '<p><a target="_blank" class="button" href="' . esc_url( $important_link['link'] ). '" >' . esc_html($important_link['text']) . ' </a></p>';
-	        endforeach;
+    	$important_links = array(
+			'upgrade' => array(
+	        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=wordpress&utm_campaign=the_box&utm_content=customizer_link'),
+	        'text' => __('Try The Box Plus', 'the-box'),
+	        ),
+			'theme' => array(
+			'link' => esc_url('https://www.designlabthemes.com/the-box-wordpress-theme/'),
+			'text' => __('Theme Homepage', 'the-box'),
+			),
+	        'documentation' => array(
+			'link' => esc_url('https://www.designlabthemes.com/the-box-documentation/'),
+			'text' => __('Theme Documentation', 'the-box'),
+			),
+			'rating' => array(
+			'link' => esc_url('https://wordpress.org/support/theme/the-box/reviews/#new-post'),
+			'text' => __('Rate This Theme', 'the-box'),
+			),
+			'twitter' => array(
+			'link' => esc_url('https://twitter.com/designlabthemes'),
+			'text' => __('Follow on Twitter', 'the-box'),
+			)
+		);
+    	foreach ($important_links as $important_link) {
+    	echo '<p><a class="button" target="_blank" href="' . esc_url( $important_link['link'] ). '" >' . esc_html($important_link['text']) . ' </a></p>';
+    		}
 	    }
 	}
 	
-} // end if class_exists
+}
 
 
 /**
- * The Box Theme Settings
+ * Theme Settings
  */
 function thebox_theme_customizer( $wp_customize ) {
 	
@@ -88,6 +96,9 @@ function thebox_theme_customizer( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	// Rename the label to "Site Title and Tagline Color"
+	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title and Tagline Color', 'the-box' );
 	
 	// The Box Links
 	$wp_customize->add_section('thebox_links_section', array(
@@ -100,7 +111,7 @@ function thebox_theme_customizer( $wp_customize ) {
 	  'sanitize_callback' => 'esc_url_raw',
 	) );
 	
-	$wp_customize->add_control(new DL_Important_Links($wp_customize, 'thebox_links', array(
+	$wp_customize->add_control(new TheBox_Important_Links($wp_customize, 'thebox_links', array(
 	  'section' => 'thebox_links_section',
 	) ) );
 	
@@ -134,8 +145,7 @@ function thebox_theme_customizer( $wp_customize ) {
             'sidebar-content' => __( 'Sidebar Left', 'the-box' ),
             'one-column' => __( 'One Column', 'the-box' ),
 			'grid2-sidebar' => __( '2 Columns + Sidebar Right', 'the-box' ),
-		),
-	) ) );
+	) ) ) );
 	
 	// Excerpt or Full Content
 	$wp_customize->add_setting( 'thebox_post_settings', array(
@@ -446,7 +456,7 @@ function thebox_theme_customizer( $wp_customize ) {
 		'label' => __( 'Footer Background', 'the-box' ),
 		'section' => 'colors',
 	) ) );
-	
+
 }
 add_action('customize_register', 'thebox_theme_customizer');
 
@@ -546,15 +556,15 @@ function thebox_get_brightness($hex) {
  *
  */
 function thebox_custom_styles() {
-	
 	$accent_color = esc_attr( get_option('color_primary') ); 
-	$accent_color_rgb = thebox_hex2rgb($accent_color);
 	$footer_bg = esc_attr( get_option('color_footer') );
 	
 	$custom_style = "";
 			
 	// Accent Color
 	if ( $accent_color != '' ) {
+		$accent_color_rgb = thebox_hex2rgb($accent_color);
+		
 		$custom_style .= "
 		.main-navigation,
 		button,
@@ -600,11 +610,14 @@ function thebox_custom_styles() {
 	    }";
 		if ( thebox_get_brightness($accent_color) > 155) {
 			$custom_style .= "	
-			#search-submit, #submit {
-			color: rgba(0,0,0,.8);
-			}";
+			button,
+			input[type='button'],
+			input[type='reset'],
+			input[type='submit'],
+			.main-navigation > div > ul > li > a {color: rgba(0,0,0,.8);}
+			.main-navigation > div > ul > li > a:hover {color: rgba(0,0,0,.7);}";
 		}
-	} // if $accent_color
+	}
 	    
 	// Footer Background
 	if ( $footer_bg != '' ) {
@@ -623,7 +636,7 @@ function thebox_custom_styles() {
 			border-bottom-color: rgba(0,0,0,.05);
 			}";	
 		}
-	} // if $footer_bg
+	}
 	
 	if ( $custom_style != '' ) { 
 		wp_add_inline_style( 'thebox-style', $custom_style );

@@ -1,3 +1,8 @@
+/**
+ * Keyboard support for image navigation.
+ *
+ */
+
 jQuery( document ).ready( function( $ ) {
 	$( document ).keydown( function( e ) {
 		var url = false;

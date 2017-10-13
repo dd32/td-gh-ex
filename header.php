@@ -17,9 +17,6 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>	
-	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-	<![endif]-->	
 	<?php wp_head(); ?>
 </head>
 
@@ -48,7 +45,7 @@
 						<?php thebox_social_links(); // Social Links ?>	
 					</nav>
 				</div>
-			</div><!-- .row -->
+			</div>
 		</div><!-- .site-brand -->
 		
 		<nav id="site-navigation" class="main-navigation" role="navigation">
