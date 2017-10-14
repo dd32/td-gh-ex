@@ -1,8 +1,54 @@
 ﻿GRAPHENE WORDPRESS THEME CHANGELOG
 by Syahir Hakim
-http://www.khairul-syahir.com
+https://www.graphene-theme.com/
 
 CHANGELOG
+
+Version 2.0
+	* Added: Bootstrap responsive framework replacing 960.gs grid system
+	* Added: Theme is now fully responsive, automatically adapts to varying screen sizes for optimised mobile view
+	* Added: Theme options fully implemented in WP Customizer
+	* Added: Menu system using Bootstrap framework replacing Sons of Suckerfish
+	* Added: Slider using Bootstrap's carousel replacing jQuery Tools
+	* Added: FontAwesome icons
+	* Added: New header images
+	* Added: Menu icons option
+	* Added: Major styling update
+	* Added: Off-content-area back-to-top button
+	* Added: Better posts and comment navigation
+	* Added: Author bio in single posts page
+	* Added: Social links and location fields for authors
+	* Added: Contextual page navigation
+	* Added: Option for full-width container style
+	* Added: Setting reset option in Customizer
+	* Updated: Overall theme width increased to 1170px from 960px
+	* Updated: Theme files naming convention
+	* Updated: Scripts queueing and loading
+	* Updated: Google Webfonts loading
+	* Updated: New theme screenshot reflecting the updated styling
+	* Updated: Reduced footer menu maximum depth to 1
+	* Updated: Default footer widget area columns to 4 (previously 3)
+	* Updated: Author profile page
+	* Updated: Social media icon images replaced with FontAwesome vector icons
+	* Updated: Custom CSS feature has now been migrated to use the native WordPress feature
+	* Updated: Database version bumped up from 1.2 to 1.3 with the corresponding update routine
+	* Removed: Navigation menu display options (replaced with native Custom Menu options)
+	* Removed: Thumbnail and excerpt slider display style
+	* Removed: Slider animation option (defaults to fade)
+	* Removed: Slider transition speed option
+	* Removed: Older IE partial CSS3 support
+	* Removed: IE8 max-width property support
+	* Removed: Option to display Creative Commons licence
+	* Removed: graphene_first_p() function
+	* Removed: Allowed markup notes in comment form
+	* Removed: Post formats template
+	* Removed: Genericons icon font
+	* Removed: Option to display post author avatar in title
+	* Removed: Edit post link when logged in (already available in Admin Bar)
+	* Removed: graphene_show_addthis hook (replaced with graphene_addthis filter)
+	* Removed: Feature to disable generated CSS (performance impact immaterial)
+	* Removed: Options presets
+	* Removed: Graphene FAQs
 
 Version 1.9.4.3
 	* Added: Screen reader text styling
