@@ -3488,7 +3488,19 @@ var czrapp = czrapp || {};
                                       sb._setStickyness();
                                 }
 
-                                _dfd_.resolve();
+                                if ( expanded ) {
+                                      var $_scrollTopEl = 1 == $('#ha-large-header').length ? $('#ha-large-header') : czrapp.$_header;
+                                      $('html, body').animate({
+                                              scrollTop: $_scrollTopEl.height()
+                                        }, {
+                                            duration: 'slow',
+                                            complete : function() {
+                                                _dfd_.resolve();
+                                            }
+                                        });
+                                } else {
+                                  _dfd_.resolve();
+                                }
                           });
                     }).promise();
               },//toggleSidebar
