@@ -24,7 +24,6 @@ function graphene_enqueue_scripts(){
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'graphene-responsive-rtl', GRAPHENE_ROOTURI . '/responsive-rtl.css', array( 'bootstrap-rtl', 'graphene' ), false, 'screen' );
 	}
-	if ( class_exists( 'bbPress' ) ) wp_enqueue_style( 'graphene-bbpress', GRAPHENE_ROOTURI . '/style-bbpress.css', array( 'graphene' ), false, 'screen' );
 	if ( is_singular() && $graphene_settings['print_css'] ) wp_enqueue_style( 'graphene-print', GRAPHENE_ROOTURI . '/style-print.css', array( 'graphene' ), false, 'print' );
 
 }

@@ -4,6 +4,10 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.0.1
+	* Fixed: Fatal error with message "Can't use function return value in write context"
+	* Removed: Orphaned bbPress CSS file
+
 Version 2.0
 	* Added: Bootstrap responsive framework replacing 960.gs grid system
 	* Added: Theme is now fully responsive, automatically adapts to varying screen sizes for optimised mobile view

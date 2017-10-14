@@ -152,7 +152,6 @@ function graphene_import_file() {
 
 	/* Check that the file has data */
 	if ( $data === false ) wp_die( __( 'Could not read uploaded file. Please check the file and try again.', 'graphene' ) );
-	if ( empty( trim( $data ) ) ) wp_die( __( 'Uploaded file was empty. Please check and try again.', 'graphene' ) );
 
 	/* Check that the file data is Graphene settings */
 	$settings = json_decode( $data, true );
