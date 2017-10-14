@@ -46,6 +46,11 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 
 == Change Log ==
 
+Version 1.2.4
+ * Starter Content Added.
+ * Flex Caption Issue Fixed.
+ * Updated Flexslider and FontAwesome Files.
+
 Version 1.2.3
   * Site URL's changed
   * .po file updated.

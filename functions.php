@@ -91,6 +91,133 @@ function greenr_setup() {
 	
 
 	//greenr_customizer_setup();
+
+		// Define and register starter content to showcase the theme on new sites.
+	$starter_content = array( 
+		'widgets' => array(
+		
+			// Put two core-defined widgets in the footer 2 area.
+			'header-top-right' => array(
+				// Widget ID
+			    'my_text' => array(
+					// Widget $id -> set when creating a Widget Class
+		        	'text' , 
+		        	// Widget $instance -> settings 
+					array(
+					  'text'  => '<ul><li><a href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a></li><li><a href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li><li><a href="http://www.pinterest.com/"><i class="fa fa-pinterest"></i></a></li><li><a href="http://www.tumblr.com/"><i class="fa fa-tumblr"></i></a><a href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li></ul>'
+					)
+				),
+			),
+
+			'footer-1' => array(
+				// Widget ID
+			    'my_text' => array(
+					// Widget $id -> set when creating a Widget Class
+		        	'text' , 
+		        	// Widget $instance -> settings 
+					array(
+					  'title' => 'About Greenr',
+					  'text'  => 'Lorem ipsum dolor sit, consectetur adipisicing elit, sed tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'
+					)
+				)
+			),
+			'footer-2' => array(
+				// Widget ID
+			    'recent-posts'
+			),
+			'footer-3' => array(
+				// Widget ID
+			    'meta'
+			),
+
+			'footer-4' => array(
+				// Widget ID
+			    'my_text' => array(
+					// Widget $id -> set when creating a Widget Class
+		        	'text' , 
+		        	// Widget $instance -> settings 
+					array(
+					  'title' => 'Contact Us',
+					  'text'  => '<div class="footer-contact"><p><i class="fa fa-phone"></i> +123 456 7890</p><p><i class="fa fa-fax"></i> 03 5481 2221</p><p><i class="fa fa-envelope"></i> <a href="mailto:info@gmail.com">info@gmail.com</a></p></div>'
+					)
+				)
+			),
+
+		),
+
+		// Specify the core-defined pages to create and add custom thumbnails to some of them.
+		'posts' => array(
+			'home' => array(
+				'post_type' => 'page',
+			),
+			'blog' => array(
+				'post_type' => 'page',
+			),
+			/*'post-one' => array(
+	            'post_type' => 'post',
+	            'post_title' => __( 'Post One', 'greenr'),
+	            'post_content' => sprintf( __('<h1> Slider Setting </h1><p>You haven\'t created any slider yet. Create a post, set your slider image as Post\'s featured image ( Recommended image size 1280*450 ) ). Go to Customizer and click greenr Options => Home and select Slider Post Category and No.of Sliders.<p><a href="%1$s"target="_blank"> Customizer </a></p>', 'greenr'),  admin_url('customize.php') ),
+	            'thumbnail' => '{{post-featured-image}}',
+	        ),
+	        'post-two' => array(
+	            'post_type' => 'post',
+	            'post_title' => __( 'Post Two', 'greenr'),
+	            'post_content' => sprintf( __('<h1> Slider Setting </h1><p>You haven\'t created any slider yet. Create a post, set your slider image as Post\'s featured image ( Recommended image size 1280*450 ) ). Go to Customizer and click greenr Options => Home and select Slider Post Category and No.of Sliders.<p><a href="%1$s"target="_blank"> Customizer </a></p>', 'greenr'),  admin_url('customize.php') ),
+	            'thumbnail' => '{{post-featured-image}}',
+	        ),  
+			'service-one' => array(  
+				'post_type' => 'page',
+				'post_title' => __( 'Responsive Layout', 'greenr'),
+	            'post_content' => sprintf( __('You haven\'t created any service page yet. Create Page. Go to <a href="%1$s"target="_blank"> Customizer </a> and click greenr Options => Home => Service Section #1 and select page from  dropdown page list.','greenr'), admin_url('customize.php') ),
+				'thumbnail' => '{{page-images}}',
+			),
+			'service-two' => array(
+				'post_type' => 'page',
+				'post_title' => __( 'Awesome Slider', 'greenr'),
+	            'post_content' => sprintf( __('You haven\'t created any service page yet. Create Page. Go to <a href="%1$s"target="_blank"> Customizer </a> and click greenr Options => Home => Service Section #1 and select page from  dropdown page list.','greenr'), admin_url('customize.php') ),
+				'thumbnail' => '{{page-images}}',
+			),
+			'service-three' => array(
+				'post_type' => 'page',
+				'post_title' => __( 'Fully Customizable', 'greenr'),
+	            'post_content' => sprintf( __('You haven\'t created any service page yet. Create Page. Go to <a href="%1$s"target="_blank"> Customizer </a> and click greenr Options => Home => Service Section #1 and select page from  dropdown page list.','greenr'), admin_url('customize.php') ),
+				'thumbnail' => '{{page-images}}',
+			),	*/		
+		),
+
+		// Create the custom image attachments used as post thumbnails for pages.
+		/*'attachments' => array(
+			'post-featured-image' => array( 
+				'post_title' => __( 'slider one', 'greenr' ),
+				'file' => 'images/slider.png', // URL relative to the template directory.
+			),
+			'page-images' => array(
+				'post_title' => __( 'Page Images', 'greenr' ),
+				'file' => 'images/page.png', // URL relative to the template directory.
+			),
+		), */
+
+		// Default to a static front page and assign the front and posts pages.
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+			
+		),  
+
+		// Set the front page section theme mods to the IDs of the core-registered pages.
+		/*'theme_mods' => array( 
+			'slider_cat' => '1',
+			'service_1' => '{{service-one}}',
+			'service_2' => '{{service-two}}',
+			'service_3' => '{{service-three}}', 
+		),*/
+
+	);
+
+	$starter_content = apply_filters( 'greenr_starter_content', $starter_content );
+
+	add_theme_support( 'starter-content', $starter_content );
 }
 endif; // greenr_setup
 add_action( 'after_setup_theme', 'greenr_setup' );
@@ -324,6 +451,9 @@ function greenr_slide_exists() {
 /* Woocommerce support */
 
 add_theme_support('woocommerce');
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
 add_action('woocommerce_before_main_content', 'greenr_output_content_wrapper');

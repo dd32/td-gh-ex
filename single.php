@@ -36,7 +36,7 @@ get_template_part('breadcrumb'); ?>
 							<?php endif; ?>
 							<?php if( get_theme_mod('twitter_sb',true)): ?>
 							<li>
-								<a href="http://twitthis.com/twit?url=<?php the_permalink(); ?>">
+								<a href="http://twitter.com/intent/tweet?url=<?php the_permalink(); ?>">
 									<i class="fa fa-twitter"></i>
 								</a>
 							</li>

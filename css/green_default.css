@@ -863,11 +863,12 @@ a {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block; }
-  .sticky-header #header-bottom {
-    position:static !important;
-  }
+
   .main-navigation ul {
-    display: none; } }
+    display: none; }
+
+  .sticky-header #header-bottom {
+    position: static !important; } }
 .page-navigation ol li a, .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
   display: inline-block;
   padding: 7px 15px;

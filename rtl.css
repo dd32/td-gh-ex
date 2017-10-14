@@ -18,3 +18,7 @@
  .comment-list > li .comment-awaiting-moderation {
  	padding-right:180px;
  }
+
+.flex-viewport { 
+   direction: ltr;
+}

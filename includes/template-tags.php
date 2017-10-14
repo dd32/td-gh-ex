@@ -17,7 +17,7 @@
  * Generates Breadcrumb Navigation
  */
 
-if ( ! function_exists( 'greenr_breadcrumbs' ) ) {
+if ( ! function_exists( 'greenr_breadcrumbs' ) ) { 
 
 	function greenr_breadcrumbs() {
 		
@@ -901,4 +901,30 @@ if( !function_exists('greenr_sidebar_right_widget') ) {
 		        </aside><?php 
 		   }  
 	}
+}
+
+
+/* Admin notice */
+/* Activation notice */
+add_action( 'load-themes.php',  'greenr_one_activation_admin_notice'  );
+
+if( !function_exists('greenr_one_activation_admin_notice') ) {
+	function greenr_one_activation_admin_notice() {
+        global $pagenow;
+	    if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+	        add_action( 'admin_notices', 'greenr_admin_notice' );
+	    } 
+	} 
+}    
+
+/**
+ * Add admin notice when active theme
+ *
+ * @return bool|null
+ */
+function greenr_admin_notice() { ?>
+    <div class="updated notice notice-alt notice-success is-dismissible">  
+        <p><?php printf( __( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'greenr' ), 'Greenr', esc_url( admin_url( 'themes.php?page=greenr_upgrade' ) ) ); ?></p>
+    	<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=greenr_upgrade' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Greenr', 'greenr' ); ?></a></p>
+    </div><?php
 }
