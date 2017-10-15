@@ -473,6 +473,17 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
+				"label" => esc_html__( "Telegram account","alhena-lite"),
+				"description" => esc_html__( "Insert Telegram account (empty if you want to hide the button)","alhena-lite"),
+				"id" => "wip_footer_telegram_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => esc_html__( "Email Address","alhena-lite"),
 				"description" => esc_html__( "Insert Email Address (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_email_button",
