@@ -2,6 +2,21 @@ jQuery(document).ready(function($) {
 
 	/* Add a custom style element to add our styling */
 	$('head').append('<style type="text/css" id="graphene-preview-css"></style>');
+
+	/* Site title and description */
+	wp.customize('blogname', function(value){ value.bind(function(to){
+		if ( $('.navbar-header .header_title a').length > 0 ) $('.navbar-header .header_title a').html( to );
+		else $('.navbar-header .header_title').html( to );
+	});	});
+
+	wp.customize('blogdescription', function(value){ value.bind(function(to){
+		$('.navbar-header .header_desc').html( to );
+	});	});
+
+	/* Header text colour */
+	wp.customize('header_textcolor', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.header_title, .header_title a, .header_title a:visited, .header_title a:hover, .header_desc {color:' + to + '}');
+	});	});
   
   	/* Header image height */
 	wp.customize('graphene_settings[header_img_height]', function(value){

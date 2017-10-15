@@ -1,30 +1,45 @@
 <?php
 /**
+ * Set the theme's version as the scripts version
+ * @since Graphene 2.0
+ */
+function graphene_scripts_version( $graphene_settings ){
+	$theme_data = wp_get_theme( basename( GRAPHENE_ROOTDIR ) );
+	$graphene_settings['scripts_ver'] = $theme_data->Version;
+
+	return $graphene_settings;
+}
+add_filter( 'graphene_settings', 'graphene_scripts_version' );
+
+
+/**
  * Print the stylesheets
 */
 function graphene_enqueue_scripts(){
 	global $graphene_settings;
+	$version = $graphene_settings['scripts_ver'];
 
 	/* Enqueue scripts */
-	wp_enqueue_script( 'bootstrap', GRAPHENE_ROOTURI . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'bootstrap-hover-dropdown', GRAPHENE_ROOTURI . '/js/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js', array( 'jquery', 'bootstrap' ) );
-	wp_enqueue_script( 'bootstrap-submenu', GRAPHENE_ROOTURI . '/js/bootstrap-submenu/bootstrap-submenu.min.js', array( 'jquery', 'bootstrap' ) );
-	wp_enqueue_script( 'html5shiv', GRAPHENE_ROOTURI . '/js/html5shiv/html5shiv.min.js' );
-	wp_enqueue_script( 'respond', GRAPHENE_ROOTURI . '/js/respond.js/respond.min.js' );
-	wp_enqueue_script( 'infinite-scroll', GRAPHENE_ROOTURI . '/js/jquery.infinitescroll.min.js', array( 'jquery' ), '', false );
-	wp_enqueue_script( 'graphene', GRAPHENE_ROOTURI . '/js/graphene.js', array( 'bootstrap', 'comment-reply', 'infinite-scroll' ), '', false );
+	wp_enqueue_script( 'bootstrap', 				GRAPHENE_ROOTURI . '/bootstrap/js/bootstrap.min.js', 								array( 'jquery' ), $version );
+	wp_enqueue_script( 'bootstrap-hover-dropdown', 	GRAPHENE_ROOTURI . '/js/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js', 	array( 'jquery', 'bootstrap' ), $version );
+	wp_enqueue_script( 'bootstrap-submenu', 		GRAPHENE_ROOTURI . '/js/bootstrap-submenu/bootstrap-submenu.min.js', 				array( 'jquery', 'bootstrap' ), $version );
+	wp_enqueue_script( 'html5shiv', 				GRAPHENE_ROOTURI . '/js/html5shiv/html5shiv.min.js',  								array(), $version );
+	wp_enqueue_script( 'respond', 					GRAPHENE_ROOTURI . '/js/respond.js/respond.min.js', 								array(), $version );
+	wp_enqueue_script( 'infinite-scroll', 			GRAPHENE_ROOTURI . '/js/jquery.infinitescroll.min.js', 								array( 'jquery' ), $version );
+	wp_enqueue_script( 'graphene', 					GRAPHENE_ROOTURI . '/js/graphene.js', 												array( 'bootstrap', 'comment-reply', 'infinite-scroll' ), $version );
 
 	/* Enqueue styles */
-	wp_enqueue_style( 'graphene-google-fonts', graphene_google_fonts_uri(), array() );
-	wp_enqueue_style( 'bootstrap', GRAPHENE_ROOTURI . '/bootstrap/css/bootstrap.min.css' );
-	if ( is_rtl() ) wp_enqueue_style( 'bootstrap-rtl', GRAPHENE_ROOTURI . '/bootstrap-rtl/bootstrap-rtl.min.css', array( 'bootstrap' ) );
-	wp_enqueue_style( 'font-awesome', GRAPHENE_ROOTURI . '/fonts/font-awesome/css/font-awesome.min.css' );
-	wp_enqueue_style( 'graphene', get_stylesheet_uri(), array( 'bootstrap', 'font-awesome' ), false, 'screen' );
-	wp_enqueue_style( 'graphene-responsive', GRAPHENE_ROOTURI . '/responsive.css', array( 'bootstrap', 'font-awesome', 'graphene' ) );
+	wp_enqueue_style( 'graphene-google-fonts', 		graphene_google_fonts_uri(), 										array(), $version );
+	wp_enqueue_style( 'bootstrap', 					GRAPHENE_ROOTURI . '/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_style( 'font-awesome', 				GRAPHENE_ROOTURI . '/fonts/font-awesome/css/font-awesome.min.css',  array() );
+	wp_enqueue_style( 'graphene', 					get_stylesheet_uri(), 												array( 'bootstrap', 'font-awesome' ), $version, 'screen' );
+	wp_enqueue_style( 'graphene-responsive', 		GRAPHENE_ROOTURI . '/responsive.css', 								array( 'bootstrap', 'font-awesome', 'graphene' ), $version );
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'graphene-responsive-rtl', GRAPHENE_ROOTURI . '/responsive-rtl.css', array( 'bootstrap-rtl', 'graphene' ), false, 'screen' );
+		wp_enqueue_style( 'bootstrap-rtl', 			GRAPHENE_ROOTURI . '/bootstrap-rtl/bootstrap-rtl.min.css', 			array( 'bootstrap' ), $version );
+		wp_enqueue_style( 'graphene-responsive-rtl',GRAPHENE_ROOTURI . '/responsive-rtl.css', 							array( 'bootstrap-rtl', 'graphene' ), $version, 'screen' );
 	}
-	if ( is_singular() && $graphene_settings['print_css'] ) wp_enqueue_style( 'graphene-print', GRAPHENE_ROOTURI . '/style-print.css', array( 'graphene' ), false, 'print' );
+	if ( is_singular() && $graphene_settings['print_css'] ) 
+		wp_enqueue_style( 'graphene-print', 		GRAPHENE_ROOTURI . '/style-print.css', 								array( 'graphene' ), $version, 'print' );
 
 }
 add_action( 'wp_enqueue_scripts', 'graphene_enqueue_scripts' );

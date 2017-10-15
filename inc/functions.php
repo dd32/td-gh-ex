@@ -114,17 +114,27 @@ function graphene_top_bar_social(){
 					$extra = apply_filters( 'graphene_social_media_attr', $extra, $title, $class, $id );
 					
 		            $url = ( $social_profile['type'] == 'rss' && empty( $social_profile['url'] ) ) ? get_bloginfo('rss2_url') : $social_profile['url'];
+		            
+		            $icon_url = '';
+		            $icon_name = '';
 		            if ( $social_profile['type'] == 'custom' ) {
 						$icon_url = $social_profile['icon_url'];
+						$icon_name = $social_profile['icon_name'];
 		                $class = 'mysocial social-custom';
-		            } else {
-						$icon_url = GRAPHENE_ROOTURI . '/images/social/' . $social_profile['type'] . '.png';
-					}
+		            }
 				?>
 					
 			            <li class="social-profile social-profile-<?php echo $social_profile['type']; ?>">
 			            	<a href="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $title ); ?>" id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>"<?php echo $extra; ?>>
-			            		<i class="fa fa-<?php echo $social_profile['type']; ?>"></i>
+			            		<?php if ( $social_profile['type'] == 'custom' ) : ?>
+	                        		<?php if ( $social_profile['icon_name'] ) : ?>
+	                        			<i class="fa fa-<?php echo $social_profile['icon_name']; ?>"></i>
+	                        		<?php else : ?>
+		                            	<img class="mysocial-icon" src="<?php echo $social_profile['icon_url']; ?>" alt="" />
+		                            <?php endif; ?>
+		                        <?php else : ?>
+		                            <i class="fa fa-<?php echo $social_profile['type']; ?>"></i>
+		                        <?php endif; ?>
 			            	</a>
 			            </li>
 		            

@@ -4,6 +4,15 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.0.2
+	* Added: Tell browsers to reload theme scripts after theme update
+	* Added: Instant customizer preview for site title and description
+	* Added: Option to specify FontAwesome icon name for custom social profiles
+	* Fixed: Inconsistent header text colour when customised
+	* Fixed: Division by zero error, if for some reason the user specifies the footer widget column count to be 0
+	* Fixed: graphene_slider image size not defined in pixels for some cases
+	* Fixed: Search form button not working
+
 Version 2.0.1
 	* Fixed: Fatal error with message "Can't use function return value in write context"
 	* Removed: Orphaned bbPress CSS file

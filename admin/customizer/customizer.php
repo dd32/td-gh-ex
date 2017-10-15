@@ -16,17 +16,20 @@ require( GRAPHENE_ROOTDIR . '/admin/customizer/options-import.php' );
  * Enqueue script for custom customize control.
  */
 function graphene_enqueue_customizer_scripts() {
-	wp_enqueue_script( 'graphene-codemirror', GRAPHENE_ROOTURI . '/js/codemirror/codemirror.min.js', array(), '', false );
-	wp_enqueue_script( 'graphene-chosen', GRAPHENE_ROOTURI . '/js/chosen/chosen.jquery.min.js', array(), '', false );
-	wp_enqueue_script( 'graphene-customizer', GRAPHENE_ROOTURI . '/admin/customizer/customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+	global $graphene_settings;
+	$version = $graphene_settings['scripts_ver'];
+
+	wp_enqueue_script( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.min.js', 	array(), '', false );
+	wp_enqueue_script( 'graphene-chosen', 		GRAPHENE_ROOTURI . '/js/chosen/chosen.jquery.min.js', 	array(), '', false );
+	wp_enqueue_script( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.js', 	array( 'jquery', 'customize-controls' ), $version, true );
 	wp_enqueue_script( 'jquery-ui-slider' );
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
-	wp_enqueue_style( 'graphene-codemirror', GRAPHENE_ROOTURI . '/js/codemirror/codemirror.css', array(), '', 'all' );
-	wp_enqueue_style( 'graphene-chosen', GRAPHENE_ROOTURI . '/js/chosen/chosen.css' );
-	wp_enqueue_style( 'graphene-customizer', GRAPHENE_ROOTURI . '/admin/customizer/customizer.css' );
-	wp_enqueue_style( 'jquery-ui-slider', GRAPHENE_ROOTURI . '/js/jquery-ui/jquery.ui.custom.css', array(), false );
-	wp_enqueue_style( 'font-awesome', GRAPHENE_ROOTURI . '/fonts/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.css', 	array(), '', 'all' );
+	wp_enqueue_style( 'graphene-chosen', 		GRAPHENE_ROOTURI . '/js/chosen/chosen.css' );
+	wp_enqueue_style( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.css', $version );
+	wp_enqueue_style( 'jquery-ui-slider', 		GRAPHENE_ROOTURI . '/js/jquery-ui/jquery.ui.custom.css', array(), false );
+	wp_enqueue_style( 'font-awesome', 			GRAPHENE_ROOTURI . '/fonts/font-awesome/css/font-awesome.min.css' );
 	
 	$l10n_data = array(
 		'chosen_no_search_result'	=> __( 'Oops, nothing found.', 'graphene' ),
@@ -51,7 +54,10 @@ add_action( 'customize_controls_enqueue_scripts', 'graphene_enqueue_customizer_s
  * Enqueue script to preview the changed settings
  */
 function graphene_enqueue_customizer_preview_scripts(){
-	wp_enqueue_script( 'graphene-customizer-preview', GRAPHENE_ROOTURI . '/admin/customizer/customizer-preview.js', array( 'jquery' ), false, true );
+	global $graphene_settings;
+	$version = $graphene_settings['scripts_ver'];
+	
+	wp_enqueue_script( 'graphene-customizer-preview', GRAPHENE_ROOTURI . '/admin/customizer/customizer-preview.js', array( 'jquery' ), $version, true );
 }
 add_action( 'customize_preview_init', 'graphene_enqueue_customizer_preview_scripts' );
 
@@ -65,6 +71,8 @@ function graphene_customize_register( $wp_customize ) {
 	global $graphene_defaults;
 	$transport_settings = graphene_get_customizer_transport_settings();
 	$validator_settings = graphene_get_customizer_validator_settings();
+
+	/* Register Graphene settings */
 	foreach ( $graphene_defaults as $setting => $default ) {
 		$wp_customize->add_setting( 'graphene_settings[' . $setting . ']', array(
 			'type' 				=> 'option',
@@ -73,6 +81,11 @@ function graphene_customize_register( $wp_customize ) {
 			'sanitize_callback'	=> $validator_settings[$setting],
 		) );
 	}
+
+	/* Change WordPress options transport */
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	/* Register custom controls */
 	graphene_add_customizer_controls( $wp_customize );

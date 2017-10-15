@@ -168,6 +168,17 @@ jQuery(document).ready(function ($) {
 		opacity: .8
 	});
 
+	/* Show hidden fields when new social type selected is custom */
+	$('#new-socialprofile-type').change(function(){
+		if ($(this).val() == 'custom') {
+			$('#new-socialprofile-icon-url').val('').parent().removeClass('hide');
+			$('#new-socialprofile-icon-name').val('').parent().removeClass('hide');
+		} else {
+			$('#new-socialprofile-icon-url').val('').parent().addClass('hide');
+			$('#new-socialprofile-icon-name').val('').parent().addClass('hide');
+		}
+	});
+
 	/* Add new social profile */
 	$('.add-social-profile .button').click(function(e){
 		e.preventDefault();
@@ -176,10 +187,14 @@ jQuery(document).ready(function ($) {
 		profileDesc = $('#new-socialprofile-title').val();
 		profileUrl = $('#new-socialprofile-url').val();
 		profileIconUrl = $('#new-socialprofile-icon-url').val();
+		profileIconName = $('#new-socialprofile-icon-name').val();
+
+		hideClass = 'hide';
+		if ( profileType == 'custom' ) hideClass = '';
 
 		html = '<li class="graphene-social-profile ui-sortable-handle">\
                     <span class="customize-control-title">\<i class="fa fa-' + profileType + '"></i>' + profileType + '</span>\
-                	<input type="hidden" name="social-profile-data" data-type="' + profileType + '" data-name="' + profileType + '" data-title="' + profileType + '" data-url="' + profileUrl + '" data-icon-url="' + profileIconUrl + '">\
+                	<input type="hidden" name="social-profile-data" data-type="' + profileType + '" data-name="' + profileType + '" data-title="' + profileType + '" data-url="' + profileUrl + '" data-icon-url="' + profileIconUrl + '" data-icon-name="' + profileIconName + '">\
                     <div class="inline-field">\
                     	<label>Description</label>\
                     	<input type="text" data-key="title" value="' + profileDesc + '">\
@@ -187,6 +202,14 @@ jQuery(document).ready(function ($) {
                     <div class="inline-field">\
                     	<label>URL</label>\
                     	<input type="text" data-key="url" value="' + profileUrl + '">\
+                    </div>\
+                    <div class="inline-field ' + hideClass + '">\
+                    	<label>Icon URL</label>\
+                    	<input type="text" data-key="icon-url" value="' + profileIconUrl + '">\
+                    </div>\
+                    <div class="inline-field ' + hideClass + '">\
+                    	<label>Icon name</label>\
+                    	<input type="text" data-key="icon-name" value="' + profileIconName + '">\
                     </div>\
                     <span class="delete"><a href="#" class="socialprofile-del"><i class="fa fa-times" title="Delete"></i></a></span>\
                     <span class="move"><i class="fa fa-arrows" title="Drag and drop to reorder"></i></span>\
@@ -196,7 +219,8 @@ jQuery(document).ready(function ($) {
         $('#new-socialprofile-type').val('');
 		$('#new-socialprofile-title').val('');
 		$('#new-socialprofile-url').val('');
-		$('#new-socialprofile-icon-url').val('');
+		$('#new-socialprofile-icon-url').val('').parent().addClass('hide');
+		$('#new-socialprofile-icon-name').val('').parent().addClass('hide');
 
 		$('.graphene-social-profiles').trigger('change');
 	});
@@ -218,13 +242,15 @@ jQuery(document).ready(function ($) {
 			profileDesc = $(this).data('title');
 			profileUrl = $(this).data('url');
 			profileIconUrl = $(this).data('icon-url');
+			profileIconName = $(this).data('icon-name');
 
 			socialProfile = {
 				type 	: profileType,
 				name 	: profileName,
 				title 	: profileDesc,
 				url 	: profileUrl,
-				icon_url: profileIconUrl
+				icon_url: profileIconUrl,
+				icon_name: profileIconName
 			};
 			profiles.push(socialProfile);
 		});

@@ -45,32 +45,26 @@ function graphene_setup() {
 	$content_width = graphene_get_content_width();
 		
 	// Add custom image sizes selectively
-	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) {
-		$height = ( $graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 370;
-		$frontpage_id = ( get_option( 'show_on_front' ) == 'posts' ) ? NULL : get_option( 'page_on_front' );
+	$height = ( $graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 370;
+	$frontpage_id = ( get_option( 'show_on_front' ) == 'posts' ) ? NULL : get_option( 'page_on_front' );
+	
+	if ( $graphene_settings['slider_full_width'] ) {
+		$slider_width = graphene_grid_width( '', 12 );
+	} else {
+		$column_mode = graphene_column_mode( $frontpage_id );
 		
-		if ( $graphene_settings['slider_full_width'] ) {
-			$slider_width = graphene_grid_width( '', 16 );
-		} else {
-			
-			$column_mode = graphene_column_mode( $frontpage_id );
-			
-			if ( strpos( $column_mode, 'two_col' ) === 0 )
-				$column_mode = 'two_col';
-			elseif ( strpos( $column_mode, 'three_col' ) === 0 )
-				$column_mode = 'three_col';
-			else 
-				$column_mode = NULL;
-			
-			if ( $column_mode )
-				$slider_width = $graphene_settings['column_width'][$column_mode]['content'];
-			else 
-				$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
-		}
+		if ( strpos( $column_mode, 'two_col' ) === 0 ) $column_mode = 'two_col';
+		elseif ( strpos( $column_mode, 'three_col' ) === 0 ) $column_mode = 'three_col';
+		else $column_mode = NULL;
 		
-		add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true);
+		if ( $column_mode )	$slider_width = graphene_grid_width( '', $graphene_settings['column_width'][$column_mode]['content'] );
+		else $slider_width = graphene_grid_width( '', 8, 6, 4, $frontpage_id );
 	}
-	if (get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {
+
+	add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true );
+
+
+	if ( get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {
 		$pane_width = graphene_grid_width( '', 8, 6, 4 );
 		add_image_size( 'graphene-homepage-pane', apply_filters( 'graphene_homepage_pane_image_width', $pane_width ), apply_filters( 'graphene_homepage_pane_image_height', floor( $pane_width * 0.5 ) ), true);
 	}
@@ -114,7 +108,7 @@ function graphene_setup() {
 	if ( $graphene_settings['container_style'] == 'boxed' ) add_theme_support( 'custom-background', $args ); 
 
 	/* Add support for custom header */
-	define( 'HEADER_TEXTCOLOR',    apply_filters( 'graphene_header_textcolor', '000000' ) );
+	define( 'HEADER_TEXTCOLOR',    apply_filters( 'graphene_header_textcolor', 'ffffff' ) );
 	define( 'HEADER_IMAGE',        apply_filters( 'graphene_default_header_image', GRAPHENE_ROOTURI . '/images/headers/forest.jpg' ) );
 	define( 'HEADER_IMAGE_WIDTH',  apply_filters( 'graphene_header_image_width', graphene_grid_width( $graphene_settings['gutter_width'] * 2, 16 ) ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'graphene_header_image_height', $graphene_settings['header_img_height'] ) );
@@ -206,7 +200,7 @@ if ( ! function_exists( 'graphene_get_default_headers' ) ) {
  */
 function graphene_widgets_init() {
 	if (function_exists( 'register_sidebar' ) ) {
-		global $graphene_settings;
+		global $graphene_settings, $graphene_defaults;
 		
 		register_sidebar(array( 'name' => __( 'Graphene - Sidebar One', 'graphene' ),
 			'id' 			=> 'sidebar-widget-area',
@@ -230,6 +224,8 @@ function graphene_widgets_init() {
 		/* Get the column settings for footer widget area */
 		if ( is_front_page() && $graphene_settings['alt_home_footerwidget'] ) $columns = $graphene_settings['alt_footerwidget_column'];
 		else $columns = $graphene_settings['footerwidget_column'];
+
+		if ( ! $columns ) $columns = $graphene_defaults['footerwidget_column'];
 
 		if ( $columns == 6 ) $cols = 'col-md-2 col-sm-4';
 		else $cols = 'col-sm-' . round( 12 / $columns );

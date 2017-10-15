@@ -130,7 +130,7 @@ function graphene_get_custom_style(){
 	
 	/* Header text */
 	$header_textcolour = get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR );
-	if ( $header_textcolour != apply_filters( 'graphene_header_textcolor', '000000' ) )
+	if ( $header_textcolour != apply_filters( 'graphene_header_textcolor', HEADER_TEXTCOLOR ) )
 		$style .= '.header_title, .header_title a, .header_title a:visited, .header_title a:hover, .header_desc {color:#' . $header_textcolour . ';}';
 		
 	/* Header title text style */ 

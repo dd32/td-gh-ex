@@ -265,15 +265,21 @@ function graphene_add_customizer_controls( $wp_customize ) {
 						$profile_data['url'] = esc_url( $profile_data['url'] );
 						if ( $profile_data['type'] == 'custom' ) {
 							$profile_data['icon_url'] = esc_url( $profile_data['icon_url'] );
+							$profile_data['icon_name'] = trim( strtolower( $profile_data['icon_name'] ) );
 							$profile_data['name'] = __( 'Custom', 'graphene' );
 						} else {
 							$profile_data['icon_url'] = '';
+							$profile_data['icon_name'] = '';
 						}
 				?>
                     <li class="graphene-social-profile">
                         <span class="customize-control-title">
                         	<?php if ( $profile_data['type'] == 'custom' ) : ?>
-	                            <img class="mysocial-icon" src="<?php echo $profile_data['icon_url']; ?>" alt="" />
+                        		<?php if ( $profile_data['icon_name'] ) : ?>
+                        			<i class="fa fa-<?php echo $profile_data['icon_name']; ?>"></i>
+                        		<?php else : ?>
+	                            	<img class="mysocial-icon" src="<?php echo $profile_data['icon_url']; ?>" alt="" />
+	                            <?php endif; ?>
 	                        <?php else : ?>
 	                            <i class="fa fa-<?php echo $profile_data['type']; ?>"></i>
 	                        <?php endif; ?>
@@ -281,7 +287,7 @@ function graphene_add_customizer_controls( $wp_customize ) {
                         	<?php echo $profile_data['name']; ?>
                     	</span>
 
-                    	<input type="hidden" name="social-profile-data" data-type="<?php echo $profile_data['type']; ?>" data-name="<?php echo $profile_data['name']; ?>" data-title="<?php echo $profile_data['title']; ?>" data-url="<?php echo $profile_data['url']; ?>" data-icon-url="<?php echo $profile_data['icon_url']; ?>" />
+                    	<input type="hidden" name="social-profile-data" data-type="<?php echo $profile_data['type']; ?>" data-name="<?php echo $profile_data['name']; ?>" data-title="<?php echo $profile_data['title']; ?>" data-url="<?php echo $profile_data['url']; ?>" data-icon-url="<?php echo $profile_data['icon_url']; ?>" data-icon-name="<?php echo $profile_data['icon_name']; ?>" />
 
                         <div class="inline-field">
                         	<label><?php _e( 'Description', 'graphene' ); ?></label>
@@ -301,6 +307,10 @@ function graphene_add_customizer_controls( $wp_customize ) {
                         	<div class="inline-field">
 	                        	<label><?php _e( 'Icon URL', 'graphene' ); ?></label>
 	                        	<input type="text" data-key="icon-url" value="<?php echo esc_attr( $profile_data['icon_url'] ); ?>" />
+	                        </div>
+	                        <div class="inline-field">
+	                        	<label><?php _e( 'Icon name', 'graphene' ); ?></label>
+	                        	<input type="text" data-key="icon-name" value="<?php echo esc_attr( $profile_data['icon_name'] ); ?>" />
 	                        </div>
                         <?php endif; ?>
 
@@ -344,10 +354,15 @@ function graphene_add_customizer_controls( $wp_customize ) {
                 	<input type="text" id="new-socialprofile-icon-url" value="" />
                 </div>
 
+                <div class="inline-field icon-name hide">
+                	<label><a href="https://fontawesome.io/icons/"><?php _e( 'Icon name', 'graphene' ); ?></a></label>
+                	<input type="text" id="new-socialprofile-icon-name" value="" />
+                </div>
+
                 <a class="button" href="#"><?php _e( 'Add social profile', 'graphene' ); ?></a>
 			</div>
 
-			<input type="hidden" <?php $this->link(); ?> id="graphene_settings_social_profiles" value='<?php echo json_encode( $graphene_settings['social_profiles'] ); ?>' />
+			<input type="hidden" <?php $this->link(); ?> id="graphene_settings_social_profiles" value="" />
 			<?php
 		}
 	}
