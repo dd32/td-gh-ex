@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/alante-free/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Alante is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.0.1
+Version: 1.0.10
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -2846,7 +2846,7 @@ padding: 0;
 	margin-right: 5px;
 }
 .entry-content .entry-meta > span {
-	display: inline-block;
+	display: inline;
 }
 .entry-content .entry-meta > span:after {
 	content: '|';
@@ -2882,65 +2882,74 @@ padding: 0;
 
 /* =Blog - Style 1
 --------------------------------------------------------------------------------------- */
-.blog-style1 {
+.blog-article {
 	background: #FFF;
 	border: 1px solid #DDD;
 	margin: 0 10px 5px;
+}
+.blog-article.format-nomedia {
+}
+.blog-article.format-nomedia .entry-footer {
 }
 .blog-grid.column-2 {
 	width: 50%;
 	padding: 0 1.25%;
 }
-.blog-style1 .entry-content {
-	padding: 10px 20px 0;
+.blog-article .entry-content {
+	padding: 20px 20px 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.blog-style1 .entry-footer {
+.blog-article .entry-footer {
 	padding: 0 20px;
 }
-.blog-style1 .blog-thumb {
-	margin: 10px; 
+.blog-article .blog-thumb {
+	margin: 20px 20px 0 ;
 }
 
 /* Entry-footer area */
-.blog-style1 .blog-title {
-	font-size: 15px;
+.blog-article .blog-title {
+	font-size: 18px;
 }
-.blog-style1 .comment {
+.blog-article .comment {
 	float: right
 }
-.blog-style1 .comment a:before {
+.blog-article .comment a:before {
 	color: #888;
 	font-size: 15px;
 	font-family: FontAwesome;
 	content: '\f086';
 	padding-right: 5px;
 }
-.blog-style1 .entry-footer .entry-meta {
+.blog-article .entry-footer .entry-meta {
 	width: 100%;
 	display: table;
 	border-top: 1px solid #DDD;
 	padding-top: 10px;
 }
-.blog-style1 .entry-footer .entry-meta > span {
+.blog-article .entry-footer .entry-meta > span {
 	display: table-cell;
 	vertical-align: middle;;
 }
-.blog-style1 .more-link {
+.blog-article .more-link {
 	text-align: right;
 }
-.blog-style1 .more-link a {
+.blog-article .more-link a {
 	color: inherit;
 	line-height: 20px;
 	display: inline-block;
 }
-.blog-style1 .more-link span {
+.blog-article .more-link span {
 	position: relative;
 	right: 0;
 	display: inline-block;
 	padding: 0 5px;
 	background: #EEE;
 }
-.blog-style1 .more-link i {
+.blog-article .more-link i {
 	font-family: fontawesome;
 	font-style: normal;
 	display: inline-block;
@@ -2949,8 +2958,8 @@ padding: 0;
 	text-align: center;
 	background: #DDD;
 }
-.blog-style1 .more-link span,
-.blog-style1 .more-link i {
+.blog-article .more-link span,
+.blog-article .more-link i {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -2958,12 +2967,12 @@ padding: 0;
 	transition: all 0.3s ease;
 }
 
-.blog-style1 .more-link a:hover span {
+.blog-article .more-link a:hover span {
 	color: white;
 	background: #D33D33;
 	right: 10px;
 }
-.blog-style1 .more-link a:hover i {
+.blog-article .more-link a:hover i {
 	color: white;
 	background: #333;
 	-webkit-transform: rotate(90deg);
@@ -2974,14 +2983,14 @@ padding: 0;
 }
 
 /* Image overlay effect */
-.blog-style1 .blog-thumb .image-overlay {
+.blog-article .blog-thumb .image-overlay {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.blog-style1 .blog-thumb .image-overlay {
+.blog-article .blog-thumb .image-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2998,7 +3007,8 @@ padding: 0;
 	-o-box-shadow: none;
 	box-shadow: none;
 }
-.blog-style1 .blog-thumb:hover .image-overlay {
+.blog-article .blog-thumb:hover .image-overlay {
+	display: none;
 	opacity: 1;
 	filter: alpha(opacity=100);
 	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -3008,18 +3018,18 @@ padding: 0;
 	-o-box-shadow: inset 0px -4px 0px 0px #D33D33;
 	box-shadow: inset 0px -4px 0px 0px #D33D33;
 }
-.blog-style1 .blog-thumb .image-overlay-inner {
+.blog-article .blog-thumb .image-overlay-inner {
 	display: table;
 	width: 100%;
 	height: 100%;
 }
-.blog-style1 .blog-thumb .hover-icons {
+.blog-article .blog-thumb .hover-icons {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 }
-.blog-style1 .blog-thumb .hover-link,
-.blog-style1 .blog-thumb .hover-zoom {
+.blog-article .blog-thumb .hover-link,
+.blog-article .blog-thumb .hover-zoom {
 	opacity: 0;
 	filter: alpha(opacity=0);
 	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3028,18 +3038,18 @@ padding: 0;
 	height: 40px;
 	width: 40px;
 }
-.blog-style1 .blog-thumb:hover .hover-zoom,
-.blog-style1 .blog-thumb:hover .hover-link {
+.blog-article .blog-thumb:hover .hover-zoom,
+.blog-article .blog-thumb:hover .hover-link {
 	background: #222;
 	opacity: 1;
 	filter: alpha(opacity=100);
 	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
-.blog-style1 .blog-thumb .hover-link:hover,
-.blog-style1 .blog-thumb .hover-zoom:hover {
+.blog-article .blog-thumb .hover-link:hover,
+.blog-article .blog-thumb .hover-zoom:hover {
 	background: #D33D33;
 }
-.blog-style1 .blog-thumb .hover-zoom {
+.blog-article .blog-thumb .hover-zoom {
 	margin-right: 5px;
 	-webkit-transform: translateX(-100px);
 	-moz-transform: translateX(-100px);
@@ -3047,7 +3057,7 @@ padding: 0;
 	-o-transform: translateX(-100px);
 	transform: translateX(-100px);
 }
-.blog-style1 .blog-thumb:hover .hover-zoom {
+.blog-article .blog-thumb:hover .hover-zoom {
 	margin-right: 5px;
 	-webkit-transform: translate(0);
 	-moz-transform: translate(0);
@@ -3055,7 +3065,7 @@ padding: 0;
 	-o-transform: translate(0);
 	transform: translate(0);
 }
-.blog-style1 .blog-thumb .hover-link {
+.blog-article .blog-thumb .hover-link {
 	margin-left: 5px;
 	-webkit-transform: translateX(100px);
 	-moz-transform: translateX(100px);
@@ -3063,7 +3073,7 @@ padding: 0;
 	-o-transform: translateX(100px);
 	transform: translateX(100px);
 }
-.blog-style1 .blog-thumb:hover .hover-link {
+.blog-article .blog-thumb:hover .hover-link {
 	margin-left: 5px;
 	-webkit-transform: translate(0);
 	-moz-transform: translate(0);
@@ -3073,7 +3083,7 @@ padding: 0;
 }
 
 /* Genericons used on image overlays */
-.blog-style1 .blog-thumb .hover-zoom:before {
+.blog-article .blog-thumb .hover-zoom:before {
 	font-family: 'Genericons';
 	font-size: 12px;
 	content: '\f406';
@@ -3085,7 +3095,7 @@ padding: 0;
 	color: #FFF;
 	line-height: 1;
 }
-.blog-style1 .blog-thumb .hover-link:before {
+.blog-article .blog-thumb .hover-link:before {
 	font-family: 'Genericons';
 	font-size: 25px;
 	content: '\f107';

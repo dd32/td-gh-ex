@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['alante_thinkup_theme_version'] = '1.0.1';
+$GLOBALS['alante_thinkup_theme_version'] = '1.0.10';
 
 // Setup content width 
 function alante_thinkup_content_width() {
@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', 'alante_thinkup_content_width', 0 );
 	// Add Cusomizer Framework
 	require_once( get_template_directory() . '/admin/main/framework.php' );
 	require_once( get_template_directory() . '/admin/main/options.php' );
+
+	// Add Toolbox Framework
+	require_once( get_template_directory() . '/admin/main-toolbox/toolbox.php' );
 
 	// Add Theme Options Features.
 	require_once( get_template_directory() . '/admin/main/options/00.theme-setup.php' ); 

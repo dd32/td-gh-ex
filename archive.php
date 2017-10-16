@@ -13,20 +13,20 @@ get_header(); ?>
 
 				<?php while( have_posts() ): the_post(); ?>
 
-					<div class="blog-grid element column-3">
+					<div class="blog-grid element<?php alante_thinkup_input_stylelayout(); ?>">
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
-						<header class="entry-header">
+						<header class="entry-header<?php alante_thinkup_input_stylelayout_class1(); ?>">
 							<?php alante_thinkup_input_blogimage(); ?>
 						</header>		
 
-						<div class="entry-content">
+						<div class="entry-content<?php alante_thinkup_input_stylelayout_class2(); ?>">
+
 							<?php alante_thinkup_input_blogtitle(); ?>
-
 							<?php alante_thinkup_input_blogmeta_1(); ?>
-
 							<?php alante_thinkup_input_blogtext(); ?>
+
 						</div>
 
 						<footer class="entry-footer">

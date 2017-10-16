@@ -5,6 +5,47 @@
  * @package ThinkUpThemes
  */
 
+/* ----------------------------------------------------------------------------------
+	BLOG STYLE
+---------------------------------------------------------------------------------- */
+
+function alante_thinkup_input_stylelayout() {
+	echo ' column-1';
+}
+
+
+/* ----------------------------------------------------------------------------------
+	BLOG STYLE - CLASSES FOR STYLE 1
+---------------------------------------------------------------------------------- */
+
+function alante_thinkup_input_stylelayout_class1() {
+global $post;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style1layout = alante_thinkup_var ( 'thinkup_blog_style1layout' );
+
+	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
+		if ( $thinkup_blog_style1layout !== 'option2' ) {
+			echo '';
+		}
+	}
+}
+
+function alante_thinkup_input_stylelayout_class2() {
+global $post;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style1layout = alante_thinkup_var ( 'thinkup_blog_style1layout' );
+
+	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
+		if ( $thinkup_blog_style1layout !== 'option2' ) {
+			echo '';
+		}
+	}
+}
+
 
 /* ----------------------------------------------------------------------------------
 	HIDE POST TITLE
@@ -36,7 +77,7 @@ global $post;
 	 $post_img_full = wp_get_attachment_image_src($post_id, 'full', true);
 
 		echo '<div class="blog-thumb">',
-			 '<a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . get_the_post_thumbnail( $post->ID, 'alante-thinkup-column2-1/2' ) . '</a>',
+			 '<a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . get_the_post_thumbnail( $post->ID, 'alante-thinkup-column1-1/3' ) . '</a>',
 			 '<div class="image-overlay">',
 				'<div class="image-overlay-inner">',
 				'<div class="hover-icons">',
@@ -54,6 +95,12 @@ global $post;
 
 // Get theme options values.
 $thinkup_blog_postswitch = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+
+	// Output full content - EDD plugin compatibility
+	if( function_exists( 'EDD' ) and is_post_type_archive( 'download' ) ) {
+		the_content();
+		return;
+	}
 
 	// Output post content
 	if ( is_search() ) {
@@ -186,6 +233,27 @@ add_filter( 'the_content_more_link', 'alante_thinkup_input_readmore' );
 /* ----------------------------------------------------------------------------------
 	INPUT BLOG META CONTENT
 ---------------------------------------------------------------------------------- */
+
+// Add format-media class to post article for featured image, gallery and video
+function alante_thinkup_input_blogmediaclass($classes) {
+global $post;
+
+// Get theme options values.
+$thinkup_blog_postswitch = alante_thinkup_var ( 'thinkup_blog_postswitch' );
+
+	$featured_id = get_post_thumbnail_id( $post->ID );
+
+	// Determine featured media to input
+	if ( alante_thinkup_check_isblog() ) {
+		if ( empty( $featured_id ) or $thinkup_blog_postswitch == 'option2' ) {
+			$classes[] = 'format-nomedia';	
+		} else if( has_post_thumbnail() ) {
+			$classes[] = 'format-media';
+		}
+	}
+	return $classes;
+}
+add_action( 'post_class', 'alante_thinkup_input_blogmediaclass');
 
 /* Meta content (author, category, tag) */
 function alante_thinkup_input_blogmeta_1() {

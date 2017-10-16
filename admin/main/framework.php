@@ -8,8 +8,8 @@
 // Declare prefix global variable
 $GLOBALS['alante_thinkup_prefix'] = 'alante_';
 
-// Add upgrade script
-require_once( trailingslashit( dirname(__FILE__) ) . 'inc/sections/upgrade/section_upgrade_register.php' );
+// Add Button Link script (used for top level upgrade button)
+require_once( trailingslashit( dirname(__FILE__) ) . 'inc/sections/button_link/section_button_link_register.php' );
 
 // Setup custom sections / controls / callbacks
 function alante_thinkup_customizer_setup() {

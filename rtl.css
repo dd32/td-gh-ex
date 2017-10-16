@@ -294,24 +294,24 @@ td {
 .entry-content .entry-meta > span:after {
 	padding: 0 5px 0 3px;
 }
-.blog-style1 .comment {
+.blog-article .comment {
 	float: left;
 }
-.blog-style1 .more-link {
+.blog-article .more-link {
 	text-align: left;
 }
-.blog-style1 .more-link span {
+.blog-article .more-link span {
 	left: 0;
 }
-.blog-style1 .more-link a:hover span {
+.blog-article .more-link a:hover span {
 	left: 10px;
 	right: auto;
 }
-.blog-style1 .blog-thumb .image-overlay {
+.blog-article .blog-thumb .image-overlay {
 	right: 0;
 	left: auto;
 }
-.blog-style1 .blog-thumb .hover-zoom {
+.blog-article .blog-thumb .hover-zoom {
 	margin-left: 5px;
 	margin-right: 0;
 	-webkit-transform: translateX(100px);
@@ -320,11 +320,11 @@ td {
 	-o-transform: translateX(100px);
 	transform: translateX(100px);
 }
-.blog-style1 .blog-thumb:hover .hover-zoom {
+.blog-article .blog-thumb:hover .hover-zoom {
 	margin-left: 5px;
 	margin-right: 0;
 }
-.blog-style1 .blog-thumb .hover-link {
+.blog-article .blog-thumb .hover-link {
 	margin-right: 5px;
 	margin-left: 0;
 	-webkit-transform: translateX(-100px);
@@ -333,18 +333,18 @@ td {
 	-o-transform: translateX(-100px);
 	transform: translateX(-100px);
 }
-.blog-style1 .blog-thumb:hover .hover-link {
+.blog-article .blog-thumb:hover .hover-link {
 	margin-right: 5px;
 	margin-left: 0;
 }
 
 /* Genericons used on image overlays */
-.blog-style1 .blog-thumb .hover-zoom:before {
+.blog-article .blog-thumb .hover-zoom:before {
 	left: 16px;
 	right: auto;
 	float: left;
 }
-.blog-style1 .blog-thumb .hover-link:before {
+.blog-article .blog-thumb .hover-link:before {
 	left: 7px;
 	right: auto;
 	float: left;

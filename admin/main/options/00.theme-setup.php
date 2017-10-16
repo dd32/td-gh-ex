@@ -199,6 +199,9 @@ class alante_thinkup_menudescription extends Walker_Nav_Menu {
 if ( ! function_exists( 'alante_thinkup_input_addimagesizes' ) ) {
 	function alante_thinkup_input_addimagesizes() {
 
+		// 1 Column Layout
+		add_image_size( 'alante-thinkup-column1-1/3', 1140, 380, true );
+
 		/* 2 Column Layout */
 		add_image_size( 'alante-thinkup-column2-1/2', 570, 285, true );
 
@@ -210,6 +213,9 @@ if ( ! function_exists( 'alante_thinkup_input_addimagesizes' ) ) {
 
 if ( ! function_exists( 'alante_thinkup_input_showimagesizes' ) ) { 
 	function alante_thinkup_input_showimagesizes($sizes) {
+
+		// 1 Column Layout
+		$sizes['alante-thinkup-column1-1/3'] = __( 'Full - 1:3', 'alante' );
 
 		/* 2 Column Layout */
 		$sizes['alante-thinkup-column2-1/2'] = __( 'Half - 1:2', 'alante' );
