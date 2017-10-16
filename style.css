@@ -4,7 +4,7 @@ Theme URI: https://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 2 page templates, 4 blog display types, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/spacious/.
-Version: 1.4.7
+Version: 1.4.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, footer-widgets, blog, e-commerce, rtl-language-support
@@ -1205,8 +1205,8 @@ li.default-menu {
 .call-to-action-button {
 	float: right;
 	background-color: #0FBE7C;
-   border-radius: 3px 3px 3px 3px;
-   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	color: #FFFFFF;
 	font-size: 22px;
 	line-height: 40px;
@@ -1214,6 +1214,7 @@ li.default-menu {
 	font-family: 'Lato',sans-serif;
 	padding: 5px 3.28407225%;
 	margin-top: 4px;
+	width: fit-content;
 }
 .call-to-action-button:hover {
 	-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.6);

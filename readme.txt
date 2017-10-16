@@ -46,6 +46,13 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.8 - 2017-10-16 =
+* Fix - Read more enabled on archive, search pages
+* Tweak - Add theme support for Jetpack Responsive Videos.
+* Feature - Add support for yoast breadcrumb
+* Fix - Call to action button issue on chrome
+* Tweaks - Introduce selective refresh for site title and description
+
 = Version 1.4.7 - 2017-07-05 =
 * Added - Support for starter content added.
 
