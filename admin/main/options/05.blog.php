@@ -147,6 +147,12 @@ function thinkup_input_blogtext() {
 global $post;
 global $thinkup_blog_postswitch;
 
+	// Output full content - EDD plugin compatibility
+	if( function_exists( 'EDD' ) and is_post_type_archive( 'download' ) ) {
+		the_content();
+		return;
+	}
+
 	// Output post content
 	if ( is_search() ) {
 		the_excerpt();
@@ -225,8 +231,9 @@ function thinkup_input_blogauthor() {
 	);
 }
 
+
 //----------------------------------------------------------------------------------
-//	CUSTOM READ MORE FOR the_content() AND the_excerpt().
+//	CUSTOM READ MORE BUTTON.
 //----------------------------------------------------------------------------------
 
 function thinkup_input_readmore() {
