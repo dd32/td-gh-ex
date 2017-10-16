@@ -15,33 +15,29 @@
 get_header(); ?>
 
 <div id="single-banner"> 
-    <div class="content wow fdeInUp">
-      <div class="container">
-     	<?php
-			while ( have_posts() ) : the_post();
+    <div class="content wow fadeInUp">
+		<div class="container">
+			<?php
+				while ( have_posts() ) : the_post();
 			?>
-        <h1><?php the_title(); ?></h1>        
-         <!--breadcrumb-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#"><?php get_breadcrumb(); ?></a></li>
-        </ol>
-      </div>
+			<h1><?php the_title(); ?></h1>        
+		</div>
     </div>
 </div>
 
 <section id="sb-imgbox">
-  <div class="container">
-    <div class="row">
+	<div class="container">
+		<div class="row">
 			<?php
 				get_template_part( 'template-parts/content', 'page' );
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-			endwhile; // End of the loop.
+				endwhile; // End of the loop.
 			?>
-      </div>
-    </div>
+		</div>
+	</div>
 </section>
 
 <?php

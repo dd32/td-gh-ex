@@ -34,7 +34,6 @@ if ( isset( $cache[ $args['widget_id'] ] ) ) {
 ob_start();
  extract($args);
 
-
     
 $title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'atoz') : $instance['title'], $instance, $this->id_base);
     
@@ -50,39 +49,35 @@ $r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' =
            <ul class="media-list main-list ltst-upd">
               <?php while ( $r->have_posts() ) : $r->the_post(); ?>
               
-                 <li class="media"> <a class="pull-left no-pddig" href="<?php the_permalink() ?>">
-                <?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
-                     
-                 if  ( get_the_post_thumbnail()=='')
-                {
-                     $background_img_relatedpost   = get_template_directory_uri()."/img/default.jpg";
-                    
-                   echo  $post_thumbnail= '<img src="'.$background_img_relatedpost.'">';
-                }
-                else
-                {
-                   echo $post_thumbnail = get_the_post_thumbnail( get_the_ID(),'atoz_recent_post' );
-                   
-                }   
-        ?>
-                </a>
-              <div class="media-body">
-                <p class="media-heading"><a href="<?php the_permalink() ?>"> <?php if ( get_the_title() ) {
- $title = get_the_title();
- echo substr($title, 0,40);
- }
- else the_ID(); ?></a></p>
-                  
-                   <p class="by-author"><a href="<?php the_permalink() ?>">Read more</a></p>
-                  <?php if ( $show_date ) : ?>
-                <span class="post-date"><?php echo get_the_date(); ?></span>
-                   <?php endif;
-
- //thirst_number_comments();
-
- ?>
-              </div>
-            </li>
+                 <li class="media"> <a class="pull-left no-pddig" href="<?php esc_url(the_permalink()); ?>">
+					<?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
+						 
+					 if  ( get_the_post_thumbnail()=='')
+					{
+						 $background_img_relatedpost   = get_template_directory_uri()."/img/default.jpg";
+						
+					   echo  $post_thumbnail= '<img src="'.$background_img_relatedpost.'">';
+					}
+					else
+					{
+					   echo $post_thumbnail = get_the_post_thumbnail( get_the_ID(),'atoz_recent_post' );
+					   
+					}   
+					?>
+					</a>
+				  <div class="media-body">
+					<p class="media-heading"><a href="<?php esc_url(the_permalink()); ?>"> <?php if ( get_the_title() ) {
+					$title = get_the_title();
+					echo substr($title, 0,40);
+					 }
+					 else the_ID(); ?></a>
+					</p>
+					<p class="by-author"><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('Read more', 'atoz'); ?></a></p>
+					  <?php if ( $show_date ) : ?>
+					<span class="post-date"><?php echo esc_attr(get_the_date()); ?></span>
+					   <?php endif; ?>
+				  </div>
+				</li>
             <?php endwhile; ?>
          
 
@@ -121,24 +116,23 @@ function form( $instance ) {
  $number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
  $show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 ?>
- <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'atoz' ); ?></label>
- <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+ <p><label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php esc_html_e( 'Title:', 'atoz' ); ?></label>
+ <input id="<?php echo esc_html($this->get_field_id( 'title' )); ?>" name="<?php echo esc_html($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_html($title); ?>" /></p>
 
-<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'atoz' ); ?></label>
- <input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
+<p><label for="<?php echo esc_html($this->get_field_id( 'number' )); ?>"><?php esc_html_e( 'Number of posts to show:', 'atoz' ); ?></label>
+ <input id="<?php echo esc_html($this->get_field_id( 'number' )); ?>" name="<?php echo esc_html($this->get_field_name( 'number' )); ?>" type="text" value="<?php echo esc_html($number); ?>" size="3" /></p>
 
-<p><input type="checkbox" <?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
- <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'atoz' ); ?></label></p>
+<p><input type="checkbox" <?php checked( $show_date ); ?> id="<?php echo esc_html($this->get_field_id( 'show_date' )); ?>" name="<?php echo esc_html($this->get_field_name( 'show_date' )); ?>" />
+ <label for="<?php echo esc_html($this->get_field_id( 'show_date' )); ?>"><?php esc_html_e( 'Display post date?', 'atoz' ); ?></label></p>
 <?php
  }
 }
 
-
 function AtoZ_WP_Widget_Recent_Posts() {
  // define widget title and description
- $widget_ops = array('classname' => 'widget_recent_entries', 'description' => __( "The most recent posts on your site with thumbnails", 'atoz') );
+ $widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html_e( "The most recent posts on your site with thumbnails", 'atoz') );
  // register the widget
- $this->WP_Widget('atoz-recent-posts', __('atoz Recent Posts', 'atoz'), $widget_ops);
+ $this->WP_Widget('atoz-recent-posts', esc_html_e('atoz Recent Posts', 'atoz'), $widget_ops);
  }
 function AtoZ_WP_Widget_Recent_Posts_init()
 {

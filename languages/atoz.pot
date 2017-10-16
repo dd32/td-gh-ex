@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: atoz\n"
-"POT-Creation-Date: 2017-10-09 16:44+0530\n"
-"PO-Revision-Date: 2017-10-09 16:44+0530\n"
+"POT-Creation-Date: 2017-10-16 17:01+0530\n"
+"PO-Revision-Date: 2017-10-16 17:01+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,22 +24,22 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:19
+#: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-#: archive.php:40 template-parts/content.php:23
+#: archive.php:40 template-parts/content.php:26
 msgid "View"
 msgstr ""
 
-#: comments.php:34
+#: comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:38
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -47,63 +47,67 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:50 comments.php:71
+#: comments.php:49 comments.php:72
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:53 comments.php:74
+#: comments.php:53 comments.php:76
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:54 comments.php:75
+#: comments.php:56 comments.php:79
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:88
-msgid "Comments are closed."
+#: comments.php:89
+msgid "Comments are closed. "
 msgstr ""
 
-#: footer.php:28 functions.php:208
+#: footer.php:21 functions.php:201
 msgid "Footer Widgets 1"
 msgstr ""
 
-#: footer.php:44 functions.php:218
+#: footer.php:24 footer.php:34 footer.php:44 footer.php:54
+msgid "Go to Appearance -> Widgets and add upto four footer widgets you like."
+msgstr ""
+
+#: footer.php:31 functions.php:211
 msgid "Footer Widgets 2"
 msgstr ""
 
-#: footer.php:60 functions.php:227
+#: footer.php:41 functions.php:220
 msgid "Footer Widgets 3"
 msgstr ""
 
-#: footer.php:77 functions.php:236
+#: footer.php:51 functions.php:229
 msgid "Footer Widgets 4"
 msgstr ""
 
 #: functions.php:56
-msgid "atoz Menu"
+msgid "Primary"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:191
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:198 functions.php:220 functions.php:229 functions.php:238
+#: functions.php:193 functions.php:213 functions.php:222 functions.php:231
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:210
+#: functions.php:203
 msgid "Add Widgets Here."
 msgstr ""
 
-#: home.php:76
+#: home.php:74
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: home.php:103
+#: home.php:101
 msgid "TITLE OF THE ITEM"
 msgstr ""
 
-#: home.php:107 inc/customizer.php:408
+#: home.php:105 inc/customizer.php:399
 msgid ""
 "Morbi scelerisque massa quis scelerisque fermentum. Phasellus ac nunc "
 "vehicula, malesuada orci ac, cursus turpis. Nunc eu nibh diam. Cras posuere "
@@ -111,7 +115,7 @@ msgid ""
 "sit amet iaculis mauris."
 msgstr ""
 
-#: home.php:111 inc/customizer.php:420
+#: home.php:109 inc/customizer.php:411
 msgid "Add Button Text"
 msgstr ""
 
@@ -119,143 +123,143 @@ msgstr ""
 msgid "Branding"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:132
 msgid "Theme INFO"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:151
 msgid "Navigation Text"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:166
 msgid "Sub Menu Bg"
 msgstr ""
 
-#: inc/customizer.php:183
+#: inc/customizer.php:176
 msgid "Menu Hover Color"
 msgstr ""
 
-#: inc/customizer.php:188
+#: inc/customizer.php:181
 msgid "Navigation Background"
 msgstr ""
 
-#: inc/customizer.php:199
+#: inc/customizer.php:192
 msgid "Accent Color"
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:193
 msgid "Add Accent Color to post,button."
 msgstr ""
 
-#: inc/customizer.php:210
+#: inc/customizer.php:203
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:213
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:223
 msgid "All Font Awesome Icons"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:233
 msgid "Footer Social Icons"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:238
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:250
 msgid "Enable slider section"
 msgstr ""
 
-#: inc/customizer.php:269
+#: inc/customizer.php:262
 msgid "Slider Category"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:265
 msgid "Select a category for the featured post slider"
 msgstr ""
 
-#: inc/customizer.php:286
+#: inc/customizer.php:279
 msgid "Number Of Slides To Show - i.e 10 (default is 3)"
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:286
 msgid "Search Section"
 msgstr ""
 
-#: inc/customizer.php:305
+#: inc/customizer.php:298
 msgid "Enable search form on homepage"
 msgstr ""
 
-#: inc/customizer.php:313
+#: inc/customizer.php:306
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:319
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer.php:339 inc/customizer.php:416
+#: inc/customizer.php:330 inc/customizer.php:407
 msgid "Description"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:341
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:355
 msgid "Related Post Count"
 msgstr ""
 
-#: inc/customizer.php:370
+#: inc/customizer.php:361
 msgid "Featured Item"
 msgstr ""
 
-#: inc/customizer.php:386
+#: inc/customizer.php:377
 msgid "Enable this section?"
 msgstr ""
 
-#: inc/customizer.php:395
+#: inc/customizer.php:386
 msgid "Title of the item"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:394
 msgid "Heading"
 msgstr ""
 
-#: inc/customizer.php:428
+#: inc/customizer.php:419
 msgid "Button Text"
 msgstr ""
 
-#: inc/customizer.php:440
+#: inc/customizer.php:431
 msgid "Button Link"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:446
 msgid "Add a featured image"
 msgstr ""
 
-#: inc/customizer.php:474
+#: inc/customizer.php:465
 msgid "Add a background image"
 msgstr ""
 
-#: inc/customizer.php:489
+#: inc/customizer.php:480
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:481
 msgid "Add a background overlay to add contrast to headings & descriptions."
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:494
 msgid "Background Transparency"
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:495
 msgid "Change the opacity of the above background color."
 msgstr ""
 
@@ -272,7 +276,7 @@ msgid "Demo"
 msgstr ""
 
 #: inc/lib/theme-info.php:49
-msgid "Leave a review"
+msgid "Leave a review on WordPress"
 msgstr ""
 
 #: inc/lib/theme-info.php:53
@@ -324,7 +328,7 @@ msgstr ""
 msgid "Take a look"
 msgstr ""
 
-#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:139
+#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:133
 msgid "The most recent posts on your site with thumbnails"
 msgstr ""
 
@@ -332,23 +336,27 @@ msgstr ""
 msgid "atoZ Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:39
+#: inc/widgets/recentpost.php:38
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:124
+#: inc/widgets/recentpost.php:75
+msgid "Read more"
+msgstr ""
+
+#: inc/widgets/recentpost.php:119
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:127
+#: inc/widgets/recentpost.php:122
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:131
+#: inc/widgets/recentpost.php:126
 msgid "Display post date?"
 msgstr ""
 
-#: inc/widgets/recentpost.php:141
+#: inc/widgets/recentpost.php:135
 msgid "atoz Recent Posts"
 msgstr ""
 
@@ -360,44 +368,44 @@ msgstr ""
 msgid "Display a Premium or Feature description."
 msgstr ""
 
-#: inc/widgets/social.php:106
+#: inc/widgets/social.php:87
 msgid "Social Title"
 msgstr ""
 
-#: inc/widgets/social.php:114
+#: inc/widgets/social.php:93
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/widgets/social.php:124
+#: inc/widgets/social.php:99
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/widgets/social.php:135
+#: inc/widgets/social.php:105
 msgid "Google Url"
 msgstr ""
 
-#: inc/widgets/social.php:146
+#: inc/widgets/social.php:111
 msgid "Instagram Title"
 msgstr ""
 
-#: inc/widgets/social.php:156
+#: inc/widgets/social.php:117
 msgid "Dribbble Url"
 msgstr ""
 
-#: inc/widgets/social.php:167
+#: inc/widgets/social.php:123
 msgid "Behance Url"
 msgstr ""
 
-#: search.php:24
+#: search.php:18
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:58
+#: search.php:38
 msgid "Newer posts"
 msgstr ""
 
-#: search.php:59
+#: search.php:39
 msgid "Older posts"
 msgstr ""
 
@@ -416,32 +424,8 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:61
-msgid "Share on :"
-msgstr ""
-
-#: single.php:63
-msgid "Share this post on Facebook!"
-msgstr ""
-
-#: single.php:66
-msgid "Share this post on Twitter!"
-msgstr ""
-
-#: single.php:69
-msgid "Share this post on Google Plus!"
-msgstr ""
-
-#: single.php:72
-msgid "Share this post on Dribbble!"
-msgstr ""
-
-#: single.php:75
-msgid "Share on instagram"
-msgstr ""
-
-#: single.php:84
-msgid "Authored By:"
+#: single.php:62
+msgid "By:"
 msgstr ""
 
 #: template-parts/content-none.php:15

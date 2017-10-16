@@ -25,11 +25,9 @@ function atoz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->default   = '#454545';
 	$wp_customize->get_section( 'title_tagline' )->title  = __( 'Branding', 'atoz' );	 
     $wp_customize->remove_control('background_color');
-    
-    
-    
+
      class Customizer_Toggle_Control extends WP_Customize_Control 
- {
+	{
 		public $type = 'ios';
 
 		/**
@@ -83,22 +81,17 @@ function atoz_customize_register( $wp_customize ) {
 			<label>
 				<div style="display:flex;flex-direction: row;justify-content: flex-start;">
 					<span class="customize-control-title" style="flex: 2 0 0; vertical-align: middle;"><?php echo esc_html( $this->label ); ?></span>
-					<input id="cb<?php echo $this->instance_number ?>" type="checkbox" class="tgl tgl-<?php echo $this->type?>" value="<?php echo esc_html( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
-					<label for="cb<?php echo $this->instance_number ?>" class="tgl-btn"></label>
+					<input id="cb<?php echo esc_html( $this->instance_number ); ?>" type="checkbox" class="tgl tgl-<?php echo esc_html( $this->type ); ?>" value="<?php echo esc_html( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
+					<label for="cb<?php echo esc_html( $this->instance_number ); ?>" class="tgl-btn"></label>
 				</div>
 				<?php if ( ! empty( $this->description ) ) : ?>
-				<span class="description customize-control-description"><?php echo $this->description; ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php endif; ?>
 			</label>
 			<?php
 		}
 	}
 
-
-    
-    
-    
-    
 	 /* Selective Refresh */
 	if ( isset( $wp_customize->selective_refresh ) ) {	
 	/*Search section */	
@@ -316,7 +309,6 @@ function atoz_customize_register( $wp_customize ) {
     ));   
    $wp_customize->add_setting( 'atoz_post_title', 
            array( 
-               'default' => 'Add blog title here' ,
                'transport' => 'postMessage',
                'sanitize_callback' => 'sanitize_text_field',
            ) );
@@ -328,7 +320,6 @@ function atoz_customize_register( $wp_customize ) {
 		) ); 
     $wp_customize->add_setting( 'atoz_post_desc', 
            array( 
-               'default' => 'Add Description here' ,
                'transport' => 'postMessage',
                'sanitize_callback' => 'sanitize_text_field',
            ) );
@@ -508,14 +499,6 @@ function atoz_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'atoz_customize_register' );
 
-
-
-
-
-
-
-
-
 function atoz_sanitize_integer( $input ) {
     	if( is_numeric( $input ) ) {
         return intval( $input );
@@ -538,7 +521,6 @@ function atoz_sanitize_checkbox( $input ) {
     }
 }
 
-
 /**
  * Render the site title for the selective refresh partial.
  *
@@ -558,25 +540,25 @@ function atoz_customize_partial_blogdescription() {
 }
 /*Blog listing */
 function atoz_customize_partial_blogtitle(){
-	echo get_theme_mod( 'atoz_post_title' );
+	echo esc_html(get_theme_mod( 'atoz_post_title' ));
 }
 function atoz_customize_partial_blogdesc(){
-	echo get_theme_mod( 'atoz_post_desc' );
+	echo esc_html(get_theme_mod( 'atoz_post_desc' ));
 }
 
 /*Featured Item - Render */
 function atoz_customize_partial_serv_content() {
-	echo get_theme_mod( 'atoz_title' );
+	echo esc_html(get_theme_mod( 'atoz_title' ));
 }
 
 function atoz_customize_partial_atoz_feat_desc(){
-	echo get_theme_mod('atoz_feat_desc');
+	echo esc_html(get_theme_mod('atoz_feat_desc'));
 }
 function atoz_customize_partial_atoz_url_title(){
-	echo get_theme_mod('atoz_url_title');
+	echo esc_html(get_theme_mod('atoz_url_title'));
 }
 function atoz_customize_partial_atoz_image(){
-	echo '<img src="'.get_theme_mod('atoz_image').'" class="img-responsive wow  fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">';
+	echo '<img src="' . esc_url(get_theme_mod('atoz_image')) . '" class="img-responsive wow  fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">';
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
