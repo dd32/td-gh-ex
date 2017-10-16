@@ -122,6 +122,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.12
+- Updated: Support added for EDD to ensure purchase buttons display correctly on downloads page.
+
 Version 1.4.11
 - Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
 

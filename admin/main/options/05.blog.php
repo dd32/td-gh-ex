@@ -36,6 +36,12 @@ function thinkup_input_blogtext() {
 global $post;
 global $thinkup_blog_postswitch;
 
+	// Output full content - EDD plugin compatibility
+	if( function_exists( 'EDD' ) and is_post_type_archive( 'download' ) ) {
+		the_content();
+		return;
+	}
+
 	// Output post content
 	if ( is_search() ) {
 		the_excerpt();
