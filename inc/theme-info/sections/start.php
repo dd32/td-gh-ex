@@ -47,7 +47,7 @@
 				<?php _e('Install the <a href="https://wordpress.org/plugins/widget-importer-exporter/">Widget Importer &amp; Exporter</a> plugin to import the demo widgets','advocator-lite'); ?>
 			</p>
 			<section class="callout-green">
-			<?php _e('The demo WIE file is available in the "All Files &amp Documentation" download package which is located in the <a href="http://https://rescuethemes.com/wordpress-themes/advocator-lite">theme home page</a>. Then import the WIE file at: <code>Tools > Widget Importer &amp; Exporter</code>','advocator-lite'); ?>
+			<?php _e('The demo WIE file is available in the "All Files &amp Documentation" download package which is located in the <a href="https://rescuethemes.com/wordpress-themes/advocator-lite">theme home page</a>. Then import the WIE file at: <code>Tools > Widget Importer &amp; Exporter</code>','advocator-lite'); ?>
 			</section>
 
 		</div><!-- .content-section -->
