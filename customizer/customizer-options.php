@@ -52,7 +52,6 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Show Slogan', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable to a slogan for your site. This uses the Site Tagline', 'electa' ),
         'default' => 0,
     );
     $options['kra-header-search'] = array(
@@ -60,14 +59,13 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Show Search', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable to show a search box on the site', 'electa' ),
         'default' => 0,
     );
     $options['kra-upsell-header'] = array(
         'id' => 'kra-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- Remove Page titles<br />- Enable a sticky header<br />- Align Navigation - Left\Center\Right<br />- Remove Navigation lines', 'electa' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- Remove All Page titles<br />- Enable a sticky header<br />- Align Navigation - Left\Center\Right<br />- Remove Navigation lines', 'electa' )
     );
     
     

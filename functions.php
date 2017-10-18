@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.05' );
+define( 'KAIRA_THEME_VERSION' , '1.3.06' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -132,7 +132,11 @@ function kaira_scripts() {
     }
     wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
-
+    
+    if ( kaira_is_woocommerce_activated() ) {
+        wp_enqueue_style( 'electa-woocommerce-style', get_template_directory_uri().'/upgrade/css/electa-woocommerce-style.css', array(), KAIRA_THEME_VERSION );
+    }
+    
     if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
         wp_enqueue_script( 'jquery-masonry' );
         wp_enqueue_script( 'electa-masonry-custom', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -181,6 +185,15 @@ function load_kaira_customizer_style() {
 add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
 
 /**
+ * Create function to check if WooCommerce exists
+ */
+if ( ! function_exists( 'kaira_is_woocommerce_activated' ) ) :
+    function kaira_is_woocommerce_activated() {
+        if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+    }
+endif; // kaira_is_woocommerce_activated
+
+/**
  * Add category nicenames in body and post class
  */
 function kaira_add_body_home_class( $home_add_class ) {
@@ -190,21 +203,6 @@ function kaira_add_body_home_class( $home_add_class ) {
     return $home_add_class;
 }
 add_filter( 'body_class', 'kaira_add_body_home_class' );
-
-/**
- * Check if Meta Slider plugin is active then add Meta Slider hoplink if slider is enabled
- */
-if ( ! function_exists( 'is_plugin_active' ) )
-     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
- 
-if ( is_plugin_active( 'ml-slider/ml-slider.php' ) ) {
-    
-    function metaslider_hoplink( $link ) {
-        return "https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs";
-    }
-    add_filter( 'metaslider_hoplink', 'metaslider_hoplink', 10, 1 );
-    
-}
 
 /**
  * Display recommended plugins with the TGM class
@@ -218,18 +216,8 @@ function kaira_register_required_plugins() {
             'required'  => false,
         ),
         array(
-            'name'      => __( 'Page Builder', 'electa' ),
-            'slug'      => 'siteorigin-panels',
-            'required'  => false,
-        ),
-        array(
-            'name'      => __( 'Widgets Bundle', 'electa' ),
-            'slug'      => 'siteorigin-panels',
-            'required'  => false,
-        ),
-        array(
-            'name'      => __( 'Contact Form 7', 'electa' ),
-            'slug'      => 'contact-form-7',
+            'name'      => __( 'Elementor Page Builder', 'electa' ),
+            'slug'      => 'elementor',
             'required'  => false,
         ),
         array(
@@ -251,6 +239,13 @@ function kaira_register_required_plugins() {
     tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'kaira_register_required_plugins' );
+
+/**
+ * Elementor Check
+ */
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+    define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
 
 /**
  * Register a custom Post Categories ID column

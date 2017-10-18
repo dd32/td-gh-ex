@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Electa is your grid layout personal or commercial portfolio theme. Electa is the perfect theme to display any site from your photography portfolio, personal blog, restaurant websites, wedding sites, entertainment websites, or any site you'd like to display your beautiful images on. Along with the blocks layout, Electa has multiple page layouts which work well with SiteOrigin's simple drag and drop Page Builder, allowing you to built any type of page layout you like. Also integrated with WooCommerce, Electa can easily turn into a full online eCommerce store where you can sell products. Install WooCommerce now and build your own online shop in no time. Download Electa now and give it a go!
+Electa is your grid layout personal or commercial portfolio theme. Electa is the perfect theme to display any site from your photography portfolio, personal blog, restaurant websites, wedding sites, entertainment websites, or any site you'd like to display your beautiful images on. Along with the blocks layout, Electa has multiple page layouts which work well with SiteOrigin's simple drag and drop Page Builder, allowing you to built any type of page layout you like. Also integrated with WooCommerce, Electa can easily turn into a full online eCommerce store where you can sell products. Install WooCommerce now and build your own online shop in no time. Download Electa now and give it a go! Demo - https://demo.kairaweb.com/#electa
 
 == License ==
 
@@ -59,6 +59,14 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.06
+* Styling fixes/tweaks
+* Updated help links for setup
+* Added custom styling for WooCommerce
+* Updated the language .pot file
+Premium: Added extra settings to set WooCommerce pages Full Width
+Premium: Added extra logo padding settings
 
 #### 1.3.05
 * Updated/Improved JS for Masonry Grid layout

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2017-07-03 14:27+0200\n"
+"POT-Creation-Date: 2017-10-18 15:36+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 
-#: 404.php:15 customizer/customizer-options.php:268
+#: 404.php:15 customizer/customizer-options.php:266
 msgid "Oops! That page can't be found."
 msgstr ""
 
-#: 404.php:27 customizer/customizer-options.php:276
+#: 404.php:27 customizer/customizer-options.php:274
 msgid ""
 "The page you are looking for can't be found. Please select one of the "
 "options below."
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 
 #: content-none.php:21 content-none.php:34
-#: customizer/customizer-options.php:284
+#: customizer/customizer-options.php:282
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords or return to home."
@@ -223,97 +223,89 @@ msgstr ""
 msgid "Show Slogan"
 msgstr ""
 
-#: customizer/customizer-options.php:55
-msgid "Enable to a slogan for your site. This uses the Site Tagline"
-msgstr ""
-
-#: customizer/customizer-options.php:60
+#: customizer/customizer-options.php:59
 msgid "Show Search"
 msgstr ""
 
-#: customizer/customizer-options.php:63
-msgid "Enable to show a search box on the site"
-msgstr ""
-
-#: customizer/customizer-options.php:70
+#: customizer/customizer-options.php:68
 msgid ""
 "<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and "
 "sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- "
-"Remove Page titles<br />- Enable a sticky header<br />- Align Navigation - "
-"Left\\Center\\Right<br />- Remove Navigation lines"
+"Remove All Page titles<br />- Enable a sticky header<br />- Align Navigation "
+"- Left\\Center\\Right<br />- Remove Navigation lines"
 msgstr ""
 
-#: customizer/customizer-options.php:79
+#: customizer/customizer-options.php:77
 msgid "Home Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:85
+#: customizer/customizer-options.php:83
 msgid "Enable home blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:88
+#: customizer/customizer-options.php:86
 msgid ""
 "Enable this to change the layout of the home page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:93
+#: customizer/customizer-options.php:91
 msgid "Home Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:96
+#: customizer/customizer-options.php:94
 msgid ""
 "Enter the ID's of the post categories you want to display in the home blocks."
 "<br />Eg: \"13,17,19\"<br /><br />Get the ID's at <b>Posts -> Categories</"
 "b><br /><br />Leaving it blank displays all posts."
 msgstr ""
 
-#: customizer/customizer-options.php:102
+#: customizer/customizer-options.php:100
 msgid ""
 "<b>Premium Extra Features:</b><br />- Setting to change home blocks columns "
 "layout"
 msgstr ""
 
-#: customizer/customizer-options.php:112
+#: customizer/customizer-options.php:110
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:118
+#: customizer/customizer-options.php:116
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:125
+#: customizer/customizer-options.php:123
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:134
+#: customizer/customizer-options.php:132
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:142
+#: customizer/customizer-options.php:140
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:149
+#: customizer/customizer-options.php:147
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:157
+#: customizer/customizer-options.php:155
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:165
+#: customizer/customizer-options.php:163
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:168
+#: customizer/customizer-options.php:166
 msgid ""
 "Add custom CSS to your theme. For advanced custom styling we recommend using "
 "a <a href=\"https://wordpress.org/plugins/so-css/\" target=\"_blank\">Custom "
 "CSS plugin</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:175
+#: customizer/customizer-options.php:173
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change header background and font "
 "colors<br />- Select between mobile navigation skins - Dark / Light<br />- "
@@ -321,36 +313,36 @@ msgid ""
 "title sizes"
 msgstr ""
 
-#: customizer/customizer-options.php:184
+#: customizer/customizer-options.php:182
 msgid "Blog Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:190
+#: customizer/customizer-options.php:188
 msgid "Enable blog blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:193
+#: customizer/customizer-options.php:191
 msgid ""
 "Enable this to change the layout of the blog page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:198
+#: customizer/customizer-options.php:196
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:205
+#: customizer/customizer-options.php:203
 msgid "Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:208
+#: customizer/customizer-options.php:206
 msgid ""
 "Enter the ID's of the post categories you want to EXCLUDE from the blog, "
 "with a minus(-) before.<br />Eg: \"-13,-17,-19\"<br /><br /> Get the ID's at "
 "<b>Posts -> Categories</b>"
 msgstr ""
 
-#: customizer/customizer-options.php:214
+#: customizer/customizer-options.php:212
 msgid ""
 "<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns "
 "layout<br />- Enable blocks layout on Archive pages<br /><br />- Custom "
@@ -358,57 +350,57 @@ msgid ""
 "Set WC products per row<br />- Set WC products per page"
 msgstr ""
 
-#: customizer/customizer-options.php:223
+#: customizer/customizer-options.php:221
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:229
+#: customizer/customizer-options.php:227
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:235
+#: customizer/customizer-options.php:233
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:241
+#: customizer/customizer-options.php:239
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:250
+#: customizer/customizer-options.php:248
 msgid ""
 "<b>Premium Extra Features:</b><br />- Over 18 different social profile links "
 "available<br />- Setting to add any social link required"
 msgstr ""
 
-#: customizer/customizer-options.php:259
+#: customizer/customizer-options.php:257
 msgid "Website Text"
 msgstr ""
 
-#: customizer/customizer-options.php:265
+#: customizer/customizer-options.php:263
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:269
+#: customizer/customizer-options.php:267
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:273
+#: customizer/customizer-options.php:271
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:277
+#: customizer/customizer-options.php:275
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:281
+#: customizer/customizer-options.php:279
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:285
+#: customizer/customizer-options.php:283
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
-#: customizer/customizer-options.php:292
+#: customizer/customizer-options.php:290
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change site attribution text to your "
 "own copy"
@@ -422,27 +414,19 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:214
 msgid "WooCommerce"
 msgstr ""
 
-#: functions.php:221
-msgid "Page Builder"
+#: functions.php:219
+msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:226
-msgid "Widgets Bundle"
-msgstr ""
-
-#: functions.php:231
-msgid "Contact Form 7"
-msgstr ""
-
-#: functions.php:236
+#: functions.php:224
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:229
 msgid "Meta Slider"
 msgstr ""
 
@@ -560,6 +544,10 @@ msgstr ""
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1092
+msgid "See more on using the Electa theme"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:1121
@@ -894,8 +882,7 @@ msgstr ""
 msgid "Electa"
 msgstr ""
 
-#: includes/electa-pro/class-customize.php:77 upgrade/tpl/upgrade-page.php:57
-#: upgrade/tpl/upgrade-page.php:63
+#: includes/electa-pro/class-customize.php:77
 msgid "Upgrade to Premium"
 msgstr ""
 
@@ -923,154 +910,122 @@ msgid "<span>Electa Premium </span><em>$25</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:18
-msgid "<span>Simple Steps to upgrade"
+#, php-format
+msgid ""
+"<strong>All settings for Electa</strong> are neatly built into the <a href="
+"\"%s\">WordPress Customizer</a> so you can change and edit settings to view "
+"what happens before saving and making any of the changes live"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:21
-msgid "Purchase and Download Electa Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:24
+#, php-format
 msgid ""
-"Install and activate the <a href=\"https://kairaweb.com/support/install-the-"
-"premium-theme/\" target=\"_blank\">Easy Theme Upgrades Plugin</a>... That's "
-"all to do with the plugin"
+"Help on how to <strong><a href=\"%s\" target=\"_blank\">install the premium "
+"theme</a></strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:25
-msgid ""
-"Upload and <a href=\"https://kairaweb.com/documentation/install-theme-zip-"
-"file/\" target=\"_blank\">install the Electa Premium zip</a> as normal at:"
-"<b>Appearance -> Themes -> Add New -> Upload Theme</b>"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:26
-msgid "You can then delete the Easy Theme Upgrades plugin"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:30
-msgid "Latest features added to Electa Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:32
-msgid "Added setting to customize header color styling"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:33
-msgid "Added setting to remove Page Titles"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:34
-msgid "Added setting to align navigation text - Left, Right or Center aligned"
+#: upgrade/tpl/upgrade-page.php:31
+msgid "Electa Premium is a once off payment of $25"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:35
-msgid "Added theme styling for WooCommerce"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:36
-msgid "Added option to make shop page full width"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:37
-msgid "Added new social icons"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:43
-msgid "<em>Support</em><span>Electa Documentation </span>"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:48
 msgid ""
-"We support all our themes, offering one on one email support to help you "
-"build the website you want"
+"View the Electa Premium Demo, and try out all the settings neatly built into "
+"the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:49
+#: upgrade/tpl/upgrade-page.php:39
+msgid "Electa Premium Demo"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:46
+msgid "Download a working Child Theme for Electa"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:47
+#, php-format
 msgid ""
-"While we do support our both free and premium themes... <strong>Premium "
-"themes get prioritized support</strong>"
+"Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
+"Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:60
+#: upgrade/tpl/upgrade-page.php:51
+msgid "Electa Child Theme"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:58
 msgid ""
-"If you've enjoyed using our Electa theme to build your website, then you "
-"should love the premium version which comes with a bunch of extra features "
-"for a low cost of <strong>$25</strong>.<br /><br />With Electa premium we "
-"offer continued updates and you'll get prioritized support to help you build "
-"the website you want."
+"We have on-growing documentation on setting up your website with the Electa "
+"theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:68 upgrade/tpl/upgrade-page.php:74
-msgid "Continued Updates"
+#: upgrade/tpl/upgrade-page.php:62
+msgid "Documentation"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:71
+#: upgrade/tpl/upgrade-page.php:69
+msgid "Have you enjoyed using Electa?"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:70
+msgid "Please help by giving us a 5 star rating on WordPress.org :)"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:74
+msgid "Rate Electa 5 stars"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:79
+#, php-format
+msgid "Theme: Electa, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:88
 msgid ""
-"Once you upgrade to Electa Premium, you'll then support and move over to our "
-"premium updates system which will ensure Electa works with all future "
-"versions of WordPress that are released."
+"We aim to keep our prices cheaper than other theme shops, while still "
+"offering you the best WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:79 upgrade/tpl/upgrade-page.php:85
-msgid "Get Premium Support"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:82
-msgid ""
-"Upgrading to Electa Premium will also give you prioritized support, ensuring "
-"we get to your queries first.<br /><br />We have a growing <a href='https://"
-"kairaweb.com/documentation/' target='_blank'>support forum</a> on our "
-"website as well as <a href='https://kairaweb.com/support-contact/' "
-"target='_blank'>email support</a> to sort out any queries you may have."
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:96
-msgid ""
-"We aim to keep our prices low, all our themes are under <strong>$30</"
-"strong>, while still offering you great WordPress themes."
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:98
+#: upgrade/tpl/upgrade-page.php:90
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:100
+#: upgrade/tpl/upgrade-page.php:92
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:104
+#: upgrade/tpl/upgrade-page.php:96
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:116
+#: upgrade/tpl/upgrade-page.php:108
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:119
+#: upgrade/tpl/upgrade-page.php:111
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:125
+#: upgrade/tpl/upgrade-page.php:117
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:128
+#: upgrade/tpl/upgrade-page.php:120
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:134
+#: upgrade/tpl/upgrade-page.php:126
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:137
+#: upgrade/tpl/upgrade-page.php:129
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "

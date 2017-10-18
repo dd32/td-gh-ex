@@ -1089,7 +1089,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// If we have notices to display, we move forward.
 			if ( ! empty( $message ) || $total_required_action_count > 0 ) {
 				krsort( $message ); // Sort messages.
-				$rendered = '';
+				$rendered = '<div class="tgm-custom-button"><span>Electa settings are built into the <a href="' . admin_url( 'customize.php' ) . '">Customizer</a></span> - <a href="' . admin_url() . 'themes.php?page=theme_info" class="tgm-custom-button">' . __( 'See more on using the Electa theme', 'electa' ) . '</a></div>';
 
 				// As add_settings_error() wraps the final message in a <p> and as the final message can't be
 				// filtered, using <p>'s in our html would render invalid html output.

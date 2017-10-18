@@ -75,6 +75,7 @@ class Electa_Premium_Customize_Section extends WP_Customize_Section {
 
 				<# if ( data.pro_text && data.pro_url ) { #>
 					<a href="{{ data.pro_url }}" class="button button-secondary alignright" title="Premium now only $25" target="_blank">{{ data.pro_text }}</a>
+					<div class="electa-prem-tryout"><a href="https://demo.kairaweb.com/#electa" target="_blank">View Premium Demo &amp; Settings</a></div>
 				<# } #>
 			</h3>
 		</li>

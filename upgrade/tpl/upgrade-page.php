@@ -14,77 +14,69 @@
                 </a>
             </div>
             
-            <div class="upgrade-help">
-                <h5><?php printf( __( '<span>Simple Steps to upgrade', 'electa' ) ); ?></h5>
-                <p>
-                    <a href="https://kairaweb.com/theme/electa/#purchase-premium" target="_blank">
-                        <?php printf( __( 'Purchase and Download Electa Premium', 'electa' ) ); ?>
-                    </a>
-                </p>
-                <p><?php printf( __( 'Install and activate the <a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Easy Theme Upgrades Plugin</a>... That\'s all to do with the plugin', 'electa' ) ); ?></p>
-                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the Electa Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'electa' ) ); ?></p>
-                <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'electa' ) ); ?></p>
-            </div>
-            
-            <div class="upgrade-changelog">
-                <h4><?php printf( __( 'Latest features added to Electa Premium', 'electa' ) ); ?></h4>
-                <ul>
-                    <li><?php printf( __( 'Added setting to customize header color styling', 'electa' ) ); ?></li>
-                    <li><?php printf( __( 'Added setting to remove Page Titles', 'electa' ) ); ?></li>
-                    <li><?php printf( __( 'Added setting to align navigation text - Left, Right or Center aligned', 'electa' ) ); ?></li>
-                    <li><?php printf( __( 'Added theme styling for WooCommerce', 'electa' ) ); ?></li>
-                    <li><?php printf( __( 'Added option to make shop page full width', 'electa' ) ); ?></li>
-                    <li><?php printf( __( 'Added new social icons', 'electa' ) ); ?></li>
-                </ul>
-            </div>
-            
-            <div class="upgrade-order-number-info-btns">
-                <a href="https://kairaweb.com/docs/electa/" class="upgrade-page-link" target="_blank">
-                    <?php printf( __( '<em>Support</em><span>Electa Documentation </span>', 'electa' ) ); ?>
-                </a>
-            </div>
-            
-            <div class="upgrade-help">
-                <p><?php printf( __( 'We support all our themes, offering one on one email support to help you build the website you want', 'electa' ) ); ?></p>
-                <p><?php printf( __( 'While we do support our both free and premium themes... <strong>Premium themes get prioritized support</strong>', 'electa' ) ); ?></p>
-            </div>
+            <p class="electa-upgrade-p">
+                <?php printf( __( '<strong>All settings for Electa</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'electa' ) , admin_url( 'customize.php' ) ); ?>
+            </p>
+            <p class="electa-upgrade-p">
+                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'electa' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+            </p>
             
         </div>
         <div class="clearboth"></div>
         
         <div class="upgrade-page-left">
             
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Upgrade to Premium', 'electa' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "If you've enjoyed using our Electa theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$25</strong>.<br /><br />With Electa premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'electa' ) ); ?>
+            <div class="electa-upgrade-page-inner-wrap">
+                
+                <h3><?php _e( 'Electa Premium is a once off payment of $25', 'electa' ); ?></h3>
+                
+                <div class="electa-upgrade-block">
+                    <div class="electa-upgrade-block-left">
+                        <?php _e( 'View the Electa Premium Demo, and try out all the settings neatly built into the Customizer', 'electa' ); ?>
+                    </div>
+                    <div class="electa-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://demo.kairaweb.com/#electa' ) ?>" target="_blank" class="electa-upgrade-result-button">
+                            <?php _e( 'Electa Premium Demo', 'electa' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php _e( 'Upgrade to Premium', 'electa' ); ?>" />
+                
+                <div class="electa-upgrade-block electa-upgrade-block-alt">
+                    <div class="electa-upgrade-block-left">
+                        <?php _e( 'Download a working Child Theme for Electa', 'electa' ); ?><br />
+                        <?php printf( __( 'Or learn more on creating/editing a <a href="%s" target="_blank">Child Theme</a>', 'electa' ) , 'https://codex.wordpress.org/Child_Themes' ); ?>
+                    </div>
+                    <div class="electa-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/electa-child-theme/' ) ?>" target="_blank" class="electa-upgrade-result-button">
+                            <?php _e( 'Electa Child Theme', 'electa' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="clearboth"></div>
-            </div>
-            
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Continued Updates', 'electa' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "Once you upgrade to Electa Premium, you'll then support and move over to our premium updates system which will ensure Electa works with all future versions of WordPress that are released.", 'electa' ) ); ?>
+                
+                <div class="electa-upgrade-block">
+                    <div class="electa-upgrade-block-left">
+                        <?php _e( 'We have on-growing documentation on setting up your website with the Electa theme', 'electa' ); ?>
+                    </div>
+                    <div class="electa-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" target="_blank" class="electa-upgrade-result-button">
+                            <?php _e( 'Documentation', 'electa' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-updates.png" alt="<?php _e( 'Continued Updates', 'electa' ); ?>" />
+                
+                <div class="electa-upgrade-block electa-upgrade-block-alt">
+                    <div class="electa-upgrade-block-left">
+                        <?php _e( 'Have you enjoyed using Electa?', 'electa' ); ?><br />
+                        <?php printf( __( 'Please help by giving us a 5 star rating on WordPress.org :)', 'electa' ) , 'https://kairaweb.com/' ); ?>
+                    </div>
+                    <div class="electa-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/electa/reviews/?rate=5#new-post' ) ?>" target="_blank" class="electa-upgrade-result-button">
+                            <?php _e( 'Rate Electa 5 stars', 'electa' ); ?>
+                        </a>
+                    </div>
                 </div>
-                <div class="clearboth"></div>
-            </div>
-            
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Get Premium Support', 'electa' ); ?></h3>
-            <div class="upgrade-page-left-box">
-                <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "Upgrading to Electa Premium will also give you prioritized support, ensuring we get to your queries first.<br /><br />We have a growing <a href='https://kairaweb.com/documentation/' target='_blank'>support forum</a> on our website as well as <a href='https://kairaweb.com/support-contact/' target='_blank'>email support</a> to sort out any queries you may have.", 'electa' ) ); ?>
-                </div>
-                <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-support.png" alt="<?php _e( 'Get Premium Support', 'electa' ); ?>" />
-                </div>
-                <div class="clearboth"></div>
+                
+                <div class="electa-upgrade-footer"><?php printf( __( 'Theme: Electa, built by <a href="%s" target="_blank">Kaira</a>', 'electa' ) , 'https://kairaweb.com/' ); ?></div>
             </div>
             
         </div>
@@ -93,7 +85,7 @@
             
             <div class="upgrade-page-right-box">
                 
-                <p><?php printf( __( "We aim to keep our prices low, all our themes are under <strong>$30</strong>, while still offering you great WordPress themes.", 'electa' ) ); ?></p>
+                <p><?php printf( __( "We aim to keep our prices cheaper than other theme shops, while still offering you the best WordPress themes.", 'electa' ) ); ?></p>
                 
                 <p><?php printf( __( "Upgrading will support us and enable us to keep building WordPress themes.", 'electa' ) ); ?></p>
                 

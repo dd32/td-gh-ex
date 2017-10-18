@@ -2,7 +2,7 @@
     
 }
 .upgrade-page-inner-wrap {
-	max-width: 940px;
+	max-width: 980px;
 	padding: 0 10px;
 }
 .upgrade-page-inner-wrap a {
@@ -15,13 +15,8 @@
 	text-decoration: underline;
 	color: #0952A9;
 }
-
 .clearboth {
 	clear: both;
-}
-
-h2.upgrade-page-title {
-    
 }
 
 .upgrade-page-top {
@@ -77,7 +72,7 @@ a.upgrade-page-link em {
 	text-align: center;
 	box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2);
 	background-color: rgba(255, 255, 255, 0.1);
-	font-size: 13px;
+	font-size: 18px;
 	text-transform: uppercase;
 }
 a.upgrade-page-link:hover {
@@ -85,65 +80,11 @@ a.upgrade-page-link:hover {
 	color: #fff;
 }
 
-.upgrade-order-number-info-btns {
-	margin: 0 0 30px;
-}
-.upgrade-order-number-info-btns-link a#upgrade-purchase-link span {
-	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2);
-}
-.upgrade-order-number-info-btns-link a#upgrade-purchase-link em {
-	box-shadow: -1px 0 0 rgba(0, 0, 0, 0.2);
-	font-size: 18px;
-}
-
-.upgrade-help {
-	margin: 30px 0 32px;
-}
-.upgrade-help h5 {
-	margin: 0;
-	padding: 0;
-	font-size: 22px;
-	font-weight: 400;
-}
-.upgrade-help p b {
-	display: block;
-	font-weight: 700;
-	font-style: italic;
-	margin: 4px 0 0;
-}
-
-.upgrade-changelog {
-	margin: 0 0 35px;
-}
-.upgrade-changelog h4 {
-	border-top: 1px dashed #bbb;
-	max-width: 480px;
-	margin: 0 auto;
-	padding: 12px 0 0;
-	font-size: 20px;
-	font-weight: 400;
-	color: #000;
-}
-.upgrade-changelog ul {
-	border-top: 1px dashed #bbb;
-	border-bottom: 1px dashed #bbb;
-	padding: 10px 0;
-	max-width: 480px;
-	margin: 15px auto;
-}
-.upgrade-changelog ul li {
-	color: #7d7d7d;
-}
-.upgrade-changelog ul li:hover {
-	color: #000;
-	font-weight: 600;
-}
-
 .upgrade-page-left {
 	min-height: 40px;
 	float: left;
 	width: 66%;
-	margin: 0 4% 15px 0;
+	margin: 30px 4% 15px 0;
 }
 .upgrade-page-left-box {
 	margin: 0 0 35px;
@@ -184,6 +125,80 @@ a.upgrade-page-link:hover {
 }
 .upgrade-page-right .upgrade-page-sub-title {
 	margin: 0 0 12px 10px;
+}
+
+.electa-upgrade-page-inner-wrap {
+	background-color: #fbfbfb;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.electa-upgrade-page-inner-wrap h3 {
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.14) inset;
+	margin: 0;
+    padding: 20px 20px 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.electa-upgrade-result-button {
+	display: inline-block;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset !important;
+	margin: 0;
+	padding: 9px 10px 10px;
+    min-width: 160px;
+	text-align: center;
+	font-size: 14px;
+	background-color: #006CC9;
+	color: #FFF !important;
+	text-decoration: none !important;
+}
+.electa-upgrade-result-button:hover {
+	background-color: #0952A9;
+}
+
+.electa-upgrade-block {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+.electa-upgrade-block-alt {
+	background-color: #f3f3f3;
+}
+.electa-upgrade-block:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.electa-upgrade-block-left {
+	width: 65%;
+	float: left;
+	padding: 10px 20px 0 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.electa-upgrade-block-right {
+	width: 35%;
+    float: right;
+    text-align: right;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+.electa-upgrade-p {
+	margin: 0 auto;
+    padding: 25px 20px 0;
+    font-size: 15px;
+    text-align: center;
+    max-width: 670px;
+}
+.electa-upgrade-p strong {
+	color: #000;
+}
+.electa-upgrade-p strong,
+.electa-upgrade-p a {
+    font-size: 17px;
 }
 
 .upgrade-rating-slider-wrap {
@@ -247,8 +262,18 @@ a.upgrade-page-link:hover {
 .upgrade-rating-slider-wrap:hover .upgrade-rating-slider-next {
 	opacity: 1;
 }
+.electa-upgrade-footer {
+	background-color: #72777c;
+    padding: 6px 10px 7px;
+    text-align: center;
+    color: #FFF;
+    font-size: 11px;
+}
+.electa-upgrade-footer a {
+	color: inherit;
+}
 
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 1020px) {
 	
 	.upgrade-page-left,
 	.upgrade-page-right {
@@ -256,26 +281,24 @@ a.upgrade-page-link:hover {
 		float: none;
 		margin: 0;
 	}
+	.upgrade-page-left {
+		margin: 30px 0 0;
+	}
 	
 }
 
 @media only screen and (max-width: 620px) {
 	
-	.upgrade-page-left-box-left {
+	.electa-upgrade-block-left {
 		width: 100%;
 		float: none;
 		margin: 0 0 15px;
 	}
-	.upgrade-page-left-box-right {
+	.electa-upgrade-block-right {
 		width: 100%;
 		max-width: 200px;
 		float: none;
 		margin: 0 auto;
-	}
-	
-	.upgrade-text {
-		width: 100%;
-		margin: 0 0 18px;
 	}
 	
 }

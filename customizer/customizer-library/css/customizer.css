@@ -36,6 +36,14 @@
     font-weight: 500;
     color: #006cc9;
 }
+.electa-prem-tryout {
+    clear: both;
+    text-align: right;
+    font-size: 11px;
+    line-height: 11px;
+    text-decoration: none;
+    padding: 4px 0 0;
+}
 
 #customize-control-blogdescription,
 #customize-control-kra-header-logo-max-width,
