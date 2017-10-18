@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.4.4 - Released: 18.10.2017
+
+-- Updated : WooCommerce templates.
+
 - Version 1.4.3 - Released: 01.10.2017
 
 -- Fixed : Back to top button.
