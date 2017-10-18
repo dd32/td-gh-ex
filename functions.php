@@ -58,7 +58,7 @@ function bar_restaurant_admin_menu( ) {
   
 }
 function bar_restaurant_pro_buy_now(){ ?>
-  <script>window.location = "https://voilathemes.com/products/bar-restaurant-pro-wordpress-plugin/";</script>
+  <script>window.location = "https://voilathemes.com/products/bar-restaurant-pro-wordpress-theme/";</script>
 <?php }
 /*
 * TGM plugin activation register hook 

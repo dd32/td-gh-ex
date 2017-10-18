@@ -3,7 +3,7 @@ Contributors: VoilaThemes
 Tags: two-columns, right-sidebar, full-width-template , grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
 Requires at least: 4.0
 Tested up to: 4.8.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bar-restaurant
@@ -56,6 +56,9 @@ Bar Restaurant is distributed under the terms of the GNU GPL
 = 1.0.6(11 oct 2017)
 * Change home page design.
 * Misc changes.
+= 1.0.7(17 oct 2017)
+* Updated pro theme url.
+
 ---------------------------------------------------------
 Resources
 ---------------------------------------------------------
