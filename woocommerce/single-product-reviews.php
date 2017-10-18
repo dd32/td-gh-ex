@@ -68,8 +68,9 @@ if ( ! comments_open() ) {
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = array(
-						'title_reply'          => have_comments() ? __( 'Add a review', 'bazaar-lite' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'bazaar-lite' ), get_the_title() ),
-						'title_reply_to'       => __( 'Leave a Reply to %s', 'bazaar-lite' ),
+					
+						'title_reply' =>  '<span>' . __( 'Add a review', 'bazaar-lite' ) . '</span>' ,
+						'title_reply_to' =>  '<span>' . __( 'Leave a Reply to %s', 'bazaar-lite' ). '</span>',
 						'comment_notes_after'  => '',
 						'fields'               => array(
 							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'bazaar-lite' ) . ' <span class="required">*</span></label> ' .
