@@ -15,7 +15,7 @@
  * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,6 +30,7 @@ do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
 <?php if ( $has_downloads ) : ?>
 
 	<?php do_action( 'woocommerce_before_available_downloads' ); ?>
+<?php do_action( 'woocommerce_available_downloads', $downloads ); ?>
 
 	<table class="woocommerce-MyAccount-downloads shop_table shop_table_responsive">
 		<thead>

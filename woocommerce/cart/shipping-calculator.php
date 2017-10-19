@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.8
+ * @version     3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,9 +24,9 @@ if ( 'no' === get_option( 'woocommerce_enable_shipping_calc' ) || ! WC()->cart->
 	return;
 }
 
-?>
+wp_enqueue_script( 'wc-country-select' );
 
-<?php do_action( 'woocommerce_before_shipping_calculator' ); ?>
+do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
 <form class="woocommerce-shipping-calculator" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
@@ -60,7 +60,7 @@ if ( 'no' === get_option( 'woocommerce_enable_shipping_calc' ) || ! WC()->cart->
 				} elseif ( is_array( $states ) ) {
 
 					?><span>
-						<select name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php esc_attr_e( 'State / County', 'basicstore' ); ?>">
+						<select state_select" name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php esc_attr_e( 'State / County', 'basicstore' ); ?>">
 							<option value=""><?php esc_html_e( 'Select a state&hellip;', 'basicstore' ); ?></option>
 							<?php
 								foreach ( $states as $ckey => $cvalue ) {

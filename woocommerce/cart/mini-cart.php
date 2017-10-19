@@ -15,7 +15,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.2.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -46,6 +46,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 							__( 'Remove this item', 'basicstore' ),
 							esc_attr( $product_id ),
+							esc_attr( $cart_item_key ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
 						?>

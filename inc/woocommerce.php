@@ -89,13 +89,13 @@ function basic_store_nav_replace_wpse_189788($item_output, $item) {
   // "Cart" menu item
   global $woocommerce;
 
-  if ( $item->url == $woocommerce->cart->get_cart_url() ) {
+  if ( $item->url == wc_get_cart_url() ) {
 
     ob_start();
 
     ?>
 
-    <a href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>">
+    <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
 
       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
       <span class=""><?php _e('Cart','basicstore'); ?></span>
