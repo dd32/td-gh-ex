@@ -4,6 +4,14 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.0.5
+	* [TODO] Implement img tag for header image on mobile devices so that there's no need to specify the header height, which can vary greatly
+	* [TODO] Add option for slider to only display posts with featured image
+
+Version 2.0.4
+	* Fixed: Header title and menu toggle appears missing when using light coloured header bars
+	* Fixed: Child stylesheet not loaded if child theme implemented using CSS @import method
+
 Version 2.0.3
 	* Fixed: Ensure correct ordering of stylesheets when using a child theme
 	* Fixed: Malformed dropdown menu styling when not using Custom Menu

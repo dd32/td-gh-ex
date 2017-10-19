@@ -148,8 +148,10 @@ function graphene_child_stylesheets_order(){
 			continue;
 		}
 
-		$wp_styles->registered[$handle]->deps[] = $parent_handle;
-		$wp_styles->registered[$handle]->deps = array_unique( $wp_styles->registered[$handle]->deps );
+		if ( isset( $parent_handle ) ) {
+			$wp_styles->registered[$handle]->deps[] = $parent_handle;
+			$wp_styles->registered[$handle]->deps = array_unique( $wp_styles->registered[$handle]->deps );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'graphene_child_stylesheets_order', 100 );

@@ -49,6 +49,18 @@
 		letter-spacing: normal;
 		line-height: 50px;
 	}
+	.header_title,
+	.header_title a,
+	.header_title a:hover,
+	.header_desc {
+		color: #333;
+	}
+	.navbar-inverse .header_title,
+	.navbar-inverse .header_title a,
+	.navbar-inverse .header_title a:hover,
+	.navbar-inverse .header_desc {
+		color: #fff;
+	}
 	.header_desc {
 		display: none;
 	}
@@ -57,6 +69,18 @@
 	}
 	.carousel .slider_post_title {
 		font-size: 16px;
+	}
+	.navbar-toggle {
+		border-color: #888;
+	}
+	.navbar-toggle .icon-bar {
+		background-color: #888;
+	}
+	.navbar-inverse .navbar-toggle {
+		border-color: #333;
+	}
+	.navbar-inverse .navbar-toggle .icon-bar {
+		background-color: #fff;
 	}
 	.navbar-nav {
 		margin: 0;
