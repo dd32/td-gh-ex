@@ -31,13 +31,10 @@
 
 /* ------------------ Visually Hidden ------------------ */
 .visually-hidden,
-.page .entry-nav,
 .page .post-published-modified,
 .page .published-post-author,
 .page .comments-actions-snippet,
 .page .comment-md,
-.main-content---hr_cr .page-nav,
-.main-content---hr .entry-nav,
 .edit-post-action .post-title---txt,
 .edit-comment-action .comment-title---txt,
 .post-header-aside .comment-creation-ability,
@@ -396,9 +393,6 @@
 .view--multisite-directory .post-banner-visual--enabled .post---hr_cr
 {
     position: relative;
-    
-    height: var(--post-banner-vis--height);
-    overflow: hidden;
 }
 
 .view--multisite-directory .post-banner-vis---g
@@ -409,13 +403,13 @@
     background-color: var(--image--bg-color);
 }
 
-.view--multisite-directory .post-banner-vis---a
+.view--multisite-directory .post .post-banner-vis---a
 {
     position: relative;
     
     display: block;
     width: 100%;
-    height: var(--post-banner-vis--height);
+    height: 10rem;
 }
 
 .view--multisite-directory .post-banner-vis---a::before
@@ -442,30 +436,39 @@
 
 
 /* ------------------ Multisite Directory - Main Post Title ------------------ */
-.view--multisite-directory .post---hr_cr
+.view--multisite-directory .main-post-title---ct_cr
 {
     text-align: center;
 }
 
 .view--multisite-directory .post-banner-visual--enabled .post-title
 {
+    display: block;
     padding: 0;
 }
 
 .view--multisite-directory .post-banner-visual--enabled .post-title---a
 {
-    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
     
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+
+.view--multisite-directory .post-banner-visual--enabled .post-title---a_l
+{   
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate( -50%, -50% );
-    z-index: 0;
     
     padding: var(--content--spacing);
     
     width: 100%;
-    max-height: 100%;
     
     color: white;
 }
@@ -740,6 +743,12 @@
 
 
 /* ------------------ Entry Nav ------------------ */
+.page .entry-nav,
+.main-content---hr .entry-nav
+{
+    display: none;
+}
+
 .applicator--theme--entry-nav .entry-nav---grp
 {
     display: flex;
@@ -932,7 +941,7 @@
 
 
 /* ------------------ Quote ------------------ */
-.applicator--theme--quote blockquote
+.applicator--theme--quote .post-content---ct_cr > blockquote
 {
     position: relative;
     
@@ -1102,6 +1111,11 @@
 
 
 /* ------------------ Page Nav ------------------ */
+.main-content---hr_cr .page-nav
+{
+    display: none;
+}
+
 .applicator--theme--page-nav .page-nav---ct_cr
 {
     text-align: center;
@@ -1195,14 +1209,6 @@
     font-size: 2em;
 }
 
-.applicator--theme--post-format--status .format-status .post---hr,
-.applicator--theme--post-format--status .format-status .post---ct,
-.applicator--theme--post-format--status .format-status .post-header-aside
-{
-    display: inline-block;
-    vertical-align: middle;
-}
-
 
 
 
@@ -1238,7 +1244,8 @@
 .applicator--theme--layout .comment-md---cr,
 .applicator--theme--layout .breadcrumbs-nav---cr,
 .applicator--theme--layout .post-excerpt---cr,
-.applicator--theme--layout .show-more-action
+.applicator--theme--layout .show-more-action,
+.applicator--theme--layout .main-content-heading
 {
     margin-left: auto;
     margin-right: auto;
@@ -1256,17 +1263,35 @@
     display: none;
 }
 
+.applicator--theme--layout .post-banner-vis---g
+{
+    background-size: cover;
+    background-position: center;
+}
+
 .applicator--theme--layout .post-banner-vis---a
 {
     display: block;
     
     width: 100%;
-    height: 320px;
+    height: 20rem;
 }
 
-.applicator--theme--layout .post-banner-vis---g
+
+
+
+
+/* ------------------ Viewport Width: 768 ------------------ */
+
+@media only screen and ( min-width: 48em )
 {
-    background-position: center;
+    
+    /* ------------ Layout ------------ */
+    .applicator--theme--layout .post-content---ct_cr > .data-format--img--right-aligned
+    {
+        margin-left: 1rem;
+    }
+    
 }
 
 

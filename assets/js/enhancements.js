@@ -414,6 +414,7 @@
                 mainMenuDeactivate();
             }
         } );
+          
 
         // Deactivate via keyboard ESC key
         $window.load( function() {
@@ -670,7 +671,7 @@
         
         $( '#main-actions' )
             .find( $( '.main-actions---ct_cr' ) )
-                .children( '.search:first' )
+                .children( '.search:first, .widget_search:first' )
                     .attr( 'id', 'main-search' );
     }() );
     
@@ -1166,6 +1167,16 @@
             }, function() {
                 navHoverDeactivate.apply( this );
             } );
+            
+            /*
+            $( "#content" ).delegate( "*", "focus blur", function() {
+              var elem = $( this );
+              setTimeout(function() {
+                elem.toggleClass( "focused", elem.is( ":focus" ) );
+              }, 0 );
+            });
+            */
+        
         }() );
         
         
@@ -1591,17 +1602,24 @@
             .removeClass( 'window--unloaded' );
         
         
-        // If Main Description if visually-hidden
-        if ( $( '.main-description' ).css( 'width' ) == '1px' ) {
-            $html
-                .addClass( 'main-description--empty' )
-                .removeClass( 'main-description--populated' );
-        }
-        else {
-            $html
-                .addClass( 'main-description--populated' )
-                .removeClass( 'main-description--empty' );
-        }
+        // If Main Description is visually-hidden
+        ( function() {
+            
+            if ( ! $( '.main-description' ).length ) {
+                return;
+            }
+            
+            if ( $( '.main-description' ).css( 'width' ) == '1px' ) {
+                $html
+                    .addClass( 'main-description--empty' )
+                    .removeClass( 'main-description--populated' );
+            }
+            else {
+                $html
+                    .addClass( 'main-description--populated' )
+                    .removeClass( 'main-description--empty' );
+            }
+        }() );
         
         
         // Page Length
