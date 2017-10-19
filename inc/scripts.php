@@ -116,3 +116,40 @@ function graphene_google_fonts_uri(){
 	);
 	return add_query_arg( apply_filters( 'graphene_google_fonts', $query_args ), "//fonts.googleapis.com/css" );
 }
+
+
+/**
+ * Ensure correct ordering of stylesheets when using a child theme
+ * @since Graphene 2.0.3
+ */
+function graphene_child_stylesheets_order(){
+	global $wp_styles;
+	if ( ! $wp_styles->registered ) return;
+
+	$child_stylesheet = get_stylesheet_uri();
+	if ( $child_stylesheet == GRAPHENE_ROOTURI . '/style.css' ) return;
+
+	$parent_theme = wp_get_theme( basename( GRAPHENE_ROOTDIR ) );
+	$parent_stylesheet = basename( GRAPHENE_ROOTURI ) . '/style.css';
+
+	foreach ( $wp_styles->registered as $handle => $script ) {
+		if ( stripos( $script->src, $parent_stylesheet ) !== false ) {
+			$wp_styles->registered[$handle]->deps = array_merge( $script->deps, array( 'bootstrap', 'font-awesome' ) );
+			$wp_styles->registered[$handle]->ver = $parent_theme->Version;
+			$parent_handle = $handle;
+		}
+
+		if ( $script->src === $child_stylesheet ) $child_handles[] = $handle;
+	}
+
+	foreach ( $child_handles as $handle ){
+		if ( count( $child_handles ) > 1 && $handle === 'graphene' ) {
+			unset( $wp_styles->registered['graphene'] );
+			continue;
+		}
+
+		$wp_styles->registered[$handle]->deps[] = $parent_handle;
+		$wp_styles->registered[$handle]->deps = array_unique( $wp_styles->registered[$handle]->deps );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'graphene_child_stylesheets_order', 100 );

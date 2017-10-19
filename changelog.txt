@@ -4,6 +4,14 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.0.3
+	* Fixed: Ensure correct ordering of stylesheets when using a child theme
+	* Fixed: Malformed dropdown menu styling when not using Custom Menu
+	* Fixed: Incorrect recommended header image width in Customizer
+	* Fixed: Missing translation strings
+	* Fixed: Missing post title in slider when set to display full post
+	* Fixed: Replaced down chevron with side chevron in dropdown submenu
+
 Version 2.0.2
 	* Added: Tell browsers to reload theme scripts after theme update
 	* Added: Instant customizer preview for site title and description

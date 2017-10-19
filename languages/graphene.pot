@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-13 16:39+0800\n"
+"POT-Creation-Date: 2017-10-19 10:53+0800\n"
 "PO-Revision-Date: 2013-08-24 12:12+0800\n"
 "Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "graphene\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:23
@@ -168,8 +168,8 @@ msgstr ""
 msgid "Navigation options"
 msgstr ""
 
-#: admin/custom-fields.php:166 admin/customizer/controls.php:287
-#: admin/customizer/controls.php:333
+#: admin/custom-fields.php:166 admin/customizer/controls.php:293
+#: admin/customizer/controls.php:343
 msgid "Description"
 msgstr ""
 
@@ -236,105 +236,109 @@ msgstr ""
 msgid "Right sidebar"
 msgstr ""
 
-#: admin/customizer/controls.php:268 admin/customizer/controls.php:324
+#: admin/customizer/controls.php:269 admin/customizer/controls.php:334
 msgid "Custom"
 msgstr ""
 
-#: admin/customizer/controls.php:292 admin/customizer/controls.php:338
+#: admin/customizer/controls.php:298 admin/customizer/controls.php:348
 msgid "URL"
 msgstr ""
 
-#: admin/customizer/controls.php:296
+#: admin/customizer/controls.php:302
 msgid "Leave the URL empty to use the default RSS URL."
 msgstr ""
 
-#: admin/customizer/controls.php:302 admin/customizer/controls.php:343
+#: admin/customizer/controls.php:308 admin/customizer/controls.php:353
 msgid "Icon URL"
 msgstr ""
 
-#: admin/customizer/controls.php:307 admin/customizer/customizer.php:35
+#: admin/customizer/controls.php:312 admin/customizer/controls.php:358
+msgid "Icon name"
+msgstr ""
+
+#: admin/customizer/controls.php:317 admin/customizer/customizer.php:38
 #: inc/comments.php:184
 msgid "Delete"
 msgstr ""
 
-#: admin/customizer/controls.php:308
+#: admin/customizer/controls.php:318
 msgid "Drag and drop to reorder"
 msgstr ""
 
-#: admin/customizer/controls.php:314 admin/customizer/controls.php:347
+#: admin/customizer/controls.php:324 admin/customizer/controls.php:362
 msgid "Add social profile"
 msgstr ""
 
-#: admin/customizer/controls.php:318
+#: admin/customizer/controls.php:328
 msgid "Choose type"
 msgstr ""
 
-#: admin/customizer/controls.php:362
+#: admin/customizer/controls.php:377
 msgid ""
 "Reset all of the theme's settings to their default values. Custom Header, "
 "Custom Menus, and other WordPress settings won't be affected."
 msgstr ""
 
-#: admin/customizer/controls.php:363
+#: admin/customizer/controls.php:378
 msgid "<strong>WARNING:</strong> This action is not reversible."
 msgstr ""
 
-#: admin/customizer/controls.php:365
+#: admin/customizer/controls.php:380
 msgid "Confirm to reset settings? This action is not reversible."
 msgstr ""
 
-#: admin/customizer/controls.php:365 admin/customizer/options-utilities.php:13
+#: admin/customizer/controls.php:380 admin/customizer/options-utilities.php:13
 msgid "Reset settings"
 msgstr ""
 
-#: admin/customizer/controls.php:385 admin/customizer/options-utilities.php:38
+#: admin/customizer/controls.php:400 admin/customizer/options-utilities.php:38
 msgid "Export settings"
 msgstr ""
 
-#: admin/customizer/controls.php:407 admin/customizer/options-utilities.php:32
+#: admin/customizer/controls.php:422 admin/customizer/options-utilities.php:32
 msgid "Import settings"
 msgstr ""
 
-#: admin/customizer/customizer.php:32
+#: admin/customizer/customizer.php:35
 msgid "Oops, nothing found."
 msgstr ""
 
-#: admin/customizer/customizer.php:34
+#: admin/customizer/customizer.php:37
 msgid "Please select the exported Graphene options file to import."
 msgstr ""
 
-#: admin/customizer/customizer.php:36
+#: admin/customizer/customizer.php:39
 msgid "(optional)"
 msgstr ""
 
-#: admin/customizer/customizer.php:37
+#: admin/customizer/customizer.php:40
 msgid "Link"
 msgstr ""
 
-#: admin/customizer/customizer.php:38
+#: admin/customizer/customizer.php:41
 msgid "Please select a settings file to import."
 msgstr ""
 
-#: admin/customizer/customizer.php:82
+#: admin/customizer/customizer.php:95
 msgid "Graphene: General"
 msgstr ""
 
-#: admin/customizer/customizer.php:86
+#: admin/customizer/customizer.php:99
 msgid "Graphene: Display"
 msgstr ""
 
-#: admin/customizer/customizer.php:90
+#: admin/customizer/customizer.php:103
 msgid "Graphene: Colours"
 msgstr ""
 
-#: admin/customizer/customizer.php:91
+#: admin/customizer/customizer.php:104
 msgid ""
 "Changing colours for your website involves a lot more than just trial and "
 "error. Simply mixing and matching colours without regard to their "
 "compatibility may do more damage than good to your site's aesthetics."
 msgstr ""
 
-#: admin/customizer/customizer.php:91
+#: admin/customizer/customizer.php:104
 #, php-format
 msgid ""
 "It's generally a good idea to stick to colours from colour pallettes that "
@@ -342,11 +346,11 @@ msgid ""
 "colour palettes you can use."
 msgstr ""
 
-#: admin/customizer/customizer.php:95
+#: admin/customizer/customizer.php:108
 msgid "Graphene: Advanced"
 msgstr ""
 
-#: admin/customizer/customizer.php:99
+#: admin/customizer/customizer.php:112
 msgid "Graphene: Utilities"
 msgstr ""
 
@@ -405,7 +409,7 @@ msgstr ""
 msgid "Dropdown menu text (active state)"
 msgstr ""
 
-#: admin/customizer/options-colours.php:48 inc/setup.php:101
+#: admin/customizer/options-colours.php:48 inc/setup.php:95
 msgid "Secondary Menu"
 msgstr ""
 
@@ -1180,17 +1184,13 @@ msgstr ""
 msgid "Could not read uploaded file. Please check the file and try again."
 msgstr ""
 
-#: admin/customizer/options-import.php:155
-msgid "Uploaded file was empty. Please check and try again."
-msgstr ""
-
-#: admin/customizer/options-import.php:159
+#: admin/customizer/options-import.php:158
 msgid ""
 "Uploaded file does not contain any setting to import. Please check and try "
 "again."
 msgstr ""
 
-#: admin/customizer/options-import.php:160
+#: admin/customizer/options-import.php:159
 msgid ""
 "The uploaded file does not contain valid Graphene options. Please check and "
 "try again."
@@ -1230,12 +1230,12 @@ msgid ""
 "2.0."
 msgstr ""
 
-#: admin/db-updater.php:246
+#: admin/db-updater.php:247
 #, php-format
 msgid "Follow %s on Twitter"
 msgstr ""
 
-#: admin/db-updater.php:257
+#: admin/db-updater.php:258
 #, php-format
 msgid "Visit %s's Facebook page"
 msgstr ""
@@ -1282,27 +1282,27 @@ msgstr ""
 msgid "Zesty Orange"
 msgstr ""
 
-#: admin/options-init.php:50
+#: admin/options-init.php:51
 msgid "Graphene Options"
 msgstr ""
 
-#: admin/options-init.php:109
+#: admin/options-init.php:110
 msgid "Template preview not found."
 msgstr ""
 
-#: admin/options-init.php:112
+#: admin/options-init.php:113
 msgid "default"
 msgstr ""
 
-#: admin/options-init.php:171 admin/options-init.php:175
+#: admin/options-init.php:172 admin/options-init.php:176
 msgid "Theme default"
 msgstr ""
 
-#: admin/options-init.php:216
+#: admin/options-init.php:217
 msgid "Learn more about this feature set"
 msgstr ""
 
-#: admin/options-init.php:217
+#: admin/options-init.php:218
 msgid "Documentation"
 msgstr ""
 
@@ -1525,27 +1525,27 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:150
+#: inc/functions.php:160
 #, php-format
 msgid "Visit %1$s's %2$s page"
 msgstr ""
 
-#: inc/functions.php:293
+#: inc/functions.php:303
 #, php-format
 msgid ""
 "You haven't placed any widget into this widget area. Go to %1$s and place "
 "some widgets in the widget area called %2$s."
 msgstr ""
 
-#: inc/functions.php:293
+#: inc/functions.php:303
 msgid "WP Admin > Appearance > Widgets"
 msgstr ""
 
-#: inc/functions.php:294
+#: inc/functions.php:304
 msgid "This notice will not be displayed to your site's visitors."
 msgstr ""
 
-#: inc/infinite-scroll.php:98 inc/scripts.php:59
+#: inc/infinite-scroll.php:98 inc/scripts.php:73
 msgid "Load more"
 msgstr ""
 
@@ -1602,24 +1602,24 @@ msgstr ""
 msgid "In this section"
 msgstr ""
 
-#: inc/menus.php:134
+#: inc/menus.php:135
 msgid "FontAwesome Icon Name"
 msgstr ""
 
-#: inc/menus.php:177
+#: inc/menus.php:178
 #, php-format
 msgid "Choose from 580+ %s"
 msgstr ""
 
-#: inc/menus.php:177
+#: inc/menus.php:178
 msgid "available icons"
 msgstr ""
 
-#: inc/menus.php:219
+#: inc/menus.php:220
 msgid "Home"
 msgstr ""
 
-#: inc/menus.php:296
+#: inc/menus.php:297
 #, php-format
 msgid "#%d (no title)"
 msgstr ""
@@ -1634,136 +1634,136 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: inc/scripts.php:66
+#: inc/scripts.php:80
 #, php-format
 msgid "Fetching %1$s of %2$s items left ..."
 msgstr ""
 
-#: inc/scripts.php:70
+#: inc/scripts.php:84
 #, php-format
 msgid "Fetching %1$s of %2$s item left ..."
 msgid_plural "Fetching %1$s of %2$s items left ..."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/scripts.php:75
+#: inc/scripts.php:89
 msgid "All loaded!"
 msgstr ""
 
-#: inc/scripts.php:79 inc/scripts.php:83
+#: inc/scripts.php:93 inc/scripts.php:97
 #, php-format
 msgid "Fetching %1$s of %2$s comments left ..."
 msgid_plural "Fetching %1$s of %2$s comments left ..."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/scripts.php:88
+#: inc/scripts.php:102
 msgid "All comments loaded!"
 msgstr ""
 
-#: inc/setup.php:100
+#: inc/setup.php:94
 msgid "Header Menu"
 msgstr ""
 
-#: inc/setup.php:102
+#: inc/setup.php:96
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/setup.php:152
+#: inc/setup.php:146
 msgid "Forest"
 msgstr ""
 
-#: inc/setup.php:157
+#: inc/setup.php:151
 msgid "Mountains"
 msgstr ""
 
-#: inc/setup.php:162
+#: inc/setup.php:156
 msgid "Road"
 msgstr ""
 
-#: inc/setup.php:166
+#: inc/setup.php:160
 msgid "Header image by Syahir Hakim"
 msgstr ""
 
-#: inc/setup.php:170
+#: inc/setup.php:164
 msgid ""
 "This is the default Graphene theme header image, cropped from image by "
 "Quantin Houyoux at sxc.hu"
 msgstr ""
 
-#: inc/setup.php:174 inc/setup.php:178 inc/setup.php:182 inc/setup.php:186
-#: inc/setup.php:190
+#: inc/setup.php:168 inc/setup.php:172 inc/setup.php:176 inc/setup.php:180
+#: inc/setup.php:184
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr ""
 
-#: inc/setup.php:211
+#: inc/setup.php:205
 msgid "Graphene - Sidebar One"
 msgstr ""
 
-#: inc/setup.php:213
+#: inc/setup.php:207
 msgid ""
 "The first sidebar widget area (will always be displayed on the right hand "
 "side)."
 msgstr ""
 
-#: inc/setup.php:220
+#: inc/setup.php:214
 msgid "Graphene - Sidebar Two"
 msgstr ""
 
-#: inc/setup.php:222
+#: inc/setup.php:216
 msgid ""
 "The second sidebar widget area (will always be displayed on the left hand "
 "side)."
 msgstr ""
 
-#: inc/setup.php:238
+#: inc/setup.php:234
 msgid "Graphene - Footer"
 msgstr ""
 
-#: inc/setup.php:240
+#: inc/setup.php:236
 msgid ""
 "The footer widget area. Leave empty to disable. Set the number of columns to "
 "display at the theme's Display Options page."
 msgstr ""
 
-#: inc/setup.php:255
+#: inc/setup.php:251
 msgid "Graphene - Sidebar One (Front Page)"
 msgstr ""
 
-#: inc/setup.php:257
+#: inc/setup.php:253
 msgid ""
 "The first sidebar widget area that will only be displayed on the front page."
 msgstr ""
 
-#: inc/setup.php:264
+#: inc/setup.php:260
 msgid "Grapehen - Sidebar Two (Front Page)"
 msgstr ""
 
-#: inc/setup.php:266
+#: inc/setup.php:262
 msgid ""
 "The second sidebar widget area that will only be displayed on the front page."
 msgstr ""
 
-#: inc/setup.php:275
+#: inc/setup.php:271
 msgid "Graphene - Footer (Front Page)"
 msgstr ""
 
-#: inc/setup.php:277
+#: inc/setup.php:273
 msgid ""
 "The footer widget area that will only be displayed on the front page. Leave "
 "empty to disable. Set the number of columns to display at the theme's "
 "Display Options page."
 msgstr ""
 
-#: inc/setup.php:287
+#: inc/setup.php:283
 msgid "Graphene - Header"
 msgstr ""
 
-#: inc/setup.php:289
+#: inc/setup.php:285
 msgid "The header widget area."
 msgstr ""
 
-#: inc/setup.php:306
+#: inc/setup.php:302
 #, php-format
 msgid ""
 "Dynamically added widget area. This widget area is attached to the %s action "
@@ -1840,6 +1840,10 @@ msgid "%1$d result for %2$s"
 msgid_plural "%1$d results for %2$s"
 msgstr[0] ""
 msgstr[1] ""
+
+#: searchform.php:3
+msgid "Search"
+msgstr ""
 
 #: sidebar-two.php:28
 msgid "Front Page Sidebar Two Widget Area"

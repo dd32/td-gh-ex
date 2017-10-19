@@ -110,7 +110,7 @@ function graphene_setup() {
 	/* Add support for custom header */
 	define( 'HEADER_TEXTCOLOR',    apply_filters( 'graphene_header_textcolor', 'ffffff' ) );
 	define( 'HEADER_IMAGE',        apply_filters( 'graphene_default_header_image', GRAPHENE_ROOTURI . '/images/headers/forest.jpg' ) );
-	define( 'HEADER_IMAGE_WIDTH',  apply_filters( 'graphene_header_image_width', graphene_grid_width( $graphene_settings['gutter_width'] * 2, 16 ) ) );
+	define( 'HEADER_IMAGE_WIDTH',  apply_filters( 'graphene_header_image_width', graphene_grid_width( $graphene_settings['gutter_width'] * 2, 12 ) ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'graphene_header_image_height', $graphene_settings['header_img_height'] ) );
 	define( 'NO_HEADER_TEXT', ! apply_filters( 'graphene_header_text', true ) );
 

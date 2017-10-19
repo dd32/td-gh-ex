@@ -88,8 +88,9 @@ function graphene_walker_nav_menu_start_el( $item_output, $item, $depth, $args )
 	}
 	
 	/* Chevron for dropdown menu */
-	if ( in_array( 'menu-item-has-children', $classes ) && $args->depth > 1 ) {
-		$item_output = preg_replace( '/(<a\s[^>]*[^>]*>)(.*)(<\/a>)/siU', '$1$2 <i class="fa fa-chevron-down"></i>$3', $item_output );
+	if ( in_array( 'menu-item-has-children', $classes ) && $max_depth > 1 ) {
+		if ( $depth == 0 ) $item_output = preg_replace( '/(<a\s[^>]*[^>]*>)(.*)(<\/a>)/siU', '$1$2 <i class="fa fa-chevron-down"></i>$3', $item_output );
+		else $item_output = preg_replace( '/(<a\s[^>]*[^>]*>)(.*)(<\/a>)/siU', '$1$2 <i class="fa fa-chevron-right"></i>$3', $item_output );
 	}
 	
 	/* Menu description */
@@ -258,8 +259,7 @@ class Graphene_Walker_Page extends Walker_Page {
 	
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-		if ( $depth == 0 ) $output .= "\n$indent<ul class=\"sub-menu dropdown-menu\">\n";
-		else $output .= "\n$indent<ul class=\"sub-menu\">\n";
+		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
 	}
 	
 	public function start_el( &$output, $page, $depth = 0, $args = array(), $current_page = 0 ) {

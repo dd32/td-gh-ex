@@ -62,6 +62,7 @@ function graphene_slider(){
 		                <?php endif; ?>
 
 		                <?php if ( $graphene_settings['slider_display_style'] == 'full-post' ) : ?>
+		                	<h3 class="slider-post-title"><?php the_content(); ?></h3>
 		                	<?php the_content(); ?>
 	                	<?php else : ?>
 						    <div class="carousel-caption">
