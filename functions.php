@@ -472,7 +472,7 @@ function bfastmag_show_block( $block_hm_styl) {
 		case 1:
 			$postperpage = get_theme_mod( 'bfastmag_block1_posts_per_page', 4 );
  			$fp_style = $block_hm_styl;
-			$bfastmag_block_title = get_theme_mod( 'bfastmag_sblock1_title' );
+			$bfastmag_block_title = get_theme_mod( 'bfastmag_block1_title' );
  			break;
 		case 2:
 			$fp_style = 3;
