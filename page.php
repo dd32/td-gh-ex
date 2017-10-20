@@ -27,10 +27,12 @@
 					echo '</div>';
 				}
 
-				echo '<header class="post-header">';
-					echo '<h1 class="page-title">'. get_the_title() .'</h1>';
-				echo '</header>';
-				
+				if ( get_the_title() !== '' ) {
+					echo '<header class="post-header">';
+						echo '<h1 class="page-title">'. get_the_title() .'</h1>';
+					echo '</header>';
+				}
+
 				echo '<div class="post-content">';
 					the_content('');
 

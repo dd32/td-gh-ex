@@ -45,7 +45,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'Highly recommended to begin with this, read the full theme documentation to understand the basics and even more details about how to use Ashe. It is worth to spend 10 minutes and know almost everything about the theme.', 'ashe' ); ?>
 					</p>
-					<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Documentation', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Documentation', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-wdith-3">
@@ -53,7 +53,7 @@ function ashe_about_page_output() {
 					<p>
 					<?php esc_html_e( 'All theme options are located here. After reading the Theme Documentation we recommend you to open the Theme Customizer and play with some options. You will enjoy it.', 'ashe' ); ?>
 					</p>
-					<a target="_blank" href="<?php echo get_site_url() . '/wp-admin/customize.php'?>" class="button button-primary"><?php esc_html_e( 'Customize Your Site', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url(get_site_url()) . '/wp-admin/customize.php'?>" class="button button-primary"><?php esc_html_e( 'Customize Your Site', 'ashe' ); ?></a>
 				</div>
 
 			</div>
@@ -105,7 +105,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'Before asking a questions it\'s highly recommended to search on forums, but if you can\'t find the solution feel free to create a new topic.', 'ashe' ); ?>
 						<hr>
-						<a href="<?php echo esc_url('http://wp-royal.com/forums/forum/free-themes/ashe-free/'); ?>"><?php esc_html_e( 'Go to Support Forums', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/forums/forum/free-themes/ashe-free/?ref=ashe-free-backend-about-support-forum/'); ?>"><?php esc_html_e( 'Go to Support Forums', 'ashe' ); ?></a>
 					</p>
 				</div>
 
@@ -117,7 +117,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Ashe.', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/'); ?>"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
 					</p>
 				</div>
 
@@ -129,7 +129,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/changelog/'); ?>"><?php esc_html_e( 'See Changelog', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/ashe-free-changelog/?ref=ashe-free-backend-about-changelog/'); ?>"><?php esc_html_e( 'See Changelog', 'ashe' ); ?></a>
 					</p>
 				</div>
 
@@ -139,9 +139,9 @@ function ashe_about_page_output() {
 						<?php esc_html_e( 'Donation', 'ashe' ); ?>
 					</h3>
 					<p>
-						<?php esc_html_e( 'Even a small sum can help us a lot with theme development. If the Ashe theme is useful and our support is helpful, please don\'t hesitate to donate a little bit, at lest buy as a Coffee or a Beer :)', 'ashe' ); ?>
+						<?php esc_html_e( 'Even a small sum can help us a lot with theme development. If the Ashe theme is useful and our support is helpful, please don\'t hesitate to donate a little bit, at lest buy us a Coffee or a Beer :)', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://www.paypal.com/us/home'); ?>"><?php esc_html_e( 'Donate with PayPal', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/ashe-donate.html'); ?>"><?php esc_html_e( 'Donate with PayPal', 'ashe' ); ?></a>
 					</p>
 				</div>
 
@@ -155,8 +155,11 @@ function ashe_about_page_output() {
 				<thead>
 					<tr>
 						<th>
-							<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/'); ?>" target="_blank" class="button button-primary button-hero">
+							<a href="<?php echo esc_url('http://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-section-getpro-btn'); ?>" target="_blank" class="button button-primary button-hero">
 								<?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?>
+							</a>
+							<a href="<?php echo esc_url('http://wp-royal.com/ashe-trial/?ref=ashe-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
+								<?php esc_html_e( 'Try Ashe Pro Trial', 'ashe' ); ?>
 							</a>
 						</th>
 						<th>Ashe</th>
@@ -400,8 +403,12 @@ function ashe_about_page_output() {
 					<tr>
 						<td></td>
 						<td colspan="2">
-							<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/'); ?>" target="_blank" class="button button-primary button-hero">
+							<a href="<?php echo esc_url('http://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-section-getpro-btn'); ?>" target="_blank" class="button button-primary button-hero">
 								<?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?>
+							</a>
+							<br><br>
+							<a href="<?php echo esc_url('http://wp-royal.com/ashe-trial/?ref=ashe-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
+								<?php esc_html_e( 'Try Ashe Pro Trial', 'ashe' ); ?>
 							</a>
 						</td>
 					</tr>

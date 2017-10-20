@@ -5,7 +5,7 @@
 */
 function ashe_setup() {
 	// Make theme available for translation
-	load_theme_textdomain( 'ashe' );
+	load_theme_textdomain( 'ashe', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -64,9 +64,35 @@ function ashe_setup() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+
+	// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'ashe_activation_notice' );
+	}
 	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
+
+// Notice after Theme Activation
+function ashe_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible">';
+		echo '<p>'. esc_html__( 'Thank you for choosing Ashe! Now, we higly recommend you to visit our welcome page.', 'ashe' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary">'. esc_html__( 'Get Started with Ashe', 'ashe' ) .'</a></p>';
+	echo '</div>';
+}
+
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function ashe_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'ashe_pingback_header' );
 
 
 /*
@@ -547,6 +573,23 @@ if ( ! function_exists('ashe_remove_wc_breadcrumbs') ) {
 }
 add_action( 'init', 'ashe_remove_wc_breadcrumbs' );
 
+
+
+// Shop Per Page
+function ashe_set_shop_post_per_page() {
+	return 9;
+}
+add_filter( 'loop_shop_per_page', 'ashe_set_shop_post_per_page', 20 );
+
+
+
+// Pagination
+remove_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
+
+function woocommerce_pagination() {
+	get_template_part( 'templates/grid/blog', 'pagination' );
+}
+add_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
 
 /*
 ** Incs: Theme Customizer

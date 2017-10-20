@@ -21,35 +21,20 @@
 				<div class="copyright-info">
 				<?php
 
+				$copyright = ashe_options( 'page_footer_copyright' );
+				$copyright = str_replace( '$year', date('Y'), $copyright);
+				$copyright = str_replace( '$copy', '&copy;', $copyright);
+
 				// some allowed HTML
-				echo wp_kses( ashe_options( 'page_footer_copyright' ), array( 
-					'a' => array(
-						'href' 		=> array(),
-						'title' 	=> array(),
-						'_blank'	=> array()
-					),
-					'img' => array(
-						'src' 		=> array(),
-						'alt' 		=> array(),
-						'width'		=> array(),
-						'height'	=> array(),
-						'style'		=> array(),
-						'class'		=> array(),
-						'id'		=> array()
-					),
-					'br' 	 => array(),
-					'em' 	 => array(),
-					'strong' => array()
-				) );
+				echo wp_kses_post( $copyright );
 
 				?>
 				</div>
-				<?php 
-				$credit_link = 'http://wp-royal.com/';
-				?>
+				
+				<?php $credit_link = 'http://wp-royal.com/?ref=demo-ashe-free-footer-copyright'; ?>
 				<div class="credit">
 					<?php esc_html_e( 'Ashe Theme by ', 'ashe' ); ?>
-					<a href="<?php echo esc_attr( $credit_link ); ?>">
+					<a href="<?php echo esc_url( $credit_link ); ?>">
 					<?php esc_html_e( 'Royal-Flush', 'ashe' ); ?>
 					</a>
 				</div>

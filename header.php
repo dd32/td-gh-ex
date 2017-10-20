@@ -9,6 +9,9 @@
 
 <body <?php body_class(); ?>>
 
+	<!-- Preloader -->
+	<?php get_template_part( 'templates/header/preloader' ); ?>
+
 	<!-- Page Wrapper -->
 	<div id="page-wrap">
 

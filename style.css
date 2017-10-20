@@ -4,7 +4,7 @@ Theme URI: http://wp-royal.com/ashe-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Clean and minimalist blogging theme.
-Version: 0.6
+Version: 0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -31,6 +31,7 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, cu
 15.0 Page Footer
 16.0 Typography
 17.0 Pages
+18.0 Preloader
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -283,7 +284,6 @@ img,
 iframe,
 embed {
   max-width: 100%;
-  height: auto;
 }
 
 table {
@@ -508,7 +508,7 @@ pre {
 .comment-text h4,
 .comment-text h5,
 .comment-text h6 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -684,7 +684,7 @@ sup {
 }
 
 #top-menu ul ul {
-  top: 0;
+  top: -1px;
   left: 100%;
 }
 
@@ -692,7 +692,7 @@ sup {
   display: none;
   position: absolute;
   z-index: 130;   
-  width: 200px;
+  width: 170px;
   text-align: left;
   border-style: solid;
   border-width: 1px;
@@ -932,6 +932,7 @@ sup {
 .slider-data {
   margin-bottom: 20px;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -1286,7 +1287,7 @@ sup {
 
 #featured-links h4 {
   display: inline-block;
-  padding: 7px 20px;
+  padding: 11px 20px;
   font-family: 'Open Sans';
   font-size: 13px;
   font-weight: 600;
@@ -1520,28 +1521,28 @@ sup {
 }
 
 
+
 /*--------------------------------------------------------------
 10.0 Blog Pagination
 --------------------------------------------------------------*/
 
 .blog-pagination {
+  position: relative;
+  overflow: hidden;
   text-align: center;
   padding: 0px 0 50px;
 }
 
-.blog-pagination .page-numbers {
-  display: inline-block;
-  line-height: 40px;
-  padding: 0 15px;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 2px;
+/* 10.1 Default */
+
+.previous-page a,
+.next-page a {
+  font-weight: 600;
   text-transform: uppercase;
 }
 
-/* 10.1 Default */
-#page-content .blog-pagination .previous-page a,
-#page-content .blog-pagination .next-page a {
+#page-content .blog-pagination.default .previous-page a,
+#page-content .blog-pagination.default .next-page a {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 2px;
@@ -1557,30 +1558,39 @@ sup {
 }
 
 /* 10.2 Numeric */
-.blog-pagination.numeric .nav-links {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  cursor: default;
+.blog-pagination.numeric a,
+.blog-pagination.numeric span {
+  display: inline-block;
+  padding: 14px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0 2px;
 }
 
-.blog-pagination.numeric a.prev {
+.blog-pagination.numeric .numeric-prev-page {
   position: absolute;
   top: 0;
   left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.blog-pagination.numeric a.next {
+.blog-pagination.numeric .numeric-next-page {
   position: absolute;
   top: 0;
   right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* 10.3 Load More / Infinite Scroll */
 .blog-pagination.load-more a {
   display: inline-block;
-  padding: 0 20px;
-  line-height: 40px;
+  padding: 14px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .blog-pagination.infinite a {
@@ -1594,7 +1604,9 @@ sup {
   width: 100% !important;
   height: 100% !important;
   z-index: 1300;
-  font-size: 30px;
+  font-size: 26px;
+  list-style-position: 2px;
+  text-transform: uppercase;
   list-style-position: 1px;
 }
 
@@ -1605,6 +1617,7 @@ sup {
 .infscr-loading-disabled #infscr-loading {
   display: none !important;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -2758,4 +2771,27 @@ body,
 
 .page-404 p a {
   text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------
+18.0 Preloader
+--------------------------------------------------------------*/
+
+.ashe-preloader-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+}
+
+.ashe-preloader-wrap > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }

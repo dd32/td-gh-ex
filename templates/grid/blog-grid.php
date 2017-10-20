@@ -75,7 +75,7 @@
 
 					<?php if ( ashe_options( 'blog_page_show_author' ) === true ) : ?>
 					<span class="post-author">
-						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
+						<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>">
 							<?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?>
 						</a>
 						<?php the_author_posts_link(); ?>	

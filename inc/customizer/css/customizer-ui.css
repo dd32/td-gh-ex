@@ -34,6 +34,12 @@
 	padding-bottom: 20px
 }
 
+#customize-control-ashe_options-top_bar_label,
+#customize-control-ashe_options-preloader_label,
+#customize-control-ashe_options-social_media_window {
+	padding-bottom: 8px !important;
+}
+
 .customize-control.customize-control-color,
 .customize-control.customize-control-color .wp-color-result {
 	padding-bottom: 0;
@@ -61,6 +67,12 @@ li[id*="customize-control-ashe_options-social_media_icon"] select {
 
 li[id*="customize-control-ashe_options-social_media_icon"] span {
 	float: left;
+}
+
+/* Copyright */
+#customize-control-ashe_options-page_footer_copyright strong {
+  background-color: #eee;
+  padding: 0 5px;
 }
 
 /* Custom CSS */
@@ -113,4 +125,20 @@ li[id*="pro_version"] a:hover {
 
 #accordion-section-ashe_pro h3:after {
   color: #fff !important;
+}
+
+.customize-control-pro_options .control-lock {
+	display: none !important;
+}
+
+#customize-control-pro_version_ ul li p a {
+	padding: 0 !important;
+	background-color: transparent !important;
+	color: #0073aa !important;
+	box-shadow: none !important;
+}
+
+#customize-control-pro_version_ h3 span {
+	color: red;
+	font-weight: bold;
 }

@@ -119,5 +119,15 @@
 		// Add bottom space to tabs
 		$('.tab-title').prev('li').not('.customize-section-description-container').css( 'padding-bottom', '20px' );
 
+
+	/*
+	** Fixes
+	*/
+	$('#customize-control-display_header_text').find('input').change(function(){
+		var blogname = $('#customize-control-blogname').find('input').val();
+		$('#customize-control-blogname').find('input').val( blogname + ' ').trigger('keyup');
+		$('#customize-control-blogname').find('input').val( blogname ).trigger('keyup');
+	});
+
 	}); // wp.customize ready
 })( jQuery );

@@ -135,11 +135,11 @@ table td {
 }
 
 .blog-pagination.default .previous-page {
-  float: right;
+	float: right;
 }
 
 .blog-pagination.default .next-page {
-  float: left;
+	float: left;
 }
 
 .blog-pagination .fa-long-arrow-left:before {
@@ -150,23 +150,19 @@ table td {
 	content: "\f177";
 }
 
-.blog-pagination.numeric a.prev {
+.numeric-prev-page {
 	right: 0;
 	left: auto;
 }
 
-.blog-pagination.numeric a.next {
+.blog-pagination.numeric .numeric-prev-page {
+	right: 0;
+	left: auto;
+}
+
+.blog-pagination.numeric .numeric-next-page {
 	left: 0;
 	right: auto;
-}
-
-.post-tags {
-	text-align: right;
-}
-
-.single-post .previous-post {
-	right: 0;
-	left: auto;
 }
 
 .single-post .next-post {

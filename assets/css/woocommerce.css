@@ -487,7 +487,8 @@ a.added_to_cart.wc-forward {
 }
 
 .woocommerce ul.products li.product .star-rating {
-    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .woocommerce #page-content ul.products li.product .button,

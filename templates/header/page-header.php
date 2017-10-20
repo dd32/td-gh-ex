@@ -19,9 +19,7 @@
 				</a>
 				
 				<?php else : ?>
-
-				<a href="<?php echo esc_url(home_url('/')); ?>"><?php echo bloginfo( 'title' ); ?></a>
-
+				<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
 				<?php endif; ?>
 
 				<?php if ( display_header_text() ) : ?>

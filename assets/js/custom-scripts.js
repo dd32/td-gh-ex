@@ -94,7 +94,7 @@ jQuery(document).ready(function( $ ) {
 
 	// Sticky Sidebar
 	function stickySidebar() {
-		if ( $( '#page-content' ).data('sidebar-sticky') === 1 ) {		
+		if ( $( '.main-content' ).data('sidebar-sticky') === 1 ) {		
 			var SidebarOffset = 0;
 
 			if ( $("#main-nav").attr( 'data-fixed' ) === '1' ) {
@@ -102,7 +102,7 @@ jQuery(document).ready(function( $ ) {
 			}
 
 			$('.sidebar-left,.sidebar-right').stick_in_parent({
-				parent: "#page-content",
+				parent: ".main-content",
 				offset_top: SidebarOffset,
 				spacer: '.sidebar-left-wrap,.sidebar-right-wrap'
 			});
@@ -159,6 +159,21 @@ jQuery(document).ready(function( $ ) {
 			$('.scrolltop').fadeOut(350);
 		}
 	});
+
+
+/*
+** Preloader =====
+*/
+	if ( $('.ashe-preloader-wrap').length ) {
+
+		$( window ).on( 'load', function() {
+			setTimeout(function(){
+				$('.ashe-preloader-wrap > div').fadeOut( 600 );
+				$('.ashe-preloader-wrap').fadeOut( 1500 );
+			}, 300);
+		});
+
+	}
 
 
 /*

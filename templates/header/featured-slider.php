@@ -78,13 +78,12 @@ $slider_data .= '}';
 
 	<div class="slider-item">
 
-		<?php if ( ashe_options( 'general_slider_width' ) === 'full' ) : ?>
-		<div class="slider-item-bg" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>);"></div>
-
-		<?php else : ?>	
-		<img src="<?php the_post_thumbnail_url('ashe-slider-full-thumbnail'); ?>" alt="">
+		<?php if ( $slider_columns === '1' ) : ?>
+			<div class="slider-item-bg" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>);"></div>
+		<?php else : ?>
+			<img src="<?php the_post_thumbnail_url('ashe-slider-grid-thumbnail'); ?>" alt="">
 		<?php endif; ?>
-	
+
 		<div class="cv-container image-overlay">
 			<div class="cv-outer">
 				<div class="cv-inner">
