@@ -69,6 +69,11 @@ if ( ! function_exists( 'applicator_enhancements_styles_scripts' ) ) {
         wp_localize_script( 'applicator-script--functionalities', 'aplDataSubNav', $applicator_l10n );
         
         
+        // Breadcrumbs Icons
+        $applicator_l10n['breadcrumbsIco']      = $arrow_icon;
+        wp_localize_script( 'applicator-script--functionalities', 'aplDataBreadcrumbs', $applicator_l10n );
+        
+        
         // Page-Nav
         $applicator_l10n['pageNavArrowIco']      = $arrow_icon;
         wp_localize_script( 'applicator-script--functionalities', 'aplDataPageNav', $applicator_l10n );
@@ -92,14 +97,15 @@ if ( ! function_exists( 'applicator_functionalities_css_class_names' ) ) {
         $r = array(
             
             // Functionalities
-            'go-content-nav',
-            'main-search',
-            'main-menu',
-            'easy-access-nav',
-            'sub-nav',
-            'go-start-nav',
+            'breadcrumbs',
             'comments',
+            'easy-access-nav',
+            'go-content-nav',
+            'go-start-nav',
+            'main-menu',
+            'main-search',
             'page-nav',
+            'sub-nav',
         ); 
         
         echo ' ' . $applicator_term;

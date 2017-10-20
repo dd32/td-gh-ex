@@ -75,7 +75,9 @@
 .applicator--theme--page-nav .page-nav .ellipsis--delimiter,
 .applicator--theme--page-nav .blog .page-navi:not( .adjacent-navi ),
 .applicator--theme--post-format--status .format-status .published-post-author,
-.view--inner .main-banner
+.view--inner .main-banner,
+.applicator--theme--post-format--status .format-status .post-title,
+.applicator--theme--post-format--status .format-status .apl-post-categories
 {
     position:absolute;margin:-1px;padding:0;width:1px;min-width:auto;height:1px;min-height:auto;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
 }
@@ -264,15 +266,6 @@
     text-decoration: underline;
 }
 
-.comment-md---cr
-{
-    padding-top: 1em;
-    padding-top: var(--component--spacing-y);
-    
-    padding-bottom: 1em;
-    padding-bottom: var(--component--spacing-y);
-}
-
 
 
 
@@ -297,6 +290,8 @@
 /* ------------------ Copyright ------------------ */
 .copyright
 {
+    background-color: white;
+    
     color: hsla(0, 0%, 0%, .5);
     color: var(--copyright-info--fg-color);
 }
@@ -875,6 +870,29 @@
 
 
 
+/* ------------------ Rounded Rectangles ------------------ */
+.applicator--theme--rounded-rectangles.applicator--theme--comments-count-action .comments-count---txt,
+.applicator--theme--rounded-rectangles.applicator--theme--edit-action .edit-post-axn---a_l,
+.applicator--theme--rounded-rectangles.applicator--theme--edit-action .edit-com-axn---a_l,
+.applicator--theme--rounded-rectangles .main-nav .page_item_has_children > .children > .page_item > a,
+.applicator--theme--rounded-rectangles .main-nav .menu-item-has-children > .sub-menu > .menu-item > a,
+.applicator--theme--rounded-rectangles .input-text,
+.applicator--theme--rounded-rectangles input[type="text"],
+.applicator--theme--rounded-rectangles input[type="password"],
+.applicator--theme--rounded-rectangles select,
+.applicator--theme--rounded-rectangles .b_l,
+.applicator--theme--rounded-rectangles input[type="submit"],
+.applicator--theme--rounded-rectangles.applicator--theme--post-meta .post-pub-d-stamp-dtstamp---a_l,
+.applicator--theme--rounded-rectangles.applicator--theme--comment-meta .comment-pub-d-stamp-dtstamp---a_l,
+.applicator--theme--rounded-rectangles.applicator--theme--search-result .search-results .main-content-heading .count---line
+{
+    border-radius: .125em;
+}
+
+
+
+
+
 
 
 /* ------------------ Comments ------------------ */
@@ -884,12 +902,12 @@
     color: var(--links--fg-color);
 }
 
-.applicator--theme--comments.applicator--comments .comments-toggle---b .show-hide---l
+.applicator--theme--comments.applicator--comments .comments-toggle---b .show-hide---txt
 {
     text-decoration: none;
 }
 
-.applicator--theme--comments.applicator--comments .comments-toggle---b:hover .show-hide---l
+.applicator--theme--comments.applicator--comments .comments-toggle---b:hover .show-hide---txt
 {
     text-decoration: underline;
 }
@@ -944,6 +962,7 @@
 .applicator--theme--quote .post-content---ct_cr > blockquote
 {
     position: relative;
+    z-index: 1;
     
     padding-left: 2em;
     

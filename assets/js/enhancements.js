@@ -226,7 +226,7 @@
         } );
         
     
-        // Smooth Scroll to #start
+        // Smooth Scroll to root
         $goStartNaviA.bind( 'click.applicator', function( e ) {
 
             e.preventDefault();
@@ -411,12 +411,13 @@
         
         
         // Find if a Child Element Has Focus
+        // Deactivate if no focus is present and if user is Tab key is active
         // http://ub4.underblob.com/find-if-a-child-element-has-focus/
         $cp.on( 'focusout.applicator', function() {
             var $this = $( this );
             setTimeout( function() {
                 var hasFocus = !! ( $this.find( ':focus' ).length > 0 );
-                if ( ! hasFocus ) {
+                if ( $html.hasClass( tabKeyActCss ) && ! hasFocus ) {
                     mainMenuDeactivate();
                 }
             }, 10 );
@@ -479,6 +480,7 @@
             
             $commentsShowL = aplDataComments.commentsShowL,
             $commentsHideL = aplDataComments.commentsHideL,
+            $commentsDismissIco = $( aplDataComments.commentsDismissIco ),
             
             aplCommentsOnCSS = 'applicator--comments--active',
             aplCommentsOffCSS = 'applicator--comments--inactive',
@@ -496,12 +498,17 @@
         ( function() {
             
             var commentsToggleTerm = 'comments-toggle';
+            
+            commentsToggleButtonTextLabelTxtMU = $( '<span />', {
+                'class': 'txt ' + showHideTxtCss,
+                'text': $commentsHideL
+            } );
 
             // Text Label
             commentsToggleButtonTextLabelMU = $( '<span />', {
-                'class': 'l' + ' ' + showHideTxtLabelCss,
-                'text': $commentsHideL
-            } );
+                'class': 'l' + ' ' + showHideTxtLabelCss
+            } )
+                .append( commentsToggleButtonTextLabelTxtMU );
 
             // Button Label
             commentsToggleButtonLabelMU = $( '<span />', {
@@ -538,10 +545,11 @@
         // Define elements after inserting the markup
         $commentsToggleButton = $( '#comments-toggle---b' );
         $commentsToggleButtonTextLabel = $commentsToggleButton.find( '.show-hide---l' );
+        $commentsToggleButtonTextLabelTxt = $commentsToggleButton.find( '.show-hide---txt' );
         
         // To insert beside the button label
         $commentsCount = $( '#comments-header-aside' ).find( '.comments-count---txt' );
-        $commentsCount.clone().insertAfter( $commentsToggleButtonTextLabel );
+        $commentsCount.clone().insertAfter( $commentsToggleButtonTextLabelTxt );
         
         
         // Activate Comments
@@ -562,10 +570,17 @@
             } );
             
             // Swap text label and icon
-            $commentsToggleButtonTextLabel.text( $commentsHideL );
+            $commentsToggleButtonTextLabelTxt.text( $commentsHideL );
+            $commentsToggleButtonTextLabel.append( $commentsDismissIco );
             
             // Mimic Target
             $window.scrollTop( $comments.position().top );
+        }
+        
+        
+        // https://stackoverflow.com/a/5298684
+        function removeHash() { 
+            window.history.pushState( "", document.title, window.location.pathname );
         }
         
         
@@ -587,7 +602,8 @@
             } );
             
             // Swap text label and icon
-            $commentsToggleButtonTextLabel.text( $commentsShowL );
+            $commentsToggleButtonTextLabelTxt.text( $commentsShowL );
+            $commentsDismissIco.remove();
         }
         
         // Initialize Deactivate
@@ -606,7 +622,8 @@
             else if ( $cp.hasClass( commentsOnCSS ) ) {
                 
                 commentsDeactivate();
-                location.hash = '';
+                
+                removeHash();
             }
         }
         
@@ -633,39 +650,24 @@
         }() );
         
         
+        // Hash
         $document.ready( function () {
             
-            if ( window.location.hash.indexOf( '#comment' ) !== -1 ) {
-                commentsActivate();
-            }
-        
-        } );
-        
-        
-        /*
-        // Deactivate via external click
-        $document.on( 'touchmove.applicator click.applicator', function ( e ) {
-            
-            if ( $cp.hasClass( commentsOnCSS ) && ( ! $( e.target ).closest( $commentsToggleButton ).length && ! $( e.target ).closest( $commentModuleCT ).length && ! $( e.target ).closest( $commentsCountAction ).length ) ) {
-                commentsDeactivate();
-            }
-        
-        } );
-
-        
-        // Deactivate via keyboard ESC key
-        $window.load( function() {
-            
-            $document.on( 'keyup.applicator', function ( e ) {
-                
-                if ( $cp.hasClass( commentsOnCSS ) && e.keyCode == 27 ) {
-                    commentsDeactivate();
+            // https://stackoverflow.com/a/19889034
+            if ( window.location.hash ) {
+                if ( window.location.hash.indexOf( 'comment' ) == 1 || window.location.hash.indexOf( 'comment' ) != -1 ) {
+                    commentsActivate();
                 }
-                
+            }
+            
+            // https://stackoverflow.com/a/14970748
+            $window.on( 'hashchange', function() {
+                if ( window.location.hash.indexOf( 'comment' ) == 1 || window.location.hash.indexOf( 'comment' ) != -1 ) {
+                    commentsActivate();
+                }
             } );
         
         } );
-        */
 
     }
     initComments( $( '#comment-md' ) );
@@ -1408,6 +1410,17 @@
         $nextPageNaviLabel.append( $pageNavArrowIco );
         
     } )();
+    
+    
+    
+    
+    
+    /* ------------------------ Breadcrumbs ------------------------ */
+    var $breadcrumbsNaviAncestor = $( '.breadcrumbs-navi--ancestor' ),
+        $breadcrumbsLink = $breadcrumbsNaviAncestor.find( '.breadcrumbs-navi---a' ),
+        $breadcrumbsIco = $( aplDataBreadcrumbs.breadcrumbsIco );
+    
+    $breadcrumbsLink.after( $breadcrumbsIco );
     
     
     
