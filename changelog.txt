@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.4 =
+* 10/20/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:2
+
 = 1.0.3 =
 * 10/13/2017
 * https://themes.trac.wordpress.org/ticket/45211#comment:25

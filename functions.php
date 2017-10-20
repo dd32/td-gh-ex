@@ -29,7 +29,7 @@ function ariel_setup() {
 	global $ariel_defaults;
 
 	// Make theme available for translation.
-	load_theme_textdomain( 'ariel' get_template_directory() . '/lang' ); 
+	load_theme_textdomain( 'ariel', get_template_directory() . '/lang' ); 
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
