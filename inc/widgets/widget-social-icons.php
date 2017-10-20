@@ -20,7 +20,7 @@ class aThemes_Social_Icons extends WP_Widget {
 	 		'athemes_social_icons',
 			'AT Social Icons',
 			array(
-				'description'	=> __( 'Display links to your social network profiles, enter full profile URLs', 'athemes' )
+				'description'	=> __( 'Display links to your social network profiles, enter full profile URLs', 'hiero' )
 			)
 		);
 	}
@@ -34,74 +34,74 @@ class aThemes_Social_Icons extends WP_Widget {
 			// Title
 			'widget_title' => array(
 				'athemes_widgets_name'			=> 'widget_title',
-				'athemes_widgets_title'			=> __( 'Title', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Title', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			
 			// Other fields
 			'twitter' => array (
 				'athemes_widgets_name'			=> 'twitter',
-				'athemes_widgets_title'			=> __( 'Twitter', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Twitter', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'facebook' => array (
 				'athemes_widgets_name'			=> 'facebook',
-				'athemes_widgets_title'			=> __( 'Facebook', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Facebook', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'linkedin' => array (
 				'athemes_widgets_name'			=> 'linkedin',
-				'athemes_widgets_title'			=> __( 'LinkedIn', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'LinkedIn', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'gplus' => array (
 				'athemes_widgets_name'			=> 'gplus',
-				'athemes_widgets_title'			=> __( 'Google+', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Google+', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'pinterest' => array (
 				'athemes_widgets_name'			=> 'pinterest',
-				'athemes_widgets_title'			=> __( 'Pinterest', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Pinterest', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'youtube' => array (
 				'athemes_widgets_name'			=> 'youtube',
-				'athemes_widgets_title'			=> __( 'YouTube', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'YouTube', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'vimeo' => array (
 				'athemes_widgets_name'			=> 'vimeo',
-				'athemes_widgets_title'			=> __( 'Vimeo', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Vimeo', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'flickr' => array (
 				'athemes_widgets_name'			=> 'flickr',
-				'athemes_widgets_title'			=> __( 'Flickr', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Flickr', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'dribbble' => array (
 				'athemes_widgets_name'			=> 'dribbble',
-				'athemes_widgets_title'			=> __( 'Dribbble', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Dribbble', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'tumblr' => array (
 				'athemes_widgets_name'			=> 'tumblr',
-				'athemes_widgets_title'			=> __( 'Tumblr', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Tumblr', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'instagram' => array (
 				'athemes_widgets_name'			=> 'instagram',
-				'athemes_widgets_title'			=> __( 'Instagram', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Instagram', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'lastfm' => array (
 				'athemes_widgets_name'			=> 'lastfm',
-				'athemes_widgets_title'			=> __( 'Last.fm', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Last.fm', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'soundcloud' => array (
 				'athemes_widgets_name'			=> 'soundcloud',
-				'athemes_widgets_title'			=> __( 'SoundCloud', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'SoundCloud', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 		);

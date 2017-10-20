@@ -74,7 +74,7 @@ add_filter( 'excerpt_more', 'athemes_auto_excerpt_more' );
  * Returns a "Continue Reading" link for excerpts
  */
 function athemes_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '" class="more-link">' . __( 'Continue Reading <span class="meta-nav">&rarr;</span>', 'athemes' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '" class="more-link">' . __( 'Continue Reading', 'hiero' ) . ' <span class="meta-nav">&rarr;</span></a>';
 }
 
 /**
@@ -132,7 +132,7 @@ function athemes_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'athemes' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'hiero' ), max( $paged, $page ) );
 
 	return $title;
 }

@@ -10,7 +10,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<title><?php wp_title( '-', true, 'right' ); ?></title>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">

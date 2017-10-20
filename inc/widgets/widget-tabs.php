@@ -20,7 +20,7 @@ class aThemes_Tabs extends WP_Widget {
 	 		'athemes_tabs',
 			'AT Tabs',
 			array(
-				'description'	=> __( 'Display a tabbed content widget for your popular posts, recent posts and popular tags.', 'athemes' )
+				'description'	=> __( 'Display a tabbed content widget for your popular posts, recent posts and popular tags.', 'hiero' )
 			)
 		);
 	}
@@ -34,12 +34,12 @@ class aThemes_Tabs extends WP_Widget {
 			// Other fields
 			'tabs_post_count' => array (
 				'athemes_widgets_name'				=> 'tabs_post_count',
-				'athemes_widgets_title'			=> __( 'Posts to Show', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Posts to Show', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'tabs_tag_count' => array (
 				'athemes_widgets_name'				=> 'tabs_tag_count',
-				'athemes_widgets_title'			=> __( 'Tags to Show', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Tags to Show', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 		);
@@ -65,9 +65,9 @@ class aThemes_Tabs extends WP_Widget {
 		?>
 
 		<ul id="widget-tab" class="clearfix widget-tab-nav">
-			<li class="active"><a href="#widget-tab-popular"><?php _e( 'Popular', 'athemes' ); ?></a></li>
-			<li><a href="#widget-tab-latest"><?php _e('Latest', 'athemes' ); ?></a></li>
-			<li><a href="#widget-tab-tags"><?php _e( 'Tags', 'athemes' ); ?></a></li>
+			<li class="active"><a href="#widget-tab-popular"><?php _e( 'Popular', 'hiero' ); ?></a></li>
+			<li><a href="#widget-tab-latest"><?php _e('Latest', 'hiero' ); ?></a></li>
+			<li><a href="#widget-tab-tags"><?php _e( 'Tags', 'hiero' ); ?></a></li>
 		</ul>
  
 		<div class="widget-tab-content">
@@ -82,12 +82,12 @@ class aThemes_Tabs extends WP_Widget {
 						</div>
 						<div class="widget-entry-summary">
 							<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-							<span><?php comments_number( __( 'No Comments', 'athemes' ), __( '1 Comment', 'athemes' ), __( '% Comments', 'athemes' ) ); ?></span>
+							<span><?php comments_number( __( 'No Comments', 'hiero' ), __( '1 Comment', 'hiero' ), __( '% Comments', 'hiero' ) ); ?></span>
 						</div>
 						<?php } else { ?>
 						<div class="widget-entry-content">
 							<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-							<span><?php comments_number( __( 'No Comments', 'athemes' ), __( '1 Comment', 'athemes' ), __( '% Comments', 'athemes' ) ); ?></span>
+							<span><?php comments_number( __( 'No Comments', 'hiero' ), __( '1 Comment', 'hiero' ), __( '% Comments', 'hiero' ) ); ?></span>
 						</div>
 						<?php } ?>
 					</li>

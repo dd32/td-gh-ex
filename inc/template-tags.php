@@ -31,21 +31,21 @@ function athemes_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'athemes' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'hiero' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="ico-left-open"></i>', 'Previous post link', 'athemes' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="ico-right-open"></i>', 'Next post link', 'athemes' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav"><i class="ico-left-open"></i></span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav"><i class="ico-right-open"></i></span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="ico-left-open"></i></span> Older Articles', 'athemes' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav"><i class="ico-left-open"></i></span> ' . __( 'Older Articles', 'hiero' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer Articles <span class="meta-nav"><i class="ico-right-open"></i></span>', 'athemes' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer Articles', 'hiero' ) . ' <span class="meta-nav"><i class="ico-right-open"></i></span>' ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -68,7 +68,7 @@ function athemes_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'athemes' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'athemes' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'hiero' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'hiero' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -86,16 +86,16 @@ function athemes_comment( $comment, $args, $depth ) {
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( _x( '%1$s', '1: date, 2: time', 'athemes' ), get_comment_date(), get_comment_time() ); ?>
+								<?php printf( '%1$s', get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
 					</div><!-- .comment-metadata -->
 
-					<?php printf( __( '%s', 'athemes' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
 				</div><!-- .comment-author -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'athemes' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'hiero' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -174,7 +174,7 @@ function athemes_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'athemes' ),
+	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'hiero' ),
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
@@ -182,7 +182,7 @@ function athemes_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'athemes' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'hiero' ), get_the_author() ) ),
 			esc_html( get_the_author() )
 		)
 	);

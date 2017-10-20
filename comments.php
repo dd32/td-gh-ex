@@ -27,7 +27,7 @@ if ( post_password_required() )
 		<h3 class="widget-title">
 			<span>
 			<?php
-				printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'athemes' ),
+				printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'hiero' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 			</span>
@@ -47,8 +47,8 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'athemes' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'athemes' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'hiero' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'hiero' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
@@ -58,7 +58,7 @@ if ( post_password_required() )
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'athemes' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'hiero' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form( array( 'comment_notes_after' => '' ) ); ?>

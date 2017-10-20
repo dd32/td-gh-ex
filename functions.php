@@ -19,10 +19,10 @@ function athemes_setup() {
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /lang/ directory
-	 * If you're building a theme based on aThemes, use a find and replace
-	 * to change 'athemes' to the name of your theme in all the template files
+	 * If you're building a theme based on Hiero, use a find and replace
+	 * to change 'hiero' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'athemes', get_template_directory() . '/lang' );
+	load_theme_textdomain( 'hiero', get_template_directory() . '/lang' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -49,8 +49,16 @@ function athemes_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'main' => __( 'Main Menu', 'athemes' ),
+		'main' => __( 'Main Menu', 'hiero' ),
 	) );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 }
 endif; // athemes_setup
 add_action( 'after_setup_theme', 'athemes_setup' );
@@ -60,7 +68,7 @@ add_action( 'after_setup_theme', 'athemes_setup' );
  */
 function athemes_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'athemes' ),
+		'name'          => __( 'Sidebar', 'hiero' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -68,7 +76,7 @@ function athemes_widgets_init() {
 		'after_title'   => '</span></h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Header', 'athemes' ),
+		'name'          => __( 'Header', 'hiero' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -76,7 +84,7 @@ function athemes_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Sub Footer 1', 'athemes' ),
+		'name'          => __( 'Sub Footer 1', 'hiero' ),
 		'id'            => 'sidebar-3',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -84,7 +92,7 @@ function athemes_widgets_init() {
 		'after_title'   => '</span></h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Sub Footer 2', 'athemes' ),
+		'name'          => __( 'Sub Footer 2', 'hiero' ),
 		'id'            => 'sidebar-4',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -92,7 +100,7 @@ function athemes_widgets_init() {
 		'after_title'   => '</span></h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Sub Footer 3', 'athemes' ),
+		'name'          => __( 'Sub Footer 3', 'hiero' ),
 		'id'            => 'sidebar-5',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -100,7 +108,7 @@ function athemes_widgets_init() {
 		'after_title'   => '</span></h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Sub Footer 4', 'athemes' ),
+		'name'          => __( 'Sub Footer 4', 'hiero' ),
 		'id'            => 'sidebar-6',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',

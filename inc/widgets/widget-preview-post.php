@@ -20,7 +20,7 @@ class aThemes_Preview_Post extends WP_Widget {
 	 		'athemes_preview_post',
 			'AT Preview Post',
 			array(
-				'description'	=> __( 'A widget that shows post/page preview', 'athemes' )
+				'description'	=> __( 'A widget that shows post/page preview', 'hiero' )
 			)
 		);
 	}
@@ -36,28 +36,28 @@ class aThemes_Preview_Post extends WP_Widget {
 			// Other fields
 			'post_id' => array (
 				'athemes_widgets_name'			=> 'post_id',
-				'athemes_widgets_title'			=> __( 'Post ID', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Post ID', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'number'
 			),
 			'display_title' => array (
 				'athemes_widgets_name'			=> 'display_title',
-				'athemes_widgets_title'			=> __( 'Show post title', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Show post title', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'checkbox'
 			),
 			'display_thumbnail' => array (
 				'athemes_widgets_name'			=> 'display_thumbnail',
-				'athemes_widgets_title'			=> __( 'Show featured image', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Show featured image', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'checkbox'
 			),
 			'display_excerpt' => array (
 				'athemes_widgets_name'			=> 'display_excerpt',
-				'athemes_widgets_title'			=> __( 'Show excerpt', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Show excerpt', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'checkbox'
 			),
 			'read_more_text' => array (
 				'athemes_widgets_name'			=> 'read_more_text',
-				'athemes_widgets_title'			=> __( 'Read more link text', 'athemes' ),
-				'athemes_widgets_description'	=> __( 'Leave empty for no link', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Read more link text', 'hiero' ),
+				'athemes_widgets_description'	=> __( 'Leave empty for no link', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 		);

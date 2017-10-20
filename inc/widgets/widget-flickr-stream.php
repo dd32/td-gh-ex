@@ -20,7 +20,7 @@ class aThemes_Flickr_Stream extends WP_Widget {
 	 		'athemes_flickr_stream',
 			'AT Flickr Stream',
 			array(
-				'description'	=> __( 'Displays your Flickr photos.', 'athemes' )
+				'description'	=> __( 'Displays your Flickr photos.', 'hiero' )
 			)
 		);
 	}
@@ -34,19 +34,19 @@ class aThemes_Flickr_Stream extends WP_Widget {
 			// Title
 			'widget_title' => array(
 				'athemes_widgets_name'			=> 'widget_title',
-				'athemes_widgets_title'		=> __( 'Title', 'athemes' ),
+				'athemes_widgets_title'		=> __( 'Title', 'hiero' ),
 				'athemes_widgets_field_type'	=> 'text'
 			),
 
 			// Other fields
 			'flickr_id' => array (
 				'athemes_widgets_name'			=> 'flickr_id',
-				'athemes_widgets_title'			=> __( 'Flickr ID', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Flickr ID', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'photo_count' => array (
 				'athemes_widgets_name'			=> 'photo_count',
-				'athemes_widgets_title'			=> __( 'Number of Photos', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Number of Photos', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'select',
 				'athemes_widgets_field_options'	=> array(
 					'4' 	=> '4',
@@ -57,7 +57,7 @@ class aThemes_Flickr_Stream extends WP_Widget {
 			),
 			'photo_type' => array (
 				'athemes_widgets_name'			=> 'photo_type',
-				'athemes_widgets_title'			=> __( 'Type (user or group)', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Type (user or group)', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'select',
 				'athemes_widgets_field_options'	=> array(
 					'user' 		=> 'User',
@@ -66,7 +66,7 @@ class aThemes_Flickr_Stream extends WP_Widget {
 			),
 			'photo_display' => array (
 				'athemes_widgets_name'			=> 'photo_display',
-				'athemes_widgets_title'			=> __( 'Display', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Display', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'select',
 				'athemes_widgets_field_options'	=> array(
 					'latest'	=> 'Latest',

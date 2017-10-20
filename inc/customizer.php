@@ -18,7 +18,7 @@ function athemes_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'athemes_general',
         array(
-            'title' => __('General', 'athemes'),
+            'title' => __('General', 'hiero'),
             'priority' => 9,
         )
     );
@@ -35,7 +35,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'site_logo',
             array(
-               'label'          => __( 'Upload your logo', 'athemes' ),
+               'label'          => __( 'Upload your logo', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'site_logo',
@@ -56,7 +56,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'site_favicon',
             array(
-               'label'          => __( 'Upload your favicon', 'athemes' ),
+               'label'          => __( 'Upload your favicon', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'site_favicon',
@@ -76,7 +76,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'apple_touch_144',
             array(
-               'label'          => __( 'Upload your Apple Touch Icon (144x144 pixels)', 'athemes' ),
+               'label'          => __( 'Upload your Apple Touch Icon (144x144 pixels)', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'apple_touch_144',
@@ -96,7 +96,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'apple_touch_114',
             array(
-               'label'          => __( 'Upload your Apple Touch Icon (114x114 pixels)', 'athemes' ),
+               'label'          => __( 'Upload your Apple Touch Icon (114x114 pixels)', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'apple_touch_114',
@@ -116,7 +116,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'apple_touch_72',
             array(
-               'label'          => __( 'Upload your Apple Touch Icon (72x72 pixels)', 'athemes' ),
+               'label'          => __( 'Upload your Apple Touch Icon (72x72 pixels)', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'apple_touch_72',
@@ -136,7 +136,7 @@ function athemes_customize_register( $wp_customize ) {
             $wp_customize,
             'apple_touch_57',
             array(
-               'label'          => __( 'Upload your Apple Touch Icon (57x57 pixels)', 'athemes' ),
+               'label'          => __( 'Upload your Apple Touch Icon (57x57 pixels)', 'hiero' ),
 			   'type' 			=> 'image',
                'section'        => 'athemes_general',
                'settings'       => 'apple_touch_57',
@@ -147,8 +147,8 @@ function athemes_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'athemes_excerpt',
         array(
-            'title' => __('Content/Excerpt', 'athemes' ),
-			'description' => __('Check the boxes below to display the content instead of the excerpt.', 'athemes'),
+            'title' => __('Content/Excerpt', 'hiero' ),
+			'description' => __('Check the boxes below to display the content instead of the excerpt.', 'hiero'),
             'priority' => 10,
         )
     );
@@ -163,7 +163,7 @@ function athemes_customize_register( $wp_customize ) {
 		'athemes_home_excerpt',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Blog index', 'athemes'),
+			'label' => __('Blog index', 'hiero'),
 			'section' => 'athemes_excerpt',
 		)
 	);
@@ -178,7 +178,7 @@ function athemes_customize_register( $wp_customize ) {
 		'athemes_arch_excerpt',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Archives, tags, categories, author', 'athemes'),
+			'label' => __('Archives, tags, categories, author', 'hiero'),
 			'section' => 'athemes_excerpt',
 		)
 	);	
@@ -193,7 +193,7 @@ function athemes_customize_register( $wp_customize ) {
 		'athemes_search_excerpt',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Search', 'athemes'),
+			'label' => __('Search', 'hiero'),
 			'section' => 'athemes_excerpt',
 		)
 	);                  
@@ -202,7 +202,7 @@ function athemes_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'athemes_singles',
         array(
-            'title' => __('Single posts/pages', 'athemes'),
+            'title' => __('Single posts/pages', 'hiero'),
             'priority' => 13,
         )
     );
@@ -217,7 +217,7 @@ function athemes_customize_register( $wp_customize ) {
 		'athemes_post_img',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Check this box to show featured images on single posts', 'athemes'),
+			'label' => __('Check this box to show featured images on single posts', 'hiero'),
 			'section' => 'athemes_singles',
 		)
 	);
@@ -232,7 +232,7 @@ function athemes_customize_register( $wp_customize ) {
 		'athemes_page_img',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Check this box to show featured images on pages', 'athemes'),
+			'label' => __('Check this box to show featured images on pages', 'hiero'),
 			'section' => 'athemes_singles',
 		)
 	);
@@ -247,7 +247,7 @@ function athemes_customize_register( $wp_customize ) {
 		'author_bio',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Check this box to hide the author bio on single posts.', 'athemes'),
+			'label' => __('Check this box to hide the author bio on single posts.', 'hiero'),
 			'section' => 'athemes_singles',
 		)
 	);
@@ -266,7 +266,7 @@ function athemes_customize_register( $wp_customize ) {
 			$wp_customize,
 			'main_color',
 			array(
-				'label' => __('Main color', 'athemes'),
+				'label' => __('Main color', 'hiero'),
 				'section' => 'colors',
 				'settings' => 'main_color',
 				'priority' => 13
@@ -287,7 +287,7 @@ function athemes_customize_register( $wp_customize ) {
 			$wp_customize,
 			'site_title',
 			array(
-				'label' => __('Site title', 'athemes'),
+				'label' => __('Site title', 'hiero'),
 				'section' => 'colors',
 				'settings' => 'site_title',
 				'priority' => 14
@@ -308,7 +308,7 @@ function athemes_customize_register( $wp_customize ) {
 			$wp_customize,
 			'site_desc',
 			array(
-				'label' => __('Site description', 'athemes'),
+				'label' => __('Site description', 'hiero'),
 				'section' => 'colors',
 				'settings' => 'site_desc',
 				'priority' => 15
@@ -329,7 +329,7 @@ function athemes_customize_register( $wp_customize ) {
 			$wp_customize,
 			'entry_title',
 			array(
-				'label' => __('Entry title', 'athemes'),
+				'label' => __('Entry title', 'hiero'),
 				'section' => 'colors',
 				'settings' => 'entry_title',
 				'priority' => 16
@@ -350,7 +350,7 @@ function athemes_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_text',
 			array(
-				'label' => __('Text', 'athemes'),
+				'label' => __('Text', 'hiero'),
 				'section' => 'colors',
 				'settings' => 'body_text',
 				'priority' => 17
@@ -361,7 +361,7 @@ function athemes_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'athemes_typography',
         array(
-            'title' => __('Fonts', 'athemes' ),
+            'title' => __('Fonts', 'hiero' ),
             'priority' => 15,
         )
     );
@@ -400,7 +400,7 @@ function athemes_customize_register( $wp_customize ) {
 		'headings_fonts',
 		array(
 			'type' => 'select',
-			'label' => __('Select your desired font for the headings.', 'athemes'),
+			'label' => __('Select your desired font for the headings.', 'hiero'),
 			'section' => 'athemes_typography',
 			'choices' => $font_choices
 		)
@@ -417,7 +417,7 @@ function athemes_customize_register( $wp_customize ) {
 		'body_fonts',
 		array(
 			'type' => 'select',
-			'label' => __('Select your desired font for the body.', 'athemes'),
+			'label' => __('Select your desired font for the body.', 'hiero'),
 			'section' => 'athemes_typography',
 			'choices' => $font_choices
 		)

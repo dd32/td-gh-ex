@@ -20,7 +20,7 @@ class aThemes_Media_Embed extends WP_Widget {
 	 		'athemes_media_embed',
 			'AT Media Embed',
 			array(
-				'description'	=> __( 'Display media (video/slideshow) widget, support many sites including YouTube, Vimeo, Flickr, etc.', 'athemes' )
+				'description'	=> __( 'Display media (video/slideshow) widget, support many sites including YouTube, Vimeo, Flickr, etc.', 'hiero' )
 			)
 		);
 	}
@@ -34,24 +34,24 @@ class aThemes_Media_Embed extends WP_Widget {
 			// Title
 			'widget_title' => array(
 				'athemes_widgets_name'			=> 'widget_title',
-				'athemes_widgets_title'			=> __( 'Title', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Title', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			
 			// Other fields
 			'embed_url' => array (
 				'athemes_widgets_name'			=> 'embed_url',
-				'athemes_widgets_title'			=> __( 'Embed URL', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Embed URL', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'text'
 			),
 			'embed_width' => array (
 				'athemes_widgets_name'			=> 'embed_width',
-				'athemes_widgets_title'			=> __( 'Embed width in pixels', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Embed width in pixels', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'number'
 			),
 			'embed_description' => array (
 				'athemes_widgets_name'			=> 'embed_description',
-				'athemes_widgets_title'			=> __( 'Description', 'athemes' ),
+				'athemes_widgets_title'			=> __( 'Description', 'hiero' ),
 				'athemes_widgets_field_type'		=> 'textarea',
 				'athemes_widgets_allowed_tags'		=> '<strong>'
 			),

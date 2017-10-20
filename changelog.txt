@@ -1,5 +1,11 @@
 Changelog
 
+Hiero 1.8 - 11 Oct 2017
+-----------------------------
+- changed Text Domain from athemes to hiero;
+- replaced hard-coded Template Tag with WP Template Tag;
+- removed deprecated tags in stylesheet header.
+
 Hiero 1.7 - 31 Mar 2014
 -----------------------------
 - regenerated pot file;
