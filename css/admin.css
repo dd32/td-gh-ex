@@ -1,0 +1,30 @@
+/*  ----------------------------------------------------
+add customizer control style
+-------------------------------------------------------- */
+#customize-control-clients_overlay_color,#customize-control-contact_overlay_color,#customize-control-countertitlesub_color,#customize-control-countertitlenumber_color,#customize-control-counter_number_size,#customize-control-counter_title_size,#customize-control-counter_sectioncontentcolor,#customize-control-counter_buttoncolor,#customize-control-bestblog_counterfixed_image,#customize-control-bestblog_counterbg_image,#customize-control-bestblog_teambg_image,#customize-control-bestblog_teamfixed_image,#customize-control-bestblog_teambg_color,#customize-control-team_buttoncolor,#customize-control-team_sectioncontentcolor,#customize-control-team_designation_size,#customize-control-team_name_size,#customize-control-team_sectiontitlesubcolor,#customize-control-team_sectionnamedescolor,#customize-control-bestblog_servicebg_color,#customize-control-bestblog_servicebg_image,#customize-control-bestblog_servicefixed_image,#accordion-section-link-button{display: block !important;}
+#customize-control-client_onoff,#customize-control-client_title,#customize-control-service_block_title,#customize-control-service_block_subtitle,#customize-control-serviceblock_color,#customize-control-our_counter_onoff,#customize-control-our_counter_title,#customize-control-our_counter_subtitle,#customize-control-bestblog_counter_content_disable,#customize-control-bestblog_counter_content,#customize-control-counter_link_title,#customize-control-bestblog_countersetup_bgcolor,#customize-control-bestblog_countersetup_textcolor{display: block !important;}
+
+#customize-control-bestblog_contactfixed_image,#customize-control-bestblog_contactbg_image,#customize-control-contact_form_bgcolor,#customize-control-contact_form_textcolor,#customize-control-contact_textcolor,#customize-control-bestblog_clientsfixed_image,#customize-control-bestblog_clientsbg_image,#customize-control-bestblog_clientsbg_color,#customize-control-client_sectiontitlesubcolor,#customize-control-client_subtitle,#customize-control-bestblog_counterfixed_image,#customize-control-bestblog_counterbg_image,#customize-control-counter_buttoncolor,#customize-control-serviceblock_sectiontitlesubcolor,#customize-control-serviceblock_title_size,#customize-control-serviceblock_subtitle_size,#customize-control-countertitlesub_color,#customize-control-our_team_onoff,#customize-control-our_team_title,#customize-control-our_team_subtitle,#customize-control-bestblog_team_content_disable,#customize-control-bestblog_team_content,#customize-control-bestblog_teamsetup_texturl {display: block !important;}
+
+#customize-control-bestblog_teampagebg_color,#customize-control-teampage_designation_size,#customize-control-teampage_name_size,#customize-control-teampage_sectionnamedescolor,#customize-control-teampage_sectiontitlesubcolor{display: block !important;}
+
+
+.imonthemes-kirki-seperator {
+	margin: 20px 0 10px;
+	display: block;
+	position: relative;
+	font-size: 18px;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+	line-height: 1.5;
+	border-bottom: 1px solid #ccc;
+}
+
+.imonthemes-kirki-seperator::before {
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 60px;
+	background: #00baf4;
+	bottom: -1px;
+}
