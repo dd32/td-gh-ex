@@ -61,7 +61,7 @@
                 'container_id'  => 'navbar-collapse-top',
                 'menu_class'   => 'nav navbar-nav',
                 'fallback_cb' => 'wp_nav_menus',
-                'walker'     =>  new wp_bootstrap_navwalker()
+                'walker'     =>  new appeal_bootstrap_navwalker()
             )); ?>
 
 					</div>

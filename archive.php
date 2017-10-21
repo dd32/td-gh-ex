@@ -10,7 +10,7 @@
 
 				<h1 class="page-title">
 					<?php if ( is_category() ) : ?>
-						<?php echo single_cat_title( '', false ); ?>
+						<?php the_archive_title( '', false ); ?>
 
 					<?php elseif ( is_author() ) : ?>
 						<?php esc_html_e( 'Author Archive for ', 'appeal' ); ?>
@@ -22,7 +22,7 @@
 					<?php elseif ( is_tag() ) : ?>
 						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' ); ?>
 						<span class="text-note"> 
-                        <?php  printf( esc_attr( single_tag_title( '', false ) ) ); ?></span>
+                        <?php  printf( esc_attr( archive_title( '', false ) ) ); ?></span>
 
 					<?php elseif ( is_day() ) : ?>
 						<?php echo esc_html_e( 'Dated Archives: ', 'appeal' ); ?>
@@ -47,7 +47,7 @@
 				</h1><!-- .page-title -->
 				
 				<?php
-				$category_description = category_description();
+				$category_description = the_archive_description();
 				if ( $category_description != '' ) : ?> 
 				
 				    <div class="archive-meta">

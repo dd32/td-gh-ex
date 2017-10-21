@@ -16,7 +16,7 @@
     
     <a class="btn btn-default btn-lg" 
        href="#sideA" 
-       title="<?php esc_html_e( 'show sidebars and navaigation options', 'appeal' ); ?>">
+       title="<?php esc_attr_e( 'show sidebars and navaigation options', 'appeal' ); ?>">
        <?php echo esc_html( $offscreen_text ); ?></a>
     </div>
        

@@ -22,7 +22,7 @@
                             title="<?php the_title_attribute(); ?>"> 
                       <?php esc_attr_e( 'View Article...', 'appeal' ); ?></a>
                       <time class="alignright" 
-                            datetime="<?php echo get_the_date('F j, Y'); ?>"
+                            datetime="<?php the_time( get_option( 'date_format' )); ?>"
                             itemprop="datePublished" pubdate 
                             class="thedate"><em><?php echo esc_attr( 
                             the_date( ) ); ?></em>
@@ -42,8 +42,8 @@
                     <?php get_template_part( 'nav', 'content' ); ?>
 
             <aside class="post_content">
-            <h4><?php esc_html_e( 'Maybe try another search while you are here?', 'appeal' ); ?></h4>
-				   <p><?php get_search_form(); ?></p>
+            <h4><?php esc_html_e( 'Search Results End', 'appeal' ); ?></h4>
+				    
 
 			</aside>
 	    </div>

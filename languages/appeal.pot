@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Appeal\n"
-"POT-Creation-Date: 2017-09-23 14:06-0800\n"
-"PO-Revision-Date: 2017-09-23 14:07-0800\n"
+"POT-Creation-Date: 2017-10-20 19:31-0800\n"
+"PO-Revision-Date: 2017-10-20 19:31-0800\n"
 "Last-Translator: \n"
 "Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
 "Language: en_US\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_attr_e;esc_html_e;"
-"esc_attr__;esc_html__;_x;_n;_nx\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html_e;esc_attr_e;_n;"
+"_nx\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -31,43 +31,39 @@ msgstr ""
 msgid "Four by Three Ratio Thumb"
 msgstr ""
 
-#: functions.php:183
-msgid "on"
-msgstr ""
-
-#: functions.php:347
+#: functions.php:331
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:348 functions.php:357
+#: functions.php:332 functions.php:341
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:356
+#: functions.php:340
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:350
 msgid "Top Above Content"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:351
 msgid "Only works on Top Advert and Page templates"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:360
 msgid "Bottom Below Content"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:369
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:378
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:387
 msgid "Footer Right"
 msgstr ""
 
@@ -111,8 +107,8 @@ msgstr ""
 msgid "Search Results for: "
 msgstr ""
 
-#: search.php:45 nothing.php:5
-msgid "Maybe try another search while you are here?"
+#: search.php:45
+msgid "Search Results End"
 msgstr ""
 
 #: header.php:11
@@ -138,62 +134,6 @@ msgstr ""
 
 #: part-metadata.php:35
 msgid "% Comments"
-msgstr ""
-
-#: comments.php:31
-msgid "&laquo; Older Comments"
-msgstr ""
-
-#: comments.php:33
-msgid "Newer Comments &raquo;"
-msgstr ""
-
-#: comments.php:42
-msgid "Send"
-msgstr ""
-
-#: comments.php:45
-msgid "Write a Reply or Comment"
-msgstr ""
-
-#: comments.php:49
-msgid "You may use these "
-msgstr ""
-
-#: comments.php:50
-msgid "HyperText Markup Language"
-msgstr ""
-
-#: comments.php:51
-msgid "HTML"
-msgstr ""
-
-#: comments.php:52
-msgid "tags and attributes: "
-msgstr ""
-
-#: comments.php:57
-msgid "Respond"
-msgstr ""
-
-#: comments.php:59
-msgid "Comment textarea box"
-msgstr ""
-
-#: comments.php:65
-msgid "You must be "
-msgstr ""
-
-#: comments.php:66
-msgid "logged in "
-msgstr ""
-
-#: comments.php:67
-msgid "to post a comment."
-msgstr ""
-
-#: comments.php:71
-msgid "Your email address will not be published."
 msgstr ""
 
 #: footer.php:79
@@ -700,4 +640,8 @@ msgstr ""
 
 #: nothing.php:2
 msgid "Content Not available."
+msgstr ""
+
+#: nothing.php:5
+msgid "Maybe try another search while you are here?"
 msgstr ""
