@@ -297,7 +297,7 @@ if( is_page()) {
     for($c = 0, $csize = count($content); $c < $csize; $c++) {
         $content[$c] = apply_filters('the_content', $content[$c]);
     }
-    return appeal_sanitize_text( $content );
+    return $content;
     }
 }
 
@@ -323,6 +323,22 @@ function appeal_custom_excerpt_more($link) {
 }
 add_filter('excerpt_more', 'appeal_custom_excerpt_more');
 
+/**
+ * Conditional post format 
+ * @since 1.0.7
+ * @uses has_post_format()
+ */
+if( ! function_exists( 'appeal_post_formats' ) ) :  
+function appeal_post_formats() {
+
+    if ( has_post_format( 'image' ) ) { 
+    $appealpost = 'format-image-post'; }
+        elseif( has_post_format( 'gallery' ) ) { 
+        $appealpost = 'format-gallery-post'; }
+            else { $appealpost = 'format-standard-post'; } 
+    return sanitize_html_class( $appealpost );
+}
+endif; 
 
 // Sidebar and Footer declarations
 function appeal_register_sidebars() {

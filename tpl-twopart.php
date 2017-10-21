@@ -18,6 +18,7 @@ use more tag to split content "&gt;!--more-->"
             <section class="post_content">
             
 	    <?php 
+	    $content = '';
         $content = appeal_split_content();
         // output first content section in column1
 	    echo '<div id="column1" class="col-sm-6">', 

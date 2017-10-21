@@ -18,8 +18,12 @@ Appeal is distributed under the terms of the GNU GPL
 - wp_bootstrap_navwalker GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker, Author: Edward McIntyre, License: GPL-2.0+
 
 Default Images:
-Header photograph: by Christian Holzinger https://unsplash.com - CCO https://unsplash.com/?photo=lqQlmcPt9Qg
-Twitter in admin: https://brand.twitter.com/logo
+- Header photograph, CCO by Christian Holzinger https://unsplash.com 
+- Twitter in admin, https://brand.twitter.com/logo
+Other Screenshot images:  
+- GPL-2.0+ by Larry Judd (Mountains, avatar)
+- GPL-2.0+ by Erich Haugen (California)
+- CCO by Pelo, Unsplash.com (Reader)
 
 == Notes ==
 * Requires WordPress 3.6 or higher!
@@ -31,6 +35,13 @@ Twitter in admin: https://brand.twitter.com/logo
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 == Change Log ==
+1.2.1
+* added theme search tags to stylsheet header markdown
+* declared images
+* fixed margin on page-template
+* output for split page reworked
+* replaced screenshot with avatar
+
 1.2.0
 * removed search form from search results return true
 * fixed date callback

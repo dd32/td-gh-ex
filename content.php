@@ -310,9 +310,9 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                     <?php else : echo '<div class="no-thumb"></div>';
                 //ends thumbnail found
                 endif; ?>
-
+ 
                 <div class="col-xs-6 col-sm-6 col-lg-5">
-                <?php if ( has_excerpt( $post->ID ) ) { ?>  
+                <?php if ( has_excerpt( $post->ID ) ) { ?> 
                     <div class="pullquote">
                         <aside>
                         <?php  
@@ -322,8 +322,9 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                         ?> 
                         </aside>
                     </div>
-                <?php } ?>
+                <?php } else { ?><div class="no-excerpt"></div><?php } ?>
                 </div>
+                
                         
     <?php 
     } else 
