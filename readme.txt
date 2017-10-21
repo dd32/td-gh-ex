@@ -1,7 +1,7 @@
 ----------------------------------
 NewsPress Lite
 ----------------------------------
-Version: 	1.7
+Version: 	1.9
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -23,6 +23,10 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
 NB: No Sub Menus will be shown in the Top Menu
+
+Version 1.9
+--------------------
+- Code Cleanup
 
 Version 1.7
 --------------------

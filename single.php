@@ -1,16 +1,12 @@
 <?php
 
 /* 	 Single Page to display Single Page or Post
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2014-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
-
-
 get_header(); ?>
-
 <div id="content">
-
  		  <?php if ( have_posts() ):  while ( have_posts() ) : the_post();  ?>
             <h1 class="page-title"><?php the_title(); ?></h1>
             <?php newspress_author_meta(); ?>
@@ -31,7 +27,6 @@ get_header(); ?>
           	            
           <!-- End the Loop. -->          
           <div class="clear"></div><br />
-
  <!-- Related News -->
  
 <?php
@@ -57,7 +52,7 @@ $my_query = new WP_Query($args); if (have_posts()) : $counter =0;  ?>
 	<h3 class="fcpt"><?php the_title(); ?></h3>
 	<?php $newspress_excerptlength= '15'; the_excerpt(); ?></a></div><?php else: ?>
 
-	<h4 class="fcpt"><li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li></h4></a>
+	<h4 class="fcpt"><ul><li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li></ul></h4></a>
 
  <?php endif; endwhile; wp_reset_postdata(); ?>
  </div> <!--end of fpage-catspecial-->

@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	NewsPress Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2014-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since NewsPress 1.0
 */
@@ -153,7 +153,7 @@ echo '<div class="fpage-cat" >';
 <a href="<?php the_permalink() ?>" ><?php the_post_thumbnail('cat-page', array('class' => 'fi-full-width-cat')); ?>
 <h3 class="fcpt"><?php the_title(); ?></h3>
 <?php $newspress_excerptlength= '15'; the_excerpt(); ?> </a> <?php else: ?>
-<h4 class="fcpt"><li><a href="<?php the_permalink() ?>" ><?php the_title(); ?></a></li></h4></a>
+<h4 class="fcpt"><ul><li><a href="<?php the_permalink() ?>" ><?php the_title(); ?></a></li></ul></h4></a>
 <?php endif; endwhile; ?>
 	<a class="read-more cat-read-more" href="<?php echo get_category_link($newspress_cat->cat_ID); ?>" target="_blank"><?php echo __('Read All','newspress-lite'); ?></a><span class="rarrow"> </span>
  	<?php else : 
