@@ -153,6 +153,21 @@ array(
 	'section' => 'home_settings',
 )
 );
+$wp_customize->add_setting( 'home_template_blog', array(
+  'default' => 'left',
+  'sanitize_callback' => 'backyard_themeslug_sanitize_select',
+) );
+
+$wp_customize->add_control( 'home_template_blog', array(
+  'type' => 'radio',
+  'section' => 'home_settings', // Add a default or your own section
+  'label' => esc_html__( 'Template home sidebar settings' ,'backyard'),
+  'choices' => array(
+    'standardleft' => esc_html__( 'Standard Left sidebar','backyard' ),
+    'standardright' => esc_html__( 'Standard Right sidebar' ,'backyard'),
+    'standardfull' => esc_html__( 'Standard Full width' ,'backyard'),	
+  ),
+) );
 //Social icon
 	$wp_customize->add_section(
    'social_media',
@@ -284,7 +299,7 @@ $wp_customize->add_control( 'blog_sidebar', array(
   'label' => esc_html__( 'Blog sidebar settings' ,'backyard'),
   'choices' => array(
     'left' => esc_html__( 'Left sidebar','backyard' ),
-    'right' => esc_html__( 'RIght sidebar' ,'backyard'),
+    'right' => esc_html__( 'Right sidebar' ,'backyard'),
     'full' => esc_html__( 'Full width' ,'backyard'),
   ),
 ) );
