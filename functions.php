@@ -16,7 +16,7 @@ register_nav_menu( 'primary', __( 'Primary Menu', 'northern-web-coders' ) );
 add_editor_style();
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
-add_theme_support( 'custom-background', array( 'default-color' => '72726b' ) );
+add_theme_support( 'custom-background', array( 'default-color' => 'aaaaaa' ) );
 add_theme_support( 'title-tag' );
 
 require( get_template_directory() . '/inc/theme-options.php' );
@@ -44,15 +44,10 @@ add_action( 'after_setup_theme', 'northern_custom_header_setup' );
 
 function northern_header_style() {
 if ( HEADER_TEXTCOLOR == get_header_textcolor() )
-		return;
+return;
 ?>
+
 <style type="text/css">	
-#headerpic
-{
-    background: url('<?php header_image(); ?>');
-    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-    height: <?php echo HEADER_IMAGE_HEIGHT; ?>px
-}
 
 <?php
 // Has the text been hidden?
@@ -61,7 +56,7 @@ if ( 'blank' == get_header_textcolor() ) :
 
 header#header h1 ,
 header#header em {
-	display: none;
+display: none;
 }
 
 <?php
@@ -71,7 +66,7 @@ else :
 
 header#header h1 a,
 header#header em {
-	color: #<?php echo get_header_textcolor(); ?> !important;
+color: #<?php echo get_header_textcolor(); ?> !important;
 }
 <?php endif; ?>
 </style>
@@ -84,7 +79,8 @@ function northern_admin_header_style() {
 <style type="text/css">
 #headerpic
 {
-    background: #<?php echo get_background_color() ?>; width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    background: #<?php echo get_background_color() ?>; 
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
     padding: 20px;
 }
 
@@ -141,9 +137,6 @@ else :
 }
 <?php endif; ?>
 
-
-
-
 div.northern-admin-header-image
 {
     height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
@@ -195,6 +188,16 @@ function northern_widgets_init() {
     'name'=> __( 'Sidebar Page', 'northern-web-coders' ),
     'id' => 'sidebar-page',
     'description' => 'Sidebar Page',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+    ));
+
+register_sidebar(array(
+    'name'=> __( 'Sidebar Shop', 'northern-web-coders' ),
+    'id' => 'sidebar-shop',
+    'description' => 'Sidebar Shop',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3>',
@@ -261,8 +264,7 @@ function northern_theme_styles()
    wp_register_style('ubuntu-font', 'http://fonts.googleapis.com/css?family=Ubuntu');
    wp_enqueue_style( 'screen-style' );
    wp_enqueue_style( 'animate-style' );
-   wp_enqueue_style('roboto');
-   wp_enqueue_style('roboto-slab');
+   wp_enqueue_style('ubuntu-font');
 }
 add_action('wp_print_styles', 'northern_theme_styles');
 

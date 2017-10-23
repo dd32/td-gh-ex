@@ -30,7 +30,7 @@ get_header();
 
 <?php comments_template( '', true ); ?> 
         
-<div class="pagenav">
+<div class="pagenav animated fadeIn duration3">
 <span class="previous"><?php previous_post_link('%link'); ?></span> - <span class="next"><?php next_post_link('%link'); ?></span>
 </div>
 

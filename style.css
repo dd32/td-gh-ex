@@ -4,27 +4,24 @@ Theme URI: http://www.northern-web-coders.de/blog/2017/10/northern-web-coders-3-
 Description: Northern-Web-Coders is a responsive HTML5/CSS3 theme. It supports custom headers, backgrounds and theme-options which supports 3 possibilities for displaying sidebars (left, right or bottom). Animate.css -http://daneden.me/animate is included for header, article, sidebar and in the column-count home category template. If you choose to display the sidebar left or right, the column-count is 2. If the sidebar is stored at the bottom, the column-count is 3. It uses an ubuntu font. Translation and WooCommerce ready.
 Author: Kai Ackermann
 Author URI: http://www.design-coding.de
-Version: 3.0.3
+Version: 3.0.4
 Tags: custom-background, custom-header, custom-menu, editor-style, left-sidebar, one-column, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns  
 Text Domain: northern-web-coders
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 */
-
 *
 {
     margin: 0;
     padding: 0;
 }
 
-
 body
 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'ubuntu-font', sans-serif;
     margin: 20px;
-    background: #72726b
+    background: #aaaaaa
 }
-
 
 /*header*/
 header#header
@@ -63,7 +60,6 @@ header#header em
     display: block;
     margin-right: 4px;
     margin-bottom: 10px;
-    color: #fff;
     float: right
 }
 
@@ -107,29 +103,22 @@ img#headerpic
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
     -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 10px; /* Firefox */
+    -moz-column-gap: 120px; /* Firefox */
     column-gap: 10px;
-}
-
-#content,
-aside
-{
-    color: #3F3F3F;
-    font-size: 14px;
 }
 
 .right-sidebar #content
 {
     width: 68.5%;
     float: left;
-    margin: 16px 0.5% 20px 1%;
+    margin: 0 0.5% 20px 1%;
 }
 
 .right-sidebar aside
 {
     float: left;
     width: 28.5%;
-    margin: 21px 1% 0 0.5%;
+    margin: 0 1% 0 0.5%;
 }
 
 .left-sidebar #content
@@ -163,37 +152,45 @@ aside
     margin: 1% 0 0 10px;
 }
 
-
-
 /*content*/
+#content, aside
+{
+    color: #3F3F3F;
+    font-size: 14px;
+}
+
 #content h4.page-title
 {
-    font-size: 14px;
+    font-size: 20px;
     font-style: italic;
-    background: #FF5D4C;
-    color: #fff;
+    background: transparent;
+    color: #544E55;
     padding: 5px 10px;
     margin-top: 5px
 }
 
 #content h2.storytitle
 {
-    margin: -25px 0 0 -10px;
-    padding: 0 20px 0px 10px;
-    line-height: 32px;
-    min-height: 32px;
-    font-size: 19px;
+    margin: 0 0 10px 0;
+    line-height: 42px;
+    min-height: 42px;
+    font-size: 23px;
     font-weight: normal;
-    color: #fff;
-    background: #50586B;
+    background: #fff;
+    border-bottom: 1px solid #000;
     width:100% ;
     clear: both;
 }
 
 #content .sticky h2.storytitle
 {
-    background: #455C86;    
-    border-bottom: 3px solid #FF5D4C;
+    border-bottom: 5px solid #FF5D4C;
+}
+
+#content h2.storytitle a
+{
+    color: #000;
+    text-decoration: none;
 }
 
 #content article.noresults p
@@ -201,22 +198,25 @@ aside
     padding-top: 10px
 }
 
+
+
 #content article
 {
-    margin: 25px 0 45px 0;
-    padding: 5px 20px 13px 10px;
-    background:  #FAFAFA;
-    width:calc(100% - 30px);
-    -webkit-width:calc(100% - 30px);
+    margin: 0 0 45px 0;
+    padding: 10px 20px 23px 20px;
+    background:  #fff;
+    width:calc(100% - 40px);
+    -webkit-width:calc(100% - 40px);
     display: inline-block;
-    background: #efefef;
     break-inside: avoid-column;
 }
+
+
 
 #content .meta
 {
     font-size: 13px;
-    color: #FF5D4C;
+    color: #000;
     margin: 8px 0;
 }
 
@@ -233,21 +233,15 @@ aside
 
 #content .meta a
 {
-    color: #3F3F3F;
+    color: #000;
     font-size: 13px;
     text-decoration: none;
 }
 
 #content a.post-edit-link
 {
-    color: #FF5D4C;
+    color: #000;
     font-weight: bold;
-}
-
-#content h2.storytitle a
-{
-    color: #fff;
-    text-decoration: none;
 }
 
 #content article.noresults
@@ -320,12 +314,13 @@ aside
 #content p
 {
     margin-bottom: 5px;
+
     font-size: 14px;
 }
 
 #content a, #content code, #content pre
 {
-    color: #FF5D4C;
+    color: #516170;
 }
 
 #content blockquote
@@ -361,7 +356,7 @@ aside
 
 #content table
 {
-    color: #FF5D4C;
+    color: #516170;
     font-size: 14px;
     border-top: 1px solid #dfdfdf;
     border-left: 1px solid #dfdfdf;
@@ -419,12 +414,11 @@ aside
 aside h3
 {
     padding: 0 10px;
-    position: relative;
     margin-bottom: 0;
-    background: #50586B;
+    background: #544E55;
     color: #fff;
     line-height: 26px;
-    font-size: 14px;
+    font-size: 13px;
     clear: both;
 }
 
@@ -432,8 +426,7 @@ aside .textwidget
 {
     background: #fff;
     padding: 3px 0 6px 0 ;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
 }
 
 aside .textwidget p
@@ -450,7 +443,7 @@ aside .tagcloud{
 }
 
 aside .tagcloud a{
-    color: #FF5D4C;
+    color: #516170;
 }
 
 aside form#searchform
@@ -504,8 +497,7 @@ aside ul
     margin-bottom: 20px;    
     padding: 8px 25px 16px 25px;
     color: #464646;
-    background: #fff;
-   
+    background: #fff;   
 }
 
 aside ul ul.children
@@ -516,8 +508,8 @@ aside ul ul.children
 
 aside ul li a
 {
-    font-size: 14px;
-    color: #FF5D4C;
+    font-size: 13px;
+    color: #516170;
 }
 
 aside ul.menu
@@ -525,7 +517,6 @@ aside ul.menu
     margin-bottom: 20px;
     margin-top: 0;
     padding: 7px 8px 7px 8px;
-    color: #464646;
 }
 
 aside ul.menu ul.sub-menu
@@ -541,7 +532,7 @@ aside ul.menu li
 
 aside ul.menu li li
 {
-    border-left: 3px solid #50586B
+    border-left: 3px solid #544E55
 }
 
 aside ul.menu li a
@@ -551,14 +542,14 @@ aside ul.menu li a
     color: #464646;
     padding: 8px 10px;
     text-decoration: none;
-    border-bottom: 1px solid #50586B;
+    border-bottom: 1px solid #544E55;
 }
 
 aside ul.menu li a:hover,
 aside ul.menu li.current_page_item > a
 {
-    background: #50586B;
-    color: #FF5D4C;
+    background: #544E55;
+    color: #fff;
     font-weight: bold
 }
 
@@ -585,7 +576,7 @@ aside table#wp-calendar td
 
 aside table#wp-calendar td a
 {
-    color: #FF5D4C;
+    color: #516170;
     font-weight: bold;
     text-decoration: none
 }
@@ -616,7 +607,8 @@ aside table#wp-calendar td#next
 footer
 {
     clear: both;
-    background:#50586B;
+
+    background:#544E55;
 }
 
 footer p
@@ -669,7 +661,7 @@ footer p span#left
     height: auto;
 }
 .gallery .gallery-caption {
-    color: #888;
+    color: #000;
     font-size: 13px;
     margin: 0 0 13px;
 }
@@ -717,6 +709,11 @@ aside img
 aside .wp-caption.alignnone
 {
     margin: -1px 20px 20px 0;
+    border: 0;
+    max-width: calc(100% - 16px); /* Image does not overflow the content area */
+    padding: 8px 8px 12px 8px;
+    text-align: center;
+    clear: both;
 }
 
 .alignnone {
@@ -894,6 +891,7 @@ div.reply
     border: 1px solid #DDDDDD;
     margin-bottom: 10px;
     padding: 10px 10px  10px 10px;
+
 }
 
 .bypostauthor
@@ -996,7 +994,7 @@ p.form-allowed-tags code
 }
 
 .pingback a:hover, .trackback a:hover {
-    color: #FF5D4C;
+    color: #516170;
 }
 
 a.comment-reply-link {
@@ -1066,7 +1064,7 @@ p.form-allowed-tags code
 }
 
 .pingback a:hover, .trackback a:hover {
-    color: #FF5D4C;
+    color: #516170;
 }
 
 div.reply {
@@ -1111,7 +1109,7 @@ span.required
 nav {
     float:left;
     width: 100%;
-    background: #50586B;
+    background: #544E55;
 }
 
 /*** ESSENTIAL STYLES ***/
@@ -1181,8 +1179,8 @@ nav ul.menu ul li {
 
 nav div.menu ul a,
 nav ul.menu a {
-    color: #fff;
 
+    color: #fff;
     display: block;
     line-height: 38px;
     padding: 0 10px;
@@ -1194,24 +1192,28 @@ nav div.menu ul li:hover > a,
 nav div.menu ul li a:hover,
 nav ul.menu li:hover > a,
 nav ul.menu li a:hover {
-    color: #FF5D4C;
+    color: #fff;
+    background: #516170;
 }
 
 nav div.menu ul .current_page_item > a,
 nav div.menu ul .current_page_ancestor > a,
 nav div.menu ul .current-menu-item > a,
 nav div.menu ul .current-menu-ancestor > a,
+nav div.menu ul .current_page_parent > a
 nav ul.menu .current_page_item > a,
 nav ul.menu .current_page_ancestor > a,
 nav ul.menu .current-menu-item > a,
-nav ul.menu .current-menu-ancestor > a {
-    color: #FF5D4C;
+nav ul.menu .current-menu-ancestor > a,
+nav ul.menu .current_page_parent > a
+{
+    background: #516170;
 }
 
 nav div.menu ul ul li,
 nav ul.menu ul li {
     width: 100%;
-    background: #4B6A98;
+    background: #544E55;
     border-bottom: 1px solid #fff
 }
 
@@ -1246,7 +1248,7 @@ nav ul.menu ul li ul li {
 .sf-arrows > li > .sf-with-ul:focus:after,
 .sf-arrows > li:hover > .sf-with-ul:after,
 .sf-arrows > .sfHover > .sf-with-ul:after {
-    border-top-color: #FF5D4C; /* IE8 fallback colour */
+    border-top-color: #fff; /* IE8 fallback colour */
 }
 /* styling for right-facing arrows */
 .sf-arrows ul .sf-with-ul:after {
@@ -1258,8 +1260,9 @@ nav ul.menu ul li ul li {
 .sf-arrows ul li > .sf-with-ul:focus:after,
 .sf-arrows ul li:hover > .sf-with-ul:after,
 .sf-arrows ul .sfHover > .sf-with-ul:after {
-    border-left-color: #FF5D4C ;
+    border-left-color: #fff ;
 }
+
 
 input#isexpanded,
 label#expand-btn {
@@ -1269,6 +1272,122 @@ label#expand-btn {
 
 
 /*extra*/
+
+.home #content h2.storytitle
+{
+text-align: center
+}
+
+a.button, 
+button.button, 
+input.button, 
+#review_form #submit {
+background:#544E55 !important;
+color: #fff !important; 
+margin: 4px 4px 4px 0 !important
+}
+
+h1.product_title
+{
+color: #000;
+border-bottom: 1px solid #000;
+}
+
+div.quantity
+{
+margin-top: 5px !important;
+line-height: 30px}
+
+div.quantity button
+{
+background: red;
+margin-top: 5px}
+
+.woocommerce-page aside ul
+{list-style: none !important; 
+}
+
+.woocommerce aside ul
+{
+background: #fff !important;
+padding: 6px 6px 10px 6px !important;
+margin-bottom: 20px !important;
+list-style: none
+}
+
+aside .price_slider_amount,
+aside .woocommerce p
+{
+background: #fff !important;
+padding: 6px 6px 0px 6px !important;
+margin-bottom: 20px !important;
+}
+
+.widget_shopping_cart_content,
+aside .price_label,
+nav.woocommerce-pagination
+{
+   background: #fff !important;
+   padding: 6px 6px 6px 6px !important;
+   margin-bottom: 20px !important;
+}
+
+nav.woocommerce-pagination
+{
+   background: transparent !important;
+}
+
+nav.woocommerce-pagination ul.page-numbers li
+{
+background: #fff !important;
+}
+
+nav.woocommerce-pagination ul.page-numbers li span.current
+{
+background: #544E55 !important;
+color: #fff !important;
+}
+
+.woocommerce .even,
+.woocommerce .odd
+{
+margin: 0 0 12px 0 !important;  
+}
+
+.woocommerce .even .comment_container
+{
+    background: #FFFFFF;
+    padding: 5px;    
+border: 1px solid #DDDDDD;
+}
+
+.woocommerce .odd .comment_container
+{
+    background: #F0F0F0;
+    padding: 5px;
+border: 1px solid #DDDDDD;
+}
+
+.woocommerce .comment_container img.photo
+{
+    margin: 16px 10px 10px 16px !important;    
+}
+
+.woocommerce .comment-text
+{
+    border: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 iframe 
 {
 	max-width: 100%;
@@ -1285,7 +1404,7 @@ margin: 0 2px 0 0;
 
 
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 960px) {
 
 
 body {margin:0;}
@@ -1346,20 +1465,32 @@ img{
     max-width: 98%;
 }
 
-nav {
-    float: left;
-    width:100%;
+
+
+#navbox nav {
+position:absolute;
+    left:0;
+    width:250px;
+    height:100%;
+    margin:0 0 0 -250px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+background: #544E55;
+z-index:500
 }
 
 #wrapper
 {
-    margin-top: 2px;
+    margin-top: -38px;
     float: left;
 }
 
-#expand-btn {
-    float: left;
-    margin: 2px 0 4px 3px;
+
+label#expand-btn {
+
+    margin: 3px 3px 10px 5px;
     display: block;
     border-bottom: 17px double #fff; 
     border-top: 6px solid #fff; 
@@ -1367,33 +1498,20 @@ nav {
     height: 5px; 
     width:30px;
     clear: both;
+
 }
 
-input#isexpanded[type="checkbox"]:checked+label#expand-btn {
-    border-bottom: 17px double #FF5D4C;
-    border-top: 6px solid #FF5D4C;
-    content:"";
-    height: 5px; 
-    width:30px;
+input[type="checkbox"]{
+    display:none;
+}
+input[type="checkbox"]:checked ~ #navbox nav{
+    margin:0;
+}
+input[type="checkbox"]:checked ~ label#expand-btn{
+    left:250px;
+border-color: #516170;
 }
 
-input#isexpanded {
-    display: none
-}
-
-label#expand-btn {
-    display: block
-}
-
-#isexpanded, .expandable {
-    display: none;
-}
-
-#isexpanded:checked ~ nav.expandable,
-#isexpanded:checked ~ * nav.expandable {
-    display: block;
-    margin: 2px 0 4px 0;
-}
 
 nav div.menu ul,
 nav ul.menu 
@@ -1408,7 +1526,7 @@ nav ul.menu li
 {
     display: block;
     width: 100%;
-    background: #50586B;
+    background: #544E55;
     white-space: normal; /* no need for Supersubs plugin */
 }
 
@@ -1458,11 +1576,11 @@ nav ul.menu ul
 .sf-arrows ul li > .sf-with-ul:focus:after,
 .sf-arrows ul li:hover > .sf-with-ul:after,
 .sf-arrows ul .sfHover > .sf-with-ul:after {
-    border-color: transparent;	border-top-color: #FF5D4C;
+    border-color: transparent;	border-top-color: #516170;
     border-top: none;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #FF5D4C;
+    border-bottom: 5px solid #fff;
 }
 
 .alignleft, .alignright
@@ -1481,27 +1599,6 @@ body{
 header img#headerpic
 {
     display: none;
-}
-
-.left-sidebar #content #box,
-.right-sidebar #content #box
-{
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
-    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 10px; /* Firefox */
-    column-gap: 10px;
-}
-
-.sidebar-bottom #content #box
-{
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
-    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 10px; /* Firefox */
-    column-gap: 10px;
 }
 
 img,
