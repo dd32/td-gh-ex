@@ -103,6 +103,10 @@ Source: https://images.unsplash.com/photo-1440635592348-167b1b30296f
 
 == ChangeLog ==
 
+= 1.2.1 =
+Grid issue fixed in Blog section
+10/23/2017
+
 = 1.2.0 =
 Added extra settings in blog options
 06/19/2017
