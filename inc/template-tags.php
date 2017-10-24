@@ -61,8 +61,6 @@ if ( ! function_exists( 'adventure_lite_comment' ) ) :
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
 function adventure_lite_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -83,10 +81,10 @@ function adventure_lite_comment( $comment, $args, $depth ) {
 					<?php printf( '<cite class="fn">%s</cite> on', get_comment_author_link() ); ?>
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( esc_attr_x( '%1$s', '1: date', 'adventure-lite' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( '%1$s | %2$s', get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( esc_attr__( 'Edit', 'adventure-lite' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( esc_html( 'Edit', 'adventure-lite' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>

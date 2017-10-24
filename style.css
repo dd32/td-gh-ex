@@ -1,11 +1,11 @@
 /*
 Theme Name: Adventure Lite
-Theme URI: https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme
+Theme URI: https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/
 Author: SKT Themes
 Author URI: https://www.sktthemes.net
 Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. Demo : http://sktperfectdemo.com/demos/adventure/
 
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: adventure-lite
@@ -92,7 +92,7 @@ img.alignleft, .alignleft{ float:left; margin:0 15px 0 0; padding:5px; border:1p
 a img.aligncenter{display: block; margin-left: auto; margin-right: auto; padding:5px; border:1px solid #f6f4f4;}
 
 img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border:1px solid #f6f4f4;}
-.tag-sticky-2{ background-color:#f6f4f4; padding:20px;}
+.sticky{ background-color:#f6f4f4; padding:20px;}
 .left{ float:left;}
 .right{ float:right;}
 .space50{ clear:both; height:50px;}
@@ -123,7 +123,7 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 #comment-nav-above .nav-previous, #comment-nav-below .nav-previous{ float:none !important; margin:10px 0;}
 ol.comment-list li{ list-style:none; margin-bottom:5px;}
 
-.logo{float:left; width: auto; z-index:999; color:#fff; background-color:#e64d43; text-align:center; padding:40px 20px 40px 20px;}
+.logo{float:left; width: auto; z-index:999; color:#fff; background-color:#e64d43; text-align:center; padding:40px 20px 40px 20px; margin-bottom:-40px;}
 .logonoslide{padding:15px 20px !important;}
 
 body.wp-custom-logo .logo{padding:0px !important; background-color:transparent !important;}
@@ -143,7 +143,7 @@ body.wp-custom-logo .logo{padding:0px !important; background-color:transparent !
 .widget-right ul li a{color:#6b6b6b;}
 .widget-right ul li:last-child {margin-right:0; padding-right:0; border-right:none;}
 
-.header{width:100%; z-index:999; position:relative; background-color: rgb(52, 52, 52); height:80px;}
+.header{width:100%; z-index:999; position:relative; background-color: rgb(52, 52, 52);}
 .hmheader{position:absolute !important; background-color:rgba(0, 0, 0, 0.3);}
 .container{ width:1170px; margin:0 auto; position:relative;}
 
@@ -161,9 +161,9 @@ border-bottom-left-radius: 3px; }
 .sitenav{display:none;}
 
 .sitenav{float:right;}
-.sitenav ul { margin:0; padding:0; font-family:'Roboto', sans-serif; font-size:15px; }
+.sitenav ul { margin:0; padding:0; font-family:'Roboto', sans-serif; font-size:15px;}
 .sitenav ul li{ display:inline-block; float:left; margin:0; position:relative; text-align:center;}
-.sitenav ul li a{padding:30px 20px; display:block; color:#ffffff;}
+.sitenav ul li a{padding:35px 20px; display:block; color:#ffffff;}
 .sitenav ul li:last-child a{ border-right:none; }
 .sitenav ul li ul li{display:block; position:relative; float:none;}
 .sitenav ul li ul li a{display:block; padding-top:10px; padding-bottom:10px; position:relative; text-align:left;  border-right:none; }
@@ -232,11 +232,11 @@ a.ReadMore:hover{background-color:#fec42b; color:#000; }
 .site-main{ width:790px; margin:0; padding:0; float:left;}
 #sitefull{ width:100%; float:none;}
 #sitefull p{ margin-bottom:15px;}
-body.home .page_content{padding:40px 0;}
+body.home .page_content{padding:80px 0;}
 .page_content{ padding:80px 0;}
 .page_content p{ margin-bottom:20px; line-height:20px;}
 
-.blog_lists{ margin:0 0 25px 0; padding-bottom:25px; border-bottom:1px solid #f7f7f7;  }
+.blog_lists{ margin:0 0 25px 0; padding-bottom:25px; border-bottom:1px solid #f7f7f7; clear:both;}
 .blog_lists h4{ margin-bottom:6px;}
 .blog_lists h4 a{ color:#484f5e;}
 .blog_lists h4 a:hover{ color:#fec42b;}
@@ -369,6 +369,8 @@ body.wp-custom-logo .logo h2{display:none;}
 .page-links span{padding-right:10px;}
 body.error404 .search-form{width: 50%;}
 
+#sidebar .search-form{width:100% !important;}
+
 .home1_section_area{background-color: #2e3b4e; position:relative;}
 a .squarebox{transition: all 0.6s ease-out 0s;}
 .squarebox{height: auto; min-height: 210px; position: relative; text-align: center; vertical-align: middle; width: 16.35%; display:inline-block;}
@@ -389,3 +391,5 @@ a .squarebox{transition: all 0.6s ease-out 0s;}
 .blockdesc{font-size: 14px; line-height: 23px; padding: 21px 0 25px; text-align: center; color:#2f2f2f;}
 .blockmore{display: block; font-size: 12px; margin: 0 auto; padding-bottom: 40px; text-align: center;}
 .ReadMore{color:#FFF !important;}
+
+.page-links{float: left; clear: both; margin-top: 25px;}

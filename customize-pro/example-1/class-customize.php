@@ -75,7 +75,7 @@ final class adventure_lite_Example_1_Customize {
 				array(
 					'title'    => esc_html__( 'Upgrade to Pro', 'adventure-lite' ),
 					'pro_text' => esc_html__( 'Upgrade Now', 'adventure-lite' ),
-					'pro_url'  => 'https://www.sktthemes.net/shop/education-wordpress-theme/',
+					'pro_url'  => 'https://www.sktthemes.net/shop/adventure-wordpress-theme/',
 					'priority'   => 1,
 				)
 			)

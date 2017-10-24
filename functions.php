@@ -7,7 +7,7 @@
  
  global $content_width;
  if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */ 
+	$content_width = 780; /* pixels */ 
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -137,7 +137,7 @@ add_action( 'wp_enqueue_scripts', 'adventure_lite_scripts' );
 
 define('SKTTHEMES_URL','https://www.sktthemes.net','adventure-lite');
 define('SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.net/shop/adventure-wordpress-theme/','adventure-lite');
-define('SKTTHEMES_FREE_THEME_URL','#','adventure-lite');
+define('SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/','adventure-lite');
 define('SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/adventure-documentation/','adventure-lite');
 define('SKTTHEMES_LIVE_DEMO','http://sktperfectdemo.com/demos/adventure/','adventure-lite');
 define('SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','adventure-lite');

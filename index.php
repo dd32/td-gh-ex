@@ -12,11 +12,12 @@
 
 get_header(); 
 ?>
+
 <div class="container">
-     <div class="page_content">
-        <section class="site-main">
-        	 <div class="blog-post">
-					<?php
+  <div class="page_content">
+    <section class="site-main">
+      <div class="blog-post">
+        <?php
                     if ( have_posts() ) :
                         // Start the Loop.
                         while ( have_posts() ) : the_post();
@@ -37,11 +38,13 @@ get_header();
                     
                     endif;
                     ?>
-                    </div><!-- blog-post -->
-             </section>
-      
-        <?php get_sidebar();?>     
-        <div class="clear"></div>
-    </div><!-- site-aligner -->
-</div><!-- content -->
+      </div>
+      <!-- blog-post --> 
+    </section>
+    <?php get_sidebar();?>
+    <div class="clear"></div>
+  </div>
+  <!-- site-aligner --> 
+</div>
+<!-- content -->
 <?php get_footer(); ?>

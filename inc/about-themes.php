@@ -21,9 +21,9 @@ function adventure_lite_mostrar_guide() {
 <div class="wrapper-info">
 	<div class="col-left">
    		   <div style="font-size:16px; font-weight:bold; padding-bottom:5px; border-bottom:1px solid #ccc;">
-			  <?php esc_attr_e('About Theme Info', 'adventure-lite'); ?>
+			  <?php esc_attr_e('Theme Information', 'adventure-lite'); ?>
 		   </div>
-          <p><?php esc_attr_e('Description Goes Here','adventure-lite'); ?></p>
+          <p><?php esc_attr_e('Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use.','adventure-lite'); ?></p>
 		  <a href="<?php echo SKTTHEMES_PRO_THEME_URL; ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/free-vs-pro.png" alt="" /></a>
 	</div><!-- .col-left -->
 	

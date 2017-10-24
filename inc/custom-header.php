@@ -11,7 +11,7 @@ function adventure_lite_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'adventure_lite_custom_header_args', array(
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1600,
-		'height'                 => 200,
+		'height'                 => 80,
 		'wp-head-callback'       => 'adventure_lite_header_style',
 		'admin-head-callback'    => 'adventure_lite_admin_header_style',
 		'admin-preview-callback' => 'adventure_lite_admin_header_image',

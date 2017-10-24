@@ -10,7 +10,6 @@
  * @package Adventure Lite
  */
 get_header(); ?>
-
 <?php
 $hideslide = get_theme_mod('hide_slides', 1);
 $hide_pagethreeboxes = get_theme_mod('hide_pagethreeboxes', 1);
@@ -20,9 +19,9 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
 <?php if( $hideslide == '') { ?>
 <!-- Slider Section -->
 <?php for($sld=7; $sld<10; $sld++) { ?>
-	<?php if( get_theme_mod('page-setting'.$sld)) { ?>
-     <?php $slidequery = new WP_query('page_id='.get_theme_mod('page-setting'.$sld,true)); ?>
-		<?php while( $slidequery->have_posts() ) : $slidequery->the_post();
+<?php if( get_theme_mod('page-setting'.$sld)) { ?>
+<?php $slidequery = new WP_query('page_id='.get_theme_mod('page-setting'.$sld,true)); ?>
+<?php while( $slidequery->have_posts() ) : $slidequery->the_post();
         $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
         $img_arr[] = $image;
         $id_arr[] = $post->ID;
@@ -32,16 +31,21 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
     }
 ?>
 <?php if(!empty($id_arr)){ ?>
+
 <section id="home_slider">
   <div class="slider-wrapper theme-default">
     <div id="slider" class="nivoSlider">
       <?php 
 	$i=1;
 	foreach($img_arr as $url){ ?>
+      <?php if(!empty($url)){?>	
       <img src="<?php echo esc_url($url); ?>" title="#slidecaption<?php echo esc_attr($i); ?>" />
-      <?php $i++; }  ?>
+      <?php }else{?>
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/no_slide.jpg" title="#slidecaption<?php echo esc_attr($i); ?>" />
+      <?php } ?>
+	  <?php $i++; }  ?>
     </div>
-		<?php 
+    <?php 
         $i=1;
         foreach($id_arr as $id){ 
         $title = get_the_title( $id ); 
@@ -54,77 +58,80 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
         <p><?php echo wp_kses_post($content); ?></p>
         <div class="clear"></div>
         <a class="slide_more" href="<?php the_permalink(); ?>">
-          <?php esc_html_e('Read More', 'adventure-lite');?>
-          </a>
-      </div>
+        <?php esc_html_e('Read More', 'adventure-lite');?>
+        </a> </div>
     </div>
     <?php $i++; } ?>
   </div>
   <div class="clear"></div>
 </section>
 <?php } } } ?>
-
 <?php if (!is_home() && is_front_page()) { ?>
 <?php if( $hide_infoboxes == '') { ?>
 <section class="home1_section_area">
-    	<div class="center">
-        <div class="home_section1_content">
-		  <?php for($ibox=12; $ibox<19; $ibox++) { ?>
-          <?php if( get_theme_mod('pageinfobox-column'.$ibox,false)) { ?>
-          <?php $infoboxquery = new WP_query('page_id='.get_theme_mod('pageinfobox-column'.$ibox,true)); ?>
-          <?php while( $infoboxquery->have_posts() ) : $infoboxquery->the_post(); ?>
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="squarebox">
-                            <div class="squarebox-content">
-                                <?php if( has_post_thumbnail() ) { ?>
-                                <div class="squareicon"><?php the_post_thumbnail();?></div>
-                                <?php } ?>
-                                <div class="squaretitle"><?php the_title(); ?></div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>		
-                     </a>
-          <?php endwhile;
+  <div class="center">
+    <div class="home_section1_content">
+      <?php for($ibox=12; $ibox<19; $ibox++) { ?>
+      <?php if( get_theme_mod('pageinfobox-column'.$ibox,false)) { ?>
+      <?php $infoboxquery = new WP_query('page_id='.get_theme_mod('pageinfobox-column'.$ibox,true)); ?>
+      <?php while( $infoboxquery->have_posts() ) : $infoboxquery->the_post(); ?>
+      <a href="<?php the_permalink(); ?>">
+      <div class="squarebox">
+        <div class="squarebox-content">
+          <?php if( has_post_thumbnail() ) { ?>
+          <div class="squareicon">
+            <?php the_post_thumbnail();?>
+          </div>
+          <?php } ?>
+          <div class="squaretitle">
+            <?php the_title(); ?>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      </a>
+      <?php endwhile;
            wp_reset_postdata(); ?>
-          <?php }} ?> 
-        </div>
-        </div>
-    </section>
-<?php } } ?>    
+      <?php }} ?>
+    </div>
+  </div>
+</section>
+<?php } } ?>
 <?php if (!is_home() && is_front_page()) { ?>
 <?php if( $hide_pagethreeboxes == '') { ?>
 <section id="pagearea">
-  <div class="container">   
-  <?php $sectitle = get_theme_mod('section2_title'); ?>	
-  <?php if(!empty($sectitle)){?>
-        <div class="center-title">
-            <h2><?php echo esc_html($sectitle);?></h2>
+  <div class="container">
+    <?php $sectitle = get_theme_mod('section2_title'); ?>
+    <?php if(!empty($sectitle)){?>
+    <div class="center-title">
+      <h2><?php echo esc_html($sectitle);?></h2>
+    </div>
+    <?php } ?>
+    <div class="clear"></div>
+    <div class="area_wrapper">
+      <?php for($p=1; $p<4; $p++) { ?>
+      <?php if( get_theme_mod('page-column'.$p,false)) { ?>
+      <?php $querypagethreeboxes = new WP_query('page_id='.get_theme_mod('page-column'.$p,true)); ?>
+      <?php while( $querypagethreeboxes->have_posts() ) : $querypagethreeboxes->the_post(); ?>
+      <div class="blocksbox"> <a href="<?php the_permalink(); ?>">
+        <?php if( has_post_thumbnail() ) { ?>
+        <div class="blockthumb">
+          <?php the_post_thumbnail();?>
         </div>
         <?php } ?>
-        <div class="clear"></div>
-        <div class="area_wrapper">
-		<?php for($p=1; $p<4; $p++) { ?>
-        <?php if( get_theme_mod('page-column'.$p,false)) { ?>
-        <?php $querypagethreeboxes = new WP_query('page_id='.get_theme_mod('page-column'.$p,true)); ?>
-        <?php while( $querypagethreeboxes->have_posts() ) : $querypagethreeboxes->the_post(); ?>
-      
-      
-        <div class="blocksbox">
-            <a href="<?php the_permalink(); ?>">
-             <?php if( has_post_thumbnail() ) { ?>
-            <div class="blockthumb">
-                <?php the_post_thumbnail();?>
-            </div>
-            <?php } ?>
-            </a>
-            <div class="blocktitle">
-                <a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5></a>
-            </div>
-            <div class="blockdesc"><?php the_excerpt(); ?></div>
-            <div class="blockmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE...', 'adventure-lite');?></a></div>
-        </div>      
-
-      
+        </a>
+        <div class="blocktitle"> <a href="<?php the_permalink(); ?>">
+          <h5>
+            <?php the_title(); ?>
+          </h5>
+          </a> </div>
+        <div class="blockdesc">
+          <?php the_excerpt(); ?>
+        </div>
+        <div class="blockmore"><a href="<?php the_permalink(); ?>">
+          <?php esc_html_e('READ MORE...', 'adventure-lite');?>
+          </a></div>
+      </div>
       <?php /*?><div class="threebox <?php if($p % 3 == 0) { echo "last_column"; } ?>">
      	<a href="<?php echo esc_url( get_permalink() ); ?>">
 		 <?php if( has_post_thumbnail() ) { ?>
@@ -142,17 +149,17 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
       <?php endwhile;
        wp_reset_postdata(); ?>
       <?php }} ?>
-      <div class="clear"></div> 
-      </div>
-  </div><!-- container -->
-</section><!-- #pagearea -->
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!-- container --> 
+</section>
+<!-- #pagearea -->
 <div class="clear"></div>
 <?php } } ?>
-
 <div class="container">
-     <div class="page_content">
-  
-      <?php 
+  <div class="page_content">
+    <?php 
 	if ( 'posts' == get_option( 'show_on_front' ) ) {
     ?>
     <section class="site-main">
@@ -188,7 +195,7 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
     <?php
 } else {
     ?>
-	<section class="site-main">
+    <section class="site-main">
       <div class="blog-post">
         <?php
                     if ( have_posts() ) :
@@ -200,10 +207,12 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
                              * (where ___ is the post format) and that will be used instead.
                              */
 							 ?>
-                             <header class="entry-header">           
-            				<h1><?php the_title(); ?></h1>
-                    		</header>
-                             <?php
+        <header class="entry-header">
+          <h1>
+            <?php the_title(); ?>
+          </h1>
+        </header>
+        <?php
                             the_content();
                     
                         endwhile;
@@ -223,11 +232,13 @@ $hide_infoboxes = get_theme_mod('hide_infobox', 1);
       </div>
       <!-- blog-post --> 
     </section>
-	<?php
+    <?php
 }
 	?>
     <?php get_sidebar();?>
     <div class="clear"></div>
-  </div><!-- site-aligner -->
-</div><!-- content -->
+  </div>
+  <!-- site-aligner --> 
+</div>
+<!-- content -->
 <?php get_footer(); ?>
