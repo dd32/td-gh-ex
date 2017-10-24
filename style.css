@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.490
+Version: 1.491
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats, grid-layout, flexible-header, custom-logo, featured-image-header, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -858,6 +858,9 @@ blockquote p:first-child{
 .entry-content  figure.aligncenter img{
     margin:.5em auto;
 }
+.rsidebar figure img,
+.lsidebar figure img,
+.topsidebar figure img,
 .textwidget  figure img,
 .entry-content  figure img{
     margin:auto;
@@ -1137,9 +1140,22 @@ legend{
     border:1px solid #000;
     box-shadow:rgba(0, 0, 0, 0.4) 0px 0px 6px 3px;
 }
+.rd-type-dark .rsidebar .gallery img,
+.rd-type-dark .lsidebar .gallery img{
+    /* @1.491 */
+    border:1px solid #000;
+    box-shadow:none;
+}
+
 .rd-type-light .gallery img{
     border:1px solid #555;
     box-shadow:rgba(113, 135, 164, 0.5) 0px 0px 6px 3px;
+}
+.rd-type-light .rsidebar .gallery img,
+.rd-type-light .lsidebar .gallery img{
+    /* @1.491 */
+    border:1px solid #000;
+    box-shadow:none;
 }
 .gallery-columns-1 .gallery-item .gallery-icon,
 .gallery-columns-1 .gallery-item .gallery-icon,
@@ -2491,6 +2507,9 @@ img.alignright,
     padding:0.38461538461em 0.76923076923em 0.76923076923em 0;
     box-sizing:border-box;
 }
+.wp-block-gallery.alignnone{
+    display:flex;
+}
 .size-thumbnail{
     padding:.5em;
 }
@@ -3470,7 +3489,9 @@ div:not(.raindrops-empty-content) .entry-meta-default .raindrops-comment-link{
     background: url("images/link.png");
     background-size:24px 24px;
     background-repeat:no-repeat;
-    width:24px;
+    text-indent:2em;
+    vertical-align:baseline;
+    min-width:24px;
     height:24px;
 }
 
@@ -5075,6 +5096,8 @@ body:not(.no-apply-bbpress-css) #bbpress-forums a{
     margin:1.5%;
     box-sizing:border-box;
 }
+.rsidebar .eco-archive.by-month li,
+.lsidebar .eco-archive.by-month li,
 .rsidebar .eco-archive .month,
 .lsidebar .eco-archive .month,
 .rsidebar .eco-archive .year,
@@ -5244,7 +5267,9 @@ div.raindrops-excerpt-more{
    ========================================================================== */
 .lsidebar,
 .rsidebar {
+    /* @1.491
     overflow:hidden;
+    */
 }
 .rsidebar{
     margin-right:0.38461538461em;
@@ -8325,4 +8350,23 @@ html[xmlns="http://www.w3.org/1999/xhtml"] .rsidebar .widget_media_image .alignn
 .h2-thumb:empty + .entry-title-text{
     padding-left:0;
     padding-right:0;
+}
+/**
+ * WordPress 4.9
+ * gallery widget
+ */
+.widget_media_gallery{
+   /* border:1px solid red;*/
+    padding:1em 0;
+
+}
+.widget_media_gallery .gallery{
+    margin-left:auto;
+    margin-right:auto;
+}
+.widget_media_gallery .gallery .gallery-item{
+    margin-top:-7px;
+}
+.widget_media_gallery .gallery-icon img{
+    height:auto;
 }
