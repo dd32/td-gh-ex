@@ -173,27 +173,6 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 			
 			),
 
-			array( 
-
-				"title" => esc_html__( "Styles","alhena-lite"),
-				"type" => "section",
-				"id" => "styles_section",
-				"panel" => "general_panel",
-				"priority" => "14",
-
-			),
-
-			array( 
-
-				"label" => esc_html__( "Custom css","alhena-lite"),
-				"description" => esc_html__( "Insert your custom css code.","alhena-lite"),
-				"id" => "wip_custom_css_code",
-				"type" => "textarea",
-				"section" => "styles_section",
-				"std" => "",
-
-			),
-
 			/* LAYOUTS SECTION */ 
 
 			array( 

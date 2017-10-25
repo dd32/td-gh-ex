@@ -40,12 +40,6 @@ if (!function_exists('alhenalite_required_plugins')) {
 				'required'  => false,
 			),
 
-			array(
-				'name'      => 'Inline Related Posts',
-				'slug'      => 'intelly-related-posts',
-				'required'  => false,
-			),
-
 		);
 
 		$config = array(
