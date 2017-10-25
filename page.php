@@ -11,7 +11,17 @@
 */
 
 get_header(); ?>
+<?php 
+global $wp_query;
+$pageidwithimage=$wp_query->post->ID;
+$image=get_theme_mod('footer_logo_page'.$pageidwithimage);
+$src = wp_get_attachment_url( $image);
+?>
+<?php if($src){?>
+<section class="inner-page-bg" style="background:url(<?php echo esc_url($src);?>);">
+<?php }else{?>
 <section class="inner-page-bg">
+<?php }?>
  <div class="container">
    <div class="row">
      <div class="col-lg-12">

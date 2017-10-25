@@ -52,3 +52,8 @@ Changelog
 2.2   2017-01-27
  - Header Meny Style Fixed
  - Homepage Products (display without widget)
+ 
+2.3   2017-10-25
+ - Inner header background image edit from customizer.
+ - Checkout page coupon and login text style fixed.
+ - Myaccount page leftbar style fixed.

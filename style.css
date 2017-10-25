@@ -4,7 +4,7 @@ Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
 Author: Ydesignservices
 Author URI: http://www.ydesignservices.com/
 Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
-Version: 2.2
+Version: 2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
@@ -580,3 +580,9 @@ textarea#comment{height:180px !important;padding:10px !important;}
 .woocommerce nav.woocommerce-pagination ul li span.current{border:1px solid #d3ced2; width:40px; height:40px; line-height:23px; border-color:#e8ad1e; color:#fff}
 .woocommerce-message:before {  content: "\e015";  color: #e8ad1e;}
 .woocommerce-message { border-top-color: #e8ad1e;}
+.showcoupon, .showcoupon:hover, .showlogin, .showlogin:hover {color: #2d2d2d;font-weight: 700;}
+.woocommerce-MyAccount-navigation {background: #e8ad1e !important;}
+.woocommerce-MyAccount-navigation ul li a {color: #fff !important;margin: 14px;}
+.woocommerce-MyAccount-navigation ul li {border-bottom: 2px solid #fff;}
+.woocommerce-MyAccount-navigation-link.is-active{background: #2d2d2d;}
+.woocommerce-MyAccount-navigation-link:hover{background: #2d2d2d;}

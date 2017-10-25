@@ -12,8 +12,16 @@
 * @package abaya
 * @since abaya 1.0
 */
-get_header(); ?>
+get_header(); 
+$page_for_posts = get_option( 'page_for_posts' );
+$image=get_theme_mod('footer_logo_page'.$page_for_posts);
+$src = wp_get_attachment_url( $image);
+?>
+<?php if($src){?>
+<section class="inner-page-bg" style="background:url(<?php echo esc_url($src);?>);">
+<?php }else{?>
 <section class="inner-page-bg">
+<?php }?>
  <div class="container">
    <div class="row">
      <div class="col-lg-12">

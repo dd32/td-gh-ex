@@ -1,5 +1,15 @@
 <?php
 function abaya_themes_customizer($wp_customize) {
+	global $wpdb;
+	$blocks = $wpdb->get_results("SELECT ID, post_title FROM $wpdb->posts WHERE post_type = 'page'");
+	$blocks_array = array('');
+	if ($blocks) {
+		foreach ( $blocks as $block ) {
+$blocks_array[$block->ID] = $block->post_title;
+		}
+	} else {
+		$blocks_array["No content blocks found"] = 0;
+	}
 $wp_customize->add_section(
    'theme_setting_section',
    array(
@@ -312,6 +322,45 @@ array(
    ),
 )
 );
+//
+$wp_customize->add_section(
+   'page_headerimages',
+   array(
+       'title' => esc_html__('Inner header image', 'abaya'),
+       'description' => esc_html__('This is a Themes Settings section.', 'abaya'),
+       'priority' => 35,
+   )
+);
+foreach ( $blocks as $blocks )
+{
+	$wp_customize->add_setting(
+					'footer_logo_page'.$blocks->ID,
+					array(
+					'default' => '',
+					'sanitize_callback' => 'sanitize_text_field',
+					'transport'   => 'refresh',
+					)
+					);
+
+			$wp_customize->add_control(
+       new WP_Customize_Cropped_Image_Control(
+           $wp_customize,
+           'footer_logo_page'.$blocks->ID,
+           array(
+               'label'      => $blocks->post_title.(esc_html__(' &nbsp;Inner header image', 'abaya')),
+               'section'    => 'page_headerimages',
+               'height' => 146,
+                'width' => 1920,
+                'flex_width' => false,
+                'flex_height' => false,
+               'settings'   => 'footer_logo_page'.$blocks->ID,
+               'settings'   => 'footer_logo_page'.$blocks->ID,
+                
+           )
+       )
+   );
+}
+	
 }
 add_action('customize_register', 'abaya_themes_customizer');
 /* add settings to create various social media text areas. */
