@@ -773,10 +773,10 @@ if ( ! function_exists( 'bento_quote_format_content' ) ) {
 if ( ! function_exists( 'bento_copyright' ) ) {
 
 	function bento_copyright() {
-		$sitename = '<a href="'.esc_url( home_url( '/' ) ).'">'.esc_attr( get_bloginfo( 'name' ) ).'</a>';
+		$sitename = esc_attr( get_bloginfo( 'name' ) );
 		$author = esc_html__( 'Bento theme by Satori', 'bento' );
 		if ( is_front_page() ) {
-			$author = esc_html__( 'Bento theme by', 'bento' ).' <a href="https://satoristudio.net/" target="blank" title="Satori Studio">Satori</a>';
+			$author = '<a href="https://satoristudio.net/bento-free-wordpress-theme/" target="blank" title="Bento Free WordPress Theme">Bento</a>' . ' ' . esc_html__( 'theme by Satori Studio', 'bento' );
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {

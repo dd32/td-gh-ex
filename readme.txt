@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.7.6
+Stable tag: 1.7.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.7 / 25 October 2017
+Fixed the full-width grid behaviour in the presence of side-menu.
+Fixed the bug which prevented the new breakpoint for fixed header on scroll.
+Fixed thumbnail display with active extended header on static pages.
 
 * 1.7.6 / 2 October 2017
 Fixed scroll positions for same-page links in the absence of fixed header.

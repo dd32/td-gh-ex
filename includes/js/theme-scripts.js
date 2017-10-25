@@ -277,7 +277,7 @@ $str(window).load(function () {
 	// Display grid items when everything is loaded
 	$str('.spinner-grid').fadeOut(100);
 	$bento_isocontainer.fadeIn(300, function() {
-		if ( bentoThemeVars.full_width_grid == 'on' ) {
+		if ( bentoThemeVars.full_width_grid == 'on' && bentoThemeVars.menu_config != 3 ) {
 			var ww = $str(window).width();
 			var im = $str('.grid-item-inner').css('padding-left').replace("px", "");
 			var nw = ww - ( 2 * im );
@@ -316,7 +316,7 @@ $str(window).load(function () {
 	// Same-page menu links
 	var bento_op_menu = bentoOnePage();
 	if ( ! $str.isEmptyObject(bento_op_menu) ) {
-		$str('.primary-menu li').removeClass('current-menu-item');
+		$str('.primary-menu li, .primary-mobile-menu li').removeClass('current-menu-item');
 		$str.each( bento_op_menu, function( ind, val ) {
 			$str('.'+ind+' > a').click(function(e) {
 				if ( $str('body').hasClass('mobile-menu-open') ) {
@@ -412,7 +412,7 @@ $str(window).scroll(function () {
 	
 	
 	// Fixed header on scroll
-	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(80) ) {
+	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(64) ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone(true);
@@ -441,7 +441,7 @@ $str(window).scroll(function () {
 		});
 		if ( activeParent != '' && activeParent != activeParentPrev ) {
 			$str('.'+activeParent).addClass('current-menu-item');
-			$str('.primary-menu li:not(".'+activeParent+'")').removeClass('current-menu-item');
+			$str('.primary-menu li:not(".'+activeParent+'"),.primary-mobile-menu li:not(".'+activeParent+'")').removeClass('current-menu-item');
 			var activeParentPrev = activeParent;
 		}
 	}
