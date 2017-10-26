@@ -5,7 +5,7 @@ Author: SKT Themes
 Author URI: https://www.sktthemes.net
 Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. Demo : http://sktperfectdemo.com/demos/adventure/
 
-Version: 1.1
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: adventure-lite
@@ -116,7 +116,7 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 .pagination .nav-links a{ margin-right:0; background:#646262; color:#fff; padding:5px 10px;}
 .pagination .nav-links span.current, .pagination .nav-links a:hover { padding:5px 10px; background:#fec42b; color:#fff;}
 
-.postmeta{padding:5px 0; color:#999;}
+.postmeta{padding:5px 0; color:#999; clear:both;}
 .postmeta a{color:#999;}
 .postmeta a:hover{color:#fec42b;}
 
