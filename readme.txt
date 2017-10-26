@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.7 | 25th October 2017 = 
+* Update: Lots of code restructure, esc issues for php sniffer.
+* Update: Cart url for woocommerce.
+
 = Version 3.0.6 | 25th August 2017 = 
 * Add: string translate for blog category.
 

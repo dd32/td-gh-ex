@@ -17,7 +17,7 @@ define('POST_EXCERPT_LENGTH', 40);
 /**
  * .main classes
  */
-function kadence_main_class() {
+function virtue_main_class() {
   if (kadence_display_sidebar()) {
     // Classes on pages with the sidebar
     $class = 'col-lg-9 col-md-8';
@@ -104,7 +104,7 @@ function kadence_sidebar_on_blog_page() {
 }
 function kadence_sidebar_on_myaccount_page() {
   if(is_account_page()) {
-      if(kad_is_wc_version_gte_2_6() == 1) {
+      if(virtue_is_wc_version_gte_2_6() == 1) {
            return true;
         } else {
             $current_user = wp_get_current_user();
