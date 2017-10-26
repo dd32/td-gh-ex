@@ -30,6 +30,12 @@ $responsive_options = responsive_get_options();
  * Add plugin automation file
  */
 require_once( dirname( __FILE__ ) . '/classes/class-tgm-plugin-activation.php' );
+//require_once( dirname( __FILE__ ) . '/control-checkbox-multiple.php' );
+function responsive_load_customize_controls() {
+
+    require_once( trailingslashit( get_template_directory() ) . 'core/includes/control-checkbox-multiple.php' );
+}
+add_action( 'customize_register', 'responsive_load_customize_controls', 0 );
 
 /*
  * Hook options
@@ -101,7 +107,8 @@ function responsive_get_option_defaults() {
 		'single_post_layout_default'      => 'default',
 		'blog_posts_index_layout_default' => 'default',
 		'site_layout_option'			  => 'default-layout',	
-                'button_style'                    => 'default'
+                'button_style'                    => 'default',
+			'home-widgets'				=> false
 	);
 
 	return apply_filters( 'responsive_option_defaults', $defaults );
@@ -309,7 +316,7 @@ if ( !function_exists( 'responsive_css' ) ) {
 		if ( is_child_theme() ) {
 			wp_enqueue_style( 'responsive-child-style', get_stylesheet_uri(), false, $theme['Version'] );
 		}
-		if ($responsive_options['front_page'] == 1 && (isset( $responsive_options['team']) && $responsive_options['team'] == '1' || isset( $responsive_options['contact']) && $responsive_options['contact'] == '1') || isset($responsive_options['site_layout_option']) && ($responsive_options['site_layout_option'] == 'full-width-no-box')) 
+		 
 		wp_enqueue_style( 'fontawesome-style', get_template_directory_uri() . '/core/css/font-awesome.min.css', false, '4.7.0');
 	}
 
@@ -458,7 +465,7 @@ add_filter( 'body_class', 'responsive_add_class' );
 if ( !function_exists( 'responsive_post_meta_data' ) ) {
 
 	function responsive_post_meta_data() {
-		printf( __( '<span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
+		printf( __( '<i class="fa fa-calendar" aria-hidden="true"></i><span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
 				'meta-prep meta-prep-author posted',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="timestamp updated" datetime="%3$s">%4$s</time></a>',
 						 esc_url( get_permalink() ),
@@ -474,6 +481,12 @@ if ( !function_exists( 'responsive_post_meta_data' ) ) {
 						 get_avatar( get_the_author_meta( 'ID' ), 32)
 				)
 		);
+?>
+		<span class='posted-in'>
+<?php 		printf( __( 'Posted in %s', 'responsive' ), get_the_category_list( ', ' ) ); ?>
+		</span>
+<?php 
+
 	}
 
 }
