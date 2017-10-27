@@ -5,16 +5,17 @@
         $window = $( window ),
         $body = $( document.body ),
         
+        $htmlBody = $( 'html, body' ),
+        
         // Functionalities
+        $applicatorComments = $html.closest( '.applicator--comments' ),
         $aplApplicatorGoCtNav = $html.closest( '.applicator--go-content-nav' ),
         $aplApplicatorGoStartNav = $html.closest( '.applicator--go-start-nav' ),
-        $aplApplicatorMainSearch = $html.closest( '.applicator--main-search' ),
-        $aplApplicatorSubNav = $html.closest( '.applicator--sub-nav' ),
+        $aplApplicatorMainActionsWidgets = $html.closest( '.applicator--main-actions-widgets' ),
         $aplApplicatorMainMenu = $html.closest( '.applicator--main-menu' ),
-        $applicatorComments = $html.closest( '.applicator--comments' ),
+        $aplApplicatorMainSearch = $html.closest( '.applicator--main-search' ),
         $applicatorPageNav = $html.closest( '.applicator--page-nav' ),
-        
-        $mainHrAsEnabled = $html.closest( '.main-header-aside--enabled' ),
+        $aplApplicatorSubNav = $html.closest( '.applicator--sub-nav' ),
         
         showHideTxtCss = 'show-hide---txt',
         showHideTxtLabelCss = 'show-hide---l',
@@ -35,10 +36,125 @@
         pageShortCss = 'page--short',
         pageLongCss = 'page--long',
         
+        applicatorMainSearchTerm = 'applicator--main-search',
+        aplApplicatorMainActionsWidgetsTerm = 'applicator--main-actions-widgets',
+        
         $aplWildcard = $( '#applicator-wildcard' ),
         $aplWildcardCr = $aplWildcard.find( '.applicator-wildcard---cr' ),
         overlayTerm = 'overlay',
-        overlayMu;
+        overlayMu,
+        
+        $mainActions = $( '#main-actions' ),
+        $mainSearch;
+    
+    
+    
+    
+    
+    // HTML_OK Component Markup
+    function htmlokCP( $cp, $name ) {
+                
+        var cpMU,
+            crMU,
+            hrMU,
+            hrCrMU,
+            hMU,
+            hLMU,
+            ctMU,
+            ctCrMU;
+
+        // Content Markup
+        ctCrMU = $( '<div />', {
+            'class': 'ct_cr ' + $cp + '---ct_cr'
+        } );
+
+        ctMU = $( '<div />', {
+            'class': 'ct ' + $cp + '---ct'
+        } )
+            .append( ctCrMU);
+        
+        // Header Markup
+        hLMU = $( '<span />', {
+            'class': 'h_l ' + $cp + '---h_l'
+        } )
+        .text( $name );
+        
+        hMU = $( '<div />', {
+            'class': 'h ' + $cp + '---h'
+        } )
+            .append( hLMU);
+        
+        hrCrMU = $( '<div />', {
+            'class': 'hr_cr ' + $cp + '---hr_cr'
+        } )
+            .append( hMU);
+
+        hrMU = $( '<div />', {
+            'class': 'hr ' + $cp + '---hr'
+        } )
+            .append( hrCrMU);
+
+        // Container Markup
+        crMU = $( '<div />', {
+            'class': 'cr ' + $cp + '---cr'
+        } )
+            .append( hrMU)
+            .append( ctMU);
+        
+        // Component Markup
+        cpMU = $( '<div />', {
+            'id': $cp,
+            'class': 'cp ' + $cp,
+            'data-name': $name + ' ' + 'CP'
+        } )
+            .append( crMU );
+
+        return cpMU;
+    }
+    
+    
+    function htmlokToggleOBJ( $obj, $name, $label, $icon ) {
+        
+        var toggleObjMU,
+            toggleButtonObjMU,
+            toggleButtonLabelObjMU,
+            toggleButtonTextLabelObjMU,
+            toggleButtonLabelTextObjMU;
+        
+        toggleButtonLabelTextObjMU = $( '<span />', {
+            'class': 'txt ' + showHideTxtCss,
+            'text': $label
+        } );
+
+        toggleButtonTextLabelObjMU = $( '<span />', {
+            'class': 'l ' + $obj + '---l'
+        } )
+            .append( toggleButtonLabelTextObjMU );
+
+        toggleButtonLabelObjMU = $( '<span />', {
+            'class': 'b_l ' + $obj + '---b_l'
+        } )
+            .append( toggleButtonTextLabelObjMU )
+            .append( $icon );
+
+        // Button
+        toggleButtonObjMU = $( '<button />', {
+            'id' : $obj + '---b',
+            'class': 'b ' + $obj + '---b',
+            'title': $label
+        } )
+            .append( toggleButtonLabelObjMU );
+
+        // Object
+        toggleObjMU = $( '<div />', {
+            'class': 'obj toggle ' + $obj,
+            'data-name': $name + ' Toggle OBJ'
+        } )
+            .append( toggleButtonObjMU );
+        
+        return toggleObjMU;
+        
+    }
     
     
     
@@ -54,6 +170,39 @@
             }
         } );
     }
+    
+    
+    
+    
+    
+    
+        
+    // Remove Hash
+    // https://stackoverflow.com/a/5298684
+    function removeHash() { 
+        window.history.pushState( '', document.title, window.location.pathname );
+    }
+    
+    
+    
+    
+    
+    /* ------------------------ Smooth Scrolling ------------------------ */
+    // https://stackoverflow.com/a/7717572
+    
+    ( function() {
+        $( 'a[href^="#"]' ).on( 'click.applicator', function() {
+            var href = $.attr( this, 'href' );
+
+            $htmlBody.stop().animate( {
+                scrollTop: $( href ).offset().top
+            }, 300, 'easeInOutCirc', function() {
+                window.location.hash = href;                
+            } );
+
+            return false;
+        } );
+    }() );
         
     
     
@@ -70,6 +219,48 @@
         
         $aplWildcardCr.append( overlayMu );
         
+    }
+    
+    
+    
+    
+    
+    /* ------------------------- Cycle Tabbing ------------------------- */
+    // https://stackoverflow.com/a/21811463
+    
+    function cycleTabbing( $cp ) {
+
+        var inputs = $cp.find( 'a, button, input, object, select, textarea' ).filter( ':visible' ),
+            firstInput = inputs.first(),
+            lastInput = inputs.last();
+
+        // Set focus on first input
+        firstInput.focus();
+
+        // Redirect last tabbing to first input
+        lastInput.on( 'keydown.applicator', function( e ) {
+            if ( e.which === 9 && !e.shiftKey ) {
+                e.preventDefault();
+                firstInput.focus();
+            }
+        } );
+
+        // Redirect first shift tabbing to last input
+        firstInput.on( 'keydown.applicator', function( e ) {
+            if ( e.which === 9 && e.shiftKey ) {
+                e.preventDefault();
+                lastInput.focus();
+            }
+        } );
+    }
+    
+    function cycleTabbingOff( $cp ) {
+        var inputs = $cp.find( 'a, button, input, object, select, textarea' ).filter( ':visible' ),
+            firstInput = inputs.first(),
+            lastInput = inputs.last();
+        
+        lastInput.off( 'keydown.applicator' );
+        firstInput.off( 'keydown.applicator' );
     }
     
     
@@ -203,51 +394,38 @@
             if ( ( window.innerHeight ) <= ( bodyOffsetCriteriaHeight ) ) {
 
                 // http://stackoverflow.com/a/40370876
-                $window.scroll( function() {
-                    
+                $window.on( 'scroll.applicator', function() {
                     if ( ( ( window.innerHeight + window.pageYOffset ) >= ( bodyOffsetHeight / 4 ) ) && ( ! window.pageYOffset == 0 ) ) {
-                        
                         goStartNavActivate();
-                    
                     }
+                    
                     else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetHeight / 4 ) ) || ( window.pageYOffset == 0 ) ) {
-                        
                         goStartNavDeactivate();
-                    
                     }
-                    
                 } );
             }
         }
         goStartNav();
         
-        new ResizeSensor( $page, function() {
-            goStartNav();
+        $goStartNaviA.on( 'click.applicator', function() {
+            
         } );
         
-    
-        // Smooth Scroll to root
-        $goStartNaviA.bind( 'click.applicator', function( e ) {
-
-            e.preventDefault();
-            
-            var target = $( this ).attr( "href" );
-
-            $( 'html, body' ).stop().animate( {
-                scrollTop: $( target ).offset().top
-            }, 1000, 'easeInOutCirc', function() {
-                location.hash = target;
-            } );
-            
-            return false;
-        } );
+        
+        
         
         // Add Icon to Button
         $goStartNaviAL = $goStartNaviA.find( '.go-start-navi---a_l' );
         $goStartNaviAL.append( $goStartNavArrowIco );
+        
+        
+        new ResizeSensor( $page, function() {
+            goStartNav();
+        } );
     }
     
     initGoStartNav( $( '#go-start-nav' ) );
+
     
     
     
@@ -260,7 +438,7 @@
 			return;
 		}
         
-        if ( ! $mainHrAsEnabled.length ) {
+        if ( ! $html.closest( '.main-header-aside--enabled' ).length ) {
 			return;
 		}
         
@@ -337,6 +515,7 @@
         $mainMenuTogBtnL = $mainMenuTogBtn.find( $( '.main-menu-tog---b_l' ) );
         $mainMenuTogBtnLTxt = $mainMenuTogBtn.find( $( '.show-hide---txt' ) );
         
+        
         // Activate
         function mainMenuActivate() {
             $cp
@@ -357,6 +536,8 @@
             $mainMenuTogBtnL.append( $mainMenuTogBtnHideIco );
             $mainMenuTogBtnShowIco.remove();
             
+            cycleTabbing( $cp );
+            
         }
         
         // Deactivate
@@ -376,6 +557,8 @@
             $mainMenuTogBtnLTxt.text( $mainMenuShowL );
             $mainMenuTogBtnL.append( $mainMenuTogBtnShowIco );
             $mainMenuTogBtnHideIco.remove();
+            
+            cycleTabbingOff( $cp );
         }
         
         // Initialize
@@ -384,7 +567,7 @@
         function mainMenuResetScroll() {
             $mainHrAsCtCr = $cp.find( '.main-hr-aside---ct_cr' );
             
-            $mainHrAsCtCr.scrollTop(0);
+            $mainHrAsCtCr.scrollTop( 0 );
         }
         
         // Toggle
@@ -409,7 +592,7 @@
         }() );
             
         
-        
+        /*
         // Find if a Child Element Has Focus
         // Deactivate if no focus is present and if user is Tab key is active
         // http://ub4.underblob.com/find-if-a-child-element-has-focus/
@@ -422,6 +605,9 @@
                 }
             }, 10 );
         } );
+        */
+        
+        
         
         
         // Deactivate via external click
@@ -452,8 +638,8 @@
     function initComments( $cp ) {
         
         
-        // Don't proceed if Applicator Comments CSS Class name isn't found
-        if ( ! $applicatorComments.length ) {
+        // Proceed only in Detail View and the Applicator CSS class name is present
+        if ( ! $html.closest( '.view--detail' ) && ! $applicatorComments.length ) {
             return;
         }
 
@@ -467,14 +653,15 @@
             commentsToggleButtonMU,
             commentsToggleButtonLabelMU,
             commentsToggleButtonTextLabelMU,
+            commentsToggleButtonTextLabelTxtMU,
             
-            $comments = $( '#comments' ),
+            $comments,
             
             $commentModuleH,
-            $commentModuleCT,
             $commentsCountAction,
             $commentsToggleButton,
             $commentsToggleButtonTextLabel,
+            $commentsToggleButtonTextLabelTxt,
             
             $commentsCount,
             
@@ -534,7 +721,6 @@
         
         // Define existing elements
         $commentModuleH = $cp.find( '.comment-md---h' );
-        $commentModuleCT = $cp.find( '.comment-md---ct' );
         $commentsCountAction = $( '.comments-actions-snippet' ).find( '.comments-count-axn---a' );
 
         
@@ -572,15 +758,18 @@
             // Swap text label and icon
             $commentsToggleButtonTextLabelTxt.text( $commentsHideL );
             $commentsToggleButtonTextLabel.append( $commentsDismissIco );
-            
-            // Mimic Target
-            $window.scrollTop( $comments.position().top );
         }
         
         
-        // https://stackoverflow.com/a/5298684
-        function removeHash() { 
-            window.history.pushState( "", document.title, window.location.pathname );
+        function commentsScrollTop() {
+            
+            $comments = $( '#comments' );
+
+            $('html,body').stop().animate( {
+                scrollTop: $comments.offset().top
+            }, 300, 'easeInOutCirc', function() {
+                window.location.hash = '#comments';
+            } );
         }
         
         
@@ -604,26 +793,24 @@
             // Swap text label and icon
             $commentsToggleButtonTextLabelTxt.text( $commentsShowL );
             $commentsDismissIco.remove();
-        }
-        
+        }        
         // Initialize Deactivate
         commentsDeactivate();
         
         
-        // Toggle
+        // Toggle from generated button clicks
         function commentsToggle() {
             
             if ( $cp.hasClass( commentsOffCSS ) ) {
-                
                 commentsActivate();
-                location.hash = '#comments';
-            
+                commentsScrollTop();
+                cycleTabbing( $cp ); 
             }
+            
             else if ( $cp.hasClass( commentsOnCSS ) ) {
-                
                 commentsDeactivate();
-                
                 removeHash();
+                cycleTabbingOff( $cp );
             }
         }
         
@@ -643,29 +830,36 @@
         // Link Clicks
         ( function() {
             
-            $commentsCountAction.on( 'click.applicator', function() {
-                commentsActivate();
+            $( 'a[href*="#comment"]' ).on( 'click.applicator', function() {
+                
+                if ( $cp.hasClass( commentsOffCSS ) ) {
+                    commentsActivate();
+                    
+                    var href = $.attr( this, 'href' );
+
+                    $htmlBody.stop().animate( {
+                        scrollTop: $( href ).offset().top
+                    }, 300, 'easeInOutCirc', function() {
+                        window.location.hash = href;
+                    } );
+
+                    return false;
+                    
+                }
             } );
-        
         }() );
         
         
         // Hash
         $document.ready( function () {
             
+            // Activate Comments if URL activated has #comment
             // https://stackoverflow.com/a/19889034
             if ( window.location.hash ) {
-                if ( window.location.hash.indexOf( 'comment' ) == 1 || window.location.hash.indexOf( 'comment' ) != -1 ) {
+                if ( window.location.hash.indexOf( 'comment' ) != -1 && $cp.hasClass( commentsOffCSS ) ) {
                     commentsActivate();
                 }
             }
-            
-            // https://stackoverflow.com/a/14970748
-            $window.on( 'hashchange', function() {
-                if ( window.location.hash.indexOf( 'comment' ) == 1 || window.location.hash.indexOf( 'comment' ) != -1 ) {
-                    commentsActivate();
-                }
-            } );
         
         } );
 
@@ -683,13 +877,20 @@
 			return;
 		}
         
-        $( '#main-actions' )
+        $mainActions
             .find( $( '.main-actions---ct_cr' ) )
                 .children( '.search:first, .widget_search:first' )
                     .attr( 'id', 'main-search' );
     }() );
     
     function initMainSearch( $cp ) {
+        
+        $mainSearch = $( '#main-search' );
+        
+        if ( ! $mainSearch.length ) {
+            $html.removeClass( applicatorMainSearchTerm );
+			return;
+		}
         
         if ( ! $aplApplicatorMainSearch.length ) {
 			return;
@@ -796,6 +997,8 @@
             $mainSearchTogBtnL.append( $mainSearchTogDismissIco );
             $mainSearchTogSearchIco.remove();
             
+            cycleTabbing( $cp );
+            
             // Focus on input and select content if any
             $mainSearchInput.focus().select();
         }
@@ -817,6 +1020,8 @@
             $mainSearchTogBtnLTxt.text( $mainSearchShowL );
             $mainSearchTogBtnL.append( $mainSearchTogSearchIco );
             $mainSearchTogDismissIco.remove();
+            
+            cycleTabbingOff( $cp );
         }
         
         // Initialize
@@ -873,17 +1078,8 @@
             
         }() );
         
-        $cp.on( 'focusout.applicator', function() {
-            var $this = $( this );
-            setTimeout( function() {
-                var hasFocus = !! ( $this.find( ':focus' ).length > 0 );
-                if ( ! hasFocus ) {
-                    mainSearchDeactivate();
-                }
-            }, 10 );
-        } );
         
-        // Upon entering content in input
+                // Upon entering content in input
         $mainSearchInput.on( 'keypress.applicator input.applicator', function() {
             mainSearchInputStatus();
         } );
@@ -918,7 +1114,159 @@
     
     
     
-    // Sub-Nav for Main Menu, Widget Menu, Widget Pages
+    /* ------------------------ Main Actions ------------------------ */
+    function initMainActions( $cp ) {
+        
+        var $mainActionsWidgetItems = $mainActions.find( '.main-actions---ct_cr > .widget:not( .widget_search ):not( .widget_nav_menu )' );
+        
+        if ( ! $mainActionsWidgetItems.length ) {
+            $html.removeClass( aplApplicatorMainActionsWidgetsTerm );
+			return;
+		}
+        
+        if ( ! $aplApplicatorMainActionsWidgets.length ) {
+			return;
+		}
+        
+        ( function() {
+            
+            var $mainActionsWidgetsMU = htmlokCP( 'main-actions-widgets', 'Main Actions Widgets' ),
+                $mainActionsWidgets,
+                $mainActionsWidgetsCtCr,
+                $mainActionsWidgetsH,
+                
+                $mainActionsWidgetsToggleShowLabel = aplDataMainActionsWidgets.mainActionsWidgetsShowLabel,
+                $mainActionsWidgetsToggleHideLabel = aplDataMainActionsWidgets.mainActionsWidgetsHideLabel,
+                $mainActionsWidgetsToggleShowIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsShowIcon ),
+                $mainActionsWidgetsToggleHideIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsHideIcon ),
+                
+                $mainActionsWidgetsToggleButton,
+                $mainActionsWidgetsToggleButtonLabel,
+                $mainActionsWidgetsToggleButtonLabelText,
+                
+                mainActionsWidgetsOnCSS = 'main-actions-widgets--active',
+                mainActionsWidgetsOffCSS = 'main-actions-widgets--inactive',
+                aplMainActionsWidgetsOnCSS = 'applicator--main-actions-widgets--active',
+                aplMainActionsWidgetsOffCSS = 'applicator--main-actions-widgets--inactive';
+            
+            // Wrap in markup
+            $mainActionsWidgetItems
+                .wrapAll( $mainActionsWidgetsMU );
+            
+            // Define initial elements
+            funcName = 'main-actions-widgets-func';
+            $mainSearch = $( '#main-search' );
+            $mainActionsWidgets = $( '#main-actions-widgets' );
+            $mainActionsWidgetsCtCr = $mainActionsWidgets.find( '.main-actions-widgets---ct_cr' );
+            $mainActionsWidgetsH = $mainActionsWidgets.find( '.main-actions-widgets---h' );
+        
+            // Add CSS class names
+            $mainActionsWidgets
+                .addClass( funcTerm )
+                .addClass( funcName );
+            
+            // Create Toggle Button
+            $mainActionsWidgetsH.after(
+                htmlokToggleOBJ(
+                    'main-actions-widgets-toggle',
+                    'Main Actions Widgets',
+                    $mainActionsWidgetsToggleShowLabel,
+                    $mainActionsWidgetsToggleShowIcon
+                )
+            );
+            
+            // Define toggle elements
+            $mainActionsWidgetsToggleButton = $( '#main-actions-widgets-toggle---b' );
+            $mainActionsWidgetsToggleButtonLabel = $mainActionsWidgetsToggleButton.find( '.b_l' );
+            $mainActionsWidgetsToggleButtonLabelText = $mainActionsWidgetsToggleButton.find( '.l' );
+            
+            // Move to content markup
+            $mainActionsWidgetItems
+                .appendTo( $mainActionsWidgetsCtCr );
+            
+            // Move after Main Search
+            $mainActionsWidgets.insertAfter( $mainSearch );
+            
+            
+            // Activate
+            function mainActionsWidgetsActivate() {
+                $mainActionsWidgets
+                    .addClass( mainActionsWidgetsOnCSS )
+                    .removeClass( mainActionsWidgetsOffCSS );
+
+                $html
+                    .addClass( aplMainActionsWidgetsOnCSS )
+                    .removeClass( aplMainActionsWidgetsOffCSS );
+
+                $mainActionsWidgetsToggleButton.attr( {
+                     'aria-expanded': 'true',
+                     'title': $mainActionsWidgetsToggleHideLabel
+                } );
+
+                $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleHideLabel );
+                $mainActionsWidgetsToggleButtonLabel.append( $mainActionsWidgetsToggleHideIcon );
+                $mainActionsWidgetsToggleShowIcon.remove();
+
+                cycleTabbing( $mainActionsWidgets );
+            }
+            
+            
+            // Deactivate
+            function mainActionsWidgetsDeactivate() {
+                $mainActionsWidgets
+                    .addClass( mainActionsWidgetsOffCSS )
+                    .removeClass( mainActionsWidgetsOnCSS );
+
+                $html
+                    .addClass( aplMainActionsWidgetsOffCSS )
+                    .removeClass( aplMainActionsWidgetsOnCSS );
+
+                $mainActionsWidgetsToggleButton.attr( {
+                     'aria-expanded': 'false',
+                     'title': $mainActionsWidgetsToggleShowLabel
+                } );
+
+                $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleShowLabel );
+                $mainActionsWidgetsToggleButtonLabel.append( $mainActionsWidgetsToggleShowIcon );
+                $mainActionsWidgetsToggleHideIcon.remove();
+
+                cycleTabbingOff( $mainActionsWidgets );
+            }
+
+            // Initialize
+            mainActionsWidgetsDeactivate();
+            
+            
+        
+            // Toggle
+            function mainActionsWidgetsToggle() {
+                if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOffCSS ) ) {
+                    mainActionsWidgetsActivate();
+                }
+                else if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) ) {
+                    mainActionsWidgetsDeactivate();
+                }
+            }
+
+            // Click
+            ( function() {
+                $mainActionsWidgetsToggleButton.on( 'click.applicator', function( e ) {
+                    var $this = $( this );
+                    e.preventDefault();
+                    mainActionsWidgetsToggle();
+                } );
+            }() );
+        
+        }() );
+        
+    }
+    
+    initMainActions( $( '#main-actions' ) );
+    
+    
+    
+    
+    /* ------------------------ Sub-Nav ------------------------ */
     function initSubNav( $cp ) {
         
         if ( ! $aplApplicatorSubNav.length ) {
@@ -1428,7 +1776,7 @@
     
     /* ------------------------ DOM Ready ------------------------ */
     $document.ready( function() {
-		
+        
         
         // Remove DOM Unready CSS
         $html
@@ -1648,7 +1996,7 @@
                 return;
             }
             
-            if ( $( '.main-description' ).css( 'width' ) == '1px' ) {
+            if ( $( '.main-description' ).css( 'margin' ) == '-1px' ) {
                 $html
                     .addClass( 'main-description--empty' )
                     .removeClass( 'main-description--populated' );
@@ -1697,6 +2045,71 @@
             } );
         
         }() );
+        
+        
+        /* ------------------------ Main Banner Illusion ------------------------ */
+        function mainBannerIllusion() {
+            
+            var $mainBanner = $( '#main-banner' );
+            
+            if ( ! $mainBanner.length || $mainBanner.css( 'margin' ) == '-1px'  ) {
+                return;
+            }
+            
+            var scrollPosition,
+                mainBannerScale,
+                mainBannerBlur,
+                mainBannerTranslateY,
+                
+                $mainMediaBanner = $mainBanner.find( '.main-media-banner' ),
+                
+                mainBannerOffset = $mainBanner.offset().top,
+                mainBannerHeight = $mainBanner.height(),
+                mainBannerHeightHalf = mainBannerHeight / 2,
+                mainBannerOffsetHeight = mainBannerOffset + mainBannerHeight,
+                mainBannerOffsetHeightHalf = mainBannerOffset + ( mainBannerHeight / 2 );
+            
+            $window.on( 'scroll.applicator', function() {
+
+                scrollPosition = $( this ).scrollTop();
+                mainBannerScale = ( scrollPosition / ( mainBannerOffsetHeight / .3 ) ) + 1;
+                mainBannerBlur = ( mainBannerOffsetHeight ) * scrollPosition;
+                mainBannerTranslateY = ( 10 / mainBannerOffsetHeight ) * scrollPosition;
+                mainBannerOpacity = 1 - ( ( scrollPosition - mainBannerOffsetHeightHalf ) / mainBannerHeightHalf );
+                
+                /* Transform magic */
+                if ( scrollPosition <= mainBannerOffsetHeight ) {
+                    $mainMediaBanner.css( {
+                        transform: "translateY(" + mainBannerTranslateY + "px) scale(" + mainBannerScale + ", " + mainBannerScale + ")"
+                    } );
+                }
+                
+                /* Opacity magic */
+                if ( scrollPosition >= mainBannerOffsetHeightHalf ) {
+                    $mainMediaBanner.css( {
+                        opacity: mainBannerOpacity
+                    } );
+                }
+                
+                else {
+                    $mainMediaBanner.css( {
+                        opacity: 1
+                    } );
+                }
+                
+                if ( scrollPosition >= mainBannerOffsetHeight ) {
+                    
+                    $mainMediaBanner.css( {
+                        opacity: 0
+                    } );
+                }
+            } );
+
+            
+        }
+        mainBannerIllusion();
+    
+    
     } );
 
 })( jQuery );
