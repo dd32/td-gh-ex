@@ -251,6 +251,7 @@ if ( ! function_exists( 'ayafreelance_load_scripts' ) ) :
 
 		// load main stylesheet.
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( ) );
+		wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.css', array( ) );
 		wp_enqueue_style( 'ayafreelance-style', get_stylesheet_uri(), array() );
 		
 		wp_enqueue_style( 'ayafreelance-fonts', ayafreelance_fonts_url(), array(), null );
@@ -260,9 +261,13 @@ if ( ! function_exists( 'ayafreelance_load_scripts' ) ) :
 		}
 		
 		// Load Utilities JS Script
+		wp_enqueue_script( 'viewportchecker',
+			get_template_directory_uri() . '/js/viewportchecker.js',
+			array( 'jquery' ) );
+
 		wp_enqueue_script( 'ayafreelance-utilities',
 			get_template_directory_uri() . '/js/utilities.js',
-			array( 'jquery' ) );
+			array( 'jquery', 'viewportchecker' ) );
 
 		wp_enqueue_script( 'modernizr.custom.46884',
 			get_template_directory_uri() . '/js/modernizr.custom.46884.js',
@@ -271,6 +276,11 @@ if ( ! function_exists( 'ayafreelance_load_scripts' ) ) :
 		wp_enqueue_script( 'jquery.slicebox',
 			get_template_directory_uri() . '/js/jquery.slicebox.js',
 			array( 'jquery' ) );
+
+		$data = array(
+    		'loading_effect' => ( get_theme_mod('ayafreelance_animations_display', 1) == 1 ),
+    	);
+    	wp_localize_script('ayafreelance-utilities', 'ayafreelance_options', $data);
 	}
 endif; // ayafreelance_load_scripts
 add_action( 'wp_enqueue_scripts', 'ayafreelance_load_scripts' );
@@ -574,6 +584,37 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 	            'type'           => 'text',
 	            )
 	        )
+		);
+
+		/**
+		 * Add Animations Section
+		 */
+		$wp_customize->add_section(
+			'ayafreelance_animations_display',
+			array(
+				'title'       => __( 'Animations', 'ayafreelance' ),
+				'capability'  => 'edit_theme_options',
+			)
+		);
+
+		// Add display Animations option
+		$wp_customize->add_setting(
+				'ayafreelance_animations_display',
+				array(
+						'default'           => 1,
+						'sanitize_callback' => 'esc_attr',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize,
+							'ayafreelance_animations_display',
+								array(
+									'label'          => __( 'Enable Animations', 'ayafreelance' ),
+									'section'        => 'ayafreelance_animations_display',
+									'settings'       => 'ayafreelance_animations_display',
+									'type'           => 'checkbox',
+								)
+							)
 		);
 	}
 endif; // ayafreelance_customize_register

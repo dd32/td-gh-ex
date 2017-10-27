@@ -28,6 +28,10 @@
 
 		ayafreelance_mainMenuInit();
 
+		if (ayafreelance_options && ayafreelance_options.loading_effect) {
+			ayafreelance_init_loading_effects();
+		}
+
 		$('#navmain > div').on('click', function(e) {
 
 			e.stopPropagation();
@@ -151,5 +155,62 @@
 
 			Page.init();
 	});
+
+	function ayafreelance_init_loading_effects() {
+
+	    $('#header-logo').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated fadeInLeft',
+	            offset: 1
+	          });
+
+	    $('#navmain').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounceInRight',
+	            offset: 1
+	          });
+
+	    $('#page-header, article h1').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounceInUp',
+	            offset: 1
+	          });
+
+	    $('#main-content-wrapper h2, #main-content-wrapper h3')
+	            .addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounceInUp',
+	            offset: 1
+	          });
+
+	    $('img').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated zoomIn',
+	            offset: 1
+	          });
+
+	    $('#sidebar').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounceInRight',
+	            offset: 1
+	          });
+
+	    $('.before-content, .after-content').addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounce',
+	            offset: 1
+	          });
+
+	    $('article p, article li')
+	        .addClass("hidden").viewportChecker({
+	            classToAdd: 'animated fadeInLeft',
+	            offset: 1
+	          });
+
+	    $('#footer-main h1, #footer-main h2, #footer-main h3')
+	        .addClass("hidden").viewportChecker({
+	            classToAdd: 'animated bounceInUp',
+	            offset: 1
+	          });
+
+	    $('#footer-main p, #footer-main li')
+	        .addClass("hidden").viewportChecker({
+	            classToAdd: 'animated fadeInLeft',
+	            offset: 1
+	          });
+	}
 
 })(jQuery);

@@ -30,6 +30,9 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 *
 * css/font-awesome.css - License: MIT License URL: http://opensource.org/licenses/mit-license.html
 *
+* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
+* author URL: http://daneden.me/animate
+*
 * fonts/FontAwesome.otf License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.eot License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.svg License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
@@ -43,6 +46,8 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * js/jquery.slicebox.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 *
 * js/modernizr.custom.46884.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+*
+* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
 * screenshot.png (Slider Image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * Image Source: https://pixabay.com/en/hand-laptop-freelance-computer-1757224/
