@@ -571,7 +571,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 				'ayaportfolio_animations_display',
 				array(
 						'default'           => 1,
-						'sanitize_callback' => 'ayaportfolio_sanitize_checkbox',
+						'sanitize_callback' => 'esc_attr',
 				)
 		);
 

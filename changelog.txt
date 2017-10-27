@@ -1,3 +1,7 @@
+AyaPortfolio 1.0.3, 2017-10-27
+------------------------
+- bug fix
+
 AyaPortfolio 1.0.2, 2017-10-27
 ------------------------
 - add homepage slider
