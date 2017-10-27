@@ -55,6 +55,9 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
+* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
+* author URL: http://daneden.me/animate
+*
 * Titillium Web (default theme font), Released under Apache License, version 2.0 license - http://www.apache.org/licenses/LICENSE-2.0.html
 *
 * js/modernizr.custom.79639.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
@@ -64,6 +67,8 @@ The exceptions to this license are as follows:
 * js/jquery.ba-cond.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 *
 * js/jquery.slitslider.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+*
+* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
 * Image Source: https://pixabay.com/en/sun-sunrise-ray-view-indonesian-866451/

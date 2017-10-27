@@ -79,7 +79,7 @@ function ayaspirit_setup() {
 	) );
 
 	// add the visual editor to resemble the theme style
-	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/css/font-awesome.min.css' ) );
+	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/style.css' ) );
 
 	// add custom background				 
 	add_theme_support( 'custom-background', 
@@ -194,6 +194,37 @@ function ayaspirit_customize_register( $wp_customize ) {
             )
         )
 	);
+
+	/**
+	 * Add Animations Section
+	 */
+	$wp_customize->add_section(
+		'ayaspirit_animations_display',
+		array(
+			'title'       => __( 'Animations', 'ayaspirit' ),
+			'capability'  => 'edit_theme_options',
+		)
+	);
+
+	// Add display Animations option
+	$wp_customize->add_setting(
+			'ayaspirit_animations_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'esc_attr',
+			)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize,
+						'ayaspirit_animations_display',
+							array(
+								'label'          => __( 'Enable Animations', 'ayaspirit' ),
+								'section'        => 'ayaspirit_animations_display',
+								'settings'       => 'ayaspirit_animations_display',
+								'type'           => 'checkbox',
+							)
+						)
+	);
 }
 
 add_action('customize_register', 'ayaspirit_customize_register');
@@ -207,6 +238,7 @@ function ayaspirit_load_scripts() {
 
 	// load main stylesheet.
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.css', array( ) );
 	wp_enqueue_style( 'ayaspirit-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'ayaspirit-fonts', ayaspirit_fonts_url(), array(), null );
@@ -216,7 +248,9 @@ function ayaspirit_load_scripts() {
 	}
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'ayaspirit-utilities', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
+
+	wp_enqueue_script( 'ayaspirit-utilities', get_template_directory_uri() . '/js/utilities.js', array( 'jquery', 'viewportchecker' ) );
 
 	// Load Slider JS Script
 	wp_enqueue_script( 'modernizr-custom-79639', get_template_directory_uri() . '/js/modernizr.custom.79639.min.js',
@@ -227,6 +261,11 @@ function ayaspirit_load_scripts() {
 
 	wp_enqueue_script( 'jquery-slitslider', get_template_directory_uri() . '/js/jquery.slitslider.js',
 		array( 'jquery-ba-cond' ) );
+
+	$data = array(
+		'loading_effect' => ( get_theme_mod('ayaspirit_animations_display', 1) == 1 ),
+	);
+	wp_localize_script('ayaspirit-utilities', 'ayaspirit_options', $data);
 }
 
 add_action( 'wp_enqueue_scripts', 'ayaspirit_load_scripts' );
