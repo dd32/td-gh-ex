@@ -148,6 +148,7 @@ if ( ! function_exists( 'ayaportfolio_load_scripts' ) ) :
 
 		// load main stylesheet.
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( ) );
+		wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.css', array( ) );
 		wp_enqueue_style( 'ayaportfolio-style', get_stylesheet_uri(), array() );
 		
 		wp_enqueue_style( 'ayaportfolio-fonts', ayaportfolio_fonts_url(), array(), null );
@@ -157,9 +158,32 @@ if ( ! function_exists( 'ayaportfolio_load_scripts' ) ) :
 		}
 		
 		// Load Utilities JS Script
+		wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
+
 		wp_enqueue_script( 'ayaportfolio-utilities',
 			get_template_directory_uri() . '/js/utilities.js',
+			array( 'jquery', 'viewportchecker' ) );
+
+		wp_enqueue_script( 'jquery.resize',
+			get_template_directory_uri() . '/js/jquery.resize.js',
 			array( 'jquery' ) );
+	
+		wp_enqueue_script( 'jquery.waitforimages',
+			get_template_directory_uri() . '/js/jquery.waitforimages.js',
+			array( 'jquery' ) );
+	
+		wp_enqueue_script( 'modernizr',
+			get_template_directory_uri() . '/js/modernizr.js',
+			array( 'jquery' ) );
+
+		wp_enqueue_script( 'jquery.carousel-3d',
+			get_template_directory_uri() . '/js/jquery.carousel-3d.min.js',
+			array( 'jquery' ) );
+
+		$data = array(
+    		'loading_effect' => ( get_theme_mod('ayaportfolio_animations_display', 1) == 1 ),
+    	);
+    	wp_localize_script('ayaportfolio-utilities', 'ayaportfolio_options', $data);
 	}
 endif; // ayaportfolio_load_scripts
 add_action( 'wp_enqueue_scripts', 'ayaportfolio_load_scripts' );
@@ -434,6 +458,179 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 	            )
 	        )
 		);
+
+		/**
+		 * Add Slider Section
+		 */
+		$wp_customize->add_section(
+			'ayaportfolio_slider_section',
+			array(
+				'title'       => __( 'Slider', 'ayaportfolio' ),
+				'capability'  => 'edit_theme_options',
+			)
+		);
+
+		// Add slide 1 background image
+		$wp_customize->add_setting( 'ayaportfolio_slide1_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide1_image',
+				array(
+					'label'   	 => __( 'Slide 1 Image', 'ayaportfolio' ),
+					'section' 	 => 'ayaportfolio_slider_section',
+					'settings'   => 'ayaportfolio_slide1_image',
+				) 
+			)
+		);
+		
+		// Add slide 2 background image
+		$wp_customize->add_setting( 'ayaportfolio_slide2_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide2_image',
+				array(
+					'label'   	 => __( 'Slide 2 Image', 'ayaportfolio' ),
+					'section' 	 => 'ayaportfolio_slider_section',
+					'settings'   => 'ayaportfolio_slide2_image',
+				) 
+			)
+		);
+		
+		// Add slide 3 background image
+		$wp_customize->add_setting( 'ayaportfolio_slide3_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide3_image',
+				array(
+					'label'   	 => __( 'Slide 3 Image', 'ayaportfolio' ),
+					'section' 	 => 'ayaportfolio_slider_section',
+					'settings'   => 'ayaportfolio_slide3_image',
+				) 
+			)
+		);
+		
+		// Add slide 4 background image
+		$wp_customize->add_setting( 'ayaportfolio_slide4_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '4.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide4_image',
+				array(
+					'label'   	 => __( 'Slide 4 Image', 'ayaportfolio' ),
+					'section' 	 => 'ayaportfolio_slider_section',
+					'settings'   => 'ayaportfolio_slide4_image',
+				) 
+			)
+		);
+		
+		// Add slide 5 background image
+		$wp_customize->add_setting( 'ayaportfolio_slide5_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '5.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide5_image',
+				array(
+					'label'   	 => __( 'Slide 5 Image', 'ayaportfolio' ),
+					'section' 	 => 'ayaportfolio_slider_section',
+					'settings'   => 'ayaportfolio_slide5_image',
+				) 
+			)
+		);
+
+		/**
+		 * Add Animations Section
+		 */
+		$wp_customize->add_section(
+			'ayaportfolio_animations_display',
+			array(
+				'title'       => __( 'Animations', 'ayaportfolio' ),
+				'capability'  => 'edit_theme_options',
+			)
+		);
+
+		// Add display Animations option
+		$wp_customize->add_setting(
+				'ayaportfolio_animations_display',
+				array(
+						'default'           => 1,
+						'sanitize_callback' => 'ayaportfolio_sanitize_checkbox',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize,
+							'ayaportfolio_animations_display',
+								array(
+									'label'          => __( 'Enable Animations', 'ayaportfolio' ),
+									'section'        => 'ayaportfolio_animations_display',
+									'settings'       => 'ayaportfolio_animations_display',
+									'type'           => 'checkbox',
+								)
+							)
+		);
 	}
 endif; // ayaportfolio_customize_register
 add_action( 'customize_register', 'ayaportfolio_customize_register' );
+
+function ayaportfolio_shoild_display_slider() {
+
+	$result = false;
+	for ( $i = 1; $i <= 5; ++$i ) {
+
+		$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+		$slideImage = get_theme_mod( 'ayaportfolio_slide'.$i.'_image', $defaultSlideImage );
+			
+		if ($slideImage != '') {
+
+			$result = true;
+			break;
+		}
+	}
+
+	return $result;
+}
+
+/**
+ * Displays the slider
+ */
+function ayaportfolio_display_slider() {
+
+	if ( !ayaportfolio_shoild_display_slider() ) {
+		return;
+	}
+
+	?>
+
+	 <div data-carousel-3d="true">
+		<?php
+			// display slides
+			for ( $i = 1; $i <= 5; ++$i ) {
+					
+					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+					$slideImage = get_theme_mod( 'ayaportfolio_slide'.$i.'_image', $defaultSlideImage );
+				?>		
+					<?php if ($slideImage != '') : ?>
+							<div class="slide" style="background-image: url('<?php echo esc_url( $slideImage ); ?>');">
+							</div>
+					<?php endif; ?>
+<?php		} ?>
+	</div><!-- [data-carousel-3d] -->
+<?php 
+}

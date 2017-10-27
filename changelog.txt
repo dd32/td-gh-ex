@@ -1,3 +1,9 @@
+AyaPortfolio 1.0.2, 2017-10-27
+------------------------
+- add homepage slider
+- add animations effect
+
+
 AyaPortfolio 1.0.1, 2017-09-05
 ------------------------
 fix issue with alignment issues of header on Mobile

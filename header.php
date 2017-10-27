@@ -63,3 +63,12 @@
 				</div><!-- #header-content-wrapper -->
 
 			</header><!-- #header-main-fixed -->
+
+			<?php if ( is_front_page() ) : ?>
+			
+						<?php ayaportfolio_display_slider(); ?>
+
+						<div class="clear">
+						</div>
+			
+			<?php endif; ?>
