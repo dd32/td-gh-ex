@@ -36,10 +36,10 @@
 	<div class="container">
       <div class="logo">
         <?php atmosphere_lite_the_custom_logo(); ?>
-			    <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_attr(bloginfo( 'name' )); ?></a></h1>
+			    <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></h1>
 					<?php $description = get_bloginfo( 'description', 'display' );
 						if ( $description || is_customize_preview() ) : ?>
-						<p><?php echo $description; ?></p>
+						<p><?php echo esc_html( $description); ?></p>
 					<?php endif; ?>
     </div><!-- .logo -->                 
     
@@ -60,7 +60,7 @@
 			
 			if( is_single() || is_archive() || is_category() || is_author()|| is_search() || is_404() || is_home() ) { 
 				if(!empty($header_image)){
-					echo '<img src="'.esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="" />';
+					echo '<img src="'.esc_url( $header_image ).'" width="'.esc_attr(get_custom_header()->width).'" height="'.esc_attr(get_custom_header()->height).'" alt="" />';
 				} else {
         			echo '<img src="'.esc_url(get_template_directory_uri().'/images/inner-banner.jpg').'" alt="">';
 				}
@@ -68,10 +68,10 @@
 			elseif( has_post_thumbnail() ) {
 				$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 				$thumbnailSrc = $src[0];
-				echo '<img src="'.$thumbnailSrc.'" alt="">';
+				echo '<img src="'.esc_url($thumbnailSrc).'" alt="">';
 			} 
 			elseif ( ! empty( $header_image ) ) {
-				echo '<img src="'.esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="" />';
+				echo '<img src="'.esc_url( $header_image ).'" width="'.esc_attr(get_custom_header()->width).'" height="'.esc_attr(get_custom_header()->height).'" alt="" />';
             }	
 			 ?>
             

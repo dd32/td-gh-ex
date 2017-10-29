@@ -194,7 +194,7 @@ function atmosphere_lite_css(){
 			list($r,$g,$b) = sscanf($headbg,'#%02x%02x%02x');
 			
 			echo "<style>";
-				echo ".header, .sitenav ul li:hover > ul, .header_top.headcontact{background-color:rgba(".$r.",".$g.",".$b.",0.7)}";
+				echo ".header, .sitenav ul li:hover > ul, .header_top.headcontact{background-color:rgba(".esc_html($r).",".esc_html($g).",".esc_html($b).",0.7)}";
 			echo "</style>";
 		?>
 

@@ -40,10 +40,10 @@ get_header();
 		$post = get_post($id); 
 ?>                 
 <div id="slidecaption<?php echo esc_attr($i); ?>" class="nivo-html-caption">
-    	<h6>Since <img src="<?php echo esc_url(get_template_directory_uri().'/images/slideimg.png'); ?>"> <?php echo esc_attr(get_theme_mod('slide_year',__('1994','atmosphere-lite'))); ?></h6>
+    	<h6>Since <img src="<?php echo esc_url(get_template_directory_uri().'/images/slideimg.png'); ?>"> <?php echo esc_html(get_theme_mod('slide_year',__('1994','atmosphere-lite'))); ?></h6>
         <h2><?php the_title(); ?></h2>
     	<?php the_excerpt(); ?>
-        <a class="button" href="<?php the_permalink(); ?>"><?php echo esc_attr(get_theme_mod('slide_text',__('Read More','atmosphere-lite')));?></a>
+        <a class="button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('slide_text',__('Read More','atmosphere-lite')));?></a>
 </div>      
     <?php $i++; } ?> 
     
@@ -71,9 +71,10 @@ get_header();
 								<h2><?php the_title(); ?></h2>
 								<?php the_content(); ?>
 						<div class="clear"></div>
-						<p><a class="ReadMore" href="<?php the_permalink(); ?>">Read More About Us</a></p>
+						<p><a class="ReadMore" href="<?php the_permalink(); ?>"><?php _e('Read More About Us','atmosphere-lite') ;?></a></p>
                         </div>
                 <?php endwhile; ?>
+               <?php wp_reset_postdata(); ?>
                 <?php }} ?>
                     <div class="clear"></div>
                     </div>
@@ -95,6 +96,7 @@ get_header();
                         get_template_part( 'content-page', get_post_format() );
 						
                     endwhile;
+					wp_reset_postdata();
                     // Previous/next post navigation.
                     the_posts_pagination();
                 

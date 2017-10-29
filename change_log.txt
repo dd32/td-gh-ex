@@ -3,3 +3,6 @@ i) Intial version Release
 
 Version 1.1
 i) Removed multiple text domains.
+
+Version 1.1.1
+i) Escape all the functions.

@@ -3,9 +3,9 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Atmosphere Lite
-Theme URI       :  https://alexathemes.net/themes/atmosphere-free-wordpress-theme/
-Version         :   1.1
-Tested up to    :   WP 4.8.1
+Theme URI       :   https://alexathemes.net/themes/atmosphere-restaurant-wordpress-theme/
+Version         :   1.1.1
+Tested up to    :   WP 4.8.2
 Author          :   AlexaThemes
 Author URI      :   https://www.alexathemes.net/
 
