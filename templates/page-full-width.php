@@ -3,7 +3,7 @@
 Template Name: Page Fullwidth
 **/
 get_header();
-?>
+get_template_part('sections/specia','breadcrumb'); ?>
 
 <section class="page-wrapper">
 	<div class="container">
@@ -21,6 +21,6 @@ get_header();
 		
 	</div><!-- /.container -->
 </section>
-<?php wp_reset_postdata(); ?>
+
 <?php get_footer(); ?>
 

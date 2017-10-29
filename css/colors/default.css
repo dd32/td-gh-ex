@@ -245,13 +245,7 @@ input[type="submit"]:active {
 .woocommerce-MyAccount-navigation ul li.is-active {
 	background: #db2723;
 }
-.page-wrapper .posts-navigation a:hover {
-    background: #db2723;
-	border: 2px solid #db2723;
-}
-.bg-sticky {
-    background: #db2723;
-}
+
 /* --------------------------------------
 =========================================
     Secondary Color
@@ -403,7 +397,3 @@ ins {
 #add_payment_method #payment div.payment_box:before, .woocommerce-cart #payment div.payment_box:before, .woocommerce-checkout #payment div.payment_box:before {
 	border: 1em solid #242526;
 }	
-.page-wrapper .posts-navigation a {
-    color: #242526;
-    border: solid 2px #242526;
-}
