@@ -1,8 +1,8 @@
 === Ariel ===
 
 Author: LyraThemes www.lyrathemes.com
-Requires at least: WordPress 4.8+
-Tested up to: WordPress 4.5.2
+Requires at least: WordPress 4.5
+Tested up to: WordPress 4.8+
 Version: 1.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -46,7 +46,9 @@ The theme uses the following third-party resources:
 * TGM-Plugin-Activation v2.6.1 (c) Thomas Griffin. GPL-2.0+. http://tgmpluginactivation.com/
 * Font Awesome 4.7 by Dave Gandy. MIT. http://fontawesome.io
 * Sample preview images in ariel/sample/images are Creative Commons CC0. 
-
+* Fonts used https://fonts.google.com/specimen/Merriweather (by Sorkin Type, Open Font License)
+	         https://fonts.google.com/specimen/Source+Sans+Pro (by Paul D. Hunt, Open Font License)
+			 
 https://pixabay.com/en/asparagus-avocado-cooking-egg-food-1836178/
 https://pixabay.com/en/beach-beach-chair-feet-female-1845311/
 https://pixabay.com/en/chalkboard-blackboard-board-picture-2281205/

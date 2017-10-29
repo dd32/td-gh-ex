@@ -44,6 +44,27 @@ function ariel_show_custom_css_field() {
 endif; // function_exists( 'ariel_show_custom_css_field' )
 
 
+/**
+ * 
+ */
+ 
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ *
+ * This function is attached to 'wp_head' action hook.
+ *
+ * @return  Returns pingback link
+ */
+function ariel_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'ariel_pingback_header' );
+
+
+
+
 if ( ! function_exists( 'ariel_default_nav' ) ) :
 /**
  * Set and display default main nav if no menu is assigned
