@@ -148,3 +148,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Added support for Jetpack Content Options
 * Fixed comments section
 * Minor bug fixes
+
+= Version 1.5.0 =
+* Improved Javascript file
+* Minor bug fixes

@@ -8,16 +8,16 @@
 		/*-----------------------------------------------------------------------------------*/ 
 		$('.top-search').click(function() {
 			$('.topSearchForm').slideToggle();
-			$(this).toggleClass("active");
+			$(this).toggleClass('active');
 			return false;
 		});
 		
 		/*-----------------------------------------------------------------------------------*/
 		/*  If menu has submenu
 		/*-----------------------------------------------------------------------------------*/ 
-		$('.main-navigation').find("li").each(function(){
-			if(jQuery(this).children("ul").length > 0){
-				jQuery(this).append("<span class='indicator'></span>");
+		$('.main-navigation').find('li').each(function(){
+			if(jQuery(this).children('ul').length > 0){
+				jQuery(this).append('<span class="indicator"></span>');
 			}
 		});
 		
@@ -45,7 +45,7 @@
 		/*-----------------------------------------------------------------------------------*/ 
 		$('.sidebar-toggle').click(function() {
 			$('#secondary aside').slideToggle();
-			$(this).toggleClass("active");
+			$(this).toggleClass('active');
 			return false;
 		});
 		
@@ -65,7 +65,7 @@
 					}
 				}); 
 				$('#toTop').click(function(){
-					$("html, body").animate({ scrollTop: 0 }, 1000);
+					$('html, body').animate({ scrollTop: 0 }, 1000);
 					return false;
 				});
 				
