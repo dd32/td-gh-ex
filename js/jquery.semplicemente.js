@@ -6,7 +6,7 @@
 		/*-----------------------------------------------------------------------------------*/ 
 			$('.top-search').click(function() {
 				$('.topSearchForm').slideToggle('fast');
-				$(this).toggleClass("active");
+				$(this).toggleClass('active');
 				return false;
 			});
 		/*-----------------------------------------------------------------------------------*/
@@ -21,9 +21,9 @@
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
 			if ($( window ).width() <= 1024) {
-				$('.main-navigation').find("li").each(function(){
-					if($(this).children("ul").length > 0){
-						$(this).append("<span class='indicator'></span>");
+				$('.main-navigation').find('li').each(function(){
+					if($(this).children('ul').length > 0){
+						$(this).append('<span class="indicator"></span>');
 					}
 				});
 				$('.main-navigation ul > li.menu-item-has-children .indicator, .main-navigation ul > li.page_item_has_children .indicator').click(function() {

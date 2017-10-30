@@ -125,9 +125,9 @@ class Semplicemente_Admin {
 				<p class="cresta-actions">
 					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/downloads/semplicemente/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'semplicemente' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'semplicemente' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/demo/semplicemente/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'semplicemente' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'semplicemente' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'semplicemente' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://wordpress.org/support/theme/semplicemente/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'semplicemente' ); ?></a>
 				</p>
