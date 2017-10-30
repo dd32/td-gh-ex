@@ -33,9 +33,7 @@
  *
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 
 
@@ -255,6 +253,11 @@ endif; //catchevolution_get_theme_layout
  */
 require( get_template_directory() . '/inc/custom-header.php' );
 
+/**
+ * Custom Menus
+ */
+require trailingslashit( get_template_directory() ) . 'inc/catchevolution-menus.php';
+
 
 if ( ! function_exists( 'catchevolution_woocommerce_activated' ) ) :
 /**
@@ -365,8 +368,5 @@ function catchevolution_custom_css_migrate(){
 }
 add_action( 'after_setup_theme', 'catchevolution_custom_css_migrate' );
 
-
-/**
- * Customizer Options
- */
-require( get_template_directory() . '/inc/panel/customizer/customizer.php' );
+// Load up our Catch Evolution customizer
+require trailingslashit( get_template_directory() ) . '/inc/panel/customizer/customizer.php';

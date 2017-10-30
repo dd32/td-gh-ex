@@ -8,8 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
+ * @package Catch Evolution
  */
 
 get_header(); ?>            	

@@ -3,9 +3,7 @@
  * Template Name: Full Width Disable Sidebar Template
  * Description: A Page Template that disables a sidebar to pages
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 
 get_header(); ?>

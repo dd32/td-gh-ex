@@ -2,9 +2,7 @@
 /**
  * The template used to display Tag Archive pages
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 
 get_header(); ?>

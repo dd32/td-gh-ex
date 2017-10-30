@@ -2,9 +2,7 @@
 /**
  * The template for displaying content featured in the showcase.php page template
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 
 global $feature_class;

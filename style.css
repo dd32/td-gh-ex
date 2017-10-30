@@ -1,10 +1,10 @@
 /*
 Theme Name: Catch Evolution
-Theme URI: https://catchthemes.com/themes/catch-evolution
+Theme URI: https://catchthemes.com/themes/catch-evolution/
 Author: Catch Themes
-Author URI: https://catchthemes.com
+Author URI: https://catchthemes.com/
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian, Brazilian Portuguese and Dutch. If you need support with this theme, please go to https://catchthemes.com/support/
-Version: 2.9.2
+Version: 3.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-everest
@@ -77,10 +77,9 @@ footer, header, hgroup, menu, nav, section, .sticky {
 	padding: 40px 0;
 }
 #header-image {
-	width: 100%;
-}
-#header-image img {
-	display: block;
+    display: block;
+    overflow: hidden;
+    width: 100%;
 }
 #sidebar-header-top {
     width: 100%;
@@ -226,6 +225,14 @@ footer, header, hgroup, menu, nav, section, .sticky {
     width: 240px;
 }
 
+/* Three Columns Layout with 2 Sidebars to the right */
+.three-columns.three-columns-sidebar .content-sidebar-wrap {
+    float: left;
+}
+.three-columns.three-columns-sidebar #third {
+    float: right;
+}
+
 /* Attachments */
 .no-sidebar .single-attachment .entry-header,
 .no-sidebar .image-attachment .entry-content {
@@ -271,9 +278,10 @@ footer, header, hgroup, menu, nav, section, .sticky {
 
 body, input, textarea {
 	color: #444;
-	font-size: 15px;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 300;
-	line-height: 1.62em;
+	line-height: 1.62;
 	font-family: Arial, Helvetica, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -297,7 +305,7 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 	font-family: "Helvetica Neue", Arial, sans-serif;
-	line-height: 1.62em
+	line-height: 1.3
 }
 hr {
 	background-color: #ccc;
@@ -358,6 +366,7 @@ blockquote em, blockquote i, blockquote cite {
 blockquote cite {
 	color: #666;
 	font-size: 12px;
+	font-size: 0.75rem;
 	font-weight: 300;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -388,6 +397,7 @@ ins {
 sup,
 sub {
 	font-size: 10px;
+	font-size: 0.625rem;
 	height: 0;
 	line-height: 1;
 	position: relative;
@@ -412,6 +422,7 @@ textarea {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	border: 1px solid #ccc;
 	color: #888;
+	padding: 3px;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -421,23 +432,22 @@ textarea:focus {
 	color: #373737;
 }
 textarea {
-	padding-left: 3px;
 	width: 98%;
-}
-input[type=text] {
-	padding: 3px;
 }
 input#s {
 	background: url("images/search.png") no-repeat scroll 5px 6px #f0f0f0;
 	font-size: 14px;
+	font-size: 0.875rem;
 	height: 22px;
 	line-height: 1.2em;
-	padding: 4px 10px 4px 28px;
+	padding: 5px 10px 5px 28px;
 }
 input#searchsubmit {
 	display: none;
 }
-
+.sidebar-top .social-profile ul li {
+	vertical-align: top;
+}
 /* Links */
 a {
 	color: #1982d1;
@@ -450,12 +460,13 @@ a:hover {
 }
 
 /* Assistive text */
-.assistive-text,
-.screen-reader-text {
+.screen-reader-text,
+.assistive-text {
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 }
+.screen-reader-text:focus,
 #access a.assistive-text:active,
 #access a.assistive-text:focus {
 	background: #eee;
@@ -476,11 +487,33 @@ a:hover {
 	display: none;
 }
 
+/* =Genericons
+----------------------------------------------- */
+.search-submit:before,
+a#scrollup,
+.dropdown-toggle:after {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-family: "Genericons";
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top;
+}
+
 /* =Clearing
 ----------------------------------------------- */
 .clear {
 	clear: both;
 }
+#main:after,
 .wrapper:after,
 #header-menu:after,
 .widget:after {
@@ -524,12 +557,16 @@ a:hover {
 	padding: 15px;
 }
 .has-header-top #branding {
-	padding-top: 49px;
+	padding-top: 46px;
 }
-.disable-header #main {
-	padding-top: 89px;
+#header-image {
+	background-color: #fff;
 }
-#branding img {
+#header-image a {
+	line-height: 0;
+}
+#branding img,
+#header-image img {
 	border: none;
     display: block;
     height: auto;
@@ -559,9 +596,11 @@ a:hover {
 }
 #site-title {
 	padding: 0;
+	margin-bottom: 0;
 	font-size: 46px;
+	font-size: 2.875rem;
 	font-weight: bold;
-    line-height: 50px;
+    line-height: 1.1;
 }
 #site-title a {
 	color: #111;
@@ -576,10 +615,8 @@ a:hover {
     color: #7a7a7a;
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 1.62em;
-}
-#header-image a {
-	line-height: 0;
+    font-size: 0.875rem;
+    line-height: 1.62;
 }
 
 
@@ -601,7 +638,7 @@ a:hover {
 	/* Opera/IE 8+ */
 }
 .admin-bar #fixed-header-top {
-	margin-top: 28px;
+	margin-top: 32px;
 }
 #fixed-header-top .menu {
     margin: 0;
@@ -616,6 +653,7 @@ a:hover {
 #fixed-header-top ul li a {
     display: block;
     font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     line-height: 1.5;
     padding: 14px 15px;
@@ -658,6 +696,7 @@ a:hover {
 #fixed-header-top ul.menu ul li a {
     width: 100%;
     font-size: 13px;
+    font-size: 0.8125rem;
     display: inline-block;
 	text-align: left;
     -webkit-box-sizing: border-box;
@@ -668,7 +707,8 @@ a:hover {
     /* Opera/IE 8+ */
 	white-space: normal;
 }
-#fixed-header-top ul.menu ul li a:hover {
+#fixed-header-top ul.menu ul li a:hover,
+#fixed-header-top ul.menu ul li a:focus {
 	background: rgba(0, 0, 0, 0.8);
 }
 #header-menu #access,
@@ -703,7 +743,8 @@ a:hover {
 #colophon #access-footer ul.menu a {
 	color: #eee;
 	font-size: 14px;
-	line-height: 3.5em;
+	font-size: 0.875rem;
+	line-height: 3.5;
     padding: 0 2em;
 	text-decoration: none;
 	white-space: nowrap;
@@ -717,6 +758,7 @@ a:hover {
 #colophon #access-footer ul.menu ul li a {
 	white-space: normal;
 }
+
 #header-menu ul.menu ul,
 .sidebar-top .widget_nav_menu ul.menu ul {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -726,7 +768,7 @@ a:hover {
 	float: left;
 	margin: 0;
 	position: absolute;
-	top: 3em;
+	top: 3.1em;
 	left: 0;
 	list-style: none;
 	width: 205px;
@@ -743,9 +785,10 @@ a:hover {
 	border-bottom: 1px dotted #ccc;
 	color: #444;
 	font-size: 13px;
+	font-size: 0.8125rem;
 	font-weight: normal;
 	height: auto;
-	line-height: 1.5em;
+	line-height: 1.5;
 	padding: 10px;
 	width: 185px;
 }
@@ -803,6 +846,7 @@ a:hover {
 }
 #header-menu #access-secondary ul.menu {
 	font-size: 13px;
+	font-size: 0.8125rem;
 }
 #header-menu #access-secondary ul.menu li {
     border-right: 1px solid #dedede;
@@ -841,12 +885,6 @@ a:hover {
 }
 #colophon #access-footer ul.menu li:first-child {
     border: none;
-}
-/* =Responsive Menu (Tinynav.js)
--------------------------------------------------------------- */
-.tinynav {
-    display: none;
-	font-size: 16px;
 }
 
 /* =Search Form
@@ -921,6 +959,7 @@ a:hover {
 .page-title {
 	color: #666;
 	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	letter-spacing: 0.1em;
 	line-height: 18px;
@@ -929,6 +968,7 @@ a:hover {
 }
 .page-title a {
 	font-size: 12px;
+	font-size: 0.75rem;
 	font-weight: bold;
 	letter-spacing: 0;
 	text-transform: none;
@@ -937,9 +977,10 @@ a:hover {
 	clear: both;
 	color: #222;
 	font-size: 26px;
+	font-size: 1.625rem;
 	font-weight: bold;
-	line-height: 1.5em;
-	padding-bottom: .3em;
+	line-height: 1.5;
+	padding-bottom: 0.3em;
 }
 .entry-title,
 .entry-title a {
@@ -954,8 +995,8 @@ a:hover {
 .entry-meta {
 	color: #666;
 	clear: both;
-	font-size: 12px;
-	line-height: 18px;
+	font-size: 13px;
+	font-size: 0.8125rem;
 }
 .entry-meta a {
 	font-weight: bold;
@@ -975,26 +1016,31 @@ a:hover {
 }
 .entry-content h1 {
     font-size: 32px;
+    font-size: 2rem;
 }
 .entry-content h2 {
     font-size: 30px;
+    font-size: 1.875rem;
 }
 .entry-content h3 {
     font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
 	margin: 0 0 0.8125em;
 }
 .entry-content h4 {
     font-size: 26px;
+    font-size: 1.625rem;
     margin: 0 0 0.5em;
 }
 .entry-content h5 {
     font-size: 24px;
+    font-size: 1.5rem;
 }
 .entry-content h6 {
     font-size: 22px;
+    font-size: 1.375rem;
 }
-
 .entry-content h1,
 .entry-content h2,
 .comment-content h1,
@@ -1005,6 +1051,7 @@ a:hover {
 }
 .comment-content h3 {
 	font-size: 10px;
+	font-size: 0.625rem;
 	letter-spacing: 0.1em;
 	line-height: 2.6em;
 	text-transform: uppercase;
@@ -1019,6 +1066,7 @@ a:hover {
 .comment-content th {
 	color: #666;
 	font-size: 10px;
+	font-size: 0.625rem;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 	line-height: 2.6em;
@@ -1060,6 +1108,7 @@ dl.gallery-item {
 	color: #666;
 	float: right;
 	font-size: 12px;
+	font-size: 0.75rem;
 	line-height: 1.5em;
 	font-weight: 300;
 	text-decoration: none;
@@ -1078,7 +1127,9 @@ dl.gallery-item {
     margin: 0.35em;
 }
 .entry-meta .edit-link a:hover,
-.commentlist .edit-link a:hover {
+.entry-meta .edit-link a:focus,
+.commentlist .edit-link a:hover,
+.commentlist .edit-link a:focus {
 	background: #888;
 	color: #fff;
 }
@@ -1096,19 +1147,17 @@ a.more-link {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 	height: auto;
 }
+.entry-summary img {
+	margin-bottom: 15px;
+}
 .widget img {
+	height: auto;
 	max-width: 100%;
 	text-align: center;
 }
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-img.size-full,
-img.size-large,
-img.wp-post-image {
-	max-width: 97.4%;
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 .entry-content img.wp-smiley {
@@ -1148,6 +1197,7 @@ p img,
 	color: #666;
 	font-family: Georgia, serif;
 	font-size: 12px;
+	font-size: 0.75rem;
 }
 .wp-caption .wp-caption-text {
 	margin-bottom: 0.2em;
@@ -1158,6 +1208,7 @@ p img,
 	color: #666;
 	content: '\2014';
 	font-size: 14px;
+	font-size: 0.875rem;
 	font-style: normal;
 	font-weight: bold;
 	margin-right: 5px;
@@ -1260,6 +1311,7 @@ object {
 /* Author Info */
 #author-info {
 	font-size: 12px;
+	font-size: 0.75rem;
 	overflow: hidden;
 	padding-top: 2em;
 }
@@ -1292,20 +1344,13 @@ object {
 #author-description h2 {
 	color: #000;
 	font-size: 15px;
+	font-size: 0.9375rem;
 	font-weight: bold;
 	margin: 5px 0 10px;
 }
 
 /* Comments link */
 .entry-header .comments-link a {
-
-}
-.entry-header .comments-link a:hover,
-.entry-header .comments-link a:focus,
-.entry-header .comments-link a:active {
-
-}
-.entry-header .comments-link .leave-reply {
 
 }
 
@@ -1341,7 +1386,8 @@ object {
 
     position: absolute;
 }
-#slider-wrap .featured-text:hover {
+#slider-wrap .featured-text:hover,
+#slider-wrap .featured-text:focus {
 	background: rgba(0, 0, 0, 1);
 }
 #slider-wrap .featured-text .featured-text-wrap {
@@ -1373,10 +1419,10 @@ object {
 	overflow: hidden;
 }
 #controllers a:hover,
+#controllers a:focus,
 #controllers a.active {
 	background:rgba(255,255,255,.8);
 }
-
 #content nav#nav-slider {
 	padding: 0;
 }
@@ -1385,7 +1431,6 @@ object {
 	 height:auto;
 	 width:100%;
  }
-
 
 /*
 Post Formats Headings
@@ -1430,11 +1475,13 @@ article.format-status .entry-content {
 .error404 .entry-title {
 	color: #000;
 	font-size: 32px;
+	font-size: 2rem;
 	font-weight: bold;
-	line-height: 40px;
+	line-height: 1.25;
 }
 blockquote.pull {
 	font-size: 21px;
+	font-size: 1.3125rem;
 	font-weight: bold;
 	line-height: 1.6125em;
 	margin: 0 0 2em;
@@ -1544,6 +1591,7 @@ blockquote.pull {
 .format-quote blockquote {
 	color: #555;
 	font-size: 17px;
+	font-size: 1.0625rem;
 	margin: 0;
 }
 
@@ -1589,7 +1637,8 @@ blockquote.pull {
 .indexed.format-image footer.entry-meta a {
 	color: #444;
 }
-.indexed.format-image footer.entry-meta a:hover {
+.indexed.format-image footer.entry-meta a:hover,
+.indexed.format-image footer.entry-meta a:focus {
 	color: #fff;
 }
 #content .indexed.format-image img {
@@ -1607,7 +1656,8 @@ blockquote.pull {
 .indexed.format-image .wp-caption .wp-caption-text:before {
 	color: #444;
 }
-.indexed.format-image a:hover img {
+.indexed.format-image a:hover img,
+.indexed.format-image a:focus img {
 	opacity: 0.8;
 }
 
@@ -1691,9 +1741,9 @@ article.intro .entry-title {
 article.intro .entry-content {
 	color: #111;
 	font-size: 16px;
+	font-size: 1rem;
 	padding: 2em 0 0.625em;
 }
-
 
 /* Featured post */
 section.featured-post {
@@ -1742,6 +1792,7 @@ article.feature-image.small .entry-title {
 article.feature-image.small .entry-summary {
 	color: #555;
 	font-size: 13px;
+	font-size: 0.8125rem;
 }
 article.feature-image.small .entry-summary p a {
 	background: #222;
@@ -1755,7 +1806,8 @@ article.feature-image.small .entry-summary p a {
 	width: 180px;
 	z-index: 1;
 }
-article.feature-image.small .entry-summary p a:hover {
+article.feature-image.small .entry-summary p a:hover,
+article.feature-image.small .entry-summary p a:focus {
 	background: #1982d1;
 	color: #eee;
 	color: rgba(255,255,255,0.8);
@@ -1789,7 +1841,9 @@ article.feature-image.large .entry-title a {
 	padding: .2em 20px;
 }
 section.feature-image.large:hover .entry-title a,
-section.feature-image.large .entry-title:hover a {
+section.feature-image.large:focus .entry-title a,
+section.feature-image.large .entry-title:hover a,
+section.feature-image.large .entry-title:focus a {
 	background: #eee;
 	background: rgba(255,255,255,0.8);
 	color: #222;
@@ -1920,6 +1974,7 @@ section.recent-posts .other-recent-posts li {
 section.recent-posts .other-recent-posts .entry-title {
 	border-top: 1px solid #ccc;
 	font-size: 17px;
+	font-size: 1.0625rem;
 }
 section.recent-posts .other-recent-posts a[rel="bookmark"] {
 	color: #373737;
@@ -1930,8 +1985,6 @@ section.recent-posts .other-recent-posts a[rel="bookmark"]:after {
 	content: '-';
 	color: transparent;
 	font-size: 11px;
-}
-section.recent-posts .other-recent-posts a[rel="bookmark"]:hover {
 }
 section.recent-posts .other-recent-posts .comments-link a,
 section.recent-posts .other-recent-posts .comments-link > span {
@@ -1953,7 +2006,8 @@ section.recent-posts .other-recent-posts .comments-link > span {
 	border-color: #bbb;
 	color: #888;
 }
-section.recent-posts .other-recent-posts .comments-link a:hover {
+section.recent-posts .other-recent-posts .comments-link a:hover,
+section.recent-posts .other-recent-posts .comments-link a:focus {
 	color: #1982d1;
 	border-color: #1982d1;
 }
@@ -2016,7 +2070,8 @@ section.recent-posts .other-recent-posts li:after {
 }
 #content nav a {
 	display: inline-block;
-	font-size: 12px;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: bold;
 	line-height: 2.2em;
 }
@@ -2073,8 +2128,11 @@ section.recent-posts .other-recent-posts li:after {
 	padding: 2px 0 0 0;
 }
 #nav-below .wp-pagenavi a:hover,
+#nav-below .wp-pagenavi a:focus,
 #nav-below #wp_page_numbers ul li a:hover,
-.page-link a span:hover {
+#nav-below #wp_page_numbers ul li a:focus,
+.page-link a span:hover,
+.page-link a span:focus {
 	background:#444;
 	color:#fff;
 }
@@ -2099,6 +2157,7 @@ section.recent-posts .other-recent-posts li:after {
     color: #aaa;
     float: left;
     font-size: 12px;
+    font-size: 0.75rem;
     line-height: 30px;
     margin-left: 10px;
 }
@@ -2131,8 +2190,8 @@ section.recent-posts .other-recent-posts li:after {
 ----------------------------------------------- */
 
 .widget-area {
-	font-size: 12px;
-	line-height: 1.62em;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 .widget {
     clear: both;
@@ -2156,6 +2215,7 @@ section.recent-posts .other-recent-posts li:after {
 .widget-title {
     color: #222;
 	font-size: 18px;
+	font-size: 1.125rem;
     font-weight: bold;
 	padding-bottom: 10px;
 }
@@ -2168,9 +2228,11 @@ section.recent-posts .other-recent-posts li:after {
 .widget-title a {
     color: #222;
 	font-size: 16px;
+	font-size: 1rem;
     font-weight: bold;
 }
-.widget-title a:hover {
+.widget-title a:hover,
+.widget-title a:focus {
 	text-decoration: none;
 }
 .widget .paddingtop {
@@ -2179,6 +2241,7 @@ section.recent-posts .other-recent-posts li:after {
 }
 .widget ul {
     font-size: 15px;
+    font-size: 0.9375rem;
     margin: 0 0 0 1em;
 }
 .widget ul ul {
@@ -2187,6 +2250,7 @@ section.recent-posts .other-recent-posts li:after {
 .widget ul li {
 	color: #777;
 	font-size: 13px;
+	font-size: 0.8125rem;
 }
 .widget a {
 	font-weight: 400;
@@ -2207,6 +2271,7 @@ section.recent-posts .other-recent-posts li:after {
 	box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
 	color: #888;
 	font-size: 13px;
+	font-size: 0.8125rem;
 	line-height: 25px;
 	position: relative;
 	top: -2px;
@@ -2274,6 +2339,7 @@ section.recent-posts .other-recent-posts li:after {
 #comments-title {
     color: #222;
     font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     line-height: 14px;
     padding: 0 0 2em;
@@ -2285,6 +2351,7 @@ section.recent-posts .other-recent-posts li:after {
 .nocomments {
 	color: #aaa;
 	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 100;
 	margin: 26px 0;
 	text-align: center;
@@ -2332,6 +2399,7 @@ section.recent-posts .other-recent-posts li:after {
 .comment-meta {
     color: #666666;
     font-size: 12px;
+    font-size: 0.75rem;
     line-height: 2.2em;
     margin-left: 18%;
 }
@@ -2347,10 +2415,6 @@ section.recent-posts .other-recent-posts li:after {
 }
 .comment-meta a {
 	font-weight: bold;
-}
-.comment-meta a:focus,
-.comment-meta a:active,
-.comment-meta a:hover {
 }
 .commentlist .avatar {
 	-moz-border-radius: 3px;
@@ -2387,6 +2451,7 @@ a.comment-reply-link {
 	color: #666;
 	display: inline-block;
 	font-size: 12px;
+	font-size: 0.75rem;
 	padding: 0 8px;
 	text-decoration: none;
 	margin-top: 0.5em;
@@ -2410,13 +2475,6 @@ a.comment-reply-link > span {
 }
 .commentlist > li.bypostauthor .comment-meta {
 	color: #575757;
-}
-.commentlist > li.bypostauthor .comment-meta a:focus,
-.commentlist > li.bypostauthor .comment-meta a:active,
-.commentlist > li.bypostauthor .comment-meta a:hover {
-}
-.commentlist > li.bypostauthor:before {
-
 }
 
 /* Post Author threaded comments */
@@ -2473,6 +2531,7 @@ a.comment-reply-link > span {
 	color: #555;
 	display: inline-block;
 	font-size: 13px;
+	font-size: 0.8125rem;
 	left: 4px;
 	min-width: 60px;
 	padding: 4px 10px;
@@ -2493,6 +2552,7 @@ a.comment-reply-link > span {
 #respond .comment-form-email .required {
 	color: #bd3500;
 	font-size: 22px;
+	font-size: 1.375rem;
 	font-weight: bold;
 	left: 75%;
 	position: absolute;
@@ -2502,6 +2562,7 @@ a.comment-reply-link > span {
 #respond .comment-notes,
 #respond .logged-in-as {
 	font-size: 13px;
+	font-size: 0.8125rem;
 }
 #respond p {
 	margin: 10px 0;
@@ -2521,6 +2582,7 @@ a.comment-reply-link > span {
 	color: #eee;
 	cursor: pointer;
 	font-size: 15px;
+	font-size: 0.9375rem;
 	margin: 20px 0;
 	padding: 5px 42px 5px 22px;
 	position: relative;
@@ -2537,7 +2599,9 @@ a.comment-reply-link > span {
 	text-decoration: none;
 }
 #respond .logged-in-as a:hover,
-#respond #cancel-comment-reply-link:hover {
+#respond .logged-in-as a:focus,
+#respond #cancel-comment-reply-link:hover,
+#respond #cancel-comment-reply-link:focus {
 	text-decoration: underline;
 }
 .commentlist #respond {
@@ -2547,8 +2611,9 @@ a.comment-reply-link > span {
 #reply-title {
 	color: #373737;
 	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: bold;
-	line-height: 30px;
+	line-height: 1.2;
 }
 #cancel-comment-reply-link {
 	color: #888;
@@ -2578,6 +2643,7 @@ a.comment-reply-link > span {
 }
 #respond p {
 	font-size: 12px;
+	font-size: 0.75rem;
 }
 p.comment-form-comment {
 	margin: 0;
@@ -2603,6 +2669,7 @@ p.comment-form-comment {
 	border-top: 1px solid #ccc;
 	clear: both;
 	font-size: 13px;
+	font-size: 0.8125rem;
 }
 #site-generator .wrapper {
 	padding: 30px 0;
@@ -2680,6 +2747,9 @@ p.comment-form-comment {
 .widget .social-profile {
     margin-left: -10px;
 }
+.widget_catchevolution_social_search_widget .social-profile {
+	float: right;
+}
 .social-profile ul li a {
 	display: block;
 	background: url("images/social-profiles.png") no-repeat right top;
@@ -2698,140 +2768,177 @@ p.comment-form-comment {
 .social-profile ul li.facebook a {
 	background-position: 0 0;
 }
-.social-profile ul li.facebook a:hover {
+.social-profile ul li.facebook a:hover,
+.social-profile ul li.facebook a:focus {
 	background-position: 0 -44px;
 }
 .social-profile ul li.twitter a {
 	background-position: -44px 0;
 }
-.social-profile ul li.twitter a:hover {
+.social-profile ul li.twitter a:hover,
+.social-profile ul li.twitter a:focus {
 	background-position: -44px -44px;
 }
 .social-profile ul li.rss a {
 	background-position: -88px 0;
 }
-.social-profile ul li.rss a:hover {
+.social-profile ul li.rss a:hover,
+.social-profile ul li.rss a:focus {
 	background-position: -88px -44px;
 }
 .social-profile ul li.you-tube a {
 	background-position: -132px 0;
 }
-.social-profile ul li.you-tube a:hover {
+.social-profile ul li.you-tube a:hover,
+.social-profile ul li.you-tube a:focus {
 	background-position: -132px -44px;
 }
 .social-profile ul li.linkedin a {
 	background-position: -176px 0;
 }
-.social-profile ul li.linkedin a:hover {
+.social-profile ul li.linkedin a:hover,
+.social-profile ul li.linkedin a:focus {
 	background-position: -176px -44px;
 }
 .social-profile ul li.tumblr a {
 	background-position: -220px 0;
 }
-.social-profile ul li.tumblr a:hover {
+.social-profile ul li.tumblr a:hover,
+.social-profile ul li.tumblr a:focus {
 	background-position: -220px -44px;
 }
 .social-profile ul li.viemo a {
 	background-position: -264px 0;
 }
-.social-profile ul li.viemo a:hover {
+.social-profile ul li.viemo a:hover,
+.social-profile ul li.viemo a:focus {
 	background-position: -264px -44px;
 }
 .social-profile ul li.slideshare a {
 	background-position: -264px 0;
 }
-.social-profile ul li.slideshare a:hover {
+.social-profile ul li.slideshare a:hover,
+.social-profile ul li.slideshare a:focus {
 	background-position: -264px -44px;
 }
 .social-profile ul li.dribbble a {
 	background-position: -308px 0;
 }
-.social-profile ul li.dribbble a:hover {
+.social-profile ul li.dribbble a:hover,
+.social-profile ul li.dribbble a:focus {
 	background-position: -308px -44px;
 }
 .social-profile ul li.my-space a {
 	background-position: -352px 0;
 }
-.social-profile ul li.my-space a:hover {
+.social-profile ul li.my-space a:hover,
+.social-profile ul li.my-space a:focus {
 	background-position: -352px -44px;
 }
 .social-profile ul li.aim a {
 	background-position: -396px 0;
 }
-.social-profile ul li.aim a:hover {
+.social-profile ul li.aim a:hover,
+.social-profile ul li.aim a:focus {
 	background-position: -396px -44px;
 }
 .social-profile ul li.myspace a {
 	background-position: -352px 0;
 }
-.social-profile ul li.myspace a:hover {
+.social-profile ul li.myspace a:hover,
+.social-profile ul li.myspace a:focus {
 	background-position: -352px -44px;
 }
 .social-profile ul li.flickr a {
 	background-position: -440px 0;
 }
-.social-profile ul li.flickr a:hover {
+.social-profile ul li.flickr a:hover,
+.social-profile ul li.flickr a:focus {
 	background-position: -440px -44px;
 }
 .social-profile ul li.pinterest a {
 	background-position: -484px 0;
 }
-.social-profile ul li.pinterest a:hover {
+.social-profile ul li.pinterest a:hover,
+.social-profile ul li.pinterest a:focus {
 	background-position: -484px -44px;
 }
 .social-profile ul li.google-plus a {
 	background-position: -528px 0;
 }
-.social-profile ul li.google-plus a:hover {
+.social-profile ul li.google-plus a:hover,
+.social-profile ul li.google-plus a:focus {
 	background-position: -528px -44px;
 }
 .social-profile ul li.wordpress a {
 	background-position: -572px 0;
 }
-.social-profile ul li.wordpress a:hover {
+.social-profile ul li.wordpress a:hover,
+.social-profile ul li.wordpress a:focus {
 	background-position: -572px -44px;
 }
 .social-profile ul li.deviantart a {
 	background-position: -616px 0;
 }
-.social-profile ul li.deviantart a:hover {
+.social-profile ul li.deviantart a:hover,
+.social-profile ul li.deviantart a:focus {
 	background-position: -616px -44px;
 }
 .social-profile ul li.slideshare a {
 	background-position: -660px 0;
 }
-.social-profile ul li.slideshare a:hover {
+.social-profile ul li.slideshare a:hover,
+.social-profile ul li.slideshare a:focus {
 	background-position: -660px -44px;
 }
 .social-profile ul li.instagram a {
 	background-position: -704px 0;
 }
-.social-profile ul li.instagram a:hover {
+.social-profile ul li.instagram a:hover,
+.social-profile ul li.instagram a:focus {
 	background-position: -704px -44px;
 }
 .social-profile ul li.skype a {
 	background-position: -748px 0;
 }
-.social-profile ul li.skype a:hover {
+.social-profile ul li.skype a:hover,
+.social-profile ul li.skype a:focus {
 	background-position: -748px -44px;
 }
 .social-profile ul li.soundcloud a {
 	background-position: -792px 0;
 }
-.social-profile ul li.soundcloud a:hover {
+.social-profile ul li.soundcloud a:hover,
+.social-profile ul li.soundcloud a:focus {
 	background-position: -792px -44px;
 }
 .social-profile ul li.email a {
 	background-position: -837px 0;
 }
-.social-profile ul li.email a:hover {
+.social-profile ul li.email a:hover,
+.social-profile ul li.email a:focus {
+	background-position: -837px -44px;
+}
+.social-profile ul li.contactus a {
+	background-position: -837px 0;
+}
+.social-profile ul li.contactus a:hover,
+.social-profile ul li.contactus a:focus {
 	background-position: -837px -44px;
 }
 .social-profile ul li.xing a {
 	background-position: -882px 0;
 }
-.social-profile ul li.xing a:hover {
+.social-profile ul li.xing a:hover,
+.social-profile ul li.xing a:focus {
 	background-position: -882px -44px;
+}
+.social-profile ul li.meetup a {
+	background-position: -971px 0;
+}
+.social-profile ul li.meetup a:hover,
+.social-profile ul li.meetup a:focus {
+	background-position: -971px -44px;
 }
 img#wpstats {
 	display: none;
@@ -2863,6 +2970,7 @@ img#wpstats {
     border: 0 none;
     color: #FF0018;
     font-size: 12px;
+    font-size: 0.75rem;
     left: 5px;
     line-height: 12px;
     padding: 2px;
@@ -2891,10 +2999,12 @@ img#wpstats {
 	color: #eee;
     display: block;
     font-size: 16px;
+    font-size: 1rem;
     padding: 10px 0;
     width: 100%;
 }
-#infinite-handle span:hover {
+#infinite-handle span:hover,
+#infinite-handle span:focus {
 	background-color: #222;
 	color: #fff;
 }

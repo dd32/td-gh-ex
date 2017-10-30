@@ -3,9 +3,7 @@
  * Template Name: Three Columns Template
  * Description: A Page Template that shows Both Primary and Secondary Sidebar
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.1
+ * @package Catch Evolution
  */
 
 get_header(); ?>

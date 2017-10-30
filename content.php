@@ -2,9 +2,7 @@
 /**
  * The default template for displaying content
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution Pro 1.0
+ * @package Catch Evolution
  */
 ?>
 <?php
@@ -22,13 +20,9 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php if ( is_sticky() ) : ?>
-				<hgroup>
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-					<h3 class="entry-format"><?php _e( 'Featured', 'catch-evolution' ); ?></h3>
-				</hgroup>
-			<?php else : ?>
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<h3 class="entry-format"><?php _e( 'Featured', 'catch-evolution' ); ?></h3>
 			<?php endif; ?>
 
 			<?php if ( 'post' == get_post_type() ) : ?>

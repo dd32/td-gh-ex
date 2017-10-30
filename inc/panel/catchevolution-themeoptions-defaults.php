@@ -1,8 +1,6 @@
 <?php
 /**
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution Pro 1.0
+ * @package Catch Evolution
  */
 
 /**

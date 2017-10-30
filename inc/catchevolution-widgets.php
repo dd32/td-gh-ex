@@ -2,7 +2,7 @@
 /**
  * Register our sidebars and widgetized areas. Also register the default Epherma widget.
  *
- * @since Catch Evolution Pro 1.0
+ * @since Catch Evolution 1.0
  */
 function catchevolution_widgets_init() {
 
@@ -96,9 +96,7 @@ add_action( 'widgets_init', 'catchevolution_widgets_init' );
  *
  * Learn more: http://codex.wordpress.org/Widgets_API#Developing_Widgets
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 class catchevolution_adwidget extends WP_Widget {
 
@@ -226,9 +224,7 @@ class catchevolution_adwidget extends WP_Widget {
  *
  * Learn more: http://codex.wordpress.org/Widgets_API#Developing_Widgets
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 class catchevolution_social_search_widget extends WP_Widget {
 
@@ -305,9 +301,7 @@ class catchevolution_social_search_widget extends WP_Widget {
  *
  * Learn more: http://codex.wordpress.org/Widgets_API#Developing_Widgets
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 class catchevolution_social_widget extends WP_Widget {
 

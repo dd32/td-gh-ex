@@ -2,9 +2,7 @@
 /**
  * Catch Evolution Customizer/Theme Options
  *
- * @package Catch Themes
- * @subpackage Catch Evolution
- * @since Catch Evolution 2.6
+ * @package Catch Evolution
  */
 
 /**
@@ -170,7 +168,7 @@ function catchevolution_customize_register( $wp_customize ) {
 		//Disable Header Menu
 		'disable_header_menu' => array(
 			'id' 				=> 'disable_header_menu',
-			'title' 			=> __( 'Check to Disable Primary & Secondary Menu', 'catch-evolution' ),
+			'title' 			=> __( 'Check to Disable Primary Menu', 'catch-evolution' ),
 			'description'		=> '',
 			'field_type' 		=> 'checkbox',
 			'sanitize' 			=> 'catchevolution_sanitize_checkbox',

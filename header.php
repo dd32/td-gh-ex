@@ -4,9 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

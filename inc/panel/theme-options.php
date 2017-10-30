@@ -2,9 +2,7 @@
 /**
  * Catch Evolution Theme Options
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution Pro 1.0
+ * @package Catch Evolution
  */
 add_action( 'admin_init', 'catchevolution_register_settings' );
 add_action( 'admin_menu', 'catchevolution_options_menu' );
@@ -319,7 +317,7 @@ function catchevolution_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><?php _e( 'Create Menu', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Create Menu', 'catch-evolution' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-evolution' );?></a>
+                                            <a class="button" href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>" title="<?php esc_attr_e( 'Create Menu', 'catch-evolution' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>

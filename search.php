@@ -2,9 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 
 get_header(); ?>

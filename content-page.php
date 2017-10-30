@@ -2,9 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 ?>
 

@@ -2,9 +2,7 @@
 /**
  * The default template for displaying content
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 ?>
 

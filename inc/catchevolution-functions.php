@@ -23,6 +23,9 @@ function catchevolution_scripts_method() {
 	// Enqueue catchevolution Sytlesheet
 	wp_enqueue_style( 'catchevolution_style', get_stylesheet_uri() );
 
+	//For genericons
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', false, '3.4.1' );	
+
 	// Register JQuery cycle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
@@ -32,8 +35,15 @@ function catchevolution_scripts_method() {
 	}
 
 	//Responsive
-	wp_enqueue_script('catchevolution-menu', get_template_directory_uri() . '/js/catchevolution-menu.min.js', array('jquery'), '1.1.0', true);
 	wp_enqueue_style( 'catchevolution-responsive', get_template_directory_uri() . '/css/responsive.css' );
+
+	wp_enqueue_script( 'catchevolution-menu', get_template_directory_uri() . '/js/catchevolution-menu.min.js', array('jquery'), '20171025', false );
+
+	wp_localize_script( 'catchevolution-menu', 'screenReaderText', array(
+		'expand'   => esc_html__( 'expand child menu', 'catch-evolution' ),
+		'collapse' => esc_html__( 'collapse child menu', 'catch-evolution' ),
+	) );
+	
 	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
 
 	/**
@@ -683,31 +693,6 @@ add_action( 'pre_get_posts','catchevolution_alter_home' );
 
 
 /**
- * Remove div from wp_page_menu() and replace with ul.
- * @uses wp_page_menu filter
- */
-function catchevolution_wp_page_menu( $page_markup ) {
-    preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-        $divclass = $matches[1];
-        $replace = array('<div class="'.$divclass.'">', '</div>');
-        $new_markup = str_replace($replace, '', $page_markup);
-        $new_markup = preg_replace('/^<ul>/i', '<ul class="'.$divclass.'">', $new_markup);
-        return $new_markup; }
-
-add_filter( 'wp_page_menu', 'catchevolution_wp_page_menu' );
-
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function catchevolution_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'catchevolution_page_menu_args' );
-
-
-/**
  * Replacing classed in default wp_page_menu
  *
  * REPLACE "current_page_item" WITH CLASS "current-menu-item"
@@ -1240,28 +1225,6 @@ function catchevolution_footercode() {
 }
 add_action('wp_footer', 'catchevolution_footercode');
 
-
-if ( ! function_exists( 'catchevolution_footer_menu' ) ) :
-/**
- * Footer Menu
- *
- * @Hooked in catchevolution_after_footer_sidebar
- * @since Catch Evolution 1.2.1
- */
-function catchevolution_footer_menu() {
-
-	if ( has_nav_menu( 'footer', 'catch-evolution' ) ) {
-		?>
-		<nav id="access-footer" class="mobile-disable" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Footer menu', 'catch-evolution' ); ?></h3>
-			<?php wp_nav_menu( array( 'theme_location'  => 'footer', 'container_class' => 'menu-footer-container wrapper', 'depth' => 1 ) );  ?>
-		</nav>
-	<?php }
-
-} // catchevolution_footer_menu
-endif;
-
-add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu', 10 );
 
 /**
  * Third Sidebar

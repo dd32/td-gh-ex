@@ -7,9 +7,7 @@
  * handled by a callback to catchevolution_comment() which is
  * located in the functions.php file.
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @package Catch Evolution
  */
 ?>
 	<div id="comments">
@@ -53,7 +51,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'catch-evolution' ); ?></h1>
+			<h3 class="assistive-text"><?php _e( 'Comment navigation', 'catch-evolution' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'catch-evolution' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'catch-evolution' ) ); ?></div>
 		</nav>
@@ -73,7 +71,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'catch-evolution' ); ?></h1>
+			<h3 class="assistive-text"><?php _e( 'Comment navigation', 'catch-evolution' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'catch-evolution' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'catch-evolution' ) ); ?></div>
 		</nav>

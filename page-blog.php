@@ -6,9 +6,7 @@ if ( !defined('ABSPATH')) exit;
  * Template Name: Blog Template
  * Description: A Page Template that disables a blog
  *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution Pro 1.0
+ * @package Catch Evolution
  */
 
 get_header(); ?>
