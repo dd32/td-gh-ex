@@ -23,6 +23,7 @@ if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template
 		</div>
 	
 	</footer><!-- #colophon -->
+	<a href="javascript:void(0);" class="btn-top"><span><?php _e('Top','bakes-and-cakes'); ?></span></a>
 
 </div><!-- #page -->
 

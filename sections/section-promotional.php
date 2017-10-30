@@ -35,4 +35,3 @@ $promotional_page  = get_theme_mod('bakes_and_cakes_promotional_page');
 			</div>
 		<?php } ?>
 		</div>
-		<a href="javascript:void(0);" class="btn-top"><span><?php _e('Top','bakes-and-cakes'); ?></span></a>

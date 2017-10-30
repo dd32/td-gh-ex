@@ -8,9 +8,29 @@
 function bakes_and_cakes_customizer_theme_info( $wp_customize ) {
 	
     $wp_customize->add_section( 'theme_info' , array(
-		'title'       => __( 'Information Links' , 'bakes-and-cakes' ),
+		'title'       => __( 'Video Tutorial' , 'bakes-and-cakes' ),
 		'priority'    => 6,
 		));
+
+     // Theme info
+    $wp_customize->add_setting(
+		'setup_instruction',
+		array(
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+
+	$wp_customize->add_control(
+		new bakes_and_cakes_Theme_Info( 
+			$wp_customize,
+			'setup_instruction',
+			array(
+				'settings'		=> 'setup_instruction',
+				'section'		=> 'theme_info',
+				'description'	=> __( 'Check out step-by-step video tutorial to create your website like the demo of Bakes and Cakes WordPress theme.', 'bakes-and-cakes' ),
+			)
+		)
+	);
 
 	$wp_customize->add_setting('theme_info_theme',array(
 		'default' => '',
@@ -18,20 +38,22 @@ function bakes_and_cakes_customizer_theme_info( $wp_customize ) {
 		));
     
     $theme_info = '';
-	$theme_info .= '<h3 class="sticky_title">' . __( 'Need help?', 'bakes-and-cakes' ) . '</h3>';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View demo', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'http://raratheme.com/previews/?theme=bakes-and-cakes' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View documentation', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'http://raratheme.com/documentation/bakes-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Theme info', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/wordpress-themes/bakes-and-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support ticket', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/support-ticket/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Video Tutorial', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/documentation/bakes-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Theme Demo', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/previews/?theme=bakes-and-cakes' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support Ticket', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/support-ticket/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
 	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Rate this theme', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://wordpress.org/support/theme/bakes-and-cakes/reviews' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-	$theme_info .= '<span class="sticky_info_row"><label class="more-detail row-element">' . __( 'More WordPress Themes', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/wordpress-themes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
 
 
-	$wp_customize->add_control( new bakes_and_cakes_Theme_Info( $wp_customize ,'theme_info_theme',array(
-		'label' => __( 'About Bakes and Cakes' , 'bakes-and-cakes' ),
-		'section' => 'theme_info',
-		'description' => $theme_info
-		)));
+	$wp_customize->add_control( 
+		new bakes_and_cakes_Theme_Info( 
+			$wp_customize,
+			'theme_info_theme',
+			array(
+				'section' => 'theme_info',
+				'description' => $theme_info
+			)
+		)
+	);
 
 	$wp_customize->add_setting('theme_info_more_theme',array(
 		'default' => '',

@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function ($) {
 
-	/** Variables from Customizer for Slider settings */
+    /** Variables from Customizer for Slider settings */
     if( bakes_and_cakes_data.auto == '1' ){
         var slider_auto = true;
     }else{
@@ -55,19 +55,19 @@ jQuery(document).ready(function ($) {
          
     });
 
-	 $('.btn-top').click(function () {
-	     $("html, body").animate({
-	         scrollTop: 0
-	     }, 600);
-	     return false;
-	 });
+     $('.btn-top').click(function () {
+         $("html, body").animate({
+             scrollTop: 0
+         }, 600);
+         return false;
+     });
 
-	
-	$('#responsive-menu-button').sidr({
-	   name: 'sidr-main',
-	   source: '#site-navigation',
-	   side: 'right'
-	 });
+    
+    $('#responsive-menu-button').sidr({
+       name: 'sidr-main',
+       source: '#site-navigation',
+       side: 'right'
+     });
 
   $('.map').click(function () {
     $('.map iframe').css("pointer-events", "auto");
@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
   $( ".map" ).mouseleave(function() {
     $('.map iframe').css("pointer-events", "none"); 
   });
-	 
+     
 
         $("#carousel").owlCarousel({
             margin: 15,
@@ -171,7 +171,23 @@ jQuery(document).ready(function ($) {
         });
       
         
-    });  
+    }); 
+
+    // Script for back to top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.btn-top').fadeIn();
+        } else {
+            $('.btn-top').fadeOut();
+        }
+    });
+
+    $('.btn-top').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
 
 
 });

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-12 05:41+0000\n"
+"POT-Creation-Date: 2017-10-27 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -461,52 +461,62 @@ msgstr ""
 msgid "Copyright Info"
 msgstr ""
 
-#: inc/info.php:11
-msgid "Information Links"
+#: inc/demo-content.php:11
+msgid "Demo Content Import"
 msgstr ""
 
-#: inc/info.php:21
-msgid "Need help?"
+#: inc/demo-content.php:22
+#, php-format
+msgid ""
+"Bakes and Cakes comes with demo content import feature. You can import the "
+"demo content with just one click. For step-by-step video tutorial, %1$sClick "
+"here%2$s"
 msgstr ""
 
-#: inc/info.php:22
-msgid "View demo"
+#: inc/demo-content.php:38
+msgid "Plugin required"
 msgstr ""
 
-#: inc/info.php:22 inc/info.php:23 inc/info.php:24 inc/info.php:25
-#: inc/info.php:26 inc/info.php:27
+#: inc/demo-content.php:38
+msgid "Rara One Click Demo Import"
+msgstr ""
+
+#: inc/demo-content.php:41
+msgid "Download Demo Content Zip File"
+msgstr ""
+
+#: inc/demo-content.php:41 inc/info.php:41 inc/info.php:42 inc/info.php:43
+#: inc/info.php:44
 msgid "here"
 msgstr ""
 
-#: inc/info.php:23
-msgid "View documentation"
+#: inc/info.php:11 inc/info.php:41
+msgid "Video Tutorial"
 msgstr ""
 
-#: inc/info.php:24
-msgid "Theme info"
+#: inc/info.php:30
+msgid ""
+"Check out step-by-step video tutorial to create your website like the demo "
+"of Bakes and Cakes WordPress theme."
 msgstr ""
 
-#: inc/info.php:25
-msgid "Support ticket"
+#: inc/info.php:42
+msgid "Theme Demo"
 msgstr ""
 
-#: inc/info.php:26
+#: inc/info.php:43
+msgid "Support Ticket"
+msgstr ""
+
+#: inc/info.php:44
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/info.php:27
-msgid "More WordPress Themes"
-msgstr ""
-
-#: inc/info.php:31
-msgid "About Bakes and Cakes"
-msgstr ""
-
-#: inc/info.php:152
+#: inc/info.php:174
 msgid "Pro Available"
 msgstr ""
 
-#: inc/info.php:154
+#: inc/info.php:176
 msgid "VIEW PRO THEME"
 msgstr ""
 
