@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.8 | 31th October 2017 = 
+* Add: Deprecated functions.
+
 = Version 3.0.7 | 25th October 2017 = 
 * Update: Lots of code restructure, esc issues for php sniffer.
 * Update: Cart url for woocommerce.

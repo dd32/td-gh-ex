@@ -32,10 +32,25 @@ function virtue_main_class() {
 /**
  * .sidebar classes
  */
-function kadence_sidebar_class() {
+function virtue_sidebar_class() {
   return 'col-lg-3 col-md-4';
 }
-
+/* Depreciated */
+function kadence_sidebar_class() {
+	error_log( "The kadence_sidebar_class() function is deprecated since version 3.0.7. Please use virtue_sidebar_class() instead." );
+  return 'col-lg-3 col-md-4';
+}
+function kadence_main_class() {
+  if (kadence_display_sidebar()) {
+    // Classes on pages with the sidebar
+    $class = 'col-lg-9 col-md-8';
+  } else {
+    // Classes on full width pages
+    $class = 'col-md-12';
+  }
+  error_log( "The kadence_main_class() function is deprecated since version 3.0.7. Please use virtue_main_class() instead." );
+  return $class;
+}
 /**
  * Define which pages shouldn't have the sidebar
  *
