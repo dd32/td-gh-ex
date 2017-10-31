@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.0.9 | 31th October 2017 = 
+* Change version for wordpress.org upload issue.
+
 = Version 3.0.8 | 31th October 2017 = 
 * Add: Deprecated functions.
 
