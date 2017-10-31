@@ -165,7 +165,10 @@ $wp_customize->add_control( 'home_template_blog', array(
   'choices' => array(
     'standardleft' => esc_html__( 'Standard Left sidebar','backyard' ),
     'standardright' => esc_html__( 'Standard Right sidebar' ,'backyard'),
-    'standardfull' => esc_html__( 'Standard Full width' ,'backyard'),	
+    'standardfull' => esc_html__( 'Standard Full width' ,'backyard'),
+    'gridleft' => esc_html__( 'Grid Left width' ,'backyard'),
+	'gridright' => esc_html__( 'Grid Right width' ,'backyard'),
+	'gridfull' => esc_html__( 'Grid Full width' ,'backyard'),	
   ),
 ) );
 //Social icon

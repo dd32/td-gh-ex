@@ -62,7 +62,7 @@ $choose_slider=get_theme_mod('choose_slider');
          <?php if (is_active_sidebar('primary-sidebar') ) {dynamic_sidebar('primary-sidebar');} ?>
         </div>
         </div>
-      <?php }else{?>
+      <?php }elseif(isset($home_template_blog)&&$home_template_blog=='standardfull'){?>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <main id="main" class="site-main">
            <?php 
@@ -82,6 +82,79 @@ $choose_slider=get_theme_mod('choose_slider');
          </div>
          <?php }?>
         </div>
+      <?php }elseif(isset($home_template_blog)&&$home_template_blog=='gridleft'){?>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
+        <div class="sidebar wow fadeInUp">
+         <?php if (is_active_sidebar('primary-sidebar') ) {dynamic_sidebar('primary-sidebar');} ?>
+        </div>
+        </div>
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <main id="main" class="site-main">
+          <div class="row">
+           <?php 
+		   $inc=1;
+            global $the_query;
+			$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8,'paged' => $paged));
+            if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
+            get_template_part('template-parts/gridstyle/grid');  
+           ?>
+            <!--post-->
+            <?php if($inc++%2==0){?>
+            <div class="clearfix"></div>
+            <?php }?>
+           <?php endwhile; ?>
+          <?php endif; wp_reset_postdata(); ?>
+          </div>
+          </main>
+        </div>
+      <?php }elseif(isset($home_template_blog)&&$home_template_blog=='gridright'){?>      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <main id="main" class="site-main">
+          <div class="row">
+           <?php 
+		   $inc=1;
+            global $the_query;
+			$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8,'paged' => $paged));
+            if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
+            get_template_part('template-parts/gridstyle/grid');  
+           ?>
+            <!--post-->
+            <?php if($inc++%2==0){?>
+            <div class="clearfix"></div>
+            <?php }?>
+           <?php endwhile; ?>
+          <?php endif; wp_reset_postdata(); ?>
+          </div>
+          </main>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
+        <div class="sidebar wow fadeInUp">
+         <?php if (is_active_sidebar('primary-sidebar') ) {dynamic_sidebar('primary-sidebar');} ?>
+        </div>
+        </div>
+      <?php }elseif(isset($home_template_blog)&&$home_template_blog=='gridfull'){?>      
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <main id="main" class="site-main">
+          <div class="row">
+           <?php 
+		   $inc=1;
+            global $the_query;
+			$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8,'paged' => $paged));
+            if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
+            get_template_part('template-parts/gridstyle/gridfull');  
+           ?>
+            <!--post-->
+            <?php if($inc++%2==0){?>
+            <div class="clearfix"></div>
+            <?php }?>
+           <?php endwhile; ?>
+          <?php endif; wp_reset_postdata(); ?>
+          </div>
+          </main>
+        </div>        
       <?php }?>      
       </div>
     </section>
