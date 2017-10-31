@@ -4,10 +4,7 @@
  *
  * @package Adventure Lite
  */
- 
- global $content_width;
- if ( ! isset( $content_width ) )
-	$content_width = 780; /* pixels */ 
+ $GLOBALS['content_width'] = 780; /* pixels */ 
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -47,11 +44,18 @@ endif; // adventure_lite_setup
 
 add_action( 'after_setup_theme', 'adventure_lite_setup' );
 
-function adventure_lite_excerpt_length( $length ) {
-        return 15;
-    }
-    add_filter( 'excerpt_length', 'adventure_lite_excerpt_length', 999 );
-
+if ( ! function_exists( 'adventure_lite_excerpt_length' ) ) {
+	/**
+	 * Filter the except length to 15 characters.
+	 * Returns default on admin side
+	 *
+	 * @return int - modified excerpt length.
+	 */
+	function adventure_lite_excerpt_length( $length ) {
+		return is_admin() ? $length : 15;
+	}
+}
+add_filter( 'excerpt_length', 'adventure_lite_excerpt_length', 999 );
 
 function adventure_lite_widgets_init() { 	
 	
@@ -70,8 +74,8 @@ function adventure_lite_widgets_init() {
 		'description'   => esc_html__( 'Appears on top of the header', 'adventure-lite' ),
 		'id'            => 'header-right-widget',
 		'before_widget' => '',		
-		'before_title'  => '<h3 class="widget-title" style="display:none">',
-		'after_title'   => '</h3>',
+		'before_title'  => '',
+		'after_title'   => '',
 		'after_widget'  => '',
 	) );		
 	
@@ -121,12 +125,12 @@ function adventure_lite_font_url(){
 function adventure_lite_scripts() {
 	wp_enqueue_style('adventure-lite-font', adventure_lite_font_url(), array());
 	wp_enqueue_style( 'adventure-lite-basic-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'adventure-lite-editor-style', get_template_directory_uri()."/editor-style.css" );
+	wp_enqueue_style( 'adventure-lite-editor-style', get_template_directory_uri()."/adventure-lite-editor-style.css" );
 	wp_enqueue_style( 'nivo-slider', get_template_directory_uri()."/css/nivo-slider.css" );
-	wp_enqueue_style( 'adventure-lite-main-style', get_template_directory_uri()."/css/responsive.css" );		
-	wp_enqueue_style( 'adventure-lite-base-style', get_template_directory_uri()."/css/style_base.css" );
+	wp_enqueue_style( 'adventure-lite-responsive', get_template_directory_uri()."/css/adventure-lite-responsive.css" );		
+	wp_enqueue_style( 'adventure-lite-base-style', get_template_directory_uri()."/css/adventure-lite-style-base.css" );
 	wp_enqueue_script( 'jquery-nivo', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
-	wp_enqueue_script( 'adventure-lite-custom-js', get_template_directory_uri() . '/js/custom.js' );	
+	wp_enqueue_script( 'adventure-lite-custom-js', get_template_directory_uri() . '/js/adventure-lite-custom.js' );	
 		
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -141,11 +145,6 @@ define('SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-travel-bl
 define('SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/adventure-documentation/','adventure-lite');
 define('SKTTHEMES_LIVE_DEMO','http://sktperfectdemo.com/demos/adventure/','adventure-lite');
 define('SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','adventure-lite');
-
-function adventure_lite_new_excerpt_length($length) {
-    return 50;
-}
-add_filter('excerpt_length', 'adventure_lite_new_excerpt_length');
 
 /**
  * Implement the Custom Header feature.

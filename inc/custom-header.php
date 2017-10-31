@@ -56,13 +56,6 @@ function adventure_lite_admin_header_style() {?>
 }
 endif; // adventure_lite_admin_header_style
 
-
-add_action( 'admin_head', 'admin_header_css' );
-function admin_header_css(){ ?>
-	<style>pre{white-space: pre-wrap;}</style><?php
-}
-
-
 if ( ! function_exists( 'adventure_lite_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.

@@ -10,6 +10,11 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+?>
+<style type="text/css">
+.infocase{text-decoration: underline; color: #DA4141; text-transform: uppercase;}
+</style>
+<?php 
 function adventure_lite_customize_register( $wp_customize ) {
 	
 	//Add a class for titles
@@ -18,7 +23,7 @@ function adventure_lite_customize_register( $wp_customize ) {
         public $label = '';
         public function render_content() {
         ?>
-			<h3 style="text-decoration: underline; color: #DA4141; text-transform: uppercase;"><?php echo esc_html( $this->label ); ?></h3>
+			<h3 class="infocase"><?php echo esc_html( $this->label ); ?></h3>
         <?php
         }
     }
