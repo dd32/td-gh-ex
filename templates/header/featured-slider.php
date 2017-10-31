@@ -99,7 +99,7 @@ $slider_data .= '}';
 
 						<?php if( ashe_options( 'featured_slider_title' ) === true ) : ?>
 						<h2 class="slider-title"> 
-							<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>								
+							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>								
 						</h2>
 						<?php endif; ?>
 
@@ -109,7 +109,7 @@ $slider_data .= '}';
 
 						<?php if ( ashe_options( 'featured_slider_more' ) === true ) : ?>
 						<div class="slider-read-more">
-							<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'read more','ashe' ); ?></a>
+							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'read more','ashe' ); ?></a>
 						</div>
 						<?php endif; ?>
 

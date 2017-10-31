@@ -45,3 +45,18 @@ Source: https://github.com/noraesae/perfect-scrollbar/releases
 Sticky-kit, Leaf Corcoran 2015
 Licenses: WTFPL
 Source: http://leafo.net/sticky-kit/
+
+
+Image Credits (screenshot.png):
+
+Header Image, Copyright Hipster Mum
+License: CC0 1.0 Universal (CC0 1.0)
+https://unsplash.com/photos/Ri17WyRuclo
+
+First Post, Copyright Nick Karvounis
+License: CC0 1.0 Universal (CC0 1.0)
+https://unsplash.com/photos/LgOeUY_wXCE
+
+About Me Widget, Copyright Lucas Sankey
+License: CC0 1.0 Universal (CC0 1.0)
+https://unsplash.com/photos/9R-CH7PR150

@@ -1048,7 +1048,7 @@ add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 */
 function ashe_panels_js() {
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
-	wp_enqueue_style( 'customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
+	wp_enqueue_style( 'ashe-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
 	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.0', true );
 
 }

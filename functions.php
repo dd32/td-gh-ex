@@ -31,7 +31,7 @@ function ashe_setup() {
 		'height'      			=> 500,
 		'flex-width'  			=> true,
 		'flex-height' 			=> true,
-		'default-image' 		=> 'http://wp-royal.com/themes/ashe/images/ashe_bg.jpg',
+		'default-image' 		=> esc_url( get_template_directory_uri() ) .'/assets/images/ashe_bg.jpg',
 		'default-text-color'	=> '111',
 	);
 	add_theme_support( 'custom-header', $custom_header_defaults );
@@ -221,18 +221,20 @@ add_image_size( 'ashe-single-navigation', 75, 75, true );
 */
 
 function top_menu_fallback() {
-	echo '<ul id="top-menu">';
-		echo '<li>';
-			echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
-		echo '</li>';
-	echo '</ul>';
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		echo '<ul id="top-menu">';
+			echo '<li>';
+				echo '<a href="'. esc_url( admin_url('nav-menus.php') ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+			echo '</li>';
+		echo '</ul>';
+	}
 }
 
 /*
 **  Main Menu Fallback
 */
 
-function main_menu_fallback() {
+function ashe_main_menu_fallback() {
 	echo '<ul id="main-menu">';
 		echo '<li>';
 			echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
@@ -244,12 +246,34 @@ function main_menu_fallback() {
 **  Custom Excerpt Length
 */
 
-function ashe_excerpt_length() {	
+function ashe_excerpt_length( $link ) {
+
+	if ( is_admin() ) {
+		return $link;
+	}
+
+	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ashe' ), get_the_title( get_the_ID() ) )
+	);
+
 	return 2000;
 }
 add_filter( 'excerpt_length', 'ashe_excerpt_length', 999 );
 
-function ashe_new_excerpt( $more ) {
+function ashe_new_excerpt( $link ) {
+
+	if ( is_admin() ) {
+		return $link;
+	}
+
+	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ashe' ), get_the_title( get_the_ID() ) )
+	);
+
 	return '...';
 }
 add_filter( 'excerpt_more', 'ashe_new_excerpt' );
@@ -404,8 +428,8 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 					if ( has_post_thumbnail() ) {
 				?>
 					<section>
-						<a href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail('ashe-grid-thumbnail'); ?></a>
-						<h4><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h4>
+						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail('ashe-grid-thumbnail'); ?></a>
+						<h4><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h4>
 						<span class="related-post-date"><?php echo get_the_time( get_option('date_format') ); ?></span>
 					</section>
 

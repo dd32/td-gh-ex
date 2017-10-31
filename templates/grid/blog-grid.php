@@ -19,7 +19,7 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
 				
 				<div class="post-media">
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>"></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>"></a>
 					<?php the_post_thumbnail('ashe-full-thumbnail'); ?>
 				</div>
 
@@ -36,7 +36,7 @@
 					?>
 
 					<h1 class="post-title">
-						<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>
+						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
 					</h1>
 					
 					<div class="post-meta clear-fix">
@@ -67,7 +67,7 @@
 
 				<?php if ( ashe_options( 'blog_page_show_more' ) === true ) : ?>
 				<div class="read-more">
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( ashe_options( 'blog_page_more_text' ) ); ?></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( ashe_options( 'blog_page_more_text' ) ); ?></a>
 				</div>
 				<?php endif; ?>
 				

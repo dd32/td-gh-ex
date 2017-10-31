@@ -485,7 +485,7 @@ $css = '<style id="ashe_dynamic_css">';
 	$css .= '
 		.entry-header {
 			height: '. ashe_options( 'header_image_height' ) .'px;
-			background-image:url('. get_header_image() .');
+			background-image:url('. esc_url( get_header_image() ) .');
 			background-size: '. ashe_options( 'header_image_bg_image_size' ) .';
 
 		}

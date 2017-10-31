@@ -46,7 +46,7 @@
 			'menu_class' 		=> '',
 			'container' 	 	=> 'nav',
 			'container_class'	=> 'main-menu-container',
-			'fallback_cb' 		=> 'main_menu_fallback'
+			'fallback_cb' 		=> 'ashe_main_menu_fallback'
 		) );
 
 		wp_nav_menu( array(

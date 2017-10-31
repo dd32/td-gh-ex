@@ -2,7 +2,7 @@
 
 // Add About Ashe Page
 function ashe_about_page() {
-	add_theme_page( 'About Ashe', 'About Ashe', 'edit_theme_options', 'about-ashe', 'ashe_about_page_output' );
+	add_theme_page( esc_html__( 'About Ashe', 'ashe' ), esc_html__( 'About Ashe', 'ashe' ), 'edit_theme_options', 'about-ashe', 'ashe_about_page_output' );
 }
 add_action( 'admin_menu', 'ashe_about_page' );
 
@@ -53,7 +53,7 @@ function ashe_about_page_output() {
 					<p>
 					<?php esc_html_e( 'All theme options are located here. After reading the Theme Documentation we recommend you to open the Theme Customizer and play with some options. You will enjoy it.', 'ashe' ); ?>
 					</p>
-					<a target="_blank" href="<?php echo esc_url(get_site_url()) . '/wp-admin/customize.php'?>" class="button button-primary"><?php esc_html_e( 'Customize Your Site', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url( wp_customize_url() );?>" class="button button-primary"><?php esc_html_e( 'Customize Your Site', 'ashe' ); ?></a>
 				</div>
 
 			</div>
@@ -69,22 +69,22 @@ function ashe_about_page_output() {
 				<?php
 
 				// WooCommerce
-				ashe_recommended_plugin( 'woocommerce', 'woocommerce', 'WooCommerce', 'WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully.' );
+				ashe_recommended_plugin( 'woocommerce', 'woocommerce', esc_html__( 'WooCommerce', 'ashe' ), esc_html__( 'WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully.', 'ashe' ) );
 
 				// MailPoet 2
-				ashe_recommended_plugin( 'wysija-newsletters', 'index', 'MailPoet 2', 'Create and send newsletters or automated emails. Capture subscribers with a widget. Import and manage your lists. MailPoet is made with love.' );
+				ashe_recommended_plugin( 'wysija-newsletters', 'index', esc_html__( 'MailPoet 2', 'ashe' ), esc_html__( 'Create and send newsletters or automated emails. Capture subscribers with a widget. Import and manage your lists. MailPoet is made with love.', 'ashe' ) );
 
 				// Contact Form 7
-				ashe_recommended_plugin( 'contact-form-7', 'wp-contact-form-7', 'Contact Form 7', 'Just another contact form plugin. Simple but flexible.' );
+				ashe_recommended_plugin( 'contact-form-7', 'wp-contact-form-7', esc_html__( 'Contact Form 7', 'ashe' ), esc_html__( 'Just another contact form plugin. Simple but flexible.', 'ashe' ) );
 
 				// Recent Posts Widget
-				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails', 'Recent Posts Widget With Thumbnails', 'Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings.' );
+				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails', esc_html__( 'Recent Posts Widget With Thumbnails', 'ashe' ), esc_html__( 'Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings.', 'ashe' ) );
 
 				// Instagram Widget
-				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', 'WP Instagram Widget', 'A WordPress widget for showing your latest Instagram photos.' );
+				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', esc_html__( 'WP Instagram Widget', 'ashe' ), esc_html__( 'A WordPress widget for showing your latest Instagram photos.', 'ashe' ) );
 
 				// Facebook Widget
-				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', 'Facebook Widget', 'This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.' );
+				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'ashe' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.', 'ashe' ) );
 
 				?>
 
