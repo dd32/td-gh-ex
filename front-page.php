@@ -20,6 +20,7 @@ get_header();
                 			$img_arr[] = $image;
                				$id_arr[] = $post->ID;
                 		endwhile;
+						wp_reset_postdata();
                 	}
                 }
                 ?>
