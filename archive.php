@@ -1,114 +1,80 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying archive pages
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ares
+ * @package Ares
  */
-get_header();
-?>
-<div class="site-content-wrapper <?php echo esc_attr( of_get_option('ares_theme_background_pattern','crossword') ); ?>">
-<div id="content" class="site-content">
 
-    <?php if (have_posts()) : ?>
+$ares_options = ares_get_options();
 
-        <div class="col-md-12">
-            <div class="page-title">
-                <div class="row center">
+get_header(); ?>
 
-                    <?php
-                    if (is_category()) :
-                        single_cat_title();
+<div id="primary" class="content-area">
 
-                    elseif (is_tag()) :
-                        single_tag_title();
+    <main id="main" class="site-main">
 
-                    elseif (is_author()) :
-                        printf(__('Author: %s', 'ares'), '<span class="vcard">' . get_the_author() . '</span>');
+        <header class="page-header">
 
-                    elseif (is_day()) :
-                        printf(__('Day: %s', 'ares'), '<span>' . get_the_date() . '</span>');
+            <div class="container">
 
-                    elseif (is_month()) :
-                        printf(__('Month: %s', 'ares'), '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'ares')) . '</span>');
+                <div class="row">
 
-                    elseif (is_year()) :
-                        printf(__('Year: %s', 'ares'), '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'ares')) . '</span>');
+                    <div class="col-sm-12">
 
-                    elseif (is_tax('post_format', 'post-format-aside')) :
-                        _e('Asides', 'ares');
+                        <?php
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_description( '<div class="archive-description">', '</div>' );
+                        ?>
+                        
+                    </div>
 
-                    elseif (is_tax('post_format', 'post-format-gallery')) :
-                        _e('Galleries', 'ares');
+                </div>
 
-                    elseif (is_tax('post_format', 'post-format-image')) :
-                        _e('Images', 'ares');
+            </div>
 
-                    elseif (is_tax('post_format', 'post-format-video')) :
-                        _e('Videos', 'ares');
+        </header><!-- .page-header -->
 
-                    elseif (is_tax('post_format', 'post-format-quote')) :
-                        _e('Quotes', 'ares');
+        <div class="container">
 
-                    elseif (is_tax('post_format', 'post-format-link')) :
-                        _e('Links', 'ares');
+            <div class="frontpage row">
 
-                    elseif (is_tax('post_format', 'post-format-status')) :
-                        _e('Statuses', 'ares');
+                <div class="col-sm-12">
+                    
+                    <?php if ( have_posts() ) : ?>
+            
+                        <?php
 
-                    elseif (is_tax('post_format', 'post-format-audio')) :
-                        _e('Audios', 'ares');
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
 
-                    elseif (is_tax('post_format', 'post-format-chat')) :
-                        _e('Chats', 'ares');
+                                /*
+                                 * Include the Post-Format-specific template for the content.
+                                 * If you want to override this in a child theme, then include a file
+                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                 */
+                                get_template_part( 'template-parts/content', 'posts' );
+
+                        endwhile;
+
+                        the_posts_navigation();
 
                     else :
-                        _e('Archives', 'ares');
 
-                    endif;
-                    ?>
+                        get_template_part( 'template-parts/content', 'none' );
+
+                    endif; ?>
+                
                 </div>
+                
             </div>
-            <div class="row">
-                <div class=" page-content col-md-12">
-                    <div class="col-md-9">
-                        <?php
-                        // Show an optional term description.
-                        $term_description = term_description();
-                        if (!empty($term_description)) :
-                            printf('<div class="taxonomy-description">%s</div>', $term_description);
-                        endif;
-                        ?>
-                        </header><!-- .page-header -->
-
-                        <?php /* Start the Loop */ ?>
-                        <?php while (have_posts()) : the_post(); ?>
-
-                            <?php
-                            /* Include the Post-Format-specific template for the content.
-                             * If you want to override this in a child theme, then include a file
-                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                             */
-                            get_template_part('content', get_post_format());
-                            ?>
-
-                        <?php endwhile; ?>
-
-                        <?php ares_paging_nav(); ?>
-
-                    <?php else : ?>
-
-                        <?php get_template_part('content', 'none'); ?>
-
-                    <?php endif; ?>   
-                </div>
-                <div class="col-md-3 avenue-sidebar">
-                    <?php get_sidebar(); ?>
-                </div>
-            </div>
+        
         </div>
-    </div>
-</div>
-</div>
-<?php get_footer(); ?>
+
+    </main><!-- #main -->
+
+</div><!-- #primary -->
+
+<?php
+get_footer();
