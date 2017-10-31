@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bar Restaurant\n"
-"POT-Creation-Date: 2017-10-18 15:19+0530\n"
+"POT-Creation-Date: 2017-10-31 19:13+0530\n"
 "PO-Revision-Date: 2017-10-11 10:54+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,50 +44,50 @@ msgstr ""
 msgid "Bar Restaurant Pro"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:75
 msgid "Page Builder by SiteOrigin"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:80
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:85
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:95 inc/class-tgm-plugin-activation.php:327
+#: functions.php:99 inc/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions.php:96 inc/class-tgm-plugin-activation.php:328
+#: functions.php:100 inc/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr ""
 
-#: functions.php:97 inc/class-tgm-plugin-activation.php:330
+#: functions.php:101 inc/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions.php:98 inc/class-tgm-plugin-activation.php:333
+#: functions.php:102 inc/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions.php:99 inc/class-tgm-plugin-activation.php:336
+#: functions.php:103 inc/class-tgm-plugin-activation.php:336
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:100 inc/class-tgm-plugin-activation.php:342
+#: functions.php:104 inc/class-tgm-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:101
+#: functions.php:105
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -100,21 +100,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:102 inc/class-tgm-plugin-activation.php:360
+#: functions.php:106 inc/class-tgm-plugin-activation.php:360
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:103 inc/class-tgm-plugin-activation.php:366
+#: functions.php:107 inc/class-tgm-plugin-activation.php:366
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:104
+#: functions.php:108
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -127,7 +127,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:105 inc/class-tgm-plugin-activation.php:348
+#: functions.php:109 inc/class-tgm-plugin-activation.php:348
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -138,7 +138,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:106
+#: functions.php:110
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -151,28 +151,28 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:107 inc/class-tgm-plugin-activation.php:371
+#: functions.php:111 inc/class-tgm-plugin-activation.php:371
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:108 inc/class-tgm-plugin-activation.php:381
+#: functions.php:112 inc/class-tgm-plugin-activation.php:381
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:109 inc/class-tgm-plugin-activation.php:385
+#: functions.php:113 inc/class-tgm-plugin-activation.php:385
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: functions.php:110 inc/class-tgm-plugin-activation.php:387
+#: functions.php:114 inc/class-tgm-plugin-activation.php:387
 #: inc/class-tgm-plugin-activation.php:3159
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions.php:111
+#: functions.php:115
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""

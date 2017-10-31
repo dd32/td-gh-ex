@@ -57,8 +57,12 @@ function bar_restaurant_admin_menu( ) {
     add_theme_page( __('Pro Feature','bar-restaurant'), __('Bar Restaurant Pro','bar-restaurant'), 'manage_options', 'bar-restaurant-pro-buynow', 'bar_restaurant_pro_buy_now', 300 ); 
   
 }
-function bar_restaurant_pro_buy_now(){ ?>
-  <script>window.location = "https://voilathemes.com/products/bar-restaurant-pro-wordpress-theme/";</script>
+function bar_restaurant_pro_buy_now(){ ?>  
+  <div class="business_consultant_plus_version">
+  <a href="<?php echo esc_url('https://voilathemes.com/products/bar-restaurant-pro-wordpress-theme/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url('https://s3.amazonaws.com/voilathemesdotcom/wp-content/uploads/bar-restaurant-pro-features.png') ?>" width="100%" height="auto" />
+  </a>
+</div>
 <?php }
 /*
 * TGM plugin activation register hook 

@@ -57,7 +57,7 @@ function bar_restaurant_customize_register( $wp_customize ) {
         array(
             'default' => esc_html__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','bar-restaurant'),
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'wp_kses',
+            'sanitize_callback' => 'wp_kses_post',
             'priority' => 20, 
         )
     );
@@ -180,7 +180,7 @@ $wp_customize->add_setting(
     array(
         'default' => '',
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'absint',
     )
 );
 $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'scroll_logo', array(
@@ -199,7 +199,7 @@ $wp_customize->add_setting(
   array(
     'default' => '',
     'capability'     => 'edit_theme_options',
-    'sanitize_callback' => 'sanitize_text_field',
+    'sanitize_callback' => 'absint',
     )
   );
 $wp_customize->add_control(
@@ -340,7 +340,7 @@ $wp_customize->add_setting(
     'copyright_area_text',
     array(
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses',
+        'sanitize_callback' => 'wp_kses_post',
         'priority' => 20, 
     )
 );
