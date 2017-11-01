@@ -125,9 +125,9 @@ class Annina_Admin {
 				<p class="cresta-actions">
 					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://crestaproject.com/downloads/annina/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'annina' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://crestaproject.com/demo/annina/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'annina' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://crestaproject.com/demo/annina/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'annina' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://crestaproject.com/demo/annina-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'annina' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://crestaproject.com/demo/annina-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'annina' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://wordpress.org/support/theme/annina/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'annina' ); ?></a>
 				</p>
@@ -398,8 +398,8 @@ class Annina_Admin {
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://crestaproject.com/demo/annina-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'annina' ); ?></a>
-							<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://crestaproject.com/downloads/annina/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'annina' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://crestaproject.com/demo/annina-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'annina' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://crestaproject.com/downloads/annina/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'annina' ); ?></a>
 						</td>
 					</tr>
 				</tbody>

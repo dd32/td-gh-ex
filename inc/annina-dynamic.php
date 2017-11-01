@@ -241,7 +241,7 @@ function annina_color_primary_register( $wp_customize ) {
         		</span>
         	</p>
 			<p style="text-align:center;" class="annina-upgrade-button">
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/annina-pro/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/demo/annina-pro/" class="button button-secondary">
 					<?php esc_html_e('Watch the demo', 'annina'); ?>
 				</a>
 				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/annina/" class="button button-secondary">
