@@ -133,6 +133,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.6.5
+1. Added demo image preview on wordpress.org
+@version 1.6.4
+1. Updated Theme URI & Author URI
 @version 1.6.3
 1. Add email course button in customize setting.
 @version 1.6.2

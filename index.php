@@ -18,13 +18,17 @@ get_template_part('index','slider');
 					$post_type_data->the_post();
 					global $more;
 					$more = 0;?>
-			<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
-					<?php if(has_post_thumbnail()):?>
-					<a  href="<?php the_permalink(); ?>" class="pull-left blog_pull_img2">
-					<?php the_post_thumbnail('', $defalt_arg); ?>
+					<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php
+					$post_thumbnail_url = get_the_post_thumbnail( get_the_ID(), 'img-responsive' );
+					if ( !empty( $post_thumbnail_url ) ) {
+					?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="pull-left blog_pull_img2">
+								<?php echo $post_thumbnail_url; ?>
 					</a>
-					<?php endif;?>
+					<?php
+					}
+					?>
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
 					<div class="blog_section2_comment">

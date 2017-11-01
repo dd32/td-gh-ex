@@ -51,6 +51,9 @@
 	// Rambo Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
 	
+	// Rambo Demo Image
+	require_once( get_template_directory() . '/rambo-demo-image/rambo-prevdem.php' );
+	
 	
 	//require( WEBRITI_THEME_FUNCTIONS_PATH . '/excerpt/excerpt.php' ); // for Excerpt Length
 	
