@@ -85,6 +85,26 @@ https://pixabay.com/en/wellness-massage-relax-relaxing-589770/
 Project Images : CCO by kerdkanno
 1. https://pixabay.com/en/lemon-basil-hairy-natural-spice-906141/
 
+Demo Images: CCO by Pixels
+
+https://www.pexels.com/photo/hearts-valentine-painting-fingernails-nail-polish-37553/
+
+https://www.pexels.com/photo/towels-rolled-208504/
+
+https://www.pexels.com/photo/bath-blur-brush-candles-275765/
+
+https://www.pexels.com/photo/apartment-architecture-bed-bedroom-279701/
+
+https://www.pexels.com/photo/adult-art-beauty-blur-310278/
+
+https://www.pexels.com/photo/adult-architecture-beautiful-building-341004/
+
+https://www.pexels.com/photo/adult-attractive-beautiful-cute-371160/
+
+https://www.pexels.com/photo/buildings-city-exercise-girl-374632/
+
+https://www.pexels.com/photo/attractive-beautiful-beauty-brunette-581815/
+
 
 Font Awesome...
 Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -104,6 +124,10 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.8.3
+1. Added demo images preview for wordpress.org
+@Version 1.8.2
+1. Updated Theme URI & Author URI 
 @Version 1.8.1
 1. Fixed Customizer title background color.
 @Version 1.8

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2017-06-03 14:50+0530\n"
-"PO-Revision-Date: 2017-06-03 14:50+0530\n"
+"POT-Creation-Date: 2017-07-12 11:21+0530\n"
+"PO-Revision-Date: 2017-07-12 11:20+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgid ""
 "help."
 msgstr ""
 
-#: content.php:24 functions.php:163 functions.php:181
+#: content.php:24 functions.php:165 functions.php:183
 #: functions/widget/wbr-news-widget.php:108 index-news.php:92
 msgid "Read More"
 msgstr ""
@@ -110,15 +110,15 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:93
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:95
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:322
 msgid ""
 "Click the large blue button to start the dummy data import process.</br></"
 "br>Please be patient while WordPress imports all the content.</br></br>\n"
@@ -128,6 +128,21 @@ msgid ""
 "org/plugins/woocommerce/\"> WooCommerce </a> </li><li> <a href=\"https://"
 "wordpress.org/plugins/spoontalk-social-media-icons-widget/\"> Spoon talk "
 "social media icon </a></li>"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:10
+msgid "Import Dummy Data"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:13
+#, php-format
+msgid ""
+"Save time by importing our demo data and make your site ready in minutes. %s"
+msgstr ""
+
+#: functions/custom_control/class-dummy-import-control.php:13
+#: functions/spasalon-info/welcome-screen.php:67
+msgid "Import Demo Data"
 msgstr ""
 
 #: functions/customizer/banner-settings.php:9
@@ -893,10 +908,6 @@ msgstr ""
 msgid ""
 "Save time by import our demo data, your website will be set up and ready to "
 "customize in minutes. %s"
-msgstr ""
-
-#: functions/spasalon-info/welcome-screen.php:67
-msgid "Import Demo Data"
 msgstr ""
 
 #: functions/spasalon-info/welcome-screen.php:110

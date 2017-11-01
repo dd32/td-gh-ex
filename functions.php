@@ -32,6 +32,8 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/home-page.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 
+require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
+
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');
@@ -46,6 +48,9 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/post-widget.php');
 
 // Spasalon Info Page
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
+
+// Spasalon Demo Image
+require_once( get_template_directory() . '/spasalon-demo-image/spasalon-prevdem.php' );
 
 
 
@@ -318,7 +323,7 @@ function spasalon_import_files() {
       'import_widget_file_url'     => 'https://webriti.com/themes/dummydata/spasalon/lite/spasalon-widget.json',
       'import_customizer_file_url' => 'https://webriti.com/themes/dummydata/spasalon/lite/spasalon-customize.dat',
       'import_notice'              => sprintf(__( 'Click the large blue button to start the dummy data import process.</br></br>Please be patient while WordPress imports all the content.</br></br>
-			<h3>Recommended Plugins</h3>Spasalon theme supports the following plugins:</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br> <li> <a href="https://wordpress.org/plugins/woocommerce/"> WooCommerce </a> </li><li> <a href="https://wordpress.org/plugins/spoontalk-social-media-icons-widget/"> Spoon talk social media icon </a></li>', 'rambo' )),
+			<h3>Recommended Plugins</h3>Spasalon theme supports the following plugins:</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br> <li> <a href="https://wordpress.org/plugins/woocommerce/"> WooCommerce </a> </li><li> <a href="https://wordpress.org/plugins/spoontalk-social-media-icons-widget/"> Spoon talk social media icon </a></li>', 'spasalon' )),
 			),
     	
     	

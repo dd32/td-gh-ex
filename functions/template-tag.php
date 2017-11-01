@@ -139,34 +139,21 @@ function spasalon_page_banner_strip(){
 if ( ! function_exists( 'spasalon_post_thumbnail' ) ) :
 function spasalon_post_thumbnail() {
 	
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
-
-	if ( is_singular() ) :
-	
-		 if( is_page_template('blog-left-sidebar.php') || is_page_template('blog-right-sidebar.php') || is_page_template('blog-full.php') ){
-			?>
-			<a class="post-thumbnail width-sm" href="<?php the_permalink(); ?>" >
-				<?php the_post_thumbnail(); ?>
-			</a>
-			<?php
-		 }else{
-	?>
+	if ( is_singular() ) : ?>
 		<figure class="post-thumbnail-full">
 		<?php the_post_thumbnail(); ?>
 		</figure>
-		
-	<?php } 
-		 
-	else : ?>
-
-	<a class="post-thumbnail width-sm" href="<?php the_permalink(); ?>" >
-		<?php the_post_thumbnail(); ?>
-	</a>
-
-	<?php endif; // End is_singular()
-}
+		<?php else :
+		$post_thumbnail_url = get_the_post_thumbnail( get_the_ID(), 'img-responsive' );
+		if ( !empty( $post_thumbnail_url ) ) {
+		?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post-thumbnail width-sm">
+				<?php echo $post_thumbnail_url; ?>
+		</a>
+		<?php
+		}
+	endif; // End is_singular()
+	}
 endif;
 
 
