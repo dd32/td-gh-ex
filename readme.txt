@@ -122,6 +122,17 @@ JavaScripts
 		   https://pixabay.com/en/tablet-living-room-dog-woman-girl-843798/
 		   https://pixabay.com/en/tablet-ipad-read-screen-swipe-1075790/
 		   https://pixabay.com/en/business-hard-working-autonomous-1067978/
+		4. Demo Images
+			https://www.pexels.com/photo/attractive-beautiful-beauty-fashion-206470/
+			https://www.pexels.com/photo/action-automotive-car-employee-279949/
+			https://www.pexels.com/photo/adult-backpack-bicycle-bike-281967/
+			https://www.pexels.com/photo/adult-aperture-bokeh-camcorder-289796/
+			https://www.pexels.com/photo/adult-business-desk-document-296886/
+			https://www.pexels.com/photo/portrait-of-young-woman-drinking-coffee-at-home-324030/
+			https://www.pexels.com/photo/blank-business-composition-computer-373076/
+			https://www.pexels.com/photo/cafe-camera-classic-close-up-413960/
+			https://www.pexels.com/photo/bag-brown-eyewear-fashion-426862/
+			https://www.pexels.com/photo/adult-beard-board-boy-450278/
 
 		images are licensed under GPL.
 		
@@ -142,6 +153,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.7.9
+1. Added Demo images for wordpress preview.
+@Version 1.7.8
+1. Updated Theme URI & Author URI 
 @Version 1.7.7
 1. Added Getting starded button in customize setting for use our homepage .
 @Version 1.7.6

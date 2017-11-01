@@ -16,14 +16,17 @@
         global $more;
         $more = 0; ?>
       <div class="qua_blog_section" id="post-<?php the_ID(); ?>" >
-	   <?php if(has_post_thumbnail()): ?>
-        <div class="qua_blog_post_img">
-          <?php $defalt_arg =array('class' => "img-responsive"); ?>
-          <a  href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail('quality_blog_img', $defalt_arg); ?>
-          </a>
+	   <div class="qua_blog_post_img">
+          <?php $post_thumbnail_url = get_the_post_thumbnail( get_the_ID(), 'img-responsive' );
+			if ( !empty( $post_thumbnail_url ) ) {
+		   ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<?php echo $post_thumbnail_url; ?>
+			</a>
+			<?php
+			}
+			?>
         </div>
-		 <?php endif; ?>
         <div class="qua_post_date">
           <span class="date"><?php echo get_the_date('j'); ?></span>
           <h6><?php echo the_time('M'); ?></h6>

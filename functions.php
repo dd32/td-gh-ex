@@ -26,6 +26,9 @@
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
+	//Quality Demo Image
+	require_once( get_template_directory() . '/quality-demo-image/quality-prevdem.php' );
+	
 	//wp title tag starts here
   	function quality_head( $title, $sep )
   	{	global $paged, $page;		
