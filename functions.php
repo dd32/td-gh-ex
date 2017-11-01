@@ -10,8 +10,9 @@
 /**
  * Assign the azonbooster version to a var
  */
-$theme              = wp_get_theme( 'azonbooster' );
-$azonbooster_version = $theme['Version'];
+$azonbooster_theme              = wp_get_theme( 'azonbooster' );
+$azonbooster_version = $azonbooster_theme->get('Version');
+$azonbooster_slug = $azonbooster_theme->get('azonbooster');
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -33,6 +34,7 @@ $azonbooster = (object) array(
 require 'inc/azonbooster-functions.php';
 require 'inc/azonbooster-template-hooks.php';
 require 'inc/azonbooster-template-functions.php';
+require 'inc/customizer/class-azb-customizer-output.php';
 
 if ( class_exists( 'Jetpack' ) ) {
 	$azonbooster->jetpack = require 'inc/jetpack/class-azonbooster-jetpack.php';

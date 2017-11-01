@@ -1,6 +1,6 @@
 === AzonBooster ===
 
-AzonBooster Theme by AzonBooster, https://azonbooster.com/themes/azon-booster
+AzonBooster Theme by AzonBooster, https://booster9.com/themes/azonbooster
 
 == Tags ==
 two-columns, custom-background, custom-header, custom-menu, blog, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, three-columns
@@ -8,7 +8,7 @@ two-columns, custom-background, custom-header, custom-menu, blog, news, featured
 
 == About AzonBooster ==
 
-The Best Free Amazon Affiliate Double Up Your Sales and Conversion Rate.
+The best free Amazon Affiliate theme double up your sales and conversion rate. AzonBooster is a fast, lightweight, mobile responsive theme built with speed, SEO friendly, and usability in mind. AzonBooster can serve as a solid base for any website and works great with any of your favorite page builders. With an emphasis on WordPress coding standards, we ensure AzonBooster is compatible with all well-coded plugins, including major ones like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress.
 
 == Installation ==
 
@@ -24,6 +24,10 @@ The Best Free Amazon Affiliate Double Up Your Sales and Conversion Rate.
 AzonBooster includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.2 - Nov 1 2017 =
+* Added: Requirement Plugin Helper
+* Added: Customizer Style
+* Changed: Change theme's screenshot
 
 = 1.0 - May 12 2015 =
 * Initial release
@@ -76,8 +80,9 @@ License URI: https://github.com/oddbird/susy/blob/master/LICENSE.txt
 
 * Image of Screenshot
 
-- https://unsplash.com/photos/oI6zrBj3nKw
-- License URL: https://unsplash.com/license
+1. https://burst.shopify.com/photos/woman-meditating-hip-opener
+2. https://burst.shopify.com/photos/mens-watch-ring
+License URL: https://burst.shopify.com/licenses/creative-commons
 
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)

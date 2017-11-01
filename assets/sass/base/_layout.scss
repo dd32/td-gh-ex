@@ -114,10 +114,62 @@
 			@include span(3 of 12);
 		}
 	}
+	.none-sidebar {
+
+		.content-area {
+			@include span( full );
+		}
+		.widget-area {
+
+			display: none;
+		}
+	}
 
 	.azonbooster-full-width-content {
 		.content-area {
 			@include span(full);
+		}
+	}
+
+	.thumbnail-on-top {
+		.post-thumnbnail,
+		.entry-header,
+		.entry-content{
+			width: 100%;
+		}
+	}
+	.thumbnail-on-left {
+
+		.post-thumnbnail {
+
+			@include span(4 of 12);
+			margin-top: 10px;
+		}
+		.entry-header,
+		.entry-content {
+
+			@include span(last 8 of 12);
+		}
+	}
+	.thumbnail-on-right {
+
+		.post-thumnbnail {
+
+			@include span( last 4 of 12);
+			margin-top: 10px;
+		}
+		.entry-header,
+		.entry-content {
+
+			@include span( 8 of 12);
+		}
+	}
+	
+	.disable-thumbnail {
+		.entry-header,
+		.entry-content {
+
+			@include span( full );
 		}
 	}
 
@@ -305,7 +357,7 @@
 		@include clearfix;
 
 		.entry-header {
-			@include span(12);
+			/* @include span(12); */
 			margin-bottom: ms(1);
 
 			.entry-meta {
@@ -314,7 +366,7 @@
 		}
 
 		.entry-content {
-			@include span(12);
+			/* @include span(12); */
 		}
 	}
 

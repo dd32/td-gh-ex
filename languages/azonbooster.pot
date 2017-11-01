@@ -1,10 +1,10 @@
-# <!=Copyright (C) 2017 AzonBooster Team
+# <!=Copyright (C) 2017 BoosterWP Team
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: AzonBooster 1.0.1\n"
-"Report-Msgid-Bugs-To: https://gitlab.com/sophy/azonbooster.gitissues\n"
-"POT-Creation-Date: 2017-08-18 10:25:54+00:00\n"
+"Project-Id-Version: AzonBooster 1.0.2\n"
+"Report-Msgid-Bugs-To: https://gitlab.com/boosterwp/azonbooster.gitissues\n"
+"POT-Creation-Date: 2017-11-01 05:23:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,6 +12,26 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: inc/customizer/fields/blog.php:194
+msgid "0"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:195 inc/customizer/fields/blog.php:210
+msgid "1"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:196 inc/customizer/fields/blog.php:211
+msgid "2"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:197 inc/customizer/fields/blog.php:212
+msgid "3"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:198 inc/customizer/fields/blog.php:213
+msgid "4"
+msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -54,100 +74,222 @@ msgid "Scroll down to content"
 msgstr ""
 
 #: inc/azonbooster-template-functions.php:195
-#: inc/azonbooster-template-functions.php:324
+#: inc/azonbooster-template-functions.php:333
 msgid "Pages:"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:314
+#: inc/azonbooster-template-functions.php:323
 msgid "Continue reading %s"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:338
-msgid "Read More"
+#: inc/azonbooster-template-functions.php:347
+#: inc/customizer/fields/blog.php:127
+msgid "View Detail"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:435
+#: inc/azonbooster-template-functions.php:451
 msgid "%1$s designed by %2$s."
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:470
+#: inc/azonbooster-template-functions.php:486
 msgid "By "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:534
+#: inc/azonbooster-template-functions.php:550
 msgid "Edit"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:589
+#: inc/azonbooster-template-functions.php:605
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:624
+#: inc/azonbooster-template-functions.php:640
 msgid ", "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:647
+#: inc/azonbooster-template-functions.php:663
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:647
+#: inc/azonbooster-template-functions.php:663
 msgid "One Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:647
+#: inc/azonbooster-template-functions.php:663
 msgid "% Comments"
 msgstr ""
 
-#: inc/class-azonbooster.php:83
+#: inc/class-azonbooster.php:91
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/class-azonbooster.php:84
+#: inc/class-azonbooster.php:92
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/class-azonbooster.php:85
+#: inc/class-azonbooster.php:93
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/class-azonbooster.php:120
+#: inc/class-azonbooster.php:128
 msgid "Sidebar"
 msgstr ""
 
-#: inc/class-azonbooster.php:126
+#: inc/class-azonbooster.php:134
 msgid "Below Header"
 msgstr ""
 
-#: inc/class-azonbooster.php:128
+#: inc/class-azonbooster.php:136
 msgid ""
 "Widgets added to this region will appear beneath the header and above the "
 "main content."
 msgstr ""
 
-#: inc/class-azonbooster.php:140
+#: inc/class-azonbooster.php:148
 msgid "Footer Column %1$d"
 msgstr ""
 
-#: inc/class-azonbooster.php:141
+#: inc/class-azonbooster.php:149
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: inc/class-azonbooster.php:143
+#: inc/class-azonbooster.php:151
 msgid "Footer Row %1$d - Column %2$d"
 msgstr ""
 
-#: inc/class-azonbooster.php:144
+#: inc/class-azonbooster.php:152
 msgid "Widgets added here will appear in column %1$d of footer row %2$d."
 msgstr ""
 
-#: inc/class-azonbooster.php:293
+#: inc/class-azonbooster.php:301
 msgid "Post Navigation"
 msgstr ""
 
-#: inc/class-azonbooster.php:459
+#: inc/class-azonbooster.php:467
 #. translators: Taxonomy term archive title. 1: Taxonomy singular name, 2:
 #. Current taxonomy term
 msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/customizer/class-azb-customizer-output.php:86
+msgid "Read More..."
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:44
+msgid "Blog"
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:45
+msgid "The basic theme options for free version."
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:77
+#: inc/customizer/fields/blog.php:18
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:82
+msgid "Blog Posts"
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:87
+msgid "Single Post"
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:92
+msgid "Footer Widgets"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:32
+msgid "Thumbnail Position"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:38
+msgid "Left"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:39
+msgid "Top"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:40
+msgid "Right"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:48
+msgid "Show Excerpt"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:54 inc/customizer/fields/blog.php:107
+#: inc/customizer/fields/blog.php:149 inc/customizer/fields/blog.php:165
+#: inc/customizer/fields/blog.php:179
+msgid "On"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:55 inc/customizer/fields/blog.php:108
+#: inc/customizer/fields/blog.php:150 inc/customizer/fields/blog.php:166
+#: inc/customizer/fields/blog.php:180
+msgid "Off"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:62
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:83
+msgid "Excerpt More String"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:101
+msgid "Show Read More"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:124
+msgid "Read More Label"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:143 inc/customizer/fields/blog.php:159
+msgid "Show Post Thumbnail"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:173
+msgid "Show Post Navigation"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:188
+msgid "Footer Widget Columns"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:204
+msgid "Footer Widget Rows"
+msgstr ""
+
+#: inc/helpers/include-kirki.php:54
+msgid ""
+"A plugin is required to take advantage of this theme's features in the "
+"customizer."
+msgstr ""
+
+#: inc/helpers/include-kirki.php:55
+msgid "Install Kirki Toolkit now"
+msgstr ""
+
+#: inc/helpers/include-kirki.php:56
+msgid "Install Now"
+msgstr ""
+
+#: inc/helpers/include-kirki.php:59
+msgid ""
+"You have installed Kirki. Activate it to take advantage of this theme's "
+"features in the customizer."
+msgstr ""
+
+#: inc/helpers/include-kirki.php:60
+msgid "Activate Kirki Toolkit now"
+msgstr ""
+
+#: inc/helpers/include-kirki.php:61
+msgid "Activate Now"
 msgstr ""
 
 #: search.php:21
@@ -181,19 +323,30 @@ msgid "AzonBooster"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://azonbooster.com/themes/azon-booster"
+msgid "https://boosterwp.com/themes/azonbooster"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "The Best Free Amazon Affiliate Double Up Your Sales and Conversion Rate."
+msgid ""
+"The best free Amazon Affiliate theme double up your sales and conversion "
+"rate. AzonBooster is a fast, lightweight, mobile responsive theme built "
+"with speed, SEO friendly, and usability in mind. AzonBooster can serve as a "
+"solid base for any website and works great with any of your favorite page "
+"builders. With an emphasis on WordPress coding standards, we ensure "
+"AzonBooster is compatible with all well-coded plugins, including major ones "
+"like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "AzonBooster Team"
+msgid "BoosterWP Team"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://azonbooster.com"
+msgid "https://boosterwp.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
 msgstr ""
 
 #: comments.php:40
@@ -204,75 +357,75 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/azonbooster-template-functions.php:368
+#: inc/azonbooster-template-functions.php:384
 msgctxt "Next post"
 msgid "Next"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:369
+#: inc/azonbooster-template-functions.php:385
 msgctxt "Previous post"
 msgid "Previous"
 msgstr ""
 
-#: inc/class-azonbooster.php:424
+#: inc/class-azonbooster.php:432
 #. translators: Yearly archive title. 1: Year
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/class-azonbooster.php:428
+#: inc/class-azonbooster.php:436
 #. translators: Monthly archive title. 1: Month name and year
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/class-azonbooster.php:431
+#: inc/class-azonbooster.php:439
 #. translators: Daily archive title. 1: Date
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/class-azonbooster.php:435
+#: inc/class-azonbooster.php:443
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/class-azonbooster.php:437
+#: inc/class-azonbooster.php:445
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/class-azonbooster.php:439
+#: inc/class-azonbooster.php:447
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/class-azonbooster.php:441
+#: inc/class-azonbooster.php:449
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/class-azonbooster.php:443
+#: inc/class-azonbooster.php:451
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/class-azonbooster.php:445
+#: inc/class-azonbooster.php:453
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/class-azonbooster.php:447
+#: inc/class-azonbooster.php:455
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/class-azonbooster.php:449
+#: inc/class-azonbooster.php:457
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/class-azonbooster.php:451
+#: inc/class-azonbooster.php:459
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""

@@ -1,23 +1,4 @@
 /**
- * Global styles applied to all non-woocommerce theme components. Includes styles for;
- *
- * Typography
- * Header
- * Footer
- * Main content area
- * Accessiblity helper classes
- * 404
- * Comments
- * Content (posts etc)
- * Forms
- * Media
- * Menus
- * pagination
- * Post formats
- * Widgets
- */
-
-/**
  * Typography
  */
 
@@ -375,7 +356,42 @@ body {
 
 .site-content {
 	outline: none;
+
+	.entry-content {
+
+		a {
+			@include nonUnderlinedLink();
+			@include links($color_links, $color_links, $color_links, $color_links);
+		}
+
+		.read-more {
+			background: $color_links;
+			color: $color-white;
+			display: inline-block;
+			padding: 10px 0;
+			width: 100%;
+			text-align: center;
+
+			&:hover {
+				
+				@include transition(background-color, 1s, ease-in);
+				text-decoration: none;
+				color: $color-white;
+				background: $color_links_hover;
+
+			}
+			&:visited {
+           		color: $color-white;
+        	}
+        
+	        &:active, &:focus {
+	            color: $color-white;
+	        }
+		}
+	}
+	
 }
+
 
 .page-template-template-homepage:not(.has-post-thumbnail) {
 	.site-main {
@@ -766,8 +782,7 @@ table {
 	.entry-header {
 		margin-bottom: ms(1);
 		border-bottom: 1px solid $color_border;
-		padding-bottom: ms(1);
-
+		padding-bottom: ms(-3);
 		.alpha {
 
 			margin-bottom: 0;
@@ -1508,23 +1523,6 @@ body.search-open .site-search {
 	}
 }
 
-.read-more {
-	background: $color_links;
-	color: $color-white;
-	display: inline-block;
-	padding: 10px 0;
-	width: 100%;
-	text-align: center;
-
-	&:hover {
-		
-		@include transition(background-color, 1s, ease-in);
-		text-decoration: none;
-		color: $color-white;
-		background: $color_links_hover;
-
-	}
-}
 .btn-pos-left,
 .btn-pos-right {
 	width: auto;

@@ -38,6 +38,21 @@
     }
 }
 
+@mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+        &:visited {
+            color: $visited;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active, &:focus {
+            color: $active;
+        }
+    }
+}
+
 @mixin message($glyph: "\f05a", $color: $info)
 {
     padding: 1em ms(3) 1em ms(6);

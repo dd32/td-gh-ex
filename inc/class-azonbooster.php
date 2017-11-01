@@ -41,6 +41,14 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			add_filter( 'get_the_archive_title', array( $this, 'the_archive_title' ) );
 		}
 
+		public static function get_theme_slug() {
+
+			global $azonbooster_slug;
+
+			return $azonbooster_slug;
+
+		}
+
 		public function setup() {
 
 			// Loads wp-content/languages/themes/azonbooster-it_IT.mo.

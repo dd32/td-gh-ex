@@ -248,9 +248,14 @@ if ( ! function_exists( 'azonbooster_post_thumbnail' ) ) {
 
 	function azonbooster_post_thumbnail( ) {
 
-		$thumbnail = apply_filters('azonbooster-thumbnail', 'azonbooster-post-feature-large');
+		$thumbnail = apply_filters('azonbooster_thumbnail_size', 'azonbooster-post-feature-large');
+		$show_thumbnail = apply_filters('azonbooster_show_post_thumbnail', true);
 
-		if ( has_post_thumbnail() ) {
+		if ( has_post_thumbnail() && $show_thumbnail ) {
+
+			?>
+			<div class="post-thumnbnail">
+			<?php
 
 			$link = apply_filters('azonbooster_thumbnail_link', get_permalink( get_the_ID() ));
 			$enable_link = apply_filters('azonbooster_thumbnail_enable_link', true);
@@ -269,7 +274,11 @@ if ( ! function_exists( 'azonbooster_post_thumbnail' ) ) {
 
 				the_post_thumbnail( $thumbnail );
 			}
+			?>
+			
+			</div>
 
+			<?php
 			
 		}
 	}
@@ -335,7 +344,7 @@ if ( ! function_exists( 'azonbooster_readmore_link' ) ) {
 	function azonbooster_readmore_link() {
 
 		$link = apply_filters('azonbooster_readmore_link', get_permalink( get_the_ID() ));
-		$label = apply_filters('azonbooster_readmore_link_label', __( 'Read More', 'azonbooster' ) );
+		$label = apply_filters('azonbooster_readmore_link_label', __( 'View Detail', 'azonbooster' ) );
 		$position = apply_filters('azonbooster_readmore_link_pos', '');
 
 		printf( '<a class="read-more %1$s" href="%2$s">%3$s</a>', $position, $link , $label);
@@ -347,11 +356,18 @@ if ( ! function_exists( 'azonbooster_post_nav' ) ) {
 	 * Display navigation to next/previous post when applicable.
 	 */
 	function azonbooster_post_nav() {
-		$args = array(
-			'next_text' => '%title',
-			'prev_text' => '%title',
-			);
-		the_post_navigation( $args );
+
+		$show_post_nav = apply_filters('azonbooster_show_post_nav', true);
+
+		if ( $show_post_nav ) {
+			
+			$args = array(
+				'next_text' => '%title',
+				'prev_text' => '%title',
+				);
+			the_post_navigation( $args );
+
+		} 
 	}
 }
 
@@ -381,7 +397,7 @@ if ( ! function_exists( 'azonbooster_footer_widgets' ) ) {
 	 * @return void
 	 */
 	function azonbooster_footer_widgets() {
-		$rows    = intval( apply_filters( 'azonbooster_footer_widget_rows', 1 ) );
+		$rows    = intval( apply_filters( 'azonbooster_footer_widget_rows', 2 ) );
 		$regions = intval( apply_filters( 'azonbooster_footer_widget_columns', 4 ) );
 
 		for ( $row = 1; $row <= $rows; $row++ ) :
@@ -432,7 +448,7 @@ if ( ! function_exists( 'azonbooster_credit' ) ) {
 
 			<?php if ( apply_filters( 'azonbooster_credit_link', true ) ) : ?>
 
-			<br /> <?php printf( esc_attr__( '%1$s designed by %2$s.', 'azonbooster' ), 'AzonBooster', '<a href="https://azonbooster.com" title="AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes" rel="author">AzonBooster</a>' ); ?>
+			<br /> <?php printf( esc_attr__( '%1$s designed by %2$s.', 'azonbooster' ), 'AzonBooster', '<a href="https://boosterwp.com" title="AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes" rel="author">AzonBooster</a>' ); ?>
 
 			<?php endif; ?>
 
