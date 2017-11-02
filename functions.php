@@ -216,6 +216,65 @@
 			'section' => 'bluegray_logo_section', 
 			'settings' => 'bluegray_logo', 
 		) ) );
+		$wp_customize->add_section( 'bluegray_blog_section' , array( 
+			'title' => __( 'Blog Page', 'bluegray' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'bluegray' ),
+		) );
+		$wp_customize->add_setting( 'bluegray_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bluegray_blog_title', array( 
+			'label' => __( 'Title', 'bluegray' ), 
+			'section' => 'bluegray_blog_section', 
+			'settings' => 'bluegray_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'bluegray_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bluegray_blog_content', array( 
+			'label' => __( 'Content', 'bluegray' ), 
+			'type' => 'textarea', 
+			'section' => 'bluegray_blog_section', 
+			'settings' => 'bluegray_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'bluegray_post_section' , array( 
+			'title' => __( 'Posts', 'bluegray' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'bluegray' ),
+		) );
+		$wp_customize->add_setting( 'bluegray_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bluegray_content_type', array( 
+			'label' => __( 'Show a summary', 'bluegray' ), 
+			'section' => 'bluegray_post_section', 
+			'settings' => 'bluegray_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'bluegray'), 
+				'no' => __('No', 'bluegray'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'bluegray_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bluegray_read_more', array( 
+			'label' => __( 'Show Read More button', 'bluegray' ), 
+			'section' => 'bluegray_post_section', 
+			'settings' => 'bluegray_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'bluegray'), 
+				'no' => __('No', 'bluegray'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'bluegray_theme_customizer');
 
