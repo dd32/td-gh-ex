@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.8
+1.Update demo preview images on wordpress.org
 @Version 1.7.9
 1. Added Demo images for wordpress preview.
 @Version 1.7.8
