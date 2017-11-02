@@ -5,11 +5,23 @@
 ?>
 
 <?php get_header(); ?>
-<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 'yes') { ?> 
+<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?> 
 	<div id="content">
 <?php } else { ?>
 	<div id="content-full">
 <?php } ?>
+	<?php if ( is_home() ) { ?> 
+		<?php if ( get_theme_mod( 'gridbulletin_blog_title' ) ) : ?>
+			<h1 class="page-title">
+				<?php echo esc_attr( get_theme_mod('gridbulletin_blog_title') ); ?>
+			</h1>
+		<?php endif; ?>
+		<?php if ( get_theme_mod( 'gridbulletin_blog_content' ) ) : ?>
+			<div class="blog-page-text">
+				<?php echo wpautop(wp_kses_post( get_theme_mod('gridbulletin_blog_content') ) ); ?>
+			</div>
+		<?php endif; ?>
+	<?php } ?>
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -26,7 +38,7 @@
 
 	<?php endif; ?>
 </div>
-<?php if(get_theme_mod('gridbulletin_homepage_sidebar') == 'yes') { ?> 
+<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?> 
 	<?php get_sidebar(); ?>
 <?php } ?>
 <?php get_footer(); ?>

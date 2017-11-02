@@ -189,40 +189,59 @@
 			'section' => 'gridbulletin_logo_section', 
 			'settings' => 'gridbulletin_logo', 
 		) ) );
-		$wp_customize->add_section( 'gridbulletin_homepage_section' , array( 
+		$wp_customize->add_section( 'gridbulletin_blog_section' , array( 
 			'title' => __( 'Blog Page', 'gridbulletin' ), 
 			'priority' => 31, 
-			'description' => __( 'Settings for blog page (including blog homepage).', 'gridbulletin' ),
+			'description' => __( 'Show or hide sidebar. And set page title and content above your posts.', 'gridbulletin' ),
 		) );
-		$wp_customize->add_setting( 'gridbulletin_homepage_sidebar', array( 
+		$wp_customize->add_setting( 'gridbulletin_blog_sidebar', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
 			'default' => 'no', 
 		) ); 
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_homepage_sidebar', array( 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_blog_sidebar', array( 
 			'label' => __( 'Sidebar', 'gridbulletin' ), 
-			'section' => 'gridbulletin_homepage_section', 
-			'settings' => 'gridbulletin_homepage_sidebar', 
+			'section' => 'gridbulletin_blog_section', 
+			'settings' => 'gridbulletin_blog_sidebar', 
 			'type' => 'radio', 
 			'choices' => array( 
 				'yes' => __('Yes', 'gridbulletin'), 
 				'no' => __('No', 'gridbulletin'), 
 			), 
 		) ) );
+		$wp_customize->add_setting( 'gridbulletin_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_blog_title', array( 
+			'label' => __( 'Title', 'gridbulletin' ), 
+			'section' => 'gridbulletin_blog_section', 
+			'settings' => 'gridbulletin_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'gridbulletin_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_blog_content', array( 
+			'label' => __( 'Content', 'gridbulletin' ), 
+			'type' => 'textarea', 
+			'section' => 'gridbulletin_blog_section', 
+			'settings' => 'gridbulletin_blog_content', 
+		) ) );
 		$wp_customize->add_section( 'gridbulletin_archive_section' , array( 
 			'title' => __( 'Archive Page', 'gridbulletin' ), 
 			'priority' => 32, 
-			'description' => __( 'Settings for archive pages.', 'gridbulletin' ),
+			'description' => __( 'Show or hide sidebar and archive title.', 'gridbulletin' ),
 		) );
-		$wp_customize->add_setting( 'gridbulletin_sidebar', array( 
+		$wp_customize->add_setting( 'gridbulletin_archive_sidebar', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
 			'default' => 'yes', 
 		) ); 
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_sidebar', array( 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_archive_sidebar', array( 
 			'label' => __( 'Sidebar', 'gridbulletin' ), 
 			'section' => 'gridbulletin_archive_section', 
-			'settings' => 'gridbulletin_sidebar', 
+			'settings' => 'gridbulletin_archive_sidebar', 
 			'type' => 'radio', 
 			'choices' => array( 
 				'yes' => __('Yes', 'gridbulletin'), 
@@ -238,6 +257,26 @@
 			'label' => __( 'Archive title', 'gridbulletin' ), 
 			'section' => 'gridbulletin_archive_section', 
 			'settings' => 'gridbulletin_archive_title', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'gridbulletin'), 
+				'no' => __('No', 'gridbulletin'), 
+			), 
+		) ) );
+		$wp_customize->add_section( 'gridbulletin_post_section' , array( 
+			'title' => __( 'Posts', 'gridbulletin' ), 
+			'priority' => 33, 
+			'description' => __( 'Customize the way how posts are displayed.', 'gridbulletin' ),
+		) );
+		$wp_customize->add_setting( 'gridbulletin_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_content_type', array( 
+			'label' => __( 'Show a summary', 'gridbulletin' ), 
+			'section' => 'gridbulletin_post_section', 
+			'settings' => 'gridbulletin_content_type', 
 			'type' => 'radio', 
 			'choices' => array( 
 				'yes' => __('Yes', 'gridbulletin'), 
