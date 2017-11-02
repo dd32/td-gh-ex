@@ -226,6 +226,65 @@
 			'section' => 'multicolors_logo_section', 
 			'settings' => 'multicolors_logo', 
 		) ) );
+		$wp_customize->add_section( 'multicolors_blog_section' , array( 
+			'title' => __( 'Blog Page', 'multicolors' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'multicolors' ),
+		) );
+		$wp_customize->add_setting( 'multicolors_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multicolors_blog_title', array( 
+			'label' => __( 'Title', 'multicolors' ), 
+			'section' => 'multicolors_blog_section', 
+			'settings' => 'multicolors_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'multicolors_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multicolors_blog_content', array( 
+			'label' => __( 'Content', 'multicolors' ), 
+			'type' => 'textarea', 
+			'section' => 'multicolors_blog_section', 
+			'settings' => 'multicolors_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'multicolors_post_section' , array( 
+			'title' => __( 'Posts', 'multicolors' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'multicolors' ),
+		) );
+		$wp_customize->add_setting( 'multicolors_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multicolors_content_type', array( 
+			'label' => __( 'Show a summary', 'multicolors' ), 
+			'section' => 'multicolors_post_section', 
+			'settings' => 'multicolors_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'multicolors'), 
+				'no' => __('No', 'multicolors'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'multicolors_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multicolors_read_more', array( 
+			'label' => __( 'Show Read More button', 'multicolors' ), 
+			'section' => 'multicolors_post_section', 
+			'settings' => 'multicolors_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'multicolors'), 
+				'no' => __('No', 'multicolors'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'multicolors_theme_customizer');
 
