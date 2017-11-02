@@ -27,10 +27,16 @@
 		<?php if ( has_post_thumbnail() ) { 
 			the_post_thumbnail(); 
 		} ?>
-		<?php the_excerpt(); ?>
+		<?php if ( get_theme_mod( 'darkorange_content_type' ) == "no" ) { ?>
+			<?php the_content(); ?> 
+		<?php } else { ?>
+			<?php the_excerpt(); ?>
+		<?php } ?>	
 	</div>
 
-	<div class="more">
-		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'darkorange' ); ?></a>
-	</div>
+	<?php if ( get_theme_mod( 'darkorange_read_more' ) != "no" ) { ?>
+		<div class="more">
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'darkorange' ); ?></a>
+		</div>
+	<?php } ?>	
 </article>
