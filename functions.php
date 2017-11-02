@@ -176,6 +176,65 @@
 			'section' => 'shipyard_logo_section', 
 			'settings' => 'shipyard_logo', 
 		) ) );
+		$wp_customize->add_section( 'shipyard_blog_section' , array( 
+			'title' => __( 'Blog Page', 'shipyard' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'shipyard' ),
+		) );
+		$wp_customize->add_setting( 'shipyard_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'shipyard_blog_title', array( 
+			'label' => __( 'Title', 'shipyard' ), 
+			'section' => 'shipyard_blog_section', 
+			'settings' => 'shipyard_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'shipyard_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'shipyard_blog_content', array( 
+			'label' => __( 'Content', 'shipyard' ), 
+			'type' => 'textarea', 
+			'section' => 'shipyard_blog_section', 
+			'settings' => 'shipyard_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'shipyard_post_section' , array( 
+			'title' => __( 'Posts', 'shipyard' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'shipyard' ),
+		) );
+		$wp_customize->add_setting( 'shipyard_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'shipyard_content_type', array( 
+			'label' => __( 'Show a summary', 'shipyard' ), 
+			'section' => 'shipyard_post_section', 
+			'settings' => 'shipyard_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'shipyard'), 
+				'no' => __('No', 'shipyard'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'shipyard_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'shipyard_read_more', array( 
+			'label' => __( 'Show Read More button', 'shipyard' ), 
+			'section' => 'shipyard_post_section', 
+			'settings' => 'shipyard_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'shipyard'), 
+				'no' => __('No', 'shipyard'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'shipyard_theme_customizer');
 
