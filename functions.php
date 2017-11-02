@@ -196,9 +196,68 @@
 			'section' => 'myknowledgebase_logo_section', 
 			'settings' => 'myknowledgebase_logo', 
 		) ) );
+		$wp_customize->add_section( 'myknowledgebase_blog_section' , array( 
+			'title' => __( 'Blog Page', 'myknowledgebase' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'myknowledgebase' ),
+		) );
+		$wp_customize->add_setting( 'myknowledgebase_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_blog_title', array( 
+			'label' => __( 'Title', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_blog_section', 
+			'settings' => 'myknowledgebase_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'myknowledgebase_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_blog_content', array( 
+			'label' => __( 'Content', 'myknowledgebase' ), 
+			'type' => 'textarea', 
+			'section' => 'myknowledgebase_blog_section', 
+			'settings' => 'myknowledgebase_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'myknowledgebase_post_section' , array( 
+			'title' => __( 'Posts', 'myknowledgebase' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'myknowledgebase' ),
+		) );
+		$wp_customize->add_setting( 'myknowledgebase_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_content_type', array( 
+			'label' => __( 'Show a summary', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_post_section', 
+			'settings' => 'myknowledgebase_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'myknowledgebase'), 
+				'no' => __('No', 'myknowledgebase'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'myknowledgebase_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_read_more', array( 
+			'label' => __( 'Show Read More button', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_post_section', 
+			'settings' => 'myknowledgebase_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'myknowledgebase'), 
+				'no' => __('No', 'myknowledgebase'), 
+			), 
+		) ) );
 		$wp_customize->add_section( 'myknowledgebase_posts_section' , array( 	
 			'title' => __( 'Knowledgebase', 'myknowledgebase' ), 
-			'priority' => 31, 
+			'priority' => 33, 
 			'description' => __( 'Settings for the knowledgebase page template.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_page_title', array( 
@@ -269,7 +328,7 @@
 		) ) );
 		$wp_customize->add_section( 'myknowledgebase_search_section' , array( 	
 			'title' => __( 'Search Bar', 'myknowledgebase' ), 
-			'priority' => 32, 
+			'priority' => 34, 
 			'description' => __( 'Settings for the knowledgebase search bar.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_search', array( 
