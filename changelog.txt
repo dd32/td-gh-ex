@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+DarkOrange version 6.1 - november 2017
+- file style: minor fix
+
 DarkOrange version 6.0 - november 2017
 - last update: this theme will be removed from repository
 - you can keep using theme, but without updates and without support from author
