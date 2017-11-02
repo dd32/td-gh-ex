@@ -1,7 +1,7 @@
 ----------------------------------
 Beauty and Spa
 ----------------------------------
-Version: 	1.3.1
+Version: 	1.5
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -47,6 +47,7 @@ html5.js		: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
 jquery.skitter.js	: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
 
 
-Changelog 1.1
+Changelog 1.5
 -----------------------
-
+- Code Cleanup
+- Some Styling Change

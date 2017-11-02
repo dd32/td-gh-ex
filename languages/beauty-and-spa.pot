@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-10-13 17:43+0600\n"
+"POT-Creation-Date: 2017-11-02 12:19+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:13 function/imp.php:17
+#: comments.php:13 function/imp.php:16
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:13 function/imp.php:17
+#: comments.php:13 function/imp.php:16
 msgid "One Comment"
 msgstr ""
 
@@ -40,43 +40,55 @@ msgstr ""
 msgid "Latest <em>Blog</em> Posts"
 msgstr ""
 
-#: function/imp.php:17
+#: fpcontents/fp-heading.php:8 fpcontents/fp-heading.php:11
+msgid "Welcome to the World of Beauty !"
+msgstr ""
+
+#: fpcontents/fp-staffs.php:18 inc/customize.php:251
+msgid "WE ARE INSIDE"
+msgstr ""
+
+#: function/imp.php:16
 msgid "Edit"
 msgstr ""
 
-#: function/imp.php:17
+#: function/imp.php:16
 msgid "Comments"
 msgstr ""
 
-#: function/imp.php:29
+#: function/imp.php:28
 msgid "Newer"
 msgstr ""
 
-#: function/imp.php:30
+#: function/imp.php:29
 msgid "Older"
 msgstr ""
 
-#: function/imp.php:36
+#: function/imp.php:35
+msgid "Y"
+msgstr ""
+
+#: function/imp.php:35
 msgid "Theme by:"
 msgstr ""
 
-#: function/imp.php:36
+#: function/imp.php:35
 msgid "Powered by:"
 msgstr ""
 
-#: function/imp.php:44
+#: function/imp.php:43
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: function/imp.php:45
+#: function/imp.php:44
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: function/imp.php:47
+#: function/imp.php:46
 msgid "Or Return to the Home Page"
 msgstr ""
 
-#: function/imp.php:64
+#: function/imp.php:63
 msgid "Author : "
 msgstr ""
 
@@ -84,36 +96,40 @@ msgstr ""
 msgid "Beauty and Spa Options"
 msgstr ""
 
-#: functions.php:21 header.php:34
+#: functions.php:21 header.php:30
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:91 functions.php:97
+#: functions.php:99 functions.php:110
 msgid "Read More"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:126
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:135
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:144
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:153
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:163
 msgid "Footer Area Four"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:172
 msgid "Footer Area Five"
+msgstr ""
+
+#: functions.php:184
+msgid "(Untitled)"
 msgstr ""
 
 #: inc/customize.php:9
@@ -133,201 +149,159 @@ msgid "of this Theme if you Love our Work"
 msgstr ""
 
 #: inc/customize.php:12
-msgid ""
-"Need More Features and Options including Exciting Slide and 100+ Advanced "
-"Features? Try "
+msgid "You can learn more on This Theme from the "
 msgstr ""
 
 #: inc/customize.php:13
-msgid "Beauty and Spa Extend"
+msgid "Theme Page"
 msgstr ""
 
-#: inc/customize.php:16
-msgid "You can Visit the Beauty and Spa Extend "
-msgstr ""
-
-#: inc/customize.php:16
-msgid "Demo Here"
-msgstr ""
-
-#: inc/customize.php:20
-msgid "Do you want the Site Like the Demo ? Please visit to : "
-msgstr ""
-
-#: inc/customize.php:21 inc/theme-about.php:21
-msgid "Beauty and Spa Theme Tutorial"
-msgstr ""
-
-#: inc/customize.php:37
+#: inc/customize.php:27
 msgid "Set Demo Style Front Page ignoring the WordPress Reading Setting"
 msgstr ""
 
-#: inc/customize.php:54
+#: inc/customize.php:44
 msgid "Select the Post Content Type"
 msgstr ""
 
-#: inc/customize.php:59
+#: inc/customize.php:49
 msgid ""
 "Full Content in Blog Page. Also Support Read More Button if inserted during "
 "Editing"
 msgstr ""
 
-#: inc/customize.php:60
+#: inc/customize.php:50
 msgid "Some Words and Read More Button in the Blog Page"
 msgstr ""
 
-#: inc/customize.php:66
-msgid "(000) 111-222"
-msgstr ""
-
-#: inc/customize.php:74
+#: inc/customize.php:64
 msgid "Contact Number"
 msgstr ""
 
-#: inc/customize.php:77
+#: inc/customize.php:67
 msgid "Input your Contact Number"
 msgstr ""
 
-#: inc/customize.php:89
+#: inc/customize.php:79
 msgid "Default Featured Image for Posts"
 msgstr ""
 
-#: inc/customize.php:92
+#: inc/customize.php:82
 msgid ""
 "Upload an image for the Default Featured Image for Posts. 1100px X 600px "
 "image is recommended"
 msgstr ""
 
-#: inc/customize.php:104
+#: inc/customize.php:94
 msgid "404 Error Image"
 msgstr ""
 
-#: inc/customize.php:107
+#: inc/customize.php:97
 msgid "Upload an image for 404 Error Page. 500px X 300px image is recommended"
 msgstr ""
 
-#: inc/customize.php:116
+#: inc/customize.php:106
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Heading"
 msgstr ""
 
-#: inc/customize.php:123
+#: inc/customize.php:113
 msgid "Welcome to the World of Creativity!"
 msgstr ""
 
-#: inc/customize.php:131
+#: inc/customize.php:121
 msgid "Front Page Heading"
 msgstr ""
 
-#: inc/customize.php:138
-msgid ""
-"WordPress is web software you can use to create a beautiful website or blog. "
-"We like to say that WordPress is both free and priceless at the same time"
-msgstr ""
-
-#: inc/customize.php:146
-msgid "Front Page Heading Description"
-msgstr ""
-
-#: inc/customize.php:159
+#: inc/customize.php:133
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slide"
 msgstr ""
 
-#: inc/customize.php:173
+#: inc/customize.php:146
+msgid "Show the Slider"
+msgstr ""
+
+#: inc/customize.php:163
 msgid "Banner Image/ Slide Image"
 msgstr ""
 
-#: inc/customize.php:176
+#: inc/customize.php:166
 msgid ""
 "Upload an image for the Front Page Banner. 930px X 350px image is recommended"
 msgstr ""
 
-#: inc/customize.php:185
+#: inc/customize.php:175
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Contents"
 msgstr ""
 
-#: inc/customize.php:186
+#: inc/customize.php:176
 msgid ""
 "You can set your Featured Contents selecting Specific Pages. This Function/"
 "Feature/Option is different in Extended Version"
 msgstr ""
 
-#: inc/customize.php:199
+#: inc/customize.php:189
 msgid "Featured Content Source"
 msgstr ""
 
-#: inc/customize.php:212
+#: inc/customize.php:202
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Boxes"
 msgstr ""
 
-#: inc/customize.php:213
+#: inc/customize.php:203
 msgid ""
 "You can set your Featured Boxes selecting Specific Pages. This Function/"
 "Feature/Option is different in Extended Version"
 msgstr ""
 
-#: inc/customize.php:226
+#: inc/customize.php:216
 msgid "Featured Box Source"
 msgstr ""
 
-#: inc/customize.php:239
+#: inc/customize.php:229
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Staff Box"
 msgstr ""
 
-#: inc/customize.php:240
+#: inc/customize.php:230
 msgid ""
 "You can set the Front Page Staffs. Your Users will be displayed here. This "
 "Function/Feature/Option is different in Extended Version"
 msgstr ""
 
-#: inc/customize.php:253
+#: inc/customize.php:243
 msgid "Show/Hide the Staff Box"
 msgstr ""
 
-#: inc/customize.php:261
-msgid "WE ARE INSIDE"
-msgstr ""
-
-#: inc/customize.php:269
+#: inc/customize.php:259
 msgid "Staff Box Heading"
 msgstr ""
 
-#: inc/customize.php:276
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua"
-msgstr ""
-
-#: inc/customize.php:284
-msgid "Staff Box Description"
-msgstr ""
-
-#: inc/customize.php:296
+#: inc/customize.php:270
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Testimonials"
 msgstr ""
 
-#: inc/customize.php:297
+#: inc/customize.php:271
 msgid ""
 "You can set the Front Page Testimonials. The Comments will be displayed "
 "here. This Function/Feature/Option is different in Extended Version"
 msgstr ""
 
-#: inc/customize.php:310
+#: inc/customize.php:284
 msgid "Show/Hide the Testimonial Box"
 msgstr ""
 
-#: inc/customize.php:318
+#: inc/customize.php:292
 msgid "Sweet Words from our <em>Proud Clients</em> Worldwide"
 msgstr ""
 
-#: inc/customize.php:326
+#: inc/customize.php:300
 msgid "Testimonial Box Heading"
 msgstr ""
 
-#: inc/customize.php:337
+#: inc/customize.php:311
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
 msgstr ""
 
-#: inc/customize.php:351
+#: inc/customize.php:325
 msgid "Social Link"
 msgstr ""
 
@@ -361,6 +335,10 @@ msgid ""
 "large screen and user friendtly Interface in Extended Version"
 msgstr ""
 
+#: inc/theme-about.php:21
+msgid "Beauty and Spa Theme Tutorial"
+msgstr ""
+
 #: inc/theme-about.php:22
 msgid "Want Your Site Like the Demo ?"
 msgstr ""
@@ -378,8 +356,8 @@ msgstr ""
 
 #: inc/theme-about.php:25
 msgid ""
-"Need More Features and Options including Multi Layer Slides, Unlimited Slide "
-"Items, Links from Featured Boxes, Portfolio and 100+ Advanced Features and "
+"Need More Features and Options including 3D Slider, Unlimited Slide Items, "
+"Links from Featured Boxes, Portfolio and 100+ Advanced Features and "
 "Controls? Try"
 msgstr ""
 
@@ -470,14 +448,6 @@ msgstr ""
 
 #: post-content.php:67
 msgid " Edit"
-msgstr ""
-
-#: searchform.php:12
-msgid "Your Search Text Here"
-msgstr ""
-
-#: searchform.php:13
-msgid "Search"
 msgstr ""
 
 #. Theme Name of the plugin/theme
