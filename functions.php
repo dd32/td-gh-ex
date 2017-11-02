@@ -198,6 +198,65 @@
 			'section' => 'privatebusiness_logo_section', 
 			'settings' => 'privatebusiness_logo', 
 		) ) );
+		$wp_customize->add_section( 'privatebusiness_blog_section' , array( 
+			'title' => __( 'Blog Page', 'privatebusiness' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'privatebusiness' ),
+		) );
+		$wp_customize->add_setting( 'privatebusiness_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'privatebusiness_blog_title', array( 
+			'label' => __( 'Title', 'privatebusiness' ), 
+			'section' => 'privatebusiness_blog_section', 
+			'settings' => 'privatebusiness_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'privatebusiness_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'privatebusiness_blog_content', array( 
+			'label' => __( 'Content', 'privatebusiness' ), 
+			'type' => 'textarea', 
+			'section' => 'privatebusiness_blog_section', 
+			'settings' => 'privatebusiness_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'privatebusiness_post_section' , array( 
+			'title' => __( 'Posts', 'privatebusiness' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'privatebusiness' ),
+		) );
+		$wp_customize->add_setting( 'privatebusiness_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'privatebusiness_content_type', array( 
+			'label' => __( 'Show a summary', 'privatebusiness' ), 
+			'section' => 'privatebusiness_post_section', 
+			'settings' => 'privatebusiness_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'privatebusiness'), 
+				'no' => __('No', 'privatebusiness'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'privatebusiness_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'privatebusiness_read_more', array( 
+			'label' => __( 'Show Read More button', 'privatebusiness' ), 
+			'section' => 'privatebusiness_post_section', 
+			'settings' => 'privatebusiness_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'privatebusiness'), 
+				'no' => __('No', 'privatebusiness'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'privatebusiness_theme_customizer');
 
