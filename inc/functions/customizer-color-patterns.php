@@ -26,7 +26,7 @@ if ( ! function_exists( 'applicator_customizer_color_patterns' ) ) {
         }
         
         /* Search */
-        .main-search-func .input-text
+        .main-search--active .search-term-crt-search-text-input
         {
             background-color: var(--main-header--bg-color);
         }
