@@ -201,7 +201,65 @@
 			'section' => 'darkelements_menu_title_section', 
 			'settings' => 'darkelements_menu_title', 
 		) ) );
-
+		$wp_customize->add_section( 'darkelements_blog_section' , array( 
+			'title' => __( 'Blog Page', 'darkelements' ), 
+			'priority' => 32, 
+			'description' => __( 'Set a page title and content above your posts.', 'darkelements' ),
+		) );
+		$wp_customize->add_setting( 'darkelements_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_blog_title', array( 
+			'label' => __( 'Title', 'darkelements' ), 
+			'section' => 'darkelements_blog_section', 
+			'settings' => 'darkelements_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'darkelements_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_blog_content', array( 
+			'label' => __( 'Content', 'darkelements' ), 
+			'type' => 'textarea', 
+			'section' => 'darkelements_blog_section', 
+			'settings' => 'darkelements_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'darkelements_post_section' , array( 
+			'title' => __( 'Posts', 'darkelements' ), 
+			'priority' => 33, 
+			'description' => __( 'Customize the way how posts are displayed.', 'darkelements' ),
+		) );
+		$wp_customize->add_setting( 'darkelements_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_content_type', array( 
+			'label' => __( 'Show a summary', 'darkelements' ), 
+			'section' => 'darkelements_post_section', 
+			'settings' => 'darkelements_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'darkelements'), 
+				'no' => __('No', 'darkelements'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'darkelements_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_read_more', array( 
+			'label' => __( 'Show Read More button', 'darkelements' ), 
+			'section' => 'darkelements_post_section', 
+			'settings' => 'darkelements_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'darkelements'), 
+				'no' => __('No', 'darkelements'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'darkelements_theme_customizer');
 

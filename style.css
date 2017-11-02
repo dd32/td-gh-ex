@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 5.6
+Version: 5.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, sidebar navigation, footer widgets, custom header image, custom background, custom logo to replace site title and tagline. For more info please check readme file. Enjoy.
@@ -186,19 +186,20 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* PAGE */
 .page-title {margin:0 0 20px;}
+.blog-page-text {clear:both; margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
 .pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
-.post-list {width:100%; clear:both; float:left;}
+.post-list {width:100%; clear:both; float:left; margin:0 0 20px; border-bottom:1px solid #444;}
 .post-single {width:100%; clear:both; float:left;}
 .post-title {margin:0 0 20px;}
 .post-title-single {margin:0 0 20px;}
 .entry-content {width:100%; clear:both; float:left; margin:0 0 20px;}
 .sticky-title {margin:0 0 20px; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444; text-align:center;}
 .postmetadata {clear:both; margin:0 0 20px; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
-.more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #444;}
+.more {width:100%; clear:both; float:left; padding:0 0 20px;}
 a.readmore {float:right; text-decoration:none; padding:2px 5px; background:#ddd; color:#333; border-radius:5px;}
 a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
 
