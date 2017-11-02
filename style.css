@@ -1,7 +1,7 @@
 /*
 Theme Name: SimplyBlack
 Theme URI: http://www.guidovanderleest.nl/simplyblack
-Version: 5.7
+Version: 5.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: SimplyBlack is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -168,12 +168,13 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 /* PAGE */
 .page-title {margin:0 0 20px;}
+.blog-page-text {clear:both; margin:0 0 20px;}
 .archive-description {width:100%; clear:both; float:left; font-style:italic;}
 .pagelink {width:100%; clear:both; float:left; padding:20px 0 10px;}
 
 
 /* POST */
-.post-list {width:100%; clear:both; float:left;}
+.post-list {width:100%; clear:both; float:left; margin:0 0 20px; border-bottom:1px solid #ccc;}
 .post-single {width:100%; clear:both; float:left;}
 .post-title {margin:0 0 20px;}
 .post-title a {color:#000; text-decoration:none;}
@@ -184,7 +185,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 .postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#000; color:#fff;}
 .postmetadata a {color:#ccc; text-decoration:none;}
 .postmetadata a:hover {color:#fff; text-decoration:none;}
-.more {width:100%; clear:both; float:left; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
+.more {width:100%; clear:both; float:left; padding:0 0 20px;}
 a.readmore {float:right; padding:2px 5px; background:#000; color:#fff; text-decoration:none;}
 a.readmore:hover {background:#666; text-decoration:none;}
 

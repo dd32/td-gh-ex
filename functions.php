@@ -186,6 +186,65 @@
 			'section' => 'simplyblack_logo_section', 
 			'settings' => 'simplyblack_logo', 
 		) ) );
+		$wp_customize->add_section( 'simplyblack_blog_section' , array( 
+			'title' => __( 'Blog Page', 'simplyblack' ), 
+			'priority' => 31, 
+			'description' => __( 'Set a page title and content above your posts.', 'simplyblack' ),
+		) );
+		$wp_customize->add_setting( 'simplyblack_blog_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simplyblack_blog_title', array( 
+			'label' => __( 'Title', 'simplyblack' ), 
+			'section' => 'simplyblack_blog_section', 
+			'settings' => 'simplyblack_blog_title', 
+		) ) );
+		$wp_customize->add_setting( 'simplyblack_blog_content', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'wp_kses_post', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simplyblack_blog_content', array( 
+			'label' => __( 'Content', 'simplyblack' ), 
+			'type' => 'textarea', 
+			'section' => 'simplyblack_blog_section', 
+			'settings' => 'simplyblack_blog_content', 
+		) ) );
+		$wp_customize->add_section( 'simplyblack_post_section' , array( 
+			'title' => __( 'Posts', 'simplyblack' ), 
+			'priority' => 32, 
+			'description' => __( 'Customize the way how posts are displayed.', 'simplyblack' ),
+		) );
+		$wp_customize->add_setting( 'simplyblack_content_type', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simplyblack_content_type', array( 
+			'label' => __( 'Show a summary', 'simplyblack' ), 
+			'section' => 'simplyblack_post_section', 
+			'settings' => 'simplyblack_content_type', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'simplyblack'), 
+				'no' => __('No', 'simplyblack'), 
+			), 
+		) ) );
+		$wp_customize->add_setting( 'simplyblack_read_more', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'yes', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simplyblack_read_more', array( 
+			'label' => __( 'Show Read More button', 'simplyblack' ), 
+			'section' => 'simplyblack_post_section', 
+			'settings' => 'simplyblack_read_more', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'simplyblack'), 
+				'no' => __('No', 'simplyblack'), 
+			), 
+		) ) );
 	} 
 	add_action('customize_register', 'simplyblack_theme_customizer');
 
