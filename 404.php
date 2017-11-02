@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-<!-- HC Page Header Section -->
+<!-- HC Page Header Section -->	
 <?php get_template_part('banner','header'); ?>
 <!-- /HC Page Header Section -->
 <!-- 404 Error Section -->
-<div class="error-section">
+<div class="error-section">		
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">

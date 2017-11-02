@@ -1,4 +1,8 @@
 <?php
+$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
+if ( file_exists( $repeater_path ) ) {
+require_once( $repeater_path );
+}
 function elitepress_slider_customizer( $wp_customize ) {
 
 // list control categories	
@@ -65,52 +69,32 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
     'elitepress_lite_options[home_banner_enabled]',
     array(
         'label' => __('Enable home banner','elitepress'),
+		'priority'   => 1,
         'section' => 'slider_section_settings',
         'type' => 'checkbox',
     )
 	);
 	 
 	 
-	//slider type
-	$wp_customize->add_setting(
-    'elitepress_lite_options[slider_radio]',
-    array(
-        'default' => 'demo',
-		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field',
-    )
-	);
- 
-$wp_customize->add_control(
-    'elitepress_lite_options[slider_radio]',
-    array(
-        'type' => 'radio',
-        'label' => __('Select slider type','elitepress'),
-        'section' => 'slider_section_settings',
-        'choices' => array(
-            'demo' => __('Demo slider','elitepress'),
-            'category' => __('Category slider','elitepress'),
-        ),
-    )
-);	
-	 
-	 
-	 
-	// add section to manage featured slider on category basis	
-	$wp_customize->add_setting(
-    'elitepress_lite_options[slider_select_category]',
-    array(
-        'default' => 'Uncategorized',
-		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'elitepress_slider_sanitize_layout',
-		'type'=>'option',
-		)
-	);	
-	$wp_customize->add_control( new Category_Dropdown_Custom_Control( $wp_customize, 'elitepress_lite_options[slider_select_category]', array(
-    'label'   => __('Select category for slider','elitepress'),
-    'section' => 'slider_section_settings',
-    'settings'   =>  'elitepress_lite_options[slider_select_category]',
-	) ) );	
+	if ( class_exists( 'Elitepress_Repeater' ) ) {
+			$wp_customize->add_setting( 'elitepress_slider_content', array(
+			'sanitize_callback' => 'elitepress_repeater_sanitize',
+			) );
+
+			$wp_customize->add_control( new Elitepress_Repeater( $wp_customize, 'elitepress_slider_content', array(
+				'label'                             => esc_html__( 'Slider Content', 'elitepress' ),
+				'priority'   => 2,
+				'section'                           => 'slider_section_settings',
+				'add_field_label'                   => esc_html__( 'Add new slide', 'elitepress' ),
+				'item_name'                         => esc_html__( 'Slide', 'elitepress' ),
+				'customizer_repeater_title_control' => true,
+				'customizer_repeater_text_control'  => true,
+				'customizer_repeater_button_text_control' => true,
+				'customizer_repeater_link_control'  => true,
+				'customizer_repeater_image_control' => true,
+				'customizer_repeater_checkbox_control' => true,
+				) ) );
+		}
 	 
 	 //Slider Animation duration
 

@@ -1,4 +1,39 @@
 <?php
+$slide_options = get_theme_mod('elitepress_slider_content');
+
+if(empty($slide_options))
+{
+	$lite_slider_data = get_option('elitepress_lite_options');
+	
+	if(!empty($lite_slider_data))
+	{
+		
+		$elitepress_lite_options=theme_data_setup();
+		$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); 
+		$query_args =array( 'category__in' =>$current_options['slider_select_category'],'ignore_sticky_posts' => 1 );
+		$slider = new WP_Query( $query_args ); 
+		if( $slider->have_posts() )
+			{
+				while ( $slider->have_posts() ) : $slider->the_post();
+				
+				if( strpos( wp_strip_all_tags(get_the_excerpt()), 'Read More' ) !== false ) $button_text = 'Read More';
+					$pro_slider_data_old[] = array(
+						'title'      => get_the_title(),
+						'text'       => rtrim(wp_strip_all_tags(get_the_excerpt()),'Read More'),
+						'button_text'      => $button_text,
+						'link'       => '#',
+						'image_url'  => get_the_post_thumbnail_url(),
+						'open_new_tab' => false,
+						'id'         => 'customizer_repeater_56d7ea7f40b50',
+				);
+				endwhile; 
+				$slide_options = json_encode($pro_slider_data_old);
+			}
+				
+	}
+	
+}
+
 $elitepress_lite_options=theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
 $settings= array();
@@ -10,60 +45,66 @@ wp_enqueue_script('elitepress-slider');
 ?>
 <?php if($current_options['home_banner_enabled'] == true) { ?>
 <!-- Slider -->
-<div class="homepage-mycarousel">
-	
-		<?php
-			if($current_options['slider_radio']=='demo')
-			{
-			$query_args =''; ?>
-        <div class="flexslider">
-			<div class="flex-viewport">
-			<?php 
-				$slider_default_title = array('elitepress by Webriti Themes', 'Clean & Fresh Design', 'elitepress by Webriti Themes', 'Clean & Fresh Design', 'elitepress by Webriti Themes', 'Clean & Fresh Design'); ?>
-			
+<section class="homepage-mycarousel">
 
-			<ul class="slides">
-				<?php for($i=1; $i<=3; $i++) {  ?>
-				<li>
-					<img class="img-responsive" src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide<?php echo $i; ?>.jpg">
-					<div class="flex-slider-center">
-						<div class="slide-text-bg1"><h1><?php echo $slider_default_title[$i-1]; ?></h1></div>
-						<div class="slide-text-bg2"><h3><?php _e('Create fresh website fast with us', 'elitepress'); ?></h3></div>
-						<div class="flex-btn-div"><a class="btn1 flex-btn" href="#"><?php _e('Read More', 'elitepress'); ?></a></div>
-                    </div>
-				</li>
-				<?php } ?>
-			</ul>
-		</div>
-		</div>
-		<?php }
-		else if($current_options['slider_radio']=='category')
-		{
-			$query_args =array( 'category__in' =>$current_options['slider_select_category'],'ignore_sticky_posts' => 1 );
-			}
-			$the_query = new WP_Query($query_args);
-			?>
 		<div class="flexslider">
 		 <div class="flex-viewport">
 			<ul class="slides">
-			<?php
-			if ( $the_query->have_posts() ) {
-			while ( $the_query->have_posts() ) {
-				$the_query->the_post();
-			 ?>
-			<li>
-					<?php $default_arg =array('class' => "img-responsive"); 
-					if(has_post_thumbnail()):  the_post_thumbnail('', $default_arg);  
-					endif; ?>
-					<div class="flex-slider-center">
-						<div class="slide-text-bg1"><h1><?php the_title();?></h1></div>
-						<?php echo get_the_excerpt(); ?>					
+			<?php 
+				$slide_options = json_decode($slide_options);
+				if( $slide_options!='' )
+				{
+					foreach($slide_options as $slide_iteam){?>
+				<li>
+					<?php if($slide_iteam->image_url!=''){ ?>
+					<img alt="img" class="img-responsive" src="<?php echo $slide_iteam->image_url; ?>" draggable="false">
+					
+					<?php
+					}
+					$img_description =  $slide_iteam->text;
+					$readmorelink = $slide_iteam->link;
+					$readmore_button = $slide_iteam->button_text;
+					$open_new_tab = $slide_iteam->open_new_tab;
+					?>
+					
+					<div class="container flex-slider-center">
+						<?php if($slide_iteam->title != '') { ?>
+						<div class="slide-text-bg1"><h1><?php echo $slide_iteam->title; ?></h1></div>
+						<?php }?>
+						<?php  
+							if($img_description !=''){?>
+							<div class="slide-text-bg2">
+							<h3><?php echo $img_description ?></h3>
+							</div>
+							<?php } ?>
+						
+						<?php if($readmore_button != '') {?>
+						<div class="flex-btn-div">
+							<a href="<?php echo $readmorelink ?>" <?php if($open_new_tab== 'yes') { echo "target='_blank'"; } ?> class="btn1 flex-btn"><?php echo $readmore_button ?></a>
+						</div>	
+						<?php }?>						
                     </div>
-			</li>	
-				<?php } wp_reset_postdata(); } ?>
+				</li>	
+				<?php } 
+				} else {
+						
+					$slider_default_title = array(__('Welcome to ElitePress WordPress Theme','elitepress'), __('Boost Your Site Today!','elitepress'), __('Let us grow your website','elitepress'),);
+						for($i=1; $i<=3; $i++) 
+						{  ?>
+						<li>
+							<img class="img-responsive" src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide<?php echo $i; ?>.jpg">
+							<div class="container flex-slider-center">
+								<div class="slide-text-bg1"><h1><?php echo $slider_default_title[$i-1]; ?></h1>
+								</div>
+								<div class="slide-text-bg2"><h3><?php _e('Lorem ipsum dolor sit amet consectetuer adipiscing elit.', 'elitepress'); ?></h3></div>
+								<div class="flex-btn-div"><a class="btn1 flex-btn" href="#"><?php _e('Read More', 'elitepress'); ?></a></div>
+							</div>
+						</li>
+				<?php }
+				}?>
 			</ul>
 		</div>
 		</div>
-</div>
+</section>
 <?php } ?>
 <!-- /Slider -->

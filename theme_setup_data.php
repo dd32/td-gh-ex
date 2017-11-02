@@ -5,10 +5,12 @@ function theme_data_setup()
 	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio.jpg";
 	return $theme_options=array(
 			//Logo and Fevicon header
-			'webriti_stylesheet'=>'default.css',
 			'custom_background_enabled'=>'off',
 			'upload_image_favicon'=>'',
 			'webrit_custom_css'=>'',
+			'layout_selector' => 'wide',
+			'webriti_stylesheet' => 'default.css',
+			'header_column_layout' => 3,
 			
 			
 			//Slider
@@ -122,8 +124,11 @@ function theme_data_setup()
 			'service_four_title' => __('Incredibly flexible','elitepress'),
 			'service_four_description' => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.',
 			
-			//Banner Heading
+			//Latest news
+			'blog_title' => __('Latest news','elitepress'),
+			'blog_description' => 'Lorem ipsum dolor sit ametconsectetuer adipiscing elit.',
 			
+			//Banner Heading
 			'banner_title_category' => __('Category title','elitepress'),
 			'banner_description_category' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			

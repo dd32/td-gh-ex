@@ -1,11 +1,22 @@
 <?php
 function elitepress_scripts()
 {	
-	$current_options = get_option('elitepress_lite_options');
+	$elitepress_lite_options=theme_data_setup();
+	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
+	wp_enqueue_style('elitepress-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 	wp_enqueue_style('elitepress-style', get_stylesheet_uri() );
 	wp_enqueue_style('font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
-	wp_enqueue_style('elitepress-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+	
+	if(get_option('elitepress_lite_options')!='')
+	{
+	$class=$current_options['webriti_stylesheet'];
+	wp_enqueue_style('default', WEBRITI_TEMPLATE_DIR_URI . '/css/'.$class);
+	
+	}
+	else
+	{
 	wp_enqueue_style('elitepress-default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
+	}
 	wp_enqueue_style('elitepress-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
 	wp_enqueue_style('elitepress-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 	wp_enqueue_script( 'jquery' );

@@ -14,6 +14,9 @@
 				
 		//****** get index portfolio  ********
 		get_template_part('index', 'portfolio');
+		
+		//****** get index blog  ********
+		get_template_part('index', 'blog');
 				
 		get_footer();
 	

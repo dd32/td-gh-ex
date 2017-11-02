@@ -8,25 +8,28 @@
 	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url($current_options['upload_image_favicon']); ?>" /> 
-	<?php } wp_head(); ?>
+	<?php } ?>
+	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> >
+	<?php
+	if($current_options['layout_selector'] == "boxed")
+	{ $class="boxed"; }
+	else
+	{ $class="wide"; }
+	?>
+<body <?php body_class($class); ?> >
 <!-- Wrapper -->
 <div id="wrapper">
 <!-- Header Section -->
-<div class="header-section">
+<header class="header-section">
 
-	<!-- Header social & Contact Info -->
+	
 	<?php get_template_part('header','social-section'); ?>
-	<!-- /Header social & Contact Info -->
 	
-	<!-- Logo goes here -->
-	<?php get_template_part('header','logo-section'); ?>
-	<!-- /Logo goes here -->
+	<?php get_template_part('header','logo-section'); ?>	
 	
-	<!-- Navigation Section -->
 	<?php get_template_part('header','menu-section'); ?>
-	<!-- /Navigation Section -->
 	
-</div>	
+	
+</header>	
 <!-- /Header Section -->	

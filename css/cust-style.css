@@ -55,7 +55,7 @@ font-size:14px !important;
 {text-align:center; margin-top:15px;}
 
 .service {
-  background-color: #f36557;
+  background-color: #31a3dd;
   border-color: #ef9c28;
   color: #fff !important;
   cursor: pointer;
@@ -70,4 +70,8 @@ font-size:14px !important;
   }
   .pro-vesrion p{line-height:20px;} 
   
- li#accordion-section-elitepress_pro_section h3.accordion-section-title { background-color:#f36557; color:#fff;}
+ li#accordion-section-elitepress_pro_section h3.accordion-section-title { background-color:#31a3dd; color:#fff;}
+ #customize-control-elitepress_lite_options-webriti_stylesheet input[type="radio"] {display:none !important;}
+ #customize-control-elitepress_lite_options-webriti_stylesheet img{height:45px; 
+ width:120px !important;}
+  #customize-control-elitepress_lite_options-webriti_stylesheet label{display:inline-block; margin-left: 0px !important;}

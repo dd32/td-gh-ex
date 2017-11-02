@@ -56,6 +56,12 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.4
+1. Added Repetator control for slider and service.
+2. Added Wide and box layout setting.
+3. Added Two theme color variation.
+4. Added Header widget.
+5. Changed footer variation.
 @version 1.6.3
 1. Added styling for upgrade to pro setting.
 @version 1.6.2
@@ -152,30 +158,25 @@ Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 Portfolio Image
-URL: http://pixabay.com/en/keyboard-apple-input-keys-hardware-338510/
+URL: https://cdn.pixabay.com/photo/2017/08/02/01/11/people-2569404_960_720.jpg
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 Slider Image
-URL: http://pixabay.com/en/startup-start-up-notebooks-creative-593354/
+URL: https://cdn.pixabay.com/photo/2017/08/05/22/59/man-2586417_960_720.jpg
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
-URL: http://pixabay.com/en/bar-local-cong-ireland-irish-pub-621033/
+URL: https://cdn.pixabay.com/photo/2017/05/02/03/41/action-2277292_960_720.jpg
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
-URL: http://pixabay.com/en/home-office-computer-mac-workspace-593380/
+URL: https://cdn.pixabay.com/photo/2017/08/06/10/53/laptop-2591245_960_720.jpg
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 
-Page Header Image
-URL: http://pixabay.com/en/home-office-workstation-office-336377/
-Source:http://pixabay.com
-LIcense: CC0 Public Domain
-
-Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 # --- EOF --- #

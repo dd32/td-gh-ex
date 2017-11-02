@@ -78,7 +78,7 @@ $wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_btn_link]', array(
         'default'        => '#',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_btn_link]', array(

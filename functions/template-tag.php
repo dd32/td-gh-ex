@@ -1,28 +1,26 @@
 <?php
 // function for post meta
+// function for post meta
 if ( ! function_exists( 'elitepress_post_meta_content' ) ) :
 
 function elitepress_post_meta_content()
-{ ?>
-   
-	        <!--show date of post-->
-			
-			<div class="blog-post-info-detail">
-				<span class="blog_tags">
-						<?php _e('By','elitepress');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author_link();?></a>
-								
-						<?php _e('on','elitepress');?><a href="<?php the_permalink();?>"><?php echo get_the_date(); ?></a>
-								
-						<?php 	$tag_list = get_the_tag_list();
-						if(!empty($tag_list)) { ?>
-						<div class="blog-tags"><?php _e('In','elitepress');?><?php the_tags('', ', ', ''); ?>,<?php 	$cat_list = get_the_category_list();
-							if(!empty($cat_list)) { ?><?php the_category(', '); ?><?php } ?>
-						</div><?php } ?>
-				</span>
-			</div>
+{ $elitepress_lite_options=theme_data_setup();
+					$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
+					
+						<div class="entry-meta">
+							<span class="author">
+							<?php _e('By','elitepress'); echo ' '; ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author_link(); ?></a>
+							</span>
+							<span class="tag-links">
+							<?php 	$tag_list = get_the_tag_list();
+							if(!empty($tag_list)) { ?>
+							<?php _e('In','elitepress'); echo ' '; ?><?php the_tags('', ', ', ''); ?>
+							<?php } ?>
+							</span>
+						</div>
 			
 			
-			<?php } endif;  
+<?php } endif; 
 			// this functions accepts two parameters first is the preset size of the image and second  is for additional classes, you can also add yours 
 			if(!function_exists( 'elitepress_post_thumbnail')) : 
 
@@ -60,4 +58,18 @@ function elitepress_post_meta_content()
 					{ echo 'col-md-12'; }  
 			 
 			} endif; 
+			
+			// this functions accepts two parameters first is the preset size of the image and second  is for additional classes, you can also add yours 
+if(!function_exists( 'elitepress_post_thumbnail')) : 
+
+function elitepress_post_thumbnail(){
+if(has_post_thumbnail()){ 
+$defalt_arg =array('class' => "img-responsive");
+?>
+	<figure class="post-thumbnail">
+				<?php if(is_active_sidebar('sidebar_primary')){ the_post_thumbnail('', $defalt_arg); } ?>
+				<div class="entry-date"><h2><?php echo get_the_date('j'); ?></h2><span><?php echo get_the_date('M'); ?></span></div>
+	</figure>
+<?php } } endif;
+			
 			?>

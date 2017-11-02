@@ -15,8 +15,11 @@
 				
 		//****** get index portfolio  ********
 		get_template_part('index', 'portfolio');
+		
+		//****** get index portfolio  ********
+		get_template_part('index', 'blog');
 				
-		get_footer(); 
+		get_footer();
 		
 		}
 ?>

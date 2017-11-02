@@ -1,10 +1,8 @@
-<?php $elitepress_lite_options=theme_data_setup();
-		$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
-
-if($current_options['header_call_out_area_enabled']==true){
+<?php $elitepress_lite_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
 ?>
 <!-- Top Callout Section -->
-<div class="top-callout-section">
+<section class="top-callout-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
@@ -20,12 +18,9 @@ if($current_options['header_call_out_area_enabled']==true){
 			<?php if($current_options['header_call_out_btn_link']){ ?>
 				<a href="<?php echo $current_options['header_call_out_btn_link']; ?>" <?php if($current_options['header_call_out_btn_link_target'] ==true) { echo "target='_blank'"; } ?> ><?php echo $current_options['header_call_out_btn_text']; ?></a>
 			<?php } else { ?>
-			<div class="top_call_out_btn_text"><?php echo $current_options['header_call_out_btn_text']; ?></div><?php } ?>
-			</div>
-			<?php } ?>
+			<a><?php echo $current_options['header_call_out_btn_text']; ?></a>
+			<?php } }?>
 			
 		</div>
 	</div>
-</div>
-<!-- /Top Callout Section -->
-<?php } ?>
+</section>

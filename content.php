@@ -1,47 +1,22 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class('blog-area-full'); ?>>
-	<div class="blog-post-img">
-		<?php 
-				// Check Image size for fullwidth template
-				if( is_page_template('blog-full-width.php'))
-				elitepress_image_thumbnail('','img-responsive'); 
-				
-				
-				// Check Image size for Different format like Single post,page
-				elseif(is_single() || is_page())
-				elitepress_post_thumbnail('','img-responsive');
-				
-				else
-				elitepress_post_thumbnail('','img-responsive');	
-		
-				// Close div if page is call
-				if(is_page() )  echo "</div>";
-				
-				//hide permalink for fullwidth template
-				echo "<div class='blog-info'>"; 
-				if( !is_page_template('fullwidth.php') && get_the_title() && !is_page() ) { ?>
-				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-				<div class="blog-seprator"></div>
-		<?php   } ?>
-		<?php
-				if(is_page() )
-				// call post if any page is call 
-				{
-				the_post();
-				}
-				else 
-				{
-				// call post related meta contant like posted by, author name and comment
-				elitepress_post_meta_content();
-				}
-			
-                // call editor content of post/page	
-				echo "<div class='blog-description'>";
-				the_content();
-				echo "</div>"; 	
-				// allow support for <!--nextpage-->
-				wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Page', 'elitepress' ), 'after' => '</div>' ) ); 
-				echo "</div>";
-				// close div if page is not call
-				if(!is_page())  echo "</div>";
-		?>
-</div>		
+<?php $elitepress_lite_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
+<?php if(is_page_template('blog-left-sidebar.php')) {?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-right'); ?>>
+<?php } elseif(is_page_template('blog-full-width.php')) { ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
+<?php } else { ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-left'); ?>>
+<?php } if(has_post_thumbnail()){ 
+$defalt_arg =array('class' => "img-responsive"); ?>
+<figure class="post-thumbnail">
+				<?php if(is_active_sidebar('sidebar_primary')){ the_post_thumbnail('', $defalt_arg); } ?>
+				<div class="entry-date"><h2><?php echo get_the_date('j'); ?></h2><span><?php echo get_the_date('M'); ?></span></div>
+	</figure><?php } ?>	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+		<div class="blog-seprator"></div>
+	</header>
+<?php elitepress_post_meta_content(); ?>
+	<div class="entry-content"><?php the_content( __('Read More','elitepress' ) ); ?></div>
+	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
+</article>

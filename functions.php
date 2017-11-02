@@ -10,6 +10,8 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/elitepress_header_widget.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/elitepress_social_icon.php');
 	require_once( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/post-meta.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
@@ -20,10 +22,18 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-homecallout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_banner.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
+	
+	
+	
+	
 	
 	
 	
@@ -109,8 +119,28 @@ function elitepress_get_custom_link($url,$target,$title)
 // Read more tag to formatting in blog page 	
 	function elitepress_content_more($more)
 	{  global $post;
-		return '<div class="blog-btn-div"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
+	   return '<a href="' . get_permalink() . '" class="more-link">'.__('Read More','elitepress').'</a>';
 	}   
 	add_filter( 'the_content_more_link', 'elitepress_content_more' );
+	
+
+//Get Home Blog Excerpt
+function get_home_blog_excerpt()
+	{
+		global $post;
+		$excerpt = get_the_content();
+		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
+		$excerpt = strip_shortcodes($excerpt);
+		$original_len = strlen($excerpt);
+		$excerpt = substr($excerpt, 0, 145);
+		$len=strlen($excerpt);
+		if($original_len>275) {
+		$excerpt = $excerpt;
+		return $excerpt . '<p><a href="' . get_permalink() . '" class="more-link">'.__('Read More','elitepress').'</a></p>';
+		}
+		else
+		{ return $excerpt; }
+	}
+	
 
 ?>

@@ -8,37 +8,46 @@
 <div class="blog-section">
 	<div class="container">
 		<div class="row">
-			
 			<!--Blog Area-->
 			<div class="<?php elitepress_post_layout_class(); ?>" >
-			
+				<div class="site-content">
 					<?php if ( have_posts() ) : ?>
-					<h1 class="blog_detail_head">
+					<h1 class="archive-title">
 					<?php if ( is_day() ) : ?>
-					<?php  _e( "Daily Archive", 'elitepress' ); echo (get_the_date()); ?>
+					<?php  _e( "Daily Archive", 'elitepress' ); echo ' '; echo (get_the_date()); ?>
 					<?php elseif ( is_month() ) : ?>
-					<?php  _e( "Monthly Archive", 'elitepress' ); echo (get_the_date( 'F Y' )); ?>
+					<?php  _e( "Monthly Archive", 'elitepress' ); echo ' '; echo (get_the_date( 'F Y' )); ?>
 					<?php elseif ( is_year() ) : ?>
-					<?php  _e( "Yearly Archive", 'elitepress' );  echo (get_the_date( 'Y' )); ?>
+					<?php  _e( "Yearly Archive", 'elitepress' ); echo ' ';  echo (get_the_date( 'Y' )); ?>
 					<?php else : ?>
 					<?php _e( "Blog Archive", 'elitepress' ); ?>
 					<?php endif; ?>
 					</h1>
-				<?php
-				while ( have_posts() ) : the_post();
-				global $more;
-				$more = 0;
-				?>
-				<?php get_template_part('content',''); ?>
-				<?php endwhile;	?>			
-				<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elitepress') ); ?>
-					<?php next_posts_link( __('Next','elitepress') ); ?>
+					<?php 
+					if ( have_posts() ) :
+						// Start the Loop.
+						while ( have_posts() ) : the_post();
+							get_template_part( 'content','');
+						endwhile;
+					endif;?>			
+					<div class="paginations">
+					<?php
+					// Previous/next page navigation.
+					the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+					'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+					) );
+					?>
+					</div>
 				</div>
 			</div>
 			<?php endif; ?>
 			<!--/Blog Area-->
-		<?php get_sidebar(); ?>
+			<div class="col-md-4">
+				<div class="sidebar-section-right">
+				<?php get_sidebar(); ?>
+				</div>
+			</div>
 		</div>	
 	</div>
 </div>

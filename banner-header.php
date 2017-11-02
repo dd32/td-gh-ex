@@ -1,6 +1,8 @@
 <?php
 get_header();
-$current_options = get_option('elitepress_lite_options',theme_data_setup()); 
+$elitepress_lite_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
+
 
  if(is_category()){
   $h1=$current_options['banner_title_category'];

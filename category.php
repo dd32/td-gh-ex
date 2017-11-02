@@ -9,31 +9,37 @@ get_header(); ?>
 <div class="blog-section">
 	<div class="container">
 		<div class="row">
-			
 			<!--Blog Area-->
 			<div class="<?php elitepress_post_layout_class(); ?>" >
-			<h1 class="blog_detail_head">
-			<?php  _e( "Category  Archive", 'elitepress' ); echo single_cat_title( '', false ); ?>
-			</h1>	
-				<?php
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$category_id=get_query_var('cat');
-				$args = array( 'post_type' => 'post','paged'=>$paged,'cat' => $category_id);
-				$post_type_data = new WP_Query( $args );
-				while($post_type_data->have_posts()){
-				$post_type_data->the_post();
-				global $more;
-				$more = 0;
-				get_template_part('content',''); ?>
-				<?php }	?>			
-				<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elitepress') ); ?>
-					<?php next_posts_link( __('Next','elitepress') ); ?>
+				<div class="site-content">
+					<h1 class="archive-title">
+					<?php  _e( "Category  Archive", 'elitepress' ); echo ' '; echo single_cat_title( '', false ); ?>
+					</h1>
+					<?php 
+					if ( have_posts() ) :
+						// Start the Loop.
+						while ( have_posts() ) : the_post();
+							get_template_part( 'content','');
+						endwhile;
+					endif;?>
+					<div class="paginations">
+					<?php
+					// Previous/next page navigation.
+					the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+					'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+					) );
+					?>
+					</div>
 				</div>
+			</div>	
+				<!--/Blog Area-->
+				<div class="col-md-4">
+					<div class="sidebar-section-right">
+					<?php get_sidebar(); ?>
+					</div>
 				</div>
-			<!--/Blog Area-->
-			<?php get_sidebar(); ?>
-		</div>	
+		</div>
 	</div>
 </div>
 <?php get_footer(); ?>

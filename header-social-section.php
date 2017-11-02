@@ -1,7 +1,54 @@
 <!-- Header social & Contact Info -->
-	<?php $elitepress_lite_options=theme_data_setup();
-		$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
+<?php $elitepress_lite_options=theme_data_setup();
+		$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); 
+		$pro_slider_data1 = get_option('elitepress_lite_options');
+	if(!isset($pro_slider_data1['contact_email']))
+	{
+?>
+<div class="header-info">	
 	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="top-header-sidebar-left">
+					<?php if( is_active_sidebar('home-header-sidebar_left') ) { ?>
+					<?php  dynamic_sidebar( 'home-header-sidebar_left' ); ?>
+					<?php } ?>				
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="top-header-sidebar-right">
+					<?php if( is_active_sidebar('home-header-sidebar_right') ) { ?>
+					<?php  dynamic_sidebar( 'home-header-sidebar_right' ); ?>
+					<?php } ?>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+<?php } else { if((is_active_sidebar('home-header-sidebar_left') || (is_active_sidebar('home-header-sidebar_right') )))
+	{ ?>
+	<div class="header-info">	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="top-header-sidebar-left">
+					<?php  dynamic_sidebar( 'home-header-sidebar_left' ); ?>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="top-header-sidebar-right">
+					<?php  dynamic_sidebar( 'home-header-sidebar_right' ); ?>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+	<?php 
+	}
+	else {
+?>
+<div class="header-info">
+<div class="container">
 		<div class="row">
 		<?php 
 		if($current_options['header_social_media_enabled']==true) { ?>
@@ -55,5 +102,5 @@
 			<?php } ?>	
 		</div>		
 	</div>
-	<!-- /Header social & Contact Info -->
-<div class="head-topbar"></div>	
+</div>	
+<?php } }?>	

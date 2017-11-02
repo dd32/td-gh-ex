@@ -1,6 +1,6 @@
 <!-- Page Title Section -->
 <?php if (get_post_meta( get_the_ID(), 'banner_chkbx', true )) { ?>
-<div class="page-title-section">		
+<section class="page-title-section">		
 	<div class="overlay">
 		<div class="container">
 			<div class="row">
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 <?php } ?>
 <div class="clearfix"></div>
 <!-- /Page Title Section -->
