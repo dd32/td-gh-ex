@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-09-29 09:45+0600\n"
+"POT-Creation-Date: 2017-11-02 14:15+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -48,11 +48,11 @@ msgstr ""
 msgid "now browsing the general archives"
 msgstr ""
 
-#: comments.php:12 functions.php:131
+#: comments.php:12 functions.php:132
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:12 functions.php:131
+#: comments.php:12 functions.php:132
 msgid "One Comment"
 msgstr ""
 
@@ -64,15 +64,15 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: front-page.php:16 inc/customize.php:56
+#: front-page.php:14 inc/customize.php:56
 msgid "We are <em>D5 Creation</em>"
 msgstr ""
 
-#: front-page.php:17 inc/customize.php:71
+#: front-page.php:15 inc/customize.php:71
 msgid "Where Passion and Creativity Meets Experience"
 msgstr ""
 
-#: front-page.php:19 inc/customize.php:86
+#: front-page.php:17 inc/customize.php:86
 msgid ""
 "We are a small team of industry veterans having decades of experience in "
 "<em>web development</em> and design. Our work is our passion. We hand craft "
@@ -80,71 +80,71 @@ msgid ""
 "and clean codes"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:96
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:96
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:111 functions.php:117
+#: functions.php:112 functions.php:118
 msgid "Read More"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:132
 msgid "Edit"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:132
 msgid "Comments"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:141
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:142
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:150
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:151
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:152
+#: functions.php:153
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:162
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:171
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:180
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:189
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:198
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:208
 msgid "Footer Area Four"
 msgstr ""
 
-#: header.php:46
+#: header.php:43
 msgid "Main Menu"
 msgstr ""
 
@@ -193,6 +193,10 @@ msgstr ""
 
 #: inc/customize.php:94
 msgid "About Description"
+msgstr ""
+
+#: inc/theme-about.php:40
+msgid "D5 Creation Themes"
 msgstr ""
 
 #: post-content.php:34

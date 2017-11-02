@@ -65,6 +65,7 @@
 	wp_enqueue_style('awesome-responsive', get_template_directory_uri(). '/style-responsive.css' );
 	}
 	add_action( 'wp_enqueue_scripts', 'awesome_enqueue_scripts' );
+	
 	// 	Functions for adding script to Admin Area
 	function awesome_admin_style() { wp_enqueue_style( 'awesome_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
 	add_action( 'admin_enqueue_scripts', 'awesome_admin_style' );
