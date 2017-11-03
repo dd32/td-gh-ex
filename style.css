@@ -5,7 +5,7 @@ Author: SKT Themes
 Author URI: https://www.sktthemes.net
 Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. Demo : http://sktperfectdemo.com/demos/adventure/
 
-Version: 1.3
+Version: 1.4
 License: GNU General Public License
 License URI: license.txt
 Text Domain: adventure-lite
@@ -384,7 +384,7 @@ a .squarebox{transition: all 0.6s ease-out 0s;}
 .blocksbox a{display: block; font-weight: 500; margin: 0 auto; position: relative;}
 .blocksbox a .block-count{background: #e64d43 none repeat scroll 0 0; border-radius: 100%; color: #ffffff; height: 30px; left: 50%; line-height: 30px; position: absolute; text-align: center; top: 0; transform: translateX(-170%); width: 30px; z-index: 10;}
 .blockthumb{border: 1px solid #ff0000; border-radius: 100%; height: 95px; line-height: 90px; margin: 0 auto; overflow: hidden; position: relative; text-align: center; width: 95px;}
-.blockthumb img{height: auto; max-width: 100%; vertical-align: middle; width:28px; padding-top:31px;}
+.blockthumb img{height: auto; max-width: 100%; vertical-align: middle; width:28px;}
 .blocktitle{text-align: center;}
 .blocktitle h5{color: #282828; font-family: "Roboto Condensed"; font-size: 17px; text-transform:uppercase; font-weight:bold; padding:30px 0 10px 0;}
 .blocktitle:after{border-bottom: 2px solid #282828; content: " "; display: table; margin: 0 auto; width: 33px;}

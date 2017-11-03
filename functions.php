@@ -38,7 +38,7 @@ function adventure_lite_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'ffffff'
 	) );
-	add_editor_style( 'editor-style.css' );
+	add_editor_style( 'adventure-lite-editor-style.css' );
 } 
 endif; // adventure_lite_setup
 
@@ -139,12 +139,12 @@ function adventure_lite_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'adventure_lite_scripts' );
 
-define('SKTTHEMES_URL','https://www.sktthemes.net','adventure-lite');
-define('SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.net/shop/adventure-wordpress-theme/','adventure-lite');
-define('SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/','adventure-lite');
-define('SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/adventure-documentation/','adventure-lite');
-define('SKTTHEMES_LIVE_DEMO','http://sktperfectdemo.com/demos/adventure/','adventure-lite');
-define('SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_URL','https://www.sktthemes.net','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.net/shop/adventure-wordpress-theme/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/adventure-documentation/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_LIVE_DEMO','http://sktperfectdemo.com/demos/adventure/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','adventure-lite');
 
 /**
  * Implement the Custom Header feature.
@@ -193,3 +193,17 @@ function adventure_lite_the_custom_logo() {
 endif;
 
 require_once get_template_directory() . '/customize-pro/example-1/class-customize.php';
+
+
+/**
+ *
+ * Style For About Theme Page
+ *
+ */
+function adventure_lite_admin_about_page_css_enqueue($hook) {
+   if ( 'appearance_page_adventure_lite_guide' != $hook ) {
+        return;
+    }
+    wp_enqueue_style( 'adventure-lite-about-page-style', get_template_directory_uri() . '/css/adventure-lite-about-page-style.css' );
+}
+add_action( 'admin_enqueue_scripts', 'adventure_lite_admin_about_page_css_enqueue' );

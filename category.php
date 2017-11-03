@@ -16,7 +16,7 @@ get_header(); ?>
      <div class="page_content">
         <section class="site-main">
             <header class="page-header">
-				<h1 class="entry-title"><?php single_cat_title( esc_html__('Category: ', 'adventure-lite') ); ?></h1>
+				<h1 class="entry-title"><?php the_archive_title(); ?></h1>
             </header><!-- .page-header -->
 			<?php if ( have_posts() ) : ?>
                 <div class="blog-post">

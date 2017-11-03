@@ -10,11 +10,6 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-?>
-<style type="text/css">
-.infocase{text-decoration: underline; color: #DA4141; text-transform: uppercase;}
-</style>
-<?php 
 function adventure_lite_customize_register( $wp_customize ) {
 	
 	//Add a class for titles
@@ -23,7 +18,7 @@ function adventure_lite_customize_register( $wp_customize ) {
         public $label = '';
         public function render_content() {
         ?>
-			<h3 class="infocase"><?php echo esc_html( $this->label ); ?></h3>
+			<h3><?php echo esc_html( $this->label ); ?></h3>
         <?php
         }
     }
@@ -448,11 +443,17 @@ function adventure_lite_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
-function adventure_lite_custom_css(){
+//setting inline css.
+function adventure_lite_custom_css() {
+    wp_enqueue_style(
+        'adventure-lite-custom-style',
+        get_template_directory_uri() . '/css/adventure_lite_custom_script.css'
+    );
+        $color = get_theme_mod( 'color_scheme' ); //E.g. #e64d43
 		$header_text_color = get_header_textcolor();
-		?>
-        	<style type="text/css"> 			
-					#sidebar ul li a:hover,
+		
+        $custom_css = "
+                	#sidebar ul li a:hover,
 					.threebox:hover h3,
 					.cols-3 ul li a:hover, .cols-3 ul li.current_page_item a,					
 					.phone-no strong,					
@@ -461,9 +462,9 @@ function adventure_lite_custom_css(){
 					.recent-post h6 a:hover,
 					.postmeta a:hover,
 					.recent-post .morebtn:hover, .blocksbox a, .recent-post a
-					{ color:<?php echo esc_attr(get_theme_mod('color_scheme','#e64d43')); ?>;
+					{ 
+						 color: {$color} !important;
 					}
-					
 					.logo, .sitenav ul li a:hover, .sitenav ul li.current_page_item a, .sitenav ul li.menu-item-has-children.hover, .sitenav ul li.current-menu-parent a.parent, .slide_info .slide_more, .squarebox:hover, .pagination .nav-links span.current, .pagination .nav-links a:hover,
 					#commentform input#submit:hover,
 					.slide_info .slide_more:hover,							
@@ -473,23 +474,27 @@ function adventure_lite_custom_css(){
 					.social-icons a:hover,
 					a.ReadMore,
 					input.search-submit, .blocksbox a .block-count
-					{ background-color:<?php echo esc_attr(get_theme_mod('color_scheme','#e64d43')); ?> !important;}
-					
-					.head-info-area{border-top-color:<?php echo esc_attr(get_theme_mod('color_scheme','#e64d43')); ?> !important;}
-					
+					{ 
+					   background-color: {$color} !important;
+					}
+					.head-info-area{
+						border-top-color: {$color} !important;
+					}
 					#menubar,
 					h2.section-title::after,
 					h2.section-title, .blockthumb
-					{ border-color:<?php echo esc_attr(get_theme_mod('color_scheme','#e64d43')); ?>;}
+					{ 
+					   border-color:{$color};
+					}
 					
-					.logo h2, .logo p, .phoneno, .emltp a{color: #<?php echo esc_attr( $header_text_color ); ?>;}
-					
-			</style> 
-<?php     
-} 
-
-add_action('wp_head','adventure_lite_custom_css');	         
-
+					.logo h2, .logo p, .phoneno, .emltp a{
+					   color: #$header_text_color;
+					}										
+				";
+        wp_add_inline_style( 'adventure-lite-custom-style', $custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'adventure_lite_custom_css' ); 
+          
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

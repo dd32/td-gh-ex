@@ -93,7 +93,7 @@
   <div class="copyright-wrapper">
     <div class="container">
       <div class="copyright-txt">&nbsp;</div>
-      <div class="design-by"><?php printf('<a target="_blank" href="'.esc_url(SKTTHEMES_FREE_THEME_URL).'" rel="nofollow">Adventure Lite</a>' ); ?></div>
+      <div class="design-by"><?php printf('<a target="_blank" href="'.esc_url(ADVENTURE_LITE_SKTTHEMES_FREE_THEME_URL).'" rel="nofollow">Adventure Lite</a>' ); ?></div>
       <div class="clear"></div>
     </div>
   </div>

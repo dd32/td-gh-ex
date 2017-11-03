@@ -91,9 +91,9 @@ final class adventure_lite_Example_1_Customize {
 	 */
 	public function adventure_lite_enqueue_control_scripts() {
 
-		wp_enqueue_script( 'example-1-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/example-1/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'adventure-lite-example-1-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/example-1/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'example-1-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/example-1/customize-controls.css' );
+		wp_enqueue_style( 'adventure-lite-example-1-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-pro/example-1/customize-controls.css' );
 	}
 }
 
