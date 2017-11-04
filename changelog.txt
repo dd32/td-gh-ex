@@ -4,6 +4,11 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.1.1
+	* Fixed: Header image does not appear when using a custom header image
+	* Fixed: Incorrect positioning of the header image link 
+	* Updated: All language files now include updated strings
+
 Version 2.1
 	* Added: Option to customize slider height on mobile devices
 	* Added: Slider image link to post
