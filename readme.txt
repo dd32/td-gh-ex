@@ -2,12 +2,15 @@
 
 Contributors: specia
 Requires at least: WordPress 4.4
-Tested up to: WordPress 4.8
-Stable tag: 1.0
-Version: 1.0
+Tested up to: WordPress 4.8.2
+Stable tag: 1.0.10
+Version: 1.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, photography, portfolio
+Tags: custom-logo, translation-ready, blog
+
+Avira WordPress Theme, Copyright 2017 Specia Theme
+Avira is distributed under the terms of the GNU GPL
 
 ##Description
 
@@ -19,16 +22,42 @@ Avira is the right theme for you if you are looking for a multipurpose theme tha
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-##Copyright
+## Credit & Copyright
+
+Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2017 Specia Theme
+Avira WordPress Theme is distributed under the terms of the GNU GPL
 
 Images
 =================================================================================================
 Screenshot Image
-URL: https://www.pexels.com/photo/people-brasil-guys-avpaulista-109919/
+URL: https://www.pexels.com/photo/adventure-backpack-backpacker-backpacking-615471/
 Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.10
+* Screenshot Changed
+
+version 1.0.8
+* Enhance Theme Detail
+
+version 1.0.7
+* Description Improvement
+
+version 1.0.6
+* Sanitization Issue Fixed
+
+version 1.0.5
+* Replace Screenshot Image
+
+version 1.0.4
+* Version Error Fixed
+
+version 1.0.3
+* Social Media Features Added
+
+version 1.0.2
+* Theme Review Issues Fixed
 
 version 1.0.1
 * Initial release
