@@ -90,6 +90,12 @@ function graphene_customizer_general_options( $wp_customize ){
 		),
 	) );
 
+	$wp_customize->add_control( 'graphene_settings[slider_with_image_only]', array(
+	  'type' 		=> 'checkbox',
+	  'section' 	=> 'graphene-general-slider',
+	  'label' 		=> __( 'Include posts with featured image only', 'graphene' ),
+	) );
+
 	$wp_customize->add_control( 'graphene_settings[slider_specific_posts]', array(
 	  'type' 		=> 'text',
 	  'section' 	=> 'graphene-general-slider',
@@ -165,6 +171,13 @@ function graphene_customizer_general_options( $wp_customize ){
 		'type' 		=> 'number',
 		'section' 	=> 'graphene-general-slider',
 		'label' 	=> __( 'Slider height', 'graphene' ),
+		'unit'		=> __( 'px', 'graphene' ),
+	) ) );
+
+	$wp_customize->add_control( new Graphene_Enhanced_Text_Control( $wp_customize, 'graphene_settings[slider_height_mobile]', array(
+		'type' 		=> 'number',
+		'section' 	=> 'graphene-general-slider',
+		'label' 	=> __( 'Slider height (mobile)', 'graphene' ),
 		'unit'		=> __( 'px', 'graphene' ),
 	) ) );
 

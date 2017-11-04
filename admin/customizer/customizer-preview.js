@@ -28,14 +28,21 @@ jQuery(document).ready(function($) {
   	/* Slider height */
 	wp.customize('graphene_settings[slider_height]', function(value){
 		value.bind(function(to){
-			$('.carousel, .carousel .item').css('height', to + 'px');
+			$('#graphene-preview-css').append('@media (min-width: 768px){.carousel, .carousel .item{height:' + to + 'px;}}');
+		});
+	});
+
+	/* Slider height (mobile) */
+	wp.customize('graphene_settings[slider_height_mobile]', function(value){
+		value.bind(function(to){
+			$('#graphene-preview-css').append('@media (max-width: 767px){.carousel, .carousel .item{height:' + to + 'px;}}');
 		});
 	});
 	
 	/* Copyright text */
-	wp.customize('graphene_settings[copyright_text]', function(value){
+	wp.customize('graphene_settings[copy_text]', function(value){
 		value.bind(function(to){
-			$('.copyright-text').html(to);
+			$('#copyright').html(to);
 		});
 	});
 

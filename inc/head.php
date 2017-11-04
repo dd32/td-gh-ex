@@ -160,8 +160,9 @@ function graphene_get_custom_style(){
 	if ( $font_style ) { $style .= '.entry-content, .sidebar, .comment-entry { '.$font_style.' }'; }
 	
 	/* Slider */
-	if ( $graphene_settings['slider_height'] ) {
+	if ( $graphene_settings['slider_height'] || $graphene_settings['slider_height_mobile'] ) {
 		$style .= '.carousel, .carousel .item{height:'.$graphene_settings['slider_height'].'px;}';
+		$style .= '@media (max-width: 767px) {.carousel, .carousel .item{height:'.$graphene_settings['slider_height_mobile'].'px;}}';
 	}
 	if ( $graphene_settings['slider_full_width'] ) {
 		$style .= '#content .featured_slider, .container_16 #content .slider_post {width:' . graphene_grid_width( '', 16 ) . 'px;}';

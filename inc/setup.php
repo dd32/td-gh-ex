@@ -49,7 +49,7 @@ function graphene_setup() {
 	$frontpage_id = ( get_option( 'show_on_front' ) == 'posts' ) ? NULL : get_option( 'page_on_front' );
 	
 	if ( $graphene_settings['slider_full_width'] ) {
-		$slider_width = graphene_grid_width( '', 12 );
+		$slider_width = graphene_grid_width( $graphene_settings['gutter_width']*2, 12 );
 	} else {
 		$column_mode = graphene_column_mode( $frontpage_id );
 		
@@ -58,7 +58,7 @@ function graphene_setup() {
 		else $column_mode = NULL;
 		
 		if ( $column_mode )	$slider_width = graphene_grid_width( '', $graphene_settings['column_width'][$column_mode]['content'] );
-		else $slider_width = graphene_grid_width( '', 8, 6, 4, $frontpage_id );
+		else $slider_width = graphene_grid_width( '', 12 );
 	}
 
 	add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true );
@@ -257,7 +257,7 @@ function graphene_widgets_init() {
 				'after_title' => "</h3>",
 			) );
 			
-			register_sidebar(array( 'name' => __( 'Grapehen - Sidebar Two (Front Page)', 'graphene' ),
+			register_sidebar(array( 'name' => __( 'Graphene - Sidebar Two (Front Page)', 'graphene' ),
 				'id' => 'home-sidebar-two-widget-area',
 				'description' => __( 'The second sidebar widget area that will only be displayed on the front page.', 'graphene' ),
 				'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
