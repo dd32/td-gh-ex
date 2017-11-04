@@ -226,7 +226,6 @@ body.menubar .suevafree-menu:after {
     -webkit-transition: all .3s linear;
     -moz-transition: all .3s linear;
     -o-transition: all .3s linear;
-    text-transform: uppercase;
     font-weight: 400;
     line-height: 1.8em;
 }
@@ -254,6 +253,11 @@ body.menubar .suevafree-menu:after {
     top: -10px;
     right: -15px;
 }
+
+.header-cart .total{
+	text-transform:uppercase
+}
+
 .header-cart .widget_shopping_cart li.empty {
 	padding:0 !important;
 	border:none;
