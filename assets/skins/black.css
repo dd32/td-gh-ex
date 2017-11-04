@@ -1,11 +1,11 @@
 .header-cart a span{
-    background-color: #c71c77 !important;
+    background-color: #8d8d8d !important;
 }
 .header-cart-widget{
-    border-top-color: #c71c77 !important;
+    border-top-color: #8d8d8d !important;
 }
 .header-cart-widget:before {
-    border-bottom-color: #c71c77 !important;
+    border-bottom-color: #8d8d8d !important;
 }
 
 #back-to-top i.open, 
@@ -27,7 +27,7 @@ span.button,
 .woocommerce button.button, 
 .woocommerce input.button,
 .woocommerce .wc-proceed-to-checkout input {
-	border-color:#c71c77;
+	border-color:#333333;
 }
 
 .woocommerce input.button#place_order,
@@ -44,12 +44,12 @@ span.button,
 .wp-pagenavi span.current,
 .wip-pagination span,
 .wip-pagination a span:hover {
-    background-color: #c71c77;
+    background-color: #333333;
 }
 
 .header-cart-widget .buttons a, 
 .header-cart-widget .woocommerce.widget_shopping_cart a.button { 
-	color:#c71c77 !important  ;
+	color:#333333 !important  ;
 }
 
 .woocommerce .cart .button, 
@@ -73,12 +73,12 @@ span.button,
 .wpcf7-form input[type=submit],
 .comment-form input[type=submit],
 .contact-form input[type=submit] {
-    color: #c71c77;
+    color: #333333;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-    color: #941559;
+    color: #8d8d8d;
 }
 
 .header-cart a span,
@@ -104,7 +104,7 @@ span.button:hover,
 .wpcf7-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
-    background-color: #941559;
+    background-color: #8d8d8d;
 }
 
 .header-cart-widget:before,
@@ -125,11 +125,11 @@ span.button:hover,
 .wpcf7-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
-    border-color: #941559;
+    border-color: #8d8d8d;
 }
 
 .header-cart-widget .buttons a:hover {
-    border-color: #941559 !important;
+    border-color: #8d8d8d !important;
 }
 
 a:hover,
@@ -140,7 +140,7 @@ a:hover,
 #footer ul.widget-category li a:hover,
 .post-container .title a:hover,
 #logo a:hover {
-    color: #c71c77;
+    color: #333333;
 }
 
 #footer .title,
