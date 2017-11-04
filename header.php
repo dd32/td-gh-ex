@@ -18,6 +18,38 @@
 <body <?php body_class(); ?>>
   <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-ecommerce-store'); ?></a></div>
 
+
+<div class="topbar">
+  <div class="container">
+      <div class="top-contact col-md-3 col-xs-12 col-sm-4">
+        <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_contact','' ) ) != '') { ?>
+          <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact',__('(518) 356-5373','bb-ecommerce-store') )); ?></span>
+         <?php } ?>
+      </div>
+      <div class="top-contact col-md-3 col-xs-12 col-sm-4">
+        <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_email','' ) ) != '') { ?>
+          <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email',__('support@123.com','bb-ecommerce-store')) ); ?></span>
+        <?php } ?>
+      </div>
+      <div class="social-media col-md-6 col-sm-4 col-xs-12">
+         <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ) != '') { ?>
+          <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <?php } ?>
+        <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ) != '') { ?>
+          <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <?php } ?>
+        <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ) != '') { ?>
+          <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <?php } ?>
+        <?php if(esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ) != '') { ?>
+          <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ); ?>"><i class="fa fa-rss" aria-hidden="true"></i></a>
+        <?php } ?>
+      </div>
+      <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
 <div class="header">
   <div class="container">
     <div class="col-md-3">
@@ -46,15 +78,21 @@
       <div class="cart_icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
       <div class="cart_no">
         <div class="cart_txt">Total</div>              
-        <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'View your shopping cart','bb-ecommerce-store' ); ?>"><?php if(function_exists('get_cart_total')){ echo WC()->cart->get_cart_total(); } ?></a>
+        <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'View your shopping cart','bb-ecommerce-store' ); ?>"><?php if(function_exists('get_cart_total')){ echo esc_html(WC() )->cart->get_cart_total(); } ?></a>
       </div>
     </div>
   </div>
+
   <div class="nav">
-		<div class="container">
-          <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-		</div>
-      </div><!-- nav --><div class="clear"></div>
+    <div class="container">
+      <div class="col-md-3">
+      </div>      
+      <div class="col-md-9 col-sm-9">
+        <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
+      </div>
+      
+    </div>
+  </div><!-- nav --><div class="clear"></div>
     </div><!-- aligner -->
 
   </div><!-- header -->

@@ -234,11 +234,18 @@ function bb_ecommerce_store_ie_stylesheet(){
 add_action('wp_enqueue_scripts','bb_ecommerce_store_ie_stylesheet');
 
 
-define('bb_ecommerce_store_CREDIT','http://www.themeshopy.com','bb-ecommerce-store');
+define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com','bb-ecommerce-store');
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
 			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>Themeshopy</a>";
+	}
+}
+define('bb_ecommerce_store_CREDIT1','https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
+
+if ( ! function_exists( 'bb_ecommerce_store_credit1' ) ) {
+	function bb_ecommerce_store_credit1(){
+			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT1)." target='_blank' rel='nofollow'>Ecommerce WordPress Theme</a>";
 	}
 }
 
@@ -265,7 +272,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
     ob_start();
     ?>
-    <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_html_e( 'View your shopping cart', 'bb-ecommerce-store' ); ?>"><?php echo WC()->cart->get_cart_total(); ?></a> 
+    <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_html_e( 'View your shopping cart', 'bb-ecommerce-store' ); ?>"><?php echo esc_html(WC() )->cart->get_cart_total(); ?></a> 
     <?php
     
     $fragments['a.cart-contents'] = ob_get_clean();

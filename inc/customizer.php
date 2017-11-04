@@ -51,6 +51,94 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    )
     );
 
+    //Topbar section
+	$wp_customize->add_section('bb_ecommerce_store_topbar',array(
+		'title'	=> __('Topbar Section','bb-ecommerce-store'),
+		'description'	=> __('Add Header Content here','bb-ecommerce-store'),
+		'priority'	=> null,
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_contact',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_contact',array(
+		'label'	=> __('Add Phone Number','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_topbar',
+		'setting'	=> 'bb_ecommerce_store_contact',
+		'type'		=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_email',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_email',array(
+		'label'	=> __('Add Email','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_topbar',
+		'setting'	=> 'bb_ecommerce_store_email',
+		'type'		=> 'text'
+	));
+
+	//Social Icons(topbar)
+	$wp_customize->add_section('bb_ecommerce_store_social',array(
+		'title'	=> __('Social Icon Section','bb-ecommerce-store'),
+		'description'	=> __('Add Header Content here','bb-ecommerce-store'),
+		'priority'	=> null,
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_youtube_url',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_youtube_url',array(
+		'label'	=> __('Add Youtube link','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_social',
+		'setting'	=> 'bb_ecommerce_store_youtube_url',
+		'type'		=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_facebook_url',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_facebook_url',array(
+		'label'	=> __('Add Facebook link','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_social',
+		'setting'	=> 'bb_ecommerce_store_facebook_url',
+		'type'	=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_twitter_url',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_twitter_url',array(
+		'label'	=> __('Add Twitter link','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_social',
+		'setting'	=> 'bb_ecommerce_store_twitter_url',
+		'type'	=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_rss_url',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('bb_ecommerce_store_rss_url',array(
+		'label'	=> __('Add RSS link','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_social',
+		'setting'	=> 'bb_ecommerce_store_rss_url',
+		'type'	=> 'text'
+	));
+
     //home page slider
 	$wp_customize->add_section( 'bb_ecommerce_store_slidersettings' , array(
     	'title'      => __( 'Slider Settings', 'bb-ecommerce-store' ),
@@ -105,25 +193,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 			'section'  => 'bb_ecommerce_store_product',
 			'type'     => 'dropdown-pages'
 		));
-	}
-	
-	//footer
-	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
-		'title'	=> __('Footer Text','bb-ecommerce-store'),
-		'description'	=> __('Add some text for footer like copyright etc.','bb-ecommerce-store'),
-		'panel' => 'bb_ecommerce_store_panel_id'
-	));
-	
-	$wp_customize->add_setting('bb_ecommerce_store_footer_copy',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('bb_ecommerce_store_footer_copy',array(
-		'label'	=> __('Copyright Text','bb-ecommerce-store'),
-		'section'	=> 'bb_ecommerce_store_footer_section',
-		'type'		=> 'text'
-	));
+	}	
 	
 }
 add_action( 'customize_register', 'bb_ecommerce_store_customize_register' );	
@@ -213,7 +283,7 @@ final class bb_ecommerce_store_customize {
 				array(
 					'title'    => esc_html__( 'BB Ecommerce Store Pro', 'bb-ecommerce-store' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-ecommerce-store' ),
-					'pro_url'  => 'http://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/'
+					'pro_url'  => 'https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/'
 				)
 			)
 		);

@@ -3,10 +3,10 @@
 /*----------------------------------------------------------------------------*/
 
 Theme Name      :   BB Ecommerce Store
-Theme URI       :   https://www.themeshopy.com/free/wp-bb-ecommerce-store-wordpress-theme/
-Version         :   1.2.4.1
-Tested up to    :   WP 4.8.2
-Author          :   themeshopy
+Theme URI       :   https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
+Version         :   1.2.4.2
+Tested up to    :   WP 4.8.3
+Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 
 
@@ -99,6 +99,10 @@ ii) Added Rtl language support tag.
 Version 1.2.4.1
 i) Added hooks in theme.
 ii) Change the readme as per the standard.
+
+Version 1.2.4.2
+i) Change footer links.
+ii) Done Some customization.
 
 Ecommerce Store Plus version
 ==========================================================

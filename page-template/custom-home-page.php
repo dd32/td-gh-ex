@@ -7,7 +7,10 @@ get_header(); ?>
 
 <div class="container">
 	<div class="col-md-3 static-sidebar">
-		<?php dynamic_sidebar('static-sidebar');?>
+        <div class="cathead"><i class="fa fa-bars" aria-hidden="true"></i><span><?php echo esc_html('ALL CATEGORIES') ?></span></div>
+		<div class="sidepro">
+			<?php dynamic_sidebar('static-sidebar');?>
+		</div>
 	</div>
 	<div class="col-md-9">
 		<?php /** slider section **/ ?>
