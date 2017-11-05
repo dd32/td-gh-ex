@@ -35,7 +35,7 @@ if ( is_active_sidebar( 'footer-row-2-col-1' )
 					<?php
 						for ( $i = 1; $i < 5; $i++ ) {
 							if ( is_active_sidebar( 'footer-row-2-col-' . $i ) ) : ?>
-								<div class="<?php echo $class; ?>"><?php dynamic_sidebar( 'footer-row-2-col-' . $i ); ?></div>
+								<div class="<?php echo esc_attr($class); ?>"><?php dynamic_sidebar( 'footer-row-2-col-' . $i ); ?></div>
 							<?php endif; // is_active_sidebar( 'footer-row-2-col-' . $i )
 						}
 					?>

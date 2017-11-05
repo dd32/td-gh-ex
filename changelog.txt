@@ -1,8 +1,26 @@
 == Changelog ==
 
+= 1.0.6
+* 11/5/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:11
+* Updated readme.txt file: fixed documentation link, version number, tested up to
+* Removed theme prefix from html5 and respond JS files
+* Removed commented code from customize/customizer.php
+* Removed comment-form and comment-list from add_theme_support('html5')
+* Escaped items in comments.php, template-functions.php, entry.php, feed.php, sidebar-footer.php
+* Changed ariel_custom_css function in template-functions.php to use wp_add_inline_style
+
+= 1.0.5
+* 10/29/2017
+* Added credits for Merriweather and Source Sans Pro
+* Pingback link, added function ariel_pingback_header
+* Added rtl-language-support, e-commerce tags to style file
+* Removed food-and-drink, photography tags from style file
+
 = 1.0.4 =
 * 10/20/2017
 * https://themes.trac.wordpress.org/ticket/47322#comment:2
+* Fix: Parse error functions.php on line 32
 
 = 1.0.3 =
 * 10/13/2017

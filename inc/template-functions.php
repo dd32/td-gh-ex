@@ -17,13 +17,13 @@
 function ariel_custom_css() {
 	$ariel_advanced_css = ariel_get_option( 'ariel_advanced_css' );
 	if ( $ariel_advanced_css != '' ) {
-		echo '<!-- Custom CSS -->';
+		$output = '<!-- Custom CSS -->';
 		$output = "<style>" . wp_strip_all_tags( $ariel_advanced_css ) . "</style>";
-		echo $output;
-		echo '<!-- /Custom CSS -->';
+		$output = '<!-- /Custom CSS -->';
+        wp_add_inline_style( 'ariel-style', $custom_css );
 	}
 }
-add_action( 'wp_head', 'ariel_custom_css', 99 );
+add_action( 'wp_enqueue_scripts', 'ariel_custom_css' );
 
 if ( ! function_exists( 'ariel_show_custom_css_field' ) ) :
 /**
@@ -89,7 +89,7 @@ function ariel_default_nav() {
 			$current_class = '';
 		}
 
-		echo "<li class='page_item $menu_class $current_class'><a href='$menu_link'>$menu_name</a></li>";
+        echo "<li class='page_item ".esc_attr($menu_class)." $current_class'><a href='".esc_url($menu_link)."'>".esc_html($menu_name)."</a></li>";
 	}
 	echo '</ul>';
 	echo '</div>';

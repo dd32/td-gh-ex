@@ -2,11 +2,11 @@
 
 Author: LyraThemes www.lyrathemes.com
 Requires at least: WordPress 4.5
-Tested up to: WordPress 4.8+
-Version: 1.0.4
+Tested up to: WordPress 4.8.3
+Version: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
-Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, food-and-drink
+Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, rtl-language-support, e-commerce
 
 == Description ==
 
@@ -16,7 +16,7 @@ and suitable for all kinds of topics such as lifestyle, personal, food, fashion,
 Elegance meets simplicity in this professionally designed and masterfully crafted powerful blogging theme.
 
 For upgrades and a complete list of features, go to https://www.lyrathemes.com/ariel/
-For a detailed documentation, please go to https://www.lyrathemes.com/documentation/ariel.pdf
+For a detailed documentation, please go to https://www.lyrathemes.com/documentation/
 For support: support@lyrathemes.com or https://www.lyrathemes.com/support
 
 

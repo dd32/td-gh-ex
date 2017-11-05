@@ -563,21 +563,7 @@ function ariel_customizer_fields( $fields ) {
 			),
 		)
 	);
-	/* $fields[] = array(
-		'type'        => 'toggle',
-		'settings'    => 'ariel_blog_feed_tag_show',
-		'label'       => esc_html__( 'Show Tags?', 'ariel' ),
-		'section'     => 'ariel_section_blog_feed',
-		'priority'    => 6,
-		'default'     => $ariel_defaults['ariel_blog_feed_tag_show'],
-		'active_callback'  => array(
-			array(
-				'setting'  => 'ariel_blog_feed_meta_show',
-				'operator' => '==',
-				'value'    => '1',
-			),
-		)
-	);*/
+	
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_blog_feed_sep1',

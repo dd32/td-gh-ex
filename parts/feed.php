@@ -20,8 +20,8 @@ $main_class = 'col-md-9';
 				<?php elseif ( is_search() ) : ?>
 					<h2 class="page-title"><?php esc_html_e( 'Search Results', 'ariel' ); ?></h2>
 				<?php else : ?>
-					<h2 class="page-title"><?php echo get_the_archive_title(); ?></h2>
-					<?php echo get_the_archive_description(); ?>
+					<h2 class="page-title"><?php echo esc_html( get_the_archive_title() ); ?></h2>
+					<?php echo esc_html ( get_the_archive_description() ); ?>
 				<?php endif; ?>
 
 				<?php

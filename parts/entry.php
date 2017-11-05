@@ -110,7 +110,7 @@ endif; // $jetpack_activated
 				$show_tags = ariel_toggle_entry_meta( $ariel_blog_feed_tag_show, $ariel_posts_tags_show );
 
 				if ( $show_tags && has_tag() && get_post_type() != 'page' ) : ?>
-					<div class="<?php echo $entry_footer_class; ?>">
+					<div class="<?php echo esc_attr($entry_footer_class); ?>">
 						<h5><?php esc_html_e( 'Tags', 'ariel' ); ?></h5>
 						<div class="entry-tags">
 							<?php echo get_the_tag_list(); ?>
@@ -126,7 +126,7 @@ endif; // $jetpack_activated
 				$show_categories = ariel_toggle_entry_meta( $ariel_blog_feed_category_show, $ariel_posts_category_show );
 
 				if ( $show_categories && get_post_type() != 'page' ) : ?>
-					<div class="<?php echo $entry_footer_class; ?>">
+					<div class="<?php echo esc_attr($entry_footer_class); ?>">
 						<h5><?php esc_html_e( 'Filed Under', 'ariel' ); ?></h5>
 						<div class="entry-filed"><?php the_category( ', ' ); ?></div>
 					</div>
@@ -151,7 +151,7 @@ endif; // $jetpack_activated
 
 				<div class="entry-author">
 					<div class="entry-author-thumb">
-						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
+						<a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>">
 							<?php echo get_avatar( get_the_author_meta( 'ID' ), 102 ); ?>
 						</a>
 					</div>
