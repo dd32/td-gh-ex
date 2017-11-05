@@ -35,7 +35,7 @@
       color: $primary-color;
       &.btn {
         background: transparent;
-        border-color: $grey-light;
+        border-color: $primary-color;
       }
     }
   }
@@ -50,17 +50,22 @@
     }
   }
 
+  label {
+    color: $primary-color;
+  }
   .czr-form {
     .form-group label {
        color: $primary-color;
     }
-     .form-group.in-focus label {
-       color: $secondary-color-light;
-     }
-     .form-control {
-       color: $primary-color;
-       border-color: $primary-color;
-     }
+    .form-group.in-focus label {
+      color: $secondary-color-light;
+    }
+
+    input:not([type='submit']):not([type='button']):not([type='number']):not([type='checkbox']):not([type='radio']), textarea,
+    .form-control {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
   }
 }
 
@@ -85,27 +90,28 @@
 
     @at-root .footer__wrapper .widget > h5  { margin-bottom: $base-line-height; }
     @at-root .footer__wrapper .textwidget   { width:90% }
-    @at-root .footer__wrapper .about {
-      position:relative;
-      p {
-        display:inline-block;
-        position:relative;
-        width:80%;
-        float:left;
-        margin:0;
-      }
-      .branding__logo {
-        margin-right: $base-line-height*2;
-        float:left;
-        width:auto;
-        position:relative;
-        display:inline-block;
-        max-width:100px;
-        img {
-          max-height:60px;
-        }
-      }//.branding__logo
-    }//.about
+
+  //  @at-root .footer__wrapper .about {
+  //    position:relative;
+  //  p {
+  //    display:inline-block;
+  //    position:relative;
+  //    width:80%;
+  //    float:left;
+  //    margin:0;
+  //  }
+  //  .branding__logo {
+  //    margin-right: $base-line-height*2;
+  //    float:left;
+  //    width:auto;
+  //    position:relative;
+  //    display:inline-block;
+  //    max-width:100px;
+  //    img {
+  //      max-height:60px;
+  //    }
+  //  }//.branding__logo
+  //}//.about
 
     @at-root .footer__wrapper .widget-contact-info-content {
       p  {
@@ -113,6 +119,12 @@
       }
     }
 
+    .widget {
+      margin-bottom: $base-line-height*2;
+      li:not(:last-of-type) {
+        margin-bottom: $base-line-height/2
+      }
+    }
 
     @include media-breakpoint-down(md) {
       @at-root .footer__wrapper .widget  { padding: $base-line-height;  }
@@ -133,24 +145,28 @@
         color: $grey;
         vertical-align: middle;
         display: inline-block;
-        line-height: 2em;
+        line-height: 1.6em;
         p {
           margin: 0
         }
+        .czr-credits { font-size: 0.7rem; margin-top: 0.5rem; }
       }
-
+      .footer__credits { font-size: 0.82rem; }
       .footer__credits,
       .social-links {
         margin:1em 0;
       }
     }
+    @include media-breakpoint-down(xs) {
+      @at-root .colophon__row  { text-align: center; }
+    }
   }//.colophon__row
 }//.footer__wrapper
 
 
-/* Welcome Note
+/* FRONT NOTIFICATIONS
 /* ------------------------------------ */
-#bottom-welcome-note {
+#bottom-front-notification {
     bottom: -100%;
     background-color: rgba(0, 0, 0, 0.85);
     padding: 20px 0;
@@ -168,28 +184,28 @@
     transition: all 0.45s ease-in-out;
     font-size: 1.25em
 }
-#bottom-welcome-note h2 {
+#bottom-front-notification h2 {
   font-size: 1.5em;
   line-height: 1.6em;
   color: #fff;
   margin-bottom: 15px;
 }
-#bottom-welcome-note a {
+#bottom-front-notification a {
   color: #fff;
   text-decoration: underline;
 }
-#bottom-welcome-note p { line-height: 2em;}
-#bottom-welcome-note .note-content {
+#bottom-front-notification p { line-height: 2em;}
+#bottom-front-notification .note-content {
   display: inline-block;
   line-height: 20px;
   width: 80%;
 }
-#bottom-welcome-note .fa:before {
+#bottom-front-notification .fa:before {
   top: 2px;
   position: relative;
   padding-left: 2px;
 }
-#bottom-welcome-note .close-note {
+#bottom-front-notification .close-note {
     position: absolute;
     top: 10px;
     right: 25px;

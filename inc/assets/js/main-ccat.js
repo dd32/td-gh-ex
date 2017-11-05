@@ -79,17 +79,17 @@ var czrapp = czrapp || {};
 
             console.log.apply( console, czrapp._prettyfy( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
       };
-      czrapp.doAjax = function( query ) {
-            query = query || ( _.isObject( query ) ? query : {} );
+      czrapp.doAjax = function( queryParams ) {
+            queryParams = queryParams || ( _.isObject( queryParams ) ? queryParams : {} );
 
-            var ajaxUrl = czrapp.localized.ajaxUrl,
+            var ajaxUrl = queryParams.ajaxUrl || czrapp.localized.ajaxUrl,//the ajaxUrl can be specified when invoking doAjax
                 nonce = czrapp.localized.frontNonce,//{ 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) },
                 dfd = $.Deferred(),
                 _query_ = _.extend( {
                             action : '',
                             withNonce : false
                       },
-                      query
+                      queryParams
                 );
             if ( "https:" == document.location.protocol ) {
                   ajaxUrl = ajaxUrl.replace( "http://", "https://" );
@@ -655,6 +655,52 @@ var czrapp = czrapp || {};
               var self = this;
               setTimeout( function(){ self.emit('centerImages'); }, delay || 300 );
             },
+
+            centerInfinity : function() {
+                  var centerInfiniteImagesClassicStyle = function( collection, _container ) {
+                        var   $_container = $(_container);
+
+                        if ( 'object' !== typeof collection || 1 > $_container.length) {
+                              return;
+                        }
+                        _.each( collection, function( elementSelector ) {
+                              var $_img = $(  elementSelector + ' .thumb-wrapper', $_container ).centerImages( {
+                                    enableCentering : 1 == czrapp.localized.centerAllImg,
+                                    enableGoldenRatio : false,
+                                    disableGRUnder : 0,//<= don't disable golden ratio when responsive
+                                    oncustom : [ 'simple_load']
+                              }).find( 'img' );
+
+                              if ( $_img.length < 1 ) {
+                                    $_img = $( elementSelector + ' .tc-rectangular-thumb',  $_container ).centerImages( {
+                                          enableCentering : 1 == czrapp.localized.centerAllImg,
+                                          enableGoldenRatio : true,
+                                          goldenRatioVal : czrapp.localized.goldenRatio || 1.618,
+                                          disableGRUnder : 0,//<= don't disable golden ratio when responsive
+                                          oncustom : [ 'simple_load']
+                                    }).find( 'img' );
+                              }
+                              if ( $_img.length < 1 ) {
+                                    $_img = $( elementSelector + ' .tc-grid-figure', $_container ).centerImages( {
+                                          enableCentering : 1 == czrapp.localized.centerAllImg,
+                                          oncustom : [ 'simple_load'],
+                                          enableGoldenRatio : true,
+                                          goldenRatioVal : czrapp.localized.goldenRatio || 1.618,
+                                          goldenRatioLimitHeightTo : czrapp.localized.gridGoldenRatioLimit || 350
+                                    }).find( 'img' );
+                              }
+                              czrapp.methods.Base.triggerSimpleLoad( $_img );
+                        });
+                  };//end centerInfiniteImagesClassicStyle
+                  czrapp.$_body.on( 'post-load', function( e, response ) {
+                        if ( 'success' == response.type && response.collection && response.container ) {
+                              centerInfiniteImagesClassicStyle(
+                                  response.collection,
+                                  '#'+response.container //_container
+                              );
+                        }
+                  } );
+            },
             imgSmartLoad : function() {
               var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
                   _where           = TCParams.imgSmartLoadOpts.parentSelectors.join();
@@ -729,7 +775,7 @@ var czrapp = czrapp || {};
                   $( this ).centerImages( {
                     enableCentering : 1 == TCParams.centerSliderImg,
                     imgSel : '.czr-item .carousel-image img',
-                    oncustom : ['customizr.slid', 'simple_load'],
+                    oncustom : ['customizr.slid', 'simple_load', 'smartload'],
                     defaultCSSVal : { width : '100%' , height : 'auto' },
                     useImgAttr : true
                   });
@@ -802,12 +848,106 @@ var czrapp = czrapp || {};
 
 
             fireSliders : function(name, delay, hover) {
-              var _name   = name || TCParams.SliderName,
-                  _delay  = delay || TCParams.SliderDelay;
-                  _hover  = hover || TCParams.SliderHover;
+              var self = this,
+                  _name   = name || TCParams.SliderName,
+                  _delay  = delay || TCParams.SliderDelay,
+                  _hover  = hover || TCParams.SliderHover,
+                  _cellSelector = '.czr-item',
+                  _cssLoaderClass = 'tc-css-loader',
+                  _css_loader = '<div class="' + _cssLoaderClass + ' tc-mr-loader" style="display:none"><div></div><div></div><div></div></div>';
 
-              if ( 0 === _name.length )
+              if ( 0 === _name.length || 1 > self.$_sliders.length )
                 return;
+              if ( czrapp.localized.imgSmartLoadsForSliders ) {
+                    self.$_sliders.addClass('disable-transitions-for-smartload');
+                    self.$_sliders.find( _cellSelector + '.active').imgSmartLoad().data( 'czr_smartLoaded', true );
+
+                    var _maybeRemoveLoader = function( $_cell ) {
+                          $_cell.find('.czr-css-loader').fadeOut( {
+                                duration: 'fast',
+                                done : function() { $(this).remove();}
+                          } );
+                    };
+
+
+                    var _smartLoadCellImg = function( _event_ ) {
+                          _event_ = _event_ || 'czr-smartloaded';
+                          var $_cell = this;
+                          if ( 1 > $_cell.find('img[data-src], img[data-smartload]').length )
+                            return;
+                          if ( ! $_cell.data( 'czr_smartLoaded' ) ) {
+                                if ( 1 > $_cell.find('.czr-css-loader').length ) {
+                                      $_cell.append( _css_loader ).find('.czr-css-loader').fadeIn( 'slow' );
+                                }
+                                $_cell.imgSmartLoad().data( 'czr_smartLoaded', true ).addClass( _event_ );
+                                $_cell.data( 'czr_loader_timer' , $.Deferred( function() {
+                                      var self = this;
+                                      _.delay( function() {
+                                            self.resolve();
+                                      }, 2000 );
+                                      return this.promise();
+                                }) );
+                                $_cell.data( 'czr_loader_timer' ).done( function() {
+                                      _maybeRemoveLoader( $_cell );
+                                });
+                          }
+                    };
+                    self.$_sliders.data( 'czr_smartload_scheduled', $.Deferred().done( function() {
+                          self.$_sliders.addClass('czr-smartload-scheduled');
+                    }) );
+                    var _isSliderDataSetup = function() {
+                          return 1 <= self.$_sliders.length && ! _.isUndefined( self.$_sliders.data( 'czr_smartload_scheduled' ) );
+                    };
+                    self.$_sliders.data( 'czr_schedule_select',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                self.$_sliders.parent().one( 'customizr.slide click' , function( event ) {
+                                      dfd.resolve();
+                                } );
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-smartloaded-on-select' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );//data( 'czr_schedule_select' )
+                    self.$_sliders.data( 'czr_schedule_scroll_resize',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                czrapp.$_window.one( 'scroll resize', function() {
+                                      _.delay( function() { dfd.resolve(); }, 5000 );
+                                });
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-smartloaded-on-scroll' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );//data( 'czr_schedule_scroll_resize' )
+                    self.$_sliders.data( 'czr_schedule_autoload',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                _.delay( function() { dfd.resolve(); }, 10000 );
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-auto-smartloaded' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );
+                    self.$_sliders.on( 'smartload', _cellSelector , function() {
+                          _maybeRemoveLoader( $(this) );
+                    });
+              }//if czrapp.localized.imgSmartLoadsForSliders
 
               if ( 0 !== _delay.length && ! _hover ) {
                 this.$_sliders.czrCarousel({
@@ -970,17 +1110,25 @@ var czrapp = czrapp || {};
               });
             },
             widgetsHoverActions : function() {
-              $(".widget-front, article").hover(function () {
-                  $(this).addClass("hover");
-              }, function () {
-                  $(this).removeClass("hover");
-              });
+              czrapp.$_body.on( 'mouseenter mouseleave', '.widget-front, article', _toggleThisHoverClass );
 
-              $(".widget li").hover(function () {
-                  $(this).addClass("on");
-              }, function () {
-                  $(this).removeClass("on");
-              });
+              czrapp.$_body.on( 'mouseenter mouseleave', '.widget li', _toggleThisOnClass );
+
+              function _toggleThisHoverClass( evt ) {
+                    _toggleElementClassOnHover( $(this), 'hover', evt );
+              }
+
+              function _toggleThisOnClass( evt ) {
+                    _toggleElementClassOnHover( $(this), 'on', evt );
+              }
+              
+              function _toggleElementClassOnHover( $_el, _class, _evt ) {
+                    if ( 'mouseenter' == _evt.type )
+                       $_el.addClass( _class );
+                    else if ( 'mouseleave' == _evt.type )
+                       $_el.removeClass( _class );
+              }
+
             },
             attachmentsFadeEffect : function() {
               $("article.attachment img").delay(500).animate({
@@ -1045,7 +1193,7 @@ var czrapp = czrapp || {};
             dropdownMenuEventsHandler : function() {
               var $dropdown_ahrefs    = $('.tc-open-on-click .menu-item.menu-item-has-children > a[href!="#"]'),
                   $dropdown_submenus  = $('.tc-open-on-click .dropdown .dropdown-submenu');
-              $dropdown_ahrefs.on('tap click', function(evt) {
+              $dropdown_ahrefs.on('click', function(evt) {
                 if ( ( $(this).next('.dropdown-menu').css('visibility') != 'hidden' &&
                         $(this).next('.dropdown-menu').is(':visible')  &&
                         ! $(this).parent().hasClass('dropdown-submenu') ) ||
@@ -1056,7 +1204,7 @@ var czrapp = czrapp || {};
               $dropdown_submenus.each(function(){
                 var $parent = $(this),
                     $children = $parent.children('[data-toggle="dropdown"]');
-                $children.on('tap click', function(){
+                $children.on('click', function(){
                     var submenu   = $(this).next('.dropdown-menu'),
                         openthis  = false;
                     if ( ! $parent.hasClass('open') ) {
@@ -1190,6 +1338,148 @@ var czrapp = czrapp || {};
       $.extend( czrapp.methods.UserXP , _methods );
 })(jQuery, czrapp);
 var czrapp = czrapp || {};
+(function($, czrapp) {
+  var _methods =  {
+        mayBePrintFrontNote : function() {
+              if ( czrapp.localized && _.isUndefined( czrapp.localized.frontNotifications ) )
+                return;
+              if ( _.isEmpty( czrapp.localized.frontNotifications ) || ! _.isObject( czrapp.localized.frontNotifications ) )
+                return;
+
+              var self = this,
+                  _hasCandidate = false;
+              czrapp.frontNotificationVisible = new czrapp.Value( false );
+              czrapp.frontNotificationRendered = false;
+              _.each( czrapp.localized.frontNotifications, function( _notification, _id ) {
+                    if ( ! _.isUndefined( czrapp.frontNotification ) )
+                      return;
+
+                    if ( ! _.isObject( _notification ) )
+                      return;
+                    _notification = _.extend( {
+                          enabled : false,
+                          content : '',
+                          dismissAction : '',
+                          ajaxUrl : czrapp.localized.ajaxUrl
+                    }, _notification );
+                    if ( _notification.enabled ) {
+                          czrapp.frontNotification = new czrapp.Value( _notification );
+                    }
+
+              });
+              czrapp.frontNotificationVisible.bind( function( visible ) {
+                      return self._toggleNotification( visible );//returns a promise()
+              }, { deferred : true } );
+
+              czrapp.frontNotificationVisible( true );
+        },//mayBePrintFrontNote()
+
+
+        _toggleNotification : function( visible ) {
+              var self = this,
+                  dfd = $.Deferred();
+
+              if ( czrapp.frontNotificationRendered && czrapp.frontNotificationVisible() )
+                return dfd.resolve().promise();
+
+              var _hideAndDestroy = function() {
+                    return $.Deferred( function() {
+                          var _dfd_ = this,
+                              $notifWrap = $('#bottom-front-notification', '#footer');
+                          if ( 1 == $notifWrap.length ) {
+                                $notifWrap.css( { bottom : '-100%' } );
+                                _.delay( function() {
+                                      $notifWrap.remove();
+                                      czrapp.$_body.find('#tc-footer-btt-wrapper').fadeIn('slow');
+                                      czrapp.frontNotificationRendered = false;
+                                      _dfd_.resolve();
+                                }, 450 );// consistent with css transition: all 0.45s ease-in-out;
+                          } else {
+                              _dfd_.resolve();
+                          }
+                    });
+              };
+
+              var _renderAndSetup = function() {
+                    var _dfd_ = $.Deferred(),
+                        $footer = $('#footer', '#tc-page-wrap');
+                    if ( _.isUndefined( czrapp.frontNotification ) || ! _.isFunction( czrapp.frontNotification ) || ! _.isObject( czrapp.frontNotification() ) )
+                        return _dfd_.resolve().promise();
+                    $.Deferred( function() {
+                          var dfd = this,
+                              _notifHtml = czrapp.frontNotification().content,
+                              _wrapHtml = [
+                                    '<div id="bottom-front-notification">',
+                                      '<div class="note-content">',
+                                        '<span class="fa fa-times close-note" title="' + czrapp.localized.i18n['Permanently dismiss'] + '"></span>',
+                                      '</div>',
+                                    '</div>'
+                              ].join('');
+
+                          if ( 1 == $footer.length && ! _.isEmpty( _notifHtml ) ) {
+                                $.when( $footer.append( _wrapHtml ) ).done( function() {
+                                    $(this).find( '.note-content').prepend( _notifHtml );
+                                    czrapp.$_body.find('#tc-footer-btt-wrapper').fadeOut('slow');
+                                    czrapp.frontNotificationRendered = true;
+                                });
+
+                                _.delay( function() {
+                                      $('#bottom-front-notification', '#footer').css( { bottom : 0 } );
+                                      dfd.resolve();
+                                }, 500 );
+                          } else {
+                                dfd.resolve();
+                          }
+                    }).done( function() {
+                          czrapp.setupDOMListeners(
+                                [
+                                      {
+                                            trigger   : 'click keydown',
+                                            selector  : '.close-note',
+                                            actions   : function() {
+                                                  czrapp.frontNotificationVisible( false ).done( function() {
+                                                        czrapp.doAjax( {
+                                                              action: czrapp.frontNotification().dismissAction,
+                                                              withNonce : true,
+                                                              ajaxUrl : czrapp.frontNotification().ajaxUrl
+                                                        });
+                                                  });
+                                            }
+                                      }
+                                ],//actions to execute
+                                { dom_el: $footer },//dom scope
+                                self //instance where to look for the cb methods
+                          );
+                          _dfd_.resolve();
+                    });
+                    return _dfd_.promise();
+              };//renderAndSetup
+
+              if ( visible ) {
+                    _.delay( function() {
+                          _renderAndSetup().always( function() {
+                                dfd.resolve();
+                          });
+                    }, 3000 );
+              } else {
+                    _hideAndDestroy().done( function() {
+                          czrapp.frontNotificationVisible( false );//should be already false
+                          dfd.resolve();
+                    });
+              }
+              _.delay( function() {
+                          czrapp.frontNotificationVisible( false );
+                    },
+                    45000
+              );
+              return dfd.promise();
+        }//_toggleNotification
+  };//_methods{}
+
+  czrapp.methods.UserXP = czrapp.methods.UserXP || {};
+  $.extend( czrapp.methods.UserXP , _methods );
+
+})(jQuery, czrapp);var czrapp = czrapp || {};
 (function($, czrapp) {
       var _methods =  {
           initOnDomReady : function() {
@@ -2025,6 +2315,7 @@ var czrapp = czrapp || {};
                       ctor : czrapp.Base.extend( czrapp.methods.JQPlugins ),
                       ready : [
                             'centerImagesWithDelay',
+                            'centerInfinity',
                             'imgSmartLoad',
                             'dropCaps',
                             'extLinks',
@@ -2064,7 +2355,9 @@ var czrapp = czrapp || {};
                             'dynSidebarReorder',
                             'dropdownMenuEventsHandler',
                             'menuButtonHover',
-                            'secondMenuRespActions'
+                            'secondMenuRespActions',
+
+                            'mayBePrintFrontNote'
                       ]
                 },
                 stickyHeader : {

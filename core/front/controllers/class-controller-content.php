@@ -41,6 +41,11 @@ if ( ! class_exists( 'CZR_controller_content' ) ) :
       return apply_filters( 'regular_heading',  $post_heading );
     }
 
+    function czr_fn_display_view_regular_attachment_image_heading() {
+      $attachment_image_heading = apply_filters( 'czr_display_attachment_image_heading', $this -> czr_fn_display_view_attachment_image() );
+      return apply_filters( 'regular_heading',  $attachment_image_heading );
+    }
+
 
     function czr_fn_display_view_singular_headings() {
       return $this -> czr_fn_display_view_post() || $this -> czr_fn_display_view_attachment() || ( $this -> czr_fn_display_view_page() && ! is_front_page() );
@@ -60,10 +65,6 @@ if ( ! class_exists( 'CZR_controller_content' ) ) :
       return is_single();
     }
 
-
-    function czr_fn_display_view_post_list_full() {
-      return apply_filters( 'czr_display_view_post_list_full', czr_fn_is_list_of_posts() && 'full' == esc_attr( czr_fn_opt( 'tc_post_list_grid') ) );
-    }
 
     function czr_fn_display_view_post_list() {
       return apply_filters( 'czr_display_view_post_list', czr_fn_is_list_of_posts() && 'alternate' == esc_attr( czr_fn_opt( 'tc_post_list_grid') ) );
@@ -121,13 +122,13 @@ if ( ! class_exists( 'CZR_controller_content' ) ) :
       return true;
     }
 
-    function czr_fn_display_view_attachment() {
-      return apply_filters( 'czr_show_attachment_content', czr_fn_is_single_attachment() );
+    function czr_fn_display_view_attachment_image() {
+      return apply_filters( 'czr_show_attachment_content', czr_fn_is_single_attachment_image() );
     }
 
 
     function czr_fn_display_view_singular_article() {
-      return $this -> czr_fn_display_view_post() || $this -> czr_fn_display_view_page() || $this -> czr_fn_display_view_attachment() ;
+      return $this -> czr_fn_display_view_post() || $this -> czr_fn_display_view_page() || $this -> czr_fn_display_view_attachment_image() ;
     }
 
     function czr_fn_display_view_post_list_title() {
@@ -260,16 +261,17 @@ if ( ! class_exists( 'CZR_controller_content' ) ) :
         $_bool = ! in_the_loop() ? $_bool && ! czr_fn_is_real_home() && is_singular() : $_bool;
 
         //2) if user has enabled comment for this specific post / page => true
-        //@todo contx : update default value user's value)
-        $_bool = ( 'closed' != $post -> comment_status ) ? $_bool : false;
+        $_bool = ( 'closed' != $post -> comment_status ) ? true : $_bool;
 
         //3) check global user options for pages and posts
-        if ( 'page' == get_post_type() )
+        if ( 'page' == get_post_type() ) {
           $_bool = 1 == esc_attr( czr_fn_opt( 'tc_page_comments' )) && $_bool;
-        else
+        } else {
           $_bool = 1 == esc_attr( czr_fn_opt( 'tc_post_comments' )) && $_bool;
-      } else
+        }
+      } else {
         $_bool = false;
+      }
 
       return apply_filters( 'czr_are_comments_enabled', $_bool );
     }

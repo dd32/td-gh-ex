@@ -1,14 +1,6 @@
 .tc-content-inner { max-width: 100% }
-/*@media (min-width: 668px)  {
-  .single-post .sidebar { padding:0; }
-}
-@media screen and (min-width: 480px) and (max-width: 667px) {
-  .article-container {
-    padding: 0 $base-line-height*2;
-  }
-}*/
 
-/* Regular headings */
+// Regular headings
 
 .archive-header .archive-title,
 .entry-header .entry-title {
@@ -20,7 +12,7 @@
   @extend .service-font;
   color: $grey;
   position: relative;
-  margin: 0 0 3em 0;
+  margin: 0 0 2em 0;
   a {
       @extend .semi-bold;
   }
@@ -44,6 +36,19 @@
 .archive-header .featurette-divider {
   margin-top: 1.8*$base-line-height;
 }
+
+//singular not full-width thumbnail vertical spacing depending on the location
+//see #1127
+//only margin-bottom if the thumb is shown before the title (and metas)
+.tc-singular-thumbnail-wrapper.__before_regular_heading_title {
+  margin-bottom: ms(-1); //in our ms configuration is: 0.83333em
+}
+
+//same margin top and bottom if the thumb is shown after the title (and metas)
+//n.b. remember that not floating block element's margins merges
+.tc-singular-thumbnail-wrapper.__after_regular_heading_title {
+  margin: ms(-1) 0; //in our ms configuration is: 0.83333em 0
+}
 /* end regular headings */
 
 
@@ -55,8 +60,11 @@ article .entry-content {
   font-size: 1.2em;
   line-height: 1.65em;
   color:$post-entry;
-  a:not(.btn):not(.button):not(.remove) {
+  a {
     text-decoration: underline;
+  }
+  a.btn, a.button, a.remove {
+    text-decoration: none;
   }
 }
 
@@ -147,15 +155,12 @@ article .entry-content {
   }
 }
 .page-breadcrumbs {
-  margin-top: 2*$base-line-height;
-  margin-bottom: 2*$base-line-height;
+  margin-top: 2em;
+  margin-bottom: 2em;
   @extend .demi-small;
 }
 
 
-.post-comments {
-  .tabs a { font-size: ms(1); }
-}
 .post-content {
   color: $black;
 }
@@ -347,16 +352,6 @@ section[class^="post-"] {
 }
 
 
-.single-post-info {
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-}
-
-
-
-
-
 section.post-related-articles {
     margin-top: 0;
 
@@ -428,7 +423,7 @@ section.post-related-articles {
   font-family: $serviceFont;
   @extend .bold;
   @extend .caps;
-  color: $black;
+  color: $grey-mid-light;
   @extend .letter-spacing-2;
   &:hover { color: $grey; }
   span:last-of-type {
@@ -459,6 +454,9 @@ section.post-related-articles {
 
 
 /* Comments */
+.post-comments {
+  .tabs a { font-size: ms(1); }
+}
 .comment-section {
   .col-avatar {
     @if ( true == $is_rtl ) {
@@ -483,7 +481,11 @@ section.post-related-articles {
     }
     width: 100%
   }
-  @at-root .comment-content p { color: $grey-dark }
+  @at-root .comment-content {
+    font-size: 1.15em;
+    color: $post-entry;
+    //p { color: $grey-dark }
+  }
   @at-root .comment-meta {
     @at-root .comment-author {
       display: inline-block;
@@ -498,7 +500,7 @@ section.post-related-articles {
         float: left;
       }
       @else {
-        float: left;
+        float: right;
       }
       @extend .small;
       @extend .service-font;
@@ -507,6 +509,7 @@ section.post-related-articles {
   }
   @at-root .comment-link {
     color: $black;
+    padding-bottom: 2px;
     @extend .semi-bold;
     @include underlined_nocolor( 2px );
   }
@@ -591,7 +594,12 @@ section.post-content { margin-top:0; }
 .wp-caption-text {
   @extend .small;
   color: $grey;
-  text-align: left;
+  @if ( true == $is_rtl ) {
+    text-align: right;
+  }
+  @else {
+    text-align: left;
+  }
   margin: $base-line-height 0;
   padding: 0;
   &::before {
@@ -627,5 +635,28 @@ section.post-content { margin-top:0; }
     span::after, span::before {
       background-color: $black;
     }
+  }
+  //lighter for entry-footer links like author, published, updated
+  .entry-footer &:not(.btn) {
+    color: $grey-mid-light;
+  }
+}
+//attachment image
+//navigation
+.attachment-image-navigation {
+  margin: 2em 0 1em;
+  //align icon edges
+  .icn-left-open-big:before {
+    margin-left: -.2em;
+  }
+  .icn-right-open-big:before {
+    margin-right: -.2em;
+  }
+}
+//center the figure = image + caption
+.attachment-image-figure {
+  margin: auto;
+  .entry-media__holder {
+    display: inline-block;
   }
 }

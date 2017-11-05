@@ -76,8 +76,15 @@ strong {
 
 dl dt {
   overflow: hidden;
-  clear: left;
-  text-align: right;
+
+  @if ( true == $is_rtl ) {
+    clear: right;
+    text-align: left;
+  }
+  @else {
+    clear: left;
+    text-align: right;
+  }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -151,11 +158,6 @@ p {
   word-wrap: break-word;
 }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 3000px $grey-light inset !important;
-}
 
 embed, iframe, object, video {
   max-width: 100%;

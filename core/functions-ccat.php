@@ -310,7 +310,7 @@ if ( ! function_exists( 'czr_fn_maybe_register' ) ) {
 *
 */
 /**
-* hook : after_setup_theme
+* hook : 'wp_head'
 * @package Customizr
 * @since Customizr 3.3.0
 */
@@ -341,25 +341,25 @@ function czr_fn_get_global_layout() {
 }
 
 /**
-* This function returns the CSS class to apply to content's element based on the layout
-* @return array
+* This function returns the current context content breadth
+* @return string
 *
 *
 * @package Customizr
 * @since Customizr 4.0
 */
-function czr_fn_get_in_content_width_class() {
-  $global_sidebar_layout                 = czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
+function czr_fn_get_content_breadth() {
+  $sidebar_layout                 = czr_fn_get_layout( czr_fn_get_id() , 'sidebar' );
 
-  switch ( $global_sidebar_layout ) {
-    case 'b': $_class = 'narrow';
+  switch ( $sidebar_layout ) {
+    case 'b': $content_breadth = 'narrow';
               break;
-    case 'f': $_class = 'full';
+    case 'f': $content_breadth = 'full';
               break;
-    default : $_class = 'semi-narrow';
+    default : $content_breadth = 'semi-narrow';
   }
 
-  return apply_filters( 'czr_in_content_width_class' , array( $_class ) );
+  return apply_filters( 'czr_content_breadth' , $content_breadth );
 }
 
 /**
@@ -403,10 +403,10 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       $is_singular_layout          = false;
 
 
-      if ( apply_filters( 'czr_is_post_layout', is_single( $post_id ), $post_id ) ) {
+      if ( apply_filters( 'czr_is_post_layout', is_single( $post_id ), $post_id ) || czr_fn_is_attachment_image() ) {
             $_czr_sidebar_default_layout  = esc_attr( czr_fn_opt('tc_sidebar_post_layout') );
             $is_singular_layout           = true;
-      } if ( apply_filters( 'czr_is_page_layout', is_page( $post_id ), $post_id ) ) {
+      } elseif ( apply_filters( 'czr_is_page_layout', is_page( $post_id ), $post_id ) ) {
             $_czr_sidebar_default_layout  = esc_attr( czr_fn_opt('tc_sidebar_page_layout') );
             $is_singular_layout           = true;
       }
@@ -424,13 +424,17 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       //The following lines set the post specific layout if any, and if not keeps the default layout previously defined
       $czr_specific_post_layout    = false;
 
-      //if we are displaying an attachement, we use the parent post/page layout
+      //if we are displaying an attachement, we use the parent post/page layout by default
+      //=> but if the attachment has a layout, it will win.
       if ( isset($post) && is_singular() && 'attachment' == $post->post_type ) {
-            $czr_specific_post_layout  = esc_attr( get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ) );
+            $czr_specific_post_layout  = esc_attr( get_post_meta( $post_id, $key = 'layout_key' , $single = true ) );
+            if ( ! $czr_specific_post_layout ) {
+                $czr_specific_post_layout  = esc_attr( get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ) );
+            }
       }
 
       //for a singular post or page OR for the posts page
-      elseif ( $is_singular_layout || is_singular() || $wp_query -> is_posts_page ) {
+      elseif ( $is_singular_layout || is_singular() || czr_fn_is_attachment_image() || $wp_query -> is_posts_page ) {
             $czr_specific_post_layout  = esc_attr( get_post_meta( $post_id, $key = 'layout_key' , $single = true ) );
       }
 
@@ -742,7 +746,36 @@ function czr_fn_get_logo_atts( $logo_type = '', $backward_compatibility = true )
 
 
 
+/**
+ * Check on if there's any header/sidenav menu location assigned
+ * Locations are:
+ * 1) primary navbar menu, or sidenav menu => 'main'
+ * 2) topbar menu => 'topbar'
+ * 2) secondary navbar menu => 'secondary'
+ * @return bool
+ */
+function czr_fn_is_there_any_visible_menu_location_assigned() {
 
+    $menu_locations = array(
+        //location => condition
+        'main'        => true,
+        'topbar'      => 1 == czr_fn_opt( 'tc_header_desktop_topbar' ),
+        'secondary'   => czr_fn_is_secondary_menu_enabled()
+    );
+
+    $menu_assigned = false;
+
+    foreach ( $menu_locations as $menu_location => $condition ) {
+        if ( ! ( $condition && has_nav_menu( $menu_location ) ) ) {
+            continue;
+        }
+
+        $menu_assigned = true;
+        break;
+    }
+
+    return $menu_assigned;
+}
 
 
 
@@ -820,17 +853,6 @@ VARIOUS QUERY HELPERS
 
 
 
-function czr_fn_is_list_of_posts() {
-    //must be archive or search result. Returns false if home is empty in options.
-    return apply_filters( 'czr_is_list_of_posts',
-      ! is_singular()
-      && ! is_404()
-      && ! czr_fn_is_home_empty()
-      && ! is_admin()
-    );
-}
-
-
 function czr_fn_get_query_context() {
     if ( is_page() )
         return 'page';
@@ -849,16 +871,21 @@ function czr_fn_is_single_post() {
     return apply_filters( 'czr_is_single_post', isset($post)
         && is_singular()
         && 'page' != $post -> post_type
-        && 'attachment' != $post -> post_type
+        && ! czr_fn_is_attachment_image()
         && ! czr_fn_is_home_empty()
         && ! czr_fn_is_real_home()
         );
 }
 
+function czr_fn_is_single_attachment_image() {
+    global $post;
+    return apply_filters( 'czr_is_single_attachment_image',
+        ! ( ! isset($post) || empty($post) || ! czr_fn_is_attachment_image() || !is_singular() ) );
+}
 
 function czr_fn_is_single_attachment() {
     global $post;
-    return apply_filters( 'czr_is_single_attacment',
+    return apply_filters( 'czr_is_single_attachment',
         ! ( ! isset($post) || empty($post) || 'attachment' != $post -> post_type || !is_singular() ) );
 }
 
@@ -1025,6 +1052,8 @@ function czr_fn_get_thumbnail_model( $args = array() ) {
     $args = wp_parse_args( $args, $defaults);
     extract( $args );
 
+    //czr_fn_has_thumb() checks if there is a thumbnail or an attachment img ( typically img embedded in single post ) that we can use
+    //=> the check on the attachement is done if true == czr_fn_opt( 'tc_post_list_use_attachment_as_thumb' )
     if ( ! czr_fn_has_thumb( $post_id, $custom_thumb_id ) ) {
       if ( ! $placeholder )
         return array();
@@ -1050,7 +1079,7 @@ function czr_fn_get_thumbnail_model( $args = array() ) {
       $enable_wp_responsive_imgs = is_null( $enable_wp_responsive_imgs ) ? 1 == czr_fn_opt('tc_resp_thumbs_img') : $enable_wp_responsive_imgs;
 
     //try to extract $_thumb_id and $_thumb_type
-    extract( czr_fn_get_thumb_info( $post_id, $custom_thumb_id ) );
+    extract( czr_fn_maybe_set_and_get_thumb_info( $post_id, $custom_thumb_id ) );
     if ( ! apply_filters( 'tc_has_thumb_info', isset($_thumb_id) && false != $_thumb_id && ! is_null($_thumb_id) ) )
       return array();
 
@@ -1065,7 +1094,11 @@ function czr_fn_get_thumbnail_model( $args = array() ) {
     if ( isset($image[3]) && false == $image[3] && 'tc_rectangular_size' == $tc_thumb_size )
       $tc_thumb_size          = 'slider';
 
-    $_img_attr['class']     = sprintf( 'attachment-%1$s tc-thumb-type-%2$s' , $tc_thumb_size , $_thumb_type );
+    $_img_attr['class']     = sprintf(
+      'attachment-%1$s tc-thumb-type-%2$s czr-img',
+      $tc_thumb_size ,
+      $_thumb_type
+    );
     //Add the style value
     $_style                 = apply_filters( 'czr_post_thumb_inline_style' , '', $image, $_filtered_thumb_size );
     if ( $_style )
@@ -1087,12 +1120,14 @@ function czr_fn_get_thumbnail_model( $args = array() ) {
       add_filter( 'wp_get_attachment_image_attributes', 'czr_fn_remove_srcset_attr' );
     }
     //get the thumb html
-    if ( is_null($custom_thumb_id) && has_post_thumbnail( $post_id ) )
+    if ( is_null($custom_thumb_id) && has_post_thumbnail( $post_id ) ) {
       //get_the_post_thumbnail( $post_id, $size, $attr )
       $tc_thumb = get_the_post_thumbnail( $post_id , $tc_thumb_size , $_img_attr);
-    else
+    }
+    else {
       //wp_get_attachment_image( $attachment_id, $size, $icon, $attr )
       $tc_thumb = wp_get_attachment_image( $_thumb_id, $tc_thumb_size, false, $_img_attr );
+    }
 
     //get height and width if not empty
     if ( ! empty($image[1]) && ! empty($image[2]) ) {
@@ -1116,7 +1151,7 @@ function czr_fn_get_thumbnail_model( $args = array() ) {
 * inside loop
 * @return array( "_thumb_id" , "_thumb_type" )
 */
-function czr_fn_get_thumb_info( $_post_id = null, $_thumb_id = null ) {
+function czr_fn_maybe_set_and_get_thumb_info( $_post_id = null, $_thumb_id = null ) {
     $_post_id     = is_null($_post_id) ? get_the_ID() : $_post_id;
     $_meta_thumb  = get_post_meta( $_post_id , 'tc-thumb-fld', true );
     //get_post_meta( $post_id, $key, $single );
@@ -1140,22 +1175,13 @@ function czr_fn_get_thumb_info( $_post_id = null, $_thumb_id = null ) {
 * EXPOSED HELPERS / SETTERS
 **************************/
 /*
-* @return string
-*/
-function czr_fn_get_single_thumbnail_position() {
-    $_exploded_location     = explode( '|', esc_attr( czr_fn_opt( 'tc_single_post_thumb_location' ) ) );
-    $_hook                  = isset( $_exploded_location[0] ) ? $_exploded_location[0] : '__before_content';
-    return $_hook;
-}
-
-/*
 * @return bool
 */
 function czr_fn_has_thumb( $_post_id = null , $_thumb_id = null ) {
     $_post_id  = is_null($_post_id) ? get_the_ID() : $_post_id;
 
     //try to extract (OVERWRITE) $_thumb_id and $_thumb_type
-    extract( czr_fn_get_thumb_info( $_post_id, $_thumb_id ) );
+    extract( czr_fn_maybe_set_and_get_thumb_info( $_post_id, $_thumb_id ) );
     return apply_filters( 'tc_has_thumb', wp_attachment_is_image($_thumb_id) && isset($_thumb_id) && false != $_thumb_id && ! empty($_thumb_id) );
 }
 
@@ -1323,12 +1349,24 @@ if ( ! function_exists( 'czr_fn_get_placeholder_thumb' ) ) {
     //make sure we did not lose the img_src
     if ( false == $_img_src )
       $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "/front/img/{$_requested_size}.png" );
-    return sprintf( '%1$s%2$s<img class="czr-img-placeholder" src="%3$s" alt="%4$s" data-czr-post-id="%5$s" />',
+
+    $attr = array(
+      'class'             => 'czr-img-placeholder',
+      'src'               => $_img_src,
+      'alt'               => trim( strip_tags( get_the_title() ) ),
+      'data-czr-post-id'  => $_unique_id,   
+    );
+
+    $attr = apply_filters( 'czr_placeholder_image_attributes', $attr );
+    $attr = array_filter( array_map( 'esc_attr', $attr ) );
+
+    return sprintf( '%1$s%2$s<img class="%3$s" src="%4$s" alt="%5$s" data-czr-post-id="%6$s" />',
       isset($_svg_placeholder) ? $_svg_placeholder : '',
       false !== $filter ? $filter : '',
-      $_img_src,
-      get_the_title(),
-      $_unique_id
+      isset( $attr[ 'class' ] ) ? $attr[ 'class' ] : '',
+      isset( $attr[ 'src' ] ) ? $attr[ 'src' ] : '',
+      isset( $attr[ 'alt' ] ) ? $attr[ 'alt' ] : '',
+      isset( $attr[ 'data-czr-post-id' ] ) ? $attr[ 'data-czr-post-id' ] : ''
     );
   }
 }
@@ -1361,7 +1399,7 @@ function czr_fn_remove_srcset_attr( $attr ) {
 if ( ! function_exists( 'czr_fn_darken_hex' ) ) {
    function czr_fn_darken_hex( $hex, $percent, $make_prop_value = true ) {
 
-      $hsl      = czr_fn_hex2hsl( $hex, true );
+      $hsl      = czr_fn_hex2hsl( $hex );
 
       $dark_hsl   = czr_fn_darken_hsl( $hsl, $percent );
 
@@ -1375,7 +1413,7 @@ if ( ! function_exists( 'czr_fn_lighten_hex' ) ) {
 
    function czr_fn_lighten_hex($hex, $percent, $make_prop_value = true) {
 
-      $hsl       = czr_fn_hex2hsl( $hex, true );
+      $hsl       = czr_fn_hex2hsl( $hex );
 
       $light_hsl   = czr_fn_lighten_hsl( $hsl, $percent );
 
@@ -1709,6 +1747,30 @@ if ( ! function_exists( 'czr_fn_hue2rgbtone' ) ) {
 
       return round( 255 * $_to_return );
    }
+}
+
+
+/* Returns the complementary hsl color
+/* ------------------------------------ */
+function czr_fn_rgb_invert( $rgb )  {
+   // Adjust Hue 180 degrees
+   //$hsl[0] += ($hsl[0]>180) ? -180:180;
+   $rgb_inverted =  array(
+      255 - $rgb[0],
+      255 - $rgb[1],
+      255 - $rgb[2]
+   );
+   
+   return $rgb_inverted;
+}
+
+/* Returns the complementary hsl color
+/* ------------------------------------ */
+function czr_fn_hex_invert( $hex, $make_prop_value = true )  {   
+   $rgb           = czr_fn_hex2rgb( $hex, $array = true );
+   $rgb_inverted  = czr_fn_rgb_invert( $rgb );
+
+   return czr_fn_rgb2hex( $rgb_inverted, $make_prop_value );
 }
 
 ?>

@@ -84,8 +84,8 @@ class CZR_featured_pages_model_class extends CZR_Model {
 
         $model['fps_text']              = is_array( $model['fps_text'] ) ? $model['fps_text'] : array();
         $model['fps_text']              = array_pad( $model['fps_text'], $model['fp_nb'], '' );
-
-        $model['element_class']         = $_center_imgs ? 'center-images-enabled' : 'center-images-disabled';
+        //force image centering
+        $model['element_class']         = 'center-images-enabled'; //$_center_imgs ? 'center-images-enabled' : 'center-images-disabled';
 
         //to transform the $model array items in object fields
         $this -> czr_fn_update( $model );
@@ -94,6 +94,8 @@ class CZR_featured_pages_model_class extends CZR_Model {
 
         return $model;
   }
+
+
 
 
   function czr_fn_get_the_featured_pages( $fp_nb, $fp_ids, $show_thumb ) {
@@ -126,7 +128,8 @@ class CZR_featured_pages_model_class extends CZR_Model {
           $customizr_link                 = '';
 
         if ( ! czr_fn_is_customizing() && is_user_logged_in() && current_user_can('edit_theme_options') ) {
-            $customizr_link              = sprintf( '<br/><a href="%1$s" title="%2$s" style="text-decoration:underline;font-weight:bold;padding-top: 1em;padding-top: 1em;display: inline-block;display: inline-block;text-transform:uppercase;">%3$s</a>',
+            $customizr_link              = sprintf( '<br/><a href="%1$s" title="%2$s" class="btn btn-edit" style="margin-top: 1em;
+    font-weight: bold;"><i class="icn-edit"></i>%3$s</a>',
                 czr_fn_get_customizer_url( array( 'control' => 'tc_featured_text_'.$fp_single_id, 'section' => 'frontpage_sec') ),
                 __( 'Customizer screen' , 'customizr' ),
                 __( 'Customize it now' , 'customizr' )
@@ -171,8 +174,7 @@ class CZR_featured_pages_model_class extends CZR_Model {
 
         //limit text to 200 car
           $default_fp_text_length         = apply_filters( 'czr_fp_text_length', $this->text_length, $fp_single_id, $featured_page_id );
-          $text                           = ( strlen($text) > $default_fp_text_length ) ? substr( $text , 0 , strpos( $text, ' ' , $default_fp_text_length) ). ' ...' : $text;
-
+          $text                           = czr_fn_text_truncate( $text, $default_fp_text_length, $more = '...', $strip_tags = false ); //tags already stripped
 
           if ( $show_thumb ) {
             //set the image : uses thumbnail if any then >> the first attached image then >> a holder script
@@ -245,6 +247,16 @@ class CZR_featured_pages_model_class extends CZR_Model {
           return false;
         if ( $autoadvance )
           next( $this -> featured_pages );
+
+        /*
+        * Allow img parsing
+        * E.g. for the smartloading
+        * The filter callback is added at wp_head in CZR___::__construct
+        */
+        if ( is_array($fp) && isset( $fp[ 'fp_img' ] ) ) {
+          //this filter is defined is primarily used in czr_fn_get_thumbnail_model()
+          $fp[ 'fp_img' ] = apply_filters( 'czr_thumb_html', $fp[ 'fp_img' ], $requested_size = 'tc-thumb', $post_id = null , $custom_thumb_id = null, $_img_attr = null, $tc_thumb_size = null );
+        }
 
         return $fp;
   }

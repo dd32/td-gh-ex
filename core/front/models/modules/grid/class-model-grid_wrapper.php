@@ -3,6 +3,8 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   public $expanded_sticky;
   public $id_base = 'czr_grid';
 
+  public $grid_item;
+
   protected $queried_id;
 
   function __construct( $model ) {
@@ -16,23 +18,25 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   * return model preset array()
   */
   function czr_fn_get_preset_model() {
+
     $_preset = array(
-      'grid_columns'           => esc_attr( czr_fn_opt( 'tc_grid_columns') ),
-      'grid_title_num_words'   => esc_attr( czr_fn_opt( 'tc_grid_num_words') ),
-      'grid_icons'             => esc_attr( czr_fn_opt( 'tc_grid_icons') ),
-      'grid_expand_featured'   => esc_attr( czr_fn_opt( 'tc_grid_expand_featured') ),
-      'show_thumb'             => esc_attr( czr_fn_opt( 'tc_post_list_show_thumb' ) ),
-      'grid_bottom_border'     => esc_attr( czr_fn_opt( 'tc_grid_bottom_border') ),
-      'grid_shadow'            => esc_attr( czr_fn_opt( 'tc_grid_shadow') ),
-      'grid_hover_move'        => true,
-      //'grid_thumb_height'     => esc_attr( czr_fn_opt( 'tc_grid_thumb_height') ),
-      'grid_thumb_shape'       => esc_attr( czr_fn_opt( 'tc_grid_thumb_shape') ),
-      'use_thumb_placeholder'  => esc_attr( czr_fn_opt( 'tc_post_list_thumb_placeholder' ) ),
-      'excerpt_length'         => esc_attr( czr_fn_opt( 'tc_post_list_excerpt_length' ) ),
-      'wrapped'                => true,
-      'masonry'                => false,
-      'contained'              => false,
-      'title_in_caption_below' => true
+      'grid_columns'             => esc_attr( czr_fn_opt( 'tc_grid_columns') ),
+      'grid_title_num_words'     => esc_attr( czr_fn_opt( 'tc_grid_num_words') ),
+      'grid_icons'               => esc_attr( czr_fn_opt( 'tc_grid_icons') ),
+      'grid_expand_featured'     => esc_attr( czr_fn_opt( 'tc_grid_expand_featured') ),
+      'show_thumb'               => esc_attr( czr_fn_opt( 'tc_post_list_show_thumb' ) ),
+      'grid_bottom_border'       => esc_attr( czr_fn_opt( 'tc_grid_bottom_border') ),
+      'grid_shadow'              => esc_attr( czr_fn_opt( 'tc_grid_shadow') ),
+      'grid_hover_move'          => true,
+      'grid_thumb_shape'         => esc_attr( czr_fn_opt( 'tc_grid_thumb_shape') ),
+      'use_thumb_placeholder'    => esc_attr( czr_fn_opt( 'tc_post_list_thumb_placeholder' ) ),
+      'excerpt_length'           => esc_attr( czr_fn_opt( 'tc_post_list_excerpt_length' ) ),
+      'wrapped'                  => true,
+      'masonry'                  => false,
+      'contained'                => false,
+      'title_in_caption_below'   => true,
+      'content_wrapper_breadth'  => czr_fn_get_content_breadth(),
+      'image_centering'          => 'js-centering',
     );
 
     return $_preset;
@@ -45,9 +49,14 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   * return model params array()
   */
   function czr_fn_extend_params( $model = array() ) {
-    $this -> queried_id           = czr_fn_get_id();
+    $model                              = parent::czr_fn_extend_params( $model );
+    //layout dependency
+    $model[ 'content_wrapper_breadth' ] = in_array( $model[ 'content_wrapper_breadth' ], array('full', 'semi-narrow', 'narrow' ) ) ? $model[ 'content_wrapper_breadth' ] : 'full';
 
-    return parent::czr_fn_extend_params( $model );
+    $this -> queried_id                 = czr_fn_get_id();
+
+    //layout dependency
+    return $model;
   }
 
   /*
@@ -74,14 +83,18 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
       $this -> czr_fn_reset_text_hooks();
   }
 
+
   function czr_fn_get_grid_section_class() {
     $section_class = array( 'grid__section', sprintf( "cols-%s", $this -> czr_fn_get_section_cols() ) );
 
     if ( $this -> czr_fn_is_sticky_expanded() )
-      array_push( $section_class, 'clearfix');
-    else if ( $this -> masonry )
-      array_push( $section_class, 'masonry__wrapper' );
-
+      $section_class[] = 'clearfix grid-section-featured';
+    else {
+      if ( $this -> masonry ) {
+        $section_class[] =  'masonry__wrapper';
+      }
+      $section_class[] =  'grid-section-not-featured';
+    }
     return $section_class;
   }
 
@@ -200,7 +213,6 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
     $gcont_class            = $this -> czr_fn_get_grid_item_gcont_class($is_expanded);
 
 
-
     //update the model
     return array_merge(
         $icon_visibility,
@@ -314,7 +326,8 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
 
       //if current post is the expanded => golden ratio should be disabled
       //add the aspect ratio class for the figure
-      array_push( $figure_class, $is_expanded ? 'czr__r-w16by9' : 'czr__r-wGR' );
+      $figure_class[]     = $this -> czr_fn_get_grid_figure_aspect_ratio_class( $section_cols );
+      $figure_class[]     = 'js-centering' == $this -> image_centering ?'js-centering' :  'no-js-centering';
 
       return $figure_class;
   }
@@ -395,9 +408,20 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   * get the thumb size name to use according to the grid element width
   */
   function czr_fn_get_thumb_size_name( $section_cols ){
-    return ( 1 == $section_cols ) ? 'tc-ws-thumb' : 'tc-grid';
+    //layout dependency
+    return ( 1 == $section_cols && 'narrow' != $this->content_wrapper_breadth ) ? 'tc-grid-full' : 'tc-grid';
   }
 
+  /**
+  * @return  boolean
+  */
+  /*
+  * get the figure aspect ratio
+  */
+  function czr_fn_get_grid_figure_aspect_ratio_class( $section_cols ){
+    //layout dependency
+    return ( 1 == $section_cols && 'narrow' != $this->content_wrapper_breadth ) ? 'czr__r-wGOC' : 'czr__r-wGR';
+  }
 
   /*
   * get the thumb size name to set the proper inline style
@@ -524,17 +548,7 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
     return $_media_queries_css;
   }
 
-  /* To port in bootstrap 4 */
-  /**
-  * @return simple array of media queries
-  */
-  protected function czr_fn_get_grid_media_queries() {
-    return apply_filters( 'czr_grid_media_queries' ,  array(
-             '(min-width: 1200px)', '(max-width: 1199px) and (min-width: 992px)', '(max-width: 991px) and (min-width: 768px)', '(max-width: 767px)', '(max-width: 575px)'
-           ));
-  }
-
-
+  //NOT USED
   /**
   * Return the array of sizes (ordered by @media queries) for a given column layout
   * @param  $_col_nb string
@@ -572,6 +586,7 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
     );
   }
 
+  //NOT USED
   /**
   * hook : 'czr_get_grid_font_sizes'
   * Updates the array of sizes for a given sidebar layout
@@ -609,7 +624,7 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   }
 
 
-
+  //NOT USED
   /**
   * @return css string
   * @param size string
@@ -632,7 +647,7 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   }
 
 
-
+  //NOT USED
   /**
   * @return css string
   * @param $_media_query = string of current media query.
@@ -664,7 +679,7 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
     return $_css;
   }
 
-
+  //NOT USED
   /**
   * @return string
   * @param size string
@@ -683,13 +698,6 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
     );
   }
 
-  /**
-  * @return (number) customizer user defined height for the grid thumbnails
-  */
-  protected function czr_fn_grid_get_thumb_height() {
-    $_opt = $this -> grid_thumb_height;
-    return ( is_numeric($_opt) && $_opt > 1 ) ? $_opt : 350;
-  }
 
   /**
   * @package Customizr
@@ -722,29 +730,85 @@ class CZR_grid_wrapper_model_class extends CZR_Model {
   }
 
 
+
+
+  /**
+  * @return simple array of media queries
+  */
+  protected function czr_fn_get_grid_media_queries() {
+    return apply_filters( 'czr_grid_media_queries' ,  array(
+             '(min-width: 1200px)', '(min-width: 992px)', '(min-width: 768px)', '(min-width: 576px)'
+           ));
+  }
+
+
   /**
   * @return css string
   * hook : czr_fn_user_options_style
-  * @since Customizr 3.2.18
   */
   function czr_fn_user_options_style_cb( $_css ){
-    return $_css;
-  }
-  /*
-  * TODO: USE fittext instead?
-  */
-  /*function czr_fn_user_options_style_cb( $_css ){
-    $_col_nb  = $this -> czr_fn_get_grid_cols();
-    // Not used anymore:
+      $default_1_column_aspect_ratio = '40%';
+      $golden_ratio                  = '61.803398%';
 
-    //GENERATE THE MEDIA QUERY CSS FOR FONT-SIZES
-    $_current_col_media_css   = $this -> czr_fn_get_grid_font_css( $_col_nb );
-    $_css = sprintf("%s\n%s\n",
-        $_css,
-        $_current_col_media_css
-       // $_current_col_figure_css
-    );
-    return $_css;
-  }*/
+      $selector                      = '.grid-container__classic .czr__r-wGOC::before';
+      $property                      = 'padding-top';
+      /*
+      * TODO: USE fittext for font sizing?
+      */
+      //golden ratio till md devices (min 768px)
+      //then it depends on the layout
+      $_css = sprintf("%s\n%s\n",
+          $_css,
+          sprintf( '%1$s{%2$s:%3$s}',
+              $selector,
+              $property,
+              $golden_ratio
+          )
+      );
+
+      //layout dependency
+      //$this->content_wrapper_breadth can be 'narrow' (2 sidebars) | 'semi-narrow'(1 sidebar) | 'full' (no sidebars);
+      $_contentbreadth_aspectratio_map = array(
+          // 'width (full||semi-narrow||narrow) => ' array( xl, lg, md )
+          'full'         => array( '', '', $default_1_column_aspect_ratio ),
+          'semi-narrow'  => array( $default_1_column_aspect_ratio, '', '' ),
+          'narrow'       => array( '', '', '' )
+      );
+
+      if ( ! array_key_exists( $this->content_wrapper_breadth, $_contentbreadth_aspectratio_map ) )
+          return $_css;
+
+      $aspect_ratio_map   = $_contentbreadth_aspectratio_map[ $this->content_wrapper_breadth ];
+      $media_queries      = $this -> czr_fn_get_grid_media_queries();
+
+      $_media_queries_css = '';
+
+      //create the media queries
+      foreach ( array_reverse($media_queries, true)  as $index => $media_query_size ) {
+
+          if ( empty( $aspect_ratio_map[ $index ] ) ) {
+              continue;
+          }
+
+          $rule = sprintf( '%1$s{%2$s:%3$s}',
+                  $selector,
+                  $property,
+                  $aspect_ratio_map[ $index ]
+          );
+
+
+          $_media_queries_css .= "@media {$media_query_size} {{$rule}}";
+
+      }
+
+      if ( ! empty( $_media_queries_css) ) {
+          $_css = sprintf("%s\n%s\n",
+              $_css,
+              $_media_queries_css
+          );
+      }
+
+      return $_css;
+  }
 
 }

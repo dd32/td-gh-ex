@@ -1,9 +1,71 @@
+header:not(.header-transparent) {
+  .header-navbars__wrapper {
+    @include box-shadow(0px, 2px, 2px, rgba(102, 102, 102, .08));
+  }
+}
+
+.mobile-nav__nav {
+  border-top: 1px solid;
+}
+.dropdown-item:not(:last-of-type) {
+  border-bottom: 0.5px solid;
+}
+
+.vertical-nav > li:not(:last-of-type),
+.topbar-navbar__wrapper,
+.header-navbars__wrapper,
+.mobile-nav__container,
+.mobile-search__container {
+  border-bottom: 1px solid;
+}
+
+.header-navbars__wrapper,
+.topnav-navbars__container,
+.topnav-navbars__container [class*=navbar__wrapper],
+.mobile-nav__container,
+.mobile-nav__nav {
+  background: inherit;
+}
+.sticky-transparent.is-sticky .mobile-nav__nav {
+  .dropdown-menu,
+  .dropdown-item:active,
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    background: none;
+  }
+}
+
+//site title underline
+.branding .czr-underline span::after {
+  content: "";
+  position: absolute;
+  width: 33%;
+  height: 3px;
+  bottom: 0;
+  @if ( true == $is_rtl ) {
+    right: 0;
+  }
+  @else {
+    left: 0;
+  }
+}
+
+//menu items underline
+[class*=nav__menu] li > a > span:first-of-type {
+  @include underlined_nocolor(2px);
+}
+
+& li.show:not(.dropdown-item) > a > span:first-of-type,
+&  li:not(.dropdown-item).current-active > a > span:first-of-type,
+&  li.current-menu-item > a > span:first-of-type {
+  @include underlined_highlight_before_nocolor();
+}
+
 .nav__menu {
   @extend .demi-small;
   @extend .caps;
   @extend .bold;
   @extend .letter-spacing-1;
-
 
 
   .menu-item {
@@ -91,6 +153,10 @@
           display: inline-block;
           top: -.1em;
         }
+        @at-root .regular-nav .dropdown-menu .caret__dropdown-toggler.open-left i {
+          @include transform( translateZ(0) rotate(-270deg));
+          -ms-transform: rotate(-270deg);
+        }
         @at-root .regular-nav .dropdown-menu .dropdown-item {
           padding: 0 $base-line-height;
         }
@@ -169,8 +235,8 @@
       line-height: inherit;
     }
     .menu-item.show > a > & {
-        @include transform( translateZ(0) rotate(-180deg));
-        -ms-transform: rotate(-180deg);
+        @include transform( translateZ(0) rotate(-180deg)!important);
+        -ms-transform: rotate(-180deg)!important;
     }
 }
 
@@ -188,11 +254,9 @@
   //this way the actual visual position of the dropdown will not be impacted
   //though, as fixed element, even if overflowing the tc-page-wrap, will not
   //make the orizontal scrollbar appear!
-
  .czr-submenu-fade & {
     .menu-item-has-children {
       @include perspective(1000px);
-      z-index: 100;
       > ul {
         position: fixed;
         opacity: 0;
@@ -200,6 +264,22 @@
         display: block;
         @include transition( all 0.25s ease-in-out );
         @include transform( translate( 0, -20px ) );
+      }
+
+      &:not(.show) {
+        //temporary fix for Firefox : https://github.com/presscustomizr/customizr/issues/1083
+        //the perspective thing seems to not work with this browser
+        //need further investigation
+        overflow: hidden;
+
+        //because of the fact the submenu is displayed
+        //it might still grab the the hover while fading out
+        //let's avoid this resetting its pointer-events
+        //when the li parent hasn't the show class
+        ul {
+          pointer-events: none;
+          cursor: $cursor-disabled;
+        }
       }
     }
 
@@ -212,11 +292,6 @@
             @include transform( translate( 0, 0) );
           }
     }
-
-    @at-root .czr-submenu-fade .topbar-navbar__wrapper .menu-item-has-children {
-      z-index: 101;
-    }
-
   }
   // end fade effect
 
@@ -283,7 +358,6 @@
 
 // Hamburger button
 .ham-toggler-menu {
-    -webkit-appearance: initial !important;
     @extend .utils_links;
 }
 .ham__toggler-span-wrapper {
@@ -296,7 +370,7 @@
 .ham__toggler-span-wrapper .line {
   display: block;
   width: 20px;
-  height: 1.5px;
+  height: 1.4px;
   position: absolute;
   -webkit-border-radius: 5px;
   -webkit-background-clip: padding-box;
@@ -341,3 +415,42 @@
 }
 
 // end ham
+
+
+/* ADMIN BAR
+-------------------------------------------------- */
+#wp-admin-bar-tc-customizr-help .ab-item:before, li#wp-admin-bar-tc-customizr-help a:before {
+  font-family: "FontAwesome";
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#wp-admin-bar-tc-customizr-help .ab-item:before,
+li#wp-admin-bar-tc-customizr-help a:before {
+  content: "\f1cd";
+  color: #FFF;
+  padding-right: 0px;
+  margin-right: 0;
+  top: 2px;
+  position: relative;
+}
+li#wp-admin-bar-tc-customizr-help a {
+  color: #FFF;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #8DA65A;
+  background-image: -moz-linear-gradient(top, #008ec2,#006799);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008ec2), to(#006799));
+  background-image: -webkit-linear-gradient(top, #008ec2,#006799);
+  background-image: -o-linear-gradient(top, #008ec2,#006799);
+  background-image: linear-gradient(to bottom,#008ec2,#006799);
+  background-repeat: repeat-x;
+  border-color: #006799;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}

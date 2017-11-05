@@ -57,7 +57,8 @@ function czr_fn_comment_info( $args = array() ) {
       //Filter hook used by disqus plugin
       $link_attributes = implode( '', apply_filters( 'czr_comment_info_link_attributes', array() ) );
 
-      $link            = sprintf( '%1$s<a class="comments__link" href="%2$s" title="%3$s" %5$s><span>%4$s</span></a>%6$s',
+      //data-anchor-scroll="true" => will fire the anchor scroll ( @see front js, czrapp.userXP.anchorSmoothScroll ), even if the 'tc_link_scroll' option is unchecked
+      $link            = sprintf( '%1$s<a class="comments__link" data-anchor-scroll="true" href="%2$s" title="%3$s" %5$s><span>%4$s</span></a>%6$s',
             $before,
             $link,
             sprintf( "%s %s %s" , number_format_i18n( $comments_number ) , _n( 'Comment on' , 'Comments on' , $comments_number, 'customizr' ) ,  esc_attr( strip_tags( get_the_title() ) ) ),
@@ -158,24 +159,54 @@ function czr_fn_edit_button( $args = array() ) {
         return;
 
       $defaults = array(
-        'class' => '',
-        'title' => __( 'Edit', 'customizr' ),
-        'text'  => __( 'Edit', 'customizr' ),
-        'link'  => '#',
+        'class'     => '',
+        'title'     => __( 'Edit', 'customizr' ),
+        'text'      => __( 'Edit', 'customizr' ),
+        'link'      => '#',
+        'target'    => '_blank',
+        'rel'       => 'nofollow',
+        'echo'      => true
       );
 
       $args             = wp_parse_args( $args, $defaults );
 
       $args[ 'class' ]  = $args[ 'class' ] ? $args[ 'class' ] . ' btn btn-edit' : 'btn btn-edit';
 
-      ?>
-      <a class="<?php esc_attr_e( $args[ 'class' ] ) ?>"
-         title="<?php esc_attr_e( $args[ 'title' ] ) ?>"
-         href="<?php echo esc_url( $args[ 'link' ] )?>" target="_blank" rel="nofollow">
-         <i class="icn-edit"></i><?php echo $args[ 'text' ] ?>
-      </a>
-      <?php
+      $edit_button      = sprintf( '<a class="%1$s" title="%2$s" href="%3$s" target="%4$s" rel="%5$s"><i class="icn-edit"></i>%6$s</a>',
+          esc_attr( $args[ 'class' ] ),
+          esc_attr( $args[ 'title' ] ),
+          esc_url( $args[ 'link' ] ),
+          esc_attr( $args[ 'target' ] ),
+          esc_attr( $args[ 'rel' ] ),
+          $args[ 'text' ]
+      );
 
+      if ( !$args[ 'echo' ] )
+        return $edit_button;
+
+      echo $edit_button;
+
+}
+endif;
+
+if ( ! function_exists( 'czr_fn_add_menu_button' ) ) :
+/**
+ * The template for displaying the add menu button
+ */
+function czr_fn_add_menu_button() {
+    /*
+    * user can edit menu && no visibile menu location is assigned
+    */
+    if ( current_user_can( 'edit_theme_options' ) && !czr_fn_is_there_any_visible_menu_location_assigned() ) {
+        czr_fn_edit_button(
+            array(
+              'class' => 'add-menu-button',
+              'link'  => czr_fn_get_customizer_url( array( 'panel' => 'nav_menus' ) ),
+              'text'  => __( 'Add a menu', 'customizr' ),
+              'title' => __( 'open the customizer menu section', 'customizr'),
+            )
+        );
+    }
 }
 endif;
 

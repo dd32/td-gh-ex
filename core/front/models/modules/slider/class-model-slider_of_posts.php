@@ -251,6 +251,10 @@ class CZR_slider_of_posts_model_class extends CZR_slider_model_class {
         }
     }
 
+    if ( czr_fn_is_checked( 'tc_slider_img_smart_load' ) ) {
+        $slide_background = czr_fn_parse_imgs( $slide_background ); //<- to prepare the img smartload
+    }
+
     //title
     $title                  = ( isset( $args['show_title'] ) && $args['show_title'] ) ? $this -> czr_fn_get_post_slide_title( $_post, $ID) : '';
     //lead text
@@ -359,7 +363,7 @@ class CZR_slider_of_posts_model_class extends CZR_slider_model_class {
     $button_text_length  = apply_filters( 'czr_posts_slider_button_text_length', 80 );
     $more                = apply_filters( 'czr_post_slide_more', '...');
     $button_text         = apply_filters( 'czr_posts_slider_button_text_pre_trim' , $button_text );
-    return $this -> czr_fn_trim_text( $button_text, $button_text_length, $more );
+    return czr_fn_text_truncate( $button_text, $button_text_length, $more );
   }
 
   /**
@@ -383,7 +387,7 @@ class CZR_slider_of_posts_model_class extends CZR_slider_model_class {
       $title = sprintf( $protected_title_format, $title );
     }
     $title = apply_filters( 'czr_post_title_pre_trim' , $title );
-    return $this -> czr_fn_trim_text( $title, $default_title_length, $more);
+    return czr_fn_text_truncate( $title, $default_title_length, $more);
   }
 
   /**
@@ -415,6 +419,6 @@ class CZR_slider_of_posts_model_class extends CZR_slider_model_class {
     $excerpt = shortcode_unautop( $excerpt );
     $excerpt = str_replace(']]>', ']]&gt;', $excerpt );
     $excerpt = apply_filters( 'czr_post_excerpt_pre_trim' , $excerpt );
-    return $this -> czr_fn_trim_text( $excerpt, $default_text_length, $more);
+    return czr_fn_text_truncate( $excerpt, $default_text_length, $more);
   }
 }

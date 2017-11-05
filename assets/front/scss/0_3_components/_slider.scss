@@ -7,6 +7,9 @@
     @include filter($black, $white, 0.5);
     + .slider-text { color: $white; }
   }
+  .czr-has-no-dark-overlay .filter:before {
+      content :none;
+  }
 }
 
 
@@ -32,7 +35,7 @@
   h1.very-big {
     font-size: 65px;
     line-height: 1.4em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.4em;
   }
 
   .czrs-subtitle {

@@ -88,7 +88,12 @@
 [class*=grid-container__masonry] article {
   margin-bottom: 20px
 }
-.comments__link { white-space: nowrap; }
+.comments__link {
+  white-space: nowrap;
+  .czr-related-post .post-info & {
+    font-size: 0.65rem;
+  }
+}
 .grid-title_size {
   line-height:1.4;
   font-size: 1.9em;
@@ -202,10 +207,7 @@ a.czr-format-link {
 .post-info {
     .row {
       margin: 0 -8px;
-      -webkit-box-align: center;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center;
+      @include flex-align-items-center();
       & [class*=col] {
           padding: .1em 8px;
       }
@@ -221,12 +223,13 @@ a.czr-format-link {
     align-items: center;
     @extend .service-font;
     .post-info  {
-      color: $grey;
+      color: $grey-mid-light;
+      line-height: 1.55em;
       position: relative;
       a {
         @extend .semi-bold;
       }
-      @extend .small;
+      @extend .very-small;
     }
 }
 
@@ -297,9 +300,9 @@ a.czr-format-link {
 
 /* ALTERNATE */
 .grid-container__alternate {
-  .tc-content {
-    font-size: 90%;
-  }
+  // .tc-content {
+  //   font-size: 90%;
+  // }
 
   h2.entry-title { margin-top:$base-line-height/2; }
 
@@ -348,7 +351,9 @@ a.czr-format-link {
       .tc-thumbnail { display: none; }
     }
   }
-
+  p {
+    word-break: break-word;
+  }
 }
 
 //
@@ -381,7 +386,6 @@ a.czr-format-link {
 
 /* CLASSIC */
 .grid-container__classic {
-  .grid__item { max-height: 350px; }
   .tc-content {
     @extend .small
   }
@@ -466,8 +470,14 @@ a.czr-format-link {
           @include media-breakpoint-up(md) {
             max-width: 65%;
             height: auto;
-            margin-left: 8%;
-            text-align: left;
+            @if ( true == $is_rtl ) {
+              margin-right: 8%;
+              text-align: right;
+            }
+            @else {
+              margin-left: 8%;
+              text-align: left;
+            }
           }
         }//.expanded .tc-grid-caption
 
@@ -478,13 +488,10 @@ a.czr-format-link {
           background: rgba(0,0,0,.4);
           padding: 8%;
           height: auto;
-
+          max-height: 90%;
           //@media screen and (max-width: 767px)
           @include media-breakpoint-down(sm) {
-            bottom: 0;
-            top: 0;
-            @include transform( translate(0, 0));
-            @include transform( translate3d(0,0,0));
+            max-height: 100%;
             .tc-g-cont { max-height: 70%; }
             .entry-title { margin-top: $base-line-height / 2 }
           }//@media
@@ -598,16 +605,16 @@ a.czr-format-link {
 //IT's AVAILABLE ONLY FOR MASONRY & ALTERNATE
 [class*=grid-container__] .full-image {
   .entry-footer .post-info{
-    font-size: 1em;
+    @extend .very-small;//was font-size: 1em;
   }
   .entry-footer .col, a:not(.bg-link) { z-index: 2; position: relative; }
 
   .bg-link {
-    background: rgba($black, 0.25);
+    background: rgba($black, 0.30);
   }
 
   &.hover .bg-link {
-    background: rgba($black, 0.35);
+    background: rgba($black, 0.40);
   }
   .entry-media__holder {
     z-index: 2;
@@ -626,26 +633,26 @@ a.czr-format-link {
     .entry-header a, .entry-footer .post-info, .entry-footer a {
       color: $white;
     }
-    a:hover {
-      color: $grey-light;
-      &.btn-edit {
-        color: $black;
+    .entry-header a, .entry-footer .post-info a, .entry-footer a {
+      &:hover {
+        color: #dadada;
       }
     }
+    .btn-skin-dark-oh.inverted:hover {
+        color: #dadada;
+        background-color: transparent;
+        border-color: #dadada;
+    }
+    a.btn-edit:hover {
+      color: $black;
+    }
+
     .entry-header, .entry-footer  {
       @include opacity(1);
       @include transition(all, 0.3s ease);
     }
     .entry-summary {
       display: none;
-      //we do not display the entry-summary for the full-image posts types in list of posts:
-      //gallery, image formats
-
-      //color: $white;
-      //font-weight: 500;
-      //position:relative;
-      //@include opacity(0);
-      //@include transition(all, 0.3s ease);
     }
     .entry-title {
       max-width: 80%
@@ -657,6 +664,7 @@ a.czr-format-link {
       .post-info {
         margin-top: $base-line-height;
         padding-top: $base-line-height/2;
+        margin-bottom: 0.5em;//<= otherwise the slider nav dots won't be visible. Overrides the default margin-bottom: -1em; for .grid .entry-footer .post-info {}
       }
     }
   }

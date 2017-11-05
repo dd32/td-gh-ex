@@ -24,7 +24,7 @@ class CZR_menu_model_class extends CZR_Model {
           'menu_id'             => 'main-menu',
           'def_menu_class'      => array( 'nav' ),
           'menu_class'          => array(),
-          'fallback_cb'         => array( $this, 'czr_fn_page_menu' ),
+          'fallback_cb'         => czr_fn_isprevdem() ? array( $this, 'czr_fn_page_menu' ) : '',
           'walker'              => '',
           'dropdown_type'       => esc_attr( czr_fn_opt( 'tc_menu_type' ) )
       );
@@ -88,7 +88,6 @@ class CZR_menu_model_class extends CZR_Model {
                     'menu_id'             => 'secondary-nav',
                     'menu_class'          => array( 'primary-nav__menu', 'regular-nav', 'nav__menu' ),
 
-
                 );
 
                 break;
@@ -138,7 +137,7 @@ class CZR_menu_model_class extends CZR_Model {
                 $mobile_menu_location = '_not_set_';
                 $has_menu_assigned = false;
 
-                if ( array_key_exists( $mobile_menu_opt, $location_map ) && has_nav_menu( $location_map[ $mobile_menu_opt ] ) ) {
+                if ( is_string( $mobile_menu_opt ) && array_key_exists( $mobile_menu_opt, $location_map ) && has_nav_menu( $location_map[ $mobile_menu_opt ] ) ) {
                     $mobile_menu_location = $location_map[ $mobile_menu_opt ];
                     $has_menu_assigned = true;
                 } else {
@@ -157,7 +156,7 @@ class CZR_menu_model_class extends CZR_Model {
 
                     'element_class'       => array( 'mobile-nav__menu-wrapper' ),
                     'theme_location'      => $mobile_menu_location,
-                    'menu_id'             => 'mobile-nav',
+                    'menu_id'             => 'mobile-nav-menu',
                     'menu_class'          => array( 'mobile-nav__menu', 'vertical-nav', 'nav__menu', 'flex-column' ),
 
                 );
@@ -170,6 +169,24 @@ class CZR_menu_model_class extends CZR_Model {
 
 
     }
+
+
+    /*
+    * @echo add menu button
+    */
+    function czr_fn_add_menu_button() {
+        czr_fn_edit_button(
+            array(
+              'class' => 'add-menu-button',
+              'link'  => czr_fn_get_customizer_url( array( 'section' => 'menu_locations' ) ),
+              'text'  => __( 'Add a menu', 'customizr' ),
+              'title' => __( 'open the customizer menu section', 'customizr'),
+            )
+        );
+    }
+
+
+
 
     /*
     * Fired just before the view is rendered
@@ -207,7 +224,6 @@ class CZR_menu_model_class extends CZR_Model {
 
         $this->czr_fn_update( compact( 'walker', 'menu_class', 'element_class' ) );
     }
-
 
 
 

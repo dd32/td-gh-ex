@@ -307,7 +307,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         add_filter( $filter, 'czr_fn_url_lang' );
 
       //outputs the qtranslate translation for slider
-      foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt' ) as $filter )
+      foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt', 'czr_posts_slider_button_text_pre_trim' ) as $filter )
         add_filter( $filter, 'czr_fn_apply_qtranslate' );
       //sets no character limit for slider (title, lead text and button title) => allow users to use qtranslate tags for as many languages they wants ([:en]English text[:de]German text...and so on)
       foreach ( array( 'czr_slide_title_length', 'czr_slide_text_length', 'czr_slide_button_length' ) as $filter )
@@ -334,36 +334,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         add_filter( 'tc_featured_text_three_customizer_set', 'czr_fn_change_transport', 20, 2);
       }
 
-      //posts slider (this filter is not fired in admin )
-      add_filter('czr_posts_slider_pre_model', 'czr_fn_posts_slider_qtranslate');
-      function czr_fn_posts_slider_qtranslate( $pre_slides ){
-        if ( empty($pre_slides) )
-          return $pre_slides;
-
-        // remove useles q-translation of the slider view
-        foreach ( array( 'czr_slide_title', 'czr_slide_text', 'czr_slide_button_text', 'czr_slide_background_alt' ) as $filter )
-          remove_filter( $filter, 'czr_fn_apply_qtranslate' );
-
-        // allow q-translation pre trim/sanitize
-        foreach ( array( 'czr_posts_slider_button_text_pre_trim', 'czr_post_title_pre_trim', 'czr_post_excerpt_pre_sanitize', 'czr_posts_slide_background' ) as $filter )
-          add_filter( $filter, 'czr_fn_apply_qtranslate' );
-
-        //translate button text
-        $pre_slides['common']['button_text'] = $pre_slides['common']['button_text'] ? CZR_slider::$instance -> czr_fn_get_post_slide_button_text( $pre_slides['common']['button_text'] ) : '';
-
-        //translate title and excerpt if needed
-        $_posts = &$pre_slides['posts'];
-
-        foreach ($_posts as &$_post) {
-          $ID = $_post['ID'];
-          $_p = get_post( $ID );
-          if ( ! $_p ) continue;
-
-          $_post['title'] = $_post['title'] ? CZR_slider::$instance -> czr_fn_get_post_slide_title($_p, $ID) : '';
-          $_post['text']  = $_post['text'] ? CZR_slider::$instance -> czr_fn_get_post_slide_excerpt($_p, $ID) : '';
-        }
-        return $pre_slides;
-      }
     }
 
 
@@ -384,7 +354,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_pll_strings_setup() {
         // grab theme options
-        $tc_options = czr_fn__f('__options');
+        $tc_options = czr_fn_get_theme_options();
         // grab settings map, useful for some options labels
         $tc_settings_map = czr_fn_get_customizer_map( $get_default = true );
         $tc_controls_map = $tc_settings_map['add_setting_control'];
@@ -599,7 +569,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
           $tc_wpml_options     = array_keys($tc_wpml_option_name);
 
           // grab theme options
-          $tc_options = czr_fn__f('__options');
+          $tc_options = czr_fn_get_theme_options();
 
           // build array of options to translate
           foreach ( $tc_wpml_options as $tc_wpml_option )
@@ -677,7 +647,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
         }
         /*A) FP*/
         // Featured pages ids "translation"
-        add_filter( 'tc_fp_id', 'czr_fn_wpml_page_id', 20 );
+        add_filter( 'czr_fp_id', 'czr_fn_wpml_page_id', 20 );
         function czr_fn_wpml_page_id( $fp_page_id ) {
           return czr_fn_wpml_object_id( $fp_page_id, 'page');
         }
@@ -964,6 +934,8 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_wc_skin_color_border_color_prop_selectors( $selectors ) {
          return array_merge( $selectors, array(
+            '.woocommerce .woocommerce-info',
+            '.woocommerce .woocommerce-message',
             '.woocommerce #respond input#submit',
             '.woocommerce input#submit',
             '.woocommerce input.button',
