@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
   	/* Header image height */
 	wp.customize('graphene_settings[header_img_height]', function(value){
 		value.bind(function(to){
-			$('#header').css('height', to + 'px');
+			$('#header').css('max-height', to + 'px');
 		});
 	});
 

@@ -258,9 +258,6 @@
 
 /* Small devices up to tablets */
 @media (max-width: 991px) {
-	#header {
-		height: auto;
-	}
 	.carousel {
 		margin: -30px -15px 50px;
 		width: auto;

@@ -43,7 +43,7 @@ function graphene_customizer_general_options( $wp_customize ){
 	$wp_customize->add_control( new Graphene_Enhanced_Text_Control( $wp_customize, 'graphene_settings[header_img_height]', array(
 		'type' 		=> 'number',
 		'section' 	=> 'graphene-general-header',
-		'label' 	=> __( 'Header image height', 'graphene' ),
+		'label' 	=> __( 'Header image max height', 'graphene' ),
 		'unit'		=> 'px',
 	) ) );
 

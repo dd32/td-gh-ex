@@ -19,7 +19,9 @@ add_action( 'init', 'graphene_db_init' );
  * is designed for, generally via the style.css stylesheet.
  */
 function graphene_get_content_width(){
-	return apply_filters( 'graphene_content_width', graphene_grid_width( 0, 12, 8, 6 ) );
+	global $graphene_settings;
+	$width = graphene_grid_width( 0, 12, $graphene_settings['column_width']['two_col']['content'], $graphene_settings['column_width']['three_col']['content'] );
+	return apply_filters( 'graphene_content_width', $width );
 }
 
 
@@ -65,7 +67,7 @@ function graphene_setup() {
 
 
 	if ( get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {
-		$pane_width = graphene_grid_width( '', 8, 6, 4 );
+		$pane_width = floor( $content_width / 2 );
 		add_image_size( 'graphene-homepage-pane', apply_filters( 'graphene_homepage_pane_image_width', $pane_width ), apply_filters( 'graphene_homepage_pane_image_height', floor( $pane_width * 0.5 ) ), true);
 	}
 	

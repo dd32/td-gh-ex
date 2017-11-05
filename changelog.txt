@@ -4,6 +4,12 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.1.2
+	* Fixed: Inconsistent header height with varying screen sizes
+	* Fixed: Current commenter's name not automatically filled in comment form
+	* Fixed: Incorrect $content_width being set if using customised column width
+	* Fixed: Homepage pane image sizing
+
 Version 2.1.1
 	* Fixed: Header image does not appear when using a custom header image
 	* Fixed: Incorrect positioning of the header image link 
