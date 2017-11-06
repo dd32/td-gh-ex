@@ -48,15 +48,13 @@ Source: http://leafo.net/sticky-kit/
 
 
 Image Credits (screenshot.png):
+License: https://pixabay.com/en/service/terms/#usage
 
-Header Image, Copyright Hipster Mum
-License: CC0 1.0 Universal (CC0 1.0)
-https://unsplash.com/photos/Ri17WyRuclo
+Header Image, Copyright StockSnap
+https://pixabay.com/p-2559707/?no_redirect
 
-First Post, Copyright Nick Karvounis
-License: CC0 1.0 Universal (CC0 1.0)
-https://unsplash.com/photos/LgOeUY_wXCE
+First Post, Copyright rawpixel
+https://pixabay.com/en/adventure-carefree-casual-caucasian-2579921/
 
-About Me Widget, Copyright Lucas Sankey
-License: CC0 1.0 Universal (CC0 1.0)
-https://unsplash.com/photos/9R-CH7PR150
+About Me Widget, Copyright rawpixel
+https://pixabay.com/en/freedom-holding-relax-2218621/

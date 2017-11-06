@@ -235,11 +235,13 @@ function top_menu_fallback() {
 */
 
 function ashe_main_menu_fallback() {
-	echo '<ul id="main-menu">';
-		echo '<li>';
-			echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
-		echo '</li>';
-	echo '</ul>';
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		echo '<ul id="main-menu">';
+			echo '<li>';
+				echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+			echo '</li>';
+		echo '</ul>';
+	}
 }
 
 /*

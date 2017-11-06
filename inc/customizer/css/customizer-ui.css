@@ -92,30 +92,21 @@ li[id*="customize-control-ashe_options-social_media_icon"] span {
 li[id*="pro_version"] {
 	position: relative;
 	padding: 0 !important;
-	margin-bottom: 30px;
+	margin-top: 30px;
+	background: transparent;
 }
 
 li[id*="pro_version"] .dashicons {
 	float: left;
 	font-size: 20px;
 	margin-top: -1px;
+	margin-right: 10px;
 }
 
 li[id*="pro_version"] a {
-	display: block;
-	padding: 13px;
-	color: #ffffff;
+	color: #0085ba;
 	text-decoration: none;
-	color: #ffffff;
-	background-color: #0085ba;
-	box-shadow: 1px 1px 7px rgba(51, 51, 51, 0.68);
-	text-align: center;
 	outline: none !important;
-	transition: opacity 0.1s ease-in;
-}
-
-li[id*="pro_version"] a:hover {
-	opacity: 0.9;
 }
 
 #accordion-section-ashe_pro h3 {
