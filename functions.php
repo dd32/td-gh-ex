@@ -29,6 +29,22 @@ function bar_restaurant_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) );
+
+  add_filter('siteorigin_widgets_active_widgets', 'bar_restaurant_active_widgets');
+  function bar_restaurant_active_widgets($active){
+    //Bundled Widgets
+    $active['video'] = true;
+    $active['testimonial'] = true;
+    $active['simple-masonry'] = true;
+    $active['slider'] = true;
+    $active['cta'] = true;
+    $active['contact'] = true;
+    $active['features'] = true;
+    $active['headline'] = true;
+    $active['hero'] = true;
+ 
+    return $active;
+  }
 }
 endif;
 add_action( 'after_setup_theme', 'bar_restaurant_setup' );

@@ -2,8 +2,8 @@
 Contributors: VoilaThemes
 Tags: two-columns, right-sidebar, full-width-template , grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
 Requires at least: 4.0
-Tested up to: 4.8.2
-Stable tag: 1.0.8
+Tested up to: 4.8.3
+Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bar-restaurant
@@ -60,6 +60,9 @@ Bar Restaurant is distributed under the terms of the GNU GPL
 * Updated pro theme url.
 = 1.0.8(31 oct 2017)
 * Misc changes in custimizer and pro theme page.
+= 1.0.9(6 Nov 2017)
+* In front page change.
+* main logo image change and added scroll logo.
 
 ---------------------------------------------------------
 Resources
@@ -70,5 +73,5 @@ Resources
 * bootstrap.js © 2011-2016 Twitter, Inc., MIT Version 3.3.7
 * bootstrap.css © 2011-2016 Twitter, Inc., MIT Version 3.3.7
 * font-awesome.css © @fontawesome, MIT Version 4.6.3
-* https://www.pexels.com/photo/interior-of-modern-building-331107/ © NastyaSensei Sens , CC0
+* https://www.pexels.com/photo/reflection-of-glass-in-bathroom-331114/ © NastyaSensei Sens, CC0
 * https://www.pexels.com/photo/bread-food-restaurant-people-5249/ © Stokpic , CC0
