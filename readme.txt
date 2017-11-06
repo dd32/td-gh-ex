@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.11
+- Updated: Various styling improvements in style.css
+
 Version 1.0.10
 - Updated: Support added for EDD to ensure purchase buttons display correctly on downloads page.
 
