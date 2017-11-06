@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.14
+- Updated: Various improve in comments.php.
+- Updated: Improved escaping in template-tags.php.
+- Updated: Function thinkup_input_imagesnav() updated to improve image page pagination.
+
 Version 1.8.13
 - Updated: Support added for EDD to ensure purchase buttons display correctly on downloads page.
 

@@ -19,7 +19,7 @@
 		<div id="comments-title">
 			<h3>
 				<?php
-					printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'lan-thinkupthemes' ),
+					printf( _n( '%1$s Comment', '%1$s Comments', get_comments_number(), 'lan-thinkupthemes' ),
 						number_format_i18n( get_comments_number() ) );
 				?>
 			</h3>
@@ -73,17 +73,17 @@
 			'fields' => apply_filters( 'comment_form_default_fields', array (
 				'author' =>
 					'<p class="comment-form-author one_third">' .
-					'<label for="author">Name <span class="required">*</span></label>' .
+					'<label for="author">' . __( 'Name', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
 					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'email' =>
 					'<p class="comment-form-email one_third">' .
-					'<label for="email">Email <span class="required">*</span></label>' .
+					'<label for="email">' . __( 'Email', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
 					'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'url' =>
 					'<p class="comment-form-url one_third last">' .
-					'<label for="url">Website</label>' .
+					'<label for="url">' . __( 'Website', 'lan-thinkupthemes' ) . '</label>' .
 					'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 					'" size="30" /></p>'
 			) ),
