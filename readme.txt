@@ -43,6 +43,9 @@ Alante Grid is a child theme or Alante and as such uses the same opensource proj
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.4
+- Updated: Bootstrap stylesheet now depedent of parent stylesheet when enqueuing to ensure mobile navigation displays correctly.
+
 Version 1.0.3
 - New:     Styling improved for author bio field on posts.
 
