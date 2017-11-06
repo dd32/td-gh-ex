@@ -257,7 +257,7 @@ if ( ! function_exists( 'azonbooster_post_thumbnail' ) ) {
 			<div class="post-thumnbnail">
 			<?php
 
-			$link = apply_filters('azonbooster_thumbnail_link', get_permalink( get_the_ID() ));
+			$link = esc_url(apply_filters('azonbooster_thumbnail_link', get_permalink( get_the_ID() )) );
 			$enable_link = apply_filters('azonbooster_thumbnail_enable_link', true);
 
 			if ( $enable_link && (! is_single() || ! is_page() ) ) {
@@ -343,9 +343,9 @@ if ( ! function_exists( 'azonbooster_readmore_link' ) ) {
 
 	function azonbooster_readmore_link() {
 
-		$link = apply_filters('azonbooster_readmore_link', get_permalink( get_the_ID() ));
+		$link = esc_url( apply_filters('azonbooster_readmore_link', get_permalink( get_the_ID() )) );
 		$label = apply_filters('azonbooster_readmore_link_label', __( 'View Detail', 'azonbooster' ) );
-		$position = apply_filters('azonbooster_readmore_link_pos', '');
+		$position = esc_attr( apply_filters('azonbooster_readmore_link_pos', '') );
 
 		printf( '<a class="read-more %1$s" href="%2$s">%3$s</a>', $position, $link , $label);
 	}

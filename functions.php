@@ -35,7 +35,3 @@ require 'inc/azonbooster-functions.php';
 require 'inc/azonbooster-template-hooks.php';
 require 'inc/azonbooster-template-functions.php';
 require 'inc/customizer/class-azb-customizer-output.php';
-
-if ( class_exists( 'Jetpack' ) ) {
-	$azonbooster->jetpack = require 'inc/jetpack/class-azonbooster-jetpack.php';
-}
