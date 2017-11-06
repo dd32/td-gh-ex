@@ -55,11 +55,11 @@ if( !class_exists( 'novalite_admin_notice' ) ) {
             <div class="update-nag notice novalite-notice">
             
             	<div class="novalite-noticedescription">
-					<strong><?php _e( 'Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more.', 'novalite' ); ?></strong><br/>
-					<?php printf( '<a href="%1$s" class="dismiss-notice">'. __( 'Dismiss this notice', 'novalite' ) .'</a>', esc_url( '?novalite-dismiss=1' ) ); ?>
+					<strong><?php esc_html_e( 'Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more.', 'novalite' ); ?></strong><br/>
+					<?php printf( '<a href="%1$s" class="dismiss-notice">'. esc_html__( 'Dismiss this notice', 'novalite' ) .'</a>', esc_url( '?novalite-dismiss=1' ) ); ?>
                 </div>
                 
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-notice' ); ?>" class="button"><?php _e( 'Upgrade to Nova Premium', 'novalite' ); ?></a>
+                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-notice' ); ?>" class="button"><?php esc_html_e( 'Upgrade to Nova Premium', 'novalite' ); ?></a>
                 <div class="clear"></div>
 
             </div>

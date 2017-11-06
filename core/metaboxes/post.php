@@ -13,7 +13,7 @@ $novalite_new_metaboxes = new novalite_metaboxes ('post', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","novalite") ),   
+       "item" => array( "setting" => esc_html__( "Setting","novalite") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -21,18 +21,18 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","novalite"),
+		array( "name" => esc_html__( "Setting","novalite"),
 			   "type" => "title",
 		),
 
-		array( "name" => __( "Template","novalite"),
-			   "desc" => __( "Select a template for this page","novalite"),
+		array( "name" => esc_html__( "Template","novalite"),
+			   "desc" => esc_html__( "Select a template for this page","novalite"),
 			   "id" => "novalite_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => __( "Full Width","novalite"),
-				   "left-sidebar" =>  __( "Left Sidebar","novalite"),
-				   "right-sidebar" => __( "Right Sidebar","novalite"),
+				   "full" => esc_html__( "Full Width","novalite"),
+				   "left-sidebar" =>  esc_html__( "Left Sidebar","novalite"),
+				   "right-sidebar" => esc_html__( "Right Sidebar","novalite"),
 				   ),
 			   "std" => "full",
 		),

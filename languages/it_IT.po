@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 15:52+0200\n"
-"PO-Revision-Date: 2017-03-29 15:54+0200\n"
+"POT-Creation-Date: 2017-11-06 18:35+0100\n"
+"PO-Revision-Date: 2017-11-06 18:39+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;esc_html_e;esc_html__;"
+"esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.6\n"
@@ -40,7 +41,7 @@ msgstr "Archivio per"
 msgid "Sorry, no posts matched into "
 msgstr "Spiacente, nessun articolo trovato in "
 
-#: archive.php:91 home-blog.php:50 search.php:82 sidebar.php:13
+#: archive.php:91 home-blog.php:50 search.php:94 sidebar.php:13
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -58,8 +59,8 @@ msgstr "commenti"
 
 #: comments.php:31
 #, php-format
-msgid "<cite>%s</cite>"
-msgstr "<cite>%s</cite>"
+msgid "%s"
+msgstr "%s"
 
 #: comments.php:33
 #, php-format
@@ -527,12 +528,7 @@ msgstr "Sidebar piè di pagina"
 msgid "This sidebar will be shown after the content."
 msgstr "Questa sidebar verrà visualizzata dopo il contenuto"
 
-#: core/main.php:32
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
-
-#: core/main.php:302
+#: core/main.php:260
 msgid "Read More"
 msgstr "Continua"
 
@@ -586,8 +582,8 @@ msgid "Theme by"
 msgstr "Tema da"
 
 #: footer.php:25
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Una piattaforma di editoria personale semantica"
 
 #: footer.php:25
 #, php-format
@@ -598,33 +594,45 @@ msgstr "Offerto orgogliosamente da %s"
 msgid "Sorry, no posts matched found "
 msgstr "Spiacente, nessun articolo trovato."
 
-#: search.php:8
-msgid "<span>Search </span> results for"
-msgstr "<span>Risultati </span> della ricerca per"
+#: search.php:13 search.php:62
+msgid "Search"
+msgstr "Ricerca"
 
-#: search.php:42
+#: search.php:14
+msgid " results for"
+msgstr " - risultati trovati per"
+
+#: search.php:54
 msgid "Not Found"
 msgstr "Contenuto non trovato"
 
-#: search.php:44
+#: search.php:56
 msgid "You can repeat your search with the following form."
 msgstr "Puoi ripetere la tua ricerca tramite questo form"
 
-#: search.php:49
+#: search.php:61
 msgid "Search here"
 msgstr "Cerca"
 
-#: search.php:50
-msgid "Search"
-msgstr "Cerca"
-
-#: search.php:91
+#: search.php:103
 msgid "Archives"
 msgstr "Archivi"
 
-#: search.php:100
+#: search.php:112
 msgid "Categories"
 msgstr "Categorie"
+
+#~ msgid "<cite>%s</cite>"
+#~ msgstr "<cite>%s</cite>"
+
+#~ msgid "Page %s"
+#~ msgstr "Pagina %s"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "<span>Search </span> results for"
+#~ msgstr "<span>Risultati </span> della ricerca per"
 
 #~ msgid "Load system"
 #~ msgstr "Sistema di caricamento"

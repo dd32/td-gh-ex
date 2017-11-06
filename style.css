@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/nova-free-responsive-portfolio-bloggi
 Description: Nova is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 Author: Theme in Progress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.7
+Version: 1.2.8
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, news, photography
 Text Domain: novalite
 Domain Path: /languages
@@ -26,7 +26,7 @@ body {
 }
 
 body.custombody { 
-	background:url(inc/images/background/patterns/pattern12.jpg) repeat;
+	background:url(assets/images/background/patterns/pattern12.jpg) repeat;
 }
 
 * {
@@ -794,7 +794,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .pin-article .separator:after {
-	background:url(inc/images/separator.png) repeat;
+	background:url(assets/images/separator.png) repeat;
 	width:100%;
 	height:5px;
 	content: '';
@@ -983,7 +983,7 @@ h3.comments {
 	padding: 0 0 5px 45px;
 	height:45px;
 	line-height:45px;
-	background:url('inc/images/icons/comment.png') no-repeat center left; 
+	background:url('assets/images/icons/comment.png') no-repeat center left; 
 	margin:45px 0;
 }
 
@@ -1083,6 +1083,7 @@ h3#reply-title small,
 	margin:0;
 	padding: 10px 2%;
 	display:inline-block;
+	height:40px;
 }
 
 .span6 #searchform #searchsubmit,
@@ -1397,7 +1398,7 @@ p.list-tags {
 	margin-top:20px;
 	border-top:1px solid #dcdbdb;
 	padding:10px 0 10px 36px;
-	background:url('inc/images/icons/article.png') left 15px no-repeat;
+	background:url('assets/images/icons/article.png') left 15px no-repeat;
 }
 
 article .overlay-image { 
@@ -1412,7 +1413,7 @@ article .overlay-image {
 }
 
 .overlay-image .zoom { 
-	background: #000 url(inc/images/icons/zoom.png) no-repeat center; 
+	background: #000 url(assets/images/icons/zoom.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 
@@ -1422,7 +1423,7 @@ article .overlay-image {
 }
 
 .overlay-image .link { 
-	background: #000 url(inc/images/icons/link.png) no-repeat center; 
+	background: #000 url(assets/images/icons/link.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 
@@ -1432,7 +1433,7 @@ article .overlay-image {
 }
 
 .overlay-image .video { 
-	background: #000 url(inc/images/icons/video.png) no-repeat center; 
+	background: #000 url(assets/images/icons/video.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 

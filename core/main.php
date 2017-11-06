@@ -10,48 +10,6 @@
  */
 
 /*-----------------------------------------------------------------------------------*/
-/* TAG TITLE */
-/*-----------------------------------------------------------------------------------*/  
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-
-	function novalite_title( $title, $sep ) {
-		
-		global $paged, $page;
-	
-		if ( is_feed() )
-			return $title;
-	
-		$title .= get_bloginfo( 'name' );
-	
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-	
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'novalite' ), max( $paged, $page ) );
-	
-		return $title;
-		
-	}
-
-	add_filter( 'wp_title', 'novalite_title', 10, 2 );
-
-	function novalite_addtitle() {
-		
-?>
-
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-
-	}
-
-	add_action( 'wp_head', 'novalite_addtitle' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* REQUIRE */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -299,7 +257,7 @@ if (!function_exists('novalite_new_excerpt_more')) {
 	function novalite_new_excerpt_more() {
 		
 		global $post;
-		return '<p><a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","novalite") . ' →</a></p>';
+		return '<p><a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . esc_html__( "Read More","novalite") . ' →</a></p>';
 	
 	}
 	
@@ -377,20 +335,20 @@ if (!function_exists('novalite_scripts_styles')) {
 
 		global $wp_styles;
 
-		wp_enqueue_style( 'my-theme-ie', get_stylesheet_directory_uri() . "/inc/css/ie.css", array( 'my-theme' )  );
+		wp_enqueue_style( 'my-theme-ie', get_stylesheet_directory_uri() . "/assets/css/ie.css", array( 'my-theme' )  );
 		$wp_styles->add_data( 'my-theme-ie', 'conditional', 'chrome' );
 
-		novalite_enqueue_style('/inc/css');
+		novalite_enqueue_style('/assets/css');
 
 		if ( get_theme_mod('novalite_skin') && get_theme_mod('novalite_skin') <> "turquoise" )
-			wp_enqueue_style( 'novalite-' . get_theme_mod('novalite_skin') , get_template_directory_uri() . '/inc/skins/' . get_theme_mod('novalite_skin') . '.css' ); 
+			wp_enqueue_style( 'novalite-' . get_theme_mod('novalite_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('novalite_skin') . '.css' ); 
 
 		wp_enqueue_style( 'novalite-google-fonts', '//fonts.googleapis.com/css?family=Montez|Oxygen|Yanone+Kaffeesatz&subset=latin,latin-ext' );
 
-		wp_enqueue_script ( 'novalite-html5', get_template_directory_uri().'/inc/scripts/html5.js');
+		wp_enqueue_script ( 'novalite-html5', get_template_directory_uri().'/assets/scripts/html5.js');
 		wp_script_add_data ( 'novalite-html5', 'conditional', 'IE 8' );
 		
-		wp_enqueue_script ( 'novalite-selectivizr', get_template_directory_uri().'/inc/scripts/selectivizr-min.js');
+		wp_enqueue_script ( 'novalite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
 		wp_script_add_data ( 'novalite-selectivizr', 'conditional', 'IE 8' );
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
@@ -398,7 +356,7 @@ if (!function_exists('novalite_scripts_styles')) {
 		wp_enqueue_script( "jquery-ui-core", array('jquery'));
 		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		
-		novalite_enqueue_script('/inc/js');
+		novalite_enqueue_script('/assets/js');
 	
 	}
 	
@@ -426,7 +384,7 @@ if (!function_exists('novalite_setup')) {
 		if (novalite_setting('novalite_body_background')):
 			$background = novalite_setting('novalite_body_background');
 		else:
-			$background = "/inc/images/background/patterns/pattern12.jpg";
+			$background = "/assets/images/background/patterns/pattern12.jpg";
 		endif;
 		
 		add_theme_support( 'custom-background', array(

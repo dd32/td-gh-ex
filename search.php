@@ -1,16 +1,28 @@
 <?php get_header(); ?>
 
-        <section id="subheader">
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
+	<section id="subheader">
         
-                        <h1><?php _e( '<span>Search </span> results for', 'novalite' ) ?> <strong><?php echo $s; ?> </strong></h1>
+		<div class="container">
+        
+			<div class="row">
+        
+				<div class="span12">
+        
+					<h1>
                     
-                    </div>
-                </div>
-            </div>
-        </section>
+						<span><?php esc_html_e( 'Search', 'novalite' ) ?></span>
+						<?php esc_html_e( ' results for', 'novalite' ) ?>
+						<strong><?php echo $s; ?></strong>
+					
+                    </h1>
+                    
+				</div>
+		
+			</div>
+        
+		</div>
+        
+	</section>
 
         <div class="container content ">
             
@@ -39,15 +51,15 @@
                         <div class="pin-article <?php echo novalite_template('span'); ?>">
                             <article class="article">
         
-                            <h1 class="title"><?php _e( 'Not Found',"novalite" ) ?></h1>
+                            <h1 class="title"><?php esc_html_e( 'Not Found',"novalite" ) ?></h1>
                                 
-                            <p> <?php _e( 'You can repeat your search with the following form.',"novalite" ) ?> </p>
+                            <p> <?php esc_html_e( 'You can repeat your search with the following form.',"novalite" ) ?> </p>
                         
                             <section class="contact-form searchform">
                                 <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
                                      <div>
-                                     <input type="text" placeholder="<?php _e( 'Search here', 'novalite' ) ?>"  name="s" id="s" class="input-search"/>
-                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'novalite' ) ?>" />
+                                     <input type="text" placeholder="<?php esc_html_e( 'Search here', 'novalite' ) ?>"  name="s" id="s" class="input-search"/>
+                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php esc_html_e( 'Search', 'novalite' ) ?>" />
                                      </div>
                                 </form>
                             <div class="clear"></div>  
@@ -79,7 +91,7 @@
                     } else { 
                             
                    		the_widget( 'WP_Widget_Calendar',
-                    	array("title"=> __('Calendar','novalite')),
+                    	array("title"=> esc_html__('Calendar','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -88,7 +100,7 @@
                         );
             
                         the_widget( 'WP_Widget_Archives','',
-                    	array("title"=> __('Archives','novalite')),
+                    	array("title"=> esc_html__('Archives','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -97,7 +109,7 @@
                         );
             
                         the_widget( 'WP_Widget_Categories','',
-                    	array("title"=> __('Categories','novalite')),
+                    	array("title"=> esc_html__('Categories','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',

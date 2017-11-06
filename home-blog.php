@@ -24,8 +24,8 @@
                         
                         <article class="article">
         
-                            <h1 class="title"><?php _e( 'Not found',"novalite" ) ?></h1>           
-                            <p><?php _e( 'Sorry, no posts matched found ',"novalite" ) ?></p>
+                            <h1 class="title"><?php esc_html_e( 'Not found',"novalite" ) ?></h1>           
+                            <p><?php esc_html_e( 'Sorry, no posts matched found ',"novalite" ) ?></p>
                          
                         </article>
                         
@@ -47,7 +47,7 @@
                         } else { 
                             
                             the_widget( 'WP_Widget_Calendar',
-                            array("title"=> __('Calendar','novalite')),
+                            array("title"=> esc_html__('Calendar','novalite')),
                                 array('before_widget' => '<div class="pin-article span4"><div class="article">',
                                       'after_widget'  => '</div></div>',
                                       'before_title'  => '<h3 class="title">',

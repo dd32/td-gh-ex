@@ -17,25 +17,25 @@ class novalite_customize {
 
 		wp_enqueue_style ( 
 			'jaxlite_panel', 
-			get_template_directory_uri() . '/core/admin/inc/css/customize.css', 
+			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
 
 		wp_enqueue_script( 
 			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/inc/js/customizer-preview.js',
+			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
 			  array( 'jquery' ),
 			  '1.0.0', 
 			  true
 		);
 
-		$jaxlite_details = array(
+		$novalite_details = array(
 			'label' => __( 'Upgrade to Nova Premium', 'novalite' ),
 			'url' => esc_url('https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=panel')
 		);
 	
-		wp_localize_script( 'customizer-preview', 'novalite_details', $jaxlite_details );
+		wp_localize_script( 'customizer-preview', 'novalite_details', $novalite_details );
 	  
 	}
 	

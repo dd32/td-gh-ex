@@ -2,7 +2,7 @@
 
 if ( have_comments() ) : 
 
-	echo comments_number( '<h3 class="comments">'.__( "No comments","novalite").'</h3>', '<h3 class="comments">1 '.__( "comment","novalite").'</h3>', '<h3 class="comments">% '.__( "comments","novalite").'</h3>' ); 
+	echo comments_number( '<h3 class="comments">'.esc_html__( "No comments","novalite").'</h3>', '<h3 class="comments">1 '.esc_html__( "comment","novalite").'</h3>', '<h3 class="comments">% '.esc_html__( "comments","novalite").'</h3>' ); 
 	
 ?>
 
@@ -27,18 +27,18 @@ function nova_comment ($comment, $args, $depth) {
      
  	<div class="comment-text">
 	   <header class="comment-author">
-       		
-        	<span class="author"><?php printf(__('<cite>%s</cite>','novalite'), get_comment_author_link()) ?></span>
+
+        	<span class="author"><cite><?php printf( esc_html__('%s','novalite'), get_comment_author_link());?> </cite> </span>
             <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
-      		<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s','novalite'), get_comment_date(),  get_comment_time()) ?></a> - 
+      		<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(esc_html__('%1$s at %2$s','novalite'), get_comment_date(),  get_comment_time()) ?></a> - 
 	  		<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-      		<?php edit_comment_link(__('(Edit)','novalite')) ?>
+      		<?php edit_comment_link(esc_html__('(Edit)','novalite')) ?>
     		</time>
             
       </header>
 
       <?php if ($comment->comment_approved == '0') : ?>
-         <br /><em><?php _e('Your comment is awaiting approval.','novalite') ?></em>
+         <br /><em><?php esc_html_e('Your comment is awaiting approval.','novalite') ?></em>
       <?php endif; ?>
 	  
 	  <?php comment_text() ?>
@@ -54,8 +54,8 @@ function nova_comment ($comment, $args, $depth) {
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 
 <div class="wp-pagenavi">
-     <div class="alignleft"><?php previous_comments_link(__('&laquo;','novalite')) ?></div>
-     <div class="alignright"><?php next_comments_link(__('&raquo;','novalite')) ?></div>
+     <div class="alignleft"><?php previous_comments_link(esc_html__('&laquo;','novalite')) ?></div>
+     <div class="alignright"><?php next_comments_link(esc_html__('&raquo;','novalite')) ?></div>
 </div> 
 <?php endif; // check for comment navigation ?>
 
@@ -63,7 +63,7 @@ function nova_comment ($comment, $args, $depth) {
 
 <section class="comment-form">
 
-	<?php comment_form(array('label_submit' =>  __('Comment','novalite')) ); ?>
+	<?php comment_form(array('label_submit' =>  esc_html__('Comment','novalite')) ); ?>
     
     <div class="clear"></div>
 
