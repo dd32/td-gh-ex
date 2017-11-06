@@ -198,9 +198,33 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	}
 
-	//Bride and Groom
-	  $wp_customize->add_section('bb_wedding_bliss_groom_section',array(
-	    'title' => __('Bride & Groom Section','bb-wedding-bliss'),
+	//Love Story
+	$wp_customize->add_section('bb_wedding_bliss_lovestory',array(
+		'title'	=> __('Love Story Section','bb-wedding-bliss'),
+		'description'	=> __('Add Love Story sections below.','bb-wedding-bliss'),
+		'panel' => 'bb_wedding_bliss_panel_id',
+	));
+
+	$post_list = get_posts();
+	$i = 0;
+	foreach($post_list as $post){
+		$posts[$post->post_title] = $post->post_title;
+	}
+
+	$wp_customize->add_setting('bb_wedding_bliss_love_post_setting',array(
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control('bb_wedding_bliss_love_post_setting',array(
+		'type'    => 'select',
+		'choices' => $posts,
+		'label' => __('Select post','bb-wedding-bliss'),
+		'section' => 'bb_wedding_bliss_lovestory',
+	));
+
+	//More Event
+	  $wp_customize->add_section('bb_wedding_bliss_event_section',array(
+	    'title' => __('More Event Section','bb-wedding-bliss'),
 	    'description' => '',
 	    'priority'  => null,
 	    'panel' => 'bb_wedding_bliss_panel_id',
@@ -213,7 +237,18 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	  $wp_customize->add_control('bb_wedding_bliss_main_title',array(
 	    'label' => __('Title','bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_groom_section',
+	    'section' => 'bb_wedding_bliss_event_section',
+	    'type'  => 'text'
+	  ));
+
+	  $wp_customize->add_setting('bb_wedding_bliss_short_line',array(
+	    'default' => '',
+	    'sanitize_callback' => 'sanitize_text_field',
+	  ));
+
+	  $wp_customize->add_control('bb_wedding_bliss_short_line',array(
+	    'label' => __('Short Line','bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_event_section',
 	    'type'  => 'text'
 	  ));
 
@@ -228,36 +263,17 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	  $cats[$category->slug] = $category->name;
 	  }
 
-	  $wp_customize->add_setting('bb_wedding_bliss_bride_setting',array(
+	  $wp_customize->add_setting('bb_wedding_bliss_event_setting',array(
 	    'default' => 'select',
 	    'sanitize_callback' => 'sanitize_text_field',
 	  ));
 
-	  $wp_customize->add_control('bb_wedding_bliss_bride_setting',array(
+	  $wp_customize->add_control('bb_wedding_bliss_event_setting',array(
 	    'type'    => 'select',
 	    'choices' => $cats,
 	    'label' => __('Select Category to display Latest Post','bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_groom_section',
+	    'section' => 'bb_wedding_bliss_event_section',
 	  ));
-
-	//footer
-	$wp_customize->add_section('bb_wedding_bliss_footer_section',array(
-		'title'	=> __('Footer Text','bb-wedding-bliss'),
-		'description'	=> '',
-		'priority'	=> null,
-		'panel' => 'bb_wedding_bliss_panel_id',
-	));
-	
-	$wp_customize->add_setting('bb_wedding_bliss_footer_copy',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('bb_wedding_bliss_footer_copy',array(
-		'label'	=> __('Copyright Text','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_footer_section',
-		'type'		=> 'textarea'
-	));
 		
 }
 add_action( 'customize_register', 'bb_wedding_bliss_customize_register' );	
@@ -339,7 +355,7 @@ final class bb_wedding_bliss_customize {
 				array(
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-wedding-bliss' ),
-					'pro_url'  => 'http://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'
+					'pro_url'  => 'https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'
 				)
 			)
 		);

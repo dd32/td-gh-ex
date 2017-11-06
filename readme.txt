@@ -3,10 +3,10 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   BB Wedding Bliss
-Theme URI       :   http://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.2
-Tested up to    :   WP 4.8.2
-Author          :   themeshopy
+Theme URI       :   https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
+Version         :   1.0.3
+Tested up to    :   WP 4.8.3
+Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
@@ -96,6 +96,10 @@ ii) Added changelog in readme file sa per standerd.
 
 Version 1.0.2
 i) Resolved errors.
+
+Version 1.0.3
+i)  Changed the layout of the theme.
+ii) Tested theme upto wordpress version 4.8.3.
 
 BB Wedding Bliss Premium version
 ==========================================================

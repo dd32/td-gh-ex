@@ -1,10 +1,10 @@
 /*
 Theme Name: BB Wedding Bliss
-Theme URI:  http://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
+Theme URI:  https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
 Author: Themeshopy
-Author URI: http://www.themeshopy.com/
+Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -226,12 +226,12 @@ input[type="search"] {
     color: #000;
 }
 input[type="submit"] {
-	border:2px solid #EE1C25;
+	border:2px solid rgb(21, 28, 39);
 	text-align:center;
 	text-transform:uppercase;
 	font-size:18px;
 	padding:7px 30px;
-	background:#EE1C25;
+	background:rgb(21, 28, 39);
 	font-weight:bold;
 	color:#fff;
 	border-radius:3px;
@@ -261,7 +261,7 @@ input[type="submit"] {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #EE1C25;
+	background: rgb(21, 28, 39);
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 0 50%;
@@ -308,7 +308,7 @@ a.button{
 	
 /* ---------HEADER--------- */
 .top-head {
-    background: rgba(238, 28, 37, 0.75);
+    background: rgb(21, 28, 39);
     float: left;
     width: 100%;
 }
@@ -340,18 +340,18 @@ a.button{
 	text-align:left;
 }
 #header .logo a{
-	color:#EE1C25;
+	color: rgb(21, 28, 39);
 	font-family:'Roboto';
 }
 #header .logo p{
 	font-size:12px;
 	font-family:arimo;
-	color: #EE1C25;
+	color: rgb(21, 28, 39);
 }
 
 #header {
     background: #ffffff;
-    border-bottom: 5px solid #EE1C25;
+    border-bottom: 5px solid rgb(21, 28, 39);
     box-shadow: 0 0 30px 2px #333;
 }
 
@@ -467,7 +467,7 @@ a.button{
 	display:block;
 }
 #header .nav ul li a:hover{
-	color:#EE1C25;
+	color:rgb(21, 28, 39);
 }
 #header .nav ul li a:active{
 	color:#3890cb;
@@ -489,7 +489,7 @@ a.button{
 	.toggle a{
 		width:100%;
 		color:#fff;
-		background:url('images/responsive_menu.png') no-repeat right center #EE1C25;
+		background:url('images/responsive_menu.png') no-repeat right center rgb(21, 28, 39);
 		padding:10px 10px;
 		font-size:16px;
 	}
@@ -555,7 +555,7 @@ a.button{
 	}
 	#header .nav ul li:hover > ul{
 	 	display:block;
-		background:#EE1C25;
+		background:rgb(21, 28, 39);
 		width:200px;
 		position:absolute;
 		top:25px;
@@ -796,7 +796,7 @@ table#wp-calendar {
   margin: 0;
 }
 #footer{
-	background:rgba(238, 28, 37, 0.75);
+	background:rgb(21, 28, 39);
 	text-align:center;
 	color:#fff;
 	text-align:left;
@@ -841,20 +841,18 @@ table#wp-calendar {
 .copyright p {
     font-size: 16px !important;
     color: #fff;
+    margin-bottom: 0;
 }
 .copyright p a{
-    color: #000;
-}
-.copyright p a:hover{
-    color: #EE1C25;
+    color: #fff;
 }
 .abovecopyright {
     background: #4d4d4d;
-    padding: 30px 0px;
+    padding: 20px 0px;
 }
 /* --------- Bride & Groom ------- */
 .contentbox a {
-    color: #ee1c25;
+    color: rgb(21, 28, 39);
     font-size: 18px;
     font-family: 'Vollkorn', serif;
 }
@@ -874,11 +872,13 @@ table#wp-calendar {
 .heading-line{
 	text-align: center;
 }
-.heading-line img {
-    margin-bottom: 3%;
+.heading-line p {
+    color: #666;
+    font-size: 15px;
+    font-family: 'Vollkorn', serif;
 }
 .heading-line h3 {
-    color: #ee1c25;
+    color: #b79338;
     font-size: 35px;
     font-family: 'Unica One', cursive;
     font-weight: normal;
@@ -890,10 +890,31 @@ table#wp-calendar {
     text-align: center;
     margin-bottom: 5%;
 }
-.imagebox {
+/* --------- Love Story ------- */
+#love-Story,#moreevent {
+    margin: 15% 0;
+    border: solid 1px #bbb;
+    box-shadow: 4px 4px 10px 0px #bbb;
+}
+.lscontent {
+    padding: 15px;
     text-align: center;
-    width: 30%;
-    margin: 0 auto;
+}
+#love-Story h3 {
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: 'Unica One', cursive;
+    color: #b79338;
+    padding-bottom: 0;
+}
+#love-Story p {
+    font-family: 'Vollkorn', serif;
+    font-size: 13px;
+    color: #666;
+    padding: 0 12px;
+    letter-spacing: 1px;
 }
 /* --------- Blog Page ------- */
 .grid {
@@ -939,8 +960,8 @@ table#wp-calendar {
 	font-weight:bold;
 	color:#fff;
 	padding:6px 25px;
-	border:2px solid #EE1C25;
-	color:#EE1C25;
+	border:2px solid rgb(21, 28, 39);
+	color:rgb(21, 28, 39);
 	font-size:14px;
 	text-transform:uppercase;
 	margin:25px 0 0 0;
@@ -1048,7 +1069,7 @@ section#blog{
   margin:20px 0 0 0;
 }
 #comments input[type="submit"].submit{
-  background:#EE1C25 !important;
+  background:rgb(21, 28, 39) !important;
   padding:10px 50px;
   text-transform:uppercase;
   font-weight:bold;
@@ -1065,7 +1086,7 @@ section#blog{
 }
   
 #comments a.comment-reply-link:hover{
-  background:#EE1C25;
+  background:rgb(21, 28, 39);
   color: #fff;
 }
   
@@ -1163,7 +1184,7 @@ section#blog{
 	padding:9px 50px;
 	border:2px solid #dadada;
 	color:#ffffff;
-	background:#ee1c25;
+	background:rgb(21, 28, 39);
 	font-size:18px;
 	height:auto;
 	display:table;
@@ -1200,8 +1221,8 @@ a.blog-more{
     border-radius: 30px;
     font-size: 18px;
     font-family: Roboto;
-    background: #EE1C25;
-    color: #fff;
+    background: rgb(21, 28, 39);
+    color: #b79338;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
@@ -1219,9 +1240,9 @@ a.blog-more{
 	float:left;
 }
 #sidebar input[type="submit"]{
-	background:#EE1C25;
+	background:rgb(21, 28, 39);
 	border:none;
-	color:#fff;
+	color:#b79338;
 	padding:10px 0;
 	width:30%;
 	font-size:14px;
@@ -1231,7 +1252,7 @@ a.blog-more{
 
 #sidebar aside {
     margin-bottom: 12%;
-    border: 2px solid #EE1C25;
+    border: 2px solid rgb(21, 28, 39);
     padding: 15px;
     border-radius: 3px;
 }
@@ -1250,7 +1271,7 @@ a.blog-more{
 	color:#737171;
 }
 #sidebar ul li a:hover{
-	color:#EE1C25;
+	color:rgb(21, 28, 39);
 }
 label{
 	margin-bottom: 0px;
@@ -1280,7 +1301,7 @@ label{
 	text-align:center;
 	margin-bottom:25px;
 	font-family:Roboto;
-	background-color: rgba(238, 28, 37, 0.75);
+	background-color: rgb(21, 28, 39);
 }
 
 .single .title-box{
@@ -1387,7 +1408,7 @@ label{
     width:auto;
     color:#fff;
 	/* Pagination text color */
-    background: #4d4d4d ;
+    background: rgb(21, 28, 39) ;
 	/* Pagination non-active background color */
     -webkit-transition: background .15s ease-in-out;
     -moz-transition: background .15s ease-in-out;
@@ -1398,13 +1419,13 @@ label{
  
 .pagination a:hover{
 	color:#fff;
-    background: #EE1C25;
+    background: #b79338;
 	/* Pagination background on hover */
 }
  
 .pagination .current{
 	padding:10px 15px;
-    background: #EE1C25;
+    background: #b79338;
 	/* Current page background */
     color:#fff;
 	font-weight:normal;
