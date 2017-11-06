@@ -151,7 +151,7 @@ require get_template_directory() . '/inc/widget/testimonial-widget.php';
 /**
  * Custom Our Work Widget
  */
-require get_template_directory() . '/inc/widget/our-work-widget.php';
+require get_template_directory() . '/inc/widget/our-treatment-gallery-widget.php';
 
 
 

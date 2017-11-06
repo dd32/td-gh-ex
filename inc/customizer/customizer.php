@@ -200,7 +200,7 @@ $wp_customize->add_control(
             'better_health_feature_icon_sec_separator_'.$icon_key,
                 array(
                     'default' => '<hr>',
-                    'sanitize_callback' => 'sanitize_text_field',
+                    'sanitize_callback' => 'wp_kses',
                 )
         );
         $wp_customize->add_control(new Better_Health_Customize_Section_Separator(

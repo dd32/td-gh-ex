@@ -30,13 +30,14 @@ if ( !function_exists('better_health_get_default_theme_options' ) ) :
         $default['better_health_slider_get_started_link'] = '#';
 
         // footer copyright.
-         $default['better_health_copyright'] = wp_kses_post('Copyright All Rights Reserved', 'better-health');
+         $default['better_health_copyright'] = sprintf(esc_html__('Copyright &copy; All Rights Reserved. %s','better-health'), date('Y'));
+
         $default['better_health_contact_link_button_text'] = esc_html__('Contact Us', 'better-health');
          $default['better_health_contact_link_button_link'] = '#';
 
           $default['better_health_contact_image'] = '#';
 
-         $default['better_health_contact_link_address'] = esc_html__('Sukedhara, Kathmandu, Nepal', 'better-health');
+         $default['better_health_contact_link_address'] = esc_html__('Manhattan  New York City USA', 'better-health');
 
          $default['better_health_contact_link_email'] = esc_html__('info@gmail.com', 'better-health');
 
@@ -45,8 +46,7 @@ if ( !function_exists('better_health_get_default_theme_options' ) ) :
         // Home Page Top header Info.
         $default['better_health_top_header_section'] = 'hide';
         $default['better_health_top_header_section_address_icon'] = 'fa-home';
-        $default['better_health_top_header_address'] = esc_html__('20 Maple Avenue 
-San Pedro', 'better-health');;
+        $default['better_health_top_header_address'] = '';
 
         $default['better_health_top_header_section_phone_number_icon'] = 'fa-phone';
         $default['better_health_top_header_phone_no'] = '';

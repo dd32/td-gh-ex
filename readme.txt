@@ -3,8 +3,8 @@
 Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
 Requires at least: 4.4
-Tested up to: 4.8.1
-Stable tag: 0.0.1
+Tested up to: 4.8.3
+Stable tag: 0.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,12 +24,20 @@ Demo: http://demo.canyonthemes.com/better-health
 
 #### Changelog ####
 
+## 0.0.2 - November 06 2017 ##
+* Fixed some code issues
+* Minor Style changed
+* Tested on latest WordPress version
+
 ## 0.0.1 - August 29 2017 ##
 * Submitted to WordPress
 
 #### Credits ####
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+Better Health WordPress Theme, Copyright 2017 Canyon Themes
+Better Health is distributed under the terms of the GNU General Public License v3
 
 * Google Fonts - Apache License, version 2.0
 

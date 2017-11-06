@@ -113,6 +113,15 @@ function better_health_widgets_init()
 
     ));
 
+    register_sidebar(array(
+        'name' => esc_html__('Our Treatment Gallery Page Widget Area', 'better-health'),
+        'id' => 'better-health-treatment-gallery',
+        'description' => esc_html__('Add widgets here to appear in Treatment Gallery Page', 'better-health'),
+        'before_widget' => '',
+        'after_widget' => '',
+
+    ));
+
        register_sidebar(array(
         'name' => esc_html__('Footer 1', 'better-health'),
         'id' => 'footer-1',
@@ -156,7 +165,7 @@ function better_health_widgets_init()
 }
 
 add_action('widgets_init', 'better_health_widgets_init');
-add_filter('widget_text', 'do_shortcode');
+
 /**
  * Enqueue scripts and styles.
  */
@@ -279,6 +288,8 @@ if (!function_exists('better_health_custom_logo_setup')) :
         add_theme_support('custom-logo', array(
             'height' => 290,
             'width' => 70,
+            'flex-height' => true,
+            'flex-width' => true
         ));
     }
 

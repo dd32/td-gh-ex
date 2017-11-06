@@ -55,15 +55,14 @@ if (!function_exists('better_health_entry_footer')) :
                 printf('<span class="cat-links"><i class="fa fa-folder-open-o"></i>' . esc_html__('%1$s', 'better-health') . '</span>', $categories_list); // WPCS: XSS OK.
             }
 
-            // translators: used between list items, there is a space after the comma
-            $tags_list = get_the_tag_list('', esc_html__(', ', 'better-health'));
-            if ($tags_list) {
-                printf('<i class="fa fa-tags"></i> <span class="tags-links">' . esc_html__(' %1$s', 'better-health') . '</span>', $tags_list); // WPCS: XSS OK.
+            /* translators: used between list items, there is a space after the comma */
+           $tags_list = get_the_tag_list( '', esc_html__( ', ', 'better-health' ) );
+          if ( $tags_list ) {
+            printf( '<i class="fa fa-tags"></i> <span class="tags-links">' . esc_html__( ' %1$s', 'better-health' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+        
 
-
-            }
+      }
         }
-
 
         if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
             echo '<span class="comments-link"><i class="fa fa-commenting-o"></i>';

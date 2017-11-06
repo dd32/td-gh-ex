@@ -280,6 +280,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control('better_health_appointment_shortcode_field',
     array(
         'label' => esc_html__('Appointment Shortcode From Contact Form', 'better-health'),
+        'description' => sprintf( esc_html__('Note: Please Create Appointment Form Using Contact Form 7 And Paste Shortcode Here', 'better-health')),
+        'section' => 'better_health_reset_option',
         'section' => 'better_health_appointment_option',
         'type' => 'text',
         'priority' => 10

@@ -50,7 +50,7 @@ $show_top_footer_contact_info=  better_health_get_option('better_health_hide_top
               <div class="col-xs-12 col-sm-9 col-md-6">
                   <div class="contact-link-desc">
                     <p><?php echo esc_html__('Have Any Questions !', 'better-health'); ?></p>
-                    <h5><?php echo esc_html__('Don’t Hesitate To Contact Us ANy Time.', 'better-health'); ?></h5>
+                    <h5><?php echo esc_html__('Don’t Hesitate To Contact Us Any Time.', 'better-health'); ?></h5>
                   </div>
               </div>
             <div class="col-xs-12 col-sm-9 col-md-4">
