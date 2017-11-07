@@ -253,14 +253,27 @@ function appeal_theme_custom_logo() {
  */
 function appeal_theme_header_style()
 {
+    $moda = ''; $modb = '';
     $header_text_color = get_header_textcolor();
     $header_image = get_header_image();
 
     if ( $header_image )
-    { ?>
-        <style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);background-size:cover;}</style>
+    { 
+     if( true === get_theme_mod( 'appeal_header_background_image_repeat_setting' ) ) : 
+         $modrepeat = "background-repeat: repeat"; 
+         else : 
+         $modrepeat = "background-repeat: no-repeat";  
+    endif;
+    
+    if ( true === get_theme_mod( 'appeal_header_background_image_size_setting' ) ) : 
+	    $modsize = "background-size: 100% 100%;";
+    	else : 
+    	$modsize = "";
+	endif;
+    ?>
+<style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);<?php echo esc_attr( $modrepeat ); ?>;<?php echo esc_attr( $modsize ); ?>}</style>
     <?php
-    }
+    } else { 
 /*
  * If no custom options for text are set, let's bail.
  * get_header_textcolor() options: Any hex value, 'blank' to hide text.
@@ -274,7 +287,8 @@ function appeal_theme_header_style()
         echo '#inner-footer h4,.site-title a,.site-description{color:'; ?> #<?php echo esc_attr( $header_text_color ); ?>;}
             <?php
             }
-     echo '</style>';
+     echo '</style>'; 
+     } //ends else
 }
 
 //https://themefoundation.com/wordpress-theme-customizer/

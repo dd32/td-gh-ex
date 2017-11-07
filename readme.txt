@@ -35,6 +35,11 @@ Other Screenshot images:
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 == Change Log ==
+1.2.2 
+* fixed header fonts
+* added mod for header background options
+* fixed responsive header issues on mobile
+
 1.2.1
 * added theme search tags to stylsheet header markdown
 * declared images

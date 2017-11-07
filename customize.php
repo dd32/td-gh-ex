@@ -18,7 +18,26 @@ function appeal_register_theme_customizer($wp_customize)
             'title'             => __( 'Appeal Theme Controls', 'appeal' ),
             'priority'          => 45
         ));
-
+    $wp_customize->add_setting(
+		// $id
+		'appeal_header_background_image_repeat_setting',
+		// $args
+		array(
+			'default'			=> false,
+			'sanitize_callback'	=> 'appeal_sanitize_checkbox',
+			'transport'			=> 'refresh'
+		)
+    );
+    $wp_customize->add_setting(
+		// $id
+		'appeal_header_background_image_size_setting',
+		// $args
+		array(
+			'default'			=> false,
+			'sanitize_callback'	=> 'appeal_sanitize_checkbox',
+			'transport'			=> 'refresh'
+		)
+);
     /** (1)
      * WP_Customize_ /add_setting for header background color
     */
@@ -199,6 +218,32 @@ function appeal_register_theme_customizer($wp_customize)
 	);
 
 //-----------------Controls-----------------------------------
+    $wp_customize->add_control(
+		// $id
+		'appeal_header_background_image_repeat',
+		// $args
+		array(
+			'settings'		=> 'appeal_header_background_image_repeat_setting',
+			'section'		=> 'header_image',
+			'type'			=> 'checkbox',
+			'label'			=> __( 'Background Repeat', 'appeal' ),
+			'description'	=> __( 'Should the header background image repeat?', 'appeal' ),
+		)
+	);
+
+    $wp_customize->add_control(
+		// $id
+		'appeal_header_background_image_size',
+		// $args
+		array(
+			'settings'		=> 'appeal_header_background_image_size_setting',
+			'section'		=> 'header_image',
+			'type'			=> 'checkbox',
+			'label'			=> __( 'Background Stretch', 'appeal' ),
+			'description'	=> __( 'Should the header background image stretch in full?', 
+			                       'appeal' ),
+		)
+	);
 
     // (1) Header and Footer background color
     $wp_customize->add_control(
@@ -429,6 +474,11 @@ function appeal_sanitize_number_absint( $number, $setting ) {
   // If the input is an absolute integer, return it; otherwise, return the default
   return ( $number ? $number : $setting->default );
 }
+//sanitize for checkbox
+function appeal_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
 
 
 /** (1), (2), (3), (5), (8 called from template directly)
@@ -440,12 +490,12 @@ function appeal_customizer_css() {
     if ( get_theme_mods() )
     :
     echo '<style type="text/css">';
-
+        
         if ( get_theme_mod( 'appeal_header_background_color_setting' ) ) :
              $appealheader = get_theme_mod( 'appeal_header_background_color_setting');
              echo '.site-head, .footer-footer, #sidebar-right, #sidebar-left{background: ' . esc_attr( $appealheader ) . ';} .commentlist, article.sticky .content-header{border-color: ' . esc_attr( $appealheader ) . ';}';
         endif;
-        
+				     
         if ( get_theme_mod( 'appeal_page_background_color_setting' ) ) :
              $appealpage = get_theme_mod( 'appeal_page_background_color_setting');
              echo '#content {background: ' . esc_attr( $appealpage ) . ';}';
