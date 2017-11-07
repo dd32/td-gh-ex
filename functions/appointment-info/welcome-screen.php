@@ -22,11 +22,11 @@ class appointment_screen {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'appointment_scripts_for_customizer' ) );
 
 		/* load welcome screen */
-		add_action( 'appointment_info_screen', array( $this, 'appointment_getting_started' ), 	    10 );
-		add_action( 'appointment_info_screen', array( $this, 'appointment_action_required' ), 	    20 );
-		add_action( 'appointment_info_screen', array( $this, 'appointment_child_themes' ), 		    30 );
-		add_action( 'appointment_info_screen', array( $this, 'appointment_github' ), 		            40 );
-		add_action( 'appointment_info_screen', array( $this, 'appointment_welcome_free_pro' ), 				50 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_getting_started' ), 10 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_action_required' ), 20 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_child_themes' ), 30 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_github' ), 40 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_welcome_free_pro' ), 50 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_appointment_dismiss_required_action', array( $this, 'appointment_dismiss_required_action_callback') );
@@ -58,7 +58,7 @@ class appointment_screen {
 			</div>
 		<?php
 	}
-
+	
 	/**
 	 * Load welcome screen css and javascript
 	 * @sfunctionse  1.8.2.4
@@ -264,6 +264,8 @@ class appointment_screen {
 	public function appointment_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/appointment-info/sections/free_pro.php' );
 	}
+	
+	
 }
 
 $GLOBALS['appointment_screen'] = new appointment_screen();

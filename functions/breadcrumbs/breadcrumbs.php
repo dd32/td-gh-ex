@@ -81,7 +81,7 @@ function qt_custom_breadcrumbs() {
       $breadcrumbs = array_reverse($breadcrumbs);
       for ($i = 0; $i < count($breadcrumbs); $i++) {
         echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . '&nbsp &#47; &nbsp';
+        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter;
       }
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  

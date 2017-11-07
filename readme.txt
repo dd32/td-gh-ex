@@ -94,6 +94,10 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.6.6
+1. Update Theme URI change http to https secure.
+@Version 2.6.5
+1. Fixed bredcrumb slash ( / ) issue in child pages.
 @Version 2.6.4
 1. Updated Theme Description
 @Version 2.6.3
