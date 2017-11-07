@@ -7,6 +7,8 @@ A Business theme which is ideal for creating a corporate / business website. App
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+= 1.0.9 =
+1. Update Author URI and Theme URI change http to https secure.
 = 1.0.8 =
 1. Updated Strings
 = 1.0.7 =
