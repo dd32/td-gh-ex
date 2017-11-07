@@ -89,6 +89,11 @@ li[id*="customize-control-ashe_options-social_media_icon"] span {
 	padding-bottom: 15px !important;
 }
 
+/* Pro Version */
+#customize-control-pro_version_ a.button-primary {
+	text-align: center;
+}
+
 li[id*="pro_version"] {
 	position: relative;
 	padding: 0 !important;

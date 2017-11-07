@@ -303,28 +303,23 @@ function ashe_customize_register( $wp_customize ) {
 			?>
 			<ul>
 				<li class="customize-control">
-					<h3>Upgrade <span>*</span></h3>
-					<p>There are lots of reasons to upgrade to Pro version. Unlimited custom Colors, rich Typography options, multiple variation of Blog Feed layout and way much more. Also Premium Support included. </p>
+					<h3><?php esc_html_e( 'Upgrade', 'ashe' ); ?> <span>*</span></h3>
+					<p><?php esc_html_e( 'There are lots of reasons to upgrade to Pro version. Unlimited custom Colors, rich Typography options, multiple variation of Blog Feed layout and way much more. Also Premium Support included.', 'ashe' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/customizer/free/upgrade-ashe-pro.html?ref=ashe-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
-					<h3>Try For Free <span>*</span></h3>
-					<p>You can download the full version of <strong>Ashe Pro</strong> theme for free to try it out during <strong>14 days</strong>.</p>
-					<a href="<?php echo esc_url('http://wp-royal.com/ashe-trial/?ref=ashe-free-customizer-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Try Ashe Pro Trial', 'ashe' ); ?></a>
-				</li>
-				<li class="customize-control">
-					<h3>Documentation</h3>
-					<p>Read how to customize the theme, set up widgets, and learn all the possible options available to you.</p>
+					<h3><?php esc_html_e( 'Documentation', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'Read how to customize the theme, set up widgets, and learn all the possible options available to you.', 'ashe' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
-					<h3>Support</h3>
-					<p>For Ashe theme related questions feel free to post on our support forums.  But firstly please<a href="<?php echo esc_url('http://wp-royal.com/wp-login.php?action=register/?ref=ashe-free-customizer-about-section-frm-register-btn/'); ?>">Register on Support Forums</a></p>
+					<h3><?php esc_html_e( 'Support', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'For Ashe theme related questions feel free to post on our support forums. But firstly please ', 'ashe' ); ?><a href="<?php echo esc_url('http://wp-royal.com/wp-login.php?action=register'); ?>" target="_blank"><?php esc_html_e( 'Register on Support Forums', 'ashe' ); ?></a></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/forums/forum/free-themes/ashe-free/?ref=ashe-free-customizer-about-section-support-forum-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Support', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
-					<h3>Demo Content</h3>
-					<p>You can download and import this demo file to get same content as shown on our website. For more details please read theme documentation.</p>
+					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'You can download and import this demo file to get same content as shown on our website. For more details please read theme documentation.', 'ashe' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-customizer-about-section-demoxml-btn'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Download Demo Content', 'ashe' ); ?></a>
 				</li>
 			</ul>
