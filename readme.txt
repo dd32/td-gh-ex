@@ -1,4 +1,6 @@
 Appointment Blue is the child version of Appointment theme.
+@version 1.1.6
+1. Update Author URI and Theme URI change http to https secure.
 @version 1.1.5
 1. Update Pagination Color.
 @version 1.1.4
