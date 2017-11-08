@@ -128,8 +128,13 @@ span.button:hover,
     border-color: #f07381;
 }
 
+body.minimal_layout .widget_shopping_cart li,
+body.minimal_layout .product_list_widget li {
+    border-color: #f97c8a !important;
+}
+
 .header-cart-widget .buttons a:hover {
-    border-color: #f07381 !important;
+    border-color: #f97c8a !important;
 }
 
 a:hover,

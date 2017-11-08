@@ -25,6 +25,25 @@ span.button,
 	padding:12px 14px;
 }
 
+.woocommerce.widget_shopping_cart a.button, 
+.header-cart-widget .woocommerce.widget_shopping_cart a.button,
+.woocommerce.widget_shopping_cart a.button:hover, 
+.header-cart-widget .woocommerce.widget_shopping_cart a.button:hover,
+body.minimal_layout .woocommerce.widget_shopping_cart a.button, 
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button,
+body.minimal_layout .woocommerce.widget_shopping_cart a.button:hover, 
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
+    padding: 12px 14px !important;
+	max-width:100px
+}
+
+body.minimal_layout .woocommerce.widget_shopping_cart a.button, 
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button,
+body.minimal_layout .woocommerce.widget_shopping_cart a.button:hover, 
+body.minimal_layout .header-cart-widget .woocommerce.widget_shopping_cart a.button:hover {
+	margin:0;
+}
+
 .woocommerce input.button#place_order {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
