@@ -8,6 +8,34 @@
  */
 
 /**
+ * Theme Mod Defaults
+ *
+ * @param string $theme_mod - Theme modification name.
+ * @return mixed
+ */
+function aileron_default( $theme_mod = '' ) {
+
+	$default = array (
+		'aileron_theme_layout' => 'box',
+		'aileron_copyright'    => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'aileron' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'aileron_credit'       => true,
+	);
+
+	return ( isset ( $default[$theme_mod] ) ? $default[$theme_mod] : '' );
+
+}
+
+/**
+ * Theme Mod Wrapper
+ *
+ * @param string $theme_mod - Name of the theme mod to retrieve.
+ * @return mixed
+ */
+function aileron_mod( $theme_mod = '' ) {
+	return get_theme_mod( $theme_mod, aileron_default( $theme_mod ) );
+}
+
+/**
  * Register fonts for theme.
  *
  * @return string Fonts URL for the theme.
@@ -60,19 +88,14 @@ function aileron_google_fonts_url() {
 		), 'https://fonts.googleapis.com/css' );
 	}
 
-	return $fonts_url;
+	/**
+	 * Filters the Google Fonts URL.
+	 *
+	 * @param string $fonts_url Google Fonts URL.
+	 */
+	return apply_filters( 'aileron_fonts_url', $fonts_url );
 
 }
-
-/**
- * Filter 'get_custom_logo'
- *
- * @return string
- */
-function aileron_get_custom_logo( $html ) {
-	return sprintf( '<div class="site-logo-wrapper">%1$s</div>', $html );
-}
-add_filter( 'get_custom_logo', 'aileron_get_custom_logo' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -120,6 +143,16 @@ function aileron_the_content_more_link_scroll( $link ) {
 add_filter( 'the_content_more_link', 'aileron_the_content_more_link_scroll' );
 
 /**
+ * Filter 'get_custom_logo'
+ *
+ * @return string
+ */
+function aileron_get_custom_logo( $html ) {
+	return sprintf( '<div class="site-logo-wrapper">%1$s</div>', $html );
+}
+add_filter( 'get_custom_logo', 'aileron_get_custom_logo' );
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
@@ -153,70 +186,110 @@ function aileron_body_classes( $classes ) {
 	}
 
 	// Theme Layout (wide|box)
-	$classes[] = 'layout-' . esc_attr( get_theme_mod( 'aileron_theme_layout', 'box' ) );
+	$classes[] = 'layout-' . esc_attr( aileron_mod( 'aileron_theme_layout' ) );
 
 	return $classes;
 }
 add_filter( 'body_class', 'aileron_body_classes' );
 
 /**
- * Display Blog Footer.
+ * Blog Credits.
  *
  * @return void
  */
-function aileron_site_info() {
-?>
-<div class="site-info">
-	<div class="container">
+function aileron_credits_blog() {
+	$html = '<div class="credits credits-blog">'. aileron_mod( 'aileron_copyright' ) .'</div>';
 
-		<div class="row">
-			<div class="col-lg-12">
+	/**
+	 * Filters the Blog Credits HTML.
+	 *
+	 * @param string $html Blog Credits HTML.
+	 */
+	$html = apply_filters( 'aileron_credits_blog_html', $html );
 
-				<div class="blog-info">
-					<?php
-					printf( '%1$s %2$s <span class="sep">%3$s</span> <a href="%4$s">%5$s</a>',
-						__( '&copy; Copyright', 'aileron' ), date( 'Y' ), __( '&ndash;', 'aileron' ), esc_url( home_url() ), esc_html( get_bloginfo( 'name' ) )
-					);
-					?>
-				</div>
-
-				<div class="designer-info">
-					<?php
-					printf( '<a href="%1$s">%2$s</a> <span class="sep">%3$s</span> %6$s <a href="%4$s">%5$s</a>',
-						'https://themecot.com', 'Aileron Theme', __( '&middot;', 'aileron' ), 'http://wordpress.org/', 'WordPress', __( 'Powered by', 'aileron' )
-					);
-					?>
-				</div>
-
-			</div>
-		</div>
-
-	</div><!-- .container -->
-</div><!-- .site-info -->
-<?php
+	echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $html ) ) ) ) ) ); // WPCS: XSS OK.
 }
-add_action( 'aileron_footer', 'aileron_site_info' );
+add_action( 'aileron_credits', 'aileron_credits_blog' );
 
 /**
- * Sets the authordata global when viewing an author archive.
+ * Designer Credits.
  *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function aileron_setup_author() {
-	global $wp_query;
+function aileron_credits_designer() {
+	$designer_string = sprintf( '%1$s %2$s <a href="%3$s" title="%4$s">%5$s</a> <span>%6$s</span> %7$s <a href="%8$s" title="%9$s">%10$s</a>',
+		esc_html( 'Aileron Theme' ),
+		esc_html( 'by' ),
+		esc_url( 'https://themecot.com' ),
+		esc_attr( 'ThemeCot' ),
+		esc_html( 'ThemeCot' ),
+		esc_html_x( '&sdot;', 'Footer Credit Separator', 'aileron' ),
+		esc_html__( 'Powered by', 'aileron' ),
+		esc_url( 'https://wordpress.org' ),
+		esc_attr( 'WordPress' ),
+		esc_html( 'WordPress' )
+	);
 
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
+	// Designer HTML
+	$html = '<div class="credits credits-designer">'. $designer_string .'</div>';
+
+	/**
+	 * Filters the Designer HTML.
+	 *
+	 * @param string $html Designer HTML.
+	 */
+	$html = apply_filters( 'aileron_credits_designer_html', $html );
+
+	echo $html; // WPCS: XSS OK.
 }
-add_action( 'wp', 'aileron_setup_author' );
+add_action( 'aileron_credits', 'aileron_credits_designer' );
+
+/**
+ * Enqueues front-end CSS to hide elements.
+ *
+ * @see wp_add_inline_style()
+ */
+function aileron_hide_elements() {
+	// Elements
+	$elements = array();
+
+	// Credit
+	if ( false === aileron_mod( 'aileron_credit' ) ) {
+		$elements[] = '.credits-designer';
+	}
+
+	// Bail if their are no elements to process
+	if ( 0 === count( $elements ) ) {
+		return;
+	}
+
+	// Build Elements
+	$elements = implode( ',', $elements );
+
+	// Build CSS
+	$css = sprintf( '%1$s { clip: rect(1px, 1px, 1px, 1px); position: absolute; }', $elements );
+
+	// Add Inline Style
+	wp_add_inline_style( 'aileron-style', aileron_minify_css( $css ) );
+}
+add_action( 'wp_enqueue_scripts', 'aileron_hide_elements', 11 );
+
+/**
+ * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+ */
+function aileron_attachment_link( $url, $id ) {
+	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) ) {
+		return $url;
+	}
+
+	$image = get_post( $id );
+	if ( ! empty( $image->post_parent ) && $image->post_parent != $id ) {
+		$url .= '#main';
+	}
+
+	return $url;
+}
+add_filter( 'attachment_link', 'aileron_attachment_link', 10, 2 );
 
 if ( ! function_exists( 'aileron_the_attached_image' ) ) :
 /**
@@ -286,3 +359,26 @@ function aileron_the_attached_image() {
 
 }
 endif;
+
+/**
+ * Minify the CSS.
+ *
+ * @param string $css.
+ * @return minified css
+ */
+function aileron_minify_css( $css ) {
+
+    // Remove CSS comments
+    $css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+
+    // Remove space after colons
+	$css = str_replace( ': ', ':', $css );
+
+	// Remove space before curly braces
+	$css = str_replace( ' {', '{', $css );
+
+    // Remove whitespace i.e tabs, spaces, newlines, etc.
+    $css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '     '), '', $css );
+
+    return $css;
+}
