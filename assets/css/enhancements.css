@@ -222,7 +222,9 @@ input[type="submit"],
 .main-nav a,
 .main-navi---a_l,
 .widget_nav_menu a,
-.widget_pages a
+.widget_pages a,
+.widget_calendar a,
+.widget_calendar .text-node
 {
     display: inline-flex;
     justify-content: center;
@@ -353,11 +355,6 @@ select
 {
     margin-bottom: -.5em;
     margin-bottom: calc( var(--content--spacing-y) * -1);
-}
-
-.data-format--img br
-{
-    display: none;
 }
 
 
@@ -1108,7 +1105,8 @@ select
     padding-bottom: 1em;
 }
 
-.search-results .excerpt-link
+.search-results .excerpt-link,
+.archive .excerpt-link
 {
     display: block;
 }
@@ -1209,7 +1207,7 @@ select
 .main-logo--enabled .main-name,
 .main-logo--enabled .main-description
 {
-    padding-left: calc( var(--main-logo--height) + .5rem);
+    margin-left: calc( var(--main-logo--height) + .5rem);
 }
 
 /* With Main Menu */
@@ -1503,15 +1501,6 @@ select
     font-size: .75rem;
 }
 
-.applicator--go-start-nav--active .copyright
-{
-    padding-left: 3rem;
-    padding-left: var(--spacing--toggle-allowance);
-    
-    padding-right: 3rem;
-    padding-right: var(--spacing--toggle-allowance);
-}
-
 .page--short .copyright
 {
     position: fixed;
@@ -1780,26 +1769,19 @@ select
     margin: 0;
     
     padding-left: 1rem;
-    padding-left: var(--content--spacing-x);
-    
     padding-right: 1rem;
-    padding-right: var(--content--spacing-x);
 }
 
 .comment-subscription-form input
 {
-    flex: 1 2rem;
+    margin-right: .5rem;
     
-    width: 3rem;
     height: 3rem;
 }
 
 .comment-form .comment-subscription-form .subscribe-label
 {
-    flex: 1 100%;
     display: inline-flex !important;
-    justify-content: normal;
-    align-items: center;
 }
 
 
@@ -2207,6 +2189,37 @@ select
 
 
 
+/* ------------------ Calendar ------------------ */
+.dom--unready .widget_calendar
+{
+    visibility: hidden;
+}
+
+.applicator--calendar .widget_calendar a,
+.applicator--calendar .widget_calendar .text-node
+{
+    min-width: 2.25rem;
+    min-height: 2.25rem;   
+}
+
+.applicator--calendar .widget-calendar-active-date
+{
+    background-color: #005fe6;
+    border: 0;
+}
+
+.applicator--calendar .widget-calendar-active-date a
+{
+    display: flex;
+    
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
 /* ------------------ Go to Content Nav - Function ------------------ */
 .applicator--go-content-nav.dom--unready .go-content-nav
 {
@@ -2416,36 +2429,6 @@ select
 }
 
 
-/* Setup for Widget > Menu 
-.main-actions .widget_nav_menu .menu
-{
-    display: flex;
-}
-
-.applicator--main-search .main-actions .widget_nav_menu
-{
-    position: absolute;
-}
-
-.main-actions .main-actions---ct_cr
-{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.applicator--main-search .main-actions---ct_cr,
-.applicator--main-actions-widgets .main-actions---ct_cr
-{
-    padding-right: 3rem;
-}
-
-.applicator--main-search.applicator--main-actions-widgets .main-actions---ct_cr
-{
-    padding-right: 6rem;
-}
-*/
-
-
 
 
 
@@ -2460,6 +2443,11 @@ select
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.main-actions-widgets--active
+{
+    z-index: 100;
 }
 
 .applicator--main-search .main-actions-widgets
@@ -2515,12 +2503,37 @@ select
     max-width: calc( 100vw - 6rem );
 }
 
+.main-actions-widgets .main-actions-widgets---ct
+{
+    position: absolute;
+    bottom: 100%;
+    opacity: 0;
+    transition: opacity .05s ease-in-out;
+}
+
 .main-actions-widgets--active .main-actions-widgets---ct
+{
+    bottom: 0%;
+    opacity: 1;
+    z-index: 100;
+}
+
+.main-actions-widgets--inactive .main-actions-widgets---ct_cr
+{
+    display: none;
+}
+
+.here.main-actions-widgets--inactive .main-actions-widgets---ct
 {
     z-index: 100;
 }
 
-.main-actions-widgets--inactive .main-actions-widgets---ct
+.here.main-actions-widgets--inactive .main-actions-widgets---ct_cr
+{
+    display: block;
+}
+
+.there.main-actions-widgets--inactive .main-actions-widgets---ct_cr
 {
     display: none;
 }
@@ -2573,9 +2586,7 @@ select
     top: 0;
     
     width: 100%;
-    
     min-height: 3rem;
-    min-height: var(--elem--height--md);
 }
 
 /* Buttons */
@@ -2755,10 +2766,6 @@ select
     top: 0;
     
     width: 100%;
-    
-    /* GPU Hack */
-    transform: translateZ(0);
-    z-index: 100;
 }
 
 .there.main-menu--inactive
@@ -2769,6 +2776,7 @@ select
 /* In order to transition during inactive and active */
 .main-menu-func .main-hr-aside---ct
 {
+    transform: translateZ(0);
     transition: transform .3s ease-in-out;
 }
 
@@ -2780,7 +2788,7 @@ select
     top: 0;
     z-index: 1;
     
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateZ(0);
 }
 
 .main-menu--active .main-hr-aside---ct,
@@ -2868,15 +2876,32 @@ select
     top: 0;
 }
 
+.main-menu-func .main-menu-dismiss
+{
+    transition: opacity .3s ease-in-out;
+}
+
+.main-menu--inactive .main-menu-dismiss,
+.main-menu--active .main-menu-dismiss
+{
+    opacity: 0;
+}
+
+.here.main-menu--active .main-menu-dismiss
+{
+    opacity: 1;
+}
+
+/* Hide action immediately upon activating */
+.here.main-menu--inactive .main-menu-dismiss
+{
+    visibility: hidden;
+}
+
 /* Illusion to make the toggle look like below the overlay */
 .here.main-menu--inactive .main-menu-toggle .icon
 {
     opacity: .25;
-}
-
-.main-menu--inactive .main-menu-dismiss
-{
-    opacity: 0;
 }
 
 .applicator--main-menu--active
@@ -3176,20 +3201,48 @@ select
 @media only screen and ( min-width: 48em )
 {
     
-    .post-content---ct_cr > .data-format--img--left-aligned
+    /* Data Format <img> */
+    
+    /* Left-aligned */
+    .post-content---ct_cr > .data-format--img--left-aligned,
+    .post-content---ct_cr > .data-format--img .alignleft
     {
         float: left;
         
         margin-right: 1rem;
     }
-
-    .post-content---ct_cr > .data-format--img--right-aligned
+    
+    .post-content---ct_cr > p.data-format--img .alignleft
+    {
+        margin-left: -1rem;
+    }
+    
+    /* Right-aligned */
+    .post-content---ct_cr > .data-format--img--right-aligned,
+    .post-content---ct_cr > .data-format--img.alignright,
+    .post-content---ct_cr > .data-format--img .alignright
     {
         float: right;
         
         margin-left: 1rem;
     }
-
+    
+    .post-content---ct_cr > p.data-format--img .alignright
+    {
+        margin-right: -1rem;
+    }
+    
+    /* Reformatting layout */
+    .post-content---ct_cr > p.data-format--img--left-aligned,
+    .post-content---ct_cr > p.data-format--img--right-aligned
+    {
+        float: none;
+        
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Center-aligned */
     .post-content---ct_cr > .data-format--img--center-aligned
     {
         clear: both;
@@ -3203,13 +3256,7 @@ select
         margin-right: auto;
     }
     
-    .post-content---ct_cr > p.data-format--img
-    {
-        float: none;
-        margin: 0;
-    }
-    
-    .post-content---ct_cr .wp-caption.alignleft
+    .post-content---ct .wp-caption.alignleft
     {
         margin-right: 1rem;
     }

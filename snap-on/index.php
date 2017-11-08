@@ -36,6 +36,7 @@ if ( ! function_exists( 'applicator_css_class_names' ) ) {
 
             // Themes
             'avatar',
+            'calendar',
             'caption',
             'categories',
             'comment-meta',
@@ -63,6 +64,7 @@ if ( ! function_exists( 'applicator_css_class_names' ) ) {
             // Layout
             'container-width',
             'layout',
+            'main-header',
         );
 
         foreach ( ( array ) $r as $css_class_name ) {

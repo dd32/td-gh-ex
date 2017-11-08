@@ -271,13 +271,39 @@
     
     
     
+    /* ------------------------ Wrap Text Nodes ------------------------ */
+    function wrapTextNode( $elem ) {
+                
+        var $textNodeMU = $( '<span />', { 'class': 'text-node' } );
+
+        // https://stackoverflow.com/a/18727318
+        $elem.contents().filter( function() {
+
+            // Get only the text nodes
+            return this.nodeType === 3;
+        } ).wrap( $textNodeMU );
+
+    }
+    
+    
+    
+    
+    
     // ------------------------- Go to Content Nav
     function initGoContentNav( $cp ) {
         
-        if ( ! $aplApplicatorGoCtNav.length ) {
-			return;
-		}
         
+        // Gatekeeper
+        ( function() {
+            
+            if ( ! $aplApplicatorGoCtNav.length ) {
+                return;
+            }
+            
+        }() );
+        
+        
+        // Variables
         var $goCtNaviA = $( '#go-ct-navi---a' ),
             
             goCtNavActCss = 'go-content-nav--active',
@@ -286,17 +312,30 @@
             aplGoCtNavInactCss = 'applicator--go-content-nav--inactive',
             $goContentNavOverlay;
         
-        funcName = 'go-content-nav-func';
         
-        $cp
-            .addClass( funcName )
-            .addClass( funcTerm );
+        // Initializing
+        ( function() {
+            
+            funcName = 'go-content-nav-func';
         
-        overlayActivate( funcName );
+            $cp
+                .addClass( funcName )
+                .addClass( funcTerm );
+
+            overlayActivate( funcName );
+            
+        }() );
         
         
-        $goContentNavOverlay = $( '#overlay--' + funcName );
+        // Defining elements
+        ( function() {
+            
+            $goContentNavOverlay = $( '#overlay--' + funcName );
+            
+        }() );
         
+        
+        // On
         function goCtNavActivate() {
             $cp
                 .addClass( goCtNavActCss )
@@ -306,6 +345,8 @@
                 .removeClass( aplGoCtNavInactCss );
         }
         
+        
+        // Off
         function goCtNavDeactivate() {
             $cp
                 .addClass( goCtNavInactCss )
@@ -314,29 +355,40 @@
                 .addClass( aplGoCtNavInactCss )
                 .removeClass( aplGoCtNavActCss );
         }
-        
-        // Initiate
         goCtNavDeactivate();
         
-        // Focus In > Activate
-        $goCtNaviA.on( 'focusin.applicator', function() {
-            goCtNavActivate();
-        } );
-
-        // Focus Out > Deactivate
-        $goCtNaviA.on( 'focusout.applicator', function() {
-            goCtNavDeactivate();
-        } );
         
-
-        // Deactivate via keyboard ESC key
-        $window.load( function() {
-            $document.on( 'keyup.applicator', function ( e ) {
-                if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
-                    goCtNavDeactivate();
-                }
+        // Focus In > Activate
+        ( function() {
+            
+            $goCtNaviA.on( 'focusin.applicator', function() {
+                goCtNavActivate();
             } );
-        } );
+            
+        }() );
+        
+        
+        // // Focus Out > Deactivate
+        ( function() {
+            
+            $goCtNaviA.on( 'focusout.applicator', function() {
+                goCtNavDeactivate();
+            } );
+            
+        }() );
+        
+        
+        // Deactivate via keyboard ESC key
+        ( function() {
+            $window.load( function() {
+                $document.on( 'keyup.applicator', function ( e ) {
+                    if ( $cp.hasClass( goCtNavActCss ) && e.keyCode == 27 ) {
+                        goCtNavDeactivate();
+                    }
+                } );
+            } );
+            
+        }() );
         
         
         // Click Overlay
@@ -346,7 +398,6 @@
                 goCtNavDeactivate();
             } );
         }() );
-        
     }
     initGoContentNav( $( '#go-content-nav' ) );
     
@@ -605,7 +656,7 @@
                 
             }
 
-            $mainHrAsCt.on( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend', function() {
+            $mainHrAsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
                 if ( event.propertyName == 'transform' ) {
                     transHere( $cp );
                     transHere( $mainMenuOverlay );
@@ -642,7 +693,7 @@
             
                 mainMenuDeactivate();
 
-                $mainHrAsCt.on( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend', function() {
+                $mainHrAsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
                     if ( event.propertyName == 'transform' ) {
                         transThere( $cp );
                         transThere( $mainMenuOverlay );
@@ -1192,60 +1243,111 @@
     /* ------------------------ Main Actions ------------------------ */
     function initMainActions() {
         
+        
         var $mainActionsWidgetItems = $mainActions.find( '.main-actions---ct_cr > .widget:not( .widget_search )' );
         
-        if ( ! $mainActionsWidgetItems.length ) {
-            $html.removeClass( aplApplicatorMainActionsWidgetsTerm );
-			return;
-		}
+        // Gatekeeper
+        ( function() {
+            if ( ! $mainActionsWidgetItems.length ) {
+                $html.removeClass( aplApplicatorMainActionsWidgetsTerm );
+                return;
+            }
+
+            if ( ! $aplApplicatorMainActionsWidgets.length ) {
+                return;
+            }
+        }() );
         
-        if ( ! $aplApplicatorMainActionsWidgets.length ) {
-			return;
-		}
         
+        // Variables
+        var $mainActionsWidgetsMU,
+            $mainActionsWidgets,
+            $mainActionsWidgetsCt,
+            $mainActionsWidgetsCtCr,
+            $mainActionsWidgetsH,
+
+            $mainActionsWidgetsToggleShowLabel = aplDataMainActionsWidgets.mainActionsWidgetsShowLabel,
+            $mainActionsWidgetsToggleHideLabel = aplDataMainActionsWidgets.mainActionsWidgetsHideLabel,
+            $mainActionsWidgetsToggleLabel = aplDataMainActionsWidgets.mainActionsWidgetsToggleLabel,
+            $mainActionsWidgetsToggleIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsToggleIcon ),
+            $mainActionsWidgetsToggleHideIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsHideIcon ),
+
+            $mainActionsWidgetsToggle,
+            $mainActionsWidgetsToggleButton,
+            $mainActionsWidgetsDismissButton,
+            $mainActionsWidgetsToggleButtonLabelText,
+
+            mainActionsWidgetsOnCSS = 'main-actions-widgets--active',
+            mainActionsWidgetsOffCSS = 'main-actions-widgets--inactive',
+            aplMainActionsWidgetsOnCSS = 'applicator--main-actions-widgets--active',
+            aplMainActionsWidgetsOffCSS = 'applicator--main-actions-widgets--inactive',
+
+            $mainActionsWidgetsWidgetGroupMU,
+            $mainActionsWidgetsWidgetGroup;
+        
+        
+        // Initializing
         ( function() {
             
-            var $mainActionsWidgetsMU = htmlokCP( 'main-actions-widgets', 'Main Actions Widgets', 'aside' ),
-                $mainActionsWidgets,
-                $mainActionsWidgetsCt,
-                $mainActionsWidgetsCtCr,
-                $mainActionsWidgetsH,
-                
-                $mainActionsWidgetsToggleShowLabel = aplDataMainActionsWidgets.mainActionsWidgetsShowLabel,
-                $mainActionsWidgetsToggleHideLabel = aplDataMainActionsWidgets.mainActionsWidgetsHideLabel,
-                $mainActionsWidgetsToggleLabel = aplDataMainActionsWidgets.mainActionsWidgetsToggleLabel,
-                $mainActionsWidgetsToggleIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsToggleIcon ),
-                $mainActionsWidgetsToggleHideIcon = $( aplDataMainActionsWidgets.mainActionsWidgetsHideIcon ),
-                
-                $mainActionsWidgetsToggle,
-                $mainActionsWidgetsToggleButton,
-                $mainActionsWidgetsDismissButton,
-                $mainActionsWidgetsToggleButtonLabelText,
-                
-                mainActionsWidgetsOnCSS = 'main-actions-widgets--active',
-                mainActionsWidgetsOffCSS = 'main-actions-widgets--inactive',
-                aplMainActionsWidgetsOnCSS = 'applicator--main-actions-widgets--active',
-                aplMainActionsWidgetsOffCSS = 'applicator--main-actions-widgets--inactive',
-                
-                $mainActionsWidgetsWidgetGroupMU,
-                $mainActionsWidgetsWidgetGroup;
+            funcName = 'main-actions-widgets-func';
             
+            $mainActionsWidgets
+                .addClass( funcTerm )
+                .addClass( funcName );
+        } );
+        
+        
+        // Create Main Actions Widgets
+        ( function() {
+
+            $mainActionsWidgetsMU = htmlokCP(
+                'main-actions-widgets',
+                'Main Actions Widgets',
+                'aside'
+            );
+
             // Wrap in markup
             $mainActionsWidgetItems
                 .wrapAll( $mainActionsWidgetsMU );
             
-            // Define initial elements
-            funcName = 'main-actions-widgets-func';
+            
+            $mainActionsWidgetsWidgetGroupMU = $( '<div />', {
+                'class': 'grp widget-grp main-actions-widgets---widget-grp'
+            } );
+
+            // Wrap in markup
+            $mainActionsWidgetItems
+                .wrapAll( $mainActionsWidgetsWidgetGroupMU );
+
+            
+        
+        }() );
+        
+        
+        // Define initial elements
+        ( function() {
+            
             $mainSearch = $( '#main-search' );
             $mainActionsWidgets = $( '#main-actions-widgets' );
             $mainActionsWidgetsCt = $mainActionsWidgets.find( '.main-actions-widgets---ct' );
             $mainActionsWidgetsCtCr = $mainActionsWidgets.find( '.main-actions-widgets---ct_cr' );
             $mainActionsWidgetsH = $mainActionsWidgets.find( '.main-actions-widgets---h' );
+            $mainActionsWidgetsWidgetGroup = $mainActionsWidgets.find( '.main-actions-widgets---widget-grp' );
+            
+        }() );
         
-            // Add CSS class names
-            $mainActionsWidgets
-                .addClass( funcTerm )
-                .addClass( funcName );
+        
+        // // Move to content markup
+        ( function() {
+            
+            $mainActionsWidgetsWidgetGroup
+                .appendTo( $mainActionsWidgetsCtCr );
+            
+        }() );
+        
+        
+        // Create the Control Buttons
+        ( function() {
             
             // Create Toggle Button
             $mainActionsWidgetsH.after(
@@ -1257,7 +1359,7 @@
                     'toggle'
                 )
             );
-            
+
             // Create Dismiss Button
             $mainActionsWidgetsCtCr.prepend(
                 htmlokButtonOBJ(
@@ -1268,128 +1370,141 @@
                     'dismiss'
                 )
             );
-            
+
             // Define toggle elements
             $mainActionsWidgetsToggle = $mainActionsWidgets.find( '.main-actions-widgets-toggle' );
             $mainActionsWidgetsToggleButton = $( '#main-actions-widgets-toggle---b' );
             $mainActionsWidgetsDismissButton = $( '#main-actions-widgets-dismiss---b' );
             $mainActionsWidgetsToggleButtonLabelText = $mainActionsWidgetsToggleButton.find( '.show-hide---txt' );
             
-            // Create Widget Items Container
-            ( function() {
+        }() );
 
-                $mainActionsWidgetsWidgetGroupMU = $( '<div />', {
-                    'class': 'grp widget-grp main-actions-widgets---widget-grp'
-                } );
 
-                // Wrap in markup
-                $mainActionsWidgetItems
-                    .wrapAll( $mainActionsWidgetsWidgetGroupMU );
+        // Activate
+        function mainActionsWidgetsActivate() {
+            $mainActionsWidgets
+                .addClass( mainActionsWidgetsOnCSS )
+                .removeClass( mainActionsWidgetsOffCSS );
 
-                $mainActionsWidgetsWidgetGroup = $mainActionsWidgets.find( '.main-actions-widgets---widget-grp' );
+            $html
+                .addClass( aplMainActionsWidgetsOnCSS )
+                .removeClass( aplMainActionsWidgetsOffCSS );
 
-            }() );
-            
-            // Move to content markup
-            $mainActionsWidgetsWidgetGroup
-                .appendTo( $mainActionsWidgetsCtCr );
-            
-            
-            // Activate
-            function mainActionsWidgetsActivate() {
-                $mainActionsWidgets
-                    .addClass( mainActionsWidgetsOnCSS )
-                    .removeClass( mainActionsWidgetsOffCSS );
+            $mainActionsWidgetsToggleButton.attr( {
+                 'aria-expanded': 'true',
+                 'title': $mainActionsWidgetsToggleHideLabel
+            } );
 
-                $html
-                    .addClass( aplMainActionsWidgetsOnCSS )
-                    .removeClass( aplMainActionsWidgetsOffCSS );
+            $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleHideLabel );
 
-                $mainActionsWidgetsToggleButton.attr( {
-                     'aria-expanded': 'true',
-                     'title': $mainActionsWidgetsToggleHideLabel
-                } );
-            
-                $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleHideLabel );
+            cycleTabbingOn( $mainActionsWidgetsCtCr );
+        }
 
-                cycleTabbingOn( $mainActionsWidgetsCtCr );
-            }
-            
-            
-            // Deactivate
-            function mainActionsWidgetsDeactivate() {
-                $mainActionsWidgets
-                    .addClass( mainActionsWidgetsOffCSS )
-                    .removeClass( mainActionsWidgetsOnCSS );
 
-                $html
-                    .addClass( aplMainActionsWidgetsOffCSS )
-                    .removeClass( aplMainActionsWidgetsOnCSS );
+        // TransHere
+        function mainActionsWidgetsTransHere() {
 
-                $mainActionsWidgetsToggleButton.attr( {
-                     'aria-expanded': 'false',
-                     'title': $mainActionsWidgetsToggleShowLabel
-                } );
-            
-                $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleShowLabel );
-
-                cycleTabbingOff( $mainActionsWidgetsCtCr );
-            }
-
-            // Initialize
-            mainActionsWidgetsDeactivate();
-            
-            
-        
-            // Toggle
-            function mainActionsWidgetsToggle() {
-                if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOffCSS ) ) {
-                    mainActionsWidgetsActivate();
-                    $mainActionsWidgetsWidgetGroup.scrollTop(0);
-                }
-                else if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) ) {
-                    mainActionsWidgetsDeactivate();
-                }
-            }
-
-            // Click
-            ( function() {
-                $mainActionsWidgetsToggleButton.on( 'click.applicator', function( e ) {
-                    e.preventDefault();
-                    mainActionsWidgetsToggle();
-                } );
-            }() );
-
-            // Click
-            ( function() {
-                $mainActionsWidgetsDismissButton.on( 'click.applicator', function( e ) {
-                    e.preventDefault();
-                    mainActionsWidgetsToggle();
-                } );
-            }() );
-        
-        
-            // Deactivate via external click
-            $document.on( 'touchmove.applicator click.applicator', function ( e ) {
-                if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && ( ! $( e.target ).closest( $mainActionsWidgetsToggle ).length ) && ( ! $( e.target ).closest( $mainActionsWidgetsCt ).length ) ) {
-                    mainActionsWidgetsDeactivate();
+            $mainActionsWidgetsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
+                if ( event.propertyName == 'opacity' ) {
+                    transHere( $mainActionsWidgets );
                 }
             } );
 
+        }
 
-            // Deactivate via keyboard ESC key
-            $window.load( function() {
-                $document.on( 'keyup.applicator', function ( e ) {
-                    if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && e.keyCode == 27 ) {
-                        mainActionsWidgetsDeactivate();
+
+        // Deactivate
+        function mainActionsWidgetsDeactivate() {
+            $mainActionsWidgets
+                .addClass( mainActionsWidgetsOffCSS )
+                .removeClass( mainActionsWidgetsOnCSS );
+
+            $html
+                .addClass( aplMainActionsWidgetsOffCSS )
+                .removeClass( aplMainActionsWidgetsOnCSS );
+
+            $mainActionsWidgetsToggleButton.attr( {
+                 'aria-expanded': 'false',
+                 'title': $mainActionsWidgetsToggleShowLabel
+            } );
+
+            $mainActionsWidgetsToggleButtonLabelText.text( $mainActionsWidgetsToggleShowLabel );
+
+            cycleTabbingOff( $mainActionsWidgetsCtCr );
+        }
+        mainActionsWidgetsDeactivate();
+
+
+        // TransThere
+        function mainActionsWidgetsTransThere() {
+
+            if ( $mainActionsWidgets.hasClass( 'here' ) ) {
+
+                $mainActionsWidgetsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
+                    if ( event.propertyName == 'opacity' ) {
+                        transThere( $mainActionsWidgets );
                     }
                 } );
+
+            }
+        }
+
+
+        // Toggle
+        function mainActionsWidgetsToggle() {
+
+            if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOffCSS ) ) {
+                mainActionsWidgetsActivate();
+                mainActionsWidgetsTransHere();
+                $mainActionsWidgetsWidgetGroup.scrollTop( 0 );
+            }
+
+            else if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) ) {
+                mainActionsWidgetsDeactivate();
+                mainActionsWidgetsTransThere();
+            }
+        }
+
+
+        // Toggle Click
+        ( function() {
+            $mainActionsWidgetsToggleButton.on( 'click.applicator', function( e ) {
+                e.preventDefault();
+                mainActionsWidgetsToggle();
             } );
-        
         }() );
+
+
+        // Dismiss Click
+        ( function() {
+            $mainActionsWidgetsDismissButton.on( 'click.applicator', function( e ) {
+                e.preventDefault();
+                mainActionsWidgetsDeactivate();
+                mainActionsWidgetsTransThere();
+            } );
+        }() );
+
+
+        // Deactivate via external click
+        $document.on( 'touchmove.applicator click.applicator', function ( e ) {
+            if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && ( ! $( e.target ).closest( $mainActionsWidgetsToggle ).length ) && ( ! $( e.target ).closest( $mainActionsWidgetsCt ).length ) ) {
+                mainActionsWidgetsDeactivate();
+                mainActionsWidgetsTransThere();
+            }
+        } );
+
+
+        // Deactivate via keyboard ESC key
+        $window.load( function() {
+            $document.on( 'keyup.applicator', function ( e ) {
+                if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && e.keyCode == 27 ) {
+                    mainActionsWidgetsDeactivate();
+                    mainActionsWidgetsTransThere();
+                }
+            } );
+        } );
         
     }
-    
     initMainActions();
     
     
@@ -1915,6 +2030,19 @@
             }
             
         }() );
+    
+    
+    
+    
+    
+        /* ------------------------ Remove Empty Elements ------------------------ */
+        ( function() {
+            
+            initRemoveEmpty( $( '.post-content---ct_cr > *' ) );
+            initRemoveEmpty( $( '.main-navi---a' ) );
+            initRemoveEmpty( $( '.menu-item' ) );
+            
+        }() );
         
         
         
@@ -1931,6 +2059,7 @@
                 dataFormatImage = dataFormatPrefixCss + 'img',
 
                 postContent = '.post-content---ct_cr > *',
+                postContentChild = '.post-content---ct_cr > *',
                 postContentCtCrCss = '.post-content---ct_cr',
 
                 alignedTerm = 'aligned',
@@ -1949,6 +2078,31 @@
             } );
 
 
+            // ------------ <img>
+            $( postContentChild + ':has( img )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage );
+
+            $( postContentChild + ':has( img.alignnone )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--not-' + alignedTerm );
+
+            $( postContentChild + ':has( img.alignleft )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--left-' + alignedTerm );
+
+            $( postContentChild + ':has( img.alignright )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--right-' + alignedTerm );
+
+            $( postContentChild + ':has( img.aligncenter )' )
+                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--center-' + alignedTerm );
+
+            
+            $( '.post-content---ct_cr > img' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatInlineCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'img' );
+            });
+
+
             // ------------ <pre>
             $( postContentCtCrCss + ' ' + '> *:has( pre )' ).each(function() {
                 var $this = $( this ),
@@ -1964,32 +2118,6 @@
                 $this.wrap( dataFormatBlockCpMu )
                     .closest( dataFormatCss )
                         .addClass( dataFormatPrefixCss + 'pre' );
-            });
-
-
-            
-            // ------------ <img>
-            $( postContent + ':has( img )' )
-                .addClass( dataFormatTerm + ' ' + dataFormatImage );
-
-            $( postContent + ':has( img.alignnone )' )
-                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--not-' + alignedTerm );
-
-            $( postContent + ':has( img.alignleft )' )
-                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--left-' + alignedTerm );
-
-            $( postContent + ':has( img.alignright )' )
-                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--right-' + alignedTerm );
-
-            $( postContent + ':has( img.aligncenter )' )
-                .addClass( dataFormatTerm + ' ' + dataFormatImage + ' ' + dataFormatImage + '--center-' + alignedTerm );
-
-            
-            $( '.post-content---ct_cr > img' ).each(function() {
-                var $this = $( this );
-                $this.wrap( dataFormatInlineCpMu )
-                    .closest( dataFormatCss )
-                        .addClass( dataFormatPrefixCss + 'img' );
             });
 
 
@@ -2042,46 +2170,44 @@
                     .closest( dataFormatCss )
                         .addClass( dataFormatPrefixCss + 'iframe' );
             });
-
-
-            /*
-            // ------------ Wrap text nodes in <span>
-            // https://stackoverflow.com/a/18727318
-            $( '.data-format--img, .excerpt-link, .post-password-form label' )
-                .contents()
-                .filter( function() {
-
-                    // Get only the text nodes
-                    return this.nodeType === 3;
-                } )
-                .wrap( '<span class="span text-node"></span>' );
             
-            // ------------ Wrap text nodes in <p>
-            $( '.post-content---ct_cr' )
-                .contents()
-                .filter( function() {
-
-                    // Get only the text nodes
-                    return this.nodeType === 3;
-                } )
-                .wrap( '<p class="p text-node"></p>' );
-                initRemoveEmpty( $( '.text-node' ) );
-            
-            */
 
          } )();
+        
+        
+        
+        
+        
+        /* ------------------------ Calendar ------------------------ */
+        ( function(){
+            
+            wrapTextNode( $( '.widget_calendar td, .widget_calendar th' ) );
+            
+            $( '.widget_calendar tbody td:has( a )' ).each( function() {
+
+                $( this ).addClass( 'widget-calendar-active-date' );
+
+            } );
+
+        }() );
+        
+        
+        
+        
+        
+        /* ------------------------ Wrap in Text Nodes ------------------------ */
+        ( function(){
+            
+            
+            wrapTextNode( $( '.data-format--img, .excerpt-link, .post-password-form label' ) );
+            wrapTextNode( $( '.post-content---ct_cr' ) );
+            
+            initRemoveEmpty( $( '.text-node' ) );
+            
+        }() );
     
     } );
     /* ------------------------ End DOM Ready ------------------------ */
-    
-    
-    
-    
-    
-    /* ------------------------ Remove Empty Elements ------------------------ */
-    initRemoveEmpty( $( '.post-content---ct_cr > *' ) );
-    initRemoveEmpty( $( '.main-navi---a' ) );
-    initRemoveEmpty( $( '.menu-item' ) );
     
     
     
@@ -2264,10 +2390,18 @@
 
         var $mainBanner = $( '#main-banner' );
 
-        if ( ! $mainBanner.length || $mainBanner.css( 'margin' ) == '-1px'  ) {
-            return;
-        }
+        
+        // Gatekeeper
+        ( function() {
+            
+            if ( ! $mainBanner.length || $mainBanner.css( 'margin' ) == '-1px'  ) {
+                return;
+            }
+            
+        }() );
+        
 
+        // Variables
         var scrollPosition,
             mainBannerScale,
             mainBannerTranslateY,
@@ -2281,40 +2415,46 @@
             mainBannerOffsetHeight = mainBannerOffset + mainBannerHeight,
             mainBannerOffsetHeightHalf = mainBannerOffset + ( mainBannerHeight / 2 );
 
-        $window.on( 'scroll.applicator', function() {
+        
+        ( function() {
+        
+            $window.on( 'scroll.applicator', function() {
 
-            scrollPosition = $( this ).scrollTop();
-            mainBannerScale = ( scrollPosition / ( mainBannerOffsetHeight / .3 ) ) + 1;
-            mainBannerTranslateY = ( 10 / mainBannerOffsetHeight ) * scrollPosition;
-            mainBannerOpacity = 1 - ( ( scrollPosition - mainBannerOffsetHeightHalf ) / mainBannerHeightHalf );
+                scrollPosition = $( this ).scrollTop();
+                mainBannerScale = ( scrollPosition / ( mainBannerOffsetHeight / .3 ) ) + 1;
+                mainBannerTranslateY = ( 10 / mainBannerOffsetHeight ) * scrollPosition;
+                mainBannerOpacity = 1 - ( ( scrollPosition - mainBannerOffsetHeightHalf ) / mainBannerHeightHalf );
 
-            /* Transform magic */
-            if ( scrollPosition <= mainBannerOffsetHeight ) {
-                $mainMediaBanner.css( {
-                    transform: "translateY(" + mainBannerTranslateY + "px) scale(" + mainBannerScale + ", " + mainBannerScale + ")"
-                } );
-            }
+                /* Transform magic */
+                if ( scrollPosition <= mainBannerOffsetHeight ) {
+                    $mainMediaBanner.css( {
+                        transform: "translateY(" + mainBannerTranslateY + "px) scale(" + mainBannerScale + ", " + mainBannerScale + ")"
+                    } );
+                }
 
-            /* Opacity magic */
-            if ( scrollPosition >= mainBannerOffsetHeightHalf ) {
-                $mainMediaBanner.css( {
-                    opacity: mainBannerOpacity
-                } );
-            }
+                /* Opacity magic */
+                if ( scrollPosition >= mainBannerOffsetHeightHalf ) {
+                    $mainMediaBanner.css( {
+                        opacity: mainBannerOpacity
+                    } );
+                }
 
-            else {
-                $mainMediaBanner.css( {
-                    opacity: 1
-                } );
-            }
+                else {
+                    $mainMediaBanner.css( {
+                        opacity: 1
+                    } );
+                }
 
-            if ( scrollPosition >= mainBannerOffsetHeight ) {
+                if ( scrollPosition >= mainBannerOffsetHeight ) {
 
-                $mainMediaBanner.css( {
-                    opacity: 0
-                } );
-            }
-        } );
+                    $mainMediaBanner.css( {
+                        opacity: 0
+                    } );
+                }
+            } );
+            
+        }() );
+    
     }() );
 
 } )( jQuery );

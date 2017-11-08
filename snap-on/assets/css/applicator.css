@@ -520,23 +520,16 @@
     border-right-width: 1px;
 }
 
-.applicator--theme--table .post-content tfoot
-{
-    border: var(--table-line--md);
-    border-left: 0;
-    border-right: 0;
-}
-
 /* Table Header */
 .applicator--theme--table .post-content th
 {
     border: 0;
     
     text-align: left;
-    vertical-align: bottom;
 }
 
-.applicator--theme--table .post-content td
+.applicator--theme--table .post-content td,
+.applicator--theme--table .post-content tbody th
 {
     border: var(--table-line--sm);
     
@@ -549,12 +542,85 @@
     border-left: 0;
 }
 
-/* Table Footer */
 .applicator--theme--table .post-content tfoot
 {
+    border: var(--table-line--md);
+    border-left: 0;
+    border-right: 0;
     border-top: 0;
-    border-color: var(--table-line--md);
 }
+
+
+
+
+
+/* ------------------ Calendar ------------------ */
+.applicator--theme--calendar .widget_calendar tbody
+{
+    border: 2px solid lightgray;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
+.applicator--theme--calendar .widget_calendar th
+{
+    border: 0;
+}
+
+.applicator--theme--calendar .widget_calendar tbody th
+{
+    text-align: left;
+}
+
+.applicator--theme--calendar .widget_calendar td,
+.applicator--theme--calendar .widget_calendar tbody th
+{
+    border: 1px solid lightgray;
+    
+    border-right: 0;
+    border-bottom: 0;
+}
+
+/* Dates */
+.applicator--theme--calendar .widget_calendar tbody td
+{
+    text-align: right;
+    white-space: nowrap;
+}
+
+.applicator--theme--calendar .widget_calendar td:first-child
+{
+    border-left: 0;
+}
+
+/* Navigation */
+.applicator--theme--calendar .widget_calendar tfoot
+{
+    border-top: 2px solid lightgray;
+}
+
+.applicator--theme--calendar .widget_calendar tfoot td
+{
+    border: 0;
+}
+
+.applicator--theme--calendar .widget_calendar #prev
+{
+    text-align: right;
+}
+
+/* Days */
+.applicator--theme--calendar .widget_calendar thead th
+{
+    font-weight: normal;
+}
+
+/* Month Label */
+.applicator--theme--calendar .widget_calendar caption
+{
+    font-weight: bold;
+}
+
 
 
 
@@ -1185,21 +1251,6 @@
 
 
 
-/* ------------------ Container Width ------------------ */
-.applicator--theme--container-width .comment-respond
-{
-    max-width: 48rem;
-}
-
-.applicator--theme--container-width .comment-md---ct_cr > .comment-respond
-{   
-    margin: auto;
-}
-
-
-
-
-
 /* ------------------ Caption ------------------ */
 .applicator--theme--caption .wp-caption-text
 {
@@ -1376,7 +1427,10 @@
 .applicator--theme--layout .main-content-heading,
 .applicator--theme--layout .entry-nav---cr,
 .applicator--theme--layout .type-attachment .post-nav---cr,
-.applicator--theme--layout.applicator--theme--post-format--status .format-status .post---cr
+.applicator--theme--layout.applicator--theme--post-format--status .format-status .post---cr,
+.applicator--theme--layout .copyright,
+.applicator--theme--layout .main-content-header-aside .widget-content---ct_cr,
+.applicator--theme--layout.main-content-aside--enabled .main-content---ct_cr
 {
     margin-left: auto;
     margin-right: auto;
@@ -1429,17 +1483,55 @@
 
 
 
-/* ------------------ Viewport Width: 768 ------------------ */
-
-@media only screen and ( min-width: 48em )
+/* ------------------ Main Header ------------------ */
+.applicator--theme--main-header .main-info,
+.applicator--theme--main-header.applicator--main-menu .main-hr-aside---hr_cr,
+.applicator--theme--main-header .main-actions---ct_cr
 {
-    
-    /* ------------ Layout ------------ */
-    .applicator--theme--layout .post-content---ct_cr > .data-format--img--right-aligned
-    {
-        margin-left: 1rem;
-    }
-    
+    position: relative;
+    height: 3.5rem;
+}
+
+.applicator--theme--main-header .main-info---cr,
+.applicator--theme--main-header .main-menu-toggle,
+.applicator--theme--main-header.applicator--main-search .main-search-func,
+.applicator--theme--main-header .main-actions-widgets
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.applicator--theme--main-header .main-hr-aside---hr,
+.applicator--theme--main-header .main-actions---ct
+{
+    position: absolute;
+}
+
+.applicator--theme--main-header .main-actions---ct
+{
+    right: 0;
+}
+
+.applicator--theme--main-header.applicator--main-search--active .main-actions---ct
+{
+    width: 100%;
+}
+
+.applicator--theme--main-header.applicator--main-search .main-search-func
+{   
+    min-height: 3rem;
+}
+
+
+
+
+
+/* ------------------ GPU Hack ------------------ */
+.main-banner,
+.main-hr-aside---ct
+{
+    transform: translateZ(0);
 }
 
 
