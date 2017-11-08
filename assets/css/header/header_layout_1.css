@@ -405,7 +405,6 @@ body.minimal_layout .product_list_widget li {
 }
 
 body.minimal_layout .header-cart a.remove {
-    border: solid 1px #8d8d8d;
 	background:none;
     width: 25px;
     height: 25px;

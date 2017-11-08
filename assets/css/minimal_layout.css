@@ -24,14 +24,22 @@ body.minimal_layout .header-search .search-form {
    CONTENT
    =============================================== */
 
-body.minimal_layout .product-content,
-body.minimal_layout .post-article {
+body.minimal_layout .product-content {
+    padding: 0;
+    border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+}
+
+body.minimal_layout .post-article, 
+body.minimal_layout .product-content {
     padding: 0;
     border: none;
 }
 
-body.minimal_layout .pin-container , 
-body.minimal_layout .post-article {
+body.minimal_layout .post-article,
+body.minimal_layout .pin-container {
     padding: 0;
 	box-shadow: none;
 	-moz-box-shadow: none;
@@ -222,7 +230,13 @@ body.minimal_layout #header .header-cart-widget a:hover,
 body.minimal_layout .header-cart .widget_shopping_cart li.empty {
 	color:#fff;
 }
-body.minimal_layout .header-cart a.remove,
+
+body.minimal_layout .header-cart a.remove {
+	color:#fff !important;
+	border-color:#fff;
+	background:none;
+}
+
 body.minimal_layout .widget_shopping_cart li {
 	border-color:#ddd;
 	background:none;
@@ -230,4 +244,5 @@ body.minimal_layout .widget_shopping_cart li {
 
 body.minimal_layout .header-cart a.remove:hover {
 	border-color:red;
+    color: red !important;
 }

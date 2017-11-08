@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.3.4 - Released: 08.11.2017
+
+-- Fixed : Minimal layout => single product => box border
+-- Fixed : Minimal layout => header cart => remove button => border color
+-- Fixed : Italian translation
+
 - Version 3.3.3 - Released: 04.11.2017
 
 -- Updated : WooCommerce header cart.
