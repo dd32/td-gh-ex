@@ -83,6 +83,8 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.9
+1. Update Author URI and Theme URI change http to https secure.
 @Version 1.6.8
 1. Added styling upgrade to pro setting.
 @Version 1.6.7
