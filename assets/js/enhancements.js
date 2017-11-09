@@ -37,6 +37,7 @@
         pageLongCss = 'page--long',
         
         applicatorMainSearchTerm = 'applicator--main-search',
+        applicatorMainMenuTerm = 'applicator--main-menu',
         aplApplicatorMainActionsWidgetsTerm = 'applicator--main-actions-widgets',
         
         $aplWildcard = $( '#applicator-wildcard' ),
@@ -505,18 +506,16 @@
     
     
     /* ------------------------ Main Menu ------------------------ */
-    function initMainMenu( $cp ) {
+    function applicatorMainMenu( $cp ) {
         
         
         // Gatekeeper
         ( function() {
+            
             if ( ! $aplApplicatorMainMenu.length ) {
                 return;
             }
-
-            if ( ! $html.closest( '.main-header-aside--enabled' ).length ) {
-                return;
-            }
+        
         }() );
         
         
@@ -763,7 +762,7 @@
         }() );
         
     }
-    initMainMenu( $( '#main-header-aside' ) );
+    applicatorMainMenu( $( '#main-header-aside' ) );
     
     
     
@@ -1337,7 +1336,7 @@
         }() );
         
         
-        // // Move to content markup
+        // Move to content markup
         ( function() {
             
             $mainActionsWidgetsWidgetGroup
@@ -2205,6 +2204,46 @@
             initRemoveEmpty( $( '.text-node' ) );
             
         }() );
+        
+        
+        
+        
+        
+        /* ------------------------ Main Logo ------------------------ */
+        ( function(){
+        
+            var $mainLogoWidth = $( '.main-logo' ).width(),
+                $mainLogoHeight = $( '.main-logo' ).height(),
+                $mainName = $( '.main-logo--enabled .main-name' ),
+                $mainDescription = $( '.main-logo--enabled .main-description' ),
+                $rootFontSize = $( ':root' ).css( 'font-size' ),
+                $mainLogoWidthRem = ( ( $mainLogoWidth / parseInt( $rootFontSize ) ) + .5 ) + 'rem';
+            
+            // If logo is not square
+            if ( $mainLogoWidth !== $mainLogoHeight ) {
+                $mainName.css( 'margin-left', $mainLogoWidthRem );
+                $mainDescription.css( 'margin-left', $mainLogoWidthRem );
+            }
+            
+        }() );
+        
+        
+        
+        
+        
+        /* ------------------------ If Main Description is visually-hidden ------------------------ */
+        ( function() {
+            
+            if ( ! $( '.main-desc---l' ).length || $( '.main-description' ).html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
+                
+                $html
+                    .addClass( 'main-description--empty' )
+                    .removeClass( 'main-description--populated' );
+                
+                return;
+            }
+        
+        }() );
     
     } );
     /* ------------------------ End DOM Ready ------------------------ */
@@ -2228,26 +2267,6 @@
         
         
         
-        
-        
-        /* ------------------------ If Main Description is visually-hidden ------------------------ */
-        ( function() {
-            
-            if ( ! $( '.main-description' ).length ) {
-                return;
-            }
-            
-            if ( $( '.main-description' ).css( 'margin' ) == '-1px' ) {
-                $html
-                    .addClass( 'main-description--empty' )
-                    .removeClass( 'main-description--populated' );
-            }
-            else {
-                $html
-                    .addClass( 'main-description--populated' )
-                    .removeClass( 'main-description--empty' );
-            }
-        }() );
         
         
         /* ------------------------ Page Length ------------------------ */

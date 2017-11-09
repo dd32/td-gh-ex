@@ -344,7 +344,17 @@ select
 
 
 
-/* ------------------ Data Format - Image ------------------ */
+/* ------------------ Data Format - <img> ------------------ */
+
+/* For dynamic images that load the optimum size based on the width of their containers */
+.dom--unready .post-content---ct_cr > p
+{
+    padding-left: 0;
+    padding-right: 0;
+    
+    visibility: hidden;
+}
+
 .window--unloaded .post-content img
 {
     visibility: hidden;
@@ -360,7 +370,7 @@ select
 
 
 
-/* ------------------ Data Format - Preformatted Text ------------------ */
+/* ------------------ Data Format - <pre> ------------------ */
 .data-format > pre
 {
     padding: .75em 1rem;
@@ -448,8 +458,13 @@ select
     position: relative;
 }
 
+.main-navi---a_l:before
+{
+    transition: opacity .3s ease-in-out;
+}
+
 /* Root Nav Item Indicator */
-.main-nav---ct_cr > .menu > ul > li > a:hover > .main-navi---a_l:before
+.main-nav---ct_cr > .menu > ul > li > a > .main-navi---a_l:before
 {
     content: '';
     position: absolute;
@@ -461,6 +476,13 @@ select
     height: .125rem;
     
     background-color: hsla( 0, 0%, 0%, .125 );
+    
+    opacity: 0;
+}
+
+.main-nav---ct_cr > .menu > ul > li > a:hover > .main-navi---a_l:before
+{
+    opacity: 1;
 }
 
 /* Root Nav Item - Current Indicator */
@@ -472,16 +494,9 @@ select
 /* Root Nav Item - Current Indicator */
 .main-nav---ct_cr > .menu > ul > .current_page_item > a > .main-navi---a_l:before
 {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    
-    width: 100%;
-    
-    height: .125rem;
-    
     background-color: hsla( 0, 0%, 0%, .25);
+    
+    opacity: 1;
 }
 
 /* Root Nav Item - Current Ancestor Indicator */
@@ -493,16 +508,9 @@ select
 /* Root Nav Item - Current Ancestor Indicator */
 .main-nav---ct_cr > .menu > ul > .current_page_ancestor > a > .main-navi---a_l:before
 {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    
-    width: 100%;
-    
-    height: .125rem;
-    
     background-color: hsla( 0, 0%, 0%, .25);
+    
+    opacity: 1;
 }
 
 /* Branch Nav Item - Current Indicator */
@@ -529,10 +537,14 @@ select
 }
 
 /* Branch Nav Item - Current Indicator - Hover */
+.main-nav---ct_cr > .menu > ul > li > ul .current_page_item > a:before,
+.main-nav---ct_cr > .menu > ul > li > ul .current-menu-item > a:before,
 .main-nav---ct_cr > .menu > ul > li > ul .current_page_item > a:hover:before,
 .main-nav---ct_cr > .menu > ul > li > ul .current-menu-item > a:hover:before
 {
     background-color: #005fe6;
+    
+    opacity: 1;
 }
 
 /* Branch Nav Item Indicator */
@@ -543,8 +555,7 @@ select
 }
 
 /* Branch Nav Item Indicator */
-.main-nav---ct_cr > .menu > ul > li > ul a:hover:before,
-.main-nav---ct_cr > .menu > ul > li > ul a:hover:before
+.main-nav---ct_cr > .menu > ul > li > ul a:before
 {
     content: '';
     position: absolute;
@@ -556,13 +567,24 @@ select
     height: 100%;
     
     background-color: hsla( 0, 0%, 0%, .125);
+    
+    opacity: 0;
+    
+    transition: opacity .3s ease-in-out;
+}
+
+.main-nav---ct_cr > .menu > ul > li > ul a:hover:before
+{
+    opacity: 1;
 }
 
 /* Branch Nav Item - Current Indicator */
-.main-nav---ct_cr > .menu > ul > li.current_page_item > a > .main-navi---a_l::before,
-.main-nav---ct_cr > .menu > ul > li.current-menu-item > a > .main-navi---a_l::before
+.main-nav---ct_cr > .menu > ul > li.current_page_item > a > .main-navi---a_l:before,
+.main-nav---ct_cr > .menu > ul > li.current-menu-item > a > .main-navi---a_l:before
 {
     background-color: #005fe6;
+    
+    opacity: 1;
 }
 
 /* Branch Nav Item */
@@ -1119,7 +1141,6 @@ select
 .main-header
 {
     background-color: hsl(200, 100%, 50%);
-    background-color: var(--main-header--bg-color);
 }
 
 .main-header---cr
@@ -1127,8 +1148,7 @@ select
     display: flex;
     flex-wrap: wrap;
     
-    min-height: 3rem;
-    min-height: var(--elem--height--md);
+    /* min-height: 3rem; */
 }
 
 /* Match the outline color of active elements with the background color */
@@ -1143,6 +1163,46 @@ select
     outline-color: white;
 }
 
+/* Height Adjustment
+.main-info,
+.applicator--main-menu .main-hr-aside---hr_cr,
+.main-actions---ct_cr
+{
+    position: relative;
+    height: 3.5rem;
+}
+
+.applicator--theme--main-header .main-info---cr,
+.applicator--theme--main-header .main-menu-toggle,
+.applicator--theme--main-header.applicator--main-search .main-search-func,
+.applicator--theme--main-header .main-actions-widgets
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.applicator--theme--main-header .main-hr-aside---hr,
+.applicator--theme--main-header .main-actions---ct
+{
+    position: absolute;
+}
+
+.applicator--theme--main-header .main-actions---ct
+{
+    right: 0;
+}
+
+.applicator--theme--main-header.applicator--main-search--active .main-actions---ct
+{
+    width: 100%;
+}
+
+.applicator--theme--main-header.applicator--main-search .main-search-func
+{   
+    min-height: 3rem;
+}
+ */
 
 
 
@@ -1150,35 +1210,36 @@ select
 /* ------------------ Main Info ------------------ */
 .main-info
 {
-    flex: 1 30rem;
+    flex: 1;
 }
 
 .main-info---cr
 {
-    min-height: var(--elem-dimension--md);
-    
     padding-left: 1rem;
-    padding-left: var(--component--spacing-x);
-    
     padding-right: 1rem;
-    padding-right: var(--component--spacing-x);
+    
+    /* min-height: 3rem; */
 }
 
 /* With Main Search */
 .applicator--main-search .main-info---cr
 {
-    padding-left: 1rem;
     padding-right: 1rem;
 }
 
 /* With Main Menu */
-.applicator--main-menu.main-header-aside--enabled .main-info---cr
+.applicator--main-menu .main-info---cr
 {
     padding-left: 3rem;
 }
 
 /* With Main Search */
-.applicator--main-search .main-info---cr,
+.applicator--main-search .main-info---cr
+{
+    padding-right: 3rem;
+}
+
+/* With Main Actions */
 .applicator--main-actions-widgets .main-info---cr
 {
     padding-right: 3rem;
@@ -1190,29 +1251,23 @@ select
     padding-right: 6rem;
 }
 
-/* With Main Logo */
-.main-logo--enabled .main-info---cr
-{
-    padding-left: 1rem;
-}
-
 .main-info---ct_cr
 {
     position: relative;
     
-    min-height: var(--elem-dimension--md);
+    min-height: 3rem;
 }
 
 /* With Main Logo and Main Name, Main Description */
 .main-logo--enabled .main-name,
 .main-logo--enabled .main-description
 {
-    margin-left: calc( var(--main-logo--height) + .5rem);
+    margin-left: 2.75rem;
 }
 
 /* With Main Menu */
-.applicator--main-menu.main-header-aside--enabled .main-name---a_l,
-.applicator--main-menu.main-header-aside--enabled .main-desc---a_l
+.applicator--main-menu .main-name---a_l,
+.applicator--main-menu .main-desc---a_l
 {
     padding-left: 0;
 }
@@ -1337,17 +1392,22 @@ select
 
 
 /* ------------------ Main Logo  ------------------ */
+.applicator--main-logo.dom--unready .main-name,
+.applicator--main-logo.dom--unready .main-description
+{
+    visibility: hidden;
+}
+
 .main-logo
 {
     position: absolute;
     left: 0;
     top: 50%;
     
-    margin-top: -1.125rem;
-    
     max-width: 100%;
-    
     height: 2.25rem;
+    
+    transform: translateY(-50%);
 }
 
 .main-logo .custom-logo-link
@@ -2111,7 +2171,8 @@ select
     text-decoration: none;
 }
 
-.aside .widget-content---ct_cr > .widget-heading
+.aside .widget-content---ct_cr > .widget-heading,
+.aside .widget_nav_menu .widget-content---ct_cr > .widget-heading
 {
     margin-bottom: -1em;
     
@@ -2166,7 +2227,7 @@ select
     height: auto;
 }
 
-/* Zero Length Widgets (no content or empty element is detected like <img>) */
+/* Zero Length Widgets (no content) */
 .widget_calendar.widget--zero-length,
 .widget_recent_comments.widget--zero-length
 {
@@ -2183,6 +2244,21 @@ select
 {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+
+
+
+
+/* ------------------ Custom Menu ------------------ */
+.aside .widget_nav_menu a
+{
+    transition: background-color .125s ease-in-out;
+}
+
+.aside .widget_nav_menu a:hover
+{
+    background-color: whitesmoke;
 }
 
 
