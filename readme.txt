@@ -2,7 +2,7 @@
 Contributors: ThemeCot.com
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.6
-Tested up to: 4.8.1
+Tested up to: 4.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,11 @@ Licenses: MIT/GPL
 Source: http://users.tpg.com.au/j_birch/plugins/superfish/
 
 == Changelog ==
+
+= 1.0.5 =
+Release Date: November 9, 2017
+
+* CSS improvements.
 
 = 1.0.4 =
 Release Date: August 21, 2017
