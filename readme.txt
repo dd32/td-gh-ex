@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.7.7
+Stable tag: 1.7.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.8 / 9 November 2017
+Submenus in side-menu layout now stay open on pages corresponding to active submenu items.
+Masonry grid now behaves better on page resize with side-menu layout.
+Added the "target" attribute to allowed html for the footer copyright.
 
 * 1.7.7 / 25 October 2017
 Fixed the full-width grid behaviour in the presence of side-menu.

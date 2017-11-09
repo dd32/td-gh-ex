@@ -278,12 +278,12 @@ $str(window).load(function () {
 	$str('.spinner-grid').fadeOut(100);
 	$bento_isocontainer.fadeIn(300, function() {
 		if ( bentoThemeVars.full_width_grid == 'on' && bentoThemeVars.menu_config != 3 ) {
-			var ww = $str(window).width();
-			var im = $str('.grid-item-inner').css('padding-left').replace("px", "");
-			var nw = ww - ( 2 * im );
-			var cw = $str('.site-content .bnt-container').width();
-			var ml = ( ( ww - cw ) / -2 ) + ( im * 2 );
-			$str('.site-content .grid-container').css({'width':nw+'px','left':ml+'px'});
+			var bento_ww = $str(window).width();
+			var bento_im = $str('.grid-item-inner').css('padding-left').replace("px", "");
+			var bento_nw = bento_ww - ( 2 * bento_im );
+			var bento_cw = $str('.site-content .bnt-container').width();
+			var bento_ml = ( ( bento_ww - bento_cw ) / -2 ) + ( bento_im * 2 );
+			$str('.site-content .grid-container').css({'width':bento_nw+'px','left':bento_ml+'px'});
 		}
 		$bento_isocontainer.isotope().isotope('layout');
 	});
@@ -340,7 +340,7 @@ $str(window).resize(function () {
 
 
 	// Relayout Isotope on browser resize
-	if ( bentoThemeVars.full_width_grid == 'on' ) {
+	if ( bentoThemeVars.full_width_grid == 'on' && bentoThemeVars.menu_config != 3 ) {
 		var bento_ww = $str(window).width();
 		var bento_im = $str('.grid-item-inner').css('padding-left').replace("px", "");
 		var bento_nw = bento_ww - ( 2 * bento_im );

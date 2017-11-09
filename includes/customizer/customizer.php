@@ -70,6 +70,7 @@ function bento_sanitize_copyright( $input ) {
 	$allowed_html = array(
 		'a' => array(
 			'href' => array(),
+			'target' => array(),
 		),
 		'span' => array(),
 		'div' => array(),

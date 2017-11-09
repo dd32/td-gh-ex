@@ -776,7 +776,7 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 		$sitename = esc_attr( get_bloginfo( 'name' ) );
 		$author = esc_html__( 'Bento theme by Satori', 'bento' );
 		if ( is_front_page() ) {
-			$author = '<a href="https://satoristudio.net/bento-free-wordpress-theme/" target="blank" title="Bento Free WordPress Theme">Bento</a>' . ' ' . esc_html__( 'theme by Satori Studio', 'bento' );
+			$author = 'Bento ' . esc_html__( 'theme by', 'bento' ) . ' <a href="https://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
