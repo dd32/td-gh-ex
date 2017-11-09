@@ -53,7 +53,7 @@ function busiprof_general_settings( $wp_customize ){
 		) ) );
 		
 		// width
-		$wp_customize->add_setting( 'busiprof_theme_options[width]', array( 'default' => 115 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field'	) );
+		$wp_customize->add_setting( 'busiprof_theme_options[width]', array( 'default' => 138 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field'	) );
 		$wp_customize->add_control(	'busiprof_theme_options[width]', 
 			array(
 				'label'    => __('Enter Logo Width', 'busiprof' ),
@@ -62,13 +62,25 @@ function busiprof_general_settings( $wp_customize ){
 		));
 		
 		// height
-		$wp_customize->add_setting( 'busiprof_theme_options[height]', array( 'default' => 40 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_setting( 'busiprof_theme_options[height]', array( 'default' => 49 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[height]', 
 			array(
 				'label'    => __('Enter Logo Height', 'busiprof' ),
 				'section'  => 'logo_section',
 				'type'     => 'text',
 		));
+		
+		// enable logo text
+		$wp_customize->add_setting( 'busiprof_theme_options[enable_logo_text]' , array(
+		'default' => false,
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'=>'option'
+		) );
+		$wp_customize->add_control('busiprof_theme_options[enable_logo_text]' , array(
+		'label'          => __( 'Enable logo text', 'busiprof' ),
+		'section'        => 'logo_section',
+		'type'           => 'checkbox'
+		) );
 		
 	/* custom css section */
 	$wp_customize->add_section( 'custom_css_section' , array(

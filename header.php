@@ -21,7 +21,15 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" class="brand">
-				<img  src="<?php echo ( $current_options['upload_image'] ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>" alt="<?php bloginfo("name"); ?>" class="logo_imgae" style="width:<?php echo $current_options['width']; ?>px; height:<?php echo $current_options['height']; ?>px;" class="img-responsive" />
+				<?php
+				if( $current_options['enable_logo_text'] == true ){
+					bloginfo('name');
+				}else{
+				?>
+				<img alt="<?php bloginfo("name"); ?>" src="<?php echo ( esc_url($current_options['upload_image']) ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>" 
+				alt="<?php bloginfo("name"); ?>"
+				class="logo_imgae" style="width:<?php echo esc_html($current_options['width']).'px'; ?>; height:<?php echo esc_html($current_options['height']).'px'; ?>;">
+				<?php } ?>
 			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>

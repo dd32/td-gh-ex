@@ -9,7 +9,7 @@ function busiprof_fonts_url() {
 		
     $font_families = array();
  
-	$font_families = array('Droid Sans:400,700,800','Montserrat:400,700','Roboto: 100,300,400,500,700,900','Raleway :100,200,300,400,500,600,700,800,900','Droid Serif:400,700');
+	$font_families = array('Droid Sans:400,700,800','Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900','Roboto: 100,300,400,500,700,900','Raleway :100,200,300,400,500,600,700,800,900','Droid Serif:400,700');
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),

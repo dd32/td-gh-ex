@@ -168,7 +168,7 @@ function busiprof_service_content( $busiprof_service_content, $is_callback = fal
 			}
 			else
 			{
-			$colors = array('#00bcd4','#e91e63','#4caf50', '#4caf50');
+			$colors = array('#00bcd4','#e91e63','#4caf50', '#5ca2df');
 			$title = array (__('Web Design','busiprof'), __('Unique Elements','busiprof'), __('User Friendly','busiprof'), __('24/7 Support','busiprof'));
 			$icon = array('fa fa-laptop','fa fa-tasks','fa fa-thumbs-o-up','fa fa-life-ring');
 			for($i=0; $i<=3; $i++) { ?>

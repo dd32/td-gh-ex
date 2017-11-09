@@ -17,8 +17,9 @@ function theme_setup_data()
 			'front_page'  => 'yes',
 			
 			'upload_image'=>'',
-			'width'=>'115',
-			'height'=>'40',
+			'width'=>'138',
+			'height'=>'49',
+			'enable_logo_text'=>false,
 			
 			'upload_image_favicon'=>'',
 			'home_banner_strip_enabled'=>'on',

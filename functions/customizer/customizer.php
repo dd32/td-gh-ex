@@ -111,7 +111,7 @@
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
 					'id'         => 'customizer_repeater_56d7ea7f40b96',
-					'color'      => '#4caf50',
+					'color'      => '#5ca2df',
 					),
 					
 					
