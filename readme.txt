@@ -1,9 +1,9 @@
 === Best Commerce ===
 
 Contributors: axlethemes
-Requires at least: 4.6
-Tested up to: 4.8.1
-Stable tag: 1.0.1
+Requires at least: 4.7
+Tested up to: 4.9
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright: (c) 2017 Axle Themes
@@ -12,7 +12,7 @@ Simple e-commerce WordPress Theme.
 
 == Description ==
 
-Best Commerce is an aesthetically pure and clean and highly customizable, professionally composed and very lightweight and fast loading, responsive WordPress e-commerce theme. It smoothly integrates WooCommerce, one of theme best e-commerce plugin, to make professional and stunning stores. It comes with an eye-catching layout design that will instantly draw the attention of anyone who visits your website. It is designed with strong focus on usability and overall excellent user experience. It exists so that you can speedily and efficiently craft powerful e-Commerce websites across all niches and markets in a matter of minutes, without having to write a line of code.
+Best Commerce is an aesthetically pure and clean and highly customizable, professionally composed and very lightweight and fast loading, responsive WordPress e-commerce theme. It smoothly integrates WooCommerce, one of the best e-commerce plugin, to make professional and stunning stores. It comes with an eye-catching layout design that will instantly draw the attention of anyone who visits your website. It is designed with strong focus on usability and overall excellent user experience. It exists so that you can speedily and efficiently craft powerful e-Commerce websites across all niches and markets in a matter of minutes, without having to write a line of code.
 
 == Installation ==
 
@@ -21,6 +21,10 @@ Best Commerce is an aesthetically pure and clean and highly customizable, profes
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 - Nov 9 2017 =
+* Compatibility with WP 4.9
+* Minor bug fixes
 
 = 1.0.1 - Sep 19 2017 =
 * Minor bug fixes

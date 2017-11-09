@@ -33,6 +33,11 @@ if ( ! function_exists( 'best_commerce_register_recommended_plugins' ) ) :
 				'slug'     => 'contact-form-7',
 				'required' => false,
 			),
+			array(
+				'name'     => esc_html__( 'One Click Demo Import', 'best-commerce' ),
+				'slug'     => 'one-click-demo-import',
+				'required' => false,
+			),
 		);
 
 		$config = array();

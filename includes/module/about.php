@@ -1,6 +1,6 @@
 <?php
 /**
- * About
+ * About configuration
  *
  * @package Best_Commerce
  */
@@ -95,23 +95,17 @@ $config = array(
 			),
 			'front-page' => array(
 				'title'       => esc_html__( 'Setting Static Front Page','best-commerce' ),
-				'description' => esc_html__( 'Select A static page then Front page and Posts page to display front page specific sections. Note: If you import demo content using our Axle Demo Importer plugin, static page will be set automatically.', 'best-commerce' ),
+				'description' => esc_html__( 'Select A static page then Front page and Posts page to display front page specific sections. Note: Static page will be set automatically when you import demo content.', 'best-commerce' ),
 				'id'          => 'front-page',
 				'check'       => ( 'page' === get_option( 'show_on_front' ) ) ? true : false,
 				'help'        => '<a href="' . esc_url( wp_customize_url() ) . '?autofocus[section]=static_front_page" class="button button-secondary">' . esc_html__( 'Static Front Page', 'best-commerce' ) . '</a>',
 			),
-			'axle-demo-importer' => array(
-				'title'       => esc_html__( 'Axle Demo Importer', 'best-commerce' ),
-				'description' => esc_html__( 'Please install the Axle Demo Importer plugin to import the demo content.', 'best-commerce' ),
-				'check'       => class_exists( 'Axle_Demo_Importer' ),
-				'plugin_slug' => 'axle-demo-importer',
-				'id'          => 'axle-demo-importer',
-			),
-			'axle-demo-importer-files' => array(
-				'title'       => esc_html__( 'Demo Import File', 'best-commerce' ),
-				'description' => esc_html__( 'Please download demo content zip file to import using Axle Demo Importer plugin.', 'best-commerce' ),
-				'id'          => 'axle-demo-importer-files',
-				'help'        => '<a href="https://raw.githubusercontent.com/axlethemes/demo-contents/master/files/best-commerce.zip">' . esc_html__( 'Download File', 'best-commerce' ) . '</a>',
+			'one-click-demo-import' => array(
+				'title'       => esc_html__( 'One Click Demo Import', 'best-commerce' ),
+				'description' => esc_html__( 'Please install the One Click Demo Import plugin to import the demo content.', 'best-commerce' ),
+				'check'       => class_exists( 'OCDI_Plugin' ),
+				'plugin_slug' => 'one-click-demo-import',
+				'id'          => 'one-click-demo-import',
 			),
 		),
 	),
