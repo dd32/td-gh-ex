@@ -186,7 +186,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_background_color', array(
-        'label' => esc_html__('Header background color', 'avior'),
+        'label' => esc_html('Header background color', 'avior'),
         'section' => 'colors',
     )));
     // Add footer background color setting and control.
@@ -196,7 +196,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_background_color', array(
-        'label' => esc_html__('Footer background color', 'avior'),
+        'label' => esc_html('Footer background color', 'avior'),
         'section' => 'colors',
     )));
     // Add main text color setting and control.
@@ -206,7 +206,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_text_color', array(
-        'label' => esc_html__('Text Color', 'avior'),
+        'label' => esc_html('Text Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -218,7 +218,7 @@ function avior_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'brand_color', array(
-        'label' => esc_html__('Link Color', 'avior'),
+        'label' => esc_html('Link Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -230,7 +230,7 @@ function avior_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'brand_color_hover', array(
-        'label' => esc_html__('Button Hover Color', 'avior'),
+        'label' => esc_html('Button Hover Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -304,7 +304,7 @@ function avior_get_color_schemes()
      */
     return apply_filters('avior_color_schemes', array(
         'default' => array(
-            'label' => esc_html__('Default', 'avior'),
+            'label' => esc_html('Default', 'avior'),
             'colors' => array(
                 '#ffffff',
                 '#333333',
@@ -448,9 +448,9 @@ function avior_get_color_scheme_css($colors)
         'header_background_color' => '',
         'footer_background_color' => '',
         'site_header_main' => '',
-        'site_header_main_rgba' => '',
         'header_textcolor' => ''
     ));
+
     return <<<CSS
 	/* Color Scheme */
 
@@ -466,7 +466,6 @@ function avior_get_color_scheme_css($colors)
 	}
 	.top-navigation-right .menu-item-has-children .dropdown-toggle:hover,
 	.pagination a.prev:hover, .pagination a.next:hover,
-	.pagination a.prev:focus, .pagination a.next:focus,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"]{
 	  background-color: {$colors['brand_color']};
 	}
@@ -476,7 +475,7 @@ function avior_get_color_scheme_css($colors)
 	.widget.widget_calendar tbody a,
 	.search-icon-wrapper a:hover,
 	.tagcloud a:hover,
-	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover, .entry-title a:focus,
+	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover,
     .top-navigation-right li:hover > a, 
 	a {
 	  color:  {$colors['brand_color']};
@@ -489,11 +488,11 @@ function avior_get_color_scheme_css($colors)
 	/* Brand Color  Hover*/	
 
 	.sticky-post,.pagination a.prev, .pagination a.next,
-	button:hover,button:focus,
-	.button:hover,.button:focus,
-	input[type="button"]:hover,input[type="button"]:focus,
-	input[type="reset"]:hover,input[type="reset"]:focus,
-	input[type="submit"]:hover,input[type="submit"]:focus {
+	button:hover,
+	.button:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:hover {
 	  background-color:  {$colors['brand_color_hover']};
 	  border-color:  {$colors['brand_color_hover']};
 	}	
@@ -512,17 +511,10 @@ function avior_get_color_scheme_css($colors)
 	.site-header {
       background-color:  {$colors['header_background_color']};
     }
+    
     .site-header-main{
-        background-color:{$colors['site_header_main']};
+        background-color: {$colors['site_header_main']};
     }
-    @media screen and (min-width: 62em){
-        .site-header-main{
-            background-color: {$colors['site_header_main_rgba']};
-        }
-    }
-	a:focus {
-        outline-color: {$colors['main_text_color']};
-    }	
 CSS;
 }
 
@@ -545,7 +537,6 @@ function avior_color_scheme_css_template()
         'header_background_color' => '{{data.header_background_color}}',
         'footer_background_color' => '{{data.footer_background_color}}',
         'site_header_main' => '{{data.site_header_main}}',
-        'site_header_main_rgba' => '{{data.site_header_main_rgba}}',
         'header_textcolor' => '{{data.header_textcolor}}'
     );
     ?>
@@ -607,17 +598,13 @@ function avior_header_background_color_css()
 	.site-header {
      background-color: %1$s;
     }
+    
     .site-header-main{
-        background-color: %2$s;
-    }
-    @media screen and (min-width: 62em){
-        .site-header-main{
-            background-color: %3$s;
-        }
+    background-color: %2$s;
     }
 	';
 
-    wp_add_inline_style('avior-style', sprintf($css, esc_html($header_background_color), esc_html($header_background_color), esc_html($site_header_main)));
+    wp_add_inline_style('avior-style', sprintf($css, esc_html($header_background_color), esc_html($site_header_main)));
 }
 
 add_action('wp_enqueue_scripts', 'avior_header_background_color_css', 11);
@@ -640,6 +627,7 @@ function avior_brand_color_css()
     }
 
     $css = '
+	select:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus,
 	.tagcloud a:hover,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"],
 	blockquote {
@@ -647,7 +635,6 @@ function avior_brand_color_css()
 	}
 	.top-navigation-right .menu-item-has-children .dropdown-toggle:hover,
 	.pagination a.prev:hover, .pagination a.next:hover,
-	.pagination a.prev:focus, .pagination a.next:focus,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"]{
 	  background-color: %1$s;
 	}
@@ -657,7 +644,7 @@ function avior_brand_color_css()
 	.widget.widget_calendar tbody a,
 	.search-icon-wrapper a:hover,
 	.tagcloud a:hover,
-	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover, .entry-title a:focus,
+	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover,
 	.top-navigation-right li:hover > a, 
 	a {
 	  color: %1$s;
@@ -728,11 +715,11 @@ function avior_brand_color_hover_css()
 
     $css = '
 	.sticky-post,.pagination a.prev, .pagination a.next,
-	button:hover,button:focus,
-	.button:hover,.button:focus,
-	input[type="button"]:hover,input[type="button"]:focus,
-	input[type="reset"]:hover,input[type="reset"]:focus,
-	input[type="submit"]:hover,input[type="submit"]:focus {
+	button:hover,
+	.button:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:hover {
 	  background-color:  %1$s;
 	  border-color:  %1$s;
 	}	

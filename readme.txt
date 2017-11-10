@@ -2,15 +2,15 @@
 Contributors: MotoPress
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 4.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing.
+Clean and responsive WordPress theme.
 
 == Description ==
 
-With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
+Clean and responsive WordPress theme.
 
 == Installation ==
 
@@ -31,26 +31,8 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
-= 0.1.10 =
-* Font-awesome toolkit is moved to a separate file.
-
-= 0.1.9 =
-* Minor bugfixes and improvements.
-
-= 0.1.8 =
-* Added outline style for accessibility.
-
-= 0.1.7 =
-* Minor bugfixes and improvements.
-
-= 0.1.6 =
-* Added support for Jetpack Content Options.
-
-= 0.1.5 =
-* Added the full set of the theme text strings available for translation.
-
-= 0.1.4 =
-* Initial release.
+= 0.1.2 =
+* Initial release
 
 == Credits ==
 

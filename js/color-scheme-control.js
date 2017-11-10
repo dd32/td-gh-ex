@@ -86,8 +86,7 @@
 		// Add additional color.
 		// jscs:disable
 		colors.border_color = Color( colors.main_text_color ).toCSS( 'rgba', 0.2 );
-        colors.site_header_main= Color( colors.header_background_color ).toCSS( 'rgb' );
-        colors.site_header_main_rgba= Color( colors.header_background_color ).toCSS( 'rgba', 0.8 );
+        colors.site_header_main= Color( colors.header_background_color ).toCSS( 'rgba', 0.8 );
 		// jscs:enable
 		css = cssTemplate( colors );
 

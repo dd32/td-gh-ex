@@ -140,17 +140,15 @@ add_action( 'widgets_init', 'avior_widgets_init' );
  */
 function avior_scripts() {
 
-	wp_enqueue_style( 'avior-style', get_stylesheet_uri(), array(), avior_get_theme_version() );
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'avior-fonts', avior_fonts_url(), array(), null );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css', array(), '4.7.0' );
-
+	wp_enqueue_style( 'avior-style', get_stylesheet_uri(), array(), avior_get_theme_version() );
 	wp_enqueue_script( 'avior-navigation', get_template_directory_uri() . '/js/navigation.js', array(), avior_get_theme_version(), true );
 	wp_enqueue_script( 'avior-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), avior_get_theme_version(), true );
 	wp_enqueue_script( 'avior-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), avior_get_theme_version(), true );
 	wp_localize_script( 'avior-script', 'avior_screenReaderText', array(
-		'expand'   => esc_html__( 'Expand menu', 'avior' ),
-		'collapse' => esc_html__( 'Collapse menu', 'avior' ),
+		'expand'   => esc_html( 'Expand', 'avior' ),
+		'collapse' => esc_html( 'Collapse', 'avior' ),
 	) );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

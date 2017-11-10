@@ -251,11 +251,11 @@ if (!function_exists('avior_the_post_navigation')) :
     function avior_the_post_navigation()
     {
         the_post_navigation(array(
-            'next_text' => '<div class="nav-bg"><div><span class="meta-nav" aria-hidden="true">' . esc_html__('next', 'avior') . '</span> ' .
-                '<span class="screen-reader-text">' . esc_html__('Next post:', 'avior') . '</span> ' .
+            'next_text' => '<div class="nav-bg"><div><span class="meta-nav" aria-hidden="true">' . esc_html('next', 'avior') . '</span> ' .
+                '<span class="screen-reader-text">' . esc_html('Next post:', 'avior') . '</span> ' .
                 '<span class="post-title">%title</span></div></div>',
-            'prev_text' => '<div class="nav-bg"><div><span class="meta-nav" aria-hidden="true">' . esc_html__('previous', 'avior') . '</span> ' .
-                '<span class="screen-reader-text">' . esc_html__('Previous post:', 'avior') . '</span> ' .
+            'prev_text' => '<div class="nav-bg"><div><span class="meta-nav" aria-hidden="true">' . esc_html('previous', 'avior') . '</span> ' .
+                '<span class="screen-reader-text">' . esc_html('Previous post:', 'avior') . '</span> ' .
                 '<span class="post-title">%title</span></div></div>'
         ));
 
@@ -269,7 +269,7 @@ if (!function_exists('avior_the_posts_pagination')) :
     function avior_the_posts_pagination()
     {
         the_posts_pagination(array(
-            'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__('Page', 'avior') . ' </span>',
+            'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html('Page', 'avior') . ' </span>',
             'mid_size' => 2,
         ));
     }

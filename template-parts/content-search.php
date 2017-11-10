@@ -13,4 +13,5 @@
 		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 	<?php avior_excerpt(); ?>
+	<?php avior_entry_footer(); ?>
 </article><!-- #post-## -->

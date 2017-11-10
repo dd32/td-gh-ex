@@ -5,13 +5,6 @@
  * @package Avior
  */
 ?>
-
-<?php
-
-if ( function_exists( 'jetpack_author_bio' ) ) :
-	jetpack_author_bio();
-else :
-?>
 <div class="author-info">
 	<h2 class="author-title"><span
 			class="author-heading"><?php esc_html_e( 'Author:', 'avior' ); ?></span> <?php echo get_the_author(); ?>
@@ -36,6 +29,3 @@ else :
 		</p>
 	</div><!-- .author-description -->
 </div><!-- .author-info -->
-
-<?php
-endif;
