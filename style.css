@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -932,6 +932,10 @@ a.hoomenu-reveal {
 	.main-nav ul li a{
 	    background: #0c1923;
 		color:#fff;
+	}
+	body .page-title-bar-archive .breadcrumb-nav, body .page-title-bar-single .breadcrumb-nav {
+		position: static;
+		margin-top: 30px;
 	}
 }
 
@@ -4880,6 +4884,18 @@ body.dark .fp-slidesNav ul li a span {
     border-bottom: none !important;
   }
 }
+@media screen and (min-width: 919px) {
+    .page-title-bar-archive .breadcrumb-nav,
+	.page-title-bar-single .breadcrumb-nav {
+		max-width: 50%;
+	}
+	.page-title-bar-archive h4,
+	.page-title-bar-single h4{
+		max-width: 50%;
+		float:left;
+		}
+}
+
 .avata-features-style-5 .icon {
   color: #58ca7e !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -4906,4 +4922,91 @@ body.dark .fp-slidesNav ul li a span {
 }
 .avata-full-height #main-header{
 	top:0;
+}
+
+/*
+ * Comments
+ */
+
+ul.comments-list {
+	margin-left: 0;
+}
+
+.comments-list li {
+	list-style-type:none;
+}
+
+.btn-reply {
+	color: #333;
+	font-weight: 400;
+}
+
+.media-comment {
+	margin-top: 30px;
+	position: relative;
+	overflow: visible;
+	width: 100%;
+	display: table!important;
+}
+
+.media-avatar {
+	width: 80px;
+	min-width: 80px;
+}
+
+.media-avatar img {
+	border-radius: 100%;
+}
+
+.media-comment .media-heading {
+	font-size: 14px;
+}
+
+.form-control,
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	border-radius: 0;
+	text-shadow: none;
+	box-shadow: none;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.form-control:focus,
+select:focus,
+input:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #bc2944;
+    box-shadow: none;
 }

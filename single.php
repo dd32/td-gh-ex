@@ -57,7 +57,17 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avata' ) . ' </span>',
 		) );
 			?>
+            
+             <div class="comments-area text-left">
+              <?php
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+			  ?>
+            </div> 
+            
         </div>
+
         <div class="inline-block">
           <div class="widget-tags">
             <?php

@@ -149,7 +149,7 @@ $container.imagesLoaded(function(){
 
 // responsive menu
 if( $('header nav > ul').length )
-    $('header nav').hoomenu({hooScreenWidth:919,hooMenuContainer:'header#main-header'});
+    $('header nav').hoomenu({hooScreenWidth:1141,hooMenuContainer:'header#main-header',onePage: true});
 
 $('.move-section-down').click(function(){
     $.fn.fullpage.moveSectionDown();
