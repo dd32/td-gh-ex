@@ -27,6 +27,13 @@
 
 		},
 
+		// Responsive Videos
+		responsiveVideosInit: function() {
+
+			$( '.entry-content, .sidebar' ).fitVids();
+
+		},
+
 		// Responsive Menu
 		responsiveMenuInit: function() {
 
@@ -160,6 +167,9 @@
 
 		// Menu
 		bandana.menuInit();
+
+		// Responsive Videos
+		bandana.responsiveVideosInit();
 
 		// Sliding Panels for Menu and Sidebar
 		bandana.slidePanelInit();

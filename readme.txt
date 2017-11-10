@@ -1,7 +1,7 @@
 === Bandana ===
 Contributors: DesignOrbital.com
 Requires at least: WordPress 4.6
-Tested up to: WordPress 4.8.1
+Tested up to: WordPress 4.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,11 @@ Awesome Media Queries in JavaScript v2.1.2, Copyright (c) 2014 Nick Williams
 License: MIT
 Source: http://wicky.nillia.ms/enquire.js
 
+FitVids v1.1
+Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+License: WTFPL
+Source: https://github.com/davatron5000/FitVids.js
+
 hoverIntent r7, Copyright 2007, 2013 Brian Cherne
 License: MIT
 Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
@@ -85,6 +90,12 @@ Licensed under the terms of CC0
 Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.2.3 =
+Released: November 10, 2017
+
+* Responsive videos support added.
+* POT file updated.
 
 = 1.2.2 =
 Released: August 15, 2017

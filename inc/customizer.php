@@ -41,14 +41,14 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new Bandana_WP_Customize_Control_Button(
+		new Bandana_Button_Control(
 			$wp_customize,
 			'bandana_pro_about',
 			array(
 				'label'         => esc_html__( 'Bandana Pro', 'bandana' ),
 				'section'       => 'bandana_pro',
 				'priority'      => 1,
-				'type'          => 'bandana_button',
+				'type'          => 'bandana-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/bandana-pro/',
@@ -138,14 +138,14 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new Bandana_WP_Customize_Control_Button(
+		new Bandana_Button_Control(
 			$wp_customize,
 			'bandana_theme_about',
 			array(
 				'label'         => esc_html__( 'Bandana Lite vs Bandana Pro', 'bandana' ),
 				'section'       => 'bandana_support',
 				'priority'      => 1,
-				'type'          => 'bandana_button',
+				'type'          => 'bandana-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/bandana/',
@@ -160,14 +160,14 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new Bandana_WP_Customize_Control_Button(
+		new Bandana_Button_Control(
 			$wp_customize,
 			'bandana_theme_doc',
 			array(
 				'label'         => esc_html__( 'Bandana Documentation', 'bandana' ),
 				'section'       => 'bandana_support',
 				'priority'      => 2,
-				'type'          => 'bandana_button',
+				'type'          => 'bandana-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/bandana-documentation/',
@@ -182,14 +182,14 @@ function bandana_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new Bandana_WP_Customize_Control_Button(
+		new Bandana_Button_Control(
 			$wp_customize,
 			'bandana_theme_support',
 			array(
 				'label'         => esc_html__( 'General Support', 'bandana' ),
 				'section'       => 'bandana_support',
 				'priority'      => 3,
-				'type'          => 'bandana_button',
+				'type'          => 'bandana-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/contact/',
@@ -198,6 +198,36 @@ function bandana_customize_register ( $wp_customize ) {
 		)
 	);
 
+	/**
+	 * Theme Review Section
+	 */
+	$wp_customize->add_section( 'bandana_review_options', array(
+		'title'       => esc_html__( 'Enjoying the theme?', 'bandana' ),
+		'description' => esc_html__( 'Why not leave us a review on WordPress.org? We\'d really appreciate it!', 'bandana' ),
+		'panel'       => 'bandana_theme_options',
+		'priority'    => 50,
+	) );
+
+	// Theme
+	$wp_customize->add_setting ( 'bandana_theme_review', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Bandana_Button_Control(
+			$wp_customize,
+			'bandana_theme_review',
+			array(
+				'label'         => esc_html__( 'Review on WordPress.org', 'bandana' ),
+				'section'       => 'bandana_review_options',
+				'type'          => 'bandana-button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'https://wordpress.org/support/theme/bandana/reviews',
+				'button_target' => '_blank',
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'bandana_customize_register' );
 
@@ -206,12 +236,12 @@ add_action( 'customize_register', 'bandana_customize_register' );
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class Bandana_WP_Customize_Control_Button extends WP_Customize_Control {
+	class Bandana_Button_Control extends WP_Customize_Control {
 		/**
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'bandana_button';
+		public $type = 'bandana-button';
 
 		/**
 		 * HTML tag to render button object.
