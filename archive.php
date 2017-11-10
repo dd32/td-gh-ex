@@ -22,7 +22,7 @@
 					<?php elseif ( is_tag() ) : ?>
 						<?php echo esc_html_e( 'Tag Archive for ', 'appeal' ); ?>
 						<span class="text-note"> 
-                        <?php  printf( esc_attr( archive_title( '', false ) ) ); ?></span>
+                        <?php the_archive_title( ); ?></span>
 
 					<?php elseif ( is_day() ) : ?>
 						<?php echo esc_html_e( 'Dated Archives: ', 'appeal' ); ?>
