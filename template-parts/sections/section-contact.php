@@ -12,8 +12,7 @@
 	$section_option = get_theme_mod( 'homepage_contact_option');
 	if( $section_option == 'show' ) {
 		$section_title = get_theme_mod( 'contact_section_title');
-		$bt_contact_number = get_theme_mod( 'contact_section_phone');		
-		$bt_phone_num = preg_replace( "/[^0-9]/","",$bt_contact_number );
+		$bt_phone_num = get_theme_mod( 'contact_section_phone');
 		$bt_section_address = get_theme_mod( 'contact_section_address');
         $contact_section_form_page = get_theme_mod('contact_section_form_page');
         $contact_section_map_page = get_theme_mod('contact_section_map_page');
