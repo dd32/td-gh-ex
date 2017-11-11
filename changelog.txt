@@ -1,5 +1,10 @@
 == Changelog ==
 
+1.0.7
+* 11/10/2017
+https://themes.trac.wordpress.org/ticket/47322#comment:16
+* Added license information for images shown in screenshot.png
+
 = 1.0.6
 * 11/5/2017
 * https://themes.trac.wordpress.org/ticket/47322#comment:11

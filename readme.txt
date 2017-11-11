@@ -3,7 +3,7 @@
 Author: LyraThemes www.lyrathemes.com
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.8.3
-Version: 1.0.6
+Version: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, rtl-language-support, e-commerce
@@ -48,11 +48,21 @@ The theme uses the following third-party resources:
 * Sample preview images in ariel/sample/images are Creative Commons CC0. 
 * Fonts used https://fonts.google.com/specimen/Merriweather (by Sorkin Type, Open Font License)
 	         https://fonts.google.com/specimen/Source+Sans+Pro (by Paul D. Hunt, Open Font License)
-			 
-https://pixabay.com/en/asparagus-avocado-cooking-egg-food-1836178/
-https://pixabay.com/en/beach-beach-chair-feet-female-1845311/
-https://pixabay.com/en/chalkboard-blackboard-board-picture-2281205/
-https://pixabay.com/en/maldives-beach-bungalow-sea-water-2551755/
-https://pixabay.com/en/pineapple-ripe-water-beach-sea-1209141/
-https://pixabay.com/en/spices-chervil-lemon-balm-chives-2419057/
+
+Images in samples/images:
+110x110-1.jpg, 540x540-1.jpg, 840x500-1.jpg, 870x550-1.jpg, 1170x550-1.jpg: https://pixabay.com/en/chalkboard-blackboard-board-picture-2281205/
+110x110-2.jpg, 540x540-2.jpg, 840x500-2.jpg, 870x550-2.jpg, 1170x550-2.jpg: https://pixabay.com/en/asparagus-avocado-cooking-egg-food-1836178/
+110x110-3.jpg, 540x540-3.jpg, 840x500-3.jpg, 870x550-3.jpg, 1170x550-3.jpg: https://pixabay.com/en/spices-chervil-lemon-balm-chives-2419057/
+110x110-4.jpg, 540x540-4.jpg, 840x500-4.jpg, 870x550-4.jpg, 1170x550-4.jpg: https://pixabay.com/en/maldives-beach-bungalow-sea-water-2551755/
+110x110-5.jpg, 540x540-5.jpg, 840x500-5.jpg, 870x550-5.jpg, 1170x550-5.jpg: https://pixabay.com/en/pineapple-ripe-water-beach-sea-1209141/
+110x110-6.jpg, 540x540-6.jpg, 840x500-6.jpg, 870x550-6.jpg, 1170x550-6.jpg: https://pixabay.com/en/beach-beach-chair-feet-female-1845311/
 header.jpg: https://pixabay.com/en/cup-top-view-coffee-table-vintage-2315554/
+Images in screenshot.png:
+https://pixabay.com/en/breakfast-healthy-colorful-hummus-1804457/
+https://pixabay.com/en/succulents-hands-woman-female-2347550/
+https://pixabay.com/en/tarte-cheese-basil-chutney-cherry-2409958/
+https://pixabay.com/en/pancakes-maple-syrup-sweet-food-2291908/
+https://pixabay.com/en/amusement-park-ride-carnival-2456905/
+https://pixabay.com/en/waffles-waffles-bake-ingredients-2190961/
+https://pixabay.com/en/wave-smashing-foam-spray-sea-2211925/
+https://pixabay.com/en/pretty-woman-happy-young-female-1509956/
