@@ -93,6 +93,7 @@ if($bellini['bellini_show_frontpage_woo_category'] == true) :
 	if(is_woocommerce_activated()):?>
 
 	<section class="front-product-category" itemscope itemtype="http://schema.org/Offer">
+	<?php do_action( 'bellini_homepage_before_product_categories' );?>
 	<div class="bellini__canvas">
 	<div class="row">
 	<?php
@@ -113,6 +114,7 @@ if($bellini['bellini_show_frontpage_woo_category'] == true) :
 			</p>
 		<?php endif;?>
 	</div>
+	<?php do_action( 'bellini_homepage_after_product_categories_title' );?>
 	</div>
 	<div class="product__categories <?php echo bellini_section_content_class_switcher($column_position);?>">
 	<div class="row">
@@ -125,6 +127,7 @@ if($bellini['bellini_show_frontpage_woo_category'] == true) :
 	</div>
 	</div>
 	</div>
+	<?php do_action( 'bellini_homepage_after_product_categories' );?>
     </section>
 
 <?php
@@ -136,7 +139,7 @@ endif;
 
 
 /*--------------------------------------------------------------
-## Woo Featured Product
+## Homepage Featured Products Slider
 --------------------------------------------------------------*/
 
 function bellini_woo_product_featured(){
@@ -178,6 +181,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 	// Fire up the Loop
 	if ( $loop->have_posts() ) :?>
 		<section class="front__product-featured">
+		<?php do_action( 'bellini_homepage_before_featured_products' );?>
 		<div class="bellini__canvas">
 		<div class="row">
 		<div class="front-section__title">
@@ -197,6 +201,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 			    endif;
 			 ?>
 		</div>
+		<?php do_action( 'bellini_homepage_after_featured_products_title' );?>
 			<div class="featured-product__slider">
 			<ul class="single-item--featured">
 				<?php
@@ -209,6 +214,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 
 		</div><!-- Row ends -->
 		</div><!-- Container ends -->
+		<?php do_action( 'bellini_homepage_after_featured_products' );?>
 		</section>
 		<?php else: ?>
 		<section class="container-fluid no-results">
@@ -232,7 +238,7 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 
 
 /*--------------------------------------------------------------
-## WooCommerce Products
+## WooCommerce Recent Products
 --------------------------------------------------------------*/
 
 function bellini_woo_product_newly_arrived(){
@@ -242,6 +248,7 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 	if(is_woocommerce_activated()):?>
 
 	<section class="front-new-arrival">
+	<?php do_action( 'bellini_homepage_before_recent_products' );?>
 	<div class="bellini__canvas">
 	<div class="row">
 
@@ -268,6 +275,7 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 				</p>
 		<?php endif;?>
 		</div>
+		<?php do_action( 'bellini_homepage_after_recent_products_title' );?>
 	</div>
 	</div>
 
@@ -310,6 +318,7 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 			    </div>
 	    	<?php endif; ?>
 	    		</div>
+	    		<?php do_action( 'bellini_homepage_after_recent_products' );?>
 	</section>
 <?php
 		} else { ?>
@@ -335,7 +344,7 @@ endif;
 
 
 /*--------------------------------------------------------------
-## Frontpage Blogposts
+## Home Blog Posts
 --------------------------------------------------------------*/
 
 function bellini_front_blog_posts(){
@@ -343,6 +352,7 @@ function bellini_front_blog_posts(){
 if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 
 <section class="front-blog">
+	<?php do_action( 'bellini_homepage_before_blog_posts' );?>
 	<div class="bellini__canvas">
 	<div class="post-grid row">
 		<div class="front-section__title">
@@ -360,6 +370,7 @@ if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 					</p>
 			<?php endif; ?>
 		</div>
+		<?php do_action( 'bellini_homepage_after_blog_posts_title' );?>
 
 	<?php
 
@@ -401,6 +412,7 @@ if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 	?>
 	</div>
 	</div>
+	<?php do_action( 'bellini_homepage_after_blog_posts' );?>
 </section><!-- Front Blog ends -->
 
 <?php
@@ -409,13 +421,14 @@ endif;
 
 
 /*--------------------------------------------------------------
-## Feature Blocks
+## Homepage Feature Blocks
 --------------------------------------------------------------*/
 
 function bellini_feature_blocks(){
-	global $bellini;
+global $bellini;
 if($bellini['bellini_show_frontpage_feature_block'] == true) : ?>
 <section class="front-feature-blocks">
+<?php do_action( 'bellini_homepage_before_blocks' );?>
 <div class="bellini__canvas">
 <div class="row">
 	<div class="front-section__title">
@@ -426,6 +439,7 @@ if($bellini['bellini_show_frontpage_feature_block'] == true) : ?>
 		</h2>
 	<?php endif;?>
 	</div>
+	<?php do_action( 'bellini_homepage_after_blocks_title' );?>
 	<?php
 		if ( absint($bellini['bellini_feature_block_layout']) === 1 ){
 			get_template_part( 'template-parts/bellini', 'block-1' );
@@ -436,16 +450,22 @@ if($bellini['bellini_show_frontpage_feature_block'] == true) : ?>
 	?>
 </div>
 </div>
+<?php do_action( 'bellini_homepage_after_blocks' );?>
 </section>
 <?php
 endif;
 }
 
 
+/*--------------------------------------------------------------
+## Homepage Text Field
+--------------------------------------------------------------*/
+
 function bellini_frontpage_text_field_shortcode(){
 	global $bellini;
  if($bellini['bellini_show_frontpage_text_section'] == true && !empty($bellini['bellini_frontpage_textarea_section_field'])): ?>
 	<section class="front-text-field">
+	<?php do_action( 'bellini_homepage_before_text_field' );?>
 	<div class="bellini__canvas">
 	<div class="row">
 	<div class="col-md-12">
@@ -457,16 +477,24 @@ function bellini_frontpage_text_field_shortcode(){
 	</div>
 	</div>
 	</div>
+	<?php do_action( 'bellini_homepage_after_text_field' );?>
 	</section>
 <?php  endif;
 }
+
+
+/*--------------------------------------------------------------
+## Homepage Page Content
+--------------------------------------------------------------*/
 
 function bellini_front_default_page_content(){
 	if ( have_posts() and is_page() ) :
 	while ( have_posts() ) {
 		echo '<section class="front-bellini-default-content">';
+		do_action( 'bellini_homepage_before_page_content' );
 		the_post();
 		get_template_part( 'template-parts/content', 'page' );
+		do_action( 'bellini_homepage_after_page_content' );
 		echo '</section>';
 	}
 	endif;

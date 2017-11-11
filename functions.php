@@ -119,7 +119,7 @@ function bellini_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Left Sidebar', 'bellini' ),
 		'id'            => 'sidebar-left',
-		'description'   => '',
+		'description'   => esc_html__( 'These widgets will be only visible in Blog Page Template, Archive pages','bellini' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="element-title widget-title">',

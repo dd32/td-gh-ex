@@ -15,6 +15,7 @@ $bellini = bellini_option_defaults();
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php do_action( 'bellini_before_site' ); ?>
 <div id="page" class="hfeed site website-width">
 
 <?php
@@ -36,5 +37,5 @@ $bellini = bellini_option_defaults();
 	</div>
 
 	</header>
-<?php do_action( 'bellini_after_header' ); ?>
+<?php do_action( 'bellini_before_content' ); ?>
 <div id="content" class="site-content">
