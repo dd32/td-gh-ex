@@ -73,7 +73,7 @@ $wp_customize->add_control(
         'type' => 'text',
         'label' => esc_html__('Address', 'better-health'),
         'section' => 'better_health_top_header_info_section',
-        'priority' => 8
+        'priority' => 4 
     )
 );
 

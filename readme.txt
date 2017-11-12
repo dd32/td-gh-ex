@@ -23,6 +23,9 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 #### Changelog ####
+## 0.0.4 - November 10 2017 ##
+* Fixed some code issues
+* Minor Style changed
 
 ## 0.0.3 - November 10 2017 ##
 * Fixed some code issues

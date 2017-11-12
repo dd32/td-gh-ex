@@ -44,7 +44,7 @@ if ($better_health_slider_section_option != 'hide') {
                                 ?>
                                 <div class="item <?php if ($i == 0) {
                                     echo "active";
-                                } ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>);">
+                                } ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>);">
                                     
                                     
                                     <div class="slider-content text-center">
