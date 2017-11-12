@@ -241,7 +241,7 @@ class Breadcrumb_Trail {
 	protected function set_labels() {
 
 		$defaults = array(
-			'browse'              => esc_html__( '','better-health'),
+			'browse'              => esc_html__( 'Browse','better-health'),
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label','better-health'),
 			'home'                => esc_html__( 'Home','better-health'),
 			'error_404'           => esc_html__( '404 Not Found','better-health'),

@@ -179,8 +179,8 @@ function better_health_scripts()
 
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '4.5.0');
 
-    /*google font  */
-    wp_enqueue_style('better-health-googleapis', 'https://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu:400,500,700', array(), null);
+   /*google font  */
+     wp_enqueue_style('better-health-googleapis', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Roboto:300,400', array(), null);
 
     /*google font  */
     wp_enqueue_style('better-health-googleapis', 'https://fonts.googleapis.com/css?family=Poppins:300,400', array(), null);

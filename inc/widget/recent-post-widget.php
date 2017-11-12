@@ -59,6 +59,8 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
                         </div>
                         <div class="row">
                             <?php
+                        $readme_text = better_health_get_option( 'better_health_read_more_text_blog_archive_option');
+
                             $i = 0;
                             $sticky = get_option( 'sticky_posts' );
                             if ($catid != -1) {
@@ -112,7 +114,7 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
                                             
                                             </div>
                                             <p><?php echo esc_html( wp_trim_words( get_the_content(), 20 ) ); ?></p>
-                                            <a href="<?php the_permalink(); ?>" class="readmore"> Read More <i class="fa fa-long-arrow-right"></i>
+                                            <a href="<?php the_permalink(); ?>" class="readmore"> <?php echo esc_html($readme_text); ?><i class="fa fa-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>

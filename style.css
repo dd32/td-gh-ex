@@ -5,7 +5,7 @@ Author: canyonthemes
 Author URI: https://www.canyonthemes.com
 Description: Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites.
 The advanced theme options and available various widgets with drag and drop features will help to customize your site as your need.  Some of the available options are awesome slider section, header options, footer options, layout design options,Color options, widget options, custom copyright options integrated social icons using menu, reset color option and lots of other available options will allow you to create unique website as you want. Medical practices, medical organizations and related businesses find in Better Health a staunch ally in bringing the benefits of their practice to a worldwide audience. Try Better Health today!
-Version: 0.0.2
+Version: 0.0.3
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: better-health
@@ -653,10 +653,11 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 15px;
-    font-weight: 600;
-    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0.5px;
+    color:#575757;
 }
 
 html,
@@ -665,8 +666,8 @@ body {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
     color:#777777;
 }
 
@@ -717,15 +718,15 @@ input:-webkit-autofill:focus {
 }
 
 .btn-secondary {
-    color: #00aef0;
-    background-color: #fff;
-    border-color: #fff;
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
 }
 
 .btn-secondary:hover {
-    color: #00aef0;
-    background-color: #efeded;
-    border-color: #efeded;
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
 }
 
 .nopadding {
@@ -747,7 +748,7 @@ input:-webkit-autofill:focus {
 p {
     line-height: 26px;
     letter-spacing: 0.5px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .section-margine {
@@ -822,6 +823,8 @@ p {
     margin-left: 0;
 }
 
+
+li.current-menu-item a {color:#00AEF0;}
 .contact-detail2 {
     margin: 0;
 }
@@ -838,29 +841,34 @@ p {
     margin-bottom: 0;
     margin-right: 35px;
 }
+.contact-detail2 li:last-child {
+    margin-right: 0;
+}
 .make-booking .makebooking {
-    padding: 13px 30px !important;
+    padding: 10px 20px !important;
     border: none;
     float: right;
     font-weight: 700;
     background: #028bbf;
     color: #fff;
-    box-shadow: 3px 3px 0px 0px #015a7b;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 3px;
+    margin: 5px 0;
 }
 .contact-detail2 li a {
-    color: #fff;
+    color: #5f5f5f;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 600;
+    line-height: 35px;
+    letter-spacing: 0.5px;
 }
 
 .social-icons {
     list-style: outside none none;
     padding: 10px 0;
     margin-bottom: 0;
+    margin-left: 0;
 }
-
 .social-icons li {
     margin-right: 10px;
     display: inline;
@@ -993,7 +1001,6 @@ p {
     line-height: 38px;
     letter-spacing: 1px;
     color: #777;
-    font-family: 'Raleway', sans-serif;
 }
 .logo-text samp {
     background: #00AEF0;
@@ -1007,7 +1014,6 @@ p {
     color: #fff;
     font-weight: normal;
     font-size: 30px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .site-description {
     margin-bottom: 0;
@@ -1026,13 +1032,8 @@ p {
     height: 40px;
     width: 40px;
     text-align: center;
-    border: 1px solid #00aef0;
     line-height: 30px;
-}
-.better-health-info .contact-detail2 li a {
-    color: #717171;
-    font-weight: 600;
-    font-size: 14px;
+    float:left;
 }
 
 
@@ -1041,6 +1042,7 @@ p {
 *************************************/
 .main-menu {
     padding: 10px 0;
+    background:#f5f5f5;
 }
 .navbar {
     margin-bottom: 0;
@@ -1067,11 +1069,14 @@ p {
     margin-top: 0 !important;
     padding: 10px 0 !important;
     background: #fff !important;
-    position: fixed !important;
+    position: fixed;
 }
-.navbar-nav>li>a {
-    font-size: 16px;
-    font-weight: 600;
+.navbar-nav > li > a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #545454;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .navbar-fixed-top .navbar-nav>li>a {
@@ -1085,17 +1090,19 @@ p {
     padding: 0;
     border: 0;
     box-shadow: none;
+    top:60px;
 }
 .dropdown-menu .divider {
     margin: 0;
 }
 
-.dropdown-menu>li>a {
+.dropdown-menu > li > a {
     font-size: 16px;
     font-weight: 400;
-    color: #545454;
-    background: #fff;
+    color: #fff;
+    background: #00aef0;
     padding: 10px;
+    border-bottom: 1px solid #5dbde6;
 }
 
 .dropdown-menu> li >a:hover {
@@ -1115,7 +1122,6 @@ p {
 
 .navbar-menu .navbar-nav>li>a {
     background: transparent !important;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 .navbar-menu .navbar-nav>li:last-child>a{
@@ -1148,6 +1154,7 @@ p {
 .top-header .search {
     float: right;
     position: relative;
+    padding: 0 15px;
 }
 .top-header .search .searchsubmit {
     display: none;
@@ -1161,9 +1168,12 @@ p {
     z-index: 999;
 }
 p.search-btn {
-    font-size: 20px;
-    margin-top: 8px;
+    border-left: 1px solid #009adc;
+    border-right: 1px solid #009adc;
     cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    padding: 8px 10px;
 }
 .search p {
     color: #fff;
@@ -1205,13 +1215,13 @@ p.search-btn {
 }
 
 #main-slide .slider-content {
-    top: 50%;
+    top: 35%;
     padding: 0;
     position: absolute;
     width: 100%;
     color: #fff;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    /* -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 
 #main-slide .slider-content.text-left {
@@ -1488,6 +1498,16 @@ section#section1 .section-1-box {
     }
     aside {
         float: none;
+      }
+      .slide-sub-title {
+        font-size: 32px;
+        line-height: 46px;
+      }
+      .navbar-fixed-top {
+        position: relative;
+      }
+      .portfolioFilter a {
+        margin-bottom: 15px;
       }  
     
 }
@@ -1522,12 +1542,17 @@ section#section1 .section-1-box {
 .section-2-box-left a{
     margin: 15px 0;
 }
-
+.section-2-box-right{
+    padding: 0;
+}
+.section-2-box-right h2{
+    margin-bottom: 15px;
+}
 .section-2-box-right h3{
     color: #ffffff;
 }
 .section-2-box-right p {
-    color: #696868;
+    color: #909090;
 }
 .section-2-box-right ul{
     padding: 0;
@@ -1671,11 +1696,13 @@ section#section1 .section-1-box {
     font-size: 40px;
 }
 .section-4 .section li strong {
-    font-size: 20px;
+    font-size: 18px;
     color: #1889c1;
-    font-weight: 700;
+    font-weight: 600;
     display: block;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color:#6c6c6c;
 }
 .border-bottom{
     border-bottom: 1px solid #eeeeee;
@@ -1686,7 +1713,7 @@ section#section1 .section-1-box {
 *************************************/
 .section-5-background.section-margine{
     padding: 0;
-    background: #6f6f6f ;
+    background: #6f6f6f;
 }
 .section-5{
     background:#f7f7f7;
@@ -1919,7 +1946,7 @@ section#section1 .section-1-box {
 .section-10-box-text-cont h3 {
     font-size: 24px;
     color: #fff;
-    line-height: 30px;
+    line-height: 50px;
     font-weight: 500;
 }
 .section-10-box-text-cont h3 span{
@@ -1938,15 +1965,14 @@ section#section1 .section-1-box {
     margin:0;
 }
 .section-10-btn-cont .btn {
-    padding: 10px 50px;
-    font-size: 24px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 40px;
-    background: none;
+    background: rgb(2, 139, 191) none repeat scroll 0 0;
+    border-radius: 5px;
     color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 50px;
+    border: 0;
 }
-
 
 /************************************
 16)Footer top
@@ -2230,7 +2256,7 @@ section#section1 .section-1-box {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: rgba(14, 14, 14, 0.45);
+  background-color: rgba(14, 14, 14, 0.70);
 }
 
 .isotope-image-work a:hover .overlay {
@@ -2251,6 +2277,11 @@ section#section1 .section-1-box {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+.overlay i {
+    background: #00adef none repeat scroll 0 0;
+    border-radius: 3px;
+    padding: 10px;
 }
 .test-work {
     position: relative;
@@ -2563,6 +2594,7 @@ a.readmore:hover {
     background: 0
 }
 
+h2.trail-browse{display: none;}
 
 /************************************
 24)Section 16
@@ -2592,7 +2624,6 @@ a.readmore:hover {
 .section16 .success,
 .section16 .error {
     display: none;
-    font-family: "Source Sans Pro", sans-serif;
     margin-bottom: 48px;
 }
 
@@ -2821,14 +2852,12 @@ a.readmore:hover {
 }
 .appointment label {
     color: #333;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 12px;
     font-weight: 600;
 }
 
 section#section4 {
     background: #f9f9f9;
-    padding-top: 50px;
     margin: 0;
 }
 .service-img {
@@ -3058,6 +3087,7 @@ section#section4 {
 }
 .contact-link-desc h5 {
     font-size: 20px;
+    color: #fff;
 }
 .contact-link-img {
     position: relative;
@@ -3217,5 +3247,6 @@ a.contact-us:hover {
   }
   
 }
+
 
 
