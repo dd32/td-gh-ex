@@ -1,7 +1,7 @@
 <?php
 /**
 * Customizer actions and filters
-*
+* Loaded if hu_is_customizing()
 *
 * @package      Hueman
 * @since        3.0+
@@ -23,6 +23,10 @@ if ( ! class_exists( 'HU_customize' ) ) :
             $this -> hu_update_widget_database_option();
             //define useful constants
             if( ! defined( 'CZR_DYN_WIDGETS_SECTION' ) )      define( 'CZR_DYN_WIDGETS_SECTION' , 'dyn_widgets_section' );
+
+            //load custom customizer classes
+            //=> will be instantiated on "customize_register"
+            $this -> hu_load_customizer_custom_classes();
 
             //add control class
             add_action( 'customize_register'                       , array( $this , 'hu_augment_customizer' ),10,1);
@@ -115,18 +119,16 @@ if ( ! class_exists( 'HU_customize' ) ) :
         }
 
 
-
-
-
         /* ------------------------------------------------------------------------- *
-         *  AUGMENT CUSTOMIZER SERVER SIDE
+         *  LOAD CUSTOM CUSTOMIZER CLASSES FOR CONTROLS / SETTINGS / SECTIONS / PANELS
         /* ------------------------------------------------------------------------- */
         /**
+        * hook : 'init'
         * Augments wp customize controls and settings classes
         * @package Hueman
         * @since Hueman 3.0
         */
-        function hu_augment_customizer( $manager ) {
+        function hu_load_customizer_custom_classes() {
             $_classes = array(
               'controls/class-base-control.php',
               'controls/class-cropped-image-control.php',
@@ -136,6 +138,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
               'controls/class-modules-control.php',
 
               'controls/class-upload-control.php',
+
+              'controls/class-code-editor-control.php',
 
               'panels/class-panels.php',
 
@@ -148,7 +152,20 @@ if ( ! class_exists( 'HU_customize' ) ) :
             foreach ($_classes as $_path) {
                 locate_template( 'functions/czr/' . $_path , $load = true, $require_once = true );
             }
+        }
 
+
+
+        /* ------------------------------------------------------------------------- *
+         *  AUGMENT CUSTOMIZER SERVER SIDE
+        /* ------------------------------------------------------------------------- */
+        /**
+        * hook : 'customize_register'
+        * Augments wp customize controls and settings classes
+        * @package Hueman
+        * @since Hueman 3.0
+        */
+        function hu_augment_customizer( $manager ) {
             //Registered types are eligible to be rendered via JS and created dynamically.
             if ( class_exists('HU_Customize_Cropped_Image_Control') )
               $manager -> register_control_type( 'HU_Customize_Cropped_Image_Control' );
@@ -159,6 +176,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
             if ( hu_is_pro_section_on() ) {
               $manager -> register_section_type( 'HU_Customize_Section_Pro');
             }
+            if ( class_exists('HU_Customize_Code_Editor_Control') )
+              $manager -> register_control_type( 'HU_Customize_Code_Editor_Control' );
         }
 
 
@@ -185,12 +204,13 @@ if ( ! class_exists( 'HU_customize' ) ) :
                 'settings' => array( 'header_image' ),
                 'render_callback' => 'hu_render_header_image',
             ) );
-
-            $wp_customize->selective_refresh->add_partial( 'site_title', array(
-                'selector' => '.site-title',
-                'settings' => array( 'blogname' ),
-                'render_callback' => 'hu_do_render_logo_site_tite',
-            ) );
+            //if ( ! function_exists( 'HU_AD') || ! HU_AD() -> ha_is_skop_on() ) {
+              $wp_customize->selective_refresh->add_partial( 'site_title', array(
+                  'selector' => '.site-title',
+                  'settings' => array( 'blogname' ),
+                  'render_callback' => 'hu_do_render_logo_site_tite',
+              ) );
+            //}
             $wp_customize->selective_refresh->add_partial( 'site_description', array(
                 'selector' => '.site-description',
                 'settings' => array( 'blogdescription' ),
@@ -262,7 +282,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
               $wp_customize -> get_section( 'static_front_page' ) -> panel = '';//'hu-content-panel';
               $wp_customize -> get_section( 'static_front_page' ) -> title = __( 'Front Page Content', 'hueman' );
               $wp_customize -> get_section( 'static_front_page' ) -> priority = 10;
-              $wp_customize -> get_section( 'static_front_page' ) -> active_callback = 'hu_is_home';
+              //$wp_customize -> get_section( 'static_front_page' ) -> active_callback = 'hu_is_home';
             }
 
             //CHANGE THE STATIC FRONT PAGE WP CONTROLS
@@ -617,7 +637,11 @@ if ( ! class_exists( 'HU_customize' ) ) :
                       'dst_width',
                       'dst_height',
 
-                      'ubq_section'
+                      'ubq_section',
+
+                      //for the code editor
+                      'code_type',
+                      'input_attrs'
                 )
             );
             return apply_filters( 'hu_customizer_arguments', $args );
