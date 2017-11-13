@@ -1,7 +1,7 @@
 ----------------------------------
 Small Business
 ----------------------------------
-Version: 	2.7
+Version: 	2.9
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -16,7 +16,7 @@ This Product is provided "as is" with no warranty or liabilities of D5 Creation.
 Basic jQuery Slider: License: GNU General Public License, version 3 (GPL-3.0), http://www.basic-slider.com
 
 themefeatures.png - FontAwesome Icons' Image, http://fortsmall-business.github.io/Font-Awesome/
-
+screenshot.png - https://pixabay.com/en/girl-woman-joy-of-life-jump-free-2940655
 
 All other images: License: GPL-2.0+, Copyright: D5 Creation
 
@@ -25,6 +25,11 @@ Instructions:
 __________________
 
 - You Can Change/Set the Front Page Elements from Appearance > Customize
+
+Version 2.7
+====================================
+- Some Styling Change
+- Image Change
 
 Version 2.7
 ====================================

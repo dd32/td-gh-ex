@@ -1,6 +1,6 @@
 <?php 
 /* 	Small Business Theme's Archive Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
@@ -64,7 +64,7 @@ get_header(); ?>
 
 	<?php else : ?>
 
-		<h1 class="page-title"><?php _e('Not Found', 'small-business'); ?></h1>
+<h1 class="page-title"><?php _e('Not Found', 'small-business'); ?></h1>
 <h3 class="arc-src"><span><?php _e('Apologies, but the page you requested could not be found. Perhaps searching will help', 'small-business'); ?></span></h3>
 
 <?php get_search_form(); ?>

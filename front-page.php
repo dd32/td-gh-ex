@@ -2,13 +2,11 @@
 /*
 	Template Name: Front Page
 	smallbusiness Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
       <div id="slider">
          	<div id="slideshow"><ul class="bjqs">
 			<?php $sbargs = smallbusiness_ppp(); query_posts( $sbargs ); 
