@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.1.0
+Version: 1.1.1
 Text Domain: fcorpo
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -463,6 +463,10 @@ article ul > li:before {
 	padding-top:0;
 }
 
+.custom-logo-link img {
+	margin-right:10px;
+}
+
 #header-logo > a.custom-logo-link,
 #header-logo #site-identity {
     float:left;
@@ -864,6 +868,7 @@ span > object {
 
 .nav-links .nav-previous {
 	float:left;
+	width:45%;
 }
 
 .nav-links .nav-previous:before {
@@ -874,6 +879,7 @@ span > object {
 
 .nav-links .nav-next {
 	float:right;
+	width:45%;
 }
 
 .nav-links .nav-next:after {
@@ -1032,8 +1038,7 @@ span > object {
 
 .commentlist li p {
 	font-weight:normal;
-	font-size:12px;
-	line-height:16px;
+	line-height:1.2;
 	margin:5px 0 12px;
 }
 
@@ -1302,6 +1307,10 @@ img.wp-post-image {
     z-index: 100000; /* Above WP toolbar. */
 }
 
+.tagcloud {
+    margin-bottom: 20px;
+}
+
 .wp-caption {
     padding:4px 4px 4px 4px;
     border:1px solid #ccc;
@@ -1464,23 +1473,23 @@ img.wp-post-image {
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 16.66%;
+	max-width: 15%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 14.28%;
+	max-width: 13%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 12.5%;
+	max-width: 11%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 11.11%;
+	max-width: 10%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 10.11%;
+	max-width: 9%;
 }
 
 .gallery-icon img {
@@ -1507,6 +1516,11 @@ img.wp-post-image {
 #home-cols {
 	clear:both;
 	padding:20px 2%;
+}
+
+.post-links .left,
+.post-links .right {
+    width: 40%;
 }
 
 /* Large Resolution */
@@ -1660,6 +1674,41 @@ img.wp-post-image {
 		-moz-box-shadow: inset 0 -2px 2px -2px rgba(0, 0, 0, 0.25);
 		box-shadow: 0 -2px 2px -2px rgba(0, 0, 0, 0.15) inset;
 	}
+
+	#navmain ul ul:not(.cart_list) {
+        opacity:0;
+    }
+
+	#navmain ul li:hover > ul {
+       display:block;
+       opacity:1;
+       animation: opacity 700ms ease-in-out normal;
+       -moz-animation: opacity 700ms ease-in-out normal;
+       -ms-animation: opacity 700ms ease-in-out normal;
+       -o-animation: opacity 700ms ease-in-out normal;
+       -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    @keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
+    @-moz-keyframes opacity {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @-ms-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-o-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-webkit-keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
 
 	#navmain ul li ul a {
 		display:block;

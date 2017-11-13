@@ -75,7 +75,7 @@ final class fcorpo_Customize {
 				array(
 					'title'    => esc_html__( 'tCorpo', 'fcorpo' ),
 					'pro_text' => esc_html__( 'Upgrade to Pro', 'fcorpo' ),
-					'pro_url'  => 'https://tishonator.com/product/tcorpo'
+					'pro_url'  => esc_url( 'https://tishonator.com/product/tcorpo' ),
 				)
 			)
 		);

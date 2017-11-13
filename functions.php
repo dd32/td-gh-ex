@@ -46,7 +46,7 @@ if ( ! function_exists( 'fcorpo_setup' ) ) {
 		add_theme_support( "title-tag" );
 
 		// add the visual editor to resemble the theme style
-		add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/css/font-awesome.min.css' ) );
+		add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/style.css' ) );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
@@ -112,6 +112,7 @@ function fcorpo_load_scripts() {
 
 	// load main stylesheet.
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.css', array( ) );
 	wp_enqueue_style( 'fcorpo-style', get_stylesheet_uri(), array( ) );
 	
 	wp_enqueue_style( 'fcorpo-fonts', fcorpo_fonts_url(), array(), null );
@@ -122,7 +123,16 @@ function fcorpo_load_scripts() {
 	}
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'fcorpo-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js',
+			array( 'jquery' ) );
+
+	wp_enqueue_script( 'fcorpo-js', get_template_directory_uri() . '/js/utilities.js',
+			array( 'jquery', 'viewportchecker' ) );
+
+	$data = array(
+		'loading_effect' => ( get_theme_mod('fcorpo_animations_display', 1) == 1 ),
+	);
+	wp_localize_script('fcorpo-js', 'fcorpo_options', $data);
 
 	// Load Slider JS Scripts
 	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
@@ -176,9 +186,9 @@ function fcorpo_show_website_logo_image_and_title() {
     
         echo '<div id="site-identity">';
         echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-        echo '<h1>'.get_bloginfo('name').'</h1>';
+        echo '<h1 class="entry-title">' . esc_html( get_bloginfo('name') ) . '</h1>';
         echo '</a>';
-        echo '<strong>'.get_bloginfo('description').'</strong>';
+        echo '<strong>' . esc_html( get_bloginfo('description') ) . '</strong>';
         echo '</div>';
     }
 }
@@ -317,7 +327,7 @@ function fcorpo_display_slider() { ?>
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
 
-					$defaultSlideContent = __( '<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' );
+					$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
@@ -441,14 +451,14 @@ function fcorpo_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'default'           => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' ),
+				'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' ),
 				'sanitize_callback' => 'force_balance_tags',
 			)
 		);
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
 									array(
-										'label'          => sprintf( __( 'Slide #%s Content', 'fcorpo' ), $i ),
+										'label'          => sprintf( esc_html__( 'Slide #%s Content', 'fcorpo' ), $i ),
 										'section'        => 'fcorpo_slider_section',
 										'settings'       => $slideContentId,
 										'type'           => 'textarea',
@@ -466,7 +476,7 @@ function fcorpo_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
 				array(
-					'label'   	 => sprintf( __( 'Slide #%s Image', 'fcorpo' ), $i ),
+					'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'fcorpo' ), $i ),
 					'section' 	 => 'fcorpo_slider_section',
 					'settings'   => $slideImageId,
 				) 
@@ -780,6 +790,37 @@ function fcorpo_customize_register( $wp_customize ) {
             )
         )
 	);
+
+	/**
+	 * Add Animations Section
+	 */
+	$wp_customize->add_section(
+		'fcorpo_animations_display',
+		array(
+			'title'       => __( 'Animations', 'fcorpo' ),
+			'capability'  => 'edit_theme_options',
+		)
+	);
+
+	// Add display Animations option
+	$wp_customize->add_setting(
+			'fcorpo_animations_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'esc_attr',
+			)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize,
+						'fcorpo_animations_display',
+							array(
+								'label'          => __( 'Enable Animations', 'fcorpo' ),
+								'section'        => 'fcorpo_animations_display',
+								'settings'       => 'fcorpo_animations_display',
+								'type'           => 'checkbox',
+							)
+						)
+	);
 }
 add_action('customize_register', 'fcorpo_customize_register');
 
@@ -806,7 +847,7 @@ function fcorpo_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main-fixed {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>

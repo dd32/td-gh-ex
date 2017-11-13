@@ -7,6 +7,10 @@ jQuery( document ).ready(function() {
 		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
 	}
 
+	if (fcorpo_options && fcorpo_options.loading_effect) {
+	   fcorpo_init_loading_effects();
+  	}
+
 	jQuery('#navmain > div').on('click', function(e) {
 
 		e.stopPropagation();
@@ -22,25 +26,6 @@ jQuery( document ).ready(function() {
 			
 				jQuery('ul:first-child', this).toggle(400);
 			}
-		}
-	});
-
-	jQuery("#navmain > div > ul li").mouseleave( function(event) {
-    event.preventDefault();
-		if (fcorpo_IsLargeResolution()) {
-			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
-		}
-	});
-	
-	jQuery("#navmain > div > ul li").mouseenter( function(event) {
-
-    event.preventDefault();
-		if (fcorpo_IsLargeResolution()) {
-
-			var curMenuLi = jQuery(this);
-			jQuery("#navmain > div > ul > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
-		
-			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
 		}
 	});
 	
@@ -72,6 +57,63 @@ function fcorpo_IsMediumResolution() {
 function fcorpo_IsLargeResolution() {
 
 	return (jQuery(window).width() >= 800);
+}
+
+function fcorpo_init_loading_effects() {
+
+    jQuery('#header-logo').addClass("hidden").viewportChecker({
+            classToAdd: 'animated fadeInLeft',
+            offset: 1
+          });
+
+    jQuery('#navmain').addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInRight',
+            offset: 1
+          });
+
+    jQuery('#page-header, article h1').addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInUp',
+            offset: 1
+          });
+
+    jQuery('#main-content-wrapper h2, #main-content-wrapper h3')
+            .addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInUp',
+            offset: 1
+          });
+
+    jQuery('img').addClass("hidden").viewportChecker({
+            classToAdd: 'animated zoomIn',
+            offset: 1
+          });
+
+    jQuery('#sidebar').addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInRight',
+            offset: 1
+          });
+
+    jQuery('.before-content, .after-content').addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounce',
+            offset: 1
+          });
+
+    jQuery('article p, article li')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated fadeInLeft',
+            offset: 1
+          });
+
+    jQuery('#footer-main h1, #footer-main h2, #footer-main h3')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInUp',
+            offset: 1
+          });
+
+    jQuery('#footer-main p, #footer-main li')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated fadeInLeft',
+            offset: 1
+          });
 }
 
 jQuery(document).ready(function () {

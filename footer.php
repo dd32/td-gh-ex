@@ -25,8 +25,8 @@
 
 						<p>
 						 <?php fcorpo_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fcorpo' ); ?>" title="<?php esc_attr_e( 'fcorpo Theme', 'fcorpo' ); ?>">
-							<?php _e('fCorpo Theme', 'fcorpo'); ?></a> <?php esc_attr_e( 'powered by', 'fcorpo' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'fcorpo' ); ?>">
-							<?php _e('WordPress', 'fcorpo'); ?></a>
+							<?php esc_html_e('fCorpo Theme', 'fcorpo'); ?></a> <?php esc_attr_e( 'powered by', 'fcorpo' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'fcorpo' ); ?>">
+							<?php esc_html_e('WordPress', 'fcorpo'); ?></a>
 						</p>
 						
 					</div><!-- #copyright -->
