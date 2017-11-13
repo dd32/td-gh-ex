@@ -1,3 +1,7 @@
+fGymm 1.6.2, 2017-11-13
+------------------------
+- add Animations effects
+
 fGymm 1.6.2, 2017-04-23
 ------------------------
 - update slider height

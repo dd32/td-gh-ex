@@ -79,7 +79,7 @@ function fgymm_setup() {
 	
 
 	// add the visual editor to resemble the theme style
-	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/css/font-awesome.min.css' ) );
+	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/style.css' ) );
 }
 endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
@@ -93,6 +93,7 @@ function fgymm_load_scripts() {
 
 	// load main stylesheet.
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/css/animate.css', array( ) );
 	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'fgymm-fonts', fgymm_fonts_url(), array(), null );
@@ -103,7 +104,16 @@ function fgymm_load_scripts() {
     }
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'fgymm-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js',
+			array( 'jquery' ) );
+
+	wp_enqueue_script( 'fgymm-utilities-js', get_template_directory_uri() . '/js/utilities.js',
+			array( 'jquery', 'viewportchecker' ) );
+
+	$data = array(
+		'loading_effect' => ( get_theme_mod('fgymm_animations_display', 1) == 1 ),
+	);
+	wp_localize_script('fgymm-utilities-js', 'fgymm_options', $data);
 	
 	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
@@ -358,7 +368,7 @@ function fgymm_display_slider() {
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
 
-					$defaultSlideContent = __( '<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a title="Read more" href="#">Read more</a>', 'fgymm' );
+					$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'fgymm' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
@@ -434,7 +444,7 @@ function fgymm_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'default'           => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a title="Read more" href="#">Read more</a>', 'fgymm' ),
+				'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'fgymm' ),
 				'sanitize_callback' => 'force_balance_tags',
 			)
 		);
@@ -734,6 +744,37 @@ function fgymm_customize_register( $wp_customize ) {
             'type'           => 'text',
             )
         )
+	);
+
+	/**
+	 * Add Animations Section
+	 */
+	$wp_customize->add_section(
+		'fgymm_animations_display',
+		array(
+			'title'       => __( 'Animations', 'fgymm' ),
+			'capability'  => 'edit_theme_options',
+		)
+	);
+
+	// Add display Animations option
+	$wp_customize->add_setting(
+			'fgymm_animations_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'esc_attr',
+			)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize,
+						'fgymm_animations_display',
+							array(
+								'label'          => __( 'Enable Animations', 'fgymm' ),
+								'section'        => 'fgymm_animations_display',
+								'settings'       => 'fgymm_animations_display',
+								'type'           => 'checkbox',
+							)
+						)
 	);
 }
 add_action('customize_register', 'fgymm_customize_register');

@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.6.2
+Version: 1.6.3
 Tags: blog, entertainment, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -166,6 +166,10 @@ ul {
 
 #header-content-wrapper {
 	padding:0 2% 0 2%;
+}
+
+.custom-logo-link img {
+	margin-right:10px;
 }
 
 #header-logo > a.custom-logo-link,
@@ -955,8 +959,7 @@ blockquote, figure {
 
 .commentlist li p {
 	font-weight:normal;
-	font-size:12px;
-	line-height:16px;
+	line-height:1.2;
 	margin:5px 0 12px;
 }
 
@@ -1293,6 +1296,10 @@ img.wp-post-image {
 .scrollup:hover {
 	background-color:#4A4C4D !important;
 	color:#858282 !important;
+}
+
+.tagcloud {
+    margin-bottom: 20px;
 }
 
 .wp-caption {
