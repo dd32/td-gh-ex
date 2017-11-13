@@ -45,8 +45,13 @@
 	background:#fff; 
 }
 
+.header-cart-widget p,
 .header-cart-widget .widget_shopping_cart a {
 	text-transform:none;
+}
+
+.header-cart-widget p.woocommerce-mini-cart__empty-message {
+	margin:0;
 }
 
 .header-cart-widget .widget_shopping_cart a.button {
