@@ -29,8 +29,8 @@
 
 					the_post_navigation( array(
 
-                        'prev_text' => __( 'Prev Chapter: %title', 'fkidd' ),
-                        'next_text' => __( 'Next Chapter: %title', 'fkidd' ),
+                        'prev_text' => __( 'Previous Post: %title', 'fkidd' ),
+                        'next_text' => __( 'Next Post: %title', 'fkidd' ),
                     ) );
 				
 				endwhile;

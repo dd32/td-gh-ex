@@ -70,9 +70,9 @@ msgstr ""
 
 #: ../functions.php:129
 msgid ""
-"<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
-"adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
-"aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+"<h2>This is Default Slide Title</h2><p>You can completely customize "
+"Slide Background Image, Title, Text, Link URL and "
+"Text.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
 #: ../functions.php:136
@@ -211,9 +211,9 @@ msgstr ""
 
 #: ../functions.php:496
 msgid ""
-"<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur "
-"adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
-"aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+"<h3>This is Default Slide Title</h3><p>You can completely customize "
+"Slide Background Image, Title, Text, Link URL and "
+"Text.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
 #: ../functions.php:530

@@ -75,7 +75,7 @@ final class fkidd_Customize {
 				array(
 					'title'    => esc_html__( 'tKidd', 'fkidd' ),
 					'pro_text' => esc_html__( 'Upgrade to Pro', 'fkidd' ),
-					'pro_url'  => 'https://tishonator.com/product/tkidd'
+					'pro_url'  => esc_url( 'https://tishonator.com/product/tkidd' ),
 				)
 			)
 		);

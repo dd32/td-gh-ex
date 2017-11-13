@@ -23,14 +23,14 @@
 			<?php if ( !dynamic_sidebar( 'footer-column-1-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
 
 						<h2 class="footer-title">
-							<?php _e('Footer Col Widget 1', 'fkidd'); ?>
+							<?php esc_html_e('Footer Col Widget 1', 'fkidd'); ?>
 						</h2><!-- .footer-title -->
 						
 						<div class="footer-after-title">
 						</div><!-- .footer-after-title -->
 						
 						<div class="textwidget">
-							<?php _e('This is first footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #1.', 'fkidd'); ?>
+							<?php esc_html_e('This is first footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #1.', 'fkidd'); ?>
 						</div><!-- .textwidget -->
 			
 			<?php endif; // end of ! dynamic_sidebar( 'footer-column-1-widget-area' )
@@ -47,14 +47,14 @@
 			<?php if ( !dynamic_sidebar( 'footer-column-2-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
 			
 					<h2 class="footer-title">
-						<?php _e('Footer Col Widget 2', 'fkidd'); ?>
+						<?php esc_html_e('Footer Col Widget 2', 'fkidd'); ?>
 					</h2><!-- .footer-title -->
 					
 					<div class="footer-after-title">
 					</div><!-- .footer-after-title -->
 					
 					<div class="textwidget">
-						<?php _e('This is second footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #2.', 'fkidd'); ?>
+						<?php esc_html_e('This is second footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #2.', 'fkidd'); ?>
 					</div><!-- .textwidget -->
 						
 			<?php endif; // end of ! dynamic_sidebar( 'footer-column-2-widget-area' )
@@ -71,14 +71,14 @@
 			<?php if ( !dynamic_sidebar( 'footer-column-3-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
 			
 					<h2 class="footer-title">
-						<?php _e('Footer Col Widget 3', 'fkidd'); ?>
+						<?php esc_html_e('Footer Col Widget 3', 'fkidd'); ?>
 					</h2><!-- .footer-title -->
 					
 					<div class="footer-after-title">
 					</div><!-- .footer-after-title -->
 					
 					<div class="textwidget">
-						<?php _e('This is third footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #3.', 'fkidd'); ?>
+						<?php esc_html_e('This is third footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #3.', 'fkidd'); ?>
 					</div><!-- .textwidget -->
 						
 			<?php endif; // end of ! dynamic_sidebar( 'footer-column-2-widget-area' )

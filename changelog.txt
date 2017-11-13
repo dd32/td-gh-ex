@@ -1,3 +1,7 @@
+fKidd 1.8.2, 2017-11-13
+------------------------
+- add animations
+
 fKidd 1.8.1, 2017-01-13
 ------------------------
 - add full-width page template

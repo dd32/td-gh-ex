@@ -4,7 +4,7 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.8.1
+Version: 1.8.2
 Text Domain: fkidd
 Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -176,6 +176,10 @@ dt.gallery-icon:before {
 
 #header-logo h1 {
 	padding:0;
+}
+
+.custom-logo-link img {
+	margin-right:10px;
 }
 
 #header-logo > a.custom-logo-link,
@@ -819,6 +823,7 @@ blockquote, figure {
 
 .nav-links .nav-previous {
 	float:left;
+	width:45%;
 }
 
 .nav-links .nav-previous:before {
@@ -829,6 +834,7 @@ blockquote, figure {
 
 .nav-links .nav-next {
 	float:right;
+	width:45%;
 }
 
 .nav-links .nav-next:after {
@@ -987,8 +993,7 @@ blockquote, figure {
 
 .commentlist li p {
 	font-weight:normal;
-	font-size:12px;
-	line-height:16px;
+	line-height:1.2;
 	margin:5px 0 12px;
 }
 
@@ -1091,6 +1096,7 @@ blockquote, figure {
 .page-after-content {
 	padding-top:5px;
 	padding-bottom:5px;
+	clear:both;
 }
 
 .after-content,
@@ -1307,6 +1313,10 @@ img.wp-post-image {
 	color:#858282 !important;
 }
 
+.tagcloud {
+    margin-bottom: 20px;
+}
+
 .wp-caption {
     padding:4px 4px 4px 4px;
     border:1px solid #ccc;
@@ -1468,23 +1478,23 @@ img.wp-post-image {
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 16.66%;
+	max-width: 15%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 14.28%;
+	max-width: 13%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 12.5%;
+	max-width: 11%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 11.11%;
+	max-width: 10%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 10.11%;
+	max-width: 9%;
 }
 
 .gallery-icon img {
@@ -1506,6 +1516,11 @@ img.wp-post-image {
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
 	display: none;
+}
+
+.post-links .left,
+.post-links .right {
+    width: 40%;
 }
 
 /* Large Resolution */
@@ -1649,6 +1664,41 @@ img.wp-post-image {
 		display:none;
 		background-color:#FDFFFF;
 	}
+
+	#navmain ul ul:not(.cart_list) {
+        opacity:0;
+    }
+
+	#navmain ul li:hover > ul {
+       display:block;
+       opacity:1;
+       animation: opacity 700ms ease-in-out normal;
+       -moz-animation: opacity 700ms ease-in-out normal;
+       -ms-animation: opacity 700ms ease-in-out normal;
+       -o-animation: opacity 700ms ease-in-out normal;
+       -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    @keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
+    @-moz-keyframes opacity {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @-ms-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-o-keyframes opacity {
+        from {opacity:0; }
+        to { opacity: 1; }
+    }
+    @-webkit-keyframes opacity {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
 
 	#navmain ul li ul a {
 		display:block;
