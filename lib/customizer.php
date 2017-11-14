@@ -307,6 +307,9 @@ $wp_customize->add_control( 'blog_sidebar', array(
     'left' => esc_html__( 'Left sidebar','backyard' ),
     'right' => esc_html__( 'Right sidebar' ,'backyard'),
     'full' => esc_html__( 'Full width' ,'backyard'),
+	'gridleft' => esc_html__( 'Grid Left width' ,'backyard'),
+	'gridright' => esc_html__( 'Grid Right width' ,'backyard'),
+	'gridfull' => esc_html__( 'Grid Full width' ,'backyard'),
   ),
 ) );
 //

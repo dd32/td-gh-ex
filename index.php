@@ -4,11 +4,11 @@
       <div class="row">
       <?php 
 	  $blog_sidebar=get_theme_mod('blog_sidebar');
-	  if(isset($blog_sidebar)&&$blog_sidebar=='left')
+	  if(isset($blog_sidebar)&&$blog_sidebar=='left' || $blog_sidebar=='gridleft')
 {
 	get_sidebar();
 }
-if(isset($blog_sidebar)&&$blog_sidebar=='full')
+if(isset($blog_sidebar)&&$blog_sidebar=='full' || $blog_sidebar=='gridfull')
 {
 	$fullclass='col-lg-12 col-md-12';
 }
@@ -19,8 +19,21 @@ else
 	  ?>        
        <div class="<?php echo esc_attr($fullclass);?> col-sm-12 col-xs-12">
           <main id="main" class="site-main">
-           <?php if(have_posts()): while(have_posts()): the_post();
+           <?php 
+		   $grid=1;
+		   if(have_posts()): while(have_posts()): the_post();
+		   if(isset($blog_sidebar)&&$blog_sidebar=='gridleft' || $blog_sidebar=='gridright' || $blog_sidebar=='gridfull')
+	{
+		get_template_part('template-parts/gridstyle/grid');
+		if($grid++%2==0)
+		{
+			echo'<div class="clearfix"></div>';
+		}
+	}
+	else
+	{
            get_template_part('template-parts/content');    
+	}
            ?>
             <!--post-->
            <?php endwhile; ?>
@@ -32,7 +45,7 @@ else
           </main>
         </div>
         <?php 
-	  if(isset($blog_sidebar)&&$blog_sidebar=='right')
+	  if(isset($blog_sidebar)&&$blog_sidebar=='right' || $blog_sidebar=='gridright')
 {
 	get_sidebar();
 }
