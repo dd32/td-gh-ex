@@ -5,6 +5,18 @@
  * @package Ares
  */
 
+
+
+function ares_customize_enqueue() {
+    
+    wp_enqueue_script( 'ares-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+}
+
+if( !function_exists( 'ares_pro_init' ) ) :
+    add_action( 'customize_controls_enqueue_scripts', 'ares_customize_enqueue' );
+endif;
+
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -29,7 +41,12 @@ function ares_customize_register( $wp_customize ) {
     
     // Appearance
     require_once( 'customizer-panels/settings-appearance.php' );
-
+    
+    // WooCommerce / Shop
+    if ( class_exists( 'WooCommerce' ) ) :
+        require_once( 'customizer-panels/settings-shop.php' );
+    endif;
+    
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -130,6 +147,21 @@ function ares_sanitize_on_off( $input ) {
     $valid_keys = array(
         'on'    => __( 'Show', 'ares' ),
         'off'   => __( 'Hide', 'ares' ),
+    );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
+function ares_sanitize_yes_no( $input ) {
+
+    $valid_keys = array(
+        'on'    => __( 'Yes', 'ares' ),
+        'off'   => __( 'No', 'ares' ),
     );
 
     if ( array_key_exists( $input, $valid_keys ) ) {
