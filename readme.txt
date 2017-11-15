@@ -6,11 +6,11 @@ Tested up to: 4.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Clean and responsive WordPress theme.
+Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing.
 
 == Description ==
 
-Clean and responsive WordPress theme.
+With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
 
 == Installation ==
 
@@ -31,7 +31,7 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
-= 0.1.3 =
+= 0.1.4 =
 * Initial release
 
 == Credits ==

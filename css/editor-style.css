@@ -115,7 +115,7 @@ pre {
   overflow: auto;
   font-size: inherit;
   line-height: inherit;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Courier 10 Pitch", Courier, monospace;
   margin: 0 0 1.6em;
 }
 
@@ -198,7 +198,7 @@ a:hover {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-blockquote, q {
+blockquote {
   quotes: "" "";
 }
 
