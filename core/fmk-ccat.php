@@ -1165,6 +1165,7 @@ if ( ! class_exists( 'CZR_controllers' ) ) :
               'navbar_secondary_menu',
               'sidenav',
               'topbar_menu',
+              'mobile_menu',
 
               'menu_button',
               'mobile_menu_button',
@@ -1176,7 +1177,8 @@ if ( ! class_exists( 'CZR_controllers' ) ) :
 
               'desktop_topbar_search',
               'desktop_primary_search',
-              'mobile_search',
+              'mobile_navbar_search',
+              'mobile_menu_search',
 
               'desktop_topbar_wc_cart',
               'desktop_primary_wc_cart',
