@@ -8,10 +8,23 @@
                     <?php echo ( get_theme_mod( 'conica-set-blog-title' ) ) ? get_theme_mod( 'conica-set-blog-title' ) : get_page( $blog_page_id )->post_title; ?>
                 
                 <?php elseif ( is_archive() ) : ?>
+                        
+                        <?php if ( conica_is_woocommerce_activated() ) : ?>
+                            
+                            <?php if ( is_woocommerce() ) :
+                                $shop_id = get_option( 'woocommerce_shop_page_id' ); ?>
+                                <?php echo get_page( $shop_id )->post_title; ?>
+                            <?php else : ?>
+                                <?php the_archive_title(); ?>
+                            <?php endif; ?>
+                            
+                        <?php else : ?>
+                            
+                            <?php the_archive_title(); ?>
+                            
+                        <?php endif; ?>
                     
-                    <?php the_archive_title(); ?>
-                
-                <?php elseif ( is_search() ) : ?>
+                    <?php elseif ( is_search() ) : ?>
                     
                     <?php printf( esc_html__( 'Search Results for: %s', 'conica' ), '<span>' . get_search_query() . '</span>' ); ?>
                 

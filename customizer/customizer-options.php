@@ -169,7 +169,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
 
@@ -523,16 +523,14 @@ function customizer_library_conica_options() {
         'label'   => __( '404 Error Page Heading', 'conica' ),
         'section' => $section,
         'type'    => 'text',
-        'default' => __( 'Oops! <span>404</span>', 'conica'),
-        'description' => __( 'Enter the heading for the 404 Error page', 'conica' )
+        'default' => __( 'Oops! <span>404</span>', 'conica')
     );
     $options['conica-website-error-msg'] = array(
         'id' => 'conica-website-error-msg',
         'label'   => __( 'Error 404 Message', 'conica' ),
         'section' => $section,
         'type'    => 'textarea',
-        'default' => __( 'It looks like that page does not exist. <br />Return home or try a search', 'conica'),
-        'description' => __( 'Enter the default text on the 404 error page (Page not found)', 'conica' )
+        'default' => __( 'It looks like that page does not exist. <br />Return home or try a search', 'conica')
     );
 
     $options['conica-website-nosearch-head'] = array(
@@ -540,16 +538,14 @@ function customizer_library_conica_options() {
         'label'   => __( 'No Search Results Heading', 'conica' ),
         'section' => $section,
         'type'    => 'text',
-        'default' => __( 'Nothing Found', 'conica'),
-        'description' => __( 'Enter the heading for when no search results are found', 'conica' )
+        'default' => __( 'Nothing Found', 'conica')
     );
     $options['conica-website-nosearch-msg'] = array(
         'id' => 'conica-website-nosearch-msg',
         'label'   => __( 'No Search Results Message', 'conica' ),
         'section' => $section,
         'type'    => 'textarea',
-        'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'conica'),
-        'description' => __( 'Enter the default text for when no search results are found', 'conica' )
+        'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'conica')
     );
     
     $section = 'conica-panel-text-section-footer'; // ------------------------------------------- Header Text

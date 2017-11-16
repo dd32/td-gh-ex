@@ -79,6 +79,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.07
+* Styling fixes/tweaks
+* Added styling for new Gallery widget
+* Fix page title bar bug with WooCommerce archive
+* Updated the language.pot file
+Premium: Added settings to show Site Title and/or Tagline with uploaded logo & adjust
+Premium: Added setting to remove header phone & address icons
+Premium: Added setting to center align Page Titles
+
 #### 1.3.06
 * Styling fixes/tweaks
 * Updated dashboard help links

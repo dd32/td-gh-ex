@@ -305,7 +305,7 @@ body.woocommerce-page.post-type-archive-product #content h1.page-title {
 .woocommerce-page #content table.cart td.actions .coupon .input-text,
 .woocommerce-page table.cart td.actions .coupon .input-text {
     background-color: #FFF;
-    width: 50%;
+    width: 45%;
     padding: 5px 6px;
     margin: 0;
 }

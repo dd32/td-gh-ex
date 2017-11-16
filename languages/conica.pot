@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2017-07-07 11:42+0200\n"
+"POT-Creation-Date: 2017-11-16 11:25+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: 404.php:24 customizer/customizer-options.php:534
+#: 404.php:24 customizer/customizer-options.php:533
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
@@ -219,8 +219,9 @@ msgstr ""
 
 #: customizer/customizer-options.php:172
 msgid ""
-"<b>Premium Extra Features:</b><br />- Vertically align Header One & Two "
-"Navigation<br />- Remove WooCommerce Cart from header"
+"<b>Premium Extra Features:</b><br />- Add Site Title & Tagline with an "
+"uploaded logo<br />- Adjust logo position<br />- Vertically align Header One "
+"& Two Navigation<br />- Remove WooCommerce Cart from header"
 msgstr ""
 
 #: customizer/customizer-options.php:180 customizer/customizer-options.php:497
@@ -428,7 +429,7 @@ msgid ""
 "sidebar<br />- Set Shop/Archive/Single pages full width"
 msgstr ""
 
-#: customizer/customizer-options.php:413 customizer/customizer-options.php:559
+#: customizer/customizer-options.php:413 customizer/customizer-options.php:555
 msgid "Footer"
 msgstr ""
 
@@ -468,11 +469,11 @@ msgstr ""
 msgid "Call Us: +2782 444 YEAH"
 msgstr ""
 
-#: customizer/customizer-options.php:473 customizer/customizer-options.php:574
+#: customizer/customizer-options.php:473 customizer/customizer-options.php:570
 msgid "Address"
 msgstr ""
 
-#: customizer/customizer-options.php:476 customizer/customizer-options.php:577
+#: customizer/customizer-options.php:476 customizer/customizer-options.php:573
 msgid "Cape Town, South Africa"
 msgstr ""
 
@@ -509,139 +510,123 @@ msgstr ""
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:527
-msgid "Enter the heading for the 404 Error page"
-msgstr ""
-
-#: customizer/customizer-options.php:531
+#: customizer/customizer-options.php:530
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:535
-msgid "Enter the default text on the 404 error page (Page not found)"
-msgstr ""
-
-#: customizer/customizer-options.php:540
+#: customizer/customizer-options.php:538
 msgid "No Search Results Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:543 templates/contents/content-none.php:14
+#: customizer/customizer-options.php:541 templates/contents/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: customizer/customizer-options.php:544
-msgid "Enter the heading for when no search results are found"
-msgstr ""
-
-#: customizer/customizer-options.php:548
+#: customizer/customizer-options.php:545
 msgid "No Search Results Message"
 msgstr ""
 
-#: customizer/customizer-options.php:551 templates/contents/content-none.php:24
+#: customizer/customizer-options.php:548 templates/contents/content-none.php:24
 #: templates/contents/content-none.php:28
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:552
-msgid "Enter the default text for when no search results are found"
-msgstr ""
-
-#: customizer/customizer-options.php:566
+#: customizer/customizer-options.php:562
 msgid "Custom Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:569
+#: customizer/customizer-options.php:565
 msgid ""
 "Change the icon by pasting the corrent <a href=\"http://fontawesome.io/icons/"
 "#brand\" target=\"_blank\">Font Awesome</a> class here<br />Eg: \"fa-map-"
 "marker\""
 msgstr ""
 
-#: customizer/customizer-options.php:570
+#: customizer/customizer-options.php:566
 msgid "fa-map-marker"
 msgstr ""
 
-#: customizer/customizer-options.php:586
+#: customizer/customizer-options.php:582
 msgid "Font Options"
 msgstr ""
 
-#: customizer/customizer-options.php:595
+#: customizer/customizer-options.php:591
 msgid "Theme Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:602
+#: customizer/customizer-options.php:598
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:610
+#: customizer/customizer-options.php:606
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:617
+#: customizer/customizer-options.php:613
 msgid "Heading Font"
 msgstr ""
 
-#: customizer/customizer-options.php:625
+#: customizer/customizer-options.php:621
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:637
+#: customizer/customizer-options.php:633
 msgid "Site Title & Description"
 msgstr ""
 
-#: customizer/customizer-options.php:644
+#: customizer/customizer-options.php:640
 msgid "Site Title Font"
 msgstr ""
 
-#: customizer/customizer-options.php:655
+#: customizer/customizer-options.php:651
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change site title font size<br />- "
 "Select custom tagline font<br />- Change tagline font size<br />- Change "
 "title / tagline spacing"
 msgstr ""
 
-#: customizer/customizer-options.php:664
+#: customizer/customizer-options.php:660
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:670
+#: customizer/customizer-options.php:666
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:676
+#: customizer/customizer-options.php:672
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:682
+#: customizer/customizer-options.php:678
 msgid "Google Plus"
 msgstr ""
 
-#: customizer/customizer-options.php:688
+#: customizer/customizer-options.php:684
 msgid "LinkedIn"
 msgstr ""
 
-#: customizer/customizer-options.php:697
+#: customizer/customizer-options.php:693
 msgid ""
 "<b>Premium Extra Features:</b><br />- Over 18 different social profile links "
 "available<br />- Custom setting to add any needed link<br />- Let us know "
 "which links you need and we'll add it!"
 msgstr ""
 
-#: customizer/customizer-options.php:706
+#: customizer/customizer-options.php:702
 msgid "Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:712
+#: customizer/customizer-options.php:708
 msgid "Primary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:719
+#: customizer/customizer-options.php:715
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:728
+#: customizer/customizer-options.php:724
 msgid ""
 "<b>Premium Extra Features:</b><br />Conica Premium ($25) has advanced color "
 "settings to change Header, Top Bar and Navigation colors, Default Slider "
@@ -669,22 +654,14 @@ msgid "Conica Standard Footer"
 msgstr ""
 
 #: functions.php:290
-msgid "Page Builder"
+msgid "Elementor Page Builder"
 msgstr ""
 
 #: functions.php:300
-msgid "Widgets Bundle"
-msgstr ""
-
-#: functions.php:305
-msgid "Contact Form 7"
-msgstr ""
-
-#: functions.php:310
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:305
 msgid "Meta Slider"
 msgstr ""
 
@@ -692,8 +669,7 @@ msgstr ""
 msgid "Conica"
 msgstr ""
 
-#: includes/conica-pro/class-customize.php:77 upgrade/tpl/upgrade-page.php:44
-#: upgrade/tpl/upgrade-page.php:50
+#: includes/conica-pro/class-customize.php:77
 msgid "Upgrade to Premium"
 msgstr ""
 
@@ -798,6 +774,10 @@ msgstr ""
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
+msgstr ""
+
+#: includes/inc/class-tgm-plugin-activation.php:1092
+msgid "See more on using the Conica theme"
 msgstr ""
 
 #: includes/inc/class-tgm-plugin-activation.php:1121
@@ -1176,7 +1156,7 @@ msgstr ""
 msgid "With Conica you can customize to your hearts content"
 msgstr ""
 
-#: templates/title-bar.php:16
+#: templates/title-bar.php:29
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1190,122 +1170,122 @@ msgid "<span>Conica Premium </span><em>$25</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:18
-msgid "<span>Simple Steps to upgrade"
+#, php-format
+msgid ""
+"<strong>All settings for Conica</strong> are neatly built into the <a href="
+"\"%s\">WordPress Customizer</a> so you can change and edit settings to view "
+"what happens before saving and making any of the changes live"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:21
-msgid "Purchase and Download Conica Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:24
+#, php-format
 msgid ""
-"<a href=\"https://kairaweb.com/documentation/delete-a-theme/\" target="
-"\"_blank\">Delete the old free theme</a>... Then"
+"Help on how to <strong><a href=\"%s\" target=\"_blank\">install the premium "
+"theme</a></strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:25
-msgid ""
-"Upload and <a href=\"https://kairaweb.com/documentation/install-theme-zip-"
-"file/\" target=\"_blank\">install the Conica Premium zip</a> as normal at:"
-"<b>Appearance -> Themes -> Add New -> Upload Theme</b>"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:30
-msgid "<em>Support</em><span>Conica Documentation </span>"
+#: upgrade/tpl/upgrade-page.php:31
+msgid "Conica Premium is a once off payment of $25"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:35
 msgid ""
-"We support all our themes, offering one on one email support to help you "
-"build the website you want"
+"View the Conica Premium Demo, and try out all the settings neatly built into "
+"the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:36
-msgid ""
-"While we do support our both free and premium themes... <strong>Premium "
-"themes get prioritized support</strong>"
+#: upgrade/tpl/upgrade-page.php:39
+msgid "Conica Premium Demo"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:46
+msgid "Download a working Child Theme for Conica"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:47
+#, php-format
 msgid ""
-"If you've enjoyed using our Conica theme to build your website, then you "
-"should love the premium version which comes with a bunch of <a href='https://"
-"kairaweb.com/theme/conica/#premium-features' class='upgrade-btn' "
-"target='_blank'>extra premium features</a> for a low cost of <strong>$25</"
-"strong>.<br /><br />With Conica premium we offer continued updates and "
-"you'll get prioritized support to help you build the website you want."
+"Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
+"Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:55 upgrade/tpl/upgrade-page.php:61
-msgid "Continued Updates"
+#: upgrade/tpl/upgrade-page.php:51
+msgid "Conica Child Theme"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:58
 msgid ""
-"Once you upgrade to Conica Premium, you'll then support and move over to our "
-"premium updates system which will ensure conica works with all future "
-"versions of WordPress that are released."
+"We have on-growing documentation on setting up your website with the Conica "
+"theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:66 upgrade/tpl/upgrade-page.php:72
-msgid "Get Premium Support"
+#: upgrade/tpl/upgrade-page.php:62
+msgid "Documentation"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:69
-msgid ""
-"Upgrading to Conica Premium will also give you prioritized support, ensuring "
-"we get to your queries first.<br /><br />We have a growing <a href='https://"
-"kairaweb.com/documentation/' target='_blank'>support forum</a> on our "
-"website as well as <a href='https://kairaweb.com/support-contact/' "
-"target='_blank'>email support</a> to sort out any queries you may have."
+msgid "Have you enjoyed using Conica?"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:83
-msgid ""
-"We aim to keep our theme prices cheaper than the rest, while still offering "
-"you great WordPress themes."
+#: upgrade/tpl/upgrade-page.php:70
+msgid "Please help by giving us a 5 star rating on WordPress.org :)"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:85
+#: upgrade/tpl/upgrade-page.php:74
+msgid "Rate Conica 5 stars"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:79
+#, php-format
+msgid "Theme: Conica, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:88
+msgid ""
+"We aim to keep our prices cheaper than other theme shops, while still "
+"offering you the best WordPress themes."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:90
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:87
+#: upgrade/tpl/upgrade-page.php:92
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:91
+#: upgrade/tpl/upgrade-page.php:96
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:103
+#: upgrade/tpl/upgrade-page.php:108
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:106
+#: upgrade/tpl/upgrade-page.php:111
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:112
+#: upgrade/tpl/upgrade-page.php:117
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:120
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:121
+#: upgrade/tpl/upgrade-page.php:126
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:124
+#: upgrade/tpl/upgrade-page.php:129
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "
