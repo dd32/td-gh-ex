@@ -1,37 +1,38 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found)
- * @package sampression framework v 1.0
- * @theme naya 1.0
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package naya_lite
  */
-if ( ! defined('ABSPATH')) exit('restricted access');
-get_header();
-?>
 
-<section class="block">
+get_header(); ?>
+
+	<div class="block">
     <div class="container">
-        <div id="content" class="<?php sampression_content_class() ?>">
-            <article class="post">
-                <header class="entry-header">
-                    <h1 class="entry-title"><?php _e( '404 ERROR!', 'sampression' ) ?></h1>
-                    <p><?php _e( 'Page not found', 'sampression' ) ?></p>
-                </header>
-                <div class="entry-content">
-                    <?php printf( '<p>%s</p>', sampression_404_text() ); ?>
-                </div>
-                <?php get_search_form(); ?>
-                <a href="javascript:history.go(-1);" class="link"><?php _e( 'Return to the previous page', 'sampression' ) ?></a>
-            </article>
-            <!--end of .post-->
-        </div>
-        <!--#content-->
-        <?php 
-            $position = sampression_sidebar_position();
-            if ($position === 'right') {
-                get_sidebar();
-            }                           
-        ?>
-    </div>
-</section>
-<!-- .block-->
-<?php get_footer(); ?>
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'naya-lite' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'naya-lite' ); ?></p>
+
+					<?php
+						get_search_form();
+
+						//the_widget( 'WP_Widget_Recent_Posts' );
+					?>
+
+				
+
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</div><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_footer();

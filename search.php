@@ -1,43 +1,75 @@
 <?php
 /**
- * The template for displaying Search Results pages
- * @package sampression framework v 1.0
- * @theme naya 1.0
+ * The template for displaying search results pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package naya_lite
  */
-if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
-get_header();
-?>
 
-<section class="block">
-    <div class="container">
-        <div id="content" class="<?php sampression_content_class() ?>">
-            <?php if ( have_posts() ) : ?>
-                <?php /* Start the Loop */ ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+get_header(); ?>
+
+    <section class="block">
+        <div class="container">
+            <?php
+            $position = sampression_sidebar_position();
+            if ($position === 'left') {
+                echo '<div class="left-sidebar-wrp four columns ">';
+                get_sidebar();
+                echo '</div>';
+            }
+            ?>
+            <div class="<?php sampression_content_class() ?>">
+                <div id="primary-content">
 
                     <?php
-                        get_template_part( 'content', get_post_format() );
-                    ?>
+                    if (have_posts()) : ?>
 
-                <?php endwhile; ?>
+                        <header class="page-header">
+                            <h1 class="page-title"><?php
+                                /* translators: %s: search query. */
+                                printf(esc_html__('Search Results for: %s', 'naya-lite'), '<span>' . get_search_query() . '</span>');
+                                ?></h1>
+                        </header><!-- .page-header -->
 
-                <?php sampression_content_nav(); ?>
+                        <?php
+                        /* Start the Loop */
+                        while (have_posts()) : the_post();
 
-            <?php else : ?>
+                            /**
+                             * Run the loop for the search to output the results.
+                             * If you want to overload this in a child theme then include a file
+                             * called content-search.php and that will be used instead.
+                             */
+                            get_template_part('template-parts/content', 'search');
 
-                <?php get_template_part( 'content', 'none' ); ?>
+                        endwhile;
 
-            <?php endif; ?>
-            <!-- .post-->
-        </div>
-        <!-- #content-->
-        <?php 
+                        the_posts_navigation();
+
+                    else :
+
+                        get_template_part('template-parts/content', 'none');
+
+                    endif; ?>
+
+
+                </div>
+                <!-- #primary-content-->
+            </div>
+            <?php
             $position = sampression_sidebar_position();
+
             if ($position === 'right') {
+
+                echo '<div class="left-sidebar-wrp four offset-by-one columns ">';
+
                 get_sidebar();
-            }                           
-        ?>
-    </div>
-</section>
-<!-- .block-->
-<?php get_footer(); ?>
+
+                echo '</div>';
+
+            }
+            ?>
+        </div>
+    </section><!--.block-->
+<?php get_footer();

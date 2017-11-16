@@ -1,74 +1,71 @@
 <?php
 /**
- * Default template for displaying comments
- * @package sampression framework v 1.0
- * @theme naya 1.0
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package naya_lite
  */
-if ( post_password_required() )
-	return;
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if (post_password_required()) {
+    return;
+}
 ?>
 
-<div class="comments-area" id="comments">
+<div id="comments" class="comments-area">
+    <?php
+    // You can start editing here -- including this comment!
+    if (have_comments()) : ?>
+        <h2 class="comments-title">
+            <?php
+            $comment_count = get_comments_number();
+            if (1 === $comment_count) {
+                printf(
+                /* translators: 1: title. */
+                    esc_html_e('One thought on &ldquo;%1$s&rdquo;', 'naya-lite'),
+                    '<span>' . get_the_title() . '</span>'
+                );
+            } else {
+                printf( // WPCS: XSS OK.
+                /* translators: 1: comment count number, 2: title. */
+                    esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'naya-lite')),
+                    number_format_i18n($comment_count),
+                    '<span>' . get_the_title() . '</span>'
+                );
+            }
+            ?>
+        </h2><!-- .comments-title -->
 
-	<?php // You can start editing here -- including this comment! ?>
+        <?php the_comments_navigation(); ?>
 
-	<?php if ( have_comments() ) : ?>
+        <ol class="comment-list">
+            <?php
+            wp_list_comments(array(
+                'style' => 'ol',
+                'short_ping' => true,
+            ));
+            ?>
+        </ol><!-- .comment-list -->
 
-		<h4 class="comments-title">
-			<?php
-				printf( _nx( 'One response on &ldquo;%2$s&rdquo;', '%1$s response on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sampression' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h4>
+        <?php the_comments_navigation();
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'sampression' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sampression' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sampression' ) ); ?></div>
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+        // If comments are closed and there are comments, let's leave a little note, shall we?
+        if (!comments_open()) : ?>
+            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'naya-lite'); ?></p>
+            <?php
+        endif;
 
-		<ol class="comment-list">
-			<?php
-				/*
-                 * Loop through and list the comments.
-				 */
-				wp_list_comments( array( 'callback' => 'sampression_comment' ) );
-			?>
-		</ol><!-- .comment-list -->
+    endif; // Check for have_comments().
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'sampression' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sampression' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sampression' ) ); ?></div>
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+    comment_form();
+    ?>
 
-	<?php endif; // have_comments() ?>
-
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'sampression' ); ?></p>
-	<?php endif; ?>
-        <?php
-        $commenter = wp_get_current_commenter();
-        $req = get_option( 'require_name_email' );
-        $aria_req = ( $req ? " aria-required='true'" : '' );
-        $comment_args = array(
-            'title_reply'=>'Leave a Reply',
-            'comment_notes_before' => '',
-            'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="Name" ' . $aria_req . ' /></p>',
-                'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="Email" ' . $aria_req . ' /></p>',
-                'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="Website" /></p>' ) ),
-            'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Enter your comment here..."></textarea></p>',
-            'label_submit' => 'Submit',
-            'comment_notes_after' => ''
-        );
-	comment_form( $comment_args );
-        ?>
 </div><!-- #comments -->

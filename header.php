@@ -1,74 +1,108 @@
 <?php
 /**
- * Default template for displaying Header
- * @package sampression framework v 1.0
- * @theme naya 1.0
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package naya_lite
  */
-if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
+
 ?>
 <!doctype html>
-<!--[if lt IE 7]>      <html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 ie7"> <![endif]-->
-<!--[if IE 8]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 ie8"> <![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> <?php wp_title('|', true, 'right'); ?></title>
+    <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>"/>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
 
-    <title> <?php wp_title( '|', true, 'right' ); ?></title>
-    <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
-    <?php sampression_favicons(); ?>
-    <!--[if lt IE 9]>
-    <script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
-    <![endif]-->
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
 <?php
-/** 
+
+/**
  * sampression_after_body hook
  */
-do_action('sampression_after_body'); 
+do_action('sampression_after_body');
+
 ?>
 <div id="wrapper">
-    <div id="inner-wrapper">        
-        <?php 
-        /** 
-        * sampression_before_header hook
-        */
-        do_action('sampression_before_header'); 
+    <div id="inner-wrapper">
+        <?php
+        /**
+         * sampression_before_header hook
+         */
+
+        do_action('sampression_before_header');
+
         ?>
         <header id="header" class="block">
             <div class="container">
                 <div class="six columns">
-                	<span id="trigger-primary-nav"><a href="#primary-nav"><i class="icon-menu6"></i>&nbsp;</a></span>
-                   <div class="site-title-wrap">
-                        <?php sampression_blog_title() ?>
+                    <span id="trigger-primary-nav"><a href="#primary-nav"><i class="icon-menu6"></i>&nbsp;</a></span>
+                    <div class="site-title-wrap">
+                        <?php // sampression_blog_title() ?>
+                        <?php
+                        if (get_theme_mod('custom_logo') && get_custom_logo() && get_theme_mod('sampression_remove_logo') != 1) {
+                            ?>
+                            <a href="<?php echo esc_url(site_url()) ?>" title="<?php bloginfo('name') ?>" rel="home"
+                               id="logo-area">
+                                <?php echo get_custom_logo(); ?>
+                            </a>
+                            <?php
+                        } else if (check_custom_logo() !== false) { ?>
+                            <a href="<?php echo esc_url(site_url()) ?>" title="<?php bloginfo('name') ?>" rel="home"
+                               id="logo-area">
+                                <img class="logo-img" src="<?php echo check_custom_logo(); ?>"
+                                     alt="<?php bloginfo('name'); ?>">
+                            </a>
+                        <?php } else { ?>
+                            <h1 id="site-title" class="site-title">
+                                <a rel="home" title="<?php bloginfo('name') ?>"
+                                   href="<?php echo esc_url(site_url()) ?>"><?php bloginfo('name') ?></a>
+                            </h1>
+                            <?php
+                        }
+                        if (get_theme_mod('sampression_remove_tagline') != 1) {
+                            ?>
+                            <h2 id="site-description" class="site-description"><?php bloginfo('description') ?></h2>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="social-connect">
+                <div class="social-connect" id="social-connect">
                     <?php sampression_social_media_icons() ?>
                 </div>
                 <?php $header_image = get_header_image();
-        		if ( ! empty( $header_image ) ) : ?>
-                            <div class="jumbotron">
-                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
-                            </div>
-        		<?php endif; ?>
+                if (!empty($header_image)) : ?>
+                    <div class="jumbotron">
+                        <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($header_image); ?>"
+                                                                             class="header-image"
+                                                                             width="<?php echo get_custom_header()->width; ?>"
+                                                                             height="<?php echo get_custom_header()->height; ?>"
+                                                                             alt="<?php echo get_bloginfo('name'); ?>"/>
+                        </a>
+                    </div>
+                <?php endif; ?>
                 <!-- .social-connect-->
-                
+
                 <nav id="primary-nav" class="clearfix" role="navigation">
-                    
-                    <?php sampression_navigation() ?>
-                    
+
+                    <?php sampression_navigation(); ?>
+
                 </nav>
                 <!-- #primary-nav -->
             </div>
         </header>
         <!--/#header-->
-        <?php 
-        /** 
-        * sampression_after_header hook
-        */
-        do_action('sampression_after_header'); 
+        <?php
+        /**
+         * sampression_after_header hook
+         */
+        do_action('sampression_after_header');
         ?>
+
