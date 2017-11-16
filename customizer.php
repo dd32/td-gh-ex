@@ -464,8 +464,35 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[slide_btn_link_3]'
 	) );
 	
-	
+	/*search-box*/
 	if (get_template_directory() !== get_stylesheet_directory()) {
+		$wp_customize->add_section(
+        'search_sec',
+        array(
+            'title' => __( 'Search Box','enigma' ),
+            'description' => __( 'Here you can Search Box in header','enigma' ),
+			'panel'=>'enigma_theme_option',
+			'capability'=>'edit_theme_options',
+            'priority' => 35,
+		   ) );
+		
+	$wp_customize->add_setting(
+		'enigma_options_search_box',
+		array(
+			'type'    => 'theme_mod',
+			'default'=>'',
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'enigma_search_box', array(
+		'label'        => __( 'Enable Search Box in header', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'search_sec',
+		'settings'   => 'enigma_options_search_box',
+	) );
+	/* search-box */
+	
 	/* Product options */
 	$wp_customize->add_section('product_section',array(
 	'title'=>__("Product Options",'enigma'),

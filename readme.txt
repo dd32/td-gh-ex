@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.7 [16-11-2017]
+1. Minor changes in functions.php
+
 @Version: 3.6 [31-10-2017]
 1. Quick edit option added.
 2. menu walker changed.
