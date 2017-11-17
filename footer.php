@@ -8,7 +8,7 @@
  */
 ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="site-info content-annina-title annDouble smallPart">
 			<div class="text-copy">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'annina' ) ); ?>">

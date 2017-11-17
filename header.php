@@ -34,7 +34,7 @@
 <!-- Start: Search Form -->
 	<div id="search-full">
 		<div class="search-container">
-			<form role="search" method="get" id="search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
+			<form method="get" id="search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
 				<label>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'annina' ); ?></span>
 					<input type="search" name="s" id="search-field" placeholder="<?php esc_attr_e('Type here and hit enter...', 'annina'); ?>">
@@ -48,7 +48,7 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'annina' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div class="site-branding annCenter">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
@@ -64,7 +64,7 @@
 			endif; ?>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle"><?php esc_html_e( 'Main Menu', 'annina' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
