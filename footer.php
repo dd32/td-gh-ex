@@ -5,23 +5,17 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * Contains all content after the closing of the id=main div
  *
- * @package WordPress
- * @subpackage Weaver X
- * @since Weaver Xtreme 1.0
  */
-
-?>
-<?php
 
 	weaverx_inject_area('prefooter');		// put the prefooter optional area
 
 	if ( weaverx_getopt( 'footer_hide' ) != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_footer') ) {
 		$f_class = weaverx_area_class('footer', 'pad', '-trbl', 'margin-none');
-	?>
-<footer id="colophon" <?php echo 'class="colophon ' . $f_class . '"'; ?> role="contentinfo">
-	<?php
+?>
+<footer id="colophon" <?php echo 'class="colophon ' . $f_class . '"'; ?> >
+<?php		// +since: 3.1.10: removed role='contentinfo' on footer
 
-		if ( weaverx_has_widgetarea('footer-widget-area') ) {
+		if ( weaverx_has_widgetarea( 'footer-widget-area' ) ) {
 		   $p_class = weaverx_area_class('footer_sb', 'pad', '', 'margin-bottom');
 		   weaverx_put_widgetarea('footer-widget-area', $p_class);
 		   weaverx_clear_both('footer-widget-area');
@@ -37,11 +31,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			echo '<div id="footer-html" style="display:inline;"></div>';		// need the area there for customizer live preview
 		} else if ($extra != '' && $hide != 'hide' ) {
 			$c_class = weaverx_area_class('footer_html', 'not-pad', '-none', 'margin-none' );
-			?>
+?>
 			<div id="footer-html" class="<?php echo $c_class;?>">
 				<?php echo do_shortcode($extra); ?>
 			</div> <!-- #footer-html -->
-		<?php }
+<?php 	}
 
 		/* ======== COPYRIGHT AREA ======== */
 
@@ -54,23 +48,27 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		echo '<span id="site-info">' . "\n";
 
 		$cp = weaverx_getopt('copyright');
+		$copy = '';
 		if (strlen($cp) > 0) {
 			if ($cp != '&nbsp;')	// really leave nothing if specify blank
-				echo do_shortcode($cp) ;
+				$copy = do_shortcode($cp) ;
 		} else {
-			echo '&copy;' . $year . ' - <a href="' . esc_url(home_url( '/' )) . '" title="' .  esc_attr( get_bloginfo( 'name', 'display' ) ) .
-				 '" rel="home">'; bloginfo( 'name' ); echo '</a>';
+			$copy = '&copy;' . $year . ' - <a href="' . esc_url(home_url( '/' )) . '" title="' .  esc_attr( get_bloginfo( 'name', 'display' ) ) .
+				 '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 		}
+		echo apply_filters('weaverx_copyright', $copy);
 		?>
 		</span> <!-- #site-info -->
-		<?php
+<?php
 		/* <a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> */
-		if (! weaverx_getopt('_hide_poweredby')) { ?>
-			<span id="site-generator">
-			<a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="<?php _e('Proudly powered by WordPress','weaver-xtreme'); ?>" target="_blank" rel="nofollow"><span style="font-size:120%;padding-top:2px;" class="genericon genericon-wordpress"></span></a> -
-			<?php weaverx_site(''); _e('Weaver Xtreme Theme', 'weaver-xtreme'); ?></a>
-		</span> <!-- #site-generator -->
-		<?php
+		if (! weaverx_getopt('_hide_poweredby')) {
+			$powered_by = '<span id="site-generator">'
+			. '<a href="' . esc_url( __( '//wordpress.org/','weaver-xtreme') ) . '" title="'
+			. __('Proudly powered by WordPress','weaver-xtreme')
+			. '" target="_blank" rel="nofollow"><span style="font-size:120%;padding-top:2px;" class="genericon genericon-wordpress"></span></a> - '
+			. weaverx_site('', '', '', false) . __('Weaver Xtreme Theme', 'weaver-xtreme') . '</a>'
+			. '</span> <!-- #site-generator -->';
+			echo apply_filters('weaverx_poweredby', $powered_by );
 		}
 		weaverx_clear_both('site-generator'); ?>
 		</div><!-- #site-ig-wrap -->
@@ -146,6 +144,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	wp_footer();
 
 	weaverx_masonry('invoke-code');
+	weaverx_end_body();
 ?>
 </body>
 </html>

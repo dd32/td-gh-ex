@@ -93,7 +93,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 			'content-mm-heading' => weaverx_cz_group_title( __( 'Primary Menu', 'weaver-xtreme' )),
 
 			'm_primary_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
-				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
+				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels.', 'weaver-xtreme' ),
 				'1', __('Any HTML, including shortcodes.', 'weaver-xtreme'),
 				'postMessage', true),
 
@@ -131,7 +131,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_secondary_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
-				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
+				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels.', 'weaver-xtreme' ),
 				'1', __('Any HTML, including shortcodes.', 'weaver-xtreme'),
 				'postMessage', true),
 
@@ -146,7 +146,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 			'content-xm-heading' => weaverx_cz_group_title( __( 'Extra Menu', 'weaver-xtreme' )),
 
 			'm_extra_html_left' =>  weaverx_cz_textarea(__( 'Left HTML', 'weaver-xtreme' ),
-				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels. (&diams;)', 'weaver-xtreme' ),
+				__( 'Add HTML to menu bar. Works best with Centered Menu. You can adjust color and top/bottom spacing on the respective panels.', 'weaver-xtreme' ),
 				'1', __('Any HTML, including shortcodes.', 'weaver-xtreme'),
 				'postMessage', true),
 

@@ -125,10 +125,10 @@ function weaverx_setopt_array($opt, $val, $save = true) {
 	weaverx_setopt( $opt, serialize($val), $save );
 }
 
-function weaverx_delete_all_options() {
+function weaverx_delete_all_options( $no_save = false ) {
 	weaverx_clear_opt_cache('weaverx_delete_all_options');
 
-	if (current_user_can( 'manage_options' ))
+	if (!$no_save && current_user_can( 'manage_options' ))
 		delete_option( apply_filters('weaverx_options','weaverx_settings') );
 }
 
@@ -189,6 +189,8 @@ function weaverx_save_opts($who='', $bump = true) {
 		require_once(get_template_directory() . '/includes/generatecss.php');
 		weaverx_fwrite_current_css();
 	}
+	do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
+
 }
 
 function weaverx_e_opt($opt,$str) {
@@ -204,44 +206,44 @@ function weaverx_e_notopt($opt,$str) {
 
 
 // # PER PAGE OPTIONS =========================================================
-function weaverx_get_per_page_value($name) {
+function weaverx_get_cur_page_id() {
 	global $weaverx_cur_page_ID;
-
-	if ( !$weaverx_cur_page_ID )
-		return false;
-
-	//$template = get_page_template();
-	//if (strpos($template,'paget-posts') === false) weaverx_alert('page:' . $template);
-
-	return get_post_meta($weaverx_cur_page_ID,$name,true);
+	return $weaverx_cur_page_ID;
 }
 
-function weaverx_is_checked_page_opt($meta_name) {
+function weaverx_set_cur_page_id( $id ) {
+	global $weaverx_cur_page_ID;
+	$weaverx_cur_page_ID = $id;
+}
+
+
+function weaverx_get_per_page_value( $name ) {
+
+	if ( !( $id = weaverx_get_cur_page_id() ) )
+		return false;
+	return get_post_meta( $id, $name, true);
+}
+
+function weaverx_is_checked_page_opt( $meta_name ) {
 	// the standard is to check options to hide things
 
-	global $weaverx_cur_page_ID;
-	if ( !$weaverx_cur_page_ID)
+	if ( !( $id = weaverx_get_cur_page_id() ) )
 		return false;
 
+	$val = get_post_meta( $id, $meta_name, true);  // retrieve meta value
 
-	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
-	//	return false;
-
-	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
-
-	if (!empty($val)) return true;		// value exists - 'on'
-	return false;
+	return !empty($val); 	// if value exists - 'on'
 }
 
-function weaverx_get_per_post_value($meta_name) {
-	return get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
+function weaverx_get_per_post_value( $meta_name ) {
+	return get_post_meta(get_the_ID(), $meta_name, true);  // retrieve meta value
 }
 
 function weaverx_is_checked_post_opt($meta_name) {
 	// the standard is to check options to hide things
-	$val = get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
-	if (!empty($val)) return true;		// value exists - 'on'
-	return false;
+	$val = get_post_meta( get_the_ID(), $meta_name, true );  // retrieve meta value
+
+	return !empty($val); 	// if value exists - 'on'
 }
 
 function weaverx_page_posts_error($info='') {
@@ -469,10 +471,6 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
-function weaverx_show_header_image() {
-
-
-}
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
 	// 'top' => 'Top of Header'
@@ -630,8 +628,8 @@ function weaverx_post_class($hidecount = false) {
 
 function weaverx_use_inline_css($css_file) {
 	return weaverx_getopt_checked('_inline_style') || !weaverx_f_file_access_available()
-		|| !weaverx_f_exists($css_file) || isset($_REQUEST['wp_customize']);
-											// also force inline from customizer
+		|| !weaverx_f_exists($css_file)
+		|| is_customize_preview();		// also force inline from customizer (Changed: 3.1.10 - used is_customize_preface() )
 }
 
 
@@ -939,7 +937,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 		$bc = implode($larrow,$list);
 	}
 	// Wrap crumbs
-	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter);
+	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter, $bc);
 
 	if ($echo) echo $bc;
 	else return $bc;
@@ -1220,10 +1218,11 @@ function weaverx_masonry($act = false) {
 	}
 
 	$usem = weaverx_get_per_page_value('_pp_pwp_masonry');	// per page to override...
-	if ($usem < 2)
+	if ($usem < 2) {
 	    if ($is_pwp && weaverx_get_per_page_value('_pp_wvrx_pwp_cols') > 0)	// let per page value override global
 			return false;
 		$usem = weaverx_getopt('masonry_cols');
+	}
 	if ($usem < 2) {
 		return false;
 	}

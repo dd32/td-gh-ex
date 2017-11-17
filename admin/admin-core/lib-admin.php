@@ -95,21 +95,22 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 	// customizer only, keep values, preserve values, save values, not legacy (search terms for these kinds of settings)
 	$non_sapi = apply_filters('weaverx_non_sapi_options',array(		// non-sapi elements in the db
 		'weaverx_version_id', 'style_version',
-		'theme_filename', 'addon_name', '_hide_theme_thumbs', 'last_option', 'header_video_render',
+		'theme_filename', 'addon_name', '_hide_theme_thumbs',
+		'm_primary_hamburger', 'm_secondary_hamburger',
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
 		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
-		'_options_level', '_PHP_warning_displayed'));
+		'_options_level', '_PHP_warning_displayed', 'last_option'));
 
 	/*	The following code allows the SAPI to save the non-sapi values. If you don't do this here,
 		then the values will be set to false, and be lost! SAPI is not tolerant of submitting a form
 		that doesn't include EVERY setting for the form group. */
 
+	weaverx_setopt('last_option','Weaver Xtreme');	// Safety check for limited PHP $_POST variables
 	foreach ($non_sapi as $name) {
 ?>
 	<input name="<?php weaverx_sapi_main_name($name); ?>" id="<?php echo $name;?>" type="hidden" value="<?php echo weaverx_getopt($name); ?>" />
 <?php
 	}
-	weaverx_setopt('last_option','Weaver Xtreme');	// Safety check for limited PHP $_POST variables
 	echo ("</form> <!-- $form_name -->\n");
 }
 
@@ -150,10 +151,12 @@ function weaverx_validate_all_options($in) {
 		wp_die( __( 'You do not have sufficient permissions to manage options for this site.' ,'weaver-xtreme') );
 	}
 
-	$wvr_last = '';
 
+	$wvr_last = '';
+	$cur_item = '';
 
 	foreach ($in as $key => $value) {
+		//$cur_key = $key;
 		switch ($key) {
 
 			/* -------- integer -------- */
@@ -346,9 +349,24 @@ function weaverx_validate_all_options($in) {
 		}
 	}
 
-	if (false && $wvr_last != 'Weaver Xtreme') {
-		$err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.
-Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />', 'weaver-xtreme' /*adm*/);
+	if ( $wvr_last != 'Weaver Xtreme') {
+		//$err_msg .=
+		$vars = ini_get( 'max_input_vars' );
+		$newvars = $vars + 1000;
+		$posts = isset($GLOBALS['WVRX_POSTS']) ? $GLOBALS['WVRX_POSTS'] : '?';
+		$gets = isset($GLOBALS['WVRX_GETS']) ? $GLOBALS['WVRX_GETS'] : '?';
+		$cookies = isset($GLOBALS['WVRX_COOKIES']) ? $GLOBALS['WVRX_COOKIES'] : '?';
+		$msg = sprintf(
+		__("<h3 style='color:red;text-align:center;'>WARNING - Your current settings have NOT been saved!<br /> Your previous settings are unchanged.</strong>
+</h3><p>
+Your host seems to be configured to limit how many input form options you are allowed to use with PHP. This is usually controlled by the PHP <em>max_input_vars</em> configuration setting. The current value of <em> %s </em> is too small for your current <em>WordPress</em> and <em>Weaver Xtreme</em> installation. It should be increased to <em> %s </em>. <strong>Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface.</strong> The <em>Customizer</em> will still work, as will the options on the <em>Save/Restore</em> tab. Your site is still functional.
+</p><p style='text-align:center;font-weight:bold;padding:1em;border:1px solid black;'>
+For help on how to increase the <em>max_input_vars</em> PHP setting, please click to see the
+<a href='//guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host&nbsp;Configuration:&nbsp;PHP&nbsp; max_input_vars</a> article on the Weaver Xtreme guide site.</p>
+<p style='color:blue;font-weight:bold;text-align:center;'>
+PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%s/P-%s/G-%s/C-%s/K-%s </small</p>", 'weaver-xtreme'),
+		$vars, $newvars, $vars, $posts, $gets, $cookies,$key);
+		wp_die($msg);
 	}
 
 
@@ -377,13 +395,12 @@ function weaverx_end_of_section($who = '') {
 	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
 	{
 ?>
-<p style="color:red">
-<?php _e('Possible Non-Standard Web Host Configuration detected. If your options
-are not saving correctly, your host may have limited the default number of values that PHP can use for
-settings. Try saving your settings again, and if this message persists, please contact your host and ask them to "Increase the PHP <em>max_input_vars</em> value for $_POST to at least 600." If that does not fix the issue,
-please contact Weaver Xtreme support. Diagnostic info: last_option=', 'weaver-xtreme' /*adm*/); ?><?php echo $last;?>
-</p>
-<?php
+<?php e_("<p>
+Your host may be configured to limit how many input var options you are allowed to pass via PHP. This is usually controlled with the PHP <em>max_input_vars</em> configuration setting. The standard value of 1000 is too small, and should be increased to 2000. Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface. The Customizer is will still work, as will the 'Save/Restore' tab options. Warning: If you are seeing this message, it is likely that at least some of your settings have become corrupted.
+</p><p>
+For details on how to increase the <em>max_input_vars</em> PHP setting, please see the
+<a href='https://guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host Configuration: PHP max_input_vars</a> article on the Weaver Xtreme guide site.
+", 'weaver-xtreme' /*adm*/); echo $last;
 	}
 
 	if (false && !weaverx_getopt('_hide_subtheme_link')) {
@@ -397,15 +414,12 @@ please contact Weaver Xtreme support. Diagnostic info: last_option=', 'weaver-xt
 
 function weaverx_donate_button() {
 
-	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) { ?>
-<div style="float:right;padding-right:30px;"><small><strong><?php _e('Like Weaver X? Consider', 'weaver-xtreme' /*adm*/); ?></strong></small>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="6Y68LG9G9M82W">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) {
+		$img = WP_CONTENT_URL . '/themes/weaver-xtreme/assets/images/donate-button.png';
+	?>
+<div style="float:right;padding-right:30px;display:inline-block;"><div style="font-size:14px;font-weight:bold;display:inline-block;vertical-align: top;"><?php _e('Like <em>Weaver Xtreme</em>? Please', 'weaver-xtreme' /*adm*/); ?></div>&nbsp;&nbsp;<a href='//weavertheme.com/donate' target='_blank' alt='Please Donate' ><img src="<?php echo $img; ?>" alt="donate" style="max-height:28px;"/></a>
 </div>
+
 <?php }
 }
 

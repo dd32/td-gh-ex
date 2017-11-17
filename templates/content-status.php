@@ -44,7 +44,7 @@ weaverx_per_post_style();
 			</span><span class="weaver-ml-50">
 <?php 			weaverx_the_post_full();
 			echo '</span>';
-			weaverx_link_pages();
+			weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 <?php

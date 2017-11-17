@@ -30,6 +30,7 @@ Table of Contents
 =Font Size Group definitions
 =Print
 =IE
+=Compatibility
 
 --------------------------------------------------------------------------------------------------------------
 *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***    *** WARNING ***
@@ -79,7 +80,7 @@ sub{bottom:-0.25em}
 img{border:0}
 svg:not(:root){overflow:hidden}
 figure{margin:1em 40px}
-hr{-moz-box-sizing:content-box;box-sizing:content-box;height:2px;}
+hr{box-sizing:content-box;height:2px;background-color:#ccc;}
 pre{overflow:auto}
 code,kbd,pre,samp{font-family:'Inconsolata', monospace;font-size:1em}
 /* button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0} */
@@ -88,11 +89,10 @@ button{overflow:visible}
 button,select{text-transform:none}
 button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
 button[disabled],html input[disabled]{cursor:default}
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 input{line-height:normal}
 input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
 input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}
-input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}
 input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0}
@@ -208,8 +208,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .content-2-col-right,
 .sidebar-header,
 .sidebar-header .header-widget {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
 	box-sizing:			border-box;
 	height:				auto;
 	max-width:			100%;    /* Adhere to container width. */
@@ -320,15 +318,14 @@ html {
 }
 
 body {                      /* body has global settings for others to inherit */
-	-moz-font-smoothing:    antialiased;
-	-webkit-font-smoothing: antialiased;
 	font-family:			'Open Sans', sans-serif;
 	font-size:				1.0em;                      /* this leads to 16px default font size */
-	font-smoothing:			antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing:			antialiased;				/* matters on Macs */
 	line-height:			1.5;
 	margin:					0;
 	overflow-x:				hidden;						/* overflow not inherited down but needed here for fullwidth rules */
-	/* text-rendering:		optimizeLegibility; DO NOT USE THIS! Breaks icon-fonts on Android 4.2+ */
 }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
@@ -381,15 +378,11 @@ body {                      /* body has global settings for others to inherit */
 #container,
 #header-html,
 #colophon {
-	-moz-box-sizing:		border-box;
-	-webkit-box-sizing:     border-box;
 	box-sizing:				border-box;
 	width:					100%;
 }
 
 #wrapper {
-	-moz-box-sizing:		border-box;
-	-webkit-box-sizing:     border-box;
 	box-sizing:				border-box;
 }
 
@@ -429,32 +422,22 @@ body {                      /* body has global settings for others to inherit */
 .rounded,
 .rounded-all,
 .rounded-custom {
-	-moz-border-radius:     8px !important;
-	-webkit-border-radius:  8px !important;
 	border-radius:			8px !important;
 }
 
 .rounded-top {
-	-moz-border-radius-topleft:			8px; -moz-border-radius-topright: 8px;
-	-webkit-border-top-left-radius:     8px; -webkit-border-top-right-radius: 8px;
 	border-top-left-radius:				8px; border-top-right-radius: 8px;
 }
 
 .rounded-bottom {
-	-moz-border-radius-bottomleft:      8px; -moz-border-radius-bottomright: 8px;
-	-webkit-border-bottom-left-radius:  8px; -webkit-border-bottom-right-radius: 8px;
 	border-bottom-left-radius:			8px; border-bottom-right-radius: 8px;
 }
 
 .rounded-left {
-	-moz-border-radius-topleft:			8px; -moz-border-radius-bottomleft: 8px;
-	-webkit-border-top-left-radius:     8px; -webkit-border-bottom-left-radius: 8px;
 	border-top-left-radius:				8px; border-bottom-left-radius: 8px;
 }
 
 .rounded-right {
-	-moz-border-radius-topright:		8px; -moz-border-radius-bottomright: 8px;
-	-webkit-border-top-right-radius:    8px; -webkit-border-bottom-right-radius: 8px;
 	border-top-right-radius:			8px; border-bottom-right-radius: 8px;
 }
 
@@ -554,6 +537,11 @@ ul {
 	margin-left:			1.0em;
 }
 
+.textwidget ol, .textwidget ul {		/* fixed: V 3.1.5 */
+	list-style-position:    outside;
+	margin-left:			1.75em;
+}
+
 .widget .wvrx-menu ul {			/* fix the above rule for menus in a widget */
 	margin-left:			0;
 }
@@ -635,7 +623,7 @@ blockquote {
 	border-left:	4px solid rgba(128, 128, 128, 0.4);
 	margin:			1.5em;
 	overflow:		auto;
-	padding:		0 1.5em 1em 1.2em;
+	padding:		0.8em 1.5em 0 1.2em;
 }
 
 blockquote cite {
@@ -665,7 +653,7 @@ kbd,
 tt,
 var {
 	font-family:	'Inconsolata', monospace;
-	}
+}
 del {
 }
 
@@ -693,12 +681,6 @@ p {
 }
 
 pre {
-	-moz-box-sizing:		border-box;
-	-moz-border-radius:     2px;
-	-moz-box-shadow:		0 1px 0 #ffffff, inset 0 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-border-radius:  2px;
-	-webkit-box-shadow:     0 1px 0 #ffffff, inset 0 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-box-sizing:     border-box;
 	box-shadow:				0 1px 0 #ffffff, inset 0 1px 1px rgba(0, 0, 0, 0.2);
 	box-sizing:				border-box;
 	background:				rgba(128, 128, 128, 0.1);
@@ -719,6 +701,10 @@ pre {
 	white-space:			pre-wrap;
 }
 
+q {
+	font-style: italic;
+}
+
 sup,
 sub {
 	font-size:			.85em;
@@ -729,10 +715,6 @@ var {
 }
 
 /* tables */
-table {
-	border-collapse:    collapse;
-	border-spacing:     0;
-}
 
 th {
 	text-align:			left;
@@ -775,8 +757,6 @@ span > object {
 ----------------------------------------------------------------------------------- */
 
 img {
-	-moz-box-sizing:		border-box;
-	-webkit-box-sizing:     border-box;
 	box-sizing:				border-box;
 	height:					auto;           /* Make sure images are scaled correctly. */
 	margin:					0;
@@ -927,8 +907,6 @@ p img,
 
 
 #content .gallery {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 }
 
@@ -1039,14 +1017,12 @@ div.gallery-columns-9 dl:nth-of-type(3n+1) {
 }
 
 #content .attachment-thumbnail {
-	float:			left;
 	margin-right:   12px;
 	margin-bottom:  12px;
 	padding:		0;
 }
 
 #content .attachment-thumbnail-single {
-	float:			left;
 	margin-right:   25px;
 	margin-bottom:  12px;
 	padding:		0;
@@ -1103,8 +1079,6 @@ img.fi-aligncenter-pb {
 /* =Branding Images =================================================================== */
 
 .header img {
-	-webkit-box-shadow: none;
-	-moz-box-shadow:    none;
 	box-shadow:			none;
 	border-radius:      0;
 	border-width:		0;
@@ -1145,8 +1119,6 @@ img.fi-aligncenter-pb {
 #header.header-as-bg-responsive {
 	background-repeat:			no-repeat;
 	background-position:		center center;
-	-webkit-background-size:	cover;
-	-moz-background-size:		cover;
 	background-size:			cover;
 }
 
@@ -1154,8 +1126,6 @@ img.fi-aligncenter-pb {
 	background-repeat:			no-repeat;
 	background-position:		left top;	/* x handled by generate.css y by jQuery */
 	background-attachment:		scroll;
-	-webkit-background-size:	cover;
-	-moz-background-size:		cover;
 	background-size:			cover;
 }
 
@@ -1252,8 +1222,11 @@ img.fi-aligncenter-pb {
 }
 
 #inject_fixedtop.wvrx-fixedtop { z-index: 10009 !important; }
-#nav-secondary .wvrx-fixedtop { z-index: 10007 !important; }
-#nav-primary .wvrx-fixedtop { z-index: 10006 !important; }
+#nav-secondary.wvrx-fixedtop,
+.menu-secondary.wvrx-secondary-fixedtop { z-index: 10007 !important; }
+#nav-primary.wvrx-fixedtop,
+.menu-primary.wvrx-primary-fixedtop {
+	z-index: 10006 !important; }
 #header-widget-area.wvrx-fixedtop { z-index: 10005 !important; }
 
 .menu-primary {
@@ -1281,6 +1254,11 @@ img.fi-aligncenter-pb {
 	z-index:			1;
 }
 
+.wvrx-menu-html {
+	z-index:		1;				/* fix for hover failure on right html box */
+}
+
+
 /* =Widgets and Widget Areas ======================================================================================= */
 .widget-area {
 	line-height:	1.275;
@@ -1290,8 +1268,6 @@ img.fi-aligncenter-pb {
 
 .widget-area,
 .widget {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 	max-width:			100%;
 }
@@ -1401,14 +1377,10 @@ a {
 
 .menu-vertical {
 	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
 }
 
 .wvrx-menu,
 .wvrx-menu * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
 	box-sizing:			border-box;
 	list-style:			none;
 	padding:			0;
@@ -1683,8 +1655,6 @@ ul.wvrx-menu {
 /* =Menu Colors
 -------------------------------------------------------------- */
 .wvrx-menu-container {                   /* this wraps the menu, bg color for the mobile menu */
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
 	box-sizing:			border-box;
 	line-height:		1;
 	margin:				0;
@@ -1898,7 +1868,7 @@ ul.sm ul li,ul.sm-vertical li{float:none;}
 ul.sm ul a,ul.sm-vertical a{white-space:normal;}
 ul.sm ul.sm-nowrap>li>a{white-space:nowrap;}
 ul.sm:after{content:"\00a0";display:block;height:0;font:0/0 serif;clear:both;visibility:hidden;overflow:hidden;}
-ul.sm,ul.sm *,ul.sm *:before,ul.sm *:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+ul.sm,ul.sm *,ul.sm *:before,ul.sm *:after{box-sizing:border-box;}
 ul.sm{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 /* ----------------------- SmartMenus ------------------------------- */
@@ -2222,8 +2192,6 @@ li.mega-normal ul.mega-menu li a:hover {
 	background-position:	50% 50%;
 	background-repeat:		no-repeat;
 	background-attachment:	fixed;
-	-webkit-background-size:cover;
-	-moz-background-size:	cover;
 	background-size:		cover;
 }
 
@@ -2246,8 +2214,6 @@ li.mega-normal ul.mega-menu li a:hover {
 .header .meteor-slides {clear:both;}
 
 #header {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 	padding:			0;
 	height:				auto;
@@ -2642,8 +2608,6 @@ ol.trackbacklist {
 
 #commentform input:focus,
 #commentform textarea:focus {
-	-moz-box-shadow:    4px 4px 4px #777;
-	-webkit-box-shadow: 4px 4px 4px #777;
 	box-shadow:			4px 4px 4px #777;
 }
 
@@ -2653,8 +2617,6 @@ ol.trackbacklist {
 }
 
 #respond input#submit {
-	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
-	-moz-box-shadow:    0px 1px 2px rgba(0,0,0,0.3);
 	box-shadow:			0px 1px 2px rgba(0,0,0,0.3);
 	cursor:				pointer;
 	padding:			5px 42px 5px 22px;
@@ -2748,56 +2710,38 @@ ol.trackbacklist {
 }
 
 .content-box {
-	box-sizing:			content-box !important;
-    -moz-box-sizing:	content-box !important;
-	-webkit-box-sizing:	content-box !important;
+	box-sizing:	content-box !important;
 }
 
 .shadow-0 {
 }
 
 .shadow-1 {
-	-webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
-	-moz-box-shadow:    0 0 3px 1px rgba(0,0,0,0.25);
 	box-shadow:			0 0 3px 1px rgba(0,0,0,0.25);
 }
 
 .shadow-2 {
-	-webkit-box-shadow: 0 0 4px 2px rgba(0,0,0,0.25);
-	-moz-box-shadow:    0 0 4px 2px rgba(0,0,0,0.25);
 	box-shadow:			0 0 4px 2px rgba(0,0,0,0.25);
 }
 
 .shadow-3, .shadow-custom {
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow:    0 0 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			0 0 3px 4px rgba(0,0,0,0.25);
 }
 
 .shadow-4 {
-	-webkit-box-shadow: 0 0 6px 4px rgba(0,0,0,0.25) !important;
-	-moz-box-shadow:    0 0 6px 4px rgba(0,0,0,0.25) !important;
 	box-shadow:			0 0 6px 4px rgba(0,0,0,0.25) !important;
 }
 
 .shadow-rb {
-	-webkit-box-shadow: 2px 2px 4px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow:    2px 2px 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			2px 2px 3px 4px rgba(0,0,0,0.25);
 }
 .shadow-lb {
-	-webkit-box-shadow: -2px 2px 4px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow:    -2px 2px 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			-2px 2px 3px 4px rgba(0,0,0,0.25);
 }
 .shadow-tr {
-	-webkit-box-shadow: 2px -2px 4px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow:    2px -2px 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			2px -2px 4px 3px rgba(0,0,0,0.25);
 }
 .shadow-tl {
-	-webkit-box-shadow: -2px -2px 4px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow:    -2px -2px 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			-2px -2px 4px 3px rgba(0,0,0,0.25);
 }
 
@@ -2820,7 +2764,9 @@ ol.trackbacklist {
 #author-avatar img {	/* no setting available to change this... */
 	padding:		0;
 }
-#author-avatar img,img.avatar {-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+#author-avatar img,img.avatar {
+	box-shadow:none;
+}
 
 .ie8 img.avatar {
 	width:			auto;	/* fix for max-width bug in IE8 */
@@ -2839,8 +2785,6 @@ ol.trackbacklist {
 .post-avatar img {
 	border:				none;
 	padding:			0;
-	-webkit-box-shadow: none;
-	-moz-box-shadow:    none;
 	box-shadow:			none;
 	height:				auto;
 	margin-bottom:      -8px;
@@ -2877,7 +2821,6 @@ ol.trackbacklist {
 
 .edit-link a {	            /* an edit link box that should show on all themes */
 	background-color:		#eee    !important;
-	-moz-border-radius:     3px;
 	border-radius:			3px;
 	color:  				#555    !important;
 	float:  				right;
@@ -2910,6 +2853,16 @@ ol.trackbacklist {
 	padding-left:			15px;
 }
 
+.wvrx-aside-margin {
+	margin-bottom:			20px;
+}
+
+.wvrx-infobar-search {
+		padding-right:		4px !important;
+		display:			inline-block;
+		padding-left:		20px;
+}
+
 /* =Search
 ----------------------------------------------- */
 #header-search,
@@ -2928,7 +2881,6 @@ ol.trackbacklist {
 	background-size:    22px 22px;
 	height:				22px;
 	margin-top:			4px;
-	-webkit-transition: width 400ms ease, background 400ms ease;
 	transition:			width 400ms ease, background 400ms ease;
 }
 
@@ -3413,15 +3365,12 @@ ins {
 
 /* provide alternative icon set - gerericons ----------------------------------- */
 .entry-meta-gicons {
-	-moz-transition:    color .1s ease-in 0;
-	-webkit-transition: color .1s ease-in 0;
+	transition:    		color .1s ease-in 0;
 	font-family:		inherit;
 	font-size:			inherit;
 	line-height:		inherit;
 	text-decoration:    inherit;
 	text-transform:     none;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing:     antialiased;
 	speak:				none;
 }
 
@@ -3802,7 +3751,7 @@ a.more-link {
 /* =Area wrapper definitions  ======================================================================================= */
 .per-row-1, .per-row-2, .per-row-3, .per-row-4, .per-row-5, .per-row-6, .per-row-7, .per-row-8,
 .per-row-1-m, .per-row-2-m, .per-row-3-m, .per-row-4-m, .per-row-5-m, .per-row-6-m, .per-row-7-m, .per-row-8-m, .smart-rm {
-	margin:0;clear:none;float: left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;
+	margin:0;clear:none;float: left;box-sizing:border-box;
 }
 
 .widget-smart-rm aside,
@@ -3878,8 +3827,6 @@ a.more-link {
 }
 
 .s-full {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 	margin:				0;
 	clear:				none;
@@ -3968,7 +3915,7 @@ a.more-link {
 .m-half-lm,
 .m-full-rm,
 .m-half-rm {
-	margin:0;clear:none;float: left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;
+	margin:0;clear:none;float: left; box-sizing:border-box;
 }
 
 .m-full {
@@ -4084,7 +4031,7 @@ a.more-link {
 .l-sb-left-lm, .l-sb-right-lm, .l-sb-right-split-lm,
 .l-sb-left-rm, .l-sb-right-rm, .l-sb-left-split-rm,.l-sb-left-split-top-rm, .l-sb-right-split-rm,
 .l-xyz {
-	margin:0;clear:none;float: left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;
+	margin:0;clear:none;float: left; box-sizing:border-box;
 }
 
 .l-full {                       /* not smart margin */
@@ -4245,8 +4192,6 @@ a.more-link {
 #footer-html,
 .inject_postpostcontent,
 [id*='inject_'] {       /* give injection areas border-box, too. */
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 }
 
@@ -4635,7 +4580,6 @@ footer.entry-utility a[rel=bookmark]:visited:after{
 .commentlist > li.comment {
 	background:			none;
 	border:				1px solid #ddd;
-	-moz-border-radius: 3px 3px 3px 3px;
 	border-radius:      3px 3px 3px 3px;
 	margin:				0 auto 1.625em;
 	padding:			1.625em;
@@ -4738,8 +4682,6 @@ page-break-inside:  avoid;
 
 /* Tabs */
 .wvr-tabs {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
     box-sizing:         border-box;
     margin: 0 0 1.5em 0;
     background:transparent;
@@ -4780,14 +4722,10 @@ page-break-inside:  avoid;
 }
 
 .wvr-tabs-nav span {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
 }
 
 span.wvr-tabs-current {
-	-moz-box-sizing:	content-box;
-	-webkit-box-sizing:	content-box;
 	box-sizing:			content-box;
 }
 
@@ -4804,6 +4742,11 @@ span.wvr-tabs-current {
 	position:			relative;
 	z-index:			2;
 }		/* add line to tab */
+
+.wvr-tabs-panes .wvr-tabs-hide {
+	display: none;
+
+}
 
 .wvr-tabs-nav {
 	position:			relative;
@@ -4863,6 +4806,14 @@ html.ie8 .is-desktop .menu-extra:before,
 html.ie8 .is-desktop .menu-secondary:before,
 html.ie8 .is-desktop .menu-primary:before {display:none;}
 /* -- /IE8 */
+
+/* =Compatibility  - compatibility with other plugins */
+
+.container-woocommerce .product .entry-summary {	/* fixed 3.1.5 */
+	clear:		none;
+}
+
+/* -- /Compatibility */
 
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to

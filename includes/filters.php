@@ -69,7 +69,8 @@ function weaverx_page_menu( $args = array() ) {
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$left = '<img class="custom-logo-on-menu" src="' . $custom_logo_url . '" />' . $left;
+				$left = apply_filters('weaverx_menu_logo','<span class="custom-logo-on-menu"><img class="custom-logo-on-menu" src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url) . $left;		// +since: 3.1.10: add alt=
+
 		}
 	}
 
@@ -87,7 +88,7 @@ function weaverx_page_menu( $args = array() ) {
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
+		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";		// +since: 3.1.10: remove empty href=""
 	}
 
 	if (!$left && is_customize_preview()) {
@@ -129,7 +130,7 @@ function weaverx_featured_image_info($text) {
 
 	return $text .
 '<p><small>' .
- __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
+ __('Please see Weaver Xtreme\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
 
 }
 //--
@@ -169,7 +170,7 @@ function weaverx_body_classes( $classes ) {
 	if (weaverx_get_per_page_value('_pp_bodyclass') != '')	// add body class per page
 		$classes[] = weaverx_get_per_page_value('_pp_bodyclass');
 
-	if ( isset( $GLOBALS['weaverx_page_who'] ) ) {
+	if ( isset( $GLOBALS['weaverx_page_who'] ) && isset( $GLOBALS['weaverx_page_is_archive'] ) ) { // Changed: 3.1.10 - check if archive is set
 		if ( $GLOBALS['weaverx_page_is_archive'] ) {
 			$sb_layout = weaverx_sb_layout_archive( $GLOBALS['weaverx_page_who'] );
 			if ( $GLOBALS['weaverx_page_who'] != '404' )
@@ -225,6 +226,8 @@ function weaverx_unlink_page($link, $id) {	// filter definition
 }
 //--
 
+
+
 // =============================== >>> FILTER: admin_post_thumbnail_html <<< ================================
 // Change what's hidden by default - show Custom Fields and Discussion by default!
 add_filter('default_hidden_meta_boxes', 'weaverx_hidden_meta_boxes', 10, 2);
@@ -239,7 +242,7 @@ function weaverx_hidden_meta_boxes($hidden, $screen) {	// filter definition
 
 
 
-// =============================== >>> FILTER: weaverx_get_wp_title_rss <<< ================================
+// =============================== >>> FILTER: weaverx_comment_form_defaults <<< ================================
 add_filter('comment_form_defaults', 'weaverx_comment_form_defaults',10,1);
 
 function weaverx_comment_form_defaults( $defaults ) {		// filter definition
@@ -394,7 +397,7 @@ function weaverx_get_video_render() {
 }
 
 function weaverx_has_header_video() {
-	return function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
+	return weaverx_get_video_render() != 'has-header-video-none' && function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
 		&& (has_header_video() || weaverx_get_per_page_value( '_pp_video_url' ) != '' ) ;
 }
 
@@ -406,12 +409,16 @@ function weaverx_mce_css($default_style) {
 	/* replace the default editor-style.css with custom CSS generated on the fly by the php version */
 	if (weaverx_getopt('_hide_editor_style'))
 		return $default_style;
+	$style_file = apply_filters( 'weaverx_mce_css', $default_style); // theme support plugin builds a css file
+	if ( $style_file != $default_style )
+		return $style_file;
 
 	$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
 	$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
 	if (!@file_exists($mce_css_file)) {	// see if it is there
 		return $default_style;
 	}
+
 	/* do we need to do anything about rtl? */
 
 	/* if we have a custom style file, return that instead of the default */

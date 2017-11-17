@@ -6,15 +6,15 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
+Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 3.1.1
+Tested up to: 4.9
+Stable tag: 3.1.10
 
 == Description ==
 
 Weaver Xtreme is an advanced Theme platform that supports extensive customization by the user,
-as well as automatic support for mobile devices.
+as well as full responsive design for mobile devices.
 
 == Licenses ==
 
@@ -361,26 +361,84 @@ with testing and feature suggestions.
 * Fix: Menus z-index
 
 = Version 3.1 =
-New: Added support for WP 4.7 Header Video Images - in header area, or as full screen BG image.
-New: change max srcset size from WP's default 1600 to 1920
-New: https://guide.weavertheme.com online theme guide
-Change: Featured Images as a header image replacement now include srcset
-Tweak: Changed overflow for Widget Area and Widget to visible. This may change the look of existing sites that use badly behaving widgets that overflow content.
-Tweak: Changed how header images are generated. The srcset is included with more images now.
-Tweak: Don't generate single page navigation HTML if hide.
-Fix: More z-index tweaks
-Fix: Bug with incorrectly hiding widget areas on archive-like pages and default blog page due to per-post settings in first post on the page
-Fix: rounded corners z-index on menus
-Fix: BG color for Visual Editor, including Transparent subthemes.
+* New: Added support for WP 4.7 Header Video Images - in header area, or as full screen BG image.
+* New: change max srcset size from WP's default 1600 to 1920
+* New: https://guide.weavertheme.com online theme guide
+* Change: Featured Images as a header image replacement now include srcset
+* Tweak: Changed overflow for Widget Area and Widget to visible. This may change the look of existing sites that use badly behaving widgets that overflow content.
+* Tweak: Changed how header images are generated. The srcset is included with more images now.
+* Tweak: Don't generate single page navigation HTML if hide.
+* Fix: More z-index tweaks
+* Fix: Bug with incorrectly hiding widget areas on archive-like pages and default blog page due to per-post settings in first post on the page
+* Fix: rounded corners z-index on menus
+* Fix: BG color for Visual Editor, including Transparent subthemes.
 
 = Version 3.1.1 =
-New: .post-author-id-# added to the post <article> class list that wraps all post views. Allows custom per-author post CSS.
-Fix: Header Widget Area z-index
-Fix: Don't allow header video, header FI header replacement, or header html replacement for archives or search pages
-Fix: [ gallery ] CSS clear:both; fix for tablets/phones. Only apparent when 2 or more galleries on same page/post.
-Fix: Let Per Page with Posts columns override the global Masonry value.
-Fix: Issue with width of Post Category meta link info
-Fix: Customizer Color picker with Child Themes now displays correctly
-Fix: Header Image HTML replacement still showed image
-Tweak: Work-around for Cloudflare "feature" that doesn't show Edit button sometimes. See Cloudflare plugin support forum for fix for WP Admin bar if you need that.
-Tweak: Make overflow:hidden for primary, secondary, and footer widget areas
+* New: .post-author-id-# added to the post <article> class list that wraps all post views. Allows custom per-author post CSS.
+* Fix: Header Widget Area z-index
+* Fix: Don't allow header video, header FI header replacement, or header html replacement for archives or search pages
+* Fix: [ gallery ] CSS clear:both; fix for tablets/phones. Only apparent when 2 or more galleries on same page/post.
+* Fix: Let Per Page with Posts columns override the global Masonry value.
+* Fix: Issue with width of Post Category meta link info
+* Fix: Customizer Color picker with Child Themes now displays correctly
+* Fix: Header Image HTML replacement still showed image
+* Tweak: Work-around for Cloudflare "feature" that doesn't show Edit button sometimes. See Cloudflare plugin support forum for fix for WP Admin bar if you need that.
+* Tweak: Make overflow:hidden for primary, secondary, and footer widget areas
+
+= Version 3.1.2 =
+* Critical fix: detect case of PHP max_input_vars configuration value too small - prevent loss of settings
+* Fix: missing .site-title, .site-tagline generated CSS
+* Fix: Masonry Per Page option
+
+= Version 3.1.3 =
+* Fix: JetPack Infinite scroll now will also work correctly with multi-column posts display.
+* Fix: Legacy interface handling of video rendering in header
+* Fix: Archive pages not showing BG header
+* Tweak: Minor tweaks to the "Go" subthemes
+* API: Added filters for page and archive sidebar layouts
+
+= Version 3.1.4 =
+* Fix: Move Top/Bottoms Menu option was marked as X-Plus option in Customizer - was correct in Legacy
+* Fix: JS update issue when both Primary and Secondary menus hidden
+* Fix: Issue with z-index and Smart Menus
+* Fix: Menu not closing for link to anchor on same page. Fixed so now better supports one page websites.
+* Fix: z-index for fixed top primary vs secondary menus and fixed top header widget area
+* Fix: WooCommerce: Single Product Page uses Page Sidebar Layout, Multi-Product List page uses Archive Sidebar Layout
+
+= Version 3.1.5 =
+* New: add Woocommerce support for product gallery zoom, lightbox, slider
+* Tweak: wrapped excerpt ... in span with excerpt-dots class.
+
+= Version 3.1.6 =
+* Fix: Obscure issue with full width and scroll bar width in wvrx end js lib
+* Fix: Menu left/right HTML areas were incorrectly labeled as diamond options - they are not.
+* Tweak: Blockquote styling - fixed padding
+* Tweak: Woocommerce title clear:none rule added to stylesheet
+* Tweak: Font Family for some subthemes
+* Tweaks: WP 4.8 compatibility: list styling for new WP Text Widget, remove Customizer column resize button
+
+= Version 3.1.7 =
+* New: new method of styling Page/Post editor when Weaver Xtreme Support 3.1.7 or later installed
+* Tweak: new styling method allows improved page/post styling to better match theme settings
+* Deprecated: old method of styling Page/Post editor - in the future, this will require Theme Support plugin
+* Fix: check for illegal column value when creating widget areas
+* Tweak: Weaver head JavaScript will load before most other scripts now
+
+= Version 3.1.8 =
+* Fix: Page/Post Editor styling issues - no longer requires Xtreme Plus.
+* Tweak: reminder to save theme settings for new editor styling
+* New: support for Weaver Xtreme Plus per blog, single, archive-like themes.
+
+= Version 3.1.9 =
+* Tweak: added <!--googleoff/on: all--> around JAVASCRIPT DISABLED message - only matters if user doesn't have blank site title
+* Fix: FI as header image now does have priority over Header HTML Replacement option as stated in option's description.
+* Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and befoe Primary fixed-top menu.
+* Update: Updated to TGMPA v2.6.1 (used for suggested plugins)
+
+= Version 3.1.10 =
+* New: weaverx_fi_after filter added. See Weaver Xtreme API in The Guide.
+* Fix: Weaver Xtreme Plus alternate hamburger setting was not saving.
+* Fix: Customizer live preview update for Global Custom CSS
+* Fix: WP 4.9 issue with customizer color picker fixed
+* Tweak: WP 4.9 compatibility check
+* Tweak: General code cleanup in preperation for 3.2

@@ -56,9 +56,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	echo $content;
 
 	weaverx_fi( 'page', 'content-bottom' );
-	weaverx_link_pages(); ?>
-
-
+	weaverx_link_pages();	// <!--nextpage-->
+	?>
 	</div><div style="clear:both;"></div><!-- .entry-content -->
 	<footer class="entry-utility-page">
 	<?php weaverx_edit_link(); ?>

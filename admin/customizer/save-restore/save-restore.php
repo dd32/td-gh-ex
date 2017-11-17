@@ -48,6 +48,10 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 
 		<input type="button" class="button-primary" name="wvrx_save_xplus" value="<?php esc_attr_e( 'Save ALL Settings, including Xtreme Plus', 'weaver-xtreme' ); ?>" />
 <?php
+	echo "<br /><br /><h3>";
+	_e('Save Settings to Site Host Filesystem', 'weaver-xtreme');
+	echo '</h3><p>';
+	_e("You can also save and restore your settings to the Site's Host filesystem. Open the <em>Appearance:Weaver Xtreme Admin:Save/Restore</em> tab to see the options to Save/Restore settings to the host filesystem. (requires free Weaver Theme Support Plugin)" , 'weaver-xtreme');
 	}
 
 	}
@@ -391,8 +395,8 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 			update_option('weaverx_settings',$new_cache);
 
-			$save_dir = weaverx_f_uploads_base_dir() . 'weaverx-subthemes';
-			$usename = 'style-weaverxt.css';
+			$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
+			$usename = WEAVERX_STYLE_FILE;
 			$filename = $save_dir . '/'. $usename;
 			@unlink($filename);
 
@@ -402,6 +406,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 				require_once(get_template_directory() . '/includes/generatecss.php');
 				weaverx_fwrite_current_css();
 			}
+			do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
 		}
 
 		return true;
@@ -619,8 +624,8 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 
 		update_option('weaverx_settings',$new_cache);
 
-		$save_dir = weaverx_f_uploads_base_dir() . 'weaverx-subthemes';
-		$usename = 'style-weaverxt.css';
+		$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
+		$usename = WEAVERX_STYLE_FILE;
 		$filename = $save_dir . '/'. $usename;
 		@unlink($filename);
 
@@ -630,6 +635,7 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 			require_once(get_template_directory() . '/includes/generatecss.php');
 			weaverx_fwrite_current_css();
 		}
+		do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
 
 		return true;
 	}

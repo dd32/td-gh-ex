@@ -434,7 +434,13 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 			'visibility-posts-misc-heading' => weaverx_cz_group_title( __( 'Other Post Visibility Options', 'weaver-xtreme' )),
 
-			'hide_post_format_icon' => array(
+			'hide_post_format_icon' => weaverx_cz_checkbox_refresh(
+				__( 'Hide Post Format Icons', 'weaver-xtreme' ),
+				__( 'Hide the icons for posts with Post Format specified.', 'weaver-xtreme' ),
+				'plus'),
+
+
+			/*array(
 				'setting' => array(
 					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 				),
@@ -444,7 +450,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					'description' => __( 'Hide the icons for posts with Post Format specified.', 'weaver-xtreme' ),
 					'type'  => 'checkbox',
 				),
-			),
+			), */
 
 			'show_comments_closed' => weaverx_cz_checkbox_refresh(
 				__( 'Show "Comments are closed"', 'weaver-xtreme' ),

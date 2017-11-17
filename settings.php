@@ -18,11 +18,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','3.1.1');
+define ('WEAVERX_VERSION','3.1.10');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
-define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);
-define ('WEAVERX_MIN_WPVERSION','4.5');
+define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION );
+define ('WEAVERX_MIN_WPVERSION','4.6');
 
 define('WEAVERX_LEVEL_BEGINNER', 1);
 define('WEAVERX_LEVEL_INTERMEDIATE', 5);
@@ -46,7 +46,11 @@ define ('WEAVERX_GOOGLE_FONTS_URL',"https://fonts.googleapis.com/css?family=Open
 
 define ('WEAVERX_GOOGLE_FONTS', "<link href='" . WEAVERX_GOOGLE_FONTS_URL . "' rel='stylesheet' type='text/css'>");
 
+// Weaver theme directories and generated files
+
 define ('WEAVERX_ADMIN_DIR', '/admin/admin-core');
+define ('WEAVERX_SUBTHEMES_DIR','weaverx-subthemes');
+define ('WEAVERX_STYLE_FILE', 'style-weaverxt.css');
 
 define ('WEAVERX_MINIFY','.min');	// dev: '', production: '.min'
 ?>

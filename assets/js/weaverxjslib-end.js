@@ -1,4 +1,4 @@
-/*! Weaver Xtreme JavaScript Library 3.0 - Copyright 2016, Weaver Theme + Copyrights of sub-scripts */
+/*! Weaver Xtreme JavaScript Library 3.1 - Copyright 2016,2017, Weaver Theme + Copyrights of sub-scripts */
 /* Weaver Xtreme FitVids - added to end of page html. If add more than FitVids, need to fix
  * how _disable_FitVids works.
  * */
@@ -84,6 +84,20 @@
     };
     // Works with either jQuery or Zepto
 })(window.jQuery || window.Zepto);
+
+// TABS - put in front to make show faster
+
+jQuery(document).ready(function($) {		// self-defining function - for tabs shortcode
+    // Tabs
+	$('.wvr-tabs-nav').delegate('span:not(.wvr-tabs-current)', 'click', function() {
+		$(this).addClass('wvr-tabs-current').siblings().removeClass('wvr-tabs-current')
+		.parents('.wvr-tabs').find('.wvr-tabs-pane').hide().eq($(this).index()).show();
+	});
+	$('.wvr-tabs-pane').hide();
+	$('.wvr-tabs-nav span:first-child').addClass('wvr-tabs-current');
+	$('.wvr-tabs-panes .wvr-tabs-pane:first-child').show();
+
+});
 
 /* -------------------------
 	support [showhide]
@@ -234,6 +248,28 @@ function wvrxFlowColor() {
             }
         }
     }
+}
+
+// fix up vw widths
+
+function weaverxScrollbarClass() {
+
+    //detect vertical Scrollbar and add a class to the body tag
+
+    var BrowserWidth = jQuery('#wvrx-page-width').width(); //width of browser
+
+    jQuery('#wvrx-page-width').css('width', '100vw'); //change width to 100vw to measure viewport
+
+    var expandWidth = jQuery('#wvrx-page-width').width(); //Width of the Expanded container (viewport)
+
+    if (expandWidth > BrowserWidth) { //If viewport is larger there is a scrollbar
+        jQuery('body').addClass('vert-scrollbar');
+        jQuery('body').removeClass('no-vert-scrollbar');
+    } else {
+        jQuery('body').addClass('no-vert-scrollbar');
+        jQuery('body').removeClass('vert-scrollbar');
+    }
+    jQuery('#wvrx-page-width').css('width', ''); //remove vw CSS on test container
 }
 
 /*	-------------------------------------------------------------------------------
@@ -426,27 +462,6 @@ function weaverxWidgetEq(WdgtClass, AreaId) {
     }
 }
 
-// fix up vw widths
-
-function weaverxScrollbarClass() {
-
-    //detect vertical Scrollbar and add a class to the body tag
-
-    var BrowserWidth = jQuery('#wvrx-page-width').width(); //width of browser
-
-    jQuery('#wvrx-page-width').css('width', '100vw'); //change width to 100vw to measure viewport
-
-    var expandWidth = jQuery('#wvrx-page-width').width(); //Width of the Expanded container (viewport)
-
-    if (expandWidth > BrowserWidth) { //If viewport is larger there is a scrollbar
-        jQuery('body').addClass('vert-scrollbar');
-        jQuery('body').removeClass('no-vert-scrollbar');
-    } else {
-        jQuery('body').addClass('no-vert-scrollbar');
-        jQuery('body').removeClass('vert-scrollbar');
-    }
-    jQuery('#wvrx-page-width').css('width', ''); //remove vw CSS on test container
-}
 
 // full_browser_height
 
@@ -497,9 +512,11 @@ function weaverxResizeEnd() {
 }
 
 function weaverxBrowserResizeEnd() {
-    //New function for things that need to use the monitoring of  the browser width with #wvrx-page-width
+    // New function for things that need to use the monitoring of  the browser width with #wvrx-page-width
 
-    if (jQuery('.wvrx-fullwidth,.wvrx-expand-full').length) { //Only start monitoring if the class is being used
+	weaverxScrollbarClass(); // Fixup scroll bar width for expanded areas
+
+    if (jQuery('.wvrx-fullwidth,.wvrx-expand-full').length) { // Only start monitoring if the class is being used
         weaverxFullWidth(); // run full width script
     }
     if (wvrxEndOpts.full_browser_height == '1')
@@ -507,8 +524,6 @@ function weaverxBrowserResizeEnd() {
 
     if (typeof(weaverxUserOnResize) == 'function') // call user function if there
         weaverxUserOnResize();
-
-    weaverxScrollbarClass(); // Fixup scroll bar width for expanded areas
 }
 
 // Invoke scripts
@@ -618,7 +633,7 @@ For a custom background color and height change add
 */
 
 //Primary Only
-if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix')) {
+if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix') && ($('#nav-primary').length) ) {
     $(window).scroll(function() {
 		var wvrxAdminOffset = 0; //initialize offset for admin bar
 		var wvrxFixedOffset = 0;
@@ -649,7 +664,7 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'sc
 }
 
 //Secondary only
-if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'scroll-fix')) {
+if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'scroll-fix') && ($('#nav-secondary').length) ) {
     $(window).scroll(function() {
 		var wvrxAdminOffset = 0; //initialize offset for admin bar
 		var wvrxFixedOffset = 0;
@@ -680,7 +695,8 @@ if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'sc
 }
 
 //Primary & Secondary fixed
-if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'scroll-fix')) {
+if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'scroll-fix')
+	&& ($('#nav-primary').length) && ($('#nav-secondary').length) ) {
     //Scrool loop
     $(window).scroll(function() {
     	var wvrxAdminOffset = 0; //initialize offset for admin bar
@@ -731,6 +747,4 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'sc
         }
     });
 }
-
-
 });

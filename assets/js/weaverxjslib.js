@@ -355,6 +355,15 @@ if (!Object.create) { // IE8 shim for Object.create
             menu.toggleButton.on('click', function() {
                 menu.el.toggleClass(mo.hideMobileClass);
             });
+
+
+			// Add listener to the menu items to close mobile menu when an item is clicked.
+			// Useful if menu items link to anchors in the same page and therefore do not load a new page
+			menu.el.find('a').click(function() {
+				if( $(this).children('span.toggle-submenu').length === 0 ) { //dont close mobile menu when clicking to open a sub menu
+						menu.el.toggleClass(mo.hideMobileClass);
+				}
+			});
         },
 
         /**
@@ -515,18 +524,22 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
         }
         multiTop = multiTop + curHeight;
 
+		// calc widget area before primary since this is the most common case.
+		// Widget area always after fixed top secondary menu and before fixed top primary menu
+
+		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
+        if (curHeight > 0) {
+            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
+        }
+        multiTop = multiTop + curHeight;
+
+
         curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight();
         if (curHeight > 0) {
             $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop);
         }
         multiTop = multiTop + curHeight;
 
-
-        curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
-        if (curHeight > 0) {
-            $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
-        }
-        multiTop = multiTop + curHeight;
 
         if (multiTop > 0) {
             $('body').css('margin-top', multiTop); // now maker room for the top fixed areas

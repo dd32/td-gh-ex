@@ -484,13 +484,13 @@ function weaverx_customizer_add_section_options( $section, $args, $initial_prior
 
 			//$class_setting = 'WeaverX_Customize_Setting';
 
-			if (version_compare($cur_vers, '4.4', '<')) {
-				$class_setting = 'WeaverX_Customize_Setting';
-			} else {
-				$class_setting = 'WP_Customize_Setting';
-			}
+			//if (version_compare($cur_vers, '4.4', '<')) {
+			//	$class_setting = 'WeaverX_Customize_Setting';
+			//} else {
+			//	$class_setting = 'WP_Customize_Setting';
+			//}
 
-			$wp_customize->add_setting( new $class_setting( $wp_customize, weaverx_cz_settings_name( $setting_id ),
+			$wp_customize->add_setting( new WP_Customize_Setting( $wp_customize, weaverx_cz_settings_name( $setting_id ),
 				array(
 				'type'                 => $setting['type'],
 				'capability'           => $setting['capability'],
@@ -501,8 +501,6 @@ function weaverx_customizer_add_section_options( $section, $args, $initial_prior
 				'sanitize_js_callback' => $setting['sanitize_js_callback'],
 			) ));
 
-			//$wp_customize->add_setting( weaverx_cz_settings_name( $setting_id ),
-			//		$usesetting);
 		}
 
 		// Add control
@@ -641,6 +639,7 @@ function weaverx_cz_getdefaults() {
 	foreach ($opts as $opt => $val) {
 		$ret[$opt] = $val;
 	}
+	do_action('weaverx_force_plus_inline_css', $ret);
 	return $ret;
 }
 

@@ -317,7 +317,7 @@ msgstr "Neuere Kommentare &rarr;"
 
 #. Text in function
 #: weaver-ii-pro/functions.php:583
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts<span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
 
 #. Text in function

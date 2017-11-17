@@ -16,6 +16,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 <div id="weaver-final" class="weaver-final-raw">
 <?php
 	wp_footer();
+	weaverx_end_body();
 ?>
 </div> <!-- #weaver-final -->
 </body>

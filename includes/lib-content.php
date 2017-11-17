@@ -423,7 +423,7 @@ if ( ! function_exists( 'weaverx_posted_in' ) ) {
 function weaverx_posted_in($type='') {
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- * Create your own weaverx_posted_on to override in a child theme
+ * Create your own weaverx_posted_in to override in a child theme
  */
 
 	if (weaverx_getopt_checked('post_info_hide_bottom')
@@ -663,7 +663,7 @@ function weaverx_single_title( $title = '' ) {
 if ( ! function_exists( 'weaverx_fi' ) ) {
 function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
-	// $who includes: post, page, post_excerpt,post_ful
+	// $who includes: post, page, post_excerpt, post_full
 
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
@@ -740,7 +740,8 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 				break;
 		}
 
-		echo "{$before}{$selector}{ {$style} }{$after}\n";
+		// echo "{$before}{$selector}{ {$style} }{$after}\n";
+		weaverx_inline_style( "{$before}{$selector}{ {$style} }{$after}\n", 'weaverx-fi:lib-content.php' );
 
 
 		return true;
@@ -782,7 +783,8 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 
 		$size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
 		// weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);
-		if (get_post_thumbnail_id()) {
+
+		if ( get_post_thumbnail_id() ) {
 			if ( ($href = weaverx_get_per_post_value( '_pp_fi_link' )) == '' ) {        // per page link override?
 				if ( $who == 'post_excerpt') {
 					$href = esc_url( get_permalink() );
@@ -792,9 +794,14 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 				}
 			}
 
-			echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
-			the_post_thumbnail( $size, $attr );
-			echo "</a>\n";
+			$fi_img = get_the_post_thumbnail(null, $size, $attr );
+
+			$fi_after = apply_filters( 'weaverx_fi_after', '' );		// added 3.1.10
+
+			$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
+
+			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who, $fi_after);  // Added 3.1.5; Changed 3.1.11 to add the $fi_after
+
 			if ( $show == 'title-banner' )
 				echo '<div style="clear:both;"></div>';
 			return false;
@@ -817,8 +824,8 @@ function weaverx_the_page_content( $who = '' ) {
 
 function weaverx_the_contnt(  ) {
 	if ( (weaverx_is_checked_page_opt('_pp_raw_html') && !weaverx_t_get('showposts')) || weaverx_is_checked_post_opt('_pp_raw_html') ) {
-		remove_filter ('the_content', 'wpautop');
-		remove_filter ('the_content', 'wptexturize');
+		remove_filter('the_content', 'wpautop');
+		remove_filter('the_content', 'wptexturize');
 	}
 	the_content(weaverx_continue_reading_link());
 }
@@ -964,7 +971,20 @@ function weaverx_do_excerpt() {
 }
 //--
 
+function weaverx_inline_style( $style, $who ) {
+	/* if ( !isset($GLOBALS['weaverx_end_style']) )
+		$GLOBALS['weaverx_end_style'] = '';
+	$GLOBALS['weaverx_end_style'] .= $style . " <!-- {$who} -->\n";
+	*/
+	echo $style;
+}
 
+function weaverx_end_body() {
+	return;	// for now...
+	if ( !isset($GLOBALS['weaverx_end_style']) )
+		return;
+	echo $GLOBALS['weaverx_end_style'];
+}
 
 function weaverx_author_info() {
 	if ( get_the_author_meta( 'description' ) && !weaverx_getopt('hide_author_bio')) { // If a user has filled out their description, show a bio on their entries ?>
@@ -1000,7 +1020,7 @@ function weaverx_auto_excerpt_more( $more ) {
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  */
-	return ' &hellip;' . weaverx_continue_reading_link();
+	return ' <span class="excerpt-dots">&hellip;</span>' . weaverx_continue_reading_link();
 }
 
 add_filter( 'excerpt_more', 'weaverx_auto_excerpt_more' );

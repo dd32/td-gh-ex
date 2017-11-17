@@ -2,13 +2,6 @@
 //Bug fixes and added resize arrow buttons for the customizer
 //Below the onlclick open function for Sections, uncollapses if collapsed, switches to customize if in preview mode on small screens
 function wvrxSelectOptions(optionPanel) {
-    if (jQuery('.wp-full-overlay').hasClass('collapsed')) { //if customizer is collapsed, expand before loading panel. !!Check if API method exist
-        jQuery('.wp-full-overlay').removeClass('collapsed');
-        jQuery('.wp-full-overlay').addClass('expanded');
-    };
-    if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
-        jQuery('.wp-full-overlay').removeClass('preview-only');
-    };
 
     jQuery('.accordion-section.current-panel').css('width', '300px'); // hack for Customizer's bad width calculation
     wp.customize.section(optionPanel).focus(); //Open the clicked section
@@ -22,13 +15,6 @@ function wvrxSelectOptions(optionPanel) {
 
 //Below the onlclick open function for Panels, uncollapses if collapsed, switches to customize if in preview mode on small screens
 function wvrxSelectPanel(tabPanel) {
-    if (jQuery('.wp-full-overlay').hasClass('collapsed')) { //if customizer is collapsed, expand before loading panel. !!Check if API method exist
-        jQuery('.wp-full-overlay').removeClass('collapsed');
-        jQuery('.wp-full-overlay').addClass('expanded');
-    };
-    if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
-        jQuery('.wp-full-overlay').removeClass('preview-only');
-    };
 
     wp.customize.panel(tabPanel).focus(); //Open the clicked panel
 
@@ -41,43 +27,20 @@ function wvrxjumpmenuOpen() {
         //Check if the mouse is still over when the delay expires
         if (jQuery('#wx-jump').is(":hover")) {
             jQuery('#wx-jumpmenu').css('display', 'block');
-        };
-    };
+        }
+    }
     setTimeout(wvrxOpen, 500);
 };
 
 function wvrxjumpmenuClose() {
     //For some weird reason, if we dont delay the close, the menu closes when we move from the button to the actual menu Probably a discontinuity issue in the hover
     function wvrxClose() {
-        if (jQuery('#wx-jump').is(":hover") == false) {
+        if (jQuery('#wx-jump').is(":hover") === false) {
             jQuery('#wx-jumpmenu').css('display', 'none');
-        };
-    };
+        }
+    }
     setTimeout(wvrxClose, 700);
-};
-
-//Below the function for the buttons allowing to enlarge or reduce the width of the customizer
-function wvrxGrow() {
-    jQuery('.wp-full-overlay-sidebar').css('width', '400px');
-    jQuery('.wp-full-overlay.expanded').css('margin-left', '400px');
-    jQuery('#wx-resize .wx-shrink').css('display', 'inline'); //show the left (Shrink) arrow
-    jQuery('#wx-resize .wx-grow').css('display', 'none'); //Hide the right (Grow) arrow
-    if (jQuery('body.rtl').length) {
-        jQuery('.wp-full-overlay.expanded').css('margin-left', '0px');
-        jQuery('.wp-full-overlay.expanded').css('margin-right', '400px');
-    };
-};
-
-function wvrxShrink() {
-    jQuery('.wp-full-overlay-sidebar').css('width', '300px');
-    jQuery('.wp-full-overlay.expanded').css('margin-left', '300px');
-    jQuery('#wx-resize .wx-shrink').css('display', 'none'); //Hide the Left (Shrink) Arrow
-    jQuery('#wx-resize .wx-grow').css('display', 'inline'); //Show the Right (Grow) Arrow
-    if (jQuery('body.rtl').length) {
-        jQuery('.wp-full-overlay.expanded').css('margin-left', '0px');
-        jQuery('.wp-full-overlay.expanded').css('margin-right', '300px');
-    };
-};
+}
 
 /* function wvrxRefresh() {
 	alert('refresh');
@@ -95,8 +58,6 @@ jQuery(".customize-panel-description").append(" \
 
 jQuery("#customize-header-actions").prepend(" \
 <div id='wx-loading'>&nbsp;" + wvrxCM.loadingMsg + "</div> \
-<!-- Resize buttons --> \
-<div id='wx-resize'><span onclick=\"wvrxShrink()\" class=\"wx-shrink dashicons dashicons-arrow-left-alt2\"></span><span onclick=\"wvrxGrow()\" class=\"wx-grow dashicons dashicons-arrow-right-alt2\"></span></div> \
 <!-- Menus --> \
 <div onmouseover=\"wvrxjumpmenuOpen();\" onmouseout=\"wvrxjumpmenuClose();\" id='wx-jump'> \
 <span class='dashicons dashicons-menu' style='color:#298cba;background-color:#dadada;margin:6px 10px 10px 0px;padding:6px;border:1px solid grey;font-weight:bold;border-radius:4px;'>&nbsp;</span> \
@@ -443,8 +404,5 @@ jQuery('.customize-controls-preview-toggle').css('left', '110px');
 if (jQuery('body.rtl').length) {
     jQuery('.customize-controls-preview-toggle').css('left', '');
     jQuery('.customize-controls-preview-toggle').css('right', '110px');
-};
+}
 
-if (jQuery(window).outerWidth() > 1500) {
-    wvrxGrow();
-};

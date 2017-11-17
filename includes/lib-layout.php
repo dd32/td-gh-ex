@@ -361,7 +361,14 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	get_header( $who );
 
-	if ( $archive )
+	if ($who == 'woocommerce') {
+		$body_classes = get_body_class();
+		if ( in_array('single-product', $body_classes) ) {	// Single product page - treat as page
+			$sb_layout = weaverx_sb_layout( $who );
+		} else {		// Archive like page
+			$sb_layout = weaverx_sb_layout_archive( $who );
+		}
+	} elseif ( $archive )
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	else
 		$sb_layout = weaverx_sb_layout( $who );
@@ -476,13 +483,15 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 
 	// weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
 
-	if ( $layout == 'default' ) {
-		$layout = weaverx_getopt( 'layout_default' );
-		if ( !$layout )
-			$layout = 'right';  // fallback
+	if ( $who == 'woocommerce' ) {
+		$layout = weaverx_getopt( 'layout_page' , 'default');
 	}
 
-	return $layout;
+	if ( $layout == 'default' ) {
+		$layout = weaverx_getopt( 'layout_default', 'right' );
+	}
+
+	return apply_filters('weaverx_sb_layout', $layout, $who);
 }
 //--
 
@@ -511,7 +520,7 @@ function weaverx_sb_layout_archive( $who ) {
 		}
 	}
 
-	return $layout;
+	return apply_filters('weaverx_sb_layout_archive', $layout, $who);
 }
 //---
 
@@ -655,7 +664,7 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return;
 	}		// hide area option checked
 
@@ -737,7 +746,9 @@ function weaverx_add_widget_classes( $params ) {
 		}
 	}
 
-	$cols = weaverx_getopt_default( $opt_name . '_cols_int', 1);
+	$cols = weaverx_getopt( $opt_name . '_cols_int');
+	if ( !$cols || $cols < 1 )
+		$cols = 1;
 	if ( $cols > 8 )
 		$cols = 8;     // sanity check
 
@@ -873,7 +884,7 @@ function weaverx_has_widgetarea( $area_name ) {
 
 	$area = apply_filters('weaverx_replace_widget_area', $area_name);
 
-	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return false;		// hide area option checked
 	}
 

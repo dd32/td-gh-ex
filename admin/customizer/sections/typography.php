@@ -232,10 +232,13 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 
 			),
 		),
+
 	);
 
-	$new_opts = weaverx_cz_add_fonts('wrapper', __('Site Wrapper &amp; Container Fonts', 'weaver-xtreme'),
-		__('Default (wrapper) typography for site. Set font attributes here that will apply to the entire site. To override other items, set typography for individual items on other panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme'), 'postMessage');
+
+
+	$new_opts = weaverx_cz_add_fonts('wrapper', __('Site Wrapper', 'weaver-xtreme'),
+		__('<span style="font-size:150%;font-weight:bold;color:red;">Default typography for site.</span> Set font attributes for the Wrapper that will apply to the entire site. To override other areas, set typography for individual areas and items on other Typography menu panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme'), 'postMessage');
 	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
 
 	$new_opts = weaverx_cz_add_fonts('container', __('Container Fonts', 'weaver-xtreme'),

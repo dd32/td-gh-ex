@@ -28,7 +28,7 @@ function weaverx_f_file_access_available() {
 }
 
 function weaverx_f_open($fn, $how) {
-	// 'php://output'
+	// 'php://output' - legacy value, 'echo' is current standard (Changed: 3.1.10)
 	if ($fn == 'php://output' || $fn == 'echo')
 		return 'echo';
 	if ($fn == 'wvrx_css_saved') {
@@ -42,7 +42,7 @@ function weaverx_f_open($fn, $how) {
 }
 
 function weaverx_f_write($fn,$data) {
-	if ($fn == 'echo' || $fn == 'php://output') {
+	if ($fn == 'echo') {
 		echo $data;
 		return true;
 	} else if ($fn == 'wvrx_css_saved') {
@@ -54,7 +54,7 @@ function weaverx_f_write($fn,$data) {
 }
 
 function weaverx_f_close($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return true;
 	else if (function_exists('weaverxplus_f_close'))
 		return weaverxplus_f_close( $fn );
@@ -63,7 +63,7 @@ function weaverx_f_close($fn) {
 }
 
 function weaverx_f_delete($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return true;
 	if (function_exists('weaverxplus_f_delete'))
 		return weaverxplus_f_delete( $fn );
@@ -71,7 +71,7 @@ function weaverx_f_delete($fn) {
 }
 
 function weaverx_f_is_writable($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return true;
 	if (function_exists('weaverxplus_f_is_writable'))
 		return weaverxplus_f_is_writable( $fn );
@@ -79,7 +79,7 @@ function weaverx_f_is_writable($fn) {
 }
 
 function weaverx_f_touch($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return true;
 	if (function_exists('weaverxplus_f_touch'))
 		return weaverxplus_f_touch( $fn );
@@ -87,7 +87,7 @@ function weaverx_f_touch($fn) {
 }
 
 function weaverx_f_mkdir($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return false;
 	if (function_exists('weaverxplus_f_mkdir'))
 		return weaverxplus_f_mkdir( $fn );
@@ -96,7 +96,7 @@ function weaverx_f_mkdir($fn) {
 
 function weaverx_f_exists($fn) {
 	// this one must use native PHP version since it is used at theme runtime as well as admin
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return true;
 	if (function_exists('weaverxplus_f_exists'))
 		return weaverxplus_f_exists( $fn );
@@ -104,7 +104,7 @@ function weaverx_f_exists($fn) {
 }
 
 function weaverx_f_get_contents($fn) {
-	if ($fn == 'php://output' || $fn == 'echo')
+	if ($fn == 'echo')
 		return '';
 	if (function_exists('weaverxplus_f_get_contents'))
 		return weaverxplus_f_get_contents( $fn );

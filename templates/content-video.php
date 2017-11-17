@@ -29,7 +29,7 @@ weaverx_per_post_style();
 
 	weaverx_post_div('content');
 	weaverx_the_post_full();
-	weaverx_link_pages();
+	weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 <?php

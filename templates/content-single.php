@@ -17,7 +17,8 @@ weaverx_fi( 'post', 'post-pre' );
 	<?php weaverx_single_title( '' );
 	weaverx_post_div('content');
 	weaverx_the_post_full_single();
-	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
+	weaverx_link_pages();	// <!--nextpage-->
+	?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-utility entry-author-info">

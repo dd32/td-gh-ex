@@ -48,8 +48,6 @@ if ( ! function_exists( 'weaverx_setup' ) ) {
  */
 function weaverx_setup() {
 
-	// Set the content width based on the theme's design and stylesheet.
-
 	if ( ! isset( $content_width ) )
 		$content_width = (int)(WEAVERX_THEME_WIDTH * .75);   // 1100 * .75 - default for content with a sidebar
 
@@ -66,32 +64,25 @@ function weaverx_setup() {
 	add_editor_style( WEAVERX_GOOGLE_FONTS_URL ); // from settings.php - in %7C format
 
 
-	// Add default posts and comments RSS feed links to <head>.
-	add_theme_support( 'automatic-feed-links' );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	// ******** add theme support possibilities ********
 
 
-	// html5 for search
+	add_theme_support( 'automatic-feed-links' );					// Add default posts and comments RSS feed links to <head>.
 
-	add_theme_support( 'html5', array(  'search-form' ) );
 
-	// Weaver Xtreme supports two main nav menus
-	register_nav_menus( array(
-		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
-		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme' /*adm*/),
-		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/)
-	) );
+	add_theme_support( 'customize-selective-refresh-widgets' );	// Add theme support for selective refresh for widgets.
 
-	// Add support for a variety of post formats
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'gallery',  'image', 'link', 'quote', 'status','video') );
 
-	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'html5', array(  'search-form' ) );		// html5 for search
 
-	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'gallery',
+					   'image', 'link', 'quote', 'status','video') );	// Add support for a variety of post formats
+						// not supported: chat
+
+	add_theme_support( 'post-thumbnails' );						// Featured Images
+
+	add_theme_support( 'title-tag' );							//
 
 	// now, need Weaver Xtreme settings available for everything else
 
@@ -148,6 +139,13 @@ function weaverx_setup() {
 	// ... and thus ends the changeable header business.
 	weaverx_register_header_images();
 
+	// Weaver Xtreme supports two main nav menus
+	register_nav_menus( array(
+		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
+		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme' /*adm*/),
+		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/)
+	) );
+
 }
 } // weaverx_setup
 //--
@@ -157,17 +155,23 @@ function weaverx_setup() {
 if ( ! function_exists('weaverx_init_opts')) {
 function weaverx_init_opts($who='') {
 	// this sets either the current settings, or the default values.
-		weaverx_clear_opt_cache('weaverx_init_opts');
 
-
+	weaverx_clear_opt_cache('weaverx_init_opts');	// start with a clear cache
 
 	$themename = weaverx_getopt('themename'); // load the theme from the db if there (weaverx_getopt loads the options if there)
+
 	if ($themename === false) {
 		require_once('includes/get-default-settings.php');  // load a set of defaults
 		weaverx_get_default_settings();
 	}
 
-	do_action('weaverx_init_opts');
+
+	// Keep some info for max_input_vars detection. These have to be collected here because the
+	// WP settings API clears $_POST after the after_setup_theme action
+
+	$GLOBALS['WVRX_POSTS'] = count($_POST, COUNT_RECURSIVE);	// count all elements
+	$GLOBALS['WVRX_GETS'] = count($_GET, COUNT_RECURSIVE);
+	$GLOBALS['WVRX_COOKIES'] = count($_COOKIE, COUNT_RECURSIVE);
 }
 }
 //--
@@ -200,7 +204,6 @@ function weaverx_register_header_images() {
 if ( ! function_exists( 'weaverx_admin_header_style' ) ) {
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
- * @since Weaver Xtreme 1.0
  */
 function weaverx_admin_header_style() {
 ?>
@@ -358,7 +361,7 @@ function weaverx_enqueue_styles() {
 //--
 
 
-add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts' );
+add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );	// early priority so load before most other scripts (added: 3.1.7)
 
 function weaverx_enqueue_scripts() {	// action definition
 
@@ -391,11 +394,10 @@ function weaverx_enqueue_scripts() {	// action definition
 		$altsw = '767';
 	$altLabel = weaverx_getopt('mobile_alt_label');
 
-	global $weaverx_cur_page_ID;
 	global $post;
 
-	if (!$weaverx_cur_page_ID && is_object($post))
-		$weaverx_cur_page_ID = get_the_ID();			// this must go before weaverx_get_video_render() call
+	if (!weaverx_get_cur_page_id() && is_object($post))
+		weaverx_set_cur_page_id( get_the_ID() );			// this must go before weaverx_get_video_render() call
 
 	$local = array(
 		'useSmartMenus' => $useSM,
@@ -479,7 +481,7 @@ function weaverx_render_infinite_scroll() {
 	/* Start the Loop */
 
 	weaverx_post_count_clear();
-	echo ("<div class=\"wvrx-posts\">\n");
+	echo '<div class="wvrx-posts" style="clear:both;">';
 
 	while ( have_posts() ) {
 		the_post();
@@ -523,9 +525,10 @@ function weaverx_render_infinite_scroll() {
 		weaverx_masonry('end-post');
 	}	// end while have posts
 	weaverx_masonry('end-posts');
-	echo ("</div>\n");
+	echo "</div><div style='clear:both;'>\n";	// fix 3.1.3
 
 }
+
 
 /**
  * Increase the maximum image width to be included in a 'srcset' attribute.
@@ -557,6 +560,9 @@ function weaverx_woo_wrapper_end() {
 }
 
 add_theme_support( 'woocommerce' );
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 // THE END OF functions.php
 ?>
