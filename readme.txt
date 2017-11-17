@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.6.6
+1. Update screen reader css.
 @version 1.6.5
 1. Added demo image preview on wordpress.org
 @version 1.6.4
