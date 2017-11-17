@@ -221,3 +221,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 = Version 1.6.2 =
 * Improved Javascript file
 * Minor bug fixes
+
+= Version 1.6.3 =
+* Minor bug fixes

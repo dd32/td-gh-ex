@@ -19,7 +19,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blogghiamo' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div class="theTop">
 			<div class="site-branding">
 				<?php
@@ -52,7 +52,7 @@
 			$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 		?>
 
-			<div class="socialLine" role="navigation">
+			<div class="socialLine">
 				<?php if (!empty($facebookURL)) : ?>
 					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'blogghiamo' ); ?>"><i class="fa fa-facebook spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
@@ -115,7 +115,7 @@
 			</div>
 			<?php if ( $hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' ) ); ?>">
+						<form method="get" id="searchform" action="<?php echo esc_url(home_url( '/' ) ); ?>">
 							<label>
 								<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'blogghiamo' ); ?></span>
 								<input type="search" name="s" class="search" placeholder="<?php esc_attr_e('Type here and hit enter...', 'blogghiamo'); ?>">
@@ -124,7 +124,7 @@
 				</div>
 			<?php endif; ?>
 		</div>
-			<nav id="site-navigation" class="main-navigation smallPart" role="navigation">
+			<nav id="site-navigation" class="main-navigation smallPart">
 				<button class="menu-toggle"><?php esc_html_e( 'Menu', 'blogghiamo' ); ?><i class="fa fa-align-justify"></i></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->

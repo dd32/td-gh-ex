@@ -20,7 +20,7 @@ function blogghiamo_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'blogghiamo' ); ?></h2>
 		<div class="nav-links">
 			<?php
