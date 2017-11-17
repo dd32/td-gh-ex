@@ -45,7 +45,6 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
           <?php the_post(); ?>
           <?php get_template_part('template-parts/content', 'page'); ?>
           <?php endwhile; ?>
-          
         </div>
         <?php avata_get_sidebar($sidebar, 'page'); ?>
       </div>

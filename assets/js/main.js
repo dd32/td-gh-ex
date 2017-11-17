@@ -124,6 +124,7 @@ $('#lightgallery').lightGallery();
 $('.avate-video-container').lightGallery();
 
 /*testimonial*/
+
 var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
 			items: 1,
@@ -133,7 +134,8 @@ var owl = $('.owl-carousel-fullwidth');
 			nav: false,
 			dots: true,
 			smartSpeed: 500,
-			autoHeight: true
+			autoHeight: true,
+			pullDrag: false,
 	});
 
 $('.comment-form #submit').addClass('btn btn-md btn-primary');

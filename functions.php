@@ -214,8 +214,8 @@ function avata_enqueue_scripts() {
 		
 		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
 		
-		$css .= ".section-".$item."{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
-		//$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Hoo_Color::get_rgba( $background_color, $background_opacity ).";}";
+		$css .= ".section-".$item."{background-color:".Kirki_Color::get_rgba( $background_color, $background_opacity ).";}";
+		//$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Kirki_Color::get_rgba( $background_color, $background_opacity ).";}";
 		
 		if( $full_background_image == 'yes' || $full_background_image == '1' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
@@ -270,7 +270,7 @@ function avata_enqueue_scripts() {
     background-color: ".$nav_css3_color.";
 }
 .dotstyle li a{
-	background-color: ".Hoo_Color::get_rgba( $nav_css3_color, '0.3' ).";
+	background-color: ".Kirki_Color::get_rgba( $nav_css3_color, '0.3' ).";
 	}
 .dotstyle-scaleup li a:hover,
 .dotstyle-scaleup li a:focus,
@@ -286,7 +286,7 @@ function avata_enqueue_scripts() {
     box-shadow: inset 0 0 0 10px ".$nav_css3_color.";
 }
 .dotstyle-dotstroke li a {
-    box-shadow: inset 0 0 0 10px ".Hoo_Color::get_rgba( $nav_css3_color, '0.5' ).";
+    box-shadow: inset 0 0 0 10px ".Kirki_Color::get_rgba( $nav_css3_color, '0.5' ).";
 }
 .dotstyle-dotstroke li a:hover,
 .dotstyle-dotstroke li a:focus {
@@ -444,7 +444,7 @@ $css .=  ".btn-primary {
   color: ".$primary_color.";
 }";
 
-$css .=  ".work .overlay {background: ".Hoo_Color::get_rgba( $primary_color, '0.9' ).";}";
+$css .=  ".work .overlay {background: ".Kirki_Color::get_rgba( $primary_color, '0.9' ).";}";
 
 $side_nav_padding = avata_option('side_nav_padding');
 $css .=  ".dotstyle{
@@ -508,13 +508,21 @@ if ( ! function_exists( 'avata_extensions_enqueue' ) ) {
 }
 add_action( 'admin_enqueue_scripts', 'avata_extensions_enqueue' );
 
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function avata_customize_preview_js() {
-	wp_enqueue_script( 'avata-customizer', get_template_directory_uri() . '/assets/js/admin/customizer.js', array( 'jquery', 'customize-preview' ), '20170804', true );
-}
-add_action( 'customize_preview_init', 'avata_customize_preview_js' );
+
+function avata_customize_controls_enqueue(){
+	wp_enqueue_script( 'avata_library_customizer', get_template_directory_uri() . '/assets/js/admin/customizer-controls.js', array( 'customize-preview', 'jquery-ui-sortable', 'jquery-ui-autocomplete' ), '1.0.0', true );
+	}
+add_action( 'customize_controls_init', 'avata_customize_controls_enqueue' );
+
+function avata_customize_preview_enqueue(){
+	wp_enqueue_script( 'avata_library_customizer', get_template_directory_uri() . '/assets/js/admin/customizer-preview.js', array( 'jquery' ), '1.0.0', true );
+	
+	}
+add_action( 'customize_preview_init', 'avata_customize_preview_enqueue' );
 
 /**
  * Function to check if WordPress is greater or equal to 4.7
@@ -537,7 +545,7 @@ function avata_check_if_wp_greater_than_4_7() {
  */
 function avata_option($name,$default=''){
 	$textdomain = avata_get_option_name();
-	$return = Hoo_Values::get_value($textdomain,$name);
+	$return = Kirki_Values::get_value($textdomain,$name);
 	if( !$return && $default)
 		$return = $default;
 	return $return;
@@ -858,8 +866,8 @@ function avata_standard_fonts(){
 		
 add_filter( 'options-framework/fonts/standard_fonts', 'avata_standard_fonts' );
 
-require_once dirname( __FILE__ ) . '/options-framework/hoo.php';
-require_once dirname( __FILE__ ) . '/options-framework/options.php';
+require_once dirname( __FILE__ ) . '/lib/kirki/kirki.php';
+require_once dirname( __FILE__ ) . '/includes/options.php';
 require_once dirname( __FILE__ ) . '/includes/customizer.php';
 require_once dirname( __FILE__ ) . '/includes/breadcrumbs.php';
 require_once dirname( __FILE__ ) . '/includes/template-parts.php';
