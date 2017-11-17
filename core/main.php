@@ -522,7 +522,7 @@ if (!function_exists('lookilite_scripts_styles')) {
 
 	function lookilite_scripts_styles() {
 	
-		lookilite_enqueue_style('/inc/css');
+		lookilite_enqueue_style('/assets/css');
 
 		if ( ( lookilite_setting('lookilite_skin') ) && ( lookilite_setting('lookilite_skin') <> "turquoise" ) ):
 	
@@ -539,7 +539,7 @@ if (!function_exists('lookilite_scripts_styles')) {
 
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Fjalla+One|Roboto+Slab:400,300,100,700' );
 		
-		lookilite_enqueue_script('/inc/js');
+		lookilite_enqueue_script('/assets/js');
 	
 	}
 	
@@ -583,7 +583,7 @@ if (!function_exists('lookilite_setup')) {
 			'default-image' => get_template_directory_uri() . $background,
 		) );
 	
-		lookilite_require('/core/classes/');
+		lookilite_require('/core/includes/');
 		lookilite_require('/core/admin/customize/');
 		lookilite_require('/core/templates/');
 		lookilite_require('/core/functions/');
