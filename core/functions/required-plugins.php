@@ -33,18 +33,6 @@ if (!function_exists('diarjolite_required_plugins')) {
 				'required'  => false,
 			),
 	
-			array(
-				'name'      => 'Inline Related Posts',
-				'slug'      => 'intelly-related-posts',
-				'required'  => false,
-			),
-
-			array(
-				'name'      => 'Tracking Code Manager',
-				'slug'      => 'tracking-code-manager',
-				'required'  => false,
-			),
-
 		);
 	
 		tgmpa( $plugins );

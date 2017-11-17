@@ -1,5 +1,9 @@
 Diarjo Lite Changelog
 
+- Version 1.1.7 - Released: 01.10.2017
+
+-- Edit  : Code optimized.
+
 - Version 1.1.6 - Released: 01.10.2017
 
 -- Fixed : Back to top button.

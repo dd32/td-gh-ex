@@ -10,7 +10,7 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'diarjolite_notice_userid_' . get_current_user_id() , TRUE ) ) {
+			if ( !get_user_meta( get_current_user_id(), 'diarjolite_userID_notice_' . get_current_user_id() , TRUE ) ) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
@@ -26,7 +26,7 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 		 */
 
 		public function update_dismiss() {
-			delete_metadata( 'user', null, 'diarjolite_notice_userid_' . get_current_user_id(), null, true );
+			delete_metadata( 'user', null, 'diarjolite_userID_notice_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -37,7 +37,7 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 		
 			if ( isset( $_GET['diarjolite-dismiss'] ) ) {
 		
-				update_user_meta( get_current_user_id(), 'diarjolite_notice_userid_' . get_current_user_id() , $_GET['diarjolite-dismiss'] );
+				update_user_meta( get_current_user_id(), 'diarjolite_userID_notice_' . get_current_user_id() , $_GET['diarjolite-dismiss'] );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 
@@ -55,7 +55,7 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
             <div class="update-nag notice diarjolite-notice">
             
             	<div class="diarjolite-noticedescription">
-                    <strong><?php _e( 'Upgrade to the premium version of Diarjo, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjo-lite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Diarjo for only €1, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjo-lite' ); ?></strong><br/>
 
 					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','diarjo-lite'), esc_url( '?diarjolite-dismiss=1' ) ); ?>
                 </div>
