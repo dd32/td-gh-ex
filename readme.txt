@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.9.3
+1. Update screen reader css.
 @version 1.9.2
 1. Fixed toggle menu responsive issue.
 @version 1.9.1
