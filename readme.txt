@@ -51,6 +51,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.8
+1. Update screen reader css.
 @Version 1.7.7.9
 1. Make a top header part with html support.
 @Version 1.7.7.8
