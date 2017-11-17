@@ -520,7 +520,7 @@ class Elitepress_Repeater extends WP_Customize_Control {
 	private function testimonila_check($value='no'){
 		?>
 	<div class="customize-control-title">
-	<?php esc_html_e('Open link in new tab:','elitepress'); ?>
+	<?php esc_html_e('Open link in new tab','elitepress'); ?>
 	<span class="switch">
 	  <input type="checkbox" name="custom_checkbox" value="yes" <?php if($value=='yes'){echo 'checked';}?> class="customizer-repeater-checkbox">
 	</span>
@@ -537,7 +537,8 @@ class Elitepress_Repeater extends WP_Customize_Control {
                 <?php
                 echo sprintf(
 	                esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'elitepress' ),
-	                sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'elitepress' ) )
+	                sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow">%s</a>', 
+					'http://fontawesome.io/icons/')
                 ); ?>
             </span>
 			<div class="input-group icp-container">

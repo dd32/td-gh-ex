@@ -194,55 +194,55 @@
 	// Widget admin form
 	?>
 	<!-- Facebook Link -->
-	<h4 for="<?php echo $this->get_field_id( 'facebook_link' ); ?>"><?php _e( 'Facebook link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'facebook_link' ); ?>"><?php _e( 'Facebook URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'facebook_link' ); ?>" name="<?php echo $this->get_field_name( 'facebook_link' ); ?>" type="text" value="<?php if($facebook_link) echo esc_attr( $facebook_link ); ?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['facebook_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'facebook_target' ); ?>" name="<?php echo $this->get_field_name( 'facebook_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'facebook_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Twitter Link -->
-	<h4 for="<?php echo $this->get_field_id( 'twitter_link' ); ?>"><?php _e( 'Twitter link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'twitter_link' ); ?>"><?php _e( 'Twitter URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'twitter_link' ); ?>" name="<?php echo $this->get_field_name( 'twitter_link' ); ?>" type="text" value="<?php if($twitter_link) echo esc_attr( $twitter_link ); ?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['twitter_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'twitter_target' ); ?>" name="<?php echo $this->get_field_name( 'twitter_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'twitter_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Google-Plus Link -->
-	<h4 for="<?php echo $this->get_field_id( 'google_plus_link' ); ?>"><?php _e( 'Google-Plus link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'google_plus_link' ); ?>"><?php _e( 'Google-Plus URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'google_plus_link' ); ?>" name="<?php echo $this->get_field_name( 'google_plus_link' ); ?>" type="text" value="<?php if($google_plus_link) echo esc_attr( $google_plus_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['google_plus_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'google_plus_target' ); ?>" title=""name="<?php echo $this->get_field_name( 'google_plus_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'google_plus_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 
 	<!-- Lindedin Link -->
-	<h4 for="<?php echo $this->get_field_id( 'linkedin_link' ); ?>"><?php _e( 'Lindedin link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'linkedin_link' ); ?>"><?php _e( 'Lindedin URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin_link' ); ?>" name="<?php echo $this->get_field_name( 'linkedin_link' ); ?>" type="text" value="<?php if($linkedin_link) echo esc_attr( $linkedin_link ); ?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['linkedin_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'linkedin_target' ); ?>" name="<?php echo $this->get_field_name( 'linkedin_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'linkedin_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Instagram Link -->
-	<h4 for="<?php echo $this->get_field_id( 'instagram_link' ); ?>"><?php _e( 'Instagram link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'instagram_link' ); ?>"><?php _e( 'Instagram URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'instagram_link' ); ?>" name="<?php echo $this->get_field_name( 'instagram_link' ); ?>" type="text" value="<?php if($instagram_link) echo esc_attr( $instagram_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['instagram_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'instagram_target' ); ?>" name="<?php echo $this->get_field_name( 'instagram_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'instagram_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Youtube Link -->
-	<h4 for="<?php echo $this->get_field_id( 'youtube_link' ); ?>"><?php _e( 'Youtube link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'youtube_link' ); ?>"><?php _e( 'Youtube URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'youtube_link' ); ?>" name="<?php echo $this->get_field_name( 'youtube_link' ); ?>" type="text" value="<?php if($youtube_link) echo esc_attr( $youtube_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['youtube_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'youtube_target' ); ?>" name="<?php echo $this->get_field_name( 'youtube_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'youtube_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Skype Link -->
-	<h4 for="<?php echo $this->get_field_id( 'skype_link' ); ?>"><?php _e( 'Skype link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'skype_link' ); ?>"><?php _e( 'Skype URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'skype_link' ); ?>" name="<?php echo $this->get_field_name( 'skype_link' ); ?>" type="text" value="<?php if($skype_link) echo esc_attr( $skype_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['skype_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'skype_target' ); ?>" name="<?php echo $this->get_field_name( 'skype_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'skype_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Vimeo Link -->
-	<h4 for="<?php echo $this->get_field_id( 'vimeo_link' ); ?>"><?php _e( 'Vimeo link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'vimeo_link' ); ?>"><?php _e( 'Vimeo URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'vimeo_link' ); ?>" name="<?php echo $this->get_field_name( 'vimeo_link' ); ?>" type="text" value="<?php if($vimeo_link) echo esc_attr( $vimeo_link ); ?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['vimeo_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'vimeo_target' ); ?>" name="<?php echo $this->get_field_name( 'vimeo_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'vimeo_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 	
 	<!-- Dribble Link -->
-	<h4 for="<?php echo $this->get_field_id( 'dribble_link' ); ?>"><?php _e( 'Dribble link','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'dribble_link' ); ?>"><?php _e( 'Dribble URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'dribble_link' ); ?>" name="<?php echo $this->get_field_name( 'dribble_link' ); ?>" type="text" value="<?php if($dribble_link) echo esc_attr( $dribble_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['dribble_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'dribble_target' ); ?>" name="<?php echo $this->get_field_name( 'dribble_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'dribble_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>

@@ -5,7 +5,7 @@ function elitepress_blog_customizer( $wp_customize ){
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Blog settings','elitepress'),
+            'title' => __('Latest News Settings','elitepress'),
 			'priority'       => 800,)
     );	
 	

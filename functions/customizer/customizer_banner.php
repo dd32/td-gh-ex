@@ -8,7 +8,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'banner_page', array(
 		'priority'       => 900,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Banner setting', 'elitepress'),
+		'title'      => __('Banner settings', 'elitepress'),
 	) );
 	
 	/* Category Banner */

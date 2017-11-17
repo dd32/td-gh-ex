@@ -15,21 +15,6 @@ $wp_customize->add_section(
         )
     );
 	
-//Contact mail and number
-$wp_customize->add_setting(
-	'elitepress_lite_options[header_call_out_area_enabled]', array(
-        'default'        => true,
-        'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'type' => 'option',
-    ));
-	$wp_customize->add_control('elitepress_lite_options[header_call_out_area_enabled]', array(
-        'label'   => __('Enable header top call out area on front page.', 'elitepress'),
-        'section' => 'header_home_callout',
-        'type'    => 'checkbox',
-		'priority'   => 2,
-    )); // enable / disable home callout area
-	
 	//Header Top Call Out Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_title]', array(

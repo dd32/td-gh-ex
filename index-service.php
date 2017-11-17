@@ -147,7 +147,7 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 						<i class="<?php echo $icon[$i]; ?>"></i>
 					</div>
 					<h4 class="entry-title"><?php echo $title[$i]; ?></h4>
-				<p><?php echo _e('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'); ?></p>	
+				<p><?php echo 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.'; ?></p>	
 				</div>
 			</div>
 			<?php } 

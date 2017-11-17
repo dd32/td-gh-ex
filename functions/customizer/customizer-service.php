@@ -73,7 +73,7 @@ function elitepress_service_customizer( $wp_customize ) {
 				'label'                             => esc_html__( 'Service Content', 'elitepress' ),
 				'section'                           => 'service_section_head',
 				'priority'                          => 10,
-				'add_field_label'                   => esc_html__( 'Add new service', 'elitepress' ),
+				'add_field_label'                   => esc_html__( 'Add new Service', 'elitepress' ),
 				'item_name'                         => esc_html__( 'Service', 'elitepress' ),
 				'customizer_repeater_icon_control'  => true,
 				'customizer_repeater_title_control' => true,

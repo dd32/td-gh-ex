@@ -38,7 +38,7 @@
 <?php if ( have_comments() ) { ?>
 
 <div class="comment-section">
-	<div class="comment-title"><h3></i> <?php comments_number ( __('No Comments so far','elitepress'), __( '1 Comment so far','elitepress'), __('% Comments so far','elitepress') ); ?> </h3>
+	<div class="comment-title"><h3></i> <?php comments_number ( __('No comments so far','elitepress'), __( '1 comment so far','elitepress'),'% ' . __('comments so far','elitepress') ); ?> </h3>
 	</div>
 	<?php wp_list_comments( array( 'callback' => 'elitepress_comment' ) ); ?>
 </div> <!---comment_section--->
@@ -75,7 +75,7 @@
 			'comment_field'=> '<div class="blog-form-group-textarea" >
 			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Message','elitepress').'"></textarea></div>',		
 			'logged_in_as' => '<p class="blog-post-info-detail">' . __("Logged in as",'elitepress' ). ' ' .'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'.' 
-			'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Logout of this account','elitepress').'">'.__("Logout",'elitepress').'</a>' . '</p>',
+			'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Log out from this Account','elitepress').'">'.__("Log out",'elitepress').'</a>' . '</p>',
 			'id_submit'=> 'blogdetail-btn',
 			'label_submit'=>__( 'Send Message','elitepress'),
 			'comment_notes_after'=> '',

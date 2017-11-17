@@ -70,7 +70,6 @@ function theme_data_setup()
 			'header_search_bar_enabled' => true,
 			
 			//Home Top Call Out Area
-			'header_call_out_area_enabled' => true,
 			'header_call_out_title'=> __('Want to say hey or find out more?','elitepress'),
 			'header_call_out_description'=> 'Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.',
 			'header_call_out_btn_text'=> __('Read More','elitepress'),
@@ -79,7 +78,7 @@ function theme_data_setup()
 			
 			
 			//Footer Copyright custmization
-			'footer_copyright_text' => __('<p>Copyright 2014 ElitePress <a href="#">WordPress Theme</a>. All rights reserved</p>','elitepress'),
+			'footer_copyright_text' => '<p>'.__('©2017 All Rights Reserved - Webriti. - Designed and Developed by','elitepress').'<a href="http://www.webriti.com/" target="_blank">'.__('Webriti','elitepress').'</a></p>',
 			
 			//Footer Menu bar Setting			
 			'footer_menu_bar_enabled' => true,
@@ -87,7 +86,7 @@ function theme_data_setup()
 			//portfolio
 			'portfolio_section_enabled' => 'on',
 			
-			'front_portfolio_title' => __('Latest project','elitepress'),
+			'front_portfolio_title' => __('Latest projects','elitepress'),
 			'front_portfolio_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
 			
 			'portfolio_one_title' => __('Business growth','elitepress'),
@@ -129,22 +128,22 @@ function theme_data_setup()
 			'blog_description' => 'Lorem ipsum dolor sit ametconsectetuer adipiscing elit.',
 			
 			//Banner Heading
-			'banner_title_category' => __('Category title','elitepress'),
+			'banner_title_category' => __('Title','elitepress'),
 			'banner_description_category' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			
-			'banner_title_archive' => __('Archive title','elitepress'),
+			'banner_title_archive' => __('Title','elitepress'),
 			'banner_description_archive' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			
-			'banner_title_author' => __('Author title','elitepress'),
+			'banner_title_author' => __('Title','elitepress'),
 			'banner_description_author' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			
 			'banner_title_404' => __('404 title','elitepress'),
 			'banner_description_404' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 								
-			'banner_title_tag' => __('Tag title','elitepress'),
+			'banner_title_tag' => __('Title','elitepress'),
 			'banner_description_tag' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 								
-			'banner_title_search' => __('Search title','elitepress'),
+			'banner_title_search' => __('Title','elitepress'),
 			'banner_description_search' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			
 			);

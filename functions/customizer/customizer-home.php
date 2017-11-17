@@ -30,7 +30,7 @@ function elitepress_header_customizer( $wp_customize ) {
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header Logo setting', 'elitepress'),
+		'title'      => __('Header Logo settings', 'elitepress'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );
@@ -47,7 +47,7 @@ function elitepress_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'elitepress_lite_options[upload_image_logo]',
 			   array(
-				   'label'          => __('Custom logo','elitepress' ),
+				   'label'          => __('Upload logo','elitepress' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -66,7 +66,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable logo text','elitepress'),
+        'label' => __('Show Logo text','elitepress'),
         'section' => 'header_logo',
 		'priority'   => 100,
     )
@@ -87,7 +87,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[width]',
     array(
         'type' => 'text',
-        'label' => __('Enter Logo Width','elitepress'),
+        'label' => __('Enter Logo width','elitepress'),
         'section' => 'header_logo',
 		'priority'   => 400,
     )
@@ -112,28 +112,6 @@ function elitepress_header_customizer( $wp_customize ) {
     )
 	);
 	
-	
-	
-	//Text logo
-	$wp_customize->add_setting(
-	'elitepress_lite_options[text_title]'
-    ,array(
-	'default' => true,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' =>'option',
-	
-	));
-
-	$wp_customize->add_control(
-    'elitepress_lite_options[text_title]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Enable Logo Text','elitepress'),
-        'section' => 'header_logo',
-		'priority'   => 200,
-    )
-	);
-	
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
 		'title'      => __('Custom CSS', 'elitepress'),
@@ -153,16 +131,6 @@ function elitepress_header_customizer( $wp_customize ) {
         'type' => 'textarea',
 		'priority'   => 100,
     )); 	
-	
-	//Contact setting
-	$wp_customize->add_section(
-        'header_contact',
-        array(
-            'title' => __('Header contact setting','elitepress'),
-           'priority'    => 350,
-			'panel' => 'header_options',
-        )
-    );
 	
 	//Header Search bar
 

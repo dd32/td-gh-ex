@@ -20,8 +20,7 @@
 	$wp_customize->add_setting(
     'elitepress_lite_options[footer_copyright_text]',
     array(
-       'default' => sprintf (__('@ Copyright 2014  elitepress Design & Developed by <a href="%1$s" target="_blank">Webriti</a>','elitepress'),'http://www.webriti.com'),
-		
+       'default' => '<p>'.__('©2017 All Rights Reserved - Webriti. - Designed and Developed by','elitepress').'<a href="http://www.webriti.com/" target="_blank">'.__('Webriti','elitepress').'</a></p>',
 		'type' =>'option',
 		'sanitize_callback' => 'elitepress_copyright_sanitize_text'
 		

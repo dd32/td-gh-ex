@@ -56,6 +56,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.6
+1. Fixed string issue.
+@version 1.6.5
+1. Update Author URI and Theme URI change http to https secure.
 @version 1.6.4
 1. Added Repetator control for slider and service.
 2. Added Wide and box layout setting.

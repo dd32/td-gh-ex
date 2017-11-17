@@ -5,13 +5,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'elitepress_portfolio_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Portfolio settings', 'elitepress'),
+		'title'      => __('Project settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'portfolio_section_settings',
         array(
-            'title' => __('Portfolio settings','elitepress'),
+            'title' => __('Project settings','elitepress'),
 			'panel'  => 'elitepress_portfolio_setting',)
     );
 	
@@ -30,7 +30,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'elitepress_lite_options[portfolio_section_enabled]',
     array(
-        'label' => __('Enable portfolio section on home Page','elitepress'),
+        'label' => __('Enable project section on home Page','elitepress'),
         'section' => 'portfolio_section_settings',
         'type' => 'checkbox',
     )
@@ -247,10 +247,10 @@ function elitepress_portfolio_customizer( $wp_customize ) {
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add more portfolios and categorization than upgrade to pro','elitepress');?></P>
+	 <P><?php _e('Want to add projects and categorization?','elitepress');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" target="_blank" class="service" id="review_pro"><?php _e( 'Upgrade to pro','elitepress' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" target="_blank" class="service" id="review_pro"><?php _e( 'Upgrade to Pro','elitepress' ); ?></a>
 	 <div>
     <?php
     }

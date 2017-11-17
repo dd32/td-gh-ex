@@ -10,14 +10,14 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-box">
-       <a href="<?php echo 'http://webriti.com/elitepress/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'Upgrade to pro','elitepress' ); ?></a>
+       <a href="<?php echo 'http://webriti.com/elitepress/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'UPGRADE TO PRO','elitepress' ); ?></a>
 		
 	</div>
     <?php
     }
 }
 $wp_customize->add_section( 'elitepress_pro_section' , array(
-		'title'      => __('Upgrade to pro', 'elitepress'),
+		'title'      => __('UPGRADE TO PRO', 'elitepress'),
 		'priority'   => 1000,
    	) );
 

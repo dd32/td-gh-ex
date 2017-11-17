@@ -44,13 +44,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_panel( 'elitepress_slider_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Slider setting', 'elitepress'),
+		'title'      => __('Slider settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Slider setting','elitepress'),
+            'title' => __('Slider settings','elitepress'),
             'panel'  => 'elitepress_slider_setting',)
     );
 	

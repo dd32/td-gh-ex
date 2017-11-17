@@ -39,7 +39,7 @@
 						<?php if(!empty($instance['title'])) { ?>
 						<h4><?php echo $instance['title']; ?></h4>
 						<?php } else { ?> 
-						<h4><?php echo __('15AH, San Francisco,','elitepress'); ?></h4>
+						<h4><?php echo '15AH, San Francisco'; ?></h4>
 						<?php } ?>
 						<?php if(!empty($instance['description'])) { ?>
 						<h5><?php echo $instance['description']; ?></h5>
@@ -66,7 +66,7 @@
 	$title = $instance[ 'title' ];
 	}
 	else {
-	$title = __( '15AH, San Francisco,', 'elitepress' );
+	$title = '15AH, San Francisco';
 	}
 	if ( isset( $instance[ 'description' ])){
 	$description = $instance[ 'description' ];
@@ -83,7 +83,8 @@
 	<span><?php _e('Get your Font Awesome','elitepress'); echo " ";?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e('here','elitepress'); ?></a></span>
 	
 	<h4 for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title','elitepress' ); ?></h4>
-	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php if($title) echo esc_attr( $title ); else _e( '15AH, San Francisco,', 'elitepress' );?>" />
+	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php if($title) echo esc_attr( $title ); 
+	else '15AH, San Francisco';?>" />
 	
 	
 	
