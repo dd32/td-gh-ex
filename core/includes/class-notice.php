@@ -55,7 +55,7 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
             <div class="update-nag notice lookilite-notice">
             
             	<div class="lookilite-noticedescription">
-                    <strong><?php _e( 'Upgrade to the premium version of Looki for only €1, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'looki-lite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'looki-lite' ); ?></strong><br/>
 
 					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','looki-lite'), esc_url( '?lookilite-dismiss=1' ) ); ?>
                 </div>
