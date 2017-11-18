@@ -1,8 +1,20 @@
 == Changelog ==
 
+1.0.8
+* 11/18/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:24
+* Fix: Prefixed functions jptweak_remove_share() on line 266 in template-functions.php, woocommerce_get_product_thumbnail() on line 80 in functions_woocommerce.php.
+* Fix: Escaped get_author_posts_url() on line 45 in template-tags.php,  get_the_post_thumbnail_url() on line 49 in product-image.php.
+* Fix: get_the_permalink() was escaped in functions_woocommerce.php
+* Fix: Escaping fixes in functions_woocommerce.php
+* Fix: More checks added for array $social_link in parts/entry.php
+* Updated: Kirki to 3.0.15
+* Default header style is now "Banner"
+* Some styling fixes in style.css
+
 1.0.7
 * 11/10/2017
-https://themes.trac.wordpress.org/ticket/47322#comment:16
+* https://themes.trac.wordpress.org/ticket/47322#comment:16
 * Added license information for images shown in screenshot.png
 
 = 1.0.6

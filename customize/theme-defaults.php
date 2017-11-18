@@ -28,7 +28,7 @@ $ariel_defaults['ariel_banner_url']         = '#';
 /**
  * Frontpage > Banner / Slider
  */
-$ariel_defaults['ariel_frontpage_banner']                 = 'Posts';
+$ariel_defaults['ariel_frontpage_banner']                 = 'Banner';
 $ariel_defaults['ariel_frontpage_slider_type']            = 'Thumbnails';
 $ariel_defaults['ariel_frontpage_posts_slider_category']  = '1'; // Uncategorized
 $ariel_defaults['ariel_frontpage_posts_slider_number']    = '3';

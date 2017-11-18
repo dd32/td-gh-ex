@@ -45,8 +45,8 @@ add_filter( 'comment_form_submit_field', 'ariel_product_review_submit_button', 1
 function ariel_template_loop_product_thumb()
 {
 	$output = '<div class="product-thumb">';
-	$output .= '<a href="' . get_the_permalink() . '" class="woocommerce-LoopProduct-link">';
-	$output .= woocommerce_get_product_thumbnail();
+	$output .= '<a href="' . esc_url( get_the_permalink() ). '" class="woocommerce-LoopProduct-link">';
+	$output .= ariel_woocommerce_get_product_thumbnail();
 	$output .= '</a>';
 	$output .= '<span class="product-thumb-bag-icon"><i class="fa fa-shopping-bag"></i></span>';
 	echo $output;
@@ -56,8 +56,6 @@ function ariel_template_loop_product_thumb()
 
 function ariel_template_loop_product_thumb_close()
 {
-	//global $woocommerce;
-	//echo "\t\t<a href=\"" . $woocommerce->cart->get_cart_url() . "\" class=\"added_to_cart\" title=\"" . esc_html__( 'View cart', 'ariel' ) . "\">" . esc_html__( 'View cart', 'ariel' ) . "</a>\n";
 	echo "\t\t</div>\n";
 }
 
@@ -65,7 +63,7 @@ function ariel_template_loop_product_thumb_close()
 
 function ariel_template_loop_product_title()
 {
-	echo '<h4 class="woocommerce-loop-product__title product-title"><a href="'.get_the_permalink().'">'.get_the_title().'</a></h4>';
+	echo '<h4 class="woocommerce-loop-product__title product-title"><a href="'. esc_url( get_the_permalink() ) .'">'. esc_html ( get_the_title() ) .'</a></h4>';
 }
 
 /**
@@ -77,7 +75,7 @@ function ariel_template_loop_product_title()
  * @param int $deprecated2 Deprecated since WooCommerce 2.0 (default: 0)
  * @return string
  */
-function woocommerce_get_product_thumbnail( $size = 'ariel-shop', $deprecated1 = 0, $deprecated2 = 0 ) {
+function ariel_woocommerce_get_product_thumbnail( $size = 'ariel-shop', $deprecated1 = 0, $deprecated2 = 0 ) {
 	global $post;
 
 	if ( has_post_thumbnail() ) {
@@ -85,10 +83,10 @@ function woocommerce_get_product_thumbnail( $size = 'ariel-shop', $deprecated1 =
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size );
 		$image = $image[0];
 
-		return '<img src="' . $image . '" alt="' . $props['alt'] . '" title="' . $props['title'] . '" class="img-responsive" />';
+		return '<img src="' . esc_url ( $image ) . '" alt="' . esc_attr ( $props['alt'] ) . '" title="' . esc_attr ( $props['title'] ) . '" class="img-responsive" />';
 
 	} elseif ( wc_placeholder_img_src() ) {
-		return '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . esc_html__( 'No image', 'ariel' ) . '" class="img-responsive" />';
+		return '<img src="' . esc_url ( woocommerce_placeholder_img_src() ) . '" alt="' . esc_html__( 'No image', 'ariel' ) . '" class="img-responsive" />';
 	}
 }
 
@@ -127,7 +125,6 @@ function woocommerce_get_product_thumbnail( $size = 'ariel-shop', $deprecated1 =
 
 		if ( $args['required'] ) {
 			$args['class'][] = 'validate-required';
-			//$required = ' <span class="asterisk" title="' . esc_attr__( 'required', 'ariel' ) . '">*</span>';
 			$required = ' <abbr class="required" title="' . esc_attr__( 'required', 'ariel' ) . '">*</abbr>';
 		} else {
 			$required = '';

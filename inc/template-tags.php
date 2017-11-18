@@ -42,7 +42,7 @@ function ariel_entry_author() {
 	$show = ariel_toggle_entry_meta( $ariel_blog_feed_author_show, $ariel_posts_author_show );
 
 	if ( $show ) :
-		echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) . '" class="entry-meta-author">';
+		echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ) . '" class="entry-meta-author">';
 		printf( esc_html__( 'By %s', 'ariel' ), get_the_author() );
 		echo '</a>';
 	endif;

@@ -166,18 +166,20 @@ endif; // $jetpack_activated
 								 * Get all social profiles
 								 */
 								foreach ( $ariel_author_social_links as $social_link ) :
-									$network = $social_link['social_network'];
-									$url = $social_link['social_url'];
-									/**
-									 * Set icons
-									 */
-									$icon = $network;
+									if(issset($social_link['social_network'])) $network = $social_link['social_network'];
+									if(issset($social_link['social_url']))     $url = $social_link['social_url'];
+                                    if($network && $url) {
+                                        /**
+                                         * Set icons
+                                         */
+                                        $icon = $network;
 
-									if ( $url ) : ?>
-										<li><a href="<?php echo esc_url( $url ); ?>" target="_blank">
-											<?php ariel_fontawesome_icon( $icon ); ?></i>
-										</a></li>
-									<?php endif; // $url
+                                        if ( $url ) : ?>
+                                            <li><a href="<?php echo esc_url( $url ); ?>" target="_blank">
+                                                <?php ariel_fontawesome_icon( $icon ); ?></i>
+                                            </a></li>
+                                        <?php endif; // $url
+                                    }
 								endforeach; // $ariel_author_social_links as $social_link
 							endif; // $ariel_author_social_links
 						?>
