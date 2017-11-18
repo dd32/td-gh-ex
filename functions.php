@@ -186,15 +186,9 @@ add_action( 'init', 'boldr_editor_styles' );
  */
 function boldr_scripts() {
 
-	if ( function_exists( 'get_theme_file_uri' ) ) : // WordPress 4.7
-		wp_enqueue_script( 'boldr', get_theme_file_uri( '/js/boldr.min.js' ), array( 'jquery', 'hoverIntent' ), BOLDR_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), BOLDR_THEME_VERSION );
-	else : // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script( 'boldr', BOLDR_THEME_DIR_URI . '/js/boldr.min.js', array( 'jquery', 'hoverIntent' ), BOLDR_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', BOLDR_THEME_DIR_URI . '/js/html5.js', array(), BOLDR_THEME_VERSION );
-	endif;
+	wp_enqueue_script( 'boldr', get_theme_file_uri( '/js/boldr.min.js' ), array( 'jquery', 'hoverIntent' ), BOLDR_THEME_VERSION );
+	// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
+	wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), BOLDR_THEME_VERSION );
 
 	// Add conditional for HTML5Shiv to only load for IE < 9
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
