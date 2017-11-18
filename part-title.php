@@ -1,72 +1,65 @@
 <?php
 /**
  *
- * Blackoot Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Blackoot Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
  *
  * Page Title & Breadcrumbs
  *
  */
 
-$title = '';
+$blackoot_page_title = '';
 
-if ( is_singular() ):
+if ( is_singular() ) :
 
-	$title = get_the_title();
+	$blackoot_page_title = get_the_title();
 
-else:
+else :
 
 	/* 404 ERROR CONDITIONAL TITLE */
-	if (is_404()):
-		$title =  __('404: Page Not Found', 'blackoot-lite');
+	if ( is_404() ) :
+		$blackoot_page_title = __( '404: Page Not Found', 'blackoot-lite' );
 	endif;
 
 	/* SEARCH CONDITIONAL TITLE */
-	if ( is_search() ):
-		$title = sprintf( __('Search Results for "%s"', 'blackoot-lite'), get_search_query() );
+	if ( is_search() ) :
+		// Translators: %s is the search term.
+		$blackoot_page_title = sprintf( __( 'Search Results for "%s"', 'blackoot-lite' ), get_search_query() );
 	endif;
 
-	/* TAG CONDITIONAL TITLE */
-	if ( is_tag() ):
-		$title = sprintf( __('Tag: %s', 'blackoot-lite'), single_tag_title('', false) );
-	endif;
-
-	/* CATEGORY CONDITIONAL TITLE */
-	if ( is_category() ):
-		$title = sprintf( __('Category: %s', 'blackoot-lite'), single_cat_title('', false) );
-	endif;
-
-	/* ARCHIVES CONDITIONAL TITLE */
-	if ( is_day() ):
-		$title = sprintf( __('Daily archives: %s', 'blackoot-lite'), get_the_time('F jS, Y') );
-	endif;
-
-	if ( is_month() ):
-		$title = sprintf( __('Monthly archives: %s', 'blackoot-lite'), get_the_time('F, Y') );
-	endif;
-
-	if ( is_year() ):
-		$title = sprintf( __('Yearly archives: %s', 'blackoot-lite'), get_the_time('Y') );
+	/* ARCHIVE CONDITIONAL TITLE */
+	if ( is_archive() ) :
+		$blackoot_page_title = get_the_archive_title();
 	endif;
 
 	/* DEFAULT BLOG INDEX TITLE */
-	if ( is_home() && !is_front_page() ):
+	if ( is_home() && ! is_front_page() ) :
 		/* If the blog index is not the front page
 		 * then use the "posts page" (page_for_posts) title */
-		$page_for_posts = get_option('page_for_posts');
-		$title = get_the_title($page_for_posts);
+		$blackoot_page_for_posts = get_option( 'page_for_posts' );
+		$blackoot_page_title = get_the_title( $blackoot_page_for_posts );
 	endif;
 
 endif;
 
-if ($title):
-	?><div id="page-title"><div class="container"><?php
-				if ( ! is_front_page() ):
-				?><div id="breadcrumbs"><?php blackoot_breadcrumbs(); ?></div><?php
-				endif;
-			?><h1><?php echo $title; ?></h1><?php
-	?></div></div><?php
-endif;
+if ( $blackoot_page_title ) :
 
-?>
+	?>
+	<div id="page-title">
+		<div class="container">
+			<?php
+			if ( ! is_front_page() ) :
+				?>
+				<div id="breadcrumbs">
+					<?php blackoot_breadcrumbs(); ?>
+				</div>
+				<?php
+			endif;
+			?>
+			<h1><?php echo esc_html( $blackoot_page_title ); ?></h1>
+		</div>
+	</div>
+	<?php
+
+endif;
