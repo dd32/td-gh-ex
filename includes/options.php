@@ -1737,6 +1737,20 @@ Kirki::add_field( 'avata', array(
 ) );
 
 Kirki::add_field( 'avata', array(
+	'type'     => 'background',
+	'settings' => 'page_title_bar_background',
+	'label'    => __('Page Title Bar Background', 'avata' ),
+	'section'  => 'avata_panel_basic_settings',
+	'default'  => array('background-color'=>'#3f5267'),
+	'priority' => 10,
+	'output' => array(
+	array(
+		'element' => '.page-title-bar, .post-title-bar',
+	),
+	),
+) );
+
+Kirki::add_field( 'avata', array(
 	'settings' => 'header_code',
 	'label'    => __( 'Header Tracking Code', 'avata' ),
 	'section'  => 'avata_panel_basic_settings',
@@ -1839,7 +1853,7 @@ Kirki::add_field( 'avata', array(
 
 Kirki::add_section( 'avata_footer', array(
     'title'          => __( 'Avata: Footer', 'avata' ),
-    'description'    => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
+    'description'    => '',
     'panel'          => '', 
     'priority'       => 13,
     'capability'     => 'edit_theme_options',
@@ -1854,6 +1868,20 @@ Kirki::add_field( 'avata', array(
 	'default'  => '1',
 	'priority' => 10,
 	) );
+	
+Kirki::add_field( 'avata', array(
+	'type'     => 'background',
+	'settings' => 'footer_area_background',
+	'label'    => __('Footer Widgets Area Background', 'avata' ),
+	'section'  => 'avata_footer',
+	'default'  => array('background-color'=>'#3f5267'),
+	'priority' => 10,
+	'output' => array(
+	array(
+		'element' => 'footer .footer-widget-area',
+	),
+	),
+) );
 
 $default = array();
 
@@ -1940,6 +1968,7 @@ Kirki::add_field( 'avata', array(
 	'default'  => '#ffffff',
 	'priority' => 12+$i,
 	) );
+	
 Kirki::add_field( 'avata', array(
 	'type'     => 'color',
 	'settings' => 'copyright_bg_color',
@@ -1948,8 +1977,6 @@ Kirki::add_field( 'avata', array(
 	'default'  => '#333',
 	'priority' => 13+$i,
 	) );
-	
-
 
 // Typography
 
